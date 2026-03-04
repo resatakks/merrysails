@@ -2,23 +2,61 @@ import { Star, Quote } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
+  const displayed = testimonials.slice(0, 3);
+
   return (
-    <section className="section">
-      <div className="max-w-[1290px] mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-heading font-bold">What Our Guests Say</h2>
+    <section className="section-padding bg-[#F5F1EB]">
+      <div className="mx-auto max-w-[1290px] px-4">
+        {/* Section Heading */}
+        <div className="mb-12 text-center">
+          <h2 className="font-heading text-3xl font-bold text-heading md:text-4xl">
+            Misafirlerimiz Ne Diyor?
+          </h2>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-gold" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {testimonials.slice(0, 3).map((t) => (
-            <div key={t.id} className="bg-white rounded-2xl p-6 relative hover:shadow-md transition-all">
-              <Quote className="absolute top-4 right-4 w-6 h-6 text-gold/15" />
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">{t.avatar}</div>
-                <div><p className="font-semibold text-heading text-sm">{t.name}</p><p className="text-xs text-muted">{t.country}</p></div>
+
+        {/* Testimonial Cards */}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {displayed.map((t, i) => (
+            <div
+              key={i}
+              className="relative rounded-2xl bg-white p-6 transition hover:shadow-md"
+            >
+              {/* Quote Icon */}
+              <Quote className="absolute right-4 top-4 h-8 w-8 text-gold/15" />
+
+              {/* Avatar + Name */}
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1E3A5F] text-sm font-bold text-white">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-heading text-sm font-semibold text-heading">
+                    {t.name}
+                  </p>
+                  <p className="text-xs text-muted">{t.country}</p>
+                </div>
               </div>
-              <div className="flex gap-0.5 mb-3">{Array.from({length: t.rating}).map((_,j) => <Star key={j} className="w-3.5 h-3.5 fill-gold text-gold" />)}</div>
-              <p className="text-[var(--text)] text-sm leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-              <p className="text-xs text-gold font-semibold mt-3 uppercase tracking-wider">{t.tour}</p>
+
+              {/* Star Rating */}
+              <div className="mb-3 flex gap-0.5">
+                {Array.from({ length: t.rating }).map((_, idx) => (
+                  <Star
+                    key={idx}
+                    className="h-4 w-4 fill-gold text-gold"
+                  />
+                ))}
+              </div>
+
+              {/* Review Text */}
+              <p className="text-sm leading-relaxed text-muted">
+                &ldquo;{t.text}&rdquo;
+              </p>
+
+              {/* Tour Name Label */}
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-gold">
+                {t.tour}
+              </p>
             </div>
           ))}
         </div>

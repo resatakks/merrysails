@@ -1,175 +1,396 @@
 @import "tailwindcss";
 
-:root {
-  --primary: #1A2B87;
-  --primary-hover: #4D5287;
-  --gold: #F7B52C;
-  --gold-hover: #F7A400;
-  --cta: #ff4b2b;
-  --cta-hover: #ff0844;
-  --dark: #1A1A3D;
-  --price-box: #304058;
-  --heading: #111B19;
-  --text: #444444;
-  --text-light: #999999;
-  --border: #E6E6E6;
-  --bg: #F5F5F5;
-  --bg-alt: #F2FBFA;
-  --white: #FFFFFF;
-  --whatsapp: #25D366;
-}
+/* ─────────────────────────────────────────────
+   MerrySails Design System — Tailwind v4
+   ───────────────────────────────────────────── */
 
 @theme inline {
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-gold: var(--gold);
-  --color-gold-hover: var(--gold-hover);
-  --color-cta: var(--cta);
-  --color-cta-hover: var(--cta-hover);
-  --color-dark: var(--dark);
-  --color-price-box: var(--price-box);
-  --color-heading: var(--heading);
-  --color-muted: var(--text-light);
-  --color-border: var(--border);
-  --color-bg: var(--bg);
-  --color-bg-alt: var(--bg-alt);
-  --color-whatsapp: var(--whatsapp);
-  --font-sans: "DM Sans", system-ui, sans-serif;
+  /* ── Brand Colors ── */
+  --color-deep-navy: #0A1628;
+  --color-ocean-blue: #1E3A5F;
+  --color-gold-shimmer: #C9A84C;
+  --color-sunset-orange: #E8642C;
+  --color-pure-white: #FFFFFF;
+  --color-soft-cream: #F5F1EB;
+  --color-success-green: #22C55E;
+  --color-whatsapp: #25D366;
+
+  /* ── Text Colors ── */
+  --color-body: #555555;
+  --color-heading: #1A1A2E;
+  --color-muted: #8A8A8A;
+
+  /* ── Border ── */
+  --color-border: #E8E4DE;
+
+  /* ── Font Families ── */
+  --font-heading: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* ── Animations ── */
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-fade-up-delay-1: fade-up 0.6s ease-out 0.1s both;
+  --animate-fade-up-delay-2: fade-up 0.6s ease-out 0.2s both;
+  --animate-fade-up-delay-3: fade-up 0.6s ease-out 0.3s both;
+  --animate-fade-up-delay-4: fade-up 0.6s ease-out 0.4s both;
+  --animate-fade-in-delay-1: fade-in 0.6s ease-out 0.1s both;
+  --animate-fade-in-delay-2: fade-in 0.6s ease-out 0.2s both;
+  --animate-fade-in-delay-3: fade-in 0.6s ease-out 0.3s both;
+  --animate-fade-in-delay-4: fade-in 0.6s ease-out 0.4s both;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* ─────────────────────────────────────────────
+   Keyframes
+   ───────────────────────────────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Base Styles
+   ───────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body {
-  background: var(--bg);
-  color: var(--text);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.63;
-  -webkit-font-smoothing: antialiased;
+  color: var(--color-body);
+  background-color: var(--color-pure-white);
+  line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  color: var(--heading);
-  line-height: 1.15;
-  font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: 1.2;
 }
 
-h1 { font-size: 28px; }
-h2 { font-size: 24px; font-weight: 600; }
-h3 { font-size: 20px; font-weight: 400; }
+/* ─────────────────────────────────────────────
+   Glassmorphism
+   ───────────────────────────────────────────── */
 
-@media (min-width: 768px) {
-  h1 { font-size: 42px; }
-  h2 { font-size: 32px; }
-  h3 { font-size: 24px; }
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-a { text-decoration: none; color: inherit; }
+/* ─────────────────────────────────────────────
+   Tour Card
+   ───────────────────────────────────────────── */
 
-/* Tour Card */
 .tour-card {
-  position: relative; overflow: hidden; border-radius: 20px; background: #fff; cursor: pointer;
-  transition: transform 0.5s cubic-bezier(0.165,0.84,0.44,1), box-shadow 0.5s cubic-bezier(0.165,0.84,0.44,1);
-}
-.tour-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-.tour-card img { transition: transform 0.8s cubic-bezier(0.165,0.84,0.44,1), filter 0.5s ease; }
-.tour-card:hover img { transform: scale(1.1); filter: brightness(0.85); }
-.tour-card .overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-}
-.tour-card .content {
-  position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.165,0.84,0.44,1);
-}
-.tour-card:hover .content { transform: translateY(-6px); }
-
-/* Hero */
-.hero-bg {
-  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 50%, rgba(26,26,61,0.85) 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-pure-white);
+  border: 1px solid var(--color-border);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* CTA Button */
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
+}
+
+.tour-card-image {
+  overflow: hidden;
+}
+
+.tour-card-image img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-card:hover .tour-card-image img {
+  transform: scale(1.1);
+}
+
+/* ─────────────────────────────────────────────
+   Hero Gradient Overlay
+   ───────────────────────────────────────────── */
+
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 22, 40, 0.55) 0%,
+    rgba(10, 22, 40, 0.30) 40%,
+    rgba(10, 22, 40, 0.60) 100%
+  );
+}
+
+/* ─────────────────────────────────────────────
+   CTA Button — Sunset Orange Gradient + Glow
+   ───────────────────────────────────────────── */
+
 .btn-cta {
-  background: linear-gradient(135deg, #ff4b2b 0%, #ff0844 100%);
-  color: white; font-weight: 700; font-size: 15px;
-  padding: 14px 28px; border-radius: 12px; border: none; cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255,8,68,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-pure-white);
+  background: linear-gradient(135deg, #E8642C, #D4541E);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(232, 100, 44, 0.35);
 }
-.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,8,68,0.4); }
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 100, 44, 0.50);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   Primary Button — Deep Navy
+   ───────────────────────────────────────────── */
 
 .btn-primary {
-  background: var(--primary); color: white; font-weight: 600; font-size: 15px;
-  padding: 12px 24px; border-radius: 12px; border: none; cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-pure-white);
+  background-color: var(--color-deep-navy);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
-.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+.btn-primary:hover {
+  background-color: var(--color-ocean-blue);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   WhatsApp Button
+   ───────────────────────────────────────────── */
 
 .btn-whatsapp {
-  background: var(--whatsapp); color: white; font-weight: 600;
-  padding: 12px 24px; border-radius: 12px; border: none; cursor: pointer;
-  transition: background 0.2s; display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-pure-white);
+  background-color: #25D366;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.30);
 }
-.btn-whatsapp:hover { background: #20BD5A; }
 
-/* Price Box */
+.btn-whatsapp:hover {
+  background-color: #1fb855;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   Price Box
+   ───────────────────────────────────────────── */
+
 .price-box {
-  background: var(--price-box); color: white; padding: 20px 28px;
-  display: flex; align-items: baseline; gap: 4px;
-}
-.price-box .currency { font-size: 28px; font-weight: 700; }
-.price-box .amount { font-size: 48px; font-weight: 800; line-height: 1; }
-.price-box .suffix { font-size: 14px; opacity: 0.7; margin-left: 4px; }
-
-/* Mobile Booking Bar */
-.mobile-bar {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(15px);
-  border-top: 1px solid rgba(0,0,0,0.08); box-shadow: 0 -8px 25px rgba(0,0,0,0.08);
-  padding: 12px 16px;
+  background-color: var(--color-ocean-blue);
+  color: var(--color-pure-white);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  text-align: center;
 }
 
-/* Section */
-.section { padding: 80px 20px; }
-@media (min-width: 768px) { .section { padding: 100px 24px; } }
-
-/* Featured Section */
-.featured-section {
-  display: grid; grid-template-columns: 1fr; gap: 0;
-  background: white; border-radius: 20px; overflow: hidden;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+.price-box .price-amount {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1;
 }
-@media (min-width: 1024px) { .featured-section { grid-template-columns: 1fr 1fr; } }
-.featured-section .feat-img { position: relative; min-height: 300px; overflow: hidden; }
-.featured-section .feat-img img { transition: transform 0.7s ease; }
-.featured-section:hover .feat-img img { transform: scale(1.05); }
 
-/* Animations */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.fade-up { animation: fadeInUp 0.7s ease-out both; }
-.fade-in { animation: fadeIn 0.5s ease-out both; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+/* ─────────────────────────────────────────────
+   Mobile Booking Bar (fixed bottom)
+   ───────────────────────────────────────────── */
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+.mobile-booking-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 0.75rem 1rem;
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
 
-/* Spec Grid */
+/* ─────────────────────────────────────────────
+   Section Padding
+   ───────────────────────────────────────────── */
+
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Featured Section Grid
+   ───────────────────────────────────────────── */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Spec Grid — 2col mobile, 4col desktop
+   ───────────────────────────────────────────── */
+
 .spec-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
-@media (min-width: 768px) { .spec-grid { grid-template-columns: repeat(4, 1fr); } }
-.spec-item {
-  background: var(--bg); border-radius: 12px; padding: 16px; text-align: center;
+
+@media (min-width: 768px) {
+  .spec-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-.spec-item .label { font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
-.spec-item .value { font-size: 15px; font-weight: 600; color: var(--heading); margin-top: 4px; }
+
+/* ─────────────────────────────────────────────
+   Bento Grid Layout
+   ───────────────────────────────────────────── */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+  }
+
+  .bento-grid .bento-wide {
+    grid-column: span 2;
+  }
+
+  .bento-grid .bento-tall {
+    grid-row: span 2;
+  }
+
+  .bento-grid .bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Custom Scrollbar
+   ───────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-soft-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ocean-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-deep-navy);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ocean-blue) var(--color-soft-cream);
+}

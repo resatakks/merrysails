@@ -1,99 +1,129 @@
-import type { Metadata } from "next";
 import Image from "next/image";
-import { Heart, Briefcase, PartyPopper, Gift, Star } from "lucide-react";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { Heart, Cake, Building2, PartyPopper } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Özel Organizasyonlar",
-  description: "Düğün, nişan, evlilik teklifi, doğum günü ve kurumsal etkinlikleriniz için Boğaz'da özel organizasyonlar.",
+  title: "Özel Organizasyonlar | MerrySails",
+  description:
+    "MerrySails ile İstanbul Boğazı'nda özel organizasyonlar. Evlilik teklifi, doğum günü, kurumsal etkinlik ve yılbaşı partisi.",
 };
 
 const events = [
   {
     icon: Heart,
     title: "Evlilik Teklifi",
-    description: "Hayatınızın en özel anını İstanbul Boğazı'nın büyüleyici atmosferinde yaşayın. Profesyonel dekorasyon, çiçek, pasta ve fotoğrafçı dahil.",
-    price: "€350'den başlayan",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    description:
+      "İstanbul Boğazı'nın büyüleyici manzarası eşliğinde hayatınızın en özel anını yaşayın. Özel dekorasyon, canlı müzik ve romantik bir akşam yemeği ile unutulmaz bir evlilik teklifi organizasyonu hazırlıyoruz. Kız Kulesi, Boğaz Köprüsü ve tarihi yarımada manzarası eşliğinde hayalinizdeki teklifi gerçeğe dönüştürün.",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    imageAlt: "Romantik evlilik teklifi organizasyonu",
+  },
+  {
+    icon: Cake,
+    title: "Doğum Günü",
+    description:
+      "Doğum gününüzü İstanbul Boğazı'nda kutlamak ister misiniz? Özel pasta, balon süslemeleri, DJ eşliğinde dans ve eğlence dolu bir gece sizi bekliyor. Küçük veya büyük gruplar için özel tekne seçeneklerimizle doğum günü partinizi benzersiz kılıyoruz.",
+    image:
+      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80",
+    imageAlt: "Doğum günü kutlaması",
+  },
+  {
+    icon: Building2,
+    title: "Kurumsal Etkinlik",
+    description:
+      "Şirket toplantılarınızı, ödül gecelerinizi veya takım motivasyon etkinliklerinizi Boğaz'ın eşsiz atmosferinde gerçekleştirin. Profesyonel ses ve ışık sistemleri, toplantı ekipmanları, özel menü seçenekleri ve deneyimli organizasyon ekibimizle kurumsal etkinliklerinize değer katıyoruz.",
+    image:
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
+    imageAlt: "Kurumsal etkinlik organizasyonu",
   },
   {
     icon: PartyPopper,
-    title: "Doğum Günü Partisi",
-    description: "Doğum gününüzü Boğaz'da kutlayın. Özel dekorasyon, pasta, DJ ve eğlence programı ile unutulmaz bir parti.",
-    price: "€200'den başlayan",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
-  },
-  {
-    icon: Briefcase,
-    title: "Kurumsal Etkinlikler",
-    description: "Şirket toplantıları, lansman, motivasyon etkinlikleri ve gala yemekleri için özel paketler. 20-100 kişilik gruplar.",
-    price: "Teklif alın",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
-  },
-  {
-    icon: Gift,
-    title: "Düğün & Nişan",
-    description: "Boğaz manzarası eşliğinde rüya gibi bir düğün veya nişan organizasyonu. Catering, dekorasyon ve müzik dahil.",
-    price: "€1000'den başlayan",
-    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80",
-  },
-  {
-    icon: Star,
     title: "Yılbaşı Partisi",
-    description: "Yeni yılı Boğaz'da karşılayın! Limitsiz içecek, canlı müzik, DJ ve havai fişek manzarası ile muhteşem bir gece.",
-    price: "€150'den başlayan",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
+    description:
+      "Yeni yıla İstanbul Boğazı'nda merhaba deyin! Özel yılbaşı menüsü, canlı müzik, DJ performansı ve havai fişek gösterisi eşliğinde muhteşem bir gece geçirin. Sınırlı sayıda kontenjanla özel ve samimi bir kutlama deneyimi yaşayın.",
+    image:
+      "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=800&q=80",
+    imageAlt: "Yılbaşı partisi kutlaması",
   },
 ];
 
 export default function EventsPage() {
   return (
-    <>
-      <section className="relative h-72 md:h-80 flex items-center justify-center">
+    <main>
+      {/* Hero Banner */}
+      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
-          alt="Özel Organizasyonlar"
+          alt="Özel organizasyonlar"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-primary/75" />
+        <div className="absolute inset-0 bg-[#0A1628]/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">Özel Organizasyonlar</h1>
-          <p className="text-white/60 text-lg mt-4">Hayalinizdeki etkinliği Boğaz&apos;da gerçeğe dönüştürün</p>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F1EB]">
+            Özel Organizasyonlar
+          </h1>
         </div>
       </section>
 
-      <section className="section">
-        <div className="max-w-[1290px] mx-auto space-y-10">
-          {events.map((event, i) => (
-            <div
-              key={event.title}
-              className="bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 border border-border hover:shadow-lg transition-all duration-300"
-            >
-              <div className={`relative h-72 md:h-80 overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                <Image src={event.image} alt={event.title} fill className="object-cover hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
-              </div>
-              <div className={`p-8 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gold/10 rounded-2xl flex items-center justify-center">
-                    <event.icon className="w-6 h-6 text-gold" />
+      {/* Events Section */}
+      <section className="py-16 md:py-24 bg-[#F5F1EB]">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-center text-[#0A1628]/70 text-lg mb-16 max-w-2xl mx-auto">
+            Hayalinizdeki organizasyonu İstanbul Boğazı&apos;nın eşsiz
+            manzarasında gerçeğe dönüştürüyoruz. Her etkinlik, sizin için özel
+            olarak tasarlanır.
+          </p>
+
+          <div className="space-y-12">
+            {events.map((event, index) => {
+              const Icon = event.icon;
+              const isReversed = index % 2 !== 0;
+
+              return (
+                <div
+                  key={event.title}
+                  className={`bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col ${
+                    isReversed ? "md:flex-row-reverse" : "md:flex-row"
+                  }`}
+                >
+                  {/* Image */}
+                  <div className="relative w-full md:w-1/2 h-64 md:h-auto md:min-h-[360px]">
+                    <Image
+                      src={event.image}
+                      alt={event.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
-                  <h2 className="text-2xl font-bold text-heading">{event.title}</h2>
+
+                  {/* Content */}
+                  <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                    <div className="w-14 h-14 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-6">
+                      <Icon className="w-7 h-7 text-[#C9A84C]" />
+                    </div>
+                    <h3 className="font-heading text-2xl md:text-3xl font-bold text-[#0A1628] mb-4">
+                      {event.title}
+                    </h3>
+                    <p className="text-[#0A1628]/70 leading-relaxed mb-8">
+                      {event.description}
+                    </p>
+                    <Link
+                      href="/contact"
+                      className="btn-cta inline-flex self-start"
+                    >
+                      Detaylar İçin Arayın
+                    </Link>
+                  </div>
                 </div>
-                <p className="text-[var(--text)] leading-relaxed">{event.description}</p>
-                <p className="text-gold font-bold text-lg mt-4">{event.price}</p>
-                <div className="flex gap-3 mt-6">
-                  <Button href="/contact" size="md">Teklif İsteyin</Button>
-                  <Button href="https://wa.me/905321234567" variant="whatsapp" size="md">
-                    WhatsApp
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
