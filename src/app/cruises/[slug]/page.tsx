@@ -63,8 +63,8 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
                   { icon: Calendar, label: "Departure", value: tour.departureTime },
                   { icon: MapPin, label: "Location", value: tour.departurePoint },
                 ].map(({ icon: Icon, label, value }) => (
-                  <div key={label} className="bg-bg-white rounded-2xl p-4 text-center border border-border">
-                    <Icon className="w-5 h-5 text-accent mx-auto mb-2" />
+                  <div key={label} className="bg-white rounded-2xl p-4 text-center border border-border">
+                    <Icon className="w-5 h-5 text-secondary mx-auto mb-2" />
                     <p className="text-xs text-muted uppercase tracking-wider">{label}</p>
                     <p className="text-heading font-semibold text-sm mt-1">{value}</p>
                   </div>
@@ -94,7 +94,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
                 <h2 className="font-heading text-2xl font-bold text-heading mb-4">Highlights</h2>
                 <div className="flex flex-wrap gap-2">
                   {tour.highlights.map((h) => (
-                    <span key={h} className="flex items-center gap-1.5 bg-bg-white border border-border text-primary px-4 py-2 rounded-full text-sm font-medium">
+                    <span key={h} className="flex items-center gap-1.5 bg-white border border-border text-primary px-4 py-2 rounded-full text-sm font-medium">
                       <Star className="w-3.5 h-3.5 text-secondary" />{h}
                     </span>
                   ))}
@@ -103,7 +103,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
 
               <div>
                 <h2 className="font-heading text-2xl font-bold text-heading mb-4">Route</h2>
-                <div className="bg-bg-white rounded-2xl p-5 flex items-center gap-3 border border-border">
+                <div className="bg-white rounded-2xl p-5 flex items-center gap-3 border border-border">
                   <Ship className="w-6 h-6 text-primary flex-shrink-0" />
                   <p className="text-[var(--text)]">{tour.route}</p>
                 </div>
@@ -111,7 +111,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
             </div>
 
             <div className="lg:col-span-1">
-              <div className="sticky top-24 bg-bg-white border border-border rounded-2xl shadow-lg overflow-hidden">
+              <div className="sticky top-24 bg-white border border-border rounded-2xl shadow-lg overflow-hidden">
                 <div className="price-box justify-center">
                   <span className="currency">€</span>
                   <span className="amount">{tour.priceEur}</span>
@@ -121,15 +121,15 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
                   <p className="text-center text-muted text-sm">{formatPriceTRY(tour.priceTry)}</p>
                   <div>
                     <label className="text-sm font-semibold text-heading mb-1.5 block">Date</label>
-                    <input type="date" className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors bg-white" />
+                    <input type="date" className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors bg-white" />
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-heading mb-1.5 block">Guests</label>
-                    <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors appearance-none bg-white">
+                    <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors appearance-none bg-white">
                       {[1,2,3,4,5,6,7,8,9,10].map((n) => <option key={n} value={n}>{n} {n === 1 ? "Guest" : "Guests"}</option>)}
                     </select>
                   </div>
-                  <Link href={`/booking?tour=${tour.slug}`} className="block bg-accent hover:bg-accent-hover text-white text-center py-3.5 rounded-full font-semibold transition-all shadow-md hover:-translate-y-0.5">
+                  <Link href={`/booking?tour=${tour.slug}`} className="block bg-secondary hover:bg-secondary-hover text-white text-center py-3.5 rounded-full font-semibold transition-all shadow-md hover:-translate-y-0.5">
                     Book Now
                   </Link>
                   <p className="text-xs text-muted text-center">Free cancellation up to 24 hours before</p>

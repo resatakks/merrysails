@@ -100,7 +100,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-bg-secondary">
+      <section className="section-padding bg-bg-body">
         <div className="max-w-[1290px] mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading">Değerlerimiz</h2>
@@ -135,7 +135,7 @@ export default function AboutPage() {
               { name: "Ayşe Kara", role: "Misafir İlişkileri Müdürü", icon: Users },
               { name: "Chef Ahmet Demir", role: "Baş Şef", icon: Award },
             ].map((member) => (
-              <div key={member.name} className="bg-bg-secondary rounded-2xl p-8">
+              <div key={member.name} className="bg-bg-body rounded-2xl p-8">
                 <div className="w-20 h-20 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
                   <member.icon className="w-10 h-10 text-white" />
                 </div>

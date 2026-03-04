@@ -69,15 +69,15 @@ export default function EventsPage() {
           {events.map((event, i) => (
             <div
               key={event.title}
-              className="bg-bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 border border-border hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 border border-border hover:shadow-lg transition-all duration-300"
             >
               <div className={`relative h-72 md:h-80 overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
                 <Image src={event.image} alt={event.title} fill className="object-cover hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
               <div className={`p-8 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center">
-                    <event.icon className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center">
+                    <event.icon className="w-6 h-6 text-secondary" />
                   </div>
                   <h2 className="font-heading text-2xl font-bold text-heading">{event.title}</h2>
                 </div>

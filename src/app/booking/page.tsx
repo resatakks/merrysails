@@ -94,7 +94,7 @@ function BookingContent() {
         </div>
       </section>
 
-      <section className="section-padding bg-bg-secondary">
+      <section className="section-padding bg-bg-body">
         <div className="max-w-4xl mx-auto">
           {/* Step 1: Tour Selection */}
           {currentStep === 1 && (

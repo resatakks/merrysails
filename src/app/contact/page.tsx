@@ -108,7 +108,7 @@ export default function ContactPage() {
                   <a
                     key={item.title}
                     href={item.href}
-                    className="flex items-start gap-4 bg-bg-secondary rounded-xl p-4 hover:bg-gray-100 transition-colors"
+                    className="flex items-start gap-4 bg-bg-body rounded-xl p-4 hover:bg-gray-100 transition-colors"
                   >
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
                       <item.icon className="w-6 h-6 text-accent" />

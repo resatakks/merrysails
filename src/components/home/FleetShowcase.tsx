@@ -43,7 +43,7 @@ export default function FleetShowcase() {
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {yacht.features.slice(0, 3).map((f) => (
-                    <span key={f} className="text-xs bg-bg-primary text-[var(--text)] px-2.5 py-0.5 rounded-full">{f}</span>
+                    <span key={f} className="text-xs bg-bg-body text-[var(--text)] px-2.5 py-0.5 rounded-full">{f}</span>
                   ))}
                 </div>
               </div>
