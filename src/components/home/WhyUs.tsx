@@ -1,31 +1,30 @@
 import { Ship, Shield, Utensils, Users, Clock, Star } from "lucide-react";
 
-const features = [
-  { icon: Ship, title: "Luxury Fleet", desc: "Modern, well-maintained yachts for a comfortable and safe voyage" },
-  { icon: Shield, title: "TURSAB Licensed", desc: "Fully insured, licensed and professionally audited service" },
-  { icon: Utensils, title: "Gourmet Cuisine", desc: "Award-winning chefs prepare Turkish and international dishes" },
-  { icon: Users, title: "Expert Team", desc: "10+ years experienced, multilingual professional crew" },
-  { icon: Clock, title: "Flexible Scheduling", desc: "Morning, afternoon, evening and night tours available" },
-  { icon: Star, title: "4.9 Star Rating", desc: "1000+ guests with excellent reviews and feedback" },
+const items = [
+  { icon: Ship, title: "Luxury Fleet", desc: "Modern, well-maintained yachts" },
+  { icon: Shield, title: "TURSAB Licensed", desc: "Fully insured and audited" },
+  { icon: Utensils, title: "Gourmet Cuisine", desc: "Award-winning chefs on board" },
+  { icon: Users, title: "Expert Team", desc: "10+ years experienced crew" },
+  { icon: Clock, title: "Flexible Times", desc: "Morning to night tours" },
+  { icon: Star, title: "4.9/5 Rating", desc: "1000+ excellent reviews" },
 ];
 
 export default function WhyUs() {
   return (
-    <section className="section-padding">
+    <section className="section bg-white">
       <div className="max-w-[1290px] mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-3">Why Choose Us</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading">Your Trusted Local Operator</h2>
-          <p className="text-muted mt-4 max-w-lg mx-auto">We plan every detail carefully for the best Bosphorus experience</p>
+        <div className="text-center mb-10">
+          <h2 className="text-heading font-bold">Why Choose MerrySails</h2>
+          <p className="text-muted mt-3 max-w-lg mx-auto">We plan every detail for the best Bosphorus experience</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f) => (
-            <div key={f.title} className="bg-bg-white rounded-2xl p-8 border border-border hover:border-secondary/30 hover:shadow-lg transition-all duration-300 group">
-              <div className="w-14 h-14 bg-primary/8 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-secondary/15 transition-colors">
-                <f.icon className="w-6 h-6 text-primary group-hover:text-secondary transition-colors" />
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          {items.map((f) => (
+            <div key={f.title} className="bg-bg rounded-2xl p-6 hover:shadow-md transition-all group">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/15 transition-colors">
+                <f.icon className="w-5 h-5 text-primary group-hover:text-gold transition-colors" />
               </div>
-              <h3 className="font-heading text-lg font-bold text-heading mb-2">{f.title}</h3>
-              <p className="text-muted text-[15px] leading-relaxed">{f.desc}</p>
+              <h3 className="text-heading font-semibold text-base !font-bold">{f.title}</h3>
+              <p className="text-muted text-sm mt-1">{f.desc}</p>
             </div>
           ))}
         </div>

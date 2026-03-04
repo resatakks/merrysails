@@ -46,13 +46,13 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
             <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${tour.badgeColor}`}>
               {tour.badge}
             </span>
-            <h1 className="font-heading text-3xl md:text-5xl font-bold text-white">{tour.name}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold text-white">{tour.name}</h1>
             <p className="text-white/60 text-lg mt-1">{tour.nameEn}</p>
           </div>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section">
         <div className="max-w-[1290px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-10">
@@ -64,7 +64,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
                   { icon: MapPin, label: "Location", value: tour.departurePoint },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="bg-white rounded-2xl p-4 text-center border border-border">
-                    <Icon className="w-5 h-5 text-secondary mx-auto mb-2" />
+                    <Icon className="w-5 h-5 text-gold mx-auto mb-2" />
                     <p className="text-xs text-muted uppercase tracking-wider">{label}</p>
                     <p className="text-heading font-semibold text-sm mt-1">{value}</p>
                   </div>
@@ -72,17 +72,17 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-bold text-heading mb-4">About This Tour</h2>
+                <h2 className="text-2xl font-bold text-heading mb-4">About This Tour</h2>
                 <p className="text-[var(--text)] leading-relaxed">{tour.longDescription}</p>
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-bold text-heading mb-4">What&apos;s Included</h2>
+                <h2 className="text-2xl font-bold text-heading mb-4">What&apos;s Included</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {tour.includes.map((item) => (
                     <div key={item} className="flex items-center gap-2.5">
-                      <div className="w-5 h-5 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-success" />
+                      <div className="w-5 h-5 bg-green-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-green-500" />
                       </div>
                       <span className="text-[var(--text)] text-[15px]">{item}</span>
                     </div>
@@ -91,18 +91,18 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-bold text-heading mb-4">Highlights</h2>
+                <h2 className="text-2xl font-bold text-heading mb-4">Highlights</h2>
                 <div className="flex flex-wrap gap-2">
                   {tour.highlights.map((h) => (
                     <span key={h} className="flex items-center gap-1.5 bg-white border border-border text-primary px-4 py-2 rounded-full text-sm font-medium">
-                      <Star className="w-3.5 h-3.5 text-secondary" />{h}
+                      <Star className="w-3.5 h-3.5 text-gold" />{h}
                     </span>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-bold text-heading mb-4">Route</h2>
+                <h2 className="text-2xl font-bold text-heading mb-4">Route</h2>
                 <div className="bg-white rounded-2xl p-5 flex items-center gap-3 border border-border">
                   <Ship className="w-6 h-6 text-primary flex-shrink-0" />
                   <p className="text-[var(--text)]">{tour.route}</p>
@@ -115,7 +115,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
                 <div className="price-box justify-center">
                   <span className="currency">€</span>
                   <span className="amount">{tour.priceEur}</span>
-                  <span className="per-person">/ person</span>
+                  <span className="suffix">/ person</span>
                 </div>
                 <div className="p-6 space-y-5">
                   <p className="text-center text-muted text-sm">{formatPriceTRY(tour.priceTry)}</p>
@@ -129,7 +129,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
                       {[1,2,3,4,5,6,7,8,9,10].map((n) => <option key={n} value={n}>{n} {n === 1 ? "Guest" : "Guests"}</option>)}
                     </select>
                   </div>
-                  <Link href={`/booking?tour=${tour.slug}`} className="block bg-secondary hover:bg-secondary-hover text-white text-center py-3.5 rounded-full font-semibold transition-all shadow-md hover:-translate-y-0.5">
+                  <Link href={`/booking?tour=${tour.slug}`} className="block bg-gold hover:bg-gold-hover text-white text-center py-3.5 rounded-full font-semibold transition-all shadow-md hover:-translate-y-0.5">
                     Book Now
                   </Link>
                   <p className="text-xs text-muted text-center">Free cancellation up to 24 hours before</p>
@@ -149,7 +149,7 @@ export default async function CruiseDetailPage({ params }: { params: Promise<{ s
           </div>
 
           <div className="mt-20">
-            <h2 className="font-heading text-3xl font-bold text-heading mb-8">Similar Cruises</h2>
+            <h2 className="text-3xl font-bold text-heading mb-8">Similar Cruises</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
               {related.map((t) => <TourCard key={t.id} tour={t} />)}
             </div>

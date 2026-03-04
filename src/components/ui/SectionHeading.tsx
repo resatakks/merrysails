@@ -1,11 +1,9 @@
-interface SectionHeadingProps { label?: string; title: string; subtitle?: string; light?: boolean; center?: boolean; }
-
-export default function SectionHeading({ label, title, subtitle, light, center = true }: SectionHeadingProps) {
+interface Props { title: string; subtitle?: string; }
+export default function SectionHeading({ title, subtitle }: Props) {
   return (
-    <div className={`mb-14 ${center ? "text-center" : ""}`}>
-      {label && <p className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-3">{label}</p>}
-      <h2 className={`font-heading text-3xl md:text-4xl font-bold ${light ? "text-white" : "text-heading"}`}>{title}</h2>
-      {subtitle && <p className={`mt-4 max-w-lg ${center ? "mx-auto" : ""} ${light ? "text-white/50" : "text-muted"}`}>{subtitle}</p>}
+    <div className="text-center mb-10">
+      <h2 className="text-heading font-bold">{title}</h2>
+      {subtitle && <p className="text-muted mt-3 max-w-lg mx-auto">{subtitle}</p>}
     </div>
   );
 }

@@ -34,12 +34,12 @@ export default function GalleryPage() {
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">Galeri</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white">Galeri</h1>
           <p className="text-white/70 text-lg mt-4">MerrySails deneyiminden kareler</p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section">
         <div className="max-w-[1290px] mx-auto">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
             {galleryImages.map((img, i) => (
@@ -57,7 +57,7 @@ export default function GalleryPage() {
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/50 transition-all flex items-end">
                   <div className="p-4 translate-y-full group-hover:translate-y-0 transition-transform">
                     <p className="text-white font-semibold">{img.alt}</p>
-                    <span className="text-secondary text-sm">{img.category}</span>
+                    <span className="text-gold text-sm">{img.category}</span>
                   </div>
                 </div>
               </div>

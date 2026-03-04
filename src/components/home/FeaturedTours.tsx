@@ -7,11 +7,11 @@ const featured = [tours[0], tours[1], tours[4]];
 
 export default function FeaturedTours() {
   return (
-    <section className="section-padding bg-bg-white">
+    <section className="section bg-white">
       <div className="max-w-[1290px] mx-auto">
         <div className="text-center mb-14">
-          <p className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-3">Featured</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading">Most Popular Experiences</h2>
+          <p className="text-gold font-semibold tracking-[0.2em] uppercase text-sm mb-3">Featured</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-heading">Most Popular Experiences</h2>
         </div>
         <div className="space-y-8">
           {featured.map((tour, i) => (
@@ -24,11 +24,11 @@ export default function FeaturedTours() {
                   <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{tour.duration}</span>
                   <span className="flex items-center gap-1.5"><Users className="w-4 h-4" />{tour.capacity}</span>
                 </div>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-heading">{tour.name}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-heading">{tour.name}</h3>
                 <p className="text-[var(--text)] leading-relaxed mt-4">{tour.description}</p>
                 <div className="grid grid-cols-2 gap-2 mt-5">
                   {tour.includes.slice(0, 4).map((item) => (
-                    <span key={item} className="flex items-center gap-2 text-sm text-[var(--text-light)]"><Check className="w-4 h-4 text-success flex-shrink-0" />{item}</span>
+                    <span key={item} className="flex items-center gap-2 text-sm text-[var(--text-light)]"><Check className="w-4 h-4 text-green-500 flex-shrink-0" />{item}</span>
                   ))}
                 </div>
                 <div className="flex items-center gap-5 mt-8">
@@ -36,7 +36,7 @@ export default function FeaturedTours() {
                     <p className="text-xs text-muted uppercase tracking-wider">From</p>
                     <p className="text-3xl font-bold text-heading"><span className="text-lg">€</span>{tour.priceEur}<span className="text-sm font-normal text-muted ml-1">/ person</span></p>
                   </div>
-                  <Link href={`/cruises/${tour.slug}`} className="bg-secondary hover:bg-secondary-hover text-white py-3 px-6 rounded-full font-semibold text-sm transition-all hover:-translate-y-0.5 inline-flex items-center gap-2">View Details <ArrowRight className="w-4 h-4" /></Link>
+                  <Link href={`/cruises/${tour.slug}`} className="bg-gold hover:bg-gold-hover text-white py-3 px-6 rounded-full font-semibold text-sm transition-all hover:-translate-y-0.5 inline-flex items-center gap-2">View Details <ArrowRight className="w-4 h-4" /></Link>
                 </div>
               </div>
             </div>

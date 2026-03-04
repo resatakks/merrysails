@@ -48,7 +48,7 @@ function BookingContent() {
       {/* Header */}
       <section className="bg-primary pt-28 pb-12">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
             Rezervasyon
           </h1>
 
@@ -61,7 +61,7 @@ function BookingContent() {
                     className={cn(
                       "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-colors",
                       currentStep >= step.id
-                        ? "bg-secondary text-heading"
+                        ? "bg-gold text-heading"
                         : "bg-white/10 text-white/40"
                     )}
                   >
@@ -84,7 +84,7 @@ function BookingContent() {
                   <div
                     className={cn(
                       "w-8 md:w-16 h-0.5",
-                      currentStep > step.id ? "bg-secondary" : "bg-white/10"
+                      currentStep > step.id ? "bg-gold" : "bg-white/10"
                     )}
                   />
                 )}
@@ -94,12 +94,12 @@ function BookingContent() {
         </div>
       </section>
 
-      <section className="section-padding bg-bg-body">
+      <section className="section bg-bg">
         <div className="max-w-4xl mx-auto">
           {/* Step 1: Tour Selection */}
           {currentStep === 1 && (
             <div>
-              <h2 className="font-heading text-2xl font-bold text-heading mb-6">
+              <h2 className="text-2xl font-bold text-heading mb-6">
                 Tur ve Tarih Seçin
               </h2>
 
@@ -128,7 +128,7 @@ function BookingContent() {
                       <div>
                         <h3 className="font-semibold text-heading text-sm">{tour.name}</h3>
                         <p className="text-gray-400 text-xs mt-0.5">{tour.duration} · {tour.capacity}</p>
-                        <p className="text-accent font-bold font-bold mt-1">{formatPrice(tour.priceEur)}</p>
+                        <p className="text-gold font-bold font-bold mt-1">{formatPrice(tour.priceEur)}</p>
                       </div>
                     </div>
                   </button>
@@ -173,7 +173,7 @@ function BookingContent() {
               <button
                 onClick={() => selectedTour && date && setCurrentStep(2)}
                 disabled={!selectedTour || !date}
-                className="w-full bg-accent hover:bg-accent-hover disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
+                className="w-full bg-gold hover:bg-gold-hover disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
               >
                 Devam Et <ArrowRight className="w-5 h-5" />
               </button>
@@ -183,7 +183,7 @@ function BookingContent() {
           {/* Step 2: Personal Info */}
           {currentStep === 2 && (
             <div>
-              <h2 className="font-heading text-2xl font-bold text-heading mb-6">
+              <h2 className="text-2xl font-bold text-heading mb-6">
                 Kişisel Bilgiler
               </h2>
 
@@ -263,7 +263,7 @@ function BookingContent() {
                 <button
                   onClick={() => formData.name && formData.email && formData.phone && setCurrentStep(3)}
                   disabled={!formData.name || !formData.email || !formData.phone}
-                  className="flex-1 bg-accent hover:bg-accent-hover disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
+                  className="flex-1 bg-gold hover:bg-gold-hover disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
                 >
                   Ödemeye Geç <ArrowRight className="w-5 h-5" />
                 </button>
@@ -274,7 +274,7 @@ function BookingContent() {
           {/* Step 3: Payment */}
           {currentStep === 3 && (
             <div>
-              <h2 className="font-heading text-2xl font-bold text-heading mb-6">Ödeme</h2>
+              <h2 className="text-2xl font-bold text-heading mb-6">Ödeme</h2>
 
               {/* Order Summary */}
               <div className="bg-white rounded-xl p-6 border border-gray-200 mb-6">
@@ -342,7 +342,7 @@ function BookingContent() {
                 </button>
                 <button
                   onClick={() => setCurrentStep(4)}
-                  className="flex-1 bg-accent hover:bg-accent-hover text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
+                  className="flex-1 bg-gold hover:bg-gold-hover text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
                 >
                   Ödemeyi Tamamla
                 </button>
@@ -353,10 +353,10 @@ function BookingContent() {
           {/* Step 4: Confirmation */}
           {currentStep === 4 && (
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-success rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-10 h-10 text-white" />
               </div>
-              <h2 className="font-heading text-3xl font-bold text-heading mb-4">
+              <h2 className="text-3xl font-bold text-heading mb-4">
                 Rezervasyonunuz Onaylandı!
               </h2>
               <p className="text-gray-500 max-w-md mx-auto mb-2">
@@ -381,7 +381,7 @@ function BookingContent() {
 
               <button
                 onClick={() => router.push("/")}
-                className="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-xl font-semibold transition-colors"
+                className="bg-gold hover:bg-gold-hover text-white px-8 py-3 rounded-xl font-semibold transition-colors"
               >
                 Ana Sayfaya Dön
               </button>

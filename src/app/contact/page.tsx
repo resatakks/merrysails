@@ -29,17 +29,17 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">İletişim</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white">İletişim</h1>
           <p className="text-white/70 text-lg mt-4">Sorularınız ve rezervasyonlarınız için bize ulaşın</p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section">
         <div className="max-w-[1290px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="font-heading text-3xl font-bold text-heading mb-6">Bize Yazın</h2>
+              <h2 className="text-3xl font-bold text-heading mb-6">Bize Yazın</h2>
               <form className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-accent/25"
+                  className="bg-gold hover:bg-gold-hover text-white px-8 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-accent/25"
                 >
                   Gönder
                 </button>
@@ -102,16 +102,16 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="font-heading text-3xl font-bold text-heading mb-6">İletişim Bilgileri</h2>
+              <h2 className="text-3xl font-bold text-heading mb-6">İletişim Bilgileri</h2>
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <a
                     key={item.title}
                     href={item.href}
-                    className="flex items-start gap-4 bg-bg-body rounded-xl p-4 hover:bg-gray-100 transition-colors"
+                    className="flex items-start gap-4 bg-bg rounded-xl p-4 hover:bg-gray-100 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-accent" />
+                    <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                      <item.icon className="w-6 h-6 text-gold" />
                     </div>
                     <div>
                       <p className="font-semibold text-heading">{item.title}</p>
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
               {/* Social */}
               <div className="mt-8">
-                <h3 className="font-heading text-xl font-bold text-heading mb-4">Sosyal Medya</h3>
+                <h3 className="text-xl font-bold text-heading mb-4">Sosyal Medya</h3>
                 <div className="flex gap-3">
                   {[
                     { icon: Instagram, label: "Instagram" },
@@ -133,7 +133,7 @@ export default function ContactPage() {
                     <a
                       key={label}
                       href="#"
-                      className="w-12 h-12 bg-primary hover:bg-primary-light rounded-xl flex items-center justify-center transition-colors"
+                      className="w-12 h-12 bg-primary hover:bg-primary-hover rounded-xl flex items-center justify-center transition-colors"
                     >
                       <Icon className="w-5 h-5 text-white" />
                     </a>

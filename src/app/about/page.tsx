@@ -37,20 +37,20 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">Hakkımızda</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white">Hakkımızda</h1>
           <p className="text-white/70 text-lg mt-4">Merry Tourism Ailesi&apos;nin Denizcilik Markası</p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="section-padding">
+      <section className="section">
         <div className="max-w-[1290px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-heading mb-6">
                 Boğaz&apos;ın Büyüsünü
                 <br />
-                <span className="text-accent">Sizinle Paylaşıyoruz</span>
+                <span className="text-gold">Sizinle Paylaşıyoruz</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-heading text-4xl md:text-5xl font-bold text-secondary">{stat.value}</p>
+                <p className="text-4xl md:text-5xl font-bold text-gold">{stat.value}</p>
                 <p className="text-white/60 mt-2">{stat.label}</p>
               </div>
             ))}
@@ -100,20 +100,20 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-bg-body">
+      <section className="section bg-bg">
         <div className="max-w-[1290px] mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading">Değerlerimiz</h2>
-            <div className="mt-4 h-1 w-16 rounded-full bg-secondary mx-auto" />
+            <h2 className="text-3xl md:text-4xl font-bold text-heading">Değerlerimiz</h2>
+            <div className="mt-4 h-1 w-16 rounded-full bg-gold mx-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {values.map((val) => (
               <div key={val.title} className="bg-white rounded-2xl p-6 flex gap-4">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
-                  <val.icon className="w-7 h-7 text-accent" />
+                <div className="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                  <val.icon className="w-7 h-7 text-gold" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-heading">{val.title}</h3>
+                  <h3 className="text-xl font-bold text-heading">{val.title}</h3>
                   <p className="text-gray-500 mt-2 text-sm leading-relaxed">{val.description}</p>
                 </div>
               </div>
@@ -123,9 +123,9 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section-padding">
+      <section className="section">
         <div className="max-w-[1290px] mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading mb-4">Ekibimiz</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-4">Ekibimiz</h2>
           <p className="text-gray-500 max-w-2xl mx-auto mb-12">
             Deneyimli kaptanlar, profesyonel şefler ve çok dilli misafir ilişkileri ekibimiz ile her yolculuğunuz özel.
           </p>
@@ -135,11 +135,11 @@ export default function AboutPage() {
               { name: "Ayşe Kara", role: "Misafir İlişkileri Müdürü", icon: Users },
               { name: "Chef Ahmet Demir", role: "Baş Şef", icon: Award },
             ].map((member) => (
-              <div key={member.name} className="bg-bg-body rounded-2xl p-8">
-                <div className="w-20 h-20 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={member.name} className="bg-bg rounded-2xl p-8">
+                <div className="w-20 h-20 bg-primary-hover rounded-full flex items-center justify-center mx-auto mb-4">
                   <member.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-heading">{member.name}</h3>
+                <h3 className="text-lg font-bold text-heading">{member.name}</h3>
                 <p className="text-gray-400 text-sm mt-1">{member.role}</p>
               </div>
             ))}

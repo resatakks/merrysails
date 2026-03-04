@@ -5,57 +5,26 @@ import { fleet } from "@/data/fleet";
 
 export default function FleetShowcase() {
   return (
-    <section className="section-padding bg-bg-white">
+    <section className="section">
       <div className="max-w-[1290px] mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-3">Our Fleet</p>
-          <h2 className="font-heading text-3xl md:text-[42px] font-bold text-heading leading-tight">
-            Modern &amp; Comfortable Yachts
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-          {fleet.map((yacht) => (
-            <Link
-              key={yacht.id}
-              href="/fleet"
-              className="group block bg-bg-white rounded-2xl overflow-hidden border border-border hover:border-transparent hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="relative h-52 overflow-hidden">
-                <Image
-                  src={yacht.image}
-                  alt={yacht.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="320px"
-                />
-                <div className="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-sm rounded-lg px-3 py-1">
-                  <span className="text-white text-xs font-semibold">{yacht.type}</span>
-                </div>
+        <div className="text-center mb-10"><h2 className="text-heading font-bold">Our Fleet</h2></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {fleet.map((y) => (
+            <Link key={y.id} href="/fleet" className="group block bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className="relative h-48 overflow-hidden">
+                <Image src={y.image} alt={y.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="320px" />
               </div>
-              <div className="p-5">
-                <h3 className="font-heading text-lg font-bold text-heading group-hover:text-accent transition-colors">
-                  {yacht.name}
-                </h3>
-                <div className="flex items-center gap-4 mt-2 text-sm text-muted">
-                  <span className="flex items-center gap-1"><Users className="w-4 h-4" />{yacht.capacity} guests</span>
-                  <span className="flex items-center gap-1"><Ruler className="w-4 h-4" />{yacht.length}</span>
-                </div>
-                <div className="flex flex-wrap gap-1.5 mt-3">
-                  {yacht.features.slice(0, 3).map((f) => (
-                    <span key={f} className="text-xs bg-bg-body text-[var(--text)] px-2.5 py-0.5 rounded-full">{f}</span>
-                  ))}
+              <div className="p-4">
+                <h3 className="font-bold text-heading text-sm group-hover:text-gold transition-colors">{y.name}</h3>
+                <div className="flex items-center gap-3 mt-1.5 text-muted text-xs">
+                  <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{y.capacity}</span>
+                  <span className="flex items-center gap-1"><Ruler className="w-3.5 h-3.5" />{y.length}</span>
                 </div>
               </div>
             </Link>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <Link href="/fleet" className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-semibold transition-colors text-lg">
-            Explore Full Fleet <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
+        <div className="text-center mt-8"><Link href="/fleet" className="text-primary hover:text-gold font-semibold inline-flex items-center gap-1 transition-colors">View Fleet <ArrowRight className="w-4 h-4" /></Link></div>
       </div>
     </section>
   );

@@ -23,12 +23,12 @@ export default function FleetPage() {
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">Filomuz</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white">Filomuz</h1>
           <p className="text-white/70 text-lg mt-4">Modern, güvenli ve konforlu yatlarımız</p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section">
         <div className="max-w-[1290px] mx-auto space-y-12">
           {fleet.map((yacht, i) => (
             <div
@@ -42,16 +42,16 @@ export default function FleetPage() {
                 </div>
               </div>
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <h2 className="font-heading text-3xl font-bold text-heading">{yacht.name}</h2>
+                <h2 className="text-3xl font-bold text-heading">{yacht.name}</h2>
                 <p className="text-gray-600 mt-4 leading-relaxed">{yacht.description}</p>
 
                 <div className="flex gap-6 mt-6">
                   <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-accent" />
+                    <Users className="w-5 h-5 text-gold" />
                     <span className="text-heading font-semibold">{yacht.capacity} Kişi</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Ruler className="w-5 h-5 text-accent" />
+                    <Ruler className="w-5 h-5 text-gold" />
                     <span className="text-heading font-semibold">{yacht.length}</span>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ export default function FleetPage() {
                   <div className="grid grid-cols-2 gap-2">
                     {yacht.features.map((f) => (
                       <div key={f} className="flex items-center gap-2">
-                        <Check className="w-4 h-4 text-success" />
+                        <Check className="w-4 h-4 text-green-500" />
                         <span className="text-gray-600 text-sm">{f}</span>
                       </div>
                     ))}
