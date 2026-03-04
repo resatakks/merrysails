@@ -1,0 +1,218 @@
+export interface Tour {
+  id: string;
+  slug: string;
+  name: string;
+  nameEn: string;
+  description: string;
+  descriptionEn: string;
+  longDescription: string;
+  duration: string;
+  capacity: string;
+  priceEur: number;
+  priceTry: number;
+  includes: string[];
+  highlights: string[];
+  badge: string;
+  badgeColor: string;
+  image: string;
+  gallery: string[];
+  route: string;
+  departureTime: string;
+  departurePoint: string;
+  category: "cruise" | "private" | "event" | "tour";
+}
+
+export const tours: Tour[] = [
+  {
+    id: "1",
+    slug: "sunset-cruise",
+    name: "Boğaz Gün Batımı Turu",
+    nameEn: "Bosphorus Sunset Cruise",
+    description: "İstanbul Boğazı'nda unutulmaz bir gün batımı deneyimi yaşayın. Altın sarısı ışıklarla boyanmış tarihi yarımadayı seyredin.",
+    descriptionEn: "Experience an unforgettable sunset on the Bosphorus. Watch the historic peninsula bathed in golden light.",
+    longDescription: "İstanbul Boğazı'nın en büyüleyici anı olan gün batımında, profesyonel ekibimiz eşliğinde unutulmaz bir yolculuğa çıkın. Eminönü'nden hareket eden turumuz sizi Kız Kulesi, Dolmabahçe Sarayı, Ortaköy Camii, Rumeli Hisarı ve Fatih Sultan Mehmet Köprüsü gibi İstanbul'un en ikonik noktalarından geçirir. Güneş Boğaz'ın sularında batarken, eşsiz manzaranın tadını çıkarırken kanape ve meşrubat servisiyle ağırlanacaksınız.",
+    duration: "2.5 saat",
+    capacity: "Max 40 kişi",
+    priceEur: 35,
+    priceTry: 1400,
+    includes: ["Kanape tabağı", "Meşrubat (sınırsız çay/kahve)", "Profesyonel rehber", "Canlı müzik", "WiFi"],
+    highlights: ["Kız Kulesi", "Dolmabahçe Sarayı", "Ortaköy Camii", "Rumeli Hisarı", "Boğaz Köprüleri"],
+    badge: "En Popüler",
+    badgeColor: "bg-sunset text-white",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
+    gallery: [],
+    route: "Eminönü → Kız Kulesi → Dolmabahçe → Ortaköy → Rumeli Hisarı → Dönüş",
+    departureTime: "17:00 / 18:00 (Mevsime göre)",
+    departurePoint: "Eminönü İskelesi",
+    category: "cruise",
+  },
+  {
+    id: "2",
+    slug: "dinner-cruise",
+    name: "Yemekli Akşam Turu",
+    nameEn: "Dinner Cruise",
+    description: "Boğaz'ın ışıltılı gecesinde 4 çeşit yemek, canlı müzik ve oryantal show eşliğinde muhteşem bir akşam.",
+    descriptionEn: "A magnificent evening with a 4-course dinner, live music, and oriental show on the glittering Bosphorus.",
+    longDescription: "İstanbul'un büyüleyici gece manzarası eşliğinde, şefimizin özenle hazırladığı 4 çeşit Türk mutfağı menüsünün tadını çıkarın. Canlı fasıl müziği ve oryantal dans gösterisi ile zenginleşen bu akşam, Boğaz'ın iki yakasındaki ışıltılı silueti seyretmenize eşlik edecek. Alkollü ve alkolsüz içecek paketleri mevcuttur.",
+    duration: "3.5 saat",
+    capacity: "Max 50 kişi",
+    priceEur: 65,
+    priceTry: 2600,
+    includes: ["4 çeşit yemek", "Sınırsız meşrubat", "Canlı fasıl müziği", "Oryantal show", "Transfer (opsiyonel)"],
+    highlights: ["4 çeşit Türk mutfağı", "Canlı fasıl", "Oryantal dans", "Işıltılı Boğaz manzarası", "VIP masa seçeneği"],
+    badge: "Çok Talep",
+    badgeColor: "bg-gold text-deep-navy",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
+    gallery: [],
+    route: "Eminönü → Kız Kulesi → Boğaz Turu → Dönüş",
+    departureTime: "20:00",
+    departurePoint: "Eminönü İskelesi",
+    category: "cruise",
+  },
+  {
+    id: "3",
+    slug: "bosphorus-sightseeing",
+    name: "Boğaz Keşif Turu",
+    nameEn: "Bosphorus Sightseeing Tour",
+    description: "Kısa sürede Boğaz'ın en güzel noktalarını keşfedin. Ekonomik ve keyifli bir tur deneyimi.",
+    descriptionEn: "Discover the most beautiful spots of the Bosphorus in a short time. An affordable and enjoyable tour.",
+    longDescription: "Zamanı kısıtlı olanlar için ideal olan Boğaz Keşif Turu, 1.5 saatlik kompakt rotasıyla İstanbul'un en önemli tarihi yapılarını görmenizi sağlar. Sesli rehberlik sistemi ile 12 dilde bilgi alabilirsiniz.",
+    duration: "1.5 saat",
+    capacity: "Max 30 kişi",
+    priceEur: 25,
+    priceTry: 1000,
+    includes: ["Meşrubat", "Sesli rehber (12 dil)", "WiFi", "Fotoğraf noktaları"],
+    highlights: ["Kız Kulesi", "Topkapı Sarayı panoraması", "Dolmabahçe Sarayı", "Ortaköy Camii"],
+    badge: "Ekonomik",
+    badgeColor: "bg-success text-white",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
+    gallery: [],
+    route: "Eminönü → Kız Kulesi → Dolmabahçe → Ortaköy → Dönüş",
+    departureTime: "10:00 / 14:00 / 16:00",
+    departurePoint: "Eminönü İskelesi",
+    category: "cruise",
+  },
+  {
+    id: "4",
+    slug: "breakfast-cruise",
+    name: "Sabah Kahvaltı Turu",
+    nameEn: "Morning Breakfast Cruise",
+    description: "Boğaz'ın sabah huzurunda açık büfe Türk kahvaltısı ile güne başlayın.",
+    descriptionEn: "Start your day with an open buffet Turkish breakfast in the serene morning of the Bosphorus.",
+    longDescription: "Güneşin Boğaz'ın sularında yükselişini izlerken, zengin açık büfe Türk kahvaltısının tadını çıkarın. Taze pişmiş simit, bal, kaymak, peynir çeşitleri ve daha fazlası sizi bekliyor.",
+    duration: "2 saat",
+    capacity: "Max 35 kişi",
+    priceEur: 45,
+    priceTry: 1800,
+    includes: ["Açık büfe kahvaltı", "Sınırsız çay/kahve", "Profesyonel rehber", "Müzik"],
+    highlights: ["Açık büfe Türk kahvaltısı", "Sabah Boğaz manzarası", "Huzurlu atmosfer", "Fotoğraf fırsatları"],
+    badge: "Yeni",
+    badgeColor: "bg-ocean-blue text-white",
+    image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&q=80",
+    gallery: [],
+    route: "Kabataş → Boğaz Turu → Kanlıca → Dönüş",
+    departureTime: "09:00",
+    departurePoint: "Kabataş İskelesi",
+    category: "cruise",
+  },
+  {
+    id: "5",
+    slug: "private-yacht",
+    name: "Özel Yat Kiralama",
+    nameEn: "Private Yacht Charter",
+    description: "Tamamen size özel lüks yat deneyimi. Kendi programınızı oluşturun, özel şef ve müzik.",
+    descriptionEn: "A fully private luxury yacht experience. Create your own program with a private chef and music.",
+    longDescription: "MerrySails'in lüks yat filosundan size özel bir tekne ile Boğaz'da rüya gibi bir gün geçirin. Özel şefiniz sizin için hazırladığı menüyü sunarken, DJ veya canlı müzik eşliğinde İstanbul'un en güzel noktalarını keşfedin. Evlilik teklifi, doğum günü veya kurumsal etkinlikleriniz için ideal.",
+    duration: "3-8 saat",
+    capacity: "Max 12 kişi",
+    priceEur: 500,
+    priceTry: 20000,
+    includes: ["Özel şef menüsü", "Premium içecekler", "Dekorasyon", "Müzik sistemi", "Kaptan & mürettebat"],
+    highlights: ["Tamamen özel", "Özel şef", "Lüks dekorasyon", "Esnek program", "VIP hizmet"],
+    badge: "Premium",
+    badgeColor: "bg-gold text-deep-navy",
+    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80",
+    gallery: [],
+    route: "İsteğe bağlı özel rota",
+    departureTime: "İsteğe bağlı",
+    departurePoint: "Kuruçeşme Marina",
+    category: "private",
+  },
+  {
+    id: "6",
+    slug: "vip-dinner-cruise",
+    name: "VIP Dinner Cruise",
+    nameEn: "VIP Dinner Cruise",
+    description: "Sınırlı kontenjan, 5 çeşit fine-dining menü, limitsiz premium içkiler ve özel performans.",
+    descriptionEn: "Limited capacity, 5-course fine-dining menu, unlimited premium drinks, and exclusive performance.",
+    longDescription: "En seçici damaklar için tasarlanmış VIP Dinner Cruise, sadece 20 misafirle sınırlıdır. Ödüllü şefimizin hazırladığı 5 çeşit fine-dining menü, premium şarap ve kokteyl eşlikleri ile sunulur. Özel canlı performans ve kişiye özel hizmet ile Boğaz'da unutulmaz bir gece yaşayın.",
+    duration: "4 saat",
+    capacity: "Max 20 kişi",
+    priceEur: 120,
+    priceTry: 4800,
+    includes: ["5 çeşit fine-dining menü", "Premium içkiler (limitsiz)", "Canlı performans", "Kişiye özel hizmet", "Transfer dahil"],
+    highlights: ["Fine-dining deneyimi", "Limitsiz premium içki", "Özel performans", "Sadece 20 kişi", "VIP transfer"],
+    badge: "VIP",
+    badgeColor: "bg-deep-navy text-gold",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+    gallery: [],
+    route: "Kuruçeşme → Boğaz Tam Tur → Dönüş",
+    departureTime: "19:30",
+    departurePoint: "Kuruçeşme Marina",
+    category: "cruise",
+  },
+  {
+    id: "7",
+    slug: "princes-islands",
+    name: "Adalar Turu",
+    nameEn: "Princes' Islands Tour",
+    description: "Büyükada ve Heybeliada'yı keşfedin. Öğle yemeği, ada turu ve bisiklet dahil.",
+    descriptionEn: "Explore Büyükada and Heybeliada. Lunch, island tour, and bicycle included.",
+    longDescription: "İstanbul'un saklı cennetleri Prens Adaları'nı keşfedin. Büyükada'da tarihi Rum Yetimhanesi, Aya Yorgi Kilisesi ve nostaljik sokakları gezin. Heybeliada'da bisiklet turuna çıkın. Yerel bir restoranda ada mutfağından öğle yemeğinin tadını çıkarın.",
+    duration: "6 saat",
+    capacity: "Max 40 kişi",
+    priceEur: 80,
+    priceTry: 3200,
+    includes: ["Öğle yemeği", "Ada rehberi", "Bisiklet (Heybeliada)", "Meşrubat", "WiFi"],
+    highlights: ["Büyükada keşfi", "Heybeliada bisiklet turu", "Tarihi yapılar", "Ada mutfağı", "Deniz keyfi"],
+    badge: "Gün Boyu",
+    badgeColor: "bg-ocean-blue text-white",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
+    gallery: [],
+    route: "Kabataş → Büyükada → Heybeliada → Dönüş",
+    departureTime: "09:30",
+    departurePoint: "Kabataş İskelesi",
+    category: "tour",
+  },
+  {
+    id: "8",
+    slug: "proposal-package",
+    name: "Evlilik Teklifi Paketi",
+    nameEn: "Proposal Package",
+    description: "Hayatınızın en özel anını Boğaz'da yaşayın. Dekor, çiçek, pasta, fotoğrafçı dahil.",
+    descriptionEn: "Experience the most special moment of your life on the Bosphorus. Decoration, flowers, cake, photographer included.",
+    longDescription: "Hayatınızın en önemli sorusunu İstanbul Boğazı'nın büyüleyici atmosferinde sorun. Profesyonel dekoratörlerimiz tekneyi çiçekler, mumlar ve balonlarla süslerken, fotoğrafçımız bu anı ölümsüzleştirir. Özel pasta, şampanya ve romantik müzik eşliğinde unutulmaz bir akşam.",
+    duration: "2 saat",
+    capacity: "2-6 kişi",
+    priceEur: 350,
+    priceTry: 14000,
+    includes: ["Romantik dekorasyon", "Çiçek aranjmanı", "Özel pasta", "Profesyonel fotoğrafçı", "Şampanya & müzik"],
+    highlights: ["Romantik dekorasyon", "Profesyonel fotoğrafçı", "Özel pasta & şampanya", "Kişiye özel müzik", "Gün batımı zamanlaması"],
+    badge: "Romantik",
+    badgeColor: "bg-sunset text-white",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    gallery: [],
+    route: "Özel romantik rota (Kız Kulesi çevresi)",
+    departureTime: "Gün batımına göre ayarlanır",
+    departurePoint: "Kuruçeşme Marina",
+    category: "event",
+  },
+];
+
+export function getTourBySlug(slug: string): Tour | undefined {
+  return tours.find((t) => t.slug === slug);
+}
+
+export function getToursByCategory(category: Tour["category"]): Tour[] {
+  return tours.filter((t) => t.category === category);
+}
