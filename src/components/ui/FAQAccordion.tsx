@@ -16,9 +16,9 @@ export default function FAQAccordion({ question, answer }: FAQAccordionProps) {
     <div className="border border-gray-200 rounded-xl overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-cream transition-colors"
+        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-bg-secondary transition-colors"
       >
-        <span className="font-semibold text-deep-navy pr-4">{question}</span>
+        <span className="font-semibold text-heading pr-4">{question}</span>
         <ChevronDown
           className={cn(
             "w-5 h-5 text-gray-400 shrink-0 transition-transform",

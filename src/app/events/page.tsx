@@ -57,7 +57,7 @@ export default function EventsPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-deep-navy/70" />
+        <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">Özel Organizasyonlar</h1>
           <p className="text-white/70 text-lg mt-4">Hayalinizdeki etkinliği Boğaz&apos;da gerçeğe dönüştürün</p>
@@ -65,7 +65,7 @@ export default function EventsPage() {
       </section>
 
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto space-y-8">
+        <div className="max-w-[1290px] mx-auto space-y-8">
           {events.map((event, i) => (
             <div
               key={event.title}
@@ -76,16 +76,16 @@ export default function EventsPage() {
               </div>
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-sunset/10 rounded-xl flex items-center justify-center">
-                    <event.icon className="w-6 h-6 text-sunset" />
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                    <event.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h2 className="font-heading text-2xl font-bold text-deep-navy">{event.title}</h2>
+                  <h2 className="font-heading text-2xl font-bold text-heading">{event.title}</h2>
                 </div>
                 <p className="text-gray-600 leading-relaxed">{event.description}</p>
-                <p className="text-gold font-bold font-mono text-lg mt-4">{event.price}</p>
+                <p className="text-secondary font-bold font-bold text-lg mt-4">{event.price}</p>
                 <div className="flex gap-3 mt-6">
                   <Button href="/contact" size="md">Teklif İsteyin</Button>
-                  <Button href="https://wa.me/905321234567" variant="gold" size="md">
+                  <Button href="https://wa.me/905321234567" variant="whatsapp" size="md">
                     WhatsApp
                   </Button>
                 </div>

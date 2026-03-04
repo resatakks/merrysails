@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Menu, X, Phone, ChevronDown, Anchor } from "lucide-react";
 
 const navigation = [
   { name: "Ana Sayfa", href: "/" },
@@ -30,71 +29,67 @@ const navigation = [
   },
   { name: "Filomuz", href: "/fleet" },
   { name: "Galeri", href: "/gallery" },
-  { name: "Blog", href: "/blog" },
   { name: "Hakkımızda", href: "/about" },
   { name: "İletişim", href: "/contact" },
 ];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-deep-navy/95 backdrop-blur-md shadow-lg py-2"
-          : "bg-transparent py-4"
-      )}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-primary/95 backdrop-blur-md shadow-lg py-3"
+          : "bg-transparent py-5"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1290px] mx-auto px-5">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center text-deep-navy font-bold text-lg group-hover:bg-gold-light transition-colors">
-              M
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 bg-secondary rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
+              <Anchor className="w-5 h-5 text-primary" />
             </div>
-            <div>
+            <div className="leading-tight">
               <span className="text-white font-heading text-xl font-bold tracking-wide">
-                Merry<span className="text-gold">Sails</span>
+                Merry<span className="text-secondary">Sails</span>
               </span>
-              <p className="text-white/50 text-[10px] leading-none -mt-0.5">
-                by Merry Tourism
+              <p className="text-white/40 text-[10px] tracking-wider uppercase">
+                Merry Tourism
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navigation.map((item) => (
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.children && setOpenDropdown(item.name)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => item.children && setActiveDropdown(item.name)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
                   href={item.href}
-                  className="px-3 py-2 text-sm text-white/80 hover:text-gold transition-colors flex items-center gap-1"
+                  className="px-3.5 py-2 text-[14px] font-medium text-white/80 hover:text-secondary transition-colors flex items-center gap-1 rounded-lg"
                 >
                   {item.name}
-                  {item.children && <ChevronDown className="w-3 h-3" />}
+                  {item.children && <ChevronDown className="w-3.5 h-3.5 opacity-50" />}
                 </Link>
-                {item.children && openDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-deep-navy/95 backdrop-blur-md rounded-lg shadow-xl border border-white/10 py-2">
+                {item.children && activeDropdown === item.name && (
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 animate-fade-in">
                     {item.children.map((child) => (
                       <Link
                         key={child.name}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-white/70 hover:text-gold hover:bg-white/5 transition-colors"
+                        className="block px-4 py-2.5 text-[14px] text-gray-600 hover:text-accent hover:bg-bg-secondary transition-colors"
                       >
                         {child.name}
                       </Link>
@@ -105,55 +100,49 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA + Phone */}
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+905321234567"
-              className="text-white/70 hover:text-gold transition-colors flex items-center gap-1.5 text-sm"
+              className="text-white/70 hover:text-white transition-colors flex items-center gap-1.5 text-sm"
             >
               <Phone className="w-4 h-4" />
-              <span>+90 532 123 45 67</span>
+              +90 532 123 45 67
             </a>
-            <Link
-              href="/booking"
-              className="bg-sunset hover:bg-sunset-light text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:shadow-lg hover:shadow-sunset/25"
-            >
-              Rezervasyon Yap
+            <Link href="/booking" className="bg-accent hover:bg-accent-hover text-white py-2.5 px-5 rounded-xl font-semibold text-[13px] transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2">
+              Book Now
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden text-white p-2"
-            aria-label="Menüyü aç"
+            aria-label="Menu"
           >
-            {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileOpen && (
-        <div className="lg:hidden bg-deep-navy/98 backdrop-blur-md border-t border-white/10 mt-2">
-          <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      {mobileOpen && (
+        <div className="lg:hidden bg-primary border-t border-white/10 mt-2 animate-fade-in">
+          <div className="max-w-[1290px] mx-auto px-5 py-5 space-y-1">
             {navigation.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  onClick={() => !item.children && setIsMobileOpen(false)}
-                  className="block px-3 py-2.5 text-white/80 hover:text-gold transition-colors text-base"
+                  onClick={() => !item.children && setMobileOpen(false)}
+                  className="block px-3 py-3 text-white/80 hover:text-secondary transition-colors text-[15px] font-medium"
                 >
                   {item.name}
                 </Link>
                 {item.children && (
-                  <div className="ml-4 space-y-1">
+                  <div className="ml-5 space-y-0.5 border-l border-white/10 pl-3">
                     {item.children.map((child) => (
                       <Link
                         key={child.name}
                         href={child.href}
-                        onClick={() => setIsMobileOpen(false)}
-                        className="block px-3 py-2 text-white/60 hover:text-gold transition-colors text-sm"
+                        onClick={() => setMobileOpen(false)}
+                        className="block py-2 text-white/50 hover:text-secondary transition-colors text-sm"
                       >
                         {child.name}
                       </Link>
@@ -163,17 +152,14 @@ export default function Header() {
               </div>
             ))}
             <div className="pt-4 border-t border-white/10 space-y-3">
-              <a
-                href="tel:+905321234567"
-                className="flex items-center gap-2 text-white/70 px-3 py-2"
-              >
+              <a href="tel:+905321234567" className="flex items-center gap-2 text-white/60 px-3 py-2 text-sm">
                 <Phone className="w-4 h-4" />
                 +90 532 123 45 67
               </a>
               <Link
                 href="/booking"
-                onClick={() => setIsMobileOpen(false)}
-                className="block bg-sunset hover:bg-sunset-light text-white text-center px-5 py-3 rounded-lg font-semibold transition-all"
+                onClick={() => setMobileOpen(false)}
+                className="block bg-accent text-white text-center py-3 rounded-xl font-semibold text-sm"
               >
                 Rezervasyon Yap
               </Link>

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, Users, MapPin, Calendar, Check, ArrowLeft, Star, Ship } from "lucide-react";
+import { Clock, Users, MapPin, Calendar, Check, ArrowLeft, Star, Ship, MessageCircle } from "lucide-react";
 import { tours, getTourBySlug } from "@/data/tours";
 import { formatPrice, formatPriceTRY } from "@/lib/utils";
-import Button from "@/components/ui/Button";
 import TourCard from "@/components/tours/TourCard";
 import { notFound } from "next/navigation";
 
@@ -12,228 +11,147 @@ export async function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const tour = getTourBySlug(slug);
-  if (!tour) return { title: "Tur Bulunamadı" };
+  if (!tour) return { title: "Tour Not Found" };
   return {
-    title: `${tour.name} — ${formatPrice(tour.priceEur)} | MerrySails`,
-    description: tour.description,
+    title: `${tour.nameEn} — ${formatPrice(tour.priceEur)}`,
+    description: tour.descriptionEn,
     openGraph: {
-      title: tour.name,
-      description: tour.description,
+      title: tour.nameEn,
+      description: tour.descriptionEn,
       images: [{ url: tour.image, width: 800, height: 600 }],
     },
   };
 }
 
-export default async function CruiseDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function CruiseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const tour = getTourBySlug(slug);
   if (!tour) notFound();
 
-  const relatedTours = tours.filter((t) => t.id !== tour.id).slice(0, 3);
+  const related = tours.filter((t) => t.id !== tour.id).slice(0, 4);
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-[50vh] md:h-[60vh]">
-        <Image
-          src={tour.image}
-          alt={tour.name}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/90 via-deep-navy/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
-          <div className="max-w-7xl mx-auto">
-            <Link
-              href="/cruises"
-              className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-4 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Tüm Turlar
+      <section className="relative h-[50vh] md:h-[55vh]">
+        <Image src={tour.image} alt={tour.name} fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+          <div className="max-w-[1290px] mx-auto">
+            <Link href="/cruises" className="inline-flex items-center gap-1 text-white/60 hover:text-white text-sm mb-4 transition-colors">
+              <ArrowLeft className="w-4 h-4" /> All Cruises
             </Link>
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div>
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${tour.badgeColor}`}>
-                  {tour.badge}
-                </span>
-                <h1 className="font-heading text-3xl md:text-5xl font-bold text-white">
-                  {tour.name}
-                </h1>
-                <p className="text-white/70 text-lg mt-2">{tour.nameEn}</p>
-              </div>
-              <div className="glass rounded-xl p-4 text-center">
-                <p className="text-white/60 text-xs uppercase tracking-wider">Fiyat (kişi başı)</p>
-                <p className="text-white font-mono font-bold text-3xl mt-1">
-                  {formatPrice(tour.priceEur)}
-                </p>
-                <p className="text-white/50 text-sm">{formatPriceTRY(tour.priceTry)}</p>
-              </div>
-            </div>
+            <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${tour.badgeColor}`}>
+              {tour.badge}
+            </span>
+            <h1 className="font-heading text-3xl md:text-5xl font-bold text-white">{tour.name}</h1>
+            <p className="text-white/60 text-lg mt-1">{tour.nameEn}</p>
           </div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Quick Info */}
+        <div className="max-w-[1290px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div className="lg:col-span-2 space-y-10">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { icon: Clock, label: "Süre", value: tour.duration },
-                  { icon: Users, label: "Kapasite", value: tour.capacity },
-                  { icon: Calendar, label: "Kalkış", value: tour.departureTime },
-                  { icon: MapPin, label: "Hareket", value: tour.departurePoint },
+                  { icon: Clock, label: "Duration", value: tour.duration },
+                  { icon: Users, label: "Capacity", value: tour.capacity },
+                  { icon: Calendar, label: "Departure", value: tour.departureTime },
+                  { icon: MapPin, label: "Location", value: tour.departurePoint },
                 ].map(({ icon: Icon, label, value }) => (
-                  <div key={label} className="bg-cream rounded-xl p-4 text-center">
-                    <Icon className="w-6 h-6 text-sunset mx-auto mb-2" />
-                    <p className="text-xs text-gray-400 uppercase tracking-wider">{label}</p>
-                    <p className="text-deep-navy font-semibold text-sm mt-1">{value}</p>
+                  <div key={label} className="bg-bg-secondary rounded-xl p-4 text-center">
+                    <Icon className="w-5 h-5 text-accent mx-auto mb-2" />
+                    <p className="text-xs text-muted uppercase tracking-wider">{label}</p>
+                    <p className="text-heading font-semibold text-sm mt-1">{value}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Description */}
               <div>
-                <h2 className="font-heading text-2xl font-bold text-deep-navy mb-4">
-                  Tur Hakkında
-                </h2>
+                <h2 className="font-heading text-2xl font-bold text-heading mb-4">About This Tour</h2>
                 <p className="text-gray-600 leading-relaxed">{tour.longDescription}</p>
               </div>
 
-              {/* Includes */}
               <div>
-                <h2 className="font-heading text-2xl font-bold text-deep-navy mb-4">
-                  Dahil Olanlar
-                </h2>
+                <h2 className="font-heading text-2xl font-bold text-heading mb-4">What&apos;s Included</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {tour.includes.map((item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <Check className="w-5 h-5 text-success shrink-0" />
-                      <span className="text-gray-600">{item}</span>
+                    <div key={item} className="flex items-center gap-2.5">
+                      <div className="w-5 h-5 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-success" />
+                      </div>
+                      <span className="text-gray-600 text-[15px]">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Highlights */}
               <div>
-                <h2 className="font-heading text-2xl font-bold text-deep-navy mb-4">
-                  Öne Çıkanlar
-                </h2>
+                <h2 className="font-heading text-2xl font-bold text-heading mb-4">Highlights</h2>
                 <div className="flex flex-wrap gap-2">
                   {tour.highlights.map((h) => (
-                    <span
-                      key={h}
-                      className="flex items-center gap-1 bg-cream text-ocean-blue px-3 py-1.5 rounded-full text-sm"
-                    >
-                      <Star className="w-3.5 h-3.5 text-gold" />
-                      {h}
+                    <span key={h} className="flex items-center gap-1.5 bg-bg-secondary text-primary px-4 py-2 rounded-full text-sm font-medium">
+                      <Star className="w-3.5 h-3.5 text-secondary" />{h}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Route */}
               <div>
-                <h2 className="font-heading text-2xl font-bold text-deep-navy mb-4">
-                  Rota
-                </h2>
-                <div className="bg-cream rounded-xl p-5 flex items-center gap-3">
-                  <Ship className="w-6 h-6 text-ocean-blue shrink-0" />
+                <h2 className="font-heading text-2xl font-bold text-heading mb-4">Route</h2>
+                <div className="bg-bg-secondary rounded-xl p-5 flex items-center gap-3">
+                  <Ship className="w-6 h-6 text-primary flex-shrink-0" />
                   <p className="text-gray-600">{tour.route}</p>
                 </div>
               </div>
             </div>
 
-            {/* Sidebar - Booking */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 space-y-5">
-                <h3 className="font-heading text-xl font-bold text-deep-navy">
-                  Rezervasyon Yap
-                </h3>
-
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">
-                    Tarih
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors"
-                  />
+              <div className="sticky top-24 bg-white border border-border rounded-2xl shadow-lg overflow-hidden">
+                <div className="price-box justify-center">
+                  <span className="currency">€</span>
+                  <span className="amount">{tour.priceEur}</span>
+                  <span className="per-person">/ person</span>
                 </div>
-
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">
-                    Kişi Sayısı
-                  </label>
-                  <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors appearance-none">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                      <option key={n} value={n}>
-                        {n} Kişi
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Birim fiyat</span>
-                    <span className="font-semibold">{formatPrice(tour.priceEur)}</span>
+                <div className="p-6 space-y-5">
+                  <p className="text-center text-muted text-sm">{formatPriceTRY(tour.priceTry)}</p>
+                  <div>
+                    <label className="text-sm font-semibold text-heading mb-1.5 block">Date</label>
+                    <input type="date" className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors" />
                   </div>
-                  <div className="flex justify-between text-sm mt-2">
-                    <span className="text-gray-500">2 kişi toplam</span>
-                    <span className="font-bold text-lg text-deep-navy">
-                      {formatPrice(tour.priceEur * 2)}
-                    </span>
+                  <div>
+                    <label className="text-sm font-semibold text-heading mb-1.5 block">Guests</label>
+                    <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors appearance-none">
+                      {[1,2,3,4,5,6,7,8,9,10].map((n) => <option key={n} value={n}>{n} {n === 1 ? "Guest" : "Guests"}</option>)}
+                    </select>
                   </div>
-                </div>
-
-                <Button href={`/booking?tour=${tour.slug}`} className="w-full" size="lg">
-                  Rezervasyon Yap
-                </Button>
-
-                <p className="text-xs text-gray-400 text-center">
-                  24 saat öncesine kadar ücretsiz iptal
-                </p>
-
-                <div className="border-t border-gray-100 pt-4">
+                  <Link href={`/booking?tour=${tour.slug}`} className="block bg-accent hover:bg-accent-hover text-white text-center py-3.5 rounded-xl font-semibold transition-all shadow-md">
+                    Book Now
+                  </Link>
+                  <p className="text-xs text-muted text-center">Free cancellation up to 24 hours before</p>
+                  <hr className="border-border" />
                   <a
                     href="https://wa.me/905321234567"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold text-sm transition-colors"
+                    className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-[#20BD5A] text-white py-3 rounded-xl font-semibold text-sm transition-all"
                   >
-                    WhatsApp ile Sorun
+                    <MessageCircle className="w-4 h-4" />
+                    Ask via WhatsApp
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Related Tours */}
-          <div className="mt-16">
-            <h2 className="font-heading text-3xl font-bold text-deep-navy mb-8">
-              Benzer Turlar
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedTours.map((t) => (
-                <TourCard key={t.id} tour={t} />
-              ))}
+          <div className="mt-20">
+            <h2 className="font-heading text-3xl font-bold text-heading mb-8">Similar Cruises</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {related.map((t) => <TourCard key={t.id} tour={t} />)}
             </div>
           </div>
         </div>

@@ -1,42 +1,27 @@
-import { cn } from "@/lib/utils";
-
 interface SectionHeadingProps {
+  label?: string;
   title: string;
   subtitle?: string;
-  centered?: boolean;
   light?: boolean;
-  className?: string;
+  center?: boolean;
 }
 
-export default function SectionHeading({
-  title,
-  subtitle,
-  centered = true,
-  light = false,
-  className,
-}: SectionHeadingProps) {
+export default function SectionHeading({ label, title, subtitle, light, center = true }: SectionHeadingProps) {
   return (
-    <div className={cn(centered && "text-center", "mb-12", className)}>
-      <h2
-        className={cn(
-          "font-heading text-3xl md:text-4xl lg:text-5xl font-bold",
-          light ? "text-white" : "text-deep-navy"
-        )}
-      >
+    <div className={`mb-12 ${center ? "text-center" : ""}`}>
+      {label && (
+        <p className={`font-medium tracking-[0.15em] uppercase text-sm mb-3 ${light ? "text-secondary" : "text-secondary"}`}>
+          {label}
+        </p>
+      )}
+      <h2 className={`font-heading text-3xl md:text-4xl font-bold ${light ? "text-white" : "text-heading"}`}>
         {title}
       </h2>
       {subtitle && (
-        <p
-          className={cn(
-            "mt-4 text-lg max-w-2xl",
-            centered && "mx-auto",
-            light ? "text-white/70" : "text-gray-500"
-          )}
-        >
+        <p className={`mt-4 max-w-xl ${center ? "mx-auto" : ""} ${light ? "text-white/50" : "text-muted"}`}>
           {subtitle}
         </p>
       )}
-      <div className={cn("mt-4 h-1 w-16 rounded-full bg-gold", centered && "mx-auto")} />
     </div>
   );
 }

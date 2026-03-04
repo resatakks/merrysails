@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MobileBookingBar from "@/components/layout/MobileBookingBar";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -10,7 +11,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
@@ -18,26 +19,28 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "MerrySails — İstanbul Boğazı Cruise & Tekne Turları",
+    default: "MerrySails — Istanbul Bosphorus Cruise & Boat Tours",
     template: "%s | MerrySails",
   },
   description:
-    "İstanbul Boğazı'nda unutulmaz cruise deneyimleri. Gün batımı turları, yemekli akşam cruise, özel yat kiralama ve organizasyonlar. TURSAB lisanslı, güvenilir hizmet.",
+    "Premium Bosphorus cruise experiences in Istanbul. Sunset cruises, dinner cruises, private yacht charter and special organizations. TURSAB licensed, trusted local operator.",
   keywords: [
-    "istanbul boğaz turu",
-    "bosphorus cruise",
+    "istanbul bosphorus cruise",
+    "bosphorus sunset cruise",
     "istanbul boat tour",
-    "sunset cruise istanbul",
     "dinner cruise istanbul",
+    "private yacht istanbul",
+    "istanbul boğaz turu",
     "yat kiralama istanbul",
   ],
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://merrysails.com",
+    alternateLocale: "en_US",
+    url: "https://merrysails.vercel.app",
     siteName: "MerrySails",
-    title: "MerrySails — İstanbul Boğazı Cruise & Tekne Turları",
-    description: "İstanbul Boğazı'nda unutulmaz cruise deneyimleri.",
+    title: "MerrySails — Istanbul Bosphorus Cruise & Boat Tours",
+    description: "Premium Bosphorus cruise experiences in Istanbul.",
   },
   robots: { index: true, follow: true },
 };
@@ -49,10 +52,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+      <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
+        <MobileBookingBar />
       </body>
     </html>
   );

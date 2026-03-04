@@ -27,7 +27,7 @@ export default function ContactPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-deep-navy/70" />
+        <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">İletişim</h1>
           <p className="text-white/70 text-lg mt-4">Sorularınız ve rezervasyonlarınız için bize ulaşın</p>
@@ -35,11 +35,11 @@ export default function ContactPage() {
       </section>
 
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1290px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="font-heading text-3xl font-bold text-deep-navy mb-6">Bize Yazın</h2>
+              <h2 className="font-heading text-3xl font-bold text-heading mb-6">Bize Yazın</h2>
               <form className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
                       placeholder="Adınız Soyadınız"
                     />
                   </div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
                       placeholder="ornek@email.com"
                     />
                   </div>
@@ -66,13 +66,13 @@ export default function ContactPage() {
                     <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Telefon</label>
                     <input
                       type="tel"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
                       placeholder="+90 5XX XXX XX XX"
                     />
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Konu</label>
-                    <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors appearance-none">
+                    <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors appearance-none">
                       <option value="">Konu Seçin</option>
                       <option value="reservation">Rezervasyon</option>
                       <option value="price">Fiyat Teklifi</option>
@@ -87,13 +87,13 @@ export default function ContactPage() {
                   <textarea
                     required
                     rows={5}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-sunset transition-colors resize-none"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors resize-none"
                     placeholder="Mesajınızı buraya yazın..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="bg-sunset hover:bg-sunset-light text-white px-8 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-sunset/25"
+                  className="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-accent/25"
                 >
                   Gönder
                 </button>
@@ -102,19 +102,19 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="font-heading text-3xl font-bold text-deep-navy mb-6">İletişim Bilgileri</h2>
+              <h2 className="font-heading text-3xl font-bold text-heading mb-6">İletişim Bilgileri</h2>
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <a
                     key={item.title}
                     href={item.href}
-                    className="flex items-start gap-4 bg-cream rounded-xl p-4 hover:bg-gray-100 transition-colors"
+                    className="flex items-start gap-4 bg-bg-secondary rounded-xl p-4 hover:bg-gray-100 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-sunset/10 rounded-xl flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-sunset" />
+                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                      <item.icon className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <p className="font-semibold text-deep-navy">{item.title}</p>
+                      <p className="font-semibold text-heading">{item.title}</p>
                       <p className="text-gray-500 text-sm">{item.value}</p>
                     </div>
                   </a>
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
               {/* Social */}
               <div className="mt-8">
-                <h3 className="font-heading text-xl font-bold text-deep-navy mb-4">Sosyal Medya</h3>
+                <h3 className="font-heading text-xl font-bold text-heading mb-4">Sosyal Medya</h3>
                 <div className="flex gap-3">
                   {[
                     { icon: Instagram, label: "Instagram" },
@@ -133,7 +133,7 @@ export default function ContactPage() {
                     <a
                       key={label}
                       href="#"
-                      className="w-12 h-12 bg-deep-navy hover:bg-ocean-blue rounded-xl flex items-center justify-center transition-colors"
+                      className="w-12 h-12 bg-primary hover:bg-primary-light rounded-xl flex items-center justify-center transition-colors"
                     >
                       <Icon className="w-5 h-5 text-white" />
                     </a>

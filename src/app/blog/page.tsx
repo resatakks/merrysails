@@ -70,7 +70,7 @@ export default function BlogPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-deep-navy/70" />
+        <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-white">Blog</h1>
           <p className="text-white/70 text-lg mt-4">İstanbul rehberleri, cruise ipuçları ve daha fazlası</p>
@@ -78,7 +78,7 @@ export default function BlogPage() {
       </section>
 
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1290px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (
               <Link
@@ -94,7 +94,7 @@ export default function BlogPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <span className="absolute top-4 left-4 bg-sunset text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
                     {post.category}
                   </span>
                 </div>
@@ -107,11 +107,11 @@ export default function BlogPage() {
                       year: "numeric",
                     })}
                   </div>
-                  <h2 className="font-heading text-lg font-bold text-deep-navy group-hover:text-sunset transition-colors">
+                  <h2 className="font-heading text-lg font-bold text-heading group-hover:text-accent transition-colors">
                     {post.title}
                   </h2>
                   <p className="text-gray-500 text-sm mt-2 line-clamp-2">{post.excerpt}</p>
-                  <span className="inline-flex items-center gap-1 text-sunset text-sm font-semibold mt-3 group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-accent text-sm font-semibold mt-3 group-hover:gap-2 transition-all">
                     Devamını Oku <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>

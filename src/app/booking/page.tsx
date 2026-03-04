@@ -46,7 +46,7 @@ function BookingContent() {
   return (
     <>
       {/* Header */}
-      <section className="bg-deep-navy pt-28 pb-12">
+      <section className="bg-primary pt-28 pb-12">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-8">
             Rezervasyon
@@ -61,7 +61,7 @@ function BookingContent() {
                     className={cn(
                       "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-colors",
                       currentStep >= step.id
-                        ? "bg-gold text-deep-navy"
+                        ? "bg-secondary text-heading"
                         : "bg-white/10 text-white/40"
                     )}
                   >
@@ -84,7 +84,7 @@ function BookingContent() {
                   <div
                     className={cn(
                       "w-8 md:w-16 h-0.5",
-                      currentStep > step.id ? "bg-gold" : "bg-white/10"
+                      currentStep > step.id ? "bg-secondary" : "bg-white/10"
                     )}
                   />
                 )}
@@ -94,12 +94,12 @@ function BookingContent() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-bg-secondary">
         <div className="max-w-4xl mx-auto">
           {/* Step 1: Tour Selection */}
           {currentStep === 1 && (
             <div>
-              <h2 className="font-heading text-2xl font-bold text-deep-navy mb-6">
+              <h2 className="font-heading text-2xl font-bold text-heading mb-6">
                 Tur ve Tarih Seçin
               </h2>
 
@@ -111,7 +111,7 @@ function BookingContent() {
                     className={cn(
                       "text-left p-4 rounded-xl border-2 transition-all",
                       selectedTour === tour.slug
-                        ? "border-sunset bg-white shadow-md"
+                        ? "border-accent bg-white shadow-md"
                         : "border-gray-200 bg-white hover:border-gray-300"
                     )}
                   >
@@ -126,9 +126,9 @@ function BookingContent() {
                         />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-deep-navy text-sm">{tour.name}</h3>
+                        <h3 className="font-semibold text-heading text-sm">{tour.name}</h3>
                         <p className="text-gray-400 text-xs mt-0.5">{tour.duration} · {tour.capacity}</p>
-                        <p className="text-sunset font-bold font-mono mt-1">{formatPrice(tour.priceEur)}</p>
+                        <p className="text-accent font-bold font-bold mt-1">{formatPrice(tour.priceEur)}</p>
                       </div>
                     </div>
                   </button>
@@ -142,7 +142,7 @@ function BookingContent() {
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                   />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ function BookingContent() {
                   <select
                     value={guests}
                     onChange={(e) => setGuests(parseInt(e.target.value))}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset appearance-none"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent appearance-none"
                   >
                     {Array.from({ length: 20 }, (_, i) => i + 1).map((n) => (
                       <option key={n} value={n}>{n} Kişi</option>
@@ -163,7 +163,7 @@ function BookingContent() {
                 <div className="bg-white rounded-xl p-5 border border-gray-200 mb-6">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-500">Toplam</span>
-                    <span className="text-2xl font-bold text-deep-navy font-mono">
+                    <span className="text-2xl font-bold text-heading font-bold">
                       {formatPrice(totalPrice)}
                     </span>
                   </div>
@@ -173,7 +173,7 @@ function BookingContent() {
               <button
                 onClick={() => selectedTour && date && setCurrentStep(2)}
                 disabled={!selectedTour || !date}
-                className="w-full bg-sunset hover:bg-sunset-light disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
+                className="w-full bg-accent hover:bg-accent-hover disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
               >
                 Devam Et <ArrowRight className="w-5 h-5" />
               </button>
@@ -183,7 +183,7 @@ function BookingContent() {
           {/* Step 2: Personal Info */}
           {currentStep === 2 && (
             <div>
-              <h2 className="font-heading text-2xl font-bold text-deep-navy mb-6">
+              <h2 className="font-heading text-2xl font-bold text-heading mb-6">
                 Kişisel Bilgiler
               </h2>
 
@@ -195,7 +195,7 @@ function BookingContent() {
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                       placeholder="Adınız Soyadınız"
                     />
                   </div>
@@ -205,7 +205,7 @@ function BookingContent() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                       placeholder="ornek@email.com"
                     />
                   </div>
@@ -217,7 +217,7 @@ function BookingContent() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                       placeholder="+90 5XX XXX XX XX"
                     />
                   </div>
@@ -227,7 +227,7 @@ function BookingContent() {
                       type="text"
                       value={formData.hotel}
                       onChange={(e) => setFormData({ ...formData, hotel: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                       placeholder="Otel adı (opsiyonel)"
                     />
                   </div>
@@ -237,7 +237,7 @@ function BookingContent() {
                   <textarea
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset resize-none"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent resize-none"
                     rows={3}
                     placeholder="Diyet, doğum günü pastası, vb."
                   />
@@ -247,7 +247,7 @@ function BookingContent() {
                     type="checkbox"
                     checked={formData.transfer}
                     onChange={(e) => setFormData({ ...formData, transfer: e.target.checked })}
-                    className="w-5 h-5 rounded accent-sunset"
+                    className="w-5 h-5 rounded accent-accent"
                   />
                   <span className="text-sm text-gray-600">Otel transferi istiyorum (+€10/kişi)</span>
                 </label>
@@ -263,7 +263,7 @@ function BookingContent() {
                 <button
                   onClick={() => formData.name && formData.email && formData.phone && setCurrentStep(3)}
                   disabled={!formData.name || !formData.email || !formData.phone}
-                  className="flex-1 bg-sunset hover:bg-sunset-light disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
+                  className="flex-1 bg-accent hover:bg-accent-hover disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
                 >
                   Ödemeye Geç <ArrowRight className="w-5 h-5" />
                 </button>
@@ -274,11 +274,11 @@ function BookingContent() {
           {/* Step 3: Payment */}
           {currentStep === 3 && (
             <div>
-              <h2 className="font-heading text-2xl font-bold text-deep-navy mb-6">Ödeme</h2>
+              <h2 className="font-heading text-2xl font-bold text-heading mb-6">Ödeme</h2>
 
               {/* Order Summary */}
               <div className="bg-white rounded-xl p-6 border border-gray-200 mb-6">
-                <h3 className="font-semibold text-deep-navy mb-4">Sipariş Özeti</h3>
+                <h3 className="font-semibold text-heading mb-4">Sipariş Özeti</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between"><span className="text-gray-500">Tur</span><span>{selectedTourData?.name}</span></div>
                   <div className="flex justify-between"><span className="text-gray-500">Tarih</span><span>{date}</span></div>
@@ -289,7 +289,7 @@ function BookingContent() {
                   )}
                   <div className="border-t pt-2 flex justify-between font-bold text-lg">
                     <span>Toplam</span>
-                    <span className="text-deep-navy font-mono">
+                    <span className="text-heading font-bold">
                       {formatPrice(totalPrice + (formData.transfer ? 10 * guests : 0))}
                     </span>
                   </div>
@@ -298,13 +298,13 @@ function BookingContent() {
 
               {/* Payment Form */}
               <div className="bg-white rounded-xl p-6 border border-gray-200 mb-6">
-                <h3 className="font-semibold text-deep-navy mb-4">Kart Bilgileri</h3>
+                <h3 className="font-semibold text-heading mb-4">Kart Bilgileri</h3>
                 <div className="space-y-4">
                   <div>
                     <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Kart Numarası</label>
                     <input
                       type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                       placeholder="1234 5678 9012 3456"
                     />
                   </div>
@@ -313,7 +313,7 @@ function BookingContent() {
                       <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Son Kullanma</label>
                       <input
                         type="text"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                         placeholder="AA/YY"
                       />
                     </div>
@@ -321,7 +321,7 @@ function BookingContent() {
                       <label className="text-sm font-semibold text-gray-700 mb-1.5 block">CVV</label>
                       <input
                         type="text"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-sunset"
+                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
                         placeholder="123"
                       />
                     </div>
@@ -342,7 +342,7 @@ function BookingContent() {
                 </button>
                 <button
                   onClick={() => setCurrentStep(4)}
-                  className="flex-1 bg-sunset hover:bg-sunset-light text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
+                  className="flex-1 bg-accent hover:bg-accent-hover text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
                 >
                   Ödemeyi Tamamla
                 </button>
@@ -356,14 +356,14 @@ function BookingContent() {
               <div className="w-20 h-20 bg-success rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-10 h-10 text-white" />
               </div>
-              <h2 className="font-heading text-3xl font-bold text-deep-navy mb-4">
+              <h2 className="font-heading text-3xl font-bold text-heading mb-4">
                 Rezervasyonunuz Onaylandı!
               </h2>
               <p className="text-gray-500 max-w-md mx-auto mb-2">
                 Rezervasyon detaylarınız <strong>{formData.email}</strong> adresine gönderildi.
               </p>
               <p className="text-gray-400 text-sm mb-8">
-                Rezervasyon No: <span className="font-mono font-bold text-deep-navy">MS-2026-{Math.random().toString(36).substring(2, 8).toUpperCase()}</span>
+                Rezervasyon No: <span className="font-bold font-bold text-heading">MS-2026-{Math.random().toString(36).substring(2, 8).toUpperCase()}</span>
               </p>
 
               <div className="bg-white rounded-xl p-6 border border-gray-200 max-w-md mx-auto text-left mb-8">
@@ -374,14 +374,14 @@ function BookingContent() {
                   <div className="flex justify-between"><span className="text-gray-500">Ad Soyad</span><span>{formData.name}</span></div>
                   <div className="border-t pt-2 flex justify-between font-bold">
                     <span>Toplam</span>
-                    <span className="font-mono">{formatPrice(totalPrice + (formData.transfer ? 10 * guests : 0))}</span>
+                    <span className="font-bold">{formatPrice(totalPrice + (formData.transfer ? 10 * guests : 0))}</span>
                   </div>
                 </div>
               </div>
 
               <button
                 onClick={() => router.push("/")}
-                className="bg-sunset hover:bg-sunset-light text-white px-8 py-3 rounded-xl font-semibold transition-colors"
+                className="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-xl font-semibold transition-colors"
               >
                 Ana Sayfaya Dön
               </button>

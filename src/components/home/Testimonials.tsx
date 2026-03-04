@@ -1,56 +1,41 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
   return (
     <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto">
-        <SectionHeading
-          title="Misafirlerimizden"
-          subtitle="MerrySails deneyimini yaşayan misafirlerimizin yorumları"
-        />
+      <div className="max-w-[1290px] mx-auto">
+        <div className="text-center mb-12">
+          <p className="text-secondary font-medium tracking-[0.15em] uppercase text-sm mb-3">Testimonials</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading">
+            What Our Guests Say
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((item, i) => (
-            <motion.div
+          {testimonials.map((item) => (
+            <div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-cream rounded-2xl p-6 relative"
+              className="bg-bg-secondary rounded-2xl p-7 relative border border-transparent hover:border-border transition-colors"
             >
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-gold/20" />
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-ocean-blue rounded-full flex items-center justify-center text-white font-bold text-sm">
+              <Quote className="absolute top-5 right-5 w-8 h-8 text-secondary/15" />
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
                   {item.avatar}
                 </div>
                 <div>
-                  <p className="font-semibold text-deep-navy">{item.name}</p>
-                  <p className="text-sm text-gray-400">{item.country}</p>
+                  <p className="font-semibold text-heading text-[15px]">{item.name}</p>
+                  <p className="text-sm text-muted">{item.country}</p>
                 </div>
               </div>
-
-              <div className="flex gap-0.5 mb-3">
+              <div className="flex gap-0.5 mb-4">
                 {Array.from({ length: item.rating }).map((_, j) => (
-                  <Star
-                    key={j}
-                    className="w-4 h-4 fill-gold text-gold"
-                  />
+                  <Star key={j} className="w-4 h-4 fill-secondary text-secondary" />
                 ))}
               </div>
-
-              <p className="text-gray-600 text-sm leading-relaxed">
-                &ldquo;{item.text}&rdquo;
-              </p>
-
-              <p className="text-xs text-gold font-semibold mt-4">{item.tour}</p>
-            </motion.div>
+              <p className="text-gray-600 text-[15px] leading-relaxed">&ldquo;{item.text}&rdquo;</p>
+              <p className="text-xs text-secondary font-semibold mt-5 uppercase tracking-wider">{item.tour}</p>
+            </div>
           ))}
         </div>
       </div>
