@@ -12,15 +12,16 @@ const features = [
 export default function WhyUs() {
   return (
     <section className="section-padding bg-primary relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-light/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-light/20 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3" />
 
       <div className="max-w-[1290px] mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <p className="text-secondary font-medium tracking-[0.15em] uppercase text-sm mb-3">Why Choose Us</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
-            Local Bosphorus Operator
+        <div className="text-center mb-14">
+          <p className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-3">Why Choose Us</p>
+          <h2 className="font-heading text-3xl md:text-[42px] font-bold text-white leading-tight">
+            Your Trusted Local Operator
           </h2>
-          <p className="text-white/50 mt-4 max-w-xl mx-auto">
+          <p className="text-white/45 mt-5 max-w-xl mx-auto text-[17px]">
             We plan every detail carefully to provide the best Bosphorus experience.
           </p>
         </div>
@@ -29,13 +30,13 @@ export default function WhyUs() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="bg-white/[0.06] border border-white/[0.08] rounded-2xl p-7 hover:bg-white/[0.1] transition-all duration-300 group"
+              className="bg-white/[0.05] border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.1] transition-all duration-300 group"
             >
-              <div className="w-14 h-14 bg-secondary/15 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/25 transition-colors">
+              <div className="w-14 h-14 bg-secondary/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary/25 transition-colors">
                 <f.icon className="w-7 h-7 text-secondary" />
               </div>
-              <h3 className="font-heading text-xl font-bold text-white mb-2">{f.title}</h3>
-              <p className="text-white/50 text-[15px] leading-relaxed">{f.desc}</p>
+              <h3 className="font-heading text-xl font-bold text-white mb-2.5">{f.title}</h3>
+              <p className="text-white/45 text-[15px] leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

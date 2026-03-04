@@ -5,21 +5,21 @@ import { fleet } from "@/data/fleet";
 
 export default function FleetShowcase() {
   return (
-    <section className="section-padding bg-bg-secondary">
+    <section className="section-padding bg-bg-white">
       <div className="max-w-[1290px] mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-secondary font-medium tracking-[0.15em] uppercase text-sm mb-3">Our Fleet</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading">
-            Modern & Comfortable Yachts
+        <div className="text-center mb-14">
+          <p className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-3">Our Fleet</p>
+          <h2 className="font-heading text-3xl md:text-[42px] font-bold text-heading leading-tight">
+            Modern &amp; Comfortable Yachts
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
           {fleet.map((yacht) => (
             <Link
               key={yacht.id}
               href="/fleet"
-              className="group block bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group block bg-bg-white rounded-2xl overflow-hidden border border-border hover:border-transparent hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative h-52 overflow-hidden">
                 <Image
@@ -29,7 +29,7 @@ export default function FleetShowcase() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="320px"
                 />
-                <div className="absolute bottom-3 left-3 bg-primary/80 backdrop-blur-sm rounded-lg px-3 py-1">
+                <div className="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-sm rounded-lg px-3 py-1">
                   <span className="text-white text-xs font-semibold">{yacht.type}</span>
                 </div>
               </div>
@@ -43,7 +43,7 @@ export default function FleetShowcase() {
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {yacht.features.slice(0, 3).map((f) => (
-                    <span key={f} className="text-xs bg-bg-secondary text-primary px-2.5 py-0.5 rounded-full">{f}</span>
+                    <span key={f} className="text-xs bg-bg-primary text-[var(--text)] px-2.5 py-0.5 rounded-full">{f}</span>
                   ))}
                 </div>
               </div>
@@ -51,8 +51,8 @@ export default function FleetShowcase() {
           ))}
         </div>
 
-        <div className="text-center mt-10">
-          <Link href="/fleet" className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-semibold transition-colors">
+        <div className="text-center mt-12">
+          <Link href="/fleet" className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-semibold transition-colors text-lg">
             Explore Full Fleet <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

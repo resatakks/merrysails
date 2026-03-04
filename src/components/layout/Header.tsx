@@ -89,7 +89,7 @@ export default function Header() {
                       <Link
                         key={child.name}
                         href={child.href}
-                        className="block px-4 py-2.5 text-[14px] text-gray-600 hover:text-accent hover:bg-bg-secondary transition-colors"
+                        className="block px-4 py-2.5 text-[14px] text-gray-600 hover:text-accent hover:bg-bg-primary transition-colors"
                       >
                         {child.name}
                       </Link>
@@ -108,7 +108,7 @@ export default function Header() {
               <Phone className="w-4 h-4" />
               +90 532 123 45 67
             </a>
-            <Link href="/booking" className="bg-accent hover:bg-accent-hover text-white py-2.5 px-5 rounded-xl font-semibold text-[13px] transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2">
+            <Link href="/booking" className="bg-accent hover:bg-accent-hover text-white py-2.5 px-6 rounded-full font-semibold text-[13px] transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2 hover:-translate-y-0.5">
               Book Now
             </Link>
           </div>
@@ -159,7 +159,7 @@ export default function Header() {
               <Link
                 href="/booking"
                 onClick={() => setMobileOpen(false)}
-                className="block bg-accent text-white text-center py-3 rounded-xl font-semibold text-sm"
+                className="block bg-accent text-white text-center py-3 rounded-full font-semibold text-sm"
               >
                 Rezervasyon Yap
               </Link>
