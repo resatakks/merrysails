@@ -3,107 +3,92 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, CreditCard, RotateCcw, Star } from "lucide-react";
+import { Shield, CreditCard, RotateCcw } from "lucide-react";
 
 const trustBadges = [
-  { icon: Shield, label: "TURSAB Lisanslı" },
-  { icon: Star, label: "4.9/5 — 1000+ Yorum" },
-  { icon: CreditCard, label: "Doğrudan Rezervasyon" },
-  { icon: RotateCcw, label: "Ücretsiz İptal" },
+  { icon: Shield, label: "Local Bosphorus Operator" },
+  { icon: CreditCard, label: "No Middlemen — Direct Booking" },
+  { icon: RotateCcw, label: "Free Cancellation" },
 ];
+
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+};
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
-        src="https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1920&q=85"
-        alt="İstanbul Boğazı manzarası"
+        src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=85"
+        alt="Bosphorus cruise in Istanbul"
         fill
         priority
         className="object-cover"
         sizes="100vw"
       />
 
-      {/* Dark gradient overlay */}
-      <div className="hero-gradient absolute inset-0 z-[1]" />
+      {/* Overlay */}
+      <div className="hero-bg absolute inset-0" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+      <motion.div
+        className="relative z-10 text-center max-w-3xl mx-auto px-4"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         {/* Promo Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6"
-        >
-          <span className="inline-flex items-center gap-2 rounded-full bg-gold/90 px-5 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-sm">
-            <span className="animate-pulse">✦</span>
-            Winter Special — 50% OFF
-            <span className="animate-pulse">✦</span>
+        <motion.div variants={fadeUp}>
+          <span className="inline-block bg-secondary/90 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6 animate-pulse">
+            ✨ Winter Special — €20 <s>€40</s>
           </span>
         </motion.div>
 
-        {/* Main Heading */}
+        {/* Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6"
+          variants={fadeUp}
+          className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-tight mb-4"
         >
-          İstanbul&apos;un Kalbinde Unutulmaz Deniz Deneyimleri
+          Bosphorus Cruise in Istanbul
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl mx-auto"
-        >
-          MerrySails ile Boğaz&apos;ın büyüsünü keşfedin. Gün batımı turlarından
-          özel yat organizasyonlarına, her anı özel kılıyoruz.
+        <motion.p variants={fadeUp} className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+          Operated by a trusted local company — book direct and enjoy the best price
         </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-        >
-          <Link href="/cruises" className="btn-cta">
-            Turları Keşfet
-          </Link>
-          <Link
-            href="/booking"
-            className="inline-flex items-center justify-center rounded-full border border-white px-8 py-3 text-white font-medium transition-all hover:bg-white hover:text-heading"
-          >
-            Hemen Rezervasyon Yap
+        {/* CTA */}
+        <motion.div variants={fadeUp}>
+          <Link href="/booking" className="btn-cta inline-block">
+            Book Now – €20
           </Link>
         </motion.div>
 
         {/* Trust Badges */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-          className="flex flex-wrap items-center justify-center gap-6"
+          variants={fadeUp}
+          className="flex flex-wrap items-center justify-center gap-6 mt-10"
         >
-          {trustBadges.map((badge) => (
-            <div
-              key={badge.label}
-              className="flex items-center gap-2 text-white/70 text-sm"
-            >
-              <badge.icon className="h-4 w-4 text-gold" />
-              <span>{badge.label}</span>
+          {trustBadges.map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-2 text-white/80 text-sm">
+              <Icon className="w-4 h-4 text-secondary" />
+              <span>{label}</span>
             </div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-[2]" />
+      {/* Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent" />
     </section>
   );
 }

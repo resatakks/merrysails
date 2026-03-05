@@ -1,45 +1,39 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileBookingBar from "@/components/layout/MobileBookingBar";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-heading",
-});
-
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "MerrySails — Istanbul Bosphorus Cruise & Boat Tours",
+  title: {
+    default: "MerrySails — Istanbul Bosphorus Cruise & Boat Tours",
+    template: "%s | MerrySails",
+  },
   description:
-    "Discover premium Bosphorus cruises and unforgettable boat tours in Istanbul. Sunset dinners, private yacht charters, and group tours along the iconic Istanbul strait.",
+    "Premium Bosphorus cruise experiences in Istanbul. Sunset cruises, dinner cruises, private yacht charter. TURSAB licensed, trusted local operator.",
   openGraph: {
     type: "website",
     locale: "tr_TR",
     url: "https://merrysails.vercel.app",
-    title: "MerrySails — Istanbul Bosphorus Cruise & Boat Tours",
-    description:
-      "Discover premium Bosphorus cruises and unforgettable boat tours in Istanbul. Sunset dinners, private yacht charters, and group tours along the iconic Istanbul strait.",
     siteName: "MerrySails",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+    <html lang="tr">
+      <body className={`${dmSans.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

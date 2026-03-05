@@ -2,195 +2,176 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "İletişim | MerrySails",
-  description:
-    "MerrySails ile iletişime geçin. İstanbul Boğazı yat kiralama, özel turlar ve organizasyonlar için bize ulaşın.",
+  title: "Contact",
 };
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    label: "Adres",
-    value: "Kuruçeşme Mah. Muallim Naci Cad. No:54, Beşiktaş / İstanbul",
-  },
-  {
-    icon: Phone,
-    label: "Telefon",
-    value: "+90 (212) 000 00 00",
-    href: "tel:+902120000000",
-  },
-  {
-    icon: Mail,
-    label: "E-posta",
-    value: "info@merrysails.com",
-    href: "mailto:info@merrysails.com",
-  },
-  {
-    icon: Clock,
-    label: "Çalışma Saatleri",
-    value: "Her gün 09:00 - 22:00",
-  },
-];
 
 export default function ContactPage() {
   return (
     <main>
       {/* Hero Banner */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#0A1628]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A5F]/50 to-[#0A1628]/90" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F1EB]">
-            İletişim
+      <section className="min-h-[40vh] bg-primary flex items-center justify-center text-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
+            Contact Us
           </h1>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-24 bg-[#F5F1EB]">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="section">
+        <div className="max-w-[1290px] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Left: Contact Info */}
-            <div>
-              <h2 className="font-heading text-3xl font-bold text-[#0A1628] mb-8">
-                Bize Ulaşın
-              </h2>
-              <div className="space-y-6 mb-10">
-                {contactInfo.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={item.label} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-5 h-5 text-[#C9A84C]" />
-                      </div>
-                      <div>
-                        <p className="font-heading font-semibold text-[#0A1628] mb-1">
-                          {item.label}
-                        </p>
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            className="text-[#0A1628]/70 hover:text-[#E8642C] transition-colors"
-                          >
-                            {item.value}
-                          </a>
-                        ) : (
-                          <p className="text-[#0A1628]/70">{item.value}</p>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold text-heading">Get in Touch</h2>
+              <p className="text-heading/70 text-lg">
+                Have a question or ready to book your Bosphorus experience?
+                Reach out to us through any of the channels below.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-heading mb-1">Address</h3>
+                    <p className="text-heading/70">
+                      Istanbul, Turkey
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-heading mb-1">Phone</h3>
+                    <p className="text-heading/70">
+                      <a href="tel:+905524638498" className="hover:text-primary transition-colors">
+                        +90 552 463 84 98
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-heading mb-1">Email</h3>
+                    <p className="text-heading/70">
+                      <a href="mailto:info@merrysails.com" className="hover:text-primary transition-colors">
+                        info@merrysails.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-heading mb-1">
+                      Working Hours
+                    </h3>
+                    <p className="text-heading/70">Mon - Sun: 09:00 - 17:00</p>
+                  </div>
+                </div>
               </div>
 
-              {/* WhatsApp Link */}
+              {/* WhatsApp Button */}
               <a
-                href="https://wa.me/902120000000"
+                href="https://wa.me/905524638498"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors"
+                className="btn-whatsapp inline-flex items-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp ile İletişime Geçin
+                Chat on WhatsApp
               </a>
             </div>
 
-            {/* Right: Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h2 className="font-heading text-2xl font-bold text-[#0A1628] mb-6">
-                Mesaj Gönderin
+            {/* Right: Form */}
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-heading mb-6">
+                Send us a Message
               </h2>
               <form className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-semibold text-[#0A1628] mb-2"
+                    className="block text-sm font-medium text-heading mb-1"
                   >
-                    Adınız Soyadınız
+                    Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
+                    placeholder="Your full name"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                     required
-                    className="w-full px-4 py-3 border border-[#0A1628]/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-colors bg-[#F5F1EB]/50"
-                    placeholder="Ad Soyad"
                   />
                 </div>
+
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold text-[#0A1628] mb-2"
+                    className="block text-sm font-medium text-heading mb-1"
                   >
-                    E-posta Adresiniz
+                    Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
+                    placeholder="your@email.com"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                     required
-                    className="w-full px-4 py-3 border border-[#0A1628]/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-colors bg-[#F5F1EB]/50"
-                    placeholder="ornek@email.com"
                   />
                 </div>
+
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-semibold text-[#0A1628] mb-2"
+                    className="block text-sm font-medium text-heading mb-1"
                   >
-                    Telefon Numaranız
+                    Phone
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="w-full px-4 py-3 border border-[#0A1628]/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-colors bg-[#F5F1EB]/50"
-                    placeholder="+90 (5XX) XXX XX XX"
+                    placeholder="+90 5XX XXX XX XX"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
                   />
                 </div>
+
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-[#0A1628] mb-2"
+                    className="block text-sm font-medium text-heading mb-1"
                   >
-                    Mesajınız
+                    Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
+                    placeholder="Tell us about your plans..."
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
                     required
-                    className="w-full px-4 py-3 border border-[#0A1628]/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-colors resize-none bg-[#F5F1EB]/50"
-                    placeholder="Mesajınızı buraya yazın..."
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="btn-cta w-full text-center justify-center"
-                >
-                  Mesaj Gönder
+
+                <button type="submit" className="btn-cta w-full">
+                  Send Message
                 </button>
               </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Placeholder */}
-      <section className="bg-[#1E3A5F]">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-          <h2 className="font-heading text-2xl font-bold text-[#F5F1EB] mb-8 text-center">
-            Konumumuz
-          </h2>
-          <div className="w-full h-[400px] rounded-2xl bg-[#0A1628]/50 flex items-center justify-center overflow-hidden">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 text-[#C9A84C] mx-auto mb-4" />
-              <p className="text-[#F5F1EB]/70 text-lg">
-                Kuruçeşme, Beşiktaş / İstanbul
-              </p>
-              <p className="text-[#F5F1EB]/50 text-sm mt-2">
-                Harita yakında eklenecektir
-              </p>
             </div>
           </div>
         </div>

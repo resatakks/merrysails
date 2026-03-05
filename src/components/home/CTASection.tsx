@@ -4,50 +4,53 @@ import { Phone, MessageCircle } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative min-h-[400px] w-full">
+    <section className="relative min-h-[400px] flex items-center overflow-hidden">
       {/* Background Image */}
       <Image
         src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=80"
-        alt="İstanbul Boğazı gece manzarası"
+        alt="Istanbul Bosphorus view"
         fill
         className="object-cover"
+        sizes="100vw"
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#0A1628]/80" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-dark/80" />
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-[400px] items-center justify-center px-4">
-        <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-            Hayalinizdeki Boğaz Turu İçin Hazır mısınız?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
-            Hemen rezervasyon yapın, unutulmaz anılar biriktirin
-          </p>
+      <div className="relative z-10 w-full text-center px-4 py-16">
+        <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
+          Ready for Your Dream Cruise?
+        </h2>
+        <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
+          Book now and create unforgettable memories on the Bosphorus
+        </p>
 
-          {/* Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/booking" className="btn-cta">
-              Hemen Rezervasyon Yap
-            </Link>
-            <Link
-              href="tel:+905321234567"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-            >
-              <Phone className="h-5 w-5" />
-              Bizi Arayın
-            </Link>
-            <Link
-              href="https://wa.me/905321234567"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp inline-flex items-center gap-2"
-            >
-              <MessageCircle className="h-5 w-5" />
-              WhatsApp
-            </Link>
-          </div>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {/* Book Now */}
+          <Link href="/booking" className="btn-cta inline-block">
+            Book Now
+          </Link>
+
+          {/* Call Us */}
+          <Link
+            href="tel:+905524638498"
+            className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-full transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Call Us
+          </Link>
+
+          {/* WhatsApp */}
+          <Link
+            href="https://wa.me/905524638498"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-whatsapp inline-flex items-center gap-2"
+          >
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp
+          </Link>
         </div>
       </div>
     </section>

@@ -1,329 +1,347 @@
 @import "tailwindcss";
 
-/* ─────────────────────────────────────────────
-   MerrySails Design System — Tailwind v4
-   ───────────────────────────────────────────── */
+/* ============================================
+   MerrySails Design System
+   Matching bosphorussunset.com palette
+   ============================================ */
 
 @theme inline {
-  /* ── Brand Colors ── */
-  --color-deep-navy: #0A1628;
-  --color-ocean-blue: #1E3A5F;
-  --color-gold-shimmer: #C9A84C;
-  --color-sunset-orange: #E8642C;
-  --color-pure-white: #FFFFFF;
-  --color-soft-cream: #F5F1EB;
-  --color-success-green: #22C55E;
+  --color-primary: #182987;
+  --color-primary-hover: #4d5287;
+  --color-secondary: #f7b52c;
+  --color-secondary-hover: #f7a400;
+  --color-heading: #111B19;
+  --color-text: #444444;
+  --color-text-light: #999999;
+  --color-border: #E6E6E6;
+  --color-bg: #F5F5F5;
+  --color-bg-alt: #F2FBFA;
+  --color-dark: #1A1A3D;
+  --color-white: #FFFFFF;
   --color-whatsapp: #25D366;
+  --color-price-box: #304058;
 
-  /* ── Text Colors ── */
-  --color-body: #555555;
-  --color-heading: #1A1A2E;
-  --color-muted: #8A8A8A;
-
-  /* ── Border ── */
-  --color-border: #E8E4DE;
-
-  /* ── Font Families ── */
-  --font-heading: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
-
-  /* ── Animations ── */
-  --animate-fade-up: fade-up 0.6s ease-out both;
-  --animate-fade-in: fade-in 0.6s ease-out both;
-  --animate-fade-up-delay-1: fade-up 0.6s ease-out 0.1s both;
-  --animate-fade-up-delay-2: fade-up 0.6s ease-out 0.2s both;
-  --animate-fade-up-delay-3: fade-up 0.6s ease-out 0.3s both;
-  --animate-fade-up-delay-4: fade-up 0.6s ease-out 0.4s both;
-  --animate-fade-in-delay-1: fade-in 0.6s ease-out 0.1s both;
-  --animate-fade-in-delay-2: fade-in 0.6s ease-out 0.2s both;
-  --animate-fade-in-delay-3: fade-in 0.6s ease-out 0.3s both;
-  --animate-fade-in-delay-4: fade-in 0.6s ease-out 0.4s both;
+  --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
-/* ─────────────────────────────────────────────
-   Keyframes
-   ───────────────────────────────────────────── */
+/* ============================================
+   CSS Variables (non-Tailwind)
+   ============================================ */
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:root {
+  --primary: #182987;
+  --primary-hover: #4d5287;
+  --secondary: #f7b52c;
+  --secondary-hover: #f7a400;
+  --cta-start: #ff4b2b;
+  --cta-end: #ff0844;
+  --heading: #111B19;
+  --text: #444444;
+  --text-light: #999999;
+  --border: #E6E6E6;
+  --bg: #F5F5F5;
+  --bg-alt: #F2FBFA;
+  --dark: #1A1A3D;
+  --white: #FFFFFF;
+  --whatsapp: #25D366;
+  --price-box: #304058;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* ─────────────────────────────────────────────
-   Base Styles
-   ───────────────────────────────────────────── */
+/* ============================================
+   Reset & Base
+   ============================================ */
 
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #F5F5F5;
+  color: #444444;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.63;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: var(--font-sans);
-  color: var(--color-body);
-  background-color: var(--color-pure-white);
-  line-height: 1.7;
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111B19;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  color: var(--color-heading);
-  line-height: 1.2;
+h1 {
+  font-size: 28px;
 }
 
-/* ─────────────────────────────────────────────
-   Glassmorphism
-   ───────────────────────────────────────────── */
-
-.glass {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+h2 {
+  font-size: 24px;
 }
 
-/* ─────────────────────────────────────────────
+h3 {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================
    Tour Card
-   ───────────────────────────────────────────── */
+   ============================================ */
 
 .tour-card {
   border-radius: 20px;
   overflow: hidden;
-  background: var(--color-pure-white);
-  border: 1px solid var(--color-border);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  background: #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .tour-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.tour-card-image {
-  overflow: hidden;
+.tour-card img {
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+              filter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.tour-card-image img {
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.tour-card:hover .tour-card-image img {
+.tour-card:hover img {
   transform: scale(1.1);
+  filter: brightness(0.85);
 }
 
-/* ─────────────────────────────────────────────
-   Hero Gradient Overlay
-   ───────────────────────────────────────────── */
+.tour-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
 
-.hero-gradient {
+.tour-card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tour-card:hover .content {
+  transform: translateY(-6px);
+}
+
+/* ============================================
+   Hero Background
+   ============================================ */
+
+.hero-bg {
   background: linear-gradient(
-    to bottom,
-    rgba(10, 22, 40, 0.55) 0%,
-    rgba(10, 22, 40, 0.30) 40%,
-    rgba(10, 22, 40, 0.60) 100%
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(26, 26, 61, 0.85) 100%
   );
 }
 
-/* ─────────────────────────────────────────────
-   CTA Button — Sunset Orange Gradient + Glow
-   ───────────────────────────────────────────── */
+/* ============================================
+   Buttons
+   ============================================ */
 
 .btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-pure-white);
-  background: linear-gradient(135deg, #E8642C, #D4541E);
-  border: none;
+  background: linear-gradient(135deg, #ff4b2b, #ff0844);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
   border-radius: 12px;
+  border: none;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 20px rgba(232, 100, 44, 0.35);
+  box-shadow: 0 4px 12px rgba(255, 8, 68, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(232, 100, 44, 0.50);
+  box-shadow: 0 8px 20px rgba(255, 8, 68, 0.4);
 }
-
-.btn-cta:active {
-  transform: translateY(0);
-}
-
-/* ─────────────────────────────────────────────
-   Primary Button — Deep Navy
-   ───────────────────────────────────────────── */
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
+  background-color: var(--primary);
+  color: #FFFFFF;
   font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-pure-white);
-  background-color: var(--color-deep-navy);
-  border: none;
+  font-size: 15px;
+  padding: 12px 24px;
   border-radius: 12px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.25s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-ocean-blue);
+  background-color: var(--primary-hover);
   transform: translateY(-2px);
 }
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* ─────────────────────────────────────────────
-   WhatsApp Button
-   ───────────────────────────────────────────── */
 
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-pure-white);
   background-color: #25D366;
-  border: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 12px 24px;
   border-radius: 12px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.25s ease;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.30);
+  transition: background-color 0.3s ease;
 }
 
 .btn-whatsapp:hover {
-  background-color: #1fb855;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+  background-color: #20BD5A;
 }
 
-.btn-whatsapp:active {
-  transform: translateY(0);
-}
-
-/* ─────────────────────────────────────────────
+/* ============================================
    Price Box
-   ───────────────────────────────────────────── */
+   ============================================ */
 
 .price-box {
-  background-color: var(--color-ocean-blue);
-  color: var(--color-pure-white);
-  border-radius: 16px;
-  padding: 1.5rem 2rem;
-  text-align: center;
+  background-color: var(--price-box, #304058);
+  color: #FFFFFF;
+  padding: 20px 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
 }
 
-.price-box .price-amount {
-  font-size: 48px;
+.price-box .currency {
+  font-size: 28px;
   font-weight: 700;
-  font-family: var(--font-heading);
+}
+
+.price-box .amount {
+  font-size: 48px;
+  font-weight: 800;
   line-height: 1;
 }
 
-/* ─────────────────────────────────────────────
-   Mobile Booking Bar (fixed bottom)
-   ───────────────────────────────────────────── */
+.price-box .suffix {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-left: 4px;
+}
 
-.mobile-booking-bar {
+/* ============================================
+   Mobile Booking Bar
+   ============================================ */
+
+.mobile-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  padding: 0.75rem 1rem;
-  background: rgba(10, 22, 40, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.08);
+  padding: 12px 16px;
 }
 
-/* ─────────────────────────────────────────────
-   Section Padding
-   ───────────────────────────────────────────── */
+/* ============================================
+   Section
+   ============================================ */
 
-.section-padding {
-  padding-top: 80px;
-  padding-bottom: 80px;
+.section {
+  padding: 80px 20px;
 }
 
 @media (min-width: 768px) {
-  .section-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  .section {
+    padding: 100px 24px;
   }
 }
 
-/* ─────────────────────────────────────────────
-   Featured Section Grid
-   ───────────────────────────────────────────── */
+/* ============================================
+   Featured Section
+   ============================================ */
 
-.featured-grid {
+.featured-section {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 1024px) {
-  .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .featured-section {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ─────────────────────────────────────────────
-   Spec Grid — 2col mobile, 4col desktop
-   ───────────────────────────────────────────── */
+.featured-section .feat-img {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.featured-section .feat-img img {
+  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.featured-section:hover .feat-img img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   Spec Grid
+   ============================================ */
 
 .spec-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 12px;
 }
 
 @media (min-width: 768px) {
@@ -332,65 +350,144 @@ h6 {
   }
 }
 
-/* ─────────────────────────────────────────────
-   Bento Grid Layout
-   ───────────────────────────────────────────── */
-
-.bento-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.spec-item {
+  background: #F5F5F5;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+.spec-item .label {
+  font-size: 12px;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spec-item .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111B19;
+  margin-top: 4px;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (min-width: 1024px) {
-  .bento-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(180px, auto);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .bento-grid .bento-wide {
-    grid-column: span 2;
-  }
-
-  .bento-grid .bento-tall {
-    grid-row: span 2;
-  }
-
-  .bento-grid .bento-large {
-    grid-column: span 2;
-    grid-row: span 2;
+  to {
+    opacity: 1;
   }
 }
 
-/* ─────────────────────────────────────────────
-   Custom Scrollbar
-   ───────────────────────────────────────────── */
+.fade-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-soft-cream);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-ocean-blue);
-  border-radius: 4px;
+  background: #cccccc;
+  border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-deep-navy);
+/* ============================================
+   Calendar Styles
+   ============================================ */
+
+.booking-calendar {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
 }
 
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-ocean-blue) var(--color-soft-cream);
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendar-day {
+  padding: 8px 4px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.calendar-day:hover {
+  background-color: #F5F5F5;
+}
+
+.calendar-day.selected {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.calendar-day.available {
+  position: relative;
+}
+
+.calendar-day .price {
+  font-size: 10px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.calendar-day.unavailable {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }

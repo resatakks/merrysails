@@ -1,205 +1,200 @@
 import Image from "next/image";
-import Link from "next/link";
-import { tours, getTourBySlug } from "@/data/tours";
 import { notFound } from "next/navigation";
-import { Clock, Users, MapPin, Check, Star, MessageCircle } from "lucide-react";
+import { tours, getTourBySlug } from "@/data/tours";
+import BookingCalendar from "@/components/booking/BookingCalendar";
+import { Check, X, MapPin, Clock, Users } from "lucide-react";
+import type { Metadata } from "next";
 
-export function generateStaticParams() {
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
   return tours.map((tour) => ({
     slug: tour.slug,
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const tour = getTourBySlug(params.slug);
-  if (!tour) return { title: "Tur Bulunamadı | MerrySails" };
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const tour = getTourBySlug(slug);
+  if (!tour) return { title: "Tour Not Found" };
 
   return {
-    title: `${tour.name} | MerrySails`,
-    description: tour.description,
+    title: tour.nameEn,
+    description: tour.descriptionEn,
   };
 }
 
-export default function TourDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const tour = getTourBySlug(params.slug);
+export default async function TourDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const tour = getTourBySlug(slug);
 
   if (!tour) {
     notFound();
   }
 
   return (
-    <section className="section-padding">
-      <div className="max-w-[1290px] mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Left Column */}
-          <div className="lg:col-span-7">
-            {/* Hero Image */}
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6">
-              <Image
-                src={tour.image}
-                alt={tour.nameEn}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 58vw"
-                priority
-              />
-            </div>
+    <main>
+      {/* Hero */}
+      <section className="relative min-h-[50vh] flex items-center justify-center">
+        <Image
+          src={tour.image}
+          alt={tour.nameEn}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-4">
+          <span className="inline-block bg-secondary text-heading text-sm font-semibold px-4 py-1 rounded-full mb-4">
+            {tour.category}
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
+            {tour.nameEn}
+          </h1>
+        </div>
+      </section>
 
-            {/* Badge */}
-            {tour.badge && (
-              <span
-                className={`inline-block rounded-full px-4 py-1.5 text-sm font-semibold mb-4 ${tour.badgeColor}`}
-              >
-                {tour.badge}
-              </span>
-            )}
+      {/* Two-Column Layout */}
+      <section className="section">
+        <div className="max-w-[1290px] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Quick Info */}
+              <div className="flex flex-wrap gap-6 text-text-light">
+                {tour.duration && (
+                  <span className="flex items-center gap-2">
+                    <Clock className="w-5 h-5" />
+                    {tour.duration}
+                  </span>
+                )}
+                {tour.capacity && (
+                  <span className="flex items-center gap-2">
+                    <Users className="w-5 h-5" />
+                    Up to {tour.capacity} guests
+                  </span>
+                )}
+                {tour.route && (
+                  <span className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5" />
+                    {tour.route}
+                  </span>
+                )}
+              </div>
 
-            {/* Tour Name */}
-            <h1 className="font-heading text-3xl md:text-4xl text-heading mb-2">
-              {tour.name}
-            </h1>
+              {/* Long Description */}
+              <div className="prose max-w-none">
+                <p className="text-lg leading-relaxed text-heading/80">
+                  {tour.longDescription || tour.descriptionEn}
+                </p>
+              </div>
 
-            {/* English Name */}
-            <h2 className="text-muted text-lg mb-6">{tour.nameEn}</h2>
-
-            {/* Long Description */}
-            <p className="text-body leading-relaxed mb-8">
-              {tour.longDescription}
-            </p>
-
-            {/* Route */}
-            <div className="mb-8">
-              <h3 className="font-heading text-xl text-heading mb-3">
-                Tur Güzergahı
-              </h3>
-              <p className="text-body">{tour.route}</p>
-            </div>
-
-            {/* Includes */}
-            <div className="mb-8">
-              <h3 className="font-heading text-xl text-heading mb-3">
-                Dahil Olanlar
-              </h3>
-              <ul className="space-y-2">
-                {tour.includes.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-body">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Highlights */}
-            <div className="mb-8">
-              <h3 className="font-heading text-xl text-heading mb-3">
-                Öne Çıkanlar
-              </h3>
-              <ul className="space-y-2">
-                {tour.highlights.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Star className="h-5 w-5 text-[#D4A853] flex-shrink-0" />
-                    <span className="text-body">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="lg:col-span-5">
-            <div className="sticky top-24">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                {/* Price Box Header */}
-                <div className="bg-[#1E3A5F] px-6 py-8 text-center">
-                  <div className="text-white/70 text-sm mb-1">Kişi başı</div>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-white text-lg">€</span>
-                    <span className="text-white font-heading text-5xl">
-                      {tour.priceEur}
-                    </span>
-                    <span className="text-white/70 text-sm">/kişi</span>
-                  </div>
+              {/* Highlights */}
+              {tour.highlights && tour.highlights.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-heading mb-4">
+                    Highlights
+                  </h2>
+                  <ul className="space-y-3">
+                    {tour.highlights.map((item: string, i: number) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-heading/80">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+              )}
 
-                {/* Spec Items */}
-                <div className="px-6 py-6 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-[#1E3A5F] flex-shrink-0" />
-                    <div>
-                      <div className="text-sm text-muted">Süre</div>
-                      <div className="text-heading font-medium">
-                        {tour.duration}
-                      </div>
-                    </div>
-                  </div>
+              {/* What's Included */}
+              {tour.includes && tour.includes.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-heading mb-4">
+                    What&apos;s Included
+                  </h2>
+                  <ul className="space-y-3">
+                    {tour.includes.map((item: string, i: number) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-heading/80">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-                  <div className="flex items-center gap-3">
-                    <Users className="h-5 w-5 text-[#1E3A5F] flex-shrink-0" />
-                    <div>
-                      <div className="text-sm text-muted">Kapasite</div>
-                      <div className="text-heading font-medium">
-                        {tour.capacity}
-                      </div>
-                    </div>
-                  </div>
+              {/* Not Included */}
+              {tour.notIncluded && tour.notIncluded.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-heading mb-4">
+                    Not Included
+                  </h2>
+                  <ul className="space-y-3">
+                    {tour.notIncluded.map((item: string, i: number) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <X className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-heading/80">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-[#1E3A5F] flex-shrink-0" />
-                    <div>
-                      <div className="text-sm text-muted">Kalkış Saati</div>
-                      <div className="text-heading font-medium">
-                        {tour.departureTime}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-[#1E3A5F] flex-shrink-0" />
-                    <div>
-                      <div className="text-sm text-muted">Kalkış Noktası</div>
-                      <div className="text-heading font-medium">
-                        {tour.departurePoint}
-                      </div>
+              {/* Route Info */}
+              {tour.route && (
+                <div>
+                  <h2 className="text-2xl font-bold text-heading mb-4">
+                    Route Information
+                  </h2>
+                  <div className="bg-bg rounded-2xl p-6">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="text-heading/80">{tour.route}</p>
                     </div>
                   </div>
                 </div>
+              )}
 
-                {/* CTA Buttons */}
-                <div className="px-6 pb-6 space-y-3">
-                  <Link
-                    href="/booking"
-                    className="btn-cta w-full block text-center"
-                  >
-                    Hemen Rezervasyon Yap
-                  </Link>
-
-                  <a
-                    href="https://wa.me/905551234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-whatsapp w-full flex items-center justify-center gap-2"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    WhatsApp ile İletişim
-                  </a>
+              {/* Gallery */}
+              {tour.gallery && tour.gallery.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-heading mb-4">
+                    Gallery
+                  </h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {tour.gallery.map((img: string, i: number) => (
+                      <div
+                        key={i}
+                        className="relative h-48 rounded-2xl overflow-hidden"
+                      >
+                        <Image
+                          src={img}
+                          alt={`${tour.nameEn} gallery ${i + 1}`}
+                          fill
+                          className="object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              )}
+            </div>
 
-                {/* Trust Note */}
-                <div className="px-6 pb-6">
-                  <p className="text-center text-sm text-muted">
-                    Ücretsiz iptal · Anında onay
-                  </p>
-                </div>
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24">
+                <BookingCalendar
+                  tourSlug={tour.slug}
+                  priceEur={tour.priceEur}
+                  tourName={tour.nameEn}
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

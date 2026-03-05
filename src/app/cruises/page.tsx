@@ -1,46 +1,60 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import { tours } from "@/data/tours";
 import TourCard from "@/components/tours/TourCard";
 
-export const metadata: Metadata = {
-  title: "Turlarımız | MerrySails",
-  description:
-    "İstanbul Boğazı'nda unutulmaz tur deneyimleri. Gün batımı turları, yemekli akşam turları, özel yat kiralama ve daha fazlası MerrySails ile sizi bekliyor.",
-};
+const categories = ["All", "Cruises", "Private Yacht", "Events", "Tours"];
 
 export default function CruisesPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredTours =
+    activeCategory === "All"
+      ? tours
+      : tours.filter((tour) => tour.category === activeCategory);
+
   return (
-    <>
+    <main>
       {/* Hero Banner */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-            Turlarımız
+      <section className="min-h-[40vh] bg-primary flex items-center justify-center text-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our Cruises &amp; Tours
           </h1>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
-            İstanbul Boğazı&apos;nın büyüsünü keşfedin
+          <p className="text-lg text-white/80">
+            Discover Istanbul from the water
           </p>
         </div>
       </section>
 
-      {/* Tours Grid */}
-      <section className="section-padding">
+      {/* Filter Tabs */}
+      <section className="section">
         <div className="max-w-[1290px] mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2 rounded-full font-medium text-sm transition-colors ${
+                  activeCategory === cat
+                    ? "bg-primary text-white"
+                    : "bg-bg text-heading hover:bg-primary/10"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Tour Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {tours.map((tour) => (
-              <TourCard key={tour.id} tour={tour} />
+            {filteredTours.map((tour) => (
+              <TourCard key={tour.slug} tour={tour} />
             ))}
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

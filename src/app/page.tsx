@@ -2,33 +2,21 @@ import HeroSection from "@/components/home/HeroSection";
 import TourGrid from "@/components/home/TourGrid";
 import FeaturedTour from "@/components/home/FeaturedTour";
 import WhyUs from "@/components/home/WhyUs";
-import FleetShowcase from "@/components/home/FleetShowcase";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
 import { tours } from "@/data/tours";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
+    <main>
       <HeroSection />
-
       <TourGrid />
-
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-4">
-          <FeaturedTour tour={tours[0]} />
-          <FeaturedTour tour={tours[1]} reverse />
-          <FeaturedTour tour={tours[4]} />
-        </div>
-      </section>
-
+      <FeaturedTour tour={tours[0]} />
+      <FeaturedTour tour={tours[1]} reverse />
+      <FeaturedTour tour={tours[2]} />
       <WhyUs />
-
-      <FleetShowcase />
-
       <Testimonials />
-
       <CTASection />
-    </>
+    </main>
   );
 }
