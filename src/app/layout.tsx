@@ -7,22 +7,31 @@ import "./globals.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  display: "swap",
   variable: "--font-sans",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "MerrySails — Istanbul Bosphorus Cruise & Boat Tours",
+    default: "MerrySails — Istanbul Bosphorus Cruises",
     template: "%s | MerrySails",
   },
   description:
-    "Premium Bosphorus cruise experiences in Istanbul. Sunset cruises, dinner cruises, private yacht charter. TURSAB licensed, trusted local operator.",
+    "Book the best Bosphorus cruise experience in Istanbul. Sunset cruises, dinner cruises, private yacht charters and more. Operated by Merry Tourism since 2001.",
+  keywords: [
+    "istanbul bosphorus cruise",
+    "sunset cruise istanbul",
+    "dinner cruise istanbul",
+    "private yacht istanbul",
+    "bosphorus tour",
+  ],
   openGraph: {
-    type: "website",
-    locale: "tr_TR",
-    url: "https://merrysails.vercel.app",
+    title: "MerrySails — Istanbul Bosphorus Cruises",
+    description: "Book the best Bosphorus cruise experience in Istanbul.",
     siteName: "MerrySails",
+    locale: "en_US",
+    type: "website",
   },
 };
 
@@ -32,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr">
-      <body className={`${dmSans.variable} antialiased`}>
+    <html lang="en" className={dmSans.variable}>
+      <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

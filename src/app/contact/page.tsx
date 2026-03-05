@@ -1,181 +1,78 @@
-import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Contact",
+  description: "Get in touch with MerrySails. Phone, WhatsApp, email or visit us in Beyoğlu, Istanbul.",
 };
 
 export default function ContactPage() {
   return (
-    <main>
-      {/* Hero Banner */}
-      <section className="min-h-[40vh] bg-primary flex items-center justify-center text-center">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Contact Us
-          </h1>
+    <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
+      <div className="container-main">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact Us</h1>
+          <p className="text-[var(--text-muted)] max-w-xl mx-auto">
+            Have questions? We&apos;re here to help. Reach us anytime via phone, WhatsApp, or email.
+          </p>
         </div>
-      </section>
 
-      {/* Contact Section */}
-      <section className="section">
-        <div className="max-w-[1290px] mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Left: Contact Info */}
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-heading">Get in Touch</h2>
-              <p className="text-heading/70 text-lg">
-                Have a question or ready to book your Bosphorus experience?
-                Reach out to us through any of the channels below.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-heading mb-1">Address</h3>
-                    <p className="text-heading/70">
-                      Istanbul, Turkey
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Contact info */}
+          <div className="space-y-4">
+            {[
+              { icon: Phone, label: "Phone", value: "+90 552 463 84 98", href: "tel:+905524638498" },
+              { icon: Phone, label: "WhatsApp", value: "+90 552 463 84 98", href: "https://wa.me/905524638498" },
+              { icon: Mail, label: "Email", value: "info@merrysails.com", href: "mailto:info@merrysails.com" },
+              { icon: MapPin, label: "Address", value: "Arap Cami, Üsküfçüler Sk., 34445 Beyoğlu/Istanbul" },
+              { icon: Clock, label: "Hours", value: "Every day 09:00 — 22:00" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white rounded-2xl p-6 flex items-start gap-4">
+                <div className="w-12 h-12 bg-[var(--brand-primary)]/10 rounded-xl flex items-center justify-center shrink-0">
+                  <item.icon className="w-5 h-5 text-[var(--brand-primary)]" />
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-heading mb-1">Phone</h3>
-                    <p className="text-heading/70">
-                      <a href="tel:+905524638498" className="hover:text-primary transition-colors">
-                        +90 552 463 84 98
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-heading mb-1">Email</h3>
-                    <p className="text-heading/70">
-                      <a href="mailto:info@merrysails.com" className="hover:text-primary transition-colors">
-                        info@merrysails.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-heading mb-1">
-                      Working Hours
-                    </h3>
-                    <p className="text-heading/70">Mon - Sun: 09:00 - 17:00</p>
-                  </div>
+                <div>
+                  <div className="text-sm text-[var(--text-muted)] mb-0.5">{item.label}</div>
+                  {item.href ? (
+                    <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className="font-medium text-[var(--heading)] hover:text-[var(--brand-primary)] transition-colors">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <div className="font-medium text-[var(--heading)]">{item.value}</div>
+                  )}
                 </div>
               </div>
+            ))}
+          </div>
 
-              {/* WhatsApp Button */}
-              <a
-                href="https://wa.me/905524638498"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp inline-flex items-center gap-2"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Chat on WhatsApp
-              </a>
-            </div>
-
-            {/* Right: Form */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-heading mb-6">
-                Send us a Message
-              </h2>
-              <form className="space-y-5">
+          {/* Form */}
+          <div className="bg-white rounded-2xl p-6 md:p-8">
+            <h2 className="text-xl font-bold mb-6">Send a Message</h2>
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-heading mb-1"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your full name"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                    required
-                  />
+                  <label className="block text-sm font-medium mb-1.5">Name</label>
+                  <input type="text" className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]" placeholder="Your name" />
                 </div>
-
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-heading mb-1"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                    required
-                  />
+                  <label className="block text-sm font-medium mb-1.5">Email</label>
+                  <input type="email" className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]" placeholder="your@email.com" />
                 </div>
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-heading mb-1"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+90 5XX XXX XX XX"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-heading mb-1"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    placeholder="Tell us about your plans..."
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
-                    required
-                  />
-                </div>
-
-                <button type="submit" className="btn-cta w-full">
-                  Send Message
-                </button>
-              </form>
-            </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1.5">Subject</label>
+                <input type="text" className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]" placeholder="Booking inquiry" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1.5">Message</label>
+                <textarea rows={5} className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] resize-none" placeholder="Tell us about your plans..." />
+              </div>
+              <button type="submit" className="btn-cta w-full !py-3">
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

@@ -1,62 +1,71 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import FAQAccordion from "@/components/ui/FAQAccordion";
-import { faqItems } from "@/data/faq";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-export const metadata: Metadata = {
-  title: "SSS | MerrySails",
-  description:
-    "MerrySails hakkında sıkça sorulan sorular. Yat kiralama, boğaz turu, fiyatlar ve organizasyon detayları.",
+export const metadata = {
+  title: "FAQ",
+  description: "Frequently asked questions about MerrySails Istanbul Bosphorus cruises.",
 };
+
+const faqs = [
+  {
+    q: "How do I book a cruise?",
+    a: "You can book directly through our website, or contact us via WhatsApp or phone. We'll confirm your reservation immediately and send you booking details via email.",
+  },
+  {
+    q: "Is there a free cancellation policy?",
+    a: "Yes! You can cancel for free up to 24 hours before the departure time for a full refund. Cancellations within 24 hours may be subject to a 50% fee.",
+  },
+  {
+    q: "What should I bring on the cruise?",
+    a: "We recommend bringing a light jacket (it can get breezy on the water), comfortable shoes, sunglasses, and a camera. Sunscreen is also recommended for daytime cruises.",
+  },
+  {
+    q: "Are the cruises suitable for children?",
+    a: "Yes, most of our cruises are family-friendly. Children under 6 travel free on shared cruises. For private yacht charters, there are no age restrictions.",
+  },
+  {
+    q: "Where is the departure point?",
+    a: "Most cruises depart from Eminönü Pier, easily accessible by tram (Eminönü stop). Private yacht charters typically depart from Kuruçeşme Marina. Exact meeting point details are sent with your booking confirmation.",
+  },
+  {
+    q: "Can I customize a private cruise?",
+    a: "Absolutely! Private yacht charters are fully customizable. You can choose your route, duration, catering, entertainment, and decorations. Contact us to discuss your requirements.",
+  },
+  {
+    q: "What payment methods do you accept?",
+    a: "We accept credit/debit cards (Visa, Mastercard), bank transfer, and cash (EUR, USD, TRY). Online payment is processed through our secure payment gateway.",
+  },
+  {
+    q: "Do you offer hotel pickup?",
+    a: "Hotel pickup and drop-off is included with our Dinner Cruise package. For other cruises, we provide detailed directions to the meeting point. Transfer service can be arranged for an additional fee.",
+  },
+];
 
 export default function FAQPage() {
   return (
-    <main>
-      {/* Hero Banner */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#0A1628]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A5F]/50 to-[#0A1628]/90" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F1EB]">
-            Sıkça Sorulan Sorular
-          </h1>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-[#F5F1EB]">
-        <div className="max-w-[800px] mx-auto px-4">
-          <p className="text-center text-[#0A1628]/70 text-lg mb-12">
-            Merak ettiğiniz soruların cevaplarını aşağıda bulabilirsiniz.
-            Aradığınız cevabı bulamadıysanız bizimle iletişime geçmekten
-            çekinmeyin.
+    <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
+      <div className="container-main max-w-3xl">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Frequently Asked Questions</h1>
+          <p className="text-[var(--text-muted)]">
+            Everything you need to know about our Bosphorus cruises.
           </p>
-          <div className="space-y-3">
-            {faqItems.map((item) => (
-              <FAQAccordion key={item.question} question={item.question} answer={item.answer} />
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 md:p-8">
+          <Accordion type="single" collapsible className="space-y-2">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-b border-[var(--line)] last:border-0">
+                <AccordionTrigger className="text-left font-semibold text-[var(--heading)] hover:text-[var(--brand-primary)] py-4">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[var(--body-text)] leading-relaxed pb-4">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-[#1E3A5F]">
-        <div className="max-w-[800px] mx-auto px-4 text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#F5F1EB] mb-4">
-            Sorunuzun cevabını bulamadınız mı?
-          </h2>
-          <p className="text-[#F5F1EB]/70 mb-8 text-lg">
-            Bizimle doğrudan iletişime geçin, size yardımcı olmaktan mutluluk
-            duyarız.
-          </p>
-          <Link
-            href="/contact"
-            className="btn-cta inline-flex"
-          >
-            İletişime Geçin
-          </Link>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

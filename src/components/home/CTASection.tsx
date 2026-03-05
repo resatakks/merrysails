@@ -1,56 +1,43 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative min-h-[400px] flex items-center overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=80"
-        alt="Istanbul Bosphorus view"
-        fill
-        className="object-cover"
-        sizes="100vw"
-      />
+    <section className="relative py-20 md:py-28 bg-[var(--brand-dark)] overflow-hidden">
+      {/* Decorative circles */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--brand-primary)]/20 rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[var(--brand-gold)]/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-dark/80" />
-
-      {/* Content */}
-      <div className="relative z-10 w-full text-center px-4 py-16">
-        <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-          Ready for Your Dream Cruise?
+      <div className="container-main relative z-10 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to Sail the Bosphorus?
         </h2>
-        <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
-          Book now and create unforgettable memories on the Bosphorus
+        <p className="text-white/70 mb-8 max-w-lg mx-auto">
+          Book your Istanbul cruise experience today. Best price guaranteed when you book direct.
         </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {/* Book Now */}
-          <Link href="/booking" className="btn-cta inline-block">
-            Book Now
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/cruises/sunset-cruise">
+            <button className="btn-cta text-base !py-3.5 !px-8">
+              Book Now — €20
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </Link>
-
-          {/* Call Us */}
-          <Link
-            href="tel:+905524638498"
-            className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-full transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            Call Us
-          </Link>
-
-          {/* WhatsApp */}
-          <Link
+          <a
             href="https://wa.me/905524638498"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-whatsapp inline-flex items-center gap-2"
+            className="inline-flex items-center gap-2 bg-[var(--brand-whatsapp)] text-white font-semibold py-3.5 px-8 rounded-full hover:brightness-110 transition-all"
           >
-            <MessageCircle className="w-4 h-4" />
+            <Phone className="w-4 h-4" />
             WhatsApp
-          </Link>
+          </a>
+          <a
+            href="tel:+905524638498"
+            className="inline-flex items-center gap-2 bg-white/10 text-white font-semibold py-3.5 px-8 rounded-full border border-white/20 hover:bg-white/20 transition-all"
+          >
+            <Phone className="w-4 h-4" />
+            Call Us
+          </a>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ import { tours } from "@/data/tours";
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <HeroSection />
       <TourGrid />
       <FeaturedTour tour={tours[0]} />
@@ -17,6 +17,6 @@ export default function HomePage() {
       <WhyUs />
       <Testimonials />
       <CTASection />
-    </main>
+    </>
   );
 }

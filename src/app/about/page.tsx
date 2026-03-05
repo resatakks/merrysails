@@ -1,118 +1,98 @@
-import type { Metadata } from "next";
-import { Shield, Award, Heart } from "lucide-react";
+import Image from "next/image";
+import { Anchor, Award, Users, Ship } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "About Us",
+  description: "Learn about MerrySails and Merry Tourism — your trusted partner for Istanbul Bosphorus cruises since 2001.",
 };
-
-const stats = [
-  { value: "1000+", label: "Happy Guests" },
-  { value: "4.9/5", label: "Rating" },
-  { value: "5+", label: "Years Experience" },
-];
-
-const values = [
-  {
-    icon: Shield,
-    title: "Safety First",
-    description:
-      "Your safety is our top priority. All our vessels are regularly inspected and meet international maritime safety standards.",
-  },
-  {
-    icon: Award,
-    title: "Premium Quality",
-    description:
-      "We deliver premium experiences with attention to every detail, from our well-maintained fleet to our professional crew.",
-  },
-  {
-    icon: Heart,
-    title: "Authentic Experience",
-    description:
-      "As a local Istanbul company, we offer genuine cultural experiences that connect you with the true spirit of the Bosphorus.",
-  },
-];
 
 export default function AboutPage() {
   return (
-    <main>
-      {/* Hero Banner */}
-      <section className="min-h-[40vh] bg-primary flex items-center justify-center text-center">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
-            About MerrySails
-          </h1>
+    <div className="pt-28 pb-20">
+      <div className="container-main">
+        {/* Hero */}
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">About MerrySails</h1>
+          <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg">
+            Operated by Merry Tourism, we&apos;ve been creating unforgettable Bosphorus
+            experiences for over 23 years.
+          </p>
         </div>
-      </section>
 
-      {/* Story Section */}
-      <section className="section">
-        <div className="max-w-[900px] mx-auto px-4">
-          <div className="bg-white rounded-2xl p-8 -mt-16 relative z-10 shadow-lg">
-            <h2 className="text-2xl font-bold text-heading mb-6">Our Story</h2>
-            <p className="text-heading/80 leading-relaxed text-lg">
-              MerrySails is the maritime brand of Merry Tourism, born from a
-              passion for sharing the unparalleled beauty of the Istanbul
-              Bosphorus with travelers from around the world. As a
-              TURSAB-licensed operator, we bring over 5 years of experience and
-              a commitment to safety, quality, and unforgettable experiences on
-              the water. From breathtaking sunset cruises that paint the sky in
-              shades of gold, to elegant dinner experiences under the stars, and
-              exclusive private yacht charters for life&apos;s most special
-              moments — every journey with MerrySails is crafted with care and
-              attention to detail. We are a local Istanbul company with no
-              middlemen, which means you always get the best price and the most
-              authentic experience directly from the people who know these waters
-              best.
+        {/* Story */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80"
+              alt="Istanbul Bosphorus"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Our Story</h2>
+            <p className="text-[var(--body-text)] leading-relaxed mb-4">
+              Since 2001, Merry Tourism has been one of Istanbul&apos;s most trusted names in 
+              Bosphorus cruises and yacht services. What started as a small family operation 
+              with a single boat has grown into a fleet of modern vessels serving thousands 
+              of happy travelers each year.
+            </p>
+            <p className="text-[var(--body-text)] leading-relaxed mb-4">
+              As a TURSAB-licensed company, we take pride in offering transparent pricing, 
+              professional service, and authentic Turkish hospitality. Our team of experienced 
+              captains and multilingual guides ensures every guest enjoys a safe, comfortable, 
+              and memorable experience on the water.
+            </p>
+            <p className="text-[var(--body-text)] leading-relaxed">
+              From romantic sunset cruises to spectacular Turkish night dinner shows, from 
+              intimate marriage proposals to grand corporate events — we have the experience 
+              and the passion to make your Istanbul moments truly special.
             </p>
           </div>
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="section">
-        <div className="max-w-[900px] mx-auto px-4">
-          <div className="bg-primary rounded-2xl p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-white/80 text-lg">{stat.label}</div>
-                </div>
-              ))}
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {[
+            { icon: Ship, value: "23+", label: "Years Experience" },
+            { icon: Users, value: "50K+", label: "Happy Guests" },
+            { icon: Award, value: "5.0", label: "Average Rating" },
+            { icon: Anchor, value: "8", label: "Tour Options" },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-sm">
+              <stat.icon className="w-8 h-8 text-[var(--brand-primary)] mx-auto mb-3" />
+              <div className="text-3xl font-bold text-[var(--heading)] mb-1">{stat.value}</div>
+              <div className="text-sm text-[var(--text-muted)]">{stat.label}</div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
 
-      {/* Values Section */}
-      <section className="section bg-bg">
-        <div className="max-w-[1290px] mx-auto px-4">
-          <h2 className="text-3xl font-bold text-heading text-center mb-10">
-            Our Values
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {values.map((value) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={value.title}
-                  className="bg-white rounded-2xl p-8 text-center"
-                >
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-heading mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-heading/70">{value.description}</p>
-                </div>
-              );
-            })}
-          </div>
+        {/* Values */}
+        <div className="text-center mb-10">
+          <h2 className="text-2xl font-bold mb-3">Our Values</h2>
         </div>
-      </section>
-    </main>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Safety First",
+              description: "All vessels are regularly inspected and meet international safety standards. Life jackets and safety equipment for all passengers.",
+            },
+            {
+              title: "Transparent Pricing",
+              description: "No hidden fees, no surprises. The price you see is the price you pay. Book direct for the best rates available.",
+            },
+            {
+              title: "Local Expertise",
+              description: "Our guides and captains are Istanbul locals who know every corner of the Bosphorus and love sharing its stories.",
+            },
+          ].map((value) => (
+            <div key={value.title} className="bg-white rounded-2xl p-6 shadow-sm">
+              <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

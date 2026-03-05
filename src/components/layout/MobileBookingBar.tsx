@@ -1,36 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function MobileBookingBar() {
   return (
-    <div className="mobile-bar fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
-        {/* Price Area */}
-        <div className="flex flex-col leading-tight">
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-xl font-bold text-heading">&euro;20</span>
-            <span className="text-sm text-text-light line-through">&euro;40</span>
+    <div className="mobile-bar lg:hidden">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <div className="text-xs text-[var(--text-muted)]">From</div>
+          <div className="flex items-baseline gap-1">
+            <span className="text-xl font-bold text-[var(--heading)]">€20</span>
+            <span className="text-sm text-[var(--text-muted)] line-through">€40</span>
+            <span className="text-xs text-[var(--text-muted)]">/person</span>
           </div>
-          <span className="text-[11px] text-text-light">per person</span>
         </div>
-
-        {/* Book Now CTA */}
-        <Link href="/contact" className="btn-cta flex-1 text-center py-3 text-sm font-semibold">
-          Book Now
-        </Link>
-
-        {/* WhatsApp Button */}
-        <a
-          href="https://wa.me/905524638498"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
-          className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity"
-        >
-          <MessageCircle className="w-5 h-5 text-white" />
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="https://wa.me/905524638498"
+            className="flex items-center justify-center w-11 h-11 rounded-xl bg-[var(--brand-whatsapp)] text-white"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+          <Link href="/cruises/sunset-cruise">
+            <button className="btn-cta text-sm !py-2.5 !px-5">
+              Book Now
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,118 +1,185 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 /* ============================================
-   MerrySails Design System
-   Matching bosphorussunset.com palette
+   MerrySails Design System — V7
+   Pixel-perfect match to bosphorussunset.com
    ============================================ */
 
+:root {
+  --radius: 0.625rem;
+
+  /* Brand colors */
+  --brand-primary: #182987;
+  --brand-primary-hover: #1e3399;
+  --brand-gold: #f7b52c;
+  --brand-gold-hover: #f7a400;
+  --brand-cta-start: #ff4b2b;
+  --brand-cta-end: #ff0844;
+  --brand-dark: #1A1A3D;
+  --brand-price-box: #304058;
+  --brand-whatsapp: #25D366;
+
+  /* Semantic tokens */
+  --heading: #111B19;
+  --body-text: #444444;
+  --text-muted: #999999;
+  --surface: #FFFFFF;
+  --surface-alt: #F5F5F5;
+  --surface-teal: #F2FBFA;
+  --line: #E6E6E6;
+
+  /* shadcn tokens - mapped to our palette */
+  --background: #F5F5F5;
+  --foreground: #444444;
+  --card: #FFFFFF;
+  --card-foreground: #444444;
+  --popover: #FFFFFF;
+  --popover-foreground: #444444;
+  --primary: #182987;
+  --primary-foreground: #FFFFFF;
+  --secondary: #f7b52c;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F5F5;
+  --muted-foreground: #999999;
+  --accent: #F2FBFA;
+  --accent-foreground: #111B19;
+  --destructive: #ff0844;
+  --input: #E6E6E6;
+  --ring: #182987;
+  --border: #E6E6E6;
+
+  /* Charts */
+  --chart-1: #182987;
+  --chart-2: #f7b52c;
+  --chart-3: #ff4b2b;
+  --chart-4: #25D366;
+  --chart-5: #304058;
+
+  /* Sidebar (required by shadcn) */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #444444;
+  --sidebar-primary: #182987;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #111B19;
+  --sidebar-border: #E6E6E6;
+  --sidebar-ring: #182987;
+}
+
 @theme inline {
-  --color-primary: #182987;
-  --color-primary-hover: #4d5287;
-  --color-secondary: #f7b52c;
-  --color-secondary-hover: #f7a400;
-  --color-heading: #111B19;
-  --color-text: #444444;
-  --color-text-light: #999999;
-  --color-border: #E6E6E6;
-  --color-bg: #F5F5F5;
-  --color-bg-alt: #F2FBFA;
-  --color-dark: #1A1A3D;
-  --color-white: #FFFFFF;
-  --color-whatsapp: #25D366;
-  --color-price-box: #304058;
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-price-box: var(--brand-price-box);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
-/* ============================================
-   CSS Variables (non-Tailwind)
-   ============================================ */
-
-:root {
-  --primary: #182987;
-  --primary-hover: #4d5287;
-  --secondary: #f7b52c;
-  --secondary-hover: #f7a400;
-  --cta-start: #ff4b2b;
-  --cta-end: #ff0844;
-  --heading: #111B19;
-  --text: #444444;
-  --text-light: #999999;
-  --border: #E6E6E6;
-  --bg: #F5F5F5;
-  --bg-alt: #F2FBFA;
-  --dark: #1A1A3D;
-  --white: #FFFFFF;
-  --whatsapp: #25D366;
-  --price-box: #304058;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 /* ============================================
-   Reset & Base
+   Base Reset & Typography
    ============================================ */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: #F5F5F5;
-  color: #444444;
   font-family: "DM Sans", system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.63;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
-/* ============================================
-   Typography
-   ============================================ */
 
 h1, h2, h3, h4, h5, h6 {
-  color: #111B19;
+  color: var(--heading);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
+h1 { font-size: 28px; }
+h2 { font-size: 24px; font-weight: 600; }
+h3 { font-size: 20px; }
 
 @media (min-width: 768px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  h3 {
-    font-size: 24px;
-  }
+  h1 { font-size: 44px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 24px; }
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+
+.container-main {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container-main {
+    padding: 0 30px;
+  }
 }
 
 /* ============================================
@@ -122,7 +189,7 @@ a {
 .tour-card {
   border-radius: 20px;
   overflow: hidden;
-  background: #FFFFFF;
+  background: var(--surface);
   cursor: pointer;
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
               box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -130,7 +197,7 @@ a {
 
 .tour-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .tour-card img {
@@ -143,100 +210,43 @@ a {
   filter: brightness(0.85);
 }
 
-.tour-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-}
-
-.tour-card .content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px;
-  z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.tour-card:hover .content {
-  transform: translateY(-6px);
-}
-
 /* ============================================
-   Hero Background
+   Hero
    ============================================ */
 
-.hero-bg {
+.hero-overlay {
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(26, 26, 61, 0.85) 100%
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(26, 26, 61, 0.8) 100%
   );
 }
 
 /* ============================================
-   Buttons
+   CTA Button (Red Gradient)
    ============================================ */
 
 .btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ff4b2b, #ff0844);
+  gap: 8px;
+  background: linear-gradient(135deg, var(--brand-cta-start), var(--brand-cta-end));
   color: #FFFFFF;
   font-weight: 700;
   font-size: 15px;
-  padding: 14px 28px;
-  border-radius: 12px;
+  padding: 14px 32px;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 8, 68, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 8, 68, 0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 8, 68, 0.4);
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary);
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-}
-
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #25D366;
-  color: #FFFFFF;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-whatsapp:hover {
-  background-color: #20BD5A;
+  box-shadow: 0 8px 25px rgba(255, 8, 68, 0.45);
 }
 
 /* ============================================
@@ -244,16 +254,17 @@ a {
    ============================================ */
 
 .price-box {
-  background-color: var(--price-box, #304058);
+  background: var(--brand-price-box);
   color: #FFFFFF;
   padding: 20px 28px;
+  border-radius: 12px;
   display: flex;
   align-items: baseline;
   gap: 4px;
 }
 
 .price-box .currency {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -269,6 +280,13 @@ a {
   margin-left: 4px;
 }
 
+.price-box .old-price {
+  font-size: 20px;
+  opacity: 0.5;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
 /* ============================================
    Mobile Booking Bar
    ============================================ */
@@ -278,64 +296,45 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 50;
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
   padding: 12px 16px;
 }
 
 /* ============================================
-   Section
+   Animations
    ============================================ */
 
-.section {
-  padding: 80px 20px;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (min-width: 768px) {
-  .section {
-    padding: 100px 24px;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+.fade-up { animation: fadeInUp 0.7s ease-out both; }
+.fade-in { animation: fadeIn 0.5s ease-out both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
 
 /* ============================================
-   Featured Section
+   Scrollbar
    ============================================ */
 
-.featured-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: #FFFFFF;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-@media (min-width: 1024px) {
-  .featured-section {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.featured-section .feat-img {
-  position: relative;
-  min-height: 300px;
-  overflow: hidden;
-}
-
-.featured-section .feat-img img {
-  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.featured-section:hover .feat-img img {
-  transform: scale(1.05);
-}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
 
 /* ============================================
-   Spec Grid
+   Spec Grid (tour details)
    ============================================ */
 
 .spec-grid {
@@ -351,7 +350,7 @@ a {
 }
 
 .spec-item {
-  background: #F5F5F5;
+  background: var(--surface-alt);
   border-radius: 12px;
   padding: 16px;
   text-align: center;
@@ -359,7 +358,7 @@ a {
 
 .spec-item .label {
   font-size: 12px;
-  color: #999999;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -367,127 +366,6 @@ a {
 .spec-item .value {
   font-size: 15px;
   font-weight: 600;
-  color: #111B19;
+  color: var(--heading);
   margin-top: 4px;
-}
-
-/* ============================================
-   Animations
-   ============================================ */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-up {
-  animation: fadeInUp 0.7s ease-out both;
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-out both;
-}
-
-.delay-1 {
-  animation-delay: 0.1s;
-}
-
-.delay-2 {
-  animation-delay: 0.2s;
-}
-
-.delay-3 {
-  animation-delay: 0.3s;
-}
-
-.delay-4 {
-  animation-delay: 0.4s;
-}
-
-/* ============================================
-   Scrollbar
-   ============================================ */
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cccccc;
-  border-radius: 3px;
-}
-
-/* ============================================
-   Calendar Styles
-   ============================================ */
-
-.booking-calendar {
-  background: #FFFFFF;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 24px;
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
-}
-
-.calendar-day {
-  padding: 8px 4px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.calendar-day:hover {
-  background-color: #F5F5F5;
-}
-
-.calendar-day.selected {
-  background-color: var(--primary);
-  color: #FFFFFF;
-}
-
-.calendar-day.available {
-  position: relative;
-}
-
-.calendar-day .price {
-  font-size: 10px;
-  color: var(--secondary);
-  font-weight: 600;
-}
-
-.calendar-day.unavailable {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
 }

@@ -1,60 +1,55 @@
 "use client";
 
 import { useState } from "react";
-import { tours } from "@/data/tours";
 import TourCard from "@/components/tours/TourCard";
+import { tours } from "@/data/tours";
 
-const categories = ["All", "Cruises", "Private Yacht", "Events", "Tours"];
+const categories = [
+  { label: "All", value: "all" },
+  { label: "Cruises", value: "cruise" },
+  { label: "Private Yacht", value: "private" },
+  { label: "Events", value: "event" },
+  { label: "Tours", value: "tour" },
+];
 
 export default function CruisesPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [active, setActive] = useState("all");
 
-  const filteredTours =
-    activeCategory === "All"
-      ? tours
-      : tours.filter((tour) => tour.category === activeCategory);
+  const filtered = active === "all" ? tours : tours.filter((t) => t.category === active);
 
   return (
-    <main>
-      {/* Hero Banner */}
-      <section className="min-h-[40vh] bg-primary flex items-center justify-center text-center">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Cruises &amp; Tours
-          </h1>
-          <p className="text-lg text-white/80">
-            Discover Istanbul from the water
+    <div className="pt-32 pb-20 bg-[var(--surface-alt)]">
+      <div className="container-main">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">All Bosphorus Cruises</h1>
+          <p className="text-[var(--text-muted)] max-w-xl mx-auto">
+            Explore our complete range of Istanbul Bosphorus experiences.
           </p>
         </div>
-      </section>
 
-      {/* Filter Tabs */}
-      <section className="section">
-        <div className="max-w-[1290px] mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full font-medium text-sm transition-colors ${
-                  activeCategory === cat
-                    ? "bg-primary text-white"
-                    : "bg-bg text-heading hover:bg-primary/10"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Tour Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {filteredTours.map((tour) => (
-              <TourCard key={tour.slug} tour={tour} />
-            ))}
-          </div>
+        {/* Filter tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat.value}
+              onClick={() => setActive(cat.value)}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                active === cat.value
+                  ? "bg-[var(--brand-primary)] text-white shadow-md"
+                  : "bg-white text-[var(--body-text)] hover:bg-gray-100"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
-      </section>
-    </main>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filtered.map((tour) => (
+            <TourCard key={tour.id} tour={tour} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,72 +1,62 @@
-import { Ship, Users, UtensilsCrossed, Shield, Clock, Award } from "lucide-react";
+import { Shield, Clock, Award, MapPin, Headphones, CreditCard } from "lucide-react";
 
 const features = [
   {
-    icon: Ship,
-    title: "Private Fleet",
-    description:
-      "Our own fleet of well-maintained vessels ensures comfort, safety, and a premium cruise experience every time.",
-  },
-  {
-    icon: Users,
-    title: "Professional Crew",
-    description:
-      "Experienced captains and friendly crew members dedicated to making your journey memorable and enjoyable.",
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Delicious Cuisine",
-    description:
-      "Savor freshly prepared Turkish dishes and international flavors while cruising along the stunning Bosphorus.",
-  },
-  {
     icon: Shield,
-    title: "Safe & Licensed",
-    description:
-      "Fully licensed and insured operations with strict safety protocols, so you can relax and enjoy the ride.",
+    title: "Free Cancellation",
+    description: "Cancel up to 24 hours before departure for a full refund.",
   },
   {
     icon: Clock,
-    title: "Flexible Hours",
-    description:
-      "Multiple departure times throughout the day to fit your schedule, with private charter options available.",
+    title: "23+ Years Experience",
+    description: "Serving travelers since 2001 with thousands of happy guests.",
   },
   {
     icon: Award,
-    title: "5-Star Service",
-    description:
-      "1000+ happy guests and counting. Our dedication to excellence has earned us top ratings across platforms.",
+    title: "Best Price Guarantee",
+    description: "Book direct for the best rates — no middleman fees.",
+  },
+  {
+    icon: MapPin,
+    title: "Local Company",
+    description: "Operated by Merry Tourism, a licensed local Turkish company.",
+  },
+  {
+    icon: Headphones,
+    title: "24/7 Support",
+    description: "Reach us anytime via WhatsApp, phone, or email.",
+  },
+  {
+    icon: CreditCard,
+    title: "Secure Payment",
+    description: "Pay online securely or onboard. Multiple payment options.",
   },
 ];
 
 export default function WhyUs() {
   return (
-    <section className="section bg-white">
-      <div className="max-w-[1290px] mx-auto px-4">
-        {/* Heading */}
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container-main">
         <div className="text-center mb-12">
-          <h2 className="text-heading text-3xl md:text-4xl font-bold mb-3">
-            Why Choose MerrySails?
-          </h2>
-          <div className="w-16 h-1 bg-secondary mx-auto mb-4" />
-          <p className="text-text-light text-lg max-w-2xl mx-auto">
-            We are a trusted local operator offering direct bookings with the best prices and
-            unmatched service quality.
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Why Choose MerrySails?</h2>
+          <p className="text-[var(--text-muted)] max-w-xl mx-auto">
+            Trusted by thousands of travelers from around the world.
           </p>
         </div>
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map(({ icon: Icon, title, description }) => (
+          {features.map((feature) => (
             <div
-              key={title}
-              className="bg-bg rounded-2xl p-8 hover:shadow-lg hover:-translate-y-1 transition"
+              key={feature.title}
+              className="bg-[var(--surface-alt)] rounded-2xl p-6 hover:shadow-md transition-shadow"
             >
-              <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
-                <Icon className="w-6 h-6 text-secondary" />
+              <div className="w-12 h-12 bg-[var(--brand-primary)]/10 rounded-xl flex items-center justify-center mb-4">
+                <feature.icon className="w-6 h-6 text-[var(--brand-primary)]" />
               </div>
-              <h3 className="text-heading font-bold text-lg mb-2">{title}</h3>
-              <p className="text-text-light text-sm leading-relaxed">{description}</p>
+              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
