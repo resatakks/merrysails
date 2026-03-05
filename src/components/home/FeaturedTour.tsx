@@ -32,7 +32,7 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
           {/* Content */}
           <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">{tour.nameEn}</h2>
-            <p className="text-[var(--text-muted)] mb-6">{tour.descriptionEn}</p>
+            <p className="text-[var(--text-muted)] mb-6">{tour.description}</p>
 
             {/* Specs */}
             <div className="spec-grid mb-6">

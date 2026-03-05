@@ -2,31 +2,45 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, ChevronDown, Anchor } from "lucide-react";
+import { Menu, Phone, ChevronDown, Anchor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
 const navItems = [
   {
     label: "Sunset Cruise",
-    href: "/cruises/sunset-cruise",
+    href: "/cruises/bosphorus-sunset-cruise",
   },
   {
     label: "Private Yacht",
-    href: "/cruises/private-yacht",
+    href: "/private-tours",
     children: [
-      { label: "Marriage Proposal", href: "/cruises/proposal-cruise" },
-      { label: "Birthday Party", href: "/cruises/birthday-yacht" },
-      { label: "Corporate Event", href: "/cruises/corporate-cruise" },
+      { label: "Romantic Marriage Proposal", href: "/cruises/romantic-marriage-proposal" },
+      { label: "Yacht Birthday Party", href: "/cruises/yacht-birthday-party" },
+      { label: "Exclusive Yacht Wedding", href: "/cruises/yacht-weddings" },
+      { label: "Bachelorette Yacht Party", href: "/cruises/bachelorette-yacht-party" },
+      { label: "Wedding Anniversary", href: "/cruises/wedding-anniversary" },
+      { label: "Corporate Event Cruise", href: "/cruises/corporate-event-bosphorus-cruise" },
+      { label: "Private Swimming Tour", href: "/cruises/private-yacht-swimming-tour" },
     ],
   },
   {
     label: "Dinner Cruise",
-    href: "/cruises/dinner-cruise",
+    href: "/cruises/bosphorus-dinner-cruise",
   },
   {
     label: "Yacht Charter",
-    href: "/cruises/private-yacht",
+    href: "/cruises/yacht-charter-in-istanbul",
+  },
+  {
+    label: "Tours",
+    href: "/cruises",
+    children: [
+      { label: "Princes' Islands Tour", href: "/cruises/istanbul-princes-island-tour" },
+      { label: "Old City Tour", href: "/cruises/full-day-istanbul-old-city-tour" },
+      { label: "Lunch Cruise & Two Continents", href: "/cruises/istanbul-bosphorus-lunch-cruise" },
+      { label: "Short Bosphorus Cruise", href: "/cruises/bosphorus-sightseeing-cruise" },
+    ],
   },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -52,7 +66,7 @@ export default function Header() {
     >
       {/* Promo bar */}
       <div className="bg-[var(--brand-primary)] text-white text-center text-sm py-1.5 px-4">
-        <Link href="/cruises/sunset-cruise" className="hover:underline">
+        <Link href="/cruises/bosphorus-sunset-cruise" className="hover:underline">
           <span className="font-semibold">Winter Special</span> — Bosphorus Sunset Cruise{" "}
           <span className="font-bold text-[var(--brand-gold)]">€20</span>{" "}
           <span className="line-through opacity-70">€40</span>
@@ -77,7 +91,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -94,7 +108,7 @@ export default function Header() {
                 </Link>
                 {item.children && openDropdown === item.label && (
                   <div className="absolute top-full left-0 pt-1 z-50">
-                    <div className="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[220px]">
+                    <div className="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[260px]">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
@@ -121,7 +135,7 @@ export default function Header() {
               +90 552 463 84 98
             </a>
 
-            <Link href="/cruises/sunset-cruise">
+            <Link href="/cruises/bosphorus-sunset-cruise">
               <button className="btn-cta text-sm !py-2.5 !px-5">
                 Book Now
               </button>
@@ -166,7 +180,7 @@ export default function Header() {
                       </div>
                     ))}
                   </nav>
-                  <div className="mt-8 pt-6 border-t border-gray-100">
+                  <div className="mt-8 pt-6 border-t border-gray-100 space-y-3">
                     <a
                       href="tel:+905524638498"
                       className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-[var(--body-text)]"
@@ -174,6 +188,9 @@ export default function Header() {
                       <Phone className="w-4 h-4" />
                       +90 552 463 84 98
                     </a>
+                    <Link href="/cruises/bosphorus-sunset-cruise" className="block px-4">
+                      <button className="btn-cta w-full !py-3 text-sm">Book Now — €20</button>
+                    </Link>
                   </div>
                 </div>
               </SheetContent>
