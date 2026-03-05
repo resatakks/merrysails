@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileBookingBar from "@/components/layout/MobileBookingBar";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -47,6 +48,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <MobileBookingBar />
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -20,10 +20,11 @@ export default function ContactPage() {
           {/* Contact info */}
           <div className="space-y-4">
             {[
-              { icon: Phone, label: "Phone", value: "+90 552 463 84 98", href: "tel:+905524638498" },
-              { icon: Phone, label: "WhatsApp", value: "+90 552 463 84 98", href: "https://wa.me/905524638498" },
-              { icon: Mail, label: "Email", value: "info@merrysails.com", href: "mailto:info@merrysails.com" },
-              { icon: MapPin, label: "Address", value: "Arap Cami, Üsküfçüler Sk., 34445 Beyoğlu/Istanbul" },
+              { icon: Phone, label: "Phone", value: "+90 537 040 68 22", href: "tel:+905370406822" },
+              { icon: Phone, label: "Phone 2", value: "+90 536 414 66 05", href: "tel:+905364146605" },
+              { icon: Phone, label: "WhatsApp", value: "+90 537 040 68 22", href: "https://wa.me/905370406822" },
+              { icon: Mail, label: "Email", value: "info@merrytourism.com", href: "mailto:info@merrytourism.com" },
+              { icon: MapPin, label: "Address", value: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul" },
               { icon: Clock, label: "Hours", value: "Every day 09:00 — 22:00" },
             ].map((item) => (
               <div key={item.label} className="bg-white rounded-2xl p-6 flex items-start gap-4">

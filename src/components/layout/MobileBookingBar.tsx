@@ -17,12 +17,14 @@ export default function MobileBookingBar() {
         </div>
         <div className="flex items-center gap-2">
           <a
-            href="https://wa.me/905524638498"
+            href="https://wa.me/905370406822"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center w-11 h-11 rounded-xl bg-[var(--brand-whatsapp)] text-white"
           >
             <Phone className="w-5 h-5" />
           </a>
-          <Link href="/cruises/sunset-cruise">
+          <Link href="/cruises/bosphorus-sunset-cruise">
             <button className="btn-cta text-sm !py-2.5 !px-5">
               Book Now
             </button>

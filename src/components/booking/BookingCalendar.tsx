@@ -8,11 +8,12 @@ interface Props {
   tourSlug: string;
   priceEur: number;
   tourName: string;
+  onBook?: (date: Date, guests: number) => void;
 }
 
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-export default function BookingCalendar({ tourSlug, priceEur, tourName }: Props) {
+export default function BookingCalendar({ tourSlug, priceEur, tourName, onBook }: Props) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [guests, setGuests] = useState(2);
@@ -22,11 +23,16 @@ export default function BookingCalendar({ tourSlug, priceEur, tourName }: Props)
   const monthEnd = endOfMonth(currentMonth);
   const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
 
-  // Monday = 0, so adjust getDay (0=Sun) to Monday-first
   const startDay = getDay(monthStart);
   const blanks = startDay === 0 ? 6 : startDay - 1;
 
   const total = priceEur * guests;
+
+  const handleBookNow = () => {
+    if (selectedDate && onBook) {
+      onBook(selectedDate, guests);
+    }
+  };
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
@@ -135,13 +141,13 @@ export default function BookingCalendar({ tourSlug, priceEur, tourName }: Props)
           </div>
 
           {/* Book button */}
-          <button className="btn-cta w-full !py-3.5 text-base">
+          <button onClick={handleBookNow} className="btn-cta w-full !py-3.5 text-base">
             Book Now
           </button>
 
           {/* WhatsApp */}
           <a
-            href={`https://wa.me/905524638498?text=Hi, I'd like to book ${tourName} on ${format(selectedDate, "dd MMM yyyy")} for ${guests} guests.`}
+            href={`https://wa.me/905370406822?text=Hi, I'd like to book ${tourName} on ${format(selectedDate, "dd MMM yyyy")} for ${guests} guests.`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--brand-whatsapp)] text-white font-semibold hover:brightness-110 transition-all text-sm"

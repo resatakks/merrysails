@@ -57,13 +57,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-md py-2"
-          : "bg-white/95 backdrop-blur-sm py-3"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50">
       {/* Promo bar */}
       <div className="bg-[var(--brand-primary)] text-white text-center text-sm py-1.5 px-4">
         <Link href="/cruises/bosphorus-sunset-cruise" className="hover:underline">
@@ -73,6 +67,11 @@ export default function Header() {
         </Link>
       </div>
 
+      <div className={`transition-all duration-300 ${
+        scrolled
+          ? "bg-white shadow-md"
+          : "bg-white/95 backdrop-blur-sm"
+      }`}>
       <div className="container-main">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -128,11 +127,11 @@ export default function Header() {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <a
-              href="tel:+905524638498"
+              href="tel:+905370406822"
               className="hidden md:flex items-center gap-2 text-sm font-medium text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              +90 552 463 84 98
+              +90 537 040 68 22
             </a>
 
             <Link href="/cruises/bosphorus-sunset-cruise">
@@ -182,11 +181,11 @@ export default function Header() {
                   </nav>
                   <div className="mt-8 pt-6 border-t border-gray-100 space-y-3">
                     <a
-                      href="tel:+905524638498"
+                      href="tel:+905370406822"
                       className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-[var(--body-text)]"
                     >
                       <Phone className="w-4 h-4" />
-                      +90 552 463 84 98
+                      +90 537 040 68 22
                     </a>
                     <Link href="/cruises/bosphorus-sunset-cruise" className="block px-4">
                       <button className="btn-cta w-full !py-3 text-sm">Book Now — €20</button>
@@ -197,6 +196,7 @@ export default function Header() {
             </Sheet>
           </div>
         </div>
+      </div>
       </div>
     </header>
   );
