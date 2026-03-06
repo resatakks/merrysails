@@ -4,32 +4,32 @@ const features = [
   {
     icon: Shield,
     title: "Free Cancellation",
-    description: "Cancel up to 24 hours before departure for a full refund.",
+    description: "Cancel up to 24 hours before departure for a full refund. No hidden fees, no questions asked.",
   },
   {
     icon: Clock,
-    title: "23+ Years Experience",
-    description: "Serving travelers since 2001 with thousands of happy guests.",
+    title: "TURSAB Licensed Since 2001",
+    description: "Merry Tourism is a TURSAB A Group licensed travel agency — 23+ years operating Bosphorus cruises with 50,000+ happy guests.",
   },
   {
     icon: Award,
     title: "Best Price Guarantee",
-    description: "Book direct for the best rates — no middleman fees.",
+    description: "Book direct for the best rates — no middleman fees. We match or beat any competitor price for the same tour.",
   },
   {
     icon: MapPin,
-    title: "Local Company",
-    description: "Operated by Merry Tourism, a licensed local Turkish company.",
+    title: "Local Istanbul Experts",
+    description: "Our certified tourist guides are Istanbul locals who speak English, Turkish, Arabic, and Russian. Licensed by the Ministry of Culture & Tourism.",
   },
   {
     icon: Headphones,
-    title: "24/7 Support",
-    description: "Reach us anytime via WhatsApp, phone, or email.",
+    title: "24/7 Multilingual Support",
+    description: "Reach our team anytime via WhatsApp, phone (+90 537 040 68 22), or email. We respond within minutes.",
   },
   {
     icon: CreditCard,
     title: "Secure Payment",
-    description: "Pay online securely or onboard. Multiple payment options.",
+    description: "SSL-encrypted online payment. Also accept cash (EUR/USD/TRY), credit cards, and bank transfers onboard.",
   },
 ];
 

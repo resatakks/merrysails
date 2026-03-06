@@ -21,8 +21,38 @@ export const metadata = {
   },
 };
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "MerrySails — Merry Tourism",
+  url: "https://merrysails.vercel.app",
+  telephone: "+905370406822",
+  email: "info@merrytourism.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
+    addressLocality: "Fatih",
+    addressRegion: "Istanbul",
+    postalCode: "34093",
+    addressCountry: "TR",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 41.0082, longitude: 28.9784 },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    opens: "09:00",
+    closes: "22:00",
+  },
+  contactPoint: [
+    { "@type": "ContactPoint", telephone: "+905370406822", contactType: "reservations", availableLanguage: ["English", "Turkish"] },
+    { "@type": "ContactPoint", telephone: "+905364146605", contactType: "customer support", availableLanguage: ["English", "Turkish"] },
+  ],
+};
+
 export default function ContactPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         <div className="text-center mb-12">
@@ -92,5 +122,6 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

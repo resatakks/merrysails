@@ -6,6 +6,49 @@ import TourDetailClient from "@/components/tours/TourDetailClient";
 
 const SITE_URL = "https://merrysails.vercel.app";
 
+/* Keyword mapping from CSV research (volume/KD) for each tour slug */
+const tourKeywords: Record<string, string[]> = {
+  "bosphorus-sunset-cruise": [
+    "bosphorus sunset cruise", "sunset cruise istanbul", "sunset cruise",
+    "bosphorus sunset", "istanbul bosphorus sunset cruise", "boat trip istanbul",
+  ],
+  "bosphorus-dinner-cruise": [
+    "istanbul dinner cruise", "bosphorus dinner cruise", "dinner cruise istanbul",
+    "bosphorus night cruise with dinner", "bosphorus night cruise", "best dinner cruise istanbul",
+    "istanbul night cruise", "bosphorus cruise dinner menu", "dinner on the bosphorus",
+  ],
+  "yacht-charter-in-istanbul": [
+    "yacht rental istanbul", "yacht charter istanbul", "yacht charter istanbul turkey",
+    "bosphorus yacht cruise", "bosphorus yacht tour", "private bosphorus cruise",
+    "yacht istanbul", "bosphorus yacht", "boat rental istanbul",
+  ],
+  "bosphorus-sightseeing-cruise": [
+    "short bosphorus cruise", "bosphorus day cruise istanbul", "bosphorus boat tour",
+    "bosphorus sightseeing cruise", "bosphorus cruise tour", "bosphorus boat ride istanbul",
+  ],
+  "istanbul-princes-island-tour": [
+    "princess island tour", "istanbul prince islands ferry", "princess island turkey tour",
+    "princes island boat tour istanbul",
+  ],
+  "istanbul-bosphorus-lunch-cruise": [
+    "bosphorus boat tour", "boat cruise istanbul", "bosphorus river cruise",
+    "istanbul cruise tour", "cruise in istanbul",
+  ],
+  "private-bosphorus-sunset-cruise": [
+    "private bosphorus cruise", "bosphorus sunset cruise on luxury yacht",
+    "yacht rental istanbul", "private yacht charter",
+  ],
+  "corporate-event-bosphorus-cruise": [
+    "party boat istanbul", "corporate event yacht istanbul", "boat trip istanbul",
+  ],
+  "romantic-marriage-proposal": [
+    "marriage proposal yacht istanbul", "private yacht istanbul", "yacht charter bosphorus",
+  ],
+  "yacht-birthday-party": [
+    "istanbul birthday", "party boat istanbul", "yacht birthday party istanbul",
+  ],
+};
+
 export function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
 }
@@ -17,10 +60,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const title = `${tour.nameEn} — From €${tour.priceEur} | Book Online`;
   const description = `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Starting from €${tour.priceEur}/person. Free cancellation. Book your ${tour.nameEn} in Istanbul today.`;
   const url = `${SITE_URL}/cruises/${tour.slug}`;
+  const keywords = tourKeywords[tour.slug] || [
+    tour.nameEn.toLowerCase(), "bosphorus cruise", "istanbul boat tour",
+  ];
 
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: url },
     openGraph: {
       title,

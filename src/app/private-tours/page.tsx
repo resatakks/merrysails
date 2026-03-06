@@ -26,11 +26,46 @@ export const metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Private Yacht Charter & Events in Istanbul",
+  description: "Rent a private yacht on the Bosphorus for marriage proposals, birthday parties, weddings, bachelorette parties, and corporate events. Fully customizable packages.",
+  provider: {
+    "@type": "TravelAgency",
+    name: "MerrySails — Merry Tourism",
+    url: "https://merrysails.vercel.app",
+  },
+  areaServed: { "@type": "City", name: "Istanbul" },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Private Yacht Packages",
+    itemListElement: [
+      { "@type": "Offer", name: "Essential Package", price: "280", priceCurrency: "EUR", description: "2-hour private yacht cruise with captain, crew, and refreshments" },
+      { "@type": "Offer", name: "Premium Package", price: "380", priceCurrency: "EUR", description: "3-hour private yacht with decoration, photographer, and refreshments" },
+      { "@type": "Offer", name: "VIP Package", price: "680", priceCurrency: "EUR", description: "4-hour luxury yacht with full decoration, photographer, DJ, and catering" },
+    ],
+  },
+};
+
+const privateFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How much does a private yacht charter cost in Istanbul?", acceptedAnswer: { "@type": "Answer", text: "Private yacht charter on the Bosphorus starts from €280 for the Essential package (2 hours), €380 for Premium (3 hours), and €680 for VIP (4 hours). All packages include a professional captain, crew, and basic refreshments." }},
+    { "@type": "Question", name: "Can I organize a marriage proposal on a yacht?", acceptedAnswer: { "@type": "Answer", text: "Yes! We specialize in yacht marriage proposals on the Bosphorus. Our Romance package includes rose petal decoration, champagne, a professional photographer, and a violinist. We handle everything so you can focus on the moment." }},
+    { "@type": "Question", name: "What events can I host on a private yacht?", acceptedAnswer: { "@type": "Answer", text: "You can host marriage proposals, birthday parties, bachelorette parties, wedding celebrations, wedding anniversaries, corporate events, and private dinner cruises. All events are fully customizable with add-on services." }},
+  ],
+};
+
 export default function PrivateToursPage() {
   const orgTours = tours.filter((t) => t.category === "organization");
   const privateTours = tours.filter((t) => t.category === "private");
 
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(privateFaqSchema) }} />
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         <div className="text-center mb-14">
@@ -117,5 +152,6 @@ export default function PrivateToursPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

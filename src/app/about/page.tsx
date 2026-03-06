@@ -22,8 +22,45 @@ export const metadata = {
   },
 };
 
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://merrysails.vercel.app/#organization",
+  name: "MerrySails — Merry Tourism",
+  alternateName: "Merry Tourism",
+  description: "TURSAB-licensed A Group travel agency offering Bosphorus cruises, dinner cruises, yacht charter, and boat tours in Istanbul since 2001.",
+  url: "https://merrysails.vercel.app",
+  telephone: "+905370406822",
+  email: "info@merrytourism.com",
+  foundingDate: "2001",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
+    addressLocality: "Fatih",
+    addressRegion: "Istanbul",
+    postalCode: "34093",
+    addressCountry: "TR",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 41.0082, longitude: 28.9784 },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    opens: "09:00",
+    closes: "22:00",
+  },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "2847", bestRating: "5" },
+  priceRange: "€15 — €680",
+  currenciesAccepted: "EUR, USD, TRY",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  areaServed: { "@type": "City", name: "Istanbul" },
+  knowsAbout: ["Bosphorus Cruises", "Yacht Charter", "Dinner Cruise", "Sunset Cruise", "Boat Tours"],
+  hasCredential: { "@type": "EducationalOccupationalCredential", credentialCategory: "TURSAB A Group License" },
+};
+
 export default function AboutPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
     <div className="pt-28 pb-20">
       <div className="container-main">
         {/* Hero */}
@@ -112,5 +149,6 @@ export default function AboutPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

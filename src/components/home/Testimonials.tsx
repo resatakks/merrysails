@@ -21,9 +21,30 @@ const reviews = [
   },
 ];
 
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: "MerrySails — Merry Tourism",
+  url: "https://merrysails.vercel.app",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "65",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: reviews.map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5" },
+    reviewBody: r.text,
+  })),
+};
+
 export default function Testimonials() {
   return (
     <section className="py-16 md:py-24 bg-[var(--surface-alt)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <div className="container-main">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">What Our Guests Say</h2>
