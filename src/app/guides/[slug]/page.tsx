@@ -74,13 +74,21 @@ export default function GuidePage({
     headline: guide.title,
     description: guide.metaDescription,
     image: guide.image,
+    datePublished: "2026-01-01",
+    dateModified: "2026-03-01",
     author: {
       "@type": "Organization",
       name: "MerrySails",
+      url: "https://merrysails.vercel.app",
     },
     publisher: {
       "@type": "Organization",
       name: "MerrySails",
+      url: "https://merrysails.vercel.app",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://merrysails.vercel.app/logo.png",
+      },
     },
   };
 

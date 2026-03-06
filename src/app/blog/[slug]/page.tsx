@@ -60,6 +60,10 @@ export default function BlogPostPage({
       "@type": "Organization",
       name: "MerrySails",
       url: "https://merrysails.vercel.app",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://merrysails.vercel.app/logo.png",
+      },
     },
   };
 

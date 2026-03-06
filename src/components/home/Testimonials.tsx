@@ -24,15 +24,9 @@ const reviews = [
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
-  name: "MerrySails — Merry Tourism",
+  "@id": "https://merrysails.vercel.app/#organization",
+  name: "MerrySails",
   url: "https://merrysails.vercel.app",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "65",
-    bestRating: "5",
-    worstRating: "1",
-  },
   review: reviews.map((r) => ({
     "@type": "Review",
     author: { "@type": "Person", name: r.name },

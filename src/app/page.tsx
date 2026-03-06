@@ -30,9 +30,31 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "MerrySails",
+  alternateName: "Merry Tourism",
+  url: "https://merrysails.vercel.app",
+  publisher: {
+    "@type": "TravelAgency",
+    "@id": "https://merrysails.vercel.app/#organization",
+    name: "MerrySails",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://merrysails.vercel.app/blog?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <HeroSection />
       <TourGrid />
       <FeaturedTour tour={tours[0]} />
