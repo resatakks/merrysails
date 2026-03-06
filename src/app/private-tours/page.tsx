@@ -17,15 +17,16 @@ export default function PrivateToursPage() {
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         <div className="text-center mb-14">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Private Yacht Organizations</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Private Yacht Charter & Events in Istanbul</h1>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg">
-            Don&apos;t you want a very special and unforgettable organization on the Bosphorus?
-            From romantic proposals to grand celebrations — we make your dream event a reality.
+            Rent a private yacht on the Bosphorus for marriage proposals, birthday parties,
+            weddings, and corporate events. Essential from €280, Premium €380, VIP €680.
+            Fully customizable with add-on services.
           </p>
         </div>
 
         {/* Organization Tours */}
-        <h2 className="text-2xl font-bold mb-6">Special Events</h2>
+        <h2 className="text-2xl font-bold mb-6">Yacht Events & Organizations on the Bosphorus</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {orgTours.map((tour) => (
             <Link key={tour.id} href={`/cruises/${tour.slug}`} className="group">
@@ -62,7 +63,7 @@ export default function PrivateToursPage() {
         </div>
 
         {/* Private Yacht Tours */}
-        <h2 className="text-2xl font-bold mb-6">Private Yacht Cruises</h2>
+        <h2 className="text-2xl font-bold mb-6">Private Bosphorus Yacht Cruises</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {privateTours.map((tour) => (
             <Link key={tour.id} href={`/cruises/${tour.slug}`} className="group">

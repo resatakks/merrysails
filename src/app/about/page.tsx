@@ -13,10 +13,11 @@ export default function AboutPage() {
       <div className="container-main">
         {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">About MerrySails</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">About MerrySails — Istanbul&apos;s Trusted Bosphorus Cruise Company</h1>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg">
-            Operated by Merry Tourism, we&apos;ve been creating unforgettable Bosphorus
-            experiences for over 23 years.
+            Operated by Merry Tourism, a TURSAB-licensed A Group travel agency, we&apos;ve been
+            offering Bosphorus boat tours, sunset cruises, dinner cruises, and private
+            yacht charter services in Istanbul for over 23 years.
           </p>
         </div>
 
@@ -31,23 +32,24 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4">Our Story</h2>
+            <h2 className="text-2xl font-bold mb-4">Our Story — Bosphorus Cruise Experts Since 2001</h2>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Since 2001, Merry Tourism has been one of Istanbul&apos;s most trusted names in 
-              Bosphorus cruises and yacht services. What started as a small family operation 
-              with a single boat has grown into a fleet of modern vessels serving thousands 
-              of happy travelers each year.
+              Since 2001, Merry Tourism has been one of Istanbul&apos;s most trusted names in
+              Bosphorus cruises, yacht charter, and boat tour services. What started as a
+              small family operation with a single boat has grown into a fleet of modern
+              vessels serving over 50,000 happy travelers.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              As a TURSAB-licensed company, we take pride in offering transparent pricing, 
-              professional service, and authentic Turkish hospitality. Our team of experienced 
-              captains and multilingual guides ensures every guest enjoys a safe, comfortable, 
-              and memorable experience on the water.
+              As a TURSAB-licensed A Group travel agency, we take pride in offering transparent
+              pricing, professional service, and authentic Turkish hospitality. Our team of
+              experienced captains and multilingual tourist guides ensures every guest enjoys
+              a safe, comfortable, and memorable Istanbul Bosphorus cruise experience.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed">
-              From romantic sunset cruises to spectacular Turkish night dinner shows, from 
-              intimate marriage proposals to grand corporate events — we have the experience 
-              and the passion to make your Istanbul moments truly special.
+              From romantic Bosphorus sunset cruises to spectacular dinner cruises with Turkish
+              night entertainment, from yacht rental for marriage proposals to corporate event
+              cruises — we have 23+ years of experience and the passion to make your Istanbul
+              boat trip truly special.
             </p>
           </div>
         </div>

@@ -21,9 +21,10 @@ export default function CruisesPage() {
     <div className="pt-32 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">All Bosphorus Cruises</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Istanbul Bosphorus Cruises, Yacht Charter & Boat Tours</h1>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Explore our complete range of Istanbul Bosphorus experiences.
+            Sunset cruises, dinner cruises with Turkish night, private yacht rental,
+            and guided boat tours in Istanbul. Best price guaranteed — book direct.
           </p>
         </div>
 

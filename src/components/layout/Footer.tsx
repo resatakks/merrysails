@@ -87,11 +87,11 @@ export default function Footer() {
 
           {/* Cruises */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Bosphorus Cruises</h4>
+            <h4 className="text-sm font-bold mb-4 text-[var(--brand-gold)] uppercase tracking-wider">Bosphorus Cruises</h4>
             <ul className="space-y-2.5">
               {cruiseLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-[var(--brand-gold)] transition-colors">
+                  <Link href={link.href} className="text-sm text-white/80 hover:text-[var(--brand-gold)] transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -101,11 +101,11 @@ export default function Footer() {
 
           {/* Organizations */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Yacht Organizations</h4>
+            <h4 className="text-sm font-bold mb-4 text-[var(--brand-gold)] uppercase tracking-wider">Yacht Organizations</h4>
             <ul className="space-y-2.5">
               {orgLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-[var(--brand-gold)] transition-colors">
+                  <Link href={link.href} className="text-sm text-white/80 hover:text-[var(--brand-gold)] transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -115,11 +115,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Company</h4>
+            <h4 className="text-sm font-bold mb-4 text-[var(--brand-gold)] uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-[var(--brand-gold)] transition-colors">
+                  <Link href={link.href} className="text-sm text-white/80 hover:text-[var(--brand-gold)] transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -129,15 +129,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/40">
+        <div className="mt-12 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-white/70">
             © 2026 MerrySails — Merry Tourism. TURSAB Licensed. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="text-xs text-white/40 hover:text-white/60 transition-colors">
+            <Link href="/privacy-policy" className="text-sm text-white/70 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-xs text-white/40 hover:text-white/60 transition-colors">
+            <Link href="/terms" className="text-sm text-white/70 hover:text-white transition-colors">
               Terms & Conditions
             </Link>
           </div>

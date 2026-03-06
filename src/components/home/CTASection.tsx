@@ -10,10 +10,11 @@ export default function CTASection() {
 
       <div className="container-main relative z-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Ready to Sail the Bosphorus?
+          Book Your Istanbul Bosphorus Cruise Today
         </h2>
         <p className="text-white/80 mb-8 max-w-lg mx-auto text-lg">
-          Book your Istanbul cruise experience today. Best price guaranteed when you book direct.
+          Sunset cruise, dinner cruise, private yacht charter — best price guaranteed
+          when you book direct. No middleman fees.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/cruises/bosphorus-sunset-cruise" className="btn-cta text-base !py-3.5 !px-8">
@@ -31,7 +32,7 @@ export default function CTASection() {
           </a>
           <a
             href="tel:+905370406822"
-            className="inline-flex items-center gap-2 bg-white/15 text-white font-bold py-3.5 px-8 rounded-full border border-white/30 hover:bg-white/25 transition-all"
+            className="inline-flex items-center gap-2 bg-white text-[var(--brand-dark)] font-bold py-3.5 px-8 rounded-full hover:bg-white/90 transition-all"
           >
             <Phone className="w-4 h-4" />
             Call Us

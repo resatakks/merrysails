@@ -43,9 +43,9 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4"
           >
-            Bosphorus Cruise
+            Istanbul Bosphorus
             <br />
-            <span className="text-[var(--brand-gold)]">in Istanbul</span>
+            <span className="text-[var(--brand-gold)]">Cruise & Yacht Charter</span>
           </motion.h1>
 
           <motion.p
@@ -54,8 +54,9 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-lg text-white/80 mb-8 max-w-lg"
           >
-            Operated by a trusted local company — book direct and enjoy the best price
-            for sunset cruises, dinner shows, and private yacht experiences.
+            Sunset cruises, dinner cruise with Turkish night show, private yacht rental,
+            and boat tours — operated by a TURSAB-licensed local company since 2001.
+            Book direct for the best price.
           </motion.p>
 
           <motion.div
@@ -64,7 +65,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-wrap gap-3 mb-10"
           >
-            <Link href="/cruises/sunset-cruise">
+            <Link href="/cruises/bosphorus-sunset-cruise">
               <button className="btn-cta text-base !py-3.5 !px-8">
                 Book Now — €20
                 <ArrowRight className="w-4 h-4" />

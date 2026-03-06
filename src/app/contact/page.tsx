@@ -11,9 +11,10 @@ export default function ContactPage() {
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact Us</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact MerrySails — Book Your Bosphorus Cruise</h1>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Have questions? We&apos;re here to help. Reach us anytime via phone, WhatsApp, or email.
+            Ready to book a boat tour, dinner cruise, or yacht rental in Istanbul?
+            Reach us anytime via phone, WhatsApp, or email. We respond within minutes.
           </p>
         </div>
 

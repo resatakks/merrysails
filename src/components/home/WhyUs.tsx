@@ -38,9 +38,9 @@ export default function WhyUs() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container-main">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Why Choose MerrySails?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Why Book Your Istanbul Boat Tour With Us?</h2>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Trusted by thousands of travelers from around the world.
+            Over 50,000 happy guests since 2001. TURSAB-licensed Bosphorus cruise operator trusted by travelers worldwide.
           </p>
         </div>
 
