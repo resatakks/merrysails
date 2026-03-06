@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
       <div className="container-main max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Privacy Policy</h1>
         <div className="bg-white rounded-2xl p-6 md:p-10 prose prose-gray max-w-none">
-          <p className="text-[var(--text-muted)]">Last updated: March 2025</p>
+          <p className="text-[var(--text-muted)]">Last updated: March 2026</p>
 
           <h2>1. Information We Collect</h2>
           <p>When you book a tour or contact us, we may collect your name, email address, phone number, and payment information. We also collect browsing data through cookies to improve your experience.</p>

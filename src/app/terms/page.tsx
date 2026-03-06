@@ -11,7 +11,7 @@ export default function TermsPage() {
       <div className="container-main max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Terms & Conditions</h1>
         <div className="bg-white rounded-2xl p-6 md:p-10 prose prose-gray max-w-none">
-          <p className="text-[var(--text-muted)]">Last updated: March 2025</p>
+          <p className="text-[var(--text-muted)]">Last updated: March 2026</p>
 
           <h2>1. Booking & Reservations</h2>
           <p>All bookings are subject to availability. A booking is confirmed once you receive a confirmation email with your reservation details. We recommend booking at least 24 hours in advance.</p>
