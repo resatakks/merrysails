@@ -4,10 +4,25 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { guides } from "@/data/guides";
 
 export const metadata = {
-  title: "Istanbul Landmark Guides — Bosphorus, Palaces, Mosques & More",
+  title: "Istanbul Landmark Guides — Bosphorus, Palaces & More",
   description:
-    "Discover Istanbul's iconic landmarks: the Bosphorus Strait, Maiden's Tower, Dolmabahce Palace, Ortakoy Mosque, Rumeli Fortress, Princes' Islands, and more. Expert guides for travelers.",
+    "Explore Istanbul's iconic landmarks: Bosphorus Strait, Maiden's Tower, Dolmabahce Palace, Ortakoy Mosque, Rumeli Fortress, and Princes' Islands. Expert travel guides.",
+  keywords: [
+    "istanbul landmarks guide",
+    "bosphorus attractions",
+    "maidens tower istanbul",
+    "dolmabahce palace guide",
+    "istanbul tourist attractions",
+    "bosphorus cruise landmarks",
+  ],
   alternates: { canonical: "https://merrysails.vercel.app/guides" },
+  openGraph: {
+    title: "Istanbul Landmark Guides — Bosphorus, Palaces & More",
+    description:
+      "In-depth guides to Istanbul's iconic landmarks along the Bosphorus. Expert travel tips for visitors.",
+    url: "https://merrysails.vercel.app/guides",
+    type: "website" as const,
+  },
 };
 
 export default function GuidesPage() {

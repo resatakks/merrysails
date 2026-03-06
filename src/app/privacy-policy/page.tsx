@@ -1,6 +1,8 @@
 export const metadata = {
-  title: "Privacy Policy",
-  description: "MerrySails privacy policy — how we collect, use, and protect your personal information.",
+  title: "Privacy Policy — MerrySails Bosphorus Cruises",
+  description:
+    "MerrySails privacy policy. Learn how we collect, use, and protect your personal data when you book Bosphorus cruises and yacht charters in Istanbul.",
+  alternates: { canonical: "https://merrysails.vercel.app/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
@@ -31,9 +33,9 @@ export default function PrivacyPolicyPage() {
 
           <h2>7. Contact</h2>
           <p>For privacy questions, contact us at:<br />
-          Email: info@merrysails.com<br />
-          Phone: +90 552 463 84 98<br />
-          Address: Arap Cami, Üsküfçüler Sk., 34445 Beyoğlu/Istanbul</p>
+          Email: info@merrytourism.com<br />
+          Phone: +90 537 040 68 22<br />
+          Address: Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul</p>
         </div>
       </div>
     </div>

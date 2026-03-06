@@ -1,9 +1,24 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const metadata = {
-  title: "FAQ — Bosphorus Cruise Questions Answered | Booking, Cancellation, Prices",
-  description: "Frequently asked questions about Istanbul Bosphorus cruises: how to book, cancellation policy, what's included, departure points, weather policy, and group discounts.",
+  title: "FAQ — Bosphorus Cruise Questions Answered",
+  description:
+    "Frequently asked questions about Istanbul Bosphorus cruises: booking, cancellation policy, what's included, departure points, and group discounts.",
+  keywords: [
+    "bosphorus cruise faq",
+    "istanbul cruise questions",
+    "bosphorus tour cancellation",
+    "cruise booking faq",
+    "istanbul boat tour prices",
+  ],
   alternates: { canonical: "https://merrysails.vercel.app/faq" },
+  openGraph: {
+    title: "FAQ — Istanbul Bosphorus Cruise Questions",
+    description:
+      "Answers to common questions about booking, cancellation, prices, and what to expect on Bosphorus cruises.",
+    url: "https://merrysails.vercel.app/faq",
+    type: "website" as const,
+  },
 };
 
 const faqs = [

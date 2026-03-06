@@ -2,9 +2,24 @@ import Image from "next/image";
 import { Anchor, Award, Users, Ship } from "lucide-react";
 
 export const metadata = {
-  title: "About MerrySails — TURSAB Licensed Bosphorus Cruise Operator Since 2001",
-  description: "MerrySails is operated by Merry Tourism, a TURSAB-licensed A Group travel agency serving Istanbul since 2001. 50,000+ happy guests, professional guides, and the best Bosphorus cruise experience.",
+  title: "About MerrySails — TURSAB Licensed Cruise Operator Since 2001",
+  description:
+    "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001. 50,000+ guests, professional guides, best Bosphorus cruise experience.",
+  keywords: [
+    "merrysails about",
+    "merry tourism istanbul",
+    "TURSAB licensed travel agency",
+    "bosphorus cruise company",
+    "istanbul boat tour operator",
+  ],
   alternates: { canonical: "https://merrysails.vercel.app/about" },
+  openGraph: {
+    title: "About MerrySails — TURSAB Licensed Cruise Operator",
+    description:
+      "TURSAB-licensed since 2001. 50,000+ happy guests, professional guides, and the best Bosphorus cruise experience in Istanbul.",
+    url: "https://merrysails.vercel.app/about",
+    type: "website" as const,
+  },
 };
 
 export default function AboutPage() {

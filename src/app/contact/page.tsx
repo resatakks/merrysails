@@ -1,9 +1,24 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Contact MerrySails — Phone, WhatsApp & Email | Istanbul Bosphorus Cruises",
-  description: "Contact MerrySails for Bosphorus cruise bookings. Call +90 537 040 68 22, WhatsApp, or email info@merrytourism.com. Office: Alemdar Mah, Fatih/Istanbul. Open every day 09:00-22:00.",
+  title: "Contact MerrySails — Phone, WhatsApp & Email",
+  description:
+    "Contact MerrySails for Bosphorus cruise bookings. Call +90 537 040 68 22, WhatsApp, or email info@merrytourism.com. Open daily 09:00–22:00.",
+  keywords: [
+    "contact merrysails",
+    "bosphorus cruise booking",
+    "istanbul cruise phone",
+    "merrysails whatsapp",
+    "book boat tour istanbul",
+  ],
   alternates: { canonical: "https://merrysails.vercel.app/contact" },
+  openGraph: {
+    title: "Contact MerrySails — Book Your Bosphorus Cruise",
+    description:
+      "Call, WhatsApp, or email us to book your Bosphorus cruise. Open daily 09:00–22:00 in Istanbul.",
+    url: "https://merrysails.vercel.app/contact",
+    type: "website" as const,
+  },
 };
 
 export default function ContactPage() {

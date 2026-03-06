@@ -23,6 +23,8 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     openGraph: {
       title: guide.title,
       description: guide.metaDescription,
+      url: `https://merrysails.vercel.app/guides/${guide.slug}`,
+      type: "article",
       images: [{ url: guide.image }],
     },
   };
