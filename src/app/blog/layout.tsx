@@ -17,6 +17,7 @@ export const metadata = {
       "Expert cruise guides, yacht charter tips, and Istanbul travel advice from MerrySails.",
     url: "https://merrysails.vercel.app/blog",
     type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

@@ -21,12 +21,14 @@ export const metadata: Metadata = {
     "bosphorus boat tour",
     "istanbul boat trip",
   ],
+  alternates: { canonical: "https://merrysails.vercel.app" },
   openGraph: {
     title: "Bosphorus Cruise Istanbul — Sunset & Dinner Cruises from €20",
     description:
       "Sunset cruises from €20, dinner cruises with Turkish night show, private yacht charter. Since 2001.",
     url: "https://merrysails.vercel.app",
     type: "website",
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

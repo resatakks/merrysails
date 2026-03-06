@@ -23,6 +23,7 @@ export const metadata = {
       "Rent a private yacht on the Bosphorus. Marriage proposals, birthdays, weddings, corporate events. From €280.",
     url: "https://merrysails.vercel.app/private-tours",
     type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

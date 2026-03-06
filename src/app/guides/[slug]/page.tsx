@@ -9,8 +9,9 @@ export function generateStaticParams() {
   return getAllGuideSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const guide = getGuideBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const guide = getGuideBySlug(slug);
   if (!guide) return {};
 
   return {
@@ -30,12 +31,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function GuidePage({
+export default async function GuidePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const guide = getGuideBySlug(params.slug);
+  const { slug } = await params;
+  const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
   const relatedTours = guide.relatedTours

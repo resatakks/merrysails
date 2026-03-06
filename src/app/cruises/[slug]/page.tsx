@@ -47,20 +47,65 @@ const tourKeywords: Record<string, string[]> = {
   "yacht-birthday-party": [
     "istanbul birthday", "party boat istanbul", "yacht birthday party istanbul",
   ],
+  "private-bosphorus-dinner-yacht-cruise": [
+    "private dinner cruise istanbul", "bosphorus dinner yacht", "private yacht dinner bosphorus",
+    "luxury dinner cruise istanbul", "romantic dinner yacht istanbul",
+  ],
+  "private-bosphorus-lunch-yacht-cruise": [
+    "private lunch cruise istanbul", "bosphorus lunch yacht", "private yacht lunch bosphorus",
+    "luxury lunch cruise istanbul",
+  ],
+  "bosphorus-sightseeing-yacht-cruise": [
+    "bosphorus sightseeing yacht", "private sightseeing cruise istanbul",
+    "bosphorus yacht sightseeing tour", "luxury bosphorus cruise",
+  ],
+  "yacht-weddings": [
+    "yacht wedding istanbul", "wedding on yacht bosphorus", "wedding cruise istanbul",
+    "luxury wedding yacht turkey", "bosphorus wedding venue",
+  ],
+  "wedding-anniversary": [
+    "anniversary yacht istanbul", "wedding anniversary cruise bosphorus",
+    "anniversary celebration yacht", "romantic anniversary istanbul",
+  ],
+  "bachelorette-yacht-party": [
+    "bachelorette party istanbul", "bachelorette yacht istanbul", "hen party yacht bosphorus",
+    "bachelorette cruise istanbul",
+  ],
+  "private-yacht-swimming-tour": [
+    "swimming yacht istanbul", "private swimming tour bosphorus", "yacht swimming istanbul",
+    "bosphorus swimming cruise", "istanbul boat swimming",
+  ],
+  "full-day-istanbul-old-city-tour": [
+    "istanbul old city tour", "istanbul walking tour", "full day istanbul tour",
+    "sultanahmet tour", "istanbul sightseeing tour",
+  ],
+  "istanbul-lunch-cruise": [
+    "istanbul lunch cruise", "lunch cruise bosphorus", "bosphorus lunch tour",
+    "istanbul boat lunch", "midday cruise istanbul",
+  ],
+  "bosphorus-cruise-for-cruise-passengers": [
+    "istanbul cruise port tour", "bosphorus cruise for cruise passengers",
+    "istanbul cruise ship excursion", "istanbul port bosphorus tour",
+  ],
+  "new-years-eve-party-cruise": [
+    "new years eve istanbul cruise", "nye bosphorus cruise", "istanbul new year party boat",
+    "new years eve dinner cruise istanbul", "istanbul nye celebration",
+  ],
 };
 
 export function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const tour = getTourBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const tour = getTourBySlug(slug);
   if (!tour) return { title: "Tour Not Found" };
 
   const title = `${tour.nameEn} — From €${tour.priceEur} | Book Online`;
   const description = `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Starting from €${tour.priceEur}/person. Free cancellation. Book your ${tour.nameEn} in Istanbul today.`;
-  const url = `${SITE_URL}/cruises/${tour.slug}`;
-  const keywords = tourKeywords[tour.slug] || [
+  const url = `${SITE_URL}/cruises/${slug}`;
+  const keywords = tourKeywords[slug] || [
     tour.nameEn.toLowerCase(), "bosphorus cruise", "istanbul boat tour",
   ];
 

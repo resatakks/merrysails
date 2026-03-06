@@ -3,6 +3,13 @@ export const metadata = {
   description:
     "MerrySails booking terms and conditions. Cancellation policy, pricing, safety guidelines, and private charter terms for Bosphorus cruises in Istanbul.",
   alternates: { canonical: "https://merrysails.vercel.app/terms" },
+  openGraph: {
+    title: "Terms & Conditions — MerrySails",
+    description: "Booking terms, cancellation policy, pricing, and safety guidelines for Bosphorus cruises in Istanbul.",
+    url: "https://merrysails.vercel.app/terms",
+    type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+  },
 };
 
 export default function TermsPage() {

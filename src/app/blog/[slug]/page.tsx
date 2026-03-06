@@ -9,8 +9,9 @@ export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getBlogBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogBySlug(slug);
   if (!post) return {};
 
   return {
@@ -23,6 +24,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     openGraph: {
       title: post.title,
       description: post.metaDescription,
+      url: `https://merrysails.vercel.app/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       images: [{ url: post.image }],
@@ -30,12 +32,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getBlogBySlug(params.slug);
+  const { slug } = await params;
+  const post = getBlogBySlug(slug);
   if (!post) notFound();
 
   const relatedTours = post.relatedTours

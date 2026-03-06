@@ -19,6 +19,7 @@ export const metadata: Metadata = {
       "Sunset cruises, dinner cruises, private yacht charters. Browse all tours and book online with best price guarantee.",
     url: "https://merrysails.vercel.app/cruises",
     type: "website",
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

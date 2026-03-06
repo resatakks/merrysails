@@ -18,6 +18,7 @@ export const metadata = {
       "Call, WhatsApp, or email us to book your Bosphorus cruise. Open daily 09:00–22:00 in Istanbul.",
     url: "https://merrysails.vercel.app/contact",
     type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

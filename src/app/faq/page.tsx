@@ -18,6 +18,7 @@ export const metadata = {
       "Answers to common questions about booking, cancellation, prices, and what to expect on Bosphorus cruises.",
     url: "https://merrysails.vercel.app/faq",
     type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

@@ -19,6 +19,7 @@ export const metadata = {
       "TURSAB-licensed since 2001. 50,000+ happy guests, professional guides, and the best Bosphorus cruise experience in Istanbul.",
     url: "https://merrysails.vercel.app/about",
     type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

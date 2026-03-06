@@ -22,6 +22,7 @@ export const metadata = {
       "In-depth guides to Istanbul's iconic landmarks along the Bosphorus. Expert travel tips for visitors.",
     url: "https://merrysails.vercel.app/guides",
     type: "website" as const,
+    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 
