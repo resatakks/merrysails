@@ -1,8 +1,9 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Contact",
-  description: "Get in touch with MerrySails. Phone, WhatsApp, email or visit us in Beyoğlu, Istanbul.",
+  title: "Contact MerrySails — Phone, WhatsApp & Email | Istanbul Bosphorus Cruises",
+  description: "Contact MerrySails for Bosphorus cruise bookings. Call +90 537 040 68 22, WhatsApp, or email info@merrytourism.com. Office: Alemdar Mah, Fatih/Istanbul. Open every day 09:00-22:00.",
+  alternates: { canonical: "https://merrysails.vercel.app/contact" },
 };
 
 export default function ContactPage() {

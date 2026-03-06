@@ -166,6 +166,10 @@ a {
   color: inherit;
 }
 
+button, a, [role="button"], input[type="submit"], .tour-card, [class*="cursor-pointer"] {
+  cursor: pointer;
+}
+
 /* ============================================
    Container
    ============================================ */

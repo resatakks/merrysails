@@ -32,7 +32,7 @@ const companyLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[var(--brand-dark)] text-white/90 pb-24 lg:pb-0">
-      <div className="container-main py-16">
+      <div className="container-main pt-14 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">

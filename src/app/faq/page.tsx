@@ -1,8 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const metadata = {
-  title: "FAQ",
-  description: "Frequently asked questions about MerrySails Istanbul Bosphorus cruises.",
+  title: "FAQ — Bosphorus Cruise Questions Answered | Booking, Cancellation, Prices",
+  description: "Frequently asked questions about Istanbul Bosphorus cruises: how to book, cancellation policy, what's included, departure points, weather policy, and group discounts.",
+  alternates: { canonical: "https://merrysails.vercel.app/faq" },
 };
 
 const faqs = [
@@ -40,8 +41,26 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FAQPage() {
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main max-w-3xl">
         <div className="text-center mb-12">
@@ -67,5 +86,6 @@ export default function FAQPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -4,8 +4,9 @@ import { ArrowRight } from "lucide-react";
 import { tours } from "@/data/tours";
 
 export const metadata = {
-  title: "Private Yacht Organizations",
-  description: "Private yacht experiences on the Bosphorus — marriage proposals, birthday parties, weddings, corporate events and more.",
+  title: "Private Yacht Charter & Events on the Bosphorus — Marriage Proposal, Birthday, Wedding",
+  description: "Book a private yacht on the Bosphorus for marriage proposals, birthday parties, weddings, corporate events, and bachelorette parties. Essential from €280, Premium €380, VIP €680. Customizable packages with add-on services.",
+  alternates: { canonical: "https://merrysails.vercel.app/private-tours" },
 };
 
 export default function PrivateToursPage() {

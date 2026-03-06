@@ -2,8 +2,9 @@ import Image from "next/image";
 import { Anchor, Award, Users, Ship } from "lucide-react";
 
 export const metadata = {
-  title: "About Us",
-  description: "Learn about MerrySails and Merry Tourism — your trusted partner for Istanbul Bosphorus cruises since 2001.",
+  title: "About MerrySails — TURSAB Licensed Bosphorus Cruise Operator Since 2001",
+  description: "MerrySails is operated by Merry Tourism, a TURSAB-licensed A Group travel agency serving Istanbul since 2001. 50,000+ happy guests, professional guides, and the best Bosphorus cruise experience.",
+  alternates: { canonical: "https://merrysails.vercel.app/about" },
 };
 
 export default function AboutPage() {
@@ -57,7 +58,7 @@ export default function AboutPage() {
             { icon: Ship, value: "23+", label: "Years Experience" },
             { icon: Users, value: "50K+", label: "Happy Guests" },
             { icon: Award, value: "5.0", label: "Average Rating" },
-            { icon: Anchor, value: "8", label: "Tour Options" },
+            { icon: Anchor, value: "21", label: "Tour Options" },
           ].map((stat) => (
             <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-sm">
               <stat.icon className="w-8 h-8 text-[var(--brand-primary)] mx-auto mb-3" />
