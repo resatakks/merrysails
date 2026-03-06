@@ -417,8 +417,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "bosphorus-night-cruise-guide",
-    title: "Bosphorus Night Cruise — See Istanbul Illuminated After Dark",
-    metaDescription: "Experience Istanbul's illuminated Bosphorus on a night cruise. Glowing palaces, lit bridges & Ottoman mosques reflected in the water. Dinner cruise from €65.",
+    title: "Bosphorus Night Cruise — Lights & Dinner",
+    metaDescription: "Experience Istanbul's illuminated Bosphorus on a night cruise. Glowing palaces, lit bridges & Ottoman mosques reflected on the water. From €65.",
     excerpt: "Istanbul transforms after dark — mosques glow, palaces shimmer, and the Bosphorus bridges become ribbons of light. Here is your guide to the magical night cruise.",
     category: "cruise-guide",
     date: "2026-11-15",
@@ -568,7 +568,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "swimming-yacht-tour-istanbul",
-    title: "Swimming Yacht Tour in Istanbul — Best Spots & What to Expect",
+    title: "Swimming Yacht Tour Istanbul — Best Spots",
     metaDescription: "Swim from a private yacht on the Bosphorus! Best swimming spots, water temperatures, seasons & safety. Private swimming yacht tour from €280. Book direct.",
     excerpt: "Combine a Bosphorus yacht cruise with swimming in crystal-clear waters. Discover the best swimming spots accessible only by boat near Istanbul.",
     category: "yacht-guide",
@@ -980,7 +980,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "istanbul-street-food-guide",
-    title: "Istanbul Street Food Guide — 15 Must-Try Turkish Street Foods",
+    title: "Istanbul Street Food — 15 Must-Try Bites",
     metaDescription: "Best Istanbul street food guide. Try simit, döner, balık ekmek, lahmacun, kumpir & more. Where to find them, prices & local tips. Updated 2026.",
     excerpt: "Istanbul's street food scene is legendary. From simit carts to fish sandwich boats, discover the 15 must-try street foods and where to find the best versions.",
     category: "istanbul",
@@ -1279,7 +1279,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-with-kids",
-    title: "Bosphorus Cruise with Kids — Family-Friendly Guide for Istanbul",
+    title: "Bosphorus Cruise with Kids — Family Guide",
     metaDescription: "Taking a Bosphorus cruise with children? Family guide covering best cruise types, age recommendations, safety tips & keeping kids entertained on the water.",
     excerpt: "A Bosphorus cruise is a fantastic family activity. This guide helps parents choose the right cruise, prepare the kids, and make the most of the experience.",
     category: "cruise-guide",
@@ -1307,7 +1307,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "bosphorus-cruise-for-couples",
     title: "Bosphorus Cruise for Couples — Istanbul Guide",
-    metaDescription: "Make your Istanbul trip romantic with a Bosphorus cruise for couples. Explore sunset sailings, dinner packages, and the most intimate experiences on the water.",
+    metaDescription: "Make your Istanbul trip romantic with a Bosphorus cruise for couples. Sunset sailings, dinner packages & intimate experiences on the water.",
     excerpt: "The Bosphorus is one of the world's most romantic waterways. Here are the best cruise options for couples seeking a memorable Istanbul experience together.",
     category: "cruise-guide",
     date: "2026-10-30",
@@ -1477,7 +1477,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "turkish-etiquette-guide-tourists",
     title: "Turkish Etiquette Guide for Istanbul Visitors",
-    metaDescription: "Avoid cultural missteps with our Turkish etiquette guide. Learn the customs, dress codes, and social rules every Istanbul visitor should know before arriving.",
+    metaDescription: "Avoid cultural missteps with our Turkish etiquette guide. Learn customs, dress codes & social rules every Istanbul visitor should know.",
     excerpt: "Understanding Turkish etiquette enriches your Istanbul experience. From mosque visits to dining customs, here are the cultural tips that show respect and earn warmth.",
     category: "tips",
     date: "2026-10-15",
@@ -1613,8 +1613,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "istanbul-seaside-neighborhoods",
-    title: "Istanbul's Seaside Neighborhoods — A Local's Guide to the Waterfront",
-    metaDescription: "Explore Istanbul's seaside neighborhoods. Bebek, Arnavutköy, Ortaköy, Kuzguncuk & more. Waterfront walks, cafes, restaurants & local charm along the Bosphorus.",
+    title: "Istanbul Seaside Neighborhoods — Local Guide",
+    metaDescription: "Explore Istanbul's seaside neighborhoods: Bebek, Arnavutköy, Ortaköy, Kuzguncuk & more. Waterfront walks, cafes & local charm along the Bosphorus.",
     excerpt: "Istanbul's Bosphorus-side neighborhoods each have distinct character. From upscale Bebek to charming Kuzguncuk, discover the waterfront areas locals love most.",
     category: "istanbul",
     date: "2026-10-01",
@@ -1771,8 +1771,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "group-bosphorus-cruise-guide",
-    title: "Group Bosphorus Cruise Guide — Planning for 10-50+ Guests in Istanbul",
-    metaDescription: "Planning a group Bosphorus cruise? Guide for 10-50+ guests. Group discounts, private yacht vs shared cruise, logistics. Corporate groups, weddings, school trips.",
+    title: "Group Bosphorus Cruise — 10 to 50+ Guests",
+    metaDescription: "Planning a group Bosphorus cruise? Guide for 10-50+ guests. Group discounts, private yacht vs shared, logistics. Corporates & weddings.",
     excerpt: "Organizing a Bosphorus cruise for a group? From 10 friends to 50+ corporate guests, this guide covers logistics, pricing, and the best options for every group size.",
     category: "cruise-guide",
     date: "2026-09-18",
@@ -1995,8 +1995,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "yacht-rental-istanbul-prices",
-    title: "Yacht Rental Istanbul — Prices, Packages & How to Book (2026 Guide)",
-    metaDescription: "Rent a private yacht in Istanbul from €280. Compare packages, prices, and yacht types. Bosphorus yacht charter for proposals, parties & cruises. TURSAB licensed.",
+    title: "Yacht Rental Istanbul — Prices & Packages",
+    metaDescription: "Rent a private yacht in Istanbul from €280. Compare packages, prices & yacht types. Bosphorus charter for proposals, parties & cruises.",
     excerpt: "Everything you need to know about renting a yacht in Istanbul — from prices and package comparisons to booking tips and the best routes along the Bosphorus.",
     category: "yacht-guide",
     date: "2026-02-25",
@@ -2024,8 +2024,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "bosphorus-ferry-vs-cruise-comparison",
-    title: "Bosphorus Ferry vs Cruise — Which One Should You Choose? (2026)",
-    metaDescription: "Bosphorus ferry or private cruise? Compare prices, routes, comfort & experience. Ferry from €3, cruise from €15. Expert comparison by a TURSAB licensed operator.",
+    title: "Bosphorus Ferry vs Cruise — Which to Choose?",
+    metaDescription: "Bosphorus ferry or private cruise? Compare prices, routes, comfort & experience. Ferry from €3, cruise from €15. Expert comparison.",
     excerpt: "Should you take the public Bosphorus ferry or book a private cruise? We compare price, comfort, route, food, and overall experience so you can choose the best option for your Istanbul trip.",
     category: "cruise-guide",
     date: "2026-03-04",
