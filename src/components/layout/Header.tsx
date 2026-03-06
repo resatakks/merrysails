@@ -43,6 +43,14 @@ const navItems = [
     ],
   },
   { label: "About", href: "/about" },
+  {
+    label: "Blog",
+    href: "/blog",
+    children: [
+      { label: "Cruise Guides", href: "/blog" },
+      { label: "Istanbul Landmark Guides", href: "/guides" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 

@@ -25,6 +25,8 @@ const companyLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "All Cruises", href: "/cruises" },
   { label: "Private Tours", href: "/private-tours" },
+  { label: "Blog", href: "/blog" },
+  { label: "Istanbul Guides", href: "/guides" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms" },
 ];
