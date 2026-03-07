@@ -11,14 +11,14 @@ export const metadata = {
     "cruise booking faq",
     "istanbul boat tour prices",
   ],
-  alternates: { canonical: "https://merrysails.vercel.app/faq" },
+  alternates: { canonical: "https://merrysails.com/faq" },
   openGraph: {
     title: "FAQ — Istanbul Bosphorus Cruise Questions",
     description:
       "Answers to common questions about booking, cancellation, prices, and what to expect on Bosphorus cruises.",
-    url: "https://merrysails.vercel.app/faq",
+    url: "https://merrysails.com/faq",
     type: "website" as const,
-    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 

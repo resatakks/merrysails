@@ -34,7 +34,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 bg-[var(--brand-gold)]/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6"
           >
             <Star className="w-4 h-4" />
-            Winter Special — €20 <span className="line-through opacity-70">€40</span>
+            Spring Special — €20 <span className="line-through opacity-70">€40</span>
           </motion.div>
 
           <motion.h1
@@ -87,7 +87,7 @@ export default function HeroSection() {
           >
             <div className="flex items-center gap-2">
               <Star className="w-4 h-4 text-[var(--brand-gold)]" />
-              <span>5.0 Rating (65+ Reviews)</span>
+              <span>4.9 Rating (2,800+ Reviews)</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-[var(--brand-gold)]" />
@@ -95,7 +95,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[var(--brand-gold)]" />
-              <span>23+ Years Experience</span>
+              <span>25 Years Experience</span>
             </div>
           </motion.div>
         </motion.div>

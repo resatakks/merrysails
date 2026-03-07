@@ -24,9 +24,9 @@ const reviews = [
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
-  "@id": "https://merrysails.vercel.app/#organization",
+  "@id": "https://merrysails.com/#organization",
   name: "MerrySails",
-  url: "https://merrysails.vercel.app",
+  url: "https://merrysails.com",
   review: reviews.map((r) => ({
     "@type": "Review",
     author: { "@type": "Person", name: r.name },
@@ -48,7 +48,7 @@ export default function Testimonials() {
                 <Star key={i} className="w-5 h-5 text-[var(--brand-gold)] fill-[var(--brand-gold)]" />
               ))}
             </div>
-            <span>5.0 from 65+ reviews</span>
+            <span>4.9 from 2,800+ reviews</span>
           </div>
         </div>
 

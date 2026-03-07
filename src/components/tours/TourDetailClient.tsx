@@ -26,6 +26,7 @@ export default function TourDetailClient({ tour, related }: Props) {
   const [bookingModal, setBookingModal] = useState(false);
   const [bookingDate, setBookingDate] = useState<Date | null>(null);
   const [bookingGuests, setBookingGuests] = useState(2);
+  const [bookingTime, setBookingTime] = useState("");
 
   const hasPackages = tour.packages && tour.packages.length > 0;
 
@@ -39,9 +40,10 @@ export default function TourDetailClient({ tour, related }: Props) {
     );
   };
 
-  const handleBook = useCallback((date: Date, guests: number) => {
+  const handleBook = useCallback((date: Date, guests: number, time: string) => {
     setBookingDate(date);
     setBookingGuests(guests);
+    setBookingTime(time);
     setBookingModal(true);
   }, []);
 
@@ -64,7 +66,7 @@ export default function TourDetailClient({ tour, related }: Props) {
           >
             <Image
               src={tour.image}
-              alt={tour.nameEn}
+              alt={`${tour.nameEn} — ${tour.route} in Istanbul`}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               priority
@@ -91,7 +93,7 @@ export default function TourDetailClient({ tour, related }: Props) {
               >
                 <Image
                   src={img}
-                  alt={`${tour.nameEn} ${i + 1}`}
+                  alt={`${tour.nameEn} — ${tour.highlights[i] || `Bosphorus cruise experience ${i + 1}`}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="30vw"
@@ -296,6 +298,8 @@ export default function TourDetailClient({ tour, related }: Props) {
               tourSlug={tour.slug}
               priceEur={effectivePrice}
               tourName={tour.nameEn}
+              departureTime={tour.departureTime}
+              departurePoint={tour.departurePoint}
               onBook={handleBook}
             />
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-[var(--line)]">
@@ -351,10 +355,12 @@ export default function TourDetailClient({ tour, related }: Props) {
             tourName: tour.nameEn,
             tourSlug: tour.slug,
             date: format(bookingDate, "dd MMM yyyy"),
+            time: bookingTime,
             guests: bookingGuests,
             selectedPackage,
             selectedAddOns,
             basePrice: tour.priceEur,
+            departurePoint: tour.departurePoint,
           }}
           onClose={() => setBookingModal(false)}
         />

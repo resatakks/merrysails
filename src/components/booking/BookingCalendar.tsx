@@ -2,21 +2,30 @@
 
 import { useState } from "react";
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isBefore, isToday, startOfDay } from "date-fns";
-import { ChevronLeft, ChevronRight, Minus, Plus, Phone, Shield } from "lucide-react";
+import { ChevronLeft, ChevronRight, Minus, Plus, Phone, Shield, Clock } from "lucide-react";
 
 interface Props {
   tourSlug: string;
   priceEur: number;
   tourName: string;
-  onBook?: (date: Date, guests: number) => void;
+  departureTime?: string;
+  departurePoint?: string;
+  onBook?: (date: Date, guests: number, time: string) => void;
+}
+
+function parseTimeOptions(dt?: string): string[] {
+  if (!dt) return [];
+  if (dt.toLowerCase().includes("flexible") || dt.toLowerCase().includes("timed")) return [];
+  return dt.split("/").map((t) => t.replace(/\(.*\)/, "").trim()).filter((t) => /^\d{2}:\d{2}$/.test(t));
 }
 
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-export default function BookingCalendar({ tourSlug, priceEur, tourName, onBook }: Props) {
+export default function BookingCalendar({ tourSlug, priceEur, tourName, departureTime, departurePoint, onBook }: Props) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [guests, setGuests] = useState(2);
+  const [selectedTime, setSelectedTime] = useState("");
 
   const today = startOfDay(new Date());
   const monthStart = startOfMonth(currentMonth);
@@ -27,10 +36,12 @@ export default function BookingCalendar({ tourSlug, priceEur, tourName, onBook }
   const blanks = startDay === 0 ? 6 : startDay - 1;
 
   const total = priceEur * guests;
+  const timeOptions = parseTimeOptions(departureTime);
+  const effectiveTime = selectedTime || (timeOptions.length === 1 ? timeOptions[0] : "");
 
   const handleBookNow = () => {
     if (selectedDate && onBook) {
-      onBook(selectedDate, guests);
+      onBook(selectedDate, guests, effectiveTime || departureTime || "");
     }
   };
 
@@ -114,6 +125,45 @@ export default function BookingCalendar({ tourSlug, priceEur, tourName, onBook }
             Selected: <span className="font-semibold text-[var(--heading)]">{format(selectedDate, "dd MMM yyyy")}</span>
           </div>
 
+          {/* Time selector */}
+          {timeOptions.length > 1 && (
+            <div>
+              <label className="text-sm font-medium mb-1.5 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
+                Departure Time
+              </label>
+              <div className={`grid gap-2 ${timeOptions.length <= 2 ? "grid-cols-2" : "grid-cols-3"}`}>
+                {timeOptions.map((time) => (
+                  <button
+                    key={time}
+                    onClick={() => setSelectedTime(time)}
+                    className={`py-2.5 rounded-xl text-sm font-medium transition-all border ${
+                      selectedTime === time
+                        ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5 text-[var(--brand-primary)]"
+                        : "border-[var(--line)] hover:border-[var(--brand-primary)]/30 text-[var(--body-text)]"
+                    }`}
+                  >
+                    {time}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {timeOptions.length === 1 && (
+            <div className="flex items-center gap-2 text-sm text-[var(--body-text)]">
+              <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
+              Departure: <span className="font-semibold">{timeOptions[0]}</span>
+            </div>
+          )}
+
+          {timeOptions.length === 0 && departureTime && (
+            <div className="flex items-center gap-2 text-sm text-[var(--body-text)]">
+              <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
+              {departureTime}
+            </div>
+          )}
+
           {/* Guest selector */}
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Guests</span>
@@ -141,8 +191,12 @@ export default function BookingCalendar({ tourSlug, priceEur, tourName, onBook }
           </div>
 
           {/* Book button */}
-          <button onClick={handleBookNow} className="btn-cta w-full !py-3.5 text-base">
-            Book Now
+          <button
+            onClick={handleBookNow}
+            disabled={timeOptions.length > 1 && !selectedTime}
+            className="btn-cta w-full !py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {timeOptions.length > 1 && !selectedTime ? "Select a Departure Time" : "Book Now"}
           </button>
 
           {/* WhatsApp */}

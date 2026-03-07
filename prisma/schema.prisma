@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Reservation ────────────────────────────────────────────
+
+model Reservation {
+  id            String   @id @default(cuid())
+  reservationId String   @unique // MRY-2026-0001
+  tourSlug      String
+  tourName      String
+  date          DateTime
+  time          String // "17:00", "19:30" etc.
+  guests        Int
+  totalPrice    Float
+  currency      String   @default("EUR")
+  status        String   @default("pending") // pending | confirmed | cancelled | completed
+
+  // Customer info
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+  customerCountry String?
+  notes           String?
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([date])
+  @@index([customerEmail])
+}
+
+// ─── Telegram User ──────────────────────────────────────────
+
+model TelegramUser {
+  chatId         String  @id
+  username       String?
+  firstName      String?
+  isActive       Boolean @default(true)
+  notifyNew      Boolean @default(true)
+  notifyReminder Boolean @default(true)
+  notifyDaily    Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Contact Message ────────────────────────────────────────
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

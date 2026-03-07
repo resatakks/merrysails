@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     "bosphorus boat tour",
     "istanbul boat trip",
   ],
-  alternates: { canonical: "https://merrysails.vercel.app" },
+  alternates: { canonical: "https://merrysails.com" },
   openGraph: {
     title: "Bosphorus Cruise Istanbul — Sunset & Dinner Cruises from €20",
     description:
       "Sunset cruises from €20, dinner cruises with Turkish night show, private yacht charter. Since 2001.",
-    url: "https://merrysails.vercel.app",
+    url: "https://merrysails.com",
     type: "website",
-    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 
@@ -37,15 +37,15 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "MerrySails",
   alternateName: "Merry Tourism",
-  url: "https://merrysails.vercel.app",
+  url: "https://merrysails.com",
   publisher: {
     "@type": "TravelAgency",
-    "@id": "https://merrysails.vercel.app/#organization",
+    "@id": "https://merrysails.com/#organization",
     name: "MerrySails",
   },
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://merrysails.vercel.app/blog?q={search_term_string}",
+    target: "https://merrysails.com/blog?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };

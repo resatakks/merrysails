@@ -12,27 +12,27 @@ export const metadata = {
     "bosphorus cruise company",
     "istanbul boat tour operator",
   ],
-  alternates: { canonical: "https://merrysails.vercel.app/about" },
+  alternates: { canonical: "https://merrysails.com/about" },
   openGraph: {
     title: "About MerrySails — TURSAB Licensed Cruise Operator",
     description:
       "TURSAB-licensed since 2001. 50,000+ happy guests, professional guides, and the best Bosphorus cruise experience in Istanbul.",
-    url: "https://merrysails.vercel.app/about",
+    url: "https://merrysails.com/about",
     type: "website" as const,
-    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 
 const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://merrysails.vercel.app/#organization",
+  "@id": "https://merrysails.com/#organization",
   name: "MerrySails — Merry Tourism",
   alternateName: "Merry Tourism",
   description: "TURSAB-licensed A Group travel agency offering Bosphorus cruises, dinner cruises, yacht charter, and boat tours in Istanbul since 2001.",
-  url: "https://merrysails.vercel.app",
+  url: "https://merrysails.com",
   telephone: "+905370406822",
-  email: "info@merrytourism.com",
+  email: "info@merrysails.com",
   foundingDate: "2001",
   address: {
     "@type": "PostalAddress",

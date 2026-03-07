@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Clock } from "lucide-react";
+import { Clock, Star } from "lucide-react";
 import type { Tour } from "@/data/tours";
 
 export default function TourCard({ tour }: { tour: Tour }) {
@@ -9,7 +9,7 @@ export default function TourCard({ tour }: { tour: Tour }) {
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image
           src={tour.image}
-          alt={tour.nameEn}
+          alt={`${tour.nameEn} — Book from €${tour.priceEur} in Istanbul`}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -29,7 +29,11 @@ export default function TourCard({ tour }: { tour: Tour }) {
           <h3 className="text-lg font-bold text-white mb-0.5 leading-tight group-hover:text-[var(--brand-gold)] transition-colors">
             {tour.nameEn}
           </h3>
-          <p className="text-sm text-white/70 mb-2">{tour.name}</p>
+          <div className="flex items-center gap-1.5 mb-2">
+            <Star className="w-3.5 h-3.5 fill-[var(--brand-gold)] text-[var(--brand-gold)]" />
+            <span className="text-sm font-semibold text-white">{tour.rating}</span>
+            <span className="text-xs text-white/50">({tour.reviewCount})</span>
+          </div>
           <div className="flex items-center justify-between">
             <div>
               {tour.originalPriceEur && (

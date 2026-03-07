@@ -9,7 +9,7 @@ const features = [
   {
     icon: Clock,
     title: "TURSAB Licensed Since 2001",
-    description: "Merry Tourism is a TURSAB A Group licensed travel agency — 23+ years operating Bosphorus cruises with 50,000+ happy guests.",
+    description: "Merry Tourism is a TURSAB A Group licensed travel agency — 25 years operating Bosphorus cruises with 50,000+ happy guests.",
   },
   {
     icon: Award,

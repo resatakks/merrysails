@@ -15,20 +15,40 @@ export const metadata = {
     "istanbul tourist attractions",
     "bosphorus cruise landmarks",
   ],
-  alternates: { canonical: "https://merrysails.vercel.app/guides" },
+  alternates: { canonical: "https://merrysails.com/guides" },
   openGraph: {
     title: "Istanbul Landmark Guides — Bosphorus, Palaces & More",
     description:
       "In-depth guides to Istanbul's iconic landmarks along the Bosphorus. Expert travel tips for visitors.",
-    url: "https://merrysails.vercel.app/guides",
+    url: "https://merrysails.com/guides",
     type: "website" as const,
-    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
+};
+
+const SITE_URL = "https://merrysails.com";
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Istanbul Landmark & Destination Guides",
+  description: "In-depth guides to Istanbul's iconic landmarks along the Bosphorus.",
+  numberOfItems: guides.length,
+  itemListElement: guides.map((guide, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${SITE_URL}/guides/${guide.slug}`,
+    name: guide.title,
+  })),
 };
 
 export default function GuidesPage() {
   return (
     <div className="pt-32 pb-20 bg-[var(--surface-alt)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
       <div className="container-main">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">

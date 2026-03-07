@@ -183,6 +183,7 @@ export const tours: Tour[] = [
     capacity: "Max 50 guests",
     priceEur: 15,
     includes: ["Audio guide (12 languages)", "Soft drinks", "WiFi", "Photo spots"],
+    notIncluded: ["Hotel pickup", "Alcoholic beverages", "Meals", "Guide tip"],
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Continental views", "Affordable sightseeing"],
     badge: "Budget Friendly",
     badgeColor: "bg-green-500 text-white",

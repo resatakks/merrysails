@@ -6,7 +6,7 @@ export function GET() {
   const tourDetails = tours
     .map(
       (t) => `### ${t.nameEn}
-- URL: https://merrysails.vercel.app/cruises/${t.slug}
+- URL: https://merrysails.com/cruises/${t.slug}
 - Price: From €${t.priceEur}/person${t.originalPriceEur ? ` (was €${t.originalPriceEur})` : ""}
 - Duration: ${t.duration}
 - Capacity: ${t.capacity}
@@ -24,7 +24,7 @@ ${t.addOns ? `- Add-ons: ${t.addOns.map((a) => `${a.name} (${a.price})`).join(",
   const blogSummaries = blogPosts
     .map(
       (p) => `### ${p.title}
-- URL: https://merrysails.vercel.app/blog/${p.slug}
+- URL: https://merrysails.com/blog/${p.slug}
 - Category: ${p.category}
 - Published: ${p.date}
 - Read Time: ${p.readTime}
@@ -38,7 +38,7 @@ ${p.faqs.length > 0 ? `- FAQs:\n${p.faqs.map((f) => `  Q: ${f.q}\n  A: ${f.a}`).
   const guidesSummaries = guides
     .map(
       (g) => `### ${g.title}
-- URL: https://merrysails.vercel.app/guides/${g.slug}
+- URL: https://merrysails.com/guides/${g.slug}
 - Summary: ${g.excerpt}
 - Keywords: ${g.keywords.join(", ")}
 - Sections: ${g.sections.map((s) => s.heading).join(" | ")}`
@@ -47,7 +47,7 @@ ${p.faqs.length > 0 ? `- FAQs:\n${p.faqs.map((f) => `  Q: ${f.q}\n  A: ${f.a}`).
 
   const content = `# MerrySails — Complete Site Content for AI
 
-> This is the full content index of MerrySails (merrysails.vercel.app), operated by Merry Tourism — a TURSAB A Group licensed travel agency in Istanbul, Turkey, offering Bosphorus cruises, dinner cruises, yacht charters, and boat tours since 2001.
+> This is the full content index of MerrySails (merrysails.com), operated by Merry Tourism — a TURSAB A Group licensed travel agency in Istanbul, Turkey, offering Bosphorus cruises, dinner cruises, yacht charters, and boat tours since 2001.
 
 ## Company Information
 - **Name:** Merry Tourism (trading as MerrySails)
@@ -55,7 +55,7 @@ ${p.faqs.length > 0 ? `- FAQs:\n${p.faqs.map((f) => `  Q: ${f.q}\n  A: ${f.a}`).
 - **Founded:** 2001
 - **Address:** Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul, Turkey
 - **Phone:** +90 537 040 68 22 / +90 536 414 66 05
-- **Email:** info@merrytourism.com
+- **Email:** info@merrysails.com
 - **WhatsApp:** +90 537 040 68 22
 - **Rating:** 4.9/5 (2,847 reviews)
 - **Guests Served:** 50,000+

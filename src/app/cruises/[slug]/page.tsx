@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { tours, getTourBySlug } from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 
-const SITE_URL = "https://merrysails.vercel.app";
+const SITE_URL = "https://merrysails.com";
 
 /* Keyword mapping from CSV research (volume/KD) for each tour slug */
 const tourKeywords: Record<string, string[]> = {

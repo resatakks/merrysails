@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: guide.metaDescription,
     keywords: guide.keywords,
     alternates: {
-      canonical: `https://merrysails.vercel.app/guides/${guide.slug}`,
+      canonical: `https://merrysails.com/guides/${guide.slug}`,
     },
     openGraph: {
       title: guide.title,
       description: guide.metaDescription,
-      url: `https://merrysails.vercel.app/guides/${guide.slug}`,
+      url: `https://merrysails.com/guides/${guide.slug}`,
       type: "article",
       images: [{ url: guide.image }],
     },
@@ -53,19 +53,19 @@ export default async function GuidePage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://merrysails.vercel.app",
+        item: "https://merrysails.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Guides",
-        item: "https://merrysails.vercel.app/guides",
+        item: "https://merrysails.com/guides",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: guide.title,
-        item: `https://merrysails.vercel.app/guides/${guide.slug}`,
+        item: `https://merrysails.com/guides/${guide.slug}`,
       },
     ],
   };
@@ -81,15 +81,15 @@ export default async function GuidePage({
     author: {
       "@type": "Organization",
       name: "MerrySails",
-      url: "https://merrysails.vercel.app",
+      url: "https://merrysails.com",
     },
     publisher: {
       "@type": "Organization",
       name: "MerrySails",
-      url: "https://merrysails.vercel.app",
+      url: "https://merrysails.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://merrysails.vercel.app/logo.png",
+        url: "https://merrysails.com/logo.png",
       },
     },
   };

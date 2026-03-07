@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.metaDescription,
     keywords: post.keywords,
     alternates: {
-      canonical: `https://merrysails.vercel.app/blog/${post.slug}`,
+      canonical: `https://merrysails.com/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.metaDescription,
-      url: `https://merrysails.vercel.app/blog/${post.slug}`,
+      url: `https://merrysails.com/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       images: [{ url: post.image }],
@@ -55,17 +55,18 @@ export default async function BlogPostPage({
     datePublished: post.date,
     dateModified: post.date,
     author: {
-      "@type": "Organization",
-      name: "MerrySails",
-      url: "https://merrysails.vercel.app",
+      "@type": "Person",
+      name: "MerrySails Editorial Team",
+      url: "https://merrysails.com/about",
+      jobTitle: "Local Istanbul Travel Experts",
     },
     publisher: {
       "@type": "Organization",
       name: "MerrySails",
-      url: "https://merrysails.vercel.app",
+      url: "https://merrysails.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://merrysails.vercel.app/logo.png",
+        url: "https://merrysails.com/logo.png",
       },
     },
   };
@@ -91,19 +92,19 @@ export default async function BlogPostPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://merrysails.vercel.app",
+        item: "https://merrysails.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://merrysails.vercel.app/blog",
+        item: "https://merrysails.com/blog",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://merrysails.vercel.app/blog/${post.slug}`,
+        item: `https://merrysails.com/blog/${post.slug}`,
       },
     ],
   };
@@ -197,6 +198,19 @@ export default async function BlogPostPage({
                 </p>
               </section>
             ))}
+          </div>
+
+          {/* Author Bio */}
+          <div className="mt-10 border-t border-[var(--line)] pt-6 flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-[var(--brand-primary)]/10 flex items-center justify-center shrink-0">
+              <span className="text-[var(--brand-primary)] font-bold text-lg">M</span>
+            </div>
+            <div>
+              <div className="font-semibold text-[var(--heading)]">MerrySails Editorial Team</div>
+              <p className="text-sm text-[var(--text-muted)] mt-1">
+                Written by local Istanbul maritime experts with 10+ years of experience operating Bosphorus cruises and yacht charters. Our team lives and breathes Istanbul&apos;s waterways.
+              </p>
+            </div>
           </div>
 
           {/* FAQ Section */}

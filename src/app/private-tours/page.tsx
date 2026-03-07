@@ -16,14 +16,14 @@ export const metadata = {
     "corporate event yacht istanbul",
     "bachelorette party yacht",
   ],
-  alternates: { canonical: "https://merrysails.vercel.app/private-tours" },
+  alternates: { canonical: "https://merrysails.com/private-tours" },
   openGraph: {
     title: "Private Yacht Charter & Events — Bosphorus Istanbul",
     description:
       "Rent a private yacht on the Bosphorus. Marriage proposals, birthdays, weddings, corporate events. From €280.",
-    url: "https://merrysails.vercel.app/private-tours",
+    url: "https://merrysails.com/private-tours",
     type: "website" as const,
-    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 
@@ -35,7 +35,7 @@ const serviceSchema = {
   provider: {
     "@type": "TravelAgency",
     name: "MerrySails — Merry Tourism",
-    url: "https://merrysails.vercel.app",
+    url: "https://merrysails.com",
   },
   areaServed: { "@type": "City", name: "Istanbul" },
   hasOfferCatalog: {

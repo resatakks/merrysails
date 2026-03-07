@@ -11,7 +11,7 @@ export function GET() {
 - Founded: 2001
 - Location: Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul, Turkey
 - Phone: +90 537 040 68 22 / +90 536 414 66 05
-- Email: info@merrytourism.com
+- Email: info@merrysails.com
 - WhatsApp: +90 537 040 68 22
 - Rating: 4.9/5 (2,847 reviews)
 - Guests Served: 50,000+
@@ -40,14 +40,15 @@ ${tours
 - Private Yacht VIP: From €680 (4 hours, full luxury package)
 
 ## Key Pages
-- Homepage: https://merrysails.vercel.app
-- All Cruises: https://merrysails.vercel.app/cruises
-- Private Tours: https://merrysails.vercel.app/private-tours
-- Blog: https://merrysails.vercel.app/blog
-- Istanbul Guides: https://merrysails.vercel.app/guides
-- About: https://merrysails.vercel.app/about
-- Contact: https://merrysails.vercel.app/contact
-- FAQ: https://merrysails.vercel.app/faq
+- Homepage: https://merrysails.com
+- All Cruises: https://merrysails.com/cruises
+- Private Tours: https://merrysails.com/private-tours
+- Blog: https://merrysails.com/blog
+- Istanbul Guides: https://merrysails.com/guides
+- About: https://merrysails.com/about
+- Contact: https://merrysails.com/contact
+- FAQ: https://merrysails.com/faq
+- Track Reservation: https://merrysails.com/reservation
 
 ## Policies
 - Free cancellation up to 24 hours before departure
@@ -57,11 +58,11 @@ ${tours
 - Languages: English, Turkish, Arabic, Russian
 
 ## Detailed Tour Pages
-${tours.map((t) => `- [${t.nameEn}](https://merrysails.vercel.app/cruises/${t.slug})`).join("\n")}
+${tours.map((t) => `- [${t.nameEn}](https://merrysails.com/cruises/${t.slug})`).join("\n")}
 
 ## Blog & Guides
-- [Blog — Cruise Guides & Travel Tips](https://merrysails.vercel.app/blog)
-- [Istanbul Landmark Guides](https://merrysails.vercel.app/guides)
+- [Blog — Cruise Guides & Travel Tips](https://merrysails.com/blog)
+- [Istanbul Landmark Guides](https://merrysails.com/guides)
 `;
 
   return new Response(content, {

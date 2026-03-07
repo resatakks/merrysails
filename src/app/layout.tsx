@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const SITE_URL = "https://merrysails.vercel.app";
+const SITE_URL = "https://merrysails.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -90,7 +90,7 @@ const organizationSchema = {
   name: "MerrySails",
   alternateName: "Merry Tourism",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/logo.svg`,
   description: "Premium Bosphorus cruise and yacht charter services in Istanbul since 2001.",
   foundingDate: "2001",
   address: {
@@ -107,7 +107,7 @@ const organizationSchema = {
     longitude: 28.9784,
   },
   telephone: "+905370406822",
-  email: "info@merrytourism.com",
+  email: "info@merrysails.com",
   priceRange: "€€",
   aggregateRating: {
     "@type": "AggregateRating",
@@ -117,8 +117,8 @@ const organizationSchema = {
     worstRating: "1",
   },
   sameAs: [
-    "https://instagram.com/merrytourism",
-    "https://facebook.com/merrytourism",
+    "https://instagram.com/merrysails",
+    "https://facebook.com/merrysails",
   ],
   areaServed: {
     "@type": "City",
@@ -138,6 +138,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={dmSans.variable}>
       <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

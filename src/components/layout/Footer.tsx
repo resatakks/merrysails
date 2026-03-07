@@ -47,7 +47,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-4 max-w-sm">
-              Over 23 years serving travelers since 2001. A brand of Merry Tourism —
+              Over 25 years serving travelers since 2001. A brand of Merry Tourism —
               TURSAB licensed, A Group travel agency. All guides hold Professional Tourist
               Guidance Certificates.
             </p>
@@ -76,9 +76,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4 shrink-0" />
                 WhatsApp
               </a>
-              <a href="mailto:info@merrytourism.com" className="flex items-center gap-2 text-sm text-white/60 hover:text-[var(--brand-gold)] transition-colors">
+              <a href="mailto:info@merrysails.com" className="flex items-center gap-2 text-sm text-white/60 hover:text-[var(--brand-gold)] transition-colors">
                 <Mail className="w-4 h-4 shrink-0" />
-                info@merrytourism.com
+                info@merrysails.com
               </a>
               <div className="flex items-start gap-2 text-sm text-white/60">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />

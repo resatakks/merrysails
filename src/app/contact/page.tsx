@@ -1,9 +1,10 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 export const metadata = {
   title: "Contact MerrySails — Phone, WhatsApp & Email",
   description:
-    "Contact MerrySails for Bosphorus cruise bookings. Call +90 537 040 68 22, WhatsApp, or email info@merrytourism.com. Open daily 09:00–22:00.",
+    "Contact MerrySails for Bosphorus cruise bookings. Call +90 537 040 68 22, WhatsApp, or email info@merrysails.com. Open daily 09:00–22:00.",
   keywords: [
     "contact merrysails",
     "bosphorus cruise booking",
@@ -11,14 +12,14 @@ export const metadata = {
     "merrysails whatsapp",
     "book boat tour istanbul",
   ],
-  alternates: { canonical: "https://merrysails.vercel.app/contact" },
+  alternates: { canonical: "https://merrysails.com/contact" },
   openGraph: {
     title: "Contact MerrySails — Book Your Bosphorus Cruise",
     description:
       "Call, WhatsApp, or email us to book your Bosphorus cruise. Open daily 09:00–22:00 in Istanbul.",
-    url: "https://merrysails.vercel.app/contact",
+    url: "https://merrysails.com/contact",
     type: "website" as const,
-    images: [{ url: "https://merrysails.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
   },
 };
 
@@ -26,9 +27,9 @@ const contactSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "MerrySails — Merry Tourism",
-  url: "https://merrysails.vercel.app",
+  url: "https://merrysails.com",
   telephone: "+905370406822",
-  email: "info@merrytourism.com",
+  email: "info@merrysails.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
@@ -71,7 +72,7 @@ export default function ContactPage() {
               { icon: Phone, label: "Phone", value: "+90 537 040 68 22", href: "tel:+905370406822" },
               { icon: Phone, label: "Phone 2", value: "+90 536 414 66 05", href: "tel:+905364146605" },
               { icon: Phone, label: "WhatsApp", value: "+90 537 040 68 22", href: "https://wa.me/905370406822" },
-              { icon: Mail, label: "Email", value: "info@merrytourism.com", href: "mailto:info@merrytourism.com" },
+              { icon: Mail, label: "Email", value: "info@merrysails.com", href: "mailto:info@merrysails.com" },
               { icon: MapPin, label: "Address", value: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul" },
               { icon: Clock, label: "Hours", value: "Every day 09:00 — 22:00" },
             ].map((item) => (
@@ -94,32 +95,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-2xl p-6 md:p-8">
-            <h2 className="text-xl font-bold mb-6">Send a Message</h2>
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1.5">Name</label>
-                  <input type="text" className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]" placeholder="Your name" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1.5">Email</label>
-                  <input type="email" className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]" placeholder="your@email.com" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1.5">Subject</label>
-                <input type="text" className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]" placeholder="Booking inquiry" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1.5">Message</label>
-                <textarea rows={5} className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] resize-none" placeholder="Tell us about your plans..." />
-              </div>
-              <button type="submit" className="btn-cta w-full !py-3">
-                Send Message
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </div>
