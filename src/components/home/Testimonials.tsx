@@ -30,6 +30,17 @@ const reviewSchema = {
   "@id": "https://merrysails.com/#organization",
   name: "MerrySails",
   url: "https://merrysails.com",
+  image: "https://merrysails.com/og-image.jpg",
+  telephone: "+905370406822",
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
+    addressLocality: "Fatih",
+    addressRegion: "İstanbul",
+    postalCode: "34093",
+    addressCountry: "TR",
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",

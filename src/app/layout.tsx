@@ -91,6 +91,7 @@ const organizationSchema = {
   alternateName: "Merry Tourism",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
+  image: `${SITE_URL}/og-image.jpg`,
   description: "Premium Bosphorus cruise and yacht charter services in Istanbul since 2001.",
   foundingDate: "2001",
   address: {
@@ -109,13 +110,6 @@ const organizationSchema = {
   telephone: "+905370406822",
   email: "info@merrysails.com",
   priceRange: "€€",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "2847",
-    bestRating: "5",
-    worstRating: "1",
-  },
   sameAs: [
     "https://instagram.com/merrysails",
     "https://facebook.com/merrysails",

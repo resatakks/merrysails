@@ -33,9 +33,7 @@ const serviceSchema = {
   name: "Private Yacht Charter & Events in Istanbul",
   description: "Rent a private yacht on the Bosphorus for marriage proposals, birthday parties, weddings, bachelorette parties, and corporate events. Fully customizable packages.",
   provider: {
-    "@type": "TravelAgency",
-    name: "MerrySails — Merry Tourism",
-    url: "https://merrysails.com",
+    "@id": "https://merrysails.com/#organization",
   },
   areaServed: { "@type": "City", name: "Istanbul" },
   hasOfferCatalog: {

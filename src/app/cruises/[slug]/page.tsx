@@ -150,9 +150,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
       name: "MerrySails",
     },
     provider: {
-      "@type": "TravelAgency",
-      name: "MerrySails",
-      url: SITE_URL,
+      "@id": `${SITE_URL}/#organization`,
     },
     offers: {
       "@type": "Offer",
@@ -160,6 +158,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       validFrom: "2026-01-01",
+      priceValidUntil: "2026-12-31",
       url: `${SITE_URL}/cruises/${tour.slug}`,
     },
     aggregateRating: {
