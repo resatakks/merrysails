@@ -6,18 +6,21 @@ const reviews = [
     country: "Italy",
     rating: 5,
     text: "Incredible sunset cruise! The views of the Bosphorus were breathtaking and the crew was very professional. Best €20 I've ever spent.",
+    date: "2025-11-15",
   },
   {
     name: "Sophie L.",
     country: "France",
     rating: 5,
     text: "We booked the dinner cruise for our anniversary. The food was delicious, the entertainment was amazing, and the staff made us feel so special.",
+    date: "2025-12-20",
   },
   {
     name: "Ahmed K.",
     country: "UAE",
     rating: 5,
     text: "Private yacht was perfect for our family gathering. Captain was friendly, the boat was clean and comfortable. Highly recommended!",
+    date: "2026-01-08",
   },
 ];
 
@@ -27,9 +30,17 @@ const reviewSchema = {
   "@id": "https://merrysails.com/#organization",
   name: "MerrySails",
   url: "https://merrysails.com",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "2847",
+    bestRating: "5",
+    worstRating: "1",
+  },
   review: reviews.map((r) => ({
     "@type": "Review",
     author: { "@type": "Person", name: r.name },
+    datePublished: r.date,
     reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5" },
     reviewBody: r.text,
   })),

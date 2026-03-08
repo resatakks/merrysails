@@ -1,6 +1,6 @@
 # MerrySails SEO Content Plan
 
-**Domain:** merrysails.vercel.app
+**Domain:** merrysails.com
 **Target Market:** English-speaking tourists searching for Istanbul Bosphorus experiences
 **Strategy:** E-E-A-T focused — Experience, Expertise, Authoritativeness, Trustworthiness
 
@@ -166,8 +166,8 @@
 ## 5. Next Steps for Faster Indexing
 
 ### Immediate (This Week)
-1. **Google Search Console** — Verify merrysails.vercel.app domain
-2. **Submit sitemap** — https://merrysails.vercel.app/sitemap.xml
+1. **Google Search Console** — Verify merrysails.com domain
+2. **Submit sitemap** — https://merrysails.com/sitemap.xml
 3. **Request indexing** — Submit each important page URL individually
 4. **IndexNow API** — Implement in next.config or as API route for instant indexing notifications
 

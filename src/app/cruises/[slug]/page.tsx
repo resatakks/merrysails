@@ -136,15 +136,19 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
 
   const related = tours.filter((t) => t.slug !== slug && t.category === tour.category).slice(0, 4);
 
-  // JSON-LD TouristTrip + Product schema
+  // JSON-LD TouristTrip + Product schema (dual type for aggregateRating support)
   const tourSchema = {
     "@context": "https://schema.org",
-    "@type": "TouristTrip",
+    "@type": ["TouristTrip", "Product"],
     name: tour.nameEn,
     description: tour.description,
     touristType: "Leisure",
     url: `${SITE_URL}/cruises/${tour.slug}`,
     image: tour.image,
+    brand: {
+      "@type": "Organization",
+      name: "MerrySails",
+    },
     provider: {
       "@type": "TravelAgency",
       name: "MerrySails",
