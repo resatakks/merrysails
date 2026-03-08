@@ -52,6 +52,7 @@ export async function createReservation(input: CreateReservationInput) {
     try {
       await sendEmail({
         to: input.customerEmail,
+        cc: process.env.GMAIL_USER,
         subject: `Booking Confirmed — ${reservationId} | MerrySails`,
         html: reservationConfirmationEmail({
           reservationId,

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { X, Phone, Shield, Calendar, Users, Package, Check, Loader2, CheckCircle, AlertCircle, MapPin, Clock, Anchor, Camera, Info } from "lucide-react";
 import type { Package as PackageType, AddOn } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
@@ -25,6 +26,7 @@ interface Props {
 type ModalState = "form" | "loading" | "success" | "error";
 
 export default function BookingModal({ booking, onClose }: Props) {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -65,6 +67,10 @@ export default function BookingModal({ booking, onClose }: Props) {
     if (result.success && result.reservationId) {
       setReservationId(result.reservationId);
       setModalState("success");
+      // Auto-redirect to reservation detail page after 2.5 seconds
+      setTimeout(() => {
+        router.push(`/reservation/${result.reservationId}`);
+      }, 2500);
     } else {
       setErrorMessage(result.error || "Something went wrong");
       setModalState("error");
@@ -118,7 +124,8 @@ export default function BookingModal({ booking, onClose }: Props) {
                   <CheckCircle className="w-7 h-7 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--heading)]">Thank you, {name}!</h3>
-                <p className="text-[var(--body-text)] text-sm mt-1">Your reservation has been created.</p>
+                <p className="text-[var(--body-text)] text-sm mt-1">Your reservation has been received. Our team will contact you shortly to confirm your booking.</p>
+                <p className="text-xs text-[var(--text-muted)] mt-2">Redirecting to your reservation details...</p>
               </div>
 
               {/* Reservation ID */}
