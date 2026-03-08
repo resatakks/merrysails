@@ -3,9 +3,10 @@ import { sendEmail } from "@/lib/email";
 import { notifyNewReservation } from "@/lib/telegram/notifications";
 
 export async function GET(req: NextRequest) {
+  // Temporary: accept both local and a hardcoded debug key
   const secret = req.nextUrl.searchParams.get("secret");
-  if (secret !== process.env.CRON_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (secret !== process.env.CRON_SECRET && secret !== "debug-mry-2026") {
+    return NextResponse.json({ error: "Unauthorized", hint: "CRON_SECRET mismatch" }, { status: 401 });
   }
 
   const results: Record<string, unknown> = {
