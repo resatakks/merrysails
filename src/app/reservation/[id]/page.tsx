@@ -35,7 +35,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
             <div className="space-y-3">
               <Link
                 href="/reservation"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[var(--brand-primary)] text-[var(--heading)] font-bold hover:brightness-110 transition-all"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
               >
                 Try Again
               </Link>
@@ -179,7 +179,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
 
           <Link
             href="/reservation"
-            className="flex items-center justify-center w-full py-2.5 text-sm text-[var(--text-muted)] font-medium hover:text-[var(--body-text)] transition-colors"
+            className="flex items-center justify-center w-full py-3 rounded-full border-2 border-[var(--line)] text-sm text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all"
           >
             Search Another Reservation
           </Link>

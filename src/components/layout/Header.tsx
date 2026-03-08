@@ -57,6 +57,7 @@ const navItems = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -157,37 +158,62 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-80 bg-white p-0">
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-8">
-                    <div className="w-10 h-10 bg-[var(--brand-primary)] rounded-xl flex items-center justify-center">
-                      <Anchor className="w-5 h-5 text-white" />
+                <div className="flex flex-col h-full overflow-y-auto">
+                  <div className="p-6 pb-0">
+                    <div className="flex items-center gap-2 mb-6">
+                      <div className="w-10 h-10 bg-[var(--brand-primary)] rounded-xl flex items-center justify-center">
+                        <Anchor className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-xl font-bold text-[var(--heading)]">
+                        Merry<span className="text-[var(--brand-primary)]">Sails</span>
+                      </span>
                     </div>
-                    <span className="text-xl font-bold text-[var(--heading)]">
-                      Merry<span className="text-[var(--brand-primary)]">Sails</span>
-                    </span>
                   </div>
-                  <nav className="space-y-1">
+                  <nav className="flex-1 px-6 space-y-0.5 overflow-y-auto">
                     {navItems.map((item) => (
                       <div key={item.label}>
-                        <Link
-                          href={item.href}
-                          className="block px-4 py-3 text-base font-medium text-[var(--body-text)] hover:text-[var(--brand-primary)] hover:bg-gray-50 rounded-lg transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                        {item.children?.map((child) => (
+                        {item.children ? (
+                          <>
+                            <div className="flex items-center">
+                              <Link
+                                href={item.href}
+                                className="flex-1 px-4 py-3 text-base font-medium text-[var(--body-text)] hover:text-[var(--brand-primary)] hover:bg-gray-50 rounded-lg transition-colors"
+                              >
+                                {item.label}
+                              </Link>
+                              <button
+                                onClick={() => setOpenMobileDropdown(openMobileDropdown === item.label ? null : item.label)}
+                                className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors"
+                              >
+                                <ChevronDown className={`w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 ${openMobileDropdown === item.label ? "rotate-180" : ""}`} />
+                              </button>
+                            </div>
+                            {openMobileDropdown === item.label && (
+                              <div className="pb-1">
+                                {item.children.map((child) => (
+                                  <Link
+                                    key={child.href}
+                                    href={child.href}
+                                    className="block pl-8 pr-4 py-2.5 text-sm text-[var(--text-muted)] hover:text-[var(--brand-primary)] hover:bg-gray-50 rounded-lg transition-colors"
+                                  >
+                                    {child.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </>
+                        ) : (
                           <Link
-                            key={child.href}
-                            href={child.href}
-                            className="block pl-8 pr-4 py-2.5 text-sm text-[var(--text-muted)] hover:text-[var(--brand-primary)] hover:bg-gray-50 rounded-lg transition-colors"
+                            href={item.href}
+                            className="block px-4 py-3 text-base font-medium text-[var(--body-text)] hover:text-[var(--brand-primary)] hover:bg-gray-50 rounded-lg transition-colors"
                           >
-                            {child.label}
+                            {item.label}
                           </Link>
-                        ))}
+                        )}
                       </div>
                     ))}
                   </nav>
-                  <div className="mt-8 pt-6 border-t border-gray-100 space-y-3">
+                  <div className="p-6 pt-4 border-t border-gray-100 space-y-3">
                     <a
                       href="tel:+905370406822"
                       className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-[var(--body-text)]"

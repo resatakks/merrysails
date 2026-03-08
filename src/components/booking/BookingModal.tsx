@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { X, Phone, Shield, Calendar, Users, Package, Check, Loader2, CheckCircle, AlertCircle, MapPin, Clock, Anchor, Camera, Info } from "lucide-react";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import type { Package as PackageType, AddOn } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
 
@@ -35,6 +37,10 @@ export default function BookingModal({ booking, onClose }: Props) {
   const [reservationId, setReservationId] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const [touchedName, setTouchedName] = useState(false);
+  const [touchedEmail, setTouchedEmail] = useState(false);
+  const [touchedPhone, setTouchedPhone] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
@@ -44,7 +50,10 @@ export default function BookingModal({ booking, onClose }: Props) {
   const addOnsText = booking.selectedAddOns.map((a) => a.name).join(", ");
   const total = packagePrice * booking.guests;
 
-  const isValid = name.trim().length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && phone.trim().length >= 6;
+  const nameValid = name.trim().length >= 2;
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const phoneValid = phone.replace(/\D/g, "").length >= 7;
+  const isValid = nameValid && emailValid && phoneValid;
 
   const handleSubmit = async () => {
     if (!isValid) return;
@@ -199,7 +208,7 @@ export default function BookingModal({ booking, onClose }: Props) {
               <div className="space-y-2.5 pt-1">
                 <a
                   href={`/reservation/${reservationId}`}
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-[var(--heading)] font-bold hover:brightness-110 transition-all"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                 >
                   Track Your Reservation
                 </a>
@@ -235,7 +244,7 @@ export default function BookingModal({ booking, onClose }: Props) {
               <div className="space-y-2.5 pt-2">
                 <button
                   onClick={() => setModalState("form")}
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-[var(--heading)] font-bold hover:brightness-110 transition-all"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                 >
                   Try Again
                 </button>
@@ -313,39 +322,67 @@ export default function BookingModal({ booking, onClose }: Props) {
 
               {/* Form */}
               <div className="space-y-3">
+                {/* Full Name */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Full Name *</label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-sm"
+                    onBlur={() => setTouchedName(true)}
+                    className={`w-full px-4 py-2.5 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
+                      touchedName && !nameValid
+                        ? "border-red-300 focus:border-red-400"
+                        : "border-[var(--line)] focus:border-[var(--brand-primary)]"
+                    }`}
                     placeholder="John Doe"
                     required
                   />
+                  {touchedName && !nameValid && (
+                    <p className="text-red-500 text-xs mt-1">Please enter your full name (at least 2 characters)</p>
+                  )}
                 </div>
+
+                {/* Email */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Email *</label>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-sm"
+                    onBlur={() => setTouchedEmail(true)}
+                    className={`w-full px-4 py-2.5 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
+                      touchedEmail && !emailValid
+                        ? "border-red-300 focus:border-red-400"
+                        : "border-[var(--line)] focus:border-[var(--brand-primary)]"
+                    }`}
                     placeholder="john@example.com"
                     required
                   />
+                  {touchedEmail && !emailValid && (
+                    <p className="text-red-500 text-xs mt-1">Please enter a valid email address</p>
+                  )}
                 </div>
+
+                {/* Phone with country selector */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Phone *</label>
-                  <input
-                    type="tel"
+                  <PhoneInput
+                    defaultCountry="tr"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-sm"
-                    placeholder="+90 555 123 45 67"
-                    required
+                    onChange={(val) => { setPhone(val); if (!touchedPhone) setTouchedPhone(true); }}
+                    inputClassName="!w-full !px-4 !py-2.5 !rounded-r-xl !border-2 !border-l-0 !border-[var(--line)] focus:!border-[var(--brand-primary)] focus:!outline-none !transition-colors !text-sm !h-auto"
+                    countrySelectorStyleProps={{
+                      buttonClassName: "!px-3 !py-2.5 !rounded-l-xl !border-2 !border-r-0 !border-[var(--line)] !h-auto",
+                    }}
+                    className="!w-full"
                   />
+                  {touchedPhone && !phoneValid && (
+                    <p className="text-red-500 text-xs mt-1">Please enter a valid phone number</p>
+                  )}
                 </div>
+
+                {/* Special Requests */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Special Requests</label>
                   <textarea
@@ -363,7 +400,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                 <button
                   onClick={handleSubmit}
                   disabled={!isValid}
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-[var(--heading)] font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Check className="w-4 h-4" />
                   Confirm Booking — €{total}

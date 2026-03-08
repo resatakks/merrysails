@@ -81,7 +81,7 @@ export default function ReservationSearch() {
           onClick={() => { setMode("id"); setResults(null); setError(""); }}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all ${
             mode === "id"
-              ? "bg-[var(--brand-primary)] text-[var(--heading)] shadow-sm"
+              ? "bg-[var(--brand-primary)] text-white shadow-sm"
               : "text-[var(--text-muted)] hover:text-[var(--body-text)]"
           }`}
         >
@@ -92,7 +92,7 @@ export default function ReservationSearch() {
           onClick={() => { setMode("email"); setResults(null); setError(""); }}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all ${
             mode === "email"
-              ? "bg-[var(--brand-primary)] text-[var(--heading)] shadow-sm"
+              ? "bg-[var(--brand-primary)] text-white shadow-sm"
               : "text-[var(--text-muted)] hover:text-[var(--body-text)]"
           }`}
         >
@@ -121,7 +121,7 @@ export default function ReservationSearch() {
             <button
               type="submit"
               disabled={!id.trim()}
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-[var(--heading)] font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Search className="w-4 h-4" />
               Find Reservation
@@ -145,7 +145,7 @@ export default function ReservationSearch() {
             <button
               type="submit"
               disabled={loading || !email.trim()}
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-[var(--heading)] font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
