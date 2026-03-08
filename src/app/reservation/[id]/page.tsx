@@ -58,7 +58,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
   const departurePoint = tour?.departurePoint;
 
   return (
-    <main className="min-h-screen bg-[var(--surface-alt)] pt-28 pb-16">
+    <main className="min-h-screen bg-[var(--surface-alt)] pt-28 pb-32">
       <div className="mx-auto max-w-lg px-4 space-y-4">
         {/* Status Badge */}
         <div className="text-center mb-2">

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ReservationPage() {
   return (
-    <main className="min-h-screen bg-[var(--surface-alt)] pt-28 pb-16">
+    <main className="min-h-screen bg-[var(--surface-alt)] pt-28 pb-32">
       <div className="mx-auto max-w-lg px-4">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-[var(--heading)] mb-2">Track Your Reservation</h1>
