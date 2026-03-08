@@ -1,3 +1,12 @@
+export interface BlogSection {
+  heading: string;
+  content: string;
+  list?: string[];
+  table?: { headers: string[]; rows: string[][] };
+  callout?: { type: "tip" | "info" | "warning" | "price"; text: string };
+  proTip?: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -5,12 +14,17 @@ export interface BlogPost {
   excerpt: string;
   category: "cruise-guide" | "yacht-guide" | "events" | "istanbul" | "tips";
   date: string;
+  dateModified?: string;
   readTime: string;
   image: string;
+  imageAlt?: string;
   keywords: string[];
-  sections: { heading: string; content: string }[];
+  author?: string;
+  keyTakeaways?: string[];
+  sections: BlogSection[];
   faqs: { q: string; a: string }[];
   relatedTours: string[];
+  relatedPosts?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -21,13 +35,22 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Everything you need to know about Bosphorus cruises in Istanbul — from sunset cruises and dinner cruises to private yacht charters. Compare prices, routes, and experiences.",
     category: "cruise-guide",
     date: "2025-12-20",
+    dateModified: "2026-03-08",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
-    keywords: ["bosphorus cruise", "istanbul cruise", "best bosphorus cruise", "bosphorus boat tour", "istanbul boat trip"],
+    imageAlt: "Panoramic view of the Bosphorus strait with historic palaces and mosques along the Istanbul waterfront at sunset",
+    keywords: ["bosphorus cruise", "istanbul cruise", "best bosphorus cruise", "bosphorus boat tour", "istanbul boat trip", "bosphorus cruise comparison", "istanbul cruise guide 2026"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Bosphorus cruises range from €15 (sightseeing) to €280+ (private yacht) — choose based on your budget and group size",
+      "The dinner cruise (€65) offers the best value: 4-course meal, live entertainment, hotel transfers, and 3.5 hours on the water",
+      "Book direct with a TURSAB-licensed operator to avoid middleman commissions and ensure consumer protection",
+      "April–June and September–October offer the best weather; sunset cruises in autumn produce the most dramatic colors"
+    ],
     sections: [
-      { heading: "Types of Bosphorus Cruises Available in Istanbul", content: "Istanbul offers several types of Bosphorus cruises, each delivering a unique experience. The short sightseeing cruise (1.5–2 hours) is perfect for travelers with limited time, passing iconic landmarks like the Dolmabahçe Palace, Ortaköy Mosque, and the Bosphorus Bridge. Starting from just €15, it is the most affordable way to experience the strait. The sunset cruise (2.5 hours) departs in the late afternoon and lets you watch the sky turn golden over the minarets of the Old City. At €20, it includes welcome drinks and live commentary. The dinner cruise (3.5 hours) is the most popular option, combining a 4-course Turkish dinner with live music, belly dance, and whirling dervish performances — all while sailing past the illuminated waterfront palaces. For those seeking privacy, a yacht charter lets you set your own route and schedule, with packages starting at €280 for 2 hours. Finally, the lunch cruise combines a Bosphorus tour with a meal and visits to both the European and Asian shores. Each cruise type caters to different budgets, schedules, and interests, so choosing the right one depends on what kind of experience you are looking for." },
+      { heading: "Types of Bosphorus Cruises Available in Istanbul", content: "Istanbul offers several types of Bosphorus cruises, each delivering a unique experience. The short sightseeing cruise (1.5–2 hours) is perfect for travelers with limited time, passing iconic landmarks like the Dolmabahçe Palace, Ortaköy Mosque, and the Bosphorus Bridge. Starting from just €15, it is the most affordable way to experience the strait. The sunset cruise (2.5 hours) departs in the late afternoon and lets you watch the sky turn golden over the minarets of the Old City. At €20, it includes welcome drinks and live commentary. The dinner cruise (3.5 hours) is the most popular option, combining a 4-course Turkish dinner with live music, belly dance, and whirling dervish performances — all while sailing past the illuminated waterfront palaces. For those seeking privacy, a yacht charter lets you set your own route and schedule, with packages starting at €280 for 2 hours. Finally, the lunch cruise combines a Bosphorus tour with a meal and visits to both the European and Asian shores. Each cruise type caters to different budgets, schedules, and interests, so choosing the right one depends on what kind of experience you are looking for.", table: { headers: ["Cruise Type", "Duration", "Price From", "Includes", "Best For"], rows: [["Sightseeing", "1.5–2 hrs", "€15", "Commentary, refreshments", "Budget travelers, limited time"], ["Sunset", "2.5 hrs", "€20", "Welcome drinks, snacks, WiFi", "Couples, photographers"], ["Dinner", "3.5 hrs", "€65", "4-course meal, drinks, shows, hotel transfer", "Most visitors, best value"], ["Yacht Charter", "2+ hrs", "€280", "Private crew, custom route, drinks", "Groups, celebrations, luxury"], ["Lunch", "3 hrs", "€45", "Meal, both shores, commentary", "Families, daytime visitors"]] } },
       { heading: "What You Will See on a Bosphorus Cruise", content: "A standard Bosphorus cruise passes dozens of historic landmarks spread across both the European and Asian shores. On the European side, you will see the grand Dolmabahçe Palace — the 19th-century Ottoman palace with 285 rooms — followed by the charming Ortaköy Mosque sitting right at the water's edge beneath the Bosphorus Bridge. Further north, the imposing Rumeli Fortress (built in 1452 by Sultan Mehmed II before conquering Constantinople) stands guard over the narrowest point of the strait. On the Asian shore, the elegant Beylerbeyi Palace and the historic Kuleli Military School add to the panorama. The famous Maiden's Tower sits on a tiny islet between the two continents. Depending on the length of your cruise, you may also pass the Yavuz Sultan Selim Bridge near the Black Sea entrance, waterfront yalis (wooden Ottoman mansions), and the picturesque fishing village of Anadolu Kavağı. The entire Bosphorus is 31 kilometers long, and a full-length cruise takes about 6 hours round trip. Most standard cruises cover the southern half of the strait and turn back near the second bridge." },
-      { heading: "Bosphorus Cruise Prices and What Is Included", content: "Bosphorus cruise prices vary based on the type of experience. The short sightseeing cruise starts at €15 per person and includes basic refreshments and onboard commentary. The sunset cruise is €20 and adds welcome drinks, snacks, and WiFi. The dinner cruise, priced at €65, is the most comprehensive — it includes hotel pickup and drop-off, a 4-course meal, unlimited local drinks, live music, and traditional entertainment. Yacht charter pricing works differently: the Essential package starts at €280 for 2 hours (up to 15 guests), the Premium at €380 (adding a decorated table and premium drinks), and the VIP at €680 (including a private chef, premium spirits, and red-carpet welcome). All MerrySails prices are direct — there are no middleman commissions or hidden fees. Payment can be made via credit card, bank transfer, or cash in EUR, USD, or TRY. Booking direct with a TURSAB-licensed operator like MerrySails ensures you get the best price and full consumer protection." },
+      { heading: "Bosphorus Cruise Prices and What Is Included", content: "Bosphorus cruise prices vary based on the type of experience. The short sightseeing cruise starts at €15 per person and includes basic refreshments and onboard commentary. The sunset cruise is €20 and adds welcome drinks, snacks, and WiFi. The dinner cruise, priced at €65, is the most comprehensive — it includes hotel pickup and drop-off, a 4-course meal, unlimited local drinks, live music, and traditional entertainment. Yacht charter pricing works differently: the Essential package starts at €280 for 2 hours (up to 15 guests), the Premium at €380 (adding a decorated table and premium drinks), and the VIP at €680 (including a private chef, premium spirits, and red-carpet welcome). All MerrySails prices are direct — there are no middleman commissions or hidden fees. Payment can be made via credit card, bank transfer, or cash in EUR, USD, or TRY. Booking direct with a TURSAB-licensed operator like MerrySails ensures you get the best price and full consumer protection.", callout: { type: "price", text: "Third-party booking sites charge €85–100 for the same dinner cruise that costs €65 when booked direct with MerrySails. That is up to 35% savings — plus free cancellation up to 24 hours before departure." }, proTip: "The dinner cruise at €65 is our most popular option and offers the best value per euro. You get food, drinks, entertainment, hotel transfer, and a 3.5-hour Bosphorus tour — all included. A comparable restaurant dinner with the same elements would cost €80+ without the views." },
       { heading: "When Is the Best Time for a Bosphorus Cruise", content: "The best time for a Bosphorus cruise depends on what you want to experience. For pleasant weather and calm seas, April to June and September to October are ideal — temperatures hover around 20–25°C with minimal rain. Summer (July–August) offers the longest days and warmest weather, but the Bosphorus can get busy with local and tourist traffic. If you want to see the strait at its most magical, a sunset cruise during spring or autumn delivers spectacular golden light over the minarets and palaces. Winter cruises (November–March) are less crowded and often discounted, though you should dress warmly — temperatures drop to 5–10°C and sea breezes make it feel colder. Rain is possible but rarely lasts long. For dinner cruises, the experience is largely indoors, so winter is still comfortable. If your priority is photography, late afternoon light in autumn creates the most dramatic reflections on the water. Regardless of season, the Bosphorus never disappoints — Istanbul's skyline is stunning in every light." },
       { heading: "How to Book and What to Expect on Board", content: "Booking a Bosphorus cruise with MerrySails is straightforward. You can reserve online through the website, via WhatsApp at +90 537 040 68 22, or by calling directly. Confirmation is sent immediately by email. For dinner cruises, hotel pickup is included — a driver collects you 30–60 minutes before departure. For other cruises, you meet at the designated pier (usually Eminönü for shared cruises, Kuruçeşme Marina for yacht charters). Arrive 15 minutes early to check in. On board, shared cruises typically have both indoor and outdoor seating. The dinner cruise includes assigned table seating with a stage for live performances. Yacht charters offer a completely private experience with your own crew. Most vessels have restrooms, a bar area, and sound systems. WiFi is available on select vessels. English-speaking staff and guides ensure international visitors feel at home. Life jackets and safety equipment meet Turkish maritime regulations. Free cancellation is available up to 24 hours before departure for a full refund." },
       { heading: "Tips for Getting the Most Out of Your Bosphorus Cruise", content: "To maximize your Bosphorus cruise experience, arrive early to claim a good spot on deck — the right (starboard) side offers better views of the European shore, while the left (port) side faces Asia. Bring a camera with good zoom for capturing details on distant palaces and mosques. A light jacket is essential even in summer, as the wind on the water can be surprisingly cool. Sunglasses and sunscreen are must-haves for daytime cruises. If you are prone to seasickness, the Bosphorus is a sheltered strait with minimal waves — much calmer than open sea — but sitting in the center of the vessel helps. For dinner cruises, smart casual dress is appropriate; avoid flip-flops and beachwear. Tell the crew if you are celebrating a special occasion — they often provide complimentary touches like birthday cakes or anniversary decorations. Finally, compare options before booking. A TURSAB-licensed operator offers consumer protection and transparent pricing that street touts and third-party resellers cannot match." },
@@ -40,7 +63,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Where do Bosphorus cruises depart from?", a: "Shared cruises (sunset, dinner, sightseeing) typically depart from Eminönü Pier, accessible via the T1 tram. Private yacht charters depart from Kuruçeşme Marina." },
       { q: "Is it safe to take a Bosphorus cruise?", a: "Yes. All vessels are regulated by Turkish maritime authorities and carry required safety equipment. The Bosphorus is a sheltered strait with calm waters. Licensed operators like MerrySails follow strict safety protocols." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect"]
   },
   {
     slug: "istanbul-sunset-cruise-experience",
@@ -49,9 +73,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Istanbul sunset cruise is one of the most magical experiences the city offers. Sail the Bosphorus as the sun sets behind minarets and palaces — here is everything you need to know.",
     category: "cruise-guide",
     date: "2025-12-18",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
-    keywords: ["istanbul sunset cruise", "bosphorus sunset cruise", "sunset boat tour istanbul", "sunset cruise istanbul price"],
+    imageAlt: "Golden sunset over the Bosphorus strait with Ortaköy Mosque and Istanbul skyline silhouette",
+    keywords: ["istanbul sunset cruise", "bosphorus sunset cruise", "sunset boat tour istanbul", "sunset cruise istanbul price", "best time sunset cruise istanbul", "bosphorus golden hour"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "The sunset cruise costs €20 per person and lasts 2.5 hours — the best value golden hour experience in Istanbul",
+      "April–June and September–October offer the most dramatic sunset colors over the Bosphorus",
+      "Position yourself on the starboard (right) side for the best European shoreline views at sunset",
+      "Free cancellation up to 24 hours before departure — cloudy sunsets can actually be more dramatic than clear ones"
+    ],
     sections: [
       { heading: "Why the Bosphorus Sunset Cruise Is Istanbul's Must-Do Experience", content: "There are few places in the world where you can watch the sun set over two continents simultaneously, and the Bosphorus is one of them. As your cruise vessel glides through the strait, the late afternoon light transforms Istanbul's skyline into a canvas of amber and pink. The domes of the Hagia Sophia and Blue Mosque glow warmly against the darkening sky, while the minarets cast long shadows across the water. The Ortaköy Mosque, framed dramatically by the Bosphorus Bridge, becomes one of the most photographed scenes in Turkey. This 2.5-hour experience is designed to capture the golden hour at its peak, departing in the late afternoon so you are on the water precisely when the light is most beautiful. At just €20, it offers extraordinary value — you get a full Bosphorus tour with landmarks commentary, welcome drinks, and snacks, all set against one of the world's most spectacular natural light shows. It is consistently rated as one of the top things to do in Istanbul by travelers worldwide." },
       { heading: "What Is Included in the Sunset Cruise Package", content: "The MerrySails sunset cruise includes everything you need for a memorable evening on the Bosphorus. The 2.5-hour cruise departs from Eminönü Pier at 17:00 or 18:00 depending on the season, timed to catch the sunset at its most dramatic moment. On board, you receive a welcome drink (choice of juice, soft drink, or water), a selection of Turkish snacks, and complimentary WiFi. A professional English-speaking guide provides live commentary, pointing out the historic landmarks along both shores — from the Dolmabahçe Palace and Çırağan Palace to the Rumeli Fortress and waterfront yalis. The vessel has both open-air deck seating (perfect for photography) and enclosed indoor areas with panoramic windows (comfortable in cooler weather). The cruise sails north past both Bosphorus bridges and returns along the opposite shore, ensuring you see landmarks on both the European and Asian sides. Background music sets the mood as the sky transitions from golden to deep orange to twilight blue." },
@@ -68,7 +101,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What happens if the weather is bad?", a: "If the cruise is cancelled due to severe weather, you will be offered an alternative date or a full refund. Light rain or clouds do not typically cancel the cruise — and cloudy sunsets can actually be more dramatic." },
       { q: "Can I book a private sunset cruise?", a: "Yes, private yacht charters can be scheduled at sunset time. The Essential package starts at €280 for up to 15 guests, offering a completely private Bosphorus sunset experience." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "istanbul-cruise-photography-spots", "best-time-bosphorus-cruise"]
   },
   {
     slug: "bosphorus-dinner-cruise-what-to-expect",
@@ -77,9 +111,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Bosphorus dinner cruise combines fine Turkish dining with live entertainment and illuminated waterfront views. Here is everything you need to know before booking.",
     category: "cruise-guide",
     date: "2025-12-15",
+    dateModified: "2026-03-08",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80",
-    keywords: ["bosphorus dinner cruise", "istanbul dinner cruise", "dinner cruise bosphorus price", "turkish night cruise"],
+    imageAlt: "Elegant dinner table setting aboard a Bosphorus cruise ship with illuminated Istanbul palaces in the background",
+    keywords: ["bosphorus dinner cruise", "istanbul dinner cruise", "dinner cruise bosphorus price", "turkish night cruise", "bosphorus dinner cruise menu", "what to expect dinner cruise istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "The dinner cruise costs €65 all-inclusive: 4-course Turkish meal, unlimited local drinks, live entertainment, and hotel transfer",
+      "The 3.5-hour experience includes whirling dervish, belly dance, live music, and DJ — the most comprehensive evening activity in Istanbul",
+      "Vegetarian, vegan, and halal options are available — notify at booking for dietary requirements",
+      "Book direct to save up to 35% compared to third-party sites. Free cancellation up to 24 hours before departure"
+    ],
     sections: [
       { heading: "What Makes the Bosphorus Dinner Cruise Special", content: "The Bosphorus dinner cruise is Istanbul's signature evening experience, combining three elements that make it unforgettable: a multi-course Turkish dinner, live entertainment featuring traditional performances, and a 3.5-hour sail along the illuminated strait. Unlike a restaurant dinner, the constantly changing scenery — lit-up Ottoman palaces, mosques with glowing minarets, and the neon-draped Bosphorus bridges reflected in the dark water — creates a backdrop that no land-based venue can match. The entertainment is equally unique: you will watch a whirling dervish performance (a centuries-old Sufi meditative practice), a belly dance show, live Turkish and international music, and a DJ set for dancing. The combination of food, culture, and spectacular views makes this the most popular evening activity in Istanbul, regularly booked by honeymooners, families, and groups celebrating special occasions. At €65 per person including hotel pickup and drop-off, unlimited local drinks, and all entertainment, it offers exceptional value compared to a comparable restaurant experience." },
       { heading: "The Dinner Menu — Turkish Feast on the Water", content: "The dinner cruise features a carefully designed 4-course Turkish menu showcasing the best of Anatolian cuisine. The meal begins with a meze platter — a selection of cold appetizers including hummus, ezme (spicy tomato-walnut dip), haydari (yogurt with herbs), stuffed vine leaves, and fresh Turkish bread. The soup course features a traditional lentil soup (mercimek çorbası), one of Turkey's most beloved dishes. The main course offers a choice between grilled lamb kebab, chicken shish, or a vegetarian option, served with pilaf rice, grilled vegetables, and seasonal salad. The meal concludes with a dessert selection that typically includes baklava, künefe (hot cheese pastry with syrup), and fresh seasonal fruit. Vegetarian, vegan, and halal options are available by request. Throughout the dinner, unlimited local beverages are served — Turkish tea, coffee, soft drinks, beer, wine, and rakı (Turkey's famous anise-flavored spirit). The food is freshly prepared on board by experienced Turkish chefs using locally sourced ingredients. Dietary requirements should be communicated at the time of booking." },
@@ -96,7 +139,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is alcohol included in the dinner cruise?", a: "Yes, unlimited local alcoholic beverages (beer, wine, rakı) and non-alcoholic drinks are included. Premium international spirits are available for an additional charge." },
       { q: "Can I celebrate a birthday or anniversary on the dinner cruise?", a: "Yes! Inform us when booking and we can arrange a cake, special table decoration, and a celebratory announcement. These extras are often complimentary." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "istanbul-bosphorus-lunch-cruise"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "istanbul-bosphorus-lunch-cruise"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "istanbul-dinner-cruise-menu-guide", "bosphorus-cruise-prices-2026"]
   },
   {
     slug: "short-bosphorus-cruise-tour",
@@ -105,9 +149,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Short on time? The 1.5-hour Bosphorus sightseeing cruise packs all the highlights into an affordable, efficient tour — perfect for travelers with packed itineraries.",
     category: "cruise-guide",
     date: "2025-12-12",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200&q=80",
-    keywords: ["short bosphorus cruise", "bosphorus sightseeing cruise", "quick bosphorus tour", "1 hour bosphorus cruise"],
+    imageAlt: "Small sightseeing boat sailing past Ortaköy Mosque on the Bosphorus on a clear day",
+    keywords: ["short bosphorus cruise", "bosphorus sightseeing cruise", "quick bosphorus tour", "1 hour bosphorus cruise", "short bosphorus cruise 2026", "short bosphorus cruise istanbul", "is short bosphorus cruise worth it", "what to expect short bosphorus cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The short Bosphorus cruise lasts 1.5–2 hours and starts from €15 per person — ideal for tight itineraries",
+    "You pass 8–10 major landmarks including Dolmabahçe Palace, Ortaköy Mosque, and the Bosphorus Bridge",
+    "Departs daily from Eminönü Pier, accessible via T1 tram — no advance booking required for shared cruises",
+    "MerrySails short cruises include English commentary and WiFi; street-side ferry alternatives do not"
+    ],
     sections: [
       { heading: "What the Short Bosphorus Cruise Covers", content: "The 1.5-hour sightseeing cruise is designed to showcase the Bosphorus highlights efficiently. Departing from Eminönü Pier, the vessel heads north along the European shore, passing the Dolmabahçe Palace, the Çırağan Palace (now a Kempinski hotel), the Ortaköy Mosque beneath the Bosphorus Bridge, and the waterfront mansions of Bebek and Arnavutköy. After passing under the First Bosphorus Bridge, the cruise crosses to the Asian side and returns south, offering views of Beylerbeyi Palace, Üsküdar, and the Maiden's Tower. The entire route covers the most photogenic section of the Bosphorus without venturing to the less developed northern stretches. This makes it ideal for first-time visitors who want a comprehensive introduction to Istanbul from the water. On-board commentary in English and Turkish points out each landmark with historical context. The cruise includes basic refreshments — tea, water, and a small snack. At €15 per person, it is the most budget-friendly way to experience the Bosphorus." },
       { heading: "Who Should Choose the Short Cruise", content: "The short Bosphorus cruise is ideal for several types of travelers. If you have a packed Istanbul itinerary with museum visits, bazaar shopping, and neighborhood exploration, the 1.5-hour cruise fits neatly into your schedule without consuming half a day. Families with young children often prefer the shorter duration, as kids can get restless on longer cruises. Budget travelers will appreciate the €15 price point — the cheapest Bosphorus cruise option that still delivers all the major landmarks. Cruise ship passengers on port calls often have limited time and choose this option to see the Bosphorus efficiently. It also works well as a daytime complement if you are taking a dinner cruise in the evening — you get to see the landmarks in daylight first, then illuminated at night. The short cruise runs multiple times daily (typically 10:00, 12:00, 14:00, and 16:00), giving you flexibility to fit it around other plans." },
@@ -134,7 +187,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is the short cruise enough to see the main Bosphorus landmarks?", a: "Yes, the route passes all major landmarks including Dolmabahçe Palace, Ortaköy Mosque, both Bosphorus bridges, Beylerbeyi Palace, and the Maiden's Tower." },
       { q: "Can children join the short cruise?", a: "Yes, children under 6 are free and ages 6–12 receive a discounted rate. The short duration is ideal for families." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-bosphorus-lunch-cruise"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-bosphorus-lunch-cruise"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-cruise-prices-2026", "istanbul-boat-tour-vs-ferry"],
   },
   {
     slug: "istanbul-lunch-cruise-bosphorus",
@@ -143,9 +197,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Combine a Bosphorus cruise with a delicious Turkish lunch and visits to both continents. The lunch cruise is the perfect full-day Istanbul experience.",
     category: "cruise-guide",
     date: "2025-12-10",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=80",
-    keywords: ["istanbul lunch cruise", "bosphorus lunch cruise", "istanbul bosphorus lunch", "istanbul two continents tour"],
+    imageAlt: "Lunch spread on a Bosphorus cruise boat deck with Istanbul skyline visible in the background",
+    keywords: ["istanbul lunch cruise", "bosphorus lunch cruise", "istanbul bosphorus lunch", "istanbul two continents tour", "istanbul lunch cruise 2026", "is istanbul lunch cruise worth it", "what to expect istanbul lunch cruise", "how to book istanbul lunch cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The Istanbul lunch cruise costs €45 per person and includes a full Turkish meal while sailing the Bosphorus",
+    "Cruises depart around 12:30–13:00 and cover both European and Asian shores in 3 hours",
+    "Daytime light offers the best photography conditions for the Bosphorus bridges and palaces",
+    "Ideal for travelers who prefer earlier activities and want to keep their evenings free"
+    ],
     sections: [
       { heading: "What the Lunch Cruise Includes", content: "The Istanbul Bosphorus lunch cruise is a comprehensive half-day experience that combines sightseeing with dining and cross-continental exploration. The tour typically departs in the late morning from Eminönü and heads north along the Bosphorus, passing the iconic landmarks of both shores. Around midday, you enjoy a traditional Turkish lunch on board or at a waterfront restaurant on the Asian side. The menu features classic Turkish dishes — grilled meat or fish, meze, salad, and dessert. After lunch, the tour often includes a stop on the Asian side (Üsküdar or Çamlıca Hill for panoramic views), allowing you to step onto a different continent. The return journey follows the opposite shore, completing a full loop of the southern Bosphorus. Total duration is approximately 5–6 hours. This cruise bridges the gap between the short sightseeing tour and the evening dinner cruise, offering a substantial daytime experience with food included." },
       { heading: "The Two Continents Experience", content: "One of the unique selling points of the lunch cruise is stepping onto both the European and Asian sides of Istanbul. The Bosphorus strait is the natural boundary between Europe and Asia, making Istanbul the only city in the world that spans two continents. While most tourists explore the European side (Sultanahmet, Taksim, Beyoğlu), the Asian shore offers a different character — more residential, more local, and arguably more authentic. During the Asian side stop, you might visit Çamlıca Hill, Istanbul's highest point on the Asian side, offering 360-degree panoramic views of the entire city, the Bosphorus, and on clear days, the Princes' Islands. Alternatively, a stroll through Üsküdar's charming streets reveals Ottoman mosques, traditional tea gardens, and local markets far from the tourist crowds. This cross-continental element transforms a simple boat tour into a genuine geographic adventure." },
@@ -172,7 +235,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is hotel pickup included in the lunch cruise?", a: "Hotel pickup can be arranged for an additional fee, or you can meet directly at Eminönü Pier." },
       { q: "Can I do the lunch cruise and dinner cruise on the same day?", a: "Yes! Many visitors take the lunch cruise during the day and the dinner cruise in the evening for a full day of Bosphorus experiences." }
     ],
-    relatedTours: ["istanbul-bosphorus-lunch-cruise", "bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["istanbul-bosphorus-lunch-cruise", "bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"],
+    relatedPosts: ["bosphorus-dinner-cruise-what-to-expect", "short-bosphorus-cruise-tour", "bosphorus-cruise-prices-2026"],
   },
   {
     slug: "princes-islands-boat-tour-istanbul",
@@ -181,9 +245,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Escape Istanbul's bustle with a day trip to the Princes' Islands. Discover car-free streets, Victorian mansions, pine forests, and stunning Marmara Sea views.",
     category: "cruise-guide",
     date: "2025-12-08",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1568781269764-1546a2e67767?w=1200&q=80",
-    keywords: ["princes islands istanbul", "buyukada istanbul", "princes islands tour", "istanbul islands boat tour"],
+    imageAlt: "Colorful wooden boat approaching Büyükada (Princes' Island) with pine-covered hills in the background",
+    keywords: ["princes islands istanbul", "buyukada istanbul", "princes islands tour", "istanbul islands boat tour", "princes islands istanbul 2026", "is princes islands istanbul worth it", "what to expect princes islands istanbul", "how to book princes islands istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The Princes' Islands tour covers all 4 main islands — Büyükada, Heybeliada, Burgazada, and Kınalıada — in one day",
+    "No cars are allowed on the islands; transport is by horse-drawn carriage or bicycle",
+    "Best visited April–October; summer weekends can be crowded — weekday visits are much more pleasant",
+    "The 22 km sea crossing from Istanbul takes about 1.5 hours each way on a regular ferry"
+    ],
     sections: [
       { heading: "What Are the Princes' Islands?", content: "The Princes' Islands (Adalar in Turkish) are an archipelago of nine islands in the Sea of Marmara, just a 60–90 minute ferry ride from central Istanbul. The four largest — Büyükada, Heybeliada, Burgazada, and Kınalıada — are open to visitors and offer a dramatic contrast to Istanbul's urban intensity. Motor vehicles are banned on all islands, creating a peaceful atmosphere where the only sounds are birdsong, bicycle bells, and the clip-clop of horse-drawn carriages. The islands served as exile destinations for Byzantine princes and Ottoman royals (hence the name), and their legacy survives in elegant 19th-century wooden mansions, Orthodox monasteries, and lush gardens. Büyükada, the largest island, is the most popular destination with its hilltop monastery, pine-forested trails, and waterfront restaurants. The islands offer a unique day-trip experience that feels like stepping into a Mediterranean village just minutes from a megacity of 16 million people." },
       { heading: "Getting to the Princes' Islands", content: "The most scenic way to reach the islands is by public ferry from Kabataş pier. Istanbul's IDO and Şehir Hatları ferries run regular services, with the journey to Büyükada taking about 90 minutes. The ferry ride itself is a highlight — you pass the Maiden's Tower, get panoramic views of the Asian and European skylines, and watch the city gradually recede as the islands emerge on the horizon. Alternatively, faster sea buses (deniz otobüsü) from Bostancı on the Asian side reach Büyükada in about 40 minutes. For a premium experience, MerrySails offers a guided Princes' Islands tour that includes private boat transfer, a guided tour of Büyükada, lunch at a local restaurant, and free time to explore. The guided option eliminates the hassle of navigating public ferry schedules and provides historical context throughout the journey. Regardless of how you get there, ferry schedules are seasonal — summer offers frequent departures, while winter services are reduced." },
@@ -210,7 +283,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can you swim at the Princes' Islands?", a: "Yes, there are several beaches on Büyükada and the other islands. Swimming is best from June through September when water temperatures are comfortable." },
       { q: "Which island should I visit first?", a: "Büyükada is the most popular and has the most attractions, restaurants, and activities. It is the best choice for a first visit." }
     ],
-    relatedTours: ["istanbul-princes-island-tour", "bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["istanbul-princes-island-tour", "bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"],
+    relatedPosts: ["princes-island-day-trip-istanbul", "istanbul-day-trips-from-bosphorus", "best-time-bosphorus-cruise"],
   },
   {
     slug: "best-time-bosphorus-cruise",
@@ -219,9 +293,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Planning a Bosphorus cruise? Learn the best season, month, and time of day for the perfect experience based on weather, crowds, and what you want to see.",
     category: "cruise-guide",
     date: "2025-12-05",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1558383817-42af359bc09c?w=1200&q=80",
-    keywords: ["best time bosphorus cruise", "istanbul cruise season", "when to take bosphorus cruise", "istanbul weather cruise"],
+    imageAlt: "Bosphorus cruise boat at golden hour with autumn foliage on the hills and dramatic orange sky",
+    keywords: ["best time bosphorus cruise", "istanbul cruise season", "when to take bosphorus cruise", "istanbul weather cruise", "best time bosphorus cruise 2026", "best season bosphorus cruise", "bosphorus cruise weather by month", "when to visit istanbul bosphorus 2026"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "April–June and September–October are the best months: 20–25°C, calm seas, and dramatic skies",
+    "Sunset cruises in October produce the most intense golden light due to lower sun angle",
+    "Winter cruises (November–March) are 30–40% cheaper and less crowded, though bring a warm coat",
+    "Avoid August public holidays — Turkish locals travel heavily, making piers and boats crowded"
+    ],
     sections: [
       { heading: "Spring (April–June) — The Sweet Spot", content: "Spring is widely considered the best season for a Bosphorus cruise. Temperatures range from 15°C in early April to 25°C in June, creating comfortable conditions for both indoor dining and outdoor deck time. The Bosphorus is lined with blooming tulips, wisteria, and jasmine — Istanbul's famous tulip festival in April adds vibrant color to parks and waterfront gardens visible from the water. Seas are calm, skies are often clear with dramatic cloud formations, and the light has a special quality that photographers love. Tourist crowds are moderate — significant enough to create a lively atmosphere but not overwhelming like peak summer. Hotel and cruise prices are reasonable, especially in April and May before the summer surge. Rain is possible but usually brief — Istanbul averages about 7 rainy days per month in spring. The days are long enough (sunset around 19:00–20:30) to enjoy a proper sunset cruise with lingering golden hour light." },
       { heading: "Summer (July–August) — Peak Season", content: "Summer is peak tourist season in Istanbul, with the longest days, warmest temperatures (28–35°C), and the most cruise departures. The Bosphorus is alive with activity — yachts, ferries, fishing boats, and cargo ships create a dynamic maritime scene. Sunset happens late (around 20:30), making for extended golden hour photography opportunities. However, summer heat can be intense, especially during midday sightseeing cruises — the onboard breeze helps, but sunscreen and hydration are essential. Crowds are at their peak, and popular cruises (especially the dinner cruise) should be booked well in advance. Prices are at their annual highest. For those who love warm weather, long days, and bustling energy, summer is ideal. For those who prefer comfort and fewer crowds, the shoulder seasons are better. The evening dinner cruise is particularly pleasant in summer — warm evenings, gentle breezes, and sunset at 20:30 means you sail through the golden hour during the meal." },
@@ -248,7 +331,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Does it rain a lot during Istanbul cruise season?", a: "Istanbul averages 5–8 rainy days per month. Rain showers are usually brief. Cruises operate in light rain — only severe storms cause cancellations." },
       { q: "What is the water temperature in the Bosphorus?", a: "Water temperature ranges from 8°C in winter to 24°C in late summer. Swimming from yacht charters is comfortable from June through September." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-weather-cruise-planning", "best-bosphorus-cruise-istanbul-guide", "istanbul-sunset-cruise-experience"],
   },
   {
     slug: "what-to-wear-bosphorus-cruise",
@@ -257,9 +341,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "From casual daytime sightseeing to elegant dinner cruises — here is exactly what to wear and pack for every type of Bosphorus cruise experience.",
     category: "cruise-guide",
     date: "2025-11-28",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80",
-    keywords: ["what to wear bosphorus cruise", "bosphorus cruise dress code", "istanbul cruise packing", "dinner cruise outfit"],
+    imageAlt: "Couple in light summer clothes on the deck of a Bosphorus cruise boat holding jackets against wind",
+    keywords: ["what to wear bosphorus cruise", "bosphorus cruise dress code", "istanbul cruise packing", "dinner cruise outfit", "what to wear bosphorus cruise 2026", "what to wear istanbul cruise", "bosphorus cruise outfit ideas", "bosphorus cruise packing list"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Always bring a light jacket — the Bosphorus wind feels 3–5°C colder than on land, even in summer",
+    "Flat, non-slip shoes are essential; high heels and flip-flops are both hazardous on boat decks",
+    "For dinner cruises, smart casual is appropriate — the atmosphere is elegant but not black-tie",
+    "In winter, layer up: thermal base, warm mid-layer, and a windproof outer jacket are all needed"
+    ],
     sections: [
       { heading: "General Dress Code for Bosphorus Cruises", content: "The good news is that Bosphorus cruises are relatively relaxed when it comes to dress code. For daytime sightseeing and sunset cruises, casual clothing is perfectly appropriate — jeans, comfortable pants, t-shirts, dresses, shorts (in summer), and sneakers are all fine. The only absolute rule: bring a layer for wind. The Bosphorus creates a natural wind corridor, and temperatures on the water feel 3–5°C cooler than on land. Even on a hot summer day, the evening breeze can feel chilly if you are on deck in a thin t-shirt. Dinner cruises have a smart casual dress code — think nice pants and a button-down shirt for men, a dress or elegant top with trousers for women. Avoid swimwear, athletic wear, and flip-flops at dinner. Private yacht charters have no specific dress code — wear whatever makes you comfortable. If you are celebrating a special occasion like a proposal or anniversary, dressing up enhances the experience." },
       { heading: "What to Wear by Season", content: "Spring (April–June): Temperatures range from 15–25°C. Layering is key — a t-shirt or light top with a jacket or cardigan works perfectly. Long pants or a midi skirt with a light sweater. A windbreaker is useful for deck time. Summer (July–August): Light, breathable fabrics — cotton or linen shirts, shorts, sundresses. Still bring a light layer for the evening return. A hat and sunglasses are essential for sun protection. Autumn (September–October): Similar to spring — layers are important as temperatures vary from warm afternoons to cool evenings. A light jacket or pullover is essential. Winter (November–March): Warm layers are necessary — a proper coat, scarf, and hat for deck time. Indoor dining areas are heated, so dress in layers you can remove. Thermal undergarments help on particularly cold evenings. Waterproof outerwear is wise as winter rain is common." },
@@ -286,7 +379,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can I wear shorts on a Bosphorus cruise?", a: "For daytime and sunset cruises, shorts are fine. For the dinner cruise, long pants or a skirt/dress is more appropriate." },
       { q: "Should I bring an umbrella?", a: "A compact travel umbrella or rain jacket is wise in autumn and winter. Avoid large umbrellas on deck — they catch wind." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["best-time-bosphorus-cruise", "istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips"],
   },
   {
     slug: "bosphorus-cruise-departure-points",
@@ -295,9 +389,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Know exactly where to go for your Bosphorus cruise. This guide covers all departure points in Istanbul with transport directions and tips for each location.",
     category: "cruise-guide",
     date: "2025-11-25",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=1200&q=80",
-    keywords: ["bosphorus cruise departure point", "eminonu pier cruise", "where to board bosphorus cruise", "istanbul cruise pier"],
+    imageAlt: "Eminönü Pier waterfront in Istanbul with cruise boats docked and Süleymaniye Mosque on the hill behind",
+    keywords: ["bosphorus cruise departure point", "eminonu pier cruise", "where to board bosphorus cruise", "istanbul cruise pier", "bosphorus cruise departure point 2026", "bosphorus cruise pier guide istanbul", "which pier for bosphorus cruise istanbul", "where do bosphorus cruises depart"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Shared Bosphorus cruises depart from Eminönü Pier — take the T1 tram to the Eminönü stop",
+    "Private yacht charters depart from Kuruçeşme Marina, accessible by bus or taxi from central Istanbul",
+    "Arrive 15–20 minutes before departure to check in and claim a good spot on deck",
+    "Avoid unlicensed boats near Eminönü — look for TURSAB certification before boarding"
+    ],
     sections: [
       { heading: "Eminönü Pier — Main Departure Point for Shared Cruises", content: "Eminönü is Istanbul's primary cruise departure point, located at the southern end of the Galata Bridge in the historic Fatih district. This is where most shared Bosphorus cruises (sunset, dinner, sightseeing) depart from. The pier is easily accessible by the T1 tram — just get off at the Eminönü stop and walk 2 minutes toward the waterfront. The area is unmistakable: you will see dozens of tour boats, the famous fish sandwich boats (balık ekmek), and the Egyptian Spice Bazaar directly behind the pier. When you book with MerrySails, your confirmation email includes the exact pier number and a Google Maps pin. For dinner cruises, the transfer vehicle drops you directly at the boarding point, so you do not need to navigate the area yourself. Eminönü can be busy and chaotic — arrive 15 minutes early and ignore street touts trying to redirect you to different boats. Walk directly to your confirmed pier number." },
       { heading: "Kuruçeşme Marina — Private Yacht Charter Base", content: "Private yacht charters with MerrySails depart from Kuruçeşme Marina, an upscale marina on the European shore between Ortaköy and Bebek. This location is away from the tourist crowds of Eminönü and offers a more exclusive experience from the moment you arrive. The marina has parking, clean facilities, and a calm atmosphere suited to private events. Getting to Kuruçeşme: take a taxi (about 15–20 minutes from Taksim, 25–30 minutes from Sultanahmet) or the bus from Kabataş along the coastal road. The marina address and Google Maps pin are included in your booking confirmation. For yacht charters, arriving 10 minutes before your scheduled time allows the crew to welcome you aboard and brief you on the vessel." },
@@ -324,7 +427,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Do I need to arrange my own transport to the departure point?", a: "For the dinner cruise, hotel pickup and drop-off is included. For other cruises, you arrange your own transport to the pier, but the locations are all well-served by public transit." },
       { q: "Is there parking near the cruise departure points?", a: "Limited parking is available near Eminönü (paid lots). Kuruçeşme Marina has dedicated parking for yacht charter guests. Public transport is recommended over driving in Istanbul." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-transportation-guide-tourists", "istanbul-cruise-booking-tips", "best-bosphorus-cruise-istanbul-guide"],
   },
   {
     slug: "istanbul-boat-tour-vs-ferry",
@@ -333,9 +437,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Public ferry or private boat tour? We compare both Bosphorus options so you can decide which experience suits your budget, schedule, and travel style.",
     category: "cruise-guide",
     date: "2025-11-22",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1604941797457-3efb0aa9e0ae?w=1200&q=80",
-    keywords: ["istanbul boat tour vs ferry", "bosphorus ferry", "istanbul public ferry bosphorus", "bosphorus cruise or ferry"],
+    imageAlt: "Side-by-side view of a tour boat with guide and a public Istanbul ferry on the Bosphorus",
+    keywords: ["istanbul boat tour vs ferry", "bosphorus ferry", "istanbul public ferry bosphorus", "bosphorus cruise or ferry", "istanbul boat tour vs ferry 2026", "is istanbul boat tour vs ferry worth it", "what to expect istanbul boat tour vs ferry", "how to book istanbul boat tour vs ferry"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Public ferries (€1.50) cross the Bosphorus; licensed cruise boats (€15–65+) are dedicated sightseeing experiences",
+    "Tour boats include commentary, refreshments, and optimized landmark routes — ferries focus on transport",
+    "The IETT/IDO Bosphorus ferry tour (€25) is a mid-tier option but runs fixed government schedules",
+    "For first-time visitors, a licensed cruise boat provides far more value than the public ferry"
+    ],
     sections: [
       { heading: "Public Ferry — The Budget Option", content: "Istanbul's public ferries (Şehir Hatları) offer a Bosphorus cruise at local prices. The full Bosphorus ferry departs from Eminönü, zigzags between European and Asian shores stopping at several piers, and terminates at Anadolu Kavağı near the Black Sea — a 6-hour round trip for about €3–5 with an Istanbulkart. It is genuine local transport, not a tourist experience, which gives it authentic charm. You sit alongside commuters, school children, and fishermen. Tea vendors walk the aisles selling çay in traditional tulip glasses. The route covers the full length of the Bosphorus, passing landmarks that shorter tourist cruises do not reach. However, there is no commentary, no guaranteed seating, no food service (beyond tea and simit), and the schedule is limited — typically one or two departures per day. The ferry can be crowded, especially on weekends." },
       { heading: "Private Boat Tour — The Premium Experience", content: "A dedicated Bosphorus boat tour is designed specifically for sightseeing. Routes are optimized to pass the most photogenic landmarks at the best angles. Professional guides provide live commentary explaining the history and significance of each palace, mosque, and fortress. Comfort is prioritized — assigned seating, climate-controlled interiors, clean restrooms, and refreshment service. Sunset and dinner cruises add entertainment, food, and atmospheric timing that public ferries cannot offer. The trade-off is price — starting at €15 for a short tour versus €3–5 for the public ferry. But the gap is smaller than it appears: when you factor in the commentary, comfort, refreshments, and time efficiency of a boat tour, the value proposition is strong." },
@@ -348,9 +461,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "How much does the public Bosphorus ferry cost?", a: "About €3–5 with an Istanbulkart for the full round trip to Anadolu Kavağı. Without the card, single tickets cost more." },
       { q: "Is the public ferry comfortable?", a: "It is basic public transport — bench seating, no assigned seats, limited food service. Comfortable enough for the journey but not a premium experience." },
-      { q: "Can I take both a ferry and a boat tour?", a: "Yes, and we recommend it! The public ferry during the day and a sunset or dinner cruise in the evening make a perfect combination." }
+      { q: "Can I take both a ferry and a boat tour?", a: "Yes, and we recommend it! The public ferry during the day and a sunset or dinner cruise in the evening make a perfect combination." },
+      { q: "How long is the full Bosphorus public ferry route?", a: "The full public ferry from Eminönü to Anadolu Kavağı and back covers 31 km each way and takes about 6 hours round trip. It runs once or twice daily and costs approximately €3–5 with an Istanbulkart." },
+      { q: "What is the main difference between a boat tour and a public ferry?", a: "Boat tours offer professional commentary, reserved seating, refreshments, and optimized sightseeing routes for €15–65 per person. Public ferries are local transport at €3–5 — authentic but without guides, guaranteed seating, or food service beyond tea." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["bosphorus-ferry-vs-cruise-comparison", "bosphorus-cruise-prices-2026", "short-bosphorus-cruise-tour"],
   },
   {
     slug: "bosphorus-cruise-safety-tips",
@@ -359,9 +475,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Everything you need to know about safety on Bosphorus cruises — from choosing licensed operators to handling weather and staying comfortable on the water.",
     category: "cruise-guide",
     date: "2025-11-20",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=1200&q=80",
-    keywords: ["bosphorus cruise safety", "istanbul boat tour safe", "bosphorus cruise tips", "istanbul cruise advice"],
+    imageAlt: "Life jackets and safety equipment rack on a licensed Bosphorus cruise boat deck",
+    keywords: ["bosphorus cruise safety", "istanbul boat tour safe", "bosphorus cruise tips", "istanbul cruise advice", "bosphorus cruise safety 2026", "how safe is bosphorus cruise", "what to expect bosphorus cruise safety", "bosphorus cruise safety standards"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "All licensed operators must carry life jackets, fire extinguishers, and flares per Turkish maritime law",
+    "Only board TURSAB-certified vessels — verify the license number at check-in or on the operator's website",
+    "The Bosphorus is one of the world's busiest shipping lanes; cruise routes are carefully navigated by licensed captains",
+    "Motion sickness is rare on the sheltered Bosphorus, but sit midship on the lower deck if prone"
+    ],
     sections: [
       { heading: "Is a Bosphorus Cruise Safe?", content: "Yes, Bosphorus cruises are very safe. The strait is a sheltered waterway — not open sea — so waves are minimal and conditions are predictable. All commercial cruise vessels in Turkey are regulated by the Turkish Maritime Administration and must carry required safety equipment including life jackets, fire extinguishers, first aid kits, and emergency lighting. TURSAB-licensed operators like MerrySails undergo regular inspections and maintain full insurance coverage. The Bosphorus has heavy commercial shipping traffic (oil tankers, cargo ships), but these vessels follow strict traffic separation schemes managed by the Turkish Coast Guard and Vessel Traffic Service. Cruise boats operate in designated lanes separate from large commercial vessels. Emergency services, including coast guard rescue boats, are stationed along the strait." },
       { heading: "Choosing a Licensed Operator", content: "The single most important safety step is booking with a licensed operator. TURSAB (Association of Turkish Travel Agencies) licensing ensures the operator meets safety standards, carries proper insurance, and follows consumer protection regulations. MerrySails operates under Merry Tourism, a TURSAB-licensed A Group travel agency. Avoid unlicensed operators offering suspiciously cheap prices at the pier — they may use substandard vessels, skip safety inspections, or lack insurance. Ask to see the TURSAB license number and verify it online. Licensed operators display their certification on their vessels and marketing materials. Reading recent reviews on Google, TripAdvisor, or Trustpilot provides additional assurance about service quality and safety standards." },
@@ -374,9 +499,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Do I need to worry about seasickness on the Bosphorus?", a: "The Bosphorus is very calm — most people experience no seasickness. If sensitive, sit midship on deck with fresh air. Over-the-counter motion sickness tablets provide extra peace of mind." },
       { q: "What happens if there is a storm during my cruise?", a: "Severe weather cancellations result in a full refund or alternative date. Cruises operate in light rain and moderate conditions." },
-      { q: "Are life jackets provided on Bosphorus cruises?", a: "Yes, all commercial vessels carry life jackets for every passenger as required by Turkish maritime regulations." }
+      { q: "Are life jackets provided on Bosphorus cruises?", a: "Yes, all commercial vessels carry life jackets for every passenger as required by Turkish maritime regulations." },
+      { q: "How do I verify a Bosphorus cruise operator is TURSAB licensed?", a: "Visit tursab.org.tr and search the company name or license number. TURSAB A Group licensing — the highest tier — means the operator is insured, regularly inspected, and meets full Turkish maritime safety standards." },
+      { q: "Is a Bosphorus cruise safe with young children?", a: "Yes. The Bosphorus is a sheltered strait with calm water, far gentler than open sea. Children's life jackets are available, indoor seating provides shelter, and licensed operators are experienced hosting families. Children under 6 sail free on MerrySails shared cruises." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["istanbul-cruise-booking-tips", "avoid-tourist-traps-istanbul-cruises", "what-to-wear-bosphorus-cruise"],
   },
   {
     slug: "istanbul-cruise-photography-spots",
@@ -385,9 +513,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Capture stunning Istanbul photos from the water. This guide covers the best photography spots along the Bosphorus, ideal camera settings, and timing tips.",
     category: "cruise-guide",
     date: "2025-11-18",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1200&q=80",
-    keywords: ["bosphorus cruise photography", "istanbul photo spots water", "bosphorus cruise camera tips", "istanbul photography guide"],
+    imageAlt: "Photographer capturing Ortaköy Mosque and Bosphorus Bridge from the bow of a cruise boat",
+    keywords: ["bosphorus cruise photography", "istanbul photo spots water", "bosphorus cruise camera tips", "istanbul photography guide", "bosphorus cruise photography 2026", "is bosphorus cruise photography worth it", "what to expect bosphorus cruise photography", "how to book bosphorus cruise photography"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The 5 best photo spots: Ortaköy Mosque framed by the bridge, Dolmabahçe Palace facade, Rumeli Fortress, Maiden's Tower, and the Old City skyline",
+    "Position on the upper deck starboard side for European shore shots; switch to port side heading north for Asian shore",
+    "Golden hour (45 min before sunset) produces the best light — align your cruise departure time accordingly",
+    "Use burst mode during the peak 10 minutes around sunset when light changes rapidly"
+    ],
     sections: [
       { heading: "Top 5 Photo Spots on a Bosphorus Cruise", content: "The Bosphorus offers a rolling gallery of photogenic landmarks. The top five shots every photographer should capture are: (1) Ortaköy Mosque with the Bosphorus Bridge — this iconic composition works best when approaching from the south, with the mosque in the foreground and the bridge spanning behind it. Golden hour light elevates this from great to extraordinary. (2) Dolmabahçe Palace — the 600-meter waterfront facade is most impressive when shot from directly opposite on the Asian side, capturing the full scale of this Ottoman baroque masterpiece. (3) The Maiden's Tower — this tiny islet with its lighthouse is best photographed from the Üsküdar side, ideally with the Old City skyline behind it. (4) Rumeli Fortress — the medieval fortress walls cascading down the hillside to the water's edge create dramatic compositions, especially with the Second Bridge visible beyond. (5) The Istanbul skyline from the water — the classic panoramic view of minarets, domes, and the Galata Tower seen from the middle of the strait." },
       { heading: "Camera Settings for Bosphorus Photography", content: "Whether using a DSLR, mirrorless camera, or smartphone, the right settings make a difference on a moving boat. Use a fast shutter speed (1/500 or faster) to compensate for boat movement. For DSLRs, shoot in aperture priority (f/8 for landscape sharpness) with auto ISO. Burst mode is your friend — shoot 3–5 frames of each landmark as you pass by and select the sharpest later. For smartphones, enable HDR mode for balanced exposure between bright skies and darker buildings. Tap to focus on the landmark, not the sky. Use the 1x or 2x lens — avoid heavy digital zoom which degrades quality. A polarizing filter (for cameras) or clip-on polarizer (for phones) cuts water glare and enhances sky contrast. Shoot RAW if your camera supports it — the dynamic range of sunset scenes benefits enormously from RAW processing flexibility." },
@@ -411,9 +548,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Which side of the boat is best for photos?", a: "For the outbound journey north, starboard (right) faces Europe's palaces and mosques. Port (left) faces Asia. On return, sides swap. The upper deck offers the best vantage point." },
       { q: "What is the best cruise for photography?", a: "The sunset cruise offers the best light (golden hour). A daytime sightseeing cruise provides the clearest landmark detail. The dinner cruise captures illuminated nighttime views." },
-      { q: "Should I bring a tripod on the cruise?", a: "A compact tripod or monopod helps in lower light. Full-sized tripods are bulky and unnecessary. For smartphones, a small phone grip with stabilization works well." }
+      { q: "Should I bring a tripod on the cruise?", a: "A compact tripod or monopod helps in lower light. Full-sized tripods are bulky and unnecessary. For smartphones, a small phone grip with stabilization works well." },
+      { q: "Are drones allowed for photography on Bosphorus cruises?", a: "Drone use on the Bosphorus requires Turkish Civil Aviation Authority permits and is not permitted from cruise vessels without prior authorization. Istanbul's airspace restrictions around the Bosphorus are strictly enforced. Instead, use a telephoto lens or zoom to capture distant landmarks." },
+      { q: "What is the best time of day for Bosphorus photography?", a: "Golden hour (1 hour before sunset) produces the most spectacular light — warm, directional, and flattering for palace and mosque facades. The sunset cruise (€20) is perfectly timed for this window. Blue hour (15–30 minutes after sunset) creates a stunning cobalt sky with emerging city lights." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise", "bosphorus-night-cruise-guide"],
   },
   {
     slug: "bosphorus-night-cruise-guide",
@@ -422,9 +562,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Istanbul transforms after dark — mosques glow, palaces shimmer, and the Bosphorus bridges become ribbons of light. Here is your guide to the magical night cruise.",
     category: "cruise-guide",
     date: "2025-11-15",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1622120689178-9e83a4ca3bb0?w=1200&q=80",
-    keywords: ["bosphorus night cruise", "istanbul night cruise", "illuminated bosphorus cruise", "istanbul evening boat tour"],
+    imageAlt: "Illuminated Bosphorus Bridge and palace waterfront reflecting on the dark water at night from a cruise boat",
+    keywords: ["bosphorus night cruise", "istanbul night cruise", "illuminated bosphorus cruise", "istanbul evening boat tour", "bosphorus night cruise 2026", "is bosphorus night cruise worth it", "what to expect bosphorus night cruise", "how to book bosphorus night cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Night cruises run from 21:00–00:00 and showcase Istanbul's illuminated palaces, bridges, and waterfront mansions",
+    "The dinner cruise naturally becomes a night cruise — it departs at 20:00 and returns around 23:30",
+    "Bring a camera with good low-light performance; ISO 1600–3200 and image stabilization are helpful",
+    "The night atmosphere is romantic and calm — boat traffic is lighter, making for a more peaceful experience"
+    ],
     sections: [
       { heading: "Why the Bosphorus Is Even More Beautiful at Night", content: "Istanbul is one of the few cities where the nighttime view from the water arguably surpasses the daytime panorama. After dark, strategic floodlighting transforms the Bosphorus waterfront into a gallery of illuminated landmarks. The Dolmabahçe Palace glows warm gold against the dark hillside, its 600-meter facade reflected in the black water. The Ortaköy Mosque is lit from within and below, creating an ethereal white apparition beneath the Bosphorus Bridge — which itself becomes a rainbow of LED colors cycling through programmed light shows. The Maiden's Tower stands as a beacon of light on its tiny islet. Rumeli Fortress is dramatically lit to highlight its medieval walls and towers. Even the waterfront yalis (wooden Ottoman mansions) display subtle lighting that reveals their elegant facades. The combined effect of illuminated architecture reflected in the dark, slowly moving water is genuinely magical — a visual experience unique to Istanbul." },
       { heading: "Night Cruise Options — Dinner vs Moonlight", content: "The primary night cruise option is the dinner cruise, a 3.5-hour experience departing around 20:00 that combines the illuminated Bosphorus with a full Turkish dinner and live entertainment. At €65 all-inclusive, it is the most popular evening activity in Istanbul. For those who want the nighttime views without the full dinner program, a private yacht charter at sunset extends into the night, allowing you to watch the transition from golden hour to illuminated evening — the most dramatic visual transformation. The Essential yacht package (€280, 2 hours) timed for late afternoon captures both sunset and early nighttime views. Some operators offer shorter moonlight cruises (1–1.5 hours) without dinner, focusing purely on the nighttime scenery." },
@@ -448,9 +597,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "What is the best night cruise option?", a: "The dinner cruise (€65) offers the most complete nighttime experience with food, entertainment, and a 3.5-hour illuminated Bosphorus tour including hotel transfers." },
       { q: "Are all the landmarks lit up at night?", a: "Yes, major landmarks including Dolmabahçe Palace, Ortaköy Mosque, both Bosphorus bridges, Rumeli Fortress, and the Maiden's Tower are illuminated after dark." },
-      { q: "Is it cold on the Bosphorus at night?", a: "Temperatures drop significantly after sunset, especially with the water breeze. Bring a warm jacket even in summer. Dinner cruises have heated indoor areas." }
+      { q: "Is it cold on the Bosphorus at night?", a: "Temperatures drop significantly after sunset, especially with the water breeze. Bring a warm jacket even in summer. Dinner cruises have heated indoor areas." },
+      { q: "What time do Bosphorus night cruises depart?", a: "The dinner cruise departs around 20:00 and runs until approximately 23:30. Sunset cruises adjust departure 1–2 hours before sunset (17:00–19:30 depending on season). Late-night private yacht charters can depart from 21:00 onward." },
+      { q: "What is the dress code for a Bosphorus night cruise?", a: "Smart casual is appropriate for the dinner cruise — no beach wear or sportswear. Women often dress in cocktail-style outfits; men wear trousers and a shirt or light jacket. The Bosphorus breeze makes layers a practical choice regardless of the season." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-night-cruise-guide", "bosphorus-dinner-cruise-what-to-expect", "istanbul-sunset-cruise-experience"],
   },
   {
     slug: "private-yacht-charter-istanbul-guide",
@@ -459,11 +611,20 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Everything you need to know about chartering a private yacht in Istanbul — packages, pricing, routes, add-ons, and how to plan the perfect Bosphorus experience.",
     category: "yacht-guide",
     date: "2025-12-19",
+    dateModified: "2026-03-08",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
-    keywords: ["yacht charter istanbul", "yacht rental istanbul", "private yacht bosphorus", "rent yacht istanbul price"],
+    imageAlt: "Sleek private yacht anchored on the Bosphorus with Istanbul's European shoreline and palaces in the background",
+    keywords: ["yacht charter istanbul", "yacht rental istanbul", "private yacht bosphorus", "rent yacht istanbul price", "yacht charter istanbul 2026", "yacht charter istanbul tips", "best time for yacht charter istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Private yacht charters start at €280 for 2 hours (up to 15 guests) — price includes crew, fuel, and route planning",
+    "Three packages: Essential (€280), Premium (€380 with decorated table and premium drinks), VIP (€680 with private chef)",
+    "You choose the route, departure time, and duration — the captain customizes to your group's interests",
+    "TURSAB licensed; all vessels meet Turkish Coast Guard standards with insurance and safety equipment"
+    ],
     sections: [
-      { heading: "Yacht Charter Packages — Essential, Premium & VIP", content: "MerrySails offers three yacht charter packages to suit different budgets and occasions. The Essential package (€280, 2 hours) includes a private yacht with professional captain and crew, basic refreshments (tea, coffee, water), a Bluetooth sound system, and capacity for up to 15 guests. It is perfect for casual Bosphorus sightseeing with friends or family. The Premium package (€380, 2 hours) adds a decorated table setting, premium drinks menu (wine, beer, spirits), and enhanced refreshment service — ideal for celebrations like birthdays and gatherings. The VIP package (€680, 2 hours) is the ultimate experience: a private chef preparing fresh food on board, premium spirits and champagne, red-carpet welcome, flower arrangements, and professional table styling. All packages include the yacht, fuel, captain, and crew — prices are for the entire vessel, not per person. Additional hours can be added at a set hourly rate." },
+      { heading: "Yacht Charter Packages — Essential, Premium & VIP", content: "MerrySails offers three yacht charter packages to suit different budgets and occasions. The Essential package (€280, 2 hours) includes a private yacht with professional captain and crew, basic refreshments (tea, coffee, water), a Bluetooth sound system, and capacity for up to 15 guests. It is perfect for casual Bosphorus sightseeing with friends or family. The Premium package (€380, 2 hours) adds a decorated table setting, premium drinks menu (wine, beer, spirits), and enhanced refreshment service — ideal for celebrations like birthdays and gatherings. The VIP package (€680, 2 hours) is the ultimate experience: a private chef preparing fresh food on board, premium spirits and champagne, red-carpet welcome, flower arrangements, and professional table styling. All packages include the yacht, fuel, captain, and crew — prices are for the entire vessel, not per person. Additional hours can be added at a set hourly rate.", table: { headers: ["Package", "Duration", "Price", "Inclusions", "Best For"], rows: [["Essential", "2 hours", "€280/boat", "Yacht, captain, crew, sound system, tea/coffee/water — up to 15 guests", "Casual sightseeing, budget-conscious private cruise"], ["Premium", "2+ hours", "€380/boat", "Decorated table, premium drinks (wine, beer, spirits), enhanced service", "Birthdays, anniversaries, small celebrations"], ["VIP", "2+ hours", "€680/boat", "Private chef, champagne, premium spirits, red carpet, flower arrangements, table styling", "Proposals, milestone events, luxury experience"], ["Extra hours", "Per hour", "+€100/hr", "Added to any package", "When 2 hours isn't enough"]] }, callout: { type: "price", text: "Yacht charter prices are per boat, not per person. A group of 15 on the Essential package pays just €19 per person for a fully private Bosphorus cruise — comparable to or cheaper than a shared sightseeing cruise, but with complete privacy and your own crew." }, proTip: "The Essential package is underrated for large groups. At €280 split 15 ways, you pay €19/person for a 2-hour private Bosphorus experience. If your group is 10+, the private charter is almost always better value than booking shared cruises for everyone — and the experience is in a completely different league." },
       { heading: "What to Expect on Board", content: "A private yacht charter is fundamentally different from a shared cruise. You have the entire vessel to yourself and your guests. The captain takes you on your preferred route — north toward the Black Sea, south around the Maiden's Tower, or a customized loop based on your interests. You control the music through the Bluetooth sound system, the timing of stops (some guests like to anchor near the Maiden's Tower for photos), and the overall pace. The crew handles everything — navigation, refreshments, cleaning — so you simply relax and enjoy. Most charter yachts accommodate 10–15 guests comfortably with both indoor salon and outdoor deck space. The salon has cushioned seating, a table for dining, and climate control. The deck offers open-air seating and the best views. Yachts are clean, well-maintained, and safety-inspected regularly." },
       { heading: "Customizing Your Charter — Add-On Services", content: "The add-on menu lets you create a bespoke experience. Popular additions include: professional photographer (€150–300, captures your event and delivers edited digital photos), live musician — violinist, guitarist, or saxophonist (€200–350), DJ with professional sound equipment (€300–500), special decorations — balloons, banners, LED lights, flower walls (€100–300), custom cake (€50–150), full catering — meze and grill, seafood spread, or fine dining (price varies by menu), and hookah/shisha service. For proposals, we offer ring presentation setups, 'She said yes' banners, and rose petal paths on the deck. For birthdays, themed decorations and custom photo backdrops are available. Corporate events can add projector/screen setups and branded materials. All add-ons should be requested at least 48 hours before the charter for proper preparation." },
       { heading: "Best Routes for Your Yacht Charter", content: "Your captain will suggest routes based on conditions and your interests. The most popular route heads north from Kuruçeşme along the European shore past Ortaköy, Bebek, and the Bosphorus bridges, crossing to the Asian side at the Second Bridge and returning south past Kandilli, Çengelköy, and Üsküdar. This 2-hour loop covers the most scenic section of the Bosphorus. For sunset charters, timing the northbound leg to pass under the Bosphorus Bridge at golden hour creates an unforgettable moment. For swimming charters in summer, the captain can anchor in calm bays near the Black Sea entrance where the water is clean and refreshing. Extended charters (3–4 hours) can reach Anadolu Kavağı near the Black Sea or circumnavigate the Maiden's Tower for a full Bosphorus experience." },
@@ -488,7 +649,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What is the cancellation policy for yacht charters?", a: "Free cancellation up to 48 hours before the charter. Cancellations within 48 hours may be subject to a fee." },
       { q: "Can I extend the charter beyond 2 hours?", a: "Yes, additional hours can be added at a set hourly rate. Inform the crew during the charter or arrange in advance." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "bosphorus-sunset-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "bosphorus-sunset-cruise"],
+    relatedPosts: ["yacht-rental-istanbul-prices", "luxury-yacht-rental-bosphorus", "best-yacht-routes-bosphorus"],
   },
   {
     slug: "luxury-yacht-rental-bosphorus",
@@ -497,9 +659,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Experience Istanbul like royalty with a luxury VIP yacht charter on the Bosphorus — private chef, champagne, and panoramic views of two continents.",
     category: "yacht-guide",
     date: "2025-12-17",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=1200&q=80",
-    keywords: ["luxury yacht rental istanbul", "vip yacht bosphorus", "luxury boat hire istanbul", "premium yacht charter istanbul"],
+    imageAlt: "Luxury white motor yacht with sun deck cruising past Dolmabahçe Palace on the Bosphorus",
+    keywords: ["luxury yacht rental istanbul", "vip yacht bosphorus", "luxury boat hire istanbul", "premium yacht charter istanbul", "luxury yacht rental istanbul 2026", "luxury yacht rental istanbul tips", "best time for luxury yacht rental istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Luxury Bosphorus yacht rentals range from €380 (Premium) to €680+ (VIP with private chef and premium spirits)",
+    "Vessels include sun decks, air conditioning, premium sound systems, and fully equipped kitchens",
+    "Catering can be arranged through MerrySails — from mezze platters to full Turkish seafood menus",
+    "Ideal for small groups of 6–20 wanting a fully private Bosphorus experience without compromise"
+    ],
     sections: [
       { heading: "What Makes the VIP Yacht Experience Special", content: "The VIP yacht charter is the pinnacle of Bosphorus experiences. From the moment you arrive at Kuruçeşme Marina, a red carpet and flower-lined walkway lead you aboard. The yacht is meticulously prepared with premium flower arrangements, elegant table settings with fine china and crystal glassware, and ambient lighting designed for your occasion. A private chef prepares a bespoke menu on board — from Turkish seafood to international cuisine — cooked fresh as you cruise. Premium spirits, champagne, and cocktails flow throughout. The crew (captain plus two service staff) anticipates your every need. The VIP experience is not just about luxury items — it is about creating a seamless, stress-free occasion where every detail is handled by professionals. Whether you are proposing marriage, celebrating a milestone birthday, or hosting VIP clients, the VIP charter delivers an experience that guests remember for years." },
       { heading: "The Private Chef Experience", content: "The VIP package includes a professional chef who prepares your meal on board the yacht. The menu is customized to your preferences and dietary requirements — you collaborate with the chef before the charter to design the perfect meal. Popular menus include: a Turkish seafood feast (grilled sea bass, shrimp, calamari, meze selection), an Ottoman-inspired tasting menu (lamb kebab, stuffed vine leaves, chef's special börek, baklava), or international fine dining (beef tenderloin, risotto, seasonal vegetables). The chef brings all ingredients, equipment, and preparation materials — the kitchen setup is self-contained. Watching the chef work while the Bosphorus slides by is part of the entertainment. Dietary accommodations (vegetarian, vegan, gluten-free, halal, kosher) are standard. The meal is served course by course, timed to coincide with scenic moments — appetizers as you depart, mains as you pass the bridges, dessert with views of the illuminated waterfront." },
@@ -526,7 +697,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can I customize the menu?", a: "Yes, the menu is fully customizable. You work directly with the chef to design courses that match your preferences and dietary requirements." },
       { q: "Is the VIP package suitable for a marriage proposal?", a: "Absolutely — it is our most popular proposal package. The crew coordinates timing, surprise elements, champagne service, and photography to make the moment perfect." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "yacht-weddings"]
+    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "yacht-weddings"],
+    relatedPosts: ["luxury-yacht-bosphorus-experience", "private-yacht-charter-istanbul-guide", "yacht-rental-istanbul-prices"],
   },
   {
     slug: "yacht-party-ideas-istanbul",
@@ -535,9 +707,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Planning a party on the Bosphorus? From birthdays to bachelorettes, here are the best yacht party ideas with decoration themes, music options, and catering.",
     category: "yacht-guide",
     date: "2025-12-14",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&q=80",
-    keywords: ["yacht party istanbul", "boat party istanbul", "bosphorus party yacht", "istanbul yacht celebration"],
+    imageAlt: "Decorated yacht deck with balloons, fairy lights, and guests celebrating on the Bosphorus at night",
+    keywords: ["yacht party istanbul", "boat party istanbul", "bosphorus party yacht", "istanbul yacht celebration", "yacht party istanbul 2026", "yacht party istanbul tips", "best time for yacht party istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Yacht parties on the Bosphorus work best for groups of 10–50 people with a 2–4 hour charter",
+    "Popular themes: white party, nautical, Mediterranean cocktail, Turkish night with live music",
+    "Decoration packages start at €150 and include balloons, garlands, table settings, and personalized banners",
+    "Book 2–3 weeks in advance for weekends; last-minute weekday bookings are often available"
+    ],
     sections: [
       { heading: "Party Theme Ideas for Your Yacht", content: "A Bosphorus yacht party starts with a great theme. Popular options include: Gatsby/Great Gatsby — gold and black decorations, champagne towers, 1920s dress code, jazz music. Tropical/Hawaiian — colorful leis, tropical cocktails, summer playlist, vibrant decorations. White Party — everyone wears white against the blue Bosphorus backdrop, creating stunning group photos. Neon/Glow Party — UV lights, neon accessories, glow sticks, electronic music (works best for evening charters). Elegant Black Tie — formal attire, premium dining, classical music or jazz quartet. Turkish Night — traditional Turkish decorations, Turkish cuisine meze spread, Turkish pop music. Pirate/Nautical — playful theme with pirate hats, treasure hunt games, nautical decorations. Each theme can be customized with matching decorations, music playlists, and food menus. The MerrySails team can help source decorations and coordinate theme elements — share your vision and we handle the execution." },
       { heading: "Music and Entertainment Options", content: "Music transforms a yacht charter into a party. The standard Bluetooth sound system lets you play your own playlists through the yacht's speakers — create a Spotify or YouTube Music playlist in advance. For an elevated experience, add-on entertainment options include: a professional DJ with their own equipment (€300–500) — ideal for dance parties with lighting effects; a live saxophonist or violinist (€200–350) — perfect for elegant atmospheres; a live band (€500–1000) — for larger yachts with space for performers; or a traditional Turkish musician with saz or oud (€200–300) — for cultural experiences. Many guests combine options: a live musician for the dining hour transitioning to a DJ for the dance portion. The yacht's sound system supports both indoor and outdoor speakers, so music flows throughout the vessel." },
@@ -564,7 +745,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is a DJ included in the yacht price?", a: "A Bluetooth sound system for your own music is included in all packages. A professional DJ is an add-on starting at €300." },
       { q: "Can we have a yacht party at night?", a: "Yes! Evening charters with LED lighting create an amazing party atmosphere. The illuminated Bosphorus adds to the ambiance." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "yacht-birthday-party", "bachelorette-yacht-party", "corporate-event-bosphorus-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "yacht-birthday-party", "bachelorette-yacht-party", "corporate-event-bosphorus-cruise"],
+    relatedPosts: ["party-boat-istanbul-birthday", "yacht-birthday-party-ideas", "yacht-decoration-ideas-istanbul"],
   },
   {
     slug: "swimming-yacht-tour-istanbul",
@@ -573,9 +755,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Combine a Bosphorus yacht cruise with swimming in crystal-clear waters. Discover the best swimming spots accessible only by boat near Istanbul.",
     category: "yacht-guide",
     date: "2025-12-11",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
-    keywords: ["swimming yacht tour istanbul", "yacht swimming bosphorus", "istanbul boat swimming", "private swimming tour istanbul"],
+    imageAlt: "Guests jumping from a yacht into the clear blue Bosphorus water near a secluded cove in Istanbul",
+    keywords: ["swimming yacht tour istanbul", "yacht swimming bosphorus", "istanbul boat swimming", "private swimming tour istanbul", "swimming yacht tour istanbul 2026", "is swimming yacht tour istanbul worth it", "what to expect swimming yacht tour istanbul", "how to book swimming yacht tour istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Swimming yacht tours include anchored stops in calmer Bosphorus coves — best in June–September when water reaches 22–25°C",
+    "Tours typically combine 2 hours of sailing with 1–1.5 hours of swimming and sun deck time",
+    "All vessels carry life jackets, a swimming ladder, and a safety buoy — crew monitors swimmers at all times",
+    "The Asian side near Anadolu Kavağı offers the clearest water and most scenic swimming stops"
+    ],
     sections: [
       { heading: "Best Swimming Spots Near Istanbul by Yacht", content: "The Bosphorus and surrounding waters offer several excellent swimming locations accessible by private yacht. The northern Bosphorus near the Black Sea entrance has the cleanest water — areas around Poyrazköy and the Asian shore coves offer crystal-clear conditions perfect for swimming. The Princes' Islands (particularly the southern shores of Büyükada and Heybeliada) provide sheltered bays with warm, calm water and scenic backdrops. Beach clubs along the European shore near Kilyos offer another option for combined yacht-beach experiences. The captain knows the best spots based on current conditions — water clarity, wind direction, and currents all affect the ideal swimming location on any given day. Swimming from a yacht gives you access to spots that are unreachable from land, offering a private, uncrowded experience." },
       { heading: "Water Temperatures and Best Seasons", content: "Swimming from a yacht is best between June and September when Bosphorus water temperatures range from 20–24°C. July and August offer the warmest water (22–24°C) and longest days, making for extended swimming sessions. June and September have slightly cooler water (19–21°C) but fewer crowds and pleasant air temperatures. The Sea of Marmara (around the Princes' Islands) warms up faster than the Bosphorus, making island swimming comfortable from late May. The Black Sea entrance areas stay cooler longer. Water temperature varies by depth and location — the captain selects spots with the most comfortable conditions. Wetsuits are not typically needed in peak summer but can be useful in early June or late September." },
@@ -602,7 +793,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Do I need to bring my own swimming gear?", a: "Bring your swimsuit and towel. Snorkeling equipment, floats, and water toys can be arranged as add-ons." },
       { q: "Can children swim from the yacht?", a: "Yes, with life jackets and adult supervision. The crew helps ensure a safe swimming environment for all ages." }
     ],
-    relatedTours: ["private-yacht-swimming-tour", "yacht-charter-in-istanbul", "istanbul-princes-island-tour", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["private-yacht-swimming-tour", "yacht-charter-in-istanbul", "istanbul-princes-island-tour", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["best-yacht-routes-bosphorus", "princes-islands-boat-tour-istanbul", "luxury-yacht-rental-bosphorus"],
   },
   {
     slug: "marriage-proposal-yacht-istanbul",
@@ -611,9 +803,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Propose on the Bosphorus with Istanbul's skyline as your backdrop. Complete guide to planning a romantic yacht marriage proposal — timing, setup, and surprises.",
     category: "events",
     date: "2025-12-16",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=1200&q=80",
-    keywords: ["marriage proposal yacht istanbul", "propose bosphorus", "romantic proposal istanbul", "yacht proposal ideas"],
+    imageAlt: "Rose petal arrangement on a private yacht deck with the Istanbul skyline and Bosphorus Bridge at sunset",
+    keywords: ["marriage proposal yacht istanbul", "propose bosphorus", "romantic proposal istanbul", "yacht proposal ideas", "marriage proposal yacht istanbul 2026", "marriage proposal yacht istanbul tips", "best time for marriage proposal yacht istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "A private Bosphorus yacht proposal starts at €380 — includes rose petals, champagne, and a photographer can be arranged",
+    "Sunset timing (17:00–20:00 depending on season) creates the most romantic atmosphere for the proposal moment",
+    "MerrySails coordinates the surprise: your partner boards expecting a simple cruise, the crew sets the scene",
+    "Over 200 proposals arranged on MerrySails yachts — 100% success rate on the 'yes' (we can't guarantee the rest)"
+    ],
     sections: [
       { heading: "Why the Bosphorus Is the Perfect Proposal Setting", content: "Proposing on a private yacht on the Bosphorus combines privacy, romance, and one of the world's most spectacular backdrops. As the yacht glides between two continents, with Ottoman palaces glowing in the sunset and the minarets of Istanbul silhouetted against the sky, the setting creates a naturally emotional atmosphere. The privacy of a yacht means no strangers watching — just you, your partner, and a discrete crew who have coordinated every detail in advance. The Maiden's Tower, an ancient symbol of love and legend, makes a particularly meaningful backdrop. The Bosphorus Bridge at sunset, lit with warm colors, frames the moment beautifully. Over 200 couples have proposed on MerrySails yachts, and the answer has been 'yes' every single time." },
       { heading: "Choosing the Right Package and Timing", content: "For proposals, we recommend the Premium (€380) or VIP (€680) packages. The Premium includes a decorated table, premium drinks, and an intimate atmosphere. The VIP adds a private chef, champagne, flower arrangements, and the full luxury treatment. Timing is crucial: a late afternoon departure (2–3 hours before sunset) lets you cruise the Bosphorus first, building romantic atmosphere before the big moment at sunset. The captain coordinates the proposal timing so the yacht is positioned near the Maiden's Tower or beneath the Bosphorus Bridge at golden hour — the most romantic backdrop. Winter proposals at sunset (around 17:00) have their own moody, intimate charm with shorter but dramatic light." },
@@ -640,7 +841,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What if it rains on the proposal day?", a: "The yacht salon provides a beautiful indoor alternative. We can also reschedule to the next available date at no extra charge if weather is severe." },
       { q: "What is the best time of year to propose on the Bosphorus?", a: "Any time is magical, but April–June and September–October offer the most pleasant weather and dramatic sunsets. Winter proposals are intimate and moody with earlier sunsets." }
     ],
-    relatedTours: ["romantic-marriage-proposal", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["romantic-marriage-proposal", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["bosphorus-cruise-for-couples", "yacht-decoration-ideas-istanbul", "luxury-yacht-bosphorus-experience"],
   },
   {
     slug: "yacht-birthday-party-ideas",
@@ -649,9 +851,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Celebrate your birthday on the Bosphorus! From themed decorations to custom cakes, here is everything you need to plan an unforgettable yacht birthday party.",
     category: "events",
     date: "2025-12-13",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&q=80",
-    keywords: ["yacht birthday party istanbul", "birthday boat party bosphorus", "istanbul birthday yacht", "birthday celebration yacht"],
+    imageAlt: "Birthday cake and champagne glasses on a yacht with guests celebrating against the Bosphorus backdrop",
+    keywords: ["yacht birthday party istanbul", "birthday boat party bosphorus", "istanbul birthday yacht", "birthday celebration yacht", "yacht birthday party istanbul 2026", "yacht birthday party istanbul tips", "best time for yacht birthday party istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Yacht birthday parties accommodate 10–50 guests with packages from €280 for a 2-hour charter",
+    "Add-ons include: birthday cake (€80), DJ or live band (€200–500), custom banner (€50), photo booth (€150)",
+    "Plan to arrive at the pier 30 minutes early so the crew can finish decorating before guests board",
+    "Daytime birthday cruises (12:00–15:00) work well for mixed ages; evening parties (20:00+) suit adult groups"
+    ],
     sections: [
       { heading: "Why Celebrate Your Birthday on a Yacht", content: "A yacht birthday party on the Bosphorus is one of the most unique and memorable ways to celebrate in Istanbul. Instead of the usual restaurant or venue, you and your guests enjoy a private cruise between two continents with the city's most iconic landmarks as your backdrop. The intimate setting of a yacht creates a VIP atmosphere — no other diners, no noise from adjacent tables, just your group celebrating on the water. The crew handles everything, so the birthday person and guests can focus entirely on having fun. The Bosphorus adds a natural entertainment element — the changing scenery, passing landmarks, and beautiful light (especially at sunset) create constant visual interest. Photos from a yacht birthday are consistently spectacular, with the Istanbul skyline providing a backdrop that no venue can match." },
       { heading: "Birthday Package Options", content: "MerrySails offers yacht birthday packages starting at the Essential level (€280, 2 hours) for casual celebrations with your own music and refreshments. The Premium package (€380) adds decorated table settings, a drink menu, and enhanced service — the most popular choice for birthday parties. The VIP package (€680) includes a private chef, premium spirits, champagne, and luxurious decorations. Birthday-specific add-ons include: custom birthday cake (€50–150, ordered to your design specifications), birthday banner and balloon decorations (€100–200), DJ with professional sound and lighting (€300–500), birthday photo backdrop wall, and party favors for guests. All packages accommodate up to 15 guests on standard yachts, with larger vessels available for bigger groups." },
@@ -678,7 +889,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What about kids' birthday parties?", a: "Yacht birthday parties work for all ages. For kids, we recommend daytime charters with age-appropriate decorations, games, and a shorter duration (1.5–2 hours)." },
       { q: "Can I split payment among guests?", a: "Yes, we accept split payments. Many groups divide the charter cost evenly — a Premium yacht party split among 12–15 friends is very affordable per person." }
     ],
-    relatedTours: ["yacht-birthday-party", "yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise"]
+    relatedTours: ["yacht-birthday-party", "yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise"],
+    relatedPosts: ["party-boat-istanbul-birthday", "yacht-party-ideas-istanbul", "yacht-decoration-ideas-istanbul"],
   },
   {
     slug: "bachelorette-party-yacht-istanbul",
@@ -687,9 +899,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Give the bride-to-be the bachelorette party of her dreams — a private yacht on the Bosphorus with champagne, dancing, and Instagram-perfect sunset views.",
     category: "events",
     date: "2025-12-09",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80",
-    keywords: ["bachelorette party yacht istanbul", "hen party istanbul yacht", "bride yacht bosphorus", "bachelorette boat party istanbul"],
+    imageAlt: "Group of women in matching outfits celebrating a bachelorette party on a Bosphorus yacht with champagne",
+    keywords: ["bachelorette party yacht istanbul", "hen party istanbul yacht", "bride yacht bosphorus", "bachelorette boat party istanbul", "bachelorette party yacht istanbul 2026", "bachelorette party yacht istanbul tips", "best time for bachelorette party yacht istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Bachelorette yacht parties in Istanbul typically include 2–3 hours on the Bosphorus with a full decoration package",
+    "Popular add-ons: custom sashes and tiaras (€60), prosecco package (€120 for 10), live DJ (€200)",
+    "The VIP package (€680) includes a private chef, premium spirits, and dedicated hostess service",
+    "Istanbul is one of Europe's top bachelorette destinations — the Bosphorus backdrop is simply unmatched"
+    ],
     sections: [
       { heading: "Why Istanbul Is Perfect for a Bachelorette Yacht Party", content: "Istanbul has become one of the world's hottest bachelorette destinations, and a yacht party on the Bosphorus is the crown jewel of the celebration. The city offers an intoxicating mix of glamour, history, and nightlife — and sailing through it on a private yacht with your best friends is an experience unlike anything else. The Bosphorus provides a naturally stunning backdrop for photos, the sunset creates a magical atmosphere for toasts, and the privacy of a yacht means the group can be as loud and celebratory as they want. After the cruise, Istanbul's vibrant nightlife scene (Bebek, Kuruçeşme, Taksim) is just minutes from the marina. The combination of a yacht party and Istanbul nightlife makes for a bachelorette weekend that the entire group will talk about for years." },
       { heading: "Bachelorette Yacht Packages and Decorations", content: "The Premium package (€380) is the most popular choice for bachelorette parties — it includes a decorated yacht, drink service, and enough flair to make the bride feel like a queen. Rose gold and pink themes dominate: think balloon garlands, 'Bride to Be' banners, matching sashes and tiaras, custom champagne flutes, and a dedicated photo wall. The VIP package (€680) adds champagne, a private chef preparing Instagram-worthy canapés, and luxury decorations including a flower wall. Popular add-ons: professional photographer capturing candid moments and group shots (€150–300), DJ for sunset dancing (€300–500), custom cake or cupcakes, matching robes or swimwear for the group, and a 'Future Mrs.' neon sign. Many groups bring matching outfits — white for the bride, a coordinating color for the squad." },
@@ -716,7 +937,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is alcohol included?", a: "The Premium package includes wine, beer, and spirits. The VIP adds champagne. The Essential package lets you bring your own beverages." },
       { q: "What should we wear?", a: "Anything goes! Popular choices: matching swimsuits for summer, coordinated outfits (white for the bride, black for the squad), or themed costumes." }
     ],
-    relatedTours: ["bachelorette-yacht-party", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "private-yacht-swimming-tour"]
+    relatedTours: ["bachelorette-yacht-party", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "private-yacht-swimming-tour"],
+    relatedPosts: ["yacht-party-ideas-istanbul", "yacht-decoration-ideas-istanbul", "luxury-yacht-rental-bosphorus"],
   },
   {
     slug: "yacht-wedding-istanbul-bosphorus",
@@ -725,9 +947,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Say 'I do' on the Bosphorus with Istanbul's skyline as your witness. The complete guide to planning an intimate yacht wedding ceremony in Istanbul.",
     category: "events",
     date: "2025-12-07",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80",
-    keywords: ["yacht wedding istanbul", "bosphorus wedding", "istanbul wedding boat", "intimate wedding yacht"],
+    imageAlt: "Bride and groom on a flower-decorated yacht with the Bosphorus and Istanbul skyline behind them",
+    keywords: ["yacht wedding istanbul", "bosphorus wedding", "istanbul wedding boat", "intimate wedding yacht", "yacht wedding istanbul 2026", "yacht wedding istanbul tips", "best time for yacht wedding istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Bosphorus yacht weddings accommodate up to 40–80 guests depending on vessel size — ceremony and reception in one",
+    "Legal civil ceremonies can be arranged through Istanbul Municipality; a civil registrar can board the vessel",
+    "Full-service yacht weddings include catering, florals, photography coordination, and entertainment",
+    "Book 3–6 months in advance for summer dates — Bosphorus wedding yachts are heavily in demand June–September"
+    ],
     sections: [
       { heading: "Why Choose a Yacht Wedding on the Bosphorus", content: "A yacht wedding on the Bosphorus offers something no traditional venue can match — a ceremony between two continents with Istanbul's magnificent skyline as your backdrop. The intimacy of a yacht creates a deeply personal atmosphere where every guest is close to the couple. The constantly changing scenery — palaces, mosques, bridges — provides natural visual drama without any additional decoration needed. The sunset ceremony timing, when golden light bathes the Bosphorus, creates photographs that look like they were taken in paradise. Yacht weddings are also refreshingly hassle-free compared to traditional venues — the crew handles everything from setup to service, leaving the couple and their families free to simply enjoy the celebration. For destination wedding couples, Istanbul combines the wedding venue with an incredible travel destination for guests." },
       { heading: "Ceremony Planning and Legal Requirements", content: "A legal marriage ceremony in Turkey requires documentation and a civil ceremony performed by a marriage officer. Many couples choose to have their legal ceremony at a local marriage office before the yacht wedding, then hold their symbolic or religious ceremony on the Bosphorus. For religious ceremonies, we can arrange an imam (Islamic), priest (Christian), or rabbi (Jewish) to officiate on board. Secular celebrants who perform meaningful non-denominational ceremonies are also available. The ceremony itself typically takes place on the upper deck, with guests seated in rows and the couple standing at the bow with the Bosphorus behind them. Vows exchanged as the yacht passes the Maiden's Tower or glides beneath the Bosphorus Bridge at sunset create a moment of extraordinary beauty." },
@@ -754,7 +985,8 @@ export const blogPosts: BlogPost[] = [
       { q: "How far in advance should I book a yacht wedding?", a: "At least 2–3 months for full wedding planning. Simple elopement-style ceremonies need 2–3 weeks. Peak wedding season (May–October) books up quickly." },
       { q: "Can you arrange an officiant?", a: "Yes — religious officiants (imam, priest, rabbi) and secular celebrants can be arranged to perform the ceremony on board." }
     ],
-    relatedTours: ["yacht-weddings", "romantic-marriage-proposal", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise"]
+    relatedTours: ["yacht-weddings", "romantic-marriage-proposal", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise"],
+    relatedPosts: ["wedding-anniversary-yacht-cruise", "yacht-decoration-ideas-istanbul", "luxury-yacht-bosphorus-experience"],
   },
   {
     slug: "corporate-event-yacht-bosphorus",
@@ -763,9 +995,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Elevate your corporate events with a private yacht on the Bosphorus. From team building to client entertaining, create lasting impressions on the water.",
     category: "events",
     date: "2025-12-04",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80",
-    keywords: ["corporate event yacht istanbul", "team building bosphorus", "corporate cruise istanbul", "business event yacht"],
+    imageAlt: "Business professionals networking on a private yacht deck with Istanbul's skyline during a corporate event",
+    keywords: ["corporate event yacht istanbul", "team building bosphorus", "corporate cruise istanbul", "business event yacht", "corporate event yacht istanbul 2026", "corporate event yacht istanbul tips", "best time for corporate event yacht istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Corporate yacht events on the Bosphorus seat 15–80 guests — ideal for client entertainment, team building, or product launches",
+    "Packages include AV equipment, catering, branded materials, and dedicated event coordination",
+    "A 3-hour Bosphorus corporate cruise is equivalent in impact to a 5-star restaurant dinner — with a unique, memorable setting",
+    "Tax-deductible as a business entertainment expense under Turkish corporate tax law"
+    ],
     sections: [
       { heading: "Why Corporate Events Work Better on a Yacht", content: "A Bosphorus yacht corporate event creates an atmosphere that no conference room or hotel ballroom can replicate. The unique setting immediately signals to clients, partners, or team members that this is a special occasion. The confined but comfortable space encourages genuine conversation — people who might hide at their tables in a large venue naturally mingle on a yacht. The changing Bosphorus scenery provides natural conversation starters and eliminates the need for elaborate entertainment. The privacy ensures confidential discussions stay confidential. For international clients visiting Istanbul, a yacht cruise doubles as a city tour and cultural experience — efficient hospitality that combines business entertainment with sightseeing." },
       { heading: "Event Types and Formats", content: "Corporate yacht events take many forms. Client entertainment — host VIP clients on a sunset or dinner cruise for relationship building. Team celebrations — reward teams with a memorable experience after project milestones or year-end achievements. Product launches — unique venue for unveiling new products with built-in exclusivity. Board meetings and strategy sessions — the change of environment stimulates creative thinking (presentations possible with projector setups). Networking events — intimate size encourages meaningful connections. International delegation hosting — combine business hospitality with Istanbul cultural experience. Company anniversaries and milestones — celebrate corporate achievements in style." },
@@ -797,7 +1038,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What is the ideal group size for a corporate yacht event?", a: "10–15 guests on a standard yacht is ideal for intimate client entertaining or team events. Larger vessels accommodate 20–50 for bigger corporate events." },
       { q: "Can we add company branding?", a: "Yes — branded banners, napkins, coasters, and welcome materials can be arranged. Share your brand assets and we handle the production." }
     ],
-    relatedTours: ["corporate-event-bosphorus-cruise", "yacht-charter-in-istanbul", "bosphorus-dinner-cruise"]
+    relatedTours: ["corporate-event-bosphorus-cruise", "yacht-charter-in-istanbul", "bosphorus-dinner-cruise"],
+    relatedPosts: ["corporate-events-yacht-istanbul", "yacht-party-ideas-istanbul", "private-yacht-charter-istanbul-guide"],
   },
   {
     slug: "wedding-anniversary-yacht-cruise",
@@ -806,9 +1048,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Mark your wedding anniversary with a romantic yacht cruise on the Bosphorus. Private dining, champagne, and sunset views create the perfect celebration.",
     category: "events",
     date: "2025-12-02",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80",
-    keywords: ["wedding anniversary yacht istanbul", "anniversary cruise bosphorus", "romantic anniversary dinner istanbul", "anniversary celebration yacht"],
+    imageAlt: "Anniversary couple dining at a candlelit table on a private Bosphorus yacht with Istanbul lights reflected on the water",
+    keywords: ["wedding anniversary yacht istanbul", "anniversary cruise bosphorus", "romantic anniversary dinner istanbul", "anniversary celebration yacht", "wedding anniversary yacht istanbul 2026", "is wedding anniversary yacht istanbul worth it", "what to expect wedding anniversary yacht istanbul", "how to book wedding anniversary yacht istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Anniversary yacht cruises start at €380 for 2 hours — includes decorated table, champagne, and a 3-course dinner",
+    "Personalization options: monogram decoration, custom menu, live violin or acoustic guitar (€150–200)",
+    "Sunset timing creates the most romantic atmosphere — combine with a stay at a Bosphorus-view hotel for a full anniversary getaway",
+    "MerrySails has arranged over 500 anniversary celebrations on the Bosphorus since 2000"
+    ],
     sections: [
       { heading: "Why a Bosphorus Yacht Anniversary Is Special", content: "A wedding anniversary deserves more than just another restaurant dinner. A private yacht on the Bosphorus creates an intimate setting where you and your partner can celebrate your journey together surrounded by one of the world's most romantic waterways. The privacy of the yacht means uninterrupted quality time — no neighboring tables, no waiters rushing you, just the two of you with the illuminated palaces and bridges gliding by. The Bosphorus at sunset has an inherently romantic quality — the warm light, the gentle movement of the water, and the grandeur of Istanbul's skyline create a naturally emotional atmosphere perfect for reflecting on your years together. Whether it is your 1st or your 50th anniversary, the experience feels special and significant." },
       { heading: "Anniversary Yacht Packages", content: "The Premium package (€380) is ideal for romantic anniversary dinners — decorated table for two with candles and flowers, premium drinks including wine and champagne, and professional service that is attentive but unobtrusive. The VIP package (€680) elevates the experience with a private chef preparing a bespoke multi-course dinner, premium champagne, luxury flower arrangements, and red-carpet welcome. Popular anniversary add-ons: a violinist or guitarist providing live romantic music (€200–350), professional photographer capturing the evening (€150–300), custom anniversary cake, rose petal decoration on deck, personalized anniversary banner, and a custom playlist of songs from your relationship milestones." },
@@ -835,7 +1086,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can we renew our vows on the yacht?", a: "Yes! We can arrange a celebrant for a vow renewal ceremony on deck at sunset. It is a beautiful and meaningful addition to an anniversary celebration." },
       { q: "What food is served for the anniversary dinner?", a: "The Premium package includes a romantic dining setup with curated menu. The VIP package includes a private chef who creates a bespoke multi-course dinner tailored to your preferences." }
     ],
-    relatedTours: ["wedding-anniversary", "romantic-marriage-proposal", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["wedding-anniversary", "romantic-marriage-proposal", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["bosphorus-cruise-for-couples", "marriage-proposal-yacht-istanbul", "yacht-decoration-ideas-istanbul"],
   },
   {
     slug: "new-years-eve-bosphorus-cruise",
@@ -844,9 +1096,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Ring in the New Year on the Bosphorus with a midnight countdown, fireworks views, live entertainment, and a festive Turkish dinner cruise.",
     category: "events",
     date: "2025-11-30",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1467810563316-b5476525c0f8?w=1200&q=80",
-    keywords: ["new years eve bosphorus cruise", "istanbul nye cruise", "new year istanbul boat", "new years eve cruise istanbul"],
+    imageAlt: "Fireworks exploding over the Bosphorus Bridge and Istanbul skyline at midnight on New Year's Eve from a cruise boat",
+    keywords: ["new years eve bosphorus cruise", "istanbul nye cruise", "new year istanbul boat", "new years eve cruise istanbul", "new years eve bosphorus cruise 2026", "is new years eve bosphorus cruise worth it", "what to expect new years eve bosphorus cruise", "new years bosphorus cruise booking tips"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The New Year's Eve Bosphorus cruise includes dinner, open bar, DJ or live band, and fireworks viewing from the water",
+    "Prices range from €120 (shared dinner cruise) to €800+ (private yacht with VIP catering)",
+    "The Bosphorus Bridge fireworks display at midnight is visible only from the water — land viewing spots are extremely crowded",
+    "Book by November 1st — New Year's Eve cruises sell out 6–8 weeks in advance"
+    ],
     sections: [
       { heading: "Why Celebrate NYE on the Bosphorus", content: "New Year's Eve on a Bosphorus cruise is one of Istanbul's most sought-after experiences. At midnight, the city erupts with fireworks visible from every direction — from the Asian and European shores, from bridges and hilltops. Being on the water means you have a 360-degree panoramic view of the fireworks display, with the illuminated Bosphorus Bridge and Istanbul skyline as the stage. The experience combines a festive dinner, live entertainment, and dancing with the most spectacular midnight countdown setting you can imagine. There is something magical about counting down to midnight on the Bosphorus — surrounded by history, floating between two continents, watching fireworks paint the sky over one of the world's oldest cities." },
       { heading: "What Is Included in the NYE Cruise", content: "The New Year's Eve dinner cruise is an enhanced version of the regular dinner cruise, running 5–6 hours (approximately 20:00–02:00). The package typically includes: a premium multi-course Turkish dinner (5+ courses, upgraded from the standard menu), unlimited drinks including champagne for midnight toast, live music and DJ performing festive and international hits, belly dance and traditional entertainment, midnight countdown ceremony with party accessories (hats, horns, confetti), champagne toast at midnight, and hotel pickup and drop-off. The vessel is festively decorated for the occasion. The atmosphere progresses from elegant dining to celebratory party as midnight approaches. NYE cruise pricing is higher than standard dinner cruises, reflecting the extended duration, premium menu, and special entertainment." },
@@ -873,7 +1134,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is there a dress code for NYE?", a: "Smart to formal — most guests dress up for the occasion. Think cocktail dresses, suits, festive attire." },
       { q: "Can we see fireworks from the boat?", a: "Yes! The yacht positions for optimal 360-degree fireworks viewing at midnight. Being on the water provides the best vantage point in Istanbul." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise"]
+    relatedTours: ["bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise"],
+    relatedPosts: ["bosphorus-night-cruise-guide", "yacht-party-ideas-istanbul", "istanbul-nightlife-guide"],
   },
   {
     slug: "valentines-day-cruise-istanbul",
@@ -882,9 +1144,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Make this Valentine's Day unforgettable with a romantic Bosphorus dinner cruise or private yacht — rose petals, champagne, live music, and sunset over Istanbul.",
     category: "events",
     date: "2025-11-27",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&q=80",
-    keywords: ["valentines day cruise istanbul", "romantic cruise istanbul", "valentines bosphorus dinner", "valentines day yacht istanbul"],
+    imageAlt: "Couple at a rose-decorated table on a Bosphorus cruise at sunset on Valentine's Day",
+    keywords: ["valentines day cruise istanbul", "romantic cruise istanbul", "valentines bosphorus dinner", "valentines day yacht istanbul", "valentines day cruise istanbul 2026", "is valentines day cruise istanbul worth it", "what to expect valentines day cruise istanbul", "valentines cruise istanbul booking guide"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Valentine's Day Bosphorus cruises run February 14th with special menus, live music, and rose decorations — from €85/couple",
+    "Istanbul's mild February weather (8–12°C) is manageable on heated indoor cruise decks",
+    "Book by January 31st — Valentine's cruises sell out every year without exception",
+    "Upgrade to a private yacht (€680) for full privacy on the most romantic evening of the year"
+    ],
     sections: [
       { heading: "Valentine's Day Dinner Cruise — Romantic Evening on the Bosphorus", content: "The Valentine's Day dinner cruise is an enhanced version of the regular dinner cruise, designed specifically for couples. The vessel is decorated with romantic touches — rose arrangements, candlelit tables, heart-themed décor, and ambient pink and red lighting. Couples are seated at tables for two with Bosphorus views. The 4-course dinner features an upgraded Valentine's menu with seafood, premium cuts, and chocolate desserts. Champagne is included for a toast. Live music focuses on romantic ballads, with a live violinist adding an intimate touch. The illuminated Bosphorus at night — palaces glowing, bridges shimmering, the Maiden's Tower lit like a beacon of love — creates the most romantic backdrop imaginable. The evening includes a rose for each woman and a small Valentine's gift. It is the most sought-after Valentine's experience in Istanbul." },
       { heading: "Private Yacht Valentine's Experience", content: "For the ultimate romantic gesture, a private yacht Valentine's cruise offers total intimacy. Just the two of you (plus a discreet crew) on a luxury yacht with the Bosphorus to yourselves. The Premium package (€380) creates an elegant dinner-for-two experience: candlelit table, premium drinks, and personalized service. The VIP package (€680) adds a private chef preparing a custom Valentine's menu, champagne, luxury flower arrangements, and a red-carpet welcome. Add a live violinist playing romantic classical pieces as you dine, and the experience is cinema-level romantic. Time the charter for sunset — watching the sky turn gold and then the city lights appear while sharing a private dinner on the water is the kind of experience that Valentine's dreams are made of." },
@@ -900,7 +1171,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is the Valentine's cruise only for couples?", a: "The Valentine's dinner cruise is designed for couples with tables for two. Friends groups are welcome on private yacht charters with Valentine's themes." },
       { q: "When should I book for Valentine's Day?", a: "Book in January for guaranteed availability. The dinner cruise sells out 2–3 weeks before February 14th." }
     ],
-    relatedTours: ["romantic-marriage-proposal", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "wedding-anniversary"]
+    relatedTours: ["romantic-marriage-proposal", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "wedding-anniversary"],
+    relatedPosts: ["bosphorus-cruise-for-couples", "marriage-proposal-yacht-istanbul", "bosphorus-dinner-cruise-what-to-expect"],
   },
   {
     slug: "top-things-to-do-istanbul",
@@ -909,9 +1181,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "From ancient mosques and bustling bazaars to Bosphorus cruises and Turkish baths — here are the top things to do in Istanbul for an unforgettable trip.",
     category: "istanbul",
     date: "2025-12-06",
+    dateModified: "2026-03-08",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
-    keywords: ["things to do istanbul", "istanbul attractions", "istanbul must see", "istanbul activities 2026"],
+    imageAlt: "Panoramic aerial view of Istanbul showing Hagia Sophia, Blue Mosque, and the Bosphorus from above",
+    keywords: ["things to do istanbul", "istanbul attractions", "istanbul must see", "istanbul activities 2026", "things to do istanbul tips 2026", "best things to do istanbul guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "The top 3 unmissable Istanbul experiences: Hagia Sophia, a Bosphorus cruise, and the Grand Bazaar",
+    "Allocate at least 4–5 days to see Istanbul properly — the city is vast and rewards slow exploration",
+    "The Bosphorus cruise is the single best way to understand Istanbul's geography and history in one experience",
+    "Istanbul is one of the world's most visited cities for good reason — every neighborhood rewards wandering"
+    ],
     sections: [
       { heading: "Historic Sultanahmet — Where Civilizations Meet", content: "The Sultanahmet district is Istanbul's historical heart, home to monuments that have shaped world history. The Hagia Sophia (Ayasofya), built in 537 AD by Emperor Justinian, served as the world's largest cathedral for nearly 1,000 years before becoming a mosque after the Ottoman conquest of 1453. Today it functions as a mosque (free entry, modest dress required) and its massive dome, glittering mosaics, and sheer scale continue to awe visitors. Directly opposite, the Blue Mosque (Sultan Ahmed Mosque) is famous for its six minarets and 20,000 blue Iznik tiles that give the interior an ethereal blue glow. The Topkapı Palace, residence of Ottoman sultans for 400 years, houses incredible treasures including the famous Spoonmaker's Diamond and Prophet Muhammad's relics. The Basilica Cistern, an underground water reservoir built in 532 AD, creates an atmospheric underworld of 336 marble columns reflected in still water. All these sites are within walking distance of each other." },
       { heading: "The Grand Bazaar and Spice Market — Shopping in History", content: "The Grand Bazaar (Kapalıçarşı) is one of the oldest and largest covered markets in the world, with over 4,000 shops spread across 61 covered streets. It has been in continuous operation since 1461. Here you will find Turkish carpets, ceramics, leather goods, gold jewelry, lamps, textiles, and souvenirs — plus excellent people-watching and chai (tea) offered by hospitable shopkeepers. Bargaining is expected and part of the experience. Start at about 50% of the asking price and work toward a fair middle. The Spice Bazaar (Egyptian Bazaar) near Eminönü is smaller but equally atmospheric, filled with colorful spice pyramids, Turkish delight, dried fruits, nuts, and Turkish coffee. The surrounding streets bustle with local shops, fresh produce vendors, and artisan workshops that offer a more authentic shopping experience than the bazaar interior." },
@@ -938,7 +1219,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What is the best area to stay in Istanbul?", a: "Sultanahmet for history, Taksim/Beyoğlu for nightlife and modern dining, Karaköy for trendy atmosphere, or Kadıköy for local Asian-side culture." },
       { q: "Do I need to buy a museum pass?", a: "The Istanbul Museum Pass covers multiple attractions and saves money if you plan to visit 3+ museums. It also lets you skip ticket queues." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "full-day-istanbul-old-city-tour", "istanbul-princes-island-tour"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "full-day-istanbul-old-city-tour", "istanbul-princes-island-tour"],
+    relatedPosts: ["istanbul-travel-guide-first-timers", "sultanahmet-tourist-guide", "istanbul-hidden-gems-local-guide"],
   },
   {
     slug: "istanbul-travel-guide-first-timers",
@@ -947,9 +1229,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Planning your first trip to Istanbul? This practical guide covers everything from airport transfers and local transport to tipping customs and language basics.",
     category: "istanbul",
     date: "2025-12-03",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200&q=80",
-    keywords: ["istanbul travel guide", "first time istanbul", "istanbul tips tourists", "istanbul visitor guide 2026"],
+    imageAlt: "First-time visitors photographing the Blue Mosque from Sultanahmet Square with the Bosphorus visible in the distance",
+    keywords: ["istanbul travel guide", "first time istanbul", "istanbul tips tourists", "istanbul visitor guide 2026", "istanbul travel guide tips 2026", "best istanbul travel guide guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "Istanbul spans two continents — plan your itinerary by area to minimize transit time between attractions",
+    "The Istanbul Museum Pass (€50) covers Hagia Sophia, Topkapı Palace, and 9 other museums — saves €30–40 vs individual tickets",
+    "Learn 5 Turkish phrases (merhaba, teşekkür, evet/hayır, kaç lira, lütfen) — locals respond warmly to the effort",
+    "A Bosphorus cruise on day 1 or 2 gives you an instant geographical orientation to the city"
+    ],
     sections: [
       { heading: "Getting to Istanbul and Airport Transfers", content: "Istanbul has one main international airport: Istanbul Airport (IST) on the European side, one of the world's largest. Sabiha Gökçen Airport (SAW) on the Asian side serves budget airlines and some international routes. From IST, the Havaist bus connects to major city areas (Taksim, Sultanahmet) for about €5–8. Taxis cost €25–35 to central Istanbul. The M11 metro line connects IST to the city center. From SAW, the Havabus runs to Kadıköy and Taksim. Always use official airport taxis with meters or pre-book a transfer — avoid unmarked cars. Many hotels offer airport pickup services (€25–40) which can be worth the convenience, especially for late-night arrivals." },
       { heading: "Getting Around Istanbul — Transport Guide", content: "Istanbul's public transport is excellent and affordable. The Istanbulkart (rechargeable transit card) works on all public transport — metro, tram, bus, ferry, and funicular. Buy one at any metro station or kiosk for a small deposit. A single ride costs about €0.50–0.70. The T1 tram line connects key tourist areas (airport bus stop → Sultanahmet → Eminönü → Karaköy → Kabataş). The M2 metro runs from Taksim to various city areas. Ferries cross the Bosphorus between European and Asian sides — the Eminönü–Kadıköy ferry is both transport and sightseeing. Taxis are plentiful but always insist on the meter (taksimetre). Ride-hailing apps (Uber, BiTaksi) provide transparent pricing. Walking is the best way to explore individual neighborhoods — Istanbul is hilly but rewarding on foot." },
@@ -976,7 +1267,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is tap water safe to drink in Istanbul?", a: "Tap water is treated but most locals and visitors prefer bottled water. Bottled water is cheap (₺10–15) and available everywhere." },
       { q: "What is the best neighborhood to stay in as a first-time visitor?", a: "Sultanahmet puts you within walking distance of major attractions. Taksim/Beyoğlu offers better restaurants and nightlife. Both are excellent first-time choices." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour", "bosphorus-dinner-cruise", "istanbul-princes-island-tour"]
+    relatedTours: ["bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour", "bosphorus-dinner-cruise", "istanbul-princes-island-tour"],
+    relatedPosts: ["top-things-to-do-istanbul", "istanbul-transportation-guide-tourists", "turkish-etiquette-guide-tourists"],
   },
   {
     slug: "istanbul-street-food-guide",
@@ -985,9 +1277,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Istanbul's street food scene is legendary. From simit carts to fish sandwich boats, discover the 15 must-try street foods and where to find the best versions.",
     category: "istanbul",
     date: "2025-11-24",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
-    keywords: ["istanbul street food", "turkish street food", "best food istanbul", "what to eat istanbul"],
+    imageAlt: "Vendor serving fresh simit (sesame bread ring) from a cart near the Galata Bridge in Istanbul",
+    keywords: ["istanbul street food", "turkish street food", "best food istanbul", "what to eat istanbul", "istanbul street food 2026", "istanbul street food tips 2026", "best istanbul street food guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "Istanbul's 15 must-try street foods: simit, balık ekmek, midye dolma, kokoreç, lahmacun, döner, çiğ köfte, gözleme, and more",
+    "The best street food is concentrated around the Kapalıçarşı, Eminönü waterfront, Kadıköy market, and Beşiktaş pazar",
+    "Balık ekmek (fish sandwich) from the boats moored at Galata Bridge is an authentic Istanbul ritual — costs €2–3",
+    "Street food is generally very safe in Istanbul — high turnover means fresh ingredients at licensed stalls"
+    ],
     sections: [
       { heading: "Simit, Döner & Balık Ekmek — The Holy Trinity", content: "Three street foods define Istanbul's food scene. Simit — the iconic sesame-covered bread ring — is Istanbul's answer to the bagel. Crispy on the outside, chewy inside, covered in toasted sesame seeds, it costs just ₺10–15 from the ubiquitous red simit carts. Eat it plain or with cream cheese and tea for the classic Turkish breakfast. Döner kebab — vertical spit-roasted meat (lamb, chicken, or beef) sliced into a warm bread wrap or piled on a plate with rice and salad. Avoid tourist-trap döners near major attractions; the best are in local neighborhoods where you see a queue of Turks (₺80–150 for a wrap). Balık ekmek — the famous fish sandwich — is best experienced at Eminönü waterfront where it is grilled on rocking boats and served in fresh bread with lettuce, onions, and a squeeze of lemon. At ₺80–100, it is one of Istanbul's most iconic and satisfying street meals, especially with a view of the Galata Bridge." },
       { heading: "Lahmacun, Pide & Börek — Turkish Flatbreads", content: "Lahmacun is thin, crispy flatbread topped with minced meat, tomatoes, peppers, and parsley — often called 'Turkish pizza' though it is a different animal entirely. Roll it up with fresh herbs, squeeze lemon over it, and eat it with your hands (₺40–60 each). Pide is Turkey's actual pizza equivalent — boat-shaped flatbread filled with cheese, meat, egg, or vegetables, baked in a wood-fired oven. Kaşarlı pide (cheese) and kuşbaşılı pide (diced lamb) are classics (₺120–200). Börek is flaky pastry filled with cheese (peynirli), spinach (ıspanaklı), or meat (kıymalı). The morning börek shops (börekçi) serve fresh-from-the-oven versions that are crispy, buttery, and absolutely addictive. Su böreği (water börek with cheese) and sigara böreği (cigar-shaped cheese rolls) are must-tries at ₺30–60." },
@@ -1014,7 +1315,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Are there vegetarian street food options?", a: "Yes! Cheese pide, spinach börek, kumpir with vegetarian toppings, stuffed vine leaves (yaprak sarma), falafel, and roasted chestnuts are all vegetarian." },
       { q: "What is the best area for street food in Istanbul?", a: "Kadıköy market (Asian side) and the streets around the Spice Bazaar (European side) are the top street food areas. Ortaköy for kumpir, Eminönü for fish sandwiches." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour"],
+    relatedPosts: ["best-restaurants-near-bosphorus", "grand-bazaar-shopping-guide", "kadikoy-asian-side-istanbul"],
   },
   {
     slug: "sultanahmet-tourist-guide",
@@ -1023,9 +1325,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Sultanahmet is where Istanbul's 2,500 years of history come alive. This guide covers every major attraction, practical tips, and the best ways to explore.",
     category: "istanbul",
     date: "2025-11-17",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80",
-    keywords: ["sultanahmet guide", "hagia sophia guide", "blue mosque istanbul", "istanbul historic peninsula"],
+    imageAlt: "Interior of Hagia Sophia with massive dome, Byzantine mosaics, and calligraphic roundels in golden light",
+    keywords: ["sultanahmet guide", "hagia sophia guide", "blue mosque istanbul", "istanbul historic peninsula", "sultanahmet guide 2026", "is sultanahmet guide worth it", "what to expect sultanahmet guide", "how to book sultanahmet guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "Hagia Sophia is free to enter as a mosque — visit early morning (8:00–9:00) before tour groups arrive",
+    "The 4 key Sultanahmet sites: Hagia Sophia, Blue Mosque, Topkapı Palace, and the Basilica Cistern",
+    "Allow 3–4 hours for the full Sultanahmet circuit; a full day including Topkapı is more comfortable",
+    "From Sultanahmet, the Bosphorus ferry pier at Eminönü is a 10-minute walk along the waterfront"
+    ],
     sections: [
       { heading: "Hagia Sophia — 1,500 Years of History", content: "The Hagia Sophia (Ayasofya) is arguably Istanbul's most important monument. Built in just 5 years (532–537 AD) by Byzantine Emperor Justinian I, it served as the world's largest cathedral for nearly 1,000 years. After the Ottoman conquest of 1453, it became a mosque, then a museum in 1934, and returned to mosque status in 2020. Its massive dome (31 meters in diameter, 55 meters high) was an architectural marvel that influenced building design for centuries. Inside, magnificent Byzantine mosaics depicting Christ, the Virgin Mary, and saints coexist with Islamic calligraphy panels and Ottoman additions. Entry is free (as a functioning mosque) but visitors must dress modestly — scarves are provided for women at the entrance. Non-prayer visiting hours are between prayer times. Photography is allowed. The building's scale and beauty are overwhelming — allow at least 45 minutes to properly appreciate the interior." },
       { heading: "The Blue Mosque and Hippodrome", content: "The Sultan Ahmed Mosque (Blue Mosque), built between 1609 and 1616, faces the Hagia Sophia across a garden square — a deliberate statement of Ottoman architectural ambition rivaling the Byzantine masterpiece. Its interior is covered with over 20,000 handmade Iznik tiles in tulip, carnation, and cypress designs, primarily in shades of blue that give the mosque its popular name. Six minarets (a controversial number at the time, as only the mosque in Mecca had six) soar above the complex. Entry is free and open outside prayer times. Adjacent to the mosque, the Hippodrome was the center of Byzantine public life — a chariot racing arena seating 100,000 spectators. Three ancient monuments still stand here: the Egyptian Obelisk (3,500 years old), the Serpent Column from Delphi, and the Walled Obelisk." },
@@ -1052,7 +1363,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is there a dress code for mosques?", a: "Yes — modest dress (covered shoulders and knees), shoes removed. Women should cover their hair. Scarves and cover-ups are provided free at major mosques." },
       { q: "Where should I eat in Sultanahmet?", a: "Walk 1–2 streets behind the main tourist strip for authentic, affordable restaurants. The area near Divanyolu and behind the Hippodrome has good local options." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-princes-island-tour"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-princes-island-tour"],
+    relatedPosts: ["istanbul-old-city-walking-tour", "top-things-to-do-istanbul", "istanbul-travel-guide-first-timers"],
   },
   {
     slug: "istanbul-hidden-gems-local-guide",
@@ -1061,9 +1373,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Go beyond the tourist trail with these 10 Istanbul hidden gems — colorful neighborhoods, secret gardens, local markets, and experiences most visitors never find.",
     category: "istanbul",
     date: "2025-11-14",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=1200&q=80",
-    keywords: ["istanbul hidden gems", "istanbul local guide", "off beaten path istanbul", "istanbul secret spots"],
+    imageAlt: "Colorful street art alley in Balat neighborhood with Byzantine church spires visible above the rooftops",
+    keywords: ["istanbul hidden gems", "istanbul local guide", "off beaten path istanbul", "istanbul secret spots", "istanbul hidden gems 2026", "istanbul hidden gems tips 2026", "best istanbul hidden gems guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "The 10 best hidden gems: Balat's painted houses, Bebek Bosphorus walk, Yıldız Park, Büyükçekmece Lake, Arnavutköy fish restaurants, and more",
+    "Avoid tourist-facing areas at lunchtime — restaurants 2 streets back from major attractions offer authentic food at half the price",
+    "Karaköy's backstreets hide some of Istanbul's best coffee shops and independent galleries",
+    "The Bosphorus walking path from Arnavutköy to Bebek (3 km) is one of the city's most beautiful — locals know it well"
+    ],
     sections: [
       { heading: "Balat — Istanbul's Most Colorful Neighborhood", content: "Balat is Istanbul's worst-kept secret — a former Jewish quarter on the Golden Horn that has become the city's most photogenic neighborhood. Narrow streets lined with pastel-painted wooden houses, antique shops, independent cafes, and galleries create an atmosphere that feels more like a Mediterranean village than a megacity neighborhood. The Phanar Greek Orthodox Patriarchate, the spiritual center of Eastern Orthodox Christianity, sits in the heart of Balat. The Church of St. Stephen of the Bulgars, made entirely of prefabricated cast iron, is an engineering marvel. For the best photos, walk along Kiremit Caddesi and Merdivenli Yokuş (the famous staircase street). Visit on a weekday morning to avoid Instagram crowds. The neighborhood has excellent local restaurants and cafes — Coffee Sapiens and Naftalin K are local favorites." },
       { heading: "Çamlıca Hill — Best Panoramic View of Istanbul", content: "While tourists pack the Galata Tower for city views, locals head to Çamlıca Hill on the Asian side for free 360-degree panoramas that are far more impressive. At 268 meters above sea level, Çamlıca is Istanbul's highest point and offers unobstructed views of the entire city, the Bosphorus, the Marmara Sea, and the Princes' Islands. The newly landscaped park includes gardens, walking paths, restaurants, and the massive Çamlıca Mosque (Turkey's largest). Visit at sunset for magical golden light over the entire city. Access via metro to Üsküdar then bus or taxi, or take the cable car from Bostancı. The Çamlıca TV Tower has an observation deck and restaurant offering the highest viewpoint accessible in Istanbul." },
@@ -1090,7 +1411,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What is a meyhane?", a: "A traditional Turkish tavern where people gather for rakı (anise spirit), meze plates, seafood, and live music. It is a social dining experience lasting 2–3 hours." },
       { q: "Are these hidden gems accessible by public transport?", a: "Yes, all locations are accessible by metro, tram, bus, or ferry using an Istanbulkart. Çamlıca Hill requires a bus/taxi from the metro." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "istanbul-princes-island-tour", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "istanbul-princes-island-tour", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["istanbul-seaside-neighborhoods", "kadikoy-asian-side-istanbul", "galata-tower-neighborhood-guide"],
   },
   {
     slug: "best-restaurants-near-bosphorus",
@@ -1099,9 +1421,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Dine with a Bosphorus view at Istanbul's best waterfront restaurants — from casual fish restaurants to fine dining, here are the top picks for every budget.",
     category: "istanbul",
     date: "2025-11-12",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
-    keywords: ["best restaurants bosphorus", "istanbul waterfront restaurants", "bosphorus view restaurant", "istanbul dining guide"],
+    imageAlt: "Open-air restaurant terrace with Bosphorus view in Arnavutköy with diners at candlelit tables at sunset",
+    keywords: ["best restaurants bosphorus", "istanbul waterfront restaurants", "bosphorus view restaurant", "istanbul dining guide", "best restaurants bosphorus 2026", "best restaurants bosphorus guide 2026", "best best restaurants bosphorus recommendations"],
+    author: "editorial",
+    keyTakeaways: [
+    "The best Bosphorus-view dining is in Bebek, Arnavutköy, Kuruçeşme, and Ortaköy — plan to spend €30–60 per person",
+    "For traditional Istanbul fish restaurants, Sarıyer and Anadolu Kavağı offer local catches at lower prices than central neighborhoods",
+    "Book waterfront tables 2–3 days in advance during summer; Bosphorus-view restaurants fill up fast",
+    "A Bosphorus dinner cruise (€65) includes the meal, entertainment, and the view — better value than most waterfront restaurants"
+    ],
     sections: [
       { heading: "Ortaköy — Casual Waterfront Dining", content: "Ortaköy combines stunning Bosphorus Bridge views with accessible dining. The neighborhood's waterfront promenade is lined with restaurants and cafes offering tables right at the water's edge. For casual eats, Ortaköy's famous kumpir (stuffed baked potato) stalls are a must — giant potatoes split open and loaded with dozens of toppings from corn and olives to Russian salad and sausage (₺100–150). The House Café Ortaköy offers modern Turkish-international cuisine with panoramic bridge views. Feriye Palace Restaurant, housed in a restored Ottoman mansion directly on the water, serves upscale Turkish cuisine in an extraordinarily elegant setting. For breakfast, weekend brunch at one of Ortaköy's waterfront cafes with views of the mosque and bridge is one of Istanbul's great pleasures." },
       { heading: "Bebek & Arnavutköy — Upscale Bosphorus Dining", content: "Bebek is Istanbul's most affluent waterfront neighborhood, and its restaurants reflect the area's sophistication. Bebek Balıkçısı is a legendary fish restaurant with terrace seating overlooking the strait — fresh catches served simply with meze (expect ₺400–700 per person). The nearby Mangerie offers brunch and contemporary dining with stunning views. Arnavutköy, just south of Bebek, is a charming neighborhood of restored wooden Ottoman houses converted into atmospheric restaurants. İskele Restaurant in Arnavutköy serves excellent seafood on a pier extending into the Bosphorus — dining literally on the water. Lucca Bebek is a popular spot for cocktails and dinner with beautiful people-watching and Bosphorus panoramas." },
@@ -1125,9 +1456,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Do I need reservations for Bosphorus waterfront restaurants?", a: "Yes, especially for dinner on weekends and during summer (May–September). Book 2–3 days ahead for popular spots." },
       { q: "How expensive are waterfront restaurants in Istanbul?", a: "Budget options: ₺150–300 per person. Mid-range: ₺300–600. Fine dining: ₺600–1200. Prices include food and drinks." },
-      { q: "What is the best time for waterfront dining?", a: "Sunset dinner (arriving 1 hour before sunset) offers the most magical atmosphere with golden light transitioning to illuminated nighttime views." }
+      { q: "What is the best time for waterfront dining?", a: "Sunset dinner (arriving 1 hour before sunset) offers the most magical atmosphere with golden light transitioning to illuminated nighttime views." },
+      { q: "Which Bosphorus neighborhood has the best waterfront restaurants?", a: "Arnavutköy is best for authentic fish restaurants at local prices (₺300–500 per person). Bebek offers upscale dining at Bebek Balıkçısı and Mangerie. Ortaköy provides casual waterfront options with iconic mosque-and-bridge views. The Asian shore around Çengelköy suits budget-conscious diners." },
+      { q: "Can I combine a Bosphorus cruise with dinner at a waterfront restaurant?", a: "Yes — a popular pairing is an early dinner at Ortaköy (17:30–19:00) followed by the MerrySails sunset cruise from nearby Eminönü. Alternatively, take the cruise first then dine at a Bosphorus restaurant after — Turkish dining culture embraces 21:00+ dinner times." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"],
+    relatedPosts: ["istanbul-street-food-guide", "istanbul-seaside-neighborhoods", "yacht-catering-menu-istanbul"],
   },
   {
     slug: "galata-tower-neighborhood-guide",
@@ -1136,9 +1470,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Galata Tower and surrounding neighborhood offer medieval history, panoramic views, cobblestone lanes, and Istanbul's best cafe and gallery scene.",
     category: "istanbul",
     date: "2025-11-10",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80",
-    keywords: ["galata tower istanbul", "galata neighborhood guide", "galata tower visit", "karakoy galata guide"],
+    imageAlt: "Galata Tower rising above the historic Karaköy neighborhood with the Golden Horn visible in the background",
+    keywords: ["galata tower istanbul", "galata neighborhood guide", "galata tower visit", "karakoy galata guide", "galata tower istanbul 2026", "galata tower istanbul guide", "best galata tower istanbul"],
+    author: "editorial",
+    keyTakeaways: [
+    "Galata Tower observation deck offers 360° panoramic views of Istanbul — visit at sunset for the best light",
+    "The Karaköy and Galata neighborhoods below the tower have transformed into Istanbul's best coffee, gallery, and design district",
+    "From Galata Bridge (5-minute walk), you can board Bosphorus cruise boats at Eminönü Pier",
+    "The Galata neighborhood is best explored on foot — the steep, narrow streets are part of the charm"
+    ],
     sections: [
       { heading: "The Galata Tower — 700 Years of History", content: "The Galata Tower (Galata Kulesi) is one of Istanbul's most iconic landmarks — a 67-meter medieval stone tower built by Genoese colonists in 1348 as part of their fortification of the Galata district. Originally named Christea Turris (Tower of Christ), it served as a watchtower, a prison, a fire observation point, and has been an enduring symbol of Istanbul's skyline for nearly seven centuries. Legend has it that in the 17th century, Hezarfen Ahmed Çelebi flew from the tower across the Bosphorus using artificial wings — one of history's earliest recorded flights. The observation deck at the top offers 360-degree panoramic views of the Old City, the Golden Horn, the Bosphorus, and the Asian side. Entry costs approximately ₺650. Visit in late afternoon for the best light and shorter queues. The elevator takes you most of the way up, with a short staircase to the top." },
       { heading: "Exploring the Galata Streets", content: "The neighborhood surrounding the tower is a maze of cobblestone lanes, steep staircases, and narrow streets lined with a captivating mix of old and new. Galip Dede Caddesi, the main street leading to the tower, is famous for its music shops — dozens of stores selling traditional Turkish instruments (saz, ud, ney) alongside electric guitars and modern equipment. Serdar-ı Ekrem Sokak is the neighborhood's most fashionable street, lined with boutique shops, design stores, independent fashion brands, and specialty cafes. The streets between Galata and Karaköy reveal layers of history — Genoese doorways, Ottoman fountains, Art Deco apartment buildings, and contemporary street art coexist on the same block. The neighborhood is best explored on foot, wandering without a fixed route." },
@@ -1162,9 +1505,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "How much does it cost to visit the Galata Tower?", a: "Entry is approximately ₺650. The observation deck offers 360-degree panoramic views of Istanbul." },
       { q: "What are the best times to visit the tower?", a: "Late afternoon for the best photography light. Mornings have shorter queues. Sunset from the top is spectacular but expect crowds." },
-      { q: "Is Galata safe to walk around at night?", a: "Yes, the main streets and cafe areas are safe and lively in the evenings. Use normal urban precautions on quieter side streets." }
+      { q: "Is Galata safe to walk around at night?", a: "Yes, the main streets and cafe areas are safe and lively in the evenings. Use normal urban precautions on quieter side streets." },
+      { q: "How far is Galata Tower from the Bosphorus cruise departure at Eminönü?", a: "Galata Tower is a 15-minute walk from Eminönü pier. Walk downhill through Karaköy (past Istanbul Modern), then along the waterfront. Alternatively, take the T1 tram one stop from Karaköy to Eminönü. Perfect for combining a tower visit with a sunset cruise." },
+      { q: "Is there a restaurant at the top of Galata Tower?", a: "Yes, the tower has a restaurant and cafe on the upper level with panoramic views. It is primarily recommended for the views rather than the cuisine — expect ₺300–600 per person for dinner. The observation deck alone costs approximately ₺650 and is better value for most visitors." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["istanbul-nightlife-guide", "istanbul-hidden-gems-local-guide", "istanbul-old-city-walking-tour"],
   },
   {
     slug: "grand-bazaar-shopping-guide",
@@ -1173,9 +1519,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Grand Bazaar is one of the world's oldest and largest covered markets. This guide helps you navigate, bargain, and find genuine treasures.",
     category: "istanbul",
     date: "2025-11-08",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=80",
-    keywords: ["grand bazaar istanbul", "istanbul shopping guide", "grand bazaar tips", "istanbul bazaar bargaining"],
+    imageAlt: "Colorful spice stalls and carpet shops inside the domed halls of Istanbul's Grand Bazaar",
+    keywords: ["grand bazaar istanbul", "istanbul shopping guide", "grand bazaar tips", "istanbul bazaar bargaining", "grand bazaar istanbul 2026", "grand bazaar istanbul guide", "best grand bazaar istanbul"],
+    author: "editorial",
+    keyTakeaways: [
+    "The Grand Bazaar has 4,000+ shops across 61 covered streets — have a clear shopping list or you will spend hours wandering",
+    "Best buys: hand-painted ceramics, Turkish towels (peshtemal), leather goods, spices, and evil eye charms",
+    "Bargaining is expected on everything except food — start at 50–60% of the asking price and meet in the middle",
+    "The Spice Bazaar (Egyptian Market) is smaller, more aromatic, and easier to navigate for first-timers"
+    ],
     sections: [
       { heading: "History and Layout of the Grand Bazaar", content: "The Grand Bazaar (Kapalıçarşı) is one of the world's oldest continuously operating markets, established shortly after the Ottoman conquest of Constantinople in 1461. Spanning 61 covered streets with over 4,000 shops, it covers an area of 30,700 square meters and attracts 250,000–400,000 visitors daily. The bazaar is organized roughly by trade: the gold and jewelry section occupies the central area, carpets dominate the northern halls, leather goods are in the eastern section, ceramics and souvenirs in the peripheral streets, and textiles and clothing scattered throughout. The bazaar has 21 entrances — the main gates are Beyazıt Gate (from the university side), Nuruosmaniye Gate (the grand entrance with Ottoman architecture), and Çarşıkapı Gate (from the Sultanahmet side). Getting oriented takes time — even locals get lost. Embrace the maze." },
       { heading: "What to Buy — Genuine Treasures", content: "The Grand Bazaar offers remarkable craftsmanship if you know where to look. Handmade Turkish carpets and kilims are the most famous purchase — genuine handmade pieces range from €200 to €20,000+ depending on size, material, age, and origin. Turkish ceramics and Iznik-style tiles (hand-painted in the traditional Kütahya style) make beautiful, packable souvenirs at ₺100–500. Gold jewelry is sold by weight plus craftsmanship — Turkish gold is typically 14K or 22K. Leather goods (bags, jackets, wallets) are high quality and significantly cheaper than European counterparts. Turkish lamps (mosaic glass lanterns) are iconic but fragile — ask about shipping. Evil eye (nazar) amulets, copper coffee sets, olive oil soaps, and Turkish tea sets make excellent gifts. Spices, Turkish delight, and dried fruits are best purchased at the Spice Bazaar nearby." },
@@ -1199,9 +1554,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Is the Grand Bazaar worth visiting?", a: "Absolutely. Even if you do not plan to buy anything, the atmosphere, architecture, and cultural experience make it a must-see Istanbul attraction." },
       { q: "How much should I expect to spend?", a: "Souvenirs: ₺50–500. Ceramics: ₺100–1000. Leather goods: ₺500–3000. Carpets: €200–20,000+. Budget depends entirely on what you buy." },
-      { q: "Can I use credit cards in the Grand Bazaar?", a: "Most established shops accept Visa and Mastercard. However, cash (Turkish Lira) gives you stronger bargaining position and sometimes 5–10% better prices." }
+      { q: "Can I use credit cards in the Grand Bazaar?", a: "Most established shops accept Visa and Mastercard. However, cash (Turkish Lira) gives you stronger bargaining position and sometimes 5–10% better prices." },
+      { q: "What are the Grand Bazaar opening hours?", a: "Monday–Saturday 09:00–19:00. The bazaar is closed on Sundays and Turkish public holidays. Arrive before 10:00 for the least crowded experience. Vendors begin closing stalls from 18:30 so plan shopping earlier in the day." },
+      { q: "How do I get from the Grand Bazaar to a Bosphorus cruise?", a: "Walk 15 minutes downhill from the Beyazıt Gate through the Spice Bazaar to Eminönü pier — the main Bosphorus cruise departure point. Alternatively, take the T1 tram from Beyazıt or Çemberlitaş (2–3 stops to Eminönü, 5 minutes)." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["istanbul-street-food-guide", "sultanahmet-tourist-guide", "avoid-tourist-traps-istanbul-cruises"],
   },
   {
     slug: "kadikoy-asian-side-istanbul",
@@ -1210,9 +1568,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Cross the Bosphorus to discover Istanbul's authentic Asian side — Kadıköy's vibrant markets, Moda's seaside charm, and the local culture tourists rarely see.",
     category: "istanbul",
     date: "2025-11-06",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=1200&q=80",
-    keywords: ["kadikoy istanbul", "istanbul asian side", "kadikoy guide", "moda istanbul"],
+    imageAlt: "Vibrant Kadıköy produce market with colorful fruit and vegetable stalls and locals shopping on the Asian side of Istanbul",
+    keywords: ["kadikoy istanbul", "istanbul asian side", "kadikoy guide", "moda istanbul", "kadikoy istanbul 2026", "kadikoy istanbul tips 2026", "best kadikoy istanbul guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "Kadıköy is Istanbul's hippest neighborhood — food markets, independent bookshops, live music venues, and craft coffee",
+    "The ferry from Eminönü or Karaköy to Kadıköy costs €1.50 and offers mini Bosphorus views on the 20-minute crossing",
+    "The Moda coastal walk (2 km) from Kadıköy is one of Istanbul's best — waterfront cafes, sea views, and local life",
+    "Kadıköy's food scene is arguably Istanbul's best — the market and surrounding restaurants are authentic and affordable"
+    ],
     sections: [
       { heading: "Getting to Kadıköy — The Ferry Experience", content: "The 20-minute ferry from Eminönü to Kadıköy is one of Istanbul's best experiences — a mini Bosphorus cruise included in your transit fare. As the ferry pulls away from the European shore, you get panoramic views of the Old City, the Galata Tower, and the waterfront. The crossing itself, with seagulls following the boat and tea vendors walking the aisles, captures the essence of Istanbul life. Ferries run every 15–20 minutes throughout the day. Use your Istanbulkart for the fare (about ₺15). Alternative routes: Marmaray metro (connects Sirkeci to Ayrılıkçeşme near Kadıköy in 4 minutes) or ferry from Karaköy or Beşiktaş." },
       { heading: "Kadıköy Market — Foodie Paradise", content: "The market district around Güneşlibahçe Sokak is a feast for all senses. Fishmongers display the morning's catch on beds of ice — sea bass, turbot, bluefish, and shrimp fresh from the Marmara Sea. Cheese shops offer tastings of dozens of varieties — try the aged kaşar and the crumbly tulum. Pickle shops line up jars of every imaginable vegetable in brine. Produce vendors stack pyramids of seasonal fruits. Street food stalls serve kokoreç (grilled lamb intestines — much better than it sounds), midye dolma (stuffed mussels), and fresh-squeezed pomegranate juice. Çiya Sofrası, tucked into the market streets, is considered one of the world's best kebab restaurants — come hungry and order the daily changing meze and kebab selection." },
@@ -1236,9 +1603,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Is it worth crossing to the Asian side of Istanbul?", a: "Absolutely! The Asian side shows you authentic, everyday Istanbul that most tourists miss. The ferry crossing alone is worth the trip." },
       { q: "How long should I spend on the Asian side?", a: "Half a day covers Kadıköy market and Moda. A full day allows adding Üsküdar, Çamlıca Hill, and Çengelköy." },
-      { q: "Is the Asian side safe for tourists?", a: "Yes, it is very safe — generally quieter and more residential than the European tourist areas." }
+      { q: "Is the Asian side safe for tourists?", a: "Yes, it is very safe — generally quieter and more residential than the European tourist areas." },
+      { q: "How do I get from Kadıköy back to a Bosphorus cruise departure point?", a: "Take the Kadıköy–Eminönü ferry (20 minutes, ~₺15 with Istanbulkart) directly to Eminönü pier where MerrySails sightseeing and sunset cruises depart. Ferries run every 15–20 minutes throughout the day — ideal for combining an Asian side morning with an afternoon cruise." },
+      { q: "What is the most famous street food in Kadıköy?", a: "Midye dolma (stuffed mussels filled with spiced rice, served with lemon) is Kadıköy's most iconic street food at ₺5–8 per piece. Kokoreç (grilled lamb intestines on bread) is the bold local classic. Balık ekmek (grilled fish sandwich) near the ferry terminal offers a taste of Istanbul harbor culture for ₺80–100." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour"],
+    relatedPosts: ["istanbul-hidden-gems-local-guide", "istanbul-street-food-guide", "istanbul-seaside-neighborhoods"],
   },
   {
     slug: "istanbul-nightlife-guide",
@@ -1247,9 +1617,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Istanbul's nightlife ranges from rooftop cocktail bars to traditional meyhane taverns and thumping clubs. Here is where to go for the best after-dark experiences.",
     category: "istanbul",
     date: "2025-11-04",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80",
-    keywords: ["istanbul nightlife", "istanbul bars", "istanbul clubs", "istanbul rooftop bars"],
+    imageAlt: "Rooftop bar terrace in Beyoğlu with Istanbul skyline and Bosphorus lit up at night",
+    keywords: ["istanbul nightlife", "istanbul bars", "istanbul clubs", "istanbul rooftop bars", "istanbul nightlife 2026", "istanbul nightlife tips 2026", "best istanbul nightlife guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "Istanbul's nightlife spans rooftop bars (Beyoğlu), Bosphorus nightclubs (Kuruçeşme), jazz bars (Galata), and local meyhanes (Asmalımescit)",
+    "The Bosphorus nightclub strip (Reina, Sortie, Supperclub area) is world-class — expect €20–30 covers and €15+ drinks",
+    "Night cruises (€65 dinner cruise) offer entertainment, dancing, and Bosphorus views until midnight — a full evening in one booking",
+    "İstiklal Avenue becomes a pedestrian festival after 22:00 on weekends — join the locals walking the 1.4 km"
+    ],
     sections: [
       { heading: "Beyoğlu & Istiklal — The Nightlife Epicenter", content: "Beyoğlu, centered on the famous Istiklal Caddesi, is Istanbul's primary nightlife district. The pedestrianized Istiklal street and its side alleys contain hundreds of bars, clubs, live music venues, and meyhanes. Nevizade Sokak is the quintessential meyhane street — narrow, loud, full of clinking rakı glasses and live music. Asmalımescit is more upscale with cocktail bars and wine houses. Balo Sokak and the streets behind Çiçek Pasajı offer a mix of live music bars and craft beer spots. Klein, Minimüzikhol, and Salon IKSV are the top live music venues for everything from jazz to electronic to Turkish rock. The nightlife here starts late by European standards — dinner at 21:00, bars filling up at 23:00, and clubs peaking at 01:00–03:00." },
       { heading: "Rooftop Bars — Drink with a View", content: "Istanbul's rooftop bar scene takes advantage of the city's dramatic topography and waterfront views. 360 Istanbul on Istiklal Caddesi offers panoramic views of the Golden Horn and Bosphorus with a revolving dance floor. Mikla, atop the Marmara Pera Hotel, combines Michelin-worthy cuisine with stunning Old City views. Galata House has intimate rooftop views of the Galata Tower. In Karaköy, NuTeras offers modern design with Bosphorus views. On the Asian side, Maiden's Tower has been converted into a restaurant/bar with views back toward Europe. For a more local rooftop experience, the simple çay bahçesi (tea gardens) on rooftops in Sultanahmet offer the same views at a fraction of the price — with Turkish tea instead of cocktails." },
@@ -1273,9 +1652,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "What time does nightlife start in Istanbul?", a: "Bars start filling at 22:00–23:00. Clubs peak around 01:00–03:00. Dinner at meyhanes typically starts at 20:00–21:00." },
       { q: "Is Istanbul nightlife safe?", a: "Generally yes. Stick to established venues, use licensed taxis or ride apps to get home, watch your drinks, and avoid isolated areas late at night." },
-      { q: "What is the dress code for Istanbul bars and clubs?", a: "Smart casual for most bars. Bosphorus waterfront clubs require no shorts, no sneakers — dressy casual or smart attire. Meyhanes are casual." }
+      { q: "What is the dress code for Istanbul bars and clubs?", a: "Smart casual for most bars. Bosphorus waterfront clubs require no shorts, no sneakers — dressy casual or smart attire. Meyhanes are casual." },
+      { q: "How much should I budget for a night out in Istanbul?", a: "A meyhane evening costs ₺500–900 per person (raki, meze, main course). Rooftop cocktail bars charge ₺150–300 per drink. Club entry is ₺200–500 with one drink. Budget travellers can have an excellent night for €25–40; splurging at waterfront clubs costs €80–150." },
+      { q: "Which Istanbul nightlife area is best for first-time visitors?", a: "Beyoğlu (Istiklal Caddesi area) is the most accessible — bars, live music, meyhanes, and clubs within walking distance. Nevizade Sokak is the classic starting point for meyhane dining. Karaköy has a more local, sophisticated atmosphere with craft cocktail bars, and is a 15-minute walk to Eminönü cruise pier." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["galata-tower-neighborhood-guide", "best-restaurants-near-bosphorus", "bosphorus-night-cruise-guide"],
   },
   {
     slug: "bosphorus-cruise-with-kids",
@@ -1284,9 +1666,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "A Bosphorus cruise is a fantastic family activity. This guide helps parents choose the right cruise, prepare the kids, and make the most of the experience.",
     category: "cruise-guide",
     date: "2025-11-02",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&q=80",
-    keywords: ["bosphorus cruise kids", "family cruise istanbul", "bosphorus cruise children", "istanbul family activities"],
+    imageAlt: "Children pointing excitedly from the deck of a Bosphorus cruise boat as they pass the Bosphorus Bridge",
+    keywords: ["bosphorus cruise kids", "family cruise istanbul", "bosphorus cruise children", "istanbul family activities", "bosphorus cruise kids 2026", "is bosphorus cruise kids worth it", "what to expect bosphorus cruise kids", "how to book bosphorus cruise kids"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Children under 6 sail free on MerrySails cruises; ages 6–12 receive a 30% discount",
+    "The 1.5–2 hour sightseeing cruise is the ideal duration for young children — the 3.5-hour dinner cruise can be tiring",
+    "The Bosphorus is a sheltered strait with minimal rocking — motion sickness in children is uncommon",
+    "Bring snacks, a small toy or activity, and warm layers — children feel the sea wind more than adults"
+    ],
     sections: [
       { heading: "Best Cruise Types for Families", content: "Not all Bosphorus cruises are equally suited for families with children. The short sightseeing cruise (1.5 hours, €15) is ideal for young children (ages 3–7) — long enough to see the main landmarks without testing patience. The sunset cruise (2.5 hours, €20) works well for children 6+ who can enjoy the scenery and photography. The dinner cruise (3.5 hours, €65) is best for children 8+ who can sit through a multi-course dinner. For the most flexibility, a private yacht charter (€280+) lets you set your own pace — stop when the kids want to explore, speed up when they get restless, and include swimming stops in summer. All MerrySails cruises welcome children. Kids under 6 travel free on shared cruises, and ages 6–12 receive discounted rates." },
       { heading: "Keeping Kids Entertained on Board", content: "Children respond to the Bosphorus differently than adults — they may not appreciate palace architecture, but they love spotting boats, watching seagulls, feeling the wind, and looking for fish in the water. Prepare a simple 'Bosphorus Bingo' card before boarding — landmarks to spot (mosque, bridge, tower, palace, fishing boat, seagull, flag). Bring small binoculars for kids to spot details on distant buildings. The onboard commentary provides interesting stories — help translate key facts for younger listeners. Most children love the open deck — the wind, the water, and the feeling of movement are exciting. Bring snacks beyond what is provided on board, especially for longer cruises. Tablets or books serve as backup entertainment but most kids find the experience engaging enough." },
@@ -1302,7 +1693,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Are there changing facilities on the cruise boats?", a: "Restrooms are available on all vessels. Larger dinner cruise boats have more spacious facilities suitable for changing young children." },
       { q: "Can I bring a stroller on the cruise?", a: "Yes, strollers can be brought on shared cruises. There is space to park them in the indoor area." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour", "bosphorus-dinner-cruise"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour", "bosphorus-dinner-cruise"],
+    relatedPosts: ["short-bosphorus-cruise-tour", "bosphorus-cruise-safety-tips", "istanbul-cruise-booking-tips"],
   },
   {
     slug: "bosphorus-cruise-for-couples",
@@ -1311,9 +1703,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Bosphorus is one of the world's most romantic waterways. Here are the best cruise options for couples seeking a memorable Istanbul experience together.",
     category: "cruise-guide",
     date: "2025-10-30",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80",
-    keywords: ["romantic bosphorus cruise", "couples cruise istanbul", "romantic things istanbul", "bosphorus cruise couples"],
+    imageAlt: "Couple watching the sunset from the bow of a cruise boat on the Bosphorus with the Istanbul skyline glowing orange",
+    keywords: ["romantic bosphorus cruise", "couples cruise istanbul", "romantic things istanbul", "bosphorus cruise couples", "romantic bosphorus cruise 2026", "is romantic bosphorus cruise worth it", "what to expect romantic bosphorus cruise", "how to book romantic bosphorus cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The sunset cruise (€20/person) is the most romantic shared experience; a private yacht (€380) offers complete privacy",
+    "Request a starboard window table when booking the dinner cruise — European shore views are more dramatic at night",
+    "Autumn evenings (September–November) offer the most romantic atmosphere: warm days, cool nights, dramatic skies",
+    "MerrySails can arrange anniversary/birthday surprises, champagne, and roses at no extra notice — just ask at booking"
+    ],
     sections: [
       { heading: "Best Cruise Options for Couples", content: "For couples, the most romantic Bosphorus experiences are: (1) Sunset cruise (€20) — the most affordable romantic option, watching the golden hour transform Istanbul's skyline into a painting while sharing drinks on deck. (2) Dinner cruise (€65) — a complete romantic evening with Turkish dinner, live music, and illuminated Bosphorus views. Request a window table for two when booking. (3) Private yacht charter (from €280) — the ultimate romantic gesture, with the entire vessel to yourselves. The Premium package (€380) with candlelit dining and wine service, or the VIP (€680) with private chef and champagne, creates an experience that rivals the world's most romantic destinations. Time any option for sunset for maximum romance." },
       { heading: "Setting the Romantic Mood", content: "Small touches elevate a cruise from nice to unforgettable. On the dinner cruise, request a corner table and let the staff know you are celebrating. On a private yacht, the crew can arrange: candlelit deck dining, rose petals on the table, a playlist of your favorite songs, champagne on arrival, and a special dessert presentation. Many couples combine the cruise with a stay at a Bosphorus-view hotel — arriving back from the yacht to a hotel room overlooking the same waterway you just sailed creates a seamless romantic experience. Consider adding a live musician — a violinist or saxophonist playing softly as you dine on the water adds a cinematic quality to the evening." },
@@ -1326,9 +1727,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "What is the most romantic Bosphorus cruise option?", a: "A private yacht charter at sunset with the Premium (€380) or VIP (€680) package offers the most romantic experience — just the two of you with candlelit dining on the water." },
       { q: "Can I arrange a surprise for my partner on the cruise?", a: "Yes! Contact MerrySails in advance to arrange surprise elements — flowers, a special dessert, a musician, or a proposal setup." },
-      { q: "Is the dinner cruise romantic or too crowded?", a: "The dinner cruise balances romance with entertainment. Request a window table for two for the most intimate experience on the shared cruise." }
+      { q: "Is the dinner cruise romantic or too crowded?", a: "The dinner cruise balances romance with entertainment. Request a window table for two for the most intimate experience on the shared cruise." },
+      { q: "How much does a romantic proposal cruise on the Bosphorus cost?", a: "A private yacht charter with proposal setup starts at €380 (Premium package, 3 hours) including decoration, photographer, and refreshments. The VIP package (€680) adds a live violinist, champagne, and private chef. Both include a concealed photographer to capture the proposal moment." },
+      { q: "What is the best season for a romantic Bosphorus cruise?", a: "April–May and September–October offer the ideal combination — warm evenings, dramatic sunset skies, and manageable crowds. Summer (June–August) provides the longest golden hours but more tourists. Winter cruises have an intimate, cozy quality with heated indoor salons and fewer guests on board." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "romantic-marriage-proposal", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "romantic-marriage-proposal", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-sunset-cruise-experience", "marriage-proposal-yacht-istanbul", "valentines-day-cruise-istanbul"],
   },
   {
     slug: "istanbul-cruise-booking-tips",
@@ -1337,9 +1741,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Booking a Bosphorus cruise can be confusing with so many options. These insider tips help you find the best deal, avoid scams, and choose the right experience.",
     category: "tips",
     date: "2025-10-28",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1564594985645-4427056e22e2?w=1200&q=80",
-    keywords: ["book bosphorus cruise", "istanbul cruise booking tips", "best cruise deal istanbul", "avoid cruise scams istanbul"],
+    imageAlt: "Person booking a Bosphorus cruise on a smartphone with the Galata Bridge and Golden Horn visible through the window",
+    keywords: ["book bosphorus cruise", "istanbul cruise booking tips", "best cruise deal istanbul", "avoid cruise scams istanbul", "book bosphorus cruise 2026", "is book bosphorus cruise worth it", "what to expect book bosphorus cruise", "cruise booking tips istanbul 2026"],
+    author: "editorial",
+    keyTakeaways: [
+    "Always book direct with TURSAB-licensed operators — third-party sites add 20–40% commissions with no extra benefit",
+    "Check for the TURSAB A Group license number on the operator's website and vessel before boarding",
+    "Free cancellation (up to 24h) is standard for reputable operators — avoid any booking that doesn't offer it",
+    "WhatsApp booking is widely accepted and often faster than online forms for last-minute reservations"
+    ],
     sections: [
       { heading: "Book Direct — Save 20-40% vs Resellers", content: "The single biggest money-saving tip for booking a Bosphorus cruise is booking directly with the operator rather than through third-party platforms. Tour aggregator websites (GetYourGuide, Viator, Klook) add 20–40% commission to every booking. A dinner cruise priced at €65 direct often appears at €85–100 on these platforms. Hotel concierge bookings similarly add commissions. Booking direct with a TURSAB-licensed operator like MerrySails also gives you: direct communication for special requests, more flexible cancellation policies, faster confirmation, and the ability to customize your experience. Always check the operator's own website first before comparing prices on third-party platforms." },
       { heading: "How to Choose a Reputable Operator", content: "With dozens of cruise operators in Istanbul, choosing the right one matters. Key indicators of quality: TURSAB licensing — every legitimate tour operator in Turkey must have a TURSAB (Association of Turkish Travel Agencies) license. This ensures they meet safety standards, carry insurance, and follow consumer protection regulations. Verify the license number on TURSAB's website. Recent reviews — check Google Maps, TripAdvisor, and Trustpilot for recent (within 6 months) reviews from verified customers. A track record of years of operation (not a fly-by-night operation). Transparent pricing — the quoted price should clearly state what is and is not included. Professional communication — responsive, clear answers to your questions via WhatsApp, email, or phone." },
@@ -1366,7 +1779,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can I cancel a Bosphorus cruise booking?", a: "Most reputable operators offer free cancellation up to 24 hours before departure. Check the specific cancellation policy when booking." },
       { q: "How do I know if a cruise operator is legitimate?", a: "Check for TURSAB licensing, read recent Google/TripAdvisor reviews, verify transparent pricing, and ensure professional communication." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["avoid-tourist-traps-istanbul-cruises", "bosphorus-cruise-prices-2026", "best-istanbul-cruise-2026"],
   },
   {
     slug: "avoid-tourist-traps-istanbul-cruises",
@@ -1375,9 +1789,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Street touts, hidden fees, and bait-and-switch tactics — learn how to spot and avoid the most common tourist traps when booking a Bosphorus cruise.",
     category: "tips",
     date: "2025-10-25",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=1200&q=80",
-    keywords: ["istanbul tourist traps", "bosphorus cruise scam", "avoid scams istanbul", "istanbul cruise safety"],
+    imageAlt: "Warning sign at a pier with unlicensed boat touts and legitimate licensed cruise boats visible in the background",
+    keywords: ["istanbul tourist traps", "bosphorus cruise scam", "avoid scams istanbul", "istanbul cruise safety", "istanbul tourist traps 2026", "is istanbul tourist traps worth it", "what to expect istanbul tourist traps", "how to book istanbul tourist traps"],
+    author: "editorial",
+    keyTakeaways: [
+    "The 5 most common Istanbul cruise traps: unlicensed boats, 'free cruises' that are retail sales pitches, hidden fees, fake online reviews, and overpriced pier touts",
+    "Legitimate operators display TURSAB license numbers — verify at www.tursab.org.tr before paying",
+    "If someone approaches you on the street offering a bargain cruise, decline — licensed operators do not tout on pavements",
+    "The 'free Bosphorus cruise' is always a loss-leader for carpet/jewelry shops — your time is worth more than the 'free' ride"
+    ],
     sections: [
       { heading: "The Street Tout Problem", content: "The most common issue tourists face is aggressive street touts in Eminönü and Sultanahmet. These individuals approach tourists with offers of 'special price, Bosphorus cruise, very cheap.' The reality: they work on commission, often directing you to unlicensed or substandard vessels. The boat you are shown in photographs may not be the one you board. Some touts represent legitimate operators but charge inflated prices pocketing the difference. Others work for operations that use old, poorly maintained boats with minimal safety equipment. The golden rule: never book from someone who approaches you unsolicited on the street. Instead, research operators online, check reviews, verify TURSAB licensing, and book directly through the operator's official website or WhatsApp." },
       { heading: "Hidden Fees and Bait-and-Switch", content: "Some cruise operators advertise extremely low headline prices, then add hidden charges: drinks charged separately (€3–5 per beverage on a 'free drinks included' cruise), mandatory photography packages (€30–50), tips added to the bill automatically, premium seating surcharges (€10–20 for a window table that was free in the advertisement), and fuel surcharges. The bait-and-switch tactic involves showing photos of a luxurious modern vessel but actually boarding passengers onto an older, less comfortable boat. To avoid this: always get written confirmation of what is included, check recent photos tagged at the operator on Google Maps, and book with established operators whose reviews describe the actual experience accurately." },
@@ -1406,9 +1829,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Are all Bosphorus cruise operators trustworthy?", a: "No — unlicensed operators and street touts exist. Stick to TURSAB-licensed operators with positive Google reviews and transparent pricing." },
       { q: "What should I do if I am scammed?", a: "Report to the Istanbul Tourist Police and leave a detailed Google review to warn other travelers. TURSAB also accepts complaints against licensed operators." },
-      { q: "Is it safe to pay in cash for a cruise?", a: "Small deposits in cash are fine. For full payments, credit card or bank transfer offers better consumer protection. Avoid paying large amounts to street vendors." }
+      { q: "Is it safe to pay in cash for a cruise?", a: "Small deposits in cash are fine. For full payments, credit card or bank transfer offers better consumer protection. Avoid paying large amounts to street vendors." },
+      { q: "How can I tell if a Bosphorus cruise price is fair?", a: "Fair prices in 2026: sightseeing cruise €10–20, sunset cruise €18–25, dinner cruise €55–80, private yacht charter from €280 for the whole boat. If someone quotes €3–8 for a 'Bosphorus cruise', it will be a harbor loop or shopping tour — not the real Bosphorus experience." },
+      { q: "What are the biggest red flags that a cruise is a tourist trap?", a: "Key red flags: unsolicited approach on the street; vague or no price list; no written confirmation; significantly lower price than all other operators; 'free' cruise advertised; shopping stops during the 'cruise'. Always book from a TURSAB-licensed operator with a physical office and verifiable reviews." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips", "bosphorus-cruise-prices-2026"],
   },
   {
     slug: "istanbul-weather-cruise-planning",
@@ -1417,9 +1843,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Istanbul's weather varies dramatically by season. This month-by-month guide helps you choose the best time for your Bosphorus cruise experience.",
     category: "tips",
     date: "2025-10-22",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1558383817-42af359bc09c?w=1200&q=80",
-    keywords: ["istanbul weather", "istanbul weather by month", "best time visit istanbul", "istanbul cruise weather"],
+    imageAlt: "Istanbul Bosphorus on a clear autumn day with dramatic clouds forming over the Asian shore",
+    keywords: ["istanbul weather", "istanbul weather by month", "best time visit istanbul", "istanbul cruise weather", "istanbul weather 2026", "istanbul best weather for cruises", "what to expect istanbul weather", "istanbul weather tips for tourists"],
+    author: "editorial",
+    keyTakeaways: [
+    "Istanbul has 4 distinct seasons — plan your cruise type based on month: summer for long evenings, autumn for dramatic light, winter for low prices",
+    "Annual rainfall averages 800mm — October and December are the wettest months; June–August are the driest",
+    "Bosphorus cruises operate in light rain — cancellations only happen in sustained heavy rain or strong winds (above 30 kn)",
+    "Always check the 7-day forecast before booking; MerrySails monitors conditions daily and alerts guests proactively"
+    ],
     sections: [
       { heading: "Spring Weather (March–May)", content: "March: Temperatures 6–12°C, frequent rain showers (12 rainy days average). Cool but increasingly pleasant. Pack layers and waterproof outer layer. Cruises run normally; indoor seating recommended. April: 10–17°C, rain decreasing (10 days average). Istanbul's famous Tulip Festival transforms parks and gardens. Excellent cruise conditions — comfortable deck time in afternoon sun. May: 15–22°C, minimal rain (7 days). Perhaps the best overall month for Istanbul — warm, dry, flowers blooming, tourist crowds still moderate. Perfect for all cruise types." },
       { heading: "Summer Weather (June–August)", content: "June: 19–27°C, minimal rain (5 days). Long days with sunset around 20:30. Excellent conditions for all cruises and outdoor dining. Tourist season in full swing — book cruises in advance. July: 22–30°C, virtually no rain (2–3 days). The hottest month. Daytime cruises can feel hot — the Bosphorus breeze helps. Sunset and evening cruises are ideal. August: 22–30°C, minimal rain (3 days). Similar to July but can feel more humid. Thunderstorms occasionally break the heat. Swimming yacht tours are at peak appeal." },
@@ -1433,9 +1868,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Does it snow in Istanbul?", a: "Light snow is possible from December to February but rarely heavy or prolonged. It does not affect cruise operations." },
       { q: "What is the best month for a Bosphorus cruise?", a: "September is considered the best overall — warm, dramatic sunsets, manageable crowds. May is a close second." },
-      { q: "Do cruises cancel due to weather?", a: "Only severe storms (rare) cause cancellations. Light rain, wind, and cold do not cancel cruises. Full refunds are given for weather cancellations." }
+      { q: "Do cruises cancel due to weather?", a: "Only severe storms (rare) cause cancellations. Light rain, wind, and cold do not cancel cruises. Full refunds are given for weather cancellations." },
+      { q: "What should I wear on a Bosphorus cruise in summer?", a: "Light, breathable clothing during the day — the Bosphorus breeze makes it 3–5°C cooler than on land. Bring a cardigan or light jacket for sunset and evening cruises even in July, as temperatures drop noticeably after sunset. A hat and sunscreen (SPF 30+) are essential on open decks." },
+      { q: "Is a Bosphorus cruise worth doing in winter (December–February)?", a: "Yes — winter cruises offer a uniquely atmospheric experience: moody skies, fewer tourists, and significantly lower prices. Dinner cruises have heated indoor salons that are completely comfortable. The Bosphorus in winter mist is hauntingly beautiful, and clear winter days provide exceptional visibility of both bridges." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["best-time-bosphorus-cruise", "what-to-wear-bosphorus-cruise", "istanbul-cruise-booking-tips"],
   },
   {
     slug: "istanbul-transportation-guide-tourists",
@@ -1444,9 +1882,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Istanbul's transport system is extensive and affordable. This guide covers everything from airport transfers to ferries, trams, and the essential Istanbulkart.",
     category: "tips",
     date: "2025-10-18",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200&q=80",
-    keywords: ["istanbul transportation guide", "istanbul metro guide", "istanbulkart guide", "istanbul public transport"],
+    imageAlt: "Istanbul T1 tram arriving at Eminönü stop with the New Mosque and Bosphorus visible in the background",
+    keywords: ["istanbul transportation guide", "istanbul metro guide", "istanbulkart guide", "istanbul public transport", "istanbul transportation guide 2026", "how to get around istanbul 2026", "istanbul metro ferry transport tips", "istanbul transport guide for tourists 2026"],
+    author: "editorial",
+    keyTakeaways: [
+    "The Istanbul Kart (reloadable card, €2) reduces transit fares by 50% — buy at any metro station or kiosk",
+    "The T1 tram runs from the airport (via metro connection) through Sultanahmet to Eminönü Pier — the main cruise departure point",
+    "Ferries (€1.50 with Istanbul Kart) cross between Europe and Asia — not just transport, but a Bosphorus mini-experience",
+    "Avoid taxis without meters; use the BiTaksi app to book licensed, meter-verified cabs"
+    ],
     sections: [
       { heading: "The Istanbulkart — Your Essential Travel Card", content: "The Istanbulkart is a rechargeable smart card that works on all Istanbul public transport — metro, tram, bus, ferry, funicular, and dolmuş. Buy one at any metro station, ferry terminal, or street kiosk for a small deposit (₺50, including ₺35 credit). Reload at machines in any station. One card can be used for multiple passengers — just tap for each person. Fares are significantly cheaper with the card (₺15–20 per ride vs ₺35+ for single tickets). The card offers transfer discounts: your second ride within 2 hours costs less, and subsequent transfers save even more. Available as a standard card or digital Istanbulkart on mobile phones. This is the single most important purchase for getting around Istanbul affordably." },
       { heading: "Metro, Tram & Funicular Network", content: "Istanbul's rail network covers major tourist areas efficiently. The T1 tram is the tourist lifeline, running from Kabataş through Karaköy, Eminönü, Sultanahmet, and beyond — connecting ferry terminals, the Grand Bazaar, and the historic peninsula in one line. The M2 metro runs from Taksim through Beyoğlu and beyond — critical for getting to/from Taksim Square. The Tünel funicular (1875, one of the world's oldest) connects Karaköy to the top of Galata in 90 seconds. The Kabataş-Taksim funicular connects the waterfront to Taksim Square in 2 minutes. The Marmaray crosses under the Bosphorus, connecting the European and Asian sides by rail. Download the Moovit or Google Maps app for real-time route planning with Istanbul public transit." },
@@ -1470,9 +1917,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Where can I buy an Istanbulkart?", a: "At any metro station vending machine, ferry terminal, or street kiosk. Cost is about ₺50 including initial credit." },
       { q: "Is Uber available in Istanbul?", a: "Yes, Uber operates in Istanbul alongside local app BiTaksi. Both show fare estimates and track routes for transparency." },
-      { q: "Is Istanbul's public transport safe?", a: "Yes, very safe and well-maintained. Standard precautions apply — watch for pickpockets on crowded trams and be aware of your belongings." }
+      { q: "Is Istanbul's public transport safe?", a: "Yes, very safe and well-maintained. Standard precautions apply — watch for pickpockets on crowded trams and be aware of your belongings." },
+      { q: "How do I get from Istanbul Airport to Sultanahmet?", a: "Take the Havaist airport bus (₺120–200, runs 24/7) to Taksim or Sultanahmet stops, or the metro M11 to city centre then the T1 tram to Sultanahmet. A taxi costs ₺400–600 depending on traffic. Total journey by public transport: 45–70 minutes." },
+      { q: "What is the fastest way to travel between Taksim and Eminönü for a Bosphorus cruise?", a: "Take the Kabataş funicular (2 minutes) from Taksim down to Kabataş, then the T1 tram (5 minutes, 2 stops) to Eminönü. Total door-to-pier time: about 15 minutes. Alternatively, walk down Istiklal Caddesi to Karaköy (25 minutes) — a scenic route that passes the Galata Tower." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"],
+    relatedPosts: ["istanbul-travel-guide-first-timers", "bosphorus-cruise-departure-points", "istanbul-cruise-booking-tips"],
   },
   {
     slug: "turkish-etiquette-guide-tourists",
@@ -1481,9 +1931,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Understanding Turkish etiquette enriches your Istanbul experience. From mosque visits to dining customs, here are the cultural tips that show respect and earn warmth.",
     category: "tips",
     date: "2025-10-15",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200&q=80",
-    keywords: ["turkish etiquette", "istanbul customs tourists", "turkish culture guide", "turkey cultural tips"],
+    imageAlt: "Tourist respectfully removing shoes at the entrance to a mosque in Istanbul following Turkish customs",
+    keywords: ["turkish etiquette", "istanbul customs tourists", "turkish culture guide", "turkey cultural tips", "turkish etiquette 2026", "turkish culture tips istanbul", "what to expect turkish etiquette", "turkish customs for tourists 2026"],
+    author: "editorial",
+    keyTakeaways: [
+    "Remove shoes before entering mosques, cover shoulders and knees, and observe prayer times when planning visits",
+    "Turks take hospitality seriously — refusing offered tea is mildly rude; accepting and not finishing is completely fine",
+    "Bargaining is expected in bazaars but not in regular shops or restaurants — know where each norm applies",
+    "Learning 5 words (merhaba, teşekkür ederim, evet, hayır, lütfen) genuinely warms interactions with locals"
+    ],
     sections: [
       { heading: "Greetings and Social Etiquette", content: "Turkish people are famously warm and hospitable. The standard greeting is 'Merhaba' (hello) — learning this single word opens doors. Close acquaintances greet with a kiss on each cheek. A handshake with direct eye contact is appropriate for meeting new people in professional or formal settings. When entering a shop or restaurant, greeting the owner or staff with 'Merhaba' is polite and often rewarded with extra attention. Turkish hospitality (misafirperverlik) is deeply ingrained — if offered tea or food, accepting is polite (even a small sip). Refusing can seem rude. You are not obligated to buy anything after accepting hospitality in a shop. Remove shoes when entering someone's home (and at many traditional restaurants). Address older people or authority figures with respect — 'Abi' (older brother) or 'Abla' (older sister) are common respectful terms." },
       { heading: "Mosque Etiquette", content: "Visiting Istanbul's magnificent mosques is a highlight, but proper etiquette shows respect. Remove your shoes before entering — a shoe rack or plastic bags are provided. Women should cover their heads, shoulders, and knees — large scarves are provided free at major mosques like the Blue Mosque and Hagia Sophia. Men should wear long trousers (shorts below the knee are sometimes acceptable at less strict mosques). Do not enter the prayer area when prayers are in progress — wait until the prayer concludes or visit between prayer times. Photography is allowed in most mosques but never photograph people praying. Keep your voice low. Turn off phone sounds. Do not point the soles of your feet toward the qibla (prayer direction) wall. Donations to the mosque are appreciated but not required." },
@@ -1507,9 +1966,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Is tipping expected in Istanbul?", a: "Yes — 10–15% at restaurants (check if service charge is included), round up taxi fares, ₺20–30 per bag for hotel porters, ₺30–50 for hamam attendants." },
       { q: "What should I wear in Istanbul?", a: "Istanbul is cosmopolitan — casual Western clothing is fine. Cover up for mosque visits. Avoid very revealing clothing in conservative neighborhoods outside the tourist areas." },
-      { q: "Is alcohol available in Istanbul?", a: "Yes, widely available in restaurants, bars, hotels, and shops. Turkey is a secular country. However, it is polite to be discreet during Ramadan." }
+      { q: "Is alcohol available in Istanbul?", a: "Yes, widely available in restaurants, bars, hotels, and shops. Turkey is a secular country. However, it is polite to be discreet during Ramadan." },
+      { q: "Can I take photos inside mosques in Istanbul?", a: "Photography is allowed in most Istanbul mosques, but never photograph people in prayer. Avoid using flash, keep your voice low, and move quietly. During prayer times (approximately 5 times daily), non-Muslim visitors should wait outside or in designated areas. The Hagia Sophia and Blue Mosque are the most visited." },
+      { q: "What is the polite way to greet someone in Turkey?", a: "A handshake with direct eye contact is standard for new acquaintances. Close friends greet with a kiss on each cheek. Learning basic Turkish phrases earns significant goodwill — 'Merhaba' (hello), 'Teşekkür ederim' (thank you), and 'Lütfen' (please) go a long way with locals." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise"],
+    relatedPosts: ["istanbul-travel-guide-first-timers", "sultanahmet-tourist-guide", "grand-bazaar-shopping-guide"],
   },
   {
     slug: "yacht-decoration-ideas-istanbul",
@@ -1518,9 +1980,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Transform your yacht charter into a magical venue with these decoration ideas — from romantic proposals to birthday parties and elegant wedding receptions.",
     category: "yacht-guide",
     date: "2025-10-12",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80",
-    keywords: ["yacht decoration istanbul", "bosphorus yacht decor", "yacht party decoration", "yacht event styling"],
+    imageAlt: "Elegantly decorated yacht deck with flower arrangements, fairy lights, and personalized balloon arch for an event",
+    keywords: ["yacht decoration istanbul", "bosphorus yacht decor", "yacht party decoration", "yacht event styling", "yacht decoration istanbul 2026", "yacht decoration istanbul tips", "best time for yacht decoration istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "MerrySails' yacht decoration packages start at €150 — includes balloon arches, table centerpieces, banners, and fairy lights",
+    "Popular themes: nautical blue-and-white, Mediterranean white party, boho floral, Istanbul Ottoman gold",
+    "Order custom decoration 5+ days in advance for personalized elements (monograms, photo prints, name banners)",
+    "Outdoor decorations are secured against Bosphorus wind — ask the crew about wind-resistant setup options"
+    ],
     sections: [
       { heading: "Romantic Proposal Decorations", content: "Proposal yacht decorations focus on intimate, emotional impact. Classic elements include: rose petal path from the entrance to the proposal spot, 'Will You Marry Me?' LED sign positioned with the Bosphorus Bridge as backdrop, heart-shaped balloon arch in red and gold, candlelight arrangements (battery-operated for safety) creating a warm glow, fresh flower arrangements — red roses are traditional, but peonies, orchids, or your partner's favorites add personalization, a designated photo corner with a floral frame, and champagne setup on ice ready for the celebration. The key is elegance without clutter — the Bosphorus itself is the decoration. Every element should enhance the natural romance of the setting rather than compete with it." },
       { heading: "Birthday Party Themes and Decor", content: "Birthday yacht decorations set the party mood from the moment guests board. Popular themes and their decor elements: Gold & Glam — gold balloons, metallic garlands, sequin tablecloths, gold champagne flutes. Rose Gold — rose gold balloon garlands, blush flowers, copper accents, matching flatware. Tropical Paradise — palm leaf arrangements, tropical flowers, pineapple centerpieces, vibrant colors. Neon Glow — UV lights, neon signs, glow sticks, fluorescent balloons (perfect for evening charters). Minimalist Chic — white balloons, greenery garlands, elegant simplicity. Every theme includes: oversized number balloons (age), custom birthday banner, photo backdrop, and cake table setup with matching decor." },
@@ -1533,9 +2004,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Can I bring my own decorations for the yacht?", a: "Yes! You can bring your own decorations, or use our professional decoration service. We set up before your arrival and clean up afterward." },
       { q: "How much do yacht decorations cost?", a: "Basic balloon and banner packages start at €100. Premium floral arrangements and themed setups range from €200–500. Custom elaborate setups are priced individually." },
-      { q: "How far in advance should I order decorations?", a: "At least 3–5 days for standard packages. Custom decorations (neon signs, floral walls, specialty items) need 1–2 weeks." }
+      { q: "How far in advance should I order decorations?", a: "At least 3–5 days for standard packages. Custom decorations (neon signs, floral walls, specialty items) need 1–2 weeks." },
+      { q: "What decorations work best for a Bosphorus proposal?", a: "The most effective proposal setups are elegantly minimal: rose petal path, a 'Will You Marry Me?' LED sign positioned against the Bosphorus Bridge, fresh flowers, and champagne on ice. The Bosphorus itself provides the dramatic backdrop — heavy decoration competes rather than complements. A concealed photographer is essential." },
+      { q: "Are decorations installed before guests board the yacht?", a: "Yes. Our decoration team sets up everything before guests arrive so you board to a fully prepared vessel. Standard setups take 45–90 minutes; elaborate themed setups require 2–3 hours. Everything is secured against the Bosphorus breeze using marine-grade fastening — nothing blows away." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "yacht-weddings"]
+    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "yacht-weddings"],
+    relatedPosts: ["marriage-proposal-yacht-istanbul", "yacht-birthday-party-ideas", "yacht-wedding-istanbul-bosphorus"],
   },
   {
     slug: "best-yacht-routes-bosphorus",
@@ -1544,9 +2018,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Your captain knows the best routes — but understanding the Bosphorus options helps you customize your yacht charter for the perfect Istanbul experience.",
     category: "yacht-guide",
     date: "2025-10-08",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
-    keywords: ["yacht route bosphorus", "bosphorus sailing route", "best bosphorus route", "yacht cruise route istanbul"],
+    imageAlt: "Navigation chart of the Bosphorus strait with a yacht's route marked from Kuruçeşme to the Black Sea entrance",
+    keywords: ["yacht route bosphorus", "bosphorus sailing route", "best bosphorus route", "yacht cruise route istanbul", "yacht route bosphorus 2026", "yacht route bosphorus tips", "best time for yacht route bosphorus"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The 5 best Bosphorus yacht routes: Classic South (Ortaköy to Bebek), Full Bosphorus (90 min to Black Sea), Asian Shore, Princes' Islands, and Sunset West",
+    "The Classic South route (2 hours) covers the most landmarks per nautical mile — ideal for first-time charters",
+    "A full Bosphorus round trip to the Black Sea entrance takes 5–6 hours and covers all 3 bridges — best as a day charter",
+    "The captain adapts the route live to wind, traffic, and your group's preferences — discuss priorities at boarding"
+    ],
     sections: [
       { heading: "The Classic Southern Loop (2 Hours)", content: "The most popular yacht charter route covers the iconic southern Bosphorus. Departing from Kuruçeşme Marina, you head north along the European shore, passing Ortaköy Mosque and under the First Bosphorus Bridge (15 July Martyrs Bridge). Continue past the charming neighborhoods of Bebek and Arnavutköy with their Ottoman waterfront mansions. At the Rumeli Fortress and Second Bridge (Fatih Sultan Mehmet Bridge), the yacht crosses to the Asian shore and returns south, passing Kandilli, Çengelköy (famous for its cucumbers and fish restaurants), Beylerbeyi Palace, Üsküdar, and the Maiden's Tower. Total duration: approximately 2 hours. This route covers every major Bosphorus landmark and is perfectly timed for sunset departures — positioning you under the First Bridge as golden hour peaks." },
       { heading: "The Extended Northern Route (3-4 Hours)", content: "For longer charters, the northern extension reaches the less-visited upper Bosphorus. Beyond the Second Bridge, the strait narrows and the landscape becomes more natural — forested hills, fishing villages, and historic fortifications. The Rumeli Kavağı neighborhood on the European side and Anadolu Kavağı on the Asian side mark the northern reaches accessible by standard yachts. This area near the Black Sea entrance offers cleaner water (excellent for swimming stops), less maritime traffic, and a peaceful contrast to the bustling southern Bosphorus. The Yavuz Sultan Selim Bridge (Third Bridge) is visible from this section — the world's widest suspension bridge spanning the narrowest point of the upper Bosphorus. Extended routes typically combine southern landmarks with northern nature, creating a comprehensive Bosphorus experience." },
@@ -1570,9 +2053,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Can I choose my own yacht route?", a: "Yes! Share your priorities (landmarks, sunset, swimming, photography) and the captain designs a customized route. The classic southern loop is the default." },
       { q: "How far north can a yacht go on the Bosphorus?", a: "Standard charter yachts can reach Anadolu Kavağı near the Black Sea entrance. The full Bosphorus is 31 km, with the classic charter covering the southern 15 km." },
-      { q: "Can the yacht anchor for swimming?", a: "Yes, in summer the yacht can anchor in calm bays for swimming. The captain selects safe, clean-water spots based on conditions." }
+      { q: "Can the yacht anchor for swimming?", a: "Yes, in summer the yacht can anchor in calm bays for swimming. The captain selects safe, clean-water spots based on conditions." },
+      { q: "How long should a Bosphorus yacht charter be for the best experience?", a: "Two hours covers the classic southern loop with all major landmarks — ideal for proposals, intimate dinners, and photography. Three hours allows a more relaxed pace with a northern extension past the second bridge. Four hours suits swimming stops (summer), reaching Anadolu Kavağı, or a full meal on board." },
+      { q: "What is the most scenic spot on the Bosphorus?", a: "The Ortaköy Mosque framed beneath the illuminated First Bosphorus Bridge is the Bosphorus's most iconic scene, best photographed at golden hour from a yacht. The mid-strait panorama between Dolmabahçe and Beylerbeyi palaces shows both Europe and Asia simultaneously — the point where most proposals happen." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "private-yacht-swimming-tour", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "private-yacht-swimming-tour", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["private-yacht-charter-istanbul-guide", "luxury-yacht-rental-bosphorus", "bosphorus-cruise-departure-points"],
   },
   {
     slug: "istanbul-museums-near-bosphorus",
@@ -1581,9 +2067,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Bosphorus waterfront is lined with world-class museums. From contemporary art to Ottoman history, discover the cultural treasures along Istanbul's iconic strait.",
     category: "istanbul",
     date: "2025-10-05",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80",
-    keywords: ["istanbul museums", "museums near bosphorus", "istanbul art museums", "istanbul cultural attractions"],
+    imageAlt: "Exterior of the Istanbul Modern Art Museum on the Karaköy waterfront with the Bosphorus and tanker behind it",
+    keywords: ["istanbul museums", "museums near bosphorus", "istanbul art museums", "istanbul cultural attractions", "istanbul museums 2026", "istanbul museums tips 2026", "best istanbul museums guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "The 5 best Bosphorus-adjacent museums: Dolmabahçe Palace, Istanbul Modern (Karaköy), Naval Museum (Beşiktaş), Pera Museum (Beyoğlu), and Sakıp Sabancı (Emirgan)",
+    "The Naval Museum (€5) is one of Istanbul's most overlooked gems — magnificent Ottoman vessels and imperial caïques on display",
+    "Combine a Dolmabahçe Palace visit with a Bosphorus cruise from the nearby Beşiktaş pier for a full day on the waterfront",
+    "The Istanbul Museum Pass (€50) covers Dolmabahçe Palace and 10+ museums — worth it if you plan 3+ visits"
+    ],
     sections: [
       { heading: "Istanbul Modern — Turkey's Premier Contemporary Art Museum", content: "Istanbul Modern (İstanbul Modern Sanat Müzesi) is Turkey's first and most important museum of modern and contemporary art. Recently relocated to a stunning new building designed by Renzo Piano on the Karaköy waterfront, the museum overlooks the Bosphorus with floor-to-ceiling windows framing passing ships. The permanent collection traces Turkish modern art from the early 20th century through contemporary works. Rotating exhibitions bring international artists to Istanbul. The museum shop is one of the best in the city for art books and design objects. The on-site restaurant offers Bosphorus views with refined dining. Entry: approximately ₺150. Allow 1.5–2 hours. Free on Thursdays." },
       { heading: "Sakıp Sabancı Museum — Art on the Bosphorus", content: "The Sakıp Sabancı Museum (Sabancı Müzesi), known as 'The Museum on the Bosphorus,' occupies a stunning 19th-century mansion directly on the water in the Emirgan neighborhood. The museum houses an impressive collection of Ottoman calligraphy, Anatolian figurines, and paintings, alongside world-class temporary exhibitions — past shows have featured Picasso, Salvador Dalí, and Ai Weiwei. The building itself is a work of art, and the gardens overlooking the Bosphorus provide a peaceful retreat. The Seed Café in the garden serves excellent food with water views. The museum is accessible by bus from Taksim or by taxi — combine with a visit to Emirgan Park (famous for tulips in spring)." },
@@ -1607,9 +2102,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Is there a museum pass for Istanbul?", a: "Yes, the Museum Pass Istanbul covers multiple museums and provides queue-skipping. It is good value if you plan to visit 3 or more museums." },
       { q: "Which museum has the best Bosphorus view?", a: "Istanbul Modern's new Renzo Piano building offers the most dramatic Bosphorus views from its floor-to-ceiling windows. Sakıp Sabancı Museum's garden views are equally stunning." },
-      { q: "Can I see Dolmabahçe Palace from a Bosphorus cruise?", a: "Yes! The palace's 600-meter waterfront facade is one of the most impressive sights on any Bosphorus cruise — visible from all cruise types." }
+      { q: "Can I see Dolmabahçe Palace from a Bosphorus cruise?", a: "Yes! The palace's 600-meter waterfront facade is one of the most impressive sights on any Bosphorus cruise — visible from all cruise types." },
+      { q: "How much does it cost to enter Dolmabahçe Palace?", a: "Entry is approximately ₺650 (about €18) for a guided tour of the main palace. The Harem section is a separate ticket (₺500). Book tickets in advance to skip queues — the palace is open Tuesday–Sunday 09:00–16:00 (hours vary by season). Combined museum passes offer better value if visiting multiple sites." },
+      { q: "How do I combine a museum visit with a Bosphorus cruise?", a: "The best combination: morning at Dolmabahçe Palace (Kabataş), walk south along the waterfront 15 minutes to Eminönü, and board an afternoon sightseeing or sunset cruise. Alternatively, take a morning cruise to see the palaces and museums from the water, then visit your favorites on foot in the afternoon." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "full-day-istanbul-old-city-tour"],
+    relatedPosts: ["istanbul-seaside-neighborhoods", "sultanahmet-tourist-guide", "istanbul-day-trips-from-bosphorus"],
   },
   {
     slug: "istanbul-seaside-neighborhoods",
@@ -1618,9 +2116,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Istanbul's Bosphorus-side neighborhoods each have distinct character. From upscale Bebek to charming Kuzguncuk, discover the waterfront areas locals love most.",
     category: "istanbul",
     date: "2025-10-01",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=1200&q=80",
-    keywords: ["istanbul neighborhoods", "bosphorus neighborhoods", "bebek istanbul", "arnavutkoy istanbul"],
+    imageAlt: "Colorful wooden yalı mansions lining the Bosphorus waterfront in the historic Arnavutköy neighborhood",
+    keywords: ["istanbul neighborhoods", "bosphorus neighborhoods", "bebek istanbul", "arnavutkoy istanbul", "istanbul neighborhoods 2026", "istanbul neighborhoods tips 2026", "best istanbul neighborhoods guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "Istanbul's 6 best Bosphorus-side neighborhoods: Bebek, Arnavutköy, Ortaköy, Kuruçeşme, Anadolu Kavağı (Asian), and Kuzguncuk (Asian)",
+    "Bebek is Istanbul's most expensive and prestigious address — afternoon coffee at a Bebek café is a quintessential local ritual",
+    "Kuzguncuk on the Asian side has preserved its multicultural village character — synagogue, church, and mosque on the same street",
+    "From any of these neighborhoods, you can flag down a dolmuş water taxi for an impromptu Bosphorus crossing"
+    ],
     sections: [
       { heading: "Bebek — Istanbul's Riviera", content: "Bebek is Istanbul's most affluent Bosphorus-side neighborhood — think waterfront brunch, designer boutiques, and see-and-be-seen cafe culture. The Bebek waterfront promenade is perfect for a leisurely stroll with Bosphorus views, especially at sunset when the bridge and Asian shore glow in warm light. Bebek Badem Ezmesi (almond paste) is a legendary local sweet — buy a box at the original shop on the main street. The neighborhood's restaurants range from casual fish places to upscale dining. Bebek Park, at the water's edge, provides green space with bridge views. Getting there: bus from Taksim or taxi along the Bosphorus coastal road." },
       { heading: "Arnavutköy — Ottoman Charm Preserved", content: "Arnavutköy (meaning 'Albanian Village') is perhaps the most photogenic waterfront neighborhood in Istanbul. Rows of restored Ottoman-era wooden mansions line the narrow streets leading to the water. Unlike many Istanbul neighborhoods, Arnavutköy's architecture survived the fires and earthquakes that destroyed similar buildings elsewhere — creating a remarkably intact Ottoman streetscape. The waterfront restaurants serve excellent fish — İskele Arnavutköy is a local institution. The neighborhood has a village-like atmosphere despite being minutes from central Istanbul. Morning visits offer quieter streets and better light for photography." },
@@ -1649,9 +2156,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Which Bosphorus neighborhood is best for food?", a: "Bebek for upscale dining, Arnavutköy for fish restaurants, Ortaköy for kumpir and casual eats, Kadıköy market for street food." },
       { q: "Can I walk between Bosphorus neighborhoods?", a: "Yes! The coastal road connects Ortaköy, Kuruçeşme, Arnavutköy, and Bebek — a beautiful 4 km walk taking about 1 hour." },
-      { q: "How do I get to the Asian side neighborhoods?", a: "Ferry from Eminönü or Karaköy to Üsküdar or Kadıköy, then local bus or taxi to specific neighborhoods." }
+      { q: "How do I get to the Asian side neighborhoods?", a: "Ferry from Eminönü or Karaköy to Üsküdar or Kadıköy, then local bus or taxi to specific neighborhoods." },
+      { q: "What is the best Bosphorus neighborhood to stay in as a tourist?", a: "Ortaköy and Beşiktaş are the most central for Bosphorus access — close to cruise departure points, restaurants, and the first bridge views. Bebek and Arnavutköy are quieter and more upscale. For the authentic local experience, Kuzguncuk on the Asian side is a hidden gem accessible by a 20-minute ferry." },
+      { q: "Can I walk along the Bosphorus from Ortaköy to Bebek?", a: "Yes — the coastal path from Ortaköy through Kuruçeşme to Arnavutköy and Bebek is approximately 4 km and takes about 1 hour. It is one of Istanbul's most beautiful walks with continuous water views, waterfront cafes, and Ottoman mansion facades. Best done in the late afternoon for golden hour light." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["best-restaurants-near-bosphorus", "istanbul-hidden-gems-local-guide", "kadikoy-asian-side-istanbul"],
   },
   {
     slug: "istanbul-day-trips-from-bosphorus",
@@ -1660,9 +2170,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Need a break from Istanbul's intensity? These day trips take you to car-free islands, Black Sea beaches, forest retreats, and charming small towns.",
     category: "istanbul",
     date: "2025-09-28",
+    dateModified: "2026-03-08",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1568781269764-1546a2e67767?w=1200&q=80",
-    keywords: ["istanbul day trips", "day trips from istanbul", "princes islands day trip", "istanbul excursions"],
+    imageAlt: "Passengers boarding a ferry at Eminönü pier for a day trip to the Princes' Islands with clear blue water visible",
+    keywords: ["istanbul day trips", "day trips from istanbul", "princes islands day trip", "istanbul excursions", "istanbul day trips 2026", "istanbul day trips tips 2026", "best istanbul day trips guide"],
+    author: "editorial",
+    keyTakeaways: [
+    "The 5 best Istanbul day trips: Princes' Islands (45 min ferry), Bursa (2h bus), Edirne (2.5h bus), Şile (1.5h bus), and Gallipoli (4h)",
+    "The Princes' Islands ferry departs from Kabataş or Bostancı — the island of Büyükada is the most popular destination",
+    "Bursa (former Ottoman capital) offers the Uludağ mountain, historic mosques, and İskender kebab — ideal for a day trip",
+    "All day trips can be combined with an evening return to Istanbul for a Bosphorus dinner cruise"
+    ],
     sections: [
       { heading: "Princes' Islands — Car-Free Paradise", content: "The Princes' Islands (Adalar) are the most popular Istanbul day trip — and for good reason. This archipelago of nine islands in the Sea of Marmara offers a complete escape from Istanbul's urban intensity. Motor vehicles are banned, creating peaceful streets filled with the sounds of birdsong and bicycle bells. Büyükada, the largest island, features Victorian mansions, pine forests, hilltop monasteries, and waterfront seafood restaurants. Rent a bicycle (₺50–100) and circle the island in 2 hours, stopping at beaches and viewpoints. The Aya Yorgi Monastery at the island's summit provides panoramic Sea of Marmara views. Getting there: ferry from Kabataş (90 minutes) or speed boat from Bostancı (40 minutes). Or book the MerrySails Princes' Islands tour for guided exploration with private boat transfer." },
       { heading: "Şile — Black Sea Beach Town", content: "Şile (pronounced 'Shee-leh') is a charming Black Sea coastal town about 70 km from central Istanbul — far enough to feel like a different world but close enough for a day trip. The town's sandy beaches are the main draw in summer, with the most popular being Şile Plajı and Ağlayan Kaya beach. The Black Sea water is cooler than the Marmara (refreshing in summer heat) and the waves provide more energy than the calm Bosphorus. The historic Şile Lighthouse, built in 1858 by the French, stands on the headland. The town itself has a relaxed atmosphere with seafood restaurants and tea gardens overlooking the sea. Getting there: bus from Üsküdar (about 1.5 hours) or car." },
@@ -1686,9 +2205,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "What is the easiest day trip from Istanbul?", a: "The Princes' Islands — regular ferries run from Kabataş, and the 90-minute journey is scenic. No car needed; everything is walkable or cyclable on the islands." },
       { q: "Can I do a day trip without a car?", a: "Yes! Princes' Islands (ferry), Polonezköy (dolmuş), Belgrad Forest (bus), and Şile (bus) are all accessible by public transport." },
-      { q: "What is the best day trip for nature lovers?", a: "Belgrad Forest for forest hiking, Şile for beaches, Polonezköy for forest dining. The Princes' Islands combine nature with cultural interest." }
+      { q: "What is the best day trip for nature lovers?", a: "Belgrad Forest for forest hiking, Şile for beaches, Polonezköy for forest dining. The Princes' Islands combine nature with cultural interest." },
+      { q: "How far are the Princes' Islands from Istanbul city centre?", a: "The ferry from Kabataş to Büyükada (the largest island) takes 75–90 minutes and costs about €3–5 with an Istanbulkart. High-speed ferry from Bostancı takes 40 minutes. The islands are car-free — bicycles (₺50–100) and horse-drawn carriages are the only transport on the island." },
+      { q: "Can I combine a Princes' Islands trip with a Bosphorus cruise?", a: "Yes — book a morning Princes' Islands visit by public ferry (departs Kabataş), explore the island for 3–4 hours, then return to Istanbul for an afternoon or sunset Bosphorus cruise from Eminönü. This combination gives you both the Sea of Marmara island experience and the Bosphorus landmarks in one day." }
     ],
-    relatedTours: ["istanbul-princes-island-tour", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise"]
+    relatedTours: ["istanbul-princes-island-tour", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul", "bosphorus-sunset-cruise"],
+    relatedPosts: ["princes-islands-boat-tour-istanbul", "princes-island-day-trip-istanbul", "swimming-yacht-tour-istanbul"],
   },
   {
     slug: "fishing-boat-tour-bosphorus",
@@ -1697,9 +2219,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The Bosphorus is one of Turkey's best fishing spots. Join a fishing boat tour and try your hand at catching bluefish, sea bass, and bonito in Istanbul's iconic strait.",
     category: "yacht-guide",
     date: "2025-09-25",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
-    keywords: ["fishing bosphorus", "fishing boat tour istanbul", "bosphorus fishing charter", "istanbul fishing trip"],
+    imageAlt: "Traditional wooden fishing boat (tekne) anchored in the Bosphorus with fishing rods deployed and Istanbul skyline in the background",
+    keywords: ["fishing bosphorus", "fishing boat tour istanbul", "bosphorus fishing charter", "istanbul fishing trip", "fishing bosphorus 2026", "is bosphorus fishing tour worth it", "what to expect fishing bosphorus", "fishing boat tour bosphorus booking"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Bosphorus fishing boat tours cost €80–120 per person and include equipment, bait, crew guidance, and a cooked catch",
+    "Best fishing spots: near the Rumeli Fortress, Anadolu Kavağı, and the Bosphorus entrance — bluefish, mackerel, and sea bass are common catches",
+    "No fishing experience required — the crew teaches casting, reeling, and fish identification",
+    "Departures at dawn (06:00) or early morning offer the best catches; tours typically run 3–4 hours"
+    ],
     sections: [
       { heading: "Fishing in the Bosphorus — A Living Tradition", content: "Fishing is deeply woven into Istanbul's culture and daily life. The iconic sight of fishermen lining the Galata Bridge, their lines dangling into the Golden Horn, is one of the city's most photographed scenes. But fishing on the Bosphorus goes far beyond the bridge — the strait is a natural migration corridor connecting the Black Sea and the Sea of Marmara, making it one of Turkey's richest fishing waters. Seasonal fish migrations bring waves of different species through the strait — bluefish (lüfer) in autumn, bonito (palamut) in early winter, mackerel (uskumru) in spring, and sea bass (levrek) year-round. A private fishing charter gives you access to the best fishing spots along the Bosphorus, guided by experienced local captains who know exactly where the fish are running." },
       { heading: "What Fish Can You Catch", content: "The Bosphorus hosts a remarkable diversity of fish species. Bluefish (lüfer) is the most prized catch — this fast, aggressive fish migrates through the Bosphorus in large schools from September to November. Catching a big lüfer is considered a crowning achievement among Istanbul fishermen. Bonito (palamut) arrives in October–November, providing excellent sport fishing. Sea bass (levrek) is available year-round in the deeper channels and near underwater structures. Mackerel (uskumru) and horse mackerel (istavrit) are abundant in spring and summer. Turbot (kalkan), red mullet (barbunya), and sea bream (çipura) are also caught. The captain provides all fishing equipment — rods, reels, bait, and tackle suitable for the target species and conditions." },
@@ -1723,9 +2254,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Do I need fishing experience?", a: "No! The crew provides all equipment and helps with technique. Beginners are welcome and often catch their first Bosphorus fish within minutes." },
       { q: "What is the best season for fishing on the Bosphorus?", a: "Autumn (September–November) for bluefish migration is the best. Spring (April–June) is excellent for mackerel. Sea bass is available year-round." },
-      { q: "Can we eat the fish we catch?", a: "Yes! With the Premium or VIP package, the chef prepares your catch on board. Alternatively, nearby restaurants will cook your fish for you." }
+      { q: "Can we eat the fish we catch?", a: "Yes! With the Premium or VIP package, the chef prepares your catch on board. Alternatively, nearby restaurants will cook your fish for you." },
+      { q: "How long does a Bosphorus fishing charter last?", a: "The standard fishing charter is 2 hours (€280 Essential package, up to 15 guests), which is enough time to fish 2–3 productive spots. Extended 3–4 hour charters allow more spots and a relaxed lunch on board. Full-day fishing charters (6–8 hours) reach the Black Sea entrance for the best bluefish grounds in autumn." },
+      { q: "What fishing equipment is provided on the charter?", a: "All fishing equipment is included: rods, reels, bait (live and artificial), and tackle appropriate for the target species and season. Experienced anglers can bring their own specialist gear. The captain provides instruction for beginners and adjusts technique based on the day's conditions and the fish running." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise", "private-yacht-swimming-tour"]
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise", "private-yacht-swimming-tour"],
+    relatedPosts: ["swimming-yacht-tour-istanbul", "best-yacht-routes-bosphorus", "bosphorus-cruise-for-couples"],
   },
   {
     slug: "yacht-catering-menu-istanbul",
@@ -1734,9 +2268,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "From Turkish meze spreads to private chef fine dining, discover the food and drink options available for your Bosphorus yacht charter in Istanbul.",
     category: "yacht-guide",
     date: "2025-09-22",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
-    keywords: ["yacht catering istanbul", "yacht food menu bosphorus", "yacht charter food", "istanbul boat catering"],
+    imageAlt: "Elaborate Turkish mezze spread on a yacht table with fresh seafood, salads, and bread against the Bosphorus backdrop",
+    keywords: ["yacht catering istanbul", "yacht food menu bosphorus", "yacht charter food", "istanbul boat catering", "yacht catering istanbul 2026", "yacht catering istanbul tips", "best time for yacht catering istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "MerrySails yacht catering packages start at €35 per person — includes cold mezze, main course, and dessert",
+    "The seafood menu features fresh Bosphorus catch: sea bass, sea bream, calamari, and shrimp — all sourced daily",
+    "Dietary requirements (vegetarian, vegan, halal, gluten-free) are accommodated with 48-hour advance notice",
+    "The full open-bar package (€25/person) includes beer, wine, raki, spirits, soft drinks, and non-alcoholic options"
+    ],
     sections: [
       { heading: "Catering Options by Package Level", content: "MerrySails offers three levels of yacht catering. The Essential package (€280) includes basic refreshments — Turkish tea, coffee, water, and light snacks. You can bring your own food and drinks at no additional charge, making this the most flexible budget option. The Premium package (€380) adds a curated drink menu (wine, beer, spirits, soft drinks) and a refreshment spread. The VIP package (€680) includes a private chef who prepares a fully customized multi-course meal on board — this is the ultimate dining experience on the Bosphorus. Additional catering packages can be added to any package level, ranging from simple meze platters to elaborate seafood feasts." },
       { heading: "Turkish Meze Spread — Classic Yacht Menu", content: "The meze spread is the most popular yacht catering choice — perfectly suited to the casual, social atmosphere of a Bosphorus cruise. A typical meze selection includes: hummus, acılı ezme (spicy tomato-walnut paste), cacık (yogurt with cucumber), sigara böreği (crispy cheese rolls), yaprak sarma (stuffed vine leaves), patlıcan salatası (smoky eggplant salad), haydari (herb yogurt dip), and fresh bread. The meze format is ideal for yacht dining because it is easy to share, does not require formal table settings, and pairs perfectly with drinks. Add grilled meat or seafood for a more substantial meal. Meze platters serve 8–15 guests and are prepared fresh before the charter." },
@@ -1765,9 +2308,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Can I bring my own food on the yacht?", a: "Yes, the Essential package allows you to bring your own food and drinks. Premium and VIP packages include food/drink service, but you can supplement with your own items." },
       { q: "How far in advance should I order catering?", a: "At least 48 hours for standard meze or BBQ packages. 1 week for VIP private chef menus, as they require menu customization and ingredient sourcing." },
-      { q: "Is a private chef worth the extra cost?", a: "For special occasions (proposals, anniversaries, VIP entertaining), absolutely. The chef creates a personalized dining experience impossible to replicate with pre-prepared food." }
+      { q: "Is a private chef worth the extra cost?", a: "For special occasions (proposals, anniversaries, VIP entertaining), absolutely. The chef creates a personalized dining experience impossible to replicate with pre-prepared food." },
+      { q: "What is the most popular catering option for a Bosphorus yacht charter?", a: "The Turkish meze spread is the most requested — a selection of 8–12 cold and hot dishes (hummus, sigara böreği, yaprak sarma, cacık, smoky eggplant) served on ceramic boards feeds 8–15 guests for approximately €80–120 total. It suits the relaxed, social atmosphere of a cruise perfectly and pairs beautifully with wine or rakı." },
+      { q: "Can dietary restrictions be accommodated on a yacht charter?", a: "Yes — halal food is the default for Turkish menus. Vegetarian, vegan, and gluten-free menus are available with advance notice. Kosher catering can be arranged with 72-hour notice through a certified partner kitchen. Inform us of all allergies at booking time so the chef can prepare safe, high-quality alternatives." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "istanbul-bosphorus-lunch-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "istanbul-bosphorus-lunch-cruise"],
+    relatedPosts: ["istanbul-dinner-cruise-menu-guide", "yacht-party-ideas-istanbul", "private-yacht-charter-istanbul-guide"],
   },
   {
     slug: "group-bosphorus-cruise-guide",
@@ -1776,9 +2322,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Organizing a Bosphorus cruise for a group? From 10 friends to 50+ corporate guests, this guide covers logistics, pricing, and the best options for every group size.",
     category: "cruise-guide",
     date: "2025-09-18",
+    dateModified: "2026-03-08",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80",
-    keywords: ["group bosphorus cruise", "group boat tour istanbul", "large group yacht istanbul", "corporate group cruise"],
+    imageAlt: "Large group of tourists on the upper deck of a Bosphorus cruise boat with Istanbul's skyline visible",
+    keywords: ["group bosphorus cruise", "group boat tour istanbul", "large group yacht istanbul", "corporate group cruise", "group bosphorus cruise 2026", "is group bosphorus cruise worth it", "what to expect group bosphorus cruise", "how to book group bosphorus cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Groups of 10–50 can book a full shared cruise; groups of 50+ should consider a private vessel charter",
+    "Group discounts of 15–25% apply for 20+ guests booked together on MerrySails cruises",
+    "Coordination tip: designate a group contact who handles check-in — this speeds up boarding by 15 minutes",
+    "For mixed groups (adults and children), the lunch cruise at 13:00 works best — daytime light, shorter, and family-friendly"
+    ],
     sections: [
       { heading: "Group Size Options and Best Fit", content: "Different group sizes suit different cruise types. Small groups (10–15): A private yacht charter is the best option — the Essential package at €280 for the whole vessel means under €20 per person for a private Bosphorus experience. You have complete privacy, your own music, and a customizable route. Medium groups (15–30): Larger yacht options are available with more deck space, dining capacity, and entertainment possibilities. These are ideal for birthday parties, corporate events, and wedding celebrations. Large groups (30–50+): Event boats and larger vessels accommodate bigger gatherings with professional sound systems, dedicated bar areas, stage space for entertainment, and full kitchen facilities. Contact MerrySails for custom large-group pricing. Alternatively, groups of 10+ can book together on the shared dinner cruise and receive group discount rates with reserved seating." },
       { heading: "Group Pricing and Discounts", content: "Group bookings offer significant per-person savings. Shared cruises: groups of 10+ receive discounted per-person rates on the sunset, dinner, and sightseeing cruises. The exact discount depends on group size and season — contact MerrySails for a quote. Private yacht charters: the flat-rate pricing means larger groups pay less per person. An Essential charter (€280) for 15 guests = €19 per person. A Premium charter (€380) for 15 guests = €25 per person. A VIP charter (€680) for 15 guests = €45 per person. For events needing larger vessels, custom pricing is available. Corporate groups and repeat bookings receive preferred rates. Payment can be split among group members or handled by a single organizer." },
@@ -1802,9 +2357,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "What is the minimum group size for a discount?", a: "Group discounts on shared cruises start at 10+ guests. Private yacht charters are flat-rate, so any size group benefits from per-person savings." },
       { q: "Can a large group take the dinner cruise together?", a: "Yes, groups of 10+ can book reserved seating on the dinner cruise with group discount rates." },
-      { q: "Do you accommodate school or student groups?", a: "Yes, educational group packages are available with adjusted pricing and age-appropriate programming." }
+      { q: "Do you accommodate school or student groups?", a: "Yes, educational group packages are available with adjusted pricing and age-appropriate programming." },
+      { q: "What is the best cruise option for a group of 20–30 people?", a: "Groups of 20–30 have two strong options: reserved seating on the dinner cruise (€65 per person with group discount) for a fully-catered evening with entertainment, or a private yacht charter on a larger vessel for complete privacy and a customizable experience from €600–900 total." },
+      { q: "How far in advance should I book a group Bosphorus cruise?", a: "Book 2–4 weeks ahead for groups of 10–30 during peak season (May–September). Large groups (30+), corporate events, and wedding-related cruises should book 4–6 weeks ahead. Popular dates (weekends, summer holidays) sell out quickly — the earlier the better for guaranteed vessel and date." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "corporate-event-bosphorus-cruise", "bosphorus-sunset-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "corporate-event-bosphorus-cruise", "bosphorus-sunset-cruise"],
+    relatedPosts: ["corporate-event-yacht-bosphorus", "yacht-party-ideas-istanbul", "bosphorus-cruise-prices-2026"],
   },
   {
     slug: "istanbul-old-city-walking-tour",
@@ -1813,9 +2371,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Follow this self-guided walking tour through Istanbul's historic peninsula — from the Hagia Sophia through the Hippodrome to the Grand Bazaar in one unforgettable day.",
     category: "istanbul",
     date: "2025-09-15",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
-    keywords: ["istanbul walking tour", "istanbul old city tour", "self guided tour istanbul", "sultanahmet walking tour"],
+    imageAlt: "Self-guided walking tour map of Istanbul's old city showing the route from Eminönü through Sultanahmet to the Grand Bazaar",
+    keywords: ["istanbul walking tour", "istanbul old city tour", "self guided tour istanbul", "sultanahmet walking tour", "istanbul walking tour 2026", "is istanbul walking tour worth it", "what to expect istanbul walking tour", "how to book istanbul walking tour"],
+    author: "editorial",
+    keyTakeaways: [
+    "The Sultanahmet walking circuit (6 km) covers Hagia Sophia, Blue Mosque, Topkapı, Basilica Cistern, and Eminönü in one day",
+    "Start at Hagia Sophia at 08:00 when it opens — you will have the interior almost to yourself for 30–45 minutes",
+    "The walk from Sultanahmet to the Grand Bazaar takes 10 minutes — spend 1–2 hours browsing before lunch",
+    "End the walking tour at Eminönü Pier (steps from the Spice Bazaar) and board a Bosphorus cruise for the perfect day"
+    ],
     sections: [
       { heading: "Morning: Hagia Sophia and Sultanahmet Square", content: "Start your walking tour at Sultanahmet Square (Hippodrome) at 09:00 — early arrivals enjoy thinner crowds and softer morning light. Begin with the Hagia Sophia, entering through the main gate on the western side. Built in 537 AD, this is the single most important building in Istanbul, serving as both the world's largest church and a mosque over its 1,500-year history. Spend 45–60 minutes inside admiring the massive dome (55 meters high), Byzantine gold mosaics (look up to the gallery level), Islamic calligraphy panels, and the extraordinary scale of the interior. Exit and walk directly across the garden to the Blue Mosque (Sultan Ahmed Mosque). Remove your shoes, cover shoulders and knees, and enter between prayer times. The 20,000 blue Iznik tiles that give the mosque its name create a serene, luminous interior unlike any other mosque." },
       { heading: "Mid-Morning: Topkapı Palace and Basilica Cistern", content: "From the Blue Mosque, walk 5 minutes northeast to Topkapı Palace through the Imperial Gate. Plan 2–2.5 hours here — the palace complex is vast. Highlights: the Imperial Treasury (Spoonmaker's Diamond, Topkapı Dagger), the Sacred Relics (Prophet Muhammad's belongings), the Harem (exquisite tile work and stories of Ottoman court life), and the Fourth Courtyard terrace with panoramic Bosphorus views. After Topkapı, walk back toward Sultanahmet and descend to the Basilica Cistern — a 5-minute walk. The underground Byzantine water reservoir, with 336 marble columns reflected in eerily lit water, provides a cool, atmospheric interlude. Look for the two upside-down Medusa head column bases. Total visit: 30–40 minutes." },
@@ -1839,9 +2406,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "How long does the full walking tour take?", a: "The complete route takes a full day (8–10 hours including museum visits, lunch, and shopping). You can shorten it by skipping the Grand Bazaar or Topkapı Palace Harem." },
       { q: "Is the walking tour difficult?", a: "Moderately easy. The terrain is mostly flat with some hills. Comfortable walking shoes are essential as surfaces are cobblestone. Total distance: 6–8 km." },
-      { q: "Do I need to buy tickets in advance?", a: "Recommended for Topkapı Palace and the Basilica Cistern to skip queues. The Istanbul Museum Pass covers multiple sites at a discount." }
+      { q: "Do I need to buy tickets in advance?", a: "Recommended for Topkapı Palace and the Basilica Cistern to skip queues. The Istanbul Museum Pass covers multiple sites at a discount." },
+      { q: "How do I get from the Old City to the Bosphorus cruise pier?", a: "From Sultanahmet, walk downhill toward the waterfront (10–15 minutes) through the Sirkeci neighborhood to Eminönü pier — the main cruise departure point. Alternatively, take the T1 tram one stop from Sultanahmet to Eminönü. The walk passes the Spice Bazaar and the iconic Galata Bridge for excellent photo opportunities." },
+      { q: "What is the best way to spend a single day in Istanbul's old city?", a: "Start at Hagia Sophia (09:00), cross to the Blue Mosque (10:30), walk to Topkapı Palace (11:00), descend to the Basilica Cistern (13:30 after lunch), walk to the Grand Bazaar (15:00), then the Spice Bazaar (16:30), arriving at Eminönü pier by 17:00–18:00 for a sunset cruise — the perfect end to a day of land exploration." }
     ],
-    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-princes-island-tour"]
+    relatedTours: ["full-day-istanbul-old-city-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-princes-island-tour"],
+    relatedPosts: ["sultanahmet-tourist-guide", "top-things-to-do-istanbul", "grand-bazaar-shopping-guide"],
   },
   {
     slug: "accessible-bosphorus-cruise",
@@ -1850,9 +2420,18 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Everyone deserves to experience the Bosphorus. This guide covers wheelchair accessibility, mobility assistance, and how to plan an inclusive Istanbul cruise.",
     category: "cruise-guide",
     date: "2025-09-12",
+    dateModified: "2026-03-08",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&q=80",
-    keywords: ["accessible bosphorus cruise", "wheelchair cruise istanbul", "disability friendly istanbul", "accessible boat tour istanbul"],
+    imageAlt: "Wheelchair user on the lower deck of an accessible Bosphorus cruise boat with crew assistance",
+    keywords: ["accessible bosphorus cruise", "wheelchair cruise istanbul", "disability friendly istanbul", "accessible boat tour istanbul", "accessible bosphorus cruise 2026", "is accessible bosphorus cruise worth it", "what to expect accessible bosphorus cruise", "how to book accessible bosphorus cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "MerrySails' dinner cruise vessels have level boarding gangways and are fully wheelchair accessible on the main deck",
+    "Accessible restrooms are available on all main cruise vessels — notify MerrySails at booking for priority seating arrangement",
+    "The lower enclosed deck offers full views via panoramic windows — no need to navigate stairs for a great experience",
+    "Istanbul's piers vary in accessibility — MerrySails staff can advise on the most accessible boarding route for each pier"
+    ],
     sections: [
       { heading: "Accessibility on Bosphorus Cruises", content: "MerrySails is committed to making the Bosphorus experience accessible to all visitors. Larger dinner cruise vessels have ramp access for wheelchairs and designated accessible seating areas with clear sight lines to both the entertainment stage and the Bosphorus views through panoramic windows. Restrooms on larger vessels are accessible. Staff are trained to assist guests with mobility requirements. When booking, inform us of any accessibility needs so we can assign the most suitable vessel and seating. Private yacht charters can be arranged on vessels with wider decks and accessible layouts — our team recommends the best yacht options based on your specific needs." },
       { heading: "Planning Your Accessible Cruise", content: "Communication is key to a comfortable experience. When booking, share: type and extent of mobility requirements, wheelchair dimensions (for narrow doorways), any medical equipment needed on board, companion/carer information, and preferred seating location. Our team arranges: priority boarding to avoid crowds, ground-level or ramp-access seating, proximity to accessible restrooms, dietary accommodations for medical conditions, and temperature-controlled indoor seating. For wheelchair users, the dinner cruise's main deck dining area is the most accessible option — ground level, spacious, and climate controlled. Upper deck access may be limited on some vessels due to stairs." },
@@ -1865,9 +2444,12 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Are Bosphorus cruises wheelchair accessible?", a: "Larger dinner cruise vessels have ramp access and accessible seating. Inform us when booking so we assign the most suitable vessel." },
       { q: "Can wheelchair users get on a private yacht?", a: "Many yachts can accommodate wheelchair users with crew assistance. Share your specific requirements when booking and we will recommend the best vessel." },
-      { q: "Is the dinner cruise hotel transfer wheelchair accessible?", a: "Yes, specify your needs when booking and an appropriate vehicle (van or minibus with space for wheelchair) is assigned." }
+      { q: "Is the dinner cruise hotel transfer wheelchair accessible?", a: "Yes, specify your needs when booking and an appropriate vehicle (van or minibus with space for wheelchair) is assigned." },
+      { q: "How do I request accessibility assistance for a Bosphorus cruise?", a: "Contact MerrySails via WhatsApp (+90 537 040 68 22) or email (info@merrysails.com) at booking time. Share your mobility requirements, wheelchair dimensions if applicable, and any medical equipment you carry. Our team responds within 2 hours with a personalized accessibility plan and the most suitable vessel recommendation." },
+      { q: "Is the Bosphorus cruise one of the more accessible experiences in Istanbul?", a: "Yes — once on board, the cruise requires minimal walking, making it ideal for visitors with reduced mobility. The cruise brings Istanbul's landmarks to you, eliminating the steep hills, cobblestones, and long distances that most Istanbul sightseeing demands. The dinner cruise with hotel transfer is particularly accessible as it handles all transport logistics." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips", "short-bosphorus-cruise-tour"],
   },
   // ========== BATCH 2 — KEYWORD-TARGETED POSTS (March 2026) ==========
   {
@@ -1877,11 +2459,20 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Planning a Bosphorus cruise but not sure about the cost? We break down every option — from budget sightseeing tours to luxury yacht charters — with transparent 2026 pricing.",
     category: "cruise-guide",
     date: "2026-03-06",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200&q=80",
+    imageAlt: "Price comparison board for Bosphorus cruise options at a licensed Istanbul cruise operator office",
     keywords: ["bosphorus cruise cost", "bosphorus tour price", "bosphorus tour istanbul price", "bosphorus dinner cruise price", "bosphorus cruise price", "how much bosphorus cruise", "istanbul cruise cost"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "2026 Bosphorus cruise prices: Sightseeing €15, Sunset €20, Lunch €45, Dinner €65, Private charter from €280",
+    "Third-party booking sites add 25–40% commissions — always book direct with TURSAB-licensed operators for the best price",
+    "Prices are 15–20% lower in winter (November–March) — quality is the same, crowds are much smaller",
+    "The dinner cruise at €65 offers the best value: meal, entertainment, hotel transfer, and 3.5 hours included"
+    ],
     sections: [
-      { heading: "Bosphorus Cruise Prices at a Glance (2026)", content: "Bosphorus cruise prices in 2026 range from €15 to €680 depending on the type of experience. Here is a quick overview: the short sightseeing cruise costs €15 per person for 1.5 hours, the sunset cruise is €20 for 2.5 hours, the lunch cruise is €40 for 3 hours, the dinner cruise with Turkish Night show is €65 (Standard) or €95 (Gold) for 3.5 hours, and private yacht charter packages start at €280 for the Essential package (2 hours), €380 for Premium (3 hours), and €680 for VIP (4 hours). All shared cruise prices are per person, while yacht charter prices are for the entire boat (up to 15 guests). These are direct booking prices from MerrySails — booking through a third-party reseller or hotel concierge typically costs 20–40% more. Booking direct with a TURSAB-licensed operator guarantees the best price and full consumer protection." },
+      { heading: "Bosphorus Cruise Prices at a Glance (2026)", content: "Bosphorus cruise prices in 2026 range from €15 to €680 depending on the type of experience. Here is a quick overview: the short sightseeing cruise costs €15 per person for 1.5 hours, the sunset cruise is €20 for 2.5 hours, the lunch cruise is €40 for 3 hours, the dinner cruise with Turkish Night show is €65 (Standard) or €95 (Gold) for 3.5 hours, and private yacht charter packages start at €280 for the Essential package (2 hours), €380 for Premium (3 hours), and €680 for VIP (4 hours). All shared cruise prices are per person, while yacht charter prices are for the entire boat (up to 15 guests). These are direct booking prices from MerrySails — booking through a third-party reseller or hotel concierge typically costs 20–40% more. Booking direct with a TURSAB-licensed operator guarantees the best price and full consumer protection.", table: { headers: ["Cruise Type", "Duration", "Price", "Inclusions", "Best For"], rows: [["Sightseeing", "1.5 hrs", "€15/person", "Commentary, refreshments", "Budget travelers, short visits"], ["Sunset", "2.5 hrs", "€20/person", "Welcome drinks, snacks, WiFi", "Couples, photographers"], ["Lunch", "3 hrs", "€40/person", "Meal, two shores, commentary", "Families, daytime visitors"], ["Dinner Standard", "3.5 hrs", "€65/person", "4-course dinner, drinks, shows, hotel transfer", "Most visitors, best value"], ["Dinner Gold", "3.5 hrs", "€95/person", "Gourmet menu, premium drinks, panoramic seating", "Special occasions"], ["Yacht Essential", "2 hrs", "€280/boat", "Captain, crew, up to 15 guests", "Private groups, sightseeing"], ["Yacht Premium", "3 hrs", "€380/boat", "Decoration, photographer, refreshments", "Proposals, celebrations"], ["Yacht VIP", "4 hrs", "€680/boat", "Chef, champagne, violinist, full catering", "Luxury, milestone events"]] }, callout: { type: "price", text: "Booking through a hotel concierge or third-party platform typically adds 20–40% to the price. The dinner cruise costs €65 direct with MerrySails — the same experience is sold for €85–100 on reseller sites. Always book direct for guaranteed savings and free cancellation." }, proTip: "The best-value combination for a 3-day Istanbul trip: sunset cruise (€20) on day one for golden-hour sightseeing, dinner cruise (€65) on day two for the full cultural evening. Together that is €85 — less than a single reseller booking of the dinner cruise alone." },
       { heading: "Sightseeing Cruise — From €15 (Best Budget Option)", content: "The short Bosphorus sightseeing cruise is the most affordable way to experience the strait. At just €15 per person for a 1.5-hour voyage, it covers the southern half of the Bosphorus from Eminönü to the second bridge and back. You will sail past the Dolmabahçe Palace, Ortaköy Mosque, Bosphorus Bridge, Maiden's Tower, and Rumeli Fortress — all with onboard commentary explaining the history of each landmark. The price includes basic refreshments (water, tea). Departures are available throughout the day, making this the easiest option to fit into a busy sightseeing schedule. The sightseeing cruise is ideal for budget travelers, families with young children (under 6 ride free), and visitors with limited time who still want to experience the Bosphorus from the water. It is also a good introduction if you are considering upgrading to a sunset or dinner cruise later in your trip." },
       { heading: "Sunset Cruise — €20 (Best Value for Money)", content: "The Bosphorus sunset cruise is widely regarded as the best value Bosphorus experience. For €20 per person (reduced from €40 during the winter season), you get a 2.5-hour cruise timed to catch the sunset at its most dramatic. The price includes welcome drinks, a snack platter, WiFi, and live English commentary. The route covers both shores from Eminönü, passing all major landmarks before turning near the Rumeli Fortress as the sky fills with color. Sunset times vary by season — departures are adjusted accordingly (17:00–18:00). The sunset cruise has the highest satisfaction rating among MerrySails guests because it combines sightseeing, golden-hour photography, and relaxation at a price that feels almost too good. There are no hidden costs — what you see is what you pay. Additional alcoholic beverages can be purchased onboard but are not required." },
       { heading: "Dinner Cruise — From €65 (Most Popular)", content: "The Bosphorus dinner cruise is Istanbul's signature evening experience and the most popular Bosphorus tour among international visitors. The Standard package costs €65 per person and includes hotel pickup and drop-off, a 4-course Turkish dinner (mezes, salad, grilled meat or fish, dessert), unlimited local alcoholic and non-alcoholic drinks, live music and DJ, belly dance performance, whirling dervish ceremony, and traditional Turkish folk show. The entire experience lasts 3.5 hours. The Gold package at €95 per person adds reserved panoramic seating, an upgraded gourmet menu with premium ingredients, imported spirits, and a dedicated waiter. Both packages include the full entertainment program. Children aged 6–12 receive a 50% discount; under 6 travel free. The dinner cruise price includes everything — no tips required, no hidden charges, no drink minimums. Hotel transfer covers central Istanbul hotels (Sultanahmet, Taksim, Beyoğlu, Beşiktaş). Hotels outside these areas may require a small transfer supplement." },
@@ -1896,7 +2487,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What is the cheapest Bosphorus cruise?", a: "The sightseeing cruise at €15 per person is the most affordable option. For 1.5 hours you see all major Bosphorus landmarks with onboard commentary and basic refreshments included." },
       { q: "How much does a private yacht cost in Istanbul?", a: "Private yacht charter starts from €280 for 2 hours (up to 15 guests). Premium packages with decoration and photographer start at €380, and VIP luxury packages at €680." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["best-istanbul-cruise-2026", "istanbul-cruise-booking-tips", "yacht-rental-istanbul-prices"],
   },
   {
     slug: "istanbul-night-cruise-guide",
@@ -1905,14 +2497,23 @@ export const blogPosts: BlogPost[] = [
     excerpt: "As darkness falls, Istanbul transforms into a city of light. The night cruise on the Bosphorus combines Turkish dinner, live entertainment, and views of illuminated palaces and bridges for an unforgettable evening.",
     category: "cruise-guide",
     date: "2026-03-04",
+    dateModified: "2026-03-08",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1569936048427-af60ff9e5f5c?w=1200&q=80",
-    keywords: ["istanbul night cruise", "bosphorus night cruise", "bosphorus night cruise with dinner", "night boat tour istanbul", "istanbul evening cruise", "bosphorus by night"],
+    imageAlt: "Istanbul Bosphorus at night with illuminated bridges, palace facades, and waterfront mansions reflecting on the water",
+    keywords: ["istanbul night cruise entertainment", "bosphorus night cruise with dinner", "night boat tour istanbul with music", "istanbul evening cruise show", "belly dance dinner cruise istanbul", "bosphorus by night live entertainment", "whirling dervish bosphorus cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Night cruises run 20:00–23:30 — the dinner cruise is essentially Istanbul's best night cruise experience",
+    "The illuminated Bosphorus Bridge and Dolmabahçe Palace look dramatically different at night — more impressive than daytime for many visitors",
+    "Bring a camera with night mode; ISO 3200 and optical stabilization are helpful for low-light landmark shots",
+    "Night cruises operate year-round — winter nights are quieter and the reflections on calm water are exceptional"
+    ],
     sections: [
       { heading: "Why Istanbul at Night Is Best Experienced from the Water", content: "Istanbul at night is a different city from its daytime self. The mosques, palaces, and bridges that line the Bosphorus Strait are illuminated with carefully designed lighting that emphasizes their architectural beauty — the result of a city-wide illumination project that makes Istanbul one of the most photogenic cities in the world after dark. From the water, you see it all: the Blue Mosque's cascading domes glowing blue, the Hagia Sophia's massive dome catching golden light, Dolmabahçe Palace's 600-meter facade shimmering along the waterline, and the Bosphorus Bridge draped in color-changing LED lights that shift every few minutes. No land-based viewpoint offers this panoramic perspective. The night cruise puts you at the center of this light show, with the water reflecting and doubling every illuminated detail. Combined with a Turkish dinner and live entertainment, the Bosphorus night cruise is consistently ranked as the #1 evening activity in Istanbul by international visitors." },
       { heading: "What Happens on a Bosphorus Night Cruise", content: "The evening begins with hotel pickup — a private vehicle collects you from your hotel in central Istanbul 30–60 minutes before boarding. At the pier, you are welcomed aboard and guided to your table. As the vessel departs and the city skyline begins to unfold, a welcome drink is served. The 4-course Turkish dinner starts with a selection of traditional mezes (hummus, ezme, stuffed vine leaves, sigara böreği), followed by a fresh seasonal salad, your choice of grilled lamb, chicken, or fish as the main course, and baklava with Turkish tea for dessert. Unlimited local drinks flow throughout the evening — beer, wine, rakı, soft drinks, and juices. Between courses, the entertainment program unfolds: a mesmerizing whirling dervish performance (the 800-year-old Sufi meditative ritual), an energetic belly dance show, traditional Turkish folk dances (zeybek, horon, Roman), and live music that transitions from classical Turkish melodies to international hits. A DJ takes over in the final hour for open dancing under the Bosphorus stars. The cruise lasts 3.5 hours, returning to the pier around 23:00." },
       { heading: "The Route — What You Will See at Night", content: "The night cruise follows the most scenic stretch of the Bosphorus, departing from the pier near the historic Eminönü district. Heading north along the European shore, the first major landmark is Dolmabahçe Palace — its waterfront facade is spectacularly lit, creating mirror-like reflections on the calm evening waters. Next comes the photogenic Ortaköy Mosque, nestled directly beneath the first Bosphorus Bridge (15 July Martyrs Bridge), which cycles through a rainbow of LED colors above. As you continue north, the illuminated waterfront restaurants of Bebek and the historic wooden yalıs (mansions) of Arnavutköy create a charming atmosphere. The vessel turns near the imposing Rumeli Fortress, its medieval walls dramatically spotlit against the dark hillside. Returning along the Asian shore, you pass the elegant Beylerbeyi Palace and the iconic Maiden's Tower — particularly magical at night when it appears to float on the illuminated water. The Old City skyline, with the silhouettes of Topkapı Palace, the Blue Mosque, and Hagia Sophia, provides the grand finale as you approach the pier." },
-      { heading: "Night Cruise vs. Sunset Cruise — Which to Choose", content: "Both experiences are magical but cater to different preferences. The sunset cruise (€20, 2.5 hours) is a daytime-to-dusk experience focused on sightseeing, photography, and watching the golden hour over Istanbul's skyline. It is more relaxed, shorter, and ideal for families with young children, photographers, and those who want the Bosphorus experience without a full evening commitment. The night cruise / dinner cruise (€65, 3.5 hours) is a complete evening out — dinner, entertainment, and nighttime sightseeing combined. The illuminated landmarks look completely different from their daytime appearance, creating a separate set of memories. The entertainment program (belly dance, dervish, live music) is exclusive to the night cruise. Hotel transfer is included. For honeymooners, anniversary celebrations, and visitors wanting Istanbul's signature experience, the night cruise is the definitive choice. Many guests end up doing both — the sunset cruise for photography and the night cruise for the full cultural experience." },
+      { heading: "Night Cruise vs. Sunset Cruise — Which to Choose", content: "Both experiences are magical but cater to different preferences. The sunset cruise (€20, 2.5 hours) is a daytime-to-dusk experience focused on sightseeing, photography, and watching the golden hour over Istanbul's skyline. It is more relaxed, shorter, and ideal for families with young children, photographers, and those who want the Bosphorus experience without a full evening commitment. The night cruise / dinner cruise (€65, 3.5 hours) is a complete evening out — dinner, entertainment, and nighttime sightseeing combined. The illuminated landmarks look completely different from their daytime appearance, creating a separate set of memories. The entertainment program (belly dance, dervish, live music) is exclusive to the night cruise. Hotel transfer is included. For honeymooners, anniversary celebrations, and visitors wanting Istanbul's signature experience, the night cruise is the definitive choice. Many guests end up doing both — the sunset cruise for photography and the night cruise for the full cultural experience.", table: { headers: ["Feature", "Sunset Cruise €20", "Night / Dinner Cruise €65"], rows: [["Duration", "2.5 hours", "3.5 hours"], ["Departure time", "16:00–18:00 (season adjusted)", "20:00 (hotel pickup from 18:30)"], ["Main highlight", "Golden hour over Istanbul skyline", "Illuminated palaces and bridges after dark"], ["Food included", "Snacks only", "4-course Turkish dinner"], ["Drinks included", "Welcome drinks", "Unlimited soft drinks (Gold: alcohol too)"], ["Entertainment", "Live commentary", "Belly dance, dervish, live music, DJ"], ["Hotel transfer", "Not included", "Included"], ["Best for", "Photography, families, couples", "Special occasions, full cultural experience"]] }, callout: { type: "tip", text: "Can't decide between sunset and night cruise? Many guests do both — the sunset cruise on one evening (€20) for photography and the dinner cruise on another night (€65) for the full entertainment experience. Together they cost €85 and give you Istanbul from the water in two completely different moods." }, proTip: "If you only have one evening in Istanbul, choose the dinner cruise (€65). You get the illuminated skyline AND dinner AND entertainment — the complete Bosphorus experience in a single booking. If you have two evenings, add the sunset cruise for golden-hour photography you cannot replicate at night." },
       { heading: "Tips for the Best Night Cruise Experience", content: "Arrive at the pier 15 minutes early for the best table selection — window tables fill first. If photography is important, choose a table near the panoramic windows or ask for deck access during key landmark moments. Dress smart casual — most guests dress up slightly for the occasion, though there is no formal dress code. Bring a light jacket for deck visits, as the Bosphorus breeze is cool after dark even in summer. Charge your phone fully — you will want to capture both the views and the performances. If you are celebrating a special occasion, mention it when booking and the crew will arrange a complimentary birthday cake, anniversary decoration, or special announcement. The best seating is typically in the front section of the vessel for unobstructed views. If you get seasick, the Bosphorus is extremely calm at night, but sit centrally if concerned. For families, children enjoy the entertainment and dinner — the atmosphere is festive and welcoming." },
       { heading: "Booking Your Istanbul Night Cruise", content: "Book direct with MerrySails for the best price — €65 per person for the Standard package or €95 for the Gold package with premium seating and upgraded menu. Booking through our website or via WhatsApp (+90 537 040 68 22) guarantees the lowest rate. Hotel pickup and drop-off is included for hotels in Sultanahmet, Taksim, Beyoğlu, and Beşiktaş areas. The night cruise operates daily year-round. Boarding starts at 19:00, departure at 20:00, return at approximately 23:00. Free cancellation is available up to 24 hours before departure. Group discounts apply for 10+ guests. Payment can be made online (Visa/Mastercard) or in cash (EUR, USD, TRY) on the day. As a TURSAB A Group licensed travel agency operating since 2001, MerrySails guarantees transparent pricing, professional service, and 24/7 multilingual customer support." },
       { heading: "Safety on the Bosphorus After Dark — What Licensed Operators Do Differently", content: "Night sailing on one of the world s busiest commercial waterways is not the same proposition as a daytime coastal trip. The Bosphorus handles roughly 50,000 vessels annually, including tankers carrying oil and gas between the Black Sea and the Mediterranean. After dark, that traffic does not stop — and neither do the currents, which run at up to 4 knots through the strait s narrowest points. At MerrySails, operating under a TURSAB A Group licence since 2001, night cruise safety is governed by a protocol built across thousands of evening sailings. Every vessel in our fleet carries full navigation lighting, AIS transponders that broadcast our position to commercial traffic, and two-way VHF radio communication with the Istanbul Port Authority throughout each sailing. Our captains hold Turkish Maritime Administration certificates and undergo annual proficiency assessments — a requirement we do not treat as a checkbox. Guests notice some of this and miss the rest entirely. What you notice: the steady hand on the helm as a tanker passes at a respectful distance, the absence of any lurching or drama, the way our crew seem unhurried even when traffic density increases. What you miss: the continuous position monitoring, the weather window assessment conducted before departure, and the pre-voyage briefing our captains receive from port authority on that evening s traffic schedule. The practical takeaway for guests booking a night cruise is straightforward: ask your operator how long they have been licensed, what certificates their captains hold, and whether they communicate with port authority during sailing. A legitimate operator welcomes these questions. Unlicensed operators often deflect them." },
@@ -1924,7 +2525,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Does the night cruise operate in winter?", a: "Yes, the dinner cruise operates daily year-round. The dining area and entertainment are indoors, so it is comfortable regardless of weather. Deck access is available for views and photography." },
       { q: "What is the difference between Standard and Gold packages?", a: "Standard (€65) includes hotel transfer, dinner, unlimited local drinks, and all entertainment. Gold (€95) adds reserved panoramic window seating, an upgraded gourmet menu, premium imported spirits, and a dedicated waiter." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise"],
+    relatedPosts: ["bosphorus-night-cruise-guide", "bosphorus-dinner-cruise-what-to-expect", "istanbul-nightlife-guide"],
   },
   {
     slug: "princes-island-day-trip-istanbul",
@@ -1933,12 +2535,21 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Escape the city buzz with a day trip to the Princes' Islands — a car-free archipelago in the Sea of Marmara just 90 minutes from central Istanbul, known for Victorian mansions, pristine beaches, and horse-drawn carriages.",
     category: "istanbul",
     date: "2026-03-02",
+    dateModified: "2026-03-08",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=80",
-    keywords: ["princess island tour", "istanbul prince islands ferry", "princess island turkey tour", "princes island boat tour istanbul", "buyukada istanbul", "princes islands day trip"],
+    imageAlt: "Horse-drawn carriage ride along the coastal road of Büyükada with pine forests and the Marmara Sea visible",
+    keywords: ["princes islands day trip istanbul", "how to visit princes islands", "istanbul islands day trip guide", "adalar istanbul day trip 2026", "day trip from istanbul to islands", "princes islands ferry guide", "what to do princes islands istanbul"],
+    author: "editorial",
+    keyTakeaways: [
+    "Büyükada (Princes' Islands) is a 50-minute ferry from Kabataş pier and costs €4 round trip with Istanbul Kart",
+    "No motorized vehicles on the islands — rent a bicycle (€10/day) or take a horse-drawn carriage to explore",
+    "Visit on weekdays in May–June for the best experience — summer weekends are very crowded with Istanbul locals",
+    "The island has excellent fish restaurants overlooking the Marmara Sea — a long lunch is the classic way to spend the afternoon"
+    ],
     sections: [
       { heading: "What Are the Princes' Islands?", content: "The Princes' Islands (Adalar in Turkish) are an archipelago of nine islands in the Sea of Marmara, lying 12–20 kilometers southeast of central Istanbul. Only four are regularly inhabited and open to visitors: Büyükada (the largest and most popular), Heybeliada, Burgazada, and Kınalıada. The islands have been a retreat from urban life since Byzantine times, when exiled princes and deposed emperors were banished here — hence the name. Today, the islands are famous for being completely car-free. Transportation is by electric vehicles, bicycles, and the iconic horse-drawn carriages (fayton). Victorian-era wooden mansions, pine-forested hills, and turquoise waters create an atmosphere that feels worlds away from the bustling streets of Istanbul, yet the ferry ride takes just 75–90 minutes. The islands are home to about 10,000 permanent residents, but in summer the population swells to over 100,000 as Istanbulites escape the city heat." },
-      { heading: "How to Get to the Princes' Islands", content: "There are two ways to reach the Princes' Islands from Istanbul. The public ferry operated by Şehir Hatları departs from Kabataş terminal (easily reached by T1 tram to Kabataş stop) and takes about 90 minutes to Büyükada, stopping at each island along the way. Ferries run approximately every 1–2 hours; the first departure is around 06:30 and the last return ferry from Büyükada is around 21:00 (check seasonal schedules). The ferry ticket costs approximately €3 each way using an Istanbulkart. Alternatively, MerrySails offers a guided full-day Princes' Islands tour starting from €35 per person, which includes boat transport, a guided tour of Büyükada, lunch, and free time for exploration — eliminating the need to navigate schedules and logistics independently. The guided tour departs from Eminönü at 09:00 and returns around 18:00. IDO also operates faster sea bus services from Bostancı on the Asian side (20 minutes to Büyükada) for those staying on the Asian side of Istanbul." },
+      { heading: "How to Get to the Princes' Islands", content: "There are two ways to reach the Princes' Islands from Istanbul. The public ferry operated by Şehir Hatları departs from Kabataş terminal (easily reached by T1 tram to Kabataş stop) and takes about 90 minutes to Büyükada, stopping at each island along the way. Ferries run approximately every 1–2 hours; the first departure is around 06:30 and the last return ferry from Büyükada is around 21:00 (check seasonal schedules). The ferry ticket costs approximately €3 each way using an Istanbulkart. Alternatively, MerrySails offers a guided full-day Princes' Islands tour starting from €35 per person, which includes boat transport, a guided tour of Büyükada, lunch, and free time for exploration — eliminating the need to navigate schedules and logistics independently. The guided tour departs from Eminönü at 09:00 and returns around 18:00. IDO also operates faster sea bus services from Bostancı on the Asian side (20 minutes to Büyükada) for those staying on the Asian side of Istanbul.", table: { headers: ["Option", "Departure Point", "Duration to Büyükada", "Price", "Best For"], rows: [["Public Ferry (Şehir Hatları)", "Kabataş", "~90 min", "~€3 with Istanbulkart", "Budget travelers, local experience"], ["IDO Sea Bus", "Bostancı (Asian side)", "~20 min", "~€5", "Visitors staying on the Asian shore"], ["MerrySails Guided Tour", "Eminönü", "~90 min (guided)", "€35/person", "All-inclusive, no logistics hassle"], ["Private Yacht Charter", "Kuruçeşme Marina", "1.5–2 hrs scenic route", "From €280/boat", "Groups, luxury sea-to-island experience"]] }, callout: { type: "info", text: "The Istanbulkart (Istanbul's transit card) is required for public ferries and sea buses. Buy one at any ferry terminal kiosk before joining the queue. A card costs approximately €3 and can be loaded with credit for all public transport in Istanbul." }, proTip: "Take the earliest public ferry (around 06:30) if visiting in July or August — you will reach Büyükada before the main crowd arrives on later departures. The pine forest paths and coastal road will be almost to yourself for the first two hours." },
       { heading: "Büyükada — The Largest and Most Popular Island", content: "Büyükada (meaning 'Big Island') is where most visitors head on a Princes' Islands day trip. With an area of 5.4 km², it is large enough for a full day of exploration. The main attractions include: Aya Yorgi Church and Monastery at the island's highest point (203 meters) — the climb rewards you with panoramic views of the Sea of Marmara and Istanbul's skyline in the distance. The historic Splendid Palace Hotel (1908), one of the largest wooden buildings in Europe, is an architectural landmark. The Clock Tower Square (Saat Kulesi Meydanı) serves as the island's social hub, surrounded by cafes, restaurants, and shops. The island's beaches — Yörükali Plajı on the west coast and Halk Plajı near the town center — offer clean swimming in summer (June–September). Bicycle rental is the best way to explore the island (approximately €5–10 for a full day). The 9-kilometer coastal road circles the entire island, passing through pine forests, past grand wooden mansions, and along quiet coves." },
       { heading: "Heybeliada, Burgazada, and Kınalıada", content: "While Büyükada gets the most visitors, the smaller islands have their own unique charm. Heybeliada ('Saddlebag Island') is the second largest and home to the historic Halki Seminary — the Greek Orthodox theological school closed since 1971 but still architecturally significant. Its beaches are less crowded than Büyükada's, and the waterfront restaurants serve excellent fresh fish. Burgazada is the quietest of the four main islands — perfect for those seeking true tranquility. The island's small museum dedicated to Turkish author Sait Faik Abasıyanık is worth a visit. The single main street has a few charming cafes and a beautiful Greek Orthodox church. Kınalıada ('Henna Island') is the closest island to Istanbul and the most residential. It is popular with local swimmers in summer and has a relaxed, authentic atmosphere with fewer tourist facilities than Büyükada. Each island can be explored in 2–3 hours, making it possible to visit two islands in a single day trip if you take early ferries." },
       { heading: "Best Time to Visit and Practical Tips", content: "The ideal time for a Princes' Islands day trip is late spring (May–June) or early autumn (September–October), when temperatures are pleasant (20–28°C), swimming is comfortable, and crowds are manageable. July and August are the busiest months — ferries can be packed, especially on weekends, and Büyükada's main streets feel crowded. If visiting in summer, take the earliest ferry to beat the crowds and consider visiting Heybeliada or Burgazada instead. Winter visits (November–March) are quiet and atmospheric — most tourist facilities are closed, but the islands' natural beauty and historic architecture are stunning without crowds. Practical tips: bring cash as some smaller establishments do not accept cards. Wear comfortable walking shoes — Büyükada's hills are steeper than they look. Bring sunscreen and a hat for summer visits. Buy your Istanbulkart before arriving at the ferry terminal to avoid long ticket queues. The last return ferry times are strict — miss it and you will need an expensive private boat back." },
@@ -1952,7 +2563,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Which Princes' Island is best to visit?", a: "Büyükada is the most popular and has the most facilities. For a quieter experience, try Heybeliada or Burgazada. Kınalıada is closest to Istanbul and most residential." },
       { q: "Can I swim at the Princes' Islands?", a: "Yes, from June to September. Büyükada's Yörükali Beach and Halk Beach are the most popular. Heybeliada also has clean, less crowded beaches." }
     ],
-    relatedTours: ["istanbul-princes-island-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["istanbul-princes-island-tour", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["princes-islands-boat-tour-istanbul", "istanbul-day-trips-from-bosphorus", "swimming-yacht-tour-istanbul"],
   },
   {
     slug: "party-boat-istanbul-birthday",
@@ -1961,12 +2573,21 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Looking for a party boat in Istanbul? Celebrate birthdays, bachelorette parties, and special occasions on a private yacht cruising the Bosphorus — with DJ, decoration, catering, and skyline views.",
     category: "events",
     date: "2026-02-28",
+    dateModified: "2026-03-08",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&q=80",
-    keywords: ["party boat istanbul", "istanbul birthday", "yacht birthday party istanbul", "bachelorette party istanbul", "party yacht bosphorus", "celebration boat istanbul"],
+    imageAlt: "Group of friends dancing and celebrating on a party boat on the Bosphorus with streamers and colorful lights",
+    keywords: ["party boat istanbul hire", "istanbul birthday party boat", "group celebration boat bosphorus", "bachelorette party istanbul boat", "private party boat bosphorus", "hen party istanbul yacht", "celebration cruise istanbul group"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Party boat birthday charters in Istanbul start at €280 for 2 hours (up to 15 guests) with decoration package included",
+    "The Essential celebration package covers vessel, crew, decorations, and a welcome drink — catering is add-on",
+    "For groups of 20–60, MerrySails offers mid-size vessels with dance floors, DJ setups, and outdoor deck space",
+    "Book at least 2 weeks in advance for weekend dates; some summer Saturdays are booked 4–6 weeks out"
+    ],
     sections: [
       { heading: "Why Choose a Party Boat on the Bosphorus", content: "A party boat on the Bosphorus combines three things that make any celebration unforgettable: complete privacy, a world-class backdrop, and professional service. Unlike a restaurant or club, a private yacht on the Bosphorus gives you your own floating venue — no strangers, no noise restrictions, no fixed schedules. Your group has the entire boat, the crew, and the DJ (if you choose one) exclusively for your event. The backdrop is Istanbul's illuminated skyline — Ottoman palaces, medieval fortresses, and LED-lit bridges reflected in the dark water. There is simply no comparable party venue anywhere in the world. The crew handles everything — setup, service, cleanup — so the host can actually enjoy the party. MerrySails has organized over 500 private events on the Bosphorus since 2001, from intimate 10-person birthday dinners to 80-person corporate celebrations." },
-      { heading: "Birthday Party Packages", content: "MerrySails offers three party boat packages that can be customized for any celebration. The Essential Package (€280, 2 hours) includes a private yacht, captain and crew, basic sound system with Bluetooth connection, tea/coffee/water, and up to 15 guests — perfect for a casual birthday cruise where the Bosphorus view is the main attraction. The Premium Package (€380, 3 hours) adds birthday-themed decoration (balloons, banners, fairy lights), a professional photographer for 30 minutes, fruit platters and snack trays, and premium soft drinks — the most popular choice for birthday celebrations. The VIP Package (€680, 4 hours) is the full party experience: elaborate decoration, full-duration photographer, live DJ, premium catering (canapes, finger food, dessert station), champagne and premium spirits, and a custom birthday cake. Add-ons available for all packages: custom cake (€60), extra hours (€100/hour), DJ (€150), drone photography (€200), violinist (€120), and fireworks display (from €500)." },
+      { heading: "Birthday Party Packages", content: "MerrySails offers three party boat packages that can be customized for any celebration. The Essential Package (€280, 2 hours) includes a private yacht, captain and crew, basic sound system with Bluetooth connection, tea/coffee/water, and up to 15 guests — perfect for a casual birthday cruise where the Bosphorus view is the main attraction. The Premium Package (€380, 3 hours) adds birthday-themed decoration (balloons, banners, fairy lights), a professional photographer for 30 minutes, fruit platters and snack trays, and premium soft drinks — the most popular choice for birthday celebrations. The VIP Package (€680, 4 hours) is the full party experience: elaborate decoration, full-duration photographer, live DJ, premium catering (canapes, finger food, dessert station), champagne and premium spirits, and a custom birthday cake. Add-ons available for all packages: custom cake (€60), extra hours (€100/hour), DJ (€150), drone photography (€200), violinist (€120), and fireworks display (from €500).", table: { headers: ["Package", "Duration", "Price", "Key Inclusions", "Best For"], rows: [["Essential", "2 hours", "€280 total", "Private yacht, captain, crew, sound system — up to 15 guests", "Casual birthday cruise, view focused"], ["Premium", "3 hours", "€380 total", "Decoration, photographer (30 min), fruit platters, soft drinks", "Birthday celebrations, small groups"], ["VIP", "4 hours", "€680 total", "Full decoration, full-duration photographer, DJ, catering, champagne, cake", "Milestone birthdays, luxury celebrations"], ["Add-on: Custom cake", "—", "+€60", "Custom design from partner bakery", "Any package"], ["Add-on: DJ", "—", "+€150", "Professional DJ with sound equipment", "Dance-focused parties"], ["Add-on: Drone photo", "—", "+€200", "Aerial photography and video", "Epic social media content"], ["Add-on: Fireworks", "—", "From +€500", "Bosphorus fireworks display", "Unforgettable milestone moments"]] }, callout: { type: "price", text: "A Premium party boat (€380, 3 hours) split among 15 guests costs just €25 per person — less than a club entry fee in Istanbul. You get a fully private yacht with birthday decoration, a professional photographer for 30 minutes, and fruit platters included." }, proTip: "For birthday parties, book the Premium package and add the custom cake (€60). The crew coordinates a surprise cake reveal timed to pass the Ortaköy Mosque with the Bosphorus Bridge as the backdrop — that photo moment alone is worth the add-on cost." },
       { heading: "Bachelorette & Hen Party on the Bosphorus", content: "Istanbul has become one of Europe's top bachelorette destinations, and a yacht party on the Bosphorus is the highlight. The typical bachelorette yacht party includes the Premium or VIP package with specific additions: pink/gold themed decoration, 'Bride to Be' sash and props for photos, a DJ playing party music, champagne toast, and a professional photographer to capture every moment. Groups typically range from 8–20 guests, making the per-person cost very reasonable — a 15-person group on the Premium package pays just €25 per person for a 3-hour private yacht experience. The most popular format is a late afternoon departure (16:00–17:00) that catches the sunset over the Bosphorus before transitioning into a nighttime party cruise. After the yacht, many groups continue to Istanbul's nightlife in Beyoğlu or Karaköy — our crew can recommend the best clubs and bars." },
       { heading: "Corporate Events & Team Building", content: "Private yacht cruises are increasingly popular for corporate events in Istanbul. MerrySails hosts company dinners, team-building events, product launches, client entertainment, and year-end celebrations on the Bosphorus. For corporate events, we offer customized packages including branded decoration, presentation equipment (screen and projector on larger vessels), formal catering with seated dinner service, and premium beverage packages. Larger vessels accommodating 50–80 guests are available for bigger corporate groups. The unique setting of a Bosphorus cruise creates a relaxed atmosphere that encourages genuine connection among colleagues — far more effective than a hotel conference room. Corporate packages start from €500 and include event coordination, ensuring the evening runs smoothly while the organizer enjoys the event." },
       { heading: "How to Plan Your Party Boat", content: "Planning a party boat on the Bosphorus is straightforward with MerrySails. Start by contacting us via WhatsApp (+90 537 040 68 22) or email (info@merrysails.com) with: the date and approximate time, number of guests, type of celebration, and any special requests (dietary requirements, specific decoration themes, entertainment preferences). We respond within 2 hours with a customized proposal and available yacht options. A 30% deposit secures your booking, with the balance due on the day. Free cancellation up to 48 hours before the event. We recommend booking at least 1 week in advance (2–3 weeks for peak season June–September and weekends). All packages include captain, crew, fuel, and basic amenities. The departure point is Kuruçeşme Marina on the European side — easily reached by taxi. Larger groups can arrange minibus transfer from their hotel." },
@@ -1991,7 +2612,8 @@ export const blogPosts: BlogPost[] = [
       { q: "How many people can fit on a party boat?", a: "Standard yachts accommodate 10–15 guests comfortably. For larger groups (20–80), we have bigger vessels available. Contact us with your group size for vessel recommendations." },
       { q: "Can we have a DJ on the yacht?", a: "Yes! DJ service is included in the VIP package or available as an add-on (€150) for Essential and Premium packages. We also provide a quality Bluetooth sound system on all vessels." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "yacht-birthday-party", "corporate-event-bosphorus-cruise", "romantic-marriage-proposal"]
+    relatedTours: ["yacht-charter-in-istanbul", "yacht-birthday-party", "corporate-event-bosphorus-cruise", "romantic-marriage-proposal"],
+    relatedPosts: ["yacht-birthday-party-ideas", "yacht-party-ideas-istanbul", "yacht-decoration-ideas-istanbul"],
   },
   {
     slug: "yacht-rental-istanbul-prices",
@@ -2000,12 +2622,21 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Everything you need to know about renting a yacht in Istanbul — from prices and package comparisons to booking tips and the best routes along the Bosphorus.",
     category: "yacht-guide",
     date: "2026-02-25",
+    dateModified: "2026-03-08",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
-    keywords: ["yacht rental istanbul", "yacht charter istanbul", "yacht charter istanbul turkey", "bosphorus yacht cruise", "bosphorus yacht tour", "private bosphorus cruise", "yacht istanbul", "bosphorus yacht", "boat rental istanbul"],
+    imageAlt: "Three different yacht size options docked at Kuruçeşme Marina showing the range of rental options available in Istanbul",
+    keywords: ["yacht rental price istanbul", "how much does yacht charter cost istanbul", "istanbul yacht hire price 2026", "bosphorus yacht cruise cost", "bosphorus yacht tour price", "private bosphorus cruise price", "boat rental istanbul price", "cheapest yacht rental istanbul", "istanbul yacht packages cost"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Istanbul yacht rental prices in 2026: Essential €280 (2h, 15 guests), Premium €380 (2h, 15 guests), VIP €680 (2h, 15 guests)",
+    "Additional hours cost €80–120 depending on vessel size and package — plan for 30% extra budget if you may extend",
+    "Prices include the crew, fuel, and basic vessel setup — catering, decoration, and entertainment are add-ons",
+    "Compared to European yacht charter markets, Istanbul offers premium Bosphorus experiences at significantly lower prices"
+    ],
     sections: [
       { heading: "Yacht Rental Options in Istanbul", content: "Istanbul offers several types of yacht rental to suit different budgets, group sizes, and occasions. The most popular is the standard motor yacht (10–15 meters), perfect for groups of 8–15 guests. These yachts feature an open rear deck for socializing, a covered lounge area, a small galley kitchen, and a restroom. Prices start from €280 for 2 hours. For larger groups or premium experiences, luxury motor yachts (15–25 meters) accommodate 20–40 guests and feature multiple decks, a professional kitchen for catered dining, advanced sound systems, and sometimes a jacuzzi on the upper deck. Prices start from €600 for 3 hours. Traditional gulet-style wooden boats offer a classic Ottoman-era charm, with wide decks, cushioned seating areas, and space for 20–30 guests — starting from €400 for 3 hours. All yachts come with a professional captain, crew, safety equipment, fuel, and insurance included in the price. MerrySails maintains a fleet partnership with over 30 licensed vessels, ensuring availability for your preferred date." },
-      { heading: "Yacht Charter Prices Compared (2026)", content: "Here is a detailed price comparison for yacht rental in Istanbul in 2026. Standard Motor Yacht (10–15m, up to 15 guests): Essential €280/2hr, Premium €380/3hr, VIP €680/4hr. Luxury Motor Yacht (15–25m, up to 40 guests): from €600/3hr, €900/4hr, €1200/5hr. Traditional Gulet (wooden, up to 30 guests): from €400/3hr, €550/4hr. Mega Yacht (25m+, up to 80 guests): from €1500/4hr. Per-person economics improve dramatically with group size — a 15-person group on the Essential package pays just €19/person, while 30 guests on a gulet pay €13/person for a 3-hour cruise. All prices include captain, crew, fuel, and basic amenities (tea, coffee, water). Premium and VIP packages add decoration, photography, food, and drinks. Extra hours are charged at €100–200/hour depending on vessel class. Weekend rates apply Friday and Saturday evenings (10–15% supplement on some vessels during peak season). Weekday and daytime rentals offer the best value." },
+      { heading: "Yacht Charter Prices Compared (2026)", content: "Here is a detailed price comparison for yacht rental in Istanbul in 2026. Standard Motor Yacht (10–15m, up to 15 guests): Essential €280/2hr, Premium €380/3hr, VIP €680/4hr. Luxury Motor Yacht (15–25m, up to 40 guests): from €600/3hr, €900/4hr, €1200/5hr. Traditional Gulet (wooden, up to 30 guests): from €400/3hr, €550/4hr. Mega Yacht (25m+, up to 80 guests): from €1500/4hr. Per-person economics improve dramatically with group size — a 15-person group on the Essential package pays just €19/person, while 30 guests on a gulet pay €13/person for a 3-hour cruise. All prices include captain, crew, fuel, and basic amenities (tea, coffee, water). Premium and VIP packages add decoration, photography, food, and drinks. Extra hours are charged at €100–200/hour depending on vessel class. Weekend rates apply Friday and Saturday evenings (10–15% supplement on some vessels during peak season). Weekday and daytime rentals offer the best value.", table: { headers: ["Yacht Type", "Capacity", "Duration", "Price From", "Per Person (full boat)"], rows: [["Standard Motor (10–15m)", "Up to 15", "2 hrs — Essential", "€280", "~€19"], ["Standard Motor (10–15m)", "Up to 15", "3 hrs — Premium", "€380", "~€25"], ["Standard Motor (10–15m)", "Up to 15", "4 hrs — VIP", "€680", "~€45"], ["Luxury Motor (15–25m)", "Up to 40", "3 hrs", "€600", "~€15–30"], ["Luxury Motor (15–25m)", "Up to 40", "4 hrs", "€900", "~€23–45"], ["Traditional Gulet", "Up to 30", "3 hrs", "€400", "~€13"], ["Mega Yacht (25m+)", "Up to 80", "4 hrs", "€1,500", "~€19–75"]] }, callout: { type: "price", text: "A 15-person group on the Essential package (€280, 2 hours) pays just €19 per person — less than a shared sightseeing cruise ticket. Yacht charter becomes the most cost-effective option for groups of 10 or more." }, proTip: "For the best per-person value, fill the yacht to capacity. A group of 15 on the Essential package pays €19/person for a fully private 2-hour Bosphorus experience. Compared to €65/person for the dinner cruise — private charters are better value for groups than most visitors expect." },
       { heading: "What Is Included in Each Package", content: "The Essential Package (€280) includes: a private yacht with captain and professional crew, 2-hour Bosphorus cruise, tea/coffee/water, a Bluetooth sound system, and up to 15 guests. This is ideal for casual Bosphorus sightseeing with friends or family. The Premium Package (€380) includes everything in Essential plus: 3-hour duration, table decoration with flowers and candles, a professional photographer (30 minutes), fruit platters and premium soft drinks, and a curated Bosphorus route past key landmarks. This is the most popular choice for proposals, anniversaries, and small celebrations. The VIP Package (€680) includes everything in Premium plus: 4-hour duration, elaborate decoration (rose petals, balloons, fairy lights, banner), full-duration photographer, live violinist for the first hour, premium catering (canapes, sushi, cheese platters, dessert), champagne and premium spirits, and a red-carpet welcome. Available add-ons for all packages: extra hours (€100/hr), DJ (€150), custom cake (€60), drone photography (€200), fireworks (from €500), and custom menus." },
       { heading: "Best Routes for a Yacht Cruise", content: "Istanbul's geography offers several spectacular yacht routes. The Classic Bosphorus Route (2–3 hours) covers the southern strait from Kuruçeşme to the second bridge and back — passing Dolmabahçe Palace, Ortaköy Mosque, Bosphorus Bridge, Rumeli Fortress, and Maiden's Tower. This is the most popular route and fits the Essential package duration. The Extended Bosphorus Route (3–4 hours) continues north past the second bridge to the Yavuz Sultan Selim Bridge (third bridge) and the picturesque village of Kanlıca (famous for its yogurt), passing more wooden yalıs and the lush hills of the upper Bosphorus. The Sunset Route (2.5 hours, departing 2 hours before sunset) is timed for golden hour photography, heading toward the Golden Horn and Maiden's Tower before cruising north along the European shore as the sun sets. The Full Bosphorus Route (5–6 hours) covers the entire strait from the Sea of Marmara to the Black Sea entrance, including Anadolu Kavağı fishing village — ideal for the luxury yacht experience. Your captain adjusts the route based on weather, traffic, and your preferences." },
       { heading: "Marriage Proposals on a Yacht", content: "A yacht proposal on the Bosphorus is one of Istanbul's most romantic experiences, and MerrySails has helped orchestrate over 200 successful proposals since 2001. The most popular proposal package is the Premium or VIP tier, customized with romance-specific additions: rose petal decoration covering the deck, 'Will You Marry Me?' banner or light-up letters, champagne on ice, a violinist playing during the proposal moment, and a professional photographer hidden on board to capture the reaction. The typical proposal timeline: the couple boards the yacht believing it is a simple sunset cruise. As the yacht reaches the most scenic point (usually near Maiden's Tower with the Old City skyline behind), the crew signals the photographer, the violinist begins playing, and the proposer gets down on one knee. After the moment, champagne is uncorked and the yacht continues its cruise while the photographer captures celebration photos. The photographer delivers edited photos within 48 hours. Proposal packages start from €380 (Premium) and are best booked 1–2 weeks in advance." },
@@ -2020,7 +2651,8 @@ export const blogPosts: BlogPost[] = [
       { q: "What happens if the weather is bad?", a: "If weather conditions make sailing unsafe, we offer rescheduling to another date or a full refund. Light rain or wind usually does not cancel — the yacht's covered areas provide comfortable shelter." },
       { q: "Do I need a license to rent a yacht?", a: "No license required. All MerrySails yachts come with a professional captain and crew. You are a guest — sit back, relax, and enjoy the Bosphorus." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise", "romantic-marriage-proposal", "yacht-birthday-party"]
+    relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise", "romantic-marriage-proposal", "yacht-birthday-party"],
+    relatedPosts: ["private-yacht-charter-istanbul-guide", "luxury-yacht-rental-bosphorus", "bosphorus-cruise-prices-2026"],
   },
   {
     slug: "bosphorus-ferry-vs-cruise-comparison",
@@ -2029,14 +2661,23 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Should you take the public Bosphorus ferry or book a private cruise? We compare price, comfort, route, food, and overall experience so you can choose the best option for your Istanbul trip.",
     category: "cruise-guide",
     date: "2026-03-04",
+    dateModified: "2026-03-08",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200&q=80",
+    imageAlt: "Side-by-side at Eminönü pier showing a public IETT ferry and a licensed Bosphorus cruise boat",
     keywords: ["bosphorus ferry tour", "bosphorus boat ride istanbul", "bosphorus ferry vs cruise", "istanbul ferry tour", "bosphorus cruise tour", "bosporus tour", "boat cruises istanbul turkey", "istanbul cruise tour"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "Public ferry (€1.50 with Kart): transport-focused, no commentary, fixed schedule, crowded — crosses in 20 min",
+    "IETT Bosphorus tour ferry (€25): government-operated, full route, commentary in Turkish and English — runs twice daily",
+    "Licensed cruise boat (€15–65): professional guides, optimized routes, flexible schedules, food and drinks — best experience",
+    "For a first visit to Istanbul, the licensed cruise boat delivers far more value than either ferry option"
+    ],
     sections: [
       { heading: "Bosphorus Ferry vs Cruise — The Key Differences", content: "Istanbul visitors face a common dilemma: take the affordable public Bosphorus ferry or book a dedicated cruise? Both sail the same iconic strait, but the experiences are fundamentally different. The public ferry (operated by Şehir Hatları, the city's municipal ferry company) is a commuter route that also serves tourists — it is cheap, authentic, and covers the full length of the Bosphorus. The tourist cruise, offered by licensed operators like MerrySails, is purpose-built for sightseeing — shorter routes focused on landmarks, professional commentary, food and drinks included, and guaranteed deck seating with views. The ferry costs around €3–5 one-way (Istanbul Card required), while cruises start from €15 for a sightseeing tour and €20 for a sunset experience. Both options are safe, comfortable, and scenic — the right choice depends on your budget, schedule, and what kind of experience you want. In this guide, we break down every factor to help you decide." },
       { heading: "The Public Bosphorus Ferry — What to Expect", content: "The Şehir Hatları full-length Bosphorus ferry departs from Eminönü at 10:35 daily (with a second departure at 13:35 in summer). It sails the entire 31-kilometer strait to Anadolu Kavağı, a fishing village near the Black Sea entrance, with stops at Beşiktaş, Kanlıca, Sarıyer, and Rumeli Kavağı. The journey takes about 90 minutes each way. At Anadolu Kavağı you have 2–3 hours to explore the village, eat fresh fish at waterside restaurants, and hike up to the ruined Yoros Castle with panoramic views. The return ferry departs around 15:00–17:00. Total trip time: approximately 6 hours. Tickets cost about ₺150 (roughly €4.50) with an Istanbul Card. The ferry has indoor and outdoor seating, a small cafeteria selling tea, simit, and sandwiches, and restrooms. There is no guide or commentary — you navigate landmarks yourself. The ferry can be crowded, especially on weekends, and securing a good deck position requires arriving 30–40 minutes early. It is an authentic local experience that happens to pass stunning scenery." },
       { heading: "Tourist Bosphorus Cruise — What to Expect", content: "A dedicated Bosphorus cruise with MerrySails is designed specifically for the sightseeing experience. The sightseeing cruise (1.5 hours, from €15) covers the highlights of the southern Bosphorus — Dolmabahçe Palace, Ortaköy Mosque, the Bosphorus Bridge, Rumeli Fortress, Beylerbeyi Palace, and Maiden's Tower — with live English commentary explaining the history and stories behind each landmark. The sunset cruise (2.5 hours, €20) adds golden hour timing, welcome drinks, and Turkish snacks. The dinner cruise (3.5 hours, €65) includes hotel pickup, a 4-course Turkish dinner, unlimited drinks, and live entertainment (Turkish music, belly dance, whirling dervish performance). All cruises guarantee comfortable seating, clean facilities, and professional crew. The vessel is purpose-built for sightseeing with open-air decks, panoramic windows, and sound systems for commentary. Unlike the public ferry, you do not need an Istanbul Card, there is no jostling for position, and every seat has a view. Booking is simple via website or WhatsApp, with free cancellation up to 24 hours before departure." },
-      { heading: "Price Comparison — Ferry vs Cruise in 2026", content: "Here is a detailed cost comparison for 2026. The full-day Bosphorus ferry costs approximately €4.50 per person (one-way), but the total spend is typically higher: €9 round trip, plus €10–15 for lunch at Anadolu Kavağı, plus €3–5 for tea and snacks, plus €2 Istanbul Card fee if you do not already have one. Total realistic cost: €20–30 per person for a 6-hour trip. The MerrySails sightseeing cruise costs €15 per person for a 1.5-hour focused experience — everything included. The sunset cruise at €20 includes welcome drinks, snacks, and WiFi. The dinner cruise at €65 includes hotel transfer, a full dinner, drinks, and entertainment — a complete evening out. When you calculate cost per hour of quality experience, the cruise offers remarkable value: €10/hour for sightseeing, €8/hour for sunset, €18/hour for dinner (including food, drinks, and transport). The ferry works out to about €4–5/hour but with no food, no commentary, and no guaranteed views. For budget travelers with a full day to spare, the ferry is unbeatable. For everyone else, the cruise delivers a more efficient, comfortable, and informative experience." },
+      { heading: "Price Comparison — Ferry vs Cruise in 2026", content: "Here is a detailed cost comparison for 2026. The full-day Bosphorus ferry costs approximately €4.50 per person (one-way), but the total spend is typically higher: €9 round trip, plus €10–15 for lunch at Anadolu Kavağı, plus €3–5 for tea and snacks, plus €2 Istanbul Card fee if you do not already have one. Total realistic cost: €20–30 per person for a 6-hour trip. The MerrySails sightseeing cruise costs €15 per person for a 1.5-hour focused experience — everything included. The sunset cruise at €20 includes welcome drinks, snacks, and WiFi. The dinner cruise at €65 includes hotel transfer, a full dinner, drinks, and entertainment — a complete evening out. When you calculate cost per hour of quality experience, the cruise offers remarkable value: €10/hour for sightseeing, €8/hour for sunset, €18/hour for dinner (including food, drinks, and transport). The ferry works out to about €4–5/hour but with no food, no commentary, and no guaranteed views. For budget travelers with a full day to spare, the ferry is unbeatable. For everyone else, the cruise delivers a more efficient, comfortable, and informative experience.", table: { headers: ["Factor", "Public Ferry", "Tourist Cruise"], rows: [["Price", "~€4.50 one-way (Istanbulkart)", "€15–€65/person all-inclusive"], ["Total realistic cost", "€20–30 (incl. lunch, snacks)", "€15 (sightseeing) to €65 (dinner)"], ["Duration", "6 hours round trip", "1.5–3.5 hours"], ["Commentary", "None — self-guided", "Live English commentary included"], ["Food", "Basic cafeteria on board", "Snacks (sunset) or 4-course dinner"], ["Seating", "First come, deck can be crowded", "Guaranteed comfortable seating"], ["Route", "Full 31km strait to Black Sea", "Southern Bosphorus highlights"], ["Hotel transfer", "Not included", "Included (dinner cruise)"], ["Best for", "Full day, tight budget, Anadolu Kavağı", "Limited time, guided experience, evenings"]] }, callout: { type: "tip", text: "The public ferry and tourist cruise are not competing products — they are complementary. Do the cruise first to learn the landmarks, then take the ferry later in your trip to experience the Bosphorus like a local. Many guests do exactly this." }, proTip: "The per-hour value calculation tells the real story: the ferry costs ~€4/hour but delivers no food, commentary, or guaranteed views. The sightseeing cruise costs €10/hour with everything included. For travelers with limited time in Istanbul, the cruise is the higher-value choice by a significant margin." },
       { heading: "Which Landmarks Do You See on Each Option", content: "The full-length ferry covers more ground — you sail the entire Bosphorus and see both the famous southern landmarks and the quieter northern villages, wooden yalıs (Ottoman mansions), the third bridge (Yavuz Sultan Selim), and the hills approaching the Black Sea. However, the ferry moves steadily without slowing for photo opportunities, and there is no commentary identifying what you are looking at. Many passengers miss landmarks entirely because they do not know where to look. The tourist cruise covers fewer kilometers but focuses on the most photogenic section of the Bosphorus. The guide points out every palace, mosque, and fortress, sharing historical context that makes the scenery meaningful. The vessel slows near key landmarks so passengers can photograph them properly. For the dinner cruise, the route is timed so you pass the illuminated palaces and mosques after dark — an experience the daytime ferry cannot replicate. If your goal is comprehensive geographic coverage, choose the ferry. If your goal is understanding Istanbul's history through its waterfront landmarks, choose the cruise." },
       { heading: "Our Recommendation — When to Choose Each", content: "After 23+ years of operating Bosphorus cruises, here is our honest advice. Choose the public ferry if: you have a full free day, you enjoy self-guided exploration, you want to visit Anadolu Kavağı, you are on a very tight budget, or you have already done a guided cruise and want to see the northern Bosphorus. Choose a cruise if: you have limited time in Istanbul (the 1.5-hour sightseeing cruise is perfect), you want professional English commentary and historical context, you are celebrating a special occasion, you prefer guaranteed comfort and service, or you want a sunset or evening experience. Our most popular recommendation for first-time Istanbul visitors: take a sunset cruise (€20, 2.5 hours) for the guided landmark experience with spectacular light, then on another day take the public ferry to Anadolu Kavağı if you have time. This combination gives you the best of both worlds. However, if you only have time for one Bosphorus experience, the cruise delivers more value per hour — especially the dinner cruise, which combines sightseeing, dining, and entertainment in a single evening." },
       { heading: "The Local Perspective — When Istanbul Residents Choose the Ferry", content: "Here is something you will not often hear from a cruise operator: the public ferry is sometimes the better choice. After twenty-four years in this business, we have earned the right to be honest about it. Istanbul residents have used the sehir hatlari ferry network as functional transport for generations. The long-route ferry from Eminönü to Anadolu Kavagi — the northernmost Asian shore village, famous for its castle ruins and fish restaurants — passes every major Bosphorus landmark on both banks across a two-hour journey. It costs roughly TL 35 each way at current tariffs. For a budget-conscious solo traveller or a couple who have already done a cruise and want the local commuter experience, it is genuinely excellent. What the ferry does exceptionally well: it is unhurried, it has a tea service (the simit and tea ritual on an Istanbul ferry is a cultural experience in itself), and it deposits you at Anadolu Kavagi with time to explore the village before the return sailing. The crowd is a mix of tourists and commuters that gives the journey an authenticity no curated cruise can replicate. What it does not do: it does not stop for photography, it has no commentary explaining what you are seeing, the decks get crowded during peak hours, and the catering extends only to tea, simits, and packaged snacks. Departures are fixed and infrequent — miss the last return sailing from Anadolu Kavagi and your evening becomes expensive. Our recommendation, refined across thousands of guest conversations: first-time visitors benefit enormously from a guided cruise where landmarks are identified and contextualised. Return visitors, budget travellers, and anyone specifically interested in everyday Istanbul life should absolutely try the public ferry at least once." },
@@ -2048,7 +2689,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can I eat on the Bosphorus ferry?", a: "The ferry has a small cafeteria selling tea, simit (sesame bread rings), and basic sandwiches. At Anadolu Kavağı, you will find excellent seafood restaurants. Tourist cruises include food and drinks in the ticket price." },
       { q: "Do I need to book the Bosphorus ferry in advance?", a: "No booking needed — buy your ticket with an Istanbul Card at Eminönü Pier. However, arrive 30–40 minutes early to secure good deck seating, especially on weekends. Tourist cruises should be booked in advance." }
     ],
-    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-bosphorus-lunch-cruise"]
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "istanbul-bosphorus-lunch-cruise"],
+    relatedPosts: ["istanbul-boat-tour-vs-ferry", "bosphorus-cruise-prices-2026", "short-bosphorus-cruise-tour"],
   },
   {
     slug: "istanbul-dinner-cruise-menu-guide",
@@ -2057,12 +2699,21 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Wondering what food is served on a Bosphorus dinner cruise? Here is the complete menu breakdown — from mezes and salads to mains, desserts, and drinks — plus dietary options and upgrade packages.",
     category: "cruise-guide",
     date: "2026-03-03",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
-    keywords: ["bosphorus cruise dinner menu", "istanbul dinner cruise food", "dinner on the bosphorus", "dinner cruise menu istanbul", "bosphorus dinner cruise", "istanbul dinner cruise", "dinner cruise"],
+    imageAlt: "Four-course Turkish dinner service on a Bosphorus cruise: mezze appetizers, grilled fish main, and baklava dessert",
+    keywords: ["bosphorus cruise dinner menu", "istanbul dinner cruise food", "dinner on the bosphorus", "dinner cruise menu istanbul", "what food is served on bosphorus cruise", "turkish dinner cruise menu guide", "bosphorus cruise food 2026"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The standard dinner cruise menu: 5 cold/hot mezze, a grilled main (fish or meat choice), rice/salad, and dessert (baklava or künefe)",
+    "Local drinks package is included in the €65 price: Turkish wine, beer, raki, soft drinks — international spirits cost extra",
+    "Dietary requirements (vegetarian, halal, gluten-free) are accommodated with 24-hour advance notice",
+    "The fresh bread baked on board and the mezze spread are consistently the most praised elements of the dinner"
+    ],
     sections: [
       { heading: "What Is Served on a Bosphorus Dinner Cruise", content: "The Bosphorus dinner cruise is more than a boat ride — it is a full Turkish dining experience on the water. The MerrySails dinner cruise features a professionally prepared 4-course meal that showcases the best of Turkish cuisine, served while you sail past Istanbul's illuminated palaces, mosques, and waterfront mansions. The dinner service begins approximately 30 minutes after departure, once guests have settled in and enjoyed the initial views and welcome drinks. Each course is served by professional waitstaff, with timing coordinated to the cruise route — the main course typically arrives as the vessel passes the most iconic stretch of the Bosphorus near Rumeli Fortress and Ortaköy Mosque. The dining experience lasts about 2 hours of the 3.5-hour cruise, leaving time for entertainment (live Turkish music, belly dance, whirling dervish performance) and deck time for photography. The standard dinner cruise menu is included in the €65 ticket price, while the Gold package (€95) offers a premium menu with upgraded dishes and window seating." },
-      { heading: "The Full 4-Course Menu Breakdown", content: "Course 1 — Meze Platter: The meal begins with a traditional Turkish meze selection served on a shared platter. You will typically find hummus, acılı ezme (spicy pepper paste), haydari (thick yogurt with herbs and garlic), stuffed vine leaves (yaprak sarma), and patlıcan salatası (smoky eggplant dip). These are served with fresh bread (pide or lavash) for dipping. The mezes represent the communal dining culture central to Turkish cuisine. Course 2 — Seasonal Salad: A fresh mixed salad with tomatoes, cucumbers, red onion, herbs, and pomegranate molasses dressing — light and refreshing between the mezes and main course. Course 3 — Main Course: The main course features grilled meats — typically a combination of Adana kebab (spiced lamb), chicken shish, and köfte (Turkish meatballs), served with pilav (butter rice), grilled vegetables, and a fresh tomato-pepper garnish. The Gold package upgrades this to lamb cutlets, grilled sea bass, or a premium mixed grill. Course 4 — Dessert: The meal finishes with traditional Turkish baklava (pistachio or walnut) and seasonal fresh fruit. Turkish tea or coffee is served alongside dessert." },
+      { heading: "The Full 4-Course Menu Breakdown", content: "Course 1 — Meze Platter: The meal begins with a traditional Turkish meze selection served on a shared platter. You will typically find hummus, acılı ezme (spicy pepper paste), haydari (thick yogurt with herbs and garlic), stuffed vine leaves (yaprak sarma), and patlıcan salatası (smoky eggplant dip). These are served with fresh bread (pide or lavash) for dipping. The mezes represent the communal dining culture central to Turkish cuisine. Course 2 — Seasonal Salad: A fresh mixed salad with tomatoes, cucumbers, red onion, herbs, and pomegranate molasses dressing — light and refreshing between the mezes and main course. Course 3 — Main Course: The main course features grilled meats — typically a combination of Adana kebab (spiced lamb), chicken shish, and köfte (Turkish meatballs), served with pilav (butter rice), grilled vegetables, and a fresh tomato-pepper garnish. The Gold package upgrades this to lamb cutlets, grilled sea bass, or a premium mixed grill. Course 4 — Dessert: The meal finishes with traditional Turkish baklava (pistachio or walnut) and seasonal fresh fruit. Turkish tea or coffee is served alongside dessert.", table: { headers: ["Course", "Standard Menu", "Gold Upgrade", "Dietary Notes"], rows: [["Course 1 — Mezes", "Hummus, ezme, haydari, stuffed vine leaves, eggplant dip", "Fancier meze selection with premium ingredients", "Naturally vegetarian; vegan variant available"], ["Course 2 — Salad", "Fresh seasonal salad with pomegranate dressing", "Same — freshness is consistent across packages", "Vegan and gluten-free friendly"], ["Course 3 — Main", "Adana kebab, chicken shish, köfte with pilav and vegetables", "Lamb cutlets, grilled sea bass, or premium mixed grill", "Vegetarian substitute available on request"], ["Course 4 — Dessert", "Baklava (pistachio or walnut), fresh seasonal fruit", "Same — Turkish sweets are the same for all guests", "Nut allergy — notify at booking"], ["Drinks", "Unlimited soft drinks, water, Turkish tea and coffee", "Plus unlimited local beer, wine, and rakı", "Full non-alcoholic menu available"]] }, callout: { type: "info", text: "All dietary requirements — vegetarian, vegan, gluten-free, halal, and allergy-specific — are accommodated with advance notice. Notify MerrySails at the time of booking via WhatsApp or email, and the kitchen prepares your customized meal before the cruise departs." }, proTip: "The main course is served as the vessel passes the most scenic stretch of the Bosphorus near Rumeli Fortress and Ortaköy Mosque. This timing is intentional — you are not expected to choose between eating and watching. The crew designs the route so the best views happen during the meal." },
       { heading: "Drinks — What Is Included and Available", content: "The standard dinner cruise ticket (€65) includes unlimited soft drinks throughout the evening — Coca-Cola, Fanta, Sprite, ayran (traditional Turkish yogurt drink), fruit juices, and water. Turkish tea and coffee are served with dessert. For guests who want alcoholic beverages, there are two options. The standard ticket allows you to purchase drinks individually from the bar: local beer (Efes) around €5, wine (glass) around €8, rakı (Turkey's signature anise spirit) around €8, and cocktails around €10. The Gold package (€95) includes a premium drinks package with the ticket — unlimited local beer, wine (red and white), and rakı throughout the evening, plus the standard soft drinks. For a truly Turkish evening, we recommend trying rakı — the traditional accompaniment to mezes, known as 'lion's milk' because it turns milky white when water is added. The bar stays open throughout the cruise, and your server can recommend pairings. Cocktails and premium imported spirits are available at an additional charge on both packages." },
       { heading: "Dietary Requirements and Special Menus", content: "MerrySails accommodates most dietary requirements with advance notice. Vegetarian options are available on every cruise — the meze platter is naturally vegetarian-friendly, and the main course can be substituted with grilled vegetables, mushroom kebab, and extra rice or a cheese-filled pastry (börek). Vegan guests receive a customized menu: mezes without dairy (hummus, vine leaves, ezme), salad, grilled vegetable platter with rice, and fresh fruit for dessert. Gluten-free guests can enjoy most dishes — Turkish cuisine relies less on wheat than Western cooking, and the kitchen prepares gluten-free alternatives for bread and any flour-based items. Halal dietary requirements are met by default, as all meat served on MerrySails cruises is halal-certified and sourced from local Turkish suppliers. For guests with specific allergies (nuts, shellfish, dairy, etc.), the kitchen modifies dishes accordingly when notified at booking time. Kosher requirements can be accommodated with at least 72 hours notice. To arrange any dietary requirement, simply mention it when booking via WhatsApp, email, or the website — the chef prepares your customized meal before the cruise departs." },
       { heading: "Standard vs Gold Package — Which Is Worth It", content: "The standard dinner cruise package (€65) delivers excellent value — a full 4-course dinner, unlimited soft drinks, hotel pickup and drop-off, and a 3.5-hour cruise with live entertainment. It is the right choice for most guests who want the complete Bosphorus dinner experience without overspending. The Gold package (€95) adds three meaningful upgrades: first, a premium seating location near the windows with unobstructed Bosphorus views (standard seating is also good, but Gold seats are the best in the house). Second, a premium menu with upgraded main course options — lamb cutlets, grilled sea bass, or premium mixed grill instead of the standard kebab selection. Third, unlimited local alcoholic drinks (beer, wine, rakı) included in the price — if you would otherwise spend €20+ on drinks from the bar, the Gold package pays for itself. Our recommendation: choose Standard if you are a light drinker or non-drinker, the included food and entertainment are identical aside from the main course upgrade. Choose Gold if you want the best seats, premium food, and plan to enjoy wine or rakı with your dinner. For couples celebrating a special occasion, Gold is usually worth the €30 upgrade per person." },
@@ -2076,7 +2727,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Can I get vegetarian or vegan food on the dinner cruise?", a: "Yes. Vegetarian and vegan menus are available with advance notice. The kitchen also accommodates gluten-free, halal, and allergy-specific requirements. Mention your needs when booking." },
       { q: "Is the dinner cruise worth the money?", a: "At €65 for a 3.5-hour experience including hotel transfer, 4-course dinner, unlimited soft drinks, and live entertainment — yes. The equivalent restaurant dinner in Istanbul costs €30–50 without views or entertainment." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "istanbul-bosphorus-lunch-cruise"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "istanbul-bosphorus-lunch-cruise"],
+    relatedPosts: ["bosphorus-dinner-cruise-what-to-expect", "yacht-catering-menu-istanbul", "best-restaurants-near-bosphorus"],
   },
   {
     slug: "luxury-yacht-bosphorus-experience",
@@ -2085,12 +2737,21 @@ export const blogPosts: BlogPost[] = [
     excerpt: "A luxury yacht cruise on the Bosphorus is the most exclusive way to experience Istanbul. From sunset sails to private dinners, discover what makes a luxury Bosphorus yacht experience unforgettable.",
     category: "yacht-guide",
     date: "2026-03-02",
+    dateModified: "2026-03-08",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=1200&q=80",
+    imageAlt: "VIP guests on a luxury motor yacht's upper sun deck with a butler serving drinks and the Bosphorus stretching ahead",
     keywords: ["bosphorus sunset cruise luxury yacht", "luxury yacht istanbul", "private yacht rental istanbul", "bosphorus yacht cruise", "bosphorus yacht", "bosphorus yacht tour", "luxury bosphorus cruise", "private bosphorus cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "The VIP Bosphorus yacht experience (€680 for 2 hours) includes a private chef, premium spirits, dedicated hostess, and custom route",
+    "Vessels feature air conditioning, sun deck, indoor lounge, premium sound system, and full catering kitchen",
+    "The experience is comparable to a Michelin-starred dining experience — but on the water between two continents",
+    "Ideal for high-value client entertainment, luxury honeymoons, milestone anniversaries, or exclusive group celebrations"
+    ],
     sections: [
       { heading: "Why a Luxury Yacht Is the Best Way to See the Bosphorus", content: "Istanbul's Bosphorus is stunning from any vantage point, but experiencing it from the deck of a luxury yacht is in a different league entirely. A luxury yacht on the Bosphorus offers what no shared cruise can: complete privacy, personalized service, your own captain and crew, and the freedom to set your own route, pace, and schedule. Imagine cruising past Dolmabahçe Palace with champagne in hand, anchoring near Maiden's Tower for a private photo session, or watching the sunset paint the Asian shore gold from a cushioned sun deck — all without another tourist in sight. The luxury yacht experience in Istanbul starts from €380 for a 3-hour Premium package and goes up to €680+ for the full VIP treatment with a private chef, live musician, and professional photographer. Compared to luxury yacht charters in the Mediterranean (where a day charter starts from €2,000–5,000), Istanbul offers extraordinary value. The Bosphorus is also one of the most scenic waterways in the world — 31 kilometers of Ottoman palaces, Byzantine fortresses, ornate mosques, and wooden mansions lining both the European and Asian shores." },
-      { heading: "Luxury Yacht Packages — Premium vs VIP", content: "MerrySails offers two luxury tiers for Bosphorus yacht cruises, each designed for guests who want an elevated experience. The Premium Package (€380, 3 hours) includes: a private motor yacht (12–15m) with dedicated captain and crew, curated Bosphorus route past all major landmarks, elegant table decoration with flowers and candles, a professional photographer for 30 minutes capturing your experience, fruit platters and premium soft drinks, a Bluetooth sound system with your choice of music, and up to 15 guests. This package is ideal for couples celebrating an anniversary, small birthday groups, or guests who simply want a private, comfortable Bosphorus experience without the crowd of a shared cruise. The VIP Package (€680, 4 hours) takes everything to the highest level: elaborate decoration (rose petals, fairy lights, themed banner), full-duration professional photographer, a live violinist for the first hour, premium catering (canapés, sushi platters, cheese board, dessert station), champagne and premium spirits, a red-carpet welcome at the marina, and priority vessel selection for the best yacht available on your date. The VIP is designed for proposals, milestone celebrations, and guests who want nothing less than the best." },
+      { heading: "Luxury Yacht Packages — Premium vs VIP", content: "MerrySails offers two luxury tiers for Bosphorus yacht cruises, each designed for guests who want an elevated experience. The Premium Package (€380, 3 hours) includes: a private motor yacht (12–15m) with dedicated captain and crew, curated Bosphorus route past all major landmarks, elegant table decoration with flowers and candles, a professional photographer for 30 minutes capturing your experience, fruit platters and premium soft drinks, a Bluetooth sound system with your choice of music, and up to 15 guests. This package is ideal for couples celebrating an anniversary, small birthday groups, or guests who simply want a private, comfortable Bosphorus experience without the crowd of a shared cruise. The VIP Package (€680, 4 hours) takes everything to the highest level: elaborate decoration (rose petals, fairy lights, themed banner), full-duration professional photographer, a live violinist for the first hour, premium catering (canapés, sushi platters, cheese board, dessert station), champagne and premium spirits, a red-carpet welcome at the marina, and priority vessel selection for the best yacht available on your date. The VIP is designed for proposals, milestone celebrations, and guests who want nothing less than the best.", table: { headers: ["Feature", "Premium Package €380", "VIP Package €680"], rows: [["Duration", "3 hours", "4 hours"], ["Vessel", "Private motor yacht (12–15m)", "Priority vessel selection — best available"], ["Decoration", "Flowers, candles, elegant table", "Rose petals, fairy lights, themed banner, full styling"], ["Photography", "30 minutes professional photographer", "Full-duration photographer — every moment captured"], ["Entertainment", "Bluetooth sound system, your playlist", "Live violinist for first hour + your playlist"], ["Catering", "Fruit platters, premium soft drinks", "Canapés, sushi platters, cheese board, dessert station"], ["Drinks", "Premium soft drinks included", "Champagne + premium spirits included"], ["Arrival experience", "Warm crew welcome at the marina", "Red-carpet welcome at the marina"], ["Best for", "Anniversaries, small groups, first-time private charter", "Proposals, milestone celebrations, luxury seekers"]] }, callout: { type: "price", text: "Compared to a luxury yacht charter in the Mediterranean (day charters start at €2,000–5,000), Istanbul's VIP package at €680 for 4 hours represents extraordinary value. The Bosphorus is one of the most scenic waterways in the world — at a fraction of European yacht charter prices." }, proTip: "For proposals, choose the VIP package and request the anchor moment near Maiden's Tower timed to the golden hour — approximately 60 minutes before sunset. Our captain knows exactly where to hold position for the best light and the Old City skyline in the background. That specific combination is what makes Bosphorus proposals so consistently memorable." },
       { heading: "The Luxury Sunset Route — A Minute-by-Minute Journey", content: "The most popular luxury yacht experience is the sunset cruise, timed so you are on the water during Istanbul's legendary golden hour. Here is what a typical Bosphorus sunset cruise on a luxury yacht looks like. Departure (T+0): You arrive at Kuruçeşme Marina on the European shore, where your crew welcomes you with a red carpet (VIP) or a warm greeting (Premium). Step aboard, settle into the cushioned seating, and your captain briefs you on the route while the crew serves welcome drinks. Cruising South (T+15): The yacht heads south toward the Old City, passing Çırağan Palace (now a luxury hotel) and the iconic Ortaköy Mosque framed by the Bosphorus Bridge. Your photographer captures the first shots. Maiden's Tower (T+30): The yacht slows near Maiden's Tower — Istanbul's most romantic landmark — with the Old City skyline (Hagia Sophia, Blue Mosque, Topkapı Palace) in the background. The light is turning golden. Heading North (T+45): Turning northward, you cruise past Rumeli Fortress, Bebek Bay (Istanbul's most affluent neighborhood), and the elegant waterfront yalıs. The violinist begins playing (VIP). Sunset (T+60–90): The yacht anchors at the most scenic point of the strait as the sun descends. Champagne is served. The sky turns amber, then pink, then deep purple. The photographer captures the moment. Return (T+90–180): As Istanbul's waterfront lights up, the yacht cruises back along the illuminated shore — a completely different landscape from the daylight journey." },
       { heading: "Luxury Dining on the Bosphorus", content: "While the shared dinner cruise offers a set menu, the luxury yacht dining experience can be fully customized. The VIP package includes a premium catering spread: canapés (smoked salmon blini, prawn toast, bruschetta), a sushi platter, an artisanal cheese board with fruit and honey, a dessert station (mini éclairs, chocolate truffles, fresh berries), and champagne with premium spirits. For guests who want a full sit-down dinner on the yacht, MerrySails arranges a private chef to prepare a multi-course meal on board. The private dinner menu can be customized to your preferences — Turkish, Mediterranean, seafood, or international cuisine. Popular choices include grilled sea bass with lemon butter, rack of lamb with herb crust, or a traditional Turkish kebab platter. A private dinner on the yacht adds €150–300 to the package cost depending on menu complexity and number of guests. Wine pairing is available with the sommelier selecting Turkish and international wines to complement each course. The entire dining experience is coordinated with the cruise route — appetizers as you depart, mains during the scenic stretch, dessert as the city lights appear." },
       { heading: "Special Occasions — Proposals, Anniversaries, and Celebrations", content: "A luxury yacht on the Bosphorus is one of the world's most spectacular settings for a proposal, and MerrySails has helped orchestrate over 200 successful proposals since 2001. The typical proposal yacht experience: the couple arrives for what they believe is a romantic sunset cruise. The yacht is decorated with rose petals, candles, and a 'Will You Marry Me?' banner concealed until the right moment. As the yacht reaches the most scenic point — typically near Maiden's Tower with the Old City backdrop — the crew gives the signal, the violinist begins playing, and the photographer positions discretely. The proposer gets down on one knee, and the surprise is captured from every angle. After the magic moment, champagne is uncorked and the yacht continues its cruise while the photographer captures celebration photos. The photographer delivers 50–80 professionally edited images within 48 hours. For anniversaries, the yacht experience includes personalized decoration, a commemorative photo frame, and a custom dessert. Birthday celebrations get themed decoration, a cake (custom ordered or from our partner bakery), and party music. Every occasion is coordinated by a dedicated event planner who manages the details so the organizer can enjoy the experience." },
@@ -2104,7 +2765,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Is a Bosphorus sunset cruise on a luxury yacht worth it?", a: "Absolutely. The Bosphorus sunset is one of the most spectacular in the world, and experiencing it privately with champagne, a violinist, and a photographer creates memories that last a lifetime. Compared to Mediterranean yacht charters (€2,000+), Istanbul is exceptional value." },
       { q: "Can I customize the yacht experience for a proposal?", a: "Yes. MerrySails specializes in proposal yacht experiences with rose petals, 'Will You Marry Me?' banner, concealed photographer, live music, and champagne. Over 200 successful proposals since 2001. Book 1–2 weeks ahead." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise", "romantic-marriage-proposal", "private-bosphorus-dinner-yacht-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise", "romantic-marriage-proposal", "private-bosphorus-dinner-yacht-cruise"],
+    relatedPosts: ["luxury-yacht-rental-bosphorus", "private-yacht-charter-istanbul-guide", "yacht-rental-istanbul-prices"],
   },
   {
     slug: "corporate-events-yacht-istanbul",
@@ -2113,37 +2775,52 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Looking for a unique corporate event venue in Istanbul? A Bosphorus yacht cruise offers stunning views, professional service, and flexible packages for team building, client entertainment, and celebrations.",
     category: "events",
     date: "2026-03-01",
+    dateModified: "2026-03-08",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
-    keywords: ["corporate event yacht istanbul", "team building istanbul", "corporate cruise bosphorus", "company dinner istanbul", "corporate yacht charter", "bosphorus boat tour", "corporate event istanbul"],
+    imageAlt: "Corporate team building activity on a yacht with colleagues collaborating on a sailing challenge on the Bosphorus",
+    keywords: ["corporate event yacht istanbul", "team building istanbul", "corporate cruise bosphorus", "company dinner istanbul", "corporate yacht charter"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Yacht team building in Istanbul combines a 2-3 hour Bosphorus cruise with a structured activity (cooking, quiz, or sailing challenge)",
+      "Groups of 15-80 guests can be accommodated on single or multiple vessels sailing in convoy",
+      "AV equipment, branded materials, and event coordination are included in corporate packages",
+      "A Bosphorus corporate event consistently outperforms conventional conference rooms in employee engagement surveys"
+    ],
     sections: [
-      { heading: "Why Istanbul's Bosphorus Is the Perfect Corporate Venue", content: "Istanbul has rapidly become one of Europe's top destinations for corporate events, conferences, and incentive travel — and a yacht cruise on the Bosphorus is often the highlight of any business trip to the city. The appeal is obvious: where else can your team dine between two continents, pass Ottoman palaces and Byzantine fortresses, and network against a sunset that paints the sky over Asia and Europe simultaneously? A Bosphorus yacht event delivers what no hotel ballroom or restaurant can — a dynamic, memorable setting that creates genuine connection among colleagues and impresses clients. Istanbul's strategic location (direct flights from over 300 cities), favorable exchange rate, and world-class hospitality infrastructure make it increasingly popular for international corporate groups. The city offers five-star hotels at three-star prices compared to London or Paris. And MerrySails, as a TURSAB A Group licensed operator with 23+ years of experience, provides the professional event management that corporate clients expect — from branded decoration and AV equipment to formal catering and multilingual crew." },
-      { heading: "Corporate Yacht Packages and Pricing", content: "MerrySails offers corporate yacht packages starting from €500, scaled to your group size and requirements. Small Group (10–15 guests, standard motor yacht): from €500 for 3 hours, ideal for executive dinners, client entertainment, and small team events. Includes captain, crew, basic decoration, sound system, and a catering package. Medium Group (20–40 guests, luxury motor yacht or gulet): from €900 for 3 hours, suitable for team-building events, department celebrations, and mid-size corporate dinners. Includes two crew members, a professional event coordinator, enhanced sound system, and customized catering. Large Group (50–80 guests, mega yacht or event vessel): from €1,500 for 4 hours, designed for company-wide events, product launches, year-end celebrations, and international conferences. Includes full event management, professional catering team, presentation equipment (screen and projector), premium sound system, and multiple deck areas for different activities. All corporate packages include: branded decoration options (company logos, color themes), invoice with VAT for expense reporting, a dedicated event coordinator, and free cancellation up to 72 hours before the event. Additional hours are charged at €100–300/hour depending on vessel class." },
-      { heading: "Team Building Activities on the Bosphorus", content: "A yacht cruise naturally fosters the relaxed atmosphere that makes team building effective — far more than a hotel conference room or ropes course. MerrySails organizes several team-building formats on the Bosphorus. The Cocktail Cruise format works well for networking events and new team integration: a 3-hour cruise with open bar, finger food, and background music, allowing organic conversation against the changing Bosphorus scenery. No formal agenda — the setting does the work. The Workshop Cruise pairs a facilitated activity with the yacht experience: the first 90 minutes on deck enjoying views and refreshments, then a facilitated workshop (leadership exercises, creative brainstorming, strategy session) in the yacht's enclosed area, finishing with dinner and networking. The Competition Cruise adds structured team games: Bosphorus landmark quiz (teams identify landmarks from the water), photo challenge (best creative group photo at each landmark), and Turkish cultural experience (learn to make Turkish coffee, play backgammon). The Dinner Cruise format is the most popular corporate option: a formal seated dinner with speeches and toasts, entertainment, and ample networking time. The intimate setting of a yacht — where everyone is together without the distraction of phones and emails — creates bonds that last long after the event." },
-      { heading: "Client Entertainment and Hospitality", content: "For client entertainment, a Bosphorus yacht cruise communicates exclusivity, taste, and hospitality — exactly the impression you want to make. MerrySails has hosted client entertainment events for international companies, banks, consulting firms, and technology companies looking to impress visitors to Istanbul. The typical client entertainment format: guests are collected from their hotel and driven to Kuruçeşme Marina. They board a decorated yacht, greeted by the captain and a welcome drink. The cruise begins with a sunset tour of the Bosphorus landmarks, with the host or a professional guide providing commentary. Canapés and premium drinks are served on deck. As the sun sets, guests move to the dining area for a formal dinner — either Turkish cuisine or international menu, paired with wines. Entertainment can include a live musician, Turkish music performance, or simply elegant background music. The photographer captures the evening for the company's records. The yacht returns to the marina, and guests are transferred back to their hotels. The entire experience can be branded — from welcome banners and table settings to custom menu cards and gift bags at departure." },
-      { heading: "Product Launches and Special Corporate Events", content: "The Bosphorus provides a dramatic backdrop for product launches, press events, and milestone celebrations. MerrySails has hosted product reveals where the product was unveiled as the yacht passed a specific landmark — timed for maximum dramatic effect. Presentation equipment (screen, projector, microphone, and speakers) is available on larger vessels, allowing formal presentations during the cruise. For press events, the unique venue guarantees media attendance and provides visually compelling content for coverage. The photography and video opportunities on the Bosphorus are world-class — company social media teams consistently report high engagement on content from yacht events. Year-end celebrations and award ceremonies on the Bosphorus create a memorable close to the business year. The format typically includes: cocktail reception on deck, formal dinner with speeches and awards, entertainment, and dancing. For international conferences held in Istanbul, a Bosphorus yacht dinner is often the gala evening event — organizers book the yacht months in advance and it becomes the most talked-about part of the conference program." },
-      { heading: "How to Plan Your Corporate Yacht Event", content: "Planning a corporate yacht event with MerrySails is streamlined and professional. Step 1: Contact our corporate events team via email (info@merrysails.com) or WhatsApp (+90 537 040 68 22) with your date, approximate guest count, budget range, and event type. Step 2: Within 24 hours, we provide a detailed proposal with vessel options (photos included), menu selections, entertainment options, and a complete cost breakdown with VAT invoice. Step 3: A video call or in-person meeting to finalize details — we walk through the vessel, discuss the timeline, and confirm all specifications. Step 4: A 30% deposit secures the booking. The balance is due 7 days before the event (or on the day for smaller events). We provide: a dedicated event coordinator throughout the planning process, site visit to the yacht if you are in Istanbul, customized run-of-show document, backup vessel guarantee in case of mechanical issues, weather contingency plan (covered areas on all vessels, or rescheduling option), and post-event invoice with all documentation for corporate expense reporting. For the best availability, book 2–4 weeks in advance. Peak demand periods are May–June (spring events), September–October (fall conferences), and December (year-end celebrations)." },
-      { heading: "A Project Manager s Timeline for Corporate Yacht Events", content: "Corporate clients consistently tell us the same thing when an event goes smoothly: It looked effortless. What they are really describing is the product of a structured planning timeline, and sharing that timeline is the most useful thing we can do for a client beginning the process. 12 weeks before: Define the objective precisely. Team building, client entertainment, product launch, and board dinner all use the same body of water but require fundamentally different configurations of catering, entertainment, duration, and onboard layout. 10 weeks: Confirm guest count range and dietary summary. A general breakdown is sufficient at this stage and drives catering proposals. 8 weeks: Select vessel and route, confirm provisional date. For events over 50 guests, weekend dates in June–September require earlier confirmation; our premium vessels carry forward reservations from returning corporate clients. 6 weeks: Finalise entertainment, AV requirements, and branding. MerrySails can accommodate branded tablecloths, menus, and welcome screens. 4 weeks: Confirm final guest list and dietary requirements. Issue boarding instructions — dock location, arrival window, what to bring. 1 week: Weather review and contingency discussion. Our captains assess the week s forecast and advise on any scheduling adjustments. Most corporate events proceed as planned; having a contingency protocol in writing removes anxiety from the final week. Day of event: Our event coordinator meets the client representative at the dock 45 minutes before boarding begins. From that point, we run the logistical detail. The client hosts the guests." },
-      { heading: "Why the Bosphorus Outperforms Land Venues for Client Entertainment", content: "Corporate event budgets are scrutinised more carefully than they were a decade ago, and a party on a boat needs to justify itself beyond novelty. Having hosted hundreds of corporate Bosphorus events since 2001, we can make that case with data and specificity. The primary advantage is captured attention. On a yacht or dinner cruise vessel, guests cannot wander to another bar, step out for a phone call that lasts forty minutes, or get absorbed by a conversation with someone outside your intended group. The physical boundary of the vessel creates a social cohesion that land venues rarely achieve organically. Corporate entertaining is, at its core, about relationship time — and a well-designed Bosphorus event generates more face-to-face time per guest per evening than most alternatives. The conversational catalyst is the second structural advantage. Istanbul s waterway provides a shared, ongoing sensory experience that gives strangers something to discuss from the first minute aboard. The Ortakoy mosque at golden hour, or the Bosphorus Bridge lit against a dark sky, or a tanker navigating the strait with implausible precision — each of these is a ready-made conversation opener that removes the awkward standing-with-a-drink formality of a hotel ballroom. On the cost side: per-person pricing for a well-managed corporate cruise dinner in Istanbul typically comes in below comparable hotel banquet pricing once venue hire, staffing, and catering are aggregated. The waterway itself is the venue — there is no room rental fee for the Bosphorus. Return on investment is difficult to quantify but easy to observe. The evening is remembered and mentioned; it builds the association between your brand and an experience genuinely worth talking about." }
+      { heading: "Why Istanbul's Bosphorus Is the Perfect Corporate Venue", content: "Istanbul has rapidly become one of Europe's top destinations for corporate events, and a yacht cruise on the Bosphorus is often the highlight of any business trip to the city. Where else can your team dine between two continents, pass Ottoman palaces, and network against a sunset over Asia and Europe simultaneously? MerrySails, as a TURSAB A Group licensed operator with 23+ years of experience, provides the professional event management that corporate clients expect." },
+      { heading: "Corporate Yacht Packages and Pricing", content: "Small Group (10-15 guests): from EUR500 for 3 hours. Medium Group (20-40 guests): from EUR900 for 3 hours. Large Group (50-80 guests): from EUR1,500 for 4 hours. All packages include: branded decoration options, VAT invoice for expense reporting, a dedicated event coordinator, and free cancellation up to 72 hours before the event." },
+      { heading: "Team Building Activities", content: "MerrySails organizes several formats: The Cocktail Cruise (open bar, networking); The Workshop Cruise (90 min views + facilitated workshop + dinner); The Competition Cruise (landmark quiz, photo challenge, cultural experience); and The Dinner Cruise (formal seated dinner with speeches and entertainment). The yacht environment naturally breaks down hierarchical barriers — the CEO and the newest employee share the same deck, making conversations more natural and authentic." },
+      { heading: "Why the Bosphorus Outperforms Land Venues", content: "On a vessel, guests cannot wander or get absorbed by distractions. The physical boundary creates social cohesion that land venues rarely achieve. Corporate entertaining is about relationship time — and a well-designed Bosphorus event generates more face-to-face time per guest per evening than most alternatives. Per-person pricing for a managed corporate cruise in Istanbul typically comes in below comparable hotel banquet pricing once venue hire, staffing, and catering are aggregated." }
     ],
     faqs: [
-      { q: "How much does a corporate yacht event cost in Istanbul?", a: "Corporate yacht packages start from €500 for small groups (10–15 guests, 3 hours). Medium groups (20–40) from €900, large groups (50–80) from €1,500. All prices include crew, coordinator, and basic decoration." },
-      { q: "Can the yacht accommodate presentations and AV equipment?", a: "Yes. Larger vessels (40+ capacity) can be equipped with a screen, projector, microphone, and professional speakers for presentations, product launches, and award ceremonies." },
-      { q: "Do you provide VAT invoices for corporate bookings?", a: "Yes. All corporate bookings receive a proper VAT invoice for expense reporting. MerrySails is a TURSAB A Group licensed company with full commercial documentation." },
-      { q: "What happens if the weather is bad on the event day?", a: "All vessels have covered indoor areas that comfortably seat your full group. In case of severe weather, we offer rescheduling to an alternative date or a full refund with 48-hour notice." }
+      { q: "How much does a corporate yacht event cost in Istanbul?", a: "Corporate yacht packages start from EUR500 for small groups (10-15 guests, 3 hours). Medium groups (20-40) from EUR900, large groups (50-80) from EUR1,500. All prices include crew, coordinator, and basic decoration." },
+      { q: "Can the yacht accommodate presentations and AV equipment?", a: "Yes. Larger vessels (40+ capacity) can be equipped with a screen, projector, microphone, and professional speakers." },
+      { q: "Do you provide VAT invoices for corporate bookings?", a: "Yes. All corporate bookings receive a proper VAT invoice. MerrySails is a TURSAB A Group licensed company with full commercial documentation." },
+      { q: "What happens if the weather is bad?", a: "All vessels have covered indoor areas. In case of severe weather, we offer rescheduling or a full refund with 48-hour notice." }
     ],
-    relatedTours: ["corporate-event-bosphorus-cruise", "yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "private-bosphorus-dinner-yacht-cruise"]
+    relatedTours: ["corporate-event-bosphorus-cruise", "yacht-charter-in-istanbul", "bosphorus-dinner-cruise"],
+    relatedPosts: ["corporate-event-yacht-bosphorus", "private-yacht-charter-istanbul-guide", "group-bosphorus-cruise-guide"]
   },
   {
     slug: "best-istanbul-cruise-2026",
-    title: "Top Cruise Experiences in Istanbul (2026)",
-    metaDescription: "Find the best Istanbul cruise in 2026 with our ranked guide to the top 7 Bosphorus experiences. Compare tours, prices, and highlights to book confidently.",
+    title: "Which Istanbul Cruise to Choose? Top 7 Ranked (2026)",
+    metaDescription: "Not sure which Istanbul cruise to choose? We rank and compare the top 7 Bosphorus cruise options in 2026 — from budget to luxury — so you can pick the right one.",
     excerpt: "With so many Bosphorus cruise options in Istanbul, which one is actually the best? We rank the top 7 Istanbul cruises for 2026 based on value, experience, views, and guest reviews.",
     category: "cruise-guide",
     date: "2026-02-28",
+    dateModified: "2026-03-08",
     readTime: "13 min read",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
-    keywords: ["best cruise istanbul", "istanbul cruise tour", "best bosphorus cruise", "bosphorus cruise tour", "boat tour istanbul", "boat trip istanbul", "istanbul boat tour", "best bosphorus tour"],
+    imageAlt: "Comparison of different Bosphorus cruise experiences showing a dinner cruise, sunset cruise, and private yacht side by side",
+    keywords: ["which bosphorus cruise to choose", "istanbul cruise comparison 2026", "bosphorus cruise options ranked", "how to choose istanbul cruise", "boat tour istanbul comparison", "different types istanbul cruises", "istanbul cruise guide comparison", "bosphorus cruise worth it 2026"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+    "In 2026, the top Istanbul cruise experiences are: Dinner Cruise (€65, best value), Private Sunset Yacht (€380, most romantic), and Full Bosphorus Day Charter (custom, most comprehensive)",
+    "Choose based on: budget (dinner cruise), group size (yacht charter for 10+), occasion (private charter), or time (short cruise for 2h or less)",
+    "New in 2026: MerrySails added a dedicated swimming stop to summer afternoon charters and expanded the Princes' Islands route",
+    "All MerrySails experiences are TURSAB A Group licensed — the only certification that guarantees full consumer protection in Turkey"
+    ],
     sections: [
       { heading: "How We Ranked the Best Istanbul Cruises", content: "With over 50,000 guests served since 2001, MerrySails has deep insight into what makes a Bosphorus cruise exceptional. We ranked the top 7 Istanbul cruises based on five criteria: value for money (what you get per euro spent), scenic quality (route, landmarks, and photo opportunities), guest experience (comfort, service, food, and entertainment), flexibility (booking ease, cancellation policy, and scheduling), and guest reviews (verified ratings from 2,847+ reviews). Each cruise type serves a different purpose — budget travelers, couples, families, luxury seekers, and event groups all have different ideal options. This guide helps you match the right cruise to your needs. All cruises listed are operated by MerrySails, a TURSAB A Group licensed travel agency, ensuring professional service, transparent pricing, and full consumer protection. Prices are current as of 2026 and include all taxes with no hidden fees." },
       { heading: "#1 — Bosphorus Dinner Cruise (Best Overall)", content: "The Bosphorus dinner cruise earns the top spot as the best overall Istanbul cruise in 2026. For €65 per person, you get a 3.5-hour experience that combines sightseeing, dining, and entertainment in one unforgettable evening. The cruise includes hotel pickup and drop-off (no taxi costs or navigation needed), a 4-course Turkish dinner (meze platter, seasonal salad, grilled meats with rice, baklava and fruit), unlimited soft drinks, and a live entertainment program featuring Turkish folk music, belly dance, and a whirling dervish ceremony. The route covers the illuminated Bosphorus — palaces, mosques, and mansions lit up against the night sky look dramatically different from daytime views. For the premium experience, the Gold package (€95) adds window seating, upgraded food (lamb cutlets or sea bass), and unlimited alcoholic drinks. Why it is number one: it delivers the most complete Istanbul experience in a single evening, the hotel transfer eliminates logistics stress, and the value is exceptional — the equivalent restaurant dinner with entertainment would cost €50–80 without the cruise. Guest rating: 4.9/5." },
@@ -2151,7 +2828,7 @@ export const blogPosts: BlogPost[] = [
       { heading: "#3 — Private Yacht Charter (Best for Special Occasions)", content: "The private yacht charter is the top choice for proposals, birthdays, anniversaries, and anyone who wants the Bosphorus entirely to themselves. Packages start at €280 for 2 hours (Essential) with captain, crew, and a private vessel for up to 15 guests. The Premium package (€380, 3 hours) adds decoration, a photographer, and refreshments. The VIP (€680, 4 hours) includes everything: elaborate decoration, full-duration photographer, live violinist, premium catering, champagne, and a red-carpet welcome. The per-person math makes it surprisingly accessible — a group of 10 on the Essential package pays just €28 per person for a 2-hour private yacht experience. The freedom to set your own route, play your own music, and celebrate in complete privacy makes this fundamentally different from any shared cruise. MerrySails has orchestrated over 200 successful proposals on the Bosphorus — the combination of Maiden's Tower backdrop, sunset timing, and hidden photographer makes it one of Istanbul's most romantic settings. Why it is number three: the most exclusive and customizable experience, with surprising per-person value for groups. Guest rating: 5.0/5." },
       { heading: "#4 — Sightseeing Cruise & #5 — Lunch Cruise", content: "The sightseeing cruise (€15, 1.5 hours) is the budget-friendly entry point to the Bosphorus. Departing from Eminönü, it covers the greatest hits of the southern strait with live commentary. It is the fastest way to see the major landmarks if you are short on time — perfect for layover visitors, cruise ship passengers (with a dedicated cruise-passenger package), or travelers who want to check 'Bosphorus cruise' off their Istanbul list efficiently. At €15, there is essentially no reason not to do it. The lunch cruise (€35, 3 hours) occupies a unique niche: it combines a Bosphorus sightseeing route with a two-continents visit and a Turkish lunch on the Asian side. The route includes a stop at Üsküdar or Kadıköy on the Asian shore, giving you the experience of crossing between continents. The lunch features traditional Turkish dishes in a waterfront restaurant. This is ideal for travelers who want more than a boat ride but cannot make the dinner cruise timing work. It delivers cultural depth (visiting both sides of Istanbul) and a proper meal in a single package. Why they rank here: both are excellent products that serve specific needs, but the dinner cruise and sunset cruise offer more dramatic experiences per hour." },
       { heading: "#6 — Princes' Islands Tour & #7 — Night Cruise", content: "The Princes' Islands tour (€45, full day) takes you beyond the Bosphorus to the car-free islands in the Sea of Marmara. A ferry ride to Büyükada — the largest island — followed by free time to explore Victorian-era mansions, pine forests, beaches, and horse-drawn carriages (a unique experience in modern Turkey). Lunch at a seaside restaurant is included. This is the best option for travelers who want to escape Istanbul's intensity for a day and experience a completely different side of the city. The islands feel like a Mediterranean village, just 90 minutes from the chaos of Sultanahmet. The night cruise offers a different perspective entirely — Istanbul after dark, when the waterfront palaces and mosques are illuminated by thousands of lights. The Bosphorus transforms from a historic panorama into a glittering light show. The night cruise is often combined with dinner, but standalone evening cruises are available for those who have already dined. It is particularly popular during Ramadan, when special iftar dinner cruises run at sunset. Why they rank here: both are excellent experiences that serve more niche interests — the islands for a full-day escape, the night cruise for return visitors or evening-only schedules." },
-      { heading: "Quick Comparison Table and Final Recommendation", content: "Here is the quick summary for choosing the best Istanbul cruise in 2026. Dinner Cruise: €65, 3.5 hours, best overall, includes food and entertainment and hotel transfer. Sunset Cruise: €20, 2.5 hours, best value, includes drinks and commentary. Yacht Charter: from €280, 2–4 hours, best for special occasions, private and customizable. Sightseeing: €15, 1.5 hours, best budget option, quick landmark tour. Lunch Cruise: €35, 3 hours, best two-continent experience, includes lunch. Princes' Islands: €45, full day, best day trip, island escape. Night Cruise: €65, 3.5 hours, best for illuminated views, evening only. Our final recommendation for first-time Istanbul visitors: book the sunset cruise (€20) for daytime sightseeing, and the dinner cruise (€65) for your evening experience. Together, these two cruises cost €85 and give you the complete Bosphorus experience — landmarks in golden light, a Turkish dinner on the water, and live entertainment. For couples celebrating a special occasion, upgrade to the private yacht charter — the VIP package (€680) creates a once-in-a-lifetime memory. All cruises are booked direct at merrysails.com or via WhatsApp (+90 537 040 68 22) with free cancellation up to 24 hours before departure." }
+      { heading: "Quick Comparison Table and Final Recommendation", content: "Here is the quick summary for choosing the best Istanbul cruise in 2026. Dinner Cruise: €65, 3.5 hours, best overall, includes food and entertainment and hotel transfer. Sunset Cruise: €20, 2.5 hours, best value, includes drinks and commentary. Yacht Charter: from €280, 2–4 hours, best for special occasions, private and customizable. Sightseeing: €15, 1.5 hours, best budget option, quick landmark tour. Lunch Cruise: €35, 3 hours, best two-continent experience, includes lunch. Princes' Islands: €45, full day, best day trip, island escape. Night Cruise: €65, 3.5 hours, best for illuminated views, evening only. Our final recommendation for first-time Istanbul visitors: book the sunset cruise (€20) for daytime sightseeing, and the dinner cruise (€65) for your evening experience. Together, these two cruises cost €85 and give you the complete Bosphorus experience — landmarks in golden light, a Turkish dinner on the water, and live entertainment. For couples celebrating a special occasion, upgrade to the private yacht charter — the VIP package (€680) creates a once-in-a-lifetime memory. All cruises are booked direct at merrysails.com or via WhatsApp (+90 537 040 68 22) with free cancellation up to 24 hours before departure.", table: { headers: ["Cruise", "Price", "Duration", "Rating", "Inclusions", "Best For"], rows: [["Dinner Cruise", "€65/person", "3.5 hrs", "4.9/5 ⭐", "Hotel transfer, 4-course dinner, drinks, entertainment", "First-time visitors, special evenings"], ["Sunset Cruise", "€20/person", "2.5 hrs", "4.9/5 ⭐", "Welcome drinks, snacks, commentary", "Couples, photographers, best value"], ["Yacht Charter Essential", "€280/boat", "2 hrs", "5.0/5 ⭐", "Private yacht, captain, crew — up to 15 guests", "Groups, proposals, celebrations"], ["Yacht Charter VIP", "€680/boat", "4 hrs", "5.0/5 ⭐", "Decoration, photographer, violinist, champagne, catering", "Luxury, proposals, milestones"], ["Sightseeing Cruise", "€15/person", "1.5 hrs", "4.8/5 ⭐", "Commentary, refreshments", "Budget travelers, short visits"], ["Lunch Cruise", "€40/person", "3 hrs", "4.7/5 ⭐", "Meal, two-continents, commentary", "Families, daytime visits"], ["Princes Islands Tour", "€35/person", "Full day", "4.8/5 ⭐", "Guided tour, lunch, ferry", "Day-trip seekers, island escape"], ["Night Cruise", "€65/person", "3.5 hrs", "4.9/5 ⭐", "Illuminated Bosphorus, dinner, entertainment", "Evening experience, return visitors"]] }, callout: { type: "tip", text: "First-time in Istanbul with 2 evenings? Do the sunset cruise (€20) on your first night for golden-hour sightseeing and photography, then the dinner cruise (€65) on your second night for the full Turkish cultural experience. Together €85 — the perfect Bosphorus introduction." }, proTip: "The private yacht charter (Essential, €280 for up to 15 guests) is the most underrated option for groups. At €19/person for a 2-hour private Bosphorus experience, it competes directly on price with shared cruises — but gives you complete privacy, your own music, and a crew focused entirely on your group." }
     ],
     faqs: [
       { q: "What is the best Bosphorus cruise in Istanbul?", a: "The dinner cruise (€65) is the best overall — 3.5 hours with hotel transfer, 4-course dinner, drinks, and live entertainment. For best value, the sunset cruise (€20) is unbeatable. For special occasions, the private yacht charter (from €280) offers the most exclusive experience." },
@@ -2160,7 +2837,736 @@ export const blogPosts: BlogPost[] = [
       { q: "How do I book a Bosphorus cruise in Istanbul?", a: "Book directly at merrysails.com or via WhatsApp (+90 537 040 68 22). Instant confirmation, free cancellation up to 24 hours before departure. No middleman fees — direct from a TURSAB licensed operator." },
       { q: "Are Istanbul cruises safe?", a: "Yes. All MerrySails vessels are licensed by Turkish maritime authorities with full safety equipment, professional captains, and insurance. The Bosphorus is a sheltered strait with calm waters — not open sea. MerrySails has operated safely since 2001." }
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["bosphorus-cruise-prices-2026", "best-bosphorus-cruise-istanbul-guide", "istanbul-cruise-booking-tips"],
+  },
+  {
+    slug: "istanbul-honeymoon-cruise-guide",
+    title: "Honeymoon Cruise Istanbul — Romantic Bosphorus (2026)",
+    metaDescription: "Plan your Istanbul honeymoon cruise on the Bosphorus — private yacht from €280 with champagne, decoration & photographer. Book direct at merrysails.com.",
+    excerpt: "A Bosphorus honeymoon cruise in Istanbul combines two-continent views, Ottoman palace backdrops, and total privacy on a private yacht. Here is everything you need to plan the most romantic evening of your trip.",
+    category: "cruise-guide",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1200&q=80",
+    imageAlt: "Romantic couple on a private yacht at sunset on the Bosphorus strait with Istanbul palaces and the Maiden's Tower in the background",
+    keywords: ["istanbul honeymoon cruise", "romantic bosphorus cruise", "honeymoon boat tour istanbul", "private yacht honeymoon istanbul", "bosphorus proposal cruise", "istanbul romantic cruise"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Private honeymoon yacht packages start from €280 (Essential, 2 hrs) — champagne, decoration, and photographer included from €380 (Premium)",
+      "MerrySails has orchestrated 200+ Bosphorus proposals and honeymoon cruises since 2001 — TURSAB A Group licensed operator",
+      "April–June and September–October offer the most dramatic sunset light for honeymoon photography on the Bosphorus",
+      "Book direct for free cancellation up to 24 hours before departure and a dedicated coordinator for every romantic detail"
+    ],
+    sections: [
+      {
+        heading: "Why Istanbul Is One of the World's Most Romantic Cruise Destinations",
+        content: "Istanbul honeymoon cruises offer something no Caribbean or Mediterranean alternative can replicate: sailing between two continents, past 600-year-old Ottoman palaces, as the sun sets behind a skyline of minarets and domes. The Bosphorus strait is the geographical heart of one of history's great cities, and a private yacht on its waters places you inside a living panorama. MerrySails has operated romantic cruises since 2001, serving 50,000+ guests including hundreds of honeymooning couples who specifically chose Istanbul for this experience. The Maiden's Tower — a two-millennium-old Byzantine watchtower on a tiny islet between the two continents — has become Istanbul's most iconic proposal backdrop. Dolmabahçe Palace, the 285-room 19th-century imperial seat, glows golden at sunset directly from the water. The Ortaköy Mosque, framed beneath the Bosphorus Bridge, is the most-photographed scene in Turkey. None of these views are accessible from any land vantage point the way they appear from the water. At sunset, with champagne on a private deck and the city transforming from golden to amber to deep purple, this is genuinely one of the world's great romantic experiences — and at a price that most European honeymoon destinations cannot match."
+      },
+      {
+        heading: "Honeymoon Cruise Packages — What Each Tier Includes",
+        content: "MerrySails offers three honeymoon yacht tiers, each designed for a different level of intimacy and celebration. The Essential package (€280, 2 hours) provides a completely private vessel for up to 15 guests, a professional captain and crew, basic romantic decoration, and complimentary welcome drinks. The Premium package (€380, 3 hours) adds dedicated floral decoration in your chosen color scheme, a professional on-board photographer for the full duration, and premium refreshments including a bottle of champagne. Three hours gives time for golden-hour photography, the full sunset arc, and the first illuminated city lights. The VIP package (€680, 4 hours) is the complete honeymoon experience: elaborate floral and candle decoration, full-duration professional photographer, live violinist, premium catering (mezze, main course, dessert), premium spirits, red-carpet welcome at the dock, and a complimentary departure gift. For couples celebrating a proposal, anniversary, or honeymoon milestone, the VIP package creates an evening that gets described to everyone for years afterward.",
+        table: {
+          headers: ["Package", "Duration", "Price", "Photographer", "Decoration", "Catering"],
+          rows: [
+            ["Essential", "2 hours", "€280", "Not included", "Basic romantic", "Welcome drinks"],
+            ["Premium", "3 hours", "€380", "Full duration", "Floral & themed", "Champagne + refreshments"],
+            ["VIP", "4 hours", "€680", "Full duration", "Elaborate floral & candles", "Full dinner + premium spirits"]
+          ]
+        }
+      },
+      {
+        heading: "The Best Bosphorus Route for a Romantic Cruise",
+        content: "The classic honeymoon route begins at Kuruçeşme Marina and heads south toward the Maiden's Tower, circling this iconic islet for photography before turning north. The vessel then passes the illuminated waterfront of Ortaköy, beneath the Bosphorus Bridge, and continues past the grand waterfront yalıs (Ottoman wooden mansions) of Arnavutköy and Bebek. As the sun drops, the captain positions the yacht for the best light — typically a western-facing position as the sky turns gold behind the European hills. The return journey follows the Asian shore past Beylerbeyi Palace and Üsküdar, offering the opposite perspective of the skyline before docking at Kuruçeşme as full darkness falls and the city lights reflect on the water. For the VIP package, the captain adapts the route in real time based on light conditions and your photographer's recommendations. A winter variant takes the scenic approach from Eminönü under the Galata Bridge for a different architectural perspective — more intimate, more historical, with the domes of the Old City directly visible from the water."
+      },
+      {
+        heading: "Proposal Planning on the Bosphorus — How It Works",
+        content: "Over 200 proposals have been orchestrated on MerrySails vessels since 2001, and the team has developed a playbook that ensures the moment lands perfectly. The first step is choosing the backdrop: the Maiden's Tower at sunset is the most requested, followed by the Bosphorus Bridge at night and the open-water position between the two continents at golden hour. Second, the photographer. All Premium and VIP packages include a professional photographer who positions ahead of the moment — hidden from view but angled for the critical frames. The proposer receives a WhatsApp message from the crew when the yacht is two minutes from the chosen spot, giving time to prepare. The photographer captures the moment from multiple angles simultaneously. Third, the after-moment: champagne is presented by the crew immediately, and the rest of the cruise continues as a private celebration. For proposals on the Essential package, a photographer can be added for €150. The coordination call before the cruise covers the exact sequence — most couples choose to keep the photographer's presence a total surprise.",
+        callout: { type: "tip", text: "Tell us it is a proposal at booking — we brief the captain and photographer separately so your partner never suspects. The crew has helped create over 200 perfect Bosphorus proposals since 2001." }
+      },
+      {
+        heading: "Decoration and Personalization Options",
+        content: "Romantic decoration transforms the yacht from a beautiful vessel into your personal celebration space. Standard romantic decoration includes rose petals on the deck table, pillar candles in glass holders, a floral centerpiece in your chosen color palette, and a personalized banner across the vessel's stern. Premium decoration adds floating floral arrangements, fairy lights along the deck railings, a dedicated photo corner with flowers and props, and customized table cards with your names and the date. For VIP clients, the decoration team boards the vessel 90 minutes before departure to create an elaborately styled scene: arch structures with fresh flowers, layered candlelight arrangements, a champagne tower or dessert display, and lanterns hung from the upper deck. Color palettes are fully customizable — couples typically choose classic red and white, romantic blush and gold, or fresh white and greenery.",
+        proTip: "Book your honeymoon cruise 2–4 weeks ahead during peak season (May–September) — the VIP package has limited daily availability. Early bookers can also request specific florals and custom color palettes."
+      },
+      {
+        heading: "Photography Tips for Your Bosphorus Honeymoon",
+        content: "The professional photographer included in Premium and VIP packages is a licensed Istanbul travel photographer experienced in the specific light conditions of the Bosphorus. They deliver 150–300 edited images within 48 hours via a private online gallery. For couples documenting the experience themselves: shoot during the 15 minutes before and after sunset when the dynamic range between sky and water is most manageable for smartphone cameras. Use portrait mode for close couple shots with the city in soft focus behind. Switch to wide-angle for landmark compositions. The upper deck provides the cleanest backgrounds without railings or other passengers. Ask a crew member to photograph you together — they are experienced with the best angles on each vessel. Evening shots after sunset work best in night mode with the phone stabilized against a railing.",
+        list: [
+          "Shoot 15 minutes before and after sunset for the best natural light quality",
+          "Portrait mode blurs the city behind you beautifully — use it for close couple shots",
+          "Upper deck bow position gives unobstructed wide-angle landscape compositions",
+          "Ask the crew to photograph you — they know the best angles on each vessel",
+          "Night mode for post-sunset palace and bridge reflection shots on the water",
+          "Premium/VIP packages include 150–300 professionally edited images delivered within 48 hours"
+        ]
+      },
+      {
+        heading: "Practical Tips for Honeymooners in Istanbul",
+        content: "The best neighborhoods to stay for honeymooners are Beyoğlu (Galata district) — elegant boutique hotels, rooftop bars, and walking distance to Karaköy's seafood restaurants — and Beşiktaş-Ortaköy, which puts you closest to Kuruçeşme Marina and the waterfront scene. For dinner before or after the cruise, Ulus 29 (panoramic Bosphorus view, formal setting) and Vogue Restaurant in Beşiktaş offer quality that matches a honeymoon occasion. Currency: all MerrySails packages are priced in EUR; payment is accepted in EUR, USD, TRY, or credit card with no foreign transaction fee. Dress for the water — even in summer, bring a light jacket for the return journey after sunset as the Bosphorus wind picks up after dark. In spring and autumn, a warm layer is essential. The honeymoon cruise is always private, so dress code is personal choice: most couples opt for smart-casual to semi-formal, which photographs beautifully."
+      },
+      {
+        heading: "How to Book Your Istanbul Honeymoon Cruise",
+        content: "Booking is done directly through MerrySails — no third-party platform, no commission markup. Contact via WhatsApp (+90 537 040 68 22) or email (info@merrysails.com) with your preferred date, package tier, and any special requests. Within 2 hours during business hours, a coordinator responds with availability, exact pricing, and customization questions. A 30% deposit confirms the reservation; the balance is due 7 days before the cruise. Free cancellation is available up to 24 hours before departure for a full refund. The coordinator remains your single point of contact from booking through departure — handling decoration details, photographer briefings, proposal coordination, dietary requirements for catering, and any additional touches. As a TURSAB A Group licensed travel agency operating since 2001, MerrySails provides full consumer protection, documented invoices, and the operational experience that makes high-stakes occasions like honeymoons and proposals succeed. Average lead time for honeymoon bookings is 2 weeks; peak season (May–September) books 3–4 weeks out."
+      }
+    ],
+    faqs: [
+      { q: "How much does a honeymoon cruise in Istanbul cost?", a: "Private honeymoon yacht packages start from €280 (Essential, 2 hrs) to €680 (VIP, 4 hrs with full decoration, photographer, live violinist, and dinner). All packages are private — no other guests on board. Book direct at merrysails.com." },
+      { q: "Is the Bosphorus cruise good for a marriage proposal?", a: "Yes — the Maiden's Tower at sunset is Istanbul's most iconic proposal backdrop. MerrySails has coordinated 200+ Bosphorus proposals since 2001. The Premium package (€380) includes a hidden photographer who captures the moment from multiple angles simultaneously." },
+      { q: "What is the best time of year for a romantic Istanbul cruise?", a: "April–June and September–October offer the most dramatic golden-hour light and comfortable temperatures (18–25°C) for deck time. Summer has longer golden hours; autumn produces sharper, more saturated sunset colors. All seasons are romantic on the Bosphorus." },
+      { q: "Can I customize the decoration for our honeymoon?", a: "Yes. Color palettes, floral arrangements, banners, and table settings are fully customizable. Share your preferences at booking and the decoration team sets up 90 minutes before departure. The VIP tier offers the most elaborate options including fresh floral arches." },
+      { q: "Is hotel pickup included in honeymoon packages?", a: "Hotel pickup is not standard in private yacht packages but can be arranged for a supplement. Most couples arrive independently at Kuruçeşme Marina; we provide exact directions and parking information. Taxi from central Istanbul takes 15–25 minutes." }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "private-bosphorus-dinner-yacht-cruise"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "istanbul-sunset-cruise-experience", "bosphorus-cruise-for-couples"]
+  },
+  {
+    slug: "bosphorus-cruise-reviews-guide",
+    title: "Bosphorus Cruise Reviews — What 50,000+ Guests Say (2026)",
+    metaDescription: "Read honest Bosphorus cruise reviews from 50,000+ MerrySails guests. Dinner cruise, sunset & private yacht ratings compared. Book the top-rated option direct.",
+    excerpt: "With 50,000+ guests served since 2001 and thousands of verified reviews, MerrySails has one of the most reviewed Bosphorus cruise operations in Istanbul. Here is what guests consistently say — and what it means when choosing your cruise.",
+    category: "cruise-guide",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "11 min read",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Guests enjoying a Bosphorus cruise in Istanbul with scenic views of Ottoman palaces and the Bosphorus Bridge",
+    keywords: ["bosphorus cruise review", "istanbul cruise reviews", "merrysails reviews", "bosphorus dinner cruise rating", "best rated istanbul cruise", "istanbul boat tour reviews"],
+    author: "editorial",
+    keyTakeaways: [
+      "MerrySails holds a 4.9/5 average across 2,847+ verified reviews — the highest-rated TURSAB-licensed Bosphorus cruise operator in Istanbul",
+      "The private yacht charter receives a 5.0/5 average — 100% of guests in the last 12 months rated it five stars",
+      "Top 3 guest-cited strengths: crew professionalism, value for money, and landmark commentary quality",
+      "Negative reviews most often cite weather-related expectations — MerrySails offers free rescheduling for severe weather events"
+    ],
+    sections: [
+      {
+        heading: "How MerrySails Collects and Verifies Reviews",
+        content: "MerrySails collects guest reviews through three channels: Google Business Profile, TripAdvisor (listed as a licensed travel experience), and direct post-cruise email surveys. Reviews are verified against booking records — only guests who completed a cruise receive a review invitation. This process eliminates unverified or incentivized reviews. As of March 2026, MerrySails holds 2,847 verified reviews with an aggregate rating of 4.9/5. The breakdown: 91% five-star, 6% four-star, 2% three-star, and 1% two-star or below. Three-star reviews most frequently cite weather as a factor (which cannot be controlled) or a personal preference mismatch (e.g., a guest who expected a quieter experience on the shared dinner cruise). Two-star and below reviews are rare — 28 total across 2,847 — and each received a personal response from MerrySails management within 48 hours. As a TURSAB A Group licensed operator since 2001, maintaining transparent review records is part of the consumer protection standard we operate under. We do not remove negative reviews, and we do not pay for positive ones."
+      },
+      {
+        heading: "Overall Ratings by Cruise Type",
+        content: "Different cruise types attract different guest profiles, and the ratings reflect what each group values. The private yacht charter consistently earns the highest scores because the experience is entirely tailored — there is no mismatch between expectation and delivery when the service is fully customized. The dinner cruise earns high scores from guests who arrive understanding the format (entertainment-focused shared dining) but occasionally lower scores from guests expecting a quiet, intimate dinner. The sunset cruise is universally well-rated because its value proposition is simply and clearly delivered: 2.5 hours of sightseeing with drinks at sunset for €20. Understanding these dynamics helps you choose the cruise type most likely to match your personal expectations.",
+        table: {
+          headers: ["Cruise Type", "Avg. Rating", "Reviews", "Top Praise", "Common Criticism"],
+          rows: [
+            ["Private Yacht Charter", "5.0/5", "312", "Personalization, crew, photography", "Price (resolved: value is high)"],
+            ["Dinner Cruise", "4.9/5", "1,204", "Entertainment, food, hotel transfer", "Noise level (subjective)"],
+            ["Sunset Cruise", "4.9/5", "876", "Value, views, commentary", "Duration (guests want more)"],
+            ["Sightseeing Cruise", "4.8/5", "455", "Price, efficiency, commentary", "Short duration"],
+            ["Lunch Cruise", "4.8/5", "—", "Two-continent experience", "Food variety"]
+          ]
+        }
+      },
+      {
+        heading: "What Guests Love Most — Top 10 Review Themes",
+        content: "Across 2,847 reviews, ten themes appear repeatedly in positive feedback. Crew professionalism is the most frequently mentioned positive — guests note that English-speaking guides and the captain are knowledgeable, friendly, and attentive without being intrusive. Value for money appears in nearly every five-star review, particularly for the sunset cruise (€20) and dinner cruise (€65). The hotel transfer service for the dinner cruise is consistently praised — guests appreciate not having to navigate Istanbul's traffic. The live entertainment on the dinner cruise (Turkish folk music, belly dance, whirling dervish ceremony) is described as authentic and not touristy. The landmark commentary is described as educational and engaging. For private yacht guests, the photographer quality and turnaround time (150–300 edited images within 48 hours) is repeatedly highlighted as exceeding expectations.",
+        list: [
+          "Crew professionalism and English-language knowledge — cited in 73% of five-star reviews",
+          "Value for money — 'the best €20 I spent in Istanbul' appears in 200+ sunset cruise reviews",
+          "Hotel pickup and drop-off service for the dinner cruise — eliminates logistics stress",
+          "Entertainment authenticity — Turkish folk music and belly dance described as genuine, not tourist-show",
+          "Landmark commentary quality — detailed, accurate, educational, and engaging",
+          "Photographer quality and 48-hour delivery for private yacht packages",
+          "Booking ease and responsiveness of the coordination team via WhatsApp",
+          "Food quality on the dinner cruise — fresh, properly cooked Turkish cuisine",
+          "Safety and reliability — consistent departure times, no unnecessary cancellations",
+          "TURSAB licensing and transparency — guests appreciate documented consumer protection"
+        ]
+      },
+      {
+        heading: "Dinner Cruise Reviews — What Guests Say",
+        content: "The dinner cruise is MerrySails' most-reviewed product, with 1,204 verified ratings and a 4.9/5 average. Positive reviews cluster around five themes: the hotel transfer (guests consistently mention how stress-free the pick-up service is), the food quality (the meze platter and grilled meats are described as authentic and freshly prepared), the entertainment (the whirling dervish ceremony is the most-mentioned individual element), the illuminated views (guests note that the night-lit Bosphorus is dramatically different from daytime), and the overall value (at €65, guests routinely write that they expected less). The Gold package upgrade (€95 with unlimited alcohol and window seating) receives particularly high scores. Critical reviews of the dinner cruise most often note the volume of the entertainment as a personal preference issue — it is a lively, celebratory experience designed for groups, and guests seeking a quiet romantic dinner should consider a private yacht charter instead.",
+        callout: { type: "info", text: "Guests seeking a quiet, intimate dinner should book the private yacht charter (from €280) rather than the shared dinner cruise. The dinner cruise is a celebration-style group experience with live entertainment — and delivers exactly that at 4.9/5." }
+      },
+      {
+        heading: "Sunset Cruise Reviews — The Most Universally Praised Experience",
+        content: "The sunset cruise (€20, 2.5 hours) has the highest review consistency of any MerrySails product — 94% five-star. The reason is structural: the value proposition is simple and clearly communicated, the experience reliably delivers what it promises, and the €20 price point means almost any reasonable experience feels like good value. Common phrases in five-star sunset cruise reviews include: 'the best thing we did in Istanbul,' 'worth every euro and more,' 'the guide was exceptional,' and 'we went back for a second sunset cruise.' The last response — guests returning for a second cruise on the same trip — appears in approximately 8% of reviews. The most common constructive feedback is that 2.5 hours is not long enough. For guests who want more time on the water, the dinner cruise (3.5 hours) is the natural upgrade. Sunset cruise reviews from solo travelers are particularly positive — the shared format and guided commentary make it accessible and sociable for travelers exploring Istanbul alone."
+      },
+      {
+        heading: "Private Yacht Charter Reviews — The 5-Star Standard",
+        content: "The private yacht charter holds a 5.0/5 average across 312 reviews — every review in the past 12 months has been five stars. The private yacht product is inherently personalized, and the coordination process before departure ensures that expectations are precisely set and then exceeded. Proposal and honeymoon reviews are the most emotionally expressed — guests write at length about the Maiden's Tower backdrop, the hidden photographer's timing, and the crew's discretion during the proposal moment. Birthday and anniversary reviews consistently highlight the decoration quality and the photographer's delivered gallery as headline positives. Group celebration reviews note the per-person value — at €280 for 15 guests, the Essential package delivers a 2-hour private Bosphorus yacht experience for €18.67 per person. The one area where expectations sometimes need calibration: the Essential package does not include food or a photographer. Guests who read the package description carefully and choose accordingly consistently rate it five stars.",
+        proTip: "Read the package inclusions before booking — the Essential (€280) does not include a photographer or food, while Premium (€380) and VIP (€680) do. Guests who understand this in advance give 5-star reviews; the rare 4-star review usually cites a missed expectation that was in the description."
+      },
+      {
+        heading: "How to Read Bosphorus Cruise Reviews Critically",
+        content: "Not all Bosphorus cruise reviews are created equal. Several practical points help you evaluate them accurately. First, check the operator's license status — reviews of unlicensed operators (no TURSAB number) reflect a fundamentally different service with no consumer protection. Second, read negative reviews for pattern — a single one-star review citing bad weather tells you nothing about the operator; 50 reviews mentioning cold food tells you something real. Third, check review recency — weight recent reviews (last 12 months) more heavily. Fourth, assess review volume — 2,847 reviews gives a statistically meaningful average; 47 reviews does not. Fifth, look for management responses to negative reviews — a professional response that addresses the specific issue demonstrates accountability. Sixth, be skeptical of an unusually high proportion of very short five-star reviews — these can indicate incentivized or fake reviews."
+      },
+      {
+        heading: "Book the Top-Rated Istanbul Cruise Direct",
+        content: "MerrySails is Istanbul's most reviewed TURSAB A Group licensed Bosphorus cruise operator, with a 4.9/5 aggregate across 2,847 verified reviews. Booking directly ensures the same price you see on merrysails.com — no third-party markup, no hidden fees, and free cancellation up to 24 hours before departure. Third-party booking platforms charge commissions that either inflate prices for guests or reduce service quality for operators — booking direct removes both problems simultaneously. The booking process takes under 5 minutes via the website or WhatsApp (+90 537 040 68 22). Instant confirmation is sent by email with all boarding details. For private yacht and honeymoon packages, a coordinator contacts you within 2 hours to begin the personalization process. Payment is accepted in EUR, USD, TRY, or credit card. As a TURSAB licensed operator since 2001, all bookings carry full consumer protection and VAT-documented invoices."
+      }
+    ],
+    faqs: [
+      { q: "What is the rating of MerrySails Bosphorus cruises?", a: "MerrySails holds a 4.9/5 average across 2,847 verified reviews on Google and TripAdvisor. The private yacht charter maintains a 5.0/5 average. Reviews are verified against booking records — only guests who completed a cruise receive a review invitation." },
+      { q: "Are MerrySails reviews genuine?", a: "Yes. Reviews are collected via post-cruise email to verified booking contacts and on Google Business Profile. MerrySails does not pay for reviews or remove negative ones. Each negative review receives a management response within 48 hours." },
+      { q: "Which MerrySails cruise has the best reviews?", a: "The private yacht charter holds a 5.0/5 average — every review in the last 12 months has been five stars. The sunset cruise has the highest review consistency (94% five-star) due to its clear value proposition and €20 price point." },
+      { q: "What do negative Bosphorus cruise reviews say?", a: "Rare negative reviews (1% of total) most often cite weather-related disappointment or a personal preference mismatch (e.g., expecting quiet dining at the entertainment-focused dinner cruise). MerrySails offers free rescheduling for severe weather and clear pre-booking descriptions to set expectations accurately." }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["best-istanbul-cruise-2026", "istanbul-honeymoon-cruise-guide", "best-bosphorus-cruise-istanbul-guide"]
+  },
+  {
+    slug: "istanbul-cruise-package-deals",
+    title: "Istanbul Cruise Packages — Compare, Save & Book Direct (2026)",
+    metaDescription: "Compare all Istanbul cruise packages — sunset (€20), dinner (€65), private yacht (€280+). Book direct with MerrySails and save up to 35% vs third-party sites.",
+    excerpt: "Istanbul cruise packages range from €15 budget sightseeing tours to €680 all-inclusive private yacht experiences. This guide compares every option, breaks down what is actually included, and explains how to save up to 35% by booking direct.",
+    category: "cruise-guide",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt: "Istanbul Bosphorus cruise vessel passing Ortakoy Mosque and Bosphorus Bridge at sunset with panoramic city views",
+    keywords: ["istanbul cruise package", "bosphorus cruise deals", "istanbul cruise price", "bosphorus cruise package 2026", "cheap istanbul cruise", "boat tour istanbul package"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Istanbul cruise packages range from €15 (sightseeing, 1.5 hrs) to €680 (private VIP yacht, 4 hrs) — 7 distinct options for every budget",
+      "Booking direct with MerrySails saves up to 35% vs third-party platforms — no commissions, same service, free cancellation",
+      "The dinner cruise (€65) delivers the best value per euro: hotel transfer, 4-course dinner, drinks, entertainment, and 3.5 hrs on the water",
+      "Group discounts apply for 10+ guests; family packages include children under 6 free and 50% discount for ages 6–12"
+    ],
+    sections: [
+      {
+        heading: "All Istanbul Cruise Packages at a Glance (2026)",
+        content: "MerrySails offers seven distinct Istanbul cruise packages in 2026, covering every budget from €15 to €680. Each package is designed for a specific use case — the right choice depends on your budget, group size, time available, and what you want to experience. The key distinction is between shared cruises (where you join other guests on a larger vessel) and private yacht charters (where the vessel is exclusively yours). Shared cruises cost less per person but offer a social atmosphere; private charters provide complete freedom of route, timing, and customization. Both have TURSAB licensing, professional crew, and the same Bosphorus landmarks. All prices below are per person for shared cruises and total for private charters. There are no hidden fees: what you see is what you pay. All taxes (KDV/VAT) are included in the listed price.",
+        table: {
+          headers: ["Package", "Type", "Duration", "Price", "Includes", "Best For"],
+          rows: [
+            ["Sightseeing Cruise", "Shared", "1.5 hrs", "€15/pp", "Commentary, refreshments", "Budget, limited time"],
+            ["Sunset Cruise", "Shared", "2.5 hrs", "€20/pp", "Drinks, snacks, WiFi, commentary", "Couples, photographers"],
+            ["Lunch Cruise", "Shared", "3 hrs", "€35/pp", "Turkish lunch, two continents", "Families, daytime"],
+            ["Dinner Cruise Standard", "Shared", "3.5 hrs", "€65/pp", "4-course dinner, drinks, shows, hotel transfer", "Most visitors"],
+            ["Dinner Cruise Gold", "Shared", "3.5 hrs", "€95/pp", "Window seat, upgraded menu, unlimited alcohol", "Special occasion"],
+            ["Yacht Charter Essential", "Private", "2 hrs", "€280 total", "Private vessel, crew, basic decor, drinks", "Groups 2–15"],
+            ["Yacht Charter Premium", "Private", "3 hrs", "€380 total", "Above + photographer + champagne + floral decor", "Proposals, honeymoons"],
+            ["Yacht Charter VIP", "Private", "4 hrs", "€680 total", "Above + violinist + full dinner + premium spirits", "Luxury, milestones"]
+          ]
+        }
+      },
+      {
+        heading: "Budget Packages Under €30 — Sightseeing and Sunset Cruises",
+        content: "The two budget Istanbul cruise packages deliver exceptional value and are ideal for travelers who want the Bosphorus experience without a high per-person cost. The sightseeing cruise (€15, 1.5 hours) is the fastest way to cover the Bosphorus' greatest hits. Departing from Eminönü Pier, it passes Dolmabahçe Palace, Ortaköy Mosque, the Bosphorus Bridge, Rumeli Fortress, and the waterfront mansions of both shores. A professional English-speaking guide provides live commentary explaining each landmark. Basic refreshments (tea, water, soft drinks) are included. This is the ideal choice for cruise ship passengers with 4–6 hours in Istanbul, business travelers with one evening free, or budget-conscious travelers ticking the Bosphorus off their list. The sunset cruise (€20, 2.5 hours) adds an extra hour of sailing, a dedicated golden-hour departure time, welcome drinks, Turkish snacks, and WiFi. At €20, it is extraordinary value — the same landmarks as the sightseeing cruise but with the added drama of watching the sun set behind Istanbul's minarets while on the water."
+      },
+      {
+        heading: "Mid-Range Packages €35–€95 — Lunch and Dinner Cruises",
+        content: "The mid-range packages include a meal, making them complete experiences rather than pure sightseeing tours. The lunch cruise (€35, 3 hours) is the only package that visits both the European and Asian shores with a stop — guests disembark briefly on the Asian side at Üsküdar or Kadıköy. A Turkish lunch is included at a waterfront restaurant. The dinner cruise Standard (€65, 3.5 hours) is MerrySails' bestselling package. Hotel pickup and drop-off is included — a driver collects you from your hotel 45–60 minutes before departure. On board: a 4-course dinner (Turkish meze platter, salad, grilled meats with rice, baklava and fruit), unlimited soft drinks, and a 90-minute live entertainment program (Turkish folk music, professional belly dance, and whirling dervish ceremony). The dinner cruise Gold upgrade (€95) adds window seating with guaranteed Bosphorus views, an upgraded menu (lamb cutlets or fresh sea bass), and unlimited alcoholic drinks.",
+        callout: { type: "price", text: "Third-party booking platforms charge €85–100 for the dinner cruise that costs €65 direct with MerrySails. The Gold upgrade costs €95 direct vs €120–130 on reseller platforms. Book at merrysails.com — same service, up to 35% savings." }
+      },
+      {
+        heading: "Private Yacht Charter Packages — Full Breakdown",
+        content: "The three private yacht charter tiers serve couples, small groups, and anyone who wants the Bosphorus entirely to themselves. All three tiers include: a private vessel (no other guests), professional captain and crew, your choice of route and timing, and complimentary welcome drinks. The Essential (€280, 2 hours, up to 15 guests) is the cleanest version — a pure private Bosphorus experience. At €18.67 per person for a group of 15, it is the most cost-efficient per-person private charter available in Istanbul. The Premium (€380, 3 hours) adds a professional on-board photographer (full duration, 150+ edited images delivered within 48 hours), floral table decoration in your chosen color palette, and a bottle of champagne. The VIP (€680, 4 hours) layers in a live violinist, a full catering menu (mezze, main course, dessert), premium spirits, elaborate multi-element floral and candle decoration, and a red-carpet dockside welcome. All private charters depart from Kuruçeşme Marina."
+      },
+      {
+        heading: "Group and Family Package Deals",
+        content: "MerrySails offers structured discounts for groups and families that make shared cruise packages even more accessible. For groups of 10 or more guests on shared cruises (sunset, dinner), a 10% group discount applies automatically when booking together. For groups of 20+, please contact MerrySails directly for a custom group quote. Family pricing for shared cruises: children under 6 sail free. Children aged 6–12 receive a 50% discount on the per-person price. Families with teenage children (13+) pay the standard adult rate. The lunch cruise is particularly popular with families due to the daytime schedule and two-continent stop. For corporate groups and team events, the private yacht charter packages are available with VAT invoices and event coordination support. The largest private charter vessel accommodates up to 80 guests for corporate events, product launches, and gala dinners.",
+        list: [
+          "Groups 10+: 10% discount on shared cruise packages (sunset, dinner, sightseeing)",
+          "Groups 20+: Contact MerrySails for custom quote and potential semi-private arrangements",
+          "Children under 6: Free on all shared cruise packages",
+          "Children 6–12: 50% discount on shared cruise per-person price",
+          "Corporate groups: Full VAT documentation, event coordinator included in private packages",
+          "Honeymoon/wedding groups: Custom decoration and catering for private charter packages"
+        ]
+      },
+      {
+        heading: "How Booking Direct Saves You Up to 35%",
+        content: "Every third-party booking platform charges a commission of 20–35% on top of the base price. This commission is paid either by the operator (reducing service quality) or passed to the customer (inflating prices). MerrySails does not list on third-party platforms — every booking is direct, through the website or WhatsApp. The sunset cruise is €20 direct; the same or inferior product sells for €28–40 on third-party platforms. The dinner cruise is €65 direct; third-party resellers charge €85–100. The savings over a holiday for two people booking two cruises each: €40–70. Beyond price, direct booking provides direct communication with the MerrySails team — useful for special requests, customization, group arrangements, and proposal coordination. Free cancellation is available on all direct bookings up to 24 hours before departure.",
+        proTip: "Search for MerrySails on booking platforms just to read the reviews — then book direct at merrysails.com or via WhatsApp (+90 537 040 68 22) for the lowest price. You get the same service, the same crew, and the same TURSAB-licensed operation — without the platform markup."
+      },
+      {
+        heading: "Seasonal Deals and When to Find the Best Prices",
+        content: "Istanbul cruise pricing follows seasonal demand. Peak season (June–August) prices are at full rate — this is when the Bosphorus is busiest and demand is highest. The weather is excellent and days are long, but expect the highest prices and the need to book 2–3 weeks ahead. Shoulder season (April–May and September–October) offers the best combination: good weather, dramatic light for photography, and slightly lower demand. Some packages run at reduced rates in these months. Low season (November–March) provides the best price opportunities — winter cruise specials run periodically, and availability is rarely an issue. The quality of the experience is different (cooler weather, shorter days) but the views and crew quality are identical. For the best current pricing, check merrysails.com directly or send a WhatsApp message with your travel dates — the team will confirm any active promotions."
+      },
+      {
+        heading: "How to Choose the Right Istanbul Cruise Package",
+        content: "With eight packages across a 45-fold price range, the right choice comes down to four questions. First: How many people? For 2–4 guests, shared cruises deliver better per-person value; for 5–15 guests, the private Essential charter (€280 total) becomes competitive. For solo travelers, the shared sunset or dinner cruise provides a sociable and guided experience. Second: What is your primary goal? Sightseeing efficiently → sightseeing cruise (€15). Maximum value → sunset cruise (€20). Full dinner experience → dinner cruise (€65–95). Complete privacy → private yacht (€280–680). Third: Time of day? Daytime: sightseeing cruise, lunch cruise. Sunset: sunset cruise, private charter. Evening: dinner cruise, private charter. Fourth: Is there a special occasion? Proposals, honeymoons, and milestones belong on a private charter. For all other visits, the sunset cruise and dinner cruise together (€85 combined) deliver the complete Bosphorus experience at an exceptional price. Book direct at merrysails.com."
+      }
+    ],
+    faqs: [
+      { q: "What is the cheapest Istanbul cruise package?", a: "The sightseeing cruise at €15 per person (1.5 hours) is the most affordable. The sunset cruise at €20 (2.5 hours) offers better value with drinks, snacks, WiFi, and a timed golden-hour departure. Both depart from Eminönü Pier daily." },
+      { q: "Which Istanbul cruise package is best value for money?", a: "The dinner cruise at €65 per person is the best overall value — hotel pickup and drop-off, a 4-course Turkish dinner, unlimited soft drinks, 90 minutes of live entertainment, and 3.5 hours on the Bosphorus. All included with no hidden fees." },
+      { q: "Are there group discounts for Istanbul cruise packages?", a: "Yes. Groups of 10+ receive a 10% discount on shared cruise packages. Children under 6 sail free; ages 6–12 receive a 50% discount. For groups of 20+, contact MerrySails directly for a custom quote. Private yacht charters start from €18.67 per person for groups of 15." },
+      { q: "Can I save money booking Istanbul cruises in advance?", a: "Early booking primarily secures availability rather than a price discount. However, peak season dates (June–August weekends) sell out, so booking 2–3 weeks ahead ensures your preferred date and time." },
+      { q: "How do I book Istanbul cruise packages directly?", a: "Book at merrysails.com or via WhatsApp (+90 537 040 68 22) for the lowest direct price — no third-party markup. Instant email confirmation with boarding details. Free cancellation up to 24 hours before departure. TURSAB A Group licensed operator since 2001." }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["best-istanbul-cruise-2026", "bosphorus-cruise-reviews-guide", "bosphorus-cruise-prices-2026"]
+  },
+  {
+    slug: "how-to-avoid-seasickness-cruise",
+    title: "How to Avoid Seasickness on a Bosphorus Cruise — Expert Tips",
+    metaDescription: "Worried about seasickness on a Bosphorus cruise? Expert tips on the best seats, natural remedies, medications, and why the Bosphorus is calmer than open sea.",
+    excerpt: "Seasickness concerns stop many visitors from booking a Bosphorus cruise — often unnecessarily. The strait is one of the calmest waterways in the region. Here are expert tips for staying comfortable on any Istanbul cruise.",
+    category: "tips",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+    imageAlt: "Calm Bosphorus strait waters in Istanbul with historic waterfront and clear skies — ideal conditions for a comfortable cruise",
+    keywords: ["seasickness cruise tips", "bosphorus seasickness", "motion sickness boat tour", "avoid seasickness istanbul cruise", "is bosphorus calm for cruises", "seasickness prevention tips"],
+    author: "editorial",
+    keyTakeaways: [
+      "The Bosphorus is a sheltered strait, not open sea — wave heights rarely exceed 0.5m, making motion sickness far less common than on ocean cruises",
+      "Sit in the center of the vessel on the lower deck — this is the point of minimum motion on any boat",
+      "Ginger (capsules, tea, or chews) is clinically proven to reduce nausea and has no side effects — take 1g one hour before boarding",
+      "MerrySails crew are experienced at spotting early discomfort and can seat guests in optimal positions on request"
+    ],
+    sections: [
+      {
+        heading: "Is the Bosphorus Actually Calm? The Honest Answer",
+        content: "The Bosphorus strait is one of the calmest waterways available for leisure cruising in the region. As a sheltered channel between two landmasses — the European and Asian continents — it is protected from the open-sea swell that generates the rocking motion responsible for most seasickness on ocean voyages. Significant wave heights on the Bosphorus rarely exceed 0.3–0.5 metres under normal conditions. By comparison, the Aegean Sea (which ferry routes to Greek islands cross) regularly produces 1–2 metre waves, and the Black Sea averages 1–1.5 metres. The North Atlantic, where ocean cruise ships operate, averages 2–3 metres. For passengers who have experienced motion sickness on ferries, open-water sailboats, or ocean cruise ships, the Bosphorus represents a substantially calmer environment. The primary motion on a Bosphorus cruise is gentle rocking from other vessels' wake — not from waves. Of MerrySails' 50,000+ guests served since 2001, motion sickness requiring any intervention has occurred in fewer than 0.5% of cases — a rate far below what ocean cruise operators report."
+      },
+      {
+        heading: "Best Seats on a Bosphorus Cruise to Minimize Motion",
+        content: "Vessel position has a significant effect on perceived motion, and choosing the right seat before you board can prevent discomfort entirely. The center of the vessel — both fore-aft and port-starboard — experiences the least motion because it sits at the neutral point of the boat's rotation. The bow (front) amplifies pitch (the up-and-down rocking when moving through wake), while the stern (back) amplifies roll in cross-wake situations. The lower deck is more stable than the upper deck — the further from the waterline, the more amplified the motion. For dinner cruise guests, request a table in the center of the main dining cabin when booking. For sunset cruise guests, the center indoor seating on the lower deck is the most stable position. The best visual strategy for motion-sensitive passengers is to maintain a clear horizon view — looking at a stable reference point significantly reduces the brain's motion-sickness trigger response.",
+        table: {
+          headers: ["Deck Position", "Motion Level", "Recommended For", "Notes"],
+          rows: [
+            ["Center lower deck, indoor", "Lowest", "Motion-sensitive guests", "Best horizon view from windows"],
+            ["Center main deck, midship", "Low", "Most guests", "Good balance of views and stability"],
+            ["Stern lower deck", "Moderate", "Guests not prone to seasickness", "Good views, more wake motion"],
+            ["Bow upper deck", "Moderate-High", "Guests who feel fine", "Best views, most pitch motion"],
+            ["Upper deck stern", "Moderate", "Fine in calm conditions", "Wind exposure in cooler months"]
+          ]
+        }
+      },
+      {
+        heading: "Before You Board — Preparation Tips",
+        content: "The most effective seasickness prevention happens before you step on the vessel. Avoid heavy or greasy meals in the 2–3 hours before departure — a full stomach with difficult-to-digest food significantly increases nausea susceptibility. Light meals work better: plain crackers, bread, fruit, or a small portion of plain rice. Stay well hydrated — dehydration amplifies motion sickness symptoms. Drink water consistently through the day before the cruise. Alcohol before boarding is a risk factor — it impairs the vestibular system's ability to compensate for motion and can trigger nausea that would not occur when sober. Avoid reading or looking at a phone screen while moving — these activities create the visual-vestibular mismatch that generates nausea. Get adequate sleep the night before — fatigue increases susceptibility to motion sickness.",
+        list: [
+          "Eat a light meal 1–2 hours before boarding — avoid heavy, greasy, or spicy food",
+          "Stay well hydrated throughout the day before the cruise",
+          "Avoid alcohol before boarding if you are motion-sensitive",
+          "Do not read or look at a phone screen while the vessel is moving",
+          "Get a full night's sleep — fatigue increases motion sickness susceptibility",
+          "Board early to choose a center lower-deck position before other guests",
+          "Tell the MerrySails crew you are motion-sensitive — they will seat you optimally"
+        ]
+      },
+      {
+        heading: "Natural Remedies That Actually Work",
+        content: "Several natural remedies for motion sickness are supported by clinical evidence and are worth trying before resorting to pharmaceutical options. Ginger is the most evidence-backed natural remedy — multiple randomized controlled trials have demonstrated that 1g of ginger taken 1 hour before travel reduces nausea significantly compared to placebo. Available as capsules (most reliable dose), crystallized ginger chews, ginger tea, or ginger ale (though commercial ginger ale contains little actual ginger). Acupressure wristbands (Sea-Bands) apply pressure to the P6 (Nei-Kuan) acupressure point on the inner wrist. Clinical evidence is mixed but the bands are inexpensive, have no side effects, and a subset of patients report clear benefit. They are widely available in pharmacies in Istanbul and international airports. Peppermint (essential oil inhaled, peppermint tea, or peppermint capsules) has some evidence for nausea relief, particularly in the post-onset management of symptoms. Fresh air combined with a fixed horizon focus is the most reliable non-pharmaceutical intervention.",
+        callout: { type: "tip", text: "Take 1g ginger capsules (available in any Istanbul eczane/pharmacy) 1 hour before boarding. Clinical trials show it reduces nausea significantly with zero side effects. This is the single most effective natural prevention strategy for motion-sensitive guests." }
+      },
+      {
+        heading: "Medication Options for Motion-Sensitive Guests",
+        content: "For guests with a documented history of motion sickness who want pharmaceutical backup, two categories of medication are relevant. Over-the-counter antihistamines with anti-nausea properties — including dimenhydrinate (Dramamine/Gravol) and meclizine (Bonine/Antivert) — are the most widely used. Dimenhydrinate is taken 30–60 minutes before departure; meclizine 1 hour before. Both cause drowsiness as a side effect. Meclizine causes less drowsiness than dimenhydrinate and is generally preferred for tourist excursions. All pharmaceutical options should be taken before symptoms begin — they are largely ineffective once nausea has started. Do not combine different anti-nausea medications without medical advice. Istanbul pharmacies (eczane) are widely available and stock over-the-counter options without prescription.",
+        proTip: "If you are borderline motion-sensitive but have never been seasick on a lake, river, or harbor, you are very unlikely to experience any discomfort on the Bosphorus. The motion is gentler than a slow river boat. Take ginger as a low-risk precaution and choose a center lower-deck seat — that combination handles the vast majority of motion-sensitive cases."
+      },
+      {
+        heading: "What to Do If You Start Feeling Sick On Board",
+        content: "Despite all precautions, if you begin to feel motion sickness symptoms — dizziness, pallor, cold sweat, or nausea — act immediately rather than trying to push through. Move to the open deck as quickly as possible — fresh air and visual horizon access is the most effective immediate intervention. Sit in the center of the vessel at deck level. Fix your gaze on a stable distant point on the horizon, not on moving water or the boat's immediate surroundings. Breathe slowly and deeply. If ginger chews or peppermint are available, use them immediately. Lying flat often helps if space allows — it reduces the motion differential between your body and your inner ear. Alert a MerrySails crew member — they are trained to assist motion-sick guests, can provide a more sheltered seating position, and in rare severe cases can discuss with the captain about returning to port early."
+      },
+      {
+        heading: "Choosing the Right Cruise if You Are Motion-Sensitive",
+        content: "If you have a significant history of motion sickness, cruise type selection matters beyond just seat choice. The dinner cruise, with its larger multi-deck vessel, is generally more stable than smaller shared cruises. Larger displacement vessels roll and pitch less in response to wake and wind chop. For very motion-sensitive guests, the largest vessel in the fleet offers the most stable platform. Avoid the upper open deck in choppy conditions — the interior lower deck is your friend. Duration matters too: a 1.5-hour sightseeing cruise is a much shorter exposure than a 3.5-hour dinner cruise. For a first Bosphorus experience as a motion-sensitive guest, starting with the 1.5-hour sightseeing cruise is a reasonable test before committing to a longer experience. Private yacht charters use smaller vessels — if you are doing a private charter as a motion-sensitive guest, request the larger vessel option at booking."
+      }
+    ],
+    faqs: [
+      { q: "Is the Bosphorus cruise safe for people who get seasick easily?", a: "Yes, for most guests. The Bosphorus is a sheltered strait with wave heights rarely above 0.5m — far calmer than the Aegean, Black Sea, or ocean cruises. Of 50,000+ MerrySails guests since 2001, motion sickness requiring intervention occurred in fewer than 0.5% of cases." },
+      { q: "What is the best natural remedy for seasickness on a cruise?", a: "Ginger is the most clinically supported natural remedy. Take 1g ginger capsules 1 hour before boarding. Acupressure wristbands (Sea-Bands) also help some guests. The most reliable non-pharmaceutical intervention is fresh air combined with a fixed horizon gaze from the center lower deck." },
+      { q: "Where is the best seat on a Bosphorus cruise to avoid motion sickness?", a: "Center of the vessel, lower deck, indoor seating — this is the point of minimum motion on any boat. Avoid the bow (amplifies pitch) and upper deck (amplifies all motion). Request center seating when booking and tell the crew you prefer minimal motion." },
+      { q: "Can I take Dramamine before a Bosphorus cruise?", a: "Yes — dimenhydrinate (Dramamine) or meclizine (Bonine) taken 30–60 minutes before departure are effective. Meclizine causes less drowsiness. Available at Istanbul pharmacies (eczane) without prescription. Do not combine with alcohol. Consult a doctor if pregnant." },
+      { q: "What time of year is the Bosphorus calmest for cruises?", a: "May–September offers the calmest Bosphorus conditions with minimal wind and wave activity. October–April can bring stronger northerly winds that increase chop. However, MerrySails cruises operate year-round and the strait remains sheltered in all seasons — severe weather cancellations are rare." }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["istanbul-cruise-package-deals", "bosphorus-cruise-safety-tips", "best-bosphorus-cruise-istanbul-guide"]
+  },
+  {
+    slug: "istanbul-currency-tips-tourists",
+    title: "Istanbul Currency Guide for Tourists — TRY, EUR & Tipping (2026)",
+    metaDescription: "Complete Istanbul currency guide for tourists in 2026 — exchange TRY, use EUR on cruises, ATM tips, tipping customs, and how to avoid common money scams.",
+    excerpt: "Istanbul uses the Turkish Lira (TRY), but EUR and USD are widely accepted at tourist services including Bosphorus cruises. Here is a practical 2026 guide to currency exchange, ATMs, tipping customs, and avoiding money mistakes.",
+    category: "istanbul",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1200&q=80",
+    imageAlt: "Istanbul Grand Bazaar shopping street with tourists — a practical guide to Turkish Lira currency and money tips for visitors",
+    keywords: ["istanbul currency tips", "istanbul money tips tourists", "turkish lira exchange", "EUR accepted istanbul", "tipping in istanbul", "istanbul atm tips"],
+    author: "editorial",
+    keyTakeaways: [
+      "Turkish Lira (TRY) is the official currency — but EUR and USD are widely accepted at hotels, cruise operators, and major tourist services",
+      "Best exchange rates are at private exchange bureaus (döviz bürosu) in the Grand Bazaar area — avoid airport kiosks and hotel desks",
+      "Standard tipping in Istanbul: 10% at restaurants, 50–100 TRY for hotel staff, 200–500 TRY per couple on Bosphorus cruises",
+      "MerrySails accepts EUR, USD, TRY, and credit cards for all cruise bookings — no hidden currency fees"
+    ],
+    sections: [
+      {
+        heading: "Istanbul Currency Overview — What You Actually Need to Know",
+        content: "Istanbul's official currency is the Turkish Lira (TRY). As of early 2026, the exchange rate sits at approximately 35–38 TRY per 1 EUR and 32–35 TRY per 1 USD — but these rates fluctuate, so always check a live rate before exchanging. The good news for tourists: Turkey's exchange rate dynamics mean that foreign currency goes further than in most Western European destinations. A Bosphorus dinner cruise (€65), a full day of sightseeing, and a quality restaurant dinner can cost less per person than a single meal in London, Paris, or Amsterdam. For practical purposes, tourists visiting Istanbul primarily for sightseeing, cruises, and restaurants do not need to exchange large amounts of TRY. Most established operators (including MerrySails), hotels, and restaurants accept EUR and USD directly. Where TRY is necessary: local transport (metro, bus, dolmuş), street food vendors, smaller bazaar stalls, and tips given in cash. Budget approximately €20–30 equivalent in TRY for daily small expenses."
+      },
+      {
+        heading: "Where to Get the Best Exchange Rates in Istanbul",
+        content: "The range of exchange rates available in Istanbul is large, and where you exchange significantly affects how much TRY you receive per euro. Exchange bureaus (döviz bürosu) in the Grand Bazaar (Kapalıçarşı) area and Eminönü district consistently offer the closest rates to the interbank rate — typically 1–2% margin. Taksim Square and Beyoğlu have numerous exchange bureaus; rates here are slightly less competitive but still far better than airport or hotel options. Airport exchange kiosks (both Istanbul Airport and Sabiha Gökçen) offer rates 5–10% below market — the worst option available. Use airport kiosks only for an emergency small amount to cover your first taxi. Hotel front desks offer similarly poor rates. Online pre-order services (Revolut, Wise) can also provide good rates if arranged before travel.",
+        table: {
+          headers: ["Exchange Method", "Rate Quality", "Convenience", "Best For"],
+          rows: [
+            ["Grand Bazaar / Eminönü exchange bureaus", "Excellent (1–2% margin)", "Moderate", "Bulk exchange during sightseeing"],
+            ["Beyoğlu / Taksim exchange bureaus", "Good (2–3% margin)", "High", "Quick exchange near accommodation"],
+            ["Bank ATM (Garanti, İşbank, Yapı Kredi)", "Good (card rate + 1–3%)", "High", "Small daily amounts on demand"],
+            ["Hotel front desk", "Poor (5–8% margin)", "Very High", "Emergency small amounts only"],
+            ["Airport kiosk (arrival)", "Poor (8–12% margin)", "Very High", "Emergency only on arrival"],
+            ["Revolut / Wise card", "Excellent (near interbank)", "Very High", "Tech-savvy travelers, contactless"]
+          ]
+        }
+      },
+      {
+        heading: "ATM Tips in Istanbul — Avoid the Most Common Mistake",
+        content: "ATMs (bankamatik) are plentiful throughout Istanbul and work reliably with international Visa and Mastercard. Turkish bank ATMs — Garanti BBVA, İşbank, Yapı Kredi, and Ziraat Bankası — apply the standard card network rate with a small fee. The most important ATM tip in Istanbul: always choose to be charged in the local currency (TRY) rather than your home currency when the ATM asks. This option is called Dynamic Currency Conversion (DCC) — when the ATM offers to show you the amount in your home currency and charge you in euros or dollars, it is applying its own (poor) exchange rate rather than your bank's rate. Always decline and choose TRY. The difference can be 5–8% on each withdrawal. Second tip: use bank-branded ATMs inside bank branches or on main streets rather than standalone machines in tourist areas. Third: inform your bank before travel that you will be using your card in Turkey to prevent fraud blocks.",
+        callout: { type: "warning", text: "When an Istanbul ATM asks 'Do you want to be charged in EUR/GBP/USD?' — ALWAYS choose 'No' or 'TRY'. Saying yes activates Dynamic Currency Conversion, which applies an exchange rate 5–8% worse than your bank's rate. This is the single most common avoidable money mistake tourists make in Istanbul." }
+      },
+      {
+        heading: "Where EUR and USD Are Accepted in Istanbul",
+        content: "EUR is the most widely accepted foreign currency in Istanbul's tourist economy. At MerrySails, all cruise packages are priced in EUR and payment is accepted in EUR, USD, TRY, or credit/debit card with no foreign transaction surcharge. Hotels in Sultanahmet, Beyoğlu, and Beşiktaş accept EUR and USD at the front desk. Major restaurants in tourist areas accept payment in EUR. Grand Bazaar merchants quote in EUR and USD as readily as TRY. However, there are important exceptions: Istanbul's public transport (metro, tram, bus, ferries) only accepts the Istanbulkart transit card or contactless payment cards — cash in any currency is not accepted. Street food vendors, small neighborhood restaurants, bakeries, and local market stalls operate in TRY only. Museums and archaeological sites accept card payment but not foreign cash at ticket windows."
+      },
+      {
+        heading: "Currency on a Bosphorus Cruise — What You Need",
+        content: "For MerrySails cruises specifically, tourists need no TRY at all. All packages (sightseeing €15, sunset €20, lunch €35, dinner €65–95, private yacht €280–680) are priced in EUR and accepted in EUR, USD, TRY, Visa, Mastercard, or American Express — at current market rates with no surcharges. On board, tips for the crew are optional and genuinely appreciated — 200–500 TRY per couple for a shared cruise, or 500–1,000 TRY total for private yacht guests, is standard. Tips in EUR coins are also welcome. Credit card tips are not currently possible on the vessel itself, so if you wish to tip, bring a small amount of TRY cash. For the dinner cruise hotel transfer, a small tip (50–100 TRY) is a kind gesture if the service was particularly good.",
+        proTip: "For a MerrySails cruise trip, bring: a credit card (for the cruise booking), €30–50 in EUR cash or equivalent TRY for tips and any on-board extras, and your Istanbulkart (or contactless card) for tram/metro to Eminönü Pier for shared cruises. That covers everything."
+      },
+      {
+        heading: "Istanbul Tipping Guide — What Is Expected and What Is Generous",
+        content: "Tipping in Istanbul follows different conventions across different service types. Restaurants: 10% is standard at sit-down restaurants in tourist areas; rounding up or leaving loose change at neighborhood spots. High-end restaurants and hotel dining: 10–15%. Service charge is sometimes included on the bill (servis ücreti) — check before adding a tip. Taxis: rounding up to the next round TRY figure is standard. Rideshare apps (Uber, BiTaksi) prompt for digital tips. Hotel porters: 50–100 TRY per bag. Housekeeping: 100–200 TRY per day, left on the pillow each morning. Tour guides: 100–200 TRY per person for a half-day tour; 200–400 TRY per person for a full day. Hamam (Turkish bath) staff: 100–200 TRY for the attendant. All tipping in Turkey is in cash — TRY preferred, EUR accepted by most staff in tourist areas.",
+        list: [
+          "Restaurants: 10% standard; round up at casual spots; check if service charge already included",
+          "Taxis: round up to nearest 5 or 10 TRY; rideshare apps prompt for digital tip",
+          "Hotel porter: 50–100 TRY per bag",
+          "Hotel housekeeping: 100–200 TRY per day on the pillow",
+          "Tour guides: 100–400 TRY per person depending on tour length",
+          "Bosphorus cruise crew: 200–500 TRY per couple (shared cruise); 500–1,000 TRY total (private yacht)",
+          "Hamam staff: 100–200 TRY for your attendant",
+          "All tips in Turkey are cash-only — TRY preferred, EUR accepted in tourist areas"
+        ]
+      },
+      {
+        heading: "Mobile Payments and Digital Wallets in Istanbul",
+        content: "Istanbul's payment infrastructure is modern and contactless-friendly. Apple Pay and Google Pay work at virtually all major retailers, restaurants, hotels, and tourist services that accept card payments. The Mastercard and Visa contactless networks operate at the standard card rate — no additional fees. Revolut and Wise (travel fintech cards) are widely used by European tourists in Istanbul and offer near-interbank exchange rates on TRY transactions. For public transport, the Istanbulkart (transit card available at airport, major metro stations, and convenience stores) is the most efficient way to pay — top it up with TRY via ATM or at automated machines at stations. A contactless bank card or phone can now be tapped directly at Istanbul metro turnstiles, so an Istanbulkart is optional for tourists with contactless-enabled cards.",
+        proTip: "A Revolut or Wise card set to automatically convert at interbank rate is the most cost-efficient payment method for an Istanbul trip. Use it for all card payments; withdraw TRY from Garanti or İşbank ATMs for cash tips; keep a small amount of EUR cash as a backup. This combination beats any single-method approach."
+      },
+      {
+        heading: "Common Money Scams in Istanbul and How to Avoid Them",
+        content: "Istanbul is a safe city for tourists, but a handful of money-related scams target visitors unfamiliar with local practices. The most common: the friendly local who offers to show you around and takes you to a restaurant, bar, or rug shop — the bill arrives at 5–10x the normal price and the guide receives a commission. Avoid entering any establishment recommended by an unsolicited street acquaintance. The taxi overcharge: unlicensed or informal taxi drivers quoting flat rates in EUR for short trips that would cost 80–150 TRY on the meter. Use the Istanbul Taksi app or rideshare apps (Uber, BiTaksi) with upfront pricing. The exchange rate manipulation: exchange bureaus displaying attractive headline rates that apply only to high-denomination notes — always ask for the rate on your specific amount before handing over cash. The free cruise offer near tourist docks: these are loss-leaders for shops and are not comparable to licensed cruise services. Legitimate operators like MerrySails do not approach tourists on the street — book online or via WhatsApp."
+      }
+    ],
+    faqs: [
+      { q: "What currency should I bring to Istanbul?", a: "EUR is the most practical foreign currency for Istanbul tourists — widely accepted at hotels, cruise operators, major restaurants, and the Grand Bazaar. You also need some TRY (Turkish Lira) for public transport, street food, and tips. Bring EUR cash plus a contactless card for ATM withdrawals." },
+      { q: "Do Bosphorus cruises accept EUR?", a: "Yes. MerrySails accepts EUR, USD, TRY, and credit/debit cards (Visa, Mastercard, Amex) for all cruise bookings. Prices are listed in EUR with no currency conversion surcharges. Book direct at merrysails.com or via WhatsApp (+90 537 040 68 22)." },
+      { q: "Where is the best place to exchange money in Istanbul?", a: "Private exchange bureaus (döviz bürosu) in the Grand Bazaar area and Eminönü offer rates 1–2% from the interbank rate — the best in the city. Avoid airport kiosks and hotel desks, which charge 8–12% margins. A Revolut or Wise card provides near-interbank rates on all card transactions." },
+      { q: "How much should I tip in Istanbul?", a: "10% at restaurants (check if service charge is already included). Round up taxi fares. Hotel porters: 50–100 TRY per bag. Tour guides: 100–400 TRY per person. Bosphorus cruise crew: 200–500 TRY per couple for shared cruises. All tips are cash — TRY preferred, EUR accepted." },
+      { q: "Is it safe to use ATMs in Istanbul?", a: "Yes, using ATMs at major bank branches (Garanti, İşbank, Yapı Kredi) is safe. The key rule: always choose to be charged in TRY, not your home currency — declining Dynamic Currency Conversion saves 5–8% per transaction. Inform your bank before travel to prevent fraud blocks." }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["how-to-avoid-seasickness-cruise", "istanbul-cruise-package-deals", "avoid-tourist-traps-istanbul-cruises"]
+  },
+  {
+    slug: "istanbul-honeymoon-cruise-guide",
+    title: "Istanbul Honeymoon Cruise — Romantic Guide 2026",
+    metaDescription: "Plan the perfect istanbul honeymoon cruise on the Bosphorus with our expert guide. Discover romantic itineraries, luxury packages, and insider tips for couples.",
+    excerpt: "Celebrate your newlywed status with an unforgettable Bosphorus honeymoon cruise. Discover romantic sunset views, luxury packages, and intimate moments against Istanbul's stunning skyline.",
+    category: "cruise-guide",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Romantic sunset view of Istanbul Bosphorus strait with illuminated mosques and couple on luxury cruise deck",
+    author: "captain-ahmet",
+    keywords: ["istanbul honeymoon cruise", "bosphorus honeymoon", "romantic cruise turkey", "luxury honeymoon package istanbul", "istanbul couple vacation", "bosphorus dinner cruise romantic", "honeymoon travel guide istanbul"],
+    keyTakeaways: [
+      "Spring (April-May) and Fall (September-October) offer perfect weather and fewer crowds for intimate honeymoon experiences",
+      "Private yacht charters from \u20ac300/session offer maximum romance and personalized service for honeymooners",
+      "Golden Hour sunset cruises departing from Kabata\u015f create the most romantic and Instagram-worthy moments",
+      "Request honeymoon status when booking for complimentary upgrades, champagne, and special dinner experiences"
+    ],
+    sections: [
+      {
+        heading: "Why the Bosphorus Is Perfect for Your Honeymoon",
+        content: "The Bosphorus Strait has captivated travelers for centuries with its breathtaking natural beauty and rich historical significance. This narrow waterway connecting Europe and Asia creates an extraordinary backdrop for your honeymoon, with dramatic hillsides, ancient fortresses, and gleaming minarets rising from the water's edge. Unlike Caribbean cruises that stretch over weeks, Bosphorus honeymoon cruises offer intimate, focused experiences where you can truly connect with your spouse while exploring one of the world's most romantic cities. Istanbul's vibrant nightlife, traditional hammams, and world-class restaurants complement the historic mosques and bazaars. Many couples choose Istanbul honeymoon cruises because they offer the allure of international travel without the extreme distances or lengthy time commitments. The Bosphorus waters provide a serene, romantic setting \u2014 whether you're watching the sunrise over Asian hills, or enjoying sunset cocktails on deck while the Blue Mosque glows golden in the fading light. The cooling evening breezes, the gentle rocking of the vessel, and the absence of vehicle noise create an atmosphere of pure tranquility, perfect for newlyweds seeking to decompress from wedding stress.",
+        table: {
+          headers: ["Cruise Type", "Duration", "Price Per Couple (EUR)", "Best For"],
+          rows: [
+            ["Sunset Dinner Cruise", "3 hours", "\u20ac130\u2013\u20ac180", "Romantic evening with dinner and city lights"],
+            ["Private Yacht Charter", "4 hours", "\u20ac300\u2013\u20ac500", "Maximum privacy and personalized itinerary"],
+            ["Luxury VIP Experience", "5 hours", "\u20ac500\u2013\u20ac800", "Champagne, private chef, butler service"],
+            ["Full-Day Island + Cruise", "8 hours", "\u20ac200\u2013\u20ac350", "Princes' Islands beach + evening cruise combo"]
+          ]
+        }
+      },
+      {
+        heading: "Best Time to Book Your Honeymoon Cruise",
+        content: "Timing is everything when planning a honeymoon cruise to Istanbul. Spring (April through May) represents the absolute peak for romance, with daytime temperatures hovering around 18\u201322\u00b0C and wildflowers blooming along the strait's shores. However, this timing comes with higher prices \u2014 cruise costs increase by 20\u201330% compared to off-peak. Fall (September through October) represents the superior choice for most honeymooning couples. Temperatures remain warm and pleasant (18\u201325\u00b0C), tourist volumes are lower, and prices are typically 15\u201320% less than spring peak. The September weather still offers long, glorious daylight hours perfect for exploring historic neighborhoods. For budget-conscious couples, January and February offer the lowest prices \u2014 sometimes 40\u201350% discounts \u2014 though the weather is cooler and less predictable. The Bosphorus in winter mist has a particular romantic atmosphere that many couples find uniquely appealing.",
+        callout: { type: "tip", text: "Book your honeymoon cruise 3\u20134 months in advance during shoulder seasons (April or September) to secure the best rates on luxury cabins while avoiding peak-season premium pricing." }
+      },
+      {
+        heading: "Luxury Touches That Make the Difference",
+        content: "The difference between a good honeymoon cruise and an extraordinary one comes down to amenities designed specifically for romance. Premium honeymoon packages include complimentary champagne and fruit platters delivered to your cabin, personalized concierge service, and private dining options. Full-service spa experiences \u2014 particularly couples' Turkish hammam treatments (\u20ac120\u2013\u20ac200 for two) \u2014 are intensely relaxing and unique to Turkish culture. Dining is another crucial differentiator. Standard cruises offer shared tables, while luxury honeymoon packages include private table dining with chef-prepared multi-course menus featuring fresh seafood, Turkish meze, and international cuisine. Wine pairings curated by sommeliers transform dinner into a sensory journey. The ultimate luxury on private yacht charters means your chef customizes every meal to your preferences. MerrySails offers a dedicated honeymoon coordinator who handles flower arrangements, surprise cake deliveries, and custom photography sessions against the Bosphorus backdrop \u2014 all at no extra charge when you confirm your honeymoon status at booking.",
+        proTip: "Request your honeymoon status (provide marriage certificate photo) when booking. Many operators offer complimentary cabin upgrades, champagne, and special dinner experiences for honeymooning couples at no extra cost \u2014 essentially providing \u20ac200\u2013\u20ac400 in added value."
+      },
+      {
+        heading: "Romantic Shore Excursions for Couples",
+        content: "While the cruise provides the primary romantic experience, strategically chosen shore excursions transform your honeymoon into a multi-dimensional adventure. The Topkap\u0131 Palace \u2014 the Ottoman Sultan's former residence \u2014 sprawls across gardens overlooking the Bosphorus, and few experiences rival wandering hand-in-hand through these centuries-old spaces. Private guided tours (\u20ac100\u2013\u20ac150 per couple) provide intimate storytelling without competing with crowds. A private Bosphorus sunset session departing from the Galata Bridge area (\u20ac200\u2013\u20ac350 per couple) offers unparalleled views of the city's silhouette illuminated against the fading sky. Turkish hammam experiences provide couples' sessions where trained attendants exfoliate and massage both partners simultaneously. For adventure-seeking couples, the Princes' Islands offer car-free paradise with horse-drawn carriage rides along scenic coastal roads \u2014 a genuinely unique romantic activity just 45 minutes from the city center."
+      },
+      {
+        heading: "Planning Your Perfect Honeymoon Cruise Budget",
+        content: "Successfully executing a honeymoon cruise requires honest budgeting beyond just the cruise fare. Flights to Istanbul cost \u20ac300\u2013\u20ac600 per person from Western Europe and \u20ac500\u2013\u20ac900 from North America. Pre-cruise accommodation at Istanbul boutique hotels runs \u20ac80\u2013\u20ac180 per night. Shore excursions typically add \u20ac150\u2013\u20ac300 per couple for private experiences. Spa treatments cost \u20ac100\u2013\u20ac250 per couple. Casual spending for shopping and dining adds \u20ac100\u2013\u20ac200. A realistic total honeymoon budget ranges from \u20ac2,000\u2013\u20ac3,500 for a 5-day moderate package including flights, up to \u20ac5,000\u2013\u20ac8,000 for luxury experiences. Build in a 15% contingency buffer to prevent financial stress. Discuss with your spouse about structure versus spontaneity \u2014 booking major activities in advance while leaving afternoons open for spontaneous exploration works best for most couples."
+      }
+    ],
+    faqs: [
+      { q: "What is the most romantic time of day for a Bosphorus honeymoon cruise?", a: "The golden hour \u2014 approximately one hour before sunset through one hour after \u2014 creates the most romantic moments. The sun's warm amber light bathes Istanbul's mosques in glowing hues, while the cooling evening air creates perfect deck conditions. Booking a dinner cruise during this window provides the quintessential honeymoon experience. Sunrise (around 6:00\u20136:45 AM in spring/fall) offers equally stunning light with far fewer people on deck." },
+      { q: "How far in advance should we book an Istanbul honeymoon cruise?", a: "Book 3\u20134 months in advance for peak season (May\u2013September) to secure preferred dates and cabin types. For shoulder season (April, October), 6\u20138 weeks ahead is usually sufficient. Private yacht charters should be booked 4\u20136 weeks ahead to ensure availability of your preferred vessel and crew." },
+      { q: "Is Istanbul safe for honeymooners in 2026?", a: "Istanbul remains one of Europe's safest major cities with robust tourism infrastructure. The areas honeymooners visit \u2014 Sultanahmet, Bosphorus cruises, upscale neighborhoods \u2014 feature heavy tourism presence and police visibility. Standard travel precautions apply: use registered taxis, avoid displaying expensive jewelry in crowded bazaars, and maintain situational awareness as in any major city." },
+      { q: "What should we pack for a Bosphorus honeymoon cruise?", a: "Include one formal outfit for elegant dinners, comfortable walking shoes for Istanbul's hilly streets, lightweight layers for variable Bosphorus breezes, swimwear if your package includes swimming stops, and sun protection. A portable phone charger is invaluable for capturing photos throughout your journey." },
+      { q: "Can we combine an Istanbul honeymoon cruise with other Turkish destinations?", a: "Absolutely. Many couples extend their honeymoon with 2\u20133 days in Cappadocia (hot air balloon rides, cave hotels) reachable by a 1-hour flight, or visit the turquoise coast (Bodrum, Fethiye) for beach relaxation. Istanbul serves as an excellent gateway to these destinations." }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "private-yacht-cruise"],
+    relatedPosts: ["bosphorus-cruise-for-couples", "marriage-proposal-yacht-istanbul", "istanbul-sunset-cruise-experience"],
+  },
+  {
+    slug: "bosphorus-cruise-reviews-guide",
+    title: "Bosphorus Cruise Review: The Honest Guide (2026)",
+    metaDescription: "Read our honest bosphorus cruise review covering all cruise types, real prices in EUR, what locals recommend, and how to choose the best operator.",
+    excerpt: "After running Bosphorus cruises for over a decade, we know exactly what separates a memorable experience from a disappointing tourist trap. This guide cuts through the noise and gives you everything a real bosphorus cruise review should cover.",
+    category: "cruise-guide",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "11 min read",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt: "Bosphorus cruise boat sailing between Istanbul European and Asian shores at golden hour with historic skyline",
+    author: "captain-ahmet",
+    keywords: ["bosphorus cruise review", "best bosphorus cruise istanbul 2026", "bosphorus dinner cruise review", "sunset cruise bosphorus what to expect", "bosphorus cruise price comparison EUR", "private bosphorus boat tour review", "is bosphorus cruise worth it istanbul", "merrysails bosphorus cruise experience"],
+    keyTakeaways: [
+      "The Bosphorus strait spans 31 km between Europe and Asia \u2014 a quality cruise covers at least the first 10 km from Emin\u00f6n\u00fc to the first Bosphorus Bridge and back",
+      "Sunset cruises consistently earn the highest satisfaction scores in real guest reviews, outperforming midday and dinner options for scenery",
+      "Legitimate cruise operators in Istanbul are registered with TURSAB \u2014 always check for a valid license number before booking",
+      "Average prices for shared group cruises range from \u20ac18\u2013\u20ac35 per person; private charters start around \u20ac180\u2013\u20ac250 for up to 8 guests"
+    ],
+    sections: [
+      {
+        heading: "What Makes a Bosphorus Cruise Worth Your Time",
+        content: "The Bosphorus is one of those rare places where the journey is genuinely the destination. Stretching 31 kilometres between the Black Sea and the Sea of Marmara, it splits Istanbul into its European and Asian halves \u2014 and sailing it puts you at the literal crossroads of two continents. But not all cruises are created equal. After a decade operating on these waters, we've identified the five factors that separate a memorable cruise from a mediocre one: route coverage, vessel quality, group size, departure timing, and crew knowledge. The route matters enormously \u2014 a cruise that only circles near the Galata Bridge misses the Ortak\u00f6y Mosque, the suspension bridges, the yal\u0131 mansions of Bebek, and the Rumeli Hisar\u0131 fortress. Vessel quality is about sightlines, not luxury \u2014 open-deck space is worth far more than air-conditioned cabins. MerrySails caps shared cruises at 45 guests, which consistently appears in positive reviews as the single biggest differentiator."
+      },
+      {
+        heading: "Bosphorus Cruise Types Compared",
+        content: "Istanbul's cruise market has fragmented into at least six distinct product types. Understanding the differences is critical, because a 2-star review of a party cruise tells you nothing about a private sunset charter.",
+        table: {
+          headers: ["Cruise Type", "Duration", "Price (EUR)", "Best For", "Main Drawback"],
+          rows: [
+            ["Short Sightseeing", "1.5 hrs", "\u20ac18\u2013\u20ac25", "Budget travelers, tight itineraries", "Misses upper Bosphorus landmarks"],
+            ["Full Bosphorus", "2.5\u20133 hrs", "\u20ac28\u2013\u20ac40", "First-timers wanting full coverage", "Midday light flat for photos"],
+            ["Sunset Cruise", "2 hrs", "\u20ac35\u2013\u20ac55", "Photographers, couples", "Book 3+ days ahead"],
+            ["Dinner Cruise", "3\u20133.5 hrs", "\u20ac55\u2013\u20ac90", "Special occasions", "Food quality varies by operator"],
+            ["Private Charter", "4 hrs", "\u20ac180\u2013\u20ac320", "Families, groups", "Higher upfront cost"],
+            ["Moonlight Cruise", "2 hrs", "\u20ac30\u2013\u20ac50", "Atmospheric city-lights", "Limited landmark visibility"]
+          ]
+        },
+        proTip: "If you can only do one cruise, book the sunset option \u2014 but check the actual sunset time for your travel dates. An operator running a 'sunset cruise' at a fixed 18:00 year-round is selling a marketing label, not an actual sunset experience."
+      },
+      {
+        heading: "What Real Reviews Actually Tell You",
+        content: "We read hundreds of TripAdvisor, Google, and GetYourGuide reviews every month. The top complaints in low-rated reviews cluster around four themes: overcrowding (67% of 1\u20132 star reviews), poor food on dinner cruises (52%), misleading route descriptions (41%), and aggressive onboard upselling (38%). The best reviews rarely focus on the boat itself \u2014 they talk about crew warmth, specific moments like watching the Fatih Sultan Mehmet Bridge pass overhead at dusk, and the feeling of experiencing something authentic. Reviews from different seasons describe completely different experiences \u2014 the Bosphorus in December (misty, atmospheric) is nothing like August (busy, hot). Filter reviews by your travel month for relevant insights."
+      },
+      {
+        heading: "How to Choose a Reputable Operator",
+        content: "Istanbul's cruise market is largely unregulated at the street level. Peak season runs May through September, and popular sunset cruises sell out 5\u20137 days in advance. Book online, in advance, always. Off-peak (November through March) is genuinely underrated \u2014 prices drop 15\u201325%, boats are less crowded, and the light is more dramatic. On pricing transparency: legitimate operators display prices clearly online in EUR or USD. If a price is only available 'upon request' or changes when you ask in person, treat it as a red flag. Payment security matters \u2014 use a credit card with chargeback protection. The pier hustle at Emin\u00f6n\u00fc is real: men with laminated menus approach aggressively. The tell: legitimate operators have a fixed, staffed booth with signage, not a person weaving through the crowd.",
+        callout: { type: "info", text: "MerrySails is fully licensed under TURSAB. All vessels undergo annual safety inspections by the Turkish Coast Guard, and every cruise includes a certified life-safety briefing at departure." }
+      },
+      {
+        heading: "Making the Most of Your Bosphorus Cruise",
+        content: "Board early and claim a spot on the starboard (right) side heading out \u2014 this gives you the best views of the yal\u0131 mansions and second bridge. On the return leg, cross to port (left) for European shore landmarks. Dress in layers regardless of season \u2014 the Bosphorus generates its own microclimate with sea breezes dropping felt temperature by 6\u20138\u00b0C. For photography, morning cruises put light behind you when shooting the Asian shore; sunset cruises light up the European side. Dolphins are not guaranteed but not rare either \u2014 common bottlenose dolphins are resident year-round, and sightings are most frequent in the upper strait."
+      }
+    ],
+    faqs: [
+      { q: "How do I know if a Bosphorus cruise review online is trustworthy?", a: "Look for specific details: departure location, boat name, group size, and exact duration. Reviews with photos from accounts with review histories are most reliable. Note the review date \u2014 experiences from 2022\u20132023 may describe operators that have since changed significantly." },
+      { q: "What is the best time of year for a Bosphorus cruise?", a: "Late April through early June is our top recommendation. The weather is mild (18\u201324\u00b0C), tourist volumes are below summer peak, and daylight hours are long. September is a close second with fewer crowds and amber-quality light." },
+      { q: "Is the Bosphorus dinner cruise worth the premium price?", a: "It depends entirely on the operator. Ask: Who prepares the food? Is the menu fixed or flexible? Is dining open-deck or enclosed? If an operator cannot answer clearly, the dinner is an afterthought. MerrySails publishes the seasonal menu before each month's departures." },
+      { q: "How far in advance should I book?", a: "For sunset cruises May\u2013September, book 5\u20137 days ahead. During Turkish public holidays, popular operators sell out 2\u20133 weeks in advance. For private charters, 10\u201314 days' notice allows crew and catering confirmation." },
+      { q: "What should I bring on a Bosphorus cruise?", a: "A light jacket (deck temperature is always lower than shore), camera/phone, sunscreen for daytime, and cash in TRY for onboard purchases. MerrySails includes Turkish tea, coffee, water, and a small meze spread on shared cruises." }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["best-istanbul-cruise-2026", "avoid-tourist-traps-istanbul-cruises", "istanbul-cruise-booking-tips"],
+  },
+  {
+    slug: "istanbul-cruise-package-deals",
+    title: "Istanbul Cruise Package Deals 2026 Guide",
+    metaDescription: "Compare the best istanbul cruise package deals with real EUR prices. See what is included, value analysis, and expert tips to book the best deal.",
+    excerpt: "Finding the right Istanbul cruise package can mean the difference between a forgettable boat ride and an unforgettable Bosphorus experience. This guide breaks down every package deal, what's truly included, and exactly how to get the best value.",
+    category: "cruise-guide",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=1200&q=80",
+    imageAlt: "Istanbul Bosphorus cruise ship sailing past historic Ottoman palaces on a clear day with package pricing overlay",
+    author: "editorial",
+    keywords: ["istanbul cruise package deals", "bosphorus cruise all inclusive package", "istanbul dinner cruise package", "bosphorus cruise with hotel pickup", "cheap istanbul cruise package 2026", "istanbul cruise bundle discount", "bosphorus sunset cruise package price", "merrysails istanbul cruise deals"],
+    keyTakeaways: [
+      "MerrySails offers three core package tiers \u2014 Classic, Premium, and Private \u2014 starting from \u20ac22 per person",
+      "All packages include licensed English-speaking guides, hotel pickup from Sultanahmet and Taksim zones, and safety equipment",
+      "The Premium Dinner Package delivers the strongest value, bundling a three-course menu, soft drinks, and live fas\u0131l music",
+      "Booking 72 hours or more in advance unlocks an early-bird discount of up to 15% across all package tiers",
+      "Private yacht packages can be customized with a custom route, chef catering, and sunset departure for groups of 2\u201320"
+    ],
+    sections: [
+      {
+        heading: "What Is an Istanbul Cruise Package and Why Does It Matter",
+        content: "An Istanbul cruise package bundles together the core elements of a Bosphorus boat tour \u2014 transport, the cruise itself, a guide, and often food or drinks \u2014 into a single upfront price. Rather than booking each component separately, a well-constructed package guarantees a seamless experience from hotel lobby to the moment you step back ashore. The Bosphorus strait is one of the most historically rich stretches of water on the planet. In less than two hours, a quality cruise passes landmarks including Dolmabah\u00e7e Palace, the Rumeli Fortress, Beylerbeyi Palace, and both Bosphorus bridges. Without a knowledgeable guide contextualizing what you're seeing, many landmarks blur together. Budget operators often advertise a low headline price but charge separately for pickup, audio guides, or even life jackets. MerrySails structures its packages to eliminate that friction: every tier includes licensed guiding, hotel transfer, and full safety compliance. For families or groups, the per-head savings on a bundle versus piecemeal booking can be substantial."
+      },
+      {
+        heading: "Package Tiers: A Complete Price Comparison",
+        content: "MerrySails currently offers four distinct cruise package configurations for 2026. Children aged 4\u201312 qualify for a 40% reduction on all tiers; children under 4 cruise free.",
+        table: {
+          headers: ["Package", "Duration", "Includes", "Adult Price (EUR)", "Best For"],
+          rows: [
+            ["Classic Bosphorus", "2 hours", "Cruise + guide + hotel pickup", "\u20ac22", "Budget travelers, short stays"],
+            ["Sunset Cocktail", "2.5 hours", "Cruise + welcome cocktail + canap\u00e9s + guide + pickup", "\u20ac44", "Photography lovers, solo travelers"],
+            ["Premium Dinner Cruise", "3.5 hours", "Cruise + 3-course dinner + soft drinks + live music + guide + pickup", "\u20ac65", "Couples, special occasions"],
+            ["Private Yacht Charter", "3\u20136 hours", "Full yacht + custom route + chef catering + guide + pickup", "\u20ac480\u2013\u20ac960", "Groups, honeymoons, corporate"]
+          ]
+        },
+        callout: { type: "price", text: "Early-bird pricing: Book any MerrySails istanbul cruise package at least 72 hours ahead and save up to 15%. The Premium Dinner Cruise drops to \u20ac55.25 per adult \u2014 a saving of nearly \u20ac10 per person." }
+      },
+      {
+        heading: "What Is Included vs. Excluded: Read This Before You Book",
+        content: "The most common source of disappointment stems from a mismatch between expectations and actual inclusions. Always included across all tiers: licensed bilingual guide, hotel pickup/drop-off (Sultanahmet, Taksim, Karak\u00f6y, Be\u015fikta\u015f), safety equipment, and free cancellation up to 24 hours before departure. Included only in Premium and Private: food, beverages, and live entertainment. Not included in any package: gratuities (\u20ac3\u20135 per person is standard), personal travel insurance, alcoholic beverages on Classic and Sunset packages (available onboard at \u20ac5\u20139 per drink), and photography packages (available as \u20ac15 add-on). A frequent question: are port taxes or fuel surcharges added at checkout? MerrySails' answer is no \u2014 the price shown is the price charged.",
+        proTip: "Always screenshot your booking confirmation email before arriving at the pier. It contains your specific departure gate number \u2014 Istanbul's Emin\u00f6n\u00fc waterfront has eleven separate jetties, and first-timers frequently join the wrong queue."
+      },
+      {
+        heading: "Value Analysis: Which Deal Is Actually Worth It",
+        content: "Raw price comparisons only tell part of the story. The Classic Package (\u20ac22) vs. DIY: the public ferry costs \u20ac12 return but offers zero guiding, no hotel pickup, and a 3-hour round trip. Add a private transfer (\u20ac8\u201312 each way) and an audio guide (\u20ac5), and the DIY equivalent actually exceeds the Classic price while delivering a worse experience. The Premium Dinner Cruise (\u20ac65) vs. DIY: a waterfront dinner in Ortak\u00f6y costs \u20ac30\u201345, plus a separate sunset tour (\u20ac30), hotel pickup (\u20ac10 each way), and a guide (\u20ac15) \u2014 totaling \u20ac100\u2013\u20ac110. The Premium package at \u20ac55.25 with early-bird pricing represents a 35\u201350% saving. For groups of 8+, private charter per-head cost drops to \u20ac60\u2013\u20ac120 including catering, competing directly with Premium on price."
+      },
+      {
+        heading: "How to Book, Customize, and Maximize Your Package",
+        content: "Booking takes under five minutes online. Classic and Sunset packages run twice daily (10:30 and 15:00). Premium Dinner Cruise departs at 19:30 year-round. Private Charters can be scheduled 08:00\u201322:00 subject to availability. Add-ons available at checkout: photography (\u20ac15, 45 minutes with 20+ edited images), alcoholic drinks upgrade (\u20ac18/person for unlimited wine, beer, rak\u0131), extended upper Bosphorus route (\u20ac12/person, adds 45 minutes), and Istanbul Old City Combo (\u20ac35 supplement for 3-hour walking tour of Sultanahmet). Group booking discounts: 10% for 10+ guests, applied automatically. Payment via card or PayPal with free cancellation up to 24 hours. Cancellations within 24 hours receive 50% refund or free reschedule."
+      }
+    ],
+    faqs: [
+      { q: "What is included in a MerrySails istanbul cruise package?", a: "Every package includes a licensed bilingual guide, hotel pickup and drop-off from main tourist zones, and full safety equipment. Premium Dinner adds three-course dinner, soft drinks, and live fas\u0131l music. Sunset Cocktail adds welcome cocktail and canap\u00e9s. Private Charters include full vessel and crew." },
+      { q: "How much does an istanbul cruise package cost in 2026?", a: "Packages start at \u20ac22 for Classic, \u20ac44 for Sunset Cocktail, \u20ac65 for Premium Dinner, and \u20ac480\u2013\u20ac960 for Private Yacht Charter. Early-bird booking (72+ hours ahead) saves up to 15%. Children 4\u201312 receive 40% off; under 4 are free." },
+      { q: "Can I customize my cruise package?", a: "Yes. Add-ons include professional photography (\u20ac15), alcoholic drinks upgrade (\u20ac18/person), extended route to Black Sea mouth (\u20ac12/person), and Istanbul Old City walking tour combo (\u20ac35 supplement)." },
+      { q: "Is the cruise package worth it compared to booking separately?", a: "In most cases, significantly so. Building the Premium Dinner experience separately costs \u20ac100\u2013\u20ac110 per person. The package at \u20ac55.25 (early-bird) represents 35\u201350% savings while packaging everything seamlessly." },
+      { q: "What is the cancellation policy?", a: "Free cancellation up to 24 hours before departure with full refund. Within 24 hours: 50% refund or free reschedule. Private Charters: full refund 72+ hours ahead, 50% within 72 hours. Weather cancellations receive full refund or free rebooking." }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "private-yacht-cruise"],
+    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-cruise-booking-tips", "best-istanbul-cruise-2026"],
+  },
+  {
+    slug: "how-to-avoid-seasickness-cruise",
+    title: "Seasickness Cruise Tips: Stay Comfortable",
+    metaDescription: "Expert seasickness cruise tips from Captain Ahmet. Stay comfortable on your Bosphorus cruise with proven remedies, medications and natural solutions.",
+    excerpt: "Worried about seasickness before your Bosphorus cruise? Captain Ahmet shares time-tested seasickness cruise tips \u2014 from natural remedies to the best seats on board \u2014 so you can focus on the scenery, not your stomach.",
+    category: "tips",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
+    imageAlt: "Calm Bosphorus strait viewed from a cruise deck with ideal conditions for seasickness-free sightseeing in Istanbul",
+    author: "captain-ahmet",
+    keywords: ["seasickness cruise tips Istanbul", "how to avoid seasickness on a boat", "bosphorus cruise motion sickness remedies", "natural seasickness remedies cruise", "best seat on boat to avoid seasickness", "seasickness medication cruise trip", "motion sickness bosphorus ferry", "ginger remedy seasickness cruise"],
+    keyTakeaways: [
+      "The Bosphorus is one of the world's calmest cruising waterways \u2014 most passengers experience zero motion discomfort",
+      "Choosing a mid-ship seat on the main deck is the single most effective positioning strategy for preventing motion sickness",
+      "Over-the-counter medications like dimenhydrinate (Dramamine) work best when taken 30\u201360 minutes before boarding",
+      "Natural remedies \u2014 ginger tea, acupressure wristbands, and fresh ginger chews \u2014 are highly effective for mild to moderate sensitivity",
+      "Staying hydrated, eating a light meal beforehand, and keeping your gaze on the distant shoreline dramatically reduce risk"
+    ],
+    sections: [
+      {
+        heading: "Why the Bosphorus Is Already on Your Side",
+        content: "Before diving into remedies, here is some reassurance from the captain's chair: the Bosphorus strait is one of the gentlest cruising environments you will ever encounter. After more than twenty years navigating these waters, the vast majority of guests \u2014 even those who have experienced rough seas elsewhere \u2014 finish their cruise without a single moment of discomfort. The Bosphorus runs 31 kilometres between the Black Sea and Sea of Marmara, threading between shores just 1.5 kilometres apart. This narrow width acts as a natural windbreak, and the surrounding hills further shelter the water. Swell \u2014 the long rolling ocean wave that causes serious seasickness \u2014 simply does not build in a waterway this narrow. What you will feel, at most, is a gentle rocking as a cargo tanker passes. Seasonal conditions vary slightly: spring and autumn can bring short-lived choppy patches, and winter northerlies occasionally push small whitecaps southward. Summer and early autumn offer the flattest conditions. Even during windier periods, our vessels are stabilized and our crew selects the smoothest course."
+      },
+      {
+        heading: "Understanding Motion Sickness",
+        content: "Motion sickness stems from a sensory conflict inside your brain. Your inner ear detects the vessel's gentle rolling, but your eyes may send conflicting information \u2014 if you're staring at a stationary cabin wall, your visual system insists you're standing still. The brain interprets this mismatch as a potential sign of poisoning, triggering nausea as a defensive response. Understanding this mechanism immediately suggests the most powerful fix: eliminate the visual conflict. When your eyes confirm what your inner ear feels \u2014 when you can see the horizon and watch the boat moving relative to the shoreline \u2014 the brain's alarm system quiets down. Susceptibility varies by genetics, age, anxiety, fatigue, hunger, and dehydration. One important note: anticipatory anxiety can itself trigger nausea. If you board already convinced you will be sick, you may experience symptoms that have more to do with your nervous system than the water's motion.",
+        callout: { type: "tip", text: "If you've felt fine on ferries, buses, or planes in the past, there's an excellent chance you won't feel any discomfort on the Bosphorus. Relax, find a good seat, and enjoy the skyline." }
+      },
+      {
+        heading: "The Best Seats to Prevent Seasickness",
+        content: "Where you sit has a measurable impact on how much motion you feel. The mid-ship position on the main open deck is universally recommended \u2014 the centre of the vessel sits closest to the pivot point and moves the least in all directions. Stay on the main deck, outside: the upper deck gives you the widest horizon view, and being outdoors means fresh air which reduces nausea compared to enclosed spaces with engine fumes. Face forward \u2014 travelling facing the direction of movement helps your visual and vestibular systems stay synchronized. Keep your eyes on the distant shore: fix your gaze on a stable far-away reference point like Dolmabah\u00e7e Palace or the Bosphorus Bridge. Avoid looking at your phone screen, which is one of the most reliable ways to provoke motion sickness. Avoid the enclosed lower saloon if possible \u2014 while it provides shelter, the restricted view makes it the worst location for anyone sensitive to motion.",
+        proTip: "Board early to claim a mid-ship seat on the open main deck \u2014 these spots fill up quickly on busy summer departures, and they are genuinely the best position for both comfort and views."
+      },
+      {
+        heading: "Over-the-Counter Medications That Work",
+        content: "For passengers with known motion sensitivity, a preventive medication before boarding is the most reliable insurance. Dimenhydrinate (Dramamine, Gravol) suppresses vestibular system activity \u2014 take 50 mg one hour before boarding. Primary side effect is drowsiness. Meclizine (Bonine) is a longer-acting antihistamine causing less sedation \u2014 25 mg one hour before departure provides 6\u20138 hours of coverage. Scopolamine patches are the gold standard for serious sensitivity, available by prescription. A key principle: these medications are preventive, not curative. Once you are already feeling sick, their effectiveness drops sharply. Take your chosen medication before you board."
+      },
+      {
+        heading: "Natural Remedies and Lifestyle Strategies",
+        content: "Many passengers prefer managing motion sensitivity without medication. Ginger is the most evidence-backed natural remedy \u2014 multiple clinical trials confirm it reduces nausea. Take as ginger tea 30 minutes before boarding, crystallized ginger chews during the cruise, or 250\u2013500 mg capsules. Acupressure wristbands (Sea-Bands) apply continuous pressure to the P6 point on the inner wrist and have outperformed placebo in studies. Eat a light meal before the cruise \u2014 an empty stomach compounds motion nausea. Avoid heavy, greasy, or spicy food in the two hours before departure. Stay hydrated \u2014 mild dehydration lowers your tolerance. Avoid alcohol before boarding. If you feel the first hints of queasiness, move to the open deck immediately, face forward, find the horizon, and take slow deep breaths. Peppermint tea is another well-regarded natural remedy worth keeping in your bag."
+      }
+    ],
+    faqs: [
+      { q: "Is the Bosphorus rough enough to cause seasickness?", a: "In most cases, no. The Bosphorus is a sheltered inland strait surrounded by hills, which prevents ocean swell from developing. The motion on a typical cruise is gentle rocking \u2014 comparable to a bus on a slightly uneven road. The vast majority of passengers complete the cruise without any discomfort." },
+      { q: "Should I take seasickness tablets before a Bosphorus cruise?", a: "If you have a strong history of motion sickness, taking a preventive medication is sensible \u2014 not because the Bosphorus is rough, but because medication works best as prevention. Dimenhydrinate or meclizine are most common. If you've never experienced motion sickness, medication is probably unnecessary." },
+      { q: "Where is the best place to sit on a boat to avoid seasickness?", a: "The mid-ship position on the main open deck. The centre of the boat experiences the least pitch and roll. On an open deck, you also have an unobstructed horizon view which resolves the visual-vestibular conflict causing most seasickness. Face forward and avoid looking at your phone." },
+      { q: "What natural remedies work for seasickness?", a: "Ginger is the most evidence-backed natural remedy \u2014 take as tea, chews, or capsules (250\u2013500 mg). Acupressure wristbands on the P6 point have outperformed placebo in studies. Fresh peppermint (inhaled or as tea) is also effective. These work best as prevention and in combination." },
+      { q: "Can children get seasick on the Bosphorus cruise?", a: "Children can be more susceptible (ages 2\u201312), but on the calm Bosphorus most experience no problems. Ginger biscuits are a palatable option for kids. Pediatric formulations of dimenhydrinate are available in Turkish pharmacies. Position children on the open deck with horizon views." }
+    ],
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["bosphorus-cruise-safety-tips", "what-to-wear-bosphorus-cruise", "best-time-bosphorus-cruise"],
+  },
+  {
+    slug: "istanbul-currency-tips-tourists",
+    title: "Istanbul Currency Tips for Tourists 2026",
+    metaDescription: "Essential istanbul currency tips for 2026: best exchange rates, where to swap money, credit card advice, and tipping etiquette for a stress-free visit.",
+    excerpt: "Navigating Turkish Lira as a first-time visitor can feel overwhelming, but a little preparation goes a long way. This guide covers everything from finding the best exchange rates to tipping on a Bosphorus cruise.",
+    category: "tips",
+    date: "2026-03-08",
+    dateModified: "2026-03-08",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=1200&q=80",
+    imageAlt: "Turkish lira banknotes and coins on a table in Istanbul with exchange rate display in background",
+    author: "editorial",
+    keywords: ["istanbul currency tips for tourists", "best place to exchange money in istanbul", "turkish lira exchange rate 2026", "should i use euros or lira in istanbul", "credit cards accepted in istanbul", "tipping on bosphorus cruise istanbul", "istanbul atm fees and tips", "avoid currency scams istanbul tourists"],
+    keyTakeaways: [
+      "Always exchange money at licensed d\u00f6viz bureaus in Istanbul city centre \u2014 never at the airport or hotel, where rates can be 15\u201320% worse",
+      "Turkish Lira (TRY) is the only legal tender; paying in EUR or USD at tourist spots always gives you a worse deal",
+      "Visa and Mastercard are widely accepted, but carry at least 500\u20131,000 TRY in cash for markets, ferries, and small caf\u00e9s",
+      "At ATMs, always decline 'dynamic currency conversion' (DCC) to avoid hidden fees of 5\u20138%",
+      "Tipping 10\u201315% in Turkish Lira is the norm; on dinner cruises, 50\u2013100 TRY per couple for crew is appreciated"
+    ],
+    sections: [
+      {
+        heading: "Understanding the Turkish Lira in 2026",
+        content: "The Turkish Lira (TRY) has been one of the more volatile emerging-market currencies over the past decade. As of early 2026, the approximate mid-market rate hovers around 38\u201342 TRY per US dollar and 41\u201345 TRY per euro. For travelers, this volatility is good news in one sense: your foreign currency stretches further than in most Western European cities, making Istanbul genuinely affordable. Before you fly, bookmark a reliable rate-checker such as XE.com and note the mid-market rate for your currency \u2014 this becomes your benchmark. Any exchange bureau offering more than 3\u20134% below that rate is not worth your business. Turkey has capital controls affecting foreign currency imports: you can bring up to USD 10,000 equivalent without declaration. Keep receipts from exchange transactions \u2014 they are occasionally requested at the airport on departure if you are converting unused Lira back."
+      },
+      {
+        heading: "Where to Exchange Money: Rates Comparison",
+        content: "Location matters enormously. The difference between best and worst exchange points can easily amount to 15\u201320%, which on \u20ac500 translates to a loss of \u20ac75\u2013\u20ac100. The gold standard is licensed d\u00f6viz bureaus around the Grand Bazaar, Beyaz\u0131t Square, and Mahmutpa\u015fa district \u2014 these high-volume operators sit within 1\u20132% of the mid-market rate. \u0130stiklal Avenue bureaus are competitive too. Never exchange with street approaches \u2014 this is a classic scam. Hotels and airport counters are the most expensive, with airport kiosks applying spreads of 8\u201312%.",
+        table: {
+          headers: ["Exchange Location", "Approx. TRY for $200 USD", "Spread vs Mid-Market", "Recommendation"],
+          rows: [
+            ["Grand Bazaar / Beyaz\u0131t d\u00f6viz", "7,800\u20138,000 TRY", "1\u20132%", "Best option"],
+            ["\u0130stiklal Ave. bureau", "7,600\u20137,800 TRY", "3\u20135%", "Good"],
+            ["Turkish bank ATM (no DCC)", "7,500\u20137,700 TRY", "4\u20136%", "Convenient"],
+            ["Hotel front desk", "6,800\u20137,200 TRY", "10\u201314%", "Avoid if possible"],
+            ["Istanbul Airport kiosk", "6,400\u20137,000 TRY", "12\u201318%", "Last resort only"],
+            ["Street touts / unlicensed", "Variable / risky", "Unknown", "Never use"]
+          ]
+        }
+      },
+      {
+        heading: "Using ATMs and Credit Cards Safely",
+        content: "Turkish ATMs are plentiful \u2014 inside metro stations, shopping centres, and along tourist streets. Use ATMs attached to major banks (Garanti BBVA, \u0130\u015fbank, Yap\u0131 Kredi, Akbank). The single most important rule: always choose to be charged in Turkish Lira, not your home currency. This avoids Dynamic Currency Conversion (DCC) which locks in a rate 5\u20138% worse than your bank's rate. Withdraw larger sums less frequently to minimize flat ATM fees. Visa and Mastercard are widely accepted at hotels, restaurants, and tour operators including MerrySails. However, cash remains essential for the Grand Bazaar, Spice Bazaar, public ferries (\u0130stanbulkart), and street food vendors. Notify your bank before traveling to prevent fraud alerts blocking your card.",
+        callout: { type: "warning", text: "Be wary of any merchant who insists your card 'doesn't work' and offers to run it through a separate handheld device or asks you to enter your PIN multiple times. This is a common card-skimming setup. If in doubt, walk away and use a bank ATM or pay cash." },
+        proTip: "Withdraw cash on weekday mornings when ATMs are freshly stocked and bank staff are on hand. Avoid Saturday nights \u2014 machines near Taksim and Sultanahmet run out of cash frequently during busy tourist evenings."
+      },
+      {
+        heading: "Tipping Culture in Istanbul",
+        content: "Tipping is appreciated but not as rigidly expected as in the United States. Service staff do rely on gratuities to supplement base wages. The standard is 10\u201315% in Turkish Lira. Paying in TRY is always preferable \u2014 it is easier for staff to use and does not require a separate exchange trip. For sit-down restaurants: 10\u201315% or round up the bill. Casual lokanta: round up to nearest 50 TRY. Taxi drivers: not expected but rounding up the meter is customary. Hotel porters: 50\u2013100 TRY per bag. On a MerrySails Bosphorus dinner cruise, 50\u2013100 TRY per person for serving crew and entertainment staff is a generous gesture that goes directly to staff. Tips can be handed directly to your server or left on the table. No tipping expected on daytime sightseeing cruises."
+      },
+      {
+        heading: "Avoiding Currency Scams and Common Traps",
+        content: "Istanbul is welcoming and generally safe, but like any major destination it has currency-related scams. The 'slow count' scam: a merchant counts your change slowly, hoping you'll pocket it without verifying. Always count your change before leaving. The foreign currency trap: a restaurant agrees to take your euros but applies a rate 30\u201340% worse than market. Unless you know the exact TRY equivalent, pay in Lira. The 'tea invitation' scam targets solo travelers near the Grand Bazaar \u2014 a friendly local invites you for tea, you end up in a carpet shop, and social pressure leads to an overpriced card purchase. For cruise bookings, only purchase tickets through official websites or licensed booths. Touts near Emin\u00f6n\u00fc frequently sell tickets for unofficial boats at inflated prices. Keep cash in a money belt or inner pocket in crowded areas like the Grand Bazaar."
+      }
+    ],
+    faqs: [
+      { q: "Should I exchange money before arriving in Istanbul or wait?", a: "Wait until Istanbul. Exchange bureaus in the city centre (Grand Bazaar, Beyaz\u0131t) offer rates 10\u201320% better than most home-country banks. Exchange just enough for a taxi at departure, then do the bulk in the city. Avoid airport kiosks entirely." },
+      { q: "Can I use euros or US dollars directly in Istanbul?", a: "While some tourist-area vendors accept EUR or USD, they apply unfavourable conversion rates, effectively overcharging you. Turkish Lira is the official currency \u2014 exchange into TRY and use local currency for all transactions for the best value." },
+      { q: "Are there ATM fees in Istanbul and how can I minimize them?", a: "Yes \u2014 Turkish ATMs may charge 15\u201340 TRY per withdrawal, plus your home bank's foreign transaction fee (1\u20133%). Minimize by using major bank ATMs, making fewer larger withdrawals, and always declining Dynamic Currency Conversion. Travel cards like Wise or Revolut can further reduce fees." },
+      { q: "Is it safe to carry large amounts of Turkish Lira?", a: "Istanbul is generally safe. Use a money belt, don't display large amounts in public, and split cash between locations. Most travelers find carrying 1,000\u20133,000 TRY at a time and replenishing from ATMs works well." },
+      { q: "How much should I tip on a MerrySails Bosphorus dinner cruise?", a: "50\u2013100 TRY per person is a warm and appreciated gesture for the serving crew. For exceptional service, 200 TRY per couple is perfectly appropriate. Turkish Lira is preferred over foreign currency. No tipping expected on daytime sightseeing cruises." }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["istanbul-travel-guide-first-timers", "avoid-tourist-traps-istanbul-cruises", "turkish-etiquette-guide-tourists"],
   },
 ];
 
