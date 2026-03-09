@@ -6,6 +6,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { Check, X, MapPin, Clock, Users, Globe, Star, Phone, Shield, Camera } from "lucide-react";
 import type { Tour, Package, AddOn } from "@/data/tours";
+import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
 import BookingCalendar from "@/components/booking/BookingCalendar";
 import BookingModal from "@/components/booking/BookingModal";
 import ImageLightbox from "@/components/ui/ImageLightbox";
@@ -52,7 +53,10 @@ export default function TourDetailClient({ tour, related }: Props) {
     setLightboxOpen(true);
   };
 
-  const effectivePrice = selectedPackage?.price ?? tour.priceEur;
+  // Apply promo-aware pricing for sunset cruise
+  const basePrice =
+    tour.slug === SUNSET_PROMO.slug ? getSunsetPrice() : tour.priceEur;
+  const effectivePrice = selectedPackage?.price ?? basePrice;
 
   return (
     <>
@@ -359,7 +363,7 @@ export default function TourDetailClient({ tour, related }: Props) {
             guests: bookingGuests,
             selectedPackage,
             selectedAddOns,
-            basePrice: tour.priceEur,
+            basePrice,
             departurePoint: tour.departurePoint,
           }}
           onClose={() => setBookingModal(false)}

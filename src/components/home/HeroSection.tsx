@@ -4,8 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Star, Shield, Clock } from "lucide-react";
 import { motion } from "framer-motion";
+import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
 
 export default function HeroSection() {
+  const promoActive = isPromoActive();
+  const sunsetPrice = getSunsetPrice();
   return (
     <section className="relative min-h-screen flex items-center">
       {/* Background */}
@@ -26,16 +29,19 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-2xl"
         >
-          {/* Promo badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[var(--brand-gold)]/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6"
-          >
-            <Star className="w-4 h-4" />
-            Spring Special — €20 <span className="line-through opacity-70">€40</span>
-          </motion.div>
+          {/* Promo badge — only show when promo is active */}
+          {promoActive && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex items-center gap-2 bg-[var(--brand-gold)]/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6"
+            >
+              <Star className="w-4 h-4" />
+              {SUNSET_PROMO.label} — €{SUNSET_PROMO.promoPrice}{" "}
+              <span className="line-through opacity-70">€{SUNSET_PROMO.regularPrice}</span>
+            </motion.div>
+          )}
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -65,9 +71,9 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-wrap gap-3 mb-10"
           >
-            <Link href="/cruises/bosphorus-sunset-cruise">
+            <Link href={`/cruises/${SUNSET_PROMO.slug}`}>
               <button className="btn-cta text-base !py-3.5 !px-8">
-                Book Now — €20
+                Book Now — €{sunsetPrice}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </Link>

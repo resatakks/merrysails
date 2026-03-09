@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | MerrySails Istanbul",
   },
   description:
-    "Book the best Bosphorus cruise in Istanbul — sunset cruises from €20, dinner cruises, private yacht charters, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guaranteed.",
+    "Book the best Bosphorus cruise in Istanbul — sunset cruises, dinner cruises, private yacht charters, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guaranteed.",
   keywords: [
     "bosphorus cruise", "istanbul dinner cruise", "sunset cruise istanbul",
     "bosphorus dinner cruise", "boat trip istanbul", "boat tour istanbul",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul",
-    description: "Book the best Bosphorus cruise in Istanbul — sunset cruises from €20, dinner cruises, private yacht charters. Since 2001.",
+    description: "Book the best Bosphorus cruise in Istanbul — sunset cruises, dinner cruises, private yacht charters, and luxury boat tours. Since 2001.",
     siteName: "MerrySails",
     locale: "en_US",
     type: "website",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul",
-    description: "Sunset cruises from €20, dinner cruises, private yacht charters. Since 2001.",
+    description: "Sunset cruises, dinner cruises, private yacht charters, and luxury boat tours. Since 2001.",
     images: [`${SITE_URL}/og-image.jpg`],
   },
   robots: {

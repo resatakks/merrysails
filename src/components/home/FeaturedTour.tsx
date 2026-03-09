@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, Users, MapPin, Globe, Check } from "lucide-react";
 import type { Tour } from "@/data/tours";
+import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
 
 interface Props {
   tour: Tour;
@@ -9,6 +10,11 @@ interface Props {
 }
 
 export default function FeaturedTour({ tour, reverse = false }: Props) {
+  const promoActive = isPromoActive();
+  const isSunset = tour.slug === SUNSET_PROMO.slug;
+  const displayPrice = isSunset ? getSunsetPrice() : tour.priceEur;
+  const showOriginal = isSunset ? promoActive : !!tour.originalPriceEur;
+  const originalPrice = isSunset ? SUNSET_PROMO.regularPrice : tour.originalPriceEur;
   return (
     <section className="py-16 md:py-20">
       <div className="container-main">
@@ -22,11 +28,13 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
               className="object-cover hover:scale-105 transition-transform duration-700"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute top-4 left-4">
-              <span className={`inline-block px-3 py-1 text-xs font-bold rounded-md ${tour.badgeColor}`}>
-                {tour.badge}
-              </span>
-            </div>
+            {!(isSunset && !promoActive) && (
+              <div className="absolute top-4 left-4">
+                <span className={`inline-block px-3 py-1 text-xs font-bold rounded-md ${tour.badgeColor}`}>
+                  {tour.badge}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Content */}
@@ -74,10 +82,10 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
             <div className="flex flex-wrap items-center gap-4">
               <div className="price-box">
                 <span className="currency">€</span>
-                <span className="amount">{tour.priceEur}</span>
+                <span className="amount">{displayPrice}</span>
                 <span className="suffix">/person</span>
-                {tour.originalPriceEur && (
-                  <span className="old-price">€{tour.originalPriceEur}</span>
+                {showOriginal && originalPrice && (
+                  <span className="old-price">€{originalPrice}</span>
                 )}
               </div>
               <Link href={`/cruises/${tour.slug}`}>
