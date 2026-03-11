@@ -146,7 +146,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     url: `${SITE_URL}/cruises/${tour.slug}`,
     image: tour.image,
     brand: {
-      "@type": "Organization",
+      "@type": "Brand",
       name: "MerrySails",
     },
     provider: {
@@ -160,6 +160,25 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
       validFrom: "2026-01-01",
       priceValidUntil: "2026-12-31",
       url: `${SITE_URL}/cruises/${tour.slug}`,
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "TR",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 1,
+        returnFees: "https://schema.org/FreeReturn",
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: 0,
+          currency: "EUR",
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "TR",
+        },
+      },
     },
     aggregateRating: {
       "@type": "AggregateRating",
