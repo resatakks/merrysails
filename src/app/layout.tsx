@@ -122,6 +122,26 @@ const organizationSchema = {
       name: "Turkey",
     },
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: 4.9,
+    reviewCount: 2847,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    opens: "09:00",
+    closes: "22:00",
+  },
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  currenciesAccepted: "EUR, USD, TRY, GBP",
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "TURSAB A Group License",
+  },
+  knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
 };
 
 export default function RootLayout({

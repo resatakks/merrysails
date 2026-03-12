@@ -49,11 +49,24 @@ export default function BlogPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://merrysails.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://merrysails.com/blog" },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     <div className="pt-32 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
