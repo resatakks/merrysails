@@ -1,0 +1,25 @@
+# Google Search Console — İndekslemeyi iste (MerrySails)
+# Tarih: 2026-03-10
+# Toplam: 113 URL | Bugün: 15 URL
+# GSC'de: URL'yi incele → İndekslemeyi iste (günde ~10–20 kabul eder)
+
+## Bugün gönderilecek URL'ler
+
+1. https://merrysails.com
+2. https://merrysails.com/cruises
+3. https://merrysails.com/private-tours
+4. https://merrysails.com/blog
+5. https://merrysails.com/guides
+6. https://merrysails.com/about
+7. https://merrysails.com/contact
+8. https://merrysails.com/faq
+9. https://merrysails.com/privacy-policy
+10. https://merrysails.com/terms
+11. https://merrysails.com/cruises/bosphorus-sunset-cruise
+12. https://merrysails.com/cruises/bosphorus-dinner-cruise
+13. https://merrysails.com/cruises/yacht-charter-in-istanbul
+14. https://merrysails.com/cruises/bosphorus-sightseeing-cruise
+15. https://merrysails.com/cruises/private-bosphorus-sunset-cruise
+
+## Kalan: 98 URL
+Yarın bu script'i tekrar çalıştırıp yeni 'bugün' listesini kullanın.

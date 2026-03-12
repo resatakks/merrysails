@@ -35,7 +35,26 @@ export default function BlogPage() {
   const visible = filtered.slice(0, shown);
   const hasMore = shown < filtered.length;
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Istanbul Bosphorus Cruise Blog & Travel Guides",
+    description: "Expert cruise guides and travel tips for Istanbul.",
+    numberOfItems: blogPosts.length,
+    itemListElement: blogPosts.map((post, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://merrysails.com/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
     <div className="pt-32 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         {/* Header */}
@@ -203,5 +222,6 @@ export default function BlogPage() {
         )}
       </div>
     </div>
+    </>
   );
 }

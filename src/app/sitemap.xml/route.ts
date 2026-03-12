@@ -31,12 +31,19 @@ export function GET() {
     lastmod: today,
   }));
 
-  const blogPages = blogPosts.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
-    changefreq: "monthly",
-    priority: "0.7",
-    lastmod: formatDate(new Date(post.date)),
-  }));
+  const seenBlogSlugs = new Set<string>();
+  const blogPages = blogPosts
+    .filter((post) => {
+      if (seenBlogSlugs.has(post.slug)) return false;
+      seenBlogSlugs.add(post.slug);
+      return true;
+    })
+    .map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      changefreq: "monthly",
+      priority: "0.7",
+      lastmod: formatDate(new Date(post.dateModified || post.date)),
+    }));
 
   const guidePages = guides.map((guide) => ({
     url: `${SITE_URL}/guides/${guide.slug}`,

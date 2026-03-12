@@ -1,5 +1,6 @@
 import { Info, Lightbulb, AlertTriangle, DollarSign, Anchor } from "lucide-react";
 import type { BlogSection } from "@/data/blog";
+import React from "react";
 
 const calloutConfig = {
   tip: { icon: Lightbulb, bg: "bg-emerald-50", border: "border-emerald-200", text: "text-emerald-800", label: "Pro Tip" },
@@ -7,6 +8,28 @@ const calloutConfig = {
   warning: { icon: AlertTriangle, bg: "bg-amber-50", border: "border-amber-200", text: "text-amber-800", label: "Important" },
   price: { icon: DollarSign, bg: "bg-violet-50", border: "border-violet-200", text: "text-violet-800", label: "Pricing" },
 };
+
+/** Parse markdown-style [text](url) links within plain text content */
+function parseLinks(text: string): React.ReactNode[] {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const isExternal = match[2].startsWith("http");
+      return (
+        <a
+          key={i}
+          href={match[2]}
+          className="text-[var(--brand-primary)] underline underline-offset-2 hover:text-[var(--brand-dark)] transition-colors"
+          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
+  });
+}
 
 export function BlogSectionBlock({ section, index }: { section: BlogSection; index: number }) {
   return (
@@ -18,7 +41,7 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
       {/* Main content paragraphs */}
       <div className="text-[var(--body-text)] leading-relaxed space-y-4">
         {section.content.split("\n\n").map((para, i) => (
-          <p key={i}>{para}</p>
+          <p key={i}>{parseLinks(para)}</p>
         ))}
       </div>
 
