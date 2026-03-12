@@ -90,6 +90,34 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
         </div>
       )}
 
+      {/* H3 Subsections */}
+      {section.subsections && section.subsections.length > 0 && (
+        <div className="mt-6 space-y-6">
+          {section.subsections.map((sub, si) => (
+            <div key={si}>
+              <h3 className="text-xl font-semibold mb-3 text-[var(--heading)]">
+                {sub.heading}
+              </h3>
+              <div className="text-[var(--body-text)] leading-relaxed space-y-4">
+                {sub.content.split("\n\n").map((para, pi) => (
+                  <p key={pi}>{parseLinks(para)}</p>
+                ))}
+              </div>
+              {sub.list && sub.list.length > 0 && (
+                <ul className="mt-3 space-y-2 pl-1">
+                  {sub.list.map((item, li) => (
+                    <li key={li} className="flex items-start gap-3 text-[var(--body-text)]">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-primary)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Pro tip / Expert quote */}
       {section.proTip && (
         <div className="mt-5 flex items-start gap-3 rounded-xl bg-[var(--surface-alt)] p-4 border-l-4 border-[var(--brand-primary)]">
