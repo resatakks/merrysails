@@ -31,14 +31,24 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Istanbul Bosphorus Cruises, Yacht Charter & Boat Tours",
-  description: "Browse all Bosphorus cruises, yacht charters, and boat tours in Istanbul.",
+  description: "Browse all Bosphorus cruises, yacht charters, and boat tours in Istanbul. Best price guaranteed by MerrySails, TURSAB licensed since 2001.",
   numberOfItems: tours.length,
   itemListElement: tours.map((tour, i) => ({
     "@type": "ListItem",
     position: i + 1,
     url: `${SITE_URL}/cruises/${tour.slug}`,
     name: tour.nameEn,
+    image: tour.image,
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Cruises", item: `${SITE_URL}/cruises` },
+  ],
 };
 
 export default function CruisesLayout({ children }: { children: React.ReactNode }) {
@@ -47,6 +57,10 @@ export default function CruisesLayout({ children }: { children: React.ReactNode 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {children}
     </>

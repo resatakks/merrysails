@@ -23,9 +23,39 @@ export const metadata = {
   },
 };
 
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About MerrySails",
+  description: "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001. 50,000+ guests, professional guides, best Bosphorus cruise experience.",
+  url: "https://merrysails.com/about",
+  mainEntity: {
+    "@type": "TravelAgency",
+    "@id": "https://merrysails.com/#organization",
+    name: "MerrySails",
+    alternateName: "Merry Tourism",
+    foundingDate: "2001-01-01",
+    numberOfEmployees: { "@type": "QuantitativeValue", minValue: 20 },
+    slogan: "Istanbul's Trusted Bosphorus Cruise Company Since 2001",
+    knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
+    award: "TURSAB A Group License",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://merrysails.com" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://merrysails.com/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="pt-28 pb-20">
       <div className="container-main">
         {/* Hero */}

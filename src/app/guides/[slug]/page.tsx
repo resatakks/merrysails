@@ -76,22 +76,25 @@ export default async function GuidePage({
     headline: guide.title,
     description: guide.metaDescription,
     image: guide.image,
-    datePublished: "2026-01-01",
-    dateModified: "2026-03-01",
+    datePublished: "2025-09-15",
+    dateModified: "2026-03-10",
     author: {
       "@type": "Organization",
+      "@id": "https://merrysails.com/#organization",
       name: "MerrySails",
       url: "https://merrysails.com",
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://merrysails.com/#organization",
       name: "MerrySails",
       url: "https://merrysails.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://merrysails.com/logo.png",
+        url: "https://merrysails.com/logo.svg",
       },
     },
+    mainEntityOfPage: `https://merrysails.com/guides/${guide.slug}`,
   };
 
   return (

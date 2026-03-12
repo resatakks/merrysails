@@ -317,6 +317,15 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     touristType: "Leisure",
     url: `${SITE_URL}/cruises/${tour.slug}`,
     image: tour.image,
+    duration: (() => {
+      const h = tour.duration.match(/(\d+)\.?(\d*)\s*hour/i);
+      if (!h) return undefined;
+      const hours = parseInt(h[1]);
+      const frac = h[2];
+      return `PT${hours}H${frac === "5" ? "30M" : ""}`;
+    })(),
+    availableLanguage: ["English", "Turkish"],
+    inLanguage: "en",
     brand: {
       "@type": "Brand",
       name: "MerrySails",

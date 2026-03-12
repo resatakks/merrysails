@@ -93,7 +93,7 @@ const organizationSchema = {
   logo: `${SITE_URL}/logo.svg`,
   image: `${SITE_URL}/og-image.jpg`,
   description: "Premium Bosphorus cruise and yacht charter services in Istanbul since 2001.",
-  foundingDate: "2001",
+  foundingDate: "2001-01-01",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",

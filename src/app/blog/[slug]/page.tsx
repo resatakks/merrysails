@@ -81,9 +81,10 @@ export default async function BlogPostPage({
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://merrysails.com/#organization",
       name: "MerrySails",
       url: "https://merrysails.com",
-      logo: { "@type": "ImageObject", url: "https://merrysails.com/logo.png" },
+      logo: { "@type": "ImageObject", url: "https://merrysails.com/logo.svg" },
     },
     mainEntityOfPage: `https://merrysails.com/blog/${post.slug}`,
     articleSection: post.category.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase()),

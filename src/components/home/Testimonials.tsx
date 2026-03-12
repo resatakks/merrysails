@@ -52,14 +52,14 @@ const reviewSchema = {
     "@type": "AggregateRating",
     ratingValue: 4.9,
     reviewCount: 2847,
-    bestRating: "5",
-    worstRating: "1",
+    bestRating: 5,
+    worstRating: 1,
   },
   review: reviews.map((r) => ({
     "@type": "Review",
     author: { "@type": "Person", name: r.name },
     datePublished: r.date,
-    reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: "5", worstRating: "1" },
+    reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
     reviewBody: r.text,
     itemReviewed: {
       "@type": "TravelAgency",
