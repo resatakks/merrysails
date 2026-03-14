@@ -327,8 +327,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     availableLanguage: ["English", "Turkish"],
     inLanguage: "en",
     brand: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
+      "@type": "Brand",
       name: "MerrySails",
     },
     provider: {
