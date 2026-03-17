@@ -5,6 +5,7 @@ import FeaturedTour from "@/components/home/FeaturedTour";
 import WhyUs from "@/components/home/WhyUs";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
+import LatestBlogPosts from "@/components/home/LatestBlogPosts";
 import { tours } from "@/data/tours";
 
 export const metadata: Metadata = {
@@ -63,6 +64,7 @@ export default function HomePage() {
       <FeaturedTour tour={tours[1]} reverse />
       <FeaturedTour tour={tours[2]} />
       <WhyUs />
+      <LatestBlogPosts />
       <Testimonials />
       <CTASection />
     </>
