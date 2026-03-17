@@ -118,6 +118,24 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
         </div>
       )}
 
+      {/* Expert blockquote */}
+      {section.expertQuote && (
+        <blockquote className="mt-5 rounded-xl bg-[var(--surface-alt)] p-5 border-l-4 border-[var(--brand-dark)]">
+          <p className="text-sm text-[var(--body-text)] italic leading-relaxed mb-3">
+            &ldquo;{section.expertQuote.text}&rdquo;
+          </p>
+          <footer className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-[var(--brand-primary)] flex items-center justify-center text-white text-xs font-bold">
+              {section.expertQuote.author.split(" ").map(w => w[0]).join("").slice(0, 2)}
+            </div>
+            <div>
+              <cite className="text-sm font-semibold text-[var(--heading)] not-italic">{section.expertQuote.author}</cite>
+              <p className="text-xs text-[var(--text-muted)]">{section.expertQuote.title}</p>
+            </div>
+          </footer>
+        </blockquote>
+      )}
+
       {/* Pro tip / Expert quote */}
       {section.proTip && (
         <div className="mt-5 flex items-start gap-3 rounded-xl bg-[var(--surface-alt)] p-4 border-l-4 border-[var(--brand-primary)]">
