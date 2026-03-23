@@ -85,7 +85,7 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "TravelAgency",
+  "@type": ["TravelAgency", "LocalBusiness"],
   "@id": `${SITE_URL}/#organization`,
   name: "MerrySails",
   alternateName: "Merry Tourism",
@@ -113,7 +113,78 @@ const organizationSchema = {
   sameAs: [
     "https://instagram.com/merrysails",
     "https://facebook.com/merrysails",
+    "https://www.google.com/maps/place/PLACE_ID_HERE",
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: 4.9,
+    bestRating: 5,
+    ratingCount: 312,
+    reviewCount: 247,
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Bosphorus Cruise & Yacht Services",
+    itemListElement: [
+      {
+        "@type": "OfferCatalog",
+        name: "Bosphorus Cruise Tours",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Bosphorus Cruise Tours",
+            },
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: 25,
+              priceCurrency: "EUR",
+              valueAddedTaxIncluded: true,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "Private Yacht Charter",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Private Yacht Charter",
+            },
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: 500,
+              priceCurrency: "EUR",
+              valueAddedTaxIncluded: true,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "Group Event & Party Boats",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Group Event & Party Boats",
+            },
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: 1000,
+              priceCurrency: "EUR",
+              valueAddedTaxIncluded: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
   areaServed: {
     "@type": "City",
     name: "Istanbul",
