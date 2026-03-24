@@ -1,0 +1,81 @@
+# MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul
+
+> MerrySails is operated by Merry Tourism, a TURSAB A Group licensed travel agency in Istanbul, Turkey. We offer Bosphorus cruises, dinner cruises, sunset cruises, private yacht charters, and boat tours since 2001.
+
+## About
+- Company: Merry Tourism (Trading as MerrySails)
+- License: TURSAB A Group Travel Agency
+- Founded: 2001
+- Location: Alemdar Mah. Divanyolu Cad. Ogul Han No:62 Ic Kapi No: 402, 34093 Fatih/Istanbul, Turkey
+- Phone: +90 537 040 68 22 / +90 536 414 66 05
+- Email: info@merrysails.com
+- WhatsApp: +90 537 040 68 22
+- Rating: 4.9/5 (2,847 reviews)
+- Guests Served: 50,000+
+
+## Services
+
+### Bosphorus Cruises
+- **Bosphorus Sunset Cruise**: Experience the magic of Istanbul as the sun sets over the Bosphorus. Duration: 2.5 hours. From EUR20/person.
+- **Bosphorus Dinner Cruise & Turkish Night**: The best Istanbul dinner cruise — 4-course Turkish dinner, live entertainment, belly dancing, and whirling dervish. Hotel transfer included. Duration: 3.5 hours. From EUR65/person.
+- **Bosphorus Short Cruise**: A quick, affordable sightseeing boat tour past Istanbul's top landmarks with audio guides in 12 languages. Duration: 1.5 hours. From EUR15/person.
+
+### Private Yacht Charter & Events
+- **Yacht Charter in Istanbul**: Rent your own private Bosphorus yacht with professional crew. Duration: 2 hours (extendable). From EUR280/person.
+- **Private Bosphorus Sunset Cruise**: Watch the sunset from your own private yacht. Duration: 2 hours. From EUR280/person.
+- **Private Bosphorus Dinner Yacht Cruise**: Private dinner cruise with gourmet Turkish cuisine. Duration: 3 hours. From EUR380/person.
+- **Private Bosphorus Lunch Yacht Cruise**: Private daytime yacht experience with lunch. Duration: 2 hours. From EUR280/person.
+- **Romantic Marriage Proposal on Yacht**: Magical proposal with rose petals, candles, and live music. Duration: 2 hours. From EUR280/person.
+- **Yacht Birthday Party Istanbul**: Party boat on the Bosphorus with DJ and decorations. Duration: 2 hours. From EUR280/person.
+- **Exclusive Yacht Wedding Istanbul**: Dream wedding on a luxury yacht. Duration: 4 hours. From EUR680/person.
+- **Wedding Anniversary on Yacht**: Romantic celebration on a private yacht. Duration: 2 hours. From EUR280/person.
+- **Bachelorette Yacht Party Istanbul**: Private party yacht for bachelorette celebrations. Duration: 2 hours. From EUR280/person.
+
+## Pricing
+- Sightseeing Cruise: From EUR15/person (1.5 hours)
+- Sunset Cruise: From EUR20/person (2.5 hours)
+- Dinner Cruise: From EUR65/person (3.5 hours, includes hotel transfer)
+- Dinner Cruise Gold: EUR95/person (premium seating)
+- Private Yacht Essential: From EUR280 (2 hours, up to 15 guests)
+- Private Yacht Premium: From EUR380 (3 hours, decoration & photographer)
+- Private Yacht VIP: From EUR680 (4 hours, full luxury package)
+
+## Key Pages
+- Homepage: https://merrysails.com
+- All Cruises: https://merrysails.com/cruises
+- Private Tours: https://merrysails.com/private-tours
+- Blog: https://merrysails.com/blog
+- Istanbul Guides: https://merrysails.com/guides
+- About: https://merrysails.com/about
+- Contact: https://merrysails.com/contact
+- FAQ: https://merrysails.com/faq
+- Track Reservation: https://merrysails.com/reservation
+
+## Policies
+- Free cancellation up to 24 hours before departure
+- Best price guarantee — no middleman fees
+- Secure online payment (SSL)
+- Hotel pickup included with dinner cruises
+- Languages: English, Turkish, Arabic, Russian
+
+## Detailed Tour Pages
+- [Bosphorus Sunset Cruise](https://merrysails.com/cruises/bosphorus-sunset-cruise)
+- [Bosphorus Dinner Cruise & Turkish Night](https://merrysails.com/cruises/bosphorus-dinner-cruise)
+- [Yacht Charter in Istanbul](https://merrysails.com/cruises/yacht-charter-in-istanbul)
+- [Bosphorus Short Cruise](https://merrysails.com/cruises/bosphorus-sightseeing-cruise)
+- [Private Bosphorus Sunset Cruise](https://merrysails.com/cruises/private-bosphorus-sunset-cruise)
+- [Private Bosphorus Dinner Yacht Cruise](https://merrysails.com/cruises/private-bosphorus-dinner-yacht-cruise)
+- [Private Bosphorus Lunch Yacht Cruise](https://merrysails.com/cruises/private-bosphorus-lunch-yacht-cruise)
+- [Bosphorus Sightseeing Yacht Cruise](https://merrysails.com/cruises/bosphorus-sightseeing-yacht-cruise)
+- [Romantic Marriage Proposal on Yacht](https://merrysails.com/cruises/romantic-marriage-proposal)
+- [Yacht Birthday Party Istanbul](https://merrysails.com/cruises/yacht-birthday-party)
+- [Exclusive Yacht Wedding Istanbul](https://merrysails.com/cruises/yacht-weddings)
+- [Wedding Anniversary on Yacht](https://merrysails.com/cruises/wedding-anniversary)
+- [Bachelorette Yacht Party Istanbul](https://merrysails.com/cruises/bachelorette-yacht-party)
+
+## Blog & Guides
+- [Blog — Cruise Guides & Travel Tips](https://merrysails.com/blog)
+- [Istanbul Landmark Guides](https://merrysails.com/guides)
+
+## Full Content
+- [llms-full.txt](https://merrysails.com/llms-full.txt) — Complete site content for AI assistants
