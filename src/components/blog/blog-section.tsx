@@ -120,7 +120,7 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
 
       {/* Expert blockquote */}
       {section.expertQuote && (
-        <blockquote className="mt-5 rounded-xl bg-[var(--surface-alt)] p-5 border-l-4 border-[var(--brand-dark)]">
+        <blockquote cite="https://merrysails.com" className="mt-5 rounded-xl bg-[var(--surface-alt)] p-5 border-l-4 border-[var(--brand-dark)]">
           <p className="text-sm text-[var(--body-text)] italic leading-relaxed mb-3">
             &ldquo;{section.expertQuote.text}&rdquo;
           </p>
