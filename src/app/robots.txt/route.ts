@@ -61,6 +61,27 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Brave-Search
+Allow: /
+
+User-agent: iaskBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
 Host: https://merrysails.com
 Sitemap: https://merrysails.com/sitemap.xml
 
