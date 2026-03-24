@@ -286,6 +286,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description,
     keywords,
     alternates: { canonical: url },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large" as const,
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
       title,
       description: tour.description,

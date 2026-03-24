@@ -21,12 +21,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: {
       canonical: `https://merrysails.com/guides/${guide.slug}`,
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large" as const,
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
       title: guide.title,
       description: guide.metaDescription,
       url: `https://merrysails.com/guides/${guide.slug}`,
       type: "article",
       images: [{ url: guide.image }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: guide.title,
+      description: guide.metaDescription,
+      images: [guide.image],
     },
   };
 }

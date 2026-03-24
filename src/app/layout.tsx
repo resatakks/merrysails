@@ -81,6 +81,13 @@ export const metadata: Metadata = {
     },
   },
   category: "travel",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION ? [process.env.NEXT_PUBLIC_BING_VERIFICATION] : [],
+    },
+  },
 };
 
 const organizationSchema = {
@@ -113,7 +120,7 @@ const organizationSchema = {
   sameAs: [
     "https://instagram.com/merrysails",
     "https://facebook.com/merrysails",
-    "https://www.google.com/maps/place/PLACE_ID_HERE",
+    "https://www.google.com/maps/place/Merry+Tourism/",
   ],
   aggregateRating: {
     "@type": "AggregateRating",
@@ -208,6 +215,35 @@ const organizationSchema = {
   knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
 };
 
+const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  name: [
+    "Bosphorus Sunset Cruise",
+    "Dinner Cruise",
+    "Yacht Charter",
+    "All Cruises",
+    "Private Tours",
+    "Blog",
+    "Istanbul Guides",
+    "About",
+    "Contact",
+    "FAQ",
+  ],
+  url: [
+    `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
+    `${SITE_URL}/cruises/bosphorus-dinner-cruise`,
+    `${SITE_URL}/cruises/yacht-charter-in-istanbul`,
+    `${SITE_URL}/cruises`,
+    `${SITE_URL}/private-tours`,
+    `${SITE_URL}/blog`,
+    `${SITE_URL}/guides`,
+    `${SITE_URL}/about`,
+    `${SITE_URL}/contact`,
+    `${SITE_URL}/faq`,
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -221,6 +257,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
         />
       </head>
       <body className="font-sans antialiased">

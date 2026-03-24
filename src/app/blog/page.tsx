@@ -233,6 +233,23 @@ export default function BlogPage() {
             </button>
           </div>
         )}
+
+        {/* SEO: Full article index for search engine crawlers (all links rendered in HTML) */}
+        <nav aria-label="All blog articles" className="mt-16 border-t border-[var(--line)] pt-8">
+          <h2 className="text-xl font-bold mb-4 text-[var(--heading)]">All Articles</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+            {blogPosts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors line-clamp-1"
+                >
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
     </>

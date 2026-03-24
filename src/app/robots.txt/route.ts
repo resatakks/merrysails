@@ -61,7 +61,12 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
+Host: https://merrysails.com
 Sitemap: https://merrysails.com/sitemap.xml
+
+# AI content files
+# https://merrysails.com/llms.txt
+# https://merrysails.com/llms-full.txt
 `;
 
   return new Response(robotsTxt, {
