@@ -18,11 +18,11 @@ const SITE_URL = "https://merrysails.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul | Since 2001",
-    template: "%s | MerrySails Istanbul",
+    default: "MerrySails — Bosphorus Cruise & Yacht Charter Istanbul 2026 | Book Online",
+    template: "%s | MerrySails Istanbul 2026",
   },
   description:
-    "Book the best Bosphorus cruise in Istanbul — sunset cruises, dinner cruises, private yacht charters, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guaranteed.",
+    "Book the best Bosphorus cruise in Istanbul for 2026 — sunset cruises from €20, dinner cruises from €65, private yacht charters from €280, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guarantee — book online today.",
   keywords: [
     "bosphorus cruise", "istanbul dinner cruise", "sunset cruise istanbul",
     "bosphorus dinner cruise", "boat trip istanbul", "boat tour istanbul",

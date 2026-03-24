@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { tours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "Istanbul Bosphorus Cruises, Yacht Charter & Boat Tours — MerrySails",
+  title: "Istanbul Bosphorus Cruises 2026 — Book Online | Yacht Charter & Boat Tours",
   description:
-    "Book sunset cruises, dinner cruises with live Turkish show, private yacht charters, and guided Bosphorus boat tours in Istanbul. Best price guaranteed — book direct with MerrySails.",
+    "Book Bosphorus cruises in Istanbul for 2026: sunset cruises from €20, dinner cruises with Turkish night show from €65, private yacht charter from €280 & sightseeing boat tours from €15. Best price guarantee — book online direct with MerrySails.",
   keywords: [
     "bosphorus cruise istanbul",
     "istanbul yacht charter",
@@ -13,15 +13,20 @@ export const metadata: Metadata = {
     "istanbul boat tour",
     "private yacht rental istanbul",
     "bosphorus tour",
+    "bosphorus sightseeing cruise",
+    "bosphorus short cruise",
+    "boat hire istanbul",
+    "bosphorus cruise 2026",
+    "book bosphorus cruise online",
   ],
   alternates: { canonical: "https://merrysails.com/cruises" },
   openGraph: {
-    title: "Istanbul Bosphorus Cruises, Yacht Charter & Boat Tours",
+    title: "Istanbul Bosphorus Cruises 2026 — Book Online | Yacht Charter & Boat Tours",
     description:
-      "Sunset cruises, dinner cruises, private yacht rentals, and guided Bosphorus tours. Best price guaranteed.",
+      "Sunset cruises from €20, dinner cruises from €65, private yacht charter from €280, sightseeing tours from €15. Best price guarantee — book online.",
     url: "https://merrysails.com/cruises",
     type: "website",
-    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruises Istanbul 2026" }],
   },
 };
 

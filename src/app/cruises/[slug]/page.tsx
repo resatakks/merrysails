@@ -251,20 +251,36 @@ export function generateStaticParams() {
 /* CTR-optimised title/description overrides for pages with impressions but zero clicks */
 const metaOverrides: Record<string, { title: string; description: string }> = {
   "bosphorus-sightseeing-cruise": {
-    title: "Bosphorus Sightseeing Cruise — From €15 (2026)",
-    description: "Looking for a quick Bosphorus tour? 1.5-hour cruise from €15. 4.9★ (445 reviews). Audio guide in 12 languages included. Book now — limited daily departures!",
+    title: "Bosphorus Sightseeing Cruise Istanbul 2026 — €15 | Book Online",
+    description: "Book a short Bosphorus cruise in Istanbul for just €15. 1.5-hour sightseeing tour past palaces, mosques & both bridges. 4.9 rating. Audio guide in 12 languages. Best price guarantee — book online.",
+  },
+  "bosphorus-sunset-cruise": {
+    title: "Bosphorus Sunset Cruise Istanbul 2026 — €20 | Book Online",
+    description: "Book the best Bosphorus sunset cruise in Istanbul for €20. 2.5-hour golden hour experience with drinks & snacks. 4.9 rating from 800+ reviews. Free cancellation — book online today.",
   },
   "wedding-anniversary": {
-    title: "Anniversary Yacht Cruise Istanbul — From €280",
-    description: "Celebrate your anniversary on a private yacht! Romantic Bosphorus cruise with decoration & sunset views. 4.9★ (31 reviews). Book now — limited availability.",
+    title: "Anniversary Yacht Cruise Istanbul 2026 — From €280 | Book Online",
+    description: "Celebrate your anniversary on a private yacht in Istanbul. Romantic Bosphorus cruise with decoration & sunset views. 4.9 rating. Best price guarantee — book online.",
   },
   "romantic-marriage-proposal": {
-    title: "Marriage Proposal Yacht Istanbul 2026 — €280",
-    description: "She'll say yes! Private proposal yacht with roses, candles & Maiden's Tower backdrop. 5.0★ perfect score. Photographer add-on available. Book your moment now.",
+    title: "Marriage Proposal Yacht Istanbul 2026 — €280 | Book Online",
+    description: "Plan the perfect proposal on a private Bosphorus yacht. Roses, candles & Maiden's Tower backdrop. 5.0 rating. Photographer available. Book online — best price guarantee.",
   },
   "bosphorus-dinner-cruise": {
-    title: "Istanbul Dinner Cruise 2026 — From €65",
-    description: "Best dinner cruise in Istanbul! 4-course dinner, belly dance & live show. 4.9★ (312 reviews). Hotel pickup included. Book now — top-rated Bosphorus experience.",
+    title: "Istanbul Bosphorus Dinner Cruise 2026 — €65 All-Inclusive | Book Online",
+    description: "Book the best dinner cruise in Istanbul for €65. 4-course Turkish dinner, belly dance, live show & hotel pickup included. 4.9 rating (312 reviews). Best price guarantee — book online.",
+  },
+  "yacht-charter-in-istanbul": {
+    title: "Private Yacht Charter Istanbul 2026 — From €280 | Book Online",
+    description: "Rent a private yacht in Istanbul from €280. Custom Bosphorus route with professional crew. Perfect for birthdays, proposals & corporate events. Best price guarantee — book online.",
+  },
+  "corporate-event-bosphorus-cruise": {
+    title: "Corporate Event Cruise Istanbul 2026 — Bosphorus Yacht | Book Online",
+    description: "Host your corporate event on the Bosphorus. A/V equipment, catering & branding options for up to 50 guests. From €280. TURSAB licensed since 2001. Book online.",
+  },
+  "istanbul-princes-island-tour": {
+    title: "Princes Islands Tour Istanbul 2026 — €45 Full Day | Book Online",
+    description: "Visit the car-free Princes Islands from Istanbul. Full-day tour with ferry, lunch & guided island exploration. €45 per person. Best price guarantee — book online.",
   },
 };
 
