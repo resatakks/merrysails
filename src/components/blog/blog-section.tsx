@@ -38,6 +38,19 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
         {section.heading}
       </h2>
 
+      {/* Answer Capsule — AI visibility: 20-25 word direct answer */}
+      {section.answerCapsule && (
+        <div
+          className="mb-5 border-l-4 border-[var(--brand-primary)] bg-[var(--surface-alt)] rounded-r-xl px-5 py-4"
+          data-answer="true"
+          role="definition"
+        >
+          <p className="text-base font-semibold text-[var(--heading)] leading-relaxed m-0">
+            {section.answerCapsule}
+          </p>
+        </div>
+      )}
+
       {/* Main content paragraphs */}
       <div className="text-[var(--body-text)] leading-relaxed space-y-4">
         {section.content.split("\n\n").map((para, i) => (
