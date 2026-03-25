@@ -373,35 +373,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
         applicableCountry: "TR",
         returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
         merchantReturnDays: 1,
-        returnMethod: "https://schema.org/ReturnAtKiosk",
         returnFees: "https://schema.org/FreeReturn",
-      },
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: 0,
-          currency: "EUR",
-        },
-        shippingDestination: {
-          "@type": "DefinedRegion",
-          addressCountry: "TR",
-        },
-        deliveryTime: {
-          "@type": "ShippingDeliveryTime",
-          handlingTime: {
-            "@type": "QuantitativeValue",
-            minValue: 0,
-            maxValue: 0,
-            unitCode: "DAY",
-          },
-          transitTime: {
-            "@type": "QuantitativeValue",
-            minValue: 0,
-            maxValue: 0,
-            unitCode: "DAY",
-          },
-        },
       },
     },
     aggregateRating: {

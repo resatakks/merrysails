@@ -12,7 +12,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "Rezervasyon nasıl yapılır?",
-    answer: "Web sitemiz üzerinden online rezervasyon yapabilir, anında onay alabilirsiniz. Alternatif olarak WhatsApp hattımızdan (+90 532 XXX XX XX) veya email ile de rezervasyon oluşturabilirsiniz. Online ödemeler Stripe ve iyzico üzerinden güvenle işlenir.",
+    answer: "Web sitemiz üzerinden online rezervasyon yapabilir, anında onay alabilirsiniz. Alternatif olarak WhatsApp hattımızdan (+90 537 040 68 22) veya email ile de rezervasyon oluşturabilirsiniz. Online ödemeler Stripe ve iyzico üzerinden güvenle işlenir.",
     category: "Rezervasyon",
   },
   {

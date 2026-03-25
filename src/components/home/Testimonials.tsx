@@ -23,7 +23,7 @@ const reviews = [
     date: "2024-11-08",
   },
   {
-    name: "Sophie L.",
+    name: "Emma W.",
     country: "Australia",
     rating: 4,
     text: "Beautiful sunset views and friendly crew. The only downside was the crowded upper deck during peak hours. Would still recommend!",
@@ -51,7 +51,8 @@ const reviewSchema = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: 4.9,
-    reviewCount: 2847,
+    ratingCount: 312,
+    reviewCount: 247,
     bestRating: 5,
     worstRating: 1,
   },
@@ -82,7 +83,7 @@ export default function Testimonials() {
                 <Star key={i} className="w-5 h-5 text-[var(--brand-gold)] fill-[var(--brand-gold)]" />
               ))}
             </div>
-            <span>4.9 from 2,800+ reviews</span>
+            <span>4.9 from 247 reviews</span>
           </div>
         </div>
 

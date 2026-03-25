@@ -118,9 +118,9 @@ const organizationSchema = {
   email: "info@merrysails.com",
   priceRange: "€€",
   sameAs: [
-    "https://instagram.com/merrysails",
-    "https://facebook.com/merrysails",
-    "https://www.google.com/maps/place/Merry+Tourism/",
+    "https://www.instagram.com/merrysails",
+    "https://www.facebook.com/merrysails",
+    "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
   ],
   aggregateRating: {
     "@type": "AggregateRating",
