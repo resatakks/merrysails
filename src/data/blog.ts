@@ -2545,7 +2545,6 @@ export const blogPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-02-25",
     dateModified: "2026-03-26",
-    dateModified: undefined,
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
     imageAlt: "Three different yacht size options docked at Kuruçeşme Marina showing the range of rental options available in Istanbul",
