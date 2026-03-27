@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import TourCard from "@/components/tours/TourCard";
 import { tours } from "@/data/tours";
 
@@ -50,6 +51,23 @@ export default function CruisesPage() {
             <TourCard key={tour.id} tour={tour} />
           ))}
         </div>
+
+        {/* SEO: Full tour index for search engine crawlers (all links rendered in HTML) */}
+        <nav aria-label="All cruise and tour options" className="mt-16 border-t border-[var(--line)] pt-8">
+          <h2 className="text-xl font-bold mb-4 text-[var(--heading)]">All Bosphorus Cruises & Tours</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+            {tours.map((tour) => (
+              <li key={tour.slug}>
+                <Link
+                  href={`/cruises/${tour.slug}`}
+                  className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors"
+                >
+                  {tour.nameEn} — From €{tour.priceEur}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
   );

@@ -107,7 +107,7 @@ export function GET() {
     url: `${SITE_URL}/guides/${guide.slug}`,
     changefreq: "monthly",
     priority: "0.7",
-    lastmod: today,
+    lastmod: "2026-03-10",
     images: guide.image
       ? [{ loc: guide.image, title: guide.title }]
       : undefined,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Anchor, Ship, Sunset, UtensilsCrossed, Users, MapPin } from "lucide-react";
+import { Anchor, Ship, Sunset, UtensilsCrossed, Users, MapPin, BookOpen } from "lucide-react";
 
 const cruiseTypes = [
   {
@@ -218,6 +218,50 @@ export default function BosphorusGuideSection() {
               >
                 Yacht Rental Prices Istanbul 2026
               </Link>
+              <Link
+                href="/blog/istanbul-yacht-charter-guide"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Istanbul Yacht Charter Guide
+              </Link>
+              <Link
+                href="/blog/bosphorus-night-cruise-guide"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Bosphorus Night Cruise Guide
+              </Link>
+              <Link
+                href="/blog/what-to-wear-bosphorus-cruise"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                What to Wear on a Bosphorus Cruise
+              </Link>
+              <Link
+                href="/blog/top-things-to-do-istanbul"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Top Things to Do in Istanbul
+              </Link>
+            </div>
+          </div>
+
+          {/* Istanbul Landmark Guides */}
+          <div className="bg-[var(--surface-alt)] rounded-2xl p-6 mt-4">
+            <h3 className="font-semibold text-[var(--heading)] mb-3 flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-[var(--brand-primary)]" />
+              Istanbul Landmark Guides
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <Link href="/guides/bosphorus-strait" className="text-sm text-[var(--brand-primary)] hover:underline">The Bosphorus Strait</Link>
+              <Link href="/guides/maidens-tower" className="text-sm text-[var(--brand-primary)] hover:underline">Maiden&apos;s Tower (Kiz Kulesi)</Link>
+              <Link href="/guides/dolmabahce-palace" className="text-sm text-[var(--brand-primary)] hover:underline">Dolmabahce Palace</Link>
+              <Link href="/guides/ortakoy-mosque" className="text-sm text-[var(--brand-primary)] hover:underline">Ortakoy Mosque</Link>
+              <Link href="/guides/rumeli-fortress" className="text-sm text-[var(--brand-primary)] hover:underline">Rumeli Fortress</Link>
+              <Link href="/guides/galata-bridge-eminonu" className="text-sm text-[var(--brand-primary)] hover:underline">Galata Bridge & Eminonu</Link>
+              <Link href="/guides/buyukada-princes-islands" className="text-sm text-[var(--brand-primary)] hover:underline">Buyukada & Princes&apos; Islands</Link>
+              <Link href="/guides/istanbul-bosphorus-bridges" className="text-sm text-[var(--brand-primary)] hover:underline">Bosphorus Bridges</Link>
+              <Link href="/guides/kurucesme-marina" className="text-sm text-[var(--brand-primary)] hover:underline">Kurucesme Marina</Link>
+              <Link href="/guides/golden-horn" className="text-sm text-[var(--brand-primary)] hover:underline">The Golden Horn</Link>
             </div>
           </div>
         </div>

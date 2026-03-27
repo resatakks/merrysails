@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin, BookOpen } from "lucide-react";
 import { guides, getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
 import { getTourBySlug } from "@/data/tours";
+import { blogPosts } from "@/data/blog";
 
 export function generateStaticParams() {
   return getAllGuideSlugs().map((slug) => ({ slug }));
@@ -227,6 +228,86 @@ export default async function GuidePage({
               </div>
             </div>
           )}
+
+          {/* Related Blog Posts */}
+          {(() => {
+            const guideKeywords = guide.keywords.map(k => k.toLowerCase());
+            const relatedBlog = blogPosts
+              .filter(p => {
+                const titleLower = p.title.toLowerCase();
+                const excerptLower = p.excerpt.toLowerCase();
+                return guideKeywords.some(k => titleLower.includes(k) || excerptLower.includes(k));
+              })
+              .slice(0, 4);
+            if (relatedBlog.length === 0) return null;
+            return (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-[var(--brand-primary)]" />
+                  Related Blog Posts
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {relatedBlog.map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="group flex items-start gap-3 bg-[var(--surface-alt)] rounded-xl p-4 hover:shadow-md transition-all"
+                    >
+                      <div className="relative w-20 h-16 rounded-lg overflow-hidden shrink-0">
+                        <Image
+                          src={post.image}
+                          alt={post.imageAlt || post.title}
+                          fill
+                          className="object-cover"
+                          sizes="80px"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold group-hover:text-[var(--brand-primary)] transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <span className="text-xs text-[var(--text-muted)]">{post.readTime}</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Other Guides */}
+          {(() => {
+            const otherGuides = guides.filter(g => g.slug !== slug).slice(0, 4);
+            return (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold mb-6">Explore More Istanbul Guides</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {otherGuides.map((g) => (
+                    <Link
+                      key={g.slug}
+                      href={`/guides/${g.slug}`}
+                      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={g.image}
+                          alt={g.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, 25vw"
+                        />
+                      </div>
+                      <div className="p-3">
+                        <h3 className="font-semibold text-sm group-hover:text-[var(--brand-primary)] transition-colors line-clamp-2">
+                          {g.title}
+                        </h3>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* CTA */}
           <div className="mt-12 bg-[var(--brand-dark)] rounded-2xl p-8 text-center">

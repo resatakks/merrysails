@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, BookOpen } from "lucide-react";
 import { guides } from "@/data/guides";
+import { blogPosts } from "@/data/blog";
 
 export const metadata = {
   title: "Istanbul Landmark Guides — Bosphorus, Palaces & More",
@@ -93,6 +94,44 @@ export default function GuidesPage() {
               </article>
             </Link>
           ))}
+        </div>
+
+        {/* Related Blog Posts for SEO cross-linking */}
+        <div className="mt-16 border-t border-[var(--line)] pt-10">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+              <BookOpen className="w-5 h-5 text-[var(--brand-primary)]" />
+              Related Blog Posts & Travel Tips
+            </h2>
+            <p className="text-[var(--text-muted)] text-sm">
+              Practical tips and detailed articles to plan your Istanbul visit.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {blogPosts
+              .filter(p => ["cruise-guide", "istanbul", "tips"].includes(p.category))
+              .slice(0, 8)
+              .map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all"
+                >
+                  <h3 className="text-sm font-semibold mb-1 group-hover:text-[var(--brand-primary)] transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-xs text-[var(--text-muted)] line-clamp-2">{post.excerpt}</p>
+                </Link>
+              ))}
+          </div>
+          <div className="text-center mt-6">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1 text-sm font-medium text-[var(--brand-primary)] hover:underline"
+            >
+              View All Blog Posts <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

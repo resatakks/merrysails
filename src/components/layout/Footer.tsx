@@ -6,8 +6,12 @@ const cruiseLinks = [
   { label: "Dinner Cruise", href: "/cruises/bosphorus-dinner-cruise" },
   { label: "Short Cruise", href: "/cruises/bosphorus-sightseeing-cruise" },
   { label: "Yacht Charter", href: "/cruises/yacht-charter-in-istanbul" },
-  { label: "Lunch Cruise", href: "/cruises/istanbul-lunch-cruise" },
+  { label: "Lunch Cruise", href: "/cruises/istanbul-bosphorus-lunch-cruise" },
   { label: "Princes' Islands", href: "/cruises/istanbul-princes-island-tour" },
+  { label: "Private Sunset Yacht", href: "/cruises/private-bosphorus-sunset-cruise" },
+  { label: "Old City Tour", href: "/cruises/full-day-istanbul-old-city-tour" },
+  { label: "Cruise Ship Tour", href: "/cruises/bosphorus-cruise-for-cruise-passengers" },
+  { label: "NYE Party Cruise", href: "/cruises/new-years-eve-party-cruise" },
 ];
 
 const orgLinks = [
@@ -17,6 +21,24 @@ const orgLinks = [
   { label: "Bachelorette Party", href: "/cruises/bachelorette-yacht-party" },
   { label: "Wedding Anniversary", href: "/cruises/wedding-anniversary" },
   { label: "Corporate Event", href: "/cruises/corporate-event-bosphorus-cruise" },
+];
+
+const blogLinks = [
+  { label: "Best Bosphorus Cruise Guide", href: "/blog/best-bosphorus-cruise-istanbul-guide" },
+  { label: "Dinner Cruise — What to Expect", href: "/blog/bosphorus-dinner-cruise-what-to-expect" },
+  { label: "Istanbul Sunset Cruise", href: "/blog/istanbul-sunset-cruise-experience" },
+  { label: "Private Yacht Charter Guide", href: "/blog/private-yacht-charter-istanbul-guide" },
+  { label: "Top Things to Do Istanbul", href: "/blog/top-things-to-do-istanbul" },
+  { label: "Istanbul Travel Guide", href: "/blog/istanbul-travel-guide-first-timers" },
+];
+
+const guideLinks = [
+  { label: "Bosphorus Strait", href: "/guides/bosphorus-strait" },
+  { label: "Maiden's Tower", href: "/guides/maidens-tower" },
+  { label: "Dolmabahce Palace", href: "/guides/dolmabahce-palace" },
+  { label: "Princes' Islands", href: "/guides/buyukada-princes-islands" },
+  { label: "Rumeli Fortress", href: "/guides/rumeli-fortress" },
+  { label: "Galata Bridge", href: "/guides/galata-bridge-eminonu" },
 ];
 
 const companyLinks = [
@@ -122,6 +144,34 @@ export default function Footer() {
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/80 hover:text-[var(--brand-gold)] transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Additional Links Row */}
+        <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="text-sm font-bold mb-3 text-[var(--brand-gold)] uppercase tracking-wider">Popular Blog Posts</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+              {blogLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-white/70 hover:text-[var(--brand-gold)] transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-bold mb-3 text-[var(--brand-gold)] uppercase tracking-wider">Istanbul Landmark Guides</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+              {guideLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-white/70 hover:text-[var(--brand-gold)] transition-colors">
                     {link.label}
                   </Link>
                 </li>
