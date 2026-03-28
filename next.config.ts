@@ -17,6 +17,37 @@ const nextConfig: NextConfig = {
         destination: "https://merrysails.com/:path*",
         permanent: true,
       },
+      // SEO: redirect common mistyped/old URLs to correct pages
+      {
+        source: "/yacht-charter",
+        destination: "/cruises/yacht-charter-in-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/bosphorus-cruise",
+        destination: "/cruises",
+        permanent: true,
+      },
+      {
+        source: "/bosphorus-cruises",
+        destination: "/cruises",
+        permanent: true,
+      },
+      {
+        source: "/boat-tour",
+        destination: "/cruises",
+        permanent: true,
+      },
+      {
+        source: "/dinner-cruise",
+        destination: "/cruises/bosphorus-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/sunset-cruise",
+        destination: "/cruises/bosphorus-sunset-cruise",
+        permanent: true,
+      },
     ];
   },
   async headers() {
