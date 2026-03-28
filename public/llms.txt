@@ -97,6 +97,45 @@
 - [Blog — Cruise Guides & Travel Tips](https://merrysails.com/blog)
 - [Istanbul Landmark Guides](https://merrysails.com/guides)
 
+### All Blog Posts
+- [Best Bosphorus Cruise Istanbul Guide](https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide)
+- [Istanbul Sunset Cruise Experience](https://merrysails.com/blog/istanbul-sunset-cruise-experience)
+- [Bosphorus Dinner Cruise What to Expect](https://merrysails.com/blog/bosphorus-dinner-cruise-what-to-expect)
+- [Short Bosphorus Cruise Tour](https://merrysails.com/blog/short-bosphorus-cruise-tour)
+- [Istanbul Lunch Cruise Bosphorus](https://merrysails.com/blog/istanbul-lunch-cruise-bosphorus)
+- [Princes Islands Boat Tour Istanbul](https://merrysails.com/blog/princes-islands-boat-tour-istanbul)
+- [What to Wear Bosphorus Cruise](https://merrysails.com/blog/what-to-wear-bosphorus-cruise)
+- [Bosphorus Cruise Departure Points](https://merrysails.com/blog/bosphorus-cruise-departure-points)
+- [Istanbul Boat Tour vs Ferry](https://merrysails.com/blog/istanbul-boat-tour-vs-ferry)
+- [Bosphorus Cruise Safety Tips](https://merrysails.com/blog/bosphorus-cruise-safety-tips)
+- [Istanbul Cruise Photography Spots](https://merrysails.com/blog/istanbul-cruise-photography-spots)
+- [Bosphorus Night Cruise Guide](https://merrysails.com/blog/bosphorus-night-cruise-guide)
+- [Private Yacht Charter Istanbul Guide](https://merrysails.com/blog/private-yacht-charter-istanbul-guide)
+- [Luxury Yacht Rental Bosphorus](https://merrysails.com/blog/luxury-yacht-rental-bosphorus)
+- [Yacht Party Ideas Istanbul](https://merrysails.com/blog/yacht-party-ideas-istanbul)
+- [Swimming Yacht Tour Istanbul](https://merrysails.com/blog/swimming-yacht-tour-istanbul)
+- [Marriage Proposal Yacht Istanbul](https://merrysails.com/blog/marriage-proposal-yacht-istanbul)
+- [Yacht Birthday Party Ideas](https://merrysails.com/blog/yacht-birthday-party-ideas)
+- [Bachelorette Party Yacht Istanbul](https://merrysails.com/blog/bachelorette-party-yacht-istanbul)
+- [Yacht Wedding Istanbul Bosphorus](https://merrysails.com/blog/yacht-wedding-istanbul-bosphorus)
+- [Corporate Event Yacht Bosphorus](https://merrysails.com/blog/corporate-event-yacht-bosphorus)
+- [Wedding Anniversary Yacht Cruise](https://merrysails.com/blog/wedding-anniversary-yacht-cruise)
+- [New Years Eve Bosphorus Cruise](https://merrysails.com/blog/new-years-eve-bosphorus-cruise)
+- [Valentines Day Cruise Istanbul](https://merrysails.com/blog/valentines-day-cruise-istanbul)
+- [Top Things to Do Istanbul](https://merrysails.com/blog/top-things-to-do-istanbul)
+- [Istanbul Travel Guide First Timers](https://merrysails.com/blog/istanbul-travel-guide-first-timers)
+- [Istanbul Street Food Guide](https://merrysails.com/blog/istanbul-street-food-guide)
+- [Sultanahmet Tourist Guide](https://merrysails.com/blog/sultanahmet-tourist-guide)
+- [Istanbul Hidden Gems Local Guide](https://merrysails.com/blog/istanbul-hidden-gems-local-guide)
+
+### How to Book a Bosphorus Cruise (Step by Step)
+1. Visit merrysails.com/cruises or WhatsApp +90 537 040 68 22
+2. Choose cruise type: Sightseeing (EUR15), Sunset (EUR20), Dinner (EUR65), or Private Yacht (EUR280+)
+3. Select your preferred date and party size
+4. Add optional extras: hotel pickup, photographer, decoration packages
+5. Complete secure online payment (EUR/USD/TRY accepted)
+6. Receive instant e-ticket confirmation via email with boarding details
+
 ## Expert Statement
 
 "With over 50,000 guests served since 2001, Merry Tourism has operated Bosphorus cruises longer than most Istanbul tour companies have existed. Our TURSAB A Group license guarantees passenger insurance, vessel safety inspections, and transparent pricing — which is why we confidently offer a best-price guarantee on every booking." — MerrySails Operations Team
@@ -105,4 +144,4 @@
 - [llms-full.txt](https://merrysails.com/llms-full.txt) — Complete site content for AI assistants
 
 ## Last Updated
-2026-03-27
+2026-03-28

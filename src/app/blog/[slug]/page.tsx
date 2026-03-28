@@ -115,6 +115,25 @@ export default async function BlogPostPage({
         }
       : null;
 
+  // Schema: HowTo for "how-to" posts
+  const isHowTo = slug.includes("how-to") || slug.includes("guide") || post.title.toLowerCase().includes("how to");
+  const howToSchema = isHowTo && post.sections.length > 0
+    ? (() => {
+        const steps: { "@type": string; name: string; text: string }[] = [];
+        for (const section of post.sections) {
+          if (section.heading && section.content) {
+            const text = section.content;
+            if (text) {
+              steps.push({ "@type": "HowToStep", name: section.heading, text: text.replace(/<[^>]+>/g, "").slice(0, 300) });
+            }
+          }
+        }
+        return steps.length >= 2
+          ? { "@context": "https://schema.org", "@type": "HowTo", name: post.title, description: post.metaDescription, image: post.image, step: steps }
+          : null;
+      })()
+    : null;
+
   // Schema: Breadcrumb
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -130,6 +149,7 @@ export default async function BlogPostPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      {howToSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <article className="pt-28 pb-20">
