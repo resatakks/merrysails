@@ -26,7 +26,7 @@
 ### 2.1 Title / Description
 - **Kural:** Title 50–60 karakter, primary keyword başta; description 150–160 karakter, CTA.
 - **Blog:** Örnekler 34–59 karakter; çoğu 40–50 aralığında. “Best Bosphorus Cruise in Istanbul — Complete Guide for 2026” (59) sınırda, kabul edilebilir.
-- **Ana sayfa:** “Bosphorus Cruise Istanbul — Sunset & Dinner Cruises from €20” — keyword başta, uzunluk uygun.
+- **Ana sayfa:** “Bosphorus Cruise Istanbul — Sunset & Dinner Cruises from €40” — keyword başta, uzunluk uygun.
 - **Öneri:** Yeni eklenen bloglarda title’ı 50–60 karakter tut; mevcutlar için zorunlu değişiklik yok.
 
 ### 2.2 URL / Sitemap / Robots
