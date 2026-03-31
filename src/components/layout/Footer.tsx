@@ -180,6 +180,78 @@ export default function Footer() {
           </div>
         </div>
 
+        
+
+        {/* 7/24 Online Contact Bar */}
+        <div className="mt-16 w-full bg-[#1e1e1e] rounded-xl px-4 py-6 md:px-8 border border-white/10 shadow-lg">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+            {/* Logo Alanı */}
+            <div className="flex items-center">
+               <Link href="/" className="flex items-center gap-2">
+                 <div className="w-8 h-8 md:w-10 md:h-10 relative bg-[#c8a45d] rounded-xl flex items-center justify-center shadow-lg shadow-[#c8a45d]/30 -rotate-3">
+                   <span className="text-[#0a1e3a] font-bold text-lg md:text-xl rotate-3">M</span>
+                 </div>
+                 <span className="text-white font-bold text-lg md:text-xl tracking-wide uppercase">
+                   MERRY <span className="font-light text-[#c8a45d]">SAILS</span>
+                 </span>
+               </Link>
+            </div>
+
+            {/* İletişim Bilgileri */}
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 w-full md:w-auto">
+              <a 
+                href="mailto:info@merrysails.com" 
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-10 h-10 rounded-full border border-red-500/30 flex items-center justify-center text-red-500 relative bg-red-500/10">
+                  <span className="text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  </span>
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-[#1e1e1e]"></span>
+                </div>
+                <div>
+                  <div className="text-[10px] md:text-xs text-gray-400 capitalize whitespace-nowrap">7/24 Online</div>
+                  <div className="text-xs md:text-sm text-white font-medium whitespace-nowrap">info@merrysails.com</div>
+                </div>
+              </a>
+
+              <a 
+                href="tel:+905337036849" 
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-10 h-10 rounded-full border border-red-500/30 flex items-center justify-center text-red-500 relative bg-red-500/10">
+                  <span className="text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </span>
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse border-2 border-[#1e1e1e]"></span>
+                </div>
+                <div>
+                  <div className="text-[10px] md:text-xs text-gray-400 capitalize whitespace-nowrap">7/24 Online</div>
+                  <div className="text-xs md:text-sm text-white font-medium whitespace-nowrap">+90 533 703 68 49</div>
+                 </div>
+              </a>
+
+              <a 
+                href="https://wa.me/905337036849" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-10 h-10 rounded-full border border-green-500/30 flex items-center justify-center text-green-500 relative bg-green-500/10">
+                  <span className="text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+                  </span>
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse border-2 border-[#1e1e1e]"></span>
+                </div>
+                <div>
+                  <div className="text-[10px] md:text-xs text-gray-400 capitalize whitespace-nowrap">7/24 Online</div>
+                  <div className="text-xs md:text-sm text-white font-medium whitespace-nowrap">+90 533 703 68 49</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/70">
