@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | MerrySails Istanbul 2026",
   },
   description:
-    "Book the best Bosphorus cruise in Istanbul for 2026 — sunset cruises from €20, dinner cruises from €65, private yacht charters from €280, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guarantee — book online today.",
+    "Book the best Bosphorus cruise in Istanbul for 2026 — sunset cruises from €40, dinner cruises from €65, private yacht charters from €280, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guarantee — book online today.",
   keywords: [
     "bosphorus cruise", "istanbul dinner cruise", "sunset cruise istanbul",
     "bosphorus dinner cruise", "boat trip istanbul", "boat tour istanbul",

@@ -25,7 +25,7 @@ export const metadata = {
 const faqs = [
   {
     q: "How much does a Bosphorus cruise cost in Istanbul?",
-    a: "Bosphorus cruise prices start from €15 for a short sightseeing cruise, €20 for a sunset cruise, and €65 for a dinner cruise with Turkish night entertainment. Private yacht charter starts from €280 for 2 hours. All prices include basic refreshments.",
+    a: "Bosphorus cruise prices start from €15 for a short sightseeing cruise, €40 for a sunset cruise, and €65 for a dinner cruise with Turkish night entertainment. Private yacht charter starts from €280 for 2 hours. All prices include basic refreshments.",
   },
   {
     q: "How do I book a Bosphorus boat tour?",

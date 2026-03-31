@@ -10,9 +10,9 @@ import BosphorusGuideSection from "@/components/home/BosphorusGuideSection";
 import { tours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul 2026 — Book Online | Sunset & Dinner Cruises from €20",
+  title: "Bosphorus Cruise Istanbul 2026 — Book Online | Sunset & Dinner Cruises from €40",
   description:
-    "Book the best Bosphorus cruise in Istanbul for 2026. Sunset cruises from €20, dinner cruises with Turkish night show, private yacht charter & boat tours. TURSAB licensed since 2001. Best price guarantee — book online today.",
+    "Book the best Bosphorus cruise in Istanbul for 2026. Sunset cruises from €40, dinner cruises with Turkish night show, private yacht charter & boat tours. TURSAB licensed since 2001. Best price guarantee — book online today.",
   keywords: [
     "bosphorus cruise",
     "istanbul cruise",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://merrysails.com" },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul 2026 — Book Online | From €20",
+    title: "Bosphorus Cruise Istanbul 2026 — Book Online | From €40",
     description:
-      "Sunset cruises from €20, dinner cruises with Turkish night show, private yacht charter & boat tours. TURSAB licensed since 2001. Book online — best price guarantee.",
+      "Sunset cruises from €40, dinner cruises with Turkish night show, private yacht charter & boat tours. TURSAB licensed since 2001. Book online — best price guarantee.",
     url: "https://merrysails.com",
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul 2026" }],

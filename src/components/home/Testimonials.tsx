@@ -5,7 +5,7 @@ const reviews = [
     name: "Marco B.",
     country: "Italy",
     rating: 5,
-    text: "Incredible sunset cruise! The views of the Bosphorus were breathtaking and the crew was very professional. Best €20 I've ever spent.",
+    text: "Incredible sunset cruise! The views of the Bosphorus were breathtaking and the crew was very professional. Best €40 I've ever spent.",
     date: "2024-09-15",
   },
   {

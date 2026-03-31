@@ -152,7 +152,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Bosphorus Cruises</h3>
               <ul className="space-y-2">
-                <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Sunset Cruise — From €20</Link></li>
+                <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Sunset Cruise — From €40</Link></li>
                 <li><Link href="/cruises/bosphorus-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Dinner Cruise & Turkish Night — From €65</Link></li>
                 <li><Link href="/cruises/bosphorus-sightseeing-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Short Sightseeing Cruise — From €15</Link></li>
                 <li><Link href="/cruises/yacht-charter-in-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Yacht Charter — From €280</Link></li>

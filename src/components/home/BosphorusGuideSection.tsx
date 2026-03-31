@@ -5,7 +5,7 @@ const cruiseTypes = [
   {
     icon: Sunset,
     title: "Bosphorus Sunset Cruise",
-    price: "From €20",
+    price: "From €40",
     duration: "2.5 hours",
     description:
       "Watch the golden hour paint Istanbul's skyline from the water. The sunset cruise departs daily from Eminonu Pier and includes drinks, snacks, and live commentary. The most popular cruise for couples and photographers.",

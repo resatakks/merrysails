@@ -86,7 +86,7 @@ ${guidesSummaries}
 ## Frequently Asked Questions
 
 **How much does a Bosphorus cruise cost?**
-Prices start from €15 for a sightseeing cruise, €20 for a sunset cruise, €65 for a dinner cruise with entertainment, and €280+ for a private yacht charter.
+Prices start from €15 for a sightseeing cruise, €40 for a sunset cruise, €65 for a dinner cruise with entertainment, and €280+ for a private yacht charter.
 
 **Where do cruises depart from?**
 Shared cruises depart from Eminönü Pier (accessible by T1 tram). Private yacht charters depart from Kuruçeşme Marina.

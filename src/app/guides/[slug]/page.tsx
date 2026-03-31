@@ -315,7 +315,7 @@ export default async function GuidePage({
               See This Landmark on a Bosphorus Cruise
             </h2>
             <p className="text-white/70 mb-6">
-              Book direct for the best price — sunset cruises from €20.
+              Book direct for the best price — sunset cruises from €40.
             </p>
             <Link
               href="/cruises"

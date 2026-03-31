@@ -99,8 +99,8 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
     { question: "How long is the Bosphorus sunset cruise?", answer: "The Bosphorus sunset cruise lasts approximately 2.5 hours. Departure times are adjusted seasonally — 17:00 in winter and 18:00 in summer — to ensure you experience the sunset at its most spectacular moment over the strait." },
     { question: "What time does the sunset cruise depart?", answer: "The sunset cruise departs from Eminönü Pier at 17:00 during winter months and 18:00 during summer months. We recommend arriving 15 minutes before departure to board comfortably." },
     { question: "What is included in the Bosphorus sunset cruise?", answer: "The cruise includes welcome drinks, an open bar with soft drinks, a snack platter, live commentary about the landmarks, and free WiFi on board. Alcoholic beverages and hotel transfers are available as add-ons." },
-    { question: "When is the best time of year for a sunset cruise in Istanbul?", answer: "The best time for a sunset cruise is from April to October, when the weather is warm and the sunsets are most dramatic. However, winter sunsets over the Bosphorus can be equally stunning with fewer crowds and special pricing from €20." },
-    { question: "How much does the Bosphorus sunset cruise cost?", answer: "The Bosphorus sunset cruise starts from €20 per person (winter special, regular price €40). The price includes welcome drinks, soft drinks, snack platter, live commentary, and WiFi." },
+    { question: "When is the best time of year for a sunset cruise in Istanbul?", answer: "The best time for a sunset cruise is from April to October, when the weather is warm and the sunsets are most dramatic. However, winter sunsets over the Bosphorus can be equally stunning with fewer crowds." },
+    { question: "How much does the Bosphorus sunset cruise cost?", answer: "The Bosphorus sunset cruise starts from €40 per person. The price includes welcome drinks, soft drinks, snack platter, live commentary, and WiFi." },
   ],
   "bosphorus-dinner-cruise": [
     { question: "What is on the Bosphorus dinner cruise menu?", answer: "The dinner cruise features a 4-course Turkish dinner: traditional mezes (hummus, ezme, stuffed vine leaves), fresh seasonal salad, your choice of grilled lamb, chicken, or fish kebab, and classic baklava with Turkish tea. Unlimited local drinks (beer, wine, rakı, soft drinks) are included." },
@@ -255,8 +255,8 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Book a short Bosphorus cruise in Istanbul for just €15. 1.5-hour sightseeing tour past palaces, mosques & both bridges. 4.9 rating. Audio guide in 12 languages. Best price guarantee — book online.",
   },
   "bosphorus-sunset-cruise": {
-    title: "Bosphorus Sunset Cruise Istanbul 2026 — €20 | Book Online",
-    description: "Book the best Bosphorus sunset cruise in Istanbul for €20. 2.5-hour golden hour experience with drinks & snacks. 4.9 rating from 800+ reviews. Free cancellation — book online today.",
+    title: "Bosphorus Sunset Cruise Istanbul 2026 — €40 | Book Online",
+    description: "Book the best Bosphorus sunset cruise in Istanbul for €40. 2.5-hour golden hour experience with drinks & snacks. 4.9 rating from 800+ reviews. Free cancellation — book online today.",
   },
   "wedding-anniversary": {
     title: "Anniversary Yacht Cruise Istanbul 2026 — From €280 | Book Online",

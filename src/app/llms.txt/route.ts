@@ -32,7 +32,7 @@ ${tours
 
 ## Pricing
 - Sightseeing Cruise: From €15/person (1.5 hours)
-- Sunset Cruise: From €20/person (2.5 hours)
+- Sunset Cruise: From €40/person (2.5 hours)
 - Dinner Cruise: From €65/person (3.5 hours, includes hotel transfer)
 - Dinner Cruise Gold: €95/person (premium seating)
 - Private Yacht Essential: From €280 (2 hours, up to 15 guests)

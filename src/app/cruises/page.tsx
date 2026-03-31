@@ -50,7 +50,7 @@ export default function CruisesPage() {
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
               Our most popular experience, the <Link href="/cruises/bosphorus-sunset-cruise" className="text-[var(--brand-primary)] hover:underline">Bosphorus sunset cruise</Link> departs daily
               from Eminonu Pier and glides past Maiden&apos;s Tower, Dolmabahce Palace, Ortakoy Mosque, and Rumeli Fortress as the
-              sun paints the sky golden. Starting from just €20, it&apos;s the most affordable way to experience Istanbul from the water.
+              sun paints the sky golden. Starting from just €40, it&apos;s the most affordable way to experience Istanbul from the water.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Istanbul Dinner Cruise</h3>

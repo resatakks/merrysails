@@ -4,7 +4,7 @@ import { tours } from "@/data/tours";
 export const metadata: Metadata = {
   title: "Istanbul Bosphorus Cruises 2026 — Book Online | Yacht Charter & Boat Tours",
   description:
-    "Book Bosphorus cruises in Istanbul for 2026: sunset cruises from €20, dinner cruises with Turkish night show from €65, private yacht charter from €280 & sightseeing boat tours from €15. Best price guarantee — book online direct with MerrySails.",
+    "Book Bosphorus cruises in Istanbul for 2026: sunset cruises from €40, dinner cruises with Turkish night show from €65, private yacht charter from €280 & sightseeing boat tours from €15. Best price guarantee — book online direct with MerrySails.",
   keywords: [
     "bosphorus cruise istanbul",
     "istanbul yacht charter",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Istanbul Bosphorus Cruises 2026 — Book Online | Yacht Charter & Boat Tours",
     description:
-      "Sunset cruises from €20, dinner cruises from €65, private yacht charter from €280, sightseeing tours from €15. Best price guarantee — book online.",
+      "Sunset cruises from €40, dinner cruises from €65, private yacht charter from €280, sightseeing tours from €15. Best price guarantee — book online.",
     url: "https://merrysails.com/cruises",
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruises Istanbul 2026" }],
