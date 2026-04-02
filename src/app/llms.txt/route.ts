@@ -63,6 +63,18 @@ ${tours.map((t) => `- [${t.nameEn}](https://merrysails.com/cruises/${t.slug})`).
 ## Blog & Guides
 - [Blog — Cruise Guides & Travel Tips](https://merrysails.com/blog)
 - [Istanbul Landmark Guides](https://merrysails.com/guides)
+
+## Commercial Cruise Guides (Booking & Pricing)
+- [Book a Bosphorus Cruise — Complete Guide](https://merrysails.com/blog/book-bosphorus-cruise-istanbul): How to book sightseeing, sunset, dinner & yacht cruises from €15. Prices, departure points, booking channels.
+- [Bosphorus Dinner Cruise Booking](https://merrysails.com/blog/bosphorus-dinner-cruise-booking): Book the €65 all-inclusive dinner cruise — 4-course meal, live entertainment, hotel transfer. Menu details and reservation.
+- [Istanbul Sunset Cruise Booking](https://merrysails.com/blog/istanbul-sunset-cruise-booking): Book the €40 sunset cruise — 2.5-hour golden hour experience, departure times by season, what is included.
+- [Private Yacht Charter Istanbul Prices](https://merrysails.com/blog/private-yacht-charter-istanbul-prices): Yacht charter from €280 — Essential, Premium & VIP packages, routes, custom events.
+- [Bosphorus Cruise Prices 2026](https://merrysails.com/blog/bosphorus-cruise-prices-2026): Complete price breakdown for all cruise types — sightseeing €15, sunset €40, dinner €65, yacht €280+.
+- [Istanbul Night Cruise](https://merrysails.com/blog/istanbul-night-cruise): Compare sunset, dinner & party cruises after dark — prices, routes, what is included.
+- [Party Boat Istanbul](https://merrysails.com/blog/party-boat-istanbul): Private party boat from €280 — birthday, bachelorette, corporate events on the Bosphorus.
+- [Istanbul Boat Party Private](https://merrysails.com/blog/istanbul-boat-party-private): Private yacht events — DJ setup, catering, decorations, packages from €280.
+- [Best Bosphorus Cruise Guide](https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide): Comprehensive comparison of all cruise types, pricing tables, and booking tips for 2026.
+- [Istanbul Sunset Cruise Experience](https://merrysails.com/blog/istanbul-sunset-cruise-experience): The signature Istanbul sunset experience from €40 — photography tips, best seasons, route details.
 `;
 
   return new Response(content, {

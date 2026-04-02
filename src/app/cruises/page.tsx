@@ -1,6 +1,32 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CruisesFilter from "@/components/tours/CruisesFilter";
 import { tours } from "@/data/tours";
+
+export const metadata: Metadata = {
+  title: "Istanbul Bosphorus Cruises & Yacht Charter 2026 | MerrySails",
+  description:
+    "Book Istanbul Bosphorus cruises & yacht charter from €15. Sunset, dinner & sightseeing cruises plus private yacht rental. Best price guarantee — book online direct.",
+  keywords: [
+    "bosphorus cruise",
+    "istanbul cruise",
+    "yacht charter istanbul",
+    "sunset cruise",
+    "dinner cruise",
+    "boat tour istanbul",
+  ],
+  alternates: {
+    canonical: "https://merrysails.com/cruises",
+  },
+  openGraph: {
+    title: "Istanbul Bosphorus Cruises & Yacht Charter 2026 | MerrySails",
+    description:
+      "Book Istanbul Bosphorus cruises & yacht charter from €15. Sunset, dinner & sightseeing cruises plus private yacht rental. Best price guarantee — book online direct.",
+    url: "https://merrysails.com/cruises",
+    siteName: "MerrySails",
+    type: "website",
+  },
+};
 
 export default function CruisesPage() {
   return (
