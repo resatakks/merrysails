@@ -99,6 +99,10 @@ export default async function BlogPostPage({
     },
     mainEntityOfPage: `https://merrysails.com/blog/${post.slug}`,
     articleSection: post.category.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".blog-title", ".blog-intro", ".blog-faq"],
+    },
   };
 
   // Schema: FAQ
@@ -181,10 +185,10 @@ export default async function BlogPostPage({
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--heading)]">
+            <h1 className="blog-title text-3xl md:text-4xl font-bold mb-4 text-[var(--heading)]">
               {post.title}
             </h1>
-            <p className="text-lg text-[var(--body-text)] mb-6">{post.excerpt}</p>
+            <p className="blog-intro text-lg text-[var(--body-text)] mb-6">{post.excerpt}</p>
 
             <AuthorCard authorId={post.author} variant="compact" />
           </header>
@@ -242,7 +246,7 @@ export default async function BlogPostPage({
 
           {/* FAQ Section */}
           {post.faqs.length > 0 && (
-            <div className="max-w-4xl mt-12 bg-[var(--surface-alt)] rounded-2xl p-6 md:p-8">
+            <div className="blog-faq max-w-4xl mt-12 bg-[var(--surface-alt)] rounded-2xl p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
                 Frequently Asked Questions
               </h2>
