@@ -73,6 +73,12 @@ Allow: /
 User-agent: Bravebot
 Allow: /
 
+User-agent: MicrosoftPreview
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
 User-agent: Applebot
 Allow: /
 
