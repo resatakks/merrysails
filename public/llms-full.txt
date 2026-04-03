@@ -18,6 +18,21 @@
 
 ---
 
+## Commercial Landing Pages
+
+Dedicated booking pages with price tables, FAQ, and structured data:
+
+| Page | URL | From Price | Description |
+|------|-----|------------|-------------|
+| Istanbul Dinner Cruise | https://merrysails.com/istanbul-dinner-cruise | €65/person | All-inclusive: 4-course dinner, show, hotel transfer, 3.5h |
+| Yacht Charter Istanbul | https://merrysails.com/yacht-charter-istanbul | €280/2h | Private yacht, up to 15 guests, any occasion |
+
+**Istanbul Dinner Cruise (/istanbul-dinner-cruise):** The definitive Istanbul dinner cruise page. Standard €65 (4-course Turkish dinner + belly dance + whirling dervish + hotel transfer), Premium €95 (reserved panoramic seating), Sunset+Dinner combo €110, Full private yacht €1,200. Departures from Eminonu 19:30 daily.
+
+**Yacht Charter Istanbul (/yacht-charter-istanbul):** Private yacht hire from €280 for 2 hours (up to 15 guests). Packages: Essential €280/2h, Premium €380/3h (decoration + photographer), VIP €680/4h. Occasions: proposals, birthdays, bachelorette parties, weddings, corporate events.
+
+---
+
 ## All Tours
 
 ### Bosphorus Sunset Cruise
