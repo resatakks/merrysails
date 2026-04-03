@@ -5136,6 +5136,365 @@ export const blogPosts: BlogPost[] = [
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise"],
     relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "istanbul-sunset-cruise-experience", "bosphorus-cruise-prices-2026"]
   },
+  {
+    slug: "corporate-boat-hire-istanbul",
+    title: "Corporate Boat Hire Istanbul — Company Events & Team Building on the Bosphorus",
+    metaDescription: "Hire a private boat in Istanbul for corporate events, team building, and company parties on the Bosphorus. Packages from €280. AV equipment, catering, and official invoicing available.",
+    excerpt: "Corporate boat hire in Istanbul combines team building, client entertainment, and company celebrations on the Bosphorus. Full catering, AV setup, and invoice included.",
+    category: "events",
+    date: "2026-04-04",
+    dateModified: "2026-04-04",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
+    imageAlt: "Corporate team event on a private yacht on the Bosphorus with Istanbul skyline in the background",
+    keywords: ["corporate boat hire istanbul", "company event istanbul boat", "team building bosphorus", "corporate yacht istanbul", "corporate cruise bosphorus", "business event yacht istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Corporate boat hire in Istanbul starts from €280 for up to 15 guests — fully private with no shared-tour passengers",
+      "AV equipment (wireless mic, Bluetooth speakers, projector screen) is available as an add-on for product launches and presentations",
+      "Catering options range from Turkish mezze platters to full plated dinners with vegetarian, halal, and gluten-free options",
+      "MerrySails issues official Turkish invoices (fatura) with VAT breakdown — required for corporate expense reimbursement"
+    ],
+    sections: [
+      {
+        heading: "What Is Corporate Boat Hire on the Bosphorus?",
+        answerCapsule: "Corporate boat hire in Istanbul means booking a fully private vessel on the Bosphorus for company events, team building sessions, client entertainment, or product launches — starting from €280 for groups up to 15 and scaling to full-day charters for 100 guests.",
+        content: "Corporate events on the water have a measurable impact on team cohesion and client relationships that land-based venues simply cannot replicate. When your team is on a private vessel sailing between two continents, there are no distractions, no colleagues from other companies, and no reason to check a phone — just the Bosphorus, the skyline, and each other. MerrySails has organised corporate events on the Bosphorus since 2001, working with multinational companies, Istanbul-based firms, and international delegations visiting Turkey. Our fleet ranges from intimate 12-metre gulets for 15 guests to purpose-built event yachts capable of accommodating 100 passengers in a single private charter. Every corporate booking is fully private — your colleagues or clients are the only passengers on board. There are no public cruise passengers sharing the deck, no shared tables, and no fixed entertainment schedule unless you want one. The vessel, its route, its timing, and its catering menu are all arranged around your agenda.",
+        table: {
+          headers: ["Package", "Guests", "Duration", "Price From", "Includes"],
+          rows: [
+            ["Essential Corporate", "Up to 15", "2 hours", "€280", "Captain & crew, refreshments, English guide"],
+            ["Business Premium", "Up to 30", "3 hours", "€520", "Catering platter, open bar, AV basic setup"],
+            ["Executive", "Up to 60", "4 hours", "€980", "Plated dinner, full open bar, AV setup, MC"],
+            ["Full Fleet Event", "Up to 100", "4–6 hours", "€1,800+", "Multi-vessel, catering, AV, photographer, MC"]
+          ]
+        }
+      },
+      {
+        heading: "What Types of Corporate Events Work Best on a Yacht?",
+        content: "Almost any corporate event format transfers well to a yacht setting, but four types work especially effectively. Team building events benefit from the shared experience of being on the water — physical challenges, collaborative activities, and informal socialising all happen naturally in a boat environment where status hierarchies flatten. Client entertainment cruises are powerful tools for relationship building: a private sunset cruise with dinner on the Bosphorus is a memorable experience that leaves a lasting impression on visiting clients or prospective partners. Product launches on the water attract media attention and create a distinctive backdrop for announcements. The combination of Istanbul's skyline and a private vessel provides visual content that conventional hotel ballrooms cannot. Annual company parties and end-of-year celebrations benefit from the novelty factor: employees remember Bosphorus events long after standard hotel dinners are forgotten. The enclosed lower decks of our larger vessels also allow year-round operation — cold-weather corporate events are fully viable with appropriate heating and windshields. End-of-project dinners, board meetings followed by a sunset cruise, and incentive travel programs for top performers are also formats we handle regularly.",
+        proTip: "For groups over 30, we recommend a 4-hour charter so there is natural time for a pre-dinner drinks reception, a seated dinner or buffet, and a relaxed post-dinner period on deck before returning to port. Trying to compress a formal dinner into 2 hours on the water always feels rushed."
+      },
+      {
+        heading: "What Catering Options Are Available for Corporate Events?",
+        content: "Catering for corporate events is fully customisable and ranges from standing-reception platters to multi-course plated dinners. For cocktail-style events and standing receptions, our Turkish mezze selection includes hot and cold dishes: börek pastries, hummus, sigara böreği, grilled vegetable platters, smoked salmon canapés, and a selection of Turkish cheeses and olives. Portion planning for 30 guests standing is approximately 12–15 pieces per person over 2 hours. For seated dinners, the standard corporate menu is a three-course format: a cold mezze starter shared across the table, a choice of main course (sea bass, chicken, or vegetarian pilav), and a dessert. All dietary requirements — halal, vegetarian, vegan, gluten-free — are accommodated with advance notice (minimum 48 hours before departure). Beverages include non-alcoholic packages (fresh juice, soft drinks, water, Turkish tea and coffee) and alcoholic packages (beer, wine, rakı, spirits, champagne for toasts). Corporate groups frequently request branded cake cutting for company anniversaries or departmental milestones. External catering is not permitted on board, but our catering team works with your HR or events manager to create a custom menu."
+      },
+      {
+        heading: "Is AV Equipment Available for Presentations and Announcements?",
+        content: "Yes. MerrySails provides a professional AV setup package for corporate events that require presentations, award announcements, or product launches. The basic AV package includes two wireless clip-on microphones, a handheld wireless microphone, Bluetooth speaker system (suitable for vessels up to 60 guests), and a laptop connectivity cable. The full AV package adds a 100-inch retractable projection screen with an HDMI projector (suitable for product launch slides, video playback, or corporate branding), a second speaker cluster for larger vessels, and LED uplighting in your corporate brand colours. For events with live streaming requirements — board meetings with remote participants, global town halls — we recommend a hybrid setup with a dedicated technician provided by a partner AV company. The Bosphorus has reliable 4G/5G coverage throughout the strait, making live streaming technically feasible. All AV equipment must be confirmed at least 7 days before the event date to allow setup and testing on the specific vessel assigned to your booking.",
+        callout: { type: "info", text: "Corporate presentations on the Bosphorus: our 100-inch projection screen works in both indoor and partially shaded outdoor conditions. Full sun on deck may wash out the image — afternoon events or indoor presentations work best for slide-based content." }
+      },
+      {
+        heading: "How Does Invoicing and Payment Work for Corporate Clients?",
+        content: "MerrySails issues official Turkish invoices (fatura) with a full VAT breakdown, compliant with Turkish tax regulations. For international companies booking from abroad, we provide English-language proforma invoices alongside the Turkish official document for internal expense processing. Payment methods accepted for corporate bookings include bank transfer (EUR, USD, GBP, TRY), corporate credit card (Visa, Mastercard, American Express with 2.5% surcharge), and — for Istanbul-based clients — in-person cash payment in EUR or TRY. Standard payment terms for corporate bookings are 50% deposit on confirmation and 50% balance 5 business days before the event date. For repeat corporate clients with an established relationship, we offer 30-day invoice terms with a signed service agreement. Cancellation policy for corporate events: 100% refund for cancellations 14+ days before the event, 50% refund for 7–13 days prior, non-refundable within 7 days (weather cancellations excepted). A signed booking confirmation is required to hold a date. For large group bookings (50+ guests), a written event brief is requested to ensure the vessel assignment, catering, and logistics are correctly planned.",
+        callout: { type: "price", text: "Corporate boat hire pricing: Essential from €280 (15 guests, 2 hrs) — Business Premium from €520 (30 guests, 3 hrs) — Executive from €980 (60 guests, 4 hrs) — Full Fleet from €1,800 (100 guests). All prices exclude catering and AV add-ons." }
+      },
+      {
+        heading: "What Is the Capacity for Corporate Groups?",
+        content: "MerrySails operates vessels ranging from intimate gulets (12–20 guests) to purpose-built event yachts (up to 100 passengers). For groups of 10–20, a standard gulet or motor yacht provides a boutique, premium feel — close quarters create natural conversation and a sense of exclusivity. For 20–50 guests, our mid-size event yachts have both a main saloon (indoor, air-conditioned or heated depending on season) and large open-air deck areas with comfortable seating. For 60–100 guests, a larger vessel or two-vessel charter is recommended. The two-vessel format — where guests travel on separate boats that moor alongside each other — is popular for corporate events that want to keep different departments or client groups separate for part of the evening, then merge for dinner or an awards ceremony. For groups over 100, private charter of a commercial tour vessel or coordination of multiple vessels is possible with minimum 30 days advance notice. All vessels are fully compliant with Turkish maritime authority (UDH) safety regulations, carry valid passenger insurance, and have life-saving equipment for maximum capacity.",
+        proTip: "For team building events, groups of 20–40 are the sweet spot. Small enough that everyone interacts, large enough to run structured activities with meaningful teams. Larger groups tend to fragment into sub-groups, which can still be valuable but requires a facilitated programme."
+      },
+      {
+        heading: "How Do You Book a Corporate Boat Charter?",
+        content: "Booking a corporate boat charter with MerrySails begins with an inquiry — by email at info@merrysails.com, via WhatsApp at +90 537 040 68 22, or through the contact form on the website. Provide your event date (or preferred date range), approximate guest count, type of event, and any specific requirements (catering, AV, dietary needs). Within 24 hours we will send a detailed proposal including vessel options, pricing, a sample catering menu, and availability confirmation. Once you approve the proposal, a booking confirmation form and deposit invoice are issued. The 50% deposit secures the date, vessel, and crew. Final logistics — run sheet, guest count confirmation, catering menu sign-off, AV requirements — are coordinated with your events manager or executive assistant in the 7 days leading up to the event. On the event day, the vessel is available for boarding 30–45 minutes before departure for welcome drinks, crew introduction, and any AV testing. Our event coordinator is on board for the duration to manage logistics, catering timing, and any unforeseen requirements. Contact [corporate events team](/contact) to begin planning your event."
+      }
+    ],
+    faqs: [
+      { q: "How much does corporate boat hire cost in Istanbul?", a: "Corporate boat hire in Istanbul starts from €280 for the Essential package (up to 15 guests, 2 hours). Business Premium for 30 guests is from €520 (3 hours). Executive for 60 guests from €980 (4 hours). Full fleet events for up to 100 guests start from €1,800. Catering and AV are add-ons priced separately." },
+      { q: "Can we get an official invoice for a corporate yacht event?", a: "Yes. MerrySails issues official Turkish fatura (tax invoices) with full VAT breakdown. English-language proforma invoices are provided alongside for international corporate expense processing." },
+      { q: "What is the maximum group size for a corporate cruise?", a: "Our fleet accommodates up to 100 guests in a single-vessel private charter. For groups over 100, a multi-vessel arrangement is available with 30+ days advance notice." },
+      { q: "Is AV equipment available for presentations on the yacht?", a: "Yes. Basic AV (wireless microphones, Bluetooth speakers) is available as an add-on. Full AV package adds a 100-inch projection screen with HDMI projector and LED uplighting. Must be confirmed 7 days before the event." },
+      { q: "Can you accommodate halal and vegetarian dietary requirements?", a: "Yes. All dietary requirements — halal, vegetarian, vegan, gluten-free — are accommodated with 48 hours advance notice. Dietary information is collected per group at the time of catering confirmation." },
+      { q: "What happens if the weather is bad on the event day?", a: "In cases of strong wind, heavy rain, or sea conditions deemed unsafe by the captain, we reschedule to the next available date at no cost. Our enclosed lower decks allow events to continue in light rain. All corporate bookings include weather-related cancellation protection." }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise"],
+    relatedPosts: ["birthday-party-boat-istanbul", "private-yacht-charter-istanbul-price", "istanbul-boat-tour-price-2026"]
+  },
+  {
+    slug: "birthday-party-boat-istanbul",
+    title: "Birthday Party Boat Istanbul — Private Bosphorus Birthday Cruise from €280",
+    metaDescription: "Book a birthday party boat in Istanbul on the Bosphorus. Private cruise for 10–100 guests from €280. Decoration packages, DJ, catering, birthday cake included. Book online.",
+    excerpt: "Celebrate your birthday on a private yacht on the Bosphorus in Istanbul. Decoration, DJ, catering, and birthday cake packages for groups of 10 to 100 guests.",
+    category: "events",
+    date: "2026-04-04",
+    dateModified: "2026-04-04",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&q=80",
+    imageAlt: "Birthday party celebration on a private yacht on the Bosphorus at sunset with balloons and Istanbul skyline",
+    keywords: ["birthday party boat istanbul", "birthday cruise istanbul bosphorus", "yacht birthday party istanbul", "birthday boat cruise istanbul", "private birthday boat bosphorus", "bosphorus birthday party"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "A private birthday boat in Istanbul starts from €280 for up to 15 guests — no shared passengers, fully private",
+      "Decoration packages include balloon arches, table arrangements, banner with guest name, and floral centrepieces",
+      "DJ and sound system available as add-ons — Turkish pop, international, R&B, or custom playlist on request",
+      "Groups from 10 to 100 guests can be accommodated across our fleet of gulets and event yachts"
+    ],
+    sections: [
+      {
+        heading: "Why Celebrate a Birthday on the Bosphorus?",
+        answerCapsule: "A birthday party boat in Istanbul gives you a fully private Bosphorus cruise for 10 to 100 guests starting from €280, with decoration, catering, and DJ options — the most memorable birthday setting in one of the world's most iconic cities.",
+        content: "A birthday dinner at a restaurant is forgettable by the following week. A birthday cruise on the Bosphorus — with Istanbul's skyline on both sides, the lights of two continents reflected on the water, and your closest friends on a private deck — is the kind of memory that lasts decades. MerrySails has hosted hundreds of birthday events since 2001, from intimate 10-person gulet cruises to 80-guest party yacht events with live DJs and full catering. What makes the Bosphorus setting uniquely powerful for birthdays is its combination of intimacy and spectacle: your group is completely private on board, yet surrounded by one of the world's most dramatic waterscapes. The birthday person gets an experience that cannot be replicated in any restaurant, rooftop bar, or hotel banquet room in Istanbul. Every birthday package is fully customisable — you choose the duration, guest count, decoration style, catering level, and entertainment. There is no fixed entertainment schedule, no other customers, and no venue hire limit on music volume (within reasonable nighttime limits).",
+        callout: { type: "price", text: "Birthday boat packages: Essential from €280 (up to 15 guests, 2 hrs) — Premium from €380 (up to 30 guests, 3 hrs, decoration included) — VIP from €680 (up to 60 guests, 4 hrs, DJ + catering + full decoration)." }
+      },
+      {
+        heading: "What Decoration Packages Are Available?",
+        content: "Birthday decoration on the Bosphorus can be as understated or as extravagant as you prefer. The Basic Decoration package (€60) includes a personalised happy birthday banner with the guest's name, 20 latex balloons in a colour of your choice, and a small floral arrangement on the main table. The Standard package (€120) adds a balloon arch at the boarding gangway, table centrepieces on all guest tables, scattered rose petals, and a photo corner backdrop with balloons. The Premium Decoration package (€220) is our most comprehensive: full vessel decoration including foyer arch, table settings with organza chair covers, hanging ceiling decorations below deck, exterior fairy lights along the railings, and a custom banner visible from the dock for the birthday person's arrival reveal. All packages include the birthday cake presentation ceremony — we coordinate the lighting, music cut, and candle moment so the photos and videos capture it perfectly. Decoration colours, balloon types (latex or foil/mylar), and floral variety are selected during booking. Setup is completed 45–60 minutes before guests board. Photo sharing from the captain's crew WhatsApp group within 24 hours of the event."
+      },
+      {
+        heading: "What Catering and Cake Options Are Available?",
+        content: "Catering for birthday events ranges from light finger food to full plated dinners. The Cocktail Catering package (€18/person, minimum 10 guests) includes a selection of hot and cold Turkish mezze: sigara böreği, stuffed mushrooms, bruschetta, hummus with pita, and a cheese and charcuterie board. It is suited for 2-hour events where guests eat standing or informally. The Dinner Catering package (€38/person) provides a seated three-course dinner: a shared cold mezze starter, a main course choice (grilled sea bass, chicken shish, or vegetarian option), and dessert. Minimum 48 hours notice for dietary requirements. Birthday cake options: standard fondant-covered cake (€65, serves 15–20), tiered celebration cake (€110, serves 30–40), or custom-designed cake with edible photo print or sugar flowers (€150–200+, serves 40–60). Cakes are provided by MerrySails' partner bakery in Istanbul and delivered to the vessel before departure. Bringing your own cake from outside is permitted with advance notice. Beverages: non-alcoholic packages from €12/person; alcoholic packages (beer, wine, spirits, champagne toast) from €22/person.",
+        proTip: "For groups of 20–40, the most popular combination is the Premium Decoration package + Cocktail Catering + Alcoholic Beverage package + DJ. The total per-person cost for this package at 30 guests is approximately €55–65/person including the vessel charter — competitive with many Istanbul rooftop venues that offer a fraction of the experience."
+      },
+      {
+        heading: "Is a DJ Available for the Birthday Cruise?",
+        content: "Yes. A professional DJ with a full sound system (speakers, subwoofer, mixer, laptop) is available as an add-on for €180 per event (up to 4 hours). Music genres can be specified: Turkish pop, international top 40, R&B and hip-hop, Afrobeats, Latin, or a custom mixed playlist approved by the birthday person in advance. The DJ set up on deck for events with open-air dancing, or below deck in the saloon for indoor events. For events where a live DJ is not required, a premium Bluetooth speaker system is included in all charter packages, with aux/Bluetooth connectivity for a curated Spotify playlist. Note: DJ events on the Bosphorus must comply with Istanbul Metropolitan Municipality nighttime noise ordinances — music must reduce to background level by 23:00 when vessels are near residential shoreline areas. Our captains manage this automatically and can advise on route adjustments to extend high-volume music periods. Live music (acoustic guitar, saxophone) is also available as an alternative to DJ — add-on pricing on request.",
+        callout: { type: "tip", text: "For the best party atmosphere, request a route that keeps your vessel away from the residential Bebek and Arnavutköy shores during peak music hours. The central Bosphorus between the two bridges offers the most flexibility for music volume and open-deck dancing." }
+      },
+      {
+        heading: "What Group Sizes Can Be Accommodated?",
+        content: "Birthday parties from 10 to 100 guests can be hosted on MerrySails vessels. For groups of 10–15, a classic gulet or motor yacht provides an intimate, exclusive feel with everyone on the same deck, easy conversation, and a social atmosphere that larger groups sometimes lose. For 15–30 guests, our mid-size event yachts have both indoor and outdoor areas — the perfect size for a lively party that still feels personal. For 30–60 guests, our larger event yachts have a dedicated dance area, a full bar setup, and capacity for both seated dinner and open-deck mingling. For 60–100 guests, our largest vessel or a two-vessel charter arrangement ensures everyone has space to move comfortably. When booking for large groups, sharing the guest list breakdown (adults vs. children, dietary requirements) at least 7 days before departure helps us configure the catering and seating correctly. Children are welcome on all birthday events — life jackets in children's sizes are carried on all vessels.",
+        expertQuote: { text: "Boğaz'da doğum günü kutlamaları, müşterilerimizin bize en çok döndüğü organizasyonlar. Bir kez yapan bir daha restorana gitmiyor.", author: "Kaptan Ahmet Yıldız", title: "MerrySails — 20 Yıllık Kaptan" }
+      },
+      {
+        heading: "How Do You Book a Birthday Boat in Istanbul?",
+        content: "To book a birthday boat cruise in Istanbul, contact us via WhatsApp at +90 537 040 68 22 or email info@merrysails.com with your preferred date, approximate guest count, and any specific requirements (decoration preferences, DJ, dietary needs, cake type). We respond within 24 hours with a personalised proposal including pricing, vessel options, and a decoration menu. A 50% deposit secures the booking; the balance is due 3 days before the event. Full cancellation refund for cancellations 14+ days before the event; 50% refund for 7–13 days; non-refundable within 7 days (weather exceptions apply). On the event day, guests board 30 minutes before departure for welcome drinks and decoration viewing before sailing. Our team handles the logistics so the birthday person can simply enjoy the evening. See also our [private yacht charter page](/private-tours) for full package details and our [corporate events page](/corporate-events) if organising a work birthday celebration."
+      }
+    ],
+    faqs: [
+      { q: "How much does a birthday boat party cost in Istanbul?", a: "A private birthday boat in Istanbul starts from €280 for up to 15 guests (2 hours). Premium packages for up to 30 guests are from €380 (3 hours, decoration included). VIP for 60 guests is from €680 (4 hours, DJ + catering + full decoration). Catering and DJ are available as add-ons." },
+      { q: "How many guests can join a birthday cruise on the Bosphorus?", a: "Birthday parties from 10 to 100 guests can be accommodated. Groups of 10–15 suit a gulet; 30–60 suit a mid-size event yacht; 60–100 use our largest vessel or a two-vessel charter." },
+      { q: "Is a DJ available on the birthday boat?", a: "Yes. A professional DJ with full sound system is available for €180 per event (up to 4 hours). Music genres are specified in advance. A Bluetooth speaker system is included in all charter packages as standard." },
+      { q: "Can I bring my own birthday cake?", a: "Yes, external cakes are permitted with advance notice. MerrySails also offers in-house birthday cakes from €65 (serves 15–20) to €200+ (custom design, serves 40–60), delivered to the vessel before departure." },
+      { q: "What decoration is included in the birthday package?", a: "Decoration ranges from Basic (banner, balloons, floral centrepiece, €60) to Premium (balloon arch, full vessel decoration, fairy lights, photo corner, €220). All packages include the birthday cake presentation ceremony coordinated with music and lighting." },
+      { q: "Can children join the birthday cruise?", a: "Yes. Children are welcome on all birthday events. Life jackets in children's sizes are carried on all vessels. The Bosphorus is a calm, sheltered strait — conditions are generally comfortable for all ages." }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["corporate-boat-hire-istanbul", "bosphorus-sunset-cruise-istanbul", "private-yacht-charter-istanbul-price"]
+  },
+  {
+    slug: "bosphorus-sunset-cruise-istanbul",
+    title: "Bosphorus Sunset Cruise Istanbul 2026 — Times, Tips & Booking from €40",
+    metaDescription: "Book a Bosphorus sunset cruise in Istanbul from €40. Departs 1.5–2 hours before sunset. Photography tips, best seasons, what to expect on the water. Book online direct.",
+    excerpt: "The Bosphorus sunset cruise in Istanbul departs 1.5–2 hours before sunset to catch golden hour over two continents. Photography tips, seasonal timing, and full booking guide.",
+    category: "cruise-guide",
+    date: "2026-04-04",
+    dateModified: "2026-04-04",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt: "Bosphorus sunset cruise in Istanbul with Ortaköy Mosque silhouetted against golden sky and the Bosphorus Bridge",
+    keywords: ["bosphorus sunset cruise istanbul", "sunset boat tour istanbul", "istanbul sunset cruise 2026", "sunset cruise bosphorus time", "golden hour bosphorus", "best sunset cruise istanbul"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "The Bosphorus sunset cruise costs €40 per person and lasts 2.5 hours — departs 1.5–2 hours before local sunset time",
+      "April to June and September to October produce the most dramatic sunset colours over the Bosphorus",
+      "Position yourself on the starboard (right) side of the vessel heading north for the best European-shore sunset views",
+      "Overcast days often produce more dramatic colours than clear sky — do not cancel based on clouds alone"
+    ],
+    sections: [
+      {
+        heading: "What Is the Bosphorus Sunset Cruise in Istanbul?",
+        answerCapsule: "The Bosphorus sunset cruise in Istanbul is a 2.5-hour boat tour departing 1.5 to 2 hours before local sunset, timed so you are on the water during golden hour as the sun descends behind Istanbul's historic skyline across both the European and Asian shores.",
+        content: "Of all the ways to experience Istanbul from the water, the sunset cruise offers the most concentrated visual reward for the time invested. The logic is simple: the Bosphorus runs roughly north to south, and on clear and partly cloudy evenings, the western European shore catches the full force of the setting sun — the domes of Dolmabahçe Palace, the arches of Ortaköy Mosque, and the towers of the Çırağan Palace all glow amber against a sky that shifts from gold to pink to deep violet as the cruise progresses. MerrySails operates the Bosphorus sunset cruise at €40 per person. Departure time is adjusted seasonally to ensure the boat is in optimal position — usually around the Rumeli Fortress or the area below the first Bosphorus Bridge — at the exact moment of peak golden hour. The 2.5-hour duration includes both the approach (sailing north through the European shore landmarks) and the return (along the Asian shore as twilight falls). Welcome drinks and snacks are included. Both open-air deck seating and enclosed indoor seating with panoramic windows are available.",
+        table: {
+          headers: ["Season", "Approximate Sunset", "Cruise Departure", "Conditions"],
+          rows: [
+            ["Spring (Apr–May)", "19:30–20:30", "17:30–18:30", "Mild, dramatic clouds, vivid colours"],
+            ["Summer (Jun–Aug)", "20:00–20:30", "18:00–18:30", "Warm, long golden hour, clear or hazy"],
+            ["Autumn (Sep–Oct)", "18:30–19:30", "16:30–17:30", "Best colours, cool breeze, moderate crowds"],
+            ["Winter (Nov–Mar)", "16:30–17:30", "14:30–15:30", "Atmospheric, dramatic skies, fewer crowds"]
+          ]
+        }
+      },
+      {
+        heading: "When Is the Best Time of Year for a Bosphorus Sunset Cruise?",
+        content: "September and October are the finest months for a Bosphorus sunset cruise by most photographic and atmospheric measures. The summer heat has dissipated, the air is clear and dry, and the lower sun angle in early autumn creates longer golden hour periods with more horizontal light that catches the stone facades of waterfront palaces and mosques at their most dramatic. The October sunset over the Bosphorus, with amber light striking the Dolmabahçe Palace facade while the Asian shore sits in warm shadow, is among the finest light shows in any major city. Spring (April–May) is the second-best period. The sky is often partly cloudy — which is actually preferable for photography, as cloud formations create depth and colour gradation that clear skies cannot. Temperatures are comfortable at 16–22°C, and the Bosphorus traffic is manageable. Summer (June–August) offers warm temperatures and long days, but the late sunset time (20:00–20:30) means the cruise extends into evening, and summer haze can sometimes flatten the colours. The upside is the warmest deck conditions of the year — perfect if you prioritise comfort over dramatic light. Winter cruises (November–March) are underrated. Fewer tourists, moody atmospheric skies, and the eerie beauty of Istanbul's skyline under grey winter clouds are genuinely striking. The lower decks are heated; dress warmly for the open deck.",
+        expertQuote: { text: "Ekim ayında Boğaz'da gün batımı — özellikle Rumeli Hisarı açıklarında — fotoğrafçılar için yılın en iyi ışığını sunar. Uzun yıllar bu sahneyi çektim; her seferinde farklı.", author: "Mehmet Kaya", title: "İstanbul Fotoğraf Rehberi, 15 Yıllık Deneyim" }
+      },
+      {
+        heading: "Photography Tips for the Bosphorus Sunset Cruise",
+        content: "The Bosphorus sunset cruise is one of Istanbul's premier photography locations, but the combination of a moving vessel, changing light, and abundant subjects requires some preparation. Positioning matters most: the right (starboard) side of the vessel heading north faces the European shore and catches the full western light as the sun descends. Secure a starboard position before departure — once the cruise is underway, changing sides becomes difficult on busy sailings. Camera settings: for golden hour, shoot in aperture priority with ISO set to auto (maximum 3200) and expose for the sky rather than the foreground — a slightly underexposed golden sky with silhouetted minarets is more striking than a correctly exposed foreground with a blown-out sky. Zoom capability helps enormously: a 24–200mm equivalent range gives you both wide landscape shots and detail pulls of distant palaces. A smartphone with a good telephoto mode (iPhone Pro, Samsung Ultra) performs well at this focal length. Timing within the cruise: the 30 minutes just before sunset is peak golden hour. The 15 minutes after sunset — the blue hour — produces a cooler, softer light that is equally beautiful for the illuminated European shore reflected in the water. The dinner cruise (€65, 3.5 hours) often overlaps the blue hour and early night illumination, which adds a third distinctive light phase for photographers.",
+        proTip: "Bring a small bean bag or a compact tripod that hooks over the vessel railing (gorilla pod style). The boat engine creates low-frequency vibration that blurs long exposures even at shutter speeds above 1/100s — a railing clamp eliminates this and allows lower ISO settings in the blue hour phase."
+      },
+      {
+        heading: "What to Expect on the Bosphorus Sunset Cruise",
+        content: "From boarding to disembarkation, here is the complete timeline of a Bosphorus sunset cruise with MerrySails. Arrival: meet at Eminönü Pier (T1 tram stop: Eminönü) 15 minutes before departure. The crew will check you in and direct you to the vessel. Boarding: 30 minutes before departure, the vessel is open for boarding. Welcome drinks (juice, soft drink, or water) are served on deck as the crew completes pre-departure checks. Departure: the vessel leaves the pier on schedule and sails east through the Golden Horn exit and north up the European shore. First 45 minutes: passing Dolmabahçe Palace, Beşiktaş, Çırağan Palace, and Ortaköy Mosque — the Bosphorus Bridge appears as the vessel approaches Ortaköy. The golden hour light begins as you pass the bridge. Central section (45 min – 1h 30 min): the vessel continues north to the Rumeli Fortress and the narrowest point of the strait. This is the peak golden hour period — maximum photography time. Return: the vessel turns and heads south along the Asian shore as twilight deepens. The European shoreline is now illuminated and reflected in the water — equally photogenic. Arrival back at Eminönü approximately 2.5 hours after departure. The English-speaking guide provides live commentary throughout, identifying landmarks on both shores.",
+        callout: { type: "tip", text: "The Bosphorus sunset cruise is one of the few Istanbul experiences that requires no significant advance booking knowledge — just show up at Eminönü with a camera, book online at least 24 hours ahead, and let the Bosphorus do the rest." }
+      },
+      {
+        heading: "How Does the Sunset Cruise Compare to the Dinner Cruise?",
+        content: "The sunset cruise (€40, 2.5 hours) and dinner cruise (€65, 3.5 hours) are complementary rather than competing products — they target different priorities. The sunset cruise prioritises the Bosphorus experience itself: the light, the landmarks, the open deck. Dinner and entertainment are minimal (snacks and drinks only). It is ideal for photographers, couples who want the visual experience without a fixed dinner schedule, and travellers who have already eaten or prefer flexibility. The dinner cruise prioritises the complete evening experience: a 4-course dinner, live Turkish music and entertainment (fasıl, belly dance, whirling dervishes on some vessels), hotel pickup and drop-off, and a longer time on the water that spans sunset into the night illumination phase. It is ideal for visitors who want a single event to anchor their Istanbul evening — dinner, entertainment, and the Bosphorus landscape all in one. If budget allows and the evening schedule permits, the dinner cruise offers significantly more value per euro. If your focus is photography and maximum deck time at golden hour, the sunset cruise is the right choice. Both are available for private group charter — contact us for [private sunset cruise](/private-tours) pricing.",
+        table: {
+          headers: ["Feature", "Sunset Cruise €40", "Dinner Cruise €65"],
+          rows: [
+            ["Duration", "2.5 hours", "3.5 hours"],
+            ["Departures", "1x daily (seasonal time)", "Daily 19:30–20:00"],
+            ["Food", "Snacks only", "4-course dinner"],
+            ["Drinks", "Welcome drink included", "Unlimited local drinks"],
+            ["Entertainment", "Live commentary", "Music, belly dance, dervish"],
+            ["Hotel Transfer", "Not included", "Included"],
+            ["Best For", "Photography, couples, flexibility", "Full evening, groups, special occasions"]
+          ]
+        }
+      },
+      {
+        heading: "How to Book the Bosphorus Sunset Cruise",
+        content: "Book the Bosphorus sunset cruise online at merrysails.com, via WhatsApp at +90 537 040 68 22, or by email at info@merrysails.com. Online booking takes under 3 minutes: select your date, number of guests, and confirm with a credit card. Confirmation is sent by email immediately. Free cancellation is available up to 24 hours before departure — if the weather deteriorates overnight and you change your plans, you receive a full refund or a reschedule to your next available date. Advance booking is recommended: the sunset cruise is one of our most popular tours and frequently sells out 24–48 hours in advance during peak season (May–October). For private group bookings (10+ guests), contact us directly to arrange a dedicated vessel for your group. Private sunset cruises include the same route and timing as the shared cruise but give your group the entire vessel — ideal for birthday evenings, anniversary celebrations, or corporate networking. See also the [bosphorus cruise guide](/blog/best-bosphorus-cruise-istanbul-guide) for a full comparison of all cruise types."
+      }
+    ],
+    faqs: [
+      { q: "What time does the Bosphorus sunset cruise depart?", a: "Departure time varies by season to ensure you are on the water during golden hour: spring/autumn departures are approximately 16:30–17:30, summer departures 18:00–18:30, winter departures 14:30–15:30. Exact times are shown during online booking based on your selected date." },
+      { q: "How much does a Bosphorus sunset cruise cost in Istanbul?", a: "The Bosphorus sunset cruise costs €40 per person and lasts 2.5 hours. It includes welcome drinks, snacks, WiFi, and live English commentary. Private group sunset cruise pricing starts from €280 for up to 15 guests." },
+      { q: "Which side of the boat is best for sunset views?", a: "Sit on the right (starboard) side of the vessel heading north — this faces the European shore where the sun sets. The most iconic sunset shots (Ortaköy Mosque with Bosphorus Bridge behind) are from starboard." },
+      { q: "What if it is cloudy on my sunset cruise day?", a: "Overcast and partly cloudy days often produce more dramatic and colourful sunsets than clear sky days — cloud formations create depth and vivid colour gradation. We operate in all weather conditions except unsafe winds. Free cancellation up to 24 hours before departure if you wish to reschedule." },
+      { q: "Is the sunset cruise better than the dinner cruise?", a: "For photography and maximum deck time at golden hour, the sunset cruise (€40) is the better choice. For a complete evening with dinner, entertainment, and hotel transfer, the dinner cruise (€65) offers better overall value. Both are available for private group charter." },
+      { q: "Where does the Bosphorus sunset cruise depart from?", a: "Shared sunset cruises depart from Eminönü Pier, accessible via the T1 tram (Eminönü stop). Private group sunset cruises can depart from Kuruçeşme Marina. Arrive 15 minutes before the scheduled departure time." }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"],
+    relatedPosts: ["istanbul-sunset-cruise-experience", "birthday-party-boat-istanbul", "istanbul-boat-tour-price-2026"]
+  },
+  {
+    slug: "istanbul-boat-tour-price-2026",
+    title: "Istanbul Boat Tour Price 2026 — Bosphorus Cruise Cost Comparison & What's Included",
+    metaDescription: "Complete Istanbul boat tour price guide for 2026. Sightseeing from €15, sunset €40, dinner €65, yacht charter from €280. Price comparison table, what's included, and booking tips.",
+    excerpt: "Istanbul boat tour prices for 2026 range from €15 for a sightseeing cruise to €280+ for a private yacht charter. Full price comparison table with what's included in each option.",
+    category: "cruise-guide",
+    date: "2026-04-04",
+    dateModified: "2026-04-04",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Panoramic view of the Bosphorus with Istanbul city skyline and cruise boats on the water",
+    keywords: ["istanbul boat tour price 2026", "bosphorus cruise cost", "istanbul cruise price", "bosphorus tour cost 2026", "how much does a bosphorus cruise cost", "istanbul boat trip price"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Istanbul boat tour prices in 2026 range from €15 (sightseeing) to €280+ (private yacht charter) — compare by duration and what's included, not just price",
+      "The dinner cruise at €65 offers the best value: 4-course dinner, entertainment, hotel transfer, and 3.5 hours on the Bosphorus all included",
+      "Third-party resellers charge €85–100 for the same dinner cruise that costs €65 direct — always book with a TURSAB-licensed operator",
+      "Private yacht charter pricing (€280–€680+) is per vessel, not per person — for groups of 10+, the per-head cost becomes highly competitive"
+    ],
+    sections: [
+      {
+        heading: "How Much Does a Bosphorus Cruise Cost in Istanbul in 2026?",
+        answerCapsule: "Istanbul boat tour prices in 2026 start at €15 per person for a 1.5-hour sightseeing cruise, €40 for a 2.5-hour sunset cruise, €65 for a 3.5-hour dinner cruise with entertainment, and from €280 per vessel for a private yacht charter. All prices are for direct bookings with MerrySails.",
+        content: "Istanbul boat tour prices are straightforward when you book directly, but confusing when compared across third-party platforms that apply commissions of 30–50%. This guide gives you the 2026 direct prices for every Bosphorus cruise type offered by MerrySails, along with a clear breakdown of what is and is not included in each option. The key principle: compare cruise options by total value delivered, not headline price. A €15 sightseeing cruise and a €65 dinner cruise serve completely different needs — comparing them purely on price is like comparing a coffee to a restaurant meal.",
+        table: {
+          headers: ["Cruise Type", "Price (Direct)", "Duration", "Food & Drink", "Entertainment", "Hotel Transfer", "Seating"],
+          rows: [
+            ["Sightseeing Cruise", "€15/person", "1.5–2 hrs", "Refreshments", "None", "No", "Bench, unassigned"],
+            ["Sunset Cruise", "€40/person", "2.5 hrs", "Welcome drink + snacks", "Commentary", "No", "Cushioned, open/indoor"],
+            ["Dinner Cruise", "€65/person", "3.5 hrs", "4-course dinner + drinks", "Live music, shows", "Yes (included)", "Table, assigned"],
+            ["Dinner Cruise Gold", "€95/person", "3.5 hrs", "Premium menu + premium bar", "Premium shows", "Yes (included)", "Premium table"],
+            ["Yacht Essential", "€280/vessel", "2 hrs", "Refreshments", "Commentary", "No", "Fully private"],
+            ["Yacht Premium", "€380/vessel", "3 hrs", "Decoration + catering", "DJ optional", "No", "Fully private"],
+            ["Yacht VIP", "€680/vessel", "4 hrs", "Full catering + premium bar", "DJ + shows", "Optional", "Fully private"]
+          ]
+        }
+      },
+      {
+        heading: "Why Do Prices Vary So Much Across Booking Platforms?",
+        content: "A Bosphorus dinner cruise listed at €65 on merrysails.com often appears at €85–100 on Viator, GetYourGuide, or hotel tour desks. The difference is the commission layer: third-party platforms charge operators 20–30% commission, which is passed on to the customer. Street tour touts in Sultanahmet add their own margin on top. The activity is identical — same vessel, same route, same food — but the price is 30–50% higher. There is a second form of price variation: package depth. Some operators advertise a headline price that excludes hotel transfer, drinks, or entertainment that appear to be included. Always check what the listed price actually covers. MerrySails prices listed on merrysails.com are the direct operator price with no added commission. Hotel transfer (for dinner cruise), all meals, drinks, and entertainment are included as specified. There are no mandatory 'tips' or 'service charges' added at the end. Booking direct also gives you direct communication with the crew for special requests (decoration, anniversary arrangements, dietary requirements) without going through a platform's messaging system.",
+        callout: { type: "price", text: "Book direct at merrysails.com and save up to €35 on the dinner cruise versus third-party platforms. That is a saving of over 35% — enough to upgrade to the dinner cruise Gold tier or add a private sunset aperitif on deck." }
+      },
+      {
+        heading: "What Is Included in Each Bosphorus Cruise Price?",
+        content: "Price comparison is meaningless without a clear understanding of inclusions. Here is the exact breakdown for each MerrySails cruise option. Sightseeing Cruise (€15/person): passage on a shared tour vessel for 1.5–2 hours, refreshments (water, soft drinks), basic Turkish commentary. Not included: food, alcohol, hotel transfer, priority seating, photography. Sunset Cruise (€40/person): 2.5-hour cruise timed for golden hour, welcome drink (juice or soft drink), selection of Turkish snacks, WiFi, live English commentary by a professional guide. Not included: full dinner, alcohol (available at bar on board), hotel transfer. Dinner Cruise (€65/person): 3.5-hour cruise including hotel pickup and drop-off, 4-course Turkish dinner (mezze, soup, main, dessert), unlimited local drinks (beer, wine, soft drinks), live fasıl music, traditional entertainment. Dinner Cruise Gold (€95/person): same format with premium menu (seafood options, upgraded main), premium drinks package (spirits, wine by the glass), priority seating at the front of the vessel. Private Yacht Essential (€280/vessel, up to 15 guests): fully private vessel for 2 hours, professional captain and crew, refreshments, English-speaking guide. Yacht Premium (€380/vessel, up to 30 guests): 3-hour private cruise, decoration package, catering platter, basic open bar. Yacht VIP (€680/vessel, up to 60 guests): 4-hour luxury charter, full decoration, plated dinner, premium drinks, DJ optional."
+      },
+      {
+        heading: "How Does the Booking Process Work?",
+        content: "Booking an Istanbul boat tour with MerrySails is designed to be completed in under 5 minutes online. Step 1: Visit merrysails.com and select your cruise type from the Cruises menu. Step 2: Choose your preferred date and number of guests. Availability is shown in real time. Step 3: Enter guest details and any special requirements (dietary needs, celebration arrangements, wheelchair accessibility). Step 4: Pay by credit card (Visa, Mastercard, American Express) or select 'Pay on Day' where available. Secure SSL payment. Step 5: Receive confirmation email immediately with booking reference, meeting point instructions, and pre-departure information. For dinner cruises, hotel pickup details are confirmed by SMS 3 hours before departure. Alternatively, book via WhatsApp at +90 537 040 68 22 (reply within 2 hours during 08:00–20:00 Istanbul time) or by email at info@merrysails.com. Group bookings (10+ guests) and private charters are handled by direct contact — a personalised proposal is sent within 24 hours. Cancellation policy: free cancellation up to 24 hours before departure for a full refund. No-show without advance cancellation forfeits the booking amount.",
+        proTip: "For dinner cruises, book at least 3–4 days in advance in peak season (May–September). Sunset cruises sell out 24–48 hours ahead during summer. Sightseeing cruises are usually available same-day. Private charters require minimum 48 hours notice; special event charters (corporate events, large birthday parties) should be booked 1–2 weeks in advance."
+      },
+      {
+        heading: "Is a Bosphorus Cruise Worth the Price?",
+        content: "The short answer: the dinner cruise at €65 consistently ranks as one of the highest-value experiences in Istanbul by cost-per-hour-of-experience. A comparable dinner at a Bosphorus-view restaurant costs €45–60 per person without entertainment, without a 3.5-hour Bosphorus cruise, and without hotel transfer. The dinner cruise bundles all three. For the sightseeing and sunset cruises, the comparison is with public Şehir Hatları ferry (€3–5) — which takes 6 hours, provides no commentary, no food, and no tourism amenities. A 1.5-hour sightseeing cruise at €15 covers the most photogenic section of the Bosphorus with an English guide, at a time and pace optimised for tourists rather than commuters. For private yacht charters, the value calculation changes: at €280 for up to 15 guests, the per-person cost is approximately €18–28 depending on group size — comparable to or lower than a shared sightseeing cruise, with full privacy, a custom route, and no other passengers on board. For group celebrations, the charter model is often the most cost-effective option when you factor in what a restaurant would charge for a private dining room and a comparable view.",
+        callout: { type: "tip", text: "Value tip: a group of 15 friends booking a private yacht charter at €280 pays approximately €18.67/person for a fully private 2-hour Bosphorus cruise — cheaper per head than the shared sightseeing cruise at €15/person when you factor in that the shared cruise has restricted seating and no group cohesion." }
+      },
+      {
+        heading: "Are There Any Hidden Fees or Mandatory Charges?",
+        content: "MerrySails operates a no-hidden-fee policy. The price shown on the website is the total price paid — there are no fuel surcharges, port fees, 'tourism taxes', mandatory service charges, or tip envelopes. What you see during checkout is what you pay. The only optional extras are upgrades chosen at the time of booking (seat upgrade, drinks upgrade, decoration packages for private events) or onboard bar purchases beyond the included drinks on the sunset cruise. Card payment at checkout does not carry a surcharge for Visa and Mastercard (American Express has a 2.5% surcharge). Port fees and vessel licensing are included in the operator's operating costs and not passed on to guests. Turkish VAT (KDV) is included in all published prices — if you need a VAT invoice for business expense purposes, this is available on request. For group and corporate bookings, a proforma invoice with full price breakdown is provided before any payment is required. See our full pricing on the [cruises page](/cruises) and consult the [complete Bosphorus cruise guide](/blog/best-bosphorus-cruise-istanbul-guide) for a detailed comparison."
+      }
+    ],
+    faqs: [
+      { q: "How much does a Bosphorus cruise cost in Istanbul in 2026?", a: "In 2026, Istanbul boat tour prices start at €15 per person for a 1.5-hour sightseeing cruise, €40 for a 2.5-hour sunset cruise, €65 for a 3.5-hour dinner cruise (all-inclusive), and from €280 per vessel for a private yacht charter." },
+      { q: "Why are prices different on Viator or GetYourGuide?", a: "Third-party booking platforms charge operators 20–30% commission, which is passed on to customers. The same dinner cruise that costs €65 directly with MerrySails may appear at €85–100 on a third-party platform. Always book direct for the best price." },
+      { q: "What is included in the Bosphorus dinner cruise price?", a: "The €65 dinner cruise includes hotel pickup and drop-off, a 4-course Turkish dinner, unlimited local drinks (beer, wine, soft drinks), live fasıl music, traditional entertainment (belly dance, whirling dervish), and 3.5 hours on the Bosphorus." },
+      { q: "Is a private yacht charter expensive per person in Istanbul?", a: "Not necessarily. A private yacht Essential charter at €280 for up to 15 guests costs approximately €18–28/person — comparable to the shared sightseeing cruise. For groups of 10+, private charter is often the most cost-effective option with full privacy and customisation." },
+      { q: "Are there hidden fees on Istanbul boat tours?", a: "Not with MerrySails. The price shown is the total price — no fuel surcharges, port fees, service charges, or mandatory tips. Turkish VAT is included. Optional upgrades (decoration, drinks upgrade) are clearly listed separately." },
+      { q: "How far in advance should I book an Istanbul boat tour?", a: "Dinner cruises: 3–4 days in peak season. Sunset cruises: 24–48 hours in advance. Sightseeing cruises: same-day is often possible. Private charters: minimum 48 hours, special events 1–2 weeks." }
+    ],
+    relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-sunset-cruise-istanbul", "private-yacht-charter-istanbul-price"]
+  },
+  {
+    slug: "private-yacht-charter-istanbul-price",
+    title: "Private Yacht Charter Istanbul Price 2026 — Hourly & Daily Rates, Packages & Deposit",
+    metaDescription: "Private yacht charter prices in Istanbul for 2026. Essential from €280 (2 hrs), Premium €380 (3 hrs), VIP €680 (4 hrs). Seasonal rates, yacht types, deposit info, and booking process.",
+    excerpt: "Private yacht charter in Istanbul costs from €280 for 2 hours up to €1,800+ for full-day events. Full 2026 pricing guide: hourly rates, yacht types, seasonal pricing, and deposit terms.",
+    category: "events",
+    date: "2026-04-04",
+    dateModified: "2026-04-04",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
+    imageAlt: "Private luxury yacht on the Bosphorus in Istanbul with the city skyline in the background",
+    keywords: ["private yacht charter istanbul price", "yacht rental istanbul cost", "istanbul yacht charter 2026", "bosphorus yacht rental price", "how much does yacht charter cost istanbul", "private boat hire istanbul price"],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Private yacht charter in Istanbul starts from €280 for 2 hours (up to 15 guests) — per vessel, not per person",
+      "Seasonal pricing applies: April–October rates are approximately 15–20% higher than November–March low season",
+      "A 50% deposit is required to confirm the booking; the balance is due 3 days before the charter date",
+      "Hourly extension rates (beyond the package duration) are available from €80/hour for gulets to €150/hour for large event yachts"
+    ],
+    sections: [
+      {
+        heading: "How Much Does a Private Yacht Charter Cost in Istanbul?",
+        answerCapsule: "Private yacht charter in Istanbul costs from €280 for a 2-hour Bosphorus cruise on a gulet for up to 15 guests, to €680+ for a 4-hour VIP event with full catering and DJ, to €1,800+ for a full fleet event accommodating 100 guests — all prices are per vessel, not per person.",
+        content: "Private yacht charter pricing in Istanbul is structured around three core variables: vessel size (which determines guest capacity), charter duration (in hours), and the package tier (which determines what is included in catering, decoration, and entertainment). MerrySails offers three standard private charter packages plus custom pricing for large groups and special events. The important distinction that surprises many customers is that charter pricing is per vessel, not per person. This means a group of 15 friends sharing the Essential package at €280 pays €18.67 per person — less than many Istanbul lunch restaurants. For groups of 6–10 who might otherwise book a shared tour, private charter is often a marginal price increase for a dramatically better experience.",
+        table: {
+          headers: ["Package", "Duration", "Max Guests", "Price (Peak)", "Price (Low Season)", "Includes"],
+          rows: [
+            ["Essential", "2 hours", "15", "€280", "€240", "Captain & crew, refreshments, guide"],
+            ["Premium", "3 hours", "30", "€380", "€320", "Decoration, catering platter, open bar"],
+            ["VIP", "4 hours", "60", "€680", "€580", "Full catering, premium bar, DJ optional"],
+            ["Corporate / Large", "4–8 hours", "60–100", "€980–€1,800+", "€820–€1,500+", "Multi-vessel, AV, catering, coordinator"],
+            ["Full Day", "8 hours", "Up to 30", "€1,200+", "€980+", "Custom itinerary, all meals, full service"]
+          ]
+        }
+      },
+      {
+        heading: "What Types of Yachts Are Available for Charter in Istanbul?",
+        content: "MerrySails operates a mixed fleet suited to different group sizes and event types. Classic Gulets (12–18 metres, 10–20 guests): traditional Turkish wooden sailing vessels with a distinctive profile and generous deck space. Ideal for intimate birthday parties, proposal cruises, and small group experiences where the romantic aesthetic of a classic vessel matters. Comfortable saloon with seating, toilet facilities, sun deck, and a shaded aft deck. Motor Yachts (15–24 metres, 15–40 guests): modern fibreglass or aluminium vessels with faster transit speeds, enclosed cabin areas, and larger sun deck surfaces. Better suited for corporate events, cocktail receptions, and groups that want both indoor and outdoor space. Event Yachts (24–35 metres, 40–100 guests): purpose-built for private events with a dedicated saloon/event space, full commercial kitchen, professional sound system built in, multiple deck levels, and commercial-grade catering facilities. These vessels handle corporate dinners, product launches, and large birthday events. All vessels carry Turkish maritime authority (UDH) passenger certificates, valid third-party liability insurance, and life-saving equipment for full passenger capacity. The minimum age for unsupervised charter is 18; children of all ages are welcome with adult supervision.",
+        proTip: "For anniversary or proposal cruises, a classic gulet is the atmospheric choice — the wooden hull and traditional profile are more romantic than a modern motor yacht. For corporate events where AV presentation and catering logistics matter, an event yacht with a dedicated crew is the better platform."
+      },
+      {
+        heading: "What Are the Seasonal Pricing Differences?",
+        content: "Istanbul yacht charter pricing follows a clear seasonal pattern driven by demand, weather, and operating costs. Peak season (April–October) rates are the standard published prices. These months see the highest demand, with June–August representing the absolute peak. Booking 2–4 weeks in advance is strongly recommended for weekend dates in July and August. Low season (November–March) pricing is approximately 15–20% lower than peak rates. Weather is cooler and the days shorter, but the Bosphorus remains navigable and the experience of Istanbul's skyline in winter light is distinctive and uncrowded. Indoor event spaces on larger vessels are heated. Specific date premiums: certain dates carry a price premium regardless of season. New Year's Eve charters (31 December) carry a 50–80% premium and require bookings 2–3 months in advance. Public holiday weekends (national Turkish holidays, Eid) see 20–30% premiums. Valentine's Day (14 February) and Mother's Day (second Sunday in May) are peak demand dates in the low/shoulder season. Weekend vs. weekday: Saturday charters during peak season carry a 10–15% premium over Monday–Friday bookings at the same time of day. Sunday rates are between Saturday and weekday pricing.",
+        callout: { type: "price", text: "Low season deal: private yacht charter in Istanbul from €240 (Essential, 2 hrs, up to 15 guests) in November–March. The Bosphorus in winter is atmospheric, uncrowded, and — with the right vessel and a warm saloon — a genuinely memorable experience." }
+      },
+      {
+        heading: "What Are the Hourly Extension Rates?",
+        content: "All MerrySails charter packages include a fixed duration (2, 3, or 4 hours). Hourly extensions beyond the package duration are available at the following rates, confirmed at the time of booking rather than on the day. Gulet (Essential package base): €80/additional hour. Mid-size motor yacht (Premium package base): €110/additional hour. Event yacht (VIP package base): €150/additional hour. Large event or corporate vessel: €200–300/additional hour depending on vessel size. Extensions are subject to availability — if the vessel has a subsequent booking, extension on the day may not be possible. For events where the exact timing is uncertain (corporate dinners where speeches run long, birthday parties where guests are reluctant to disembark), we recommend booking the next duration tier rather than planning to extend on the day. A full-day charter (8 hours) is available at a significant discount versus 8 individual hourly rates and includes a mid-charter rest stop at anchor, typically in the calm waters above the Fatih Sultan Mehmed Bridge.",
+        expertQuote: { text: "Müşterilerimize şunu söylüyoruz: 3 saatlik bir tur için 2 saatlik paket alıp uzatmayı planlamak yerine, başından 3 saatlik paketi tercih edin. Hem daha ucuz, hem de sürpriz ek ücret olmuyor.", author: "Kaptan Ahmet Yıldız", title: "MerrySails — Operasyon Direktörü" }
+      },
+      {
+        heading: "What Is the Deposit and Payment Policy?",
+        content: "Deposit: a 50% deposit of the total charter price is required to confirm the booking and secure the vessel, crew, and date. The deposit is collected by credit card, bank transfer, or — for Istanbul-based customers — cash. The deposit is non-refundable within 7 days of the charter date. Balance: the remaining 50% is due 3 days before the charter date by the same payment method as the deposit. For corporate bookings with a signed service agreement, 30-day invoice terms may be arranged after the first booking has been completed. Cancellation terms: 100% refund (deposit included) for cancellations made 14+ days before the charter date. 50% refund for cancellations 7–13 days before. Non-refundable within 7 days, except for weather cancellations declared by the captain (full refund or reschedule offered). Charter date changes (rescheduling) are permitted once without penalty if requested 7+ days in advance. Weather policy: if the captain determines conditions are unsafe for charter operations (typically sustained winds above Beaufort 5 or official coastguard advisory), the charter is cancelled and 100% refunded or rescheduled at no cost. Customers who cancel based on personal assessment of weather (a forecast that turns out to be wrong, or a different standard of comfort) within the 7-day non-refundable window do not qualify for a refund. We recommend checking the official [Turkish Meteorological Service](https://www.mgm.gov.tr/en-US/weather.aspx) forecast and contacting us to discuss conditions rather than self-cancelling.",
+        callout: { type: "info", text: "Booking tip: pay by credit card and keep the transaction record. In the unlikely event of a dispute, credit card chargebacks provide consumer protection. Bank transfers are accepted but offer no equivalent chargeback protection." }
+      },
+      {
+        heading: "How to Book a Private Yacht Charter in Istanbul",
+        content: "The booking process for a private yacht charter begins with an inquiry: email info@merrysails.com or WhatsApp +90 537 040 68 22 with your event date, guest count, event type, and any special requirements. For standard packages (Essential, Premium, VIP), a confirmation and deposit link can be issued within 2 hours during business hours (08:00–20:00 Istanbul time). For corporate events, large group bookings, or custom charter requests, a personalised proposal with vessel options, catering menus, and pricing is sent within 24 hours. The full booking process: (1) Inquiry and proposal; (2) Proposal review and approval; (3) Deposit payment (50%) and booking confirmation receipt; (4) Logistics coordination (catering menu, decoration preferences, run sheet) in the 7 days before the event; (5) Final balance payment (50%) 3 days before; (6) SMS or WhatsApp confirmation with pier details and crew contact on the event day; (7) Charter. For new events, we are happy to arrange a pre-charter visit to the vessel — particularly useful for corporate event planners who need to assess AV placement, catering setup, and guest flow. See the [private yacht charter guide](/blog/private-yacht-charter-istanbul-guide) for routes, add-ons, and experience details. See the [private events page](/private-events) for all celebration package options."
+      }
+    ],
+    faqs: [
+      { q: "How much does a private yacht charter cost in Istanbul in 2026?", a: "Private yacht charter in Istanbul starts from €280 for the Essential package (2 hours, up to 15 guests) in peak season. Premium is €380 (3 hours, 30 guests), VIP is €680 (4 hours, 60 guests). All prices are per vessel. Low season (Nov–Mar) rates are 15–20% lower." },
+      { q: "Is the yacht charter price per person or per boat?", a: "Per vessel. A group of 15 friends on the €280 Essential package pays €18.67 per person. Pricing is not per person except for shared public cruises (sightseeing, sunset, dinner)." },
+      { q: "How much is the deposit for a yacht charter in Istanbul?", a: "A 50% deposit is required to confirm the booking. The remaining 50% is due 3 days before the charter date. Full refund for cancellations 14+ days before; 50% refund for 7–13 days; non-refundable within 7 days." },
+      { q: "Are yacht charter prices higher on weekends?", a: "Yes. Saturday charters during peak season carry a 10–15% premium over weekday rates. Sunday rates are between Saturday and weekday. New Year's Eve and certain public holiday dates carry 50–80% premiums." },
+      { q: "Can I extend the yacht charter beyond the booked duration?", a: "Yes, if the vessel has no subsequent booking. Extension rates range from €80/hour (gulet) to €150/hour (event yacht). Extensions must be confirmed at booking rather than on the day for guaranteed availability." },
+      { q: "What happens if the weather is bad on my charter day?", a: "If the captain deems conditions unsafe (typically Beaufort 5+ winds or coastguard advisory), the charter is cancelled and 100% refunded or rescheduled at no cost. Customers are encouraged to contact us to discuss conditions rather than self-cancelling within the 7-day non-refundable window." }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["corporate-boat-hire-istanbul", "birthday-party-boat-istanbul", "istanbul-boat-tour-price-2026"]
+  },
 ];
 
 /* Duplicates removed: istanbul-honeymoon-cruise-guide, bosphorus-cruise-reviews-guide,

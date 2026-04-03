@@ -43,6 +43,8 @@ ${tours
 - Homepage: https://merrysails.com
 - All Cruises: https://merrysails.com/cruises
 - Private Tours: https://merrysails.com/private-tours
+- Corporate Events: https://merrysails.com/corporate-events
+- Private Events (Birthday, Wedding): https://merrysails.com/private-events
 - Blog: https://merrysails.com/blog
 - Istanbul Guides: https://merrysails.com/guides
 - About: https://merrysails.com/about
@@ -75,6 +77,17 @@ ${tours.map((t) => `- [${t.nameEn}](https://merrysails.com/cruises/${t.slug})`).
 - [Istanbul Boat Party Private](https://merrysails.com/blog/istanbul-boat-party-private): Private yacht events — DJ setup, catering, decorations, packages from €280.
 - [Best Bosphorus Cruise Guide](https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide): Comprehensive comparison of all cruise types, pricing tables, and booking tips for 2026.
 - [Istanbul Sunset Cruise Experience](https://merrysails.com/blog/istanbul-sunset-cruise-experience): The signature Istanbul sunset experience from €40 — photography tips, best seasons, route details.
+
+## Corporate & Private Event Pages
+- [Corporate Events Istanbul](https://merrysails.com/corporate-events): Corporate boat hire for team building, client entertainment & company events. From €280. AV equipment, catering, official invoicing.
+- [Private Events Istanbul](https://merrysails.com/private-events): Birthday parties, wedding celebrations, proposals, bachelorette & anniversary cruises on the Bosphorus. From €280.
+
+## Commercial Event Guides (New — April 2026)
+- [Corporate Boat Hire Istanbul](https://merrysails.com/blog/corporate-boat-hire-istanbul): Corporate yacht events from €280 — packages, AV equipment, catering, invoicing, and group capacity guide.
+- [Birthday Party Boat Istanbul](https://merrysails.com/blog/birthday-party-boat-istanbul): Private birthday cruise from €280 — decoration packages, DJ, catering, cake, and group sizes 10–100.
+- [Bosphorus Sunset Cruise Istanbul](https://merrysails.com/blog/bosphorus-sunset-cruise-istanbul): Sunset cruise timing guide — when to depart, best seasons, photography tips, and comparison with dinner cruise.
+- [Istanbul Boat Tour Price 2026](https://merrysails.com/blog/istanbul-boat-tour-price-2026): Full price comparison for all Istanbul boat tours — sightseeing €15, sunset €40, dinner €65, yacht €280+. What is included and booking tips.
+- [Private Yacht Charter Istanbul Price](https://merrysails.com/blog/private-yacht-charter-istanbul-price): Complete yacht charter pricing — hourly rates, seasonal pricing, deposit policy, yacht types, and booking process.
 `;
 
   return new Response(content, {
