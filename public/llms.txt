@@ -65,6 +65,7 @@
 - All Cruises: https://merrysails.com/cruises
 - [Istanbul Dinner Cruise](https://merrysails.com/istanbul-dinner-cruise) — all-inclusive dinner cruise from €65, 4-course Turkish dinner + show + hotel transfer
 - [Yacht Charter Istanbul](https://merrysails.com/yacht-charter-istanbul) — private yacht from €280/2h, up to 15 guests, any occasion
+- [Boat Rental Istanbul](https://merrysails.com/boat-rental-istanbul) — private & group Bosphorus boat hire from €80/hr, small yachts to gulets and corporate charters
 - Private Tours: https://merrysails.com/private-tours
 - Blog: https://merrysails.com/blog
 - Istanbul Guides: https://merrysails.com/guides
@@ -214,4 +215,4 @@
 - [llms-full.txt](https://merrysails.com/llms-full.txt) — Complete site content for AI assistants
 
 ## Last Updated
-2026-03-29
+2026-04-04

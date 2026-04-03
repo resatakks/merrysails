@@ -70,6 +70,12 @@ Allow: /
 User-agent: Brave-Search
 Allow: /
 
+User-agent: Bravebot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: iaskBot
 Allow: /
 
