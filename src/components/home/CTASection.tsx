@@ -40,6 +40,19 @@ export default function CTASection() {
             Call Us
           </a>
         </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+          <Link href="/istanbul-dinner-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
+            Istanbul Dinner Cruise from €65
+          </Link>
+          <span className="text-white/30">·</span>
+          <Link href="/yacht-charter-istanbul" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
+            Yacht Charter Istanbul from €280
+          </Link>
+          <span className="text-white/30">·</span>
+          <Link href="/private-tours" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
+            Private Bosphorus Tours
+          </Link>
+        </div>
       </div>
     </section>
   );

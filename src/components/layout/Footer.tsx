@@ -45,6 +45,8 @@ const companyLinks = [
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "FAQ", href: "/faq" },
+  { label: "Istanbul Dinner Cruise", href: "/istanbul-dinner-cruise" },
+  { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
   { label: "All Cruises", href: "/cruises" },
   { label: "Private Tours", href: "/private-tours" },
   { label: "Blog", href: "/blog" },
