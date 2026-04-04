@@ -4,16 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Star, Shield, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
+import { getPromoName, getPromoEmoji, getDiscountPercent } from "@/lib/promo";
+import HeroBookingWidget from "./HeroBookingWidget";
 
 export default function HeroSection() {
-  const promoActive = isPromoActive();
-  const sunsetPrice = getSunsetPrice();
+  const promoName = getPromoName();
+  const promoEmoji = getPromoEmoji();
+  const discount = getDiscountPercent();
+
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center mb-12">
       {/* Background */}
       <Image
-        src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=85"
+        src="/images/tours/bosphorus-sunset-cruise/03.jpg"
         alt="Istanbul Bosphorus"
         fill
         className="object-cover"
@@ -29,19 +32,16 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-2xl"
         >
-          {/* Promo badge — only show when promo is active */}
-          {promoActive && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-[var(--brand-gold)]/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6"
-            >
-              <Star className="w-4 h-4" />
-              {SUNSET_PROMO.label} — €{SUNSET_PROMO.promoPrice}{" "}
-              <span className="line-through opacity-70">€{SUNSET_PROMO.regularPrice}</span>
-            </motion.div>
-          )}
+          {/* Promo badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-[var(--brand-gold)]/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6"
+          >
+            <span>{promoEmoji}</span>
+            {promoName} — {discount}% Off All Tours
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -49,9 +49,9 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4"
           >
-            Istanbul Bosphorus
+            Bosphorus Cruise Istanbul
             <br />
-            <span className="text-[var(--brand-gold)]">Cruise & Yacht Charter</span>
+            <span className="text-[var(--brand-gold)]">Private Yacht &amp; Dinner Cruises 2026</span>
           </motion.h1>
 
           <motion.p
@@ -71,9 +71,9 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-wrap gap-3 mb-10"
           >
-            <Link href={`/cruises/${SUNSET_PROMO.slug}`}>
+            <Link href="/cruises/bosphorus-sunset-cruise">
               <button className="btn-cta text-base !py-3.5 !px-8">
-                Book Now — €{sunsetPrice}
+                Book Now
                 <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
@@ -106,6 +106,9 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Booking Widget */}
+      <HeroBookingWidget />
 
       {/* Bottom gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--surface-alt)] to-transparent" />

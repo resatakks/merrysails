@@ -2,12 +2,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Corporate Events on the Bosphorus | Team Building & Company Cruises Istanbul",
+  title: "Corporate Yacht Event Turkey | Team Building Bosphorus Istanbul",
   description:
-    "Organise a corporate event or team building cruise on the Bosphorus in Istanbul. Private vessels for 10–100 guests from €280. AV equipment, catering, official invoicing. Book direct.",
+    "Organise a corporate yacht event in Turkey on the Bosphorus. Team building Bosphorus cruises for 10–100 guests from €280. AV equipment, catering, official invoicing. Book direct.",
   keywords: [
-    "corporate events istanbul boat",
+    "corporate yacht event turkey",
+    "corporate yacht event istanbul",
+    "team building bosphorus",
     "team building bosphorus cruise",
+    "corporate events istanbul boat",
     "corporate boat hire istanbul",
     "company event istanbul",
     "corporate yacht istanbul",
@@ -36,9 +39,9 @@ export const metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Corporate Events & Team Building on the Bosphorus Istanbul",
+  name: "Corporate Yacht Event Turkey — Team Building Bosphorus Istanbul",
   description:
-    "Private corporate cruises on the Bosphorus for team building, client entertainment, product launches, and company parties. AV equipment, catering, and official invoicing available.",
+    "Corporate yacht events in Turkey on the Bosphorus Istanbul. Team building cruises, client entertainment, product launches, and company parties. Private vessels for 10–100 guests from €280. AV equipment, catering, and official Turkish invoicing available.",
   provider: {
     "@id": "https://merrysails.com/#organization",
   },
@@ -223,10 +226,10 @@ export default function CorporateEventsPage() {
           {/* Hero */}
           <div className="text-center mb-14">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--heading)]">
-              Corporate Events on the Bosphorus
+              Corporate Yacht Event Turkey
               <br className="hidden md:block" />
               <span className="text-[var(--brand-primary)]">
-                {" "}Team Building & Company Cruises Istanbul
+                {" "}Team Building Bosphorus Istanbul
               </span>
             </h1>
             <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg leading-relaxed">
@@ -305,6 +308,49 @@ export default function CorporateEventsPage() {
               (November–March) rates are approximately 15–20% lower. Contact us for a custom
               quote.
             </p>
+          </section>
+
+          {/* Why Istanbul */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
+              Why Istanbul for Corporate Events?
+            </h2>
+            <p className="text-[var(--text-muted)] mb-6 max-w-3xl leading-relaxed">
+              Istanbul is one of Europe&apos;s top corporate event destinations — a city that straddles two continents, offers world-class hospitality infrastructure, and delivers dramatic scenery that no conference room can replicate. When you take your corporate event onto the Bosphorus, you are hosting it on a strait that connects the Black Sea to the Sea of Marmara, flanked by 2,500 years of Ottoman and Byzantine history.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              {[
+                {
+                  title: "Strategic location",
+                  body: "Istanbul's position between Europe and the Middle East makes it ideal for international corporate gatherings. Direct flights from 300+ cities. Visa-on-arrival or e-visa for most nationalities.",
+                },
+                {
+                  title: "Cost advantage",
+                  body: "Corporate yacht events in Istanbul cost 40–60% less than equivalent events in London, Paris, or Dubai. The euro/TL exchange rate provides significant value for European and international companies.",
+                },
+                {
+                  title: "Year-round venue",
+                  body: "Unlike outdoor venues in northern Europe, Istanbul's mild climate and enclosed heated yacht decks mean corporate yacht events in Turkey operate comfortably 12 months per year.",
+                },
+                {
+                  title: "Memorable wow factor",
+                  body: "Sailing past illuminated Ottoman palaces while hosting a product launch or team dinner creates genuine emotion and lasting memory — far beyond what a hotel ballroom can achieve.",
+                },
+                {
+                  title: "Logistics & infrastructure",
+                  body: "Istanbul has two international airports, 5-star hotel capacity exceeding 50,000 rooms, and a mature MICE industry. MerrySails coordinates all on-water logistics so you focus on your agenda.",
+                },
+                {
+                  title: "Official invoicing",
+                  body: "All MerrySails corporate bookings include official Turkish fatura (tax invoices) with full VAT breakdown — essential for international corporate expense processing.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm">
+                  <h3 className="font-bold text-[var(--heading)] mb-2">{item.title}</h3>
+                  <p className="text-[var(--text-muted)] text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Why Bosphorus for corporate */}

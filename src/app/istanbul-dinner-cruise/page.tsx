@@ -137,6 +137,13 @@ export default function IstanbulDinnerCruisePage() {
           ★ 4.8/5 Rating · 1,200+ Reviews · TURSAB Licensed · Hotel Pickup Included
         </p>
 
+        {/* Answer Capsule */}
+        <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-5 mb-6">
+          <p className="text-gray-800 text-sm leading-relaxed">
+            <strong>Quick answer:</strong> An Istanbul dinner cruise on the Bosphorus costs from <strong>€65 per person</strong> and includes an open buffet dinner, unlimited local drinks, a live Turkish entertainment show, and hotel pickup. Cruises depart at <strong>7:30 PM</strong> from Ortaköy or Eminönü and last approximately <strong>3 hours</strong>. MerrySails has been operating TURSAB-licensed dinner cruises in Istanbul since 2001.
+          </p>
+        </div>
+
         <p className="text-gray-700 mb-4 leading-relaxed">
           Experience Istanbul's most magical scenery from the water — an all-inclusive Bosphorus dinner cruise combining exquisite cuisine, unlimited drinks, and a live Turkish entertainment show. Glide past illuminated palaces, mosques, and bridges as the city sparkles after dark.
         </p>
