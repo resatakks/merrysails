@@ -52,24 +52,31 @@ const serviceSchema = {
     itemListElement: [
       {
         "@type": "Offer",
-        name: "Essential Corporate",
+        name: "Basic Corporate",
         price: "280",
         priceCurrency: "EUR",
         description: "2-hour private cruise for up to 15 guests. Captain, crew, refreshments, English guide.",
       },
       {
         "@type": "Offer",
-        name: "Business Premium",
-        price: "520",
+        name: "Standard Corporate",
+        price: "550",
         priceCurrency: "EUR",
         description: "3-hour private cruise for up to 30 guests. Catering, open bar, AV setup.",
       },
       {
         "@type": "Offer",
-        name: "Executive",
-        price: "980",
+        name: "Premium Corporate",
+        price: "1200",
         priceCurrency: "EUR",
         description: "4-hour private cruise for up to 60 guests. Plated dinner, full bar, AV, MC.",
+      },
+      {
+        "@type": "Offer",
+        name: "Exclusive Corporate",
+        price: "1800",
+        priceCurrency: "EUR",
+        description: "4–6 hour multi-vessel event for up to 120 guests. Full catering, AV, photographer, dedicated coordinator.",
       },
     ],
   },
@@ -171,38 +178,54 @@ const howToSchema = {
 
 const packages = [
   {
-    name: "Essential Corporate",
+    name: "Basic",
     guests: "Up to 15",
     duration: "2 hours",
     price: "€280",
     includes: ["Captain & crew", "Refreshments", "English guide", "Official invoice"],
+    highlight: false,
   },
   {
-    name: "Business Premium",
+    name: "Standard",
     guests: "Up to 30",
     duration: "3 hours",
-    price: "€520",
+    price: "€550",
     includes: ["Catering platter", "Open bar", "AV basic setup", "Official invoice"],
+    highlight: false,
   },
   {
-    name: "Executive",
+    name: "Premium",
     guests: "Up to 60",
     duration: "4 hours",
-    price: "€980",
+    price: "€1,200",
     includes: ["Plated dinner", "Full open bar", "Full AV + projector", "MC, Official invoice"],
+    highlight: true,
   },
   {
-    name: "Full Fleet Event",
-    guests: "Up to 100",
+    name: "Exclusive",
+    guests: "Up to 120",
     duration: "4–6 hours",
     price: "€1,800+",
     includes: [
-      "Multi-vessel",
+      "Multi-vessel option",
       "Full catering",
       "AV + photographer",
-      "MC, Official invoice",
+      "Dedicated coordinator, Official invoice",
     ],
+    highlight: false,
   },
+];
+
+const avCateringTable = [
+  { item: "Wireless microphone + Bluetooth speakers", category: "AV", price: "Included from Standard" },
+  { item: "100-inch retractable screen + HDMI projector", category: "AV", price: "Included from Premium" },
+  { item: "LED uplighting in corporate brand colours", category: "AV", price: "from €80" },
+  { item: "4G/5G live streaming setup", category: "AV", price: "from €120" },
+  { item: "Cocktail platters — Turkish mezze & canapés", category: "Catering", price: "from €18/person" },
+  { item: "3-course plated dinner", category: "Catering", price: "from €38/person" },
+  { item: "Full open bar (alcoholic + non-alcoholic)", category: "Catering", price: "from €25/person" },
+  { item: "Non-alcoholic beverages package", category: "Catering", price: "from €12/person" },
+  { item: "Halal / vegetarian / vegan menu (48 hrs notice)", category: "Catering", price: "No surcharge" },
 ];
 
 export default function CorporateEventsPage() {
@@ -285,10 +308,10 @@ export default function CorporateEventsPage() {
                   {packages.map((pkg, i) => (
                     <tr
                       key={pkg.name}
-                      className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                      className={pkg.highlight ? "bg-blue-50 border-l-4 border-[var(--brand-primary)]" : i % 2 === 0 ? "bg-white" : "bg-gray-50"}
                     >
                       <td className="px-5 py-4 font-semibold text-[var(--heading)]">
-                        {pkg.name}
+                        {pkg.name}{pkg.highlight && <span className="ml-2 text-xs bg-[var(--brand-primary)] text-white px-2 py-0.5 rounded-full">Most Popular</span>}
                       </td>
                       <td className="px-5 py-4 text-[var(--text-muted)]">{pkg.guests}</td>
                       <td className="px-5 py-4 text-[var(--text-muted)]">{pkg.duration}</td>
@@ -385,51 +408,119 @@ export default function CorporateEventsPage() {
             </div>
           </section>
 
-          {/* AV & Catering */}
+          {/* AV & Catering Table */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
-              AV Equipment & Catering for Corporate Events
+              AV Equipment &amp; Catering Options — Full Menu
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="overflow-x-auto rounded-2xl shadow-sm">
+              <table className="w-full bg-white text-sm">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="text-left px-5 py-3 font-semibold text-gray-700">Item</th>
+                    <th className="text-left px-5 py-3 font-semibold text-gray-700">Category</th>
+                    <th className="text-left px-5 py-3 font-semibold text-gray-700">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {avCateringTable.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="px-5 py-3 text-[var(--heading)]">{row.item}</td>
+                      <td className="px-5 py-3">
+                        <span className={`text-xs px-2 py-1 rounded-full font-medium ${row.category === "AV" ? "bg-blue-100 text-blue-700" : "bg-green-100 text-green-700"}`}>
+                          {row.category}
+                        </span>
+                      </td>
+                      <td className="px-5 py-3 font-semibold text-[var(--brand-primary)]">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[var(--text-muted)] mt-3">
+              * Halal, vegetarian, vegan, and gluten-free diets accommodated with 48 hours&apos; notice. Non-alcoholic packages available.
+            </p>
+          </section>
+
+          {/* Case Study / Testimonial */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
+              Real Corporate Event — Case Study
+            </h2>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border-l-4 border-[var(--brand-primary)]">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🏢</span>
+                </div>
+                <div>
+                  <p className="font-bold text-[var(--heading)]">Leading European Tech Company — 40-Person Team Building Event</p>
+                  <p className="text-sm text-[var(--text-muted)]">Premium Package · 4 hours · Gulet on the Bosphorus · September 2025</p>
+                </div>
+              </div>
+              <blockquote className="text-[var(--text-muted)] leading-relaxed mb-4 italic">
+                &ldquo;We brought 40 colleagues to Istanbul for our annual strategy offsite. MerrySails arranged a 4-hour Bosphorus cruise with a full mezze dinner, open bar, and a 100-inch projection screen for our leadership presentation. The AV setup worked flawlessly even on the water — our presenter was delighted. Watching the Ortaköy Mosque and Bosphorus Bridge pass by during our Q&amp;A session was genuinely extraordinary. Our team rated it the best company event in five years. The official Turkish invoice was provided within 24 hours for our finance team. Booking was handled in under 48 hours via WhatsApp. We are already planning the next one.&rdquo;
+              </blockquote>
+              <div className="flex items-center gap-2">
+                <div className="flex text-yellow-400 text-sm">★★★★★</div>
+                <p className="text-sm font-semibold text-[var(--heading)]">Head of People Operations</p>
+                <span className="text-[var(--text-muted)] text-sm">· Enterprise Software Company, Amsterdam</span>
+              </div>
+            </div>
+          </section>
+
+          {/* B2B Billing Section */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
+              Invoice &amp; B2B Billing
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--heading)] mb-3">AV Equipment</h3>
+                <h3 className="font-bold text-[var(--heading)] mb-3">Official Turkish Invoice (Fatura)</h3>
                 <ul className="space-y-2 text-sm text-[var(--text-muted)]">
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>Basic: wireless microphones, Bluetooth speaker system</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span>All corporate bookings receive an official Turkish <em>e-fatura</em> (e-invoice)</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>Full AV: 100-inch retractable screen + HDMI projector</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span>Full VAT breakdown (KDV) included — suitable for corporate expense reporting</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>LED uplighting in corporate brand colours</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span>English-language proforma invoice provided on booking confirmation</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>4G/5G connectivity for live streaming throughout the Bosphorus</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span>Final Turkish fatura issued within 24 hours of event completion</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span>Available in PDF and e-invoice XML format for ERP system upload</span>
                   </li>
                 </ul>
               </div>
               <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--heading)] mb-3">Catering Options</h3>
+                <h3 className="font-bold text-[var(--heading)] mb-3">Payment Options for Companies</h3>
                 <ul className="space-y-2 text-sm text-[var(--text-muted)]">
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>Cocktail platters: Turkish mezze, canapés from €18/person</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span><strong>Bank transfer:</strong> EUR, USD, TRY accepted — IBAN details on proforma</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>Plated 3-course dinner from €38/person</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span><strong>Credit card:</strong> Visa, Mastercard, Amex via secure payment link</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>Halal, vegetarian, vegan, gluten-free with 48hrs notice</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span><strong>Corporate purchase order:</strong> accepted for repeat clients (pre-agreed terms)</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--brand-primary)] font-bold">—</span>
-                    <span>Non-alcoholic and full alcoholic beverage packages</span>
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span><strong>Deposit structure:</strong> 50% on booking, 50% 3 days before event</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--brand-primary)] font-bold">✓</span>
+                    <span><strong>Currency:</strong> prices quoted in EUR; TRY invoices issued at official TCMB rate</span>
                   </li>
                 </ul>
               </div>
