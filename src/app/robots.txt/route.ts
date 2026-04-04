@@ -34,6 +34,12 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
 
