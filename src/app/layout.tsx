@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileBookingBar from "@/components/layout/MobileBookingBar";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import { ToastProvider } from "@/components/ui/Toast";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -264,11 +265,13 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <MobileBookingBar />
-        <WhatsAppButton />
+        <ToastProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <MobileBookingBar />
+          <WhatsAppButton />
+        </ToastProvider>
       </body>
     </html>
   );

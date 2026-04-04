@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { tours, getTourBySlug } from "@/data/tours";
+import { getDiscountedPrice } from "@/lib/promo";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 
 const SITE_URL = "https://merrysails.com";
@@ -290,8 +291,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!tour) return { title: "Tour Not Found" };
 
   const override = metaOverrides[slug];
-  const title = override?.title ?? `${tour.nameEn} — From €${tour.priceEur} | Book Online`;
-  const description = override?.description ?? `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Starting from €${tour.priceEur}/person. Free cancellation. Book your ${tour.nameEn} in Istanbul today.`;
+  const discountedPrice = getDiscountedPrice(tour.priceEur);
+  const title = override?.title ?? `${tour.nameEn} — From €${discountedPrice} | Book Online`;
+  const description = override?.description ?? `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Starting from €${discountedPrice}/person. Free cancellation. Book your ${tour.nameEn} in Istanbul today.`;
   const url = `${SITE_URL}/cruises/${slug}`;
   const keywords = tourKeywords[slug] || [
     tour.nameEn.toLowerCase(), "bosphorus cruise", "istanbul boat tour",
@@ -362,7 +364,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     },
     offers: {
       "@type": "Offer",
-      price: tour.priceEur,
+      price: getDiscountedPrice(tour.priceEur),
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       validFrom: "2026-01-01",

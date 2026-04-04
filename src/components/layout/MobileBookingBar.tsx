@@ -4,30 +4,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
 import { getTourBySlug } from "@/data/tours";
-import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
+import { getDiscountedPrice } from "@/lib/promo";
 
 export default function MobileBookingBar() {
   const pathname = usePathname();
-  const promoActive = isPromoActive();
 
   // Detect current tour page
   const slugMatch = pathname.match(/^\/cruises\/([^/]+)$/);
   const currentTour = slugMatch ? getTourBySlug(slugMatch[1]) : null;
 
-  // Determine what to display
-  const isSunset = currentTour?.slug === SUNSET_PROMO.slug;
-  const displayPrice = isSunset
-    ? getSunsetPrice()
-    : currentTour?.priceEur ?? getSunsetPrice();
-  const originalPrice =
-    isSunset && promoActive
-      ? SUNSET_PROMO.regularPrice
-      : !currentTour && promoActive
-        ? SUNSET_PROMO.regularPrice
-        : currentTour?.originalPriceEur;
+  const originalPrice = currentTour?.priceEur ?? 40;
+  const displayPrice = getDiscountedPrice(originalPrice);
   const bookHref = currentTour
     ? `/cruises/${currentTour.slug}`
-    : `/cruises/${SUNSET_PROMO.slug}`;
+    : "/cruises/bosphorus-sunset-cruise";
   const label = currentTour ? currentTour.nameEn : "Sunset Cruise";
 
   return (
@@ -39,11 +29,9 @@ export default function MobileBookingBar() {
             <span className="text-xl font-bold text-[var(--heading)]">
               €{displayPrice}
             </span>
-            {originalPrice && originalPrice > displayPrice && (
-              <span className="text-sm text-[var(--text-muted)] line-through">
-                €{originalPrice}
-              </span>
-            )}
+            <span className="text-sm text-[var(--text-muted)] line-through">
+              €{originalPrice}
+            </span>
             <span className="text-xs text-[var(--text-muted)]">/person</span>
           </div>
         </div>

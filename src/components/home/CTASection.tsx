@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
-import { getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
 
 export default function CTASection() {
-  const sunsetPrice = getSunsetPrice();
   return (
     <section className="relative py-20 md:py-28 bg-[var(--brand-dark)] overflow-hidden">
       {/* Decorative circles */}
@@ -19,8 +17,8 @@ export default function CTASection() {
           when you book direct. No middleman fees.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href={`/cruises/${SUNSET_PROMO.slug}`} className="btn-cta text-base !py-3.5 !px-8">
-            Book Now — €{sunsetPrice}
+          <Link href="/cruises" className="btn-cta text-base !py-3.5 !px-8">
+            Browse All Tours
             <ArrowRight className="w-4 h-4" />
           </Link>
           <a

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Phone, ChevronDown, Anchor, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
+import PromoBanner from "@/components/layout/PromoBanner";
 
 const navItems = [
   {
@@ -61,14 +61,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
-  const [promoDismissed, setPromoDismissed] = useState(false);
-
-  const promoActive = isPromoActive();
-  const sunsetPrice = getSunsetPrice();
-  // Are we on a non-sunset tour page?
-  const isTourPage = pathname.startsWith("/cruises/") && pathname !== "/cruises";
-  const isSunsetPage = pathname === `/cruises/${SUNSET_PROMO.slug}`;
-  const isOtherTourPage = isTourPage && !isSunsetPage;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -78,34 +70,8 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Promo bar — contextual */}
-      {promoActive && !promoDismissed && (
-        <div className="bg-[var(--brand-primary)] text-white text-center text-sm py-1.5 px-4 relative">
-          {isOtherTourPage ? (
-            // Cross-sell on other tour pages
-            <>
-              <Link href={`/cruises/${SUNSET_PROMO.slug}`} className="hover:underline">
-                <span className="opacity-90">✨ Add a Sunset Cruise to your trip —</span>{" "}
-                <span className="font-bold text-[var(--brand-gold)]">€{SUNSET_PROMO.promoPrice}/person</span>
-              </Link>
-              <button
-                onClick={() => setPromoDismissed(true)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-white/20 rounded"
-                aria-label="Dismiss"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            </>
-          ) : (
-            // Full promo on homepage, sunset page, etc.
-            <Link href={`/cruises/${SUNSET_PROMO.slug}`} className="hover:underline">
-              <span className="font-semibold">{SUNSET_PROMO.label}</span> — Bosphorus Sunset Cruise{" "}
-              <span className="font-bold text-[var(--brand-gold)]">€{SUNSET_PROMO.promoPrice}</span>{" "}
-              <span className="line-through opacity-70">€{SUNSET_PROMO.regularPrice}</span>
-            </Link>
-          )}
-        </div>
-      )}
+      {/* Promo banner — auto-updating monthly */}
+      <PromoBanner />
 
       <div className={`transition-all duration-300 ${
         scrolled
@@ -252,9 +218,9 @@ export default function Header() {
                       <Phone className="w-4 h-4" />
                       +90 537 040 68 22
                     </a>
-                    <Link href={`/cruises/${SUNSET_PROMO.slug}`} className="block px-4">
+                    <Link href="/cruises/bosphorus-sunset-cruise" className="block px-4">
                       <button className="btn-cta w-full !py-3 text-sm">
-                        Book Now — €{sunsetPrice}
+                        Book Now
                       </button>
                     </Link>
                   </div>

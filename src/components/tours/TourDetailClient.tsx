@@ -1,21 +1,35 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { format } from "date-fns";
-import { Check, X, MapPin, Clock, Users, Globe, Star, Phone, Shield, Camera } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Check, X, MapPin, Clock, Users, Globe, Star, Phone, Shield,
+  Camera, ChevronDown, CalendarDays, Anchor, Navigation,
+  Plus, Minus,
+} from "lucide-react";
 import type { Tour, Package, AddOn } from "@/data/tours";
-import { isPromoActive, getSunsetPrice, SUNSET_PROMO } from "@/lib/promo";
-import BookingCalendar from "@/components/booking/BookingCalendar";
-import BookingModal from "@/components/booking/BookingModal";
+import { getDiscountedPrice } from "@/lib/promo";
+import BookingSidebar from "@/components/booking/BookingSidebar";
 import ImageLightbox from "@/components/ui/ImageLightbox";
 import TourCard from "@/components/tours/TourCard";
+import SocialProof from "@/components/tours/SocialProof";
+import BestPriceBadge from "@/components/tours/BestPriceBadge";
 
 interface Props {
   tour: Tour;
   related: Tour[];
 }
+
+type TabKey = "overview" | "itinerary" | "included" | "faq";
+
+const TAB_LABELS: { key: TabKey; label: string }[] = [
+  { key: "overview", label: "Overview" },
+  { key: "itinerary", label: "Itinerary" },
+  { key: "included", label: "What's Included" },
+  { key: "faq", label: "FAQ" },
+];
 
 export default function TourDetailClient({ tour, related }: Props) {
   const [selectedPackage, setSelectedPackage] = useState<Package | undefined>(
@@ -24,14 +38,23 @@ export default function TourDetailClient({ tour, related }: Props) {
   const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>([]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [bookingModal, setBookingModal] = useState(false);
-  const [bookingDate, setBookingDate] = useState<Date | null>(null);
-  const [bookingGuests, setBookingGuests] = useState(2);
-  const [bookingTime, setBookingTime] = useState("");
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<TabKey>("overview");
+
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const hasPackages = tour.packages && tour.packages.length > 0;
+  const hasItinerary = tour.itinerary && tour.itinerary.length > 0;
+  const hasFaq = tour.faq && tour.faq.length > 0;
 
-  const allImages = [tour.image, ...tour.gallery];
+  const allImages = [tour.image, ...tour.gallery.filter((img) => img !== tour.image)];
+
+  // Build available tabs based on tour data
+  const availableTabs = TAB_LABELS.filter((tab) => {
+    if (tab.key === "itinerary" && !hasItinerary) return false;
+    if (tab.key === "faq" && !hasFaq) return false;
+    return true;
+  });
 
   const toggleAddOn = (addon: AddOn) => {
     setSelectedAddOns((prev) =>
@@ -41,72 +64,118 @@ export default function TourDetailClient({ tour, related }: Props) {
     );
   };
 
-  const handleBook = useCallback((date: Date, guests: number, time: string) => {
-    setBookingDate(date);
-    setBookingGuests(guests);
-    setBookingTime(time);
-    setBookingModal(true);
-  }, []);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
   };
 
-  // Apply promo-aware pricing for sunset cruise
-  const basePrice =
-    tour.slug === SUNSET_PROMO.slug ? getSunsetPrice() : tour.priceEur;
+  const handleTabChange = (tab: TabKey) => {
+    setActiveTab(tab);
+    // Smooth scroll to content area
+    if (contentRef.current) {
+      const top = contentRef.current.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
+  const basePrice = getDiscountedPrice(tour.priceEur);
   const effectivePrice = selectedPackage?.price ?? basePrice;
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main content */}
-        <div className="lg:col-span-2 space-y-8">
-          {/* Hero image */}
-          <div
-            className="relative aspect-[16/9] rounded-2xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(0)}
-          >
-            <Image
-              src={tour.image}
-              alt={`${tour.nameEn} — ${tour.route} in Istanbul`}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              priority
-              sizes="(max-width: 1024px) 100vw, 66vw"
-            />
-            <div className="absolute top-4 left-4">
+      {/* Hero Gallery — 3-image layout: 1 large + 2 stacked */}
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-2 rounded-2xl overflow-hidden mb-8 h-[280px] sm:h-[360px] md:h-[440px]">
+        {/* Main large image */}
+        <div
+          className="md:col-span-2 relative cursor-pointer group"
+          onClick={() => openLightbox(0)}
+        >
+          <Image
+            src={allImages[0]}
+            alt={`${tour.nameEn} — ${tour.route} in Istanbul`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            priority
+            sizes="(max-width: 768px) 100vw, 66vw"
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+          <div className="absolute top-4 left-4 z-10">
+            {tour.badge && (
               <span className={`inline-block px-3 py-1 text-xs font-bold rounded-md ${tour.badgeColor}`}>
                 {tour.badge}
               </span>
+            )}
+          </div>
+        </div>
+
+        {/* 2 stacked images on the right */}
+        <div className="hidden md:grid grid-rows-2 gap-2">
+          {allImages.slice(1, 3).map((img, i) => (
+            <div
+              key={i}
+              className="relative cursor-pointer group overflow-hidden"
+              onClick={() => openLightbox(i + 1)}
+            >
+              <Image
+                src={img}
+                alt={`${tour.nameEn} ${i + 2}`}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
             </div>
-            <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-sm flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Camera className="w-4 h-4" />
-              View photos ({allImages.length})
+          ))}
+        </div>
+
+        {/* "View all X photos" button overlay */}
+        <button
+          onClick={() => openLightbox(0)}
+          className="absolute bottom-4 right-4 z-10 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg text-sm font-semibold text-[var(--heading)] shadow-md hover:bg-white transition-colors cursor-pointer"
+        >
+          <Camera className="w-4 h-4" />
+          View all {allImages.length} photos
+        </button>
+      </div>
+
+      {/* Quick Info Bar — horizontal with dividers */}
+      <div className="flex flex-wrap items-center justify-center gap-0 bg-white rounded-xl border border-[var(--line)] mb-8 divide-x divide-[var(--line)]">
+        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+          <Clock className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
+          <div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Duration</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tour.duration}</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+          <Users className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
+          <div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Max People</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tour.capacity}</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+          <CalendarDays className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
+          <div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Availability</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tour.availability || "All Year"}</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+          <Navigation className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
+          <div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Pick-up</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">
+              {tour.includes.some((i) => i.toLowerCase().includes("pickup")) ? "Included" : "Available"}
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Gallery thumbnails */}
-          <div className="grid grid-cols-3 gap-3">
-            {tour.gallery.map((img, i) => (
-              <div
-                key={i}
-                className="relative aspect-video rounded-xl overflow-hidden cursor-pointer group"
-                onClick={() => openLightbox(i + 1)}
-              >
-                <Image
-                  src={img}
-                  alt={`${tour.nameEn} — ${tour.highlights[i] || `Bosphorus cruise experience ${i + 1}`}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  sizes="30vw"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-              </div>
-            ))}
-          </div>
-
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main content */}
+        <div className="lg:col-span-2 space-y-6">
           {/* Title & Rating */}
           <div>
             <h1 className="text-2xl md:text-3xl font-bold mb-1">{tour.nameEn}</h1>
@@ -124,210 +193,368 @@ export default function TourDetailClient({ tour, related }: Props) {
             </div>
           </div>
 
-          {/* Specs */}
-          <div className="spec-grid">
-            <div className="spec-item">
-              <Clock className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-              <div className="label">Duration</div>
-              <div className="value">{tour.duration}</div>
-            </div>
-            <div className="spec-item">
-              <Users className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-              <div className="label">Guests</div>
-              <div className="value">{tour.capacity}</div>
-            </div>
-            <div className="spec-item">
-              <MapPin className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-              <div className="label">Departure</div>
-              <div className="value">{tour.departureTime}</div>
-            </div>
-            <div className="spec-item">
-              <Globe className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-              <div className="label">Languages</div>
-              <div className="value">EN / TR</div>
+          {/* Tab Navigation */}
+          <div className="bg-white rounded-xl border border-[var(--line)] p-1.5 sticky top-20 z-20">
+            <div className="flex gap-1">
+              {availableTabs.map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => handleTabChange(tab.key)}
+                  className={`relative flex-1 py-2.5 px-3 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+                    activeTab === tab.key
+                      ? "text-white"
+                      : "text-[var(--body-text)] hover:text-[var(--heading)] hover:bg-[var(--surface-alt)]"
+                  }`}
+                >
+                  {activeTab === tab.key && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-[var(--brand-primary)] rounded-lg"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Packages */}
-          {hasPackages && (
-            <div className="bg-white rounded-2xl p-6 md:p-8">
-              <h2 className="text-xl font-bold mb-6">Choose Your Package</h2>
-              <div className={`grid grid-cols-1 gap-4 ${tour.packages!.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
-                {tour.packages!.map((pkg, i) => {
-                  const isSelected = selectedPackage?.name === pkg.name;
-                  const isPopular = i === 1;
-                  return (
-                    <button
-                      key={pkg.name}
-                      onClick={() => setSelectedPackage(pkg)}
-                      className={`text-left rounded-xl border-2 p-5 transition-all ${
-                        isSelected
-                          ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5 shadow-md ring-2 ring-[var(--brand-primary)]/20"
-                          : "border-[var(--line)] hover:border-[var(--brand-primary)]/30"
-                      }`}
-                    >
-                      {isPopular && (
-                        <span className="inline-block px-2 py-0.5 bg-[var(--brand-primary)] text-white text-xs font-bold rounded mb-3">
-                          POPULAR
-                        </span>
-                      )}
-                      <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
-                      <p className="text-sm text-[var(--text-muted)] mb-3">{pkg.description}</p>
-                      <div className="text-2xl font-bold text-[var(--heading)] mb-4">€{pkg.price}</div>
-                      <ul className="space-y-2">
-                        {pkg.features.map((f) => (
-                          <li key={f} className="flex items-start gap-2 text-sm">
-                            <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                            <span>{f}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      {isSelected && (
-                        <div className="mt-4 pt-3 border-t border-[var(--brand-primary)]/20 text-center">
-                          <span className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-wider">Selected</span>
-                        </div>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+          {/* Tab Content with animation */}
+          <div ref={contentRef}>
+            <AnimatePresence mode="wait">
+              {activeTab === "overview" && (
+                <motion.div
+                  key="overview"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.25 }}
+                  className="space-y-6"
+                >
+                  {/* Description */}
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <h2 className="text-xl font-bold mb-4">About This Tour</h2>
+                    <div className="text-[var(--body-text)] leading-relaxed whitespace-pre-line">
+                      {tour.longDescription}
+                    </div>
+                  </div>
 
-          {/* Add-ons */}
-          {tour.addOns && tour.addOns.length > 0 && (
-            <div className="bg-white rounded-2xl p-6 md:p-8">
-              <h2 className="text-xl font-bold mb-4">Add-On Services</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {tour.addOns.map((addon) => {
-                  const isSelected = selectedAddOns.some((a) => a.name === addon.name);
-                  return (
-                    <button
-                      key={addon.name}
-                      onClick={() => toggleAddOn(addon)}
-                      className={`flex items-center justify-between py-3 px-4 rounded-xl border-2 transition-all text-left ${
-                        isSelected
-                          ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5"
-                          : "border-transparent bg-[var(--surface-alt)] hover:border-[var(--brand-primary)]/20"
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-5 h-5 rounded flex items-center justify-center border-2 transition-colors ${
-                          isSelected
-                            ? "bg-[var(--brand-primary)] border-[var(--brand-primary)]"
-                            : "border-gray-300"
-                        }`}>
-                          {isSelected && <Check className="w-3 h-3 text-white" />}
-                        </div>
-                        <span className="text-sm font-medium">{addon.name}</span>
+                  {/* Packages */}
+                  {hasPackages && (
+                    <div className="bg-white rounded-2xl p-6 md:p-8">
+                      <h2 className="text-xl font-bold mb-6">Choose Your Package</h2>
+                      <div className={`grid grid-cols-1 gap-4 ${tour.packages!.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+                        {tour.packages!.map((pkg, i) => {
+                          const isSelected = selectedPackage?.name === pkg.name;
+                          const isPopular = i === 1;
+                          return (
+                            <button
+                              key={pkg.name}
+                              onClick={() => setSelectedPackage(pkg)}
+                              className={`text-left rounded-xl border-2 p-5 transition-all ${
+                                isSelected
+                                  ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5 shadow-md ring-2 ring-[var(--brand-primary)]/20"
+                                  : "border-[var(--line)] hover:border-[var(--brand-primary)]/30"
+                              }`}
+                            >
+                              {isPopular && (
+                                <span className="inline-block px-2 py-0.5 bg-[var(--brand-primary)] text-white text-xs font-bold rounded mb-3">
+                                  POPULAR
+                                </span>
+                              )}
+                              <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
+                              <p className="text-sm text-[var(--text-muted)] mb-3">{pkg.description}</p>
+                              <div className="text-2xl font-bold text-[var(--heading)] mb-4">&euro;{pkg.price}</div>
+                              <ul className="space-y-2">
+                                {pkg.features.map((f) => (
+                                  <li key={f} className="flex items-start gap-2 text-sm">
+                                    <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                                    <span>{f}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              {isSelected && (
+                                <div className="mt-4 pt-3 border-t border-[var(--brand-primary)]/20 text-center">
+                                  <span className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-wider">Selected</span>
+                                </div>
+                              )}
+                            </button>
+                          );
+                        })}
                       </div>
-                      <span className="text-sm font-bold text-[var(--brand-primary)]">{addon.price}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+                    </div>
+                  )}
 
-          {/* Description */}
-          <div className="bg-white rounded-2xl p-6 md:p-8">
-            <h2 className="text-xl font-bold mb-4">About This Tour</h2>
-            <div className="text-[var(--body-text)] leading-relaxed whitespace-pre-line">
-              {tour.longDescription}
-            </div>
-          </div>
+                  {/* Add-ons */}
+                  {tour.addOns && tour.addOns.length > 0 && (
+                    <div className="bg-white rounded-2xl p-6 md:p-8">
+                      <h2 className="text-xl font-bold mb-4">Add-On Services</h2>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {tour.addOns.map((addon) => {
+                          const isSelected = selectedAddOns.some((a) => a.name === addon.name);
+                          return (
+                            <button
+                              key={addon.name}
+                              onClick={() => toggleAddOn(addon)}
+                              className={`flex items-center justify-between py-3 px-4 rounded-xl border-2 transition-all text-left ${
+                                isSelected
+                                  ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5"
+                                  : "border-transparent bg-[var(--surface-alt)] hover:border-[var(--brand-primary)]/20"
+                              }`}
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className={`w-5 h-5 rounded flex items-center justify-center border-2 transition-colors ${
+                                  isSelected
+                                    ? "bg-[var(--brand-primary)] border-[var(--brand-primary)]"
+                                    : "border-gray-300"
+                                }`}>
+                                  {isSelected && <Check className="w-3 h-3 text-white" />}
+                                </div>
+                                <span className="text-sm font-medium">{addon.name}</span>
+                              </div>
+                              <span className="text-sm font-bold text-[var(--brand-primary)]">{addon.price}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
 
-          {/* Includes */}
-          <div className="bg-white rounded-2xl p-6 md:p-8">
-            <h2 className="text-xl font-bold mb-4">What&apos;s Included</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {tour.includes.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm">
-                  <Check className="w-4 h-4 text-green-500 shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-              {tour.notIncluded?.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-                  <X className="w-4 h-4 text-red-400 shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+                  {/* Route & Departure */}
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <h2 className="text-xl font-bold mb-4">Route &amp; Departure</h2>
+                    <div className="flex items-center gap-2 text-[var(--body-text)] mb-3">
+                      <Anchor className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
+                      <span>{tour.route}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+                      <MapPin className="w-4 h-4 shrink-0" />
+                      Departure: {tour.departurePoint} &mdash; {tour.departureTime}
+                    </div>
+                  </div>
 
-          {/* Route */}
-          <div className="bg-white rounded-2xl p-6 md:p-8">
-            <h2 className="text-xl font-bold mb-4">Route & Departure</h2>
-            <div className="flex items-center gap-2 text-[var(--body-text)] mb-3">
-              <MapPin className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
-              <span>{tour.route}</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-              <MapPin className="w-4 h-4 shrink-0" />
-              Departure: {tour.departurePoint}
-            </div>
-          </div>
+                  {/* Highlights */}
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <h2 className="text-xl font-bold mb-4">Highlights</h2>
+                    <div className="flex flex-wrap gap-2">
+                      {tour.highlights.map((h) => (
+                        <span key={h} className="px-3 py-1.5 bg-[var(--surface-alt)] rounded-full text-sm font-medium">
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-          {/* Highlights */}
-          <div className="bg-white rounded-2xl p-6 md:p-8">
-            <h2 className="text-xl font-bold mb-4">Highlights</h2>
-            <div className="flex flex-wrap gap-2">
-              {tour.highlights.map((h) => (
-                <span key={h} className="px-3 py-1.5 bg-[var(--surface-alt)] rounded-full text-sm font-medium">
-                  {h}
-                </span>
-              ))}
-            </div>
-          </div>
+                  {/* Cancellation */}
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-semibold mb-1">Free Cancellation</h3>
+                        <p className="text-sm text-[var(--text-muted)]">
+                          Full refund available with 24+ hours advance notice. No questions asked.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
 
-          {/* Cancellation */}
-          <div className="bg-white rounded-2xl p-6 md:p-8">
-            <div className="flex items-start gap-3">
-              <Shield className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold mb-1">Free Cancellation</h3>
-                <p className="text-sm text-[var(--text-muted)]">
-                  Full refund available with 24+ hours advance notice. No questions asked.
-                </p>
-              </div>
-            </div>
+              {activeTab === "itinerary" && hasItinerary && (
+                <motion.div
+                  key="itinerary"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <h2 className="text-xl font-bold mb-8">Tour Itinerary</h2>
+                    <div className="relative">
+                      {/* Continuous vertical line */}
+                      <div className="absolute left-[39px] top-4 bottom-4 w-0.5 bg-[var(--brand-primary)]/15" />
+
+                      <div className="space-y-0">
+                        {tour.itinerary!.map((step, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -16 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3, delay: i * 0.08 }}
+                            className="flex gap-5 group"
+                          >
+                            {/* Time marker on left */}
+                            <div className="flex flex-col items-center shrink-0 w-[80px]">
+                              <div className="text-xs font-bold text-[var(--brand-primary)] mb-1.5 w-full text-right pr-4">
+                                {step.time}
+                              </div>
+                            </div>
+
+                            {/* Dot on the line */}
+                            <div className="flex flex-col items-center shrink-0 relative">
+                              <div className="w-3 h-3 rounded-full bg-[var(--brand-primary)] ring-4 ring-[var(--brand-primary)]/10 shrink-0 mt-0.5 z-10" />
+                              {i < tour.itinerary!.length - 1 && (
+                                <div className="w-0.5 flex-1 bg-[var(--brand-primary)]/15 my-0" />
+                              )}
+                            </div>
+
+                            {/* Content */}
+                            <div className={`pb-8 ${i === tour.itinerary!.length - 1 ? "pb-0" : ""} flex-1`}>
+                              <h3 className="font-semibold text-[var(--heading)] mb-1 group-hover:text-[var(--brand-primary)] transition-colors">
+                                {step.title}
+                              </h3>
+                              <p className="text-sm text-[var(--body-text)] leading-relaxed">{step.description}</p>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {activeTab === "included" && (
+                <motion.div
+                  key="included"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <h2 className="text-xl font-bold mb-6">What&apos;s Included</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {/* Included column */}
+                      <div>
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="w-3.5 h-3.5 text-green-600" />
+                          </div>
+                          <h3 className="font-semibold text-green-700">Included</h3>
+                        </div>
+                        <ul className="space-y-3">
+                          {tour.includes.map((item) => (
+                            <li key={item} className="flex items-start gap-3 text-sm">
+                              <div className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center shrink-0 mt-0.5">
+                                <Check className="w-3 h-3 text-green-500" />
+                              </div>
+                              <span className="text-[var(--body-text)]">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Not Included column */}
+                      {tour.notIncluded && tour.notIncluded.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 mb-4">
+                            <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center">
+                              <X className="w-3.5 h-3.5 text-red-500" />
+                            </div>
+                            <h3 className="font-semibold text-red-600">Not Included</h3>
+                          </div>
+                          <ul className="space-y-3">
+                            {tour.notIncluded.map((item) => (
+                              <li key={item} className="flex items-start gap-3 text-sm">
+                                <div className="w-5 h-5 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
+                                  <X className="w-3 h-3 text-red-400" />
+                                </div>
+                                <span className="text-[var(--text-muted)]">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {activeTab === "faq" && hasFaq && (
+                <motion.div
+                  key="faq"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className="bg-white rounded-2xl p-6 md:p-8">
+                    <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-3">
+                      {tour.faq!.map((item, i) => {
+                        const isOpen = openFaqIndex === i;
+                        return (
+                          <div
+                            key={i}
+                            className={`border rounded-xl overflow-hidden transition-colors ${
+                              isOpen ? "border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/[0.02]" : "border-[var(--line)]"
+                            }`}
+                          >
+                            <button
+                              onClick={() => setOpenFaqIndex(isOpen ? null : i)}
+                              className="w-full flex items-center justify-between p-5 text-left hover:bg-[var(--surface-alt)]/50 transition-colors cursor-pointer"
+                            >
+                              <span className="font-medium text-sm text-[var(--heading)] pr-4">{item.question}</span>
+                              <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                                isOpen ? "bg-[var(--brand-primary)] text-white" : "bg-[var(--surface-alt)] text-[var(--body-text)]"
+                              }`}>
+                                {isOpen ? (
+                                  <Minus className="w-3.5 h-3.5" />
+                                ) : (
+                                  <Plus className="w-3.5 h-3.5" />
+                                )}
+                              </div>
+                            </button>
+                            <AnimatePresence>
+                              {isOpen && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.25 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="px-5 pb-5 text-sm text-[var(--body-text)] leading-relaxed">
+                                    {item.answer}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
-        {/* Sidebar */}
-        <div className="lg:col-span-1">
-          <div className="sticky top-28 space-y-4">
-            <BookingCalendar
-              tourSlug={tour.slug}
-              priceEur={effectivePrice}
-              tourName={tour.nameEn}
-              departureTime={tour.departureTime}
-              departurePoint={tour.departurePoint}
-              onBook={handleBook}
-            />
-            <div className="bg-white rounded-2xl p-5 shadow-sm border border-[var(--line)]">
-              <p className="text-sm font-medium mb-3">Need help choosing?</p>
-              <a
-                href="https://wa.me/905370406822"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:brightness-110 transition-all"
-              >
-                <Phone className="w-4 h-4" />
-                Chat on WhatsApp
-              </a>
-              <a
-                href="tel:+905370406822"
-                className="flex items-center justify-center gap-2 w-full py-2.5 mt-2 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
-              >
-                <Phone className="w-4 h-4" />
-                +90 537 040 68 22
-              </a>
-            </div>
-          </div>
+        {/* Sidebar — sticky booking area with package cards + mobile bar */}
+        <div>
+          <SocialProof tourSlug={tour.slug} capacity={tour.capacity} />
+          <BookingSidebar
+          tour={{
+            slug: tour.slug,
+            nameEn: tour.nameEn,
+            name: tour.name,
+            priceEur: tour.priceEur,
+            departureTime: tour.departureTime,
+            departurePoint: tour.departurePoint,
+            image: tour.image,
+            packages: tour.packages,
+            addOns: tour.addOns,
+          }}
+          effectivePrice={effectivePrice}
+          selectedPackage={selectedPackage}
+          onSelectPackage={setSelectedPackage}
+          selectedAddOns={selectedAddOns}
+        />
         </div>
       </div>
+
+      <BestPriceBadge />
 
       {/* Related tours */}
       {related.length > 0 && (
@@ -352,23 +579,6 @@ export default function TourDetailClient({ tour, related }: Props) {
         />
       )}
 
-      {/* Booking Modal */}
-      {bookingModal && bookingDate && (
-        <BookingModal
-          booking={{
-            tourName: tour.nameEn,
-            tourSlug: tour.slug,
-            date: format(bookingDate, "dd MMM yyyy"),
-            time: bookingTime,
-            guests: bookingGuests,
-            selectedPackage,
-            selectedAddOns,
-            basePrice,
-            departurePoint: tour.departurePoint,
-          }}
-          onClose={() => setBookingModal(false)}
-        />
-      )}
     </>
   );
 }

@@ -4,11 +4,13 @@ import { useState } from "react";
 import { X, Loader2 } from "lucide-react";
 import { cancelReservation } from "@/app/actions/reservation";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/Toast";
 
 export default function CancelButton({ reservationId }: { reservationId: string }) {
   const [confirming, setConfirming] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const toastNotify = useToast();
 
   const handleCancel = async () => {
     setLoading(true);
@@ -16,9 +18,10 @@ export default function CancelButton({ reservationId }: { reservationId: string 
     setLoading(false);
 
     if (result.success) {
+      toastNotify.success("Reservation cancelled successfully.");
       router.refresh();
     } else {
-      alert(result.error || "Failed to cancel");
+      toastNotify.error(result.error || "Failed to cancel reservation.");
       setConfirming(false);
     }
   };
