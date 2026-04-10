@@ -337,7 +337,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
 
   const related = tours.filter((t) => t.slug !== slug && t.category === tour.category).slice(0, 4);
 
-  // JSON-LD TouristTrip + Product schema (dual type for aggregateRating support)
+  // JSON-LD TouristTrip + Product schema
   const tourSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Product"],
@@ -377,13 +377,6 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
         merchantReturnDays: 1,
         returnFees: "https://schema.org/FreeReturn",
       },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: tour.rating,
-      reviewCount: tour.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
     },
     itinerary: {
       "@type": "ItemList",

@@ -123,13 +123,6 @@ const organizationSchema = {
     "https://www.facebook.com/merrysails",
     "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: 4.9,
-    bestRating: 5,
-    ratingCount: 312,
-    reviewCount: 247,
-  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Bosphorus Cruise & Yacht Services",

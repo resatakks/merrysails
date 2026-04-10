@@ -31,49 +31,9 @@ const reviews = [
   },
 ];
 
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "@id": "https://merrysails.com/#organization",
-  name: "MerrySails",
-  url: "https://merrysails.com",
-  image: "https://merrysails.com/og-image.jpg",
-  telephone: "+905370406822",
-  priceRange: "€€",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
-    addressLocality: "Fatih",
-    addressRegion: "İstanbul",
-    postalCode: "34093",
-    addressCountry: "TR",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: 4.9,
-    ratingCount: 312,
-    reviewCount: 247,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: reviews.map((r) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: r.name },
-    datePublished: r.date,
-    reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-    reviewBody: r.text,
-    itemReviewed: {
-      "@type": "TravelAgency",
-      "@id": "https://merrysails.com/#organization",
-      name: "MerrySails",
-    },
-  })),
-};
-
 export default function Testimonials() {
   return (
     <section className="py-16 md:py-24 bg-[var(--surface-alt)]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <div className="container-main">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">What Our Guests Say</h2>

@@ -35,13 +35,6 @@ const serviceJsonLd = {
   name: "Boat Rental Istanbul — Private & Group Bosphorus Boat Hire",
   description:
     "Private and group boat rental on the Bosphorus in Istanbul. Hourly and day charter options including small yachts, gulets, and corporate-grade vessels. TURSAB licensed operator since 2001.",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
-    worstRating: "1",
-  },
   provider: {
     "@type": "TravelAgency",
     name: "MerrySails",
@@ -54,13 +47,6 @@ const serviceJsonLd = {
       addressRegion: "Istanbul",
       postalCode: "34093",
       addressCountry: "TR",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "2847",
-      bestRating: "5",
-      worstRating: "1",
     },
   },
   offers: [
@@ -338,7 +324,7 @@ export default function BoatRentalIstanbulPage() {
           <a href="https://www.tursab.org.tr/en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
             TURSAB A Group
           </a>{" "}
-          licence and 25 years of Bosphorus operations, MerrySails is Istanbul's most trusted boat hire operator — serving 50,000+ guests since 2001.
+          licence and 25 years of Bosphorus operations, MerrySails is Istanbul&apos;s most trusted boat hire operator — serving 50,000+ guests since 2001.
         </p>
 
         {/* WhatsApp CTA */}

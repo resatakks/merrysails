@@ -2,10 +2,11 @@ import Link from "next/link";
 import { Anchor, Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
 
 const cruiseLinks = [
-  { label: "Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
-  { label: "Dinner Cruise", href: "/cruises/bosphorus-dinner-cruise" },
+  { label: "Sunset Cruise", href: "/bosphorus-sunset-cruise" },
+  { label: "Dinner Cruise", href: "/istanbul-dinner-cruise" },
   { label: "Short Cruise", href: "/cruises/bosphorus-sightseeing-cruise" },
-  { label: "Yacht Charter", href: "/cruises/yacht-charter-in-istanbul" },
+  { label: "Yacht Charter", href: "/yacht-charter-istanbul" },
+  { label: "Boat Rental", href: "/boat-rental-istanbul" },
   { label: "Lunch Cruise", href: "/cruises/istanbul-bosphorus-lunch-cruise" },
   { label: "Princes' Islands", href: "/cruises/istanbul-princes-island-tour" },
   { label: "Private Sunset Yacht", href: "/cruises/private-bosphorus-sunset-cruise" },
@@ -179,6 +180,26 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h4 className="text-sm font-bold mb-3 text-[var(--brand-gold)] uppercase tracking-wider">Priority Cruise Pages</h4>
+          <div className="grid gap-3 md:grid-cols-4">
+            {[
+              { label: "Istanbul Dinner Cruise", href: "/istanbul-dinner-cruise" },
+              { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
+              { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
+              { label: "Bosphorus Cruise", href: "/bosphorus-cruise" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 

@@ -6,14 +6,22 @@ const SITE_URL = "https://merrysails.com";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Istanbul Dinner Cruise — All-Inclusive from €65 | MerrySails",
+  title: "Istanbul Dinner Cruise 2026 — From €65 with Dinner & Transfer | MerrySails",
   description:
-    "Book the best Istanbul dinner cruise on the Bosphorus. All-inclusive from €65: dinner, unlimited drinks, Turkish show, hotel transfer. TURSAB licensed since 2001. Book online.",
+    "Book an Istanbul dinner cruise from €65 with buffet dinner, unlimited local drinks, Turkish night show, and hotel transfer. TURSAB licensed since 2001. Reserve 2026 dates online.",
   alternates: { canonical: `${SITE_URL}/istanbul-dinner-cruise` },
+  keywords: [
+    "istanbul dinner cruise",
+    "bosphorus dinner cruise",
+    "dinner cruise istanbul 2026",
+    "istanbul dinner cruise price",
+    "bosphorus dinner cruise with hotel transfer",
+    "turkish night cruise istanbul",
+  ],
   openGraph: {
-    title: "Istanbul Dinner Cruise — All-Inclusive from €65 | MerrySails",
+    title: "Istanbul Dinner Cruise 2026 — From €65 with Dinner & Transfer | MerrySails",
     description:
-      "All-inclusive Bosphorus dinner cruise from €65: dinner, drinks, Turkish show & hotel pickup. TURSAB licensed. Book online.",
+      "All-inclusive Bosphorus dinner cruise from €65 with dinner, drinks, Turkish show, and hotel pickup. TURSAB licensed since 2001.",
     url: `${SITE_URL}/istanbul-dinner-cruise`,
     type: "website",
   },
@@ -91,21 +99,23 @@ const serviceJsonLd = {
     "@type": "TravelAgency",
     name: "MerrySails",
     url: SITE_URL,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    },
   },
   offers: {
     "@type": "Offer",
-    price: "65",
+    price: 65,
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
   },
   areaServed: "Istanbul, Turkey",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Istanbul Dinner Cruise", item: `${SITE_URL}/istanbul-dinner-cruise` },
+  ],
 };
 
 export default function IstanbulDinnerCruisePage() {
@@ -118,6 +128,10 @@ export default function IstanbulDinnerCruisePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <main className="max-w-4xl mx-auto px-4 py-12">
@@ -144,12 +158,116 @@ export default function IstanbulDinnerCruisePage() {
           </p>
         </div>
 
+        <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Is This the Right Bosphorus Cruise for You?</h2>
+          <p className="text-sm text-gray-700 mb-5">
+            Choose this page if you want the strongest all-in-one evening package. If you only want sightseeing or need a private setup, compare the options below before booking.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Dinner Cruise",
+                price: "From €65 pp",
+                bestFor: "Couples, families, and first-time visitors who want dinner, show, and transfer in one booking.",
+                href: "/reservation",
+                cta: "Reserve dinner cruise",
+              },
+              {
+                title: "Sightseeing Cruise",
+                price: "From €15 pp",
+                bestFor: "Guests who want a shorter daytime Bosphorus cruise without dinner or evening entertainment.",
+                href: "/bosphorus-cruise",
+                cta: "Compare sightseeing cruise",
+              },
+              {
+                title: "Private Yacht",
+                price: "From €280 total",
+                bestFor: "Proposals, birthdays, and private groups that need a custom route, timing, or setup.",
+                href: "/boat-rental-istanbul",
+                cta: "Compare private boat rental",
+              },
+            ].map((option) => (
+              <div key={option.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
+                <p className="text-sm font-semibold text-blue-700 mb-2">{option.price}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{option.title}</h3>
+                <p className="text-sm text-gray-600 mb-4">{option.bestFor}</p>
+                <Link
+                  href={option.href}
+                  className="text-sm font-semibold text-blue-700 hover:text-blue-800"
+                >
+                  {option.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <p className="text-gray-700 mb-4 leading-relaxed">
-          Experience Istanbul's most magical scenery from the water — an all-inclusive Bosphorus dinner cruise combining exquisite cuisine, unlimited drinks, and a live Turkish entertainment show. Glide past illuminated palaces, mosques, and bridges as the city sparkles after dark.
+          Experience Istanbul&apos;s most magical scenery from the water — an all-inclusive Bosphorus dinner cruise combining exquisite cuisine, unlimited drinks, and a live Turkish entertainment show. Glide past illuminated palaces, mosques, and bridges as the city sparkles after dark.
         </p>
         <p className="text-gray-600 mb-8 leading-relaxed">
-          MerrySails has been operating Bosphorus dinner cruises since 2001. With TURSAB license and hundreds of 5-star reviews, we are Istanbul's most trusted dinner cruise provider for couples, families, and corporate groups.
+          MerrySails has been operating Bosphorus dinner cruises since 2001. With TURSAB license and hundreds of 5-star reviews, we are Istanbul&apos;s most trusted dinner cruise provider for couples, families, and corporate groups.
         </p>
+
+        <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Best Pages to Compare Before Booking</h2>
+          <p className="text-sm text-gray-700 mb-5">
+            Guests comparing dinner cruise options usually also review boat rental, yacht charter, and classic Bosphorus cruise pages before booking.
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              {
+                href: "/boat-rental-istanbul",
+                title: "Boat Rental Istanbul",
+                description: "Private boat rental for small groups, proposals, and custom routes.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                title: "Yacht Charter Istanbul",
+                description: "Private yacht charter with flexible timing, route, and catering upgrades.",
+              },
+              {
+                href: "/bosphorus-cruise",
+                title: "Bosphorus Cruise",
+                description: "Classic sightseeing option for guests comparing dinner vs daytime experiences.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-100/40"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Booking Intent Fits This Page Best?</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Dinner + show in one booking",
+                desc: "Best fit for travelers who want one product that includes dinner, drinks, entertainment, and transfer without building a separate plan.",
+              },
+              {
+                title: "Couples and celebration nights",
+                desc: "Strong commercial fit for anniversaries, romantic evenings, birthday dinners, and first-time Istanbul visitors who want an easy evening plan.",
+              },
+              {
+                title: "Users comparing sunset vs dinner",
+                desc: "This page works well for visitors who have buying intent but still need to understand whether a sunset cruise, private yacht, or dinner cruise suits them better.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
+                <h3 className="text-base font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* CTA */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10 text-center">
@@ -162,11 +280,23 @@ export default function IstanbulDinnerCruisePage() {
           >
             Book Dinner Cruise Now
           </Link>
+          <p className="mt-4 text-sm text-gray-600">
+            Need a faster answer? WhatsApp us at{" "}
+            <a
+              href="https://wa.me/905370406822?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Istanbul%20dinner%20cruise"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-700 hover:text-blue-800"
+            >
+              +90 537 040 68 22
+            </a>{" "}
+            for same-day availability, couple tables, and group pricing.
+          </p>
         </div>
 
         {/* What's Included */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What's Included in the Dinner Cruise</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What&apos;s Included in the Dinner Cruise</h2>
           <div className="grid md:grid-cols-2 gap-3">
             {[
               "Open buffet dinner — Turkish & international cuisine",
@@ -218,8 +348,8 @@ export default function IstanbulDinnerCruisePage() {
 
         {/* Highlights */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What You'll See on the Bosphorus</h2>
-          <p className="text-gray-600 mb-4">Your dinner cruise route passes Istanbul's most iconic landmarks lit up at night:</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What You&apos;ll See on the Bosphorus</h2>
+          <p className="text-gray-600 mb-4">Your dinner cruise route passes Istanbul&apos;s most iconic landmarks lit up at night:</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
               { name: "Maiden's Tower", desc: "Legendary island tower in the middle of the Bosphorus" },

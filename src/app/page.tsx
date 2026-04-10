@@ -90,13 +90,6 @@ const organizationSchema = {
   },
   openingHours: "Mo-Su 07:00-23:00",
   priceRange: "€€",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "2847",
-    bestRating: "5",
-    worstRating: "1",
-  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Bosphorus Cruise Istanbul Packages",
@@ -194,6 +187,53 @@ export default function HomePage() {
       />
       <HeroSection />
       <TourGrid />
+
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
+            Book by Intent, Not by Guesswork
+          </h2>
+          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
+            These are the three pages that matter most for commercial search intent: shared dinner cruise, private boat rental, and yacht charter for higher-ticket occasions.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                href: "/istanbul-dinner-cruise",
+                eyebrow: "Best value",
+                title: "Istanbul Dinner Cruise",
+                description: "From €65 per person with dinner, unlimited local drinks, Turkish night show, and hotel transfer.",
+              },
+              {
+                href: "/boat-rental-istanbul",
+                eyebrow: "Private groups",
+                title: "Boat Rental Istanbul",
+                description: "From €280 total for private groups, proposals, birthdays, and flexible Bosphorus routes.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                eyebrow: "Higher ticket",
+                title: "Yacht Charter Istanbul",
+                description: "Private yacht packages with catering upgrades, event setup, and premium crew service.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+              >
+                <p className="text-sm font-semibold text-[var(--brand-primary)] mb-2">{item.eyebrow}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
+                  Open page →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FeaturedTour tour={tours[0]} />
       <FeaturedTour tour={tours[1]} reverse />
       <FeaturedTour tour={tours[2]} />

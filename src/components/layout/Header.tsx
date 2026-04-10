@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, Phone, ChevronDown, Anchor, X } from "lucide-react";
+import { Menu, Phone, ChevronDown, Anchor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import PromoBanner from "@/components/layout/PromoBanner";
@@ -11,11 +10,11 @@ import PromoBanner from "@/components/layout/PromoBanner";
 const navItems = [
   {
     label: "Sunset Cruise",
-    href: "/cruises/bosphorus-sunset-cruise",
+    href: "/bosphorus-sunset-cruise",
   },
   {
     label: "Private Yacht",
-    href: "/private-tours",
+    href: "/yacht-charter-istanbul",
     children: [
       { label: "Romantic Marriage Proposal", href: "/cruises/romantic-marriage-proposal" },
       { label: "Yacht Birthday Party", href: "/cruises/yacht-birthday-party" },
@@ -28,11 +27,15 @@ const navItems = [
   },
   {
     label: "Dinner Cruise",
-    href: "/cruises/bosphorus-dinner-cruise",
+    href: "/istanbul-dinner-cruise",
   },
   {
     label: "Yacht Charter",
-    href: "/cruises/yacht-charter-in-istanbul",
+    href: "/yacht-charter-istanbul",
+  },
+  {
+    label: "Boat Rental",
+    href: "/boat-rental-istanbul",
   },
   {
     label: "Tours",
@@ -57,7 +60,6 @@ const navItems = [
 ];
 
 export default function Header() {
-  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
@@ -140,7 +142,7 @@ export default function Header() {
               +90 537 040 68 22
             </a>
 
-            <Link href="/cruises/bosphorus-sunset-cruise">
+            <Link href="/istanbul-dinner-cruise">
               <button className="btn-cta text-sm !py-2.5 !px-5">
                 Book Now
               </button>
@@ -218,7 +220,7 @@ export default function Header() {
                       <Phone className="w-4 h-4" />
                       +90 537 040 68 22
                     </a>
-                    <Link href="/cruises/bosphorus-sunset-cruise" className="block px-4">
+                    <Link href="/istanbul-dinner-cruise" className="block px-4">
                       <button className="btn-cta w-full !py-3 text-sm">
                         Book Now
                       </button>
