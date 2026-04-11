@@ -269,6 +269,31 @@ export default function IstanbulDinnerCruisePage() {
           </div>
         </section>
 
+        <section className="mb-10 rounded-2xl border border-emerald-100 bg-emerald-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Dinner Cruise vs Private Yacht vs Sightseeing Cruise</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Dinner Cruise",
+                desc: "Best when you want one evening booking with dinner, entertainment, and hotel transfer already included.",
+              },
+              {
+                title: "Private Yacht",
+                desc: "Better if you need privacy, custom timing, proposal setup, birthday decoration, or a fully private route.",
+              },
+              {
+                title: "Sightseeing Cruise",
+                desc: "Better for budget-first guests who only want Bosphorus views and do not need dinner or an evening show.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
+                <h3 className="text-base font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10 text-center">
           <p className="text-gray-800 mb-4 font-medium">
