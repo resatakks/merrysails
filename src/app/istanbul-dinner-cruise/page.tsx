@@ -411,11 +411,12 @@ export default function IstanbulDinnerCruisePage() {
         {/* Related */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Other Bosphorus Experiences</h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {[
               { href: "/cruises/bosphorus-sunset-cruise", label: "Bosphorus Sunset Cruise — from €40" },
               { href: "/private-tours", label: "Private Bosphorus Tour — from €180" },
               { href: "/yacht-charter-istanbul", label: "Yacht Charter Istanbul — from €280" },
+              { href: "/proposal-yacht-rental-istanbul", label: "Proposal Yacht Rental Istanbul" },
             ].map((link) => (
               <Link
                 key={link.href}
