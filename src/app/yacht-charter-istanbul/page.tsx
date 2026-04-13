@@ -105,6 +105,57 @@ export default function YachtCharterIstanbulPage() {
           Since 2001, MerrySails has operated private yacht charters on the Istanbul Bosphorus with TURSAB licensing and an impeccable safety record. Our fleet ranges from intimate sailboats to spacious gulets and motor yachts.
         </p>
 
+        <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Charter Request Fits Your Plan Best?</h2>
+          <p className="text-sm text-gray-700 mb-5">
+            Most yacht charter enquiries close faster when the guest count, event type, and preferred departure pier are clear from the start. If your event already falls into one of the tracks below, use the matching page before you request a quote.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                href: "/corporate-events",
+                title: "Corporate Bosphorus Event",
+                description: "Client hosting, team dinners, product launches, or executive entertaining with AV and catering planning.",
+              },
+              {
+                href: "/private-events",
+                title: "Birthday or Private Celebration",
+                description: "Best for birthdays, family gatherings, graduation parties, and private groups that need food, music, and decoration support.",
+              },
+              {
+                href: "/istanbul-dinner-cruise",
+                title: "Dinner-Led Experience",
+                description: "Choose this when the main decision is dining, sunset timing, or a ready-made Bosphorus evening instead of a fully custom charter.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-100/40"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-5 rounded-xl border border-dashed border-blue-200 bg-white/70 p-4">
+            <h3 className="text-base font-semibold text-gray-900 mb-2">Fast Quote Checklist</h3>
+            <ul className="grid gap-2 text-sm text-gray-700 md:grid-cols-2">
+              {[
+                "Event date and preferred start time",
+                "Guest count and whether children are joining",
+                "Occasion type: proposal, birthday, dinner, corporate, wedding",
+                "Need for catering, decoration, cake, DJ, or transfer support",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="font-bold text-blue-600">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         {/* CTA */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10 text-center">
           <p className="text-gray-800 mb-4 font-medium">
