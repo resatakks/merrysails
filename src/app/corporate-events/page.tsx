@@ -288,6 +288,68 @@ export default function CorporateEventsPage() {
             </p>
           </div>
 
+          <section className="mb-16 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+            <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
+              Fastest Path to the Right Corporate Cruise
+            </h2>
+            <p className="text-sm text-[var(--text-muted)] mb-5 leading-relaxed">
+              Corporate enquiries usually close faster when the guest count, event format, and the
+              real objective are clear from the first message. Use the closest entry point below
+              before you request a quote.
+            </p>
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  href: "/yacht-charter-istanbul",
+                  title: "Need a flexible private yacht",
+                  description:
+                    "Best when the timing, route, guest count, and onboard setup still need to be shaped around your event brief.",
+                },
+                {
+                  href: "/private-events",
+                  title: "Celebration rather than B2B",
+                  description:
+                    "Choose this when the request is really a birthday, proposal, anniversary, or private celebration instead of a corporate format.",
+                },
+                {
+                  href: "/istanbul-dinner-cruise",
+                  title: "Dinner-first format",
+                  description:
+                    "Start here when catering and a ready-made Bosphorus dinner flow matter more than a custom corporate run sheet.",
+                },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-100/40"
+                >
+                  <span className="block text-base font-semibold text-[var(--heading)] mb-1">
+                    {item.title}
+                  </span>
+                  <span className="block text-sm text-[var(--text-muted)]">{item.description}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-5 rounded-xl border border-dashed border-blue-200 bg-white/70 p-4">
+              <h3 className="text-base font-semibold text-[var(--heading)] mb-2">
+                4 Details That Speed Up the Quote
+              </h3>
+              <ul className="grid gap-2 text-sm text-[var(--text-muted)] md:grid-cols-2">
+                {[
+                  "Preferred event date and boarding time",
+                  "Expected guest count and whether international guests are attending",
+                  "Need for dinner, open bar, AV, photographer, MC, or branding",
+                  "Invoice name and whether you need a Turkish fatura or English proforma first",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           {/* Packages table */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
