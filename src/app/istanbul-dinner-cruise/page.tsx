@@ -173,18 +173,18 @@ export default function IstanbulDinnerCruisePage() {
                 cta: "Reserve dinner cruise",
               },
               {
-                title: "Sightseeing Cruise",
-                price: "From €15 pp",
-                bestFor: "Guests who want a shorter daytime Bosphorus cruise without dinner or evening entertainment.",
-                href: "/bosphorus-cruise",
-                cta: "Compare sightseeing cruise",
+                title: "Sunset Cruise",
+                price: "From €40 pp",
+                bestFor: "Guests who want golden-hour Bosphorus views and a lighter evening plan without the full dinner-show format.",
+                href: "/cruises/bosphorus-sunset-cruise",
+                cta: "Compare sunset cruise",
               },
               {
                 title: "Private Yacht",
                 price: "From €280 total",
-                bestFor: "Proposals, birthdays, and private groups that need a custom route, timing, or setup.",
-                href: "/boat-rental-istanbul",
-                cta: "Compare private boat rental",
+                bestFor: "Couples, proposals, and private groups that want dinner service on their own yacht instead of a shared cruise.",
+                href: "/private-bosphorus-dinner-cruise",
+                cta: "Compare private dinner cruise",
               },
             ].map((option) => (
               <div key={option.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
@@ -217,6 +217,11 @@ export default function IstanbulDinnerCruisePage() {
           <div className="grid gap-3 md:grid-cols-3">
             {[
               {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Bosphorus Dinner Cruise",
+                description: "Private dinner-on-yacht option for proposals, birthdays, and premium events.",
+              },
+              {
                 href: "/boat-rental-istanbul",
                 title: "Boat Rental Istanbul",
                 description: "Private boat rental for small groups, proposals, and custom routes.",
@@ -225,11 +230,6 @@ export default function IstanbulDinnerCruisePage() {
                 href: "/yacht-charter-istanbul",
                 title: "Yacht Charter Istanbul",
                 description: "Private yacht charter with flexible timing, route, and catering upgrades.",
-              },
-              {
-                href: "/bosphorus-cruise",
-                title: "Bosphorus Cruise",
-                description: "Classic sightseeing option for guests comparing dinner vs daytime experiences.",
               },
             ].map((item) => (
               <Link
@@ -270,7 +270,7 @@ export default function IstanbulDinnerCruisePage() {
         </section>
 
         <section className="mb-10 rounded-2xl border border-emerald-100 bg-emerald-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Dinner Cruise vs Private Yacht vs Sightseeing Cruise</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Dinner Cruise vs Private Yacht vs Sunset Cruise</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {[
               {
@@ -282,8 +282,8 @@ export default function IstanbulDinnerCruisePage() {
                 desc: "Better if you need privacy, custom timing, proposal setup, birthday decoration, or a fully private route.",
               },
               {
-                title: "Sightseeing Cruise",
-                desc: "Better for budget-first guests who only want Bosphorus views and do not need dinner or an evening show.",
+                title: "Sunset Cruise",
+                desc: "Better for guests who want golden-hour views, lighter pricing, and a more photo-focused Bosphorus experience.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
@@ -413,7 +413,7 @@ export default function IstanbulDinnerCruisePage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Other Bosphorus Experiences</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { href: "/bosphorus-cruise", label: "Bosphorus Sightseeing Cruise — from €15" },
+              { href: "/cruises/bosphorus-sunset-cruise", label: "Bosphorus Sunset Cruise — from €40" },
               { href: "/private-tours", label: "Private Bosphorus Tour — from €180" },
               { href: "/yacht-charter-istanbul", label: "Yacht Charter Istanbul — from €280" },
             ].map((link) => (
