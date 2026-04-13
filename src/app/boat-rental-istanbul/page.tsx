@@ -746,15 +746,42 @@ export default function BoatRentalIstanbulPage() {
           </Link>
         </section>
 
+        {/* Related Guides */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Read Before You Book a Boat in Istanbul
+          </h2>
+          <p className="text-gray-600 mb-4 text-sm">
+            These guides answer the commercial questions people usually ask before requesting a quote:
+            vessel type, pricing, and whether private hire is the better fit.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { href: "/blog/private-yacht-hire-istanbul-2026", label: "Private Yacht Hire Istanbul" },
+              { href: "/blog/corporate-boat-hire-istanbul", label: "Corporate Boat Hire Istanbul" },
+              { href: "/blog/bosphorus-cruise-prices-2026", label: "Bosphorus Cruise Prices 2026" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors text-sm text-blue-700 font-medium"
+              >
+                {link.label} →
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Related Services */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Other Bosphorus Experiences
           </h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { href: "/yacht-charter-istanbul", label: "Yacht Charter Istanbul — from €280" },
               { href: "/istanbul-dinner-cruise", label: "Bosphorus Dinner Cruise — from €65" },
+              { href: "/cruises/bosphorus-sunset-cruise", label: "Bosphorus Sunset Cruise — from €40" },
               { href: "/corporate-events", label: "Corporate Events on the Bosphorus" },
             ].map((link) => (
               <Link
