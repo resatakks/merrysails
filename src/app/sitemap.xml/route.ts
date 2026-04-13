@@ -49,7 +49,7 @@ export function GET() {
     { url: `${SITE_URL}/private-bosphorus-dinner-cruise`, changefreq: "weekly", priority: "0.94", lastmod: "2026-04-13" },
     { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "weekly", priority: "0.92", lastmod: "2026-04-13" },
     { url: `${SITE_URL}/yacht-charter-istanbul`, changefreq: "weekly", priority: "0.95", lastmod: "2026-04-13" },
-    { url: `${SITE_URL}/boat-rental-istanbul`, changefreq: "weekly", priority: "0.85", lastmod: "2026-04-13" },
+    { url: `${SITE_URL}/boat-rental-istanbul`, changefreq: "weekly", priority: "0.88", lastmod: "2026-04-13" },
     { url: `${SITE_URL}/private-tours`, changefreq: "weekly", priority: "0.8", lastmod: "2026-03-08" },
     { url: `${SITE_URL}/corporate-events`, changefreq: "weekly", priority: "0.85", lastmod: "2026-04-13" },
     { url: `${SITE_URL}/private-events`, changefreq: "weekly", priority: "0.85", lastmod: "2026-04-04" },

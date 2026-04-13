@@ -130,6 +130,42 @@ export default function ProposalYachtRentalIstanbulPage() {
         </p>
 
         <section className="mb-10 rounded-2xl border border-rose-100 bg-rose-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Why This Page Exists Instead of the Generic Yacht Pages</h2>
+          <p className="text-sm text-gray-700 mb-5">
+            A proposal search is a different commercial intent from a normal boat rental search. This page stays focused on
+            proposal timing, privacy, and setup support, while the broader rental pages handle general comparisons.
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "Choose this if the proposal should happen inside a private dinner-on-yacht format.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                title: "Yacht Charter Istanbul",
+                description: "Choose this if you are still comparing full yacht charter packages before finalizing the proposal.",
+              },
+              {
+                href: "/boat-rental-istanbul",
+                title: "Boat Rental Istanbul",
+                description: "Choose this if you only need private boat hire and not a proposal-specific setup.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-rose-200 hover:bg-rose-100/40"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-rose-100 bg-rose-50 p-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">When This Page Is the Better Match</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {[

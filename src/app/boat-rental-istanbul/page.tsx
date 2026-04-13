@@ -327,6 +327,42 @@ export default function BoatRentalIstanbulPage() {
           licence and 25 years of Bosphorus operations, MerrySails is Istanbul&apos;s most trusted boat hire operator — serving 50,000+ guests since 2001.
         </p>
 
+        <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Boat Rental Intent Fits This Page Best?</h2>
+          <p className="text-sm text-gray-700 mb-5">
+            Use this page if you want a private boat quote with flexible duration, crewed service, and route planning.
+            If the booking is really for a proposal or a private dinner, jump to the more specific money page instead of forcing a generic rental request.
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Yacht Rental",
+                description: "Best match when the real intent is a marriage proposal with sunset timing and setup support.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "Best match when dinner, privacy, and onboard service matter more than hourly boat hire.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                title: "Yacht Charter Istanbul",
+                description: "Best match for higher-ticket private yacht comparisons, corporate hosting, or premium events.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-100/40"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* WhatsApp CTA */}
         <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-10 text-center">
           <p className="text-gray-800 mb-2 font-semibold text-lg">
