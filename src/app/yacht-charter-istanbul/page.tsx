@@ -108,7 +108,7 @@ export default function YachtCharterIstanbulPage() {
         <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Charter Request Fits Your Plan Best?</h2>
           <p className="text-sm text-gray-700 mb-5">
-            Most yacht charter enquiries close faster when the guest count, event type, and preferred departure pier are clear from the start. If your event already falls into one of the tracks below, use the matching page before you request a quote.
+            Most guests choose faster when they first decide whether the day is centered on a proposal, a private dinner, a celebration, or a corporate event. If one of the options below matches your plan, that page will help you compare the right format before you ask for a quote.
           </p>
           <div className="grid gap-4 md:grid-cols-3">
             {[
@@ -145,7 +145,7 @@ export default function YachtCharterIstanbulPage() {
                 "Event date and preferred start time",
                 "Guest count and whether children are joining",
                 "Occasion type: proposal, birthday, dinner, corporate, wedding",
-                "Need for catering, decoration, cake, DJ, or transfer support",
+                "Need for catering, decoration, cake, DJ, transfer, or photo setup",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="font-bold text-blue-600">✓</span>
@@ -203,6 +203,121 @@ export default function YachtCharterIstanbulPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Which Yacht Format Matches Your Day on the Bosphorus?</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              {
+                title: "Sunset or Proposal Plan",
+                desc: "Best when timing, privacy, proposal setup, and Bosphorus photo light matter more than a longer route.",
+              },
+              {
+                title: "Birthday or Private Group",
+                desc: "Choose this for music, cake, decoration, and guest comfort when the event matters more than a formal dinner sequence.",
+              },
+              {
+                title: "Corporate Hosting",
+                desc: "The right fit for client hosting, executive dinners, team gatherings, or brand events that need a polished schedule.",
+              },
+              {
+                title: "Full-Day Bosphorus Leisure",
+                desc: "Best for longer cruising, multiple route segments, anchoring breaks, and a slower pace on the water.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Helpful Pages to Compare Before You Choose Your Charter</h2>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Yacht Rental",
+                description: "For couples choosing privacy, timing, photo setup, and proposal-focused decoration.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "For guests who want dining and privacy together instead of a broader custom charter.",
+              },
+              {
+                href: "/corporate-events",
+                title: "Corporate Events",
+                description: "For companies comparing AV, catering, guest flow, and polished event structure.",
+              },
+              {
+                href: "/boat-rental-istanbul",
+                title: "Boat Rental Istanbul",
+                description: "For lighter private bookings where flexibility matters more than a yacht-led premium package.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-100/60"
+              >
+                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-gray-200 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What to Send for a Faster Yacht Charter Quote</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            Yacht charter requests close faster when the occasion, guest count, and service level are clear.
+            That lets us decide whether the booking belongs on this page or one of the more specific pages above.
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              "Date, duration, and preferred departure time",
+              "Guest count and whether the group is private, corporate, or celebration-led",
+              "Need for catering, decoration, dinner service, photographer, or transfer support",
+              "Whether you want a flexible charter or a more fixed-format dinner/proposal event",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
+                <span className="font-bold text-blue-600 mr-2">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Yacht Search Belongs Here?</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            Yacht charter traffic often overlaps with dinner cruise, proposal, boat rental, and corporate-event demand. This page should clearly own the broader private-yacht decision before guests branch out.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Yacht charter Istanbul",
+                description: "Best fit for private charter demand where guest count, route flexibility, and vessel type matter most.",
+              },
+              {
+                title: "Proposal / private dinner split",
+                description: "If the request is really a proposal or dinner-led private experience, the narrower occasion pages convert faster.",
+              },
+              {
+                title: "Boat rental / corporate event split",
+                description: "If flexibility or business hosting is the main goal, the matching service page is a better next step than a generic charter quote.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 

@@ -254,11 +254,11 @@ export default function IstanbulDinnerCruisePage() {
               },
               {
                 title: "Couples and celebration nights",
-                desc: "Strong commercial fit for anniversaries, romantic evenings, birthday dinners, and first-time Istanbul visitors who want an easy evening plan.",
+                desc: "Strong fit for anniversaries, romantic evenings, birthday dinners, and first-time Istanbul visitors who want an easy evening plan.",
               },
               {
                 title: "Users comparing sunset vs dinner",
-                desc: "This page works well for visitors who have buying intent but still need to understand whether a sunset cruise, private yacht, or dinner cruise suits them better.",
+                desc: "This page works well for visitors who are close to booking but still need to understand whether a sunset cruise, private yacht, or dinner cruise suits them better.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">

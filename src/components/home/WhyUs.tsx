@@ -40,7 +40,7 @@ export default function WhyUs() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Why Book Your Istanbul Boat Tour With Us?</h2>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Over 50,000 happy guests since 2001. TURSAB-licensed Bosphorus cruise operator trusted by travelers worldwide.
+            Over 50,000 happy guests since 2001. TURSAB-licensed Bosphorus cruise company trusted by travelers worldwide.
           </p>
         </div>
 
@@ -59,6 +59,32 @@ export default function WhyUs() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-[var(--brand-primary)]/15 bg-[var(--surface-alt)] p-6">
+          <div className="max-w-3xl">
+            <h3 className="text-2xl font-bold mb-3">Not sure which Bosphorus plan fits your day?</h3>
+            <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+              If your plans are already centered on a proposal, a private dinner, a corporate event, or a full yacht day,
+              these pages help you compare the right format before you request a quote.
+            </p>
+          </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              { href: "/proposal-yacht-rental-istanbul", label: "Proposal Yacht Rental" },
+              { href: "/private-bosphorus-dinner-cruise", label: "Private Dinner Cruise" },
+              { href: "/corporate-events", label: "Corporate Events" },
+              { href: "/yacht-charter-istanbul", label: "Yacht Charter Istanbul" },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white px-4 py-3 text-sm font-medium text-[var(--text-main)] transition-colors hover:border-[var(--brand-primary)]/40 hover:text-[var(--brand-primary)]"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

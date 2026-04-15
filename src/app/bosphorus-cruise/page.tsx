@@ -143,7 +143,7 @@ const tourTripSchema = {
   "@type": "TouristTrip",
   name: "Bosphorus Cruise Istanbul",
   description:
-    "Compare and book the best Bosphorus cruises in Istanbul: sightseeing, sunset, dinner, and private yacht charter. TURSAB licensed operator since 2001.",
+    "Compare and book the best Bosphorus cruises in Istanbul: sightseeing, sunset, dinner, and private yacht charter. TURSAB licensed company since 2001.",
   touristType: ["Cultural", "Sightseeing", "Luxury"],
   provider: {
     "@type": "TravelAgency",
@@ -263,7 +263,7 @@ export default function BosphorusCruisePage() {
             <strong>€15 sightseeing cruise</strong> to a{" "}
             <strong>€65 all-inclusive dinner cruise</strong> with Turkish night
             show — and find the perfect boat tour for your Istanbul trip. TURSAB
-            A Group licensed operator since 2001.
+            A Group licensed company since 2001.
           </p>
           <div className="flex flex-wrap gap-4 mt-8">
             <Link

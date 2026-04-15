@@ -12,6 +12,29 @@ import { AuthorCard } from "@/components/blog/author-card";
 import { InlineCTA } from "@/components/blog/inline-cta";
 import { RelatedPosts } from "@/components/blog/related-posts";
 
+const commercialCruiseLinks = [
+  {
+    href: "/istanbul-dinner-cruise",
+    title: "Istanbul Dinner Cruise",
+    description: "Shared dinner cruise with live show, hotel transfer, and fixed per-person pricing.",
+  },
+  {
+    href: "/boat-rental-istanbul",
+    title: "Boat Rental Istanbul",
+    description: "Private boat option for smaller groups, birthdays, and flexible Bosphorus routes.",
+  },
+  {
+    href: "/yacht-charter-istanbul",
+    title: "Yacht Charter Istanbul",
+    description: "Higher-ticket private yacht plans for premium occasions and tailored onboard service.",
+  },
+  {
+    href: "/private-bosphorus-dinner-cruise",
+    title: "Private Bosphorus Dinner Cruise",
+    description: "Private dinner-led format for proposals, anniversaries, and special evening bookings.",
+  },
+] as const;
+
 export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
 }
@@ -265,6 +288,31 @@ export default async function BlogPostPage({
               </div>
             </div>
           )}
+
+          {/* Author Bio (full) */}
+          <div className="max-w-4xl mt-12 rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-6 md:p-8">
+            <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
+                    Ready-to-Book Pages
+            </h2>
+            <p className="text-[var(--body-text)] mb-6">
+              If you are already comparing dinner cruise, private yacht, boat rental, or proposal options, these are the pages that take you straight to the right booking flow.
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {commercialCruiseLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-[var(--line)] bg-white p-5 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <h3 className="font-semibold text-[var(--heading)] mb-2 flex items-center justify-between gap-3">
+                    <span>{item.title}</span>
+                    <ArrowRight className="w-4 h-4 text-[var(--brand-primary)] shrink-0" />
+                  </h3>
+                  <p className="text-sm text-[var(--body-text)]">{item.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
 
           {/* Author Bio (full) */}
           <div className="max-w-4xl">

@@ -350,6 +350,49 @@ export default function CorporateEventsPage() {
             </div>
           </section>
 
+          <section className="mb-16 rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
+              If This Is Not Really a Corporate Brief
+            </h2>
+            <p className="text-sm text-[var(--text-muted)] mb-5 leading-relaxed">
+              Many corporate searches are actually celebration, dinner, or private charter searches.
+              Routing those leads to the right page speeds up quoting and reduces back-and-forth.
+            </p>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                {
+                  href: "/yacht-charter-istanbul",
+                  title: "Yacht Charter Istanbul",
+                  description: "Use this when the guest still wants flexible private yacht selection before event format is fixed.",
+                },
+                {
+                  href: "/private-events",
+                  title: "Private Events",
+                  description: "Use this when the request is a birthday, anniversary, or celebration rather than a business event.",
+                },
+                {
+                  href: "/private-bosphorus-dinner-cruise",
+                  title: "Private Dinner Cruise",
+                  description: "Use this when dinner format and privacy matter more than corporate AV or branding.",
+                },
+                {
+                  href: "/proposal-yacht-rental-istanbul",
+                  title: "Proposal Yacht Rental",
+                  description: "Use this when the event has turned into a romantic proposal or surprise celebration.",
+                },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+                >
+                  <h3 className="font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           {/* Packages table */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">

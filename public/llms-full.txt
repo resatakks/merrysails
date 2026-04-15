@@ -18,7 +18,7 @@
 
 ---
 
-## Commercial Landing Pages
+## Primary Booking Pages
 
 Dedicated booking pages with price tables, FAQ, and structured data:
 

@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     q: "Is a proposal yacht better than a shared Bosphorus cruise?",
-    a: "Yes, for proposal intent a private yacht is usually the better match because you control the timing, privacy level, and onboard setup. Shared cruises are better for lower-budget sightseeing or dinner packages, not for a focused proposal moment.",
+    a: "Yes. A private yacht is usually the better match for a proposal because you control the timing, privacy level, and onboard setup. Shared cruises are better for lower-budget sightseeing or dinner packages, not for a focused proposal moment.",
   },
   {
     q: "Can you arrange flowers, photographer, or violinist on the yacht?",
@@ -120,7 +120,7 @@ export default function ProposalYachtRentalIstanbulPage() {
 
         <p className="text-gray-700 mb-4 leading-relaxed">
           Guests searching for proposal yacht rental in Istanbul usually have one goal: build a private proposal moment
-          around the Bosphorus, with the right route, timing, and setup support. That buying intent is different from a
+          around the Bosphorus, with the right route, timing, and setup support. That plan is different from a
           shared dinner cruise or a generic yacht charter quote.
         </p>
         <p className="text-gray-600 mb-8 leading-relaxed">
@@ -130,10 +130,10 @@ export default function ProposalYachtRentalIstanbulPage() {
         </p>
 
         <section className="mb-10 rounded-2xl border border-rose-100 bg-rose-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Why This Page Exists Instead of the Generic Yacht Pages</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Why Couples Choose This Page</h2>
           <p className="text-sm text-gray-700 mb-5">
-            A proposal search is a different commercial intent from a normal boat rental search. This page stays focused on
-            proposal timing, privacy, and setup support, while the broader rental pages handle general comparisons.
+            Proposal planning usually needs privacy, timing, and setup support. This page focuses on that flow, while the
+            broader rental pages are better for general yacht and boat comparisons.
           </p>
           <div className="grid gap-3 md:grid-cols-3">
             {[
@@ -206,8 +206,46 @@ export default function ProposalYachtRentalIstanbulPage() {
           </div>
         </section>
 
+        <section className="mb-10 rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Quote Checklist Before You Message Us</h2>
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              "Your preferred proposal date and whether you want a sunset or evening route.",
+              "Expected guest count: private couple-only setup or family/friends onboard after the proposal.",
+              "Setup level: simple flowers only, decorated table, violinist, photographer, cake, or full package.",
+              "Whether you want the proposal to happen at a quiet stop, near the bridge lights, or on a dinner-format cruise.",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-white bg-white p-4 text-sm text-gray-700 shadow-sm">
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-gray-200 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What to Send for a Faster Proposal Quote</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            Proposal quotes move faster when the setup details are clear. We use the details below to
+            decide whether the request belongs on a private dinner yacht, a simpler charter, or a fully
+            bespoke proposal arrangement.
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              "Preferred date, sunset vs evening timing, and the exact proposal window.",
+              "Guest count and whether the yacht should stay couple-only or allow family after the reveal.",
+              "Setup level: flowers only, photographer, violinist, dinner table styling, or full romantic package.",
+              "Whether you need a quiet stop, bridge-light route, or dinner-led proposal format.",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
+                <span className="font-bold text-rose-600 mr-2">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="mb-10 rounded-2xl border border-amber-200 bg-amber-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Compare the Closest Commercial Options</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Compare the closest matching options</h2>
           <div className="grid gap-3 md:grid-cols-3">
             {[
               {
@@ -261,6 +299,38 @@ export default function ProposalYachtRentalIstanbulPage() {
                 </summary>
                 <p className="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
               </details>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Related Private Yacht Pages</h2>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "Use this route if the proposal should happen in a dinner-led private yacht format.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                title: "Yacht Charter Istanbul",
+                description: "Use this page if you are still deciding the yacht size and charter band before the proposal setup.",
+              },
+              {
+                href: "/boat-rental-istanbul",
+                title: "Boat Rental Istanbul",
+                description: "Use this if you only need private boat hire and a lighter proposal setup.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-colors hover:border-rose-200 hover:bg-rose-50"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
             ))}
           </div>
         </section>

@@ -259,17 +259,85 @@ export default function PrivateEventsPage() {
           </div>
 
           {/* Answer capsule */}
-          <div className="bg-pink-50 border-l-4 border-pink-400 rounded-r-xl p-5 mb-12 max-w-3xl mx-auto">
-            <p className="text-[var(--heading)] font-medium">
-              <strong>Quick answer:</strong> A private event boat in Istanbul starts from €280 for
-              up to 15 guests (2 hours) — no shared passengers, fully private. Decoration packages
-              from €60, DJ add-on from €180, catering from €18/person. Groups from 10 to 100 guests
-              accommodated.
-            </p>
-          </div>
+        <div className="bg-pink-50 border-l-4 border-pink-400 rounded-r-xl p-5 mb-12 max-w-3xl mx-auto">
+          <p className="text-[var(--heading)] font-medium">
+            <strong>Quick answer:</strong> A private event boat in Istanbul starts from €280 for
+            up to 15 guests (2 hours) — no shared passengers, fully private. Decoration packages
+            from €60, DJ add-on from €180, catering from €18/person. Groups from 10 to 100 guests
+            accommodated.
+          </p>
+        </div>
 
-          {/* Event types */}
-          <section className="mb-16">
+        <section className="mb-16 rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
+            If Your Request Is Actually a Different Occasion
+          </h2>
+          <p className="text-sm text-[var(--text-muted)] mb-5 leading-relaxed">
+            Private events are the right page when the occasion is celebration-led. If the guest
+            really wants proposal timing, dinner-first routing, or a B2B format, the quote becomes
+            faster when we move them to the closest best-fit page.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Yacht Rental",
+                description: "Best when the celebration is actually a proposal with timing and privacy constraints.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "Best when the group wants a private dining format instead of a party-first setup.",
+              },
+              {
+                href: "/corporate-events",
+                title: "Corporate Events",
+                description: "Best when the event has attendee flow, invoicing, or branded business requirements.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                title: "Yacht Charter Istanbul",
+                description: "Best when the group needs a broader yacht comparison before choosing the event package.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+              >
+                <h3 className="font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16 rounded-2xl border border-pink-100 bg-pink-50 p-6">
+          <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
+            What to Send for a Faster Private Event Quote
+          </h2>
+          <p className="text-sm text-[var(--text-muted)] mb-5 leading-relaxed">
+            The fastest private event quotes usually include the basics below. That lets us choose
+            the right yacht size, decoration level, and whether the request belongs on this page or
+            one of the more specific pages above.
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              "Occasion type, preferred date, and the boarding time you want.",
+              "Guest count and whether you need seated dining, standing reception, or open-deck celebration flow.",
+              "Decoration level, DJ needs, catering style, and whether the event needs a photographer or surprise setup.",
+              "If this is a proposal or dinner-led booking, mention that early so we can route it to the best-fit setup.",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-white bg-white p-4 text-sm text-[var(--text-muted)] shadow-sm">
+                <span className="font-bold text-[var(--brand-primary)] mr-2">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Event types */}
+        <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
               What Type of Private Event Are You Planning?
             </h2>
@@ -412,6 +480,25 @@ export default function PrivateEventsPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </section>
+
+          <section className="mb-16 rounded-2xl border border-pink-100 bg-pink-50 p-6">
+            <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
+              What to Send for a Faster Private Event Quote
+            </h2>
+            <div className="grid gap-3 md:grid-cols-2">
+              {[
+                "Occasion type, preferred date, and the expected boarding time.",
+                "Guest count and whether you need space for music, cake, or speeches.",
+                "Decoration level, DJ needs, catering style, and any special surprises.",
+                "Whether the booking should be private-celebration only or include an after-dinner flow.",
+              ].map((item) => (
+                <div key={item} className="rounded-xl border border-white bg-white p-4 text-sm text-[var(--text-muted)] shadow-sm">
+                  <span className="font-bold text-[var(--brand-primary)] mr-2">✓</span>
+                  {item}
+                </div>
+              ))}
             </div>
           </section>
 

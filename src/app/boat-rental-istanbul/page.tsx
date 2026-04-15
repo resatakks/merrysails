@@ -331,7 +331,7 @@ export default function BoatRentalIstanbulPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Boat Rental Intent Fits This Page Best?</h2>
           <p className="text-sm text-gray-700 mb-5">
             Use this page if you want a private boat quote with flexible duration, crewed service, and route planning.
-            If the booking is really for a proposal or a private dinner, jump to the more specific money page instead of forcing a generic rental request.
+            If the booking is really for a proposal or a private dinner, it is better to continue with the more specific page instead of a generic rental request.
           </p>
           <div className="grid gap-3 md:grid-cols-3">
             {[
@@ -386,6 +386,68 @@ export default function BoatRentalIstanbulPage() {
             Book Online
           </Link>
         </div>
+
+        <section className="mb-10 rounded-2xl border border-emerald-100 bg-emerald-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What to Send for a Faster Boat Rental Quote</h2>
+          <p className="text-sm text-gray-700 mb-5">
+            Boat rental leads convert faster when the guest shares the important details up front.
+            This keeps the conversation focused on the right vessel, timing, and add-ons instead of generic availability questions.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              "Date, preferred start time, and total charter duration",
+              "Guest count plus the real occasion: sightseeing, proposal, dinner, birthday, or corporate event",
+              "Preferred vessel level: small yacht, gulet, or higher-end private yacht",
+              "Any add-ons needed: dinner, decoration, photographer, DJ, transfer, or branding",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-white bg-white p-4 text-sm text-gray-700 shadow-sm">
+                <span className="font-bold text-emerald-600 mr-2">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">If Your Request Fits a More Specific Page</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            Boat rental is the broad entry point. If the real booking is a proposal, dinner, or higher-ticket yacht event,
+            sending the lead to the right page usually shortens the quote cycle.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Yacht Rental",
+                description: "Use this when the booking is really about a proposal setup and reveal timing.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "Use this when dinner service and privacy matter more than flexible hourly hire.",
+              },
+              {
+                href: "/yacht-charter-istanbul",
+                title: "Yacht Charter Istanbul",
+                description: "Use this when the guest wants premium yacht selection or event-grade chartering.",
+              },
+              {
+                href: "/private-events",
+                title: "Private Events",
+                description: "Use this when birthdays, anniversaries, or celebrations are the real occasion.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+              >
+                <h3 className="font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* Fleet & Pricing Table */}
         <section className="mb-10">
@@ -496,6 +558,42 @@ export default function BoatRentalIstanbulPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-gray-200 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Choose the Better Page Before You Enquire</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            Generic boat rental intent often splits into a more valuable occasion page. Sending the guest to the right page
+            improves both ranking clarity and quote quality.
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              {
+                href: "/private-events",
+                title: "Private Events",
+                description: "Best for birthdays, friend groups, family gatherings, and private celebrations.",
+              },
+              {
+                href: "/corporate-events",
+                title: "Corporate Events",
+                description: "Best for team events, company hosting, launches, and branded onboard experiences.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "Best for dinner-first demand where food, privacy, and service matter more than hourly hire.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-gray-200 bg-blue-50 p-4 transition-colors hover:border-blue-200 hover:bg-blue-100/50"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -788,7 +886,7 @@ export default function BoatRentalIstanbulPage() {
             Read Before You Book a Boat in Istanbul
           </h2>
           <p className="text-gray-600 mb-4 text-sm">
-            These guides answer the commercial questions people usually ask before requesting a quote:
+            These guides answer the booking questions people usually ask before requesting a quote:
             vessel type, pricing, and whether private hire is the better fit.
           </p>
           <div className="grid md:grid-cols-3 gap-4">

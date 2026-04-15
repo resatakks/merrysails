@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Anchor, Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
 
 const cruiseLinks = [
-  { label: "Sunset Cruise", href: "/bosphorus-sunset-cruise" },
+  { label: "Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
   { label: "Dinner Cruise", href: "/istanbul-dinner-cruise" },
   { label: "Short Cruise", href: "/cruises/bosphorus-sightseeing-cruise" },
   { label: "Yacht Charter", href: "/yacht-charter-istanbul" },
@@ -187,10 +187,10 @@ export default function Footer() {
           <h4 className="text-sm font-bold mb-3 text-[var(--brand-gold)] uppercase tracking-wider">Priority Cruise Pages</h4>
           <div className="grid gap-3 md:grid-cols-4">
             {[
-              { label: "Istanbul Dinner Cruise", href: "/istanbul-dinner-cruise" },
-              { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
-              { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
-              { label: "Bosphorus Cruise", href: "/bosphorus-cruise" },
+              { label: "Proposal Yacht Rental", href: "/proposal-yacht-rental-istanbul" },
+              { label: "Private Dinner Cruise", href: "/private-bosphorus-dinner-cruise" },
+              { label: "Corporate Events", href: "/corporate-events" },
+              { label: "Private Events", href: "/private-events" },
             ].map((link) => (
               <Link
                 key={link.href}

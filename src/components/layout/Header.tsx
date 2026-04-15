@@ -10,7 +10,7 @@ import PromoBanner from "@/components/layout/PromoBanner";
 const navItems = [
   {
     label: "Sunset Cruise",
-    href: "/bosphorus-sunset-cruise",
+    href: "/cruises/bosphorus-sunset-cruise",
   },
   {
     label: "Private Yacht",
@@ -22,6 +22,9 @@ const navItems = [
       { label: "Bachelorette Yacht Party", href: "/cruises/bachelorette-yacht-party" },
       { label: "Wedding Anniversary", href: "/cruises/wedding-anniversary" },
       { label: "Corporate Event Cruise", href: "/cruises/corporate-event-bosphorus-cruise" },
+      { label: "Proposal Yacht Rental", href: "/proposal-yacht-rental-istanbul" },
+      { label: "Private Dinner Cruise", href: "/private-bosphorus-dinner-cruise" },
+      { label: "Private Events", href: "/private-events" },
       { label: "Private Swimming Tour", href: "/cruises/private-yacht-swimming-tour" },
     ],
   },

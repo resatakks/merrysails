@@ -201,6 +201,115 @@ export default function PrivateBosphorusDinnerCruisePage() {
           </div>
         </section>
 
+        <section className="mb-10 rounded-2xl border border-gray-200 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What to Send for a Faster Private Dinner Quote</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            The fastest quotes happen when we know the dining format, the occasion, and whether the
+            request is really a dinner cruise or a more specific event format.
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              "Preferred date, boarding time, and whether you want sunset, post-sunset, or late dinner timing.",
+              "Guest count and whether the booking is for a couple, family, or a larger private group.",
+              "Occasion type: proposal, birthday, anniversary, or private business dinner.",
+              "Dinner expectations: standard menu, premium menu, cake, drinks, flowers, or photographer.",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
+                <span className="font-bold text-blue-600 mr-2">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-blue-200 bg-blue-50 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Private Dinner Plan Fits Best?</h2>
+          <p className="text-gray-700 mb-5 leading-relaxed">
+            This page performs best when the guest already knows they want a private dinner yacht. If the real need is a
+            proposal setup, a broader boat-rental comparison, or a hosted private event, moving to the right page usually
+            gets a faster and more accurate quote.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                href: "/boat-rental-istanbul",
+                title: "Private Couple Dinner",
+                description: "Best for a simple private yacht evening with timing, route, and dinner planning as the main focus.",
+              },
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Dinner Setup",
+                description: "Best if the dinner cruise also needs proposal decoration, photo support, or a surprise plan.",
+              },
+              {
+                href: "/private-events",
+                title: "Birthday or Celebration Dinner",
+                description: "Best for small private groups who need a more occasion-led dinner and entertainment setup.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-100/40"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10 rounded-2xl border border-gray-200 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What to Send for a Faster Quote</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              "Preferred date, preferred boarding time, and whether you want sunset or post-sunset dining.",
+              "Guest count and whether the plan is a proposal, birthday, anniversary, or private celebration.",
+              "Food expectation: standard dinner service, premium menu, cake, or drinks upgrade.",
+              "Any extras such as photographer, violinist, flowers, LED letters, or table styling.",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Choose the Best Occasion Page</h2>
+          <p className="text-gray-600 mb-5 leading-relaxed">
+            Private dinner requests often overlap with proposal, private event, or corporate-event planning. If your plan is more specific than a dinner cruise, these pages are the better match.
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Yacht Rental",
+                description: "Best for guests who need a proposal-first setup, route timing, and decoration support.",
+              },
+              {
+                href: "/private-events",
+                title: "Private Events",
+                description: "Best for birthdays, anniversaries, and small-group private celebrations on board.",
+              },
+              {
+                href: "/corporate-events",
+                title: "Corporate Events",
+                description: "Best for hosted business dinners, executive guest plans, and team entertainment.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:border-blue-300"
+              >
+                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
+                <span className="block text-sm text-gray-600">{item.description}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <div className="bg-gray-900 text-white rounded-xl p-6 mb-10 text-center">
           <p className="mb-3 font-medium text-lg">Get a private dinner yacht quote on WhatsApp</p>
           <a

@@ -71,7 +71,7 @@ const organizationSchema = {
   logo: "https://merrysails.com/images/logo.png",
   image: "https://merrysails.com/og-image.jpg",
   description:
-    "TURSAB A Group licensed Bosphorus cruise operator in Istanbul. Private yacht charters, dinner cruises, sunset cruises and boat tours since 2001.",
+    "TURSAB A Group licensed Bosphorus cruise company in Istanbul. Private yacht charters, dinner cruises, sunset cruises and boat tours since 2001.",
   foundingDate: "2001",
   telephone: "+905370406822",
   email: "info@merrysails.com",
@@ -191,10 +191,10 @@ export default function HomePage() {
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
-            Book by Intent, Not by Guesswork
+            Choose the right Bosphorus experience without guesswork
           </h2>
           <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            These are the three pages that matter most for commercial search intent: shared dinner cruise, private boat rental, and yacht charter for higher-ticket occasions.
+            These are the three pages that matter most when guests compare a shared dinner cruise, a private boat rental, or a higher-end yacht charter.
           </p>
           <div className="grid gap-4 md:grid-cols-3">
             {[
@@ -234,6 +234,168 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-12 bg-[var(--surface-alt)]">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
+            Choose the Right Page for the Occasion
+          </h2>
+          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
+            The booking path becomes clearer when the guest already knows whether the plan is a proposal, private dinner, corporate event, or flexible private celebration.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "Proposal Yacht Rental",
+                description: "For guests comparing private setup, route privacy, and photography-friendly timing.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "Private Dinner Cruise",
+                description: "The stronger fit for couples, families, and private groups who want dinner without sharing the boat.",
+              },
+              {
+                href: "/corporate-events",
+                title: "Corporate Events",
+                description: "For companies that need guest flow, branded setup, and clear event-format planning.",
+              },
+              {
+                href: "/private-events",
+                title: "Private Events",
+                description: "Best for birthdays, anniversaries, and flexible celebrations that need a custom package.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-gray-200 bg-white p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
+                  Open page →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-3">
+            Start With the Occasion, Then Match the Page
+          </h2>
+          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
+            Proposal, private dinner, corporate hosting, and private celebrations should not all
+            land on the same quote path. These are the pages that narrow the choice fastest.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                eyebrow: "Romantic option",
+                title: "Proposal Yacht Rental",
+                description:
+                  "Best when privacy, timing, decoration, and the reveal moment matter more than a generic charter quote.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                eyebrow: "Dinner-led",
+                title: "Private Dinner Cruise",
+                description:
+                  "Best when the booking is really about a private dining experience, not a shared dinner boat.",
+              },
+              {
+                href: "/corporate-events",
+                eyebrow: "B2B / hosted",
+                title: "Corporate Events",
+                description:
+                  "Best for AV, catering, branded setup, and guest-flow planning for company bookings.",
+              },
+              {
+                href: "/private-events",
+                eyebrow: "Celebration-led",
+                title: "Private Events",
+                description:
+                  "Best for birthdays, anniversaries, and flexible celebration formats that need custom package logic.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+              >
+                <p className="text-sm font-semibold text-[var(--brand-primary)] mb-2">{item.eyebrow}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
+                  Open page →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-3">
+            Choose the Right Bosphorus Experience
+          </h2>
+          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
+            If you already know whether you need a yacht charter, boat rental, proposal setup, private dinner, or corporate hosting,
+            these pages will take you to the right option faster.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              {
+                href: "/yacht-charter-istanbul",
+                title: "yacht charter istanbul",
+                description: "Best for higher-ticket private charters, premium crew service, and larger custom packages.",
+              },
+              {
+                href: "/boat-rental-istanbul",
+                title: "boat rental istanbul",
+                description: "Best for lighter private bookings where flexibility matters more than a fully premium yacht-led setup.",
+              },
+              {
+                href: "/proposal-yacht-rental-istanbul",
+                title: "proposal yacht rental",
+                description: "Best when timing, privacy, decoration, and photography planning matter more than a generic boat quote.",
+              },
+              {
+                href: "/private-bosphorus-dinner-cruise",
+                title: "private dinner cruise",
+                description: "Best when the booking is fundamentally about private dining on the Bosphorus rather than a broader event format.",
+              },
+              {
+                href: "/corporate-events",
+                title: "corporate yacht event",
+                description: "Best for B2B hosting, AV setup, guest flow, catering structure, and team or client entertainment.",
+              },
+              {
+                href: "/private-events",
+                title: "birthday / private event boat",
+                description: "Best for birthdays, anniversaries, and flexible celebration formats that need a custom event route.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
+                  Open page →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FeaturedTour tour={tours[0]} />
       <FeaturedTour tour={tours[1]} reverse />
       <FeaturedTour tour={tours[2]} />
@@ -245,7 +407,7 @@ export default function HomePage() {
           <h2 className="text-xl font-semibold text-center mb-6">Industry Standards</h2>
           <div className="space-y-4">
             <blockquote cite="https://www.tursab.org.tr" className="border-l-4 border-[var(--brand-primary)] pl-4 italic text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <p>&quot;TURSAB A Group licensed travel agencies provide comprehensive passenger protection including insurance coverage and transparent pricing. Choosing a licensed operator for boat tours ensures compliance with maritime safety regulations.&quot;</p>
+              <p>&quot;TURSAB A Group licensed travel agencies provide comprehensive passenger protection including insurance coverage and transparent pricing. Choosing a licensed boat-tour company helps ensure compliance with maritime safety regulations.&quot;</p>
               <footer className="text-sm text-gray-500 mt-2 not-italic">&mdash; <cite>TURSAB (Association of Turkish Travel Agencies)</cite></footer>
             </blockquote>
             <blockquote cite="https://www.ktb.gov.tr" className="border-l-4 border-[var(--brand-primary)] pl-4 italic text-gray-600 bg-white py-3 px-4 rounded-r-lg">
