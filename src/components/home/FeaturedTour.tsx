@@ -87,7 +87,7 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
                   className="rounded-[1.35rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <item.icon className="h-4.5 w-4.5 text-[var(--brand-primary)]" />
+                    <item.icon className="h-4 w-4 text-[var(--brand-primary)]" />
                     <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                       {item.label}
                     </span>

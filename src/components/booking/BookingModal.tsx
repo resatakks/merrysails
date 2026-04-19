@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {
@@ -28,6 +28,7 @@ import "react-international-phone/style.css";
 import { motion } from "framer-motion";
 import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
+import { PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 
 interface BookingDetails {
   tourName: string;
@@ -104,10 +105,16 @@ export default function BookingModal({ booking, onClose }: Props) {
   const [reservationId, setReservationId] = useState("");
   const [confirmedTotal, setConfirmedTotal] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [validationMessage, setValidationMessage] = useState("");
+  const [privateTransferRequested, setPrivateTransferRequested] = useState(false);
+  const [showTransferInfo, setShowTransferInfo] = useState(false);
 
   const [touchedName, setTouchedName] = useState(false);
   const [touchedEmail, setTouchedEmail] = useState(false);
   const [touchedPhone, setTouchedPhone] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const phoneFieldRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -140,10 +147,55 @@ export default function BookingModal({ booking, onClose }: Props) {
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneValid = phone.replace(/\D/g, "").length >= 7;
   const isValid = nameValid && emailValid && phoneValid;
+  const sharedTransferSupport =
+    booking.tourSlug === "bosphorus-sunset-cruise" ||
+    booking.tourSlug === "bosphorus-dinner-cruise";
+
+  const focusFirstInvalidField = () => {
+    setTouchedName(true);
+    setTouchedEmail(true);
+    setTouchedPhone(true);
+
+    if (!nameValid) {
+      nameInputRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      nameInputRef.current?.focus();
+      setValidationMessage("Please enter your full name first.");
+      return;
+    }
+
+    if (!emailValid) {
+      emailInputRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      emailInputRef.current?.focus();
+      setValidationMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (!phoneValid) {
+      phoneFieldRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      const phoneInput = phoneFieldRef.current?.querySelector("input");
+      if (phoneInput instanceof HTMLInputElement) {
+        phoneInput.focus();
+      }
+      setValidationMessage("Please add a reachable phone number for your booking.");
+    }
+  };
 
   const handleSubmit = async () => {
-    if (!isValid) return;
+    if (!isValid) {
+      focusFirstInvalidField();
+      return;
+    }
+
+    setValidationMessage("");
     setModalState("loading");
+    const combinedNotes = [
+      message.trim(),
+      privateTransferRequested
+        ? "Private transfer requested. Shared shuttle / meeting-point coordination is understood; quote private transfer separately and confirm after contact."
+        : "",
+    ]
+      .filter(Boolean)
+      .join("\n\n");
 
     const result = await createReservation({
       tourSlug: booking.tourSlug,
@@ -155,7 +207,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       customerPhone: phone.trim(),
       packageName: booking.selectedPackage?.name,
       addOns: booking.selectedAddOns.map((addon) => addon.name),
-      notes: message.trim() || undefined,
+      notes: combinedNotes || undefined,
       honeypot: company,
     });
 
@@ -184,6 +236,7 @@ export default function BookingModal({ booking, onClose }: Props) {
         ? `Package: ${booking.selectedPackage.name} (€${booking.selectedPackage.price}${isPerGroup ? "/group" : "/person"})`
         : `Price: €${booking.basePrice}${isPerGroup ? "/group" : "/person"}`,
       addOnsText ? `Add-ons: ${addOnsText}` : "",
+      privateTransferRequested ? "Extra service: Private transfer requested (to be quoted separately)" : "",
       `Total: €${total}`,
       ``,
       name ? `Name: ${name}` : "",
@@ -194,10 +247,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       .filter(Boolean)
       .join("\n");
 
-    window.open(
-      `https://wa.me/905370406822?text=${encodeURIComponent(lines)}`,
-      "_blank"
-    );
+    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(lines)}`, "_blank");
   };
 
   return (
@@ -237,10 +287,17 @@ export default function BookingModal({ booking, onClose }: Props) {
           {/* Progress indicator */}
           {modalState === "form" && (
             <div className="px-5 pb-4">
-              <div className="flex items-center justify-between">
+              <div className="grid grid-cols-3 gap-3">
                 {steps.map((step, i) => (
-                  <div key={step.num} className="flex items-center flex-1">
-                    <div className="flex items-center gap-2">
+                  <div key={step.num} className="relative flex items-center">
+                    {i < steps.length - 1 && (
+                      <div
+                        className={`absolute left-[calc(50%+1rem)] right-[-0.75rem] top-3.5 h-0.5 rounded ${
+                          step.num < 2 ? "bg-[var(--brand-primary)]" : "bg-[var(--surface-alt)]"
+                        }`}
+                      />
+                    )}
+                    <div className="relative z-10 flex items-center gap-2 rounded-full bg-white pr-2">
                       <div
                         className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
                           step.num <= 2
@@ -255,24 +312,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                         )}
                       </div>
                       <span
-                        className={`text-xs font-medium hidden sm:block ${
-                          step.num <= 2
-                            ? "text-[var(--heading)]"
-                            : "text-[var(--text-muted)]"
+                        className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${
+                          step.num <= 2 ? "text-[var(--heading)]" : "text-[var(--text-muted)]"
                         }`}
                       >
                         {step.label}
                       </span>
                     </div>
-                    {i < steps.length - 1 && (
-                      <div
-                        className={`flex-1 h-0.5 mx-3 rounded ${
-                          step.num < 2
-                            ? "bg-[var(--brand-primary)]"
-                            : "bg-[var(--surface-alt)]"
-                        }`}
-                      />
-                    )}
                   </div>
                 ))}
               </div>
@@ -683,9 +729,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                       Full Name *
                     </label>
                     <input
+                      ref={nameInputRef}
                       type="text"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => {
+                        setName(e.target.value);
+                        if (validationMessage) setValidationMessage("");
+                      }}
                       onBlur={() => setTouchedName(true)}
                       autoComplete="name"
                       className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
@@ -710,9 +760,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                       Email *
                     </label>
                     <input
+                      ref={emailInputRef}
                       type="email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (validationMessage) setValidationMessage("");
+                      }}
                       onBlur={() => setTouchedEmail(true)}
                       autoComplete="email"
                       className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
@@ -732,7 +786,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                   </div>
 
                   {/* Phone */}
-                  <div>
+                  <div ref={phoneFieldRef}>
                     <label className="block text-sm font-medium mb-1.5 text-[var(--heading)]">
                       Phone *
                     </label>
@@ -742,13 +796,18 @@ export default function BookingModal({ booking, onClose }: Props) {
                       onChange={(val) => {
                         setPhone(val);
                         if (!touchedPhone) setTouchedPhone(true);
+                        if (validationMessage) setValidationMessage("");
                       }}
-                      inputClassName="!w-full !px-4 !py-3 !rounded-r-xl !border-2 !border-l-0 !border-[var(--line)] focus:!border-[var(--brand-primary)] focus:!outline-none !transition-colors !text-sm !h-auto"
+                      inputClassName="!h-auto !w-full !rounded-r-xl !border-2 !border-l-0 !border-[var(--line)] !bg-white !px-4 !py-3 !text-sm !transition-colors focus:!border-[var(--brand-primary)] focus:!outline-none"
                       countrySelectorStyleProps={{
                         buttonClassName:
-                          "!px-3 !py-3 !rounded-l-xl !border-2 !border-r-0 !border-[var(--line)] !h-auto",
+                          "!h-auto !rounded-l-xl !border-2 !border-r-0 !border-[var(--line)] !bg-white !px-3 !py-3",
                       }}
                       className="!w-full"
+                      inputProps={{
+                        autoComplete: "tel",
+                        placeholder: "+90 5xx xxx xx xx",
+                      }}
                     />
                     {touchedPhone && !phoneValid && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -757,6 +816,45 @@ export default function BookingModal({ booking, onClose }: Props) {
                       </p>
                     )}
                   </div>
+
+                  {sharedTransferSupport && (
+                    <div className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)]/65 p-4">
+                      <div className="flex items-start gap-3">
+                        <input
+                          id="private-transfer-request"
+                          type="checkbox"
+                          checked={privateTransferRequested}
+                          onChange={(event) => setPrivateTransferRequested(event.target.checked)}
+                          className="mt-1 h-4 w-4 rounded border-[var(--line)] text-[var(--brand-primary)] focus:ring-[var(--brand-primary)]"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <label
+                            htmlFor="private-transfer-request"
+                            className="flex items-center gap-2 text-sm font-semibold text-[var(--heading)]"
+                          >
+                            I want private transfer support
+                            <button
+                              type="button"
+                              onClick={() => setShowTransferInfo((value) => !value)}
+                              className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-[var(--brand-primary)]"
+                              aria-label="Show private transfer details"
+                            >
+                              <Info className="h-3.5 w-3.5" />
+                            </button>
+                          </label>
+                          <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
+                            Shared shuttle / meeting-point coordination is available on this route when scheduled.
+                          </p>
+                          {showTransferInfo && (
+                            <div className="mt-2 rounded-xl border border-[var(--brand-primary)]/15 bg-white px-3 py-2 text-xs leading-relaxed text-[var(--body-text)]">
+                              Shared shuttle service may already be used for the operational route. If you want a private
+                              transfer instead, tick this option and our team will price it separately after contact.
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Special Requests */}
                   <div>
@@ -774,11 +872,15 @@ export default function BookingModal({ booking, onClose }: Props) {
 
                   {/* Submit buttons */}
                   <div className="space-y-2.5 pt-2">
+                    {validationMessage && (
+                      <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">
+                        {validationMessage}
+                      </div>
+                    )}
                     <motion.button
                       onClick={handleSubmit}
-                      disabled={!isValid}
-                      className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                      whileTap={isValid ? { scale: 0.98 } : {}}
+                      className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
+                      whileTap={{ scale: 0.98 }}
                     >
                       <Check className="w-4 h-4" />
                       Confirm Booking — €{total}
@@ -797,6 +899,9 @@ export default function BookingModal({ booking, onClose }: Props) {
                     <Shield className="w-3.5 h-3.5" />
                     Free cancellation up to 24h before the tour &bull; Pay
                     onboard
+                  </div>
+                  <div className="md:hidden text-center text-[11px] text-[var(--text-muted)]">
+                    Need help first? Call or WhatsApp {PHONE_DISPLAY}
                   </div>
                 </div>
               </div>

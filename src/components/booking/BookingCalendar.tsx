@@ -30,6 +30,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import type { PriceMode } from "@/data/tours";
 import SalePrice from "@/components/ui/SalePrice";
+import { MAX_BOOKING_GUESTS } from "@/lib/constants";
 
 interface Props {
   tourSlug: string;
@@ -87,7 +88,7 @@ export default function BookingCalendar({
       : null;
   const safeInitialGuests =
     initialGuests && Number.isFinite(initialGuests)
-      ? Math.max(1, Math.min(20, initialGuests))
+      ? Math.max(1, Math.min(MAX_BOOKING_GUESTS, initialGuests))
       : 2;
 
   const [currentMonth, setCurrentMonth] = useState(safeInitialDate ?? new Date());
@@ -433,6 +434,9 @@ export default function BookingCalendar({
                   <Users className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
                   Guests
                 </label>
+                <p className="text-xs text-[var(--text-muted)]">
+                  A maximum of {MAX_BOOKING_GUESTS} guests can be added in one booking flow.
+                </p>
 
                 {/* Adults */}
                 <div className="flex items-center justify-between">
@@ -457,9 +461,9 @@ export default function BookingCalendar({
                     </span>
                     <button
                       onClick={() =>
-                        setAdults(Math.min(20 - children, adults + 1))
+                        setAdults(Math.min(MAX_BOOKING_GUESTS - children, adults + 1))
                       }
-                      disabled={adults + children >= 20}
+                      disabled={adults + children >= MAX_BOOKING_GUESTS}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
                     >
                       <Plus className="w-3.5 h-3.5" />
@@ -490,9 +494,9 @@ export default function BookingCalendar({
                     </span>
                     <button
                       onClick={() =>
-                        setChildren(Math.min(20 - adults, children + 1))
+                        setChildren(Math.min(MAX_BOOKING_GUESTS - adults, children + 1))
                       }
-                      disabled={adults + children >= 20}
+                      disabled={adults + children >= MAX_BOOKING_GUESTS}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
                     >
                       <Plus className="w-3.5 h-3.5" />
@@ -547,7 +551,7 @@ export default function BookingCalendar({
               >
                 {timeOptions.length > 1 && !normalizedSelectedTime
                   ? "Select a Departure Time"
-                  : "Book Now"}
+                  : "Continue to booking"}
               </motion.button>
 
               {/* WhatsApp */}

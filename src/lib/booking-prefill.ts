@@ -1,3 +1,5 @@
+import { MAX_BOOKING_GUESTS } from "@/lib/constants";
+
 export interface BookingPrefill {
   packageName?: string;
   date?: string;
@@ -25,7 +27,7 @@ export function parseBookingPrefill(
   const guestsValue = Number(getFirstValue(searchParams?.guests));
   const guests =
     Number.isFinite(guestsValue) && guestsValue >= 1
-      ? Math.min(Math.trunc(guestsValue), 20)
+      ? Math.min(Math.trunc(guestsValue), MAX_BOOKING_GUESTS)
       : undefined;
 
   return {

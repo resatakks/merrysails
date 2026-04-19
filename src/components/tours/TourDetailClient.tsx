@@ -23,6 +23,7 @@ import SalePrice from "@/components/ui/SalePrice";
 import TourCard from "@/components/tours/TourCard";
 import SocialProof from "@/components/tours/SocialProof";
 import BestPriceBadge from "@/components/tours/BestPriceBadge";
+import { MAX_BOOKING_GUESTS } from "@/lib/constants";
 
 interface Props {
   tour: Tour;
@@ -86,7 +87,7 @@ export default function TourDetailClient({
 
   const prefilledGuests = useMemo(() => {
     if (!guestsParam || guestsParam < 1) return undefined;
-    return Math.min(guestsParam, 20);
+    return Math.min(guestsParam, MAX_BOOKING_GUESTS);
   }, [guestsParam]);
   const availableAddOns = useMemo(
     () => selectedPackage?.addOns ?? tour.addOns ?? [],
@@ -214,29 +215,29 @@ export default function TourDetailClient({
       </div>
 
       {/* Quick Info Bar — horizontal with dividers */}
-      <div className="flex flex-wrap items-center justify-center gap-0 bg-white rounded-xl border border-[var(--line)] mb-8 divide-x divide-[var(--line)]">
-        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+      <div className="mb-8 grid grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-white md:grid-cols-4">
+        <div className="flex items-center gap-2.5 border-b border-r border-[var(--line)] px-5 py-4 md:border-b-0">
           <Clock className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Duration</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tour.duration}</div>
           </div>
         </div>
-        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+        <div className="flex items-center gap-2.5 border-b border-[var(--line)] px-5 py-4 md:border-b-0 md:border-r">
           <Users className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Max People</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tour.capacity}</div>
           </div>
         </div>
-        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+        <div className="flex items-center gap-2.5 border-r border-[var(--line)] px-5 py-4">
           <CalendarDays className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Availability</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tour.availability || "All Year"}</div>
           </div>
         </div>
-        <div className="flex items-center gap-2.5 px-5 py-4 sm:px-7">
+        <div className="flex items-center gap-2.5 px-5 py-4">
           <Navigation className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Pick-up</div>
@@ -249,7 +250,7 @@ export default function TourDetailClient({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main content */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="order-2 space-y-6 lg:order-1 lg:col-span-2">
           {/* Title & Rating */}
           <div>
             <h1 className="text-2xl md:text-3xl font-bold mb-1">{tour.nameEn}</h1>
@@ -703,8 +704,7 @@ export default function TourDetailClient({
         </div>
 
         {/* Sidebar — sticky booking area with package cards + mobile bar */}
-        <div>
-          <SocialProof tourSlug={tour.slug} />
+        <div className="order-1 lg:order-2">
           <BookingSidebar
           tour={{
             slug: tour.slug,
@@ -730,6 +730,7 @@ export default function TourDetailClient({
           initialGuests={prefilledGuests}
           initialTime={timeParam || undefined}
         />
+          <SocialProof tourSlug={tour.slug} />
         </div>
       </div>
 

@@ -58,10 +58,10 @@ export default function Header() {
         }`}
       >
         <div className="container-main">
-          <div className="flex h-15 items-center justify-between gap-2 sm:h-16 sm:gap-3">
+          <div className="flex h-[3.75rem] items-center justify-between gap-2 sm:h-16 sm:gap-3">
             <Link href="/" className="flex min-w-0 items-center gap-2 shrink">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-primary)] sm:h-10 sm:w-10">
-                <Anchor className="h-4.5 w-4.5 text-white sm:h-5 sm:w-5" />
+                <Anchor className="h-4 w-4 text-white sm:h-5 sm:w-5" />
               </div>
               <div className="min-w-0">
                 <span className="block truncate text-lg font-bold leading-none text-[var(--heading)] sm:text-xl">
@@ -126,7 +126,7 @@ export default function Header() {
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="h-10 w-10 lg:hidden">
-                    <Menu className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                    <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-80 bg-white p-0">

@@ -430,7 +430,7 @@ export default function BookingSidebar({
                   className="px-6 py-3 rounded-full bg-[var(--brand-primary)] text-white font-bold text-sm hover:brightness-110 transition-all shadow-lg"
                   whileTap={{ scale: 0.95 }}
                 >
-                  {isQuote ? "Plan Now" : "Book Now"}
+                  {isQuote ? "Continue" : "Continue Booking"}
                 </motion.button>
               </div>
             </div>
