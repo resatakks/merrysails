@@ -41,7 +41,7 @@ export default function HeroSection() {
       <div className="hero-overlay absolute inset-0" />
 
       {/* Content */}
-      <div className="relative z-10 container-main flex min-h-[78vh] w-full items-end pt-28 pb-14 md:min-h-[84vh] md:pt-36 md:pb-18">
+      <div className="relative z-10 container-main flex min-h-[78vh] w-full items-end pt-24 pb-10 sm:pt-28 sm:pb-12 md:min-h-[84vh] md:pt-36 md:pb-18">
         <div className="w-full max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,44 +53,43 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-4xl font-bold leading-[1.04] text-white md:text-6xl"
+              className="max-w-4xl text-[2.45rem] font-bold leading-[1.02] text-white sm:text-5xl md:text-6xl"
             >
-              Bosphorus Cruise Istanbul
-              <br />
-              <span className="text-[var(--brand-gold)]">Dinner, Sunset &amp; Yacht Charter</span>
+              Bosphorus Dinner Cruise, Sunset Cruise &amp; Yacht Charter
+              <span className="text-[var(--brand-gold)]"> in Istanbul</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="mt-5 max-w-2xl text-base leading-relaxed text-white/82 md:text-lg"
+              className="mt-4 max-w-2xl text-sm leading-relaxed text-white/84 sm:text-base md:text-lg"
             >
-              Choose between a shared dinner cruise, a shared sunset cruise, or a private yacht
-              charter in Istanbul, then book the option that fits your evening best.
+              Compare the 3 core Bosphorus products on one page, then go directly to the exact
+              dinner, sunset, or yacht package that fits your plan.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-8 grid gap-3 md:max-w-4xl md:grid-cols-3"
+              className="mt-6 grid gap-2.5 md:max-w-4xl md:grid-cols-3 md:gap-3"
             >
               {heroProducts.map((product) => (
                 <Link
                   key={product.href}
                   href={product.href}
-                  className="group rounded-[1.45rem] border border-white/16 bg-black/22 px-4 py-4 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-white/26 hover:bg-black/30"
+                  className="group rounded-[1.45rem] border border-white/70 bg-white/92 px-4 py-3.5 shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white"
                 >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/62">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                     {product.meta}
                   </p>
-                  <p className="mt-2 text-base font-semibold leading-snug text-white">
+                  <p className="mt-1.5 text-base font-semibold leading-snug text-[var(--heading)]">
                     {product.title}
                   </p>
-                  <div className="mt-4 flex items-center justify-between gap-3">
+                  <div className="mt-3 flex items-center justify-between gap-3">
                     <p className="text-sm font-bold text-[var(--brand-gold)]">{product.price}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-white/88 transition-colors group-hover:text-white">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] transition-colors group-hover:text-[var(--brand-primary)]">
                       Open page
                       <ArrowRight className="h-4 w-4" />
                     </span>
@@ -103,7 +102,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-8 flex flex-wrap gap-3"
+              className="mt-6 flex flex-wrap gap-3"
             >
               <Link href="/reservation" className="btn-cta text-base !py-3.5 !px-8">
                 Open Reservation Center
@@ -121,7 +120,7 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="mt-8 flex flex-wrap gap-5 text-sm text-white/74"
+              className="mt-8 hidden flex-wrap gap-5 text-sm text-white/74 sm:flex"
             >
               <div className="flex items-center gap-2">
                 <Star className="w-4 h-4 text-[var(--brand-gold)]" />

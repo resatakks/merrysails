@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Anchor, Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
-import { ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_SECONDARY } from "@/lib/constants";
+import { ADDRESS, EMAIL, PHONE_DISPLAY } from "@/lib/constants";
 
 const coreLinks = [
   { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
@@ -44,7 +44,7 @@ const guideLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--brand-dark)] text-white/90 pb-24 lg:pb-8">
+    <footer className="mt-12 bg-[var(--brand-dark)] text-white/90 pb-28 lg:pb-10">
       <div className="container-main pt-16 pb-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
           <div>
@@ -93,13 +93,6 @@ export default function Footer() {
               >
                 <Phone className="h-4 w-4 shrink-0" />
                 {PHONE_DISPLAY}
-              </a>
-              <a
-                href="tel:+905364146605"
-                className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[var(--brand-gold)]"
-              >
-                <Phone className="h-4 w-4 shrink-0" />
-                {PHONE_SECONDARY}
               </a>
               <a
                 href="mailto:info@merrysails.com"

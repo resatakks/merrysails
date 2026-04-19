@@ -12,7 +12,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "Rezervasyon nasıl yapılır?",
-    answer: "Web sitemiz üzerinden online rezervasyon yapabilir, anında onay alabilirsiniz. Alternatif olarak WhatsApp hattımızdan (+90 537 040 68 22) veya email ile de rezervasyon oluşturabilirsiniz. Online ödemeler Stripe ve iyzico üzerinden güvenle işlenir.",
+    answer: "Web sitemizden rezervasyon talebi oluşturabilir, WhatsApp hattımızdan (+90 537 040 68 22) veya email ile de bize ulaşabilirsiniz. Sistem her talep için rezervasyon referansı üretir ve ekibimiz yazılı takip sağlar. Paylaşımlı turlarda ödeme şu an teknede kart veya nakit olarak tamamlanır.",
     category: "Rezervasyon",
   },
   {
@@ -52,7 +52,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
-    answer: "Kredi kartı (Visa, Mastercard, AmEx), banka kartı, Apple Pay, Google Pay ve havale/EFT ile ödeme yapabilirsiniz. Online ödemeler Stripe (uluslararası) ve iyzico (Türk kartları) üzerinden 256-bit SSL şifreleme ile güvenle işlenir.",
+    answer: "Şu an paylaşımlı turlarda ödeme teknede kart veya nakit olarak tamamlanır. Özel yat ve özel organizasyon taleplerinde ödeme zamanı ve yöntemi teklif onayı sırasında yazılı olarak paylaşılır. Gerekirse havale/EFT için de destek verilir.",
     category: "Ödeme",
   },
 ];

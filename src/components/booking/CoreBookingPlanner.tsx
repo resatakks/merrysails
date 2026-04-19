@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Calendar,
+  ChevronDown,
   Clock,
   Minus,
   Plus,
@@ -19,7 +20,17 @@ import {
   getTourPath,
   type Tour,
 } from "@/data/tours";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Calendar as DayPickerCalendar } from "@/components/ui/calendar";
 import SalePrice from "@/components/ui/SalePrice";
+import { MAX_BOOKING_GUESTS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type PlannerVariant = "hero" | "page";
@@ -44,7 +55,7 @@ function getDefaultPackageName(tour: Tour): string {
 }
 
 function clampGuests(value: number): number {
-  return Math.max(1, Math.min(20, value));
+  return Math.max(1, Math.min(MAX_BOOKING_GUESTS, value));
 }
 
 export default function CoreBookingPlanner({
@@ -63,7 +74,7 @@ export default function CoreBookingPlanner({
     () => coreTours.find((tour) => tour.slug === selectedTourSlug) ?? coreTours[0],
     [selectedTourSlug]
   );
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<Date | undefined>(undefined);
   const [guests, setGuests] = useState(2);
 
   if (!selectedTour) {
@@ -77,7 +88,6 @@ export default function CoreBookingPlanner({
     selectedTour.packages?.[0];
 
   const bookingPath = getTourPath(selectedTour);
-  const minDate = format(new Date(), "yyyy-MM-dd");
   const selectedOriginalPrice =
     selectedPackage?.price === selectedTour.priceEur
       ? selectedTour.originalPriceEur
@@ -89,7 +99,7 @@ export default function CoreBookingPlanner({
       params.set("package", selectedPackage.name);
     }
     if (date) {
-      params.set("date", date);
+      params.set("date", format(date, "yyyy-MM-dd"));
     }
     params.set("guests", String(guests));
     params.set("source", source);
@@ -126,7 +136,7 @@ export default function CoreBookingPlanner({
                   heroVariant ? "text-xl md:text-2xl" : "text-2xl md:text-3xl"
                 )}
               >
-                Search the 3 core Bosphorus products
+                Plan your Bosphorus dinner cruise, sunset cruise or yacht charter
               </h2>
               <p
                 className={cn(
@@ -134,9 +144,8 @@ export default function CoreBookingPlanner({
                   heroVariant ? "md:max-w-2xl" : ""
                 )}
               >
-                Start by choosing the Bosphorus experience you want: sunset cruise,
-                dinner cruise, or private yacht charter. Then pick the package, select
-                the date, and continue with your choices already filled in.
+                Start with the product, continue with the right package, then choose your date
+                and guest count. The next page opens with your booking path already prefilled.
               </p>
             </div>
 
@@ -220,22 +229,30 @@ export default function CoreBookingPlanner({
             <Sparkles className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
             Package
           </label>
-          <select
+          <Select
             value={selectedPackageName}
-            onChange={(event) =>
+            onValueChange={(value) =>
               setPackageSelectionByTour((current) => ({
                 ...current,
-                [selectedTour.slug]: event.target.value,
+                [selectedTour.slug]: value,
               }))
             }
-            className="h-12 w-full rounded-2xl border border-[var(--line)] bg-white px-4 text-sm font-medium text-[var(--heading)] outline-none transition-colors focus:border-[var(--brand-primary)]"
           >
-            {(selectedTour.packages ?? []).map((pkg) => (
-              <option key={pkg.name} value={pkg.name}>
-                {pkg.name}
-              </option>
-            ))}
-          </select>
+            <SelectTrigger className="h-12 w-full rounded-2xl border-[var(--line)] bg-white px-4 text-left text-sm font-medium text-[var(--heading)] shadow-none">
+              <SelectValue placeholder="Select package" />
+            </SelectTrigger>
+            <SelectContent className="rounded-2xl border-[var(--line)] bg-white p-2 shadow-xl">
+              {(selectedTour.packages ?? []).map((pkg) => (
+                <SelectItem
+                  key={pkg.name}
+                  value={pkg.name}
+                  className="rounded-xl px-3 py-3 text-sm focus:bg-[var(--surface-alt)]"
+                >
+                  {pkg.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           {selectedPackage && (
             <p className="text-xs leading-relaxed text-[var(--text-muted)]">
               {selectedPackage.description}
@@ -248,13 +265,26 @@ export default function CoreBookingPlanner({
             <Calendar className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
             Preferred Date
           </label>
-          <input
-            type="date"
-            min={minDate}
-            value={date}
-            onChange={(event) => setDate(event.target.value)}
-            className="h-12 w-full rounded-2xl border border-[var(--line)] bg-white px-4 text-sm font-medium text-[var(--heading)] outline-none transition-colors focus:border-[var(--brand-primary)]"
-          />
+          <Popover>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                className="flex h-12 w-full items-center justify-between rounded-2xl border border-[var(--line)] bg-white px-4 text-left text-sm font-medium text-[var(--heading)] outline-none transition-colors hover:border-[var(--brand-primary)]/30"
+              >
+                <span>{date ? format(date, "dd MMM yyyy") : "Select preferred date"}</span>
+                <ChevronDown className="h-4 w-4 text-[var(--text-muted)]" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto rounded-3xl border-[var(--line)] bg-white p-3 shadow-2xl" align="start">
+              <DayPickerCalendar
+                mode="single"
+                selected={date}
+                onSelect={setDate}
+                disabled={{ before: new Date() }}
+                className="rounded-2xl"
+              />
+            </PopoverContent>
+          </Popover>
           <p className="text-xs leading-relaxed text-[var(--text-muted)]">
             Optional. We will carry your date into the booking section.
           </p>
@@ -284,7 +314,7 @@ export default function CoreBookingPlanner({
             <button
               type="button"
               onClick={() => setGuests((value) => clampGuests(value + 1))}
-              disabled={guests >= 20}
+              disabled={guests >= MAX_BOOKING_GUESTS}
               aria-label="Increase guests"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[var(--body-text)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] disabled:cursor-not-allowed disabled:opacity-40"
             >
@@ -292,7 +322,7 @@ export default function CoreBookingPlanner({
             </button>
           </div>
           <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-            Per-person pricing is used for sunset and dinner. Yacht pricing is per boat.
+            Per-person pricing is used for sunset and dinner. Yacht pricing is per boat. Up to {MAX_BOOKING_GUESTS} guests can be prefilled.
           </p>
         </div>
 

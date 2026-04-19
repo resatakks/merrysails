@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone } from "lucide-react";
 import {
   getBookingMode,
   getPriceSuffix,
@@ -42,17 +41,9 @@ export default function MobileBookingBar() {
             className="mt-0.5"
           />
         </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <a
-            href="https://wa.me/905370406822"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-11 h-11 rounded-xl bg-[var(--brand-whatsapp)] text-white"
-          >
-            <Phone className="w-5 h-5" />
-          </a>
+        <div className="shrink-0">
           <Link href={bookHref}>
-            <button className="btn-cta text-sm !py-2.5 !px-5">Book Now</button>
+            <button className="btn-cta text-sm !py-2.5 !px-4">Continue Booking</button>
           </Link>
         </div>
       </div>

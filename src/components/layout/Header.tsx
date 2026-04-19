@@ -58,16 +58,16 @@ export default function Header() {
         }`}
       >
         <div className="container-main">
-          <div className="flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 shrink-0">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-primary)]">
-                <Anchor className="h-5 w-5 text-white" />
+          <div className="flex h-15 items-center justify-between gap-2 sm:h-16 sm:gap-3">
+            <Link href="/" className="flex min-w-0 items-center gap-2 shrink">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-primary)] sm:h-10 sm:w-10">
+                <Anchor className="h-4.5 w-4.5 text-white sm:h-5 sm:w-5" />
               </div>
-              <div>
-                <span className="text-xl font-bold text-[var(--heading)]">
+              <div className="min-w-0">
+                <span className="block truncate text-lg font-bold leading-none text-[var(--heading)] sm:text-xl">
                   Merry<span className="text-[var(--brand-primary)]">Sails</span>
                 </span>
-                <span className="mt-[-2px] block text-[10px] leading-none text-[var(--text-muted)]">
+                <span className="mt-0.5 block text-[9px] leading-none text-[var(--text-muted)] sm:text-[10px]">
                   Merry Tourism
                 </span>
               </div>
@@ -107,7 +107,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
               <a
                 href="tel:+905370406822"
                 className="hidden items-center gap-2 text-sm font-medium text-[var(--body-text)] transition-colors hover:text-[var(--brand-primary)] md:flex"
@@ -117,13 +117,16 @@ export default function Header() {
               </a>
 
               <Link href="/reservation">
-                <button className="btn-cta text-sm !py-2.5 !px-5">Reserve Online</button>
+                <button className="btn-cta text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5">
+                  <span className="sm:hidden">Reserve</span>
+                  <span className="hidden sm:inline">Reserve Online</span>
+                </button>
               </Link>
 
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="lg:hidden">
-                    <Menu className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" className="h-10 w-10 lg:hidden">
+                    <Menu className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-80 bg-white p-0">

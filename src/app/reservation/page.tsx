@@ -5,7 +5,7 @@ import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import ReservationSearch from "./ReservationSearch";
 
 export const metadata: Metadata = {
-  title: "Reservation Center | Start or Track Your Booking",
+  title: "Bosphorus Cruise Reservation Center | Start or Track Your Booking",
   robots: { index: false, follow: false },
 };
 

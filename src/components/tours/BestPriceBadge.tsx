@@ -12,7 +12,7 @@ export default function BestPriceBadge() {
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 1.5, type: "spring", stiffness: 300, damping: 25 }}
-      className="fixed bottom-24 left-4 z-40"
+      className="fixed bottom-6 left-24 z-40 hidden lg:block"
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
       onClick={() => setShowTooltip((v) => !v)}

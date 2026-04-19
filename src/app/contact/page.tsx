@@ -47,7 +47,6 @@ const contactSchema = {
   },
   contactPoint: [
     { "@type": "ContactPoint", telephone: "+905370406822", contactType: "reservations", availableLanguage: ["English", "Turkish"] },
-    { "@type": "ContactPoint", telephone: "+905364146605", contactType: "customer support", availableLanguage: ["English", "Turkish"] },
   ],
 };
 
@@ -70,7 +69,6 @@ export default function ContactPage() {
           <div className="space-y-4">
             {[
               { icon: Phone, label: "Phone", value: "+90 537 040 68 22", href: "tel:+905370406822" },
-              { icon: Phone, label: "Phone 2", value: "+90 536 414 66 05", href: "tel:+905364146605" },
               { icon: Phone, label: "WhatsApp", value: "+90 537 040 68 22", href: "https://wa.me/905370406822" },
               { icon: Mail, label: "Email", value: "info@merrysails.com", href: "mailto:info@merrysails.com" },
               { icon: MapPin, label: "Address", value: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul" },
