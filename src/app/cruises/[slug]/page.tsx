@@ -1,11 +1,20 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { tours, getTourBySlug } from "@/data/tours";
-import { getDiscountedPrice } from "@/lib/promo";
+import {
+  getTourBySlug,
+  getTourPath,
+  isPricingVisible,
+  tours,
+} from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
+import { parseBookingPrefill } from "@/lib/booking-prefill";
 
 const SITE_URL = "https://merrysails.com";
+const OWNER_REDIRECTS: Record<string, string> = {
+  "bosphorus-dinner-cruise": "/istanbul-dinner-cruise",
+  "yacht-charter-in-istanbul": "/yacht-charter-istanbul",
+};
 
 /* Keyword mapping from CSV research (volume/KD) for each tour slug */
 const tourKeywords: Record<string, string[]> = {
@@ -97,24 +106,24 @@ const tourKeywords: Record<string, string[]> = {
 /* Unique FAQ data per tour for FAQPage JSON-LD structured data */
 const tourFaqs: Record<string, { question: string; answer: string }[]> = {
   "bosphorus-sunset-cruise": [
-    { question: "How long is the Bosphorus sunset cruise?", answer: "The Bosphorus sunset cruise lasts approximately 2.5 hours. Departure times are adjusted seasonally — 17:00 in winter and 18:00 in summer — to ensure you experience the sunset at its most spectacular moment over the strait." },
-    { question: "What time does the sunset cruise depart?", answer: "The sunset cruise departs from Eminönü Pier at 17:00 during winter months and 18:00 during summer months. We recommend arriving 15 minutes before departure to board comfortably." },
-    { question: "What is included in the Bosphorus sunset cruise?", answer: "The cruise includes welcome drinks, an open bar with soft drinks, a snack platter, live commentary about the landmarks, and free WiFi on board. Alcoholic beverages and hotel transfers are available as add-ons." },
+    { question: "How long is the Bosphorus sunset cruise?", answer: "The Bosphorus sunset cruise lasts approximately 2 hours and is timed around the daily sunset window." },
+    { question: "What time does the sunset cruise depart?", answer: "Departure time changes with the season so the cruise can sail through golden hour and the early blue-hour return." },
+    { question: "What is included in the Bosphorus sunset cruise?", answer: "The verified public structure shows two shared options on the same route. Both include the 2-hour cruise, live guide support, multilingual audio guide access, tea, Turkish coffee, lemonade, water, fruit, and snacks. The wine option adds 2 glasses of wine per guest." },
     { question: "When is the best time of year for a sunset cruise in Istanbul?", answer: "The best time for a sunset cruise is from April to October, when the weather is warm and the sunsets are most dramatic. However, winter sunsets over the Bosphorus can be equally stunning with fewer crowds." },
-    { question: "How much does the Bosphorus sunset cruise cost?", answer: "The Bosphorus sunset cruise starts from €40 per person. The price includes welcome drinks, soft drinks, snack platter, live commentary, and WiFi." },
+    { question: "How much does the Bosphorus sunset cruise cost?", answer: "The verified live sunset ladder currently starts at EUR 34 for the Without Wine option and EUR 40 for the wine-served option." },
   ],
   "bosphorus-dinner-cruise": [
-    { question: "What is on the Bosphorus dinner cruise menu?", answer: "The dinner cruise features a 4-course Turkish dinner: traditional mezes (hummus, ezme, stuffed vine leaves), fresh seasonal salad, your choice of grilled lamb, chicken, or fish kebab, and classic baklava with Turkish tea. Unlimited local drinks (beer, wine, rakı, soft drinks) are included." },
-    { question: "How long is the Istanbul dinner cruise?", answer: "The Bosphorus dinner cruise lasts approximately 3.5 hours, departing at 19:30 from Eminönü Pier. This gives you plenty of time to enjoy the full dinner, entertainment shows, and illuminated Bosphorus views." },
+    { question: "How is the Bosphorus dinner cruise structured?", answer: "The dinner cruise is structured as four shared evening package choices: Silver Soft Drinks, Silver Alcoholic Drinks, Gold Soft Drinks, and Gold Unlimited Alcohol." },
+    { question: "How long is the Istanbul dinner cruise?", answer: "The shared Bosphorus dinner cruise lasts approximately 3.5 hours and follows a central evening sailing route." },
     { question: "Is there a dress code for the dinner cruise?", answer: "There is no strict dress code, but smart casual attire is recommended. Most guests dress comfortably yet presentably. Flat, non-slip shoes are advisable for walking on deck." },
-    { question: "How much does the Istanbul dinner cruise cost?", answer: "The Standard package starts at €65 per person and includes hotel pickup and drop-off, 4-course dinner, unlimited local drinks, and all entertainment. The Gold package at €95 offers reserved panoramic seating and a premium menu with imported spirits." },
-    { question: "Is hotel pickup included in the dinner cruise?", answer: "Yes, complimentary hotel pickup and drop-off is included in both the Standard (€65) and Gold (€95) packages. Pickup is available from major hotel areas including Sultanahmet, Taksim, and Beyoğlu." },
+    { question: "How much does the Istanbul dinner cruise cost?", answer: "The public package ladder currently starts from EUR 30 per guest and tops out at EUR 90 per guest." },
+    { question: "What changes between the packages?", answer: "The route stays the same, but Silver uses standard seating, Gold uses stage-close VIP tables, Silver Alcoholic adds a limited local-alcohol service, and Gold Unlimited Alcohol adds unlimited local plus imported alcoholic drinks." },
   ],
   "yacht-charter-in-istanbul": [
-    { question: "How many guests can a private yacht hold in Istanbul?", answer: "Our yacht charter options accommodate up to 15 guests. We offer three packages: Essential (standard yacht), Premium (larger yacht), and VIP (high-end luxury yacht), all with professional captain and crew." },
+    { question: "How many guests can a private yacht hold in Istanbul?", answer: "The public Essential, Premium, and VIP starter packages are positioned around a private 2-person setup, but larger groups can still be matched to the right yacht and extras plan depending on the vessel assigned." },
     { question: "Can I customize the yacht cruise route?", answer: "Absolutely! One of the biggest advantages of a private yacht charter is complete route flexibility. Your captain will work with you to create a custom itinerary — whether you want to cruise past specific landmarks, stop for swimming, or focus on sunset views." },
-    { question: "Is catering available on the yacht charter?", answer: "The VIP package (€680) includes a food plate. Additionally, you can add a 4-course meal for €35 per person, champagne for €50, or unlimited alcoholic drinks for €50–65 per person. Birthday cakes are also available from €35." },
-    { question: "How much does yacht rental cost in Istanbul?", answer: "Yacht rental in Istanbul starts at €280 for the Essential package (2-hour private cruise with crew). The Premium package is €380 with a larger yacht and snacks, while the VIP package at €680 includes a luxury yacht with food and maximum deck space." },
+    { question: "Is catering available on the yacht charter?", answer: "Yes. The yacht charter page includes a visible add-on structure for meals, drinks, transfer, entertainment, cake, and extra service requests." },
+    { question: "How much does yacht rental cost in Istanbul?", answer: "The public yacht charter packages currently start from EUR 280 for Essential, EUR 380 for Premium, and EUR 680 for VIP." },
     { question: "How far in advance should I book a yacht charter?", answer: "We recommend booking at least 48 hours in advance to secure your preferred date and yacht. For peak season (June–September) and weekends, booking 1–2 weeks ahead is advisable. Last-minute bookings are possible subject to availability." },
   ],
   "bosphorus-sightseeing-cruise": [
@@ -139,81 +148,81 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
     { question: "What is the best time to take this cruise?", answer: "This daytime tour departs at 09:30 and takes advantage of the best daylight hours for sightseeing and photography. It runs year-round, though spring (April–June) and autumn (September–November) offer the most comfortable weather." },
   ],
   "private-bosphorus-sunset-cruise": [
-    { question: "What makes the private sunset cruise different from the regular sunset cruise?", answer: "The private sunset cruise gives you an entire yacht exclusively for your group (up to 15 guests), with a professional captain who charts the perfect route to catch the sunset. Unlike the shared cruise, you control the pace, music, and stops." },
+    { question: "What makes the private sunset cruise different from the regular sunset cruise?", answer: "The private sunset cruise gives you an entire yacht exclusively for your booking, with the yacht size matched to your group and a professional captain who times the route around golden hour. Unlike the shared cruise, you control the pace, music, and overall atmosphere." },
     { question: "What is the best season for a private sunset cruise?", answer: "Private sunset cruises run year-round with departure times adjusted to match the sunset. Summer (June–August) offers the longest golden hours, while spring and autumn provide dramatic sky colors. Winter sunsets are brief but can be equally spectacular." },
-    { question: "What photography tips do you have for the sunset cruise?", answer: "Arrive early to capture the golden hour light on landmarks. The best angles are near Maiden's Tower and under the Bosphorus Bridge. Bring a polarizing filter to reduce water glare. Our crew can suggest the best spots, and a professional photographer can be added for €190." },
-    { question: "How much does a private Bosphorus sunset cruise cost?", answer: "The private sunset cruise starts at €280 for the Essential package (2-hour cruise). The Premium package (€380) includes a larger yacht and snacks, while VIP (€680) features a luxury yacht with food plate and spacious deck." },
-    { question: "Can I add extras like a photographer or violinist?", answer: "Yes, popular add-ons include a professional photographer (€190), violinist (€180), unlimited alcoholic drinks (€50–65 per person), and extra hours (€125–300). These can be arranged at booking or up to 48 hours before departure." },
+    { question: "What photography tips do you have for the sunset cruise?", answer: "Arrive early to capture the golden-hour light on the landmarks, and ask the crew to slow the route near Maiden's Tower or the Bosphorus Bridge when the light is strongest. A professional photographer can also be arranged if you want the session handled as part of the proposal." },
+    { question: "How much does a private Bosphorus sunset cruise cost?", answer: "Private sunset charters are quoted after we confirm the yacht class, guest count, sunset slot, and any extras such as photography, drinks service, or live music. The public yacht-charter ladder can be used as a baseline, but the final sunset proposal depends on the selected vessel and timing." },
+    { question: "Can I add extras like a photographer or violinist?", answer: "Yes. Photography, live music, drinks service, decoration, and extra time can all be added to the private sunset charter and are confirmed in the proposal before payment." },
   ],
   "corporate-event-bosphorus-cruise": [
     { question: "How many guests can the corporate event cruise accommodate?", answer: "Our corporate event cruise accommodates up to 50 guests. For larger groups, we can arrange multiple vessels or a larger charter. Our event coordinator will work with you to find the perfect setup for your group size." },
-    { question: "What corporate event packages are available?", answer: "We offer three packages: Essential (€280) with A/V equipment and basic amenities, Premium (€380) with a larger yacht and catering options, and VIP (€680) with a luxury yacht, full catering, dedicated event coordinator, and branding options." },
-    { question: "Is A/V equipment available on the cruise?", answer: "Yes, all corporate packages include A/V equipment. The Essential package includes a projector and sound system, while Premium and VIP packages offer enhanced A/V with wireless microphones and high-speed WiFi for presentations and live streaming." },
-    { question: "Can you arrange catering for corporate events?", answer: "Yes, catering is available as part of Premium and VIP packages or as an add-on to the Essential package. Options range from cocktail receptions and finger foods to full sit-down dinners. We can accommodate dietary requirements with advance notice." },
+    { question: "What corporate event packages are available?", answer: "Corporate events are planned as private, quote-led formats. Once we confirm the guest count, event objective, AV needs, and catering brief, we match the right yacht or event vessel and build the service plan around it." },
+    { question: "Is A/V equipment available on the cruise?", answer: "Yes. Presentation screens, wireless microphones, speakers, and other AV support can be arranged when the vessel and event format are confirmed." },
+    { question: "Can you arrange catering for corporate events?", answer: "Yes. Corporate catering can be built as a cocktail reception, buffet, or seated dinner, with halal, vegetarian, vegan, and other dietary requests confirmed in advance." },
     { question: "How far in advance should we book a corporate event cruise?", answer: "We recommend booking corporate events at least 2–4 weeks in advance to allow time for coordination, custom branding, and catering arrangements. For large events (30+ guests) or peak season dates, 4–6 weeks is advisable." },
   ],
   "romantic-marriage-proposal": [
     { question: "How private is the marriage proposal yacht experience?", answer: "The experience is completely private — the yacht is exclusively yours with a maximum of 6 guests. Our discreet crew ensures your special moment is intimate and undisturbed, with the iconic Maiden's Tower and Bosphorus sunset as your backdrop." },
-    { question: "What proposal decorations are included?", answer: "The Essential package (€280) includes table and yacht decoration with snacks and fruits. Premium (€380) adds rose petals and a champagne toast. VIP (€680) features full romantic decoration with a luxury yacht and spacious private deck. Additional decoration is available from €50–75." },
-    { question: "Can I hire a photographer for the proposal?", answer: "Yes, a professional photographer can be added for €190. They will discreetly capture every moment of your proposal, including candid reactions and posed photos with the Bosphorus backdrop. Photo delivery is typically within 3–5 days." },
-    { question: "What proposal packages are available?", answer: "Three packages are available: Essential (€280) with intimate yacht decoration and snacks, Premium (€380) with rose petals and champagne, and VIP (€680) with full luxury decoration. Add-ons include photographer, violinist, custom cake, and VIP car pickup." },
+    { question: "What proposal decorations are included?", answer: "Proposal decoration is planned around the moment you want to create. The setup can stay intimate with table styling and candles, or scale into a fuller romantic build with rose petals, signage, flowers, music, and celebration service." },
+    { question: "Can I hire a photographer for the proposal?", answer: "Yes. A discreet photographer can be arranged to capture the proposal and the follow-up couple shots on the Bosphorus, with the coverage style confirmed before the cruise." },
+    { question: "What proposal packages are available?", answer: "Proposal bookings are handled as private, quote-based plans. We first confirm the yacht class, timing, route, decoration direction, and extras such as photographer, violinist, transfer, or celebration cake, then prepare the final proposal." },
     { question: "When is the best time for a proposal cruise?", answer: "Most proposals are timed with sunset for the most romantic atmosphere, especially near the Maiden's Tower. The crew coordinates departure time with sunset schedules. Weekday evenings offer the calmest waters and quietest setting." },
   ],
   "yacht-birthday-party": [
-    { question: "How many guests can attend a yacht birthday party?", answer: "Our yacht birthday party accommodates up to 25 guests. We offer Essential (€280), Premium (€380 with larger yacht and LED lighting), and VIP (€680 with luxury yacht and premium sound system) packages." },
-    { question: "Can I bring my own cake or order one through you?", answer: "Both options are available! We offer custom birthday cakes — small for €35 and large for €60. Alternatively, you're welcome to bring your own cake on board at no extra charge." },
-    { question: "Is a DJ included in the birthday party?", answer: "The yacht includes a Bluetooth sound system in all packages, so you can play your own music. A professional DJ can be added for €250. Other entertainment options include a belly dancer (€180–190) and professional photographer (€190)." },
-    { question: "How much does a yacht birthday party cost in Istanbul?", answer: "Yacht birthday parties start at €280 for the Essential package (2-hour cruise with sound system). Premium is €380 with a larger yacht and LED lighting, and VIP is €680 with a luxury yacht, food plate, and premium sound." },
-    { question: "Can the party be extended beyond 2 hours?", answer: "Yes, all birthday party packages can be extended. Extra hours cost between €125 and €300 depending on the yacht size. We also offer food add-ons like a 4-course meal at €35 per person and unlimited alcoholic drinks at €50–65 per person." },
+    { question: "How many guests can attend a yacht birthday party?", answer: "Guest capacity depends on the yacht assigned to the event. Smaller birthday cruises work beautifully for intimate groups, while larger vessels can be matched for bigger celebrations." },
+    { question: "Can I bring my own cake or order one through you?", answer: "Both options are available. You can bring your own cake with advance notice, or we can arrange a custom celebration cake as part of the event plan." },
+    { question: "Is a DJ included in the birthday party?", answer: "A Bluetooth sound system is available for playlists, and professional DJ or live-music support can be arranged if you want a fuller party setup." },
+    { question: "How much does a yacht birthday party cost in Istanbul?", answer: "Birthday events are quoted after we confirm the yacht size, guest count, route timing, decoration direction, and whether the event needs catering, cake, DJ, or photography support." },
+    { question: "Can the party be extended beyond 2 hours?", answer: "Yes. Extended charters can be arranged, and the final timing is confirmed together with the yacht assignment, route plan, and any food or drinks service." },
   ],
   "yacht-weddings": [
-    { question: "What wedding decoration options are available on the yacht?", answer: "Basic decoration is included in the Essential package (€680). Premium (€1,200) includes full decoration with flowers and elegant setup. VIP (€2,500) features premium decoration with custom themes, a wedding coordinator, and bespoke arrangements tailored to your vision." },
+    { question: "What wedding decoration options are available on the yacht?", answer: "Wedding decoration is planned around the guest count, ceremony style, and whether the event needs a simple romantic setup or a fuller reception-style production with flowers, table styling, and coordination support." },
     { question: "How many guests can a yacht wedding accommodate?", answer: "Our yacht wedding service accommodates up to 50 guests. For intimate ceremonies, smaller yachts provide a cozy atmosphere, while the VIP luxury mega yacht is perfect for grand celebrations with full entertainment." },
-    { question: "What wedding packages are available?", answer: "Three packages are available: Essential (€680, 4-hour cruise with basic decoration), Premium (€1,200 with full decoration, catering, DJ, and photographer), and VIP (€2,500 with a luxury mega yacht, premium catering, full entertainment, wedding coordinator, and video recording)." },
-    { question: "Can we have live music at our yacht wedding?", answer: "Yes, the Premium package includes a DJ, and additional live music options can be arranged. Popular choices include a violinist, traditional Turkish musicians, or a live band. All entertainment is coordinated by our events team." },
-    { question: "How much does a yacht wedding cost in Istanbul?", answer: "Yacht weddings start at €680 for the Essential package (4-hour cruise with decoration). Premium is €1,200 with catering and entertainment, and VIP is €2,500 for the complete luxury experience with coordinator and video recording." },
+    { question: "What wedding packages are available?", answer: "Wedding events are structured as private, quote-based plans. Once the team understands your ceremony format, guest count, decoration brief, and catering or entertainment needs, it can match the right yacht and service build." },
+    { question: "Can we have live music at our yacht wedding?", answer: "Yes. DJs, violinists, traditional musicians, and live-band setups can all be arranged depending on the vessel, guest count, and ceremony format." },
+    { question: "How much does a yacht wedding cost in Istanbul?", answer: "Yacht weddings are quoted after confirming the guest count, vessel scale, ceremony and dining format, decoration level, and whether entertainment or full coordination is required." },
   ],
   "wedding-anniversary": [
-    { question: "What anniversary decoration is included?", answer: "The Essential package (€280) includes anniversary-themed yacht decoration. Premium (€380) adds champagne toast and enhanced décor with snacks and fruits. VIP (€680) features full romantic decoration with a luxury yacht, gourmet dinner, and premium service." },
+    { question: "What anniversary decoration is included?", answer: "Anniversary decoration is planned around the mood you want. It can stay simple and elegant with flowers, candles, and table styling, or scale into a fuller romantic setup with music, dessert, and celebration service." },
     { question: "How many guests can attend the anniversary cruise?", answer: "The wedding anniversary cruise accommodates 2 to 10 guests, making it perfect for an intimate celebration with your partner or a small gathering with close family and friends." },
-    { question: "What anniversary packages are available?", answer: "We offer Essential (€280, 2-hour cruise with anniversary decoration), Premium (€380 with larger yacht, snacks, and champagne toast), and VIP (€680 with luxury yacht, gourmet dinner, full decoration, and premium service)." },
-    { question: "Can we have live music for our anniversary?", answer: "Yes, a violinist can be added for €180 to create an intimate musical atmosphere. A DJ is also available for €250. Both pair beautifully with the romantic Bosphorus setting." },
-    { question: "How much does a wedding anniversary cruise cost?", answer: "Anniversary cruises start at €280 for the Essential package. The Premium package is €380 with champagne and enhanced comfort, while VIP at €680 includes a gourmet dinner and luxury yacht for the ultimate celebration." },
+    { question: "What anniversary packages are available?", answer: "Anniversary cruises are handled as private, quote-based experiences. We first confirm the yacht style, guest count, timing, dining direction, and any celebration touches, then build the final plan around that brief." },
+    { question: "Can we have live music for our anniversary?", answer: "Yes. A violinist, guitarist, DJ, or other live-music format can be arranged depending on the atmosphere you want and the yacht selected for the cruise." },
+    { question: "How much does a wedding anniversary cruise cost?", answer: "Anniversary pricing is prepared after we confirm the yacht class, route length, guest count, decoration level, and whether the cruise needs dining, dessert, transfer, or live-music support." },
   ],
   "bachelorette-yacht-party": [
-    { question: "How many guests can attend a bachelorette yacht party?", answer: "The bachelorette yacht party accommodates up to 20 guests. Choose from Essential (€280), Premium (€380 with bachelorette decorations and larger yacht), or VIP (€680 with luxury yacht and full themed decoration)." },
-    { question: "Are bachelorette decorations included?", answer: "The Premium package (€380) includes bachelorette-themed decorations. The VIP package (€680) features a full decoration theme with custom touches. Custom decorations beyond the package can also be arranged as an add-on." },
+    { question: "How many guests can attend a bachelorette yacht party?", answer: "Guest capacity depends on the yacht assigned to the booking. Standard private-yacht formats work well for smaller bridal groups, and larger themed events can be matched with a bigger vessel." },
+    { question: "Are bachelorette decorations included?", answer: "Bachelorette decoration is arranged according to the event brief. We can keep it light with table styling and themed details or build a fuller party look with signage, balloons, flowers, and photo moments." },
     { question: "Can we have music and a DJ on board?", answer: "All packages include a Bluetooth sound system for your own playlists. A professional DJ can be added for €250 to keep the party energy high as you cruise past Istanbul's skyline." },
-    { question: "How much does a bachelorette yacht party cost?", answer: "Bachelorette parties start at €280 for the Essential package (2-hour cruise with sound system). Premium is €380 with bachelorette decorations and snacks, and VIP is €680 with a luxury yacht and full themed decoration." },
-    { question: "What food and drink options are available?", answer: "Tea, coffee, and water are included in all packages. You can add unlimited alcoholic drinks (€50–65 per person), a 4-course meal (€35 per person), or snack platters. The VIP package includes a food plate. Custom catering requests are welcome." },
+    { question: "How much does a bachelorette yacht party cost?", answer: "Bachelorette events are quoted after we confirm the yacht size, guest count, route timing, decoration level, and whether the booking needs catering, open-bar service, DJ, or photography support." },
+    { question: "What food and drink options are available?", answer: "Food and drink service is built around the event plan. We can arrange snack platters, cocktail-style service, seated meals, non-alcoholic drinks, or fuller celebration beverage plans depending on the yacht and the party brief." },
   ],
   "private-bosphorus-dinner-yacht-cruise": [
-    { question: "What is served on the private dinner yacht cruise?", answer: "A carefully prepared 4-course Turkish dinner is served on deck: traditional mezes, fresh seafood, grilled specialties, and traditional desserts — all made with locally sourced ingredients. The Premium package adds wine pairing, and VIP includes a personal chef." },
+    { question: "What is served on the private dinner yacht cruise?", answer: "The private dinner menu is arranged around Turkish mezes, salad, a main-course choice, dessert, and the beverage style you want for the evening. The exact dining plan is confirmed according to the yacht, guest count, and occasion." },
     { question: "How long is the private dinner cruise?", answer: "The private dinner yacht cruise lasts 3 hours, departing at 19:00 or 20:00 from Kuruçeşme Marina. This allows ample time for a relaxed multi-course dinner while cruising the illuminated Bosphorus." },
     { question: "How many guests can join the private dinner cruise?", answer: "The private dinner yacht cruise accommodates up to 12 guests, ensuring an intimate and exclusive dining experience on the water with personalized service from the crew." },
-    { question: "How much does a private dinner cruise cost?", answer: "The Essential package starts at €380 for a 3-hour private cruise with 4-course dinner. Premium (€550) adds wine pairing and expanded dessert selection. VIP (€850) features a luxury yacht with premium spirits and personal chef." },
+    { question: "How much does a private dinner cruise cost?", answer: "Private dinner cruises are quoted after we confirm the yacht class, route duration, guest count, and whether the evening needs a simple dinner flow or a more elaborate dining and celebration setup." },
     { question: "Is the dinner cruise suitable for special occasions?", answer: "Absolutely! The private dinner cruise is ideal for anniversaries, proposals, birthdays, and intimate celebrations. Candlelit setup is included, and the illuminated Bosphorus skyline provides a magical backdrop for any special occasion." },
   ],
   "private-bosphorus-lunch-yacht-cruise": [
-    { question: "What is included in the private lunch yacht cruise?", answer: "All packages include a private yacht with professional crew, Turkish lunch served on board, and tea, coffee, and water. Premium (€380) adds an expanded menu with fruits, and VIP (€680) features a gourmet menu with premium beverages." },
+    { question: "What is included in the private lunch yacht cruise?", answer: "The private lunch cruise includes the yacht, professional crew, and an onboard lunch setup matched to the guest profile and the style of the cruise. Tea, coffee, and water can be included, and the meal direction is finalized before the booking is confirmed." },
     { question: "How long is the private lunch cruise?", answer: "The private lunch yacht cruise is a 2-hour experience departing at 12:00 from Kuruçeşme Marina. The midday timing offers the best daylight for sightseeing and photography along the Bosphorus." },
     { question: "Is the lunch cruise suitable for families?", answer: "Yes, the private lunch cruise is very family-friendly. The daytime schedule, calm waters, and spacious deck make it comfortable for guests of all ages. A swimming stop can be included in your route." },
-    { question: "How much does the private lunch yacht cruise cost?", answer: "The lunch yacht cruise starts at €280 for the Essential package. Premium is €380 with a larger yacht and expanded menu, and VIP is €680 featuring a luxury yacht with gourmet menu and premium beverages." },
+    { question: "How much does the private lunch yacht cruise cost?", answer: "Lunch charters are quoted after we confirm the yacht size, guest count, route timing, and whether the cruise needs a light lunch, a fuller meal setup, or additional swimming or celebration stops." },
     { question: "Can I combine the lunch cruise with swimming?", answer: "Yes! Your captain can include a swimming stop in the itinerary, typically at calm coves in the upper Bosphorus. The yacht is equipped with a swimming ladder for easy water access. Just let us know when booking." },
   ],
   "bosphorus-sightseeing-yacht-cruise": [
     { question: "What landmarks will I see on the private sightseeing yacht cruise?", answer: "You'll see all the Bosphorus highlights including Dolmabahçe Palace, Maiden's Tower, Ortaköy Mosque, Rumeli Fortress, Bosphorus Bridge, and charming fishing villages. Your captain can customize stops based on your interests." },
     { question: "How is this different from the shared sightseeing cruise?", answer: "Unlike the shared cruise, the private sightseeing yacht gives you complete freedom — your own yacht, flexible stops, custom pace, and the ability to linger at landmarks or detour to hidden spots that larger boats cannot access." },
-    { question: "How many guests can join the private sightseeing cruise?", answer: "The private sightseeing yacht accommodates up to 15 guests. All packages include tea, coffee, water, and a professional crew who knows every landmark and hidden gem along the Bosphorus." },
-    { question: "How much does a private sightseeing yacht cruise cost?", answer: "The Essential package starts at €280 for a 2-hour private cruise covering all landmarks. Premium (€380) offers a larger yacht with snacks, and VIP (€680) features a luxury yacht with food plate and premium service." },
+    { question: "How many guests can join the private sightseeing cruise?", answer: "Guest capacity depends on the yacht assigned to your booking. All private sightseeing charters include tea, coffee, water, and a professional crew who knows every landmark and hidden gem along the Bosphorus, and larger groups can be matched with a bigger vessel." },
+    { question: "How much does a private sightseeing yacht cruise cost?", answer: "Private sightseeing charters are quoted after we confirm the yacht class, guest count, route length, and whether the cruise needs extras such as guide support, snacks, or a stronger celebration setup." },
     { question: "When is the best time for a sightseeing yacht cruise?", answer: "Daytime cruises offer the best visibility for landmarks and photography, especially in the morning. However, you can choose any departure time. Late afternoon combines sightseeing with golden hour light for stunning photos." },
   ],
   "private-yacht-swimming-tour": [
     { question: "What is the swimming tour route on the Bosphorus?", answer: "The yacht heads to the upper Bosphorus near the Black Sea entrance, where waters are calmer and crystal clear. Your captain knows the best swimming spots — secluded coves, calm bays, and scenic stretches ideal for swimming." },
     { question: "What safety measures are in place for swimming?", answer: "All yachts are equipped with swimming ladders, life jackets, and safety equipment. Your professional crew monitors conditions and selects the safest spots with calm currents. Life rings and first aid kits are always on board." },
-    { question: "What should I bring on the swimming tour?", answer: "Bring swimwear, a towel, sunscreen, and sunglasses. Water shoes are recommended for rocky areas. The yacht provides tea, coffee, water, and snacks. Premium and VIP packages include additional amenities like water toys and BBQ." },
+    { question: "What should I bring on the swimming tour?", answer: "Bring swimwear, a towel, sunscreen, and sunglasses. Water shoes are helpful for rocky areas. The yacht can be set up with drinks, snacks, and any extra comfort items confirmed in advance." },
     { question: "When is the swimming season on the Bosphorus?", answer: "The swimming season runs from June through September, when water temperatures range from 20°C to 25°C. July and August offer the warmest water. Tours depart at 10:00 or 14:00 from Kuruçeşme Marina." },
-    { question: "How much does the private yacht swimming tour cost?", answer: "The swimming tour starts at €280 for the Essential 3-hour package with swimming stops and crew. Premium (€380) adds water toys and snacks. VIP (€680) includes a luxury yacht with BBQ on board and full water sports equipment." },
+    { question: "How much does the private yacht swimming tour cost?", answer: "Swimming charters are quoted after we confirm the yacht size, guest count, route length, swimming-stop plan, and whether the day needs snacks, lunch, or additional water-activity support." },
   ],
   "full-day-istanbul-old-city-tour": [
     { question: "What historical sites are included in the old city tour?", answer: "The tour covers Istanbul's most iconic sites: Hagia Sophia, Blue Mosque (Sultan Ahmed Mosque), Topkapi Palace, the Grand Bazaar, and the ancient Hippodrome. A professional guide provides detailed historical commentary at each location." },
@@ -253,48 +262,54 @@ export function generateStaticParams() {
 const metaOverrides: Record<string, { title: string; description: string }> = {
   "bosphorus-sightseeing-cruise": {
     title: "Bosphorus Sightseeing Cruise Istanbul 2026 — €15 | Book Online",
-    description: "Book a short Bosphorus cruise in Istanbul for just €15. 1.5-hour sightseeing tour past palaces, mosques & both bridges. 4.9 rating. Audio guide in 12 languages. Best price guarantee — book online.",
+    description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with an audio guide in 12 languages.",
   },
   "bosphorus-sunset-cruise": {
-    title: "Bosphorus Sunset Cruise Istanbul 2026 — €40 | Book Online",
-    description: "Book the best Bosphorus sunset cruise in Istanbul for €40. 2.5-hour golden hour experience with drinks & snacks. 4.9 rating from 800+ reviews. Free cancellation — book online today.",
+    title: "Bosphorus Sunset Cruise Istanbul 2026 — From EUR 34 | Reserve Direct",
+    description: "Book the Bosphorus sunset cruise in Istanbul from EUR 34. Two shared 2-hour sunset options on the same route: Without Wine and With Wine, with snacks, drinks, and landmark views on the water.",
   },
   "wedding-anniversary": {
-    title: "Anniversary Yacht Cruise Istanbul 2026 — From €280 | Book Online",
-    description: "Celebrate your anniversary on a private yacht in Istanbul. Romantic Bosphorus cruise with decoration & sunset views. 4.9 rating. Best price guarantee — book online.",
+    title: "Anniversary Yacht Cruise Istanbul 2026 | Private Bosphorus Celebration",
+    description: "Celebrate your anniversary on a private yacht in Istanbul with a romantic Bosphorus cruise, decoration options, and sunset views.",
   },
   "romantic-marriage-proposal": {
-    title: "Marriage Proposal Yacht Istanbul 2026 — €280 | Book Online",
-    description: "Plan the perfect proposal on a private Bosphorus yacht. Roses, candles & Maiden's Tower backdrop. 5.0 rating. Photographer available. Book online — best price guarantee.",
+    title: "Marriage Proposal Yacht Istanbul 2026 | Private Bosphorus Proposal",
+    description: "Private Bosphorus yacht for a proposal with roses, candles, a Maiden's Tower backdrop, and optional photography support.",
   },
   "bosphorus-dinner-cruise": {
-    title: "Istanbul Bosphorus Dinner Cruise 2026 — €65 All-Inclusive | Book Online",
-    description: "Book the best dinner cruise in Istanbul for €65. 4-course Turkish dinner, belly dance, live show & hotel pickup included. 4.9 rating (312 reviews). Best price guarantee — book online.",
+    title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from EUR 30 | Reserve Direct",
+    description: "Book the Bosphorus dinner cruise in Istanbul from EUR 30. Shared 3.5-hour evening cruise with Silver and Gold package choices, package-based drinks, and hotel pickup support.",
   },
   "yacht-charter-in-istanbul": {
-    title: "Private Yacht Charter Istanbul 2026 — From €280 | Book Online",
-    description: "Rent a private yacht in Istanbul from €280. Custom Bosphorus route with professional crew. Perfect for birthdays, proposals & corporate events. Best price guarantee — book online.",
+    title: "Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | Book Online",
+    description: "Book yacht charter in Istanbul from EUR 280 per yacht. Choose Essential, Premium, or VIP and expand the charter with meals, drinks, transfer, and event add-ons.",
   },
   "corporate-event-bosphorus-cruise": {
-    title: "Corporate Event Cruise Istanbul 2026 — Bosphorus Yacht | Book Online",
-    description: "Host your corporate event on the Bosphorus. A/V equipment, catering & branding options for up to 50 guests. From €280. TURSAB licensed since 2001. Book online.",
+    title: "Corporate Event Cruise Istanbul 2026 | Bosphorus Yacht Venue",
+    description: "Host your corporate event on the Bosphorus with A/V, catering, branding, and private-yacht planning support for business groups. TURSAB licensed since 2001.",
   },
   "istanbul-princes-island-tour": {
     title: "Princes Islands Tour Istanbul 2026 — €45 Full Day | Book Online",
-    description: "Visit the car-free Princes Islands from Istanbul. Full-day tour with ferry, lunch & guided island exploration. €45 per person. Best price guarantee — book online.",
+    description: "Visit the car-free Princes Islands from Istanbul on a full-day tour with ferry, lunch, and guided island stops.",
   },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const ownerRedirect = OWNER_REDIRECTS[slug];
   const tour = getTourBySlug(slug);
   if (!tour) return { title: "Tour Not Found" };
 
   const override = metaOverrides[slug];
-  const discountedPrice = getDiscountedPrice(tour.priceEur);
-  const title = override?.title ?? `${tour.nameEn} — From €${discountedPrice} | Book Online`;
-  const description = override?.description ?? `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Starting from €${discountedPrice}/person. Free cancellation. Book your ${tour.nameEn} in Istanbul today.`;
-  const url = `${SITE_URL}/cruises/${slug}`;
+  const showPricing = isPricingVisible(tour);
+  const title = showPricing
+    ? override?.title ?? `${tour.nameEn} — From €${tour.priceEur} | MerrySails`
+    : `${tour.nameEn} | MerrySails Service Page`;
+  const description = showPricing
+    ? override?.description ??
+      `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Book your ${tour.nameEn} in Istanbul today.`
+    : `${tour.description} Explore the service structure, highlights, and best-fit use cases for ${tour.nameEn} in Istanbul.`;
+  const url = ownerRedirect ? `${SITE_URL}${ownerRedirect}` : `${SITE_URL}${getTourPath(tour)}`;
   const keywords = tourKeywords[slug] || [
     tour.nameEn.toLowerCase(), "bosphorus cruise", "istanbul boat tour",
   ];
@@ -330,10 +345,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function TourDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function TourDetailPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const { slug } = await params;
+  const resolvedSearchParams = await searchParams;
+  const ownerRedirect = OWNER_REDIRECTS[slug];
+  if (ownerRedirect) redirect(ownerRedirect);
   const tour = getTourBySlug(slug);
   if (!tour) notFound();
+  const showPricing = isPricingVisible(tour);
 
   const related = tours.filter((t) => t.slug !== slug && t.category === tour.category).slice(0, 4);
 
@@ -344,7 +369,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     name: tour.nameEn,
     description: tour.description,
     touristType: "Leisure",
-    url: `${SITE_URL}/cruises/${tour.slug}`,
+    url: `${SITE_URL}${getTourPath(tour)}`,
     image: tour.image,
     duration: (() => {
       const h = tour.duration.match(/(\d+)\.?(\d*)\s*hour/i);
@@ -362,22 +387,26 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     provider: {
       "@id": `${SITE_URL}/#organization`,
     },
-    offers: {
-      "@type": "Offer",
-      price: getDiscountedPrice(tour.priceEur),
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      validFrom: "2026-01-01",
-      priceValidUntil: "2026-12-31",
-      url: `${SITE_URL}/cruises/${tour.slug}`,
-      hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: "TR",
-        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: 1,
-        returnFees: "https://schema.org/FreeReturn",
-      },
-    },
+    ...(showPricing
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: tour.priceEur,
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            validFrom: "2026-01-01",
+            priceValidUntil: "2026-12-31",
+            url: `${SITE_URL}${getTourPath(tour)}`,
+            hasMerchantReturnPolicy: {
+              "@type": "MerchantReturnPolicy",
+              applicableCountry: "TR",
+              returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+              merchantReturnDays: 1,
+              returnFees: "https://schema.org/FreeReturn",
+            },
+          },
+        }
+      : {}),
     itinerary: {
       "@type": "ItemList",
       itemListElement: tour.highlights.map((h, i) => ({
@@ -394,12 +423,12 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       { "@type": "ListItem", position: 2, name: "Cruises", item: `${SITE_URL}/cruises` },
-      { "@type": "ListItem", position: 3, name: tour.nameEn, item: `${SITE_URL}/cruises/${tour.slug}` },
+      { "@type": "ListItem", position: 3, name: tour.nameEn, item: `${SITE_URL}${getTourPath(tour)}` },
     ],
   };
 
   // FAQPage JSON-LD schema (unique per tour)
-  const faqs = tourFaqs[slug];
+  const faqs = showPricing ? tourFaqs[slug] : tour.faq;
   const faqSchema = faqs
     ? {
         "@context": "https://schema.org",
@@ -442,7 +471,11 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
             <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
           </nav>
 
-          <TourDetailClient tour={tour} related={related} />
+          <TourDetailClient
+            tour={tour}
+            related={related}
+            bookingPrefill={parseBookingPrefill(resolvedSearchParams)}
+          />
         </div>
       </div>
     </>

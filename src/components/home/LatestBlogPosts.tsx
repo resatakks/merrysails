@@ -3,51 +3,60 @@ import Image from "next/image";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 
-const latestPosts = blogPosts.slice(0, 4);
+const featuredCommercialSlugs = [
+  "istanbul-sunset-cruise-experience",
+  "istanbul-dinner-cruise-price-guide-2026",
+  "bosphorus-cruise-boarding-points-guide-2026",
+  "corporate-yacht-event-planning-istanbul",
+];
+
+const latestPosts = featuredCommercialSlugs
+  .map((slug) => blogPosts.find((post) => post.slug === slug))
+  .filter((post): post is (typeof blogPosts)[number] => Boolean(post));
 
 const commercialNextSteps = [
   {
     href: "/yacht-charter-istanbul",
-    title: "Ready for a private yacht instead of a general guide?",
-    description: "Use the yacht charter page when you want to compare route, crew setup, and onboard service in one place.",
+    title: "Yacht Charter Istanbul for private crews and onboard service",
+    description: "Private yacht charter keeps route, crew, and service details in one place for higher-intent bookings.",
   },
   {
     href: "/private-bosphorus-dinner-cruise",
-    title: "Want a dinner cruise with a private setup?",
-    description: "The private dinner page is the better fit when you want a reserved yacht, meal service, and a calmer evening plan.",
+    title: "Private Bosphorus Dinner Cruise for a reserved evening",
+    description: "Reserved yacht dining, meal service, and a calmer Bosphorus evening stay in one place.",
   },
   {
     href: "/proposal-yacht-rental-istanbul",
-    title: "Planning a proposal or special moment?",
-    description: "The proposal page keeps the route, timing, photo flow, and celebration details focused on one goal.",
+    title: "Proposal Yacht Rental Istanbul for the reveal moment",
+    description: "Timing, privacy, photo flow, and celebration details stay centered on the proposal.",
   },
   {
     href: "/corporate-events",
-    title: "Hosting a company or client event?",
-    description: "For team hosting, client entertainment, or brand events, the corporate page explains the setup more clearly.",
+    title: "Corporate Events for client hosting and team nights",
+    description: "Company hosting, branded setup, catering, and guest flow stay organized for group bookings.",
   },
 ];
 
 const searchIntentShortcuts = [
   {
     href: "/boat-rental-istanbul",
-    title: "Boat rental option",
-    description: "Choose this page when you want a practical private boat plan without moving into a full yacht charter setup.",
+    title: "Boat Rental Istanbul for a lighter private brief",
+    description: "A practical private boat plan without moving into a full yacht charter setup.",
   },
   {
     href: "/yacht-charter-istanbul",
-    title: "Yacht charter option",
-    description: "Choose this page when crew service, route planning, and a fully private yacht matter most.",
+    title: "Yacht Charter Istanbul for private service and route planning",
+    description: "Crew service, route planning, and a fully private yacht stay at the center.",
   },
   {
     href: "/private-bosphorus-dinner-cruise",
-    title: "Dinner or sunset option",
-    description: "This page explains the meal flow, timing, and private evening setup in more useful detail.",
+    title: "Private Bosphorus Dinner Cruise for a calmer evening",
+    description: "Meal flow, timing, and private evening setup stay in focus.",
   },
   {
-    href: "/private-events",
-    title: "Birthday and celebration option",
-    description: "Private event plans work better on a page that focuses on guests, decoration, timing, and celebration flow.",
+    href: "/proposal-yacht-rental-istanbul",
+    title: "Proposal Yacht Rental Istanbul for a focused reveal",
+    description: "Guests who want privacy, timing, and photo flow land on the proposal setup quickly.",
   },
 ];
 
@@ -58,11 +67,12 @@ export default function LatestBlogPosts() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            Latest Blog Posts & Travel Guides
+            Guides That Help You Choose the Right Cruise
           </h2>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Expert tips, insider knowledge, and detailed guides to help you plan
-            the perfect Bosphorus cruise and Istanbul experience.
+            These articles answer the questions people usually ask before booking
+            a sunset cruise, dinner cruise, private yacht, or corporate yacht
+            event in Istanbul.
           </p>
         </div>
 
@@ -124,11 +134,11 @@ export default function LatestBlogPosts() {
         <div className="mt-10 rounded-[2rem] border border-[var(--line)] bg-white p-6 md:p-8 shadow-sm">
           <div className="max-w-3xl mb-6">
             <h3 className="text-2xl md:text-3xl font-bold mb-3">
-              Start with a guide, then move to the page that matches your cruise plan
+              Need a more specific private plan?
             </h3>
             <p className="text-[var(--text-muted)]">
-              Travel guides help you compare options, but the next step should feel more specific than a general article.
-              These shortcuts take you to the pages built around charter, dinner, proposal, and company-event planning.
+              If your evening is already taking shape, these shortcuts point to
+              the most relevant private setup.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -141,7 +151,7 @@ export default function LatestBlogPosts() {
                 <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
                 <p className="text-sm text-[var(--text-muted)] mb-4">{item.description}</p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)]">
-                  Open this page
+                  See details
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -152,11 +162,11 @@ export default function LatestBlogPosts() {
         <div className="mt-8 rounded-[2rem] border border-[var(--line)] bg-white p-6 md:p-8 shadow-sm">
           <div className="max-w-3xl mb-6">
             <h3 className="text-2xl md:text-3xl font-bold mb-3">
-              Pick the page that matches the kind of cruise you want
+              Explore the experience that matches your plan
             </h3>
             <p className="text-[var(--text-muted)]">
-              Some guests want a practical boat rental, some want a full yacht charter, and others want a dinner or celebration plan.
-              Choosing the more specific page early makes the next step faster and clearer.
+              Some guests want a simpler boat rental, a private dinner, or a
+              celebration setup rather than a standard shared cruise.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -169,7 +179,7 @@ export default function LatestBlogPosts() {
                 <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
                 <p className="text-sm text-[var(--text-muted)] mb-4">{item.description}</p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)]">
-                  View this option
+                  See details
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -183,7 +193,7 @@ export default function LatestBlogPosts() {
             href="/blog"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white font-semibold text-sm hover:shadow-lg transition-all"
           >
-            View All Blog Posts
+            View All Guides & Blog Posts
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

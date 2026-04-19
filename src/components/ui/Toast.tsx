@@ -5,6 +5,7 @@ import {
   useContext,
   useState,
   useCallback,
+  useEffect,
   useRef,
   type ReactNode,
 } from "react";
@@ -114,8 +115,15 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     }, 5000);
   }, []);
 
-  // Register the global singleton so `toast.success()` works anywhere
-  registerGlobal(addToast);
+  useEffect(() => {
+    registerGlobal(addToast);
+
+    return () => {
+      if (globalAdd === addToast) {
+        globalAdd = null;
+      }
+    };
+  }, [addToast]);
 
   const dismiss = useCallback((id: string) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));

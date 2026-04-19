@@ -15,8 +15,14 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import TourCard from "@/components/tours/TourCard";
-import type { Tour } from "@/data/tours";
-import { getDiscountedPrice } from "@/lib/promo";
+import {
+  getBookingMode,
+  getPriceSuffix,
+  getTourPath,
+  isPricingVisible,
+  type Tour,
+} from "@/data/tours";
+import SalePrice from "@/components/ui/SalePrice";
 
 /* -- Constants -- */
 
@@ -41,7 +47,7 @@ const sortOptions: { label: string; value: SortOption }[] = [
 /* -- Helpers -- */
 
 function getDisplayPrice(tour: Tour) {
-  return getDiscountedPrice(tour.priceEur);
+  return isPricingVisible(tour) ? tour.priceEur : Number.POSITIVE_INFINITY;
 }
 
 /* -- Component -- */
@@ -297,11 +303,14 @@ const categoryLabel: Record<string, string> = {
 };
 
 function TourListItem({ tour }: { tour: Tour }) {
-  const discountedPrice = getDiscountedPrice(tour.priceEur);
+  const showPricing = isPricingVisible(tour);
+  const href = getTourPath(tour);
+  const bookingMode = getBookingMode(tour);
+  const priceSuffix = getPriceSuffix(tour);
 
   return (
     <Link
-      href={`/cruises/${tour.slug}`}
+      href={href}
       className="group flex bg-white rounded-2xl overflow-hidden border border-[var(--line)] hover:shadow-xl hover:border-[var(--brand-primary)]/20 transition-all duration-300"
     >
       {/* Image */}
@@ -367,18 +376,23 @@ function TourListItem({ tour }: { tour: Tour }) {
       {/* Right -- price + CTA */}
       <div className="w-44 shrink-0 border-l border-[var(--line)] p-5 lg:p-6 flex flex-col items-end justify-center gap-3">
         <div className="text-right">
-          <span className="block text-sm text-[var(--body-text)] line-through opacity-50">
-            €{tour.priceEur}
-          </span>
-          <span className="block text-2xl font-bold text-[var(--heading)]">
-            €{discountedPrice}
-          </span>
-          <span className="text-xs text-[var(--body-text)] opacity-40">
-            per person
-          </span>
+          {showPricing ? (
+            <SalePrice
+              price={tour.priceEur}
+              originalPrice={tour.originalPriceEur}
+              suffix={priceSuffix === "/group" ? "per group" : "per person"}
+              align="right"
+              size="md"
+              showBadge={Boolean(tour.originalPriceEur)}
+            />
+          ) : (
+            <span className="block text-sm font-semibold text-[var(--heading)]">
+              Tailor-made plan
+            </span>
+          )}
         </div>
         <span className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[var(--brand-primary)] text-white text-sm font-semibold group-hover:shadow-lg group-hover:shadow-[var(--brand-primary)]/25 transition-all duration-200">
-          Explore
+          {bookingMode === "quote" ? "Plan Service" : "Explore"}
         </span>
       </div>
     </Link>

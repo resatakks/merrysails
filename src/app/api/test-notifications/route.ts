@@ -3,19 +3,23 @@ import { sendEmail } from "@/lib/email";
 import { notifyNewReservation } from "@/lib/telegram/notifications";
 
 export async function GET(req: NextRequest) {
-  // Temporary: accept both local and a hardcoded debug key
+  if (process.env.ENABLE_TEST_NOTIFICATIONS_ROUTE !== "true") {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
   const secret = req.nextUrl.searchParams.get("secret");
-  if (secret !== process.env.CRON_SECRET && secret !== "debug-mry-2026") {
-    return NextResponse.json({ error: "Unauthorized", hint: "CRON_SECRET mismatch" }, { status: 401 });
+  const expectedSecret = process.env.CRON_SECRET;
+
+  if (!expectedSecret) {
+    return NextResponse.json({ error: "Server misconfiguration" }, { status: 503 });
+  }
+
+  if (secret !== expectedSecret) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const results: Record<string, unknown> = {
     timestamp: new Date().toISOString(),
-    env: {
-      GMAIL_USER: process.env.GMAIL_USER || "NOT_SET",
-      GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? `SET (${process.env.GMAIL_APP_PASSWORD.length} chars)` : "NOT_SET",
-      TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN ? "SET" : "NOT_SET",
-    },
   };
 
   // Test email

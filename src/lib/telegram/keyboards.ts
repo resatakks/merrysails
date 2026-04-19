@@ -1,5 +1,17 @@
 // Telegram Inline Keyboards — MerrySails
 import type { InlineKeyboardMarkup, InlineKeyboardButton, SailsReservation } from "./types";
+import {
+  getReservationDetailUrl,
+  getReservationInvoiceUrl,
+  getReservationVoucherUrl,
+  getTourUrlBySlug,
+} from "@/lib/reservation-links";
+
+interface ReservationActionOptions {
+  phone?: string | null;
+  reservationId?: string;
+  tourSlug?: string;
+}
 
 export function startQuickActions(): InlineKeyboardMarkup {
   return {
@@ -31,7 +43,10 @@ export function reservationListButtons(reservations: SailsReservation[]): Inline
   return { inline_keyboard: buttons };
 }
 
-export function reservationActions(id: string, phone?: string): InlineKeyboardMarkup {
+export function reservationActions(
+  id: string,
+  options: ReservationActionOptions = {}
+): InlineKeyboardMarkup {
   const rows: InlineKeyboardButton[][] = [];
   rows.push([
     { text: "✅ Onayla", callback_data: `approve_${id}` },
@@ -40,27 +55,80 @@ export function reservationActions(id: string, phone?: string): InlineKeyboardMa
   ]);
   rows.push([{ text: "📋 Detay Gör", callback_data: `detail_${id}` }]);
 
-  if (phone) {
-    const cleanPhone = phone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
-    rows.push([{ text: "💬 WhatsApp", url: `https://wa.me/${cleanPhone}` }]);
+  const reservationLinks: InlineKeyboardButton[] = [];
+  if (options.reservationId) {
+    reservationLinks.push({
+      text: "📄 Rezervasyon",
+      url: getReservationDetailUrl(options.reservationId),
+    });
+    reservationLinks.push({
+      text: "🧾 Fatura",
+      url: getReservationInvoiceUrl(options.reservationId),
+    });
+    reservationLinks.push({
+      text: "🎟️ Voucher",
+      url: getReservationVoucherUrl(options.reservationId),
+    });
   }
+  if (reservationLinks.length > 0) rows.push(reservationLinks);
+
+  const contactLinks: InlineKeyboardButton[] = [];
+  if (options.phone) {
+    const cleanPhone = options.phone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
+    contactLinks.push({ text: "💬 WhatsApp", url: `https://wa.me/${cleanPhone}` });
+  }
+  if (options.tourSlug) {
+    contactLinks.push({
+      text: "🌐 Tur Sayfası",
+      url: getTourUrlBySlug(options.tourSlug),
+    });
+  }
+  if (contactLinks.length > 0) rows.push(contactLinks);
+
   return { inline_keyboard: rows };
 }
 
-export function reservationDetailActions(id: string, phone?: string): InlineKeyboardMarkup {
+export function reservationDetailActions(
+  id: string,
+  options: ReservationActionOptions = {}
+): InlineKeyboardMarkup {
   const rows: InlineKeyboardButton[][] = [];
   rows.push([
     { text: "✅ Onayla", callback_data: `approve_${id}` },
     { text: "🏁 Tamamla", callback_data: `complete_${id}` },
     { text: "❌ İptal", callback_data: `cancel_${id}` },
   ]);
-  const linkRow: InlineKeyboardButton[] = [];
-  if (phone) {
-    const cleanPhone = phone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
-    linkRow.push({ text: "💬 WhatsApp", url: `https://wa.me/${cleanPhone}` });
+
+  const reservationLinks: InlineKeyboardButton[] = [];
+  if (options.reservationId) {
+    reservationLinks.push({
+      text: "📄 Rezervasyon",
+      url: getReservationDetailUrl(options.reservationId),
+    });
+    reservationLinks.push({
+      text: "🧾 Fatura",
+      url: getReservationInvoiceUrl(options.reservationId),
+    });
+    reservationLinks.push({
+      text: "🎟️ Voucher",
+      url: getReservationVoucherUrl(options.reservationId),
+    });
   }
-  linkRow.push({ text: "🌐 Site", url: "https://merrysails.com" });
-  if (linkRow.length > 0) rows.push(linkRow);
+  if (reservationLinks.length > 0) rows.push(reservationLinks);
+
+  const contactLinks: InlineKeyboardButton[] = [];
+  if (options.phone) {
+    const cleanPhone = options.phone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
+    contactLinks.push({ text: "💬 WhatsApp", url: `https://wa.me/${cleanPhone}` });
+  }
+  if (options.tourSlug) {
+    contactLinks.push({
+      text: "🌐 Tur Sayfası",
+      url: getTourUrlBySlug(options.tourSlug),
+    });
+  }
+  if (contactLinks.length > 0) rows.push(contactLinks);
+
   return { inline_keyboard: rows };
 }
 

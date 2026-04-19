@@ -3,21 +3,21 @@ import Link from "next/link";
 import { Anchor, Award, Users, Ship, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About MerrySails — TURSAB Licensed Cruise Operator Since 2001",
+  title: "About MerrySails — TURSAB-Licensed Bosphorus Cruises Since 2001",
   description:
-    "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001. 50,000+ guests, professional guides, best Bosphorus cruise experience.",
+    "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001, offering Bosphorus cruises, private yacht charters, and guided boat tours.",
   keywords: [
     "merrysails about",
     "merry tourism istanbul",
     "TURSAB licensed travel agency",
     "bosphorus cruise company",
-    "istanbul boat tour operator",
+    "istanbul boat tour company",
   ],
   alternates: { canonical: "https://merrysails.com/about" },
   openGraph: {
-    title: "About MerrySails — TURSAB Licensed Cruise Operator",
+    title: "About MerrySails — TURSAB-Licensed Bosphorus Cruises",
     description:
-      "TURSAB-licensed since 2001. 50,000+ happy guests, professional guides, and the best Bosphorus cruise experience in Istanbul.",
+      "TURSAB-licensed since 2001. Learn about MerrySails, the Bosphorus cruise and yacht division of Merry Tourism in Istanbul.",
     url: "https://merrysails.com/about",
     type: "website" as const,
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
@@ -28,7 +28,7 @@ const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "About MerrySails",
-  description: "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001. 50,000+ guests, professional guides, best Bosphorus cruise experience.",
+  description: "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001, offering Bosphorus cruises, private yacht charters, and guided boat tours.",
   url: "https://merrysails.com/about",
   mainEntity: {
     "@type": "TravelAgency",
@@ -37,7 +37,7 @@ const aboutSchema = {
     alternateName: "Merry Tourism",
     foundingDate: "2001-01-01",
     numberOfEmployees: { "@type": "QuantitativeValue", minValue: 20 },
-    slogan: "Istanbul's Trusted Bosphorus Cruise Company Since 2001",
+    slogan: "Bosphorus Cruises in Istanbul Since 2001",
     knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
     award: "TURSAB A Group License",
   },
@@ -61,11 +61,11 @@ export default function AboutPage() {
       <div className="container-main">
         {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">About MerrySails — Istanbul&apos;s Trusted Bosphorus Cruise Company</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">About MerrySails — Bosphorus Cruises by Merry Tourism</h1>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg">
-            Operated by Merry Tourism, a TURSAB-licensed A Group travel agency, we&apos;ve been
-            offering Bosphorus boat tours, sunset cruises, dinner cruises, and private
-            yacht charter services in Istanbul for over 23 years.
+            MerrySails is part of Merry Tourism, a TURSAB-licensed A Group travel agency.
+            Since 2001, we have offered Bosphorus boat tours, sunset cruises, dinner
+            cruises, and private yacht charters in Istanbul.
           </p>
         </div>
 
@@ -80,18 +80,17 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4">Our Story — Bosphorus Cruise Experts Since 2001</h2>
+            <h2 className="text-2xl font-bold mb-4">Our Story — Bosphorus Cruises Since 2001</h2>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Since 2001, Merry Tourism has been one of Istanbul&apos;s most trusted names in
-              Bosphorus cruises, yacht charter, and boat tour services. What started as a
-              small family operation with a single boat has grown into a fleet of modern
-              vessels serving over 50,000 happy travelers.
+              Since 2001, Merry Tourism has focused on Bosphorus cruises, yacht charters,
+              and boat tours in Istanbul. What started as a small family operation with a
+              single boat has grown into a fleet of modern vessels serving more than 50,000 guests.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              As a TURSAB-licensed A Group travel agency, we take pride in offering transparent
-              pricing, professional service, and authentic Turkish hospitality. Our team of
-              experienced captains and multilingual tourist guides ensures every guest enjoys
-              a safe, comfortable, and memorable Istanbul Bosphorus cruise experience.
+              As a TURSAB-licensed A Group travel agency, we focus on clear pricing,
+              careful service, and authentic Turkish hospitality. Our experienced captains
+              and multilingual tourist guides help each guest enjoy a safe and comfortable
+              Bosphorus cruise in Istanbul.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed">
               From romantic Bosphorus sunset cruises to spectacular dinner cruises with Turkish
@@ -130,7 +129,7 @@ export default function AboutPage() {
             },
             {
               title: "Transparent Pricing",
-              description: "No hidden fees, no surprises. The price you see is the price you pay. Book direct for the best rates available.",
+              description: "The price shown on each experience page covers the listed inclusions. If you add extras, we confirm them before payment.",
             },
             {
               title: "Local Expertise",
@@ -152,17 +151,14 @@ export default function AboutPage() {
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Bosphorus Cruises</h3>
               <ul className="space-y-2">
-                <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Sunset Cruise — From €40</Link></li>
-                <li><Link href="/cruises/bosphorus-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Dinner Cruise & Turkish Night — From €65</Link></li>
-                <li><Link href="/cruises/bosphorus-sightseeing-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Short Sightseeing Cruise — From €15</Link></li>
-                <li><Link href="/cruises/yacht-charter-in-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Yacht Charter — From €280</Link></li>
-                <li><Link href="/cruises/istanbul-bosphorus-lunch-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Lunch Cruise — From €45</Link></li>
-                <li><Link href="/cruises/istanbul-princes-island-tour" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Princes&apos; Islands Tour — From €35</Link></li>
-                <li><Link href="/cruises/private-bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Sunset Yacht Cruise</Link></li>
-                <li><Link href="/cruises/private-bosphorus-dinner-yacht-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Dinner Yacht Cruise</Link></li>
-                <li><Link href="/cruises/full-day-istanbul-old-city-tour" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Full Day Istanbul Old City Tour</Link></li>
-                <li><Link href="/cruises/bosphorus-cruise-for-cruise-passengers" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Tour for Cruise Ship Passengers</Link></li>
-                <li className="pt-1"><Link href="/cruises" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">View All 21 Cruises & Tours →</Link></li>
+                <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Sunset Cruise — 2 options from €34</Link></li>
+                <li><Link href="/istanbul-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Dinner Cruise — 4 packages from €30</Link></li>
+                <li><Link href="/yacht-charter-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Yacht Charter Istanbul — 3 packages from €280</Link></li>
+                <li><Link href="/boat-rental-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Boat Rental Istanbul — Service page</Link></li>
+                <li><Link href="/corporate-events" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Corporate Events — Service page</Link></li>
+                <li><Link href="/private-events" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Events — Service page</Link></li>
+                <li><Link href="/proposal-yacht-rental-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Proposal Yacht Rental — Service page</Link></li>
+                <li className="pt-1"><Link href="/cruises" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">View Cruise Index & Service Pages →</Link></li>
               </ul>
             </div>
 

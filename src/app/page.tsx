@@ -7,13 +7,14 @@ import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
 import LatestBlogPosts from "@/components/home/LatestBlogPosts";
 import BosphorusGuideSection from "@/components/home/BosphorusGuideSection";
+import CommercialIntentSection from "@/components/home/CommercialIntentSection";
 import Link from "next/link";
 import { tours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul | Private Yacht & Dinner Cruises 2026",
+  title: "Bosphorus Cruise Istanbul | Sunset Cruise, Dinner Cruise & Yacht Charter 2026",
   description:
-    "Book the best Bosphorus cruise in Istanbul for 2026. Sunset cruises from €40, dinner cruises with Turkish night show, private yacht charter & boat tours. TURSAB licensed since 2001. Best price guarantee — book online today.",
+    "Compare the 3 core MerrySails experiences in Istanbul: Bosphorus Sunset Cruise, Bosphorus Dinner Cruise, and Yacht Charter in Istanbul.",
   keywords: [
     "bosphorus cruise",
     "bosphorus cruise istanbul",
@@ -21,22 +22,19 @@ export const metadata: Metadata = {
     "bosphorus sunset cruise",
     "istanbul dinner cruise",
     "yacht charter istanbul",
+    "yacht charter in istanbul",
     "boat tour istanbul",
     "bosphorus boat tour",
     "istanbul boat trip",
-    "bosphorus short cruise",
-    "bosphorus sightseeing cruise",
-    "boat hire istanbul",
     "bosphorus cruise 2026",
     "istanbul boat tour 2026",
-    "book bosphorus cruise online",
     "best bosphorus cruise istanbul",
   ],
   alternates: { canonical: "https://merrysails.com" },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul | Private Yacht & Dinner Cruises 2026",
+    title: "Bosphorus Cruise Istanbul | Sunset Cruise, Dinner Cruise & Yacht Charter 2026",
     description:
-      "Sunset cruises from €40, dinner cruises with Turkish night show, private yacht charter & boat tours. TURSAB licensed since 2001. Book online — best price guarantee.",
+      "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
     url: "https://merrysails.com",
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul 2026" }],
@@ -53,11 +51,6 @@ const websiteSchema = {
     "@type": "TravelAgency",
     "@id": "https://merrysails.com/#organization",
     name: "MerrySails",
-  },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://merrysails.com/blog?q={search_term_string}",
-    "query-input": "required name=search_term_string",
   },
 };
 
@@ -96,24 +89,24 @@ const organizationSchema = {
     itemListElement: [
       {
         "@type": "Offer",
-        name: "Bosphorus Sightseeing Cruise",
-        price: "15",
+        name: "Bosphorus Sunset Cruise",
+        price: "34",
         priceCurrency: "EUR",
-        url: "https://merrysails.com/bosphorus-cruise",
+        url: "https://merrysails.com/cruises/bosphorus-sunset-cruise",
       },
       {
         "@type": "Offer",
-        name: "Istanbul Dinner Cruise",
-        price: "65",
+        name: "Bosphorus Dinner Cruise",
+        price: "30",
         priceCurrency: "EUR",
         url: "https://merrysails.com/istanbul-dinner-cruise",
       },
       {
         "@type": "Offer",
-        name: "Boat Rental Istanbul",
+        name: "Yacht Charter Istanbul",
         price: "280",
         priceCurrency: "EUR",
-        url: "https://merrysails.com/boat-rental-istanbul",
+        url: "https://merrysails.com/yacht-charter-istanbul",
       },
     ],
   },
@@ -132,7 +125,7 @@ const homepageFaqSchema = {
       name: "What is included in the Bosphorus cruise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most Bosphorus cruises include a guided sailing through the strait passing iconic landmarks like Dolmabahçe Palace, Ortaköy Mosque, and the Bosphorus Bridges. Our sunset cruise (€40) includes welcome drinks, live commentary, and Wi-Fi. The dinner cruise (€65) adds an open buffet dinner, unlimited local drinks, live Turkish music and dance show, and hotel pickup/drop-off. Private yacht charters include a dedicated captain and crew, and a fully customisable route.",
+        text: "MerrySails offers different Bosphorus experiences. The sunset cruise is a 2-hour shared golden-hour sailing with drinks, snacks, and a wine-served option depending on package. The dinner cruise adds dinner service and stage entertainment, while the yacht charter experience covers private yacht packages with optional meals, drinks, transfers, and entertainment.",
       },
     },
     {
@@ -140,7 +133,7 @@ const homepageFaqSchema = {
       name: "How long is the Bosphorus cruise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Bosphorus cruise durations vary by type: the sightseeing cruise is 1.5–2 hours; the sunset cruise is approximately 2.5 hours; the dinner cruise is 3–3.5 hours including hotel pickup. Private yacht charters start from 2 hours and can be extended to a full day.",
+        text: "The flagship sunset cruise is approximately 2 hours, the shared dinner cruise is approximately 3.5 hours, and the yacht charter base packages start at 2 hours with the option to add extra time.",
       },
     },
     {
@@ -148,15 +141,15 @@ const homepageFaqSchema = {
       name: "Where does the Bosphorus cruise depart from?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MerrySails cruises depart from Ortaköy Marina and Eminönü Pier in Istanbul. Hotel pickup is included with the dinner cruise from all major areas including Taksim, Sultanahmet, Beşiktaş, Şişli, and Kadıköy.",
+        text: "Departure details depend on the product. The sunset cruise uses a central meeting point confirmed after booking, the dinner cruise is tied to the Kabatas Pier flow with hotel pickup support from central European-side zones, and yacht charters operate from approved Bosphorus marinas depending on the vessel.",
       },
     },
     {
       "@type": "Question",
-      name: "What is the price of a Bosphorus cruise in Istanbul?",
+      name: "Which MerrySails experience fits a dinner, proposal, or private charter?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Bosphorus cruise prices start from €15 per person for a standard sightseeing cruise. Sunset cruises are from €40. Dinner cruises with all-inclusive food and drinks are from €65. Private yacht charter prices start from €280 for a 2-hour charter for up to 15 guests.",
+        text: "For the main shared evening experience, use Istanbul Dinner Cruise. For private yacht bookings, use Yacht Charter Istanbul. For a proposal setup, use Proposal Yacht Rental Istanbul. For company hosting, use Corporate Events. For a lighter private-hire brief, Boat Rental Istanbul is the closest fit.",
       },
     },
     {
@@ -169,6 +162,54 @@ const homepageFaqSchema = {
     },
   ],
 };
+
+const coreBookingPages = [
+  {
+    href: "/cruises/bosphorus-sunset-cruise",
+    eyebrow: "Golden hour",
+    title: "Bosphorus Sunset Cruise",
+    description: "Shared sunset sailing with clear pricing and date-led golden-hour bookings.",
+  },
+  {
+    href: "/istanbul-dinner-cruise",
+    eyebrow: "Shared evening",
+    title: "Bosphorus Dinner Cruise",
+    description: "Main shared evening experience with dinner service, entertainment, and four package levels.",
+  },
+  {
+    href: "/yacht-charter-istanbul",
+    eyebrow: "Premium charter",
+    title: "Yacht Charter Istanbul",
+    description: "Private charter demand with yacht packages, add-ons, and higher-ticket booking intent.",
+  },
+] as const;
+
+const supportPages = [
+  {
+    href: "/proposal-yacht-rental-istanbul",
+    eyebrow: "Romantic option",
+    title: "Proposal Yacht Rental Istanbul",
+    description: "Private timing, decoration, and reveal-moment planning for proposal bookings.",
+  },
+  {
+    href: "/corporate-events",
+    eyebrow: "Hosted group",
+    title: "Corporate Events",
+    description: "AV, catering, branded setup, and guest-flow planning for company bookings.",
+  },
+  {
+    href: "/private-bosphorus-dinner-cruise",
+    eyebrow: "Private evening",
+    title: "Private Bosphorus Dinner Cruise",
+    description: "Reserved yacht dining with a calmer evening flow and private service details.",
+  },
+  {
+    href: "/boat-rental-istanbul",
+    eyebrow: "Flexible brief",
+    title: "Boat Rental Istanbul",
+    description: "A lighter private-hire brief before moving into a full yacht charter.",
+  },
+] as const;
 
 export default function HomePage() {
   return (
@@ -191,32 +232,13 @@ export default function HomePage() {
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
-            Choose the right Bosphorus experience without guesswork
+            Start with the experience that matches the plan
           </h2>
           <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            These are the three pages that matter most when guests compare a shared dinner cruise, a private boat rental, or a higher-end yacht charter.
+            These are the 3 core booking options for direct bookings.
           </p>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[
-              {
-                href: "/istanbul-dinner-cruise",
-                eyebrow: "Best value",
-                title: "Istanbul Dinner Cruise",
-                description: "From €65 per person with dinner, unlimited local drinks, Turkish night show, and hotel transfer.",
-              },
-              {
-                href: "/boat-rental-istanbul",
-                eyebrow: "Private groups",
-                title: "Boat Rental Istanbul",
-                description: "From €280 total for private groups, proposals, birthdays, and flexible Bosphorus routes.",
-              },
-              {
-                href: "/yacht-charter-istanbul",
-                eyebrow: "Higher ticket",
-                title: "Yacht Charter Istanbul",
-                description: "Private yacht packages with catering upgrades, event setup, and premium crew service.",
-              },
-            ].map((item) => (
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {coreBookingPages.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -226,7 +248,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
                 <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
-                  Open page →
+                  See details →
                 </span>
               </Link>
             ))}
@@ -237,43 +259,22 @@ export default function HomePage() {
       <section className="py-12 bg-[var(--surface-alt)]">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
-            Choose the Right Page for the Occasion
+            Use the specific experiences when the trip has a narrower brief
           </h2>
           <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            The booking path becomes clearer when the guest already knows whether the plan is a proposal, private dinner, corporate event, or flexible private celebration.
+            These experiences fit trips shaped by a proposal, a company booking, a private dinner, or a lighter private-hire request.
           </p>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                href: "/proposal-yacht-rental-istanbul",
-                title: "Proposal Yacht Rental",
-                description: "For guests comparing private setup, route privacy, and photography-friendly timing.",
-              },
-              {
-                href: "/private-bosphorus-dinner-cruise",
-                title: "Private Dinner Cruise",
-                description: "The stronger fit for couples, families, and private groups who want dinner without sharing the boat.",
-              },
-              {
-                href: "/corporate-events",
-                title: "Corporate Events",
-                description: "For companies that need guest flow, branded setup, and clear event-format planning.",
-              },
-              {
-                href: "/private-events",
-                title: "Private Events",
-                description: "Best for birthdays, anniversaries, and flexible celebrations that need a custom package.",
-              },
-            ].map((item) => (
+            {supportPages.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className="rounded-2xl border border-gray-200 bg-white p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
-              >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                >
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
                 <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
-                  Open page →
+                  See details →
                 </span>
               </Link>
             ))}
@@ -281,120 +282,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
-        <div className="mx-auto max-w-6xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-3">
-            Start With the Occasion, Then Match the Page
-          </h2>
-          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            Proposal, private dinner, corporate hosting, and private celebrations should not all
-            land on the same quote path. These are the pages that narrow the choice fastest.
-          </p>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                href: "/proposal-yacht-rental-istanbul",
-                eyebrow: "Romantic option",
-                title: "Proposal Yacht Rental",
-                description:
-                  "Best when privacy, timing, decoration, and the reveal moment matter more than a generic charter quote.",
-              },
-              {
-                href: "/private-bosphorus-dinner-cruise",
-                eyebrow: "Dinner-led",
-                title: "Private Dinner Cruise",
-                description:
-                  "Best when the booking is really about a private dining experience, not a shared dinner boat.",
-              },
-              {
-                href: "/corporate-events",
-                eyebrow: "B2B / hosted",
-                title: "Corporate Events",
-                description:
-                  "Best for AV, catering, branded setup, and guest-flow planning for company bookings.",
-              },
-              {
-                href: "/private-events",
-                eyebrow: "Celebration-led",
-                title: "Private Events",
-                description:
-                  "Best for birthdays, anniversaries, and flexible celebration formats that need custom package logic.",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
-              >
-                <p className="text-sm font-semibold text-[var(--brand-primary)] mb-2">{item.eyebrow}</p>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
-                  Open page →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 bg-white">
-        <div className="mx-auto max-w-6xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-3">
-            Choose the Right Bosphorus Experience
-          </h2>
-          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            If you already know whether you need a yacht charter, boat rental, proposal setup, private dinner, or corporate hosting,
-            these pages will take you to the right option faster.
-          </p>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {[
-              {
-                href: "/yacht-charter-istanbul",
-                title: "yacht charter istanbul",
-                description: "Best for higher-ticket private charters, premium crew service, and larger custom packages.",
-              },
-              {
-                href: "/boat-rental-istanbul",
-                title: "boat rental istanbul",
-                description: "Best for lighter private bookings where flexibility matters more than a fully premium yacht-led setup.",
-              },
-              {
-                href: "/proposal-yacht-rental-istanbul",
-                title: "proposal yacht rental",
-                description: "Best when timing, privacy, decoration, and photography planning matter more than a generic boat quote.",
-              },
-              {
-                href: "/private-bosphorus-dinner-cruise",
-                title: "private dinner cruise",
-                description: "Best when the booking is fundamentally about private dining on the Bosphorus rather than a broader event format.",
-              },
-              {
-                href: "/corporate-events",
-                title: "corporate yacht event",
-                description: "Best for B2B hosting, AV setup, guest flow, catering structure, and team or client entertainment.",
-              },
-              {
-                href: "/private-events",
-                title: "birthday / private event boat",
-                description: "Best for birthdays, anniversaries, and flexible celebration formats that need a custom event route.",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
-              >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
-                  Open page →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CommercialIntentSection compact />
 
       <FeaturedTour tour={tours[0]} />
       <FeaturedTour tour={tours[1]} reverse />

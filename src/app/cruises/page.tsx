@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CommercialIntentSection from "@/components/home/CommercialIntentSection";
 import CruisesFilter from "@/components/tours/CruisesFilter";
-import { tours } from "@/data/tours";
+import { getTourPath, isPricingVisible, tours } from "@/data/tours";
 
 export const metadata: Metadata = {
   title: "Istanbul Bosphorus Cruises & Yacht Charter 2026 | MerrySails",
   description:
-    "Book Istanbul Bosphorus cruises & yacht charter from €15. Sunset, dinner & sightseeing cruises plus private yacht rental. Best price guarantee — book online direct.",
+    "Browse the full MerrySails collection of sunset cruises, dinner cruises, yacht charter options, sightseeing tours, and private event experiences in Istanbul.",
   keywords: [
     "bosphorus cruise",
     "istanbul cruise",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Istanbul Bosphorus Cruises & Yacht Charter 2026 | MerrySails",
     description:
-      "Book Istanbul Bosphorus cruises & yacht charter from €15. Sunset, dinner & sightseeing cruises plus private yacht rental. Best price guarantee — book online direct.",
+      "Compare sunset cruises, dinner cruises, yacht charter options, and Bosphorus tour experiences in one place.",
     url: "https://merrysails.com/cruises",
     siteName: "MerrySails",
     type: "website",
@@ -35,8 +36,7 @@ export default function CruisesPage() {
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">Istanbul Bosphorus Cruises, Yacht Charter & Boat Tours</h1>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Sunset cruises, dinner cruises with Turkish night, private yacht rental,
-            and guided boat tours in Istanbul. Best price guaranteed — book direct.
+            Compare shared cruises, private yacht options, and celebration-focused services in one place.
           </p>
         </div>
 
@@ -50,10 +50,11 @@ export default function CruisesPage() {
             {tours.map((tour) => (
               <li key={tour.slug}>
                 <Link
-                  href={`/cruises/${tour.slug}`}
+                  href={getTourPath(tour)}
                   className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors"
                 >
-                  {tour.nameEn} — From €{tour.priceEur}
+                  {tour.nameEn}
+                  {isPricingVisible(tour) ? ` — From €${tour.priceEur}` : " — View details"}
                 </Link>
               </li>
             ))}
@@ -66,45 +67,48 @@ export default function CruisesPage() {
 
           <div className="prose prose-gray max-w-none">
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Looking for the <strong>best Bosphorus cruise in Istanbul</strong>? MerrySails offers a wide range of
-              cruise experiences on the iconic Bosphorus Strait — from affordable <Link href="/cruises/bosphorus-sightseeing-cruise" className="text-[var(--brand-primary)] hover:underline">sightseeing cruises from €15</Link> to
-              premium <Link href="/cruises/bosphorus-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">dinner cruises with Turkish night entertainment</Link> and
-              exclusive <Link href="/cruises/yacht-charter-in-istanbul" className="text-[var(--brand-primary)] hover:underline">private yacht charters from €280</Link>.
+              Looking for the <strong>best Bosphorus cruise in Istanbul</strong>? Start with the
+              <Link href="/cruises/bosphorus-sunset-cruise" className="text-[var(--brand-primary)] hover:underline"> Bosphorus sunset cruise</Link>{" "}
+              if you want golden-hour views, the{" "}
+              <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">Bosphorus dinner cruise</Link>{" "}
+              if you want dinner and live entertainment, and{" "}
+              <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">yacht charter in Istanbul</Link>{" "}
+              if you want a private boat for your own group.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Bosphorus Sunset Cruise</h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
               Our most popular experience, the <Link href="/cruises/bosphorus-sunset-cruise" className="text-[var(--brand-primary)] hover:underline">Bosphorus sunset cruise</Link> departs daily
-              from Eminonu Pier and glides past Maiden&apos;s Tower, Dolmabahce Palace, Ortakoy Mosque, and Rumeli Fortress as the
-              sun paints the sky golden. Starting from just €40, it&apos;s the most affordable way to experience Istanbul from the water.
+              around the golden-hour window and glides past Maiden&apos;s Tower, Dolmabahce Palace,
+              Ortakoy Mosque, and Rumeli Fortress as the sky shifts from gold to blue. The page is
+              structured around two public sunset options on the same route, with the current live
+              ladder showing EUR 34 for Without Wine and EUR 40 for the wine-served option.
             </p>
 
-            <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Istanbul Dinner Cruise</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Bosphorus Dinner Cruise</h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              The <Link href="/cruises/bosphorus-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">Bosphorus dinner cruise</Link> is Istanbul&apos;s
-              ultimate evening experience — a 4-course Turkish dinner with unlimited drinks, live belly dancing, whirling dervish ceremony, and
-              traditional folk shows, all while cruising the illuminated Bosphorus. Hotel pickup included. From €65.
+              The <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">Bosphorus dinner cruise</Link> currently offers four shared evening packages: Silver Soft Drinks, Silver Alcoholic Drinks, Gold Soft Drinks, and Gold Unlimited Alcohol. The live package ladder currently runs from EUR 30 to EUR 90 per guest.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Yacht Charter Istanbul</h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              For a truly private experience, our <Link href="/cruises/yacht-charter-in-istanbul" className="text-[var(--brand-primary)] hover:underline">yacht charter service in Istanbul</Link> gives
-              you an entire yacht with captain and crew. Perfect for <Link href="/cruises/romantic-marriage-proposal" className="text-[var(--brand-primary)] hover:underline">marriage proposals</Link>,{" "}
-              <Link href="/cruises/yacht-birthday-party" className="text-[var(--brand-primary)] hover:underline">birthday parties</Link>,{" "}
-              <Link href="/cruises/yacht-weddings" className="text-[var(--brand-primary)] hover:underline">weddings</Link>, and{" "}
-              <Link href="/cruises/corporate-event-bosphorus-cruise" className="text-[var(--brand-primary)] hover:underline">corporate events</Link>. Three packages available:
-              Essential (€280), Premium (€380), and VIP (€680).
+              For a truly private experience, the <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">yacht charter service in Istanbul</Link> gives
+              guests three public package levels before they add meals, drinks, transfers, decoration,
+              performances, or celebration extras. Essential, Premium, and VIP now each surface
+              their own extras table so pricing stays closer to the actual yacht tier.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Istanbul Boat Tours</h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Beyond cruises, we offer full-day <Link href="/cruises/istanbul-bosphorus-lunch-cruise" className="text-[var(--brand-primary)] hover:underline">lunch cruise and two continents tours</Link>,{" "}
-              <Link href="/cruises/istanbul-princes-island-tour" className="text-[var(--brand-primary)] hover:underline">Princes&apos; Islands day trips</Link>, and{" "}
-              <Link href="/cruises/full-day-istanbul-old-city-tour" className="text-[var(--brand-primary)] hover:underline">Istanbul old city tours</Link> — all operated by
-              TURSAB-licensed professional guides. <Link href="/about" className="text-[var(--brand-primary)] hover:underline">About MerrySails</Link> — serving Istanbul since 2001.
+              Beyond those main options, you can also browse sightseeing cruises, private dinners,
+              proposal setups, boat rental, and company-event options to find the right match for your group.
             </p>
           </div>
         </section>
+
+        <div className="mt-16 border-t border-[var(--line)] pt-10">
+          <CommercialIntentSection compact />
+        </div>
       </div>
     </div>
   );

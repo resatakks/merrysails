@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, MapPin, BookOpen } from "lucide-react";
 import { guides, getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
-import { getTourBySlug } from "@/data/tours";
+import { getTourBySlug, getTourPath, isPricingVisible } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
 
 export function generateStaticParams() {
@@ -199,7 +199,7 @@ export default async function GuidePage({
                   tour ? (
                     <Link
                       key={tour.slug}
-                      href={`/cruises/${tour.slug}`}
+                      href={getTourPath(tour)}
                       className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden">
@@ -217,7 +217,7 @@ export default async function GuidePage({
                         </h3>
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-bold">
-                            From €{tour.priceEur}
+                            {isPricingVisible(tour) ? `From €${tour.priceEur}` : "Service page"}
                           </span>
                           <ArrowRight className="w-4 h-4 text-[var(--brand-primary)]" />
                         </div>
@@ -315,7 +315,7 @@ export default async function GuidePage({
               See This Landmark on a Bosphorus Cruise
             </h2>
             <p className="text-white/70 mb-6">
-              Book direct for the best price — sunset cruises from €40.
+              Compare the three main booking pages and choose the right Bosphorus experience.
             </p>
             <Link
               href="/cruises"

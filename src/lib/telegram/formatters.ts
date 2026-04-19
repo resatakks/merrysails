@@ -1,5 +1,7 @@
 // Telegram Message Formatters — MerrySails
 import type { SailsReservation } from "./types";
+import { getReservationLinkContext } from "@/lib/reservation-links";
+import { parseReservationNotes } from "@/lib/reservation-meta";
 
 function esc(text: string | number | null | undefined): string {
   if (text === null || text === undefined) return "-";
@@ -60,15 +62,47 @@ function currencySymbol(currency: string): string {
   }
 }
 
+function getTurkeyDateKey(date: string | Date): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: TZ,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(date));
+}
+
+function getDepartureLabel(date: string | Date): string {
+  const [targetYear, targetMonth, targetDay] = getTurkeyDateKey(date)
+    .split("-")
+    .map(Number);
+  const [todayYear, todayMonth, todayDay] = getTurkeyDateKey(new Date())
+    .split("-")
+    .map(Number);
+
+  const targetUtc = Date.UTC(targetYear, targetMonth - 1, targetDay);
+  const todayUtc = Date.UTC(todayYear, todayMonth - 1, todayDay);
+  const dayDiff = Math.round((targetUtc - todayUtc) / 86400000);
+
+  if (dayDiff === 0) return "Bugün";
+  if (dayDiff === 1) return "Yarın";
+  if (dayDiff > 1) return `${dayDiff} gün kaldı`;
+  return `${Math.abs(dayDiff)} gün önce`;
+}
+
 // ─── Full reservation detail ──────────────────────────────
 export function formatReservationDetail(r: SailsReservation): string {
   const dateStr = formatDate(r.date);
   const cs = currencySymbol(r.currency);
+  const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
+  const meta = parseReservationNotes(r.notes);
 
   let msg = `${statusEmoji(r.status)} <b>Rezervasyon ${esc(r.reservationId)}</b>\n`;
   msg += `━━━━━━━━━━━━━━━━\n`;
   msg += `🌐 <b>Kaynak:</b> merrysails.com\n`;
   msg += `📊 <b>Durum:</b> ${statusEmoji(r.status)} ${statusText(r.status)}\n`;
+  msg += `🧭 <b>Sayfa:</b> ${esc(linkContext.pageLabel)}\n`;
+  msg += `🎯 <b>Akış:</b> ${esc(linkContext.bookingLabel)}\n`;
+  msg += `⏳ <b>Kalkış:</b> ${esc(getDepartureLabel(r.date))}\n`;
 
   // Customer
   msg += `\n👤 <b>${esc(r.customerName)}</b>\n`;
@@ -81,6 +115,8 @@ export function formatReservationDetail(r: SailsReservation): string {
   msg += `📅 <b>Tarih:</b> ${dateStr}\n`;
   msg += `🕐 <b>Saat:</b> ${esc(r.time)}\n`;
   msg += `👥 <b>Misafir:</b> ${r.guests} kişi\n`;
+  if (meta.packageName) msg += `📦 <b>Paket:</b> ${esc(meta.packageName)}\n`;
+  if (meta.addOns.length > 0) msg += `➕ <b>Ekstra:</b> ${esc(meta.addOns.join(", "))}\n`;
 
   // Price
   msg += `\n💰 <b>Toplam:</b> ${r.totalPrice} ${cs}`;
@@ -88,7 +124,14 @@ export function formatReservationDetail(r: SailsReservation): string {
   msg += `\n`;
 
   // Notes
-  if (r.notes) msg += `\n📝 <b>Not:</b> ${esc(r.notes)}\n`;
+  if (meta.customerNote) msg += `\n📝 <b>Not:</b> ${esc(meta.customerNote)}\n`;
+
+  msg += `\n🔗 <b>Rezervasyon:</b> ${esc(linkContext.reservationUrl)}\n`;
+  msg += `🧾 <b>Fatura:</b> ${esc(linkContext.invoiceUrl)}\n`;
+  msg += `🎟️ <b>Voucher:</b> ${esc(linkContext.voucherUrl)}\n`;
+  if (linkContext.tourPath !== "/") {
+    msg += `🌐 <b>Tur Sayfası:</b> ${esc(linkContext.tourUrl)}\n`;
+  }
 
   // WhatsApp
   if (r.customerPhone) {
@@ -111,11 +154,16 @@ export function formatCompactLine(r: SailsReservation): string {
 export function formatNewReservation(r: SailsReservation): string {
   const dateStr = formatDate(r.date);
   const cs = currencySymbol(r.currency);
+  const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
+  const meta = parseReservationNotes(r.notes);
 
   let msg = `🔔 <b>YENİ REZERVASYON!</b>\n`;
   msg += `━━━━━━━━━━━━━━━━\n`;
   msg += `🌐 <b>Kaynak:</b> merrysails.com\n`;
   msg += `📋 <b>Rez No:</b> ${esc(r.reservationId)}\n`;
+  msg += `🧭 <b>Sayfa:</b> ${esc(linkContext.pageLabel)}\n`;
+  msg += `🎯 <b>Akış:</b> ${esc(linkContext.bookingLabel)}\n`;
+  msg += `⏳ <b>Kalkış:</b> ${esc(getDepartureLabel(r.date))}\n`;
 
   msg += `\n👤 <b>${esc(r.customerName)}</b>\n`;
   msg += `📱 Tel: ${esc(r.customerPhone)}\n`;
@@ -125,12 +173,21 @@ export function formatNewReservation(r: SailsReservation): string {
   msg += `\n⛵ ${esc(r.tourName)}\n`;
   msg += `📅 ${dateStr} | 🕐 ${esc(r.time)}\n`;
   msg += `👥 ${r.guests} kişi\n`;
+  if (meta.packageName) msg += `📦 ${esc(meta.packageName)}\n`;
+  if (meta.addOns.length > 0) msg += `➕ ${esc(meta.addOns.join(", "))}\n`;
 
   msg += `\n💰 <b>${r.totalPrice} ${cs}</b>`;
   if (r.guests > 1) msg += ` (${r.guests} Misafir)`;
   msg += `\n`;
 
-  if (r.notes) msg += `\n📝 Not: ${esc(r.notes)}\n`;
+  if (meta.customerNote) msg += `\n📝 Not: ${esc(meta.customerNote)}\n`;
+
+  msg += `\n🔗 Rezervasyon: ${esc(linkContext.reservationUrl)}\n`;
+  msg += `🧾 Fatura: ${esc(linkContext.invoiceUrl)}\n`;
+  msg += `🎟️ Voucher: ${esc(linkContext.voucherUrl)}\n`;
+  if (linkContext.tourPath !== "/") {
+    msg += `🌐 Tur: ${esc(linkContext.tourUrl)}\n`;
+  }
 
   if (r.customerPhone) {
     const cleanPhone = r.customerPhone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
@@ -142,22 +199,32 @@ export function formatNewReservation(r: SailsReservation): string {
 
 // ─── Status change notification ───────────────────────────
 export function formatStatusChange(r: SailsReservation, oldStatus: string, newStatus: string): string {
+  const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
+
   let msg = `🔄 <b>DURUM DEĞİŞİKLİĞİ</b>\n━━━━━━━━━━━━━━━━\n`;
   msg += `📋 <b>${esc(r.reservationId)}</b> — ${esc(r.customerName)}\n\n`;
   msg += `${statusEmoji(oldStatus)} ${statusText(oldStatus)} → ${statusEmoji(newStatus)} <b>${statusText(newStatus)}</b>\n`;
+  msg += `🧭 ${esc(linkContext.pageLabel)} · ${esc(linkContext.bookingLabel)}\n`;
   msg += `⛵ ${esc(r.tourName)}\n`;
   msg += `📅 ${formatDate(r.date)} | 🕐 ${esc(r.time)}\n`;
+  msg += `⏳ ${esc(getDepartureLabel(r.date))}\n`;
   return msg;
 }
 
 // ─── Reminder notification ────────────────────────────────
 export function formatReminder(r: SailsReservation): string {
+  const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
+  const meta = parseReservationNotes(r.notes);
+
   let msg = `⏰ <b>HATIRLATMA — 2 Saat Kaldı!</b>\n━━━━━━━━━━━━━━━━\n`;
   msg += `📋 <b>${esc(r.reservationId)}</b> — ${esc(r.customerName)}\n\n`;
   msg += `⛵ ${esc(r.tourName)}\n`;
   msg += `🕐 <b>Saat:</b> ${esc(r.time)}\n`;
   msg += `📱 ${esc(r.customerPhone)}\n`;
   msg += `👥 ${r.guests} kişi\n`;
+  if (meta.packageName) msg += `📦 ${esc(meta.packageName)}\n`;
+  msg += `🧾 ${esc(linkContext.invoiceUrl)}\n`;
+  msg += `🎟️ ${esc(linkContext.voucherUrl)}\n`;
   return msg;
 }
 

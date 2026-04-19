@@ -10,15 +10,16 @@ export default function CTASection() {
 
       <div className="container-main relative z-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Book Your Istanbul Bosphorus Cruise Today
+          Build Around the Three Core Booking Pages
         </h2>
         <p className="text-white/80 mb-8 max-w-lg mx-auto text-lg">
-          Sunset cruise, dinner cruise, private yacht charter — best price guaranteed
-          when you book direct. No middleman fees.
+          Start with the sunset cruise, the dinner cruise, or the yacht charter page.
+          Service-led requests can then flow into proposal, private dinner, boat rental,
+          and corporate event pages.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/cruises" className="btn-cta text-base !py-3.5 !px-8">
-            Browse All Tours
+            View Cruise Index
             <ArrowRight className="w-4 h-4" />
           </Link>
           <a
@@ -39,16 +40,16 @@ export default function CTASection() {
           </a>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+          <Link href="/cruises/bosphorus-sunset-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
+            Bosphorus Sunset Cruise
+          </Link>
+          <span className="text-white/30">·</span>
           <Link href="/istanbul-dinner-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Istanbul Dinner Cruise from €65
+            Bosphorus Dinner Cruise
           </Link>
           <span className="text-white/30">·</span>
           <Link href="/yacht-charter-istanbul" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Yacht Charter Istanbul from €280
-          </Link>
-          <span className="text-white/30">·</span>
-          <Link href="/private-tours" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Private Bosphorus Tours
+            Yacht Charter Istanbul
           </Link>
         </div>
       </div>

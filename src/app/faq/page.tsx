@@ -25,31 +25,31 @@ export const metadata = {
 const faqs = [
   {
     q: "How much does a Bosphorus cruise cost in Istanbul?",
-    a: "Bosphorus cruise prices start from €15 for a short sightseeing cruise, €40 for a sunset cruise, and €65 for a dinner cruise with Turkish night entertainment. Private yacht charter starts from €280 for 2 hours. All prices include basic refreshments.",
+    a: "Prices depend on the experience you choose. The Bosphorus Sunset Cruise currently starts from EUR 34 for the Without Wine option and EUR 40 for the wine-served option, the Bosphorus Dinner Cruise spans EUR 30 to EUR 90 across four shared packages, and Yacht Charter Istanbul starts from EUR 280 per yacht. Proposal, private dinner, boat rental, and corporate events are priced according to the setup you request.",
   },
   {
     q: "How do I book a Bosphorus boat tour?",
-    a: "You can book directly through our website, via WhatsApp (+90 537 040 68 22), or by phone. We confirm your reservation immediately and send booking details via email. Book direct for the best price — no middleman fees.",
+    a: "You can send a reservation request through our website, via WhatsApp (+90 537 040 68 22), or by phone. We create a reservation ID and send the booking details by email.",
   },
   {
     q: "Is there a free cancellation policy?",
-    a: "Yes! You can cancel for free up to 24 hours before the departure time for a full refund. Cancellations within 24 hours may be subject to a 50% fee.",
+    a: "Yes. You can cancel free of charge up to 24 hours before departure. Within the final 24 hours, changes or cancellations need manual review by our team.",
   },
   {
     q: "What is included in the Istanbul dinner cruise?",
-    a: "Our Bosphorus dinner cruise includes hotel pickup and drop-off, a 4-course Turkish dinner, unlimited local drinks, live music and DJ, belly dance show, and whirling dervish performance. The cruise lasts 3.5 hours along the illuminated Bosphorus.",
+    a: "The Bosphorus dinner cruise is offered in four shared evening packages: Silver Soft Drinks, Silver Alcoholic Drinks, Gold Soft Drinks, and Gold Unlimited Alcohol. The experience includes dinner service, a shared 3.5-hour evening sailing, stage entertainment, and hotel pickup support from central European-side zones.",
   },
   {
     q: "What time does the Bosphorus sunset cruise depart?",
-    a: "The sunset cruise departs from Eminönü Pier at 17:00 or 18:00 depending on the season. The cruise lasts 2.5 hours and includes welcome drinks, live commentary, snacks, and WiFi. We recommend arriving 15 minutes early.",
+    a: "The sunset cruise departs around the seasonal sunset window. The current public structure is a shared 2-hour golden-hour cruise, and final timing is confirmed with the booking.",
   },
   {
     q: "Can I rent a private yacht on the Bosphorus?",
-    a: "Yes! We offer private yacht charter in Istanbul starting from €280 (Essential), €380 (Premium), and €680 (VIP). Each package includes a professional captain and crew, tea/coffee/water, and a Bluetooth sound system. You can add extras like a photographer, violinist, DJ, or food service.",
+    a: "Yes. Yacht Charter Istanbul shows three private yacht packages, and you can add meals, drinks, transfer, decoration, or entertainment depending on the kind of event you want to host.",
   },
   {
     q: "Where do the boats depart from?",
-    a: "Shared cruises (sunset, dinner, sightseeing) depart from Eminönü Pier, easily accessible by tram (Eminönü stop). Private yacht charters depart from Kuruçeşme Marina. Exact meeting point details are sent with your booking confirmation.",
+    a: "Departure details depend on the product. The sunset cruise uses a central meeting point confirmed after booking, the dinner cruise is tied to the Kabatas Pier boarding plan, and private yacht departures depend on the selected vessel and marina.",
   },
   {
     q: "Are the boat tours suitable for children?",
@@ -61,15 +61,15 @@ const faqs = [
   },
   {
     q: "Can I organize a birthday party or marriage proposal on a yacht?",
-    a: "Absolutely! We specialize in yacht events in Istanbul — marriage proposals, birthday parties, bachelorette parties, wedding anniversaries, and corporate events. All packages include decoration, and you can add photographers, musicians, and custom cakes.",
+    a: "Absolutely! We specialize in yacht events in Istanbul — marriage proposals, birthday parties, bachelorette parties, wedding anniversaries, and corporate events. Decorations, photographers, musicians, catering, and custom cakes can all be added depending on the yacht package and event plan.",
   },
   {
     q: "What payment methods do you accept?",
-    a: "We accept credit/debit cards (Visa, Mastercard), bank transfer, and cash (EUR, USD, TRY). Online payment is processed through our secure payment gateway.",
+    a: "For the current shared-cruise booking flow, payment is collected onboard by cash or card. If a private event or custom charter needs a different confirmation method, our team explains that directly during the planning process.",
   },
   {
     q: "Do you offer hotel pickup for the dinner cruise?",
-    a: "Hotel pickup and drop-off is included with our Bosphorus dinner cruise package at no extra cost. For other cruises, we provide detailed directions to the meeting point. VIP transfer service can also be arranged.",
+    a: "Yes. Shared dinner-cruise packages include hotel pickup and drop-off for central European-side zones, although some streets may require a nearby meeting point instead of door pickup. For other cruises, we provide detailed meeting instructions and optional transfer can be arranged when needed.",
   },
   {
     q: "Is MerrySails a licensed company?",

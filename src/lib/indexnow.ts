@@ -72,7 +72,7 @@ export async function submitToIndexNow(
 export async function getAllSiteUrls(): Promise<string[]> {
   // Dynamic imports to avoid pulling data modules into every bundle
   const { blogPosts } = await import("@/data/blog");
-  const { tours } = await import("@/data/tours");
+  const { getTourPath, tours } = await import("@/data/tours");
   const { guides } = await import("@/data/guides");
 
   const staticUrls = [
@@ -86,9 +86,9 @@ export async function getAllSiteUrls(): Promise<string[]> {
     `${SITE_URL}/faq`,
   ];
 
-  const tourUrls = tours.map((t: { slug: string }) => `${SITE_URL}/cruises/${t.slug}`);
+  const tourUrls = tours.map((t) => `${SITE_URL}${getTourPath(t)}`);
   const blogUrls = blogPosts.map((p: { slug: string }) => `${SITE_URL}/blog/${p.slug}`);
   const guideUrls = guides.map((g: { slug: string }) => `${SITE_URL}/guides/${g.slug}`);
 
-  return [...staticUrls, ...tourUrls, ...blogUrls, ...guideUrls];
+  return [...new Set([...staticUrls, ...tourUrls, ...blogUrls, ...guideUrls])];
 }

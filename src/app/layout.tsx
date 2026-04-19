@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import MobileBookingBar from "@/components/layout/MobileBookingBar";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import { ToastProvider } from "@/components/ui/Toast";
+import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | MerrySails Istanbul 2026",
   },
   description:
-    "Book the best Bosphorus cruise in Istanbul for 2026 — sunset cruises from €40, dinner cruises from €65, private yacht charters from €280, and luxury boat tours. Operated by Merry Tourism, TURSAB licensed since 2001. Best price guarantee — book online today.",
+    "MerrySails focuses on Bosphorus sunset cruises, Bosphorus dinner cruises, and yacht charter in Istanbul, with dedicated private event, proposal, and corporate pages.",
   keywords: [
     "bosphorus cruise", "istanbul dinner cruise", "sunset cruise istanbul",
     "bosphorus dinner cruise", "boat trip istanbul", "boat tour istanbul",
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul",
-    description: "Book the best Bosphorus cruise in Istanbul — sunset cruises, dinner cruises, private yacht charters, and luxury boat tours. Since 2001.",
+    description: "Bosphorus sunset cruise, Bosphorus dinner cruise, and yacht charter in Istanbul with dedicated private event and charter pages.",
     siteName: "MerrySails",
     locale: "en_US",
     type: "website",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul",
-    description: "Sunset cruises, dinner cruises, private yacht charters, and luxury boat tours. Since 2001.",
+    description: "Bosphorus sunset cruise, Bosphorus dinner cruise, and yacht charter in Istanbul.",
     images: [`${SITE_URL}/og-image.jpg`],
   },
   robots: {
@@ -129,17 +130,17 @@ const organizationSchema = {
     itemListElement: [
       {
         "@type": "OfferCatalog",
-        name: "Bosphorus Cruise Tours",
+        name: "Bosphorus Sunset Cruise",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Bosphorus Cruise Tours",
+              name: "Bosphorus Sunset Cruise",
             },
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: 25,
+              price: 34,
               priceCurrency: "EUR",
               valueAddedTaxIncluded: true,
             },
@@ -148,17 +149,17 @@ const organizationSchema = {
       },
       {
         "@type": "OfferCatalog",
-        name: "Private Yacht Charter",
+        name: "Bosphorus Dinner Cruise",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Private Yacht Charter",
+              name: "Bosphorus Dinner Cruise",
             },
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: 500,
+              price: 30,
               priceCurrency: "EUR",
               valueAddedTaxIncluded: true,
             },
@@ -167,17 +168,17 @@ const organizationSchema = {
       },
       {
         "@type": "OfferCatalog",
-        name: "Group Event & Party Boats",
+        name: "Yacht Charter Istanbul",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Group Event & Party Boats",
+              name: "Yacht Charter Istanbul",
             },
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: 1000,
+              price: 280,
               priceCurrency: "EUR",
               valueAddedTaxIncluded: true,
             },
@@ -226,8 +227,8 @@ const siteNavigationSchema = {
   ],
   url: [
     `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
-    `${SITE_URL}/cruises/bosphorus-dinner-cruise`,
-    `${SITE_URL}/cruises/yacht-charter-in-istanbul`,
+    `${SITE_URL}/istanbul-dinner-cruise`,
+    `${SITE_URL}/yacht-charter-istanbul`,
     `${SITE_URL}/cruises`,
     `${SITE_URL}/private-tours`,
     `${SITE_URL}/blog`,
@@ -244,7 +245,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={dmSans.variable}>
+    <html
+      lang={DEFAULT_LOCALE}
+      dir={getHtmlDir(DEFAULT_LOCALE)}
+      className={dmSans.variable}
+    >
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />

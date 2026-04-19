@@ -1,23 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Clock } from "lucide-react";
-import { getBlogBySlug, blogPosts } from "@/data/blog";
+import { Clock } from "lucide-react";
+import { getBlogBySlug, blogPosts } from "@/content/blog";
 
 export function RelatedPosts({
   slugs,
+  prioritySlugs,
   currentSlug,
   category,
 }: {
   slugs?: string[];
+  prioritySlugs?: string[];
   currentSlug: string;
   category: string;
 }) {
-  let posts = slugs?.map(getBlogBySlug).filter(Boolean) || [];
+  const deduped = new Set<string>();
+  const toPosts = (items?: string[]) =>
+    items
+      ?.map(getBlogBySlug)
+      .filter((post): post is NonNullable<ReturnType<typeof getBlogBySlug>> => Boolean(post))
+      .filter((post) => post.slug !== currentSlug && !deduped.has(post.slug))
+      .filter((post) => {
+        deduped.add(post.slug);
+        return true;
+      }) || [];
+
+  let posts = [...toPosts(prioritySlugs), ...toPosts(slugs)];
 
   // Fallback: same category posts
   if (posts.length < 3) {
     const fallbacks = blogPosts
-      .filter((p) => p.category === category && p.slug !== currentSlug && !slugs?.includes(p.slug))
+      .filter(
+        (p) =>
+          p.category === category &&
+          p.slug !== currentSlug &&
+          !deduped.has(p.slug) &&
+          !slugs?.includes(p.slug) &&
+          !prioritySlugs?.includes(p.slug)
+      )
       .slice(0, 3 - posts.length);
     posts = [...posts, ...fallbacks];
   }

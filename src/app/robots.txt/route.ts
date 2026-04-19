@@ -5,7 +5,7 @@ export function GET() {
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /reservation/*/
+Disallow: /reservation
 
 User-agent: Googlebot
 Allow: /

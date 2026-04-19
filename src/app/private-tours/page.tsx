@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { tours } from "@/data/tours";
+import { getTourPath, isCoreProduct, tours } from "@/data/tours";
 
 export const metadata = {
   title: "Private Yacht Charter & Events — Bosphorus Istanbul",
   description:
-    "Book a private yacht on the Bosphorus for proposals, birthdays, weddings, and corporate events. Packages from €280. Fully customizable with add-on services.",
+    "Explore private yacht charter and event pages from MerrySails for proposals, birthdays, weddings, celebrations, and corporate requests.",
   keywords: [
     "private yacht istanbul",
     "yacht charter bosphorus",
@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: "Private Yacht Charter & Events — Bosphorus Istanbul",
     description:
-      "Rent a private yacht on the Bosphorus. Marriage proposals, birthdays, weddings, corporate events. From €280.",
+      "Private yacht charter and event pages from MerrySails for proposals, dinners, celebrations, and corporate requests.",
     url: "https://merrysails.com/private-tours",
     type: "website" as const,
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
@@ -31,18 +31,18 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Private Yacht Charter & Events in Istanbul",
-  description: "Rent a private yacht on the Bosphorus for marriage proposals, birthday parties, weddings, bachelorette parties, and corporate events. Fully customizable packages.",
+  description: "Rent a private yacht on the Bosphorus for marriage proposals, birthday parties, weddings, bachelorette parties, and corporate events with flexible packages.",
   provider: {
     "@id": "https://merrysails.com/#organization",
   },
   areaServed: { "@type": "City", name: "Istanbul" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Private Yacht Packages",
-    itemListElement: [
-      { "@type": "Offer", name: "Essential Package", price: "280", priceCurrency: "EUR", description: "2-hour private yacht cruise with captain, crew, and refreshments" },
-      { "@type": "Offer", name: "Premium Package", price: "380", priceCurrency: "EUR", description: "3-hour private yacht with decoration, photographer, and refreshments" },
-      { "@type": "Offer", name: "VIP Package", price: "680", priceCurrency: "EUR", description: "4-hour luxury yacht with full decoration, photographer, DJ, and catering" },
+  name: "Private Yacht Packages",
+  itemListElement: [
+      { "@type": "Service", name: "Proposal Yacht Rental", description: "A private Bosphorus yacht experience for marriage proposals." },
+      { "@type": "Service", name: "Private Dinner Cruise", description: "A dinner-first private yacht experience for Bosphorus evenings." },
+      { "@type": "Service", name: "Corporate Yacht Events", description: "Private corporate hosting, client dinners, and company events on the Bosphorus." },
     ],
   },
 };
@@ -51,7 +51,7 @@ const privateFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "How much does a private yacht charter cost in Istanbul?", acceptedAnswer: { "@type": "Answer", text: "Private yacht charter on the Bosphorus starts from €280 for the Essential package (2 hours), €380 for Premium (3 hours), and €680 for VIP (4 hours). All packages include a professional captain, crew, and basic refreshments." }},
+    { "@type": "Question", name: "How does private yacht charter work?", acceptedAnswer: { "@type": "Answer", text: "MerrySails keeps proposal, private dinner, celebration, and corporate requests on separate pages so you can go straight to the option that fits your plans." }},
     { "@type": "Question", name: "Can I organize a marriage proposal on a yacht?", acceptedAnswer: { "@type": "Answer", text: "Yes! We specialize in yacht marriage proposals on the Bosphorus. Our Romance package includes rose petal decoration, champagne, a professional photographer, and a violinist. We handle everything so you can focus on the moment." }},
     { "@type": "Question", name: "What events can I host on a private yacht?", acceptedAnswer: { "@type": "Answer", text: "You can host marriage proposals, birthday parties, bachelorette parties, wedding celebrations, wedding anniversaries, corporate events, and private dinner cruises. All events are fully customizable with add-on services." }},
   ],
@@ -71,8 +71,8 @@ export default function PrivateToursPage() {
           <h1 className="text-3xl md:text-4xl font-bold mb-3">Private Yacht Charter & Events in Istanbul</h1>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg">
             Rent a private yacht on the Bosphorus for marriage proposals, birthday parties,
-            weddings, and corporate events. Essential from €280, Premium €380, VIP €680.
-            Fully customizable with add-on services.
+            weddings, and corporate events. Use this page to find the right experience from
+            MerrySails without having to sort through every option at once.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function PrivateToursPage() {
         <h2 className="text-2xl font-bold mb-6">Yacht Events & Organizations on the Bosphorus</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {orgTours.map((tour) => (
-            <Link key={tour.id} href={`/cruises/${tour.slug}`} className="group">
+            <Link key={tour.id} href={getTourPath(tour)} className="group">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -102,7 +102,9 @@ export default function PrivateToursPage() {
                   </h3>
                   <p className="text-sm text-[var(--text-muted)] mb-3 line-clamp-2">{tour.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-[var(--heading)]">From €{tour.priceEur}</span>
+                    <span className="text-lg font-bold text-[var(--heading)]">
+                      {isCoreProduct(tour) ? "Main experience" : "Related option"}
+                    </span>
                     <span className="text-sm text-[var(--brand-primary)] font-medium flex items-center gap-1">
                       View Details <ArrowRight className="w-3.5 h-3.5" />
                     </span>
@@ -117,7 +119,7 @@ export default function PrivateToursPage() {
         <h2 className="text-2xl font-bold mb-6">Private Bosphorus Yacht Cruises</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {privateTours.map((tour) => (
-            <Link key={tour.id} href={`/cruises/${tour.slug}`} className="group">
+            <Link key={tour.id} href={getTourPath(tour)} className="group">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -139,7 +141,9 @@ export default function PrivateToursPage() {
                   </h3>
                   <p className="text-sm text-[var(--text-muted)] mb-3 line-clamp-2">{tour.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-[var(--heading)]">From €{tour.priceEur}</span>
+                    <span className="text-lg font-bold text-[var(--heading)]">
+                      {isCoreProduct(tour) ? "Main experience" : "Related option"}
+                    </span>
                     <span className="text-sm text-[var(--brand-primary)] font-medium flex items-center gap-1">
                       View Details <ArrowRight className="w-3.5 h-3.5" />
                     </span>

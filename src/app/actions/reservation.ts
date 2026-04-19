@@ -1,69 +1,246 @@
 "use server";
 
+import { format, isValid, parse } from "date-fns";
+import { enUS } from "date-fns/locale";
 import { prisma } from "@/lib/db";
 import { generateReservationId } from "@/lib/reservation-id";
 import { sendEmail } from "@/lib/email";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
 import { reservationNotificationEmail } from "@/lib/email-templates/reservation-notification";
 import { reservationCancelledEmail } from "@/lib/email-templates/reservation-cancelled";
-import { format } from "date-fns";
+import { serializeReservationNotes } from "@/lib/reservation-meta";
+import {
+  buildReservationPricingSnapshot,
+  ReservationValidationError,
+} from "@/lib/reservation-pricing";
+import { consumeRateLimit } from "@/lib/rate-limit";
 
 interface CreateReservationInput {
   tourSlug: string;
-  tourName: string;
-  date: string; // ISO string
+  date: string;
   time: string;
   guests: number;
-  totalPrice: number;
-  currency: string;
   customerName: string;
   customerEmail: string;
   customerPhone: string;
   customerCountry?: string;
+  packageName?: string;
+  addOns?: string[];
   notes?: string;
+  honeypot?: string;
+}
+
+const DATE_INPUT_FORMATS = [
+  "yyyy-MM-dd",
+  "dd MMM yyyy",
+  "MMMM d, yyyy",
+  "dd MMMM yyyy",
+];
+
+function sanitizeSingleLine(value: string, maxLength: number): string {
+  return value.replace(/\s+/g, " ").trim().slice(0, maxLength);
+}
+
+function sanitizeNotes(value?: string): string | undefined {
+  const cleaned = value?.replace(/\u0000/g, "").trim();
+  return cleaned ? cleaned.slice(0, 1200) : undefined;
+}
+
+function normalizePhone(value: string): string {
+  return value.replace(/\s+/g, " ").trim().slice(0, 32);
+}
+
+function isExactClockTime(value: string): boolean {
+  return /^([01]\d|2[0-3]):([0-5]\d)$/.test(value);
+}
+
+function normalizeReservationTime(value: string): string {
+  const trimmed = sanitizeSingleLine(value, 80);
+
+  if (!trimmed) {
+    return "To be confirmed";
+  }
+
+  return isExactClockTime(trimmed) ? trimmed : trimmed;
+}
+
+function parseReservationDateInput(value: string): Date | null {
+  const trimmed = value.trim();
+
+  for (const formatPattern of DATE_INPUT_FORMATS) {
+    const parsedDate = parse(trimmed, formatPattern, new Date(), {
+      locale: enUS,
+    });
+
+    if (isValid(parsedDate)) {
+      return new Date(
+        Date.UTC(
+          parsedDate.getFullYear(),
+          parsedDate.getMonth(),
+          parsedDate.getDate()
+        )
+      );
+    }
+  }
+
+  const fallbackDate = new Date(trimmed);
+
+  if (!Number.isNaN(fallbackDate.getTime())) {
+    return new Date(
+      Date.UTC(
+        fallbackDate.getUTCFullYear(),
+        fallbackDate.getUTCMonth(),
+        fallbackDate.getUTCDate()
+      )
+    );
+  }
+
+  return null;
 }
 
 export async function createReservation(input: CreateReservationInput) {
   try {
+    if (input.honeypot?.trim()) {
+      return {
+        success: false,
+        error: "We could not process the reservation. Please try again.",
+      };
+    }
+
+    const customerName = sanitizeSingleLine(input.customerName, 120);
+    const customerEmail = sanitizeSingleLine(input.customerEmail, 160).toLowerCase();
+    const customerPhone = normalizePhone(input.customerPhone);
+    const customerCountry = input.customerCountry
+      ? sanitizeSingleLine(input.customerCountry, 80)
+      : undefined;
+    const customerNote = sanitizeNotes(input.notes);
+
+    if (customerName.length < 2) {
+      return {
+        success: false,
+        error: "Please enter your full name.",
+      };
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)) {
+      return {
+        success: false,
+        error: "Please enter a valid email address.",
+      };
+    }
+
+    const phoneDigits = customerPhone.replace(/\D/g, "");
+
+    if (phoneDigits.length < 7 || phoneDigits.length > 18) {
+      return {
+        success: false,
+        error: "Please enter a valid phone number.",
+      };
+    }
+
+    const reservationDate = parseReservationDateInput(input.date);
+
+    if (!reservationDate) {
+      return {
+        success: false,
+        error: "Please choose a valid reservation date.",
+      };
+    }
+
+    const todayUtc = new Date();
+    const minReservationDate = new Date(
+      Date.UTC(
+        todayUtc.getUTCFullYear(),
+        todayUtc.getUTCMonth(),
+        todayUtc.getUTCDate()
+      )
+    );
+
+    if (reservationDate < minReservationDate) {
+      return {
+        success: false,
+        error: "Past dates cannot be booked online.",
+      };
+    }
+
+    const limitKey = `${customerEmail}|${phoneDigits}|${input.tourSlug}`;
+    const reservationLimit = consumeRateLimit("reservation", limitKey, {
+      limit: 5,
+      windowMs: 60 * 60 * 1000,
+    });
+
+    if (!reservationLimit.allowed) {
+      return {
+        success: false,
+        error:
+          "Too many reservation attempts were made in a short time. Please wait a little and try again.",
+      };
+    }
+
+    const pricing = buildReservationPricingSnapshot({
+      tourSlug: input.tourSlug,
+      guests: input.guests,
+      packageName: input.packageName,
+      addOns: input.addOns,
+    });
+
+    const reservationTime = normalizeReservationTime(input.time);
     const reservationId = await generateReservationId();
-    const dateObj = new Date(input.date);
 
     const reservation = await prisma.reservation.create({
       data: {
         reservationId,
-        tourSlug: input.tourSlug,
-        tourName: input.tourName,
-        date: dateObj,
-        time: input.time,
-        guests: input.guests,
-        totalPrice: input.totalPrice,
-        currency: input.currency,
-        customerName: input.customerName,
-        customerEmail: input.customerEmail,
-        customerPhone: input.customerPhone,
-        customerCountry: input.customerCountry || null,
-        notes: input.notes || null,
+        tourSlug: pricing.tour.slug,
+        tourName: pricing.tour.nameEn,
+        date: reservationDate,
+        time: reservationTime,
+        guests: pricing.guests,
+        totalPrice: pricing.total,
+        currency: pricing.currency,
+        customerName,
+        customerEmail,
+        customerPhone,
+        customerCountry: customerCountry || null,
+        notes:
+          serializeReservationNotes({
+            packageName: pricing.packageName,
+            addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+            customerNote,
+            pricing: {
+              currency: pricing.currency,
+              guests: pricing.guests,
+              priceMode: pricing.priceMode,
+              lineItems: pricing.lineItems,
+              subtotal: pricing.subtotal,
+              addOnsTotal: pricing.addOnsTotal,
+              total: pricing.total,
+            },
+          }) ?? null,
       },
     });
 
-    const formattedDate = format(dateObj, "MMMM d, yyyy");
+    const formattedDate = format(reservationDate, "MMMM d, yyyy");
 
     // Send confirmation email to customer
     try {
       await sendEmail({
-        to: input.customerEmail,
+        to: customerEmail,
         cc: process.env.GMAIL_USER,
-        subject: `Booking Confirmed — ${reservationId} | MerrySails`,
+        subject: `Reservation Request Received — ${reservationId} | MerrySails`,
         html: reservationConfirmationEmail({
           reservationId,
-          customerName: input.customerName,
-          tourName: input.tourName,
+          customerName,
+          tourName: pricing.tour.nameEn,
+          tourSlug: pricing.tour.slug,
           date: formattedDate,
-          time: input.time,
-          guests: input.guests,
-          totalPrice: input.totalPrice,
-          currency: input.currency,
-          notes: input.notes,
+          time: reservationTime,
+          guests: pricing.guests,
+          totalPrice: pricing.total,
+          currency: pricing.currency,
+          packageName: pricing.packageName,
+          addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+          notes: customerNote,
+          variant: "received",
         }),
       });
     } catch (emailErr) {
@@ -75,21 +252,23 @@ export async function createReservation(input: CreateReservationInput) {
       if (process.env.GMAIL_USER) {
         await sendEmail({
           to: process.env.GMAIL_USER,
-          subject: `🎉 New Booking: ${reservationId} — ${input.tourName}`,
+          subject: `🎉 New Booking: ${reservationId} — ${pricing.tour.nameEn}`,
           html: reservationNotificationEmail({
             reservationId,
-            customerName: input.customerName,
-            customerEmail: input.customerEmail,
-            customerPhone: input.customerPhone,
-            customerCountry: input.customerCountry,
-            tourName: input.tourName,
-            tourSlug: input.tourSlug,
+            customerName,
+            customerEmail,
+            customerPhone,
+            customerCountry,
+            tourName: pricing.tour.nameEn,
+            tourSlug: pricing.tour.slug,
             date: formattedDate,
-            time: input.time,
-            guests: input.guests,
-            totalPrice: input.totalPrice,
-            currency: input.currency,
-            notes: input.notes,
+            time: reservationTime,
+            guests: pricing.guests,
+            totalPrice: pricing.total,
+            currency: pricing.currency,
+            packageName: pricing.packageName,
+            addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+            notes: customerNote,
           }),
         });
       }
@@ -101,14 +280,27 @@ export async function createReservation(input: CreateReservationInput) {
     if (process.env.TELEGRAM_BOT_TOKEN) {
       try {
         const { notifyNewReservation } = await import("@/lib/telegram/notifications");
-        await notifyNewReservation(reservation);
+        await notifyNewReservation({
+          ...reservation,
+          totalPrice: Number(reservation.totalPrice),
+        });
       } catch {
         // Telegram not set up yet — silently skip
       }
     }
 
-    return { success: true, reservationId };
+    return {
+      success: true,
+      reservationId,
+      totalPrice: pricing.total,
+      packageName: pricing.packageName,
+      addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+    };
   } catch (error) {
+    if (error instanceof ReservationValidationError) {
+      return { success: false, error: error.message };
+    }
+
     console.error("Failed to create reservation:", error);
     return { success: false, error: "Failed to create reservation. Please try again." };
   }

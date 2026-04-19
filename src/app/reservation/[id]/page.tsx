@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { getReservation } from "@/app/actions/reservation";
-import { getTourBySlug } from "@/data/tours";
+import { getTourBySlug, getTourPath } from "@/data/tours";
 import { format } from "date-fns";
-import { Calendar, Users, Clock, MapPin, Phone, Shield, Info, Camera, Anchor } from "lucide-react";
+import { Calendar, Users, Clock, MapPin, Phone, Shield, Info, Camera, Anchor, FileText } from "lucide-react";
 import Link from "next/link";
 import CancelButton from "./CancelButton";
+import { parseReservationNotes } from "@/lib/reservation-meta";
 
 export const metadata: Metadata = {
   title: "Reservation Details",
@@ -52,10 +53,16 @@ export default async function ReservationDetailPage({ params }: { params: Promis
   const r = result.reservation;
   const tour = getTourBySlug(r.tourSlug);
   const dateFormatted = format(new Date(r.date), "EEEE, MMMM d, yyyy");
-  const canCancel = r.status !== "cancelled" && r.status !== "completed" && (new Date(r.date).getTime() - Date.now()) > 24 * 60 * 60 * 1000;
-  const isUpcoming = r.status !== "cancelled" && r.status !== "completed" && new Date(r.date).getTime() > Date.now();
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now();
+  const canCancel = r.status !== "cancelled" && r.status !== "completed" && (new Date(r.date).getTime() - now) > 24 * 60 * 60 * 1000;
+  const isUpcoming = r.status !== "cancelled" && r.status !== "completed" && new Date(r.date).getTime() > now;
   const status = statusConfig[r.status] || { color: "bg-gray-100 text-gray-800 border-gray-200", label: r.status, icon: "" };
   const departurePoint = tour?.departurePoint;
+  const reservationMeta = parseReservationNotes(r.notes);
+  const hasSelectedOptions = Boolean(
+    reservationMeta.packageName || reservationMeta.addOns.length > 0
+  );
 
   return (
     <main className="min-h-screen bg-[var(--surface-alt)] pt-28 pb-32">
@@ -81,7 +88,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
             <div className="flex items-start justify-between">
               <h2 className="text-lg font-bold text-[var(--heading)]">{r.tourName}</h2>
               {tour && (
-                <Link href={`/cruises/${tour.slug}`} className="text-xs text-[var(--brand-primary)] font-medium hover:underline shrink-0 ml-3">
+                <Link href={getTourPath(tour)} className="text-xs text-[var(--brand-primary)] font-medium hover:underline shrink-0 ml-3">
                   View Tour
                 </Link>
               )}
@@ -108,10 +115,32 @@ export default async function ReservationDetailPage({ params }: { params: Promis
               )}
             </div>
 
-            {r.notes && (
+            {hasSelectedOptions && (
+              <div className="bg-[var(--surface-alt)] rounded-xl p-3">
+                <div className="text-xs text-[var(--text-muted)] mb-2">
+                  Booking Selection
+                </div>
+                <div className="space-y-2 text-sm text-[var(--body-text)]">
+                  {reservationMeta.packageName && (
+                    <p>
+                      <span className="font-semibold text-[var(--heading)]">Package:</span>{" "}
+                      {reservationMeta.packageName}
+                    </p>
+                  )}
+                  {reservationMeta.addOns.length > 0 && (
+                    <p>
+                      <span className="font-semibold text-[var(--heading)]">Add-ons:</span>{" "}
+                      {reservationMeta.addOns.join(", ")}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {reservationMeta.customerNote && (
               <div className="bg-[var(--surface-alt)] rounded-xl p-3">
                 <div className="text-xs text-[var(--text-muted)] mb-1">Special Requests</div>
-                <p className="text-sm text-[var(--body-text)]">{r.notes}</p>
+                <p className="text-sm text-[var(--body-text)]">{reservationMeta.customerNote}</p>
               </div>
             )}
 
@@ -165,6 +194,22 @@ export default async function ReservationDetailPage({ params }: { params: Promis
 
         {/* Actions */}
         <div className="space-y-2.5">
+          <Link
+            href={`/reservation/${r.reservationId}/invoice`}
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-[var(--line)] text-sm text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all"
+          >
+            <FileText className="w-4 h-4" />
+            Open Reservation Invoice
+          </Link>
+
+          <Link
+            href={`/reservation/${r.reservationId}/voucher`}
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--heading)] text-white font-semibold hover:brightness-110 transition-all text-sm"
+          >
+            <FileText className="w-4 h-4" />
+            Open Travel Voucher
+          </Link>
+
           {canCancel && <CancelButton reservationId={r.reservationId} />}
 
           <a

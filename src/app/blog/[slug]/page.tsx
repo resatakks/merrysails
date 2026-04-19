@@ -2,36 +2,33 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
-import { blogPosts, getBlogBySlug, getAllBlogSlugs } from "@/data/blog";
-import { getTourBySlug } from "@/data/tours";
+import { getBlogBySlug, getAllBlogSlugs } from "@/content/blog";
+import { getTourBySlug, getTourPath, isPricingVisible } from "@/data/tours";
 import { getAuthor } from "@/data/team";
 import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { TableOfContents } from "@/components/blog/table-of-contents";
 import { BlogSectionBlock } from "@/components/blog/blog-section";
 import { AuthorCard } from "@/components/blog/author-card";
 import { InlineCTA } from "@/components/blog/inline-cta";
+import { BlogRoutingPanel } from "@/components/blog/blog-routing-panel";
 import { RelatedPosts } from "@/components/blog/related-posts";
+import { getBlogRoutingCopy, getHighIntentBlogSlugs } from "@/content/blog";
 
 const commercialCruiseLinks = [
   {
-    href: "/istanbul-dinner-cruise",
-    title: "Istanbul Dinner Cruise",
-    description: "Shared dinner cruise with live show, hotel transfer, and fixed per-person pricing.",
+    href: "/cruises/bosphorus-sunset-cruise",
+    title: "Bosphorus Sunset Cruise",
+    description: "Shared golden-hour Bosphorus cruise with clear €34 / €40 pricing.",
   },
   {
-    href: "/boat-rental-istanbul",
-    title: "Boat Rental Istanbul",
-    description: "Private boat option for smaller groups, birthdays, and flexible Bosphorus routes.",
+    href: "/istanbul-dinner-cruise",
+    title: "Bosphorus Dinner Cruise",
+    description: "Shared dinner cruise with the verified four-package ladder, transfer support, and Turkish-night format.",
   },
   {
     href: "/yacht-charter-istanbul",
     title: "Yacht Charter Istanbul",
-    description: "Higher-ticket private yacht plans for premium occasions and tailored onboard service.",
-  },
-  {
-    href: "/private-bosphorus-dinner-cruise",
-    title: "Private Bosphorus Dinner Cruise",
-    description: "Private dinner-led format for proposals, anniversaries, and special evening bookings.",
+    description: "Private Bosphorus charter with the verified Essential, Premium, and VIP yacht price range.",
   },
 ] as const;
 
@@ -94,6 +91,8 @@ export default async function BlogPostPage({
     .map(getTourBySlug)
     .filter(Boolean)
     .slice(0, 3);
+  const routingCopy = getBlogRoutingCopy(post);
+  const priorityRelatedSlugs = getHighIntentBlogSlugs(post);
 
   const midPoint = Math.floor(post.sections.length / 2);
 
@@ -255,8 +254,8 @@ export default async function BlogPostPage({
 
               {/* Sidebar CTA */}
               <div className="mt-8 rounded-xl bg-[var(--brand-primary)] p-5 text-center">
-                <p className="text-white font-bold text-sm mb-2">Best Price Guaranteed</p>
-                <p className="text-white/70 text-xs mb-4">Book direct — no middleman fees</p>
+                <p className="text-white font-bold text-sm mb-2">Plan Your Cruise</p>
+                <p className="text-white/70 text-xs mb-4">Browse shared and private Bosphorus options in one place.</p>
                 <Link
                   href="/cruises"
                   className="inline-flex items-center gap-1.5 bg-white text-[var(--brand-primary)] font-bold py-2.5 px-5 rounded-full text-xs hover:shadow-lg transition-all w-full justify-center"
@@ -289,13 +288,22 @@ export default async function BlogPostPage({
             </div>
           )}
 
+          <BlogRoutingPanel
+            eyebrow={routingCopy.eyebrow}
+            title={routingCopy.title}
+            description={routingCopy.description}
+            links={routingCopy.links}
+            articleSlugs={priorityRelatedSlugs}
+            currentSlug={post.slug}
+          />
+
           {/* Author Bio (full) */}
           <div className="max-w-4xl mt-12 rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-6 md:p-8">
             <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
-                    Ready-to-Book Pages
+              Explore Core Cruise Pages
             </h2>
             <p className="text-[var(--body-text)] mb-6">
-              If you are already comparing dinner cruise, private yacht, boat rental, or proposal options, these are the pages that take you straight to the right booking flow.
+              MerrySails now concentrates its main booking flow around three main products. These pages show the verified pricing, package logic, and booking structure first.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               {commercialCruiseLinks.map((item) => (
@@ -323,6 +331,7 @@ export default async function BlogPostPage({
           <div className="max-w-4xl">
             <RelatedPosts
               slugs={post.relatedPosts}
+              prioritySlugs={priorityRelatedSlugs}
               currentSlug={post.slug}
               category={post.category}
             />
@@ -337,7 +346,7 @@ export default async function BlogPostPage({
                   tour ? (
                     <Link
                       key={tour.slug}
-                      href={`/cruises/${tour.slug}`}
+                      href={getTourPath(tour)}
                       className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden">
@@ -355,7 +364,7 @@ export default async function BlogPostPage({
                         </h3>
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-bold text-[var(--heading)]">
-                            From €{tour.priceEur}
+                            {isPricingVisible(tour) ? `From €${tour.priceEur}` : "Service page"}
                           </span>
                           <ArrowRight className="w-4 h-4 text-[var(--brand-primary)]" />
                         </div>
@@ -370,10 +379,10 @@ export default async function BlogPostPage({
           {/* Bottom CTA */}
           <div className="max-w-4xl mt-12 bg-[var(--brand-dark)] rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-3">
-              Ready to Book Your Istanbul Experience?
+              Explore Cruise Options in Istanbul
             </h2>
             <p className="text-white/70 mb-6 max-w-lg mx-auto">
-              Best price guaranteed when you book direct. No middleman fees. TURSAB licensed since 2001.
+              Browse current shared and private cruise options, then contact the team if you want help choosing the right plan.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link

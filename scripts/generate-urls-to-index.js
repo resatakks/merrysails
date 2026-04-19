@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * MerrySails — GSC için indexlenecek URL listesi üretir.
  * Sitemap'ten tüm URL'leri alır; günlük kota (10–20) kadarını ayrı dosyaya yazar.

@@ -1,17 +1,69 @@
+import {
+  getReservationDetailUrl,
+  getReservationInvoiceUrl,
+  getReservationVoucherUrl,
+  getTourUrlBySlug,
+} from "@/lib/reservation-links";
+import { currencySymbol, escapeHtml } from "./helpers";
+
 interface ReservationConfirmationData {
   reservationId: string;
   customerName: string;
   tourName: string;
+  tourSlug: string;
   date: string;
   time: string;
   guests: number;
   totalPrice: number;
   currency: string;
+  packageName?: string;
+  addOns?: string[];
   notes?: string | null;
+  variant?: "received" | "confirmed";
 }
 
 export function reservationConfirmationEmail(data: ReservationConfirmationData): string {
-  const currencySymbol = data.currency === "EUR" ? "\u20AC" : data.currency === "USD" ? "$" : data.currency === "TRY" ? "\u20BA" : data.currency;
+  const symbol = currencySymbol(data.currency);
+  const reservationUrl = getReservationDetailUrl(data.reservationId);
+  const invoiceUrl = getReservationInvoiceUrl(data.reservationId);
+  const voucherUrl = getReservationVoucherUrl(data.reservationId);
+  const tourUrl = getTourUrlBySlug(data.tourSlug);
+  const variant = data.variant ?? "received";
+  const isConfirmed = variant === "confirmed";
+  const isPrivateYachtFlow = data.tourSlug === "yacht-charter-in-istanbul";
+  const cancellationSummary = isPrivateYachtFlow
+    ? "Free cancellation up to 48 hours before departure"
+    : "Free cancellation up to 24 hours before departure";
+  const heroBadge = isConfirmed
+    ? "&#10003; Reservation Confirmed"
+    : "&#10003; Reservation Received";
+  const greetingBody = isConfirmed
+    ? `Great news — your reservation is now confirmed. Your selected departure is secured, and you can use the links below to review your reservation details, invoice, and voucher anytime.`
+    : `Thank you for choosing MerrySails! Your reservation has been successfully received.
+          Our team will review your booking and get in touch with you shortly to confirm the details.`;
+  const reservationNote = isConfirmed
+    ? "Your booking is now secured"
+    : "Please save this for your records";
+  const nextSteps = isConfirmed
+    ? [
+        "Your date and selected option are now confirmed",
+        isPrivateYachtFlow
+          ? "Our operations team will confirm the payment schedule in writing"
+          : "Payment will be collected on board by cash or card",
+        isPrivateYachtFlow
+          ? "The final marina pin and boarding contact will be shared before departure"
+          : "Arrive 15 minutes before departure at the shared meeting point",
+      ]
+    : [
+        "Our team will review your booking and confirm availability",
+        isPrivateYachtFlow
+          ? "You'll receive the charter follow-up and confirmation steps by email or WhatsApp"
+          : "You'll receive a confirmation message via email or WhatsApp",
+        isPrivateYachtFlow
+          ? "The marina and boarding contact are shared once the yacht plan is approved"
+          : "Arrive 15 minutes before departure at the meeting point",
+      ];
+  const nextStepsTitle = isConfirmed ? "What's Next Before Departure?" : "What Happens Next?";
 
   return `
 <!DOCTYPE html>
@@ -38,7 +90,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
       <!-- Success Badge -->
       <div style="margin-top:24px;">
         <div style="display:inline-block;background:rgba(34,197,94,0.15);border:2px solid rgba(34,197,94,0.4);border-radius:50px;padding:10px 28px;">
-          <span style="color:#4ade80;font-size:15px;font-weight:600;">&#10003; Reservation Received</span>
+          <span style="color:#4ade80;font-size:15px;font-weight:600;">${heroBadge}</span>
         </div>
       </div>
     </div>
@@ -48,18 +100,17 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
 
       <!-- Greeting -->
       <div style="padding-top:32px;margin-bottom:24px;">
-        <h2 style="color:#0f172a;margin:0 0 8px;font-size:20px;font-weight:700;">Dear ${data.customerName},</h2>
+        <h2 style="color:#0f172a;margin:0 0 8px;font-size:20px;font-weight:700;">Dear ${escapeHtml(data.customerName)},</h2>
         <p style="color:#64748b;margin:0;font-size:15px;line-height:1.6;">
-          Thank you for choosing MerrySails! Your reservation has been successfully received.
-          Our team will review your booking and get in touch with you shortly to confirm the details.
+          ${greetingBody}
         </p>
       </div>
 
       <!-- Reservation ID Card -->
       <div style="background:linear-gradient(135deg,#fef9e7 0%,#fef3c7 100%);border:1px solid #fde68a;border-radius:12px;padding:20px;text-align:center;margin-bottom:24px;">
         <p style="color:#92400e;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 6px;font-weight:600;">Reservation ID</p>
-        <p style="color:#78350f;font-size:26px;font-weight:800;margin:0;letter-spacing:2px;font-family:'Courier New',monospace;">${data.reservationId}</p>
-        <p style="color:#a16207;font-size:12px;margin:8px 0 0;">Please save this for your records</p>
+        <p style="color:#78350f;font-size:26px;font-weight:800;margin:0;letter-spacing:2px;font-family:'Courier New',monospace;">${escapeHtml(data.reservationId)}</p>
+        <p style="color:#a16207;font-size:12px;margin:8px 0 0;">${reservationNote}</p>
       </div>
 
       <!-- Booking Details -->
@@ -70,15 +121,15 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         <table style="width:100%;border-collapse:collapse;">
           <tr>
             <td style="color:#64748b;font-size:13px;padding:14px 20px;border-bottom:1px solid #f1f5f9;width:35%;">Tour</td>
-            <td style="color:#0f172a;font-size:14px;padding:14px 20px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:600;">${data.tourName}</td>
+            <td style="color:#0f172a;font-size:14px;padding:14px 20px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:600;">${escapeHtml(data.tourName)}</td>
           </tr>
           <tr>
             <td style="color:#64748b;font-size:13px;padding:14px 20px;border-bottom:1px solid #f1f5f9;">Date</td>
-            <td style="color:#0f172a;font-size:14px;padding:14px 20px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:500;">&#128197; ${data.date}</td>
+            <td style="color:#0f172a;font-size:14px;padding:14px 20px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:500;">&#128197; ${escapeHtml(data.date)}</td>
           </tr>
           <tr>
             <td style="color:#64748b;font-size:13px;padding:14px 20px;border-bottom:1px solid #f1f5f9;">Departure</td>
-            <td style="color:#0f172a;font-size:14px;padding:14px 20px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:500;">&#128336; ${data.time}</td>
+            <td style="color:#0f172a;font-size:14px;padding:14px 20px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:500;">&#128336; ${escapeHtml(data.time)}</td>
           </tr>
           <tr>
             <td style="color:#64748b;font-size:13px;padding:14px 20px;border-bottom:1px solid #f1f5f9;">Guests</td>
@@ -86,42 +137,62 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           </tr>
           <tr>
             <td style="color:#64748b;font-size:13px;padding:14px 20px;">Total</td>
-            <td style="color:#0f172a;font-size:20px;padding:14px 20px;text-align:right;font-weight:800;">${currencySymbol}${data.totalPrice}</td>
+            <td style="color:#0f172a;font-size:20px;padding:14px 20px;text-align:right;font-weight:800;">${symbol}${data.totalPrice}</td>
           </tr>
         </table>
       </div>
+
+      ${(data.packageName || (data.addOns && data.addOns.length > 0)) ? `
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:24px;">
+        <p style="color:#0f172a;font-size:14px;font-weight:700;margin:0 0 12px;">Selected Booking Option</p>
+        ${data.packageName ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>` : ""}
+        ${(data.addOns && data.addOns.length > 0) ? `<p style="color:#334155;font-size:14px;margin:0;"><strong>Add-ons:</strong> ${escapeHtml(data.addOns.join(", "))}</p>` : ""}
+      </div>
+      ` : ""}
 
       ${data.notes ? `
       <!-- Special Requests -->
       <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:16px 20px;margin-bottom:24px;">
         <p style="color:#0369a1;font-size:13px;font-weight:600;margin:0 0 4px;">&#128221; Your Special Requests</p>
-        <p style="color:#0c4a6e;font-size:14px;margin:0;line-height:1.5;">${data.notes}</p>
+        <p style="color:#0c4a6e;font-size:14px;margin:0;line-height:1.5;">${escapeHtml(data.notes)}</p>
       </div>
       ` : ''}
 
       <!-- What's Next -->
       <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:20px;margin-bottom:24px;">
-        <p style="color:#166534;font-size:15px;font-weight:700;margin:0 0 12px;">&#128640; What Happens Next?</p>
+        <p style="color:#166534;font-size:15px;font-weight:700;margin:0 0 12px;">&#128640; ${nextStepsTitle}</p>
         <table style="border-collapse:collapse;width:100%;">
           <tr>
             <td style="padding:6px 12px 6px 0;vertical-align:top;width:28px;"><span style="background:#22c55e;color:white;border-radius:50%;display:inline-block;width:22px;height:22px;text-align:center;line-height:22px;font-size:12px;font-weight:700;">1</span></td>
-            <td style="color:#15803d;font-size:13px;padding:6px 0;line-height:1.5;">Our team will review your booking and confirm availability</td>
+            <td style="color:#15803d;font-size:13px;padding:6px 0;line-height:1.5;">${nextSteps[0]}</td>
           </tr>
           <tr>
             <td style="padding:6px 12px 6px 0;vertical-align:top;"><span style="background:#22c55e;color:white;border-radius:50%;display:inline-block;width:22px;height:22px;text-align:center;line-height:22px;font-size:12px;font-weight:700;">2</span></td>
-            <td style="color:#15803d;font-size:13px;padding:6px 0;line-height:1.5;">You'll receive a confirmation message via email or WhatsApp</td>
+            <td style="color:#15803d;font-size:13px;padding:6px 0;line-height:1.5;">${nextSteps[1]}</td>
           </tr>
           <tr>
             <td style="padding:6px 12px 6px 0;vertical-align:top;"><span style="background:#22c55e;color:white;border-radius:50%;display:inline-block;width:22px;height:22px;text-align:center;line-height:22px;font-size:12px;font-weight:700;">3</span></td>
-            <td style="color:#15803d;font-size:13px;padding:6px 0;line-height:1.5;">Arrive 15 minutes before departure at the meeting point</td>
+            <td style="color:#15803d;font-size:13px;padding:6px 0;line-height:1.5;">${nextSteps[2]}</td>
           </tr>
         </table>
       </div>
 
       <!-- Track Reservation Button -->
       <div style="text-align:center;margin-bottom:24px;">
-        <a href="https://merrysails.com/reservation/${data.reservationId}" style="display:inline-block;background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);color:#ffffff;text-decoration:none;padding:14px 40px;border-radius:10px;font-weight:700;font-size:15px;box-shadow:0 4px 14px rgba(245,158,11,0.35);">
+        <a href="${reservationUrl}" style="display:inline-block;background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);color:#ffffff;text-decoration:none;padding:14px 40px;border-radius:10px;font-weight:700;font-size:15px;box-shadow:0 4px 14px rgba(245,158,11,0.35);">
           Track Your Reservation &#8594;
+        </a>
+      </div>
+
+      <div style="text-align:center;margin:-8px 0 24px;">
+        <a href="${invoiceUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;border:1px solid #cbd5e1;">
+          Open Invoice
+        </a>
+        <a href="${voucherUrl}" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
+          Open Voucher
+        </a>
+        <a href="${tourUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;border:1px solid #cbd5e1;">
+          View Experience Page
         </a>
       </div>
 
@@ -130,13 +201,13 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         <p style="color:#92400e;margin:0 0 10px;font-size:14px;font-weight:700;">&#128161; Good to Know</p>
         <table style="border-collapse:collapse;width:100%;">
           <tr>
-            <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; Free cancellation up to 24 hours before departure</td>
+            <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; ${cancellationSummary}</td>
           </tr>
           <tr>
-            <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; Payment on board — cash (EUR/USD/TRY) or credit card</td>
+            <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; ${isPrivateYachtFlow ? "Payment timing is confirmed in writing for your charter" : "Payment on board — cash (EUR/USD/TRY) or credit card"}</td>
           </tr>
           <tr>
-            <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; Complimentary drinks & snacks included on most tours</td>
+            <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; Drinks and inclusions depend on the package selected on your booked experience page</td>
           </tr>
           <tr>
             <td style="color:#78350f;font-size:13px;padding:4px 0;line-height:1.5;">&#10003; Professional photography available on board</td>

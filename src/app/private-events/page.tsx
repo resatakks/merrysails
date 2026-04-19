@@ -1,33 +1,25 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
-export const metadata = {
-  title: "Private Events Bosphorus | Birthday, Wedding & Celebration Cruises Istanbul",
+export const metadata: Metadata = {
+  title: "Private Events Bosphorus | Birthday, Proposal & Celebration Services | MerrySails",
   description:
-    "Book a private event on the Bosphorus in Istanbul. Birthday parties, wedding celebrations, anniversaries & proposals on a private yacht from €280. Decoration, DJ, and catering included.",
-  keywords: [
-    "private events istanbul yacht",
-    "birthday boat istanbul",
-    "birthday party boat istanbul",
-    "wedding celebration cruise bosphorus",
-    "anniversary cruise istanbul",
-    "proposal yacht istanbul",
-    "bachelorette party boat istanbul",
-    "private celebration bosphorus",
-  ],
-  alternates: { canonical: "https://merrysails.com/private-events" },
+    "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and proposal-adjacent requests in Istanbul.",
+  alternates: { canonical: `${SITE_URL}/private-events` },
   openGraph: {
-    title: "Private Events Bosphorus | Birthday, Wedding & Celebration Cruises Istanbul",
+    title: "Private Events Bosphorus | Birthday, Proposal & Celebration Services | MerrySails",
     description:
-      "Private birthday parties, wedding celebrations, anniversaries, and proposals on the Bosphorus. From €280. Decoration, DJ, catering.",
-    url: "https://merrysails.com/private-events",
-    type: "website" as const,
+      "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and flexible private gatherings.",
+    url: `${SITE_URL}/private-events`,
+    type: "website",
     images: [
       {
-        url: "https://merrysails.com/og-image.jpg",
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Private celebration event on a Bosphorus yacht — MerrySails Istanbul",
+        alt: "Private Bosphorus events in Istanbul — MerrySails",
       },
     ],
   },
@@ -36,544 +28,153 @@ export const metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Private Events on the Bosphorus Istanbul — Birthday, Wedding & Celebration Cruises",
+  name: "Private Events on the Bosphorus",
   description:
-    "Book a private yacht on the Bosphorus for birthday parties, wedding celebrations, proposals, anniversaries, and bachelorette parties. Fully customisable with decoration, DJ, and catering.",
+    "Private Bosphorus event planning for birthdays, anniversaries, proposals, celebration dinners, and private group evenings.",
   provider: {
-    "@id": "https://merrysails.com/#organization",
+    "@id": `${SITE_URL}/#organization`,
   },
   areaServed: { "@type": "City", name: "Istanbul" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Private Event Packages",
+    name: "Private Event Formats",
     itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Essential",
-        price: "280",
-        priceCurrency: "EUR",
-        description: "2-hour private yacht cruise for up to 15 guests. Captain, crew, refreshments.",
-      },
-      {
-        "@type": "Offer",
-        name: "Premium",
-        price: "380",
-        priceCurrency: "EUR",
-        description: "3-hour private cruise for up to 30 guests. Decoration, catering platter, open bar.",
-      },
-      {
-        "@type": "Offer",
-        name: "VIP",
-        price: "680",
-        priceCurrency: "EUR",
-        description:
-          "4-hour luxury yacht event for up to 60 guests. Full decoration, plated dinner, premium bar, DJ.",
-      },
+      { "@type": "Service", name: "Birthday Event", description: "Private Bosphorus birthday planning and celebration flow." },
+      { "@type": "Service", name: "Anniversary Event", description: "Anniversary-led Bosphorus planning with private service options." },
+      { "@type": "Service", name: "Celebration Dinner", description: "Private celebration-led Bosphorus evening planning." },
     ],
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How much does a private birthday boat party cost in Istanbul?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A private birthday boat in Istanbul starts from €280 for up to 15 guests (2 hours). Premium for 30 guests is €380 (3 hours, decoration included). VIP for 60 guests is €680 (4 hours, DJ + catering + full decoration). Prices are per vessel, not per person.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I organise a marriage proposal on a Bosphorus yacht?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. MerrySails specialises in Bosphorus proposal cruises. Our Romance package includes rose petal decoration, champagne, a professional photographer, and optional violinist. We coordinate the reveal moment so you can focus entirely on your partner.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is a DJ available for birthday parties on the Bosphorus?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. A professional DJ with full sound system (speakers, subwoofer, mixer) is available for €180 per event (up to 4 hours). Music genres are specified in advance: Turkish pop, international, R&B, Latin, or a custom playlist.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What decoration is included in the private event packages?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Decoration ranges from Basic (personalised banner, 20 balloons, floral centrepiece, €60) to Premium (balloon arch, full vessel decoration, fairy lights, photo corner, €220). All packages include the cake presentation ceremony coordinated with music and lighting.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How many guests can join a private event cruise?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Private event cruises accommodate 10 to 100 guests. Groups of 10–15 suit a gulet, 30–60 suit a mid-size event yacht, and 60–100 guests use our largest vessel or a two-vessel charter arrangement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What events can I host on a private Bosphorus yacht?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Birthday parties, wedding receptions and celebrations, marriage proposals, bachelorette and hen parties, anniversary cruises, family gatherings, graduation parties, and any private celebration can be hosted on a Bosphorus yacht with MerrySails.",
-      },
-    },
-  ],
-};
-
-const eventTypes = [
+const faqItems = [
   {
-    icon: "🎂",
-    title: "Birthday Parties",
-    desc: "From 10 to 100 guests. Decoration packages, DJ, birthday cake, and catering. The Bosphorus backdrop makes every birthday unforgettable.",
-    link: "/blog/birthday-party-boat-istanbul",
+    q: "How are private event requests priced?",
+    a: "Private event pricing depends on guest count, timing, vessel type, food and drink expectations, and the level of styling or entertainment needed.",
   },
   {
-    icon: "💍",
-    title: "Marriage Proposals",
-    desc: "Bosphorus proposal packages with rose petals, champagne, photographer, and optional violinist. We coordinate the moment — you just ask.",
-    link: "/cruises/yacht-charter-in-istanbul",
+    q: "Which occasions fit this page best?",
+    a: "This page works best for birthdays, anniversaries, flexible celebrations, and private gatherings that are not primarily a proposal page or a corporate event page.",
   },
   {
-    icon: "🥂",
-    title: "Wedding Celebrations",
-    desc: "Wedding day cruises, after-party receptions, and pre-wedding events. Full catering, decoration, and entertainment for up to 100 guests.",
-    link: "/private-tours",
-  },
-  {
-    icon: "🎉",
-    title: "Bachelorette & Hen Parties",
-    desc: "Private yacht hen parties with DJ, open bar, custom decoration, and a Bosphorus route chosen for the best sunset and party atmosphere.",
-    link: "/private-tours",
-  },
-  {
-    icon: "🌅",
-    title: "Anniversary Cruises",
-    desc: "Private sunset or dinner cruise for two to twenty guests. Romantic decoration, champagne on arrival, and a custom cake for milestone anniversaries.",
-    link: "/blog/bosphorus-sunset-cruise-istanbul",
-  },
-  {
-    icon: "🎓",
-    title: "Graduations & Milestones",
-    desc: "Celebrate graduations, promotions, and personal milestones on the Bosphorus. Flexible catering and decoration to match your celebration style.",
-    link: "/contact",
+    q: "Can you arrange decoration, cake, music, or photography?",
+    a: "Yes. Decoration, cake, photographer, music, flowers, and onboard service details can all be planned as part of the event brief.",
   },
 ];
 
-const packages = [
+const comparePages = [
   {
-    name: "Essential",
-    guests: "Up to 15",
-    duration: "2 hrs",
-    price: "€280",
-    highlight: false,
-    features: [
-      "Fully private vessel",
-      "Captain & crew",
-      "Refreshments",
-      "English guide",
-      "Free cancellation (14+ days)",
-    ],
+    href: "/proposal-yacht-rental-istanbul",
+    title: "Proposal Yacht Rental",
+    description: "Use this when the proposal reveal is the center of the booking.",
   },
   {
-    name: "Premium",
-    guests: "Up to 30",
-    duration: "3 hrs",
-    price: "€380",
-    highlight: true,
-    features: [
-      "Decoration package",
-      "Catering platter",
-      "Open bar",
-      "Birthday cake optional",
-      "Photo corner setup",
-    ],
+    href: "/private-bosphorus-dinner-cruise",
+    title: "Private Dinner Cruise",
+    description: "Use this when a seated dinner-first experience is the main priority.",
   },
   {
-    name: "VIP",
-    guests: "Up to 60",
-    duration: "4 hrs",
-    price: "€680",
-    highlight: false,
-    features: [
-      "Full vessel decoration",
-      "Plated dinner",
-      "Premium bar",
-      "DJ optional (+€180)",
-      "Event coordinator on board",
-    ],
+    href: "/corporate-events",
+    title: "Corporate Events",
+    description: "Use this when the request is company-led and needs invoicing or guest-flow planning.",
+  },
+];
+
+const eventFits = [
+  {
+    title: "Birthday celebrations",
+    body: "Best when the event needs a private onboard setting with room for cake, photos, music, and a custom run of show.",
+  },
+  {
+    title: "Anniversaries and milestones",
+    body: "Best when the evening needs a celebratory structure but not necessarily a proposal-first or dinner-first format.",
+  },
+  {
+    title: "Flexible private gatherings",
+    body: "Best when the group wants a private Bosphorus evening and the final format still needs shaping.",
+  },
+  {
+    title: "Celebration-led requests",
+    body: "Best when the group wants a flexible private event rather than a fixed shared cruise package.",
   },
 ];
 
 export default function PrivateEventsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
-      <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
+      <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
-          {/* Hero */}
-          <div className="text-center mb-14">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--heading)]">
+          <section className="text-center mb-14">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--heading)]">
               Private Events on the Bosphorus
-              <br className="hidden md:block" />
-              <span className="text-[var(--brand-primary)]">
-                {" "}Birthday, Wedding & Celebration Cruises Istanbul
-              </span>
             </h1>
-            <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg leading-relaxed">
-              Celebrate any occasion on a fully private yacht on the Bosphorus. Birthday parties,
-              proposals, wedding receptions, bachelorette cruises, and anniversaries — from 10 to
-              100 guests. Decoration, DJ, and catering packages available. From €280.
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
+              This page is for birthdays, anniversaries, and flexible celebration requests that
+              need a private Bosphorus setup without forcing every event into the same booking path.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[var(--brand-primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--brand-primary-hover)] transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]"
               >
-                Book Your Private Event <ArrowRight className="w-4 h-4" />
+                Plan private event <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="https://wa.me/905370406822"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-[var(--brand-primary)] text-[var(--brand-primary)] px-6 py-3 rounded-xl font-semibold hover:bg-[var(--brand-primary)] hover:text-white transition-colors"
+                className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
               >
-                WhatsApp: +90 537 040 68 22
+                WhatsApp planning
               </a>
             </div>
-          </div>
-
-          {/* Answer capsule */}
-        <div className="bg-pink-50 border-l-4 border-pink-400 rounded-r-xl p-5 mb-12 max-w-3xl mx-auto">
-          <p className="text-[var(--heading)] font-medium">
-            <strong>Quick answer:</strong> A private event boat in Istanbul starts from €280 for
-            up to 15 guests (2 hours) — no shared passengers, fully private. Decoration packages
-            from €60, DJ add-on from €180, catering from €18/person. Groups from 10 to 100 guests
-            accommodated.
-          </p>
-        </div>
-
-        <section className="mb-16 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
-            If Your Request Is Actually a Different Occasion
-          </h2>
-          <p className="text-sm text-[var(--text-muted)] mb-5 leading-relaxed">
-            Private events are the right page when the occasion is celebration-led. If the guest
-            really wants proposal timing, dinner-first routing, or a B2B format, the quote becomes
-            faster when we move them to the closest best-fit page.
-          </p>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                href: "/proposal-yacht-rental-istanbul",
-                title: "Proposal Yacht Rental",
-                description: "Best when the celebration is actually a proposal with timing and privacy constraints.",
-              },
-              {
-                href: "/private-bosphorus-dinner-cruise",
-                title: "Private Dinner Cruise",
-                description: "Best when the group wants a private dining format instead of a party-first setup.",
-              },
-              {
-                href: "/corporate-events",
-                title: "Corporate Events",
-                description: "Best when the event has attendee flow, invoicing, or branded business requirements.",
-              },
-              {
-                href: "/yacht-charter-istanbul",
-                title: "Yacht Charter Istanbul",
-                description: "Best when the group needs a broader yacht comparison before choosing the event package.",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
-              >
-                <h3 className="font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
-                <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-16 rounded-2xl border border-pink-100 bg-pink-50 p-6">
-          <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
-            What to Send for a Faster Private Event Quote
-          </h2>
-          <p className="text-sm text-[var(--text-muted)] mb-5 leading-relaxed">
-            The fastest private event quotes usually include the basics below. That lets us choose
-            the right yacht size, decoration level, and whether the request belongs on this page or
-            one of the more specific pages above.
-          </p>
-          <div className="grid gap-3 md:grid-cols-2">
-            {[
-              "Occasion type, preferred date, and the boarding time you want.",
-              "Guest count and whether you need seated dining, standing reception, or open-deck celebration flow.",
-              "Decoration level, DJ needs, catering style, and whether the event needs a photographer or surprise setup.",
-              "If this is a proposal or dinner-led booking, mention that early so we can route it to the best-fit setup.",
-            ].map((item) => (
-              <div key={item} className="rounded-xl border border-white bg-white p-4 text-sm text-[var(--text-muted)] shadow-sm">
-                <span className="font-bold text-[var(--brand-primary)] mr-2">✓</span>
-                {item}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Event types */}
-        <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
-              What Type of Private Event Are You Planning?
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventTypes.map((event) => (
-                <Link key={event.title} href={event.link} className="group">
-                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full">
-                    <div className="text-3xl mb-3">{event.icon}</div>
-                    <h3 className="font-bold text-[var(--heading)] mb-2 group-hover:text-[var(--brand-primary)] transition-colors">
-                      {event.title}
-                    </h3>
-                    <p className="text-[var(--text-muted)] text-sm leading-relaxed">{event.desc}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
           </section>
 
-          {/* Packages */}
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
-              Private Event Packages & Pricing
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {packages.map((pkg) => (
-                <div
-                  key={pkg.name}
-                  className={`rounded-2xl p-6 shadow-sm ${
-                    pkg.highlight
-                      ? "bg-[var(--brand-primary)] text-white ring-2 ring-[var(--brand-primary)]"
-                      : "bg-white"
-                  }`}
-                >
-                  {pkg.highlight && (
-                    <div className="text-xs font-bold uppercase tracking-wide text-blue-200 mb-2">
-                      Most Popular
-                    </div>
-                  )}
-                  <h3
-                    className={`text-xl font-bold mb-1 ${
-                      pkg.highlight ? "text-white" : "text-[var(--heading)]"
-                    }`}
-                  >
-                    {pkg.name}
-                  </h3>
-                  <p
-                    className={`text-sm mb-3 ${
-                      pkg.highlight ? "text-blue-200" : "text-[var(--text-muted)]"
-                    }`}
-                  >
-                    {pkg.guests} · {pkg.duration}
-                  </p>
-                  <p
-                    className={`text-3xl font-black mb-5 ${
-                      pkg.highlight ? "text-white" : "text-[var(--brand-primary)]"
-                    }`}
-                  >
-                    {pkg.price}
-                  </p>
-                  <ul className="space-y-2">
-                    {pkg.features.map((f) => (
-                      <li
-                        key={f}
-                        className={`flex gap-2 text-sm ${
-                          pkg.highlight ? "text-blue-100" : "text-[var(--text-muted)]"
-                        }`}
-                      >
-                        <span
-                          className={`font-bold ${pkg.highlight ? "text-white" : "text-[var(--brand-primary)]"}`}
-                        >
-                          ✓
-                        </span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6">
-                    <Link
-                      href="/contact"
-                      className={`block text-center py-2.5 rounded-xl font-semibold text-sm transition-colors ${
-                        pkg.highlight
-                          ? "bg-white text-[var(--brand-primary)] hover:bg-blue-50"
-                          : "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)]"
-                      }`}
-                    >
-                      Book {pkg.name}
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-[var(--text-muted)] mt-4">
-              * All prices are per vessel, not per person. Decoration (from €60), DJ (€180),
-              catering (from €18/person), and birthday cake (from €65) are available as add-ons.
-              Low season (November–March) rates are 15–20% lower.
-            </p>
-          </section>
-
-          {/* Add-ons */}
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
-              Popular Add-Ons for Private Events
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--heading)] mb-3">Decoration Packages</h3>
-                <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-                  <li>
-                    <strong className="text-[var(--heading)]">Basic — €60:</strong> Banner,
-                    balloons, floral centrepiece, cake ceremony
-                  </li>
-                  <li>
-                    <strong className="text-[var(--heading)]">Standard — €120:</strong> Balloon
-                    arch, table centrepieces, rose petals, photo corner
-                  </li>
-                  <li>
-                    <strong className="text-[var(--heading)]">Premium — €220:</strong> Full vessel
-                    decoration, fairy lights, ceiling decor, custom banner
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--heading)] mb-3">Entertainment & Catering</h3>
-                <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-                  <li>
-                    <strong className="text-[var(--heading)]">DJ (4 hrs) — €180:</strong> Full
-                    sound system, custom genre playlist
-                  </li>
-                  <li>
-                    <strong className="text-[var(--heading)]">Cocktail catering — €18/person:</strong>{" "}
-                    Turkish mezze, canapés, standing reception
-                  </li>
-                  <li>
-                    <strong className="text-[var(--heading)]">Dinner — €38/person:</strong>{" "}
-                    3-course plated meal with dietary options
-                  </li>
-                  <li>
-                    <strong className="text-[var(--heading)]">Birthday cake — from €65:</strong>{" "}
-                    Standard to custom design, serves 15–60
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-16 rounded-2xl border border-pink-100 bg-pink-50 p-6">
-            <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
-              What to Send for a Faster Private Event Quote
-            </h2>
-            <div className="grid gap-3 md:grid-cols-2">
-              {[
-                "Occasion type, preferred date, and the expected boarding time.",
-                "Guest count and whether you need space for music, cake, or speeches.",
-                "Decoration level, DJ needs, catering style, and any special surprises.",
-                "Whether the booking should be private-celebration only or include an after-dinner flow.",
-              ].map((item) => (
-                <div key={item} className="rounded-xl border border-white bg-white p-4 text-sm text-[var(--text-muted)] shadow-sm">
-                  <span className="font-bold text-[var(--brand-primary)] mr-2">✓</span>
-                  {item}
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">When this page is the right fit</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {eventFits.map((event) => (
+                <div key={event.title} className="rounded-xl border border-gray-100 bg-[var(--surface-alt)] p-4">
+                  <h3 className="font-semibold text-[var(--heading)] mb-2">{event.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">{event.body}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* FAQ */}
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
-              Frequently Asked Questions — Private Events Istanbul
-            </h2>
-            <div className="space-y-4 max-w-3xl">
-              {faqSchema.mainEntity.map((faq) => (
-                <div key={faq.name} className="bg-white rounded-2xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-[var(--heading)] mb-2">{faq.name}</h3>
-                  <p className="text-[var(--text-muted)] text-sm leading-relaxed">
-                    {faq.acceptedAnswer.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Internal links */}
-          <section className="mb-16">
-            <h2 className="text-xl font-bold mb-4 text-[var(--heading)]">
-              Related Pages & Planning Guides
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { href: "/blog/birthday-party-boat-istanbul", label: "Birthday Party Boat Guide" },
-                { href: "/blog/bosphorus-sunset-cruise-istanbul", label: "Sunset Cruise Guide" },
-                { href: "/blog/private-yacht-charter-istanbul-price", label: "Yacht Charter Prices" },
-                { href: "/corporate-events", label: "Corporate Events" },
-                { href: "/private-tours", label: "All Private Yacht Tours" },
-                { href: "/blog/istanbul-boat-tour-price-2026", label: "Boat Tour Prices 2026" },
-                { href: "/contact", label: "Contact & Booking" },
-              ].map((link) => (
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">Looking for a more specific option?</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {comparePages.map((item) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className="inline-flex items-center gap-1 text-sm text-[var(--brand-primary)] border border-[var(--brand-primary)] px-4 py-2 rounded-lg hover:bg-[var(--brand-primary)] hover:text-white transition-colors"
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
                 >
-                  {link.label} <ArrowRight className="w-3 h-3" />
+                  <span className="mb-1 block text-base font-semibold text-[var(--heading)]">{item.title}</span>
+                  <span className="block text-sm text-[var(--text-muted)]">{item.description}</span>
                 </Link>
               ))}
             </div>
           </section>
 
-          {/* CTA */}
-          <div className="bg-[var(--brand-primary)] rounded-3xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
-              Ready to Plan Your Private Bosphorus Event?
-            </h2>
-            <p className="text-blue-100 mb-8 max-w-xl mx-auto">
-              Tell us the occasion, your guest count, and your preferred date. We will send a
-              personalised proposal with decoration, catering, and entertainment options within 24
-              hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-[var(--brand-primary)] px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
-              >
-                Book Your Private Event <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="https://wa.me/905370406822"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-[var(--brand-primary)] transition-colors"
-              >
-                WhatsApp Us Now
-              </a>
+          <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">Private event FAQs</h2>
+            <div className="space-y-4">
+              {faqItems.map((faq) => (
+                <details key={faq.q} className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[var(--heading)]">
+                    {faq.q}
+                    <span className="text-gray-400 transition-transform group-open:rotate-180">▼</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">{faq.a}</p>
+                </details>
+              ))}
             </div>
-          </div>
+          </section>
         </div>
-      </div>
+      </main>
     </>
   );
 }

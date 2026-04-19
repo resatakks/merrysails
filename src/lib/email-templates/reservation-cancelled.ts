@@ -1,3 +1,5 @@
+import { escapeHtml } from "./helpers";
+
 interface ReservationCancelledData {
   reservationId: string;
   customerName: string;
@@ -21,19 +23,19 @@ export function reservationCancelledEmail(data: ReservationCancelledData): strin
 
     <div style="background:#fff;padding:24px;border:1px solid #e2e8f0;">
       <p style="color:#0f172a;margin:0 0 16px;font-size:15px;">
-        Dear ${data.customerName}, your reservation <strong>${data.reservationId}</strong> has been cancelled.
+        Dear ${escapeHtml(data.customerName)}, your reservation <strong>${escapeHtml(data.reservationId)}</strong> has been cancelled.
       </p>
 
       <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:16px;margin-bottom:20px;">
         <table style="width:100%;border-collapse:collapse;">
-          <tr><td style="color:#991b1b;padding:4px 0;font-size:13px;">Tour</td><td style="color:#991b1b;padding:4px 0;text-align:right;">${data.tourName}</td></tr>
-          <tr><td style="color:#991b1b;padding:4px 0;font-size:13px;">Date</td><td style="color:#991b1b;padding:4px 0;text-align:right;">${data.date}</td></tr>
-          <tr><td style="color:#991b1b;padding:4px 0;font-size:13px;">Time</td><td style="color:#991b1b;padding:4px 0;text-align:right;">${data.time}</td></tr>
+          <tr><td style="color:#991b1b;padding:4px 0;font-size:13px;">Tour</td><td style="color:#991b1b;padding:4px 0;text-align:right;">${escapeHtml(data.tourName)}</td></tr>
+          <tr><td style="color:#991b1b;padding:4px 0;font-size:13px;">Date</td><td style="color:#991b1b;padding:4px 0;text-align:right;">${escapeHtml(data.date)}</td></tr>
+          <tr><td style="color:#991b1b;padding:4px 0;font-size:13px;">Time</td><td style="color:#991b1b;padding:4px 0;text-align:right;">${escapeHtml(data.time)}</td></tr>
         </table>
       </div>
 
       <p style="color:#64748b;font-size:13px;margin:0 0 16px;">
-        If you paid in advance, a full refund will be processed within 5-10 business days.
+        Our standard shared-cruise flow is pay-on-board, so no further action is usually needed. If your booking included any special pre-arranged payment or custom deposit, our team will contact you directly.
       </p>
 
       <p style="color:#64748b;font-size:13px;margin:0;">

@@ -3,37 +3,44 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
-import { getTourBySlug } from "@/data/tours";
-import { getDiscountedPrice } from "@/lib/promo";
+import {
+  getBookingMode,
+  getPriceSuffix,
+  getTourPath,
+  isPricingVisible,
+  tours,
+} from "@/data/tours";
+import SalePrice from "@/components/ui/SalePrice";
 
 export default function MobileBookingBar() {
   const pathname = usePathname();
 
-  // Detect current tour page
-  const slugMatch = pathname.match(/^\/cruises\/([^/]+)$/);
-  const currentTour = slugMatch ? getTourBySlug(slugMatch[1]) : null;
+  const currentTour =
+    tours.find((tour) => getTourPath(tour) === pathname) ??
+    tours.find((tour) => `/cruises/${tour.slug}` === pathname) ??
+    null;
 
-  const originalPrice = currentTour?.priceEur ?? 40;
-  const displayPrice = getDiscountedPrice(originalPrice);
-  const bookHref = currentTour
-    ? `/cruises/${currentTour.slug}`
-    : "/cruises/bosphorus-sunset-cruise";
-  const label = currentTour ? currentTour.nameEn : "Sunset Cruise";
+  if (!currentTour || !isPricingVisible(currentTour) || getBookingMode(currentTour) !== "book") {
+    return null;
+  }
+
+  const displayPrice = currentTour.priceEur;
+  const bookHref = getTourPath(currentTour);
+  const label = currentTour.nameEn;
+  const priceSuffix = getPriceSuffix(currentTour);
 
   return (
     <div className="mobile-bar lg:hidden">
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
           <div className="text-xs text-[var(--text-muted)] truncate">{label}</div>
-          <div className="flex items-baseline gap-1">
-            <span className="text-xl font-bold text-[var(--heading)]">
-              €{displayPrice}
-            </span>
-            <span className="text-sm text-[var(--text-muted)] line-through">
-              €{originalPrice}
-            </span>
-            <span className="text-xs text-[var(--text-muted)]">/person</span>
-          </div>
+          <SalePrice
+            price={displayPrice}
+            originalPrice={currentTour.originalPriceEur}
+            suffix={priceSuffix}
+            size="sm"
+            className="mt-0.5"
+          />
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <a

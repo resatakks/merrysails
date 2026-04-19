@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
   tourSlug: string;
-  capacity: string;
 }
 
 /** Simple deterministic hash from a string, returns a number. */
@@ -25,12 +24,10 @@ function seededRand(slug: string, salt: number, min: number, max: number): numbe
   return min + (h % (max - min + 1));
 }
 
-export default function SocialProof({ tourSlug, capacity }: Props) {
+export default function SocialProof({ tourSlug }: Props) {
   const [tick, setTick] = useState(0);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const interval = setInterval(() => {
       setTick((t) => t + 1);
     }, 30_000);
@@ -44,8 +41,6 @@ export default function SocialProof({ tourSlug, capacity }: Props) {
     const lastBooked = seededRand(tourSlug, 300 + Math.floor(tick / 3), 5, 45);
     return { viewing, spotsLeft, lastBooked };
   }, [tourSlug, tick]);
-
-  if (!mounted) return null;
 
   const { viewing, spotsLeft, lastBooked } = getValues();
 

@@ -1,6 +1,7 @@
-import { tours } from "@/data/tours";
+import { getTourPath, tours } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
 import { guides } from "@/data/guides";
+import { commercialSupportPosts } from "@/content/blog";
 
 const SITE_URL = "https://merrysails.com";
 
@@ -26,9 +27,8 @@ type SitemapPage = {
 };
 
 export function GET() {
-  const today = formatDate(new Date());
-
-  const latestBlogDate = blogPosts.reduce((latest, post) => {
+  const allBlogPosts = [...blogPosts, ...commercialSupportPosts];
+  const latestBlogDate = allBlogPosts.reduce((latest, post) => {
     const d = post.dateModified || post.date;
     return d > latest ? d : latest;
   }, "2026-01-01");
@@ -44,15 +44,16 @@ export function GET() {
         { loc: `${SITE_URL}/og-image.jpg`, title: "MerrySails - Bosphorus Cruise & Yacht Charter Istanbul" },
       ],
     },
+    { url: `${SITE_URL}/bosphorus-cruise`, changefreq: "weekly", priority: "0.96", lastmod: contentLastmod },
     { url: `${SITE_URL}/cruises`, changefreq: "daily", priority: "0.9", lastmod: contentLastmod },
-    { url: `${SITE_URL}/istanbul-dinner-cruise`, changefreq: "weekly", priority: "0.95", lastmod: "2026-04-03" },
-    { url: `${SITE_URL}/private-bosphorus-dinner-cruise`, changefreq: "weekly", priority: "0.94", lastmod: "2026-04-13" },
-    { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "weekly", priority: "0.92", lastmod: "2026-04-13" },
-    { url: `${SITE_URL}/yacht-charter-istanbul`, changefreq: "weekly", priority: "0.95", lastmod: "2026-04-13" },
-    { url: `${SITE_URL}/boat-rental-istanbul`, changefreq: "weekly", priority: "0.88", lastmod: "2026-04-13" },
-    { url: `${SITE_URL}/private-tours`, changefreq: "weekly", priority: "0.8", lastmod: "2026-03-08" },
-    { url: `${SITE_URL}/corporate-events`, changefreq: "weekly", priority: "0.85", lastmod: "2026-04-13" },
-    { url: `${SITE_URL}/private-events`, changefreq: "weekly", priority: "0.85", lastmod: "2026-04-04" },
+    { url: `${SITE_URL}/istanbul-dinner-cruise`, changefreq: "weekly", priority: "0.97", lastmod: contentLastmod },
+    { url: `${SITE_URL}/private-bosphorus-dinner-cruise`, changefreq: "weekly", priority: "0.78", lastmod: contentLastmod },
+    { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "weekly", priority: "0.76", lastmod: contentLastmod },
+    { url: `${SITE_URL}/yacht-charter-istanbul`, changefreq: "weekly", priority: "0.96", lastmod: contentLastmod },
+    { url: `${SITE_URL}/boat-rental-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/private-tours`, changefreq: "weekly", priority: "0.68", lastmod: "2026-03-08" },
+    { url: `${SITE_URL}/corporate-events`, changefreq: "weekly", priority: "0.74", lastmod: contentLastmod },
+    { url: `${SITE_URL}/private-events`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/blog`, changefreq: "daily", priority: "0.8", lastmod: contentLastmod },
     { url: `${SITE_URL}/guides`, changefreq: "weekly", priority: "0.7", lastmod: "2026-03-10" },
     { url: `${SITE_URL}/about`, changefreq: "monthly", priority: "0.6", lastmod: "2026-03-01" },
@@ -79,16 +80,16 @@ export function GET() {
       }
     }
     return {
-      url: `${SITE_URL}/cruises/${tour.slug}`,
+      url: `${SITE_URL}${getTourPath(tour)}`,
       changefreq: "weekly",
-      priority: "0.8",
+      priority: tour.isCoreProduct ? "0.95" : tour.showPricing ? "0.76" : "0.68",
       lastmod: contentLastmod,
       images: images.length > 0 ? images : undefined,
     };
   });
 
   const seenBlogSlugs = new Set<string>();
-  const blogPages: SitemapPage[] = blogPosts
+  const blogPages: SitemapPage[] = allBlogPosts
     .filter((post) => {
       if (seenBlogSlugs.has(post.slug)) return false;
       seenBlogSlugs.add(post.slug);
@@ -120,7 +121,9 @@ export function GET() {
       : undefined,
   }));
 
-  const allPages = [...staticPages, ...tourPages, ...blogPages, ...guidePages];
+  const allPages = [...staticPages, ...tourPages, ...blogPages, ...guidePages].filter(
+    (page, index, pages) => pages.findIndex((candidate) => candidate.url === page.url) === index
+  );
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

@@ -14,6 +14,7 @@ import {
   Loader2,
   CheckCircle,
   AlertCircle,
+  FileText,
   MapPin,
   Clock,
   Anchor,
@@ -25,7 +26,7 @@ import {
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { motion } from "framer-motion";
-import type { Package as PackageType, AddOn } from "@/data/tours";
+import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
 
 interface BookingDetails {
@@ -37,6 +38,7 @@ interface BookingDetails {
   selectedPackage?: PackageType;
   selectedAddOns: AddOn[];
   basePrice: number;
+  priceMode?: PriceMode;
   departurePoint?: string;
   tourImage?: string;
 }
@@ -97,8 +99,10 @@ export default function BookingModal({ booking, onClose }: Props) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [company, setCompany] = useState("");
   const [modalState, setModalState] = useState<ModalState>("form");
   const [reservationId, setReservationId] = useState("");
+  const [confirmedTotal, setConfirmedTotal] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
 
   const [touchedName, setTouchedName] = useState(false);
@@ -113,6 +117,7 @@ export default function BookingModal({ booking, onClose }: Props) {
   }, []);
 
   const packagePrice = booking.selectedPackage?.price ?? booking.basePrice;
+  const isPerGroup = booking.priceMode === "perGroup";
   const addOnsText = booking.selectedAddOns.map((a) => a.name).join(", ");
 
   // Parse add-on prices and sum them
@@ -123,13 +128,13 @@ export default function BookingModal({ booking, onClose }: Props) {
     if (!numMatch) return sum;
     const value = parseInt(numMatch[1], 10);
     // "/person" add-ons are multiplied by guest count
-    if (priceStr.includes("/person")) {
+    if (priceStr.includes("/person") || priceStr.includes("/guest")) {
       return sum + value * booking.guests;
     }
     return sum + value;
   }, 0);
 
-  const total = packagePrice * booking.guests + addOnsTotal;
+  const total = (isPerGroup ? packagePrice : packagePrice * booking.guests) + addOnsTotal;
 
   const nameValid = name.trim().length >= 2;
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -142,20 +147,21 @@ export default function BookingModal({ booking, onClose }: Props) {
 
     const result = await createReservation({
       tourSlug: booking.tourSlug,
-      tourName: booking.tourName,
       date: booking.date,
       time: booking.time || "17:00",
       guests: booking.guests,
-      totalPrice: total,
-      currency: "EUR",
       customerName: name.trim(),
       customerEmail: email.trim(),
       customerPhone: phone.trim(),
+      packageName: booking.selectedPackage?.name,
+      addOns: booking.selectedAddOns.map((addon) => addon.name),
       notes: message.trim() || undefined,
+      honeypot: company,
     });
 
-    if (result.success && result.reservationId) {
+    if (result.success && "reservationId" in result && result.reservationId) {
       setReservationId(result.reservationId);
+      setConfirmedTotal("totalPrice" in result ? result.totalPrice ?? total : total);
       setModalState("success");
       setTimeout(() => {
         router.push(`/reservation/${result.reservationId}`);
@@ -175,8 +181,8 @@ export default function BookingModal({ booking, onClose }: Props) {
       booking.time ? `Time: ${booking.time}` : "",
       `Guests: ${booking.guests}`,
       booking.selectedPackage
-        ? `Package: ${booking.selectedPackage.name} (€${booking.selectedPackage.price}/person)`
-        : `Price: €${booking.basePrice}/person`,
+        ? `Package: ${booking.selectedPackage.name} (€${booking.selectedPackage.price}${isPerGroup ? "/group" : "/person"})`
+        : `Price: €${booking.basePrice}${isPerGroup ? "/group" : "/person"}`,
       addOnsText ? `Add-ons: ${addOnsText}` : "",
       `Total: €${total}`,
       ``,
@@ -376,11 +382,11 @@ export default function BookingModal({ booking, onClose }: Props) {
                       <Users className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
                       {booking.guests} guest{booking.guests > 1 ? "s" : ""}
                     </div>
-                    <div className="flex items-center gap-2 text-[var(--body-text)]">
-                      <Anchor className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
-                      €{total}
+                      <div className="flex items-center gap-2 text-[var(--body-text)]">
+                        <Anchor className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
+                        €{confirmedTotal ?? total}
+                      </div>
                     </div>
-                  </div>
                 </div>
 
                 {/* Meeting point */}
@@ -437,6 +443,20 @@ export default function BookingModal({ booking, onClose }: Props) {
                     className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                   >
                     Track Your Reservation
+                  </a>
+                  <a
+                    href={`/reservation/${reservationId}/invoice`}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
+                  >
+                    <FileText className="w-4 h-4" />
+                    Open Reservation Invoice
+                  </a>
+                  <a
+                    href={`/reservation/${reservationId}/voucher`}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--heading)] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                  >
+                    <Package className="w-4 h-4" />
+                    Open Travel Voucher
                   </a>
                   <a
                     href={buildCalendarUrl(booking)}
@@ -596,7 +616,8 @@ export default function BookingModal({ booking, onClose }: Props) {
                         <div className="flex items-center gap-2 text-[var(--body-text)]">
                           <Package className="w-4 h-4 text-[var(--brand-primary)]" />
                           {booking.selectedPackage.name} — €
-                          {booking.selectedPackage.price}/person
+                          {booking.selectedPackage.price}
+                          {isPerGroup ? "/group" : "/person"}
                         </div>
                       )}
                     </div>
@@ -641,6 +662,21 @@ export default function BookingModal({ booking, onClose }: Props) {
 
                 {/* Right: Form */}
                 <div className="md:col-span-3 space-y-4">
+                  <div
+                    aria-hidden="true"
+                    className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+                  >
+                    <label htmlFor="company-field">Company</label>
+                    <input
+                      id="company-field"
+                      type="text"
+                      value={company}
+                      onChange={(event) => setCompany(event.target.value)}
+                      autoComplete="off"
+                      tabIndex={-1}
+                    />
+                  </div>
+
                   {/* Full Name */}
                   <div>
                     <label className="block text-sm font-medium mb-1.5 text-[var(--heading)]">
@@ -651,6 +687,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       onBlur={() => setTouchedName(true)}
+                      autoComplete="name"
                       className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
                         touchedName && !nameValid
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
@@ -677,6 +714,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       onBlur={() => setTouchedEmail(true)}
+                      autoComplete="email"
                       className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
                         touchedEmail && !emailValid
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"

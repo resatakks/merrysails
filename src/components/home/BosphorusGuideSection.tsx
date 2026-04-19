@@ -1,60 +1,38 @@
 import Link from "next/link";
-import { Anchor, Ship, Sunset, UtensilsCrossed, Users, MapPin, BookOpen } from "lucide-react";
+import { Anchor, Sunset, UtensilsCrossed, Briefcase, BookOpen } from "lucide-react";
 
 const cruiseTypes = [
   {
     icon: Sunset,
     title: "Bosphorus Sunset Cruise",
-    price: "From €40",
-    duration: "2.5 hours",
+    meta: "2 options · EUR 34 to EUR 40 · 2 hours",
     description:
-      "Watch the golden hour paint Istanbul's skyline from the water. The sunset cruise departs daily from Eminonu Pier and includes drinks, snacks, and live commentary. The most popular cruise for couples and photographers.",
+      "Watch the golden hour paint Istanbul's skyline from the water with a shared cruise, light hospitality, and a with-wine or without-wine option on the same route.",
     href: "/cruises/bosphorus-sunset-cruise",
   },
   {
     icon: UtensilsCrossed,
-    title: "Istanbul Dinner Cruise",
-    price: "From €65",
-    duration: "3.5 hours",
+    title: "Bosphorus Dinner Cruise",
+    meta: "4 packages · EUR 30 to EUR 90",
     description:
-      "An all-inclusive evening on the Bosphorus: 4-course Turkish dinner, unlimited drinks, belly dance, whirling dervish, and live music. Hotel pickup and drop-off included. Istanbul's signature night experience.",
-    href: "/cruises/bosphorus-dinner-cruise",
-  },
-  {
-    icon: Ship,
-    title: "Short Sightseeing Cruise",
-    price: "From €15",
-    duration: "1.5 hours",
-    description:
-      "The most affordable way to see the Bosphorus. Pass Dolmabahce Palace, Ortakoy Mosque, both bridges, and the Maiden's Tower in a 90-minute narrated cruise. Ideal for tight itineraries.",
-    href: "/cruises/bosphorus-sightseeing-cruise",
+      "Choose a shared evening cruise with dinner service, stage entertainment, hotel pickup support, and four package options across Silver and Gold tiers.",
+    href: "/istanbul-dinner-cruise",
   },
   {
     icon: Anchor,
-    title: "Private Yacht Charter",
-    price: "From €280",
-    duration: "2+ hours",
+    title: "Yacht Charter Istanbul",
+    meta: "3 packages · from EUR 280 per yacht",
     description:
-      "Your own yacht, your own route, your own crew. Perfect for birthdays, proposals, anniversaries, and corporate events. Accommodates 2 to 80 guests with custom catering options.",
-    href: "/cruises/yacht-charter-in-istanbul",
+      "Book a private yacht and shape the plan around your group, with optional meals, drinks, transfers, music, and event extras.",
+    href: "/yacht-charter-istanbul",
   },
   {
-    icon: Users,
-    title: "Bosphorus Lunch Cruise",
-    price: "From €45",
-    duration: "3 hours",
+    icon: Briefcase,
+    title: "Service Pages & Custom Planning",
+    meta: "Custom quote",
     description:
-      "A daytime Bosphorus experience with a full Turkish meal. Visit both the European and Asian shores while enjoying fresh Mediterranean cuisine and stunning waterfront views.",
-    href: "/cruises/istanbul-bosphorus-lunch-cruise",
-  },
-  {
-    icon: MapPin,
-    title: "Princes Islands Tour",
-    price: "From €35",
-    duration: "Full day",
-    description:
-      "Escape Istanbul's bustle with a ferry ride to the car-free Princes Islands. Explore Buyukada by bike or horse carriage, swim in crystal-clear waters, and enjoy seafood by the harbor.",
-    href: "/cruises/istanbul-princes-island-tour",
+      "Use the support pages for boat rental, proposals, private dinners, corporate events, and other tailored daytime or occasion-led briefs.",
+    href: "/private-events",
   },
 ];
 
@@ -71,13 +49,13 @@ export default function BosphorusGuideSection() {
             historic waterway. A Bosphorus cruise is consistently rated the number
             one activity in Istanbul, with over 3 million passengers sailing
             annually. MerrySails, operated by Merry Tourism (TURSAB licensed since
-            2001), offers every cruise type — from budget-friendly sightseeing
-            tours to luxury private yacht charters.
+            2001), now keeps its English commercial structure focused on three core
+            products: sunset cruise, dinner cruise, and yacht charter.
           </p>
         </div>
 
         {/* Cruise type cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-14">
           {cruiseTypes.map((cruise) => (
             <Link
               key={cruise.title}
@@ -93,7 +71,7 @@ export default function BosphorusGuideSection() {
                     {cruise.title}
                   </h3>
                   <span className="text-xs text-[var(--text-muted)]">
-                    {cruise.price} &middot; {cruise.duration}
+                    {cruise.meta}
                   </span>
                 </div>
               </div>
@@ -122,16 +100,16 @@ export default function BosphorusGuideSection() {
               </a>
               , a TURSAB A Group licensed travel agency operating in Istanbul since
               2001. Over 50,000 guests have sailed with us, and we maintain a 4.9
-              rating from 2,800+ verified reviews. When you book direct with
-              MerrySails, you save up to 35% compared to third-party platforms —
-              because there is no middleman commission.
+              rating from 2,800+ verified reviews. Each cruise page shows the
+              current format, inclusions, and pricing so you can compare options
+              before you book.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
               Every cruise includes free cancellation up to 24 hours before
               departure, multilingual crew (English, Turkish, Arabic, Russian),
-              and secure online payment. Dinner cruises include complimentary
-              hotel pickup and drop-off from Sultanahmet, Taksim, Beyoglu, and
-              surrounding areas. Our yacht charters depart from Kurucesme Marina
+              and a reserve-now, pay-onboard booking flow. Shared dinner cruises can include hotel
+              pickup and drop-off from central European-side zones such as
+              Sultanahmet, Taksim, Beyoglu, and nearby areas. Our yacht charters depart from Bosphorus marinas
               and can be customized for any occasion — from intimate proposals to
               large corporate events.
             </p>
@@ -153,14 +131,15 @@ export default function BosphorusGuideSection() {
               How to Get to the Bosphorus Cruise Departure Point
             </h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-6">
-              Shared cruises (sunset, dinner, sightseeing) depart from{" "}
-              <strong>Eminonu Pier</strong>, accessible via the T1 tram line
-              (stop: Eminonu). From Sultanahmet, it is a 10-minute tram ride.
-              From Taksim, take the funicular to Kabatas and transfer to the T1.
-              Private yacht charters depart from{" "}
-              <strong>Kurucesme Marina</strong> on the European Bosphorus shore.
-              For dinner cruises, hotel pickup is included — a vehicle collects
-              you from your hotel lobby 60 to 90 minutes before departure.
+              Departure points now depend on the product. The{" "}
+              <strong>Bosphorus Sunset Cruise</strong> uses a Kabatas-side
+              boarding flow confirmed after booking, while the{" "}
+              <strong>Bosphorus Dinner Cruise</strong> is tied to Kabatas Pier
+              and can include hotel pickup from central European-side areas.
+              Some sightseeing departures still use{" "}
+              <strong>Eminonu Pier</strong> where relevant. Private yacht
+              charters depart from <strong>Bosphorus marinas</strong> on the
+              European Bosphorus shore.
             </p>
           </div>
 
@@ -192,7 +171,7 @@ export default function BosphorusGuideSection() {
                 href="/blog/short-bosphorus-cruise-tour"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Short Bosphorus Cruise (1.5 Hours)
+                Short Bosphorus Cruise Guide
               </Link>
               <Link
                 href="/blog/bosphorus-cruise-departure-points"

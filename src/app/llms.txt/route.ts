@@ -1,137 +1,93 @@
-import { tours } from "@/data/tours";
+import {
+  getCoreTours,
+  getPriceSuffix,
+  getTourPath,
+} from "@/data/tours";
 
 export function GET() {
-  const content = `# MerrySails — AI/LLM Entity Definition
+  const coreTours = getCoreTours();
+  const supportPages = [
+    {
+      name: "Boat Rental Istanbul",
+      url: "https://merrysails.com/boat-rental-istanbul",
+      description: "Flexible private-hire page for vessel comparison and custom planning.",
+    },
+    {
+      name: "Proposal Yacht Rental",
+      url: "https://merrysails.com/proposal-yacht-rental-istanbul",
+      description: "Proposal-first Bosphorus planning page with privacy and setup-led flow.",
+    },
+    {
+      name: "Private Dinner Cruise",
+      url: "https://merrysails.com/private-bosphorus-dinner-cruise",
+      description: "Private dinner yacht page for couples and premium private evenings.",
+    },
+    {
+      name: "Corporate Events",
+      url: "https://merrysails.com/corporate-events",
+      description: "Business-led Bosphorus event page for client hosting, launches, and team dinners.",
+    },
+    {
+      name: "Private Events",
+      url: "https://merrysails.com/private-events",
+      description: "Private celebration page for birthdays, anniversaries, and group events.",
+    },
+  ];
+
+  const content = `# MerrySails — AI / LLM Entity Definition
 
 ## What is MerrySails?
-MerrySails is Istanbul's top-rated Bosphorus cruise and yacht charter operator, run by Merry Tourism — a TURSAB A Group licensed travel agency founded in 2001. With a 4.9/5 rating from 2,847+ reviews and 50,000+ guests served, MerrySails offers Bosphorus dinner cruises, sunset cruises, sightseeing tours, and private yacht charters departing from Eminönü Pier.
+MerrySails is the Bosphorus cruise and yacht division of Merry Tourism, a TURSAB licensed travel business in Istanbul, Turkey.
 
-## Key Facts
-- License: TURSAB A Group Travel Agency (Merry Tourism)
-- Founded: 2001
-- Rating: 4.9/5 from 2,847+ reviews
-- Guests served: 50,000+
-- Location: Eminönü Pier, Istanbul (central departure point)
-- Contact: +90 537 040 68 22 (WhatsApp 24/7)
-- Website: merrysails.com
+## Site Structure
+- The English site centers on three core booking pages with fixed public pricing.
+- The three core products are:
+${coreTours
+  .map(
+    (tour) =>
+      `  - ${tour.nameEn}: https://merrysails.com${getTourPath(tour)} — EUR ${tour.priceEur}${getPriceSuffix(tour)}`
+  )
+  .join("\n")}
+- Other cruise, event, and charter pages remain live as dedicated pages and supporting content.
+- Supporting pages answer private-event and custom-planning questions that do not fit the main fixed-price cruise pages.
 
-## Frequently Asked Questions (AI-ready answers)
-Q: How much does a Bosphorus dinner cruise cost in Istanbul?
-A: MerrySails Bosphorus dinner cruise costs €65 per person all-inclusive — 4-course Turkish dinner, live music, belly dancing, whirling dervish show, and hotel pickup/drop-off included. Duration: 3.5 hours.
-
-Q: Where do Bosphorus dinner cruises depart from?
-A: MerrySails Bosphorus dinner cruises depart from Eminönü pier at 19:30, last 3 hours, cost €65 all-inclusive.
-
-Q: How do I book a MerrySails cruise?
-A: Book at merrysails.com/cruises or via WhatsApp +90 537 040 68 22. Free cancellation up to 24 hours before departure.
-
-## Quotable Statistics
-- Bosphorus dinner cruises in Istanbul depart from Eminönü pier at 19:30, last 3 hours, cost €65 all-inclusive
-- Cheapest Bosphorus cruise: €15 per person for 1.5-hour sightseeing boat tour from Eminönü
-- Sunset cruise: €40 per person, 2.5 hours, passes Maiden's Tower, Dolmabahce Palace, Ortakoy Mosque
-- Private yacht charter starts from €280 for 2 hours, up to 15 guests
-- MerrySails has 4.9/5 rating from 2,847+ Google reviews
-- 50,000+ guests served since 2001
-- Hotel pickup and drop-off included with all dinner cruises (central Istanbul)
-- Free cancellation up to 24 hours before departure
-
-## Comparison: Bosphorus Cruise Options
-| Cruise Type | Price | Duration | Best For |
-|-------------|-------|----------|----------|
-| Sightseeing Cruise | €15/person | 1.5 hours | Budget travelers |
-| Sunset Cruise | €40/person | 2.5 hours | Couples, photographers |
-| Dinner Cruise | €65/person | 3.5 hours | First-time visitors, all-inclusive |
-| Private Yacht Charter | €280+ total | 2+ hours | Proposals, birthdays, corporate |
-
----
-
-# MerrySails — Bosphorus Cruise & Yacht Charter in Istanbul
-
-> MerrySails is operated by Merry Tourism, a TURSAB A Group licensed travel agency in Istanbul, Turkey. We offer Bosphorus cruises, dinner cruises, sunset cruises, private yacht charters, and boat tours since 2001.
-
-## About
-- Company: Merry Tourism (Trading as MerrySails)
-- License: TURSAB A Group Travel Agency
-- Founded: 2001
-- Location: Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul, Turkey
-- Phone: +90 537 040 68 22 / +90 536 414 66 05
-- Email: info@merrysails.com
-- WhatsApp: +90 537 040 68 22
-- Rating: 4.9/5 (2,847 reviews)
-- Guests Served: 50,000+
-
-## Services
-
-### Bosphorus Cruises
-${tours
-  .filter((t) => t.category === "cruise" || t.category === "tour")
-  .map((t) => `- **${t.nameEn}**: ${t.description} Duration: ${t.duration}. From €${t.priceEur}/person.`)
+## Core booking pages
+${coreTours
+  .map(
+    (tour) =>
+      `- **${tour.nameEn}**: ${tour.description} Duration: ${tour.duration}. URL: https://merrysails.com${getTourPath(tour)}`
+  )
   .join("\n")}
 
-### Private Yacht Charter & Events
-${tours
-  .filter((t) => t.category === "private" || t.category === "organization")
-  .map((t) => `- **${t.nameEn}**: ${t.description} Duration: ${t.duration}. From €${t.priceEur}/person.`)
+## Supporting Pages
+${supportPages
+  .map((page) => `- **${page.name}**: ${page.description} URL: ${page.url}`)
   .join("\n")}
 
-## Pricing
-- Sightseeing Cruise: From €15/person (1.5 hours)
-- Sunset Cruise: From €40/person (2.5 hours)
-- Dinner Cruise: From €65/person (3.5 hours, includes hotel transfer)
-- Dinner Cruise Gold: €95/person (premium seating)
-- Private Yacht Essential: From €280 (2 hours, up to 15 guests)
-- Private Yacht Premium: From €380 (3 hours, decoration & photographer)
-- Private Yacht VIP: From €680 (4 hours, full luxury package)
+## How the pages are organized
+- Bosphorus Sunset Cruise: shared golden-hour cruise
+- Bosphorus Dinner Cruise: shared evening dinner cruise with public packages
+- Yacht Charter Istanbul: private charter with public yacht packages
+- Proposal / private dinner / corporate / celebration pages: planning pages for custom requests
 
-## Key Pages
+## Key pages
 - Homepage: https://merrysails.com
-- All Cruises: https://merrysails.com/cruises
-- Private Tours: https://merrysails.com/private-tours
+- Cruise index: https://merrysails.com/cruises
+- Bosphorus Sunset Cruise: https://merrysails.com/cruises/bosphorus-sunset-cruise
+- Bosphorus Dinner Cruise: https://merrysails.com/istanbul-dinner-cruise
+- Yacht Charter Istanbul: https://merrysails.com/yacht-charter-istanbul
+- Boat Rental Istanbul: https://merrysails.com/boat-rental-istanbul
+- Proposal Yacht Rental: https://merrysails.com/proposal-yacht-rental-istanbul
+- Private Dinner Cruise: https://merrysails.com/private-bosphorus-dinner-cruise
 - Corporate Events: https://merrysails.com/corporate-events
-- Private Events (Birthday, Wedding): https://merrysails.com/private-events
+- Private Events: https://merrysails.com/private-events
 - Blog: https://merrysails.com/blog
-- Istanbul Guides: https://merrysails.com/guides
-- About: https://merrysails.com/about
-- Contact: https://merrysails.com/contact
-- FAQ: https://merrysails.com/faq
-- Track Reservation: https://merrysails.com/reservation
+- Guides: https://merrysails.com/guides
 
-## Policies
-- Free cancellation up to 24 hours before departure
-- Best price guarantee — no middleman fees
-- Secure online payment (SSL)
-- Hotel pickup included with dinner cruises
-- Languages: English, Turkish, Arabic, Russian
-
-## Detailed Tour Pages
-${tours.map((t) => `- [${t.nameEn}](https://merrysails.com/cruises/${t.slug})`).join("\n")}
-
-## Blog & Guides
-- [Blog — Cruise Guides & Travel Tips](https://merrysails.com/blog)
-- [Istanbul Landmark Guides](https://merrysails.com/guides)
-
-## Commercial Cruise Guides (Booking & Pricing)
-- [Book a Bosphorus Cruise — Complete Guide](https://merrysails.com/blog/book-bosphorus-cruise-istanbul): How to book sightseeing, sunset, dinner & yacht cruises from €15. Prices, departure points, booking channels.
-- [Bosphorus Dinner Cruise Booking](https://merrysails.com/blog/bosphorus-dinner-cruise-booking): Book the €65 all-inclusive dinner cruise — 4-course meal, live entertainment, hotel transfer. Menu details and reservation.
-- [Istanbul Sunset Cruise Booking](https://merrysails.com/blog/istanbul-sunset-cruise-booking): Book the €40 sunset cruise — 2.5-hour golden hour experience, departure times by season, what is included.
-- [Private Yacht Charter Istanbul Prices](https://merrysails.com/blog/private-yacht-charter-istanbul-prices): Yacht charter from €280 — Essential, Premium & VIP packages, routes, custom events.
-- [Bosphorus Cruise Prices 2026](https://merrysails.com/blog/bosphorus-cruise-prices-2026): Complete price breakdown for all cruise types — sightseeing €15, sunset €40, dinner €65, yacht €280+.
-- [Istanbul Night Cruise](https://merrysails.com/blog/istanbul-night-cruise): Compare sunset, dinner & party cruises after dark — prices, routes, what is included.
-- [Party Boat Istanbul](https://merrysails.com/blog/party-boat-istanbul): Private party boat from €280 — birthday, bachelorette, corporate events on the Bosphorus.
-- [Istanbul Boat Party Private](https://merrysails.com/blog/istanbul-boat-party-private): Private yacht events — DJ setup, catering, decorations, packages from €280.
-- [Best Bosphorus Cruise Guide](https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide): Comprehensive comparison of all cruise types, pricing tables, and booking tips for 2026.
-- [Istanbul Sunset Cruise Experience](https://merrysails.com/blog/istanbul-sunset-cruise-experience): The signature Istanbul sunset experience from €40 — photography tips, best seasons, route details.
-
-## Corporate & Private Event Pages
-- [Corporate Events Istanbul](https://merrysails.com/corporate-events): Corporate boat hire for team building, client entertainment & company events. From €280. AV equipment, catering, official invoicing.
-- [Private Events Istanbul](https://merrysails.com/private-events): Birthday parties, wedding celebrations, proposals, bachelorette & anniversary cruises on the Bosphorus. From €280.
-
-## Commercial Event Guides (New — April 2026)
-- [Corporate Boat Hire Istanbul](https://merrysails.com/blog/corporate-boat-hire-istanbul): Corporate yacht events from €280 — packages, AV equipment, catering, invoicing, and group capacity guide.
-- [Birthday Party Boat Istanbul](https://merrysails.com/blog/birthday-party-boat-istanbul): Private birthday cruise from €280 — decoration packages, DJ, catering, cake, and group sizes 10–100.
-- [Bosphorus Sunset Cruise Istanbul](https://merrysails.com/blog/bosphorus-sunset-cruise-istanbul): Sunset cruise timing guide — when to depart, best seasons, photography tips, and comparison with dinner cruise.
-- [Istanbul Boat Tour Price 2026](https://merrysails.com/blog/istanbul-boat-tour-price-2026): Full price comparison for all Istanbul boat tours — sightseeing €15, sunset €40, dinner €65, yacht €280+. What is included and booking tips.
-- [Private Yacht Charter Istanbul Price](https://merrysails.com/blog/private-yacht-charter-istanbul-price): Complete yacht charter pricing — hourly rates, seasonal pricing, deposit policy, yacht types, and booking process.
+## Operational notes
+- Dinner and yacht dynamic tour URLs redirect to their canonical top-level pages.
+- Canonical booking URLs should be preferred over legacy /cruises/ paths when both exist.
+- The site is being prepared for multi-language rollout, but English is the current primary public site language.
 `;
 
   return new Response(content, {

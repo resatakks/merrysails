@@ -165,7 +165,11 @@ export async function handleDurum(message: TelegramMessage) {
   await sendMessage({
     chat_id: chatId,
     text: formatReservationDetail(r),
-    reply_markup: reservationDetailActions(r.id, r.customerPhone),
+    reply_markup: reservationDetailActions(r.id, {
+      phone: r.customerPhone,
+      reservationId: r.reservationId,
+      tourSlug: r.tourSlug,
+    }),
   });
 }
 
@@ -280,7 +284,15 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     const reservation = await prisma.reservation.findUnique({ where: { id } });
     if (!reservation) { await answerCallbackQuery(callback.id, "Bulunamadı", true); return; }
     const r = mapRes(reservation);
-    await sendMessage({ chat_id: chatId, text: formatReservationDetail(r), reply_markup: reservationDetailActions(r.id, r.customerPhone) });
+    await sendMessage({
+      chat_id: chatId,
+      text: formatReservationDetail(r),
+      reply_markup: reservationDetailActions(r.id, {
+        phone: r.customerPhone,
+        reservationId: r.reservationId,
+        tourSlug: r.tourSlug,
+      }),
+    });
     await answerCallbackQuery(callback.id);
     return;
   }
@@ -296,7 +308,18 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     const reservation = await prisma.reservation.findUnique({ where: { id } });
     if (!reservation) { await answerCallbackQuery(callback.id, "Bulunamadı", true); return; }
     const r = mapRes(reservation);
-    if (messageId) await editMessageText(chatId, messageId, formatReservationDetail(r), reservationDetailActions(r.id, r.customerPhone));
+    if (messageId) {
+      await editMessageText(
+        chatId,
+        messageId,
+        formatReservationDetail(r),
+        reservationDetailActions(r.id, {
+          phone: r.customerPhone,
+          reservationId: r.reservationId,
+          tourSlug: r.tourSlug,
+        })
+      );
+    }
     await answerCallbackQuery(callback.id);
     return;
   }
@@ -308,7 +331,16 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     await answerCallbackQuery(callback.id, "✅ Onaylandı!");
     if (messageId) {
       const r = mapRes(reservation);
-      await editMessageText(chatId, messageId, formatReservationDetail(r), reservationDetailActions(r.id, r.customerPhone));
+      await editMessageText(
+        chatId,
+        messageId,
+        formatReservationDetail(r),
+        reservationDetailActions(r.id, {
+          phone: r.customerPhone,
+          reservationId: r.reservationId,
+          tourSlug: r.tourSlug,
+        })
+      );
     }
     // Notify other admins
     try {
@@ -330,7 +362,19 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     const old = await prisma.reservation.findUnique({ where: { id } });
     const reservation = await prisma.reservation.update({ where: { id }, data: { status: "cancelled" } });
     await answerCallbackQuery(callback.id, "❌ İptal edildi");
-    if (messageId) await editMessageText(chatId, messageId, formatReservationDetail(mapRes(reservation)));
+    if (messageId) {
+      const r = mapRes(reservation);
+      await editMessageText(
+        chatId,
+        messageId,
+        formatReservationDetail(r),
+        reservationDetailActions(r.id, {
+          phone: r.customerPhone,
+          reservationId: r.reservationId,
+          tourSlug: r.tourSlug,
+        })
+      );
+    }
     // Notify other admins
     try {
       const { notifyStatusChange } = await import("./notifications");
@@ -344,7 +388,19 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     const old = await prisma.reservation.findUnique({ where: { id } });
     const reservation = await prisma.reservation.update({ where: { id }, data: { status: "completed" } });
     await answerCallbackQuery(callback.id, "🏁 Tamamlandı!");
-    if (messageId) await editMessageText(chatId, messageId, formatReservationDetail(mapRes(reservation)));
+    if (messageId) {
+      const r = mapRes(reservation);
+      await editMessageText(
+        chatId,
+        messageId,
+        formatReservationDetail(r),
+        reservationDetailActions(r.id, {
+          phone: r.customerPhone,
+          reservationId: r.reservationId,
+          tourSlug: r.tourSlug,
+        })
+      );
+    }
     // Notify other admins
     try {
       const { notifyStatusChange } = await import("./notifications");

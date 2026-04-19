@@ -3,32 +3,55 @@
 import { prisma } from "@/lib/db";
 import { sendEmail } from "@/lib/email";
 import { contactNotificationEmail } from "@/lib/email-templates/contact-notification";
+import { consumeRateLimit } from "@/lib/rate-limit";
 
 interface ContactFormInput {
   name: string;
   email: string;
   subject: string;
   message: string;
+  honeypot?: string;
 }
 
 export async function submitContactForm(input: ContactFormInput) {
   try {
+    if (input.honeypot?.trim()) {
+      return { success: false, error: "Failed to send message. Please try again." };
+    }
+
+    const name = input.name.replace(/\s+/g, " ").trim().slice(0, 120);
+    const email = input.email.replace(/\s+/g, " ").trim().toLowerCase().slice(0, 160);
+    const subject = input.subject.replace(/\s+/g, " ").trim().slice(0, 160);
+    const message = input.message.trim().slice(0, 4000);
+
     // Validate
-    if (!input.name || !input.email || !input.subject || !input.message) {
+    if (!name || !email || !subject || !message) {
       return { success: false, error: "All fields are required" };
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return { success: false, error: "Please enter a valid email address" };
+    }
+
+    const limit = consumeRateLimit("contact", email, {
+      limit: 5,
+      windowMs: 60 * 60 * 1000,
+    });
+
+    if (!limit.allowed) {
+      return {
+        success: false,
+        error: "Too many contact requests were sent in a short time. Please try again later.",
+      };
     }
 
     // Save to database
     await prisma.contactMessage.create({
       data: {
-        name: input.name,
-        email: input.email,
-        subject: input.subject,
-        message: input.message,
+        name,
+        email,
+        subject,
+        message,
       },
     });
 
@@ -37,8 +60,8 @@ export async function submitContactForm(input: ContactFormInput) {
       if (process.env.GMAIL_USER) {
         await sendEmail({
           to: process.env.GMAIL_USER,
-          subject: `📩 Contact Form: ${input.subject}`,
-          html: contactNotificationEmail(input),
+          subject: `📩 Contact Form: ${subject}`,
+          html: contactNotificationEmail({ name, email, subject, message }),
         });
       }
     } catch (emailErr) {

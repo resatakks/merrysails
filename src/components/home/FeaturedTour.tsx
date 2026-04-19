@@ -1,8 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, Users, MapPin, Globe, Check } from "lucide-react";
-import type { Tour } from "@/data/tours";
-import { getDiscountedPrice } from "@/lib/promo";
+import { ArrowRight, Clock, Users, MapPin, CalendarDays, Check } from "lucide-react";
+import {
+  getBookingMode,
+  getPriceSuffix,
+  getTourPath,
+  isPricingVisible,
+  type Tour,
+} from "@/data/tours";
+import SalePrice from "@/components/ui/SalePrice";
 
 interface Props {
   tour: Tour;
@@ -10,20 +16,48 @@ interface Props {
 }
 
 export default function FeaturedTour({ tour, reverse = false }: Props) {
-  const discountedPrice = getDiscountedPrice(tour.priceEur);
+  const showPricing = isPricingVisible(tour);
+  const href = getTourPath(tour);
+  const bookingMode = getBookingMode(tour);
+  const priceSuffix = getPriceSuffix(tour);
+  const detailCards = [
+    {
+      icon: Clock,
+      label: "Duration",
+      value: tour.duration,
+    },
+    {
+      icon: Users,
+      label: "Guests",
+      value: tour.capacity,
+    },
+    {
+      icon: MapPin,
+      label: "Departure",
+      value: tour.departurePoint,
+    },
+    {
+      icon: CalendarDays,
+      label: "Timing",
+      value: tour.departureTime,
+    },
+  ];
 
   return (
     <section className="py-16 md:py-20">
       <div className="container-main">
-        <div className={`bg-white rounded-2xl overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-2`}>
+        <div className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm">
+          <div className={`grid grid-cols-1 xl:grid-cols-[1.04fr_0.96fr]`}>
           {/* Image */}
-          <div className={`relative min-h-[350px] lg:min-h-[500px] overflow-hidden ${reverse ? "lg:order-2" : ""}`}>
+          <div
+            className={`relative min-h-[340px] overflow-hidden xl:min-h-[560px] ${reverse ? "xl:order-2" : ""}`}
+          >
             <Image
               src={tour.image}
               alt={tour.nameEn}
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 1280px) 100vw, 52vw"
             />
             {tour.badge && (
               <div className="absolute top-4 left-4">
@@ -35,59 +69,76 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
           </div>
 
           {/* Content */}
-          <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">{tour.nameEn}</h2>
-            <p className="text-[var(--text-muted)] mb-6">{tour.description}</p>
-
-            {/* Specs */}
-            <div className="spec-grid mb-6">
-              <div className="spec-item">
-                <Clock className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-                <div className="label">Duration</div>
-                <div className="value">{tour.duration}</div>
-              </div>
-              <div className="spec-item">
-                <Users className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-                <div className="label">Guests</div>
-                <div className="value">{tour.capacity}</div>
-              </div>
-              <div className="spec-item">
-                <MapPin className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-                <div className="label">Departure</div>
-                <div className="value">{tour.departureTime}</div>
-              </div>
-              <div className="spec-item">
-                <Globe className="w-5 h-5 text-[var(--brand-primary)] mx-auto mb-1" />
-                <div className="label">Languages</div>
-                <div className="value">EN / TR</div>
-              </div>
+          <div className="flex flex-col justify-center p-6 md:p-8 xl:p-10">
+            <div className="mb-6">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand-primary)]">
+                Core product
+              </p>
+              <h2 className="mb-3 text-2xl font-bold md:text-4xl">{tour.nameEn}</h2>
+              <p className="max-w-2xl text-base leading-relaxed text-[var(--text-muted)]">
+                {tour.description}
+              </p>
             </div>
 
-            {/* Includes */}
-            <div className="mb-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="mb-6 grid gap-3 sm:grid-cols-2">
+              {detailCards.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-[1.35rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4"
+                >
+                  <div className="mb-3 flex items-center gap-2">
+                    <item.icon className="h-4.5 w-4.5 text-[var(--brand-primary)]" />
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                      {item.label}
+                    </span>
+                  </div>
+                  <p className="text-base font-semibold leading-snug text-[var(--heading)]">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mb-7">
+              <div className="grid grid-cols-1 gap-x-5 gap-y-3 sm:grid-cols-2">
                 {tour.includes.slice(0, 6).map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm">
-                    <Check className="w-4 h-4 text-[var(--brand-gold)] shrink-0" />
-                    <span>{item}</span>
+                  <div key={item} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-gold)]" />
+                    <span className="text-[var(--body-text)]">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Price + CTA */}
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="price-box">
-                <span className="currency">€</span>
-                <span className="amount">{discountedPrice}</span>
-                <span className="suffix">/person</span>
-                <span className="old-price">€{tour.priceEur}</span>
+            <div className="flex flex-col gap-4 rounded-[1.6rem] border border-[var(--line)] bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                {showPricing ? (
+                  <SalePrice
+                    price={tour.priceEur}
+                    originalPrice={tour.originalPriceEur}
+                    suffix={priceSuffix}
+                    label="From"
+                    size="lg"
+                    showBadge={Boolean(tour.originalPriceEur)}
+                    showMeta={Boolean(tour.originalPriceEur)}
+                    metaText="Direct booking fare"
+                  />
+                ) : (
+                  <div className="rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--body-text)]">
+                    Tailor-made planning
+                  </div>
+                )}
               </div>
-              <Link href={`/cruises/${tour.slug}`}>
-                <button className="btn-cta">Book Now</button>
+              <Link href={href} className="sm:shrink-0">
+                <button className="btn-cta min-w-[190px]">
+                  {bookingMode === "quote" ? "Plan This Service" : "Book Now"}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
               </Link>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

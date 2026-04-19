@@ -21,6 +21,7 @@ export default function ContactForm() {
       email: data.get("email") as string,
       subject: data.get("subject") as string,
       message: data.get("message") as string,
+      honeypot: data.get("company") as string,
     });
 
     setLoading(false);
@@ -57,6 +58,14 @@ export default function ContactForm() {
     <div className="bg-white rounded-2xl p-6 md:p-8">
       <h2 className="text-xl font-bold mb-6">Send a Message</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
+        <div
+          aria-hidden="true"
+          className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+        >
+          <label htmlFor="company-contact">Company</label>
+          <input id="company-contact" type="text" name="company" tabIndex={-1} autoComplete="off" />
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1.5">Name</label>
@@ -65,6 +74,7 @@ export default function ContactForm() {
               name="name"
               required
               minLength={2}
+              autoComplete="name"
               className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]"
               placeholder="Your name"
             />
@@ -75,6 +85,7 @@ export default function ContactForm() {
               type="email"
               name="email"
               required
+              autoComplete="email"
               className="w-full px-4 py-2.5 rounded-xl border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)]"
               placeholder="your@email.com"
             />

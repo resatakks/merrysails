@@ -3,8 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Clock, Star, Users } from "lucide-react";
-import type { Tour } from "@/data/tours";
-import { getDiscountedPrice } from "@/lib/promo";
+import {
+  getBookingMode,
+  getPriceSuffix,
+  getTourPath,
+  isPricingVisible,
+  type Tour,
+} from "@/data/tours";
+import SalePrice from "@/components/ui/SalePrice";
 
 const categoryLabel: Record<string, string> = {
   cruise: "Cruise",
@@ -15,18 +21,24 @@ const categoryLabel: Record<string, string> = {
 };
 
 export default function TourCard({ tour }: { tour: Tour }) {
-  const discountedPrice = getDiscountedPrice(tour.priceEur);
+  const showPricing = isPricingVisible(tour);
+  const bookingMode = getBookingMode(tour);
+  const href = getTourPath(tour);
+  const priceSuffix = getPriceSuffix(tour);
+  const alt = showPricing
+    ? `${tour.nameEn} — book from €${tour.priceEur} in Istanbul`
+    : `${tour.nameEn} — Bosphorus tour in Istanbul`;
 
   return (
     <Link
-      href={`/cruises/${tour.slug}`}
+      href={href}
       className="block group rounded-2xl overflow-hidden bg-white border border-[var(--line)] hover:shadow-xl hover:shadow-black/8 hover:-translate-y-1 transition-all duration-300"
     >
       {/* Image */}
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image
           src={tour.image}
-          alt={`${tour.nameEn} — Book from €${discountedPrice} in Istanbul`}
+          alt={alt}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -90,12 +102,21 @@ export default function TourCard({ tour }: { tour: Tour }) {
           {/* Price + Duration row */}
           <div className="flex items-end justify-between">
             <div>
-              <span className="text-sm text-white/50 line-through mr-2">
-                €{tour.priceEur}
-              </span>
-              <span className="text-lg font-bold text-[var(--brand-gold)]">
-                €{discountedPrice}
-              </span>
+              {showPricing ? (
+                <SalePrice
+                  price={tour.priceEur}
+                  originalPrice={tour.originalPriceEur}
+                  suffix={priceSuffix}
+                  size="sm"
+                  tone="overlay"
+                  showBadge={Boolean(tour.originalPriceEur)}
+                  className="gap-1.5"
+                />
+              ) : (
+                <span className="text-sm font-semibold text-[var(--brand-gold)]">
+                  {bookingMode === "quote" ? "Tailor-made plan" : "Service page"}
+                </span>
+              )}
             </div>
             <div className="flex items-center gap-1 text-xs text-white/70">
               <Clock className="w-3.5 h-3.5" />

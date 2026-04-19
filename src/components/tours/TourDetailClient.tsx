@@ -1,18 +1,25 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Check, X, MapPin, Clock, Users, Globe, Star, Phone, Shield,
-  Camera, ChevronDown, CalendarDays, Anchor, Navigation,
+  Check, X, MapPin, Clock, Users, Star, Shield,
+  Camera, CalendarDays, Anchor, Navigation,
   Plus, Minus,
 } from "lucide-react";
-import type { Tour, Package, AddOn } from "@/data/tours";
-import { getDiscountedPrice } from "@/lib/promo";
+import {
+  getBookingMode,
+  getPriceMode,
+  getPriceSuffix,
+  isPricingVisible,
+  type Tour,
+  type Package,
+  type AddOn,
+} from "@/data/tours";
 import BookingSidebar from "@/components/booking/BookingSidebar";
 import ImageLightbox from "@/components/ui/ImageLightbox";
+import SalePrice from "@/components/ui/SalePrice";
 import TourCard from "@/components/tours/TourCard";
 import SocialProof from "@/components/tours/SocialProof";
 import BestPriceBadge from "@/components/tours/BestPriceBadge";
@@ -20,6 +27,12 @@ import BestPriceBadge from "@/components/tours/BestPriceBadge";
 interface Props {
   tour: Tour;
   related: Tour[];
+  bookingPrefill?: {
+    packageName?: string;
+    date?: string;
+    guests?: number;
+    time?: string;
+  };
 }
 
 type TabKey = "overview" | "itinerary" | "included" | "faq";
@@ -31,9 +44,22 @@ const TAB_LABELS: { key: TabKey; label: string }[] = [
   { key: "faq", label: "FAQ" },
 ];
 
-export default function TourDetailClient({ tour, related }: Props) {
+export default function TourDetailClient({
+  tour,
+  related,
+  bookingPrefill,
+}: Props) {
+  const packageParam = bookingPrefill?.packageName;
+  const dateParam = bookingPrefill?.date;
+  const guestsParam = bookingPrefill?.guests;
+  const timeParam = bookingPrefill?.time;
+
+  const resolvePackageSelection = () =>
+    tour.packages?.find((pkg) => pkg.name === packageParam) ??
+    tour.packages?.[0];
+
   const [selectedPackage, setSelectedPackage] = useState<Package | undefined>(
-    tour.packages?.[1] ?? tour.packages?.[0]
+    resolvePackageSelection()
   );
   const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>([]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -46,8 +72,42 @@ export default function TourDetailClient({ tour, related }: Props) {
   const hasPackages = tour.packages && tour.packages.length > 0;
   const hasItinerary = tour.itinerary && tour.itinerary.length > 0;
   const hasFaq = tour.faq && tour.faq.length > 0;
+  const showPricing = isPricingVisible(tour);
+  const bookingMode = getBookingMode(tour);
+  const priceMode = getPriceMode(tour);
+  const priceSuffix = getPriceSuffix(tour);
 
   const allImages = [tour.image, ...tour.gallery.filter((img) => img !== tour.image)];
+  const prefilledDate = useMemo(() => {
+    if (!dateParam) return undefined;
+    const parsed = new Date(`${dateParam}T12:00:00`);
+    return Number.isNaN(parsed.getTime()) ? undefined : parsed;
+  }, [dateParam]);
+
+  const prefilledGuests = useMemo(() => {
+    if (!guestsParam || guestsParam < 1) return undefined;
+    return Math.min(guestsParam, 20);
+  }, [guestsParam]);
+  const availableAddOns = useMemo(
+    () => selectedPackage?.addOns ?? tour.addOns ?? [],
+    [selectedPackage, tour.addOns]
+  );
+  const pickupStatus = useMemo(() => {
+    const hasPickupIncluded = tour.includes.some((item) => {
+      const normalized = item.toLowerCase();
+      return normalized.includes("pickup") || normalized.includes("transfer");
+    }
+    );
+    const hasPickupExcluded = tour.notIncluded?.some((item) => {
+      const normalized = item.toLowerCase();
+      return normalized.includes("pickup") || normalized.includes("transfer");
+    }
+    );
+
+    if (hasPickupIncluded) return "Included";
+    if (hasPickupExcluded) return "Optional";
+    return "Check details";
+  }, [tour.includes, tour.notIncluded]);
 
   // Build available tabs based on tour data
   const availableTabs = TAB_LABELS.filter((tab) => {
@@ -61,6 +121,17 @@ export default function TourDetailClient({ tour, related }: Props) {
       prev.some((a) => a.name === addon.name)
         ? prev.filter((a) => a.name !== addon.name)
         : [...prev, addon]
+    );
+  };
+
+  const handlePackageSelect = (pkg: Package) => {
+    setSelectedPackage(pkg);
+
+    const nextAvailableAddOns = pkg.addOns ?? tour.addOns ?? [];
+    setSelectedAddOns((prev) =>
+      prev.filter((addon) =>
+        nextAvailableAddOns.some((item) => item.name === addon.name)
+      )
     );
   };
 
@@ -79,8 +150,11 @@ export default function TourDetailClient({ tour, related }: Props) {
     }
   };
 
-  const basePrice = getDiscountedPrice(tour.priceEur);
+  const basePrice = tour.priceEur;
   const effectivePrice = selectedPackage?.price ?? basePrice;
+  const effectiveOriginalPrice =
+    effectivePrice === basePrice ? tour.originalPriceEur : undefined;
+  const selectedOptionLabel = hasPackages ? "Selected package" : "Current fare";
 
   return (
     <>
@@ -167,7 +241,7 @@ export default function TourDetailClient({ tour, related }: Props) {
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Pick-up</div>
             <div className="text-sm font-semibold text-[var(--heading)]">
-              {tour.includes.some((i) => i.toLowerCase().includes("pickup")) ? "Included" : "Available"}
+              {pickupStatus}
             </div>
           </div>
         </div>
@@ -192,6 +266,58 @@ export default function TourDetailClient({ tour, related }: Props) {
               </div>
             </div>
           </div>
+
+          {showPricing && (
+            <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(255,8,68,0.06),rgba(255,184,0,0.08))] p-5 md:p-6">
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                <div className="space-y-3">
+                  <SalePrice
+                    price={effectivePrice}
+                    originalPrice={effectiveOriginalPrice}
+                    suffix={priceSuffix}
+                    label={selectedOptionLabel}
+                    size="xl"
+                    showBadge={Boolean(effectiveOriginalPrice)}
+                    showMeta={Boolean(effectiveOriginalPrice)}
+                    metaText="Direct booking price shown on this page"
+                  />
+                  <p className="max-w-2xl text-sm leading-relaxed text-[var(--body-text)]/80">
+                    {selectedPackage?.name ? `${selectedPackage.name}. ` : ""}
+                    We keep the booking flow focused on the live public option ladder,
+                    so your selected package, date, and guest count stay together all
+                    the way into the reservation step.
+                  </p>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                      Packages
+                    </div>
+                    <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                      {hasPackages ? `${tour.packages!.length} public options` : "Single public fare"}
+                    </div>
+                  </div>
+                  <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                      Duration
+                    </div>
+                    <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                      {tour.duration}
+                    </div>
+                  </div>
+                  <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                      Booking
+                    </div>
+                    <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                      Direct request flow
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Tab Navigation */}
           <div className="bg-white rounded-xl border border-[var(--line)] p-1.5 sticky top-20 z-20">
@@ -242,29 +368,36 @@ export default function TourDetailClient({ tour, related }: Props) {
                   {/* Packages */}
                   {hasPackages && (
                     <div className="bg-white rounded-2xl p-6 md:p-8">
-                      <h2 className="text-xl font-bold mb-6">Choose Your Package</h2>
+                      <h2 className="text-xl font-bold mb-6">
+                        {showPricing ? "Choose Your Package" : "Choose Your Service Scope"}
+                      </h2>
                       <div className={`grid grid-cols-1 gap-4 ${tour.packages!.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
-                        {tour.packages!.map((pkg, i) => {
+                        {tour.packages!.map((pkg) => {
                           const isSelected = selectedPackage?.name === pkg.name;
-                          const isPopular = i === 1;
                           return (
                             <button
                               key={pkg.name}
-                              onClick={() => setSelectedPackage(pkg)}
+                              onClick={() => handlePackageSelect(pkg)}
                               className={`text-left rounded-xl border-2 p-5 transition-all ${
                                 isSelected
                                   ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5 shadow-md ring-2 ring-[var(--brand-primary)]/20"
                                   : "border-[var(--line)] hover:border-[var(--brand-primary)]/30"
                               }`}
                             >
-                              {isPopular && (
-                                <span className="inline-block px-2 py-0.5 bg-[var(--brand-primary)] text-white text-xs font-bold rounded mb-3">
-                                  POPULAR
-                                </span>
-                              )}
                               <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
                               <p className="text-sm text-[var(--text-muted)] mb-3">{pkg.description}</p>
-                              <div className="text-2xl font-bold text-[var(--heading)] mb-4">&euro;{pkg.price}</div>
+                              {showPricing ? (
+                                <div className="mb-4 text-2xl font-bold text-[var(--heading)]">
+                                  &euro;{pkg.price}
+                                  <span className="ml-2 text-sm font-medium text-[var(--text-muted)]">
+                                    {priceSuffix}
+                                  </span>
+                                </div>
+                              ) : (
+                                <div className="mb-4 text-sm font-semibold text-[var(--brand-primary)]">
+                                  Price on request
+                                </div>
+                              )}
                               <ul className="space-y-2">
                                 {pkg.features.map((f) => (
                                   <li key={f} className="flex items-start gap-2 text-sm">
@@ -275,7 +408,9 @@ export default function TourDetailClient({ tour, related }: Props) {
                               </ul>
                               {isSelected && (
                                 <div className="mt-4 pt-3 border-t border-[var(--brand-primary)]/20 text-center">
-                                  <span className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-wider">Selected</span>
+                                  <span className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-wider">
+                                    {showPricing ? "Selected" : "Selected scope"}
+                                  </span>
                                 </div>
                               )}
                             </button>
@@ -286,11 +421,11 @@ export default function TourDetailClient({ tour, related }: Props) {
                   )}
 
                   {/* Add-ons */}
-                  {tour.addOns && tour.addOns.length > 0 && (
+                  {availableAddOns.length > 0 && (
                     <div className="bg-white rounded-2xl p-6 md:p-8">
                       <h2 className="text-xl font-bold mb-4">Add-On Services</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {tour.addOns.map((addon) => {
+                        {availableAddOns.map((addon) => {
                           const isSelected = selectedAddOns.some((a) => a.name === addon.name);
                           return (
                             <button
@@ -312,7 +447,9 @@ export default function TourDetailClient({ tour, related }: Props) {
                                 </div>
                                 <span className="text-sm font-medium">{addon.name}</span>
                               </div>
-                              <span className="text-sm font-bold text-[var(--brand-primary)]">{addon.price}</span>
+                              <span className="text-sm font-bold text-[var(--brand-primary)]">
+                                {showPricing ? addon.price : "Available on request"}
+                              </span>
                             </button>
                           );
                         })}
@@ -344,6 +481,40 @@ export default function TourDetailClient({ tour, related }: Props) {
                       ))}
                     </div>
                   </div>
+
+                  {(tour.bestFor?.length || tour.importantNotes?.length) && (
+                    <div className="grid gap-6 md:grid-cols-2">
+                      {tour.bestFor && tour.bestFor.length > 0 && (
+                        <div className="bg-white rounded-2xl p-6 md:p-8">
+                          <h2 className="text-xl font-bold mb-4">Best For</h2>
+                          <div className="flex flex-wrap gap-2">
+                            {tour.bestFor.map((item) => (
+                              <span
+                                key={item}
+                                className="rounded-full bg-[var(--surface-alt)] px-3 py-2 text-sm font-medium text-[var(--body-text)]"
+                              >
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {tour.importantNotes && tour.importantNotes.length > 0 && (
+                        <div className="bg-white rounded-2xl p-6 md:p-8">
+                          <h2 className="text-xl font-bold mb-4">Important Booking Notes</h2>
+                          <ul className="space-y-3">
+                            {tour.importantNotes.map((note) => (
+                              <li key={note} className="flex items-start gap-3 text-sm leading-relaxed text-[var(--body-text)]">
+                                <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--brand-primary)]" />
+                                <span>{note}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   {/* Cancellation */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
@@ -533,28 +704,36 @@ export default function TourDetailClient({ tour, related }: Props) {
 
         {/* Sidebar — sticky booking area with package cards + mobile bar */}
         <div>
-          <SocialProof tourSlug={tour.slug} capacity={tour.capacity} />
+          <SocialProof tourSlug={tour.slug} />
           <BookingSidebar
           tour={{
             slug: tour.slug,
             nameEn: tour.nameEn,
             name: tour.name,
             priceEur: tour.priceEur,
+            originalPriceEur: tour.originalPriceEur,
             departureTime: tour.departureTime,
             departurePoint: tour.departurePoint,
             image: tour.image,
             packages: tour.packages,
-            addOns: tour.addOns,
+            addOns: availableAddOns,
+            bookingMode,
+            priceMode,
+            showPricing,
+            enquiryLabel: tour.enquiryLabel,
           }}
           effectivePrice={effectivePrice}
           selectedPackage={selectedPackage}
-          onSelectPackage={setSelectedPackage}
+          onSelectPackage={handlePackageSelect}
           selectedAddOns={selectedAddOns}
+          initialDate={prefilledDate}
+          initialGuests={prefilledGuests}
+          initialTime={timeParam || undefined}
         />
         </div>
       </div>
 
-      <BestPriceBadge />
+      {showPricing && <BestPriceBadge />}
 
       {/* Related tours */}
       {related.length > 0 && (

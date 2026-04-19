@@ -13,8 +13,8 @@ const features = [
   },
   {
     icon: Award,
-    title: "Best Price Guarantee",
-    description: "Book direct for the best rates — no middleman fees. We match or beat any competitor price for the same tour.",
+    title: "Clear Pricing",
+    description: "See the listed rate before you book. If you need a private setup or extra services, we confirm the price in advance.",
   },
   {
     icon: MapPin,
@@ -28,8 +28,8 @@ const features = [
   },
   {
     icon: CreditCard,
-    title: "Secure Payment",
-    description: "SSL-encrypted online payment. Also accept cash (EUR/USD/TRY), credit cards, and bank transfers onboard.",
+    title: "Flexible Confirmation Flow",
+    description: "Shared cruises are reserved first and paid onboard, while private yacht and event formats are confirmed manually with our team before payment timing is finalized.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function WhyUs() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Why Book Your Istanbul Boat Tour With Us?</h2>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Over 50,000 happy guests since 2001. TURSAB-licensed Bosphorus cruise company trusted by travelers worldwide.
+            Over 50,000 guests since 2001. TURSAB-licensed Bosphorus cruise company serving travelers in Istanbul.
           </p>
         </div>
 

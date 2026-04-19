@@ -3,6 +3,7 @@ export interface Package {
   price: number;
   description: string;
   features: string[];
+  addOns?: AddOn[];
 }
 
 export interface AddOn {
@@ -20,6 +21,9 @@ export interface FAQ {
   question: string;
   answer: string;
 }
+
+export type BookingMode = "book" | "quote";
+export type PriceMode = "perPerson" | "perGroup" | "custom";
 
 export interface Tour {
   id: string;
@@ -50,7 +54,86 @@ export interface Tour {
   itinerary?: ItineraryStep[];
   faq?: FAQ[];
   availability?: string;
+  bestFor?: string[];
+  importantNotes?: string[];
+  canonicalPath?: string;
+  isCoreProduct?: boolean;
+  showPricing?: boolean;
+  bookingMode?: BookingMode;
+  priceMode?: PriceMode;
+  enquiryLabel?: string;
 }
+
+const yachtEssentialAddOns: AddOn[] = [
+  { name: "Cocktail Menu", price: "EUR 25 / person" },
+  { name: "Finger Food Menu", price: "EUR 30 / person" },
+  { name: "Breakfast Menu", price: "EUR 30 / person" },
+  { name: "4 Course Meal (Fish, Chicken, Meat, Vegetarian, Vegan)", price: "EUR 35 / person" },
+  { name: "Unlimited Alcoholic Drinks", price: "EUR 50 / person" },
+  { name: "Unlimited Wine", price: "EUR 25 / person" },
+  { name: "Live Guide", price: "EUR 100" },
+  { name: "VIP Pickup & Drop Off", price: "EUR 150" },
+  { name: "Laser Show", price: "EUR 50" },
+  { name: "Belly Dancer", price: "EUR 180" },
+  { name: "Photographer", price: "EUR 190" },
+  { name: "DJ", price: "EUR 250" },
+  { name: "Go Go Dancer", price: "EUR 200" },
+  { name: "Violinist", price: "EUR 180" },
+  { name: "Turkish Traditional Music Group", price: "EUR 300" },
+  { name: "Birthday Cake (Small - 4/6 people)", price: "EUR 35" },
+  { name: "Birthday Cake (Medium - 8/10 people)", price: "EUR 45" },
+  { name: "Birthday Cake (Large - 12/16 people)", price: "EUR 60" },
+  { name: "Marriage Proposal Table Decoration", price: "EUR 50" },
+  { name: "Add 1 Hour Extra", price: "EUR 125" },
+];
+
+const yachtPremiumAddOns: AddOn[] = [
+  { name: "Cocktail Menu", price: "EUR 25 / person" },
+  { name: "Finger Food Menu", price: "EUR 30 / person" },
+  { name: "Breakfast Menu", price: "EUR 30 / person" },
+  { name: "4 Course Meal (Fish, Chicken, Meat, Vegetarian, Vegan)", price: "EUR 35 / person" },
+  { name: "Unlimited Alcoholic Drinks", price: "EUR 50 / person" },
+  { name: "Unlimited Wine", price: "EUR 25 / person" },
+  { name: "Live Guide", price: "EUR 100" },
+  { name: "VIP Pickup & Drop Off", price: "EUR 150" },
+  { name: "Laser Show", price: "EUR 50" },
+  { name: "Belly Dancer", price: "EUR 180" },
+  { name: "Photographer", price: "EUR 190" },
+  { name: "DJ", price: "EUR 250" },
+  { name: "Go Go Dancer", price: "EUR 200" },
+  { name: "Violinist", price: "EUR 180" },
+  { name: "Turkish Traditional Music Group", price: "EUR 300" },
+  { name: "Birthday Cake (Small - 4/6 people)", price: "EUR 35" },
+  { name: "Birthday Cake (Medium - 8/10 people)", price: "EUR 45" },
+  { name: "Birthday Cake (Large - 12/16 people)", price: "EUR 60" },
+  { name: "Marriage Proposal Table Decoration", price: "EUR 50" },
+  { name: "Add 1 Hour Extra", price: "EUR 150" },
+];
+
+const yachtVipAddOns: AddOn[] = [
+  { name: "Breakfast Menu", price: "EUR 65 / person" },
+  { name: "Unlimited Alcoholic Drinks", price: "EUR 65 / person" },
+  { name: "Unlimited Wine", price: "EUR 65 / person" },
+  { name: "VIP Luxury Yacht Package Finger Food Menu (Per Person)", price: "EUR 95 / person" },
+  { name: "VIP Luxury Yacht Package Fish Menu (Per Person)", price: "EUR 95 / person" },
+  { name: "VIP Luxury Yacht Package Meat Menu (Per Person)", price: "EUR 95 / person" },
+  { name: "VIP Luxury Yacht Package Chicken Menu (Per Person)", price: "EUR 95 / person" },
+  { name: "VIP Luxury Yacht Package Snack Menu (Per Person)", price: "EUR 95 / person" },
+  { name: "Live Guide", price: "EUR 100" },
+  { name: "VIP Pickup & Drop Off", price: "EUR 150" },
+  { name: "Laser Show", price: "EUR 50" },
+  { name: "Belly Dancer", price: "EUR 190" },
+  { name: "Photographer", price: "EUR 190" },
+  { name: "DJ", price: "EUR 250" },
+  { name: "Go Go Dancer", price: "EUR 200" },
+  { name: "Violinist", price: "EUR 180" },
+  { name: "Turkish Traditional Music Group", price: "EUR 300" },
+  { name: "Birthday Cake (Small - 4/6 people)", price: "EUR 35" },
+  { name: "Birthday Cake (Medium - 8/10 people)", price: "EUR 45" },
+  { name: "Birthday Cake (Large - 12/16 people)", price: "EUR 60" },
+  { name: "Marriage Proposal Table Decoration", price: "EUR 75" },
+  { name: "Add 1 Hour Extra", price: "EUR 300" },
+];
 
 export const tours: Tour[] = [
   // ========== BOSPHORUS CRUISES ==========
@@ -59,14 +142,54 @@ export const tours: Tour[] = [
     slug: "bosphorus-sunset-cruise",
     name: "Boğaz Gün Batımı Turu",
     nameEn: "Bosphorus Sunset Cruise",
-    description: "Experience the magic of Istanbul as the sun sets over the Bosphorus. Sail past iconic landmarks bathed in golden light on this unforgettable evening cruise.",
-    longDescription: "Watch the sunset paint the sky in shades of gold, amber, and crimson as you glide along the legendary Bosphorus Strait. This enchanting 2.5-hour cruise takes you on a journey through centuries of history, where Ottoman palaces stand alongside medieval fortresses and iconic suspension bridges connect two continents.\n\nYour professional crew will guide you past the ethereal Maiden's Tower rising from the waters, the ornate Dolmabahçe Palace with its European grandeur, the charming Ortaköy Mosque framed perfectly against the Bosphorus Bridge, and the imposing Rumeli Fortress built by Sultan Mehmed the Conqueror.\n\nAs daylight fades, the city transforms into a glittering tapestry of lights reflected on the water — a sight that has captivated travelers for millennia. Perfect for couples seeking romance, families creating memories, and photographers chasing the golden hour.",
-    duration: "2.5 hours",
-    capacity: "Max 40 guests",
+    description: "Shared Bosphorus sunset cruise in Istanbul with a 2-hour luxury-yacht route, live guiding, light hospitality, and two public sunset options: Without Wine and With Wine.",
+    longDescription: "This is our shared Bosphorus sunset cruise for guests who want golden-hour views on the water without turning the evening into a full dinner program. The route follows the best-known Bosphorus landmarks while the skyline shifts from warm sunset color into blue-hour city lights.\n\nThe cruise lasts about 2 hours and runs on a shared luxury yacht. The published option page promotes the entry fare from EUR 34, while the live booking engine currently shows two public options on the same route: Without Wine at EUR 34 and the With Wine option at EUR 40.\n\nTea, Turkish coffee, lemonade, water, nuts, chips, crackers, pretzels, and fruit service form the base hospitality. The wine-served option adds 2 glasses of wine per guest, while the without-wine option keeps the experience lighter for guests who want the sunset and the route first.",
+    duration: "2 hours",
+    capacity: "Max 25 guests on a shared yacht",
     priceEur: 34,
-    originalPriceEur: 40,
-    includes: ["Welcome drinks", "Live commentary", "Open bar (soft drinks)", "Snack platter", "WiFi"],
-    notIncluded: ["Alcoholic beverages", "Hotel transfer"],
+    originalPriceEur: 50,
+    packages: [
+      {
+        name: "Without Wine",
+        price: 34,
+        description: "Shared 2-hour golden-hour cruise with light hospitality and no wine service",
+        features: [
+          "2-hour sunset cruise",
+          "Shared luxury yacht",
+          "Live tour guide",
+          "Tea, Turkish coffee, lemonade and water",
+          "Nuts, chips, crackers, pretzels and fruit plate",
+          "12-language audio guide",
+        ],
+      },
+      {
+        name: "Bosphorus Sunset Cruise with Wine",
+        price: 40,
+        description: "Shared sunset departure with wine service on the same 2-hour Bosphorus route",
+        features: [
+          "2-hour sunset cruise",
+          "Shared luxury yacht",
+          "2 glasses of wine per guest",
+          "Tea, Turkish coffee, lemonade and water",
+          "Nuts, chips, crackers, pretzels and fruit plate",
+          "Live tour guide and 12-language audio guide",
+        ],
+      },
+    ],
+    includes: [
+      "2-hour shared Bosphorus sunset cruise",
+      "Live tour guide and 12-language audio guide",
+      "Luxury yacht sunset route",
+      "Tea, Turkish coffee, lemonade and water",
+      "Nuts, chips, crackers, pretzels and fruit plate",
+      "2 glasses of wine per guest on the wine option",
+    ],
+    notIncluded: [
+      "Wine service outside the selected sunset option",
+      "Other alcoholic drinks",
+      "Hotel pickup and drop-off (+ extra charge)",
+      "Tips",
+    ],
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Rumeli Fortress", "Bosphorus Bridge"],
     badge: "",
     badgeColor: "",
@@ -79,57 +202,130 @@ export const tours: Tour[] = [
       "/images/tours/bosphorus-sunset-cruise/05.jpg",
       "/images/tours/bosphorus-sunset-cruise/06.jpg",
     ],
-    route: "Eminönü → Maiden's Tower → Dolmabahçe → Ortaköy → Rumeli Fortress → Return",
-    departureTime: "17:00 / 18:00 (seasonal)",
-    departurePoint: "Eminönü Pier",
+    route: "Kabatas-side boarding flow → Bosphorus landmarks → Rumeli Fortress zone → return",
+    departureTime: "Seasonal sunset departure (around 18:00-19:00 in warmer months and around 16:00 in winter)",
+    departurePoint: "Kabatas-side meeting point (exact boarding details shared after booking)",
     category: "cruise",
     rating: 4.93,
     reviewCount: 621,
     availability: "All Year",
+    bestFor: [
+      "Couples and golden-hour travelers",
+      "First-time Istanbul visitors",
+      "Guests who want photos instead of a full dinner program",
+      "Small groups looking for a premium shared cruise",
+    ],
+    importantNotes: [
+      "The live public sunset ladder currently shows EUR 34 for Without Wine and EUR 40 for the wine-served option",
+      "The shared sunset product is operated as a small-group luxury-yacht format and the final boarding count can vary by departure",
+      "The sunset cruise currently uses a Kabatas-side boarding flow, with the exact meeting details shared after booking",
+      "The same sunset route can be booked with or without wine service depending on the selected option",
+      "Live guiding and multilingual audio support are part of the sunset experience",
+      "Hotel transfer is not included by default on the shared sunset cruise",
+    ],
+    canonicalPath: "/cruises/bosphorus-sunset-cruise",
+    isCoreProduct: true,
+    showPricing: true,
+    bookingMode: "book",
+    priceMode: "perPerson",
     itinerary: [
-      { time: "17:00", title: "Boarding & Welcome Drinks", description: "Board at Eminönü Pier. Receive your welcome drinks and find your spot on deck." },
-      { time: "17:15", title: "Maiden's Tower & Asian Shore", description: "Cruise past the iconic Maiden's Tower and the historic Üsküdar waterfront." },
-      { time: "17:45", title: "Dolmabahçe Palace & Beşiktaş", description: "Marvel at the grand Dolmabahçe Palace and the picturesque Beşiktaş coastline." },
-      { time: "18:15", title: "Ortaköy & Bosphorus Bridge", description: "See the stunning Ortaköy Mosque framed by the first Bosphorus Bridge." },
-      { time: "18:45", title: "Rumeli Fortress & Sunset", description: "Reach the majestic Rumeli Fortress as the sun sets over the strait." },
-      { time: "19:15", title: "Return to Eminönü", description: "Cruise back under the golden twilight sky. Disembark at Eminönü Pier." },
+      { time: "TBC", title: "Boarding Before Sunset", description: "Meet at the confirmed Kabatas-side point, board the shared yacht, and settle in before the light begins to turn." },
+      { time: "TBC", title: "Maiden's Tower & Dolmabahce", description: "The route starts with Istanbul's most photogenic southern Bosphorus landmarks while the guide shares historical context." },
+      { time: "TBC", title: "Ortakoy & First Bridge", description: "Cruise into the golden-hour stretch where Ortakoy Mosque and the first Bosphorus Bridge frame the skyline." },
+      { time: "TBC", title: "Rumeli Fortress at Golden Hour", description: "Reach the upper landmark zone as the sunset color peaks across the water and waterfront mansions." },
+      { time: "TBC", title: "Blue-Hour Return", description: "Sail back toward the city lights with drinks and snacks still being served on board." },
     ],
     faq: [
-      { question: "What time does the sunset cruise depart?", answer: "Departure times vary by season: 17:00 in winter, 18:00 in summer. We adjust to ensure you catch the best sunset." },
-      { question: "Is food included on the sunset cruise?", answer: "A snack platter and soft drinks are included. Alcoholic beverages can be purchased on board." },
-      { question: "Is the cruise suitable for children?", answer: "Absolutely! The sunset cruise is family-friendly and children under 3 go free." },
-      { question: "What happens in bad weather?", answer: "The boat has covered indoor areas. In case of extreme weather, we offer free rebooking or full refund." },
-      { question: "Where is the departure point?", answer: "Eminönü Pier, easily accessible by tram (Eminönü stop). We'll send exact meeting point details after booking." },
+      { question: "How much is the Bosphorus sunset cruise?", answer: "The live public sunset ladder starts from EUR 34 for the Without Wine option, while the wine-served option is currently EUR 40 per guest." },
+      { question: "How many sunset options are there?", answer: "The public sunset cruise is structured around two shared options on the same route: Without Wine and Bosphorus Sunset Cruise with Wine." },
+      { question: "What is included in the sunset cruise?", answer: "Both sunset options include the 2-hour shared route, live guide support, 12-language audio guide access, tea, Turkish coffee, lemonade, water, nuts, chips, crackers, pretzels, and fruit service. The wine option adds 2 glasses of wine per guest." },
+      { question: "How long does the cruise last?", answer: "The sunset cruise lasts approximately 2 hours and is timed around the daily sunset window." },
+      { question: "Where does the sunset cruise depart from?", answer: "The public sunset cruise currently uses a Kabatas-side meeting point, and the exact boarding instructions are shared after booking." },
+      { question: "What happens if the weather is bad?", answer: "If sailing conditions become unsafe, the cruise can be moved to another departure or refunded according to the booking terms." },
     ],
   },
   {
     id: "2",
     slug: "bosphorus-dinner-cruise",
-    name: "Boğaz Yemekli Tur & Türk Gecesi",
-    nameEn: "Bosphorus Dinner Cruise & Turkish Night",
-    description: "The best Istanbul dinner cruise on the Bosphorus — 4-course Turkish dinner, live entertainment, belly dancing, and whirling dervish. Hotel transfer included. From €50.",
-    longDescription: "Step aboard for the ultimate Istanbul dinner cruise — a spectacular 3.5-hour Bosphorus night cruise that combines world-class Turkish cuisine with mesmerizing traditional entertainment.\n\nThe Bosphorus dinner cruise menu features a sumptuous 4-course Turkish dinner: start with a selection of traditional mezes (hummus, ezme, stuffed vine leaves), followed by a fresh seasonal salad, your choice of grilled lamb, chicken, or fish kebab as the main course, and finish with classic baklava and Turkish tea. Unlimited local drinks (beer, wine, rakı, soft drinks) flow throughout the evening — dinner on the Bosphorus at its finest.\n\nThe night comes alive with a dazzling Turkish Night show: watch in awe as belly dancers perform their hypnotic routines, witness the spiritual beauty of the Whirling Dervish ceremony, and feel the energy of traditional Turkish folk dances from across Anatolia.\n\nBetween performances, a live DJ keeps the atmosphere electric while the illuminated silhouettes of mosques, palaces, and bridges create a magical backdrop. Hotel pickup and drop-off included — the best dinner cruise Istanbul has to offer.",
+    name: "Boğaz Yemekli Tur",
+    nameEn: "Bosphorus Dinner Cruise",
+    description: "Shared Bosphorus dinner cruise in Istanbul with four verified package tiers, dinner service, Turkish-night shows, and hotel pickup support from central European-side zones.",
+    longDescription: "This shared dinner cruise is built around four public packages on the same Bosphorus night route: Silver Dinner Cruise - Soft Drinks at EUR 30, Silver Dinner Cruise - Alcoholic at EUR 45, Gold Dinner Cruise - Soft Drinks at EUR 80, and Gold Dinner Cruise - Unlimited Alcohol at EUR 90.\n\nThe cruise lasts about 3.5 hours, runs on a shared dinner boat, and uses the Kabatas Pier boarding flow. For many central European-side hotels, pickup and drop-off are part of the shared dinner-cruise operation, and the live calendar currently shows 20:30 departures.\n\nAcross the ladder, the evening combines dinner service, stage entertainment, DJ music, and illuminated Bosphorus views. The main package differences are not the route itself but the table tier, beverage inclusion, and dinner-menu level. Silver stays with standard seating arranged by the operation, while Gold moves into guaranteed stage-close VIP tables with a wider menu and more premium service.",
     duration: "3.5 hours",
-    capacity: "Max 150 guests",
-    priceEur: 50,
-    originalPriceEur: 65,
+    capacity: "Max 50 guests on the shared dinner boat",
+    priceEur: 30,
+    originalPriceEur: 40,
     packages: [
       {
-        name: "Standard",
-        price: 50,
-        description: "All-inclusive dinner cruise with entertainment",
-        features: ["Hotel pickup & drop-off", "4-course Turkish dinner", "Unlimited local drinks", "Live music & DJ", "Belly dance show", "Whirling dervish performance", "Turkish folk show"],
+        name: "Silver Dinner Cruise - Soft Drinks",
+        price: 30,
+        description: "Entry shared dinner cruise with standard seating and unlimited soft drinks",
+        features: [
+          "3.5-hour shared Bosphorus dinner cruise",
+          "Standard seating with no table selection",
+          "Welcome cocktail and 10 cold mezes",
+          "Fresh seasonal salad, fish/chicken/meatballs/vegetarian main-course choice, baklava and fruit",
+          "Unlimited soft drinks and tea included",
+          "Hotel pickup and drop-off from central European-side areas",
+          "Traditional Turkish shows and DJ",
+        ],
       },
       {
-        name: "Gold",
-        price: 75,
-        description: "Premium reserved seating with panoramic views",
-        features: ["Everything in Standard", "Reserved panoramic seating", "Enhanced gourmet dinner menu", "Premium imported spirits", "Personalized service", "Quieter exclusive section"],
+        name: "Silver Dinner Cruise - Alcoholic",
+        price: 45,
+        description: "Shared dinner cruise with standard seating and local alcoholic service",
+        features: [
+          "3.5-hour shared Bosphorus dinner cruise",
+          "Standard seating with no table selection",
+          "Welcome cocktail and 10 cold mezes",
+          "Fresh seasonal salad, main-course choice, baklava and fruit",
+          "2 glasses of local alcoholic drinks plus soft drinks and tea",
+          "Imported drinks available with extra charge",
+          "Hotel pickup and drop-off from central European-side areas",
+          "Traditional Turkish shows and DJ",
+        ],
+      },
+      {
+        name: "Gold Dinner Cruise - Soft Drinks",
+        price: 80,
+        description: "Premium shared dinner cruise with guaranteed stage-close VIP table and unlimited soft drinks",
+        features: [
+          "3.5-hour shared Bosphorus dinner cruise",
+          "Guaranteed VIP table close to the stage",
+          "Welcome drink, Turkish appetizers, salads and hot starter",
+          "Wide dinner menu with chicken, beef, fish, falafel and vegetarian choices",
+          "Baklava and fruit dessert service",
+          "Unlimited soft drinks",
+          "Hotel pickup and drop-off from central European-side areas",
+          "Special shows and professional DJ",
+        ],
+      },
+      {
+        name: "Gold Dinner Cruise - Unlimited Alcohol",
+        price: 90,
+        description: "Premium shared dinner cruise with best stage-view VIP tables and unlimited local plus imported alcoholic drinks",
+        features: [
+          "3.5-hour shared Bosphorus dinner cruise",
+          "Best VIP tables close to the stage guaranteed",
+          "Welcome drink, Turkish appetizers, mixed salads and hot starter",
+          "Free-choice dinner menu with meat, fish, chicken and vegetarian options",
+          "Baklava and fruit dessert service",
+          "Unlimited local and imported alcoholic drinks plus unlimited soft drinks",
+          "Hotel pickup and drop-off from central European-side areas",
+          "Premium service, special shows and DJ performance",
+        ],
       },
     ],
-    includes: ["Hotel pickup & drop-off", "4-course Turkish dinner", "Unlimited local drinks", "Live music & DJ", "Belly dance show", "Whirling dervish performance"],
-    notIncluded: ["Premium imported drinks (Standard)", "Photo/video service"],
-    highlights: ["Turkish Night entertainment", "Live belly dancing", "Whirling dervish ceremony", "Illuminated Bosphorus views", "4-course dinner"],
+    includes: [
+      "3.5-hour shared Bosphorus dinner cruise",
+      "Hotel pickup and drop-off from central European-side hotels",
+      "Air-conditioned transfer vehicle",
+      "Dinner service and package-based table tier",
+      "Traditional Turkish entertainment and DJ performance",
+      "Package-based beverage service",
+    ],
+    notIncluded: ["Imported drinks on Silver Alcoholic", "Tips", "Private yacht dinner setup", "Professional photo service"],
+    highlights: ["Silver and Gold package ladder", "Guaranteed VIP tables on Gold", "Dinner service", "Turkish night entertainment", "Hotel transfer from central areas"],
     badge: "Best Seller",
     badgeColor: "bg-[var(--brand-primary)] text-white",
     image: "/images/tours/bosphorus-dinner-cruise/01.webp",
@@ -141,27 +337,49 @@ export const tours: Tour[] = [
       "/images/tours/bosphorus-dinner-cruise/05.webp",
       "/images/tours/bosphorus-dinner-cruise/06.webp",
     ],
-    route: "Eminönü → Full Bosphorus Tour → Return",
-    departureTime: "19:30",
-    departurePoint: "Eminönü Pier",
+    route: "Kabatas departure → illuminated Bosphorus route → return to central pier",
+    departureTime: "20:30 evening departure",
+    departurePoint: "Kabatas Pier",
     category: "cruise",
     rating: 4.88,
     reviewCount: 312,
     availability: "All Year",
+    bestFor: [
+      "Guests who want the classic Istanbul night-cruise experience",
+      "Visitors comparing Silver vs Gold seating and drink levels",
+      "Travelers who prefer dinner, entertainment, and skyline views in one booking",
+      "Friends, couples, and small groups who do not need a private yacht",
+    ],
+    importantNotes: [
+      "Kabatas Pier is the main meeting point, with pickup flow depending on the final package and boarding plan",
+      "Pickup coverage usually centers on European-side districts such as Sultanahmet, Sirkeci, Topkapi, Taksim, Harbiye, Beyoglu, and Karakoy",
+      "Asian-side stays generally make their own way to Kabatas because return timing is late for regular public transport",
+      "Some streets may require a nearby meeting point instead of direct hotel-door pickup",
+      "Silver uses standard seating, while Gold moves into guaranteed stage-close VIP tables",
+      "Silver Dinner Cruise - Alcoholic currently includes 2 glasses of local alcoholic drinks plus soft drinks and tea",
+      "Gold Dinner Cruise - Unlimited Alcohol is the top shared package and includes unlimited local and imported alcoholic drinks",
+      "Silver packages can be booked up to 50 guests per booking, while Gold tiers currently show up to 30 guests per booking",
+      "The live calendar currently shows evening departures at 20:30",
+    ],
+    canonicalPath: "/istanbul-dinner-cruise",
+    isCoreProduct: true,
+    showPricing: true,
+    bookingMode: "book",
+    priceMode: "perPerson",
     itinerary: [
-      { time: "18:30", title: "Hotel Pickup", description: "Our driver picks you up from your hotel lobby. Sit back and enjoy the ride to the pier." },
-      { time: "19:30", title: "Boarding & Welcome Drink", description: "Board the cruise boat and receive your welcome drink. Find your table and settle in." },
-      { time: "20:00", title: "Dinner Service Begins", description: "4-course Turkish dinner: mezes, salad, grilled main course (lamb/chicken/fish), and baklava dessert. Unlimited local drinks." },
-      { time: "20:45", title: "Turkish Night Show", description: "Live belly dance performance followed by the mesmerizing Whirling Dervish ceremony." },
-      { time: "21:30", title: "Folk Dance & DJ", description: "Traditional Anatolian folk dances and live DJ. Dance the night away on the illuminated Bosphorus." },
-      { time: "22:30", title: "Return & Hotel Drop-off", description: "Disembark and transfer back to your hotel." },
+      { time: "TBC", title: "Hotel Pickup & Boarding", description: "Guests using transfer service are collected from central European-side hotels, then board the shared dinner boat and settle into their assigned seating." },
+      { time: "TBC", title: "Dinner Service", description: "Welcome cocktail, cold mezes, salad, main-course choice, dessert, fruit, and package-based drinks are served on board." },
+      { time: "TBC", title: "Night Show Program", description: "The stage program combines Turkish night entertainment, live music, and DJ-led transitions while the cruise continues on the Bosphorus." },
+      { time: "TBC", title: "Illuminated Bosphorus Sailing", description: "Between service and performances, the cruise continues along Istanbul's evening shoreline." },
+      { time: "TBC", title: "Return to Pier & Hotel Drop-Off", description: "The boat returns after the show program and the final service round, followed by hotel drop-off for transferred guests." },
     ],
     faq: [
-      { question: "Is hotel pickup included?", answer: "Yes! Free hotel pickup and drop-off is included for hotels in the European side (Sultanahmet, Taksim, Beyoğlu, Şişli). Asian side pickup available for a small surcharge." },
-      { question: "What is the dinner menu?", answer: "4-course Turkish dinner: traditional mezes (hummus, ezme, vine leaves), seasonal salad, choice of grilled lamb/chicken/fish kebab, and baklava with Turkish tea." },
-      { question: "Are drinks unlimited?", answer: "Standard package includes unlimited local beer, wine, rakı, and soft drinks. Premium imported spirits available with Gold package." },
-      { question: "Is this suitable for vegetarians?", answer: "Yes, we offer vegetarian alternatives. Please let us know when booking and we'll prepare a special menu." },
-      { question: "What is the difference between Standard and Gold?", answer: "Gold offers reserved panoramic window seating, enhanced gourmet menu with extra courses, premium imported spirits, and a quieter exclusive section." },
+      { question: "How many dinner-cruise packages are available?", answer: "The shared dinner cruise is presented in four packages: Silver Soft Drinks, Silver Alcoholic, Gold Soft Drinks, and Gold Unlimited Alcohol." },
+      { question: "What is the entry price for the dinner cruise?", answer: "The current package grid starts from EUR 30 per guest for the Silver soft-drinks option." },
+      { question: "What is the highest package price?", answer: "The top shared dinner-cruise option is the Gold Unlimited Alcohol package at EUR 90 per guest." },
+      { question: "Is this page for private yacht dinners?", answer: "No. This page is for the shared Bosphorus dinner cruise. Private yacht dinners have their own page so guests can choose the right experience quickly." },
+      { question: "What changes between the packages?", answer: "The route stays the same, but the package difference is real: Silver uses standard seating, Gold uses guaranteed VIP tables close to the stage, Silver Alcoholic adds a limited local-alcohol service, and Gold Unlimited Alcohol adds unlimited local plus imported alcoholic drinks." },
+      { question: "Is hotel pickup available from the Asian side?", answer: "No. Shared dinner-cruise pickup usually focuses on central European-side districts, so Asian-side guests normally come directly to the Kabatas side." },
     ],
   },
   {
@@ -169,47 +387,75 @@ export const tours: Tour[] = [
     slug: "yacht-charter-in-istanbul",
     name: "İstanbul Yat Kiralama",
     nameEn: "Yacht Charter in Istanbul",
-    description: "Yacht rental in Istanbul — rent your own private Bosphorus yacht with professional crew. The best boat rental experience for groups, couples, and families.",
-    longDescription: "Looking for yacht rental in Istanbul? MerrySails offers the best private yacht charter on the Bosphorus — a fully customizable boat rental experience with professional captain and crew.\n\nFrom the moment you step aboard your Bosphorus yacht, your dedicated crew ensures every detail is perfect. Sip welcome tea and coffee as you chart your course along the world's most famous strait, stopping wherever catches your eye — perhaps a swimming break in the crystal-clear waters near the Black Sea entrance, or a photo stop beneath the towering pillars of the Fatih Sultan Mehmet Bridge.\n\nYour yacht comes equipped with a premium Bluetooth sound system so you can set the soundtrack to your Bosphorus yacht cruise, while complimentary snacks keep everyone refreshed.\n\nChoose from three curated yacht charter packages: Essential (€280) for an intimate 2-hour private Bosphorus cruise, Premium (€380) adding a larger yacht and snacks, or VIP (€680) for the ultimate luxury boat rental experience with food and spacious deck areas.",
+    description: "Private yacht charter in Istanbul with three public package tiers and package-specific add-on menus for catering, drinks, transfer, entertainment, and extra cruising time.",
+    longDescription: "Choose the yacht package that fits your plans, then expand it with dining, drinks, live performances, transfer, or extra time as needed. The charter runs for about 2 hours and uses three public package levels: Essential at EUR 280, Premium at EUR 380, and VIP at EUR 680.\n\nThe live booking flow presents all three packages as a standard 2-hour private Bosphorus yacht cruise that can be fully customized with add-ons during checkout. The main package difference is yacht size, comfort, and stability level rather than a different public route.\n\nThe public page frames these starter packages around a private experience for 2 guests, while larger groups, event yachts, and custom layouts are still possible through yacht assignment and extra planning.",
     duration: "2 hours (extendable)",
-    capacity: "Max 15 guests",
+    capacity: "Yacht size is matched to package tier and group plan",
     priceEur: 280,
     packages: [
       {
-        name: "Essential",
+        name: "Essential Basic Yacht Package",
         price: 280,
-        description: "Intimate, cozy yacht experience",
-        features: ["2-hour private cruise", "Professional captain & crew", "Tea, coffee & water", "Bluetooth sound system", "Flexible route"],
+        description: "Entry private yacht charter for a standard 2-hour Bosphorus cruise",
+        features: [
+          "2-hour private Bosphorus yacht cruise for 2 guests",
+          "Standard-sized yacht",
+          "Basic comfort level",
+          "Professional captain and crew",
+          "Complimentary tea, coffee and water",
+        ],
+        addOns: yachtEssentialAddOns,
       },
       {
-        name: "Premium",
+        name: "Premium Luxury Yacht Package",
         price: 380,
-        description: "Larger yacht with improved comfort",
-        features: ["Everything in Essential", "Larger yacht", "Basic snacks included", "Enhanced comfort & seating", "More deck space"],
+        description: "Upgraded private luxury yacht option with more space and comfort",
+        features: [
+          "2-hour private luxury yacht cruise for 2 guests",
+          "Larger and more comfortable yacht",
+          "Improved seating and interior comfort",
+          "Professional captain and crew",
+          "Complimentary tea, coffee and water",
+          "Basic snacks",
+          "Soft drinks",
+        ],
+        addOns: yachtPremiumAddOns,
       },
       {
-        name: "VIP",
+        name: "VIP Luxury Yacht Package",
         price: 680,
-        description: "Top-tier luxury charter",
-        features: ["Everything in Premium", "High-end luxury yacht", "Food plate included", "Maximum space & deck area", "Superior stability", "Premium crew service"],
+        description: "Top-tier private luxury yacht for guests who want the highest comfort level first",
+        features: [
+          "2-hour private luxury yacht cruise for 2 guests",
+          "Large high-end luxury yacht",
+          "Maximum comfort with spacious interior and wide deck areas",
+          "Smoother and more stable cruising feel",
+          "Professional captain and crew",
+          "Complimentary tea, coffee and water",
+          "Snacks and food plate",
+          "Soft drinks",
+        ],
+        addOns: yachtVipAddOns,
       },
     ],
-    addOns: [
-      { name: "Photographer", price: "€190" },
-      { name: "Violinist", price: "€180" },
-      { name: "DJ", price: "€250" },
-      { name: "Belly Dancer", price: "€180–190" },
-      { name: "Unlimited Alcoholic Drinks", price: "€50–65" },
-      { name: "4-Course Meal", price: "€35/person" },
-      { name: "Extra Hour", price: "€125–300" },
-      { name: "VIP Car Pickup", price: "€150" },
-      { name: "Champagne", price: "€50" },
-      { name: "Birthday Cake (Small)", price: "€35" },
-      { name: "Birthday Cake (Large)", price: "€60" },
+    addOns: yachtEssentialAddOns,
+    includes: [
+      "2-hour private Bosphorus yacht cruise",
+      "Professional captain and crew",
+      "Tea, coffee and water",
+      "Package-specific yacht tier",
     ],
-    includes: ["Private yacht & crew", "Tea, coffee & water", "Bluetooth sound system", "Professional captain", "Flexible route"],
-    notIncluded: ["Tips", "Alcoholic beverages (add-on)", "Hotel transfer (add-on)"],
-    highlights: ["Fully private experience", "Flexible itinerary", "Swimming in Bosphorus", "Sunset views", "Professional crew"],
+    notIncluded: [
+      "Meal, drink, transfer, and entertainment extras outside the selected package",
+      "Tips",
+    ],
+    highlights: [
+      "3-tier yacht package ladder",
+      "Private Bosphorus route",
+      "Package-specific extras menu",
+      "Per-yacht pricing",
+      "Extra-hour option by tier",
+    ],
     badge: "Premium",
     badgeColor: "bg-amber-500 text-white",
     image: "/images/tours/yacht-charter-in-istanbul/01.jpeg",
@@ -223,18 +469,46 @@ export const tours: Tour[] = [
     ],
     route: "Custom route based on preference",
     departureTime: "Flexible",
-    departurePoint: "Kuruçeşme Marina",
+    departurePoint: "Bosphorus marina confirmed with yacht assignment",
     category: "private",
     rating: 5.0,
     reviewCount: 65,
+    bestFor: [
+      "Couples and private celebrations",
+      "Proposal, anniversary, and birthday planners starting from the yacht first",
+      "Small private groups that want total privacy on the Bosphorus",
+      "Higher-ticket guests comparing comfort tiers before add-ons",
+    ],
+    importantNotes: [
+      "The real package difference is mainly yacht size, comfort, and stability level",
+      "The public starter packages are positioned around a private setup for 2 guests, while larger groups can be matched to the right yacht and extras plan",
+      "All packages are captained private charters, so no boating license is needed from the guest side",
+      "Add-on rates change by yacht tier, especially for extra hours, wine, meal menus, and proposal decoration",
+      "The live booking flow presents all three packages as a standard 2-hour cruise, then opens customization through optional extras at checkout",
+      "Booking 2 to 3 days ahead is recommended for standard charters, while larger event plans should be arranged 1 to 2 weeks earlier",
+      "The final departure marina is confirmed with the yacht assignment and booking details",
+    ],
+    canonicalPath: "/yacht-charter-istanbul",
+    isCoreProduct: true,
+    showPricing: true,
+    bookingMode: "book",
+    priceMode: "perGroup",
+    faq: [
+      { question: "How many yacht packages are listed?", answer: "The yacht charter page shows three package levels: Essential Basic Yacht Package, Premium Luxury Yacht Package, and VIP Luxury Yacht Package." },
+      { question: "Are yacht prices per person or per yacht?", answer: "The yacht packages are priced per yacht, not per guest." },
+      { question: "What is the entry yacht price?", answer: "The entry package is EUR 280 for the Essential Basic Yacht Package." },
+      { question: "What changes between the yacht packages?", answer: "The main difference is yacht size, comfort, and stability level. All three packages start from the same 2-hour private Bosphorus cruise logic and can be customized with add-ons at checkout." },
+      { question: "Can add-ons be added to any yacht package?", answer: "Yes. Catering, drinks, live performances, transfer, cake, decoration, and extra-hour services can be added, but the price table changes by package tier." },
+      { question: "How much is one extra hour?", answer: "One additional hour starts from EUR 125 on Essential, EUR 150 on Premium, and EUR 300 on VIP." },
+    ],
   },
   {
     id: "4",
     slug: "bosphorus-sightseeing-cruise",
     name: "Boğaz Kısa Tur",
     nameEn: "Bosphorus Short Cruise",
-    description: "The best short Bosphorus cruise — a quick, affordable sightseeing boat tour past Istanbul's top landmarks with audio guides in 12 languages. From €15.",
-    longDescription: "This short Bosphorus cruise is perfect for travelers with limited time or those looking for an affordable Bosphorus boat tour. This 1.5-hour sightseeing cruise packs all the essential highlights into a compact Bosphorus day cruise at just €15 per person.\n\nDepart from the historic Eminönü Pier and immediately be greeted by the stunning panorama of Istanbul's layered skyline — minarets, domes, and modern towers rising together in perfect harmony.\n\nYour audio guide, available in 12 languages, brings each landmark to life with fascinating historical commentary as you pass the mysterious Maiden's Tower, the magnificent Dolmabahçe Palace, and the picturesque Ortaköy Mosque. A Bosphorus boat ride that covers the strait's southern half, showcasing the best of Istanbul from the water.",
+    description: "A short Bosphorus sightseeing route for guests who want a compact daytime overview of Istanbul's landmark shoreline with audio guides in 12 languages.",
+    longDescription: "This short Bosphorus cruise is designed for travelers with limited time or those who want a compact daytime overview of the strait. The route covers the essential southern Bosphorus highlights in an efficient format and works best as a supporting daytime guide rather than a competing booking focus.\n\nDepart from the historic Eminönü Pier and immediately be greeted by the stunning panorama of Istanbul's layered skyline — minarets, domes, and modern towers rising together in perfect harmony.\n\nYour audio guide, available in 12 languages, brings each landmark to life with fascinating historical commentary as you pass the mysterious Maiden's Tower, the magnificent Dolmabahçe Palace, and the picturesque Ortaköy Mosque. A Bosphorus boat ride that covers the strait's southern half, showcasing the best of Istanbul from the water.",
     duration: "1.5 hours",
     capacity: "Max 50 guests",
     priceEur: 15,
@@ -267,7 +541,7 @@ export const tours: Tour[] = [
     description: "Watch the sunset from your own private yacht. An intimate Bosphorus experience with professional crew and complimentary beverages.",
     longDescription: "Experience the legendary Bosphorus sunset from the privacy and comfort of your own yacht. As the golden hour paints Istanbul's skyline in warm hues, you'll glide past centuries-old palaces, majestic mosques, and the iconic bridges connecting two continents.\n\nYour professional captain charts the perfect route to catch the sunset at its most spectacular angle, while complimentary tea, coffee, and soft drinks keep you refreshed. The intimate setting makes this perfect for romantic evenings, family celebrations, or simply treating yourself to Istanbul's most magical moment.",
     duration: "2 hours",
-    capacity: "Max 15 guests",
+    capacity: "Yacht size is matched to the guest count and the selected service setup",
     priceEur: 280,
     packages: [
       { name: "Essential", price: 280, description: "Standard yacht with basic comfort", features: ["2-hour private cruise", "Tea, coffee & water", "Professional crew", "Sunset timing"] },
@@ -345,7 +619,7 @@ export const tours: Tour[] = [
     description: "A private daytime yacht experience with lunch on the Bosphorus. Perfect for families and groups.",
     longDescription: "Enjoy the Bosphorus in broad daylight on this private lunch cruise. The midday sun illuminates Istanbul's architectural wonders in their full glory — from the blue tiles of the Sultanahmet skyline to the white marble facades of waterfront palaces.\n\nA freshly prepared Turkish lunch is served on deck as you cruise between the continents, offering unparalleled photo opportunities and a relaxed atmosphere that's perfect for families, friends, and groups.",
     duration: "2 hours",
-    capacity: "Max 15 guests",
+    capacity: "Yacht size is matched to the guest count and the selected service setup",
     priceEur: 280,
     packages: [
       { name: "Essential", price: 280, description: "Private lunch yacht", features: ["2-hour cruise", "Lunch served on board", "Tea, coffee & water", "Professional crew"] },
@@ -381,7 +655,7 @@ export const tours: Tour[] = [
     description: "Private yacht sightseeing cruise along the Bosphorus. See all the highlights from your own boat.",
     longDescription: "Enjoy a private sightseeing cruise on the Bosphorus aboard your own yacht. Unlike shared cruises, this experience gives you complete freedom to stop, explore, and photograph at your leisure.\n\nYour captain knows every landmark and hidden gem along the strait, from the grand Dolmabahçe Palace to the charming fishing villages of the upper Bosphorus.",
     duration: "2 hours",
-    capacity: "Max 15 guests",
+    capacity: "Yacht size is matched to the guest count and the selected service setup",
     priceEur: 280,
     packages: [
       { name: "Essential", price: 280, description: "Private sightseeing yacht", features: ["2-hour cruise", "Tea, coffee & water", "Professional crew", "All landmarks"] },
@@ -462,7 +736,7 @@ export const tours: Tour[] = [
     slug: "yacht-birthday-party",
     name: "Yat Doğum Günü Partisi",
     nameEn: "Yacht Birthday Party Istanbul",
-    description: "The ultimate party boat in Istanbul — celebrate your birthday on a private yacht on the Bosphorus with DJ, custom cake, and decorations. From €280.",
+    description: "The ultimate party boat in Istanbul — celebrate your birthday on a private yacht on the Bosphorus with DJ, custom cake, and decoration support.",
     longDescription: "Looking for a party boat in Istanbul? This yacht birthday party on the Bosphorus transforms a luxury vessel into your own floating celebration venue — the ultimate Istanbul birthday experience.\n\nThe custom birthday cake takes center stage, while the DJ reads the room and keeps the energy high. As the party boat cruises past Istanbul's illuminated skyline, the open deck becomes a dance floor under the stars.",
     duration: "2 hours (extendable)",
     capacity: "Max 25 guests",
@@ -656,7 +930,7 @@ export const tours: Tour[] = [
     description: "Swim in the Bosphorus from your private yacht. Crystal clear waters, stunning views, and total freedom.",
     longDescription: "Combine the thrill of swimming in one of the world's most famous waterways with the luxury of a private yacht charter. This unique experience takes you to the pristine waters near the Black Sea entrance, where the current is gentler and the water crystal clear.\n\nYour captain knows all the best swimming spots — secluded coves, calm bays, and scenic stretches where you can jump off the yacht into refreshing waters surrounded by stunning natural beauty.",
     duration: "3 hours",
-    capacity: "Max 15 guests",
+    capacity: "Yacht size is matched to the guest count and the selected service setup",
     priceEur: 280,
     packages: [
       { name: "Essential", price: 280, description: "Swimming yacht tour", features: ["3-hour cruise", "Swimming stops", "Tea, coffee & water", "Professional crew", "Swimming ladder"] },
@@ -875,6 +1149,41 @@ export const tours: Tour[] = [
 
 export function getTourBySlug(slug: string): Tour | undefined {
   return tours.find((tour) => tour.slug === slug);
+}
+
+export function isCoreProduct(tour: Tour): boolean {
+  return tour.isCoreProduct === true;
+}
+
+export function isPricingVisible(tour: Tour): boolean {
+  return tour.showPricing ?? isCoreProduct(tour);
+}
+
+export function getBookingMode(tour: Tour): BookingMode {
+  return tour.bookingMode ?? (isPricingVisible(tour) ? "book" : "quote");
+}
+
+export function getTourPath(tour: Tour): string {
+  return tour.canonicalPath ?? `/cruises/${tour.slug}`;
+}
+
+export function getPriceMode(tour: Tour): PriceMode {
+  return tour.priceMode ?? (isPricingVisible(tour) ? "perPerson" : "custom");
+}
+
+export function getPriceSuffix(tour: Tour): string {
+  const mode = getPriceMode(tour);
+  if (mode === "perGroup") return "/group";
+  if (mode === "custom") return "";
+  return "/person";
+}
+
+export function getCoreTours(): Tour[] {
+  return tours.filter(isCoreProduct);
+}
+
+export function getSupportTours(): Tour[] {
+  return tours.filter((tour) => !isCoreProduct(tour));
 }
 
 export function getToursByCategory(category: Tour["category"]): Tour[] {

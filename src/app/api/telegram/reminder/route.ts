@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { sendEmail } from "@/lib/email";
+import { reservationReminderEmail } from "@/lib/email-templates/reservation-reminder";
+import { getTourBySlug } from "@/data/tours";
 import { notifyReminder } from "@/lib/telegram/notifications";
+import { format } from "date-fns";
+import { parseReservationNotes } from "@/lib/reservation-meta";
 
 export async function GET(req: NextRequest) {
   try {
@@ -31,19 +36,63 @@ export async function GET(req: NextRequest) {
     // Filter by tour time within the 2-hour window
     // Combine date + time to get actual datetime
     const toRemind = reservations.filter((r: typeof reservations[number]) => {
+      if (!/^([01]\d|2[0-3]):([0-5]\d)$/.test(r.time)) {
+        return false;
+      }
+
       const [hours, minutes] = r.time.split(":").map(Number);
       const tourDate = new Date(r.date);
       tourDate.setUTCHours(hours - 3, minutes, 0, 0); // Convert Turkey time to UTC
       return tourDate >= windowStart && tourDate < windowEnd;
     });
 
-    let sent = 0;
+    let telegramSent = 0;
+    let emailSent = 0;
+
     for (const r of toRemind) {
-      await notifyReminder({ ...r, totalPrice: Number(r.totalPrice) });
-      sent++;
+      try {
+        await notifyReminder({ ...r, totalPrice: Number(r.totalPrice) });
+        telegramSent++;
+      } catch (telegramError) {
+        console.error("[MERRYSAILS-REMINDER] Telegram reminder failed:", telegramError);
+      }
+
+      if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD && r.customerEmail) {
+        try {
+          const tour = getTourBySlug(r.tourSlug);
+          const reservationMeta = parseReservationNotes(r.notes);
+
+          await sendEmail({
+            to: r.customerEmail,
+            cc: process.env.GMAIL_USER,
+            subject: `Reminder: ${r.tourName} starts soon | ${r.reservationId} | MerrySails`,
+            html: reservationReminderEmail({
+              reservationId: r.reservationId,
+              customerName: r.customerName,
+              tourName: r.tourName,
+              date: format(new Date(r.date), "MMMM d, yyyy"),
+              time: r.time,
+              guests: r.guests,
+              departurePoint: tour?.departurePoint,
+              packageName: reservationMeta.packageName,
+              addOns: reservationMeta.addOns,
+            }),
+          });
+
+          emailSent++;
+        } catch (emailError) {
+          console.error("[MERRYSAILS-REMINDER] Reminder email failed:", emailError);
+        }
+      }
     }
 
-    return NextResponse.json({ success: true, checked: reservations.length, reminded: sent });
+    return NextResponse.json({
+      success: true,
+      checked: reservations.length,
+      reminders: toRemind.length,
+      telegramSent,
+      emailSent,
+    });
   } catch (error) {
     console.error("[MERRYSAILS-REMINDER] Error:", error);
     return NextResponse.json({ error: "Failed" }, { status: 500 });

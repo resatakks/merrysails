@@ -62,3 +62,21 @@ model ContactMessage {
   isRead    Boolean  @default(false)
   createdAt DateTime @default(now())
 }
+
+// ─── Tour Operations ──────────────────────────────────────
+
+model TourOperationDay {
+  id                    String   @id @default(cuid())
+  tourSlug              String
+  date                  DateTime
+  isSoldOut             Boolean  @default(false)
+  departureTimeOverride String?
+  note                  String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tourSlug, date])
+  @@index([date])
+  @@index([tourSlug])
+}

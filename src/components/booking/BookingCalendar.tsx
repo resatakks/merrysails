@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   format,
   addMonths,
@@ -28,14 +28,30 @@ import {
   Users,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { PriceMode } from "@/data/tours";
+import SalePrice from "@/components/ui/SalePrice";
 
 interface Props {
   tourSlug: string;
   priceEur: number;
+  originalPriceEur?: number;
   tourName: string;
   departureTime?: string;
   departurePoint?: string;
+  priceMode?: PriceMode;
+  initialDate?: Date;
+  initialGuests?: number;
+  initialTime?: string;
   onBook?: (date: Date, guests: number, time: string) => void;
+}
+
+interface TourOperationClientSnapshot {
+  id: string;
+  tourSlug: string;
+  date: string;
+  isSoldOut: boolean;
+  departureTimeOverride: string | null;
+  note: string | null;
 }
 
 function parseTimeOptions(dt?: string): string[] {
@@ -51,78 +67,155 @@ function parseTimeOptions(dt?: string): string[] {
     .filter((t) => /^\d{2}:\d{2}$/.test(t));
 }
 
-/** Simple deterministic hash from a string. */
-function hashSlug(slug: string, salt: number = 0): number {
-  let h = 0x811c9dc5;
-  const s = slug + String(salt);
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i);
-    h = Math.imul(h, 0x01000193);
-  }
-  return Math.abs(h);
-}
-
-/** Generate 2-3 "sold out" days in the next 14 days based on slug hash. */
-function getSoldOutDays(slug: string, today: Date): Date[] {
-  const count = 2 + (hashSlug(slug, 999) % 2); // 2 or 3
-  const days: Date[] = [];
-  for (let i = 0; i < count; i++) {
-    // Pick a day 2-13 days from today (avoid tomorrow which gets "Last spots!")
-    const offset = 2 + (hashSlug(slug, 500 + i) % 12);
-    days.push(addDays(today, offset));
-  }
-  return days;
-}
-
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 export default function BookingCalendar({
   tourSlug,
   priceEur,
+  originalPriceEur,
   tourName,
   departureTime,
-  departurePoint,
+  priceMode = "perPerson",
+  initialDate,
+  initialGuests,
+  initialTime,
   onBook,
 }: Props) {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [adults, setAdults] = useState(2);
+  const safeInitialDate =
+    initialDate && !Number.isNaN(initialDate.getTime())
+      ? startOfDay(initialDate)
+      : null;
+  const safeInitialGuests =
+    initialGuests && Number.isFinite(initialGuests)
+      ? Math.max(1, Math.min(20, initialGuests))
+      : 2;
+
+  const [currentMonth, setCurrentMonth] = useState(safeInitialDate ?? new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | null>(safeInitialDate);
+  const [adults, setAdults] = useState(safeInitialGuests);
   const [children, setChildren] = useState(0);
-  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedTime, setSelectedTime] = useState(initialTime ?? "");
+  const [operations, setOperations] = useState<TourOperationClientSnapshot[]>([]);
 
   const today = startOfDay(new Date());
-  const soldOutDays = getSoldOutDays(tourSlug, today);
   const tomorrow = addDays(today, 1);
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(currentMonth);
   const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
+  const isPerGroup = priceMode === "perGroup";
+  const operationsByDate = Object.fromEntries(
+    operations.map((operation) => [operation.date, operation])
+  ) as Record<string, TourOperationClientSnapshot>;
+  const selectedDateKey = selectedDate ? format(selectedDate, "yyyy-MM-dd") : "";
+  const selectedOperation = selectedDateKey
+    ? operationsByDate[selectedDateKey]
+    : undefined;
+  const activeDepartureTime =
+    selectedOperation?.departureTimeOverride || departureTime;
 
   const startDay = getDay(monthStart);
   const blanks = startDay === 0 ? 6 : startDay - 1;
 
   const totalGuests = adults + children;
-  const total = priceEur * totalGuests;
-  const timeOptions = parseTimeOptions(departureTime);
+  const total = isPerGroup ? priceEur : priceEur * totalGuests;
+  const hasDiscount =
+    typeof originalPriceEur === "number" && originalPriceEur > priceEur;
+  const originalTotal = hasDiscount
+    ? isPerGroup
+      ? originalPriceEur
+      : originalPriceEur * totalGuests
+    : undefined;
+  const totalSavings = originalTotal ? originalTotal - total : 0;
+  const timeOptions = parseTimeOptions(activeDepartureTime);
+  const bookingLabel = isPerGroup
+    ? "Request now, confirm with operations"
+    : "Reserve now, pay onboard";
+  const bookingMetaText = isPerGroup
+    ? "Private charters are reviewed and confirmed in writing"
+    : "Selected date and guests update the total below";
+  const bookingPillText = isPerGroup
+    ? "Private charter request"
+    : "Shared cruise request";
+  const normalizedSelectedTime =
+    timeOptions.length > 1 && timeOptions.includes(selectedTime)
+      ? selectedTime
+      : "";
   const effectiveTime =
-    selectedTime || (timeOptions.length === 1 ? timeOptions[0] : "");
+    selectedOperation?.departureTimeOverride ||
+    normalizedSelectedTime ||
+    (timeOptions.length === 1 ? timeOptions[0] : "");
 
   const canGoPrev = isSameMonth(currentMonth, new Date())
     ? false
     : !isBefore(subMonths(monthStart, 1), startOfMonth(today));
 
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function loadOperations() {
+      try {
+        const response = await fetch(
+          `/api/booking-availability?tourSlug=${encodeURIComponent(tourSlug)}`,
+          {
+            method: "GET",
+            cache: "no-store",
+            signal: controller.signal,
+          }
+        );
+
+        if (!response.ok) {
+          setOperations([]);
+          return;
+        }
+
+        const data = (await response.json()) as {
+          operations?: TourOperationClientSnapshot[];
+        };
+
+        setOperations(Array.isArray(data.operations) ? data.operations : []);
+      } catch {
+        if (!controller.signal.aborted) {
+          setOperations([]);
+        }
+      }
+    }
+
+    void loadOperations();
+
+    return () => controller.abort();
+  }, [tourSlug]);
+
   const handleBookNow = () => {
     if (selectedDate && onBook) {
-      onBook(selectedDate, totalGuests, effectiveTime || departureTime || "");
+      onBook(selectedDate, totalGuests, effectiveTime || activeDepartureTime || "");
     }
   };
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
       {/* Price header */}
-      <div className="price-box !rounded-none">
-        <span className="currency">€</span>
-        <span className="amount">{priceEur}</span>
-        <span className="suffix">/person</span>
+      <div className="bg-[var(--brand-price-box)] px-5 py-5">
+        <div className="flex items-start justify-between gap-4">
+          <SalePrice
+            price={priceEur}
+            originalPrice={originalPriceEur}
+            suffix={isPerGroup ? "/group" : "/person"}
+            label={bookingLabel}
+            size="lg"
+            tone="overlay"
+            showBadge={Boolean(hasDiscount)}
+            showMeta={Boolean(hasDiscount)}
+            metaText={bookingMetaText}
+          />
+          <div className="hidden rounded-2xl border border-white/10 bg-white/10 px-3 py-2 sm:block">
+            <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
+              Booking
+            </div>
+            <div className="mt-1 text-sm font-semibold text-white">
+              {bookingPillText}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Date Selection Prompt */}
@@ -179,7 +272,9 @@ export default function BookingCalendar({
           ))}
           {days.map((day) => {
             const isPast = isBefore(day, today);
-            const isSoldOut = soldOutDays.some((d) => isSameDay(d, day));
+            const dayKey = format(day, "yyyy-MM-dd");
+            const operation = operationsByDate[dayKey];
+            const isSoldOut = operation?.isSoldOut ?? false;
             const isDisabled = isPast || isSoldOut;
             const isSelected =
               selectedDate && day.getTime() === selectedDate.getTime();
@@ -187,6 +282,8 @@ export default function BookingCalendar({
             const isTomorrow = isSameDay(day, tomorrow);
             const dayOfWeek = getDay(day); // 0=Sun, 5=Fri, 6=Sat
             const isWeekendDay = dayOfWeek === 5 || dayOfWeek === 6;
+            const hasOperationalUpdate =
+              Boolean(operation?.departureTimeOverride) || Boolean(operation?.note);
             const showLastSpots =
               !isDisabled && (isTodayDate || isTomorrow);
 
@@ -215,10 +312,21 @@ export default function BookingCalendar({
                   {isWeekendDay && !isDisabled && !isSelected && (
                     <span className="absolute -top-0.5 -right-1.5 w-1.5 h-1.5 rounded-full bg-orange-400" />
                   )}
+                  {hasOperationalUpdate && !isDisabled && !isSelected && (
+                    <span className="absolute -bottom-0.5 -right-1.5 w-1.5 h-1.5 rounded-full bg-sky-500" />
+                  )}
                 </div>
                 {isSoldOut ? (
                   <div className="text-[9px] font-semibold text-gray-400">
                     Sold Out
+                  </div>
+                ) : operation?.departureTimeOverride ? (
+                  <div
+                    className={`text-[9px] font-bold ${
+                      isSelected ? "text-white/90" : "text-sky-600"
+                    }`}
+                  >
+                    {operation.departureTimeOverride}
                   </div>
                 ) : showLastSpots ? (
                   <div
@@ -283,7 +391,7 @@ export default function BookingCalendar({
                         key={time}
                         onClick={() => setSelectedTime(time)}
                         className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all ${
-                          selectedTime === time
+                          normalizedSelectedTime === time
                             ? "bg-[var(--brand-primary)] text-white shadow-md"
                             : "bg-[var(--surface-alt)] text-[var(--body-text)] hover:bg-[var(--brand-primary)]/10 hover:text-[var(--brand-primary)]"
                         }`}
@@ -306,10 +414,16 @@ export default function BookingCalendar({
                 </div>
               )}
 
-              {timeOptions.length === 0 && departureTime && (
+              {timeOptions.length === 0 && activeDepartureTime && (
                 <div className="flex items-center gap-2 text-sm text-[var(--body-text)]">
                   <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
-                  {departureTime}
+                  {activeDepartureTime}
+                </div>
+              )}
+
+              {selectedOperation?.note && (
+                <div className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-800">
+                  {selectedOperation.note}
                 </div>
               )}
 
@@ -389,11 +503,23 @@ export default function BookingCalendar({
 
               {/* Price breakdown */}
               <div className="space-y-2 py-3 border-t border-[var(--line)]">
+                {originalTotal && (
+                  <div className="flex items-center justify-between text-sm text-[var(--text-muted)]">
+                    <span>Standard direct fare</span>
+                    <span className="line-through">€{originalTotal}</span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-[var(--body-text)]">
-                    €{priceEur} × {totalGuests} guest
-                    {totalGuests > 1 ? "s" : ""}
-                  </span>
+                  {isPerGroup ? (
+                    <span className="text-[var(--body-text)]">
+                      €{priceEur} private charter price
+                    </span>
+                  ) : (
+                    <span className="text-[var(--body-text)]">
+                      €{priceEur} × {totalGuests} guest
+                      {totalGuests > 1 ? "s" : ""}
+                    </span>
+                  )}
                   <span className="font-medium">€{total}</span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -404,16 +530,22 @@ export default function BookingCalendar({
                     €{total}
                   </span>
                 </div>
+                {originalTotal && (
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700">
+                    You save €{totalSavings} on this reservation when you book the
+                    current fare.
+                  </div>
+                )}
               </div>
 
               {/* Book button */}
               <motion.button
                 onClick={handleBookNow}
-                disabled={timeOptions.length > 1 && !selectedTime}
+                disabled={timeOptions.length > 1 && !normalizedSelectedTime}
                 className="btn-cta w-full !py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 whileTap={{ scale: 0.98 }}
               >
-                {timeOptions.length > 1 && !selectedTime
+                {timeOptions.length > 1 && !normalizedSelectedTime
                   ? "Select a Departure Time"
                   : "Book Now"}
               </motion.button>

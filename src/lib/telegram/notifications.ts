@@ -28,7 +28,11 @@ async function broadcast(
 
 export async function notifyNewReservation(reservation: SailsReservation) {
   const text = formatNewReservation(reservation);
-  const keyboard = reservationActions(reservation.id, reservation.customerPhone);
+  const keyboard = reservationActions(reservation.id, {
+    phone: reservation.customerPhone,
+    reservationId: reservation.reservationId,
+    tourSlug: reservation.tourSlug,
+  });
   return broadcast("notifyNew", text, keyboard);
 }
 

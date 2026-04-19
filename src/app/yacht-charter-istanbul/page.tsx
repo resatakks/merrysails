@@ -1,399 +1,341 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-const SITE_URL = "https://merrysails.com";
+import { notFound } from "next/navigation";
+import TourDetailClient from "@/components/tours/TourDetailClient";
+import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
+import { SITE_URL } from "@/lib/constants";
+import { parseBookingPrefill } from "@/lib/booking-prefill";
 
 export const revalidate = 3600;
 
+const yachtTour = getTourBySlug("yacht-charter-in-istanbul");
+
+if (!yachtTour) {
+  throw new Error("Yacht charter data is missing.");
+}
+
+const relatedTours: Tour[] = [
+  getTourBySlug("bosphorus-sunset-cruise"),
+  getTourBySlug("bosphorus-dinner-cruise"),
+  getTourBySlug("private-bosphorus-sunset-cruise"),
+  getTourBySlug("corporate-event-bosphorus-cruise"),
+].filter((tour): tour is Tour => Boolean(tour));
+
+const canonicalUrl = `${SITE_URL}${getTourPath(yachtTour)}`;
+
 export const metadata: Metadata = {
-  title: "Yacht Charter Istanbul — Private Bosphorus from €280 | MerrySails",
+  title: "Yacht Charter Istanbul 2026 — From EUR 280 | MerrySails",
   description:
-    "Private yacht charter Istanbul on the Bosphorus. From €280 for up to 12 guests. Wedding, corporate, birthday charters available. TURSAB licensed. Book online.",
-  alternates: { canonical: `${SITE_URL}/yacht-charter-istanbul` },
+    "Private yacht charter in Istanbul from EUR 280. Compare Essential, Premium, and VIP yacht packages, then add sunset, dinner, proposal, or corporate extras.",
+  alternates: { canonical: canonicalUrl },
   openGraph: {
-    title: "Yacht Charter Istanbul — Private Bosphorus from €280 | MerrySails",
+    title: "Yacht Charter Istanbul 2026 — From EUR 280 | MerrySails",
     description:
-      "Private yacht charter on the Bosphorus from €280/half day. Wedding, corporate, birthday events. TURSAB licensed since 2001.",
-    url: `${SITE_URL}/yacht-charter-istanbul`,
+      "Choose private yacht charter packages in Istanbul from EUR 280, with private Bosphorus route planning, booking-specific marina confirmation, and event add-ons.",
+    url: canonicalUrl,
     type: "website",
+    images: [
+      {
+        url: yachtTour.image,
+        width: 1200,
+        height: 630,
+        alt: yachtTour.nameEn,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yacht Charter Istanbul 2026 — From EUR 280 | MerrySails",
+    description:
+      "Private Bosphorus yacht charter from EUR 280 with Essential, Premium, and VIP packages plus proposal, dinner, sunset, and corporate add-ons.",
+    images: [yachtTour.image],
   },
 };
 
-const faqJsonLd = {
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: yachtTour.nameEn,
+  description: yachtTour.description,
+  serviceType: "Private Yacht Charter",
+  url: canonicalUrl,
+  provider: {
+    "@id": `${SITE_URL}/#organization`,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Istanbul",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Yacht Charter Packages",
+    itemListElement: yachtTour.packages?.map((pkg) => ({
+      "@type": "Offer",
+      name: pkg.name,
+      price: pkg.price,
+      priceCurrency: "EUR",
+      itemOffered: {
+        "@type": "Service",
+        name: pkg.name,
+        description: pkg.description,
+      },
+    })),
+  },
+};
+
+const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How much does a yacht charter in Istanbul cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Private yacht charter in Istanbul starts from €280 for a half-day cruise (4 hours) for up to 12 guests. Full-day charters start from €480. Prices include captain and crew, fuel, and port fees. Catering and drinks can be arranged additionally.",
-      },
+  mainEntity: yachtTour.faq?.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
     },
-    {
-      "@type": "Question",
-      name: "How many guests can a yacht charter in Istanbul accommodate?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Our standard private yachts accommodate 6-12 guests. For larger groups up to 30, we have gulet and motor yacht options. Corporate events and weddings can be arranged for 50+ guests with our larger fleet.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where does the private yacht charter depart from in Istanbul?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Private yacht charters depart from Kuruçeşme Marina, Bebek Marina, or Ataköy Marina depending on your preference and itinerary. All marinas are in central Istanbul and easily accessible.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I charter a yacht for a wedding in Istanbul?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes! Istanbul Bosphorus weddings are increasingly popular. We provide decorated yachts for wedding ceremonies and receptions, with catering, flowers, photography setup, and DJ/music options. Wedding yacht packages start from €1,500.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the minimum charter duration?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Minimum charter duration is 2 hours. We recommend at least 4 hours (half day) to enjoy the Bosphorus scenery at a relaxed pace. Full-day charters (8 hours) allow you to cruise both straits and visit anchorage spots.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I bring my own food and drinks on a yacht charter?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, you are welcome to bring your own food and drinks for private charters. We can also arrange full catering service from our partner restaurants — Turkish mezze, BBQ on deck, or formal dining. Please let us know your preference when booking.",
-      },
-    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Cruises", item: `${SITE_URL}/cruises` },
+    { "@type": "ListItem", position: 3, name: yachtTour.nameEn, item: canonicalUrl },
   ],
 };
 
-export default function YachtCharterIstanbulPage() {
+const charterReasons = [
+  {
+    title: "Private yacht packages first",
+    description:
+      "Choose yacht charter when you want a private yacht first and want to compare package levels before deciding on route or extras.",
+  },
+  {
+    title: "Sunset or celebration add-ons",
+    description:
+      "It fits birthdays, family gatherings, and friend groups that want a private yacht first and then add food, drinks, or decor.",
+  },
+  {
+    title: "Longer hosted outing",
+    description:
+      "It also suits guests who want more time on the water, more space for their group, and a charter that can grow with extras.",
+  },
+];
+
+const charterPriceCards =
+  yachtTour.packages?.map((pkg) => ({
+    title: pkg.name,
+    price: `EUR ${pkg.price}`,
+    body: pkg.description,
+  })) ?? [];
+
+const routeProof = [
+  {
+    title: "Private Bosphorus route",
+    body: `The charter follows ${yachtTour.route.toLowerCase()} rather than a fixed shared departure.`,
+  },
+  {
+    title: "Confirmed departure marina",
+    body: `Departure planning starts from ${yachtTour.departurePoint.toLowerCase()}, with the final boarding details shared after booking.`,
+  },
+  {
+    title: "2-hour core charter",
+    body: "The starter package ladder is built on a 2-hour private charter, then extends with add-ons if needed.",
+  },
+];
+
+const comparePages = [
+  {
+    href: "/boat-rental-istanbul",
+    title: "Boat Rental Istanbul",
+    description:
+      "Open this if you want to start with boat type, route, and outing style instead of comparing charter packages first.",
+  },
+  {
+    href: "/private-bosphorus-dinner-cruise",
+    title: "Private Bosphorus Dinner Cruise",
+    description:
+      "Open this if dinner is the main event and you want a private table on the Bosphorus rather than a package-led charter.",
+  },
+  {
+    href: "/proposal-yacht-rental-istanbul",
+    title: "Proposal Yacht Rental",
+    description:
+      "Open this if the booking is really about a reveal moment, privacy, and the timing around the proposal itself.",
+  },
+  {
+    href: "/corporate-events",
+    title: "Corporate Yacht Events",
+    description:
+      "Open this if the charter is for client hosting, a launch, or a company evening with an invoice-led brief.",
+  },
+];
+
+export default async function YachtCharterIstanbulPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  if (!yachtTour) {
+    notFound();
+  }
+
+  const resolvedSearchParams = await searchParams;
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {yachtTour.faq && yachtTour.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <ol className="flex items-center gap-1">
-            <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
-            <li>/</li>
-            <li className="text-gray-800 font-medium">Yacht Charter Istanbul</li>
-          </ol>
-        </nav>
+      <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
+        <div className="container-main">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6"
+          >
+            <Link href="/" className="hover:text-[var(--brand-primary)]">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href="/cruises" className="hover:text-[var(--brand-primary)]">
+              Cruises
+            </Link>
+            <span>/</span>
+            <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
+          </nav>
 
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Yacht Charter Istanbul — Private Bosphorus from €280
-        </h1>
-        <p className="text-sm font-semibold text-blue-600 mb-6">
-          ★ 4.9/5 Rating · TURSAB Licensed Since 2001 · Up to 50 Guests · Custom Itineraries
-        </p>
+          <TourDetailClient
+            tour={yachtTour}
+            related={relatedTours}
+            bookingPrefill={parseBookingPrefill(resolvedSearchParams)}
+          />
 
-        <p className="text-gray-700 mb-4 leading-relaxed">
-          Hire a private yacht on the Bosphorus and enjoy Istanbul on your own terms. Whether it's a romantic sunset cruise for two, a birthday party for 12, a corporate event, or a wedding celebration — MerrySails has the perfect vessel and crew for your occasion.
-        </p>
-        <p className="text-gray-600 mb-8 leading-relaxed">
-          Since 2001, MerrySails has operated private yacht charters on the Istanbul Bosphorus with TURSAB licensing and an impeccable safety record. Our fleet ranges from intimate sailboats to spacious gulets and motor yachts.
-        </p>
-
-        <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Charter Request Fits Your Plan Best?</h2>
-          <p className="text-sm text-gray-700 mb-5">
-            Most guests choose faster when they first decide whether the day is centered on a proposal, a private dinner, a celebration, or a corporate event. If one of the options below matches your plan, that page will help you compare the right format before you ask for a quote.
-          </p>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[
-              {
-                href: "/corporate-events",
-                title: "Corporate Bosphorus Event",
-                description: "Client hosting, team dinners, product launches, or executive entertaining with AV and catering planning.",
-              },
-              {
-                href: "/private-events",
-                title: "Birthday or Private Celebration",
-                description: "Best for birthdays, family gatherings, graduation parties, and private groups that need food, music, and decoration support.",
-              },
-              {
-                href: "/istanbul-dinner-cruise",
-                title: "Dinner-Led Experience",
-                description: "Choose this when the main decision is dining, sunset timing, or a ready-made Bosphorus evening instead of a fully custom charter.",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-100/40"
-              >
-                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
-                <span className="block text-sm text-gray-600">{item.description}</span>
+          <section className="mt-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
+                  Private Yacht Charter
+                </p>
+                <h2 className="text-2xl font-bold text-[var(--heading)] mb-2">
+                  Choose the private yacht package, then shape the cruise around your group
+                </h2>
+                <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+                  This page fits guests who already know they want a private yacht and want to
+                  compare charter packages first. Use boat rental if you want to begin with vessel
+                  type and route, private dinner cruise if dinner is the focus, and the shared
+                  dinner cruise page if you only need seats on a public cruise.
+                </p>
+              </div>
+              <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
+                Need dinner to be the focus?
               </Link>
-            ))}
-          </div>
-          <div className="mt-5 rounded-xl border border-dashed border-blue-200 bg-white/70 p-4">
-            <h3 className="text-base font-semibold text-gray-900 mb-2">Fast Quote Checklist</h3>
-            <ul className="grid gap-2 text-sm text-gray-700 md:grid-cols-2">
-              {[
-                "Event date and preferred start time",
-                "Guest count and whether children are joining",
-                "Occasion type: proposal, birthday, dinner, corporate, wedding",
-                "Need for catering, decoration, cake, DJ, transfer, or photo setup",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="font-bold text-blue-600">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        {/* CTA */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10 text-center">
-          <p className="text-gray-800 mb-4 font-medium">
-            Get a custom quote for your private yacht charter. Responds within 2 hours.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mr-3"
-          >
-            Request Charter Quote
-          </Link>
-          <Link
-            href="/reservation"
-            className="inline-block bg-white text-blue-600 border border-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-          >
-            Book Online
-          </Link>
-        </div>
-
-        {/* Packages */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Yacht Charter Packages 2026</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="text-left px-4 py-3 font-semibold text-gray-700">Package</th>
-                  <th className="text-center px-4 py-3 font-semibold text-gray-700">Price</th>
-                  <th className="text-left px-4 py-3 font-semibold text-gray-700">Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { pkg: "Half-Day Charter (4h)", price: "€280", details: "Up to 12 guests · Captain & crew · Bosphorus route" },
-                  { pkg: "Full-Day Charter (8h)", price: "€480", details: "Up to 12 guests · Captain & crew · Extended route both straits" },
-                  { pkg: "Sunset Charter (2h)", price: "€180", details: "Up to 8 guests · Golden hour on the Bosphorus" },
-                  { pkg: "Gulet Charter (up to 30)", price: "€650+", details: "Half day · Large group · Traditional wooden gulet" },
-                  { pkg: "Wedding / Event Charter", price: "From €1,500", details: "Custom duration · Decoration · Catering · DJ available" },
-                ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                    <td className="px-4 py-3 font-medium text-gray-900">{row.pkg}</td>
-                    <td className="px-4 py-3 text-center font-bold text-blue-700">{row.price}</td>
-                    <td className="px-4 py-3 text-gray-600 text-xs">{row.details}</td>
-                  </tr>
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[var(--surface-alt)] p-5">
+                <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
+                  Visible price
+                </p>
+                <p className="text-3xl font-bold text-[var(--heading)] mb-2">From EUR 280</p>
+                <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                  The ladder starts at Essential, then moves to Premium and VIP. That keeps the
+                  yacht choice clear before you add food, drinks, transfer, or event styling.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {routeProof.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-4"
+                  >
+                    <h3 className="text-base font-semibold text-[var(--heading)] mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-[var(--text-muted)]">{item.body}</p>
+                  </div>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Which Yacht Format Matches Your Day on the Bosphorus?</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {[
-              {
-                title: "Sunset or Proposal Plan",
-                desc: "Best when timing, privacy, proposal setup, and Bosphorus photo light matter more than a longer route.",
-              },
-              {
-                title: "Birthday or Private Group",
-                desc: "Choose this for music, cake, decoration, and guest comfort when the event matters more than a formal dinner sequence.",
-              },
-              {
-                title: "Corporate Hosting",
-                desc: "The right fit for client hosting, executive dinners, team gatherings, or brand events that need a polished schedule.",
-              },
-              {
-                title: "Full-Day Bosphorus Leisure",
-                desc: "Best for longer cruising, multiple route segments, anchoring breaks, and a slower pace on the water.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          </section>
 
-        <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Helpful Pages to Compare Before You Choose Your Charter</h2>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                href: "/proposal-yacht-rental-istanbul",
-                title: "Proposal Yacht Rental",
-                description: "For couples choosing privacy, timing, photo setup, and proposal-focused decoration.",
-              },
-              {
-                href: "/private-bosphorus-dinner-cruise",
-                title: "Private Dinner Cruise",
-                description: "For guests who want dining and privacy together instead of a broader custom charter.",
-              },
-              {
-                href: "/corporate-events",
-                title: "Corporate Events",
-                description: "For companies comparing AV, catering, guest flow, and polished event structure.",
-              },
-              {
-                href: "/boat-rental-istanbul",
-                title: "Boat Rental Istanbul",
-                description: "For lighter private bookings where flexibility matters more than a yacht-led premium package.",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-xl border border-white bg-white p-4 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-100/60"
-              >
-                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+              Yacht packages and price ladder
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {charterPriceCards.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
+                    {item.price}
+                  </p>
+                  <h3 className="text-lg font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section className="mb-10 rounded-2xl border border-gray-200 bg-white p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">What to Send for a Faster Yacht Charter Quote</h2>
-          <p className="text-sm text-gray-600 mb-5">
-            Yacht charter requests close faster when the occasion, guest count, and service level are clear.
-            That lets us decide whether the booking belongs on this page or one of the more specific pages above.
-          </p>
-          <div className="grid gap-3 md:grid-cols-2">
-            {[
-              "Date, duration, and preferred departure time",
-              "Guest count and whether the group is private, corporate, or celebration-led",
-              "Need for catering, decoration, dinner service, photographer, or transfer support",
-              "Whether you want a flexible charter or a more fixed-format dinner/proposal event",
-            ].map((item) => (
-              <div key={item} className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-700">
-                <span className="font-bold text-blue-600 mr-2">✓</span>
-                {item}
-              </div>
-            ))}
-          </div>
-        </section>
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+              When yacht charter is the better starting point
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {charterReasons.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4"
+                >
+                  <h3 className="text-base font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Which Yacht Search Belongs Here?</h2>
-          <p className="text-sm text-gray-600 mb-5">
-            Yacht charter traffic often overlaps with dinner cruise, proposal, boat rental, and corporate-event demand. This page should clearly own the broader private-yacht decision before guests branch out.
-          </p>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[
-              {
-                title: "Yacht charter Istanbul",
-                description: "Best fit for private charter demand where guest count, route flexibility, and vessel type matter most.",
-              },
-              {
-                title: "Proposal / private dinner split",
-                description: "If the request is really a proposal or dinner-led private experience, the narrower occasion pages convert faster.",
-              },
-              {
-                title: "Boat rental / corporate event split",
-                description: "If flexibility or business hosting is the main goal, the matching service page is a better next step than a generic charter quote.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Occasions */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perfect for Every Occasion</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { icon: "💑", title: "Romantic Getaway", desc: "Sunset cruise for two with champagne and canapés on the Bosphorus. The most romantic way to experience Istanbul." },
-              { icon: "🎂", title: "Birthday Party", desc: "Celebrate your birthday on the water. We arrange decorations, cake, music, and catering for your group." },
-              { icon: "💼", title: "Corporate Events", desc: "Team building, client entertainment, or product launches on the Bosphorus. Impress clients with Istanbul's most iconic backdrop." },
-              { icon: "💍", title: "Wedding Charter", desc: "Intimate wedding ceremony or reception on a decorated yacht. Istanbul's skyline as your backdrop." },
-            ].map((item) => (
-              <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-5">
-                <div className="text-3xl mb-2">{item.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Why MerrySails */}
-        <section className="mb-10 bg-blue-50 rounded-xl p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Charter with MerrySails?</h2>
-          <ul className="grid md:grid-cols-2 gap-2">
-            {[
-              "TURSAB Licensed — operating safely since 2001",
-              "Modern fleet: sailboats, motor yachts, gulets",
-              "Experienced English-speaking captains",
-              "Fully insured — all guests covered",
-              "Flexible itineraries — you choose the route",
-              "Catering and drinks arranged on request",
-              "24/7 WhatsApp support",
-              "Free cancellation up to 48h before charter",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-gray-700 text-sm">
-                <span className="text-blue-600 font-bold mt-0.5">✓</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* FAQ */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Yacht Charter Istanbul — FAQ</h2>
-          <div className="space-y-4">
-            {faqJsonLd.mainEntity.map((faq, i) => (
-              <details key={i} className="bg-white border border-gray-200 rounded-lg p-4 group">
-                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
-                  {faq.name}
-                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed">{faq.acceptedAnswer.text}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">More Bosphorus Experiences</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {[
-              { href: "/bosphorus-cruise", label: "Bosphorus Sightseeing Cruise from €15" },
-              { href: "/istanbul-dinner-cruise", label: "Istanbul Dinner Cruise from €65" },
-              { href: "/private-tours", label: "Private Guided Tours from €180" },
-            ].map((link) => (
-              <Link key={link.href} href={link.href}
-                className="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors text-sm text-blue-700 font-medium">
-                {link.label} →
-              </Link>
-            ))}
-          </div>
-        </section>
-      </main>
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+              Compare yacht charter with the other Bosphorus formats
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {comparePages.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
+                >
+                  <span className="block text-base font-semibold text-[var(--heading)] mb-1">
+                    {item.title}
+                  </span>
+                  <span className="block text-sm leading-relaxed text-[var(--text-muted)]">
+                    {item.description}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
     </>
   );
 }
