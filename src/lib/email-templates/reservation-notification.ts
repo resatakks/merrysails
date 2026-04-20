@@ -16,6 +16,8 @@ interface ReservationNotificationData {
   currency: string;
   packageName?: string;
   addOns?: string[];
+  additionalGuests?: string[];
+  privateTransferRequested?: boolean;
   notes?: string | null;
 }
 
@@ -49,6 +51,7 @@ export function reservationNotificationEmail(data: ReservationNotificationData):
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Tour</td><td style="color:#0f172a;padding:4px 0;text-align:right;font-weight:600;">${escapeHtml(data.tourName)}</td></tr>
         ${data.packageName ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Package</td><td style="color:#0f172a;padding:4px 0;text-align:right;font-weight:600;">${escapeHtml(data.packageName)}</td></tr>` : ""}
         ${(data.addOns && data.addOns.length > 0) ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Add-ons</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.addOns.join(", "))}</td></tr>` : ""}
+        ${data.privateTransferRequested ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Transfer</td><td style="color:#0f172a;padding:4px 0;text-align:right;">Private transfer requested</td></tr>` : ""}
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Date</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.date)}</td></tr>
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Time</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.time)}</td></tr>
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Guests</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${data.guests}</td></tr>
@@ -64,6 +67,7 @@ export function reservationNotificationEmail(data: ReservationNotificationData):
         ${data.customerCountry ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Country</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.customerCountry)}</td></tr>` : ""}
       </table>
 
+      ${(data.additionalGuests && data.additionalGuests.length > 0) ? `<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px;margin-bottom:16px;"><p style="color:#1d4ed8;margin:0;font-size:13px;"><strong>Other passengers:</strong> ${escapeHtml(data.additionalGuests.join(", "))}</p></div>` : ""}
       ${data.notes ? `<div style="background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:12px;margin-bottom:16px;"><p style="color:#92400e;margin:0;font-size:13px;"><strong>Notes:</strong> ${escapeHtml(data.notes)}</p></div>` : ""}
 
       <!-- Quick Actions -->

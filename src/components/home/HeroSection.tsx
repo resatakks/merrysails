@@ -65,8 +65,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mt-3 max-w-xl text-sm leading-relaxed text-white/84 sm:max-w-2xl sm:text-base md:text-lg"
             >
-              Compare the 3 core Bosphorus products on one page, then go directly to the exact
-              dinner, sunset, or yacht package that fits your plan.
+              Go straight to the exact sunset, dinner, or yacht page that fits your plan.
             </motion.p>
 
             <motion.div
@@ -79,7 +78,7 @@ export default function HeroSection() {
                 <Link
                   key={product.href}
                   href={product.href}
-                  className="group rounded-[1.35rem] border border-white/18 bg-[linear-gradient(135deg,rgba(12,22,54,0.62),rgba(12,22,54,0.38))] px-4 py-3 text-white shadow-[0_18px_48px_rgba(11,21,58,0.14)] backdrop-blur-[6px] transition-all hover:-translate-y-0.5 hover:border-white/28 hover:bg-[linear-gradient(135deg,rgba(12,22,54,0.72),rgba(12,22,54,0.46))]"
+                  className="group rounded-[1.35rem] border border-white/16 bg-[linear-gradient(135deg,rgba(12,22,54,0.48),rgba(12,22,54,0.28))] px-4 py-3 text-white shadow-[0_18px_48px_rgba(11,21,58,0.14)] backdrop-blur-[2px] transition-all hover:-translate-y-0.5 hover:border-white/28 hover:bg-[linear-gradient(135deg,rgba(12,22,54,0.64),rgba(12,22,54,0.34))]"
                 >
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/62">
                     {product.meta}

@@ -18,6 +18,8 @@ interface ReservationConfirmationData {
   currency: string;
   packageName?: string;
   addOns?: string[];
+  additionalGuests?: string[];
+  privateTransferRequested?: boolean;
   notes?: string | null;
   variant?: "received" | "confirmed";
 }
@@ -142,11 +144,16 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         </table>
       </div>
 
-      ${(data.packageName || (data.addOns && data.addOns.length > 0)) ? `
+      ${(data.packageName ||
+        (data.addOns && data.addOns.length > 0) ||
+        data.privateTransferRequested ||
+        (data.additionalGuests && data.additionalGuests.length > 0)) ? `
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:24px;">
         <p style="color:#0f172a;font-size:14px;font-weight:700;margin:0 0 12px;">Selected Booking Option</p>
         ${data.packageName ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>` : ""}
         ${(data.addOns && data.addOns.length > 0) ? `<p style="color:#334155;font-size:14px;margin:0;"><strong>Add-ons:</strong> ${escapeHtml(data.addOns.join(", "))}</p>` : ""}
+        ${data.privateTransferRequested ? `<p style="color:#334155;font-size:14px;margin:${data.packageName || (data.addOns && data.addOns.length > 0) ? "8px 0 0" : "0"};"><strong>Transfer:</strong> Private transfer requested separately</p>` : ""}
+        ${(data.additionalGuests && data.additionalGuests.length > 0) ? `<p style="color:#334155;font-size:14px;margin:8px 0 0;"><strong>Other passengers:</strong> ${escapeHtml(data.additionalGuests.join(", "))}</p>` : ""}
       </div>
       ` : ""}
 

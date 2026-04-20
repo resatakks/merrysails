@@ -229,6 +229,10 @@ export default function HomePage() {
       <HeroSection />
       <TourGrid />
 
+      <FeaturedTour tour={tours[0]} />
+      <FeaturedTour tour={tours[1]} reverse />
+      <FeaturedTour tour={tours[2]} />
+
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
@@ -283,10 +287,6 @@ export default function HomePage() {
       </section>
 
       <CommercialIntentSection compact />
-
-      <FeaturedTour tour={tours[0]} />
-      <FeaturedTour tour={tours[1]} reverse />
-      <FeaturedTour tour={tours[2]} />
       <WhyUs />
 
       {/* Expert References — AI Visibility */}

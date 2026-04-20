@@ -145,6 +145,8 @@ export async function updateReservationStatusAdminAction(
           currency: existing.currency,
           packageName: reservationMeta.packageName,
           addOns: reservationMeta.addOns,
+          additionalGuests: reservationMeta.additionalGuests,
+          privateTransferRequested: reservationMeta.privateTransferRequested,
           notes: reservationMeta.customerNote,
           variant: "confirmed",
         }),

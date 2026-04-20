@@ -253,6 +253,8 @@ export async function createReservation(input: CreateReservationInput) {
           currency: pricing.currency,
           packageName: pricing.packageName,
           addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+          additionalGuests,
+          privateTransferRequested: Boolean(input.privateTransferRequested),
           notes: customerNote,
           variant: "received",
         }),
@@ -282,6 +284,8 @@ export async function createReservation(input: CreateReservationInput) {
             currency: pricing.currency,
             packageName: pricing.packageName,
             addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+            additionalGuests,
+            privateTransferRequested: Boolean(input.privateTransferRequested),
             notes: customerNote,
           }),
         });
@@ -389,7 +393,6 @@ export async function cancelReservation(reservationId: string) {
     });
 
     const formattedDate = format(tourDate, "MMMM d, yyyy");
-
     // Send cancellation email to customer
     try {
       await sendEmail({
