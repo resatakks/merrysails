@@ -193,7 +193,7 @@ export default function BookingCalendar({
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
+    <div id="booking-calendar" className="scroll-mt-24 overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-sm">
       {/* Price header */}
       <div className="bg-[var(--brand-price-box)] px-5 py-5">
         <div className="flex items-start justify-between gap-4">

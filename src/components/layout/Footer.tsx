@@ -44,7 +44,7 @@ const guideLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-12 bg-[var(--brand-dark)] text-white/90 pb-28 lg:pb-10">
+    <footer className="mt-20 bg-[var(--brand-dark)] text-white/90 pb-28 lg:pb-10">
       <div className="container-main pt-16 pb-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
           <div>

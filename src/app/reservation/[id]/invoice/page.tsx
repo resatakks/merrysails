@@ -260,6 +260,35 @@ export default async function ReservationInvoicePage({
                       </p>
                     </div>
                   </div>
+
+                  {(reservationMeta.privateTransferRequested ||
+                    reservationMeta.additionalGuests.length > 0) && (
+                    <div className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                        Booking extras
+                      </p>
+                      <div className="mt-2 space-y-2 text-sm text-[var(--body-text)]">
+                        {reservationMeta.privateTransferRequested && (
+                          <p>
+                            <span className="font-semibold text-[var(--heading)]">Transfer:</span>{" "}
+                            Private transfer requested separately
+                          </p>
+                        )}
+                        {reservationMeta.additionalGuests.length > 0 && (
+                          <div>
+                            <p>
+                              <span className="font-semibold text-[var(--heading)]">Other passengers:</span>
+                            </p>
+                            <ul className="mt-1 list-disc pl-5">
+                              {reservationMeta.additionalGuests.map((guest) => (
+                                <li key={guest}>{guest}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </section>
             </div>

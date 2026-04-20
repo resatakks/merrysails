@@ -26,6 +26,8 @@ interface CreateReservationInput {
   customerCountry?: string;
   packageName?: string;
   addOns?: string[];
+  additionalGuests?: string[];
+  privateTransferRequested?: boolean;
   notes?: string;
   honeypot?: string;
 }
@@ -44,6 +46,15 @@ function sanitizeSingleLine(value: string, maxLength: number): string {
 function sanitizeNotes(value?: string): string | undefined {
   const cleaned = value?.replace(/\u0000/g, "").trim();
   return cleaned ? cleaned.slice(0, 1200) : undefined;
+}
+
+function sanitizeGuestNames(values?: string[]): string[] {
+  return (
+    values
+      ?.map((value) => value.replace(/\s+/g, " ").trim())
+      .filter(Boolean)
+      .slice(0, 24) ?? []
+  );
 }
 
 function normalizePhone(value: string): string {
@@ -114,6 +125,7 @@ export async function createReservation(input: CreateReservationInput) {
       ? sanitizeSingleLine(input.customerCountry, 80)
       : undefined;
     const customerNote = sanitizeNotes(input.notes);
+    const additionalGuests = sanitizeGuestNames(input.additionalGuests);
 
     if (customerName.length < 2) {
       return {
@@ -206,6 +218,8 @@ export async function createReservation(input: CreateReservationInput) {
             packageName: pricing.packageName,
             addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
             customerNote,
+            additionalGuests,
+            privateTransferRequested: Boolean(input.privateTransferRequested),
             pricing: {
               currency: pricing.currency,
               guests: pricing.guests,

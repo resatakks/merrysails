@@ -5,6 +5,14 @@ import { commercialSupportPosts } from "@/content/blog";
 
 const SITE_URL = "https://merrysails.com";
 
+function toAbsoluteUrl(url: string): string {
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
+  }
+
+  return `${SITE_URL}${url.startsWith("/") ? url : `/${url}`}`;
+}
+
 function formatDate(date: Date): string {
   return date.toISOString().split("T")[0];
 }
@@ -67,7 +75,7 @@ export function GET() {
     const images: SitemapPage["images"] = [];
     if (tour.image) {
       images.push({
-        loc: tour.image,
+        loc: toAbsoluteUrl(tour.image),
         title: `${tour.nameEn} - ${tour.name}`,
         caption: tour.description.slice(0, 200),
       });
@@ -75,7 +83,7 @@ export function GET() {
     if (tour.gallery) {
       for (const img of tour.gallery) {
         if (img !== tour.image) {
-          images.push({ loc: img, title: `${tour.nameEn} gallery photo` });
+          images.push({ loc: toAbsoluteUrl(img), title: `${tour.nameEn} gallery photo` });
         }
       }
     }
@@ -103,7 +111,7 @@ export function GET() {
       images: post.image
         ? [
             {
-              loc: post.image,
+              loc: toAbsoluteUrl(post.image),
               title: post.title,
               caption: post.imageAlt || post.excerpt?.slice(0, 200),
             },
@@ -117,7 +125,7 @@ export function GET() {
     priority: "0.7",
     lastmod: "2026-03-10",
     images: guide.image
-      ? [{ loc: guide.image, title: guide.title }]
+      ? [{ loc: toAbsoluteUrl(guide.image), title: guide.title }]
       : undefined,
   }));
 

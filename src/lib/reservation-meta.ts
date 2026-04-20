@@ -7,6 +7,8 @@ interface ReservationMetaPayload {
   packageName?: string;
   addOns?: string[];
   customerNote?: string;
+  additionalGuests?: string[];
+  privateTransferRequested?: boolean;
   pricing?: ReservationPricingSnapshot;
 }
 
@@ -14,6 +16,8 @@ export interface ParsedReservationMeta {
   packageName?: string;
   addOns: string[];
   customerNote?: string;
+  additionalGuests: string[];
+  privateTransferRequested: boolean;
   pricing?: ReservationPricingSnapshot;
   hasStructuredMeta: boolean;
 }
@@ -68,6 +72,11 @@ export function serializeReservationNotes(
         ?.map((item) => item.trim())
         .filter(Boolean) ?? [],
     customerNote: payload.customerNote?.trim() || undefined,
+    additionalGuests:
+      payload.additionalGuests
+        ?.map((item) => item.trim())
+        .filter(Boolean) ?? [],
+    privateTransferRequested: payload.privateTransferRequested || undefined,
     pricing: sanitizePricingSnapshot(payload.pricing),
   };
 
@@ -75,6 +84,8 @@ export function serializeReservationNotes(
     !cleanedPayload.packageName &&
     (!cleanedPayload.addOns || cleanedPayload.addOns.length === 0) &&
     !cleanedPayload.customerNote &&
+    (!cleanedPayload.additionalGuests || cleanedPayload.additionalGuests.length === 0) &&
+    !cleanedPayload.privateTransferRequested &&
     !cleanedPayload.pricing
   ) {
     return null;
@@ -91,6 +102,8 @@ export function parseReservationNotes(
   if (!trimmed) {
     return {
       addOns: [],
+      additionalGuests: [],
+      privateTransferRequested: false,
       pricing: undefined,
       hasStructuredMeta: false,
     };
@@ -103,6 +116,8 @@ export function parseReservationNotes(
     return {
       addOns: [],
       customerNote: trimmed,
+      additionalGuests: [],
+      privateTransferRequested: false,
       pricing: undefined,
       hasStructuredMeta: false,
     };
@@ -122,6 +137,11 @@ export function parseReservationNotes(
           ?.map((item) => item.trim())
           .filter(Boolean) ?? [],
       customerNote: parsed.customerNote?.trim() || undefined,
+      additionalGuests:
+        parsed.additionalGuests
+          ?.map((item) => item.trim())
+          .filter(Boolean) ?? [],
+      privateTransferRequested: Boolean(parsed.privateTransferRequested),
       pricing: sanitizePricingSnapshot(parsed.pricing),
       hasStructuredMeta: true,
     };
@@ -129,6 +149,8 @@ export function parseReservationNotes(
     return {
       addOns: [],
       customerNote: trimmed,
+      additionalGuests: [],
+      privateTransferRequested: false,
       pricing: undefined,
       hasStructuredMeta: false,
     };

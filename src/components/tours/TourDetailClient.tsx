@@ -233,8 +233,8 @@ export default function TourDetailClient({
         <div className="flex items-center gap-2.5 border-r border-[var(--line)] px-5 py-4">
           <CalendarDays className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
-            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Availability</div>
-            <div className="text-sm font-semibold text-[var(--heading)]">{tour.availability || "All Year"}</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Departure</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tour.departureTime}</div>
           </div>
         </div>
         <div className="flex items-center gap-2.5 px-5 py-4">
@@ -321,7 +321,7 @@ export default function TourDetailClient({
           )}
 
           {/* Tab Navigation */}
-          <div className="bg-white rounded-xl border border-[var(--line)] p-1.5 sticky top-20 z-20">
+          <div className="rounded-xl border border-[var(--line)] bg-white p-1.5 lg:sticky lg:top-20 lg:z-20">
             <div className="flex gap-1">
               {availableTabs.map((tab) => (
                 <button

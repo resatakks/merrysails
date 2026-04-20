@@ -63,7 +63,10 @@ export default async function ReservationVoucherPage({
   const statusLabel = statusLabels[reservation.status] ?? reservation.status;
   const reservationMeta = parseReservationNotes(reservation.notes);
   const hasSelectedOptions = Boolean(
-    reservationMeta.packageName || reservationMeta.addOns.length > 0
+    reservationMeta.packageName ||
+      reservationMeta.addOns.length > 0 ||
+      reservationMeta.privateTransferRequested ||
+      reservationMeta.additionalGuests.length > 0
   );
 
   return (
@@ -242,11 +245,29 @@ export default async function ReservationVoucherPage({
                               {reservationMeta.packageName}
                             </p>
                           )}
+                          {reservationMeta.privateTransferRequested && (
+                            <p>
+                              <span className="font-semibold text-[var(--heading)]">Transfer:</span>{" "}
+                              Private transfer requested separately
+                            </p>
+                          )}
                           {reservationMeta.addOns.length > 0 && (
                             <p>
                               <span className="font-semibold text-[var(--heading)]">Add-ons:</span>{" "}
                               {reservationMeta.addOns.join(", ")}
                             </p>
+                          )}
+                          {reservationMeta.additionalGuests.length > 0 && (
+                            <div>
+                              <p>
+                                <span className="font-semibold text-[var(--heading)]">Other passengers:</span>
+                              </p>
+                              <ul className="mt-1 list-disc pl-5">
+                                {reservationMeta.additionalGuests.map((guest) => (
+                                  <li key={guest}>{guest}</li>
+                                ))}
+                              </ul>
+                            </div>
                           )}
                         </div>
                       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
@@ -25,22 +25,42 @@ function seededRand(slug: string, salt: number, min: number, max: number): numbe
 }
 
 export default function SocialProof({ tourSlug }: Props) {
-  const [tick, setTick] = useState(0);
+  const [variantSeed] = useState(() => {
+    if (typeof window === "undefined") {
+      return hashSlug(`${tourSlug}:server`);
+    }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTick((t) => t + 1);
-    }, 30_000);
-    return () => clearInterval(interval);
-  }, []);
+    const now = new Date();
+    const bucket = `${now.getUTCFullYear()}-${now.getUTCMonth()}-${now.getUTCDate()}-${Math.floor(
+      now.getUTCHours() / 6
+    )}`;
+    const storageKey = `merrysails-social-proof:${tourSlug}`;
+
+    try {
+      const existing = window.localStorage.getItem(storageKey);
+      if (existing) {
+        const parsed = JSON.parse(existing) as { bucket: string; seed: number };
+        if (parsed.bucket === bucket) {
+          return parsed.seed;
+        }
+      }
+    } catch {}
+
+    const seed = hashSlug(`${tourSlug}:${bucket}`);
+
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify({ bucket, seed }));
+    } catch {}
+
+    return seed;
+  });
 
   const getValues = useCallback(() => {
-    // Use tick as part of the salt so values drift over time
-    const viewing = seededRand(tourSlug, 100 + tick, 3, 15);
-    const spotsLeft = seededRand(tourSlug, 200 + Math.floor(tick / 2), 2, 8);
-    const lastBooked = seededRand(tourSlug, 300 + Math.floor(tick / 3), 5, 45);
+    const viewing = seededRand(tourSlug, 100 + variantSeed, 3, 15);
+    const spotsLeft = seededRand(tourSlug, 200 + variantSeed, 2, 8);
+    const lastBooked = seededRand(tourSlug, 300 + variantSeed, 5, 45);
     return { viewing, spotsLeft, lastBooked };
-  }, [tourSlug, tick]);
+  }, [tourSlug, variantSeed]);
 
   const { viewing, spotsLeft, lastBooked } = getValues();
 
@@ -67,12 +87,12 @@ export default function SocialProof({ tourSlug }: Props) {
       <AnimatePresence mode="popLayout">
         {signals.map((signal, i) => (
           <motion.div
-            key={`${signal.key}-${tick}`}
+            key={`${signal.key}-${variantSeed}`}
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="flex items-center gap-2 text-xs text-[var(--text-muted)]"
+            className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2 text-xs text-[var(--text-muted)]"
           >
             <span className="text-sm leading-none">{signal.icon}</span>
             <span>{signal.text}</span>

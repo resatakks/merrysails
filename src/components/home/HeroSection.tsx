@@ -41,7 +41,7 @@ export default function HeroSection() {
       <div className="hero-overlay absolute inset-0" />
 
       {/* Content */}
-      <div className="relative z-10 container-main flex min-h-[78vh] w-full items-end pt-24 pb-10 sm:pt-28 sm:pb-12 md:min-h-[84vh] md:pt-36 md:pb-18">
+      <div className="relative z-10 container-main flex min-h-[100svh] w-full items-end pt-32 pb-8 sm:min-h-[82vh] sm:pt-28 sm:pb-12 md:min-h-[84vh] md:pt-36 md:pb-18">
         <div className="w-full max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,7 +53,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="max-w-4xl text-[2.45rem] font-bold leading-[1.02] text-white sm:text-5xl md:text-6xl"
+              className="max-w-4xl text-[2.1rem] font-bold leading-[1.03] text-white sm:text-5xl md:text-6xl"
             >
               Bosphorus Dinner Cruise, Sunset Cruise &amp; Yacht Charter
               <span className="text-[var(--brand-gold)]"> in Istanbul</span>
@@ -63,7 +63,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="mt-4 max-w-2xl text-sm leading-relaxed text-white/84 sm:text-base md:text-lg"
+              className="mt-3 max-w-xl text-sm leading-relaxed text-white/84 sm:max-w-2xl sm:text-base md:text-lg"
             >
               Compare the 3 core Bosphorus products on one page, then go directly to the exact
               dinner, sunset, or yacht package that fits your plan.
@@ -73,23 +73,23 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-6 grid gap-2.5 md:max-w-4xl md:grid-cols-3 md:gap-3"
+              className="mt-5 grid gap-2.5 md:max-w-4xl md:grid-cols-3 md:gap-3"
             >
               {heroProducts.map((product) => (
                 <Link
                   key={product.href}
                   href={product.href}
-                  className="group rounded-[1.45rem] border border-white/70 bg-white/92 px-4 py-3.5 shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white"
+                  className="group rounded-[1.35rem] border border-white/18 bg-[linear-gradient(135deg,rgba(12,22,54,0.62),rgba(12,22,54,0.38))] px-4 py-3 text-white shadow-[0_18px_48px_rgba(11,21,58,0.14)] backdrop-blur-[6px] transition-all hover:-translate-y-0.5 hover:border-white/28 hover:bg-[linear-gradient(135deg,rgba(12,22,54,0.72),rgba(12,22,54,0.46))]"
                 >
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/62">
                     {product.meta}
                   </p>
-                  <p className="mt-1.5 text-base font-semibold leading-snug text-[var(--heading)]">
+                  <h2 className="mt-1.5 text-base font-semibold leading-snug text-white">
                     {product.title}
-                  </p>
-                  <div className="mt-3 flex items-center justify-between gap-3">
+                  </h2>
+                  <div className="mt-2.5 flex items-center justify-between gap-3">
                     <p className="text-sm font-bold text-[var(--brand-gold)]">{product.price}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] transition-colors group-hover:text-[var(--brand-primary)]">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-white transition-colors group-hover:text-white">
                       Open page
                       <ArrowRight className="h-4 w-4" />
                     </span>
@@ -102,7 +102,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-6 flex flex-wrap gap-3"
+              className="mt-5 flex flex-wrap gap-3"
             >
               <Link href="/reservation" className="btn-cta text-base !py-3.5 !px-8">
                 Open Reservation Center
@@ -110,7 +110,7 @@ export default function HeroSection() {
               </Link>
               <Link
                 href="/cruises"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/92 px-8 py-3.5 font-semibold text-[var(--heading)] transition-all hover:bg-white"
+                className="hidden items-center gap-2 rounded-full border border-white/25 bg-white/92 px-8 py-3.5 font-semibold text-[var(--heading)] transition-all hover:bg-white sm:inline-flex"
               >
                 Explore All Services
               </Link>

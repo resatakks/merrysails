@@ -8,6 +8,7 @@ import {
   Crown,
   ChevronDown,
   ChevronUp,
+  MessageCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { AddOn, BookingMode, Package, PriceMode } from "@/data/tours";
@@ -59,6 +60,7 @@ export default function BookingSidebar({
   const [showMobileBar, setShowMobileBar] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const footerInViewRef = useRef(false);
 
   const price = selectedPackage?.price ?? effectivePrice;
   const currentOriginalPrice =
@@ -71,7 +73,7 @@ export default function BookingSidebar({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowMobileBar(!entry.isIntersecting);
+        setShowMobileBar(!entry.isIntersecting && !footerInViewRef.current);
       },
       { threshold: 0.1 }
     );
@@ -81,6 +83,24 @@ export default function BookingSidebar({
     return () => {
       if (el) observer.unobserve(el);
     };
+  }, []);
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        footerInViewRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          setShowMobileBar(false);
+        }
+      },
+      { threshold: 0.08 }
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
   }, []);
 
   const handleBook = useCallback(
@@ -94,6 +114,13 @@ export default function BookingSidebar({
   );
 
   const handleMobileBookClick = () => {
+    const bookingCalendar = document.getElementById("booking-calendar");
+    if (bookingCalendar) {
+      bookingCalendar.scrollIntoView({ behavior: "smooth", block: "start" });
+      setShowMobileBar(false);
+      return;
+    }
+
     if (sidebarRef.current) {
       sidebarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
       setShowMobileBar(false);
@@ -140,11 +167,11 @@ export default function BookingSidebar({
                     />
                   </div>
                 </div>
-                <div className="rounded-2xl bg-white/80 px-3 py-2 text-right shadow-sm">
+                <div className="min-w-[96px] rounded-2xl bg-white/90 px-3 py-2 text-center shadow-sm">
                   <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                     Option
                   </div>
-                  <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                  <div className="mt-1 text-sm font-semibold leading-tight text-[var(--heading)]">
                     {selectedPackageName}
                   </div>
                 </div>
@@ -175,8 +202,8 @@ export default function BookingSidebar({
                       }`}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1 min-w-0">
+                      <div className="flex items-start gap-3">
+                        <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2">
                             <h4 className="font-bold text-[var(--heading)]">
                               {pkg.name}
@@ -185,23 +212,28 @@ export default function BookingSidebar({
                               <Crown className="w-4 h-4 text-[var(--brand-gold)]" />
                             )}
                           </div>
-                          <p className="text-xs text-[var(--text-muted)] mt-0.5 line-clamp-1">
+                          <p className="mt-0.5 text-xs text-[var(--text-muted)] line-clamp-2">
                             {pkg.description}
                           </p>
                         </div>
-                        <div className="text-right ml-3 shrink-0">
+                        <div className="shrink-0 text-right">
                           {tour.showPricing ? (
                             <>
-                              <div className="text-lg font-bold text-[var(--heading)]">
+                              <div className="text-lg font-bold leading-none text-[var(--heading)]">
                                 €{pkg.price}
                               </div>
-                              <div className="text-[10px] text-[var(--text-muted)]">
+                              <div className="mt-1 text-[10px] text-[var(--text-muted)]">
                                 {priceUnitLabel}
                               </div>
                             </>
                           ) : (
                             <div className="text-xs font-semibold text-[var(--brand-primary)]">
                               Price on request
+                            </div>
+                          )}
+                          {isSelected && (
+                            <div className="mt-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-primary)]">
+                              <Check className="h-3.5 w-3.5 text-white" />
                             </div>
                           )}
                         </div>
@@ -234,16 +266,6 @@ export default function BookingSidebar({
                         )}
                       </AnimatePresence>
 
-                      {/* Selected checkmark */}
-                      {isSelected && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          className="absolute top-3 right-3 w-6 h-6 rounded-full bg-[var(--brand-primary)] flex items-center justify-center"
-                        >
-                          <Check className="w-3.5 h-3.5 text-white" />
-                        </motion.div>
-                      )}
                     </motion.button>
                   );
                 })}
@@ -310,8 +332,8 @@ export default function BookingSidebar({
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:brightness-110 transition-all"
             >
-              <Phone className="w-4 h-4" />
-              Chat on WhatsApp
+              <MessageCircle className="w-4 h-4" />
+              Live Support on WhatsApp
             </a>
             <a
               href="tel:+905370406822"
@@ -392,8 +414,16 @@ export default function BookingSidebar({
               </AnimatePresence>
 
               {/* Main bar */}
-              <div className="px-4 py-3 flex items-center justify-between safe-area-bottom">
-                <div className="flex-1 min-w-0">
+              <div className="safe-area-bottom px-4 py-3">
+                <div className="flex items-center gap-3">
+                  <a
+                    href="tel:+905370406822"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--brand-primary)] shadow-sm"
+                    aria-label="Call now"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                  </a>
+                  <div className="min-w-0 flex-1">
                   {tour.showPricing ? (
                     <SalePrice
                       price={price}
@@ -420,6 +450,16 @@ export default function BookingSidebar({
                       )}
                     </button>
                   )}
+                  </div>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm"
+                    aria-label="Live support on WhatsApp"
+                  >
+                    <Phone className="h-4 w-4" />
+                  </a>
                 </div>
                 <motion.button
                   onClick={
@@ -427,7 +467,7 @@ export default function BookingSidebar({
                       ? () => window.open(`${WHATSAPP_URL}?text=${quoteMessage}`, "_blank")
                       : handleMobileBookClick
                   }
-                  className="px-6 py-3 rounded-full bg-[var(--brand-primary)] text-white font-bold text-sm hover:brightness-110 transition-all shadow-lg"
+                  className="mt-3 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 text-sm font-bold text-white shadow-lg transition-all hover:brightness-110"
                   whileTap={{ scale: 0.95 }}
                 >
                   {isQuote ? "Continue" : "Continue Booking"}

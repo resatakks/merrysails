@@ -108,6 +108,8 @@ export default function BookingModal({ booking, onClose }: Props) {
   const [validationMessage, setValidationMessage] = useState("");
   const [privateTransferRequested, setPrivateTransferRequested] = useState(false);
   const [showTransferInfo, setShowTransferInfo] = useState(false);
+  const [showAdditionalGuests, setShowAdditionalGuests] = useState(false);
+  const [additionalGuestsText, setAdditionalGuestsText] = useState("");
 
   const [touchedName, setTouchedName] = useState(false);
   const [touchedEmail, setTouchedEmail] = useState(false);
@@ -150,6 +152,16 @@ export default function BookingModal({ booking, onClose }: Props) {
   const sharedTransferSupport =
     booking.tourSlug === "bosphorus-sunset-cruise" ||
     booking.tourSlug === "bosphorus-dinner-cruise";
+  const additionalGuestNames = additionalGuestsText
+    .split("\n")
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const transferSummaryNote =
+    booking.tourSlug === "bosphorus-dinner-cruise"
+      ? "Private transfer requested in addition to the standard dinner-cruise hotel shuttle flow. Quote separately and confirm after contact."
+      : booking.tourSlug === "bosphorus-sunset-cruise"
+      ? "Extra hotel pickup / private transfer requested for the sunset cruise. Quote separately and confirm after contact."
+      : "Private transfer requested. Quote separately and confirm after contact.";
 
   const focusFirstInvalidField = () => {
     setTouchedName(true);
@@ -190,8 +202,9 @@ export default function BookingModal({ booking, onClose }: Props) {
     setModalState("loading");
     const combinedNotes = [
       message.trim(),
-      privateTransferRequested
-        ? "Private transfer requested. Shared shuttle / meeting-point coordination is understood; quote private transfer separately and confirm after contact."
+      privateTransferRequested ? transferSummaryNote : "",
+      additionalGuestNames.length > 0
+        ? `Additional guests: ${additionalGuestNames.join(", ")}`
         : "",
     ]
       .filter(Boolean)
@@ -207,6 +220,8 @@ export default function BookingModal({ booking, onClose }: Props) {
       customerPhone: phone.trim(),
       packageName: booking.selectedPackage?.name,
       addOns: booking.selectedAddOns.map((addon) => addon.name),
+      additionalGuests: additionalGuestNames,
+      privateTransferRequested,
       notes: combinedNotes || undefined,
       honeypot: company,
     });
@@ -237,6 +252,7 @@ export default function BookingModal({ booking, onClose }: Props) {
         : `Price: €${booking.basePrice}${isPerGroup ? "/group" : "/person"}`,
       addOnsText ? `Add-ons: ${addOnsText}` : "",
       privateTransferRequested ? "Extra service: Private transfer requested (to be quoted separately)" : "",
+      additionalGuestNames.length > 0 ? `Additional guests: ${additionalGuestNames.join(", ")}` : "",
       `Total: €${total}`,
       ``,
       name ? `Name: ${name}` : "",
@@ -843,13 +859,51 @@ export default function BookingModal({ booking, onClose }: Props) {
                             </button>
                           </label>
                           <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
-                            Shared shuttle / meeting-point coordination is available on this route when scheduled.
+                            {booking.tourSlug === "bosphorus-dinner-cruise"
+                              ? "Dinner cruise reservations already use the central hotel shuttle flow when the route includes it."
+                              : "Sunset cruise guests can request hotel pickup and drop-off as an extra service."}
                           </p>
                           {showTransferInfo && (
                             <div className="mt-2 rounded-xl border border-[var(--brand-primary)]/15 bg-white px-3 py-2 text-xs leading-relaxed text-[var(--body-text)]">
-                              Shared shuttle service may already be used for the operational route. If you want a private
-                              transfer instead, tick this option and our team will price it separately after contact.
+                              {booking.tourSlug === "bosphorus-dinner-cruise"
+                                ? "The shared dinner cruise already works with the operational shuttle flow for central areas. If you want a private transfer instead, tick this option and our team will quote it separately."
+                                : "The sunset cruise does not include a free hotel shuttle by default. If you want hotel pickup, drop-off, or a private transfer, tick this option and our team will quote it separately."}
                             </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {booking.guests > 1 && (
+                    <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                      <div className="flex items-start gap-3">
+                        <input
+                          id="additional-guests-toggle"
+                          type="checkbox"
+                          checked={showAdditionalGuests}
+                          onChange={(event) => setShowAdditionalGuests(event.target.checked)}
+                          className="mt-1 h-4 w-4 rounded border-[var(--line)] text-[var(--brand-primary)] focus:ring-[var(--brand-primary)]"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <label
+                            htmlFor="additional-guests-toggle"
+                            className="text-sm font-semibold text-[var(--heading)]"
+                          >
+                            Add other passenger names
+                          </label>
+                          <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
+                            Optional. You can add the names of the other {booking.guests - 1} guest
+                            {booking.guests - 1 > 1 ? "s" : ""} for smoother follow-up.
+                          </p>
+                          {showAdditionalGuests && (
+                            <textarea
+                              value={additionalGuestsText}
+                              onChange={(event) => setAdditionalGuestsText(event.target.value)}
+                              rows={Math.min(5, Math.max(2, booking.guests - 1))}
+                              className="mt-3 w-full rounded-xl border-2 border-[var(--line)] px-4 py-3 text-sm outline-none transition-colors focus:border-[var(--brand-primary)]"
+                              placeholder={"One passenger per line\nJane Doe\nMichael Doe"}
+                            />
                           )}
                         </div>
                       </div>
