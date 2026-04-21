@@ -28,6 +28,13 @@ const statusLabels: Record<string, string> = {
   completed: "Completed",
 };
 
+const statusTones: Record<string, string> = {
+  pending: "border-amber-200 bg-amber-50 text-amber-900",
+  confirmed: "border-emerald-200 bg-emerald-50 text-emerald-800",
+  cancelled: "border-red-200 bg-red-50 text-red-800",
+  completed: "border-blue-200 bg-blue-50 text-blue-800",
+};
+
 export default async function ReservationVoucherPage({
   params,
 }: {
@@ -97,7 +104,7 @@ export default async function ReservationVoucherPage({
             {tour && (
               <Link
                 href={getTourPath(tour)}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-primary)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-primary)] px-5 py-2.5 text-sm font-semibold !text-white shadow-[0_14px_32px_rgba(255,78,80,0.24)] transition-all hover:brightness-110"
               >
                 Open experience page
                 <ExternalLink className="h-4 w-4" />
@@ -129,8 +136,12 @@ export default async function ReservationVoucherPage({
                 <div className="mt-2 text-2xl font-bold tracking-[0.08em]">
                   {reservation.reservationId}
                 </div>
-                <div className="mt-3 text-xs text-white/65">
-                  Status: {statusLabel}
+                <div className="mt-3">
+                  <span
+                    className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${statusTones[reservation.status] ?? "border-white/20 bg-white/10 text-white"}`}
+                  >
+                    {statusLabel}
+                  </span>
                 </div>
               </div>
             </div>

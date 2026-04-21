@@ -2,7 +2,12 @@ import Link from "next/link";
 import { adminLogoutAction } from "@/app/actions/admin";
 
 interface AdminShellProps {
-  currentPath: "/admin" | "/admin/reservations" | "/admin/operations";
+  currentPath:
+    | "/admin"
+    | "/admin/reservations"
+    | "/admin/operations"
+    | "/admin/calendar"
+    | "/admin/reports";
   title: string;
   description: string;
   children: React.ReactNode;
@@ -14,6 +19,8 @@ const navItems: Array<{
 }> = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/reservations", label: "Reservations" },
+  { href: "/admin/calendar", label: "Calendar" },
+  { href: "/admin/reports", label: "Reports" },
   { href: "/admin/operations", label: "Operations" },
 ];
 

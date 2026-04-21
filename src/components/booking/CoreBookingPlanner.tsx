@@ -58,11 +58,16 @@ function clampGuests(value: number): number {
   return Math.max(1, Math.min(MAX_BOOKING_GUESTS, value));
 }
 
+function extractClockTime(value: string): string | undefined {
+  return value.match(/\b\d{1,2}:\d{2}\b/)?.[0];
+}
+
 export default function CoreBookingPlanner({
   variant = "page",
   source = "direct",
 }: CoreBookingPlannerProps) {
   const router = useRouter();
+  const [isOpeningBooking, setIsOpeningBooking] = useState(false);
   const [selectedTourSlug, setSelectedTourSlug] = useState(coreTours[0]?.slug ?? "");
   const [packageSelectionByTour, setPackageSelectionByTour] = useState<Record<string, string>>(
     () =>
@@ -89,11 +94,12 @@ export default function CoreBookingPlanner({
 
   const bookingPath = getTourPath(selectedTour);
   const selectedOriginalPrice =
-    selectedPackage?.price === selectedTour.priceEur
+    selectedPackage?.originalPrice ??
+    (selectedPackage?.price === selectedTour.priceEur
       ? selectedTour.originalPriceEur
-      : undefined;
+      : undefined);
 
-  const handleContinue = () => {
+  const buildFallbackParams = () => {
     const params = new URLSearchParams();
     if (selectedPackage?.name) {
       params.set("package", selectedPackage.name);
@@ -104,7 +110,46 @@ export default function CoreBookingPlanner({
     params.set("guests", String(guests));
     params.set("source", source);
 
-    router.push(`${bookingPath}?${params.toString()}#booking`);
+    return params;
+  };
+
+  const handleContinue = async () => {
+    if (isOpeningBooking) {
+      return;
+    }
+
+    setIsOpeningBooking(true);
+
+    try {
+      const response = await fetch("/api/booking-prefill", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          tourSlug: selectedTour.slug,
+          packageName: selectedPackage?.name,
+          date: date ? format(date, "yyyy-MM-dd") : undefined,
+          guests,
+          time: extractClockTime(selectedTour.departureTime),
+          source,
+        }),
+      });
+
+      if (response.ok) {
+        const result = (await response.json()) as { success?: boolean; id?: string };
+        if (result.success && result.id) {
+          router.push(`${bookingPath}?prefill=${encodeURIComponent(result.id)}#booking`);
+          return;
+        }
+      }
+    } catch (error) {
+      console.error("Failed to create prefill id:", error);
+    } finally {
+      setIsOpeningBooking(false);
+    }
+
+    router.push(`${bookingPath}?${buildFallbackParams().toString()}#booking`);
   };
 
   const heroVariant = variant === "hero";
@@ -181,7 +226,7 @@ export default function CoreBookingPlanner({
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <p className="text-sm font-semibold text-[var(--heading)]">
+                  <p className="text-sm font-semibold text-[var(--heading)]">
                         {tour.nameEn}
                       </p>
                       <p className="mt-1 text-xs text-[var(--text-muted)]">
@@ -360,12 +405,13 @@ export default function CoreBookingPlanner({
           <button
             type="button"
             onClick={handleContinue}
+            disabled={isOpeningBooking}
             className={cn(
-              "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl font-semibold text-white transition-all hover:brightness-110",
+              "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl font-semibold text-white transition-all hover:brightness-110 disabled:cursor-wait disabled:opacity-80",
               heroVariant ? "bg-[var(--brand-primary)]" : "bg-[var(--brand-primary)] shadow-sm"
             )}
           >
-            Continue to booking page
+            {isOpeningBooking ? "Opening booking..." : "Continue to booking page"}
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>

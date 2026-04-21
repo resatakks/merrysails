@@ -31,8 +31,8 @@ export default function HeroSection() {
     <section className="relative overflow-hidden">
       {/* Background */}
       <Image
-        src="/images/tours/bosphorus-sunset-cruise/03.jpg"
-        alt="Istanbul Bosphorus"
+        src="/images/sunset3.jpeg"
+        alt="Bosphorus sunset cruise in Istanbul"
         fill
         className="object-cover"
         priority
@@ -41,19 +41,19 @@ export default function HeroSection() {
       <div className="hero-overlay absolute inset-0" />
 
       {/* Content */}
-      <div className="relative z-10 container-main flex min-h-[100svh] w-full items-end pt-32 pb-8 sm:min-h-[82vh] sm:pt-28 sm:pb-12 md:min-h-[84vh] md:pt-36 md:pb-18">
+      <div className="relative z-10 container-main flex min-h-[100svh] w-full items-center pt-28 pb-16 sm:min-h-[86vh] sm:pt-28 sm:pb-16 md:min-h-[88vh] md:pt-32 md:pb-18">
         <div className="w-full max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="max-w-3xl"
+            className="max-w-3xl md:translate-y-5"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="max-w-4xl text-[2.1rem] font-bold leading-[1.03] text-white sm:text-5xl md:text-6xl"
+              className="max-w-4xl text-[2.1rem] font-bold leading-[1.03] text-white sm:text-5xl md:text-[4.2rem]"
             >
               Bosphorus Dinner Cruise, Sunset Cruise &amp; Yacht Charter
               <span className="text-[var(--brand-gold)]"> in Istanbul</span>
@@ -72,23 +72,23 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-5 grid gap-2.5 md:max-w-4xl md:grid-cols-3 md:gap-3"
+              className="mt-6 grid gap-3 md:max-w-4xl md:grid-cols-3"
             >
               {heroProducts.map((product) => (
                 <Link
                   key={product.href}
                   href={product.href}
-                  className="group rounded-[1.35rem] border border-white/16 bg-[linear-gradient(135deg,rgba(12,22,54,0.48),rgba(12,22,54,0.28))] px-4 py-3 text-white shadow-[0_18px_48px_rgba(11,21,58,0.14)] backdrop-blur-[2px] transition-all hover:-translate-y-0.5 hover:border-white/28 hover:bg-[linear-gradient(135deg,rgba(12,22,54,0.64),rgba(12,22,54,0.34))]"
+                  className="group rounded-[1.45rem] border border-white/45 bg-white/82 px-4 py-3.5 text-[var(--heading)] shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/90"
                 >
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/62">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                     {product.meta}
                   </p>
-                  <h2 className="mt-1.5 text-base font-semibold leading-snug text-white">
+                  <h2 className="mt-1.5 text-base font-semibold leading-snug text-[var(--heading)]">
                     {product.title}
                   </h2>
                   <div className="mt-2.5 flex items-center justify-between gap-3">
                     <p className="text-sm font-bold text-[var(--brand-gold)]">{product.price}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-white transition-colors group-hover:text-white">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] transition-colors group-hover:text-[var(--brand-primary-hover)]">
                       Open page
                       <ArrowRight className="h-4 w-4" />
                     </span>
@@ -109,7 +109,7 @@ export default function HeroSection() {
               </Link>
               <Link
                 href="/cruises"
-                className="hidden items-center gap-2 rounded-full border border-white/25 bg-white/92 px-8 py-3.5 font-semibold text-[var(--heading)] transition-all hover:bg-white sm:inline-flex"
+                className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/90 px-8 py-3.5 font-semibold text-[var(--heading)] transition-all hover:bg-white sm:inline-flex"
               >
                 Explore All Services
               </Link>

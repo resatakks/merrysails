@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
-import { parseBookingPrefill } from "@/lib/booking-prefill";
+import { resolveBookingPrefill } from "@/lib/booking-prefill";
 
 export const revalidate = 3600;
 
@@ -221,7 +221,7 @@ export default async function YachtCharterIstanbulPage({
           <TourDetailClient
             tour={yachtTour}
             related={relatedTours}
-            bookingPrefill={parseBookingPrefill(resolvedSearchParams)}
+            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
 
           <section className="mt-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">

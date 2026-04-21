@@ -7,7 +7,7 @@ export interface FAQItem {
 export const faqItems: FAQItem[] = [
   {
     question: "Turlar hangi saatlerde kalkıyor?",
-    answer: "Gün batımı turlarımız mevsime göre 17:00 veya 18:00'de, yemekli akşam turları 20:00'de, sabah turları 09:00'da, keşif turları ise 10:00, 14:00 ve 16:00'da kalkmaktadır. Özel yat kiralama ve etkinliklerde saat tamamen size bağlıdır.",
+    answer: "Paylaşımlı Bosphorus Sunset Cruise için görünen kalkış saati 18:00, Bosphorus Dinner Cruise için 20:30'dur. Sabah ve keşif turlarında saatler ürün tipine göre değişebilir. Özel yat kiralama ve etkinliklerde saat tamamen size bağlıdır.",
     category: "Genel",
   },
   {

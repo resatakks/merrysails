@@ -80,3 +80,15 @@ model TourOperationDay {
   @@index([date])
   @@index([tourSlug])
 }
+
+model BookingPrefill {
+  id        String   @id @default(cuid())
+  tourSlug  String
+  payload   Json
+  source    String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([expiresAt])
+  @@index([tourSlug, createdAt])
+}

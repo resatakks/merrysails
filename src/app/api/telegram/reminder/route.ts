@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { sendEmail } from "@/lib/email";
+import { getNotificationInbox, isEmailConfigured, sendEmail } from "@/lib/email";
 import { reservationReminderEmail } from "@/lib/email-templates/reservation-reminder";
 import { getTourBySlug } from "@/data/tours";
 import { notifyReminder } from "@/lib/telegram/notifications";
@@ -48,6 +48,7 @@ export async function GET(req: NextRequest) {
 
     let telegramSent = 0;
     let emailSent = 0;
+    const notificationInbox = getNotificationInbox();
 
     for (const r of toRemind) {
       try {
@@ -57,14 +58,14 @@ export async function GET(req: NextRequest) {
         console.error("[MERRYSAILS-REMINDER] Telegram reminder failed:", telegramError);
       }
 
-      if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD && r.customerEmail) {
+      if (isEmailConfigured() && r.customerEmail) {
         try {
           const tour = getTourBySlug(r.tourSlug);
           const reservationMeta = parseReservationNotes(r.notes);
 
           await sendEmail({
             to: r.customerEmail,
-            cc: process.env.GMAIL_USER,
+            cc: notificationInbox ?? undefined,
             subject: `Reminder: ${r.tourName} starts soon | ${r.reservationId} | MerrySails`,
             html: reservationReminderEmail({
               reservationId: r.reservationId,

@@ -1,6 +1,7 @@
 export interface Package {
   name: string;
   price: number;
+  originalPrice?: number;
   description: string;
   features: string[];
   addOns?: AddOn[];
@@ -45,6 +46,7 @@ export interface Tour {
   badgeColor: string;
   image: string;
   gallery: string[];
+  videoSrc?: string;
   route: string;
   departureTime: string;
   departurePoint: string;
@@ -152,6 +154,7 @@ export const tours: Tour[] = [
       {
         name: "Without Wine",
         price: 34,
+        originalPrice: 50,
         description: "Shared 2-hour golden-hour cruise with light hospitality and no wine service",
         features: [
           "2-hour sunset cruise",
@@ -165,6 +168,7 @@ export const tours: Tour[] = [
       {
         name: "Bosphorus Sunset Cruise with Wine",
         price: 40,
+        originalPrice: 56,
         description: "Shared sunset departure with wine service on the same 2-hour Bosphorus route",
         features: [
           "2-hour sunset cruise",
@@ -193,18 +197,19 @@ export const tours: Tour[] = [
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Rumeli Fortress", "Bosphorus Bridge"],
     badge: "",
     badgeColor: "",
-    image: "/images/tours/bosphorus-sunset-cruise/01.webp",
+    image: "/images/sunset5.jpeg",
     gallery: [
-      "/images/tours/bosphorus-sunset-cruise/01.webp",
-      "/images/tours/bosphorus-sunset-cruise/02.jpg",
-      "/images/tours/bosphorus-sunset-cruise/03.jpg",
-      "/images/tours/bosphorus-sunset-cruise/04.jpg",
-      "/images/tours/bosphorus-sunset-cruise/05.jpg",
-      "/images/tours/bosphorus-sunset-cruise/06.jpg",
+      "/images/sunset5.jpeg",
+      "/images/sunset1.jpeg",
+      "/images/sunset2.jpeg",
+      "/images/sunset3.jpeg",
+      "/images/sunset4.jpeg",
+      "/images/sunset6.jpeg",
     ],
-    route: "Central Bosphorus boarding flow → Bosphorus landmarks → Rumeli Fortress zone → return",
-    departureTime: "Around 19:00 in summer and around 16:00 in winter",
-    departurePoint: "Central Bosphorus meeting point confirmed after booking",
+    videoSrc: "/images/sunsetvideo.mp4",
+    route: "Karakoy meeting flow near Arap Cami / Uskufcular Street → Bosphorus landmarks → Rumeli Fortress zone → return",
+    departureTime: "18:00",
+    departurePoint: "Karakoy meeting point near Arap Cami / Uskufcular Street, with the final boarding pin shared after booking",
     category: "cruise",
     rating: 4.93,
     reviewCount: 621,
@@ -218,7 +223,7 @@ export const tours: Tour[] = [
     importantNotes: [
       "The live public sunset ladder currently shows EUR 34 for Without Wine and EUR 40 for the wine-served option",
       "The shared sunset product is operated as a small-group luxury-yacht format and the final boarding count can vary by departure",
-      "The sunset cruise uses a central Bosphorus meeting point confirmed after booking",
+      "The sunset cruise uses the Karakoy meeting flow near Arap Cami / Uskufcular Street, with the final boarding pin confirmed after booking",
       "The same sunset route can be booked with or without wine service depending on the selected option",
       "Live guiding and multilingual audio support are part of the sunset experience",
       "Hotel pickup and drop-off are available as an extra service on the shared sunset cruise",
@@ -229,18 +234,18 @@ export const tours: Tour[] = [
     bookingMode: "book",
     priceMode: "perPerson",
     itinerary: [
-      { time: "TBC", title: "Boarding Before Sunset", description: "Meet at the confirmed Kabatas-side point, board the shared yacht, and settle in before the light begins to turn." },
-      { time: "TBC", title: "Maiden's Tower & Dolmabahce", description: "The route starts with Istanbul's most photogenic southern Bosphorus landmarks while the guide shares historical context." },
-      { time: "TBC", title: "Ortakoy & First Bridge", description: "Cruise into the golden-hour stretch where Ortakoy Mosque and the first Bosphorus Bridge frame the skyline." },
-      { time: "TBC", title: "Rumeli Fortress at Golden Hour", description: "Reach the upper landmark zone as the sunset color peaks across the water and waterfront mansions." },
-      { time: "TBC", title: "Blue-Hour Return", description: "Sail back toward the city lights with drinks and snacks still being served on board." },
+      { time: "18:00", title: "Boarding Before Sunset", description: "Meet at the confirmed Bosphorus-side point, board the shared yacht, and settle in before departure." },
+      { time: "18:15", title: "Maiden's Tower & Dolmabahce", description: "The route starts with Istanbul's most photogenic southern Bosphorus landmarks while the guide shares historical context." },
+      { time: "18:35", title: "Ortakoy & First Bridge", description: "Cruise into the golden-hour stretch where Ortakoy Mosque and the first Bosphorus Bridge frame the skyline." },
+      { time: "19:00", title: "Rumeli Fortress at Golden Hour", description: "Reach the upper landmark zone as the sunset color peaks across the water and waterfront mansions." },
+      { time: "19:40", title: "Blue-Hour Return", description: "Sail back toward the city lights with drinks and snacks still being served on board." },
     ],
     faq: [
       { question: "How much is the Bosphorus sunset cruise?", answer: "The live public sunset ladder starts from EUR 34 for the Without Wine option, while the wine-served option is currently EUR 40 per guest." },
       { question: "How many sunset options are there?", answer: "The public sunset cruise is structured around two shared options on the same route: Without Wine and Bosphorus Sunset Cruise with Wine." },
       { question: "What is included in the sunset cruise?", answer: "Both sunset options include the 2-hour shared route, live guide support, 12-language audio guide access, tea, Turkish coffee, lemonade, water, nuts, chips, crackers, pretzels, and fruit service. The wine option adds 2 glasses of wine per guest." },
-      { question: "How long does the cruise last?", answer: "The sunset cruise lasts approximately 2 hours and is timed around the daily sunset window." },
-      { question: "Where does the sunset cruise depart from?", answer: "The public sunset cruise uses a central Bosphorus meeting point, and the final boarding instructions are shared after booking." },
+      { question: "How long does the cruise last?", answer: "The sunset cruise lasts approximately 2 hours and the public booking flow is shown as an 18:00 departure." },
+      { question: "Where does the sunset cruise depart from?", answer: "The public sunset cruise uses the Karakoy meeting flow near Arap Cami / Uskufcular Street, and the final boarding pin is shared after booking." },
       { question: "What happens if the weather is bad?", answer: "If sailing conditions become unsafe, the cruise can be moved to another departure or refunded according to the booking terms." },
     ],
   },
@@ -259,12 +264,13 @@ export const tours: Tour[] = [
       {
         name: "Silver Dinner Cruise - Soft Drinks",
         price: 30,
+        originalPrice: 40,
         description: "Entry shared dinner cruise with standard seating and unlimited soft drinks",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",
           "Standard seating with no table selection",
           "Welcome cocktail and 10 cold mezes",
-          "Fresh seasonal salad, fish/chicken/meatballs/vegetarian main-course choice, baklava and fruit",
+          "Fresh seasonal salad, hot starter, live dinner menu selection, baklava and fruit",
           "Unlimited soft drinks and tea included",
           "Hotel pickup and drop-off from central European-side areas",
           "Traditional Turkish shows and DJ",
@@ -273,12 +279,13 @@ export const tours: Tour[] = [
       {
         name: "Silver Dinner Cruise - Alcoholic",
         price: 45,
+        originalPrice: 60,
         description: "Shared dinner cruise with standard seating and local alcoholic service",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",
           "Standard seating with no table selection",
           "Welcome cocktail and 10 cold mezes",
-          "Fresh seasonal salad, main-course choice, baklava and fruit",
+          "Fresh seasonal salad, hot starter, live dinner menu selection, baklava and fruit",
           "2 glasses of local alcoholic drinks plus soft drinks and tea",
           "Imported drinks available with extra charge",
           "Hotel pickup and drop-off from central European-side areas",
@@ -288,12 +295,13 @@ export const tours: Tour[] = [
       {
         name: "Gold Dinner Cruise - Soft Drinks",
         price: 80,
+        originalPrice: 110,
         description: "Premium shared dinner cruise with guaranteed stage-close VIP table and unlimited soft drinks",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",
           "Guaranteed VIP table close to the stage",
-          "Welcome drink, Turkish appetizers, salads and hot starter",
-          "Wide dinner menu with chicken, beef, fish, falafel and vegetarian choices",
+          "Welcome drink, Turkish appetizers, seasonal salads and hot starter",
+          "Broader VIP dinner menu with chef-served main-course selection",
           "Baklava and fruit dessert service",
           "Unlimited soft drinks",
           "Hotel pickup and drop-off from central European-side areas",
@@ -303,12 +311,13 @@ export const tours: Tour[] = [
       {
         name: "Gold Dinner Cruise - Unlimited Alcohol",
         price: 90,
+        originalPrice: 120,
         description: "Premium shared dinner cruise with best stage-view VIP tables and unlimited local plus imported alcoholic drinks",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",
           "Best VIP tables close to the stage guaranteed",
           "Welcome drink, Turkish appetizers, mixed salads and hot starter",
-          "Free-choice dinner menu with meat, fish, chicken and vegetarian options",
+          "Best-available VIP dinner menu with live service selection",
           "Baklava and fruit dessert service",
           "Unlimited local and imported alcoholic drinks plus unlimited soft drinks",
           "Hotel pickup and drop-off from central European-side areas",
@@ -328,17 +337,35 @@ export const tours: Tour[] = [
     highlights: ["Silver and Gold package ladder", "Guaranteed VIP tables on Gold", "Dinner service", "Turkish night entertainment", "Hotel transfer from central areas"],
     badge: "Best Seller",
     badgeColor: "bg-[var(--brand-primary)] text-white",
-    image: "/images/tours/bosphorus-dinner-cruise/01.webp",
+    image: "/images/dinner-etkinlik-13.jpeg",
     gallery: [
-      "/images/tours/bosphorus-dinner-cruise/01.webp",
-      "/images/tours/bosphorus-dinner-cruise/02.webp",
-      "/images/tours/bosphorus-dinner-cruise/03.webp",
-      "/images/tours/bosphorus-dinner-cruise/04.webp",
-      "/images/tours/bosphorus-dinner-cruise/05.webp",
-      "/images/tours/bosphorus-dinner-cruise/06.webp",
+      "/images/dinner-etkinlik-13.jpeg",
+      "/images/dinner-etkinlik.jpeg",
+      "/images/dinner-etkinlik-2.jpeg",
+      "/images/dinner-etkinlik-3.jpeg",
+      "/images/dinner-etkinlik-4.jpeg",
+      "/images/dinner-etkinlik-5.jpeg",
+      "/images/dinnet-etkinlik-6.jpeg",
+      "/images/dinner-etkinlik-7.jpeg",
+      "/images/dinner-etkinlik-8.jpeg",
+      "/images/dinner-etkinlik-9.jpeg",
+      "/images/dinner-etkinlik-10.jpeg",
+      "/images/dinner-etkinlik-11.jpeg",
+      "/images/dinner-etkinlik-12.jpeg",
+      "/images/dinner-etkinlik-13.jpeg",
+      "/images/vip-menu.jpeg",
+      "/images/vip-menu-1.jpeg",
+      "/images/vip-menu-2.jpeg",
+      "/images/fix-vip-menu.jpeg",
+      "/images/fix-vip-menu-2.jpeg",
+      "/images/meze.jpeg",
+      "/images/meze-1.jpeg",
+      "/images/vip-meyve.jpeg",
+      "/images/balik-fix-vip.jpeg",
+      "/images/vegan-fix-vip.jpeg",
     ],
     route: "Kabatas departure → illuminated Bosphorus route → return to central pier",
-    departureTime: "20:30 evening departure",
+    departureTime: "20:30",
     departurePoint: "Kabatas Pier",
     category: "cruise",
     rating: 4.88,
@@ -392,10 +419,12 @@ export const tours: Tour[] = [
     duration: "2 hours (extendable)",
     capacity: "Yacht size is matched to package tier and group plan",
     priceEur: 280,
+    originalPriceEur: 360,
     packages: [
       {
         name: "Essential Basic Yacht Package",
         price: 280,
+        originalPrice: 340,
         description: "Entry private yacht charter for a standard 2-hour Bosphorus cruise",
         features: [
           "2-hour private Bosphorus yacht cruise for 2 guests",
@@ -409,6 +438,7 @@ export const tours: Tour[] = [
       {
         name: "Premium Luxury Yacht Package",
         price: 380,
+        originalPrice: 460,
         description: "Upgraded private luxury yacht option with more space and comfort",
         features: [
           "2-hour private luxury yacht cruise for 2 guests",
@@ -424,6 +454,7 @@ export const tours: Tour[] = [
       {
         name: "VIP Luxury Yacht Package",
         price: 680,
+        originalPrice: 820,
         description: "Top-tier private luxury yacht for guests who want the highest comfort level first",
         features: [
           "2-hour private luxury yacht cruise for 2 guests",

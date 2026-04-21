@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import HeroSection from "@/components/home/HeroSection";
 import TourGrid from "@/components/home/TourGrid";
 import FeaturedTour from "@/components/home/FeaturedTour";
@@ -169,18 +170,21 @@ const coreBookingPages = [
     eyebrow: "Golden hour",
     title: "Bosphorus Sunset Cruise",
     description: "Shared sunset sailing with clear pricing and date-led golden-hour bookings.",
+    image: "/images/sunset1.jpeg",
   },
   {
     href: "/istanbul-dinner-cruise",
     eyebrow: "Shared evening",
     title: "Bosphorus Dinner Cruise",
     description: "Main shared evening experience with dinner service, entertainment, and four package levels.",
+    image: "/images/dinner-etkinlik-2.jpeg",
   },
   {
     href: "/yacht-charter-istanbul",
     eyebrow: "Premium charter",
     title: "Yacht Charter Istanbul",
     description: "Private charter demand with yacht packages, add-ons, and higher-ticket booking intent.",
+    image: "/images/tours/yacht-charter-in-istanbul/02.jpeg",
   },
 ] as const;
 
@@ -229,10 +233,6 @@ export default function HomePage() {
       <HeroSection />
       <TourGrid />
 
-      <FeaturedTour tour={tours[0]} />
-      <FeaturedTour tour={tours[1]} reverse />
-      <FeaturedTour tour={tours[2]} />
-
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
@@ -246,19 +246,34 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
+                className="group overflow-hidden rounded-[1.8rem] border border-gray-200 bg-white transition-colors hover:border-[var(--brand-primary)]"
               >
-                <p className="text-sm font-semibold text-[var(--brand-primary)] mb-2">{item.eyebrow}</p>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
-                  See details →
-                </span>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1280px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-sm font-semibold text-[var(--brand-primary)] mb-2">{item.eyebrow}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
+                  <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
+                    See details →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
+
+      <FeaturedTour tour={tours[0]} />
+      <FeaturedTour tour={tours[1]} reverse />
+      <FeaturedTour tour={tours[2]} />
 
       <section className="py-12 bg-[var(--surface-alt)]">
         <div className="mx-auto max-w-6xl px-4">

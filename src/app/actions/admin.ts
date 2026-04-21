@@ -18,7 +18,7 @@ import {
   normalizeOperationDate,
 } from "@/lib/tour-operations";
 import { getTourBySlug } from "@/data/tours";
-import { sendEmail } from "@/lib/email";
+import { getNotificationInbox, sendEmail } from "@/lib/email";
 import { reservationCancelledEmail } from "@/lib/email-templates/reservation-cancelled";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
 import { parseReservationNotes } from "@/lib/reservation-meta";
@@ -123,6 +123,7 @@ export async function updateReservationStatusAdminAction(
     where: { reservationId },
     data: { status: nextStatus },
   });
+  const notificationInbox = getNotificationInbox();
 
   const formattedDate = format(new Date(existing.date), "MMMM d, yyyy");
   const reservationMeta = parseReservationNotes(existing.notes);
@@ -131,7 +132,7 @@ export async function updateReservationStatusAdminAction(
     try {
       await sendEmail({
         to: existing.customerEmail,
-        cc: process.env.GMAIL_USER,
+        cc: notificationInbox ?? undefined,
         subject: `Reservation Confirmed — ${reservationId} | MerrySails`,
         html: reservationConfirmationEmail({
           reservationId: existing.reservationId,
@@ -160,7 +161,7 @@ export async function updateReservationStatusAdminAction(
     try {
       await sendEmail({
         to: existing.customerEmail,
-        cc: process.env.GMAIL_USER,
+        cc: notificationInbox ?? undefined,
         subject: `Reservation Cancelled — ${reservationId} | MerrySails`,
         html: reservationCancelledEmail({
           reservationId: existing.reservationId,

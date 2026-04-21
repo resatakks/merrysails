@@ -82,11 +82,12 @@ function getDepartureLabel(date: string | Date): string {
   const targetUtc = Date.UTC(targetYear, targetMonth - 1, targetDay);
   const todayUtc = Date.UTC(todayYear, todayMonth - 1, todayDay);
   const dayDiff = Math.round((targetUtc - todayUtc) / 86400000);
+  const absoluteDate = formatDate(date);
 
-  if (dayDiff === 0) return "Bugün";
-  if (dayDiff === 1) return "Yarın";
-  if (dayDiff > 1) return `${dayDiff} gün kaldı`;
-  return `${Math.abs(dayDiff)} gün önce`;
+  if (dayDiff === 0) return `Bugun · ${absoluteDate}`;
+  if (dayDiff === 1) return `Yarin · ${absoluteDate}`;
+  if (dayDiff > 1) return `${dayDiff} gun kaldi · ${absoluteDate}`;
+  return `${Math.abs(dayDiff)} gun once · ${absoluteDate}`;
 }
 
 // ─── Full reservation detail ──────────────────────────────

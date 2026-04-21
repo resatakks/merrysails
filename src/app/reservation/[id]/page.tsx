@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const statusConfig: Record<string, { color: string; label: string; icon: string }> = {
-  pending: { color: "bg-yellow-100 text-yellow-800 border-yellow-200", label: "Pending Confirmation", icon: "..." },
-  confirmed: { color: "bg-green-100 text-green-800 border-green-200", label: "Confirmed", icon: "" },
-  cancelled: { color: "bg-red-100 text-red-800 border-red-200", label: "Cancelled", icon: "" },
-  completed: { color: "bg-blue-100 text-blue-800 border-blue-200", label: "Completed", icon: "" },
+  pending: { color: "bg-amber-50 text-amber-900 border-amber-200", label: "Pending Confirmation", icon: "•••" },
+  confirmed: { color: "bg-emerald-50 text-emerald-800 border-emerald-200", label: "Confirmed", icon: "✓" },
+  cancelled: { color: "bg-red-50 text-red-800 border-red-200", label: "Cancelled", icon: "×" },
+  completed: { color: "bg-blue-50 text-blue-800 border-blue-200", label: "Completed", icon: "✓" },
 };
 
 export default async function ReservationDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -204,7 +204,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
 
           <Link
             href={`/reservation/${r.reservationId}/voucher`}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--heading)] text-white font-semibold hover:brightness-110 transition-all text-sm"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--brand-primary)] !text-white font-semibold shadow-[0_14px_32px_rgba(255,78,80,0.28)] hover:brightness-110 transition-all text-sm"
           >
             <FileText className="w-4 h-4" />
             Open Travel Voucher

@@ -31,6 +31,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { PriceMode } from "@/data/tours";
 import SalePrice from "@/components/ui/SalePrice";
 import { MAX_BOOKING_GUESTS } from "@/lib/constants";
+import {
+  getSameDayBookingClosedMessage,
+  isSameDayBookingClosed,
+} from "@/lib/booking-cutoffs";
 
 interface Props {
   tourSlug: string;
@@ -128,6 +132,9 @@ export default function BookingCalendar({
     : undefined;
   const totalSavings = originalTotal ? originalTotal - total : 0;
   const timeOptions = parseTimeOptions(activeDepartureTime);
+  const sameDayClosedForSelectedDate = selectedDate
+    ? isSameDayBookingClosed(tourSlug, selectedDate)
+    : false;
   const bookingLabel = isPerGroup
     ? "Request now, confirm with operations"
     : "Reserve now, pay onboard";
@@ -276,7 +283,8 @@ export default function BookingCalendar({
             const dayKey = format(day, "yyyy-MM-dd");
             const operation = operationsByDate[dayKey];
             const isSoldOut = operation?.isSoldOut ?? false;
-            const isDisabled = isPast || isSoldOut;
+            const isCutoffClosed = isSameDayBookingClosed(tourSlug, day);
+            const isDisabled = isPast || isSoldOut || isCutoffClosed;
             const isSelected =
               selectedDate && day.getTime() === selectedDate.getTime();
             const isTodayDate = isToday(day);
@@ -320,6 +328,10 @@ export default function BookingCalendar({
                 {isSoldOut ? (
                   <div className="text-[9px] font-semibold text-gray-400">
                     Sold Out
+                  </div>
+                ) : isCutoffClosed ? (
+                  <div className="text-[9px] font-semibold text-gray-400">
+                    Closed
                   </div>
                 ) : operation?.departureTimeOverride ? (
                   <div
@@ -425,6 +437,12 @@ export default function BookingCalendar({
               {selectedOperation?.note && (
                 <div className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-800">
                   {selectedOperation.note}
+                </div>
+              )}
+
+              {sameDayClosedForSelectedDate && (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+                  {getSameDayBookingClosedMessage(tourSlug)}
                 </div>
               )}
 
@@ -545,11 +563,16 @@ export default function BookingCalendar({
               {/* Book button */}
               <motion.button
                 onClick={handleBookNow}
-                disabled={timeOptions.length > 1 && !normalizedSelectedTime}
+                disabled={
+                  sameDayClosedForSelectedDate ||
+                  (timeOptions.length > 1 && !normalizedSelectedTime)
+                }
                 className="btn-cta w-full !py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 whileTap={{ scale: 0.98 }}
               >
-                {timeOptions.length > 1 && !normalizedSelectedTime
+                {sameDayClosedForSelectedDate
+                  ? "Same-Day Booking Closed"
+                  : timeOptions.length > 1 && !normalizedSelectedTime
                   ? "Select a Departure Time"
                   : "Continue to booking"}
               </motion.button>

@@ -232,7 +232,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       setModalState("success");
       setTimeout(() => {
         router.push(`/reservation/${result.reservationId}`);
-      }, 4000);
+      }, 700);
     } else {
       setErrorMessage(result.error || "Something went wrong");
       setModalState("error");

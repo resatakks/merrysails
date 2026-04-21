@@ -1,6 +1,22 @@
 import Link from "next/link";
-import { Anchor, Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
-import { ADDRESS, EMAIL, PHONE_DISPLAY } from "@/lib/constants";
+import {
+  Anchor,
+  Phone,
+  Mail,
+  MapPin,
+  Instagram,
+  Facebook,
+  Youtube,
+  ShieldCheck,
+} from "lucide-react";
+import {
+  ADDRESS,
+  EMAIL,
+  PHONE_DISPLAY,
+  TURSAB_AGENCY_NAME,
+  TURSAB_LEGAL_NAME,
+  TURSAB_LICENSE_NUMBER,
+} from "@/lib/constants";
 
 const coreLinks = [
   { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
@@ -44,7 +60,7 @@ const guideLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[var(--brand-dark)] text-white/90 pb-28 lg:pb-10">
+    <footer className="mt-0 bg-[var(--brand-dark)] text-white/90 pb-28 lg:pb-10">
       <div className="container-main pt-16 pb-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
           <div>
@@ -104,6 +120,31 @@ export default function Footer() {
               <div className="flex items-start gap-2 text-sm text-white/60">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                 {ADDRESS}
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#fff1f2] text-[#dc2626]">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-gold)]">
+                    TURSAB Licensed
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-white">
+                    {TURSAB_AGENCY_NAME}
+                  </p>
+                  <p className="mt-1 text-xs leading-relaxed text-white/65">
+                    Belge No {TURSAB_LICENSE_NUMBER} · {TURSAB_LEGAL_NAME}
+                  </p>
+                  <Link
+                    href="/tursab"
+                    className="mt-3 inline-flex text-xs font-semibold text-[var(--brand-gold)] transition-colors hover:text-white"
+                  >
+                    View license details
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -202,7 +243,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 md:flex-row">
           <p className="text-sm text-white/70">
-            © 2026 MerrySails — Merry Tourism. TURSAB licensed. All rights reserved.
+            © 2026 MerrySails — Merry Tourism. TURSAB license {TURSAB_LICENSE_NUMBER}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="text-sm text-white/70 transition-colors hover:text-white">

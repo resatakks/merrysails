@@ -6,6 +6,21 @@ import { requireAdminSession } from "@/lib/admin-auth";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { AdminStatusButtons } from "@/components/admin/AdminStatusButtons";
 
+function getStatusBadgeClass(status: string): string {
+  switch (status) {
+    case "pending":
+      return "border-amber-200 bg-amber-50 text-amber-800";
+    case "confirmed":
+      return "border-emerald-200 bg-emerald-50 text-emerald-800";
+    case "completed":
+      return "border-sky-200 bg-sky-50 text-sky-800";
+    case "cancelled":
+      return "border-rose-200 bg-rose-50 text-rose-800";
+    default:
+      return "border-[var(--line)] bg-[var(--surface-alt)] text-[var(--heading)]";
+  }
+}
+
 export const metadata: Metadata = {
   title: "Admin Reservations",
   robots: { index: false, follow: false },
@@ -148,7 +163,11 @@ export default async function AdminReservationsPage({
                     <div className="text-xs font-semibold uppercase tracking-[0.16em]">
                       Status
                     </div>
-                    <div className="mt-1 font-semibold text-[var(--heading)]">
+                    <div
+                      className={`mt-2 inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${getStatusBadgeClass(
+                        reservation.status
+                      )}`}
+                    >
                       {reservation.status}
                     </div>
                   </div>

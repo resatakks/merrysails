@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import MobileBookingBar from "@/components/layout/MobileBookingBar";
-import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
 import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
 import "./globals.css";
@@ -264,11 +261,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <ToastProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <MobileBookingBar />
-          <WhatsAppButton />
+          <SiteChrome>{children}</SiteChrome>
         </ToastProvider>
       </body>
     </html>

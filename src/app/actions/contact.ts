@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/db";
-import { sendEmail } from "@/lib/email";
+import { getNotificationInbox, sendEmail } from "@/lib/email";
 import { contactNotificationEmail } from "@/lib/email-templates/contact-notification";
 import { consumeRateLimit } from "@/lib/rate-limit";
 
@@ -57,9 +57,11 @@ export async function submitContactForm(input: ContactFormInput) {
 
     // Send notification email
     try {
-      if (process.env.GMAIL_USER) {
+      const notificationInbox = getNotificationInbox();
+
+      if (notificationInbox) {
         await sendEmail({
-          to: process.env.GMAIL_USER,
+          to: notificationInbox,
           subject: `📩 Contact Form: ${subject}`,
           html: contactNotificationEmail({ name, email, subject, message }),
         });

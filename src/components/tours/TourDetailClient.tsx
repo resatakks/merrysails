@@ -154,8 +154,10 @@ export default function TourDetailClient({
   const basePrice = tour.priceEur;
   const effectivePrice = selectedPackage?.price ?? basePrice;
   const effectiveOriginalPrice =
-    effectivePrice === basePrice ? tour.originalPriceEur : undefined;
+    selectedPackage?.originalPrice ??
+    (effectivePrice === basePrice ? tour.originalPriceEur : undefined);
   const selectedOptionLabel = hasPackages ? "Selected package" : "Current fare";
+  const hasVideoPreview = Boolean(tour.videoSrc);
 
   return (
     <>
@@ -247,6 +249,56 @@ export default function TourDetailClient({
           </div>
         </div>
       </div>
+
+      {hasVideoPreview ? (
+        <div className="mb-8 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm">
+          <div className="grid gap-0 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="relative aspect-video bg-[#071022]">
+              <video
+                className="h-full w-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                poster={tour.image}
+              >
+                <source src={tour.videoSrc} type="video/mp4" />
+              </video>
+            </div>
+
+            <div className="flex flex-col justify-center p-6 md:p-7">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-primary)]">
+                On-board preview
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-[var(--heading)]">
+                See the live sunset atmosphere before you book
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
+                This short onboard video shows the actual sunset mood, yacht feel,
+                and golden-hour light of the shared Bosphorus departure.
+              </p>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[1.35rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                    Departure
+                  </div>
+                  <div className="mt-2 text-base font-semibold text-[var(--heading)]">
+                    {tour.departureTime} shared sunset sailing
+                  </div>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                    Experience type
+                  </div>
+                  <div className="mt-2 text-base font-semibold text-[var(--heading)]">
+                    Small-group luxury yacht route
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main content */}
@@ -388,11 +440,16 @@ export default function TourDetailClient({
                               <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
                               <p className="text-sm text-[var(--text-muted)] mb-3">{pkg.description}</p>
                               {showPricing ? (
-                                <div className="mb-4 text-2xl font-bold text-[var(--heading)]">
-                                  &euro;{pkg.price}
-                                  <span className="ml-2 text-sm font-medium text-[var(--text-muted)]">
-                                    {priceSuffix}
-                                  </span>
+                                <div className="mb-4">
+                                  <SalePrice
+                                    price={pkg.price}
+                                    originalPrice={pkg.originalPrice}
+                                    suffix={priceSuffix}
+                                    size="md"
+                                    showBadge={Boolean(pkg.originalPrice)}
+                                    showMeta={Boolean(pkg.originalPrice)}
+                                    metaText="Current direct booking fare"
+                                  />
                                 </div>
                               ) : (
                                 <div className="mb-4 text-sm font-semibold text-[var(--brand-primary)]">

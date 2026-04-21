@@ -118,7 +118,7 @@ export default async function ReservationInvoicePage({
             </Link>
             <Link
               href={`/reservation/${reservation.reservationId}/voucher`}
-              className="inline-flex items-center justify-center rounded-full bg-[var(--heading)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 py-2.5 text-sm font-semibold !text-white shadow-[0_14px_32px_rgba(255,78,80,0.24)] transition-all hover:brightness-110"
             >
               Open voucher
             </Link>

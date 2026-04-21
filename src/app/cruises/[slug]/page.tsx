@@ -8,7 +8,7 @@ import {
   tours,
 } from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
-import { parseBookingPrefill } from "@/lib/booking-prefill";
+import { resolveBookingPrefill } from "@/lib/booking-prefill";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -474,7 +474,7 @@ export default async function TourDetailPage({
           <TourDetailClient
             tour={tour}
             related={related}
-            bookingPrefill={parseBookingPrefill(resolvedSearchParams)}
+            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
         </div>
       </div>
