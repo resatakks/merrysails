@@ -31,10 +31,10 @@ export default function HeroSection() {
     <section className="relative overflow-hidden">
       {/* Background */}
       <Image
-        src="/images/sunset3.jpeg"
+        src="/images/sunset5.jpeg"
         alt="Bosphorus sunset cruise in Istanbul"
         fill
-        className="object-cover"
+        className="object-cover object-center"
         priority
         sizes="100vw"
       />
@@ -138,8 +138,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--surface-alt)] to-transparent" />
     </section>
   );
 }
