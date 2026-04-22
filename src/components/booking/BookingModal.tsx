@@ -28,6 +28,8 @@ import "react-international-phone/style.css";
 import { motion } from "framer-motion";
 import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
+import { trackPurchase, trackWhatsAppClick } from "@/lib/analytics";
+import { hasBookingAbandonmentContact } from "@/lib/booking-abandonment";
 import { PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 
 interface BookingDetails {
@@ -118,6 +120,29 @@ export default function BookingModal({ booking, onClose }: Props) {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const phoneFieldRef = useRef<HTMLDivElement>(null);
+  const abandonmentSentRef = useRef(false);
+  const formSubmittedRef = useRef(false);
+  const lastAbandonmentAttemptRef = useRef(0);
+  const latestAbandonmentPayloadRef = useRef({
+    tourSlug: "",
+    tourName: "",
+    date: "",
+    time: "",
+    guests: 1,
+    totalPrice: 0,
+    currency: "EUR",
+    priceMode: undefined as PriceMode | undefined,
+    packageName: "",
+    addOns: [] as string[],
+    departurePoint: "",
+    customerName: "",
+    customerEmail: "",
+    customerPhone: "",
+    customerMessage: "",
+    privateTransferRequested: false,
+    additionalGuests: [] as string[],
+    fieldsCompleted: [] as string[],
+  });
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -175,6 +200,55 @@ export default function BookingModal({ booking, onClose }: Props) {
       ? "object-cover object-center"
       : "object-cover object-center";
 
+  useEffect(() => {
+    latestAbandonmentPayloadRef.current = {
+      tourSlug: booking.tourSlug,
+      tourName: booking.tourName,
+      date: booking.date,
+      time: booking.time,
+      guests: booking.guests,
+      totalPrice: total,
+      currency: "EUR",
+      priceMode: booking.priceMode,
+      packageName: booking.selectedPackage?.name ?? "",
+      addOns: booking.selectedAddOns.map((addon) => addon.name),
+      departurePoint: booking.departurePoint ?? "",
+      customerName: name.trim(),
+      customerEmail: email.trim(),
+      customerPhone: phone.trim(),
+      customerMessage: message.trim(),
+      privateTransferRequested,
+      additionalGuests: additionalGuestNames,
+      fieldsCompleted: [
+        name.trim() ? "name" : "",
+        email.trim() ? "email" : "",
+        phone.replace(/\D/g, "").length >= 7 ? "phone" : "",
+        message.trim() ? "message" : "",
+        booking.selectedPackage?.name ? "package" : "",
+        booking.selectedAddOns.length > 0 ? "add-ons" : "",
+        additionalGuestNames.length > 0 ? "additional-guests" : "",
+        privateTransferRequested ? "private-transfer" : "",
+      ].filter(Boolean),
+    };
+  }, [
+    additionalGuestNames,
+    booking.date,
+    booking.departurePoint,
+    booking.guests,
+    booking.priceMode,
+    booking.selectedAddOns,
+    booking.selectedPackage?.name,
+    booking.time,
+    booking.tourName,
+    booking.tourSlug,
+    email,
+    message,
+    name,
+    phone,
+    privateTransferRequested,
+    total,
+  ]);
+
   const focusFirstInvalidField = () => {
     setSubmitAttempted(true);
     setTouchedName(true);
@@ -214,6 +288,7 @@ export default function BookingModal({ booking, onClose }: Props) {
     }
 
     setValidationMessage("");
+    formSubmittedRef.current = true;
     setModalState("loading");
     const combinedNotes = [
       message.trim(),
@@ -242,8 +317,25 @@ export default function BookingModal({ booking, onClose }: Props) {
     });
 
     if (result.success && "reservationId" in result && result.reservationId) {
+      const finalTotal = "totalPrice" in result ? result.totalPrice ?? total : total;
+
+      trackPurchase({
+        addOns:
+          "addOns" in result
+            ? result.addOns
+            : booking.selectedAddOns.map((addon) => addon.name),
+        guests: booking.guests,
+        packageName:
+          ("packageName" in result ? result.packageName : undefined) ??
+          booking.selectedPackage?.name,
+        tourName: booking.tourName,
+        tourSlug: booking.tourSlug,
+        transactionId: result.reservationId,
+        value: finalTotal,
+      });
+
       setReservationId(result.reservationId);
-      setConfirmedTotal("totalPrice" in result ? result.totalPrice ?? total : total);
+      setConfirmedTotal(finalTotal);
       setModalState("success");
       setTimeout(() => {
         router.push(`/reservation/${result.reservationId}`);
@@ -255,6 +347,11 @@ export default function BookingModal({ booking, onClose }: Props) {
   };
 
   const handleWhatsApp = () => {
+    trackWhatsAppClick({
+      label: "booking_modal_whatsapp",
+      location: booking.tourSlug,
+    });
+
     const lines = [
       `Hi, I'd like to book:`,
       ``,
@@ -281,13 +378,137 @@ export default function BookingModal({ booking, onClose }: Props) {
     window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(lines)}`, "_blank");
   };
 
+  const sendAbandonment = async (trigger: string) => {
+    if (
+      abandonmentSentRef.current ||
+      formSubmittedRef.current ||
+      typeof window === "undefined"
+    ) {
+      return;
+    }
+
+    const payload = {
+      source: "booking_modal",
+      trigger,
+      occurredAt: new Date().toISOString(),
+      pagePath: window.location.pathname,
+      pageUrl: window.location.href,
+      tourSlug: latestAbandonmentPayloadRef.current.tourSlug,
+      tourName: latestAbandonmentPayloadRef.current.tourName,
+      date: latestAbandonmentPayloadRef.current.date,
+      time: latestAbandonmentPayloadRef.current.time,
+      guests: latestAbandonmentPayloadRef.current.guests,
+      totalPrice: latestAbandonmentPayloadRef.current.totalPrice,
+      currency: latestAbandonmentPayloadRef.current.currency,
+      priceMode: latestAbandonmentPayloadRef.current.priceMode,
+      packageName: latestAbandonmentPayloadRef.current.packageName || undefined,
+      addOns: latestAbandonmentPayloadRef.current.addOns,
+      departurePoint:
+        latestAbandonmentPayloadRef.current.departurePoint || undefined,
+      customerName: latestAbandonmentPayloadRef.current.customerName,
+      customerEmail: latestAbandonmentPayloadRef.current.customerEmail,
+      customerPhone: latestAbandonmentPayloadRef.current.customerPhone,
+      customerMessage: latestAbandonmentPayloadRef.current.customerMessage,
+      privateTransferRequested:
+        latestAbandonmentPayloadRef.current.privateTransferRequested,
+      additionalGuests: latestAbandonmentPayloadRef.current.additionalGuests,
+      fieldsCompleted: latestAbandonmentPayloadRef.current.fieldsCompleted,
+    };
+
+    if (
+      !hasBookingAbandonmentContact({
+        customerEmail: payload.customerEmail,
+        customerPhone: payload.customerPhone,
+      })
+    ) {
+      return;
+    }
+
+    const now = Date.now();
+    if (now - lastAbandonmentAttemptRef.current < 4000) {
+      return;
+    }
+
+    lastAbandonmentAttemptRef.current = now;
+    const body = JSON.stringify(payload);
+
+    try {
+      const response = await fetch("/api/booking-abandonment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body,
+        keepalive: true,
+      });
+
+      if (response.ok) {
+        abandonmentSentRef.current = true;
+        return;
+      }
+    } catch (error) {
+      console.error("Failed to send booking abandonment fetch:", error);
+    }
+
+    try {
+      const beaconPayload = new Blob([body], {
+        type: "application/json",
+      });
+      const success = navigator.sendBeacon(
+        "/api/booking-abandonment",
+        beaconPayload
+      );
+
+      if (success) {
+        abandonmentSentRef.current = true;
+      }
+    } catch (error) {
+      console.error("Failed to send booking abandonment beacon:", error);
+    }
+  };
+
+  const handleModalClose = (trigger: string) => {
+    void sendAbandonment(trigger);
+    onClose();
+  };
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      void sendAbandonment("beforeunload");
+    };
+
+    const handlePageHide = () => {
+      void sendAbandonment("pagehide");
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        void sendAbandonment("visibilitychange");
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("pagehide", handlePageHide);
+    window.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      if (!abandonmentSentRef.current && !formSubmittedRef.current) {
+        void sendAbandonment("unmount");
+      }
+
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("pagehide", handlePageHide);
+      window.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[90] flex items-center justify-center p-4"
-      onClick={onClose}
+      onClick={() => handleModalClose("backdrop")}
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <motion.div
@@ -308,7 +529,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                 : "Complete Your Booking"}
             </h2>
             <button
-              onClick={onClose}
+              onClick={() => handleModalClose("close_button")}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface-alt)] text-[var(--heading)] shadow-sm transition-colors hover:bg-white"
               aria-label="Close booking modal"
             >
@@ -551,13 +772,19 @@ export default function BookingModal({ booking, onClose }: Props) {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() =>
+                      trackWhatsAppClick({
+                        label: "reservation_confirmation_whatsapp",
+                        location: booking.tourSlug,
+                      })
+                    }
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                   >
                     <Phone className="w-4 h-4" />
                     Confirm via WhatsApp
                   </a>
                   <button
-                    onClick={onClose}
+                    onClick={() => handleModalClose("close_button")}
                     className="w-full py-2.5 text-[var(--text-muted)] font-medium hover:text-[var(--body-text)] transition-all text-sm"
                   >
                     Close
@@ -770,7 +997,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                       }}
                       onBlur={() => setTouchedName(true)}
                       autoComplete="name"
-                      className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
+                      className={`w-full rounded-xl border-2 px-4 py-3 text-base transition-colors focus:outline-none md:text-sm ${
                         showNameError
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
                           : "border-[var(--line)] focus:border-[var(--brand-primary)]"
@@ -801,7 +1028,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                       }}
                       onBlur={() => setTouchedEmail(true)}
                       autoComplete="email"
-                      className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
+                      className={`w-full rounded-xl border-2 px-4 py-3 text-base transition-colors focus:outline-none md:text-sm ${
                         showEmailError
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
                           : "border-[var(--line)] focus:border-[var(--brand-primary)]"
@@ -829,7 +1056,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                         setPhone(val);
                         if (validationMessage) setValidationMessage("");
                       }}
-                      inputClassName="!h-auto !w-full !rounded-r-xl !border-2 !border-l-0 !border-[var(--line)] !bg-white !px-4 !py-3 !text-sm !transition-colors focus:!border-[var(--brand-primary)] focus:!outline-none"
+                      inputClassName="!h-auto !w-full !rounded-r-xl !border-2 !border-l-0 !border-[var(--line)] !bg-white !px-4 !py-3 !text-base !transition-colors focus:!border-[var(--brand-primary)] focus:!outline-none md:!text-sm"
                       countrySelectorStyleProps={{
                         buttonClassName:
                           "!h-auto !rounded-l-xl !border-2 !border-r-0 !border-[var(--line)] !bg-white !px-3 !py-3",
@@ -917,7 +1144,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                               value={additionalGuestsText}
                               onChange={(event) => setAdditionalGuestsText(event.target.value)}
                               rows={Math.min(5, Math.max(2, booking.guests - 1))}
-                              className="mt-3 w-full rounded-xl border-2 border-[var(--line)] px-4 py-3 text-sm outline-none transition-colors focus:border-[var(--brand-primary)]"
+                              className="mt-3 w-full rounded-xl border-2 border-[var(--line)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--brand-primary)] md:text-sm"
                               placeholder={"One passenger per line\nJane Doe\nMichael Doe"}
                             />
                           )}
@@ -935,7 +1162,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows={3}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-sm resize-none"
+                      className="w-full resize-none rounded-xl border-2 border-[var(--line)] px-4 py-3 text-base transition-colors focus:border-[var(--brand-primary)] focus:outline-none md:text-sm"
                       placeholder="Any special requests or requirements..."
                     />
                   </div>

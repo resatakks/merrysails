@@ -1,9 +1,14 @@
 // Telegram Notification Sender — MerrySails
 import { prisma } from "@/lib/db";
 import { sendMessage } from "./bot";
-import { formatNewReservation, formatStatusChange, formatReminder } from "./formatters";
+import {
+  formatBookingAbandonment,
+  formatNewReservation,
+  formatReminder,
+  formatStatusChange,
+} from "./formatters";
 import { reservationActions } from "./keyboards";
-import type { SailsReservation } from "./types";
+import type { BookingAbandonmentAlert, SailsReservation } from "./types";
 
 async function getActiveUsers(notificationType: "notifyNew" | "notifyReminder" | "notifyDaily") {
   return prisma.telegramUser.findMany({
@@ -44,6 +49,13 @@ export async function notifyStatusChange(reservation: SailsReservation, oldStatu
 export async function notifyReminder(reservation: SailsReservation) {
   const text = formatReminder(reservation);
   return broadcast("notifyReminder", text);
+}
+
+export async function notifyBookingAbandonment(
+  abandonment: BookingAbandonmentAlert
+) {
+  const text = formatBookingAbandonment(abandonment);
+  return broadcast("notifyNew", text);
 }
 
 export async function sendDailyReport(text: string) {

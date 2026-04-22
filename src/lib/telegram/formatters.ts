@@ -1,8 +1,13 @@
 // Telegram Message Formatters — MerrySails
-import type { SailsReservation } from "./types";
+import type { BookingAbandonmentAlert, SailsReservation } from "./types";
+import {
+  getBookingAbandonmentContext,
+  getBookingAbandonmentTriggerLabel,
+} from "@/lib/booking-abandonment";
 import { getReservationLinkContext } from "@/lib/reservation-links";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { getExperienceSupportPageUrl } from "@/lib/experience-support";
+import { normalizeReservationStatus } from "@/lib/reservation-status";
 
 function esc(text: string | number | null | undefined): string {
   if (text === null || text === undefined) return "-";
@@ -27,9 +32,20 @@ function formatTomorrowFull(): string {
   return new Date(Date.now() + 86400000).toLocaleDateString("tr-TR", { timeZone: TZ, day: "2-digit", month: "long", weekday: "long" });
 }
 
+function formatDateTime(date: string | Date): string {
+  return new Date(date).toLocaleString("tr-TR", {
+    timeZone: TZ,
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 function statusEmoji(status?: string): string {
-  switch (status) {
-    case "pending": return "🆕";
+  switch (normalizeReservationStatus(status)) {
+    case "new": return "🆕";
     case "confirmed": return "✅";
     case "completed": return "🏁";
     case "cancelled": return "❌";
@@ -38,8 +54,8 @@ function statusEmoji(status?: string): string {
 }
 
 function statusText(status?: string): string {
-  switch (status) {
-    case "pending": return "Bekliyor";
+  switch (normalizeReservationStatus(status)) {
+    case "new": return "Yeni";
     case "confirmed": return "Onaylandı";
     case "completed": return "Tamamlandı";
     case "cancelled": return "İptal";
@@ -213,6 +229,77 @@ export function formatNewReservation(r: SailsReservation): string {
   return msg;
 }
 
+export function formatBookingAbandonment(
+  abandonment: BookingAbandonmentAlert
+): string {
+  const context = getBookingAbandonmentContext(abandonment.tourSlug);
+  const cs = currencySymbol(abandonment.currency);
+
+  let msg = `⚠️ <b>BOOKING ABANDONMENT</b>\n`;
+  msg += `━━━━━━━━━━━━━━━━\n`;
+  msg += `🌐 <b>Kaynak:</b> merrysails.com\n`;
+  msg += `🛎️ <b>Tetik:</b> ${esc(
+    getBookingAbandonmentTriggerLabel(abandonment.trigger)
+  )}\n`;
+  msg += `🕒 <b>Zaman:</b> ${esc(formatDateTime(abandonment.occurredAt))}\n`;
+  msg += `🧭 <b>Sayfa:</b> ${esc(context.pageLabel)}\n`;
+  msg += `🎯 <b>Akış:</b> ${esc(context.bookingLabel)}\n`;
+
+  msg += `\n👤 <b>${esc(abandonment.customerName || "Unknown visitor")}</b>\n`;
+  msg += `📱 <b>Tel:</b> ${esc(abandonment.customerPhone)}\n`;
+  msg += `📧 <b>Email:</b> ${esc(abandonment.customerEmail)}\n`;
+  if (abandonment.fieldsCompleted.length > 0) {
+    msg += `🧩 <b>Dolu alanlar:</b> ${esc(
+      abandonment.fieldsCompleted.join(", ")
+    )}\n`;
+  }
+
+  msg += `\n⛵ <b>Tur:</b> ${esc(abandonment.tourName)}\n`;
+  msg += `📅 <b>Tarih:</b> ${esc(abandonment.date)}\n`;
+  msg += `🕐 <b>Saat:</b> ${esc(abandonment.time || "-")}\n`;
+  msg += `👥 <b>Misafir:</b> ${esc(abandonment.guests)}\n`;
+  msg += `💰 <b>Gosterilen toplam:</b> ${esc(abandonment.totalPrice)} ${cs}\n`;
+  if (abandonment.packageName) {
+    msg += `📦 <b>Paket:</b> ${esc(abandonment.packageName)}\n`;
+  }
+  if (abandonment.addOns.length > 0) {
+    msg += `➕ <b>Ekstralar:</b> ${esc(abandonment.addOns.join(", "))}\n`;
+  }
+  if (abandonment.additionalGuests.length > 0) {
+    msg += `🧑‍🤝‍🧑 <b>Diger misafirler:</b> ${esc(
+      abandonment.additionalGuests.join(", ")
+    )}\n`;
+  }
+  if (abandonment.departurePoint) {
+    msg += `📍 <b>Kalkis:</b> ${esc(abandonment.departurePoint)}\n`;
+  }
+  if (abandonment.privateTransferRequested) {
+    msg += `🚗 <b>Transfer:</b> Private transfer istendi\n`;
+  }
+  if (abandonment.customerMessage) {
+    msg += `\n📝 <b>Mesaj:</b> ${esc(abandonment.customerMessage)}\n`;
+  }
+
+  if (abandonment.pageUrl) {
+    msg += `\n🔗 <b>Kaynak URL:</b> ${esc(abandonment.pageUrl)}\n`;
+  }
+  msg += `🌐 <b>Tur Sayfasi:</b> ${esc(context.tourUrl)}\n`;
+  if (context.supportGuideUrl) {
+    msg += `📍 <b>Meeting Rehberi:</b> ${esc(context.supportGuideUrl)}\n`;
+  }
+
+  if (abandonment.customerPhone) {
+    const cleanPhone = abandonment.customerPhone
+      .replace(/[^0-9+]/g, "")
+      .replace(/^\+/, "");
+    if (cleanPhone.length >= 7) {
+      msg += `\n💬 WhatsApp: https://wa.me/${cleanPhone}`;
+    }
+  }
+
+  return msg;
+}
+
 // ─── Status change notification ───────────────────────────
 export function formatStatusChange(r: SailsReservation, oldStatus: string, newStatus: string): string {
   const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
@@ -328,7 +415,7 @@ export function formatMorningBriefing(reservations: SailsReservation[]): string 
   const today = formatTodayFull();
   const total = reservations.length;
   const confirmed = reservations.filter((r) => r.status === "confirmed").length;
-  const pending = reservations.filter((r) => r.status === "pending").length;
+  const pending = reservations.filter((r) => normalizeReservationStatus(r.status) === "new").length;
   const revenue = reservations.reduce((s, r) => s + (r.totalPrice || 0), 0);
 
   let msg = `☀️ <b>GÜNAYDIN — ${today}</b>\n━━━━━━━━━━━━━━━━\n\n`;
@@ -350,7 +437,7 @@ export function formatEveningSummary(reservations: SailsReservation[]): string {
   const tomorrow = formatTomorrowFull();
   const total = reservations.length;
   const confirmed = reservations.filter((r) => r.status === "confirmed").length;
-  const pending = reservations.filter((r) => r.status === "pending").length;
+  const pending = reservations.filter((r) => normalizeReservationStatus(r.status) === "new").length;
   const revenue = reservations.reduce((s, r) => s + (r.totalPrice || 0), 0);
 
   let msg = `🌙 <b>AKŞAM BRİFİNG — Yarın: ${tomorrow}</b>\n━━━━━━━━━━━━━━━━\n\n`;

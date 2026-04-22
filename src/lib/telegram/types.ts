@@ -72,4 +72,33 @@ export interface SailsReservation {
   customerCountry?: string | null;
   notes?: string | null;
   createdAt?: string | Date;
+  internalCostEur?: number | null;
+  confirmedAt?: string | Date | null;
+  completedAt?: string | Date | null;
+}
+
+export interface BookingAbandonmentAlert {
+  source: string;
+  trigger: string;
+  occurredAt: string;
+  pagePath?: string;
+  pageUrl?: string;
+  tourSlug: string;
+  tourName: string;
+  date: string;
+  time?: string;
+  guests: number;
+  totalPrice: number;
+  currency: string;
+  priceMode?: "perPerson" | "perGroup" | "custom";
+  packageName?: string;
+  addOns: string[];
+  departurePoint?: string;
+  customerName?: string;
+  customerEmail?: string;
+  customerPhone?: string;
+  customerMessage?: string;
+  privateTransferRequested?: boolean;
+  additionalGuests: string[];
+  fieldsCompleted: string[];
 }
