@@ -5,11 +5,12 @@ import { enUS } from "date-fns/locale";
 import { after } from "next/server";
 import { prisma } from "@/lib/db";
 import { generateReservationId } from "@/lib/reservation-id";
-import { getNotificationInbox, sendEmail } from "@/lib/email";
+import { getNotificationInbox, getReservationCcRecipients, sendEmail } from "@/lib/email";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
 import { reservationNotificationEmail } from "@/lib/email-templates/reservation-notification";
 import { reservationCancelledEmail } from "@/lib/email-templates/reservation-cancelled";
 import { serializeReservationNotes } from "@/lib/reservation-meta";
+import { buildReservationPdfAttachments } from "@/lib/reservation-pdf";
 import { getBookingMode } from "@/data/tours";
 import {
   buildReservationPricingSnapshot,
@@ -181,11 +182,20 @@ export async function createReservation(input: CreateReservationInput) {
       };
     }
 
-    if (isSameDayBookingClosed(input.tourSlug, reservationDate)) {
+    const reservationTime = normalizeReservationTime(input.time);
+
+    if (
+      isSameDayBookingClosed(
+        input.tourSlug,
+        reservationDate,
+        new Date(),
+        reservationTime
+      )
+    ) {
       return {
         success: false,
         error:
-          getSameDayBookingClosedMessage(input.tourSlug) ??
+          getSameDayBookingClosedMessage(input.tourSlug, reservationTime) ??
           "Online booking is closed for this departure. Please contact us directly.",
       };
     }
@@ -211,11 +221,11 @@ export async function createReservation(input: CreateReservationInput) {
       addOns: input.addOns,
     });
 
-    const reservationTime = normalizeReservationTime(input.time);
     const reservationId = await generateReservationId();
     const initialStatus =
       getBookingMode(pricing.tour) === "book" ? "confirmed" : "pending";
     const notificationInbox = getNotificationInbox();
+    const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
 
     const reservation = await prisma.reservation.create({
       data: {
@@ -258,31 +268,58 @@ export async function createReservation(input: CreateReservationInput) {
       const tasks: Promise<unknown>[] = [];
 
       tasks.push(
-        sendEmail({
-          to: customerEmail,
-          cc: notificationInbox ?? undefined,
-          subject:
+        (async () => {
+          const attachments =
             initialStatus === "confirmed"
-              ? `Reservation Confirmed — ${reservationId} | MerrySails`
-              : `Reservation Request Received — ${reservationId} | MerrySails`,
-          html: reservationConfirmationEmail({
-            reservationId,
-            customerName,
-            tourName: pricing.tour.nameEn,
-            tourSlug: pricing.tour.slug,
-            date: formattedDate,
-            time: reservationTime,
-            guests: pricing.guests,
-            totalPrice: pricing.total,
-            currency: pricing.currency,
-            packageName: pricing.packageName,
-            addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
-            additionalGuests,
-            privateTransferRequested: Boolean(input.privateTransferRequested),
-            notes: customerNote,
-            variant: initialStatus === "confirmed" ? "confirmed" : "received",
-          }),
-        }).catch((emailErr) => {
+              ? await buildReservationPdfAttachments({
+                  reservationId,
+                  customerName,
+                  customerEmail,
+                  customerPhone,
+                  tourSlug: pricing.tour.slug,
+                  tourName: pricing.tour.nameEn,
+                  serviceDate: reservationDate,
+                  time: reservationTime,
+                  guests: pricing.guests,
+                  totalPrice: pricing.total,
+                  currency: pricing.currency,
+                  packageName: pricing.packageName,
+                  addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+                  additionalGuests,
+                  privateTransferRequested: Boolean(input.privateTransferRequested),
+                  notes: customerNote,
+                  pricing,
+                  status: "Confirmed",
+                })
+              : undefined;
+
+          await sendEmail({
+            to: customerEmail,
+            cc: reservationCcRecipients,
+            attachments,
+            subject:
+              initialStatus === "confirmed"
+                ? `Reservation Confirmed — ${reservationId} | MerrySails`
+                : `Reservation Request Received — ${reservationId} | MerrySails`,
+            html: reservationConfirmationEmail({
+              reservationId,
+              customerName,
+              tourName: pricing.tour.nameEn,
+              tourSlug: pricing.tour.slug,
+              date: formattedDate,
+              time: reservationTime,
+              guests: pricing.guests,
+              totalPrice: pricing.total,
+              currency: pricing.currency,
+              packageName: pricing.packageName,
+              addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+              additionalGuests,
+              privateTransferRequested: Boolean(input.privateTransferRequested),
+              notes: customerNote,
+              variant: initialStatus === "confirmed" ? "confirmed" : "received",
+            }),
+          });
+        })().catch((emailErr) => {
           console.error("Failed to send customer email:", emailErr);
         })
       );
@@ -291,6 +328,7 @@ export async function createReservation(input: CreateReservationInput) {
         tasks.push(
           sendEmail({
             to: notificationInbox,
+            cc: reservationCcRecipients.filter((recipient) => recipient !== notificationInbox),
             subject: `🎉 New Booking: ${reservationId} — ${pricing.tour.nameEn}`,
             html: reservationNotificationEmail({
               reservationId,

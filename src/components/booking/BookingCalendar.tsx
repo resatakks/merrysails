@@ -133,7 +133,12 @@ export default function BookingCalendar({
   const totalSavings = originalTotal ? originalTotal - total : 0;
   const timeOptions = parseTimeOptions(activeDepartureTime);
   const sameDayClosedForSelectedDate = selectedDate
-    ? isSameDayBookingClosed(tourSlug, selectedDate)
+    ? isSameDayBookingClosed(
+        tourSlug,
+        selectedDate,
+        new Date(),
+        selectedOperation?.departureTimeOverride || selectedTime || departureTime
+      )
     : false;
   const bookingLabel = isPerGroup
     ? "Request now, confirm with operations"
@@ -283,7 +288,12 @@ export default function BookingCalendar({
             const dayKey = format(day, "yyyy-MM-dd");
             const operation = operationsByDate[dayKey];
             const isSoldOut = operation?.isSoldOut ?? false;
-            const isCutoffClosed = isSameDayBookingClosed(tourSlug, day);
+            const isCutoffClosed = isSameDayBookingClosed(
+              tourSlug,
+              day,
+              new Date(),
+              operation?.departureTimeOverride || departureTime
+            );
             const isDisabled = isPast || isSoldOut || isCutoffClosed;
             const isSelected =
               selectedDate && day.getTime() === selectedDate.getTime();
@@ -442,7 +452,10 @@ export default function BookingCalendar({
 
               {sameDayClosedForSelectedDate && (
                 <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
-                  {getSameDayBookingClosedMessage(tourSlug)}
+                  {getSameDayBookingClosedMessage(
+                    tourSlug,
+                    selectedOperation?.departureTimeOverride || selectedTime || departureTime
+                  )}
                 </div>
               )}
 

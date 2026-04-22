@@ -60,8 +60,8 @@ const guideLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-0 bg-[var(--brand-dark)] text-white/90 pb-28 lg:pb-10">
-      <div className="container-main pt-16 pb-12">
+    <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">
+      <div className="container-main pt-20 pb-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-3">
@@ -81,6 +81,8 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit MerrySails on Instagram"
+                title="Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
               >
                 <Instagram className="h-4 w-4" />
@@ -89,6 +91,8 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit MerrySails on Facebook"
+                title="Facebook"
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
               >
                 <Facebook className="h-4 w-4" />
@@ -97,6 +101,8 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit MerrySails on YouTube"
+                title="YouTube"
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
               >
                 <Youtube className="h-4 w-4" />
@@ -150,9 +156,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
               Core Products
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {coreLinks.map((link) => (
                 <li key={link.href}>
@@ -168,9 +174,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
               Service Pages
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
@@ -186,9 +192,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -206,9 +212,9 @@ export default function Footer() {
 
         <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-2">
           <div>
-            <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+            <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
               Blog Highlights
-            </h4>
+            </h3>
             <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {blogLinks.map((link) => (
                 <li key={link.href}>
@@ -223,9 +229,9 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+            <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
               Guide Topics
-            </h4>
+            </h3>
             <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {guideLinks.map((link) => (
                 <li key={link.href}>

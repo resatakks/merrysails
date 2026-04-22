@@ -21,6 +21,10 @@
     {
       "path": "/api/telegram/reminder",
       "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/telegram/reminder",
+      "schedule": "30 * * * *"
     }
   ],
   "git": {

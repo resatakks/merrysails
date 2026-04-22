@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { getNotificationInbox, isEmailConfigured, sendEmail } from "@/lib/email";
+import {
+  getNotificationInbox,
+  getReservationCcRecipients,
+  isEmailConfigured,
+  sendEmail,
+} from "@/lib/email";
 import { reservationReminderEmail } from "@/lib/email-templates/reservation-reminder";
 import { getTourBySlug } from "@/data/tours";
 import { notifyReminder } from "@/lib/telegram/notifications";
 import { format } from "date-fns";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { isReservationReminderDue } from "@/lib/booking-cutoffs";
 
 export async function GET(req: NextRequest) {
   try {
@@ -14,41 +20,25 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Turkey UTC+3
     const now = new Date();
-    const trNow = new Date(now.getTime() + 3 * 60 * 60 * 1000);
-
-    // Window: 1h45m to 2h45m from now (matches hourly cron)
-    const windowStart = new Date(now.getTime() + 105 * 60 * 1000);
-    const windowEnd = new Date(now.getTime() + 165 * 60 * 1000);
-
-    // Today's date boundaries
-    const dayStart = new Date(Date.UTC(trNow.getUTCFullYear(), trNow.getUTCMonth(), trNow.getUTCDate(), -3, 0, 0));
-    const dayEnd = new Date(Date.UTC(trNow.getUTCFullYear(), trNow.getUTCMonth(), trNow.getUTCDate(), 20, 59, 59));
+    const reservationSearchStart = new Date(now.getTime() - 6 * 60 * 60 * 1000);
+    const reservationSearchEnd = new Date(now.getTime() + 48 * 60 * 60 * 1000);
 
     const reservations = await prisma.reservation.findMany({
       where: {
-        date: { gte: dayStart, lte: dayEnd },
+        date: { gte: reservationSearchStart, lte: reservationSearchEnd },
         status: { notIn: ["cancelled", "completed"] },
       },
     });
 
-    // Filter by tour time within the 2-hour window
-    // Combine date + time to get actual datetime
     const toRemind = reservations.filter((r: typeof reservations[number]) => {
-      if (!/^([01]\d|2[0-3]):([0-5]\d)$/.test(r.time)) {
-        return false;
-      }
-
-      const [hours, minutes] = r.time.split(":").map(Number);
-      const tourDate = new Date(r.date);
-      tourDate.setUTCHours(hours - 3, minutes, 0, 0); // Convert Turkey time to UTC
-      return tourDate >= windowStart && tourDate < windowEnd;
+      return isReservationReminderDue(r.tourSlug, new Date(r.date), r.time, now, 30);
     });
 
     let telegramSent = 0;
     let emailSent = 0;
     const notificationInbox = getNotificationInbox();
+    const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
 
     for (const r of toRemind) {
       try {
@@ -65,18 +55,20 @@ export async function GET(req: NextRequest) {
 
           await sendEmail({
             to: r.customerEmail,
-            cc: notificationInbox ?? undefined,
+            cc: reservationCcRecipients,
             subject: `Reminder: ${r.tourName} starts soon | ${r.reservationId} | MerrySails`,
             html: reservationReminderEmail({
               reservationId: r.reservationId,
               customerName: r.customerName,
               tourName: r.tourName,
+              tourSlug: r.tourSlug,
               date: format(new Date(r.date), "MMMM d, yyyy"),
               time: r.time,
               guests: r.guests,
               departurePoint: tour?.departurePoint,
               packageName: reservationMeta.packageName,
               addOns: reservationMeta.addOns,
+              privateTransferRequested: reservationMeta.privateTransferRequested,
             }),
           });
 

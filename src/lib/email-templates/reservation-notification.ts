@@ -1,4 +1,5 @@
 import { getReservationLinkContext } from "@/lib/reservation-links";
+import { getExperienceSupportPageUrl } from "@/lib/experience-support";
 import { currencySymbol, escapeHtml } from "./helpers";
 
 interface ReservationNotificationData {
@@ -24,6 +25,7 @@ interface ReservationNotificationData {
 export function reservationNotificationEmail(data: ReservationNotificationData): string {
   const cleanPhone = data.customerPhone.replace(/[^0-9]/g, "");
   const linkContext = getReservationLinkContext(data.tourSlug, data.reservationId);
+  const supportGuideUrl = getExperienceSupportPageUrl(data.tourSlug);
   const symbol = currencySymbol(data.currency);
 
   return `
@@ -51,7 +53,7 @@ export function reservationNotificationEmail(data: ReservationNotificationData):
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Tour</td><td style="color:#0f172a;padding:4px 0;text-align:right;font-weight:600;">${escapeHtml(data.tourName)}</td></tr>
         ${data.packageName ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Package</td><td style="color:#0f172a;padding:4px 0;text-align:right;font-weight:600;">${escapeHtml(data.packageName)}</td></tr>` : ""}
         ${(data.addOns && data.addOns.length > 0) ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Add-ons</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.addOns.join(", "))}</td></tr>` : ""}
-        ${data.privateTransferRequested ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Transfer</td><td style="color:#0f172a;padding:4px 0;text-align:right;">Private transfer requested</td></tr>` : ""}
+        ${data.privateTransferRequested ? `<tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Transfer</td><td style="color:#0f172a;padding:4px 0;text-align:right;">Private transfer requested — team should confirm pickup details</td></tr>` : ""}
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Date</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.date)}</td></tr>
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Time</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${escapeHtml(data.time)}</td></tr>
         <tr><td style="color:#64748b;padding:4px 0;font-size:13px;">Guests</td><td style="color:#0f172a;padding:4px 0;text-align:right;">${data.guests}</td></tr>
@@ -69,12 +71,14 @@ export function reservationNotificationEmail(data: ReservationNotificationData):
 
       ${(data.additionalGuests && data.additionalGuests.length > 0) ? `<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px;margin-bottom:16px;"><p style="color:#1d4ed8;margin:0;font-size:13px;"><strong>Other passengers:</strong> ${escapeHtml(data.additionalGuests.join(", "))}</p></div>` : ""}
       ${data.notes ? `<div style="background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:12px;margin-bottom:16px;"><p style="color:#92400e;margin:0;font-size:13px;"><strong>Notes:</strong> ${escapeHtml(data.notes)}</p></div>` : ""}
+      ${data.privateTransferRequested ? `<div style="background:#fff7ed;border:1px solid #fdba74;border-radius:8px;padding:12px;margin-bottom:16px;"><p style="color:#9a3412;margin:0;font-size:13px;line-height:1.7;"><strong>Transfer follow-up:</strong> The guest requested private transfer support. Please confirm routing, pickup point, and any extra charge before departure.</p></div>` : ""}
 
       <!-- Quick Actions -->
       <div style="text-align:center;">
         <a href="${linkContext.reservationUrl}" style="display:inline-block;background:#0f172a;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;">Open Reservation</a>
         <a href="${linkContext.invoiceUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;border:1px solid #cbd5e1;">Invoice</a>
         <a href="${linkContext.voucherUrl}" style="display:inline-block;background:#f59e0b;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;">Voucher</a>
+        ${supportGuideUrl ? `<a href="${supportGuideUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;border:1px solid #cbd5e1;">Meeting Guide</a>` : ""}
         <a href="${linkContext.tourUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;border:1px solid #cbd5e1;">Tour Page</a>
         <a href="https://wa.me/${cleanPhone}" style="display:inline-block;background:#25d366;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;">WhatsApp</a>
         <a href="tel:${escapeHtml(data.customerPhone)}" style="display:inline-block;background:#3b82f6;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;margin:4px;">Call</a>

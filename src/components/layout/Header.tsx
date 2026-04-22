@@ -125,7 +125,12 @@ export default function Header() {
 
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-10 w-10 lg:hidden">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 lg:hidden"
+                    aria-label="Open navigation menu"
+                  >
                     <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </SheetTrigger>
@@ -160,6 +165,7 @@ export default function Header() {
                                       openMobileDropdown === item.label ? null : item.label
                                     )
                                   }
+                                  aria-label={`${openMobileDropdown === item.label ? "Collapse" : "Expand"} ${item.label} menu`}
                                   className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-gray-50"
                                 >
                                   <ChevronDown

@@ -191,7 +191,7 @@ export default function LatestBlogPosts() {
         <div className="text-center mt-10">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,var(--brand-primary),var(--brand-cta-end))] px-8 py-3 text-sm font-semibold text-white shadow-[0_14px_32px_rgba(24,41,135,0.22)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(24,41,135,0.28)]"
+            className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,var(--brand-primary),var(--brand-cta-end))] px-8 py-3 text-sm font-semibold !text-white shadow-[0_16px_36px_rgba(24,41,135,0.3)] transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_42px_rgba(24,41,135,0.34)]"
           >
             View All Guides & Blog Posts
             <ArrowRight className="w-4 h-4" />

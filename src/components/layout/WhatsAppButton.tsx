@@ -9,8 +9,7 @@ export default function WhatsAppButton() {
   const hasStickyBookingUi =
     pathname.startsWith("/cruises/") ||
     pathname === "/istanbul-dinner-cruise" ||
-    pathname === "/yacht-charter-istanbul" ||
-    pathname.startsWith("/reservation");
+    pathname === "/yacht-charter-istanbul";
   const mobileBottomOffset = hasStickyBookingUi
     ? "bottom-[calc(env(safe-area-inset-bottom)+5.75rem)]"
     : "bottom-[calc(env(safe-area-inset-bottom)+1rem)]";
@@ -20,17 +19,17 @@ export default function WhatsAppButton() {
     <>
       <a
         href={`tel:${PHONE}`}
-        className={`fixed left-4 z-40 flex items-center gap-2 rounded-full bg-[var(--brand-primary)] px-4 py-2.5 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${mobileBottomOffset} ${desktopBottomOffset} md:left-6`}
+        className={`fixed left-4 z-40 flex items-center gap-2 rounded-full border border-white/20 bg-[linear-gradient(135deg,#182987,#ff0844)] px-3.5 py-2.5 text-white shadow-[0_18px_32px_rgba(24,41,135,0.34)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_22px_38px_rgba(24,41,135,0.44)] ${mobileBottomOffset} ${desktopBottomOffset} md:left-6 md:px-4`}
         aria-label={`Call ${PHONE_DISPLAY}`}
       >
         <Phone className="h-4 w-4 text-white md:h-5 md:w-5" />
-        <span className="text-xs font-semibold md:hidden">Call</span>
+        <span className="text-xs font-semibold text-white md:text-sm">Call</span>
       </a>
       <div
         className={`fixed right-4 z-40 flex flex-col items-end gap-2 ${mobileBottomOffset} ${desktopBottomOffset} md:right-6`}
       >
-        <div className="hidden rounded-full border border-gray-100 bg-white px-3 py-1.5 text-xs font-semibold text-gray-800 shadow-lg md:block">
-          Live Support
+        <div className="hidden animate-bounce-gentle rounded-full border border-gray-100 bg-white/96 px-3 py-1.5 text-[11px] font-semibold text-gray-800 shadow-lg backdrop-blur-sm sm:block">
+          7/24 Help
         </div>
         <a
           href={`${WHATSAPP_URL}?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Bosphorus%20cruise%20tours.`}

@@ -15,8 +15,8 @@
   /* Brand colors */
   --brand-primary: #182987;
   --brand-primary-hover: #1e3399;
-  --brand-gold: #f7b52c;
-  --brand-gold-hover: #f7a400;
+  --brand-gold: #c78200;
+  --brand-gold-hover: #a96a00;
   --brand-cta-start: #ff4b2b;
   --brand-cta-end: #ff0844;
   --brand-dark: #1A1A3D;
@@ -26,7 +26,7 @@
   /* Semantic tokens */
   --heading: #111B19;
   --body-text: #444444;
-  --text-muted: #999999;
+  --text-muted: #6b7280;
   --surface: #FFFFFF;
   --surface-alt: #F5F5F5;
   --surface-teal: #F2FBFA;
@@ -44,7 +44,7 @@
   --secondary: #f7b52c;
   --secondary-foreground: #FFFFFF;
   --muted: #F5F5F5;
-  --muted-foreground: #999999;
+  --muted-foreground: #6b7280;
   --accent: #F2FBFA;
   --accent-foreground: #111B19;
   --destructive: #ff0844;
@@ -156,6 +156,7 @@ body {
   font-size: 16px;
   line-height: 1.63;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -241,7 +242,7 @@ button, a, [role="button"], input[type="submit"], .tour-card, [class*="cursor-po
   justify-content: center;
   gap: 8px;
   background: linear-gradient(135deg, var(--brand-cta-start), var(--brand-cta-end));
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-weight: 700;
   font-size: 15px;
   padding: 14px 32px;
@@ -250,6 +251,7 @@ button, a, [role="button"], input[type="submit"], .tour-card, [class*="cursor-po
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(255, 8, 68, 0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .btn-cta:hover {
@@ -267,6 +269,21 @@ button, a, [role="button"], input[type="submit"], .tour-card, [class*="cursor-po
     transform: scale(1.4);
     opacity: 0;
   }
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 3s ease-in-out infinite;
 }
 
 /* ============================================

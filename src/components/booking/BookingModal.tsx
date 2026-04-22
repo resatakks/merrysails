@@ -106,6 +106,7 @@ export default function BookingModal({ booking, onClose }: Props) {
   const [confirmedTotal, setConfirmedTotal] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [validationMessage, setValidationMessage] = useState("");
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const [privateTransferRequested, setPrivateTransferRequested] = useState(false);
   const [showTransferInfo, setShowTransferInfo] = useState(false);
   const [showAdditionalGuests, setShowAdditionalGuests] = useState(false);
@@ -148,6 +149,9 @@ export default function BookingModal({ booking, onClose }: Props) {
   const nameValid = name.trim().length >= 2;
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneValid = phone.replace(/\D/g, "").length >= 7;
+  const showNameError = (touchedName || submitAttempted) && !nameValid;
+  const showEmailError = (touchedEmail || submitAttempted) && !emailValid;
+  const showPhoneError = (touchedPhone || submitAttempted) && !phoneValid;
   const isValid = nameValid && emailValid && phoneValid;
   const sharedTransferSupport =
     booking.tourSlug === "bosphorus-sunset-cruise" ||
@@ -162,8 +166,17 @@ export default function BookingModal({ booking, onClose }: Props) {
       : booking.tourSlug === "bosphorus-sunset-cruise"
       ? "Extra hotel pickup / private transfer requested for the sunset cruise. Quote separately and confirm after contact."
       : "Private transfer requested. Quote separately and confirm after contact.";
+  const bookingPreviewImage =
+    booking.tourSlug === "bosphorus-dinner-cruise"
+      ? "/images/dinner-etkinlik-4.jpeg"
+      : booking.tourImage;
+  const bookingPreviewImageClass =
+    booking.tourSlug === "bosphorus-dinner-cruise"
+      ? "object-cover object-center"
+      : "object-cover object-center";
 
   const focusFirstInvalidField = () => {
+    setSubmitAttempted(true);
     setTouchedName(true);
     setTouchedEmail(true);
     setTouchedPhone(true);
@@ -188,11 +201,13 @@ export default function BookingModal({ booking, onClose }: Props) {
       if (phoneInput instanceof HTMLInputElement) {
         phoneInput.focus();
       }
-      setValidationMessage("Please add a reachable phone number for your booking.");
+      setValidationMessage("Please add a reachable phone number to continue.");
     }
   };
 
   const handleSubmit = async () => {
+    setSubmitAttempted(true);
+
     if (!isValid) {
       focusFirstInvalidField();
       return;
@@ -294,9 +309,10 @@ export default function BookingModal({ booking, onClose }: Props) {
             </h2>
             <button
               onClick={onClose}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface-alt)] text-[var(--heading)] shadow-sm transition-colors hover:bg-white"
+              aria-label="Close booking modal"
             >
-              <X className="w-4 h-4" />
+              <X className="h-4.5 w-4.5" />
             </button>
           </div>
 
@@ -629,13 +645,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                 {/* Left: Booking Summary */}
                 <div className="md:col-span-2 space-y-4">
                   {/* Tour image thumbnail */}
-                  {booking.tourImage && (
-                    <div className="relative w-full h-32 rounded-xl overflow-hidden">
+                  {bookingPreviewImage && (
+                    <div className="relative h-36 w-full overflow-hidden rounded-xl md:h-40">
                       <Image
-                        src={booking.tourImage}
+                        src={bookingPreviewImage}
                         alt={booking.tourName}
                         fill
-                        className="object-cover"
+                        className={bookingPreviewImageClass}
                         sizes="300px"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -648,7 +664,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                   )}
 
                   <div className="bg-[var(--surface-alt)] rounded-xl p-4 space-y-3">
-                    {!booking.tourImage && (
+                    {!bookingPreviewImage && (
                       <h3 className="font-semibold text-sm text-[var(--heading)]">
                         {booking.tourName}
                       </h3>
@@ -755,14 +771,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                       onBlur={() => setTouchedName(true)}
                       autoComplete="name"
                       className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
-                        touchedName && !nameValid
+                        showNameError
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
                           : "border-[var(--line)] focus:border-[var(--brand-primary)]"
                       }`}
                       placeholder="John Doe"
                       required
                     />
-                    {touchedName && !nameValid && (
+                    {showNameError && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
                         Please enter your full name (at least 2 characters)
@@ -786,14 +802,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                       onBlur={() => setTouchedEmail(true)}
                       autoComplete="email"
                       className={`w-full px-4 py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm ${
-                        touchedEmail && !emailValid
+                        showEmailError
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
                           : "border-[var(--line)] focus:border-[var(--brand-primary)]"
                       }`}
                       placeholder="john@example.com"
                       required
                     />
-                    {touchedEmail && !emailValid && (
+                    {showEmailError && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
                         Please enter a valid email address
@@ -811,7 +827,6 @@ export default function BookingModal({ booking, onClose }: Props) {
                       value={phone}
                       onChange={(val) => {
                         setPhone(val);
-                        if (!touchedPhone) setTouchedPhone(true);
                         if (validationMessage) setValidationMessage("");
                       }}
                       inputClassName="!h-auto !w-full !rounded-r-xl !border-2 !border-l-0 !border-[var(--line)] !bg-white !px-4 !py-3 !text-sm !transition-colors focus:!border-[var(--brand-primary)] focus:!outline-none"
@@ -823,9 +838,10 @@ export default function BookingModal({ booking, onClose }: Props) {
                       inputProps={{
                         autoComplete: "tel",
                         placeholder: "+90 5xx xxx xx xx",
+                        onBlur: () => setTouchedPhone(true),
                       }}
                     />
-                    {touchedPhone && !phoneValid && (
+                    {showPhoneError && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
                         Please enter a valid phone number

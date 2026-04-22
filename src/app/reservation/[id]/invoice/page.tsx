@@ -271,7 +271,7 @@ export default async function ReservationInvoicePage({
                         {reservationMeta.privateTransferRequested && (
                           <p>
                             <span className="font-semibold text-[var(--heading)]">Transfer:</span>{" "}
-                            Private transfer requested separately
+                            Private transfer requested. Our team will contact the guest with pickup details.
                           </p>
                         )}
                         {reservationMeta.additionalGuests.length > 0 && (

@@ -8,5 +8,5 @@ export const WHATSAPP_URL = "https://wa.me/905370406822";
 export const ADDRESS = "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih, Istanbul, Turkey";
 export const MAX_BOOKING_GUESTS = 25;
 export const TURSAB_LICENSE_NUMBER = "14316";
-export const TURSAB_AGENCY_NAME = "Meryem Travel";
+export const TURSAB_AGENCY_NAME = "Meryem Yildiz Travel";
 export const TURSAB_LEGAL_NAME = "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI";

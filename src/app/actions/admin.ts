@@ -18,10 +18,11 @@ import {
   normalizeOperationDate,
 } from "@/lib/tour-operations";
 import { getTourBySlug } from "@/data/tours";
-import { getNotificationInbox, sendEmail } from "@/lib/email";
+import { getNotificationInbox, getReservationCcRecipients, sendEmail } from "@/lib/email";
 import { reservationCancelledEmail } from "@/lib/email-templates/reservation-cancelled";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { buildReservationPdfAttachments } from "@/lib/reservation-pdf";
 
 interface AdminLoginState {
   success: boolean;
@@ -124,15 +125,38 @@ export async function updateReservationStatusAdminAction(
     data: { status: nextStatus },
   });
   const notificationInbox = getNotificationInbox();
+  const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
 
   const formattedDate = format(new Date(existing.date), "MMMM d, yyyy");
   const reservationMeta = parseReservationNotes(existing.notes);
 
   if (nextStatus === "confirmed") {
     try {
+      const attachments = await buildReservationPdfAttachments({
+        reservationId: existing.reservationId,
+        customerName: existing.customerName,
+        customerEmail: existing.customerEmail,
+        customerPhone: existing.customerPhone,
+        tourSlug: existing.tourSlug,
+        tourName: existing.tourName,
+        serviceDate: new Date(existing.date),
+        time: existing.time,
+        guests: existing.guests,
+        totalPrice: Number(existing.totalPrice),
+        currency: existing.currency,
+        packageName: reservationMeta.packageName,
+        addOns: reservationMeta.addOns,
+        additionalGuests: reservationMeta.additionalGuests,
+        privateTransferRequested: reservationMeta.privateTransferRequested,
+        notes: reservationMeta.customerNote,
+        pricing: reservationMeta.pricing,
+        status: "Confirmed",
+      });
+
       await sendEmail({
         to: existing.customerEmail,
-        cc: notificationInbox ?? undefined,
+        cc: reservationCcRecipients,
+        attachments,
         subject: `Reservation Confirmed — ${reservationId} | MerrySails`,
         html: reservationConfirmationEmail({
           reservationId: existing.reservationId,
@@ -161,7 +185,7 @@ export async function updateReservationStatusAdminAction(
     try {
       await sendEmail({
         to: existing.customerEmail,
-        cc: notificationInbox ?? undefined,
+        cc: reservationCcRecipients,
         subject: `Reservation Cancelled — ${reservationId} | MerrySails`,
         html: reservationCancelledEmail({
           reservationId: existing.reservationId,

@@ -162,13 +162,44 @@ interface SendEmailOptions {
   subject: string;
   html: string;
   cc?: string | string[];
+  attachments?: {
+    filename: string;
+    content: Buffer | string;
+    contentType?: string;
+  }[];
+}
+
+function normalizeRecipients(values: Array<string | null | undefined>): string[] {
+  return [...new Set(values.map((value) => value?.trim().toLowerCase()).filter(Boolean))] as string[];
+}
+
+function parseRecipientList(value?: string | null): string[] {
+  if (!value) {
+    return [];
+  }
+
+  return value
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+}
+
+export function getReservationCcRecipients(extra?: string | string[] | null): string[] {
+  const configuredRecipients = parseRecipientList(process.env.RESERVATION_CC_RECIPIENTS);
+  const defaultRecipients =
+    configuredRecipients.length > 0
+      ? configuredRecipients
+      : ["resatakkus10@gmail.com", "info@merrytravel.com.tr", "info@merrytourism.com"];
+  const extraRecipients = Array.isArray(extra) ? extra : extra ? [extra] : [];
+
+  return normalizeRecipients([...defaultRecipients, ...extraRecipients]);
 }
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function sendEmail({ to, subject, html, cc }: SendEmailOptions) {
+export async function sendEmail({ to, subject, html, cc, attachments }: SendEmailOptions) {
   let lastError: unknown = null;
   const { fromName, fromEmail } = getMailerConfig();
 
@@ -180,6 +211,7 @@ export async function sendEmail({ to, subject, html, cc }: SendEmailOptions) {
         cc,
         subject,
         html,
+        attachments,
       });
     } catch (error) {
       lastError = error;
@@ -200,6 +232,7 @@ export async function sendEmail({ to, subject, html, cc }: SendEmailOptions) {
       cc,
       subject,
       html,
+      attachments,
       replyTo: process.env.GMAIL_USER ?? fallbackConfig.fromEmail,
     });
   }

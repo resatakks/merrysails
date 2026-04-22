@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star, Shield, Clock } from "lucide-react";
+import { ArrowRight, Clock, Shield, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 const heroProducts = [
@@ -29,7 +29,6 @@ const heroProducts = [
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden">
-      {/* Background */}
       <Image
         src="/images/sunset5.jpeg"
         alt="Bosphorus sunset cruise in Istanbul"
@@ -40,104 +39,88 @@ export default function HeroSection() {
       />
       <div className="hero-overlay absolute inset-0" />
 
-      {/* Content */}
-      <div className="relative z-10 container-main flex min-h-[100svh] w-full items-center pt-28 pb-16 sm:min-h-[86vh] sm:pt-28 sm:pb-16 md:min-h-[88vh] md:pt-32 md:pb-18">
-        <div className="w-full max-w-5xl">
+      <div className="relative z-10 container-main flex min-h-[100svh] items-end pt-[calc(env(safe-area-inset-top)+6.9rem)] pb-[calc(env(safe-area-inset-bottom)+10rem)] max-[380px]:pt-[calc(env(safe-area-inset-top)+6.35rem)] max-[380px]:pb-[calc(env(safe-area-inset-bottom)+8.75rem)] sm:items-center sm:pt-32 sm:pb-16">
+        <div className="mx-auto w-full max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="max-w-3xl md:translate-y-5"
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mx-auto max-w-3xl text-center max-[380px]:max-w-[19rem]"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="max-w-4xl text-[2.1rem] font-bold leading-[1.03] text-white sm:text-5xl md:text-[4.2rem]"
-            >
+            <h1 className="text-[2.05rem] font-bold leading-[0.98] text-white max-[380px]:text-[1.76rem] max-[380px]:leading-[1.01] sm:text-5xl md:text-[4.2rem]">
               Bosphorus Dinner Cruise, Sunset Cruise &amp; Yacht Charter
               <span className="text-[var(--brand-gold)]"> in Istanbul</span>
-            </motion.h1>
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/84 max-[380px]:mt-3 max-[380px]:text-[13px] sm:text-base md:text-lg">
+              Choose the right Bosphorus experience first, then move straight into booking.
+            </p>
+          </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="mt-3 max-w-xl text-sm leading-relaxed text-white/84 sm:max-w-2xl sm:text-base md:text-lg"
-            >
-              Go straight to the exact sunset, dinner, or yacht page that fits your plan.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-6 grid gap-3 md:max-w-4xl md:grid-cols-3"
-            >
-              {heroProducts.map((product) => (
-                <Link
-                  key={product.href}
-                  href={product.href}
-                  className="group rounded-[1.45rem] border border-white/45 bg-white/82 px-4 py-3.5 text-[var(--heading)] shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/90"
-                >
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    {product.meta}
-                  </p>
-                  <h2 className="mt-1.5 text-base font-semibold leading-snug text-[var(--heading)]">
-                    {product.title}
-                  </h2>
-                  <div className="mt-2.5 flex items-center justify-between gap-3">
-                    <p className="text-sm font-bold text-[var(--brand-gold)]">{product.price}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] transition-colors group-hover:text-[var(--brand-primary-hover)]">
-                      Open page
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-5 flex flex-wrap gap-3"
-            >
-              <Link href="/reservation" className="btn-cta text-base !py-3.5 !px-8">
-                Open Reservation Center
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.7 }}
+            className="mt-6 grid gap-3 max-[380px]:mt-5 max-[380px]:gap-2.5 md:grid-cols-3"
+          >
+            {heroProducts.map((product) => (
               <Link
-                href="/cruises"
-                className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/90 px-8 py-3.5 font-semibold text-[var(--heading)] transition-all hover:bg-white sm:inline-flex"
+                key={product.href}
+                href={product.href}
+                className="group rounded-[1.55rem] border border-white/45 bg-white/84 px-4 py-4 text-[var(--heading)] shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/90 max-[380px]:rounded-[1.35rem] max-[380px]:px-3.5 max-[380px]:py-3"
               >
-                Explore All Services
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] max-[380px]:text-[9px]">
+                  {product.meta}
+                </p>
+                <h2 className="mt-2 text-[1.1rem] font-semibold leading-snug text-[var(--heading)] max-[380px]:mt-1.5 max-[380px]:text-[1rem]">
+                  {product.title}
+                </h2>
+                <div className="mt-3 flex items-center justify-between gap-3">
+                  <p className="text-sm font-bold text-[var(--brand-gold)]">{product.price}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] transition-colors group-hover:text-[var(--brand-primary-hover)]">
+                    Open page
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
               </Link>
-            </motion.div>
+            ))}
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="mt-8 hidden flex-wrap gap-5 text-sm text-white/74 sm:flex"
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.7 }}
+            className="mt-6 flex justify-center max-[380px]:mt-5"
+          >
+            <Link
+              href="/reservation"
+              className="btn-cta text-base !px-8 !py-3.5 max-[380px]:text-sm max-[380px]:!px-6 max-[380px]:!py-3"
             >
-              <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-[var(--brand-gold)]" />
-                <span>Shared and private cruise options</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-[var(--brand-gold)]" />
-                <span>Direct booking with clear pricing</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[var(--brand-gold)]" />
-                <span>TURSAB-licensed since 2001</span>
-              </div>
-            </motion.div>
+              Open Reservation Center
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.35, duration: 0.7 }}
+            className="mt-7 hidden flex-wrap items-center justify-center gap-5 text-sm text-white/76 sm:flex"
+          >
+            <div className="flex items-center gap-2">
+              <Star className="h-4 w-4 text-[var(--brand-gold)]" />
+              <span>Shared and private cruise options</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Shield className="h-4 w-4 text-[var(--brand-gold)]" />
+              <span>Direct booking with clear pricing</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-[var(--brand-gold)]" />
+              <span>TURSAB-licensed since 2001</span>
+            </div>
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 }

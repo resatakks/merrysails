@@ -2,6 +2,7 @@
 import type { SailsReservation } from "./types";
 import { getReservationLinkContext } from "@/lib/reservation-links";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { getExperienceSupportPageUrl } from "@/lib/experience-support";
 
 function esc(text: string | number | null | undefined): string {
   if (text === null || text === undefined) return "-";
@@ -96,6 +97,7 @@ export function formatReservationDetail(r: SailsReservation): string {
   const cs = currencySymbol(r.currency);
   const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
   const meta = parseReservationNotes(r.notes);
+  const supportGuideUrl = getExperienceSupportPageUrl(r.tourSlug);
 
   let msg = `${statusEmoji(r.status)} <b>Rezervasyon ${esc(r.reservationId)}</b>\n`;
   msg += `━━━━━━━━━━━━━━━━\n`;
@@ -118,6 +120,9 @@ export function formatReservationDetail(r: SailsReservation): string {
   msg += `👥 <b>Misafir:</b> ${r.guests} kişi\n`;
   if (meta.packageName) msg += `📦 <b>Paket:</b> ${esc(meta.packageName)}\n`;
   if (meta.addOns.length > 0) msg += `➕ <b>Ekstra:</b> ${esc(meta.addOns.join(", "))}\n`;
+  if (meta.privateTransferRequested) {
+    msg += `🚗 <b>Transfer:</b> Private transfer istendi, ekip pickup detaylari icin iletisime gececek\n`;
+  }
 
   // Price
   msg += `\n💰 <b>Toplam:</b> ${r.totalPrice} ${cs}`;
@@ -130,6 +135,9 @@ export function formatReservationDetail(r: SailsReservation): string {
   msg += `\n🔗 <b>Rezervasyon:</b> ${esc(linkContext.reservationUrl)}\n`;
   msg += `🧾 <b>Fatura:</b> ${esc(linkContext.invoiceUrl)}\n`;
   msg += `🎟️ <b>Voucher:</b> ${esc(linkContext.voucherUrl)}\n`;
+  if (supportGuideUrl) {
+    msg += `📍 <b>Boarding Rehberi:</b> ${esc(supportGuideUrl)}\n`;
+  }
   if (linkContext.tourPath !== "/") {
     msg += `🌐 <b>Tur Sayfası:</b> ${esc(linkContext.tourUrl)}\n`;
   }
@@ -157,6 +165,7 @@ export function formatNewReservation(r: SailsReservation): string {
   const cs = currencySymbol(r.currency);
   const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
   const meta = parseReservationNotes(r.notes);
+  const supportGuideUrl = getExperienceSupportPageUrl(r.tourSlug);
 
   let msg = `🔔 <b>YENİ REZERVASYON!</b>\n`;
   msg += `━━━━━━━━━━━━━━━━\n`;
@@ -176,6 +185,9 @@ export function formatNewReservation(r: SailsReservation): string {
   msg += `👥 ${r.guests} kişi\n`;
   if (meta.packageName) msg += `📦 ${esc(meta.packageName)}\n`;
   if (meta.addOns.length > 0) msg += `➕ ${esc(meta.addOns.join(", "))}\n`;
+  if (meta.privateTransferRequested) {
+    msg += `🚗 Private transfer istendi — ekip pickup plani icin misafirle iletisime gececek\n`;
+  }
 
   msg += `\n💰 <b>${r.totalPrice} ${cs}</b>`;
   if (r.guests > 1) msg += ` (${r.guests} Misafir)`;
@@ -186,6 +198,9 @@ export function formatNewReservation(r: SailsReservation): string {
   msg += `\n🔗 Rezervasyon: ${esc(linkContext.reservationUrl)}\n`;
   msg += `🧾 Fatura: ${esc(linkContext.invoiceUrl)}\n`;
   msg += `🎟️ Voucher: ${esc(linkContext.voucherUrl)}\n`;
+  if (supportGuideUrl) {
+    msg += `📍 Boarding Rehberi: ${esc(supportGuideUrl)}\n`;
+  }
   if (linkContext.tourPath !== "/") {
     msg += `🌐 Tur: ${esc(linkContext.tourUrl)}\n`;
   }
@@ -216,6 +231,7 @@ export function formatStatusChange(r: SailsReservation, oldStatus: string, newSt
 export function formatReminder(r: SailsReservation): string {
   const linkContext = getReservationLinkContext(r.tourSlug, r.reservationId);
   const meta = parseReservationNotes(r.notes);
+  const supportGuideUrl = getExperienceSupportPageUrl(r.tourSlug);
 
   let msg = `⏰ <b>HATIRLATMA — 2 Saat Kaldı!</b>\n━━━━━━━━━━━━━━━━\n`;
   msg += `📋 <b>${esc(r.reservationId)}</b> — ${esc(r.customerName)}\n\n`;
@@ -224,8 +240,12 @@ export function formatReminder(r: SailsReservation): string {
   msg += `📱 ${esc(r.customerPhone)}\n`;
   msg += `👥 ${r.guests} kişi\n`;
   if (meta.packageName) msg += `📦 ${esc(meta.packageName)}\n`;
+  if (meta.privateTransferRequested) {
+    msg += `🚗 Private transfer istendi — ekip final pickup plani icin misafirle iletisime gececek\n`;
+  }
   msg += `🧾 ${esc(linkContext.invoiceUrl)}\n`;
   msg += `🎟️ ${esc(linkContext.voucherUrl)}\n`;
+  if (supportGuideUrl) msg += `📍 ${esc(supportGuideUrl)}\n`;
   return msg;
 }
 

@@ -1,81 +1,121 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Shield, Mail, CalendarDays } from "lucide-react";
+import { ArrowRight, CalendarDays, Mail, Shield } from "lucide-react";
 import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import ReservationSearch from "./ReservationSearch";
+import { getCoreTours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Reservation Center | Start or Track Your Booking",
-  robots: { index: false, follow: false },
+  title: "Bosphorus Cruise Reservation Center | Sunset, Dinner Cruise & Yacht Charter",
+  description:
+    "Book Bosphorus sunset cruise, dinner cruise, or yacht charter in Istanbul from one reservation center. Compare the 3 core products, choose date and guests, and track your reservation.",
+  robots: { index: true, follow: true },
 };
 
-export default function ReservationPage() {
+const coreTours = getCoreTours();
+
+interface ReservationPageProps {
+  searchParams?: Promise<{
+    tour?: string;
+  }>;
+}
+
+export default async function ReservationPage({ searchParams }: ReservationPageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  const requestedTourSlug = resolvedSearchParams?.tour;
+  const initialTourSlug = coreTours.some((tour) => tour.slug === requestedTourSlug)
+    ? requestedTourSlug
+    : undefined;
+
   return (
-    <main className="min-h-screen bg-[var(--surface-alt)] pt-28 pb-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="text-center mb-10">
-          <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)] mb-3">
-            Reservation Center
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-[var(--heading)] mb-3">
-            Start a new booking or track an existing one
-          </h1>
-          <p className="mx-auto max-w-3xl text-[var(--body-text)]">
-            This page brings the three flagship products together in one reservation center.
-            Start with the option that fits your plan, or search by reservation ID or email if
-            you already booked.
-          </p>
-        </div>
+    <main className="min-h-screen overflow-x-hidden bg-[var(--surface-alt)] pt-28 pb-32">
+      <div className="mx-auto max-w-[84rem] px-4">
+        <section className="mb-8 overflow-hidden rounded-[2.2rem] border border-[var(--line)] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] p-5 shadow-sm sm:p-6 md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center xl:gap-8">
+            <div>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">
+                Reservation Center
+              </p>
+              <h1 className="max-w-[28rem] text-[1.95rem] font-bold leading-tight text-[var(--heading)] md:text-[3.05rem]">
+                Choose your cruise first, then continue to booking
+              </h1>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-[var(--body-text)] md:text-base">
+                Start with sunset cruise, dinner cruise, or yacht charter without getting lost in
+                extra text.
+              </p>
 
-        <div className="grid gap-8 lg:grid-cols-[1.45fr_0.9fr]">
-          <div className="space-y-6">
-            <CoreBookingPlanner variant="page" source="reservation-center" />
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  title: "Bosphorus Sunset Cruise",
-                  description:
-                    "2-hour golden-hour shared cruise with 2 core options and fast date-led booking.",
-                  href: "/cruises/bosphorus-sunset-cruise",
-                },
-                {
-                  title: "Bosphorus Dinner Cruise",
-                  description:
-                    "4 public dinner packages for the main shared evening sales intent.",
-                  href: "/istanbul-dinner-cruise",
-                },
-                {
-                  title: "Yacht Charter Istanbul",
-                  description:
-                    "3 yacht packages for private charter demand, add-ons, and higher-ticket bookings.",
-                  href: "/yacht-charter-istanbul",
-                },
-              ].map((item) => (
+              <div className="mt-5 flex flex-wrap gap-3">
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-2xl border border-[var(--line)] bg-white p-5 transition-all hover:border-[var(--brand-primary)]/30 hover:shadow-sm"
+                  href="#core-booking-planner"
+                  className="btn-cta !px-6 !py-3 text-sm sm:text-base"
                 >
-                  <h2 className="text-lg font-semibold text-[var(--heading)] mb-2">
-                    {item.title}
-                  </h2>
-                  <p className="text-sm leading-relaxed text-[var(--text-muted)] mb-4">
-                    {item.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)]">
-                    Open booking page
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
+                  Choose & book now
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="#track-reservation"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-primary)]/18 bg-white px-5 py-3 text-sm font-semibold text-[var(--brand-primary)] transition-all hover:border-[var(--brand-primary)]/35"
+                >
+                  Track reservation
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-3">
+              {coreTours.map((tour) => (
+                <Link
+                  key={tour.slug}
+                  href={`/reservation?tour=${tour.slug}#core-booking-planner`}
+                  className="group relative min-h-[13rem] overflow-hidden rounded-[1.7rem] border border-[var(--line)] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md xl:min-h-[14.25rem]"
+                >
+                  <Image
+                    src={tour.image}
+                    alt={tour.nameEn}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,19,47,0.12),rgba(8,19,47,0.3)_36%,rgba(8,19,47,0.92))]" />
+                  <div className="absolute inset-x-0 bottom-0 z-10 p-4">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/68">
+                      {tour.duration}
+                    </p>
+                    <h2 className="mt-2 text-lg font-semibold leading-snug text-white">
+                      {tour.nameEn}
+                    </h2>
+                    <div className="mt-3 flex items-end justify-between gap-3">
+                      <span className="text-sm font-bold text-[var(--brand-gold)]">
+                        From €{tour.priceEur}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-white">
+                        Choose
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
+        </section>
+
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.62fr)_minmax(19rem,0.78fr)] xl:grid-cols-[minmax(0,1.68fr)_minmax(20rem,0.72fr)]">
+          <div className="space-y-6">
+            <CoreBookingPlanner
+              variant="page"
+              source="reservation-center"
+              initialTourSlug={initialTourSlug}
+            />
+          </div>
 
           <div className="space-y-6">
-            <div className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm">
+            <section
+              id="track-reservation"
+              className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm"
+            >
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-[var(--heading)] mb-2">
+                <h2 className="mb-2 text-2xl font-bold text-[var(--heading)]">
                   Track Your Reservation
                 </h2>
                 <p className="text-sm text-[var(--body-text)]">
@@ -83,41 +123,42 @@ export default function ReservationPage() {
                 </p>
               </div>
               <ReservationSearch />
-            </div>
+            </section>
 
-            <div className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-[var(--heading)] mb-4">
+            <section className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm">
+              <h2 className="mb-4 text-lg font-semibold text-[var(--heading)]">
                 What happens after booking?
               </h2>
               <div className="space-y-3">
                 {[
                   {
                     icon: CalendarDays,
-                    title: "Reservation ID is created",
+                    title: "Reservation ID is created instantly",
                     description:
-                      "Every new reservation request gets a trackable reservation reference for follow-up.",
+                      "Every new booking request gets a short reservation reference for tracking and support.",
                   },
                   {
                     icon: Mail,
-                    title: "Email confirmation is sent",
+                    title: "Email confirmation is sent right away",
                     description:
-                      "The reservation flow already sends request-received emails and internal notifications, then status updates when the booking is confirmed or changed.",
+                      "The booking flow sends the customer email, internal notification, and the reservation detail links without waiting.",
                   },
                   {
                     icon: Shield,
-                    title: "Voucher and invoice are ready",
+                    title: "Voucher, invoice and reminder flow stay aligned",
                     description:
-                      "Each reservation can now open both a direct voucher page and a reservation invoice page from the reservation center.",
+                      "Your reservation links, reminder email, and meeting-point communication all point to the same reservation record.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-3 rounded-2xl bg-[var(--surface-alt)] p-4">
+                  <div
+                    key={item.title}
+                    className="flex items-start gap-3 rounded-2xl bg-[var(--surface-alt)] p-4"
+                  >
                     <div className="mt-0.5 rounded-full bg-white p-2">
                       <item.icon className="h-4 w-4 text-[var(--brand-primary)]" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-[var(--heading)]">
-                        {item.title}
-                      </p>
+                      <p className="text-sm font-semibold text-[var(--heading)]">{item.title}</p>
                       <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">
                         {item.description}
                       </p>
@@ -125,7 +166,7 @@ export default function ReservationPage() {
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>

@@ -259,7 +259,7 @@ export default async function ReservationVoucherPage({
                           {reservationMeta.privateTransferRequested && (
                             <p>
                               <span className="font-semibold text-[var(--heading)]">Transfer:</span>{" "}
-                              Private transfer requested separately
+                              Private transfer requested. Our team will contact you with pickup details.
                             </p>
                           )}
                           {reservationMeta.addOns.length > 0 && (
