@@ -2,21 +2,33 @@ import type { Metadata } from "next";
 import { getReservation } from "@/app/actions/reservation";
 import { getTourBySlug, getTourPath } from "@/data/tours";
 import { format } from "date-fns";
-import { Calendar, Users, Clock, MapPin, Phone, Shield, Info, Camera, Anchor, FileText } from "lucide-react";
+import {
+  Calendar,
+  Users,
+  Clock,
+  MapPin,
+  Phone,
+  Shield,
+  Info,
+  Camera,
+  Anchor,
+  FileText,
+} from "lucide-react";
 import Link from "next/link";
 import CancelButton from "./CancelButton";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { ReservationDocumentCenter } from "@/components/reservation/ReservationDocumentCenter";
+import {
+  getReservationStatusIcon,
+  getReservationStatusLabel,
+  getReservationStatusTone,
+  normalizeReservationStatus,
+} from "@/lib/reservation-status";
 
 export const metadata: Metadata = {
   title: "Reservation Details",
   robots: { index: false, follow: false },
-};
-
-const statusConfig: Record<string, { color: string; label: string; icon: string }> = {
-  pending: { color: "bg-amber-50 text-amber-900 border-amber-200", label: "Pending Confirmation", icon: "•••" },
-  confirmed: { color: "bg-emerald-50 text-emerald-800 border-emerald-200", label: "Confirmed", icon: "✓" },
-  cancelled: { color: "bg-red-50 text-red-800 border-red-200", label: "Cancelled", icon: "×" },
-  completed: { color: "bg-blue-50 text-blue-800 border-blue-200", label: "Completed", icon: "✓" },
 };
 
 export default async function ReservationDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -57,7 +69,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
   const now = Date.now();
   const canCancel = r.status !== "cancelled" && r.status !== "completed" && (new Date(r.date).getTime() - now) > 24 * 60 * 60 * 1000;
   const isUpcoming = r.status !== "cancelled" && r.status !== "completed" && new Date(r.date).getTime() > now;
-  const status = statusConfig[r.status] || { color: "bg-gray-100 text-gray-800 border-gray-200", label: r.status, icon: "" };
+  const normalizedStatus = normalizeReservationStatus(r.status);
   const departurePoint = tour?.departurePoint;
   const reservationMeta = parseReservationNotes(r.notes);
   const hasSelectedOptions = Boolean(
@@ -69,9 +81,9 @@ export default async function ReservationDetailPage({ params }: { params: Promis
       <div className="mx-auto max-w-lg px-4 space-y-4">
         {/* Status Badge */}
         <div className="text-center mb-2">
-          <span className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border ${status.color}`}>
-            <span>{status.icon}</span>
-            {status.label}
+          <span className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border ${getReservationStatusTone(normalizedStatus)}`}>
+            <span>{getReservationStatusIcon(normalizedStatus)}</span>
+            {getReservationStatusLabel(normalizedStatus)}
           </span>
         </div>
 
@@ -192,6 +204,8 @@ export default async function ReservationDetailPage({ params }: { params: Promis
           </div>
         )}
 
+        <ReservationDocumentCenter reservationId={r.reservationId} />
+
         {/* Actions */}
         <div className="space-y-2.5">
           <Link
@@ -212,15 +226,18 @@ export default async function ReservationDetailPage({ params }: { params: Promis
 
           {canCancel && <CancelButton reservationId={r.reservationId} />}
 
-          <a
+          <TrackedContactLink
             href={`https://wa.me/905370406822?text=${encodeURIComponent(`Hi! My reservation ID is ${r.reservationId}. I have a question about my booking.`)}`}
+            kind="whatsapp"
+            label="reservation_page_whatsapp"
+            location="reservation_page"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
           >
             <Phone className="w-4 h-4" />
             Contact Us via WhatsApp
-          </a>
+          </TrackedContactLink>
 
           <Link
             href="/reservation"

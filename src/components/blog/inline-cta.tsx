@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 export function InlineCTA() {
   return (
@@ -12,19 +13,22 @@ export function InlineCTA() {
       </h3>
       <div className="flex flex-wrap justify-center gap-3">
         <Link
-          href="/cruises"
+          href="/bosphorus-cruise"
           className="inline-flex items-center gap-2 bg-white text-[var(--brand-primary)] font-bold py-3 px-6 rounded-full text-sm hover:shadow-lg transition-all"
         >
-          View All Cruises <ArrowRight className="w-4 h-4" />
+          Compare Bosphorus Cruises <ArrowRight className="w-4 h-4" />
         </Link>
-        <a
+        <TrackedContactLink
           href="https://wa.me/905370406822"
+          kind="whatsapp"
+          label="blog_inline_cta_whatsapp"
+          location="blog_inline_cta"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[var(--brand-whatsapp)] text-white font-bold py-3 px-6 rounded-full text-sm hover:brightness-110 transition-all"
         >
           WhatsApp Us
-        </a>
+        </TrackedContactLink>
       </div>
     </div>
   );

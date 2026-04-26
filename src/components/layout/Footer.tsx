@@ -17,6 +17,7 @@ import {
   TURSAB_LEGAL_NAME,
   TURSAB_LICENSE_NUMBER,
 } from "@/lib/constants";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 const coreLinks = [
   { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
@@ -25,18 +26,22 @@ const coreLinks = [
 ];
 
 const serviceLinks = [
-  { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
-  { label: "Proposal Yacht Rental", href: "/proposal-yacht-rental-istanbul" },
-  { label: "Private Dinner Cruise", href: "/private-bosphorus-dinner-cruise" },
-  { label: "Corporate Events", href: "/corporate-events" },
-  { label: "Private Events", href: "/private-events" },
+  { label: "Sunset Ticket Support", href: "/sunset-cruise-tickets-istanbul" },
+  { label: "Turkish Night Dinner", href: "/turkish-night-dinner-cruise-istanbul" },
+  { label: "Dinner Pickup Support", href: "/dinner-cruise-with-hotel-pickup-istanbul" },
+  { label: "Sultanahmet & Taksim Pickup", href: "/dinner-cruise-pickup-sultanahmet-taksim" },
+  { label: "Boat Rental Hourly", href: "/boat-rental-hourly-istanbul" },
+  { label: "Proposal with Photographer", href: "/proposal-yacht-with-photographer-istanbul" },
+  { label: "Corporate Yacht Dinner", href: "/corporate-yacht-dinner-istanbul" },
+  { label: "Team Building Yacht", href: "/team-building-yacht-istanbul" },
+  { label: "Departure Points Hub", href: "/bosphorus-cruise-departure-points" },
 ];
 
 const companyLinks = [
-  { label: "All Cruises", href: "/cruises" },
-  { label: "Private Tours", href: "/private-tours" },
+  { label: "Bosphorus Cruise Compare", href: "/bosphorus-cruise" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "TURSAB License", href: "/tursab" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
   { label: "Istanbul Guides", href: "/guides" },
@@ -45,10 +50,10 @@ const companyLinks = [
 ];
 
 const blogLinks = [
-  { label: "Best Bosphorus Cruise Guide", href: "/blog/best-bosphorus-cruise-istanbul-guide" },
-  { label: "Dinner Cruise Guide", href: "/blog/bosphorus-dinner-cruise-what-to-expect" },
-  { label: "Sunset Cruise Experience", href: "/blog/istanbul-sunset-cruise-experience" },
-  { label: "Private Yacht Charter Guide", href: "/blog/private-yacht-charter-istanbul-guide" },
+  { label: "Sunset vs Dinner Cruise", href: "/blog/bosphorus-sunset-cruise-vs-dinner-cruise" },
+  { label: "Corporate Yacht Events", href: "/blog/corporate-yacht-events-on-the-bosphorus" },
+  { label: "Cruise Boarding Points", href: "/blog/bosphorus-cruise-boarding-points-guide-2026" },
+  { label: "Private Yacht Departure Points", href: "/blog/private-yacht-departure-points-istanbul" },
 ];
 
 const guideLinks = [
@@ -68,7 +73,7 @@ export default function Footer() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
                 <Anchor className="h-5 w-5 text-[var(--brand-gold)]" />
               </div>
-              <span className="text-xl font-bold tracking-wide">
+              <span className="text-xl font-bold tracking-wide" translate="no">
                 Merry<span className="text-[var(--brand-gold)]">Sails</span>
               </span>
             </Link>
@@ -109,16 +114,21 @@ export default function Footer() {
               </a>
             </div>
             <div className="space-y-2.5">
-              <a
+              <TrackedContactLink
                 href="tel:+905370406822"
+                kind="phone"
+                label={PHONE_DISPLAY}
+                location="footer"
                 className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[var(--brand-gold)]"
+                translate="no"
               >
                 <Phone className="h-4 w-4 shrink-0" />
                 {PHONE_DISPLAY}
-              </a>
+              </TrackedContactLink>
               <a
                 href="mailto:info@merrysails.com"
                 className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[var(--brand-gold)]"
+                translate="no"
               >
                 <Mail className="h-4 w-4 shrink-0" />
                 {EMAIL}
@@ -138,10 +148,10 @@ export default function Footer() {
                   <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-gold)]">
                     TURSAB Licensed
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-white">
+                  <p className="mt-2 text-sm font-semibold text-white" translate="no">
                     {TURSAB_AGENCY_NAME}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-white/65">
+                  <p className="mt-1 text-xs leading-relaxed text-white/65" translate="no">
                     Belge No {TURSAB_LICENSE_NUMBER} · {TURSAB_LEGAL_NAME}
                   </p>
                   <Link
@@ -175,7 +185,7 @@ export default function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              Service Pages
+              Support Routes
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
@@ -248,7 +258,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 md:flex-row">
-          <p className="text-sm text-white/70">
+          <p className="text-sm text-white/70" translate="no">
             © 2026 MerrySails — Merry Tourism. TURSAB license {TURSAB_LICENSE_NUMBER}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">

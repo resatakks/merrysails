@@ -5,6 +5,10 @@ import { redirect } from "next/navigation";
 const ADMIN_COOKIE_NAME = "merrysails_admin_session";
 const DEFAULT_SESSION_HOURS = 12;
 
+function getAdminEmail(): string | null {
+  return process.env.ADMIN_ACCESS_EMAIL?.trim().toLowerCase() || null;
+}
+
 function getAdminPassword(): string | null {
   return process.env.ADMIN_ACCESS_PASSWORD?.trim() || null;
 }
@@ -14,7 +18,7 @@ function getAdminSessionSecret(): string | null {
 }
 
 export function isAdminAuthConfigured(): boolean {
-  return Boolean(getAdminPassword() && getAdminSessionSecret());
+  return Boolean(getAdminEmail() && getAdminPassword() && getAdminSessionSecret());
 }
 
 export function isAdminDevBypassEnabled(): boolean {
@@ -112,14 +116,8 @@ export async function clearAdminSession() {
   cookieStore.delete(ADMIN_COOKIE_NAME);
 }
 
-export function validateAdminPassword(password: string): boolean {
-  const expected = getAdminPassword();
-
-  if (!expected) {
-    return false;
-  }
-
-  const actualBuffer = Buffer.from(password);
+function safeEqual(actual: string, expected: string): boolean {
+  const actualBuffer = Buffer.from(actual);
   const expectedBuffer = Buffer.from(expected);
 
   if (actualBuffer.length !== expectedBuffer.length) {
@@ -127,4 +125,15 @@ export function validateAdminPassword(password: string): boolean {
   }
 
   return timingSafeEqual(actualBuffer, expectedBuffer);
+}
+
+export function validateAdminCredentials(email: string, password: string): boolean {
+  const expectedEmail = getAdminEmail();
+  const expected = getAdminPassword();
+
+  if (!expectedEmail || !expected) {
+    return false;
+  }
+
+  return safeEqual(email.trim().toLowerCase(), expectedEmail) && safeEqual(password, expected);
 }

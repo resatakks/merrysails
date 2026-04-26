@@ -2,6 +2,7 @@
 
 import { Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { handleTrackedContactNavigation } from "@/lib/analytics";
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 
 export default function WhatsAppButton() {
@@ -19,6 +20,14 @@ export default function WhatsAppButton() {
     <>
       <a
         href={`tel:${PHONE}`}
+        onClick={(event) =>
+          handleTrackedContactNavigation(event, {
+            href: `tel:${PHONE}`,
+            kind: "phone",
+            label: PHONE_DISPLAY,
+            location: pathname,
+          })
+        }
         className={`fixed left-4 z-40 flex items-center gap-2 rounded-full border border-white/20 bg-[linear-gradient(135deg,#182987,#ff0844)] px-3.5 py-2.5 text-white shadow-[0_18px_32px_rgba(24,41,135,0.34)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_22px_38px_rgba(24,41,135,0.44)] ${mobileBottomOffset} ${desktopBottomOffset} md:left-6 md:px-4`}
         aria-label={`Call ${PHONE_DISPLAY}`}
       >
@@ -35,6 +44,14 @@ export default function WhatsAppButton() {
           href={`${WHATSAPP_URL}?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Bosphorus%20cruise%20tours.`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(event) =>
+            handleTrackedContactNavigation(event, {
+              href: `${WHATSAPP_URL}?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Bosphorus%20cruise%20tours.`,
+              kind: "whatsapp",
+              label: "sticky_whatsapp_button",
+              location: pathname,
+            })
+          }
           className="relative flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#20BD5A] md:h-14 md:w-14"
           aria-label="Chat on WhatsApp"
         >

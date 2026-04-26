@@ -6,6 +6,7 @@ import {
   getReservationVoucherUrl,
   getTourUrlBySlug,
 } from "@/lib/reservation-links";
+import { getWhatsAppUrl } from "./phone-links";
 
 interface ReservationActionOptions {
   phone?: string | null;
@@ -73,9 +74,9 @@ export function reservationActions(
   if (reservationLinks.length > 0) rows.push(reservationLinks);
 
   const contactLinks: InlineKeyboardButton[] = [];
-  if (options.phone) {
-    const cleanPhone = options.phone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
-    contactLinks.push({ text: "💬 WhatsApp", url: `https://wa.me/${cleanPhone}` });
+  const whatsappUrl = getWhatsAppUrl(options.phone);
+  if (whatsappUrl) {
+    contactLinks.push({ text: "💬 WhatsApp", url: whatsappUrl });
   }
   if (options.tourSlug) {
     contactLinks.push({
@@ -117,9 +118,9 @@ export function reservationDetailActions(
   if (reservationLinks.length > 0) rows.push(reservationLinks);
 
   const contactLinks: InlineKeyboardButton[] = [];
-  if (options.phone) {
-    const cleanPhone = options.phone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
-    contactLinks.push({ text: "💬 WhatsApp", url: `https://wa.me/${cleanPhone}` });
+  const whatsappUrl = getWhatsAppUrl(options.phone);
+  if (whatsappUrl) {
+    contactLinks.push({ text: "💬 WhatsApp", url: whatsappUrl });
   }
   if (options.tourSlug) {
     contactLinks.push({

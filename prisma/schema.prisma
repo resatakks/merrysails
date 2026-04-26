@@ -18,7 +18,10 @@ model Reservation {
   guests        Int
   totalPrice    Float
   currency      String   @default("EUR")
-  status        String   @default("pending") // pending | confirmed | cancelled | completed
+  status        String   @default("new") // new | confirmed | cancelled | completed
+  internalCostEur Float?
+  confirmedAt   DateTime?
+  completedAt   DateTime?
 
   // Customer info
   customerName    String
@@ -34,6 +37,7 @@ model Reservation {
   @@index([status])
   @@index([date])
   @@index([customerEmail])
+  @@index([createdAt])
 }
 
 // ─── Telegram User ──────────────────────────────────────────
@@ -61,6 +65,32 @@ model ContactMessage {
   message   String
   isRead    Boolean  @default(false)
   createdAt DateTime @default(now())
+}
+
+// ─── Google Ads Lead Forms ─────────────────────────────────
+
+model GoogleAdsLead {
+  id           String   @id @default(cuid())
+  googleLeadId String?  @unique
+  formId       String?
+  campaignId   String?
+  campaignName String?
+  product      String?
+  source       String   @default("google_ads_lead_form")
+  name         String?
+  phone        String?
+  email        String?
+  isTest       Boolean  @default(false)
+  status       String   @default("new") // new | contacted | qualified | bad | booked
+  rawPayload   Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([campaignName])
+  @@index([phone])
+  @@index([status])
 }
 
 // ─── Tour Operations ──────────────────────────────────────

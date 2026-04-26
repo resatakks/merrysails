@@ -12,6 +12,7 @@ import {
   getBookingMode,
   getPriceMode,
   getPriceSuffix,
+  getTourFormat,
   isPricingVisible,
   type Tour,
   type Package,
@@ -45,6 +46,12 @@ const TAB_LABELS: { key: TabKey; label: string }[] = [
   { key: "faq", label: "FAQ" },
 ];
 
+const SEO_HEADINGS_BY_SLUG: Record<string, string> = {
+  "bosphorus-sunset-cruise": "Bosphorus Sunset Cruise",
+  "bosphorus-dinner-cruise": "Istanbul Dinner Cruise on the Bosphorus",
+  "yacht-charter-in-istanbul": "Yacht Charter Istanbul",
+};
+
 export default function TourDetailClient({
   tour,
   related,
@@ -77,6 +84,7 @@ export default function TourDetailClient({
   const bookingMode = getBookingMode(tour);
   const priceMode = getPriceMode(tour);
   const priceSuffix = getPriceSuffix(tour);
+  const tourFormat = getTourFormat(tour);
 
   const allImages = [tour.image, ...tour.gallery.filter((img) => img !== tour.image)];
   const prefilledDate = useMemo(() => {
@@ -109,6 +117,7 @@ export default function TourDetailClient({
     if (hasPickupExcluded) return "Optional";
     return "Check details";
   }, [tour.includes, tour.notIncluded]);
+  const pageHeading = SEO_HEADINGS_BY_SLUG[tour.slug] ?? tour.nameEn;
 
   // Build available tabs based on tour data
   const availableTabs = TAB_LABELS.filter((tab) => {
@@ -228,8 +237,8 @@ export default function TourDetailClient({
         <div className="flex items-center gap-2.5 border-b border-[var(--line)] px-5 py-4 md:border-b-0 md:border-r">
           <Users className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
-            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Max People</div>
-            <div className="text-sm font-semibold text-[var(--heading)]">{tour.capacity}</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Format</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tourFormat}</div>
           </div>
         </div>
         <div className="flex items-center gap-2.5 border-r border-[var(--line)] px-5 py-4">
@@ -305,7 +314,7 @@ export default function TourDetailClient({
         <div className="order-2 space-y-6 lg:order-1 lg:col-span-2">
           {/* Title & Rating */}
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold mb-1">{tour.nameEn}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h1>
             <p className="text-[var(--text-muted)] mb-3">{tour.name}</p>
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <div className="flex items-center gap-1">
@@ -412,7 +421,7 @@ export default function TourDetailClient({
                 >
                   {/* Description */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-4">About This Tour</h2>
+                    <h2 className="text-xl font-bold mb-4">About {pageHeading}</h2>
                     <div className="text-[var(--body-text)] leading-relaxed whitespace-pre-line">
                       {tour.longDescription}
                     </div>
@@ -422,7 +431,7 @@ export default function TourDetailClient({
                   {hasPackages && (
                     <div className="bg-white rounded-2xl p-6 md:p-8">
                       <h2 className="text-xl font-bold mb-6">
-                        {showPricing ? "Choose Your Package" : "Choose Your Service Scope"}
+                        {showPricing ? `${pageHeading} Package Options` : `${pageHeading} Service Scope`}
                       </h2>
                       <div className={`grid grid-cols-1 gap-4 ${tour.packages!.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
                         {tour.packages!.map((pkg) => {
@@ -517,7 +526,7 @@ export default function TourDetailClient({
 
                   {/* Route & Departure */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-4">Route &amp; Departure</h2>
+                    <h2 className="text-xl font-bold mb-4">{pageHeading} Route &amp; Departure</h2>
                     <div className="flex items-center gap-2 text-[var(--body-text)] mb-3">
                       <Anchor className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
                       <span>{tour.route}</span>
@@ -530,7 +539,7 @@ export default function TourDetailClient({
 
                   {/* Highlights */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-4">Highlights</h2>
+                    <h2 className="text-xl font-bold mb-4">{pageHeading} Highlights</h2>
                     <div className="flex flex-wrap gap-2">
                       {tour.highlights.map((h) => (
                         <span key={h} className="px-3 py-1.5 bg-[var(--surface-alt)] rounded-full text-sm font-medium">
@@ -598,7 +607,7 @@ export default function TourDetailClient({
                   transition={{ duration: 0.25 }}
                 >
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-8">Tour Itinerary</h2>
+                    <h2 className="text-xl font-bold mb-8">{pageHeading} Itinerary</h2>
                     <div className="relative">
                       {/* Continuous vertical line */}
                       <div className="absolute left-[39px] top-4 bottom-4 w-0.5 bg-[var(--brand-primary)]/15" />
@@ -651,7 +660,7 @@ export default function TourDetailClient({
                   transition={{ duration: 0.25 }}
                 >
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-6">What&apos;s Included</h2>
+                    <h2 className="text-xl font-bold mb-6">What&apos;s Included in {pageHeading}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {/* Included column */}
                       <div>
@@ -708,7 +717,7 @@ export default function TourDetailClient({
                   transition={{ duration: 0.25 }}
                 >
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+                    <h2 className="text-xl font-bold mb-6">{pageHeading} Frequently Asked Questions</h2>
                     <div className="space-y-3">
                       {tour.faq!.map((item, i) => {
                         const isOpen = openFaqIndex === i;

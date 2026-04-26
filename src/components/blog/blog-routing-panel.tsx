@@ -1,11 +1,24 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { getBlogBySlug } from "@/content/blog";
+import { cleanContentText } from "@/lib/content-text";
 
 type RoutingLink = {
   href: string;
   label: string;
 };
+
+function getRouteHelperCopy(href: string) {
+  if (href === "/bosphorus-cruise") {
+    return "Open the compare hub first.";
+  }
+
+  if (href.startsWith("/blog/") || href.startsWith("/guides/")) {
+    return "Open the matching planning guide.";
+  }
+
+  return "Open the matching booking or support page.";
+}
 
 export function BlogRoutingPanel({
   eyebrow,
@@ -53,7 +66,7 @@ export function BlogRoutingPanel({
                 {item.label}
               </span>
               <span className="block text-sm text-[var(--text-muted)]">
-                Open the matching service page.
+                {getRouteHelperCopy(item.href)}
               </span>
             </Link>
           ))}
@@ -79,7 +92,7 @@ export function BlogRoutingPanel({
                   {post.category.replace("-", " ")}
                 </p>
                 <h4 className="text-sm font-semibold leading-snug text-[var(--heading)]">
-                  {post.title}
+                  {cleanContentText(post.title)}
                 </h4>
               </Link>
             ))}

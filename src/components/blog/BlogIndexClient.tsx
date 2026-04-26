@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock, Search } from "lucide-react";
 import type { BlogCollection, BlogPost } from "@/data/blog";
+import { cleanContentText } from "@/lib/content-text";
 
 type CategoryFilterValue = "all" | BlogPost["category"];
 
@@ -25,7 +26,43 @@ const categories: Array<{ label: string; value: CategoryFilterValue }> = [
 
 const POSTS_PER_PAGE = 12;
 
+const shortDateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  timeZone: "UTC",
+});
+
+const longDateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+function isDefined<T>(value: T | undefined): value is T {
+  return value !== undefined;
+}
+
+function formatBlogDate(value: string, withYear: boolean = false): string {
+  const normalized = /^\d{4}-\d{2}-\d{2}$/.test(value)
+    ? `${value}T00:00:00Z`
+    : value;
+  const date = new Date(normalized);
+
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return (withYear ? longDateFormatter : shortDateFormatter).format(date);
+}
+
 const bookingPages = [
+  {
+    href: "/bosphorus-cruise",
+    eyebrow: "Compare first",
+    title: "Bosphorus Cruise Hub",
+    description: "For broader readers who still need to compare sunset, dinner, and private-yacht directions before opening a narrower page.",
+  },
   {
     href: "/cruises/bosphorus-sunset-cruise",
     eyebrow: "Golden hour",
@@ -46,6 +83,42 @@ const bookingPages = [
   },
 ] as const;
 
+const featuredPostSlug = "bosphorus-sunset-cruise-vs-dinner-cruise";
+
+const planningReadSlugs = [
+  "bosphorus-sunset-cruise-vs-dinner-cruise",
+  "boat-rental-vs-yacht-charter-istanbul",
+  "proposal-yacht-rental-istanbul-planning-guide",
+  "corporate-yacht-events-on-the-bosphorus",
+] as const;
+
+const planningShortcuts = [
+  {
+    href: "/dinner-cruise-with-hotel-pickup-istanbul",
+    eyebrow: "Pickup-first",
+    title: "Dinner Pickup Support",
+    description: "Open this when the shared dinner route is already right and the open question is pickup logic.",
+  },
+  {
+    href: "/boat-rental-hourly-istanbul",
+    eyebrow: "Hourly private hire",
+    title: "Boat Rental Hourly",
+    description: "Open this when the brief is shorter, lighter, and hour-led before a package-driven charter.",
+  },
+  {
+    href: "/corporate-yacht-dinner-istanbul",
+    eyebrow: "Dinner-led company brief",
+    title: "Corporate Yacht Dinner",
+    description: "Open this when the business request is clearly a private yacht dinner rather than a broad event build.",
+  },
+  {
+    href: "/client-hosting-yacht-istanbul",
+    eyebrow: "Hosting-first company brief",
+    title: "Client Hosting Yacht",
+    description: "Open this when guest impression and hosting rhythm matter more than a generic charter comparison.",
+  },
+] as const;
+
 function formatCategoryLabel(category: BlogPost["category"]) {
   return category.replace("-", " ").replace(/\b\w/g, (character) => character.toUpperCase());
 }
@@ -58,8 +131,28 @@ export default function BlogIndexClient({
   const [active, setActive] = useState<CategoryFilterValue>("all");
   const [search, setSearch] = useState("");
   const [shown, setShown] = useState(POSTS_PER_PAGE);
+  const normalizedBlogPosts = useMemo(
+    () =>
+      blogPosts.map((post) => ({
+        ...post,
+        title: cleanContentText(post.title),
+        excerpt: cleanContentText(post.excerpt),
+        imageAlt: post.imageAlt ? cleanContentText(post.imageAlt) : post.imageAlt,
+      })),
+    [blogPosts]
+  );
+  const normalizedCommercialSupportPosts = useMemo(
+    () =>
+      commercialSupportPosts.map((post) => ({
+        ...post,
+        title: cleanContentText(post.title),
+        excerpt: cleanContentText(post.excerpt),
+        imageAlt: post.imageAlt ? cleanContentText(post.imageAlt) : post.imageAlt,
+      })),
+    [commercialSupportPosts]
+  );
 
-  const filtered = blogPosts.filter((post) => {
+  const filtered = normalizedBlogPosts.filter((post) => {
     const matchCategory = active === "all" || post.category === active;
     const matchSearch =
       !search ||
@@ -70,17 +163,29 @@ export default function BlogIndexClient({
   });
 
   const groupedCollections = useMemo(() => {
-    const postIndex = new Map(blogPosts.map((post) => [post.slug, post]));
+    const postIndex = new Map(normalizedBlogPosts.map((post) => [post.slug, post]));
 
     return blogCollections.map((collection) => ({
       ...collection,
       posts: collection.postSlugs
         .map((slug) => postIndex.get(slug))
-        .filter((post): post is BlogPost => Boolean(post)),
-    }));
-  }, [blogCollections, blogPosts]);
+        .filter(isDefined),
+      }));
+  }, [blogCollections, normalizedBlogPosts]);
 
-  const featured = blogPosts[0];
+  const commercialSupportIndex = useMemo(
+    () => new Map(normalizedCommercialSupportPosts.map((post) => [post.slug, post])),
+    [normalizedCommercialSupportPosts]
+  );
+  const planningReads = useMemo(
+    () =>
+      planningReadSlugs
+        .map((slug) => commercialSupportIndex.get(slug))
+        .filter(isDefined),
+    [commercialSupportIndex]
+  );
+  const featured =
+    normalizedBlogPosts.find((post) => post.slug === featuredPostSlug) ?? normalizedBlogPosts[0];
   const visible = filtered.slice(0, shown);
   const hasMore = shown < filtered.length;
 
@@ -118,11 +223,11 @@ export default function BlogIndexClient({
               Start with the booking page first
             </h2>
             <p className="text-sm text-[var(--text-muted)] max-w-2xl mx-auto">
-              Use these 3 pages first when you already know the trip is about sunset, dinner, or
-              private yacht charter.
+              Start with the compare hub if the format is still broad. Use the 3 owner pages once
+              the trip is clearly about sunset, dinner, or private yacht charter.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
             {bookingPages.map((item) => (
               <Link
                 key={item.href}
@@ -202,7 +307,7 @@ export default function BlogIndexClient({
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {commercialSupportPosts.slice(0, 4).map((post) => (
+            {planningReads.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -218,6 +323,23 @@ export default function BlogIndexClient({
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--brand-primary)]">
                   Read the guide <ArrowRight className="w-3.5 h-3.5" />
                 </span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            {planningShortcuts.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-2xl border border-[var(--line)] bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-[var(--brand-primary)] hover:shadow-md"
+              >
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+                  {item.eyebrow}
+                </p>
+                <h3 className="mb-2 text-base font-semibold text-[var(--heading)] group-hover:text-[var(--brand-primary)] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[var(--text-muted)]">{item.description}</p>
               </Link>
             ))}
           </div>
@@ -255,11 +377,7 @@ export default function BlogIndexClient({
                   </span>
                   <span className="flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5" />
-                    {new Date(featured.dateModified || featured.date).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
+                    {formatBlogDate(featured.dateModified || featured.date, true)}
                   </span>
                 </div>
               </div>
@@ -324,10 +442,7 @@ export default function BlogIndexClient({
                       </span>
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
-                        {new Date(post.dateModified || post.date).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "numeric",
-                        })}
+                        {formatBlogDate(post.dateModified || post.date)}
                       </span>
                     </div>
                     <ArrowRight className="w-4 h-4 text-[var(--brand-primary)] opacity-0 group-hover:opacity-100 transition-opacity" />

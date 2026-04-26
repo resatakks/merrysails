@@ -89,11 +89,18 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.7 }}
-            className="mt-6 flex justify-center max-[380px]:mt-5"
+            className="mt-6 flex flex-wrap justify-center gap-3 max-[380px]:mt-5"
           >
             <Link
-              href="/reservation"
+              href="/bosphorus-cruise"
               className="btn-cta text-base !px-8 !py-3.5 max-[380px]:text-sm max-[380px]:!px-6 max-[380px]:!py-3"
+            >
+              Compare Cruise Options
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/reservation"
+              className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/95 px-8 py-3.5 text-base font-semibold text-[var(--brand-primary)] shadow-[0_16px_42px_rgba(11,21,58,0.18)] backdrop-blur-sm transition-all hover:bg-white hover:text-[var(--brand-primary-hover)] max-[380px]:px-6 max-[380px]:py-3 max-[380px]:text-sm"
             >
               Open Reservation Center
               <ArrowRight className="h-4 w-4" />

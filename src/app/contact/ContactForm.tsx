@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
 import { submitContactForm } from "@/app/actions/contact";
+import { trackContactSubmitSuccess } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const pathname = usePathname() ?? "/contact";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,6 +30,10 @@ export default function ContactForm() {
     setLoading(false);
 
     if (result.success) {
+      trackContactSubmitSuccess({
+        pagePath: pathname,
+        subject: (data.get("subject") as string) || "",
+      });
       setSuccess(true);
       form.reset();
     } else {

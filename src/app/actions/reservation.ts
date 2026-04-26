@@ -7,11 +7,7 @@ import { prisma } from "@/lib/db";
 import { generateReservationId } from "@/lib/reservation-id";
 import { getNotificationInbox, getReservationCcRecipients, sendEmail } from "@/lib/email";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
-import { reservationNotificationEmail } from "@/lib/email-templates/reservation-notification";
-import { reservationCancelledEmail } from "@/lib/email-templates/reservation-cancelled";
 import { serializeReservationNotes } from "@/lib/reservation-meta";
-import { buildReservationPdfAttachments } from "@/lib/reservation-pdf";
-import { getBookingMode } from "@/data/tours";
 import {
   buildReservationPricingSnapshot,
   ReservationValidationError,
@@ -222,8 +218,7 @@ export async function createReservation(input: CreateReservationInput) {
     });
 
     const reservationId = await generateReservationId();
-    const initialStatus =
-      getBookingMode(pricing.tour) === "book" ? "confirmed" : "pending";
+    const initialStatus = "new";
     const notificationInbox = getNotificationInbox();
     const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
 
@@ -269,38 +264,11 @@ export async function createReservation(input: CreateReservationInput) {
 
       tasks.push(
         (async () => {
-          const attachments =
-            initialStatus === "confirmed"
-              ? await buildReservationPdfAttachments({
-                  reservationId,
-                  customerName,
-                  customerEmail,
-                  customerPhone,
-                  tourSlug: pricing.tour.slug,
-                  tourName: pricing.tour.nameEn,
-                  serviceDate: reservationDate,
-                  time: reservationTime,
-                  guests: pricing.guests,
-                  totalPrice: pricing.total,
-                  currency: pricing.currency,
-                  packageName: pricing.packageName,
-                  addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
-                  additionalGuests,
-                  privateTransferRequested: Boolean(input.privateTransferRequested),
-                  notes: customerNote,
-                  pricing,
-                  status: "Confirmed",
-                })
-              : undefined;
-
           await sendEmail({
             to: customerEmail,
             cc: reservationCcRecipients,
-            attachments,
             subject:
-              initialStatus === "confirmed"
-                ? `Reservation Confirmed — ${reservationId} | MerrySails`
-                : `Reservation Request Received — ${reservationId} | MerrySails`,
+              `Reservation Request Received — ${reservationId} | MerrySails`,
             html: reservationConfirmationEmail({
               reservationId,
               customerName,
@@ -316,44 +284,13 @@ export async function createReservation(input: CreateReservationInput) {
               additionalGuests,
               privateTransferRequested: Boolean(input.privateTransferRequested),
               notes: customerNote,
-              variant: initialStatus === "confirmed" ? "confirmed" : "received",
+              variant: "received",
             }),
           });
         })().catch((emailErr) => {
           console.error("Failed to send customer email:", emailErr);
         })
       );
-
-      if (notificationInbox) {
-        tasks.push(
-          sendEmail({
-            to: notificationInbox,
-            cc: reservationCcRecipients.filter((recipient) => recipient !== notificationInbox),
-            subject: `🎉 New Booking: ${reservationId} — ${pricing.tour.nameEn}`,
-            html: reservationNotificationEmail({
-              reservationId,
-              customerName,
-              customerEmail,
-              customerPhone,
-              customerCountry,
-              tourName: pricing.tour.nameEn,
-              tourSlug: pricing.tour.slug,
-              date: formattedDate,
-              time: reservationTime,
-              guests: pricing.guests,
-              totalPrice: pricing.total,
-              currency: pricing.currency,
-              packageName: pricing.packageName,
-              addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
-              additionalGuests,
-              privateTransferRequested: Boolean(input.privateTransferRequested),
-              notes: customerNote,
-            }),
-          }).catch((emailErr) => {
-            console.error("Failed to send notification email:", emailErr);
-          })
-        );
-      }
 
       if (process.env.TELEGRAM_BOT_TOKEN) {
         tasks.push(
@@ -460,26 +397,6 @@ export async function cancelReservation(reservationId: string) {
       where: { reservationId: reservationId.toUpperCase() },
       data: { status: "cancelled" },
     });
-
-    const formattedDate = format(tourDate, "MMMM d, yyyy");
-    // Send cancellation email to customer
-    try {
-      await sendEmail({
-        to: reservation.customerEmail,
-        subject: `Reservation Cancelled — ${reservationId} | MerrySails`,
-        html: reservationCancelledEmail({
-          reservationId: reservation.reservationId,
-          customerName: reservation.customerName,
-          tourName: reservation.tourName,
-          date: formattedDate,
-          time: reservation.time,
-          totalPrice: reservation.totalPrice,
-          currency: reservation.currency,
-        }),
-      });
-    } catch (emailErr) {
-      console.error("Failed to send cancellation email:", emailErr);
-    }
 
     // Telegram notification for cancellation
     if (process.env.TELEGRAM_BOT_TOKEN) {

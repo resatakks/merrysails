@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 const SITE_URL = "https://merrysails.com";
 
@@ -62,9 +63,7 @@ const serviceJsonLd = {
   description:
     "Private yacht rental on the Bosphorus for marriage proposals, romantic setups, and premium proposal planning in Istanbul.",
   provider: {
-    "@type": "TravelAgency",
-    name: "MerrySails",
-    url: SITE_URL,
+    "@id": `${SITE_URL}/#organization`,
   },
   areaServed: "Istanbul, Turkey",
   serviceType: "Proposal Yacht Rental",
@@ -119,9 +118,14 @@ const quoteDrivers = [
 
 const comparePages = [
   {
-    href: "/private-bosphorus-dinner-cruise",
-    title: "Private Bosphorus Dinner Cruise",
-    description: "Dinner-led evenings with a proposal later in the plan.",
+    href: "/proposal-yacht-with-photographer-istanbul",
+    title: "Proposal Yacht with Photographer",
+    description: "Use this when discreet reveal coverage and couple portraits are a major part of the booking brief.",
+  },
+  {
+    href: "/private-dinner-cruise-for-couples-istanbul",
+    title: "Couples Private Dinner",
+    description: "Dinner-led evenings with a proposal later in the plan and a quieter couple-first setup.",
   },
   {
     href: "/yacht-charter-istanbul",
@@ -134,9 +138,9 @@ const comparePages = [
     description: "A better fit when the occasion is a wider celebration rather than one proposal moment.",
   },
   {
-    href: "/boat-rental-istanbul",
-    title: "Boat Rental Istanbul",
-    description: "A good starting point when the vessel and route come before the event format.",
+    href: "/boat-rental-hourly-istanbul",
+    title: "Boat Rental Hourly",
+    description: "A good starting point when the vessel and shorter hour-led route come before the event format.",
   },
 ];
 
@@ -180,19 +184,22 @@ export default function ProposalYachtRentalIstanbulPage() {
               >
                 Request proposal quote
               </Link>
-              <a
+              <TrackedContactLink
                 href="https://wa.me/905370406822"
+                kind="whatsapp"
+                label="proposal_page_whatsapp_hero"
+                location="proposal_page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl border border-rose-600 px-6 py-3 font-semibold text-rose-600 transition-colors hover:bg-rose-50"
               >
                 Plan on WhatsApp
-              </a>
+              </TrackedContactLink>
             </div>
           </div>
 
           <aside className="rounded-2xl border border-rose-100 bg-rose-50 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">What helps us quote quickly</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">What helps us quote your proposal yacht rental quickly</h2>
             <ul className="space-y-3 text-sm text-gray-700">
               {[
                 "Preferred proposal date and sunset vs evening timing",
@@ -210,7 +217,7 @@ export default function ProposalYachtRentalIstanbulPage() {
         </section>
 
         <section className="mb-12 rounded-2xl border border-rose-100 bg-rose-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">When this proposal setup makes sense</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">When a proposal yacht rental in Istanbul makes sense</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {fitCards.map((item) => (
               <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
@@ -222,7 +229,7 @@ export default function ProposalYachtRentalIstanbulPage() {
         </section>
 
         <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What changes the final price</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What changes the proposal yacht rental price</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {quoteDrivers.map((item) => (
               <div key={item.title} className="rounded-xl border border-gray-100 bg-gray-50 p-4">
@@ -234,7 +241,7 @@ export default function ProposalYachtRentalIstanbulPage() {
         </section>
 
         <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Compare with related Bosphorus bookings</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Compare with related private Bosphorus bookings</h2>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {comparePages.map((item) => (
               <Link
@@ -242,8 +249,8 @@ export default function ProposalYachtRentalIstanbulPage() {
                 href={item.href}
                 className="rounded-xl border border-gray-200 bg-gray-50 p-4 transition-colors hover:border-rose-200 hover:bg-rose-50"
               >
-                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
-                <span className="block text-sm text-gray-600">{item.description}</span>
+                <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
               </Link>
             ))}
           </div>
@@ -276,14 +283,17 @@ export default function ProposalYachtRentalIstanbulPage() {
             >
               Request quote
             </Link>
-            <a
+            <TrackedContactLink
               href="https://wa.me/905370406822"
+              kind="whatsapp"
+              label="proposal_page_whatsapp_footer"
+              location="proposal_page"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl border border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-rose-700"
             >
               WhatsApp
-            </a>
+            </TrackedContactLink>
           </div>
         </div>
       </main>

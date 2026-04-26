@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import {
   getNotificationInbox,
@@ -12,6 +12,73 @@ import { notifyReminder } from "@/lib/telegram/notifications";
 import { format } from "date-fns";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { isReservationReminderDue } from "@/lib/booking-cutoffs";
+import type { SailsReservation } from "@/lib/telegram/types";
+
+interface ReminderBatchSummary {
+  telegramSent: number;
+  telegramDeactivated: number;
+  telegramFailed: number;
+  emailSent: number;
+  emailFailed: number;
+}
+
+async function processReminderBatch(
+  reservations: SailsReservation[],
+  reservationCcRecipients: string[]
+): Promise<ReminderBatchSummary> {
+  const summary: ReminderBatchSummary = {
+    telegramSent: 0,
+    telegramDeactivated: 0,
+    telegramFailed: 0,
+    emailSent: 0,
+    emailFailed: 0,
+  };
+
+  for (const reservation of reservations) {
+    try {
+      const result = await notifyReminder(reservation);
+      summary.telegramSent += result.sent;
+      summary.telegramDeactivated += result.deactivated;
+      summary.telegramFailed += result.failed;
+    } catch (telegramError) {
+      summary.telegramFailed++;
+      console.error("[MERRYSAILS-REMINDER] Telegram reminder failed:", telegramError);
+    }
+
+    if (isEmailConfigured() && reservation.customerEmail) {
+      try {
+        const tour = getTourBySlug(reservation.tourSlug);
+        const reservationMeta = parseReservationNotes(reservation.notes);
+
+        await sendEmail({
+          to: reservation.customerEmail,
+          cc: reservationCcRecipients,
+          subject: `Reminder: ${reservation.tourName} starts soon | ${reservation.reservationId} | MerrySails`,
+          html: reservationReminderEmail({
+            reservationId: reservation.reservationId,
+            customerName: reservation.customerName,
+            tourName: reservation.tourName,
+            tourSlug: reservation.tourSlug,
+            date: format(new Date(reservation.date), "MMMM d, yyyy"),
+            time: reservation.time,
+            guests: reservation.guests,
+            departurePoint: tour?.departurePoint,
+            packageName: reservationMeta.packageName,
+            addOns: reservationMeta.addOns,
+            privateTransferRequested: reservationMeta.privateTransferRequested,
+          }),
+        });
+
+        summary.emailSent++;
+      } catch (emailError) {
+        summary.emailFailed++;
+        console.error("[MERRYSAILS-REMINDER] Reminder email failed:", emailError);
+      }
+    }
+  }
+
+  return summary;
+}
 
 export async function GET(req: NextRequest) {
   try {
@@ -35,56 +102,31 @@ export async function GET(req: NextRequest) {
       return isReservationReminderDue(r.tourSlug, new Date(r.date), r.time, now, 30);
     });
 
-    let telegramSent = 0;
-    let emailSent = 0;
     const notificationInbox = getNotificationInbox();
     const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
 
-    for (const r of toRemind) {
-      try {
-        await notifyReminder({ ...r, totalPrice: Number(r.totalPrice) });
-        telegramSent++;
-      } catch (telegramError) {
-        console.error("[MERRYSAILS-REMINDER] Telegram reminder failed:", telegramError);
-      }
+    if (toRemind.length > 0) {
+      const reminderPayload = toRemind.map((reservation: typeof toRemind[number]) => ({
+        ...reservation,
+        totalPrice: Number(reservation.totalPrice),
+      }));
 
-      if (isEmailConfigured() && r.customerEmail) {
-        try {
-          const tour = getTourBySlug(r.tourSlug);
-          const reservationMeta = parseReservationNotes(r.notes);
-
-          await sendEmail({
-            to: r.customerEmail,
-            cc: reservationCcRecipients,
-            subject: `Reminder: ${r.tourName} starts soon | ${r.reservationId} | MerrySails`,
-            html: reservationReminderEmail({
-              reservationId: r.reservationId,
-              customerName: r.customerName,
-              tourName: r.tourName,
-              tourSlug: r.tourSlug,
-              date: format(new Date(r.date), "MMMM d, yyyy"),
-              time: r.time,
-              guests: r.guests,
-              departurePoint: tour?.departurePoint,
-              packageName: reservationMeta.packageName,
-              addOns: reservationMeta.addOns,
-              privateTransferRequested: reservationMeta.privateTransferRequested,
-            }),
-          });
-
-          emailSent++;
-        } catch (emailError) {
-          console.error("[MERRYSAILS-REMINDER] Reminder email failed:", emailError);
-        }
-      }
+      after(async () => {
+        const summary = await processReminderBatch(
+          reminderPayload,
+          reservationCcRecipients
+        );
+        console.log("[MERRYSAILS-REMINDER] Background reminder batch:", {
+          reminders: reminderPayload.length,
+          ...summary,
+        });
+      });
     }
 
     return NextResponse.json({
       success: true,
       checked: reservations.length,
-      reminders: toRemind.length,
-      telegramSent,
-      emailSent,
+      remindersQueued: toRemind.length,
     });
   } catch (error) {
     console.error("[MERRYSAILS-REMINDER] Error:", error);
@@ -93,4 +135,4 @@ export async function GET(req: NextRequest) {
 }
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+export const maxDuration = 60;

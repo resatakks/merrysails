@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
 import { getBlogBySlug, getAllBlogSlugs } from "@/content/blog";
 import { getTourBySlug, getTourPath, isPricingVisible } from "@/data/tours";
@@ -13,8 +14,14 @@ import { InlineCTA } from "@/components/blog/inline-cta";
 import { BlogRoutingPanel } from "@/components/blog/blog-routing-panel";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { getBlogRoutingCopy, getHighIntentBlogSlugs } from "@/content/blog";
+import { cleanContentText } from "@/lib/content-text";
 
 const commercialCruiseLinks = [
+  {
+    href: "/bosphorus-cruise",
+    title: "Bosphorus Cruise Hub",
+    description: "Broad comparison hub for readers who still need to decide between sunset, dinner, and private charter routes.",
+  },
   {
     href: "/cruises/bosphorus-sunset-cruise",
     title: "Bosphorus Sunset Cruise",
@@ -40,10 +47,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getBlogBySlug(slug);
   if (!post) return {};
+  const cleanTitle = cleanContentText(post.title);
+  const cleanDescription = cleanContentText(post.metaDescription);
 
   return {
-    title: post.title,
-    description: post.metaDescription,
+    title: cleanTitle,
+    description: cleanDescription,
     keywords: post.keywords,
     alternates: {
       canonical: `https://merrysails.com/blog/${post.slug}`,
@@ -60,18 +69,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       },
     },
     openGraph: {
-      title: post.title,
-      description: post.metaDescription,
+      title: cleanTitle,
+      description: cleanDescription,
       url: `https://merrysails.com/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.dateModified || post.date,
-      images: [{ url: post.image, width: 1200, height: 630, alt: post.imageAlt || post.title }],
+      images: [{ url: post.image, width: 1200, height: 630, alt: cleanContentText(post.imageAlt || cleanTitle) }],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.metaDescription,
+      title: cleanTitle,
+      description: cleanDescription,
       images: [post.image],
     },
   };
@@ -85,6 +94,9 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getBlogBySlug(slug);
   if (!post) notFound();
+  const cleanTitle = cleanContentText(post.title);
+  const cleanDescription = cleanContentText(post.metaDescription);
+  const cleanExcerpt = cleanContentText(post.excerpt);
 
   const author = getAuthor(post.author || "editorial");
   const relatedTours = post.relatedTours
@@ -100,8 +112,8 @@ export default async function BlogPostPage({
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
-    description: post.metaDescription,
+    headline: cleanTitle,
+    description: cleanDescription,
     image: post.image,
     datePublished: post.date,
     dateModified: post.dateModified || post.date,
@@ -142,7 +154,7 @@ export default async function BlogPostPage({
       : null;
 
   // Schema: HowTo for "how-to" posts
-  const isHowTo = slug.includes("how-to") || slug.includes("guide") || post.title.toLowerCase().includes("how to");
+  const isHowTo = slug.includes("how-to") || slug.includes("guide") || cleanTitle.toLowerCase().includes("how to");
   const howToSchema = isHowTo && post.sections.length > 0
     ? (() => {
         const steps: { "@type": string; name: string; text: string }[] = [];
@@ -155,7 +167,7 @@ export default async function BlogPostPage({
           }
         }
         return steps.length >= 2
-          ? { "@context": "https://schema.org", "@type": "HowTo", name: post.title, description: post.metaDescription, image: post.image, step: steps }
+          ? { "@context": "https://schema.org", "@type": "HowTo", name: cleanTitle, description: cleanDescription, image: post.image, step: steps }
           : null;
       })()
     : null;
@@ -167,7 +179,7 @@ export default async function BlogPostPage({
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://merrysails.com" },
       { "@type": "ListItem", position: 2, name: "Blog", item: "https://merrysails.com/blog" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://merrysails.com/blog/${post.slug}` },
+      { "@type": "ListItem", position: 3, name: cleanTitle, item: `https://merrysails.com/blog/${post.slug}` },
     ],
   };
 
@@ -186,7 +198,7 @@ export default async function BlogPostPage({
             <span>/</span>
             <Link href="/blog" className="hover:text-[var(--brand-primary)] transition-colors">Blog</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate max-w-xs">{post.title}</span>
+            <span className="text-[var(--heading)] truncate max-w-xs">{cleanTitle}</span>
           </nav>
 
           {/* Header */}
@@ -208,9 +220,9 @@ export default async function BlogPostPage({
             </div>
 
             <h1 className="blog-title text-3xl md:text-4xl font-bold mb-4 text-[var(--heading)]">
-              {post.title}
+              {cleanTitle}
             </h1>
-            <p className="blog-intro text-lg text-[var(--body-text)] mb-6">{post.excerpt}</p>
+            <p className="blog-intro text-lg text-[var(--body-text)] mb-6">{cleanExcerpt}</p>
 
             <AuthorCard authorId={post.author} variant="compact" />
           </header>
@@ -219,7 +231,7 @@ export default async function BlogPostPage({
           <div className="relative aspect-[2/1] rounded-2xl overflow-hidden mb-8 max-w-4xl">
             <Image
               src={post.image}
-              alt={post.imageAlt || post.title}
+              alt={cleanContentText(post.imageAlt || cleanTitle)}
               fill
               className="object-cover"
               priority
@@ -257,10 +269,10 @@ export default async function BlogPostPage({
                 <p className="text-white font-bold text-sm mb-2">Plan Your Cruise</p>
                 <p className="text-white/70 text-xs mb-4">Browse shared and private Bosphorus options in one place.</p>
                 <Link
-                  href="/cruises"
+                  href="/bosphorus-cruise"
                   className="inline-flex items-center gap-1.5 bg-white text-[var(--brand-primary)] font-bold py-2.5 px-5 rounded-full text-xs hover:shadow-lg transition-all w-full justify-center"
                 >
-                  View Cruises <ArrowRight className="w-3.5 h-3.5" />
+                  Compare Cruise Options <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </aside>
@@ -385,20 +397,20 @@ export default async function BlogPostPage({
               Browse current shared and private cruise options, then contact the team if you want help choosing the right plan.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link
-                href="/cruises"
-                className="btn-cta !py-3 !px-6 text-sm"
-              >
-                View All Cruises <ArrowRight className="w-4 h-4" />
+              <Link href="/bosphorus-cruise" className="btn-cta !py-3 !px-6 text-sm">
+                Compare Bosphorus Cruises <ArrowRight className="w-4 h-4" />
               </Link>
-              <a
+              <TrackedContactLink
                 href="https://wa.me/905370406822"
+                kind="whatsapp"
+                label="blog_post_whatsapp_cta"
+                location="blog_post"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[var(--brand-whatsapp)] text-white font-bold py-3 px-6 rounded-full text-sm hover:brightness-110 transition-all"
               >
                 WhatsApp Us
-              </a>
+              </TrackedContactLink>
             </div>
           </div>
 

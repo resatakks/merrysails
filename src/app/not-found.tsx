@@ -25,10 +25,10 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link
-            href="/cruises"
+            href="/bosphorus-cruise"
             className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-colors"
           >
-            Explore Cruises
+            Compare Cruises
           </Link>
         </div>
       </div>

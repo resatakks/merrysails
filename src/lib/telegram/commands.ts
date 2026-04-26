@@ -1,5 +1,6 @@
 // Telegram Bot Command Handlers — MerrySails
 import { prisma } from "@/lib/db";
+import { normalizeReservationStatus } from "@/lib/reservation-status";
 import { sendMessage, editMessageText, answerCallbackQuery } from "./bot";
 import {
   formatWelcome, formatHelp, formatReservationDetail, formatCompactToday,
@@ -120,7 +121,7 @@ export async function handleHafta(message: TelegramMessage) {
 export async function handleBekleyen(message: TelegramMessage) {
   const chatId = String(message.chat.id);
   const reservations = await prisma.reservation.findMany({
-    where: { status: "pending" },
+    where: { status: { in: ["new", "pending"] } },
     orderBy: { date: "asc" },
     take: 30,
   });
@@ -165,6 +166,61 @@ export async function handleDurum(message: TelegramMessage) {
   await sendMessage({
     chat_id: chatId,
     text: formatReservationDetail(r),
+    reply_markup: reservationDetailActions(r.id, {
+      phone: r.customerPhone,
+      reservationId: r.reservationId,
+      tourSlug: r.tourSlug,
+    }),
+  });
+}
+
+export async function handleMaliyet(message: TelegramMessage) {
+  const chatId = String(message.chat.id);
+  const parts = (message.text || "").trim().split(/\s+/);
+
+  if (parts.length < 3) {
+    await sendMessage({
+      chat_id: chatId,
+      text:
+        "Kullanım: /maliyet [ID] [EUR]\nÖrnek: /maliyet MRY-2026-0001 80\n\nTamamlandı yapmadan önce maliyeti Euro cinsinden girmeniz gerekir.",
+    });
+    return;
+  }
+
+  const query = parts[1].trim();
+  const cost = Number.parseFloat(parts[2].replace(",", "."));
+
+  if (!Number.isFinite(cost) || cost < 0) {
+    await sendMessage({
+      chat_id: chatId,
+      text: "Maliyet Euro cinsinden 0 veya daha büyük bir sayı olmalı. Örnek: /maliyet MRY-2026-0001 80",
+    });
+    return;
+  }
+
+  const reservation = await prisma.reservation.findFirst({
+    where: {
+      OR: [
+        { reservationId: { equals: query, mode: "insensitive" } },
+        { id: query },
+      ],
+    },
+  });
+
+  if (!reservation) {
+    await sendMessage({ chat_id: chatId, text: `Rezervasyon "${query}" bulunamadı.` });
+    return;
+  }
+
+  const updated = await prisma.reservation.update({
+    where: { id: reservation.id },
+    data: { internalCostEur: Math.round(cost * 100) / 100 },
+  });
+  const r = mapRes(updated);
+
+  await sendMessage({
+    chat_id: chatId,
+    text: `💶 <b>Maliyet kaydedildi:</b> ${r.internalCostEur} EUR\n\n${formatReservationDetail(r)}`,
     reply_markup: reservationDetailActions(r.id, {
       phone: r.customerPhone,
       reservationId: r.reservationId,
@@ -242,7 +298,7 @@ async function computeStats(start: Date, end: Date) {
     total: reservations.length,
     completed: reservations.filter((r: StatsRow) => r.status === "completed").length,
     cancelled: reservations.filter((r: StatsRow) => r.status === "cancelled").length,
-    pending: reservations.filter((r: StatsRow) => r.status === "pending").length,
+    pending: reservations.filter((r: StatsRow) => normalizeReservationStatus(r.status) === "new").length,
     revenue,
     currency: "€",
     avgPrice: active.length > 0 ? Math.round(revenue / active.length) : 0,
@@ -327,7 +383,10 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
   if (data.startsWith("approve_")) {
     const id = data.replace("approve_", "");
     const old = await prisma.reservation.findUnique({ where: { id } });
-    const reservation = await prisma.reservation.update({ where: { id }, data: { status: "confirmed" } });
+    const reservation = await prisma.reservation.update({
+      where: { id },
+      data: { status: "confirmed", confirmedAt: old?.confirmedAt ?? new Date() },
+    });
     await answerCallbackQuery(callback.id, "✅ Onaylandı!");
     if (messageId) {
       const r = mapRes(reservation);
@@ -345,7 +404,7 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     // Notify other admins
     try {
       const { notifyStatusChange } = await import("./notifications");
-      await notifyStatusChange(mapRes(reservation), old?.status || "pending", "confirmed");
+      await notifyStatusChange(mapRes(reservation), old?.status || "new", "confirmed");
     } catch { /* silent */ }
     return;
   }
@@ -360,7 +419,10 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
   if (data.startsWith("confirm_cancel_")) {
     const id = data.replace("confirm_cancel_", "");
     const old = await prisma.reservation.findUnique({ where: { id } });
-    const reservation = await prisma.reservation.update({ where: { id }, data: { status: "cancelled" } });
+    const reservation = await prisma.reservation.update({
+      where: { id },
+      data: { status: "cancelled", completedAt: null },
+    });
     await answerCallbackQuery(callback.id, "❌ İptal edildi");
     if (messageId) {
       const r = mapRes(reservation);
@@ -378,7 +440,7 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     // Notify other admins
     try {
       const { notifyStatusChange } = await import("./notifications");
-      await notifyStatusChange(mapRes(reservation), old?.status || "pending", "cancelled");
+      await notifyStatusChange(mapRes(reservation), old?.status || "new", "cancelled");
     } catch { /* silent */ }
     return;
   }
@@ -386,7 +448,29 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
   if (data.startsWith("complete_")) {
     const id = data.replace("complete_", "");
     const old = await prisma.reservation.findUnique({ where: { id } });
-    const reservation = await prisma.reservation.update({ where: { id }, data: { status: "completed" } });
+
+    if (!old) {
+      await answerCallbackQuery(callback.id, "Bulunamadı", true);
+      return;
+    }
+
+    if (typeof old.internalCostEur !== "number") {
+      await answerCallbackQuery(
+        callback.id,
+        "Önce EUR maliyet girin. Örnek: /maliyet MRY-2026-0001 80",
+        true
+      );
+      await sendMessage({
+        chat_id: chatId,
+        text: `💶 <b>${old.reservationId}</b> tamamlanmadan önce maliyet gerekli.\n\nEuro cinsinden yazın:\n<code>/maliyet ${old.reservationId} 80</code>`,
+      });
+      return;
+    }
+
+    const reservation = await prisma.reservation.update({
+      where: { id },
+      data: { status: "completed", completedAt: new Date() },
+    });
     await answerCallbackQuery(callback.id, "🏁 Tamamlandı!");
     if (messageId) {
       const r = mapRes(reservation);
@@ -404,7 +488,7 @@ export async function handleCallbackQuery(callback: TelegramCallbackQuery) {
     // Notify other admins
     try {
       const { notifyStatusChange } = await import("./notifications");
-      await notifyStatusChange(mapRes(reservation), old?.status || "pending", "completed");
+      await notifyStatusChange(mapRes(reservation), old?.status || "new", "completed");
     } catch { /* silent */ }
     return;
   }
@@ -447,6 +531,7 @@ export async function handleCommand(message: TelegramMessage) {
     case "/hafta": return handleHafta(message);
     case "/bekleyen": return handleBekleyen(message);
     case "/durum": return handleDurum(message);
+    case "/maliyet": return handleMaliyet(message);
     case "/ara": return handleAra(message);
     case "/istatistik": return handleIstatistik(message);
     case "/bildirimler": return handleBildirimler(message);

@@ -1,25 +1,25 @@
 # Google Search Console — İndekslemeyi iste (MerrySails)
-# Tarih: 2026-03-10
-# Toplam: 113 URL | Bugün: 15 URL
+# Tarih: 2026-04-23
+# Toplam: 162 URL | Bugün: 15 URL
 # GSC'de: URL'yi incele → İndekslemeyi iste (günde ~10–20 kabul eder)
 
 ## Bugün gönderilecek URL'ler
 
-1. https://merrysails.com
+1. https://merrysails.com/bosphorus-cruise
 2. https://merrysails.com/cruises
-3. https://merrysails.com/private-tours
-4. https://merrysails.com/blog
-5. https://merrysails.com/guides
-6. https://merrysails.com/about
-7. https://merrysails.com/contact
-8. https://merrysails.com/faq
-9. https://merrysails.com/privacy-policy
-10. https://merrysails.com/terms
-11. https://merrysails.com/cruises/bosphorus-sunset-cruise
-12. https://merrysails.com/cruises/bosphorus-dinner-cruise
-13. https://merrysails.com/cruises/yacht-charter-in-istanbul
-14. https://merrysails.com/cruises/bosphorus-sightseeing-cruise
-15. https://merrysails.com/cruises/private-bosphorus-sunset-cruise
+3. https://merrysails.com/istanbul-dinner-cruise
+4. https://merrysails.com/cruises/bosphorus-sunset-cruise
+5. https://merrysails.com/yacht-charter-istanbul
+6. https://merrysails.com/boat-rental-istanbul
+7. https://merrysails.com/corporate-events
+8. https://merrysails.com/proposal-yacht-rental-istanbul
+9. https://merrysails.com/private-bosphorus-dinner-cruise
+10. https://merrysails.com/private-events
+11. https://merrysails.com/private-tours
+12. https://merrysails.com/blog
+13. https://merrysails.com/guides
+14. https://merrysails.com/about
+15. https://merrysails.com/contact
 
-## Kalan: 98 URL
+## Kalan: 147 URL
 Yarın bu script'i tekrar çalıştırıp yeni 'bugün' listesini kullanın.

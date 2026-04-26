@@ -12,6 +12,10 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { AddOn, BookingMode, Package, PriceMode } from "@/data/tours";
+import {
+  handleTrackedContactNavigation,
+  trackBeginCheckout,
+} from "@/lib/analytics";
 import SalePrice from "@/components/ui/SalePrice";
 import { PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 import BookingCalendar from "./BookingCalendar";
@@ -106,12 +110,21 @@ export default function BookingSidebar({
 
   const handleBook = useCallback(
     (date: Date, guests: number, time: string) => {
+      trackBeginCheckout({
+        date: format(date, "yyyy-MM-dd"),
+        guests,
+        packageName: selectedPackage?.name,
+        source: "booking_sidebar",
+        tourName: tour.nameEn,
+        tourSlug: tour.slug,
+        value: price,
+      });
       setBookingDate(date);
       setBookingGuests(guests);
       setBookingTime(time);
       setBookingModal(true);
     },
-    []
+    [price, selectedPackage?.name, tour.nameEn, tour.slug]
   );
 
   const handleMobileBookClick = () => {
@@ -333,6 +346,14 @@ export default function BookingSidebar({
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(event) =>
+                handleTrackedContactNavigation(event, {
+                  href: WHATSAPP_URL,
+                  kind: "whatsapp",
+                  label: "booking_sidebar_whatsapp",
+                  location: tour.slug,
+                })
+              }
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:brightness-110 transition-all"
             >
               <MessageCircle className="w-4 h-4" />
@@ -340,6 +361,14 @@ export default function BookingSidebar({
             </a>
             <a
               href="tel:+905370406822"
+              onClick={(event) =>
+                handleTrackedContactNavigation(event, {
+                  href: "tel:+905370406822",
+                  kind: "phone",
+                  label: PHONE_DISPLAY,
+                  location: `booking_sidebar_${tour.slug}`,
+                })
+              }
               className="flex items-center justify-center gap-2 w-full py-2.5 mt-2 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
             >
               <Phone className="w-4 h-4" />
@@ -421,6 +450,14 @@ export default function BookingSidebar({
                 <div className="flex items-center gap-3">
                   <a
                     href="tel:+905370406822"
+                    onClick={(event) =>
+                      handleTrackedContactNavigation(event, {
+                        href: "tel:+905370406822",
+                        kind: "phone",
+                        label: PHONE_DISPLAY,
+                        location: `booking_mobile_bar_${tour.slug}`,
+                      })
+                    }
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--brand-primary)] shadow-sm"
                     aria-label="Call now"
                   >
@@ -458,6 +495,14 @@ export default function BookingSidebar({
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(event) =>
+                      handleTrackedContactNavigation(event, {
+                        href: WHATSAPP_URL,
+                        kind: "whatsapp",
+                        label: "booking_mobile_bar_whatsapp",
+                        location: `booking_mobile_bar_${tour.slug}`,
+                      })
+                    }
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm"
                     aria-label="Live support on WhatsApp"
                   >

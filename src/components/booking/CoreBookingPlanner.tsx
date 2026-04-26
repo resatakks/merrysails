@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { trackBeginCheckout } from "@/lib/analytics";
 import SalePrice from "@/components/ui/SalePrice";
 import { PlannerDateCalendar } from "@/components/booking/PlannerDateCalendar";
 import { MAX_BOOKING_GUESTS } from "@/lib/constants";
@@ -134,6 +135,16 @@ export default function CoreBookingPlanner({
     if (isOpeningBooking) {
       return;
     }
+
+    trackBeginCheckout({
+      date: date ? format(date, "yyyy-MM-dd") : undefined,
+      guests,
+      packageName: selectedPackage?.name,
+      source,
+      tourName: selectedTour.nameEn,
+      tourSlug: selectedTour.slug,
+      value: selectedPackagePrice,
+    });
 
     setIsOpeningBooking(true);
 

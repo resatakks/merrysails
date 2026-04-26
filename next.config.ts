@@ -42,18 +42,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/bosphorus-cruise",
-        destination: "/cruises",
+        source: "/cruises/bosphorus-dinner-cruise",
+        destination: "/istanbul-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/cruises/yacht-charter-in-istanbul",
+        destination: "/yacht-charter-istanbul",
         permanent: true,
       },
       {
         source: "/bosphorus-cruises",
-        destination: "/cruises",
+        destination: "/bosphorus-cruise",
         permanent: true,
       },
       {
         source: "/boat-tour",
-        destination: "/cruises",
+        destination: "/bosphorus-cruise",
         permanent: true,
       },
       {
@@ -75,7 +80,7 @@ const nextConfig: NextConfig = {
       { key: "X-Frame-Options", value: "SAMEORIGIN" },
       { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
       { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-      { key: "Cross-Origin-Resource-Policy", value: "same-site" },
+      { key: "Cross-Origin-Resource-Policy", value: "cross-origin" },
       { key: "Origin-Agent-Cluster", value: "?1" },
       { key: "X-DNS-Prefetch-Control", value: "on" },
       {

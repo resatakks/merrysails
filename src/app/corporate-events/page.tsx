@@ -13,14 +13,14 @@ if (!corporateTour) {
 }
 
 export const metadata: Metadata = {
-  title: "Corporate Yacht Events Istanbul 2026 — From EUR 280 | MerrySails",
+  title: "Corporate Yacht Events Istanbul 2026 | Company Event Planning | MerrySails",
   description:
-    "Corporate yacht events in Istanbul from EUR 280 for team dinners, client hosting, launches, and private company gatherings on the Bosphorus.",
+    "Plan corporate yacht events in Istanbul for team dinners, client hosting, launches, and company evenings with quote-led Bosphorus event support.",
   alternates: { canonical: `${SITE_URL}/corporate-events` },
   openGraph: {
-    title: "Corporate Yacht Events Istanbul 2026 — From EUR 280 | MerrySails",
+    title: "Corporate Yacht Events Istanbul 2026 | Company Event Planning | MerrySails",
     description:
-      "Private corporate yacht events from EUR 280 with planning support for guest flow, catering, branding, and invoicing.",
+      "Quote-led corporate Bosphorus event planning with support for guest flow, catering, branding, and invoicing.",
     url: `${SITE_URL}/corporate-events`,
     type: "website",
     images: [
@@ -60,9 +60,8 @@ const serviceSchema = {
   },
 };
 
-const corporatePriceCards = corporateTour.packages?.map((pkg) => ({
+const corporatePlanningFormats = corporateTour.packages?.map((pkg) => ({
   title: pkg.name,
-  price: `EUR ${pkg.price}`,
   body: pkg.features.join(" • "),
 })) ?? [];
 
@@ -97,6 +96,15 @@ const faqSchema = {
   ],
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Corporate Events", item: `${SITE_URL}/corporate-events` },
+  ],
+};
+
 const eventFits = [
   {
     title: "Client hosting",
@@ -118,8 +126,8 @@ const eventFits = [
 
 const routeProof = [
   {
-    title: "From EUR 280",
-    body: "The package ladder begins at Essential and moves up to Premium and VIP as vessel size and event scope increase.",
+    title: "Quote-led company brief",
+    body: "Corporate planning starts with the guest list, timing, and service needs before the vessel and commercial structure are confirmed.",
   },
   {
     title: "Kuruçeşme Marina",
@@ -140,24 +148,44 @@ const quoteDrivers = [
 
 const comparePages = [
   {
+    href: "/client-hosting-yacht-istanbul",
+    title: "Client Hosting Yacht",
+    description: "Start here if the company brief is specifically client-hosting-led and should stay narrower than the broad corporate owner page.",
+  },
+  {
+    href: "/team-building-yacht-istanbul",
+    title: "Team Building Yacht",
+    description: "Start here if the company brief is specifically team-building-led and should stay narrower than the broad corporate owner page.",
+  },
+  {
+    href: "/product-launch-yacht-istanbul",
+    title: "Product Launch Yacht",
+    description: "Start here if the company brief is specifically a launch, reveal, or showcase-led Bosphorus yacht format.",
+  },
+  {
+    href: "/corporate-yacht-dinner-istanbul",
+    title: "Corporate Yacht Dinner",
+    description: "Start here if the company brief is already dinner-led and should stay narrower than the full corporate-events owner page.",
+  },
+  {
     href: "/yacht-charter-istanbul",
     title: "Yacht Charter Istanbul",
     description: "Start here if you are still choosing the charter package before the event format is fixed.",
   },
   {
-    href: "/boat-rental-istanbul",
-    title: "Boat Rental Istanbul",
-    description: "Start here if the vessel choice and route come first, before the event brief is set.",
+    href: "/boat-rental-hourly-istanbul",
+    title: "Boat Rental Hourly",
+    description: "Start here if the private-hire brief is shorter, lighter, and hour-led before the company format is fixed.",
   },
   {
-    href: "/proposal-yacht-rental-istanbul",
-    title: "Proposal Yacht Rental",
-    description: "Start here if this is actually a private proposal setup rather than a company brief.",
+    href: "/proposal-yacht-with-photographer-istanbul",
+    title: "Proposal with Photographer",
+    description: "Start here if this is actually a photographer-led private proposal setup rather than a company brief.",
   },
   {
-    href: "/private-bosphorus-dinner-cruise",
-    title: "Private Dinner Cruise",
-    description: "Start here if the request is really a private dinner rather than a company event brief.",
+    href: "/private-dinner-cruise-for-couples-istanbul",
+    title: "Couples Private Dinner",
+    description: "Start here if the request is really a quieter couple-led private dinner rather than a company event brief.",
   },
   {
     href: "/private-events",
@@ -171,6 +199,7 @@ export default function CorporateEventsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
@@ -190,12 +219,12 @@ export default function CorporateEventsPage() {
               </p>
               <div className="mb-6 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-4">
                 <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-1">
-                  Visible price
+                  Quote-led planning
                 </p>
-                <p className="text-3xl font-bold text-[var(--heading)]">From EUR 280</p>
+                <p className="text-3xl font-bold text-[var(--heading)]">Built around the brief</p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
-                  Corporate bookings start with the event size, then scale through Essential,
-                  Premium, and VIP depending on the vessel, catering, and A/V brief.
+                  Corporate bookings start with guest flow, catering, branding, transfer, and invoicing needs.
+                  The vessel and commercial structure are then matched to the event rather than pushed as a generic yacht package.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -217,7 +246,7 @@ export default function CorporateEventsPage() {
             </div>
 
             <aside className="rounded-2xl border border-white bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-[var(--heading)] mb-4">What the planner usually sends first</h2>
+              <h2 className="text-lg font-semibold text-[var(--heading)] mb-4">What helps us plan your corporate yacht event</h2>
               <ul className="space-y-3 text-sm text-[var(--text-muted)]">
                 {quoteDrivers.map((item) => (
                   <li key={item} className="flex items-start gap-2">
@@ -230,13 +259,10 @@ export default function CorporateEventsPage() {
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
-            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Corporate price ladder</h2>
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Corporate event planning formats</h2>
             <div className="grid gap-4 md:grid-cols-3">
-              {corporatePriceCards.map((item) => (
+              {corporatePlanningFormats.map((item) => (
                 <div key={item.title} className="rounded-xl border border-gray-100 bg-[var(--surface-alt)] p-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
-                    {item.price}
-                  </p>
                   <h3 className="font-semibold text-[var(--heading)] mb-2">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-[var(--text-muted)]">{item.body}</p>
                 </div>
@@ -245,7 +271,7 @@ export default function CorporateEventsPage() {
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
-            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Route and service proof</h2>
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Bosphorus route and corporate service proof</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {routeProof.map((item) => (
                 <div key={item.title} className="rounded-xl border border-gray-100 bg-[var(--surface-alt)] p-4">
@@ -279,14 +305,14 @@ export default function CorporateEventsPage() {
                   href={item.href}
                   className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
                 >
-                  <span className="block text-base font-semibold text-[var(--heading)] mb-1">{item.title}</span>
-                  <span className="block text-sm text-[var(--text-muted)]">{item.description}</span>
+                  <h3 className="text-base font-semibold text-[var(--heading)] mb-1">{item.title}</h3>
+                  <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
                 </Link>
               ))}
             </div>
           </section>
 
-          <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-6">Corporate event FAQs</h2>
             <div className="space-y-4">
               {faqSchema.mainEntity.map((faq) => (
@@ -311,6 +337,40 @@ export default function CorporateEventsPage() {
                   engagements, and family gatherings.
                 </p>
               </details>
+            </div>
+          </section>
+
+          <section className="rounded-3xl bg-[var(--heading)] p-6 text-white md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-white/60">
+                  Corporate enquiry
+                </p>
+                <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">
+                  Ready to plan a corporate yacht event on the Bosphorus?
+                </h2>
+                <p className="max-w-2xl text-sm leading-relaxed text-white/75">
+                  Share the date, guest count, event type, and whether you need catering, branding,
+                  or presentation support. If the request is actually a private celebration, we will
+                  route you to the right private event page instead.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[var(--heading)] transition-colors hover:bg-white/90"
+                >
+                  Send event brief <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/35 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+                >
+                  WhatsApp planning
+                </a>
+              </div>
             </div>
           </section>
         </div>

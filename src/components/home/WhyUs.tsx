@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Shield, Clock, Award, MapPin, Headphones, CreditCard } from "lucide-react";
 
 const features = [
@@ -9,7 +10,7 @@ const features = [
   {
     icon: Clock,
     title: "TURSAB Licensed Since 2001",
-    description: "Merry Tourism is a TURSAB A Group licensed travel agency — 25 years operating Bosphorus cruises with 50,000+ happy guests.",
+    description: "Merry Tourism is a TURSAB A Group licensed travel agency operating Istanbul travel services since 2001.",
   },
   {
     icon: Award,
@@ -19,7 +20,7 @@ const features = [
   {
     icon: MapPin,
     title: "Local Istanbul Experts",
-    description: "Our certified tourist guides are Istanbul locals who speak English, Turkish, Arabic, and Russian. Licensed by the Ministry of Culture & Tourism.",
+    description: "Our team helps guests choose the right Bosphorus route, boarding flow, package tier, and private-service setup before booking.",
   },
   {
     icon: Headphones,
@@ -40,7 +41,7 @@ export default function WhyUs() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Why Book Your Istanbul Boat Tour With Us?</h2>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Over 50,000 guests since 2001. TURSAB-licensed Bosphorus cruise company serving travelers in Istanbul.
+            TURSAB-licensed Bosphorus cruise and yacht-charter support from an Istanbul travel company operating since 2001.
           </p>
         </div>
 
@@ -65,24 +66,31 @@ export default function WhyUs() {
           <div className="max-w-3xl">
             <h3 className="text-2xl font-bold mb-3">Not sure which Bosphorus plan fits your day?</h3>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed">
-              If your plans are already centered on a proposal, a private dinner, a corporate event, or a full yacht day,
-              these pages help you compare the right format before you request a quote.
+              Start with the Bosphorus compare hub if you are still choosing between sunset, dinner, and private yacht.
+              Move into contact and quote routing only after the brief is clearly proposal, private dinner, celebration, pickup-led, or corporate-led.
             </p>
           </div>
-          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
             {[
-              { href: "/proposal-yacht-rental-istanbul", label: "Proposal Yacht Rental" },
-              { href: "/private-bosphorus-dinner-cruise", label: "Private Dinner Cruise" },
-              { href: "/corporate-events", label: "Corporate Events" },
-              { href: "/yacht-charter-istanbul", label: "Yacht Charter Istanbul" },
+              {
+                href: "/bosphorus-cruise",
+                label: "Bosphorus Cruise Compare Hub",
+                description: "Use this first for broad commercial intent and owner-page selection.",
+              },
+              {
+                href: "/contact",
+                label: "Contact & Quote Routing",
+                description: "Use this next when the brief is already narrow and you need the right support page or quote path.",
+              },
             ].map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-xl border border-white bg-white px-4 py-3 text-sm font-medium text-[var(--text-main)] transition-colors hover:border-[var(--brand-primary)]/40 hover:text-[var(--brand-primary)]"
+                className="rounded-xl border border-white bg-white px-4 py-4 text-sm transition-colors hover:border-[var(--brand-primary)]/40 hover:text-[var(--brand-primary)]"
               >
-                {item.label}
-              </a>
+                <span className="block font-medium text-[var(--text-main)]">{item.label}</span>
+                <span className="mt-1 block text-[var(--text-muted)]">{item.description}</span>
+              </Link>
             ))}
           </div>
         </div>

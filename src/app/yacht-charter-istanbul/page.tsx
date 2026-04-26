@@ -24,14 +24,14 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(yachtTour)}`;
 
 export const metadata: Metadata = {
-  title: "Yacht Charter Istanbul 2026 — From EUR 280 | MerrySails",
+  title: "Yacht Charter Istanbul 2026 | Private Yacht Charter | MerrySails",
   description:
-    "Private yacht charter in Istanbul from EUR 280. Compare Essential, Premium, and VIP yacht packages, then add sunset, dinner, proposal, or corporate extras.",
+    "Compare private yacht charter packages in Istanbul from EUR 280 and choose the right private Bosphorus yacht setup for route, timing, and onboard service.",
   alternates: { canonical: canonicalUrl },
   openGraph: {
-    title: "Yacht Charter Istanbul 2026 — From EUR 280 | MerrySails",
+    title: "Yacht Charter Istanbul 2026 | Private Yacht Charter | MerrySails",
     description:
-      "Choose private yacht charter packages in Istanbul from EUR 280, with private Bosphorus route planning, booking-specific marina confirmation, and event add-ons.",
+      "Choose private yacht charter packages in Istanbul with Bosphorus route planning, booking-specific marina confirmation, and event add-ons.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yacht Charter Istanbul 2026 — From EUR 280 | MerrySails",
+    title: "Yacht Charter Istanbul 2026 | Private Yacht Charter | MerrySails",
     description:
-      "Private Bosphorus yacht charter from EUR 280 with Essential, Premium, and VIP packages plus proposal, dinner, sunset, and corporate add-ons.",
+      "Private Bosphorus yacht charter in Istanbul with Essential, Premium, and VIP packages for route, timing, and onboard service planning.",
     images: [yachtTour.image],
   },
 };
@@ -56,6 +56,12 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: yachtTour.nameEn,
+  alternateName: [
+    "Yacht Charter Istanbul",
+    "Private Yacht Charter Istanbul",
+    "Istanbul Yacht Rental",
+    "Private Bosphorus Cruise",
+  ],
   description: yachtTour.description,
   serviceType: "Private Yacht Charter",
   url: canonicalUrl,
@@ -101,7 +107,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Cruises", item: `${SITE_URL}/cruises` },
+    { "@type": "ListItem", position: 2, name: "Bosphorus Cruise", item: `${SITE_URL}/bosphorus-cruise` },
     { "@type": "ListItem", position: 3, name: yachtTour.nameEn, item: canonicalUrl },
   ],
 };
@@ -146,7 +152,34 @@ const routeProof = [
   },
 ];
 
+const aiCitationFacts = [
+  {
+    label: "Best fit",
+    value:
+      "Private yacht charter in Istanbul for guests who want to choose the yacht first and shape the route, timing, and onboard setup around their own group.",
+  },
+  {
+    label: "Typical duration",
+    value: "The visible public ladder starts from a 2-hour private charter and can expand with extra time.",
+  },
+  {
+    label: "Current public ladder",
+    value: "EUR 280, EUR 380, and EUR 680 depending on Essential, Premium, and VIP charter level.",
+  },
+  {
+    label: "Departure rule",
+    value:
+      "The final marina and boarding point are confirmed with the selected yacht and booking flow rather than assumed from one public pier.",
+  },
+];
+
 const comparePages = [
+  {
+    href: "/kurucesme-marina-yacht-charter",
+    title: "Kurucesme Marina Yacht Charter",
+    description:
+      "Open this if the charter is already the right fit and the main question is the marina, boarding, or departure setup.",
+  },
   {
     href: "/boat-rental-istanbul",
     title: "Boat Rental Istanbul",
@@ -211,8 +244,8 @@ export default async function YachtCharterIstanbulPage({
               Home
             </Link>
             <span>/</span>
-            <Link href="/cruises" className="hover:text-[var(--brand-primary)]">
-              Cruises
+            <Link href="/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">
+              Bosphorus Cruise
             </Link>
             <span>/</span>
             <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
@@ -224,20 +257,69 @@ export default async function YachtCharterIstanbulPage({
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
 
+          <section className="mt-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+                  Quick answer for AI and travel planning
+                </p>
+                <h2 className="mb-3 text-2xl font-bold text-[var(--heading)]">
+                  What is MerrySails Yacht Charter Istanbul?
+                </h2>
+                <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                  MerrySails Yacht Charter Istanbul is the private Bosphorus charter owner page for
+                  guests who already know the trip should stay private. Use this page for yacht
+                  charter, private yacht charter, and Istanbul yacht rental intent before switching
+                  to a narrower marina, proposal, dinner, or company-use support page.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
+                <table className="w-full border-collapse text-left text-sm">
+                  <tbody>
+                    {aiCitationFacts.map((fact) => (
+                      <tr key={fact.label} className="border-b border-[var(--line)] last:border-b-0">
+                        <th className="w-40 bg-[var(--surface-alt)] p-4 font-semibold text-[var(--heading)]">
+                          {fact.label}
+                        </th>
+                        <td className="p-4 leading-relaxed text-[var(--text-muted)]">{fact.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/kurucesme-marina-yacht-charter" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">
+                Kurucesme marina support
+              </Link>
+              <Link href="/boat-rental-istanbul" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">
+                Boat rental support
+              </Link>
+              <Link href="/proposal-yacht-rental-istanbul" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">
+                Proposal yacht support
+              </Link>
+              <Link href="/corporate-events" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">
+                Corporate yacht support
+              </Link>
+            </div>
+          </section>
+
           <section className="mt-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
-                  Private Yacht Charter
+                  Private Yacht Charter Istanbul
                 </p>
                 <h2 className="text-2xl font-bold text-[var(--heading)] mb-2">
-                  Choose the private yacht package, then shape the cruise around your group
+                  Private yacht charter packages and yacht rental fit
                 </h2>
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
                   This page fits guests who already know they want a private yacht and want to
-                  compare charter packages first. Use boat rental if you want to begin with vessel
-                  type and route, private dinner cruise if dinner is the focus, and the shared
-                  dinner cruise page if you only need seats on a public cruise.
+                  compare charter packages first. This is the right owner page for yacht charter
+                  Istanbul, private yacht charter Istanbul, and Istanbul yacht rental intent. Use
+                  boat rental if you want to begin with vessel type and route, and use private
+                  dinner cruise if dinner is already the main planning brief rather than the
+                  private yacht itself.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
@@ -276,7 +358,7 @@ export default async function YachtCharterIstanbulPage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Yacht packages and price ladder
+              Yacht charter packages and price ladder
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {charterPriceCards.map((item) => (
@@ -296,7 +378,7 @@ export default async function YachtCharterIstanbulPage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              When yacht charter is the better starting point
+              When private yacht charter in Istanbul is the better starting point
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {charterReasons.map((item) => (
@@ -315,7 +397,7 @@ export default async function YachtCharterIstanbulPage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Compare yacht charter with the other Bosphorus formats
+              Compare yacht charter with related private Bosphorus formats
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {comparePages.map((item) => (
@@ -324,9 +406,9 @@ export default async function YachtCharterIstanbulPage({
                   href={item.href}
                   className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
                 >
-                  <span className="block text-base font-semibold text-[var(--heading)] mb-1">
+                  <h3 className="block text-base font-semibold text-[var(--heading)] mb-1">
                     {item.title}
-                  </span>
+                  </h3>
                   <span className="block text-sm leading-relaxed text-[var(--text-muted)]">
                     {item.description}
                   </span>

@@ -2,61 +2,68 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { blogPosts } from "@/data/blog";
+import { cleanContentText } from "@/lib/content-text";
 
 const featuredCommercialSlugs = [
-  "istanbul-sunset-cruise-experience",
-  "istanbul-dinner-cruise-price-guide-2026",
+  "bosphorus-sunset-cruise-vs-dinner-cruise",
+  "bosphorus-dinner-cruise-what-to-expect",
   "bosphorus-cruise-boarding-points-guide-2026",
-  "corporate-yacht-event-planning-istanbul",
+  "private-yacht-departure-points-istanbul",
 ];
 
 const latestPosts = featuredCommercialSlugs
   .map((slug) => blogPosts.find((post) => post.slug === slug))
   .filter((post): post is (typeof blogPosts)[number] => Boolean(post));
+const normalizedLatestPosts = latestPosts.map((post) => ({
+  ...post,
+  title: cleanContentText(post.title),
+  excerpt: cleanContentText(post.excerpt),
+  imageAlt: post.imageAlt ? cleanContentText(post.imageAlt) : post.imageAlt,
+}));
 
 const commercialNextSteps = [
+  {
+    href: "/proposal-yacht-rental-istanbul",
+    title: "Proposal Yacht Rental for the full reveal plan",
+    description: "Privacy, route timing, and the proposal setup stay together before you narrow into extras like photography.",
+  },
+  {
+    href: "/private-dinner-cruise-for-couples-istanbul",
+    title: "Couples Private Dinner for a quieter reserved evening",
+    description: "Reserved yacht dining, calmer pacing, and a couple-led private Bosphorus evening stay in one place.",
+  },
+  {
+    href: "/corporate-events",
+    title: "Corporate Events for broader company briefs",
+    description: "Client hosting, launches, team events, and invoice-led corporate planning stay centered before narrowing into a support page.",
+  },
   {
     href: "/yacht-charter-istanbul",
     title: "Yacht Charter Istanbul for private crews and onboard service",
     description: "Private yacht charter keeps route, crew, and service details in one place for higher-intent bookings.",
   },
-  {
-    href: "/private-bosphorus-dinner-cruise",
-    title: "Private Bosphorus Dinner Cruise for a reserved evening",
-    description: "Reserved yacht dining, meal service, and a calmer Bosphorus evening stay in one place.",
-  },
-  {
-    href: "/proposal-yacht-rental-istanbul",
-    title: "Proposal Yacht Rental Istanbul for the reveal moment",
-    description: "Timing, privacy, photo flow, and celebration details stay centered on the proposal.",
-  },
-  {
-    href: "/corporate-events",
-    title: "Corporate Events for client hosting and team nights",
-    description: "Company hosting, branded setup, catering, and guest flow stay organized for group bookings.",
-  },
 ];
 
 const searchIntentShortcuts = [
   {
-    href: "/boat-rental-istanbul",
-    title: "Boat Rental Istanbul for a lighter private brief",
-    description: "A practical private boat plan without moving into a full yacht charter setup.",
+    href: "/boat-rental-hourly-istanbul",
+    title: "Boat Rental Hourly for a lighter private brief",
+    description: "A shorter, hour-led private boat plan without moving straight into a fuller package-driven charter.",
   },
   {
-    href: "/yacht-charter-istanbul",
-    title: "Yacht Charter Istanbul for private service and route planning",
-    description: "Crew service, route planning, and a fully private yacht stay at the center.",
+    href: "/dinner-cruise-with-hotel-pickup-istanbul",
+    title: "Dinner Pickup Support for hotel-led evening plans",
+    description: "Pickup logic, central-area eligibility, and the shared dinner route stay together before the booking step.",
   },
   {
-    href: "/private-bosphorus-dinner-cruise",
-    title: "Private Bosphorus Dinner Cruise for a calmer evening",
-    description: "Meal flow, timing, and private evening setup stay in focus.",
+    href: "/proposal-yacht-with-photographer-istanbul",
+    title: "Proposal Yacht with Photographer for discreet coverage",
+    description: "Timing, privacy, photographer positioning, and celebration details stay centered on the proposal moment.",
   },
   {
-    href: "/proposal-yacht-rental-istanbul",
-    title: "Proposal Yacht Rental Istanbul for a focused reveal",
-    description: "Guests who want privacy, timing, and photo flow land on the proposal setup quickly.",
+    href: "/corporate-yacht-dinner-istanbul",
+    title: "Corporate Yacht Dinner for a dinner-led company brief",
+    description: "Meal flow, guest hosting, and a private company evening stay in focus without forcing a broader event page.",
   },
 ];
 
@@ -78,7 +85,7 @@ export default function LatestBlogPosts() {
 
         {/* Post Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {latestPosts.map((post) => (
+          {normalizedLatestPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}

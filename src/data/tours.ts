@@ -147,7 +147,7 @@ export const tours: Tour[] = [
     description: "Shared Bosphorus sunset cruise in Istanbul with a 2-hour luxury-yacht route, live guiding, light hospitality, and two public sunset options: Without Wine and With Wine.",
     longDescription: "This is our shared Bosphorus sunset cruise for guests who want golden-hour views on the water without turning the evening into a full dinner program. The route follows the best-known Bosphorus landmarks while the skyline shifts from warm sunset color into blue-hour city lights.\n\nThe cruise lasts about 2 hours and runs on a shared luxury yacht. The published option page promotes the entry fare from EUR 34, while the live booking engine currently shows two public options on the same route: Without Wine at EUR 34 and the With Wine option at EUR 40.\n\nTea, Turkish coffee, lemonade, water, nuts, chips, crackers, pretzels, and fruit service form the base hospitality. The wine-served option adds 2 glasses of wine per guest, while the without-wine option keeps the experience lighter for guests who want the sunset and the route first.",
     duration: "2 hours",
-    capacity: "Max 25 guests on a shared yacht",
+    capacity: "Shared sunset yacht seating",
     priceEur: 34,
     originalPriceEur: 50,
     packages: [
@@ -257,7 +257,7 @@ export const tours: Tour[] = [
     description: "Shared Bosphorus dinner cruise in Istanbul with four verified package tiers, dinner service, Turkish-night shows, and hotel pickup support from central European-side zones.",
     longDescription: "This shared dinner cruise is built around four public packages on the same Bosphorus night route: Silver Dinner Cruise - Soft Drinks at EUR 30, Silver Dinner Cruise - Alcoholic at EUR 45, Gold Dinner Cruise - Soft Drinks at EUR 80, and Gold Dinner Cruise - Unlimited Alcohol at EUR 90.\n\nThe cruise lasts about 3.5 hours, runs on a shared dinner boat, and uses the Kabatas Pier boarding flow. For many central European-side hotels, pickup and drop-off are part of the shared dinner-cruise operation, and the live calendar currently shows 20:30 departures.\n\nAcross the ladder, the evening combines dinner service, stage entertainment, DJ music, and illuminated Bosphorus views. The main package differences are not the route itself but the table tier, beverage inclusion, and dinner-menu level. Silver stays with standard seating arranged by the operation, while Gold moves into guaranteed stage-close VIP tables with a wider menu and more premium service.",
     duration: "3.5 hours",
-    capacity: "Max 50 guests on the shared dinner boat",
+    capacity: "Shared dinner boat seating arranged by package",
     priceEur: 30,
     originalPriceEur: 40,
     packages: [
@@ -1207,6 +1207,17 @@ export function getPriceSuffix(tour: Tour): string {
   if (mode === "perGroup") return "/group";
   if (mode === "custom") return "";
   return "/person";
+}
+
+export function getTourFormat(tour: Tour): string {
+  if (tour.slug === "bosphorus-sunset-cruise") return "Shared sunset cruise";
+  if (tour.slug === "bosphorus-dinner-cruise") return "Shared dinner cruise";
+  if (tour.slug === "yacht-charter-in-istanbul") return "Private yacht charter";
+
+  if (tour.category === "private") return "Private Bosphorus charter";
+  if (tour.category === "event" || tour.category === "organization") return "Planned private event";
+  if (tour.category === "tour") return "Guided Istanbul tour";
+  return "Shared cruise experience";
 }
 
 export function getCoreTours(): Tour[] {

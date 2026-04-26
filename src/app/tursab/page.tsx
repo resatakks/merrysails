@@ -1,10 +1,12 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { ShieldCheck, Building2, FileBadge, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "TURSAB License",
+  title: "TURSAB License 14316 | MerrySails Istanbul",
   description:
-    "MerrySails operates under Merry Tourism with TURSAB A Group license number 14316 in Istanbul.",
+    "Verify the TURSAB A Group license behind MerrySails and Merry Tourism in Istanbul. License number 14316, office details, and operator identity.",
+  alternates: { canonical: "https://merrysails.com/tursab" },
 };
 
 const facts = [
@@ -22,9 +24,22 @@ const facts = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://merrysails.com" },
+    { "@type": "ListItem", position: 2, name: "TURSAB License", item: "https://merrysails.com/tursab" },
+  ],
+};
+
 export default function TursabPage() {
   return (
     <main className="bg-[var(--surface-alt)] pt-28 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="container-main">
         <section className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm">
           <div className="bg-gradient-to-br from-[#fff5f5] via-white to-[#fff7ed] px-6 py-8 md:px-10">
@@ -138,6 +153,42 @@ export default function TursabPage() {
                       Istanbul, Turkey
                     </p>
                   </div>
+                </div>
+              </div>
+
+              <div className="rounded-[1.75rem] border border-[var(--line)] bg-white p-6">
+                <h2 className="text-lg font-bold text-[var(--heading)]">
+                  Useful next steps
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--body-text)]">
+                  Use this page as a trust reference, then move back to the main
+                  product or contact path that matches the booking intent.
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  <Link
+                    href="/about"
+                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
+                  >
+                    About MerrySails
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
+                  >
+                    Contact & reservations
+                  </Link>
+                  <Link
+                    href="/bosphorus-cruise"
+                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
+                  >
+                    Compare core cruise paths
+                  </Link>
+                  <Link
+                    href="/yacht-charter-istanbul"
+                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
+                  >
+                    Open yacht charter owner page
+                  </Link>
                 </div>
               </div>
             </section>

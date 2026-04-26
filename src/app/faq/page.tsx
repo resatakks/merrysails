@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const metadata = {
@@ -73,7 +74,7 @@ const faqs = [
   },
   {
     q: "Is MerrySails a licensed company?",
-    a: "Yes, MerrySails is operated by Merry Tourism, a TURSAB-licensed A Group travel agency based in Istanbul. We have been operating since 2001 and have served over 50,000 happy guests. All our guides hold Professional Tourist Guidance Certificates.",
+    a: "Yes, MerrySails is operated by Merry Tourism, a TURSAB-licensed A Group travel agency based in Istanbul. The site uses Merry Tourism's licensing and since-2001 operating history as its main trust signals.",
   },
 ];
 
@@ -98,6 +99,69 @@ const breadcrumbSchema = {
     { "@type": "ListItem", position: 2, name: "FAQ", item: "https://merrysails.com/faq" },
   ],
 };
+
+const routeCards = [
+  {
+    href: "/bosphorus-cruise",
+    eyebrow: "Still comparing",
+    title: "Bosphorus Cruise Hub",
+    description: "Use this first when you still need to compare sightseeing, sunset, dinner, and private formats.",
+  },
+  {
+    href: "/cruises/bosphorus-sunset-cruise",
+    eyebrow: "Golden hour",
+    title: "Bosphorus Sunset Cruise",
+    description: "Best fit when the light, skyline, and shorter shared format matter most.",
+  },
+  {
+    href: "/istanbul-dinner-cruise",
+    eyebrow: "Shared evening",
+    title: "Istanbul Dinner Cruise",
+    description: "Best fit when the plan revolves around dinner service, hotel pickup support, and a longer evening.",
+  },
+  {
+    href: "/yacht-charter-istanbul",
+    eyebrow: "Private hire",
+    title: "Yacht Charter Istanbul",
+    description: "Best fit when you already know the trip should stay private and package-led.",
+  },
+  {
+    href: "/sunset-cruise-tickets-istanbul",
+    eyebrow: "Shared sunset booking",
+    title: "Sunset Ticket Support",
+    description: "Best fit when the shared sunset cruise is already right and the real question is ticket fit, package choice, and reserve-direct clarity.",
+  },
+  {
+    href: "/turkish-night-dinner-cruise-istanbul",
+    eyebrow: "Show-led dinner fit",
+    title: "Turkish Night Dinner Support",
+    description: "Best fit when the shared dinner route is already right and the real question is Turkish-night show format and package fit.",
+  },
+  {
+    href: "/dinner-cruise-with-hotel-pickup-istanbul",
+    eyebrow: "Pickup help",
+    title: "Dinner Pickup Support",
+    description: "Best fit when the shared dinner route is already right but hotel pickup eligibility is the main question.",
+  },
+  {
+    href: "/dinner-cruise-pickup-sultanahmet-taksim",
+    eyebrow: "Central pickup",
+    title: "Sultanahmet & Taksim Pickup",
+    description: "Best fit when the dinner route is right and the main question is central hotel pickup around Sultanahmet, Taksim, Sirkeci, or Karakoy.",
+  },
+  {
+    href: "/kabatas-dinner-cruise-istanbul",
+    eyebrow: "Kabatas boarding",
+    title: "Kabatas Dinner Support",
+    description: "Best fit when the dinner route is already right and the real question is Kabatas-side arrival flow.",
+  },
+  {
+    href: "/bosphorus-cruise-departure-points",
+    eyebrow: "Boarding clarity",
+    title: "Departure Points Hub",
+    description: "Best fit when the real question is where sunset, dinner, and private yacht products start in Istanbul.",
+  },
+] as const;
 
 export default function FAQPage() {
   return (
@@ -132,6 +196,34 @@ export default function FAQPage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {routeCards.map((card) => (
+            <Link
+              key={card.href}
+              href={card.href}
+              className="rounded-2xl border border-[var(--line)] bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-[var(--brand-primary)] hover:shadow-md"
+            >
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+                {card.eyebrow}
+              </p>
+              <h2 className="mb-2 text-lg font-semibold text-[var(--heading)]">{card.title}</h2>
+              <p className="text-sm leading-relaxed text-[var(--text-muted)]">{card.description}</p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-[var(--line)] bg-white p-5 text-sm leading-relaxed text-[var(--body-text)]">
+          Need a licensed operator check, boarding clarification, or a direct quote path? Start with{" "}
+          <Link href="/tursab" className="text-[var(--brand-primary)] hover:underline">
+            TURSAB license details
+          </Link>{" "}
+          or move to{" "}
+          <Link href="/contact" className="text-[var(--brand-primary)] hover:underline">
+            contact
+          </Link>{" "}
+          when the question is already about date, guests, or the right product page.
         </div>
       </div>
     </div>

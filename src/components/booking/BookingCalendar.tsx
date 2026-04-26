@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import {
   format,
   addMonths,
@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { PriceMode } from "@/data/tours";
+import { handleTrackedContactNavigation } from "@/lib/analytics";
 import SalePrice from "@/components/ui/SalePrice";
 import { MAX_BOOKING_GUESTS } from "@/lib/constants";
 import {
@@ -73,6 +74,7 @@ function parseTimeOptions(dt?: string): string[] {
 }
 
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const emptySubscribe = () => () => {};
 
 export default function BookingCalendar({
   tourSlug,
@@ -95,18 +97,12 @@ export default function BookingCalendar({
       ? Math.max(1, Math.min(MAX_BOOKING_GUESTS, initialGuests))
       : 2;
 
-  const [currentMonth, setCurrentMonth] = useState(safeInitialDate ?? new Date());
+  const [currentMonth, setCurrentMonth] = useState<Date | null>(safeInitialDate);
   const [selectedDate, setSelectedDate] = useState<Date | null>(safeInitialDate);
   const [adults, setAdults] = useState(safeInitialGuests);
   const [children, setChildren] = useState(0);
   const [selectedTime, setSelectedTime] = useState(initialTime ?? "");
   const [operations, setOperations] = useState<TourOperationClientSnapshot[]>([]);
-
-  const today = startOfDay(new Date());
-  const tomorrow = addDays(today, 1);
-  const monthStart = startOfMonth(currentMonth);
-  const monthEnd = endOfMonth(currentMonth);
-  const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
   const isPerGroup = priceMode === "perGroup";
   const operationsByDate = Object.fromEntries(
     operations.map((operation) => [operation.date, operation])
@@ -117,9 +113,6 @@ export default function BookingCalendar({
     : undefined;
   const activeDepartureTime =
     selectedOperation?.departureTimeOverride || departureTime;
-
-  const startDay = getDay(monthStart);
-  const blanks = startDay === 0 ? 6 : startDay - 1;
 
   const totalGuests = adults + children;
   const total = isPerGroup ? priceEur : priceEur * totalGuests;
@@ -132,11 +125,13 @@ export default function BookingCalendar({
     : undefined;
   const totalSavings = originalTotal ? originalTotal - total : 0;
   const timeOptions = parseTimeOptions(activeDepartureTime);
+  const isHydrated = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const now = isHydrated ? new Date() : null;
   const sameDayClosedForSelectedDate = selectedDate
     ? isSameDayBookingClosed(
         tourSlug,
         selectedDate,
-        new Date(),
+        now ?? new Date(0),
         selectedOperation?.departureTimeOverride || selectedTime || departureTime
       )
     : false;
@@ -157,10 +152,6 @@ export default function BookingCalendar({
     selectedOperation?.departureTimeOverride ||
     normalizedSelectedTime ||
     (timeOptions.length === 1 ? timeOptions[0] : "");
-
-  const canGoPrev = isSameMonth(currentMonth, new Date())
-    ? false
-    : !isBefore(subMonths(monthStart, 1), startOfMonth(today));
 
   useEffect(() => {
     const controller = new AbortController();
@@ -204,6 +195,41 @@ export default function BookingCalendar({
     }
   };
 
+  if (!isHydrated || !now) {
+    return (
+      <div id="booking-calendar" className="scroll-mt-24 overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-sm">
+        <div className="bg-[var(--brand-price-box)] px-5 py-5">
+          <SalePrice
+            price={priceEur}
+            originalPrice={originalPriceEur}
+            suffix={isPerGroup ? "/group" : "/person"}
+            label={bookingLabel}
+            size="lg"
+            tone="overlay"
+            showBadge={Boolean(hasDiscount)}
+            showMeta={Boolean(hasDiscount)}
+            metaText={bookingMetaText}
+          />
+        </div>
+        <div className="p-5">
+          <div className="h-72 animate-pulse rounded-2xl bg-[var(--surface-alt)]" />
+        </div>
+      </div>
+    );
+  }
+
+  const today = startOfDay(now);
+  const resolvedCurrentMonth = currentMonth ?? safeInitialDate ?? today;
+  const tomorrow = addDays(today, 1);
+  const monthStart = startOfMonth(resolvedCurrentMonth);
+  const monthEnd = endOfMonth(resolvedCurrentMonth);
+  const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
+  const startDay = getDay(monthStart);
+  const blanks = startDay === 0 ? 6 : startDay - 1;
+  const canGoPrev = isSameMonth(resolvedCurrentMonth, today)
+    ? false
+    : !isBefore(subMonths(monthStart, 1), startOfMonth(today));
+
   return (
     <div id="booking-calendar" className="scroll-mt-24 overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-sm">
       {/* Price header */}
@@ -246,20 +272,20 @@ export default function BookingCalendar({
         <div className="flex items-center justify-between mb-4">
           <button
             onClick={() =>
-              canGoPrev || !isSameMonth(currentMonth, new Date())
-                ? setCurrentMonth(subMonths(currentMonth, 1))
+              canGoPrev || !isSameMonth(resolvedCurrentMonth, today)
+                ? setCurrentMonth(subMonths(resolvedCurrentMonth, 1))
                 : null
             }
-            disabled={isSameMonth(currentMonth, new Date())}
+            disabled={isSameMonth(resolvedCurrentMonth, today)}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <span className="font-semibold text-[var(--heading)]">
-            {format(currentMonth, "MMMM yyyy")}
+            {format(resolvedCurrentMonth, "MMMM yyyy")}
           </span>
           <button
-            onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
+            onClick={() => setCurrentMonth(addMonths(resolvedCurrentMonth, 1))}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
             <ChevronRight className="w-4 h-4" />
@@ -291,7 +317,7 @@ export default function BookingCalendar({
             const isCutoffClosed = isSameDayBookingClosed(
               tourSlug,
               day,
-              new Date(),
+              now,
               operation?.departureTimeOverride || departureTime
             );
             const isDisabled = isPast || isSoldOut || isCutoffClosed;
@@ -598,6 +624,17 @@ export default function BookingCalendar({
                 )} for ${totalGuests} guests.`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(event) =>
+                  handleTrackedContactNavigation(event, {
+                    href: `https://wa.me/905370406822?text=Hi, I'd like to book ${tourName} on ${format(
+                      selectedDate,
+                      "dd MMM yyyy"
+                    )} for ${totalGuests} guests.`,
+                    kind: "whatsapp",
+                    label: "booking_calendar_whatsapp",
+                    location: tourSlug,
+                  })
+                }
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--brand-whatsapp)] text-white font-semibold hover:brightness-110 transition-all text-sm"
               >
                 <Phone className="w-4 h-4" />

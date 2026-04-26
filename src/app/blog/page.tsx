@@ -1,6 +1,7 @@
 import BlogIndexClient from "@/components/blog/BlogIndexClient";
 import { blogCollections, blogPosts } from "@/data/blog";
 import { commercialSupportPosts } from "@/content/blog";
+import { cleanContentText } from "@/lib/content-text";
 
 export default function BlogPage() {
   const itemListSchema = {
@@ -13,7 +14,7 @@ export default function BlogPage() {
       "@type": "ListItem",
       position: index + 1,
       url: `https://merrysails.com/blog/${post.slug}`,
-      name: post.title,
+      name: cleanContentText(post.title),
     })),
   };
 

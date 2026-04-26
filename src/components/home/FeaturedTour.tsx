@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Clock, Users, MapPin, CalendarDays, Check } from "lucide-react";
+import { ArrowRight, Clock, Anchor, MapPin, CalendarDays, Check } from "lucide-react";
 import {
   getBookingMode,
   getPriceSuffix,
   getTourPath,
+  getTourFormat,
   isPricingVisible,
   type Tour,
 } from "@/data/tours";
@@ -20,6 +21,7 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
   const href = getTourPath(tour);
   const bookingMode = getBookingMode(tour);
   const priceSuffix = getPriceSuffix(tour);
+  const tourFormat = getTourFormat(tour);
   const detailCards = [
     {
       icon: Clock,
@@ -27,9 +29,9 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
       value: tour.duration,
     },
     {
-      icon: Users,
-      label: "Guests",
-      value: tour.capacity,
+      icon: Anchor,
+      label: "Format",
+      value: tourFormat,
     },
     {
       icon: MapPin,
@@ -130,11 +132,12 @@ export default function FeaturedTour({ tour, reverse = false }: Props) {
                   </div>
                 )}
               </div>
-              <Link href={href} className="sm:shrink-0">
-                <button className="btn-cta min-w-[190px]">
+              <Link
+                href={href}
+                className="btn-cta inline-flex min-w-[190px] items-center justify-center sm:shrink-0"
+              >
                   {bookingMode === "quote" ? "Plan This Service" : "Book Now"}
                   <ArrowRight className="h-4 w-4" />
-                </button>
               </Link>
             </div>
           </div>

@@ -45,6 +45,10 @@ export function getAllBlogSlugs(): string[] {
   return blogPosts.map((post) => post.slug);
 }
 
+function isDefined<T>(value: T | undefined): value is T {
+  return value !== undefined;
+}
+
 export function getBlogCollectionsWithPosts(posts: BlogPost[] = blogPosts) {
   const postIndex = new Map(posts.map((post) => [post.slug, post]));
 
@@ -52,6 +56,6 @@ export function getBlogCollectionsWithPosts(posts: BlogPost[] = blogPosts) {
     ...collection,
     posts: collection.postSlugs
       .map((slug) => postIndex.get(slug))
-      .filter((post): post is BlogPost => Boolean(post)),
+      .filter(isDefined),
   }));
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, Star, Users } from "lucide-react";
+import { Clock, Star } from "lucide-react";
 import {
   getBookingMode,
   getPriceSuffix,
@@ -64,14 +64,6 @@ export default function TourCard({ tour }: { tour: Tour }) {
             </span>
           </div>
         )}
-
-        {/* Capacity — small pill */}
-        <div className="absolute top-12 left-3 z-10">
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-md bg-black/50 backdrop-blur-sm text-white/90">
-            <Users className="w-2.5 h-2.5" />
-            {tour.capacity}
-          </span>
-        </div>
 
         {/* Content at bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-5 z-10">

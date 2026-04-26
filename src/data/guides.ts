@@ -1,6 +1,19 @@
+export interface GuideSubsection {
+  heading: string;
+  content: string;
+  list?: string[];
+}
+
 export interface GuideSection {
   heading: string;
   content: string;
+  answerCapsule?: string;
+  list?: string[];
+  table?: { headers: string[]; rows: string[][] };
+  callout?: { type: "tip" | "info" | "warning" | "price"; text: string };
+  proTip?: string;
+  expertQuote?: { text: string; author: string; title: string };
+  subsections?: GuideSubsection[];
 }
 
 export interface Guide {
@@ -139,6 +152,106 @@ export const guides: Guide[] = [
       { heading: "Nearby Attractions", content: "Before or after your yacht experience, explore the charming Kuruçeşme waterfront. Several excellent restaurants and cafes line the shore, including some of Istanbul's best fish restaurants. The nearby Ortaköy neighborhood (a 10-minute walk) offers the famous kumpir stalls, weekend craft market, and the stunning Ortaköy Mosque. The Kuruçeşme coastline also hosts open-air concerts and events during summer months." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "private-bosphorus-sunset-cruise"]
+  },
+  {
+    slug: "kabatas-pier",
+    title: "Kabatas Pier — Dinner Cruise Boarding & Bosphorus Connections in Istanbul",
+    metaDescription: "Guide to Kabatas Pier in Istanbul for Bosphorus dinner cruise boarding, public transport links, pickup logic, and when Kabatas matters in the booking flow.",
+    excerpt: "Kabatas Pier is one of Istanbul's key Bosphorus transport nodes and the main public reference point for MerrySails dinner-cruise boarding.",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
+    keywords: ["kabatas pier", "kabatas bosphorus cruise", "dinner cruise boarding istanbul", "kabatas dinner cruise", "istanbul cruise boarding"],
+    sections: [
+      {
+        heading: "Kabatas Pier for Bosphorus Dinner Cruise Boarding in Istanbul",
+        answerCapsule: "Kabatas Pier matters most for the shared [Istanbul Dinner Cruise](/istanbul-dinner-cruise), because MerrySails uses the Kabatas-side boarding flow rather than a generic city-center pier assumption.",
+        content: "Kabatas is one of Istanbul's most important waterfront transport hubs on the European side, connecting tram, funicular, ferry, taxi, and road traffic in one place. For MerrySails guests, it matters most because the shared [Istanbul Dinner Cruise](/istanbul-dinner-cruise) uses the Kabatas boarding flow rather than a generic city-center departure. This makes Kabatas more than a landmark: it is a practical reference point for evening cruise logistics, pickup planning, and last-mile arrival decisions.\n\nIf your question is specifically about dinner-cruise boarding, this page should work as a local-support guide. If you are still comparing products, start with the [Bosphorus Cruise compare hub](/bosphorus-cruise) first and come back once the dinner route is already the right fit.",
+        table: {
+          headers: ["Kabatas topic", "What it means for guests", "Best next click"],
+          rows: [
+            ["Dinner-cruise boarding", "Kabatas is the main public reference for the shared evening route", "[Open Istanbul Dinner Cruise](/istanbul-dinner-cruise)"],
+            ["Pickup support", "Some central hotels feed into the Kabatas flow instead of direct self-arrival", "[Open Dinner Cruise with Hotel Pickup](/dinner-cruise-with-hotel-pickup-istanbul)"],
+            ["Pier-specific dinner intent", "Some users search the boarding district before they choose the product page", "[Open Kabatas Dinner Cruise Istanbul](/kabatas-dinner-cruise-istanbul)"],
+            ["Broad product comparison", "If the cruise type is still undecided, Kabatas is too narrow for the first click", "[Open Bosphorus Cruise compare hub](/bosphorus-cruise)"],
+          ],
+        },
+        callout: {
+          type: "info",
+          text: "Kabatas is a boarding and routing reference point, not a promise that every Bosphorus product leaves from the same public pier.",
+        },
+      },
+      {
+        heading: "Which Bosphorus Cruise Uses Kabatas Pier?",
+        content: "The clearest owner path tied to Kabatas is the shared [Istanbul Dinner Cruise](/istanbul-dinner-cruise). The live dinner product is built around a shared evening route, package-based table structure, and hotel pickup support from selected central European-side districts before guests are routed into the Kabatas boarding flow.\n\nIf your main commercial question is specifically the Kabatas-side dinner boarding logic, use the narrower [Kabatas Dinner Cruise Istanbul](/kabatas-dinner-cruise-istanbul) support page. The sunset cruise is a different product and should not be treated as the same pier-led experience; it uses a separate meeting flow confirmed after booking.",
+        list: [
+          "Use `/istanbul-dinner-cruise` when the real intent is the shared dinner owner page.",
+          "Use `/kabatas-dinner-cruise-istanbul` when the user is clearly searching pier-led dinner intent.",
+          "Use `/dinner-cruise-with-hotel-pickup-istanbul` when pickup or shuttle logic is the deciding question.",
+          "Do not assume the sunset cruise shares the same boarding flow just because both products are on the Bosphorus.",
+        ],
+      },
+      {
+        heading: "Kabatas Dinner Cruise Pickup, Shuttle, and Direct Arrival Logic",
+        content: "For many dinner-cruise guests, the better question is not simply where Kabatas is, but whether they will be taken into the Kabatas flow or should arrive directly. MerrySails uses hotel pickup support for selected central European-side areas on the shared dinner cruise. Some hotels or streets may require a nearby collection point instead of direct door pickup, while guests staying outside the listed zones or on the Asian side may be asked to come straight to the Kabatas side.\n\nIf pickup is the deciding commercial question, use the dedicated [Dinner Cruise with Hotel Pickup Istanbul](/dinner-cruise-with-hotel-pickup-istanbul) page before relying on a generic dinner-cruise assumption. The final written confirmation remains the source of truth for your exact evening plan.",
+        table: {
+          headers: ["Arrival style", "Who it usually fits", "What to check"],
+          rows: [
+            ["Hotel pickup support", "Central European-side guests staying in eligible hotel zones", "Pickup window and collection note in the final message"],
+            ["Nearby collection point", "Guests in narrow streets or access-limited areas", "Whether the team shared a nearby meeting point instead of direct hotel pickup"],
+            ["Direct self-arrival", "Asian-side guests or travelers outside pickup coverage", "Exact Kabatas-side boarding pin and arrival buffer"],
+          ],
+        },
+        proTip: "If your hotel is outside the pickup zone, do not guess from district names alone. Wait for the exact written pin or switch to direct self-arrival planning early.",
+      },
+      {
+        heading: "How to Reach Kabatas Pier from Sultanahmet, Taksim, Galata, and the Asian Side",
+        content: "Kabatas is easy to reach from central visitor districts. The T1 tram line connects Kabatas directly with Sultanahmet, Sirkeci, Eminonu, Karakoy, and other Bosphorus-side stops. From Taksim, the F1 funicular drops you almost directly into the Kabatas transport interchange. Taxis from Beyoglu, Nisantasi, or Sisli are usually straightforward outside peak traffic. Guests coming from the Asian side often prefer ferry plus short walk, although late-night return timing can make direct arrival more practical than depending on public transport afterward.",
+        subsections: [
+          {
+            heading: "Sultanahmet to Kabatas Pier",
+            content: "The easiest route is usually the T1 tram directly to Kabatas. This is the cleanest option for guests staying around Sultanahmet, Gulhane, Sirkeci, or Eminonu because it avoids extra transfers and keeps the last-mile walk simple.",
+          },
+          {
+            heading: "Taksim and Beyoglu to Kabatas Pier",
+            content: "From Taksim, the F1 funicular is the simplest move. From Galata or lower Beyoglu streets, taxi or downhill transit toward the waterfront can be easier than relying on a full district-to-district road journey in evening traffic.",
+          },
+          {
+            heading: "Asian Side to Kabatas Pier",
+            content: "Guests coming from Kadikoy or Uskudar often need to balance ferry convenience against late-night return timing. If the dinner cruise ends late for your onward plan, direct arrival by taxi or pre-planned transport can be cleaner than stitching together multiple public links.",
+          },
+        ],
+      },
+      {
+        heading: "Kabatas Pier Boarding Tips for Bosphorus Dinner Cruise Guests",
+        content: "Kabatas is a busy interchange, especially in the evening. Build in a small time buffer, keep your phone reachable, and check the final MerrySails message before leaving your hotel. If you are not using the shared shuttle, arrive with enough time to find the correct boarding flow rather than assuming every waterfront queue is related to your dinner cruise.",
+        list: [
+          "Keep the final written confirmation open before you leave the hotel.",
+          "Treat the exact boarding pin as more important than the district name alone.",
+          "Give yourself enough time to handle traffic, tram crowding, or ferry delays.",
+          "Use the product-specific instructions, not a generic 'Istanbul cruise pier' assumption.",
+        ],
+        callout: {
+          type: "warning",
+          text: "A busy public pier does not automatically mean the correct MerrySails boarding queue. Follow the confirmed pin and host instructions instead of improvising on the waterfront.",
+        },
+      },
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"]
+  },
+  {
+    slug: "karakoy-waterfront",
+    title: "Karakoy Waterfront — Sunset Cruise Meeting Flow & Bosphorus Access",
+    metaDescription: "Guide to the Karakoy waterfront in Istanbul for Bosphorus sunset cruise meeting flow, tram/metro access, and how to arrive for shared golden-hour departures.",
+    excerpt: "Karakoy is the practical waterfront approach for the MerrySails sunset cruise, with tram, metro, and walking connections into the meeting-flow area.",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
+    keywords: ["karakoy waterfront", "karakoy sunset cruise", "istanbul sunset cruise meeting point", "karakoy bosphorus cruise", "arap cami waterfront"],
+    sections: [
+      { heading: "Why Karakoy Matters for the Sunset Cruise", content: "Karakoy is one of the clearest practical reference points for the MerrySails sunset cruise. The shared golden-hour product uses a Karakoy-side meeting flow near the waterfront rather than a hotel-pickup-heavy evening structure like the dinner cruise. For guests staying in Galata, Beyoglu, Sishane, Taksim, or the Old City tram corridor, Karakoy is often the simplest way to think about sunset-cruise arrival." },
+      { heading: "What the Karakoy Meeting Flow Actually Means", content: "The sunset cruise should be treated as a shared premium golden-hour outing, not as a generic pier queue. MerrySails currently uses a Karakoy meeting flow near Arap Cami and Uskufcular Street, with the final boarding pin confirmed after booking. That distinction matters: the public location logic is useful for planning, but the reservation message is still the source of truth for the exact pin, timing, and final boarding instructions on your date." },
+      { heading: "How to Reach the Waterfront", content: "The easiest public route is usually the T1 tram to Karakoy stop, followed by a short walk toward the waterfront streets. Guests using the M2 metro can exit via the Karakoy-Azap Kapi side and walk down toward the meeting-flow area. From Galata or nearby Beyoglu streets, Karakoy is often reachable on foot. Taxis also work well when traffic is normal, especially for guests coming from hotels that are not on the tram line." },
+      { heading: "Who Should Use This Guide", content: "This page is useful when your main question is arrival, transit, or meeting-flow confidence for the sunset cruise. It is not the right first click if you are still deciding between sunset, dinner, or private yacht options. In that case, start with the [Bosphorus Cruise hub](/bosphorus-cruise) or go straight to the protected owner page for [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise). Use the Karakoy guide once the product choice is already made and you need the local waterfront context." },
+      { heading: "Before You Leave for the Cruise", content: "Give yourself a small time buffer, keep your booking confirmation ready, and do not rely on an old screenshot or a generic Istanbul cruise pier assumption. Sunset timing changes by season, and shared departures can be adjusted around light and operating conditions. If you requested extra transfer support, ask the team to confirm that separately. Otherwise, treat Karakoy as the arrival district and the written MerrySails follow-up as the final boarding instruction." }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise"]
   },
   {
     slug: "golden-horn",

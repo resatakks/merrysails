@@ -23,6 +23,48 @@ const http = require("http");
 const SITEMAP_URL = process.env.SITEMAP_URL || "https://merrysails.com/sitemap.xml";
 const URLS_PER_DAY = parseInt(process.env.URLS_PER_DAY || "15", 10); // GSC genelde 10–20 kabul eder
 const DATA_DIR = path.join(__dirname, "..", "data");
+const EXCLUDED_URL_PATTERNS = [
+  /\/admin(?:\/|$)/,
+  /\/api(?:\/|$)/,
+  /\/reservation(?:\/|$)/,
+  /\/meeting-points(?:\/|$)/,
+  /\/privacy-policy$/,
+  /\/terms$/,
+];
+const PRIORITY_URLS = [
+  "https://merrysails.com/",
+  "https://merrysails.com/bosphorus-cruise",
+  "https://merrysails.com/bosphorus-cruise-departure-points",
+  "https://merrysails.com/cruises",
+  "https://merrysails.com/sunset-cruise-tickets-istanbul",
+  "https://merrysails.com/istanbul-dinner-cruise",
+  "https://merrysails.com/turkish-night-dinner-cruise-istanbul",
+  "https://merrysails.com/dinner-cruise-with-hotel-pickup-istanbul",
+  "https://merrysails.com/dinner-cruise-pickup-sultanahmet-taksim",
+  "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+  "https://merrysails.com/yacht-charter-istanbul",
+  "https://merrysails.com/boat-rental-istanbul",
+  "https://merrysails.com/boat-rental-hourly-istanbul",
+  "https://merrysails.com/corporate-events",
+  "https://merrysails.com/corporate-yacht-dinner-istanbul",
+  "https://merrysails.com/team-building-yacht-istanbul",
+  "https://merrysails.com/client-hosting-yacht-istanbul",
+  "https://merrysails.com/product-launch-yacht-istanbul",
+  "https://merrysails.com/kabatas-dinner-cruise-istanbul",
+  "https://merrysails.com/proposal-yacht-rental-istanbul",
+  "https://merrysails.com/proposal-yacht-with-photographer-istanbul",
+  "https://merrysails.com/private-bosphorus-dinner-cruise",
+  "https://merrysails.com/private-dinner-cruise-for-couples-istanbul",
+  "https://merrysails.com/kurucesme-marina-yacht-charter",
+  "https://merrysails.com/private-events",
+  "https://merrysails.com/private-tours",
+  "https://merrysails.com/blog",
+  "https://merrysails.com/guides",
+  "https://merrysails.com/about",
+  "https://merrysails.com/contact",
+  "https://merrysails.com/faq",
+  "https://merrysails.com/tursab",
+];
 
 function fetchUrl(url) {
   return new Promise((resolve, reject) => {
@@ -47,6 +89,31 @@ function parseSitemapXml(xml) {
   return urls;
 }
 
+function sortUrlsForIndexing(urls) {
+  const uniqueUrls = [...new Set(urls)].filter(
+    (url) => !EXCLUDED_URL_PATTERNS.some((pattern) => pattern.test(url))
+  );
+  const prioritySet = new Set(PRIORITY_URLS);
+  const priorityIndex = new Map(PRIORITY_URLS.map((url, index) => [url, index]));
+
+  return uniqueUrls.sort((a, b) => {
+    const aPriority = priorityIndex.has(a) ? priorityIndex.get(a) : Number.MAX_SAFE_INTEGER;
+    const bPriority = priorityIndex.has(b) ? priorityIndex.get(b) : Number.MAX_SAFE_INTEGER;
+
+    if (aPriority !== bPriority) {
+      return aPriority - bPriority;
+    }
+
+    const aIsPriority = prioritySet.has(a);
+    const bIsPriority = prioritySet.has(b);
+    if (aIsPriority !== bIsPriority) {
+      return aIsPriority ? -1 : 1;
+    }
+
+    return a.localeCompare(b);
+  });
+}
+
 async function main() {
   console.log("MerrySails — GSC indexleme listesi\n");
   console.log("Sitemap:", SITEMAP_URL);
@@ -61,7 +128,7 @@ async function main() {
     process.exit(1);
   }
 
-  const urls = parseSitemapXml(xml);
+  const urls = sortUrlsForIndexing(parseSitemapXml(xml));
   if (urls.length === 0) {
     console.error("Sitemap'te <loc> bulunamadı.");
     process.exit(1);

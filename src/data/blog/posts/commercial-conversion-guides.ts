@@ -3,32 +3,32 @@ import type { BlogPost } from "../types";
 export const commercialConversionGuides: BlogPost[] = [
 {
     slug: "private-yacht-charter-istanbul-prices",
-    title: "Private Yacht Charter Istanbul — Prices, Routes & How to Book",
-    metaDescription: "Private yacht charter in Istanbul from €280. Compare Essential, Premium and VIP base packages, route logic, and add-on planning for a private Bosphorus cruise.",
-    excerpt: "Everything you need to know about chartering a private yacht in Istanbul — package prices, route options, what is included, and how to book your own Bosphorus experience.",
+    title: "How Istanbul Private Yacht Quotes Are Built — Base Ladder, Extras & Approval Flow",
+    metaDescription: "Use this pricing explainer to understand how Istanbul private yacht quotes are built, then move to the main yacht owner page for the live offer.",
+    excerpt: "This support guide explains how the public private-yacht ladder, extras, and approval flow work before you move to the main yacht owner page.",
     category: "yacht-guide",
     date: "2026-03-28",
-    dateModified: "2026-04-02",
+    dateModified: "2026-04-23",
     readTime: "13 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
     imageAlt: "Luxury private yacht cruising the Bosphorus with Istanbul skyline in the background",
-    keywords: ["yacht charter istanbul", "private yacht istanbul", "yacht rental istanbul price", "bosphorus yacht cruise", "istanbul yacht hire", "private boat istanbul", "yacht charter bosphorus prices"],
+    keywords: ["istanbul private yacht quote guide", "how yacht quotes are built in istanbul", "private yacht add-on pricing bosphorus", "public yacht ladder explainer istanbul", "yacht approval flow istanbul", "private yacht pricing support guide"],
     author: "captain-ahmet",
     keyTakeaways: [
       "Private yacht charters start from €280 for a standard 2-hour private Bosphorus cruise — priced per vessel, not per person",
       "The live price range is Essential €280, Premium €380, and VIP €680, with extras and longer durations quoted separately",
-      "Custom routes let you choose your own Bosphorus itinerary — stop at landmarks, anchor for swimming, or sail to the Black Sea entrance",
-      "Book via WhatsApp +90 537 040 68 22 for a same-day quote and availability check"
+      "The public ladder gives you the clean starting reference, while add-ons and date pressure shape the final quote",
+      "The live commercial owner path is `/yacht-charter-istanbul`; this article stays in the pricing-explainer role"
     ],
     sections: [
-      { heading: "Why Choose a Private Yacht Charter in Istanbul?", answerCapsule: "A private yacht charter in Istanbul gives you exclusive use of a vessel with your own captain and crew, custom route selection, and a live public entry point from €280 for a 2-hour private Bosphorus cruise.", content: "A private yacht charter transforms the Bosphorus from a sightseeing tour into a personal experience. Unlike shared cruises where you follow a fixed route with dozens of other passengers, a yacht charter gives you complete control: choose your route, set your schedule, play your own music, and celebrate in privacy. The Bosphorus is one of the most scenic waterways on earth — 31 kilometres of imperial palaces, medieval fortresses, and Ottoman mansions separating two continents. Experiencing it from your own yacht, with a professional captain and dedicated crew, elevates the experience from tourism to something genuinely memorable. Yacht charters are popular for celebrations, proposals, anniversaries, family hosting, and corporate events because the yacht is priced per vessel and can be tailored through add-ons rather than forcing everyone into a shared-tour format." },
+      { heading: "How Private Yacht Quote Logic Works in Istanbul", answerCapsule: "A private yacht quote in Istanbul starts from the public vessel ladder, then changes only when the date, add-ons, duration, or event brief make the charter more complex than the base 2-hour private Bosphorus format.", content: "A private yacht charter transforms the Bosphorus from a sightseeing tour into a personal experience, but the important point here is how the quote is built. MerrySails uses a clean public starting ladder and then adds complexity only when the brief requires it. That keeps the live owner page at [Yacht Charter Istanbul](/yacht-charter-istanbul) commercially clean while this article handles the supporting explanation of why two private charters can end up with different totals." },
       { heading: "Istanbul Yacht Charter Prices 2026 — Package Comparison", content: "MerrySails offers three public yacht charter packages designed around the same 2-hour private Bosphorus format. The live ladder is simple: Essential €280, Premium €380, and VIP €680. All three public prices are per vessel, not per person, and all three keep the same base logic of a private yacht with crew and tea/coffee/water included. What changes most is yacht level, onboard feel, and the verified onboard inclusion set: Premium adds basic snacks and soft drinks, while VIP adds snacks and a food plate plus soft drinks. Beyond that, add-ons such as decoration, photographer, DJ, transfer, alcoholic service, catering, or extra hours are quoted separately.", table: { headers: ["Package", "Duration", "Price", "Base Includes", "Best Fit"], rows: [["Essential", "2 hours", "€280", "Private crew, tea/coffee/water, private route", "Straightforward private cruise"], ["Premium", "2 hours", "€380", "Private crew, tea/coffee/water, basic snacks, soft drinks", "Birthdays, anniversaries, upgraded hosting"], ["VIP", "2 hours", "€680", "Private crew, tea/coffee/water, snacks and food plate, soft drinks", "Milestone celebrations and higher-touch private hosting"], ["Add-ons", "As requested", "Quoted live", "Decoration, photographer, DJ, alcohol, extra hour, tailored catering", "Tailored celebrations and custom events"]] }, callout: { type: "price", text: "Use €280 / €380 / €680 as the clean base price range. The final total only rises when you choose extra services or a longer charter." } },
-      { heading: "Popular Yacht Charter Routes on the Bosphorus", content: "Your yacht charter route is fully customisable, but the most common plans still follow a few proven patterns. The classic 2-hour Bosphorus route focuses on the landmark-rich southern section so you see the highest density of palaces, bridges, waterfront mansions, and fortresses without turning the experience into a long logistics block. Sunset routes are timed around golden hour and blue hour rather than around one rigid public sailing plan. Longer charters can stretch further north, build in photography pauses, or shape the timing around dining, proposals, family hosting, or celebration flow. The marina is confirmed with the selected yacht assignment, so the route is planned from the vessel outward rather than from a single fixed public pier.", proTip: "For proposals and celebrations, the smartest route choice is usually the one that protects the moment rather than the one that simply covers the most distance. Light, privacy, and timing matter more than squeezing in every landmark." },
+      { heading: "How Route Choices Influence the Quote", content: "Route planning matters, but mainly because it influences the quote rather than because it should act like a separate owner page. The classic 2-hour southern Bosphorus line is the clean public baseline. Once the route stretches into longer timing, stronger photography pauses, or a more event-led run sheet, the quote can move because staffing, timing, and vessel suitability change with it. The marina is confirmed with the selected yacht assignment, so the route is planned from the vessel outward rather than from a single fixed public pier.", proTip: "For proposals and celebrations, the smartest route choice is usually the one that protects the moment rather than the one that simply covers the most distance. Light, privacy, and timing matter more than squeezing in every landmark." },
       { heading: "What Is Included on Every Yacht Charter", content: "Every public MerrySails yacht charter includes the yacht itself, a professional captain and crew, fuel for the agreed route, life jackets and maritime safety equipment, tea, coffee, water, and a private sailing environment with no shared passengers. The package level then adds its own verified extras: Premium includes basic snacks and soft drinks, while VIP includes snacks and a food plate plus soft drinks. Add-ons such as alcoholic beverages, decoration, photography, and entertainment are arranged separately based on what you actually need. Boarding is confirmed with the selected yacht and marina assignment, and the final arrival instructions are shared before the charter so the experience begins cleanly from the correct dock." },
-      { heading: "How to Book a Private Yacht Charter in Istanbul", content: "Booking your yacht charter is simple and takes under five minutes. The fastest method is WhatsApp at +90 537 040 68 22 — send your preferred date, approximate group size, and the occasion, and you will receive a personalised quote with availability. Alternatively, submit a request through <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a> or email info@merrysails.com with your details. Once the yacht, package level, and service brief are approved, MerrySails shares the written confirmation flow and payment timing for that charter. Changes to your booking (date, time, package upgrade) are handled according to the confirmed charter terms. Full cancellation with 100% refund is available up to 48 hours before departure; cancellations within 24–48 hours receive a 50% refund. For peak season dates (May–September) and weekends, booking 1–2 weeks in advance is strongly recommended as yacht availability is limited. Final marina instructions are shared once the yacht assignment is locked.", callout: { type: "info", text: "Same-day yacht bookings are sometimes possible depending on availability. WhatsApp +90 537 040 68 22 for a live availability check." } },
+      { heading: "How to Start the Private Yacht Booking Flow", content: "The cleanest first click is the main [Yacht Charter Istanbul](/yacht-charter-istanbul) page, because that owner page shows the live private-yacht direction before the team confirms the final vessel and service brief. From there, booking your yacht charter is simple: send the preferred date, approximate group size, and occasion by WhatsApp at +90 537 040 68 22, submit a request through <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>, or email info@merrysails.com with your details. Once the yacht, package level, and service brief are approved, MerrySails shares the written confirmation flow and payment timing for that charter. Changes to your booking (date, time, package upgrade) are handled according to the confirmed charter terms. Full cancellation with 100% refund is available up to 48 hours before departure; cancellations within 24–48 hours receive a 50% refund. For peak season dates (May–September) and weekends, booking 1–2 weeks in advance is strongly recommended as yacht availability is limited. Final marina instructions are shared once the yacht assignment is locked.", callout: { type: "info", text: "Same-day yacht bookings are sometimes possible depending on availability. Start with /yacht-charter-istanbul or WhatsApp +90 537 040 68 22 for a live availability check." } },
       { heading: "Yacht Charter vs Shared Cruise — Which Is Right for You?", content: "The choice between a private yacht charter and a shared cruise depends on your priorities. The main shared MerrySails products are the sunset cruise (€34 / €40) and the dinner cruise (€30–€90), each offering a fixed-route social experience with clear public pricing. They are ideal for solo travellers, couples, and small groups who want a structured Bosphorus plan without private-boat logistics. Private yacht charters (from €280 for the group) offer flexibility, privacy, and exclusivity. You set the route, control the music, and celebrate without strangers. For groups of 5 or more, the per-person cost of a yacht charter becomes increasingly competitive because the vessel price is shared across the group. If you are celebrating a special occasion (birthday, proposal, anniversary), the privacy and customisation of a yacht charter makes it worth the premium. If you want the classic Bosphorus experience with dinner and entertainment included, the shared dinner cruise ladder gives you multiple entry points before you move into private charter territory.", table: { headers: ["Factor", "Shared Cruise", "Private Yacht Charter"], rows: [["Price logic", "Per person", "Per vessel"], ["Route", "Fixed", "Fully custom"], ["Schedule", "Set departure times", "You choose"], ["Music", "Company's playlist / live band", "Your playlist"], ["Food", "Set menu or package-based dinner", "Dining planned separately based on your brief"], ["Privacy", "Shared with other guests", "Your group only"], ["Best for", "Solo, couples, budget", "Groups, celebrations, luxury"]] } },
-      { heading: "Special Occasion Yacht Packages", content: "MerrySails creates bespoke yacht experiences for special occasions. Birthday celebrations can include themed decorations, a custom cake, and a surprise DJ setup for larger groups. Marriage proposals benefit from the Sunset Route with rose-petal deck decoration, champagne service, and a professional photographer capturing the moment discreetly from the crew area. Anniversary cruises can recreate a wedding reception atmosphere with dinner service, music, and floral arrangements. Corporate events utilise the yacht as a unique meeting or entertainment venue — we provide projector and screen setups, branded decorations, and catering for up to 15 executives. All special occasion services are arranged via WhatsApp at +90 537 040 68 22, where a dedicated events coordinator discusses your vision and provides a detailed quote. No occasion is too unusual — we have hosted gender reveal parties, graduation celebrations, and even a floating podcast recording studio.", proTip: "For proposals, tell us the plan by WhatsApp and we coordinate everything: the timing, the champagne, the photographer, even a Plan B if weather changes. Our crew has helped with over 200 proposals — the Bosphorus at sunset has a 100% success rate." },
-      { heading: "Reserve Your Private Yacht Today", content: "Your private Bosphorus yacht experience is one message away. Contact MerrySails via WhatsApp at +90 537 040 68 22 with your preferred date, group size, and any special requirements. You will receive a personalised quote with yacht photos and route suggestions. Alternatively, book through <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a> or email info@merrysails.com. With public packages starting at €280, private yacht charter is more accessible than many travelers expect once the group cost is shared. Free date changes up to 48 hours before departure mean you can lock in your preferred date with confidence. MerrySails has operated yacht charters on the Bosphorus since 2001 — our captains know every cove, current, and sunset angle on the strait. Your experience is backed by a TURSAB licence, full insurance, and over two decades of five-star reviews." }
+      { heading: "When a Narrower Event Page Is the Better Next Step", content: "Sometimes the right move is not to stay on a generic yacht-pricing article at all. Proposal-led requests should move to [proposal yacht rental Istanbul](/proposal-yacht-rental-istanbul). Private dining-led charters are cleaner on [private Bosphorus dinner cruise](/private-bosphorus-dinner-cruise). Company-led briefs belong on [Corporate Events](/corporate-events). This article should explain the quote logic, then hand the live event intent back to the narrowest relevant owner page." },
+      { heading: "Move to the Main Yacht Owner Page", content: "Use this article to understand the pricing logic, then open [Yacht Charter Istanbul](/yacht-charter-istanbul) when you are ready to move from comparison into the live owner page. Contact MerrySails via WhatsApp at +90 537 040 68 22 with your preferred date, group size, and any special requirements, and the team will share yacht photos, route suggestions, and the right quote direction. Alternatively, use <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a> or email info@merrysails.com. With public packages starting at €280, private yacht charter is often more accessible than travelers expect once the group cost is shared. MerrySails has operated yacht charters on the Bosphorus since 2001, with TURSAB-backed operations and full insurance." }
     ],
     faqs: [
       { q: "How much does a private yacht charter cost in Istanbul?", a: "The live public MerrySails ladder starts at €280 for Essential, €380 for Premium, and €680 for VIP. These are per-vessel base prices for a standard 2-hour private Bosphorus cruise, while add-ons and longer durations are quoted separately." },
@@ -38,20 +38,20 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "What happens if the weather is bad on my yacht charter day?", a: "MerrySails monitors weather closely. If conditions are unsafe, you receive a full rescheduling to your preferred alternative date or a 100% refund." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "corporate-event-bosphorus-cruise"],
-    relatedPosts: ["luxury-yacht-rental-bosphorus", "yacht-party-ideas-istanbul", "yacht-rental-istanbul-prices"]
+    relatedPosts: ["private-yacht-departure-points-istanbul", "proposal-yacht-rental-istanbul-planning-guide", "private-yacht-charter-istanbul-guide"]
   },
 {
     slug: "bosphorus-dinner-cruise-booking",
-    title: "Bosphorus Dinner Cruise — Packages, Prices & Online Booking 2026",
-    metaDescription: "Book a Bosphorus dinner cruise from €30. Compare Silver Soft, Silver Alcoholic, Gold Soft, and Gold Unlimited Alcohol with hotel pickup and live entertainment.",
-    excerpt: "The Bosphorus dinner cruise now runs as a four-package shared product from €30 to €90. Here is everything you need to compare the tiers and book the right one.",
+    title: "How Istanbul Dinner Cruise Booking Works — Packages, Prices & Pickup",
+    metaDescription: "Use this dinner-booking guide to compare the shared package ladder in Istanbul, understand pickup logic, and move to the dinner owner page for the live offer.",
+    excerpt: "This support guide explains how the shared dinner package ladder works, what changes between tiers, and how to move into the main dinner owner page.",
     category: "cruise-guide",
     date: "2026-03-28",
-    dateModified: "2026-04-02",
+    dateModified: "2026-04-23",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1621789098261-60e5cbfc3dd6?w=1200&q=80",
     imageAlt: "Elegant dinner table on a Bosphorus cruise boat with illuminated Istanbul skyline at night",
-    keywords: ["bosphorus dinner cruise", "istanbul dinner cruise", "dinner cruise booking istanbul", "bosphorus dinner cruise price", "istanbul dinner boat", "dinner cruise menu istanbul", "book dinner cruise bosphorus"],
+    keywords: ["istanbul dinner cruise booking guide", "how dinner cruise booking works in istanbul", "dinner package ladder istanbul", "shared dinner cruise pickup guide", "bosphorus dinner package comparison", "istanbul dinner cruise planning"],
     author: "captain-ahmet",
     keyTakeaways: [
       "The Bosphorus dinner cruise now uses four public package levels: €30, €45, €80, and €90",
@@ -64,11 +64,10 @@ export const commercialConversionGuides: BlogPost[] = [
       { heading: "Dinner Cruise Menu — What Will You Eat?", content: "The shared menu now follows a structure that is easier to describe before booking. The evening opens with a welcome cocktail and 10 cold mezes, followed by fresh seasonal salad. For the main course, guests choose one option: grilled fish with arugula, onion, and lemon; grilled chicken steak with rice and potatoes; grilled meatballs with rice and potatoes; or a vegetarian plate. Dessert is baklava and seasonal fruit. Tea is included, while the wider beverage service depends on whether you booked Silver Soft, Silver Alcoholic, Gold Soft, or Gold Unlimited Alcohol.", table: { headers: ["Course", "Dishes", "Notes"], rows: [["Opening", "Welcome cocktail + 10 cold mezes", "Shared dinner start"], ["Salad", "Fresh seasonal salad", "Served before main"], ["Main Course", "Fish, chicken, meatballs, or vegetarian plate", "Choice-based"], ["Dessert", "Baklava and fruit", "Shared across tiers"], ["Drinks", "Soft or alcoholic depending on package", "Varies by package"]] } },
       { heading: "Live Entertainment Programme", content: "The entertainment programme runs throughout the cruise and features some of Turkey's most captivating cultural performances. The evening begins with live Turkish fasil music — a traditional ensemble of oud, kanun (zither), violin, and percussion performing classic Ottoman court songs and popular Turkish melodies. As the main course is served, a professional belly dancer takes the stage with a dynamic performance that often invites audience participation. The highlight for many guests is the whirling dervish ceremony (Sema), a meditative Sufi ritual that is genuinely moving to witness in the intimate setting of a cruise vessel, with the Bosphorus flowing past the windows. The evening also includes Anatolian folk dances representing different regions of Turkey and a DJ set for the final hour, when guests can dance on the open deck beneath the illuminated Bosphorus bridges. The entire entertainment programme is conducted in a way that is respectful of the cultural traditions being presented while remaining accessible and engaging for international audiences." },
       { heading: "Dinner Cruise Prices and What Is Included", content: "The Bosphorus dinner cruise is no longer a single all-inclusive ticket. The live shared ladder is €30, €45, €80, and €90. What stays consistent across the ladder is the hotel pickup and drop-off support, the 3.5-hour evening route, the menu flow, and the entertainment program. What changes is the beverage tier and the Gold-versus-Silver table feel. This makes the product easier to compare honestly before booking: lower tiers are for guests who mainly want the route and the show, while Gold is for guests who want a more premium shared evening.", callout: { type: "price", text: "Current dinner ladder: €30 / €45 / €80 / €90." } },
-      { heading: "How to Book the Bosphorus Dinner Cruise", content: "Booking is easiest when you choose the package by how you want the evening to feel. Silver Soft is the budget-friendly entry point. Silver Alcoholic is the right step when you want drinks included without moving up to Gold. Gold Soft and Gold Unlimited Alcohol are for guests who want the fuller shared setup. You can reserve online through the main booking flow or contact the team on WhatsApp for help comparing tiers, dietary requests, and pickup coverage.", callout: { type: "tip", text: "When in doubt, choose by beverage level and table feel. The route itself does not change between the four public dinner packages." } },
+      { heading: "How to Start Dinner Booking Cleanly", content: "The cleanest first click is the main [Istanbul Dinner Cruise](/istanbul-dinner-cruise) owner page, because that page carries the live shared dinner offer and the clearest booking path. Booking is easiest when you choose the package by how you want the evening to feel. Silver Soft is the budget-friendly entry point. Silver Alcoholic is the right step when you want drinks included without moving up to Gold. Gold Soft and Gold Unlimited Alcohol are for guests who want the fuller shared setup. You can reserve through the main booking flow or contact the team on WhatsApp for help comparing tiers, dietary requests, and pickup coverage.", callout: { type: "tip", text: "When in doubt, choose by beverage level and table feel. The route itself does not change between the four public dinner packages." } },
       { heading: "What Time Does the Dinner Cruise Depart and Return?", content: "The live dinner flow currently aligns with an evening departure around 20:30. Hotel pickup begins earlier based on your area and feeds into the Kabatas boarding flow. The return runs late enough to give you the full illuminated-Bosphorus experience, with drop-off handled after the cruise. Exact pickup timing is confirmed with the reservation." },
       { heading: "Dinner Cruise Tips from the Crew", content: "After hosting hundreds of thousands of dinner cruise guests, the MerrySails crew has practical advice for the best experience. Dress smart casual — you are dining on a cruise vessel, not a beach bar. A light jacket or cardigan is recommended even in summer as the open deck can be cool after dark. Arrive at the pier by the stated boarding time to secure your preferred table position — window tables go first. The starboard (right) side offers views of the European shore with its illuminated palaces, while the port (left) side faces the Asian shore. Both are excellent, but the European side has more dramatic night lighting. Bring your camera fully charged — the illuminated Bosphorus Bridge at close range and the Dolmabahce Palace lit up at night are extraordinary photo opportunities. If you are celebrating, tell the crew when you board — they can arrange table decorations, a birthday announcement, or a champagne toast at the right moment. The crew speaks English and is genuinely helpful, not just politely distant. Ask them anything about Istanbul — they live here and love sharing local tips." },
-      { heading: "Reserve Your Dinner Cruise Tonight", content: "The Bosphorus dinner cruise is Istanbul's most memorable evening — and booking takes less than two minutes. Reserve your spot via WhatsApp at +90 537 040 68 22 to create a reservation reference, online at <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>, or by email at info@merrysails.com. Free cancellation up to 24 hours before departure means there is no risk in booking now. Hotel pickup support is included from major central tourist areas. The shared dinner ladder now starts at €30 and rises to €90 depending on the table and beverage tier you choose, which makes it easier to book the exact kind of evening you want rather than overpaying for features you may not need. Seats fill quickly during peak season (May–September), so early booking is strongly recommended. MerrySails is TURSAB-licensed with over two decades of experience — your evening is in the hands of Istanbul's most trusted cruise company." },
-      { heading: "Why Choose MerrySails for Your Dinner Cruise?", content: "MerrySails has operated Bosphorus dinner cruises since 2001, serving over 50,000 guests annually with a 4.9/5 rating from 2,847 verified reviews. Our chief captain holds a master mariner certificate from the <a href='https://www.uab.gov.tr' target='_blank' rel='noopener'>Istanbul Maritime Authority</a> with 23+ years of experience. All dinner cruise vessels are inspected by the <a href='https://www.kiyiemniyeti.gov.tr' target='_blank' rel='noopener'>Coastal Safety Directorate</a> and carry full passenger insurance. As a <a href='https://www.tursab.org.tr/en' target='_blank' rel='noopener'>TURSAB</a> A Group licensed company — the highest tier in Turkish tourism — your booking is fully protected. Direct booking saves you 20–35% versus third-party platforms. Whether you are celebrating a special occasion or simply want the best evening in Istanbul, the <a href='/istanbul-dinner-cruise'>dinner cruise</a> now gives you four direct package levels from €30 to €90. Explore our <a href='/cruises/bosphorus-sunset-cruise'>sunset cruise</a> or <a href='/private-tours'>private yacht charters</a> for alternative experiences, or <a href='/contact'>contact us</a> for personalised recommendations." }
+      { heading: "Move to the Dinner Owner Page", content: "Use this article to understand the package ladder, then move to [Istanbul Dinner Cruise](/istanbul-dinner-cruise) when you are ready to choose the live shared dinner offer. You can create a reservation reference via WhatsApp at +90 537 040 68 22, online at <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>, or by email at info@merrysails.com. Hotel pickup support is included from many central tourist areas, and the shared dinner ladder now starts at €30 and rises to €90 depending on the table and beverage tier you choose. MerrySails is TURSAB-licensed and operated by an Istanbul travel company active since 2001. If you decide the evening should stay lighter, compare with the <a href='/cruises/bosphorus-sunset-cruise'>sunset cruise</a>; if it should stay private, move to <a href='/yacht-charter-istanbul'>yacht charter</a> or <a href='/private-bosphorus-dinner-cruise'>private dinner cruise</a>." }
     ],
     faqs: [
       { q: "How much is the Bosphorus dinner cruise?", a: "The shared Bosphorus dinner cruise currently has four public prices: €30, €45, €80, and €90." },
@@ -82,16 +81,16 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-sunset-cruise-booking",
-    title: "Istanbul Sunset Cruise — Best Time, Prices & Reservation",
-    metaDescription: "Book an Istanbul sunset cruise from €34. A 2-hour Bosphorus golden-hour yacht with soft drinks, tea, coffee, fruit, snacks, and a live guide.",
-    excerpt: "The Istanbul sunset cruise is the most photogenic short-format Bosphorus experience in the city. Here is how to book it, what is included, and why the timing matters.",
+    title: "How the Istanbul Sunset Cruise Booking Flow Works — Timing, Prices & Reservation Tips",
+    metaDescription: "Use this sunset-booking guide to understand timing, inclusions, and reservation flow, then move to the main sunset owner page for the live offer.",
+    excerpt: "This support guide explains how the shared sunset cruise booking flow works, what is included, and why timing matters before you move to the owner page.",
     category: "cruise-guide",
     date: "2026-03-28",
-    dateModified: "2026-04-02",
+    dateModified: "2026-04-23",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
     imageAlt: "Stunning golden sunset over the Bosphorus strait with Ortakoy Mosque silhouette and cruise boat",
-    keywords: ["sunset cruise istanbul", "istanbul sunset cruise booking", "bosphorus sunset cruise price", "istanbul sunset boat tour", "golden hour cruise istanbul", "sunset cruise reservation istanbul"],
+    keywords: ["istanbul sunset cruise booking guide", "how sunset cruise booking works in istanbul", "bosphorus golden hour reservation tips", "sunset cruise timing guide istanbul", "shared sunset cruise planning istanbul", "kabatas sunset boarding guide"],
     author: "captain-ahmet",
     keyTakeaways: [
       "The sunset cruise currently runs at €34 without wine and €40 with wine for the same 2-hour Bosphorus experience",
@@ -106,7 +105,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { heading: "Best Time of Year for the Most Dramatic Sunset", content: "While every Bosphorus sunset is beautiful, certain seasons produce more spectacular results. September and October are considered peak sunset months by Istanbul photographers — lower sun angles create longer golden hours, and the atmospheric conditions typical of early autumn (high cirrus clouds, occasional haze) produce the most vivid colour displays. The reds, oranges, and purples during an autumn sunset are noticeably more intense than summer's clearer, more uniform golden tones. April and May offer excellent sunsets combined with comfortable temperatures and blooming spring flowers along the shore. Summer (June–August) provides the longest golden hours and warmest deck temperatures, though clear summer skies sometimes produce less dramatic colour gradients. Winter sunsets can be extraordinarily moody — dark clouds breaking to reveal shafts of golden light over the mosques create a Turner painting effect that photographers prize. The key insight: do not skip the sunset cruise because of cloudy weather. Clouds are what create dramatic sunsets — a completely clear sky often produces a less interesting photograph than a sky with clouds catching the light at different angles.", proTip: "Cloud cover of 40–60% typically produces the most photogenic sunsets. If the forecast shows partly cloudy conditions for your date, that is actually ideal. Book it with confidence." },
       { heading: "Photography Tips for the Sunset Cruise", content: "The sunset cruise offers some of the best photography opportunities in Istanbul, and a few tips will dramatically improve your results. Bring your camera fully charged with a spare battery — cold wind on the water drains batteries faster than expected. A versatile zoom lens (24–200mm equivalent) covers both wide panoramas and detailed architecture. For smartphone photographers, clean your lens before departure — the saltwater air creates a haze on glass surfaces. Position yourself on the starboard (right) side of the vessel for European shore views during the outbound leg, and the port (left) side on the return for the Asian shore with sunset behind you. The three most photogenic moments are: (1) Ortakoy Mosque framed by the Bosphorus Bridge at golden hour, (2) the sun dropping behind the Suleymaniye Mosque silhouette on the return, and (3) the Bosphorus Bridge reflecting in the water as the city lights appear. Shoot in RAW format if possible — the dynamic range of a Bosphorus sunset exceeds what JPEG can capture. The crew is happy to take group photos and can suggest the best angles from their experience on hundreds of sunset cruises." },
       { heading: "Sunset Cruise vs Dinner Cruise — Which to Book?", content: "Both are excellent Bosphorus experiences, but they solve different evenings. The sunset cruise is the visual product: golden-hour light, photography, and a lighter onboard format. The dinner cruise is the fuller one-booking plan: dinner, entertainment, transfer support, and the illuminated Bosphorus. If you only want one, choose sunset for photography and flexibility, or dinner for the complete evening.", table: { headers: ["Feature", "Sunset Cruise", "Dinner Cruise"], rows: [["Price", "€34", "€30-€90"], ["Duration", "2 hours", "3.5 hours"], ["Food", "Snacks and fruit", "Dinner menu"], ["Drinks", "Soft drinks, tea, coffee", "Package-based drinks ladder"], ["Entertainment", "Live guide", "Turkish-night entertainment"], ["Hotel Transfer", "Extra / optional", "Included"], ["Best For", "Photography, couples", "Dining, entertainment, groups"]] } },
-      { heading: "How to Book Your Istanbul Sunset Cruise", content: "Use the main reservation flow or contact the team on WhatsApp if you want help with the date, weather expectations, or a same-day availability check. Sunset departures can sell quickly because there is only one optimal golden-hour slot each day. Booking ahead matters more here than on daytime sightseeing cruises. Shared sunset reservations are currently paid onboard, so the key thing is to secure the date and follow the written meeting instructions." },
+      { heading: "How to Start the Sunset Booking Flow", content: "The cleanest first click is the main [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) owner page, because that page carries the live shared sunset offer and the clearest booking path. Use the main reservation flow or contact the team on WhatsApp if you want help with the date, weather expectations, or a same-day availability check. Sunset departures can sell quickly because there is only one optimal golden-hour slot each day. Booking ahead matters more here than on daytime sightseeing cruises. Shared sunset reservations are currently paid onboard, so the key thing is to secure the date and follow the written meeting instructions." },
       { heading: "Sunset Cruise Departure Point and How to Get There", content: "The shared sunset cruise currently uses the Kabatas-side boarding flow. That keeps it easy to reach from Taksim, Beyoglu, and the tram/funicular network while still allowing the exact operational handoff to be confirmed for your date. Follow the reservation message rather than older generic pier references." }
     ],
     faqs: [
@@ -121,16 +120,16 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-boat-party-private",
-    title: "Istanbul Boat Party — Private Yacht Rental for Events",
-    metaDescription: "Host a private boat party in Istanbul on the Bosphorus. Birthday celebrations, group events, and yacht parties with DJ, catering, and decoration planning support.",
-    excerpt: "Planning a boat party in Istanbul? From birthday celebrations to group events, a private yacht on the Bosphorus is the ultimate party venue. Here is how to plan, what it costs, and how to book.",
+    title: "Private Boat Party Planning in Istanbul — Guest Size, DJ & Event Flow",
+    metaDescription: "Use this support guide to compare private boat party formats in Istanbul before moving to the right owner page for birthdays, events, or company-led celebrations.",
+    excerpt: "This support guide helps you compare private boat party formats, guest flow, and add-ons before moving to the right owner page.",
     category: "events",
     date: "2026-03-28",
-    dateModified: "2026-04-02",
+    dateModified: "2026-04-23",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
     imageAlt: "Private yacht party on the Bosphorus with decorated deck and Istanbul skyline at sunset",
-    keywords: ["boat party istanbul", "istanbul boat rental", "yacht party istanbul", "private boat party bosphorus", "istanbul party yacht", "boat rental istanbul event", "bosphorus party boat"],
+    keywords: ["private boat party planning istanbul", "birthday or event yacht guide bosphorus", "party yacht flow istanbul", "private event boat planning", "boat party guest-size guide istanbul", "company or celebration boat guide"],
     author: "captain-ahmet",
     keyTakeaways: [
       "Private boat parties are planned as quote-based Bosphorus events matched to guest count, yacht size, and celebration style",
@@ -139,7 +138,7 @@ export const commercialConversionGuides: BlogPost[] = [
       "Book via WhatsApp +90 537 040 68 22 for a custom party quote within minutes"
     ],
     sections: [
-      { heading: "Why Istanbul Is the Ultimate Boat Party Destination", answerCapsule: "Istanbul offers private yacht parties on the Bosphorus with the yacht, duration, drinks, decoration, and entertainment plan tailored to your group instead of forcing every event into one rigid public package.", content: "Istanbul sits at the crossroads of Europe and Asia, and the Bosphorus strait between them is one of the most spectacular party backdrops on earth. Imagine celebrating with your closest friends on a private yacht, music playing, drinks flowing, and the illuminated skyline of a 2,500-year-old city sliding past on both sides. A boat party in Istanbul is not just a party — it is an unforgettable experience that combines nightlife energy with natural beauty. The calm, sheltered waters of the Bosphorus mean smooth sailing regardless of the season, and the strait's concentration of palaces, mosques, and bridges provides a constantly changing visual backdrop. MerrySails has hosted thousands of boat parties since 2001 — from intimate birthday celebrations with 5 friends to full-scale events with multiple yachts. Every detail is handled by a professional events team, leaving you free to enjoy the night. The strongest setup starts with your guest count, route, and event mood, then matches those details to the right yacht and service build." },
+      { heading: "How Private Boat Party Planning Works in Istanbul", answerCapsule: "Private boat parties in Istanbul are planned as quote-led Bosphorus events, and the right next step depends on whether the brief is celebration-led, smaller private-charter-led, or company-led.", content: "The most useful first decision is not whether the event deserves a broad 'boat party' label. It is which owner page should receive the live request. Celebration-led events usually belong on [Private Events](/private-events). Smaller private-charter social plans can begin on [Yacht Charter Istanbul](/yacht-charter-istanbul). Company-led parties or staff events should move to [Corporate Events](/corporate-events). This article stays in the support role by helping you compare guest flow, music needs, and decoration direction before you move to the page that should actually own the proposal. Istanbul remains a strong setting for private parties because the Bosphorus gives you privacy, skyline impact, and flexible onboard service without forcing the night into a public cruise schedule." },
       { heading: "Boat Party Planning Formats", content: "MerrySails plans private boat parties around the event brief rather than a one-size-fits-all package card. Some groups want a clean private-yacht setup with a Bluetooth sound system, light refreshments, and a scenic Bosphorus route. Others want a fuller party build with decoration styling, stronger drinks service, DJ support, photography, and chef-led catering. The right format depends on the group size, whether you want a seated meal or a mingling layout, the timing of the cruise, and how production-heavy the event should feel once the yacht leaves the marina. Larger groups can move into event yachts or multi-yacht flotilla planning when circulation, service flow, and dance-floor space matter more than an intimate private-yacht feel.", table: { headers: ["Format", "Best Fit", "What Can Be Added", "Typical Timing"], rows: [["Private yacht party", "Birthdays, close-friend groups, intimate celebrations", "Snacks, drinks, cake, Bluetooth playlist, simple styling", "2–3 hours"], ["Styled party build", "Bachelorettes, milestone birthdays, polished private events", "DJ, LED styling, decoration, photographer, curated drinks", "3–4 hours"], ["Dinner-led event", "Hosts who want food service to anchor the evening", "Cocktail menu, seated dinner, premium beverage flow, service staff", "3+ hours"], ["Large-group flotilla / event yacht", "Corporate groups or bigger social events", "Multiple vessels, stage area, branding, AV, larger service teams", "Custom"]] }, callout: { type: "info", text: "The commercial advantage of a private party boat is flexibility: once the guest count and event mood are clear, MerrySails can match the right vessel and service build without boxing the event into a generic published-price card." } },
       { heading: "Birthday Boat Party on the Bosphorus", content: "A birthday celebration on the Bosphorus is one of the most unique ways to mark any milestone. MerrySails birthday parties include custom cake arrangements (provided by a local Istanbul patisserie to your flavour and design specifications), birthday decorations and banners, and a crew that knows how to create a celebration atmosphere. The VIP package adds a professional photographer to capture the celebration and a DJ who can create a custom playlist based on your music preferences. For milestone birthdays (30th, 40th, 50th), many guests opt for the extended 4-hour package that includes a sunset start transitioning to a night cruise — the visual transformation of Istanbul from golden hour to illuminated skyline makes the evening feel like two experiences in one. Surprise birthday parties are a specialty — the crew coordinates with the organiser to ensure the birthday guest arrives to a fully decorated yacht with all friends already on board. Contact us via WhatsApp at +90 537 040 68 22 to discuss your birthday vision and receive a customised quote.", proTip: "For surprise birthday parties, have the birthday person arrive thinking it is a 'simple boat tour' while friends are already on board. The crew knows exactly how to manage the reveal — they have done hundreds of these and the reactions are always incredible." },
       { heading: "Bachelorette and Bachelor Boat Parties", content: "The Bosphorus yacht party has become one of Istanbul's most popular bachelorette and bachelor celebration venues. The combination of scenery, privacy, and flexibility makes it perfect for pre-wedding celebrations. Popular bachelorette additions include rose gold and blush decoration themes, a personalised banner with the bride's name, a champagne tower welcome, and matching robes or accessories for the bridal party (arranged through local suppliers). Bachelor parties often feature a BBQ setup on the upper deck, a premium spirits bar, and a sound system loud enough to create a floating nightclub atmosphere. Both can include a professional photographer and videographer to capture the celebration. The Premium or VIP package is most popular for bachelorette groups, as the decorations and premium drinks set the right tone. Groups typically choose the sunset departure time for the best light in photos. MerrySails coordinates everything from decorations to dietary requirements — just share your vision via WhatsApp and the events team handles the rest." },
@@ -196,20 +195,20 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Why are direct booking prices lower than online platforms?", a: "Third-party platforms like Viator and GetYourGuide charge companies 15–25% commission, which is passed on to you as a higher price. Booking direct at merrysails.com eliminates this commission." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-boat-tour-prices-comparison", "best-bosphorus-cruise-istanbul-guide"]
+    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-boat-tour-prices-comparison", "bosphorus-cruise-companies-comparison"]
   },
 {
     slug: "istanbul-corporate-yacht-event-booking",
-    title: "Corporate Yacht Events Istanbul — Team Building on the Bosphorus",
-    metaDescription: "Host corporate events on a private yacht in Istanbul. Team building, client entertainment, and executive meetings on the Bosphorus with private planning support.",
-    excerpt: "Take your corporate event from the boardroom to the Bosphorus. Private yacht events in Istanbul offer a unique venue for team building, client entertainment, and executive meetings.",
+    title: "How Corporate Yacht Event Booking Works in Istanbul — Formats, AV & Proposal Flow",
+    metaDescription: "Use this support guide to understand Bosphorus corporate-event formats, AV needs, and proposal flow before moving to the main corporate events page.",
+    excerpt: "This support guide explains how corporate yacht event booking works in Istanbul before you move to the main corporate events page for a live proposal.",
     category: "events",
     date: "2026-03-28",
-    dateModified: "2026-03-28",
+    dateModified: "2026-04-23",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
     imageAlt: "Professional corporate event setup on a luxury yacht with Bosphorus and Istanbul skyline backdrop",
-    keywords: ["corporate yacht events istanbul", "team building istanbul bosphorus", "corporate event yacht charter", "business yacht istanbul", "corporate cruise istanbul", "team building boat istanbul", "executive yacht event bosphorus"],
+    keywords: ["corporate yacht booking guide istanbul", "bosphorus corporate proposal flow", "team event planning bosphorus", "executive yacht event planning", "corporate av and catering yacht guide"],
     author: "captain-ahmet",
     keyTakeaways: [
       "Corporate yacht events are planned around the guest count, service flow, and meeting format rather than a rigid one-size-fits-all package",
@@ -218,14 +217,14 @@ export const commercialConversionGuides: BlogPost[] = [
       "Book via WhatsApp +90 537 040 68 22 or email info@merrysails.com for a corporate event proposal"
     ],
     sections: [
-      { heading: "Why Host a Corporate Event on the Bosphorus?", answerCapsule: "A corporate yacht event on the Bosphorus provides a private, memorable venue for team building, client entertainment, and executive meetings, with the vessel and service plan matched to the brief instead of a generic published-price event card.", content: "The corporate event market is saturated with hotel ballrooms, conference centres, and rooftop bars. A private yacht on the Bosphorus is none of those things — it is a unique venue that your attendees will remember years after the event. The psychology is simple: when you take people out of their normal environment and place them in an extraordinary setting, engagement increases, conversations become more genuine, and the event creates lasting positive associations with your brand. The Bosphorus provides a continuously changing backdrop of imperial palaces, medieval fortresses, and the iconic bridges connecting Europe and Asia. Your team or clients are not just attending an event — they are experiencing one of the world's most scenic waterways from a private vessel with dedicated service. MerrySails has organised corporate events for international companies, Istanbul-based enterprises, conference groups, and incentive trip organisers. From a casual team building afternoon to a formal client dinner, the Bosphorus delivers a setting that elevates every interaction." },
+      { heading: "Why Host a Corporate Event on the Bosphorus?", answerCapsule: "A corporate yacht event on the Bosphorus provides a private, memorable venue for team building, client entertainment, and executive meetings, with the vessel and service plan matched to the brief instead of a generic published-price event card.", content: "The corporate event market is saturated with hotel ballrooms, conference centres, and rooftop bars. A private yacht on the Bosphorus is none of those things — it is a unique venue that your attendees will remember years after the event. The psychology is simple: when you take people out of their normal environment and place them in an extraordinary setting, engagement increases, conversations become more genuine, and the event creates lasting positive associations with your brand. The Bosphorus provides a continuously changing backdrop of imperial palaces, medieval fortresses, and the iconic bridges connecting Europe and Asia. If the event brief is already clear, the clean owner page is [Corporate Events](/corporate-events); this article is intended to support planning rather than replace that conversion page." },
       { heading: "Corporate Event Planning Formats", content: "MerrySails corporate yacht events are structured around the objective of the event rather than a fixed menu of public package cards. A smaller leadership dinner may need a quieter private yacht with a polished table setup and discreet service. A wider team-building group may need an event yacht with more circulation space, relaxed catering, and stronger drinks flow. Product launches and client-hosting events often need branding support, AV equipment, photographer coverage, and a route timed around sunset or the evening skyline. Once the team understands the guest count, event purpose, and whether the cruise is dining-led, networking-led, or presentation-led, it can match the right vessel and staffing plan.", table: { headers: ["Format", "Best For", "What Can Be Added", "Typical Scale"], rows: [["Leadership / client dinner", "Executive hosting and relationship-building", "Curated menu, premium table styling, photographer, drinks flow", "Small private groups"], ["Team celebration", "After-work events and internal milestones", "Cocktail catering, music, branding accents, event coordinator", "Mid-size groups"], ["Presentation-led event", "Launches, speeches, awards, product reveal", "Projector, microphone, screen, host, AV support", "Private yacht or event yacht"], ["Large-group corporate setup", "Conference add-ons, incentive groups, multi-department events", "Multiple vessels, transfer support, branding, larger service team", "Event yacht / flotilla"]] } },
       { heading: "Team Building Activities on the Water", content: "A Bosphorus yacht cruise naturally encourages interaction in ways that traditional team building venues cannot. The intimate setting (15 people per yacht) eliminates the ability to hide in corners or check phones — people connect. MerrySails team building cruises can incorporate structured activities: guided Bosphorus trivia competitions (how many bridges? which palace has 285 rooms?), photo challenges with prizes for the best Bosphorus shot, cooking workshops with the onboard chef, wine or Turkish coffee tasting sessions, and sunset or landmark spotting games. For a more relaxed approach, simply providing a beautiful setting, good food, premium drinks, and the Bosphorus as a backdrop creates organic team bonding that forced icebreaker activities often fail to achieve. The cruise format also works for departmental planning sessions — the VIP package with AV equipment allows presentations on board with the distraction-free environment of the open water. Teams consistently report that the yacht environment produces more creative thinking and authentic conversation than office-based events.", proTip: "Schedule corporate yacht events for late afternoon departures (16:00–17:00) to capture the sunset transition. The shift from daylight work mode to golden-hour relaxation creates a natural progression from business to social bonding." },
       { heading: "Client Entertainment and Executive Dining", content: "Entertaining clients on a private Bosphorus yacht makes a statement that a restaurant or hotel meeting cannot match. The exclusivity and uniqueness of the venue communicates that you value the relationship enough to create something special. MerrySails client entertainment cruises include a private chef preparing a curated menu (Turkish fine dining or international cuisine to your preference), a premium wine and spirits selection, professional table settings with branded napkins or menus if desired, and a crew that delivers five-star service discreetly. The route can be customised to match the mood — a sunset cruise for relationship building, or a night cruise past illuminated palaces for after-dinner conversation. For high-stakes client meetings, the Executive Package adds presentation equipment and a private salon area suitable for confidential discussions. The yacht provides the ultimate neutral ground — neither your office nor theirs, but a memorable environment that puts everyone in a positive mindset. Corporate groups regularly report that deals and partnerships progress faster after a Bosphorus yacht evening than months of email and video calls." },
       { heading: "Incentive Trips and Conference Add-Ons", content: "Istanbul is a growing destination for international conferences and incentive trips, and a Bosphorus yacht cruise is the highlight activity that attendees remember and share. For conference groups, MerrySails organises post-conference yacht experiences that can accommodate hundreds of guests across a flotilla of vessels. Each yacht has its own crew and service, but the fleet sails together for a coordinated experience. Incentive trip planners use the yacht cruise as the centrepiece of Istanbul programmes — typically a sunset or dinner format that combines cultural immersion with luxury. We coordinate with Istanbul hotels, DMCs (destination management companies), and event agencies to ensure seamless logistics including group transfers, timing coordination, and branded experiences. MerrySails has worked with groups from 15 to 200+ guests, providing scalable solutions that maintain quality at every size. Contact us at info@merrysails.com with your group size, dates, and objectives for a detailed proposal.", callout: { type: "info", text: "For conferences and incentive groups of 50+, MerrySails provides a dedicated event manager who coordinates all logistics from initial planning through event execution. Request a detailed proposal via email at info@merrysails.com." } },
       { heading: "Corporate Event Logistics and Planning", content: "MerrySails handles all corporate event logistics to ensure a seamless experience. Venue: yachts depart from Kurucesme Marina, accessible by taxi from all major Istanbul hotels and conference venues (15–20 minutes from Taksim, 25–30 minutes from the congress centre). For large groups, we arrange coach transfers. Equipment: the Executive Package includes a projector and screen, wireless microphone, and sound system suitable for presentations. Branding: provide your company logo and colours, and we apply them to table settings, decorations, and digital displays on board. Dietary requirements: our kitchen accommodates halal, kosher, vegetarian, vegan, gluten-free, and allergy-specific menus with advance notice. Invoicing: formal corporate invoices with VAT receipt are provided. Payment terms of net-30 are available for established corporate accounts. Insurance: all yachts carry full marine insurance and liability coverage. Risk assessment documentation is available on request for your corporate compliance team." },
       { heading: "Past Corporate Events — What Companies Have Done", content: "To give you a sense of what is possible, here are anonymised examples of corporate events MerrySails has delivered. A global technology company hosted a 3-hour sunset dinner cruise for 15 executives during their Istanbul offsite. The VIP package included a curated Turkish wine tasting paired with each course, and the CEO described it as the highlight of their week. A European bank organised a client appreciation evening on two yachts sailing in formation, with live jazz on one vessel and a Turkish ensemble on the other — guests could switch boats at the halfway point when the fleet paused near Rumeli Fortress. A pharmaceutical company used the team building package for their regional sales team, incorporating a competitive Bosphorus trivia game with prizes, followed by a BBQ dinner on the upper deck. An Istanbul-based startup celebrated their Series A funding with a VIP yacht party featuring champagne, a professional photographer, and a DJ — the photos became their most-engaged social media content of the year." },
-      { heading: "Request a Corporate Event Proposal", content: "Start planning your Bosphorus corporate event with a single message. Contact MerrySails via WhatsApp at +90 537 040 68 22 with your event type, approximate group size, preferred dates, and any specific requirements. For formal proposals, email info@merrysails.com with your brief and the events team will prepare a detailed proposal including venue options, menu suggestions, activity ideas, and a comprehensive quote. Response time is typically within 24 hours for email enquiries and within minutes for WhatsApp. You can also submit an initial request through <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>. MerrySails brings over two decades of Bosphorus event experience to every corporate function — from intimate executive dinners to large-scale incentive programmes. Your event is backed by TURSAB licensing, full insurance, and a team that has delivered thousands of successful corporate experiences on the water." }
+      { heading: "Move to the Main Corporate Events Page", content: "Once the brief is clear, the cleanest next step is the main [Corporate Events](/corporate-events) page, because that is where the live corporate offer and proposal route should stay concentrated. Start there if you already know your approximate group size, preferred date, and whether the event is networking-led, presentation-led, or dining-led. This support guide is still useful for checking vessel fit, AV needs, and boarding logic before you send the request." }
     ],
     faqs: [
       { q: "How many people can attend a corporate yacht event?", a: "Each yacht accommodates up to 15 guests. For larger groups, MerrySails arranges multi-yacht flotillas accommodating 50–200+ guests with coordinated service across all vessels." },
@@ -239,16 +238,16 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-proposal-yacht-cruise",
-    title: "Marriage Proposal on a Yacht in Istanbul — Romantic Bosphorus Cruise",
-    metaDescription: "Plan a romantic yacht marriage proposal in Istanbul. Private Bosphorus cruise with rose petals, champagne, photographer, and sunset-planning support.",
-    excerpt: "A marriage proposal on a private yacht on the Bosphorus is one of the most romantic experiences imaginable. Here is how to plan it, what it costs, and how MerrySails makes it unforgettable.",
+    title: "How Yacht Proposal Planning Works in Istanbul — Timing, Styling & Surprise Flow",
+    metaDescription: "Use this proposal-planning guide to understand yacht timing, styling, and surprise flow in Istanbul before moving to the main proposal owner page.",
+    excerpt: "This support guide explains how a Bosphorus yacht proposal is planned before you move to the main proposal owner page for the live offer.",
     category: "events",
     date: "2026-03-28",
-    dateModified: "2026-03-28",
+    dateModified: "2026-04-23",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200&q=80",
     imageAlt: "Romantic yacht deck decorated with rose petals and candles on the Bosphorus at sunset for a marriage proposal",
-    keywords: ["marriage proposal yacht istanbul", "romantic bosphorus cruise", "proposal yacht bosphorus", "istanbul proposal cruise", "yacht proposal istanbul price", "romantic yacht istanbul", "surprise proposal bosphorus"],
+    keywords: ["yacht proposal planning istanbul", "how bosphorus proposal planning works", "proposal timing and styling guide istanbul", "surprise proposal flow bosphorus", "private proposal yacht planning"],
     author: "captain-ahmet",
     keyTakeaways: [
       "Proposal cruises are planned around the moment itself, with the yacht, route, decoration, and celebration brief matched to the couple",
@@ -257,14 +256,14 @@ export const commercialConversionGuides: BlogPost[] = [
       "Contact WhatsApp +90 537 040 68 22 for confidential proposal planning — the crew keeps your secret"
     ],
     sections: [
-      { heading: "Why Propose on a Yacht on the Bosphorus?", answerCapsule: "A Bosphorus yacht proposal combines a private vessel, one of the world's most romantic waterways, and professional event coordination so the route, styling, music, and timing all support the moment itself.", content: "A marriage proposal deserves a setting as extraordinary as the moment itself. The Bosphorus at sunset is one of the most romantic backdrops in the world — the golden light reflecting off the water as Ottoman palaces and mosques glow on both shores, with the iconic bridge connecting two continents overhead. A private yacht gives you complete privacy for this intimate moment, with no strangers, no interruptions, and no distractions. MerrySails has helped plan over 200 yacht proposals on the Bosphorus, and the crew understands that every detail matters — from the timing of the music to the position of the yacht when you drop to one knee. The combination of the setting, the privacy, and the professional coordination creates a proposal moment that your partner will remember forever. And because it happens on a private yacht, the celebration afterwards is equally special — champagne, dinner, and the illuminated Bosphorus to yourselves." },
+      { heading: "Why Propose on a Yacht on the Bosphorus?", answerCapsule: "A Bosphorus yacht proposal combines a private vessel, one of the world's most romantic waterways, and professional event coordination so the route, styling, music, and timing all support the moment itself.", content: "A marriage proposal deserves a setting as extraordinary as the moment itself. The Bosphorus at sunset is one of the most romantic backdrops in the world — the golden light reflecting off the water as Ottoman palaces and mosques glow on both shores, with the iconic bridge connecting two continents overhead. A private yacht gives you complete privacy for this intimate moment, with no strangers, no interruptions, and no distractions. MerrySails has helped plan over 200 yacht proposals on the Bosphorus, and the crew understands that every detail matters. If the intent is already clearly proposal-led, the clean owner page is [proposal yacht rental Istanbul](/proposal-yacht-rental-istanbul); this article is meant to support planning, not replace that booking path." },
       { heading: "Proposal Yacht Planning Formats", content: "MerrySails does not need to force every proposal into one identical package card. Some couples want a simple private-yacht moment with rose petals, champagne, and a clean sunset route. Others want a fuller production with photographer coverage, stronger candlelight styling, a private dinner, or a post-proposal celebration plan once the ring is on. The most important decision points are the timing of the proposal, the level of decoration, whether the cruise should stay intimate or move into a dining-led celebration, and whether photography or videography should be built into the route from the start.", table: { headers: ["Format", "Best Fit", "What Can Be Added", "Typical Timing"], rows: [["Intimate proposal cruise", "Couples who want privacy and a clean romantic setup", "Rose petals, champagne, fruit plate, custom music", "Sunset or blue hour"], ["Styled proposal setup", "Guests who want stronger decoration and reveal impact", "LED candles, floral styling, violinist, photographer", "Golden hour"], ["Proposal + dinner celebration", "Couples who want the evening to continue on board after the 'yes'", "Chef-led menu, plated dinner, wine service, extended cruise", "Sunset into night"], ["Full production proposal", "High-touch surprise moments and premium content capture", "Videography, luxury transfer, custom signage, post-proposal hotel surprise", "Custom"]] }, callout: { type: "info", text: "Every proposal plan includes a confidential coordination flow so the team can time the route, music cue, and photography position without spoiling the surprise." } },
       { heading: "How to Plan the Perfect Bosphorus Proposal", content: "Planning a yacht proposal requires coordination, but MerrySails handles the logistics while you focus on the emotional preparation. Step one (2–4 weeks before): contact MerrySails via WhatsApp at +90 537 040 68 22 — the proposal coordinator responds confidentially. Share your preferred date, the kind of yacht feel you want, and any specific ideas you have for the moment. Step two (1–2 weeks before): the coordinator discusses the timeline — when you will board, when the proposal should happen (usually 30–45 minutes into the cruise at the most scenic point), what music to play, and whether photography, dinner, or styling should be part of the final plan. Step three (day of): arrive at the confirmed marina at the appointed time. The yacht is already prepared to the agreed brief. If photography is part of the plan, the photographer is positioned discreetly so the surprise still feels natural. Step four (the moment): as the yacht reaches the predetermined scenic point and the sunset reaches peak colour, the crew plays your chosen song and the photographer begins capturing. Step five (celebration): champagne is served immediately, portraits continue, and any added dining or post-proposal touches follow the moment naturally." },
       { heading: "The Best Time and Location for a Yacht Proposal", content: "Timing and position on the Bosphorus are crucial for the perfect proposal backdrop. The ideal moment is during golden hour — approximately 30 minutes before official sunset — when the light is warm, soft, and flattering for photographs. The optimal position on the Bosphorus varies by season, but the crew knows precisely where to be. In spring and autumn, the most dramatic views come near Rumeli Fortress, where the strait narrows and both shores frame the sunset. In summer, the longer golden hour allows more flexibility — many proposals happen with the Ortakoy Mosque and Bosphorus Bridge as the backdrop. The crew positions the yacht so the sunset illuminates your partner's face during the proposal — a detail that makes a significant difference in photographs. For evening proposals after sunset, the illuminated skyline provides a romantic backdrop of a different kind. The Dolmabahce Palace lit up in gold, the LED-lit Bosphorus Bridge reflecting on the water, and the twinkling lights of the hillside neighbourhoods create a magical nighttime atmosphere.", proTip: "The 'getting ready' moment matters too. Ask the crew to point out a landmark as a natural reason for your partner to face the right direction, giving you time to position yourself and the photographer to get the perfect angle. The crew has done this hundreds of times — they are natural actors." },
       { heading: "What Past Proposers Say", content: "MerrySails has been part of over 200 Bosphorus proposal stories, and certain moments come up repeatedly in guest feedback. Partners consistently describe the surprise as complete — the crew's discretion means that even suspicious partners are caught off guard by the decorated yacht. The rose-petal pathway from the gangway to the proposal spot on deck creates an emotional build from the first step aboard. The photographer captures both the proposal and the genuine first reactions — these candid images are consistently rated as more valuable than the posed portraits taken afterwards. Several proposers have shared that the private celebration after the proposal — champagne, dinner, and the Bosphorus to themselves — was as special as the proposal itself. The intimacy of a yacht for two (plus the discreet crew) creates a bubble of private joy that a restaurant or public setting cannot offer. One guest summed it up: the Bosphorus at sunset was the ring box, and Istanbul was the jeweller. The setting does half the work — you just have to ask the question." },
       { heading: "Photography and Videography Options", content: "Photography and videography are built into the proposal plan when the couple wants the moment documented professionally. The most common format is a discreet photographer positioned on board to capture the proposal itself plus celebration portraits afterwards. Videography, short highlight edits, and drone footage can also be discussed where weather, timing, and airspace rules allow. Some couples want a clean private moment with no camera at all; others want a fuller content plan with both stills and film. The advantage of handling this as part of the final proposal brief is that the crew, route timing, and photographer position are aligned before the yacht leaves the marina. Couples who prefer to keep things minimal can also use their own friend or family member as a discreet onboard photographer if that suits the surprise better." },
       { heading: "After the Proposal — Celebration Options", content: "Once the ring is on and the champagne is poured, the celebration continues on your private yacht. Many couples extend their cruise time by 1–2 hours to enjoy the evening together. If you want the evening to become a dining-led experience, plated dinner service, lighter catering, wine service, and fuller romantic styling can all be added to the proposal brief. Some couples keep the celebration private on board; others use the yacht as the emotional high point before continuing to a rooftop bar or fine-dining reservation in the city. MerrySails can also arrange post-proposal touches such as a hotel-room surprise, custom cake, stronger floral styling, or early delivery of selected photos when that is operationally realistic." },
-      { heading: "Start Planning Your Proposal", content: "Your Bosphorus proposal begins with one confidential message. Contact MerrySails via WhatsApp at +90 537 040 68 22 — the proposal coordinator responds discreetly and will never contact your partner. Share your preferred date, guest count, and any initial ideas, and you will receive a proposal plan built around the mood of the evening. For email enquiries, contact info@merrysails.com with 'Proposal' in the subject line. You can also start the process at <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>. The Bosphorus at sunset is one of the most romantic settings on earth — and MerrySails ensures the route, styling, and crew timing support the question you came to ask." }
+      { heading: "Move to the Main Proposal Page", content: "Once you know the date range, rough styling level, and whether photography or dinner should be part of the surprise, move to the main [proposal yacht rental Istanbul](/proposal-yacht-rental-istanbul) page. That is the cleaner place for the live proposal offer and the conversion path. Use this guide beforehand to clarify timing, surprise logic, and post-proposal flow so the request you send is tighter and easier to quote." }
     ],
     faqs: [
       { q: "How much does a proposal yacht cruise cost in Istanbul?", a: "Proposal cruises are quoted after the team confirms the yacht level, decoration brief, whether photography or dinner is needed, and how elaborate the surprise should be." },
@@ -342,20 +341,20 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Can I book a private night cruise on the Bosphorus?", a: "Yes. Private yacht night charters start at €280 for 2 hours with flexible departure times. You choose the route, music, and can add catering and decoration packages for special occasions." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
-    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect", "best-bosphorus-cruise-istanbul-guide"]
+    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect", "bosphorus-sunset-cruise-vs-dinner-cruise"]
   },
 {
     slug: "party-boat-istanbul",
-    title: "Party Boat Istanbul — Best Boat Parties & Private Events 2026",
-    metaDescription: "Book the best party boat in Istanbul for 2026. Birthday yacht parties, bachelorette cruises, and corporate events on the Bosphorus with private planning support.",
-    excerpt: "From birthday celebrations to bachelorette weekends and corporate outings, a party boat on the Bosphorus is the ultimate Istanbul experience. Here is everything you need to know about boat parties in Istanbul.",
+    title: "Private Party Boat Planning in Istanbul — Birthdays, Bachelorettes & Event Formats",
+    metaDescription: "Use this planning guide to compare private party-boat formats in Istanbul before moving to the right private-events, yacht, or corporate owner page.",
+    excerpt: "This support guide explains how party-boat planning works in Istanbul so you can choose the right event page before requesting a live proposal.",
     category: "events",
     date: "2026-04-01",
-    dateModified: "2026-04-02",
+    dateModified: "2026-04-23",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&q=80",
     imageAlt: "Party boat on the Bosphorus at night with colourful lights and Istanbul skyline in the background",
-    keywords: ["party boat istanbul", "boat party istanbul", "istanbul party cruise", "yacht party istanbul", "birthday boat party istanbul", "bachelorette boat istanbul", "istanbul boat party 2026"],
+    keywords: ["private party boat planning istanbul", "birthday yacht event planning", "bachelorette yacht planning bosphorus", "private event boat guide istanbul", "party boat format guide istanbul"],
     author: "captain-ahmet",
     keyTakeaways: [
       "Private party boats are planned around the guest count, yacht scale, event mood, and onboard service brief",
@@ -367,7 +366,7 @@ export const commercialConversionGuides: BlogPost[] = [
       {
         heading: "Why Choose a Party Boat on the Bosphorus?",
         answerCapsule: "A party boat on the Bosphorus gives you a private venue on the water with the illuminated Istanbul skyline as your backdrop, while the yacht, duration, decoration, and service setup are matched to your event instead of locked into a single rigid public package.",
-        content: "Istanbul has no shortage of nightlife venues, but none of them can compete with a private boat on the Bosphorus. A party boat gives you something a rooftop bar or nightclub cannot: complete privacy, a changing panoramic backdrop of illuminated palaces and bridges, and the freedom to play your own music at your own volume. The concept is simple — you hire a private yacht, bring your guests, and MerrySails handles everything else: crew, drinks, food, decoration, sound system, and even a DJ or photographer if you want one. The Bosphorus itself becomes your venue, and as the yacht moves between Europe and Asia, your guests experience Istanbul from a perspective that feels exclusive and unforgettable. Party boats work for any group size, from an intimate birthday with 8 friends to a corporate event with 50 colleagues. The yacht fleet ranges from sleek modern motor yachts to spacious double-deck vessels, each equipped with professional sound systems, LED lighting, and indoor-outdoor spaces that adapt to the weather and the mood."
+        content: "Istanbul has no shortage of nightlife venues, but none of them can compete with a private boat on the Bosphorus. A party boat gives you something a rooftop bar or nightclub cannot: complete privacy, a changing panoramic backdrop of illuminated palaces and bridges, and the freedom to play your own music at your own volume. The concept is simple — you hire a private yacht, bring your guests, and MerrySails handles everything else. The key planning move is to choose the right owner page first: general celebration briefs fit [Private Events](/private-events), smaller private charter logic fits [Yacht Charter Istanbul](/yacht-charter-istanbul), and clearly corporate-led nights belong on [Corporate Events](/corporate-events). This article should help you compare those directions rather than act like one generic party-booking owner page."
       },
       {
         heading: "Party Boat Packages and Pricing",
@@ -404,7 +403,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "How to Book Your Party Boat",
-        content: "Booking a party boat with MerrySails starts with a conversation. Contact the events team via WhatsApp at +90 537 040 68 22, email info@merrysails.com, or use the booking form at merrysails.com/reservation. Share the basics: date, number of guests, occasion, and any specific requirements. Within hours, you will receive a tailored proposal with yacht options, service recommendations, and a detailed breakdown of what is included. Once you approve the proposal, the team shares the written confirmation and payment timing for that event. On the day, arrive at Kuruçeşme Marina 15 minutes before departure. The yacht is already set up — decorated, stocked, and crewed. All you need to bring is your guests and the desire to celebrate. All party boat services are fully [TURSAB](https://www.tursab.org.tr/en)-licensed and insured."
+        content: "Booking a party boat with MerrySails starts with choosing the right conversion route. If the brief is a broader celebration, go to [Private Events](/private-events). If the night is mainly a private yacht charter with add-ons, use [Yacht Charter Istanbul](/yacht-charter-istanbul). If the group is company-led or invoice-sensitive, start on [Corporate Events](/corporate-events). Once the page fit is clear, contact the team via WhatsApp at +90 537 040 68 22 or email info@merrysails.com with the date, guest count, and occasion. All party-boat services are fully [TURSAB](https://www.tursab.org.tr/en)-licensed and insured."
       }
     ],
     faqs: [
@@ -415,7 +414,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "What happens if the weather is bad?", a: "All party yachts have enclosed indoor areas with climate control and panoramic windows. The party continues comfortably regardless of weather. In extreme conditions, free rescheduling is offered." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "bachelorette-yacht-party", "yacht-birthday-party"],
-    relatedPosts: ["corporate-events-yacht-istanbul", "istanbul-proposal-yacht-cruise", "best-bosphorus-cruise-istanbul-guide"]
+    relatedPosts: ["corporate-events-yacht-istanbul", "istanbul-proposal-yacht-cruise", "private-yacht-departure-points-istanbul"]
   },
 {
     slug: "bosphorus-cruise-vs-ferry",
@@ -487,20 +486,20 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Do I need to book the Şehir Hatları ferry in advance?", a: "No, tickets are purchased at the pier or by tapping an Istanbulkart. However, arrive 30 minutes early as the ferry fills up in peak season and standing passengers have limited views." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "istanbul-sunset-cruise-experience", "bosphorus-cruise-prices-2026"]
+    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise"]
   },
 {
     slug: "corporate-boat-hire-istanbul",
-    title: "Corporate Boat Hire Istanbul — Company Events & Team Building on the Bosphorus",
-    metaDescription: "Hire a private boat in Istanbul for corporate events, team building, and company parties on the Bosphorus. AV equipment, catering, and official invoicing available.",
-    excerpt: "Corporate boat hire in Istanbul combines team building, client entertainment, and company celebrations on the Bosphorus. Full catering, AV setup, and invoice included.",
+    title: "Corporate Event Boat Planning in Istanbul — AV, Catering & Proposal Flow",
+    metaDescription: "Use this support guide to understand AV, catering, and proposal flow for Bosphorus corporate events before moving to the main corporate owner page.",
+    excerpt: "This support guide explains how Bosphorus corporate event planning works before you move to the main corporate events page for the live proposal flow.",
     category: "events",
     date: "2026-04-04",
-    dateModified: "2026-04-04",
+    dateModified: "2026-04-23",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
     imageAlt: "Corporate team event on a private yacht on the Bosphorus with Istanbul skyline in the background",
-    keywords: ["corporate boat hire istanbul", "company event istanbul boat", "team building bosphorus", "corporate yacht istanbul", "corporate cruise bosphorus", "business event yacht istanbul"],
+    keywords: ["corporate event boat planning istanbul", "company yacht proposal flow", "bosphorus corporate av guide", "corporate catering and invoice guide", "team event boat planning bosphorus"],
     author: "captain-ahmet",
     keyTakeaways: [
       "Corporate boat hire in Istanbul is planned as a fully private, quote-based service with no shared-tour passengers",
@@ -510,9 +509,9 @@ export const commercialConversionGuides: BlogPost[] = [
     ],
     sections: [
       {
-        heading: "What Is Corporate Boat Hire on the Bosphorus?",
-        answerCapsule: "Corporate boat hire in Istanbul means booking a fully private vessel on the Bosphorus for company events, team building sessions, client entertainment, or product launches, with the yacht and run-of-show matched to the event brief.",
-        content: "Corporate events on the water have a measurable impact on team cohesion and client relationships that land-based venues simply cannot replicate. When your team is on a private vessel sailing between two continents, there are no distractions, no colleagues from other companies, and no reason to check a phone — just the Bosphorus, the skyline, and each other. MerrySails has organised corporate events on the Bosphorus since 2001, working with multinational companies, Istanbul-based firms, and international delegations visiting Turkey. Our fleet ranges from intimate 12-metre gulets for 15 guests to purpose-built event yachts capable of accommodating 100 passengers in a single private charter. Every corporate booking is fully private — your colleagues or clients are the only passengers on board. There are no public cruise passengers sharing the deck, no shared tables, and no fixed entertainment schedule unless you want one. The vessel, its route, its timing, and its catering menu are all arranged around your agenda.",
+        heading: "How Corporate Boat Planning Works on the Bosphorus",
+        answerCapsule: "Corporate Bosphorus events are planned as private proposals, and the main owner page for the live request is Corporate Events rather than a generic boat-hire keyword.",
+        content: "The cleanest way to handle company demand is to keep the live proposal flow on [Corporate Events](/corporate-events). This article stays in the support role: it helps teams understand vessel scale, AV needs, catering shape, and invoice logic before the real request is submitted. Bosphorus corporate events still deliver the same core benefits teams want from them: privacy, controlled guest flow, a stronger backdrop than hotel meeting rooms, and a schedule built around the brief instead of public-tour timing. MerrySails has organised company events on the water since 2001, but the practical win comes from matching the right vessel and service rhythm to the objective rather than treating every request like one generic boat-hire query.",
         table: {
           headers: ["Event scale", "Typical guest range", "Format", "Operational focus", "Best for"],
           rows: [
@@ -539,7 +538,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "How Does Invoicing and Payment Work for Corporate Clients?",
-        content: "MerrySails issues official Turkish invoices (fatura) with a full VAT breakdown, compliant with Turkish tax regulations. For international companies booking from abroad, we provide English-language proforma invoices alongside the Turkish official document for internal expense processing. Corporate payment timing is shared in the formal proposal once the yacht class, guest count, catering format, and AV scope are approved. For repeat corporate clients with an established relationship, invoice terms may be arranged with a signed service agreement. Cancellation policy for corporate events: 100% refund for cancellations 14+ days before the event, 50% refund for 7–13 days prior, non-refundable within 7 days (weather cancellations excepted). A signed booking confirmation is required to hold a date. For large group bookings (50+ guests), a written event brief is requested to ensure the vessel assignment, catering, and logistics are correctly planned.",
+        content: "MerrySails issues official Turkish invoices (fatura) with a full VAT breakdown, compliant with Turkish tax regulations. For international companies booking from abroad, we provide English-language proforma invoices alongside the Turkish official document for internal expense processing. Corporate payment timing is shared in the formal proposal once the yacht class, guest count, catering format, and AV scope are approved. For repeat corporate clients with an established relationship, invoice terms may be arranged with a signed service agreement. Cancellation policy for corporate events: 100% refund for cancellations 14+ days before the event, 50% refund for 7–13 days prior, non-refundable within 7 days (weather cancellations excepted). A signed booking confirmation is required to hold a date. For large group bookings (50+ guests), a written event brief is requested to ensure the vessel assignment, catering, and logistics are correctly planned. Once the brief is ready, move to [Corporate Events](/corporate-events) so the live owner flow stays concentrated on the right page.",
         callout: { type: "info", text: "Corporate boat hire is quoted after the yacht class, guest count, catering format, and AV requirements are confirmed. This keeps the proposal aligned with the actual event instead of a generic package grid." }
       },
       {
@@ -561,7 +560,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "What happens if the weather is bad on the event day?", a: "In cases of strong wind, heavy rain, or sea conditions deemed unsafe by the captain, we reschedule to the next available date at no cost. Our enclosed lower decks allow events to continue in light rain. All corporate bookings include weather-related cancellation protection." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "bosphorus-dinner-cruise", "bosphorus-sunset-cruise"],
-    relatedPosts: ["birthday-party-boat-istanbul", "private-yacht-charter-istanbul-price", "istanbul-boat-tour-price-2026"]
+    relatedPosts: ["corporate-events-yacht-istanbul", "group-bosphorus-cruise-guide", "istanbul-boat-tour-price-2026"]
   },
 {
     slug: "birthday-party-boat-istanbul",
@@ -610,7 +609,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "How Do You Book a Birthday Boat in Istanbul?",
-        content: "To book a birthday boat cruise in Istanbul, contact us via WhatsApp at +90 537 040 68 22 or email info@merrysails.com with your preferred date, approximate guest count, and any specific requirements (decoration preferences, DJ, dietary needs, cake type). We respond within 24 hours with a personalised proposal including pricing, vessel options, and a decoration menu. Once you approve the birthday brief, the team confirms the charter terms, payment timing, and marina details in writing. Full cancellation refund for cancellations 14+ days before the event; 50% refund for 7–13 days; non-refundable within 7 days (weather exceptions apply). On the event day, guests board 30 minutes before departure for welcome drinks and decoration viewing before sailing. Our team handles the logistics so the birthday person can simply enjoy the evening. See also our [private yacht charter page](/private-tours) for full package details and our [corporate events page](/corporate-events) if organising a work birthday celebration."
+        content: "To book a birthday boat cruise in Istanbul, contact us via WhatsApp at +90 537 040 68 22 or email info@merrysails.com with your preferred date, approximate guest count, and any specific requirements (decoration preferences, DJ, dietary needs, cake type). We respond within 24 hours with a personalised proposal including pricing, vessel options, and a decoration menu. Once you approve the birthday brief, the team confirms the charter terms, payment timing, and marina details in writing. Full cancellation refund for cancellations 14+ days before the event; 50% refund for 7–13 days; non-refundable within 7 days (weather exceptions apply). On the event day, guests board 30 minutes before departure for welcome drinks and decoration viewing before sailing. Our team handles the logistics so the birthday person can simply enjoy the evening. The cleanest owner routes are [Yacht Charter Istanbul](/yacht-charter-istanbul) for private birthday-charter logic, [Private Events](/private-events) for broader celebration planning, and [Corporate Events](/corporate-events) if organising a work birthday celebration."
       }
     ],
     faqs: [
@@ -626,16 +625,16 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-sunset-cruise-istanbul",
-    title: "Bosphorus Sunset Cruise Istanbul 2026 — Times, Tips & Booking from €34",
-    metaDescription: "Reserve a Bosphorus sunset cruise in Istanbul from €34. A 2-hour golden-hour yacht with soft drinks, snacks, fruit, tea, coffee, and a live guide. Reserve direct.",
-    excerpt: "The Bosphorus sunset cruise in Istanbul departs 1.5–2 hours before sunset to catch golden hour over two continents. Photography tips, seasonal timing, and full booking guide.",
+    title: "Bosphorus Sunset Timing & Photography Guide for Istanbul",
+    metaDescription: "Use this support guide to understand Bosphorus sunset timing, seasonality, and photography before moving to the main sunset owner page for the live offer.",
+    excerpt: "This support guide explains sunset timing, seasonality, and photography conditions before you move to the main Bosphorus sunset owner page.",
     category: "cruise-guide",
     date: "2026-04-04",
-    dateModified: "2026-04-04",
+    dateModified: "2026-04-23",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
     imageAlt: "Bosphorus sunset cruise in Istanbul with Ortaköy Mosque silhouetted against golden sky and the Bosphorus Bridge",
-    keywords: ["bosphorus sunset cruise istanbul", "sunset boat tour istanbul", "istanbul sunset cruise 2026", "sunset cruise bosphorus time", "golden hour bosphorus", "best sunset cruise istanbul"],
+    keywords: ["bosphorus sunset timing guide istanbul", "how sunset cruise timing works in istanbul", "golden hour bosphorus planning", "sunset photography guide bosphorus", "shared sunset cruise what to expect", "kabatas sunset boarding guide"],
     author: "captain-ahmet",
     keyTakeaways: [
       "The Bosphorus sunset cruise starts at €34 for Without Wine, while the wine option is currently €40, and both follow the same 2-hour route",
@@ -690,8 +689,8 @@ export const commercialConversionGuides: BlogPost[] = [
         }
       },
       {
-        heading: "How to Book the Bosphorus Sunset Cruise",
-        content: "Book the Bosphorus sunset cruise at merrysails.com, via WhatsApp at +90 537 040 68 22, or by email at info@merrysails.com. The reservation flow takes under 3 minutes: select your date, enter the guest details, and submit the request. A reservation reference is sent by email together with the next steps. Free cancellation is available up to 24 hours before departure — if the weather deteriorates overnight and you change your plans, you receive a full refund or a reschedule to your next available date. Advance booking is recommended: the sunset cruise is one of our most popular tours and frequently sells out 24–48 hours in advance during peak season (May–October). For the shared sunset cruise, payment is currently completed onboard by cash or card. For private group bookings (10+ guests), contact us directly to arrange a dedicated vessel for your group. Private sunset cruises include the same route and timing as the shared cruise but give your group the entire vessel — ideal for birthday evenings, anniversary celebrations, or corporate networking. See also the [bosphorus cruise guide](/blog/best-bosphorus-cruise-istanbul-guide) for a full comparison of all cruise types."
+        heading: "How to Start the Sunset Booking Flow",
+        content: "The cleanest first click is the main [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) owner page, because that page carries the live sunset offer and the clearest booking path. From there, you can reserve at merrysails.com, via WhatsApp at +90 537 040 68 22, or by email at info@merrysails.com. The reservation flow takes under 3 minutes: select your date, enter the guest details, and submit the request. A reservation reference is sent by email together with the next steps. Free cancellation is available up to 24 hours before departure — if the weather deteriorates overnight and you change your plans, you receive a full refund or a reschedule to your next available date. Advance booking is recommended: the sunset cruise is one of our most popular tours and frequently sells out 24–48 hours in advance during peak season (May–October). For the shared sunset cruise, payment is currently completed onboard by cash or card. For private group bookings (10+ guests), contact us directly to arrange a dedicated vessel for your group. Private sunset cruises include the same route and timing as the shared cruise but give your group the entire vessel — ideal for birthday evenings, anniversary celebrations, or corporate networking. See also the [Bosphorus cruise hub](/bosphorus-cruise) for broader comparison logic."
       }
     ],
     faqs: [
@@ -765,7 +764,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "Are There Any Hidden Fees or Mandatory Charges?",
-        content: "MerrySails operates a no-hidden-fee policy. The price shown on the website is the published direct rate — there are no fuel surcharges, port fees, 'tourism taxes', mandatory service charges, or tip envelopes layered on afterwards. The only optional extras are upgrades or add-ons that are selected clearly or quoted in writing for the relevant product. Shared sunset and dinner cruises do not require online prepayment in the current flow; they are reserved first and paid onboard. Private charters, group events, and custom formats move through written proposal terms before anything is due. Port fees and vessel licensing are included in the company's operating costs and not passed on to guests. Turkish VAT (KDV) is included in all published prices — if you need a VAT invoice for business expense purposes, this is available on request. For group and corporate bookings, a proforma invoice with full price breakdown is provided before any payment is required. See our full pricing on the [cruises page](/cruises) and consult the [complete Bosphorus cruise guide](/blog/best-bosphorus-cruise-istanbul-guide) for a detailed comparison."
+        content: "MerrySails operates a no-hidden-fee policy. The price shown on the website is the published direct rate — there are no fuel surcharges, port fees, 'tourism taxes', mandatory service charges, or tip envelopes layered on afterwards. The only optional extras are upgrades or add-ons that are selected clearly or quoted in writing for the relevant product. Shared sunset and dinner cruises do not require online prepayment in the current flow; they are reserved first and paid onboard. Private charters, group events, and custom formats move through written proposal terms before anything is due. Port fees and vessel licensing are included in the company's operating costs and not passed on to guests. Turkish VAT (KDV) is included in all published prices — if you need a VAT invoice for business expense purposes, this is available on request. For group and corporate bookings, a proforma invoice with full price breakdown is provided before any payment is required. See the [Bosphorus Cruise compare hub](/bosphorus-cruise) for the main booking paths and use the [Bosphorus cruise price guide](/blog/bosphorus-cruise-prices-2026) when you need a support article for the public ladder rather than a generic cruise-owner page."
       }
     ],
     faqs: [
@@ -777,20 +776,20 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "How far in advance should I book an Istanbul boat tour?", a: "Dinner cruises: 3–4 days in peak season. Sunset cruises: 24–48 hours in advance. Sightseeing cruises: same-day is often possible. Private charters: minimum 48 hours, special events 1–2 weeks." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-sunset-cruise-istanbul", "private-yacht-charter-istanbul-price"]
+    relatedPosts: ["bosphorus-cruise-companies-comparison", "bosphorus-sunset-cruise-istanbul", "bosphorus-cruise-boarding-points-guide-2026"]
   },
 {
     slug: "private-yacht-charter-istanbul-price",
-    title: "Private Yacht Charter Istanbul Price 2026 — Essential, Premium & VIP From €280",
-    metaDescription: "Live MerrySails yacht charter prices for 2026. Essential €280, Premium €380, VIP €680 for a standard 2-hour private Bosphorus cruise. Add-ons, confirmation flow, and booking tips.",
-    excerpt: "See the live MerrySails private yacht charter ladder for 2026 — what changes between Essential, Premium, and VIP, what is included, and how custom add-ons affect the total.",
+    title: "Private Yacht Price Guide for Istanbul — Essential, Premium & VIP Explained",
+    metaDescription: "Use this support guide to understand the public private-yacht ladder in Istanbul, what changes between tiers, and when to move to the main yacht owner page.",
+    excerpt: "This support guide explains the public private-yacht ladder, what changes between Essential, Premium, and VIP, and how the final quote is shaped.",
     category: "events",
     date: "2026-04-04",
-    dateModified: "2026-04-19",
+    dateModified: "2026-04-23",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
     imageAlt: "Private luxury yacht on the Bosphorus in Istanbul with the city skyline in the background",
-    keywords: ["private yacht charter istanbul price", "yacht rental istanbul cost", "istanbul yacht charter 2026", "bosphorus yacht rental price", "essential premium vip yacht istanbul", "private boat hire istanbul price"],
+    keywords: ["private yacht price guide istanbul", "how yacht tiers work in istanbul", "essential premium vip yacht guide", "bosphorus private yacht pricing logic", "istanbul yacht quote planning", "private yacht add-on planning istanbul"],
     author: "captain-ahmet",
     keyTakeaways: [
       "The live yacht price range is €280 Essential, €380 Premium, and €680 VIP — all priced per vessel",
@@ -834,8 +833,8 @@ export const commercialConversionGuides: BlogPost[] = [
         callout: { type: "info", text: "Booking tip: request the written confirmation summary before approving the charter so the yacht assignment, cancellation terms, and next operational steps are all clear in one place." }
       },
       {
-        heading: "How to Book a Private Yacht Charter in Istanbul",
-        content: "The booking process for a private yacht charter begins with an inquiry: email info@merrysails.com or WhatsApp +90 537 040 68 22 with your event date, guest count, event type, and any special requirements. For standard packages (Essential, Premium, VIP), the team can usually respond quickly during business hours (08:00–20:00 Istanbul time). For corporate events, large group bookings, or custom charter requests, a personalised proposal with vessel options, catering menus, and pricing is sent within 24 hours. The full booking process: (1) Inquiry and proposal; (2) Proposal review and approval; (3) Written confirmation and payment timing for that charter; (4) Logistics coordination (catering menu, decoration preferences, run sheet) in the 7 days before the event; (5) SMS or WhatsApp confirmation with pier details and crew contact on the event day; (6) Charter. For new events, we are happy to arrange a pre-charter visit to the vessel — particularly useful for corporate event planners who need to assess AV placement, catering setup, and guest flow. See the [private yacht charter guide](/blog/private-yacht-charter-istanbul-guide) for routes, add-ons, and experience details. See the [private events page](/private-events) for all celebration package options."
+        heading: "How to Start the Private Yacht Quote Flow",
+        content: "The cleanest first click is the main [Yacht Charter Istanbul](/yacht-charter-istanbul) owner page, because that page carries the live private-yacht direction before the team confirms the final vessel and service brief. The booking process then begins with an inquiry: email info@merrysails.com or WhatsApp +90 537 040 68 22 with your event date, guest count, event type, and any special requirements. For standard packages (Essential, Premium, VIP), the team can usually respond quickly during business hours (08:00–20:00 Istanbul time). For corporate events, large group bookings, or custom charter requests, a personalised proposal with vessel options, catering menus, and pricing is sent within 24 hours. The full booking process: (1) Inquiry and proposal; (2) Proposal review and approval; (3) Written confirmation and payment timing for that charter; (4) Logistics coordination (catering menu, decoration preferences, run sheet) in the 7 days before the event; (5) SMS or WhatsApp confirmation with pier details and crew contact on the event day; (6) Charter. For new events, we are happy to arrange a pre-charter visit to the vessel — particularly useful for corporate event planners who need to assess AV placement, catering setup, and guest flow. See the [private events page](/private-events) for all celebration package options."
       }
     ],
     faqs: [
@@ -847,7 +846,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "What happens if the weather is bad on my charter day?", a: "If the captain deems conditions unsafe (typically Beaufort 5+ winds or coastguard advisory), the charter is cancelled and 100% refunded or rescheduled at no cost. Customers are encouraged to contact us to discuss conditions rather than self-cancelling within the 7-day non-refundable window." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
-    relatedPosts: ["corporate-boat-hire-istanbul", "birthday-party-boat-istanbul", "istanbul-boat-tour-price-2026"]
+    relatedPosts: ["corporate-events-yacht-istanbul", "birthday-party-boat-istanbul", "istanbul-boat-tour-price-2026"]
   },
 {
     slug: "best-time-for-bosphorus-cruise-istanbul",
@@ -968,23 +967,23 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-hire-istanbul-2026",
-    title: "Private Yacht Hire Istanbul 2026 — How to Choose the Right Yacht",
-    metaDescription: "How to choose the right private yacht in Istanbul for 2026. Public packages start from €280 for a 2-hour private Bosphorus cruise. Compare yacht styles, seasonality, and booking tips.",
-    excerpt: "A practical guide to choosing the right private yacht in Istanbul — what the public packages include, which occasions they suit, and how to book the right Bosphorus charter.",
+    title: "How to Choose the Right Private Yacht in Istanbul — Format, Season & Occasion Guide",
+    metaDescription: "Use this support guide to choose the right private yacht format in Istanbul, then move to the main yacht owner page for the live offer.",
+    excerpt: "This support guide explains how to choose the right private-yacht format in Istanbul before you move to the main yacht owner page.",
     category: "yacht-guide",
     date: "2026-04-04",
-    dateModified: "2026-04-19",
+    dateModified: "2026-04-23",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
     imageAlt: "Private yacht sailing on the Bosphorus in Istanbul at golden hour with Ottoman palaces in the background",
     keywords: [
-      "private yacht hire istanbul",
-      "how to hire a yacht in istanbul",
-      "istanbul yacht charter guide",
-      "best private yacht bosphorus",
-      "yacht hire bosphorus istanbul",
-      "private yacht bosphorus",
-      "which yacht should i book istanbul",
+      "how to choose the right private yacht istanbul",
+      "private yacht format guide istanbul",
+      "which yacht should i book bosphorus",
+      "private yacht season and occasion guide istanbul",
+      "choose the right bosphorus yacht",
+      "private yacht planning guide istanbul",
+      "yacht fit guide bosphorus",
     ],
     author: "captain-ahmet",
     keyTakeaways: [
@@ -997,7 +996,7 @@ export const commercialConversionGuides: BlogPost[] = [
       {
         heading: "Quick Answer — Private Yacht Hire Istanbul 2026",
         answerCapsule: "Private yacht hire with MerrySails currently starts from €280 for Essential, €380 for Premium, and €680 for VIP. These are public per-vessel prices for a standard 2-hour private Bosphorus cruise, while larger custom yachts and event formats are quoted separately once the request is clear.",
-        content: "Istanbul's Bosphorus is one of the world's great private-yacht settings because even a relatively short charter delivers major landmarks, a flexible route, and total privacy. The most useful thing to understand first is that the live public package ladder is not built as three completely different route lengths. Instead, MerrySails uses a standard 2-hour private Bosphorus format and lets you choose the yacht level, then layer in extras such as catering, decoration, photography, music, transfer, or extra time as needed.",
+        content: "Istanbul's Bosphorus is one of the world's great private-yacht settings because even a relatively short charter delivers major landmarks, a flexible route, and total privacy. The most useful thing to understand first is that the live public package ladder is not built as three completely different route lengths. Instead, MerrySails uses a standard 2-hour private Bosphorus format and lets you choose the yacht level, then layer in extras as needed. If you are already done comparing formats, the clean owner page is [Yacht Charter Istanbul](/yacht-charter-istanbul).",
       },
       {
         heading: "How to Choose the Right Private Yacht Format",
@@ -1054,7 +1053,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "How to Book Private Yacht Hire in Istanbul",
-        content: "Booking a private yacht hire in Istanbul with MerrySails takes under 10 minutes when the request is simple: (1) choose the public package that matches the feel you want; (2) select your date and review the live add-ons; (3) let the team confirm the written next steps and payment timing for that charter; (4) receive the marina assignment and boarding instructions for the selected yacht. For custom requests — longer duration, a larger yacht, corporate hosting, formal dining, or more complex celebration styling — the process starts with WhatsApp or email so the team can prepare a tailored proposal before payment.",
+        content: "Booking a private yacht hire in Istanbul with MerrySails takes under 10 minutes when the request is simple: (1) move to [Yacht Charter Istanbul](/yacht-charter-istanbul) and choose the public package that matches the feel you want; (2) select your date and review the live add-ons; (3) let the team confirm the written next steps and payment timing for that charter; (4) receive the marina assignment and boarding instructions for the selected yacht. For custom requests — longer duration, a larger yacht, corporate hosting, formal dining, or more complex celebration styling — the process starts with WhatsApp or email so the team can prepare a tailored proposal before payment.",
       },
       {
         heading: "Private Yacht Hire vs Shared Cruises",
@@ -1074,27 +1073,28 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Is private yacht hire in Istanbul good value?", a: "Yes, especially when privacy, route control, and celebration value matter more than buying the lowest public ticket. Because the yacht is priced per vessel, the value improves quickly once the cost is shared across a real group." },
     ],
     relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
-    relatedPosts: ["private-yacht-charter-istanbul-price", "best-time-for-bosphorus-cruise-istanbul", "corporate-boat-hire-istanbul"],
+    relatedPosts: ["private-yacht-departure-points-istanbul", "best-time-for-bosphorus-cruise-istanbul", "proposal-yacht-rental-istanbul-planning-guide"],
   },
 {
     slug: "istanbul-cruise-for-groups",
-    title: "Istanbul Cruise for Groups 2026 — Guest Size, Vessel Fit & Booking Guide",
-    metaDescription: "Plan a group boat tour in Istanbul for 10 to 100+ guests. Learn vessel fit, catering logic, boarding flow, and how to request the right Bosphorus group proposal.",
-    excerpt: "Everything groups need to know about booking a Bosphorus cruise in Istanbul — from 10-person parties to large corporate groups — without relying on one rigid public price table.",
+    title: "Group Cruise Planning in Istanbul — Guest Size, Vessel Fit & Proposal Flow",
+    metaDescription: "Use this group-planning guide to compare vessel fit, group type, and proposal flow in Istanbul before moving to the right owner page.",
+    excerpt: "This support guide helps groups choose the right Bosphorus route and owner page before sending a live proposal request.",
     category: "cruise-guide",
     date: "2026-04-04",
+    dateModified: "2026-04-23",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=1200&q=80",
     imageAlt: "Large group of people celebrating on a boat on the Bosphorus in Istanbul with the city skyline behind them",
     keywords: [
-      "istanbul cruise groups",
-      "group boat tour istanbul",
-      "bosphorus cruise group",
-      "group boat hire istanbul",
-      "istanbul group cruise price",
-      "bosphorus group tour",
-      "private group cruise istanbul",
-      "istanbul group charter boat",
+      "group cruise planning istanbul",
+      "bosphorus group vessel guide",
+      "how group proposals work istanbul cruises",
+      "private group charter planning istanbul",
+      "corporate or celebration group cruise guide",
+      "group event flow bosphorus",
+      "istanbul group charter planning",
+      "group boat proposal guide",
     ],
     author: "editorial",
     keyTakeaways: [
@@ -1109,7 +1109,7 @@ export const commercialConversionGuides: BlogPost[] = [
       {
         heading: "Quick Answer — Group Boat Tours in Istanbul",
         answerCapsule: "Private group boat tours in Istanbul are available for groups of 10 to 120+ guests on the Bosphorus. Final planning depends on guest count, vessel scale, catering style, and whether the cruise is social, corporate, or travel-program led.",
-        content: "Istanbul is one of the world's great cities for group water experiences. The Bosphorus — 31 km of historic waterway flanked by palaces, mosques, fortresses, and bridges — provides a dramatic backdrop for group celebrations, corporate team events, school outings, and travel group excursions. Unlike public shared cruises, a private group charter gives your group exclusive access to the entire vessel, your own route, your own pace, and optional catering and entertainment. The most useful way to plan it is not by memorising one universal price table, but by matching the vessel and onboard service to the scale and purpose of the group.",
+        content: "Istanbul is one of the world's great cities for group water experiences. The Bosphorus — 31 km of historic waterway flanked by palaces, mosques, fortresses, and bridges — provides a dramatic backdrop for group celebrations, corporate team events, school outings, and travel group excursions. Unlike public shared cruises, a private group charter gives your group exclusive access to the entire vessel, your own route, your own pace, and optional catering and entertainment. The most useful way to plan it is not by memorising one universal price table, but by matching the vessel and onboard service to the scale and purpose of the group. When the brief becomes clear, smaller private groups usually move to [Yacht Charter Istanbul](/yacht-charter-istanbul), celebration-led groups to [Private Events](/private-events), and corporate teams to [Corporate Events](/corporate-events).",
       },
       {
         heading: "Group Size Guide — Which Vessel for Your Group?",
@@ -1178,7 +1178,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "How to Book a Group Cruise in Istanbul",
-        content: "Booking a group cruise in Istanbul works best in stages: (1) contact MerrySails via WhatsApp +90 537 040 68 22 or the online form with your guest count, date, and occasion; (2) receive a vessel direction and live proposal; (3) confirm the charter with deposit; (4) finalize guest count, dietary notes, and any extras such as catering or AV; (5) receive the final boarding plan with the marina or meeting-point details tied to the assigned vessel.",
+        content: "Booking a group cruise in Istanbul works best in stages: (1) choose the right owner page first — [Yacht Charter Istanbul](/yacht-charter-istanbul) for smaller private charter logic, [Private Events](/private-events) for celebration-led groups, or [Corporate Events](/corporate-events) for company-led groups; (2) send the guest count, date, and occasion; (3) receive a vessel direction and live proposal; (4) finalize guest count, dietary notes, and any extras such as catering or AV; (5) receive the final boarding plan tied to the assigned vessel.",
       },
     ],
     faqs: [
@@ -1310,26 +1310,27 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Is there still a daytime Bosphorus option in Istanbul?", a: "Yes. MerrySails still supports daytime Bosphorus planning, but lunch-style and other daytime requests are now handled mainly through tailored service pages rather than a competing public published-price ladder." },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "private-yacht-hire-istanbul-2026", "istanbul-boat-tour-price-2026"],
+    relatedPosts: ["bosphorus-cruise-companies-comparison", "private-yacht-hire-istanbul-2026", "istanbul-boat-tour-price-2026"],
   },
 {
     slug: "bosphorus-cruise-groups-istanbul",
-    title: "Group Bosphorus Cruise Istanbul 2026 | Private Event & Group Planning Guide",
-    metaDescription: "Plan a private group Bosphorus cruise in Istanbul for corporate teams, birthdays, travel groups, and celebrations. Guest-size guidance, vessel logic, and booking steps.",
-    excerpt: "Planning a group Bosphorus cruise in Istanbul? This guide explains how to choose the right vessel and request the right private group proposal without relying on a misleading published-price grid.",
+    title: "Private Group Bosphorus Planning in Istanbul — Corporate, Birthday & Travel Formats",
+    metaDescription: "Use this support guide to compare private group Bosphorus formats in Istanbul before moving to the right celebration or corporate owner page.",
+    excerpt: "This support guide helps private groups understand vessel logic and the right next owner page before requesting a Bosphorus proposal.",
     category: "cruise-guide",
     date: "2026-04-04",
+    dateModified: "2026-04-23",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=1200&q=80",
     imageAlt: "Large group celebrating on a private boat on the Bosphorus in Istanbul with the Bosphorus Bridge in the background",
     keywords: [
-      "group bosphorus cruise istanbul",
-      "group boat tour istanbul",
-      "group cruise istanbul",
-      "istanbul group boat hire",
-      "bosphorus group tour price",
-      "group yacht istanbul",
-      "group boat trip istanbul",
+      "private group bosphorus planning istanbul",
+      "group event format guide bosphorus",
+      "birthday corporate travel group yacht guide",
+      "istanbul private group proposal flow",
+      "group vessel logic bosphorus",
+      "celebration group planning istanbul",
+      "private group charter guide bosphorus",
     ],
     author: "captain-ahmet",
     keyTakeaways: [
@@ -1342,7 +1343,7 @@ export const commercialConversionGuides: BlogPost[] = [
       {
         heading: "How Much Does a Group Bosphorus Cruise Cost in Istanbul?",
         answerCapsule: "A private group Bosphorus cruise is quoted after the team confirms guest count, vessel scale, event type, duration, and onboard service needs. That is more reliable than treating every group as the same product.",
-        content: "Group boat tours in Istanbul are priced per vessel, not per person, but that still does not mean one static public table can explain every scenario. MerrySails operates group cruises from 10 to 100+ guests on fully private vessels. For smaller social groups, a yacht or gulet may be the cleanest fit. For larger corporate or travel-program formats, an event yacht or multi-vessel plan may be the better answer. The useful comparison is therefore not one hard hourly number, but whether the vessel and service rhythm match the group you are actually bringing.",
+        content: "Group boat tours in Istanbul are priced per vessel, not per person, but that still does not mean one static public table can explain every scenario. MerrySails operates group cruises from 10 to 100+ guests on fully private vessels. For smaller social groups, a yacht or gulet may be the cleanest fit. For larger corporate or travel-program formats, an event yacht or multi-vessel plan may be the better answer. The useful comparison is therefore not one hard hourly number, but whether the vessel and service rhythm match the group you are actually bringing. Once the event type is clear, the clean next step is usually [Private Events](/private-events), [Corporate Events](/corporate-events), or [Yacht Charter Istanbul](/yacht-charter-istanbul) rather than staying on a generic group blog.",
         table: {
           headers: ["Group Size", "Vessel Direction", "Best Fit", "Notes"],
           rows: [
@@ -1375,7 +1376,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "How to Book a Group Bosphorus Cruise in Istanbul",
-        content: "Booking a group cruise with MerrySails is straightforward. Contact us via WhatsApp (+90 537 040 68 22) or email (info@merrysails.com) with your group size, preferred date, occasion, and any requirements. We respond within hours. For corporate groups, include the event type, any AV needs, and whether an official invoice is required. We send a personalised proposal within 24 hours. To confirm, the team finalizes the written proposal and shares the payment timing tied to that group charter. Boarding is from Kuruçeşme Marina — exact instructions and GPS coordinates are included in your confirmation. Groups should arrive 20–30 minutes before departure to board comfortably.",
+        content: "Booking a group cruise with MerrySails is straightforward once the page fit is right. Celebration-heavy group briefs should usually start on [Private Events](/private-events), company-led groups on [Corporate Events](/corporate-events), and smaller private-charter groups on [Yacht Charter Istanbul](/yacht-charter-istanbul). From there, send the group size, preferred date, occasion, and any requirements. The team then prepares the live proposal and boarding instructions tied to the assigned vessel.",
       },
       {
         heading: "Group Cruise Istanbul — Frequently Asked Questions",
@@ -1409,27 +1410,26 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["private-yacht-hire-istanbul-2026", "corporate-boat-hire-istanbul", "boat-rental-istanbul"],
+    relatedPosts: ["private-yacht-hire-istanbul-2026", "corporate-boat-hire-istanbul", "boat-rental-vs-yacht-charter-istanbul"],
   },
 {
     slug: "istanbul-dinner-cruise-price-guide-2026",
-    title: "Istanbul Dinner Cruise Price Guide 2026 - What the Package Ladder Means",
-    metaDescription: "See how Istanbul dinner cruise pricing works in 2026. Compare the package ladder, what changes between tiers, and when sunset or private yacht makes more sense.",
-    excerpt: "Dinner cruise pricing makes more sense once you know what actually changes between packages. This guide explains the current shared ladder, what a fair price should include, and when a different cruise is the better fit.",
+    title: "How Istanbul Dinner Cruise Pricing Works in 2026 — Shared Package Guide",
+    metaDescription: "Use this support guide to understand the Istanbul dinner cruise price ladder, then move to the main dinner owner page for the live shared offer.",
+    excerpt: "This support guide explains the current shared dinner ladder, what changes between tiers, and when you should move to the main dinner owner page.",
     category: "cruise-guide",
     date: "2026-04-19",
-    dateModified: "2026-04-19",
+    dateModified: "2026-04-23",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=80",
     imageAlt: "Dinner table set on a Bosphorus cruise with Istanbul lights in the background",
     keywords: [
-      "istanbul dinner cruise price",
-      "dinner cruise istanbul cost",
-      "bosphorus dinner cruise price",
-      "what is included dinner cruise",
-      "istanbul dinner cruise packages",
-      "dinner cruise vs sunset cruise",
-      "bosphorus dinner cruise 2026",
+      "istanbul dinner cruise pricing guide",
+      "how dinner cruise packages work istanbul",
+      "shared dinner package ladder bosphorus",
+      "what is included in dinner cruise tiers",
+      "dinner cruise price comparison support guide",
+      "sunset vs dinner cruise pricing istanbul",
     ],
     author: "captain-ahmet",
     keyTakeaways: [
@@ -1442,7 +1442,7 @@ export const commercialConversionGuides: BlogPost[] = [
       {
         heading: "How the Dinner Cruise Price Ladder Works",
         answerCapsule: "MerrySails' shared dinner cruise starts from EUR 30 per guest. The difference between package levels is mainly the table tier and beverage inclusion, not a different Bosphorus route.",
-        content: "If you are comparing dinner cruise prices in Istanbul, the first thing to know is that the product is not a single flat ticket. MerrySails currently presents the shared dinner cruise as a four-package ladder on the same evening route: Silver Soft Drinks at EUR 30, Silver Alcoholic at EUR 45, Gold Soft Drinks at EUR 80, and Gold Unlimited Alcohol at EUR 90. That means the question is not simply 'Is this cruise cheap or expensive?'. The better question is 'Which package level matches the way I want to spend the evening?'. The route and entertainment flow stay the same; what changes is the beverage tier and whether you want the more premium Gold setup.",
+        content: "If you are comparing dinner cruise prices in Istanbul, the first thing to know is that the product is not a single flat ticket. MerrySails currently presents the shared dinner cruise as a four-package ladder on the same evening route: Silver Soft Drinks at EUR 30, Silver Alcoholic at EUR 45, Gold Soft Drinks at EUR 80, and Gold Unlimited Alcohol at EUR 90. That means the question is not simply 'Is this cruise cheap or expensive?'. The better question is 'Which package level matches the way I want to spend the evening?'. The route and entertainment flow stay the same; what changes is the beverage tier and whether you want the more premium Gold setup. Once you understand that ladder, the clean live booking page is [Istanbul Dinner Cruise](/istanbul-dinner-cruise).",
         table: {
           headers: ["Package level", "What changes", "When it fits"],
           rows: [
@@ -1454,7 +1454,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "What a Fair Dinner Cruise Price Should Include",
-        content: "A good dinner cruise price should be easy to explain before you book. For the shared dinner cruise page, that means a clear route, a defined boarding point, dinner service, and a package that matches the drink and show level you chose. If a price looks low but hides the real cost in extras, the number is not helpful. If a price is higher but it includes the full evening flow, it can still be the better value. On the current MerrySails shared dinner cruise, the price ladder is designed to keep those choices visible rather than buried. That is especially useful if you are comparing the dinner page with the [sunset cruise](/cruises/bosphorus-sunset-cruise), which is shorter and lighter, or with [yacht charter in Istanbul](/yacht-charter-istanbul), which is private and priced per boat.",
+        content: "A good dinner cruise price should be easy to explain before you book. For the shared dinner cruise page, that means a clear route, a defined boarding point, dinner service, and a package that matches the drink and show level you chose. If a price looks low but hides the real cost in extras, the number is not helpful. If a price is higher but it includes the full evening flow, it can still be the better value. On the current MerrySails shared dinner cruise, the price ladder is designed to keep those choices visible rather than buried. That is especially useful if you are comparing the dinner page with the [sunset cruise](/cruises/bosphorus-sunset-cruise), which is shorter and lighter, or with [yacht charter in Istanbul](/yacht-charter-istanbul), which is private and priced per boat. When you are ready to act, move from this support article to [Istanbul Dinner Cruise](/istanbul-dinner-cruise) for the live owner flow.",
         callout: {
           type: "price",
           text: "A fair dinner cruise price should be easy to read before booking. On MerrySails, the shared ladder is currently EUR 30 / 45 / 80 / 90.",
@@ -1589,7 +1589,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "Boarding Flow Is Part of the Event Experience",
-        content: "Guests judge a company event before the yacht even leaves the marina. That is why boarding instructions should be treated as part of the hospitality, not a last-minute logistics note. The best flow is to send the final location pin, arrival window, and host contact on the same day, then ask guests to arrive 20 to 30 minutes before departure. This gives enough time for guest check-in, welcome drinks, and any late arrivals without making the vessel leave half-settled. If the event includes outside clients, one internal host should be responsible for receiving them at the marina and guiding them on board. It is equally important to lock the final guest list and dietary notes early. Vegan, halal, gluten-free, and alcohol preferences are easy to handle when they are planned 48 hours ahead. They become operational friction only when they arrive as surprises at the dock.",
+        content: "Guests judge a company event before the yacht even leaves the marina. That is why boarding instructions should be treated as part of the hospitality, not a last-minute logistics note. The best flow is to send the final location pin, arrival window, and host contact on the same day, then ask guests to arrive 20 to 30 minutes before departure. This gives enough time for guest check-in, welcome drinks, and any late arrivals without making the vessel leave half-settled. If the event includes outside clients, one internal host should be responsible for receiving them at the marina and guiding them on board. When the brief is specifically hospitality-led for outside guests rather than a broad company event, the cleaner support route is [client hosting yacht Istanbul](/client-hosting-yacht-istanbul). It is equally important to lock the final guest list and dietary notes early. Vegan, halal, gluten-free, and alcohol preferences are easy to handle when they are planned 48 hours ahead. They become operational friction only when they arrive as surprises at the dock.",
       },
       {
         heading: "When a Corporate Yacht Event Beats a Hotel Dinner",

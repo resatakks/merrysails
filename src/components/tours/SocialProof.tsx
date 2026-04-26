@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
@@ -25,35 +25,7 @@ function seededRand(slug: string, salt: number, min: number, max: number): numbe
 }
 
 export default function SocialProof({ tourSlug }: Props) {
-  const [variantSeed] = useState(() => {
-    if (typeof window === "undefined") {
-      return hashSlug(`${tourSlug}:server`);
-    }
-
-    const now = new Date();
-    const bucket = `${now.getUTCFullYear()}-${now.getUTCMonth()}-${now.getUTCDate()}-${Math.floor(
-      now.getUTCHours() / 6
-    )}`;
-    const storageKey = `merrysails-social-proof:${tourSlug}`;
-
-    try {
-      const existing = window.localStorage.getItem(storageKey);
-      if (existing) {
-        const parsed = JSON.parse(existing) as { bucket: string; seed: number };
-        if (parsed.bucket === bucket) {
-          return parsed.seed;
-        }
-      }
-    } catch {}
-
-    const seed = hashSlug(`${tourSlug}:${bucket}`);
-
-    try {
-      window.localStorage.setItem(storageKey, JSON.stringify({ bucket, seed }));
-    } catch {}
-
-    return seed;
-  });
+  const variantSeed = hashSlug(`${tourSlug}:stable`);
 
   const getValues = useCallback(() => {
     const viewing = seededRand(tourSlug, 100 + variantSeed, 3, 15);

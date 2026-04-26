@@ -29,8 +29,8 @@ export default function AdminLoginPage() {
           {devBypass ? (
             <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm text-amber-800">
               Development bypass is active because admin credentials are not set
-              yet. In production, set `ADMIN_ACCESS_PASSWORD` and
-              `ADMIN_SESSION_SECRET`.
+              yet. In production, set `ADMIN_ACCESS_EMAIL`,
+              `ADMIN_ACCESS_PASSWORD`, and `ADMIN_SESSION_SECRET`.
             </div>
           ) : configured ? (
             <div className="mt-6">
@@ -39,8 +39,8 @@ export default function AdminLoginPage() {
           ) : (
             <div className="mt-6 rounded-2xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-700">
               Admin access is not configured yet. Add
-              `ADMIN_ACCESS_PASSWORD` and `ADMIN_SESSION_SECRET` to enable
-              secure login.
+              `ADMIN_ACCESS_EMAIL`, `ADMIN_ACCESS_PASSWORD`, and
+              `ADMIN_SESSION_SECRET` to enable secure login.
             </div>
           )}
         </div>

@@ -15,6 +15,24 @@ export function AdminLoginForm() {
     <form action={formAction} className="space-y-4">
       <div>
         <label
+          htmlFor="admin-email"
+          className="block text-sm font-medium text-[var(--heading)]"
+        >
+          Admin email
+        </label>
+        <input
+          id="admin-email"
+          name="email"
+          type="email"
+          required
+          autoComplete="username"
+          className="mt-1.5 w-full rounded-2xl border border-[var(--line)] px-4 py-3 text-sm outline-none transition-colors focus:border-[var(--brand-primary)]"
+          placeholder="info@merrysails.com"
+        />
+      </div>
+
+      <div>
+        <label
           htmlFor="admin-password"
           className="block text-sm font-medium text-[var(--heading)]"
         >

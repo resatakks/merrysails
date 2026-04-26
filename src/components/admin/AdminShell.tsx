@@ -1,9 +1,19 @@
 import Link from "next/link";
+import {
+  BarChart3,
+  CalendarDays,
+  ClipboardList,
+  Gauge,
+  Inbox,
+  ShipWheel,
+  type LucideIcon,
+} from "lucide-react";
 import { adminLogoutAction } from "@/app/actions/admin";
 
 interface AdminShellProps {
   currentPath:
     | "/admin"
+    | "/admin/leads"
     | "/admin/reservations"
     | "/admin/operations"
     | "/admin/calendar"
@@ -16,12 +26,14 @@ interface AdminShellProps {
 const navItems: Array<{
   href: AdminShellProps["currentPath"];
   label: string;
+  Icon: LucideIcon;
 }> = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/reservations", label: "Reservations" },
-  { href: "/admin/calendar", label: "Calendar" },
-  { href: "/admin/reports", label: "Reports" },
-  { href: "/admin/operations", label: "Operations" },
+  { href: "/admin", label: "Dashboard", Icon: Gauge },
+  { href: "/admin/leads", label: "Leads", Icon: Inbox },
+  { href: "/admin/reservations", label: "Reservations", Icon: ClipboardList },
+  { href: "/admin/calendar", label: "Calendar", Icon: CalendarDays },
+  { href: "/admin/reports", label: "Reports", Icon: BarChart3 },
+  { href: "/admin/operations", label: "Operations", Icon: ShipWheel },
 ];
 
 export function AdminShell({
@@ -59,17 +71,20 @@ export function AdminShell({
         <div className="mb-8 flex flex-wrap gap-3">
           {navItems.map((item) => {
             const active = currentPath === item.href;
+            const { Icon } = item;
 
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
+                aria-current={active ? "page" : undefined}
+                className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
                   active
-                    ? "bg-[var(--brand-primary)] text-white shadow-sm"
+                    ? "bg-[var(--brand-primary)] !text-white shadow-sm"
                     : "border border-[var(--line)] bg-white text-[var(--heading)] hover:border-[var(--brand-primary)]/30"
                 }`}
               >
+                <Icon className="h-4 w-4" aria-hidden="true" />
                 {item.label}
               </Link>
             );

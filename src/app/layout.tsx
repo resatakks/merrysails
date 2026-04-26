@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { DM_Sans } from "next/font/google";
+import Script from "next/script";
+import AnalyticsRouteTracker from "@/components/analytics/AnalyticsRouteTracker";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
 import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
@@ -13,6 +16,10 @@ const dmSans = DM_Sans({
 });
 
 const SITE_URL = "https://merrysails.com";
+const GTM_CONTAINER_ID =
+  process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? "";
+const CLARITY_PROJECT_ID =
+  process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "wfsykdd4gb";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -214,8 +221,7 @@ const siteNavigationSchema = {
     "Bosphorus Sunset Cruise",
     "Dinner Cruise",
     "Yacht Charter",
-    "All Cruises",
-    "Private Tours",
+    "Bosphorus Cruise Hub",
     "Blog",
     "Istanbul Guides",
     "About",
@@ -226,8 +232,7 @@ const siteNavigationSchema = {
     `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
     `${SITE_URL}/istanbul-dinner-cruise`,
     `${SITE_URL}/yacht-charter-istanbul`,
-    `${SITE_URL}/cruises`,
-    `${SITE_URL}/private-tours`,
+    `${SITE_URL}/bosphorus-cruise`,
     `${SITE_URL}/blog`,
     `${SITE_URL}/guides`,
     `${SITE_URL}/about`,
@@ -250,6 +255,43 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        {GTM_CONTAINER_ID ? (
+          <>
+            <Script
+              id="gtm-bootstrap"
+              strategy="beforeInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                  });
+                `,
+              }}
+            />
+            <Script
+              id="gtm-script"
+              src={`https://www.googletagmanager.com/gtm.js?id=${GTM_CONTAINER_ID}`}
+              strategy="afterInteractive"
+            />
+          </>
+        ) : null}
+        {CLARITY_PROJECT_ID ? (
+          <Script
+            id="microsoft-clarity"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
+            `,
+            }}
+          />
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -260,6 +302,19 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        {GTM_CONTAINER_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
+        <Suspense fallback={null}>
+          <AnalyticsRouteTracker />
+        </Suspense>
         <ToastProvider>
           <SiteChrome>{children}</SiteChrome>
         </ToastProvider>

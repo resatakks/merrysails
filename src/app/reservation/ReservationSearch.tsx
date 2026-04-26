@@ -5,21 +5,15 @@ import { Search, Mail, Hash, Calendar, Users, Clock, Loader2, ChevronRight } fro
 import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import { getReservationsByEmail } from "@/app/actions/reservation";
+import { getReservationStatusLabel, normalizeReservationStatus } from "@/lib/reservation-status";
 
 type SearchMode = "id" | "email";
 
 const statusColors: Record<string, string> = {
-  pending: "bg-yellow-100 text-yellow-800",
+  new: "bg-yellow-100 text-yellow-800",
   confirmed: "bg-green-100 text-green-800",
   cancelled: "bg-red-100 text-red-800",
   completed: "bg-blue-100 text-blue-800",
-};
-
-const statusLabels: Record<string, string> = {
-  pending: "Pending",
-  confirmed: "Confirmed",
-  cancelled: "Cancelled",
-  completed: "Completed",
 };
 
 interface ReservationResult {
@@ -190,8 +184,8 @@ export default function ReservationSearch() {
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold ${statusColors[r.status] || "bg-gray-100 text-gray-800"}`}>
-                    {statusLabels[r.status] || r.status}
+                  <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold ${statusColors[normalizeReservationStatus(r.status)] || "bg-gray-100 text-gray-800"}`}>
+                    {getReservationStatusLabel(r.status)}
                   </span>
                   <ChevronRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--brand-primary)] transition-colors" />
                 </div>

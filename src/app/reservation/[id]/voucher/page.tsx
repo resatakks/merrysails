@@ -13,26 +13,18 @@ import {
   Users,
 } from "lucide-react";
 import { getReservation } from "@/app/actions/reservation";
+import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 import { getTourBySlug, getTourPath } from "@/data/tours";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import {
+  getReservationStatusLabel,
+  getReservationStatusTone,
+  normalizeReservationStatus,
+} from "@/lib/reservation-status";
 
 export const metadata: Metadata = {
   title: "Reservation Voucher",
   robots: { index: false, follow: false },
-};
-
-const statusLabels: Record<string, string> = {
-  pending: "Pending confirmation",
-  confirmed: "Confirmed",
-  cancelled: "Cancelled",
-  completed: "Completed",
-};
-
-const statusTones: Record<string, string> = {
-  pending: "border-amber-200 bg-amber-50 text-amber-900",
-  confirmed: "border-emerald-200 bg-emerald-50 text-emerald-800",
-  cancelled: "border-red-200 bg-red-50 text-red-800",
-  completed: "border-blue-200 bg-blue-50 text-blue-800",
 };
 
 export default async function ReservationVoucherPage({
@@ -67,7 +59,8 @@ export default async function ReservationVoucherPage({
 
   const reservation = result.reservation;
   const tour = getTourBySlug(reservation.tourSlug);
-  const statusLabel = statusLabels[reservation.status] ?? reservation.status;
+  const normalizedStatus = normalizeReservationStatus(reservation.status);
+  const statusLabel = getReservationStatusLabel(normalizedStatus);
   const reservationMeta = parseReservationNotes(reservation.notes);
   const hasSelectedOptions = Boolean(
     reservationMeta.packageName ||
@@ -75,6 +68,8 @@ export default async function ReservationVoucherPage({
       reservationMeta.privateTransferRequested ||
       reservationMeta.additionalGuests.length > 0
   );
+  const voucherPdfHref = `/reservation/${reservation.reservationId}/voucher/pdf`;
+  const voucherPdfDownloadHref = `${voucherPdfHref}?download=1`;
 
   return (
     <main className="min-h-screen bg-[var(--surface-alt)] px-4 py-10 print:bg-white print:px-0 print:py-0">
@@ -113,6 +108,14 @@ export default async function ReservationVoucherPage({
           </div>
         </div>
 
+        <ReservationPdfPreview
+          eyebrow="Voucher PDF"
+          title="Preview the original boarding voucher PDF"
+          description="Open the travel-ready voucher inside the page, switch to the full PDF viewer, or download the original file for offline access before departure."
+          previewHref={voucherPdfHref}
+          downloadHref={voucherPdfDownloadHref}
+        />
+
         <section className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm print:rounded-none print:border-0 print:shadow-none">
           <div className="bg-[var(--heading)] px-6 py-8 text-white md:px-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -138,7 +141,7 @@ export default async function ReservationVoucherPage({
                 </div>
                 <div className="mt-3">
                   <span
-                    className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${statusTones[reservation.status] ?? "border-white/20 bg-white/10 text-white"}`}
+                    className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${getReservationStatusTone(normalizedStatus)}`}
                   >
                     {statusLabel}
                   </span>

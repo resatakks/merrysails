@@ -24,10 +24,10 @@ export default function TourGrid() {
 
         <div className="text-center mt-10">
           <Link
-            href="/cruises"
+            href="/bosphorus-cruise"
             className="inline-flex items-center gap-2 text-[var(--brand-primary)] font-semibold hover:gap-3 transition-all"
           >
-            Explore all services
+            Compare Bosphorus cruise options
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

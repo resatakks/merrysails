@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 const SITE_URL = "https://merrysails.com";
 
@@ -62,9 +63,7 @@ const serviceJsonLd = {
   description:
     "Private yacht dinner cruise in Istanbul for couples, proposals, birthdays, anniversaries, and small groups who want dinner on their own Bosphorus yacht.",
   provider: {
-    "@type": "TravelAgency",
-    name: "MerrySails",
-    url: SITE_URL,
+    "@id": `${SITE_URL}/#organization`,
   },
   areaServed: "Istanbul, Turkey",
   serviceType: "Private Yacht Dinner Cruise",
@@ -119,6 +118,11 @@ const quoteDrivers = [
 
 const comparePages = [
   {
+    href: "/private-dinner-cruise-for-couples-istanbul",
+    title: "Private Dinner for Couples",
+    description: "A narrower support page for date nights, anniversaries, and quieter couple-led private dinner intent.",
+  },
+  {
     href: "/istanbul-dinner-cruise",
     title: "Istanbul Dinner Cruise",
     description: "Shared tickets, fixed packages, and a lower entry price than a private yacht.",
@@ -134,9 +138,9 @@ const comparePages = [
     description: "Private yacht packages first, then route and add-ons.",
   },
   {
-    href: "/proposal-yacht-rental-istanbul",
-    title: "Proposal Yacht Rental Istanbul",
-    description: "Reveal timing, styling, and privacy centered on the proposal.",
+    href: "/proposal-yacht-with-photographer-istanbul",
+    title: "Proposal Yacht with Photographer",
+    description: "Reveal timing, discreet coverage, and privacy centered on the proposal.",
   },
 ];
 
@@ -180,19 +184,22 @@ export default function PrivateBosphorusDinnerCruisePage() {
               >
                 Plan private dinner
               </Link>
-              <a
+              <TrackedContactLink
                 href="https://wa.me/905370406822"
+                kind="whatsapp"
+                label="private_dinner_page_whatsapp_hero"
+                location="private_dinner_page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl border border-rose-600 px-6 py-3 font-semibold text-rose-600 transition-colors hover:bg-rose-50"
               >
                 Ask on WhatsApp
-              </a>
+              </TrackedContactLink>
             </div>
           </div>
 
           <aside className="rounded-2xl border border-rose-100 bg-rose-50 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">What helps us quote quickly</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">What helps us quote your private Bosphorus dinner cruise</h2>
             <ul className="space-y-3 text-sm text-gray-700">
               {[
                 "Preferred date and dinner time",
@@ -210,7 +217,7 @@ export default function PrivateBosphorusDinnerCruisePage() {
         </section>
 
         <section className="mb-12 rounded-2xl border border-rose-100 bg-rose-50 p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">When a private dinner yacht is the right fit</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">When a private Bosphorus dinner yacht is the right fit</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {fitCards.map((item) => (
               <div key={item.title} className="rounded-xl border border-white bg-white p-4 shadow-sm">
@@ -222,7 +229,7 @@ export default function PrivateBosphorusDinnerCruisePage() {
         </section>
 
         <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What changes the dinner-yacht price</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What changes the private dinner yacht price</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {quoteDrivers.map((item) => (
               <div key={item.title} className="rounded-xl border border-gray-100 bg-gray-50 p-4">
@@ -234,7 +241,7 @@ export default function PrivateBosphorusDinnerCruisePage() {
         </section>
 
         <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Compare with related Bosphorus bookings</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Compare with related private Bosphorus bookings</h2>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {comparePages.map((item) => (
               <Link
@@ -242,8 +249,8 @@ export default function PrivateBosphorusDinnerCruisePage() {
                 href={item.href}
                 className="rounded-xl border border-gray-200 bg-gray-50 p-4 transition-colors hover:border-rose-200 hover:bg-rose-50"
               >
-                <span className="block text-base font-semibold text-gray-900 mb-1">{item.title}</span>
-                <span className="block text-sm text-gray-600">{item.description}</span>
+                <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
               </Link>
             ))}
           </div>
@@ -277,14 +284,17 @@ export default function PrivateBosphorusDinnerCruisePage() {
             >
               Request prices
             </Link>
-            <a
+            <TrackedContactLink
               href="https://wa.me/905370406822"
+              kind="whatsapp"
+              label="private_dinner_page_whatsapp_footer"
+              location="private_dinner_page"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl border border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-rose-700"
             >
               Ask on WhatsApp
-            </a>
+            </TrackedContactLink>
           </div>
         </div>
       </main>

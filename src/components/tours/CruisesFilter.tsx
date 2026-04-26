@@ -10,7 +10,6 @@ import {
   ChevronDown,
   Star,
   Clock,
-  Users,
   SlidersHorizontal,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -246,7 +245,7 @@ export default function CruisesFilter({ tours }: { tours: Tour[] }) {
               Clear filters
             </button>
           </motion.div>
-        ) : view === "grid" || typeof window !== "undefined" && window.innerWidth < 768 ? (
+        ) : view === "grid" ? (
           <motion.div
             key="grid"
             initial={{ opacity: 0 }}
@@ -322,11 +321,6 @@ function TourListItem({ tour }: { tour: Tour }) {
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="320px"
         />
-        {/* Capacity badge */}
-        <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1">
-          <Users className="w-3 h-3" />
-          {tour.capacity}
-        </div>
         {/* Category badge */}
         <div className="absolute bottom-3 left-3">
           <span className="bg-white/90 backdrop-blur-sm text-[var(--heading)] text-xs font-semibold px-2.5 py-1 rounded-md">

@@ -14,9 +14,29 @@ interface CommercialIntentSectionProps {
   compact?: boolean;
 }
 
+const visibleCompactCount = 8;
+const targetTypeOrder = {
+  "core-product": 0,
+  "service-page": 1,
+  "commercial-guide": 2,
+} as const;
+
 export default function CommercialIntentSection({
   compact = false,
 }: CommercialIntentSectionProps) {
+  const orderedIntents = [...commercialIntents]
+    .map((intent, index) => ({ intent, index }))
+    .sort((a, b) => {
+      const typeDiff =
+        targetTypeOrder[a.intent.targetType] - targetTypeOrder[b.intent.targetType];
+      return typeDiff !== 0 ? typeDiff : a.index - b.index;
+    })
+    .map(({ intent }) => intent);
+
+  const visibleIntents = compact
+    ? orderedIntents.slice(0, visibleCompactCount)
+    : orderedIntents;
+
   return (
     <section className={compact ? "py-12 bg-white" : "py-16 md:py-24 bg-white"}>
       <div className="container-main">
@@ -29,13 +49,13 @@ export default function CommercialIntentSection({
             Find the Bosphorus cruise that fits your plan
           </h2>
           <p className="mt-3 text-sm md:text-base leading-relaxed text-[var(--text-muted)]">
-            Lead with the core experiences, then move to the private, proposal,
-            and corporate options when the brief is narrower.
+            Start with the comparison hub and the 3 core owner pages, then move to the narrower
+            private, proposal, pickup, and corporate routes only when the brief is already specific.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {commercialIntents.map((intent) => {
+          {visibleIntents.map((intent) => {
             const keyword = getLocalizedValue(intent.keyword, DEFAULT_LOCALE);
             const title = getLocalizedValue(intent.title, DEFAULT_LOCALE);
             const description = getLocalizedValue(intent.description, DEFAULT_LOCALE);

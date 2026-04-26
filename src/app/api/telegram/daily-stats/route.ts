@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { sendDailyReport } from "@/lib/telegram/notifications";
 import { formatDailyStats } from "@/lib/telegram/formatters";
+import { normalizeReservationStatus } from "@/lib/reservation-status";
 
 export async function GET(req: NextRequest) {
   try {
@@ -34,7 +35,7 @@ export async function GET(req: NextRequest) {
       total: reservations.length,
       completed: reservations.filter((r: ReservationRow) => r.status === "completed").length,
       cancelled: reservations.filter((r: ReservationRow) => r.status === "cancelled").length,
-      newCount: reservations.filter((r: ReservationRow) => r.status === "pending").length,
+      newCount: reservations.filter((r: ReservationRow) => normalizeReservationStatus(r.status) === "new").length,
       revenue,
       currency: "€",
       topTours,
@@ -49,4 +50,4 @@ export async function GET(req: NextRequest) {
 }
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+export const maxDuration = 60;

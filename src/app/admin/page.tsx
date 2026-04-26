@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { format } from "date-fns";
+import { BarChart3, CalendarDays, ClipboardList } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { requireAdminSession } from "@/lib/admin-auth";
 import { getCoreTours, getTourBySlug } from "@/data/tours";
 import { listUpcomingTourOperations } from "@/lib/tour-operations";
 import { AdminShell } from "@/components/admin/AdminShell";
+import { ACTIVE_RESERVATION_STATUSES } from "@/lib/reservation-status";
 
 function formatMoney(value: number) {
   return `€${value.toLocaleString("en-US")}`;
@@ -29,7 +31,7 @@ export default async function AdminDashboardPage() {
   dayAfterTomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
 
   const [
-    pendingCount,
+    newCount,
     confirmedTodayCount,
     upcomingReservations,
     operations,
@@ -38,7 +40,7 @@ export default async function AdminDashboardPage() {
     revenueSnapshot,
   ] =
     await Promise.all([
-      prisma.reservation.count({ where: { status: "pending" } }),
+      prisma.reservation.count({ where: { status: { in: ["new", "pending"] } } }),
       prisma.reservation.count({
         where: {
           status: "confirmed",
@@ -73,7 +75,7 @@ export default async function AdminDashboardPage() {
       prisma.reservation.aggregate({
         _sum: { totalPrice: true },
         where: {
-          status: { in: ["pending", "confirmed", "completed"] },
+          status: { in: [...ACTIVE_RESERVATION_STATUSES] },
           date: { gte: today },
         },
       }),
@@ -86,8 +88,8 @@ export default async function AdminDashboardPage() {
 
   const summaryCards = [
     {
-      label: "Pending reservations",
-      value: pendingCount,
+      label: "New reservations",
+      value: newCount,
     },
     {
       label: "Confirmed for today",
@@ -132,33 +134,52 @@ export default async function AdminDashboardPage() {
           {
             href: "/admin/reservations",
             title: "Reservation manager",
-            description: "Search bookings, update statuses, and jump straight to invoice or voucher pages.",
+            label: "Bookings",
+            value: "CRM",
+            Icon: ClipboardList,
+            accent: "from-[#182987] to-[#304058]",
           },
           {
             href: "/admin/calendar",
             title: "Calendar view",
-            description: "See service density, sold-out dates, and upcoming departures on a monthly board.",
+            label: "Monthly",
+            value: "Dates",
+            Icon: CalendarDays,
+            accent: "from-[#0f766e] to-[#25D366]",
           },
           {
             href: "/admin/reports",
             title: "Commercial reports",
-            description: "Review revenue mix, booking pace, and the 3 core product split from one place.",
+            label: "Margin",
+            value: "€",
+            Icon: BarChart3,
+            accent: "from-[#c78200] to-[#ff4b2b]",
           },
         ].map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm transition-colors hover:border-[var(--brand-primary)]/30"
+            className="group overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:border-[var(--brand-primary)]/30 hover:shadow-md"
           >
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-primary)]">
-              Admin shortcut
-            </p>
-            <h2 className="mt-3 text-xl font-bold text-[var(--heading)]">
-              {item.title}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
-              {item.description}
-            </p>
+            <div className={`h-28 bg-gradient-to-br ${item.accent} p-5 text-white`}>
+              <div className="flex items-start justify-between">
+                <item.Icon className="h-10 w-10" aria-hidden="true" />
+                <span className="rounded-full bg-white/16 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-white">
+                  {item.label}
+                </span>
+              </div>
+              <div className="mt-4 text-3xl font-black leading-none text-white">
+                {item.value}
+              </div>
+            </div>
+            <div className="flex items-center justify-between gap-3 p-5">
+              <h2 className="text-lg font-bold text-[var(--heading)]">
+                {item.title}
+              </h2>
+              <span className="rounded-full border border-[var(--line)] px-3 py-1 text-xs font-bold text-[var(--brand-primary)] transition-colors group-hover:border-[var(--brand-primary)]">
+                Open
+              </span>
+            </div>
           </Link>
         ))}
       </div>

@@ -5,6 +5,36 @@ import { ArrowLeft, ArrowRight, MapPin, BookOpen } from "lucide-react";
 import { guides, getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
 import { getTourBySlug, getTourPath, isPricingVisible } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
+import { cleanContentText } from "@/lib/content-text";
+import { BlogSectionBlock } from "@/components/blog/blog-section";
+
+const defaultGuideSupportSlugs = [
+  "bosphorus-cruise-boarding-points-guide-2026",
+  "bosphorus-sunset-cruise-vs-dinner-cruise",
+  "bosphorus-dinner-cruise-what-to-expect",
+  "private-yacht-departure-points-istanbul",
+] as const;
+
+const guideSupportPostMap: Record<string, readonly string[]> = {
+  "kabatas-pier": [
+    "bosphorus-cruise-boarding-points-guide-2026",
+    "bosphorus-dinner-cruise-what-to-expect",
+    "bosphorus-sunset-cruise-vs-dinner-cruise",
+    "bosphorus-cruise-departure-points",
+  ],
+  "karakoy-waterfront": [
+    "istanbul-sunset-cruise-experience",
+    "bosphorus-sunset-cruise-vs-dinner-cruise",
+    "bosphorus-cruise-boarding-points-guide-2026",
+    "bosphorus-cruise-departure-points",
+  ],
+  "kurucesme-marina": [
+    "private-yacht-departure-points-istanbul",
+    "boat-rental-vs-yacht-charter-istanbul",
+    "corporate-yacht-events-on-the-bosphorus",
+    "proposal-yacht-rental-istanbul-planning-guide",
+  ],
+};
 
 export function generateStaticParams() {
   return getAllGuideSlugs().map((slug) => ({ slug }));
@@ -14,10 +44,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) return {};
+  const cleanTitle = cleanContentText(guide.title);
+  const cleanDescription = cleanContentText(guide.metaDescription);
 
   return {
-    title: guide.title,
-    description: guide.metaDescription,
+    title: cleanTitle,
+    description: cleanDescription,
     keywords: guide.keywords,
     alternates: {
       canonical: `https://merrysails.com/guides/${guide.slug}`,
@@ -34,16 +66,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       },
     },
     openGraph: {
-      title: guide.title,
-      description: guide.metaDescription,
+      title: cleanTitle,
+      description: cleanDescription,
       url: `https://merrysails.com/guides/${guide.slug}`,
       type: "article",
       images: [{ url: guide.image }],
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.title,
-      description: guide.metaDescription,
+      title: cleanTitle,
+      description: cleanDescription,
       images: [guide.image],
     },
   };
@@ -57,6 +89,9 @@ export default async function GuidePage({
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
+  const cleanTitle = cleanContentText(guide.title);
+  const cleanDescription = cleanContentText(guide.metaDescription);
+  const cleanExcerpt = cleanContentText(guide.excerpt);
 
   const relatedTours = guide.relatedTours
     .map(getTourBySlug)
@@ -82,7 +117,7 @@ export default async function GuidePage({
       {
         "@type": "ListItem",
         position: 3,
-        name: guide.title,
+        name: cleanTitle,
         item: `https://merrysails.com/guides/${guide.slug}`,
       },
     ],
@@ -91,11 +126,11 @@ export default async function GuidePage({
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: guide.title,
-    description: guide.metaDescription,
+    headline: cleanTitle,
+    description: cleanDescription,
     image: guide.image,
     datePublished: "2025-09-15",
-    dateModified: "2026-03-10",
+    dateModified: "2026-04-23",
     author: {
       "@type": "Organization",
       "@id": "https://merrysails.com/#organization",
@@ -145,7 +180,7 @@ export default async function GuidePage({
             </Link>
             <span>/</span>
             <span className="text-[var(--heading)] truncate max-w-xs">
-              {guide.title}
+              {cleanTitle}
             </span>
           </nav>
 
@@ -154,20 +189,20 @@ export default async function GuidePage({
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-4 h-4 text-[var(--brand-primary)]" />
               <span className="text-sm font-medium text-[var(--brand-primary)]">
-                Istanbul Landmark Guide
+                Istanbul Cruise & Location Guide
               </span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {guide.title}
+              {cleanTitle}
             </h1>
-            <p className="text-lg text-[var(--body-text)]">{guide.excerpt}</p>
+            <p className="text-lg text-[var(--body-text)]">{cleanExcerpt}</p>
           </div>
 
           {/* Hero Image */}
           <div className="relative aspect-[2/1] rounded-2xl overflow-hidden mb-10">
             <Image
               src={guide.image}
-              alt={guide.title}
+              alt={cleanTitle}
               fill
               className="object-cover"
               priority
@@ -175,16 +210,9 @@ export default async function GuidePage({
           </div>
 
           {/* Content Sections */}
-          <div className="prose prose-lg max-w-none">
+          <div className="max-w-none">
             {guide.sections.map((section, i) => (
-              <section key={i} className="mb-8">
-                <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">
-                  {section.heading}
-                </h2>
-                <p className="text-[var(--body-text)] leading-relaxed">
-                  {section.content}
-                </p>
-              </section>
+              <BlogSectionBlock key={i} section={section} index={i} />
             ))}
           </div>
 
@@ -231,13 +259,9 @@ export default async function GuidePage({
 
           {/* Related Blog Posts */}
           {(() => {
-            const guideKeywords = guide.keywords.map(k => k.toLowerCase());
-            const relatedBlog = blogPosts
-              .filter(p => {
-                const titleLower = p.title.toLowerCase();
-                const excerptLower = p.excerpt.toLowerCase();
-                return guideKeywords.some(k => titleLower.includes(k) || excerptLower.includes(k));
-              })
+            const relatedBlog = (guideSupportPostMap[guide.slug] || defaultGuideSupportSlugs)
+              .map((relatedSlug) => blogPosts.find((post) => post.slug === relatedSlug))
+              .filter((post): post is NonNullable<(typeof blogPosts)[number]> => Boolean(post))
               .slice(0, 4);
             if (relatedBlog.length === 0) return null;
             return (
@@ -256,7 +280,7 @@ export default async function GuidePage({
                       <div className="relative w-20 h-16 rounded-lg overflow-hidden shrink-0">
                         <Image
                           src={post.image}
-                          alt={post.imageAlt || post.title}
+                          alt={cleanContentText(post.imageAlt || post.title)}
                           fill
                           className="object-cover"
                           sizes="80px"
@@ -264,7 +288,7 @@ export default async function GuidePage({
                       </div>
                       <div>
                         <h3 className="text-sm font-semibold group-hover:text-[var(--brand-primary)] transition-colors line-clamp-2">
-                          {post.title}
+                          {cleanContentText(post.title)}
                         </h3>
                         <span className="text-xs text-[var(--text-muted)]">{post.readTime}</span>
                       </div>
@@ -291,7 +315,7 @@ export default async function GuidePage({
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <Image
                           src={g.image}
-                          alt={g.title}
+                          alt={cleanContentText(g.title)}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                           sizes="(max-width: 768px) 100vw, 25vw"
@@ -299,7 +323,7 @@ export default async function GuidePage({
                       </div>
                       <div className="p-3">
                         <h3 className="font-semibold text-sm group-hover:text-[var(--brand-primary)] transition-colors line-clamp-2">
-                          {g.title}
+                          {cleanContentText(g.title)}
                         </h3>
                       </div>
                     </Link>
@@ -312,16 +336,13 @@ export default async function GuidePage({
           {/* CTA */}
           <div className="mt-12 bg-[var(--brand-dark)] rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-3">
-              See This Landmark on a Bosphorus Cruise
+              Compare the Right Bosphorus Cruise Route
             </h2>
             <p className="text-white/70 mb-6">
-              Compare the three main booking pages and choose the right Bosphorus experience.
+              Use the main compare hub first, then move to the owner page or support page that matches your real intent.
             </p>
-            <Link
-              href="/cruises"
-              className="btn-cta !py-3 !px-8"
-            >
-              View All Cruises
+            <Link href="/bosphorus-cruise" className="btn-cta !py-3 !px-8">
+              Compare Bosphorus Cruises
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

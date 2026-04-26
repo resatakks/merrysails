@@ -13,12 +13,10 @@ import Link from "next/link";
 import { tours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul | Sunset Cruise, Dinner Cruise & Yacht Charter 2026",
+  title: "MerrySails Istanbul Cruises | Sunset, Dinner & Yacht Charter 2026",
   description:
     "Compare the 3 core MerrySails experiences in Istanbul: Bosphorus Sunset Cruise, Bosphorus Dinner Cruise, and Yacht Charter in Istanbul.",
   keywords: [
-    "bosphorus cruise",
-    "bosphorus cruise istanbul",
     "istanbul cruise",
     "bosphorus sunset cruise",
     "istanbul dinner cruise",
@@ -29,11 +27,10 @@ export const metadata: Metadata = {
     "istanbul boat trip",
     "bosphorus cruise 2026",
     "istanbul boat tour 2026",
-    "best bosphorus cruise istanbul",
   ],
   alternates: { canonical: "https://merrysails.com" },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul | Sunset Cruise, Dinner Cruise & Yacht Charter 2026",
+    title: "MerrySails Istanbul Cruises | Sunset, Dinner & Yacht Charter 2026",
     description:
       "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
     url: "https://merrysails.com",
@@ -49,72 +46,8 @@ const websiteSchema = {
   alternateName: "Merry Tourism",
   url: "https://merrysails.com",
   publisher: {
-    "@type": "TravelAgency",
     "@id": "https://merrysails.com/#organization",
-    name: "MerrySails",
   },
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness", "TravelAgency"],
-  "@id": "https://merrysails.com/#organization",
-  name: "MerrySails",
-  alternateName: "Merry Tourism",
-  url: "https://merrysails.com",
-  logo: "https://merrysails.com/images/logo.png",
-  image: "https://merrysails.com/og-image.jpg",
-  description:
-    "TURSAB A Group licensed Bosphorus cruise company in Istanbul. Private yacht charters, dinner cruises, sunset cruises and boat tours since 2001.",
-  foundingDate: "2001",
-  telephone: "+905370406822",
-  email: "info@merrysails.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Ortaköy Marina",
-    addressLocality: "Istanbul",
-    addressRegion: "Istanbul",
-    postalCode: "34347",
-    addressCountry: "TR",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 41.0483,
-    longitude: 29.0278,
-  },
-  openingHours: "Mo-Su 07:00-23:00",
-  priceRange: "€€",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Bosphorus Cruise Istanbul Packages",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Bosphorus Sunset Cruise",
-        price: "34",
-        priceCurrency: "EUR",
-        url: "https://merrysails.com/cruises/bosphorus-sunset-cruise",
-      },
-      {
-        "@type": "Offer",
-        name: "Bosphorus Dinner Cruise",
-        price: "30",
-        priceCurrency: "EUR",
-        url: "https://merrysails.com/istanbul-dinner-cruise",
-      },
-      {
-        "@type": "Offer",
-        name: "Yacht Charter Istanbul",
-        price: "280",
-        priceCurrency: "EUR",
-        url: "https://merrysails.com/yacht-charter-istanbul",
-      },
-    ],
-  },
-  sameAs: [
-    "https://www.tripadvisor.com/merrysails",
-    "https://www.instagram.com/merrysails",
-  ],
 };
 
 const homepageFaqSchema = {
@@ -190,28 +123,52 @@ const coreBookingPages = [
 
 const supportPages = [
   {
-    href: "/proposal-yacht-rental-istanbul",
-    eyebrow: "Romantic option",
-    title: "Proposal Yacht Rental Istanbul",
-    description: "Private timing, decoration, and reveal-moment planning for proposal bookings.",
+    href: "/sunset-cruise-tickets-istanbul",
+    eyebrow: "Shared sunset tickets",
+    title: "Sunset Ticket Support",
+    description: "Use this when the shared sunset route is already the likely fit and the remaining question is public ticket and option clarity.",
   },
   {
-    href: "/corporate-events",
-    eyebrow: "Hosted group",
-    title: "Corporate Events",
-    description: "AV, catering, branded setup, and guest-flow planning for company bookings.",
+    href: "/turkish-night-dinner-cruise-istanbul",
+    eyebrow: "Show-led shared dinner",
+    title: "Turkish Night Dinner Support",
+    description: "Use this when the Turkish-night dinner format matters more than pickup or Kabatas-side boarding questions.",
   },
   {
-    href: "/private-bosphorus-dinner-cruise",
-    eyebrow: "Private evening",
-    title: "Private Bosphorus Dinner Cruise",
-    description: "Reserved yacht dining with a calmer evening flow and private service details.",
+    href: "/dinner-cruise-with-hotel-pickup-istanbul",
+    eyebrow: "Pickup-led brief",
+    title: "Dinner Pickup Support",
+    description: "Use this when the shared dinner route is already right and the main question is hotel pickup eligibility.",
   },
   {
-    href: "/boat-rental-istanbul",
-    eyebrow: "Flexible brief",
-    title: "Boat Rental Istanbul",
-    description: "A lighter private-hire brief before moving into a full yacht charter.",
+    href: "/dinner-cruise-pickup-sultanahmet-taksim",
+    eyebrow: "Central hotel pickup",
+    title: "Sultanahmet & Taksim Pickup",
+    description: "Use this when the blocker is whether Sultanahmet, Taksim, Sirkeci, or Karakoy fits the dinner pickup flow.",
+  },
+  {
+    href: "/boat-rental-hourly-istanbul",
+    eyebrow: "Hourly private hire",
+    title: "Boat Rental Hourly",
+    description: "Use this when the brief is shorter, lighter, and hour-led before a package-driven charter.",
+  },
+  {
+    href: "/bosphorus-cruise-departure-points",
+    eyebrow: "Waterfront logic",
+    title: "Departure Points Hub",
+    description: "Use this when the main question is where dinner, sunset, and private yacht products actually start in Istanbul.",
+  },
+  {
+    href: "/proposal-yacht-with-photographer-istanbul",
+    eyebrow: "Proposal coverage",
+    title: "Proposal Yacht with Photographer",
+    description: "Use this when discreet reveal coverage and couple portraits are part of the decision before booking.",
+  },
+  {
+    href: "/corporate-yacht-dinner-istanbul",
+    eyebrow: "Dinner-led company brief",
+    title: "Corporate Yacht Dinner",
+    description: "Use this when a private yacht dinner matters more than a broader client-hosting or launch format.",
   },
 ] as const;
 
@@ -224,10 +181,6 @@ export default function HomePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
       />
       <HeroSection />
@@ -236,7 +189,7 @@ export default function HomePage() {
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
-            Start with the experience that matches the plan
+            Choose Your Bosphorus Cruise, Dinner Cruise or Yacht Charter
           </h2>
           <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
             These are the 3 core booking options for direct bookings.
@@ -278,10 +231,10 @@ export default function HomePage() {
       <section className="py-12 bg-[var(--surface-alt)]">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
-            Use the specific experiences when the trip has a narrower brief
+            Use These Support Routes Only When The Brief Is Already Narrow
           </h2>
           <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            These experiences fit trips shaped by a proposal, a company booking, a private dinner, or a lighter private-hire request.
+            Broad searchers should still start with sunset, dinner, yacht charter, or the Bosphorus compare hub. These links are only for narrower pickup, corporate dinner, proposal, and departure-logic briefs.
           </p>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {supportPages.map((item) => (
@@ -304,23 +257,29 @@ export default function HomePage() {
       <CommercialIntentSection compact />
       <WhyUs />
 
-      {/* Expert References — AI Visibility */}
+      {/* Trust notes — AI Visibility */}
       <section className="py-12 bg-[var(--surface-alt)]">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-semibold text-center mb-6">Industry Standards</h2>
+          <h2 className="text-xl font-semibold text-center mb-6">Bosphorus Cruise Safety & Licensing Standards</h2>
           <div className="space-y-4">
-            <blockquote cite="https://www.tursab.org.tr" className="border-l-4 border-[var(--brand-primary)] pl-4 italic text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <p>&quot;TURSAB A Group licensed travel agencies provide comprehensive passenger protection including insurance coverage and transparent pricing. Choosing a licensed boat-tour company helps ensure compliance with maritime safety regulations.&quot;</p>
-              <footer className="text-sm text-gray-500 mt-2 not-italic">&mdash; <cite>TURSAB (Association of Turkish Travel Agencies)</cite></footer>
-            </blockquote>
-            <blockquote cite="https://www.ktb.gov.tr" className="border-l-4 border-[var(--brand-primary)] pl-4 italic text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <p>&quot;Istanbul&apos;s Bosphorus strait, connecting the Black Sea and Sea of Marmara, hosts over 2 million tourist cruise passengers annually. The strait&apos;s unique position between two continents makes it one of the world&apos;s most significant maritime tourism corridors.&quot;</p>
-              <footer className="text-sm text-gray-500 mt-2 not-italic">&mdash; <cite>T.C. Ministry of Culture and Tourism</cite></footer>
-            </blockquote>
-            <blockquote cite="https://kiyiemniyeti.gov.tr" className="border-l-4 border-[var(--brand-primary)] pl-4 italic text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <p>&quot;All passenger vessels operating in the Bosphorus must comply with Turkish maritime safety standards, including certified crew, life-saving equipment, and regular inspections by the Coastal Safety Directorate.&quot;</p>
-              <footer className="text-sm text-gray-500 mt-2 not-italic">&mdash; <cite>Coastal Safety Directorate</cite></footer>
-            </blockquote>
+            <div className="border-l-4 border-[var(--brand-primary)] pl-4 text-gray-600 bg-white py-3 px-4 rounded-r-lg">
+              <h3 className="text-sm font-semibold text-gray-900 mb-1">Licensed travel-agency operation</h3>
+              <p className="text-sm leading-relaxed">
+                MerrySails is operated by Merry Tourism, a TURSAB A Group licensed travel agency. This keeps licensing, booking support, and guest communication tied to a named Istanbul operator.
+              </p>
+            </div>
+            <div className="border-l-4 border-[var(--brand-primary)] pl-4 text-gray-600 bg-white py-3 px-4 rounded-r-lg">
+              <h3 className="text-sm font-semibold text-gray-900 mb-1">Bosphorus-specific planning</h3>
+              <p className="text-sm leading-relaxed">
+                Sunset, dinner, and private yacht bookings use different timing, boarding, package, and route logic. The site separates those intents so guests can choose the right product before contacting the team.
+              </p>
+            </div>
+            <div className="border-l-4 border-[var(--brand-primary)] pl-4 text-gray-600 bg-white py-3 px-4 rounded-r-lg">
+              <h3 className="text-sm font-semibold text-gray-900 mb-1">Safety and boarding clarity</h3>
+              <p className="text-sm leading-relaxed">
+                Booking pages and confirmation messages are treated as the source of truth for exact meeting points, inclusions, timing, and vessel-specific details.
+              </p>
+            </div>
           </div>
         </div>
       </section>

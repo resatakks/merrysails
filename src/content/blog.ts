@@ -1,6 +1,6 @@
 import { blogPosts as baseBlogPosts, type BlogPost } from "@/data/blog";
 
-const updatedAt = "2026-04-19";
+const updatedAt = "2026-04-23";
 
 type RouteLink = {
   href: string;
@@ -115,11 +115,11 @@ Start with [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) for golde
   },
   {
     slug: "boat-rental-vs-yacht-charter-istanbul",
-    title: "Boat Rental vs Yacht Charter in Istanbul: The Right Private Hire Starts Here",
+    title: "Boat Rental or Yacht Charter in Istanbul? How to Choose the Right Starting Page",
     metaDescription:
-      "Learn the difference between boat rental and yacht charter in Istanbul, when to start with vessel choice, and when to move straight to a private charter.",
+      "Use this planning guide to choose between boat rental and yacht charter in Istanbul, then move to the right owner page for your private brief.",
     excerpt:
-      "Some guests need a flexible boat first; others are already shopping for a package. The route to the right booking page is different.",
+      "Some guests should start with vessel choice, while others should start with the private-yacht owner page. This guide helps you pick the cleaner first click.",
     category: "yacht-guide",
     date: updatedAt,
     dateModified: updatedAt,
@@ -127,11 +127,11 @@ Start with [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) for golde
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
     imageAlt: "Private yacht cruising on open water with Istanbul coastline in the distance",
     keywords: [
-      "boat rental vs yacht charter istanbul",
-      "yacht charter istanbul",
-      "boat rental istanbul",
-      "private boat hire bosphorus",
-      "what is the difference between boat rental and yacht charter",
+      "boat rental or yacht charter istanbul",
+      "difference between boat rental and yacht charter",
+      "private boat hire planning istanbul",
+      "boat rental starting page istanbul",
+      "private yacht planning bosphorus",
     ],
     author: "captain-ahmet",
     keyTakeaways: [
@@ -436,6 +436,7 @@ export const commercialSupportRoutes: Record<string, SupportRoute> = {
       "Use the proposal page when the reveal matters most, then move into dinner or charter only if the plan needs it.",
     links: [
       { href: "/proposal-yacht-rental-istanbul", label: "Open proposal page" },
+      { href: "/proposal-yacht-with-photographer-istanbul", label: "Open proposal with photographer" },
       { href: "/private-bosphorus-dinner-cruise", label: "Open private dinner cruise" },
       { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
     ],
@@ -447,17 +448,18 @@ export const commercialSupportRoutes: Record<string, SupportRoute> = {
       "If the event is business-led, the corporate page should carry the first click and the first quote.",
     links: [
       { href: "/corporate-events", label: "Open corporate events" },
-      { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
-      { href: "/private-bosphorus-dinner-cruise", label: "Open private dinner cruise" },
+      { href: "/client-hosting-yacht-istanbul", label: "Open client hosting yacht" },
+      { href: "/product-launch-yacht-istanbul", label: "Open product launch yacht" },
+      { href: "/team-building-yacht-istanbul", label: "Open team building yacht" },
     ],
   },
 };
 
 const categoryServiceLinks: Record<BlogCategory, RouteLink[]> = {
   "cruise-guide": [
+    { href: "/bosphorus-cruise", label: "Open Bosphorus cruise hub" },
     { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
     { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
-    { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
   ],
   "yacht-guide": [
     { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
@@ -466,43 +468,35 @@ const categoryServiceLinks: Record<BlogCategory, RouteLink[]> = {
   ],
   events: [
     { href: "/corporate-events", label: "Open corporate events" },
-    { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
-    { href: "/private-bosphorus-dinner-cruise", label: "Open private dinner cruise" },
+    { href: "/private-events", label: "Open private events" },
+    { href: "/proposal-yacht-rental-istanbul", label: "Open proposal page" },
+    { href: "/client-hosting-yacht-istanbul", label: "Open client hosting yacht" },
   ],
   istanbul: [
+    { href: "/bosphorus-cruise", label: "Open Bosphorus cruise hub" },
     { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
     { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
-    { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
   ],
   tips: [
+    { href: "/bosphorus-cruise", label: "Open Bosphorus cruise hub" },
     { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
     { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
-    { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
   ],
 };
 
 const highIntentSlugsByCategory: Record<BlogCategory, string[]> = {
-  "cruise-guide": [
-    "bosphorus-sunset-cruise-vs-dinner-cruise",
-    "boat-rental-vs-yacht-charter-istanbul",
-  ],
+  "cruise-guide": ["bosphorus-sunset-cruise-vs-dinner-cruise"],
   "yacht-guide": [
     "boat-rental-vs-yacht-charter-istanbul",
     "proposal-yacht-rental-istanbul-planning-guide",
-    "corporate-yacht-events-on-the-bosphorus",
+    "private-yacht-departure-points-istanbul",
   ],
   events: [
     "corporate-yacht-events-on-the-bosphorus",
-    "boat-rental-vs-yacht-charter-istanbul",
+    "proposal-yacht-rental-istanbul-planning-guide",
   ],
-  istanbul: [
-    "bosphorus-sunset-cruise-vs-dinner-cruise",
-    "boat-rental-vs-yacht-charter-istanbul",
-  ],
-  tips: [
-    "bosphorus-sunset-cruise-vs-dinner-cruise",
-    "boat-rental-vs-yacht-charter-istanbul",
-  ],
+  istanbul: ["bosphorus-sunset-cruise-vs-dinner-cruise"],
+  tips: ["bosphorus-sunset-cruise-vs-dinner-cruise"],
 };
 
 const categoryRoutingCopy: Record<BlogCategory, { title: string; description: string }> = {
@@ -517,9 +511,9 @@ const categoryRoutingCopy: Record<BlogCategory, { title: string; description: st
       "Use the next click to narrow vessel, proposal, or dinner intent before the brief gets longer than it needs to be.",
   },
   events: {
-    title: "Move the brief into the event page",
+    title: "Move the brief into the right event page",
     description:
-      "When the request is business-led, the event page should carry the first click and the first quote.",
+      "Use the next click to separate private celebrations, proposal plans, and company-led event briefs before asking for a quote.",
   },
   istanbul: {
     title: "Move to the cleanest service page",
@@ -560,6 +554,20 @@ export function getHighIntentBlogSlugs(post: BlogPost): string[] {
   ];
 
   return [...new Set(ordered.filter((slug) => slug !== post.slug))];
+}
+
+export function getHighIntentBlogSlugsForCategory(
+  category: BlogCategory,
+  currentSlug?: string,
+  excludedSlugs: string[] = []
+): string[] {
+  const excluded = new Set([currentSlug, ...excludedSlugs].filter(Boolean));
+  const ordered = [
+    ...(highIntentSlugsByCategory[category] || []),
+    ...highIntentBlogSlugs,
+  ];
+
+  return [...new Set(ordered.filter((slug) => !excluded.has(slug)))];
 }
 
 export const blogPosts = [...commercialSupportPosts, ...baseBlogPosts];

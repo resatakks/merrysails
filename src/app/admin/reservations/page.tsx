@@ -1,25 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { format } from "date-fns";
 import { prisma } from "@/lib/db";
 import { requireAdminSession } from "@/lib/admin-auth";
 import { AdminShell } from "@/components/admin/AdminShell";
-import { AdminStatusButtons } from "@/components/admin/AdminStatusButtons";
-
-function getStatusBadgeClass(status: string): string {
-  switch (status) {
-    case "pending":
-      return "border-amber-200 bg-amber-50 text-amber-800";
-    case "confirmed":
-      return "border-emerald-200 bg-emerald-50 text-emerald-800";
-    case "completed":
-      return "border-sky-200 bg-sky-50 text-sky-800";
-    case "cancelled":
-      return "border-rose-200 bg-rose-50 text-rose-800";
-    default:
-      return "border-[var(--line)] bg-[var(--surface-alt)] text-[var(--heading)]";
-  }
-}
+import { AdminReservationManager } from "@/components/admin/AdminReservationManager";
+import { normalizeReservationStatus } from "@/lib/reservation-status";
 
 export const metadata: Metadata = {
   title: "Admin Reservations",
@@ -29,17 +14,35 @@ export const metadata: Metadata = {
 export default async function AdminReservationsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ status?: string; q?: string }>;
+  searchParams: Promise<{ status?: string; q?: string; date?: string }>;
 }) {
   await requireAdminSession();
 
   const params = await searchParams;
   const status = params.status?.trim().toLowerCase() || "all";
   const query = params.q?.trim() || "";
+  const date = params.date?.trim() || "";
+  const dateMatch = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const selectedDate = dateMatch
+    ? new Date(
+        Date.UTC(
+          Number(dateMatch[1]),
+          Number(dateMatch[2]) - 1,
+          Number(dateMatch[3])
+        )
+      )
+    : null;
+  const selectedDateEnd = selectedDate
+    ? new Date(selectedDate.getTime() + 24 * 60 * 60 * 1000)
+    : null;
 
   const reservations = await prisma.reservation.findMany({
     where: {
-      ...(status !== "all" ? { status } : {}),
+      ...(status !== "all"
+        ? status === "new"
+          ? { status: { in: ["new", "pending"] } }
+          : { status }
+        : {}),
       ...(query
         ? {
             OR: [
@@ -49,14 +52,17 @@ export default async function AdminReservationsPage({
             ],
           }
         : {}),
+      ...(selectedDate && selectedDateEnd
+        ? { date: { gte: selectedDate, lt: selectedDateEnd } }
+        : {}),
     },
-    orderBy: [{ date: "asc" }, { createdAt: "desc" }],
+    orderBy: [{ createdAt: "desc" }],
     take: 120,
   });
 
   const filters = [
     { value: "all", label: "All" },
-    { value: "pending", label: "Pending" },
+    { value: "new", label: "New" },
     { value: "confirmed", label: "Confirmed" },
     { value: "completed", label: "Completed" },
     { value: "cancelled", label: "Cancelled" },
@@ -66,10 +72,10 @@ export default async function AdminReservationsPage({
     <AdminShell
       currentPath="/admin/reservations"
       title="Reservation manager"
-      description="Review incoming reservations, search by guest or booking code, and update statuses without leaving the internal panel."
+      description="Review new reservations by creation time, manage confirmation and completion flow, and track EUR cost before marking bookings as completed."
     >
       <section className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm">
-        <form className="grid gap-4 md:grid-cols-[220px_1fr_auto]">
+        <form className="grid gap-4 md:grid-cols-[180px_180px_1fr_auto]">
           <select
             name="status"
             defaultValue={status}
@@ -81,6 +87,13 @@ export default async function AdminReservationsPage({
               </option>
             ))}
           </select>
+
+          <input
+            type="date"
+            name="date"
+            defaultValue={date}
+            className="h-12 rounded-2xl border border-[var(--line)] bg-white px-4 text-sm outline-none transition-colors focus:border-[var(--brand-primary)]"
+          />
 
           <input
             type="search"
@@ -99,111 +112,35 @@ export default async function AdminReservationsPage({
         </form>
       </section>
 
-      <div className="mt-8 space-y-4">
-        {reservations.length === 0 ? (
-          <div className="rounded-[2rem] border border-[var(--line)] bg-white p-6 text-sm text-[var(--text-muted)] shadow-sm">
-            No reservations matched this filter.
-          </div>
-        ) : (
-          reservations.map((reservation) => (
-            <article
-              key={reservation.id}
-              className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm"
-            >
-              <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-                <div className="space-y-2">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">
-                    {reservation.reservationId}
-                  </p>
-                  <h2 className="text-xl font-bold text-[var(--heading)]">
-                    {reservation.customerName}
-                  </h2>
-                  <p className="text-sm text-[var(--text-muted)]">
-                    {reservation.customerEmail} · {reservation.customerPhone}
-                  </p>
-                  <p className="text-sm font-medium text-[var(--heading)]">
-                    {reservation.tourName}
-                  </p>
-                </div>
-
-                <div className="grid gap-2 text-sm text-[var(--text-muted)] sm:grid-cols-2 lg:min-w-[320px]">
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.16em]">
-                      Date
-                    </div>
-                    <div className="mt-1 text-[var(--heading)]">
-                      {format(new Date(reservation.date), "dd MMM yyyy")}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.16em]">
-                      Time
-                    </div>
-                    <div className="mt-1 text-[var(--heading)]">
-                      {reservation.time}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.16em]">
-                      Guests
-                    </div>
-                    <div className="mt-1 text-[var(--heading)]">
-                      {reservation.guests}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.16em]">
-                      Total
-                    </div>
-                    <div className="mt-1 text-[var(--heading)]">
-                      €{reservation.totalPrice}
-                    </div>
-                  </div>
-                  <div className="sm:col-span-2">
-                    <div className="text-xs font-semibold uppercase tracking-[0.16em]">
-                      Status
-                    </div>
-                    <div
-                      className={`mt-2 inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${getStatusBadgeClass(
-                        reservation.status
-                      )}`}
-                    >
-                      {reservation.status}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-5 flex flex-col gap-4 border-t border-[var(--line)] pt-5 lg:flex-row lg:items-center lg:justify-between">
-                <AdminStatusButtons
-                  reservationId={reservation.reservationId}
-                  currentStatus={reservation.status}
-                />
-
-                <div className="flex flex-wrap gap-2">
-                  <Link
-                    href={`/reservation/${reservation.reservationId}`}
-                    className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]"
-                  >
-                    Reservation
-                  </Link>
-                  <Link
-                    href={`/reservation/${reservation.reservationId}/invoice`}
-                    className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]"
-                  >
-                    Invoice
-                  </Link>
-                  <Link
-                    href={`/reservation/${reservation.reservationId}/voucher`}
-                    className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]"
-                  >
-                    Voucher
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))
-        )}
+      <div className="mt-8">
+        <AdminReservationManager
+          reservations={reservations.map((reservation) => ({
+            id: reservation.id,
+            reservationId: reservation.reservationId,
+            customerName: reservation.customerName,
+            customerEmail: reservation.customerEmail,
+            customerPhone: reservation.customerPhone,
+            tourName: reservation.tourName,
+            dateLabel: format(new Date(reservation.date), "dd MMM yyyy"),
+            dateInput: format(new Date(reservation.date), "yyyy-MM-dd"),
+            time: reservation.time,
+            guests: reservation.guests,
+            totalPrice: Number(reservation.totalPrice),
+            status: normalizeReservationStatus(reservation.status),
+            createdAtLabel: format(new Date(reservation.createdAt), "dd MMM yyyy"),
+            createdTimeLabel: format(new Date(reservation.createdAt), "HH:mm"),
+            internalCostEur:
+              typeof reservation.internalCostEur === "number"
+                ? Number(reservation.internalCostEur)
+                : null,
+            confirmedAtLabel: reservation.confirmedAt
+              ? format(new Date(reservation.confirmedAt), "dd MMM HH:mm")
+              : null,
+            completedAtLabel: reservation.completedAt
+              ? format(new Date(reservation.completedAt), "dd MMM HH:mm")
+              : null,
+          }))}
+        />
       </div>
     </AdminShell>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 export default function CTASection() {
   return (
@@ -18,28 +19,38 @@ export default function CTASection() {
           and corporate event pages.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/cruises" className="btn-cta text-base !py-3.5 !px-8">
-            View Cruise Index
+          <Link href="/bosphorus-cruise" className="btn-cta text-base !py-3.5 !px-8">
+            Compare Bosphorus Cruises
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <a
+          <TrackedContactLink
             href="https://wa.me/905370406822"
+            kind="whatsapp"
+            label="homepage_cta_whatsapp"
+            location="homepage_cta"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[var(--brand-whatsapp)] text-white font-bold py-3.5 px-8 rounded-full hover:brightness-110 transition-all"
           >
             <Phone className="w-4 h-4" />
             WhatsApp
-          </a>
-          <a
+          </TrackedContactLink>
+          <TrackedContactLink
             href="tel:+905370406822"
+            kind="phone"
+            label="homepage_cta_call"
+            location="homepage_cta"
             className="inline-flex items-center gap-2 bg-white text-[var(--brand-dark)] font-bold py-3.5 px-8 rounded-full hover:bg-white/90 transition-all"
           >
             <Phone className="w-4 h-4" />
             Call Us
-          </a>
+          </TrackedContactLink>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+          <Link href="/bosphorus-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
+            Bosphorus Cruise Hub
+          </Link>
+          <span className="text-white/30">·</span>
           <Link href="/cruises/bosphorus-sunset-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
             Bosphorus Sunset Cruise
           </Link>

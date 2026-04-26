@@ -17,6 +17,7 @@ import { prisma } from "@/lib/db";
 import { requireAdminSession } from "@/lib/admin-auth";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { getTourBySlug } from "@/data/tours";
+import { normalizeReservationStatus } from "@/lib/reservation-status";
 
 export const metadata: Metadata = {
   title: "Admin Calendar",
@@ -33,12 +34,12 @@ function getMonthFromQuery(value?: string) {
 }
 
 function getStatusClass(status: string) {
-  switch (status) {
+  switch (normalizeReservationStatus(status)) {
     case "confirmed":
       return "bg-emerald-50 text-emerald-800";
     case "completed":
       return "bg-sky-50 text-sky-800";
-    case "pending":
+    case "new":
       return "bg-amber-50 text-amber-800";
     case "cancelled":
       return "bg-rose-50 text-rose-800";
@@ -105,6 +106,13 @@ export default async function AdminCalendarPage({
   });
 
   const soldOutDays = operations.filter((item) => item.isSoldOut);
+  const calendarToday = new Date();
+  const calendarTomorrow = new Date(calendarToday);
+  calendarTomorrow.setDate(calendarToday.getDate() + 1);
+  const todayKey = format(calendarToday, "yyyy-MM-dd");
+  const tomorrowKey = format(calendarTomorrow, "yyyy-MM-dd");
+  const todayReservations = reservationMap.get(todayKey) ?? [];
+  const tomorrowReservations = reservationMap.get(tomorrowKey) ?? [];
 
   return (
     <AdminShell
@@ -143,6 +151,33 @@ export default async function AdminCalendarPage({
               Next month
             </Link>
           </div>
+        </div>
+
+        <div className="mt-6 grid gap-3 md:grid-cols-4">
+          {[
+            { label: "Today bookings", value: todayReservations.length },
+            {
+              label: "Today guests",
+              value: todayReservations.reduce((sum, reservation) => sum + reservation.guests, 0),
+            },
+            { label: "Tomorrow bookings", value: tomorrowReservations.length },
+            {
+              label: "Tomorrow guests",
+              value: tomorrowReservations.reduce((sum, reservation) => sum + reservation.guests, 0),
+            },
+          ].map((card) => (
+            <div
+              key={card.label}
+              className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4"
+            >
+              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                {card.label}
+              </div>
+              <div className="mt-2 text-2xl font-bold text-[var(--heading)]">
+                {card.value}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-6 grid grid-cols-7 gap-2 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -229,6 +264,15 @@ export default async function AdminCalendarPage({
                     </div>
                   ) : null}
                 </div>
+
+                {dayReservations.length > 0 ? (
+                  <Link
+                    href={`/admin/reservations?date=${key}`}
+                    className="mt-3 inline-flex rounded-full bg-[var(--surface-alt)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-primary)] transition-colors hover:bg-white"
+                  >
+                    View day
+                  </Link>
+                ) : null}
               </div>
             );
           })}

@@ -1,0 +1,41 @@
+Campaign,Asset type,Asset text,Final URL,Notes
+Search | EN | Sunset | Istanbul Presence,Sitelink,Sunset Cruise From EUR 34,https://merrysails.com/cruises/bosphorus-sunset-cruise,Core sunset page
+Search | EN | Sunset | Istanbul Presence,Sitelink,Dinner Cruise From EUR 30,https://merrysails.com/istanbul-dinner-cruise,Cross-sell only
+Search | EN | Sunset | Istanbul Presence,Sitelink,Yacht Charter From EUR 280,https://merrysails.com/yacht-charter-istanbul,Cross-sell only
+Search | EN | Sunset | Istanbul Presence,Sitelink,Contact MerrySails,https://merrysails.com/contact,Support
+Search | EN | Sunset | Istanbul Presence,Callout,Reserve Direct,,Account/campaign asset
+Search | EN | Sunset | Istanbul Presence,Callout,From EUR 34,,Price callout
+Search | EN | Sunset | Istanbul Presence,Callout,Live Guide,,Product truth
+Search | EN | Sunset | Istanbul Presence,Callout,Shared Luxury Yacht,,Product truth
+Search | EN | Sunset | Istanbul Presence,Callout,No Hidden Fees,,Trust
+Search | EN | Dinner | Istanbul Presence,Sitelink,Dinner Cruise From EUR 30,https://merrysails.com/istanbul-dinner-cruise,Core dinner page
+Search | EN | Dinner | Istanbul Presence,Sitelink,Sunset Cruise From EUR 34,https://merrysails.com/cruises/bosphorus-sunset-cruise,Cross-sell only
+Search | EN | Dinner | Istanbul Presence,Sitelink,Meeting Point Info,https://merrysails.com/meeting-points/bosphorus-dinner-cruise,Support
+Search | EN | Dinner | Istanbul Presence,Sitelink,Contact MerrySails,https://merrysails.com/contact,Support
+Search | EN | Dinner | Istanbul Presence,Callout,From EUR 30,,Price callout
+Search | EN | Dinner | Istanbul Presence,Callout,Free Shuttle,,Dinner only
+Search | EN | Dinner | Istanbul Presence,Callout,VIP Table Options,,Product truth
+Search | EN | Dinner | Istanbul Presence,Callout,Turkish Show,,Product truth
+Search | EN | Dinner | Istanbul Presence,Callout,Reserve Direct,,Trust
+Search | EN | Private Yacht | Istanbul Presence,Sitelink,Yacht Charter From EUR 280,https://merrysails.com/yacht-charter-istanbul,Core yacht page
+Search | EN | Private Yacht | Istanbul Presence,Sitelink,Boat Rental Istanbul,https://merrysails.com/boat-rental-istanbul,Support
+Search | EN | Private Yacht | Istanbul Presence,Sitelink,Proposal Yacht Rental,https://merrysails.com/proposal-yacht-rental-istanbul,Support
+Search | EN | Private Yacht | Istanbul Presence,Sitelink,Corporate Events,https://merrysails.com/corporate-events,Support
+Search | EN | Private Yacht | Istanbul Presence,Callout,From EUR 280,,Price callout
+Search | EN | Private Yacht | Istanbul Presence,Callout,Private Yacht,,Product truth
+Search | EN | Private Yacht | Istanbul Presence,Callout,Event Ready,,Use case
+Search | EN | Private Yacht | Istanbul Presence,Callout,Add-Ons Available,,Product truth
+Search | EN | Private Yacht | Istanbul Presence,Callout,Direct Pricing,,Trust
+Search | EN | Sunset | Istanbul Presence,Call,+90 537 040 68 22,,Use Google call asset with call reporting enabled
+Search | EN | Dinner | Istanbul Presence,Call,+90 537 040 68 22,,Use Google call asset with call reporting enabled
+Search | EN | Private Yacht | Istanbul Presence,Call,+90 537 040 68 22,,Use Google call asset with call reporting enabled
+Search | EN | Sunset | Istanbul Presence,Sitelink,WhatsApp Reservation,https://merrysails.com/contact,Keep same-domain; WhatsApp click tracked on landing page
+Search | EN | Dinner | Istanbul Presence,Sitelink,WhatsApp Reservation,https://merrysails.com/contact,Keep same-domain; WhatsApp click tracked on landing page
+Search | EN | Private Yacht | Istanbul Presence,Sitelink,WhatsApp Yacht Planning,https://merrysails.com/contact,Keep same-domain; WhatsApp click tracked on landing page
+Search | EN | Sunset | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/sunset1.jpeg,,Upload manually if accepted by asset requirements
+Search | EN | Sunset | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/sunset5.jpeg,,Upload manually if accepted by asset requirements
+Search | EN | Sunset | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/sunset6.jpeg,,Upload manually if accepted by asset requirements
+Search | EN | Dinner | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/dinner-etkinlik-13.jpeg,,Upload manually if accepted by asset requirements
+Search | EN | Dinner | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/dinner-etkinlik-4.jpeg,,Upload manually if accepted by asset requirements
+Search | EN | Dinner | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/dinner-etkinlik-8.jpeg,,Upload manually if accepted by asset requirements
+Search | EN | Dinner | Istanbul Presence,Image,/Users/resat/Desktop/merrysails/public/images/vip-menu.jpeg,,Upload manually if accepted by asset requirements

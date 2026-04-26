@@ -8,6 +8,7 @@ import { getReservationLinkContext } from "@/lib/reservation-links";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { getExperienceSupportPageUrl } from "@/lib/experience-support";
 import { normalizeReservationStatus } from "@/lib/reservation-status";
+import { getWhatsAppUrl } from "./phone-links";
 
 function esc(text: string | number | null | undefined): string {
   if (text === null || text === undefined) return "-";
@@ -144,6 +145,10 @@ export function formatReservationDetail(r: SailsReservation): string {
   msg += `\n💰 <b>Toplam:</b> ${r.totalPrice} ${cs}`;
   if (r.guests > 1) msg += ` (${r.guests} Misafir)`;
   msg += `\n`;
+  if (typeof r.internalCostEur === "number") {
+    msg += `💶 <b>Maliyet:</b> ${r.internalCostEur} €\n`;
+    msg += `📈 <b>Marj:</b> ${Math.round((r.totalPrice - r.internalCostEur) * 100) / 100} €\n`;
+  }
 
   // Notes
   if (meta.customerNote) msg += `\n📝 <b>Not:</b> ${esc(meta.customerNote)}\n`;
@@ -159,9 +164,9 @@ export function formatReservationDetail(r: SailsReservation): string {
   }
 
   // WhatsApp
-  if (r.customerPhone) {
-    const cleanPhone = r.customerPhone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
-    msg += `\n💬 WhatsApp: https://wa.me/${cleanPhone}`;
+  const whatsappUrl = getWhatsAppUrl(r.customerPhone);
+  if (whatsappUrl) {
+    msg += `\n💬 WhatsApp: ${whatsappUrl}`;
   }
 
   return msg;
@@ -221,9 +226,9 @@ export function formatNewReservation(r: SailsReservation): string {
     msg += `🌐 Tur: ${esc(linkContext.tourUrl)}\n`;
   }
 
-  if (r.customerPhone) {
-    const cleanPhone = r.customerPhone.replace(/[^0-9+]/g, "").replace(/^\+/, "");
-    msg += `\n💬 WhatsApp: https://wa.me/${cleanPhone}\n`;
+  const whatsappUrl = getWhatsAppUrl(r.customerPhone);
+  if (whatsappUrl) {
+    msg += `\n💬 WhatsApp: ${whatsappUrl}\n`;
   }
 
   return msg;
@@ -288,13 +293,9 @@ export function formatBookingAbandonment(
     msg += `📍 <b>Meeting Rehberi:</b> ${esc(context.supportGuideUrl)}\n`;
   }
 
-  if (abandonment.customerPhone) {
-    const cleanPhone = abandonment.customerPhone
-      .replace(/[^0-9+]/g, "")
-      .replace(/^\+/, "");
-    if (cleanPhone.length >= 7) {
-      msg += `\n💬 WhatsApp: https://wa.me/${cleanPhone}`;
-    }
+  const whatsappUrl = getWhatsAppUrl(abandonment.customerPhone);
+  if (whatsappUrl) {
+    msg += `\n💬 WhatsApp: ${whatsappUrl}`;
   }
 
   return msg;
@@ -529,7 +530,7 @@ export function formatWelcome(firstName?: string): string {
   let msg = `👋 <b>Merhaba${name}!</b>\n\n`;
   msg += `⛵ <b>MerrySails Bot</b>'a hoş geldiniz.\n\n`;
   msg += `📋 <b>Rezervasyon Takibi</b>\nmerrysails.com üzerinden gelen tüm\nrezervasyonları anlık takip edin.\n\n`;
-  msg += `✅ <b>Hızlı İşlem</b>\nTek tuşla onayla, iptal et veya tamamla.\n\n`;
+  msg += `✅ <b>Hızlı İşlem</b>\nTek tuşla onayla veya iptal et; tamamlandı için önce EUR maliyet gir.\n\n`;
   msg += `📊 <b>Günlük Raporlar</b>\nSabah brifing, akşam özet ve gün sonu\nraporu otomatik olarak gelir.\n\n`;
   msg += `Başlamak için aşağıdaki butonları kullanın\nveya /yardim yazın.`;
   return msg;
@@ -540,6 +541,7 @@ export function formatHelp(): string {
   let msg = `📖 <b>MerrySails Bot</b>\n━━━━━━━━━━━━━━━━\n\n`;
   msg += `📅 <b>Günlük Takip</b>\n├ /bugun — Bugünkü turlar\n├ /yarin — Yarınki turlar\n└ /hafta — Bu haftanın turları\n\n`;
   msg += `🔍 <b>Sorgulama</b>\n├ /bekleyen — Onay bekleyen turlar\n├ /durum [ID] — Rezervasyon detayı\n└ /ara [isim/tel] — Rezervasyon ara\n\n`;
+  msg += `💶 <b>Maliyet</b>\n└ /maliyet [ID] [EUR] — Tamamlandı öncesi maliyet gir\n\n`;
   msg += `📊 <b>Raporlar</b>\n└ /istatistik — Dönemsel istatistikler\n\n`;
   msg += `⚙️ <b>Ayarlar</b>\n├ /bildirimler — Bildirim tercihleri\n└ /yardim — Bu mesajı göster\n\n`;
   msg += `🔔 <b>Otomatik Bildirimler</b>\n├ Yeni rezervasyon bildirimi\n├ 2 saat kala hatırlatma\n├ 08:00 Sabah brifing\n├ 18:30 Akşam özet\n└ 23:00 Gün sonu rapor`;

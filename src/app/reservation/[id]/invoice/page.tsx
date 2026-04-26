@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { getReservation } from "@/app/actions/reservation";
+import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 import { getTourBySlug } from "@/data/tours";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 
@@ -96,6 +97,8 @@ export default async function ReservationInvoicePage({
   const subtotal = pricing?.subtotal ?? Number(reservation.totalPrice);
   const addOnsTotal = pricing?.addOnsTotal ?? 0;
   const total = pricing?.total ?? Number(reservation.totalPrice);
+  const invoicePdfHref = `/reservation/${reservation.reservationId}/invoice/pdf`;
+  const invoicePdfDownloadHref = `${invoicePdfHref}?download=1`;
 
   return (
     <main className="min-h-screen bg-[var(--surface-alt)] px-4 py-10 print:bg-white print:px-0 print:py-0">
@@ -124,6 +127,14 @@ export default async function ReservationInvoicePage({
             </Link>
           </div>
         </div>
+
+        <ReservationPdfPreview
+          eyebrow="Invoice PDF"
+          title="Preview the original invoice PDF"
+          description="This is the same reservation invoice document generated for email delivery. You can review it here, open it in a dedicated viewer, or download it directly."
+          previewHref={invoicePdfHref}
+          downloadHref={invoicePdfDownloadHref}
+        />
 
         <section className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm print:rounded-none print:border-0 print:shadow-none">
           <div className="bg-[var(--heading)] px-6 py-8 text-white md:px-8">
@@ -311,7 +322,8 @@ export default async function ReservationInvoicePage({
                 </div>
 
                 <div className="mt-5 overflow-hidden rounded-2xl border border-[var(--line)]">
-                  <table className="w-full border-collapse text-sm">
+                  <div className="overflow-x-auto">
+                    <table className="min-w-[38rem] w-full border-collapse text-sm">
                     <thead className="bg-[var(--surface-alt)]">
                       <tr>
                         <th className="px-4 py-3 text-left font-semibold text-[var(--text-muted)]">
@@ -381,7 +393,8 @@ export default async function ReservationInvoicePage({
                         </td>
                       </tr>
                     </tfoot>
-                  </table>
+                    </table>
+                  </div>
                 </div>
               </section>
 

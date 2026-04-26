@@ -28,7 +28,12 @@ import "react-international-phone/style.css";
 import { motion } from "framer-motion";
 import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
-import { trackPurchase, trackWhatsAppClick } from "@/lib/analytics";
+import {
+  handleTrackedContactNavigation,
+  trackBookingAbandonment,
+  trackPurchase,
+  trackWhatsAppClick,
+} from "@/lib/analytics";
 import { hasBookingAbandonmentContact } from "@/lib/booking-abandonment";
 import { PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 
@@ -444,6 +449,16 @@ export default function BookingModal({ booking, onClose }: Props) {
 
       if (response.ok) {
         abandonmentSentRef.current = true;
+        trackBookingAbandonment({
+          fieldsCompleted: payload.fieldsCompleted,
+          guests: payload.guests,
+          packageName: payload.packageName,
+          source: payload.source,
+          tourName: payload.tourName,
+          tourSlug: payload.tourSlug,
+          trigger: payload.trigger,
+          value: payload.totalPrice,
+        });
         return;
       }
     } catch (error) {
@@ -461,6 +476,16 @@ export default function BookingModal({ booking, onClose }: Props) {
 
       if (success) {
         abandonmentSentRef.current = true;
+        trackBookingAbandonment({
+          fieldsCompleted: payload.fieldsCompleted,
+          guests: payload.guests,
+          packageName: payload.packageName,
+          source: payload.source,
+          tourName: payload.tourName,
+          tourSlug: payload.tourSlug,
+          trigger: payload.trigger,
+          value: payload.totalPrice,
+        });
       }
     } catch (error) {
       console.error("Failed to send booking abandonment beacon:", error);
@@ -772,8 +797,12 @@ export default function BookingModal({ booking, onClose }: Props) {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() =>
-                      trackWhatsAppClick({
+                    onClick={(event) =>
+                      handleTrackedContactNavigation(event, {
+                        href: `https://wa.me/905370406822?text=${encodeURIComponent(
+                          `Hi! My reservation ID is ${reservationId}. I'd like to confirm my booking.`
+                        )}`,
+                        kind: "whatsapp",
                         label: "reservation_confirmation_whatsapp",
                         location: booking.tourSlug,
                       })

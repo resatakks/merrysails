@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Anchor, Award, Users, Ship, ArrowRight } from "lucide-react";
+import {
+  COMPANY_NAME,
+  SITE_NAME,
+  TURSAB_AGENCY_NAME,
+  TURSAB_LICENSE_NUMBER,
+} from "@/lib/constants";
 
 export const metadata = {
-  title: "About MerrySails — TURSAB-Licensed Bosphorus Cruises Since 2001",
+  title: `About ${SITE_NAME} — ${COMPANY_NAME} and TURSAB License`,
   description:
-    "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001, offering Bosphorus cruises, private yacht charters, and guided boat tours.",
+    `${SITE_NAME} by ${COMPANY_NAME} — TURSAB-licensed A Group travel agency in Istanbul since 2001, focused on Bosphorus cruises, yacht charter, and clear booking support.`,
   keywords: [
     "merrysails about",
     "merry tourism istanbul",
@@ -15,9 +21,9 @@ export const metadata = {
   ],
   alternates: { canonical: "https://merrysails.com/about" },
   openGraph: {
-    title: "About MerrySails — TURSAB-Licensed Bosphorus Cruises",
+    title: `About ${SITE_NAME} — TURSAB-Licensed Bosphorus Cruises`,
     description:
-      "TURSAB-licensed since 2001. Learn about MerrySails, the Bosphorus cruise and yacht division of Merry Tourism in Istanbul.",
+      `TURSAB-licensed since 2001. Learn about ${SITE_NAME}, the Bosphorus cruise and yacht division of ${COMPANY_NAME} in Istanbul.`,
     url: "https://merrysails.com/about",
     type: "website" as const,
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul" }],
@@ -28,18 +34,17 @@ const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "About MerrySails",
-  description: "MerrySails by Merry Tourism — TURSAB-licensed A Group travel agency in Istanbul since 2001, offering Bosphorus cruises, private yacht charters, and guided boat tours.",
+  description: `${SITE_NAME} by ${COMPANY_NAME} — TURSAB-licensed A Group travel agency in Istanbul since 2001, offering Bosphorus cruises, private yacht charters, and guided boat tours.`,
   url: "https://merrysails.com/about",
   mainEntity: {
     "@type": "TravelAgency",
     "@id": "https://merrysails.com/#organization",
-    name: "MerrySails",
-    alternateName: "Merry Tourism",
+    name: SITE_NAME,
+    alternateName: COMPANY_NAME,
     foundingDate: "2001-01-01",
-    numberOfEmployees: { "@type": "QuantitativeValue", minValue: 20 },
     slogan: "Bosphorus Cruises in Istanbul Since 2001",
     knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
-    award: "TURSAB A Group License",
+    award: `TURSAB A Group License ${TURSAB_LICENSE_NUMBER}`,
   },
 };
 
@@ -61,9 +66,9 @@ export default function AboutPage() {
       <div className="container-main">
         {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">About MerrySails — Bosphorus Cruises by Merry Tourism</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">About {SITE_NAME} — Bosphorus Cruises by {COMPANY_NAME}</h1>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg">
-            MerrySails is part of Merry Tourism, a TURSAB-licensed A Group travel agency.
+            {SITE_NAME} is part of {COMPANY_NAME}, a TURSAB-licensed A Group travel agency.
             Since 2001, we have offered Bosphorus boat tours, sunset cruises, dinner
             cruises, and private yacht charters in Istanbul.
           </p>
@@ -82,21 +87,23 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-bold mb-4">Our Story — Bosphorus Cruises Since 2001</h2>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Since 2001, Merry Tourism has focused on Bosphorus cruises, yacht charters,
-              and boat tours in Istanbul. What started as a small family operation with a
-              single boat has grown into a fleet of modern vessels serving more than 50,000 guests.
+              Since 2001, {COMPANY_NAME} has focused on Bosphorus cruises, yacht charters,
+              and boat tours in Istanbul. What started as a small family operation has
+              grown into a Bosphorus-focused travel service with shared cruises, private
+              yacht charters, and event-led planning.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              As a TURSAB-licensed A Group travel agency, we focus on clear pricing,
+              As a TURSAB-licensed A Group travel agency under {TURSAB_AGENCY_NAME},
+              we focus on clear pricing,
               careful service, and authentic Turkish hospitality. Our experienced captains
               and multilingual tourist guides help each guest enjoy a safe and comfortable
               Bosphorus cruise in Istanbul.
             </p>
-            <p className="text-[var(--body-text)] leading-relaxed">
-              From romantic Bosphorus sunset cruises to spectacular dinner cruises with Turkish
-              night entertainment, from yacht rental for marriage proposals to corporate event
-              cruises — we have 23+ years of experience and the passion to make your Istanbul
-              boat trip truly special.
+          <p className="text-[var(--body-text)] leading-relaxed">
+              The site is structured to keep broad Bosphorus comparisons separate from narrower
+              proposal, private-dinner, celebration, and corporate-event requests. That makes it
+              easier for guests to reach the right owner page before sending a reservation or quote
+              request.
             </p>
           </div>
         </div>
@@ -104,14 +111,14 @@ export default function AboutPage() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {[
-            { icon: Ship, value: "23+", label: "Years Experience" },
-            { icon: Users, value: "50K+", label: "Happy Guests" },
-            { icon: Award, value: "5.0", label: "Average Rating" },
-            { icon: Anchor, value: "21", label: "Tour Options" },
+            { icon: Ship, value: "Since 2001", label: "Operating History" },
+            { icon: Users, value: "English-first", label: "Primary Public Site" },
+            { icon: Award, value: "TURSAB A Group", label: "Licensing" },
+            { icon: Anchor, value: "3 Core Owners", label: "Main Booking Paths" },
           ].map((stat) => (
             <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-sm">
               <stat.icon className="w-8 h-8 text-[var(--brand-primary)] mx-auto mb-3" />
-              <div className="text-3xl font-bold text-[var(--heading)] mb-1">{stat.value}</div>
+              <div className="text-2xl font-bold text-[var(--heading)] mb-1">{stat.value}</div>
               <div className="text-sm text-[var(--text-muted)]">{stat.label}</div>
             </div>
           ))}
@@ -145,52 +152,43 @@ export default function AboutPage() {
 
         {/* Explore Our Services */}
         <div className="mt-20">
-          <h2 className="text-2xl font-bold mb-8 text-center">Explore Our Bosphorus Cruise Services</h2>
+          <h2 className="text-2xl font-bold mb-8 text-center">Use the Right MerrySails Path</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Cruises & Tours */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Bosphorus Cruises</h3>
+              <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Core Booking Owners</h3>
               <ul className="space-y-2">
-                <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Sunset Cruise — 2 options from €34</Link></li>
-                <li><Link href="/istanbul-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Dinner Cruise — 4 packages from €30</Link></li>
-                <li><Link href="/yacht-charter-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Yacht Charter Istanbul — 3 packages from €280</Link></li>
-                <li><Link href="/boat-rental-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Boat Rental Istanbul — Service page</Link></li>
-                <li><Link href="/corporate-events" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Corporate Events — Service page</Link></li>
-                <li><Link href="/private-events" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Events — Service page</Link></li>
-                <li><Link href="/proposal-yacht-rental-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Proposal Yacht Rental — Service page</Link></li>
-                <li className="pt-1"><Link href="/cruises" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">View Cruise Index & Service Pages →</Link></li>
+                <li><Link href="/bosphorus-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Cruise Compare Hub</Link></li>
+                <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Sunset Cruise</Link></li>
+                <li><Link href="/istanbul-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Istanbul Dinner Cruise</Link></li>
+                <li><Link href="/yacht-charter-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Yacht Charter Istanbul</Link></li>
+                <li className="pt-1"><Link href="/bosphorus-cruise" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">Compare hub →</Link></li>
               </ul>
             </div>
 
-            {/* Yacht Events */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Yacht Events & Celebrations</h3>
+              <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Narrower Support & Event Routes</h3>
               <ul className="space-y-2">
-                <li><Link href="/cruises/romantic-marriage-proposal" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Marriage Proposal on Yacht</Link></li>
-                <li><Link href="/cruises/yacht-birthday-party" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Yacht Birthday Party</Link></li>
-                <li><Link href="/cruises/yacht-weddings" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Yacht Weddings Istanbul</Link></li>
-                <li><Link href="/cruises/wedding-anniversary" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Wedding Anniversary Cruise</Link></li>
-                <li><Link href="/cruises/bachelorette-yacht-party" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bachelorette Yacht Party</Link></li>
-                <li><Link href="/cruises/corporate-event-bosphorus-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Corporate Event Cruise</Link></li>
-                <li><Link href="/cruises/private-yacht-swimming-tour" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Yacht Swimming Tour</Link></li>
-                <li><Link href="/cruises/new-years-eve-party-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> New Year&apos;s Eve Party Cruise</Link></li>
+                <li><Link href="/boat-rental-hourly-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Boat Rental Hourly</Link></li>
+                <li><Link href="/proposal-yacht-with-photographer-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Proposal with Photographer</Link></li>
+                <li><Link href="/private-dinner-cruise-for-couples-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Couples Private Dinner</Link></li>
+                <li><Link href="/corporate-events" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Corporate Events</Link></li>
+                <li><Link href="/corporate-yacht-dinner-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Corporate Yacht Dinner</Link></li>
+                <li><Link href="/kurucesme-marina-yacht-charter" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Kurucesme Marina Yacht</Link></li>
               </ul>
             </div>
 
-            {/* Guides & Blog */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Guides & Travel Tips</h3>
+              <h3 className="text-lg font-semibold mb-4 text-[var(--brand-primary)]">Trust, Guides & Support</h3>
               <ul className="space-y-2">
-                <li><Link href="/guides/bosphorus-strait" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> The Bosphorus Strait Guide</Link></li>
-                <li><Link href="/guides/maidens-tower" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Maiden&apos;s Tower (Kiz Kulesi)</Link></li>
-                <li><Link href="/guides/dolmabahce-palace" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Dolmabahce Palace Guide</Link></li>
-                <li><Link href="/guides/buyukada-princes-islands" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Buyukada & Princes&apos; Islands</Link></li>
-                <li><Link href="/blog/best-bosphorus-cruise-istanbul-guide" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Best Bosphorus Cruise Guide</Link></li>
-                <li><Link href="/blog/bosphorus-dinner-cruise-what-to-expect" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Dinner Cruise — What to Expect</Link></li>
-                <li><Link href="/blog/istanbul-travel-guide-first-timers" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Istanbul Travel Guide for First-Timers</Link></li>
-                <li><Link href="/blog/top-things-to-do-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Top Things to Do in Istanbul</Link></li>
-                <li className="pt-1"><Link href="/guides" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">All Istanbul Guides →</Link></li>
-                <li><Link href="/blog" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">All Blog Posts →</Link></li>
+                <li><Link href="/tursab" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> TURSAB License Details</Link></li>
+                <li><Link href="/contact" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Contact & Quote Routing</Link></li>
+                <li><Link href="/bosphorus-cruise-departure-points" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Departure Points Hub</Link></li>
+                <li><Link href="/guides/kabatas-pier" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Kabatas Pier Guide</Link></li>
+                <li><Link href="/guides/karakoy-waterfront" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Karakoy Waterfront Guide</Link></li>
+                <li><Link href="/guides/kurucesme-marina" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Kurucesme Marina Guide</Link></li>
+                <li><Link href="/blog/bosphorus-sunset-cruise-vs-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Sunset vs Dinner Cruise</Link></li>
+                <li><Link href="/blog/private-yacht-departure-points-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Private Yacht Departure Points</Link></li>
+                <li className="pt-1"><Link href="/guides" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">All guides →</Link></li>
               </ul>
             </div>
           </div>

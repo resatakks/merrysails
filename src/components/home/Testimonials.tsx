@@ -43,7 +43,7 @@ export default function Testimonials() {
                 <Star key={i} className="w-5 h-5 text-[var(--brand-gold)] fill-[var(--brand-gold)]" />
               ))}
             </div>
-            <span>4.9 from 247 reviews</span>
+            <span>4.9 from 2,800+ verified reviews</span>
           </div>
         </div>
 

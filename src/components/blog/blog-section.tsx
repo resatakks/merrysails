@@ -46,7 +46,7 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
           role="definition"
         >
           <p className="text-base font-semibold text-[var(--heading)] leading-relaxed m-0">
-            {section.answerCapsule}
+            {parseLinks(section.answerCapsule)}
           </p>
         </div>
       )}
@@ -69,7 +69,7 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
           {section.list.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-[var(--body-text)]">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-primary)]" />
-              <span>{item}</span>
+              <span>{parseLinks(item)}</span>
             </li>
           ))}
         </ul>
@@ -93,7 +93,7 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
                 <tr key={ri} className="border-t border-[var(--line)] even:bg-[var(--surface-alt)]">
                   {row.map((cell, ci) => (
                     <td key={ci} className="px-4 py-3 text-[var(--body-text)]">
-                      {cell}
+                      {parseLinks(cell)}
                     </td>
                   ))}
                 </tr>
@@ -121,7 +121,7 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
                   {sub.list.map((item, li) => (
                     <li key={li} className="flex items-start gap-3 text-[var(--body-text)]">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-primary)]" />
-                      <span>{item}</span>
+                      <span>{parseLinks(item)}</span>
                     </li>
                   ))}
                 </ul>
@@ -131,20 +131,22 @@ export function BlogSectionBlock({ section, index }: { section: BlogSection; ind
         </div>
       )}
 
-      {/* Expert blockquote */}
+      {/* Field note blockquote. Avoid presenting unverified repeated snippets as third-party expert endorsements. */}
       {section.expertQuote && (
-        <blockquote cite="https://merrysails.com" className="mt-5 rounded-xl bg-[var(--surface-alt)] p-5 border-l-4 border-[var(--brand-dark)]">
+        <blockquote cite="https://merrysails.com/about" className="mt-5 rounded-xl bg-[var(--surface-alt)] p-5 border-l-4 border-[var(--brand-dark)]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--brand-primary)] mb-2">
+            MerrySails field note
+          </p>
           <p className="text-sm text-[var(--body-text)] italic leading-relaxed mb-3">
             &ldquo;{section.expertQuote.text}&rdquo;
           </p>
-          <footer className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[var(--brand-primary)] flex items-center justify-center text-white text-xs font-bold">
-              {section.expertQuote.author.split(" ").map(w => w[0]).join("").slice(0, 2)}
-            </div>
-            <div>
-              <cite className="text-sm font-semibold text-[var(--heading)] not-italic">{section.expertQuote.author}</cite>
-              <p className="text-xs text-[var(--text-muted)]">{section.expertQuote.title}</p>
-            </div>
+          <footer>
+            <cite className="text-sm font-semibold text-[var(--heading)] not-italic">
+              MerrySails editorial team
+            </cite>
+            <p className="text-xs text-[var(--text-muted)]">
+              Booking, route planning, and guest-support observations
+            </p>
           </footer>
         </blockquote>
       )}

@@ -1,0 +1,28 @@
+Campaign,Ad group,Keyword,Match type,Status,Notes
+Search | EN | Sunset | Istanbul Presence,,dinner,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,dinner cruise,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,private yacht,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,yacht charter,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,boat rental,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,proposal,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,wedding,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,corporate,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,birthday party,Phrase,Enabled,Cross-product negative
+Search | EN | Sunset | Istanbul Presence,,public ferry,Phrase,Enabled,Irrelevant public transport
+Search | EN | Sunset | Istanbul Presence,,sehir hatlari,Phrase,Enabled,Irrelevant public transport
+Search | EN | Dinner | Istanbul Presence,,sunset,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,sunset cruise,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,private yacht,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,yacht charter,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,boat rental,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,proposal,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,wedding yacht,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,birthday yacht,Phrase,Enabled,Cross-product negative
+Search | EN | Dinner | Istanbul Presence,,public ferry,Phrase,Enabled,Irrelevant public transport
+Search | EN | Private Yacht | Istanbul Presence,,shared cruise,Phrase,Enabled,Cross-product negative
+Search | EN | Private Yacht | Istanbul Presence,,dinner cruise ticket,Phrase,Enabled,Cross-product negative
+Search | EN | Private Yacht | Istanbul Presence,,sunset cruise ticket,Phrase,Enabled,Cross-product negative
+Search | EN | Private Yacht | Istanbul Presence,,cheap ferry,Phrase,Enabled,Irrelevant public transport
+Search | EN | Private Yacht | Istanbul Presence,,public boat,Phrase,Enabled,Irrelevant public transport
+Search | EN | Private Yacht | Istanbul Presence,,free shuttle,Phrase,Enabled,Avoid wrong yacht promise
+Search | EN | Private Yacht | Istanbul Presence,,hotel pickup included,Phrase,Enabled,Avoid wrong yacht promise

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Bosphorus Cruise Reservation Center | Sunset, Dinner Cruise & Yacht Charter",
   description:
     "Book Bosphorus sunset cruise, dinner cruise, or yacht charter in Istanbul from one reservation center. Compare the 3 core products, choose date and guests, and track your reservation.",
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 const coreTours = getCoreTours();

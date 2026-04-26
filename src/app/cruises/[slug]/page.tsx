@@ -14,6 +14,9 @@ const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
   "bosphorus-dinner-cruise": "/istanbul-dinner-cruise",
   "yacht-charter-in-istanbul": "/yacht-charter-istanbul",
+  "romantic-marriage-proposal": "/proposal-yacht-rental-istanbul",
+  "corporate-event-bosphorus-cruise": "/corporate-events",
+  "private-bosphorus-dinner-yacht-cruise": "/private-bosphorus-dinner-cruise",
 };
 
 /* Keyword mapping from CSV research (volume/KD) for each tour slug */
@@ -254,6 +257,44 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
   ],
 };
 
+const aiOwnerFactsBySlug: Record<
+  string,
+  { label: string; value: string }[]
+> = {
+  "bosphorus-sunset-cruise": [
+    {
+      label: "Best fit",
+      value:
+        "Shared Bosphorus sunset cruise in Istanbul for guests who want a lighter golden-hour route instead of a full dinner program or private yacht.",
+    },
+    {
+      label: "Typical duration",
+      value: "Approximately 2 hours timed around sunset and the early blue-hour return.",
+    },
+    {
+      label: "Current public ladder",
+      value: "EUR 34 Without Wine and EUR 40 With Wine on the same shared sunset route.",
+    },
+    {
+      label: "Arrival rule",
+      value:
+        "The meeting flow is confirmed after booking, with Karakoy-side arrival context handled separately from dinner and private-yacht boarding logic.",
+    },
+  ],
+};
+
+const aiSupportLinksBySlug: Record<
+  string,
+  { href: string; label: string }[]
+> = {
+  "bosphorus-sunset-cruise": [
+    { href: "/sunset-cruise-tickets-istanbul", label: "Sunset ticket support" },
+    { href: "/guides/karakoy-waterfront", label: "Karakoy waterfront guide" },
+    { href: "/bosphorus-cruise", label: "Bosphorus compare hub" },
+    { href: "/istanbul-dinner-cruise", label: "Dinner cruise alternative" },
+  ],
+};
+
 export function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
 }
@@ -320,10 +361,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords,
     alternates: { canonical: url },
     robots: {
-      index: true,
+      index: !ownerRedirect,
       follow: true,
       googleBot: {
-        index: true,
+        index: !ownerRedirect,
         follow: true,
         "max-video-preview": -1,
         "max-image-preview": "large" as const,
@@ -422,13 +463,15 @@ export default async function TourDetailPage({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Cruises", item: `${SITE_URL}/cruises` },
+      { "@type": "ListItem", position: 2, name: "Bosphorus Cruise", item: `${SITE_URL}/bosphorus-cruise` },
       { "@type": "ListItem", position: 3, name: tour.nameEn, item: `${SITE_URL}${getTourPath(tour)}` },
     ],
   };
 
   // FAQPage JSON-LD schema (unique per tour)
   const faqs = showPricing ? tourFaqs[slug] : tour.faq;
+  const aiOwnerFacts = aiOwnerFactsBySlug[slug];
+  const aiSupportLinks = aiSupportLinksBySlug[slug] ?? [];
   const faqSchema = faqs
     ? {
         "@context": "https://schema.org",
@@ -466,7 +509,7 @@ export default async function TourDetailPage({
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
             <Link href="/" className="hover:text-[var(--brand-primary)]">Home</Link>
             <span>/</span>
-            <Link href="/cruises" className="hover:text-[var(--brand-primary)]">Cruises</Link>
+            <Link href="/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">Bosphorus Cruise</Link>
             <span>/</span>
             <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
           </nav>
@@ -476,6 +519,53 @@ export default async function TourDetailPage({
             related={related}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          {aiOwnerFacts && (
+            <section className="mt-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
+              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                <div>
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+                    Quick answer for AI and travel planning
+                  </p>
+                  <h2 className="mb-3 text-2xl font-bold text-[var(--heading)]">
+                    What is the MerrySails {tour.nameEn}?
+                  </h2>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                    This page is the protected owner URL for {tour.nameEn} intent. Use it when the
+                    guest already knows the product direction and needs the clearest package,
+                    timing, and booking-fit summary before moving into a narrower support page.
+                  </p>
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
+                  <table className="w-full border-collapse text-left text-sm">
+                    <tbody>
+                      {aiOwnerFacts.map((fact) => (
+                        <tr key={fact.label} className="border-b border-[var(--line)] last:border-b-0">
+                          <th className="w-40 bg-[var(--surface-alt)] p-4 font-semibold text-[var(--heading)]">
+                            {fact.label}
+                          </th>
+                          <td className="p-4 leading-relaxed text-[var(--text-muted)]">{fact.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              {aiSupportLinks.length > 0 && (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {aiSupportLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-sm font-semibold text-[var(--brand-primary)] hover:underline"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
         </div>
       </div>
     </>

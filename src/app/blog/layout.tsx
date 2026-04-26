@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Istanbul Bosphorus Cruise Blog & Travel Guides",
   description:
-    "Expert tips, detailed guides, and insider knowledge for Istanbul boat tours, dinner cruises, yacht charters, and Bosphorus travel planning. Written by local experts with 25+ years experience.",
+    "Practical guides for Istanbul boat tours, dinner cruises, yacht charters, and Bosphorus travel planning, built around MerrySails booking and route-planning knowledge.",
   keywords: [
     "istanbul cruise blog",
     "bosphorus travel guide",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Istanbul Bosphorus Cruise Blog & Travel Guides",
     description:
-      "Expert tips, guides, and insider knowledge for Istanbul boat tours and Bosphorus cruise planning.",
+      "Practical guides for Istanbul boat tours, dinner cruises, yacht charters, and Bosphorus cruise planning.",
     url: "https://merrysails.com/blog",
     type: "website",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Istanbul Bosphorus Cruise Blog & Travel Guides",
     description:
-      "Expert tips, guides, and insider knowledge for Istanbul boat tours and Bosphorus cruise planning.",
+      "Practical guides for Istanbul boat tours, dinner cruises, yacht charters, and Bosphorus cruise planning.",
     images: ["https://merrysails.com/og-image.jpg"],
   },
 };

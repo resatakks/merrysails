@@ -4,12 +4,12 @@ import { ArrowRight } from "lucide-react";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Private Events Bosphorus | Birthday, Proposal & Celebration Services | MerrySails",
+  title: "Private Events Bosphorus | Birthday & Celebration Services | MerrySails",
   description:
-    "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and proposal-adjacent requests in Istanbul.",
+    "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and flexible private gatherings in Istanbul.",
   alternates: { canonical: `${SITE_URL}/private-events` },
   openGraph: {
-    title: "Private Events Bosphorus | Birthday, Proposal & Celebration Services | MerrySails",
+    title: "Private Events Bosphorus | Birthday & Celebration Services | MerrySails",
     description:
       "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and flexible private gatherings.",
     url: `${SITE_URL}/private-events`,
@@ -30,7 +30,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Private Events on the Bosphorus",
   description:
-    "Private Bosphorus event planning for birthdays, anniversaries, proposals, celebration dinners, and private group evenings.",
+    "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and private group evenings.",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -61,7 +61,34 @@ const faqItems = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Private Events", item: `${SITE_URL}/private-events` },
+  ],
+};
+
 const comparePages = [
+  {
+    href: "/yacht-charter-istanbul",
+    title: "Yacht Charter Istanbul",
+    description: "Use this when you are still comparing private yacht size, duration, and base charter format.",
+  },
   {
     href: "/proposal-yacht-rental-istanbul",
     title: "Proposal Yacht Rental",
@@ -102,6 +129,8 @@ export default function PrivateEventsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
@@ -112,6 +141,14 @@ export default function PrivateEventsPage() {
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
               This page is for birthdays, anniversaries, and flexible celebration requests that
               need a private Bosphorus setup without forcing every event into the same booking path.
+            </p>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]">
+              If you are mainly comparing private yacht packages rather than celebration formats,
+              start with{" "}
+              <Link href="/yacht-charter-istanbul" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Yacht Charter Istanbul
+              </Link>
+              .
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
@@ -132,7 +169,7 @@ export default function PrivateEventsPage() {
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
-            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">When this page is the right fit</h2>
+            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">When a private Bosphorus event is the right fit</h2>
             <div className="grid gap-4 md:grid-cols-2">
               {eventFits.map((event) => (
                 <div key={event.title} className="rounded-xl border border-gray-100 bg-[var(--surface-alt)] p-4">
@@ -144,22 +181,22 @@ export default function PrivateEventsPage() {
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
-            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">Looking for a more specific option?</h2>
-            <div className="grid gap-4 md:grid-cols-3">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">Choose a more specific private Bosphorus service</h2>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {comparePages.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className="rounded-xl border border-gray-200 bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
                 >
-                  <span className="mb-1 block text-base font-semibold text-[var(--heading)]">{item.title}</span>
-                  <span className="block text-sm text-[var(--text-muted)]">{item.description}</span>
+                  <h3 className="mb-1 text-base font-semibold text-[var(--heading)]">{item.title}</h3>
+                  <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
                 </Link>
               ))}
             </div>
           </section>
 
-          <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">Private event FAQs</h2>
             <div className="space-y-4">
               {faqItems.map((faq) => (
@@ -171,6 +208,33 @@ export default function PrivateEventsPage() {
                   <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">{faq.a}</p>
                 </details>
               ))}
+            </div>
+          </section>
+
+          <section className="rounded-3xl bg-[var(--heading)] p-6 text-center text-white md:p-8">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-white/60">
+              Private event planning
+            </p>
+            <h2 className="mx-auto mb-3 max-w-3xl text-2xl font-bold text-white md:text-3xl">
+              Not sure whether you need a private event, proposal yacht, private dinner, or charter?
+            </h2>
+            <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-white/75">
+              Send the occasion, date, and group size. We will route the request to the correct
+              MerrySails service page so the offer, quote, and follow-up match the real intent.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[var(--heading)] transition-colors hover:bg-white/90"
+              >
+                Ask for the right option <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/yacht-charter-istanbul"
+                className="inline-flex items-center justify-center rounded-xl border border-white/35 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Compare yacht charter
+              </Link>
             </div>
           </section>
         </div>

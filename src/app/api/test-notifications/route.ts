@@ -52,7 +52,7 @@ export async function GET(req: NextRequest) {
       customerPhone: "+90 000 000 0000",
       customerCountry: null,
       notes: null,
-      status: "pending",
+      status: "new",
       createdAt: new Date(),
     });
     results.telegram = { success: true, ...tgResult };

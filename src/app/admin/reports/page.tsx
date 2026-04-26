@@ -10,6 +10,7 @@ import { prisma } from "@/lib/db";
 import { requireAdminSession } from "@/lib/admin-auth";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { getCoreTours } from "@/data/tours";
+import { ACTIVE_RESERVATION_STATUSES, normalizeReservationStatus } from "@/lib/reservation-status";
 
 export const metadata: Metadata = {
   title: "Admin Reports",
@@ -44,23 +45,40 @@ export default async function AdminReportsPage() {
     }),
   ]);
 
-  const statusSummary = ["pending", "confirmed", "completed", "cancelled"].map(
+  const statusSummary = ["new", "confirmed", "completed", "cancelled"].map(
     (status) => {
-      const items = monthReservations.filter((reservation) => reservation.status === status);
+      const items = monthReservations.filter(
+        (reservation) => normalizeReservationStatus(reservation.status) === status
+      );
       return {
         status,
         count: items.length,
         revenue: items.reduce((sum, reservation) => sum + reservation.totalPrice, 0),
+        cost: items.reduce(
+          (sum, reservation) => sum + (reservation.internalCostEur ?? 0),
+          0
+        ),
       };
     }
   );
 
   const totalRevenue = monthReservations
-    .filter((reservation) => reservation.status !== "cancelled")
+    .filter((reservation) =>
+      ACTIVE_RESERVATION_STATUSES.includes(
+        normalizeReservationStatus(reservation.status) as (typeof ACTIVE_RESERVATION_STATUSES)[number]
+      )
+    )
     .reduce((sum, reservation) => sum + reservation.totalPrice, 0);
+  const totalCost = monthReservations.reduce(
+    (sum, reservation) => sum + (reservation.internalCostEur ?? 0),
+    0
+  );
 
   const totalGuests = monthReservations
     .filter((reservation) => reservation.status !== "cancelled")
+    .reduce((sum, reservation) => sum + reservation.guests, 0);
+  const completedGuests = monthReservations
+    .filter((reservation) => normalizeReservationStatus(reservation.status) === "completed")
     .reduce((sum, reservation) => sum + reservation.guests, 0);
 
   const productSummary = getCoreTours().map((tour) => {
@@ -120,20 +138,16 @@ export default async function AdminReportsPage() {
     <AdminShell
       currentPath="/admin/reports"
       title="Commercial reports"
-      description="Revenue, guest volume, and core-product demand reporting for the current month plus a forward-looking 14-day booking pulse."
+      description="Revenue, cost, margin, guest volume, and forward-looking demand reporting for the current month."
     >
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
         {[
           { label: "Month revenue", value: money(totalRevenue) },
+          { label: "Known cost", value: money(totalCost) },
+          { label: "Known margin", value: money(totalRevenue - totalCost) },
           { label: "Month bookings", value: monthReservations.length },
           { label: "Month guests", value: totalGuests },
-          {
-            label: "Average booking value",
-            value:
-              monthReservations.length > 0
-                ? money(totalRevenue / Math.max(monthReservations.length, 1))
-                : "€0",
-          },
+          { label: "Completed guests", value: completedGuests },
         ].map((card) => (
           <div
             key={card.label}
@@ -220,6 +234,9 @@ export default async function AdminReportsPage() {
                 </div>
                 <div className="mt-2 text-lg font-bold text-[var(--heading)]">
                   {money(item.revenue)}
+                </div>
+                <div className="mt-1 text-sm text-[var(--text-muted)]">
+                  Cost {money(item.cost)} · Margin {money(item.revenue - item.cost)}
                 </div>
               </div>
             ))}

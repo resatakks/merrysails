@@ -3,35 +3,24 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Phone, ChevronDown, Anchor } from "lucide-react";
+import { handleTrackedContactNavigation } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { PHONE_DISPLAY } from "@/lib/constants";
 
 const navItems = [
+  { label: "Cruises", href: "/bosphorus-cruise" },
   { label: "Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
   { label: "Dinner Cruise", href: "/istanbul-dinner-cruise" },
   { label: "Yacht Charter", href: "/yacht-charter-istanbul" },
-  {
-    label: "Services",
-    href: "/private-tours",
-    children: [
-      { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
-      { label: "Proposal Yacht Rental", href: "/proposal-yacht-rental-istanbul" },
-      { label: "Private Dinner Cruise", href: "/private-bosphorus-dinner-cruise" },
-      { label: "Corporate Events", href: "/corporate-events" },
-      { label: "Private Events", href: "/private-events" },
-      { label: "Bosphorus Sightseeing", href: "/cruises/bosphorus-sightseeing-cruise" },
-      { label: "Lunch Planning", href: "/cruises/istanbul-bosphorus-lunch-cruise" },
-      { label: "Princes' Islands Tour", href: "/cruises/istanbul-princes-island-tour" },
-      { label: "Old City Tour", href: "/cruises/full-day-istanbul-old-city-tour" },
-    ],
-  },
   {
     label: "Guides",
     href: "/guides",
     children: [
       { label: "Blog", href: "/blog" },
       { label: "Istanbul Guides", href: "/guides" },
+      { label: "Kabatas Pier", href: "/guides/kabatas-pier" },
+      { label: "Karakoy Waterfront", href: "/guides/karakoy-waterfront" },
       { label: "FAQ", href: "/faq" },
     ],
   },
@@ -63,7 +52,7 @@ export default function Header() {
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-primary)] sm:h-10 sm:w-10">
                 <Anchor className="h-4 w-4 text-white sm:h-5 sm:w-5" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0" translate="no">
                 <span className="block truncate text-lg font-bold leading-none text-[var(--heading)] sm:text-xl">
                   Merry<span className="text-[var(--brand-primary)]">Sails</span>
                 </span>
@@ -110,17 +99,26 @@ export default function Header() {
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
               <a
                 href="tel:+905370406822"
+                onClick={(event) =>
+                  handleTrackedContactNavigation(event, {
+                    href: "tel:+905370406822",
+                    kind: "phone",
+                    label: PHONE_DISPLAY,
+                    location: "header_desktop",
+                  })
+                }
                 className="hidden items-center gap-2 text-sm font-medium text-[var(--body-text)] transition-colors hover:text-[var(--brand-primary)] md:flex"
               >
                 <Phone className="h-4 w-4" />
                 {PHONE_DISPLAY}
               </a>
 
-              <Link href="/reservation">
-                <button className="btn-cta text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5">
+              <Link
+                href="/reservation"
+                className="btn-cta inline-flex items-center justify-center text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5"
+              >
                   <span className="sm:hidden">Reserve</span>
                   <span className="hidden sm:inline">Reserve Online</span>
-                </button>
               </Link>
 
               <Sheet>
@@ -142,7 +140,7 @@ export default function Header() {
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-primary)]">
                           <Anchor className="h-5 w-5 text-white" />
                         </div>
-                        <span className="text-xl font-bold text-[var(--heading)]">
+                        <span className="text-xl font-bold text-[var(--heading)]" translate="no">
                           Merry<span className="text-[var(--brand-primary)]">Sails</span>
                         </span>
                       </div>
@@ -203,13 +201,24 @@ export default function Header() {
                     <div className="space-y-3 border-t border-gray-100 p-6 pt-4">
                       <a
                         href="tel:+905370406822"
+                        onClick={(event) =>
+                          handleTrackedContactNavigation(event, {
+                            href: "tel:+905370406822",
+                            kind: "phone",
+                            label: PHONE_DISPLAY,
+                            location: "header_mobile_menu",
+                          })
+                        }
                         className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-[var(--body-text)]"
                       >
                         <Phone className="h-4 w-4" />
                         {PHONE_DISPLAY}
                       </a>
-                      <Link href="/reservation" className="block px-4">
-                        <button className="btn-cta w-full !py-3 text-sm">Reserve Online</button>
+                      <Link
+                        href="/reservation"
+                        className="btn-cta block w-full px-4 text-center !py-3 text-sm"
+                      >
+                        Reserve Online
                       </Link>
                     </div>
                   </div>

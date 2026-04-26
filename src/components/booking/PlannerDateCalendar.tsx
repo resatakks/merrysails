@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import {
   addDays,
   addMonths,
@@ -43,6 +43,7 @@ interface PlannerDateCalendarProps {
 }
 
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const emptySubscribe = () => () => {};
 
 export function PlannerDateCalendar({
   tourSlug,
@@ -51,23 +52,11 @@ export function PlannerDateCalendar({
   value,
   onSelect,
 }: PlannerDateCalendarProps) {
-  const [navigationMonth, setNavigationMonth] = useState(
-    startOfDay(value ?? new Date())
+  const selectedDate = value ? startOfDay(value) : undefined;
+  const [navigationMonth, setNavigationMonth] = useState<Date | null>(
+    selectedDate ?? null
   );
   const [operations, setOperations] = useState<TourOperationClientSnapshot[]>([]);
-
-  const today = startOfDay(new Date());
-  const tomorrow = addDays(today, 1);
-  const selectedDate = value ? startOfDay(value) : undefined;
-  const currentMonth =
-    selectedDate && !isSameMonth(navigationMonth, selectedDate)
-      ? selectedDate
-      : navigationMonth;
-  const monthStart = startOfMonth(currentMonth);
-  const monthEnd = endOfMonth(currentMonth);
-  const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
-  const startDay = getDay(monthStart);
-  const blanks = startDay === 0 ? 6 : startDay - 1;
 
   const operationsByDate = useMemo(
     () =>
@@ -80,6 +69,8 @@ export function PlannerDateCalendar({
   const selectedOperation = selectedDate
     ? operationsByDate[format(selectedDate, "yyyy-MM-dd")]
     : undefined;
+  const isHydrated = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const now = isHydrated ? new Date() : null;
 
   useEffect(() => {
     const controller = new AbortController();
@@ -117,6 +108,30 @@ export function PlannerDateCalendar({
     return () => controller.abort();
   }, [tourSlug]);
 
+  if (!isHydrated || !now) {
+    return (
+      <section className="rounded-[1.7rem] border border-[var(--line)] bg-white p-4 shadow-sm">
+        <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--heading)]">
+          <Calendar className="h-4 w-4 text-[var(--brand-primary)]" />
+          Select your preferred date
+        </div>
+        <div className="h-64 animate-pulse rounded-[1.5rem] bg-[var(--surface-alt)]" />
+      </section>
+    );
+  }
+
+  const today = startOfDay(now);
+  const tomorrow = addDays(today, 1);
+  const resolvedNavigationMonth = navigationMonth ?? selectedDate ?? today;
+  const currentMonth =
+    selectedDate && !isSameMonth(resolvedNavigationMonth, selectedDate)
+      ? selectedDate
+      : resolvedNavigationMonth;
+  const monthStart = startOfMonth(currentMonth);
+  const monthEnd = endOfMonth(currentMonth);
+  const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
+  const startDay = getDay(monthStart);
+  const blanks = startDay === 0 ? 6 : startDay - 1;
   const canGoPrev =
     !isSameMonth(currentMonth, today) &&
     !isBefore(subMonths(monthStart, 1), startOfMonth(today));
@@ -180,7 +195,7 @@ export function PlannerDateCalendar({
             const isCutoffClosed = isSameDayBookingClosed(
               tourSlug,
               day,
-              new Date(),
+              now,
               operation?.departureTimeOverride || departureTime
             );
             const isDisabled = isPast || isSoldOut || isCutoffClosed;

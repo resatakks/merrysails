@@ -14,7 +14,7 @@ import {
 } from "@/lib/constants";
 import type { ReservationPricingSnapshot } from "@/lib/reservation-pricing";
 
-interface ReservationPdfInput {
+export interface ReservationPdfInput {
   reservationId: string;
   customerName: string;
   customerEmail: string;

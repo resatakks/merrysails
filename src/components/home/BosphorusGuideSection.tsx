@@ -28,11 +28,11 @@ const cruiseTypes = [
   },
   {
     icon: Briefcase,
-    title: "Service Pages & Custom Planning",
-    meta: "Custom quote",
+    title: "Bosphorus Cruise Compare Hub",
+    meta: "Broad comparison",
     description:
-      "Use the support pages for boat rental, proposals, private dinners, corporate events, and other tailored daytime or occasion-led briefs.",
-    href: "/private-events",
+      "Start here when the search is still broad and you need to compare sunset, dinner, and private yacht directions before opening a narrower support page.",
+    href: "/bosphorus-cruise",
   },
 ];
 
@@ -46,11 +46,10 @@ export default function BosphorusGuideSection() {
           </h2>
           <p className="text-[var(--text-muted)] text-lg leading-relaxed">
             The Bosphorus strait separates Europe and Asia across 30 kilometres of
-            historic waterway. A Bosphorus cruise is consistently rated the number
-            one activity in Istanbul, with over 3 million passengers sailing
-            annually. MerrySails, operated by Merry Tourism (TURSAB licensed since
-            2001), now keeps its English commercial structure focused on three core
-            products: sunset cruise, dinner cruise, and yacht charter.
+            historic waterway. A Bosphorus cruise is one of the clearest ways to
+            understand Istanbul from the water, and MerrySails now keeps its
+            English commercial structure focused on three core products: sunset
+            cruise, dinner cruise, and yacht charter.
           </p>
         </div>
 
@@ -99,19 +98,17 @@ export default function BosphorusGuideSection() {
                 Merry Tourism
               </a>
               , a TURSAB A Group licensed travel agency operating in Istanbul since
-              2001. Over 50,000 guests have sailed with us, and we maintain a 4.9
-              rating from 2,800+ verified reviews. Each cruise page shows the
-              current format, inclusions, and pricing so you can compare options
-              before you book.
+              2001. Each cruise page shows the current format, inclusions, and
+              pricing so you can compare options before you book.
             </p>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
               Every cruise includes free cancellation up to 24 hours before
-              departure, multilingual crew (English, Turkish, Arabic, Russian),
-              and a reserve-now, pay-onboard booking flow. Shared dinner cruises can include hotel
-              pickup and drop-off from central European-side zones such as
-              Sultanahmet, Taksim, Beyoglu, and nearby areas. Our yacht charters depart from Bosphorus marinas
-              and can be customized for any occasion — from intimate proposals to
-              large corporate events.
+              departure and a reserve-first booking flow. Shared dinner cruises can
+              include hotel pickup and drop-off from central European-side zones
+              such as Sultanahmet, Taksim, Beyoglu, and nearby areas. Our yacht
+              charters depart from Bosphorus marinas confirmed with the assigned
+              vessel and can be customized for any occasion — from intimate
+              proposals to large corporate events.
             </p>
 
             <h3 className="text-xl font-bold mb-3 text-[var(--heading)]">
@@ -150,76 +147,88 @@ export default function BosphorusGuideSection() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Link
-                href="/blog/best-bosphorus-cruise-istanbul-guide"
+                href="/bosphorus-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Complete Bosphorus Cruise Guide 2026
+                Bosphorus Cruise Compare Hub
               </Link>
               <Link
-                href="/blog/bosphorus-dinner-cruise-what-to-expect"
+                href="/blog/bosphorus-sunset-cruise-vs-dinner-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Dinner Cruise — What to Expect
+                Sunset vs Dinner Cruise
               </Link>
               <Link
-                href="/blog/istanbul-sunset-cruise-experience"
+                href="/sunset-cruise-tickets-istanbul"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Istanbul Sunset Cruise Experience
+                Sunset Ticket Support
               </Link>
               <Link
-                href="/blog/short-bosphorus-cruise-tour"
+                href="/dinner-cruise-with-hotel-pickup-istanbul"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Short Bosphorus Cruise Guide
+                Dinner Pickup Support
               </Link>
               <Link
-                href="/blog/bosphorus-cruise-departure-points"
+                href="/dinner-cruise-pickup-sultanahmet-taksim"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Cruise Departure Points & Piers
+                Sultanahmet & Taksim Pickup
               </Link>
               <Link
-                href="/blog/best-time-bosphorus-cruise"
+                href="/bosphorus-cruise-departure-points"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Best Time for a Bosphorus Cruise
+                Departure Points Hub
               </Link>
               <Link
-                href="/blog/private-yacht-charter-istanbul-guide"
+                href="/istanbul-dinner-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Private Yacht Charter Guide
+                Istanbul Dinner Cruise
               </Link>
               <Link
-                href="/blog/yacht-rental-istanbul-prices"
+                href="/cruises/bosphorus-sunset-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Yacht Rental Prices Istanbul 2026
+                Bosphorus Sunset Cruise
               </Link>
               <Link
-                href="/blog/istanbul-yacht-charter-guide"
+                href="/kabatas-dinner-cruise-istanbul"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Istanbul Yacht Charter Guide
+                Kabatas Dinner Support
               </Link>
               <Link
-                href="/blog/bosphorus-night-cruise-guide"
+                href="/yacht-charter-istanbul"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
-                Bosphorus Night Cruise Guide
+                Yacht Charter Istanbul
+              </Link>
+              <Link
+                href="/kurucesme-marina-yacht-charter"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Kurucesme Marina Yacht Charter
+              </Link>
+              <Link
+                href="/proposal-yacht-with-photographer-istanbul"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Proposal Yacht with Photographer
+              </Link>
+              <Link
+                href="/corporate-yacht-dinner-istanbul"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Corporate Yacht Dinner
               </Link>
               <Link
                 href="/blog/what-to-wear-bosphorus-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
                 What to Wear on a Bosphorus Cruise
-              </Link>
-              <Link
-                href="/blog/top-things-to-do-istanbul"
-                className="text-sm text-[var(--brand-primary)] hover:underline"
-              >
-                Top Things to Do in Istanbul
               </Link>
             </div>
           </div>

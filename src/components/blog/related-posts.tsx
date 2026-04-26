@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Clock } from "lucide-react";
-import { getBlogBySlug, blogPosts } from "@/content/blog";
+import type { BlogPost } from "@/data/blog";
+import {
+  getBlogBySlug,
+  blogPosts,
+  getHighIntentBlogSlugsForCategory,
+} from "@/content/blog";
+import { cleanContentText } from "@/lib/content-text";
 
 export function RelatedPosts({
   slugs,
@@ -12,7 +18,7 @@ export function RelatedPosts({
   slugs?: string[];
   prioritySlugs?: string[];
   currentSlug: string;
-  category: string;
+  category: BlogPost["category"];
 }) {
   const deduped = new Set<string>();
   const toPosts = (items?: string[]) =>
@@ -27,7 +33,25 @@ export function RelatedPosts({
 
   let posts = [...toPosts(prioritySlugs), ...toPosts(slugs)];
 
-  // Fallback: same category posts
+  // Fallback 1: curated high-intent posts for the same category
+  if (posts.length < 3) {
+    const highIntentFallbacks = getHighIntentBlogSlugsForCategory(category, currentSlug, [
+      ...(slugs || []),
+      ...(prioritySlugs || []),
+    ])
+      .map(getBlogBySlug)
+      .filter((post): post is NonNullable<ReturnType<typeof getBlogBySlug>> => Boolean(post))
+      .filter((post) => !deduped.has(post.slug))
+      .slice(0, 3 - posts.length);
+
+    for (const post of highIntentFallbacks) {
+      deduped.add(post.slug);
+    }
+
+    posts = [...posts, ...highIntentFallbacks];
+  }
+
+  // Fallback 2: same category posts
   if (posts.length < 3) {
     const fallbacks = blogPosts
       .filter(
@@ -60,7 +84,7 @@ export function RelatedPosts({
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={post.image}
-                  alt={post.imageAlt || post.title}
+                  alt={cleanContentText(post.imageAlt || post.title)}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -73,7 +97,7 @@ export function RelatedPosts({
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-[var(--brand-primary)] transition-colors">
-                  {post.title}
+                  {cleanContentText(post.title)}
                 </h3>
                 <span className="text-xs text-[var(--text-muted)] flex items-center gap-1">
                   <Clock className="w-3 h-3" />

@@ -1,0 +1,10 @@
+Campaign,Ad group,Status,Max CPC,Notes
+Search | EN | Sunset | Istanbul Presence,Core Sunset,Enabled,18,Main sunset demand to core sunset LP
+Search | EN | Sunset | Istanbul Presence,Sunset Landmark Intent,Enabled,14,Route and landmark-led sunset searches
+Search | EN | Sunset | Istanbul Presence,Sunset With Wine,Enabled,16,Wine option searches
+Search | EN | Dinner | Istanbul Presence,Core Dinner,Enabled,20,Main dinner cruise searches
+Search | EN | Dinner | Istanbul Presence,Dinner Show VIP,Enabled,18,Show VIP table and package searches
+Search | EN | Dinner | Istanbul Presence,Pickup Kabatas,Enabled,16,Pickup and Kabatas intent searches
+Search | EN | Private Yacht | Istanbul Presence,Yacht Charter Core,Enabled,30,Main private yacht charter searches
+Search | EN | Private Yacht | Istanbul Presence,Boat Rental,Enabled,25,Boat rental and private boat searches
+Search | EN | Private Yacht | Istanbul Presence,Proposal Event Intent,Enabled,22,Proposal birthday corporate intent
