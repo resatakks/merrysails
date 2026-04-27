@@ -138,12 +138,12 @@ const sharedDinnerReasons = [
       "Dinner service, Bosphorus views, stage entertainment, and a public cruise atmosphere without chartering the whole boat.",
   },
   {
-    title: "Package-led night out",
+    title: "Compare dinner cruise packages by tier",
     description:
       "A cleaner fit when you want to compare seating and inclusions first, then book the package that fits your budget.",
   },
   {
-    title: "Simple for hotel guests",
+    title: "Hotel pickup for Istanbul dinner cruise",
     description:
       "One departure flow, a clear evening schedule, and no need to choose a private vessel.",
   },
@@ -308,7 +308,7 @@ export default async function IstanbulDinnerCruisePage({
                   Bosphorus Dinner Cruise
                 </p>
                 <h2 className="text-2xl font-bold text-[var(--heading)] mb-2">
-                  Bosphorus dinner cruise packages and ticket fit
+                  Istanbul Dinner Cruise Packages — All 4 Options Compared
                 </h2>
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
                   Shared dinner cruise packages suit guests who want a fixed evening schedule and
@@ -326,7 +326,7 @@ export default async function IstanbulDinnerCruisePage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Turkish night show and shared dinner cruise fit
+              Why Choose the Shared Istanbul Dinner Cruise
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {sharedDinnerReasons.map((item) => (
@@ -345,7 +345,7 @@ export default async function IstanbulDinnerCruisePage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Compare with private dinner and proposal-led options
+              Istanbul Dinner Cruise vs. Private Bosphorus Dinner Options
             </h2>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {comparePages.map((item) => (

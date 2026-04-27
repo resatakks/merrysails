@@ -48,7 +48,7 @@ const TAB_LABELS: { key: TabKey; label: string }[] = [
 
 const SEO_HEADINGS_BY_SLUG: Record<string, string> = {
   "bosphorus-sunset-cruise": "Bosphorus Sunset Cruise",
-  "bosphorus-dinner-cruise": "Istanbul Dinner Cruise on the Bosphorus",
+  "bosphorus-dinner-cruise": "Istanbul Dinner Cruise",
   "yacht-charter-in-istanbul": "Yacht Charter Istanbul",
 };
 
