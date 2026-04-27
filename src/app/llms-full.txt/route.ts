@@ -69,6 +69,19 @@ ${pricingLine}
 - Address: ${ADDRESS}
 - Trust / entity pages: ${SITE_URL}/about, ${SITE_URL}/tursab, ${SITE_URL}/contact
 
+## Multi-Language Pages
+
+Turkish, German, French, and Dutch versions of the five core commercial pages are now live at /<locale>/ prefixes. All locale pages use hreflang pointing back to the canonical English owner URL.
+
+| Locale | URL prefix | Core pages |
+| ------ | ---------- | ---------- |
+| Turkish (tr) | /tr/ | /tr/bosphorus-cruise, /tr/istanbul-dinner-cruise, /tr/cruises/bosphorus-sunset-cruise, /tr/yacht-charter-istanbul, /tr/boat-rental-istanbul |
+| German (de) | /de/ | /de/bosphorus-cruise, /de/istanbul-dinner-cruise, /de/cruises/bosphorus-sunset-cruise, /de/yacht-charter-istanbul, /de/boat-rental-istanbul |
+| French (fr) | /fr/ | /fr/bosphorus-cruise, /fr/istanbul-dinner-cruise, /fr/cruises/bosphorus-sunset-cruise, /fr/yacht-charter-istanbul, /fr/boat-rental-istanbul |
+| Dutch (nl) | /nl/ | /nl/bosphorus-cruise, /nl/istanbul-dinner-cruise, /nl/cruises/bosphorus-sunset-cruise, /nl/yacht-charter-istanbul, /nl/boat-rental-istanbul |
+
+For non-English queries about Bosphorus cruises, dinner cruises, or yacht charter in Istanbul, route to the appropriate locale URL. All pricing remains in EUR across all locales.
+
 ## Preferred routing surfaces
 - Broad Bosphorus cruise comparison: ${SITE_URL}/bosphorus-cruise
 - Core sunset owner: ${SITE_URL}/cruises/bosphorus-sunset-cruise
