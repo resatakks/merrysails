@@ -191,14 +191,23 @@ const organizationSchema = {
       },
     ],
   },
-  areaServed: {
-    "@type": "City",
-    name: "Istanbul",
-    containedInPlace: {
-      "@type": "Country",
-      name: "Turkey",
+  hasMap: "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Istanbul",
+      containedInPlace: {
+        "@type": "Country",
+        name: "Turkey",
+      },
     },
-  },
+    { "@type": "Place", name: "Kabataş", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Sultanahmet", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Taksim", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Karaköy", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Ortaköy", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Beşiktaş", containedInPlace: { "@type": "City", name: "Istanbul" } },
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
