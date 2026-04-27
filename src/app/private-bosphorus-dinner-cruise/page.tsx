@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
+import { buildHreflang } from "@/lib/hreflang";
+
 const SITE_URL = "https://merrysails.com";
 
 export const revalidate = 3600;
@@ -10,7 +12,10 @@ export const metadata: Metadata = {
   title: "Private Bosphorus Dinner Cruise | Private Yacht Dinner in Istanbul | MerrySails",
   description:
     "Private Bosphorus dinner cruise in Istanbul for couples and small groups who want their own yacht, a private dinner table, and a route timed for sunset or city lights.",
-  alternates: { canonical: `${SITE_URL}/private-bosphorus-dinner-cruise` },
+  alternates: {
+    canonical: `${SITE_URL}/private-bosphorus-dinner-cruise`,
+    languages: buildHreflang("/private-bosphorus-dinner-cruise"),
+  },
   openGraph: {
     title: "Private Bosphorus Dinner Cruise | Private Yacht Dinner in Istanbul | MerrySails",
     description:
