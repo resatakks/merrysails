@@ -9,6 +9,7 @@ import {
 } from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
+import { buildHreflang } from "@/lib/hreflang";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -359,7 +360,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     keywords,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      ...(!ownerRedirect && { languages: buildHreflang(getTourPath(tour)) }),
+    },
     robots: {
       index: !ownerRedirect,
       follow: true,
@@ -445,6 +449,17 @@ export default async function TourDetailPage({
               merchantReturnDays: 1,
               returnFees: "https://schema.org/FreeReturn",
             },
+          },
+        }
+      : {}),
+    ...(tour.rating && tour.reviewCount
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: tour.rating,
+            reviewCount: tour.reviewCount,
+            bestRating: 5,
+            worstRating: 1,
           },
         }
       : {}),

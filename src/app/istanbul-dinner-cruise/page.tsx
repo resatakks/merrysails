@@ -5,6 +5,7 @@ import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
   title: "Istanbul Dinner Cruise | Bosphorus Dinner Cruise | MerrySails",
   description:
     "Compare Bosphorus dinner cruise packages in Istanbul from EUR 30 to EUR 90 with dinner service, Turkish night entertainment, and hotel pickup support.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/istanbul-dinner-cruise"),
+  },
   openGraph: {
     title: "Istanbul Dinner Cruise | Bosphorus Dinner Cruise | MerrySails",
     description:
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": ["TouristTrip", "Product"],
   name: dinnerTour.nameEn,
   alternateName: [
     "Istanbul Dinner Cruise",
@@ -62,14 +66,30 @@ const serviceSchema = {
     "Bosphorus Night Cruise with Dinner",
   ],
   description: dinnerTour.description,
-  serviceType: "Shared Bosphorus Dinner Cruise",
+  touristType: "Cultural Tourism",
   url: canonicalUrl,
+  image: dinnerTour.image,
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
   areaServed: {
     "@type": "City",
     name: "Istanbul",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: dinnerTour.rating,
+    reviewCount: dinnerTour.reviewCount,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    lowPrice: Math.min(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
+    highPrice: Math.max(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
+    priceCurrency: "EUR",
+    offerCount: dinnerTour.packages?.length ?? 1,
+    availability: "https://schema.org/InStock",
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
