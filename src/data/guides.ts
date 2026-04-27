@@ -25,6 +25,7 @@ export interface Guide {
   keywords: string[];
   sections: GuideSection[];
   relatedTours: string[];
+  geo?: { lat: number; lng: number };
 }
 
 export const guides: Guide[] = [
@@ -43,7 +44,8 @@ export const guides: Guide[] = [
       { heading: "Bosphorus Bridges", content: "Three suspension bridges span the Bosphorus, connecting Europe and Asia. The 15 July Martyrs Bridge (1973) was the first, stretching 1,560 meters and illuminated with colorful LED lights at night. The Fatih Sultan Mehmet Bridge (1988) sits at the strait's narrowest point. The Yavuz Sultan Selim Bridge (2016) near the Black Sea is the widest suspension bridge in the world. Sailing beneath these engineering marvels is a highlight of any Bosphorus cruise." },
       { heading: "Best Time to Cruise the Bosphorus", content: "The Bosphorus is stunning year-round, but each season offers something different. Spring (April–May) brings mild weather and tulip displays along the shores. Summer (June–August) is perfect for swimming tours and late sunsets. Autumn (September–November) offers golden light and fewer crowds. Winter (December–March) features dramatic skies and some of the strongest value on shared departures — current public sunset fares can drop to €34 during promotional periods. For photography, the golden hour just before sunset creates magical lighting on the palaces and mosques." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
+    geo: { lat: 41.1167, lng: 29.0778 },
   },
   {
     slug: "maidens-tower",
@@ -59,7 +61,8 @@ export const guides: Guide[] = [
       { heading: "Seeing the Tower by Cruise", content: "Every Bosphorus cruise passes the Maiden's Tower, making it one of the most photographed moments of any boat tour. Sunset cruises offer particularly magical views as the golden light illuminates the tower against the Istanbul skyline. Private yacht charters can circle the tower closely — this is a popular spot for marriage proposals, with the tower's romantic legends adding to the atmosphere. The tower is also beautifully illuminated at night, creating stunning reflections on the water during dinner cruises." },
       { heading: "In Popular Culture", content: "The Maiden's Tower gained international fame as a key location in the 1999 James Bond film 'The World Is Not Enough,' where it served as the villain's headquarters. It has also appeared in countless Turkish films, novels, and paintings. The tower is one of Istanbul's most recognizable symbols, appearing on postcards, souvenirs, and even Turkish Airlines branding. For locals, it represents the romantic soul of Istanbul — a city where East meets West, surrounded by water and history." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "romantic-marriage-proposal", "private-bosphorus-sunset-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "romantic-marriage-proposal", "private-bosphorus-sunset-cruise"],
+    geo: { lat: 41.0211, lng: 29.0041 },
   },
   {
     slug: "dolmabahce-palace",
@@ -75,7 +78,8 @@ export const guides: Guide[] = [
       { heading: "Seeing Dolmabahçe from the Water", content: "Arguably the best view of Dolmabahçe Palace is from the Bosphorus itself. The 600-meter-long waterfront facade is a stunning sight, especially during golden hour when the white marble glows warmly. Every Bosphorus cruise passes directly in front of the palace, and guides provide commentary about its history. For the most impressive view, take a sunset cruise — the palace is on the European shore and catches beautiful evening light." },
       { heading: "Atatürk's Connection", content: "Dolmabahçe Palace holds deep significance for modern Turkey. Mustafa Kemal Atatürk, the founder of the Turkish Republic, used the palace as his Istanbul residence and it was here that he passed away on November 10, 1938, at 9:05 AM. All the clocks in the palace were stopped at this time and remain so today. His bedroom, preserved exactly as it was, is one of the most visited rooms in the palace." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"],
+    geo: { lat: 41.0391, lng: 29.0003 },
   },
   {
     slug: "ortakoy-mosque",
@@ -90,7 +94,8 @@ export const guides: Guide[] = [
       { heading: "The Ortaköy Neighborhood", content: "Ortaköy itself is one of Istanbul's most charming waterfront neighborhoods. The square in front of the mosque hosts a popular weekend market selling crafts, jewelry, and street food. The area's famous kumpir (stuffed baked potatoes) are a must-try Istanbul snack. The neighborhood also has excellent cafes and restaurants with Bosphorus views, making it a perfect spot to spend an afternoon before or after a cruise." },
       { heading: "Best Ways to See It", content: "From the water, Ortaköy Mosque is visible on every Bosphorus cruise as boats pass between the first bridge (15 July Martyrs Bridge) and the mosque. Sunset cruises offer the most dramatic lighting. From land, walk along the Ortaköy waterfront promenade for close-up views. The mosque is free to enter outside of prayer times, and the interior is worth seeing for its elegant proportions and luminous atmosphere." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    geo: { lat: 41.0481, lng: 29.0275 },
   },
   {
     slug: "rumeli-fortress",
@@ -105,7 +110,8 @@ export const guides: Guide[] = [
       { heading: "Visiting Today", content: "Today, Rumeli Hisarı is an open-air museum and one of Istanbul's most atmospheric historical sites. The fortress grounds host summer concerts and cultural events. You can walk along the walls for dramatic views of the Bosphorus, the Fatih Sultan Mehmet Bridge above, and the Asian shore opposite. The fortress is in the Sarıyer district, accessible by bus from Kabataş or Taksim." },
       { heading: "Seeing It From the Bosphorus", content: "From a cruise boat, Rumeli Fortress is one of the most impressive sights on the Bosphorus. The massive stone walls rise steeply from the waterline, and the three towers dominate the hillside. On a sunset cruise, the fortress catches warm golden light that contrasts beautifully with the deep blue waters. Tour guides typically share the dramatic story of the 1453 conquest as you pass — a moment that changed world history." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-sightseeing-yacht-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-sightseeing-yacht-cruise"],
+    geo: { lat: 41.0826, lng: 29.0584 },
   },
   {
     slug: "galata-bridge-eminonu",
@@ -120,7 +126,8 @@ export const guides: Guide[] = [
       { heading: "What to See in Eminönü", content: "Beyond the cruise piers, Eminönü is packed with things to see. The New Mosque (Yeni Cami, 1665) dominates the square with its grand cascading domes. The nearby Spice Bazaar (Mısır Çarşısı) is a sensory explosion of colors, aromas, and flavors — selling spices, Turkish delight, dried fruits, and teas. Don't miss the iconic balık ekmek (fish sandwich) boats rocking on the Golden Horn, where freshly grilled fish is served in bread for just a few lira." },
       { heading: "Getting to Eminönü", content: "Eminönü is one of Istanbul's most accessible locations. The T1 tramway stops directly at Eminönü, connecting it to Sultanahmet (2 stops), Kabataş, and beyond. Multiple bus routes converge here, and ferries connect to the Asian side (Kadıköy, Üsküdar). If you're coming from Taksim/Beyoğlu, take the historic Tünel funicular to Karaköy and walk across Galata Bridge. Arrive at least 15 minutes before your cruise departure time." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"],
+    geo: { lat: 41.0165, lng: 28.9699 },
   },
   {
     slug: "buyukada-princes-islands",
@@ -136,7 +143,8 @@ export const guides: Guide[] = [
       { heading: "What to Do", content: "Cycle around Büyükada's perimeter road (about 12km) for stunning coastal views. Visit the Aya Yorgi Church at the hilltop — the walk up through pine forests is beautiful. Explore the island's charming back streets with their flower-draped wooden mansions. Have a traditional Turkish lunch at a waterfront restaurant. Swim at one of the beaches (best in summer). Browse the handicraft shops along the main street. Take a horse-drawn carriage ride (phaeton) — though these are being phased out in favor of electric vehicles." },
       { heading: "Best Time to Visit", content: "Spring (April–June) and early autumn (September–October) are ideal — pleasant weather without summer crowds. Summer weekends can be extremely busy with Istanbul residents escaping the city heat. Winter visits are quiet and atmospheric, with fewer tourists and a melancholic beauty to the empty mansions. If visiting in summer, take an early morning ferry to avoid crowds and secure a good lunch spot." }
     ],
-    relatedTours: ["istanbul-princes-island-tour"]
+    relatedTours: ["istanbul-princes-island-tour"],
+    geo: { lat: 40.8745, lng: 29.1257 },
   },
   {
     slug: "kurucesme-marina",
@@ -151,7 +159,8 @@ export const guides: Guide[] = [
       { heading: "What to Expect", content: "When you arrive at Kuruçeşme Marina for your private yacht charter, you'll be greeted by the yacht crew who will guide you to your vessel. Boarding typically begins 10–15 minutes before departure. Your yacht will be set up according to your package — Essential, Premium, or VIP — with any add-on decorations, food, or entertainment you've requested. The professional captain briefs you on safety before setting sail along one of the most beautiful waterways in the world." },
       { heading: "Nearby Attractions", content: "Before or after your yacht experience, explore the charming Kuruçeşme waterfront. Several excellent restaurants and cafes line the shore, including some of Istanbul's best fish restaurants. The nearby Ortaköy neighborhood (a 10-minute walk) offers the famous kumpir stalls, weekend craft market, and the stunning Ortaköy Mosque. The Kuruçeşme coastline also hosts open-air concerts and events during summer months." }
     ],
-    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "private-bosphorus-sunset-cruise"]
+    relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "private-bosphorus-sunset-cruise"],
+    geo: { lat: 41.0608, lng: 29.0487 },
   },
   {
     slug: "kabatas-pier",
@@ -235,7 +244,8 @@ export const guides: Guide[] = [
         },
       },
     ],
-    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"]
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"],
+    geo: { lat: 41.0337, lng: 28.9930 },
   },
   {
     slug: "karakoy-waterfront",
@@ -251,7 +261,8 @@ export const guides: Guide[] = [
       { heading: "Who Should Use This Guide", content: "This page is useful when your main question is arrival, transit, or meeting-flow confidence for the sunset cruise. It is not the right first click if you are still deciding between sunset, dinner, or private yacht options. In that case, start with the [Bosphorus Cruise hub](/bosphorus-cruise) or go straight to the protected owner page for [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise). Use the Karakoy guide once the product choice is already made and you need the local waterfront context." },
       { heading: "Before You Leave for the Cruise", content: "Give yourself a small time buffer, keep your booking confirmation ready, and do not rely on an old screenshot or a generic Istanbul cruise pier assumption. Sunset timing changes by season, and shared departures can be adjusted around light and operating conditions. If you requested extra transfer support, ask the team to confirm that separately. Otherwise, treat Karakoy as the arrival district and the written MerrySails follow-up as the final boarding instruction." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise"],
+    geo: { lat: 41.0224, lng: 28.9761 },
   },
   {
     slug: "golden-horn",
@@ -266,7 +277,8 @@ export const guides: Guide[] = [
       { heading: "Landmarks Along the Golden Horn", content: "Several of Istanbul's key landmarks line the Golden Horn. The Galata Bridge spans its mouth, connecting Eminönü to Karaköy. Further up, the Fener and Balat neighborhoods preserve Ottoman-era Greek and Jewish heritage with colorful houses and ancient churches. The Eyüp Sultan Mosque, one of Islam's holiest sites, sits at the upper end. Miniaturk — a miniature park with scale models of Turkey's landmarks — and the Rahmi Koç Museum of industry and technology are also along its shores." },
       { heading: "The Golden Horn Today", content: "Today, the Golden Horn is lined with parks, walking paths, and cultural spaces. The Haliç Congress Center hosts events, while the Santral Istanbul arts center (in a converted power plant) brings creative energy to the area. Ferry services run along the Golden Horn from Eminönü to Eyüp, offering a scenic alternative to road transport. While Bosphorus cruises typically head north along the strait, the Golden Horn's entrance at Eminönü is visible from the departure pier and the Galata Bridge area." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"],
+    geo: { lat: 41.0324, lng: 28.9403 },
   },
   {
     slug: "istanbul-bosphorus-bridges",
@@ -282,7 +294,8 @@ export const guides: Guide[] = [
       { heading: "Yavuz Sultan Selim Bridge (Third Bridge)", content: "The newest and most impressive of the three, the Yavuz Sultan Selim Bridge opened in 2016 near the Black Sea entrance of the Bosphorus. It is the widest suspension bridge in the world at 59 meters, carrying 8 lanes of traffic and 2 railway lines. Named after Sultan Selim I, it was designed by architect Michel Virlogeux (who also designed France's famous Millau Viaduct). While standard Bosphorus cruises typically don't reach this far north, extended yacht charters and full Bosphorus tours pass beneath it." },
       { heading: "Experiencing the Bridges by Cruise", content: "On a typical Bosphorus cruise, you'll pass under the First Bridge and often approach the Second Bridge before turning back. The experience of looking up as you glide beneath the massive structure is remarkable — the bridge seems to stretch infinitely overhead. At night, the First Bridge's LED display creates a rainbow of colors reflected in the black water. For photographers, the bridges make excellent framing elements for skyline shots and are particularly dramatic at sunset." }
     ],
-    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"]
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
+    geo: { lat: 41.0458, lng: 29.0337 },
   },
 ];
 

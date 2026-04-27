@@ -150,6 +150,23 @@ export default async function GuidePage({
     mainEntityOfPage: `https://merrysails.com/guides/${guide.slug}`,
   };
 
+  const placeSchema = guide.geo ? {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name: cleanTitle,
+    description: cleanExcerpt,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: guide.geo.lat,
+      longitude: guide.geo.lng,
+    },
+    url: `https://merrysails.com/guides/${guide.slug}`,
+    containedInPlace: {
+      "@type": "City",
+      name: "Istanbul",
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -160,6 +177,12 @@ export default async function GuidePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {placeSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(placeSchema) }}
+        />
+      )}
 
       <article className="pt-28 pb-20">
         <div className="container-main max-w-4xl">
