@@ -31,6 +31,18 @@ export async function GET(req: NextRequest) {
     }
     const topTours = Object.entries(tourCounts).map(([tour, count]) => ({ tour, count })).sort((a, b) => b.count - a.count);
 
+    // Bot visits today
+    const botRows = await prisma.botVisit.groupBy({
+      by: ["provider"],
+      where: { createdAt: { gte: start } },
+      _count: { provider: true },
+      orderBy: { _count: { provider: "desc" } },
+    });
+    const botVisits = botRows.map((r: { provider: string; _count: { provider: number } }) => ({
+      provider: r.provider,
+      count: r._count.provider,
+    }));
+
     const text = formatDailyStats({
       total: reservations.length,
       completed: reservations.filter((r: ReservationRow) => r.status === "completed").length,
@@ -39,6 +51,7 @@ export async function GET(req: NextRequest) {
       revenue,
       currency: "€",
       topTours,
+      botVisits,
     });
 
     const result = await sendDailyReport(text);

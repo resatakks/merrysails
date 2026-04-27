@@ -460,6 +460,7 @@ export function formatDailyStats(stats: {
   total: number; completed: number; cancelled: number; newCount: number;
   revenue: number; currency: string;
   topTours?: { tour: string; count: number }[];
+  botVisits?: { provider: string; count: number }[];
 }): string {
   const today = new Date().toLocaleDateString("tr-TR", { timeZone: TZ, day: "2-digit", month: "long" });
   const rate = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
@@ -476,6 +477,13 @@ export function formatDailyStats(stats: {
     msg += `\n⛵ <b>En Çok Tur:</b>\n`;
     for (const t of stats.topTours.slice(0, 3)) msg += `   ${esc(t.tour)} — ${t.count}x\n`;
   }
+
+  if (stats.botVisits && stats.botVisits.length > 0) {
+    const totalBots = stats.botVisits.reduce((s, b) => s + b.count, 0);
+    msg += `\n🤖 <b>AI Crawler — ${totalBots} ziyaret:</b>\n`;
+    for (const b of stats.botVisits.slice(0, 5)) msg += `   ${esc(b.provider)} — ${b.count}x\n`;
+  }
+
   return msg;
 }
 
