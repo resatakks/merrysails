@@ -32,6 +32,30 @@ const TRANSLATIONS: Record<string, {
     breadcrumb: "Akşam Yemeği Turu",
     canonicalPath: "/tr/istanbul-dinner-cruise",
   },
+  de: {
+    title: "Istanbul Dinner Cruise | Bosporus Dinner Kreuzfahrt | MerrySails",
+    description:
+      "Bosporus Dinner Cruise Istanbul ab €30. Türkische Abendunterhaltung, 4 Pakete bis €90, Hoteltransfer möglich. TÜRSAB-lizenziert seit 2001. Jetzt buchen.",
+    h1: "Istanbul Dinner Cruise",
+    breadcrumb: "Dinner Cruise",
+    canonicalPath: "/de/istanbul-dinner-cruise",
+  },
+  fr: {
+    title: "Croisière Dîner Istanbul | Croisière Bosphore Dîner | MerrySails",
+    description:
+      "Croisière dîner sur le Bosphore à Istanbul à partir de €30. 4 formules jusqu'à €90, spectacle de nuit turque, transfert hôtel disponible. Réservez maintenant.",
+    h1: "Croisière Dîner Istanbul",
+    breadcrumb: "Croisière Dîner",
+    canonicalPath: "/fr/istanbul-dinner-cruise",
+  },
+  nl: {
+    title: "Istanbul Dinner Cruise | Bosporus Diner Cruise | MerrySails",
+    description:
+      "Bosporus diner cruise Istanbul vanaf €30. Turkse avondshow, 4 pakketten tot €90, hotelophaal mogelijk. Boek direct bij TÜRSAB-gecertificeerd bedrijf.",
+    h1: "Istanbul Dinner Cruise",
+    breadcrumb: "Dinner Cruise",
+    canonicalPath: "/nl/istanbul-dinner-cruise",
+  },
 };
 
 export async function generateMetadata({

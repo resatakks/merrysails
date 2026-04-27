@@ -1,17 +1,15 @@
 import { ACTIVE_LOCALES } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
 
-// Routes that will have locale-specific versions when non-EN locales are activated.
-// EN stays at root (e.g. /bosphorus-cruise), other locales get a prefix (e.g. /tr/bosphorus-cruise).
+// Routes that have live [locale]/ pages for every active non-EN locale.
+// Only add a path here once its locale/page.tsx files exist — hreflang pointing
+// to 404s hurts crawl quality. EN stays at root; other locales get a /<locale>/ prefix.
 const LOCALIZED_ROUTES = new Set([
   "/bosphorus-cruise",
   "/istanbul-dinner-cruise",
-  "/cruises/bosphorus-dinner-cruise",
   "/cruises/bosphorus-sunset-cruise",
   "/yacht-charter-istanbul",
   "/boat-rental-istanbul",
-  "/private-bosphorus-dinner-cruise",
-  "/proposal-yacht-rental-istanbul",
 ]);
 
 /**

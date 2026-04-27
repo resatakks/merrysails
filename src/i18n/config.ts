@@ -19,7 +19,7 @@ export const DEFAULT_LOCALE: SiteLocale = "en";
 
 // Rollout is staged intentionally so we don't emit hreflang signals
 // for locales that do not yet have public routes and translated content.
-export const ACTIVE_LOCALES: SiteLocale[] = ["en", "tr"];
+export const ACTIVE_LOCALES: SiteLocale[] = ["en", "tr", "de", "fr", "nl"];
 
 export const FUTURE_LOCALES: SiteLocale[] = SUPPORTED_LOCALES.filter(
   (locale) => !ACTIVE_LOCALES.includes(locale)

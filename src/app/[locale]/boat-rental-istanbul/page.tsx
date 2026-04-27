@@ -19,6 +19,21 @@ const TRANSLATIONS: Record<string, {
     description: `İstanbul'da tekne kiralama saatlik €${startingRate}'dan başlıyor. Boğaz'da özel tekne turu, yemek ve gün batımı ekstraları dahil edilebilir. Hemen teklif alın.`,
     canonicalPath: "/tr/boat-rental-istanbul",
   },
+  de: {
+    title: `Bootsverleih Istanbul 2026 | Ab €${startingRate}/Std | MerrySails`,
+    description: `Bootsverleih Istanbul ab €${startingRate} pro Stunde. Privates Boot auf dem Bosporus mieten, Dinner und Sonnenuntergang optional hinzubuchen. Angebot anfragen.`,
+    canonicalPath: "/de/boat-rental-istanbul",
+  },
+  fr: {
+    title: `Location Bateau Istanbul 2026 | À partir de €${startingRate}/h | MerrySails`,
+    description: `Location bateau Istanbul à partir de €${startingRate}/heure. Promenade privée sur le Bosphore, options dîner et coucher de soleil disponibles. Demandez un devis.`,
+    canonicalPath: "/fr/boat-rental-istanbul",
+  },
+  nl: {
+    title: `Boothuur Istanbul 2026 | Vanaf €${startingRate}/uur | MerrySails`,
+    description: `Boothuur Istanbul vanaf €${startingRate} per uur. Privé vaartuig op de Bosporus, diner en zonsondergang optioneel toe te voegen. Vraag een offerte aan.`,
+    canonicalPath: "/nl/boat-rental-istanbul",
+  },
 };
 
 export async function generateMetadata({

@@ -30,6 +30,27 @@ const TRANSLATIONS: Record<string, {
     h1: "Boğaz Gün Batımı Turu",
     canonicalPath: "/tr/cruises/bosphorus-sunset-cruise",
   },
+  de: {
+    title: "Bosporus Sonnenuntergang Kreuzfahrt Istanbul 2026 | MerrySails",
+    description:
+      "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
+    h1: "Bosporus Sonnenuntergang Kreuzfahrt",
+    canonicalPath: "/de/cruises/bosphorus-sunset-cruise",
+  },
+  fr: {
+    title: "Croisière Coucher de Soleil Bosphore Istanbul 2026 | MerrySails",
+    description:
+      "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €34. 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €40. Réservez.",
+    h1: "Croisière Coucher de Soleil Bosphore",
+    canonicalPath: "/fr/cruises/bosphorus-sunset-cruise",
+  },
+  nl: {
+    title: "Bosporus Zonsondergang Cruise Istanbul 2026 | MerrySails",
+    description:
+      "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht, live gids, versnaperingen. Met wijn vanaf €40. Direct boeken bij TÜRSAB-gecertificeerd bedrijf.",
+    h1: "Bosporus Zonsondergang Cruise",
+    canonicalPath: "/nl/cruises/bosphorus-sunset-cruise",
+  },
 };
 
 export async function generateMetadata({
