@@ -7,6 +7,7 @@ import { handleTrackedContactNavigation } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { PHONE_DISPLAY } from "@/lib/constants";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 const navItems = [
   { label: "Cruises", href: "/bosphorus-cruise" },
@@ -113,6 +114,8 @@ export default function Header() {
                 {PHONE_DISPLAY}
               </a>
 
+              <LanguageSwitcher />
+
               <Link
                 href="/reservation"
                 className="btn-cta inline-flex items-center justify-center text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5"
@@ -199,6 +202,10 @@ export default function Header() {
                       ))}
                     </nav>
                     <div className="space-y-3 border-t border-gray-100 p-6 pt-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-[var(--text-muted)]">Language</span>
+                        <LanguageSwitcher compact />
+                      </div>
                       <a
                         href="tel:+905370406822"
                         onClick={(event) =>
