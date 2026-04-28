@@ -26,6 +26,46 @@ type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
 
 const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl"];
 
+const FOOTER_LOCALIZED_ROUTES = new Set([
+  "/bosphorus-cruise",
+  "/istanbul-dinner-cruise",
+  "/cruises/bosphorus-sunset-cruise",
+  "/yacht-charter-istanbul",
+  "/boat-rental-istanbul",
+  "/boat-rental-hourly-istanbul",
+  "/private-bosphorus-dinner-cruise",
+  "/proposal-yacht-rental-istanbul",
+  "/corporate-events",
+  "/private-events",
+  "/faq",
+  "/about",
+  "/contact",
+  "/reservation",
+  "/blog",
+  "/guides",
+  "/cruises",
+  "/private-tours",
+  "/bosphorus-cruise-departure-points",
+  "/client-hosting-yacht-istanbul",
+  "/corporate-yacht-dinner-istanbul",
+  "/dinner-cruise-pickup-sultanahmet-taksim",
+  "/dinner-cruise-with-hotel-pickup-istanbul",
+  "/kabatas-dinner-cruise-istanbul",
+  "/kurucesme-marina-yacht-charter",
+  "/private-dinner-cruise-for-couples-istanbul",
+  "/product-launch-yacht-istanbul",
+  "/proposal-yacht-with-photographer-istanbul",
+  "/sunset-cruise-tickets-istanbul",
+  "/team-building-yacht-istanbul",
+  "/turkish-night-dinner-cruise-istanbul",
+]);
+
+function localizeHref(href: string, locale: NavLocale): string {
+  if (locale === "en") return href;
+  if (FOOTER_LOCALIZED_ROUTES.has(href)) return `/${locale}${href}`;
+  return href;
+}
+
 type FooterCoreLink = { label: string; href: string };
 
 type FooterTranslation = {
@@ -314,7 +354,7 @@ export default function Footer() {
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href={localizeHref(link.href, locale)}
                     className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
                   >
                     {link.label}
@@ -332,7 +372,7 @@ export default function Footer() {
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href={localizeHref(link.href, locale)}
                     className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
                   >
                     {link.label}
