@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getTourBySlug } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Corporate Yacht Events Istanbul 2026 | Company Event Planning | MerrySails",
   description:
     "Plan corporate yacht events in Istanbul for team dinners, client hosting, launches, and company evenings with quote-led Bosphorus event support.",
-  alternates: { canonical: `${SITE_URL}/corporate-events` },
+  alternates: { canonical: `${SITE_URL}/corporate-events`, languages: buildHreflang("/corporate-events") },
   openGraph: {
     title: "Corporate Yacht Events Istanbul 2026 | Company Event Planning | MerrySails",
     description:

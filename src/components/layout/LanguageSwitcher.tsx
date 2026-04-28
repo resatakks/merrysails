@@ -26,6 +26,13 @@ const LOCALIZED_ROUTES = new Set([
   "cruises/bosphorus-sunset-cruise",
   "yacht-charter-istanbul",
   "boat-rental-istanbul",
+  "private-bosphorus-dinner-cruise",
+  "proposal-yacht-rental-istanbul",
+  "corporate-events",
+  "private-events",
+  "faq",
+  "about",
+  "contact",
 ]);
 
 const NON_EN_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en") as SiteLocale[];
