@@ -193,7 +193,7 @@ export default function Footer() {
       <div className="container-main pt-20 pb-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
           <div>
-            <Link href="/" className="mb-4 flex items-center gap-3">
+            <Link href={locale === "en" ? "/" : `/${locale}`} className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
                 <Anchor className="h-5 w-5 text-[var(--brand-gold)]" />
               </div>
