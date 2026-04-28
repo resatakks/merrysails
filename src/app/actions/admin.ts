@@ -119,6 +119,55 @@ function parseDelimitedList(value: FormDataEntryValue | null): string[] {
     .slice(0, 40);
 }
 
+function parseAddOnList(values: FormDataEntryValue[]): string[] {
+  const out: string[] = [];
+  for (const value of values) {
+    String(value ?? "")
+      .split(/\n|,/)
+      .map((item) => item.replace(/\s+/g, " ").trim())
+      .filter(Boolean)
+      .forEach((item) => out.push(item));
+  }
+  return out.slice(0, 40);
+}
+
+interface AdditionalPassengerInput {
+  name?: string;
+  phone?: string;
+  email?: string;
+}
+
+function parseAdditionalPassengers(
+  value: FormDataEntryValue | null
+): string[] {
+  const raw = String(value ?? "").trim();
+  if (!raw) return [];
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return [];
+  }
+
+  if (!Array.isArray(parsed)) return [];
+
+  const lines: string[] = [];
+  for (const entry of parsed.slice(0, 24)) {
+    if (!entry || typeof entry !== "object") continue;
+    const passenger = entry as AdditionalPassengerInput;
+    const name = (passenger.name ?? "").replace(/\s+/g, " ").trim().slice(0, 120);
+    const phone = (passenger.phone ?? "").replace(/\s+/g, " ").trim().slice(0, 32);
+    const email = (passenger.email ?? "").replace(/\s+/g, "").trim().slice(0, 160);
+    if (!name && !phone && !email) continue;
+    const parts = [name || "(name pending)"];
+    if (phone) parts.push(phone);
+    if (email) parts.push(email);
+    lines.push(parts.join(" – "));
+  }
+  return lines;
+}
+
 function parseAdminDateInput(value: string): Date | null {
   const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
 
@@ -145,11 +194,52 @@ function buildManualPricingSnapshot(input: {
   guests: number;
   totalPrice: number;
   packageName?: string;
+  addOns?: string[];
 }): ReservationPricingSnapshot {
   const tour = getTourBySlug(input.tourSlug);
   const priceMode = tour ? getPriceMode(tour) : "custom";
-  const quantity = priceMode === "perGroup" ? 1 : input.guests;
-  const unitPrice = quantity > 0 ? Math.round((input.totalPrice / quantity) * 100) / 100 : input.totalPrice;
+  const safeGuests = Math.max(1, input.guests);
+
+  // Resolve add-on prices from tour data so each one shows on the invoice
+  const addOnLines = (input.addOns ?? [])
+    .map((name) => {
+      const match = tour?.addOns?.find((a) => a.name === name);
+      if (!match) {
+        return {
+          type: "addon" as const,
+          label: name,
+          quantity: 1,
+          unitPrice: 0,
+          unitLabel: "",
+          total: 0,
+        };
+      }
+      const amountMatch = match.price.match(/(\d+(?:[.,]\d+)?)/);
+      const amount = amountMatch
+        ? Math.round(Number.parseFloat(amountMatch[1].replace(",", ".")) * 100) / 100
+        : 0;
+      const isPerPerson = /\/\s*person|\/ pp|per person/i.test(match.price);
+      const quantity = isPerPerson ? safeGuests : 1;
+      const total = Math.round(amount * quantity * 100) / 100;
+      return {
+        type: "addon" as const,
+        label: match.name,
+        quantity,
+        unitPrice: amount,
+        unitLabel: isPerPerson ? "/person" : "",
+        total,
+      };
+    });
+
+  const addOnsTotal = Math.round(
+    addOnLines.reduce((sum, line) => sum + line.total, 0) * 100
+  ) / 100;
+  const baseTotal = Math.max(0, Math.round((input.totalPrice - addOnsTotal) * 100) / 100);
+  const baseQuantity = priceMode === "perGroup" ? 1 : safeGuests;
+  const baseUnitPrice =
+    baseQuantity > 0
+      ? Math.round((baseTotal / baseQuantity) * 100) / 100
+      : baseTotal;
 
   return {
     currency: "EUR",
@@ -159,14 +249,15 @@ function buildManualPricingSnapshot(input: {
       {
         type: "package",
         label: input.packageName || tour?.nameEn || "Manual reservation",
-        quantity,
-        unitPrice,
+        quantity: baseQuantity,
+        unitPrice: baseUnitPrice,
         unitLabel: priceMode === "perGroup" ? "/booking" : "/person",
-        total: input.totalPrice,
+        total: baseTotal,
       },
+      ...addOnLines,
     ],
-    subtotal: input.totalPrice,
-    addOnsTotal: 0,
+    subtotal: baseTotal,
+    addOnsTotal,
     total: input.totalPrice,
   };
 }
@@ -553,8 +644,12 @@ export async function createManualReservationAdminAction(
   const internalCostEur = parseOptionalEuroCost(formData.get("internalCostEur"));
   const status = normalizeReservationStatus(sanitizeText(formData.get("status"), 24) || "confirmed");
   const packageName = sanitizeText(formData.get("packageName"), 160);
-  const addOns = parseDelimitedList(formData.get("addOns"));
-  const additionalGuests = parseDelimitedList(formData.get("additionalGuests"));
+  const addOns = parseAddOnList(formData.getAll("addOns"));
+  const additionalGuests = (() => {
+    const structured = parseAdditionalPassengers(formData.get("additionalPassengers"));
+    if (structured.length > 0) return structured;
+    return parseDelimitedList(formData.get("additionalGuests"));
+  })();
   const privateTransferRequested = formData.get("privateTransferRequested") === "on";
   const customerNote = String(formData.get("notes") ?? "").replace(/\u0000/g, "").trim().slice(0, 1200);
   const shouldSendEmail = formData.get("sendEmail") === "on";
@@ -604,6 +699,7 @@ export async function createManualReservationAdminAction(
       guests,
       totalPrice,
       packageName: packageName || undefined,
+      addOns,
     });
 
     const reservation = await prisma.reservation.create({
