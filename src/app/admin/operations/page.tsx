@@ -12,7 +12,7 @@ import { AdminManualReservationForm } from "@/components/admin/AdminManualReserv
 import { AdminShell } from "@/components/admin/AdminShell";
 import { requireAdminSession } from "@/lib/admin-auth";
 import { prisma } from "@/lib/db";
-import { getTourBySlug, tours } from "@/data/tours";
+import { getPriceMode, getTourBySlug, tours } from "@/data/tours";
 import { listUpcomingTourOperations } from "@/lib/tour-operations";
 import { normalizeReservationStatus } from "@/lib/reservation-status";
 
@@ -144,12 +144,38 @@ export default async function AdminOperationsPage({
     ["confirmed", "completed"].includes(normalizeReservationStatus(reservation.status))
   ).length;
 
-  const manualTourOptions = tours.map((tour) => ({
-    slug: tour.slug,
-    name: tour.nameEn,
-    defaultTime: tour.departureTime,
-    defaultPrice: tour.priceEur,
-  }));
+  const manualTourOptions = tours.map((tour) => {
+    const priceMode = getPriceMode(tour);
+    return {
+      slug: tour.slug,
+      name: tour.nameEn,
+      defaultTime: tour.departureTime,
+      defaultPrice: tour.priceEur,
+      priceMode,
+      packages: (tour.packages ?? []).map((pkg) => ({
+        name: pkg.name,
+        price: pkg.price,
+        description: pkg.description,
+      })),
+      addOns: (tour.addOns ?? []).map((addOn) => {
+        const match = addOn.price.match(/(\d+(?:[.,]\d+)?)/);
+        const amount = match
+          ? Number.parseFloat(match[1].replace(",", "."))
+          : 0;
+        const unit: "perPerson" | "perBooking" = /\/\s*person|\/ pp|per person/i.test(
+          addOn.price
+        )
+          ? "perPerson"
+          : "perBooking";
+        return {
+          name: addOn.name,
+          price: addOn.price,
+          amount: Number.isFinite(amount) ? amount : 0,
+          unit,
+        };
+      }),
+    };
+  });
 
   return (
     <AdminShell
