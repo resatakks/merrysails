@@ -70,14 +70,13 @@ function detectFromPathname(pathname: string): { locale: SiteLocale; route: stri
   return { locale: "en" as SiteLocale, route: stripped };
 }
 
-// Returns the target path, or null if no locale version exists for this route.
-// null = stay on current page (no navigation).
-function buildTargetPath(targetLocale: SiteLocale, route: string): string | null {
+// Returns the target path for language switching.
+// Non-localized pages: EN stays, non-EN falls back to /{locale}/bosphorus-cruise.
+function buildTargetPath(targetLocale: SiteLocale, route: string): string {
   if (!LOCALIZED_ROUTES.has(route)) {
-    // Non-localized page — only EN exists.
-    // If switching to EN: strip the locale prefix (in case there was one).
-    // If switching to any non-EN: no translation exists, stay put.
-    return targetLocale === "en" ? `/${route}` : null;
+    if (targetLocale === "en") return `/${route}`;
+    // No locale version — send to locale's main page so the user stays in their language.
+    return `/${targetLocale}/bosphorus-cruise`;
   }
   return targetLocale === "en" ? `/${route}` : `/${targetLocale}/${route}`;
 }
@@ -92,12 +91,9 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
   const router = useRouter();
   const { locale: currentLocale, route } = detectFromPathname(pathname);
 
-  const isLocalized = LOCALIZED_ROUTES.has(route);
-
   const handleSwitch = (target: SiteLocale) => {
     if (target === currentLocale) return;
-    const path = buildTargetPath(target, route);
-    if (path) router.push(path);
+    router.push(buildTargetPath(target, route));
   };
 
   const activeLocales = ACTIVE_LOCALES as SiteLocale[];
@@ -118,19 +114,14 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
       <div className="absolute right-0 top-full z-50 pt-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150">
         <div className="min-w-[168px] rounded-xl border border-gray-100 bg-white py-1.5 shadow-lg ring-1 ring-black/5">
           {activeLocales.map((locale) => {
-            const available = locale === "en" || isLocalized;
             return (
               <button
                 key={locale}
                 onClick={() => handleSwitch(locale)}
-                disabled={!available}
-                title={!available ? "English only" : undefined}
                 className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
                   locale === currentLocale
                     ? "bg-[var(--surface-alt)] font-semibold text-[var(--brand-primary)]"
-                    : available
-                    ? "text-[var(--body-text)] hover:bg-[var(--surface-alt)] hover:text-[var(--brand-primary)]"
-                    : "cursor-not-allowed text-[var(--text-muted)] opacity-40"
+                    : "text-[var(--body-text)] hover:bg-[var(--surface-alt)] hover:text-[var(--brand-primary)]"
                 }`}
               >
                 <span className="text-base leading-none">{LOCALE_FLAGS[locale]}</span>
