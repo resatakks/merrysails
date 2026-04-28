@@ -112,9 +112,9 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {[
             { icon: Ship, value: "Since 2001", label: "Operating History" },
-            { icon: Users, value: "English-first", label: "Primary Public Site" },
-            { icon: Award, value: "TURSAB A Group", label: "Licensing" },
-            { icon: Anchor, value: "3 Core Owners", label: "Main Booking Paths" },
+            { icon: Users, value: "50,000+", label: "Guests Served" },
+            { icon: Award, value: "TURSAB A Group", label: "License #14073" },
+            { icon: Anchor, value: "5 Languages", label: "EN, TR, DE, FR, NL" },
           ].map((stat) => (
             <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-sm">
               <stat.icon className="w-8 h-8 text-[var(--brand-primary)] mx-auto mb-3" />

@@ -11,7 +11,7 @@ const canonicalUrl = `${SITE_URL}/bosphorus-cruise-departure-points`;
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Departure Points Istanbul 2026 | MerrySails",
   description:
-    "Bosphorus cruise departure points in Istanbul explained by product type: Kabatas for dinner flow, Karakoy for sunset meeting flow, and Kurucesme-side marinas for private yacht departures.",
+    "Bosphorus cruise departure points in Istanbul: Kabataş pier for dinner cruise, Karaköy waterfront for sunset cruise, Kurucesme Marina for private yacht charter. Exact addresses, metro/tram directions, and taxi times from city centre.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/bosphorus-cruise-departure-points"),
@@ -53,30 +53,30 @@ const breadcrumbSchema = {
 
 const flowCards = [
   {
-    title: "Kabatas dinner-cruise flow",
+    title: "Kabataş pier — shared dinner cruise",
     eyebrow: "Shared dinner product",
     description:
-      "The shared dinner cruise uses the Kabatas-side boarding logic, often alongside selected central European-side pickup support.",
+      "The shared dinner cruise boards from the Kabataş side of the Bosphorus waterfront. Kabataş is directly accessible by tram (T1 line, Kabataş stop), funicular from Taksim (F1 line), and taxi from Sultanahmet in 10–15 minutes. The pier is at the foot of Dolmabahçe Palace on the European shore. Dinner cruise guests with hotel-transfer support are routed here after the central pickup completes.",
     ownerHref: "/istanbul-dinner-cruise",
     ownerLabel: "Open dinner owner page",
     supportHref: "/kabatas-dinner-cruise-istanbul",
-    supportLabel: "See Kabatas support page",
+    supportLabel: "See Kabataş support page",
   },
   {
-    title: "Karakoy sunset meeting flow",
+    title: "Karaköy waterfront — shared sunset cruise",
     eyebrow: "Shared golden-hour product",
     description:
-      "The sunset cruise uses a Karakoy-side meeting flow, with the final boarding pin confirmed after booking for your date.",
+      "The sunset cruise uses a Karaköy-side meeting flow on the European Bosphorus waterfront. Karaköy is a 5-minute walk from the Galata Bridge and reachable by tram (T1 line, Karaköy stop) or taxi from Taksim in around 10 minutes. The final meeting pin is confirmed after booking for your specific date and seasonal departure time.",
     ownerHref: "/cruises/bosphorus-sunset-cruise",
     ownerLabel: "Open sunset owner page",
     supportHref: "/guides/karakoy-waterfront",
-    supportLabel: "Read Karakoy guide",
+    supportLabel: "Read Karaköy guide",
   },
   {
-    title: "Kurucesme-side private yacht departures",
+    title: "Kurucesme Marina — private yacht charters",
     eyebrow: "Private charter direction",
     description:
-      "Private yacht departures often use Kurucesme-side marina logic, but the written confirmation remains the final source of truth for the assigned yacht.",
+      "Private yacht charters typically depart from Kurucesme Marina, located on the European Bosphorus shore between Ortaköy and Arnavutköy — approximately 7 km from Taksim. The marina is accessible by taxi (15–20 minutes from central Istanbul) or by the Bosphorus ferry from Eminönü. Your confirmation message specifies the exact marina gate and assigned berth for your vessel.",
     ownerHref: "/yacht-charter-istanbul",
     ownerLabel: "Open yacht owner page",
     supportHref: "/kurucesme-marina-yacht-charter",
@@ -84,22 +84,77 @@ const flowCards = [
   },
 ];
 
+const pierDetails = [
+  {
+    name: "Kabataş",
+    product: "Dinner cruise",
+    address: "Kabataş Vapur İskelesi, Beşiktaş, Istanbul (European side)",
+    metro: "T1 tram — Kabataş stop; F1 funicular from Taksim",
+    taxi: "10–15 min from Sultanahmet; 5 min from Beşiktaş",
+    landmark: "Foot of Dolmabahçe Palace, directly below the Kabataş funicular terminus",
+    tip: "Arrive 15 minutes before departure. Look for the MerrySails boarding staff at the pier entrance.",
+  },
+  {
+    name: "Karaköy",
+    product: "Sunset cruise",
+    address: "Karaköy waterfront (Rıhtım Caddesi), Beyoğlu, Istanbul (European side)",
+    metro: "T1 tram — Karaköy stop; 5-minute walk from Galata Bridge",
+    taxi: "10 min from Taksim; 8 min from Sultanahmet",
+    landmark: "Between the Galata Bridge and the cruise ship terminal, near the historic Han buildings",
+    tip: "The exact meeting point is confirmed in your booking message. Do not rely on generic online maps for the precise berth number.",
+  },
+  {
+    name: "Kurucesme Marina",
+    product: "Private yacht charter",
+    address: "Kurucesme Marina, Kuruçeşme Mah., Beşiktaş, Istanbul (European side)",
+    metro: "No direct metro; taxi recommended",
+    taxi: "15–20 min from Taksim; 20–25 min from Sultanahmet",
+    landmark: "Between Ortaköy and Arnavutköy on the Bosphorus shoreline, visible from the European coastal road",
+    tip: "Confirm the marina gate and berth number from your booking confirmation before arranging transport.",
+  },
+  {
+    name: "Eminönü",
+    product: "Selected sunset cruise variants",
+    address: "Eminönü İskelesi, Fatih, Istanbul (European side, Golden Horn entry)",
+    metro: "T1 tram — Eminönü stop; direct connection from Sultanahmet (1 stop)",
+    taxi: "5 min from Sultanahmet; 15 min from Taksim",
+    landmark: "Galata Bridge south end, next to the Spice Bazaar (Mısır Çarşısı)",
+    tip: "Eminönü is used for selected cruise variants. Verify your booking confirmation before travelling here — not all sunset or dinner cruises use this pier.",
+  },
+];
+
 const faqItems = [
   {
     q: "Do all Bosphorus cruises in Istanbul use the same departure point?",
-    a: "No. Shared dinner, shared sunset, and private yacht products use different operational flows, so departure logic depends on the product rather than one generic pier.",
+    a: "No. Shared dinner, shared sunset, and private yacht products use different operational flows. Dinner cruises use Kabataş pier, sunset cruises use a Karaköy-side meeting flow, and private yacht charters typically depart from Kurucesme Marina. Eminönü is used for selected cruise variants. The written booking confirmation is always the final source of truth for your specific date.",
+  },
+  {
+    q: "How do I get to Kabataş pier for the dinner cruise?",
+    a: "Take the T1 tram to the Kabataş stop, or the F1 funicular from Taksim Square down to Kabataş. By taxi it takes 10–15 minutes from Sultanahmet. The pier is at the foot of Dolmabahçe Palace — look for the MerrySails boarding staff at the entrance.",
+  },
+  {
+    q: "How do I get to Karaköy for the sunset cruise?",
+    a: "Take the T1 tram to the Karaköy stop, then walk 5 minutes along the waterfront. From Taksim, taxis take around 10 minutes. Karaköy is the first stop after crossing the Galata Bridge heading north. Your exact meeting pin is sent in the booking confirmation.",
+  },
+  {
+    q: "Where exactly is Kurucesme Marina?",
+    a: "Kurucesme Marina is on the European Bosphorus shore between Ortaköy and Arnavutköy, approximately 7 km from Taksim. There is no direct metro connection — take a taxi (15–20 minutes from central Istanbul) or the Bosphorus ferry from Eminönü. Your confirmation specifies the exact berth.",
+  },
+  {
+    q: "Can I board from Eminönü?",
+    a: "Eminönü is used for selected MerrySails cruise variants. It is the most central pier — 5 minutes by tram from Sultanahmet (T1 line, Eminönü stop), located next to the Spice Bazaar at the south end of Galata Bridge. Check your booking confirmation to confirm whether your cruise uses this pier.",
   },
   {
     q: "Should I rely on a generic map pin before booking?",
-    a: "No. Public departure references are useful for planning, but the written booking confirmation is the final source of truth for the exact operational handoff on your date.",
+    a: "No. Public departure references are useful for pre-trip planning, but the written booking confirmation is the final source of truth for the exact operational handoff on your date. Pier assignments can vary by product variant and vessel availability.",
   },
   {
     q: "Which page should I open first if I am still comparing products?",
     a: "Open the Bosphorus Cruise compare hub first. Use the narrower departure and support pages only after the product direction is already clear.",
   },
   {
-    q: "When should I use a local guide instead of a commercial support page?",
-    a: "Use the guide when you mainly need transport, neighborhood, or waterfront context. Use the commercial support page when the departure question is directly tied to an active booking decision.",
+    q: "Is hotel pickup available from central Istanbul?",
+    a: "Yes. The dinner cruise offers hotel-transfer support from central areas including Sultanahmet, Taksim, Sirkeci, and Karaköy. Transfer guests are routed to the Kabataş boarding flow after pickup completes. See the dinner cruise pickup support pages for eligibility details.",
   },
 ];
 
@@ -118,9 +173,11 @@ const faqSchema = {
 
 const planningNotes = [
   "Treat the product owner page as the first booking decision and the departure page as the second click.",
-  "Use Kabatas logic only for the shared dinner path, not as a generic Istanbul cruise assumption.",
-  "Use Karakoy logic only after the sunset product is already chosen.",
+  "Use Kabataş logic only for the shared dinner path, not as a generic Istanbul cruise assumption.",
+  "Use Karaköy logic only after the sunset product is already chosen.",
   "Use Kurucesme-side marina logic for private yachts, but wait for the final written boarding handoff before arranging transport.",
+  "Arrive 15 minutes before departure to allow time for check-in and boarding.",
+  "All MerrySails products are TURSAB A Group licensed — the boarding flow and final instructions are part of the confirmed booking service.",
 ];
 
 export default function BosphorusCruiseDeparturePointsPage() {
@@ -191,6 +248,46 @@ export default function BosphorusCruiseDeparturePointsPage() {
                 </div>
               </div>
             ))}
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+            <h2 className="mb-2 text-2xl font-bold text-[var(--heading)]">Istanbul Bosphorus Pier Guide — Getting to Each Departure Point</h2>
+            <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              Each MerrySails product uses a specific pier on the Istanbul waterfront. Below are the confirmed departure points, exact locations, and transport options for each cruise type. Always verify your final boarding details in the booking confirmation message.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b-2 border-[var(--brand-primary)]/20 bg-[var(--surface-alt)]">
+                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Pier</th>
+                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Product</th>
+                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Address</th>
+                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Metro / Tram</th>
+                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Taxi from Centre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pierDetails.map((pier) => (
+                    <tr key={pier.name} className="border-b border-[var(--line)] last:border-b-0">
+                      <td className="p-4 font-semibold text-[var(--heading)]">{pier.name}</td>
+                      <td className="p-4 text-[var(--brand-primary)] font-medium">{pier.product}</td>
+                      <td className="p-4 text-[var(--text-muted)]">{pier.address}</td>
+                      <td className="p-4 text-[var(--text-muted)]">{pier.metro}</td>
+                      <td className="p-4 text-[var(--text-muted)]">{pier.taxi}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {pierDetails.map((pier) => (
+                <div key={pier.name} className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[var(--brand-primary)]">{pier.name} — {pier.product}</p>
+                  <p className="mb-2 text-sm font-semibold text-[var(--heading)]">{pier.landmark}</p>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]"><strong>Tip:</strong> {pier.tip}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
