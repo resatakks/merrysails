@@ -18,7 +18,7 @@
  * warning at runtime. The booking flow always succeeds even if upload fails.
  */
 
-const GOOGLE_ADS_API_VERSION = "v17";
+const GOOGLE_ADS_API_VERSION = "v20";
 
 interface UploadConversionInput {
   gclid: string;
