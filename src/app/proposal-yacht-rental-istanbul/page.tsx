@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
+import { buildHreflang } from "@/lib/hreflang";
+
 const SITE_URL = "https://merrysails.com";
 
 export const revalidate = 3600;
@@ -10,7 +12,10 @@ export const metadata: Metadata = {
   title: "Marriage Proposal Yacht Rental Istanbul 2026 | Private Bosphorus Proposal",
   description:
     "Book a marriage proposal yacht rental in Istanbul with a private Bosphorus route, sunset timing, flowers, dinner, and photographer add-ons for a discreet reveal.",
-  alternates: { canonical: `${SITE_URL}/proposal-yacht-rental-istanbul` },
+  alternates: {
+    canonical: `${SITE_URL}/proposal-yacht-rental-istanbul`,
+    languages: buildHreflang("/proposal-yacht-rental-istanbul"),
+  },
   openGraph: {
     title: "Marriage Proposal Yacht Rental Istanbul 2026 | Private Bosphorus Proposal",
     description:

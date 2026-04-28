@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { DM_Sans } from "next/font/google";
 import Script from "next/script";
 import AnalyticsRouteTracker from "@/components/analytics/AnalyticsRouteTracker";
+import ClarityIdentityProvider from "@/components/analytics/ClarityIdentityProvider";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
 import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
@@ -191,14 +192,23 @@ const organizationSchema = {
       },
     ],
   },
-  areaServed: {
-    "@type": "City",
-    name: "Istanbul",
-    containedInPlace: {
-      "@type": "Country",
-      name: "Turkey",
+  hasMap: "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Istanbul",
+      containedInPlace: {
+        "@type": "Country",
+        name: "Turkey",
+      },
     },
-  },
+    { "@type": "Place", name: "Kabataş", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Sultanahmet", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Taksim", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Karaköy", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Ortaköy", containedInPlace: { "@type": "City", name: "Istanbul" } },
+    { "@type": "Place", name: "Beşiktaş", containedInPlace: { "@type": "City", name: "Istanbul" } },
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -278,19 +288,50 @@ export default function RootLayout({
           </>
         ) : null}
         {CLARITY_PROJECT_ID ? (
-          <Script
-            id="microsoft-clarity"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
-            `,
-            }}
-          />
+          <>
+            <Script
+              id="microsoft-clarity-stub"
+              strategy="beforeInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                (function(w){
+                  if (typeof w.clarity !== 'function') {
+                    var q = [];
+                    var c = function(){ q.push(arguments); };
+                    c.q = q;
+                    c.l = +new Date();
+                    w.clarity = c;
+                  }
+                  try {
+                    w.clarity('consentv2', { analytics_Storage: 'granted', ad_Storage: 'granted' });
+                    var uid = (document.cookie.match(/(?:^|; )_craft_uid=([^;]*)/) || [])[1];
+                    if (!uid) {
+                      uid = localStorage.getItem('_clarity_uid');
+                      if (!uid) {
+                        uid = crypto.randomUUID();
+                        localStorage.setItem('_clarity_uid', uid);
+                      }
+                    }
+                    if (uid) w.clarity('identify', uid, undefined, w.location.pathname);
+                  } catch(e) {}
+                })(window);
+              `,
+              }}
+            />
+            <Script
+              id="microsoft-clarity"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
+              `,
+              }}
+            />
+          </>
         ) : null}
         <script
           type="application/ld+json"
@@ -314,6 +355,7 @@ export default function RootLayout({
         ) : null}
         <Suspense fallback={null}>
           <AnalyticsRouteTracker />
+          <ClarityIdentityProvider />
         </Suspense>
         <ToastProvider>
           <SiteChrome>{children}</SiteChrome>

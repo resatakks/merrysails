@@ -5,6 +5,7 @@ import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
   title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from EUR 30 | MerrySails",
   description:
     "Book Bosphorus dinner cruise Istanbul from EUR 30. Compare 4 shared packages with dinner service, Turkish-night entertainment, and hotel pickup support from a TURSAB-backed operator.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/istanbul-dinner-cruise"),
+  },
   openGraph: {
     title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from EUR 30 | MerrySails",
     description:
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": ["TouristTrip", "Product"],
   name: dinnerTour.nameEn,
   alternateName: [
     "Istanbul Dinner Cruise",
@@ -62,14 +66,30 @@ const serviceSchema = {
     "Bosphorus Night Cruise with Dinner",
   ],
   description: dinnerTour.description,
-  serviceType: "Shared Bosphorus Dinner Cruise",
+  touristType: "Cultural Tourism",
   url: canonicalUrl,
+  image: dinnerTour.image,
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
   areaServed: {
     "@type": "City",
     name: "Istanbul",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: dinnerTour.rating,
+    reviewCount: dinnerTour.reviewCount,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    lowPrice: Math.min(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
+    highPrice: Math.max(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
+    priceCurrency: "EUR",
+    offerCount: dinnerTour.packages?.length ?? 1,
+    availability: "https://schema.org/InStock",
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -118,12 +138,12 @@ const sharedDinnerReasons = [
       "Dinner service, Bosphorus views, stage entertainment, and a public cruise atmosphere without chartering the whole boat.",
   },
   {
-    title: "Package-led night out",
+    title: "Compare dinner cruise packages by tier",
     description:
       "A cleaner fit when you want to compare seating and inclusions first, then book the package that fits your budget.",
   },
   {
-    title: "Simple for hotel guests",
+    title: "Hotel pickup for Istanbul dinner cruise",
     description:
       "One departure flow, a clear evening schedule, and no need to choose a private vessel.",
   },
@@ -288,7 +308,7 @@ export default async function IstanbulDinnerCruisePage({
                   Bosphorus Dinner Cruise
                 </p>
                 <h2 className="text-2xl font-bold text-[var(--heading)] mb-2">
-                  Bosphorus dinner cruise packages and ticket fit
+                  Istanbul Dinner Cruise Packages — All 4 Options Compared
                 </h2>
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
                   Shared dinner cruise packages suit guests who want a fixed evening schedule and
@@ -306,7 +326,7 @@ export default async function IstanbulDinnerCruisePage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Turkish night show and shared dinner cruise fit
+              Why Choose the Shared Istanbul Dinner Cruise
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {sharedDinnerReasons.map((item) => (
@@ -325,7 +345,7 @@ export default async function IstanbulDinnerCruisePage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Compare with private dinner and proposal-led options
+              Istanbul Dinner Cruise vs. Private Bosphorus Dinner Options
             </h2>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {comparePages.map((item) => (

@@ -5,6 +5,7 @@ import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
   title: "Private Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | MerrySails",
   description:
     "Book private yacht charter Istanbul from EUR 280 per yacht. Compare 3 Bosphorus charter packages for route, timing, marina confirmation, and onboard service.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/yacht-charter-istanbul"),
+  },
   openGraph: {
     title: "Private Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | MerrySails",
     description:

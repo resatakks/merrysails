@@ -3,12 +3,16 @@ import Link from "next/link";
 import { ArrowRight, Sunset, UtensilsCrossed, Anchor, Compass, MessageCircle, PhoneCall } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE, PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul 2026 | Compare Sunset, Dinner & Yacht Prices",
   description:
     "Compare Bosphorus cruise options in Istanbul: sunset from EUR 34, dinner from EUR 30, and private yacht from EUR 280. Find the right MerrySails booking page fast.",
-  alternates: { canonical: `${SITE_URL}/bosphorus-cruise` },
+  alternates: {
+    canonical: `${SITE_URL}/bosphorus-cruise`,
+    languages: buildHreflang("/bosphorus-cruise"),
+  },
   openGraph: {
     title: "Bosphorus Cruise Istanbul 2026 | Compare Sunset, Dinner & Yacht Prices",
     description:

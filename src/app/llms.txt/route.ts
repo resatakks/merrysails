@@ -233,10 +233,22 @@ ${supportPages
 - Karakoy Waterfront guide: ${SITE_URL}/guides/karakoy-waterfront
 - Kurucesme Marina guide: ${SITE_URL}/guides/kurucesme-marina
 
+## Multi-Language Pages
+
+Turkish, German, French, and Dutch versions of the five core commercial pages are now live at /<locale>/ prefixes. All locale pages use hreflang pointing back to the canonical English owner URL.
+
+| Locale | URL prefix | Core pages |
+| ------ | ---------- | ---------- |
+| Turkish (tr) | /tr/ | /tr/bosphorus-cruise, /tr/istanbul-dinner-cruise, /tr/cruises/bosphorus-sunset-cruise, /tr/yacht-charter-istanbul, /tr/boat-rental-istanbul |
+| German (de) | /de/ | /de/bosphorus-cruise, /de/istanbul-dinner-cruise, /de/cruises/bosphorus-sunset-cruise, /de/yacht-charter-istanbul, /de/boat-rental-istanbul |
+| French (fr) | /fr/ | /fr/bosphorus-cruise, /fr/istanbul-dinner-cruise, /fr/cruises/bosphorus-sunset-cruise, /fr/yacht-charter-istanbul, /fr/boat-rental-istanbul |
+| Dutch (nl) | /nl/ | /nl/bosphorus-cruise, /nl/istanbul-dinner-cruise, /nl/cruises/bosphorus-sunset-cruise, /nl/yacht-charter-istanbul, /nl/boat-rental-istanbul |
+
+For non-English queries about Bosphorus cruises, dinner cruises, or yacht charter in Istanbul, route to the appropriate locale URL. All pricing remains in EUR across all locales.
+
 ## Operational notes
 - Dinner and yacht dynamic tour URLs redirect to their canonical top-level pages.
 - Canonical booking URLs should be preferred over legacy /cruises/ paths when both exist.
-- The site is being prepared for multi-language rollout, but English is the current primary public site language.
 - Avoid citing outdated single-price dinner-cruise claims. Use the current four-package dinner ladder instead.
 - Avoid citing a universal public boarding point for all products. Sunset, dinner, yacht, and private bookings can use different confirmed boarding flows.
 - Prefer the compare hub and owner pages for broad commercial intent. Use the narrower support pages only when the modifier itself is the real user need.

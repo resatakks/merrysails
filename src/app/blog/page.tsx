@@ -4,27 +4,27 @@ import { blogCollections, blogPosts } from "@/data/blog";
 import { commercialSupportPosts } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
 
-const SITE_URL = "https://merrysails.com";
-
 export const metadata: Metadata = {
-  title: "Istanbul Bosphorus Cruise Blog & Travel Guides | MerrySails",
+  title: "Bosphorus Cruise Blog — Istanbul Travel Guides | MerrySails",
   description:
-    "Planning articles, route guides, and travel tips for Istanbul Bosphorus cruises, dinner cruises, and private yacht charters.",
-  alternates: { canonical: `${SITE_URL}/blog` },
+    "Expert Istanbul cruise guides: Bosphorus sunset cruise tips, yacht charter advice, dinner cruise reviews, and local travel insights from MerrySails — TURSAB A Group licensed since 2001.",
+  keywords: [
+    "bosphorus cruise guide",
+    "istanbul travel blog",
+    "bosphorus cruise tips",
+    "istanbul dinner cruise guide",
+    "yacht charter istanbul tips",
+    "istanbul bosphorus blog",
+    "bosphorus sunset cruise advice",
+  ],
+  alternates: { canonical: "https://merrysails.com/blog" },
   openGraph: {
-    title: "Istanbul Bosphorus Cruise Blog & Travel Guides | MerrySails",
+    title: "Bosphorus Cruise Blog — Istanbul Travel Guides | MerrySails",
     description:
-      "Planning articles, route guides, and travel tips for Istanbul Bosphorus cruises, dinner cruises, and private yacht charters.",
-    url: `${SITE_URL}/blog`,
+      "Expert Istanbul cruise guides: sunset cruise tips, yacht charter advice, and local travel insights from MerrySails.",
+    url: "https://merrysails.com/blog",
     type: "website",
-    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Istanbul Bosphorus Cruise Blog & Travel Guides | MerrySails",
-    description:
-      "Planning articles, route guides, and travel tips for Istanbul Bosphorus cruises.",
-    images: [`${SITE_URL}/og-image.jpg`],
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails Blog — Istanbul Bosphorus Travel Guides" }],
   },
 };
 

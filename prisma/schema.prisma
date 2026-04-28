@@ -162,3 +162,20 @@ model BookingPrefill {
   @@index([expiresAt])
   @@index([tourSlug, createdAt])
 }
+
+// ─── AI & Bot Visit Tracking ──────────────────────────────
+
+model BotVisit {
+  id        String   @id @default(cuid())
+  provider  String   // openai | anthropic | perplexity | google-ai | meta | bing | yandex | other
+  agent     String   // GPTBot | ClaudeBot | PerplexityBot | etc.
+  path      String
+  ip        String?
+  country   String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([provider])
+  @@index([path])
+}
