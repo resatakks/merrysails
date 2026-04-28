@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
   title: "Turkish Night Dinner Cruise Istanbul 2026 | Shared Bosphorus Show & Dinner",
   description:
     "Turkish night dinner cruise Istanbul support page for guests who already want the shared Bosphorus evening and need clearer show, package, and shared-night format guidance.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/turkish-night-dinner-cruise-istanbul"),
+  },
   openGraph: {
     title: "Turkish Night Dinner Cruise Istanbul 2026 | Shared Bosphorus Show & Dinner",
     description:

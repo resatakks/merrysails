@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Private Dinner Cruise for Couples Istanbul 2026 | MerrySails",
   description:
     "Private dinner cruise for couples in Istanbul for guests who want a quieter Bosphorus evening, their own table, and a dinner-led private yacht flow without a shared cruise format.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/private-dinner-cruise-for-couples-istanbul"),
+  },
   openGraph: {
     title: "Private Dinner Cruise for Couples Istanbul 2026 | MerrySails",
     description:

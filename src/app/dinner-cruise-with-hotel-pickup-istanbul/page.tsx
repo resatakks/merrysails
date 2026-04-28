@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
   title: "Dinner Cruise with Hotel Pickup Istanbul 2026 | MerrySails",
   description:
     "Dinner cruise with hotel pickup support in Istanbul for guests who want a shared Bosphorus evening and selected central European-side pickup logic before Kabatas boarding.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/dinner-cruise-with-hotel-pickup-istanbul"),
+  },
   openGraph: {
     title: "Dinner Cruise with Hotel Pickup Istanbul 2026 | MerrySails",
     description:

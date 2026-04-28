@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Product Launch Yacht Istanbul 2026 | Private Bosphorus Launch Event",
   description:
     "Book a product launch yacht in Istanbul for private Bosphorus reveal events with guest flow, branding, and launch timing planned before booking.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/product-launch-yacht-istanbul"),
+  },
   openGraph: {
     title: "Product Launch Yacht Istanbul 2026 | Private Bosphorus Launch Event",
     description:

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SITE_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
   title: "Bosphorus Cruise Departure Points Istanbul 2026 | MerrySails",
   description:
     "Bosphorus cruise departure points in Istanbul explained by product type: Kabatas for dinner flow, Karakoy for sunset meeting flow, and Kurucesme-side marinas for private yacht departures.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/bosphorus-cruise-departure-points"),
+  },
   openGraph: {
     title: "Bosphorus Cruise Departure Points Istanbul 2026 | MerrySails",
     description:

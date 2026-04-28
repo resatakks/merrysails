@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Kurucesme Marina Yacht Charter Istanbul 2026 | MerrySails",
   description:
     "Kurucesme Marina yacht charter support page for guests who already know they want a private yacht and need clearer departure-marina, boarding, and waterfront context before booking in Istanbul.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/kurucesme-marina-yacht-charter"),
+  },
   openGraph: {
     title: "Kurucesme Marina Yacht Charter Istanbul 2026 | MerrySails",
     description:

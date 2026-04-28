@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Proposal Yacht with Photographer Istanbul 2026 | MerrySails",
   description:
     "Proposal yacht with photographer in Istanbul for couples who want the reveal captured professionally without losing the private Bosphorus proposal flow.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/proposal-yacht-with-photographer-istanbul"),
+  },
   openGraph: {
     title: "Proposal Yacht with Photographer Istanbul 2026 | MerrySails",
     description:

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Corporate Yacht Dinner Istanbul 2026 | Company Dinner on the Bosphorus",
   description:
     "Corporate yacht dinner in Istanbul for team dinners, client hosting, and invoice-led company evenings that need a private Bosphorus setting and dinner-first planning.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/corporate-yacht-dinner-istanbul"),
+  },
   openGraph: {
     title: "Corporate Yacht Dinner Istanbul 2026 | Company Dinner on the Bosphorus",
     description:

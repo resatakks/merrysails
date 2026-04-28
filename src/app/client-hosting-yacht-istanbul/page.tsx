@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Client Hosting Yacht Istanbul 2026 | Corporate Bosphorus Hosting Support",
   description:
     "Client hosting yacht in Istanbul for companies that need a private Bosphorus setting focused on hospitality, guest experience, and invoice-ready planning before booking.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/client-hosting-yacht-istanbul"),
+  },
   openGraph: {
     title: "Client Hosting Yacht Istanbul 2026 | Corporate Bosphorus Hosting Support",
     description:

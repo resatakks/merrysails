@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
   title: "Kabatas Dinner Cruise Istanbul 2026 | Boarding-Focused Dinner Support",
   description:
     "Kabatas dinner cruise support page for guests who already know they want the shared Bosphorus dinner cruise and need clearer boarding, arrival, and Kabatas-side routing context.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/kabatas-dinner-cruise-istanbul"),
+  },
   openGraph: {
     title: "Kabatas Dinner Cruise Istanbul 2026 | Boarding-Focused Dinner Support",
     description:

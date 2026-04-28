@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { fleet } from "@/data/fleet";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -14,7 +15,10 @@ export const metadata: Metadata = {
   title: `Boat Rental Hourly Istanbul 2026 — From EUR ${startingRate}/hour | MerrySails`,
   description:
     `Hourly boat rental in Istanbul from EUR ${startingRate}/hour for guests who already know they want a private boat by the hour rather than a package-led yacht charter.`,
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/boat-rental-hourly-istanbul"),
+  },
   openGraph: {
     title: `Boat Rental Hourly Istanbul 2026 — From EUR ${startingRate}/hour | MerrySails`,
     description:

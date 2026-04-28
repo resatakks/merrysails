@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata = {
   title: "Private Bosphorus Event Types in Istanbul | MerrySails",
   description:
     "Compare private Bosphorus event pages for proposals, private dinners, celebrations, and corporate requests. For general private yacht charter, start with Yacht Charter Istanbul.",
-  alternates: { canonical: "https://merrysails.com/private-tours" },
+  alternates: {
+    canonical: "https://merrysails.com/private-tours",
+    languages: buildHreflang("/private-tours"),
+  },
   openGraph: {
     title: "Private Bosphorus Event Types in Istanbul | MerrySails",
     description:

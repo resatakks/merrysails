@@ -20,6 +20,32 @@ const LOCALIZED_ROUTES = new Set<string>([
   "/cruises/bosphorus-sunset-cruise",
   "/yacht-charter-istanbul",
   "/boat-rental-istanbul",
+  "/private-bosphorus-dinner-cruise",
+  "/proposal-yacht-rental-istanbul",
+  "/corporate-events",
+  "/private-events",
+  "/faq",
+  "/about",
+  "/contact",
+  "/reservation",
+  "/blog",
+  "/guides",
+  "/cruises",
+  "/private-tours",
+  "/boat-rental-hourly-istanbul",
+  "/bosphorus-cruise-departure-points",
+  "/client-hosting-yacht-istanbul",
+  "/corporate-yacht-dinner-istanbul",
+  "/dinner-cruise-pickup-sultanahmet-taksim",
+  "/dinner-cruise-with-hotel-pickup-istanbul",
+  "/kabatas-dinner-cruise-istanbul",
+  "/kurucesme-marina-yacht-charter",
+  "/private-dinner-cruise-for-couples-istanbul",
+  "/product-launch-yacht-istanbul",
+  "/proposal-yacht-with-photographer-istanbul",
+  "/sunset-cruise-tickets-istanbul",
+  "/team-building-yacht-istanbul",
+  "/turkish-night-dinner-cruise-istanbul",
 ]);
 
 type NavLabelKey =
@@ -253,7 +279,7 @@ export default function Header() {
               <LanguageSwitcher />
 
               <Link
-                href="/reservation"
+                href={localizeHref("/reservation", locale)}
                 className="btn-cta inline-flex items-center justify-center text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5"
               >
                   <span className="sm:hidden">{t.reserve}</span>
@@ -358,7 +384,7 @@ export default function Header() {
                         {PHONE_DISPLAY}
                       </a>
                       <Link
-                        href="/reservation"
+                        href={localizeHref("/reservation", locale)}
                         className="btn-cta block w-full px-4 text-center !py-3 text-sm"
                       >
                         {t.reserveOnline}

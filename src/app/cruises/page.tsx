@@ -5,6 +5,7 @@ import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import CruisesFilter from "@/components/tours/CruisesFilter";
 import { getTourPath, isPricingVisible, tours } from "@/data/tours";
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 const SITE_URL = "https://merrysails.com";
 
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://merrysails.com/cruises",
+    languages: buildHreflang("/cruises"),
   },
   openGraph: {
     title: "MerrySails Cruise Catalog & Service Pages | Istanbul 2026",

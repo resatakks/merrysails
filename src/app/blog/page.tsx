@@ -3,6 +3,7 @@ import BlogIndexClient from "@/components/blog/BlogIndexClient";
 import { blogCollections, blogPosts } from "@/data/blog";
 import { commercialSupportPosts } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Blog — Istanbul Travel Guides | MerrySails",
@@ -17,7 +18,10 @@ export const metadata: Metadata = {
     "istanbul bosphorus blog",
     "bosphorus sunset cruise advice",
   ],
-  alternates: { canonical: "https://merrysails.com/blog" },
+  alternates: {
+    canonical: "https://merrysails.com/blog",
+    languages: buildHreflang("/blog"),
+  },
   openGraph: {
     title: "Bosphorus Cruise Blog — Istanbul Travel Guides | MerrySails",
     description:

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
   title: "Dinner Cruise Pickup from Sultanahmet & Taksim Istanbul 2026",
   description:
     "Dinner cruise pickup support for Sultanahmet, Taksim, Sirkeci, and Karakoy guests comparing shared Bosphorus dinner cruise transfer fit before booking.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/dinner-cruise-pickup-sultanahmet-taksim"),
+  },
   openGraph: {
     title: "Dinner Cruise Pickup from Sultanahmet & Taksim Istanbul 2026",
     description:

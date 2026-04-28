@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
   title: "Sunset Cruise Tickets Istanbul 2026 | Shared Bosphorus Sunset Options",
   description:
     "Sunset cruise tickets Istanbul support page for guests who already want the shared Bosphorus sunset route and need clearer ticket, package, and reserve-direct guidance.",
-  alternates: { canonical: canonicalUrl },
+  alternates: {
+    canonical: canonicalUrl,
+    languages: buildHreflang("/sunset-cruise-tickets-istanbul"),
+  },
   openGraph: {
     title: "Sunset Cruise Tickets Istanbul 2026 | Shared Bosphorus Sunset Options",
     description:

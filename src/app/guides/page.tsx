@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, BookOpen } from "lucide-react";
 import { guides } from "@/data/guides";
 import { blogPosts } from "@/data/blog";
 import { cleanContentText } from "@/lib/content-text";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata = {
   title: "Istanbul Cruise, Landmark & Boarding Guides",
@@ -17,7 +18,10 @@ export const metadata = {
     "istanbul tourist attractions",
     "bosphorus cruise landmarks",
   ],
-  alternates: { canonical: "https://merrysails.com/guides" },
+  alternates: {
+    canonical: "https://merrysails.com/guides",
+    languages: buildHreflang("/guides"),
+  },
   openGraph: {
     title: "Istanbul Cruise, Landmark & Boarding Guides",
     description:
