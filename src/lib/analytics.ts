@@ -125,6 +125,21 @@ const CONVERSION_VALUES = {
   whatsapp: envNumber("NEXT_PUBLIC_CONVERSION_VALUE_WHATSAPP", 300),
 } as const;
 
+// Kill switch: when true, soft conversions (phone/whatsapp/contact/abandonment)
+// stop firing as Google Ads conversions. dataLayer push + Clarity tagging
+// continue, so GA4/Clarity behavioral data is preserved — only the smart-bidding
+// signal is silenced. Use this when soft conversions inflate Ads spend without
+// translating into bookings.
+const DISABLE_SOFT_ADS_CONVERSIONS =
+  process.env.NEXT_PUBLIC_GADS_DISABLE_SOFT_CONVERSIONS === "true";
+
+const SOFT_CONVERSION_NAMES = new Set<GoogleAdsConversionKey>([
+  "abandonment",
+  "contact",
+  "phone",
+  "whatsapp",
+]);
+
 const CLARITY_EVENT_TAG_KEYS = new Set([
   "click_label",
   "click_location",
@@ -227,6 +242,16 @@ function trackGoogleAdsConversion(
 
   // Keep dataLayer push for backwards-compatible GTM-side tags.
   pushToDataLayer("google_ads_conversion", cleanedParams);
+
+  // Soft conversion kill switch — when enabled, stop sending phone/whatsapp/
+  // contact/abandonment conversions to Google Ads. Bidding optimizer then
+  // only learns from real bookings (purchase).
+  if (
+    DISABLE_SOFT_ADS_CONVERSIONS &&
+    SOFT_CONVERSION_NAMES.has(conversionName)
+  ) {
+    return;
+  }
 
   // Direct gtag('event','conversion',...) routing — works without any
   // GTM container configuration as long as both AW id and a label env are set.

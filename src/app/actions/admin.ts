@@ -316,6 +316,40 @@ async function applyReservationWorkflowUpdate({
     }
   }
 
+  // Server-side Google Ads conversion upload — fires once on confirmed
+  // transition. Catches the gap when client-side gtag was blocked at
+  // booking time. Silent no-op when env vars are missing.
+  if (
+    currentStatus !== "confirmed" &&
+    nextStatus === "confirmed" &&
+    updatedReservation.gclid
+  ) {
+    try {
+      const [{ uploadPurchaseConversion, hashUserIdentifiersServer }] = await Promise.all([
+        import("@/lib/google-ads-conversion"),
+      ]);
+      const userIdentifiers = await hashUserIdentifiersServer({
+        email: updatedReservation.customerEmail,
+        phone: updatedReservation.customerPhone,
+      });
+      const result = await uploadPurchaseConversion({
+        gclid: updatedReservation.gclid,
+        conversionDateTime: updatedReservation.confirmedAt ?? new Date(),
+        value: Number(updatedReservation.totalPrice),
+        currency: updatedReservation.currency,
+        orderId: updatedReservation.reservationId,
+        userIdentifiers,
+      });
+      if (!result.ok && result.reason !== "not_configured") {
+        console.warn(
+          `[google-ads] Conversion upload for ${updatedReservation.reservationId} returned: ${result.reason}`
+        );
+      }
+    } catch (uploadErr) {
+      console.error("[google-ads] Server-side conversion upload threw:", uploadErr);
+    }
+  }
+
   revalidatePath("/admin");
   revalidatePath("/admin/reservations");
   revalidatePath("/admin/reports");
