@@ -9,14 +9,14 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/product-launch-yacht-istanbul`;
 
 export const metadata: Metadata = {
-  title: "Product Launch Yacht Istanbul 2026 | Bosphorus Launch Event Support",
+  title: "Product Launch Yacht Istanbul 2026 | Private Bosphorus Launch Event",
   description:
-    "Product launch yacht in Istanbul for companies that need a private Bosphorus setting focused on guest flow, reveal timing, and a launch-ready event brief before booking.",
+    "Book a product launch yacht in Istanbul for private Bosphorus reveal events with guest flow, branding, and launch timing planned before booking.",
   alternates: { canonical: canonicalUrl },
   openGraph: {
-    title: "Product Launch Yacht Istanbul 2026 | Bosphorus Launch Event Support",
+    title: "Product Launch Yacht Istanbul 2026 | Private Bosphorus Launch Event",
     description:
-      "Use this page when the company brief is specifically a product launch or showcase on a yacht rather than a broader corporate dinner or hosting format.",
+      "Use this page when the company brief is specifically a product launch or showcase on a private Bosphorus yacht rather than a broader corporate dinner or hosting format.",
     url: canonicalUrl,
     type: "website",
     images: [

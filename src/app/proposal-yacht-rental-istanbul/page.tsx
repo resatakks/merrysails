@@ -7,16 +7,17 @@ const SITE_URL = "https://merrysails.com";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Proposal Yacht Rental Istanbul | Private Proposal Yacht on the Bosphorus | MerrySails",
+  title: "Marriage Proposal Yacht Rental Istanbul 2026 | Private Bosphorus Proposal",
   description:
-    "Private proposal yacht rental in Istanbul for couples who want a discreet reveal, sunset timing, and optional flowers, dinner, or photographer add-ons.",
+    "Book a marriage proposal yacht rental in Istanbul with a private Bosphorus route, sunset timing, flowers, dinner, and photographer add-ons for a discreet reveal.",
   alternates: { canonical: `${SITE_URL}/proposal-yacht-rental-istanbul` },
   openGraph: {
-    title: "Proposal Yacht Rental Istanbul | Private Proposal Yacht on the Bosphorus | MerrySails",
+    title: "Marriage Proposal Yacht Rental Istanbul 2026 | Private Bosphorus Proposal",
     description:
-      "Private Bosphorus proposal yacht with route timing, decoration, and photographer add-ons for a clean reveal and a private evening on the water.",
+      "Private Bosphorus proposal yacht with sunset timing, decoration, dinner, and photographer add-ons for a clean marriage proposal setup.",
     url: `${SITE_URL}/proposal-yacht-rental-istanbul`,
     type: "website",
+    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }],
   },
 };
 
@@ -114,6 +115,13 @@ const quoteDrivers = [
     title: "Dinner or no dinner",
     description: "A short reveal and a dinner-led proposal do not use the same yacht and service setup.",
   },
+];
+
+const quickFacts = [
+  ["Best for", "Marriage proposal plans where privacy, timing, and styling matter more than a generic yacht ride."],
+  ["Typical timing", "Sunset proposal routes and evening dinner proposals are the two most common planning formats."],
+  ["Quote variables", "Yacht class, guest count, flowers, photographer, dinner, violinist, and route length."],
+  ["Best next step", "Send the preferred date, rough timing, and setup level so the team can match the right yacht."],
 ];
 
 const comparePages = [
@@ -214,6 +222,18 @@ export default function ProposalYachtRentalIstanbulPage() {
               ))}
             </ul>
           </aside>
+        </section>
+
+        <section className="mb-12 rounded-2xl border border-rose-100 bg-white p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Marriage proposal yacht rental Istanbul quick facts</h2>
+          <div className="grid gap-3 md:grid-cols-2">
+            {quickFacts.map(([label, value]) => (
+              <div key={label} className="rounded-xl border border-rose-100 bg-rose-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-rose-700 mb-1">{label}</p>
+                <p className="text-sm leading-relaxed text-gray-700">{value}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="mb-12 rounded-2xl border border-rose-100 bg-rose-50 p-6">

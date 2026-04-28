@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const revalidate = 3600;
 
 const canonicalUrl = `${SITE_URL}/sunset-cruise-tickets-istanbul`;
+
+function requireTour(slug: string, label: string) {
+  const tour = getTourBySlug(slug);
+  if (!tour) {
+    throw new Error(`${label} data is missing.`);
+  }
+  return tour;
+}
+
+const sunsetTour = requireTour("bosphorus-sunset-cruise", "Sunset cruise");
 
 export const metadata: Metadata = {
   title: "Sunset Cruise Tickets Istanbul 2026 | Shared Bosphorus Sunset Options",
@@ -137,6 +149,20 @@ const ticketRows = [
   ["With Wine", "EUR 40", "Guests who want the same shared route with 2 glasses of wine per guest"],
 ];
 
+const packageHighlights = sunsetTour.packages?.map((pkg) => ({
+  name: pkg.name,
+  price: `EUR ${pkg.price}`,
+  description: pkg.description,
+  features: pkg.features.slice(0, 4),
+})) ?? [];
+
+const trustSignals = [
+  "Merry Tourism has operated Istanbul travel products since 2001.",
+  "TURSAB A Group licensing stays behind the booking and written follow-up flow.",
+  "The same protected sunset owner page remains the source of truth for live route and booking details.",
+  "Boarding details are confirmed in writing instead of left to generic pier assumptions.",
+];
+
 const flowSteps = [
   {
     title: "Confirm the shared sunset route is the right product",
@@ -240,6 +266,15 @@ export default function SunsetCruiseTicketsIstanbulPage() {
             </div>
 
             <aside className="rounded-2xl border border-white bg-white p-6 shadow-sm">
+              <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src={sunsetTour.image}
+                  alt="Shared Bosphorus sunset cruise at golden hour in Istanbul"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
               <h2 className="mb-4 text-lg font-semibold text-[var(--heading)]">
                 What helps us confirm the right sunset ticket path
               </h2>
@@ -329,6 +364,38 @@ export default function SunsetCruiseTicketsIstanbulPage() {
           </section>
 
           <section className="mb-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">What is included in each sunset cruise ticket?</h2>
+            <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              Both sunset ticket options stay on the same shared golden-hour Bosphorus route. The main difference is
+              whether the booking should stay lighter without wine or include the wine-served shared option. That keeps
+              this page narrow and avoids mixing sunset ticket intent with dinner or private-yacht planning.
+            </p>
+            <div className="grid gap-4 lg:grid-cols-2">
+              {packageHighlights.map((pkg) => (
+                <div key={pkg.name} className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5">
+                  <div className="mb-3 flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-[var(--heading)]">{pkg.name}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">{pkg.description}</p>
+                    </div>
+                    <span className="rounded-full bg-[var(--brand-primary)] px-3 py-1 text-sm font-semibold text-white">
+                      {pkg.price}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-sm text-[var(--text-muted)]">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">How the sunset ticket decision usually works</h2>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {flowSteps.map((item, index) => (
@@ -365,6 +432,51 @@ export default function SunsetCruiseTicketsIstanbulPage() {
                   <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">{item.a}</p>
                 </details>
               ))}
+            </div>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">Why trust MerrySails for sunset cruise tickets in Istanbul?</h2>
+                <p className="mb-4 text-sm leading-relaxed text-[var(--text-muted)]">
+                  This page is not trying to replace the protected sunset owner page. Its job is to answer the narrow
+                  ticket question, then hand the booking back to the right owner URL with clear operator facts, visible
+                  pricing, and written boarding follow-up.
+                </p>
+                <ul className="space-y-3 text-sm text-[var(--text-muted)]">
+                  {trustSignals.map((signal) => (
+                    <li key={signal} className="flex items-start gap-2">
+                      <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                      <span>{signal}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[var(--surface-alt)] p-5">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">Best next step</p>
+                <h3 className="mb-2 text-xl font-semibold text-[var(--heading)]">Move back to the sunset owner page when the ticket is clear</h3>
+                <p className="mb-5 text-sm leading-relaxed text-[var(--text-muted)]">
+                  If you already know the date and whether you want the wine option, continue to the sunset owner page
+                  or send the brief on WhatsApp so the team can confirm the right shared route quickly.
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link href="/cruises/bosphorus-sunset-cruise" className="inline-flex items-center justify-center rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
+                    Open sunset owner page
+                  </Link>
+                  <TrackedContactLink
+                    href={WHATSAPP_URL}
+                    kind="whatsapp"
+                    label="sunset_ticket_page_mid_whatsapp"
+                    location="sunset_ticket_page_mid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
+                  >
+                    WhatsApp the date
+                  </TrackedContactLink>
+                </div>
+              </div>
             </div>
           </section>
 

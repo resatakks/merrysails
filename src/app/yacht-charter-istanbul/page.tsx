@@ -24,14 +24,14 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(yachtTour)}`;
 
 export const metadata: Metadata = {
-  title: "Yacht Charter Istanbul 2026 | Private Yacht Charter | MerrySails",
+  title: "Private Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | MerrySails",
   description:
-    "Compare private yacht charter packages in Istanbul from EUR 280 and choose the right private Bosphorus yacht setup for route, timing, and onboard service.",
+    "Book private yacht charter Istanbul from EUR 280 per yacht. Compare 3 Bosphorus charter packages for route, timing, marina confirmation, and onboard service.",
   alternates: { canonical: canonicalUrl },
   openGraph: {
-    title: "Yacht Charter Istanbul 2026 | Private Yacht Charter | MerrySails",
+    title: "Private Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | MerrySails",
     description:
-      "Choose private yacht charter packages in Istanbul with Bosphorus route planning, booking-specific marina confirmation, and event add-ons.",
+      "Choose 3 private yacht charter packages in Istanbul with Bosphorus route planning, marina confirmation, and event add-ons.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yacht Charter Istanbul 2026 | Private Yacht Charter | MerrySails",
+    title: "Private Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | MerrySails",
     description:
-      "Private Bosphorus yacht charter in Istanbul with Essential, Premium, and VIP packages for route, timing, and onboard service planning.",
+      "Private Bosphorus yacht charter in Istanbul from EUR 280 with Essential, Premium, and VIP packages.",
     images: [yachtTour.image],
   },
 };

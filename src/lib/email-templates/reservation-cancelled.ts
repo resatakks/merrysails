@@ -1,4 +1,4 @@
-import { escapeHtml } from "./helpers";
+import { emailLegalFooter, escapeHtml } from "./helpers";
 
 interface ReservationCancelledData {
   reservationId: string;
@@ -45,7 +45,7 @@ export function reservationCancelledEmail(data: ReservationCancelledData): strin
     </div>
 
     <div style="padding:16px;text-align:center;">
-      <p style="color:#94a3b8;font-size:12px;margin:0;">MerrySails — Merry Tourism | TURSAB Licensed</p>
+      ${emailLegalFooter()}
     </div>
   </div>
 </body>

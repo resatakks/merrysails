@@ -12,11 +12,27 @@ import {
   buildReservationPricingSnapshot,
   ReservationValidationError,
 } from "@/lib/reservation-pricing";
+import { buildReservationPdfAttachments } from "@/lib/reservation-pdf";
 import { consumeRateLimit } from "@/lib/rate-limit";
 import {
   getSameDayBookingClosedMessage,
   isSameDayBookingClosed,
 } from "@/lib/booking-cutoffs";
+
+interface AttributionPayload {
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  gadSource?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrerHost?: string;
+  landingPath?: string;
+  trafficChannel?: string;
+}
 
 interface CreateReservationInput {
   tourSlug: string;
@@ -33,6 +49,26 @@ interface CreateReservationInput {
   privateTransferRequested?: boolean;
   notes?: string;
   honeypot?: string;
+  attribution?: AttributionPayload;
+}
+
+function sanitizeAttribution(input?: AttributionPayload) {
+  if (!input) return {};
+  const trim = (v?: string) => (v ? v.trim().slice(0, 255) || null : null);
+  return {
+    gclid: trim(input.gclid),
+    gbraid: trim(input.gbraid),
+    wbraid: trim(input.wbraid),
+    gadSource: trim(input.gadSource),
+    utmSource: trim(input.utmSource),
+    utmMedium: trim(input.utmMedium),
+    utmCampaign: trim(input.utmCampaign),
+    utmContent: trim(input.utmContent),
+    utmTerm: trim(input.utmTerm),
+    referrerHost: trim(input.referrerHost),
+    landingPath: trim(input.landingPath),
+    trafficChannel: trim(input.trafficChannel),
+  };
 }
 
 const DATE_INPUT_FORMATS = [
@@ -254,6 +290,7 @@ export async function createReservation(input: CreateReservationInput) {
               total: pricing.total,
             },
           }) ?? null,
+        ...sanitizeAttribution(input.attribution),
       },
     });
 
@@ -264,6 +301,43 @@ export async function createReservation(input: CreateReservationInput) {
 
       tasks.push(
         (async () => {
+          // Build voucher + invoice PDFs so the customer receives them with
+          // the initial "received" email — restored after commit 3511f4c
+          // accidentally stripped the attachment chain.
+          let attachments: Awaited<ReturnType<typeof buildReservationPdfAttachments>> | undefined;
+          try {
+            attachments = await buildReservationPdfAttachments({
+              reservationId,
+              customerName,
+              customerEmail,
+              customerPhone,
+              tourSlug: pricing.tour.slug,
+              tourName: pricing.tour.nameEn,
+              serviceDate: reservationDate,
+              time: reservationTime,
+              guests: pricing.guests,
+              totalPrice: pricing.total,
+              currency: pricing.currency,
+              packageName: pricing.packageName,
+              addOns: pricing.selectedAddOns.map((addOn) => addOn.name),
+              additionalGuests,
+              privateTransferRequested: Boolean(input.privateTransferRequested),
+              notes: customerNote,
+              pricing: {
+                currency: pricing.currency,
+                guests: pricing.guests,
+                priceMode: pricing.priceMode,
+                lineItems: pricing.lineItems,
+                subtotal: pricing.subtotal,
+                addOnsTotal: pricing.addOnsTotal,
+                total: pricing.total,
+              },
+              status: "Received",
+            });
+          } catch (pdfErr) {
+            console.error("Failed to build reservation PDF attachments:", pdfErr);
+          }
+
           await sendEmail({
             to: customerEmail,
             cc: reservationCcRecipients,
@@ -286,6 +360,7 @@ export async function createReservation(input: CreateReservationInput) {
               notes: customerNote,
               variant: "received",
             }),
+            attachments,
           });
         })().catch((emailErr) => {
           console.error("Failed to send customer email:", emailErr);

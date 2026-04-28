@@ -1,7 +1,10 @@
 "use client";
 
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { handleTrackedContactNavigation } from "@/lib/analytics";
+import {
+  handleTrackedContactNavigation,
+  type ContactIntent,
+} from "@/lib/analytics";
 
 type ContactLinkKind = "phone" | "whatsapp";
 
@@ -9,6 +12,7 @@ interface TrackedContactLinkProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "href"> {
   children: ReactNode;
   href: string;
+  intent?: ContactIntent;
   kind: ContactLinkKind;
   label: string;
   location: string;
@@ -17,6 +21,7 @@ interface TrackedContactLinkProps
 export default function TrackedContactLink({
   children,
   href,
+  intent,
   kind,
   label,
   location,
@@ -35,6 +40,7 @@ export default function TrackedContactLink({
 
         handleTrackedContactNavigation(event, {
           href,
+          intent,
           kind,
           label,
           location,

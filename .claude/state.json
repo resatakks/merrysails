@@ -1,0 +1,36 @@
+{
+  "active_mode": "none",
+  "active_mission": null,
+  "last_session": "2026-04-28",
+  "tokens_baseline": 0,
+  "onboarded": true,
+  "onboarded_at": "2026-04-27",
+  "stack": {
+    "framework": "next@16.2.4",
+    "react": "19.2.3",
+    "typescript": "5",
+    "tailwind": "4",
+    "prisma": "7.7.0",
+    "db": "postgresql"
+  },
+  "active_locales": ["en", "tr", "de", "fr", "nl"],
+  "supported_locales": ["en","tr","de","es","fr","it","pt","ru","hu","nl","sa","el"],
+  "locale_pages": {
+    "tr": ["/bosphorus-cruise", "/istanbul-dinner-cruise", "/cruises/bosphorus-sunset-cruise", "/yacht-charter-istanbul", "/boat-rental-istanbul"],
+    "de": ["/bosphorus-cruise", "/istanbul-dinner-cruise", "/cruises/bosphorus-sunset-cruise", "/yacht-charter-istanbul", "/boat-rental-istanbul"],
+    "fr": ["/bosphorus-cruise", "/istanbul-dinner-cruise", "/cruises/bosphorus-sunset-cruise", "/yacht-charter-istanbul", "/boat-rental-istanbul"],
+    "nl": ["/bosphorus-cruise", "/istanbul-dinner-cruise", "/cruises/bosphorus-sunset-cruise", "/yacht-charter-istanbul", "/boat-rental-istanbul"]
+  },
+  "seo_baseline": {
+    "as_of": "2026-04-26",
+    "clicks_28d": 0,
+    "impressions_3m": 1170,
+    "top_position": 9.0,
+    "avg_position": 65
+  },
+  "schema_upgrades": {
+    "aggregateRating": ["istanbul-dinner-cruise", "cruises/[slug]"],
+    "hreflang_routes": ["/bosphorus-cruise", "/istanbul-dinner-cruise", "/cruises/bosphorus-sunset-cruise", "/yacht-charter-istanbul", "/boat-rental-istanbul"],
+    "completed_at": "2026-04-28"
+  }
+}

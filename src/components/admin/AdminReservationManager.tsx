@@ -44,6 +44,28 @@ interface AdminReservationItem {
   internalCostEur: number | null;
   confirmedAtLabel?: string | null;
   completedAtLabel?: string | null;
+  attribution?: { channel: string; detail: string | null };
+}
+
+function attributionChipClass(channel: string): string {
+  switch (channel) {
+    case "Google Ads":
+      return "bg-emerald-50 text-emerald-700 border-emerald-200";
+    case "SEO":
+      return "bg-sky-50 text-sky-700 border-sky-200";
+    case "Paid Search":
+      return "bg-amber-50 text-amber-700 border-amber-200";
+    case "Social":
+      return "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200";
+    case "Email":
+      return "bg-indigo-50 text-indigo-700 border-indigo-200";
+    case "Referral":
+      return "bg-slate-100 text-slate-700 border-slate-200";
+    case "Direct":
+      return "bg-zinc-100 text-zinc-700 border-zinc-200";
+    default:
+      return "bg-gray-50 text-gray-500 border-gray-200";
+  }
 }
 
 interface AdminReservationManagerProps {
@@ -575,6 +597,23 @@ export function AdminReservationManager({
                           <div className="mt-0.5 text-xs text-[var(--text-muted)]">
                             {reservation.customerPhone}
                           </div>
+                          {reservation.attribution && (
+                            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                              <span
+                                title={reservation.attribution.detail ?? undefined}
+                                className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] ${attributionChipClass(
+                                  reservation.attribution.channel
+                                )}`}
+                              >
+                                {reservation.attribution.channel}
+                              </span>
+                              {reservation.attribution.detail && (
+                                <span className="max-w-[180px] truncate text-[10px] text-[var(--text-muted)]">
+                                  {reservation.attribution.detail}
+                                </span>
+                              )}
+                            </div>
+                          )}
                         </td>
                         <td className="px-4 py-4">
                           <div className="max-w-[230px] font-semibold text-[var(--heading)]">

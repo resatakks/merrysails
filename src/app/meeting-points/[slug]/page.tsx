@@ -251,8 +251,8 @@ export default async function MeetingPointGuidePage({
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--brand-gold)]">
                 Reservation Center
               </p>
-              <h2 className="mt-3 text-2xl font-bold">Track your booking anytime</h2>
-              <p className="mt-3 text-sm leading-relaxed text-white/74">
+              <h2 className="mt-3 text-2xl font-bold text-white">Track your booking anytime</h2>
+              <p className="mt-3 text-sm leading-relaxed text-white/90">
                 Use your reservation ID for voucher, invoice, and boarding updates.
               </p>
               <div className="mt-5">

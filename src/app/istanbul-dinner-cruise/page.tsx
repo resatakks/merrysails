@@ -24,14 +24,14 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(dinnerTour)}`;
 
 export const metadata: Metadata = {
-  title: "Istanbul Dinner Cruise | Bosphorus Dinner Cruise | MerrySails",
+  title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from EUR 30 | MerrySails",
   description:
-    "Compare Bosphorus dinner cruise packages in Istanbul from EUR 30 to EUR 90 with dinner service, Turkish night entertainment, and hotel pickup support.",
+    "Book Bosphorus dinner cruise Istanbul from EUR 30. Compare 4 shared packages with dinner service, Turkish-night entertainment, and hotel pickup support from a TURSAB-backed operator.",
   alternates: { canonical: canonicalUrl },
   openGraph: {
-    title: "Istanbul Dinner Cruise | Bosphorus Dinner Cruise | MerrySails",
+    title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from EUR 30 | MerrySails",
     description:
-      "Compare shared Bosphorus dinner cruise packages in Istanbul with dinner service, Turkish night entertainment, and a clear package ladder.",
+      "Compare 4 Bosphorus dinner cruise packages in Istanbul with visible pricing, Turkish-night entertainment, and pickup support.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Istanbul Dinner Cruise | Bosphorus Dinner Cruise | MerrySails",
+    title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from EUR 30 | MerrySails",
     description:
-      "Shared Bosphorus dinner cruise packages in Istanbul from EUR 30 to EUR 90 with dinner service and Turkish night entertainment.",
+      "Shared Bosphorus dinner cruise packages from EUR 30 with dinner service, Turkish-night entertainment, and pickup support.",
     images: [dinnerTour.image],
   },
 };

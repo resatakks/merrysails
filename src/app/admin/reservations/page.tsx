@@ -6,6 +6,49 @@ import { AdminShell } from "@/components/admin/AdminShell";
 import { AdminReservationManager } from "@/components/admin/AdminReservationManager";
 import { normalizeReservationStatus } from "@/lib/reservation-status";
 
+type ReservationAttributionFields = {
+  gclid: string | null;
+  trafficChannel: string | null;
+  utmSource: string | null;
+  utmMedium: string | null;
+  utmCampaign: string | null;
+  referrerHost: string | null;
+};
+
+function summarizeAttribution(r: ReservationAttributionFields): {
+  channel: string;
+  detail: string | null;
+} {
+  if (r.gclid) {
+    return {
+      channel: "Google Ads",
+      detail: r.utmCampaign ?? `gclid:${r.gclid.slice(0, 10)}…`,
+    };
+  }
+  if (r.trafficChannel === "google_ads") {
+    return { channel: "Google Ads", detail: r.utmCampaign };
+  }
+  if (r.trafficChannel === "organic_search") {
+    return { channel: "SEO", detail: r.utmSource };
+  }
+  if (r.trafficChannel === "paid_search") {
+    return { channel: "Paid Search", detail: r.utmSource };
+  }
+  if (r.trafficChannel === "social") {
+    return { channel: "Social", detail: r.utmSource };
+  }
+  if (r.trafficChannel === "email") {
+    return { channel: "Email", detail: r.utmCampaign };
+  }
+  if (r.trafficChannel === "referral") {
+    return { channel: "Referral", detail: r.referrerHost };
+  }
+  if (r.trafficChannel === "direct") {
+    return { channel: "Direct", detail: null };
+  }
+  return { channel: "Unknown", detail: null };
+}
+
 export const metadata: Metadata = {
   title: "Admin Reservations",
   robots: { index: false, follow: false },
@@ -139,6 +182,7 @@ export default async function AdminReservationsPage({
             completedAtLabel: reservation.completedAt
               ? format(new Date(reservation.completedAt), "dd MMM HH:mm")
               : null,
+            attribution: summarizeAttribution(reservation),
           }))}
         />
       </div>

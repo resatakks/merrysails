@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import { submitContactForm } from "@/app/actions/contact";
-import { trackContactSubmitSuccess } from "@/lib/analytics";
+import { getStoredAttribution, trackContactSubmitSuccess } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -25,12 +25,15 @@ export default function ContactForm() {
       subject: data.get("subject") as string,
       message: data.get("message") as string,
       honeypot: data.get("company") as string,
+      attribution: getStoredAttribution() ?? undefined,
     });
 
     setLoading(false);
 
     if (result.success) {
       trackContactSubmitSuccess({
+        customerEmail: (data.get("email") as string) || undefined,
+        customerName: (data.get("name") as string) || undefined,
         pagePath: pathname,
         subject: (data.get("subject") as string) || "",
       });

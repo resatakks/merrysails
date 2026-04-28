@@ -630,6 +630,7 @@ export default function BookingCalendar({
                       selectedDate,
                       "dd MMM yyyy"
                     )} for ${totalGuests} guests.`,
+                    intent: "during_booking",
                     kind: "whatsapp",
                     label: "booking_calendar_whatsapp",
                     location: tourSlug,

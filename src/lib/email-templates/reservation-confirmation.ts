@@ -8,7 +8,7 @@ import {
   getExperienceSupportGuide,
   getExperienceSupportPageUrl,
 } from "@/lib/experience-support";
-import { currencySymbol, escapeHtml } from "./helpers";
+import { currencySymbol, emailLegalFooter, emailLogoBlock, escapeHtml } from "./helpers";
 
 interface ReservationConfirmationData {
   reservationId: string;
@@ -218,17 +218,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
 
     <div style="background:linear-gradient(135deg,#0c1b2e 0%,#1a3a5c 50%,#0f2847 100%);border-radius:18px 18px 0 0;padding:28px 24px 34px;position:relative;overflow:hidden;">
       <div style="position:absolute;inset:auto 0 0 0;height:32px;background:linear-gradient(180deg,rgba(247,181,44,0) 0%,rgba(247,181,44,0.22) 100%);"></div>
-      <table style="width:100%;border-collapse:collapse;">
-        <tr>
-          <td style="width:56px;vertical-align:top;">
-            <div style="width:44px;height:44px;border-radius:14px;background:#0c2d48;color:#f7b52c;font-size:22px;line-height:44px;text-align:center;font-weight:800;">M</div>
-          </td>
-          <td style="vertical-align:top;">
-            <p style="color:#ffffff;margin:0;font-size:24px;font-weight:800;letter-spacing:-0.4px;">MerrySails</p>
-            <p style="color:#94a3b8;margin:4px 0 0;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;">Merry Tourism</p>
-          </td>
-        </tr>
-      </table>
+      ${emailLogoBlock({ onDark: true })}
 
       <div style="margin-top:22px;">
         <div style="display:inline-block;background:rgba(34,197,94,0.16);border:1px solid rgba(74,222,128,0.35);border-radius:999px;padding:9px 18px;color:#4ade80;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">
@@ -379,8 +369,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
     </div>
 
     <div style="padding:18px 12px 0;text-align:center;">
-      <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">MerrySails</p>
-      <p style="color:#64748b;font-size:12px;margin:6px 0 0;">Merry Tourism | TURSAB Licensed A Group Travel Agency</p>
+      ${emailLegalFooter()}
       <p style="text-align:center;color:#94a3b8;font-size:10px;margin:14px 0 0;line-height:1.6;">
         This email was sent because a booking was made on merrysails.com.<br>
         If you did not make this reservation, please <a href="mailto:info@merrysails.com" style="color:#64748b;">contact us</a>.

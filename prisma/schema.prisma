@@ -30,6 +30,21 @@ model Reservation {
   customerCountry String?
   notes           String?
 
+  // Traffic attribution (captured at submit time from sessionStorage)
+  // Required for server-side Google Ads conversion uploads & multi-touch attribution.
+  gclid         String?
+  gbraid        String?
+  wbraid        String?
+  gadSource     String?
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+  utmContent    String?
+  utmTerm       String?
+  referrerHost  String?
+  landingPath   String?
+  trafficChannel String?
+
   // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -38,6 +53,8 @@ model Reservation {
   @@index([date])
   @@index([customerEmail])
   @@index([createdAt])
+  @@index([gclid])
+  @@index([utmCampaign])
 }
 
 // ─── Telegram User ──────────────────────────────────────────
@@ -64,7 +81,25 @@ model ContactMessage {
   subject   String
   message   String
   isRead    Boolean  @default(false)
+
+  // Traffic attribution (captured at submit time from sessionStorage)
+  gclid         String?
+  gbraid        String?
+  wbraid        String?
+  gadSource     String?
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+  utmContent    String?
+  utmTerm       String?
+  referrerHost  String?
+  landingPath   String?
+  trafficChannel String?
+
   createdAt DateTime @default(now())
+
+  @@index([gclid])
+  @@index([utmCampaign])
 }
 
 // ─── Google Ads Lead Forms ─────────────────────────────────
@@ -84,6 +119,10 @@ model GoogleAdsLead {
   status       String   @default("new") // new | contacted | qualified | bad | booked
   rawPayload   Json
 
+  // Lead form payloads include `gcl_id` (Google Click ID) when forwarded
+  // through user-column extras — required for server-side conversion upload.
+  gclid        String?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -91,6 +130,7 @@ model GoogleAdsLead {
   @@index([campaignName])
   @@index([phone])
   @@index([status])
+  @@index([gclid])
 }
 
 // ─── Tour Operations ──────────────────────────────────────

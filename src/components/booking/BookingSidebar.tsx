@@ -349,6 +349,7 @@ export default function BookingSidebar({
               onClick={(event) =>
                 handleTrackedContactNavigation(event, {
                   href: WHATSAPP_URL,
+                  intent: "during_booking",
                   kind: "whatsapp",
                   label: "booking_sidebar_whatsapp",
                   location: tour.slug,
@@ -364,6 +365,7 @@ export default function BookingSidebar({
               onClick={(event) =>
                 handleTrackedContactNavigation(event, {
                   href: "tel:+905370406822",
+                  intent: "during_booking",
                   kind: "phone",
                   label: PHONE_DISPLAY,
                   location: `booking_sidebar_${tour.slug}`,
@@ -453,6 +455,7 @@ export default function BookingSidebar({
                     onClick={(event) =>
                       handleTrackedContactNavigation(event, {
                         href: "tel:+905370406822",
+                        intent: "during_booking",
                         kind: "phone",
                         label: PHONE_DISPLAY,
                         location: `booking_mobile_bar_${tour.slug}`,
@@ -498,6 +501,7 @@ export default function BookingSidebar({
                     onClick={(event) =>
                       handleTrackedContactNavigation(event, {
                         href: WHATSAPP_URL,
+                        intent: "during_booking",
                         kind: "whatsapp",
                         label: "booking_mobile_bar_whatsapp",
                         location: `booking_mobile_bar_${tour.slug}`,

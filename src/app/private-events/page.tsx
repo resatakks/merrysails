@@ -4,14 +4,14 @@ import { ArrowRight } from "lucide-react";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Private Events Bosphorus | Birthday & Celebration Services | MerrySails",
+  title: "Private Yacht Events Istanbul 2026 | Birthday & Celebration Boat Hire",
   description:
-    "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and flexible private gatherings in Istanbul.",
+    "Plan private yacht events in Istanbul for birthdays, anniversaries, celebration dinners, and private boat party requests on the Bosphorus.",
   alternates: { canonical: `${SITE_URL}/private-events` },
   openGraph: {
-    title: "Private Events Bosphorus | Birthday & Celebration Services | MerrySails",
+    title: "Private Yacht Events Istanbul 2026 | Birthday & Celebration Boat Hire",
     description:
-      "Private Bosphorus event planning for birthdays, anniversaries, celebration dinners, and flexible private gatherings.",
+      "Private yacht event planning in Istanbul for birthdays, anniversaries, celebration dinners, and private Bosphorus gatherings.",
     url: `${SITE_URL}/private-events`,
     type: "website",
     images: [
@@ -125,6 +125,13 @@ const eventFits = [
   },
 ];
 
+const quickFacts = [
+  ["Best for", "Birthday, anniversary, and celebration-led private yacht requests in Istanbul."],
+  ["Not for", "Company-led briefs, dinner-cruise ticket demand, or proposal-first planning."],
+  ["Quote variables", "Guest count, event mood, decoration, music, food service, and route length."],
+  ["Routing rule", "If the brief becomes yacht-first, proposal-first, or company-first, move to the narrower owner page."],
+];
+
 export default function PrivateEventsPage() {
   return (
     <>
@@ -135,12 +142,10 @@ export default function PrivateEventsPage() {
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
           <section className="text-center mb-14">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--heading)]">
-              Private Events on the Bosphorus
-            </h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--heading)]">Private Yacht Events Istanbul</h1>
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
               This page is for birthdays, anniversaries, and flexible celebration requests that
-              need a private Bosphorus setup without forcing every event into the same booking path.
+              need a private yacht event in Istanbul without forcing every brief into the same booking path.
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]">
               If you are mainly comparing private yacht packages rather than celebration formats,
@@ -165,6 +170,18 @@ export default function PrivateEventsPage() {
               >
                 WhatsApp planning
               </a>
+            </div>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">Private yacht events Istanbul quick facts</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {quickFacts.map(([label, value]) => (
+                <div key={label} className="rounded-xl border border-gray-100 bg-[var(--surface-alt)] p-4">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">{label}</p>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">{value}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -225,7 +242,7 @@ export default function PrivateEventsPage() {
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[var(--heading)] transition-colors hover:bg-white/90"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#111B19] transition-colors hover:bg-white/90"
               >
                 Ask for the right option <ArrowRight className="h-4 w-4" />
               </Link>

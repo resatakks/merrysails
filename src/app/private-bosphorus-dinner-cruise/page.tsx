@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       "Private yacht dinner on the Bosphorus for proposals, birthdays, anniversaries, and small groups that want a private table and a calm evening route.",
     url: `${SITE_URL}/private-bosphorus-dinner-cruise`,
     type: "website",
+    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }],
   },
 };
 

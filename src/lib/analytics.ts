@@ -9,7 +9,7 @@ type AnalyticsValue =
   | Record<string, unknown>
   | Array<Record<string, unknown>>;
 
-type TrafficAttribution = {
+export type TrafficAttribution = {
   campaign?: string;
   channel: "google_ads" | "paid_search" | "organic_search" | "direct" | "referral" | "social" | "email";
   content?: string;
@@ -24,10 +24,64 @@ type TrafficAttribution = {
   wbraid?: string;
 };
 
+/** Server-action-safe attribution payload (string-only fields). */
+export type AttributionInput = {
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  gadSource?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrerHost?: string;
+  landingPath?: string;
+  trafficChannel?: string;
+};
+
+/**
+ * Reads the persisted first-touch attribution from sessionStorage and returns
+ * a flat shape ready to attach to a server action input. Returns `null` if
+ * called server-side or if nothing has been recorded yet (e.g., user landed
+ * directly on the booking modal without a tracked page view — rare).
+ */
+export function getStoredAttribution(): AttributionInput | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const stored = window.sessionStorage.getItem(FIRST_ATTRIBUTION_KEY);
+    if (!stored) return null;
+    const parsed = JSON.parse(stored) as TrafficAttribution;
+    return {
+      gadSource: parsed.gadSource,
+      gbraid: parsed.gbraid,
+      gclid: parsed.gclid,
+      landingPath: parsed.landingPath,
+      referrerHost: parsed.referrerHost,
+      trafficChannel: parsed.channel,
+      utmCampaign: parsed.campaign,
+      utmContent: parsed.content,
+      utmMedium: parsed.medium,
+      utmSource: parsed.source,
+      utmTerm: parsed.term,
+      wbraid: parsed.wbraid,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export type ContactIntent =
+  | "pre_booking"
+  | "during_booking"
+  | "post_booking"
+  | "support";
+
 declare global {
   interface Window {
     clarity?: (...args: unknown[]) => void;
     dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -38,9 +92,43 @@ const GOOGLE_ADS_CONVERSION_NAMES = {
   purchase: "purchase",
   whatsapp: "whatsapp",
 } as const;
+
+type GoogleAdsConversionKey = keyof typeof GOOGLE_ADS_CONVERSION_NAMES;
+
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+
+const GOOGLE_ADS_CONVERSION_LABELS: Record<GoogleAdsConversionKey, string | undefined> = {
+  abandonment: process.env.NEXT_PUBLIC_GADS_LABEL_ABANDONMENT,
+  contact: process.env.NEXT_PUBLIC_GADS_LABEL_CONTACT,
+  phone: process.env.NEXT_PUBLIC_GADS_LABEL_PHONE,
+  purchase: process.env.NEXT_PUBLIC_GADS_LABEL_PURCHASE,
+  whatsapp: process.env.NEXT_PUBLIC_GADS_LABEL_WHATSAPP,
+};
+
+// Default value-per-conversion in TRY for soft conversions (phone/whatsapp/contact/abandonment).
+// Override via env to recalibrate Google Ads smart bidding without redeploying logic.
+// Recommended formula: AOV × CR(intent → booking). For €100 avg booking ≈ 3500 TRY:
+//   phone 15% → 525, whatsapp 10% → 350, form 5% → 175, abandonment 2% recovery → 70.
+// Tune up or down based on your actual booking funnel data after 30 days of attribution.
+function envNumber(key: string, fallback: number): number {
+  const raw = process.env[key];
+  if (!raw) return fallback;
+  const parsed = Number(raw);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
+}
+
+const CONVERSION_VALUE_CURRENCY = process.env.NEXT_PUBLIC_CONVERSION_VALUE_CURRENCY || "TRY";
+const CONVERSION_VALUES = {
+  abandonment: envNumber("NEXT_PUBLIC_CONVERSION_VALUE_ABANDONMENT", 250),
+  contact: envNumber("NEXT_PUBLIC_CONVERSION_VALUE_CONTACT", 350),
+  phone: envNumber("NEXT_PUBLIC_CONVERSION_VALUE_PHONE", 300),
+  whatsapp: envNumber("NEXT_PUBLIC_CONVERSION_VALUE_WHATSAPP", 300),
+} as const;
+
 const CLARITY_EVENT_TAG_KEYS = new Set([
   "click_label",
   "click_location",
+  "contact_intent",
   "contact_method",
   "currency",
   "fields_completed",
@@ -56,6 +144,7 @@ const CLARITY_EVENT_TAG_KEYS = new Set([
   "value",
 ]);
 const FIRST_ATTRIBUTION_KEY = "merrysails:first-attribution";
+const ENHANCED_CONVERSIONS_FLAG_KEY = "merrysails:ec-set";
 
 function compactParams(
   params: Record<string, AnalyticsValue | null | undefined>
@@ -78,6 +167,22 @@ function pushToDataLayer(
     event: eventName,
     ...compactParams(params),
   });
+}
+
+function ensureGtag(): ((...args: unknown[]) => void) | null {
+  if (typeof window === "undefined") {
+    return null;
+  }
+  if (typeof window.gtag === "function") {
+    return window.gtag;
+  }
+  // GTM container loads gtag.js but does not always expose window.gtag.
+  // Provide a thin shim that funnels into the same dataLayer GTM is reading.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtagShim(...args: unknown[]) {
+    window.dataLayer!.push(args);
+  };
+  return window.gtag;
 }
 
 export function trackEvent(
@@ -107,7 +212,7 @@ export function trackEvent(
 }
 
 function trackGoogleAdsConversion(
-  conversionName: keyof typeof GOOGLE_ADS_CONVERSION_NAMES,
+  conversionName: GoogleAdsConversionKey,
   params: Record<string, AnalyticsPrimitive | null | undefined> = {}
 ) {
   if (typeof window === "undefined") {
@@ -120,8 +225,142 @@ function trackGoogleAdsConversion(
     ...params,
   });
 
+  // Keep dataLayer push for backwards-compatible GTM-side tags.
   pushToDataLayer("google_ads_conversion", cleanedParams);
+
+  // Direct gtag('event','conversion',...) routing — works without any
+  // GTM container configuration as long as both AW id and a label env are set.
+  const label = GOOGLE_ADS_CONVERSION_LABELS[conversionName];
+  if (!GOOGLE_ADS_ID || !label) {
+    if (process.env.NODE_ENV !== "production" && GOOGLE_ADS_ID && !label) {
+      console.warn(
+        `[analytics] Missing NEXT_PUBLIC_GADS_LABEL_${conversionName.toUpperCase()} — Google Ads conversion '${conversionName}' will not fire via gtag.`
+      );
+    }
+    return;
+  }
+
+  const gtag = ensureGtag();
+  if (!gtag) {
+    return;
+  }
+
+  const conversionPayload: Record<string, AnalyticsValue> = {
+    send_to: `${GOOGLE_ADS_ID}/${label}`,
+    ...cleanedParams,
+  };
+
+  // Google Ads expects `transaction_id` for purchase dedupe, value/currency for revenue.
+  gtag("event", "conversion", conversionPayload);
 }
+
+// --- Enhanced conversions -------------------------------------------------
+
+async function sha256Hex(input: string): Promise<string | undefined> {
+  if (typeof window === "undefined" || !window.crypto?.subtle) {
+    return undefined;
+  }
+  try {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+    const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(hashBuffer))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  } catch {
+    return undefined;
+  }
+}
+
+function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
+}
+
+function normalizePhoneE164(phone: string): string {
+  const trimmed = phone.trim();
+  if (!trimmed) return "";
+  const digits = trimmed.replace(/[^\d+]/g, "");
+  if (digits.startsWith("+")) {
+    return digits;
+  }
+  // Fallback: if a 10–11 digit Turkish-style number comes in without country code,
+  // prefix it. Booking flow uses react-international-phone which already returns +CC.
+  return `+${digits.replace(/^0+/, "")}`;
+}
+
+function splitName(fullName: string): { first?: string; last?: string } {
+  const trimmed = fullName.trim();
+  if (!trimmed) return {};
+  const parts = trimmed.split(/\s+/);
+  if (parts.length === 1) return { first: parts[0].toLowerCase() };
+  return {
+    first: parts[0].toLowerCase(),
+    last: parts.slice(1).join(" ").toLowerCase(),
+  };
+}
+
+export type EnhancedConversionsInput = {
+  email?: string;
+  phone?: string;
+  name?: string;
+};
+
+/**
+ * Sets hashed user-provided data for Google Ads enhanced conversions.
+ * Call BEFORE the conversion fires, ideally on the same tick.
+ * Safe to call multiple times in a session — gtag treats it as set-state.
+ */
+export async function setEnhancedConversionsUserData(
+  input: EnhancedConversionsInput
+): Promise<void> {
+  if (typeof window === "undefined" || !GOOGLE_ADS_ID) {
+    return;
+  }
+
+  const userData: Record<string, string> = {};
+
+  if (input.email) {
+    const hashed = await sha256Hex(normalizeEmail(input.email));
+    if (hashed) userData.sha256_email_address = hashed;
+  }
+
+  if (input.phone) {
+    const normalized = normalizePhoneE164(input.phone);
+    if (normalized) {
+      const hashed = await sha256Hex(normalized);
+      if (hashed) userData.sha256_phone_number = hashed;
+    }
+  }
+
+  if (input.name) {
+    const { first, last } = splitName(input.name);
+    if (first) {
+      const hashed = await sha256Hex(first);
+      if (hashed) userData.sha256_first_name = hashed;
+    }
+    if (last) {
+      const hashed = await sha256Hex(last);
+      if (hashed) userData.sha256_last_name = hashed;
+    }
+  }
+
+  if (Object.keys(userData).length === 0) {
+    return;
+  }
+
+  const gtag = ensureGtag();
+  if (!gtag) return;
+
+  gtag("set", "user_data", userData);
+
+  try {
+    window.sessionStorage.setItem(ENHANCED_CONVERSIONS_FLAG_KEY, "1");
+  } catch {
+    // ignore quota / privacy mode
+  }
+}
+
+// --- Traffic attribution --------------------------------------------------
 
 function safeHost(value: string): string | undefined {
   try {
@@ -313,6 +552,9 @@ export function trackBeginCheckout(params: {
 export function trackPurchase(params: {
   addOns?: string[];
   currency?: string;
+  customerEmail?: string;
+  customerName?: string;
+  customerPhone?: string;
   guests: number;
   packageName?: string;
   tourName: string;
@@ -320,6 +562,17 @@ export function trackPurchase(params: {
   transactionId: string;
   value: number;
 }) {
+  // Fire enhanced conversions BEFORE the conversion event so gtag has user_data
+  // attached to the same context. Promise is intentionally not awaited so the
+  // dataLayer event remains synchronous.
+  if (params.customerEmail || params.customerPhone || params.customerName) {
+    void setEnhancedConversionsUserData({
+      email: params.customerEmail,
+      name: params.customerName,
+      phone: params.customerPhone,
+    });
+  }
+
   trackEvent("purchase", {
     currency: params.currency ?? "EUR",
     items: [
@@ -347,9 +600,18 @@ export function trackPurchase(params: {
 }
 
 export function trackContactSubmitSuccess(params: {
+  customerEmail?: string;
+  customerName?: string;
   pagePath: string;
   subject: string;
 }) {
+  if (params.customerEmail || params.customerName) {
+    void setEnhancedConversionsUserData({
+      email: params.customerEmail,
+      name: params.customerName,
+    });
+  }
+
   const payload = {
     contact_method: "form",
     form_subject: params.subject,
@@ -361,12 +623,14 @@ export function trackContactSubmitSuccess(params: {
   trackEvent("contact_us", payload);
   trackEvent("generate_lead", payload);
   trackGoogleAdsConversion("contact", {
-    currency: "TRY",
-    value: 350,
+    currency: CONVERSION_VALUE_CURRENCY,
+    value: CONVERSION_VALUES.contact,
   });
 }
 
 export function trackBookingAbandonment(params: {
+  customerEmail?: string;
+  customerPhone?: string;
   fieldsCompleted: string[];
   guests: number;
   packageName?: string;
@@ -376,6 +640,13 @@ export function trackBookingAbandonment(params: {
   trigger: string;
   value: number;
 }) {
+  if (params.customerEmail || params.customerPhone) {
+    void setEnhancedConversionsUserData({
+      email: params.customerEmail,
+      phone: params.customerPhone,
+    });
+  }
+
   trackEvent("booking_abandonment", {
     currency: "EUR",
     fields_completed: params.fieldsCompleted.join(","),
@@ -389,18 +660,20 @@ export function trackBookingAbandonment(params: {
   });
 
   trackGoogleAdsConversion("abandonment", {
-    currency: "TRY",
-    value: 250,
+    currency: CONVERSION_VALUE_CURRENCY,
+    value: CONVERSION_VALUES.abandonment,
   });
 }
 
 export function trackPhoneClick(params: {
+  intent?: ContactIntent;
   label: string;
   location: string;
 }) {
   const payload = {
     click_label: params.label,
     click_location: params.location,
+    contact_intent: params.intent ?? "pre_booking",
     contact_method: "phone",
   };
 
@@ -408,18 +681,21 @@ export function trackPhoneClick(params: {
   trackEvent("contact_us", payload);
 
   trackGoogleAdsConversion("phone", {
-    currency: "TRY",
-    value: 300,
+    contact_intent: params.intent ?? "pre_booking",
+    currency: CONVERSION_VALUE_CURRENCY,
+    value: CONVERSION_VALUES.phone,
   });
 }
 
 export function trackWhatsAppClick(params: {
+  intent?: ContactIntent;
   label: string;
   location: string;
 }) {
   const payload = {
     click_label: params.label,
     click_location: params.location,
+    contact_intent: params.intent ?? "pre_booking",
     contact_method: "whatsapp",
   };
 
@@ -427,8 +703,9 @@ export function trackWhatsAppClick(params: {
   trackEvent("contact_us", payload);
 
   trackGoogleAdsConversion("whatsapp", {
-    currency: "TRY",
-    value: 300,
+    contact_intent: params.intent ?? "pre_booking",
+    currency: CONVERSION_VALUE_CURRENCY,
+    value: CONVERSION_VALUES.whatsapp,
   });
 }
 
@@ -440,6 +717,7 @@ export function handleTrackedContactNavigation(
   event: MouseEvent<HTMLAnchorElement>,
   params: {
     href: string;
+    intent?: ContactIntent;
     kind: ContactNavigationKind;
     label: string;
     location: string;
@@ -447,11 +725,13 @@ export function handleTrackedContactNavigation(
 ) {
   if (params.kind === "phone") {
     trackPhoneClick({
+      intent: params.intent,
       label: params.label,
       location: params.location,
     });
   } else {
     trackWhatsAppClick({
+      intent: params.intent,
       label: params.label,
       location: params.location,
     });

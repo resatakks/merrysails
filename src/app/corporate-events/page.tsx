@@ -146,6 +146,13 @@ const quoteDrivers = [
   "Departure timing, transfer planning, and invoicing details",
 ];
 
+const quickFacts = [
+  ["Best for", "Company dinners, client hosting, launches, and executive events that need a private Bosphorus venue."],
+  ["Owner page role", "This is the main corporate owner page before the brief narrows into client hosting, launch, or dinner-only support."],
+  ["Quote variables", "Guest count, catering, transfer flow, branding, AV needs, invoice details, and vessel scale."],
+  ["Departure logic", "The final marina and boarding plan are tied to the assigned vessel and the event format."],
+];
+
 const comparePages = [
   {
     href: "/client-hosting-yacht-istanbul",
@@ -256,6 +263,18 @@ export default function CorporateEventsPage() {
                 ))}
               </ul>
             </aside>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Corporate yacht events Istanbul quick facts</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {quickFacts.map(([label, value]) => (
+                <div key={label} className="rounded-xl border border-gray-100 bg-[var(--surface-alt)] p-4">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">{label}</p>
+                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">{value}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">

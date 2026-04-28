@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description:
     "Verify the TURSAB A Group license behind MerrySails and Merry Tourism in Istanbul. License number 14316, office details, and operator identity.",
   alternates: { canonical: "https://merrysails.com/tursab" },
+  openGraph: {
+    title: "TURSAB License 14316 | MerrySails Istanbul",
+    description:
+      "Verify the TURSAB A Group license behind MerrySails and Merry Tourism in Istanbul.",
+    url: "https://merrysails.com/tursab",
+    type: "website",
+    images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const facts = [

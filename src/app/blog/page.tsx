@@ -1,7 +1,32 @@
+import type { Metadata } from "next";
 import BlogIndexClient from "@/components/blog/BlogIndexClient";
 import { blogCollections, blogPosts } from "@/data/blog";
 import { commercialSupportPosts } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
+
+const SITE_URL = "https://merrysails.com";
+
+export const metadata: Metadata = {
+  title: "Istanbul Bosphorus Cruise Blog & Travel Guides | MerrySails",
+  description:
+    "Planning articles, route guides, and travel tips for Istanbul Bosphorus cruises, dinner cruises, and private yacht charters.",
+  alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: {
+    title: "Istanbul Bosphorus Cruise Blog & Travel Guides | MerrySails",
+    description:
+      "Planning articles, route guides, and travel tips for Istanbul Bosphorus cruises, dinner cruises, and private yacht charters.",
+    url: `${SITE_URL}/blog`,
+    type: "website",
+    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Istanbul Bosphorus Cruise Blog & Travel Guides | MerrySails",
+    description:
+      "Planning articles, route guides, and travel tips for Istanbul Bosphorus cruises.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+};
 
 export default function BlogPage() {
   const itemListSchema = {

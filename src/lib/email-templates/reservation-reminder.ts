@@ -6,7 +6,7 @@ import {
   getExperienceSupportGuide,
   getExperienceSupportPageUrl,
 } from "@/lib/experience-support";
-import { escapeHtml } from "./helpers";
+import { emailLegalFooter, escapeHtml } from "./helpers";
 
 interface ReservationReminderData {
   reservationId: string;
@@ -173,7 +173,7 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
     </div>
 
     <div style="padding:16px;text-align:center;">
-      <p style="color:#94a3b8;font-size:12px;margin:0;">MerrySails — Merry Tourism | TURSAB 14316</p>
+      ${emailLegalFooter()}
     </div>
   </div>
 </body>

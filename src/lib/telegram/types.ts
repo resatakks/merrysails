@@ -75,6 +75,19 @@ export interface SailsReservation {
   internalCostEur?: number | null;
   confirmedAt?: string | Date | null;
   completedAt?: string | Date | null;
+  // Traffic attribution (so Telegram + admin can answer "where did this come from?")
+  gclid?: string | null;
+  gbraid?: string | null;
+  wbraid?: string | null;
+  gadSource?: string | null;
+  utmSource?: string | null;
+  utmMedium?: string | null;
+  utmCampaign?: string | null;
+  utmContent?: string | null;
+  utmTerm?: string | null;
+  referrerHost?: string | null;
+  landingPath?: string | null;
+  trafficChannel?: string | null;
 }
 
 export interface BookingAbandonmentAlert {

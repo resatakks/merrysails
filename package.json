@@ -7,7 +7,8 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "seo:rank-monitor": "node scripts/seo-rank-monitor.mjs"
+    "seo:rank-monitor": "node scripts/seo-rank-monitor.mjs",
+    "seo:url-inspection": "node scripts/gsc-url-inspection.mjs"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.2",

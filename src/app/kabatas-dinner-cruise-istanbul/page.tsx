@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const revalidate = 3600;
 
 const canonicalUrl = `${SITE_URL}/kabatas-dinner-cruise-istanbul`;
+
+function requireTour(slug: string, label: string) {
+  const tour = getTourBySlug(slug);
+  if (!tour) {
+    throw new Error(`${label} data is missing.`);
+  }
+  return tour;
+}
+
+const dinnerTour = requireTour("bosphorus-dinner-cruise", "Dinner cruise");
 
 export const metadata: Metadata = {
   title: "Kabatas Dinner Cruise Istanbul 2026 | Boarding-Focused Dinner Support",
@@ -188,6 +200,20 @@ const comparePages = [
   },
 ];
 
+const dinnerPackages = dinnerTour.packages?.map((pkg) => ({
+  name: pkg.name,
+  price: `EUR ${pkg.price}`,
+  description: pkg.description,
+  features: pkg.features.slice(0, 4),
+})) ?? [];
+
+const trustSignals = [
+  "Merry Tourism has operated Istanbul travel products since 2001.",
+  "The dinner cruise runs under a TURSAB-backed Istanbul operator with written booking follow-up.",
+  "Kabatas is treated as a public reference point, while the final boarding message is still date-specific.",
+  "This support page narrows boarding intent without replacing the protected Istanbul Dinner Cruise owner page.",
+];
+
 export default function KabatasDinnerCruiseIstanbulPage() {
   return (
     <>
@@ -262,6 +288,15 @@ export default function KabatasDinnerCruiseIstanbulPage() {
             </div>
 
             <aside className="rounded-2xl border border-white bg-white p-6 shadow-sm">
+              <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src={dinnerTour.image}
+                  alt="Kabatas-side Bosphorus dinner cruise boarding context in Istanbul"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
               <h2 className="mb-4 text-lg font-semibold text-[var(--heading)]">
                 What helps us confirm the Kabatas-side dinner flow
               </h2>
@@ -335,6 +370,40 @@ export default function KabatasDinnerCruiseIstanbulPage() {
 
           <section className="mb-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">
+              Which dinner packages still board through the Kabatas-side flow?
+            </h2>
+            <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              Kabatas support is still part of the main shared dinner product. The commercial split
+              stays inside the same dinner package ladder, while this page simply answers the pier,
+              arrival, and boarding-confidence questions that stop some guests before booking.
+            </p>
+            <div className="grid gap-4 lg:grid-cols-2">
+              {dinnerPackages.map((pkg) => (
+                <div key={pkg.name} className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5">
+                  <div className="mb-3 flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-[var(--heading)]">{pkg.name}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">{pkg.description}</p>
+                    </div>
+                    <span className="rounded-full bg-[var(--brand-primary)] px-3 py-1 text-sm font-semibold text-white">
+                      {pkg.price}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-sm text-[var(--text-muted)]">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">
               Kabatas dinner cruise vs pickup vs Turkish night support
             </h2>
             <div className="overflow-x-auto">
@@ -401,6 +470,57 @@ export default function KabatasDinnerCruiseIstanbulPage() {
                   </p>
                 </Link>
               ))}
+            </div>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">
+                  Why trust MerrySails for Kabatas dinner cruise planning?
+                </h2>
+                <p className="mb-4 text-sm leading-relaxed text-[var(--text-muted)]">
+                  This page should reduce boarding anxiety without making generic pier promises.
+                  The trust layer matters because commercial guests need to see that Kabatas is a
+                  real dinner-cruise reference point, while the exact operating message still comes
+                  in writing for the booked date.
+                </p>
+                <ul className="space-y-3 text-sm text-[var(--text-muted)]">
+                  {trustSignals.map((signal) => (
+                    <li key={signal} className="flex items-start gap-2">
+                      <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                      <span>{signal}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[var(--surface-alt)] p-5">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">Best next step</p>
+                <h3 className="mb-2 text-xl font-semibold text-[var(--heading)]">
+                  Confirm whether the evening should stay on Kabatas boarding or move to pickup
+                </h3>
+                <p className="mb-5 text-sm leading-relaxed text-[var(--text-muted)]">
+                  If the dinner format is already right, send the date, hotel, and guest count so
+                  we can confirm whether you should arrive directly for the Kabatas-side flow or
+                  whether a pickup-led handoff is cleaner for the booking.
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link href="/istanbul-dinner-cruise" className="inline-flex items-center justify-center rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
+                    Open dinner owner page
+                  </Link>
+                  <TrackedContactLink
+                    href={WHATSAPP_URL}
+                    kind="whatsapp"
+                    label="kabatas_dinner_mid_whatsapp"
+                    location="kabatas_dinner_mid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
+                  >
+                    WhatsApp the date
+                  </TrackedContactLink>
+                </div>
+              </div>
             </div>
           </section>
 

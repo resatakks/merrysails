@@ -5,12 +5,47 @@ import { getNotificationInbox, sendEmail } from "@/lib/email";
 import { contactNotificationEmail } from "@/lib/email-templates/contact-notification";
 import { consumeRateLimit } from "@/lib/rate-limit";
 
+interface AttributionPayload {
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  gadSource?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrerHost?: string;
+  landingPath?: string;
+  trafficChannel?: string;
+}
+
 interface ContactFormInput {
   name: string;
   email: string;
   subject: string;
   message: string;
   honeypot?: string;
+  attribution?: AttributionPayload;
+}
+
+function sanitizeAttribution(input?: AttributionPayload) {
+  if (!input) return {};
+  const trim = (v?: string) => (v ? v.trim().slice(0, 255) || null : null);
+  return {
+    gclid: trim(input.gclid),
+    gbraid: trim(input.gbraid),
+    wbraid: trim(input.wbraid),
+    gadSource: trim(input.gadSource),
+    utmSource: trim(input.utmSource),
+    utmMedium: trim(input.utmMedium),
+    utmCampaign: trim(input.utmCampaign),
+    utmContent: trim(input.utmContent),
+    utmTerm: trim(input.utmTerm),
+    referrerHost: trim(input.referrerHost),
+    landingPath: trim(input.landingPath),
+    trafficChannel: trim(input.trafficChannel),
+  };
 }
 
 export async function submitContactForm(input: ContactFormInput) {
@@ -52,6 +87,7 @@ export async function submitContactForm(input: ContactFormInput) {
         email,
         subject,
         message,
+        ...sanitizeAttribution(input.attribution),
       },
     });
 

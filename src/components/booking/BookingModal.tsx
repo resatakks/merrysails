@@ -29,6 +29,7 @@ import { motion } from "framer-motion";
 import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
 import {
+  getStoredAttribution,
   handleTrackedContactNavigation,
   trackBookingAbandonment,
   trackPurchase,
@@ -319,6 +320,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       privateTransferRequested,
       notes: combinedNotes || undefined,
       honeypot: company,
+      attribution: getStoredAttribution() ?? undefined,
     });
 
     if (result.success && "reservationId" in result && result.reservationId) {
@@ -329,6 +331,9 @@ export default function BookingModal({ booking, onClose }: Props) {
           "addOns" in result
             ? result.addOns
             : booking.selectedAddOns.map((addon) => addon.name),
+        customerEmail: email.trim() || undefined,
+        customerName: name.trim() || undefined,
+        customerPhone: phone.trim() || undefined,
         guests: booking.guests,
         packageName:
           ("packageName" in result ? result.packageName : undefined) ??
@@ -353,6 +358,7 @@ export default function BookingModal({ booking, onClose }: Props) {
 
   const handleWhatsApp = () => {
     trackWhatsAppClick({
+      intent: "during_booking",
       label: "booking_modal_whatsapp",
       location: booking.tourSlug,
     });
@@ -450,6 +456,8 @@ export default function BookingModal({ booking, onClose }: Props) {
       if (response.ok) {
         abandonmentSentRef.current = true;
         trackBookingAbandonment({
+          customerEmail: payload.customerEmail || undefined,
+          customerPhone: payload.customerPhone || undefined,
           fieldsCompleted: payload.fieldsCompleted,
           guests: payload.guests,
           packageName: payload.packageName,
@@ -477,6 +485,8 @@ export default function BookingModal({ booking, onClose }: Props) {
       if (success) {
         abandonmentSentRef.current = true;
         trackBookingAbandonment({
+          customerEmail: payload.customerEmail || undefined,
+          customerPhone: payload.customerPhone || undefined,
           fieldsCompleted: payload.fieldsCompleted,
           guests: payload.guests,
           packageName: payload.packageName,
@@ -802,6 +812,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                         href: `https://wa.me/905370406822?text=${encodeURIComponent(
                           `Hi! My reservation ID is ${reservationId}. I'd like to confirm my booking.`
                         )}`,
+                        intent: "post_booking",
                         kind: "whatsapp",
                         label: "reservation_confirmation_whatsapp",
                         location: booking.tourSlug,

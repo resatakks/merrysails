@@ -3,9 +3,9 @@ import type { BlogPost } from "../types";
 export const commercialCruiseGuides: BlogPost[] = [
 {
     slug: "best-istanbul-cruise-2026",
-    title: "Which Istanbul Cruise to Choose? Top 7 Ranked (2026)",
-    metaDescription: "Not sure which Istanbul cruise to choose? We rank and compare the top 7 Bosphorus cruise options in 2026 — from budget to luxury — so you can pick the right one.",
-    excerpt: "With so many Bosphorus cruise options in Istanbul, which one is actually the best? We rank the top 7 Istanbul cruises for 2026 based on value, experience, views, and guest reviews.",
+    title: "Which MerrySails Istanbul Cruise Should You Choose in 2026? Comparison Guide",
+    metaDescription: "Use this comparison guide after the main Bosphorus cruise hub to compare MerrySails sunset, dinner, and yacht options without replacing the core owner page.",
+    excerpt: "This comparison guide helps you narrow sunset, dinner, and yacht choices after the main Bosphorus cruise hub has already captured the broad intent.",
     category: "cruise-guide",
     date: "2026-02-28",
     dateModified: undefined,
@@ -1076,9 +1076,9 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-prices-2026",
-    title: "Bosphorus Cruise Prices 2026 — Complete Cost Breakdown",
-    metaDescription: "How much does a Bosphorus cruise cost in 2026? Full price breakdown for sightseeing, dinner, sunset & private yacht cruises. Compare options & save up to 40%.",
-    excerpt: "Planning a Bosphorus cruise but unsure about costs? This complete 2026 price guide breaks down every cruise type — from budget sightseeing tours to luxury yacht charters — with tips on what is included, tipping, and how to book at the best rate.",
+    title: "Bosphorus Cruise Prices 2026 — Sunset, Dinner, and Yacht Comparison Guide",
+    metaDescription: "Use this Bosphorus price guide after the main compare hub to understand the MerrySails sunset, dinner, and yacht ladders without confusing the broad owner page.",
+    excerpt: "This price guide explains the MerrySails sunset, dinner, and yacht ladders after the main Bosphorus cruise hub has already handled the broad-intent comparison.",
     category: "cruise-guide",
     date: "2026-03-24",
     dateModified: "2026-04-02",
@@ -1097,7 +1097,7 @@ export const commercialCruiseGuides: BlogPost[] = [
     sections: [
       {
         heading: "How Much Does a Bosphorus Cruise Cost in 2026?",
-        content: "A Bosphorus cruise is one of Istanbul's most iconic experiences, and understanding the pricing landscape helps you choose the right option without overspending. In 2026, the most important thing is not the widest possible list of boats, but the cleanest price range. MerrySails now centers its pricing around three main options rather than scattering the intent across many published-price pages. The key to getting good value is understanding what each public tier includes, what it excludes, and when a request should move into a custom quote service flow instead of a fixed public ticket. The table below summarizes the current price range and where service pages fit around it.",
+        content: "A Bosphorus cruise is one of Istanbul's most iconic experiences, but this page should work as a price-support layer after the main [Bosphorus Cruise](/bosphorus-cruise) hub has already handled the broad comparison. In 2026, the most important thing is not the widest possible list of boats, but the cleanest price range. MerrySails now centers its pricing around three main options rather than scattering the intent across many published-price pages. The key to getting good value is understanding what each public tier includes, what it excludes, and when a request should move into a custom quote service flow instead of a fixed public ticket. The table below summarizes the current price range and where service pages fit around it.",
         table: {
           headers: ["Cruise Type", "Duration", "Price From", "Key Inclusions", "Best For"],
           rows: [
@@ -1717,9 +1717,9 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-family-cruise-kids-guide",
-    title: "Planning a Bosphorus Cruise with Kids in Istanbul — Family Guide by Age",
-    metaDescription: "Use this family planning guide for Bosphorus cruises with kids in Istanbul, with age-by-age advice, safety notes, packing tips, and family route guidance.",
-    excerpt: "Families usually enjoy the Bosphorus most when they match the cruise format to their children's ages. This guide helps you plan that family fit without treating it as a generic cruise comparison page.",
+    title: "Family Guide to Bosphorus Cruises in Istanbul — Best Formats for Kids by Age",
+    metaDescription: "Use this family support guide to match the right Bosphorus cruise format to your children's ages, comfort, timing, and evening energy in Istanbul.",
+    excerpt: "This family support guide helps parents match children's ages and energy levels to the right Bosphorus cruise format instead of using it as a broad generic cruise page.",
     category: "tips",
     date: "2026-03-24",
     dateModified: "2026-04-23",
@@ -1869,16 +1869,16 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "book-bosphorus-cruise-istanbul",
-    title: "Book a Bosphorus Cruise in Istanbul — Best Tours & Prices 2026",
-    metaDescription: "Book a Bosphorus cruise in Istanbul by comparing the three core MerrySails products: sunset, dinner, and yacht charter. Understand pricing, departures, and when tailored service pages fit better.",
-    excerpt: "Ready to book a Bosphorus cruise? This guide now focuses on MerrySails' three core published options, their real prices, and how to reserve the right option directly.",
+    title: "How to Book MerrySails Bosphorus Cruise Options in Istanbul — Direct Guide 2026",
+    metaDescription: "Use this direct-booking guide after the main Bosphorus cruise hub to compare MerrySails sunset, dinner, and yacht options without confusing the primary owner page.",
+    excerpt: "This support guide explains how to book the right MerrySails Bosphorus cruise after you have already narrowed the format to sunset, dinner, or yacht.",
     category: "cruise-guide",
     date: "2026-03-28",
     dateModified: "2026-04-19",
     readTime: "14 min read",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
     imageAlt: "Tourist boat cruising the Bosphorus with Istanbul skyline and minarets in the background",
-    keywords: ["bosphorus cruise", "istanbul boat tour", "book bosphorus cruise", "bosphorus cruise booking", "istanbul cruise 2026", "bosphorus tour prices", "istanbul boat trip online booking"],
+    keywords: ["book bosphorus cruise direct", "merrysails bosphorus cruise booking", "bosphorus cruise booking support", "how to book dinner cruise istanbul", "how to book sunset cruise istanbul", "istanbul boat trip online booking", "direct bosphorus cruise reservation"],
     author: "captain-ahmet",
     keyTakeaways: [
       "MerrySails now keeps its public Bosphorus booking focus on three core products: sunset, dinner, and yacht charter",
@@ -1888,7 +1888,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       "WhatsApp booking at +90 537 040 68 22 gets you fast written follow-up and a dedicated booking assistant"
     ],
     sections: [
-      { heading: "How to Book a Bosphorus Cruise in Istanbul", answerCapsule: "You can send a Bosphorus cruise reservation request online at merrysails.com/reservation, via WhatsApp at +90 537 040 68 22, or by email at info@merrysails.com. A reservation reference is created for all booking methods.", content: "Booking a Bosphorus cruise in Istanbul is straightforward when you go direct. MerrySails offers three booking channels: the online reservation system at <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>, WhatsApp at +90 537 040 68 22 for fast communication, and email at info@merrysails.com for detailed enquiries. All three channels create a reservation reference and trigger a written follow-up with the next steps. Unlike third-party booking sites that charge commissions of 15–35%, booking direct means you see the direct price with no hidden markups. MerrySails is a <a href='https://www.tursab.org.tr/en' target='_blank' rel='noopener'>TURSAB</a>-licensed company, which means your booking is protected by Turkish tourism consumer protection laws. Free cancellation is available up to 24 hours before departure for a full refund. Shared cruises are currently paid onboard by cash or card, while private and custom requests move through manual confirmation after the yacht or event details are reviewed. Group bookings of 10 or more receive a 10% discount automatically." },
+      { heading: "How to Book MerrySails Bosphorus Cruise Options in Istanbul", answerCapsule: "After the main [Bosphorus Cruise Istanbul hub](/bosphorus-cruise) has narrowed the format, you can send a sunset, dinner, or yacht request online, via WhatsApp, or by email and receive a written direct-booking follow-up.", content: "This article should work as a direct-booking support guide, not as the main broad Bosphorus owner page. Once you already know the likely format, MerrySails offers three booking channels: the online reservation system at <a href='https://merrysails.com/reservation' target='_blank' rel='noopener'>merrysails.com/reservation</a>, WhatsApp at +90 537 040 68 22 for fast communication, and email at info@merrysails.com for detailed enquiries. All three channels create a reservation reference and trigger a written follow-up with the next steps. Unlike third-party booking sites that charge commissions of 15–35%, booking direct means you see the direct price with no hidden markups. MerrySails is a <a href='https://www.tursab.org.tr/en' target='_blank' rel='noopener'>TURSAB</a>-licensed company, which means your booking is protected by Turkish tourism consumer protection laws. Free cancellation is available up to 24 hours before departure for a full refund. Shared cruises are currently paid onboard by cash or card, while private and custom requests move through manual confirmation after the yacht or event details are reviewed. Group bookings of 10 or more receive a 10% discount automatically." },
       { heading: "Bosphorus Cruise Types — Which One Should You Book?", content: "MerrySails now keeps its public Bosphorus structure focused on three main booking products plus custom request pages. The shared sunset cruise is the lighter golden-hour product, running 2 hours at €34 without wine or €40 with wine. The shared dinner cruise is the fuller shared evening product, running 3.5 hours on a verified four-step ladder from €30 to €90 depending on seating and beverage inclusion. The yacht charter is the private option, starting at €280 for the 2-hour Essential package and rising through Premium and VIP. Daytime-only, lunch-style, or niche needs still exist, but they now move through service pages rather than competing price ranges.", table: { headers: ["Cruise Type", "Duration", "Price From", "Includes", "Book For"], rows: [["Sunset Cruise", "2 hrs", "€34 / €40", "Guide, drinks, snacks, wine option", "Photography, couples, lighter premium plans"], ["Dinner Cruise", "3.5 hrs", "€30", "Dinner, show, package-based drinks", "Full shared evening"], ["Yacht Charter", "2 hrs", "€280", "Private crew, custom route", "Groups, celebrations"], ["Service Pages", "Varies", "Quote-led", "Matched to the brief", "Daytime, niche, or custom needs"]] } },
       { heading: "Bosphorus Cruise Prices 2026 — Complete Breakdown", content: "Understanding Bosphorus cruise pricing helps you budget your Istanbul trip accurately, but only if you compare real price ranges. The shared sunset cruise runs at €34 / €40. The shared dinner cruise works on a verified four-tier ladder: Silver Soft €30, Silver Alcoholic €45, Gold Soft €80, and Gold Unlimited Alcohol €90. Yacht charter pricing works on a per-vessel basis, with the verified base price range at €280 Essential, €380 Premium, and €680 VIP for the 2-hour private format. Daytime-only or niche requirements are now usually quoted through service pages rather than published as competing ticket ladders.", callout: { type: "price", text: "Current direct price range: sunset €34 / €40, dinner €30 / €45 / €80 / €90, yacht €280 / €380 / €680, with other needs handled through service pages." } },
       { heading: "Where Do Bosphorus Cruises Depart From?", content: "Departure points vary by cruise type, and knowing where to go saves you stress on the day. Sightseeing-style and some daytime custom requests may still use central public piers such as Eminönü. The shared sunset cruise currently uses a Kabatas-side boarding flow confirmed after booking. The shared dinner cruise follows the Kabataş boarding flow and, depending on the booking setup, may also include hotel-transfer support for eligible central areas. Private yacht charters use the marina confirmed with the selected yacht assignment rather than one single public pier. The most important rule is simple: choose the cruise first, then follow the boarding instructions attached to that exact booking instead of assuming every Bosphorus product leaves from the same pier.", proTip: "Always use the departure details sent with your own confirmation message. Bosphorus cruises are sold in different formats, and using a generic pier assumption is the fastest way to waste time on the day." },

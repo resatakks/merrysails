@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
+import { sendEmail } from "@/lib/email";
+import { leadAutoresponderEmail } from "@/lib/email-templates/lead-autoresponder";
 import { notifyGoogleAdsLead } from "@/lib/telegram/notifications";
 
 export const runtime = "nodejs";
@@ -115,6 +117,7 @@ export async function POST(request: NextRequest) {
   const name = extractField(payload, ["FULL_NAME", "full name", "name"]);
   const phone = extractField(payload, ["PHONE_NUMBER", "phone number", "phone"]);
   const email = extractField(payload, ["EMAIL", "email"]);
+  const gclid = extractField(payload, ["gcl_id", "gclid", "GCLID", "google_click_id"]);
   const isTest =
     payload.is_test === true ||
     payload.isTest === true ||
@@ -131,6 +134,7 @@ export async function POST(request: NextRequest) {
     name,
     phone,
     email,
+    gclid,
     isTest,
     rawPayload,
   };
@@ -143,10 +147,24 @@ export async function POST(request: NextRequest) {
       })
     : await prisma.googleAdsLead.create({ data });
 
+  // Telegram notification (internal)
   try {
     await notifyGoogleAdsLead(lead);
   } catch (error) {
     console.error("Failed to send Google Ads lead Telegram notification:", error);
+  }
+
+  // Customer autoresponder — only if we have a real email and this is not a test ping.
+  if (email && !isTest && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    try {
+      await sendEmail({
+        to: email,
+        subject: `We received your MerrySails inquiry — we will reach out shortly`,
+        html: leadAutoresponderEmail({ customerName: name, product }),
+      });
+    } catch (autoresponderErr) {
+      console.error("Failed to send lead autoresponder:", autoresponderErr);
+    }
   }
 
   return NextResponse.json({ success: true });

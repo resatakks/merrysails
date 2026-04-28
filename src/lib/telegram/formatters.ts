@@ -15,6 +15,23 @@ function esc(text: string | number | null | undefined): string {
   return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function labelTrafficChannel(
+  channel?: string | null,
+  gclid?: string | null,
+  medium?: string | null
+): string | null {
+  if (gclid) return "Google Ads (gclid)";
+  if (channel === "google_ads") return "Google Ads";
+  if (channel === "paid_search") return "Paid Search";
+  if (channel === "organic_search") return "Organic Search (SEO)";
+  if (channel === "email") return "Email";
+  if (channel === "social") return "Social";
+  if (channel === "referral") return "Referral";
+  if (channel === "direct") return "Direct";
+  if (medium && /cpc|ppc|paid/.test(medium)) return "Paid";
+  return channel ?? null;
+}
+
 const TZ = "Europe/Istanbul";
 
 function formatDate(date: string | Date): string {
@@ -213,6 +230,23 @@ export function formatNewReservation(r: SailsReservation): string {
   msg += `\n💰 <b>${r.totalPrice} ${cs}</b>`;
   if (r.guests > 1) msg += ` (${r.guests} Misafir)`;
   msg += `\n`;
+
+  // Attribution — answers "Reservation geldi, SEO mu Ads mi?"
+  const attributionLabel = labelTrafficChannel(r.trafficChannel, r.gclid, r.utmMedium);
+  if (attributionLabel || r.gclid || r.utmSource || r.utmCampaign || r.referrerHost) {
+    msg += `\n📊 <b>Kaynak:</b> ${esc(attributionLabel ?? "unknown")}\n`;
+    if (r.utmCampaign) msg += `🎯 Kampanya: ${esc(r.utmCampaign)}\n`;
+    if (r.utmSource && r.utmSource !== attributionLabel) {
+      msg += `🔖 utm_source: ${esc(r.utmSource)}`;
+      if (r.utmMedium) msg += ` / ${esc(r.utmMedium)}`;
+      msg += `\n`;
+    }
+    if (r.gclid) msg += `🆔 gclid: ${esc(r.gclid.slice(0, 32))}${r.gclid.length > 32 ? "…" : ""}\n`;
+    if (r.referrerHost && !r.gclid && !r.utmSource) {
+      msg += `↩️ referrer: ${esc(r.referrerHost)}\n`;
+    }
+    if (r.landingPath) msg += `🛬 landing: ${esc(r.landingPath)}\n`;
+  }
 
   if (meta.customerNote) msg += `\n📝 Not: ${esc(meta.customerNote)}\n`;
 

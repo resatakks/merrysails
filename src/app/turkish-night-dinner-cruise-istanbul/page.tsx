@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const revalidate = 3600;
 
 const canonicalUrl = `${SITE_URL}/turkish-night-dinner-cruise-istanbul`;
+
+function requireTour(slug: string, label: string) {
+  const tour = getTourBySlug(slug);
+  if (!tour) {
+    throw new Error(`${label} data is missing.`);
+  }
+  return tour;
+}
+
+const dinnerTour = requireTour("bosphorus-dinner-cruise", "Dinner cruise");
 
 export const metadata: Metadata = {
   title: "Turkish Night Dinner Cruise Istanbul 2026 | Shared Bosphorus Show & Dinner",
@@ -155,6 +167,20 @@ const flowSteps = [
   },
 ];
 
+const dinnerPackages = dinnerTour.packages?.map((pkg) => ({
+  name: pkg.name,
+  price: `EUR ${pkg.price}`,
+  description: pkg.description,
+  features: pkg.features.slice(0, 4),
+})) ?? [];
+
+const trustSignals = [
+  "Merry Tourism has operated Istanbul travel services since 2001.",
+  "The shared dinner cruise sits under a TURSAB-backed operator with written booking follow-up.",
+  "Pickup, Kabatas boarding, and package details are confirmed in writing for the booked date.",
+  "This support page narrows Turkish-night intent without replacing the protected dinner owner page.",
+];
+
 const comparePages = [
   {
     href: "/istanbul-dinner-cruise",
@@ -262,6 +288,15 @@ export default function TurkishNightDinnerCruiseIstanbulPage() {
             </div>
 
             <aside className="rounded-2xl border border-white bg-white p-6 shadow-sm">
+              <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src={dinnerTour.image}
+                  alt="Shared Bosphorus dinner cruise in Istanbul with Turkish-night atmosphere"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
               <h2 className="mb-4 text-lg font-semibold text-[var(--heading)]">
                 What helps us confirm the right Turkish-night dinner fit
               </h2>
@@ -306,6 +341,40 @@ export default function TurkishNightDinnerCruiseIstanbulPage() {
                   <p className="text-sm leading-relaxed text-[var(--text-muted)]">
                     {item.description}
                   </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">
+              Which dinner package usually fits a Turkish-night Bosphorus evening?
+            </h2>
+            <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              The Turkish-night question usually sits inside the main shared dinner product, not outside it. These
+              four dinner packages keep the same evening route and show flow, while table tier and beverage inclusion
+              create the real commercial split.
+            </p>
+            <div className="grid gap-4 lg:grid-cols-2">
+              {dinnerPackages.map((pkg) => (
+                <div key={pkg.name} className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5">
+                  <div className="mb-3 flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-[var(--heading)]">{pkg.name}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">{pkg.description}</p>
+                    </div>
+                    <span className="rounded-full bg-[var(--brand-primary)] px-3 py-1 text-sm font-semibold text-white">
+                      {pkg.price}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-sm text-[var(--text-muted)]">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -398,6 +467,54 @@ export default function TurkishNightDinnerCruiseIstanbulPage() {
                   <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">{item.a}</p>
                 </details>
               ))}
+            </div>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">
+                  Why trust MerrySails for Turkish-night dinner cruise planning?
+                </h2>
+                <p className="mb-4 text-sm leading-relaxed text-[var(--text-muted)]">
+                  This page exists to tighten one narrow decision: whether the shared dinner cruise with Turkish-night
+                  atmosphere is the right fit. The trust layer should stay visible before guests move into the final
+                  owner page and reservation flow.
+                </p>
+                <ul className="space-y-3 text-sm text-[var(--text-muted)]">
+                  {trustSignals.map((signal) => (
+                    <li key={signal} className="flex items-start gap-2">
+                      <span className="font-bold text-[var(--brand-primary)]">✓</span>
+                      <span>{signal}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[var(--surface-alt)] p-5">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">Best next step</p>
+                <h3 className="mb-2 text-xl font-semibold text-[var(--heading)]">Move to the main dinner owner page once the format is clear</h3>
+                <p className="mb-5 text-sm leading-relaxed text-[var(--text-muted)]">
+                  If the real answer is “yes, we want the shared dinner with Turkish-night entertainment”, the clean
+                  next move is to compare the four public packages on the protected dinner owner page or send the hotel
+                  and date on WhatsApp for a quick recommendation.
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link href="/istanbul-dinner-cruise" className="inline-flex items-center justify-center rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
+                    Open dinner owner page
+                  </Link>
+                  <TrackedContactLink
+                    href={WHATSAPP_URL}
+                    kind="whatsapp"
+                    label="turkish_night_mid_whatsapp"
+                    location="turkish_night_mid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
+                  >
+                    WhatsApp the hotel
+                  </TrackedContactLink>
+                </div>
+              </div>
             </div>
           </section>
 

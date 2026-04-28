@@ -1,0 +1,31 @@
+{
+  "model": "claude-opus-4-7",
+  "project": "merrysails",
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm run dev)",
+      "Bash(prisma generate)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(python3:*)"
+    ]
+  },
+  "active_skills": [
+    "seo-eeat",
+    "seo-content-plan",
+    "seo-schema",
+    "seo-meta",
+    "seo-technical",
+    "seo-internal-linking",
+    "ui-component",
+    "analytics-setup",
+    "performance-audit"
+  ],
+  "inactive_skills": [
+    "seo-programmatic"
+  ],
+  "notes": "Google Ads ACTIVE (GoogleAdsLead model + docs/ads/). Meta Ads: unknown. Yandex Metrika: not integrated. Bing Webmaster: env var exists."
+}
