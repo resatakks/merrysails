@@ -102,7 +102,8 @@ const organizationSchema = {
   "@type": ["TravelAgency", "LocalBusiness"],
   "@id": `${SITE_URL}/#organization`,
   name: "MerrySails",
-  alternateName: "Merry Tourism",
+  alternateName: ["Merry Tourism", "Meryem Yildiz Travel"],
+  legalName: "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   image: `${SITE_URL}/og-image.jpg`,
@@ -220,6 +221,17 @@ const organizationSchema = {
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
     credentialCategory: "TURSAB A Group License",
+    identifier: "14316",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "TURSAB — Association of Turkish Travel Agencies",
+      url: "https://www.tursab.org.tr",
+    },
+  },
+  identifier: {
+    "@type": "PropertyValue",
+    name: "TURSAB License Number",
+    value: "14316",
   },
   knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
 };

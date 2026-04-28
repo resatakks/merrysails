@@ -32,6 +32,42 @@ const facts = [
   },
 ];
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["TravelAgency", "LocalBusiness"],
+  "@id": "https://merrysails.com/#organization",
+  name: "MerrySails",
+  alternateName: ["Merry Tourism", "Meryem Yildiz Travel"],
+  legalName: "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI",
+  url: "https://merrysails.com",
+  foundingDate: "2001-01-01",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
+    addressLocality: "Fatih",
+    addressRegion: "İstanbul",
+    postalCode: "34093",
+    addressCountry: "TR",
+  },
+  telephone: "+905370406822",
+  email: "info@merrysails.com",
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "TURSAB A Group License",
+    identifier: "14316",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "TURSAB — Association of Turkish Travel Agencies",
+      url: "https://www.tursab.org.tr",
+    },
+  },
+  identifier: {
+    "@type": "PropertyValue",
+    name: "TURSAB License Number",
+    value: "14316",
+  },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -44,6 +80,7 @@ const breadcrumbSchema = {
 export default function TursabPage() {
   return (
     <main className="bg-[var(--surface-alt)] pt-28 pb-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

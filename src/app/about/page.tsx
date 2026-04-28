@@ -113,7 +113,7 @@ export default function AboutPage() {
           {[
             { icon: Ship, value: "Since 2001", label: "Operating History" },
             { icon: Users, value: "50,000+", label: "Guests Served" },
-            { icon: Award, value: "TURSAB A Group", label: "License #14073" },
+            { icon: Award, value: "TURSAB A Group", label: `License #${TURSAB_LICENSE_NUMBER}` },
             { icon: Anchor, value: "5 Languages", label: "EN, TR, DE, FR, NL" },
           ].map((stat) => (
             <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-sm">
