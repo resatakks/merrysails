@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Anchor,
   Phone,
@@ -19,11 +22,118 @@ import {
 } from "@/lib/constants";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
-const coreLinks = [
-  { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
-  { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
-  { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
-];
+type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
+
+const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl"];
+
+type FooterCoreLink = { label: string; href: string };
+
+type FooterTranslation = {
+  description: string;
+  coreProducts: string;
+  supportRoutes: string;
+  company: string;
+  blogHighlights: string;
+  guideTopics: string;
+  viewLicense: string;
+  copyright: string;
+  privacyPolicy: string;
+  terms: string;
+  coreLinks: FooterCoreLink[];
+};
+
+const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
+  en: {
+    description:
+      "Direct Bosphorus bookings for sunset cruise, dinner cruise, and private yacht charter in Istanbul.",
+    coreProducts: "Core Products",
+    supportRoutes: "Support Routes",
+    company: "Company",
+    blogHighlights: "Blog Highlights",
+    guideTopics: "Guide Topics",
+    viewLicense: "View license details",
+    copyright: "All rights reserved.",
+    privacyPolicy: "Privacy Policy",
+    terms: "Terms & Conditions",
+    coreLinks: [
+      { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
+      { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
+      { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
+    ],
+  },
+  tr: {
+    description:
+      "İstanbul'da gün batımı turu, akşam yemeği turu ve özel yat kiralama için doğrudan Boğaz rezervasyonları.",
+    coreProducts: "Ana Ürünler",
+    supportRoutes: "Destek Sayfaları",
+    company: "Şirket",
+    blogHighlights: "Blog",
+    guideTopics: "Rehberler",
+    viewLicense: "Lisans detaylarını görüntüle",
+    copyright: "Tüm hakları saklıdır.",
+    privacyPolicy: "Gizlilik Politikası",
+    terms: "Kullanım Şartları",
+    coreLinks: [
+      { label: "Boğaz Gün Batımı Turu", href: "/tr/cruises/bosphorus-sunset-cruise" },
+      { label: "Boğaz Akşam Yemeği Turu", href: "/tr/istanbul-dinner-cruise" },
+      { label: "İstanbul Yat Kiralama", href: "/tr/yacht-charter-istanbul" },
+    ],
+  },
+  de: {
+    description:
+      "Direkte Buchungen für Sonnenuntergangs-Kreuzfahrten, Dinner-Kreuzfahrten und privaten Yachtcharter auf dem Bosporus in Istanbul.",
+    coreProducts: "Hauptprodukte",
+    supportRoutes: "Support-Seiten",
+    company: "Unternehmen",
+    blogHighlights: "Blog",
+    guideTopics: "Reiseführer",
+    viewLicense: "Lizenzdetails ansehen",
+    copyright: "Alle Rechte vorbehalten.",
+    privacyPolicy: "Datenschutzrichtlinie",
+    terms: "Nutzungsbedingungen",
+    coreLinks: [
+      { label: "Bosporus-Sonnenuntergangsfahrt", href: "/de/cruises/bosphorus-sunset-cruise" },
+      { label: "Bosporus-Dinner-Kreuzfahrt", href: "/de/istanbul-dinner-cruise" },
+      { label: "Yachtcharter Istanbul", href: "/de/yacht-charter-istanbul" },
+    ],
+  },
+  fr: {
+    description:
+      "Réservations directes pour croisière coucher de soleil, dîner-croisière et yacht privé sur le Bosphore à Istanbul.",
+    coreProducts: "Produits Phares",
+    supportRoutes: "Pages d'assistance",
+    company: "Entreprise",
+    blogHighlights: "Blog",
+    guideTopics: "Guides de voyage",
+    viewLicense: "Voir les détails de la licence",
+    copyright: "Tous droits réservés.",
+    privacyPolicy: "Politique de confidentialité",
+    terms: "Conditions d'utilisation",
+    coreLinks: [
+      { label: "Croisière Coucher de Soleil", href: "/fr/cruises/bosphorus-sunset-cruise" },
+      { label: "Dîner-Croisière Bosphore", href: "/fr/istanbul-dinner-cruise" },
+      { label: "Location Yacht Istanbul", href: "/fr/yacht-charter-istanbul" },
+    ],
+  },
+  nl: {
+    description:
+      "Directe boekingen voor zonsondergangstochten, dinercruises en privéjachtverhuur op de Bosporus in Istanbul.",
+    coreProducts: "Hoofdproducten",
+    supportRoutes: "Ondersteuningspagina's",
+    company: "Bedrijf",
+    blogHighlights: "Blog",
+    guideTopics: "Reisidsen",
+    viewLicense: "Licentiedetails bekijken",
+    copyright: "Alle rechten voorbehouden.",
+    privacyPolicy: "Privacybeleid",
+    terms: "Algemene Voorwaarden",
+    coreLinks: [
+      { label: "Bosporus Zonsondergangtocht", href: "/nl/cruises/bosphorus-sunset-cruise" },
+      { label: "Bosporus Dinercruise", href: "/nl/istanbul-dinner-cruise" },
+      { label: "Jachthuur Istanbul", href: "/nl/yacht-charter-istanbul" },
+    ],
+  },
+};
 
 const serviceLinks = [
   { label: "Sunset Ticket Support", href: "/sunset-cruise-tickets-istanbul" },
@@ -63,7 +173,21 @@ const guideLinks = [
   { label: "Rumeli Fortress", href: "/guides/rumeli-fortress" },
 ];
 
+function detectLocale(pathname: string | null): NavLocale {
+  if (!pathname) return "en";
+  const segments = pathname.split("/").filter(Boolean);
+  const first = segments[0];
+  if (first && (NAV_LOCALES as string[]).includes(first)) {
+    return first as NavLocale;
+  }
+  return "en";
+}
+
 export default function Footer() {
+  const pathname = usePathname();
+  const locale = detectLocale(pathname);
+  const t = FOOTER_TRANSLATIONS[locale];
+
   return (
     <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">
       <div className="container-main pt-20 pb-12">
@@ -78,8 +202,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mb-5 max-w-sm text-sm leading-relaxed text-white/60">
-              Direct Bosphorus bookings for sunset cruise, dinner cruise, and private yacht charter
-              in Istanbul.
+              {t.description}
             </p>
             <div className="mb-6 flex items-center gap-3">
               <a
@@ -158,7 +281,7 @@ export default function Footer() {
                     href="/tursab"
                     className="mt-3 inline-flex text-xs font-semibold text-[var(--brand-gold)] transition-colors hover:text-white"
                   >
-                    View license details
+                    {t.viewLicense}
                   </Link>
                 </div>
               </div>
@@ -167,10 +290,10 @@ export default function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              Core Products
+              {t.coreProducts}
             </h3>
             <ul className="space-y-2.5">
-              {coreLinks.map((link) => (
+              {t.coreLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -185,7 +308,7 @@ export default function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              Support Routes
+              {t.supportRoutes}
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
@@ -203,7 +326,7 @@ export default function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              Company
+              {t.company}
             </h3>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
@@ -223,7 +346,7 @@ export default function Footer() {
         <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-2">
           <div>
             <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              Blog Highlights
+              {t.blogHighlights}
             </h3>
             <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {blogLinks.map((link) => (
@@ -240,7 +363,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              Guide Topics
+              {t.guideTopics}
             </h3>
             <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {guideLinks.map((link) => (
@@ -259,14 +382,14 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 md:flex-row">
           <p className="text-sm text-white/70" translate="no">
-            © 2026 MerrySails — Merry Tourism. TURSAB license {TURSAB_LICENSE_NUMBER}. All rights reserved.
+            © 2026 MerrySails — Merry Tourism. TURSAB license {TURSAB_LICENSE_NUMBER}. {t.copyright}
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="text-sm text-white/70 transition-colors hover:text-white">
-              Privacy Policy
+              {t.privacyPolicy}
             </Link>
             <Link href="/terms" className="text-sm text-white/70 transition-colors hover:text-white">
-              Terms & Conditions
+              {t.terms}
             </Link>
           </div>
         </div>

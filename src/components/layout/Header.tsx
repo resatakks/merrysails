@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Phone, ChevronDown, Anchor } from "lucide-react";
 import { handleTrackedContactNavigation } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
@@ -9,30 +10,165 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 import { PHONE_DISPLAY } from "@/lib/constants";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
-const navItems = [
-  { label: "Cruises", href: "/bosphorus-cruise" },
-  { label: "Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
-  { label: "Dinner Cruise", href: "/istanbul-dinner-cruise" },
-  { label: "Yacht Charter", href: "/yacht-charter-istanbul" },
+type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
+
+const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl"];
+
+const LOCALIZED_ROUTES = new Set<string>([
+  "/bosphorus-cruise",
+  "/istanbul-dinner-cruise",
+  "/cruises/bosphorus-sunset-cruise",
+  "/yacht-charter-istanbul",
+  "/boat-rental-istanbul",
+]);
+
+type NavLabelKey =
+  | "cruises"
+  | "sunsetCruise"
+  | "dinnerCruise"
+  | "yachtCharter"
+  | "guides"
+  | "blog"
+  | "istanbulGuides"
+  | "kabatasPier"
+  | "karakoyWaterfront"
+  | "faq"
+  | "about"
+  | "contact"
+  | "reserveOnline"
+  | "reserve";
+
+const NAV_LABELS: Record<NavLocale, Record<NavLabelKey, string>> = {
+  en: {
+    cruises: "Cruises",
+    sunsetCruise: "Sunset Cruise",
+    dinnerCruise: "Dinner Cruise",
+    yachtCharter: "Yacht Charter",
+    guides: "Guides",
+    blog: "Blog",
+    istanbulGuides: "Istanbul Guides",
+    kabatasPier: "Kabatas Pier",
+    karakoyWaterfront: "Karakoy Waterfront",
+    faq: "FAQ",
+    about: "About",
+    contact: "Contact",
+    reserveOnline: "Reserve Online",
+    reserve: "Reserve",
+  },
+  tr: {
+    cruises: "Turlar",
+    sunsetCruise: "Gün Batımı Turu",
+    dinnerCruise: "Akşam Yemeği Turu",
+    yachtCharter: "Yat Kiralama",
+    guides: "Rehberler",
+    blog: "Blog",
+    istanbulGuides: "İstanbul Rehberleri",
+    kabatasPier: "Kabataş İskelesi",
+    karakoyWaterfront: "Karaköy Sahili",
+    faq: "SSS",
+    about: "Hakkımızda",
+    contact: "İletişim",
+    reserveOnline: "Online Rezervasyon",
+    reserve: "Rezervasyon",
+  },
+  de: {
+    cruises: "Kreuzfahrten",
+    sunsetCruise: "Sonnenuntergang",
+    dinnerCruise: "Dinner-Kreuzfahrt",
+    yachtCharter: "Yachtcharter",
+    guides: "Reiseführer",
+    blog: "Blog",
+    istanbulGuides: "Istanbul-Reiseführer",
+    kabatasPier: "Kabataş-Pier",
+    karakoyWaterfront: "Karaköy-Uferpromenade",
+    faq: "FAQ",
+    about: "Über uns",
+    contact: "Kontakt",
+    reserveOnline: "Online Buchen",
+    reserve: "Buchen",
+  },
+  fr: {
+    cruises: "Croisières",
+    sunsetCruise: "Coucher de Soleil",
+    dinnerCruise: "Dîner-Croisière",
+    yachtCharter: "Location Yacht",
+    guides: "Guides",
+    blog: "Blog",
+    istanbulGuides: "Guides Istanbul",
+    kabatasPier: "Débarcadère Kabataş",
+    karakoyWaterfront: "Front de mer Karaköy",
+    faq: "FAQ",
+    about: "À propos",
+    contact: "Contact",
+    reserveOnline: "Réserver en Ligne",
+    reserve: "Réserver",
+  },
+  nl: {
+    cruises: "Rondvaarten",
+    sunsetCruise: "Zonsondergang",
+    dinnerCruise: "Diner-Cruise",
+    yachtCharter: "Jachthuur",
+    guides: "Gidsen",
+    blog: "Blog",
+    istanbulGuides: "Istanbul Gidsen",
+    kabatasPier: "Kabataş Pier",
+    karakoyWaterfront: "Karaköy Waterkant",
+    faq: "FAQ",
+    about: "Over ons",
+    contact: "Contact",
+    reserveOnline: "Online Reserveren",
+    reserve: "Reserveren",
+  },
+};
+
+function detectLocale(pathname: string | null): NavLocale {
+  if (!pathname) return "en";
+  const segments = pathname.split("/").filter(Boolean);
+  const first = segments[0];
+  if (first && (NAV_LOCALES as string[]).includes(first)) {
+    return first as NavLocale;
+  }
+  return "en";
+}
+
+function localizeHref(href: string, locale: NavLocale): string {
+  if (locale === "en") return href;
+  if (LOCALIZED_ROUTES.has(href)) {
+    return `/${locale}${href}`;
+  }
+  return href;
+}
+
+type NavChild = { labelKey: NavLabelKey; href: string };
+type NavItem = { labelKey: NavLabelKey; href: string; children?: NavChild[] };
+
+const navItems: NavItem[] = [
+  { labelKey: "cruises", href: "/bosphorus-cruise" },
+  { labelKey: "sunsetCruise", href: "/cruises/bosphorus-sunset-cruise" },
+  { labelKey: "dinnerCruise", href: "/istanbul-dinner-cruise" },
+  { labelKey: "yachtCharter", href: "/yacht-charter-istanbul" },
   {
-    label: "Guides",
+    labelKey: "guides",
     href: "/guides",
     children: [
-      { label: "Blog", href: "/blog" },
-      { label: "Istanbul Guides", href: "/guides" },
-      { label: "Kabatas Pier", href: "/guides/kabatas-pier" },
-      { label: "Karakoy Waterfront", href: "/guides/karakoy-waterfront" },
-      { label: "FAQ", href: "/faq" },
+      { labelKey: "blog", href: "/blog" },
+      { labelKey: "istanbulGuides", href: "/guides" },
+      { labelKey: "kabatasPier", href: "/guides/kabatas-pier" },
+      { labelKey: "karakoyWaterfront", href: "/guides/karakoy-waterfront" },
+      { labelKey: "faq", href: "/faq" },
     ],
   },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { labelKey: "about", href: "/about" },
+  { labelKey: "contact", href: "/contact" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+  const locale = detectLocale(pathname);
+  const t = NAV_LABELS[locale];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -66,28 +202,28 @@ export default function Header() {
             <nav className="hidden lg:flex items-center gap-0.5">
               {navItems.map((item) => (
                 <div
-                  key={item.label}
+                  key={item.labelKey}
                   className="relative"
-                  onMouseEnter={() => item.children && setOpenDropdown(item.label)}
+                  onMouseEnter={() => item.children && setOpenDropdown(item.labelKey)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <Link
-                    href={item.href}
+                    href={localizeHref(item.href, locale)}
                     className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
                   >
-                    {item.label}
+                    {t[item.labelKey]}
                     {item.children && <ChevronDown className="h-3.5 w-3.5" />}
                   </Link>
-                  {item.children && openDropdown === item.label && (
+                  {item.children && openDropdown === item.labelKey && (
                     <div className="absolute left-0 top-full z-50 pt-1">
                       <div className="min-w-[260px] rounded-xl border border-gray-100 bg-white py-2 shadow-lg">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
-                            href={child.href}
+                            href={localizeHref(child.href, locale)}
                             className="block px-4 py-2.5 text-sm text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
                           >
-                            {child.label}
+                            {t[child.labelKey]}
                           </Link>
                         ))}
                       </div>
@@ -120,8 +256,8 @@ export default function Header() {
                 href="/reservation"
                 className="btn-cta inline-flex items-center justify-center text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5"
               >
-                  <span className="sm:hidden">Reserve</span>
-                  <span className="hidden sm:inline">Reserve Online</span>
+                  <span className="sm:hidden">{t.reserve}</span>
+                  <span className="hidden sm:inline">{t.reserveOnline}</span>
               </Link>
 
               <Sheet>
@@ -150,41 +286,41 @@ export default function Header() {
                     </div>
                     <nav className="flex-1 space-y-0.5 overflow-y-auto px-6">
                       {navItems.map((item) => (
-                        <div key={item.label}>
+                        <div key={item.labelKey}>
                           {item.children ? (
                             <>
                               <div className="flex items-center">
                                 <Link
-                                  href={item.href}
+                                  href={localizeHref(item.href, locale)}
                                   className="flex-1 rounded-lg px-4 py-3 text-base font-medium text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
                                 >
-                                  {item.label}
+                                  {t[item.labelKey]}
                                 </Link>
                                 <button
                                   onClick={() =>
                                     setOpenMobileDropdown(
-                                      openMobileDropdown === item.label ? null : item.label
+                                      openMobileDropdown === item.labelKey ? null : item.labelKey
                                     )
                                   }
-                                  aria-label={`${openMobileDropdown === item.label ? "Collapse" : "Expand"} ${item.label} menu`}
+                                  aria-label={`${openMobileDropdown === item.labelKey ? "Collapse" : "Expand"} ${t[item.labelKey]} menu`}
                                   className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-gray-50"
                                 >
                                   <ChevronDown
                                     className={`h-4 w-4 text-[var(--text-muted)] transition-transform duration-200 ${
-                                      openMobileDropdown === item.label ? "rotate-180" : ""
+                                      openMobileDropdown === item.labelKey ? "rotate-180" : ""
                                     }`}
                                   />
                                 </button>
                               </div>
-                              {openMobileDropdown === item.label && (
+                              {openMobileDropdown === item.labelKey && (
                                 <div className="pb-1">
                                   {item.children.map((child) => (
                                     <Link
                                       key={child.href}
-                                      href={child.href}
+                                      href={localizeHref(child.href, locale)}
                                       className="block rounded-lg py-2.5 pl-8 pr-4 text-sm text-[var(--text-muted)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
                                     >
-                                      {child.label}
+                                      {t[child.labelKey]}
                                     </Link>
                                   ))}
                                 </div>
@@ -192,10 +328,10 @@ export default function Header() {
                             </>
                           ) : (
                             <Link
-                              href={item.href}
+                              href={localizeHref(item.href, locale)}
                               className="block rounded-lg px-4 py-3 text-base font-medium text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
                             >
-                              {item.label}
+                              {t[item.labelKey]}
                             </Link>
                           )}
                         </div>
@@ -225,7 +361,7 @@ export default function Header() {
                         href="/reservation"
                         className="btn-cta block w-full px-4 text-center !py-3 text-sm"
                       >
-                        Reserve Online
+                        {t.reserveOnline}
                       </Link>
                     </div>
                   </div>

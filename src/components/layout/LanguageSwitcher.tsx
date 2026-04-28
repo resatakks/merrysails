@@ -19,7 +19,7 @@ const LOCALE_FLAGS: Partial<Record<SiteLocale, string>> = {
   el: "🇬🇷",
 };
 
-// Routes that have locale-specific pages under /[locale]/
+// Routes that have live locale-specific pages under /[locale]/
 const LOCALIZED_ROUTES = new Set([
   "bosphorus-cruise",
   "istanbul-dinner-cruise",
@@ -44,17 +44,21 @@ function detectFromPathname(pathname: string): { locale: SiteLocale; route: stri
   return { locale: "en" as SiteLocale, route: stripped };
 }
 
-function buildTargetPath(targetLocale: SiteLocale, route: string): string {
-  const isLocalizable = LOCALIZED_ROUTES.has(route);
-  if (!isLocalizable) {
-    return targetLocale === "en" ? "/bosphorus-cruise" : `/${targetLocale}/bosphorus-cruise`;
+// Returns the target path, or null if no locale version exists for this route.
+// null = stay on current page (no navigation).
+function buildTargetPath(targetLocale: SiteLocale, route: string): string | null {
+  if (!LOCALIZED_ROUTES.has(route)) {
+    // Non-localized page — only EN exists.
+    // If switching to EN: strip the locale prefix (in case there was one).
+    // If switching to any non-EN: no translation exists, stay put.
+    return targetLocale === "en" ? `/${route}` : null;
   }
   return targetLocale === "en" ? `/${route}` : `/${targetLocale}/${route}`;
 }
 
 interface Props {
   className?: string;
-  compact?: boolean; // true = flag only (mobile sheet use)
+  compact?: boolean;
 }
 
 export default function LanguageSwitcher({ className = "", compact = false }: Props) {
@@ -62,9 +66,12 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
   const router = useRouter();
   const { locale: currentLocale, route } = detectFromPathname(pathname);
 
+  const isLocalized = LOCALIZED_ROUTES.has(route);
+
   const handleSwitch = (target: SiteLocale) => {
     if (target === currentLocale) return;
-    router.push(buildTargetPath(target, route));
+    const path = buildTargetPath(target, route);
+    if (path) router.push(path);
   };
 
   const activeLocales = ACTIVE_LOCALES as SiteLocale[];
@@ -84,25 +91,32 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
 
       <div className="absolute right-0 top-full z-50 pt-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150">
         <div className="min-w-[168px] rounded-xl border border-gray-100 bg-white py-1.5 shadow-lg ring-1 ring-black/5">
-          {activeLocales.map((locale) => (
-            <button
-              key={locale}
-              onClick={() => handleSwitch(locale)}
-              className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--surface-alt)] hover:text-[var(--brand-primary)] ${
-                locale === currentLocale
-                  ? "bg-[var(--surface-alt)] font-semibold text-[var(--brand-primary)]"
-                  : "text-[var(--body-text)]"
-              }`}
-            >
-              <span className="text-base leading-none">{LOCALE_FLAGS[locale]}</span>
-              <span className="flex-1 text-left">{LOCALE_LABELS[locale]}</span>
-              {locale === currentLocale && (
-                <svg className="h-3.5 w-3.5 shrink-0 text-[var(--brand-primary)]" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              )}
-            </button>
-          ))}
+          {activeLocales.map((locale) => {
+            const available = locale === "en" || isLocalized;
+            return (
+              <button
+                key={locale}
+                onClick={() => handleSwitch(locale)}
+                disabled={!available}
+                title={!available ? "English only" : undefined}
+                className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
+                  locale === currentLocale
+                    ? "bg-[var(--surface-alt)] font-semibold text-[var(--brand-primary)]"
+                    : available
+                    ? "text-[var(--body-text)] hover:bg-[var(--surface-alt)] hover:text-[var(--brand-primary)]"
+                    : "cursor-not-allowed text-[var(--text-muted)] opacity-40"
+                }`}
+              >
+                <span className="text-base leading-none">{LOCALE_FLAGS[locale]}</span>
+                <span className="flex-1 text-left">{LOCALE_LABELS[locale]}</span>
+                {locale === currentLocale && (
+                  <svg className="h-3.5 w-3.5 shrink-0 text-[var(--brand-primary)]" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
