@@ -26,16 +26,22 @@ const SMTP_SEND_ATTEMPTS = Math.max(
   Number.parseInt(process.env.EMAIL_SMTP_SEND_ATTEMPTS ?? "2", 10)
 );
 
+function trimEnv(value: string | undefined): string | undefined {
+  if (value === undefined) return undefined;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : undefined;
+}
+
 function getMailerConfig() {
-  const smtpUser = process.env.SMTP_USER ?? process.env.GMAIL_USER;
-  const smtpPass = process.env.SMTP_PASS ?? process.env.GMAIL_APP_PASSWORD;
-  const smtpHost = process.env.SMTP_HOST ?? "smtp.gmail.com";
-  const smtpPort = Number.parseInt(process.env.SMTP_PORT ?? "465", 10);
+  const smtpUser = trimEnv(process.env.SMTP_USER) ?? trimEnv(process.env.GMAIL_USER);
+  const smtpPass = trimEnv(process.env.SMTP_PASS) ?? trimEnv(process.env.GMAIL_APP_PASSWORD);
+  const smtpHost = trimEnv(process.env.SMTP_HOST) ?? "smtp.gmail.com";
+  const smtpPort = Number.parseInt(trimEnv(process.env.SMTP_PORT) ?? "465", 10);
   const fromName =
-    process.env.SMTP_FROM_NAME ??
-    process.env.EMAIL_FROM_NAME ??
+    trimEnv(process.env.SMTP_FROM_NAME) ??
+    trimEnv(process.env.EMAIL_FROM_NAME) ??
     "MerrySails";
-  const fromEmail = process.env.SMTP_FROM_EMAIL ?? smtpUser;
+  const fromEmail = trimEnv(process.env.SMTP_FROM_EMAIL) ?? smtpUser;
 
   return {
     smtpUser,
@@ -179,17 +185,22 @@ function parseRecipientList(value?: string | null): string[] {
   }
 
   return value
-    .split(",")
+    .split(/[,;\s]+/)
     .map((entry) => entry.trim())
     .filter(Boolean);
 }
 
 export function getReservationCcRecipients(extra?: string | string[] | null): string[] {
-  const configuredRecipients = parseRecipientList(process.env.RESERVATION_CC_RECIPIENTS);
+  const configuredRecipients = parseRecipientList(trimEnv(process.env.RESERVATION_CC_RECIPIENTS));
   const defaultRecipients =
     configuredRecipients.length > 0
       ? configuredRecipients
-      : ["resatakkus10@gmail.com", "info@merrytravel.com.tr", "info@merrytourism.com"];
+      : [
+          "info@merrysails.com",
+          "resatakkus10@gmail.com",
+          "info@merrytravel.com.tr",
+          "info@merrytourism.com",
+        ];
   const extraRecipients = Array.isArray(extra) ? extra : extra ? [extra] : [];
 
   return normalizeRecipients([...defaultRecipients, ...extraRecipients]);
@@ -215,6 +226,13 @@ export async function sendEmail({ to, subject, html, cc, attachments }: SendEmai
       });
     } catch (error) {
       lastError = error;
+      console.warn(
+        `[email] SMTP send attempt ${attempt + 1}/${SMTP_SEND_ATTEMPTS} failed for "${subject}" to ${to}:`,
+        error instanceof Error ? error.message : error
+      );
+      // Reset cached transporter so a transient auth/connection issue is
+      // retried with a fresh connection on the next attempt.
+      transporter = null;
 
       if (attempt < SMTP_SEND_ATTEMPTS - 1) {
         await sleep((attempt + 1) * 750);
@@ -233,9 +251,14 @@ export async function sendEmail({ to, subject, html, cc, attachments }: SendEmai
       subject,
       html,
       attachments,
-      replyTo: process.env.GMAIL_USER ?? fallbackConfig.fromEmail,
+      replyTo: trimEnv(process.env.GMAIL_USER) ?? fallbackConfig.fromEmail,
     });
   }
+
+  console.error(
+    `[email] all ${SMTP_SEND_ATTEMPTS} SMTP attempts failed for "${subject}" to ${to}:`,
+    lastError instanceof Error ? lastError.message : lastError
+  );
 
   throw lastError instanceof Error
     ? lastError
