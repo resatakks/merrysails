@@ -40,7 +40,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "İstanbul Akşam Yemeği Turu | Boğaz Yemekli Gece Turu | MerrySails",
+    title: "İstanbul Akşam Yemeği Turu | €30'dan | MerrySails",
     description:
       "İstanbul'da Boğaz akşam yemeği turu paketleri €30'dan başlıyor. Türk gecesi eğlencesi, otel transfer desteği ve 4 farklı paket seçeneği. Hemen rezervasyon yapın.",
     h1: "İstanbul Akşam Yemeği Turu",
@@ -126,7 +126,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   de: {
-    title: "Istanbul Dinner Cruise | Bosporus Dinner Kreuzfahrt | MerrySails",
+    title: "Istanbul Dinner Cruise | Ab €30 | MerrySails",
     description:
       "Bosporus Dinner Cruise Istanbul ab €30. Türkische Abendunterhaltung, 4 Pakete bis €90, Hoteltransfer möglich. TÜRSAB-lizenziert seit 2001. Jetzt buchen.",
     h1: "Istanbul Dinner Cruise",
@@ -232,7 +232,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   fr: {
-    title: "Croisière Dîner Istanbul | Croisière Bosphore Dîner | MerrySails",
+    title: "Croisière Dîner Istanbul | Dès €30 | MerrySails",
     description:
       "Croisière dîner sur le Bosphore à Istanbul à partir de €30. 4 formules jusqu'à €90, spectacle de nuit turque, transfert hôtel disponible. Réservez maintenant.",
     h1: "Croisière Dîner Istanbul",

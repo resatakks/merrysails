@@ -13,7 +13,7 @@ import Link from "next/link";
 import { tours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "MerrySails Istanbul Cruises | Sunset, Dinner & Yacht Charter 2026",
+  title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
   description:
     "Compare the 3 core MerrySails experiences in Istanbul: Bosphorus Sunset Cruise, Bosphorus Dinner Cruise, and Yacht Charter in Istanbul.",
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://merrysails.com" },
   openGraph: {
-    title: "MerrySails Istanbul Cruises | Sunset, Dinner & Yacht Charter 2026",
+    title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
     description:
       "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
     url: "https://merrysails.com",

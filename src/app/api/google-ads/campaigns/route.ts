@@ -281,6 +281,7 @@ export async function POST(req: NextRequest) {
         operations.push({
           create: {
             campaign: `customers/${creds.customerId}/campaigns/${campaignId}`,
+            negative: true,
             keyword: { text: kw, matchType: "EXACT" },
           },
         });

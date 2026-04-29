@@ -37,7 +37,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Boğaz Gün Batımı Turu İstanbul 2026 | Gün Batımı Teknesi | MerrySails",
+    title: "Boğaz Gün Batımı Turu İstanbul | €34'ten | MerrySails",
     description:
       "İstanbul'da Boğaz gün batımı turu €34'ten başlıyor. 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
     h1: "Boğaz Gün Batımı Turu",
@@ -99,7 +99,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   de: {
-    title: "Bosporus Sonnenuntergang Kreuzfahrt Istanbul 2026 | MerrySails",
+    title: "Bosporus Sonnenuntergangs-Kreuzfahrt | MerrySails",
     description:
       "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
     h1: "Bosporus Sonnenuntergang Kreuzfahrt",
@@ -161,7 +161,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   fr: {
-    title: "Croisière Coucher de Soleil Bosphore Istanbul 2026 | MerrySails",
+    title: "Croisière Coucher de Soleil Bosphore | MerrySails",
     description:
       "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €34. 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €40. Réservez.",
     h1: "Croisière Coucher de Soleil Bosphore",

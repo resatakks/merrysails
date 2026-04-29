@@ -58,7 +58,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
   tr: {
     htmlLang: "tr-TR",
-    metaTitle: "MerrySails İstanbul | Boğaz Turu, Akşam Yemeği & Yat Kiralama 2026",
+    metaTitle: "Boğaz Turu İstanbul | Gün Batımı & Yemek | MerrySails",
     metaDescription:
       "İstanbul'un özel Boğaz deneyimleri: gün batımı turu, akşam yemekli Boğaz turu ve özel yat kiralama. TÜRSAB A Grubu lisanslı, 50.000+ misafir.",
     hero: {
@@ -148,7 +148,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
   },
   de: {
     htmlLang: "de-DE",
-    metaTitle: "MerrySails Istanbul | Bosporus, Dinner-Kreuzfahrt & Yacht-Charter 2026",
+    metaTitle: "Bosporus Kreuzfahrt Istanbul | Dinner & Yacht | MerrySails",
     metaDescription:
       "Istanbuls exklusive Bosporus-Erlebnisse: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und private Yacht-Charter. TURSAB A-Gruppe lizenziert, 50.000+ Gäste.",
     hero: {
@@ -238,7 +238,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
   },
   fr: {
     htmlLang: "fr-FR",
-    metaTitle: "MerrySails Istanbul | Croisière Bosphore, Dîner & Charter Yacht 2026",
+    metaTitle: "Croisière Bosphore Istanbul | Dîner & Yacht | MerrySails",
     metaDescription:
       "L'expérience exclusive du Bosphore à Istanbul : croisière coucher de soleil, croisière dîner et charter de yacht privé. TURSAB Groupe A licencié, 50 000+ invités.",
     hero: {
@@ -328,7 +328,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
   },
   nl: {
     htmlLang: "nl-NL",
-    metaTitle: "MerrySails Istanbul | Bosporus Cruise, Dinercruise & Jachtcharter 2026",
+    metaTitle: "Bosporus Cruise Istanbul | Diner & Jacht | MerrySails",
     metaDescription:
       "Istanbul's exclusieve Bosporus-ervaring: zonsondergangs-cruise, dinercruise en privé jachtcharter. TURSAB A Groep gelicentieerd, 50.000+ gasten.",
     hero: {
