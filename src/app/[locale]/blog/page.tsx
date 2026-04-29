@@ -71,6 +71,7 @@ const CONTENT: Record<string, LocaleContent> = {
     introHeading: "Planungsinhalte für Istanbul Bosporus-Kreuzfahrten",
     introBody:
       "Diese Seite verlinkt zu allen MerrySails-Blogartikeln zum Bosporus auf Englisch. Die Artikel konzentrieren sich auf Abfahrtsorte, geteilte und private Routenvergleiche, Dinner-Pakete und Jachtcharter-Planung.",
+    nativePostsHeading: "Deutsche Reiseführer",
     postsHeading: "Blogbeiträge",
     postsBody:
       "Alle Inhalte werden derzeit auf Englisch veröffentlicht. Die folgenden Links führen zu den englischen Artikeln.",

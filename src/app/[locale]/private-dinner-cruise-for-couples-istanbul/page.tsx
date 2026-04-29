@@ -527,13 +527,20 @@ export default async function LocalePrivateDinnerCouplesPage({
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["TouristTrip", "Service"],
     name: t.heroTitle,
     description: t.heroDescription,
     url: canonicalUrl,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "İstanbul" },
     serviceType: "Private Dinner Cruise for Couples",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   const breadcrumbSchema = {

@@ -41,7 +41,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Boğaz Gün Batımı Turu İstanbul | €34'ten | MerrySails",
+    title: "Boğaz Gün Batımı Turu İstanbul — €34'dan başlayan fiyatlar | MerrySails",
     description:
       "İstanbul'da Boğaz gün batımı turu €34'ten başlıyor. 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
     h1: "Boğaz Gün Batımı Turu",
@@ -107,7 +107,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "WhatsApp ile Yaz",
   },
   de: {
-    title: "Bosporus Sonnenuntergangs-Kreuzfahrt | MerrySails",
+    title: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Ab €34 | MerrySails",
     description:
       "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
     h1: "Bosporus Sonnenuntergang Kreuzfahrt",
@@ -173,7 +173,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Per WhatsApp anfragen",
   },
   fr: {
-    title: "Croisière Coucher de Soleil Bosphore | MerrySails",
+    title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €34 | MerrySails",
     description:
       "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €34. 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €40. Réservez.",
     h1: "Croisière Coucher de Soleil Bosphore",
@@ -239,7 +239,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Contacter par WhatsApp",
   },
   nl: {
-    title: "Bosporus Zonsondergang Cruise Istanbul 2026 | MerrySails",
+    title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €34 | MerrySails",
     description:
       "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht, live gids, versnaperingen. Met wijn vanaf €40. Direct boeken bij TÜRSAB-gecertificeerd bedrijf.",
     h1: "Bosporus Zonsondergang Cruise",

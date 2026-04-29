@@ -42,7 +42,7 @@ type LocaleContent = {
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
     htmlLang: "tr-TR",
-    title: "Boğaz Turu İstanbul 2026 | Fiyatlar, Güzergah ve Rezervasyon | MerrySails",
+    title: "Boğaz Turu İstanbul — €34'dan başlayan fiyatlar | MerrySails",
     description: "İstanbul Boğaz turu seçenekleri: gün batımı turu €34'ten, akşam yemeği turu €30'dan, özel yat kiralama €280'den. TÜRSAB A Grubu lisanslı, 2001'den bu yana 50.000+ misafir. Hemen rezervasyon yapın.",
     canonicalPath: "/tr/bosphorus-cruise",
     h1: "Boğaz Turu İstanbul",
@@ -112,7 +112,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   de: {
     htmlLang: "de-DE",
-    title: "Bosporus Kreuzfahrt Istanbul 2026 | Preise, Routen & Buchung | MerrySails",
+    title: "Bosporus Kreuzfahrt Istanbul — Ab €34 | MerrySails",
     description: "Bosporus Kreuzfahrt Istanbul: Sonnenuntergang ab €34, Dinner-Kreuzfahrt ab €30, Privatjacht ab €280. TÜRSAB A-Gruppe lizenziert seit 2001, 50.000+ Gäste. Direkt buchen.",
     canonicalPath: "/de/bosphorus-cruise",
     h1: "Bosporus Kreuzfahrt Istanbul",
@@ -182,7 +182,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   fr: {
     htmlLang: "fr-FR",
-    title: "Croisière Bosphore Istanbul 2026 | Prix, Itinéraires & Réservation | MerrySails",
+    title: "Croisière Bosphore Istanbul — À partir de €34 | MerrySails",
     description: "Croisière Bosphore Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €280. Agence TÜRSAB groupe A depuis 2001, 50 000+ clients. Réservez directement.",
     canonicalPath: "/fr/bosphorus-cruise",
     h1: "Croisière Bosphore Istanbul",
@@ -252,7 +252,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   nl: {
     htmlLang: "nl-NL",
-    title: "Bosporus Cruise Istanbul 2026 | Prijzen, Routes & Reserveren | MerrySails",
+    title: "Bosporus Cruise Istanbul — Vanaf €34 | MerrySails",
     description: "Bosporus cruise Istanbul: zonsondergang vanaf €34, diner cruise vanaf €30, privéjacht vanaf €280. TÜRSAB A-groep gecertificeerd sinds 2001, 50.000+ gasten. Direct boeken.",
     canonicalPath: "/nl/bosphorus-cruise",
     h1: "Bosporus Cruise Istanbul",

@@ -48,7 +48,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Yat Kiralama 2026 | Özel Boğaz Yat Turu | MerrySails",
+    metaTitle: "İstanbul Yat Kiralama — €380'dan başlayan fiyatlar | MerrySails",
     metaDescription:
       "İstanbul'da özel yat kiralama €280'den başlıyor. Tüm tekne size özel, Boğaz güzergahı, kaptanlı ve yemek seçeneğiyle. Evlilik teklifi, doğum günü ve kurumsal etkinlikler.",
     canonicalPath: "/tr/yacht-charter-istanbul",
@@ -118,7 +118,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle: "Yachtcharter Istanbul 2026 | Private Jacht Bosporus | MerrySails",
+    metaTitle: "Yachtcharter Istanbul — Ab €380 | MerrySails",
     metaDescription:
       "Yachtcharter Istanbul ab €280. Exklusive Privatjacht auf dem Bosporus mit Kapitän. Ideal für Heiratsantrag, Geburtstag und Firmenevents. TÜRSAB-lizenziert.",
     canonicalPath: "/de/yacht-charter-istanbul",
@@ -188,7 +188,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   fr: {
-    metaTitle: "Location Yacht Istanbul 2026 | Yacht Privé Bosphore | MerrySails",
+    metaTitle: "Location Yacht Istanbul — À partir de €380 | MerrySails",
     metaDescription:
       "Location yacht Istanbul à partir de €280. Yacht privé exclusif sur le Bosphore avec capitaine. Demande en mariage, anniversaire, événements d'entreprise. Certifié TÜRSAB.",
     canonicalPath: "/fr/yacht-charter-istanbul",
@@ -258,7 +258,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   nl: {
-    metaTitle: "Jachthuur Istanbul 2026 | Privé Jacht Bosporus | MerrySails",
+    metaTitle: "Jachthuur Istanbul — Vanaf €380 | MerrySails",
     metaDescription:
       "Jachthuur Istanbul vanaf €280. Exclusief privéjacht op de Bosporus met kapitein. Huwelijksaanzoek, verjaardag en bedrijfsevenementen. TÜRSAB-gecertificeerd.",
     canonicalPath: "/nl/yacht-charter-istanbul",

@@ -307,7 +307,7 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with an audio guide in 12 languages.",
   },
   "bosphorus-sunset-cruise": {
-    title: "Bosphorus Sunset Cruise Istanbul 2026 — From EUR 34 | Reserve Direct",
+    title: "Bosphorus Sunset Cruise Istanbul — From €34 | MerrySails",
     description: "Book the Bosphorus sunset cruise in Istanbul from EUR 34. Two shared 2-hour sunset options on the same route: Without Wine and With Wine, with snacks, drinks, and landmark views on the water.",
   },
   "wedding-anniversary": {

@@ -438,13 +438,20 @@ export default async function LocaleProposalYachtRentalPage({
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["TouristTrip", "Service"],
     name: t.heroTitle,
     description: t.metaDescription,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "Istanbul" },
     serviceType: "Proposal Yacht Rental",
     url: canonicalUrl,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   return (

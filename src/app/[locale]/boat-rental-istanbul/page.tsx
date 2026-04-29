@@ -36,7 +36,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: `Tekne Kiralama İstanbul 2026 | Saatlik €${startingRate}'dan | MerrySails`,
+    title: "Tekne Kiralama İstanbul — €380'dan başlayan fiyatlar | MerrySails",
     description: `İstanbul'da tekne kiralama saatlik €${startingRate}'dan başlıyor. Boğaz'da özel tekne turu, yemek ve gün batımı ekstraları dahil edilebilir. Hemen teklif alın.`,
     canonicalPath: "/tr/boat-rental-istanbul",
     eyebrow: "MerrySails İstanbul",
@@ -84,7 +84,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   de: {
-    title: `Bootsverleih Istanbul 2026 | Ab €${startingRate}/Stunde | MerrySails`,
+    title: "Bootsverleih Istanbul — Ab €380 | MerrySails",
     description: `Bootsverleih Istanbul ab €${startingRate} pro Stunde. Privates Boot auf dem Bosporus mieten, Dinner und Sonnenuntergang optional hinzubuchen. Direkt Angebot anfragen.`,
     canonicalPath: "/de/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",
@@ -132,7 +132,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   fr: {
-    title: `Location Bateau Istanbul 2026 | À partir de €${startingRate}/h | MerrySails`,
+    title: "Location Bateau Istanbul — À partir de €380 | MerrySails",
     description: `Location de bateau à Istanbul à partir de €${startingRate}/heure. Promenade en bateau privée sur le Bosphore, options dîner et coucher de soleil disponibles. Demandez un devis.`,
     canonicalPath: "/fr/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",
@@ -180,7 +180,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   nl: {
-    title: `Boothuur Istanbul 2026 | Vanaf €${startingRate}/uur | MerrySails`,
+    title: "Boothuur Istanbul — Vanaf €380 | MerrySails",
     description: `Boothuur Istanbul vanaf €${startingRate} per uur. Privéboottocht op de Bosporus, diner en zonsondergang optioneel toe te voegen. Vraag direct een offerte aan.`,
     canonicalPath: "/nl/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",

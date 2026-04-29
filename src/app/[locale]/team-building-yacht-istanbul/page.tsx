@@ -246,7 +246,53 @@ export default async function TeamBuildingYachtLocalePage({
   const t = TRANSLATIONS[locale];
   if (!t) notFound();
 
+  const canonicalUrl = `${SITE_URL}${t.canonicalPath}`;
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": ["TouristTrip", "Service"],
+    name: t.heroTitle,
+    description: t.metaDescription,
+    url: canonicalUrl,
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: { "@type": "City", name: "Istanbul" },
+    serviceType: "Team Building Yacht",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t.breadcrumbHome, item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: t.breadcrumbCurrent, item: canonicalUrl },
+    ],
+  };
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
       <div className="container-main">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
@@ -302,5 +348,6 @@ export default async function TeamBuildingYachtLocalePage({
         </div>
       </div>
     </div>
+    </>
   );
 }
