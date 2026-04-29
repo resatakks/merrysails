@@ -78,8 +78,8 @@ function buildTargetPath(targetLocale: SiteLocale, route: string): string {
   }
   if (!LOCALIZED_ROUTES.has(route)) {
     if (targetLocale === "en") return `/${route}`;
-    // No locale version — send to locale's main page so the user stays in their language.
-    return `/${targetLocale}/bosphorus-cruise`;
+    // No locale version — send to locale homepage so the user stays in their language.
+    return `/${targetLocale}`;
   }
   return targetLocale === "en" ? `/${route}` : `/${targetLocale}/${route}`;
 }
