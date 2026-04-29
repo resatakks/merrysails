@@ -10,9 +10,9 @@ async function getAccessToken(): Promise<string> {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
-      client_id: process.env.GSC_CLIENT_ID ?? "",
-      client_secret: process.env.GSC_CLIENT_SECRET ?? "",
-      refresh_token: process.env.GSC_REFRESH_TOKEN ?? "",
+      client_id: process.env.GSC_CLIENT_ID?.trim() ?? "",
+      client_secret: process.env.GSC_CLIENT_SECRET?.trim() ?? "",
+      refresh_token: process.env.GSC_REFRESH_TOKEN?.trim() ?? "",
       grant_type: "refresh_token",
     }),
   });
