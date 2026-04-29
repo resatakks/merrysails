@@ -32,7 +32,8 @@ export default function ClarityIdentityProvider() {
 
       if (!consentSent.current) {
         try {
-          cl("consentv2", { analytics_Storage: "granted", ad_Storage: "granted" });
+          cl("consent");
+          cl("consentv2", { analytics_storage: "granted", ad_storage: "granted" });
           consentSent.current = true;
         } catch (_) {}
       }

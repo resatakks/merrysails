@@ -19,6 +19,10 @@ const dmSans = DM_Sans({
 const SITE_URL = "https://merrysails.com";
 const GTM_CONTAINER_ID =
   process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? "";
+const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
+const GOOGLE_ADS_ID =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "";
 const CLARITY_PROJECT_ID =
   process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "wfsykdd4gb";
 
@@ -277,6 +281,47 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        {/* Google tag (gtag.js) — loaded directly so gtag() is always available
+            for Ads + GA4 conversion calls regardless of GTM configuration.
+            Consent mode v2: all granted — no cookie banner needed for this site. */}
+        {(GA_MEASUREMENT_ID || GOOGLE_ADS_ID) ? (
+          <>
+            <Script
+              id="gtag-consent-init"
+              strategy="beforeInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = gtag;
+                  gtag('consent', 'default', {
+                    analytics_storage: 'granted',
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    wait_for_update: 0
+                  });
+                `,
+              }}
+            />
+            <Script
+              id="gtag-js"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID || GOOGLE_ADS_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="gtag-config"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  gtag('js', new Date());
+                  ${GA_MEASUREMENT_ID ? `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });` : ""}
+                  ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
+                `,
+              }}
+            />
+          </>
+        ) : null}
         {GTM_CONTAINER_ID ? (
           <>
             <Script
@@ -315,7 +360,8 @@ export default function RootLayout({
                     w.clarity = c;
                   }
                   try {
-                    w.clarity('consentv2', { analytics_Storage: 'granted', ad_Storage: 'granted' });
+                    w.clarity('consent');
+                    w.clarity('consentv2', { analytics_storage: 'granted', ad_storage: 'granted' });
                     var uid = (document.cookie.match(/(?:^|; )_craft_uid=([^;]*)/) || [])[1];
                     if (!uid) {
                       uid = localStorage.getItem('_clarity_uid');
