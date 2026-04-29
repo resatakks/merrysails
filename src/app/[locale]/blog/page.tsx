@@ -6,6 +6,7 @@ import { SITE_URL } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import { blogPosts } from "@/data/blog";
+import { getAllLocalePostsForLocale } from "@/data/blog/locale-posts";
 import { cleanContentText } from "@/lib/content-text";
 
 export const revalidate = 3600;
@@ -20,6 +21,7 @@ type LocaleContent = {
   breadcrumbCurrent: string;
   introHeading: string;
   introBody: string;
+  nativePostsHeading?: string;
   postsHeading: string;
   postsBody: string;
   readArticle: string;
@@ -43,10 +45,11 @@ const CONTENT: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Blog",
     introHeading: "İstanbul Boğaz turu için planlama içerikleri",
     introBody:
-      "Bu sayfa, MerrySails'in tüm Boğaz turu blog içeriklerinin İngilizce kaynaklarına bağlanır. Yazılar; kalkış noktası seçimi, paylaşımlı ve özel rota karşılaştırmaları, akşam yemeği paketleri ve yat kiralama planlaması üzerine odaklanır.",
-    postsHeading: "Blog yazıları",
+      "Bu sayfa, MerrySails'in tüm Boğaz turu blog içeriklerinin kaynaklarına bağlanır. Yazılar; kalkış noktası seçimi, paylaşımlı ve özel rota karşılaştırmaları, akşam yemeği paketleri ve yat kiralama planlaması üzerine odaklanır.",
+    nativePostsHeading: "Türkçe rehber yazıları",
+    postsHeading: "İngilizce blog yazıları",
     postsBody:
-      "İçeriklerin tamamı şu anda İngilizce olarak yayınlanmaktadır. Aşağıdaki bağlantılar İngilizce yazılara yönlendirir.",
+      "Daha fazla içerik İngilizce olarak da yayınlanmaktadır. Aşağıdaki bağlantılar İngilizce yazılara yönlendirir.",
     readArticle: "Yazıyı oku",
     ctaHeading: "Doğru Boğaz turunu seçmeye hazır mısınız?",
     ctaBody:
@@ -181,6 +184,7 @@ export default async function LocaleBlogPage({
 
   const canonicalUrl = `${SITE_URL}${c.canonicalPath}`;
 
+  const localePosts = getAllLocalePostsForLocale(locale);
   // Show first 24 posts as a digest with English links
   const featured = blogPosts.slice(0, 24);
 
@@ -226,6 +230,29 @@ export default async function LocaleBlogPage({
             <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">{c.introHeading}</h2>
             <p className="text-[var(--body-text)] leading-relaxed">{c.introBody}</p>
           </section>
+
+          {localePosts.length > 0 && c.nativePostsHeading && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">{c.nativePostsHeading}</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {localePosts.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/${locale}/blog/${post.slug}`}
+                      className="group block bg-white rounded-xl p-4 shadow-sm border border-[var(--line)] hover:border-[var(--brand-primary)] transition-colors h-full"
+                    >
+                      <h3 className="text-sm font-semibold mb-2 group-hover:text-[var(--brand-primary)] line-clamp-2">
+                        {cleanContentText(post.title)}
+                      </h3>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-[var(--brand-primary)]">
+                        {c.readArticle} <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <section className="mb-10">
             <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">{c.postsHeading}</h2>

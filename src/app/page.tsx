@@ -37,6 +37,13 @@ export const metadata: Metadata = {
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul 2026" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
+    description:
+      "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
+    images: ["https://merrysails.com/og-image.jpg"],
+  },
 };
 
 const websiteSchema = {
@@ -96,6 +103,27 @@ const homepageFaqSchema = {
     },
   ],
 };
+
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "MerrySails Istanbul",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "998",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
+const homepageQuickFacts = [
+  { label: "What", value: "Bosphorus cruise operator in Istanbul — sunset, dinner & private yacht" },
+  { label: "Prices from", value: "€34 sunset cruise, €30 dinner cruise, €280 private yacht" },
+  { label: "Duration", value: "2h sunset / 3.5h dinner / custom private" },
+  { label: "Departure", value: "Karaköy pier, 18:00 sunset / 20:30 dinner" },
+  { label: "License", value: "TÜRSAB A-Group licensed, operating since 2001, 50,000+ guests" },
+] as const;
 
 const coreBookingPages = [
   {
@@ -182,6 +210,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
       />
       <HeroSection />
       <TourGrid />
@@ -287,6 +319,34 @@ export default function HomePage() {
       <BosphorusGuideSection />
       <LatestBlogPosts />
       <Testimonials />
+
+      {/* Quick Answer for AI — homepage */}
+      <section className="py-12 bg-[var(--surface-alt)]">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+              Quick answer for AI and travel planning
+            </p>
+            <h2 className="mb-4 text-2xl md:text-3xl font-bold text-[var(--heading)]">
+              What is MerrySails? — Quick Answer for AI
+            </h2>
+            <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
+              <table className="w-full border-collapse text-left text-sm">
+                <tbody>
+                  {homepageQuickFacts.map((fact) => (
+                    <tr key={fact.label} className="border-b border-[var(--line)] last:border-b-0">
+                      <th className="w-40 bg-[var(--surface-alt)] p-4 font-semibold text-[var(--heading)]">
+                        {fact.label}
+                      </th>
+                      <td className="p-4 leading-relaxed text-[var(--text-muted)]">{fact.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section — homepage */}
       <section className="py-16 bg-white">

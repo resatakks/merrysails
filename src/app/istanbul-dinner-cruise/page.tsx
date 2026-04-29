@@ -131,6 +131,51 @@ const breadcrumbSchema = {
   ],
 };
 
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "Istanbul Bosphorus Dinner Cruise",
+  startDate: "2026-05-01T20:30:00+03:00",
+  endDate: "2026-05-02T00:00:00+03:00",
+  eventSchedule: {
+    "@type": "Schedule",
+    byDay: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    startTime: "20:30",
+    endTime: "00:00",
+    scheduleTimezone: "Europe/Istanbul",
+    repeatFrequency: "P1D",
+  },
+  location: {
+    "@type": "Place",
+    name: "Kabataş Pier — MerrySails",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kabataş İskelesi",
+      addressLocality: "Kabataş, Beşiktaş",
+      addressRegion: "Istanbul",
+      postalCode: "34357",
+      addressCountry: "TR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.0378,
+      longitude: 28.9978,
+    },
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    lowPrice: "30",
+    highPrice: "90",
+    priceCurrency: "EUR",
+    url: "https://merrysails.com/istanbul-dinner-cruise",
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "MerrySails",
+    url: "https://merrysails.com",
+  },
+};
+
 const sharedDinnerReasons = [
   {
     title: "Turkish-night dinner program",
@@ -230,6 +275,10 @@ export default async function IstanbulDinnerCruisePage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+      />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
@@ -253,6 +302,13 @@ export default async function IstanbulDinnerCruisePage({
             related={relatedTours}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
+            <h3 className="font-semibold text-green-800">✓ Free Cancellation</h3>
+            <p className="text-green-700 text-sm">
+              Cancel up to 24 hours before departure for a full refund. No questions asked.
+            </p>
+          </div>
 
           <section className="mt-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">

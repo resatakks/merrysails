@@ -63,7 +63,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       "İstanbul'un özel Boğaz deneyimleri: gün batımı turu, akşam yemekli Boğaz turu ve özel yat kiralama. TÜRSAB A Grubu lisanslı, 50.000+ misafir.",
     hero: {
       tagline: "İstanbul'un Özel Boğaz Deneyimi",
-      heading: "Boğaz'da Unutulmaz Bir Deneyim Sizi Bekliyor",
+      heading: "İstanbul Boğaz Turu — Gün Batımı, Akşam Yemeği & Yat Kiralama",
       subheading:
         "Gün batımı turu, akşam yemekli tekne turu ve özel yat kiralama — direkt rezervasyon, lisanslı operatör, net fiyatlar.",
       bookNow: "Hemen Rezervasyon",
@@ -153,7 +153,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       "Istanbuls exklusive Bosporus-Erlebnisse: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und private Yacht-Charter. TURSAB A-Gruppe lizenziert, 50.000+ Gäste.",
     hero: {
       tagline: "Istanbuls exklusive Bosporus-Erlebnisse",
-      heading: "Erleben Sie den Bosporus auf eine besondere Art",
+      heading: "Bosporus Kreuzfahrt Istanbul — Sonnenuntergang, Dinner & Yacht-Charter",
       subheading:
         "Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und privater Yacht-Charter — direkte Buchung, lizenzierter Veranstalter, transparente Preise.",
       bookNow: "Jetzt Buchen",
@@ -243,7 +243,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       "L'expérience exclusive du Bosphore à Istanbul : croisière coucher de soleil, croisière dîner et charter de yacht privé. TURSAB Groupe A licencié, 50 000+ invités.",
     hero: {
       tagline: "L'expérience exclusive du Bosphore à Istanbul",
-      heading: "Vivez le Bosphore comme jamais auparavant",
+      heading: "Croisière Bosphore Istanbul — Coucher de Soleil, Dîner & Yacht",
       subheading:
         "Croisière coucher de soleil, croisière dîner et charter de yacht privé — réservation directe, opérateur licencié, prix transparents.",
       bookNow: "Réserver Maintenant",
@@ -333,7 +333,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       "Istanbul's exclusieve Bosporus-ervaring: zonsondergangs-cruise, dinercruise en privé jachtcharter. TURSAB A Groep gelicentieerd, 50.000+ gasten.",
     hero: {
       tagline: "Istanbul's exclusieve Bosporus-ervaring",
-      heading: "Beleef de Bosporus zoals nooit tevoren",
+      heading: "Bosporus Cruise Istanbul — Zonsondergang, Diner & Jacht",
       subheading:
         "Zonsondergangs-cruise, dinercruise en privé jachtcharter — directe boeking, gelicentieerde aanbieder, transparante prijzen.",
       bookNow: "Nu Boeken",
@@ -450,6 +450,12 @@ export async function generateMetadata({
           alt: "MerrySails — Bosphorus Cruise Istanbul",
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.metaTitle,
+      description: t.metaDescription,
+      images: [`${SITE_URL}/og-image.jpg`],
     },
   };
 }

@@ -483,6 +483,55 @@ export default async function TourDetailPage({
     ],
   };
 
+  // Event schema — only for the recurring sunset cruise departure
+  const eventSchema =
+    slug === "bosphorus-sunset-cruise"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: "Bosphorus Sunset Cruise",
+          startDate: "2026-05-01T18:00:00+03:00",
+          endDate: "2026-05-01T20:00:00+03:00",
+          eventSchedule: {
+            "@type": "Schedule",
+            byDay: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            startTime: "18:00",
+            endTime: "20:00",
+            scheduleTimezone: "Europe/Istanbul",
+            repeatFrequency: "P1D",
+          },
+          location: {
+            "@type": "Place",
+            name: "Karaköy Meeting Point — MerrySails",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Arap Cami Mah., Uskufcular Sk.",
+              addressLocality: "Karaköy, Beyoğlu",
+              addressRegion: "Istanbul",
+              postalCode: "34425",
+              addressCountry: "TR",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 41.0245,
+              longitude: 28.9741,
+            },
+          },
+          offers: {
+            "@type": "AggregateOffer",
+            lowPrice: "34",
+            highPrice: "40",
+            priceCurrency: "EUR",
+            url: "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+          },
+          organizer: {
+            "@type": "Organization",
+            name: "MerrySails",
+            url: "https://merrysails.com",
+          },
+        }
+      : null;
+
   // FAQPage JSON-LD schema (unique per tour)
   const faqs = showPricing ? tourFaqs[slug] : tour.faq;
   const aiOwnerFacts = aiOwnerFactsBySlug[slug];
@@ -518,6 +567,12 @@ export default async function TourDetailPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      {eventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
           {/* Breadcrumb */}
@@ -534,6 +589,15 @@ export default async function TourDetailPage({
             related={related}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          {slug === "bosphorus-sunset-cruise" && (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
+              <h3 className="font-semibold text-green-800">✓ Free Cancellation</h3>
+              <p className="text-green-700 text-sm">
+                Cancel up to 24 hours before departure for a full refund. No questions asked.
+              </p>
+            </div>
+          )}
 
           {aiOwnerFacts && (
             <section className="mt-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">

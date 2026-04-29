@@ -18,6 +18,7 @@ export interface BlogSection {
 
 export interface BlogPost {
   slug: string;
+  locale?: string;
   title: string;
   metaDescription: string;
   excerpt: string;
