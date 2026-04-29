@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { ACTIVE_LOCALES, LOCALE_LABELS, type SiteLocale } from "@/i18n/config";
+import { ACTIVE_LOCALES, LOCALE_LABELS, LOCALIZED_ROUTES, type SiteLocale } from "@/i18n/config";
 
 const LOCALE_FLAGS: Partial<Record<SiteLocale, string>> = {
   en: "🇬🇧",
@@ -19,40 +19,6 @@ const LOCALE_FLAGS: Partial<Record<SiteLocale, string>> = {
   el: "🇬🇷",
 };
 
-// Routes that have live locale-specific pages under /[locale]/
-const LOCALIZED_ROUTES = new Set([
-  "bosphorus-cruise",
-  "istanbul-dinner-cruise",
-  "cruises/bosphorus-sunset-cruise",
-  "yacht-charter-istanbul",
-  "boat-rental-istanbul",
-  "private-bosphorus-dinner-cruise",
-  "proposal-yacht-rental-istanbul",
-  "corporate-events",
-  "private-events",
-  "faq",
-  "about",
-  "contact",
-  "reservation",
-  "blog",
-  "guides",
-  "cruises",
-  "private-tours",
-  "boat-rental-hourly-istanbul",
-  "bosphorus-cruise-departure-points",
-  "client-hosting-yacht-istanbul",
-  "corporate-yacht-dinner-istanbul",
-  "dinner-cruise-pickup-sultanahmet-taksim",
-  "dinner-cruise-with-hotel-pickup-istanbul",
-  "kabatas-dinner-cruise-istanbul",
-  "kurucesme-marina-yacht-charter",
-  "private-dinner-cruise-for-couples-istanbul",
-  "product-launch-yacht-istanbul",
-  "proposal-yacht-with-photographer-istanbul",
-  "sunset-cruise-tickets-istanbul",
-  "team-building-yacht-istanbul",
-  "turkish-night-dinner-cruise-istanbul",
-]);
 
 const NON_EN_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en") as SiteLocale[];
 
