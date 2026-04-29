@@ -31,6 +31,15 @@ export async function GET(req: NextRequest) {
     }
     const topTours = Object.entries(tourCounts).map(([tour, count]) => ({ tour, count })).sort((a, b) => b.count - a.count);
 
+    // GSC snapshot — most recent stored (lag ~3 days)
+    const gscRow = await prisma.gscSnapshot.findFirst({
+      orderBy: { date: "desc" },
+      select: { clicks: true, impressions: true, ctr: true, position: true, date: true },
+    });
+    const gsc = gscRow
+      ? { ...gscRow, date: gscRow.date.toISOString().slice(0, 10) }
+      : null;
+
     // Bot visits today
     const botRows = await prisma.botVisit.groupBy({
       by: ["provider"],
@@ -52,6 +61,7 @@ export async function GET(req: NextRequest) {
       currency: "€",
       topTours,
       botVisits,
+      gsc,
     });
 
     const result = await sendDailyReport(text);

@@ -179,3 +179,23 @@ model BotVisit {
   @@index([provider])
   @@index([path])
 }
+
+// ─── GSC Daily Snapshots ──────────────────────────────────
+
+model GscSnapshot {
+  id          String   @id @default(cuid())
+  date        DateTime @db.Date
+  // Site-wide totals
+  clicks      Int
+  impressions Int
+  ctr         Float    // 0.0–1.0
+  position    Float    // avg position
+  // Top page data (JSON array: [{page, clicks, impressions, ctr, position}])
+  topPages    Json?
+  // Top queries (JSON array: [{query, clicks, impressions, ctr, position}])
+  topQueries  Json?
+  createdAt   DateTime @default(now())
+
+  @@unique([date])
+  @@index([date])
+}

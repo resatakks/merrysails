@@ -495,6 +495,7 @@ export function formatDailyStats(stats: {
   revenue: number; currency: string;
   topTours?: { tour: string; count: number }[];
   botVisits?: { provider: string; count: number }[];
+  gsc?: { clicks: number; impressions: number; ctr: number; position: number; date: string } | null;
 }): string {
   const today = new Date().toLocaleDateString("tr-TR", { timeZone: TZ, day: "2-digit", month: "long" });
   const rate = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
@@ -510,6 +511,13 @@ export function formatDailyStats(stats: {
   if (stats.topTours && stats.topTours.length > 0) {
     msg += `\n⛵ <b>En Çok Tur:</b>\n`;
     for (const t of stats.topTours.slice(0, 3)) msg += `   ${esc(t.tour)} — ${t.count}x\n`;
+  }
+
+  if (stats.gsc) {
+    const g = stats.gsc;
+    msg += `\n🔍 <b>GSC (${g.date}):</b>\n`;
+    msg += `   Tıklama: <b>${g.clicks}</b> | Gösterim: <b>${g.impressions}</b>\n`;
+    msg += `   CTR: <b>${(g.ctr * 100).toFixed(1)}%</b> | Ort. Sıra: <b>${g.position.toFixed(1)}</b>\n`;
   }
 
   if (stats.botVisits && stats.botVisits.length > 0) {
