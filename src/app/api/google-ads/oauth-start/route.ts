@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  const clientId = process.env.GOOGLE_ADS_CLIENT_ID;
+  const clientId = process.env.GOOGLE_ADS_CLIENT_ID?.trim();
   if (!clientId) {
     return NextResponse.json({ error: "GOOGLE_ADS_CLIENT_ID not set in env" }, { status: 422 });
   }

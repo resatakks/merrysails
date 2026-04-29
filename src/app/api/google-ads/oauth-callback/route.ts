@@ -23,8 +23,8 @@ export async function GET(req: NextRequest) {
     return new NextResponse("Missing auth code", { status: 400 });
   }
 
-  const clientId = process.env.GOOGLE_ADS_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_ADS_CLIENT_SECRET;
+  const clientId = process.env.GOOGLE_ADS_CLIENT_ID?.trim();
+  const clientSecret = process.env.GOOGLE_ADS_CLIENT_SECRET?.trim();
   if (!clientId || !clientSecret) {
     return new NextResponse("GOOGLE_ADS_CLIENT_ID or CLIENT_SECRET not set", { status: 422 });
   }
