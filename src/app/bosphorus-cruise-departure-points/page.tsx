@@ -9,17 +9,17 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/bosphorus-cruise-departure-points`;
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Departure Points Istanbul 2026 | MerrySails",
+  title: "Where to Board Your Bosphorus Cruise — 3 Istanbul Pickup Points | MerrySails",
   description:
-    "Bosphorus cruise departure points in Istanbul: Kabataş pier for dinner cruise, Karaköy waterfront for sunset cruise, Kurucesme Marina for private yacht charter. Exact addresses, metro/tram directions, and taxi times from city centre.",
+    "Kabataş pier (dinner cruise), Karaköy waterfront (sunset cruise), Kurucesme Marina (private yacht). Exact addresses, step-by-step metro & tram directions, and taxi times from Sultanahmet, Taksim and major hotels.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/bosphorus-cruise-departure-points"),
   },
   openGraph: {
-    title: "Bosphorus Cruise Departure Points Istanbul 2026 | MerrySails",
+    title: "Where to Board Your Bosphorus Cruise — 3 Istanbul Pickup Points | MerrySails",
     description:
-      "Use this page when the main question is where different Bosphorus cruise products start in Istanbul and which owner page each departure flow belongs to.",
+      "Kabataş, Karaköy or Kurucesme Marina — find your exact boarding point with metro, tram and taxi directions from any Istanbul hotel. All MerrySails departures covered.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -38,7 +38,7 @@ const pageSchema = {
   "@type": "WebPage",
   name: "Bosphorus Cruise Departure Points Istanbul",
   description:
-    "Public support hub for Bosphorus cruise departure logic in Istanbul, clarifying which MerrySails owner or support page fits dinner, sunset, and private-yacht boarding flows.",
+    "Where to board MerrySails Bosphorus cruises in Istanbul: Kabataş pier for dinner cruise, Karaköy waterfront for sunset cruise, Kurucesme Marina for private yacht charter.",
   url: canonicalUrl,
 };
 

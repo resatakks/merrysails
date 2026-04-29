@@ -1,43 +1,24 @@
-# MerrySails GSC Export Drop Folder
+# GSC Daily Snapshots
 
-Put Google Search Console exports here when API access is not configured.
+Bu klasör Google Search Console günlük snapshot verilerini içerir.
 
-Recommended filenames:
+## Dosya formatı
 
-- `merrysails-gsc-24h.csv`
-- `merrysails-gsc-7d.csv`
-- `merrysails-gsc-28d.csv`
-- `merrysails-gsc-3m.csv`
+`gsc-snapshot-YYYY-MM-DD.json` — her gün için bir dosya.
 
-Preferred columns:
+## Nasıl üretilir?
 
-- `query`
-- `page`
-- `clicks`
-- `impressions`
-- `ctr`
-- `position`
+1. **Vercel Cron** (otomatik): Her gün 07:00 UTC → `/api/gsc/snapshot` → DB'ye kaydeder + Telegram'a gönderir
+2. **GitHub Actions** (otomatik): Her gün 07:10 UTC → `scripts/gsc-daily-snapshot.mjs` → bu klasöre JSON yazar → commit atar
+3. **Manuel**: `node scripts/gsc-daily-snapshot.mjs` veya `node scripts/gsc-daily-snapshot.mjs --date 2026-04-20`
 
-The rank monitor script also accepts common Search Console export labels such as `Top queries`, `Pages`, `Clicks`, `Impressions`, `CTR`, and `Position`.
+## GitHub Secrets (bir kez ekle)
 
-Run:
+Settings → Secrets and variables → Actions → New repository secret:
+- GSC_CLIENT_ID
+- GSC_CLIENT_SECRET
+- GSC_REFRESH_TOKEN
 
-```bash
-npm run seo:rank-monitor
-```
+## GSC Data Lag
 
-If API access is available, set:
-
-```bash
-GSC_ACCESS_TOKEN="paste-access-token-here"
-GSC_SITE_URL="sc-domain:merrysails.com"
-```
-
-Or use a service account that has Search Console access:
-
-```bash
-GSC_SERVICE_ACCOUNT_JSON="/path/to/service-account.json"
-GSC_SITE_URL="sc-domain:merrysails.com"
-```
-
-Then the script can query Search Console directly and save fresh CSV snapshots into this folder.
+GSC verisi ~3 gün gecikmeli. 29 Nisan'da çekilen snapshot, 26 Nisan verisini gösterir.
