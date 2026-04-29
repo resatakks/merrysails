@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const siteUrl = process.env.GSC_SITE_URL ?? "sc-domain:merrysails.com";
+  const siteUrl = (process.env.GSC_SITE_URL ?? "sc-domain:merrysails.com").trim();
   const date = snapshotDate();
 
   try {
