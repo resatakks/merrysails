@@ -51,8 +51,10 @@ function snapshotDate(): string {
 }
 
 export async function GET(req: NextRequest) {
+  const cronSecret = process.env.CRON_SECRET;
   const authHeader = req.headers.get("authorization");
-  if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  const tokenParam = req.nextUrl.searchParams.get("token");
+  if (cronSecret && authHeader !== `Bearer ${cronSecret}` && tokenParam !== cronSecret) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
