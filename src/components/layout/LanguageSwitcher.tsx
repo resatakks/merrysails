@@ -71,8 +71,11 @@ function detectFromPathname(pathname: string): { locale: SiteLocale; route: stri
 }
 
 // Returns the target path for language switching.
-// Non-localized pages: EN stays, non-EN falls back to /{locale}/bosphorus-cruise.
 function buildTargetPath(targetLocale: SiteLocale, route: string): string {
+  // Homepage: always go to locale homepage
+  if (route === "") {
+    return targetLocale === "en" ? "/" : `/${targetLocale}`;
+  }
   if (!LOCALIZED_ROUTES.has(route)) {
     if (targetLocale === "en") return `/${route}`;
     // No locale version — send to locale's main page so the user stays in their language.
