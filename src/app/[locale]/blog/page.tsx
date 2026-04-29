@@ -95,10 +95,11 @@ const CONTENT: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Blog",
     introHeading: "Contenus de planification pour la croisière sur le Bosphore",
     introBody:
-      "Cette page renvoie à l'ensemble du contenu blog MerrySails sur la croisière Bosphore en anglais. Les articles couvrent les points de départ, les comparaisons d'itinéraires partagés et privés, les forfaits dîner et la planification du charter de yacht.",
+      "Cette page regroupe les guides MerrySails sur les croisières Bosphore. Les articles couvrent les points de départ, les comparaisons d'itinéraires partagés et privés, les forfaits dîner et la planification du charter de yacht.",
+    nativePostsHeading: "Guides en français",
     postsHeading: "Articles du blog",
     postsBody:
-      "Tous les contenus sont actuellement publiés en anglais. Les liens ci-dessous renvoient vers les articles en anglais.",
+      "D'autres contenus sont également disponibles en anglais. Les liens ci-dessous renvoient vers les articles en anglais.",
     readArticle: "Lire l'article",
     ctaHeading: "Prêt à choisir la bonne croisière sur le Bosphore ?",
     ctaBody:
@@ -119,10 +120,11 @@ const CONTENT: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Blog",
     introHeading: "Planningsinhoud voor de Bosporus cruise in Istanbul",
     introBody:
-      "Deze pagina linkt naar alle MerrySails blogartikelen over de Bosporus in het Engels. De artikelen behandelen vertrekpunten, gedeelde en privé route-vergelijkingen, dinerpakketten en jachtcharterplanning.",
+      "Deze pagina groepeert alle MerrySails-gidsen over Bosporus-cruises. De artikelen behandelen vertrekpunten, gedeelde en privé route-vergelijkingen, dinerpakketten en jachtcharterplanning.",
+    nativePostsHeading: "Nederlandse reisgidsen",
     postsHeading: "Blogartikelen",
     postsBody:
-      "Alle content wordt momenteel in het Engels gepubliceerd. Onderstaande links verwijzen naar de Engelstalige artikelen.",
+      "Meer inhoud is ook beschikbaar in het Engels. Onderstaande links verwijzen naar de Engelstalige artikelen.",
     readArticle: "Artikel lezen",
     ctaHeading: "Klaar om de juiste Bosporus cruise te kiezen?",
     ctaBody:
