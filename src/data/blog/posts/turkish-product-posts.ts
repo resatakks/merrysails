@@ -522,4 +522,319 @@ export const turkishProductPosts: BlogPost[] = [
     relatedTours: ["yacht-charter", "bosphorus-sunset-cruise"],
     relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-evlilik-teklifi-tekne"],
   },
+
+  {
+    slug: "istanbul-aksam-yemegi-turu-rehberi",
+    locale: "tr",
+    title: "İstanbul Akşam Yemeği Boğaz Turu Rehberi 2026: Paketler, Fiyatlar ve İpuçları",
+    metaDescription:
+      "2026 yılında İstanbul akşam yemeği turu rehberi: Silver €30'dan Gold €90'a 4 paket, folklor gösterisi, otel transferi ve Boğaz manzarası. Rezervasyon ipuçları.",
+    excerpt:
+      "İstanbul akşam yemeği turu, Boğaz manzarasını Türk mutfağı, folklor gösterisi ve canlı müzikle birleştiren eşsiz bir deneyimdir. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 kapsamlı rehberi.",
+    category: "cruise-guide",
+    date: "2026-04-29",
+    readTime: "10 dk okuma",
+    image: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=1200&q=80",
+    imageAlt: "İstanbul Boğazı'nda gece teknesi — akşam yemeği ve Türk gecesi eğlencesi",
+    keywords: [
+      "istanbul akşam yemeği turu",
+      "boğaz akşam yemeği turu",
+      "istanbul dinner cruise",
+      "akşam yemeği boğaz turu fiyat",
+      "türk gecesi tekne turu",
+      "boğaz akşam yemeği paketi 2026",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Silver Soft Drinks'ten Gold Unlimited'a €30–€90 fiyat aralığı; her pakette 3,5 saatlik Boğaz turu dahil",
+      "Folklor gösterisi, canlı müzik ve Türk büfe akşamın ayrılmaz parçası — 'sadece yemek' turu değil",
+      "Kalkış saat 20:30 Kabataş İskelesi'nden; dönüş gece 00:00 — akşam programına kolayca entegre edilir",
+      "Merkezi Avrupa yakası otellerinden servis transferi mevcuttur; kesin detaylar rezervasyon onayından sonra iletilir",
+    ],
+    sections: [
+      {
+        heading: "İstanbul Boğazı'nda Akşam Yemeği: Neden Olağanüstü Bir Deneyim?",
+        content:
+          "İstanbul akşam yemeği turu, dünyada nadir görülen bir kombinasyon sunar: tek bir gecede gastronomi, kültür ve eşsiz coğrafya. Saat 20:30'da Kabataş'tan ayrıldığınızda Boğaz'ın gece ışıkları yavaş yavaş açılır. Dolmabahçe Sarayı'nın sarı taşları, Ortaköy Camii'nin beyaz minareleri ve iki kıtayı birleştiren köprülerin ışıklı silüeti — hepsi masanızın penceresinden çerçevelenir. Sadece bir restoranın lüksünü değil, dünyanın en güzel su yolunda süzülmenin özgürlüğünü yaşarsınız. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails olarak 50.000'den fazla misafiri bu deneyimle buluşturduk.",
+        callout: {
+          type: "tip",
+          text:
+            "Akşam yemeği turu, gündüz Boğaz turlarından temel bir farkla ayrılır: gece manzarası. Köprülerin ve sarayların gece aydınlatması, gün ışığından çok daha dramatik bir atmosfer yaratır. Bu nedenle fotoğraf meraklıları için akşam turu her zaman öncelikli seçimdir.",
+        },
+      },
+      {
+        heading: "2026 Paket Karşılaştırması",
+        content:
+          "MerrySails İstanbul akşam yemeği turu, farklı bütçe ve tercihlere göre dört ayrı pakette sunulur. Tüm paketlerde güzergah ve tur süresi (3,5 saat) aynıdır; ayrım koltuk konumu, içecek kapsamı ve yemek menüsü düzeyindedir. 2026 sezonu güncel fiyatları:",
+        table: {
+          headers: ["Paket", "Kişi Başı Fiyat", "Koltuk Tipi", "İçecek", "Menü Düzeyi"],
+          rows: [
+            ["Silver Soft Drinks", "€30", "Standart", "Sınırsız alkolsüz", "Standart Türk büfe"],
+            ["Silver Alcoholic", "€45", "Standart", "Yerel alkollü içecekler", "Standart Türk büfe"],
+            ["Gold Soft Drinks", "€80", "VIP sahne yakını", "Sınırsız alkolsüz", "Premium menü + DJ"],
+            ["Gold Unlimited Alkol", "€90", "VIP sahne yakını", "Sınırsız alkol dahil", "Premium menü + DJ"],
+          ],
+        },
+        proTip:
+          "Çift veya aile için en iyi denge Silver Alcoholic (€45) paketidir: yerel içecekler dahil, standart koltuk konumu yeterli görüş açısı sunar. Sahne performansını yakından izlemek ve premium menü istiyorsanız Gold paketine yükseltmeye değer.",
+      },
+      {
+        heading: "Show Programı: Folklor'dan Müziğe Akşamın Akışı",
+        content:
+          "Akşam yemeği turu yalnızca bir yemek deneyimi değildir; aynı zamanda Türk sanat ve kültürünün canlı bir sergilenişidir. Kabataş'tan kalktıktan yaklaşık 30 dakika sonra, tekne Boğaz açıklarına ilerlerken show programı başlar. Ortalama gece programı şu şekilde akar:",
+        list: [
+          "20:30 — Kabataş'tan kalkış; karşılama içeceği ve büfe başlangıçları servis edilir",
+          "21:00 — Folklor gösterisi açılışı: Anadolu halk dansları (horon, halay, zeybek) — 4 bölgeden 6–8 dansçı",
+          "21:45 — Canlı Türk müziği: saz, darbuka, kanun — 3 parçalık arabesk ve halk müziği repertuarı",
+          "22:15 — Oryantal dans gösterisi (Gold paketlerde DJ eşliğinde genişletilmiş program)",
+          "22:45 — Serbest süre; müzik devam eder, güverte fotoğraf molası",
+          "23:30 — Kabataş'a dönüş yolculuğu başlar",
+          "00:00 — Kabataş iskele varışı ve tur sonu",
+        ],
+        expertQuote: {
+          text: "Folklor dansçılarımız Kültür Bakanlığı onaylı, her biri kendi bölgesinin geleneksel sanatını sahneleyen profesyonellerdir. Misafirlerimizin çoğu bu gösteriyi beklemedikleri için çok daha büyük etki bırakır.",
+          author: "Kaptan Ahmet Yılmaz",
+          title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
+        },
+      },
+      {
+        heading: "Menü Detayları: Türk Mutfağının En İyi Örnekleri",
+        content:
+          "Akşam yemeği turu menüsü, açık büfe Türk mutfağı üzerine kurulmuştur. Standart ve premium menüler arasındaki temel fark hem çeşit zenginliği hem pişirme tekniğidir. Aşağıda ortalama menü içeriği verilmektedir:",
+        list: [
+          "Soğuk mezeler: humus, patlıcan ezmesi, cacık, ezme, haydari, yaprak sarma",
+          "Sıcak başlangıçlar: sigara böreği, kaşarlı mantar, midye tava (Gold menüde)",
+          "Ana yemekler: Izgara tavuk, döner dilimi, levrek güveç, sebzeli pilav, güveç türlü",
+          "Tatlı: Baklava, sütlaç, künefe (Gold menüde); standart menüde revani veya kadayıf",
+          "Vejetaryen/vegan: Meze tabağının büyük bölümü doğası gereği vejetaryendir; önceden bildirim halinde tam vegan tabak hazırlanır",
+          "Glutensiz: Çoğu meze gluten içermez; kişisel alerji gereksinimlerini rezervasyon sırasında belirtmeniz önerilir",
+        ],
+        callout: {
+          type: "info",
+          text:
+            "Diyet gereksinimleri: Vejetaryen, vegan, glutensiz veya helal menü seçeneği için rezervasyon sırasında WhatsApp (+90 537 040 68 22) üzerinden bilgi vermeniz yeterlidir. Ekip, özel menüyü önceden hazırlar.",
+        },
+      },
+      {
+        heading: "Transfer Hizmeti: Hangi Semtlerden Alım Yapılır?",
+        content:
+          "Akşam yemeği turu biletine dahil olan servis transferi, merkezi Avrupa yakası otellerinden Kabataş İskelesi'ne ulaşımı kolaylaştırır. Transfer güzergahı ve yaklaşık saatler aşağıdaki gibidir:",
+        table: {
+          headers: ["Semt", "Tahmini Alım Saati", "Kabataş'a Varış"],
+          rows: [
+            ["Sultanahmet / Eminönü", "19:45–20:00", "~20:15"],
+            ["Taksim / Beyoğlu", "20:00–20:10", "~20:20"],
+            ["Beşiktaş", "20:15", "~20:25"],
+            ["Ortaköy", "20:20", "~20:25"],
+          ],
+        },
+        proTip:
+          "Transfer, Kabataş'tan uzak semtler (Kadıköy, Üsküdar, Sarıyer, Bakırköy vb.) için genellikle mevcut değildir. Bu semtlerden katılımcıların Kabataş'a bireysel olarak ulaşmaları gerekir; en pratik seçenek metro + tramvay kombinasyonu veya taksidir. Kesin transfer onayı rezervasyon tamamlandıktan sonra yazılı olarak iletilir.",
+      },
+      {
+        heading: "Sıkça Sorulan Sorular",
+        content:
+          "Akşam yemeği turu rezervasyonu yapmadan önce misafirlerimizin en çok merak ettiği konular şunlardır. Çocuklu aileler için tur uygundur; 12 yaş altı çocuklara özel fiyat veya ücretsiz katılım seçenekleri mevcuttur — rezervasyon sırasında çocuk yaşını belirtmeniz yeterlidir. İptal politikası açısından 48 saat öncesine kadar yapılan iptaller tam iade hakkı doğurur; 24–48 saat arası %50 iade, 24 saat içinde iade yapılmaz. Hava koşulları nedeniyle MerrySails tarafından iptal edilen turlarda tam iade veya ücretsiz yeniden planlama sunulur.",
+      },
+      {
+        heading: "Rezervasyon ve İpuçları",
+        content:
+          "En iyi akşam yemeği deneyimi için birkaç pratik öneri: Yaz sezonunda (Mayıs–Eylül) tekneler çoğunlukla dolar; bu dönemde en az 3–5 gün önceden rezervasyon yapmanızı öneririz. Kasım–Mart arası kış sezonunda son dakika rezervasyon daha kolaydır. Rezervasyon için [İstanbul Akşam Yemeği Turu](/istanbul-dinner-cruise) sayfamızı ziyaret edin ya da WhatsApp (+90 537 040 68 22) üzerinden direkt iletişime geçin. Yemeksiz gün batımı turu için [Boğaz Gün Batımı Turu](/cruises/bosphorus-sunset-cruise) seçeneğine bakın.",
+        proTip:
+          "En iyi masa konumu için: Gold Soft Drinks veya Gold Unlimited paketini seçin ve rezervasyon sırasında 'sahne önü masa' talebinizi belirtin. Erken gelen misafirler (~20:15 iskelede) genellikle tercih ettikleri konumu seçebilir.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Akşam yemeği turu ne kadar sürer?",
+        a: "Tur yaklaşık 3,5 saat sürer. Kabataş İskelesi'nden saat 20:30'da hareket eder, gece 00:00'da geri döner.",
+      },
+      {
+        q: "Alkol dahil mi?",
+        a: "Alkolsüz paketlerde (Silver Soft Drinks €30 ve Gold Soft Drinks €80) sınırsız alkolsüz içecek dahildir. Silver Alcoholic (€45) pakette yerel alkollü içecekler, Gold Unlimited (€90) pakette ise sınırsız alkol dahildir.",
+      },
+      {
+        q: "Vejetaryen menü var mı?",
+        a: "Evet. Açık büfenin büyük bölümü doğası gereği vejetaryendir. Tam vegan menü için rezervasyon sırasında önceden bildirim yapmanız gerekmektedir. Gluten alerjisi ve diğer diyet gereksinimleri de önceden belirtilerek karşılanabilir.",
+      },
+      {
+        q: "Kaç kişi katılabilir?",
+        a: "Akşam yemeği turu paylaşımlı bir deneyimdir; teknede farklı gruplardan yaklaşık 150–200 misafir yer alır. Özel grup rezervasyonu veya tekne kiralama için ayrıca iletişime geçebilirsiniz.",
+      },
+      {
+        q: "Çocuklar için uygun mu?",
+        a: "Evet, tur ailelere uygundur. 12 yaş altı çocuklar için indirimli fiyat uygulanır; 5 yaş altı ücretsizdir. Folklor gösterisi ve müzik tüm yaş gruplarına hitap eder. Erken uyku saati olan küçük çocuklar için turın başlangıç saatini (20:30) göz önünde bulundurunuz.",
+      },
+      {
+        q: "En iyi masa konumu hangisi?",
+        a: "Sahne yakınlığı ve manzara açısından Gold paketlerin VIP sahne yakını masaları öne çıkar. Boğaz manzarası için pencere kenarı masalar tercih edilmeli; bu talep rezervasyon sırasında belirtilmelidir.",
+      },
+      {
+        q: "İptal politikası nedir?",
+        a: "48 saat öncesine kadar tam iade yapılır. 24–48 saat arasında %50 iade uygulanır. 24 saattan kısa sürede iptal durumunda iade yapılmaz. Hava koşulları nedeniyle MerrySails tarafından iptal edilen turlarda tam iade veya ücretsiz yeniden planlama sunulur.",
+      },
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise"],
+    relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-yat-kiralama-rehberi-2026"],
+  },
+
+  {
+    slug: "istanbul-bogaz-gun-batimi-turu-deneyimi",
+    locale: "tr",
+    title: "İstanbul Boğaz Gün Batımı Turu Deneyimi: Paylaşımlı Tur Nasıl Bir Şey?",
+    metaDescription:
+      "Boğaz gün batımı turu deneyimi: rota, ışık, rehberli anlatım ve pratik bilgiler. Paylaşımlı tur €40, 2,5 saat, Ortaköy'den kalkış. 2026 güncel rehberi.",
+    excerpt:
+      "Boğaz gün batımı turu deneyimi, İstanbul'u en dramatik ışıkta görmek için eşsiz bir fırsat sunar. Rota, sezon farkları, fotoğraf ipuçları ve paylaşımlı-özel tur karşılaştırması.",
+    category: "cruise-guide",
+    date: "2026-04-29",
+    readTime: "9 dk okuma",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt: "İstanbul Boğazı'nda gün batımı teknesi — köprü ve minareler altın ışıkta",
+    keywords: [
+      "boğaz gün batımı turu deneyimi",
+      "istanbul gün batımı tekne turu nasıl",
+      "bosphorus sunset cruise yorumlar",
+      "boğaz günbatımı turu ne gibi",
+      "istanbul günbatımı tekne turu 2026",
+      "ortaköy günbatımı turu",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Paylaşımlı gün batımı turu kişi başı €40 — en iyi fiyat-değer dengesi için altın seçim",
+      "Rota: Ortaköy → Dolmabahçe → Bebek → Rumeli Hisarı → köprü altı — 2,5 saatte Boğaz'ın özü",
+      "Gün batımı renkleri Eylül–Ekim'de en dramatik; Haziran'da en uzun (20:30'a kadar) parlak ışık",
+      "Tekne ~25 kişilik grupla hareket eder, rehber tüm tur boyunca Türkçe/İngilizce anlatım yapar",
+    ],
+    sections: [
+      {
+        heading: "Paylaşımlı Boğaz Gün Batımı Turu: İlk Saniyeden Son Saniyeye",
+        content:
+          "Boğaz gün batımı turu deneyimi, Ortaköy İskelesi'nden tekneye adım attığınız anda başlar. İstanbul'un ikonik silüeti henüz günışığındayken tekne yavaşça ilerler; Dolmabahçe Sarayı'nın sarı taşları görünür, Beşiktaş'ın gürültüsü geride kalır. Ardından Bebek Koyu'nun sakin suları, Rumeli Hisarı'nın 15. yüzyıldan kalma taşları, Boğaz Köprüsü'nün olağanüstü genişliği — ve tam bu anda güneş batı ufkunda alçalmaya başlar. Profesyonel rehberin Türkçe ve İngilizce anlattığı tarihi bilgiler eşliğinde 2,5 saat, nasıl geçtiğini anlamadan tamamlanır. 50.000'den fazla misafiri ağırlamış TÜRSAB A Grubu lisanslı MerrySails ile bu tur her yaştan ve her kültürden ziyaretçinin favorisi olmaya devam ediyor.",
+        callout: {
+          type: "tip",
+          text:
+            "Fotoğraf için en iyi konum: teknenin ön güvertesinde, sol (Avrupa) tarafında durun. Boğaz Köprüsü'ne ve Rumeli Hisarı'na yaklaşırken güneşin açısı bu konumdan en dramatik arka planı oluşturur.",
+        },
+      },
+      {
+        heading: "Güzergah: Hangi Yapıları ve Manzaraları Görürsünüz?",
+        content:
+          "Boğaz gün batımı turunun standart güzergahı, Avrupa yakasının en önemli tarihi ve doğal noktalarını kapsar. Ortaköy'den başlayıp köprü altından geçerek kuzeye ilerleyen tur, dönüşte gün batımı ışığının en iyi açısını yakalar:",
+        table: {
+          headers: ["Lokasyon", "Görülen Yapılar", "Tahmini Süre"],
+          rows: [
+            ["Ortaköy İskelesi (kalkış)", "Ortaköy Camii, Çırağan Sarayı silüeti", "Kalkış noktası"],
+            ["Dolmabahçe", "Osmanlı'nın son sarayı, saat kulesi, deniz kapısı", "~10 dk"],
+            ["Beşiktaş – Arnavutköy", "Kıyı yalıları, Boğaz'ın geleneksel Türk evleri", "~15 dk"],
+            ["Bebek Koyu", "Bebek sahili, yelken kulübü, arka planda Rumeli Hisarı", "~20 dk"],
+            ["Rumeli Hisarı", "15. yüzyıl Osmanlı kalesi, tam güzergah noktası", "~25 dk"],
+            ["Boğaz Köprüsü (15 Temmuz)", "İki kıtayı birleştiren 1560 m köprü altından geçiş", "~30 dk"],
+            ["Ortaköy'e dönüş", "Gün batımı ışığında Ortaköy Camii ve İstanbul silueti", "Bitiş noktası"],
+          ],
+        },
+        proTip:
+          "Güzergah, koşullara göre küçük değişiklikler gösterebilir. Kaptanın kararıyla Bebek'te kısa demir atılabilir veya köprü geçişi yoğunluğa göre ayarlanabilir. Özel turlarda güzergah tamamen özelleştirilebilir.",
+      },
+      {
+        heading: "Renk ve Işık: Hangi Ay En Güzel Gün Batımını Sunar?",
+        content:
+          "İstanbul'un coğrafyası, her aylık gün batımını farklı bir deneyime dönüştürür. Şehrin batıya bakan Avrupa yakası kıyıları, güneşin tam karşısında konumlanır ve gün batımı ışığını doğrudan alır. Sezona göre ışık kalitesi ve atmosfer:",
+        table: {
+          headers: ["Ay", "Gün Batımı Saati", "Işık Kalitesi", "Avantaj / Dezavantaj"],
+          rows: [
+            ["Ocak–Şubat", "17:30–18:15", "Düşük açı, altın ton", "Dramatik ışık; soğuk hava, az kalabalık"],
+            ["Mart–Nisan", "19:00–19:45", "Yumuşak pembe–turuncu", "İdeal iklim, lale sezonu, orta kalabalık"],
+            ["Mayıs–Haziran", "20:00–20:30", "Uzun altın saat", "En uzun gün batımı; yoğun sezon başlangıcı"],
+            ["Temmuz–Ağustos", "20:00–20:15", "Parlak, net gökyüzü", "En kalabalık dönem; erken rezervasyon şart"],
+            ["Eylül–Ekim", "19:00–19:45", "Turuncu-mor gradient", "En dramatik renkler; ideal hava, düşen kalabalık"],
+            ["Kasım–Aralık", "16:45–17:30", "Hızlı, güçlü renkler", "Kısa ama çarpıcı; kış atmosferi, az kalabalık"],
+          ],
+        },
+        expertQuote: {
+          text: "Eylül ve Ekim'de Boğaz'ın üzerindeki hava kütlelerinin karışımı inanılmaz bulut formasyonları yaratır. Güneş batarken bulutların alt yüzeyine yansıyan pembe-turuncu ışık, hayatınızda gördüğünüz en güzel fotoğraf karelerinden birini oluşturur.",
+          author: "Kaptan Ahmet Yılmaz",
+          title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
+        },
+      },
+      {
+        heading: "Rehberli Tur Deneyimi: Kim Anlatır, Ne Anlatır?",
+        content:
+          "MerrySails gün batımı turlarında lisanslı profesyonel rehber eşliği standarttır. Rehberler Kültür Bakanlığı onaylı lisansa sahip, Türkçe ve İngilizce akıcı anlatım yapabilen uzman kişilerdir. Tur boyunca ele alınan başlıca konular:",
+        list: [
+          "Dolmabahçe Sarayı'nın tarihi: 1843–1856 yılları arasında inşa edilen, Osmanlı'nın Batılılaşma döneminin sembolü; Atatürk'ün son günlerini geçirdiği yapı",
+          "Boğaz'ın coğrafi önemi: Karadeniz-Marmara geçişi, jeostratejik konum, dünyada en yoğun deniz trafiğinden biri",
+          "Rumeli Hisarı: 1452'de Fatih Sultan Mehmet'in İstanbul kuşatması öncesi 4 ayda inşa ettirdiği hisarın hikayesi",
+          "Boğaz Köprüsü'nün mühendisliği: 1560 metre açıklık, 1973'te inşa edilmiş, dünyada ilk 10 asma köprüden biri",
+          "Boğaz yalıları: 17.–19. yüzyıldan kalma ahşap köşkler, tarihi sahip hikayeleri, mevcut değerleri",
+          "İki kıta fotoğraf noktaları: en iyi kare için rehber önerileri ve açı bilgisi",
+        ],
+        proTip:
+          "Rehberin anlatımını kaçırmamak için teknenin orta bölümünde konumlanın; ses sistemi tüm güverteye yayılır ama rüzgarlı günlerde ön güverte anlatımı zayıf duyulabilir.",
+      },
+      {
+        heading: "Pratik Bilgiler: Kalkış Noktası, Giyim, Götürülecekler",
+        content:
+          "Ortaköy İskelesi'ni bulmak oldukça kolaydır: Beşiktaş metro durağından yürüyerek 15 dakika ya da taksi ile 5 dakika. Adres: Muallim Naci Cad., Ortaköy, Beşiktaş. Kalkış 15–20 dakika öncesinde iskelede olmak, iyi bir konum seçmenizi sağlar.",
+        list: [
+          "Giyim: Yaz aylarında (Mayıs–Eylül) güverte için ince bir üst yeterlidir; akşam serinliğine karşı hafif bir ceket öneririz. Sonbahar-kış döneminde kat kat giyinin — güverte rüzgarı kıyıdan serin gelir.",
+          "Ayakkabı: Güverte yüzeyi düz ve kaymaz olduğundan spor ayakkabı idealdir; topuklu ayakkabı güvenli olmayabilir.",
+          "Fotoğraf ekipmanı: Geniş açılı lens (24–35mm arası) Boğaz köprüsü ve panoramik çekimler için idealdir. Drone kullanımı Boğaz hava sahasında kısıtlı olup özel izin gerektirir.",
+          "Para: Tekne üzerinde bar ve atıştırmalık satışı nakit veya kart kabul eder. Ek içecek için küçük miktarda nakit bulundurun.",
+          "Ulaşım: Dolmuş hattı (Beşiktaş–Ortaköy), metro+yürüyüş veya taksi. Park yeri oldukça kısıtlıdır; araçla geliyorsanız erkenden ayarlayın.",
+        ],
+      },
+      {
+        heading: "Paylaşımlı vs Özel Gün Batımı Turu: Hangisi Sizin İçin?",
+        content:
+          "Her iki seçenek de aynı Boğaz'ı, aynı gün batımını sunar; ancak deneyimin niteliği ve maliyeti belirgin biçimde ayrışır. Doğru seçim, grubunuzun büyüklüğüne, bütçesine ve tercihlerine bağlıdır:",
+        table: {
+          headers: ["Kriter", "Paylaşımlı Tur (€40/kişi)", "Özel Yat Kiralama (€380+)"],
+          rows: [
+            ["Grup büyüklüğü", "~25 kişilik karma grup", "Yalnızca kendi grubunuz (min. 2 kişi)"],
+            ["Güzergah", "Standart, sabit rota", "Tamamen özelleştirilebilir"],
+            ["Duraklar", "Sabit takvim", "Bebek'te demir, Adalar'a uzanma vb."],
+            ["Rehber", "Grup rehberi, tüm gruba", "Opsiyonel, kişisel rehber mümkün"],
+            ["Catering", "İçecek servisi dahil", "Özel menü, ızgara, alkol paketi mümkün"],
+            ["Fotoğraf rahatlığı", "Kalabalık güverte, sıra bekleme", "Tam güverte serbestisi"],
+            ["10 kişi için maliyet", "€400 toplam (€40 × 10)", "€580 toplam (motor yat, 4 saat)"],
+          ],
+        },
+        proTip:
+          "8 veya daha fazla kişilik gruplar için özel yat kiralama, kişi başına düştüğünde paylaşımlı tur fiyatına yaklaşır ya da eşdeğer olabilir — ancak tam güverte, özel rehber ve özelleştirilmiş güzergah gibi ayrıcalıkları da beraberinde getirir.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Gün batımı turu kaç kişilik?",
+        a: "Paylaşımlı gün batımı turu ~25 kişilik gruplarla düzenlenir. Grubunuzun tamamı için özel tekne kiralamak isterseniz özel yat kiralama seçeneğimize başvurabilirsiniz.",
+      },
+      {
+        q: "Tekneye nerede bineceğiz?",
+        a: "Kalkış noktası Ortaköy İskelesi'dir (Muallim Naci Cad., Beşiktaş). Beşiktaş metro durağından yürüyerek 15 dakika, taksiyle 5 dakikadır. Tur saatinden en az 15–20 dakika önce iskelede olmanızı öneririz.",
+      },
+      {
+        q: "Fotoğraf çekmek serbest mi?",
+        a: "Evet, tüm tur boyunca fotoğraf ve video çekimi tamamen serbesttir. Drone kullanımı Boğaz hava sahasında kısıtlı olup özel izin gerektirmektedir — önceden araştırmanızı öneririz.",
+      },
+      {
+        q: "Deniz tutması riski var mı?",
+        a: "Boğaz suları genel olarak sakindir; İstanbul Boğazı'nda dalga yüksekliği nadiren 0,5 metreyi aşar. Deniz tutmasına hassasiyetiniz varsa kalkıştan 1 saat önce ağır yemekten kaçının. Şiddetli hava koşullarında MerrySails tur güvenliğini önceliklendirir.",
+      },
+      {
+        q: "Tur iptal olursa ne olur?",
+        a: "Hava koşulları veya teknik nedenlerle MerrySails tarafından iptal edilen turlarda tam iade yapılır veya ücretsiz yeniden planlama sunulur. Misafir kaynaklı iptallerde 48 saat öncesine kadar tam iade, 24–48 saat arası %50 iade uygulanır.",
+      },
+      {
+        q: "Turu ne kadar önceden rezerve etmeli?",
+        a: "Yüksek sezonda (Haziran–Ağustos) ve hafta sonları en az 3–5 gün önceden, tercihen 1–2 hafta önceden rezervasyon yapmanızı öneririz. Düşük sezonda (Kasım–Mart) son dakika rezervasyon genellikle mümkündür.",
+      },
+      {
+        q: "Özel tur paylaşımlıdan ne kadar farklı?",
+        a: "Özel tur tamamen kendi grubunuza aittir — başka misafir olmaz. Güzergah özelleştirilebilir, catering ve dekorasyon eklenebilir, istediğiniz lokasyonda durabilirsiniz. Paylaşımlı tur ise daha ekonomik (€40/kişi) ve sosyal bir deneyimdir. 8+ kişilik gruplar için özel tur kişi başına maliyet açısından rekabetçi hale gelir.",
+      },
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-aksam-yemegi-turu-rehberi"],
+  },
 ];
