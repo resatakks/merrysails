@@ -96,6 +96,7 @@ const GOOGLE_ADS_CONVERSION_NAMES = {
 type GoogleAdsConversionKey = keyof typeof GOOGLE_ADS_CONVERSION_NAMES;
 
 const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const GOOGLE_ADS_CONVERSION_LABELS: Record<GoogleAdsConversionKey, string | undefined> = {
   abandonment: process.env.NEXT_PUBLIC_GADS_LABEL_ABANDONMENT,
@@ -211,6 +212,14 @@ export function trackEvent(
   const cleanedParams = compactParams(params);
 
   pushToDataLayer(eventName, cleanedParams);
+
+  // Fire directly to GA4 via gtag so events land even when GTM has no matching tag.
+  if (GA_MEASUREMENT_ID) {
+    const gtag = ensureGtag();
+    if (gtag) {
+      gtag("event", eventName, { ...cleanedParams, send_to: GA_MEASUREMENT_ID });
+    }
+  }
 
   if (typeof window.clarity === "function") {
     window.clarity("event", eventName);
@@ -529,6 +538,14 @@ export function trackPageView(path: string) {
   };
 
   pushToDataLayer("page_view", pageViewParams);
+
+  // Direct GA4 page_view — bypasses GTM so data always lands.
+  if (GA_MEASUREMENT_ID) {
+    const gtag = ensureGtag();
+    if (gtag) {
+      gtag("event", "page_view", { ...pageViewParams, send_to: GA_MEASUREMENT_ID });
+    }
+  }
 
   if (trafficAttribution) {
     const firstAttribution = getFirstAttribution(trafficAttribution);
