@@ -4,7 +4,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
 {
     slug: "best-bosphorus-cruise-istanbul-guide",
     title: "How to Compare Bosphorus Cruise Types in Istanbul — 2026 Planning Guide",
-    metaDescription: "Use this Bosphorus cruise planning guide to compare shared sunset, shared dinner, and private yacht options in Istanbul after the main comparison hub.",
+    metaDescription: "Best Bosphorus cruise Istanbul 2026 — compare sunset from €34, dinner from €30, and private yacht from €280. Expert guide to choosing the right option for your budget and group size.",
     excerpt: "Use this support comparison guide after the main Bosphorus cruise hub to understand when sunset, dinner, or private yacht charter is the right fit in Istanbul.",
     category: "cruise-guide",
     date: "2025-12-20",
@@ -310,7 +310,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
 {
     slug: "bosphorus-cruise-departure-points",
     title: "Bosphorus Cruise Departure Points 2026 | Kabataş, Central Piers & Yacht Marinas",
-    metaDescription: "Where do Bosphorus cruises depart from in Istanbul? Kabataş, central public piers, and yacht marinas explained with practical boarding tips for each cruise type.",
+    metaDescription: "Bosphorus cruise departure points Istanbul 2026 — Kabataş pier for sunset & dinner cruises, Kurucesme Marina for private yachts. Exact boarding locations with travel directions for each cruise type.",
     excerpt: "Know exactly where to go for your Bosphorus cruise. This guide covers all departure points in Istanbul with transport directions and tips for each location.",
     category: "cruise-guide",
     date: "2025-11-25",
@@ -528,5 +528,113 @@ export const foundationalCruiseGuides: BlogPost[] = [
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
     relatedPosts: ["bosphorus-cruise-boarding-points-guide-2026", "bosphorus-dinner-cruise-what-to-expect", "istanbul-sunset-cruise-experience"],
-  }
+  },
+  {
+    slug: "bosphorus-cruise-departure-times-istanbul-2026",
+    title: "Bosphorus Cruise Departure Times Istanbul 2026 — When Do Sunset & Evening Cruises Start?",
+    metaDescription: "Bosphorus cruise departure times 2026 by month — sunset cruise departs 18:00–19:30 (seasonal), dinner cruise departs 20:30 year-round. Exact boarding times, moonlight cruise schedule, and what to expect.",
+    excerpt: "Knowing when your Bosphorus cruise departs makes the difference between a golden-hour deck experience and boarding in the dark. Here are exact 2026 departure times for every cruise type, updated monthly.",
+    category: "cruise-guide",
+    date: "2026-04-29",
+    dateModified: "2026-04-29",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80",
+    imageAlt: "Bosphorus cruise boat departing from Kabataş pier at golden hour with Istanbul skyline",
+    author: "captain-ahmet",
+    keywords: ["bosphorus cruise departure time", "bosphorus moonlight cruise istanbul start time", "bosphorus sunset cruise time", "istanbul dinner cruise time", "when does bosphorus cruise start", "bosphorus cruise schedule 2026", "what time bosphorus cruise", "istanbul evening cruise time", "bosphorus cruise april 2026 time", "moonlight cruise istanbul"],
+    relatedPosts: ["bosphorus-night-cruise-guide", "istanbul-sunset-cruise-experience", "bosphorus-cruise-departure-points"],
+    keyTakeaways: [
+      "Sunset cruises depart between 18:00 and 19:30 depending on the month — earliest in deep winter, latest from May through August.",
+      "Istanbul dinner cruises depart at a fixed 20:30 every night of the year and return to the pier around midnight after a 3.5-hour evening on the water.",
+      "April through September delivers the true \"moonlight cruise\" effect — golden hour, twilight, and a rising moon over the strait all in one sailing.",
+      "Arrive 15 minutes before the listed departure time at Kabataş pier (shared cruises) or Kuruçeşme Marina (private yachts) — boats leave on schedule and do not wait.",
+    ],
+    sections: [
+      {
+        heading: "Why Bosphorus Cruise Timing Matters More Than You Think",
+        content: "Istanbul sits at 41 degrees north, which means the city's daylight swings dramatically across the year — sunset can fall anywhere between 16:45 in late December and 20:50 in late June. A Bosphorus cruise is built around that arc of light, so a 30-minute mistake on departure time is the difference between sailing under a glowing pink sky and boarding in full darkness. After running daily departures since 2001 as a TURSAB A Group licensed operator and welcoming over 50,000 guests, we have tightened our schedule month by month so the boat is on the water exactly when the strait looks its best. This guide breaks down every cruise type — sunset, dinner, moonlight, and private yacht — with the exact 2026 departure times you should plan around.",
+      },
+      {
+        heading: "Bosphorus Sunset Cruise: Month-by-Month Departure Schedule",
+        content: "The [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) is our most schedule-sensitive sailing because the entire 2-hour route is timed to put you on deck during golden hour. In January and February the boat leaves at 18:00, in March we shift to 18:30, April moves to 19:00, and from May through August we hold a 19:30 departure to align with Istanbul's longest evenings. September pulls back to 19:00, October to 18:30, and November and December return to 18:00. Boarding opens 15 minutes before departure at Kabataş pier on the European side, just steps from the T1 tram terminus and the Kabataş funicular from Taksim. Every sunset sailing includes soft drinks, Turkish tea and coffee, seasonal fruit, light snacks, and a live English-speaking guide pointing out Dolmabahçe Palace, Ortaköy Mosque, the Bosphorus Bridge, and Rumeli Fortress as you pass.",
+      },
+      {
+        heading: "Istanbul Dinner Cruise: Why 20:30 Never Changes",
+        content: "Unlike the sunset cruise, the [Istanbul Dinner Cruise](/istanbul-dinner-cruise) departs at a fixed 20:30 every night of the year. The reason is simple — dinner cruises are built around a multi-course meal, a Turkish folk show, belly dance, and a Roman dance performance that all need uninterrupted evening hours, not the shifting light that defines a sunset sailing. Boarding opens at 19:45 at Kabataş, dinner service begins shortly after departure, and the boat returns to the pier between 23:45 and 00:15 depending on conditions on the strait. Because the schedule is fixed, we recommend dinner cruises for guests who want a complete night-out experience and care more about the show, the food, and the illuminated palaces than the sunset itself.",
+      },
+      {
+        heading: "The \"Moonlight Cruise\" Window: April Through September",
+        content: "Many travelers ask about a separate \"moonlight cruise\" in Istanbul, and the honest answer is that it is not a different product — it is what a sunset cruise becomes between April and September. When boarding starts at 18:30 to 19:00 and the boat sails until 21:00, you experience three distinct light phases in a single sailing: full golden hour over the European shoreline, blue-hour twilight as the palaces switch on their facade lighting, and finally a rising moon reflected on the strait near Rumeli Hisarı. This triple-phase effect is why Istanbul evening cruises feel so cinematic in late spring and summer — and it is also why our April through September departures sell out fastest. If a moonlight feeling is what you want, book a sunset cruise in this window rather than a dinner cruise, which sails entirely after dark.",
+      },
+      {
+        heading: "Private Yacht Charter: You Choose the Departure Time",
+        content: "Private charters skip the fixed schedule entirely. With [Yacht Charter Istanbul](/yacht-charter-istanbul) you select your own start time, and most guests choose somewhere between 17:00 and 22:00 depending on whether they want a full sunset, a post-dinner cruise, or a late-night sail past illuminated landmarks. Private yachts depart from Kuruçeşme Marina rather than Kabataş — it is a quieter, more upscale boarding point about 15 minutes north along the European shore, with parking available and easy taxi access from Beşiktaş, Bebek, or Taksim. Because the captain works only for your group, the route is also flexible: you can request extra time near the Maiden's Tower for photos, a slow pass along Bebek Bay, or an extended stop in front of Ortaköy Mosque.",
+      },
+      {
+        heading: "How to Board: Arrival, Pier, and Last-Minute Logistics",
+        content: "For all shared cruises, plan to arrive at Kabataş pier at least 15 minutes before the listed departure time. The pier is a 5-minute walk from the T1 tram station and well-signposted in English. Look for the MerrySails check-in point at the dock entrance — present your booking confirmation by name or QR code and a host will direct you to the boat. For private yacht departures from Kuruçeşme Marina, the gate code and exact slip number are sent by SMS and email two hours before sailing. One important note: shared cruise boats depart on schedule and cannot wait, so if you are coming from Sultanahmet, leave at least 45 minutes earlier than you think you need — Istanbul evening traffic is unpredictable. If you miss the boarding window, contact us on WhatsApp at +90 537 040 68 22 and we will rebook you for the next available night, free of charge.",
+      },
+      {
+        heading: "Best Months for Departure Timing in 2026",
+        content: "If you have flexibility on when to visit Istanbul, April and September offer the best combination of departure timing, weather, and crowd levels. April departures at 19:00 give you a 75-minute golden hour with mild temperatures around 16 to 19 degrees Celsius — warm enough for the open upper deck without being uncomfortably hot. September is nearly identical: a 19:00 departure, 75-minute golden hour, and water temperatures still warm from summer. May, June, and July push the departure to 19:30 with stunning long evenings, but the upper decks fill up faster and the strait gets busier with traffic. November through February sailings at 18:00 are quieter and surprisingly beautiful, with crisp air and dramatic low-angle light, though we recommend dressing in layers and reserving an indoor table as a backup.",
+      },
+    ],
+    proTip: "If you want the absolute best deck experience, book an April or September sunset cruise and arrive 20 minutes early instead of 15. The first guests on board claim the upper-deck bow seats, which face directly into the sunset for the entire first hour of the route — by the time we pass under the Bosphorus Bridge, those seats have already captured the postcard shot.",
+    dataTable: "| Month | Sunset Cruise Departs | Dinner Cruise | Golden Hour Duration |\n|---|---|---|---|\n| January–February | 18:00 | 20:30 | ~45 min |\n| March | 18:30 | 20:30 | ~60 min |\n| April | 19:00 | 20:30 | ~75 min |\n| May–June | 19:30 | 20:30 | ~90 min |\n| July–August | 19:30 | 20:30 | ~90 min |\n| September | 19:00 | 20:30 | ~75 min |\n| October | 18:30 | 20:30 | ~60 min |\n| November–December | 18:00 | 20:30 | ~45 min |",
+    calloutText: "MerrySails has been TURSAB A Group licensed since 2001 and our departure schedule is recalibrated every quarter against Istanbul's exact sunset times. Book direct at merrysails.com or message us on WhatsApp at +90 537 040 68 22 — free cancellation up to 24 hours before sailing.",
+  },
+  {
+    slug: "bosphorus-cruise-price-istanbul-2026",
+    title: "Bosphorus Cruise Prices Istanbul 2026 — Full Comparison: Sunset, Dinner & Private Yacht",
+    metaDescription: "Bosphorus cruise prices 2026: sunset cruise from €34, dinner cruise €30–€90 (4 packages), private yacht from €280. What's included at each price, hidden costs to know, and how to book direct for best rate.",
+    excerpt: "Bosphorus cruise prices range from €30 for a shared dinner cruise to €680+ for a VIP private yacht. Here is exactly what each price tier includes in 2026, with no hidden fees.",
+    category: "cruise-guide",
+    date: "2026-04-29",
+    dateModified: "2026-04-29",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Istanbul Bosphorus panorama at sunset from cruise boat deck",
+    author: "captain-ahmet",
+    keywords: ["bosphorus cruise price", "bosphorus cruise cost", "istanbul cruise price 2026", "how much does bosphorus cruise cost", "bosphorus sunset cruise price", "istanbul dinner cruise price", "private bosphorus cruise price", "bosphorus cruise per person", "yacht charter istanbul price", "bosphorus cruise ticket price"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-dinner-cruise-what-to-expect", "istanbul-sunset-cruise-experience"],
+    keyTakeaways: [
+      "Shared sunset cruises start at €34 per person, shared dinner cruises range from €30 to €90 across four packages, and private yacht charters begin at €280 for the entire boat.",
+      "For groups of four or more, a private yacht often beats a shared dinner cruise on per-person value while delivering complete privacy.",
+      "Booking direct at merrysails.com avoids the 15–25% markup that OTAs and Sultanahmet street agents add to the same tickets.",
+      "All prices include applicable taxes and onboard service — gratuity, hotel transfers, and photography are optional add-ons.",
+    ],
+    sections: [
+      {
+        heading: "Bosphorus Cruise Pricing Tiers Explained",
+        content: "Bosphorus cruise prices in Istanbul fall into three clear tiers in 2026, and understanding which tier matches your trip is more important than chasing the lowest headline number. The first tier is the shared sunset cruise at €34 to €40 per person — a 2-hour golden-hour sailing focused on the views and the live guide. The second tier is the shared dinner cruise at €30 to €90 per person, where the price you pay reflects the menu quality and the drinks package, not the boat or the route. The third tier is private yacht charter, starting at €280 for the whole vessel and scaling to €680 for VIP setups. As a TURSAB A Group licensed operator running Bosphorus cruises since 2001 with more than 50,000 guests welcomed, we have priced each tier to match what guests actually receive on board — no hidden fuel surcharges, no port fees added at the dock.",
+      },
+      {
+        heading: "Sunset Cruise: €34 Without Wine, €40 With Wine",
+        content: "The [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) is the most popular entry point for first-time visitors and the best per-euro view experience on the strait. The standard ticket is €34 per person and includes 2 hours on the water, unlimited soft drinks, Turkish tea and coffee, seasonal fruit, light savory and sweet snacks, and a live English-speaking guide narrating the route from Kabataş up to the second Bosphorus bridge and back. The wine upgrade at €40 adds a glass of Turkish white, red, or rosé poured during the golden-hour leg. There are no surge prices on weekends or holidays, no peak-season markups in summer, and children under 6 sail free when accompanied by two paying adults.",
+      },
+      {
+        heading: "Dinner Cruise: Four Packages from €30 to €90",
+        content: "The [Istanbul Dinner Cruise](/istanbul-dinner-cruise) offers four pricing tiers because guests have very different expectations of what a 3.5-hour dinner sailing should be. Silver Soft at €30 per person includes a three-course Turkish dinner, soft drinks, and the full entertainment program — Turkish folk show, belly dance, and Roman dance. Silver Alcoholic at €45 adds local beer, raki, wine, and standard spirits to the same menu. Gold Soft at €80 upgrades the dinner itself to a premium five-course menu with seafood options and better cuts of meat, served at reserved window-side tables. Gold Unlimited Alcoholic at €90 combines the premium menu with truly unlimited alcohol — top-shelf raki, imported wines, and full bar access for the entire 3.5 hours. The boat, the route, and the show are identical across all four packages; only the food and the drinks change.",
+      },
+      {
+        heading: "Private Yacht Charter: €280 to €680 for the Whole Boat",
+        content: "Private yacht pricing works completely differently from shared cruises — you pay per yacht, not per person. The [Yacht Charter Istanbul](/yacht-charter-istanbul) Essential package starts at €280 for a 2-hour sailing on a yacht that comfortably hosts up to 10 guests, with a captain, fuel, soft drinks, and a fruit platter included. The Premium package at €380 adds a hostess, a Turkish meze platter, sparkling wine on arrival, and decorated seating for special occasions. The VIP package at €680 brings full setup — birthday or proposal decoration, professional onboard photography for 30 minutes, premium catering with hot dishes, and a wider drinks selection. Departure is from Kuruçeşme Marina rather than Kabataş, and start times are flexible between 10:00 and 22:00 based on availability.",
+      },
+      {
+        heading: "Per-Person Math: When Private Yacht Beats Dinner Cruise",
+        content: "The pricing tier that confuses guests most is the crossover point between shared dinner cruise and private yacht charter. Run the math for a group of four: Silver Soft dinner cruise costs 4 × €30 = €120, while a private Essential charter costs €280 total — yacht is more expensive at this size. Move to a group of six on Silver Alcoholic: 6 × €45 = €270, almost identical to the €280 private Essential, but the yacht gives you full privacy and a flexible start time. At eight guests on Gold Soft, the comparison flips dramatically — 8 × €80 = €640 for a shared dinner cruise vs €380 for a Premium private yacht with hostess and meze. As a rule of thumb, groups of six or more on any Gold package will save money by switching to a private charter, and any group celebrating a proposal or anniversary almost always prefers the privacy.",
+      },
+      {
+        heading: "What Is Not Included: Hidden Costs to Know",
+        content: "We are direct about what is and is not in the price because surprise charges are a common complaint about Istanbul cruises booked through Sultanahmet street agents. Not included on any MerrySails cruise: gratuity (optional, typical tip is €3 to €5 per guest on shared cruises), hotel transfers (available at €15 per car each way on request), professional photography beyond the VIP package, and any à-la-carte upgrades to premium bottles or imported spirits. There are no port fees, no fuel surcharges, no environmental fees, and no card processing fees added at checkout. The price you see on merrysails.com is the price you pay.",
+      },
+      {
+        heading: "Where to Book for the Best Bosphorus Cruise Price",
+        content: "For 2026, booking direct at merrysails.com is the lowest price for every cruise we operate. Major OTAs like GetYourGuide, Viator, and Tiqets resell our same boats with a 15 to 25 percent markup, and Sultanahmet street agents typically add €10 to €20 per ticket as commission. There is no early-bird discount for booking weeks in advance, but what advance booking does buy you is availability: from May through September, weekend dinner cruises and Saturday sunset cruises sell out 5 to 10 days ahead. Free cancellation applies up to 24 hours before sailing on every booking, so locking in your slot early carries no risk — you can always cancel for free if your plans change.",
+      },
+    ],
+    proTip: "If you are deciding between Silver Alcoholic dinner (€45) and the Sunset Cruise with wine (€40), here is the honest answer: choose the sunset cruise if you came to Istanbul for the views and the photos, choose the dinner cruise if you came for the show and a full evening out. They are different products at almost the same price — not a better-or-worse comparison.",
+    dataTable: "| Cruise Type | Price | Duration | Group Size | Includes |\n|---|---|---|---|---|\n| Sunset Cruise (no wine) | €34/person | 2 hours | Shared | Soft drinks, tea, snacks, guide |\n| Sunset Cruise (with wine) | €40/person | 2 hours | Shared | + Glass of wine |\n| Dinner Silver Soft | €30/person | 3.5 hours | Shared | Dinner, show |\n| Dinner Silver Alcoholic | €45/person | 3.5 hours | Shared | Dinner, show, drinks |\n| Dinner Gold Soft | €80/person | 3.5 hours | Shared | Premium dinner, show |\n| Dinner Gold Unlimited | €90/person | 3.5 hours | Shared | Premium dinner, unlimited alcohol |\n| Private Yacht Essential | €280/yacht | 2 hours | Private (up to 10) | Private deck, captain |\n| Private Yacht Premium | €380/yacht | 2 hours | Private | + Premium service |\n| Private Yacht VIP | €680/yacht | 2 hours | Private | Full VIP setup |",
+    calloutText: "MerrySails is a TURSAB A Group licensed operator running Bosphorus cruises since 2001 with 50,000+ guests welcomed. Book direct at merrysails.com for the lowest 2026 prices, or message us on WhatsApp at +90 537 040 68 22 for group quotes and private yacht availability. Free cancellation up to 24 hours before sailing.",
+  },
 ];

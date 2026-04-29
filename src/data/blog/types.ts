@@ -31,7 +31,10 @@ export interface BlogPost {
   author?: string;
   keyTakeaways?: string[];
   sections: BlogSection[];
-  faqs: { q: string; a: string }[];
-  relatedTours: string[];
+  faqs?: { q: string; a: string }[];
+  relatedTours?: string[];
   relatedPosts?: string[];
+  proTip?: string;
+  dataTable?: string;
+  calloutText?: string;
 }

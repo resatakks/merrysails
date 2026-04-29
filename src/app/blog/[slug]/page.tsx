@@ -99,7 +99,7 @@ export default async function BlogPostPage({
   const cleanExcerpt = cleanContentText(post.excerpt);
 
   const author = getAuthor(post.author || "editorial");
-  const relatedTours = post.relatedTours
+  const relatedTours = (post.relatedTours ?? [])
     .map(getTourBySlug)
     .filter(Boolean)
     .slice(0, 3);
@@ -141,11 +141,11 @@ export default async function BlogPostPage({
 
   // Schema: FAQ
   const faqSchema =
-    post.faqs.length > 0
+    (post.faqs ?? []).length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: post.faqs.map((faq) => ({
+          mainEntity: (post.faqs ?? []).map((faq) => ({
             "@type": "Question",
             name: faq.q,
             acceptedAnswer: { "@type": "Answer", text: faq.a },
@@ -279,13 +279,13 @@ export default async function BlogPostPage({
           </div>
 
           {/* FAQ Section */}
-          {post.faqs.length > 0 && (
+          {(post.faqs ?? []).length > 0 && (
             <div className="blog-faq max-w-4xl mt-12 bg-[var(--surface-alt)] rounded-2xl p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
                 Frequently Asked Questions
               </h2>
               <div className="space-y-5">
-                {post.faqs.map((faq, i) => (
+                {(post.faqs ?? []).map((faq, i) => (
                   <details key={i} className="group bg-white rounded-xl">
                     <summary className="flex items-center justify-between cursor-pointer p-4 font-semibold text-[var(--heading)] hover:text-[var(--brand-primary)] transition-colors">
                       {faq.q}
