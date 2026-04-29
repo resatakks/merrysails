@@ -28,6 +28,10 @@ type LocaleContent = {
   breadcrumbHome: string;
   breadcrumbCurrent: string;
   viewInEnglish: string;
+  faqTitle: string;
+  faqs: { q: string; a: string }[];
+  whyTitle: string;
+  whyItems: { title: string; desc: string }[];
 };
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
@@ -62,6 +66,22 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCurrent: "Tekne Kiralama İstanbul",
     viewInEnglish: "View in English →",
+    faqTitle: "Sık Sorulan Sorular",
+    faqs: [
+      { q: "İstanbul'da tekne kiralama ne kadar?", a: `Saatlik fiyatlar tekne tipine ve kapasitesine göre €${startingRate}'dan başlar. 2 saatlik standart kiralama €${startingRate * 2}'dan, 4 saatlik tam gün paketi ise daha uygun fiyatla sunulur. Kesin fiyat; seçilen tekneye, tarihe ve eklenecek hizmetlere göre belirlenir.` },
+      { q: "Minimum kiralama süresi kaçtır?", a: "Minimum kiralama süresi 2 saattir. Günlük veya yarım günlük kiralamalar da mevcuttur; uzun süreli kiralamalarda daha avantajlı fiyatlar uygulanır." },
+      { q: "Tekneye akşam yemeği veya catering eklenebilir mi?", a: "Evet. Kişi başı menü seçenekleriyle tam catering hizmeti mevcuttur. Balık, et veya vejeteryan menüler arasından seçim yapabilir, içecek paketi de ekleyebilirsiniz. Reservasyon sırasında belirtmeniz yeterli." },
+      { q: "Evlilik teklifi için tekne kiralanabilir mi?", a: "Kesinlikle. Evlilik teklifi tekne kiralama en popüler taleplerimizden biri. Çiçek, mum, gülsuyu ve profesyonel fotoğrafçı desteği ile tam paket hazırlanabilir. Detaylar için WhatsApp'tan ulaşın." },
+      { q: "Tekne güzergahını biz mi belirleriz?", a: "Evet. Standart Boğaz güzergahlarından birini seçebilir ya da özel bir güzergah talep edebilirsiniz. Adalar turu, Sarıyer'e kadar uzun tur veya Anadolu yakasına geçiş gibi seçenekler mevcuttur." },
+      { q: "Kaç kişiye kadar tekne kiralayabiliriz?", a: "Filomuzda 2 kişilik küçük yatlardan 30+ kişilik büyük teknelere kadar seçenekler bulunmaktadır. Büyük grup etkinlikleri için birden fazla tekne koordinasyonu da yapılmaktadır." },
+    ],
+    whyTitle: "Neden MerrySails?",
+    whyItems: [
+      { title: "TÜRSAB A Grubu Lisansı", desc: "2001'den bu yana A Grubu lisanslı. Güvenli rezervasyon, resmi sigorta, yasal güvence." },
+      { title: "Geniş Filo", desc: "Küçük lüks yatlardan büyük etkinlik teknelerine kadar 10+ seçenek." },
+      { title: "Ücretsiz İptal", desc: "48 saat öncesine kadar ücretsiz iptal ve tam para iadesi." },
+      { title: "Özelleştirme", desc: "Yemek, fotoğrafçı, dekorasyon, müzik — her şeyi tek çatı altında organize ediyoruz." },
+    ],
   },
   de: {
     title: `Bootsverleih Istanbul 2026 | Ab €${startingRate}/Stunde | MerrySails`,
@@ -94,6 +114,22 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbHome: "Startseite",
     breadcrumbCurrent: "Bootsverleih Istanbul",
     viewInEnglish: "View in English →",
+    faqTitle: "Häufig gestellte Fragen",
+    faqs: [
+      { q: "Was kostet ein Bootsverleih in Istanbul?", a: `Die Stundenpreise beginnen ab €${startingRate}, abhängig von Bootstyp und Kapazität. Ein 2-stündiger Standardverleih beginnt ab €${startingRate * 2}. Der genaue Preis richtet sich nach Boot, Datum und Zusatzleistungen.` },
+      { q: "Wie lange ist die Mindestmietdauer?", a: "Die Mindestmietdauer beträgt 2 Stunden. Halbtages- und Tagesmieten sind ebenfalls verfügbar; bei längeren Buchungen gelten günstigere Konditionen." },
+      { q: "Kann Dinner oder Catering hinzugebucht werden?", a: "Ja. Vollständiger Catering-Service mit Menüauswahl pro Person ist verfügbar. Wählen Sie zwischen Fisch-, Fleisch- oder vegetarischen Menüs und fügen Sie optional ein Getränkepaket hinzu." },
+      { q: "Kann ich ein Boot für einen Heiratsantrag mieten?", a: "Absolut. Heiratsantrags-Bootsmieten gehören zu unseren beliebtesten Anfragen. Wir organisieren Blumen, Kerzen, Rosenblätter und professionellen Fotografen auf Wunsch als Komplettpaket." },
+      { q: "Können wir die Route selbst festlegen?", a: "Ja. Sie wählen aus Standardrouten auf dem Bosporus oder fordern eine individuelle Route an: Prinzeninseln, Fahrt bis Sarıyer oder zur asiatischen Seite." },
+      { q: "Für wie viele Personen sind Boote erhältlich?", a: "Unsere Flotte reicht von kleinen Luxusjachten für 2 Personen bis hin zu größeren Schiffen für 30+ Personen. Für große Gruppenveranstaltungen koordinieren wir auch mehrere Boote." },
+    ],
+    whyTitle: "Warum MerrySails?",
+    whyItems: [
+      { title: "TÜRSAB A-Gruppe Lizenz", desc: "Seit 2001 A-Gruppe lizenziert. Sichere Buchung, offizielle Versicherung, rechtliche Absicherung." },
+      { title: "Große Flotte", desc: "Von kleinen Luxusjachten bis großen Veranstaltungsbooten — über 10 Optionen." },
+      { title: "Kostenlose Stornierung", desc: "Kostenlose Stornierung und volle Rückerstattung bis 48 Stunden vor Abfahrt." },
+      { title: "Rundum-Service", desc: "Dinner, Fotograf, Dekoration, Musik — alles aus einer Hand." },
+    ],
   },
   fr: {
     title: `Location Bateau Istanbul 2026 | À partir de €${startingRate}/h | MerrySails`,
@@ -126,6 +162,22 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Location de Bateau Istanbul",
     viewInEnglish: "View in English →",
+    faqTitle: "Questions fréquentes",
+    faqs: [
+      { q: "Quel est le prix d'une location de bateau à Istanbul ?", a: `Les tarifs horaires commencent à partir de €${startingRate} selon le type et la capacité du bateau. Une location standard de 2 heures commence à €${startingRate * 2}. Le tarif exact dépend du bateau choisi, de la date et des services inclus.` },
+      { q: "Quelle est la durée minimale de location ?", a: "La durée minimale est de 2 heures. Des locations à la demi-journée ou à la journée entière sont également disponibles, avec des tarifs plus avantageux." },
+      { q: "Peut-on ajouter un dîner ou un traiteur ?", a: "Oui. Un service traiteur complet avec menu au choix par personne est disponible. Choisissez entre des menus poisson, viande ou végétarien, et ajoutez un forfait boissons si vous le souhaitez." },
+      { q: "Peut-on louer un bateau pour une demande en mariage ?", a: "Absolument. Les locations de bateaux pour demandes en mariage font partie de nos demandes les plus fréquentes. Nous organisons fleurs, bougies, pétales de rose et photographe professionnel en package complet sur demande." },
+      { q: "Peut-on choisir l'itinéraire soi-même ?", a: "Oui. Vous choisissez parmi des itinéraires standard sur le Bosphore ou demandez un itinéraire personnalisé : îles des Princes, remontée jusqu'à Sarıyer ou traversée vers la rive asiatique." },
+      { q: "Combien de personnes les bateaux peuvent-ils accueillir ?", a: "Notre flotte va de petits yachts de luxe pour 2 personnes à de grands bateaux pour 30+ personnes. Pour les grands événements en groupe, nous coordonnons aussi plusieurs bateaux." },
+    ],
+    whyTitle: "Pourquoi MerrySails ?",
+    whyItems: [
+      { title: "Licence TÜRSAB groupe A", desc: "Licencié groupe A depuis 2001. Réservation sécurisée, assurance officielle, garantie légale." },
+      { title: "Grande flotte", desc: "Des petits yachts de luxe aux grands bateaux événementiels — plus de 10 options." },
+      { title: "Annulation gratuite", desc: "Annulation gratuite et remboursement intégral jusqu'à 48 heures avant le départ." },
+      { title: "Service clé en main", desc: "Dîner, photographe, décoration, musique — tout organisé en un seul endroit." },
+    ],
   },
   nl: {
     title: `Boothuur Istanbul 2026 | Vanaf €${startingRate}/uur | MerrySails`,
@@ -158,6 +210,22 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Boothuur Istanbul",
     viewInEnglish: "View in English →",
+    faqTitle: "Veelgestelde vragen",
+    faqs: [
+      { q: "Wat kost boothuur in Istanbul?", a: `De uurtarieven beginnen vanaf €${startingRate}, afhankelijk van het type en de capaciteit van de boot. Een standaardhuur van 2 uur begint vanaf €${startingRate * 2}. De exacte prijs hangt af van de gekozen boot, datum en extra diensten.` },
+      { q: "Wat is de minimale huurduur?", a: "De minimale huurduur is 2 uur. Halve dag- en volledige dagboekingen zijn ook beschikbaar, met voordeligere tarieven bij langere boekingen." },
+      { q: "Kan een diner of catering worden toegevoegd?", a: "Ja. Volledige cateringservice met menukeuze per persoon is beschikbaar. Kies uit vis-, vlees- of vegetarische menu's en voeg optioneel een drankenpakket toe." },
+      { q: "Kan ik een boot huren voor een huwelijksaanzoek?", a: "Absoluut. Boothuur voor huwelijksaanzoeken is een van onze populairste aanvragen. We organiseren bloemen, kaarsen, rozenblaadjes en een professionele fotograaf als compleet pakket op aanvraag." },
+      { q: "Kunnen we de route zelf kiezen?", a: "Ja. Kies uit standaardroutes op de Bosporus of vraag een gepersonaliseerde route aan: Prinseilanden, vaart tot Sarıyer of oversteek naar de Aziatische kant." },
+      { q: "Voor hoeveel personen zijn boten beschikbaar?", a: "Onze vloot varieert van kleine luxe jachten voor 2 personen tot grote boten voor 30+ personen. Voor grote groepsevenementen coördineren we ook meerdere boten." },
+    ],
+    whyTitle: "Waarom MerrySails?",
+    whyItems: [
+      { title: "TÜRSAB A-groep certificering", desc: "Gecertificeerd A-groep sinds 2001. Veilig boeken, officiële verzekering, juridische zekerheid." },
+      { title: "Grote vloot", desc: "Van kleine luxe jachten tot grote evenementsboten — meer dan 10 opties." },
+      { title: "Gratis annulering", desc: "Gratis annulering en volledige terugbetaling tot 48 uur voor vertrek." },
+      { title: "Alles-in-één service", desc: "Diner, fotograaf, decoratie, muziek — alles op één plek geregeld." },
+    ],
   },
 };
 
@@ -232,11 +300,18 @@ export default async function LocaleBoatRentalPage({
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["TouristTrip", "Service"],
     name: t.heroTitle,
     description: t.description,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "Istanbul" },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: "5",
+      worstRating: "1",
+    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: startingRate,
@@ -246,16 +321,21 @@ export default async function LocaleBoatRentalPage({
     url: canonicalUrl,
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
@@ -343,11 +423,48 @@ export default async function LocaleBoatRentalPage({
             </div>
           </section>
 
+          {/* Why MerrySails */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-6">{t.whyTitle}</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {t.whyItems.map((item) => (
+                <div key={item.title} className="flex gap-3">
+                  <div className="mt-1 h-5 w-5 shrink-0 rounded-full bg-[var(--brand-primary)]/15 flex items-center justify-center">
+                    <svg className="h-3 w-3 text-[var(--brand-primary)]" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[var(--heading)]">{item.title}</p>
+                    <p className="mt-0.5 text-sm leading-relaxed text-[var(--body-text)]">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-6">{t.faqTitle}</h2>
+            <div className="flex flex-col gap-3">
+              {t.faqs.map((faq) => (
+                <details key={faq.q} className="group rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] overflow-hidden">
+                  <summary className="flex cursor-pointer items-center justify-between px-5 py-4 font-semibold text-[var(--heading)] list-none">
+                    <span>{faq.q}</span>
+                    <svg className="h-4 w-4 shrink-0 text-[var(--text-muted)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="border-t border-[var(--line)] bg-white px-5 py-4 text-sm leading-relaxed text-[var(--body-text)]">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+
           <div className="mt-8 flex justify-end">
-            <Link
-              href="/boat-rental-istanbul"
-              className="text-sm text-[var(--text-muted)] hover:text-[var(--brand-primary)]"
-            >
+            <Link href="/boat-rental-istanbul" className="text-sm text-[var(--text-muted)] hover:text-[var(--brand-primary)]">
               {t.viewInEnglish}
             </Link>
           </div>

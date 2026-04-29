@@ -178,7 +178,7 @@ export async function POST(req: NextRequest) {
   const creds = readAdsCreds();
   if (!creds) return NextResponse.json({ skipped: "missing_credentials" });
 
-  let body: { action?: string; multiplier?: number; keywords?: string[] };
+  let body: { action?: string; multiplier?: number; keywords?: string[]; campaignId?: string; budgetTry?: number };
   try { body = await req.json(); }
   catch { return NextResponse.json({ error: "invalid_json" }, { status: 400 }); }
 
@@ -249,6 +249,45 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ ok: true, multiplier, updated: updates });
+  }
+
+  // --- set_budget ---
+  if (body.action === "set_budget") {
+    const campaignId = String(body.campaignId ?? "").trim();
+    const budgetTry = Number(body.budgetTry);
+    if (!campaignId || isNaN(budgetTry) || budgetTry < 10 || budgetTry > 5000) {
+      return NextResponse.json({ error: "invalid_params", hint: "campaignId and budgetTry (10–5000) required" }, { status: 400 });
+    }
+
+    type BudgetRow = {
+      campaign?: { id?: string };
+      campaignBudget?: { resourceName?: string; amountMicros?: string };
+    };
+    const data = await adsSearch(creds, token, `
+      SELECT campaign.id, campaign_budget.resource_name, campaign_budget.amount_micros
+      FROM campaign
+      WHERE campaign.id = '${campaignId}'
+    `);
+    const row = ((data.results ?? []) as BudgetRow[])[0];
+    if (!row?.campaignBudget?.resourceName) {
+      return NextResponse.json({ error: "campaign_not_found" }, { status: 404 });
+    }
+
+    const mutateUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignBudgets:mutate`;
+    const mutateRes = await fetch(mutateUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({
+        operations: [{
+          update: { resourceName: row.campaignBudget.resourceName, amountMicros: String(Math.round(budgetTry * 1_000_000)) },
+          updateMask: "amountMicros",
+        }],
+      }),
+    });
+    if (!mutateRes.ok) {
+      return NextResponse.json({ error: "mutate_failed", details: await mutateRes.text() }, { status: 502 });
+    }
+    return NextResponse.json({ ok: true, campaignId, oldTry: Number(row.campaignBudget.amountMicros) / 1_000_000, newTry: budgetTry });
   }
 
   // --- add_negatives ---

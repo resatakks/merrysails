@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, type Tour } from "@/data/tours";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 
 export const revalidate = 3600;
@@ -33,6 +33,10 @@ type LocaleContent = {
   faqs: { q: string; a: string }[];
   otherOptionsTitle: string;
   otherOptions: { href: string; title: string; desc: string }[];
+  ctaTitle: string;
+  ctaSubtitle: string;
+  ctaBookLabel: string;
+  ctaWhatsappLabel: string;
 };
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
@@ -97,6 +101,10 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "View this tour in English.",
       },
     ],
+    ctaTitle: "Hemen Yerinizi Ayırın",
+    ctaSubtitle: "Boğaz'da altın saat manzarası için online rezervasyon yapın.",
+    ctaBookLabel: "Online Rezervasyon →",
+    ctaWhatsappLabel: "WhatsApp ile Yaz",
   },
   de: {
     title: "Bosporus Sonnenuntergangs-Kreuzfahrt | MerrySails",
@@ -159,6 +167,10 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "View this tour in English.",
       },
     ],
+    ctaTitle: "Jetzt buchen",
+    ctaSubtitle: "Sichern Sie sich Ihren Platz für die Bosporus Sonnenuntergang-Kreuzfahrt.",
+    ctaBookLabel: "Online buchen →",
+    ctaWhatsappLabel: "Per WhatsApp anfragen",
   },
   fr: {
     title: "Croisière Coucher de Soleil Bosphore | MerrySails",
@@ -221,6 +233,10 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "View this tour in English.",
       },
     ],
+    ctaTitle: "Réservez maintenant",
+    ctaSubtitle: "Réservez votre place pour la croisière coucher de soleil sur le Bosphore.",
+    ctaBookLabel: "Réserver en ligne →",
+    ctaWhatsappLabel: "Contacter par WhatsApp",
   },
   nl: {
     title: "Bosporus Zonsondergang Cruise Istanbul 2026 | MerrySails",
@@ -283,6 +299,10 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "View this tour in English.",
       },
     ],
+    ctaTitle: "Reserveer nu",
+    ctaSubtitle: "Boek uw plek voor de Bosporus zonsondergang cruise.",
+    ctaBookLabel: "Online reserveren →",
+    ctaWhatsappLabel: "WhatsApp sturen",
   },
 };
 
@@ -308,7 +328,10 @@ export async function generateMetadata({
       languages: {
         "x-default": `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
         en: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
-        [locale]: canonicalUrl,
+        tr: `${SITE_URL}/tr/cruises/bosphorus-sunset-cruise`,
+        de: `${SITE_URL}/de/cruises/bosphorus-sunset-cruise`,
+        fr: `${SITE_URL}/fr/cruises/bosphorus-sunset-cruise`,
+        nl: `${SITE_URL}/nl/cruises/bosphorus-sunset-cruise`,
       },
     },
     openGraph: {
@@ -379,10 +402,21 @@ export default async function LocaleSunsetCruisePage({
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
@@ -451,6 +485,30 @@ export default async function LocaleSunsetCruisePage({
               ))}
             </div>
           </section>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="py-16 bg-[var(--brand-primary)]">
+        <div className="container-main text-center">
+          <h2 className="text-3xl font-bold text-white mb-3">{t.ctaTitle}</h2>
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">{t.ctaSubtitle}</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href={`/${locale}/reservation`}
+              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-[var(--brand-primary)] shadow hover:bg-white/90 transition-colors"
+            >
+              {t.ctaBookLabel}
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+            >
+              {t.ctaWhatsappLabel}
+            </a>
+          </div>
         </div>
       </div>
     </>
