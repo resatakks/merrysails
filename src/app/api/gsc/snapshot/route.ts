@@ -61,52 +61,63 @@ export async function GET(req: NextRequest) {
   const siteUrl = process.env.GSC_SITE_URL ?? "sc-domain:merrysails.com";
   const date = snapshotDate();
 
-  // Skip if already stored
-  const existing = await prisma.gscSnapshot.findUnique({
-    where: { date: new Date(date) },
-  });
-  if (existing) {
-    return NextResponse.json({ skipped: true, date, message: "Already stored" });
+  try {
+    // Skip if already stored
+    const existing = await prisma.gscSnapshot.findUnique({
+      where: { date: new Date(date) },
+    });
+    if (existing) {
+      return NextResponse.json({ skipped: true, date, message: "Already stored" });
+    }
+
+    let accessToken: string;
+    try {
+      accessToken = await getAccessToken();
+    } catch (err) {
+      return NextResponse.json({ error: "oauth_failed", details: String(err) }, { status: 502 });
+    }
+
+    // Fetch totals via query dimension (top 200 rows, aggregate)
+    const [totalsRes, pagesRes] = await Promise.all([
+      queryGsc(accessToken, siteUrl, date, ["query"]),
+      queryGsc(accessToken, siteUrl, date, ["page"]),
+    ]);
+
+    const rows = totalsRes.rows ?? [];
+    const totalClicks = rows.reduce((s, r) => s + r.clicks, 0);
+    const totalImpressions = rows.reduce((s, r) => s + r.impressions, 0);
+    const totalCtr = totalImpressions > 0 ? totalClicks / totalImpressions : 0;
+    const avgPosition = rows.length > 0
+      ? rows.reduce((s, r) => s + r.position * r.impressions, 0) / Math.max(totalImpressions, 1)
+      : 0;
+
+    const topQueriesSorted = [...rows]
+      .sort((a, b) => b.clicks - a.clicks)
+      .slice(0, 10)
+      .map((r) => ({ query: r.keys[0], clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position }));
+
+    const topPages = (pagesRes.rows ?? [])
+      .sort((a, b) => b.clicks - a.clicks)
+      .slice(0, 10)
+      .map((r) => ({ page: r.keys[0], clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position }));
+
+    const snapshot = await prisma.gscSnapshot.create({
+      data: {
+        date: new Date(date),
+        clicks: totalClicks,
+        impressions: totalImpressions,
+        ctr: totalCtr,
+        position: avgPosition,
+        topPages,
+        topQueries: topQueriesSorted,
+      },
+    });
+
+    return NextResponse.json({ success: true, date, snapshot });
+  } catch (err) {
+    console.error("[gsc-snapshot] error:", err);
+    return NextResponse.json({ error: "internal", details: String(err) }, { status: 500 });
   }
-
-  const accessToken = await getAccessToken();
-
-  // Fetch site-wide totals (no dimension)
-  const totalsRes = await queryGsc(accessToken, siteUrl, date, ["query"]);
-  const rows = totalsRes.rows ?? [];
-  const totalClicks = rows.reduce((s, r) => s + r.clicks, 0);
-  const totalImpressions = rows.reduce((s, r) => s + r.impressions, 0);
-  const totalCtr = totalImpressions > 0 ? totalClicks / totalImpressions : 0;
-  const avgPosition = rows.length > 0
-    ? rows.reduce((s, r) => s + r.position * r.impressions, 0) / Math.max(totalImpressions, 1)
-    : 0;
-
-  // Top queries
-  const topQueriesSorted = [...rows]
-    .sort((a, b) => b.clicks - a.clicks)
-    .slice(0, 10)
-    .map((r) => ({ query: r.keys[0], clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position }));
-
-  // Top pages
-  const pagesRes = await queryGsc(accessToken, siteUrl, date, ["page"]);
-  const topPages = (pagesRes.rows ?? [])
-    .sort((a, b) => b.clicks - a.clicks)
-    .slice(0, 10)
-    .map((r) => ({ page: r.keys[0], clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position }));
-
-  const snapshot = await prisma.gscSnapshot.create({
-    data: {
-      date: new Date(date),
-      clicks: totalClicks,
-      impressions: totalImpressions,
-      ctr: totalCtr,
-      position: avgPosition,
-      topPages,
-      topQueries: topQueriesSorted,
-    },
-  });
-
-  return NextResponse.json({ success: true, date, snapshot });
 }
 
 export const runtime = "nodejs";
