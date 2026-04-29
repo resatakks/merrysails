@@ -29,6 +29,10 @@
     {
       "path": "/api/google-ads/safety-check",
       "schedule": "0 */2 * * *"
+    },
+    {
+      "path": "/api/google-ads/budget-review",
+      "schedule": "0 6 * * 1"
     }
   ],
   "git": {
