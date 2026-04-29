@@ -211,15 +211,11 @@ export function trackEvent(
 
   const cleanedParams = compactParams(params);
 
+  // dataLayer push — GTM picks this up and routes to GA4 / Ads tags.
+  // Direct gtag GA4 calls are intentionally NOT used here because GTM has a
+  // GA4 Configuration tag on all pages; calling gtag('event', ..., send_to: GA_ID)
+  // alongside GTM would double-count events in GA4.
   pushToDataLayer(eventName, cleanedParams);
-
-  // Fire directly to GA4 via gtag so events land even when GTM has no matching tag.
-  if (GA_MEASUREMENT_ID) {
-    const gtag = ensureGtag();
-    if (gtag) {
-      gtag("event", eventName, { ...cleanedParams, send_to: GA_MEASUREMENT_ID });
-    }
-  }
 
   if (typeof window.clarity === "function") {
     window.clarity("event", eventName);
@@ -538,14 +534,6 @@ export function trackPageView(path: string) {
   };
 
   pushToDataLayer("page_view", pageViewParams);
-
-  // Direct GA4 page_view — bypasses GTM so data always lands.
-  if (GA_MEASUREMENT_ID) {
-    const gtag = ensureGtag();
-    if (gtag) {
-      gtag("event", "page_view", { ...pageViewParams, send_to: GA_MEASUREMENT_ID });
-    }
-  }
 
   if (trafficAttribution) {
     const firstAttribution = getFirstAttribution(trafficAttribution);

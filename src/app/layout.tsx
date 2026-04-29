@@ -281,10 +281,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        {/* Google tag (gtag.js) — loaded directly so gtag() is always available
-            for Ads + GA4 conversion calls regardless of GTM configuration.
-            Consent mode v2: all granted — no cookie banner needed for this site. */}
-        {(GA_MEASUREMENT_ID || GOOGLE_ADS_ID) ? (
+        {/* Google tag (gtag.js) loaded directly to make window.gtag available
+            BEFORE GTM executes. Primary purpose:
+            1) Set Google Consent Mode v2 defaults (all granted — no cookie banner)
+            2) Configure the Google Ads ID so direct gtag('event','conversion')
+               calls for purchase deduplification reach Ads servers
+            GTM handles GA4 configuration — we deliberately do NOT call
+            gtag('config', GA_MEASUREMENT_ID) here to avoid duplicate page views. */}
+        {GOOGLE_ADS_ID ? (
           <>
             <Script
               id="gtag-consent-init"
@@ -306,18 +310,14 @@ export default function RootLayout({
             />
             <Script
               id="gtag-js"
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID || GOOGLE_ADS_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
               strategy="afterInteractive"
             />
             <Script
-              id="gtag-config"
+              id="gtag-ads-config"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
-                __html: `
-                  gtag('js', new Date());
-                  ${GA_MEASUREMENT_ID ? `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });` : ""}
-                  ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
-                `,
+                __html: `gtag('js', new Date()); gtag('config', '${GOOGLE_ADS_ID}');`,
               }}
             />
           </>
