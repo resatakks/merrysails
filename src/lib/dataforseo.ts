@@ -187,58 +187,61 @@ export interface LlmMention {
 }
 
 /**
- * Check if brand appears in AI/LLM responses.
- * Requires LLM Mentions API access (paid add-on).
+ * Check if domain appears in LLM AI responses.
+ * Uses DataForSEO AI Optimization → LLM Mentions Search API.
+ *
+ * Correct endpoint: POST /v3/ai_optimization/llm_mentions/search/live
+ * target: [{domain: "example.com"}]
+ * — queries run one by one (no batch support on this endpoint)
  */
 export async function checkLlmMentions(
-  brand: string,
+  domain: string,
   queries: string[]
 ): Promise<LlmMention[]> {
   type LLMResponse = {
     tasks?: Array<{
-      data?: { keyword?: string };
       result?: Array<{
-        type?: string;
+        total_count?: number;
         items?: Array<{
-          type?: string;
+          rank_absolute?: number;
+          url?: string;
           domain?: string;
           title?: string;
-          rank_absolute?: number;
           description?: string;
         }>;
       }>;
     }>;
   };
 
-  const tasks = queries.map((q) => ({
-    keyword: q,
-    se_type: "perplexity", // or "chatgpt", "gemini"
-    device: "desktop",
-  }));
-
-  const response = await dfsPost<LLMResponse>(
-    "/serp/perplexity/organic/live/advanced",
-    tasks
-  );
-
   const now = new Date().toISOString();
+  const results: LlmMention[] = [];
 
-  return (response.tasks ?? []).map((task) => {
-    const query = task.data?.keyword ?? "";
-    const items = task.result?.[0]?.items ?? [];
-    const match = items.find(
-      (item) => item.domain && item.domain.includes(brand)
-    );
+  for (const query of queries) {
+    try {
+      const response = await dfsPost<LLMResponse>(
+        "/ai_optimization/llm_mentions/search/live",
+        [{ keyword: query, target: [{ domain }], language_code: "en", location_code: 2840 }]
+      );
 
-    return {
-      query,
-      model: "perplexity",
-      mentioned: !!match,
-      rank: match?.rank_absolute ?? null,
-      snippet: match?.description ?? null,
-      checkedAt: now,
-    };
-  });
+      const task = response.tasks?.[0];
+      const totalCount = task?.result?.[0]?.total_count ?? 0;
+      const items = task?.result?.[0]?.items ?? [];
+      const match = items[0];
+
+      results.push({
+        query,
+        model: "llm_mentions",
+        mentioned: totalCount > 0,
+        rank: match?.rank_absolute ?? null,
+        snippet: match?.description ?? null,
+        checkedAt: now,
+      });
+    } catch {
+      results.push({ query, model: "llm_mentions", mentioned: false, rank: null, snippet: null, checkedAt: now });
+    }
+  }
+
+  return results;
 }
 
 // ─── Account balance check ────────────────────────────────────
