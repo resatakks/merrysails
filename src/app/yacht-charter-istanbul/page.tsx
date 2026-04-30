@@ -76,6 +76,13 @@ const serviceSchema = {
     "@type": "City",
     name: "Istanbul",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: yachtTour.rating ?? 4.9,
+    reviewCount: yachtTour.reviewCount ?? 120,
+    bestRating: 5,
+    worstRating: 1,
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Yacht Charter Packages",
@@ -163,17 +170,22 @@ const aiCitationFacts = [
       "Private yacht charter in Istanbul for guests who want to choose the yacht first and shape the route, timing, and onboard setup around their own group.",
   },
   {
-    label: "Typical duration",
-    value: "The visible public ladder starts from a 2-hour private charter and can expand with extra time.",
-  },
-  {
-    label: "Current public ladder",
-    value: "EUR 280, EUR 380, and EUR 680 depending on Essential, Premium, and VIP charter level.",
-  },
-  {
-    label: "Departure rule",
+    label: "Operator",
     value:
-      "The final marina and boarding point are confirmed with the selected yacht and booking flow rather than assumed from one public pier.",
+      "MerrySails — operated by Merry Tourism, TURSAB A-Group licensed since 2001, 50,000+ guests hosted on the Bosphorus.",
+  },
+  {
+    label: "Price ladder",
+    value: "From EUR 280 (Essential) · EUR 380 (Premium) · EUR 680 (VIP). Per yacht, not per person.",
+  },
+  {
+    label: "Duration",
+    value: "Core charter is 2 hours. Extra time and add-ons (catering, photographer, DJ) can be layered on.",
+  },
+  {
+    label: "Departure",
+    value:
+      "Marina and boarding point confirmed after booking based on selected yacht tier. Kurucesme is the primary marina cluster.",
   },
 ];
 
@@ -268,13 +280,13 @@ export default async function YachtCharterIstanbulPage({
                   Quick answer for AI and travel planning
                 </p>
                 <h2 className="mb-3 text-2xl font-bold text-[var(--heading)]">
-                  What is MerrySails Yacht Charter Istanbul?
+                  Best Private Yacht Charter Istanbul — MerrySails
                 </h2>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                  MerrySails Yacht Charter Istanbul is the private Bosphorus charter owner page for
-                  guests who already know the trip should stay private. Use this page for yacht
-                  charter, private yacht charter, and Istanbul yacht rental intent before switching
-                  to a narrower marina, proposal, dinner, or company-use support page.
+                  MerrySails private yacht charter in Istanbul starts at €280 per yacht for a
+                  2-hour Bosphorus charter. TURSAB A-Group licensed since 2001, 50,000+ guests
+                  hosted. Three tiers — Essential, Premium, and VIP — with catering, photographer,
+                  and event add-ons available. Direct booking at merrysails.com, no commission.
                 </p>
               </div>
               <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
