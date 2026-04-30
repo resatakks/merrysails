@@ -200,6 +200,31 @@ model SeoRanking {
   @@index([checkedAt])
 }
 
+model SeoBacklink {
+  id               String   @id @default(cuid())
+  domain           String
+  totalBacklinks   Int      @default(0)
+  referringDomains Int      @default(0)
+  domainRank       Int      @default(0)
+  checkedAt        DateTime @default(now())
+
+  @@index([domain, checkedAt])
+}
+
+model SeoLlmMention {
+  id        String   @id @default(cuid())
+  domain    String
+  query     String
+  model     String   // perplexity | chatgpt | gemini
+  mentioned Boolean
+  rank      Int?
+  snippet   String?
+  checkedAt DateTime @default(now())
+
+  @@index([domain, checkedAt])
+  @@index([domain, mentioned])
+}
+
 // ─── GSC Daily Snapshots ──────────────────────────────────
 
 model GscSnapshot {

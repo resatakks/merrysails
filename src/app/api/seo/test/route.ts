@@ -1,10 +1,9 @@
 /**
  * GET /api/seo/test?token=...
- * Quick smoke-test for DataForSEO integration.
- * Tests: balance check + 3 keyword rank checks for merrysails.com
+ * Smoke-test: balance + 3 SERP + backlinks + LLM mentions (1 query)
  */
 import { NextRequest, NextResponse } from "next/server";
-import { checkRankings, getBalance } from "@/lib/dataforseo";
+import { checkRankings, getBacklinkSummary, checkLlmMentions, getBalance } from "@/lib/dataforseo";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,13 +16,6 @@ function isAuthorized(req: NextRequest): boolean {
   return req.nextUrl.searchParams.get("token") === secret;
 }
 
-// Test keywords — TR + EN
-const TEST_KEYWORDS = [
-  "kiralık yat istanbul",
-  "istanbul yat turu",
-  "yacht charter istanbul",
-];
-
 export async function GET(req: NextRequest) {
   if (!isAuthorized(req)) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
@@ -31,28 +23,39 @@ export async function GET(req: NextRequest) {
 
   const results: Record<string, unknown> = {};
 
-  // 1. Balance check
-  try {
-    results.balance = await getBalance();
-  } catch (err) {
-    results.balance = { error: String(err) };
-  }
+  // 1. Balance
+  try { results.balance = await getBalance(); }
+  catch (err) { results.balance = { error: String(err) }; }
 
-  // 2. SERP rank check — TR keywords
+  // 2. SERP — TR
   try {
-    const trRankings = await checkRankings("merrysails.com", TEST_KEYWORDS.slice(0, 2), 2792, "tr");
-    results.serp_tr = trRankings;
-  } catch (err) {
-    results.serp_tr = { error: String(err) };
-  }
+    results.serp_tr = await checkRankings(
+      "merrysails.com",
+      ["kiralık yat istanbul", "istanbul yat turu"],
+      2792, "tr"
+    );
+  } catch (err) { results.serp_tr = { error: String(err) }; }
 
-  // 3. SERP rank check — EN keyword
+  // 3. SERP — EN
   try {
-    const enRankings = await checkRankings("merrysails.com", TEST_KEYWORDS.slice(2), 2792, "en");
-    results.serp_en = enRankings;
-  } catch (err) {
-    results.serp_en = { error: String(err) };
-  }
+    results.serp_en = await checkRankings(
+      "merrysails.com",
+      ["yacht charter istanbul"],
+      2792, "en"
+    );
+  } catch (err) { results.serp_en = { error: String(err) }; }
+
+  // 4. Backlinks
+  try { results.backlinks = await getBacklinkSummary("merrysails.com"); }
+  catch (err) { results.backlinks = { error: String(err) }; }
+
+  // 5. LLM Mentions (1 query — minimal cost)
+  try {
+    results.llm = await checkLlmMentions(
+      "merrysails",
+      ["best yacht charter company in Istanbul"]
+    );
+  } catch (err) { results.llm = { error: String(err) }; }
 
   return NextResponse.json({
     ok: true,
