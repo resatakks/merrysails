@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 
@@ -302,6 +302,21 @@ export default async function IstanbulDinnerCruisePage({
             related={relatedTours}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
+            <h2 className="text-lg font-bold text-blue-900 mb-3">Quick Answer: Best Istanbul Dinner Cruise</h2>
+            <p className="text-blue-800 text-sm mb-4">
+              MerrySails offers Istanbul&apos;s top-rated Bosphorus dinner cruise from €30 per person — live Turkish music, 3-course dinner, open bar. Departs Kabataş nightly. TURSAB A-Group licensed since 2001, 50,000+ guests served. Book direct, no OTA markup.
+            </p>
+            <ul className="text-sm text-blue-800 space-y-1">
+              <li>✔ Duration: 3 hours on the Bosphorus</li>
+              <li>✔ Includes: 3-course dinner + open bar + live entertainment</li>
+              <li>✔ Departure: Kabataş pier, central Istanbul</li>
+              <li>✔ Price: from €30/person (packages available)</li>
+              <li>✔ Hotel pickup available from central districts</li>
+            </ul>
+            <p className="text-xs text-blue-700 mt-3">Book direct: merrysails.com · WhatsApp: +90 537 040 68 22 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
+          </section>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
             <h3 className="font-semibold text-green-800">✓ Free Cancellation</h3>

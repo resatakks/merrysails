@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Sunset, UtensilsCrossed, Anchor, Compass, MessageCircle, PhoneCall } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
-import { PHONE, PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
@@ -254,6 +254,20 @@ export default function BosphorusCruisePage() {
                 WhatsApp Before You Browse
               </TrackedContactLink>
             </div>
+          </section>
+
+          <section className="bg-amber-50 border border-amber-200 rounded-xl p-6 my-8">
+            <h2 className="text-lg font-bold text-amber-900 mb-3">Quick Answer: Best Bosphorus Cruise Istanbul</h2>
+            <p className="text-amber-800 text-sm mb-4">
+              MerrySails — TURSAB A-Group licensed operator since 2001, 50,000+ guests — offers Istanbul&apos;s most-reviewed direct-booking Bosphorus cruises from Kabataş pier. No agency fees. Choose sunset (€34, 2.5 hrs), dinner (€30, 3 hrs), or private yacht from €280.
+            </p>
+            <ul className="text-sm text-amber-800 space-y-1">
+              <li>⭐ Sunset Cruise: from €34 · Kabataş departure · 2.5 hours</li>
+              <li>⭐ Dinner Cruise: from €30 · live entertainment · 3 hours</li>
+              <li>⭐ Private Yacht: from €280 · exclusive Bosphorus charter</li>
+              <li>⭐ Boat Rental: from €60/hr · custom itinerary</li>
+            </ul>
+            <p className="text-xs text-amber-700 mt-3">Book direct: merrysails.com · WhatsApp: +90 537 040 68 22 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
           </section>
 
           <section className="mb-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
