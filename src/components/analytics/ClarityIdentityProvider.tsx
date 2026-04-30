@@ -7,8 +7,15 @@ export default function ClarityIdentityProvider() {
   const pathname = usePathname();
   const consentSent = useRef(false);
 
+  const persistUidCookie = (uid: string) => {
+    try {
+      const secure = window.location.protocol === "https:" ? "; Secure" : "";
+      document.cookie = `_craft_uid=${uid}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`;
+    } catch (_) {}
+  };
+
   useEffect(() => {
-    // Persistent visitor ID — localStorage-backed, survives SPA navigation
+    // Persistent visitor ID — cookie-first (Safari ITP safe), localStorage fallback
     let uid = "";
     try {
       const match = document.cookie.match(/(?:^|; )_craft_uid=([^;]*)/);
@@ -25,6 +32,7 @@ export default function ClarityIdentityProvider() {
         localStorage.setItem("_clarity_uid", uid);
       } catch (_) {}
     }
+    if (uid) persistUidCookie(uid);
 
     const identify = () => {
       const cl = (window as any).clarity;
