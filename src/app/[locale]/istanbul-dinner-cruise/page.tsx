@@ -126,7 +126,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   de: {
-    title: "Istanbul Dinner Cruise — Ab €55 | MerrySails",
+    title: "Istanbul Dinner Kreuzfahrt ab €30 — Türkische Nacht & Bosporus | MerrySails",
     description:
       "Bosporus Dinner Cruise Istanbul ab €30. Türkische Abendunterhaltung, 4 Pakete bis €90, Hoteltransfer möglich. TÜRSAB-lizenziert seit 2001. Jetzt buchen.",
     h1: "Istanbul Dinner Cruise",

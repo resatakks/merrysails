@@ -118,7 +118,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle: "Yachtcharter Istanbul — Ab €380 | MerrySails",
+    metaTitle: "Yachtcharter Istanbul ab €280 — Private Bosporus-Jacht | MerrySails",
     metaDescription:
       "Yachtcharter Istanbul ab €280. Exklusive Privatjacht auf dem Bosporus mit Kapitän. Ideal für Heiratsantrag, Geburtstag und Firmenevents. TÜRSAB-lizenziert.",
     canonicalPath: "/de/yacht-charter-istanbul",
