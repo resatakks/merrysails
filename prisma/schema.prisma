@@ -180,6 +180,26 @@ model BotVisit {
   @@index([path])
 }
 
+// ─── SEO Rankings (DataForSEO) ────────────────────────────
+
+model SeoRanking {
+  id           String   @id @default(cuid())
+  domain       String
+  keyword      String
+  locationCode Int
+  languageCode String
+  rank         Int?     // 1-based organic position; null = not in top 100
+  url          String?
+  title        String?
+  snippet      String?
+  totalResults Int      @default(0)
+  checkedAt    DateTime @default(now())
+
+  @@index([domain, keyword])
+  @@index([domain, checkedAt])
+  @@index([checkedAt])
+}
+
 // ─── GSC Daily Snapshots ──────────────────────────────────
 
 model GscSnapshot {

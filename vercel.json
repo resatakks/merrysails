@@ -37,6 +37,10 @@
     {
       "path": "/api/gsc/snapshot",
       "schedule": "0 7 * * *"
+    },
+    {
+      "path": "/api/seo/rankings",
+      "schedule": "30 7 * * 1"
     }
   ],
   "git": {
