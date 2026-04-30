@@ -1,18 +1,21 @@
 /**
  * GET /api/seo/rankings
- * Weekly cron (+ manual): full SEO snapshot for merrysails.com
- *   1. SERP  — 20 keywords (10 TR + 10 EN) → SeoRanking
- *   2. Backlinks — domain summary        → SeoBacklink
- *   3. LLM Mentions — 5 brand queries    → SeoLlmMention
+ * DAILY cron (+ manual): full SEO snapshot for merrysails.com
+ *   1. SERP  — 21 backlink-priority keywords (EN+DE+TR+FR+NL) → SeoRanking
+ *   2. Backlinks — domain summary                            → SeoBacklink
+ *   3. LLM Mentions — 6 brand queries                        → SeoLlmMention
  *
  * Auth: Bearer CRON_SECRET or ?token=
- * Schedule: every Monday 07:30 UTC (vercel.json)
+ * Schedule: daily 07:00 UTC (vercel.json)
+ *
+ * Keywords aligned with 6 backlink target URLs — see data/BACKLINK-URLS.md
+ *   and data/BACKLINK-PRIORITY-KEYWORDS.md.
  *
  * Cost per run (est.):
- *   SERP  20 kw  ≈ $0.12
+ *   SERP  21 kw  ≈ $0.13
  *   BL    1 dom  ≈ $0.005
- *   LLM   5 q   ≈ $0.15
- *   Total       ≈ $0.28 / week
+ *   LLM   6 q   ≈ $0.06 (regular SERP fallback)
+ *   Total       ≈ $0.20 / day  →  ~ $6 / month
  */
 import { NextRequest, NextResponse } from "next/server";
 import { checkRankings, getBacklinkSummary, checkLlmMentions } from "@/lib/dataforseo";
@@ -33,31 +36,49 @@ function isAuthorized(req: NextRequest): boolean {
 const DOMAIN = "merrysails.com";
 const BRAND  = "merrysails";
 
-// ─── SERP Keywords ───────────────────────────────────────────
-const TR_KEYWORDS = [
-  "kiralık yat istanbul",
-  "istanbul yat turu",
-  "yat turu istanbul",
-  "özel tekne kiralama istanbul",
-  "istanbul tekne turu",
-  "boğaz yat turu",
-  "özel yat turu istanbul",
-  "gece yat turu istanbul",
-  "istanbul boğaz turu tekne",
-  "yat kiralama istanbul",
+// ─── SERP Keywords (backlink-priority) ───────────────────────
+// Aligned with the 6 backlink target URLs in data/BACKLINK-URLS.md.
+// Grouped by (location_code, language_code) so DataForSEO is called once per group.
+
+// EN — TR-tourist (loc 2792)
+const EN_KEYWORDS = [
+  "bosphorus cruise istanbul",
+  "bosphorus dinner cruise",
+  "istanbul dinner cruise",
+  "sunset cruise istanbul",
+  "bosphorus sunset cruise",
+  "yacht charter istanbul",
+  "boat tour istanbul",
+  "private bosphorus cruise",
+  "bosphorus boat tour",
 ];
 
-const EN_KEYWORDS = [
+// TR — Turkey (loc 2792)
+const TR_KEYWORDS = [
+  "istanbul yat turu",
+  "boğaz yat turu",
+  "yemekli boğaz turu",
+  "istanbul dinner cruise",
+];
+
+// DE — Germany (loc 2276)
+const DE_KEYWORDS = [
+  "bosporus kreuzfahrt istanbul",
+  "bosporus sonnenuntergangsfahrt istanbul",
+  "istanbul dinner kreuzfahrt",
   "yacht charter istanbul",
-  "istanbul yacht tour",
-  "private yacht istanbul",
-  "bosphorus yacht tour",
-  "boat tour istanbul",
-  "sunset cruise istanbul",
-  "luxury yacht charter istanbul",
-  "private boat tour istanbul",
-  "bosphorus private cruise",
-  "yacht rental istanbul",
+  "romantische bootsfahrt istanbul",
+];
+
+// FR — France (loc 2250)
+const FR_KEYWORDS = [
+  "croisière bosphore istanbul",
+  "dîner croisière bosphore",
+];
+
+// NL — Netherlands (loc 2528)
+const NL_KEYWORDS = [
+  "bosporus boottocht istanbul",
 ];
 
 // ─── LLM Brand Queries ───────────────────────────────────────
@@ -68,6 +89,7 @@ const LLM_QUERIES = [
   "Istanbul bosphorus private boat tour recommendations",
   "luxury boat experience Istanbul recommendation",
   "private cruise Istanbul bosphorus which company",
+  "best istanbul dinner cruise",
 ];
 
 export async function GET(req: NextRequest) {
@@ -78,19 +100,34 @@ export async function GET(req: NextRequest) {
   const started = Date.now();
   const errors: string[] = [];
 
-  // ── 1. SERP ──────────────────────────────────────────────────
-  let trResults: Awaited<ReturnType<typeof checkRankings>> = [];
+  // ── 1. SERP — 5 grouped calls ────────────────────────────────
   let enResults: Awaited<ReturnType<typeof checkRankings>> = [];
+  let trResults: Awaited<ReturnType<typeof checkRankings>> = [];
+  let deResults: Awaited<ReturnType<typeof checkRankings>> = [];
+  let frResults: Awaited<ReturnType<typeof checkRankings>> = [];
+  let nlResults: Awaited<ReturnType<typeof checkRankings>> = [];
+
+  try {
+    enResults = await checkRankings(DOMAIN, EN_KEYWORDS, 2792, "en");
+  } catch (err) { errors.push(`SERP EN: ${String(err)}`); }
 
   try {
     trResults = await checkRankings(DOMAIN, TR_KEYWORDS, 2792, "tr");
   } catch (err) { errors.push(`SERP TR: ${String(err)}`); }
 
   try {
-    enResults = await checkRankings(DOMAIN, EN_KEYWORDS, 2792, "en");
-  } catch (err) { errors.push(`SERP EN: ${String(err)}`); }
+    deResults = await checkRankings(DOMAIN, DE_KEYWORDS, 2276, "de");
+  } catch (err) { errors.push(`SERP DE: ${String(err)}`); }
 
-  const allSerp = [...trResults, ...enResults];
+  try {
+    frResults = await checkRankings(DOMAIN, FR_KEYWORDS, 2250, "fr");
+  } catch (err) { errors.push(`SERP FR: ${String(err)}`); }
+
+  try {
+    nlResults = await checkRankings(DOMAIN, NL_KEYWORDS, 2528, "nl");
+  } catch (err) { errors.push(`SERP NL: ${String(err)}`); }
+
+  const allSerp = [...enResults, ...trResults, ...deResults, ...frResults, ...nlResults];
   let serpSaved = 0;
   if (allSerp.length > 0) {
     try {
