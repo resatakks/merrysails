@@ -420,43 +420,21 @@ export async function POST(req: NextRequest) {
   }
 
   // --- exclude_placements ---
-  // Adds placement exclusions (display URL blocks) to PMax + all enabled campaigns
+  // Adds account-level placement exclusions via CustomerNegativeCriteria.
+  // Works for PMax (campaign-level criteria not supported on PMax via API).
   if (body.action === "exclude_placements") {
     const urls: string[] = (body.urls ?? [
       "googlesyndication.com",
       "safeframe.googlesyndication.com",
       "pagead2.googlesyndication.com",
+      "lsmagazineimg.com",
     ]).filter((u: unknown) => typeof u === "string" && (u as string).trim().length > 0);
 
-    type CampaignIdRow = { campaign?: { id?: string; name?: string } };
-    let campaignRows: CampaignIdRow[];
-    try {
-      const data = await adsSearch(creds, token, `
-        SELECT campaign.id, campaign.name
-        FROM campaign
-        WHERE campaign.status = 'ENABLED'
-      `);
-      campaignRows = (data.results ?? []) as CampaignIdRow[];
-    } catch (err) {
-      return NextResponse.json({ error: "query_failed", details: String(err) }, { status: 502 });
-    }
+    const operations = urls.map((url) => ({
+      create: { placement: { url } },
+    }));
 
-    const operations: unknown[] = [];
-    for (const row of campaignRows) {
-      const campaignId = row.campaign?.id;
-      if (!campaignId) continue;
-      for (const url of urls) {
-        operations.push({
-          create: {
-            campaign: `customers/${creds.customerId}/campaigns/${campaignId}`,
-            negative: true,
-            placement: { url },
-          },
-        });
-      }
-    }
-
-    const excUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignCriteria:mutate`;
+    const excUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/customerNegativeCriteria:mutate`;
     const excRes = await fetch(excUrl, {
       method: "POST",
       headers: adsHeaders(creds, token),
@@ -467,9 +445,9 @@ export async function POST(req: NextRequest) {
     }
     return NextResponse.json({
       ok: true,
+      level: "account",
       excludedUrls: urls,
-      campaigns: campaignRows.length,
-      total: urls.length * campaignRows.length,
+      total: urls.length,
     });
   }
 
