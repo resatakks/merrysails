@@ -1,88 +1,105 @@
 # MerrySails — Commercial Keywords Master List
 
 Last updated: 2026-04-30
-Source: DataForSEO (live), Semrush CSV (2026-04-23), GSC
+Source: DataForSEO (live — 3-day cron), Semrush CSV (2026-04-23), GSC
 
 ---
 
-## Tier 1 — Yüksek Hacim, Yüksek Intent (EN)
+## Tracked Keywords — 30 Total (DataForSEO Cron)
 
-| Keyword | Vol | KD | Target URL | Rank (30.04) |
-|---------|----:|---:|-----------|:------------|
+### EN — Turkey location (loc 2792, lang en) — 12 keywords
+
+| Keyword | Vol/mo | KD | Target URL | Rank (30.04) |
+|---------|-------:|---:|-----------|:------------|
+| bosphorus cruise istanbul | 590 | 38 | /bosphorus-cruise | NOT IN TOP 100 |
+| istanbul boat trip | 2,400 | 38 | /bosphorus-cruise | NOT IN TOP 100 |
 | bosphorus cruise | 6,600 | 46 | /bosphorus-cruise | NOT IN TOP 100 |
-| bosphorus boat trip | 2,400 | 38 | /bosphorus-cruise | NOT IN TOP 100 |
 | istanbul dinner cruise | 1,600 | 40 | /istanbul-dinner-cruise | NOT IN TOP 100 |
 | bosphorus dinner cruise | 1,300 | 29 | /istanbul-dinner-cruise | NOT IN TOP 100 |
-| boat tour istanbul | 1,300 | 32 | /bosphorus-cruise | NOT IN TOP 100 |
-| boat trip istanbul | 1,300 | 31 | /bosphorus-cruise | NOT IN TOP 100 |
-| boat ride istanbul | 1,300 | 44 | /bosphorus-cruise | NOT IN TOP 100 |
 | sunset cruise istanbul | 480 | 27 | /cruises/bosphorus-sunset-cruise | NOT IN TOP 100 |
-| dinner cruise istanbul | 590 | 24 | /istanbul-dinner-cruise | NOT IN TOP 100 |
-| yacht charter istanbul | 210 | 35 | /yacht-charter-istanbul | **78** (/cruises/yacht-charter-in-istanbul) |
-| boat rental istanbul | — | — | /boat-rental-istanbul | NOT IN TOP 100 |
+| bosphorus sunset cruise | 320 | 25 | /cruises/bosphorus-sunset-cruise | NOT IN TOP 100 |
+| yacht charter istanbul | 210 | 35 | /yacht-charter-istanbul | NOT IN TOP 100 |
+| boat tour istanbul | 1,300 | 32 | /bosphorus-cruise | NOT IN TOP 100 |
 | private yacht istanbul | — | — | /yacht-charter-istanbul | NOT IN TOP 100 |
-| bosphorus yacht tour | — | — | /yacht-charter-istanbul | NOT IN TOP 100 |
-| luxury yacht charter istanbul | — | — | /yacht-charter-istanbul | NOT IN TOP 100 |
-| private boat tour istanbul | — | — | /bosphorus-cruise | NOT IN TOP 100 |
-| bosphorus private cruise | — | — | /yacht-charter-istanbul | NOT IN TOP 100 |
-| dinner cruise bosphorus | — | — | /istanbul-dinner-cruise | NOT IN TOP 100 |
+| private bosphorus cruise | — | — | /yacht-charter-istanbul | NOT IN TOP 100 |
+| bosphorus boat tour | 590 | 32 | /bosphorus-cruise | NOT IN TOP 100 |
 
-## Tier 2 — Uzun Kuyruk Commercial (EN)
+### TR — Turkey location (loc 2792, lang tr) — 9 keywords
 
-| Keyword | Vol | Target URL | Rank (30.04) |
-|---------|----:|-----------|:------------|
-| bosphorus cruise istanbul | 590 | /bosphorus-cruise | NOT IN TOP 100 |
-| bosphorus boat tour | 590 | /bosphorus-cruise | NOT IN TOP 100 |
-| bosphorus dinner cruise istanbul | 390 | /istanbul-dinner-cruise | NOT IN TOP 100 |
-| istanbul cruise | 390 | /bosphorus-cruise | NOT IN TOP 100 |
-| sunset cruise istanbul | 480 | /cruises/bosphorus-sunset-cruise | NOT IN TOP 100 |
-| private yacht charter istanbul | 70 | /yacht-charter-istanbul | NOT IN TOP 100 |
-| private boat hire istanbul | — | /boat-rental-istanbul | NOT IN TOP 100 |
-| proposal yacht istanbul | — | /proposal-yacht-rental-istanbul | NOT IN TOP 100 |
-| corporate yacht event istanbul | — | /corporate-events | NOT IN TOP 100 |
-| luxury boat experience istanbul | — | /yacht-charter-istanbul | NOT IN TOP 100 |
+| Keyword | Vol/mo | Target URL | Rank (30.04) |
+|---------|-------:|-----------|:------------|
+| boğaz turu istanbul | 260 | /tr/bosphorus-cruise | NOT IN TOP 100 |
+| istanbul tekne turu | 210 | /tr/bosphorus-cruise | NOT IN TOP 100 |
+| yemekli boğaz turu | 480 | /tr/istanbul-dinner-cruise | NOT IN TOP 100 |
+| istanbul yemekli tekne turu | — | /tr/istanbul-dinner-cruise | NOT IN TOP 100 |
+| boğaz gün batımı turu | — | /tr/cruises/bosphorus-sunset-cruise | NOT IN TOP 100 |
+| yat kiralama istanbul | — | /tr/yacht-charter-istanbul | NOT IN TOP 100 |
+| istanbul yat turu | — | /tr/yacht-charter-istanbul | NOT IN TOP 100 |
+| boğaz yat turu | — | /tr/yacht-charter-istanbul | NOT IN TOP 100 |
+| istanbul vapur turu | 320 | /tr/bosphorus-cruise | NOT IN TOP 100 |
 
-## Tier 3 — TR Keywords (Gelecek)
+### DE — Germany location (loc 2276, lang de) — 6 keywords
 
-| Keyword | Vol | Target URL | Rank (30.04) |
-|---------|----:|-----------|:------------|
-| yemekli boğaz turu | 480 | /istanbul-dinner-cruise (TR) | NOT IN TOP 100 |
-| istanbul vapur turu | 320 | /bosphorus-cruise (TR) | NOT IN TOP 100 |
-| boğaz turu eminönü | 260 | /bosphorus-cruise (TR) | NOT IN TOP 100 |
-| boğaz turu istanbul | 260 | /bosphorus-cruise (TR) | NOT IN TOP 100 |
-| istanbul tekne turu | 210 | /bosphorus-cruise (TR) | NOT IN TOP 100 |
-| kiralık yat istanbul | — | /yacht-charter-istanbul (TR) | NOT IN TOP 100 |
-| istanbul yat turu | — | /yacht-charter-istanbul (TR) | NOT IN TOP 100 |
-| boğaz yat turu | — | /yacht-charter-istanbul (TR) | NOT IN TOP 100 |
-| yat kiralama istanbul | — | /yacht-charter-istanbul (TR) | NOT IN TOP 100 |
+| Keyword | Vol/mo | Target URL | Rank (30.04) |
+|---------|-------:|-----------|:------------|
+| bosporus kreuzfahrt istanbul | — | /de/bosphorus-cruise | NOT IN TOP 100 |
+| istanbul bootstour | — | /de/bosphorus-cruise | NOT IN TOP 100 |
+| bosporus sonnenuntergangsfahrt istanbul | — | /de/cruises/bosphorus-sunset-cruise | NOT IN TOP 100 |
+| istanbul dinner kreuzfahrt | — | /de/istanbul-dinner-cruise | NOT IN TOP 100 |
+| bosporus bootsfahrt istanbul | — | /de/bosphorus-cruise | NOT IN TOP 100 |
+| romantische bootsfahrt istanbul | — | /de/bosphorus-cruise | NOT IN TOP 100 |
 
-## AI Visibility — LLM Queries (DataForSEO / Perplexity)
+### FR — France location (loc 2250, lang fr) — 2 keywords
 
-| Query | Status (30.04) |
-|-------|:--------------|
-| best yacht charter company in Istanbul | NOT TESTED YET (trial active) |
-| where to rent a private yacht in Istanbul | NOT TESTED YET |
-| Istanbul bosphorus private boat tour recommendations | NOT TESTED YET |
-| luxury boat experience Istanbul recommendation | NOT TESTED YET |
-| private cruise Istanbul bosphorus which company | NOT TESTED YET |
-| best dinner cruise istanbul | NOT TESTED YET |
-| bosphorus cruise with kids istanbul | NOT TESTED YET |
+| Keyword | Vol/mo | Target URL | Rank (30.04) |
+|---------|-------:|-----------|:------------|
+| croisière bosphore istanbul | — | /fr/bosphorus-cruise | NOT IN TOP 100 |
+| dîner croisière bosphore | — | /fr/istanbul-dinner-cruise | NOT IN TOP 100 |
+
+### NL — Netherlands location (loc 2528, lang nl) — 1 keyword
+
+| Keyword | Vol/mo | Target URL | Rank (30.04) |
+|---------|-------:|-----------|:------------|
+| bosporus boottocht istanbul | — | /nl/bosphorus-cruise | NOT IN TOP 100 |
 
 ---
 
-## Quick-Win Opportunities (GSC Data)
+## AI / LLM Visibility — 6 Brand Queries (DataForSEO)
 
-Bu sayfalar zaten görünürlük kazanıyor, CTR optimizasyonu ile hızlı kazanç:
+| Query | Mentioned (30.04) |
+|-------|:-----------------|
+| best yacht charter company in Istanbul | NO |
+| where to rent a private yacht in Istanbul | NO |
+| Istanbul bosphorus private boat tour recommendations | NO |
+| luxury boat experience Istanbul recommendation | NO |
+| private cruise Istanbul bosphorus which company | NO |
+| best istanbul dinner cruise | NO |
+
+---
+
+## Backlink Target URLs (purchased links, delivery this week)
+
+| URL | Status |
+|-----|--------|
+| merrysails.com (homepage) | Pending |
+| /cruises/bosphorus-sunset-cruise | Pending |
+| /istanbul-dinner-cruise | Pending |
+| /de | Pending |
+| /de/cruises/bosphorus-sunset-cruise | Pending |
+| /de/istanbul-dinner-cruise | Pending |
+
+---
+
+## Quick-Win Opportunities (GSC 90-day)
 
 | URL | Impressions | Pos | Clicks | Action |
 |-----|------------:|----:|-------:|--------|
-| /blog/bosphorus-cruise-departure-points | **1,097** | 6.0 | 1 | Title/meta CTR fix → hedef pos 1-3 |
+| /blog/bosphorus-cruise-departure-points | 1,097 | 6.0 | 1 | Title/meta CTR → target pos 1-3 |
 | /blog/bosphorus-dinner-cruise-what-to-expect | 496 | 8.0 | 1 | Title/meta optimize |
 | /blog/best-bosphorus-cruise-istanbul-guide | 337 | 11.0 | 0 | Schema + CTR fix |
-| /cruises/yacht-charter-in-istanbul | 252 | 50.7 | 1 | Content depth + backlinks |
+| /cruises/yacht-charter-in-istanbul | 252 | 50.7 | 1 | Redirect → /yacht-charter-istanbul |
 | /blog/bosphorus-cruise-with-kids | 246 | 5.4 | 2 | Internal link push |
 | /blog/what-to-wear-bosphorus-cruise | 243 | 6.0 | 4 | Already working ✅ |
-| /blog/bosphorus-dinner-cruise-what-to-expect | 496 | 8.0 | 1 | Optimize |
 
 ---
 
@@ -99,5 +116,6 @@ Bu sayfalar zaten görünürlük kazanıyor, CTR optimizasyonu ile hızlı kazan
 
 ## Güncelleme Talimatı
 
-Her pazartesi `/api/seo/rankings?token=CRON_SECRET` çalışır.
-Manuel test: `/api/seo/test?token=mry_cron_c7ca6c3866c6ed36bd5b222ef82456f1`
+Cron: her 3 günde bir `GET /api/seo/rankings?token=CRON_SECRET`
+Manuel: `curl -H "Authorization: Bearer CRON_SECRET" https://merrysails.com/api/seo/rankings`
+30 keyword × 5 dil grubu = $0.26/run ≈ $2.6/ay

@@ -367,14 +367,14 @@ export default async function LocaleSunsetCruisePage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Product"],
-    name: sunsetTour.name ?? sunsetTour.nameEn,
-    alternateName: ["Boğaz Gün Batımı Turu", "İstanbul Gün Batımı Teknesi", "Boğaz Sunset Cruise"],
+    name: t.h1,
+    alternateName: ["Bosphorus Sunset Cruise", "Boğaz Gün Batımı Turu", "Bosporus Sonnenuntergang Kreuzfahrt", "Croisière Coucher de Soleil Bosphore"],
     description: sunsetTour.description,
-    touristType: "Kültür Turizmi",
+    touristType: "Cultural Tourism",
     url: canonicalUrl,
     image: sunsetTour.image,
     provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: { "@type": "City", name: "İstanbul" },
+    areaServed: { "@type": "City", name: "Istanbul" },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: sunsetTour.rating,

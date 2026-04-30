@@ -178,7 +178,7 @@ export async function POST(req: NextRequest) {
   const creds = readAdsCreds();
   if (!creds) return NextResponse.json({ skipped: "missing_credentials" });
 
-  let body: { action?: string; multiplier?: number; keywords?: string[]; campaignId?: string; budgetTry?: number };
+  let body: { action?: string; multiplier?: number; keywords?: string[]; campaignId?: string; budgetTry?: number; maxPct?: number };
   try { body = await req.json(); }
   catch { return NextResponse.json({ error: "invalid_json" }, { status: 400 }); }
 
@@ -345,6 +345,77 @@ export async function POST(req: NextRequest) {
       added: keywords.length,
       campaigns: campaignRows.length,
       total: keywords.length * campaignRows.length,
+    });
+  }
+
+  // --- cap_pmax ---
+  // Reads all active campaign budgets, calculates total, caps PMax at maxPct% (default 15%, max 20%)
+  if (body.action === "cap_pmax") {
+    const maxPct = Math.min(20, Math.max(5, Number(body.maxPct ?? 15))) / 100;
+    const PMAX_CAMPAIGN_ID = "23792634655";
+
+    type BudgetSummaryRow = {
+      campaign?: { id?: string; advertisingChannelType?: string; status?: string };
+      campaignBudget?: { resourceName?: string; amountMicros?: string };
+    };
+
+    let budgetRows: BudgetSummaryRow[];
+    try {
+      const data = await adsSearch(creds, token, `
+        SELECT campaign.id, campaign.advertising_channel_type, campaign.status,
+               campaign_budget.resource_name, campaign_budget.amount_micros
+        FROM campaign
+        WHERE campaign.status = 'ENABLED'
+      `);
+      budgetRows = (data.results ?? []) as BudgetSummaryRow[];
+    } catch (err) {
+      return NextResponse.json({ error: "query_failed", details: String(err) }, { status: 502 });
+    }
+
+    const totalMicros = budgetRows.reduce(
+      (sum, r) => sum + Number(r.campaignBudget?.amountMicros ?? 0),
+      0
+    );
+    const capMicros = Math.round(totalMicros * maxPct);
+
+    const pmaxRow = budgetRows.find((r) => r.campaign?.id === PMAX_CAMPAIGN_ID);
+    if (!pmaxRow?.campaignBudget?.resourceName) {
+      return NextResponse.json({ error: "pmax_not_found", rows: budgetRows.length }, { status: 404 });
+    }
+
+    const currentMicros = Number(pmaxRow.campaignBudget.amountMicros ?? 0);
+    if (currentMicros <= capMicros) {
+      return NextResponse.json({
+        ok: true,
+        message: "already_within_cap",
+        currentTry: currentMicros / 1_000_000,
+        capTry: capMicros / 1_000_000,
+        totalTry: totalMicros / 1_000_000,
+        maxPct: `${Math.round(maxPct * 100)}%`,
+      });
+    }
+
+    const mutateUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignBudgets:mutate`;
+    const mutateRes = await fetch(mutateUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({
+        operations: [{
+          update: { resourceName: pmaxRow.campaignBudget.resourceName, amountMicros: String(capMicros) },
+          updateMask: "amountMicros",
+        }],
+      }),
+    });
+    if (!mutateRes.ok) {
+      return NextResponse.json({ error: "mutate_failed", details: await mutateRes.text() }, { status: 502 });
+    }
+    return NextResponse.json({
+      ok: true,
+      pmaxCampaignId: PMAX_CAMPAIGN_ID,
+      oldTry: currentMicros / 1_000_000,
+      newTry: capMicros / 1_000_000,
+      totalTry: totalMicros / 1_000_000,
+      maxPct: `${Math.round(maxPct * 100)}%`,
     });
   }
 

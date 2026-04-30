@@ -129,8 +129,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     title: "Istanbul Dinner Kreuzfahrt ab €30 — Türkische Nacht & Bosporus | MerrySails",
     description:
       "Bosporus Dinner Cruise Istanbul ab €30. Türkische Abendunterhaltung, 4 Pakete bis €90, Hoteltransfer möglich. TÜRSAB-lizenziert seit 2001. Jetzt buchen.",
-    h1: "Istanbul Dinner Cruise",
-    breadcrumb: "Dinner Cruise",
+    h1: "Istanbul Dinner-Kreuzfahrt",
+    breadcrumb: "Dinner-Kreuzfahrt",
     canonicalPath: "/de/istanbul-dinner-cruise",
     homeLabel: "Startseite",
     bosphorusLabel: "Bosporus-Tour",
@@ -503,14 +503,14 @@ export default async function LocaleDinnerCruisePage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Product"],
-    name: dinnerTour.name ?? dinnerTour.nameEn,
-    alternateName: ["İstanbul Akşam Yemeği Turu", "Boğaz Yemekli Gece Turu", "Boğaz Dinner Cruise"],
+    name: t.h1,
+    alternateName: ["Istanbul Dinner Cruise", "Bosphorus Dinner Cruise", "İstanbul Akşam Yemeği Turu", "Bosporus Dinner Kreuzfahrt"],
     description: dinnerTour.description,
-    touristType: "Kültür Turizmi",
+    touristType: "Cultural Tourism",
     url: canonicalUrl,
     image: dinnerTour.image,
     provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: { "@type": "City", name: "İstanbul" },
+    areaServed: { "@type": "City", name: "Istanbul" },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: dinnerTour.rating,
@@ -538,10 +538,22 @@ export default async function LocaleDinnerCruisePage({
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale,
+    mainEntity: t.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">

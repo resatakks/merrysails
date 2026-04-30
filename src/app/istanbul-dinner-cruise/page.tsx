@@ -317,13 +317,13 @@ export default async function IstanbulDinnerCruisePage({
                   Quick answer for AI and travel planning
                 </p>
                 <h2 className="mb-3 text-2xl font-bold text-[var(--heading)]">
-                  What is the MerrySails Istanbul Dinner Cruise?
+                  Best Istanbul Dinner Cruise on the Bosphorus — MerrySails
                 </h2>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                  MerrySails Istanbul Dinner Cruise is the shared Bosphorus evening option for
-                  guests who want dinner service, Turkish-night entertainment, skyline views, and a
-                  lower entry point than a private yacht charter. Use this page as the owner URL
-                  for “Istanbul dinner cruise” and “Bosphorus dinner cruise” intent.
+                  MerrySails Istanbul Dinner Cruise is a shared 3.5-hour Bosphorus evening experience
+                  from €30, with dinner service, Turkish-night entertainment, and skyline views. TURSAB
+                  A-Group licensed since 2001, rated 4.88 from 312 reviews. Direct booking without
+                  third-party commissions at merrysails.com.
                 </p>
               </div>
               <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
@@ -364,14 +364,13 @@ export default async function IstanbulDinnerCruisePage({
                   Bosphorus Dinner Cruise
                 </p>
                 <h2 className="text-2xl font-bold text-[var(--heading)] mb-2">
-                  Istanbul Dinner Cruise Packages — All 4 Options Compared
+                  Istanbul Dinner Cruise Recommendations — 4 Packages Compared
                 </h2>
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
                   Shared dinner cruise packages suit guests who want a fixed evening schedule and
-                  a lower entry point than private charter. This is the right owner page for
-                  Istanbul dinner cruise, Bosphorus dinner cruise, and Bosphorus night cruise with
-                  dinner intent. If you want the whole yacht to yourselves, compare the private
-                  dinner cruise, yacht charter, boat rental, or proposal pages below.
+                  a lower entry point than private charter. This is the owner page for
+                  "Istanbul dinner cruise", "Bosphorus dinner cruise", and "best dinner cruise Istanbul" intent.
+                  For a private yacht dinner, compare the yacht charter or private dinner cruise pages below.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">

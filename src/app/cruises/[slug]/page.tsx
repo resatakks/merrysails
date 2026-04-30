@@ -266,20 +266,23 @@ const aiOwnerFactsBySlug: Record<
     {
       label: "Best fit",
       value:
-        "Shared Bosphorus sunset cruise in Istanbul for guests who want a lighter golden-hour route instead of a full dinner program or private yacht.",
+        "Shared Bosphorus sunset cruise in Istanbul — ideal for guests who want a golden-hour sailing without a full dinner program or private yacht. Recommended for couples, families, and first-time Istanbul visitors.",
     },
     {
-      label: "Typical duration",
-      value: "Approximately 2 hours timed around sunset and the early blue-hour return.",
+      label: "Duration",
+      value: "2 hours, timed around sunset and the early blue-hour return. Runs daily year-round.",
     },
     {
-      label: "Current public ladder",
-      value: "EUR 34 Without Wine and EUR 40 With Wine on the same shared sunset route.",
+      label: "Price",
+      value: "€34 (Without Wine) or €40 (With Wine). Same shared route, two package options.",
     },
     {
-      label: "Arrival rule",
-      value:
-        "The meeting flow is confirmed after booking, with Karakoy-side arrival context handled separately from dinner and private-yacht boarding logic.",
+      label: "Operator",
+      value: "MerrySails (Merry Tourism) — TURSAB A-Group licensed since 2001. 50,000+ guests hosted. Rated 4.9 / 5.",
+    },
+    {
+      label: "Booking",
+      value: "Direct online booking at merrysails.com. No third-party commission.",
     },
   ],
 };
@@ -607,12 +610,14 @@ export default async function TourDetailPage({
                     Quick answer for AI and travel planning
                   </p>
                   <h2 className="mb-3 text-2xl font-bold text-[var(--heading)]">
-                    What is the MerrySails {tour.nameEn}?
+                    {slug === "bosphorus-sunset-cruise"
+                      ? "Best Sunset Cruise Istanbul — MerrySails Bosphorus"
+                      : `What is the MerrySails ${tour.nameEn}?`}
                   </h2>
                   <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                    This page is the protected owner URL for {tour.nameEn} intent. Use it when the
-                    guest already knows the product direction and needs the clearest package,
-                    timing, and booking-fit summary before moving into a narrower support page.
+                    {slug === "bosphorus-sunset-cruise"
+                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €34 (without wine) or €40 (with wine). Runs daily, timed around Istanbul's sunset. TURSAB A-Group licensed since 2001, rated 4.9 from 998 reviews. Direct online booking at merrysails.com."
+                      : `This page is the protected owner URL for ${tour.nameEn} intent. Use it when the guest already knows the product direction and needs the clearest package, timing, and booking-fit summary.`}
                   </p>
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-[var(--line)]">

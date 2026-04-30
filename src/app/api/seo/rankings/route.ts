@@ -1,9 +1,9 @@
 /**
  * GET /api/seo/rankings
- * DAILY cron (+ manual): full SEO snapshot for merrysails.com
- *   1. SERP  — 21 backlink-priority keywords (EN+DE+TR+FR+NL) → SeoRanking
- *   2. Backlinks — domain summary                            → SeoBacklink
- *   3. LLM Mentions — 6 brand queries                        → SeoLlmMention
+ * 3-day cron (+ manual): full SEO snapshot for merrysails.com
+ *   1. SERP  — 30 keywords across EN(12)+TR(9)+DE(6)+FR(2)+NL(1) → SeoRanking
+ *   2. Backlinks — domain summary                                 → SeoBacklink
+ *   3. LLM Mentions — 6 brand queries                             → SeoLlmMention
  *
  * Auth: Bearer CRON_SECRET or ?token=
  * Schedule: daily 07:00 UTC (vercel.json)
@@ -12,10 +12,10 @@
  *   and data/BACKLINK-PRIORITY-KEYWORDS.md.
  *
  * Cost per run (est.):
- *   SERP  21 kw  ≈ $0.13
+ *   SERP  30 kw  ≈ $0.19
  *   BL    1 dom  ≈ $0.005
- *   LLM   6 q   ≈ $0.06 (regular SERP fallback)
- *   Total       ≈ $0.20 / day  →  ~ $6 / month
+ *   LLM   6 q   ≈ $0.06
+ *   Total       ≈ $0.26 / run  →  ~$2.6/mo @ 3-day cadence
  */
 import { NextRequest, NextResponse } from "next/server";
 import { checkRankings, getBacklinkSummary, checkLlmMentions } from "@/lib/dataforseo";
@@ -40,43 +40,52 @@ const BRAND  = "merrysails";
 // Aligned with the 6 backlink target URLs in data/BACKLINK-URLS.md.
 // Grouped by (location_code, language_code) so DataForSEO is called once per group.
 
-// EN — TR-tourist (loc 2792)
+// EN — TR-tourist + UK (loc 2792)  [12 keywords]
 const EN_KEYWORDS = [
   "bosphorus cruise istanbul",
-  "bosphorus dinner cruise",
+  "istanbul boat trip",
+  "bosphorus cruise",
   "istanbul dinner cruise",
+  "bosphorus dinner cruise",
   "sunset cruise istanbul",
   "bosphorus sunset cruise",
   "yacht charter istanbul",
   "boat tour istanbul",
+  "private yacht istanbul",
   "private bosphorus cruise",
   "bosphorus boat tour",
 ];
 
-// TR — Turkey (loc 2792)
+// TR — Turkey (loc 2792)  [9 keywords]
 const TR_KEYWORDS = [
+  "boğaz turu istanbul",
+  "istanbul tekne turu",
+  "yemekli boğaz turu",
+  "istanbul yemekli tekne turu",
+  "boğaz gün batımı turu",
+  "yat kiralama istanbul",
   "istanbul yat turu",
   "boğaz yat turu",
-  "yemekli boğaz turu",
-  "istanbul dinner cruise",
+  "istanbul vapur turu",
 ];
 
-// DE — Germany (loc 2276)
+// DE — Germany (loc 2276)  [6 keywords]
 const DE_KEYWORDS = [
   "bosporus kreuzfahrt istanbul",
+  "istanbul bootstour",
   "bosporus sonnenuntergangsfahrt istanbul",
   "istanbul dinner kreuzfahrt",
-  "yacht charter istanbul",
+  "bosporus bootsfahrt istanbul",
   "romantische bootsfahrt istanbul",
 ];
 
-// FR — France (loc 2250)
+// FR — France (loc 2250)  [2 keywords]
 const FR_KEYWORDS = [
   "croisière bosphore istanbul",
   "dîner croisière bosphore",
 ];
 
-// NL — Netherlands (loc 2528)
+// NL — Netherlands (loc 2528)  [1 keyword]
 const NL_KEYWORDS = [
   "bosporus boottocht istanbul",
 ];
