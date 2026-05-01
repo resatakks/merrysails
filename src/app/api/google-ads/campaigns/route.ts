@@ -583,5 +583,65 @@ export async function POST(req: NextRequest) {
     });
   }
 
+  // --- list_search_terms ---
+  // Returns top search queries triggering ads in the last 30 days, sorted by impressions.
+  // Use to identify irrelevant queries for negative keyword addition.
+  if (body.action === "list_search_terms") {
+    const days = 30;
+    const searchQuery = `
+      SELECT
+        search_term_view.search_term,
+        search_term_view.status,
+        metrics.impressions,
+        metrics.clicks,
+        metrics.cost_micros,
+        metrics.conversions,
+        campaign.name,
+        ad_group.name
+      FROM search_term_view
+      WHERE segments.date DURING LAST_30_DAYS
+        AND metrics.impressions > 0
+      ORDER BY metrics.impressions DESC
+      LIMIT 200
+    `;
+    const stUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/googleAds:searchStream`;
+    const stRes = await fetch(stUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ query: searchQuery }),
+    });
+    if (!stRes.ok) {
+      return NextResponse.json({ error: "list_search_terms_failed", details: await stRes.text() }, { status: 502 });
+    }
+    const stText = await stRes.text();
+    // searchStream returns NDJSON — parse each line
+    const rows = stText.trim().split("\n")
+      .filter(Boolean)
+      .flatMap((line) => {
+        try {
+          const parsed = JSON.parse(line) as { results?: unknown[] };
+          return parsed.results ?? [];
+        } catch { return []; }
+      }) as Array<{
+        searchTermView?: { searchTerm?: string; status?: string };
+        metrics?: { impressions?: string; clicks?: string; costMicros?: string; conversions?: string };
+        campaign?: { name?: string };
+        adGroup?: { name?: string };
+      }>;
+
+    const terms = rows.map((r) => ({
+      query: r.searchTermView?.searchTerm ?? "",
+      status: r.searchTermView?.status ?? "",
+      impressions: Number(r.metrics?.impressions ?? 0),
+      clicks: Number(r.metrics?.clicks ?? 0),
+      costEur: Math.round(Number(r.metrics?.costMicros ?? 0) / 10000) / 100,
+      conversions: Number(r.metrics?.conversions ?? 0),
+      campaign: r.campaign?.name ?? "",
+      adGroup: r.adGroup?.name ?? "",
+    }));
+
+    return NextResponse.json({ ok: true, days, total: terms.length, terms });
+  }
+
   return NextResponse.json({ error: "unknown_action" }, { status: 400 });
 }
