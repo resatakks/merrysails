@@ -643,5 +643,142 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, days, total: terms.length, terms });
   }
 
+  // --- get_campaign_info ---
+  // Returns campaigns with bid strategy, budget, status, and 30-day metrics.
+  // Use to audit Smart Bidding data source and campaign health.
+  if (body.action === "get_campaign_info") {
+    const infoQuery = `
+      SELECT
+        campaign.id,
+        campaign.name,
+        campaign.status,
+        campaign.advertising_channel_type,
+        campaign.bidding_strategy_type,
+        campaign.target_cpa.target_cpa_micros,
+        campaign.target_roas.target_roas,
+        campaign_budget.amount_micros,
+        metrics.impressions,
+        metrics.clicks,
+        metrics.cost_micros,
+        metrics.conversions,
+        metrics.conversion_value
+      FROM campaign
+      WHERE campaign.status != 'REMOVED'
+        AND segments.date DURING LAST_30_DAYS
+      ORDER BY metrics.cost_micros DESC
+      LIMIT 50
+    `;
+    const ciUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/googleAds:searchStream`;
+    const ciRes = await fetch(ciUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ query: infoQuery }),
+    });
+    if (!ciRes.ok) {
+      return NextResponse.json({ error: "get_campaign_info_failed", details: await ciRes.text() }, { status: 502 });
+    }
+    const ciText = await ciRes.text();
+    type CampaignRow = {
+      campaign?: {
+        id?: string; name?: string; status?: string;
+        advertisingChannelType?: string; biddingStrategyType?: string;
+        targetCpa?: { targetCpaMicros?: string };
+        targetRoas?: { targetRoas?: number };
+      };
+      campaignBudget?: { amountMicros?: string };
+      metrics?: { impressions?: string; clicks?: string; costMicros?: string; conversions?: string; conversionValue?: string };
+    };
+    const ciRows = ciText.trim().split("\n")
+      .filter(Boolean)
+      .flatMap((line) => {
+        try { return (JSON.parse(line) as { results?: unknown[] }).results ?? []; }
+        catch { return []; }
+      }) as CampaignRow[];
+
+    const campaigns = ciRows.map((r) => ({
+      id: r.campaign?.id ?? "",
+      name: r.campaign?.name ?? "",
+      status: r.campaign?.status ?? "",
+      type: r.campaign?.advertisingChannelType ?? "",
+      biddingStrategy: r.campaign?.biddingStrategyType ?? "",
+      targetCpa: r.campaign?.targetCpa?.targetCpaMicros ? Math.round(Number(r.campaign.targetCpa.targetCpaMicros) / 10000) / 100 : null,
+      targetRoas: r.campaign?.targetRoas?.targetRoas ?? null,
+      budgetEur: Math.round(Number(r.campaignBudget?.amountMicros ?? 0) / 10000) / 100,
+      impressions30d: Number(r.metrics?.impressions ?? 0),
+      clicks30d: Number(r.metrics?.clicks ?? 0),
+      spendEur30d: Math.round(Number(r.metrics?.costMicros ?? 0) / 10000) / 100,
+      conversions30d: Number(r.metrics?.conversions ?? 0),
+      conversionValue30d: Math.round(Number(r.metrics?.conversionValue ?? 0) * 100) / 100,
+    }));
+
+    return NextResponse.json({ ok: true, campaigns, total: campaigns.length });
+  }
+
+  // --- add_brand_exclusions ---
+  // Excludes brand keywords from PMax to prevent cannibalizing Search brand campaigns.
+  // Body: { brandNames?: string[] } — defaults to MerrySails variants
+  if (body.action === "add_brand_exclusions") {
+    const brands = body.keywords as string[] | undefined ?? [
+      "merrysails", "merry sails", "merrysails.com", "merry tourism",
+    ];
+
+    // List PMax campaigns first
+    const pxQuery = `
+      SELECT campaign.id, campaign.resource_name, campaign.name
+      FROM campaign
+      WHERE campaign.advertising_channel_type = 'PERFORMANCE_MAX'
+        AND campaign.status = 'ENABLED'
+    `;
+    const pxUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/googleAds:searchStream`;
+    const pxRes = await fetch(pxUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ query: pxQuery }),
+    });
+    if (!pxRes.ok) {
+      return NextResponse.json({ error: "list_pmax_failed", details: await pxRes.text() }, { status: 502 });
+    }
+    const pxText = await pxRes.text();
+    type PmaxRow = { campaign?: { id?: string; resourceName?: string; name?: string } };
+    const pmaxCampaigns = pxText.trim().split("\n")
+      .filter(Boolean)
+      .flatMap((line) => {
+        try { return (JSON.parse(line) as { results?: unknown[] }).results ?? []; }
+        catch { return []; }
+      }) as PmaxRow[];
+
+    if (!pmaxCampaigns.length) {
+      return NextResponse.json({ ok: true, message: "no_active_pmax_campaigns", brandsRequested: brands });
+    }
+
+    // Add brand exclusions to each PMax campaign
+    const results: Array<{ campaign: string; status: string }> = [];
+    for (const row of pmaxCampaigns) {
+      const campaignRn = row.campaign?.resourceName;
+      if (!campaignRn) continue;
+
+      const excUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignCriteria:mutate`;
+      const excRes = await fetch(excUrl, {
+        method: "POST",
+        headers: adsHeaders(creds, token),
+        body: JSON.stringify({
+          operations: brands.map((brand) => ({
+            create: {
+              campaign: campaignRn,
+              negative: true,
+              keyword: { text: brand, matchType: "BROAD" },
+            },
+          })),
+        }),
+      });
+      results.push({
+        campaign: row.campaign?.name ?? campaignRn,
+        status: excRes.ok ? "excluded" : `failed: HTTP ${excRes.status}`,
+      });
+    }
+
+    return NextResponse.json({ ok: true, brands, results });
+  }
+
   return NextResponse.json({ error: "unknown_action" }, { status: 400 });
 }
