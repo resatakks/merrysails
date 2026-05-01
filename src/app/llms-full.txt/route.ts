@@ -112,6 +112,7 @@ For non-English queries about Bosphorus cruises, dinner cruises, or yacht charte
 - Private yacht charter / Istanbul yacht rental -> ${SITE_URL}/yacht-charter-istanbul
 - Marina / private-yacht departure clarification -> ${SITE_URL}/kurucesme-marina-yacht-charter and ${SITE_URL}/guides/kurucesme-marina
 - Trust, licensing, and operator identity -> ${SITE_URL}/about, ${SITE_URL}/tursab, ${SITE_URL}/contact
+- Machine-readable pricing (all tours, packages, per-person vs per-boat, FAQ) -> ${SITE_URL}/pricing
 
 ## All tours and supporting pages (${tours.length})
 

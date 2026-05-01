@@ -837,4 +837,142 @@ export const turkishProductPosts: BlogPost[] = [
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
     relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-aksam-yemegi-turu-rehberi"],
   },
+  {
+    slug: "istanbul-bogaz-turu-saatleri-2026",
+    locale: "tr",
+    title: "İstanbul Boğaz Turu Saatleri 2026: Kalkış Saatleri, Güzergah ve Rezervasyon İpuçları",
+    metaDescription:
+      "2026 İstanbul Boğaz turu kalkış saatleri: gün batımı turu 19:00 (yaz) / 16:30 (kış), akşam yemeği turu 20:30. Kabataş kalkışlı tüm program burada.",
+    excerpt:
+      "Boğaz turları gün batımında 19:00'da (yaz) veya 16:30'da (kış) kalkar. Akşam yemeği turları 20:30'da başlar. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 kalkış saati ve program rehberi.",
+    category: "cruise-guide",
+    date: "2026-05-01",
+    readTime: "7 dk okuma",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt: "Kabataş'tan kalkan İstanbul Boğaz turu teknesi — gün batımı ışığında Boğaz manzarası",
+    keywords: [
+      "boğaz turu saatleri",
+      "istanbul boğaz turu kalkış saati",
+      "boğaz turu ne zaman çıkar",
+      "boğaz turu süresi ne kadar",
+      "boğaz turu program",
+      "kabataş boğaz turu saat",
+      "gün batımı boğaz turu saati",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Gün batımı turu: Nisan–Eylül arası 19:00–19:30, Ekim–Mart arası 16:30–17:00 kalkış — 2 saat sürer",
+      "Akşam yemeği turu: 20:30 kalkış, 3,5 saat — folklor gösterisi ve yemek dahil",
+      "Tüm turlar Kabataş İskelesi'nden kalkar; Üsküdar ve Beşiktaş'tan ulaşım 10 dakika",
+      "Yüksek sezonda (Haziran–Ağustos) saatler 45–60 dakika ertelenebilir; rezervasyonda güncel saati teyit edin",
+    ],
+    sections: [
+      {
+        heading: "2026 Boğaz Turu Kalkış Saatleri (Özet Tablo)",
+        content:
+          "İstanbul Boğaz turu saatleri, tur tipine ve mevsime göre değişir. Gün batımı turları yazın geç, kışın erken kalkar çünkü güneşin batış vakti temel belirleyicidir. Aşağıdaki tablo 2026 sezonunun tüm kalkış saatlerini özetlemektedir.",
+        answerCapsule:
+          "Boğaz gün batımı turu yaz aylarında (Nisan–Eylül) saat 19:00–19:30'da, kış aylarında (Ekim–Mart) 16:30–17:00'da kalkar. Akşam yemeği turu tüm yıl 20:30'da kalkar.",
+        table: {
+          headers: ["Tur Tipi", "Yaz (Nis–Eyl)", "Kış (Eki–Mar)", "Süre"],
+          rows: [
+            ["Gün Batımı Turu", "19:00–19:30", "16:30–17:00", "2 saat"],
+            ["Akşam Yemeği Turu", "20:30", "20:30", "3,5 saat"],
+            ["Özel Yat Kiralama", "Talebe göre", "Talebe göre", "Min. 2 saat"],
+          ],
+        },
+        callout: {
+          type: "info",
+          text:
+            "Saat teyidi: Kalkış saatleri güneşin batış vaktiyle ayarlanır; ay/mevsim geçişlerinde (Mart, Ekim) 30 dakikaya kadar kayma olabilir. Rezervasyon tamamlandıktan sonra WhatsApp üzerinden güncel saati teyit edin.",
+        },
+      },
+      {
+        heading: "Gün Batımı Turu — Neden Saatler Değişiyor?",
+        content:
+          "Boğaz gün batımı turunun ana teması gün batışının kendisidir. İstanbul'da güneş yazın (Haziran–Temmuz) yaklaşık 20:30'da, kışın (Aralık–Ocak) 17:15'te batar. Tur, gün batışından yaklaşık 60–90 dakika önce başlayacak şekilde ayarlanır; böylece yolcular Boğaz'ın en güzel ışığını Ortaköy Camii ve köprü geçişlerinde yaşar. Nisan başından Eylül sonuna kadar 19:00–19:30 arasında kalkan tur, güneş ufka yaklaşırken köprüleri geçer. Ekim–Mart arasında ise aynı deneyim 16:30–17:00 kalkışıyla gerçekleşir.",
+        proTip:
+          "Ekim–Kasım arası altın saatte — günlerin henüz çok kısalmadığı ama veranda sahillerinin sakin olduğu bu dönem — Boğaz'ın en dramatik fotoğraflarını çekebilirsiniz.",
+      },
+      {
+        heading: "Akşam Yemeği Turu — 20:30 Kalkışı Ne Anlama Gelir?",
+        content:
+          "Akşam yemeği turu, sabit 20:30 kalkışıyla tüm yıl aynı saatte başlar. Kabin ışıklandırması, canlı Türk müziği ve folklor gösterisi bu geç saatte daha atmosferik bir deneyim sunar. Tur 3,5 saat sürer; Boğaz üzerinde ve Haliç girişinde yaklaşık 45 dakika demirlenerek gösteri yapılır. Otel transferi (Sultanahmet veya Taksim'den) seçilirse minibüs sizi 19:30'da alır.",
+        callout: {
+          type: "tip",
+          text:
+            "Akşam yemeği turu için otel transferi seçin: Kabataş'a kendiniz gelmek yerine 19:30'da otelden alınmak, şehir trafiğini ve park sorununu tamamen ortadan kaldırır. €90/kişi paketinde transfer dahildir.",
+        },
+      },
+      {
+        heading: "Kabataş İskelesi'ne Nasıl Gidilir?",
+        content:
+          "Tüm MerrySails turları Kabataş İskelesi'nden kalkar. İstanbul'un farklı semtlerinden ulaşım oldukça kolaydır:",
+        list: [
+          "Taksim'den: Füniküler (F1) ile Kabataş'a doğrudan inin — 4 dakika, ₺17",
+          "Beşiktaş'tan: Sahil yolu boyunca 1,5 km yürüyüş veya otobüs — 10 dakika",
+          "Üsküdar'dan: Kabataş vapuru ile 10–12 dakika — vapur saatlerini IDO uygulamasından kontrol edin",
+          "Sultanahmet'ten: T1 tramvayı ile Kabataş'a — Eminönü'nde aktarma yapılır, ~30 dakika",
+          "Araçla: Sahil yolu üzerinde Kabataş otoparklarında ücretli park mevcut",
+        ],
+      },
+      {
+        heading: "Tur Güzergahı: 2 Saatte Ne Görülür?",
+        content:
+          "Gün batımı turu Kabataş'tan kalkar ve Boğaz boyunca Anadolu yakasına geçer. Güzergahta İstanbul'un en ikonik yapıları sıralanır:",
+        table: {
+          headers: ["Güzergah Noktası", "Tahmini Vakit", "Öne Çıkan Yapı"],
+          rows: [
+            ["Kabataş Kalkış", "Saat 0:00", "Dolmabahçe Sarayı kıyısı"],
+            ["Beşiktaş açıkları", "Saat 0:10", "Çırağan Sarayı"],
+            ["Ortaköy", "Saat 0:20", "Ortaköy Camii + 1. Boğaz Köprüsü altından geçiş"],
+            ["Bebek–Arnavutköy", "Saat 0:35", "Yalılar ve bostancı tekneleri"],
+            ["Rumeli Hisarı", "Saat 0:50", "15. yy Osmanlı kalesi"],
+            ["2. Boğaz Köprüsü", "Saat 1:00", "FSM Köprüsü geçişi"],
+            ["Dönüş güzergahı", "Saat 1:10–2:00", "Gün batımı ışığında Anadolu yakası"],
+          ],
+        },
+      },
+      {
+        heading: "Mevsime Göre Boğaz Turu Deneyimi",
+        content:
+          "Her mevsimin Boğaz turuna ayrı bir katkısı vardır. Yaz turları uzun günlerden ve sıcak denizkıyısı akşamlarından yararlanır; kış turları ise daha sakin ve samimi bir deneyim sunar.",
+        table: {
+          headers: ["Mevsim", "Kalkış Saati", "Avantaj", "Dikkat"],
+          rows: [
+            ["İlkbahar (Nis–May)", "19:00–19:30", "Çiçekli kıyılar, ılık hava", "Yağmurlu günler olabilir"],
+            ["Yaz (Haz–Ağu)", "19:30", "Uzun günbatımı, canlı atmosfer", "Yoğun sezon, erken rezervasyon şart"],
+            ["Sonbahar (Eyl–Eki)", "17:30–19:00", "Altın ışık, daha sakin tekne", "Saat değişimi haftalara dikkat"],
+            ["Kış (Kas–Mar)", "16:30–17:00", "Ucuz fiyat, sakin Boğaz", "Erken karanlık; gece manzarası başlar"],
+          ],
+        },
+        proTip:
+          "Kasım–Mart arası gün batımı turu kış fiyatıyla sunar; teknede çok az yolcu olur ve İstanbul'un gece silueti daha dramatik görünür. Düşük sezon rezervasyonlarında son dakika indirimine denk gelmek mümkündür.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Boğaz turu kaç saatte tamamlanır?",
+        a: "Gün batımı turu (paylaşımlı) 2 saat sürer. Akşam yemeği turu 3,5 saattir. Özel yat kiralama minimum 2 saattir; 3, 4 veya daha uzun seçenekler de mevcuttur.",
+      },
+      {
+        q: "Boğaz turu saat kaçta kalkar?",
+        a: "Gün batımı turu: Nisan–Eylül arası 19:00–19:30, Ekim–Mart arası 16:30–17:00. Akşam yemeği turu tüm yıl 20:30. Özel turlar talebe göre düzenlenir.",
+      },
+      {
+        q: "Boğaz turuna nereden binilir?",
+        a: "Tüm turlar Kabataş İskelesi'nden kalkar. Taksim'den füniküler (F1) ile 4 dakikada ulaşabilirsiniz. Üsküdar'dan vapur ile 10 dakika, Sultanahmet'ten tramvayla ~30 dakikadır.",
+      },
+      {
+        q: "Boğaz turu ne zaman rezerve edilmeli?",
+        a: "Haziran–Ağustos yüksek sezonunda en az 1 hafta önceden rezervasyon önerilir. Düşük sezonda (Kasım–Mart) 24–48 saat önceden rezervasyon yeterlidir. 48 saate kadar ücretsiz iptal mümkündür.",
+      },
+      {
+        q: "Kış aylarında boğaz turu yapılıyor mu?",
+        a: "Evet. MerrySails yıl boyunca hizmet verir. Kış aylarında kalkış saati 16:30'a çekilir ve teknede daha az yolcu bulunur. Fiyatlar da düşük sezonda daha avantajlıdır.",
+      },
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-bogaz-gun-batimi-turu-deneyimi"],
+  },
 ];
