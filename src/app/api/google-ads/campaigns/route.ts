@@ -662,7 +662,7 @@ export async function POST(req: NextRequest) {
         metrics.clicks,
         metrics.cost_micros,
         metrics.conversions,
-        metrics.conversion_value
+        metrics.all_conversions_value
       FROM campaign
       WHERE campaign.status != 'REMOVED'
         AND segments.date DURING LAST_30_DAYS
@@ -687,7 +687,7 @@ export async function POST(req: NextRequest) {
         targetRoas?: { targetRoas?: number };
       };
       campaignBudget?: { amountMicros?: string };
-      metrics?: { impressions?: string; clicks?: string; costMicros?: string; conversions?: string; conversionValue?: string };
+      metrics?: { impressions?: string; clicks?: string; costMicros?: string; conversions?: string; allConversionsValue?: string };
     };
     const ciRows = ciText.trim().split("\n")
       .filter(Boolean)
@@ -709,7 +709,7 @@ export async function POST(req: NextRequest) {
       clicks30d: Number(r.metrics?.clicks ?? 0),
       spendEur30d: Math.round(Number(r.metrics?.costMicros ?? 0) / 10000) / 100,
       conversions30d: Number(r.metrics?.conversions ?? 0),
-      conversionValue30d: Math.round(Number(r.metrics?.conversionValue ?? 0) * 100) / 100,
+      conversionValue30d: Math.round(Number(r.metrics?.allConversionsValue ?? 0) * 100) / 100,
     }));
 
     return NextResponse.json({ ok: true, campaigns, total: campaigns.length });
