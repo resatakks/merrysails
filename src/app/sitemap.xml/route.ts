@@ -4,6 +4,7 @@ import { guides } from "@/data/guides";
 import { commercialSupportPosts } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
 import { ACTIVE_LOCALES } from "@/i18n/config";
+import { getAllLocalePostsForLocale } from "@/data/blog/locale-posts";
 
 const SITE_URL = "https://merrysails.com";
 const EXCLUDED_TOUR_SLUGS = new Set([
@@ -238,6 +239,20 @@ export function GET() {
       : undefined,
   }));
 
+  // Locale blog posts — /tr/blog/slug, /de/blog/slug, etc.
+  const NON_EN_BLOG_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en");
+  const localeBlogPages: SitemapPage[] = NON_EN_BLOG_LOCALES.flatMap((locale) =>
+    getAllLocalePostsForLocale(locale).map((post) => ({
+      url: `${SITE_URL}/${locale}/blog/${post.slug}`,
+      changefreq: "monthly" as const,
+      priority: "0.7",
+      lastmod: formatDate(new Date(post.dateModified ?? post.date)),
+      images: post.image
+        ? [{ loc: toAbsoluteUrl(post.image), title: cleanContentText(post.title) }]
+        : undefined,
+    }))
+  );
+
   const allPages = [
     ...staticPages,
     ...localeHomepages,
@@ -245,6 +260,7 @@ export function GET() {
     ...tourPages,
     ...blogPages,
     ...guidePages,
+    ...localeBlogPages,
   ].filter(
     (page, index, pages) => pages.findIndex((candidate) => candidate.url === page.url) === index
   );
