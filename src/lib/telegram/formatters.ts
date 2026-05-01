@@ -26,6 +26,7 @@ function labelTrafficChannel(
   if (channel === "organic_search") return "Organic Search (SEO)";
   if (channel === "email") return "Email";
   if (channel === "social") return "Social";
+  if (channel === "ai_referral") return "AI Referral";
   if (channel === "referral") return "Referral";
   if (channel === "direct") return "Direct";
   if (medium && /cpc|ppc|paid/.test(medium)) return "Paid";
