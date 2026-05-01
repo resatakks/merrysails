@@ -418,6 +418,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Partner Transfer — contextual editorial link for SEO */}
+      <section className="py-12 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-slate-800 mb-3">
+            Getting to Istanbul? Book Your Airport Transfer
+          </h2>
+          <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
+            Arrive in style with our partner{" "}
+            <a
+              href="https://www.kingsworldtransfer.com/en/istanbul-airport-transfer"
+              className="text-blue-600 hover:underline font-medium"
+            >
+              Istanbul airport transfer
+            </a>{" "}
+            service. Fixed-price Mercedes transfers from Istanbul Airport (IST) — meet &amp; greet,
+            flight tracking, no hidden fees.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href="https://www.kingsworldtransfer.com/en/istanbul-airport-transfer"
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors text-sm"
+            >
+              Istanbul Airport Transfer →
+            </a>
+            <a
+              href="https://www.kingsworldtransfer.com/en/istanbul-vip-transfer"
+              className="inline-flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-5 py-2.5 rounded-lg font-medium hover:bg-slate-50 transition-colors text-sm"
+            >
+              VIP Transfer Istanbul
+            </a>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );

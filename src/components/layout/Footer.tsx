@@ -68,6 +68,8 @@ function localizeHref(href: string, locale: NavLocale): string {
 
 type FooterCoreLink = { label: string; href: string };
 
+type PartnerLink = { label: string; href: string };
+
 type FooterTranslation = {
   description: string;
   coreProducts: string;
@@ -75,11 +77,13 @@ type FooterTranslation = {
   company: string;
   blogHighlights: string;
   guideTopics: string;
+  partnerServices: string;
   viewLicense: string;
   copyright: string;
   privacyPolicy: string;
   terms: string;
   coreLinks: FooterCoreLink[];
+  partnerLinks: PartnerLink[];
 };
 
 const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
@@ -91,6 +95,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     company: "Company",
     blogHighlights: "Blog Highlights",
     guideTopics: "Guide Topics",
+    partnerServices: "Partner Services",
     viewLicense: "View license details",
     copyright: "All rights reserved.",
     privacyPolicy: "Privacy Policy",
@@ -99,6 +104,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
       { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
       { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
+    ],
+    partnerLinks: [
+      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
+      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
+      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
   },
   tr: {
@@ -109,6 +119,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     company: "Şirket",
     blogHighlights: "Blog",
     guideTopics: "Rehberler",
+    partnerServices: "Ortak Hizmetler",
     viewLicense: "Lisans detaylarını görüntüle",
     copyright: "Tüm hakları saklıdır.",
     privacyPolicy: "Gizlilik Politikası",
@@ -117,6 +128,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Boğaz Gün Batımı Turu", href: "/tr/cruises/bosphorus-sunset-cruise" },
       { label: "Boğaz Akşam Yemeği Turu", href: "/tr/istanbul-dinner-cruise" },
       { label: "İstanbul Yat Kiralama", href: "/tr/yacht-charter-istanbul" },
+    ],
+    partnerLinks: [
+      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
+      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
+      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
   },
   de: {
@@ -127,6 +143,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     company: "Unternehmen",
     blogHighlights: "Blog",
     guideTopics: "Reiseführer",
+    partnerServices: "Partner-Services",
     viewLicense: "Lizenzdetails ansehen",
     copyright: "Alle Rechte vorbehalten.",
     privacyPolicy: "Datenschutzrichtlinie",
@@ -135,6 +152,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Bosporus-Sonnenuntergangsfahrt", href: "/de/cruises/bosphorus-sunset-cruise" },
       { label: "Bosporus-Dinner-Kreuzfahrt", href: "/de/istanbul-dinner-cruise" },
       { label: "Yachtcharter Istanbul", href: "/de/yacht-charter-istanbul" },
+    ],
+    partnerLinks: [
+      { label: "Istanbul Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/istanbul-airport-transfer" },
+      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/de/istanbul-vip-transfer" },
+      { label: "Antalya Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/antalya-airport-transfer" },
     ],
   },
   fr: {
@@ -145,6 +167,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     company: "Entreprise",
     blogHighlights: "Blog",
     guideTopics: "Guides de voyage",
+    partnerServices: "Services Partenaires",
     viewLicense: "Voir les détails de la licence",
     copyright: "Tous droits réservés.",
     privacyPolicy: "Politique de confidentialité",
@@ -153,6 +176,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Croisière Coucher de Soleil", href: "/fr/cruises/bosphorus-sunset-cruise" },
       { label: "Dîner-Croisière Bosphore", href: "/fr/istanbul-dinner-cruise" },
       { label: "Location Yacht Istanbul", href: "/fr/yacht-charter-istanbul" },
+    ],
+    partnerLinks: [
+      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
+      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
+      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
   },
   nl: {
@@ -163,6 +191,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     company: "Bedrijf",
     blogHighlights: "Blog",
     guideTopics: "Reisidsen",
+    partnerServices: "Partnerservices",
     viewLicense: "Licentiedetails bekijken",
     copyright: "Alle rechten voorbehouden.",
     privacyPolicy: "Privacybeleid",
@@ -171,6 +200,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Bosporus Zonsondergangtocht", href: "/nl/cruises/bosphorus-sunset-cruise" },
       { label: "Bosporus Dinercruise", href: "/nl/istanbul-dinner-cruise" },
       { label: "Jachthuur Istanbul", href: "/nl/yacht-charter-istanbul" },
+    ],
+    partnerLinks: [
+      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
+      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
+      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
   },
 };
@@ -231,7 +265,7 @@ export default function Footer() {
   return (
     <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">
       <div className="container-main pt-20 pb-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr_0.85fr]">
           <div>
             <Link href={locale === "en" ? "/" : `/${locale}`} className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
@@ -377,6 +411,24 @@ export default function Footer() {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+              {t.partnerServices}
+            </h3>
+            <ul className="space-y-2.5">
+              {t.partnerLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>

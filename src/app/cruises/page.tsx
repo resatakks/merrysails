@@ -239,6 +239,27 @@ export default function CruisesPage() {
               proposal setups, boat rental, and company-event support pages. It is best used once the
               main route is clear rather than as the first owner page for broad Bosphorus cruise demand.
             </p>
+
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Planning Your Visit to Istanbul?</h3>
+            <p className="text-[var(--body-text)] leading-relaxed mb-4">
+              Combine your Bosphorus cruise with a reliable{" "}
+              <a
+                href="https://www.kingsworldtransfer.com/en/istanbul-airport-transfer"
+                className="text-[var(--brand-primary)] hover:underline font-medium"
+              >
+                Istanbul airport transfer
+              </a>{" "}
+              — fixed price, Mercedes fleet, meet &amp; greet service from our transfer partner Kings
+              World Transfer. Whether you land at Istanbul Airport (IST) or Sabiha Gökçen (SAW),
+              they offer{" "}
+              <a
+                href="https://www.kingsworldtransfer.com/en/istanbul-vip-transfer"
+                className="text-[var(--brand-primary)] hover:underline font-medium"
+              >
+                VIP transfer Istanbul
+              </a>{" "}
+              options with real-time flight tracking and no hidden fees.
+            </p>
           </div>
         </section>
         </div>
