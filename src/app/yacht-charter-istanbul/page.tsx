@@ -58,7 +58,8 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": ["TouristTrip", "Service"],
+  touristType: "Couples, Groups, Families, Corporate",
   name: yachtTour.nameEn,
   alternateName: [
     "Yacht Charter Istanbul",

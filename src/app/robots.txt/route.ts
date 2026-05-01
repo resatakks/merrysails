@@ -60,6 +60,9 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Applebot-Webindex
+Allow: /
+
 User-agent: Meta-ExternalAgent
 Allow: /
 
