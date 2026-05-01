@@ -1,0 +1,155 @@
+{
+  "date": "2026-04-28",
+  "site": "sc-domain:merrysails.com",
+  "totals": {
+    "clicks": 0,
+    "impressions": 40,
+    "ctr": 0,
+    "avgPosition": 57.6
+  },
+  "topQueries": [
+    {
+      "query": "bosphorus bridge",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 74.2
+    },
+    {
+      "query": "bosphorus strait",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "bridges istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 66
+    },
+    {
+      "query": "corporate yacht event turkey",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "dolma bahce palace",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
+    },
+    {
+      "query": "dolmabahce",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 66.3
+    },
+    {
+      "query": "dolmabahce palace",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 74
+    },
+    {
+      "query": "dolmabahce sarayi",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 82
+    },
+    {
+      "query": "dolmabahçe",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 64
+    },
+    {
+      "query": "eminönü waterfront",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 9.7
+    }
+  ],
+  "topPages": [
+    {
+      "page": "/blog/best-bosphorus-cruise-istanbul-guide",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 10.7
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-points",
+      "clicks": 0,
+      "impressions": 62,
+      "ctr": 0,
+      "position": 6.6
+    },
+    {
+      "page": "/blog/bosphorus-cruise-eminonu",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 10.2
+    },
+    {
+      "page": "/blog/bosphorus-cruise-with-kids",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 5.1
+    },
+    {
+      "page": "/blog/bosphorus-dinner-cruise-what-to-expect",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 6.7
+    },
+    {
+      "page": "/blog/bosphorus-family-cruise-kids-guide",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "/blog/istanbul-3-day-itinerary-cruises-tours",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 8.8
+    },
+    {
+      "page": "/blog/istanbul-corporate-yacht-events",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "/blog/istanbul-cruise-weekend-itinerary",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "/blog/istanbul-hidden-gems-local-guide",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 52.7
+    }
+  ],
+  "capturedAt": "2026-05-01T09:06:27.040Z"
+}
