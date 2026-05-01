@@ -30,6 +30,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 const API_VERSION = "v20";
 const MIN_MULTIPLIER = 0.5;
@@ -778,6 +779,44 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ ok: true, brands, results });
+  }
+
+  // --- get_ai_max_themes ---
+  // Generates recommended Search Themes for AI Max migration (replacing DSA).
+  // Returns 12 curated theme sentences based on MerrySails keyword pillars.
+  // Use these as input when upgrading PMax campaigns to AI Max.
+  if (body.action === "get_ai_max_themes") {
+    const themes = [
+      // Tier 1: Direct booking intent (highest value)
+      "best bosphorus cruise istanbul book online",
+      "istanbul dinner cruise with turkish night show",
+      "private yacht charter istanbul special occasion",
+      "bosphorus sunset cruise tickets istanbul 2026",
+      "boat rental istanbul with captain hourly",
+      // Tier 2: Geo + qualifier intent
+      "bosphorus cruise from kabatas istanbul",
+      "dinner cruise pickup from sultanahmet taksim hotel",
+      "luxury private bosphorus yacht proposal anniversary",
+      "corporate event yacht istanbul bosphorus",
+      // Tier 3: Competitor displacement (OTA intent)
+      "bosphorus cruise direct booking no commission",
+      "istanbul cruise tursab licensed operator",
+      "private dinner yacht istanbul couples groups",
+    ];
+
+    return NextResponse.json({
+      ok: true,
+      total: themes.length,
+      themes,
+      note: "Add these as Search Themes in PMax/AI Max campaign settings. AI Max uses these as intent signals alongside URL expansion. Recommended: 8-12 themes per campaign. DSA → AI Max migration deadline: September 2026.",
+      migrationGuide: {
+        step1: "Enable AI Max on existing PMax campaign (Settings → AI Max)",
+        step2: "Add the 12 search themes above as campaign-level signals",
+        step3: "Set Final URL expansion to 'Specific URLs only' initially",
+        step4: "Run alongside existing Search campaign for 4-6 weeks",
+        step5: "After learning period, compare: AI Max CPA vs Search CPA",
+      },
+    });
   }
 
   return NextResponse.json({ error: "unknown_action" }, { status: 400 });
