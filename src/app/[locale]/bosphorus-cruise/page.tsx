@@ -43,7 +43,7 @@ const CONTENT: Record<string, LocaleContent> = {
   tr: {
     htmlLang: "tr-TR",
     title: "Boğaz Turu İstanbul — €34'dan başlayan fiyatlar | MerrySails",
-    description: "İstanbul Boğaz turu seçenekleri: gün batımı turu €34'ten, akşam yemeği turu €30'dan, özel yat kiralama €280'den. TÜRSAB A Grubu lisanslı, 2001'den bu yana 50.000+ misafir. Hemen rezervasyon yapın.",
+    description: "İstanbul Boğaz turu: yemekli boğaz turu €30'dan, gün batımı turu €34'ten, Eminönü kalkışlı. TÜRSAB A Grubu lisanslı, 50.000+ misafir. Online rezervasyon.",
     canonicalPath: "/tr/bosphorus-cruise",
     h1: "Boğaz Turu İstanbul",
     subtitle: "MerrySails İstanbul",
@@ -99,7 +99,8 @@ const CONTENT: Record<string, LocaleContent> = {
       { q: "Boğaz turu için en iyi dönem ne zaman?", a: "Yıl boyunca tur düzenlenmektedir. Mayıs–Eylül en yoğun sezon olmakla birlikte, Nisan ve Ekim en ideal hava koşullarını sunar. Kışın Boğaz daha sakin ve fotoğrafik bir atmosfer kazanır." },
       { q: "Tekne turunda çocuk indirimi var mı?", a: "6 yaş altı çocuklar ücretsizdir. 6–12 yaş arası çocuklara %50 indirim uygulanır. Rezervasyon sırasında çocuk sayısını ve yaşlarını belirtmenizi öneririz." },
       { q: "Rezervasyon iptali mümkün mü?", a: "Evet. Sefer tarihinden 48 saat öncesine kadar ücretsiz iptal ve tam para iadesi yapılmaktadır. 48 saatten az kalan iptallerde %50 iade uygulanır." },
-      { q: "Akşam yemeği turunda ne yenir?", a: "Pakete göre değişmekle birlikte standart menülerde mezeler, ana yemek (balık veya et), tatlı ve Türk çayı bulunur. Vejetaryen seçenek mevcuttur; alerji durumunuzu önceden bildirmenizi öneririz." },
+      { q: "Yemekli boğaz turu nedir? Ne dahil?", a: "Yemekli boğaz turu (akşam yemeği turu), 3,5 saatlik bir Boğaz deneyimidir. €30'dan €90'a 4 farklı paket mevcuttur: Temel pakette mezeler + ana yemek + Türk gecesi gösterisi dahil; Premium pakette 5 çeşit yemek + açık alkol + VIP oturma dahildir. Ayrıca Sultanahmet ve Taksim bölgesinden otel transfer seçeneği de sunulmaktadır." },
+      { q: "Eminönü'den boğaz turu var mı?", a: "Evet, Eminönü en merkezi kalkış noktamızdır. Tarihi yarımada'da yer alır; tramvay (T1 hattı) ve metro (M2) ile kolayca ulaşılır. Hem gün batımı hem akşam yemeği turlarımız Eminönü İskelesi'nden hareket eder. Bunun yanı sıra Kabataş, Beşiktaş ve Üsküdar'dan da kalkış seçeneği mevcuttur; otele en yakın iskeleyi tercih edebilirsiniz." },
       { q: "Özel yat kiralama için kaç kişi gerekir?", a: "Özel yat kiralama, kişi sayısına değil tekne başına fiyatlandırılır. 2 kişilik bir çift de tüm tekneyi kiralayabilir. Kapasiteye göre 8–30 kişilik tekne seçenekleri mevcuttur." },
       { q: "Alkol servisi yapılıyor mu?", a: "Gün batımı turlarında şaraplı seçenek vardır (€40/kişi). Akşam yemeği turlarının standart paketinde içecek, premium paketinde ise açık alkol dahildir. Özel yat kiralamada menüyü siz belirlersiniz." },
     ],
