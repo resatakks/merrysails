@@ -3,8 +3,8 @@ import type { BlogPost } from "../types";
 export const foundationalCruiseGuides: BlogPost[] = [
 {
     slug: "best-bosphorus-cruise-istanbul-guide",
-    title: "How to Compare Bosphorus Cruise Types in Istanbul — 2026 Planning Guide",
-    metaDescription: "Best Bosphorus cruise Istanbul 2026 — compare sunset from €34, dinner from €30, and private yacht from €280. Expert guide to choosing the right option for your budget and group size.",
+    title: "Best Bosphorus Cruise Istanbul 2026 — Honest Guide \& Comparison",
+    metaDescription: "The definitive guide to choosing the best Bosphorus cruise in Istanbul. Compare shared vs private, prices €15–€280, and departure times. Updated May 2026.",
     excerpt: "Use this support comparison guide after the main Bosphorus cruise hub to understand when sunset, dinner, or private yacht charter is the right fit in Istanbul.",
     category: "cruise-guide",
     date: "2025-12-20",
@@ -41,8 +41,8 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-sunset-cruise-experience",
-    title: "Istanbul Bosphorus Sunset Cruise 2026 — From €34 | Book Online",
-    metaDescription: "Reserve the best Istanbul sunset cruise for 2026. 2-hour Bosphorus cruise from €34 with soft drinks, snacks, fruit, tea, coffee, and a live guide. Best price guarantee — reserve direct.",
+    title: "Istanbul Bosphorus Sunset Cruise 2026 — Experience, Route & What to Expect",
+    metaDescription: "What to expect on a Bosphorus sunset cruise in Istanbul: 2-hour route, Maiden Tower, Ortakoy, drinks and snacks included. Shared cruise from €34 per person.",
     excerpt: "The Istanbul sunset cruise is one of the most magical experiences the city offers. Sail the Bosphorus as the sun sets behind minarets and palaces — here is everything you need to know.",
     category: "cruise-guide",
     date: "2025-12-18",
@@ -80,7 +80,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
 {
     slug: "bosphorus-dinner-cruise-what-to-expect",
     title: "Bosphorus Dinner Cruise 2026 | What to Expect, Prices & Booking Tips",
-    metaDescription: "Bosphorus dinner cruise from €30 with four package options: Silver Soft, Silver Alcoholic, Gold Soft, and Gold Unlimited Alcohol. Menu, pickup, dress code, and booking tips for 2026.",
+    metaDescription: "Istanbul dinner cruise: menu options (Silver/Gold packages €30–€90), 20:30 Kabataş boarding, Turkish show, dress code and what to expect on board.",
     excerpt: "The Bosphorus dinner cruise now runs as four shared packages from €30 to €90. Here is what changes between Silver and Gold, what is on the menu, and what to expect before booking.",
     category: "cruise-guide",
     date: "2025-12-15",
@@ -214,7 +214,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
 {
     slug: "princes-islands-boat-tour-istanbul",
     title: "Princes' Islands Boat Tour — Guided Cruise from Istanbul (2026)",
-    metaDescription: "Join a guided Princes' Islands boat tour from Istanbul. Scenic Marmara Sea cruise, commentary, [Büyükada](https://en.wikipedia.org/wiki/B%C3%BCy%C3%BCkada) & Heybeliada stops — from €35 per person.",
+    metaDescription: "Guided Princes' Islands boat tour from Istanbul: Büyükada, Heybeliada, scenic Marmara views. Cruise from €35 per person with live commentary — day trip guide 2026.",
     excerpt: "Escape Istanbul's bustle with a day trip to the Princes' Islands. Discover car-free streets, Victorian mansions, pine forests, and stunning Marmara Sea views.",
     category: "cruise-guide",
     date: "2025-12-08",
@@ -262,7 +262,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
 {
     slug: "what-to-wear-bosphorus-cruise",
     title: "What to Wear on a Bosphorus Cruise",
-    metaDescription: "Not sure what to wear on a [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus) cruise? Our dress code and packing guide covers every season so you stay comfortable and stylish on the water.",
+    metaDescription: "What to wear on a Bosphorus cruise: summer vs winter layering, dinner cruise dress code, and what to bring for sunset tours. Practical packing guide 2026.",
     excerpt: "From casual daytime sightseeing to elegant dinner cruises — here is exactly what to wear and pack for every type of Bosphorus cruise experience.",
     category: "cruise-guide",
     date: "2025-11-28",
