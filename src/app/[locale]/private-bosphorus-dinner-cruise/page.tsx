@@ -467,10 +467,11 @@ export default async function LocalePrivateBosphorusDinnerCruisePage({
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["TouristTrip", "Service"],
     name: t.heroTitle,
     description: t.metaDescription,
     provider: { "@id": `${SITE_URL}/#organization` },
+    touristType: "Couples, Groups",
     areaServed: "Istanbul, Turkey",
     serviceType: "Private Yacht Dinner Cruise",
     url: canonicalUrl,
