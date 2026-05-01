@@ -101,6 +101,8 @@ const CONTENT: Record<string, LocaleContent> = {
       { q: "Rezervasyon iptali mümkün mü?", a: "Evet. Sefer tarihinden 48 saat öncesine kadar ücretsiz iptal ve tam para iadesi yapılmaktadır. 48 saatten az kalan iptallerde %50 iade uygulanır." },
       { q: "Yemekli boğaz turu nedir? Ne dahil?", a: "Yemekli boğaz turu (akşam yemeği turu), 3,5 saatlik bir Boğaz deneyimidir. €30'dan €90'a 4 farklı paket mevcuttur: Temel pakette mezeler + ana yemek + Türk gecesi gösterisi dahil; Premium pakette 5 çeşit yemek + açık alkol + VIP oturma dahildir. Ayrıca Sultanahmet ve Taksim bölgesinden otel transfer seçeneği de sunulmaktadır." },
       { q: "Eminönü'den boğaz turu var mı?", a: "Evet, Eminönü en merkezi kalkış noktamızdır. Tarihi yarımada'da yer alır; tramvay (T1 hattı) ve metro (M2) ile kolayca ulaşılır. Hem gün batımı hem akşam yemeği turlarımız Eminönü İskelesi'nden hareket eder. Bunun yanı sıra Kabataş, Beşiktaş ve Üsküdar'dan da kalkış seçeneği mevcuttur; otele en yakın iskeleyi tercih edebilirsiniz." },
+      { q: "Boğaz turu saatleri nedir? Hangi saatlerde kalkış var?", a: "Gün batımı turları günbatımından yaklaşık 1 saat önce kalkar; yaz aylarında (Mayıs–Eylül) saat 19:00–19:30, kış aylarında 16:30–17:00 civarındadır. Akşam yemeği turları genellikle saat 20:30'da hareket eder. Sabitlenmiş kalkış saati rezervasyon onayınızda belirtilir; tarihe ve sezona göre hafif değişkenlik gösterebilir." },
+      { q: "Üsküdar'dan boğaz turu var mı?", a: "Evet. Üsküdar Anadolu yakasında olduğu için Kabataş veya Eminönü bağlantısıyla ulaşım kolaydır; Üsküdar – Kabataş vapur hattı ~10 dakika sürer. Kabataş ve Eminönü kalkışlı turlarımıza Üsküdar'dan ferriyle ya da köprüden geçerek kolayca katılabilirsiniz. Ayrıca bazı özel yat kiralama ve büyük grup paketleri için Anadolu yakasından kalkış da ayarlanabilir." },
       { q: "Özel yat kiralama için kaç kişi gerekir?", a: "Özel yat kiralama, kişi sayısına değil tekne başına fiyatlandırılır. 2 kişilik bir çift de tüm tekneyi kiralayabilir. Kapasiteye göre 8–30 kişilik tekne seçenekleri mevcuttur." },
       { q: "Alkol servisi yapılıyor mu?", a: "Gün batımı turlarında şaraplı seçenek vardır (€40/kişi). Akşam yemeği turlarının standart paketinde içecek, premium paketinde ise açık alkol dahildir. Özel yat kiralamada menüyü siz belirlersiniz." },
     ],
@@ -166,6 +168,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
     faqTitle: "Häufig gestellte Fragen",
     faqs: [
+      { q: "Was kostet eine Bootsfahrt auf dem Bosporus Istanbul?", a: "Eine Bootsfahrt auf dem Bosporus Istanbul kostet ab €34 pro Person (Sonnenuntergangs-Tour, 2 Stunden). Die Dinner-Kreuzfahrt beginnt bei €30/Person. Eine vollständig private Jacht gibt es ab €280 pro Boot. Alle Preise verstehen sich inklusive Kapitän, Crew und Grundausstattung." },
       { q: "Wie lange dauert eine Bosporus-Kreuzfahrt?", a: "Die Sonnenuntergangskreuzfahrt dauert 2 Stunden, die Dinner-Kreuzfahrt ca. 3,5 Stunden. Beim Privatjachtcharter bestimmen Sie die Dauer selbst; Minimum 2 Stunden." },
       { q: "Wann ist die beste Reisezeit für eine Bosporus-Kreuzfahrt?", a: "Touren finden ganzjährig statt. Die Hochsaison ist Mai–September. Frühling (April) und früher Herbst (Oktober) bieten die angenehmsten Bedingungen. Wintertouren sind ruhiger und besonders fotogen." },
       { q: "Gibt es Kinderermäßigungen?", a: "Kinder unter 6 Jahren sind kostenlos. Für Kinder von 6–12 Jahren gilt 50 % Ermäßigung. Bitte Alter bei der Buchung angeben." },
@@ -236,6 +239,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
     faqTitle: "Questions fréquentes",
     faqs: [
+      { q: "Quel est le prix d'une croisière Bosphore Istanbul ?", a: "Une croisière Bosphore Istanbul coûte à partir de €34 par personne pour la croisière coucher de soleil (2h). La croisière dîner commence à €30/personne. Le charter de yacht privé est disponible à partir de €280 par bateau. Tous les prix incluent le capitaine, l'équipage et les accompagnements de base." },
       { q: "Combien de temps dure une croisière sur le Bosphore ?", a: "La croisière coucher de soleil dure 2 heures, la croisière dîner environ 3h30. Pour le charter de yacht privé, c'est vous qui choisissez la durée ; minimum 2 heures." },
       { q: "Quelle est la meilleure période pour une croisière sur le Bosphore ?", a: "Les croisières ont lieu toute l'année. La haute saison est mai–septembre. Le printemps (avril) et le début de l'automne (octobre) offrent les meilleures conditions. Les croisières d'hiver sont plus calmes et très photogéniques." },
       { q: "Y a-t-il des réductions pour les enfants ?", a: "Les enfants de moins de 6 ans voyagent gratuitement. Les enfants de 6 à 12 ans bénéficient de 50 % de réduction. Merci d'indiquer l'âge des enfants lors de la réservation." },
