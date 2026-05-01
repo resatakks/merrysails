@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { sendDailyReport } from "@/lib/telegram/notifications";
 import { formatDailyStats } from "@/lib/telegram/formatters";
 import { normalizeReservationStatus } from "@/lib/reservation-status";
+import { fetchTodayAdsStats } from "@/lib/google-ads-stats";
 
 export async function GET(req: NextRequest) {
   try {
@@ -40,6 +41,9 @@ export async function GET(req: NextRequest) {
       ? { ...gscRow, date: gscRow.date.toISOString().slice(0, 10) }
       : null;
 
+    // Google Ads today
+    const adsStats = await fetchTodayAdsStats().catch(() => null);
+
     // Bot visits today
     const botRows = await prisma.botVisit.groupBy({
       by: ["provider"],
@@ -62,6 +66,7 @@ export async function GET(req: NextRequest) {
       topTours,
       botVisits,
       gsc,
+      ads: adsStats,
     });
 
     const result = await sendDailyReport(text);

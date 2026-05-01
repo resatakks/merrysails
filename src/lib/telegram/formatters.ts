@@ -496,6 +496,13 @@ export function formatDailyStats(stats: {
   topTours?: { tour: string; count: number }[];
   botVisits?: { provider: string; count: number }[];
   gsc?: { clicks: number; impressions: number; ctr: number; position: number; date: string } | null;
+  ads?: {
+    totalSpendTl: number;
+    budgetTl: number;
+    totalClicks: number;
+    totalConversions: number;
+    campaigns: { name: string; spendTl: number; clicks: number; conversions: number }[];
+  } | null;
 }): string {
   const today = new Date().toLocaleDateString("tr-TR", { timeZone: TZ, day: "2-digit", month: "long" });
   const rate = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
@@ -513,9 +520,27 @@ export function formatDailyStats(stats: {
     for (const t of stats.topTours.slice(0, 3)) msg += `   ${esc(t.tour)} — ${t.count}x\n`;
   }
 
+  if (stats.ads) {
+    const a = stats.ads;
+    const pct = a.budgetTl > 0 ? Math.round((a.totalSpendTl / a.budgetTl) * 100) : 0;
+    msg += `\n🎯 <b>Google Ads — Bugün:</b>\n`;
+    msg += `   Harcama: <b>${a.totalSpendTl.toFixed(0)}₺</b> / ${a.budgetTl}₺ (${pct}%)\n`;
+    msg += `   Tıklama: <b>${a.totalClicks}</b> | Dönüşüm: <b>${a.totalConversions.toFixed(1)}</b>\n`;
+    if (a.totalClicks > 0) {
+      const cpc = a.totalSpendTl / a.totalClicks;
+      msg += `   Ort. CPC: <b>${cpc.toFixed(0)}₺</b>\n`;
+    }
+    for (const c of a.campaigns) {
+      if (c.spendTl > 0) {
+        const label = c.name.includes("Dinner") ? "🍽️ Dinner" : c.name.includes("Sunset") ? "🌅 Sunset" : c.name.includes("Yacht") ? "⛵ Yacht" : "🔵 Generic";
+        msg += `   ${label}: ${c.spendTl.toFixed(0)}₺ / ${c.clicks}t / ${c.conversions.toFixed(1)}d\n`;
+      }
+    }
+  }
+
   if (stats.gsc) {
     const g = stats.gsc;
-    msg += `\n🔍 <b>GSC (${g.date}):</b>\n`;
+    msg += `\n🔍 <b>SEO — GSC (${g.date}):</b>\n`;
     msg += `   Tıklama: <b>${g.clicks}</b> | Gösterim: <b>${g.impressions}</b>\n`;
     msg += `   CTR: <b>${(g.ctr * 100).toFixed(1)}%</b> | Ort. Sıra: <b>${g.position.toFixed(1)}</b>\n`;
   }
