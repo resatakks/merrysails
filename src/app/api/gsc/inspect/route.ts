@@ -131,12 +131,14 @@ async function getAccessToken(creds: NonNullable<ReturnType<typeof readGscCreds>
 
 type InspectionResult = {
   url: string;
+  verdict: string;
   coverageState: string;
   robotsTxtState: string;
   indexingState: string;
   lastCrawlTime: string | null;
   pageFetchState: string;
   richResultsDetected: boolean;
+  richVerdict: string;
   error?: string;
 };
 
@@ -157,40 +159,47 @@ async function inspectUrl(
   if (!res.ok) {
     return {
       url,
+      verdict: "ERROR",
       coverageState: "ERROR",
       robotsTxtState: "UNKNOWN",
       indexingState: "UNKNOWN",
       lastCrawlTime: null,
       pageFetchState: "UNKNOWN",
       richResultsDetected: false,
+      richVerdict: "UNKNOWN",
       error: `HTTP ${res.status}: ${await res.text()}`,
     };
   }
 
   type ApiResult = {
-    urlInspectionResult?: {
+    inspectionResult?: {
       indexStatusResult?: {
+        verdict?: string;
         coverageState?: string;
         robotsTxtState?: string;
         indexingState?: string;
         lastCrawlTime?: string;
         pageFetchState?: string;
+        googleCanonical?: string;
       };
-      richResultsResult?: { detectedItems?: unknown[] };
+      richResultsResult?: { verdict?: string; detectedItems?: unknown[] };
+      mobileUsabilityResult?: { verdict?: string };
     };
   };
 
   const data = (await res.json()) as ApiResult;
-  const r = data.urlInspectionResult?.indexStatusResult ?? {};
+  const r = data.inspectionResult?.indexStatusResult ?? {};
 
   return {
     url,
+    verdict: r.verdict ?? "UNKNOWN",
     coverageState: r.coverageState ?? "UNKNOWN",
     robotsTxtState: r.robotsTxtState ?? "UNKNOWN",
     indexingState: r.indexingState ?? "UNKNOWN",
     lastCrawlTime: r.lastCrawlTime ?? null,
     pageFetchState: r.pageFetchState ?? "UNKNOWN",
-    richResultsDetected: (data.urlInspectionResult?.richResultsResult?.detectedItems?.length ?? 0) > 0,
+    richResultsDetected: (data.inspectionResult?.richResultsResult?.detectedItems?.length ?? 0) > 0,
+    richVerdict: data.inspectionResult?.richResultsResult?.verdict ?? "UNKNOWN",
   };
 }
 
@@ -255,7 +264,8 @@ export async function POST(req: NextRequest) {
       coverageCounts[r.coverageState] = (coverageCounts[r.coverageState] ?? 0) + 1;
     }
     const notIndexed = results.filter(
-      (r) => !["INDEXED", "SUBMITTED_AND_INDEXED"].includes(r.coverageState)
+      (r) => !["Indexed, not submitted in sitemap", "Submitted and indexed"].includes(r.coverageState)
+        && r.verdict !== "PASS"
     );
 
     return NextResponse.json({
