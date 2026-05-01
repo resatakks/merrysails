@@ -10,6 +10,21 @@
  * POST /api/google-ads/campaigns?token=...
  *   Body: { action: "add_negatives", keywords: string[] }
  *   Adds negative exact-match keywords to all campaigns.
+ *
+ * POST /api/google-ads/campaigns?token=...
+ *   Body: { action: "create_language_ad_group", campaignResourceName, adGroupName,
+ *           keywords: [{text, matchType}], finalUrls, headlines, descriptions,
+ *           path1?, path2?, languageId?, cpcBidMicros? }
+ *   Creates ad group + keywords + RSA in one shot. Use for FR (languageId=1002) / DE (languageId=1001).
+ *   Example FR: POST with campaignResourceName="customers/.../campaigns/BOSPHORUS_CRUISE_ID",
+ *     adGroupName="FR - Croisière Bosphore", languageId=1002,
+ *     keywords=[{text:"croisière bosphore istanbul",matchType:"PHRASE"},{text:"croisière istanbul",matchType:"PHRASE"}],
+ *     finalUrls=["https://merrysails.com/fr/bosphorus-cruise"],
+ *     headlines=["Croisière Bosphore Istanbul","À Partir de €34","Coucher de Soleil Bosphore",
+ *                "Dîner Croisière €30","Location Yacht €280","TÜRSAB Certifié 2001",
+ *                "50 000+ Voyageurs Satisfaits","Réservez Directement","Annulation Gratuite 48h"],
+ *     descriptions=["Croisière Bosphore Istanbul : coucher de soleil €34, dîner €30, yacht privé €280. Réservation directe.",
+ *                   "50 000+ clients satisfaits depuis 2001. Licence TÜRSAB. Annulation gratuite 48h avant le départ."]
  */
 import { NextRequest, NextResponse } from "next/server";
 
@@ -178,7 +193,7 @@ export async function POST(req: NextRequest) {
   const creds = readAdsCreds();
   if (!creds) return NextResponse.json({ skipped: "missing_credentials" });
 
-  let body: { action?: string; multiplier?: number; keywords?: string[]; campaignId?: string; budgetTry?: number; maxPct?: number; urls?: string[] };
+  let body: { action?: string; multiplier?: number; keywords?: string[] | Array<{text: string; matchType?: string}>; campaignId?: string; campaignIds?: string[]; budgetTry?: number; maxPct?: number; urls?: string[]; status?: string; positiveGeoIds?: number[]; negativeGeoIds?: number[]; resourceName?: string; oldResourceName?: string; adGroupResourceName?: string; campaignResourceName?: string; adGroupName?: string; finalUrls?: string[]; path1?: string; path2?: string; headlines?: string[]; descriptions?: string[]; languageId?: number; cpcBidMicros?: number };
   try { body = await req.json(); }
   catch { return NextResponse.json({ error: "invalid_json" }, { status: 400 }); }
 
@@ -292,8 +307,8 @@ export async function POST(req: NextRequest) {
 
   // --- add_negatives ---
   if (body.action === "add_negatives") {
-    const keywords: string[] = (body.keywords ?? []).filter(
-      (k) => typeof k === "string" && k.trim().length > 0
+    const keywords: string[] = ((body.keywords ?? []) as unknown[]).filter(
+      (k): k is string => typeof k === "string" && (k as string).trim().length > 0
     );
     if (keywords.length === 0) {
       return NextResponse.json({ error: "no_keywords" }, { status: 400 });
@@ -448,6 +463,123 @@ export async function POST(req: NextRequest) {
       level: "account",
       excludedUrls: urls,
       total: urls.length,
+    });
+  }
+
+  // --- create_language_ad_group ---
+  // Creates ad group + keywords + RSA in one shot for FR/DE language targeting.
+  // Step 1: create ad group → Step 2: add keywords → Step 3: create RSA → Step 4: add language criterion
+  if (body.action === "create_language_ad_group") {
+    const { campaignResourceName, adGroupName, finalUrls, headlines, descriptions, path1, path2, languageId, cpcBidMicros } = body;
+    const kwInput = body.keywords as Array<{text: string; matchType?: string}> | undefined;
+
+    if (!campaignResourceName || !adGroupName || !kwInput?.length || !finalUrls?.length || !headlines?.length || !descriptions?.length) {
+      return NextResponse.json({ error: "missing_required_fields: campaignResourceName, adGroupName, keywords, finalUrls, headlines, descriptions" }, { status: 400 });
+    }
+    if (headlines.length < 3 || headlines.length > 15) {
+      return NextResponse.json({ error: "headlines_must_be_3_to_15" }, { status: 400 });
+    }
+    if (descriptions.length < 2 || descriptions.length > 4) {
+      return NextResponse.json({ error: "descriptions_must_be_2_to_4" }, { status: 400 });
+    }
+
+    // Step 1: Create ad group
+    const agUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/adGroups:mutate`;
+    const agRes = await fetch(agUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({
+        operations: [{
+          create: {
+            name: adGroupName,
+            campaign: campaignResourceName,
+            type: "SEARCH_STANDARD",
+            status: "ENABLED",
+            cpcBidMicros: String(cpcBidMicros ?? 1500000),
+          },
+        }],
+      }),
+    });
+    if (!agRes.ok) {
+      return NextResponse.json({ error: "create_ad_group_failed", details: await agRes.text() }, { status: 502 });
+    }
+    const agData = await agRes.json() as { results?: Array<{ resourceName: string }> };
+    const newAdGroupResourceName = agData.results?.[0]?.resourceName;
+    if (!newAdGroupResourceName) {
+      return NextResponse.json({ error: "no_ad_group_resource_name", response: agData }, { status: 502 });
+    }
+
+    // Step 2: Add keywords
+    const kwUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/adGroupCriteria:mutate`;
+    const kwOperations = kwInput.map((kw) => ({
+      create: {
+        adGroup: newAdGroupResourceName,
+        keyword: { text: kw.text, matchType: kw.matchType ?? "PHRASE" },
+        status: "ENABLED",
+      },
+    }));
+    const kwRes = await fetch(kwUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ operations: kwOperations }),
+    });
+    if (!kwRes.ok) {
+      return NextResponse.json({ error: "add_keywords_failed", adGroup: newAdGroupResourceName, details: await kwRes.text() }, { status: 502 });
+    }
+
+    // Step 3: Create RSA
+    const rsaUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/adGroupAds:mutate`;
+    const rsaRes = await fetch(rsaUrl, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({
+        operations: [{
+          create: {
+            adGroup: newAdGroupResourceName,
+            status: "ENABLED",
+            ad: {
+              finalUrls,
+              responsiveSearchAd: {
+                ...(path1 ? { path1 } : {}),
+                ...(path2 ? { path2 } : {}),
+                headlines: headlines.map((text) => ({ text })),
+                descriptions: descriptions.map((text) => ({ text })),
+              },
+            },
+          },
+        }],
+      }),
+    });
+    if (!rsaRes.ok) {
+      return NextResponse.json({ error: "create_rsa_failed", adGroup: newAdGroupResourceName, details: await rsaRes.text() }, { status: 502 });
+    }
+
+    // Step 4: Optionally add language criterion to campaign
+    let languageResult: string | null = null;
+    if (languageId) {
+      const langUrl = `https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignCriteria:mutate`;
+      const langRes = await fetch(langUrl, {
+        method: "POST",
+        headers: adsHeaders(creds, token),
+        body: JSON.stringify({
+          operations: [{
+            create: {
+              campaign: campaignResourceName,
+              type: "LANGUAGE",
+              language: { languageConstant: `languageConstants/${languageId}` },
+            },
+          }],
+        }),
+      });
+      languageResult = langRes.ok ? "added" : `failed: ${await langRes.text()}`;
+    }
+
+    return NextResponse.json({
+      ok: true,
+      adGroup: newAdGroupResourceName,
+      keywordsAdded: kwInput.length,
+      rsaCreated: true,
+      languageCriterion: languageResult ?? "not_requested",
     });
   }
 
