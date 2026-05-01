@@ -10,8 +10,9 @@ type AnalyticsValue =
   | Array<Record<string, unknown>>;
 
 export type TrafficAttribution = {
+  aiSource?: string;
   campaign?: string;
-  channel: "google_ads" | "paid_search" | "organic_search" | "direct" | "referral" | "social" | "email";
+  channel: "google_ads" | "paid_search" | "organic_search" | "direct" | "referral" | "social" | "email" | "ai_referral";
   content?: string;
   gadSource?: string;
   gbraid?: string;
@@ -400,10 +401,30 @@ function safeHost(value: string): string | undefined {
   }
 }
 
+const AI_REFERRER_SOURCES: [RegExp, string][] = [
+  [/chatgpt\.com|chat\.openai\.com/, "chatgpt"],
+  [/perplexity\.ai/, "perplexity"],
+  [/claude\.ai/, "claude"],
+  [/gemini\.google\.com/, "gemini"],
+  [/copilot\.microsoft\.com/, "copilot"],
+  [/you\.com/, "youcom"],
+  [/phind\.com/, "phind"],
+  [/meta\.ai/, "metaai"],
+  [/deepseek\.com/, "deepseek"],
+  [/grok\.com|x\.ai/, "grok"],
+];
+
+function detectAiSource(referrerHost: string): string | undefined {
+  for (const [pattern, name] of AI_REFERRER_SOURCES) {
+    if (pattern.test(referrerHost)) return name;
+  }
+  return undefined;
+}
+
 function classifyTraffic(
   searchParams: URLSearchParams,
   referrerHost?: string
-): Pick<TrafficAttribution, "channel" | "source"> {
+): Pick<TrafficAttribution, "channel" | "source" | "aiSource"> {
   const source = searchParams.get("utm_source")?.toLowerCase();
   const medium = searchParams.get("utm_medium")?.toLowerCase();
   const hasGoogleClickId =
@@ -442,6 +463,10 @@ function classifyTraffic(
   }
 
   if (referrerHost) {
+    const aiSource = detectAiSource(referrerHost);
+    if (aiSource) {
+      return { channel: "ai_referral", source: aiSource, aiSource };
+    }
     return { channel: "referral", source: referrerHost };
   }
 
@@ -458,6 +483,7 @@ function getTrafficAttribution(path: string): TrafficAttribution | null {
   const classified = classifyTraffic(url.searchParams, referrerHost);
 
   return {
+    aiSource: classified.aiSource,
     campaign: url.searchParams.get("utm_campaign") ?? undefined,
     channel: classified.channel,
     content: url.searchParams.get("utm_content") ?? undefined,
@@ -503,6 +529,7 @@ function setTrafficTags(current: TrafficAttribution) {
   setClarityTag("utm_campaign", current.campaign);
   setClarityTag("utm_content", current.content);
   setClarityTag("utm_term", current.term);
+  setClarityTag("ai_source", current.aiSource);
   setClarityTag(
     "google_click_id_type",
     current.gclid ? "gclid" : current.gbraid ? "gbraid" : current.wbraid ? "wbraid" : undefined
@@ -539,6 +566,7 @@ export function trackPageView(path: string) {
     const firstAttribution = getFirstAttribution(trafficAttribution);
 
     const attributionParams = compactParams({
+      ai_source: trafficAttribution.aiSource,
       first_traffic_channel: firstAttribution.channel,
       first_traffic_source: firstAttribution.source,
       gad_source: trafficAttribution.gadSource,
