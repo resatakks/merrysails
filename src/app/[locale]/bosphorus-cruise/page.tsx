@@ -114,7 +114,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     htmlLang: "de-DE",
     title: "Bosporus Kreuzfahrt Istanbul — Ab €34 | MerrySails",
-    description: "Bosporus Kreuzfahrt Istanbul: Sonnenuntergang ab €34, Dinner-Kreuzfahrt ab €30, Privatjacht ab €280. TÜRSAB A-Gruppe lizenziert seit 2001, 50.000+ Gäste. Direkt buchen.",
+    description: "Bosporus Kreuzfahrt Istanbul: Sonnenuntergang ab €34, Dinner-Kreuzfahrt ab €30, Privatjacht ab €280. TÜRSAB-lizenziert seit 2001, 50.000+ Gäste.",
     canonicalPath: "/de/bosphorus-cruise",
     h1: "Bosporus Kreuzfahrt Istanbul",
     subtitle: "MerrySails Istanbul",
@@ -184,7 +184,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     htmlLang: "fr-FR",
     title: "Croisière Bosphore Istanbul — À partir de €34 | MerrySails",
-    description: "Croisière Bosphore Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €280. Agence TÜRSAB groupe A depuis 2001, 50 000+ clients. Réservez directement.",
+    description: "Croisière Bosphore Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €280. Agence TÜRSAB groupe A, 50 000+ clients. Réservez en ligne.",
     canonicalPath: "/fr/bosphorus-cruise",
     h1: "Croisière Bosphore Istanbul",
     subtitle: "MerrySails Istanbul",
@@ -254,7 +254,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     htmlLang: "nl-NL",
     title: "Bosporus Cruise Istanbul — Vanaf €34 | MerrySails",
-    description: "Bosporus cruise Istanbul: zonsondergang vanaf €34, diner cruise vanaf €30, privéjacht vanaf €280. TÜRSAB A-groep gecertificeerd sinds 2001, 50.000+ gasten. Direct boeken.",
+    description: "Bosporus cruise Istanbul: zonsondergang vanaf €34, diner cruise vanaf €30, privéjacht vanaf €280. TÜRSAB A-groep, 50.000+ gasten. Direct boeken.",
     canonicalPath: "/nl/bosphorus-cruise",
     h1: "Bosporus Cruise Istanbul",
     subtitle: "MerrySails Istanbul",

@@ -133,7 +133,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     title: "Location Bateau Istanbul — À partir de €380 | MerrySails",
-    description: `Location de bateau à Istanbul à partir de €${startingRate}/heure. Promenade en bateau privée sur le Bosphore, options dîner et coucher de soleil disponibles. Demandez un devis.`,
+    description: `Location de bateau à Istanbul à partir de €${startingRate}/h. Bateau privé sur le Bosphore, dîner et coucher de soleil en option. Demandez un devis.`,
     canonicalPath: "/fr/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",
     heroTitle: "Location de Bateau Istanbul",

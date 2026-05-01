@@ -241,7 +241,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   nl: {
     title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €34 | MerrySails",
     description:
-      "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht, live gids, versnaperingen. Met wijn vanaf €40. Direct boeken bij TÜRSAB-gecertificeerd bedrijf.",
+      "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht met live gids en hapjes. Wijnoptie €40. Direct boeken, TÜRSAB-gecertificeerd.",
     h1: "Bosporus Zonsondergang Cruise",
     canonicalPath: "/nl/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Home",

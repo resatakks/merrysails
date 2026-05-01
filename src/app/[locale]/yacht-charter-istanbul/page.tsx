@@ -190,7 +190,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   fr: {
     metaTitle: "Location Yacht Istanbul — À partir de €380 | MerrySails",
     metaDescription:
-      "Location yacht Istanbul à partir de €280. Yacht privé exclusif sur le Bosphore avec capitaine. Demande en mariage, anniversaire, événements d'entreprise. Certifié TÜRSAB.",
+      "Location yacht Istanbul à partir de €280. Yacht privé sur le Bosphore avec capitaine. Pour mariage, anniversaire ou événement d'entreprise. TÜRSAB.",
     canonicalPath: "/fr/yacht-charter-istanbul",
     title: "Location de Yacht Privé à Istanbul",
     subtitle: "Croisière privée de 2 heures sur le Bosphore, rien que pour vous",
