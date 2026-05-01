@@ -171,6 +171,7 @@ ${supportPages
   .join("\n")}
 
 ## Citation-friendly trust and support surfaces
+- **Machine-readable pricing (Markdown)**: ${SITE_URL}/pricing — all tours, packages, per-person vs per-boat pricing, FAQ
 - **About / entity page**: ${SITE_URL}/about
 - **TURSAB license page**: ${SITE_URL}/tursab
 - **Contact / quote routing**: ${SITE_URL}/contact
