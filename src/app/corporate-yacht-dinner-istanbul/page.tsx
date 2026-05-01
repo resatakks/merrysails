@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Corporate Yacht Dinner Istanbul",
   description:
     "Commercial support page for companies planning a private yacht dinner in Istanbul for client hosting, team dinners, board dinners, or executive evenings on the Bosphorus.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },

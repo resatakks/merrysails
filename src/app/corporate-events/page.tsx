@@ -52,6 +52,9 @@ const serviceSchema = {
       name: pkg.name,
       price: pkg.price,
       priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      validFrom: "2026-01-01",
+      url: `${SITE_URL}/corporate-events`,
       itemOffered: {
         "@type": "Service",
         name: pkg.name,

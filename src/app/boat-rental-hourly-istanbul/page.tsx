@@ -42,6 +42,9 @@ const serviceSchema = {
   name: "Boat Rental Hourly Istanbul",
   description:
     "Commercial support page for private hourly boat rental in Istanbul for guests who want a vessel-first Bosphorus plan with per-hour pricing logic.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -50,6 +53,14 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Hourly Private Boat Rental",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: String(startingRate),
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: canonicalUrl,
+  },
 };
 
 const breadcrumbSchema = {

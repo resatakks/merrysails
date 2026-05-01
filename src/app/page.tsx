@@ -11,6 +11,7 @@ import BosphorusGuideSection from "@/components/home/BosphorusGuideSection";
 import CommercialIntentSection from "@/components/home/CommercialIntentSection";
 import Link from "next/link";
 import { tours } from "@/data/tours";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     "bosphorus cruise 2026",
     "istanbul boat tour 2026",
   ],
-  alternates: { canonical: "https://merrysails.com" },
+  alternates: { canonical: "https://merrysails.com", languages: buildHreflang("/") },
   openGraph: {
     title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
     description:
@@ -131,7 +132,21 @@ const homepageFaqSchema = {
 const aggregateRatingSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://merrysails.com/#organization",
   name: "MerrySails Istanbul",
+  url: "https://merrysails.com",
+  telephone: "+905370406822",
+  openingHours: "Mo-Su 09:00-22:00",
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62",
+    addressLocality: "Fatih",
+    addressRegion: "İstanbul",
+    postalCode: "34093",
+    addressCountry: "TR",
+  },
+  image: "https://merrysails.com/og-image.jpg",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",

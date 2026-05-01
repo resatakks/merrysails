@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Client Hosting Yacht Istanbul",
   description:
     "Commercial support page for private Bosphorus client-hosting yacht events in Istanbul when hospitality, guest flow, and company-ready planning matter most.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },

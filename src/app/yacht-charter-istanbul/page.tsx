@@ -69,6 +69,8 @@ const serviceSchema = {
   description: yachtTour.description,
   serviceType: "Private Yacht Charter",
   url: canonicalUrl,
+  image: yachtTour.image,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -91,6 +93,9 @@ const serviceSchema = {
       name: pkg.name,
       price: pkg.price,
       priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      validFrom: "2026-01-01",
+      url: canonicalUrl,
       itemOffered: {
         "@type": "Service",
         name: pkg.name,
@@ -190,6 +195,12 @@ const aiCitationFacts = [
 ];
 
 const comparePages = [
+  {
+    href: "/bosphorus-cruise-prices",
+    title: "Bosphorus Cruise Prices",
+    description:
+      "Full price comparison across all shared and private formats — use this first if you need to compare yacht charter costs alongside shared cruise tickets.",
+  },
   {
     href: "/kurucesme-marina-yacht-charter",
     title: "Kurucesme Marina Yacht Charter",

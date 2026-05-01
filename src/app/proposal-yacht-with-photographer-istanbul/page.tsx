@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Proposal Yacht with Photographer Istanbul",
   description:
     "Commercial support page for Bosphorus proposal yacht bookings in Istanbul when photographer coverage is one of the main buying questions.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -48,6 +51,14 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Proposal Yacht Photography Support",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "280",
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/proposal-yacht-rental-istanbul`,
+  },
 };
 
 const breadcrumbSchema = {

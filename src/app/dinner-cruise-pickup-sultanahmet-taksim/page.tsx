@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Dinner Cruise Pickup from Sultanahmet and Taksim Istanbul",
   description:
     "Narrow commercial support page for shared Bosphorus dinner-cruise guests checking Sultanahmet, Taksim, Sirkeci, and Karakoy pickup fit before booking.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -50,6 +53,14 @@ const serviceSchema = {
     { "@type": "Place", name: "Karakoy, Istanbul" },
   ],
   serviceType: "Bosphorus Dinner Cruise Pickup Area Support",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "30",
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/istanbul-dinner-cruise`,
+  },
 };
 
 const breadcrumbSchema = {

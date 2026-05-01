@@ -52,6 +52,9 @@ const serviceSchema = {
   name: "Turkish Night Dinner Cruise Istanbul",
   description:
     "Commercial support page for guests comparing a shared Bosphorus dinner cruise in Istanbul when the Turkish-night show and dinner-led package fit are the main decision points.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -60,6 +63,14 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Shared Bosphorus Dinner Cruise Show Support",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "30",
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/istanbul-dinner-cruise`,
+  },
 };
 
 const breadcrumbSchema = {

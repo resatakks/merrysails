@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Team Building Yacht Istanbul",
   description:
     "Commercial support page for team building yacht events in Istanbul when the company brief is focused on group connection, activity format, and Bosphorus event flow.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },

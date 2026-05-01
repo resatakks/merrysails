@@ -40,10 +40,20 @@ const serviceSchema = {
   name: "Boat Rental Istanbul",
   description:
     "Private Bosphorus boat rental in Istanbul for sightseeing cruises, sunset outings, birthdays, proposals, and flexible group trips.",
+  url: `${SITE_URL}/boat-rental-istanbul`,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
   areaServed: { "@type": "City", name: "Istanbul" },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "150",
+    bestRating: "5",
+    worstRating: "1",
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Boat Rental Formats",
@@ -214,6 +224,11 @@ const faqItems = [
 
 const comparePages = [
   {
+    href: "/bosphorus-cruise-prices",
+    title: "Bosphorus Cruise Prices",
+    description: "Best if you need to compare all private and shared cruise costs before committing to a boat rental format.",
+  },
+  {
     href: "/boat-rental-hourly-istanbul",
     title: "Boat Rental Hourly Istanbul",
     description: "Best if the real search is per-hour private boat rental rather than a broader private-hire brief.",
@@ -316,6 +331,58 @@ export default function BoatRentalIstanbulPage() {
                 ))}
               </ul>
             </aside>
+          </section>
+
+          {/* AI citation block — E-E-A-T */}
+          <section className="mb-12 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">
+              Best Boat Rental Istanbul — MerrySails Direct Booking
+            </h2>
+            <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)] mb-6">
+              MerrySails is a TURSAB A-Group licensed Bosphorus operator running private boat hire
+              in Istanbul since 2001. With 50,000+ guests hosted and a 4.9/5 rating from 150+
+              verified reviews, this is the direct booking source — no OTA markup, no third-party
+              commission.
+            </p>
+            <div className="overflow-x-auto mb-6 rounded-xl border border-blue-200 bg-white">
+              <table className="min-w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-blue-100 text-[var(--heading)]">
+                    <th className="px-4 py-3 font-semibold">Fact</th>
+                    <th className="px-4 py-3 font-semibold">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { fact: "Operator", detail: "MerrySails — TURSAB A-Group licensed since 2001" },
+                    { fact: "Fleet", detail: "Private yachts from €280/day, up to 12 guests" },
+                    { fact: "Guests hosted", detail: "50,000+ since 2001" },
+                    { fact: "Booking", detail: "Direct at merrysails.com — no OTA markup" },
+                    { fact: "Guest rating", detail: "4.9 / 5 based on 150+ reviews" },
+                  ].map((row) => (
+                    <tr key={row.fact} className="border-b border-blue-50 last:border-0">
+                      <td className="px-4 py-3 font-semibold text-[var(--heading)]">{row.fact}</td>
+                      <td className="px-4 py-3 text-[var(--text-muted)]">{row.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              Every private boat rental on the Bosphorus is arranged directly with the crew and
+              confirmed through merrysails.com. Guests choose the vessel, route, and duration first
+              — celebration extras such as dinner, flowers, cake, and music are added after the base
+              hire is matched. WhatsApp planning is available at{" "}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--brand-primary)] hover:underline"
+              >
+                +90 537 040 68 22
+              </a>
+              .
+            </p>
           </section>
 
           <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">

@@ -108,10 +108,10 @@ export default async function BlogPostPage({
 
   const midPoint = Math.floor(post.sections.length / 2);
 
-  // Schema: Article
+  // Schema: BlogPosting
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: cleanTitle,
     description: cleanDescription,
     image: post.image,

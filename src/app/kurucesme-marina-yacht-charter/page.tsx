@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Kurucesme Marina Yacht Charter Istanbul",
   description:
     "Commercial support page for guests comparing private yacht charter in Istanbul when Kurucesme Marina departure and boarding context are the deciding questions.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -48,6 +51,14 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Private Yacht Charter Departure Support",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "280",
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/yacht-charter-istanbul`,
+  },
 };
 
 const breadcrumbSchema = {

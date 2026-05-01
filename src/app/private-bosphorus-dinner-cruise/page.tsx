@@ -68,11 +68,22 @@ const serviceJsonLd = {
   name: "Private Bosphorus Dinner Cruise",
   description:
     "Private yacht dinner cruise in Istanbul for couples, proposals, birthdays, anniversaries, and small groups who want dinner on their own Bosphorus yacht.",
+  url: `${SITE_URL}/private-bosphorus-dinner-cruise`,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
-  areaServed: "Istanbul, Turkey",
+  areaServed: { "@type": "City", name: "Istanbul" },
   serviceType: "Private Yacht Dinner Cruise",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "280",
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/yacht-charter-istanbul`,
+  },
 };
 
 const breadcrumbJsonLd = {

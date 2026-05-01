@@ -52,6 +52,9 @@ const serviceSchema = {
   name: "Kabatas Dinner Cruise Istanbul",
   description:
     "Commercial support page for guests comparing the shared Bosphorus dinner cruise in Istanbul when Kabatas Pier boarding and arrival logistics are the main decision point.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -60,6 +63,14 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Shared Bosphorus Dinner Cruise Boarding Support",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: String(dinnerTour.packages?.[0]?.price ?? "30"),
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/istanbul-dinner-cruise`,
+  },
 };
 
 const breadcrumbSchema = {

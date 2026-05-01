@@ -52,6 +52,9 @@ const serviceSchema = {
   name: "Sunset Cruise Tickets Istanbul",
   description:
     "Commercial support page for guests comparing shared Bosphorus sunset-cruise tickets in Istanbul when package fit and reserve-direct clarity are the main decision points.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -60,6 +63,26 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Shared Bosphorus Sunset Cruise Ticket Support",
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Without Wine",
+      priceCurrency: "EUR",
+      price: String(sunsetTour.packages?.[0]?.price ?? "34"),
+      availability: "https://schema.org/InStock",
+      validFrom: "2026-01-01",
+      url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
+    },
+    {
+      "@type": "Offer",
+      name: "With Wine",
+      priceCurrency: "EUR",
+      price: String(sunsetTour.packages?.[1]?.price ?? "40"),
+      availability: "https://schema.org/InStock",
+      validFrom: "2026-01-01",
+      url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
+    },
+  ],
 };
 
 const breadcrumbSchema = {
@@ -191,6 +214,12 @@ const flowSteps = [
 ];
 
 const comparePages = [
+  {
+    href: "/bosphorus-cruise-prices",
+    title: "Bosphorus Cruise Prices",
+    description:
+      "Use this to compare sunset ticket prices against dinner cruise and private yacht options in a single view.",
+  },
   {
     href: "/cruises/bosphorus-sunset-cruise",
     title: "Bosphorus Sunset Cruise",
@@ -397,6 +426,12 @@ export default function SunsetCruiseTicketsIstanbulPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-5 text-sm text-[var(--text-muted)]">
+              Comparing across cruise types?{" "}
+              <Link href="/bosphorus-cruise-prices" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Compare all Bosphorus cruise prices →
+              </Link>
+            </p>
           </section>
 
           <section className="mb-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">

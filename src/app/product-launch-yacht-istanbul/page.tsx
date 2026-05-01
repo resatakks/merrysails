@@ -40,6 +40,9 @@ const serviceSchema = {
   name: "Product Launch Yacht Istanbul",
   description:
     "Commercial support page for private Bosphorus product-launch yacht events in Istanbul when reveal timing, guest flow, and launch-night coordination matter most.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },

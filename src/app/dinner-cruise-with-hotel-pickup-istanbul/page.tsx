@@ -52,6 +52,9 @@ const serviceSchema = {
   name: "Dinner Cruise with Hotel Pickup Istanbul",
   description:
     "Support page for guests comparing a shared Bosphorus dinner cruise in Istanbul when hotel pickup from selected central European-side zones is part of the decision.",
+  url: canonicalUrl,
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: "Mo-Su 00:00-23:59",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -60,6 +63,14 @@ const serviceSchema = {
     name: "Istanbul",
   },
   serviceType: "Shared Bosphorus Dinner Cruise Pickup Support",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "30",
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    url: `${SITE_URL}/istanbul-dinner-cruise`,
+  },
 };
 
 const breadcrumbSchema = {
