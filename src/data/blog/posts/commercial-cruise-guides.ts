@@ -1723,8 +1723,8 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-family-cruise-kids-guide",
-    title: "Family Guide to Bosphorus Cruises in Istanbul — Best Formats for Kids by Age",
-    metaDescription: "Use this family support guide to match the right Bosphorus cruise format to your children's ages, comfort, timing, and evening energy in Istanbul.",
+    title: "Bosphorus Cruise with Kids 2026 — Which Format Suits Your Family?",
+    metaDescription: "Sightseeing, sunset or private yacht — which Bosphorus cruise suits your family? Age-by-age guide with duration, evening timing and booking tips.",
     excerpt: "This family support guide helps parents match children's ages and energy levels to the right Bosphorus cruise format instead of using it as a broad generic cruise page.",
     category: "tips",
     date: "2026-03-24",

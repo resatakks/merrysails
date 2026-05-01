@@ -3,8 +3,8 @@ import type { BlogPost } from "../types";
 export const planningAndSupportGuides: BlogPost[] = [
 {
     slug: "bosphorus-cruise-with-kids",
-    title: "Planning a Bosphorus Cruise Day with Kids — Family Support Guide",
-    metaDescription: "Use this family support guide to plan a Bosphorus cruise day with children, compare cruise formats, and avoid common mistakes before booking.",
+    title: "Bosphorus Cruise with Kids Istanbul 2026 — Ages, Tips & Best Options",
+    metaDescription: "Which Bosphorus cruise works best for toddlers, young children, or teens? Duration, timing, seasickness tips and family-friendly booking advice.",
     excerpt: "This support guide helps parents plan a Bosphorus cruise day with kids, compare the right formats by age, and arrive better prepared.",
     category: "cruise-guide",
     date: "2025-11-02",
