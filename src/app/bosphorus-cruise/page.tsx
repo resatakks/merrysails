@@ -32,18 +32,53 @@ export const metadata: Metadata = {
 
 const guideSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": ["TouristTrip", "Service"],
   name: "Bosphorus Cruise Istanbul",
-  description: "A MerrySails comparison hub for Bosphorus cruise, boat tour, dinner cruise, sunset cruise, and private yacht options in Istanbul.",
+  description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €34, dinner cruise from €30, and private yacht charter from €280. TURSAB-licensed operator since 2001.",
   url: `${SITE_URL}/bosphorus-cruise`,
-  about: [
-    "Bosphorus cruise Istanbul",
-    "Bosphorus boat tour",
-    "Istanbul boat trip",
-    "Bosphorus sunset cruise",
-    "Bosphorus dinner cruise",
-    "Yacht charter Istanbul",
+  provider: {
+    "@type": "TouristInformationCenter",
+    name: "MerrySails",
+    url: SITE_URL,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Istanbul",
+      addressCountry: "TR",
+    },
+    telephone: "+90-537-040-68-22",
+  },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Bosphorus Sunset Cruise",
+      price: "34",
+      priceCurrency: "EUR",
+      url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
+    },
+    {
+      "@type": "Offer",
+      name: "Istanbul Dinner Cruise",
+      price: "30",
+      priceCurrency: "EUR",
+      url: `${SITE_URL}/istanbul-dinner-cruise`,
+    },
+    {
+      "@type": "Offer",
+      name: "Private Yacht Charter Istanbul",
+      price: "280",
+      priceCurrency: "EUR",
+      url: `${SITE_URL}/yacht-charter-istanbul`,
+    },
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "312",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  touristType: ["FamilyTourist", "CouplesTourist", "LuxuryTourist"],
+  availableLanguage: ["English", "Turkish", "German", "French"],
 };
 
 const breadcrumbSchema = {
@@ -220,54 +255,116 @@ export default function BosphorusCruisePage() {
 
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
-          <section className="text-center mb-14">
-            <p className="inline-flex rounded-full bg-[var(--brand-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-4">
-              MerrySails guide
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--heading)]">
-              Bosphorus Cruise Istanbul
-            </h1>
-            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
-              The best Bosphorus cruise in Istanbul depends on your intent: choose sunset for
-              golden-hour views, dinner cruise for a shared evening with entertainment, or private
-              yacht charter when your group needs a private boat and flexible add-ons.
-            </p>
-            <div className="mx-auto mt-6 flex max-w-3xl flex-col gap-3 sm:flex-row sm:justify-center">
-              <TrackedContactLink
-                href={`tel:${PHONE}`}
-                kind="phone"
-                label="compare_hub_call"
-                location="bosphorus_cruise_hero"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-transform hover:-translate-y-0.5"
-              >
-                <PhoneCall className="h-4 w-4" />
-                Call {PHONE_DISPLAY}
+          <section className="mb-10">
+            <div className="text-center mb-8">
+              <p className="inline-flex rounded-full bg-[var(--brand-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-4">
+                TURSAB-Licensed Operator · Istanbul Since 2001
+              </p>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--heading)]">
+                Bosphorus Cruise Istanbul
+              </h1>
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
+                Book direct with MerrySails — Istanbul&apos;s TURSAB A-Group licensed cruise operator. Sunset cruise from <strong>€34</strong>, dinner cruise from <strong>€30</strong>, private yacht from <strong>€280</strong>. No agency fees, instant confirmation.
+              </p>
+            </div>
+
+            {/* Pricing grid — 3 booking cards */}
+            <div className="grid gap-4 md:grid-cols-3 mb-8">
+              {[
+                {
+                  icon: Sunset,
+                  color: "amber",
+                  badge: "Most popular",
+                  title: "Bosphorus Sunset Cruise",
+                  price: "€34",
+                  per: "per person",
+                  highlights: ["2.5-hour cruise", "Open bar included", "Kabataş departure", "Shared small-group"],
+                  href: "/cruises/bosphorus-sunset-cruise",
+                  cta: "Book Sunset Cruise",
+                },
+                {
+                  icon: UtensilsCrossed,
+                  color: "rose",
+                  badge: "Best value",
+                  title: "Istanbul Dinner Cruise",
+                  price: "€30",
+                  per: "per person",
+                  highlights: ["3-hour cruise", "Dinner + live show", "Hotel pickup available", "4 package tiers"],
+                  href: "/istanbul-dinner-cruise",
+                  cta: "Book Dinner Cruise",
+                },
+                {
+                  icon: Anchor,
+                  color: "blue",
+                  badge: "Private & exclusive",
+                  title: "Private Yacht Charter",
+                  price: "€280",
+                  per: "per yacht",
+                  highlights: ["2+ hours", "Your group only", "Custom route", "Captain included"],
+                  href: "/yacht-charter-istanbul",
+                  cta: "Book Yacht Charter",
+                },
+              ].map((card) => (
+                <Link
+                  key={card.href}
+                  href={card.href}
+                  className="group relative flex flex-col rounded-2xl border border-[var(--line)] bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-[var(--brand-primary)]/30"
+                >
+                  <span className="mb-3 inline-block self-start rounded-full bg-[var(--brand-primary)]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+                    {card.badge}
+                  </span>
+                  <card.icon className="mb-3 h-7 w-7 text-[var(--brand-primary)]" />
+                  <h2 className="mb-1 text-lg font-bold text-[var(--heading)]">{card.title}</h2>
+                  <div className="mb-4 flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-[var(--brand-primary)]">{card.price}</span>
+                    <span className="text-sm text-[var(--text-muted)]">{card.per}</span>
+                  </div>
+                  <ul className="mb-5 space-y-1.5 text-sm text-[var(--text-muted)]">
+                    {card.highlights.map((h) => (
+                      <li key={h} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-primary)] flex-shrink-0" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-4 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-[var(--brand-primary-hover)]">
+                    {card.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Trust + contact row */}
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-[var(--text-muted)]">
+              <span className="flex items-center gap-1.5"><span className="text-amber-500">⭐</span> 4.9/5 · 312 verified reviews</span>
+              <span className="text-[var(--line)]">·</span>
+              <span>50,000+ guests since 2001</span>
+              <span className="text-[var(--line)]">·</span>
+              <TrackedContactLink href={WHATSAPP_URL} kind="whatsapp" label="compare_hub_whatsapp" location="bosphorus_cruise_trust_row"
+                className="font-semibold text-[var(--brand-primary)] hover:underline flex items-center gap-1">
+                <MessageCircle className="h-3.5 w-3.5" /> WhatsApp us
               </TrackedContactLink>
-              <TrackedContactLink
-                href={WHATSAPP_URL}
-                kind="whatsapp"
-                label="compare_hub_whatsapp"
-                location="bosphorus_cruise_hero"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--brand-primary)] bg-white px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp Before You Browse
+              <span className="text-[var(--line)]">·</span>
+              <TrackedContactLink href={`tel:${PHONE}`} kind="phone" label="compare_hub_call" location="bosphorus_cruise_trust_row"
+                className="font-semibold text-[var(--brand-primary)] hover:underline flex items-center gap-1">
+                <PhoneCall className="h-3.5 w-3.5" /> {PHONE_DISPLAY}
               </TrackedContactLink>
             </div>
           </section>
 
           <section className="bg-amber-50 border border-amber-200 rounded-xl p-6 my-8">
-            <h2 className="text-lg font-bold text-amber-900 mb-3">Quick Answer: Best Bosphorus Cruise Istanbul</h2>
+            <h2 className="text-lg font-bold text-amber-900 mb-3">Which Bosphorus cruise is best for me?</h2>
             <p className="text-amber-800 text-sm mb-4">
-              MerrySails — TURSAB A-Group licensed operator since 2001, 50,000+ guests — offers Istanbul&apos;s most-reviewed direct-booking Bosphorus cruises from Kabataş pier. No agency fees. Choose sunset (€34, 2.5 hrs), dinner (€30, 3 hrs), or private yacht from €280.
+              MerrySails is Istanbul&apos;s TURSAB A-Group licensed cruise operator (since 2001, 50,000+ guests). All cruises depart from Kabataş pier. Book direct — no middlemen, no markup, instant WhatsApp support.
             </p>
-            <ul className="text-sm text-amber-800 space-y-1">
-              <li>⭐ Sunset Cruise: from €34 · Kabataş departure · 2.5 hours</li>
-              <li>⭐ Dinner Cruise: from €30 · live entertainment · 3 hours</li>
-              <li>⭐ Private Yacht: from €280 · exclusive Bosphorus charter</li>
-              <li>⭐ Boat Rental: from €60/hr · custom itinerary</li>
+            <ul className="text-sm text-amber-800 space-y-1.5">
+              <li>🌅 <strong>Sunset Cruise:</strong> from €34/person · 2.5 hours · open bar · <Link href="/cruises/bosphorus-sunset-cruise" className="underline">Book now</Link></li>
+              <li>🍽️ <strong>Dinner Cruise:</strong> from €30/person · 3 hours · live show · <Link href="/istanbul-dinner-cruise" className="underline">Book now</Link></li>
+              <li>⛵ <strong>Private Yacht:</strong> from €280/yacht · your schedule · <Link href="/yacht-charter-istanbul" className="underline">Book now</Link></li>
+              <li>🚢 <strong>Boat Rental:</strong> from €60/hr · hourly hire · <Link href="/boat-rental-istanbul" className="underline">Book now</Link></li>
             </ul>
-            <p className="text-xs text-amber-700 mt-3">Book direct: merrysails.com · WhatsApp: +90 537 040 68 22 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
+            <p className="text-xs text-amber-700 mt-3">Direct booking: merrysails.com · WhatsApp: +90 537 040 68 22 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
           </section>
 
           <section className="mb-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">

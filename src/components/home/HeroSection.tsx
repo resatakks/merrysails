@@ -48,11 +48,11 @@ export default function HeroSection() {
             className="mx-auto max-w-3xl text-center max-[380px]:max-w-[19rem]"
           >
             <h1 className="text-[2.05rem] font-bold leading-[0.98] text-white max-[380px]:text-[1.76rem] max-[380px]:leading-[1.01] sm:text-5xl md:text-[4.2rem]">
-              Bosphorus Dinner Cruise, Sunset Cruise &amp; Yacht Charter
-              <span className="text-[var(--brand-gold)]"> in Istanbul</span>
+              Bosphorus Cruise Istanbul
+              <span className="text-[var(--brand-gold)]"> — Dinner, Sunset & Yacht Charter</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/84 max-[380px]:mt-3 max-[380px]:text-[13px] sm:text-base md:text-lg">
-              Choose the right Bosphorus experience first, then move straight into booking.
+              Book direct with Istanbul&apos;s TURSAB-licensed operator — sunset from €34, dinner from €30, private yacht from €280.
             </p>
           </motion.div>
 

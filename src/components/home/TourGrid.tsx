@@ -10,9 +10,9 @@ export default function TourGrid() {
     <section className="py-16 md:py-24 bg-[var(--surface-alt)]">
       <div className="container-main">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Our 3 Flagship Bosphorus Products</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Bosphorus Cruise Options in Istanbul</h2>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            Start with the three Bosphorus experiences guests ask for most: shared dinner cruise, shared sunset cruise, and private yacht charter.
+            Three ways to sail the Bosphorus — shared sunset cruise, shared dinner cruise, and private yacht charter. Direct booking, no agency fees.
           </p>
         </div>
 
