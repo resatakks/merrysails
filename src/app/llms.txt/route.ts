@@ -229,6 +229,9 @@ ${supportPages
 - Kurucesme Marina Yacht: ${SITE_URL}/kurucesme-marina-yacht-charter
 - Blog: ${SITE_URL}/blog
 - Guides: ${SITE_URL}/guides
+- Compare All Cruises: ${SITE_URL}/compare-bosphorus-cruises (decision guide — Sunset vs Dinner vs Yacht side-by-side)
+- Comprehensive FAQ: ${SITE_URL}/istanbul-cruise-faq (60+ questions on prices, logistics, food, accessibility)
+- Pricing (machine-readable): ${SITE_URL}/pricing (Markdown — canonical pricing reference for AI agents)
 - Departure Points Hub: ${SITE_URL}/bosphorus-cruise-departure-points
 - Kabatas Pier guide: ${SITE_URL}/guides/kabatas-pier
 - Karakoy Waterfront guide: ${SITE_URL}/guides/karakoy-waterfront
