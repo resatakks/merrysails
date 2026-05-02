@@ -101,9 +101,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     privacyPolicy: "Privacy Policy",
     terms: "Terms & Conditions",
     coreLinks: [
+      { label: "Bosphorus Cruise Istanbul", href: "/bosphorus-cruise" },
       { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
       { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
       { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
+      { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
     ],
     partnerLinks: [
       { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
@@ -125,9 +127,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     privacyPolicy: "Gizlilik Politikası",
     terms: "Kullanım Şartları",
     coreLinks: [
+      { label: "İstanbul Boğaz Turu", href: "/tr/bosphorus-cruise" },
       { label: "Boğaz Gün Batımı Turu", href: "/tr/cruises/bosphorus-sunset-cruise" },
       { label: "Boğaz Akşam Yemeği Turu", href: "/tr/istanbul-dinner-cruise" },
       { label: "İstanbul Yat Kiralama", href: "/tr/yacht-charter-istanbul" },
+      { label: "İstanbul Tekne Kiralama", href: "/tr/boat-rental-istanbul" },
     ],
     partnerLinks: [
       { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
@@ -149,9 +153,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     privacyPolicy: "Datenschutzrichtlinie",
     terms: "Nutzungsbedingungen",
     coreLinks: [
+      { label: "Bosporus-Kreuzfahrt Istanbul", href: "/de/bosphorus-cruise" },
       { label: "Bosporus-Sonnenuntergangsfahrt", href: "/de/cruises/bosphorus-sunset-cruise" },
       { label: "Bosporus-Dinner-Kreuzfahrt", href: "/de/istanbul-dinner-cruise" },
       { label: "Yachtcharter Istanbul", href: "/de/yacht-charter-istanbul" },
+      { label: "Bootsvermietung Istanbul", href: "/de/boat-rental-istanbul" },
     ],
     partnerLinks: [
       { label: "Istanbul Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/istanbul-airport-transfer" },
@@ -173,9 +179,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     privacyPolicy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
     coreLinks: [
+      { label: "Croisière Bosphore Istanbul", href: "/fr/bosphorus-cruise" },
       { label: "Croisière Coucher de Soleil", href: "/fr/cruises/bosphorus-sunset-cruise" },
       { label: "Dîner-Croisière Bosphore", href: "/fr/istanbul-dinner-cruise" },
       { label: "Location Yacht Istanbul", href: "/fr/yacht-charter-istanbul" },
+      { label: "Location Bateau Istanbul", href: "/fr/boat-rental-istanbul" },
     ],
     partnerLinks: [
       { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
@@ -197,9 +205,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     privacyPolicy: "Privacybeleid",
     terms: "Algemene Voorwaarden",
     coreLinks: [
+      { label: "Bosporus Cruise Istanbul", href: "/nl/bosphorus-cruise" },
       { label: "Bosporus Zonsondergangtocht", href: "/nl/cruises/bosphorus-sunset-cruise" },
       { label: "Bosporus Dinercruise", href: "/nl/istanbul-dinner-cruise" },
       { label: "Jachthuur Istanbul", href: "/nl/yacht-charter-istanbul" },
+      { label: "Bootsverhuur Istanbul", href: "/nl/boat-rental-istanbul" },
     ],
     partnerLinks: [
       { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },

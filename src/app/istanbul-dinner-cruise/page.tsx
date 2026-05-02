@@ -6,6 +6,7 @@ import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
+import RelatedTours from "@/components/ui/RelatedTours";
 
 export const revalidate = 3600;
 
@@ -434,6 +435,8 @@ export default async function IstanbulDinnerCruisePage({
               ))}
             </div>
           </section>
+
+          <RelatedTours exclude="dinner" heading="Other Bosphorus experiences" />
         </div>
       </div>
     </>

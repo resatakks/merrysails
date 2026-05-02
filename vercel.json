@@ -36,7 +36,7 @@
     },
     {
       "path": "/api/gsc/snapshot",
-      "schedule": "0 7 * * *"
+      "schedule": "0 7 */3 * *"
     },
     {
       "path": "/api/seo/rankings",

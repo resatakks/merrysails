@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { fleet } from "@/data/fleet";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import RelatedTours from "@/components/ui/RelatedTours";
 
 export const revalidate = 3600;
 
@@ -533,6 +534,10 @@ export default function BoatRentalIstanbulPage() {
               </div>
             </div>
           </section>
+        </div>
+
+        <div className="container-main pb-12">
+          <RelatedTours exclude="boat" heading="Other Bosphorus experiences" />
         </div>
       </main>
     </>

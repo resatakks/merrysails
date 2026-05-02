@@ -5,6 +5,7 @@ import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import RelatedTours from "@/components/ui/RelatedTours";
 
 export const revalidate = 3600;
 
@@ -510,6 +511,10 @@ export default async function LocaleSunsetCruisePage({
             </a>
           </div>
         </div>
+      </div>
+
+      <div className="container-main pb-12">
+        <RelatedTours exclude="sunset" heading="Other Bosphorus experiences" />
       </div>
     </>
   );

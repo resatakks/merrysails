@@ -6,6 +6,7 @@ import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
+import RelatedTours from "@/components/ui/RelatedTours";
 
 export const revalidate = 3600;
 
@@ -444,6 +445,8 @@ export default async function YachtCharterIstanbulPage({
               ))}
             </div>
           </section>
+
+          <RelatedTours exclude="yacht" heading="Other Bosphorus experiences" />
         </div>
       </div>
     </>
