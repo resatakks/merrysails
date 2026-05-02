@@ -26,7 +26,7 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(dinnerTour)}`;
 
 export const metadata: Metadata = {
-  title: "Istanbul Dinner Cruise — From €55 | MerrySails",
+  title: "Istanbul Dinner Cruise — From €30 | MerrySails",
   description:
     "Book Bosphorus dinner cruise Istanbul from EUR 30. Compare 4 shared packages with dinner service, Turkish-night entertainment, and hotel pickup support from a TURSAB-backed operator.",
   alternates: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/istanbul-dinner-cruise"),
   },
   openGraph: {
-    title: "Istanbul Dinner Cruise — From €55 | MerrySails",
+    title: "Istanbul Dinner Cruise — From €30 | MerrySails",
     description:
       "Compare 4 Bosphorus dinner cruise packages in Istanbul with visible pricing, Turkish-night entertainment, and pickup support.",
     url: canonicalUrl,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Istanbul Dinner Cruise — From €55 | MerrySails",
+    title: "Istanbul Dinner Cruise — From €30 | MerrySails",
     description:
       "Shared Bosphorus dinner cruise packages from EUR 30 with dinner service, Turkish-night entertainment, and pickup support.",
     images: [dinnerTour.image],
@@ -383,10 +383,9 @@ export default async function IstanbulDinnerCruisePage({
                   Istanbul Dinner Cruise Recommendations — 4 Packages Compared
                 </h2>
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
-                  Shared dinner cruise packages suit guests who want a fixed evening schedule and
-                  a lower entry point than private charter. This is the owner page for
-                  "Istanbul dinner cruise", "Bosphorus dinner cruise", and "best dinner cruise Istanbul" intent.
-                  For a private yacht dinner, compare the yacht charter or private dinner cruise pages below.
+                  Shared dinner cruise packages suit guests who want a fixed evening schedule with
+                  dinner service, Turkish-night entertainment, and Bosphorus views — starting at €30 per person.
+                  For a fully private yacht dinner, compare the options below.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">

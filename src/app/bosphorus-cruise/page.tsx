@@ -432,12 +432,12 @@ export default function BosphorusCruisePage() {
           <section className="mb-12">
             <div className="mb-6 max-w-3xl">
               <h2 className="text-2xl font-bold text-[var(--heading)]">
-                Compare Bosphorus Cruise, Boat Tour and Yacht Options
+                Compare Bosphorus Cruise Options in Istanbul
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
-                This hub owns the generic Bosphorus cruise and Istanbul boat tour decision stage.
-                The cards below send each visitor to the correct owner page instead of mixing
-                sunset, dinner and private-yacht intent into one booking path.
+                MerrySails runs three types of Bosphorus cruises from Kabataş pier. Each has its own
+                schedule, pricing, and experience profile — use the cards below to go straight to the
+                right page and book directly.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -461,7 +461,7 @@ export default function BosphorusCruisePage() {
                       <ArrowRight className="h-4 w-4" />
                     </span>
                     <span className="rounded-full bg-[var(--surface-alt)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--heading)]">
-                      Direct owner page
+                      Book direct
                     </span>
                   </div>
                 </Link>
@@ -581,10 +581,10 @@ export default function BosphorusCruisePage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50">
                 <Compass className="h-5 w-5 text-amber-600" />
               </div>
-              <h2 className="text-2xl font-bold text-[var(--heading)]">Narrow Support Routes After the Main Format Is Clear</h2>
+              <h2 className="text-2xl font-bold text-[var(--heading)]">Specialized Bosphorus Cruise Experiences in Istanbul</h2>
             </div>
             <p className="mb-5 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
-              These are not generic first clicks. Use them only after sunset, dinner, or private yacht is already clear and the remaining question is pickup, boarding side, proposal coverage, company dinner, hourly hire, or departure logic.
+              Looking for something more specific? We offer a range of tailored experiences: proposal cruises with a photographer, hotel pickup options, corporate yacht dinners, and hourly private boat rentals.
             </p>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {supportPages.map((page) => (
