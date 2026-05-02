@@ -386,10 +386,24 @@ export default async function LocaleBosphorusCruisePage({
 
   const tourProductSchema = {
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
+    "@type": ["TouristTrip", "Service"],
     name: c.h1,
     description: c.description,
     url: canonicalUrl,
+    provider: {
+      "@type": "TouristInformationCenter",
+      name: "MerrySails",
+      url: SITE_URL,
+    },
+    offers: c.tourOptions.map((opt) => ({
+      "@type": "Offer",
+      name: opt.title,
+      price: opt.price.replace(/[^0-9]/g, "") || opt.price,
+      priceCurrency: "EUR",
+      url: canonicalUrl,
+      availability: "https://schema.org/InStock",
+    })),
+    touristType: ["FamilyTourist", "CouplesTourist", "LuxuryTourist"],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: c.aggregateRating.value,
