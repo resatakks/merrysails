@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const STORAGE_KEY = "ms_exit_intent_shown";
 const STORAGE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
@@ -168,6 +169,14 @@ export default function ExitIntentPopup() {
                 rel="noopener noreferrer"
                 onClick={() => {
                   pushEvent("exit_intent_whatsapp_click");
+                  // Fire central WhatsApp conversion (Google Ads + GA4)
+                  try {
+                    trackWhatsAppClick({
+                      intent: "pre_booking",
+                      label: "exit_intent_sail10",
+                      location: "exit_intent_popup",
+                    });
+                  } catch {}
                   dismiss("whatsapp");
                 }}
                 className="mt-3 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-4 py-3 font-semibold text-white shadow-md transition hover:bg-[#1faa54]"
