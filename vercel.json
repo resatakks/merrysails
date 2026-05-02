@@ -31,6 +31,10 @@
       "schedule": "0 */2 * * *"
     },
     {
+      "path": "/api/google-ads/auto-resume",
+      "schedule": "5 21 * * *"
+    },
+    {
       "path": "/api/google-ads/budget-review",
       "schedule": "0 6 * * 1"
     },
