@@ -279,11 +279,10 @@ export default function TourDetailClient({
                 On-board preview
               </p>
               <h2 className="mt-2 text-2xl font-bold text-[var(--heading)]">
-                See the live sunset atmosphere before you book
+                {pageHeading} — On Board the Bosphorus
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
-                This short onboard video shows the actual sunset mood, yacht feel,
-                and golden-hour light of the shared Bosphorus departure.
+                See the actual on-board experience before you book: the Bosphorus views, golden-hour light, and yacht atmosphere of a shared MerrySails departure.
               </p>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
