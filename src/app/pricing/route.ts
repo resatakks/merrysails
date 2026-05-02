@@ -48,10 +48,10 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 
 | Package | Price | Includes |
 |---------|-------|----------|
-| Basic | €30 per person | Mezzes + main course + Turkish night show + music |
-| Standard | €55 per person | 3-course dinner + drinks + Turkish night show |
-| Premium | €75 per person | 5-course dinner + open bar + Turkish night show + VIP seating |
-| Hotel Transfer | €90 per person | Premium package + hotel pickup from Sultanahmet or Taksim |
+| Silver Soft Drinks | €30 per person | Standard seating, mezzes + main course, unlimited soft drinks, Turkish night show |
+| Silver Alcoholic | €45 per person | Standard seating, dinner, local alcoholic drinks, Turkish night show |
+| Gold Soft Drinks | €80 per person | VIP stage-close seating, premium dinner menu, unlimited soft drinks, Turkish night show + DJ |
+| Gold Unlimited Alcohol | €90 per person | VIP stage-close seating, premium dinner menu, unlimited local + imported alcohol, Turkish night show + DJ |
 
 **Cancellation:** Free cancellation up to 48 hours before
 **Min group:** 1 person (shared tour)
@@ -100,7 +100,7 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 A: The Bosphorus Sunset Cruise without wine starts at €34 per person. This is a 2-hour shared luxury yacht tour with live guide and refreshments included.
 
 **Q: How much does a dinner cruise in Istanbul cost?**
-A: Dinner cruises start from €30 per person (Basic package). The most popular Standard package is €55/person. Hotel pickup from Sultanahmet or Taksim is included in the €90 package.
+A: Dinner cruises start from €30 per person (Silver Soft Drinks). The Silver Alcoholic package is €45/person. Gold VIP packages are €80 (soft drinks) or €90 (unlimited alcohol). Hotel pickup from Sultanahmet or Taksim is included in the Gold Unlimited Alcohol (€90) package.
 
 **Q: How much does a private yacht charter in Istanbul cost?**
 A: Private yacht charter starts from €280 for the entire boat (not per person) for 2 hours, up to 8 guests. The VIP package for larger groups is €680.
