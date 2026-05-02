@@ -240,6 +240,43 @@ const organizationSchema = {
   knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "MerrySails",
+  url: SITE_URL,
+  description: "Bosphorus cruise and yacht charter booking in Istanbul — sunset cruise, dinner cruise, private yacht.",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const captainSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/#captain-ahmet`,
+  name: "Captain Ahmet Yılmaz",
+  givenName: "Ahmet",
+  familyName: "Yılmaz",
+  jobTitle: "Founder & Senior Captain",
+  description: "Founded Merry Tourism in 2001. Over 25 years navigating the Bosphorus, Captain Ahmet has personally guided more than 50,000 guests through Istanbul's waterways.",
+  worksFor: { "@id": `${SITE_URL}/#organization` },
+  knowsAbout: ["Bosphorus Cruise", "Yacht Charter Istanbul", "Istanbul Maritime Tourism", "Private Boat Tours"],
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    name: "TURSAB A-Group License",
+    credentialCategory: "Professional License",
+  },
+  url: `${SITE_URL}/about`,
+};
+
 const siteNavigationSchema = {
   "@context": "https://schema.org",
   "@type": "SiteNavigationElement",
@@ -398,6 +435,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(captainSchema) }}
         />
       </head>
       <body className="font-sans antialiased">
