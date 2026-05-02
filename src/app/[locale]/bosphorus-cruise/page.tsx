@@ -32,6 +32,7 @@ type LocaleContent = {
   departurePoints: string[];
   faqTitle: string;
   faqs: FaqItem[];
+  homeLabel: string;
   ctaTitle: string;
   ctaSubtitle: string;
   ctaBookLabel: string;
@@ -106,6 +107,7 @@ const CONTENT: Record<string, LocaleContent> = {
       { q: "Özel yat kiralama için kaç kişi gerekir?", a: "Özel yat kiralama, kişi sayısına değil tekne başına fiyatlandırılır. 2 kişilik bir çift de tüm tekneyi kiralayabilir. Kapasiteye göre 8–30 kişilik tekne seçenekleri mevcuttur." },
       { q: "Alkol servisi yapılıyor mu?", a: "Gün batımı turlarında şaraplı seçenek vardır (€40/kişi). Akşam yemeği turlarının standart paketinde içecek, premium paketinde ise açık alkol dahildir. Özel yat kiralamada menüyü siz belirlersiniz." },
     ],
+    homeLabel: "Ana Sayfa",
     ctaTitle: "Hemen Yerinizi Ayırın",
     ctaSubtitle: "Boğaz'da unutulmaz bir deneyim için online rezervasyon yapın veya WhatsApp üzerinden ulaşın.",
     ctaBookLabel: "Online Rezervasyon →",
@@ -177,6 +179,7 @@ const CONTENT: Record<string, LocaleContent> = {
       { q: "Wie viele Personen für eine Privatjacht?", a: "Privatjachten werden pro Boot berechnet, nicht pro Person. Schon 2 Personen können das gesamte Boot buchen. Kapazität je nach Boot: 8–30 Personen." },
       { q: "Wird Alkohol serviert?", a: "Bei der Sonnenuntergangskreuzfahrt gibt es eine Option mit Wein (€40/Person). Beim Standard-Dinner ist ein Getränk inklusive, beim Premium-Dinner ist die Bar offen. Beim Privatjachtcharter bestimmen Sie das Menü selbst." },
     ],
+    homeLabel: "Startseite",
     ctaTitle: "Jetzt buchen",
     ctaSubtitle: "Sichern Sie sich Ihren Platz für ein unvergessliches Erlebnis auf dem Bosporus.",
     ctaBookLabel: "Online buchen →",
@@ -248,6 +251,7 @@ const CONTENT: Record<string, LocaleContent> = {
       { q: "Combien de personnes pour louer un yacht privé ?", a: "Le yacht privé est facturé par bateau, pas par personne. Même 2 personnes peuvent privatiser un bateau entier. Capacité selon les bateaux : 8 à 30 personnes." },
       { q: "L'alcool est-il servi à bord ?", a: "La croisière coucher de soleil propose une option avec vin (€40/pers.). Le dîner standard inclut une boisson, le premium propose un bar ouvert. Pour le yacht privé, le menu est entièrement personnalisable." },
     ],
+    homeLabel: "Accueil",
     ctaTitle: "Réservez maintenant",
     ctaSubtitle: "Réservez en ligne ou contactez-nous via WhatsApp pour une expérience inoubliable sur le Bosphore.",
     ctaBookLabel: "Réserver en ligne →",
@@ -318,6 +322,7 @@ const CONTENT: Record<string, LocaleContent> = {
       { q: "Hoeveel personen voor een privéjacht?", a: "Privéjachten worden per boot berekend, niet per persoon. Zelfs 2 personen kunnen een hele boot huren. Capaciteit per boot: 8 tot 30 personen." },
       { q: "Wordt er alcohol geserveerd?", a: "Bij de zonsondergang cruise is er een optie met wijn (€40/pers.). Het standaard diner bevat een drankje, het premium pakket heeft een open bar. Bij privéjachtcharter stelt u het menu zelf samen." },
     ],
+    homeLabel: "Startpagina",
     ctaTitle: "Reserveer nu",
     ctaSubtitle: "Reserveer online of neem contact op via WhatsApp voor een onvergetelijke ervaring op de Bosporus.",
     ctaBookLabel: "Online reserveren →",
@@ -427,7 +432,7 @@ export default async function LocaleBosphorusCruisePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/${locale}` },
+      { "@type": "ListItem", position: 1, name: c.homeLabel, item: `${SITE_URL}/${locale}` },
       { "@type": "ListItem", position: 2, name: c.h1, item: canonicalUrl },
     ],
   };
@@ -442,7 +447,7 @@ export default async function LocaleBosphorusCruisePage({
       <div className="pt-28 pb-16 bg-[var(--surface-alt)]">
         <div className="container-main">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
-            <Link href={`/${locale}`} className="hover:text-[var(--brand-primary)]">Home</Link>
+            <Link href={`/${locale}`} className="hover:text-[var(--brand-primary)]">{c.homeLabel}</Link>
             <span>/</span>
             <span className="text-[var(--heading)]">{c.h1}</span>
           </nav>
