@@ -48,7 +48,7 @@ const CONTENT: Record<string, LocaleContent> = {
     canonicalPath: "/tr/bosphorus-cruise",
     h1: "Boğaz Turu İstanbul",
     subtitle: "MerrySails İstanbul",
-    intro: "İstanbul Boğazı'nda doğru tekne turunu seçin. Gün batımı turu €34'ten, akşam yemeği turu €30'dan başlıyor; tam özel deneyim için yat kiralama €280'den. 2001'den bu yana TÜRSAB lisanslı, 50.000'i aşkın memnun misafir.",
+    intro: "İstanbul boğaz turu seçeneklerimiz: gün batımı boğaz turu €34'ten, yemekli boğaz turu €30'dan, özel yat kiralama €280'den. TÜRSAB A Grubu lisanslı, 2001'den bu yana 50.000'i aşkın misafir. Doğrudan rezervasyon, aracısız fiyat.",
     trustBadge: "TÜRSAB A Grubu Lisanslı · 2001'den Bu Yana · 50.000+ Misafir",
     keyFacts: [
       { label: "Gün Batımı Turu", value: "€34'ten" },
@@ -62,7 +62,7 @@ const CONTENT: Record<string, LocaleContent> = {
       { slug: "yacht", title: "Özel Yat Kiralama", price: "€280", duration: "2+ saat", tag: "Tam özel deneyim", desc: "Tüm tekne size özel. Evlilik teklifi, doğum günü, aile kutlaması ve kurumsal etkinlikler için ideal. Güzergah ve menüyü siz belirlersiniz." },
       { slug: "boat", title: "Tekne Kiralama İstanbul", price: "Saatlik", duration: "Esnek", tag: "Önce tekne seçin", desc: "Tekne ve güzergahı siz belirleyin, dilediğiniz ekstraları sonra ekleyin. 2 saatten günlük kiralamaya kadar tüm süreler mevcuttur." },
     ],
-    priceTableTitle: "2026 Boğaz Turu Fiyat Tablosu",
+    priceTableTitle: "İstanbul Boğaz Turu Fiyatları 2026",
     priceTableCols: ["Tur", "Fiyat", "Süre", "Dahil Olanlar"],
     priceRows: [
       { name: "Gün Batımı Turu — Şarapsız", price: "€34 / kişi", duration: "2 saat", included: "Rehber, ikram, köprü altı geçiş" },
@@ -73,7 +73,7 @@ const CONTENT: Record<string, LocaleContent> = {
       { name: "Akşam Yemeği — Otel Transfer", price: "€90 / kişi", duration: "~5 saat", included: "Sultanahmet/Taksim transfer dahil" },
       { name: "Özel Yat Kiralama (2 saat)", price: "€280 / tekne", duration: "2 saat", included: "Tüm tekne size özel, 8 kişiye kadar" },
     ],
-    compareSectionTitle: "Hangi Tur Size Uygun?",
+    compareSectionTitle: "Hangi İstanbul Boğaz Turu Size Uygun?",
     compareItems: [
       { title: "Süre ve bütçe", desc: "2 saatlik hafif bir deneyim için gün batımı turu (€34), tam akşam programı için yemekli tur (€30–€90), tam özelleştirme için yat kiralama (€280+)." },
       { title: "Özel mi, paylaşımlı mı?", desc: "Gün batımı ve akşam yemeği turları paylaşımlı teknelerdir. Evlilik teklifi, kutlama veya özel grup etkinliği için tüm tekneyi kiralayın." },
