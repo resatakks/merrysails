@@ -211,6 +211,23 @@ model SeoBacklink {
   @@index([domain, checkedAt])
 }
 
+// ─── Disavow Audit Snapshots ──────────────────────────────
+// Each run stores the full toxic refdom list so we can diff against the previous run.
+model DisavowSnapshot {
+  id           String   @id @default(cuid())
+  domain       String   // e.g. "merrysails.com"
+  runAt        DateTime @default(now())
+  totalRefdoms Int
+  toxicCount   Int
+  reviewCount  Int
+  // [{ domain, spamScore, rank, backlinks, reason }]
+  toxic        Json
+  // [{ domain, spamScore, rank, backlinks }]
+  review       Json?
+
+  @@index([domain, runAt])
+}
+
 model SeoLlmMention {
   id        String   @id @default(cuid())
   domain    String

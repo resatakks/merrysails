@@ -78,12 +78,14 @@ type FooterTranslation = {
   blogHighlights: string;
   guideTopics: string;
   partnerServices: string;
+  sisterBrands: string;
   viewLicense: string;
   copyright: string;
   privacyPolicy: string;
   terms: string;
   coreLinks: FooterCoreLink[];
   partnerLinks: PartnerLink[];
+  sisterLinks: PartnerLink[];
 };
 
 const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
@@ -96,6 +98,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     blogHighlights: "Blog Highlights",
     guideTopics: "Guide Topics",
     partnerServices: "Partner Services",
+    sisterBrands: "Group Brands",
     viewLicense: "View license details",
     copyright: "All rights reserved.",
     privacyPolicy: "Privacy Policy",
@@ -112,6 +115,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
+    sisterLinks: [
+      { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
+      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+    ],
   },
   tr: {
     description:
@@ -122,6 +130,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     blogHighlights: "Blog",
     guideTopics: "Rehberler",
     partnerServices: "Ortak Hizmetler",
+    sisterBrands: "Grup Markaları",
     viewLicense: "Lisans detaylarını görüntüle",
     copyright: "Tüm hakları saklıdır.",
     privacyPolicy: "Gizlilik Politikası",
@@ -138,6 +147,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
+    sisterLinks: [
+      { label: "MerryTourism — Transfer", href: "https://www.merrytourism.com/tr" },
+      { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
+      { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
+    ],
   },
   de: {
     description:
@@ -148,6 +162,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     blogHighlights: "Blog",
     guideTopics: "Reiseführer",
     partnerServices: "Partner-Services",
+    sisterBrands: "Konzernmarken",
     viewLicense: "Lizenzdetails ansehen",
     copyright: "Alle Rechte vorbehalten.",
     privacyPolicy: "Datenschutzrichtlinie",
@@ -164,6 +179,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/de/istanbul-vip-transfer" },
       { label: "Antalya Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/antalya-airport-transfer" },
     ],
+    sisterLinks: [
+      { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/de" },
+      { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
+      { label: "VIP Transfer Istanbul Festpreis", href: "https://www.merrytourism.com/de/vip-transfer" },
+    ],
   },
   fr: {
     description:
@@ -174,6 +194,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     blogHighlights: "Blog",
     guideTopics: "Guides de voyage",
     partnerServices: "Services Partenaires",
+    sisterBrands: "Marques du Groupe",
     viewLicense: "Voir les détails de la licence",
     copyright: "Tous droits réservés.",
     privacyPolicy: "Politique de confidentialité",
@@ -190,6 +211,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
+    sisterLinks: [
+      { label: "MerryTourism — Transferts", href: "https://www.merrytourism.com/en" },
+      { label: "Transfert Aéroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+    ],
   },
   nl: {
     description:
@@ -200,6 +226,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     blogHighlights: "Blog",
     guideTopics: "Reisidsen",
     partnerServices: "Partnerservices",
+    sisterBrands: "Groepsmerken",
     viewLicense: "Licentiedetails bekijken",
     copyright: "Alle rechten voorbehouden.",
     privacyPolicy: "Privacybeleid",
@@ -215,6 +242,11 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
       { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
+    ],
+    sisterLinks: [
+      { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
+      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
     ],
   },
 };
@@ -432,6 +464,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {t.partnerLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mt-7 mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+              {t.sisterBrands}
+            </h3>
+            <ul className="space-y-2.5">
+              {t.sisterLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}

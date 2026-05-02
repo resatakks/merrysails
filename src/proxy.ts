@@ -8,6 +8,41 @@ function isSuspiciousServerActionProbe(request: NextRequest): boolean {
   );
 }
 
+// Penetration-testing / attack tools — block on sight.
+// Strictly tools that have no legitimate reason to access a public site.
+// SEO crawlers (MJ12, PetalBot, AhrefsBot, SemrushBot, DataForSEOBot, etc.)
+// are NOT included here — they may surface authority signals or fix "blocked"
+// reports we rely on for analysis.
+const HOSTILE_UA_FRAGMENTS = [
+  "zgrab",
+  "masscan",
+  "nmap",
+  "sqlmap",
+  "nikto",
+  "dirbuster",
+  "gobuster",
+  "wpscan",
+  "hydra",
+  "fimap",
+  "joomscan",
+  "acunetix",
+  "nessus",
+  "openvas",
+  "qualys",
+  "havij",
+  "appscan",
+  "webinspect",
+  "skipfish",
+  "wfuzz",
+  "feroxbuster",
+];
+
+function shouldHardBlock(ua: string): boolean {
+  const lower = ua.toLowerCase();
+  for (const f of HOSTILE_UA_FRAGMENTS) if (lower.includes(f)) return true;
+  return false;
+}
+
 // ─── Bot / AI crawler detection ────────────────────────────
 
 const BOT_FINGERPRINTS: [string, string][] = [
@@ -56,6 +91,14 @@ export function proxy(request: NextRequest) {
   }
 
   const ua = request.headers.get("user-agent") ?? "";
+
+  if (shouldHardBlock(ua)) {
+    return new NextResponse(null, {
+      status: 403,
+      headers: { "x-blocked-reason": "hostile-or-toxic-ua" },
+    });
+  }
+
   const bot = detectBot(ua);
 
   if (bot) {
