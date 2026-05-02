@@ -243,12 +243,38 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   if (!isAuthorized(req)) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-  const creds = readGscCreds();
-  if (!creds) return NextResponse.json({ skipped: "missing_gsc_credentials" });
-
   let body: { action?: string; urls?: string[] };
   try { body = await req.json(); }
   catch { return NextResponse.json({ error: "invalid_json" }, { status: 400 }); }
+
+  // --- indexnow --- (does not require GSC OAuth)
+  if (body.action === "indexnow") {
+    const indexnowKey = process.env.INDEXNOW_KEY ?? "merrysails-indexnow-key";
+    const urls = body.urls ?? buildAllUrls();
+
+    const payload = {
+      host: "merrysails.com",
+      key: indexnowKey,
+      keyLocation: `${SITE_URL}/${indexnowKey}.txt`,
+      urlList: urls,
+    };
+
+    const inRes = await fetch(INDEXNOW_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+
+    return NextResponse.json({
+      ok: inRes.status === 200 || inRes.status === 202,
+      status: inRes.status,
+      urlsSubmitted: urls.length,
+      response: inRes.status !== 200 && inRes.status !== 202 ? await inRes.text() : "accepted",
+    });
+  }
+
+  const creds = readGscCreds();
+  if (!creds) return NextResponse.json({ skipped: "missing_gsc_credentials" });
 
   let token: string;
   try { token = await getAccessToken(creds); }
@@ -309,33 +335,6 @@ export async function POST(req: NextRequest) {
       status: submitRes.status,
       details: await submitRes.text(),
     }, { status: 502 });
-  }
-
-  // --- indexnow ---
-  // Submits URLs to Bing/Yandex via IndexNow for near-instant discovery.
-  if (body.action === "indexnow") {
-    const indexnowKey = process.env.INDEXNOW_KEY ?? "merrysails-indexnow-key";
-    const urls = body.urls ?? buildAllUrls();
-
-    const payload = {
-      host: "merrysails.com",
-      key: indexnowKey,
-      keyLocation: `${SITE_URL}/${indexnowKey}.txt`,
-      urlList: urls,
-    };
-
-    const inRes = await fetch(INDEXNOW_API, {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify(payload),
-    });
-
-    return NextResponse.json({
-      ok: inRes.status === 200 || inRes.status === 202,
-      status: inRes.status,
-      urlsSubmitted: urls.length,
-      response: inRes.status !== 200 && inRes.status !== 202 ? await inRes.text() : "accepted",
-    });
   }
 
   return NextResponse.json({ error: "unknown_action" }, { status: 400 });
