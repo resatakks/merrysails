@@ -1,0 +1,219 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-05-02 12:00:00",
+  "containerVersion": {
+    "path": "accounts/0/containers/0/versions/0",
+    "accountId": "0",
+    "containerId": "0",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/0/containers/0",
+      "accountId": "0",
+      "containerId": "0",
+      "name": "MerrySails",
+      "publicId": "GTM-MWVS696K",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/0/containers/0/workspaces/0",
+      "features": {
+        "supportUserPermissions": true,
+        "supportEnvironments": true,
+        "supportWorkspaces": true,
+        "supportGtagConfigs": true,
+        "supportBuiltInVariables": true,
+        "supportClients": true,
+        "supportFolders": true,
+        "supportTags": true,
+        "supportTemplates": true,
+        "supportTriggers": true,
+        "supportVariables": true,
+        "supportVersions": true,
+        "supportZones": true,
+        "supportTransformations": true
+      }
+    },
+    "trigger": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "1001",
+        "name": "CE - exit_intent_shown",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "exit_intent_shown" }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "1002",
+        "name": "CE - exit_intent_code_copied",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "exit_intent_code_copied" }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "1003",
+        "name": "CE - exit_intent_whatsapp_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "exit_intent_whatsapp_click" }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "1004",
+        "name": "CE - exit_intent_dismissed",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "exit_intent_dismissed" }
+            ]
+          }
+        ]
+      }
+    ],
+    "tag": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "2001",
+        "name": "GA4 - exit_intent_shown",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "exit_intent_shown" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-9B3Q7FM7X8" },
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "device" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - device}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["1001"]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "2002",
+        "name": "GA4 - exit_intent_code_copied",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "exit_intent_code_copied" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-9B3Q7FM7X8" },
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" }
+        ],
+        "firingTriggerId": ["1002"]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "2003",
+        "name": "GA4 - exit_intent_whatsapp_click",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "exit_intent_whatsapp_click" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-9B3Q7FM7X8" },
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" }
+        ],
+        "firingTriggerId": ["1003"]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "2004",
+        "name": "Google Ads - WhatsApp Click Conversion (Exit Intent)",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "AW-18112460958" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "gnRdCPi4saEcEJ7x2LxD" },
+          { "type": "TEMPLATE", "key": "currencyCode", "value": "EUR" }
+        ],
+        "firingTriggerId": ["1003"]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "2005",
+        "name": "GA4 - exit_intent_dismissed",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "exit_intent_dismissed" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-9B3Q7FM7X8" },
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "reason" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - reason}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["1004"]
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "3001",
+        "name": "DLV - device",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "TEMPLATE", "key": "name", "value": "device" }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "3002",
+        "name": "DLV - reason",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "TEMPLATE", "key": "name", "value": "reason" }
+        ]
+      }
+    ]
+  }
+}
