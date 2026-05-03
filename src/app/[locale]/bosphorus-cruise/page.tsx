@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 
 export const revalidate = 3600;
 
@@ -560,6 +561,8 @@ export default async function LocaleBosphorusCruisePage({
               ))}
             </div>
           </section>
+
+          <LocaleHelpfulResources locale={locale as SiteLocale} omit="hub" />
         </div>
       </div>
 

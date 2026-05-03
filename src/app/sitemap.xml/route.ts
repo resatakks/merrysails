@@ -168,12 +168,26 @@ export function GET() {
     ].join("\n"),
   }));
 
-  // All locale pages (30 routes × 4 locales)
+  // All locale pages (30 routes × 4 locales).
+  // Pillar pages get highest priority — bosphorus-cruise hub (0.97) is the
+  // top organic target ("boğaz turu" 6,600/mo TR). Dinner, sunset, yacht
+  // (0.95) are the 3 product pillars with €30/€34/€280 starting prices.
+  const PILLAR_PATHS = new Set([
+    "/bosphorus-cruise",
+    "/istanbul-dinner-cruise",
+    "/cruises/bosphorus-sunset-cruise",
+    "/yacht-charter-istanbul",
+  ]);
   const localePages: SitemapPage[] = NON_EN_LOCALES.flatMap((locale) =>
     LOCALIZED_PATHS.map((path) => ({
       url: `${SITE_URL}/${locale}${path}`,
-      changefreq: path === "/bosphorus-cruise" || path === "/istanbul-dinner-cruise" || path === "/yacht-charter-istanbul" ? "weekly" : "monthly",
-      priority: path === "/bosphorus-cruise" ? "0.88" : path === "/istanbul-dinner-cruise" || path === "/yacht-charter-istanbul" ? "0.85" : "0.70",
+      changefreq: PILLAR_PATHS.has(path) ? "weekly" : "monthly",
+      priority:
+        path === "/bosphorus-cruise"
+          ? "0.97"
+          : PILLAR_PATHS.has(path)
+            ? "0.95"
+            : "0.70",
       lastmod: contentLastmod,
       hreflang: hreflangLocaleXml(path, locale),
     }))

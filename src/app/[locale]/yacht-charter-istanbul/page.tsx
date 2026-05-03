@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
+import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
@@ -489,6 +490,8 @@ export default async function LocaleYachtCharterPage({
           </header>
 
           <TourDetailClient tour={yachtTour} related={relatedTours} />
+
+          <LocaleHelpfulResources locale={locale as SiteLocale} omit="yacht" />
 
           <section className="mt-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <div className="grid gap-6 md:grid-cols-2">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
+import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
@@ -430,6 +431,8 @@ export default async function LocaleSunsetCruisePage({
           </nav>
 
           <TourDetailClient tour={sunsetTour} related={relatedTours} />
+
+          <LocaleHelpfulResources locale={locale as SiteLocale} omit="sunset" />
 
           <section className="mt-12 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
