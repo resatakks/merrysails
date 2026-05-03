@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import Script from "next/script";
 import AnalyticsRouteTracker from "@/components/analytics/AnalyticsRouteTracker";
 import ClarityIdentityProvider from "@/components/analytics/ClarityIdentityProvider";
+import ErrorTracker from "@/components/analytics/ErrorTracker";
 import ExitIntentPopup from "@/components/marketing/ExitIntentPopup";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
@@ -460,6 +461,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <AnalyticsRouteTracker />
           <ClarityIdentityProvider />
+          <ErrorTracker />
         </Suspense>
         <ToastProvider>
           <SiteChrome>{children}</SiteChrome>
