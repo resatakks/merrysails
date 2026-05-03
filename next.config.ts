@@ -71,6 +71,71 @@ const nextConfig: NextConfig = {
         destination: "/cruises/bosphorus-sunset-cruise",
         permanent: true,
       },
+      {
+        source: "/bosphorus-cruise-prices",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/prices",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/cruises/bachelorette-yacht-party",
+        destination: "/proposal-yacht-rental-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/cruises/bosphorus-sightseeing-yacht-cruise",
+        destination: "/private-bosphorus-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/cruises/private-bosphorus-lunch-yacht-cruise",
+        destination: "/private-bosphorus-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/cruises/private-bosphorus-sunset-cruise",
+        destination: "/private-bosphorus-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/cruises/private-yacht-swimming-tour",
+        destination: "/private-bosphorus-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/cruises/wedding-anniversary",
+        destination: "/proposal-yacht-rental-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/cruises/yacht-birthday-party",
+        destination: "/proposal-yacht-rental-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/cruises/yacht-weddings",
+        destination: "/proposal-yacht-rental-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/cruises/corporate-event-bosphorus-cruise",
+        destination: "/corporate-events",
+        permanent: true,
+      },
+      {
+        source: "/cruises/romantic-marriage-proposal",
+        destination: "/proposal-yacht-rental-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/cruises/private-bosphorus-dinner-yacht-cruise",
+        destination: "/private-bosphorus-dinner-cruise",
+        permanent: true,
+      },
     ];
   },
   async headers() {

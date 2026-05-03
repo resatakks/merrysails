@@ -28,7 +28,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Boğaz Turu Kalkış Noktaları 2026 | MerrySails",
+    metaTitle: "İstanbul Boğaz Turu Kalkış Noktaları 2026",
     metaDescription:
       "Boğaz turu kalkış noktaları: akşam yemeği turu için Kabataş, gün batımı turu için Karaköy buluşma noktası, özel yat için Kurucesme marinası.",
     canonicalPath: "/tr/bosphorus-cruise-departure-points",
@@ -79,7 +79,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaLabel: "Rezervasyon için WhatsApp",
   },
   de: {
-    metaTitle: "Bosporus Kreuzfahrt Abfahrtsorte Istanbul 2026 | MerrySails",
+    metaTitle: "Bosporus Kreuzfahrt Abfahrtsorte Istanbul 2026",
     metaDescription:
       "Abfahrtsorte für Bosporus-Kreuzfahrten: Kabatas für Dinner-Kreuzfahrten, Karakoy-Treffpunkt für Sunset-Touren, Kurucesme-Marina für Privatyachten.",
     canonicalPath: "/de/bosphorus-cruise-departure-points",
@@ -130,7 +130,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaLabel: "WhatsApp für Reservierung",
   },
   fr: {
-    metaTitle: "Points de Départ Croisière Bosphore Istanbul 2026 | MerrySails",
+    metaTitle: "Points de Départ Croisière Bosphore Istanbul 2026",
     metaDescription:
       "Points de départ croisière Bosphore : Kabatas pour le dîner-croisière, point de rendez-vous Karakoy pour le coucher de soleil, marina Kurucesme pour les yachts privés.",
     canonicalPath: "/fr/bosphorus-cruise-departure-points",
@@ -181,7 +181,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaLabel: "WhatsApp pour Réservation",
   },
   nl: {
-    metaTitle: "Bosporus Cruise Vertrekpunten Istanbul 2026 | MerrySails",
+    metaTitle: "Bosporus Cruise Vertrekpunten Istanbul 2026",
     metaDescription:
       "Vertrekpunten voor Bosporus-cruises: Kabatas voor diner-cruises, Karakoy-ontmoetingspunt voor zonsondergangstouren, Kurucesme-marina voor privéjachten.",
     canonicalPath: "/nl/bosphorus-cruise-departure-points",

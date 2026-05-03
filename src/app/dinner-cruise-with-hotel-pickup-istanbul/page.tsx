@@ -22,7 +22,7 @@ function requireTour(slug: string, label: string) {
 const dinnerTour = requireTour("bosphorus-dinner-cruise", "Dinner cruise");
 
 export const metadata: Metadata = {
-  title: "Dinner Cruise with Hotel Pickup Istanbul 2026 | MerrySails",
+  title: "Dinner Cruise with Hotel Pickup Istanbul 2026",
   description:
     "Dinner cruise with hotel pickup support in Istanbul for guests who want a shared Bosphorus evening and selected central European-side pickup logic before Kabatas boarding.",
   alternates: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/dinner-cruise-with-hotel-pickup-istanbul"),
   },
   openGraph: {
-    title: "Dinner Cruise with Hotel Pickup Istanbul 2026 | MerrySails",
+    title: "Dinner Cruise with Hotel Pickup Istanbul 2026",
     description:
       "Use this page when hotel pickup is the deciding factor for a shared Bosphorus dinner cruise in Istanbul. Compare package fit, pickup logic, and Kabatas boarding context.",
     url: canonicalUrl,

@@ -10,7 +10,7 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/proposal-yacht-with-photographer-istanbul`;
 
 export const metadata: Metadata = {
-  title: "Proposal Yacht with Photographer Istanbul 2026 | MerrySails",
+  title: "Proposal Yacht with Photographer Istanbul 2026",
   description:
     "Proposal yacht with photographer in Istanbul for couples who want the reveal captured professionally without losing the private Bosphorus proposal flow.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/proposal-yacht-with-photographer-istanbul"),
   },
   openGraph: {
-    title: "Proposal Yacht with Photographer Istanbul 2026 | MerrySails",
+    title: "Proposal Yacht with Photographer Istanbul 2026",
     description:
       "Use this page when a proposal yacht is already the right fit and photographer coverage is the deciding planning detail before booking in Istanbul.",
     url: canonicalUrl,

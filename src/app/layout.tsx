@@ -311,6 +311,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // <html lang="..."> is static — middleware rewrites it per-locale
+  // (see src/proxy.ts handleHtmlLangRewrite). This keeps all 444 pages
+  // statically prerendered while still emitting correct lang attribute.
   return (
     <html
       lang={DEFAULT_LOCALE}

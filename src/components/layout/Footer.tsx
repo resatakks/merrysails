@@ -264,7 +264,9 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
-  { label: "Bosphorus Cruise Compare", href: "/bosphorus-cruise" },
+  { label: "Compare All Cruises", href: "/compare-bosphorus-cruises" },
+  { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
+  { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "TURSAB License", href: "/tursab" },

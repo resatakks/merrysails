@@ -36,7 +36,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Özel Tekne Etkinliği İstanbul 2026 | Doğum Günü & Kutlama Teknesi | MerrySails",
+      "Özel Tekne Etkinliği İstanbul 2026 | Doğum Günü & Kutlama Teknesi",
     metaDescription:
       "Doğum günü tekne turu, sünnet kutlaması, yıl dönümü partisi ve özel kutlama akşamları için Boğaz'da özel yat. Pasta, dekor, fotoğrafçı ve DJ eklenebilir.",
     canonicalPath: "/tr/private-events",
@@ -105,7 +105,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Private Bootsparty Istanbul 2026 | Geburtstag & Jubiläum auf der Jacht | MerrySails",
+      "Private Bootsparty Istanbul 2026 | Geburtstag & Jubiläum auf der Jacht",
     metaDescription:
       "Geburtstagstour, Jubiläumsfeier, Junggesellinnenabschied und private Festabende auf dem Bosporus. Privatjacht mit Torte, Dekoration, Fotograf und DJ.",
     canonicalPath: "/de/private-events",
@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Fête Privée en Yacht Istanbul 2026 | Anniversaire & Soirée Privée Bosphore | MerrySails",
+      "Fête Privée en Yacht Istanbul 2026 | Anniversaire & Soirée Privée Bosphore",
     metaDescription:
       "Anniversaire en bateau, soirée privée, enterrement de vie de jeune fille et fêtes privées sur le Bosphore. Yacht privé avec gâteau, déco, photographe et DJ.",
     canonicalPath: "/fr/private-events",
@@ -243,7 +243,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Privéfeestje op Jacht Istanbul 2026 | Verjaardag & Jubileum Bosporus | MerrySails",
+      "Privéfeestje op Jacht Istanbul 2026 | Verjaardag & Jubileum Bosporus",
     metaDescription:
       "Verjaardagstocht, jubileumfeest, vrijgezellenfeest en privéfeestjes op de Bosporus. Privéjacht met taart, decoratie, fotograaf en DJ.",
     canonicalPath: "/nl/private-events",

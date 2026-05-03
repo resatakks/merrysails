@@ -9,7 +9,7 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/bosphorus-cruise-departure-points`;
 
 export const metadata: Metadata = {
-  title: "Where to Board Your Bosphorus Cruise — 3 Istanbul Pickup Points | MerrySails",
+  title: "Where to Board Your Bosphorus Cruise — 3 Istanbul Pickup Points",
   description:
     "Kabataş pier (dinner cruise), Karaköy waterfront (sunset cruise), Kurucesme Marina (private yacht). Exact addresses, step-by-step metro & tram directions, and taxi times from Sultanahmet, Taksim and major hotels.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/bosphorus-cruise-departure-points"),
   },
   openGraph: {
-    title: "Where to Board Your Bosphorus Cruise — 3 Istanbul Pickup Points | MerrySails",
+    title: "Where to Board Your Bosphorus Cruise — 3 Istanbul Pickup Points",
     description:
       "Kabataş, Karaköy or Kurucesme Marina — find your exact boarding point with metro, tram and taxi directions from any Istanbul hotel. All MerrySails departures covered.",
     url: canonicalUrl,

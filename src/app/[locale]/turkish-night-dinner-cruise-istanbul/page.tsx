@@ -53,23 +53,23 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "Türk Gecesi Akşam Yemeği Turu İstanbul — €55'dan İtibaren | MerrySails",
+    metaTitle: "Türk Gecesi Akşam Yemeği Turu İstanbul — €30'dan İtibaren",
     metaDescription:
-      "İstanbul Türk gecesi akşam yemeği turu: Boğaz'da canlı halk oyunları, davul zurna, zeybek dansı ve Türk mutfağı büfesi. €55'dan başlayan paketler, TÜRSAB A Grubu lisanslı. Hemen rezervasyon.",
+      "İstanbul Türk gecesi akşam yemeği turu: Boğaz'da canlı halk oyunları, davul zurna, zeybek dansı ve Türk mutfağı büfesi. €30'dan başlayan paketler, TÜRSAB A Grubu lisanslı. Hemen rezervasyon.",
     canonicalPath: "/tr/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbDinner: "Akşam Yemeği Turu",
     breadcrumbCurrent: "Türk Gecesi Turu",
     eyebrow: "MerrySails İstanbul — Türk Gecesi Deneyimi",
     heroTitle: "Türk Gecesi Akşam Yemeği Turu İstanbul",
-    heroSubtitle: "€55'dan başlayan fiyatlar · Zeybek, davul zurna ve Boğaz manzarası",
+    heroSubtitle: "€30'dan başlayan fiyatlar · Zeybek, davul zurna ve Boğaz manzarası",
     heroDescription:
       "Türk gecesi akşam yemeği turu, Boğaz sularında eşsiz bir kültürel deneyim sunar: zeybek dansları, davul zurna performansı, kına gecesi figürleri ve Türk mutfağının en güzel örneklerini bir araya getirir. 2001'den bu yana TÜRSAB A Grubu lisansıyla faaliyet gösteren MerrySails, 50.000'den fazla uluslararası misafiri bu benzersiz gece deneyimiyle buluşturmuştur. Kabataş'tan kalkan teknemiz, 3,5 saat boyunca İstanbul siluetini ve Boğaz'ı bir sergi gibi sunar.",
     trustSignal: "TÜRSAB A Grubu lisanslı Merry Tourism — 2001'den bu yana 50.000+ misafir",
     keyFacts: [
       { icon: "⏱", label: "Süre", value: "~3,5 saat" },
       { icon: "📍", label: "Kalkış", value: "Kabataş İskelesi, 20:30" },
-      { icon: "💶", label: "Fiyat", value: "€55'dan itibaren" },
+      { icon: "💶", label: "Fiyat", value: "€30'dan itibaren" },
       { icon: "🎭", label: "Show", value: "Halk oyunları + davul zurna" },
     ],
     sections: [
@@ -109,7 +109,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Paket Seçenekleri ve Fiyatlar",
         body: [
           "Türk gecesi akşam yemeği turunda dört paket sunulmaktadır. Tüm paketlerde Türk gecesi eğlencesi ve temel menü dahildir; fark koltuk tipi, içecek kapsamı ve menü seviyesindedir.",
-          "Silver Soft Drinks (€55): Standart koltuk, sınırsız alkolsüz içecek, akşam yemeği menüsü ve tam Türk gecesi programı dahil. Popüler başlangıç seçeneği.",
+          "Silver Soft Drinks (€30): Standart koltuk, sınırsız alkolsüz içecek, akşam yemeği menüsü ve tam Türk gecesi programı dahil. Popüler başlangıç seçeneği.",
           "Silver Alcoholic (€75): Standart koltuk, yerel alkollü içecekler (bira, şarap, rakı), akşam yemeği menüsü ve Türk gecesi programı dahil.",
           "Gold Soft Drinks (€95): VIP sahne yakını koltuk, sınırsız alkolsüz içecek, Premium menü, Türk gecesi + DJ seti.",
           "Gold Unlimited Alcohol (€119): VIP sahne yakını koltuk, sınırsız alkol dahil, Premium menü, Türk gecesi + DJ seti. En kapsamlı paket.",
@@ -129,7 +129,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Standart koltuk", "Sınırsız alkolsüz içecek", "Akşam yemeği menüsü", "Türk gecesi tam programı"],
       },
@@ -208,23 +208,23 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   de: {
-    metaTitle: "Türkischer Abend Dinner Kreuzfahrt Istanbul — Ab €55 | MerrySails",
+    metaTitle: "Türkischer Abend Dinner Kreuzfahrt Istanbul — Ab €30",
     metaDescription:
-      "Türkischer Abend Dinner Kreuzfahrt Istanbul: Zeybek-Tänze, Davul-Zurna, türkisches Buffet auf dem Bosporus. Pakete ab €55, TÜRSAB-lizenziert seit 2001, 50.000+ Gäste. Jetzt buchen.",
+      "Türkischer Abend Dinner Kreuzfahrt Istanbul: Zeybek-Tänze, Davul-Zurna, türkisches Buffet auf dem Bosporus. Pakete ab €30, TÜRSAB-lizenziert seit 2001, 50.000+ Gäste. Jetzt buchen.",
     canonicalPath: "/de/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbDinner: "Dinner Kreuzfahrt",
     breadcrumbCurrent: "Türkische Nacht",
     eyebrow: "MerrySails Istanbul — Türkische Nacht Erlebnis",
     heroTitle: "Türkischer Abend Dinner Kreuzfahrt Istanbul",
-    heroSubtitle: "Ab €55 pro Person · Zeybek, Davul-Zurna und Bosporus-Panorama",
+    heroSubtitle: "Ab €30 pro Person · Zeybek, Davul-Zurna und Bosporus-Panorama",
     heroDescription:
       "Die Türkische Abend Dinner Kreuzfahrt bietet ein einzigartiges Kulturerlebnis auf dem Bosporus: Zeybek-Tänze, Davul-Zurna-Auftritte, Henna-Nacht-Figuren und die besten Gerichte der türkischen Küche in einem. Seit 2001 – TÜRSAB Gruppe A lizenziert – hat MerrySails über 50.000 internationale Gäste mit diesem unvergesslichen Abenderlebnis begeistert. Unser Schiff legt um 20:30 Uhr in Kabataş ab und präsentiert 3,5 Stunden lang die Silhouette Istanbuls und den Bosporus.",
     trustSignal: "TÜRSAB Gruppe A lizenziert — Merry Tourism Istanbul seit 2001, 50.000+ Gäste",
     keyFacts: [
       { icon: "⏱", label: "Dauer", value: "ca. 3,5 Stunden" },
       { icon: "📍", label: "Abfahrt", value: "Kabataş-Pier, 20:30 Uhr" },
-      { icon: "💶", label: "Preis", value: "Ab €55 pro Person" },
+      { icon: "💶", label: "Preis", value: "Ab €30 pro Person" },
       { icon: "🎭", label: "Show", value: "Folkloretänze + Davul-Zurna" },
     ],
     sections: [
@@ -264,7 +264,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Pakete und Preise",
         body: [
           "Für die Türkische Abend Dinner Kreuzfahrt stehen vier Pakete zur Wahl. In allen Paketen ist die türkische Abendshow und ein Grundmenü enthalten; der Unterschied liegt in Sitzplatzkategorie, Getränkeumfang und Menüstufe.",
-          "Silver Soft Drinks (€55): Standard-Sitzplatz, alkoholfreie Getränke unbegrenzt, Abendmenü und volles Türkische Nacht Programm inklusive. Die populärste Einstiegsoption.",
+          "Silver Soft Drinks (€30): Standard-Sitzplatz, alkoholfreie Getränke unbegrenzt, Abendmenü und volles Türkische Nacht Programm inklusive. Die populärste Einstiegsoption.",
           "Silver Alcoholic (€75): Standard-Sitzplatz, lokale alkoholische Getränke (Bier, Wein, Raki), Abendmenü und Türkische Nacht Programm.",
           "Gold Soft Drinks (€95): VIP-Platz nahe der Bühne, alkoholfreie Getränke unbegrenzt, Premium-Menü, Türkische Nacht + DJ-Set.",
           "Gold Unlimited Alcohol (€119): VIP-Platz nahe der Bühne, Alkohol unbegrenzt inklusive, Premium-Menü, Türkische Nacht + DJ-Set. Das umfangreichste Paket.",
@@ -284,7 +284,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Standard-Sitzplatz", "Alkoholfreie Getränke unbegrenzt", "Abendmenü", "Türkische Nacht Vollprogramm"],
       },
@@ -363,23 +363,23 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   fr: {
-    metaTitle: "Soirée Turque Croisière Dîner Istanbul — À partir de €55 | MerrySails",
+    metaTitle: "Soirée Turque Croisière Dîner Istanbul — À partir de €30",
     metaDescription:
-      "Soirée turque croisière dîner à Istanbul : danses Zeybek, Davul-Zurna, buffet turc sur le Bosphore. Formules dès €55, agréé TÜRSAB depuis 2001, plus de 50 000 clients. Réservez maintenant.",
+      "Soirée turque croisière dîner à Istanbul : danses Zeybek, Davul-Zurna, buffet turc sur le Bosphore. Formules dès €30, agréé TÜRSAB depuis 2001, plus de 50 000 clients. Réservez maintenant.",
     canonicalPath: "/fr/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbDinner: "Croisière Dîner",
     breadcrumbCurrent: "Soirée Turque",
     eyebrow: "MerrySails Istanbul — Expérience Soirée Turque",
     heroTitle: "Soirée Turque Croisière Dîner Istanbul",
-    heroSubtitle: "À partir de €55 par personne · Zeybek, Davul-Zurna et panorama du Bosphore",
+    heroSubtitle: "À partir de €30 par personne · Zeybek, Davul-Zurna et panorama du Bosphore",
     heroDescription:
       "La croisière dîner soirée turque offre une expérience culturelle unique sur le Bosphore : danses Zeybek, performances de Davul-Zurna, figures de nuit de henné et le meilleur de la cuisine turque réunis en une seule soirée. Depuis 2001 – agréé TÜRSAB Groupe A – MerrySails a enchanté plus de 50 000 visiteurs internationaux avec cette expérience nocturne inoubliable. Notre bateau quitte Kabataş à 20h30 et révèle pendant 3h30 la silhouette d'Istanbul et le Bosphore.",
     trustSignal: "Agréé TÜRSAB Groupe A — Merry Tourism Istanbul depuis 2001, plus de 50 000 clients",
     keyFacts: [
       { icon: "⏱", label: "Durée", value: "environ 3h30" },
       { icon: "📍", label: "Départ", value: "Pier de Kabataş, 20h30" },
-      { icon: "💶", label: "Prix", value: "À partir de €55 par personne" },
+      { icon: "💶", label: "Prix", value: "À partir de €30 par personne" },
       { icon: "🎭", label: "Spectacle", value: "Danses folkloriques + Davul-Zurna" },
     ],
     sections: [
@@ -419,7 +419,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Formules et Tarifs",
         body: [
           "La croisière dîner soirée turque propose quatre formules. Le spectacle de nuit turque et un menu de base sont inclus dans toutes ; la différence porte sur la catégorie de place, l'offre de boissons et le niveau du menu.",
-          "Silver Soft Drinks (€55) : Place standard, boissons sans alcool à volonté, menu dîner et programme complet de nuit turque inclus. L'option d'entrée de gamme la plus populaire.",
+          "Silver Soft Drinks (€30) : Place standard, boissons sans alcool à volonté, menu dîner et programme complet de nuit turque inclus. L'option d'entrée de gamme la plus populaire.",
           "Silver Alcoholic (€75) : Place standard, boissons alcoolisées locales (bière, vin, raki), menu dîner et programme de nuit turque.",
           "Gold Soft Drinks (€95) : Place VIP proche de la scène, boissons sans alcool à volonté, menu Premium, nuit turque + set DJ.",
           "Gold Alcool Illimité (€119) : Place VIP proche de la scène, alcool à volonté inclus, menu Premium, nuit turque + set DJ. La formule la plus complète.",
@@ -439,7 +439,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Place standard", "Boissons sans alcool à volonté", "Menu dîner", "Programme complet nuit turque"],
       },
@@ -518,23 +518,23 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   nl: {
-    metaTitle: "Turkse Avond Dinercruise Istanbul — Vanaf €55 | MerrySails",
+    metaTitle: "Turkse Avond Dinercruise Istanbul — Vanaf €30",
     metaDescription:
-      "Turkse avond dinercruise Istanbul: Zeybek-dansen, Davul-Zurna, Turks buffet op de Bosporus. Pakketten vanaf €55, TÜRSAB-gecertificeerd sinds 2001, 50.000+ gasten. Boek nu.",
+      "Turkse avond dinercruise Istanbul: Zeybek-dansen, Davul-Zurna, Turks buffet op de Bosporus. Pakketten vanaf €30, TÜRSAB-gecertificeerd sinds 2001, 50.000+ gasten. Boek nu.",
     canonicalPath: "/nl/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Home",
     breadcrumbDinner: "Dinercruise",
     breadcrumbCurrent: "Turkse Avond",
     eyebrow: "MerrySails Istanbul — Turkse Avond Ervaring",
     heroTitle: "Turkse Avond Dinercruise Istanbul",
-    heroSubtitle: "Vanaf €55 per persoon · Zeybek, Davul-Zurna en Bosporus-panorama",
+    heroSubtitle: "Vanaf €30 per persoon · Zeybek, Davul-Zurna en Bosporus-panorama",
     heroDescription:
       "De Turkse avond dinercruise biedt een unieke culturele ervaring op de Bosporus: Zeybek-dansen, Davul-Zurna-optredens, henna-nacht-figuren en het beste van de Turkse keuken in één avond. Sinds 2001 — TÜRSAB A-categorie gecertificeerd — heeft MerrySails meer dan 50.000 internationale gasten betoverd met deze onvergetelijke avondervaring. Ons schip vertrekt om 20:30 vanuit Kabataş en toont 3,5 uur lang de silhouetten van Istanbul en de Bosporus.",
     trustSignal: "TÜRSAB A-categorie gecertificeerd — Merry Tourism Istanbul sinds 2001, 50.000+ gasten",
     keyFacts: [
       { icon: "⏱", label: "Duur", value: "ca. 3,5 uur" },
       { icon: "📍", label: "Vertrek", value: "Kabataş Pier, 20:30" },
-      { icon: "💶", label: "Prijs", value: "Vanaf €55 per persoon" },
+      { icon: "💶", label: "Prijs", value: "Vanaf €30 per persoon" },
       { icon: "🎭", label: "Show", value: "Folkloredansen + Davul-Zurna" },
     ],
     sections: [
@@ -574,7 +574,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Pakketten en prijzen",
         body: [
           "De Turkse avond dinercruise biedt vier pakketten. De Turkse avondshow en een basismenu zijn in alle pakketten inbegrepen; het verschil zit in stoeltype, drankenaanbod en menuniveau.",
-          "Silver Soft Drinks (€55): Standaard stoel, onbeperkt frisdrank, dinermenu en volledig Turks avondprogramma inbegrepen. De populairste instapoptie.",
+          "Silver Soft Drinks (€30): Standaard stoel, onbeperkt frisdrank, dinermenu en volledig Turks avondprogramma inbegrepen. De populairste instapoptie.",
           "Silver Alcoholic (€75): Standaard stoel, lokale alcoholische dranken (bier, wijn, raki), dinermenu en Turks avondprogramma.",
           "Gold Soft Drinks (€95): VIP-stoel bij het podium, onbeperkt frisdrank, Premium menu, Turkse avond + DJ-set.",
           "Gold Onbeperkt Alcohol (€119): VIP-stoel bij het podium, onbeperkt alcohol inbegrepen, Premium menu, Turkse avond + DJ-set. Het meest uitgebreide pakket.",
@@ -594,7 +594,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Standaard stoel", "Onbeperkt frisdrank", "Dinermenu", "Volledig Turks avondprogramma"],
       },

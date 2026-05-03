@@ -26,7 +26,7 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(dinnerTour)}`;
 
 export const metadata: Metadata = {
-  title: "Istanbul Dinner Cruise — From €30 | MerrySails",
+  title: "Istanbul Dinner Cruise — From €30",
   description:
     "Book Bosphorus dinner cruise Istanbul from EUR 30. Compare 4 shared packages with dinner service, Turkish-night entertainment, and hotel pickup support from a TURSAB-backed operator.",
   alternates: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/istanbul-dinner-cruise"),
   },
   openGraph: {
-    title: "Istanbul Dinner Cruise — From €30 | MerrySails",
+    title: "Istanbul Dinner Cruise — From €30",
     description:
       "Compare 4 Bosphorus dinner cruise packages in Istanbul with visible pricing, Turkish-night entertainment, and pickup support.",
     url: canonicalUrl,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Istanbul Dinner Cruise — From €30 | MerrySails",
+    title: "Istanbul Dinner Cruise — From €30",
     description:
       "Shared Bosphorus dinner cruise packages from EUR 30 with dinner service, Turkish-night entertainment, and pickup support.",
     images: [dinnerTour.image],
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": ["TouristTrip", "Product"],
+  "@type": ["TouristTrip", "Service"],
   name: dinnerTour.nameEn,
   alternateName: [
     "Istanbul Dinner Cruise",

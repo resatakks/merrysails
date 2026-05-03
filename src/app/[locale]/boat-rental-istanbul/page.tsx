@@ -36,7 +36,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Tekne Kiralama İstanbul — €380'dan başlayan fiyatlar | MerrySails",
+    title: "Tekne Kiralama İstanbul — €380'dan başlayan fiyatlar",
     description: `İstanbul'da tekne kiralama saatlik €${startingRate}'dan başlıyor. Boğaz'da özel tekne turu, yemek ve gün batımı ekstraları dahil edilebilir. Hemen teklif alın.`,
     canonicalPath: "/tr/boat-rental-istanbul",
     eyebrow: "MerrySails İstanbul",
@@ -84,7 +84,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   de: {
-    title: "Bootsverleih Istanbul — Ab €380 | MerrySails",
+    title: "Bootsverleih Istanbul — Ab €380",
     description: `Bootsverleih Istanbul ab €${startingRate} pro Stunde. Privates Boot auf dem Bosporus mieten, Dinner und Sonnenuntergang optional hinzubuchen. Direkt Angebot anfragen.`,
     canonicalPath: "/de/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",
@@ -132,7 +132,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   fr: {
-    title: "Location Bateau Istanbul — À partir de €380 | MerrySails",
+    title: "Location Bateau Istanbul — À partir de €380",
     description: `Location de bateau à Istanbul à partir de €${startingRate}/h. Bateau privé sur le Bosphore, dîner et coucher de soleil en option. Demandez un devis.`,
     canonicalPath: "/fr/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",
@@ -180,7 +180,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ],
   },
   nl: {
-    title: "Boothuur Istanbul — Vanaf €380 | MerrySails",
+    title: "Boothuur Istanbul — Vanaf €380",
     description: `Boothuur Istanbul vanaf €${startingRate} per uur. Privéboottocht op de Bosporus, diner en zonsondergang optioneel toe te voegen. Vraag direct een offerte aan.`,
     canonicalPath: "/nl/boat-rental-istanbul",
     eyebrow: "MerrySails Istanbul",

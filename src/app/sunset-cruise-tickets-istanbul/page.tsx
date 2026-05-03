@@ -215,7 +215,7 @@ const flowSteps = [
 
 const comparePages = [
   {
-    href: "/bosphorus-cruise-prices",
+    href: "/pricing",
     title: "Bosphorus Cruise Prices",
     description:
       "Use this to compare sunset ticket prices against dinner cruise and private yacht options in a single view.",
@@ -428,7 +428,7 @@ export default function SunsetCruiseTicketsIstanbulPage() {
             </div>
             <p className="mt-5 text-sm text-[var(--text-muted)]">
               Comparing across cruise types?{" "}
-              <Link href="/bosphorus-cruise-prices" className="font-semibold text-[var(--brand-primary)] hover:underline">
+              <Link href="/pricing" className="font-semibold text-[var(--brand-primary)] hover:underline">
                 Compare all Bosphorus cruise prices →
               </Link>
             </p>

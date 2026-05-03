@@ -48,7 +48,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Yat Kiralama — €380'dan başlayan fiyatlar | MerrySails",
+    metaTitle: "İstanbul Yat Kiralama — €380'dan başlayan fiyatlar",
     metaDescription:
       "İstanbul'da özel yat kiralama €280'den başlıyor. Tüm tekne size özel, Boğaz güzergahı, kaptanlı ve yemek seçeneğiyle. Evlilik teklifi, doğum günü ve kurumsal etkinlikler.",
     canonicalPath: "/tr/yacht-charter-istanbul",
@@ -118,7 +118,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle: "Yachtcharter Istanbul ab €280 — Private Bosporus-Jacht | MerrySails",
+    metaTitle: "Yachtcharter Istanbul ab €280 — Private Bosporus-Jacht",
     metaDescription:
       "Yachtcharter Istanbul ab €280. Exklusive Privatjacht auf dem Bosporus mit Kapitän. Ideal für Heiratsantrag, Geburtstag und Firmenevents. TÜRSAB-lizenziert.",
     canonicalPath: "/de/yacht-charter-istanbul",
@@ -188,7 +188,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   fr: {
-    metaTitle: "Location Yacht Istanbul — À partir de €380 | MerrySails",
+    metaTitle: "Location Yacht Istanbul — À partir de €380",
     metaDescription:
       "Location yacht Istanbul à partir de €280. Yacht privé sur le Bosphore avec capitaine. Pour mariage, anniversaire ou événement d'entreprise. TÜRSAB.",
     canonicalPath: "/fr/yacht-charter-istanbul",
@@ -258,7 +258,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   nl: {
-    metaTitle: "Jachthuur Istanbul — Vanaf €380 | MerrySails",
+    metaTitle: "Jachthuur Istanbul — Vanaf €380",
     metaDescription:
       "Jachthuur Istanbul vanaf €280. Exclusief privéjacht op de Bosporus met kapitein. Huwelijksaanzoek, verjaardag en bedrijfsevenementen. TÜRSAB-gecertificeerd.",
     canonicalPath: "/nl/yacht-charter-istanbul",
@@ -383,7 +383,7 @@ export default async function LocaleYachtCharterPage({
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": ["TouristTrip", "Product"],
+    "@type": ["TouristTrip", "Service"],
     name: t.title,
     alternateName: [
       "İstanbul Yat Kiralama",

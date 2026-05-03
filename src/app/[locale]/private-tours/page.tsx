@@ -34,7 +34,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    title: "İstanbul'da Özel Boğaz Etkinlik Türleri | MerrySails",
+    title: "İstanbul'da Özel Boğaz Etkinlik Türleri",
     description:
       "Evlilik teklifi, özel akşam yemeği, kutlama ve kurumsal etkinlikler için özel Boğaz yat sayfalarını karşılaştırın. Genel yat kiralama için Yacht Charter Istanbul.",
     canonicalPath: "/tr/private-tours",
@@ -101,7 +101,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   de: {
-    title: "Private Bosporus-Eventtypen in Istanbul | MerrySails",
+    title: "Private Bosporus-Eventtypen in Istanbul",
     description:
       "Vergleichen Sie private Bosporus-Eventseiten für Heiratsanträge, private Dinner, Feiern und Firmenanfragen. Für allgemeinen privaten Jachtcharter beginnen Sie mit Yacht Charter Istanbul.",
     canonicalPath: "/de/private-tours",
@@ -168,7 +168,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "Types d'événements privés sur le Bosphore à Istanbul | MerrySails",
+    title: "Types d'événements privés sur le Bosphore à Istanbul",
     description:
       "Comparez les pages d'événements privés pour demandes en mariage, dîners privés, célébrations et demandes d'entreprise. Pour le charter de yacht général, commencez par Yacht Charter Istanbul.",
     canonicalPath: "/fr/private-tours",
@@ -235,7 +235,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   nl: {
-    title: "Privé Bosporus Evenementtypes in Istanbul | MerrySails",
+    title: "Privé Bosporus Evenementtypes in Istanbul",
     description:
       "Vergelijk privé Bosporus evenementpagina's voor huwelijksaanzoeken, privédiners, vieringen en zakelijke aanvragen. Voor algemene privé jachtcharter begin met Yacht Charter Istanbul.",
     canonicalPath: "/nl/private-tours",

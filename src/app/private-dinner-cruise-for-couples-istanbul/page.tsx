@@ -10,7 +10,7 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`;
 
 export const metadata: Metadata = {
-  title: "Private Dinner Cruise for Couples Istanbul 2026 | MerrySails",
+  title: "Private Dinner Cruise for Couples Istanbul 2026",
   description:
     "Private dinner cruise for couples in Istanbul for guests who want a quieter Bosphorus evening, their own table, and a dinner-led private yacht flow without a shared cruise format.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/private-dinner-cruise-for-couples-istanbul"),
   },
   openGraph: {
-    title: "Private Dinner Cruise for Couples Istanbul 2026 | MerrySails",
+    title: "Private Dinner Cruise for Couples Istanbul 2026",
     description:
       "Use this page when a couple wants a private Bosphorus dinner, a quieter atmosphere, and clear routing between private dinner, proposal, and shared dinner options.",
     url: canonicalUrl,

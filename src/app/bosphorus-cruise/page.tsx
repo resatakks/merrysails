@@ -6,7 +6,7 @@ import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } f
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul — From €34 | MerrySails",
+  title: "Bosphorus Cruise Istanbul — From €34",
   description:
     "Compare Bosphorus cruise options in Istanbul: sunset from EUR 34, dinner from EUR 30, and private yacht from EUR 280. Find the right MerrySails booking page fast.",
   alternates: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/bosphorus-cruise"),
   },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul — From €34 | MerrySails",
+    title: "Bosphorus Cruise Istanbul — From €34",
     description:
       "Compare sunset, dinner, and private yacht options in Istanbul with visible MerrySails starting prices and the right next booking page.",
     url: `${SITE_URL}/bosphorus-cruise`,

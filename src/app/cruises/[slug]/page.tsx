@@ -310,7 +310,7 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with an audio guide in 12 languages.",
   },
   "bosphorus-sunset-cruise": {
-    title: "Bosphorus Sunset Cruise Istanbul — From €34 | MerrySails",
+    title: "Bosphorus Sunset Cruise Istanbul — From €34",
     description: "Book the Bosphorus sunset cruise in Istanbul from EUR 34. Two shared 2-hour sunset options on the same route: Without Wine and With Wine, with snacks, drinks, and landmark views on the water.",
   },
   "wedding-anniversary": {
@@ -413,7 +413,7 @@ export default async function TourDetailPage({
   // JSON-LD TouristTrip + Product schema
   const tourSchema = {
     "@context": "https://schema.org",
-    "@type": ["TouristTrip", "Product"],
+    "@type": ["TouristTrip", "Service"],
     name: tour.nameEn,
     description: tour.description,
     touristType: "Leisure",

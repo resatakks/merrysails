@@ -36,7 +36,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Kurumsal Yat Akşam Yemeği İstanbul 2026 | Boğaz'da Şirket Yemeği | MerrySails",
+      "Kurumsal Yat Akşam Yemeği İstanbul 2026 | Boğaz'da Şirket Yemeği",
     metaDescription:
       "Boğaz'da kurumsal akşam yemeği: ekip yemeği, müşteri ağırlama ve yönetici akşamları için özel yat. Faturalı kurumsal hizmet, yemek odaklı planlama.",
     canonicalPath: "/tr/corporate-yacht-dinner-istanbul",
@@ -105,7 +105,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Firmen-Yacht-Dinner Istanbul 2026 | Geschäftsessen am Bosporus | MerrySails",
+      "Firmen-Yacht-Dinner Istanbul 2026 | Geschäftsessen am Bosporus",
     metaDescription:
       "Firmen-Yacht-Dinner am Bosporus: Teamdinner, Kundenempfang und Führungsabende auf privater Jacht. Dinner-orientierte Planung, offizielle Rechnung.",
     canonicalPath: "/de/corporate-yacht-dinner-istanbul",
@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Dîner d'Entreprise Yacht Istanbul 2026 | Dîner Privé Bosphore | MerrySails",
+      "Dîner d'Entreprise Yacht Istanbul 2026 | Dîner Privé Bosphore",
     metaDescription:
       "Dîner d'entreprise sur yacht à Istanbul : dîners d'équipe, réceptions clients et soirées dirigeants sur le Bosphore. Planification orientée dîner, facture officielle.",
     canonicalPath: "/fr/corporate-yacht-dinner-istanbul",
@@ -243,7 +243,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Zakelijk Jachtdiner Istanbul 2026 | Bedrijfsdiner Bosporus | MerrySails",
+      "Zakelijk Jachtdiner Istanbul 2026 | Bedrijfsdiner Bosporus",
     metaDescription:
       "Zakelijk jachtdiner Istanbul: teamdiners, klantenontvangst en directiediners op de Bosporus. Diner-gerichte planning, op offerte met officiële factuur.",
     canonicalPath: "/nl/corporate-yacht-dinner-istanbul",

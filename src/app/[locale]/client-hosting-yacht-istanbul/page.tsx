@@ -36,7 +36,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Müşteri Ağırlama Yatı İstanbul 2026 | Boğaz'da Özel Misafir Akşamı | MerrySails",
+      "Müşteri Ağırlama Yatı İstanbul 2026 | Boğaz'da Özel Misafir Akşamı",
     metaDescription:
       "İstanbul'da müşteri ağırlama için özel yat: yatırımcı, partner ve VIP misafir akşamları için Boğaz'da kurumsal hospitality. Faturalı, brife özel planlama.",
     canonicalPath: "/tr/client-hosting-yacht-istanbul",
@@ -105,7 +105,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Kundenempfang Jacht Istanbul 2026 | VIP-Hospitality am Bosporus | MerrySails",
+      "Kundenempfang Jacht Istanbul 2026 | VIP-Hospitality am Bosporus",
     metaDescription:
       "Privater Kundenempfang am Bosporus: Investorenabende, Partner-Hospitality und VIP-Gästeempfänge auf privater Jacht in Istanbul. Briefingbasiert, mit Rechnung.",
     canonicalPath: "/de/client-hosting-yacht-istanbul",
@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Yacht Réception Clients Istanbul 2026 | Hospitality VIP sur le Bosphore | MerrySails",
+      "Yacht Réception Clients Istanbul 2026 | Hospitality VIP sur le Bosphore",
     metaDescription:
       "Réception clients sur yacht privé à Istanbul : soirées investisseurs, hospitality partenaires et accueil VIP sur le Bosphore. Sur devis, facture officielle.",
     canonicalPath: "/fr/client-hosting-yacht-istanbul",
@@ -243,7 +243,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Klantenontvangst Jacht Istanbul 2026 | VIP-hospitality Bosporus | MerrySails",
+      "Klantenontvangst Jacht Istanbul 2026 | VIP-hospitality Bosporus",
     metaDescription:
       "Klantenontvangst op een privéjacht in Istanbul: investeerdersavonden, partner-hospitality en VIP-ontvangsten op de Bosporus. Op offerte, met officiële factuur.",
     canonicalPath: "/nl/client-hosting-yacht-istanbul",

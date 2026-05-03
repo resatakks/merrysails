@@ -9,7 +9,7 @@ const SITE_URL = "https://merrysails.com";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Private Bosphorus Dinner Cruise | Private Yacht Dinner in Istanbul | MerrySails",
+  title: "Private Bosphorus Dinner Cruise | Private Yacht Dinner in Istanbul",
   description:
     "Private Bosphorus dinner cruise in Istanbul for couples and small groups who want their own yacht, a private dinner table, and a route timed for sunset or city lights.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/private-bosphorus-dinner-cruise"),
   },
   openGraph: {
-    title: "Private Bosphorus Dinner Cruise | Private Yacht Dinner in Istanbul | MerrySails",
+    title: "Private Bosphorus Dinner Cruise | Private Yacht Dinner in Istanbul",
     description:
       "Private yacht dinner on the Bosphorus for proposals, birthdays, anniversaries, and small groups that want a private table and a calm evening route.",
     url: `${SITE_URL}/private-bosphorus-dinner-cruise`,

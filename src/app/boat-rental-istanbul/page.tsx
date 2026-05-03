@@ -225,7 +225,7 @@ const faqItems = [
 
 const comparePages = [
   {
-    href: "/bosphorus-cruise-prices",
+    href: "/pricing",
     title: "Bosphorus Cruise Prices",
     description: "Best if you need to compare all private and shared cruise costs before committing to a boat rental format.",
   },

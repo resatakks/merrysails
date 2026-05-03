@@ -31,7 +31,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Ürün Lansmanı Yat 2026 | Boğaz'da Özel Lansman Etkinliği | MerrySails",
+    metaTitle: "İstanbul Ürün Lansmanı Yat 2026 | Boğaz'da Özel Lansman Etkinliği",
     metaDescription:
       "İstanbul'da ürün lansmanı için özel yat: Boğaz manzarasında görsel etki, markalı kurulum ve davetli akışı planlamasıyla özel bir lansman formatı.",
     canonicalPath: "/tr/product-launch-yacht-istanbul",
@@ -76,7 +76,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "WhatsApp ile Teklif Alın",
   },
   de: {
-    metaTitle: "Produktlaunch Yacht Istanbul 2026 | Private Bosporus Launch-Veranstaltung | MerrySails",
+    metaTitle: "Produktlaunch Yacht Istanbul 2026 | Private Bosporus Launch-Veranstaltung",
     metaDescription:
       "Produktlaunch auf einer Privatyacht am Bosporus in Istanbul: Branding-Setup, Gästefluss-Management und visuelle Wirkung für eine unvergessliche Launch-Veranstaltung.",
     canonicalPath: "/de/product-launch-yacht-istanbul",
@@ -121,7 +121,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "Angebot via WhatsApp",
   },
   fr: {
-    metaTitle: "Lancement de Produit sur Yacht Istanbul 2026 | Événement Privé Bosphore | MerrySails",
+    metaTitle: "Lancement de Produit sur Yacht Istanbul 2026 | Événement Privé Bosphore",
     metaDescription:
       "Lancement de produit sur yacht privé au Bosphore à Istanbul : branding, gestion du flux d'invités et impact visuel pour un événement de lancement mémorable.",
     canonicalPath: "/fr/product-launch-yacht-istanbul",
@@ -166,7 +166,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "Devis via WhatsApp",
   },
   nl: {
-    metaTitle: "Productlancering Jacht Istanbul 2026 | Privé Bosporus Lanceringsevenement | MerrySails",
+    metaTitle: "Productlancering Jacht Istanbul 2026 | Privé Bosporus Lanceringsevenement",
     metaDescription:
       "Productlancering op een privéjacht aan de Bosporus in Istanbul: branding, gastenstroom en visuele impact voor een onvergetelijk lanceringsevenement.",
     canonicalPath: "/nl/product-launch-yacht-istanbul",

@@ -136,7 +136,7 @@ export default async function LocaleTourDetailPage({
   // JSON-LD TouristTrip + Product schema
   const tourSchema = {
     "@context": "https://schema.org",
-    "@type": ["TouristTrip", "Product"],
+    "@type": ["TouristTrip", "Service"],
     name: tour.nameEn,
     description: tour.description,
     touristType: "Leisure",

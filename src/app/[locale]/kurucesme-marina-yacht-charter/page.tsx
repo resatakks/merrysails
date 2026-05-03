@@ -46,7 +46,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Kuruçeşme Marina Yat Kiralama İstanbul 2026 | Boğaz Özel Yat | MerrySails",
+      "Kuruçeşme Marina Yat Kiralama İstanbul 2026 | Boğaz Özel Yat",
     metaDescription:
       "Kuruçeşme Marina'dan kalkışlı özel yat kiralama: Boğaz turu, biniş, marina ulaşımı ve özel charter detayları. Tarih ve grup için netleştirilmiş teklif.",
     canonicalPath: "/tr/kurucesme-marina-yacht-charter",
@@ -132,7 +132,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Kuruçeşme Marina Yachtcharter Istanbul 2026 | Bosporus Privatyacht | MerrySails",
+      "Kuruçeşme Marina Yachtcharter Istanbul 2026 | Bosporus Privatyacht",
     metaDescription:
       "Privatyacht-Charter ab Kuruçeşme Marina: Bosporus-Tour, Boarding, Marina-Anfahrt und private Charterdetails. Konkretes Angebot nach Datum und Gruppe.",
     canonicalPath: "/de/kurucesme-marina-yacht-charter",
@@ -218,7 +218,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Yacht Charter Marina Kuruçeşme Istanbul 2026 | Yacht Privé Bosphore | MerrySails",
+      "Yacht Charter Marina Kuruçeşme Istanbul 2026 | Yacht Privé Bosphore",
     metaDescription:
       "Location de yacht privé au départ de la marina de Kuruçeşme : croisière Bosphore, embarquement, accès à la marina et détails du charter privé. Devis selon date et groupe.",
     canonicalPath: "/fr/kurucesme-marina-yacht-charter",
@@ -304,7 +304,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Kuruçeşme Marina Jacht Charter Istanbul 2026 | Privé Jacht Bosporus | MerrySails",
+      "Kuruçeşme Marina Jacht Charter Istanbul 2026 | Privé Jacht Bosporus",
     metaDescription:
       "Privé jacht charter vanaf Kuruçeşme Marina: Bosporus-tour, boarding, marinatoegang en private charter-details. Offerte op basis van datum en groep.",
     canonicalPath: "/nl/kurucesme-marina-yacht-charter",

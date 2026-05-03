@@ -10,7 +10,7 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/kurucesme-marina-yacht-charter`;
 
 export const metadata: Metadata = {
-  title: "Kurucesme Marina Yacht Charter Istanbul 2026 | MerrySails",
+  title: "Kurucesme Marina Yacht Charter Istanbul 2026",
   description:
     "Kurucesme Marina yacht charter support page for guests who already know they want a private yacht and need clearer departure-marina, boarding, and waterfront context before booking in Istanbul.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/kurucesme-marina-yacht-charter"),
   },
   openGraph: {
-    title: "Kurucesme Marina Yacht Charter Istanbul 2026 | MerrySails",
+    title: "Kurucesme Marina Yacht Charter Istanbul 2026",
     description:
       "Use this page when Kurucesme Marina departure logic is the main question before booking a private Bosphorus yacht charter in Istanbul.",
     url: canonicalUrl,

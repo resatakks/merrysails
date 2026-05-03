@@ -58,7 +58,7 @@ type LocaleContent = {
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Sultanahmet Taksim Akşam Yemeği Turu Transfer — €55'dan | MerrySails",
+      "Sultanahmet Taksim Akşam Yemeği Turu Transfer — €30'dan",
     metaDescription:
       "Sultanahmet ve Taksim'den Boğaz akşam yemeği turu için transfer: Hipodrom, Ayasofya, İstiklal Caddesi ve büyük oteller yakınından alım. Combine rota: Sultanahmet 18:30 → Taksim 19:00 → iskele 19:20.",
     canonicalPath: "/tr/dinner-cruise-pickup-sultanahmet-taksim",
@@ -68,7 +68,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails İstanbul • 2001'den Beri",
     heroTitle: "Sultanahmet ve Taksim'den Akşam Yemeği Turu Transferi",
     heroSubtitle:
-      "İstanbul'un en yoğun turistik bölgelerinden combine transfer — €55'dan başlayan paketlerde dahil",
+      "İstanbul'un en yoğun turistik bölgelerinden combine transfer — €30'dan başlayan paketlerde dahil",
     heroTagline:
       "Sultanahmet'teki tarihi oteller veya Taksim'deki büyük konaklama tesislerinden Boğaz akşam yemeği turunuza kolayca katılın. Combine transfer rotamızla Sultanahmet'ten kalkan araç önce Taksim'e uğrar, ardından tüm grubu birlikte iskeleye getirir.",
     trustBadge: "TURSAB A Grubu Lisanslı • 50.000+ Misafir • 2001'den Beri",
@@ -202,14 +202,14 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Transfer ücret karşılığında mı, paket içinde mi?",
-        a: "Transfer, €55'dan başlayan tüm paketlere dahildir. Ayrıca ücret talep edilmez.",
+        a: "Transfer, €30'dan başlayan tüm paketlere dahildir. Ayrıca ücret talep edilmez.",
       },
     ],
     otherZonesLabel: "Diğer Bölgelerden Transfer →",
     mainPageLabel: "Ana Akşam Yemeği Turu Sayfası →",
     ctaHeading: "Sultanahmet veya Taksim'den Turunuzu Hemen Rezerve Edin",
     ctaSubtitle:
-      "Otel adresinizi belirtin, biz transfer planını hazırlayalım. €55'dan başlayan paketlerde transfer dahil.",
+      "Otel adresinizi belirtin, biz transfer planını hazırlayalım. €30'dan başlayan paketlerde transfer dahil.",
     ctaBookLabel: "Hemen Rezervasyon",
     ctaWhatsappLabel: "WhatsApp'tan Yazın",
     viewInEnglish: "View in English →",
@@ -217,7 +217,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   de: {
     metaTitle:
-      "Sultanahmet Taksim Dinner Cruise Abholung — Ab €55 | MerrySails",
+      "Sultanahmet Taksim Dinner Cruise Abholung — Ab €30",
     metaDescription:
       "Bosporus Dinner Kreuzfahrt Transfer von Sultanahmet und Taksim: Hippodrom, Hagia Sophia, İstiklal-Straße und große Hotels. Kombinierte Route: Sultanahmet 18:30 → Taksim 19:00 → Anleger 19:20.",
     canonicalPath: "/de/dinner-cruise-pickup-sultanahmet-taksim",
@@ -227,7 +227,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails Istanbul • Seit 2001",
     heroTitle: "Dinner Cruise Transfer ab Sultanahmet und Taksim",
     heroSubtitle:
-      "Kombinierter Transfer aus Istanbuls beliebtesten Touristenvierteln — in allen Paketen ab €55 inklusive",
+      "Kombinierter Transfer aus Istanbuls beliebtesten Touristenvierteln — in allen Paketen ab €30 inklusive",
     heroTagline:
       "Vom historischen Hotel in Sultanahmet oder vom Großhotel am Taksim-Platz zur Bosporus-Dinner-Cruise. Unser kombinierter Transfer holt Sie zuerst in Sultanahmet ab, fährt dann nach Taksim und bringt die ganze Gruppe gemeinsam zum Anleger.",
     trustBadge: "TURSAB A-Gruppe lizenziert • 50.000+ Gäste • Seit 2001",
@@ -361,14 +361,14 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Ist der Transfer im Paketpreis enthalten?",
-        a: "Ja, der Transfer ist in allen Paketen ab €55 enthalten — ohne Aufpreis.",
+        a: "Ja, der Transfer ist in allen Paketen ab €30 enthalten — ohne Aufpreis.",
       },
     ],
     otherZonesLabel: "Transfer aus anderen Stadtteilen →",
     mainPageLabel: "Zur Hauptseite: Istanbul Dinner Cruise →",
     ctaHeading: "Jetzt ab Sultanahmet oder Taksim zur Dinner Cruise buchen",
     ctaSubtitle:
-      "Nennen Sie uns Ihre Hoteladresse, wir planen Ihren Transfer. In allen Paketen ab €55 inklusive.",
+      "Nennen Sie uns Ihre Hoteladresse, wir planen Ihren Transfer. In allen Paketen ab €30 inklusive.",
     ctaBookLabel: "Jetzt buchen",
     ctaWhatsappLabel: "WhatsApp schreiben",
     viewInEnglish: "View in English →",
@@ -376,7 +376,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   fr: {
     metaTitle:
-      "Navette Croisière Dîner Sultanahmet Taksim — À partir de €55 | MerrySails",
+      "Navette Croisière Dîner Sultanahmet Taksim — À partir de €30",
     metaDescription:
       "Navette croisière dîner Bosphore depuis Sultanahmet et Taksim : Hippodrome, Sainte-Sophie, rue İstiklal et grands hôtels. Route combinée : Sultanahmet 18h30 → Taksim 19h00 → embarcadère 19h20.",
     canonicalPath: "/fr/dinner-cruise-pickup-sultanahmet-taksim",
@@ -386,7 +386,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails Istanbul • Depuis 2001",
     heroTitle: "Navette Croisière Dîner depuis Sultanahmet et Taksim",
     heroSubtitle:
-      "Transfert combiné depuis les quartiers touristiques les plus populaires d'Istanbul — inclus dans toutes les formules à partir de €55",
+      "Transfert combiné depuis les quartiers touristiques les plus populaires d'Istanbul — inclus dans toutes les formules à partir de €30",
     heroTagline:
       "De votre hôtel historique à Sultanahmet ou de votre grand hôtel à Taksim à la croisière dîner sur le Bosphore. Notre navette combinée passe d'abord à Sultanahmet, puis à Taksim, et amène tout le groupe ensemble à l'embarcadère.",
     trustBadge: "Agréé TURSAB Groupe A • 50 000+ clients • Depuis 2001",
@@ -520,14 +520,14 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Le transfert est-il compris dans le prix du forfait ?",
-        a: "Oui, le transfert est inclus dans tous les forfaits à partir de €55, sans supplément.",
+        a: "Oui, le transfert est inclus dans tous les forfaits à partir de €30, sans supplément.",
       },
     ],
     otherZonesLabel: "Navette depuis d'autres quartiers →",
     mainPageLabel: "Page principale : Croisière Dîner Istanbul →",
     ctaHeading: "Réservez votre croisière dîner depuis Sultanahmet ou Taksim",
     ctaSubtitle:
-      "Indiquez-nous votre adresse d'hôtel, nous organisons le transfert. Inclus dans toutes les formules à partir de €55.",
+      "Indiquez-nous votre adresse d'hôtel, nous organisons le transfert. Inclus dans toutes les formules à partir de €30.",
     ctaBookLabel: "Réserver maintenant",
     ctaWhatsappLabel: "Écrire sur WhatsApp",
     viewInEnglish: "View in English →",
@@ -535,7 +535,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   nl: {
     metaTitle:
-      "Sultanahmet Taksim Diner Cruise Shuttle — Vanaf €55 | MerrySails",
+      "Sultanahmet Taksim Diner Cruise Shuttle — Vanaf €30",
     metaDescription:
       "Bosporus diner cruise shuttle vanuit Sultanahmet en Taksim: Hippodroom, Hagia Sophia, İstiklalstraat en grote hotels. Gecombineerde route: Sultanahmet 18:30 → Taksim 19:00 → aanlegsteiger 19:20.",
     canonicalPath: "/nl/dinner-cruise-pickup-sultanahmet-taksim",
@@ -545,7 +545,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails Istanbul • Sinds 2001",
     heroTitle: "Diner Cruise Shuttle vanuit Sultanahmet en Taksim",
     heroSubtitle:
-      "Gecombineerde ophaal vanuit Istanbuls populairste toeristenwijken — inbegrepen in alle pakketten vanaf €55",
+      "Gecombineerde ophaal vanuit Istanbuls populairste toeristenwijken — inbegrepen in alle pakketten vanaf €30",
     heroTagline:
       "Van uw historisch hotel in Sultanahmet of van uw groot hotel bij Taksim naar de Bosporus diner cruise. Onze gecombineerde shuttle haalt u eerst op in Sultanahmet, rijdt dan naar Taksim, en brengt de hele groep samen naar de aanlegsteiger.",
     trustBadge: "TURSAB A-categorie gecertificeerd • 50.000+ gasten • Sinds 2001",
@@ -679,14 +679,14 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Is de shuttle inbegrepen in de pakketprijs?",
-        a: "Ja, de shuttle is inbegrepen in alle pakketten vanaf €55 — zonder bijbetaling.",
+        a: "Ja, de shuttle is inbegrepen in alle pakketten vanaf €30 — zonder bijbetaling.",
       },
     ],
     otherZonesLabel: "Shuttle vanuit andere wijken →",
     mainPageLabel: "Hoofdpagina: Istanbul Dinner Cruise →",
     ctaHeading: "Boek nu uw diner cruise vanuit Sultanahmet of Taksim",
     ctaSubtitle:
-      "Geef uw hoteladres op, wij regelen de shuttle. Inbegrepen in alle pakketten vanaf €55.",
+      "Geef uw hoteladres op, wij regelen de shuttle. Inbegrepen in alle pakketten vanaf €30.",
     ctaBookLabel: "Nu boeken",
     ctaWhatsappLabel: "WhatsApp schrijven",
     viewInEnglish: "View in English →",

@@ -34,7 +34,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Saatlik Tekne Kiralama İstanbul 2026 | Boğaz'da Saat Bazlı Özel Tekne | MerrySails",
+      "Saatlik Tekne Kiralama İstanbul 2026 | Boğaz'da Saat Bazlı Özel Tekne",
     metaDescription:
       "İstanbul'da saatlik tekne kiralama: paket bazlı yat kiralama yerine saat bazlı özel tekne arayan misafirler için Boğaz'da esnek özel tekne hizmeti.",
     canonicalPath: "/tr/boat-rental-hourly-istanbul",
@@ -84,7 +84,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Stündliche Bootsmiete Istanbul 2026 | Privatboot pro Stunde Bosporus | MerrySails",
+      "Stündliche Bootsmiete Istanbul 2026 | Privatboot pro Stunde Bosporus",
     metaDescription:
       "Stündliche Bootsmiete in Istanbul: privates Boot pro Stunde auf dem Bosporus statt paketbasierter Yachtcharter. Flexible Planung, vessel-first.",
     canonicalPath: "/de/boat-rental-hourly-istanbul",
@@ -134,7 +134,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Location de Bateau à l'Heure Istanbul 2026 | Bateau Privé par Heure Bosphore | MerrySails",
+      "Location de Bateau à l'Heure Istanbul 2026 | Bateau Privé par Heure Bosphore",
     metaDescription:
       "Location de bateau à l'heure à Istanbul : bateau privé par heure sur le Bosphore plutôt qu'une location de yacht en formule. Planification flexible, vessel-first.",
     canonicalPath: "/fr/boat-rental-hourly-istanbul",
@@ -184,7 +184,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Boot per Uur Huren Istanbul 2026 | Privéboot per Uur Bosporus | MerrySails",
+      "Boot per Uur Huren Istanbul 2026 | Privéboot per Uur Bosporus",
     metaDescription:
       "Boot per uur huren in Istanbul: een privéboot per uur op de Bosporus in plaats van een pakket-yachtcharter. Flexibele planning, vessel-first.",
     canonicalPath: "/nl/boat-rental-hourly-istanbul",

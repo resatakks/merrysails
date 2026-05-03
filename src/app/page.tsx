@@ -14,7 +14,7 @@ import { tours } from "@/data/tours";
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
+  title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
   description:
     "Compare the 3 core MerrySails experiences in Istanbul: Bosphorus Sunset Cruise, Bosphorus Dinner Cruise, and Yacht Charter in Istanbul.",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://merrysails.com", languages: buildHreflang("/") },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
+    title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
     description:
       "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
     url: "https://merrysails.com",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bosphorus Cruise Istanbul | Sunset & Dinner | MerrySails",
+    title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
     description:
       "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
     images: ["https://merrysails.com/og-image.jpg"],

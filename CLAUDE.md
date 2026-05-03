@@ -1,5 +1,44 @@
 # MerrySails — CLAUDE.md
 
+## ⚠️ SEO Rules — Bunlar Bozulursa Tüm Çalışma Boşa Gider
+
+### Schema (Structured Data) Kuralları
+1. **NEVER** kullanma `["TouristTrip", "Product"]` — Google Product Snippet validator bunu reddediyor (`availableLanguage`, `inLanguage`, `duration`, `areaServed`, `hasOfferCatalog` Product vocab'da yok). Doğru: `["TouristTrip", "Service"]` veya tek başına `TouristTrip`.
+2. **LocalBusiness/TravelAgency schemada `address` ZORUNLU** — boş bırakılamaz. Postal address inline yazılmalı (`@id` referansıyla bağlamak yetersiz, validator kontrol edemiyor).
+3. Her sayfada `generateMetadata()` + JSON-LD schema mecburi.
+4. Schema'yı eklerken Schema.org validator ile test et: `https://validator.schema.org/?url=...`
+
+### Title Tag Kuralları
+5. **Asla `| MerrySails` yazma** title sonuna — root layout zaten `template: "%s | MerrySails Istanbul 2026"` ekliyor. Yazarsan duplicate olur: "X | MerrySails | MerrySails Istanbul 2026".
+6. Title max 60 karakter (template suffix dahil). Suffix 28 karakter, demek sayfa kısmı max 32 karakter.
+7. Locale title'larında fiyat gösteriyorsan **gerçek fiyatı** yaz: dinner €30 (NOT €55), sunset €34, yacht €280. Yanlış fiyat = yanlış intent.
+
+### URL & Redirect Kuralları
+8. **307 redirect = SEO kanıyor.** Kapalı/silinmiş sayfaları next.config.ts'te `permanent: true` ile redirect et.
+9. Eski URL'lere işaret eden internal link **bırakma** — `grep -rn "OLD-URL" src/` ile tara.
+10. 404 internal link bulursan: ya hedef sayfayı oluştur, ya da redirect ekle, ya da link kaldır.
+
+### H1 / Heading Kuralları
+11. **Her sayfada SADECE 1 adet `<h1>`.** Shared component (TourDetailClient gibi) `<h1>` kullanıyorsa, sayfa kendi `<h1>`'ini koyamaz.
+12. H2'ler keyword-rich olsun ama spam değil. H3'lere kadar hiyerarşi koru.
+
+### hreflang & i18n Kuralları
+13. `<html lang>` STATIK olarak `en` set edilir — root layout'a `headers()` koyma (444 sayfa dynamic olur, SEO regresyonu). Semrush "language mismatch" uyarısı kabul edildi (Google hreflang annotations'ı kullanır, html lang'i değil).
+14. hreflang `alternates.languages` her sayfada — `buildHreflang(path)` helper kullan.
+15. Multi-locale için 11 future locale tanımlı, ama ACTIVE: `["en", "tr", "de", "fr", "nl"]`.
+
+### Internal Linking
+17. Her yeni page'i Footer + Sitemap + llms.txt'e ekle.
+18. Orphan page (sitemap'te ama hiçbir sayfa link vermiyor) = düşük crawl priority.
+19. Blog post'lar arası en az 3 internal link.
+
+### Content Kuralları
+20. **NEVER** uydurma fiyat yazma blog post'larda — `/pricing` route'undan gerçek fiyatları kullan.
+21. Paragraph max 80 kelime (Semrush "paragraphs are too long" hatası).
+22. Text/HTML ratio %5 altına düşmesin — fazla embedded SVG/script.
+
+---
+
 ## Project Overview
 MerrySails (merrysails.com) is an Istanbul-based Bosphorus cruise and yacht charter operator. TURSAB A Group licensed since 2001, 50,000+ guests hosted. Direct booking platform targeting English-speaking international tourists, with planned expansion to DE/RU/AR/TR locales. The product portfolio spans public shared cruises, private yacht charters, corporate events, and proposals.
 

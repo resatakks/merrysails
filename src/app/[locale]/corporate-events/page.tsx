@@ -36,7 +36,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Kurumsal Tekne Etkinliği İstanbul 2026 | Boğaz'da Şirket Etkinliği | MerrySails",
+      "Kurumsal Tekne Etkinliği İstanbul 2026 | Boğaz'da Şirket Etkinliği",
     metaDescription:
       "Boğaz'da kurumsal etkinlik: şirket akşam yemeği, müşteri ağırlama, lansman ve ekip toplantıları için özel yat. Teklif bazlı planlama, faturalı kurumsal hizmet.",
     canonicalPath: "/tr/corporate-events",
@@ -105,7 +105,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Firmenveranstaltung Bosporus 2026 | Firmenevents Istanbul | MerrySails",
+      "Firmenveranstaltung Bosporus 2026 | Firmenevents Istanbul",
     metaDescription:
       "Firmenevents Istanbul auf dem Bosporus: Teamdinner, Kundenveranstaltung, Produktlaunch und Führungsabende auf privater Jacht. Angebotsbasierte Planung mit Rechnung.",
     canonicalPath: "/de/corporate-events",
@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Événement d'Entreprise Bosphore 2026 | Soirée d'Entreprise Istanbul | MerrySails",
+      "Événement d'Entreprise Bosphore 2026 | Soirée d'Entreprise Istanbul",
     metaDescription:
       "Événement d'entreprise sur le Bosphore : dîner d'équipe, réception clients, lancement et soirée d'entreprise sur yacht privé. Planification sur devis, facture officielle.",
     canonicalPath: "/fr/corporate-events",
@@ -243,7 +243,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Zakelijk Evenement Bosporus 2026 | Bedrijfsfeest Istanbul | MerrySails",
+      "Zakelijk Evenement Bosporus 2026 | Bedrijfsfeest Istanbul",
     metaDescription:
       "Zakelijk evenement op de Bosporus: teamdiner, klantenontvangst, productlancering en bedrijfsfeest Istanbul op een privéjacht. Op offerte, met officiële factuur.",
     canonicalPath: "/nl/corporate-events",

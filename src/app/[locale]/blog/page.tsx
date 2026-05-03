@@ -34,7 +34,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    title: "Boğaz Turu Blog — İstanbul Seyahat Rehberleri | MerrySails",
+    title: "Boğaz Turu Blog — İstanbul Seyahat Rehberleri",
     description:
       "İstanbul Boğaz turu rehberleri: gün batımı turu ipuçları, yat kiralama tavsiyeleri, akşam yemeği turu yorumları ve yerel seyahat içgörüleri — 2001'den bu yana TÜRSAB A Grubu lisanslı.",
     canonicalPath: "/tr/blog",
@@ -59,7 +59,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   de: {
-    title: "Bosporus Kreuzfahrt Blog — Istanbul Reiseführer | MerrySails",
+    title: "Bosporus Kreuzfahrt Blog — Istanbul Reiseführer",
     description:
       "Expertenführer für Istanbul: Bosporus Sonnenuntergangs-Kreuzfahrt-Tipps, Jachtcharter-Beratung, Dinner-Kreuzfahrt-Bewertungen und lokale Reisetipps — TÜRSAB A-Gruppe lizenziert seit 2001.",
     canonicalPath: "/de/blog",
@@ -84,7 +84,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "Blog Croisière Bosphore — Guides Voyage Istanbul | MerrySails",
+    title: "Blog Croisière Bosphore — Guides Voyage Istanbul",
     description:
       "Guides experts pour Istanbul : conseils croisière coucher de soleil sur le Bosphore, charter de yacht, avis sur les croisières dîner et insights voyage locaux — agréé TÜRSAB groupe A depuis 2001.",
     canonicalPath: "/fr/blog",
@@ -109,7 +109,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   nl: {
-    title: "Bosporus Cruise Blog — Istanbul Reisgidsen | MerrySails",
+    title: "Bosporus Cruise Blog — Istanbul Reisgidsen",
     description:
       "Expertgidsen voor Istanbul: Bosporus zonsondergang cruise tips, jachtcharter advies, diner cruise reviews en lokale reisinzichten — TÜRSAB A-groep gelicentieerd sinds 2001.",
     canonicalPath: "/nl/blog",

@@ -53,23 +53,23 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "Kabataş Akşam Yemeği Turu — €55'dan İtibaren | İstanbul Boğaz Teknesi | MerrySails",
+    metaTitle: "Kabataş Akşam Yemeği Turu — €30'dan İtibaren | İstanbul Boğaz Teknesi",
     metaDescription:
-      "Kabataş iskelesinden kalkan Boğaz akşam yemeği turu: €55'dan başlayan paketler, Türk gecesi eğlencesi, Dolmabahçe manzarası. TÜRSAB A Grubu lisanslı, 50.000+ misafir. Hemen rezervasyon.",
+      "Kabataş iskelesinden kalkan Boğaz akşam yemeği turu: €30'dan başlayan paketler, Türk gecesi eğlencesi, Dolmabahçe manzarası. TÜRSAB A Grubu lisanslı, 50.000+ misafir. Hemen rezervasyon.",
     canonicalPath: "/tr/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbDinner: "Akşam Yemeği Turu",
     breadcrumbCurrent: "Kabataş Kalkışlı Tur",
     eyebrow: "MerrySails İstanbul — Kabataş İskelesi",
     heroTitle: "Kabataş Akşam Yemeği Turu İstanbul",
-    heroSubtitle: "€55'dan başlayan fiyatlar · Dolmabahçe önünden kalkış",
+    heroSubtitle: "€30'dan başlayan fiyatlar · Dolmabahçe önünden kalkış",
     heroDescription:
-      "Kabataş akşam yemeği turu, Boğaz'ın en işlek kesiminden — Dolmabahçe Sarayı'nın hemen önünden — hareket eder. Metro ve tramvayla ulaşımı son derece kolay olan bu iskele, İstanbul'daki Boğaz akşam yemeği turlarının en gözde kalkış noktasıdır. Türk gecesi eğlencesi, açık büfe akşam yemeği ve 3,5 saatlik Boğaz rotasıyla €55'dan başlayan paketler sunarız. 2001'den bu yana 50.000'den fazla misafiri ağırladık.",
+      "Kabataş akşam yemeği turu, Boğaz'ın en işlek kesiminden — Dolmabahçe Sarayı'nın hemen önünden — hareket eder. Metro ve tramvayla ulaşımı son derece kolay olan bu iskele, İstanbul'daki Boğaz akşam yemeği turlarının en gözde kalkış noktasıdır. Türk gecesi eğlencesi, açık büfe akşam yemeği ve 3,5 saatlik Boğaz rotasıyla €30'dan başlayan paketler sunarız. 2001'den bu yana 50.000'den fazla misafiri ağırladık.",
     trustSignal: "TÜRSAB A Grubu lisanslı Merry Tourism — 2001'den bu yana İstanbul'da 50.000+ misafir",
     keyFacts: [
       { icon: "⏱", label: "Süre", value: "~3,5 saat" },
       { icon: "📍", label: "Kalkış", value: "Kabataş İskelesi, 20:30" },
-      { icon: "💶", label: "Fiyat", value: "€55'dan itibaren" },
+      { icon: "💶", label: "Fiyat", value: "€30'dan itibaren" },
       { icon: "🎭", label: "Dahil", value: "Türk gecesi + akşam yemeği" },
     ],
     sections: [
@@ -101,7 +101,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Paket Seçenekleri ve Fiyatlar",
         body: [
           "Kabataş akşam yemeği turunda dört farklı paket mevcuttur. Tüm paketlerde rota ve süre aynıdır; fark koltuk tipi, yemek menüsü seviyesi ve içecek kapsamındadır.",
-          "Silver Soft Drinks (€55): Standart koltuk, sınırsız alkolsüz içecek, akşam yemeği menüsü ve Türk gecesi eğlencesi dahildir. En popüler başlangıç paketidir.",
+          "Silver Soft Drinks (€30): Standart koltuk, sınırsız alkolsüz içecek, akşam yemeği menüsü ve Türk gecesi eğlencesi dahildir. En popüler başlangıç paketidir.",
           "Silver Alcoholic (€75): Standart koltuk, yerel alkollü içecekler (bira, şarap, rakı), akşam yemeği menüsü ve Türk gecesi dahildir. Bir üst seçenek arayanlar için idealdir.",
           "Gold Soft Drinks (€95): VIP sahne yakını koltuk, sınırsız alkolsüz içecek, Premium menü ve Türk gecesi + DJ dahildir. Daha sessiz bir deneyim arayanlar için uygundur.",
           "Gold Unlimited Alcohol (€119): VIP sahne yakını koltuk, sınırsız alkol dahil, Premium menü ve Türk gecesi + DJ. En kapsamlı pakettir.",
@@ -129,7 +129,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Standart koltuk", "Sınırsız alkolsüz içecek", "Akşam yemeği menüsü", "Türk gecesi eğlencesi"],
       },
@@ -176,7 +176,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Hangi paket en çok tercih ediliyor?",
-        a: "Silver Soft Drinks (€55) en popüler başlangıç paketidir. Türk gecesi eğlencesi ve akşam yemeği dahil olan bu paket, ilk kez katılanlar için idealdir. Alkol dahil seçenekler için Silver Alcoholic (€75) tercih edilir.",
+        a: "Silver Soft Drinks (€30) en popüler başlangıç paketidir. Türk gecesi eğlencesi ve akşam yemeği dahil olan bu paket, ilk kez katılanlar için idealdir. Alkol dahil seçenekler için Silver Alcoholic (€75) tercih edilir.",
       },
       {
         q: "Vejetaryen veya glutensiz menü var mı?",
@@ -205,23 +205,23 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   de: {
-    metaTitle: "Kabatas Dinner Kreuzfahrt Istanbul — Ab €55 | Bosporus Abendessen | MerrySails",
+    metaTitle: "Kabatas Dinner Kreuzfahrt Istanbul — Ab €30 | Bosporus Abendessen",
     metaDescription:
-      "Dinner Kreuzfahrt ab Kabatas-Pier in Istanbul: Pakete ab €55, Türkische Abendshow, Blick auf den Dolmabahce-Palast. TÜRSAB-lizenziert seit 2001, über 50.000 Gäste. Jetzt buchen.",
+      "Dinner Kreuzfahrt ab Kabatas-Pier in Istanbul: Pakete ab €30, Türkische Abendshow, Blick auf den Dolmabahce-Palast. TÜRSAB-lizenziert seit 2001, über 50.000 Gäste. Jetzt buchen.",
     canonicalPath: "/de/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbDinner: "Dinner Kreuzfahrt",
     breadcrumbCurrent: "Kabatas Abfahrt",
     eyebrow: "MerrySails Istanbul — Kabatas-Pier",
     heroTitle: "Kabatas Dinner Kreuzfahrt Istanbul",
-    heroSubtitle: "Ab €55 pro Person · Abfahrt direkt am Dolmabahce-Palast",
+    heroSubtitle: "Ab €30 pro Person · Abfahrt direkt am Dolmabahce-Palast",
     heroDescription:
-      "Die Kabatas Dinner Kreuzfahrt startet am belebtesten Punkt des Bosporus — direkt vor dem Dolmabahce-Palast. Der Pier ist bequem mit Metro und Straßenbahn erreichbar und gilt als beliebtester Abfahrtspunkt für Bosporus-Dinner-Kreuzfahrten in Istanbul. Mit türkischer Abendshow, Buffet-Abendessen und einer 3,5-stündigen Bosporus-Route bieten wir Pakete ab €55. Seit 2001 haben wir über 50.000 Gäste begrüßt.",
+      "Die Kabatas Dinner Kreuzfahrt startet am belebtesten Punkt des Bosporus — direkt vor dem Dolmabahce-Palast. Der Pier ist bequem mit Metro und Straßenbahn erreichbar und gilt als beliebtester Abfahrtspunkt für Bosporus-Dinner-Kreuzfahrten in Istanbul. Mit türkischer Abendshow, Buffet-Abendessen und einer 3,5-stündigen Bosporus-Route bieten wir Pakete ab €30. Seit 2001 haben wir über 50.000 Gäste begrüßt.",
     trustSignal: "TÜRSAB Gruppe A lizenziert — Merry Tourism Istanbul seit 2001, 50.000+ Gäste",
     keyFacts: [
       { icon: "⏱", label: "Dauer", value: "ca. 3,5 Stunden" },
       { icon: "📍", label: "Abfahrt", value: "Kabatas-Pier, 20:30 Uhr" },
-      { icon: "💶", label: "Preis", value: "Ab €55 pro Person" },
+      { icon: "💶", label: "Preis", value: "Ab €30 pro Person" },
       { icon: "🎭", label: "Inklusive", value: "Türkische Show + Abendessen" },
     ],
     sections: [
@@ -253,7 +253,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Pakete und Preise im Überblick",
         body: [
           "Für die Kabatas Dinner Kreuzfahrt stehen vier Pakete zur Auswahl. Route und Dauer sind bei allen Paketen identisch; der Unterschied liegt in Sitzplatzkategorie, Menüstufe und Getränkeumfang.",
-          "Silver Soft Drinks (€55): Standard-Sitzplatz, alkoholfreie Getränke unbegrenzt, Abendmenü und Türkische Abendshow inklusive. Das beliebteste Einstiegspaket.",
+          "Silver Soft Drinks (€30): Standard-Sitzplatz, alkoholfreie Getränke unbegrenzt, Abendmenü und Türkische Abendshow inklusive. Das beliebteste Einstiegspaket.",
           "Silver Alcoholic (€75): Standard-Sitzplatz, lokale alkoholische Getränke (Bier, Wein, Raki), Abendmenü und Türkische Abendshow inklusive.",
           "Gold Soft Drinks (€95): VIP-Platz nahe der Bühne, alkoholfreie Getränke unbegrenzt, Premium-Menü und Türkische Show + DJ.",
           "Gold Unlimited Alcohol (€119): VIP-Platz nahe der Bühne, Alkohol unbegrenzt inklusive, Premium-Menü und Türkische Show + DJ. Das umfangreichste Paket.",
@@ -281,7 +281,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Standard-Sitzplatz", "Alkoholfreie Getränke unbegrenzt", "Abendmenü", "Türkische Abendshow"],
       },
@@ -328,7 +328,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Welches Paket ist am beliebtesten?",
-        a: "Silver Soft Drinks (€55) ist das meistgebuchte Einstiegspaket. Türkische Abendshow und Abendessen sind bereits inklusive — ideal für Erstbesucher. Wer Alkohol bevorzugt, wählt Silver Alcoholic (€75).",
+        a: "Silver Soft Drinks (€30) ist das meistgebuchte Einstiegspaket. Türkische Abendshow und Abendessen sind bereits inklusive — ideal für Erstbesucher. Wer Alkohol bevorzugt, wählt Silver Alcoholic (€75).",
       },
       {
         q: "Gibt es vegetarische oder glutenfreie Optionen?",
@@ -357,23 +357,23 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   fr: {
-    metaTitle: "Croisière Dîner Kabataş Istanbul — À partir de €55 | Bosphore | MerrySails",
+    metaTitle: "Croisière Dîner Kabataş Istanbul — À partir de €30 | Bosphore",
     metaDescription:
-      "Croisière dîner au départ de Kabataş à Istanbul : formules dès €55, spectacle de nuit turque, vue sur le Palais Dolmabahçe. Agréé TÜRSAB depuis 2001, plus de 50 000 clients. Réservez maintenant.",
+      "Croisière dîner au départ de Kabataş à Istanbul : formules dès €30, spectacle de nuit turque, vue sur le Palais Dolmabahçe. Agréé TÜRSAB depuis 2001, plus de 50 000 clients. Réservez maintenant.",
     canonicalPath: "/fr/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbDinner: "Croisière Dîner",
     breadcrumbCurrent: "Départ Kabataş",
     eyebrow: "MerrySails Istanbul — Pier de Kabataş",
     heroTitle: "Croisière Dîner Kabataş Istanbul",
-    heroSubtitle: "À partir de €55 par personne · Départ devant le Palais Dolmabahçe",
+    heroSubtitle: "À partir de €30 par personne · Départ devant le Palais Dolmabahçe",
     heroDescription:
-      "La croisière dîner Kabataş part du point le plus animé du Bosphore — juste devant le Palais de Dolmabahçe. Ce pier, facilement accessible en métro et en tramway, est le point de départ favori des croisières dîner sur le Bosphore à Istanbul. Avec un spectacle de nuit turque, un dîner et une route de 3h30, nous proposons des formules à partir de €55. Depuis 2001, nous avons accueilli plus de 50 000 clients.",
+      "La croisière dîner Kabataş part du point le plus animé du Bosphore — juste devant le Palais de Dolmabahçe. Ce pier, facilement accessible en métro et en tramway, est le point de départ favori des croisières dîner sur le Bosphore à Istanbul. Avec un spectacle de nuit turque, un dîner et une route de 3h30, nous proposons des formules à partir de €30. Depuis 2001, nous avons accueilli plus de 50 000 clients.",
     trustSignal: "Agréé TÜRSAB Groupe A — Merry Tourism Istanbul depuis 2001, plus de 50 000 clients",
     keyFacts: [
       { icon: "⏱", label: "Durée", value: "environ 3h30" },
       { icon: "📍", label: "Départ", value: "Pier de Kabataş, 20h30" },
-      { icon: "💶", label: "Prix", value: "À partir de €55 par personne" },
+      { icon: "💶", label: "Prix", value: "À partir de €30 par personne" },
       { icon: "🎭", label: "Inclus", value: "Spectacle turc + dîner" },
     ],
     sections: [
@@ -405,7 +405,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Formules et tarifs",
         body: [
           "La croisière dîner Kabataş propose quatre formules. La route et la durée sont identiques pour toutes ; la différence porte sur la catégorie de place, le niveau du menu et l'offre de boissons.",
-          "Silver Soft Drinks (€55) : Place standard, boissons sans alcool à volonté, menu dîner et spectacle de nuit turque inclus. La formule d'entrée de gamme la plus populaire.",
+          "Silver Soft Drinks (€30) : Place standard, boissons sans alcool à volonté, menu dîner et spectacle de nuit turque inclus. La formule d'entrée de gamme la plus populaire.",
           "Silver Alcoholic (€75) : Place standard, boissons alcoolisées locales (bière, vin, raki), menu dîner et spectacle de nuit turque inclus.",
           "Gold Soft Drinks (€95) : Place VIP proche de la scène, boissons sans alcool à volonté, menu Premium et spectacle turc + DJ.",
           "Gold Alcool Illimité (€119) : Place VIP proche de la scène, alcool à volonté inclus, menu Premium et spectacle turc + DJ. La formule la plus complète.",
@@ -433,7 +433,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Place standard", "Boissons sans alcool à volonté", "Menu dîner", "Spectacle de nuit turque"],
       },
@@ -480,7 +480,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Quelle formule est la plus populaire ?",
-        a: "Silver Soft Drinks (€55) est la formule d'entrée la plus choisie. Spectacle de nuit turque et dîner inclus — idéale pour une première expérience. Pour les boissons alcoolisées, Silver Alcoholic (€75) est recommandée.",
+        a: "Silver Soft Drinks (€30) est la formule d'entrée la plus choisie. Spectacle de nuit turque et dîner inclus — idéale pour une première expérience. Pour les boissons alcoolisées, Silver Alcoholic (€75) est recommandée.",
       },
       {
         q: "Des options végétariennes ou sans gluten sont-elles disponibles ?",
@@ -509,23 +509,23 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   nl: {
-    metaTitle: "Kabataş Dinercruise Istanbul — Vanaf €55 | Bosporus Avondeten | MerrySails",
+    metaTitle: "Kabataş Dinercruise Istanbul — Vanaf €30 | Bosporus Avondeten",
     metaDescription:
-      "Dinercruise vertrek Kabataş Istanbul: pakketten vanaf €55, Turkse avondshow, uitzicht op Dolmabahçe Paleis. TÜRSAB-gecertificeerd sinds 2001, meer dan 50.000 gasten. Boek nu.",
+      "Dinercruise vertrek Kabataş Istanbul: pakketten vanaf €30, Turkse avondshow, uitzicht op Dolmabahçe Paleis. TÜRSAB-gecertificeerd sinds 2001, meer dan 50.000 gasten. Boek nu.",
     canonicalPath: "/nl/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Home",
     breadcrumbDinner: "Dinercruise",
     breadcrumbCurrent: "Vertrek Kabataş",
     eyebrow: "MerrySails Istanbul — Kabataş Pier",
     heroTitle: "Kabataş Dinercruise Istanbul",
-    heroSubtitle: "Vanaf €55 per persoon · Vertrek voor het Dolmabahçe Paleis",
+    heroSubtitle: "Vanaf €30 per persoon · Vertrek voor het Dolmabahçe Paleis",
     heroDescription:
-      "De Kabataş dinercruise vertrekt vanaf het drukste punt van de Bosporus — vlak voor het Dolmabahçe Paleis. De pier is gemakkelijk bereikbaar met metro en tram en geldt als het meest populaire vertrekpunt voor Bosporus-dinercruises in Istanbul. Met een Turkse avondshow, diner en een route van 3,5 uur bieden we pakketten vanaf €55. Sinds 2001 hebben we meer dan 50.000 gasten verwelkomd.",
+      "De Kabataş dinercruise vertrekt vanaf het drukste punt van de Bosporus — vlak voor het Dolmabahçe Paleis. De pier is gemakkelijk bereikbaar met metro en tram en geldt als het meest populaire vertrekpunt voor Bosporus-dinercruises in Istanbul. Met een Turkse avondshow, diner en een route van 3,5 uur bieden we pakketten vanaf €30. Sinds 2001 hebben we meer dan 50.000 gasten verwelkomd.",
     trustSignal: "TÜRSAB A-categorie gecertificeerd — Merry Tourism Istanbul sinds 2001, 50.000+ gasten",
     keyFacts: [
       { icon: "⏱", label: "Duur", value: "ca. 3,5 uur" },
       { icon: "📍", label: "Vertrek", value: "Kabataş Pier, 20:30" },
-      { icon: "💶", label: "Prijs", value: "Vanaf €55 per persoon" },
+      { icon: "💶", label: "Prijs", value: "Vanaf €30 per persoon" },
       { icon: "🎭", label: "Inbegrepen", value: "Turkse show + diner" },
     ],
     sections: [
@@ -557,7 +557,7 @@ const CONTENT: Record<string, LocaleContent> = {
         heading: "Pakketten en prijzen",
         body: [
           "De Kabataş dinercruise heeft vier pakketten. De route en duur zijn voor alle pakketten gelijk; het verschil zit in stoeltype, menuniveau en drankenaanbod.",
-          "Silver Soft Drinks (€55): Standaard stoel, onbeperkt frisdrank, dinermenu en Turkse avondshow inbegrepen. Het populairste instappakket.",
+          "Silver Soft Drinks (€30): Standaard stoel, onbeperkt frisdrank, dinermenu en Turkse avondshow inbegrepen. Het populairste instappakket.",
           "Silver Alcoholic (€75): Standaard stoel, lokale alcoholische dranken (bier, wijn, raki), dinermenu en Turkse avondshow inbegrepen.",
           "Gold Soft Drinks (€95): VIP-stoel bij het podium, onbeperkt frisdrank, Premium menu en Turkse show + DJ.",
           "Gold Onbeperkt Alcohol (€119): VIP-stoel bij het podium, onbeperkt alcohol inbegrepen, Premium menu en Turkse show + DJ. Het meest complete pakket.",
@@ -585,7 +585,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Silver Soft Drinks",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: ["Standaard stoel", "Onbeperkt frisdrank", "Dinermenu", "Turkse avondshow"],
       },
@@ -632,7 +632,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Welk pakket is het populairst?",
-        a: "Silver Soft Drinks (€55) is het meest geboekte instappakket. Turkse avondshow en diner zijn al inbegrepen — ideaal voor een eerste ervaring. Voor alcohol kiest u Silver Alcoholic (€75).",
+        a: "Silver Soft Drinks (€30) is het meest geboekte instappakket. Turkse avondshow en diner zijn al inbegrepen — ideaal voor een eerste ervaring. Voor alcohol kiest u Silver Alcoholic (€75).",
       },
       {
         q: "Zijn er vegetarische of glutenvrije opties?",

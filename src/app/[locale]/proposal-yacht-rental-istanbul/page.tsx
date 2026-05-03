@@ -35,7 +35,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "Evlilik Teklifi Yat Kiralama İstanbul | Boğaz'da Sürpriz Teklif | MerrySails",
+    metaTitle: "Evlilik Teklifi Yat Kiralama İstanbul | Boğaz'da Sürpriz Teklif",
     metaDescription:
       "İstanbul'da evlilik teklifi için özel yat kiralama. Gün batımında Boğaz'da çiftinize özel rota, çiçek, fotoğrafçı, kemancı ve dekorasyon. Hemen WhatsApp.",
     canonicalPath: "/tr/proposal-yacht-rental-istanbul",
@@ -116,7 +116,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   de: {
-    metaTitle: "Heiratsantrag auf der Jacht Istanbul | Privater Bosporus-Antrag | MerrySails",
+    metaTitle: "Heiratsantrag auf der Jacht Istanbul | Privater Bosporus-Antrag",
     metaDescription:
       "Privater Heiratsantrag auf einer Jacht in Istanbul. Antrag auf dem Bosporus bei Sonnenuntergang mit Blumen, Fotograf, Geiger und Dekoration. Romantische Überraschung.",
     canonicalPath: "/de/proposal-yacht-rental-istanbul",
@@ -197,7 +197,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   fr: {
-    metaTitle: "Demande en Mariage en Yacht Istanbul | Surprise Bosphore | MerrySails",
+    metaTitle: "Demande en Mariage en Yacht Istanbul | Surprise Bosphore",
     metaDescription:
       "Demande en mariage en yacht privé à Istanbul. Surprise romantique sur le Bosphore au coucher de soleil avec fleurs, photographe, violoniste et décoration.",
     canonicalPath: "/fr/proposal-yacht-rental-istanbul",
@@ -278,7 +278,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   nl: {
-    metaTitle: "Huwelijksaanzoek op Jacht Istanbul | Privé Bosporus Aanzoek | MerrySails",
+    metaTitle: "Huwelijksaanzoek op Jacht Istanbul | Privé Bosporus Aanzoek",
     metaDescription:
       "Privé huwelijksaanzoek op een jacht in Istanbul. Romantische verrassing op de Bosporus bij zonsondergang met bloemen, fotograaf, violist en decoratie.",
     canonicalPath: "/nl/proposal-yacht-rental-istanbul",

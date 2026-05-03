@@ -42,7 +42,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Boğaz Gün Batımı Turu İstanbul — €34'dan başlayan fiyatlar | MerrySails",
+    title: "Boğaz Gün Batımı Turu İstanbul — €34'dan başlayan fiyatlar",
     description:
       "İstanbul'da Boğaz gün batımı turu €34'ten başlıyor. 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
     h1: "Boğaz Gün Batımı Turu",
@@ -108,7 +108,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "WhatsApp ile Yaz",
   },
   de: {
-    title: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Ab €34 | MerrySails",
+    title: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Ab €34",
     description:
       "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
     h1: "Bosporus Sonnenuntergang Kreuzfahrt",
@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Per WhatsApp anfragen",
   },
   fr: {
-    title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €34 | MerrySails",
+    title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €34",
     description:
       "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €34. 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €40. Réservez.",
     h1: "Croisière Coucher de Soleil Bosphore",
@@ -240,7 +240,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Contacter par WhatsApp",
   },
   nl: {
-    title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €34 | MerrySails",
+    title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €34",
     description:
       "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht met live gids en hapjes. Wijnoptie €40. Direct boeken, TÜRSAB-gecertificeerd.",
     h1: "Bosporus Zonsondergang Cruise",
@@ -367,7 +367,7 @@ export default async function LocaleSunsetCruisePage({
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": ["TouristTrip", "Product"],
+    "@type": ["TouristTrip", "Service"],
     name: t.h1,
     alternateName: ["Bosphorus Sunset Cruise", "Boğaz Gün Batımı Turu", "Bosporus Sonnenuntergang Kreuzfahrt", "Croisière Coucher de Soleil Bosphore"],
     description: sunsetTour.description,

@@ -55,16 +55,16 @@ type LocaleContent = {
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "İstanbul Akşam Yemeği Turu Otel Transfer Dahil — €55'dan | MerrySails",
+      "İstanbul Akşam Yemeği Turu Otel Transfer Dahil — €30'dan",
     metaDescription:
-      "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy'den akşam 18:30–19:15 arası alım. 4 paket €55–€119. TURSAB A Grubu lisanslı.",
+      "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy'den akşam 18:30–19:15 arası alım. 4 paket €30–€119. TURSAB A Grubu lisanslı.",
     canonicalPath: "/tr/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCruise: "Boğaz Turu",
     breadcrumbCurrent: "Otel Transfer Dahil Akşam Yemeği Turu",
     eyebrow: "MerrySails İstanbul • 2001'den Beri",
     heroTitle: "İstanbul Akşam Yemeği Turu Otel Transfer Dahil",
-    heroSubtitle: "Otelden tekniye, tekneden otele — €55'dan başlayan paketlerde transfer dahil",
+    heroSubtitle: "Otelden tekniye, tekneden otele — €30'dan başlayan paketlerde transfer dahil",
     heroTagline:
       "Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy otellerinden kapıdan kapıya transfer hizmetiyle Boğaz akşam yemeği turunuzun keyfini çıkarın. Taksi stresi yok, navigasyon karmaşası yok — sadece siz ve İstanbul'un en büyüleyici manzarası.",
     trustBadge: "TURSAB A Grubu Lisanslı • 50.000+ Misafir • 2001'den Beri",
@@ -103,7 +103,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Standart",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: [
           "Otel transferi dahil",
@@ -195,7 +195,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Transfer her pakete dahil mi?",
-        a: "Evet, Standart (€55), Premium (€75), VIP (€95) ve Exclusive (€119) paketlerinin tamamına transfer dahildir. Ek ücret talep edilmez.",
+        a: "Evet, Standart (€30), Premium (€75), VIP (€95) ve Exclusive (€119) paketlerinin tamamına transfer dahildir. Ek ücret talep edilmez.",
       },
       {
         q: "Alım saatine geç kalırsam ne olur?",
@@ -225,7 +225,7 @@ const CONTENT: Record<string, LocaleContent> = {
     internalLinkLabel: "Ana Akşam Yemeği Turu Sayfası →",
     ctaHeading: "Otel Transferli Boğaz Turunuzu Hemen Rezerve Edin",
     ctaSubtitle:
-      "€55'dan başlayan fiyatlarla transfer dahil paketi hemen rezerve edin ya da sorularınızı WhatsApp üzerinden bize iletin.",
+      "€30'dan başlayan fiyatlarla transfer dahil paketi hemen rezerve edin ya da sorularınızı WhatsApp üzerinden bize iletin.",
     ctaBookLabel: "Hemen Rezervasyon",
     ctaWhatsappLabel: "WhatsApp'tan Yazın",
     viewInEnglish: "View in English →",
@@ -233,9 +233,9 @@ const CONTENT: Record<string, LocaleContent> = {
 
   de: {
     metaTitle:
-      "Istanbul Dinner Kreuzfahrt mit Hotelabholung — Ab €55 | MerrySails",
+      "Istanbul Dinner Kreuzfahrt mit Hotelabholung — Ab €30",
     metaDescription:
-      "Istanbul Dinner Kreuzfahrt Hotelabholung: Abholung ab 18:30–19:15 Uhr aus Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli und Kadıköy. 4 Pakete €55–€119. TURSAB A-Gruppe lizenziert.",
+      "Istanbul Dinner Kreuzfahrt Hotelabholung: Abholung ab 18:30–19:15 Uhr aus Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli und Kadıköy. 4 Pakete €30–€119. TURSAB A-Gruppe lizenziert.",
     canonicalPath: "/de/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus-Tour",
@@ -243,7 +243,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails Istanbul • Seit 2001",
     heroTitle: "Istanbul Dinner Kreuzfahrt mit Hotelabholung",
     heroSubtitle:
-      "Vom Hotel zum Schiff, vom Schiff zum Hotel — Transfer in allen Paketen ab €55 inklusive",
+      "Vom Hotel zum Schiff, vom Schiff zum Hotel — Transfer in allen Paketen ab €30 inklusive",
     heroTagline:
       "Genießen Sie Ihre Bosporus-Dinner-Kreuzfahrt mit Tür-zu-Tür-Transfer aus Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli und Kadıköy. Kein Taxistress, kein Navigationswirrwarr — nur Sie und die atemberaubendste Skyline Istanbuls.",
     trustBadge: "TURSAB A-Gruppe lizenziert • 50.000+ Gäste • Seit 2001",
@@ -282,7 +282,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Standard",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: [
           "Hoteltransfer inklusive",
@@ -374,7 +374,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Ist der Transfer in allen Paketen enthalten?",
-        a: "Ja, alle vier Pakete — Standard (€55), Premium (€75), VIP (€95) und Exclusive (€119) — beinhalten den Transfer ohne Aufpreis.",
+        a: "Ja, alle vier Pakete — Standard (€30), Premium (€75), VIP (€95) und Exclusive (€119) — beinhalten den Transfer ohne Aufpreis.",
       },
       {
         q: "Was passiert, wenn ich mich verspäte?",
@@ -404,7 +404,7 @@ const CONTENT: Record<string, LocaleContent> = {
     internalLinkLabel: "Zur Hauptseite: Istanbul Dinner Cruise →",
     ctaHeading: "Jetzt Ihre Bosporus-Dinner-Cruise mit Hoteltransfer buchen",
     ctaSubtitle:
-      "Sichern Sie sich Ihr Paket ab €55 inklusive Transfer oder schreiben Sie uns per WhatsApp mit Ihrer Hoteladresse.",
+      "Sichern Sie sich Ihr Paket ab €30 inklusive Transfer oder schreiben Sie uns per WhatsApp mit Ihrer Hoteladresse.",
     ctaBookLabel: "Jetzt buchen",
     ctaWhatsappLabel: "WhatsApp schreiben",
     viewInEnglish: "View in English →",
@@ -412,9 +412,9 @@ const CONTENT: Record<string, LocaleContent> = {
 
   fr: {
     metaTitle:
-      "Croisière Dîner Istanbul Transfert Hôtel Inclus — À partir de €55 | MerrySails",
+      "Croisière Dîner Istanbul Transfert Hôtel Inclus — À partir de €30",
     metaDescription:
-      "Croisière dîner Istanbul avec transfert hôtel inclus : prise en charge 18h30–19h15 depuis Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli et Kadıköy. 4 formules €55–€119.",
+      "Croisière dîner Istanbul avec transfert hôtel inclus : prise en charge 18h30–19h15 depuis Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli et Kadıköy. 4 formules €30–€119.",
     canonicalPath: "/fr/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbCruise: "Croisière Bosphore",
@@ -422,7 +422,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails Istanbul • Depuis 2001",
     heroTitle: "Croisière Dîner Istanbul avec Transfert Hôtel Inclus",
     heroSubtitle:
-      "De l'hôtel au bateau, du bateau à l'hôtel — transfert inclus dans toutes les formules à partir de €55",
+      "De l'hôtel au bateau, du bateau à l'hôtel — transfert inclus dans toutes les formules à partir de €30",
     heroTagline:
       "Profitez de votre croisière dîner sur le Bosphore avec un transfert porte-à-porte depuis Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli et Kadıköy. Pas de stress taxi, pas de navigation compliquée — seulement vous et la plus belle vue d'Istanbul.",
     trustBadge: "Agréé TURSAB Groupe A • 50 000+ clients • Depuis 2001",
@@ -461,7 +461,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Standard",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: [
           "Transfert hôtel inclus",
@@ -553,7 +553,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Le transfert est-il inclus dans toutes les formules ?",
-        a: "Oui, les quatre formules — Standard (€55), Premium (€75), VIP (€95) et Exclusive (€119) — incluent le transfert sans supplément.",
+        a: "Oui, les quatre formules — Standard (€30), Premium (€75), VIP (€95) et Exclusive (€119) — incluent le transfert sans supplément.",
       },
       {
         q: "Que se passe-t-il si je suis en retard ?",
@@ -583,7 +583,7 @@ const CONTENT: Record<string, LocaleContent> = {
     internalLinkLabel: "Voir la page principale : Croisière Dîner Istanbul →",
     ctaHeading: "Réservez dès maintenant votre croisière dîner avec transfert hôtel",
     ctaSubtitle:
-      "Réservez votre formule à partir de €55 avec transfert inclus ou écrivez-nous sur WhatsApp avec votre adresse d'hôtel.",
+      "Réservez votre formule à partir de €30 avec transfert inclus ou écrivez-nous sur WhatsApp avec votre adresse d'hôtel.",
     ctaBookLabel: "Réserver maintenant",
     ctaWhatsappLabel: "Écrire sur WhatsApp",
     viewInEnglish: "View in English →",
@@ -591,9 +591,9 @@ const CONTENT: Record<string, LocaleContent> = {
 
   nl: {
     metaTitle:
-      "Istanbul Diner Cruise met Hotelophaal — Vanaf €55 | MerrySails",
+      "Istanbul Diner Cruise met Hotelophaal — Vanaf €30",
     metaDescription:
-      "Istanbul diner cruise met hotelophaal: ophaal 18:30–19:15 vanuit Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli en Kadıköy. 4 pakketten €55–€119. TURSAB A-categorie gecertificeerd.",
+      "Istanbul diner cruise met hotelophaal: ophaal 18:30–19:15 vanuit Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli en Kadıköy. 4 pakketten €30–€119. TURSAB A-categorie gecertificeerd.",
     canonicalPath: "/nl/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Home",
     breadcrumbCruise: "Bosporus Cruise",
@@ -601,7 +601,7 @@ const CONTENT: Record<string, LocaleContent> = {
     eyebrow: "MerrySails Istanbul • Sinds 2001",
     heroTitle: "Istanbul Diner Cruise met Hotelophaal Inbegrepen",
     heroSubtitle:
-      "Van hotel naar boot, van boot naar hotel — ophaal inbegrepen in alle pakketten vanaf €55",
+      "Van hotel naar boot, van boot naar hotel — ophaal inbegrepen in alle pakketten vanaf €30",
     heroTagline:
       "Geniet van uw Bosporus diner cruise met deur-tot-deur ophaal vanuit Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli en Kadıköy. Geen taxistress, geen navigatieproblemen — alleen u en het meest indrukwekkende uitzicht van Istanbul.",
     trustBadge: "TURSAB A-categorie gecertificeerd • 50.000+ gasten • Sinds 2001",
@@ -640,7 +640,7 @@ const CONTENT: Record<string, LocaleContent> = {
     packages: [
       {
         name: "Standaard",
-        price: "€55",
+        price: "€30",
         highlight: false,
         items: [
           "Hotelophaal inbegrepen",
@@ -732,7 +732,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Is ophaal inbegrepen in alle pakketten?",
-        a: "Ja, alle vier pakketten — Standaard (€55), Premium (€75), VIP (€95) en Exclusive (€119) — bevatten ophaal zonder bijbetaling.",
+        a: "Ja, alle vier pakketten — Standaard (€30), Premium (€75), VIP (€95) en Exclusive (€119) — bevatten ophaal zonder bijbetaling.",
       },
       {
         q: "Wat gebeurt er als ik te laat ben?",
@@ -762,7 +762,7 @@ const CONTENT: Record<string, LocaleContent> = {
     internalLinkLabel: "Naar de hoofdpagina: Istanbul Dinner Cruise →",
     ctaHeading: "Boek nu uw Bosporus diner cruise met hotelophaal",
     ctaSubtitle:
-      "Reserveer uw pakket vanaf €55 inclusief ophaal of schrijf ons via WhatsApp met uw hoteladres.",
+      "Reserveer uw pakket vanaf €30 inclusief ophaal of schrijf ons via WhatsApp met uw hoteladres.",
     ctaBookLabel: "Nu boeken",
     ctaWhatsappLabel: "WhatsApp schrijven",
     viewInEnglish: "View in English →",

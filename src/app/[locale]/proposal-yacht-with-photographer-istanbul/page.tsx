@@ -31,7 +31,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Fotoğrafçılı Evlilik Teklifi Yatı 2026 | Boğaz'da Gizli Çekim | MerrySails",
+    metaTitle: "İstanbul Fotoğrafçılı Evlilik Teklifi Yatı 2026 | Boğaz'da Gizli Çekim",
     metaDescription:
       "İstanbul'da fotoğrafçılı evlilik teklifi yatı: anın doğal ve gizli bir şekilde fotoğraflanması, özel rota planlaması ve Boğaz manzarası eşliğinde özel bir teklif formatı.",
     canonicalPath: "/tr/proposal-yacht-with-photographer-istanbul",
@@ -76,7 +76,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "WhatsApp ile Planla",
   },
   de: {
-    metaTitle: "Heiratsantrag Yacht mit Fotograf Istanbul 2026 | Bosporus Geheimfoto | MerrySails",
+    metaTitle: "Heiratsantrag Yacht mit Fotograf Istanbul 2026 | Bosporus Geheimfoto",
     metaDescription:
       "Heiratsantrag auf einer Privatyacht am Bosporus mit diskretem Fotografen: natürliche, verborgene Aufnahmen des Moments und individuelle Routenplanung in Istanbul.",
     canonicalPath: "/de/proposal-yacht-with-photographer-istanbul",
@@ -121,7 +121,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "Plan via WhatsApp",
   },
   fr: {
-    metaTitle: "Yacht Demande en Mariage avec Photographe Istanbul 2026 | Bosphore | MerrySails",
+    metaTitle: "Yacht Demande en Mariage avec Photographe Istanbul 2026 | Bosphore",
     metaDescription:
       "Demande en mariage sur yacht privé au Bosphore avec photographe discret à Istanbul : photos naturelles du moment, planification de route personnalisée.",
     canonicalPath: "/fr/proposal-yacht-with-photographer-istanbul",
@@ -166,7 +166,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "Planifier via WhatsApp",
   },
   nl: {
-    metaTitle: "Huwelijksaanzoek Jacht met Fotograaf Istanbul 2026 | Bosporus | MerrySails",
+    metaTitle: "Huwelijksaanzoek Jacht met Fotograaf Istanbul 2026 | Bosporus",
     metaDescription:
       "Huwelijksaanzoek op privéjacht aan de Bosporus met discrete fotograaf in Istanbul: natuurlijke, verborgen foto's van het moment en gepersonaliseerde routeplanning.",
     canonicalPath: "/nl/proposal-yacht-with-photographer-istanbul",

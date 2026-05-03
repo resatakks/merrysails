@@ -23,7 +23,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    title: "SSS — İstanbul Boğaz Turu Sıkça Sorulan Sorular | MerrySails",
+    title: "SSS — İstanbul Boğaz Turu Sıkça Sorulan Sorular",
     description:
       "İstanbul Boğaz turu hakkında sıkça sorulan sorular: rezervasyon, iptal politikası, fiyatlar, dahil olanlar, kalkış noktaları ve grup indirimleri.",
     canonicalPath: "/tr/faq",
@@ -89,7 +89,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
   },
   de: {
-    title: "FAQ — Bosporus-Kreuzfahrt Häufige Fragen | MerrySails",
+    title: "FAQ — Bosporus-Kreuzfahrt Häufige Fragen",
     description:
       "Häufig gestellte Fragen zu Istanbul Bosporus-Kreuzfahrten: Buchung, Stornierungsbedingungen, Preise, Leistungen, Abfahrtsorte und Gruppenrabatte.",
     canonicalPath: "/de/faq",
@@ -155,7 +155,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
   },
   fr: {
-    title: "FAQ — Croisière Bosphore Questions Fréquentes | MerrySails",
+    title: "FAQ — Croisière Bosphore Questions Fréquentes",
     description:
       "Questions fréquemment posées sur les croisières du Bosphore à Istanbul : réservation, politique d'annulation, prix, services inclus, points de départ et réductions de groupe.",
     canonicalPath: "/fr/faq",
@@ -221,7 +221,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
   },
   nl: {
-    title: "FAQ — Bosporus Cruise Veelgestelde Vragen | MerrySails",
+    title: "FAQ — Bosporus Cruise Veelgestelde Vragen",
     description:
       "Veelgestelde vragen over Bosporus cruises in Istanbul: boeking, annuleringsbeleid, prijzen, inbegrepen diensten, vertrekpunten en groepskortingen.",
     canonicalPath: "/nl/faq",

@@ -313,7 +313,7 @@ export default function TourDetailClient({
         <div className="order-2 space-y-6 lg:order-1 lg:col-span-2">
           {/* Title & Rating */}
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h1>
+            <h2 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h2>
             <p className="text-[var(--text-muted)] mb-3">{tour.name}</p>
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <div className="flex items-center gap-1">

@@ -6,7 +6,7 @@ import { cleanContentText } from "@/lib/content-text";
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Blog — Istanbul Travel Guides | MerrySails",
+  title: "Bosphorus Cruise Blog — Istanbul Travel Guides",
   description:
     "Expert Istanbul cruise guides: Bosphorus sunset cruise tips, yacht charter advice, dinner cruise reviews, and local travel insights from MerrySails — TURSAB A Group licensed since 2001.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/blog"),
   },
   openGraph: {
-    title: "Bosphorus Cruise Blog — Istanbul Travel Guides | MerrySails",
+    title: "Bosphorus Cruise Blog — Istanbul Travel Guides",
     description:
       "Expert Istanbul cruise guides: sunset cruise tips, yacht charter advice, and local travel insights from MerrySails.",
     url: "https://merrysails.com/blog",

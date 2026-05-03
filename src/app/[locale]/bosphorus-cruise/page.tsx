@@ -43,7 +43,7 @@ type LocaleContent = {
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
     htmlLang: "tr-TR",
-    title: "Boğaz Turu İstanbul — €34'dan başlayan fiyatlar | MerrySails",
+    title: "Boğaz Turu İstanbul — €34'dan başlayan fiyatlar",
     description: "İstanbul Boğaz turu: yemekli boğaz turu €30'dan, gün batımı turu €34'ten, Eminönü kalkışlı. TÜRSAB A Grubu lisanslı, 50.000+ misafir. Online rezervasyon.",
     canonicalPath: "/tr/bosphorus-cruise",
     h1: "Boğaz Turu İstanbul",
@@ -117,7 +117,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   de: {
     htmlLang: "de-DE",
-    title: "Bosporus Kreuzfahrt Istanbul — Ab €34 | MerrySails",
+    title: "Bosporus Kreuzfahrt Istanbul — Ab €34",
     description: "Bosporus Kreuzfahrt Istanbul: Sonnenuntergang ab €34, Dinner-Kreuzfahrt ab €30, Privatjacht ab €280. TÜRSAB-lizenziert seit 2001, 50.000+ Gäste.",
     canonicalPath: "/de/bosphorus-cruise",
     h1: "Bosporus Kreuzfahrt Istanbul",
@@ -189,7 +189,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   fr: {
     htmlLang: "fr-FR",
-    title: "Croisière Bosphore Istanbul — À partir de €34 | MerrySails",
+    title: "Croisière Bosphore Istanbul — À partir de €34",
     description: "Croisière Bosphore Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €280. Agence TÜRSAB groupe A, 50 000+ clients. Réservez en ligne.",
     canonicalPath: "/fr/bosphorus-cruise",
     h1: "Croisière Bosphore Istanbul",
@@ -261,7 +261,7 @@ const CONTENT: Record<string, LocaleContent> = {
 
   nl: {
     htmlLang: "nl-NL",
-    title: "Bosporus Cruise Istanbul — Vanaf €34 | MerrySails",
+    title: "Bosporus Cruise Istanbul — Vanaf €34",
     description: "Bosporus cruise Istanbul: zonsondergang vanaf €34, diner cruise vanaf €30, privéjacht vanaf €280. TÜRSAB A-groep, 50.000+ gasten. Direct boeken.",
     canonicalPath: "/nl/bosphorus-cruise",
     h1: "Bosporus Cruise Istanbul",

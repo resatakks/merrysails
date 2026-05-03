@@ -48,7 +48,7 @@ type LocaleContent = {
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle:
-      "Çiftler İçin Özel Akşam Yemeği Teknesi İstanbul 2026 | Boğaz'da Romantik Akşam | MerrySails",
+      "Çiftler İçin Özel Akşam Yemeği Teknesi İstanbul 2026 | Boğaz'da Romantik Akşam",
     metaDescription:
       "Çiftler için özel Boğaz akşam yemeği teknesi: kendi masanız, sessiz atmosfer ve özel yatla romantik İstanbul akşamı. Yıldönümü, balayı ve özel kutlamalar.",
     canonicalPath: "/tr/private-dinner-cruise-for-couples-istanbul",
@@ -153,7 +153,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   de: {
     metaTitle:
-      "Privates Dinner für Paare auf dem Bosporus 2026 | Romantische Yacht Istanbul | MerrySails",
+      "Privates Dinner für Paare auf dem Bosporus 2026 | Romantische Yacht Istanbul",
     metaDescription:
       "Privates Dinner für Paare auf einer Yacht am Bosporus: eigener Tisch, ruhige Atmosphäre und romantischer Abend in Istanbul. Ideal für Jubiläum und Flitterwochen.",
     canonicalPath: "/de/private-dinner-cruise-for-couples-istanbul",
@@ -258,7 +258,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   fr: {
     metaTitle:
-      "Dîner Privé pour Couples sur le Bosphore 2026 | Yacht Romantique Istanbul | MerrySails",
+      "Dîner Privé pour Couples sur le Bosphore 2026 | Yacht Romantique Istanbul",
     metaDescription:
       "Dîner privé pour couples sur yacht au Bosphore : votre table, ambiance calme et soirée romantique à Istanbul. Idéal anniversaire de mariage et lune de miel.",
     canonicalPath: "/fr/private-dinner-cruise-for-couples-istanbul",
@@ -363,7 +363,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   },
   nl: {
     metaTitle:
-      "Privé Diner Cruise voor Stellen Bosporus 2026 | Romantisch Jacht Istanbul | MerrySails",
+      "Privé Diner Cruise voor Stellen Bosporus 2026 | Romantisch Jacht Istanbul",
     metaDescription:
       "Privé diner cruise voor stellen op de Bosporus: eigen tafel, rustige sfeer en romantische avond in Istanbul. Ideaal voor jubileum en huwelijksreis.",
     canonicalPath: "/nl/private-dinner-cruise-for-couples-istanbul",
