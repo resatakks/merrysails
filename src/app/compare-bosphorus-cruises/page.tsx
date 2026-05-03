@@ -205,7 +205,11 @@ export default function CompareCruisesPage() {
           <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 md:text-lg">
             All four cruise options side-by-side: prices, durations, what's
             included, and which is best for your group. Pick the right cruise
-            in under two minutes.
+            in under two minutes — or browse our{" "}
+            <Link href="/bosphorus-cruise" className="font-semibold text-orange-600 underline-offset-2 hover:underline">
+              full Bosphorus cruise hub
+            </Link>{" "}
+            for individual product details.
           </p>
         </header>
 
@@ -447,6 +451,28 @@ export default function CompareCruisesPage() {
                 <p className="mt-3 text-sm text-slate-600">{f.a}</p>
               </details>
             ))}
+          </div>
+        </section>
+
+        {/* Related hubs */}
+        <section className="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 className="mb-3 text-lg font-bold text-slate-900">Continue browsing</h3>
+          <div className="flex flex-wrap gap-3 text-sm">
+            <Link href="/bosphorus-cruise" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+              All Bosphorus cruise options →
+            </Link>
+            <Link href="/istanbul-cruise-faq" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+              44-question FAQ →
+            </Link>
+            <Link href="/pricing" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+              Full pricing breakdown →
+            </Link>
+            <Link href="/bosphorus-cruise-departure-points" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+              Departure points →
+            </Link>
+            <Link href="/guides/kabatas-pier" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+              Kabataş Pier guide →
+            </Link>
           </div>
         </section>
 

@@ -595,8 +595,12 @@ export default async function TourDetailPage({
 
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">
             <span className="font-semibold text-[var(--heading)]">Helpful resources:</span>
+            <Link href="/bosphorus-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
+              All Bosphorus cruise options →
+            </Link>
+            <span className="hidden sm:inline">·</span>
             <Link href="/compare-bosphorus-cruises" className="font-semibold text-[var(--brand-primary)] hover:underline">
-              Compare all cruise options →
+              Compare side-by-side →
             </Link>
             <span className="hidden sm:inline">·</span>
             <Link href="/istanbul-cruise-faq" className="font-semibold text-[var(--brand-primary)] hover:underline">
@@ -604,7 +608,7 @@ export default async function TourDetailPage({
             </Link>
             <span className="hidden sm:inline">·</span>
             <Link href="/pricing" className="font-semibold text-[var(--brand-primary)] hover:underline">
-              All packages & pricing →
+              All pricing →
             </Link>
           </div>
 

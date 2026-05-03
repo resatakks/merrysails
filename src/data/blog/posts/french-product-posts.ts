@@ -36,8 +36,7 @@ export const frenchProductPosts: BlogPost[] = [
     sections: [
       {
         heading: "Prix des croisières sur le Bosphore en 2026 — Vue d'ensemble",
-        content:
-          "Le prix d'une croisière Bosphore varie considérablement selon le type d'expérience recherché. La croisière partagée, dès €34 par personne, convient aux voyageurs solos et aux couples à budget raisonnable. La croisière dîner, entre €55 et €119, offre un repas à bord avec spectacle folklorique et transfert depuis l'hôtel. Enfin, la location de yacht privé, à partir de €380 par embarcation, garantit intimité totale et itinéraire sur mesure. Ces trois catégories répondent à des attentes et des budgets très différents — voici comment choisir.",
+        content: "Le prix d'une [croisière Bosphore](/fr/bosphorus-cruise) varie considérablement selon le type d'expérience recherché. La croisière partagée, dès €34 par personne, convient aux voyageurs solos et aux couples à budget raisonnable. La croisière dîner, entre €55 et €119, offre un repas à bord avec spectacle folklorique et transfert depuis l'hôtel. Enfin, la location de yacht privé, à partir de €380 par embarcation, garantit intimité totale et itinéraire sur mesure. Ces trois catégories répondent à des attentes et des budgets très différents — voici comment choisir.",
         answerCapsule:
           "Croisière partagée : €34–55/pers. | Dîner croisière : €55–119/pers. | Yacht privé : €380–1 800/bateau.",
         callout: {
@@ -215,8 +214,7 @@ export const frenchProductPosts: BlogPost[] = [
     sections: [
       {
         heading: "Pourquoi le Bosphore est le cadre idéal pour une demande en mariage",
-        content:
-          "Une demande en mariage sur le Bosphore n'est pas un moment ordinaire — c'est une scène digne d'un film. Istanbul est l'une des villes les plus romantiques du monde, et le Bosphore en est le cœur battant : deux continents, deux cultures, le scintillement de l'eau dans la lumière du soir. Aucun hôtel, aucun restaurant ne peut rivaliser avec l'atmosphère d'un bateau privatif au milieu de ce panorama urbain unique. Le pont du Bosphore en arrière-plan, les minarettes des palais ottomans, l'odeur de la mer — tout fait de cet endroit la scène rêvée pour la plus belle question de votre vie. La croisière Bosphore demande en mariage est l'expérience que les couples n'oublient jamais.",
+        content: "Une demande en mariage sur le Bosphore n'est pas un moment ordinaire — c'est une scène digne d'un film. Istanbul est l'une des villes les plus romantiques du monde, et le Bosphore en est le cœur battant : deux continents, deux cultures, le scintillement de l'eau dans la lumière du soir. Aucun hôtel, aucun restaurant ne peut rivaliser avec l'atmosphère d'un bateau privatif au milieu de ce panorama urbain unique. Le pont du Bosphore en arrière-plan, les minarettes des palais ottomans, l'odeur de la mer — tout fait de cet endroit la scène rêvée pour la plus belle question de votre vie. La [croisière Bosphore](/fr/bosphorus-cruise) demande en mariage est l'expérience que les couples n'oublient jamais.",
         answerCapsule:
           "Le Bosphore relie l'Europe et l'Asie — c'est la scène romantique la plus spectaculaire d'Istanbul pour une demande en mariage sur l'eau.",
         callout: {

@@ -36,8 +36,7 @@ export const dutchProductPosts: BlogPost[] = [
     sections: [
       {
         heading: "Bosporus Cruise Prijzen 2026 — Overzicht",
-        content:
-          "De Bosporus cruise prijs in 2026 varieert sterk naargelang het type tour. Reizigers die op budget willen genieten, kiezen voor een gedeelde dagtour vanaf €34 per persoon. Wie een bijzondere avond wil beleven met een volwaardig diner, betaalt €64–119 per persoon. Stellen, families of groepen die volledige privacy wensen, gaan voor een privé jachtcharter vanaf €380 voor de gehele boot. Deze drie categorieën bedienen totaal verschillende reiservaringen — en verschillende budgetten.",
+        content: "De [Bosporus cruise](/nl/bosphorus-cruise) prijs in 2026 varieert sterk naargelang het type tour. Reizigers die op budget willen genieten, kiezen voor een gedeelde dagtour vanaf €34 per persoon. Wie een bijzondere avond wil beleven met een volwaardig diner, betaalt €64–119 per persoon. Stellen, families of groepen die volledige privacy wensen, gaan voor een privé jachtcharter vanaf €380 voor de gehele boot. Deze drie categorieën bedienen totaal verschillende reiservaringen — en verschillende budgetten.",
         answerCapsule:
           "Gedeelde Bosporus-tour: €34–40 p.p. | Diner cruise: €64–119 p.p. | Privé jacht: €380–1.800 per boot.",
         callout: {

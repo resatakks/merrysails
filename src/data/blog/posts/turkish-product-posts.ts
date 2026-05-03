@@ -119,8 +119,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         heading: "Sezonluk Fiyat Trendleri ve En İyi Dönem",
-        content:
-          "İstanbul Boğaz turu fiyatları yıl içinde önemli ölçüde dalgalanır. 2025 sezonu verilerine göre en yoğun dönemler Temmuz ve Ağustos aylarıdır; bu dönemlerde teknelerin doluluk oranı %85'i geçmektedir. Buna karşın, fiyat-kalite dengesi açısından en iyi dönem Eylül–Kasım arasıdır: Boğaz manzarası muhteşem, hava dengeli, kalabalık düşük ve fiyatlar makul.",
+        content: "İstanbul [Boğaz turu](/tr/bosphorus-cruise) fiyatları yıl içinde önemli ölçüde dalgalanır. 2025 sezonu verilerine göre en yoğun dönemler Temmuz ve Ağustos aylarıdır; bu dönemlerde teknelerin doluluk oranı %85'i geçmektedir. Buna karşın, fiyat-kalite dengesi açısından en iyi dönem Eylül–Kasım arasıdır: Boğaz manzarası muhteşem, hava dengeli, kalabalık düşük ve fiyatlar makul.",
         table: {
           headers: ["Dönem", "Ortalama Doluluk", "Fiyat Endeksi", "Değerlendirme"],
           rows: [
@@ -869,8 +868,7 @@ export const turkishProductPosts: BlogPost[] = [
     sections: [
       {
         heading: "2026 Boğaz Turu Kalkış Saatleri (Özet Tablo)",
-        content:
-          "İstanbul Boğaz turu saatleri, tur tipine ve mevsime göre değişir. Gün batımı turları yazın geç, kışın erken kalkar çünkü güneşin batış vakti temel belirleyicidir. Aşağıdaki tablo 2026 sezonunun tüm kalkış saatlerini özetlemektedir.",
+        content: "İstanbul [Boğaz turu](/tr/bosphorus-cruise) saatleri, tur tipine ve mevsime göre değişir. Gün batımı turları yazın geç, kışın erken kalkar çünkü güneşin batış vakti temel belirleyicidir. Aşağıdaki tablo 2026 sezonunun tüm kalkış saatlerini özetlemektedir.",
         answerCapsule:
           "Boğaz gün batımı turu yaz aylarında (Nisan–Eylül) saat 19:00–19:30'da, kış aylarında (Ekim–Mart) 16:30–17:00'da kalkar. Akşam yemeği turu tüm yıl 20:30'da kalkar.",
         table: {
