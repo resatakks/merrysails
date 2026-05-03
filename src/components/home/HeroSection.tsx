@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Shield, Star } from "lucide-react";
-import { motion } from "framer-motion";
 
 const heroProducts = [
   {
@@ -41,12 +38,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-[calc(env(safe-area-inset-top)+6rem)] pb-[calc(env(safe-area-inset-bottom)+1.5rem)] sm:min-h-[100svh] sm:justify-center sm:pt-32 sm:pb-16">
         <div className="mx-auto w-full max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="mx-auto max-w-3xl text-center"
-          >
+          <div className="hero-fade-in mx-auto max-w-3xl text-center">
             <h1 className="text-[1.6rem] font-bold leading-[1.1] text-white sm:text-5xl md:text-[4.2rem] md:leading-[0.98]">
               Bosphorus Cruise Istanbul
               <span className="mt-1 block text-[var(--brand-gold)] sm:mt-0 sm:inline"> — Dinner, Sunset & Yacht Charter</span>
@@ -54,14 +46,9 @@ export default function HeroSection() {
             <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-relaxed text-white/84 sm:mt-4 sm:text-base md:text-lg">
               Book direct with Istanbul&apos;s TURSAB-licensed operator — sunset from €34, dinner from €30, private yacht from €280.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.7 }}
-            className="mt-5 grid gap-2.5 sm:mt-6 sm:gap-3 md:grid-cols-3"
-          >
+          <div className="hero-fade-in hero-fade-in-delay-1 mt-5 grid gap-2.5 sm:mt-6 sm:gap-3 md:grid-cols-3">
             {heroProducts.map((product) => (
               <Link
                 key={product.href}
@@ -83,14 +70,9 @@ export default function HeroSection() {
                 </div>
               </Link>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25, duration: 0.7 }}
-            className="mt-5 flex flex-wrap justify-center gap-2.5 sm:mt-6 sm:gap-3"
-          >
+          <div className="hero-fade-in hero-fade-in-delay-2 mt-5 flex flex-wrap justify-center gap-2.5 sm:mt-6 sm:gap-3">
             <Link
               href="/bosphorus-cruise"
               className="btn-cta text-sm !px-6 !py-3 sm:text-base sm:!px-8 sm:!py-3.5"
@@ -105,14 +87,9 @@ export default function HeroSection() {
               Open Reservation Center
               <ArrowRight className="h-4 w-4" />
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.35, duration: 0.7 }}
-            className="mt-7 hidden flex-wrap items-center justify-center gap-5 text-sm text-white/76 sm:flex"
-          >
+          <div className="hero-fade-in hero-fade-in-delay-3 mt-7 hidden flex-wrap items-center justify-center gap-5 text-sm text-white/76 sm:flex">
             <div className="flex items-center gap-2">
               <Star className="h-4 w-4 text-[var(--brand-gold)]" />
               <span>Shared and private cruise options</span>
@@ -125,7 +102,7 @@ export default function HeroSection() {
               <Clock className="h-4 w-4 text-[var(--brand-gold)]" />
               <span>TURSAB-licensed since 2001</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
