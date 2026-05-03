@@ -36,7 +36,7 @@ export default function HeroSection() {
       />
       <div className="hero-overlay absolute inset-0" />
 
-      <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-[calc(env(safe-area-inset-top)+6rem)] pb-[calc(env(safe-area-inset-bottom)+1.5rem)] sm:min-h-[100svh] sm:justify-center sm:pt-32 sm:pb-16">
+      <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-24 pb-6 sm:min-h-[100svh] sm:justify-center sm:pt-32 sm:pb-16">
         <div className="mx-auto w-full max-w-4xl">
           <div className="hero-fade-in mx-auto max-w-3xl text-center">
             <h1 className="text-[1.6rem] font-bold leading-[1.1] text-white sm:text-5xl md:text-[4.2rem] md:leading-[0.98]">

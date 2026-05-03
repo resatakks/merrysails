@@ -633,6 +633,21 @@ export default function BosphorusCruisePage() {
               ))}
             </div>
 
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center text-sm text-[var(--text-muted)]">
+              <span>More resources:</span>
+              <Link href="/istanbul-cruise-faq" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Full 44-question FAQ →
+              </Link>
+              <span className="hidden sm:inline">·</span>
+              <Link href="/compare-bosphorus-cruises" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Compare all cruise options →
+              </Link>
+              <span className="hidden sm:inline">·</span>
+              <Link href="/pricing" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                See full pricing →
+              </Link>
+            </div>
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/reservation" className="btn-cta !py-3 !px-6">
                 Choose a Cruise to Book

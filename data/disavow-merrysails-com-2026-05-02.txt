@@ -1,0 +1,39 @@
+# Disavow file for merrysails.com
+# Generated: 2026-05-02
+# Source: DataForSEO live backlinks API (referring_domains)
+# Total ref domains scanned: 31
+# Toxic (disavowed): 31
+# Review pending: 0
+# Reason: Auto-classified by toxic-TLD, toxic-keyword, spam_score patterns
+
+domain:belonnanotservice.ga  # spam:85 rank:0 bl:1 [toxic-TLD]
+domain:what-happens-next.xyz  # spam:85 rank:0 bl:1 [toxic-TLD]
+domain:wheretobuybest.link  # spam:80 rank:0 bl:1 [toxic-TLD]
+domain:australianwebdirectory.pro  # spam:70 rank:0 bl:1 [toxic-TLD]
+domain:australianwebdirectory.shop  # spam:70 rank:0 bl:1 [toxic-TLD]
+domain:thebestbacklinksavailable.click  # spam:65 rank:0 bl:1 [toxic-TLD]
+domain:browseallexpireddomains.us  # spam:65 rank:0 bl:1 [toxic-TLD]
+domain:mundotecnologia.info  # spam:65 rank:0 bl:1 [toxic-keyword]
+domain:sergechel.info  # spam:60 rank:0 bl:1 [toxic-keyword]
+domain:musweb.org  # spam:60 rank:0 bl:1 [toxic-keyword]
+domain:runningwebsites.net  # spam:60 rank:0 bl:1 [toxic-keyword]
+domain:way2check.cv  # spam:60 rank:0 bl:1 [toxic-TLD]
+domain:globalecommerce.org  # spam:60 rank:0 bl:1 [toxic-keyword]
+domain:simplewebdirectory.com  # spam:60 rank:0 bl:1 [toxic-keyword]
+domain:booksreadr.org  # spam:60 rank:0 bl:1 [toxic-keyword]
+domain:getwebsiteworth.com  # spam:56 rank:0 bl:3 [toxic-keyword]
+domain:agmermer.pro  # spam:55 rank:0 bl:1 [toxic-TLD]
+domain:vix.lt  # spam:55 rank:0 bl:1 [toxic-TLD]
+domain:katmoviehd.wf  # spam:55 rank:0 bl:1 [toxic-TLD]
+domain:ycm.info  # spam:50 rank:0 bl:1 [toxic-keyword]
+domain:pagesearch.net  # spam:50 rank:0 bl:1 [toxic-keyword]
+domain:urls-shortener.eu  # spam:50 rank:0 bl:1 [toxic-keyword]
+domain:ready.pro  # spam:50 rank:0 bl:1 [toxic-TLD]
+domain:screenshots.wiki  # spam:50 rank:0 bl:2 [toxic-keyword]
+domain:shortenurls.eu  # spam:50 rank:0 bl:2 [toxic-keyword]
+domain:alljobs.info  # spam:50 rank:0 bl:2 [toxic-keyword]
+domain:websiterace.com  # spam:50 rank:0 bl:1 [toxic-keyword]
+domain:bye.fyi  # spam:50 rank:0 bl:1 [toxic-TLD]
+domain:seobacklinks.agency  # spam:45 rank:0 bl:1 [toxic-keyword]
+domain:rankgrow.agency  # spam:45 rank:0 bl:1 [toxic-keyword]
+domain:newlyregddomains.com  # spam:10 rank:0 bl:1 [toxic-keyword]

@@ -1,0 +1,1219 @@
+{
+  "date": "2026-05-01",
+  "total": 134,
+  "coverageSummary": {
+    "UNKNOWN": 134
+  },
+  "notIndexed": [
+    {
+      "url": "https://merrysails.com/tr",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/istanbul-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/yacht-charter-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/boat-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/corporate-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/faq",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/about",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/contact",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/blog",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/guides",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/cruises",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-tours",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/product-launch-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/team-building-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/tr/reservation",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/bosphorus-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/istanbul-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/yacht-charter-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/boat-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/corporate-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/private-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/faq",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/about",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/contact",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/blog",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/guides",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/cruises",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/private-tours",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/product-launch-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/team-building-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/de/reservation",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/bosphorus-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/istanbul-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/yacht-charter-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/boat-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/corporate-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/faq",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/about",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/contact",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/blog",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/guides",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/cruises",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-tours",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/product-launch-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/team-building-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/fr/reservation",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/bosphorus-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/istanbul-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/yacht-charter-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/boat-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/corporate-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-events",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/faq",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/about",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/contact",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/blog",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/guides",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/cruises",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-tours",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/product-launch-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/team-building-yacht-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/nl/reservation",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/bosphorus-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/istanbul-dinner-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul",
+      "state": "UNKNOWN"
+    },
+    {
+      "url": "https://merrysails.com/boat-rental-istanbul",
+      "state": "UNKNOWN"
+    }
+  ],
+  "results": [
+    {
+      "url": "https://merrysails.com/tr",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/istanbul-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/yacht-charter-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/boat-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/corporate-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/faq",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/about",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/contact",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/blog",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/guides",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/cruises",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-tours",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/product-launch-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/team-building-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/tr/reservation",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/bosphorus-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/istanbul-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/yacht-charter-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/boat-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/corporate-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/private-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/faq",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/about",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/contact",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/blog",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/guides",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/cruises",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/private-tours",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/product-launch-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/team-building-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/de/reservation",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/bosphorus-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/istanbul-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/yacht-charter-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/boat-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/corporate-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/faq",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/about",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/contact",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/blog",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/guides",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/cruises",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-tours",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/product-launch-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/team-building-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/fr/reservation",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/bosphorus-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/istanbul-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/yacht-charter-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/boat-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/boat-rental-hourly-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-bosphorus-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/proposal-yacht-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/corporate-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-events",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/faq",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/about",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/contact",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/blog",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/guides",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/cruises",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-tours",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/bosphorus-cruise-departure-points",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/client-hosting-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/corporate-yacht-dinner-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/dinner-cruise-pickup-sultanahmet-taksim",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/dinner-cruise-with-hotel-pickup-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/kabatas-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/kurucesme-marina-yacht-charter",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/private-dinner-cruise-for-couples-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/product-launch-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/proposal-yacht-with-photographer-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/sunset-cruise-tickets-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/team-building-yacht-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/turkish-night-dinner-cruise-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/nl/reservation",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/bosphorus-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/istanbul-dinner-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    },
+    {
+      "url": "https://merrysails.com/boat-rental-istanbul",
+      "state": "UNKNOWN",
+      "crawled": "\u2014"
+    }
+  ],
+  "note": "coverageState values are human-readable strings not all-caps; field is inspectionResult not urlInspectionResult",
+  "sampleResults": []
+}

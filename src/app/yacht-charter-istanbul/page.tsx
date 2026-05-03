@@ -286,6 +286,21 @@ export default async function YachtCharterIstanbulPage({
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
 
+          <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">
+            <span className="font-semibold text-[var(--heading)]">Helpful resources:</span>
+            <Link href="/compare-bosphorus-cruises" className="font-semibold text-[var(--brand-primary)] hover:underline">
+              Compare with shared cruises →
+            </Link>
+            <span className="hidden sm:inline">·</span>
+            <Link href="/istanbul-cruise-faq" className="font-semibold text-[var(--brand-primary)] hover:underline">
+              44-question FAQ →
+            </Link>
+            <span className="hidden sm:inline">·</span>
+            <Link href="/pricing" className="font-semibold text-[var(--brand-primary)] hover:underline">
+              All packages & pricing →
+            </Link>
+          </div>
+
           <section className="mt-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div>
