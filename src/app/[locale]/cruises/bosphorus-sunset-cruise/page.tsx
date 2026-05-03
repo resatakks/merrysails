@@ -46,7 +46,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     title: "Boğaz Gün Batımı Turu İstanbul — €34'dan başlayan fiyatlar",
     description:
       "İstanbul'da Boğaz gün batımı turu €34'ten başlıyor. 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
-    h1: "Boğaz Gün Batımı Turu",
+    h1: "Boğaz Gün Batımı Turu Istanbul — Özel Yat",
     canonicalPath: "/tr/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCruise: "Boğaz Turu",
@@ -112,7 +112,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     title: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Ab €34",
     description:
       "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
-    h1: "Bosporus Sonnenuntergang Kreuzfahrt",
+    h1: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Privatyacht",
     canonicalPath: "/de/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus Kreuzfahrt",
@@ -178,7 +178,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €34",
     description:
       "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €34. 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €40. Réservez.",
-    h1: "Croisière Coucher de Soleil Bosphore",
+    h1: "Croisière Coucher de Soleil Bosphore Istanbul — Yacht Privé",
     canonicalPath: "/fr/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Accueil",
     breadcrumbCruise: "Croisière Bosphore",
@@ -244,7 +244,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €34",
     description:
       "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht met live gids en hapjes. Wijnoptie €40. Direct boeken, TÜRSAB-gecertificeerd.",
-    h1: "Bosporus Zonsondergang Cruise",
+    h1: "Bosporus Zonsondergang Cruise Istanbul — Privé Jacht",
     canonicalPath: "/nl/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Home",
     breadcrumbCruise: "Bosporus Cruise",
@@ -422,6 +422,7 @@ export default async function LocaleSunsetCruisePage({
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
+          <h1 className="sr-only">{t.h1}</h1>
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
             <Link href={`/${locale}`} className="hover:text-[var(--brand-primary)]">{t.breadcrumbHome}</Link>
             <span>/</span>

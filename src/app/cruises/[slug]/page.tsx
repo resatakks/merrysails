@@ -578,6 +578,7 @@ export default async function TourDetailPage({
       )}
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
+          <h1 className="sr-only">{tour.nameEn} — Istanbul Bosphorus</h1>
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
             <Link href="/" className="hover:text-[var(--brand-primary)]">Home</Link>

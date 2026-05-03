@@ -239,3 +239,65 @@ _(none — link missions here when opened)_
 - "50,000+ guests" trust signal
 - E-E-A-T phrases: always include at least 1 per commercial page
 - See `.claude/brand/voice.md` and `.claude/brand/about.md`
+
+---
+
+## Mission brief (2026-05-04)
+
+> Read `~/.config/brand-ops/playbook.md` first.
+
+**Brand**: Merrysails — sunset & dinner cruise (4-5 lokal).
+**Ads bütçe**: 2K TRY/gün.
+**Coğrafi alan**: **yurtdışı** — UK, Almanya, Ukrayna, Çin (Türk turist hedefi DEĞİL).
+**Servis tipi**: cruise — transfer DEĞİL.
+**Negative keyword** (zorunlu): transfer, taxi, taksi, airport, havalimanı, vip transfer.
+**Test fokusu**: ürün sayfaları + anasayfa (sunset cruise + dinner cruise). PMax kapalı kalsın (KWT'de işe yaramadı).
+
+## How to win
+1. UK + DE + UA için ayrı kampanya (her birinde multi-language ad group: native + en)
+2. Çin için ayrı bütçe testi (Yandex/Baidu organic dipnotu — Google Ads erişimi sınırlı CN için)
+3. Visual-heavy landing page (cruise için video/foto kritik) — CWV bottleneck olmasın
+4. Schema: TouristAttraction + Event + Product
+
+## 🚨 Critical findings (2026-05-04 backlink audit)
+
+**6 backlink target'ından 4'ünde SSR'de H1 YOK** — Googlebot bu sayfaları H1'siz görüyor (link juice ana keyword'e bağlanmıyor):
+- ✅ `/` (anasayfa) — H1 SSR'de var (`Bosphorus Cruise Istanbul`)
+- ❌ `/cruises/bosphorus-sunset-cruise` — H1 YOK SSR'de (client-side render?)
+- ❌ `/istanbul-dinner-cruise` — H1 YOK SSR'de
+- ❌ `/de/cruises/bosphorus-sunset-cruise` — H1 YOK + anchor "bosporus sonnenuntergangsfahrt istanbul" sayfada yok
+- ❌ `/de/istanbul-dinner-cruise` — H1 YOK + title 93 char
+- ⚠️ `/de` — title 76 char + 596 word (zayıf)
+
+Acil fix: cruise detail page'ler için JSX'te `<h1>` server-rendered olmalı. Eğer Astro/Next.js ile dinamik içerik geliyorsa `'use client'` öncesinde tanımla, ya da Server Component'te statik H1 koy.
+
+**Anchor mismatch**: Backlink alacağımız anchor text sayfada exact match olmalı — `/de/cruises/...`'de "bosporus sonnenuntergangsfahrt istanbul" body'de yok. Backlink boşa gider.
+
+## Disavow file (kullanıcı talimatı)
+
+Spam/zararlı backlink'ler GSC > Linkler > External links → CSV export et → toxic olanları `disavow.txt` formatında GSC > Disavow Tool'a yükle. Kontrol kriteri: TF/CF düşük (<10), spam score yüksek (>50%, Moz/Ahrefs/SEMrush), unrelated niche.
+
+DataForSEO Backlinks API ile aylık otomatik tarama: `POST /v3/backlinks/summary/live` ile spam_score >50% olanları flag.
+
+## How to win — güncel
+1. **Tüm cruise pages'e H1 ekle** (Hero üstü `<h1>` — JSX'te `<h1 className="...">{t('hero.title')}</h1>`)
+2. Desc'leri 150 char'a indir (Google'da kesik göstermesin)
+3. /de pages'i 596 → 1500+ word genişlet (gerçek Almanca, EN copy değil)
+4. Disavow file kur + monthly cron review
+
+
+## DataForSEO insights (2026-05-04)
+
+**Merrysails niş ve dar — ama az rakipli**:
+
+| Pazar | Toplam volume | Top keyword | CPC |
+|---|---|---|---|
+| UK | ~1200/ay | "istanbul cruise" 480 | $2.53 |
+| DE | ~90/ay | "istanbul dinner cruise" 40 | $2.32 |
+| UA | ~20/ay | (ihmal) | - |
+| CN | ~40/ay | "bosphorus cruise" 30 | $1.90 |
+
+**Aksiyon**:
+- 2K bütçe **UK ağırlıklı** olmalı (1500 TRY → UK, 500 TRY → DE)
+- UA/CN şu an test etmeye değmez — volume çok düşük
+- "bosphorus cruise istanbul" 320 vol $2.59 → ana sayfadaki agresif backlink hedefi

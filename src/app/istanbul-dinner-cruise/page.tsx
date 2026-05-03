@@ -283,6 +283,7 @@ export default async function IstanbulDinnerCruisePage({
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
+          <h1 className="sr-only">Istanbul Dinner Cruise — Bosphorus Yacht with Dinner</h1>
           <nav
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6"
