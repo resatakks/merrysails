@@ -39,19 +39,19 @@ export default function HeroSection() {
       />
       <div className="hero-overlay absolute inset-0" />
 
-      <div className="relative z-10 container-main flex min-h-[100svh] items-end pt-[calc(env(safe-area-inset-top)+6.9rem)] pb-[calc(env(safe-area-inset-bottom)+10rem)] max-[380px]:pt-[calc(env(safe-area-inset-top)+6.35rem)] max-[380px]:pb-[calc(env(safe-area-inset-bottom)+8.75rem)] sm:items-center sm:pt-32 sm:pb-16">
+      <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-[calc(env(safe-area-inset-top)+6rem)] pb-[calc(env(safe-area-inset-bottom)+1.5rem)] sm:min-h-[100svh] sm:justify-center sm:pt-32 sm:pb-16">
         <div className="mx-auto w-full max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="mx-auto max-w-3xl text-center max-[380px]:max-w-[19rem]"
+            className="mx-auto max-w-3xl text-center"
           >
-            <h1 className="text-[2.05rem] font-bold leading-[0.98] text-white max-[380px]:text-[1.76rem] max-[380px]:leading-[1.01] sm:text-5xl md:text-[4.2rem]">
+            <h1 className="text-[1.6rem] font-bold leading-[1.1] text-white sm:text-5xl md:text-[4.2rem] md:leading-[0.98]">
               Bosphorus Cruise Istanbul
-              <span className="text-[var(--brand-gold)]"> — Dinner, Sunset & Yacht Charter</span>
+              <span className="mt-1 block text-[var(--brand-gold)] sm:mt-0 sm:inline"> — Dinner, Sunset & Yacht Charter</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/84 max-[380px]:mt-3 max-[380px]:text-[13px] sm:text-base md:text-lg">
+            <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-relaxed text-white/84 sm:mt-4 sm:text-base md:text-lg">
               Book direct with Istanbul&apos;s TURSAB-licensed operator — sunset from €34, dinner from €30, private yacht from €280.
             </p>
           </motion.div>
@@ -60,21 +60,21 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.7 }}
-            className="mt-6 grid gap-3 max-[380px]:mt-5 max-[380px]:gap-2.5 md:grid-cols-3"
+            className="mt-5 grid gap-2.5 sm:mt-6 sm:gap-3 md:grid-cols-3"
           >
             {heroProducts.map((product) => (
               <Link
                 key={product.href}
                 href={product.href}
-                className="group rounded-[1.55rem] border border-white/45 bg-white/84 px-4 py-4 text-[var(--heading)] shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/90 max-[380px]:rounded-[1.35rem] max-[380px]:px-3.5 max-[380px]:py-3"
+                className="group rounded-2xl border border-white/45 bg-white/84 px-3.5 py-3 text-[var(--heading)] shadow-[0_18px_48px_rgba(11,21,58,0.14)] transition-all hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/90 sm:rounded-[1.55rem] sm:px-4 sm:py-4"
               >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] max-[380px]:text-[9px]">
+                <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)] sm:text-[10px] sm:tracking-[0.18em]">
                   {product.meta}
                 </p>
-                <h2 className="mt-2 text-[1.1rem] font-semibold leading-snug text-[var(--heading)] max-[380px]:mt-1.5 max-[380px]:text-[1rem]">
+                <h2 className="mt-1.5 text-[0.98rem] font-semibold leading-snug text-[var(--heading)] sm:mt-2 sm:text-[1.1rem]">
                   {product.title}
                 </h2>
-                <div className="mt-3 flex items-center justify-between gap-3">
+                <div className="mt-2.5 flex items-center justify-between gap-3 sm:mt-3">
                   <p className="text-sm font-bold text-[var(--brand-gold)]">{product.price}</p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] transition-colors group-hover:text-[var(--brand-primary-hover)]">
                     Open page
@@ -89,18 +89,18 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.7 }}
-            className="mt-6 flex flex-wrap justify-center gap-3 max-[380px]:mt-5"
+            className="mt-5 flex flex-wrap justify-center gap-2.5 sm:mt-6 sm:gap-3"
           >
             <Link
               href="/bosphorus-cruise"
-              className="btn-cta text-base !px-8 !py-3.5 max-[380px]:text-sm max-[380px]:!px-6 max-[380px]:!py-3"
+              className="btn-cta text-sm !px-6 !py-3 sm:text-base sm:!px-8 sm:!py-3.5"
             >
               Compare Cruise Options
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/reservation"
-              className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/95 px-8 py-3.5 text-base font-semibold text-[var(--brand-primary)] shadow-[0_16px_42px_rgba(11,21,58,0.18)] backdrop-blur-sm transition-all hover:bg-white hover:text-[var(--brand-primary-hover)] max-[380px]:px-6 max-[380px]:py-3 max-[380px]:text-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/95 px-6 py-3 text-sm font-semibold text-[var(--brand-primary)] shadow-[0_16px_42px_rgba(11,21,58,0.18)] backdrop-blur-sm transition-all hover:bg-white hover:text-[var(--brand-primary-hover)] sm:px-8 sm:py-3.5 sm:text-base"
             >
               Open Reservation Center
               <ArrowRight className="h-4 w-4" />

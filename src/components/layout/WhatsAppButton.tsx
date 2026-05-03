@@ -7,10 +7,13 @@ import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 
 export default function WhatsAppButton() {
   const pathname = usePathname() ?? "/";
+  // Strip optional locale prefix (e.g. /tr/, /de/) so localized tour pages also
+  // get the lifted offset that keeps the WhatsApp button above the booking bar.
+  const normalizedPath = pathname.replace(/^\/(tr|de|fr|nl)(?=\/|$)/, "") || "/";
   const hasStickyBookingUi =
-    pathname.startsWith("/cruises/") ||
-    pathname === "/istanbul-dinner-cruise" ||
-    pathname === "/yacht-charter-istanbul";
+    normalizedPath.startsWith("/cruises/") ||
+    normalizedPath === "/istanbul-dinner-cruise" ||
+    normalizedPath === "/yacht-charter-istanbul";
   const mobileBottomOffset = hasStickyBookingUi
     ? "bottom-[calc(env(safe-area-inset-bottom)+5.75rem)]"
     : "bottom-[calc(env(safe-area-inset-bottom)+1rem)]";

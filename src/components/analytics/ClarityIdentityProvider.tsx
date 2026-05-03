@@ -53,6 +53,15 @@ export default function ClarityIdentityProvider() {
 
       cl("identify", uid, undefined, pathname || "/", name);
       cl("set", "page_path", pathname);
+
+      try {
+        const lang = navigator.language || "unknown";
+        const langs = (navigator.languages || []).join(",");
+        cl("set", "browser_language", lang);
+        if (langs) cl("set", "browser_languages", langs);
+        const isRtl = /^(ar|fa|he|ur)/i.test(lang);
+        if (isRtl) cl("set", "rtl_user", "true");
+      } catch (_) {}
     };
 
     identify();
