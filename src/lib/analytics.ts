@@ -163,6 +163,32 @@ const CLARITY_EVENT_TAG_KEYS = new Set([
 const FIRST_ATTRIBUTION_KEY = "merrysails:first-attribution";
 const ENHANCED_CONVERSIONS_FLAG_KEY = "merrysails:ec-set";
 
+/**
+ * Single source of truth for Clarity custom events.
+ * GTM container MUST NOT also fire `clarity('event', ...)` — if it does,
+ * Clarity will count the same event twice (the "2 tıklama" bug).
+ *
+ * Dedupe key:
+ *   - Custom events: per-session per-name (e.g. "whatsapp_click" fires once per session)
+ *   - Upgrades: per-session per-name (purchase fires once per session)
+ *   - Tagged variant events with distinct names DO fire each time — the dedupe
+ *     is keyed on event name so different names bypass it.
+ */
+function safeClarityEvent(name: string, kind: "event" | "upgrade" = "event") {
+  if (typeof window === "undefined" || !window.clarity) return;
+  const key = `sails_clarity_${kind}_${name}`;
+  try {
+    if (sessionStorage.getItem(key)) return;
+    sessionStorage.setItem(key, String(Date.now()));
+  } catch {
+    const w = window as any;
+    w.__sails_clarity_once = w.__sails_clarity_once || {};
+    if (w.__sails_clarity_once[key]) return;
+    w.__sails_clarity_once[key] = Date.now();
+  }
+  window.clarity(kind, name);
+}
+
 function compactParams(
   params: Record<string, AnalyticsValue | null | undefined>
 ): Record<string, AnalyticsValue> {
@@ -219,7 +245,7 @@ export function trackEvent(
   pushToDataLayer(eventName, cleanedParams);
 
   if (typeof window.clarity === "function") {
-    window.clarity("event", eventName);
+    safeClarityEvent(eventName);
 
     for (const [key, value] of Object.entries(cleanedParams)) {
       if (
