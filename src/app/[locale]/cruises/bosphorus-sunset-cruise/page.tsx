@@ -109,7 +109,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "WhatsApp ile Yaz",
   },
   de: {
-    title: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Ab €34",
+    title: "Bosporus Sonnenuntergang Istanbul — Ab €34",
     description:
       "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
     h1: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Privatyacht",
@@ -414,11 +414,62 @@ export default async function LocaleSunsetCruisePage({
     })),
   };
 
+  // Event schema — recurring sunset cruise (golden hour, daily, year-round)
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: t.h1,
+    description: sunsetTour.description,
+    image: sunsetTour.image,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: "Kabataş Pier, Istanbul",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Kabataş Mah., Meclis-i Mebusan Cad.",
+        addressLocality: "Istanbul",
+        addressRegion: "Beyoğlu",
+        postalCode: "34433",
+        addressCountry: "TR",
+      },
+      geo: { "@type": "GeoCoordinates", latitude: 41.0344, longitude: 28.9919 },
+    },
+    organizer: { "@id": `${SITE_URL}/#organization` },
+    eventSchedule: {
+      "@type": "Schedule",
+      repeatFrequency: "P1D",
+      byDay: [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday",
+      ],
+      startDate: "2026-01-01",
+      endDate: "2026-12-31",
+      scheduleTimezone: "Europe/Istanbul",
+    },
+    offers: {
+      "@type": "Offer",
+      url: canonicalUrl,
+      price: sunsetTour.priceEur,
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      validFrom: "2026-01-01",
+    },
+    performer: { "@id": `${SITE_URL}/#organization` },
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">

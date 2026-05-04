@@ -148,7 +148,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
   },
   de: {
     htmlLang: "de-DE",
-    metaTitle: "Bosporus Kreuzfahrt Istanbul | Dinner & Yacht",
+    metaTitle: "Bosporus Kreuzfahrt Istanbul",
     metaDescription:
       "Istanbuls exklusive Bosporus-Erlebnisse: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und private Yacht-Charter. TURSAB A-Gruppe lizenziert, 50.000+ Gäste.",
     hero: {
@@ -524,6 +524,33 @@ export default async function LocaleHomePage({
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "de" ? "Startseite" : locale === "tr" ? "Ana Sayfa" : "Home",
+        item: `${SITE_URL}/${locale}`,
+      },
+    ],
+  };
+
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "MerrySails",
+    url: SITE_URL,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "180",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
   const reservationHref = `/${locale}/reservation`;
 
   return (
@@ -535,6 +562,14 @@ export default async function LocaleHomePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
       />
 
       {/* Hero */}
