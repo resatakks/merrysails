@@ -20,8 +20,11 @@ const dmSans = DM_Sans({
 });
 
 const SITE_URL = "https://merrysails.com";
-const GTM_CONTAINER_ID =
-  process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? "";
+// Block Merry's GTM-MWVS696K container — MerrySails has no own GTM yet,
+// so loading Merry's would cross-contaminate tag fires. Direct gtag for
+// GA4 + Ads is already wired below (G-9B3Q7FM7X8 + AW-18112460958).
+const RAW_GTM = (process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? "").trim();
+const GTM_CONTAINER_ID = RAW_GTM === "GTM-MWVS696K" ? "" : RAW_GTM;
 const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
 const GOOGLE_ADS_ID =
