@@ -163,7 +163,20 @@ function isAuthorized(req: NextRequest): boolean {
   return req.nextUrl.searchParams.get("token") === cronSecret;
 }
 
+// KILL SWITCH: User requested permanent disable 2026-05-05.
+// MerrySails took heavy losses; campaigns must stay PAUSED until user manually flips this off.
+// Cron entry was also removed from vercel.json. This early-return prevents accidental re-enable
+// even if the endpoint is hit manually or the cron is re-added.
+const AUTO_RESUME_DISABLED = true;
+
 export async function GET(req: NextRequest) {
+  if (AUTO_RESUME_DISABLED) {
+    return NextResponse.json({
+      disabled: true,
+      reason: "Auto-resume permanently disabled per user request 2026-05-05",
+    });
+  }
+
   if (!isAuthorized(req)) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
