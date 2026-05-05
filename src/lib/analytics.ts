@@ -96,15 +96,17 @@ const GOOGLE_ADS_CONVERSION_NAMES = {
 
 type GoogleAdsConversionKey = keyof typeof GOOGLE_ADS_CONVERSION_NAMES;
 
-const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+// .trim() guards against trailing whitespace/newline in Vercel env values
+// — past incident on KWT: env stored 'AW-...\n' which broke conversion send_to.
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 
 const GOOGLE_ADS_CONVERSION_LABELS: Record<GoogleAdsConversionKey, string | undefined> = {
-  abandonment: process.env.NEXT_PUBLIC_GADS_LABEL_ABANDONMENT,
-  contact: process.env.NEXT_PUBLIC_GADS_LABEL_CONTACT,
-  phone: process.env.NEXT_PUBLIC_GADS_LABEL_PHONE,
-  purchase: process.env.NEXT_PUBLIC_GADS_LABEL_PURCHASE,
-  whatsapp: process.env.NEXT_PUBLIC_GADS_LABEL_WHATSAPP,
+  abandonment: process.env.NEXT_PUBLIC_GADS_LABEL_ABANDONMENT?.trim(),
+  contact: process.env.NEXT_PUBLIC_GADS_LABEL_CONTACT?.trim(),
+  phone: process.env.NEXT_PUBLIC_GADS_LABEL_PHONE?.trim(),
+  purchase: process.env.NEXT_PUBLIC_GADS_LABEL_PURCHASE?.trim(),
+  whatsapp: process.env.NEXT_PUBLIC_GADS_LABEL_WHATSAPP?.trim(),
 };
 
 // Default value-per-conversion in TRY for soft conversions (phone/whatsapp/contact/abandonment).
