@@ -8,62 +8,47 @@ For each query × provider, paste URL into Brave, screenshot result, note:
 
 ## Results
 
-| Query | Provider | Mentioned | Position | URL Cited | Notes |
-|---|---|:-:|---|---|---|
-| best bosphorus sunset cruise istanbul | [Perplexity](https://www.perplexity.ai/?q=best%20bosphorus%20sunset%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus sunset cruise istanbul | [ChatGPT](https://chatgpt.com/?q=best%20bosphorus%20sunset%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus sunset cruise istanbul | [Claude](https://claude.ai/new?q=best%20bosphorus%20sunset%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus sunset cruise istanbul | [Google_AI_Overview](https://www.google.com/search?q=best%20bosphorus%20sunset%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus sunset cruise istanbul | [Bing_Copilot](https://www.bing.com/search?q=best%20bosphorus%20sunset%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus dinner cruise istanbul | [Perplexity](https://www.perplexity.ai/?q=best%20bosphorus%20dinner%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus dinner cruise istanbul | [ChatGPT](https://chatgpt.com/?q=best%20bosphorus%20dinner%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus dinner cruise istanbul | [Claude](https://claude.ai/new?q=best%20bosphorus%20dinner%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus dinner cruise istanbul | [Google_AI_Overview](https://www.google.com/search?q=best%20bosphorus%20dinner%20cruise%20istanbul) | ❓ | - | - | - |
-| best bosphorus dinner cruise istanbul | [Bing_Copilot](https://www.bing.com/search?q=best%20bosphorus%20dinner%20cruise%20istanbul) | ❓ | - | - | - |
-| best yacht charter istanbul | [Perplexity](https://www.perplexity.ai/?q=best%20yacht%20charter%20istanbul) | ❓ | - | - | - |
-| best yacht charter istanbul | [ChatGPT](https://chatgpt.com/?q=best%20yacht%20charter%20istanbul) | ❓ | - | - | - |
-| best yacht charter istanbul | [Claude](https://claude.ai/new?q=best%20yacht%20charter%20istanbul) | ❓ | - | - | - |
-| best yacht charter istanbul | [Google_AI_Overview](https://www.google.com/search?q=best%20yacht%20charter%20istanbul) | ❓ | - | - | - |
-| best yacht charter istanbul | [Bing_Copilot](https://www.bing.com/search?q=best%20yacht%20charter%20istanbul) | ❓ | - | - | - |
-| bosphorus cruise istanbul price | [Perplexity](https://www.perplexity.ai/?q=bosphorus%20cruise%20istanbul%20price) | ❓ | - | - | - |
-| bosphorus cruise istanbul price | [ChatGPT](https://chatgpt.com/?q=bosphorus%20cruise%20istanbul%20price) | ❓ | - | - | - |
-| bosphorus cruise istanbul price | [Claude](https://claude.ai/new?q=bosphorus%20cruise%20istanbul%20price) | ❓ | - | - | - |
-| bosphorus cruise istanbul price | [Google_AI_Overview](https://www.google.com/search?q=bosphorus%20cruise%20istanbul%20price) | ❓ | - | - | - |
-| bosphorus cruise istanbul price | [Bing_Copilot](https://www.bing.com/search?q=bosphorus%20cruise%20istanbul%20price) | ❓ | - | - | - |
-| private bosphorus cruise istanbul | [Perplexity](https://www.perplexity.ai/?q=private%20bosphorus%20cruise%20istanbul) | ❓ | - | - | - |
-| private bosphorus cruise istanbul | [ChatGPT](https://chatgpt.com/?q=private%20bosphorus%20cruise%20istanbul) | ❓ | - | - | - |
-| private bosphorus cruise istanbul | [Claude](https://claude.ai/new?q=private%20bosphorus%20cruise%20istanbul) | ❓ | - | - | - |
-| private bosphorus cruise istanbul | [Google_AI_Overview](https://www.google.com/search?q=private%20bosphorus%20cruise%20istanbul) | ❓ | - | - | - |
-| private bosphorus cruise istanbul | [Bing_Copilot](https://www.bing.com/search?q=private%20bosphorus%20cruise%20istanbul) | ❓ | - | - | - |
-| en iyi boğaz turu istanbul | [Perplexity](https://www.perplexity.ai/?q=en%20iyi%20bo%C4%9Faz%20turu%20istanbul) | ❓ | - | - | - |
-| en iyi boğaz turu istanbul | [ChatGPT](https://chatgpt.com/?q=en%20iyi%20bo%C4%9Faz%20turu%20istanbul) | ❓ | - | - | - |
-| en iyi boğaz turu istanbul | [Claude](https://claude.ai/new?q=en%20iyi%20bo%C4%9Faz%20turu%20istanbul) | ❓ | - | - | - |
-| en iyi boğaz turu istanbul | [Google_AI_Overview](https://www.google.com/search?q=en%20iyi%20bo%C4%9Faz%20turu%20istanbul) | ❓ | - | - | - |
-| en iyi boğaz turu istanbul | [Bing_Copilot](https://www.bing.com/search?q=en%20iyi%20bo%C4%9Faz%20turu%20istanbul) | ❓ | - | - | - |
-| yemekli boğaz turu fiyat | [Perplexity](https://www.perplexity.ai/?q=yemekli%20bo%C4%9Faz%20turu%20fiyat) | ❓ | - | - | - |
-| yemekli boğaz turu fiyat | [ChatGPT](https://chatgpt.com/?q=yemekli%20bo%C4%9Faz%20turu%20fiyat) | ❓ | - | - | - |
-| yemekli boğaz turu fiyat | [Claude](https://claude.ai/new?q=yemekli%20bo%C4%9Faz%20turu%20fiyat) | ❓ | - | - | - |
-| yemekli boğaz turu fiyat | [Google_AI_Overview](https://www.google.com/search?q=yemekli%20bo%C4%9Faz%20turu%20fiyat) | ❓ | - | - | - |
-| yemekli boğaz turu fiyat | [Bing_Copilot](https://www.bing.com/search?q=yemekli%20bo%C4%9Faz%20turu%20fiyat) | ❓ | - | - | - |
-| boğaz gün batımı turu | [Perplexity](https://www.perplexity.ai/?q=bo%C4%9Faz%20g%C3%BCn%20bat%C4%B1m%C4%B1%20turu) | ❓ | - | - | - |
-| boğaz gün batımı turu | [ChatGPT](https://chatgpt.com/?q=bo%C4%9Faz%20g%C3%BCn%20bat%C4%B1m%C4%B1%20turu) | ❓ | - | - | - |
-| boğaz gün batımı turu | [Claude](https://claude.ai/new?q=bo%C4%9Faz%20g%C3%BCn%20bat%C4%B1m%C4%B1%20turu) | ❓ | - | - | - |
-| boğaz gün batımı turu | [Google_AI_Overview](https://www.google.com/search?q=bo%C4%9Faz%20g%C3%BCn%20bat%C4%B1m%C4%B1%20turu) | ❓ | - | - | - |
-| boğaz gün batımı turu | [Bing_Copilot](https://www.bing.com/search?q=bo%C4%9Faz%20g%C3%BCn%20bat%C4%B1m%C4%B1%20turu) | ❓ | - | - | - |
-| beste bosporus kreuzfahrt istanbul | [Perplexity](https://www.perplexity.ai/?q=beste%20bosporus%20kreuzfahrt%20istanbul) | ❓ | - | - | - |
-| beste bosporus kreuzfahrt istanbul | [ChatGPT](https://chatgpt.com/?q=beste%20bosporus%20kreuzfahrt%20istanbul) | ❓ | - | - | - |
-| beste bosporus kreuzfahrt istanbul | [Claude](https://claude.ai/new?q=beste%20bosporus%20kreuzfahrt%20istanbul) | ❓ | - | - | - |
-| beste bosporus kreuzfahrt istanbul | [Google_AI_Overview](https://www.google.com/search?q=beste%20bosporus%20kreuzfahrt%20istanbul) | ❓ | - | - | - |
-| beste bosporus kreuzfahrt istanbul | [Bing_Copilot](https://www.bing.com/search?q=beste%20bosporus%20kreuzfahrt%20istanbul) | ❓ | - | - | - |
-| bosporus dinner kreuzfahrt | [Perplexity](https://www.perplexity.ai/?q=bosporus%20dinner%20kreuzfahrt) | ❓ | - | - | - |
-| bosporus dinner kreuzfahrt | [ChatGPT](https://chatgpt.com/?q=bosporus%20dinner%20kreuzfahrt) | ❓ | - | - | - |
-| bosporus dinner kreuzfahrt | [Claude](https://claude.ai/new?q=bosporus%20dinner%20kreuzfahrt) | ❓ | - | - | - |
-| bosporus dinner kreuzfahrt | [Google_AI_Overview](https://www.google.com/search?q=bosporus%20dinner%20kreuzfahrt) | ❓ | - | - | - |
-| bosporus dinner kreuzfahrt | [Bing_Copilot](https://www.bing.com/search?q=bosporus%20dinner%20kreuzfahrt) | ❓ | - | - | - |
+### Brand search (control test) — ✅ EXCELLENT
 
-## Action items
+| Query | Provider | Mentioned | Position | Notes |
+|---|---|:-:|---|---|
+| merrysails istanbul bosphorus cruise TURSAB licensed | Perplexity | ✅ YES | Detailed (10 sources) | Cited TURSAB #14316, Meryem Yıldız Travel, exact prices €34/€30/€280, address Alemdar Mah., 50,000+ guests, 24h free cancellation. Phone slightly stale (cache). llms.txt strategy WORKING. |
 
-Based on misses, identify:
-- Which queries should we be cited on?
-- What's the cited competitor doing differently? (TripAdvisor reviews, Reddit, schema)
-- Content gap to close
+### Generic intent search
+
+| Query | Provider | Mentioned | Position | Notes |
+|---|---|:-:|---|---|
+| best bosphorus sunset cruise istanbul 2026 | Google | ❌ NO | not in top 5 | GetYourGuide, TripAdvisor, AwayGoWe dominant |
+| best bosphorus sunset cruise istanbul 2026 | Bing | ❌ NO | not in top 5 | istanbul-tourist-information.com dominant (multi-language!) |
+| best bosphorus sunset cruise istanbul for tourists | Perplexity | ❌ NO | not mentioned | Tolerance Travel top pick (1,300+ TripAdvisor reviews) |
+| best bosphorus sunset cruise istanbul for tourists | ChatGPT | ❌ NO | not mentioned | "Bosphorus Sunset Cruise Istanbul" (literal name brand) top pick, 1,300+ TripAdvisor reviews |
+
+## Findings
+
+### What's working ✅
+- **Brand search**: Perplexity gives detailed branded content (TURSAB, prices, address, history). Comprehensive llms.txt + agents.md serving its purpose.
+- **ChatGPT direct referrals**: 56 sessions/7d via Clarity (top entries: /, /yacht-charter-istanbul, /blog/bosphorus-cruise-price-istanbul-2026)
+- **Schema rich data fully indexed**: TURSAB license, prices, hours all mapped
+
+### What's NOT working ❌
+- **Generic intent**: All AI providers ignore MerrySails for "best X" queries
+- Top competitors win via:
+  1. **TripAdvisor 1,300-6,117 reviews** (we have 312-621)
+  2. **Brand-keyword fusion** ("Bosphorus Sunset Cruise Istanbul" = literal brand name)
+  3. **Aggregator listings** (TripAdvisor, GetYourGuide cited heavily)
+  4. **Reddit/forum mentions** (sources Perplexity scrapes)
+
+### Action priority
+
+| P | Action |
+|---|---|
+| P0 | TripAdvisor business claim + review sprint (target 1,000+ reviews in 6 months) |
+| P0 | Get listed on awaygowe.com / istanbul-tourist-information.com (cited sources) |
+| P1 | Reddit organic seeding (per CONTENT-BRIEF.md 5-week plan) |
+| P1 | "X price 2026" content for sunset + yacht (proven pattern) |
+| P2 | Brand-keyword fusion: H1/title prominently feature "Bosphorus Sunset Cruise" + "MerrySails" |
+| P3 | Wait for Perplexity to refresh cache (phone stale by ~6 weeks, llms.txt is current) |
+
+## Test history
+- 2026-05-06 — first full audit (this file)
+- 2026-05-13 (next week) — re-run, compare deltas after schema fix deploys
