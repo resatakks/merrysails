@@ -524,7 +524,7 @@ export default async function LocalePrivateBosphorusDinnerCruisePage({
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-rose-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-rose-700"
@@ -611,7 +611,7 @@ export default async function LocalePrivateBosphorusDinnerCruisePage({
           <p className="text-rose-100 mb-6 max-w-2xl mx-auto">{t.ctaBody}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-rose-700 transition-colors hover:bg-rose-50"

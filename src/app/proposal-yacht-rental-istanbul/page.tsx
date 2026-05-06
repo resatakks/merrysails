@@ -209,7 +209,7 @@ export default function ProposalYachtRentalIstanbulPage() {
                 Request proposal quote
               </Link>
               <TrackedContactLink
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 kind="whatsapp"
                 label="proposal_page_whatsapp_hero"
                 location="proposal_page"
@@ -320,7 +320,7 @@ export default function ProposalYachtRentalIstanbulPage() {
               Request quote
             </Link>
             <TrackedContactLink
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               kind="whatsapp"
               label="proposal_page_whatsapp_footer"
               location="proposal_page"

@@ -16,7 +16,7 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 **Guests served:** 50,000+
 **Rating:** 4.9/5 (Google, TripAdvisor, Viator combined)
 **Currency:** EUR (prices shown in Euros, paid in TRY at daily rate)
-**Booking:** merrysails.com | WhatsApp +90 537 040 68 22
+**Booking:** merrysails.com | WhatsApp +90 544 898 98 12
 
 ---
 
@@ -109,7 +109,7 @@ A: Private yacht charter starts from €280 for the entire boat (not per person)
 A: Sunset Cruise and Dinner Cruise prices are per person (shared tours). Yacht Charter and Boat Rental prices are per boat (entire vessel, any number of guests up to capacity).
 
 **Q: Is there a discount for groups?**
-A: Group discounts available for 10+ persons on shared tours. Contact WhatsApp +90 537 040 68 22 for a group quote.
+A: Group discounts available for 10+ persons on shared tours. Contact WhatsApp +90 544 898 98 12 for a group quote.
 
 **Q: What is included in the price?**
 A: All tours include: licensed captain & crew, required maritime safety equipment, travel insurance, port fees. Food and drinks are included as listed per package above.

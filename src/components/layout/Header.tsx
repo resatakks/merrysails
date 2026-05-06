@@ -261,10 +261,10 @@ export default function Header() {
 
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
               <a
-                href="tel:+905370406822"
+                href="tel:+905448989812"
                 onClick={(event) =>
                   handleTrackedContactNavigation(event, {
-                    href: "tel:+905370406822",
+                    href: "tel:+905448989812",
                     kind: "phone",
                     label: PHONE_DISPLAY,
                     location: "header_desktop",
@@ -369,10 +369,10 @@ export default function Header() {
                         <LanguageSwitcher compact />
                       </div>
                       <a
-                        href="tel:+905370406822"
+                        href="tel:+905448989812"
                         onClick={(event) =>
                           handleTrackedContactNavigation(event, {
-                            href: "tel:+905370406822",
+                            href: "tel:+905448989812",
                             kind: "phone",
                             label: PHONE_DISPLAY,
                             location: "header_mobile_menu",

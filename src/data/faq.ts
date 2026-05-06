@@ -12,7 +12,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "Rezervasyon nasıl yapılır?",
-    answer: "Web sitemizden rezervasyon talebi oluşturabilir, WhatsApp hattımızdan (+90 537 040 68 22) veya email ile de bize ulaşabilirsiniz. Sistem her talep için rezervasyon referansı üretir ve ekibimiz yazılı takip sağlar. Paylaşımlı turlarda ödeme şu an teknede kart veya nakit olarak tamamlanır.",
+    answer: "Web sitemizden rezervasyon talebi oluşturabilir, WhatsApp hattımızdan (+90 544 898 98 12) veya email ile de bize ulaşabilirsiniz. Sistem her talep için rezervasyon referansı üretir ve ekibimiz yazılı takip sağlar. Paylaşımlı turlarda ödeme şu an teknede kart veya nakit olarak tamamlanır.",
     category: "Rezervasyon",
   },
   {

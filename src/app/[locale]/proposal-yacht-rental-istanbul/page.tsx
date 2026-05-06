@@ -488,7 +488,7 @@ export default async function LocaleProposalYachtRentalPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-rose-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-rose-700"
@@ -496,7 +496,7 @@ export default async function LocaleProposalYachtRentalPage({
                 {t.ctaWhatsapp}
               </a>
               <a
-                href="tel:+905370406822"
+                href="tel:+905448989812"
                 className="inline-flex items-center justify-center rounded-xl border border-rose-600 px-6 py-3 font-semibold text-rose-600 transition-colors hover:bg-rose-50"
               >
                 {t.ctaCall}
@@ -565,7 +565,7 @@ export default async function LocaleProposalYachtRentalPage({
           <p className="text-rose-100 mb-6 max-w-2xl mx-auto">{t.ctaBody}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-rose-700 transition-colors hover:bg-rose-50"
@@ -573,7 +573,7 @@ export default async function LocaleProposalYachtRentalPage({
               {t.ctaWhatsapp}
             </a>
             <a
-              href="tel:+905370406822"
+              href="tel:+905448989812"
               className="inline-flex items-center justify-center rounded-xl border border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-rose-700"
             >
               {t.ctaCall}

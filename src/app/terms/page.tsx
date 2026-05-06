@@ -44,7 +44,7 @@ export default function TermsPage() {
           <h2>8. Contact</h2>
           <p>For questions about these terms:<br />
           Email: info@merrysails.com<br />
-          Phone: +90 537 040 68 22</p>
+          Phone: +90 544 898 98 12</p>
         </div>
       </div>
     </div>

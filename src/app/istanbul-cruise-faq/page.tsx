@@ -42,7 +42,7 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "Do you offer group discounts?",
-        a: "Yes. Groups of 10+ on shared cruises receive a discount. Corporate and event groups of 20+ get custom pricing on private charter. Contact WhatsApp +90 537 040 68 22 for a group quote.",
+        a: "Yes. Groups of 10+ on shared cruises receive a discount. Corporate and event groups of 20+ get custom pricing on private charter. Contact WhatsApp +90 544 898 98 12 for a group quote.",
       },
       {
         q: "Are children's tickets cheaper?",
@@ -114,7 +114,7 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "Are vegetarian or vegan meals available?",
-        a: "Yes. Vegetarian options are standard on all dinner cruises. Vegan and gluten-free meals are available on request — please specify dietary needs during booking via WhatsApp +90 537 040 68 22 or in the booking notes.",
+        a: "Yes. Vegetarian options are standard on all dinner cruises. Vegan and gluten-free meals are available on request — please specify dietary needs during booking via WhatsApp +90 544 898 98 12 or in the booking notes.",
       },
       {
         q: "Are halal meals available?",
@@ -178,7 +178,7 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "Can I book a private yacht for a marriage proposal?",
-        a: "Yes, this is one of our most popular services. The Premium private yacht (€380, up to 12 guests) is most popular for proposals. We can arrange decoration, optional photographer, custom cake, and music. Contact WhatsApp +90 537 040 68 22 to plan.",
+        a: "Yes, this is one of our most popular services. The Premium private yacht (€380, up to 12 guests) is most popular for proposals. We can arrange decoration, optional photographer, custom cake, and music. Contact WhatsApp +90 544 898 98 12 to plan.",
       },
       {
         q: "Can I rent a boat for a corporate event?",
@@ -242,7 +242,7 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "What if I'm unsatisfied with my cruise?",
-        a: "Contact us immediately via WhatsApp +90 537 040 68 22 or info@merrysails.com. We respond within 24 hours and resolve concerns directly. As a TURSAB-licensed operator, customers also have recourse through TURSAB if needed — though in 25 years of operation we resolve nearly all concerns directly.",
+        a: "Contact us immediately via WhatsApp +90 544 898 98 12 or info@merrysails.com. We respond within 24 hours and resolve concerns directly. As a TURSAB-licensed operator, customers also have recourse through TURSAB if needed — though in 25 years of operation we resolve nearly all concerns directly.",
       },
     ],
   },
@@ -396,12 +396,12 @@ export default function CruiseFAQPage() {
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row">
             <a
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-semibold text-white shadow-md transition hover:bg-[#1faa54]"
             >
-              WhatsApp +90 537 040 68 22
+              WhatsApp +90 544 898 98 12
             </a>
             <Link
               href="/compare-bosphorus-cruises"

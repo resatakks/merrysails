@@ -4,7 +4,7 @@
 **Website:** merrysails.com
 **License:** TURSAB A Group (since 2001)
 **Guests hosted:** 50,000+
-**WhatsApp:** +90 537 040 68 22
+**WhatsApp:** +90 544 898 98 12
 
 ## Core Products
 1. **Bosphorus Sunset Cruise** — Shared, ~2h, from €25/person

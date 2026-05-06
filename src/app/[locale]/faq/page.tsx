@@ -40,7 +40,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Boğaz tekne turu nasıl rezerve edilir?",
-        a: "Web sitemizden, WhatsApp (+90 537 040 68 22) üzerinden veya telefonla rezervasyon talebi gönderebilirsiniz. Bir rezervasyon kimliği oluşturup rezervasyon detaylarını e-posta ile iletiyoruz.",
+        a: "Web sitemizden, WhatsApp (+90 544 898 98 12) üzerinden veya telefonla rezervasyon talebi gönderebilirsiniz. Bir rezervasyon kimliği oluşturup rezervasyon detaylarını e-posta ile iletiyoruz.",
       },
       {
         q: "Ücretsiz iptal politikası var mı?",
@@ -106,7 +106,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Wie buche ich eine Bosporus-Bootstour?",
-        a: "Sie können eine Reservierungsanfrage über unsere Website, per WhatsApp (+90 537 040 68 22) oder telefonisch senden. Wir erstellen eine Buchungs-ID und senden Ihnen die Buchungsdetails per E-Mail zu.",
+        a: "Sie können eine Reservierungsanfrage über unsere Website, per WhatsApp (+90 544 898 98 12) oder telefonisch senden. Wir erstellen eine Buchungs-ID und senden Ihnen die Buchungsdetails per E-Mail zu.",
       },
       {
         q: "Gibt es eine kostenlose Stornierungsrichtlinie?",
@@ -172,7 +172,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Comment réserver une excursion en bateau sur le Bosphore ?",
-        a: "Vous pouvez envoyer une demande de réservation via notre site web, par WhatsApp (+90 537 040 68 22) ou par téléphone. Nous créons un identifiant de réservation et envoyons les détails par e-mail.",
+        a: "Vous pouvez envoyer une demande de réservation via notre site web, par WhatsApp (+90 544 898 98 12) ou par téléphone. Nous créons un identifiant de réservation et envoyons les détails par e-mail.",
       },
       {
         q: "Y a-t-il une politique d'annulation gratuite ?",
@@ -238,7 +238,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Hoe boek ik een Bosporus boottocht?",
-        a: "U kunt een reserveringsverzoek versturen via onze website, via WhatsApp (+90 537 040 68 22) of telefonisch. We maken een reservering aan en sturen de boekingsdetails per e-mail.",
+        a: "U kunt een reserveringsverzoek versturen via onze website, via WhatsApp (+90 544 898 98 12) of telefonisch. We maken een reservering aan en sturen de boekingsdetails per e-mail.",
       },
       {
         q: "Is er een gratis annuleringsbeleid?",

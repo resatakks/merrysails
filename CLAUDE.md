@@ -124,7 +124,7 @@ docs/
 - `generateMetadata()` required on every public page
 - JSON-LD schema required on every public page
 - Prices in EUR only in user-facing copy
-- WhatsApp CTA: +90 537 040 68 22
+- WhatsApp CTA: +90 544 898 98 12
 
 ### i18n
 - Default and only active locale: `en`

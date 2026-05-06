@@ -811,14 +811,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                     Add to Google Calendar
                   </a>
                   <a
-                    href={`https://wa.me/905370406822?text=${encodeURIComponent(
+                    href={`https://wa.me/905448989812?text=${encodeURIComponent(
                       `Hi! My reservation ID is ${reservationId}. I'd like to confirm my booking.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(event) =>
                       handleTrackedContactNavigation(event, {
-                        href: `https://wa.me/905370406822?text=${encodeURIComponent(
+                        href: `https://wa.me/905448989812?text=${encodeURIComponent(
                           `Hi! My reservation ID is ${reservationId}. I'd like to confirm my booking.`
                         )}`,
                         intent: "post_booking",

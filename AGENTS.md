@@ -15,7 +15,7 @@
 - Trust signals already used in site copy and schema:
   - `Since 2001`
   - `TURSAB A Group` licensing references
-  - Phone: `+90 537 040 68 22`
+  - Phone: `+90 544 898 98 12`
   - Email: `info@merrysails.com`
 
 ## Core Revenue Pages

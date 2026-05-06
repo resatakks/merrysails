@@ -401,7 +401,7 @@ export default async function BlogPostPage({
                 Compare Bosphorus Cruises <ArrowRight className="w-4 h-4" />
               </Link>
               <TrackedContactLink
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 kind="whatsapp"
                 label="blog_post_whatsapp_cta"
                 location="blog_post"

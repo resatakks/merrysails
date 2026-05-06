@@ -227,7 +227,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
           {canCancel && <CancelButton reservationId={r.reservationId} />}
 
           <TrackedContactLink
-            href={`https://wa.me/905370406822?text=${encodeURIComponent(`Hi! My reservation ID is ${r.reservationId}. I have a question about my booking.`)}`}
+            href={`https://wa.me/905448989812?text=${encodeURIComponent(`Hi! My reservation ID is ${r.reservationId}. I have a question about my booking.`)}`}
             kind="whatsapp"
             label="reservation_page_whatsapp"
             location="reservation_page"

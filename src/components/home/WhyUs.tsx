@@ -25,7 +25,7 @@ const features = [
   {
     icon: Headphones,
     title: "24/7 Multilingual Support",
-    description: "Reach our team anytime via WhatsApp, phone (+90 537 040 68 22), or email. We respond within minutes.",
+    description: "Reach our team anytime via WhatsApp, phone (+90 544 898 98 12), or email. We respond within minutes.",
   },
   {
     icon: CreditCard,

@@ -333,7 +333,7 @@ export default async function SunsetCruiseTicketsLocalePage({
           <h2 className="text-xl font-bold text-white mb-2">{t.ctaHeading}</h2>
           <p className="text-white/80 mb-5 text-sm">{t.ctaDesc}</p>
           <a
-            href="https://wa.me/905370406822"
+            href="https://wa.me/905448989812"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-[var(--brand-primary)] hover:bg-gray-50 transition-colors"

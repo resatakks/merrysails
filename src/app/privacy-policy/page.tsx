@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
           <h2>7. Contact</h2>
           <p>For privacy questions, contact us at:<br />
           Email: info@merrysails.com<br />
-          Phone: +90 537 040 68 22<br />
+          Phone: +90 544 898 98 12<br />
           Address: Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul</p>
         </div>
       </div>

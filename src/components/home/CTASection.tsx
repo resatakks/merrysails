@@ -24,7 +24,7 @@ export default function CTASection() {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <TrackedContactLink
-            href="https://wa.me/905370406822"
+            href="https://wa.me/905448989812"
             kind="whatsapp"
             label="homepage_cta_whatsapp"
             location="homepage_cta"
@@ -36,7 +36,7 @@ export default function CTASection() {
             WhatsApp
           </TrackedContactLink>
           <TrackedContactLink
-            href="tel:+905370406822"
+            href="tel:+905448989812"
             kind="phone"
             label="homepage_cta_call"
             location="homepage_cta"

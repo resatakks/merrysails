@@ -32,13 +32,13 @@ Support URLs:
 
 Phone:
 
-- Primary number: `+90 537 040 68 22`
-- `tel:` value: `tel:+905370406822`
-- Google call asset: `+90 537 040 68 22`
+- Primary number: `+90 544 898 98 12`
+- `tel:` value: `tel:+905448989812`
+- Google call asset: `+90 544 898 98 12`
 
 WhatsApp:
 
-- Primary link: `https://wa.me/905370406822`
+- Primary link: `https://wa.me/905448989812`
 - Reservation confirmation link includes reservation ID in message.
 - Landing-page WhatsApp clicks fire `whatsapp_click`.
 

@@ -49,7 +49,7 @@ const organizationSchema = {
     postalCode: "34093",
     addressCountry: "TR",
   },
-  telephone: "+905370406822",
+  telephone: "+905448989812",
   email: "info@merrysails.com",
   hasCredential: {
     "@type": "EducationalOccupationalCredential",

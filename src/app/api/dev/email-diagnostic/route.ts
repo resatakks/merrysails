@@ -94,7 +94,7 @@ export async function GET(req: NextRequest) {
         reservationId: previewReservationId,
         customerName: "Resat Test",
         customerEmail: to,
-        customerPhone: "+90 537 040 68 22",
+        customerPhone: "+90 544 898 98 12",
         tourSlug: previewTour?.slug ?? "bosphorus-sunset-cruise",
         tourName: previewTour?.nameEn ?? "Bosphorus Sunset Cruise",
         serviceDate: previewDate,

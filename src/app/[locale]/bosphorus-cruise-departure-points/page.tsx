@@ -326,7 +326,7 @@ export default async function BosphorusDeparturePointsLocalePage({
 
           <div className="rounded-2xl bg-[var(--brand-primary)] p-8 text-center text-white">
             <a
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-[var(--brand-primary)] hover:bg-gray-50 transition-colors"

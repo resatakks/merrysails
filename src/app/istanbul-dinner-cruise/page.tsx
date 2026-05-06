@@ -329,7 +329,7 @@ export default async function IstanbulDinnerCruisePage({
               <li>✔ Price: from €30/person (packages available)</li>
               <li>✔ Hotel pickup available from central districts</li>
             </ul>
-            <p className="text-xs text-blue-700 mt-3">Book direct: merrysails.com · WhatsApp: +90 537 040 68 22 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
+            <p className="text-xs text-blue-700 mt-3">Book direct: merrysails.com · WhatsApp: +90 544 898 98 12 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
           </section>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">

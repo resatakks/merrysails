@@ -364,7 +364,7 @@ export default function BosphorusCruisePage() {
               <li>⛵ <strong>Private Yacht:</strong> from €280/yacht · your schedule · <Link href="/yacht-charter-istanbul" className="underline">Book now</Link></li>
               <li>🚢 <strong>Boat Rental:</strong> from €60/hr · hourly hire · <Link href="/boat-rental-istanbul" className="underline">Book now</Link></li>
             </ul>
-            <p className="text-xs text-amber-700 mt-3">Direct booking: merrysails.com · WhatsApp: +90 537 040 68 22 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
+            <p className="text-xs text-amber-700 mt-3">Direct booking: merrysails.com · WhatsApp: +90 544 898 98 12 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
           </section>
 
           <section className="mb-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">

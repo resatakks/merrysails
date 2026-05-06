@@ -8,7 +8,7 @@ Use this file before enabling any Google Ads spend. The goal is clean reporting 
 - GA4 measurement ID: `G-9B3Q7FM7X8`
 - Microsoft Clarity project ID: `wfsykdd4gb`
 - Google Ads account: `548-498-9676`
-- Main phone / WhatsApp: `+90 537 040 68 22`
+- Main phone / WhatsApp: `+90 544 898 98 12`
 
 ## Code Status
 
@@ -30,7 +30,7 @@ Event sources:
 
 - `purchase`: fires only after reservation creation succeeds.
 - `begin_checkout`: fires when a visitor starts the booking flow.
-- `phone_click`: fires on tracked `tel:+905370406822` links.
+- `phone_click`: fires on tracked `tel:+905448989812` links.
 - `whatsapp_click`: fires on tracked WhatsApp links.
 - `contact_submit_success`: fires only after contact form success.
 - `generate_lead`: mirrors contact form success for GA4 lead reporting.
@@ -142,7 +142,7 @@ Do not enable campaigns until all of these are true:
 - [ ] Display expansion is off.
 - [ ] Location option is Istanbul presence-only.
 - [ ] Daily budgets match the approved 1,000 TL/day test split: Sunset 417 TL, Dinner 417 TL, Private Yacht 166 TL.
-- [ ] Phone and WhatsApp links point to `+905370406822`.
+- [ ] Phone and WhatsApp links point to `+905448989812`.
 - [ ] Final URLs resolve with UTMs.
 
 ## Daily Optimization Rule

@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 export const metadata = {
   title: "Contact MerrySails — Phone, WhatsApp & Email",
   description:
-    "Contact MerrySails for Bosphorus cruise bookings. Call +90 537 040 68 22, WhatsApp, or email info@merrysails.com. Open daily 09:00–22:00.",
+    "Contact MerrySails for Bosphorus cruise bookings. Call +90 544 898 98 12, WhatsApp, or email info@merrysails.com. Open daily 09:00–22:00.",
   keywords: [
     "contact merrysails",
     "bosphorus cruise booking",
@@ -33,7 +33,7 @@ const contactSchema = {
     "@id": "https://merrysails.com/#organization",
     name: "MerrySails — Merry Tourism",
     url: "https://merrysails.com",
-    telephone: "+905370406822",
+    telephone: "+905448989812",
     email: "info@merrysails.com",
     address: {
       "@type": "PostalAddress",
@@ -51,7 +51,7 @@ const contactSchema = {
       closes: "22:00",
     },
     contactPoint: [
-      { "@type": "ContactPoint", telephone: "+905370406822", contactType: "reservations", availableLanguage: ["English", "Turkish"] },
+      { "@type": "ContactPoint", telephone: "+905448989812", contactType: "reservations", availableLanguage: ["English", "Turkish"] },
     ],
   },
 };
@@ -258,8 +258,8 @@ export default function ContactPage() {
               </div>
             </div>
             {[
-              { icon: Phone, label: "Phone", value: "+90 537 040 68 22", href: "tel:+905370406822" },
-              { icon: Phone, label: "WhatsApp", value: "+90 537 040 68 22", href: "https://wa.me/905370406822" },
+              { icon: Phone, label: "Phone", value: "+90 544 898 98 12", href: "tel:+905448989812" },
+              { icon: Phone, label: "WhatsApp", value: "+90 544 898 98 12", href: "https://wa.me/905448989812" },
               { icon: Mail, label: "Email", value: "info@merrysails.com", href: "mailto:info@merrysails.com" },
               { icon: MapPin, label: "Address", value: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih/İstanbul" },
               { icon: Clock, label: "Hours", value: "Every day 09:00 — 22:00" },

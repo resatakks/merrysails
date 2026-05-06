@@ -14,7 +14,7 @@
 ## Language Rules
 - Prices always in EUR (never TRY for public copy)
 - "Bosphorus" not "Bosporus" or "Bosforus"
-- CTA: merrysails.com or WhatsApp +90 537 040 68 22
+- CTA: merrysails.com or WhatsApp +90 544 898 98 12
 - E-E-A-T phrases: "TURSAB A Group licensed", "50,000+ guests hosted", "since 2001"
 - Avoid: "unforgettable", "magical", "world-class" (overused tourist copy)
 

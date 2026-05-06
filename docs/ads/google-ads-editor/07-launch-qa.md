@@ -69,8 +69,8 @@ Run this before enabling campaigns.
 - [ ] Yacht Charter goes to `/yacht-charter-istanbul`
 - [ ] Boat Rental goes to `/boat-rental-istanbul`
 - [ ] Proposal goes to `/proposal-yacht-rental-istanbul`
-- [ ] Phone links use `tel:+905370406822`
-- [ ] WhatsApp links use `https://wa.me/905370406822`
+- [ ] Phone links use `tel:+905448989812`
+- [ ] WhatsApp links use `https://wa.me/905448989812`
 - [ ] Contact form success is secondary only
 
 ## Day 1 Monitoring

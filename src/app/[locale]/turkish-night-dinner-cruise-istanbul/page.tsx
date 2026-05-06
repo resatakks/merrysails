@@ -842,7 +842,7 @@ export default async function TurkishNightDinnerCruiseLocalePage({
                 {t.bookLabel}
               </Link>
               <a
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)]/5"
@@ -984,7 +984,7 @@ export default async function TurkishNightDinnerCruiseLocalePage({
                 {t.bookLabel}
               </Link>
               <a
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl border border-white px-8 py-3 font-semibold text-white hover:bg-white/10 transition-colors"
