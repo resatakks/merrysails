@@ -73,9 +73,21 @@ function rel(p) {
   return path.relative(rootDir, p);
 }
 
+// Pages excluded from public-facing SEO rules (admin, reservation, voucher, invoice, login)
+const PRIVATE_PAGE_PATTERNS = [
+  /\/app\/admin\//,
+  /\/app\/reservation\/\[/,
+  /\/app\/.*\/login\//,
+  /\/app\/api\//,
+];
+
+function isPrivatePage(filePath) {
+  return PRIVATE_PAGE_PATTERNS.some((re) => re.test(filePath));
+}
+
 function lintFile(filePath) {
   const src = fs.readFileSync(filePath, "utf8");
-  const isPage = /\/app\/.+\/page\.tsx$/.test(filePath);
+  const isPage = /\/app\/.+\/page\.tsx$/.test(filePath) && !isPrivatePage(filePath);
 
   // Rule 1: aggregateRating on supported parent (immediate enclosing schema object)
   // ERROR if same file has Event schema (creates parser conflict — actual GSC error case)
@@ -206,6 +218,87 @@ function lintFile(filePath) {
     warnings.push({
       file: rel(filePath), line: 0, rule: "price-stale",
       msg: `Dinner cruise price €55 found — real price is €30-90 (CLAUDE.md rule 7).`,
+    });
+  }
+
+  // Semrush audit rules — only run on page.tsx
+  if (!isPage) return;
+
+  // S1. Meta description length 140-160 (warn if outside, error if missing on commercial page)
+  const descRegex = /description\s*:\s*[`"']([^`"']+(?:\$\{[^}]+\}[^`"']*)*)[`"']/g;
+  let dm;
+  let foundDesc = false;
+  while ((dm = descRegex.exec(src)) !== null) {
+    foundDesc = true;
+    const desc = dm[1].replace(/\$\{[^}]+\}/g, "XXX"); // approximate template
+    if (desc.length < 70) {
+      warnings.push({
+        file: rel(filePath), line: src.slice(0, dm.index).split("\n").length,
+        rule: "meta-desc-short",
+        msg: `Meta description too short (${desc.length} chars, optimal 140-160). "${desc.slice(0,80)}..."`,
+      });
+    } else if (desc.length > 165) {
+      warnings.push({
+        file: rel(filePath), line: src.slice(0, dm.index).split("\n").length,
+        rule: "meta-desc-long",
+        msg: `Meta description too long (${desc.length} chars, optimal 140-160) — Google truncates.`,
+      });
+    }
+  }
+  // S2. Missing description in metadata (catch variable references too)
+  if (/export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src) && !/description\s*:/.test(src)) {
+    errors.push({
+      file: rel(filePath), line: 1, rule: "meta-desc-missing",
+      msg: `Page has metadata but no description field anywhere (Semrush critical).`,
+    });
+  }
+
+  // S3. canonical URL check
+  if (/export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src)) {
+    if (!/canonical\s*:/.test(src)) {
+      warnings.push({
+        file: rel(filePath), line: 1, rule: "canonical-missing",
+        msg: `Page metadata lacks canonical URL (alternates.canonical).`,
+      });
+    }
+  }
+
+  // S4. hreflang languages check
+  if (/export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src)) {
+    if (!/buildHreflang|languages\s*:/.test(src)) {
+      warnings.push({
+        file: rel(filePath), line: 1, rule: "hreflang-missing",
+        msg: `Page lacks hreflang setup (use buildHreflang(path)).`,
+      });
+    }
+  }
+
+  // S5. Multiple H1 detection (within JSX returns) — only count <h1 in non-import lines
+  const h1Matches = [...src.matchAll(/<h1[\s>]/g)];
+  if (h1Matches.length > 1) {
+    warnings.push({
+      file: rel(filePath), line: 0, rule: "multiple-h1",
+      msg: `Page contains ${h1Matches.length} <h1> tags — should be exactly 1 (CLAUDE.md rule 11).`,
+    });
+  }
+
+  // S6. <img> without alt — prefer next/image with alt
+  const imgWithoutAlt = [...src.matchAll(/<img(?![^>]*\salt\s*=)[^>]*>/g)];
+  for (const m of imgWithoutAlt) {
+    warnings.push({
+      file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
+      rule: "img-alt-missing",
+      msg: `<img> tag without alt attribute — required for a11y + SEO (Semrush audit).`,
+    });
+  }
+
+  // S7. <Image without alt
+  const nextImageWithoutAlt = [...src.matchAll(/<Image(?![^>]*\salt\s*=)[^>]*\/?>/g)];
+  for (const m of nextImageWithoutAlt) {
+    warnings.push({
+      file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
+      rule: "next-image-alt-missing",
+      msg: `Next/Image without alt attribute (Semrush + a11y).`,
     });
   }
 }
