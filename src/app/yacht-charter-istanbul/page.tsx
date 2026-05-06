@@ -130,6 +130,39 @@ const breadcrumbSchema = {
   ],
 };
 
+const productSchema = yachtTour
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: yachtTour.nameEn ?? "Private Yacht Charter Istanbul",
+      description: yachtTour.description,
+      image: yachtTour.image,
+      brand: { "@type": "Brand", name: "MerrySails" },
+      sku: "merrysails-yacht-charter-istanbul",
+      category: "Private Yacht Charter",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: yachtTour.rating ?? 4.9,
+        reviewCount: yachtTour.reviewCount ?? 87,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "EUR",
+        lowPrice: Math.min(
+          ...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur]),
+        ),
+        highPrice: Math.max(
+          ...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur]),
+        ),
+        offerCount: yachtTour.packages?.length ?? 1,
+        availability: "https://schema.org/InStock",
+        seller: { "@id": `${SITE_URL}/#organization` },
+      },
+    }
+  : null;
+
 const charterReasons = [
   {
     title: "Private yacht packages first",
@@ -256,6 +289,12 @@ export default async function YachtCharterIstanbulPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      )}
       {yachtTour.faq && yachtTour.faq.length > 0 && (
         <script
           type="application/ld+json"

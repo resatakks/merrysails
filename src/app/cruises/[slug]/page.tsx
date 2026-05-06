@@ -445,24 +445,18 @@ export default async function TourDetailPage({
             validFrom: "2026-01-01",
             priceValidUntil: "2026-12-31",
             url: `${SITE_URL}${getTourPath(tour)}`,
+            shippingDetails: {
+              "@type": "OfferShippingDetails",
+              doesNotShip: true,
+            },
             hasMerchantReturnPolicy: {
               "@type": "MerchantReturnPolicy",
               applicableCountry: "TR",
               returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
               merchantReturnDays: 1,
               returnFees: "https://schema.org/FreeReturn",
+              returnMethod: "https://schema.org/ReturnByMail",
             },
-          },
-        }
-      : {}),
-    ...(tour.rating && tour.reviewCount
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: tour.rating,
-            reviewCount: tour.reviewCount,
-            bestRating: 5,
-            worstRating: 1,
           },
         }
       : {}),
@@ -493,8 +487,12 @@ export default async function TourDetailPage({
           "@context": "https://schema.org",
           "@type": "Event",
           name: "Bosphorus Sunset Cruise",
-          startDate: "2026-05-01T18:00:00+03:00",
-          endDate: "2026-05-01T20:00:00+03:00",
+          description: tour.description,
+          image: tour.image,
+          startDate: "2026-01-01T18:00:00+03:00",
+          endDate: "2026-12-31T20:00:00+03:00",
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+          eventStatus: "https://schema.org/EventScheduled",
           eventSchedule: {
             "@type": "Schedule",
             byDay: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -521,17 +519,36 @@ export default async function TourDetailPage({
             },
           },
           offers: {
-            "@type": "AggregateOffer",
-            lowPrice: "34",
-            highPrice: "40",
+            "@type": "Offer",
+            url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
+            price: tour.priceEur,
             priceCurrency: "EUR",
-            url: "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+            availability: "https://schema.org/InStock",
+            validFrom: "2026-01-01",
           },
           organizer: {
             "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
             name: "MerrySails",
-            url: "https://merrysails.com",
+            url: SITE_URL,
           },
+          performer: {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: "MerrySails",
+            url: SITE_URL,
+          },
+          ...(tour.rating && tour.reviewCount
+            ? {
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: tour.rating,
+                  reviewCount: tour.reviewCount,
+                  bestRating: 5,
+                  worstRating: 1,
+                },
+              }
+            : {}),
         }
       : null;
 

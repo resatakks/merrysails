@@ -11,7 +11,7 @@ export const revalidate = 3600;
 const startingRate = Math.min(...fleet.map((boat) => boat.pricePerHour));
 
 export const metadata: Metadata = {
-  title: `Boat Rental Istanbul — From €380 | MerrySails`,
+  title: `Boat Rental Istanbul — From €380`,
   description:
     `Boat rental and private boat hire in Istanbul from EUR ${startingRate}/hour. Choose the boat and route first, then add dinner, sunset, proposal, or celebration extras.`,
   alternates: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/boat-rental-istanbul"),
   },
   openGraph: {
-    title: `Boat Rental Istanbul — From €380 | MerrySails`,
+    title: `Boat Rental Istanbul — From €380`,
     description:
       `Private Bosphorus boat rental and private boat hire in Istanbul from EUR ${startingRate}/hour with vessel-first planning, custom routes, and add-ons for dinner, sunset, and celebrations.`,
     url: `${SITE_URL}/boat-rental-istanbul`,

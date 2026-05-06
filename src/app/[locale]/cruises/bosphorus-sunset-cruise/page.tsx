@@ -377,13 +377,6 @@ export default async function LocaleSunsetCruisePage({
     image: sunsetTour.image,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "Istanbul" },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: sunsetTour.rating,
-      reviewCount: sunsetTour.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: Math.min(...(sunsetTour.packages?.map((p) => p.price) ?? [sunsetTour.priceEur])),
@@ -421,6 +414,8 @@ export default async function LocaleSunsetCruisePage({
     name: t.h1,
     description: sunsetTour.description,
     image: sunsetTour.image,
+    startDate: "2026-01-01T18:00:00+03:00",
+    endDate: "2026-12-31T20:00:00+03:00",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     location: {
@@ -436,7 +431,18 @@ export default async function LocaleSunsetCruisePage({
       },
       geo: { "@type": "GeoCoordinates", latitude: 41.0344, longitude: 28.9919 },
     },
-    organizer: { "@id": `${SITE_URL}/#organization` },
+    organizer: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "MerrySails",
+      url: SITE_URL,
+    },
+    performer: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "MerrySails",
+      url: SITE_URL,
+    },
     eventSchedule: {
       "@type": "Schedule",
       repeatFrequency: "P1D",
@@ -461,7 +467,13 @@ export default async function LocaleSunsetCruisePage({
       availability: "https://schema.org/InStock",
       validFrom: "2026-01-01",
     },
-    performer: { "@id": `${SITE_URL}/#organization` },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: sunsetTour.rating,
+      reviewCount: sunsetTour.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
   };
 
   return (

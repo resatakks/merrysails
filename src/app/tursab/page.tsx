@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import { ShieldCheck, Building2, FileBadge, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "TURSAB License 14316 | MerrySails Istanbul",
+  title: "TURSAB License 14316 — Verified Travel Agency",
   description:
     "Verify the TURSAB A Group license behind MerrySails and Merry Tourism in Istanbul. License number 14316, office details, and operator identity.",
   alternates: { canonical: "https://merrysails.com/tursab" },
   openGraph: {
-    title: "TURSAB License 14316 | MerrySails Istanbul",
+    title: "TURSAB License 14316 — Verified Travel Agency",
     description:
       "Verify the TURSAB A Group license behind MerrySails and Merry Tourism in Istanbul.",
     url: "https://merrysails.com/tursab",

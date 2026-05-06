@@ -7,6 +7,10 @@
 2. **LocalBusiness/TravelAgency schemada `address` ZORUNLU** — boş bırakılamaz. Postal address inline yazılmalı (`@id` referansıyla bağlamak yetersiz, validator kontrol edemiyor).
 3. Her sayfada `generateMetadata()` + JSON-LD schema mecburi.
 4. Schema'yı eklerken Schema.org validator ile test et: `https://validator.schema.org/?url=...`
+4a. **AggregateRating yalnızca şu parent type'larda olabilir** (Google Review snippet spec): `Event`, `Product`, `LocalBusiness`, `Organization`, `Recipe`, `Movie`, `Course`, `Book`, `HowTo`. **NEVER** `Service`, `TouristTrip`, `Place`, `Offer`. Aynı sayfada hem `Event` hem `Service` aggregateRating'i varsa Google parser conflict → SADECE Event'a yaz.
+4b. **Event schema required fields**: `name`, `description`, `image`, `startDate`, `endDate`, `eventStatus`, `eventAttendanceMode`, `location`, `organizer`, `performer`. Event.offers required: `availability`, `validFrom`, `price`, `priceCurrency`, `url`. Eksikse GSC warning verir.
+4c. **Merchant listings (Offer)** required: `shippingDetails` (use `{@type:OfferShippingDetails, doesNotShip:true}` for cruise/digital), `hasMerchantReturnPolicy.returnMethod`. Eksikse "Merchant listings" warning.
+4d. **`npm run lint:schema`** her commit öncesi çalıştır — `scripts/lint-schema.mjs` rules 1-7'yi enforce eder + Event required fields + title suffix + price reality. ZERO ERROR olmadan deploy etme.
 
 ### Title Tag Kuralları
 5. **Asla `| MerrySails` yazma** title sonuna — root layout zaten `template: "%s | MerrySails Istanbul 2026"` ekliyor. Yazarsan duplicate olur: "X | MerrySails | MerrySails Istanbul 2026".

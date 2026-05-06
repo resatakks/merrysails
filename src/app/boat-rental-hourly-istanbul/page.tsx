@@ -12,7 +12,7 @@ const startingRate = Math.min(...fleet.map((boat) => boat.pricePerHour));
 const canonicalUrl = `${SITE_URL}/boat-rental-hourly-istanbul`;
 
 export const metadata: Metadata = {
-  title: `Boat Rental Hourly Istanbul 2026 — From EUR ${startingRate}/hour | MerrySails`,
+  title: `Boat Rental Hourly Istanbul — From EUR ${startingRate}/hour`,
   description:
     `Hourly boat rental in Istanbul from EUR ${startingRate}/hour for guests who already know they want a private boat by the hour rather than a package-led yacht charter.`,
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/boat-rental-hourly-istanbul"),
   },
   openGraph: {
-    title: `Boat Rental Hourly Istanbul 2026 — From EUR ${startingRate}/hour | MerrySails`,
+    title: `Boat Rental Hourly Istanbul — From EUR ${startingRate}/hour`,
     description:
       "Use this page when per-hour pricing, short private hire, and a lighter vessel-first Bosphorus plan are the main booking questions.",
     url: canonicalUrl,
