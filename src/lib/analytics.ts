@@ -240,11 +240,19 @@ export function trackEvent(
 
   const cleanedParams = compactParams(params);
 
-  // dataLayer push — GTM picks this up and routes to GA4 / Ads tags.
-  // Direct gtag GA4 calls are intentionally NOT used here because GTM has a
-  // GA4 Configuration tag on all pages; calling gtag('event', ..., send_to: GA_ID)
-  // alongside GTM would double-count events in GA4.
+  // dataLayer push — kept for forward-compatibility when MerrySails gets its own GTM.
   pushToDataLayer(eventName, cleanedParams);
+
+  // Direct gtag fire — GTM-MWVS696K is BLOCKED on this site (would cross-contaminate
+  // with Merry Tourism's container). Without GTM, dataLayer pushes are dropped on the
+  // floor, so we must call gtag directly to reach GA4. Only gated on GA_MEASUREMENT_ID
+  // because GTM container id is intentionally empty here.
+  if (GA_MEASUREMENT_ID) {
+    const gtag = ensureGtag();
+    if (gtag) {
+      gtag("event", eventName, { ...cleanedParams, send_to: GA_MEASUREMENT_ID });
+    }
+  }
 
   if (typeof window.clarity === "function") {
     safeClarityEvent(eventName);
@@ -589,6 +597,15 @@ export function trackPageView(path: string) {
   };
 
   pushToDataLayer("page_view", pageViewParams);
+
+  // SPA navigation page_view — direct gtag fire because GTM is blocked on this site.
+  // Initial page_view ships from layout's gtag('config', GA, { send_page_view: true }).
+  if (GA_MEASUREMENT_ID) {
+    const gtag = ensureGtag();
+    if (gtag) {
+      gtag("event", "page_view", { ...pageViewParams, send_to: GA_MEASUREMENT_ID });
+    }
+  }
 
   if (trafficAttribution) {
     const firstAttribution = getFirstAttribution(trafficAttribution);
