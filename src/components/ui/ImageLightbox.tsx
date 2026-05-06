@@ -10,9 +10,18 @@ interface Props {
   onClose: () => void;
   onNavigate: (index: number) => void;
   alt?: string;
+  /**
+   * Optional in-lightbox CTA — surfaces when users browse photos extensively without
+   * proceeding to booking (Clarity-tracked behavior 2026-05-06).
+   */
+  cta?: {
+    label: string;
+    priceLabel?: string;
+    onClick: () => void;
+  };
 }
 
-export default function ImageLightbox({ images, currentIndex, onClose, onNavigate, alt = "Tour photo" }: Props) {
+export default function ImageLightbox({ images, currentIndex, onClose, onNavigate, alt = "Tour photo", cta }: Props) {
   const goNext = useCallback(() => {
     onNavigate((currentIndex + 1) % images.length);
   }, [currentIndex, images.length, onNavigate]);
@@ -80,6 +89,26 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
         >
           <ChevronRight className="w-6 h-6" />
         </button>
+      )}
+
+      {/* In-lightbox CTA — converts gallery browsers into bookers */}
+      {cta && (
+        <div
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); cta.onClick(); onClose(); }}
+            className="inline-flex items-center gap-3 rounded-full bg-[var(--brand-primary)] px-6 py-3 text-sm font-bold text-white shadow-lg ring-2 ring-white/20 transition-transform hover:scale-105"
+          >
+            <span>{cta.label}</span>
+            {cta.priceLabel && (
+              <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold">
+                {cta.priceLabel}
+              </span>
+            )}
+          </button>
+        </div>
       )}
     </div>
   );

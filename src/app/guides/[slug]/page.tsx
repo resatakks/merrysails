@@ -232,6 +232,33 @@ export default async function GuidePage({
             />
           </div>
 
+          {/* Inline commercial CTA — ChatGPT/Perplexity entry traffic conversion */}
+          {relatedTours.length > 0 && relatedTours[0] && (
+            <div className="mb-10 rounded-2xl border border-[var(--brand-primary)]/20 bg-gradient-to-br from-[var(--brand-primary)]/5 via-white to-[var(--brand-gold)]/5 p-5 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)] mb-2">
+                    See it from the water
+                  </p>
+                  <p className="text-base font-semibold text-[var(--heading)] leading-snug">
+                    Experience {guide.title.split("—")[0].trim()} on a Bosphorus cruise — TURSAB-licensed, direct booking, free 24h cancellation.
+                  </p>
+                  {isPricingVisible(relatedTours[0]) && (
+                    <p className="mt-1 text-sm text-[var(--text-muted)]">
+                      From <strong className="text-[var(--brand-primary)]">€{relatedTours[0].priceEur}</strong> · {relatedTours[0].duration} · MerrySails since 2001
+                    </p>
+                  )}
+                </div>
+                <Link
+                  href={getTourPath(relatedTours[0])}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[var(--brand-primary)]/90 sm:shrink-0"
+                >
+                  View cruise <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          )}
+
           {/* Content Sections */}
           <div className="max-w-none">
             {guide.sections.map((section, i) => (

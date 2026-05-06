@@ -769,7 +769,7 @@ export default function TourDetailClient({
         </div>
 
         {/* Sidebar — sticky booking area with package cards + mobile bar */}
-        <div className="order-1 lg:order-2">
+        <div id="booking-sidebar" className="order-1 lg:order-2 scroll-mt-24">
           <BookingSidebar
           tour={{
             slug: tour.slug,
@@ -821,6 +821,14 @@ export default function TourDetailClient({
           onClose={() => setLightboxOpen(false)}
           onNavigate={setLightboxIndex}
           alt={tour.nameEn}
+          cta={{
+            label: showPricing ? `Reserve ${tour.nameEn}` : `View ${tour.nameEn}`,
+            priceLabel: showPricing ? `From €${tour.priceEur}` : undefined,
+            onClick: () => {
+              const el = document.getElementById("booking-sidebar");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            },
+          }}
         />
       )}
 
