@@ -28,6 +28,7 @@ import "react-international-phone/style.css";
 import { motion } from "framer-motion";
 import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
+import { applyGroupDiscount } from "@/lib/group-discount";
 import {
   getStoredAttribution,
   handleTrackedContactNavigation,
@@ -175,7 +176,15 @@ export default function BookingModal({ booking, onClose }: Props) {
     return sum + value;
   }, 0);
 
-  const total = (isPerGroup ? packagePrice : packagePrice * booking.guests) + addOnsTotal;
+  const originalTotal = (isPerGroup ? packagePrice : packagePrice * booking.guests) + addOnsTotal;
+  const groupDiscount = applyGroupDiscount(
+    originalTotal,
+    booking.tourSlug,
+    booking.guests,
+  );
+  const total = groupDiscount.eligible
+    ? groupDiscount.discountedTotal
+    : originalTotal;
 
   const nameValid = name.trim().length >= 2;
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -984,6 +993,18 @@ export default function BookingModal({ booking, onClose }: Props) {
                         </div>
                       </div>
                     )}
+                    {groupDiscount.eligible && groupDiscount.savings > 0 && (
+                      <div className="pt-2 border-t border-[var(--line)] space-y-1">
+                        <div className="flex items-center justify-between text-xs text-[var(--text-muted)]">
+                          <span>Subtotal</span>
+                          <span>€{originalTotal}</span>
+                        </div>
+                        <div className="flex items-center justify-between text-xs font-semibold text-emerald-700">
+                          <span>Group discount</span>
+                          <span>−€{groupDiscount.savings}</span>
+                        </div>
+                      </div>
+                    )}
                     <div className="pt-2 border-t border-[var(--line)] flex items-center justify-between">
                       <span className="font-semibold text-sm">Total</span>
                       <span className="text-xl font-bold text-[var(--heading)]">
@@ -1129,9 +1150,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                         <div className="min-w-0 flex-1">
                           <label
                             htmlFor="private-transfer-request"
-                            className="flex items-center gap-2 text-sm font-semibold text-[var(--heading)]"
+                            className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm font-semibold text-[var(--heading)]"
                           >
                             I want private transfer support
+                            <span className="text-xs font-normal text-[var(--text-muted)]">
+                              (no extra fee at this step — we&apos;ll coordinate
+                              pickup details over WhatsApp)
+                            </span>
                             <button
                               type="button"
                               onClick={() => setShowTransferInfo((value) => !value)}

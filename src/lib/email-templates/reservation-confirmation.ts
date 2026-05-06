@@ -26,6 +26,12 @@ interface ReservationConfirmationData {
   privateTransferRequested?: boolean;
   notes?: string | null;
   variant?: "received" | "confirmed";
+  /** Subtotal before group discount. Set when groupDiscountSavings > 0. */
+  originalTotal?: number;
+  /** Amount saved via group discount. */
+  groupDiscountSavings?: number;
+  /** Promo code (kept for reference; not shown in UI). */
+  groupDiscountCode?: string;
 }
 
 function renderFactsTable(
@@ -267,6 +273,20 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
             <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">Guests</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${data.guests} ${data.guests === 1 ? "guest" : "guests"}</td>
           </tr>
+          ${
+            data.groupDiscountSavings && data.groupDiscountSavings > 0 && data.originalTotal
+              ? `
+          <tr>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;width:38%;">Subtotal</td>
+            <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${symbol}${data.originalTotal}</td>
+          </tr>
+          <tr>
+            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">Group discount</td>
+            <td style="color:#16a34a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:700;">−${symbol}${data.groupDiscountSavings}</td>
+          </tr>
+          `
+              : ""
+          }
           <tr>
             <td style="color:#64748b;font-size:13px;padding:12px 18px;">Total</td>
             <td style="color:#0f172a;font-size:20px;padding:12px 18px;text-align:right;font-weight:800;">${symbol}${data.totalPrice}</td>

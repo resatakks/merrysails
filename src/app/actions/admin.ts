@@ -258,7 +258,17 @@ function buildManualPricingSnapshot(input: {
     ],
     subtotal: baseTotal,
     addOnsTotal,
+    originalTotal: input.totalPrice,
     total: input.totalPrice,
+    groupDiscount: {
+      eligible: false,
+      ineligibilityReason: "ineligible_tour" as const,
+      originalTotal: input.totalPrice,
+      discountedTotal: input.totalPrice,
+      savings: 0,
+      effectivePct: 0,
+      code: "SAIL10",
+    },
   };
 }
 

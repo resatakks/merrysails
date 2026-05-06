@@ -51,6 +51,19 @@ function sanitizePricingSnapshot(
       total: roundMoney(item.total),
     }));
 
+  const total = roundMoney(pricing.total);
+  const originalTotal = roundMoney(
+    typeof pricing.originalTotal === "number" ? pricing.originalTotal : pricing.total
+  );
+  const groupDiscount = pricing.groupDiscount ?? {
+    eligible: false,
+    originalTotal,
+    discountedTotal: total,
+    savings: 0,
+    effectivePct: 0,
+    code: "SAIL10",
+  };
+
   return {
     currency: pricing.currency === "EUR" ? "EUR" : "EUR",
     guests: Math.max(1, Math.trunc(pricing.guests)),
@@ -58,7 +71,9 @@ function sanitizePricingSnapshot(
     lineItems,
     subtotal: roundMoney(pricing.subtotal),
     addOnsTotal: roundMoney(pricing.addOnsTotal),
-    total: roundMoney(pricing.total),
+    originalTotal,
+    total,
+    groupDiscount,
   };
 }
 

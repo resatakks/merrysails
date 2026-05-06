@@ -7,6 +7,10 @@ import {
   type PriceMode,
   type Tour,
 } from "@/data/tours";
+import {
+  applyGroupDiscount,
+  type GroupDiscountResult,
+} from "@/lib/group-discount";
 
 const MAX_GUESTS = 20;
 
@@ -26,7 +30,15 @@ export interface ReservationPricingSnapshot {
   lineItems: ReservationPricingLineItem[];
   subtotal: number;
   addOnsTotal: number;
+  /** Total before any group discount is applied (subtotal + addOnsTotal). */
+  originalTotal: number;
+  /**
+   * Final total the customer pays. Equals originalTotal when no group
+   * discount is applied; otherwise the discounted + nice-rounded amount.
+   */
   total: number;
+  /** Group discount result. Always present; check `eligible` flag. */
+  groupDiscount: GroupDiscountResult;
 }
 
 export interface ReservationSelectionSnapshot extends ReservationPricingSnapshot {
@@ -190,7 +202,16 @@ export function buildReservationPricingSnapshot({
   const addOnsTotal = lineItems
     .slice(1)
     .reduce((sum, item) => sum + item.total, 0);
-  const total = subtotal + addOnsTotal;
+  const originalTotal = subtotal + addOnsTotal;
+
+  const groupDiscount = applyGroupDiscount(
+    originalTotal,
+    tour.slug,
+    safeGuests,
+  );
+  const total = groupDiscount.eligible
+    ? groupDiscount.discountedTotal
+    : originalTotal;
 
   return {
     tour,
@@ -203,6 +224,8 @@ export function buildReservationPricingSnapshot({
     lineItems,
     subtotal,
     addOnsTotal,
+    originalTotal,
     total,
+    groupDiscount,
   };
 }

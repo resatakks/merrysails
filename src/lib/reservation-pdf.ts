@@ -306,6 +306,20 @@ function drawInvoiceTable(doc: jsPDF, input: ReservationPdfInput, startY: number
   doc.text("Add-ons", 136, summaryY);
   doc.text(formatMoney(addOnsTotal, input.currency), 188, summaryY, { align: "right" });
 
+  const groupDiscount = input.pricing?.groupDiscount;
+  if (groupDiscount?.eligible && groupDiscount.savings > 0) {
+    summaryY += 6;
+    doc.setTextColor(22, 101, 52);
+    doc.text("Group discount", 136, summaryY);
+    doc.text(
+      `-${formatMoney(groupDiscount.savings, input.currency)}`,
+      188,
+      summaryY,
+      { align: "right" }
+    );
+    doc.setTextColor(71, 85, 105);
+  }
+
   doc.setFillColor(15, 23, 42);
   doc.roundedRect(118, summaryY + 4, 74, 16, 5, 5, "F");
   doc.setTextColor(255, 255, 255);

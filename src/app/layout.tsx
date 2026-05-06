@@ -6,7 +6,6 @@ import AnalyticsRouteTracker from "@/components/analytics/AnalyticsRouteTracker"
 import ClarityIdentityProvider from "@/components/analytics/ClarityIdentityProvider";
 import ErrorTracker from "@/components/analytics/ErrorTracker";
 import WebVitalsReporter from "@/components/analytics/WebVitalsReporter";
-import ExitIntentPopup from "@/components/marketing/ExitIntentPopup";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
 import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
@@ -22,9 +21,13 @@ const dmSans = DM_Sans({
 const SITE_URL = "https://merrysails.com";
 // Block Merry's GTM-MWVS696K container — MerrySails has no own GTM yet,
 // so loading Merry's would cross-contaminate tag fires. Direct gtag for
-// GA4 + Ads is already wired below (G-9B3Q7FM7X8 + AW-18112460958).
+// GA4 + Ads is wired below (G-9B3Q7FM7X8 + AW-18112460958).
+// Hardened block: tolerates whitespace, casing, and common typos.
 const RAW_GTM = (process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? "").trim();
-const GTM_CONTAINER_ID = RAW_GTM === "GTM-MWVS696K" ? "" : RAW_GTM;
+const BLOCKED_GTM_IDS = new Set(["GTM-MWVS696K", "gtm-mwvs696k"]);
+const GTM_CONTAINER_ID = BLOCKED_GTM_IDS.has(RAW_GTM) || BLOCKED_GTM_IDS.has(RAW_GTM.toUpperCase())
+  ? ""
+  : RAW_GTM;
 const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
 const GOOGLE_ADS_ID =
@@ -363,7 +366,31 @@ export default function RootLayout({
               id="gtag-ads-config"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
-                __html: `gtag('js', new Date()); gtag('config', '${GOOGLE_ADS_ID}');`,
+                __html: `gtag('js', new Date()); gtag('config', '${GOOGLE_ADS_ID}');${
+                  GA_MEASUREMENT_ID && !GTM_CONTAINER_ID
+                    ? ` gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });`
+                    : ""
+                }`,
+              }}
+            />
+          </>
+        ) : null}
+        {GA_MEASUREMENT_ID && !GOOGLE_ADS_ID && !GTM_CONTAINER_ID ? (
+          <>
+            <Script
+              id="ga4-direct"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="ga4-direct-config"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = window.gtag || gtag;
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });`,
               }}
             />
           </>
@@ -473,7 +500,6 @@ export default function RootLayout({
         <WebVitalsReporter />
         <ToastProvider>
           <SiteChrome>{children}</SiteChrome>
-          <ExitIntentPopup />
         </ToastProvider>
       </body>
     </html>

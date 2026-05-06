@@ -287,7 +287,9 @@ export async function createReservation(input: CreateReservationInput) {
               lineItems: pricing.lineItems,
               subtotal: pricing.subtotal,
               addOnsTotal: pricing.addOnsTotal,
+              originalTotal: pricing.originalTotal,
               total: pricing.total,
+              groupDiscount: pricing.groupDiscount,
             },
           }) ?? null,
         ...sanitizeAttribution(input.attribution),
@@ -330,7 +332,9 @@ export async function createReservation(input: CreateReservationInput) {
                 lineItems: pricing.lineItems,
                 subtotal: pricing.subtotal,
                 addOnsTotal: pricing.addOnsTotal,
+                originalTotal: pricing.originalTotal,
                 total: pricing.total,
+                groupDiscount: pricing.groupDiscount,
               },
               status: "Received",
             });
@@ -359,6 +363,15 @@ export async function createReservation(input: CreateReservationInput) {
               privateTransferRequested: Boolean(input.privateTransferRequested),
               notes: customerNote,
               variant: "received",
+              originalTotal: pricing.groupDiscount.eligible
+                ? pricing.originalTotal
+                : undefined,
+              groupDiscountSavings: pricing.groupDiscount.eligible
+                ? pricing.groupDiscount.savings
+                : undefined,
+              groupDiscountCode: pricing.groupDiscount.eligible
+                ? pricing.groupDiscount.code
+                : undefined,
             }),
             attachments,
           });

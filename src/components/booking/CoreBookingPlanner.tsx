@@ -15,6 +15,11 @@ import {
 } from "lucide-react";
 import { getCoreTours, getPriceSuffix, getTourPath, type Tour } from "@/data/tours";
 import {
+  applyGroupDiscount,
+  isGroupDiscountEligibleTour,
+  GROUP_DISCOUNT_MIN_GUESTS,
+} from "@/lib/group-discount";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -425,6 +430,42 @@ export default function CoreBookingPlanner({
                 </span>
               </div>
             </div>
+
+            {(() => {
+              if (!isGroupDiscountEligibleTour(selectedTour.slug)) return null;
+              const perPerson =
+                selectedPackage?.price ?? selectedTour.priceEur ?? 0;
+              const subtotal = perPerson * guests;
+              const result = applyGroupDiscount(
+                subtotal,
+                selectedTour.slug,
+                guests,
+              );
+              if (result.eligible && result.savings > 0) {
+                return (
+                  <div className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+                    <div className="flex items-center justify-between gap-2 font-semibold">
+                      <span>Group discount applied</span>
+                      <span>−€{result.savings}</span>
+                    </div>
+                    <div className="mt-1 flex items-center justify-between text-xs text-emerald-800">
+                      <span>
+                        €{subtotal} → <strong>€{result.discountedTotal}</strong>{" "}
+                        for {guests} guests
+                      </span>
+                      <span className="opacity-75">auto-applied</span>
+                    </div>
+                  </div>
+                );
+              }
+              const needed = GROUP_DISCOUNT_MIN_GUESTS - guests;
+              return (
+                <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs font-medium text-amber-900">
+                  Add {needed} more {needed === 1 ? "guest" : "guests"} to save
+                  10% — sunset &amp; dinner cruises only.
+                </div>
+              );
+            })()}
 
             <button
               type="button"
