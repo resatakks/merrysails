@@ -397,13 +397,6 @@ export default async function LocaleYachtCharterPage({
     image: yachtTour.image,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "İstanbul" },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: yachtTour.rating,
-      reviewCount: yachtTour.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: Math.min(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),

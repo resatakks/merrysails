@@ -512,6 +512,27 @@ export default async function LocaleDinnerCruisePage({
     image: dinnerTour.image,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "Istanbul" },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: Math.min(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
+      highPrice: Math.max(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
+      priceCurrency: "EUR",
+      offerCount: dinnerTour.packages?.length ?? 1,
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  // Separate Product schema to surface AggregateRating as Google Review snippet
+  // (Service/TouristTrip parent type is not supported by Google for Review snippet rich result)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: t.h1,
+    description: dinnerTour.description,
+    image: dinnerTour.image,
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-istanbul-dinner-cruise-${locale}`,
+    category: "Bosphorus Dinner Cruise",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: dinnerTour.rating,
@@ -521,11 +542,12 @@ export default async function LocaleDinnerCruisePage({
     },
     offers: {
       "@type": "AggregateOffer",
+      priceCurrency: "EUR",
       lowPrice: Math.min(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
       highPrice: Math.max(...(dinnerTour.packages?.map((p) => p.price) ?? [dinnerTour.priceEur])),
-      priceCurrency: "EUR",
       offerCount: dinnerTour.packages?.length ?? 1,
       availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
     },
   };
 
@@ -553,6 +575,7 @@ export default async function LocaleDinnerCruisePage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

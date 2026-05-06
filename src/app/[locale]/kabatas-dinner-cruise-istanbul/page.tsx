@@ -756,13 +756,6 @@ export default async function KabatasDinnerCruiseLocalePage({
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "Istanbul" },
     touristType: "Cultural Tourism",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: 55,

@@ -770,13 +770,6 @@ export default async function LocaleDinnerCruisePickupSultanahmetTaksimPage({
     ],
     serviceType: "Bosphorus Dinner Cruise Pickup — Sultanahmet & Taksim",
     touristType: "Cultural Tourism",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: 55,

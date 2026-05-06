@@ -445,13 +445,6 @@ export default async function LocaleProposalYachtRentalPage({
     areaServed: { "@type": "City", name: "Istanbul" },
     serviceType: "Proposal Yacht Rental",
     url: canonicalUrl,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 
   return (

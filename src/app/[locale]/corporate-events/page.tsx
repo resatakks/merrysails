@@ -377,13 +377,6 @@ export default async function LocaleCorporateEventsPage({
     url: canonicalUrl,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "İstanbul" },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: t.formatsHeading,

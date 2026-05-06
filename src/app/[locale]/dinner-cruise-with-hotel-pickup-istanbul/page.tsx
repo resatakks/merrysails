@@ -843,13 +843,6 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
     areaServed: { "@type": "City", name: "İstanbul" },
     serviceType: "Bosphorus Dinner Cruise with Hotel Pickup",
     touristType: "Cultural Tourism",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: 55,

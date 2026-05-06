@@ -257,13 +257,6 @@ export default async function SunsetCruiseTicketsLocalePage({
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "City", name: "Istanbul" },
     serviceType: "Sunset Cruise",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 
   const faqSchema = {
