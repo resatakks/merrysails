@@ -119,6 +119,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
       { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+      // TODO: Add when domain live: { label: "GoldenSunsetTour — Cruise", href: "https://www.goldensunsettour.com" },
     ],
   },
   tr: {
