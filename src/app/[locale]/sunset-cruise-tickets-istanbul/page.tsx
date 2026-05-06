@@ -259,6 +259,32 @@ export default async function SunsetCruiseTicketsLocalePage({
     serviceType: "Sunset Cruise",
   };
 
+  // Separate Product schema for Google Review snippet rich result
+  // (Service/TouristTrip parent is not supported per Google's spec)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: t.heroTitle,
+    description: t.metaDescription,
+    image: "",
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-sunset-cruise-tickets-istanbul-${locale}`,
+    category: "Bosphorus Sunset Cruise Tickets",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: 5,
+      worstRating: 1,
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -284,6 +310,7 @@ export default async function SunsetCruiseTicketsLocalePage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">

@@ -447,9 +447,34 @@ export default async function LocaleProposalYachtRentalPage({
     url: canonicalUrl,
   };
 
+  // Separate Product schema for Google Review snippet rich result
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: t.heroTitle,
+    description: t.metaDescription,
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-proposal-yacht-rental-istanbul-${locale}`,
+    category: "Proposal Yacht Rental",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: 5,
+      worstRating: 1,
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 

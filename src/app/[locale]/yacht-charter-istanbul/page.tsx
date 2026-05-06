@@ -407,6 +407,35 @@ export default async function LocaleYachtCharterPage({
     },
   };
 
+  // Separate Product schema for Google Review snippet rich result
+  // (Service/TouristTrip parent is not supported per Google's spec)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: t.title,
+    description: t.description,
+    image: yachtTour.image,
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-yacht-charter-istanbul-${locale}`,
+    category: "Private Yacht Charter Istanbul",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: yachtTour.rating,
+      reviewCount: yachtTour.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "EUR",
+      lowPrice: Math.min(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),
+      highPrice: Math.max(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),
+      offerCount: yachtTour.packages?.length ?? 1,
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -446,6 +475,10 @@ export default async function LocaleYachtCharterPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+/>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

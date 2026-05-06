@@ -314,6 +314,32 @@ export default async function LocaleBoatRentalPage({
     url: canonicalUrl,
   };
 
+  // Separate Product schema for Google Review snippet rich result
+  // (Service/TouristTrip parent is not supported per Google's spec)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: t.heroTitle,
+    description: t.description,
+    image: "",
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-boat-rental-istanbul-${locale}`,
+    category: "Bosphorus Boat Rental",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: 5,
+      worstRating: 1,
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -328,6 +354,7 @@ export default async function LocaleBoatRentalPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">

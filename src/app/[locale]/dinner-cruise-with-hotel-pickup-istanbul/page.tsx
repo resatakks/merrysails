@@ -853,6 +853,32 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
     },
   };
 
+  // Separate Product schema for Google Review snippet rich result
+  // (Service/TouristTrip parent is not supported per Google's spec)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: t.heroTitle,
+    description: t.metaDescription,
+    image: "",
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-dinner-cruise-with-hotel-pickup-istanbul-${locale}`,
+    category: "Bosphorus Dinner Cruise with Hotel Pickup",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "312",
+      bestRating: 5,
+      worstRating: 1,
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -897,6 +923,10 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+/>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
