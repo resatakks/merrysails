@@ -380,7 +380,7 @@ export default function BoatRentalIstanbulPage() {
                 rel="noopener noreferrer"
                 className="font-semibold text-[var(--brand-primary)] hover:underline"
               >
-                +90 537 040 68 22
+                +90 544 898 98 12
               </a>
               .
             </p>

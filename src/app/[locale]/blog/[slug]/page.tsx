@@ -288,7 +288,7 @@ export default async function LocaleBlogPostPage({
                           {ui.ctaButton} <ArrowRight className="w-4 h-4" />
                         </Link>
                         <Link
-                          href="https://wa.me/905370406822"
+                          href="https://wa.me/905448989812"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white font-semibold py-2.5 px-6 rounded-full text-sm hover:bg-white/20 transition-all justify-center"
@@ -353,7 +353,7 @@ export default async function LocaleBlogPostPage({
                 {ui.ctaButton} <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white font-semibold py-3 px-8 rounded-full text-sm hover:bg-white/20 transition-all justify-center"

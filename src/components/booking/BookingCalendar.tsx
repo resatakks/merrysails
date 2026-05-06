@@ -618,7 +618,7 @@ export default function BookingCalendar({
 
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/905370406822?text=Hi, I'd like to book ${tourName} on ${format(
+                href={`https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
                   selectedDate,
                   "dd MMM yyyy"
                 )} for ${totalGuests} guests.`}
@@ -626,7 +626,7 @@ export default function BookingCalendar({
                 rel="noopener noreferrer"
                 onClick={(event) =>
                   handleTrackedContactNavigation(event, {
-                    href: `https://wa.me/905370406822?text=Hi, I'd like to book ${tourName} on ${format(
+                    href: `https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
                       selectedDate,
                       "dd MMM yyyy"
                     )} for ${totalGuests} guests.`,

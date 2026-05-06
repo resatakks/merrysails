@@ -202,7 +202,7 @@ export default function PrivateBosphorusDinnerCruisePage() {
                 Plan private dinner
               </Link>
               <TrackedContactLink
-                href="https://wa.me/905370406822"
+                href="https://wa.me/905448989812"
                 kind="whatsapp"
                 label="private_dinner_page_whatsapp_hero"
                 location="private_dinner_page"
@@ -302,7 +302,7 @@ export default function PrivateBosphorusDinnerCruisePage() {
               Request prices
             </Link>
             <TrackedContactLink
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               kind="whatsapp"
               label="private_dinner_page_whatsapp_footer"
               location="private_dinner_page"

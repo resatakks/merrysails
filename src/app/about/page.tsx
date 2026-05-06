@@ -42,7 +42,7 @@ const aboutSchema = {
     name: SITE_NAME,
     alternateName: COMPANY_NAME,
     url: "https://merrysails.com",
-    telephone: "+905370406822",
+    telephone: "+905448989812",
     email: "info@merrysails.com",
     image: "https://merrysails.com/og-image.jpg",
     priceRange: "€€",

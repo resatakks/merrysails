@@ -23,8 +23,8 @@ Found on core landing pages:
 
 - GA4 ID: `G-9B3Q7FM7X8`
 - Clarity ID: `wfsykdd4gb`
-- Phone: `tel:+905370406822`
-- WhatsApp: `https://wa.me/905370406822`
+- Phone: `tel:+905448989812`
+- WhatsApp: `https://wa.me/905448989812`
 
 Clarity custom events are now mirrored from the central analytics layer:
 

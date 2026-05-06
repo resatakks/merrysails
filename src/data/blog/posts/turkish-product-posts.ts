@@ -149,7 +149,7 @@ export const turkishProductPosts: BlogPost[] = [
           "TÜRSAB lisansını doğrulayın: merrysails.com üzerinden doğrudan rezervasyon yaparak lisanssız aracılardan kaçının.",
         ],
         proTip:
-          "WhatsApp üzerinden (+90 537 040 68 22) rezervasyon yaparak mevcut promosyonları ve grup indirimlerini doğrudan sorun. Çevrimiçi fiyatlar sabit olsa da telefon/mesaj üzerinden özel fırsatlar zaman zaman sunulmaktadır.",
+          "WhatsApp üzerinden (+90 544 898 98 12) rezervasyon yaparak mevcut promosyonları ve grup indirimlerini doğrudan sorun. Çevrimiçi fiyatlar sabit olsa da telefon/mesaj üzerinden özel fırsatlar zaman zaman sunulmaktadır.",
       },
     ],
     faqs: [
@@ -250,7 +250,7 @@ export const turkishProductPosts: BlogPost[] = [
           "2. Tekne paketini seçin: İki kişinin bütçesine ve hangi ekstraları istediğinize (fotoğrafçı, yemek, dekor) göre karar verin.",
           "3. Sürprizi planlayın: Partnerinizin 'normal bir Boğaz turu' sandığı sürpriz teklifler, organizasyonumuza dahil edilebilir.",
           "4. Dekorasyon tercihlerinizi bildirin: Gül yaprakları, mum düzeni, kişisel fotoğraf kolajı — önceden belirtilen detaylar tekneye yüklenir.",
-          "5. Özel isteklerinizi iletişime geçin: Özel şarkı, müzik listesi, ekstra menü — hepsini WhatsApp (+90 537 040 68 22) üzerinden koordine edebilirsiniz.",
+          "5. Özel isteklerinizi iletişime geçin: Özel şarkı, müzik listesi, ekstra menü — hepsini WhatsApp (+90 544 898 98 12) üzerinden koordine edebilirsiniz.",
           "6. Yüzük planını gizli tutun: Ekibimiz, teklif zamanlamasını bilir ve doğru anda öne çekilir — böylece an spontane görünürken aslında mükemmel planlanmıştır.",
         ],
       },
@@ -480,7 +480,7 @@ export const turkishProductPosts: BlogPost[] = [
         callout: {
           type: "warning",
           text:
-            "Dikkat: İskelede 'son dakika tur' teklif eden kişilerden kaçının. Bu teklifler çoğunlukla sigorta ve lisans belgesi bulunmayan tekleleri kapsar. merrysails.com üzerinden veya WhatsApp (+90 537 040 68 22) aracılığıyla doğrudan rezervasyon yapın.",
+            "Dikkat: İskelede 'son dakika tur' teklif eden kişilerden kaçının. Bu teklifler çoğunlukla sigorta ve lisans belgesi bulunmayan tekleleri kapsar. merrysails.com üzerinden veya WhatsApp (+90 544 898 98 12) aracılığıyla doğrudan rezervasyon yapın.",
         },
       },
     ],
@@ -611,7 +611,7 @@ export const turkishProductPosts: BlogPost[] = [
         callout: {
           type: "info",
           text:
-            "Diyet gereksinimleri: Vejetaryen, vegan, glutensiz veya helal menü seçeneği için rezervasyon sırasında WhatsApp (+90 537 040 68 22) üzerinden bilgi vermeniz yeterlidir. Ekip, özel menüyü önceden hazırlar.",
+            "Diyet gereksinimleri: Vejetaryen, vegan, glutensiz veya helal menü seçeneği için rezervasyon sırasında WhatsApp (+90 544 898 98 12) üzerinden bilgi vermeniz yeterlidir. Ekip, özel menüyü önceden hazırlar.",
         },
       },
       {
@@ -638,7 +638,7 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Rezervasyon ve İpuçları",
         content:
-          "En iyi akşam yemeği deneyimi için birkaç pratik öneri: Yaz sezonunda (Mayıs–Eylül) tekneler çoğunlukla dolar; bu dönemde en az 3–5 gün önceden rezervasyon yapmanızı öneririz. Kasım–Mart arası kış sezonunda son dakika rezervasyon daha kolaydır. Rezervasyon için [İstanbul Akşam Yemeği Turu](/istanbul-dinner-cruise) sayfamızı ziyaret edin ya da WhatsApp (+90 537 040 68 22) üzerinden direkt iletişime geçin. Yemeksiz gün batımı turu için [Boğaz Gün Batımı Turu](/cruises/bosphorus-sunset-cruise) seçeneğine bakın.",
+          "En iyi akşam yemeği deneyimi için birkaç pratik öneri: Yaz sezonunda (Mayıs–Eylül) tekneler çoğunlukla dolar; bu dönemde en az 3–5 gün önceden rezervasyon yapmanızı öneririz. Kasım–Mart arası kış sezonunda son dakika rezervasyon daha kolaydır. Rezervasyon için [İstanbul Akşam Yemeği Turu](/istanbul-dinner-cruise) sayfamızı ziyaret edin ya da WhatsApp (+90 544 898 98 12) üzerinden direkt iletişime geçin. Yemeksiz gün batımı turu için [Boğaz Gün Batımı Turu](/cruises/bosphorus-sunset-cruise) seçeneğine bakın.",
         proTip:
           "En iyi masa konumu için: Gold Soft Drinks veya Gold Unlimited paketini seçin ve rezervasyon sırasında 'sahne önü masa' talebinizi belirtin. Erken gelen misafirler (~20:15 iskelede) genellikle tercih ettikleri konumu seçebilir.",
       },

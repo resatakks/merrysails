@@ -135,7 +135,7 @@ const aggregateRatingSchema = {
   "@id": "https://merrysails.com/#organization",
   name: "MerrySails Istanbul",
   url: "https://merrysails.com",
-  telephone: "+905370406822",
+  telephone: "+905448989812",
   openingHours: "Mo-Su 09:00-22:00",
   priceRange: "€€",
   address: {

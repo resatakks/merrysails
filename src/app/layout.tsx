@@ -135,7 +135,7 @@ const organizationSchema = {
     latitude: 41.0082,
     longitude: 28.9784,
   },
-  telephone: "+905370406822",
+  telephone: "+905448989812",
   email: "info@merrysails.com",
   priceRange: "€€",
   sameAs: [

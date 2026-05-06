@@ -357,7 +357,7 @@ export default function Footer() {
             </div>
             <div className="space-y-2.5">
               <TrackedContactLink
-                href="tel:+905370406822"
+                href="tel:+905448989812"
                 kind="phone"
                 label={PHONE_DISPLAY}
                 location="footer"

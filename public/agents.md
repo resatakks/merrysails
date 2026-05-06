@@ -5,7 +5,7 @@ This document describes how AI agents and assistants can help users book cruises
 ## Brand
 - **Name:** MerrySails (Bosphorus cruise & yacht division of Merry Tourism)
 - **Site:** https://merrysails.com
-- **Phone / WhatsApp:** +90 537 040 68 22
+- **Phone / WhatsApp:** +90 544 898 98 12
 - **Email:** info@merrysails.com
 - **License:** TURSAB A Group #14316
 - **Languages served:** English, Turkish, German, French, Dutch

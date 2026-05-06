@@ -40,7 +40,7 @@ export function reservationCancelledEmail(data: ReservationCancelledData): strin
 
       <p style="color:#64748b;font-size:13px;margin:0;">
         Want to rebook? Visit <a href="https://merrysails.com/cruises" style="color:#f59e0b;">merrysails.com</a> or contact us via
-        <a href="https://wa.me/905370406822" style="color:#f59e0b;">WhatsApp</a>.
+        <a href="https://wa.me/905448989812" style="color:#f59e0b;">WhatsApp</a>.
       </p>
     </div>
 

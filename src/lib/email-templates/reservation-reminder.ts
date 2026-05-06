@@ -168,7 +168,7 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
       </div>
 
       <p style="color:#64748b;font-size:13px;margin:0;line-height:1.7;">
-        Need to reach us quickly? WhatsApp: <a href="https://wa.me/905370406822" style="color:#f59e0b;font-weight:700;">+90 537 040 68 22</a>
+        Need to reach us quickly? WhatsApp: <a href="https://wa.me/905448989812" style="color:#f59e0b;font-weight:700;">+90 544 898 98 12</a>
       </p>
     </div>
 

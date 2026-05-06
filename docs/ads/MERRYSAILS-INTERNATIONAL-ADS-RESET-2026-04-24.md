@@ -483,7 +483,7 @@ Dinner can use pickup/support claims because the page already states hotel picku
 
 Use the main MerrySails number:
 
-- `+90 537 040 68 22`
+- `+90 544 898 98 12`
 
 Schedule the call asset only when sales follow-up is realistic:
 

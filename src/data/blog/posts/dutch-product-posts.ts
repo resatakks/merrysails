@@ -508,7 +508,7 @@ export const dutchProductPosts: BlogPost[] = [
         content:
           "Een jacht charter boeken bij MerrySails is eenvoudig. Dit is het gebruikelijke verloop:",
         list: [
-          "1. Aanvraag sturen: via merrysails.com of WhatsApp +90 537 040 68 22 — datum, aantal personen en gewenst pakket doorgeven.",
+          "1. Aanvraag sturen: via merrysails.com of WhatsApp +90 544 898 98 12 — datum, aantal personen en gewenst pakket doorgeven.",
           "2. Offerte ontvangen: binnen 2–4 uur ontvangt u een gedetailleerd prijsoverzicht.",
           "3. Aanbetaling: 30% aanbetaling ter bevestiging — veilig via creditcard of bankoverschrijving.",
           "4. Bevestiging: schriftelijke boekingsbevestiging met alle details.",
@@ -531,7 +531,7 @@ export const dutchProductPosts: BlogPost[] = [
         ],
         callout: {
           type: "warning",
-          text: "Waarschuwing: vermijd aanbieders die aan de kade last-minute tochten aanbieden. Deze boten beschikken doorgaans niet over een geldige licentie of scheepsverzekering. Boek uitsluitend via merrysails.com of WhatsApp +90 537 040 68 22.",
+          text: "Waarschuwing: vermijd aanbieders die aan de kade last-minute tochten aanbieden. Deze boten beschikken doorgaans niet over een geldige licentie of scheepsverzekering. Boek uitsluitend via merrysails.com of WhatsApp +90 544 898 98 12.",
         },
         expertQuote: {
           text: "Nederlanders en Belgen die bij ons boeken, stellen steevast dezelfde vraag: hoe weet ik dat het veilig is? Het antwoord is simpel: controleer de TÜRSAB A-licentie. Na 25 jaar op de Bosporus weet ik dat veiligheid en kwaliteit onlosmakelijk met die licentie verbonden zijn.",

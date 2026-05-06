@@ -1,10 +1,10 @@
 export const SITE_URL = "https://merrysails.com";
 export const SITE_NAME = "MerrySails";
 export const COMPANY_NAME = "Merry Tourism";
-export const PHONE = "+905370406822";
-export const PHONE_DISPLAY = "+90 537 040 68 22";
+export const PHONE = "+905448989812";
+export const PHONE_DISPLAY = "+90 544 898 98 12";
 export const EMAIL = "info@merrysails.com";
-export const WHATSAPP_URL = "https://wa.me/905370406822";
+export const WHATSAPP_URL = "https://wa.me/905448989812";
 export const ADDRESS = "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih, Istanbul, Turkey";
 export const MAX_BOOKING_GUESTS = 25;
 export const TURSAB_LICENSE_NUMBER = "14316";

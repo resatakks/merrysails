@@ -354,7 +354,7 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         q: "Comment organiser la surprise sans que ma partenaire le sache ?",
-        a: "Contactez MerrySails directement via WhatsApp +90 537 040 68 22. Nous gérons la réservation, la décoration et le photographe de manière totalement confidentielle. Le jour J, l'excuse « je t'emmène voir Istanbul depuis le Bosphore » fonctionne parfaitement. Tout est prêt à votre arrivée.",
+        a: "Contactez MerrySails directement via WhatsApp +90 544 898 98 12. Nous gérons la réservation, la décoration et le photographe de manière totalement confidentielle. Le jour J, l'excuse « je t'emmène voir Istanbul depuis le Bosphore » fonctionne parfaitement. Tout est prêt à votre arrivée.",
       },
       {
         q: "Vaut-il mieux un yacht privatif ou une croisière partagée pour une demande ?",
@@ -510,7 +510,7 @@ export const frenchProductPosts: BlogPost[] = [
         content:
           "Réserver un yacht privatif à Istanbul avec MerrySails est simple et transparent :",
         list: [
-          "1. Demande de devis : via merrysails.com ou WhatsApp +90 537 040 68 22 — précisez date, nombre de personnes, durée souhaitée.",
+          "1. Demande de devis : via merrysails.com ou WhatsApp +90 544 898 98 12 — précisez date, nombre de personnes, durée souhaitée.",
           "2. Confirmation du devis : réponse sous 2h en haute saison, sous 24h hors saison.",
           "3. Réservation : acompte de 30 % par virement ou carte bancaire pour bloquer la date.",
           "4. Confirmation écrite : vous recevez confirmation, adresse exacte du ponton et instructions d'embarquement.",

@@ -113,7 +113,7 @@ const COMPARE_FAQ = [
   },
   {
     q: "Can I bring children on a Bosphorus cruise?",
-    a: "Yes. All cruises welcome children. Children under 6 are free on shared cruises. Children 6–12 typically receive 30–50% discount — contact via WhatsApp +90 537 040 68 22 for child rates.",
+    a: "Yes. All cruises welcome children. Children under 6 are free on shared cruises. Children 6–12 typically receive 30–50% discount — contact via WhatsApp +90 544 898 98 12 for child rates.",
   },
   {
     q: "Which cruise is best for a marriage proposal?",
@@ -487,12 +487,12 @@ export default function CompareCruisesPage() {
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row">
             <a
-              href="https://wa.me/905370406822"
+              href="https://wa.me/905448989812"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-semibold text-white shadow-md transition hover:bg-[#1faa54]"
             >
-              WhatsApp +90 537 040 68 22
+              WhatsApp +90 544 898 98 12
             </a>
             <Link
               href="/contact"

@@ -29,9 +29,9 @@ type LocaleContent = {
   viewInEnglish: string;
 };
 
-const PHONE = "+90 537 040 68 22";
-const PHONE_HREF = "+905370406822";
-const WHATSAPP_URL = "https://wa.me/905370406822";
+const PHONE = "+90 544 898 98 12";
+const PHONE_HREF = "+905448989812";
+const WHATSAPP_URL = "https://wa.me/905448989812";
 const EMAIL = "info@merrysails.com";
 const ADDRESS = "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, Fatih, Istanbul";
 
@@ -39,7 +39,7 @@ const CONTENT: Record<string, LocaleContent> = {
   tr: {
     title: "İletişim — MerrySails | Telefon, WhatsApp ve E-posta",
     description:
-      "Boğaz turu rezervasyonu için MerrySails ile iletişime geçin. +90 537 040 68 22'yi arayın, WhatsApp yazın veya info@merrysails.com'a e-posta gönderin. Her gün 09:00–22:00 açık.",
+      "Boğaz turu rezervasyonu için MerrySails ile iletişime geçin. +90 544 898 98 12'yi arayın, WhatsApp yazın veya info@merrysails.com'a e-posta gönderin. Her gün 09:00–22:00 açık.",
     canonicalPath: "/tr/contact",
     pageTitle: "İletişim — Boğaz Turunuzu Rezerve Edin",
     pageDescription:
@@ -63,7 +63,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     title: "Kontakt — MerrySails | Telefon, WhatsApp und E-Mail",
     description:
-      "Kontaktieren Sie MerrySails für Bosporus-Kreuzfahrt-Buchungen. Rufen Sie +90 537 040 68 22 an, schreiben Sie per WhatsApp oder E-Mail an info@merrysails.com. Täglich 09:00–22:00 geöffnet.",
+      "Kontaktieren Sie MerrySails für Bosporus-Kreuzfahrt-Buchungen. Rufen Sie +90 544 898 98 12 an, schreiben Sie per WhatsApp oder E-Mail an info@merrysails.com. Täglich 09:00–22:00 geöffnet.",
     canonicalPath: "/de/contact",
     pageTitle: "Kontakt — Buchen Sie Ihre Bosporus-Kreuzfahrt",
     pageDescription:
@@ -87,7 +87,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     title: "Contact — MerrySails | Téléphone, WhatsApp et E-mail",
     description:
-      "Contactez MerrySails pour réserver une croisière Bosphore. Appelez le +90 537 040 68 22, écrivez sur WhatsApp ou envoyez un e-mail à info@merrysails.com. Ouvert tous les jours 09h00–22h00.",
+      "Contactez MerrySails pour réserver une croisière Bosphore. Appelez le +90 544 898 98 12, écrivez sur WhatsApp ou envoyez un e-mail à info@merrysails.com. Ouvert tous les jours 09h00–22h00.",
     canonicalPath: "/fr/contact",
     pageTitle: "Contact — Réservez votre croisière Bosphore",
     pageDescription:
@@ -111,7 +111,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     title: "Contact — MerrySails | Telefoon, WhatsApp en E-mail",
     description:
-      "Neem contact op met MerrySails voor uw Bosporus cruise boeking. Bel +90 537 040 68 22, stuur WhatsApp of e-mail naar info@merrysails.com. Dagelijks geopend 09:00–22:00.",
+      "Neem contact op met MerrySails voor uw Bosporus cruise boeking. Bel +90 544 898 98 12, stuur WhatsApp of e-mail naar info@merrysails.com. Dagelijks geopend 09:00–22:00.",
     canonicalPath: "/nl/contact",
     pageTitle: "Contact — Boek uw Bosporus cruise",
     pageDescription:

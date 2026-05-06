@@ -376,10 +376,10 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
 
       <div style="text-align:center;padding-top:18px;border-top:1px solid #e2e8f0;">
         <p style="color:#64748b;font-size:14px;margin:0 0 14px;">Need help? We are here for you.</p>
-        <a href="https://wa.me/905370406822" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
+        <a href="https://wa.me/905448989812" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
           WhatsApp
         </a>
-        <a href="tel:+905370406822" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
+        <a href="tel:+905448989812" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
           Call Us
         </a>
         <a href="mailto:info@merrysails.com" style="display:inline-block;background:#6366f1;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">

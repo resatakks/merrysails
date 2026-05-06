@@ -237,7 +237,7 @@ export default async function LocaleAboutPage({
       name: "MerrySails",
       alternateName: "Merry Tourism",
       url: "https://merrysails.com",
-      telephone: "+905370406822",
+      telephone: "+905448989812",
       email: "info@merrysails.com",
       image: "https://merrysails.com/og-image.jpg",
       priceRange: "€€",

@@ -13,7 +13,7 @@ const LIVE = process.argv.includes("--live");
 const INCLUDE_MESSAGE_ASSET = process.argv.includes("--include-message-asset");
 
 const PHONE_COUNTRY = "TR";
-const PHONE_NUMBER = "5370406822";
+const PHONE_NUMBER = "5448989812";
 
 const DAILY_BUDGETS_TL = {
   sunset: "400",

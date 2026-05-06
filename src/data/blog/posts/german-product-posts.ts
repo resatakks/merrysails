@@ -338,7 +338,7 @@ export const germanProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Wie plane ich einen Heiratsantrag auf dem Bosporus in Istanbul?",
-        a: "Kontaktieren Sie MerrySails mindestens 4–6 Wochen im Voraus über merrysails.com oder WhatsApp +90 537 040 68 22. Teilen Sie uns Datum, gewünschtes Paket und Ihre Vorstellungen für die Dekoration mit. Alles weitere organisieren wir diskret für Sie.",
+        a: "Kontaktieren Sie MerrySails mindestens 4–6 Wochen im Voraus über merrysails.com oder WhatsApp +90 544 898 98 12. Teilen Sie uns Datum, gewünschtes Paket und Ihre Vorstellungen für die Dekoration mit. Alles weitere organisieren wir diskret für Sie.",
       },
       {
         q: "Was kostet ein Heiratsantrag auf einer Yacht in Istanbul?",
@@ -499,7 +499,7 @@ export const germanProductPosts: BlogPost[] = [
         content:
           "Die Buchung einer Yacht-Charter bei MerrySails ist unkompliziert. Hier der typische Ablauf:",
         list: [
-          "1. Anfrage senden: Per merrysails.com oder WhatsApp +90 537 040 68 22 Datum, Personenzahl und Wunschpaket mitteilen.",
+          "1. Anfrage senden: Per merrysails.com oder WhatsApp +90 544 898 98 12 Datum, Personenzahl und Wunschpaket mitteilen.",
           "2. Angebot erhalten: Innerhalb von 2–4 Stunden erhalten Sie eine detaillierte Preisübersicht.",
           "3. Anzahlung: 30 % Anzahlung zur Reservierungsbestätigung — sicher per Kreditkarte oder Banküberweisung.",
           "4. Bestätigung: Sie erhalten eine schriftliche Buchungsbestätigung mit allen Details.",
@@ -522,7 +522,7 @@ export const germanProductPosts: BlogPost[] = [
         ],
         callout: {
           type: "warning",
-          text: "Warnung: Meiden Sie Anbieter, die am Kai Last-Minute-Touren anbieten. Diese Boote verfügen häufig weder über gültige Lizenzen noch über Seeversicherung. Buchen Sie ausschließlich über merrysails.com oder WhatsApp +90 537 040 68 22.",
+          text: "Warnung: Meiden Sie Anbieter, die am Kai Last-Minute-Touren anbieten. Diese Boote verfügen häufig weder über gültige Lizenzen noch über Seeversicherung. Buchen Sie ausschließlich über merrysails.com oder WhatsApp +90 544 898 98 12.",
         },
       },
     ],

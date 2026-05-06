@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How do I book a Bosphorus boat tour?",
-    a: "You can send a reservation request through our website, via WhatsApp (+90 537 040 68 22), or by phone. We create a reservation ID and send the booking details by email.",
+    a: "You can send a reservation request through our website, via WhatsApp (+90 544 898 98 12), or by phone. We create a reservation ID and send the booking details by email.",
   },
   {
     q: "Is there a free cancellation policy?",

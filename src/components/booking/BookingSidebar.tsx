@@ -361,10 +361,10 @@ export default function BookingSidebar({
               Live Support on WhatsApp
             </a>
             <a
-              href="tel:+905370406822"
+              href="tel:+905448989812"
               onClick={(event) =>
                 handleTrackedContactNavigation(event, {
-                  href: "tel:+905370406822",
+                  href: "tel:+905448989812",
                   intent: "during_booking",
                   kind: "phone",
                   label: PHONE_DISPLAY,
@@ -451,10 +451,10 @@ export default function BookingSidebar({
               <div className="safe-area-bottom px-4 py-3">
                 <div className="flex items-center gap-3">
                   <a
-                    href="tel:+905370406822"
+                    href="tel:+905448989812"
                     onClick={(event) =>
                       handleTrackedContactNavigation(event, {
-                        href: "tel:+905370406822",
+                        href: "tel:+905448989812",
                         intent: "during_booking",
                         kind: "phone",
                         label: PHONE_DISPLAY,

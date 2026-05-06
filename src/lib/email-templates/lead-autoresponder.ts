@@ -41,8 +41,8 @@ export function leadAutoresponderEmail(data: LeadAutoresponderData): string {
       </ul>
 
       <div style="text-align:center;margin:18px 0 6px;">
-        <a href="https://wa.me/905370406822" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;margin:0 6px 8px;">Chat on WhatsApp</a>
-        <a href="tel:+905370406822" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;margin:0 6px 8px;">Call +90 537 040 68 22</a>
+        <a href="https://wa.me/905448989812" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;margin:0 6px 8px;">Chat on WhatsApp</a>
+        <a href="tel:+905448989812" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;margin:0 6px 8px;">Call +90 544 898 98 12</a>
       </div>
     </div>
 
