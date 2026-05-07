@@ -478,7 +478,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "What is the best time of day for Bosphorus photography?", a: "Golden hour (1 hour before sunset) produces the most spectacular light — warm, directional, and flattering for palace and mosque facades. The 2-hour sunset cruise (€34) is perfectly timed for this window. Blue hour (15–30 minutes after sunset) creates a stunning cobalt sky with emerging city lights." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise", "bosphorus-night-cruise-guide"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise"],
   },
 {
     slug: "bosphorus-night-cruise-guide",
@@ -596,7 +596,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
     imageAlt: "Istanbul Bosphorus panorama at sunset from cruise boat deck",
     author: "captain-ahmet",
     keywords: ["bosphorus cruise price", "bosphorus cruise cost", "istanbul cruise price 2026", "how much does bosphorus cruise cost", "bosphorus sunset cruise price", "istanbul dinner cruise price", "private bosphorus cruise price", "bosphorus cruise per person", "yacht charter istanbul price", "bosphorus cruise ticket price"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-dinner-cruise-what-to-expect", "istanbul-sunset-cruise-experience"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "private-yacht-charter-istanbul-2026-buyers-guide", "bosphorus-cruise-vs-ferry-istanbul-2026"],
     keyTakeaways: [
       "Shared sunset cruises start at €34 per person, shared dinner cruises range from €30 to €90 across four packages, and private yacht charters begin at €280 for the entire boat.",
       "For groups of four or more, a private yacht often beats a shared dinner cruise on per-person value while delivering complete privacy.",
