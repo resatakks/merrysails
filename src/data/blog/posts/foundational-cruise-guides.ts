@@ -37,7 +37,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Is it safe to take a Bosphorus cruise?", a: "Yes. All vessels are regulated by Turkish maritime authorities and carry required safety equipment. The Bosphorus is a sheltered strait with calm waters. Licensed companies like MerrySails follow strict safety protocols." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "romantic-marriage-proposal"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect"]
+    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "bosphorus-cruise-vs-ferry-istanbul-2026", "istanbul-dinner-cruise-etiquette-2026"]
   },
 {
     slug: "istanbul-sunset-cruise-experience",

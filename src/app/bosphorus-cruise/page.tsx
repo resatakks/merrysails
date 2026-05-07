@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sunset, UtensilsCrossed, Anchor, Compass, MessageCircle, PhoneCall } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } from "@/lib/constants";
@@ -45,7 +46,7 @@ const guideSchema = {
       addressLocality: "Istanbul",
       addressCountry: "TR",
     },
-    telephone: "+90-537-040-68-22",
+    telephone: "+90-544-898-98-12",
   },
   offers: [
     {
@@ -70,6 +71,21 @@ const guideSchema = {
       url: `${SITE_URL}/yacht-charter-istanbul`,
     },
   ],
+  touristType: ["FamilyTourist", "CouplesTourist", "LuxuryTourist"],
+  availableLanguage: ["English", "Turkish", "German", "French"],
+};
+
+// Separate Product schema for Google Review snippet rich result
+// (Service/TouristTrip parent is not supported per Google's spec)
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Bosphorus Cruise Istanbul",
+  description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €34, dinner cruise from €30, and private yacht charter from €280.",
+  image: `${SITE_URL}/og-image.jpg`,
+  brand: { "@type": "Brand", name: "MerrySails" },
+  sku: "merrysails-bosphorus-cruise-en",
+  category: "Bosphorus Cruise Istanbul",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -77,8 +93,15 @@ const guideSchema = {
     bestRating: "5",
     worstRating: "1",
   },
-  touristType: ["FamilyTourist", "CouplesTourist", "LuxuryTourist"],
-  availableLanguage: ["English", "Turkish", "German", "French"],
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "EUR",
+    lowPrice: "30",
+    highPrice: "680",
+    offerCount: 3,
+    availability: "https://schema.org/InStock",
+    seller: { "@id": `${SITE_URL}/#organization` },
+  },
 };
 
 const breadcrumbSchema = {
@@ -249,25 +272,40 @@ export default function BosphorusCruisePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
-        <div className="container-main">
-          <section className="mb-10">
-            <div className="text-center mb-8">
-              <p className="inline-flex rounded-full bg-[var(--brand-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-4">
-                TURSAB-Licensed Operator · Istanbul Since 2001
+      <main className="pb-20 bg-[var(--surface-alt)]">
+        {/* Hero with image — increases mobile engagement, reduces bounce */}
+        <section className="relative h-[40vh] min-h-[280px] md:h-[50vh] md:min-h-[380px] overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&q=80"
+            alt="Bosphorus strait at golden hour with Istanbul skyline — Bosphorus Cruise Istanbul"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+          <div className="absolute inset-0 flex items-end pb-8 md:pb-12 pt-28">
+            <div className="container-main text-white">
+              <p className="inline-flex rounded-full bg-white/20 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-3">
+                TURSAB-Licensed · Istanbul Since 2001
               </p>
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--heading)]">
+              <h1 className="text-3xl md:text-5xl font-bold mb-2 drop-shadow-md">
                 Bosphorus Cruise Istanbul
               </h1>
-              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
-                Book direct with MerrySails — Istanbul&apos;s TURSAB A-Group licensed cruise operator. Sunset cruise from <strong>€34</strong>, dinner cruise from <strong>€30</strong>, private yacht from <strong>€280</strong>. No agency fees, instant confirmation.
+              <p className="text-base md:text-lg drop-shadow-md max-w-2xl">
+                Sunset <strong>€34</strong> · Dinner <strong>€30</strong> · Yacht <strong>€280</strong> · Direct booking, no middleman fees
               </p>
             </div>
+          </div>
+        </section>
 
+        <div className="container-main pt-10">
+          <section className="mb-10">
             {/* Pricing grid — 3 booking cards */}
             <div className="grid gap-4 md:grid-cols-3 mb-8">
               {[
