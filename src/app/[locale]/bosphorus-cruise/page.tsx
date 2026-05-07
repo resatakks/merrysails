@@ -410,12 +410,34 @@ export default async function LocaleBosphorusCruisePage({
       availability: "https://schema.org/InStock",
     })),
     touristType: ["FamilyTourist", "CouplesTourist", "LuxuryTourist"],
+  };
+
+  // Separate Product schema for Google Review snippet rich result
+  // (Service/TouristTrip parent is not supported per Google's spec)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: c.h1,
+    description: c.description,
+    image: SITE_URL + "/og-image.jpg",
+    brand: { "@type": "Brand", name: "MerrySails" },
+    sku: `merrysails-bosphorus-cruise-${locale}`,
+    category: "Bosphorus Cruise Istanbul",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: c.aggregateRating.value,
       reviewCount: c.aggregateRating.count,
       bestRating: "5",
       worstRating: "1",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "EUR",
+      lowPrice: "34",
+      highPrice: "90",
+      offerCount: c.tourOptions.length,
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
     },
   };
 
@@ -441,6 +463,7 @@ export default async function LocaleBosphorusCruisePage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tourProductSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
