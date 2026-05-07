@@ -563,4 +563,181 @@ export const germanProductPosts: BlogPost[] = [
     relatedTours: ["yacht-charter", "bosphorus-cruise", "bosphorus-sunset-cruise"],
     relatedPosts: ["bosporus-kreuzfahrt-preise-istanbul", "heiratsantrag-auf-dem-bosporus-istanbul"],
   },
+
+  {
+    slug: "bosporus-bootstour-istanbul-2026-ratgeber",
+    locale: "de",
+    title: "Bosporus Bootstour Istanbul 2026 — Ehrlicher Ratgeber",
+    metaDescription:
+      "Bosporus Bootstour Istanbul 2026: Sonnenuntergang ab €34, Dinner €30–€90, Privatyacht ab €280. Direktpreise, TURSAB-Lizenz #14316, ehrlicher Vergleich aller Optionen.",
+    excerpt:
+      "Welche Bosporus-Bootstour ist die richtige für Sie? MerrySails — TURSAB A-Gruppe lizenziert seit 2001, über 50.000 Gäste — vergleicht alle drei Hauptoptionen: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und Privatyacht. Mit echten Preisen und ohne Werbeversprechen.",
+    category: "cruise-guide",
+    date: "2026-05-07",
+    readTime: "12 Min. Lesezeit",
+    image:
+      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt:
+      "Bootstour auf dem Bosporus Istanbul bei Sonnenuntergang — osmanische Paläste und die Bosporus-Brücke",
+    keywords: [
+      "Bosporus Bootstour Istanbul",
+      "istanbul bootstour",
+      "bootstour bosporus",
+      "bosporus rundfahrt",
+      "bosporus bootsfahrt",
+      "yacht mieten istanbul",
+      "bosporus tour istanbul 2026",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Die Sonnenuntergangs-Kreuzfahrt (2 Std., €34 ohne Wein / €40 mit Wein) ist die günstigste Einstiegsoption für Einzelreisende und Paare",
+      "Die Dinner-Kreuzfahrt (3,5 Std.) bietet vier Pakete: Silver Soft Drinks €30, Silver Alcoholic €45, Gold Soft Drinks €80, Gold Unlimited Alcohol €90 — alle mit türkischer Live-Unterhaltung",
+      "Privatyacht-Charter (2 Std.) für das gesamte Boot: Essential €280, Premium €380, VIP €680 — ideal für Geburtstage, Anträge und Firmenfeiern",
+      "MerrySails ist [TURSAB A-Gruppe lizenziert (Lizenz #14316)](https://www.tursab.org.tr/en) seit 2001 — buchen Sie niemals bei unlizenziertem Anbieter am Kai",
+    ],
+    sections: [
+      {
+        heading: "Welche Bosporus-Bootstour passt zu Ihnen?",
+        answerCapsule:
+          "Wählen Sie die Sonnenuntergangs-Kreuzfahrt für ein günstiges Panorama-Erlebnis (€34/Person), die Dinner-Kreuzfahrt für Abendstimmung mit Menü (ab €30/Person) oder die Privatyacht für vollständige Privatsphäre (ab €280/Boot).",
+        content:
+          "Der Bosporus ist 31 km lang, trennt Europa und Asien und zählt zu den meistbefahrenen Wasserstraßen der Welt. Für Besucher Istanbuls gibt es grundsätzlich drei Wege, diese Meerenge zu erleben: die öffentliche Fähre, eine geteilte Bootstour oder eine private Charteryacht. Die öffentliche Fähre ist günstig, bietet aber keinen Guide, keine feste Route und keinen Mehrwert gegenüber dem normalen Nahverkehr. Die entscheidende Frage ist nicht \"Bootstour oder nicht\" — sondern welche Art von Bootstour zu Ihrem Reisestil, Ihrer Gruppe und Ihrem Budget passt. Dieser Ratgeber hilft Ihnen bei der Entscheidung. Er basiert auf echten Preisen, realen Abfahrtzeiten und dem Erfahrungsschatz aus über 50.000 Gästen seit 2001.",
+        table: {
+          headers: ["Kriterium", "Sonnenuntergang", "Dinner-Kreuzfahrt", "Privatyacht"],
+          rows: [
+            ["Preis/Person", "€34–40", "€30–90", "€280–680 pro Boot"],
+            ["Dauer", "2 Stunden", "3,5 Stunden", "2 Stunden (erweiterbar)"],
+            ["Gruppentyp", "Einzelreisende, Paare", "Paare, Kleingruppen", "Familien, Feiern"],
+            ["Essen inklusive", "Snacks, Tee, Kaffee", "Vollständiges Menü", "Auf Anfrage (Catering extra)"],
+            ["Privatsphäre", "Geteilt (ca. 25 Gäste)", "Geteilt (großes Schiff)", "Vollständig privat"],
+            ["Empfohlen für", "Panorama, Fotografie", "Besonderer Abend", "Anlass, Feier, Antrag"],
+          ],
+        },
+      },
+      {
+        heading: "Die 3 Hauptoptionen — Sonnenuntergang, Dinner, Privatyacht",
+        answerCapsule:
+          "MerrySails bietet drei klar getrennte Produktlinien für jede Reisesituation. Der Unterschied liegt nicht nur im Preis, sondern im gesamten Erlebnis: Tageszeit, Atmosphäre, Mitreisende und Inklusivleistungen.",
+        content:
+          "Viele Reisende buchen die erste Bootstour, die ihnen bei Google oder auf TripAdvisor begegnet — ohne die Unterschiede zwischen den Angeboten zu kennen. Das führt zu Enttäuschungen: Wer ein romantisches Abendessen erwartet, aber nur eine 2-stündige Panoramafahrt bekommt, hat falsch gewählt. Umgekehrt zahlt mancher mehr als nötig für ein Dinner-Paket, obwohl eine günstige Sonnenuntergangs-Tour denselben Blick auf den Bosporus geboten hätte.\n\nDie drei Produkte von MerrySails sind bewusst so gestaltet, dass sie unterschiedliche Bedürfnisse erfüllen. Nachfolgend finden Sie eine ehrliche Beschreibung jeder Option — mit Preisen, die direkt von der Buchungsseite stammen und nicht von Vermittlern aufgeschlagen wurden. Für eine vollständige Preisübersicht besuchen Sie die [Preisseite](/pricing).",
+        callout: {
+          type: "tip",
+          text: "Goldene Regel: Buchen Sie direkt über merrysails.com oder WhatsApp — Buchungsplattformen wie GetYourGuide oder Viator erheben bis zu 25 % Aufschlag auf denselben Preis.",
+        },
+      },
+      {
+        heading: "Sonnenuntergangs-Kreuzfahrt — €34 oder €40 pro Person",
+        answerCapsule:
+          "Die Sonnenuntergangs-Kreuzfahrt dauert 2 Stunden, startet am Kabataş-Pier und bietet die klassische Bosporus-Route entlang osmanischer Paläste und beider Brücken. Preis: €34 ohne Wein, €40 mit Wein.",
+        content:
+          "Die Sonnenuntergangs-Kreuzfahrt ist das meistgebuchte Produkt bei MerrySails — und das aus gutem Grund. Zwei Stunden auf dem Wasser während der goldenen Stunde, mit einem englischsprachigen Guide, Tee, Kaffee, saisonalem Obst und Snacks inklusive. Für €6 mehr pro Person bekommen Sie auch ein Glas Wein dazu.\n\nAbfahrt ist am Kabataş-Pier auf der europäischen Seite, nahe dem Dolmabahçe-Palast. Das ist der ideale Startpunkt: Sie sehen sofort den ersten Palast, dann die 1973 errichtete erste Bosporus-Brücke, die Çırağan-Residenz und bei längerer Route auch Rumeli Hisarı, die osmanische Festung von 1452. Der Abfahrtszeitpunkt wird saisonal angepasst, damit die goldene Stunde in die Tour fällt — im Sommer spät abends, im Winter früher.\n\nGeeignet für: Erstbesucher Istanbuls, Paare, Fotografen, alle, die das klassische Bosporus-Panorama ohne großes Budget erleben möchten. Nicht geeignet für: Gruppen, die Abendessen mit Unterhaltungsprogramm suchen — dafür ist die Dinner-Kreuzfahrt die richtige Wahl. Weitere Informationen finden Sie auf der [Sonnenuntergangs-Kreuzfahrt-Seite](/de/cruises/bosphorus-sunset-cruise).",
+        table: {
+          headers: ["Detail", "Information"],
+          rows: [
+            ["Abfahrtspunkt", "Kabataş-Pier, europäische Seite"],
+            ["Dauer", "2 Stunden"],
+            ["Preis ohne Wein", "€34 pro Person"],
+            ["Preis mit Wein", "€40 pro Person"],
+            ["Inklusive", "Softdrinks, Tee, Kaffee, Obst, Snacks, englischer Guide"],
+            ["Bewertung", "4,9/5 aus 621 Bewertungen"],
+            ["Gruppentyp", "Geteilte Tour (ca. 25 Gäste)"],
+          ],
+        },
+        expertQuote: {
+          text: "Bosphorus'un en güzel saati gün batımıdır — ama bunu bilen az kişi tam zamanında tekneye biner. Biz her sezon kalkış saatini güneşe göre ayarlıyoruz.",
+          author: "Kapitän Ahmet",
+          title: "MerrySails Chefkapitän, seit 2001 auf dem Bosporus",
+        },
+        proTip:
+          "Auf Deutsch: \"Die schönste Stunde des Bosporus ist der Sonnenuntergang — aber nur wenige steigen genau zur richtigen Zeit ein. Wir passen die Abfahrtzeit jede Saison an den Stand der Sonne an.\"",
+      },
+      {
+        heading: "Dinner-Kreuzfahrt Istanbul — €30 bis €90 pro Person",
+        answerCapsule:
+          "Die Dinner-Kreuzfahrt dauert 3,5 Stunden (Abfahrt 20:30 Uhr) und bietet vier Pakete: Silver Soft Drinks €30, Silver Alcoholic €45, Gold Soft Drinks €80, Gold Unlimited Alcohol €90. Inklusive: türkisches Menü und Live-Unterhaltung.",
+        content:
+          "Die Dinner-Kreuzfahrt ist das Produkt für Reisende, die mehr als nur eine Panoramafahrt wollen: ein vollständiges Abendessen, türkische Folkloreshows mit Bauchtanz und live Musik, und eine 3,5-stündige Fahrt über den Bosporus bei Nacht. Abfahrt ist um 20:30 Uhr vom Kabataş-Pier.\n\nMerrySails bietet vier klar getrennte Pakete an, die sich in Sitzposition, Alkoholinklusivleistungen und Exklusivität unterscheiden. Das Silver-Paket (€30 ohne Alkohol, €45 mit Alkohol) ist die Standardkonfiguration für Paare und kleine Gruppen. Das Gold-Paket (€80 ohne Alkohol, €90 mit Unlimited-Bar) bietet Premium-Sitzplätze und ein erweitertes Speiseprogramm.\n\nTransfer vom Hotel ist auf Anfrage verfügbar. Das Schiff ist größer als bei der Sonnenuntergangs-Tour und hat mehrere Decks — das Gold-Paket berechtigt zu den besten Außenplätzen. Wichtig: Vegetarische und Halal-Optionen sind auf Vorbestellung verfügbar. Alle Details finden Sie auf der [Dinner-Kreuzfahrt-Seite](/de/istanbul-dinner-cruise).",
+        table: {
+          headers: ["Paket", "Preis/Person", "Alkohol inklusive?", "Für wen"],
+          rows: [
+            ["Silver Soft Drinks", "€30", "Nein (Softdrinks)", "Budget-bewusste Reisende"],
+            ["Silver Alcoholic", "€45", "Bier & Wein", "Paare, kleine Gruppen"],
+            ["Gold Soft Drinks", "€80", "Nein (Premium-Softdrinks)", "Komfort ohne Alkohol"],
+            ["Gold Unlimited Alcohol", "€90", "Unbegrenzte Bar", "Besonderer Abend, Feiern"],
+          ],
+        },
+        callout: {
+          type: "price",
+          text: "Preisübersicht Dinner-Kreuzfahrt 2026: Silver €30–45 | Gold €80–90 | Dauer: 3,5 Stunden | Abfahrt: 20:30 Uhr, Kabataş",
+        },
+      },
+      {
+        heading: "Privatyacht-Charter auf dem Bosporus — ab €280 pro Boot",
+        answerCapsule:
+          "Die Privatyacht (2 Stunden) kostet €280 (Essential), €380 (Premium) oder €680 (VIP) für das gesamte Boot. Ideal für Geburtstagsfeiern, Heiratsanträge, Firmenfeiern oder Jubiläen.",
+        content:
+          "Wer vollständige Privatsphäre auf dem Bosporus sucht, bucht eine Privatyacht. Der Preis gilt pro Boot — nicht pro Person. Bei einer Gruppe von 6 Personen und dem Essential-Paket (€280) kostet das nur €47 pro Kopf — weniger als eine Dinner-Kreuzfahrt, dafür komplett privat und mit individueller Route.\n\nMerrySails bietet drei Kategorien an: Essential (kleineres Boot, bis 8 Personen), Premium (komfortable Motorjacht, bis 14 Personen) und VIP (Luxusjacht mit Premium-Ausstattung). Die Route können Sie selbst bestimmen: entlang der europäischen Paläste, bis zur zweiten Bosporus-Brücke, oder eine spezielle Strecke für Fotografie und Fotoshootings.\n\nBesondere Anlässe wie Heiratsanträge, Geburtstagsfeiern oder Firmenfeiern lassen sich auf Anfrage mit Dekoration, Catering und Fotograf ergänzen. Alle Pakete beinhalten Kapitän, Crew, Treibstoff und Teeservice. Mehr dazu auf der [Privatyacht-Seite](/de/yacht-charter-istanbul) und der [Heiratsantrag-Seite](/de/proposal-yacht-rental-istanbul).",
+        table: {
+          headers: ["Paket", "Preis/Boot", "Kapazität", "Empfohlen für"],
+          rows: [
+            ["Essential", "€280 / 2 Std.", "Bis 8 Personen", "Kleine Gruppen, Paare"],
+            ["Premium", "€380 / 2 Std.", "Bis 14 Personen", "Familien, Jubiläen, Anträge"],
+            ["VIP", "€680 / 2 Std.", "Bis 20 Personen", "Firmenfeiern, Luxuserlebnis"],
+          ],
+        },
+        proTip:
+          "Rechnen Sie nach: 8 Personen × €45 (Silver Alcoholic Dinner) = €360. Die Essential-Privatyacht für dieselbe Gruppe kostet nur €280 — privat, flexibel und günstiger pro Kopf.",
+      },
+      {
+        heading: "Ehrliche Preise — Direktbuchung vs. Vermittler",
+        answerCapsule:
+          "Direktbuchung bei MerrySails spart 15–25 % gegenüber Buchungsplattformen. Die Preise auf dieser Seite sind die Nettopreise ohne Aufschlag — TURSAB-Schutz inklusive.",
+        content:
+          "GetYourGuide, Viator und ähnliche Plattformen listen MerrySails-Touren oft zu höheren Preisen als auf merrysails.com — weil diese Plattformen eine Provision von 15–25 % auf den Nettopreis aufschlagen. Sie als Kunde zahlen diesen Aufschlag, ohne dafür einen Mehrwert zu erhalten.\n\nDirekte Buchungen über [merrysails.com/de/bosphorus-cruise](/de/bosphorus-cruise) oder WhatsApp garantieren Ihnen den tatsächlichen Preis ohne Aufschlag. Zudem sind Sie im Streitfall direkt beim Betreiber — nicht über einen Zwischenhändler, der selbst keinen Einfluss auf den Betrieb hat.\n\nEin weiterer Vorteil der Direktbuchung: TURSAB-Schutz. Als lizenzierte Agentur (Lizenz #14316, A-Gruppe seit 2001) haftet MerrySails gegenüber türkischem Tourismusrecht direkt für Qualität, Sicherheit und Vertragserfüllung. Buchungen über nicht lizenzierte Anbieter am Kai bieten keinen solchen Schutz. Die aktuelle Lizenznummer können Sie auf der [TURSAB-Seite](/tursab) überprüfen.",
+        callout: {
+          type: "warning",
+          text: "Vorsicht vor Anbietern am Kai in Eminönü oder Beşiktaş, die Last-Minute-Touren ohne feste Preise anbieten. Manche dieser Boote sind nicht versichert und haben keine gültige TURSAB-Lizenz.",
+        },
+      },
+      {
+        heading: "Buchung bei MerrySails — So geht es Schritt für Schritt",
+        answerCapsule:
+          "Buchen Sie über merrysails.com, per WhatsApp (+90 544 898 98 12) oder per E-Mail. Reservierung wird mit 30 % Anzahlung bestätigt. Restbetrag wird vor Abfahrt vor Ort gezahlt.",
+        content:
+          "Der Buchungsprozess bei MerrySails ist einfach und transparent. Schritt 1: Wählen Sie Ihre Tour auf [merrysails.com/de/bosphorus-cruise](/de/bosphorus-cruise) — Sonnenuntergang, Dinner oder Privatyacht. Schritt 2: Wählen Sie Datum und Paket. Schritt 3: Schließen Sie die Online-Buchung ab oder kontaktieren Sie uns per WhatsApp für Sonderwünsche (Gruppenrabatte, Dekoration, Fotograf).\n\nNach der Buchung erhalten Sie eine Bestätigungs-E-Mail mit dem genauen Treffpunkt-Pin — der Pier wird schriftlich bestätigt, damit Sie direkt zum richtigen Kai navigieren können. 30 % Anzahlung bestätigt die Reservierung; der Rest wird vor Abfahrt bar oder per Karte bezahlt.\n\nStornierung ist bis 72 Stunden vor Abfahrt kostenfrei möglich. Bei wetterbedingten Absagen durch MerrySails erhalten Sie vollständige Rückerstattung oder kostenlose Umbuchung. Für alle Buchungen mit besonderem Anlass (Heiratsantrag, Geburtstag, Firmenfeier) empfehlen wir 2–4 Wochen Vorlaufzeit.",
+        callout: {
+          type: "tip",
+          text: "WhatsApp-Buchung für deutsche Gäste: +90 544 898 98 12 — Anfragen auf Deutsch werden so schnell wie möglich beantwortet. Online-Buchung auf merrysails.com funktioniert 24/7 auf Englisch.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Was ist der Unterschied zwischen einer Bosporus-Bootstour und einer Dinner-Kreuzfahrt?",
+        a: "Die Sonnenuntergangs-Bootstour dauert 2 Stunden, startet tagsüber und kostet €34–40 pro Person — ohne vollständiges Menü, aber mit Snacks und Tee. Die Dinner-Kreuzfahrt dauert 3,5 Stunden, startet abends (20:30 Uhr) und beinhaltet ein vollständiges türkisches Menü, Live-Musik und Folkloreshow. Preis: €30–90 je nach Paket.",
+      },
+      {
+        q: "Wie viel kostet eine Bosporus-Bootstour in Istanbul 2026?",
+        a: "Die Preise variieren je nach Tourentyp: Sonnenuntergangs-Kreuzfahrt €34 (ohne Wein) oder €40 (mit Wein) pro Person. Dinner-Kreuzfahrt €30–90 pro Person, je nach Paket. Privatyacht €280–680 pro Boot für 2 Stunden.",
+      },
+      {
+        q: "Von wo startet die Bosporus-Bootstour in Istanbul?",
+        a: "Die Sonnenuntergangs-Kreuzfahrt startet vom Kabataş-Pier auf der europäischen Seite nahe Dolmabahçe. Die Dinner-Kreuzfahrt startet ebenfalls von Kabataş. Privatyachten legen je nach Bootstyp von Kurucesme Marina oder Kabataş ab. Der genaue Treffpunkt wird nach Buchung schriftlich bestätigt.",
+      },
+      {
+        q: "Kann ich eine Bosporus-Bootstour im Winter buchen?",
+        a: "Ja. MerrySails fährt das ganze Jahr. Im Winter (Dezember–Februar) sind die Boote weniger ausgelastet, die Preise günstiger und die Atmosphäre ruhiger. Der Bosporus ist bei klarem Winterwetter besonders fotogen — weniger Dunst, klare Sicht auf beide Seiten. Nur bei starkem Sturm werden Touren abgesagt.",
+      },
+      {
+        q: "Ist MerrySails TURSAB-lizenziert und warum ist das wichtig?",
+        a: "Ja. MerrySails (Merry Tourism, MERYEM YILDIZ TURIZM SEYAHAT ACENTASI) ist TURSAB A-Gruppe lizenziert seit 2001, Lizenznummer 14316. Das bedeutet: jährliche Inspektion durch das türkische Tourismusministerium, Pflichtversicherung, lizenzierte Kapitäne und rechtlich bindende Vertragspflichten. Beim Buchen über nicht lizenzierte Anbieter haben Gäste im Schadensfall keinerlei Rechtsschutz.",
+      },
+    ],
+    relatedTours: ["bosphorus-cruise", "bosphorus-sunset-cruise", "istanbul-dinner-cruise"],
+    relatedPosts: ["bosporus-kreuzfahrt-preise-istanbul", "yacht-charter-istanbul-ratgeber"],
+    proTip:
+      "Buchen Sie die Sonnenuntergangs-Kreuzfahrt mit Wein (€40) für das beste Preis-Erlebnis-Verhältnis: goldenes Licht, osmanische Paläste, ein Glas Wein — das ist der Bosporus in seiner schönsten Form.",
+    calloutText:
+      "MerrySails ist seit 2001 TURSAB A-Gruppe lizenziert (Lizenz #14316) und hat über 50.000 Gäste auf dem Bosporus begrüßt. Buchen Sie direkt und sparen Sie bis zu 25 % gegenüber Buchungsplattformen.",
+  },
 ];
