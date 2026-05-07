@@ -113,7 +113,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Can I celebrate a birthday or anniversary on the dinner cruise?", a: "Yes! Inform us when booking and we can arrange a cake, special table decoration, and a celebratory announcement. These extras are often complimentary." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "istanbul-bosphorus-lunch-cruise"],
-    relatedPosts: ["istanbul-dinner-cruise-menu-guide", "bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["istanbul-dinner-cruise-etiquette-2026", "bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise"]
   },
 {
     slug: "short-bosphorus-cruise-tour",
@@ -161,7 +161,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Can children join a short daytime Bosphorus plan?", a: "Yes. Compact daytime Bosphorus formats are often the easiest fit for families because they avoid a late return and keep the route focused." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-boat-tour-vs-ferry", "bosphorus-cruise-boarding-points-guide-2026"],
+    relatedPosts: ["bosphorus-cruise-prices-2026", "bosphorus-cruise-vs-ferry-istanbul-2026", "bosphorus-cruise-boarding-points-guide-2026"],
   },
 {
     slug: "istanbul-lunch-cruise-bosphorus",
@@ -305,7 +305,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Should I bring an umbrella?", a: "A compact travel umbrella or rain jacket is wise in autumn and winter. Avoid large umbrellas on deck — they catch wind." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-time-bosphorus-cruise", "istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips"],
   },
 {
     slug: "bosphorus-cruise-departure-points",
@@ -391,7 +391,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "What is the main difference between a boat tour and a public ferry?", a: "Boat tours offer professional commentary, reserved seating, refreshments, and optimized sightseeing routes for €15–65 per person. Public ferries are local transport at €3–5 — authentic but without guides, guaranteed seating, or food service beyond tea." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
-    relatedPosts: ["bosphorus-ferry-vs-cruise-comparison", "bosphorus-cruise-prices-2026", "short-bosphorus-cruise-tour"],
+    relatedPosts: ["bosphorus-cruise-vs-ferry-istanbul-2026", "bosphorus-cruise-prices-2026", "short-bosphorus-cruise-tour"],
   },
 {
     slug: "bosphorus-cruise-safety-tips",
@@ -429,7 +429,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Is a Bosphorus cruise safe with young children?", a: "Yes. The Bosphorus is a sheltered strait with calm water, far gentler than open sea. Children's life jackets are available, indoor seating provides shelter, and licensed companies are experienced hosting families. Children under 6 sail free on MerrySails shared cruises." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise"],
-    relatedPosts: ["istanbul-cruise-booking-tips", "avoid-tourist-traps-istanbul-cruises", "what-to-wear-bosphorus-cruise"],
+    relatedPosts: ["private-yacht-charter-istanbul-2026-buyers-guide", "avoid-tourist-traps-istanbul-cruises", "istanbul-dinner-cruise-etiquette-2026"],
   },
 {
     slug: "istanbul-cruise-photography-spots",

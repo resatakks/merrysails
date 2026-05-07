@@ -560,6 +560,10 @@ export default async function TourDetailPage({
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".faq-section", ".faq-section dt", ".faq-section dd"],
+        },
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,
