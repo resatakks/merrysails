@@ -1,12 +1,20 @@
 /**
- * Group discount: 2+ guests on shared cruises (sunset & dinner) get an
+ * Group discount: 3+ guests on shared cruises (sunset & dinner) get an
  * automatic 10% discount, then rounded down to a "nicer" number.
  *
  * Yacht charter (private) and other private experiences are ineligible.
  *
  * Pure utility — no I/O, safe to import from server actions, client
  * components, email templates, and PDF generators.
+ *
+ * 2026-05-07: DISABLED via GROUP_DISCOUNT_ENABLED flag per user request.
+ * Logic preserved for easy re-enable — flip the flag to `true`.
  */
+
+// Feature flag: when false, isGroupDiscountEligible() always returns false,
+// applyGroupDiscount() returns the original total unchanged, and UI badges/
+// copy that depend on isGroupDiscountEligibleTour() should not render.
+export const GROUP_DISCOUNT_ENABLED = false;
 
 export const GROUP_DISCOUNT_CODE = "SAIL10";
 export const GROUP_DISCOUNT_PCT = 0.1;
@@ -24,6 +32,7 @@ const ELIGIBLE_TOUR_SLUGS = new Set<string>([
 ]);
 
 export function isGroupDiscountEligibleTour(tourSlug: string | null | undefined): boolean {
+  if (!GROUP_DISCOUNT_ENABLED) return false;
   if (!tourSlug) return false;
   return ELIGIBLE_TOUR_SLUGS.has(tourSlug.trim().toLowerCase());
 }
@@ -32,6 +41,7 @@ export function isGroupDiscountEligible(
   tourSlug: string | null | undefined,
   guests: number,
 ): boolean {
+  if (!GROUP_DISCOUNT_ENABLED) return false;
   return (
     isGroupDiscountEligibleTour(tourSlug) &&
     Number.isFinite(guests) &&
@@ -81,6 +91,19 @@ export function applyGroupDiscount(
 ): GroupDiscountResult {
   const safeOriginal =
     Number.isFinite(originalTotal) && originalTotal > 0 ? originalTotal : 0;
+
+  // Feature-flagged off — return original total unchanged.
+  if (!GROUP_DISCOUNT_ENABLED) {
+    return {
+      eligible: false,
+      ineligibilityReason: "ineligible_tour",
+      originalTotal: safeOriginal,
+      discountedTotal: safeOriginal,
+      savings: 0,
+      effectivePct: 0,
+      code: GROUP_DISCOUNT_CODE,
+    };
+  }
 
   if (!isGroupDiscountEligibleTour(tourSlug)) {
     return {

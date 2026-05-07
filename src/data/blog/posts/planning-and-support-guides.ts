@@ -3,12 +3,12 @@ import type { BlogPost } from "../types";
 export const planningAndSupportGuides: BlogPost[] = [
 {
     slug: "bosphorus-cruise-with-kids",
-    title: "Bosphorus Cruise with Kids Istanbul 2026 — Ages, Tips & Best Options",
-    metaDescription: "Which Bosphorus cruise works best for toddlers, young children, or teens? Duration, timing, seasickness tips and family-friendly booking advice.",
+    title: "Family Bosphorus Cruise Istanbul 2026 — Kids Ages, Tips & Best Options",
+    metaDescription: "Family Bosphorus cruise 2026: kids under 6 sail free, ages 6–12 get 30% off. Which cruise suits your child's age? Sunset €34, dinner €30, private yacht from €280.",
     excerpt: "This support guide helps parents plan a Bosphorus cruise day with kids, compare the right formats by age, and arrive better prepared.",
     category: "cruise-guide",
     date: "2025-11-02",
-    dateModified: "2026-04-23",
+    dateModified: "2026-05-07",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&q=80",
     imageAlt: "Children pointing excitedly from the deck of a Bosphorus cruise boat as they pass the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus) Bridge",

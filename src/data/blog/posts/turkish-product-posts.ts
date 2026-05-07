@@ -1506,4 +1506,317 @@ export const turkishProductPosts: BlogPost[] = [
     calloutText:
       "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimi. Doğum günü organizasyonu için WhatsApp: +90 537 040 68 22",
   },
+  {
+    slug: "eminonu-karakoy-kabatas-bogaz-turu-2026",
+    locale: "tr",
+    title: "Eminönü, Karaköy, Kabataş — Boğaz Turu Nereden Kalkar 2026",
+    metaDescription:
+      "Eminönü, Karaköy ve Kabataş iskelelerinden kalkan Boğaz turları: hangi iskele hangi tur için uygun? Fiyat, ulaşım ve TÜRSAB lisanslı operatör rehberi.",
+    excerpt:
+      "İstanbul'da Boğaz turu almak isteyenlerin en sık sorduğu soru: 'Nereden bineceğim?' Bu rehber Eminönü, Karaköy ve Kabataş iskelelerini karşılaştırarak doğru turu, doğru iskeleden almanıza yardımcı olur.",
+    category: "cruise-guide",
+    date: "2026-05-07",
+    readTime: "11 dk okuma",
+    image:
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt:
+      "İstanbul Boğazı'nda Karaköy rıhtımından görünen tekne ve köprü manzarası",
+    keywords: [
+      "eminönü boğaz turu",
+      "karaköy boğaz turu",
+      "kabataş boğaz turu",
+      "boğaz turu nereden binilir",
+      "istanbul boğaz turu iskele",
+      "boğaz turu nereden kalkar",
+      "kabataş akşam yemeği turu",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Eminönü ve Karaköy'den kalkan büyük vapurlar Şehir Hatları hizmetidir — turistik rehberli tur değil, toplu taşıma aracıdır",
+      "MerrySails Gün Batımı Turu Karaköy bölgesinden (Arap Cami yakını) kalkar; kişi başı €34 (şarapsız) veya €40 (şarapla)",
+      "Akşam Yemeği Boğaz Turu Kabataş İskelesi'nden 20:30'da hareket eder; kişi başı €30'dan başlar",
+      "TÜRSAB A Grubu lisanslı operatörü seçin — lisans numarasını [tursab.org.tr](https://www.tursab.org.tr/en) üzerinden doğrulayabilirsiniz",
+    ],
+    sections: [
+      {
+        heading: "İstanbul Boğaz Turu Hangi İskeleden Kalkar?",
+        answerCapsule:
+          "İstanbul'da üç ana iskele bölgesi Boğaz turlarına hizmet eder: Eminönü (kamu vapuru), Karaköy (gün batımı turizm turları) ve Kabataş (akşam yemeği ve özel turlar). Her birinin sunduğu deneyim ve fiyat tamamen farklıdır.",
+        content:
+          "İstanbul'da 'Boğaz turu nereden binilir?' sorusu, hem yerli hem yabancı turistlerin en sık sorduğu sorular arasındadır. Bunun nedeni basit: üç farklı iskele bölgesi, üç farklı tur türüne hizmet eder ve bunları birbirine karıştırmak hem zaman hem para kaybına yol açar.\n\nEminönü ve Karaköy rıhtımlarından kalkan büyük vapurlar Şehir Hatları tarafından işletilir. Bunlar turistik değil, kamu toplu taşıma hizmetidir. Kabataş ise profesyonel turizm teknelerinin kalktığı ana nokta olup hem gün batımı hem akşam yemeği turlarına ev sahipliği yapar. Aşağıdaki tablo üç bölgeyi temel kriterlere göre karşılaştırır.",
+        table: {
+          headers: [
+            "İskele",
+            "Hizmet Türü",
+            "Fiyat Aralığı",
+            "Rehber",
+            "Yemek / İçecek",
+          ],
+          rows: [
+            [
+              "Eminönü",
+              "Şehir Hatları Vapuru (kamu ulaşım)",
+              "₺50–200",
+              "Yok",
+              "Yok (kafeterya satışı)",
+            ],
+            [
+              "Karaköy (Arap Cami yakını)",
+              "MerrySails Gün Batımı Turu",
+              "€34–40 / kişi",
+              "İngilizce rehber",
+              "İçecek, atıştırmalık dahil",
+            ],
+            [
+              "Kabataş",
+              "Akşam Yemeği & Özel Turlar",
+              "€30–90 / kişi",
+              "Çift dilli",
+              "Tam yemek + eğlence",
+            ],
+            [
+              "Kuruçeşme / Bebek Marinaları",
+              "Özel Yat Kiralama",
+              "€280–680 / yat",
+              "Kaptan dahil",
+              "İsteğe göre özelleştirilir",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Rezervasyon onayında size paylaşılan harita pinini ekrana alın. Tüm MerrySails turlarında buluşma noktası yazılı olarak teyit edilir — gün gelip yanlış iskeleye gitme riskini sıfıra indirirsiniz.",
+        },
+      },
+      {
+        heading: "Eminönü İskelesi Boğaz Turu — Şehir Hatları Vapuru Nedir?",
+        answerCapsule:
+          "Eminönü'nden kalkan Şehir Hatları vapurları, Boğaz boyunca belirli duraklara uğrayan düzenli kamu taşımacılığıdır. Turistik rehber, yorumlama veya yemek servisi yoktur. Bilet ₺50–200 arasında değişir.",
+        content:
+          "Eminönü, İstanbul'un en yoğun ve en tanınan iskele noktalarından biridir. Buradaki büyük çift katlı vapurlar birçok turistin zihninde 'Boğaz turu' imgesiyle özdeşleşmiştir. Ancak bu vapurlar, Şehir Hatları A.Ş. tarafından işletilen ve İETT gibi kamu toplu taşımacılığı kapsamında değerlendirilen hatlardır.\n\nAnadolu Kavağı'na kadar uzanan uzun hat yaklaşık 6 saatte gidip gelirken, kısalttılmış 'Boğaz Turu' seferleri 1,5–2 saat sürer ve Küçüksu ile Kanlıca'ya kadar uğrar. İstanbulkart ile binilebilir; bilet ücreti ₺50–200 arasında değişir. Bu seferler şehri denizden görmek için ucuz ve işlevsel bir seçenek sunar — ancak İngilizce yorum, özel güverte, ikram servisi veya grup rehberliği içermez.\n\nKısacası: Eminönü vapuru ulaşım aracıdır, turistik turizm ürünü değil. İki saatlik bir seyir süresince Boğaz'ı geçmek isteyenler için uygundur; ancak yorumlanan, içecek dahil, rehberli bir deneyim arıyorsanız yanlış iskeledesiniz.",
+        expertQuote: {
+          text: "Şehir Hatları vapurları İstanbul'un rutin Boğaz geçişlerini taşır — harika bir deneyim, ama turizm turu değil. Misafirlerimiz sık sık 'büyük vapura bindim ama kimse bir şey açıklamadı' diye şikayet eder. O vapur sizi Üsküdar'a götürür, Osmanlı saraylarını anlatmaz.",
+          author: "Kaptan Ahmet Yılmaz",
+          title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
+        },
+        proTip:
+          "Eminönü çevresindeki sokak satıcıları 'özel Boğaz turu' diye bileti €5–15'e satan kişiler olabilir. Bu teklifler genellikle TÜRSAB lisansı bulunmayan küçük teknelere aittir. Lisans numarasını sormaktan çekinmeyin.",
+      },
+      {
+        heading:
+          "Karaköy Bölgesi — MerrySails Gün Batımı Turu Buluşma Noktası",
+        answerCapsule:
+          "MerrySails Bosphorus Sunset Cruise, Karaköy bölgesinde Arap Cami / Uskufdular Sokak yakınından hareket eder. Rezervasyon onayında harita pini paylaşılır. Fiyat: kişi başı €34 (şarapsız) veya €40 (şarapla).",
+        content:
+          "Karaköy, Galata Kulesi'nin hemen altında, Boğaz kıyısında konumlanan tarihi bir semt ve rıhtım bölgesidir. MerrySails Gün Batımı Turu'nun buluşma noktası Karaköy'ün Arap Cami / Uskufcular Sokak yakınındadır — büyük Şehir Hatları iskelelerinden birkaç dakika yürüme mesafesinde, ancak ayrı bir noktada.\n\nBu seçim rastlantısal değildir: küçük grup formatında (yaklaşık 12–20 kişi) lüks yat kalkışı için Karaköy'ün Boğaz girişine yakınlığı ve nispeten az trafikli kıyı şeridi avantaj sağlar. Büyük kalabalık bir vapur değil, özel yat formatında bir deneyimdir.\n\nTur yaklaşık 2 saat sürer, İngilizce rehber eşliğinde Boğaz köprüleri, Çırağan Sarayı, Rumeli Hisarı ve Ortaköy Camii önünden geçer. Güverte üstünden çekilen fotoğraflar, şehirden 500 metre açıkta olmanın verdiği perspektifle Boğaz'ı bambaşka bir gözle görmenizi sağlar.",
+        callout: {
+          type: "price",
+          text:
+            "MerrySails Gün Batımı Turu: €34/kişi (şarapsız) | €40/kişi (şarapla dahil). Kalkış: Karaköy bölgesi, günbatımından 15 dk önce. Rezervasyon: [/tr/cruises/bosphorus-sunset-cruise](/tr/cruises/bosphorus-sunset-cruise)",
+        },
+        proTip:
+          "Karaköy'den Arap Cami yönüne doğru yürüdüğünüzde Boğaz kıyısına paralel dar sokaklardan geçersiniz. Rezervasyon onayınızdaki harita pinini telefona önceden indirin — 4G bağlantısına güvenmek yerine offline haritada işaretleyin.",
+      },
+      {
+        heading: "Kabataş İskelesi — Akşam Yemekli Boğaz Turu",
+        answerCapsule:
+          "MerrySails Akşam Yemeği Boğaz Turu Kabataş İskelesi'nden 20:30'da kalkar. Dört paket sunulur: Silver Soft Drinks €30, Silver Alcoholic €45, Gold Soft Drinks €80, Gold Unlimited Alcohol €90.",
+        content:
+          "Kabataş, Dolmabahçe Sarayı'nın hemen bitişiğinde, Beşiktaş ile Karaköy arasında yer alır. Şehrin modern rıhtım altyapısının önemli bir parçası olan Kabataş İskelesi, büyük tur teknelerine uygun derinlikteki iskelesi ve Avrupa yakasının merkezine olan yakınlığıyla akşam yemeği cruises için en işlevsel noktadır.\n\nMerrySails [Akşam Yemeği Boğaz Turu](/tr/istanbul-dinner-cruise) her gece 20:30'da Kabataş'tan hareket eder. Tur yaklaşık 3,5 saat sürer; güverte üstünde canlı Türk müziği, folklor gösterisi ve büfe yemek eşliğinde Boğaz'ın gece manzarası sunulur. Alkol tercihinize göre dört paket arasından seçim yapılır:\n\nSultan Ahmet, Taksim veya Beşiktaş otellerinden transfer imkânı da mevcuttur — bu detayı rezervasyon sırasında belirterek otelden kapıya hizmet alabilirsiniz. Transfer rotası ve saati rezervasyon onay e-postasında ayrıca paylaşılır.",
+        table: {
+          headers: [
+            "Paket",
+            "Kişi Başı Fiyat",
+            "İçecek",
+            "Masa Tipi",
+          ],
+          rows: [
+            [
+              "Silver Soft Drinks",
+              "€30",
+              "Alkolsüz içecekler",
+              "Paylaşımlı masa",
+            ],
+            [
+              "Silver Alcoholic",
+              "€45",
+              "Bira, şarap, rakı",
+              "Paylaşımlı masa",
+            ],
+            [
+              "Gold Soft Drinks",
+              "€80",
+              "Alkolsüz içecekler",
+              "VIP masa (sahne önü)",
+            ],
+            [
+              "Gold Unlimited Alcohol",
+              "€90",
+              "Açık büfe premium alkol",
+              "VIP masa (sahne önü)",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Kabataş'a T1 tramvayıyla Sultanahmet veya Karaköy'den gidebilirsiniz. Tramvay durağı iskeledir; çıktığınızda vapur terminali ile tur tekne rıhtımı yan yana yer alır. Sabahtan bakın, akşam yanlış kapıya gitme riski azalır.",
+        },
+      },
+      {
+        heading: "Hangi İskele Sizin İçin Doğru? Karar Matrisi",
+        answerCapsule:
+          "Bütçe ve deneyim önceliğinize göre: Şehir Hatları vapuru (Eminönü, ₺200 altı) manzara geçişi için, MerrySails Gün Batımı (Karaköy, €34–40) rehberli küçük grup deneyimi için, Akşam Yemeği Turu (Kabataş, €30–90) gece eğlencesi ve yemek için uygundur.",
+        content:
+          "Doğru turu bulmak için önce beklentinizi netleştirmeniz gerekir. Aşağıdaki karar matrisi dört ana kritere göre hangisinin size uygun olduğunu gösterir.",
+        table: {
+          headers: [
+            "Kriter",
+            "Şehir Hatları (Eminönü)",
+            "Gün Batımı (Karaköy)",
+            "Akşam Yemeği (Kabataş)",
+            "Özel Yat (Kuruçeşme)",
+          ],
+          rows: [
+            [
+              "Bütçe",
+              "₺50–200 / kişi",
+              "€34–40 / kişi",
+              "€30–90 / kişi",
+              "€280–680 / grup",
+            ],
+            ["Rehber", "Yok", "İngilizce", "Türkçe + İngilizce", "Kaptan"],
+            [
+              "Yemek / İçecek",
+              "Kafeterya satışı",
+              "Atıştırmalık + içecek",
+              "Tam büfe yemek",
+              "İsteğe göre",
+            ],
+            ["Süre", "1,5–6 saat", "2 saat", "3,5 saat", "2–8 saat"],
+            [
+              "Eğlence",
+              "Yok",
+              "Doğal Boğaz manzarası",
+              "Canlı müzik, folklor",
+              "Özelleştirilir",
+            ],
+            [
+              "Grup Tipi",
+              "Herkes",
+              "Çift, aile, küçük grup",
+              "Çift, büyük grup",
+              "Özel davet, kutlama",
+            ],
+            [
+              "Dil",
+              "Türkçe",
+              "İngilizce ağırlıklı",
+              "Çok dilli",
+              "Anlaşmaya göre",
+            ],
+          ],
+        },
+        proTip:
+          "Bütçeniz kısıtlıysa ama Boğaz'ı denizden görmek istiyorsanız Şehir Hatları mantıklıdır. Ama fotoğraflanabilir bir deneyim, rehberli yorumlama ve güzel bir akşam geçirmek istiyorsanız [Gün Batımı Turu](/tr/cruises/bosphorus-sunset-cruise) €34 ile en iyi fiyat-değer dengesidir.",
+      },
+      {
+        heading:
+          "İskelelere Nasıl Ulaşılır? — Sultanahmet, Taksim, Beşiktaş'tan",
+        answerCapsule:
+          "Eminönü: T1 tramvay, 3–8 dk. Karaköy: T1 tramvay veya yürüyüş (Eminönü'nden 10 dk). Kabataş: T1 tramvay son durak, F1 füniküler Taksim'den 5 dk.",
+        content:
+          "İstanbul'un toplu taşıma ağı, üç iskele bölgesine de kolay ulaşım sağlar. Sultanahmet'ten hareket ediyorsanız T1 tramvayı en pratik seçenektir — her üç noktaya da ulaşımı mümkün kılar.\n\nEminönü için Sultanahmet'ten T1 ile 3 durak, yaklaşık 5 dakika. Karaköy için ya T1 ile Karaköy durağında inin ya da Eminönü'nden Galata Köprüsü'nü yürüyerek (10 dk) geçin. Kabataş için T1'in son durağı olan Kabataş durağına inin; iskeleye yürüme süresi 2 dakika. Taksim'den ise F1 fünikülerü Kabataş'a 5 dakikada indirir.",
+        table: {
+          headers: [
+            "Başlangıç Noktası",
+            "Eminönü",
+            "Karaköy",
+            "Kabataş",
+          ],
+          rows: [
+            ["Sultanahmet", "T1 tramvay, 5 dk", "T1 tramvay, 3 dk", "T1 tramvay, 8 dk"],
+            [
+              "Taksim",
+              "Metro + tramvay, 25 dk",
+              "Metro + tramvay, 20 dk",
+              "F1 füniküler, 5 dk",
+            ],
+            ["Beşiktaş", "Minibüs veya taksi, 20 dk", "Taksi, 15 dk", "Yürüyüş, 10 dk"],
+            ["Havalimanı (IST)", "Metro + tramvay, 60 dk", "Metro + tramvay, 55 dk", "Metro + füniküler, 65 dk"],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "İstanbul Kart (İstanbulkart) alın — tramvay, füniküler ve vapur geçişleri için tekli bilete kıyasla %30–40 daha ucuz. Havalimanında veya Eminönü yakınındaki BELBIM makinelerinden yüklenebilir.",
+        },
+      },
+      {
+        heading:
+          "Sahte 'Ücretsiz Boğaz Turu' Tuzakları — Sultanahmet'te Dikkat",
+        answerCapsule:
+          "Sultanahmet çevresinde 'ücretsiz' veya çok ucuz Boğaz turu teklif eden kişiler genellikle lisanssız operatörlere, halı mağazası turlarına veya turistlerin kandırıldığı 'bait-and-switch' yöntemlerine yönlendirir.",
+        content:
+          "Sultanahmet Meydanı, Arasta Çarşısı çevresi ve Mısır Çarşısı önünde turistlere yaklaşan bazı kişiler 'bedava Boğaz turu' ya da '€5–10'a gemi turu' teklif eder. Bu tekliflerin büyük çoğunluğu şu senaryolardan birine aittir:\n\nBirinci senaryo: Turu üstlendiğini söyleyen kişi sizi bir 'toplantı noktasına' götürür; orada halı, deri veya takı mağazasına uğratılırsınız. Tur, bu alışveriş durağına katılımın 'karşılığı' olarak sunulur. İkinci senaryo: TÜRSAB lisansı olmayan küçük balıkçı teknelerine bindirilirsiniz. Tekne, can yeleği standardına veya deniz emniyeti kurallarına uymayabilir. Üçüncü senaryo: Fiyat başlangıçta düşük söylenir, ancak gemide alkol, fotoğraf veya 'güverte üstü oturma' için ek ücret talep edilir.\n\nMerrySails gibi [TÜRSAB A Grubu lisanslı](/tursab) operatörler devlet tarafından denetlenir; sigorta, can kurtarma ekipmanı ve güzergah standartlarına uymak zorundadır. Lisans numarasını sormak hem hakkınız hem de güvenliğinizin temelidir.",
+        expertQuote: {
+          text: "Her yıl, iskele önünde tura çekilen ve sonra mağazaya götürülen ya da beklediklerini bulamayan onlarca misafir anlatır. Bu durumun önüne geçmenin tek yolu: turu direkt operatörden, yazılı onay alarak rezerve etmek.",
+          author: "Kaptan Ahmet Yılmaz",
+          title: "MerrySails — Baş Kaptan, TÜRSAB #14316",
+        },
+        callout: {
+          type: "warning",
+          text:
+            "Tuzak işareti: 'Size özel teklife sahip' dedikten sonra sizi farklı bir mağazaya yönlendiriyorlarsa veya tekne üzerinde TÜRSAB plakası göremiyorsanız o turu almayın. TÜRSAB lisans numarasını tursab.org.tr üzerinden 30 saniyede doğrulayabilirsiniz.",
+        },
+      },
+      {
+        heading: "Doğru İskele için MerrySails Rezervasyonu Nasıl Yapılır?",
+        answerCapsule:
+          "Rezervasyon onayı e-postasında Google Maps pini, buluşma saati ve kaptan iletişim bilgileri yer alır. Akşam yemeği turu için otel transferi varsa pickup süresi ve lokasyonu da ayrıca paylaşılır.",
+        content:
+          "MerrySails rezervasyon akışı iskele karışıklığını tamamen ortadan kaldıracak şekilde tasarlanmıştır. Online ödeme veya WhatsApp üzerinden yapılan her rezervasyonda şu bilgiler e-posta ile teyit edilir:\n\nGün Batımı Turu için: Karaköy bölgesi harita pini, buluşma saati (günbatımından 15 dk önce), WhatsApp kaptan hattı. Akşam Yemeği Turu için: Kabataş İskelesi harita pini, 20:30 kalkış, otel transfer saati (pickup varsa). Özel Yat için: Kuruçeşme Marinası veya Kabataş — kira türüne göre belirlenir, yazılı teyit verilir.\n\nBu sistemi bilerek kuruyoruz çünkü İstanbul'da 'yanlış iskelede bekleme' probleminin çözümü net iletişimdir. [/pricing](/pricing) sayfasından tüm paketleri karşılaştırabilir, ardından [/tr/bosphorus-cruise](/tr/bosphorus-cruise) hub sayfasından tura yönlendirilirsiniz.",
+        callout: {
+          type: "price",
+          text:
+            "Hızlı Özet: Gün Batımı → Karaköy (€34/€40). Akşam Yemeği → Kabataş (€30/€45/€80/€90). Özel Yat → Kuruçeşme/Kabataş (€280/€380/€680 yat başı). WhatsApp: +90 537 040 68 22",
+        },
+        proTip:
+          "Rezervasyonunuzu tamamladıktan sonra onay e-postasındaki harita pinini telefon galerinizdeki ekran görüntüsüne alın. İnternet bağlantısı olmadan da konuma bakabilirsiniz.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Eminönü'nden gerçek bir Boğaz turu alabilir miyim?",
+        a: "Eminönü'nden kalkan Şehir Hatları vapurları Boğaz boyunca yolculuk yapar, ancak bunlar turistik rehberli tur değil, kamu ulaşımıdır. İngilizce yorum, yemek veya içecek servisi içermez. Şehri denizden ₺50–200'e görmek istiyorsanız işlevlidir; rehberli, ikramlı bir turizm deneyimi için MerrySails gibi TÜRSAB lisanslı bir operatörü tercih edin.",
+      },
+      {
+        q: "Kabataş İskelesi'nden gün batımı turu var mı?",
+        a: "MerrySails Gün Batımı Turu Karaköy bölgesinden (Arap Cami yakını) kalkar, Kabataş'tan değil. Kabataş'tan 20:30 kalkışlı Akşam Yemeği Turu hareket eder. İki iskele arasındaki mesafe yürüyüşle yaklaşık 15 dakikadır. Rezervasyon onayınızda doğru harita pini paylaşılır.",
+      },
+      {
+        q: "Karaköy'den kalkış için Sultanahmet'ten nasıl giderim?",
+        a: "T1 tramvayıyla Sultanahmet'ten Karaköy durağına inin — yaklaşık 3 durak, 5 dakika. Karaköy durağından çıktığınızda Galata Köprüsü'nün hemen altında olursunuz. Arap Cami yönüne 5 dk yürüyüşle buluşma noktasına ulaşırsınız. Rezervasyon onayınızdaki harita pinini önceden telefona alın.",
+      },
+      {
+        q: "Akşam yemeği turu için otel transferi mümkün mü?",
+        a: "Evet. Kabataş İskelesi'nden 20:30'da kalkan Akşam Yemeği Turu için Sultanahmet, Taksim ve Beşiktaş bölgesindeki otellere transfer hizmeti sunulur. Transfer saati ve pickup detayları rezervasyon onay e-postasında ayrıca paylaşılır. Otelin tam adresini ve saat tercihini rezervasyon sırasında belirtmeniz yeterlidir.",
+      },
+      {
+        q: "Boğaz turu için özel yat Eminönü veya Karaköy'den kalkıyor mu?",
+        a: "Hayır. MerrySails özel yat kiralama Kuruçeşme Marinası veya Kabataş çevresinden (tekneye göre belirlenir) hareket eder. Eminönü ve Karaköy özel yat kalkışı için uygun marina altyapısına sahip değildir. Kalkış noktası rezervasyon onayında yazılı olarak teyit edilir. Detaylar için /tr/yacht-charter-istanbul sayfasına bakabilirsiniz.",
+      },
+    ],
+    relatedTours: ["sunset-cruise", "dinner-cruise", "yacht-charter"],
+    relatedPosts: [
+      "istanbul-bogaz-turu-fiyatlari-2026",
+      "istanbul-bogaz-gun-batimi-turu-deneyimi",
+      "istanbul-aksam-yemegi-turu-rehberi",
+    ],
+    proTip:
+      "Karaköy veya Kabataş'a ilk kez gidiyorsanız buluşma saatinden en az 20 dk önce bölgede olun — özellikle yüksek sezonda (Haziran–Ağustos) iskele önleri yoğundur ve doğru kapıyı bulmak birkaç dakika alabilir. [Bosphorus Cruise ana sayfasından](/tr/bosphorus-cruise) tüm kalkış bilgilerini bulabilirsiniz.",
+    calloutText:
+      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle İstanbul'un en güvenilir Boğaz turu operatörlerinden biridir. Rezervasyon ve sorularınız için WhatsApp: +90 537 040 68 22",
+  },
 ];
