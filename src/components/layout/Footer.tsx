@@ -116,10 +116,10 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
     sisterLinks: [
+      { label: "GoldenSunsetTour — Bosphorus Cruises", href: "https://www.goldensunsettour.com/" },
       { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
       { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-      // TODO: Add when domain live: { label: "GoldenSunsetTour — Cruise", href: "https://www.goldensunsettour.com" },
     ],
   },
   tr: {
@@ -149,6 +149,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
     sisterLinks: [
+      { label: "GoldenSunsetTour — Boğaz Turları", href: "https://www.goldensunsettour.com/" },
       { label: "MerryTourism — Transfer", href: "https://www.merrytourism.com/tr" },
       { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
       { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
@@ -181,6 +182,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Antalya Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/antalya-airport-transfer" },
     ],
     sisterLinks: [
+      { label: "GoldenSunsetTour — Bosporus-Kreuzfahrten", href: "https://www.goldensunsettour.com/" },
       { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/de" },
       { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul Festpreis", href: "https://www.merrytourism.com/de/vip-transfer" },
@@ -213,6 +215,7 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
     ],
     sisterLinks: [
+      { label: "GoldenSunsetTour — Croisières Bosphore", href: "https://www.goldensunsettour.com/" },
       { label: "MerryTourism — Transferts", href: "https://www.merrytourism.com/en" },
       { label: "Transfert Aéroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
