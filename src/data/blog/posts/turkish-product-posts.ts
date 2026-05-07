@@ -973,4 +973,289 @@ export const turkishProductPosts: BlogPost[] = [
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
     relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-bogaz-gun-batimi-turu-deneyimi"],
   },
+
+  {
+    slug: "yat-kiralama-tekne-fiyatlari-istanbul-2026",
+    locale: "tr",
+    title: "Yat Kiralama ve Tekne Fiyatları İstanbul 2026 — Şeffaf Rehber",
+    metaDescription:
+      "Yat kiralama fiyatları İstanbul 2026: özel yat €280'den başlar, paylaşımlı Boğaz turu kişi başı €34. Tekne tipleri, paket karşılaştırması ve rezervasyon rehberi.",
+    excerpt:
+      "İstanbul'da yat ve tekne kiralama fiyatları kişi başı €34'ten başlayıp özel yat için €680'e kadar uzanır. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 şeffaf fiyat rehberi.",
+    category: "yacht-guide",
+    date: "2026-05-07",
+    readTime: "11 dk okuma",
+    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
+    imageAlt: "İstanbul Boğazı'nda lüks özel yat — Boğaz köprüsü ve Osmanlı yalıları arka planda",
+    keywords: [
+      "yat kiralama istanbul",
+      "tekne kiralama istanbul",
+      "yat kiralama fiyatları",
+      "boğaz turu fiyatları",
+      "boğaz tekne turu fiyatları",
+      "boğaz yat kiralama",
+      "istanbul özel tekne fiyat 2026",
+      "saatlik tekne kiralama istanbul",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Özel yat kiralama tekne başına €280 (Essential) / €380 (Premium) / €680 (VIP) — 2 saat, grup için sabit fiyat",
+      "Paylaşımlı Boğaz turu kişi başı €34 (gün batımı €40) — 8 kişiden az grup için en ekonomik seçenek",
+      "10+ kişilik gruplar için özel yat kiralama, paylaşımlı tura göre kişi başına eşit veya daha uygun çıkabilir",
+      "TÜRSAB A Grubu lisans #14316 ile 2001'den bu yana faaliyet; [lisansı doğrulayın](https://www.tursab.org.tr/en)",
+    ],
+    sections: [
+      {
+        heading: "İstanbul'da Yat ve Tekne Kiralama Fiyatları Nasıl Belirlenir?",
+        answerCapsule:
+          "Fiyatlar iki temel modele göre şekillenir: kişi başı fiyatlandırılan paylaşımlı turlar (€34–€40) ve tekne başı fiyatlandırılan özel yat kiralama (€280–€680). Grup büyüklüğü, süre ve tekne tipi belirleyici faktörlerdir.",
+        content:
+          "İstanbul'da 'tekne kiralama' dendiğinde aklınıza iki farklı model gelmeli. Birincisi paylaşımlı tur: siz bilet alırsınız, tekne başkalarıyla paylaşılır, kişi başı fiyat düşüktür. İkincisi özel yat kiralama: teknenin tamamı size aittir, fiyat kişi sayısından bağımsız olarak tekne başına belirlenir. Bu farkı anlamadan fiyat karşılaştırması yapmak yanıltıcı olur.\n\nPaylaşımlı turda kalabalığa alışkınsanız ve bütçe önceliğinizse, kişi başı €34 ciddi bir değer sunar. 31 km'lik Boğaz güzergahını iki saatte, profesyonel rehber eşliğinde geçersiniz. Özel kiralamada ise teknenin tamamı sizindir: kendi grubunuz, kendi ritminiz, güzergahı istediğiniz noktada yavaşlatma imkânı. Bunun fiyatı elbette farklıdır — ama 10 kişilik bir grup hesap yapıldığında rakamlar yaklaşır.",
+        callout: {
+          type: "tip",
+          text:
+            "Anahtar soru: kaç kişisiniz? 1–7 kişi için paylaşımlı tur neredeyse her zaman daha ekonomiktir. 8 kişi ve üzeri gruplar için özel yat kiralamayı kesinlikle hesaplayın.",
+        },
+      },
+      {
+        heading: "MerrySails Fiyat Listesi 2026 — Şeffaf Tarife",
+        answerCapsule:
+          "MerrySails 2026 fiyatları: paylaşımlı gün batımı turu €34–€40/kişi; akşam yemeği turu €30–€90/kişi; özel yat kiralama €280–€680/tekne (2 saat). Tüm fiyatlar Euro cinsinden sabittir.",
+        content:
+          "Aşağıdaki tablo tüm tur ve kiralama seçeneklerini yan yana gösteriyor. [Tam fiyat sayfasında](/pricing) birim başına hesaplama yapabilirsiniz.",
+        table: {
+          headers: ["Tur / Hizmet", "Tip", "Süre", "Fiyat", "Ne Dahil?"],
+          rows: [
+            [
+              "Boğaz Gün Batımı Turu (şarapsız)",
+              "Paylaşımlı, kişi başı",
+              "2 saat",
+              "€34",
+              "Rehber, içecek, atıştırmalık",
+            ],
+            [
+              "Boğaz Gün Batımı Turu (şaraplı)",
+              "Paylaşımlı, kişi başı",
+              "2 saat",
+              "€40",
+              "Rehber, şarap, içecek, atıştırmalık",
+            ],
+            [
+              "Akşam Yemeği Turu — Silver Soft",
+              "Paylaşımlı, kişi başı",
+              "3,5 saat",
+              "€30",
+              "Akşam yemeği, alkol yok, folklor",
+            ],
+            [
+              "Akşam Yemeği Turu — Silver Alkollü",
+              "Paylaşımlı, kişi başı",
+              "3,5 saat",
+              "€45",
+              "Akşam yemeği, bira ve şarap, folklor",
+            ],
+            [
+              "Akşam Yemeği Turu — Gold Soft",
+              "Paylaşımlı, kişi başı",
+              "3,5 saat",
+              "€80",
+              "Premium yemek, alkol yok, geniş folklor",
+            ],
+            [
+              "Akşam Yemeği Turu — Gold Unlimited",
+              "Paylaşımlı, kişi başı",
+              "3,5 saat",
+              "€90",
+              "Premium yemek, sınırsız alkol, folklor",
+            ],
+            [
+              "Özel Yat Kiralama — Essential",
+              "Özel, tekne başı",
+              "2 saat",
+              "€280",
+              "Kaptan, tekne, navigasyon",
+            ],
+            [
+              "Özel Yat Kiralama — Premium",
+              "Özel, tekne başı",
+              "2 saat",
+              "€380",
+              "Lüks motor yat, kaptan, içecek servisi",
+            ],
+            [
+              "Özel Yat Kiralama — VIP",
+              "Özel, tekne başı",
+              "2 saat",
+              "€680",
+              "VIP motor yat, tam servis, özelleştirilmiş güzergah",
+            ],
+          ],
+        },
+        proTip:
+          "Akşam yemeği turunda alkol istemiyorsanız Silver Soft €30 paketi, deneyimden ödün vermeden cüzdanınızı koruyan en akıllıca seçimdir. İçeriği görmek için [akşam yemeği turu sayfasına](/tr/istanbul-dinner-cruise) bakın.",
+      },
+      {
+        heading: "Paylaşımlı Boğaz Turu vs Özel Yat Kiralama — Hangisi Sizin İçin?",
+        answerCapsule:
+          "1–7 kişilik gruplar için paylaşımlı tur ekonomik açıdan üstündür. 8 veya daha fazla kişide özel yat kiralamak kişi başına eşdeğer ya da daha düşük maliyete ulaşabilir.",
+        content:
+          "İki seçeneği doğrudan karşılaştıralım. Paylaşımlı gün batımı turunda 2 kişi €68 öder ve diğer yolcularla birlikte seyahat eder. Aynı 2 kişi Essential özel yat için €280 öder — fark 4 kattır. Bu fark özellik ve mahremiyete yatırım; buna değer mi, bu tamamen grubunuzun önceliğine bağlı.\n\nAncak gruplar büyüdükçe denklem değişir. 10 kişilik bir arkadaş grubunu düşünün: paylaşımlı gün batımı turunda €34 × 10 = €340. Premium özel yat kiralama ise €380 — sadece €40 fark için teknenin tamamı sizin. Üstelik özel yatta güzergah esnekliği, özelleştirilmiş müzik seçimi ve istediğiniz anda yavaşlama imkânı da gelir.",
+        table: {
+          headers: ["Kriter", "Paylaşımlı Tur", "Özel Yat"],
+          rows: [
+            ["Fiyat (2 kişi, gün batımı)", "€68", "€280 (Essential)"],
+            ["Fiyat (10 kişi, gün batımı)", "€340", "€380 (Premium)"],
+            ["Mahrem mi?", "Hayır (~25 kişi teknede)", "Evet, yalnızca sizin grubunuz"],
+            ["Güzergah esnekliği", "Sabit rota", "Kaptan ile düzenlenebilir"],
+            ["Kalkış saati", "Sabit (15:00, 19:00 vb.)", "Talebe göre (rezervasyonla)"],
+            ["Özel kutlama (pasta, süsleme)", "Sınırlı", "Tam destek mevcut"],
+            ["Alkol seçeneği", "Pakete göre", "İstediğiniz içeceği getirebilirsiniz"],
+          ],
+        },
+        expertQuote: {
+          text: "Çifti veya küçük grubu olan misafirler paylaşımlı tura çok memnun ayrılıyor. Ama 8–10 kişilik aile grubu geldiğinde biz mutlaka özel yatı öneririz — fiyat neredeyse aynı, deneyim çok farklı.",
+          author: "Kaptan Ahmet Yılmaz",
+          title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
+        },
+      },
+      {
+        heading: "Doğum Günü, Evlenme Teklifi, Kurumsal Etkinlik — Hangi Paket?",
+        answerCapsule:
+          "Özel kutlamalar için en uygun paket grubun boyutuna ve etkinlik türüne göre değişir: çift için Essential/Premium, aile kutlaması için Premium, kurumsal için VIP önerilir.",
+        content:
+          "Her etkinlik tipinin kendine özgü gereksinimleri vardır. Doğum günü kutlaması için teknenin tamamını kiralamak, sürpriz organizasyon ve özel dekorasyon açısından büyük kolaylık sağlar. [Evlenme teklifi](/tr/proposal-yacht-rental-istanbul) içinse tam mahremiyet şarttır — paylaşımlı teknede o özel anı yaratmak mümkün değildir.\n\nKurumsal etkinlikler için VIP paket tercih edilir: müşteri ağırlama, ürün lansmanı veya ekip yemeği gibi organizasyonlarda teknenin görünümü ve hizmet kalitesi temsil değeri taşır. [Kurumsal etkinlikler sayfasında](/tr/corporate-events) özel fiyat teklifi alabilirsiniz.",
+        table: {
+          headers: ["Etkinlik Tipi", "Önerilen Paket", "Fiyat (2 saat)", "Neden?"],
+          rows: [
+            ["Çift, romantik akşam", "Essential veya Premium", "€280–€380", "Mahremiyet, esneklik"],
+            ["Evlenme teklifi", "Premium veya VIP", "€380–€680", "Özel an, dekorasyon, kaptan desteği"],
+            ["Doğum günü (6–12 kişi)", "Premium", "€380", "Grup kapasitesi, kutlama desteği"],
+            ["Aile kutlaması (10–15 kişi)", "VIP", "€680", "Geniş güverte, tam servis"],
+            ["Kurumsal müşteri ağırlama", "VIP", "€680", "Temsil kalitesi, profesyonel sunum"],
+            ["Büyük grup (15–20 kişi)", "VIP", "€680", "Kapasite, tam özelleştirme"],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Etkinliğiniz için pasta, çiçek, fotoğrafçı veya özel dekorasyon talep ediyorsanız rezervasyon sırasında belirtin. Bu hizmetler tekne fiyatına dahil değildir ancak koordinasyonu MerrySails tarafından sağlanabilir.",
+        },
+      },
+      {
+        heading: "Saatlik ve Günlük Yat Kiralama Fiyatları",
+        answerCapsule:
+          "MerrySails'te minimum kiralama süresi 2 saattir ve fiyat bu 2 saat için tekne başına belirlenir (€280–€680). Günlük tam gün charter için özel fiyat teklifi alınması gerekir.",
+        content:
+          "İstanbul'da 'saatlik tekne kiralama' ve 'günlük yat kiralama' aramaları farklı beklentilere işaret eder. MerrySails'in temel Boğaz turu paketi 2 saatlik kiralamayla başlar. Bu süreye Boğaz'ın iki köprüsünü, Dolmabahçe Sarayı önünü, Çırağan ve Çubuklu kıyılarını görmek için yeterlidir.\n\nDaha uzun turlar için süre ve fiyat özel olarak planlanır. 4 saatlik tur Boğaz'ın tamamını (31 km) rahatça kapsar; Anadolu yakasındaki koyları ve Adaları da dahil etmek isteyenler için 6–8 saatlik seçenek uygundur. [Saatlik tekne kiralama sayfasında](/tr/yacht-charter-istanbul) güncel paket detaylarına ulaşabilirsiniz.",
+        table: {
+          headers: ["Süre", "Essential (€280 baz)", "Premium (€380 baz)", "VIP (€680 baz)"],
+          rows: [
+            ["2 saat (baz paket)", "€280", "€380", "€680"],
+            ["3 saat", "Fiyat teklifi alın", "Fiyat teklifi alın", "Fiyat teklifi alın"],
+            ["4 saat (tam Boğaz)", "Fiyat teklifi alın", "Fiyat teklifi alın", "Fiyat teklifi alın"],
+            ["Tam gün (8 saat+)", "Özel görüşme", "Özel görüşme", "Özel görüşme"],
+          ],
+        },
+        proTip:
+          "3 saatten uzun turlar için WhatsApp üzerinden (+90 544 898 98 12) doğrudan fiyat alın. Uzun süreli kiralamada birim saatlik maliyet 2 saatlik paketin oldukça altına düşebilir.",
+      },
+      {
+        heading: "Aracılı Satışta Neden Fiyatlar Daha Yüksek? — TÜRSAB Direkt Booking Avantajı",
+        answerCapsule:
+          "GetYourGuide, Viator gibi platformlar aynı turu %15–30 daha yüksek fiyatla listeler çünkü operatörden komisyon alırlar. Direkt rezervasyonda listelenen fiyatı ödersiniz, ekstra ücret yoktur.",
+        content:
+          "Aynı MerrySails gün batımı turu için GetYourGuide'da €40–50 civarında fiyatlar görebilirsiniz. MerrySails'te direkt rezervasyonla €34 ödersiniz. Bu fark, platformun operatörden aldığı komisyonun son kullanıcıya yansımasıdır — siz aradaki aracıya ödeme yapmış olursunuz.\n\nAyrıca TÜRSAB A Grubu lisanslı operatörle direkt rezervasyon, ek bir güvence sağlar. [TÜRSAB lisansını doğrulayabilirsiniz](/tursab) — lisans numaramız 14316. Herhangi bir anlaşmazlıkta yasal koruma doğrudan operatörle kurulmuş sözleşme ilişkisi üzerinden işler; aracı platformlarda bu koruma daha dolaylı olur.",
+        callout: {
+          type: "warning",
+          text:
+            "Dikkat: Üçüncü taraf platformlarda 'ücretsiz iptal' veya 'esnek değişiklik' koşulları operatörün kendi politikasından farklı olabilir. Direkt rezervasyonda iptal ve değişiklik koşullarını doğrudan bizden teyit edebilirsiniz.",
+        },
+        expertQuote: {
+          text: "Biz 2001'den bu yana 50.000'den fazla misafiri ağırladık. Direkt rezervasyon yapan misafirlerimizle kişisel ilişki kurabiliyoruz — tercihlerini not edebiliyoruz, rotayı değiştirebiliyoruz, beklenmedik durumda anında iletişim kurabiliyoruz. Aracı platformda bu mümkün değil.",
+          author: "Kaptan Ahmet Yılmaz",
+          title: "MerrySails — Baş Kaptan",
+        },
+      },
+      {
+        heading: "Sezona Göre Fiyat Değişimi Var Mı?",
+        answerCapsule:
+          "MerrySails'in kendi yayınladığı fiyatlar yıl boyunca sabittir — yüksek sezon zammı uygulanmaz. OTA platformlarında sezonluk dalgalanmalar olabilir.",
+        content:
+          "Pek çok operatör ve OTA platformu yüksek sezonda (Haziran–Ağustos) fiyatlarını artırır. MerrySails'te durum farklı: [fiyat sayfasında](/pricing) listelenen rakamlar yıl boyunca geçerlidir. Ocak'ta rezervasyon yapan misafir ile Temmuz'da rezervasyon yapan misafir aynı fiyatı öder.\n\nAncak pratikte dikkat edilmesi gereken bir etken var: Haziran–Ağustos döneminde tekneler erken dolar. Fiyat sabit olsa da tercih ettiğiniz tarih için yer bulmak güçleşebilir. Bu yüzden yüksek sezonda en az 1–2 hafta önceden rezervasyon yapmanızı öneririz. Ekim–Mart arası ise tam tersi: teknede daha sakin bir atmosfer, aynı manzara, aynı fiyat.",
+        table: {
+          headers: ["Dönem", "MerrySails Fiyatı", "Doluluk Durumu", "Rezervasyon Önerisi"],
+          rows: [
+            ["Ocak–Mart (düşük sezon)", "Sabit (baz fiyat)", "Düşük — yer kolay bulunur", "1–2 gün önceden yeterli"],
+            ["Nisan–Mayıs (ilkbahar)", "Sabit", "Orta — hafta sonu dolabilir", "3–5 gün önceden önerilir"],
+            [
+              "Haziran–Ağustos (yüksek sezon)",
+              "Sabit",
+              "Yüksek — hızlı dolar",
+              "1–2 hafta önceden rezervasyon yapın",
+            ],
+            [
+              "Eylül–Ekim (sonbahar altını)",
+              "Sabit",
+              "Orta-yüksek — ideal dönem",
+              "4–7 gün önceden önerilir",
+            ],
+            ["Kasım–Aralık (geç sezon)", "Sabit", "Düşük — sakin Boğaz", "2–3 gün önceden yeterli"],
+          ],
+        },
+        proTip:
+          "Kasım–Mart arası gün batımı turu kış atmosferinde yaşanır: teknede az yolcu, dramatik bulut formasyonları ve İstanbul siluetinin en sakin hali. Aynı fiyata çok farklı bir deneyim.",
+      },
+      {
+        heading: "Rezervasyon ve Ödeme — Adım Adım",
+        answerCapsule:
+          "MerrySails rezervasyonu online form veya WhatsApp üzerinden yapılır. Paylaşımlı turlarda ödeme teknede nakit veya kartla alınır; özel yat kiralamada ön ödeme gerekebilir.",
+        content:
+          "Rezervasyon süreci kasıtlı olarak basit tutulmuştur. Paylaşımlı bir Boğaz gün batımı veya akşam yemeği turu için şu adımları izleyin:",
+        list: [
+          "Adım 1 — Tur seçin: [Gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) veya [akşam yemeği turu](/tr/istanbul-dinner-cruise) sayfasından tarih ve paketi belirleyin.",
+          "Adım 2 — Rezervasyon formu veya WhatsApp: Formu doldurun ya da +90 544 898 98 12 numarasına WhatsApp mesajı gönderin. Grup büyüklüğünü ve tarih tercihini belirtin.",
+          "Adım 3 — Onay alın: Birkaç saat içinde yer durumu ve biniş noktası detayları (Kabataş İskelesi bölgesi) teyit edilir.",
+          "Adım 4 — Ödeme: Paylaşımlı turlarda tekneye binişte nakit (€) veya kart. Özel yat kiralamada ön ödeme anlaşmasına göre belirlenir.",
+          "Adım 5 — İptal/değişiklik: 48 saat öncesine kadar ücretsiz iptal veya tarih değişikliği yapılabilir. Hava koşulları nedeniyle MerrySails tarafından iptal edilirse tam iade veya ücretsiz yeniden planlama yapılır.",
+        ],
+        callout: {
+          type: "price",
+          text:
+            "Grubunuz 8 kişi ve üzerindeyse rezervasyon öncesinde WhatsApp'tan bize yazın. Grup büyüklüğüne göre en ekonomik seçeneği (paylaşımlı vs özel) birlikte hesaplayalım.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "İstanbul'da yat kiralama fiyatları ne kadar?",
+        a: "MerrySails'te özel yat kiralama 2 saatlik tur için tekne başına €280 (Essential), €380 (Premium) veya €680 (VIP) olarak fiyatlandırılır. Bu fiyatlar grubun tüm üyeleri için geçerlidir — kişi sayısı arttıkça kişi başı maliyet düşer. Paylaşımlı Boğaz gün batımı turu kişi başı €34'tür.",
+      },
+      {
+        q: "Boğaz turu fiyatları ne kadar?",
+        a: "Paylaşımlı Boğaz gün batımı turu kişi başı €34 (şarapsız) veya €40 (şaraplı), 2 saat sürer. Akşam yemeği turu kişi başı €30 (Silver Soft) ile €90 (Gold Unlimited) arasında 4 farklı pakette sunulur, 3,5 saat sürer. Özel yat kiralama tekne başı €280–€680'den başlar.",
+      },
+      {
+        q: "Tekne kiralamanın kişi başı fiyatı ne zaman özel yat kiralamaya eşit olur?",
+        a: "Grubunuz 8–10 kişilik olduğunda denklem değişir. Örnek: 10 kişi × paylaşımlı gün batımı €34 = €340. Premium özel yat kiralama €380. Sadece €40 fark için teknenin tamamını grubunuza ayırabilirsiniz. 12 veya daha fazla kişi için özel yat kiralama kişi başına düşen maliyette çoğunlukla daha avantajlıdır.",
+      },
+      {
+        q: "GetYourGuide veya Viator üzerinden rezervasyon yapmak ile direkt rezervasyon arasında fiyat farkı var mı?",
+        a: "Evet. GetYourGuide ve benzeri platformlar aynı turu %15–30 daha yüksek fiyatla listeleyebilir çünkü operatörden komisyon alırlar. MerrySails'te direkt rezervasyon yaparak en güncel fiyatı öder, iptaller ve değişiklikler için doğrudan iletişim kurarsınız. TÜRSAB lisans #14316 doğrulaması da direkt rezervasyonda daha şeffaftır.",
+      },
+      {
+        q: "Yüksek sezonda fiyatlar artıyor mu?",
+        a: "MerrySails'in kendi yayınladığı fiyatlar yıl boyunca sabittir — Haziran–Ağustos yüksek sezonu için ek ücret uygulanmaz. Ancak yüksek sezonda tekneler erken dolduğu için tarih seçenekleri kısıtlanabilir. Bu dönemde en az 1–2 hafta önceden rezervasyon yapmanızı öneririz.",
+      },
+    ],
+    relatedTours: ["yacht-charter", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: [
+      "istanbul-bogaz-turu-fiyatlari-2026",
+      "istanbul-evlilik-teklifi-tekne",
+      "istanbul-aksam-yemegi-turu-rehberi",
+    ],
+    proTip:
+      "Grubunuz 6 kişiyi geçiyorsa hem paylaşımlı tur hem özel yat için fiyat hesaplayın — fark düşündüğünüzden az çıkabilir. WhatsApp'tan (+90 544 898 98 12) dakikalar içinde karşılaştırmalı teklif alabilirsiniz.",
+    calloutText:
+      "2001'den bu yana TÜRSAB A Grubu lisanslı (#14316), 50.000+ misafir deneyimi. Direkt rezervasyonda aracı komisyonu yoktur.",
+  },
 ];

@@ -242,6 +242,10 @@ const faqItems = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".faq-section", ".faq-section dt", ".faq-section dd"],
+  },
   mainEntity: faqItems.map((item) => ({
     "@type": "Question",
     name: item.q,
