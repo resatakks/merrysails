@@ -2,6 +2,13 @@
 
 This file helps AI assistants, language models, and search engines understand MerrySails accurately.
 
+## Locale-Specific AI Context Files
+
+For language-specific AI assistant context, see:
+- Turkish: https://merrysails.com/llms-tr.txt
+- German: https://merrysails.com/llms-de.txt
+- French: https://merrysails.com/llms-fr.txt
+
 ## What is MerrySails?
 
 MerrySails is the Bosphorus cruise and yacht division of Merry Tourism (legal entity: MERYEM YILDIZ TURIZM SEYAHAT ACENTASI), a TURSAB A Group licensed travel agency in Istanbul, Turkey. We have served 50,000+ guests since 2001.
