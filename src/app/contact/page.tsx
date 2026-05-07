@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import ContactForm from "./ContactForm";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata = {
   title: "Contact MerrySails — Phone, WhatsApp & Email",
@@ -14,7 +15,10 @@ export const metadata = {
     "merrysails whatsapp",
     "book boat tour istanbul",
   ],
-  alternates: { canonical: "https://merrysails.com/contact" },
+  alternates: {
+    canonical: "https://merrysails.com/contact",
+    languages: buildHreflang("/contact"),
+  },
   openGraph: {
     title: "Contact MerrySails — Book Your Bosphorus Cruise",
     description:

@@ -1258,4 +1258,252 @@ export const turkishProductPosts: BlogPost[] = [
     calloutText:
       "2001'den bu yana TÜRSAB A Grubu lisanslı (#14316), 50.000+ misafir deneyimi. Direkt rezervasyonda aracı komisyonu yoktur.",
   },
+  {
+    slug: "dogum-gunu-yat-kiralama-istanbul-2026",
+    locale: "tr",
+    title: "Doğum Günü Yat Kiralama İstanbul 2026 — Şeffaf Rehber",
+    metaDescription:
+      "İstanbul Boğazı'nda doğum günü yat kiralama: €280 Essential'dan €680 VIP'e kadar 3 paket. Pasta, çiçek, fotoğrafçı eklentileri, sürpriz planlama takvimi ve rezervasyon rehberi.",
+    excerpt:
+      "Doğum gününü İstanbul Boğazı'nda kutlamak için yat kiralama €280'den başlar. MerrySails'in şeffaf paket rehberi — sürpriz organizasyonu, eklenti hizmetler ve rezervasyon tavsiyesiyle.",
+    category: "yacht-guide",
+    date: "2026-05-06",
+    readTime: "10 dk okuma",
+    image:
+      "https://images.unsplash.com/photo-1504253163759-c23fccaebb55?w=1200&q=80",
+    imageAlt:
+      "İstanbul Boğazı'nda gün batımı ışığında süslenmiş özel yat — doğum günü kutlaması",
+    keywords: [
+      "doğum günü yat kiralama",
+      "doğum günü tekne kiralama istanbul",
+      "doğum günü yat kiralama istanbul",
+      "istanbul doğum günü teknesi",
+      "evlenme teklifi yat istanbul",
+      "boğaz doğum günü kutlaması",
+      "özel yat kiralama doğum günü",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Doğum günü yat kiralama tekne başına €280 (Essential) / €380 (Premium) / €680 (VIP) — kişi sayısından bağımsız, 2 saatlik tur",
+      "Pasta, çiçek, balon, müzik sistemi ve profesyonel fotoğrafçı gibi eklentiler WhatsApp üzerinden manuel teklif alarak organize edilir",
+      "Sürpriz doğum günü için en az 5–7 gün önceden rezervasyon ve senaryo planlaması gerekir; yüksek sezonda 2 hafta öneriyoruz",
+      "TÜRSAB A Grubu lisanslı MerrySails ile [güvenli rezervasyon](https://www.tursab.org.tr/en) yapabilir, tüm detayları WhatsApp'ta netleştirebilirsiniz",
+    ],
+    sections: [
+      {
+        heading: "Doğum Günü İçin Yat mı, Tekne mi? Hangisini Seçmeli",
+        answerCapsule:
+          "Özel yat kiralama, doğum günü kutlaması için paylaşımlı teknelerden üstündür: teknenin tamamı size aittir, müzik sistemi, dekorasyon ve pasta servisi için alan ve esneklik sunar. Paylaşımlı turda ise başka gruplar da bulunur, eklenti hizmet imkânı yoktur.",
+        content:
+          "İstanbul'da doğum günü organizasyonu söz konusu olduğunda ilk soru şu: paylaşımlı tur mu, yoksa özel yat kiralama mı? Paylaşımlı Boğaz turu kişi başı €34'ten başlar ve ekonomiktir; ancak tekne başkalarıyla paylaşılır. Müzik sistemi istediğiniz ses seviyesinde çalamaz, pasta kesme için yeterli alan olmayabilir ve özel anı fotoğraflamak güçleşir.\n\nÖzel yat kiralamada ise teknenin tamamı sizindir. Grubunuz yalnızdır, dekorasyonu siz belirlersiniz, playlist tamamen size ait ve kaptan rotayı tercihlerinize göre ayarlayabilir. MerrySails'te özel yat kiralama tekne başına €280'den başlar; 10 kişilik bir grup için kişi başı hesaplandığında fark düşündüğünüzden azdır.\n\nSonuç: kutlama ciddiyse ve özel bir an yaratmak istiyorsanız özel yat kiralama; bütçe önceliğinizse ve grubunuz 4 kişiden azsa paylaşımlı tur da değerlendirilebilir.",
+        table: {
+          headers: ["Özellik", "Paylaşımlı Tur", "Özel Yat Kiralama"],
+          rows: [
+            ["Kişi başı fiyat (10 kişi)", "€34", "€28–68 (tekne €280–680)"],
+            ["Gemi yalnız size ait mi?", "Hayır", "Evet"],
+            ["Dekorasyon kurulumu", "Yok", "Evet, önceden"],
+            ["Müzik sistemi", "Sabit yayın", "Kendi playlist"],
+            ["Pasta servisi", "Mümkün değil", "Evet"],
+            ["Fotoğrafçı eklenebilir mi?", "Hayır", "Evet"],
+            ["Sürpriz senaryo", "Uygun değil", "Tam uygun"],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "6 kişi ve üzeri gruplar için özel yat kiralama matematiksel olarak da mantıklı olmaya başlar. 10 kişilik grup için Essential paket kişi başı €28'e denk gelir — paylaşımlı turun €6 üzerinde.",
+        },
+      },
+      {
+        heading: "MerrySails Doğum Günü Yat Paketleri — €280'den",
+        answerCapsule:
+          "MerrySails 3 özel yat paketi sunar: Essential €280, Premium €380, VIP €680. Tüm fiyatlar tekne başına 2 saatlik Boğaz turu için geçerlidir; kişi sayısından bağımsızdır.",
+        content:
+          "MerrySails'in doğum günü yat kiralama fiyatları aşağıdaki tabloda özetlenmiştir. Tam fiyat detayları için [fiyat sayfasını](/pricing) inceleyebilirsiniz. Tüm paketlerde tekne size özeldir; kapasite ve tekne tipi pakete göre değişir.",
+        table: {
+          headers: [
+            "Paket",
+            "Fiyat (tekne başı)",
+            "Kapasite",
+            "Tekne Tipi",
+            "Öne Çıkan Özellik",
+          ],
+          rows: [
+            [
+              "Essential",
+              "€280",
+              "8–12 kişi",
+              "Standart motor yat",
+              "Güverte, ses sistemi, soğutucu",
+            ],
+            [
+              "Premium",
+              "€380",
+              "10–16 kişi",
+              "Orta sınıf lüks yat",
+              "Kapalı salon, güneş güvertesi, Bluetooth",
+            ],
+            [
+              "VIP",
+              "€680",
+              "12–20 kişi",
+              "Üst sınıf lüks yat",
+              "Üst güverte, özel hizmet, dekorasyon alanı",
+            ],
+          ],
+        },
+        expertQuote: {
+          text:
+            "Doğum günü rezervasyonlarında en çok yapılan hata, tekneyi son dakika kiralamak. Özellikle yaz aylarında Haziran–Ağustos arası haftalar önceden doluyor. Organizasyon için süre kalmıyor. En az 10 gün önceden ara — hem tekneyi garantilersiniz hem pasta ve çiçek siparişi için vakit olur.",
+          author: "Kaptan Ahmet",
+          title: "MerrySails Tekne Kaptanı, 20+ yıl Boğaz deneyimi",
+        },
+        proTip:
+          "VIP paket, grubunuz 12 kişinin üzerindeyse veya tekne üstünde sofra düzenlemek istiyorsanız en uygun seçenektir. Premium ise 10–14 kişilik orta büyüklükteki kutlamalar için ideal denge sunar.",
+      },
+      {
+        heading: "Pasta, Çiçek, Müzik, Fotoğrafçı — Eklenebilen Servisler",
+        answerCapsule:
+          "Pasta, çiçek aranjmanı, balon dekoru, Bluetooth müzik sistemi ve profesyonel fotoğrafçı gibi eklentiler önceden WhatsApp üzerinden talep edilerek organize edilir; fiyatlar içeriğe göre manuel teklifle belirlenir.",
+        content:
+          "MerrySails paket fiyatları yata ve süreye aittir; eklenti hizmetler ayrı organize edilir. Bu model, her kutlamayı kişiselleştirmenizi sağlar. Bazı misafirler sadece tekne kiralayıp pastayı kendisi getirir; diğerleri tüm organizasyonu bize bırakır.\n\nWhatsApp hattından (+90 537 040 68 22) rezervasyonunuzu yaparken istediğiniz eklentileri belirtmeniz yeterli. Ekibimiz içeriğe özel fiyat teklifi oluşturur ve organizasyonu koordine eder. Tekne hareket etmeden en az 2 saat önce dekorasyon ve ikram kurulumu tamamlanır.",
+        table: {
+          headers: ["Eklenti Hizmet", "Organizasyon Yöntemi", "Not"],
+          rows: [
+            [
+              "Doğum günü pastası",
+              "WhatsApp ile sipariş",
+              "Fiyat portiye ve tasarıma göre değişir",
+            ],
+            [
+              "Çiçek aranjmanı",
+              "WhatsApp ile sipariş",
+              "Gül, ortanca, karışık buket seçenekleri",
+            ],
+            [
+              "Balon dekorasyonu",
+              "WhatsApp ile sipariş",
+              "Renk teması belirtebilirsiniz",
+            ],
+            [
+              "Profesyonel fotoğrafçı",
+              "WhatsApp ile sipariş",
+              "Tur boyunca 2 saatlik çekim",
+            ],
+            [
+              "Bluetooth müzik sistemi",
+              "Paket dahil (bazı teknelerde)",
+              "Playlist önceden hazırlanır",
+            ],
+            [
+              "Kokteyl / içecek servisi",
+              "WhatsApp ile sipariş",
+              "Alkollü/alkolsüz seçenekler",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Dış mekan fotoğraf için altın saat önemlidir. Eğer doğum günü fotoğrafları çektirecekseniz, turu gün batımına 90 dakika kala başlatmayı tercih edin. Boğaz ışığı bu saatte fotoğraflara sinematik bir his katar.",
+        },
+      },
+      {
+        heading: "Hangi Yaş Grubu İçin Hangi Paket?",
+        answerCapsule:
+          "Çocuk doğum günü için Essential paket ve erken saatler önerilir. 18 yaş ve genç kutlamalar için Premium; 30/40/50 milestone doğum günleri için VIP veya Premium paketi tercih edilir.",
+        content:
+          "Doğum günü yat kiralama, yaş grubuna göre farklı ihtiyaçlar doğurur. Çocuklar için güvenli alan, erken saat ve basit kurulum öncelikli. Yetişkin kutlamalarında ise atmosfer ve mahremiyet öne çıkar. Aşağıdaki rehber paket seçiminizi kolaylaştırır:\n\n**Çocuk doğum günü (4–12 yaş):** Essential paket, 09:30 veya 14:00 saati, maksimum 10 çocuk + ebeveyn. Tekne üstünde geniş güverte şart; balon dekoru ve pasta eklentisi çok işe yarar. Çocuklar için yaşam yeleği mevcut, kaptan gruba göre hız ayarlar.\n\n**18 yaş ve genç kutlamalar:** Premium paket önerilir. Grup genellikle 12–16 kişidir ve müzik sistemi kritik önem taşır. Akşam saatlerinde gün batımı rotası atmosfere büyük katkı sağlar. Fotoğrafçı eklentisi bu yaş grubunda en çok talep edilendir.\n\n**30, 40, 50 milestone kutlamalar:** VIP paket ideal. Daha küçük ve yakın gruplar (8–12 kişi), sofra düzenlemesi, kaliteli içecek servisi ve mahremiyet beklentisi ön planda. Çiçek aranjmanı ve özel pasta bu yaş grubunda standart hale geliyor.",
+        proTip:
+          "50. doğum günü veya üzeri kutlamalar için 3–4 saatlik uzun tur seçeneği de istenilebilir. Kaptan ile önceden konuşun; rota Adalar yönüne veya Anadolu yakası koylarına uzatılabilir.",
+      },
+      {
+        heading:
+          "Sürpriz Doğum Günü — Eşinize veya Sevgilinize Nasıl Organize Edersiniz",
+        answerCapsule:
+          "Sürpriz doğum günü için tekne rezervasyonu sizi adına açılır, konuk bilgisi gizli tutulur. Organizasyon sürecinde MerrySails ekibi ile senaryo planlanır; minimum 5–7 gün önceden başlamak gerekir.",
+        content:
+          "Sürpriz doğum günü organizasyonu, standart rezervasyondan biraz daha fazla koordinasyon gerektirir. Süreç şu şekilde işler:\n\n**1. Adım — Gizli rezervasyon:** Rezervasyonu siz yaparsınız, doğum günü kutlananın adı veya bilgisi kullanılmaz. Bizimle hangi senaryoyu planlayacağınızı paylaşırsınız.\n\n**2. Adım — Eklenti siparişleri:** Pasta, çiçek ve balon siparişleri tekne hareket etmeden en az 3 saat önce teslim edilmesi için ayarlanır. Dekorasyon, misafir gemiye binmeden kurulur.\n\n**3. Adım — Senaryo:** Kutlanan kişiyi gemiye getirirken hangi bahanede getireceğinizi planlamanız gerekir. Ekibimiz kapıda \"başka bir tur\" gibi görünecek şekilde karşılama yapabilir.\n\n**4. Adım — Sürpriz anı:** Misafir gemiye adım attığında dekor, pasta ve grup hazır bekler. Fotoğrafçı varsa bu anı kaydeder.",
+        callout: {
+          type: "warning",
+          text:
+            "Haziran–Ağustos yoğun sezonunda sürpriz organizasyonu için en az 2 hafta önceden rezervasyon yapın. Son dakika talepleri için pasta ve dekorasyon temininde güçlük yaşanabilir.",
+        },
+        proTip:
+          "Sürpriz organizasyonunda WhatsApp hattını kullanarak ayrıntıları yazılı netleştirin. Senaryo, dekor rengi, pasta içeriği ve fotoğrafçı tercihinizi tek mesajda ileterek onay alın — tur günü son dakika değişikliği zor olur.",
+      },
+      {
+        heading: "Rezervasyon Süreci — Ne Kadar Önceden Ayarlamalısınız",
+        answerCapsule:
+          "Düşük sezonda (Ekim–Nisan) 3–5 gün yeterli olabilir. Yüksek sezonda (Haziran–Ağustos) en az 10–14 gün önceden rezervasyon yapılması ve eklenti siparişlerin ayrıca organize edilmesi gerekir.",
+        content:
+          "MerrySails'te doğum günü yat kiralama için rezervasyon süreci üç aşamada ilerler:\n\n**Birinci aşama — tarih ve paket onayı:** WhatsApp (+90 537 040 68 22) veya [/tr/yacht-charter-istanbul](/tr/yacht-charter-istanbul) sayfasındaki form üzerinden tercih ettiğiniz paket, tarih, saat ve kişi sayısını iletin. Müsaitlik kontrolü genellikle 30 dakika içinde yapılır.\n\n**İkinci aşama — eklenti siparişleri:** Pasta, çiçek ve fotoğrafçı gibi eklentileri ayrıca bildirin. Ekibimiz her kalem için ön teklif oluşturur, onayladıktan sonra temin sürecini başlatır.\n\n**Üçüncü aşama — tur öncesi koordinasyon:** Tur gününden 24 saat önce kalkış noktası (Kuruçeşme Marina veya Kabataş), tam saat ve eğer sürpriz organizasyonsa senaryo detayları netleştirilir.\n\n[Özel etkinlik sayfamızdaki](/tr/private-events) talep formunu da kullanabilirsiniz; bu form kurumsal ve büyük grup organizasyonları için özellikle uygundur.",
+        table: {
+          headers: ["Sezon", "Önerilen Rezervasyon Süresi", "Ek Not"],
+          rows: [
+            [
+              "Ekim–Nisan (düşük sezon)",
+              "3–5 gün önceden",
+              "Tekne müsaitliği geniş",
+            ],
+            [
+              "Mayıs–Haziran (orta sezon)",
+              "7–10 gün önceden",
+              "Hafta sonu tarihleri hızlı doluyor",
+            ],
+            [
+              "Temmuz–Ağustos (yüksek sezon)",
+              "10–14 gün önceden",
+              "Fotoğrafçı eklemek istiyorsanız 2 hafta öngörün",
+            ],
+            [
+              "Sürpriz organizasyon (her sezon)",
+              "+3 gün ekstra",
+              "Senaryo ve dekor koordinasyonu için ek süre",
+            ],
+          ],
+        },
+      },
+      {
+        heading:
+          "Sıkça Sorulan Sorular — Doğum Günü Yat Kiralama İstanbul",
+        content:
+          "Aşağıdaki sorular rezervasyon öncesinde en sık iletilen meraklardır. Farklı bir sorunuz varsa [özel etkinlik sayfamızda](/tr/private-events) yer alan form üzerinden veya WhatsApp (+90 537 040 68 22) üzerinden yanıt alabilirsiniz.",
+        answerCapsule:
+          "Doğum günü yat kiralama hakkında en sık sorulan sorular: fiyat, eklentiler, rezervasyon süresi ve sürpriz organizasyon detayları.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Doğum günü yat kiralama fiyatı kişi başı mı, tekne başı mı hesaplanıyor?",
+        a: "Tekne başı hesaplanır. Essential paket €280, Premium €380, VIP €680 — bu ücret teknenin tamamı için geçerlidir, kişi sayısına göre artmaz. 10 kişilik bir grup için kişi başı maliyet €28 ile €68 arasında olur; bu paylaşımlı tur fiyatıyla rekabetçidir.",
+      },
+      {
+        q: "Pasta ve çiçek siparişi doğum günü yat paketine dahil mi?",
+        a: "Hayır, paket fiyatına dahil değildir. Pasta, çiçek, balon ve fotoğrafçı gibi eklentiler WhatsApp üzerinden ayrı organize edilir. Fiyatları seçime göre değiştiği için önceden manuel teklif alıyoruz. İstek listenizdeki tüm eklentileri rezervasyon sırasında bildirirseniz tek seferde teklif alırsınız.",
+      },
+      {
+        q: "Sürpriz doğum günü organizasyonu yapabilir misiniz?",
+        a: "Evet. Rezervasyonu kutlanan kişi adına değil, siz yaparsınız. Senaryo, dekor kurulum zamanı ve karşılama detayları ekibimizle önceden planlanır. Tek şart: en az 5–7 gün önceden iletişim kurmanız. Yüksek sezonda 2 hafta önerilir.",
+      },
+      {
+        q: "Çocuk doğum günü için yat kiralama uygun mu?",
+        a: "Evet, çocuklar için özellikle Essential paket ve 09:30–14:00 saatleri önerilir. Tüm teknelerde çocuk boyutlarında yaşam yeleği bulunur ve kaptan hız ayarlaması yapar. Güverte alanı balon dekorasyonu ve pasta kesimi için uygundur. 4 yaş altı çocuklarda ebeveyn gözetimi gereklidir.",
+      },
+      {
+        q: "Doğum günü yatını neden GetYourGuide veya Viator üzerinden değil de direkt rezerve etmeliyim?",
+        a: "Üçüncü parti platformlar aynı hizmet için genellikle %15–30 daha yüksek fiyat uygular çünkü operatörden komisyon alır. Direkt rezervasyonda bu farkı ödemezsiniz. Sürpriz organizasyon ve eklenti koordinasyonu da direkt iletişimde çok daha kolay yürür. MerrySails TÜRSAB A Grubu lisanslıdır; lisansı tursab.org.tr üzerinden doğrulayabilirsiniz.",
+      },
+    ],
+    relatedTours: ["yacht-charter", "proposal-yacht-rental", "private-events"],
+    relatedPosts: [
+      "istanbul-yat-kiralama-rehberi-2026",
+      "istanbul-evlilik-teklifi-tekne",
+      "yat-kiralama-tekne-fiyatlari-istanbul-2026",
+    ],
+    proTip:
+      "Doğum günü kutlamasında gün batımı rotası seçin: Haziran–Ağustos arası gün batımı 20:30–21:00 civarındadır, akşam 18:30–19:00 kalkışı bu ışığı yakalamanızı sağlar. [Gün batımı Boğaz turu sayfasına](/tr/cruises/bosphorus-sunset-cruise) göz atarak rotayı önceden görebilirsiniz.",
+    calloutText:
+      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimi. Doğum günü organizasyonu için WhatsApp: +90 537 040 68 22",
+  },
 ];

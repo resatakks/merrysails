@@ -7,6 +7,7 @@ import {
   TURSAB_AGENCY_NAME,
   TURSAB_LICENSE_NUMBER,
 } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata = {
   title: `About ${SITE_NAME} — ${COMPANY_NAME} and TURSAB License`,
@@ -19,7 +20,10 @@ export const metadata = {
     "bosphorus cruise company",
     "istanbul boat tour company",
   ],
-  alternates: { canonical: "https://merrysails.com/about" },
+  alternates: {
+    canonical: "https://merrysails.com/about",
+    languages: buildHreflang("/about"),
+  },
   openGraph: {
     title: `About ${SITE_NAME} — TURSAB-Licensed Bosphorus Cruises`,
     description:

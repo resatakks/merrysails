@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata = {
   title: "FAQ — Bosphorus Cruise Questions Answered",
@@ -12,7 +13,10 @@ export const metadata = {
     "cruise booking faq",
     "istanbul boat tour prices",
   ],
-  alternates: { canonical: "https://merrysails.com/faq" },
+  alternates: {
+    canonical: "https://merrysails.com/faq",
+    languages: buildHreflang("/faq"),
+  },
   openGraph: {
     title: "FAQ — Istanbul Bosphorus Cruise Questions",
     description:
