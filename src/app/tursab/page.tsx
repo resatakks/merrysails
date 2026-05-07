@@ -1,12 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ShieldCheck, Building2, FileBadge, MapPin, ExternalLink, CheckCircle, Search, Clock, MessageCircle, ArrowRight } from "lucide-react";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "TURSAB License 14316 — Verified Travel Agency",
   description:
-    "MerrySails holds TURSAB A Group license 14316. Learn what this means for you as a tourist: consumer protection, refund rights, how to verify the license, and how to file a complaint.",
-  alternates: { canonical: "https://merrysails.com/tursab" },
+    "MerrySails holds TURSAB A Group license 14316. Consumer protection, refund rights, how to verify the licence, and the TURSAB complaint process explained.",
+  alternates: { canonical: "https://merrysails.com/tursab", languages: buildHreflang("/tursab") },
   openGraph: {
     title: "TURSAB License 14316 — Verified Travel Agency",
     description:
