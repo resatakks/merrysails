@@ -117,6 +117,8 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Bosphorus Cruises", href: "https://www.goldensunsettour.com/" },
+      { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+      { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
       { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
       { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
@@ -150,6 +152,8 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Boğaz Turları", href: "https://www.goldensunsettour.com/" },
+      { label: "GoldenSunsetTour — Gün Batımı Turu", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+      { label: "GoldenSunsetTour — Akşam Yemeği Turu", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
       { label: "MerryTourism — Transfer", href: "https://www.merrytourism.com/tr" },
       { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
       { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
@@ -183,6 +187,8 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Bosporus-Kreuzfahrten", href: "https://www.goldensunsettour.com/" },
+      { label: "GoldenSunsetTour — Sonnenuntergangsfahrt", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+      { label: "GoldenSunsetTour — Dinner-Kreuzfahrt", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
       { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/de" },
       { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul Festpreis", href: "https://www.merrytourism.com/de/vip-transfer" },
@@ -216,6 +222,8 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Croisières Bosphore", href: "https://www.goldensunsettour.com/" },
+      { label: "GoldenSunsetTour — Coucher de Soleil", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+      { label: "GoldenSunsetTour — Dîner Croisière", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
       { label: "MerryTourism — Transferts", href: "https://www.merrytourism.com/en" },
       { label: "Transfert Aéroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
