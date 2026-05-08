@@ -258,6 +258,65 @@ const faqSchema = {
   })),
 };
 
+// HowTo schema — actionable booking flow for Google rich result + AI grounding.
+// "How to book a Bosphorus cruise in Istanbul" is a high-volume informational query;
+// HowTo rich result can show the steps directly in SERP.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to book a Bosphorus cruise in Istanbul",
+  description:
+    "Step-by-step guide to choosing and booking the right Bosphorus cruise — sunset, dinner, or private yacht charter — directly with the licensed operator MerrySails (TURSAB A Group, since 2001).",
+  totalTime: "PT5M",
+  estimatedCost: { "@type": "MonetaryAmount", currency: "EUR", value: "30" },
+  supply: [
+    { "@type": "HowToSupply", name: "Travel date and time" },
+    { "@type": "HowToSupply", name: "Number of guests" },
+    { "@type": "HowToSupply", name: "Email address for booking confirmation" },
+  ],
+  tool: [
+    { "@type": "HowToTool", name: "MerrySails booking page" },
+    { "@type": "HowToTool", name: "WhatsApp (+90 544 898 98 12)" },
+  ],
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Pick the cruise format",
+      text: "Choose between the shared sunset cruise (2 hours, EUR 34 from), the shared dinner cruise (3.5 hours, EUR 30 to EUR 90 across four packages), or a private yacht charter (from EUR 280 per yacht, 2 hours).",
+      url: `${SITE_URL}/bosphorus-cruise`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Confirm boarding location",
+      text: "Sunset cruise meets at a central Karaköy boarding flow, dinner cruise boards at Kabataş, private yachts depart from Kuruçeşme Marina or the assigned home pier of the booked vessel.",
+      url: `${SITE_URL}/bosphorus-cruise-departure-points`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Select date and guests",
+      text: "Use the booking calendar on the chosen cruise page to pick a date, number of guests, and a package (Silver/Gold for dinner, With Wine/Without for sunset, yacht tier for private).",
+      url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Confirm and pay",
+      text: "Review the total, accept the free cancellation policy (up to 24 hours before departure), and confirm. Payment is collected onboard for shared cruises by cash or card; private events have their own deposit flow.",
+      url: `${SITE_URL}/reservation`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 5,
+      name: "Receive booking confirmation",
+      text: "MerrySails sends the reservation ID and exact boarding pin by email and (optionally) WhatsApp. Arrive 15 minutes before scheduled departure with your reservation reference.",
+      url: `${SITE_URL}/contact`,
+    },
+  ],
+};
+
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -281,6 +340,7 @@ export default function BosphorusCruisePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="pb-20 bg-[var(--surface-alt)]">

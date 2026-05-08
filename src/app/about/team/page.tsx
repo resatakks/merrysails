@@ -7,7 +7,7 @@ import { teamPersonSchemas } from "@/lib/team-schema";
 const SITE_URL = "https://merrysails.com";
 
 export const metadata: Metadata = {
-  title: "Meet the Team | MerrySails",
+  title: "Meet the Team",
   description:
     "Meet the people behind MerrySails: a TURSAB-licensed founder with 25 years in Istanbul tourism, a master-licensed Bosphorus captain, and a multilingual guest experience lead.",
   alternates: {

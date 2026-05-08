@@ -575,6 +575,23 @@ export default async function TourDetailPage({
       }
     : null;
 
+  // VideoObject schema — emitted when tour has on-board video preview.
+  // Helps Google show video rich result thumbnail in SERP and gives AI
+  // crawlers a structured signal about the visual content of the cruise.
+  const videoSchema = tour.videoSrc
+    ? {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: `${tour.nameEn} — On-board Bosphorus preview`,
+        description: `Short on-board preview from MerrySails ${tour.nameEn}. Filmed during a real Bosphorus cruise departure between Karaköy and Rumeli Fortress. TURSAB A Group licensed since 2001.`,
+        thumbnailUrl: tour.image.startsWith("http") ? tour.image : `${SITE_URL}${tour.image}`,
+        uploadDate: "2026-04-01",
+        contentUrl: tour.videoSrc.startsWith("http") ? tour.videoSrc : `${SITE_URL}${tour.videoSrc}`,
+        embedUrl: `${SITE_URL}${getTourPath(tour)}`,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      }
+    : null;
+
   return (
     <>
       <script
@@ -595,6 +612,12 @@ export default async function TourDetailPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
+      {videoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
         />
       )}
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
