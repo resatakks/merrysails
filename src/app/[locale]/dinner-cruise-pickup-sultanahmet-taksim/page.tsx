@@ -760,6 +760,7 @@ export default async function LocaleDinnerCruisePickupSultanahmetTaksimPage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.heroTitle,
     description: t.metaDescription,
     url: canonicalUrl,
@@ -785,6 +786,7 @@ export default async function LocaleDinnerCruisePickupSultanahmetTaksimPage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
     image: "",

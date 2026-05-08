@@ -439,6 +439,7 @@ export default async function LocaleProposalYachtRentalPage({
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.heroTitle,
     description: t.metaDescription,
     provider: { "@id": `${SITE_URL}/#organization` },
@@ -451,6 +452,7 @@ export default async function LocaleProposalYachtRentalPage({
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
     brand: { "@type": "Brand", name: "MerrySails" },

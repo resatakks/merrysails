@@ -504,6 +504,7 @@ export default async function LocaleDinnerCruisePage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.h1,
     alternateName: ["Istanbul Dinner Cruise", "Bosphorus Dinner Cruise", "İstanbul Akşam Yemeği Turu", "Bosporus Dinner Kreuzfahrt"],
     description: dinnerTour.description,
@@ -527,6 +528,7 @@ export default async function LocaleDinnerCruisePage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.h1,
     description: dinnerTour.description,
     image: dinnerTour.image,

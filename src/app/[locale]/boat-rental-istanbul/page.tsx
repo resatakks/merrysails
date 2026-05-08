@@ -301,6 +301,7 @@ export default async function LocaleBoatRentalPage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.heroTitle,
     description: t.description,
     provider: { "@id": `${SITE_URL}/#organization` },
@@ -319,6 +320,7 @@ export default async function LocaleBoatRentalPage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.description,
     image: "",

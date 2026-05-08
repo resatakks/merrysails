@@ -393,6 +393,7 @@ export default async function LocaleBosphorusCruisePage({
   const tourProductSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: c.h1,
     description: c.description,
     url: canonicalUrl,
@@ -414,10 +415,13 @@ export default async function LocaleBosphorusCruisePage({
 
   // Separate Product schema for Google Review snippet rich result
   // (Service/TouristTrip parent is not supported per Google's spec)
+  // Unique @id + suffixed name to avoid Google merging this with the TouristTrip
+  // node — the merged parent_node was previously failing review-snippet validation.
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: c.h1,
+    "@id": `${canonicalUrl}#product`,
+    name: `${c.h1} — Booking`,
     description: c.description,
     image: SITE_URL + "/og-image.jpg",
     brand: { "@type": "Brand", name: "MerrySails" },

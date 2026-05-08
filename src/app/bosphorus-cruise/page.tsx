@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 const guideSchema = {
   "@context": "https://schema.org",
   "@type": ["TouristTrip", "Service"],
+  "@id": `${SITE_URL}/bosphorus-cruise#tour`,
   name: "Bosphorus Cruise Istanbul",
   description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €34, dinner cruise from €30, and private yacht charter from €280. TURSAB-licensed operator since 2001.",
   url: `${SITE_URL}/bosphorus-cruise`,
@@ -80,7 +81,8 @@ const guideSchema = {
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Bosphorus Cruise Istanbul",
+  "@id": `${SITE_URL}/bosphorus-cruise#product`,
+  name: "Bosphorus Cruise Istanbul Booking",
   description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €34, dinner cruise from €30, and private yacht charter from €280.",
   image: `${SITE_URL}/og-image.jpg`,
   brand: { "@type": "Brand", name: "MerrySails" },

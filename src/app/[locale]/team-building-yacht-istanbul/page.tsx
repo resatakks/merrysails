@@ -251,6 +251,7 @@ export default async function TeamBuildingYachtLocalePage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.heroTitle,
     description: t.metaDescription,
     url: canonicalUrl,
@@ -264,6 +265,7 @@ export default async function TeamBuildingYachtLocalePage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
     image: "",

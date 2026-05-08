@@ -836,6 +836,7 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.heroTitle,
     description: t.metaDescription,
     url: canonicalUrl,
@@ -858,6 +859,7 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
     image: "",

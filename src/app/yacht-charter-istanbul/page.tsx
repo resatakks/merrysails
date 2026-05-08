@@ -60,6 +60,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": ["TouristTrip", "Service"],
+  "@id": `${canonicalUrl}#tour`,
   touristType: "Couples, Groups, Families, Corporate",
   name: yachtTour.nameEn,
   alternateName: [
@@ -138,7 +139,8 @@ const productSchema = yachtTour
   ? {
       "@context": "https://schema.org",
       "@type": "Product",
-      name: yachtTour.nameEn ?? "Private Yacht Charter Istanbul",
+      "@id": `${canonicalUrl}#product`,
+      name: `${yachtTour.nameEn ?? "Private Yacht Charter Istanbul"} — Booking`,
       description: yachtTour.description,
       image: yachtTour.image,
       brand: { "@type": "Brand", name: "MerrySails" },

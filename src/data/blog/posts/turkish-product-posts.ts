@@ -1819,4 +1819,707 @@ export const turkishProductPosts: BlogPost[] = [
     calloutText:
       "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle İstanbul'un en güvenilir Boğaz turu operatörlerinden biridir. Rezervasyon ve sorularınız için WhatsApp: +90 537 040 68 22",
   },
+  {
+    slug: "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+    locale: "tr",
+    title: "Eminönü, Karaköy, Kabataş Boğaz Turu İskele Rehberi 2026",
+    metaDescription:
+      "Eminönü boğaz turu, Kabataş ve Karaköy iskelelerinden kalkış rehberi: gün batımı €34–40, akşam yemeği €30–90. TURSAB lisanslı MerrySails ile 2026 sefer saatleri ve ulaşım.",
+    excerpt:
+      "Eminönü, Karaköy ve Kabataş — hangi iskeleden hangi Boğaz turu kalkar, kaç saat sürer ve fiyat nedir? 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 iskele rehberi.",
+    category: "cruise-guide",
+    date: "2026-05-08",
+    dateModified: "2026-05-08",
+    readTime: "10 dk okuma",
+    image:
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt:
+      "Karaköy rıhtımından İstanbul Boğazı manzarası — arka planda Galata Kulesi ve Boğaz köprüsü",
+    keywords: [
+      "eminönü boğaz turu",
+      "karaköy boğaz turu",
+      "kabataş boğaz turu",
+      "boğaz turu kaç saat",
+      "eminönü boğaz turu saatleri",
+      "kabataş akşam yemeği turu",
+      "boğaz turu iskele rehberi",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "Eminönü ve Karaköy'den kalkan büyük vapurlar Şehir Hatları taşımacılığıdır — turistik rehberli tur değil, düzenli kamu seferi",
+      "MerrySails Gün Batımı Turu Karaköy bölgesinden (Arap Cami yakını) kalkar; kişi başı €34 (şarapsız) veya €40 (şarapla), ~2 saat",
+      "Akşam Yemeği Boğaz Turu Kabataş İskelesi'nden 20:30'da hareket eder; Silver €30–45, Gold €80–90, ~3,5 saat",
+      "TÜRSAB A Grubu lisanslı operatör seçin — lisans numarası tursab.org.tr üzerinden 30 saniyede doğrulanabilir",
+    ],
+    sections: [
+      {
+        heading:
+          "Eminönü, Karaköy, Kabataş — Hangi İskeleden Boğaz Turuna Binilir?",
+        answerCapsule:
+          "İstanbul'da üç ana iskele bölgesi vardır: Eminönü (Şehir Hatları kamu vapurları), Karaköy (MerrySails gün batımı turu, €34–40), Kabataş (akşam yemeği turu, €30–90). Her biri farklı bir deneyim sunar.",
+        content:
+          "'Eminönü'nden boğaz turu var mı?' sorusu İstanbul'a gelen turistlerin en sık sorduğu sorular arasındadır. Yanıt kısmen evet, kısmen hayırdır: Eminönü'nden Boğaz boyunca sefer yapan vapurlar bulunur, ancak bunlar turistik rehberli tur değil, Şehir Hatları A.Ş.'nin işlettiği kamu taşımacılığıdır.\n\nGerçek turizm ürünleri — yani İngilizce rehberli, ikramlı, biletli ve TÜRSAB denetimindeki turlar — Karaköy bölgesinden (gün batımı) ve Kabataş İskelesi'nden (akşam yemeği) hareket eder. Bu ikisi arasındaki 15 dakikalık yürüyüş mesafesi, doğru iskelenin bilinmesiyle büyük fark yaratır.",
+        table: {
+          headers: [
+            "İskele",
+            "Hizmet Türü",
+            "Fiyat",
+            "Süre",
+            "Rehber",
+          ],
+          rows: [
+            [
+              "Eminönü",
+              "Şehir Hatları (kamu seferi)",
+              "₺50–200",
+              "1,5–6 saat",
+              "Yok",
+            ],
+            [
+              "Karaköy (Arap Cami yakını)",
+              "MerrySails Gün Batımı Turu",
+              "€34–40 / kişi",
+              "~2 saat",
+              "İngilizce rehber",
+            ],
+            [
+              "Kabataş",
+              "Akşam Yemeği Boğaz Turu",
+              "€30–90 / kişi",
+              "~3,5 saat",
+              "Çok dilli",
+            ],
+            [
+              "Kuruçeşme / Bebek Marinaları",
+              "Özel Yat Kiralama",
+              "€280+ / yat",
+              "2–8 saat",
+              "Kaptan dahil",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Rezervasyon onayınızda Google Maps pini paylaşılır. İstanbul'da 'yanlış iskele' problemi yaşamamak için bu pini telefona önceden indirin — 4G bağlantısına güvenmek yerine offline çalışır.",
+        },
+      },
+      {
+        heading:
+          "Eminönü Boğaz Turu Kalkış Noktası ve Sefer Saatleri",
+        answerCapsule:
+          "Eminönü'nden kalkan Şehir Hatları vapurları sabah erken saatlerden itibaren düzenli sefer yapar. Kısa Boğaz turu seferleri genellikle 09:30–15:30 arası belirli saatlerde kalkar; tam güzergah (Anadolu Kavağı) 10:35 kalkışlı ana seferdir.",
+        content:
+          "Eminönü Vapur İskelesi, Galata Köprüsü'nün hemen yanı başında, İstanbul'un en yoğun ulaşım noktalarından birinde yer alır. Buradan kalkan vapurlar Şehir Hatları A.Ş. tarafından işletilir ve İETT gibi kamu toplu taşıması kapsamındadır.\n\nEminönü–Anadolu Kavağı hattı (12 numaralı hat) gidiş-dönüş yaklaşık 6 saat sürer ve belirli iskelelerde durur: Beşiktaş, Kandilli, Kuzguncuk, Çengelköy, Anadolu Hisarı ve Anadolu Kavağı. Bu sefer yılın her günü sabah 10:35 civarında kalkar; sezona göre ikinci sefer öğleden sonra eklenebilir.\n\nKısa Boğaz seferleri (Küçüksu'ya kadar) ise 1,5–2 saat sürer ve daha sık aralıklarla çalışır. Bilet İstanbulkart ile ₺50–200 arasında değişir. Tüm bu seferlerde İngilizce yorum, ikram servisi veya grup rehberliği yoktur.",
+        proTip:
+          "Şehir Hatları tarifelerini ve anlık sefer saatlerini İstanbul Deniz Otobüsleri resmi sitesinden kontrol edin. MerrySails saatleri için [Boğaz turu sayfamızı](/tr/bosphorus-cruise) inceleyin.",
+      },
+      {
+        heading:
+          "Karaköy Boğaz Turu Nereden Başlar?",
+        answerCapsule:
+          "MerrySails Gün Batımı Turu Karaköy bölgesinde Arap Cami / Uskufcular Sokak yakınından kalkar. Büyük Şehir Hatları iskelesinden birkaç dakika yürüme mesafesinde, ayrı bir noktadadır. Rezervasyon onayında harita pini paylaşılır.",
+        content:
+          "Karaköy, Galata Kulesi'nin eteğinde, Boğaz girişine yakın tarihi bir rıhtım semtidir. MerrySails [Gün Batımı Turu](/tr/cruises/bosphorus-sunset-cruise)'nun buluşma noktası bu semtte, Arap Cami yakınında küçük bir tekneleme bölgesindedir.\n\nBüyük kalabalık Şehir Hatları iskelesinin birkaç dakika güneyinde, daha sakin bir kıyı şeridinde yer alır. Küçük grup formatında (12–20 kişi) çalışan bu tur, Boğaz boyunca İstanbul silüetini — Dolmabahçe Sarayı, Çırağan Sarayı, Ortaköy Camii, iki köprü ve Rumeli Hisarı — İngilizce rehber anlatımıyla sunar.\n\nT1 tramvayıyla Sultanahmet veya Sirkeci'den Karaköy durağında inin; Galata Köprüsü'nün hemen altında çıkmış olursunuz. Arap Cami yönünde 5 dk yürüyerek buluşma noktasına ulaşabilirsiniz.",
+        callout: {
+          type: "price",
+          text:
+            "MerrySails Gün Batımı Turu: €34/kişi (şarapsız) | €40/kişi (şarapla). Kalkış: Karaköy bölgesi, günbatımından 15 dk önce. Rezervasyon: [/tr/cruises/bosphorus-sunset-cruise](/tr/cruises/bosphorus-sunset-cruise)",
+        },
+        proTip:
+          "Karaköy'deki sokaklar dar ve kıyıya paralel uzanır. Eminönü tarafından geliyorsanız Galata Köprüsü'nü yürüyerek geçmek (10 dk) yerine tramvayla bir durak gitmeniz daha hızlıdır.",
+      },
+      {
+        heading:
+          "Kabataş Boğaz Turu — Akşam Yemeği ve Özel Tekne Kalkışları",
+        answerCapsule:
+          "MerrySails Akşam Yemeği Boğaz Turu her gece 20:30'da Kabataş İskelesi'nden hareket eder. Dört paket sunulur: Silver Soft Drinks €30, Silver Alcoholic €45, Gold Soft Drinks €80, Gold Unlimited Alcohol €90.",
+        content:
+          "Kabataş, Dolmabahçe Sarayı'nın hemen bitişiğinde, Beşiktaş ile Karaköy arasında konumlanan modern bir rıhtım noktasıdır. Şehrin en merkezi iskele bölgelerinden biri olup derin suyu ve büyük tekne kapasitesiyle akşam yemeği turlarına en uygun altyapıya sahiptir.\n\nMerrySails [Akşam Yemeği Boğaz Turu](/tr/istanbul-dinner-cruise) her gece 20:30'da Kabataş'tan hareket eder; yaklaşık 3,5 saat sürer. Güverte üstünde canlı Türk müziği, folklor gösterisi, büfe yemek ve Boğaz'ın geceye bürünen manzarası eşliğinde geçen bir akşamdır. Dört paket seçeneği:\n\nSultan Ahmet, Taksim veya Beşiktaş'tan otel pickup imkânı da mevcuttur. Transfer saati ve detayları rezervasyon onayında ayrıca paylaşılır.",
+        table: {
+          headers: [
+            "Paket",
+            "Kişi Başı Fiyat",
+            "İçecek",
+            "Masa Tipi",
+          ],
+          rows: [
+            [
+              "Silver Soft Drinks",
+              "€30",
+              "Alkolsüz içecekler",
+              "Paylaşımlı masa",
+            ],
+            [
+              "Silver Alcoholic",
+              "€45",
+              "Bira, şarap, rakı",
+              "Paylaşımlı masa",
+            ],
+            [
+              "Gold Soft Drinks",
+              "€80",
+              "Alkolsüz içecekler",
+              "VIP masa (sahne önü)",
+            ],
+            [
+              "Gold Unlimited Alcohol",
+              "€90",
+              "Açık büfe premium alkol",
+              "VIP masa (sahne önü)",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Kabataş'a T1 tramvayının son durağından veya Taksim'den F1 fünikülerüyle 5 dakikada ulaşılır. İskeleye çıktığınızda vapur terminali ile tur tekne rıhtımı yan yana yer alır — buluşma saatinden 20 dk önce orada olmak yeterlidir.",
+        },
+      },
+      {
+        heading:
+          "Boğaz Turu Kaç Saat Sürer?",
+        answerCapsule:
+          "Kısa Şehir Hatları seferleri 1,5–2 saat, MerrySails Gün Batımı Turu ~2 saat, Akşam Yemeği Turu ~3,5 saat, tam Şehir Hatları güzergahı (Anadolu Kavağı gidiş-dönüş) ~6 saattir. Özel yat kiralama minimum 2 saat, isteğe göre 4–8 saat.",
+        content:
+          "Boğaz turu kaç saat sürer sorusunun yanıtı, seçilen tur tipine ve operatöre göre önemli ölçüde değişir. Kısa vapurla geçişten uzun rehberli tura kadar birkaç farklı seçenek vardır.\n\nMerrySails turları açısından baktığımızda, Gün Batımı Turu yaklaşık 2 saatlik yoğun bir deneyim sunar. Ortaköy'e kadar uzanıp dönerken her iki yakadaki önemli yapılar rehber anlatımıyla keşfedilir. Akşam Yemeği Turu ise 3,5 saat olup içinde canlı müzik, folklor gösterisi ve büfe yemek yer alır; bu süreyi keyifle geçirebilmek için tasarlanmıştır.\n\nŞehir Hatları vapurlarında süre güzergaha bağlıdır. Kısa Boğaz seferleri 1,5–2 saat, Anadolu Kavağı tam güzergahı gidiş-dönüş yaklaşık 6 saattir. Özel yat kiralama için minimum süre 2 saat olup 4, 6 veya 8 saatlik paketler de mevcuttur.",
+        table: {
+          headers: [
+            "Tur Türü",
+            "Süre",
+            "Güzergah",
+            "Rehber",
+          ],
+          rows: [
+            [
+              "MerrySails Gün Batımı",
+              "~2 saat",
+              "Karaköy → Ortaköy → dönüş",
+              "İngilizce rehber",
+            ],
+            [
+              "MerrySails Akşam Yemeği",
+              "~3,5 saat",
+              "Kabataş → Boğaz → dönüş",
+              "Çok dilli",
+            ],
+            [
+              "Şehir Hatları kısa sefer",
+              "1,5–2 saat",
+              "Eminönü → Küçüksu",
+              "Yok",
+            ],
+            [
+              "Şehir Hatları tam güzergah",
+              "~6 saat",
+              "Eminönü → Anadolu Kavağı",
+              "Yok",
+            ],
+            [
+              "Özel Yat Kiralama",
+              "2–8 saat",
+              "İsteğe göre belirlenir",
+              "Kaptan dahil",
+            ],
+          ],
+        },
+        proTip:
+          "Gün batımı rotasını tercih ediyorsanız 2 saat mükemmel bir süre — ne çok kısa ne çok yorucu. Yemekli ve eğlenceli bir gece istiyorsanız 3,5 saatlik akşam turu bunu tamamen karşılar.",
+      },
+      {
+        heading:
+          "Hangi İskele Sizin İçin Doğru? Otel Lokasyonu ve Yürüyüş Mesafesi",
+        answerCapsule:
+          "Sultanahmet veya Karaköy otellerinden gelenler için Gün Batımı Turu (Karaköy kalkışı) en pratik seçenektir. Taksim veya Beşiktaş yakını otellerden gelenler için Kabataş kalkışlı Akşam Yemeği Turu ya da otel pickup daha uygundur.",
+        content:
+          "Doğru iskelenin seçimi büyük ölçüde kaldığınız otelin konumuna bağlıdır. İstanbul'un ana turist bölgelerinden her bir iskeleye mesafeye göz atalım:\n\nSultanahmet / Sirkeci bölgesinden: T1 tramvayıyla Karaköy durağına 5 dakika, Kabataş'a 8 dakika. Sultanahmet'ten her iki iskeleye de rahatlıkla ulaşılır; gün batımı turu için Karaköy biraz daha yakındır.\n\nTaksim / Beyoğlu bölgesinden: Metro + tramvay kombinasyonuyla Kabataş'a 20 dakika, ya da F1 fünikülerüyle doğrudan Kabataş'a 5 dakika. Karaköy için yürüyüş rotası Galata Kulesi üzerinden 15 dk.\n\nBeşiktaş bölgesinden: Yürüyerek Kabataş'a 10 dakika. Gün batımı turunun Karaköy kalkışı için taksi veya minibüs önerilir.\n\nOtel pickup hizmeti: Akşam Yemeği Turu, Sultanahmet, Taksim ve Beşiktaş otellerinden transfer sağlar — hangi iskeleye gideceğinizi bilmek zorunda kalmadan rezervasyon yapabilirsiniz.",
+        table: {
+          headers: [
+            "Bölge",
+            "Karaköy'e",
+            "Kabataş'a",
+            "Önerilen Tur",
+          ],
+          rows: [
+            [
+              "Sultanahmet",
+              "T1, 5 dk",
+              "T1, 8 dk",
+              "Gün Batımı (€34) veya Akşam Yemeği (€30–90)",
+            ],
+            [
+              "Taksim / Beyoğlu",
+              "Yürüyüş, 15 dk",
+              "F1 füniküler, 5 dk",
+              "Akşam Yemeği Turu (Kabataş daha kolay)",
+            ],
+            [
+              "Beşiktaş",
+              "Taksi, 15 dk",
+              "Yürüyüş, 10 dk",
+              "Akşam Yemeği Turu veya Özel Yat",
+            ],
+            [
+              "Galata / Karaköy",
+              "Yürüyüş, 5 dk",
+              "T1, 3 dk",
+              "Gün Batımı Turu (en yakın kalkış)",
+            ],
+          ],
+        },
+        callout: {
+          type: "info",
+          text:
+            "Otel pickup aktif ise kalkış noktasını bilmenize gerek yok — transfer size gelir. [Akşam Yemeği Turu](/tr/istanbul-dinner-cruise) rezervasyonunda otel adresini girerek pickup saatinizi belirleyin.",
+        },
+      },
+      {
+        heading:
+          "Lisanslı Operatör Nasıl Seçilir? TURSAB ve Güvenlik Kriterleri",
+        answerCapsule:
+          "TÜRSAB A Grubu lisansı, Türkiye'nin en kapsamlı turizm işletmeciliği lisansıdır. Lisans numarasını tursab.org.tr üzerinden sorgulayarak operatörün gerçekten kayıtlı olup olmadığını doğrulayabilirsiniz.",
+        content:
+          "İstanbul iskele çevresinde 'özel boğaz turu' teklif eden sokak satıcılarının büyük bölümü lisanssız çalışmaktadır. Bu turlar genellikle sigorta ve can kurtarma ekipmanı standartlarına uymayan küçük teknelerde gerçekleştirilir.\n\nMerry Tourism olarak 2001'den bu yana TÜRSAB A Grubu lisansıyla (#14316) faaliyet gösteriyoruz. TÜRSAB A Grubu lisansı, Türkiye'deki en üst turizm işletmeciliği belgesidir; devlet denetimi, zorunlu tekne sigortası ve rehber standartlarını kapsar. Lisans numarasını [tursab.org.tr](https://www.tursab.org.tr/en) üzerinden saniyeler içinde doğrulayabilirsiniz.\n\nGüvenli bir operatör seçerken şu kriterlere dikkat edin: TÜRSAB lisans numarası websitesinde açıkça yazılı mı? Bilet ve rezervasyon konfirmasyonu e-posta ile teyit ediliyor mu? Kalkış noktası ve kaptan iletişim bilgisi önceden paylaşılıyor mu? Fiyat tamamen başlangıçta mı netleşiyor, yoksa teknede sürpriz ek ücret çıkıyor mu?\n\nMerrySails'de tüm fiyatlar rezervasyon öncesinde sabittir; teknede ek ödeme baskısı yapılmaz.",
+        callout: {
+          type: "warning",
+          text:
+            "Tuzak işareti: İskele önünde 'ücretsiz tur' veya '€5'e Boğaz' teklifi yapan kişiler sizi lisanssız teknelere veya halı mağazası turlarına yönlendirebilir. Tekneye binmeden önce TÜRSAB lisansını isteyin. [/tursab](/tursab) sayfamızdan lisansımızı doğrulayabilirsiniz.",
+        },
+        expertQuote: {
+          text:
+            "50.000'den fazla misafiri ağırladık. Güvenin temeli tek bir belgede başlıyor: TÜRSAB lisansı. Bunu sormak hem hakkınız hem de güvencenizin başlangıcı.",
+          author: "Merry Tourism — Editöryal Ekip",
+          title: "MerrySails, TÜRSAB A Grubu Lisanslı Operatör #14316",
+        },
+      },
+      {
+        heading: "Sıkça Sorulan Sorular — İskele ve Sefer Bilgileri",
+        content:
+          "Eminönü, Karaköy ve Kabataş iskelelerine ilişkin en sık sorulan soruları ve yanıtlarını aşağıda bulabilirsiniz. Daha fazla bilgi için [Boğaz turu ana sayfamızı](/tr/bosphorus-cruise) ve [kalkış noktaları rehberimizi](/tr/bosphorus-cruise-departure-points) inceleyin.",
+        list: [
+          "Eminönü'nden gerçek bir turizm turu değil, Şehir Hatları vapuruyla kamu seferi alınabilir.",
+          "Karaköy'den MerrySails Gün Batımı Turu kalkar — harita pini rezervasyon onayında paylaşılır.",
+          "Kabataş'tan Akşam Yemeği Turu 20:30'da hareket eder — transfer imkânı da mevcuttur.",
+          "Özel yat kiralama için [/tr/yacht-charter-istanbul](/tr/yacht-charter-istanbul) sayfasını inceleyin.",
+          "TÜRSAB lisansımızı [/tursab](/tursab) adresinden doğrulayabilirsiniz.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Eminönü'nden boğaz turu kaçta başlar?",
+        a: "Şehir Hatları'nın Eminönü–Anadolu Kavağı tam seferi sabah 10:35 civarında kalkar. Kısa Boğaz seferleri gün içinde 09:30–15:30 arası belirli saatlerde çalışır; tarifeyi İDO/Şehir Hatları sitesinden kontrol etmenizi öneririz. MerrySails Gün Batımı Turu ise Eminönü'nden değil, yakınındaki Karaköy bölgesinden günbatımından 15 dk önce hareket eder.",
+      },
+      {
+        q: "Karaköy'den boğaz turuna binilir mi?",
+        a: "Evet. MerrySails Gün Batımı Turu Karaköy bölgesinden (Arap Cami / Uskufcular Sokak yakını) kalkar. Büyük Şehir Hatları iskelesinden birkaç dakika yürüme mesafesinde ama ayrı bir kalkış noktasıdır. Rezervasyon onayınızda Google Maps pini paylaşılır. Kişi başı fiyat: €34 (şarapsız) veya €40 (şarapla).",
+      },
+      {
+        q: "Kabataş iskelesi nerede?",
+        a: "Kabataş İskelesi Dolmabahçe Sarayı'nın hemen bitişiğinde, Beşiktaş ile Karaköy arasında yer alır. T1 tramvayının son durağıdır; Sultanahmet'ten 8–10 dakika, Taksim'den F1 fünikülerüyle 5 dakika mesafededir. MerrySails Akşam Yemeği Turu buradan 20:30'da hareket eder.",
+      },
+      {
+        q: "Boğaz turu kaç saat sürer?",
+        a: "MerrySails Gün Batımı Turu yaklaşık 2 saat, Akşam Yemeği Turu yaklaşık 3,5 saat sürer. Şehir Hatları kısa seferleri 1,5–2 saat, Anadolu Kavağı tam güzergahı gidiş-dönüş yaklaşık 6 saattir. Özel yat kiralamada minimum süre 2 saat olup 4–8 saatlik paketler de mevcuttur.",
+      },
+      {
+        q: "Hangi iskele otel pickup için uygun?",
+        a: "Akşam Yemeği Turu'nda Sultanahmet, Taksim ve Beşiktaş bölgesindeki otellerden kapıya transfer imkânı mevcuttur; hangi iskeleye gideceğinizi bilmenize gerek yoktur. Gün Batımı Turu'nda (Karaköy kalkışı) pickup hizmeti bulunmamaktadır; T1 tramvayıyla Karaköy durağında inmeniz yeterlidir.",
+      },
+      {
+        q: "Eminönü boğaz turu fiyatı ne kadar?",
+        a: "Şehir Hatları vapuruyla Eminönü'nden kısa Boğaz seferi ₺50–200 arasında değişir (İstanbulkart ile daha uygun). TÜRSAB lisanslı MerrySails rehberli gün batımı turu ise Karaköy'den kişi başı €34 (şarapsız) veya €40 (şarapla); akşam yemeği turu Kabataş'tan €30–90 arasındadır.",
+      },
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "dinner-cruise", "yacht-charter"],
+    relatedPosts: [
+      "eminonu-karakoy-kabatas-bogaz-turu-2026",
+      "istanbul-bogaz-turu-fiyatlari-2026",
+      "istanbul-aksam-yemegi-turu-rehberi",
+    ],
+    proTip:
+      "Karaköy veya Kabataş'a ilk kez gidiyorsanız buluşma saatinden en az 20 dakika önce bölgede olun. Yüksek sezonda (Haziran–Ağustos) iskele çevresi kalabalıktır ve doğru kapıyı bulmak birkaç dakika alabilir. [Kalkış noktaları rehberimizden](/tr/bosphorus-cruise-departure-points) ayrıntılı haritaları görebilirsiniz.",
+    calloutText:
+      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle Eminönü, Karaköy ve Kabataş'tan kalkan turların en güvenilir seçeneğidir. Rezervasyon ve sorularınız için WhatsApp: +90 537 040 68 22",
+  },
+  {
+    slug: "bogaz-turu-fiyat-rehberi-istanbul-2026",
+    locale: "tr",
+    title: "Boğaz Turu Fiyat Rehberi 2026 — €30'dan Başlayan İstanbul",
+    metaDescription:
+      "Boğaz turu fiyat 2026: akşam yemeği €30'dan, gün batımı €34'ten, özel yat €280'den. TURSAB lisanslı MerrySails ile boğaz turu ücreti karşılaştırması ve paket seçim rehberi.",
+    excerpt:
+      "Boğaz turu kaç TL? 2026 yılı için akşam yemeği turu €30–90, gün batımı turu €34–40, özel yat kiralama €280+ ile tüm paket fiyatları. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in şeffaf fiyat rehberi.",
+    category: "cruise-guide",
+    date: "2026-05-08",
+    dateModified: "2026-05-08",
+    readTime: "9 dk okuma",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+    imageAlt:
+      "İstanbul Boğazı'nda gün batımı — kırmızıya boyanan gökyüzü ve güverteye çıkmış yolcular",
+    keywords: [
+      "boğaz turu fiyat",
+      "boğaz turu kaç tl",
+      "boğaz turu ücreti",
+      "ucuz boğaz turu",
+      "istanbul boğaz turu fiyatları",
+      "akşam yemeği boğaz turu fiyat",
+      "gün batımı boğaz turu fiyat",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "Akşam yemeği boğaz turu 2026 fiyatı: Silver Soft €30, Silver Alkollü €45, Gold Soft €60, Gold Unlimited €90 — kişi başı",
+      "Gün batımı boğaz turu 2026 fiyatı: şarapsız €34, şarapla €40 — yaklaşık 2 saat, paylaşımlı",
+      "Özel yat kiralama €280'dan başlar (tüm yat, 2 saat); fiyat yat büyüklüğüne ve sürekeye göre değişir",
+      "TÜRSAB A Grubu lisanslı operatörde fiyat şeffaftır — gizli ücret, yakıt farkı veya zorunlu bahşiş yoktur",
+    ],
+    sections: [
+      {
+        heading:
+          "Boğaz Turu Fiyat 2026 — Kısa Özet Tablo",
+        answerCapsule:
+          "2026 yılında İstanbul Boğaz turu fiyatı kişi başı €30'dan başlar ve özel yat kiralama için €280'e kadar çıkar. Temel belirleyici üç unsur: tur tipi (akşam yemeği, gün batımı, özel yat), paket içeriği (yemek/içecek/rehber) ve grup büyüklüğü.",
+        content:
+          "'Boğaz turu kaç TL?' sorusu İstanbul'a gelen ziyaretçilerin ilk sorduğu sorular arasındadır. Kısa yanıt: tur tipine göre büyük fark var. Şehir Hatları vapuru (turistik değil, kamu taşımacılığı) ₺50–200 civarında seyrederken, TÜRSAB lisanslı özel rehberli turlar kişi başı €30'dan başlar.\n\nAşağıdaki tablo 2026 sezonunun güncel fiyatlarını özetlemektedir. Tüm EUR fiyatları [Merry Tourism](/tursab) tarafından sabitlenmiştir; kurun günlük dalgalanmasından etkilenmezler.",
+        table: {
+          headers: [
+            "Tur Tipi",
+            "Süre",
+            "Fiyat Aralığı",
+            "Yemek / İçecek",
+          ],
+          rows: [
+            [
+              "Akşam Yemeği Boğaz Turu",
+              "~3,5 saat",
+              "€30–90 / kişi",
+              "Dahil (pakete göre)",
+            ],
+            [
+              "Gün Batımı Boğaz Turu",
+              "~2 saat",
+              "€34–40 / kişi",
+              "İsteğe bağlı şarap",
+            ],
+            [
+              "Özel Yat Kiralama",
+              "2–8 saat",
+              "€280+ / yat",
+              "Ekstra ücrete taşınır",
+            ],
+            [
+              "Şehir Hatları (kamu seferi)",
+              "1,5–6 saat",
+              "₺50–200 / kişi",
+              "Yok",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Döviz kuru dalgalansa da MerrySails fiyatları EUR cinsinden sabittir. Ödeme Türk lirası ya da kart ile yapılabilir; kur, rezervasyon tarihindeki Merkez Bankası alış kuru üzerinden hesaplanır.",
+        },
+      },
+      {
+        heading:
+          "Akşam Yemekli Boğaz Turu Fiyatları — €30'dan €90'a Paket Karşılaştırması",
+        answerCapsule:
+          "Akşam yemeği boğaz turu dört pakette sunulur: Silver Soft (€30, alkolsüz içecek), Silver Alkollü (€45, bira/şarap), Gold Soft (€60, 4 çeşit menü, alkolsüz), Gold Unlimited (€90, açık büfe ve sınırsız içki). Süre yaklaşık 3,5 saattir.",
+        content:
+          "Akşam yemeği turu, İstanbul'un gece ışıkları içinde Boğaz'ı en dolu yaşatacak seçenektir. [İstanbul akşam yemeği turu](/tr/istanbul-dinner-cruise) Kabataş İskelesi'nden saat 20:30'da hareket eder ve yaklaşık gece 00:00'a kadar sürer.\n\n**Silver Soft (€30 / kişi):** Üç çeşit yemek (çorba, ana yemek, tatlı), alkolsüz içecekler (meyve suyu, su, meşrubat), Türk müziği eşliğinde Boğaz turu. Bütçe bilinçli çiftler ve aileler için en popüler paket.\n\n**Silver Alkollü (€45 / kişi):** Silver Soft içeriğine ek olarak bira ve yerli şarap dahildir. Birkaç kadeh içmek isteyenler için ideal orta segment.\n\n**Gold Soft (€60 / kişi):** Dört çeşit menü (meze, çorba, ana yemek, tatlı), alkolsüz içecekler ve canlı Türk müziği gösterisi. Gastronomi deneyimini ön plana çıkaranlar için.\n\n**Gold Unlimited (€90 / kişi):** Gold menüsüne ek sınırsız içki (yerli bira, şarap, rakı, kokteyl). Kutlama grupları ve özel etkinlikler için tasarlanmıştır.",
+        proTip:
+          "Grupta alkol içmeyenler varsa Silver Soft seçin — içecek paketi kişi bazında seçilebilir, tüm masanın aynı paketi alması zorunlu değildir. Rezervasyon sırasında belirtin.",
+      },
+      {
+        heading:
+          "Gün Batımı (Sunset) Boğaz Turu Fiyatı — €34 mı €40 mı?",
+        answerCapsule:
+          "MerrySails Gün Batımı Turu 2026 fiyatı: şarap dahil olmayan paket €34 / kişi, şarap dahil paket €40 / kişi. Tur yaklaşık 2 saat sürer ve Karaköy bölgesinden kalkar.",
+        content:
+          "[Gün batımı boğaz turu](/tr/cruises/bosphorus-sunset-cruise), gün batımını Boğaz'ın ortasında yakalamak isteyen ziyaretçilerin ilk tercihi. Yaklaşık 2 saatlik tur boyunca Boğaziçi Köprüsü altından geçilir, Rumeli ve Anadolu Hisarı'na yakın seyredilir; profesyonel rehber İstanbul'un 2.700 yıllık tarihini anlatır.\n\n**€34 — İçeceksiz Paket:** Boğaz turu deneyiminin kendisi (rehberli, biletli, oturmalı güverte), su ve meşrubat servisi. Alkol tüketmek istemeyenler veya birlikte içmemeyi tercih eden aileler için ideal.\n\n**€40 — Şarap Dahil Paket:** Aynı tur kapsamına ek olarak bir şişe Türk şarabı (kırmızı veya beyaz) ikisi dahildir. Romantik çiftler ve butik deneyim arayanların tercih ettiği paket.\n\nFiyat farkı yalnızca €6 olduğundan şarap içenler için açık ara değerlisi €40 paketidir.",
+        callout: {
+          type: "info",
+          text:
+            "Gün batımı turu sezona göre farklı saatlerde başlar: Mart–Nisan 17:00, Mayıs–Ağustos 19:00, Eylül–Ekim 17:30 civarı. Kesin saat rezervasyon onay e-postasında belirtilir.",
+        },
+      },
+      {
+        heading:
+          "Özel Yat Kiralama Fiyatları — €280'dan Başlayan İstanbul",
+        answerCapsule:
+          "Özel yat kiralama 2026 fiyatı €280'dan başlar (tüm tekne, minimum 2 saat). Tekne kapasitesi ve süreye göre fiyat €280–€1.500+ arasında değişir. Yemek/içecek ve kaptanlık hizmeti ayrıca planlanabilir.",
+        content:
+          "[Özel yat kiralama İstanbul](/tr/yacht-charter-istanbul), grup veya aile için teknenin tamamını kiraladığınız VIP deneyimidir. TÜRSAB A Grubu lisanslı Merry Tourism'un 2001'den bu yana sunduğu bu hizmet, 2–50 kişilik gruplara uygundur.\n\n**Küçük Tekne (2–8 kişi), 2 saat:** €280'dan başlar. Evlilik teklifi, küçük aile kutlaması, butik iş yemeği için idealdir.\n\n**Orta Boy Yat (8–20 kişi), 2–4 saat:** €500–€900 arasında değişir. Doğum günü partisi, kurumsal küçük etkinlik veya arkadaş grupları için tercih edilir.\n\n**Büyük Tur Yatı (20–50 kişi), 4–8 saat:** €1.000–€1.500+ arasında. Düğün sonrası kutlama, kurumsal gala veya tur grubu charter'ı için uygundur.\n\nTüm kiralama fiyatlarına kaptan ve tekne sigortası dahildir. İkram (yemek/içecek), catering firmasıyla koordineli olarak ekstra planlanabilir.",
+        proTip:
+          "Özel yat fiyatı kişi başı değil, tüm tekne üzerinden hesaplanır. 10 kişilik grup için €500'lık bir tekne kişi başı €50'ye gelir — kalabalık gruplar için akşam yemeği turundan daha ekonomik olabilir.",
+      },
+      {
+        heading:
+          "Ucuz Boğaz Turu Var mı? Şehir Hatları vs Özel Rehberli Tur",
+        answerCapsule:
+          "Evet, ucuz boğaz turu alternatifi vardır: Şehir Hatları vapurları ₺50–200 ile en bütçe dostu seçenek. Ancak yorum yok, ikram yok, güvence yok. TÜRSAB lisanslı rehberli turlar €30'dan başlar — farkı güvenlik ve deneyimde.",
+        content:
+          "'En ucuz boğaz turu hangisi?' sorusunun yanıtı beklentiye göre değişir. Saf ulaşım için Şehir Hatları vapurları gerçekten ucuzdur; Eminönü'nden Anadolu Kavağı'na gidiş-dönüş İstanbulkart ile ₺200 civarındadır (2026 tarifesi). Ancak turistik değer açısından büyük farklılıklar vardır:\n\n**Şehir Hatları ile sorunlar:** Türkçe anons, İngilizce yorum yok; ayakta kalma riski (yoğun saatlerde oturacak yer bulunamayabilir); güverte erişimi sınırlı; hiçbir ikram yok; TÜRSAB güvencesi yok.\n\n**€30'luk Silver Soft akşam yemeği turunun avantajları:** 3,5 saat boyunca oturmalı güverte, üç çeşit Türk yemeği, canlı müzik, İngilizce rehber ve TÜRSAB A Grubu güvencesi. Kişi başı maliyet, orta bir İstanbul restoranıyla kıyaslanabilir düzeydedir.\n\nUcuz boğaz turu aramak yerine **değer/fiyat dengesini** sorgulamanızı öneririz. €30'luk paket, fiyatına göre İstanbul'un sunduğu en zengin deneyimlerden biridir. Daha fazla bilgi için [boğaz turu karşılaştırma rehberimize](/tr/bosphorus-cruise) göz atabilirsiniz.",
+        callout: {
+          type: "warning",
+          text:
+            "Eminönü ve Taksim'de düşük fiyat vaat eden seyyar satıcılardan bilet almayın — bu biletler TÜRSAB denetiminde değildir ve iptal garantisi sunmaz. Lisans numarasını tursab.org.tr'den doğrulayın.",
+        },
+      },
+      {
+        heading:
+          "Boğaz Turu Fiyatına Neler Dahil?",
+        answerCapsule:
+          "TÜRSAB lisanslı MerrySails turlarında fiyata güverte erişimi, bilet, İngilizce rehber ve pakete bağlı yemek/içecek dahildir. Transfer (otel-iskele) akşam yemeği turuna dahildir; gün batımı turuna dahil değildir.",
+        content:
+          "Fiyata dahil olanlar ve olmayanlar:\n\n**Her pakette dahil:**\n- Güverte erişim bileti\n- TÜRSAB lisanslı kaptan ve ekip\n- Yasal zorunlu can yeleği ve emniyet ekipmanı\n- İngilizce rehber yorumu (akşam yemeği turunda Türkçe ve diğer diller de sunulur)\n- Temel sigorta kapsamı\n\n**Akşam Yemeği Turuna Özel:**\n- Sultanahmet, Taksim ve Beşiktaş bölgesinden otel transferi\n- Seçilen pakete göre yemek (3–4 çeşit)\n- Canlı Türk müziği ve sahne gösterisi\n- Pakete bağlı içecek (Silver Soft'ta alkolsüz, Silver Alkollü'de bira/şarap)\n\n**Gün Batımı Turuna Özel:**\n- Su ve meşrubat\n- €40 paketinde bir şişe Türk şarabı\n\n**Dahil olmayan:** fotoğraf paketi, ekstra alkollü içecek (Gold Unlimited hariç), kişisel alışveriş veya iskele dışı ulaşım.",
+        proTip:
+          "İskele için ulaşım endişeniz varsa [iskele rehberimize](/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi) bakın — Eminönü, Karaköy ve Kabataş'tan nasıl gelineceğini adım adım açıkladık.",
+      },
+      {
+        heading:
+          "Hangi Paket Sizin İçin Uygun? Hızlı Karar Rehberi",
+        answerCapsule:
+          "Bütçe öncelikli çift veya aile → Silver Soft €30. Şarap içen çift → Gün Batımı €40. Özel kutlama (doğum günü, yıldönümü) → Gold Unlimited €90. Mahrem grup deneyimi → Özel yat €280+.",
+        content:
+          "Doğru paketi seçmek için dört soruyu yanıtlayın:\n\n**1. Kaç kişisiniz?** 1–2 kişi: Gün Batımı veya Silver Soft en avantajlı. 8+ kişi: Özel yat kiralama kişi başı maliyeti düşürür.\n\n**2. Yemek istiyor musunuz?** Evet → Akşam Yemeği Turu. Hayır → Gün Batımı Turu.\n\n**3. Alkol tüketiyor musunuz?** Hayır → Silver Soft veya Gold Soft. Evet ve sınırsız istiyorum → Gold Unlimited.\n\n**4. Özel bir kutlama var mı?** Evlilik teklifi, yıldönümü, doğum günü → Özel yat veya Gold Unlimited.\n\n[Tüm paketleri ve müsaitlik durumunu](/tr/bosphorus-cruise) rezervasyon sayfamızda görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 537 040 68 22 numarasına yazın; Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
+        callout: {
+          type: "tip",
+          text:
+            "Yüksek sezonda (Haziran–Ağustos) en popüler turlar 3–5 gün önceden dolar. Özellikle hafta sonu gün batımı ve Gold paketleri için erken rezervasyon yapın.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Boğaz turu fiyat 2026 ne kadar?",
+        a: "2026 yılında TÜRSAB lisanslı MerrySails ile boğaz turu fiyatı: Gün Batımı €34 (şarapsız) veya €40 (şarapla); Akşam Yemeği Silver Soft €30, Silver Alkollü €45, Gold Soft €60, Gold Unlimited €90 kişi başı. Özel yat kiralama €280'dan başlar (tüm tekne). Şehir Hatları kamu vapurları ₺50–200 arasındadır ancak rehber ve ikram içermez.",
+      },
+      {
+        q: "En ucuz boğaz turu hangisi?",
+        a: "En düşük fiyatlı TÜRSAB lisanslı seçenek Silver Soft Akşam Yemeği Turu'dur: kişi başı €30 ile 3,5 saatlik rehberli tur, üç çeşit Türk yemeği ve canlı müzik dahildir. Kamu taşımacılığı (Şehir Hatları vapuru) ₺50'den başlar ama rehber, ikram ve TÜRSAB güvencesi içermez.",
+      },
+      {
+        q: "Akşam yemekli boğaz turu kaç para?",
+        a: "Akşam yemeği boğaz turu 2026 fiyatları: Silver Soft €30, Silver Alkollü €45, Gold Soft €60, Gold Unlimited €90 (kişi başı). Tur yaklaşık 3,5 saat sürer ve Kabataş İskelesi'nden 20:30'da kalkar. Sultanahmet, Taksim ve Beşiktaş bölgesinden otel transferi dahildir.",
+      },
+      {
+        q: "Gün batımı boğaz turu fiyatı nedir?",
+        a: "Gün batımı boğaz turu 2026 fiyatı kişi başı €34 (şarap dahil değil) veya €40 (bir şişe Türk şarabı dahil). Tur yaklaşık 2 saat sürer ve Karaköy bölgesinden kalkar. Rehber, oturmalı güverte ve temel içecek servisi fiyata dahildir.",
+      },
+      {
+        q: "Özel yat kiralama günlük ne kadar?",
+        a: "Özel yat kiralama fiyatı tüm tekne üzerinden hesaplanır: küçük tekne (2–8 kişi) 2 saat için €280'dan başlar. Orta boy yat (8–20 kişi) 2–4 saat için €500–€900; büyük tur yatı (20–50 kişi) 4–8 saat için €1.000+ arasında değişir. Kaptan ve sigorta her pakette dahildir.",
+      },
+      {
+        q: "Boğaz turu fiyatına neler dahildir?",
+        a: "TÜRSAB lisanslı MerrySails turlarında fiyata her zaman şunlar dahildir: güverte erişim bileti, İngilizce rehber, TÜRSAB lisanslı kaptan/ekip ve temel sigorta. Akşam Yemeği Turuna otel transferi ve pakete göre yemek/içecek eklenir. Gün Batımı Turunda su/meşrubat; €40 paketinde Türk şarabı dahildir. Gizli ücret yoktur.",
+      },
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "dinner-cruise", "yacht-charter"],
+    relatedPosts: [
+      "istanbul-bogaz-turu-fiyatlari-2026",
+      "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+      "istanbul-aksam-yemegi-turu-rehberi",
+    ],
+    proTip:
+      "Fiyat karşılaştırması yaparken tekne başına fiyat ile kişi başı fiyatı karıştırmayın. Özel yat fiyatı tüm tekne içindir; büyük gruplar için akşam yemeği turundan daha ekonomik olabilir. Detaylar ve güncel müsaitlik için [boğaz turu rezervasyon sayfamıza](/tr/bosphorus-cruise) bakın.",
+    calloutText:
+      "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul'un en şeffaf fiyat politikasına sahip Boğaz turu operatörlerinden biridir. Rezervasyon ve fiyat soruları için WhatsApp: +90 537 040 68 22",
+  },
+  {
+    slug: "bogaz-turu-kac-saat-surer-rehberi-2026",
+    locale: "tr",
+    title: "Boğaz Turu Kaç Saat Sürer? 2026 Süre ve Sefer Rehberi",
+    metaDescription:
+      "Boğaz turu kaç saat sürer? 2026: gün batımı turu 2 saat (€34–40), akşam yemeği 3.5 saat (€30–90), özel yat 2+ saat (€280+). TURSAB lisanslı MerrySails ile kısa ve tam gün sefer rehberi.",
+    excerpt:
+      "Boğaz turunda kaç saat geçireceğinizi planlamak mı istiyorsunuz? 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism'un 2026 sefer süre rehberi: kısa tur 1.5 saat, gün batımı 2 saat, akşam yemeği 3.5 saat, özel yat 2+ saat.",
+    category: "cruise-guide",
+    date: "2026-05-08",
+    dateModified: "2026-05-08",
+    readTime: "8 dk okuma",
+    image:
+      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt:
+      "İstanbul Boğazı'nda gün batımı ışıklarında seyreden tekne — köprü ve yalılar arka planda",
+    keywords: [
+      "boğaz turu kaç saat",
+      "boğaz turu ne kadar sürer",
+      "kısa boğaz turu",
+      "boğaz turu sabah",
+      "boğaz turu akşam",
+      "istanbul boğaz turu süresi",
+      "gün batımı boğaz turu süresi",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "Kısa boğaz turu alternatifi: Şehir Hatları 1.5–2 saatlik kamu seferi (rehbersiz, ikramsız) veya MerrySails 2 saatlik gün batımı turu (€34, rehberli)",
+      "Gün batımı boğaz turu yaklaşık 2 saat sürer — Karaköy bölgesinden kalkar, €34 (şarapsız) veya €40 (şarapla)",
+      "Akşam yemeği boğaz turu yaklaşık 3.5 saat sürer — Kabataş'tan 20:30 kalkış, gece 00:00 dönüş, €30–90 / kişi",
+      "Özel yat kiralama minimum 2 saat; grubun isteğine göre 2–8 saat arası planlanabilir — €280+ / tüm tekne",
+    ],
+    sections: [
+      {
+        heading:
+          "Boğaz Turu Kaç Saat Sürer? — Özet Karşılaştırma Tablosu",
+        answerCapsule:
+          "İstanbul'da boğaz turu süresi tur tipine göre 1.5 ila 8 saat arasında değişir. En yaygın seçenekler: kısa (1.5–2 saat), gün batımı (2 saat), akşam yemeği (3.5 saat) ve özel yat (2–8 saat).",
+        content:
+          "'Boğaz turu kaç saat sürer?' sorusu planlama açısından kritiktir; çünkü yarım günlük bir gezi programıyla 3.5 saatlik akşam yemeği turunu veya sabah serbest zamanıyla 2 saatlik gün batımı turunu yan yana koyamazsınız.\n\nAşağıdaki tablo, 2026 sezonunda mevcut seçenekleri süre, fiyat ve kalkış saatine göre özetlemektedir. Tüm TÜRSAB lisanslı turlar [Merry Tourism](/tursab) tarafından 2001'den bu yana işletilmektedir.",
+        table: {
+          headers: [
+            "Tur Tipi",
+            "Süre",
+            "Kalkış Saati",
+            "Fiyat",
+            "Rehber",
+          ],
+          rows: [
+            [
+              "Kısa Boğaz Turu (Şehir Hatları)",
+              "1.5–2 saat",
+              "Sabah & Öğleden sonra",
+              "₺50–200",
+              "Yok",
+            ],
+            [
+              "Gün Batımı Boğaz Turu",
+              "~2 saat",
+              "17:00–19:00 (sezona göre)",
+              "€34–40 / kişi",
+              "İngilizce rehber",
+            ],
+            [
+              "Akşam Yemeği Boğaz Turu",
+              "~3.5 saat",
+              "20:30",
+              "€30–90 / kişi",
+              "Çok dilli",
+            ],
+            [
+              "Özel Yat Kiralama",
+              "2–8 saat",
+              "Esnek",
+              "€280+ / yat",
+              "Kaptan dahil",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "İstanbul günübirlik gezisindeyseniz gün batımı turunu (2 saat, akşam erken) rezerve edin; gündüz tarihi yarımadayı gezin, akşam turla Boğaz'ı görün. Sabah serbest zamanı yoksa akşam yemeği turunu tercih edin.",
+        },
+      },
+      {
+        heading:
+          "Gün Batımı Boğaz Turu — 2 Saatte Neler Görülür?",
+        answerCapsule:
+          "MerrySails Gün Batımı Turu yaklaşık 2 saat sürer. Karaköy bölgesinden kalkar, Boğaziçi Köprüsü altından geçer, Rumeli ve Anadolu Hisarı önünden döner. Kişi başı €34 (şarapsız) veya €40 (şarapla).",
+        content:
+          "[Gün batımı boğaz turu](/tr/cruises/bosphorus-sunset-cruise), günün en güzel ışıklarında Boğaz'ı keşfetmek isteyenler için tasarlanmış, tam anlamıyla verimli 2 saatlik bir deneyimdir. Kalkış Karaköy bölgesinden (Arap Cami yakını) yapılır; dönüşe kadar rotada şu noktalar bulunur:\n\n- **Boğaziçi Köprüsü:** Avrupa ile Asya'yı birleştiren simge köprünün altından geçiş\n- **Rumeli Hisarı:** Sultan II. Mehmed'in 1452'de inşa ettirdiği kale önünde fotoğraf molası\n- **Anadolu Hisarı:** Boğaz'ın en dar noktasında karşılıklı iki tarihi kale\n- **Bebek ve Arnavutköy yalıları:** Sahil boyunca tarihi Osmanlı ahşap köşkleri\n\nTur yaklaşık 2 saat sürer; gün batımı saatine 30–45 dakika kala Boğaz'ın ortasına ulaşılır. Bu planlama, gün batımı anını en iyi ışık koşullarında köprü altından yakalatır.\n\n**Fiyat:** €34 / kişi (şarap dahil değil) veya €40 / kişi (bir şişe Türk şarabı dahil). TÜRSAB A Grubu lisanslı Merry Tourism, 2001'den bu yana bu rotayı güvenle işletmektedir.",
+        proTip:
+          "Gün batımı saati yaz aylarında (Mayıs–Ağustos) 20:00–20:30'a uzar; tur saati de buna göre ötelenir (19:00 kalkış). Kış aylarında (Kasım–Şubat) 16:30–17:00 kalkışı beklenir. Güncel sefer saatini rezervasyon onay e-postanızdan öğrenin.",
+      },
+      {
+        heading:
+          "Akşam Yemekli Boğaz Turu — 3.5 Saatte Ne Beklenir?",
+        answerCapsule:
+          "Akşam yemeği boğaz turu yaklaşık 3.5 saat sürer. Kabataş İskelesi'nden saat 20:30'da kalkar, gece 00:00 civarında döner. Yemek, canlı müzik ve Boğaz turu bir arada sunulur; kişi başı €30–90.",
+        content:
+          "[İstanbul akşam yemeği turu](/tr/istanbul-dinner-cruise), gece boyunca İstanbul'un ışıldayan siluetini denizden izlemek isteyenler için en kapsamlı seçenektir. 3.5 saatlik tur tipik olarak şu şekilde ilerler:\n\n**20:30** — Kabataş İskelesi'nden kalkış (Sultanahmet, Taksim ve Beşiktaş bölgelerinden transfer dahil)\n**21:00–21:30** — Boğaziçi Köprüsü altından geçiş, serbest güverte keyfi\n**21:30–23:00** — Üç veya dört çeşit Türk yemeği servisi, canlı Türk müziği ve sahne gösterisi\n**23:00–23:30** — Boğaz'ın Asya yakasındaki yalılar, gece ışıklarında dönüş rotası\n**00:00** — Kabataş'a dönüş\n\nPaketler €30 (Silver Soft, alkolsüz) ile €90 (Gold Unlimited, sınırsız içki) arasında değişir. Tüm paket detayları için [boğaz turu fiyat rehberimize](/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026) bakabilirsiniz.",
+        callout: {
+          type: "info",
+          text:
+            "Akşam yemeği turu 20:30'da başlar ve gece 00:00'a kadar sürer. Ertesi sabah erken uçuşunuz varsa bu turu değil, 2 saatlik gün batımı turunu tercih edin.",
+        },
+      },
+      {
+        heading:
+          "Özel Yat Kiralama — 2 Saatten Tam Güne Esnek Planlama",
+        answerCapsule:
+          "Özel yat kiralama minimum 2 saat; maksimum 8 saat veya daha uzun planlanabilir. Fiyat €280'dan (tüm tekne, 2 saat) başlar. Küçük aile, iş toplantısı veya kutlama için idealdir.",
+        content:
+          "[Özel yat kiralama İstanbul](/tr/yacht-charter-istanbul), grubun tüm tekneyi özel kullandığı VIP deneyimidir. Merry Tourism'un 2001'den bu yana sunduğu bu hizmet; süre, rota ve ikram açısından tamamen esnektir.\n\n**2 Saat (Minimum):** Boğaz'da kısa bir tur — Köprü altından geçiş, Bebek Koyu'na kadar gidip dönüş. Evlilik teklifi, butik kutlama veya iş yemeği için idealdir. €280'dan başlar.\n\n**3–4 Saat:** Boğaz'ın iki köprüsünü de kapsayan orta uzunlukta rota. Aile toplantısı, doğum günü partisi veya küçük kurumsal etkinlik için uygun. €500–€900 arasında değişir.\n\n**Tam Gün (6–8 saat):** Boğaz'ın tamamı + Adalar rotası veya Marmara turu. Düğün sonrası kutlama, büyük grup charter'ı için. €1.000+ başlar.\n\nTüm kiralama seçeneklerinde kaptan ve tekne sigortası dahildir. Catering, müzik sistemi veya fotoğrafçı gibi ekstra hizmetler koordineli olarak planlanabilir.",
+        proTip:
+          "10+ kişilik gruplar için özel yat kiralama kişi başı maliyeti açısından akşam yemeği turundan ucuz olabilir. Örneğin 12 kişilik €600'lık bir tekne, kişi başına €50 gelir — Silver Soft €30'dan pahalıdır ama tüm tekne sizin ve rota esnektir.",
+      },
+      {
+        heading:
+          "Sabah, Öğleden Sonra ve Akşam — Hangi Vakit Daha İyi?",
+        answerCapsule:
+          "Sabah turları daha sakin (Şehir Hatları); öğleden sonra rüzgar ve ışık dengeli; akşam gün batımı ve yemekli turlar için en iyi vakit. Fotoğraf için altın saat: gün batımından 1 saat önce.",
+        content:
+          "Boğaz turu saati deneyimi doğrudan etkiler. İşte vakitlerin temel farkları:\n\n**Sabah (08:00–12:00):** Boğaz en sakin saatlerindedir. Şehir Hatları sabah seferleri Eminönü'nden kalkar. TÜRSAB lisanslı özel tur sabah saatinde mevcut değildir — bu saatler kamu vapurları için ayrılmıştır. Balıkçı tekneleri ve kargo gemileri trafiği yoğun; fotoğraf ışığı yumuşaktır.\n\n**Öğleden Sonra (13:00–16:00):** Rüzgar artar (Boğaz'da öğleden sonra poyraz sıklaşır), ışık dik ve sert olabilir. Gündüz seferleri (Şehir Hatları) bu saatlerde işler. Fotoğraf için en zor vakit.\n\n**Akşam (17:00–20:30):** Gün batımı turu için en iyi vakit. Işık altın sarısı, köşkler ve camiler siluet yapar; Boğaz trafik yoğunluğu nispeten azalır. MerrySails gün batımı turu bu saatlerde kalkar.\n\n**Gece (20:30–00:00):** Akşam yemeği turları bu slotta çalışır. Köprüler, yalılar ve camiler ışıklandırılmıştır; gece silueti sabah ışığından farklı ama bir o kadar etkileyicidir.",
+        callout: {
+          type: "tip",
+          text:
+            "Fotoğraf kalitesi önceliğinizse gün batımı turunu seçin. Yemek ve eğlence önceliğinizse akşam yemeği turunu tercih edin. İkisini de bir günde yapmak mümkün değildir — aralarında yalnızca 1.5–2 saatlik boşluk vardır.",
+        },
+      },
+      {
+        heading:
+          "Kısa Boğaz Turu Var mı? Şehir Hatları Alternatifi",
+        answerCapsule:
+          "Evet. Şehir Hatları'nın Boğaz Turu (Hat 22) Eminönü–Anadolu Kavağı hattında 1.5 saatte tamamlanır. Rehber yoktur, ikram yoktur, TÜRSAB güvencesi yoktur — ama en bütçe dostu kısa tur seçeneğidir.",
+        content:
+          "'Kısa boğaz turu var mı?' diye soran ziyaretçilerin büyük bölümü saat veya bütçe kısıtlamasıyla karşı karşıyadır. İşte gerçekçi seçenekler:\n\n**1. Şehir Hatları Boğaz Turu (Hat 22):** Eminönü'nden kalkar, Kanlıca–Yeniköy–Sarıyer–Rumeli Kavağı–Anadolu Kavağı hattını izler. Gidiş tek yön ~1.5–2 saat; gidiş-dönüş ~3 saat. Ücret İstanbulkart ile ₺50–100 arası. Türkçe anons; İngilizce yorum yok.\n\n**2. MerrySails Gün Batımı Turu (2 saat):** TÜRSAB lisanslı, İngilizce rehberli, oturmalı güverte. €34'ten başlar. Kalkış Karaköy bölgesinden; süre ~2 saat. Kısa tur arayanlar için en donanımlı seçenek.\n\nDaha az süreli özel bir tur (örneğin 1 saatlik charter) teorik olarak mümkün olmakla birlikte, minimum kiralama süresi genellikle 2 saattir. Yani TÜRSAB lisanslı tarafta pratikte en kısa süre 2 saattir.\n\n[İskele seçimi ve ulaşım için iskele rehberimize](/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi) bakabilirsiniz.",
+        proTip:
+          "Yalnızca 2 saatiniz varsa MerrySails gün batımı turu değerlidir: Şehir Hatları Boğaz turu gidiş-dönüş yapıldığında 3 saat sürer ve içerik olarak çok daha zayıftır. €34, aldığınız deneyim için makul bir fiyattır.",
+      },
+      {
+        heading:
+          "Hangi Boğaz Turu Süreye Göre Size Uygun?",
+        answerCapsule:
+          "2 saatiniz varsa → Gün Batımı Turu (€34). Akşamı tamamen ayıracaksanız → Akşam Yemeği Turu (€30–90). Kendi programınızı yaratmak istiyorsanız → Özel Yat (€280+, 2–8 saat). Bütçe önceliğinizse → Şehir Hatları (₺50–200).",
+        content:
+          "Doğru turu seçmenin en hızlı yolu dört soruyu yanıtlamaktır:\n\n**Ne kadar vaktiniz var?**\n- 2 saat → Gün Batımı Turu\n- 3.5 saat (akşam) → Akşam Yemeği Turu\n- 2–8 saat (esnek) → Özel Yat\n- Sınırlı bütçe, esnek saat → Şehir Hatları\n\n**Yemek istiyor musunuz?**\n- Evet → Akşam Yemeği Turu\n- Hayır → Gün Batımı Turu\n\n**Özel kutlama var mı?**\n- Evet → Özel Yat Kiralama\n- Hayır → Paylaşımlı tur\n\n**Gündüzü başka etkinliklere mi ayırdınız?**\n- Sabah–öğlen tarihi yarımada → Akşam Gün Batımı Turu\n- Boş akşam → Akşam Yemeği Turu\n\nTüm tur seçeneklerini ve güncel müsaitlik durumunu [Boğaz turu rezervasyon sayfamızda](/tr/bosphorus-cruise) görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 537 040 68 22 numarasına yazın; 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
+        callout: {
+          type: "tip",
+          text:
+            "Yüksek sezonda (Haziran–Ağustos) gün batımı turları 3–5 gün önceden dolar. Programınıza bağlı kalmak istiyorsanız erken rezervasyon yapın.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Boğaz turu kaç saat sürer?",
+        a: "Boğaz turu süresine göre: Şehir Hatları kamu seferi 1.5–2 saat (tek yön), MerrySails Gün Batımı Turu yaklaşık 2 saat (€34–40), Akşam Yemeği Boğaz Turu yaklaşık 3.5 saat (20:30–00:00, €30–90) ve Özel Yat Kiralama 2–8 saat (€280+, esnek). Tur tipini programınıza göre seçin.",
+      },
+      {
+        q: "Kısa boğaz turu var mı?",
+        a: "Evet. Şehir Hatları Hat 22 (Eminönü–Anadolu Kavağı) 1.5 saatlik tek yön seferdir; ₺50–100 İstanbulkart ile binilir, ancak rehber ve ikram yoktur. TÜRSAB lisanslı en kısa seçenek ise MerrySails Gün Batımı Turu'dur: 2 saat, €34'ten, İngilizce rehberli.",
+      },
+      {
+        q: "Akşam yemekli boğaz turu kaç saat?",
+        a: "Akşam yemeği boğaz turu yaklaşık 3.5 saat sürer. Kabataş İskelesi'nden saat 20:30'da kalkar, gece 00:00 civarında döner. Tur boyunca üç–dört çeşit Türk yemeği, canlı müzik ve İstanbul gece manzarası sunulur. Fiyatlar kişi başı €30 (Silver Soft) ile €90 (Gold Unlimited) arasında değişir.",
+      },
+      {
+        q: "Sunset (gün batımı) boğaz turu kaç saat?",
+        a: "MerrySails Gün Batımı Boğaz Turu yaklaşık 2 saat sürer. Karaköy bölgesinden kalkar, Boğaziçi Köprüsü altından geçerek Rumeli–Anadolu Hisarı önüne kadar gidip döner. Kişi başı €34 (şarapsız) veya €40 (şarap dahil). Kalkış saati mevsime göre değişir: Mart–Nisan 17:00, Mayıs–Ağustos 19:00, Eylül–Ekim 17:30 civarı.",
+      },
+      {
+        q: "Sabah boğaz turu yapılır mı?",
+        a: "TÜRSAB lisanslı özel turlar sabah saatinde mevcut değildir — bu saatler Şehir Hatları kamu seferlerine ayrılmıştır. Sabah Boğaz turu yapmak isteyenler Eminönü'nden Şehir Hatları Hat 22'ye binebilir (₺50–100, rehbersiz). MerrySails'in özel turları öğleden sonra ve akşam saatlerinde çalışır.",
+      },
+      {
+        q: "Hangi boğaz turu süresi en popüler?",
+        a: "Yabancı turistler arasında en popüler tur MerrySails Gün Batımı Turu'dur (2 saat, €34–40) — kısa süre, makul fiyat ve gün batımı anı ideal bir denge sunar. Akşam programı olan ve yemek dahil seçenek arayanlar için Akşam Yemeği Turu (3.5 saat, €30–90) ikinci sıradadır.",
+      },
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "dinner-cruise", "yacht-charter"],
+    relatedPosts: [
+      "bogaz-turu-fiyat-rehberi-istanbul-2026",
+      "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+      "istanbul-aksam-yemegi-turu-rehberi",
+    ],
+    proTip:
+      "Süre seçiminde en önemli faktör gündüz programınızdır. Tarihi yarımadayı sabah gezerseniz, 2 saatlik gün batımı turu (€34) ideal kapanıştır. Akşamı tamamen boş bıraktıysanız 3.5 saatlik akşam yemeği turu (€30–90) daha zengin deneyim sunar.",
+    calloutText:
+      "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul Boğazı'nı en iyi tanıyan operatörlerden biridir. Süre ve paket seçimi için WhatsApp: +90 537 040 68 22",
+  },
+
 ];

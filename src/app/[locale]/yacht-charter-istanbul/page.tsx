@@ -385,6 +385,7 @@ export default async function LocaleYachtCharterPage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
+    "@id": `${canonicalUrl}#tour`,
     name: t.title,
     alternateName: [
       "İstanbul Yat Kiralama",
@@ -412,6 +413,7 @@ export default async function LocaleYachtCharterPage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
     name: t.title,
     description: t.description,
     image: yachtTour.image,
