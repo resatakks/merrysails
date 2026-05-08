@@ -261,3 +261,56 @@ model GscSnapshot {
   @@unique([date])
   @@index([date])
 }
+
+// ─── Performance Snapshots (Lighthouse / PageSpeed Insights) ─────
+
+model PerformanceSnapshot {
+  id                 String   @id @default(cuid())
+  url                String
+  strategy           String   // mobile | desktop
+  performanceScore   Float?
+  seoScore           Float?
+  accessibilityScore Float?
+  bestPracticesScore Float?
+  fcp                Float?   // First Contentful Paint (ms)
+  lcp                Float?   // Largest Contentful Paint (ms)
+  tbt                Float?   // Total Blocking Time (ms)
+  cls                Float?   // Cumulative Layout Shift
+  si                 Float?   // Speed Index (ms)
+  tti                Float?   // Time to Interactive (ms)
+  snapshotAt         DateTime @default(now())
+
+  @@index([url, strategy, snapshotAt])
+  @@index([snapshotAt])
+}
+
+// ─── LLM Brand Mention Tracking ──────────────────────────────────
+
+model LlmMention {
+  id              String   @id @default(cuid())
+  keyword         String
+  llm             String   // chatgpt | perplexity | claude | gemini
+  brandMentioned  Boolean  @default(false)
+  brandPosition   Int      @default(0) // 0 = not mentioned; 1-based position otherwise
+  citationContext String?  // sentence quoting brand if present
+  snapshotAt      DateTime @default(now())
+
+  @@index([keyword, llm, snapshotAt])
+  @@index([snapshotAt])
+}
+
+// ─── Newsletter Subscribers ──────────────────────────────────────
+
+model NewsletterSubscriber {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  source      String    @default("footer")
+  locale      String    @default("en")
+  confirmedAt DateTime?
+  ipAddress   String?
+  userAgent   String?
+  createdAt   DateTime  @default(now())
+
+  @@index([createdAt])
+  @@index([source])
+}

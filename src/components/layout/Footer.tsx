@@ -21,6 +21,7 @@ import {
   TURSAB_LICENSE_NUMBER,
 } from "@/lib/constants";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import NewsletterSignup from "@/components/marketing/NewsletterSignup";
 
 type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
 
@@ -542,6 +543,10 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-8 mt-10">
+          <NewsletterSignup variant="footer" source="footer" />
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 md:flex-row">

@@ -45,6 +45,14 @@
     {
       "path": "/api/disavow/audit",
       "schedule": "0 8 1 * *"
+    },
+    {
+      "path": "/api/cron/lighthouse",
+      "schedule": "0 4 * * 1"
+    },
+    {
+      "path": "/api/cron/llm-mentions",
+      "schedule": "0 5 * * 1"
     }
   ],
   "git": {

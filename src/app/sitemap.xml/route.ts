@@ -151,6 +151,8 @@ export function GET() {
     { url: `${SITE_URL}/contact`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/contact") },
     { url: `${SITE_URL}/faq`, changefreq: "monthly", priority: "0.5", lastmod: contentLastmod, hreflang: hreflangXml("/faq") },
     { url: `${SITE_URL}/tursab`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod },
+    { url: `${SITE_URL}/ai-knowledge`, changefreq: "monthly", priority: "0.5", lastmod: "2026-05-09" },
+    { url: `${SITE_URL}/about/team`, changefreq: "monthly", priority: "0.55", lastmod: "2026-05-09" },
     { url: `${SITE_URL}/privacy-policy`, changefreq: "yearly", priority: "0.3", lastmod: "2025-12-01" },
     { url: `${SITE_URL}/terms`, changefreq: "yearly", priority: "0.3", lastmod: "2025-12-01" },
   ];
