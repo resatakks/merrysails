@@ -28,7 +28,7 @@ const canonicalUrl = `${SITE_URL}${getTourPath(dinnerTour)}`;
 export const metadata: Metadata = {
   title: "Istanbul Dinner Cruise — From €30",
   description:
-    "Book Bosphorus dinner cruise Istanbul from EUR 30. Compare 4 shared packages with dinner service, Turkish-night entertainment, and hotel pickup support from a TURSAB-backed operator.",
+    "Bosphorus dinner cruise Istanbul from EUR 30. Four shared packages with dinner, Turkish-night entertainment, and hotel pickup. TURSAB-licensed since 2001.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/istanbul-dinner-cruise"),

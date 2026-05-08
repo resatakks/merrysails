@@ -7,9 +7,9 @@ import ReservationSearch from "./ReservationSearch";
 import { getCoreTours } from "@/data/tours";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Reservation Center | Sunset, Dinner Cruise & Yacht Charter",
+  title: "Book a Bosphorus Cruise — Istanbul",
   description:
-    "Book Bosphorus sunset cruise, dinner cruise, or yacht charter in Istanbul from one reservation center. Compare the 3 core products, choose date and guests, and track your reservation.",
+    "Book Bosphorus sunset cruise, dinner cruise, or yacht charter in Istanbul. Compare the 3 core products, choose date and guests, and track your booking.",
   robots: { index: false, follow: true },
 };
 

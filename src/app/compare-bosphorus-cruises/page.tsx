@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildHreflang } from "@/lib/hreflang";
 
 const SITE_URL = "https://merrysails.com";
 
 export const metadata: Metadata = {
-  title: "Compare Bosphorus Cruises Istanbul 2026: Sunset vs Dinner vs Yacht",
+  title: "Compare Bosphorus Cruises Istanbul",
   description:
-    "Side-by-side comparison of all Bosphorus cruise options in Istanbul. Compare prices, durations, includes, and best-for criteria across Sunset, Dinner, Yacht Charter, and Hourly Boat Rental.",
+    "Compare all Bosphorus cruise options in Istanbul: prices, durations, and best-for criteria across Sunset (€34), Dinner (€30), Yacht Charter (€280), and Hourly Boat Rental.",
   alternates: {
     canonical: `${SITE_URL}/compare-bosphorus-cruises`,
+    languages: buildHreflang("/compare-bosphorus-cruises"),
   },
   openGraph: {
-    title: "Compare Bosphorus Cruises Istanbul — Sunset vs Dinner vs Yacht",
+    title: "Compare Bosphorus Cruises Istanbul",
     description:
       "All Bosphorus cruise options compared: prices from €30 to €680, durations 2–4 hours, shared vs private. Pick the right cruise in 2 minutes.",
     url: `${SITE_URL}/compare-bosphorus-cruises`,

@@ -325,6 +325,10 @@ export default async function YachtCharterIstanbulPage({
             <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
           </nav>
 
+          {/* Server-rendered H1 — visible heading is rendered by TourDetailClient as h2; */}
+          {/* this sr-only H1 ensures Google/Bing/AI crawlers see the canonical page heading. */}
+          <h1 className="sr-only">{yachtTour.nameEn} — Private Yacht Charter Istanbul</h1>
+
           <TourDetailClient
             tour={yachtTour}
             related={relatedTours}

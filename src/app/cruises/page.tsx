@@ -34,7 +34,7 @@ const breadcrumbSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "MerrySails Cruise Catalog & Service Pages | Istanbul 2026",
+  title: "MerrySails Cruise Catalog Istanbul",
   description:
     "Browse the full MerrySails catalog of cruise, yacht, and support pages after using the Bosphorus comparison hub for broader Istanbul cruise intent.",
   keywords: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/cruises"),
   },
   openGraph: {
-    title: "MerrySails Cruise Catalog & Service Pages | Istanbul 2026",
+    title: "MerrySails Cruise Catalog Istanbul",
     description:
       "Browse the full MerrySails catalog after using the Bosphorus comparison hub for broader cruise intent.",
     url: "https://merrysails.com/cruises",

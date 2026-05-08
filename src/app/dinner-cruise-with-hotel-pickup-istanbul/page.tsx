@@ -24,7 +24,7 @@ const dinnerTour = requireTour("bosphorus-dinner-cruise", "Dinner cruise");
 export const metadata: Metadata = {
   title: "Dinner Cruise with Hotel Pickup Istanbul 2026",
   description:
-    "Dinner cruise with hotel pickup support in Istanbul for guests who want a shared Bosphorus evening and selected central European-side pickup logic before Kabatas boarding.",
+    "Dinner cruise with hotel pickup Istanbul from EUR 30/person. Shared evening with central pickup eligibility and Kabatas boarding flow.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/dinner-cruise-with-hotel-pickup-istanbul"),

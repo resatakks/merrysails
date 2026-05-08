@@ -10,15 +10,15 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/team-building-yacht-istanbul`;
 
 export const metadata: Metadata = {
-  title: "Team Building Yacht Istanbul 2026 | Corporate Bosphorus Event Support",
+  title: "Team Building Yacht Istanbul",
   description:
-    "Team building yacht in Istanbul for companies that want a private Bosphorus format focused on team connection, guest flow, and a structured group brief before booking.",
+    "Team building yacht Istanbul from EUR 280/hour. Private Bosphorus format for companies focused on team connection and a structured group brief.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/team-building-yacht-istanbul"),
   },
   openGraph: {
-    title: "Team Building Yacht Istanbul 2026 | Corporate Bosphorus Event Support",
+    title: "Team Building Yacht Istanbul",
     description:
       "Use this page when the company brief is specifically team building on a yacht rather than a broader corporate dinner or launch format.",
     url: canonicalUrl,
@@ -39,7 +39,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Team Building Yacht Istanbul",
   description:
-    "Commercial support page for team building yacht events in Istanbul when the company brief is focused on group connection, activity format, and Bosphorus event flow.",
+    "Team building yacht Istanbul support page when the company brief is focused on group connection, activity format, and Bosphorus event flow.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   openingHours: "Mo-Su 00:00-23:59",

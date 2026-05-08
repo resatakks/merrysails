@@ -13,7 +13,7 @@ const startingRate = Math.min(...fleet.map((boat) => boat.pricePerHour));
 export const metadata: Metadata = {
   title: `Boat Rental Istanbul — From €380`,
   description:
-    `Boat rental and private boat hire in Istanbul from EUR ${startingRate}/hour. Choose the boat and route first, then add dinner, sunset, proposal, or celebration extras.`,
+    `Private boat rental Istanbul from EUR ${startingRate}/hour. Choose your vessel and Bosphorus route first, then add dinner, sunset, proposal, or celebration extras.`,
   alternates: {
     canonical: `${SITE_URL}/boat-rental-istanbul`,
     languages: buildHreflang("/boat-rental-istanbul"),

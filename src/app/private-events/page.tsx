@@ -5,12 +5,12 @@ import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Private Yacht Events Istanbul 2026 | Birthday & Celebration Boat Hire",
+  title: "Private Yacht Events Istanbul",
   description:
     "Plan private yacht events in Istanbul for birthdays, anniversaries, celebration dinners, and private boat party requests on the Bosphorus.",
   alternates: { canonical: `${SITE_URL}/private-events`, languages: buildHreflang("/private-events") },
   openGraph: {
-    title: "Private Yacht Events Istanbul 2026 | Birthday & Celebration Boat Hire",
+    title: "Private Yacht Events Istanbul",
     description:
       "Private yacht event planning in Istanbul for birthdays, anniversaries, celebration dinners, and private Bosphorus gatherings.",
     url: `${SITE_URL}/private-events`,

@@ -7,6 +7,7 @@ import { getTourBySlug, getTourPath, isPricingVisible } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
 import { cleanContentText } from "@/lib/content-text";
 import { BlogSectionBlock } from "@/components/blog/blog-section";
+import { buildHreflang } from "@/lib/hreflang";
 
 const defaultGuideSupportSlugs = [
   "bosphorus-cruise-boarding-points-guide-2026",
@@ -53,6 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: guide.keywords,
     alternates: {
       canonical: `https://merrysails.com/guides/${guide.slug}`,
+      languages: buildHreflang(`/guides/${guide.slug}`),
     },
     robots: {
       index: true,

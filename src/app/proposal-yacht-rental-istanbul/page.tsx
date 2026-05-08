@@ -9,7 +9,7 @@ const SITE_URL = "https://merrysails.com";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Marriage Proposal Yacht Rental Istanbul 2026 | Private Bosphorus Proposal",
+  title: "Proposal Yacht Rental Istanbul",
   description:
     "Book a marriage proposal yacht rental in Istanbul with a private Bosphorus route, sunset timing, flowers, dinner, and photographer add-ons for a discreet reveal.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/proposal-yacht-rental-istanbul"),
   },
   openGraph: {
-    title: "Marriage Proposal Yacht Rental Istanbul 2026 | Private Bosphorus Proposal",
+    title: "Proposal Yacht Rental Istanbul",
     description:
       "Private Bosphorus proposal yacht with sunset timing, decoration, dinner, and photographer add-ons for a clean marriage proposal setup.",
     url: `${SITE_URL}/proposal-yacht-rental-istanbul`,

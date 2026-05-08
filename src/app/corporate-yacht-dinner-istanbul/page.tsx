@@ -10,15 +10,15 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/corporate-yacht-dinner-istanbul`;
 
 export const metadata: Metadata = {
-  title: "Corporate Yacht Dinner Istanbul 2026 | Company Dinner on the Bosphorus",
+  title: "Corporate Yacht Dinner Istanbul",
   description:
-    "Corporate yacht dinner in Istanbul for team dinners, client hosting, and invoice-led company evenings that need a private Bosphorus setting and dinner-first planning.",
+    "Corporate yacht dinner Istanbul from EUR 280/hour. Private Bosphorus charter for team dinners, client hosting, and invoice-ready company evenings.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/corporate-yacht-dinner-istanbul"),
   },
   openGraph: {
-    title: "Corporate Yacht Dinner Istanbul 2026 | Company Dinner on the Bosphorus",
+    title: "Corporate Yacht Dinner Istanbul",
     description:
       "Use this page when the company brief is specifically a dinner-led private yacht evening in Istanbul, not a generic charter or broad event page.",
     url: canonicalUrl,
@@ -39,7 +39,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Corporate Yacht Dinner Istanbul",
   description:
-    "Commercial support page for companies planning a private yacht dinner in Istanbul for client hosting, team dinners, board dinners, or executive evenings on the Bosphorus.",
+    "Private yacht dinner Istanbul support page for client hosting, team dinners, and executive evenings on the Bosphorus.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   openingHours: "Mo-Su 00:00-23:59",

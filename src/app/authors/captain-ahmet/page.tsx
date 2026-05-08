@@ -8,7 +8,7 @@ import { buildHreflang } from "@/lib/hreflang";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Captain Ahmet Yılmaz — Founder, MerrySails Bosphorus Captain",
+  title: "Captain Ahmet Yılmaz — MerrySails Founder",
   description:
     "Captain Ahmet Yılmaz founded MerrySails in 2001 and has personally guided 50,000+ guests across the Bosphorus. TURSAB licensed, 25+ years maritime experience.",
   alternates: {

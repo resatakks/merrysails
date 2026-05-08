@@ -1,0 +1,121 @@
+[
+  {
+    "url": "https://merrysails.com/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/bogaz-turu-kac-saat-surer-rehberi-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-07",
+    "rich": "FAIL"
+  },
+  {
+    "url": "https://merrysails.com/yacht-charter-istanbul",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-04-04",
+    "rich": "PASS"
+  },
+  {
+    "url": "https://merrysails.com/tr/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-06",
+    "rich": "FAIL"
+  },
+  {
+    "url": "https://merrysails.com/de/bosphorus-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/fr/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-07",
+    "rich": "PASS"
+  },
+  {
+    "url": "https://merrysails.com/nl/bosphorus-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/tr/yacht-charter-istanbul",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/de/yacht-charter-istanbul",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/fr/yacht-charter-istanbul",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/nl/yacht-charter-istanbul",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/tr/istanbul-dinner-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-04-30",
+    "rich": "PASS"
+  },
+  {
+    "url": "https://merrysails.com/de/istanbul-dinner-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-04-29",
+    "rich": "PASS"
+  },
+  {
+    "url": "https://merrysails.com/fr/istanbul-dinner-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE"
+  },
+  {
+    "url": "https://merrysails.com/nl/istanbul-dinner-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-01",
+    "rich": "PASS"
+  }
+]

@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/kurucesme-marina-yacht-charter`;
 export const metadata: Metadata = {
   title: "Kurucesme Marina Yacht Charter Istanbul 2026",
   description:
-    "Kurucesme Marina yacht charter support page for guests who already know they want a private yacht and need clearer departure-marina, boarding, and waterfront context before booking in Istanbul.",
+    "Kurucesme Marina yacht charter Istanbul from EUR 280/hour. Departure logistics, marina access, and waterfront context for private Bosphorus yacht bookings.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/kurucesme-marina-yacht-charter"),

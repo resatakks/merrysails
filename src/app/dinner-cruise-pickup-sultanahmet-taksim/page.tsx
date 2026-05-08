@@ -10,7 +10,7 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/dinner-cruise-pickup-sultanahmet-taksim`;
 
 export const metadata: Metadata = {
-  title: "Dinner Cruise Pickup from Sultanahmet & Taksim Istanbul 2026",
+  title: "Dinner Cruise Pickup Istanbul",
   description:
     "Dinner cruise pickup support for Sultanahmet, Taksim, Sirkeci, and Karakoy guests comparing shared Bosphorus dinner cruise transfer fit before booking.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/dinner-cruise-pickup-sultanahmet-taksim"),
   },
   openGraph: {
-    title: "Dinner Cruise Pickup from Sultanahmet & Taksim Istanbul 2026",
+    title: "Dinner Cruise Pickup Istanbul",
     description:
       "Use this support page when your main question is whether Sultanahmet, Taksim, Sirkeci, or Karakoy pickup fits the shared Bosphorus dinner cruise flow.",
     url: canonicalUrl,

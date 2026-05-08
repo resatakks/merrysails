@@ -15,6 +15,7 @@ import { BlogRoutingPanel } from "@/components/blog/blog-routing-panel";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { getBlogRoutingCopy, getHighIntentBlogSlugs } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
+import { buildHreflang } from "@/lib/hreflang";
 
 const commercialCruiseLinks = [
   {
@@ -56,6 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: post.keywords,
     alternates: {
       canonical: `https://merrysails.com/blog/${post.slug}`,
+      languages: buildHreflang(`/blog/${post.slug}`),
     },
     robots: {
       index: true,

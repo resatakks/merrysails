@@ -14,12 +14,12 @@ if (!corporateTour) {
 }
 
 export const metadata: Metadata = {
-  title: "Corporate Yacht Events Istanbul 2026 | Company Event Planning",
+  title: "Corporate Yacht Events Istanbul",
   description:
     "Plan corporate yacht events in Istanbul for team dinners, client hosting, launches, and company evenings with quote-led Bosphorus event support.",
   alternates: { canonical: `${SITE_URL}/corporate-events`, languages: buildHreflang("/corporate-events") },
   openGraph: {
-    title: "Corporate Yacht Events Istanbul 2026 | Company Event Planning",
+    title: "Corporate Yacht Events Istanbul",
     description:
       "Quote-led corporate Bosphorus event planning with support for guest flow, catering, branding, and invoicing.",
     url: `${SITE_URL}/corporate-events`,

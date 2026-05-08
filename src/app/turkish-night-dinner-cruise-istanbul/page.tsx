@@ -22,15 +22,15 @@ function requireTour(slug: string, label: string) {
 const dinnerTour = requireTour("bosphorus-dinner-cruise", "Dinner cruise");
 
 export const metadata: Metadata = {
-  title: "Turkish Night Dinner Cruise Istanbul 2026 | Shared Bosphorus Show & Dinner",
+  title: "Turkish Night Dinner Cruise Istanbul",
   description:
-    "Turkish night dinner cruise Istanbul support page for guests who already want the shared Bosphorus evening and need clearer show, package, and shared-night format guidance.",
+    "Turkish night dinner cruise Istanbul from EUR 30. Shared Bosphorus dinner with live Turkish show — confirm package tier, show format, and Kabatas boarding.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/turkish-night-dinner-cruise-istanbul"),
   },
   openGraph: {
-    title: "Turkish Night Dinner Cruise Istanbul 2026 | Shared Bosphorus Show & Dinner",
+    title: "Turkish Night Dinner Cruise Istanbul",
     description:
       "Use this page when the Turkish-night show, shared dinner format, and package fit are the main booking questions before a Bosphorus evening in Istanbul.",
     url: canonicalUrl,

@@ -5,7 +5,7 @@ import { buildHreflang } from "@/lib/hreflang";
 export const metadata = {
   title: "Private Bosphorus Event Types in Istanbul",
   description:
-    "Compare private Bosphorus event pages for proposals, private dinners, celebrations, and corporate requests. For general private yacht charter, start with Yacht Charter Istanbul.",
+    "Compare private Bosphorus event pages in Istanbul: proposals, private dinners, celebrations, and corporate requests.",
   alternates: {
     canonical: "https://merrysails.com/private-tours",
     languages: buildHreflang("/private-tours"),

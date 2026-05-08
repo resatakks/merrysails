@@ -22,15 +22,15 @@ function requireTour(slug: string, label: string) {
 const sunsetTour = requireTour("bosphorus-sunset-cruise", "Sunset cruise");
 
 export const metadata: Metadata = {
-  title: "Sunset Cruise Tickets Istanbul 2026 | Shared Bosphorus Sunset Options",
+  title: "Sunset Cruise Tickets Istanbul",
   description:
-    "Sunset cruise tickets Istanbul support page for guests who already want the shared Bosphorus sunset route and need clearer ticket, package, and reserve-direct guidance.",
+    "Sunset cruise tickets Istanbul from EUR 34. Shared golden-hour Bosphorus cruise — package options, ticket clarity, and reserve-direct flow from Karakoy waterfront.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/sunset-cruise-tickets-istanbul"),
   },
   openGraph: {
-    title: "Sunset Cruise Tickets Istanbul 2026 | Shared Bosphorus Sunset Options",
+    title: "Sunset Cruise Tickets Istanbul",
     description:
       "Use this page when the shared sunset cruise is already the likely fit and the main question is ticket, package, and reserve-direct clarity before booking in Istanbul.",
     url: canonicalUrl,

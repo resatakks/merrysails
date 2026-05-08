@@ -225,7 +225,13 @@ export default function TourDetailClient({
         </button>
       </div>
 
-      {/* Quick Info Bar — horizontal with dividers */}
+      {/* Quick Info Bar — horizontal with dividers.
+          Departure + Pick-up tiles are clickable buttons that scroll to the booking
+          sidebar. Clarity dead-click data (2026-05-08) showed 69 dead clicks on
+          "Pick-up Optional" + 13 on "Departure 18:30" because users perceived these
+          as interactive. Now they actually scroll the user to the date/time/pickup
+          controls in the booking sidebar. Duration + Format remain static (no UX
+          signal that they should be interactive). */}
       <div className="mb-8 grid grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-white md:grid-cols-4">
         <div className="flex items-center gap-2.5 border-b border-r border-[var(--line)] px-5 py-4 md:border-b-0">
           <Clock className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
@@ -241,14 +247,36 @@ export default function TourDetailClient({
             <div className="text-sm font-semibold text-[var(--heading)]">{tourFormat}</div>
           </div>
         </div>
-        <div className="flex items-center gap-2.5 border-r border-[var(--line)] px-5 py-4">
+        <button
+          type="button"
+          onClick={() => {
+            const el = document.getElementById("booking-sidebar");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          aria-label={`Open booking — change departure time, currently ${tour.departureTime}`}
+          className="flex w-full items-center gap-2.5 border-r border-[var(--line)] px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40"
+        >
           <CalendarDays className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Departure</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tour.departureTime}</div>
           </div>
-        </div>
-        <div className="flex items-center gap-2.5 px-5 py-4">
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const el = document.getElementById("booking-sidebar");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          aria-label={
+            pickupStatus === "Optional"
+              ? "Open booking — request hotel pickup as an extra"
+              : pickupStatus === "Included"
+              ? "Open booking — hotel pickup is included"
+              : "Open booking — see pickup details"
+          }
+          className="flex w-full items-center gap-2.5 px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40"
+        >
           <Navigation className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Pick-up</div>
@@ -256,7 +284,7 @@ export default function TourDetailClient({
               {pickupStatus}
             </div>
           </div>
-        </div>
+        </button>
       </div>
 
       {hasVideoPreview ? (

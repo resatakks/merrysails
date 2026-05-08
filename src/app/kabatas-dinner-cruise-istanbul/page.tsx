@@ -22,15 +22,15 @@ function requireTour(slug: string, label: string) {
 const dinnerTour = requireTour("bosphorus-dinner-cruise", "Dinner cruise");
 
 export const metadata: Metadata = {
-  title: "Kabatas Dinner Cruise Istanbul 2026 | Boarding-Focused Dinner Support",
+  title: "Kabatas Dinner Cruise Istanbul",
   description:
-    "Kabatas dinner cruise support page for guests who already know they want the shared Bosphorus dinner cruise and need clearer boarding, arrival, and Kabatas-side routing context.",
+    "Kabatas dinner cruise Istanbul from EUR 30/person. Shared Bosphorus dinner boarding from Kabatas pier — arrival routing, tram directions, and pier location.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/kabatas-dinner-cruise-istanbul"),
   },
   openGraph: {
-    title: "Kabatas Dinner Cruise Istanbul 2026 | Boarding-Focused Dinner Support",
+    title: "Kabatas Dinner Cruise Istanbul",
     description:
       "Use this page when Kabatas boarding and dinner-cruise arrival logic are the deciding questions before a shared Bosphorus evening in Istanbul.",
     url: canonicalUrl,

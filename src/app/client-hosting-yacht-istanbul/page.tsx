@@ -10,15 +10,15 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/client-hosting-yacht-istanbul`;
 
 export const metadata: Metadata = {
-  title: "Client Hosting Yacht Istanbul 2026 | Corporate Bosphorus Hosting Support",
+  title: "Client Hosting Yacht Istanbul",
   description:
-    "Client hosting yacht in Istanbul for companies that need a private Bosphorus setting focused on hospitality, guest experience, and invoice-ready planning before booking.",
+    "Client hosting yacht Istanbul from EUR 280/hour. Private Bosphorus charter for companies focused on hospitality, guest experience, and invoice-ready planning.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/client-hosting-yacht-istanbul"),
   },
   openGraph: {
-    title: "Client Hosting Yacht Istanbul 2026 | Corporate Bosphorus Hosting Support",
+    title: "Client Hosting Yacht Istanbul",
     description:
       "Use this page when the company brief is specifically client hosting on a private yacht rather than a broader corporate event or team-building format.",
     url: canonicalUrl,

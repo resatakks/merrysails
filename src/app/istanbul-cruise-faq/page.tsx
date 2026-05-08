@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildHreflang } from "@/lib/hreflang";
 
 const SITE_URL = "https://merrysails.com";
 
 export const metadata: Metadata = {
-  title: "Istanbul Bosphorus Cruise FAQ 2026: 60+ Answered Questions",
+  title: "Istanbul Cruise FAQ — 60+ Answers",
   description:
-    "Comprehensive Istanbul Bosphorus cruise FAQ: prices, departure points, durations, dress code, weather policy, group discounts, kids, accessibility, dietary options. Direct answers from MerrySails (TURSAB-licensed since 2001).",
+    "Bosphorus cruise FAQ answered by MerrySails: prices, departure points, durations, dress code, weather policy, group discounts, kids, accessibility and dietary options.",
   alternates: {
     canonical: `${SITE_URL}/istanbul-cruise-faq`,
+    languages: buildHreflang("/istanbul-cruise-faq"),
   },
   openGraph: {
-    title: "Istanbul Bosphorus Cruise FAQ — 60+ Answered Questions 2026",
+    title: "Istanbul Cruise FAQ — 60+ Answers",
     description:
-      "Everything you need to know about Bosphorus cruises: prices €30-€680, departure from Kabataş, year-round operation, multilingual guides, dietary and accessibility info.",
+      "Bosphorus cruises: prices €30-€680, departure from Kabataş, year-round schedules, multilingual guides, dietary and accessibility info.",
     url: `${SITE_URL}/istanbul-cruise-faq`,
     type: "article",
   },

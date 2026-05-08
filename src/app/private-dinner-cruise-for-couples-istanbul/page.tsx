@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`;
 export const metadata: Metadata = {
   title: "Private Dinner Cruise for Couples Istanbul 2026",
   description:
-    "Private dinner cruise for couples in Istanbul for guests who want a quieter Bosphorus evening, their own table, and a dinner-led private yacht flow without a shared cruise format.",
+    "Private dinner cruise for couples Istanbul from EUR 280. Quiet Bosphorus evening on a private yacht — your own table, custom route, no shared format.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/private-dinner-cruise-for-couples-istanbul"),
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Private Dinner Cruise for Couples Istanbul 2026",
     description:
-      "Use this page when a couple wants a private Bosphorus dinner, a quieter atmosphere, and clear routing between private dinner, proposal, and shared dinner options.",
+      "Use when a couple wants a private Bosphorus dinner, quieter atmosphere, and clear routing between private dinner, proposal, and shared dinner options.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -39,7 +39,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Private Dinner Cruise for Couples Istanbul",
   description:
-    "Commercial support page for couples comparing a private Bosphorus dinner cruise in Istanbul when privacy, atmosphere, and a dinner-led private yacht flow matter more than a shared evening package.",
+    "Support page for couples comparing a private Bosphorus dinner cruise when privacy and dinner-led yacht flow matter more than a shared evening.",
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
