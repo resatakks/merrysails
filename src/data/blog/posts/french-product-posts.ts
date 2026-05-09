@@ -839,4 +839,177 @@ export const frenchProductPosts: BlogPost[] = [
     calloutText:
       "MerrySails — TURSAB A Gruppe n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 clients. Croisière coucher de soleil dès €34, dîner-croisière dès €30, yacht privatif dès €280.",
   },
+  {
+    slug: "croisiere-bosphore-prix-guide-2026",
+    locale: "fr",
+    title: "Croisière Bosphore Prix 2026",
+    metaDescription:
+      "Quel prix pour une croisière du Bosphore en 2026 ? Coucher de soleil dès 34 €, dîner dès 30 €, yacht privé dès 280 €. Licence TURSAB depuis 2001. Guide complet par MerrySails.",
+    excerpt:
+      "Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 280 €. MerrySails — agence licenciée TURSAB Groupe A depuis 2001, plus de 50 000 invités — détaille tous les tarifs 2026 et vous aide à choisir la formule idéale.",
+    category: "cruise-guide",
+    date: "2026-05-10",
+    dateModified: "2026-05-10",
+    readTime: "9 min de lecture",
+    image:
+      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    imageAlt:
+      "Croisière du Bosphore au coucher du soleil avec vue sur les palais ottomans d'Istanbul",
+    keywords: [
+      "croisiere istanbul",
+      "croisière bosphore istanbul",
+      "prix croisière bosphore 2026",
+      "croisière istanbul tarif",
+      "croisiere diner istanbul prix",
+      "coucher soleil bosphore prix",
+      "yacht istanbul prix",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "Croisière dîner sur le Bosphore : Silver Soft 30 €, Silver Alcool 45 €, Gold Soft 60 €, Gold Illimité 90 € — par personne",
+      "Croisière coucher de soleil : 34 € sans vin, 40 € avec vin — environ 2 heures, croisière partagée",
+      "Yacht privatif : à partir de 280 € pour le bateau entier (2 heures) — tarif selon taille et durée",
+      "MerrySails est agence licenciée TURSAB Groupe A depuis 2001 — aucun frais caché, prix fixés en euros",
+    ],
+    sections: [
+      {
+        heading: "Prix croisière Bosphore 2026 — vue d\'ensemble",
+        answerCapsule:
+          "En 2026, le prix d\'une croisière du Bosphore commence à 30 € par personne pour un dîner-croisière en formule de base, et monte à 280 € et plus pour un yacht privatif. Les trois grands types de croisière — dîner, coucher de soleil et yacht privé — varient selon la durée, les prestations incluses et la taille du groupe.",
+        content:
+          "La première question de nombreux voyageurs qui planifient leur séjour à Istanbul est simple : combien coûte une croisière du Bosphore ? La réponse dépend surtout du type d\'expérience recherché.\n\nLes ferries publics de la ville (İDO, Şehir Hatları) proposent des traversées très économiques, mais sans guide, sans restauration et sans caractère touristique. Les croisières privées organisées par des opérateurs licenciés TURSAB offrent un cadre entièrement dédié au plaisir, avec capitaine certifié, équipage, restauration à bord et service en français sur demande.\n\nLe tableau ci-dessous récapitule les tarifs 2026 de [MerrySails](/fr/bosphorus-cruise), fixés en euros pour éviter toute surprise liée aux fluctuations de la livre turque.",
+        table: {
+          headers: [
+            "Type de croisière",
+            "Durée",
+            "Tarif 2026",
+            "Repas / Boissons",
+          ],
+          rows: [
+            [
+              "Dîner-croisière",
+              "~3,5 h",
+              "30 €–90 € / pers.",
+              "Inclus (selon formule)",
+            ],
+            [
+              "Coucher de soleil",
+              "~2 h",
+              "34 €–40 € / pers.",
+              "Vin en option",
+            ],
+            [
+              "Yacht privatif",
+              "2–8 h",
+              "280 €+ / bateau",
+              "En supplément",
+            ],
+            [
+              "Ferry public (İDO)",
+              "1,5–6 h",
+              "≈ 2–8 € / pers.",
+              "Non inclus",
+            ],
+          ],
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Tous les tarifs MerrySails sont libellés en euros — ils ne varient pas avec le taux de change de la livre turque. Le paiement peut s\'effectuer par carte ou en espèces ; le taux appliqué est celui de la Banque Centrale turque à la date de réservation.",
+        },
+      },
+      {
+        heading: "Croisière dîner sur le Bosphore — prix et formules 2026",
+        answerCapsule:
+          "Le dîner-croisière du Bosphore est disponible en quatre formules : Silver Soft (30 €), Silver Alcool (45 €), Gold Soft (60 €) et Gold Illimité (90 €). Chaque formule inclut le dîner chaud à bord, le spectacle de folklore turc et une promenade de trois heures et demie entre les rives européenne et asiatique.",
+        content:
+          "La [croisière-dîner du Bosphore](/fr/istanbul-dinner-cruise) est le produit phare de MerrySails. Elle réunit gastronomie turque, animations culturelles et panorama nocturne des palais ottomans en une seule soirée. Voici le détail des quatre formules 2026 :\n\n**Silver Soft (30 €/pers.)** — dîner chaud (mezze, plat principal, dessert), boissons sans alcool illimitées (eau, soda, jus de fruits), spectacle de danse orientale et folklore anatolien.\n\n**Silver Alcool (45 €/pers.)** — tout ce que comprend Silver Soft, plus une sélection de bières et vins turcs à volonté pendant toute la durée de la croisière.\n\n**Gold Soft (60 €/pers.)** — menu gastronomique premium (entrées froides et chaudes, poisson ou viande en plat principal, baklava maison), boissons sans alcool illimitées, accès au pont supérieur VIP avec sièges réservés.\n\n**Gold Illimité (90 €/pers.)** — formule Gold avec boissons alcoolisées premium illimitées (vins turcs, bière, raki, cocktails), service à table individualisé et priorité d\'embarquement.\n\nChaque formule inclut le transport depuis les points de départ habituels (Kabataş, Eminönü) et le retour au port. Pour les groupes de 10 personnes ou plus, des tarifs négociés sont disponibles sur demande.",
+      },
+      {
+        heading: "Croisière coucher de soleil — prix (34 € et 40 €)",
+        answerCapsule:
+          "La croisière coucher de soleil dure environ deux heures et se décline en deux options : sans vin (34 €/pers.) et avec vin turc inclus (40 €/pers.). Le départ a lieu en fin d\'après-midi pour profiter de la lumière dorée sur le Bosphore et les mosquées.",
+        content:
+          "La [croisière coucher de soleil](/fr/cruises/bosphorus-sunset-cruise) est la formule idéale pour les voyageurs qui cherchent une expérience courte et mémorable sans dîner. En deux heures, le bateau remonte le Bosphore depuis Kabataş jusqu\'au pont du Bosphore, offrant une vue panoramique sur Dolmabahçe, Ortaköy et les collines asiatiques baignées de lumière.\n\n**Formule sans vin (34 €/pers.)** — embarquement, croisière guidée de 2 heures avec commentaires en français disponibles, boissons non alcoolisées à bord (eau, jus, thé turc).\n\n**Formule avec vin (40 €/pers.)** — tout ce que comprend la formule de base, plus un verre de vin turc blanc ou rosé servi au coucher du soleil.\n\nCes deux formules sont proposées en croisière partagée (groupe de 20 à 80 personnes selon le bateau). Pour une expérience plus intime au coucher du soleil, le yacht privatif est la meilleure option — voir la section suivante.",
+        callout: {
+          type: "info",
+          text:
+            "La haute saison (juin–août) affiche souvent complet 48 à 72 heures à l\'avance. Réservez directement sur merrysails.com pour garantir votre place au meilleur tarif — sans commission d\'intermédiaire.",
+        },
+      },
+      {
+        heading: "Yacht privatif à Istanbul — prix (280 € et plus)",
+        answerCapsule:
+          "La location d\'un yacht privatif sur le Bosphore commence à 280 € pour le bateau entier (jusqu\'à 12 personnes, 2 heures). MerrySails propose trois niveaux : Classique, Premium et Luxury, selon la taille du yacht et les prestations souhaitées.",
+        content:
+          "Le [yacht privatif](/fr/yacht-charter-istanbul) représente la formule idéale pour un anniversaire, une demande en mariage, un séminaire d\'entreprise ou simplement un moment d\'exception entre amis. Contrairement aux croisières partagées, vous disposez du bateau entier, de l\'équipage et du capitaine pour vous seul.\n\n**Niveau Classique (à partir de 280 €/bateau, 2 h)** — yacht moteur ou voilier de 10 à 12 mètres, jusqu\'à 12 passagers, capitaine et matelot inclus. Service traiteur optionnel (30–50 € supplémentaires par personne).\n\n**Niveau Premium (à partir de 480 €/bateau, 2 h)** — yacht de 14 à 18 mètres, jusqu\'à 20 passagers, décoration personnalisable, système audio, service traiteur inclus dans la formule.\n\n**Niveau Luxury (sur devis, minimum 800 €/2 h)** — yachts de prestige de 20 mètres et plus, jusqu\'à 50 passagers, chef à bord, équipage complet, itinéraire sur mesure entre les deux rives du Bosphore et jusqu\'aux îles des Princes.\n\nTous les yachts de la flotte MerrySails sont certifiés, assurés et inspectés annuellement. Merry Tourism, notre entité juridique, est agréée [TURSAB Groupe A](/tursab) depuis 2001 — vous bénéficiez de la même garantie légale que pour les croisières partagées.",
+      },
+      {
+        heading: "Qu\'est-ce qui est inclus dans le prix ?",
+        answerCapsule:
+          "Tous les tarifs MerrySails incluent la croisière elle-même, le capitaine certifié, l\'équipage, les taxes portuaires et les assurances obligatoires. Le repas et les boissons sont inclus dans les formules dîner et optionnels pour le coucher de soleil et le yacht privatif.",
+        content:
+          "Il est important de comprendre précisément ce que comprennent (et ce qu\'ils n\'incluent pas) les tarifs affichés pour éviter toute déception. Voici un récapitulatif clair :\n\n**Toujours inclus dans tous les tarifs MerrySails :**\n- Croisière sur le Bosphore à bord d\'un bateau certifié\n- Capitaine diplômé et équipage qualifié\n- Taxes portuaires et droits de navigation\n- Assurance passagers obligatoire\n- Accès Wi-Fi à bord (sauf ferry public)\n\n**Inclus selon la formule :**\n- Dîner chaud (formules dîner-croisière Silver et Gold)\n- Boissons alcoolisées (formules Silver Alcool, Gold Illimité, coucher de soleil +vin)\n- Spectacle de folklore turc (formules dîner uniquement)\n- Service traiteur personnalisé (yacht Premium et Luxury)\n\n**Non inclus (options payantes) :**\n- Transfert hôtel–port (disponible sur demande, tarif selon quartier)\n- Photographies professionnelles à bord\n- Pourboires pour l\'équipage (apprécié mais non obligatoire)\n\nIl n\'existe aucun frais de carburant, aucune taxe cachée ni surcharge de saison dans les tarifs MerrySails. Le prix affiché au moment de la réservation est le prix final.",
+      },
+      {
+        heading: "Ferry public vs. croisière privée — que choisir ?",
+        answerCapsule:
+          "Les ferries publics (Şehir Hatları, İDO) traversent le Bosphore pour 2 à 8 €, mais sans guide ni service touristique. Les croisières privées MerrySails offrent une expérience culinaire, culturelle et panoramique complète, avec un encadrement professionnel — un investissement très différent pour des résultats très différents.",
+        content:
+          "Beaucoup de guides touristiques recommandent le ferry public comme «alternative économique» à la croisière. C\'est vrai en termes de coût, mais l\'expérience est fondamentalement différente.\n\n| Critère | Ferry public | Croisière MerrySails |\n|---|---|---|\n| Prix | 2–8 €/pers. | 30–90 €/pers. |\n| Durée | 1,5–6 h (ligne régulière) | 2–3,5 h (dédié) |\n| Guide / commentaires | Non | Optionnel en français |\n| Repas à bord | Non | Oui (formules dîner) |\n| Itinéraire panoramique | Non (arrêts fonctionnels) | Oui (points d\'intérêt) |\n| Réservation garantie | Non (file d\'attente) | Oui |\n| Privatisation possible | Non | Oui (yacht) |\n\nSi vous voyagez avec un budget très serré ou souhaitez simplement traverser d\'une rive à l\'autre, le ferry public remplit ce rôle. Mais si vous cherchez une soirée mémorable, un dîner avec vue ou une expérience culturelle sur l\'eau, la croisière privée est sans comparaison. Pour la plupart des visiteurs qui ne viennent à Istanbul qu\'une fois dans leur vie, l\'investissement de 30 à 90 € représente l\'un des meilleurs rapports qualité-prix de la ville.",
+      },
+      {
+        heading: "Quelle croisière choisir selon votre voyage ?",
+        answerCapsule:
+          "Choisissez la croisière dîner pour une soirée complète en groupe ou en couple, la croisière coucher de soleil pour une expérience courte et romantique, et le yacht privatif pour un événement exclusif. Consultez la page [croisières Bosphore](/fr/bosphorus-cruise) pour voir les disponibilités en temps réel.",
+        content:
+          "Voici un guide rapide pour choisir la formule adaptée à votre séjour :\n\n**Vous êtes en couple pour une soirée romantique** → [Croisière coucher de soleil](/fr/cruises/bosphorus-sunset-cruise) avec vin (40 €) ou dîner-croisière Silver Alcool (45 €). Les deux créent une atmosphère intime avec le panorama nocturne d\'Istanbul en toile de fond.\n\n**Vous voyagez en famille avec des enfants** → Croisière dîner Silver Soft (30 €/pers.). La formule sans alcool convient à tous les âges ; les enfants de moins de 7 ans embarquent gratuitement.\n\n**Vous organisez un événement d\'entreprise ou un séminaire** → Yacht privatif Premium ou Luxury (à partir de 480 €). Privatisation totale, décoration sur mesure, équipage dédié.\n\n**Vous êtes un couple souhaitant faire une demande en mariage** → Yacht Classique privatif (à partir de 280 €). L\'équipe MerrySails peut coordonner décoration florale, champagne et photographe à bord sur demande.\n\n**Vous êtes un groupe d\'amis en voyage organisé (10+ personnes)** → Dîner-croisière Gold Illimité (90 €/pers.) ou tarif groupe négocié. Contactez-nous via WhatsApp au +90 537 040 68 22 pour un devis personnalisé.\n\nPour comparer toutes les options disponibles et réserver en ligne, rendez-vous sur notre page [croisières Bosphore Istanbul](/fr/bosphorus-cruise). La réservation directe vous garantit les meilleurs tarifs sans commission d\'intermédiaire.",
+        callout: {
+          type: "tip",
+          text:
+            "Réservez au moins 48 heures à l\'avance en haute saison (juin–août) pour garantir votre place. L\'annulation est gratuite jusqu\'à 24 heures avant le départ.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Quel est le prix d\'une croisière du Bosphore en 2026 ?",
+        a: "En 2026, le prix d\'une croisière du Bosphore chez MerrySails commence à 30 € par personne pour un dîner-croisière en formule Silver Soft, et monte à 90 € pour la formule Gold Illimité. La croisière coucher de soleil est proposée à partir de 34 €, et la location d\'un yacht privatif à partir de 280 € pour le bateau entier. Ces tarifs sont fixés en euros et n\'incluent aucun frais caché.",
+      },
+      {
+        q: "Quelle est la croisière la moins chère ?",
+        a: "La croisière la moins chère proposée par MerrySails est le dîner-croisière Silver Soft à 30 €/personne. Elle inclut le repas chaud à bord, les boissons sans alcool à volonté et le spectacle de folklore turc. Si vous souhaitez uniquement une promenade sur le Bosphore sans dîner, la croisière coucher de soleil commence à 34 €.",
+      },
+      {
+        q: "Combien coûte une croisière-dîner sur le Bosphore ?",
+        a: "Le dîner-croisière du Bosphore chez MerrySails est disponible en quatre formules : Silver Soft (30 €), Silver Alcool (45 €), Gold Soft (60 €) et Gold Illimité (90 €). Chaque formule inclut un dîner chaud à bord et un spectacle de folklore turc. La différence porte principalement sur la qualité du menu et les boissons alcoolisées incluses.",
+      },
+      {
+        q: "Quel est le prix d\'une croisière coucher de soleil ?",
+        a: "La croisière coucher de soleil sur le Bosphore coûte 34 € par personne sans vin ou 40 € par personne avec un verre de vin turc inclus. La croisière dure environ 2 heures et part en fin d\'après-midi depuis Kabataş pour profiter de la lumière dorée sur le Bosphore et les monuments ottomans.",
+      },
+      {
+        q: "Combien coûte la location d\'un yacht privé à Istanbul ?",
+        a: "La location d\'un yacht privatif à Istanbul chez MerrySails commence à 280 € pour le bateau entier (2 heures, jusqu\'à 12 personnes). Les formules Premium (jusqu\'à 20 passagers) démarrent à 480 €, et les yachts Luxury sont disponibles sur devis à partir de 800 € pour 2 heures. Tous les yachts incluent le capitaine, l\'équipage et les assurances obligatoires.",
+      },
+      {
+        q: "Le transfert hôtel et le dîner sont-ils inclus ?",
+        a: "Le dîner est inclus dans toutes les formules de dîner-croisière (Silver et Gold). Le transfert hôtel-port n\'est pas inclus par défaut, mais il est disponible en option sur demande, à un tarif variable selon le quartier. La croisière coucher de soleil inclut les boissons non alcoolisées ; le vin est en option à 6 € supplémentaires. Pour les yachts privatifs, le service traiteur est inclus dans les formules Premium et Luxury, et disponible en option pour la formule Classique.",
+      },
+    ],
+    relatedTours: [
+      "bosphorus-cruise",
+      "istanbul-dinner-cruise",
+      "yacht-charter-istanbul",
+    ],
+    relatedPosts: [
+      "croisiere-bosphore-prix-istanbul",
+      "guide-croisiere-bosphore-istanbul-2026",
+      "location-yacht-istanbul-guide",
+    ],
+    proTip:
+      "Réservez directement sur merrysails.com et économisez 15 à 25 % par rapport aux plateformes OTA (TripAdvisor, GetYourGuide, Viator). L\'équipe de Merry Tourism peut vous répondre en français pour toute demande spéciale avant votre arrivée à Istanbul.",
+    calloutText:
+      "MerrySails — agence licenciée TURSAB Groupe A n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 invités. Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 280 €.",
+  },
 ];

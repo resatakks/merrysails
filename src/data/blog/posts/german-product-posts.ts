@@ -740,4 +740,198 @@ export const germanProductPosts: BlogPost[] = [
     calloutText:
       "MerrySails ist seit 2001 TURSAB A-Gruppe lizenziert (Lizenz #14316) und hat über 50.000 Gäste auf dem Bosporus begrüßt. Buchen Sie direkt und sparen Sie bis zu 25 % gegenüber Buchungsplattformen.",
   },
+  {
+    slug: "bosporus-kreuzfahrt-preise-rehber-2026",
+    locale: "de",
+    title: "Bosporus Kreuzfahrt Preise 2026",
+    metaDescription:
+      "Was kostet eine Bosporus-Kreuzfahrt 2026? Sonnenuntergang ab €34, Dinner ab €30, Privatyacht ab €280. TURSAB lizenziert seit 2001 — direkt buchen.",
+    excerpt:
+      "Alle Bosporus-Kreuzfahrt Preise 2026 auf einen Blick: Sonnenuntergangsfahrt ab €34, Dinner-Kreuzfahrt ab €30, Privatyacht ab €280. Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001, über 50.000 Gäste. Transparent, ohne versteckte Gebühren.",
+    category: "cruise-guide",
+    date: "2026-05-10",
+    dateModified: "2026-05-10",
+    readTime: "9 min Lesezeit",
+    image:
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt:
+      "Bosporus-Kreuzfahrt Istanbul bei Abenddämmerung — osmanische Paläste und Bosporus-Brücke im Abendlicht",
+    keywords: [
+      "bosporus kreuzfahrt preise",
+      "bosporus kreuzfahrt kosten 2026",
+      "bosporus rundfahrt preis",
+      "dinner kreuzfahrt istanbul preis",
+      "sonnenuntergang kreuzfahrt istanbul",
+      "privatyacht istanbul preis",
+      "istanbul bootsfahrt kosten",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "Sonnenuntergangsfahrt: €34 (ohne Wein) oder €40 (mit Wein) pro Person — ca. 2 Stunden, geführte Gemeinschaftstour",
+      "Dinner-Kreuzfahrt: vier Pakete von €30 (Silver Soft) bis €90 (Gold Unlimited) pro Person — inkl. Abendessen und Live-Musik",
+      "Privatyacht-Charter: ab €280 für das gesamte Boot (2 Stunden) — ideal für Gruppen, Paare und besondere Anlässe",
+      "TURSAB A-Gruppe lizenziert seit 2001 — keine versteckten Kosten, Stornierung bis 72 Stunden vor Abfahrt kostenlos",
+    ],
+    sections: [
+      {
+        heading: "Bosporus-Kreuzfahrt Preise 2026 — Übersicht",
+        answerCapsule:
+          "Eine Bosporus-Kreuzfahrt kostet 2026 zwischen €30 und €280+. Sonnenuntergangsfahrten kosten €34–40 pro Person, Dinner-Kreuzfahrten €30–90 pro Person, Privatyachten ab €280 für das ganze Boot.",
+        content:
+          "Wer eine Bosporus-Kreuzfahrt in Istanbul plant, begegnet schnell einer unklaren Preisspanne. Günstige Angebote starten bei €30, exklusive Privat-Yachten reichen bis weit über €1.000. Der Schlüssel liegt im Tourentyp — und in der Wahl des richtigen Anbieters.\n\n[Merry Tourism](/tursab), Betreiber von MerrySails, ist seit 2001 TURSAB A-Gruppe lizenziert und hat über 50.000 Gäste auf dem Bosporus begrüßt. Die folgenden Preise sind für die Saison 2026 festgelegt — in Euro, unabhängig vom täglichen Wechselkurs.",
+        table: {
+          headers: [
+            "Kreuzfahrt-Typ",
+            "Dauer",
+            "Preis",
+            "Essen / Getränke",
+          ],
+          rows: [
+            [
+              "Sonnenuntergangsfahrt",
+              "~2 Stunden",
+              "€34–40 / Person",
+              "Wasser; Wein optional",
+            ],
+            [
+              "Dinner-Kreuzfahrt (Silver Soft)",
+              "~3,5 Stunden",
+              "€30 / Person",
+              "3-Gang-Menü, alkoholfrei",
+            ],
+            [
+              "Dinner-Kreuzfahrt (Silver Alk.)",
+              "~3,5 Stunden",
+              "€45 / Person",
+              "3-Gang-Menü + Bier/Wein",
+            ],
+            [
+              "Dinner-Kreuzfahrt (Gold Soft)",
+              "~3,5 Stunden",
+              "€60 / Person",
+              "4-Gang-Menü, alkoholfrei",
+            ],
+            [
+              "Dinner-Kreuzfahrt (Gold Unlimited)",
+              "~3,5 Stunden",
+              "€90 / Person",
+              "4-Gang-Menü + unbegrenzt Alkohol",
+            ],
+            [
+              "Privatyacht (kl., 2–8 Pers.)",
+              "2+ Stunden",
+              "ab €280 / Boot",
+              "Optional zubuchbar",
+            ],
+            [
+              "Privatyacht (mittel, 8–20 Pers.)",
+              "2–4 Stunden",
+              "€500–900 / Boot",
+              "Optional zubuchbar",
+            ],
+            [
+              "Privatyacht (groß, 20–50 Pers.)",
+              "4–8 Stunden",
+              "€1.000+ / Boot",
+              "Optional zubuchbar",
+            ],
+          ],
+        },
+        callout: {
+          type: "price",
+          text: "Preise 2026 in Kürze: Sonnenuntergang €34–40 | Dinner €30–90 | Privatyacht ab €280 (ganzes Boot). Alle Preise in Euro — kein Währungsrisiko.",
+        },
+      },
+      {
+        heading: "Dinner-Kreuzfahrt Preise — €30 bis €90 im Paketvergleich",
+        answerCapsule:
+          "Die Dinner-Kreuzfahrt am Bosporus gibt es in vier Paketen: Silver Soft €30 (alkoholfrei), Silver Alkohol €45 (Bier/Wein), Gold Soft €60 (4 Gänge, alkoholfrei), Gold Unlimited €90 (4 Gänge + unbegrenzter Alkohol). Dauer ca. 3,5 Stunden.",
+        content:
+          "Die [Dinner-Kreuzfahrt Istanbul](/de/istanbul-dinner-cruise) ist das Flaggschiff-Erlebnis für Abendgeniessende: Man verlässt Kabataş-Pier um 20:30 Uhr und kehrt gegen Mitternacht zurück — 3,5 Stunden Bosporus-Panorama, türkische Küche und Live-Musik.\n\n**Silver Soft (€30 / Person):** Drei Gänge (Suppe, Hauptgericht, Dessert), alkoholfreie Getränke (Saft, Wasser, Erfrischungsgetränke), türkische Livemusik. Die beliebteste Option für Familien und Budgetbewusste.\n\n**Silver Alkohol (€45 / Person):** Enthält alle Leistungen von Silver Soft plus Bier und Hauswein. Empfehlenswert für Paare, die ein Glas Wein zum Panorama möchten.\n\n**Gold Soft (€60 / Person):** Vier Gänge (Vorspeise, Suppe, Hauptgericht, Dessert), alkoholfreie Getränke und eine Live-Türkische-Folklore-Show. Für Gäste, die die gastronomische Seite betonen möchten.\n\n**Gold Unlimited (€90 / Person):** Gold-Menü plus unbegrenzte Alkoholgetränke (Hausbier, Wein, Rakı, Cocktails). Ideal für Jubiläen, Firmenveranstaltungen und Gruppen, die ausgiebig feiern möchten.",
+        proTip:
+          "Nicht alle Gäste müssen dasselbe Paket wählen — Sie können am gleichen Tisch verschiedene Pakete kombinieren. Alkoholfrei und Alkohol-Pakete sind pro Person buchbar. Bitte beim Reservieren angeben.",
+      },
+      {
+        heading: "Sonnenuntergangsfahrt Preise — €34 oder €40?",
+        answerCapsule:
+          "Die Sonnenuntergangs-Bosporus-Kreuzfahrt kostet 2026: €34 pro Person (ohne Wein) oder €40 pro Person (inkl. einer Flasche türkischen Wein). Die Fahrt dauert ca. 2 Stunden ab Kabataş.",
+        content:
+          "Die [Sonnenuntergangsfahrt am Bosporus](/de/cruises/bosphorus-sunset-cruise) ist die schlanke, zeiteffiziente Wahl: etwa zwei Stunden auf dem Wasser, goldenes Abenddlicht, osmanische Paläste und Brücken — ohne Abendessen-Verpflichtung.\n\n**€34 — Paket ohne Wein:** Geführte Bosporus-Fahrt, Sitzplatz an Deck, Wasser und Erfrischungsgetränke, Englisch-sprechender Guide. Geeignet für Familien, Nicht-Trinker und all jene, die einfach das Panorama genießen möchten.\n\n**€40 — Paket mit Wein:** Enthält alles wie oben plus eine Flasche türkischen Wein für zwei Personen. Der Preisaufschlag von nur €6 macht dieses Paket für Weinliebhaber zum klaren Preis-Leistungs-Sieger.\n\nDie Abfahrt variiert je nach Jahreszeit: Frühling (März–April) ca. 17:00 Uhr, Sommer (Mai–August) ca. 19:00 Uhr, Herbst (September–Oktober) ca. 17:30 Uhr. Den exakten Abfahrtszeitpunkt erfahren Sie in der Buchungsbestätigungs-E-Mail.",
+        callout: {
+          type: "info",
+          text: "Die Sonnenuntergangsfahrt startet von Kabataş-Pier, nahe Dolmabahçe-Palast. Mit der T3-Straßenbahn aus dem Stadtzentrum ist der Pier in 15–20 Minuten erreichbar. Weitere Details: [Abfahrtsorte Bosporus-Kreuzfahrt](/de/bosphorus-cruise-departure-points).",
+        },
+      },
+      {
+        heading: "Privatyacht Preise — ab €280 für Ihr ganzes Boot",
+        answerCapsule:
+          "Eine Privatyacht am Bosporus kostet ab €280 für das gesamte Boot (2 Stunden, 2–8 Personen). Mittelgroße Yachten (8–20 Pers.) kosten €500–900, große Charterboote (20–50 Pers.) ab €1.000. Kapitan und Versicherung sind immer inbegriffen.",
+        content:
+          "Der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) ist die ultimative Wahl, wenn Sie den Bosporus ohne Fremde genießen möchten. Ob Heiratsantrag, Familienfest oder Firmen-Event — Sie buchen das gesamte Boot für Ihre Gruppe.\n\nMerry Tourism verfügt über eine Flotte mit drei Größenkategorien:\n\n**Klein (2–8 Personen), 2 Stunden: ab €280 / Boot**\nIdeal für Paare, Familien oder kleine Gruppen. Perfekt für einen Heiratsantrag auf dem Bosporus oder ein romantisches Privatdinner. Preis pro Person bei 4 Gästen: €70 — vergleichbar mit einem Dinner-Kreuzfahrt-Ticket.\n\n**Mittel (8–20 Personen), 2–4 Stunden: €500–900 / Boot**\nGeeignet für Geburtstagsgesellschaften, kleine Firmengruppen oder Freundesrunden. Bei 15 Personen und €700 sind das nur €47 pro Person.\n\n**Groß (20–50 Personen), 4–8 Stunden: €1.000+ / Boot**\nFür Hochzeiten, Galas oder Gruppenreisen. Catering, Dekoration und Fotografen können gegen Aufpreis organisiert werden.\n\nIn jedem Paket inbegriffen: Kapitan, Crew, gesetzliche Versicherung. Speisen und Getränke können über einen Catering-Partner zugebucht werden — bitte beim Reservieren anfragen.",
+        proTip:
+          "Der Preis bezieht sich auf das gesamte Boot, nicht pro Person. Schon ab 6 Gästen kann die Privatyacht (€280 / 6 = €47 pro Person) günstiger sein als eine Dinner-Kreuzfahrt.",
+      },
+      {
+        heading: "Was ist im Preis enthalten?",
+        answerCapsule:
+          "Bei allen TURSAB-lizenzierten MerrySails-Touren sind inbegriffen: Deckzugang, Englisch-sprechender Guide, lizenzierter Kapitan und Crew sowie gesetzliche Versicherung. Abendessen und Transfer sind nur bei der Dinner-Kreuzfahrt inkl.",
+        content:
+          "Bevor Sie buchen, lohnt es sich zu prüfen, was genau im Ticketpreis enthalten ist. Bei MerrySails gilt folgende transparente Regelung:\n\n**In allen Touren immer enthalten:**\n- Deckzugang-Ticket\n- TURSAB A-Gruppe lizenzierter Kapitan und Crew\n- Englischsprachiger Reiseleiter\n- Gesetzlich vorgeschriebene Sicherheitsausrüstung (Schwimmwesten, Rettungsring)\n- Grundlegende Reiseversicherung\n\n**Nur bei der Dinner-Kreuzfahrt zusätzlich enthalten:**\n- Hoteltransfer aus Sultanahmet, Taksim und Beşiktaş-Bereich\n- Abendessen (3- oder 4-Gang je nach Paket)\n- Live Türkische Livemusik und Folklore-Showprogramm\n- Alkohol oder alkoholfrei (je nach gewähltem Paket)\n\n**Nur bei der Sonnenuntergangsfahrt (€40) enthalten:**\n- Eine Flasche türkischer Wein für zwei Personen\n\n**Nicht enthalten (in keiner Tour):** Fotopaket, persönliche Einkäufe, Transfers außerhalb der genannten Bereiche, Trinkgeld (freiwillig).\n\nEs gibt keine versteckten Gebühren, keine obligatorischen Trinkgelder und keine „Dynamische Preisgestaltung“ — der gebuchte Preis ist der endgültige Preis.",
+        callout: {
+          type: "tip",
+          text: "Stornierung ist bis 72 Stunden vor Abfahrt kostenlos. Bei wetterbedingter Absage durch MerrySails erhalten Sie volle Rückerstattung oder kostenlose Umbuchung.",
+        },
+      },
+      {
+        heading: "Stadtfähre vs. private Kreuzfahrt — wann lohnt sich was?",
+        answerCapsule:
+          "Die öffentliche Stadtfähre (Sehir Hatlari) fährt den Bosporus ab ca. €3 — ohne Führung, Sitzgarantie oder Service. TURSAB-lizenzierte private Kreuzfahrten ab €30 bieten Fachkundige Führung, Komfort und Sicherheitsgarantie.",
+        content:
+          "Eine häufige Frage: Warum nicht einfach die günstige öffentliche Fähre nehmen? Die Sehir Hatlari-Fähren fahren täglich auf dem Bosporus — für umgerechnet ca. €2–3 pro Fahrt. Für reine Ortsansässige ist das die richtige Wahl.\n\nFür Touristen gibt es jedoch entscheidende Unterschiede:\n\n| Kriterium | Stadtfähre | MerrySails Kreuzfahrt |\n|---|---|---|\n| Preis | ~€3 (kein Touristenpreis) | ab €30 |\n| Sprachlicher Guide | Nein (nur türkisch) | Ja, Englisch |\n| Sitzgarantie | Nein | Ja |\n| Abendessen | Nein | Optional (Dinner-Tour) |\n| Wein / Alkohol | Nein | Optional |\n| TURSAB-Lizenz | Nein | Ja (seit 2001) |\n| Stornierungsschutz | Nein | Ja (bis 72 h) |\n| Abfahrtszeit flexibel | Nein (Fahrplan) | Teilweise (Privatyacht: ja) |\n\nFazit: Die Stadtfähre eignet sich für Gäste, die schlicht von A nach B möchten. Für ein geführtes, erinnerungswürdiges Bosporus-Erlebnis empfiehlt sich die private Kreuzfahrt ab €30 — ein Preis, der mit einem mittleren Restaurantbesuch in Istanbul vergleichbar ist.\n\nMehr zur [Bosporus-Kreuzfahrt Hub-Seite](/de/bosphorus-cruise) mit allen Abfahrten und Buchungsoptionen.",
+      },
+      {
+        heading: "Welche Kreuzfahrt passt zu Ihrem Reisestil?",
+        answerCapsule:
+          "Budget & Familie: Silver Soft Dinner €30. Romantisches Paar: Sonnenuntergang €40. Besonderer Anlass: Gold Unlimited €90. Gruppe / Exklusiv: Privatyacht ab €280.",
+        content:
+          "Um die richtige Wahl zu treffen, beantworten Sie vier kurze Fragen:\n\n**1. Wie viele Personen sind Sie?**\n1–2 Personen: Sonnenuntergangsfahrt (€34–40) oder Silver Soft (€30) sind die besten Optionen.\n6+ Personen: Eine Privatyacht kann pro Person günstiger werden als eine Dinner-Kreuzfahrt.\n\n**2. Möchten Sie Abendessen an Bord?**\nJa → Dinner-Kreuzfahrt (Silver Soft €30 oder Gold €60–90).\nNein → Sonnenuntergangsfahrt (€34–40).\n\n**3. Trinken Sie Alkohol?**\nNein → Silver Soft (€30) oder Gold Soft (€60).\nJa, unbegrenzt → Gold Unlimited (€90).\n\n**4. Haben Sie einen besonderen Anlass?**\nHeiratsantrag, Jubiläum, Geburtstag → Privatyacht ab €280 oder Gold Unlimited.\n\nBei Fragen helfen wir gerne per WhatsApp weiter: +90 537 040 68 22. Alle Verfügbarkeiten finden Sie unter [/de/bosphorus-cruise](/de/bosphorus-cruise).",
+        callout: {
+          type: "tip",
+          text: "In der Hochsaison (Juni–August) sind Sonnenuntergangsfahrten und Gold-Dinner-Pakete oft 3–5 Tage im Voraus ausgebucht. Frühzeitig reservieren lohnt sich.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Was kostet eine Bosporus-Kreuzfahrt 2026?",
+        a: "Eine Bosporus-Kreuzfahrt 2026 kostet: Sonnenuntergangsfahrt €34 (ohne Wein) oder €40 (mit Wein) pro Person; Dinner-Kreuzfahrt €30 (Silver Soft) bis €90 (Gold Unlimited) pro Person; Privatyacht ab €280 für das gesamte Boot. Alle Preise bei MerrySails (Merry Tourism), TURSAB A-Gruppe lizenziert seit 2001.",
+      },
+      {
+        q: "Welche ist die günstigste Bosporus-Kreuzfahrt?",
+        a: "Die günstigste TURSAB-lizenzierte Option ist die Silver Soft Dinner-Kreuzfahrt bei €30 pro Person — inklusive 3-Gang-Menü, Live-Musik und 3,5-stündiger Bosporus-Fahrt. Die Sonnenuntergangsfahrt kostet €34 und dauert ca. 2 Stunden ohne Abendessen.",
+      },
+      {
+        q: "Wie viel kostet eine Dinner-Kreuzfahrt am Bosporus?",
+        a: "Eine Dinner-Kreuzfahrt am Bosporus kostet 2026: Silver Soft €30, Silver Alkohol €45, Gold Soft €60, Gold Unlimited €90 — pro Person. Dauer ca. 3,5 Stunden ab Kabataş-Pier (20:30 Uhr). Hoteltransfer aus Sultanahmet, Taksim und Beşiktaş ist bei allen Dinner-Paketen inklusive.",
+      },
+      {
+        q: "Was ist eine Sonnenuntergangs-Bosporus-Kreuzfahrt?",
+        a: "Eine Sonnenuntergangs-Bosporus-Kreuzfahrt ist eine ca. 2-stündige geführte Fahrt auf dem Bosporus, speziell zur Abenddämmerung geplant. Die Route führt unter der Bosporus-Brücke durch, vorbei an osmanischen Palästen und Festungen. Preis bei MerrySails: €34 (ohne Wein) oder €40 (mit Wein). Mehr Infos: [Sonnenuntergangsfahrt Istanbul](/de/cruises/bosphorus-sunset-cruise).",
+      },
+      {
+        q: "Wie viel kostet ein Privatyacht-Charter in Istanbul?",
+        a: "Ein Privatyacht-Charter in Istanbul kostet ab €280 für das gesamte Boot (2 Stunden, 2–8 Personen). Mittelgroße Yachten (8–20 Pers.) kosten €500–900 für 2–4 Stunden. Große Boote (20–50 Pers.) ab €1.000. Kapitan und Versicherung sind immer inbegriffen. Alle Details: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
+      },
+      {
+        q: "Sind Hoteltransfer und Abendessen im Preis enthalten?",
+        a: "Bei der Dinner-Kreuzfahrt: Ja, Hoteltransfer aus Sultanahmet, Taksim und Beşiktaş sowie Abendessen (3 oder 4 Gänge je nach Paket) sind im Preis enthalten. Bei der Sonnenuntergangsfahrt: Kein Transfer, kein Abendessen (nur Wasser; €40-Paket inkl. Wein). Bei der Privatyacht: Transfer und Essen sind optional gegen Aufpreis buchbar.",
+      },
+    ],
+    relatedTours: ["bosphorus-cruise", "bosphorus-sunset-cruise", "istanbul-dinner-cruise"],
+    relatedPosts: ["bosporus-kreuzfahrt-preise-istanbul", "yacht-charter-istanbul-ratgeber", "bosporus-bootstour-istanbul-2026-ratgeber"],
+    proTip:
+      "Für das beste Preis-Erlebnis-Verhältnis wählen Sie die Sonnenuntergangsfahrt mit Wein (€40): goldenes Abendlicht, Bosporus-Brücke, osmanische Paläste und ein Glas türkischen Wein — das ist Istanbul in seiner schönsten Form.",
+    calloutText:
+      "Merry Tourism ist seit 2001 TURSAB A-Gruppe lizenziert (Lizenznummer #14316) und hat über 50.000 Gäste auf dem Bosporus begrüßt. Buchen Sie direkt auf merrysails.com und sparen Sie bis zu 25 % gegenüber Buchungsplattformen.",
+  },
 ];
