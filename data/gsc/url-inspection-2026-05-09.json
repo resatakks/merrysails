@@ -1,0 +1,98 @@
+[
+  {
+    "url": "https://merrysails.com/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-07",
+    "rich": "FAIL",
+    "richItems": "Breadcrumbs,FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/tr/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-06",
+    "rich": "FAIL",
+    "richItems": "Breadcrumbs,FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/yacht-charter-istanbul",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-04-04",
+    "rich": "PASS",
+    "richItems": "FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-09",
+    "rich": "PASS",
+    "richItems": "Breadcrumbs,Events,FAQ,Review snipp"
+  },
+  {
+    "url": "https://merrysails.com/de/bosphorus-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/nl/bosphorus-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not indexed",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/fr/yacht-charter-istanbul",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not indexed",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not indexed",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/bogaz-turu-kac-saat-surer-rehberi-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not indexed",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-08",
+    "rich": "PASS",
+    "richItems": "FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-06",
+    "rich": "PASS",
+    "richItems": "Breadcrumbs,FAQ"
+  }
+]

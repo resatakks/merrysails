@@ -36,6 +36,8 @@ type LocaleContent = {
     heading: string;
     intro: string;
     seeDetails: string;
+    compareHubLabel: string;
+    departurePointsLabel: string;
   };
   whyUs: {
     heading: string;
@@ -94,6 +96,8 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       heading: "Boğaz Deneyiminizi Seçin",
       intro: "Direkt rezervasyon için 3 ana ürünümüz: gün batımı, akşam yemekli ve özel yat.",
       seeDetails: "Detayları görüntüle →",
+      compareHubLabel: "Tüm Boğaz turu seçeneklerini karşılaştır",
+      departurePointsLabel: "Boğaz turları nereden kalkıyor?",
     },
     whyUs: {
       heading: "Neden MerrySails?",
@@ -184,6 +188,8 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       heading: "Wählen Sie Ihr Bosporus-Erlebnis",
       intro: "Unsere drei Hauptangebote für direkte Buchungen: Sonnenuntergang, Dinner und private Yacht.",
       seeDetails: "Details ansehen →",
+      compareHubLabel: "Alle Bosporus-Kreuzfahrten vergleichen",
+      departurePointsLabel: "Wo starten die Bosporus-Kreuzfahrten?",
     },
     whyUs: {
       heading: "Warum MerrySails?",
@@ -274,6 +280,8 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       heading: "Choisissez Votre Expérience du Bosphore",
       intro: "Nos 3 produits principaux pour réservation directe : coucher de soleil, dîner et yacht privé.",
       seeDetails: "Voir les détails →",
+      compareHubLabel: "Comparer toutes les croisières du Bosphore",
+      departurePointsLabel: "D'où partent les croisières du Bosphore ?",
     },
     whyUs: {
       heading: "Pourquoi MerrySails ?",
@@ -364,6 +372,8 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
       heading: "Kies Uw Bosporus-Ervaring",
       intro: "Onze 3 hoofdaanbiedingen voor directe boekingen: zonsondergang, diner en privéjacht.",
       seeDetails: "Bekijk details →",
+      compareHubLabel: "Vergelijk alle Bosporus-cruises",
+      departurePointsLabel: "Waar vertrekken de Bosporus-cruises?",
     },
     whyUs: {
       heading: "Waarom MerrySails?",
@@ -675,6 +685,29 @@ export default async function LocaleHomePage({
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Internal link surface to the comparison hub. Critical for crawl
+              path on locale routes — without this, /<locale>/bosphorus-cruise
+              had only 1-3 inbound links across the whole site (Sonnet B
+              audit 2026-05-09), which is why /de/bosphorus-cruise had stayed
+              "Unknown to Google" for 14+ days. Locale-homepage link gives
+              the hub a primary crawl surface and adds a secondary ItemList
+              navigation pattern Bing rewards. */}
+          <div className="mt-10 flex flex-col items-center gap-3 text-center">
+            <Link
+              href={`/${locale}/bosphorus-cruise`}
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-primary)]/30 bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
+            >
+              {t.coreSection.compareHubLabel}
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href={`/${locale}/bosphorus-cruise-departure-points`}
+              className="text-sm font-medium text-[var(--text-muted)] underline-offset-4 hover:text-[var(--brand-primary)] hover:underline"
+            >
+              {t.coreSection.departurePointsLabel}
+            </Link>
           </div>
         </div>
       </section>
