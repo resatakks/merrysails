@@ -2522,4 +2522,280 @@ export const turkishProductPosts: BlogPost[] = [
       "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul Boğazı'nı en iyi tanıyan operatörlerden biridir. Süre ve paket seçimi için WhatsApp: +90 537 040 68 22",
   },
 
+  {
+    slug: "yat-kiralama-istanbul-fiyat-rehberi-2026",
+    locale: "tr",
+    title: "Yat Kiralama İstanbul Fiyat 2026",
+    metaDescription:
+      "Yat kiralama İstanbul fiyatları 2026: tekne kiralama €280'dan başlıyor. Boğaz'da özel yat, doğum günü, evlilik teklifi. TURSAB lisanslı 2001'den beri.",
+    excerpt:
+      "İstanbul'da yat kiralama €280'dan başlıyor. Özel tekne kiralama fiyatları, paket karşılaştırması ve kalkış noktaları — doğum günü, evlilik teklifi, kurumsal etkinlik. TURSAB A Grubu lisanslı Merry Tourism, 2001'den beri.",
+    category: "cruise-guide",
+    date: "2026-05-10",
+    dateModified: "2026-05-10",
+    readTime: "10 dk okuma",
+    image:
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
+    imageAlt:
+      "İstanbul Boğazı'nda lüks özel yat — köprü ve saraya karşı gün batımı manzarası",
+    keywords: [
+      "yat kiralama istanbul",
+      "tekne kiralama istanbul",
+      "istanbul yat kiralama fiyat",
+      "özel yat kiralama istanbul",
+      "dogum gunu yat kiralama",
+      "evlilik teklifi yat kiralama",
+      "boğaz yat turu fiyat",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "İstanbul yat kiralama fiyatı 2026: Essential €280, Premium €380, VIP €680 (2 saatlik özel charter, tüm yat)",
+      "Yat kiralama ve tekne kiralama aynı ürünü ifade eder — Boğaz'da özel charter deneyimi",
+      "TURSAB A Grubu lisanslı Merry Tourism; 2001'den bu yana 50.000+ misafir ağırladı",
+      "Kalkış noktaları: Kuruçeşme, Kabataş, Karaköy — otele yakın iskeleyi seçin",
+    ],
+    sections: [
+      {
+        heading: "Yat Kiralama İstanbul Fiyat 2026 — Özet Tablo",
+        answerCapsule:
+          "İstanbul'da yat kiralama fiyatları 2026 sezonunda €280'dan başlıyor. Tekne büyüklüğüne, süreye ve ekstraya göre VIP pakette €680'e kadar çıkabiliyor. Fiyatlar tüm yat için geçerli; kişi başı değil.",
+        content:
+          `'Yat kiralama İstanbul ne kadar?' sorusu her gün düzinelerce kez WhatsApp hattımıza düşüyor. Yanıt net: yat kiralama, kişi başı bir ücret değil; tüm teknenin kiralanma bedelidir. 2026 sezonunda [Merry Tourism](/tursab) üç temel yat kiralama paketi sunmaktadır.
+
+**2026 Yat Kiralama Fiyat Tablosu**
+
+| Paket | Fiyat (2 saat) | Yat Tipi | Kapasite |
+|-------|---------------|----------|----------|
+| Essential | €280 | Konforlu özel yat | 2–10 kişi |
+| Premium | €380 | Lüks özel yat | 2–12 kişi |
+| VIP | €680 | Süper lüks özel yat | 2–16 kişi |
+
+Fiyata kaptan ve mürettebat dahildir. Yemek, içecek, fotoğrafçı veya canlı müzik gibi ekstralar ayrıca eklenir. Ek her saatin ücreti Essential'da €125, Premium'da €150, VIP'te €300'dür.
+
+Tekne kiralama ve yat kiralama fiyatları aynıdır — her iki terim de Boğaz özel charter ürünümüzü tanımlar. Rakip sitelerdeki 'tekne kiralama' ilanlarını incelerken ekstra ücretlere (kaptan, yakıt, liman vergisi) dikkat edin; MerrySails fiyatları her şey dahil fiyatlardır.`,
+      },
+      {
+        heading: "Tekne Kiralama ile Yat Kiralama Arasındaki Fark Nedir?",
+        answerCapsule:
+          "Türkçede tekne kiralama ve yat kiralama aynı ürünü ifade eder. İkisi de özel charter anlamına gelir: yani tüm tekneyi sizin için ayırırız, başka yolcu binmez.",
+        content:
+          `Google'da kimi "tekne kiralama istanbul" yazar, kimi "yat kiralama istanbul" — ikisi de aynı sayfaya çıkar. Türkçede bu iki kelime birbirinin yerine kullanılır.
+
+Peki hangisi daha doğru? Teknik olarak "yat", motorlu veya yelkenli özel bir tekneyi; "tekne" ise daha geniş kapsamlı bir deniz aracını tanımlar. Ancak turistik sektörde bu ayrım büyük ölçüde ortadan kalkmıştır. İstanbul Boğazı'nda tekne kiralama veya yat kiralama dediğinizde karşınıza çıkan ürün aynıdır: kaptan dahil, başka yolcu olmayan, istediğiniz güzergahta özel cruise.
+
+**Özel charter neden farklı?**
+
+Paylaşımlı turda 30–80 yabancıyla aynı güverteyi paylaşırsınız, kalkış saati sabittir ve rotayı değiştiremezsiniz. Tekne kiralama (yat kiralama) ile:
+
+- Yolcu sadece siz ve grubunuzsunuz
+- Kaptan rotayı isteğinize göre ayarlar
+- Kalkış saatini siz belirlersiniz
+- Dekorasyon, pasta, fotoğrafçı, canlı müzik eklenebilir
+- Alkol ve yemek seçimi tamamen özgür
+
+Bu nedenle doğum günü tekne kiralama, evlilik teklifi yat kiralama ve kurumsal etkinlikler neredeyse her zaman özel charter tercih eder.`,
+      },
+      {
+        heading: "Yat Fiyat Seviyeleri — Essential, Premium, VIP",
+        answerCapsule:
+          "MerrySails'te üç yat kiralama paketi var: €280 Essential, €380 Premium, €680 VIP. Fark yatın büyüklüğü, konforu ve kapasitesindedir.",
+        content:
+          `**Essential Yat Kiralama — €280**
+
+Essential paket, iki kişilik romantik bir Boğaz deneyimi veya küçük aile grupları için idealdir. Yaklaşık 2 saat süren yat kiralama turunda Boğaz Köprüsü altından geçerek Rumeli ve Anadolu yakasının en ikonik silüetlerini izlersiniz. Kapasite en fazla 10 kişidir. Kaptan ve güverte yardımcısı dahil; yemek ve içecek ekstra.
+
+**Premium Yat Kiralama — €380**
+
+Premium yatta daha geniş salon alanı, daha konforlu güverte ve geliştirilmiş ses sistemi bulunur. Doğum günü tekne kiralama organizasyonlarında pasta, balon, dekorasyon ve fotoğrafçı kombinasyonu en çok bu pakette tercih edilir. Kapasite 12 kişiye kadar. Ek saat €150.
+
+**VIP Lüks Yat Kiralama — €680**
+
+VIP, İstanbul'da yat kiralamanın zirvesidir. Geniş güverte, tam donanımlı salon, yüksek kalite ses ve ışık sistemiyle sunar. Evlilik teklifi yat kiralama paketlerinin büyük çoğunluğu, kurumsal etkinlikler ve özel kutlamalar VIP tekneyi tercih eder. Kapasite 16 kişiye kadar; ek saat €300.
+
+Tüm paketlerde kaptan, mürettebat ve temel güvenlik ekipmanı dahildir. Kapsamlı eklenti menüsüne (yemek menüsü €35/kişi, DJ €250, fotoğrafçı €190, evlilik teklifi dekor €50) [yat kiralama sayfasından](/tr/yacht-charter-istanbul) ulaşabilirsiniz.`,
+      },
+      {
+        heading: "Etkinliğe Göre Yat Kiralama İstanbul",
+        answerCapsule:
+          "Doğum günü, evlilik teklifi, yıldönümü veya kurumsal etkinlik — her etkinlik tipi için farklı yat kiralama paketi ve eklenti seçenekleri mevcuttur.",
+        content:
+          `**Doğum Günü Tekne Kiralama**
+
+İstanbul'da doğum günü tekne kiralama organizasyonları yılın en çok aranan özel etkinliklerinden biridir. Boğaz'ın eşsiz silüeti önünde şaşırtma organizasyonu yapmak isteyenler için birkaç öneri:
+
+- Doğum günü pastası: Küçük (4–6 kişi) €35, Orta (8–10 kişi) €45, Büyük (12–16 kişi) €60
+- Fotoğrafçı: €190 — tüm tur boyunca profesyonel çekim
+- Balon ve masa dekorasyonu: ayrıca ayarlanabilir
+- Sürpriz karşılama planlaması: kaptanla önceden koordine ederiz
+
+En popüler kombinasyon: Premium Yat Kiralama (€380) + Doğum Günü Pastası (€45) + Kokteyl Menüsü (€25/kişi). 8 kişilik bir grup için toplam yat kiralama maliyeti yaklaşık €625 çıkar.
+
+**Evlilik Teklifi için Yat Kiralama**
+
+Boğaz Köprüsü altında, Istanbul siluetine karşı bir evlilik teklifi — dünyada birkaç şehir bu sahneyi sunabilir. [Evlilik teklifi yat kiralama paketimizde](/tr/proposal-yacht-rental-istanbul) şunlar bulunur:
+
+- VIP yat önerisi (€680) — geniş güverte, romantik ambiyans
+- Evlilik teklifi masa dekorasyonu: €50 (güller, mumlar, pankart)
+- Fotoğrafçı: €190
+- Keman: €180
+- Şampanya dahil edebilirsiniz — menü seçenekleri checkout'ta
+
+Gizli planlama için WhatsApp: +90 537 040 68 22 — ortağınızın haberi olmadan organizasyonu koordine ederiz.
+
+**Yıldönümü Yat Kiralama**
+
+Yıl dönümü kutlaması için tekne kiralama tercihinde çoğu çift Premium veya VIP paketi seçer. Özel süsleme, mum ve çiçek düzenlemesi ek olarak yapılabilir. [Özel Boğaz Akşam Yemeği Cruise](/tr/private-bosphorus-dinner-cruise) ile kombine ederek hem yat kiralama hem de özel yemek deneyimi yaşayabilirsiniz.
+
+**Kurumsal Yat Kiralama**
+
+Kurumsal yat kiralama talepleri genellikle 10–16 kişilik gruplar içindir. Toplantı, müşteri ağırlama veya team building için tekne kiralama çok tercih edilen bir format. [Kurumsal etkinlik paketleri](/tr/corporate-events) için VIP yat, özel catering ve görsel-işitsel ekipmanla desteklenebilir. Fatura kesimi ve kurumsal ödeme seçenekleri için iletişime geçin.`,
+      },
+      {
+        heading: "Yat Kiralama Kalkış Noktaları — Kuruçeşme, Kabataş, Karaköy",
+        answerCapsule:
+          "Yat kiralama kalkış noktanız otele yakınlığa göre seçilir. Avrupa yakası için Kuruçeşme ve Kabataş; Boğaz'ın kuzeyine yakın konaklamalar için Karaköy tercih edilir.",
+        content:
+          `İstanbul'da tekne kiralama rezervasyonu yaparken önce kalkış noktasını netleştirmeniz gerekir. MerrySails'te yat kiralama için üç ana iskele kullanılmaktadır:
+
+**Kuruçeşme İskelesi**
+Boğaz'ın en güzel orta noktasındadır. Beşiktaş ve Arnavutköy civarı otellere yakın. Akşam saatlerinde Boğaz Köprüsü'nün ışıklandırılmış görüntüsüne erişim avantajı sunar. Kurumsal ve VIP yat kiralama için en sık kullanılan nokta.
+
+**Kabataş İskelesi**
+Taksim'e ve İstiklal Caddesi'ne en yakın iskele. Sultanahmet bölgesinden metro + tramvay kombinasyonuyla kolayca ulaşılır (T1 tramvayı Kabataş'a kadar gelir). Akşam yemeği tekne kiralama talebi yoğunlukla buradan hareket eder. [Özel Boğaz akşam yemeği](/tr/private-bosphorus-dinner-cruise) seçeneklerimiz için Kabataş tercih edilir.
+
+**Karaköy Bölgesi**
+Galata Köprüsü'ne yürüme mesafesinde, Beyoğlu ve Galata otelleri için ideal. Özellikle gün batımı saatlerindeki yat kiralama turlarında Karaköy bölgesi kalkış noktası tercih edilir.
+
+Hangi iskeleden kalkacağınızı bilmiyorsanız WhatsApp üzerinden otelin adını veya semtini paylaşın; en uygun yat kiralama noktasını birlikte belirleriz. +90 537 040 68 22`,
+      },
+      {
+        heading: "Yat Fiyatına Neler Dahil?",
+        answerCapsule:
+          "Yat kiralama fiyatına kaptan, mürettebat, yakıt ve liman vergisi dahildir. Yemek, içecek, fotoğrafçı, DJ ve dekorasyon ayrıca eklenir.",
+        content:
+          `Bu soru yat kiralama araştırmasında sıklıkla kafa karışıklığına yol açar. Bazı operatörler "tekne kiralama €200" ilan eder; ancak kaptan ücreti, yakıt ve liman vergisi eklenince fiyat ikiye katlanır. MerrySails'te yat kiralama fiyatları şeffaftır:
+
+**Fiyata Dahil**
+- Kaptan ve güverte mürettebatı
+- Yakıt
+- Liman ve seyir vergileri
+- Sigorta
+- Temel emniyet ekipmanı (can yelekleri, can simidi)
+- 2 saatlik Boğaz cruise rotası
+
+**Ayrıca Eklenebilir (opsiyonel)**
+- Kokteyl Menüsü: €25/kişi
+- Parmak Yiyecek (Finger Food): €30/kişi
+- 4 Çeşit Ana Yemek: €35/kişi (balık / tavuk / et / vejetaryen)
+- Sınırsız Alkollü İçecek: €50/kişi
+- Sınırsız Şarap: €25/kişi
+- Canlı Rehber: €100
+- VIP Transfer: €150
+- Fotoğrafçı: €190
+- DJ: €250
+- Keman: €180
+- Karın Dansı Gösterisi: €180
+- Doğum Günü Pastası (küçük): €35
+- Evlilik Teklifi Dekor: €50
+- +1 Saat Ek Süre: Essential'da €125, Premium'da €150, VIP'te €300
+
+Her eklenti rezervasyon aşamasında checkout sayfasında seçilebilir. Özel talepler için WhatsApp: +90 537 040 68 22`,
+      },
+      {
+        heading: "Yat Kiralama Saatleri — 2 Saat, 3 Saat, Yarım Gün, Tam Gün",
+        answerCapsule:
+          "Standart yat kiralama süresi 2 saattir. Ek süre paketlerle 3 saate, yarım güne veya tam güne uzatılabilir.",
+        content:
+          `MerrySails'te yat kiralama temel paketi 2 saattir. Bu süre zarfında Boğaz Köprüsü'nden geçerek Rumeli Hisarı ve Anadolu Hisarı önüne kadar gidip dönmek mümkündür. Kalkış saatine göre farklı atmosferler deneyimlenir:
+
+**2 Saatlik Yat Kiralama**
+- Essential: €280 / Premium: €380 / VIP: €680
+- İdeal güzergah: Köprü altı + iki yakayı kıyısı + dönüş
+- Doğum günü, evlilik teklifi, romantik tur için yeterli süre
+
+**3 Saatlik Yat Kiralama**
+- 2 saat baza + 1 ek saat: Essential'da €280+€125=€405, Premium'da €380+€150=€530, VIP'te €680+€300=€980
+- Daha geniş güzergah; Bebek Koyu veya Anadolu Hisarı civarında daha fazla zaman
+- Akşam yemekli organizasyonlar için önerilen süre
+
+**Yarım Gün Yat Kiralama (4–5 saat)**
+- 2 veya 3 ekstra saat eklenerek yapılandırılır
+- Kurumsal ağırlama ve özel grup etkinlikleri için tercih edilir
+- Fiyat talebe göre belirlenir — WhatsApp'tan fiyat isteyin
+
+**Tam Gün Yat Kiralama (6–8 saat)**
+- Boğaz'ın tamamını (köprüden Karadeniz ağzına) veya Adalar güzergahını kapsayabilir
+- Fotoğraf çekimi, kurumsal retreat veya özel etkinlik için idealdir
+- Fiyat teklifi için iletişime geçin: +90 537 040 68 22
+
+Kalkış saati esnektir; sabah, öğleden sonra veya akşam seçilebilir. Gün batımı yat kiralama (yaklaşık 17:00–19:30 kalkışı) en popüler zaman dilimidir.`,
+      },
+      {
+        heading: "Yat Kiralama vs. Tekne Kiralama vs. Paylaşımlı Tur",
+        answerCapsule:
+          "Yat kiralama ve tekne kiralama aynı şeydir: özel charter. Paylaşımlı turdan temel farkı başka yolcu olmadığı, güzergahın esnek olduğu ve deneyimin tamamen kişiselleştirilebildiğidir.",
+        content:
+          `İstanbul Boğazı'nda üç farklı cruise formatı bulunur. Hangisinin size uygun olduğunu anlamak için kısa bir karşılaştırma:
+
+| Kriter | Paylaşımlı Tur | Tekne Kiralama | Yat Kiralama |
+|--------|---------------|----------------|-------------|
+| Yolcu | 30–80 kişi | Sadece siz | Sadece siz |
+| Kalkış | Sabit | Esnek | Esnek |
+| Rota | Sabit | Özelleştirilebilir | Özelleştirilebilir |
+| Fiyat | Kişi başı €34–90 | Tüm tekne €280+ | Tüm tekne €280+ |
+| Etkinlik | Yoktur | Eklenebilir | Eklenebilir |
+| Mahremiyet | Düşük | Yüksek | Yüksek |
+
+Paylaşımlı turlar bütçe uyumludur; ancak grup aktivitesi veya özel kutlama istiyorsanız tekne kiralama her zaman daha iyi sonuç verir. Kişi başı fiyat hesaplaması: 8 kişilik bir grupta €380'lik Premium yat kiralama, kişi başına yalnızca €47,5'a düşer — paylaşımlı turla neredeyse aynı fiyata özel deneyim.
+
+Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026) bakabilirsiniz. Tüm Boğaz cruise seçenekleri için [Boğaz turu ana sayfamız](/tr/bosphorus-cruise) kapsamlı bir başlangıç noktasıdır.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "İstanbul'da yat kiralama fiyatı ne kadar?",
+        a: "İstanbul yat kiralama fiyatı 2026 sezonunda tüm yat için €280'dan başlar. Essential paket €280 (2 saat), Premium €380 (2 saat), VIP €680 (2 saat). Fiyata kaptan, mürettebat, yakıt ve liman vergisi dahildir; yemek ve içecek ayrıca eklenir. 2001'den bu yana TURSAB A Grubu lisanslı Merry Tourism olarak fiyatlarımız şeffaf ve sabit EUR üzerindendir.",
+      },
+      {
+        q: "Tekne kiralama İstanbul ne kadar?",
+        a: "Tekne kiralama İstanbul 2026 fiyatı €280'dan başlıyor. Yat kiralama ve tekne kiralama Türkçede aynı ürünü ifade eder; her ikisi de tüm tekneyi özel olarak kiraladığınız charter deneyimidir. Kapasite, yat tipi ve süreye göre fiyat değişir: Essential €280, Premium €380, VIP €680.",
+      },
+      {
+        q: "Yat kiralama ile tekne kiralama arasındaki fark nedir?",
+        a: "Türkçede yat kiralama ve tekne kiralama birbirinin yerine kullanılan terimlerdir. İkisi de aynı şeyi ifade eder: tüm tekneyi sizin için ayıran özel charter. Başka yolcu binmez, güzergah esnektir, kalkış saati seçilir. Paylaşımlı turdan temel farkı mahremiyettir.",
+      },
+      {
+        q: "Doğum günü için tekne nasıl kiralanır?",
+        a: "Doğum günü tekne kiralama için şu adımları izleyin: 1) Yat kiralama sayfamızdan paket seçin (Premium €380 önerilir), 2) Checkout'ta doğum günü pastası (€35–60) ve fotoğrafçı (€190) ekleyin, 3) Tarih, saat ve özel notları belirtin. Sürpriz organizasyon için WhatsApp: +90 537 040 68 22 — grubun haberdar olmaması için gizli koordinasyon yaparız.",
+      },
+      {
+        q: "Evlilik teklifi için yat kiralama paketleri var mı?",
+        a: "Evet. Evlilik teklifi yat kiralama için özel paket sunuyoruz: VIP yat (€680) + evlilik teklifi dekor (€50) + fotoğrafçı (€190) + keman (€180) kombinasyonu en popüler seçimdir. Boğaz Köprüsü önünde veya Rumeli Hisarı manzarasına karşı İstanbul'un en unutulmaz evlilik teklifini planlıyoruz. Detaylar için: /tr/proposal-yacht-rental-istanbul",
+      },
+      {
+        q: "Yat kiralama saatleri nasıl?",
+        a: "Standart yat kiralama süresi 2 saattir ve kalkış saati esnektir: sabah, öğleden sonra veya akşam seçilebilir. Ek her saatin bedeli Essential'da €125, Premium'da €150, VIP'te €300'dür. Gün batımı yat kiralama için tercih edilen kalkış saati mevsime göre 17:00–19:00 arasındadır.",
+      },
+      {
+        q: "Yat kiralama yapmadan önce nelere dikkat etmeli?",
+        a: "Yat kiralama rezervasyonu yapmadan önce şunları kontrol edin: 1) TURSAB lisansı — meşru operatörler lisans numarasını açıkça paylaşır (Merry Tourism #14316), 2) Fiyat dahiliyeti — kaptan, yakıt ve liman vergisi dahil mi?, 3) İptal politikası, 4) Kapasite — kaç kişilik grup için kiralıyorsunuz?, 5) Kalkış noktası otele yakınlığı. Tekne kiralama pazarında gizli ücret uygulamaları yaygın; şeffaf fiyat sunan operatörleri tercih edin.",
+      },
+      {
+        q: "Yatın kalkış yeri neresi?",
+        a: "MerrySails yat kiralama için üç ana kalkış noktası kullanır: Kuruçeşme (Boğaz orta noktası, Beşiktaş'a yakın), Kabataş (Taksim'e yakın, T1 tramvay durağı) ve Karaköy bölgesi (Galata'ya yakın). Hangi otelde kaldığınızı WhatsApp'ta paylaşın, en uygun yat kiralama iskelesini birlikte belirleriz: +90 537 040 68 22",
+      },
+    ],
+    relatedTours: ["yacht-charter", "bosphorus-sunset-cruise", "dinner-cruise"],
+    relatedPosts: [
+      "bogaz-turu-fiyat-rehberi-istanbul-2026",
+      "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+      "istanbul-bogaz-turu-fiyatlari-2026",
+    ],
+    proTip:
+      "8+ kişilik grupta kişi başı hesaplaması yapın: €380 Premium yat kiralama, 8 kişiye bölününce kişi başı €47,5 eder — paylaşımlı sunset turla (€34–40) neredeyse aynı fiyata tamamen özel deneyim.",
+    calloutText:
+      "TURSAB A Grubu lisanslı Merry Tourism (#14316), 2001'den bu yana 50.000+ misafirle İstanbul Boğazı'nda yat kiralama deneyimi sunuyor. Yat kiralama rezervasyonu ve fiyat için WhatsApp: +90 537 040 68 22",
+  },
+
+
 ];

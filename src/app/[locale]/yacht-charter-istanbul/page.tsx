@@ -49,14 +49,14 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Yat Kiralama — €380'dan başlayan fiyatlar",
+    metaTitle: "İstanbul Yat Kiralama Tekne Kiralama €280'dan",
     metaDescription:
-      "İstanbul'da özel yat kiralama €280'den başlıyor. Tüm tekne size özel, Boğaz güzergahı, kaptanlı ve yemek seçeneğiyle. Evlilik teklifi, doğum günü ve kurumsal etkinlikler.",
+      "İstanbul yat kiralama ve tekne kiralama €280'den başlıyor. Boğaz'da tüm tekne size özel, kaptanlı, kalkış Kabataş/Bebek. Evlilik teklifi, doğum günü, kurumsal.",
     canonicalPath: "/tr/yacht-charter-istanbul",
-    title: "İstanbul Özel Yat Kiralama",
-    subtitle: "Boğaz'da tamamen size özel 2 saatlik yat deneyimi",
+    title: "İstanbul Yat Kiralama ve Tekne Kiralama",
+    subtitle: "Boğaz'da tamamen size özel 2 saatlik yat & tekne kiralama deneyimi",
     description:
-      "MerrySails özel yat kiralama, Boğaz'ın eşsiz manzarası eşliğinde tüm tekneyi grubunuza tahsis eder. Güzergah, kalkış saati ve içerik tamamen sizin tercihinize göre özelleştirilir; evlilik teklifi, doğum günü, yıl dönümü veya kurumsal etkinlikler için ideal bir seçimdir.",
+      "MerrySails ile İstanbul yat kiralama ve tekne kiralama tek elden — Boğaz'ın eşsiz manzarası eşliğinde tüm tekneyi grubunuza tahsis ederiz. Yat kiralama güzergahı, kalkış saati ve menü tamamen sizin tercihinize göre özelleştirilir; tekne kiralama paketleri evlilik teklifi, doğum günü, yıl dönümü veya kurumsal etkinlikler için ideal bir seçimdir. TURSAB A Grubu lisanslı operatör Merry Tourism çatısı altında 2001'den beri Boğaz'da yat ve tekne kiralama hizmeti veriyoruz.",
     whyChooseHeading: "İstanbul Özel Yat Kiralama Neden Tercih Edilir?",
     reasons: [
       {
@@ -83,9 +83,19 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     faqHeading: "Sıkça Sorulan Sorular",
     faqs: [
       {
+        question: "İstanbul yat kiralama fiyatları ne kadar?",
+        answer:
+          "İstanbul yat kiralama Essential paketimiz €280'den, Premium €380'den, VIP €680'den başlar. Tüm fiyatlar 2 saatlik özel tur içindir; tekne kiralama uzatması saatlik €125-€300 arasında değişir.",
+      },
+      {
+        question: "Yat kiralama ile tekne kiralama arasındaki fark nedir?",
+        answer:
+          "Türkiye'de yat kiralama ve tekne kiralama aynı hizmeti tarif eder; her ikisi de Boğaz'da özel deniz aracı tahsisini ifade eder. MerrySails'te yat kiralama veya tekne kiralama olarak ayırt etmiyoruz — paket yapısı, kapasite ve fiyat aynıdır.",
+      },
+      {
         question: "Yat kiralama ne kadar sürer?",
         answer:
-          "Standart paketlerimiz 2 saatlik özel tur olarak planlanır. Talebe göre 3, 4 saat veya tam günlük uzatma seçenekleri mevcuttur.",
+          "Standart yat kiralama paketlerimiz 2 saatlik özel tur olarak planlanır. Talebe göre 3, 4 saat, yarım gün veya tam günlük tekne kiralama uzatma seçenekleri mevcuttur.",
       },
       {
         question: "Yatta kaç kişi konaklayabilir?",
@@ -93,9 +103,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
           "Pakete bağlı olarak 8 ile 30 kişi arasında konaklama mümkündür. Daha büyük gruplar için lütfen WhatsApp üzerinden ulaşın; uygun teknemizi öneririz.",
       },
       {
+        question: "Tekne kiralama nereden kalkar?",
+        answer:
+          "Yat ve tekne kiralama paketlerimiz genellikle Kabataş, Beşiktaş, Bebek veya Kuruçeşme Marina'dan kalkar. Tercih ettiğiniz kalkış noktasını rezervasyon sırasında belirtebilirsiniz.",
+      },
+      {
         question: "Evlilik teklifi düzenlemesi yapılır mı?",
         answer:
-          "Evet. Çiçek süsleme, pasta, romantik müzik listesi ve profesyonel fotoğrafçı paketlerimize eklenebilir. Sürpriz organizasyonu için en az 48 saat öncesinden bilgi vermenizi rica ederiz.",
+          "Evet. Yat kiralama paketlerimize çiçek süsleme, pasta, romantik müzik listesi ve profesyonel fotoğrafçı eklenebilir. Sürpriz organizasyonu için en az 48 saat öncesinden bilgi vermenizi rica ederiz.",
       },
       {
         question: "Yiyecek ve içecek dahil mi?",

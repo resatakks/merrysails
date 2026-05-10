@@ -220,6 +220,40 @@ Google Ads: ACTIVE. Meta Ads: unknown (ask user). Yandex: not integrated.
 
 ---
 
+## 🔁 Daily Routine — kullanıcı "devam et" / "bugün ne yapacağız" derken otomatik kontrol et
+
+Her gün başlatıldığında (kullanıcı "devam et" / "ne durumdayız" dediğinde), bu sıralı checklist'i ÇALIŞTIR:
+
+1. **GSC URL Inspection** (10-14 priority URL, son `data/gsc/url-inspection-YYYY-MM-DD.json`'dan farklı bir tarihteyse) — schema fix recrawl, yeni pillar discovery, sandbox-break verify
+2. **GSC Search Analytics** son 7d query/page/country pull — CTR krizleri ve yüksek imp / düşük click pages tespit
+3. **Yandex Reindex** (150/gün quota) — yeni içerik veya şu ana kadar indexlenmemiş URL'ler için. Quota reset 00:00 UTC
+4. **IndexNow ping** (Bing + Yandex) — son commit'teki tüm değişen URL'ler için (her commit sonrası rutin)
+5. **Wayback Machine** archive (yeni pillar veya schema fix sonrası) — AI training data fodder
+6. **Bing Webmaster AI Performance** check (haftada 1) — Microsoft Copilot citation count
+7. **Schema lint + tsc + Semrush-grade audit** (her oturumda 1 kere) — `node scripts/lint-schema.mjs && node scripts/seo-audit-comprehensive.mjs && npx tsc --noEmit`. P0 = 0 olmadan deploy etme
+
+### Yüksek hacimli keyword PRIORITY indexing
+
+Yandex/IndexNow/GSC URL submit listelerinde sırayı **vol/mo'dan yüksek → düşük** olarak yap. Mevcut high-priority KW pages (vol/mo desc):
+- yat kiralama / tekne kiralama istanbul (3,800 vol TR) → /tr/yacht-charter-istanbul + yat-kiralama pillar
+- boğaz turu (6,600 vol TR) → /tr/bosphorus-cruise + TR pillars
+- bosphorus cruise istanbul / cruise istanbul (1,200 EN US+GB) → /bosphorus-cruise + sunset
+- bosporus rundfahrt + kreuzfahrt + istanbul (1,440 vol DE combined) → /de/bosphorus-cruise
+- croisière bosphore istanbul (600 vol FR combined) → /fr/bosphorus-cruise
+- bosporus cruise istanbul (170 NL) → /nl/bosphorus-cruise
+
+### Yeni sayfa / yeni içerik geldiyse — otomatik tetikle
+
+Her commit'ten sonra (özellikle yeni blog post, yeni service page, yeni locale variant):
+1. IndexNow ping (3 endpoint × yeni URL listesi)
+2. Yandex Reindex submit (UI üzerinden, ben browser'la)
+3. Wayback save
+4. GSC URL Inspect 24-48 saat sonra (recrawl bekleyişi)
+
+Bu rutini ben otomatik yaparım — kullanıcı her seferinde "Yandex'e submit ettin mi" diye sormak zorunda kalmasın.
+
+---
+
 ## Active Missions
 
 _(none — link missions here when opened)_
