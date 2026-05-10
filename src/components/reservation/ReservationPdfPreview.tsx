@@ -1,4 +1,7 @@
+"use client";
+
 import { Download, Eye } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 interface ReservationPdfPreviewProps {
   eyebrow: string;
@@ -6,6 +9,8 @@ interface ReservationPdfPreviewProps {
   description: string;
   previewHref: string;
   downloadHref: string;
+  /** Document type — e.g. "voucher", "invoice". Used as analytics label. */
+  documentType?: "voucher" | "invoice" | "confirmation";
 }
 
 export function ReservationPdfPreview({
@@ -14,7 +19,21 @@ export function ReservationPdfPreview({
   description,
   previewHref,
   downloadHref,
+  documentType = "confirmation",
 }: ReservationPdfPreviewProps) {
+  const handleEngagement = (action: "preview" | "download") => {
+    try {
+      trackEvent("reservation_pdf_engagement", {
+        action,
+        document_type: documentType,
+        // Strip any reservation IDs from the href for privacy — only the
+        // path stem is useful for analytics, not the per-customer token.
+        path_stem: previewHref.split("?")[0].split("/").slice(-2, -1)[0] ?? null,
+      });
+    } catch {
+      // Non-fatal; analytics never block UX.
+    }
+  };
   return (
     <section className="rounded-[2rem] border border-[var(--line)] bg-white p-5 shadow-sm print:hidden md:p-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
@@ -35,6 +54,7 @@ export function ReservationPdfPreview({
             href={previewHref}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleEngagement("preview")}
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_32px_rgba(255,78,80,0.22)] transition-all hover:brightness-110"
           >
             <Eye className="h-4 w-4" />
@@ -42,6 +62,7 @@ export function ReservationPdfPreview({
           </a>
           <a
             href={downloadHref}
+            onClick={() => handleEngagement("download")}
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]"
           >
             <Download className="h-4 w-4" />

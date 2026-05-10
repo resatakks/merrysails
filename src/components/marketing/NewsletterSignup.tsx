@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { CheckCircle } from "lucide-react";
+import { trackEvent, getStoredAttribution } from "@/lib/analytics";
 
 interface Props {
   variant?: "footer" | "inline";
@@ -39,16 +40,29 @@ export default function NewsletterSignup({ variant = "footer", source = "footer"
       }
 
       setStatus("success");
+      // Use unified analytics util — pushes to dataLayer (GTM picks it up),
+      // calls window.gtag (GA4 + Google Ads conversion), tags Microsoft
+      // Clarity custom event "NewsletterSignup", and includes first-touch
+      // attribution params (gclid / utm_source / utm_campaign) so the
+      // newsletter lead can be traced back to the originating campaign.
       try {
-        if (typeof window !== "undefined" && typeof (window as unknown as Record<string, unknown>).gtag === "function") {
-          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead", {
-            method: "newsletter",
-            value: 5,
-            currency: "EUR",
-          });
-        }
+        const attribution = getStoredAttribution();
+        trackEvent("newsletter_signup", {
+          method: "newsletter",
+          source,
+          value: 5,
+          currency: "EUR",
+          ...(attribution ? {
+            gclid: attribution.gclid,
+            gbraid: attribution.gbraid,
+            wbraid: attribution.wbraid,
+            utm_source: attribution.utmSource,
+            utm_medium: attribution.utmMedium,
+            utm_campaign: attribution.utmCampaign,
+          } : {}),
+        });
       } catch {
-        // analytics failure is non-fatal
+        // analytics failure is non-fatal — never block UX
       }
 
       if (resetTimer.current) clearTimeout(resetTimer.current);
