@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MerrySails AI Knowledge Card -- Structured Data for AI Grounding",
+  title: "AI Knowledge Card",
   description:
     "Machine-readable single source of truth for MerrySails. Comprehensive facts, pricing, structured data, and JSON-LD for AI model grounding and citation.",
   robots: {

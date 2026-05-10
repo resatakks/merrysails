@@ -573,4 +573,199 @@ export const dutchProductPosts: BlogPost[] = [
     relatedTours: ["yacht-charter", "bosphorus-cruise", "bosphorus-sunset-cruise"],
     relatedPosts: ["bosporus-cruise-prijzen-istanbul", "huwelijksaanzoek-op-de-bosporus"],
   },
+
+  {
+    slug: "bosphorus-cruise-prijzen-gids-2026",
+    locale: "nl",
+    title: "Bosphorus Cruise Prijzen 2026",
+    metaDescription:
+      "Wat kost een Bosphorus cruise in 2026? Zonsondergang vanaf €34, diner vanaf €30, privéjacht vanaf €280. TURSAB-vergund sinds 2001 — direct boeken.",
+    excerpt:
+      "Alle Bosphorus cruise prijzen 2026 in één overzicht: zonsondergang vanaf €34, dinercruise vanaf €30, privéjacht vanaf €280. Merry Tourism — TURSAB A-Groep vergund sinds 2001, meer dan 50.000 gasten. Transparant, zonder verborgen kosten.",
+    category: "cruise-guide",
+    date: "2026-05-10",
+    dateModified: "2026-05-10",
+    readTime: "9 min leestijd",
+    image:
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt:
+      "Bosphorus cruise Istanbul bij zonsondergang — Ottomaanse paleizen en de Bosporus-brug in het avondlicht",
+    keywords: [
+      "bosporus cruise prijzen",
+      "bosporus cruise kosten 2026",
+      "istanbul boottocht prijs",
+      "dinner cruise istanbul prijs",
+      "zonsondergang cruise istanbul",
+      "privéjacht istanbul prijs",
+      "istanbul boot huren kosten",
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "Zonsondergangcruise: €34 (zonder wijn) of €40 (met wijn) per persoon — ca. 2 uur, begeleide groepstour",
+      "Dinercruise: vier pakketten van €30 (Silver Soft) tot €90 (Gold Unlimited) per persoon — inclusief diner en livemuziek",
+      "Privéjacht: vanaf €280 voor de gehele boot (2 uur) — ideaal voor koppels, families en speciale gelegenheden",
+      "TURSAB A-Groep vergund sinds 2001 — geen verborgen kosten, gratis annulering tot 72 uur voor vertrek",
+    ],
+    sections: [
+      {
+        heading: "Bosphorus cruise prijzen 2026 — overzicht",
+        answerCapsule:
+          "Een Bosphorus cruise kost in 2026 tussen €30 en €280+. Zonsondergangcruises kosten €34–40 per persoon, dinercruises €30–90 per persoon, privéjachten vanaf €280 voor de gehele boot.",
+        content:
+          "Wie een Bosphorus cruise in Istanbul plant, stuit al snel op onduidelijke prijsverschillen. Goedkope aanbiedingen beginnen bij €30; exclusieve privéjachten lopen op tot boven de €1.000. De sleutel ligt in het type tour — en in de keuze van de juiste aanbieder.\n\n[Merry Tourism](/tursab), de exploitant achter MerrySails, is TURSAB A-Groep vergund sinds 2001 en heeft meer dan 50.000 gasten op de Bosphorus verwelkomd. De onderstaande prijzen gelden voor het seizoen 2026 en zijn vastgelegd in euro — ongeacht de dagelijkse wisselkoers.",
+        table: {
+          headers: [
+            "Cruisetype",
+            "Duur",
+            "Prijs",
+            "Eten / Drinken",
+          ],
+          rows: [
+            [
+              "Zonsondergangcruise",
+              "~2 uur",
+              "€34–40 / persoon",
+              "Water; wijn optioneel",
+            ],
+            [
+              "Dinercruise (Silver Soft)",
+              "~3,5 uur",
+              "€30 / persoon",
+              "3-gangen menu, alcoholvrij",
+            ],
+            [
+              "Dinercruise (Silver Alc.)",
+              "~3,5 uur",
+              "€45 / persoon",
+              "3-gangen menu + bier/wijn",
+            ],
+            [
+              "Dinercruise (Gold Soft)",
+              "~3,5 uur",
+              "€60 / persoon",
+              "4-gangen menu, alcoholvrij",
+            ],
+            [
+              "Dinercruise (Gold Unlimited)",
+              "~3,5 uur",
+              "€90 / persoon",
+              "4-gangen menu + onbeperkt alcohol",
+            ],
+            [
+              "Privéjacht (kl., 2–8 pers.)",
+              "2+ uur",
+              "v.a. €280 / boot",
+              "Optioneel bij te boeken",
+            ],
+            [
+              "Privéjacht (mid., 8–20 pers.)",
+              "2–4 uur",
+              "€500–900 / boot",
+              "Optioneel bij te boeken",
+            ],
+            [
+              "Privéjacht (gr., 20–50 pers.)",
+              "4–8 uur",
+              "€1.000+ / boot",
+              "Optioneel bij te boeken",
+            ],
+          ],
+        },
+        callout: {
+          type: "price",
+          text: "Prijzen 2026 in het kort: Zonsondergang €34–40 | Diner €30–90 | Privéjacht v.a. €280 (gehele boot). Alle prijzen in euro — geen valutarisico.",
+        },
+      },
+      {
+        heading: "Diner cruise prijzen — €30 tot €90 in pakkettenvergelijk",
+        answerCapsule:
+          "De dinercruise op de Bosphorus is verkrijgbaar in vier pakketten: Silver Soft €30 (alcoholvrij), Silver Alc. €45 (bier/wijn), Gold Soft €60 (4 gangen, alcoholvrij), Gold Unlimited €90 (4 gangen + onbeperkt alcohol). Duur ca. 3,5 uur.",
+        content:
+          "De [dinercruise Istanbul](/nl/istanbul-dinner-cruise) is het paradepaardje voor avondgenieters: u vertrekt om 20:30 uur vanaf de Kabataş-pier en keert rond middernacht terug — 3,5 uur Bosphorus-panorama, Turkse keuken en livemuziek.\n\n**Silver Soft (€30 / persoon):** Drie gangen (soep, hoofdgerecht, dessert), alcoholvrije dranken (sap, water, frisdrank), Turkse livemuziek. De populairste keuze voor families en budgetbewuste reizigers.\n\n**Silver Alc. (€45 / persoon):** Bevat alles van Silver Soft plus bier en huiswijn. Aangeraden voor koppels die genieten van een glas wijn bij het panorama.\n\n**Gold Soft (€60 / persoon):** Vier gangen (voorgerecht, soep, hoofdgerecht, dessert), alcoholvrije dranken en een live Turkse folkloreshow. Voor gasten die de gastronomische kant willen benadrukken.\n\n**Gold Unlimited (€90 / persoon):** Gold-menu plus onbeperkte alcoholische dranken (huisbier, wijn, rakı, cocktails). Ideaal voor jubilea, bedrijfsevenementen en groepen die uitgebreid willen vieren.",
+        proTip:
+          "Niet alle gasten hoeven hetzelfde pakket te kiezen — u kunt aan dezelfde tafel verschillende pakketten combineren. Alcoholvrij en alcohol-pakketten zijn per persoon te boeken. Geef dit aan bij reservering.",
+      },
+      {
+        heading: "Zonsondergang cruise prijzen — €34 of €40?",
+        answerCapsule:
+          "De zonsondergangcruise op de Bosphorus kost in 2026: €34 per persoon (zonder wijn) of €40 per persoon (inclusief een fles Turkse wijn). De tocht duurt ca. 2 uur vanuit Kabataş.",
+        content:
+          "De [zonsondergangcruise op de Bosphorus](/nl/cruises/bosphorus-sunset-cruise) is de slanke, tijdefficiënte keuze: circa twee uur op het water, gouden avondlicht, Ottomaanse paleizen en bruggen — zonder dinerverplichtingen.\n\n**€34 — pakket zonder wijn:** Begeleide Bosphorus-tocht, zitplaats aan dek, water en frisdranken, Engelstalige gids. Geschikt voor families, niet-drinkers en iedereen die gewoon van het panorama wil genieten.\n\n**€40 — pakket met wijn:** Bevat alles van bovenstaand pakket plus een fles Turkse wijn voor twee personen. De meerprijs van slechts €6 maakt dit pakket voor wijnliefhebbers tot de duidelijke prijs-kwaliteitswinnaars.\n\nHet vertrektijdstip varieert per seizoen: lente (maart–april) ca. 17:00 uur, zomer (mei–augustus) ca. 19:00 uur, herfst (september–oktober) ca. 17:30 uur. Het exacte vertrektijdstip staat in uw boekingsbevestiging.",
+        callout: {
+          type: "info",
+          text: "De zonsondergangcruise vertrekt vanaf de Kabataş-pier, vlakbij het Dolmabahçe-paleis. Met de T3-tram vanuit het stadscentrum bereikt u de pier in 15–20 minuten. Meer informatie: [vertrekpunten Bosphorus cruise](/nl/bosphorus-cruise-departure-points).",
+        },
+      },
+      {
+        heading: "Privéjacht prijzen — vanaf €280 voor uw eigen boot",
+        answerCapsule:
+          "Een privéjacht op de Bosphorus kost vanaf €280 voor de gehele boot (2 uur, 2–8 personen). Middelgrote jachten (8–20 pers.) kosten €500–900, grote charterbooten (20–50 pers.) vanaf €1.000. Kapitein en verzekering zijn altijd inbegrepen.",
+        content:
+          "De [privéjacht charter Istanbul](/nl/yacht-charter-istanbul) is de ultieme keuze als u de Bosphorus zonder vreemden wilt beleven. Of het nu gaat om een huwelijksaanzoek, een familiefeest of een bedrijfsevenement — u boekt de gehele boot voor uw groep.\n\nMerry Tourism beschikt over een vloot met drie groottegroepen:\n\n**Klein (2–8 personen), 2 uur: v.a. €280 / boot**\nIdeaal voor koppels, families of kleine groepen. Perfect voor een huwelijksaanzoek op de Bosphorus of een romantisch privédiner. Prijs per persoon bij 4 gasten: €70 — vergelijkbaar met een dinercruise-ticket.\n\n**Middelgroot (8–20 personen), 2–4 uur: €500–900 / boot**\nGeschikt voor verjaardagsgezelschappen, kleine bedrijfsgroepen of vriendengroepen. Bij 15 personen en €700 is dat slechts €47 per persoon.\n\n**Groot (20–50 personen), 4–8 uur: €1.000+ / boot**\nVoor bruiloften, gala's of groepsreizen. Catering, decoratie en fotografen zijn tegen meerprijs te regelen.\n\nIn elk pakket inbegrepen: kapitein, bemanning, wettelijke verzekering. Eten en drinken zijn te boeken via een cateringpartner — geef dit aan bij reservering.",
+        proTip:
+          "De prijs geldt voor de gehele boot, niet per persoon. Vanaf 6 gasten kan het privéjacht (€280 / 6 = €47 per persoon) goedkoper uitvallen dan een dinercruise.",
+      },
+      {
+        heading: "Wat is inbegrepen in de prijs?",
+        answerCapsule:
+          "Bij alle TURSAB-vergunde MerrySails-tochten zijn inbegrepen: dektoegang, Engelstalige gids, vergunde kapitein en bemanning, en wettelijke verzekering. Diner en transfer zijn alleen bij de dinercruise inbegrepen.",
+        content:
+          "Voordat u boekt, loont het te controleren wat er precies in de ticketprijs is inbegrepen. Bij MerrySails geldt de volgende transparante regeling:\n\n**In alle tochten altijd inbegrepen:**\n- Toegang tot dek\n- TURSAB A-Groep vergunde kapitein en bemanning\n- Engelstalige reisleider\n- Wettelijk verplichte veiligheidsuitrusting (zwemvesten, reddingsboeien)\n- Wettelijke basisverzekering\n\n**Alleen bij de dinercruise extra inbegrepen:**\n- Hoteltransfer vanuit Sultanahmet, Taksim en Beşiktaş\n- Diner (3- of 4-gangen afhankelijk van pakket)\n- Live Turkse muziek en folkloreshow\n- Alcohol of alcoholvrij (afhankelijk van gekozen pakket)\n\n**Alleen bij de zonsondergangcruise (€40-pakket) extra inbegrepen:**\n- Een fles Turkse wijn voor twee personen\n\n**Niet inbegrepen (in geen enkele tocht):** fotopakket, persoonlijke aankopen, transfers buiten de genoemde gebieden, fooi (vrijwillig).\n\nEr zijn geen verborgen kosten, geen verplichte fooien en geen dynamische prijsvoering — de geboekte prijs is de definitieve prijs.",
+        callout: {
+          type: "tip",
+          text: "Annulering is gratis tot 72 uur voor vertrek. Bij weersgerelateerde annulering door MerrySails ontvangt u een volledige terugbetaling of een gratis omboekdatum.",
+        },
+      },
+      {
+        heading: "Openbare veerboot vs. privé cruise — wanneer loont wat?",
+        answerCapsule:
+          "De openbare stadsboot (Şehir Hatları) vaart de Bosphorus voor ca. €3 — zonder gids, zitplaatsgarantie of service. TURSAB-vergunde privé cruises vanaf €30 bieden deskundige begeleiding, comfort en veiligheidsgarantie.",
+        content:
+          "Een veelgestelde vraag: waarom niet gewoon de goedkope openbare veerboot nemen? De Şehir Hatları-veerboten varen dagelijks over de Bosphorus voor omgerekend ca. €2–3 per rit. Voor vaste bewoners is dat de juiste keuze.\n\nVoor toeristen zijn er echter doorslaggevende verschillen:\n\n| Criterium | Stadsboot | MerrySails cruise |\n|---|---|---|\n| Prijs | ~€3 | v.a. €30 |\n| Engelstalige gids | Nee | Ja |\n| Zitplaatsgarantie | Nee | Ja |\n| Diner aan boord | Nee | Optioneel (diner-tour) |\n| Wijn / alcohol | Nee | Optioneel |\n| TURSAB-vergunning | Nee | Ja (sinds 2001) |\n| Annuleringsgarantie | Nee | Ja (tot 72 u.) |\n| Flexibele vertrektijd | Nee (dienstregeling) | Deels (privéjacht: ja) |\n\nConclusie: de stadsboot is geschikt voor reizigers die simpelweg van A naar B willen. Voor een begeleide, onvergetelijke Bosphorus-ervaring is de privé cruise aanbevolen vanaf €30 — een prijs die vergelijkbaar is met een gemiddeld restaurantbezoek in Istanbul.\n\nMeer over de [Bosphorus cruise](/nl/bosphorus-cruise) met alle vertrektijden en boekingsopties.",
+      },
+      {
+        heading: "Welke cruise past bij uw reis?",
+        answerCapsule:
+          "Budget & familie: Silver Soft diner €30. Romantisch koppel: zonsondergang €40. Speciale gelegenheid: Gold Unlimited €90. Groep / exclusief: privéjacht v.a. €280.",
+        content:
+          "Om de juiste keuze te maken, beantwoordt u vier korte vragen:\n\n**1. Met hoeveel personen bent u?**\n1–2 personen: zonsondergangcruise (€34–40) of Silver Soft (€30) zijn de beste opties.\n6+ personen: een privéjacht kan per persoon goedkoper uitvallen dan een dinercruise.\n\n**2. Wilt u aan boord dineren?**\nJa → dinercruise (Silver Soft €30 of Gold €60–90).\nNee → zonsondergangcruise (€34–40).\n\n**3. Drinkt u alcohol?**\nNee → Silver Soft (€30) of Gold Soft (€60).\nJa, onbeperkt → Gold Unlimited (€90).\n\n**4. Is het een bijzondere gelegenheid?**\nHuwelijksaanzoek, jubileum, verjaardag → privéjacht v.a. €280 of Gold Unlimited.\n\nHeeft u vragen? Wij helpen u graag via WhatsApp: +90 537 040 68 22. Alle beschikbaarheden vindt u op [/nl/bosphorus-cruise](/nl/bosphorus-cruise).",
+        callout: {
+          type: "tip",
+          text: "In het hoogseizoen (juni–augustus) zijn zonsondergangcruises en Gold-dinerpakketten vaak 3–5 dagen van tevoren volgeboekt. Vroeg reserveren loont.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Wat kost een Bosphorus cruise in 2026?",
+        a: "Een Bosphorus cruise in 2026 kost: zonsondergangcruise €34 (zonder wijn) of €40 (met wijn) per persoon; dinercruise €30 (Silver Soft) tot €90 (Gold Unlimited) per persoon; privéjacht v.a. €280 voor de gehele boot. Alle prijzen bij MerrySails (Merry Tourism), TURSAB A-Groep vergund sinds 2001.",
+      },
+      {
+        q: "Welke is de goedkoopste Bosphorus cruise?",
+        a: "De goedkoopste TURSAB-vergunde optie is de Silver Soft dinercruise voor €30 per persoon — inclusief 3-gangen menu, livemuziek en 3,5 uur Bosphorus-tocht. De zonsondergangcruise kost €34 en duurt ca. 2 uur zonder diner.",
+      },
+      {
+        q: "Hoeveel kost een dinercruise op de Bosporus?",
+        a: "Een dinercruise op de Bosphorus kost in 2026: Silver Soft €30, Silver Alc. €45, Gold Soft €60, Gold Unlimited €90 — per persoon. Duur ca. 3,5 uur vanaf de Kabataş-pier (20:30 uur). Hoteltransfer vanuit Sultanahmet, Taksim en Beşiktaş is bij alle dinerpakketten inbegrepen.",
+      },
+      {
+        q: "Wat is de prijs van een zonsondergangcruise?",
+        a: "Een zonsondergangcruise op de Bosphorus kost €34 per persoon (zonder wijn) of €40 per persoon (inclusief een fles Turkse wijn voor twee). De tocht duurt ca. 2 uur en vertrekt vanaf de Kabataş-pier. Meer informatie: [zonsondergangcruise Bosphorus](/nl/cruises/bosphorus-sunset-cruise).",
+      },
+      {
+        q: "Hoeveel kost een privéjacht in Istanbul?",
+        a: "Een privéjacht in Istanbul kost vanaf €280 voor de gehele boot (2 uur, 2–8 personen). Middelgrote jachten (8–20 pers.) kosten €500–900 voor 2–4 uur. Grote boten (20–50 pers.) vanaf €1.000. Kapitein en verzekering zijn altijd inbegrepen. Alle details: [privéjacht charter Istanbul](/nl/yacht-charter-istanbul).",
+      },
+      {
+        q: "Zijn hoteltransfer en diner inbegrepen in de prijs?",
+        a: "Bij de dinercruise: ja, hoteltransfer vanuit Sultanahmet, Taksim en Beşiktaş plus diner (3 of 4 gangen afhankelijk van pakket) zijn in de prijs inbegrepen. Bij de zonsondergangcruise: geen transfer, geen diner (alleen water; €40-pakket inclusief wijn). Bij het privéjacht: transfer en maaltijden zijn optioneel bij te boeken.",
+      },
+    ],
+    relatedTours: ["bosphorus-cruise", "bosphorus-sunset-cruise", "istanbul-dinner-cruise"],
+    relatedPosts: ["bosporus-cruise-prijzen-istanbul", "jacht-huren-istanbul-gids", "huwelijksaanzoek-op-de-bosporus"],
+    proTip:
+      "Voor de beste prijs-ervaringverhouding kiest u de zonsondergangcruise met wijn (€40): gouden avondlicht, Bosphorus-brug, Ottomaanse paleizen en een glas Turkse wijn — dat is Istanbul op zijn mooiste.",
+    calloutText:
+      "Merry Tourism is TURSAB A-Groep vergund sinds 2001 (licentienummer #14316) en heeft meer dan 50.000 gasten op de Bosphorus verwelkomd. Boek direct op merrysails.com en bespaar tot 25% ten opzichte van boekingsplatformen.",
+  },
 ];
