@@ -7,6 +7,13 @@ import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
+import FleetShowcase from "@/components/yacht/FleetShowcase";
+import { getFleetStrings } from "@/components/yacht/fleet-strings";
+import {
+  getCharterFleet,
+  getCharterLowestEntryPriceEur,
+  getCharterHighestTotalPriceEur,
+} from "@/data/fleet";
 
 export const revalidate = 3600;
 
@@ -49,14 +56,14 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Yat Kiralama Tekne Kiralama €280'dan",
+    metaTitle: "İstanbul Yat Kiralama Tekne Kiralama €200'den",
     metaDescription:
-      "İstanbul yat kiralama ve tekne kiralama €280'den başlıyor. Boğaz'da tüm tekne size özel, kaptanlı, kalkış Kabataş/Bebek. Evlilik teklifi, doğum günü, kurumsal.",
+      "İstanbul yat kiralama €200'den başlıyor. 10-150 kişi kapasiteli 6 yatlık filo, 2 saat minimum, 3 saatten itibaren %10 indirim. Kaptanlı özel Boğaz turu.",
     canonicalPath: "/tr/yacht-charter-istanbul",
     title: "İstanbul Yat Kiralama ve Tekne Kiralama",
-    subtitle: "Boğaz'da tamamen size özel 2 saatlik yat & tekne kiralama deneyimi",
+    subtitle: "Boğaz sailingi — 6 yat, 10-150 kişi, tüm tekne size özel",
     description:
-      "MerrySails ile İstanbul yat kiralama ve tekne kiralama tek elden — Boğaz'ın eşsiz manzarası eşliğinde tüm tekneyi grubunuza tahsis ederiz. Yat kiralama güzergahı, kalkış saati ve menü tamamen sizin tercihinize göre özelleştirilir; tekne kiralama paketleri evlilik teklifi, doğum günü, yıl dönümü veya kurumsal etkinlikler için ideal bir seçimdir. TURSAB A Grubu lisanslı operatör Merry Tourism çatısı altında 2001'den beri Boğaz'da yat ve tekne kiralama hizmeti veriyoruz.",
+      "MerrySails ile İstanbul yat ve tekne kiralama tek elden. Filo 10 kişilik küçük güverteli sailing yatından 150 kişilik mega etkinlik teknesine uzanır; her rezervasyon teknenin tamamını grubunuza tahsis eder. Yumuşak içecek, atıştırmalık, kaptan ve mürettebat güverte fiyatına dahildir; üç saat ve üzeri sailingde otomatik düz %10 düşülür. Yemek, alkol, DJ ve etkinlik stillemesi ayrı brief'le fiyatlandırılır. Merry Tourism çatısı altında 2001'den beri TURSAB A Grubu lisanslı operasyon.",
     whyChooseHeading: "İstanbul Özel Yat Kiralama Neden Tercih Edilir?",
     reasons: [
       {
@@ -68,15 +75,15 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "Evlilik teklifi, doğum günü, yıl dönümü ve kurumsal etkinlikler için en uygun seçenek. Çiçek, pasta, fotoğrafçı ve özel dekor talep edilebilir.",
       },
       {
-        title: "Net paket yapısı",
-        desc: "Essential €280, Premium €380 ve VIP €680 olmak üzere üç şeffaf paket. Tüm fiyatlar 2 saatlik özel tur içindir, isteğe bağlı uzatma yapılabilir.",
+        title: "Yat başına şeffaf fiyat",
+        desc: "Filonun tamamı euro cinsinden yat başına fiyatlandırılır. Küçük güverte 2 saat €200'den, grup yatı 2 saat €280'den; etkinlik yatları programa göre teklif. Üç saat ve üzeri sailingde düz %10 otomatik düşer.",
       },
     ],
     howItWorks: {
       heading: "Rezervasyon Nasıl Yapılır?",
       steps: [
         "WhatsApp veya telefon üzerinden tarih, saat ve katılımcı sayısını paylaşarak müsaitlik kontrolü yaptırın.",
-        "Ekibimiz size en uygun paketi (Essential, Premium veya VIP) sunar; özel istekleriniz (pasta, çiçek, fotoğrafçı) eklenir.",
+        "Ekibimiz grup büyüklüğünüze en uygun yatı önerir; özel istekleriniz (yemek, alkol, DJ, çiçek, pasta, fotoğrafçı) ayrı teklif olarak iletilir.",
         "Onayın ardından depozito ile rezervasyonunuz garantilenir; tur günü Kabataş veya talep ettiğiniz iskeleden hareket edersiniz.",
       ],
     },
@@ -85,22 +92,22 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         question: "İstanbul yat kiralama fiyatları ne kadar?",
         answer:
-          "İstanbul yat kiralama Essential paketimiz €280'den, Premium €380'den, VIP €680'den başlar. Tüm fiyatlar 2 saatlik özel tur içindir; tekne kiralama uzatması saatlik €125-€300 arasında değişir.",
+          "Filo €200'den başlar (10 kişilik küçük güverte, 2 saat) ve 8 saatlik signature grup sailingde €1.070'e kadar çıkar. Üç saat ve üzeri her sailingde düz %10 otomatik düşer. Etkinlik sınıfı yatlar programa göre fiyatlandırılır.",
       },
       {
         question: "Yat kiralama ile tekne kiralama arasındaki fark nedir?",
         answer:
-          "Türkiye'de yat kiralama ve tekne kiralama aynı hizmeti tarif eder; her ikisi de Boğaz'da özel deniz aracı tahsisini ifade eder. MerrySails'te yat kiralama veya tekne kiralama olarak ayırt etmiyoruz — paket yapısı, kapasite ve fiyat aynıdır.",
+          "Türkiye'de yat kiralama ve tekne kiralama aynı hizmeti tarif eder; her ikisi de Boğaz'da özel deniz aracı tahsisini ifade eder. MerrySails'te yat kiralama veya tekne kiralama olarak ayırt etmiyoruz — filo yapısı, kapasite ve fiyat aynıdır.",
       },
       {
         question: "Yat kiralama ne kadar sürer?",
         answer:
-          "Standart yat kiralama paketlerimiz 2 saatlik özel tur olarak planlanır. Talebe göre 3, 4 saat, yarım gün veya tam günlük tekne kiralama uzatma seçenekleri mevcuttur.",
+          "Minimum sailing süresi 2 saattir. Filo 2 ile 8 saat arası bloklarla çalışır; üç saat ve üzeri rezervasyonlarda otomatik %10 indirim uygulanır.",
       },
       {
         question: "Yatta kaç kişi konaklayabilir?",
         answer:
-          "Pakete bağlı olarak 8 ile 30 kişi arasında konaklama mümkündür. Daha büyük gruplar için lütfen WhatsApp üzerinden ulaşın; uygun teknemizi öneririz.",
+          "Filo 10 kişilik küçük güverteli sailing yatından 150 kişilik mega etkinlik teknesine uzanan altı yat içerir. Grup büyüklüğünüze uygun yatı öneririz.",
       },
       {
         question: "Tekne kiralama nereden kalkar?",
@@ -110,20 +117,21 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         question: "Evlilik teklifi düzenlemesi yapılır mı?",
         answer:
-          "Evet. Yat kiralama paketlerimize çiçek süsleme, pasta, romantik müzik listesi ve profesyonel fotoğrafçı eklenebilir. Sürpriz organizasyonu için en az 48 saat öncesinden bilgi vermenizi rica ederiz.",
+          "Evet. Çiçek süsleme, pasta, romantik müzik listesi ve profesyonel fotoğrafçı her yat için ayrı brief'le fiyatlandırılır. Sürpriz organizasyonu için en az 48 saat öncesinden bilgi vermenizi rica ederiz.",
       },
       {
         question: "Yiyecek ve içecek dahil mi?",
         answer:
-          "Premium ve VIP paketlerde aperatif tabağı, meyve ve içecekler dahildir. Essential pakette içecekler isteğe bağlı eklenebilir; tam menü dinner yacht turlarımızda sunulur.",
+          "Yumuşak içecek, su ve hafif atıştırmalık tüm yatlarda güverte fiyatına dahildir. Tam menü, alkol, bar servisi, DJ ve dans gösterisi programa göre ayrı fiyatlandırılır.",
       },
     ],
     tableHeading: "Hızlı Bilgi",
     tableRows: [
-      { label: "Süre", value: "2 saat (uzatılabilir)" },
+      { label: "Süre", value: "2-8 saat (min. 2)" },
       { label: "Kalkış", value: "Kabataş / Beşiktaş / Bebek" },
-      { label: "Başlangıç fiyatı", value: "€280 (Essential)" },
-      { label: "En yüksek paket", value: "€680 (VIP)" },
+      { label: "Başlangıç fiyatı", value: "€200 (küçük güverte · 2 saat)" },
+      { label: "Filo", value: "6 yat · 10-150 kişi" },
+      { label: "İndirim", value: "3 saatten itibaren düz %10" },
       { label: "Lisans", value: "TÜRSAB A Grubu (2001'den beri)" },
     ],
     ctaWhatsapp: "WhatsApp ile Bilgi Al",
@@ -134,14 +142,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle: "Yachtcharter Istanbul ab €280 — Private Bosporus-Jacht",
+    metaTitle: "Yachtcharter Istanbul ab €200 — Private Bosporus-Jacht",
     metaDescription:
-      "Yachtcharter Istanbul ab €280. Exklusive Privatjacht auf dem Bosporus mit Kapitän. Ideal für Heiratsantrag, Geburtstag und Firmenevents. TÜRSAB-lizenziert.",
+      "Yachtcharter Istanbul ab €200. Flotte aus 6 Yachten für 10 bis 150 Gäste, Mindestcharter 2 Stunden, ab 3 Stunden flach 10 % Rabatt. Mit Kapitän und Crew.",
     canonicalPath: "/de/yacht-charter-istanbul",
     title: "Privater Yachtcharter Istanbul",
-    subtitle: "Zwei Stunden exklusive Bosporus-Rundfahrt mit Ihrer eigenen Jacht",
+    subtitle: "Bosporus-Sailing — 6 Yachten, 10 bis 150 Gäste, das ganze Schiff für Sie",
     description:
-      "Beim privaten Yachtcharter von MerrySails steht die gesamte Jacht ausschließlich Ihrer Gruppe zur Verfügung. Route, Abfahrtszeit und Bordprogramm gestalten Sie ganz nach Wunsch – die ideale Lösung für Heiratsanträge, Geburtstage, Hochzeitstage oder Firmenevents auf dem Bosporus.",
+      "Bei MerrySails reicht die Flotte von der 10-Gäste-Sailing-Yacht mit kleinem Deck bis zur 150-Gäste-Mega-Event-Yacht. Jede Buchung sichert das gesamte Schiff für Ihre Gruppe. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach zehn Prozent automatisch abgezogen. Essen, Bar-Service, DJ und Event-Styling laufen über ein separates Briefing. Betrieben von Merry Tourism, TÜRSAB-A-Gruppe lizenziert seit 2001.",
     whyChooseHeading: "Warum einen privaten Yachtcharter in Istanbul wählen?",
     reasons: [
       {
@@ -153,15 +161,15 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "Ideal für Heiratsanträge, Geburtstage, Jubiläen und Firmenevents. Blumen, Torte, Fotograf und individuelle Dekoration sind auf Wunsch buchbar.",
       },
       {
-        title: "Klare Paketstruktur",
-        desc: "Drei transparente Pakete: Essential €280, Premium €380 und VIP €680 – jeweils für eine 2-stündige Privatfahrt, mit Verlängerungsoption.",
+        title: "Pro-Yacht-Preise in EUR",
+        desc: "Über die gesamte Flotte gelten klare Pro-Yacht-Preise. Kleines Deck ab €200/2 Std., Gruppen-Deck ab €280/2 Std.; Event-Yachten programmbasiert. Ab drei Stunden Sailing werden flache zehn Prozent automatisch abgezogen.",
       },
     ],
     howItWorks: {
       heading: "So buchen Sie",
       steps: [
         "Senden Sie uns Datum, Uhrzeit und Teilnehmerzahl per WhatsApp oder Telefon, damit wir die Verfügbarkeit prüfen.",
-        "Unser Team empfiehlt das passende Paket (Essential, Premium oder VIP) und ergänzt Sonderwünsche wie Blumen, Torte oder Fotograf.",
+        "Unser Team schlägt die passende Yacht für Ihre Gruppengröße vor; Sonderwünsche wie Catering, Alkohol, DJ, Blumen, Torte oder Fotograf werden separat angeboten.",
         "Nach Bestätigung sichern wir Ihre Buchung mit einer Anzahlung. Am Tourtag legen Sie ab Kabataş oder einem von Ihnen gewünschten Anleger ab.",
       ],
     },
@@ -170,30 +178,31 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         question: "Wie lange dauert ein Yachtcharter?",
         answer:
-          "Unsere Standardpakete umfassen eine 2-stündige private Bosporus-Rundfahrt. Auf Anfrage sind Verlängerungen auf 3, 4 oder 8 Stunden möglich.",
+          "Mindestens zwei Stunden. Buchbar in Blöcken von 2 bis 8 Stunden; ab drei Stunden werden flach zehn Prozent automatisch abgezogen.",
       },
       {
         question: "Wie viele Personen passen an Bord?",
         answer:
-          "Je nach Paket finden 8 bis 30 Personen Platz. Für größere Gruppen kontaktieren Sie uns bitte per WhatsApp – wir empfehlen Ihnen die passende Jacht.",
+          "Unsere Flotte umfasst sechs Yachten — von der 10-Gäste-Sailing-Yacht bis zur 150-Gäste-Event-Yacht. Wir schlagen die passende Yacht für Ihre Gruppengröße vor.",
       },
       {
         question: "Organisieren Sie Heiratsanträge?",
         answer:
-          "Ja. Blumendekoration, Torte, romantische Musikliste und ein professioneller Fotograf können hinzugebucht werden. Bitte informieren Sie uns mindestens 48 Stunden im Voraus.",
+          "Ja. Blumendekoration, Torte, romantische Musikliste und ein professioneller Fotograf werden per Briefing separat angeboten. Bitte informieren Sie uns mindestens 48 Stunden im Voraus.",
       },
       {
         question: "Sind Speisen und Getränke inklusive?",
         answer:
-          "In den Premium- und VIP-Paketen sind Aperitifteller, Obst und Getränke enthalten. Beim Essential-Paket sind Getränke optional buchbar; volle Menüs bieten wir auf unseren Dinner-Jacht-Touren an.",
+          "Softdrinks, Wasser und leichte Snacks gehören auf allen Yachten zum Deckpreis. Vollmenüs, Alkohol, Bar-Service, DJ und Tanz-Acts werden über ein separates Briefing angeboten.",
       },
     ],
     tableHeading: "Auf einen Blick",
     tableRows: [
-      { label: "Dauer", value: "2 Stunden (verlängerbar)" },
+      { label: "Dauer", value: "2–8 Stunden (Min. 2)" },
       { label: "Abfahrt", value: "Kabataş / Beşiktaş / Bebek" },
-      { label: "Ab-Preis", value: "€280 (Essential)" },
-      { label: "Top-Paket", value: "€680 (VIP)" },
+      { label: "Ab-Preis", value: "€200 (kleines Deck · 2 Std.)" },
+      { label: "Flotte", value: "6 Yachten · 10–150 Gäste" },
+      { label: "Rabatt", value: "Ab 3 Std. flach 10 %" },
       { label: "Lizenz", value: "TÜRSAB A-Gruppe (seit 2001)" },
     ],
     ctaWhatsapp: "Per WhatsApp anfragen",
@@ -204,14 +213,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   fr: {
-    metaTitle: "Location Yacht Istanbul — À partir de €380",
+    metaTitle: "Location Yacht Istanbul — À partir de €200",
     metaDescription:
-      "Location yacht Istanbul à partir de €280. Yacht privé sur le Bosphore avec capitaine. Pour mariage, anniversaire ou événement d'entreprise. TÜRSAB.",
+      "Location yacht Istanbul à partir de €200. Flotte de 6 yachts pour 10 à 150 invités, 2 heures minimum, dix pour cent en moins dès 3 heures. Avec capitaine.",
     canonicalPath: "/fr/yacht-charter-istanbul",
     title: "Location de Yacht Privé à Istanbul",
-    subtitle: "Croisière privée de 2 heures sur le Bosphore, rien que pour vous",
+    subtitle: "Voile privée sur le Bosphore — 6 yachts, 10 à 150 invités, bateau entier",
     description:
-      "La location de yacht privé MerrySails met l'intégralité du bateau à la disposition exclusive de votre groupe. Vous personnalisez l'itinéraire, l'horaire de départ et le déroulement à bord — la formule idéale pour une demande en fiançailles, un anniversaire, un anniversaire de mariage ou un événement d'entreprise sur le Bosphore.",
+      "La flotte MerrySails va du petit voilier 10 invités au méga-yacht événementiel 150 invités. Chaque réservation retient le bateau entier pour votre groupe. Capitaine, équipage, carburant, boissons sans alcool et collations accompagnent le prix du pont ; à partir de trois heures, dix pour cent partent automatiquement à plat. Restauration, service bar, DJ et stylisme événementiel passent par un brief séparé. Opéré par Merry Tourism, agréé TÜRSAB Groupe A depuis 2001.",
     whyChooseHeading: "Pourquoi choisir un yacht privé à Istanbul ?",
     reasons: [
       {
@@ -223,15 +232,15 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "Idéal pour une demande en fiançailles, un anniversaire, un mariage ou un événement d'entreprise. Fleurs, gâteau, photographe et décoration sur mesure disponibles.",
       },
       {
-        title: "Trois formules claires",
-        desc: "Essential €280, Premium €380 et VIP €680 : trois formules transparentes pour une croisière privée de 2 heures, avec possibilité de prolongation.",
+        title: "Tarification par yacht en EUR",
+        desc: "Toute la flotte est tarifée par yacht en euros. Petit pont à partir de €200/2 h, pont de groupe à partir de €280/2 h ; yachts événement chiffrés au programme. Dès trois heures, dix pour cent partent automatiquement à plat.",
       },
     ],
     howItWorks: {
       heading: "Comment réserver",
       steps: [
         "Envoyez-nous date, horaire et nombre de participants par WhatsApp ou par téléphone afin que nous vérifiions la disponibilité.",
-        "Notre équipe vous propose la formule la plus adaptée (Essential, Premium ou VIP) et ajoute vos demandes spéciales (fleurs, gâteau, photographe).",
+        "Notre équipe propose le yacht adapté à la taille du groupe ; les demandes spéciales (restauration, alcool, DJ, fleurs, gâteau, photographe) sont chiffrées séparément.",
         "Après confirmation, votre réservation est garantie par un acompte. Le jour J, vous embarquez à Kabataş ou à l'embarcadère de votre choix.",
       ],
     },
@@ -240,30 +249,31 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         question: "Combien de temps dure une location de yacht ?",
         answer:
-          "Nos formules standard couvrent une croisière privée de 2 heures. Sur demande, vous pouvez prolonger à 3, 4 heures ou à la journée complète.",
+          "Deux heures minimum. La flotte fonctionne par blocs de 2 à 8 heures ; à partir de trois heures, dix pour cent partent automatiquement à plat.",
       },
       {
         question: "Combien de personnes peuvent monter à bord ?",
         answer:
-          "Selon la formule, le yacht accueille de 8 à 30 personnes. Pour des groupes plus importants, contactez-nous via WhatsApp : nous vous proposerons un bateau adapté.",
+          "Notre flotte comprend six yachts — du petit voilier 10 invités au méga-yacht événementiel 150 invités. Nous proposons le yacht adapté à la taille de votre groupe.",
       },
       {
         question: "Organisez-vous les demandes en fiançailles ?",
         answer:
-          "Oui. Décoration florale, gâteau, playlist romantique et photographe professionnel peuvent être ajoutés. Merci de nous prévenir au moins 48 heures à l'avance pour une organisation surprise.",
+          "Oui. Décoration florale, gâteau, playlist romantique et photographe professionnel sont chiffrés séparément par brief. Merci de nous prévenir au moins 48 heures à l'avance pour une organisation surprise.",
       },
       {
         question: "Le repas et les boissons sont-ils inclus ?",
         answer:
-          "Les formules Premium et VIP incluent un plateau d'apéritif, des fruits et des boissons. Sur l'Essential, les boissons sont en option ; un menu complet est servi sur nos croisières dîner-yacht.",
+          "Boissons sans alcool, eau et collations légères font partie du prix du pont sur tous les yachts. Menus complets, alcool, service bar, DJ et numéros de danse passent par un brief séparé.",
       },
     ],
     tableHeading: "En un coup d'œil",
     tableRows: [
-      { label: "Durée", value: "2 heures (prolongeable)" },
+      { label: "Durée", value: "2 à 8 heures (min. 2)" },
       { label: "Départ", value: "Kabataş / Beşiktaş / Bebek" },
-      { label: "Prix de départ", value: "€280 (Essential)" },
-      { label: "Formule la plus haute", value: "€680 (VIP)" },
+      { label: "Prix de départ", value: "€200 (petit pont · 2 h)" },
+      { label: "Flotte", value: "6 yachts · 10 à 150 invités" },
+      { label: "Remise", value: "Dès 3 h : dix pour cent à plat" },
       { label: "Licence", value: "TÜRSAB Groupe A (depuis 2001)" },
     ],
     ctaWhatsapp: "Contacter via WhatsApp",
@@ -274,14 +284,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   nl: {
-    metaTitle: "Jachthuur Istanbul — Vanaf €380",
+    metaTitle: "Jachthuur Istanbul — Vanaf €200",
     metaDescription:
-      "Jachthuur Istanbul vanaf €280. Exclusief privéjacht op de Bosporus met kapitein. Huwelijksaanzoek, verjaardag en bedrijfsevenementen. TÜRSAB-gecertificeerd.",
+      "Jachthuur Istanbul vanaf €200. Vloot van 6 jachten voor 10 tot 150 gasten, 2 uur minimum, tien procent korting vanaf 3 uur. Met kapitein en bemanning.",
     canonicalPath: "/nl/yacht-charter-istanbul",
     title: "Privé Jachtcharter Istanbul",
-    subtitle: "Twee uur exclusief op de Bosporus met uw eigen privéjacht",
+    subtitle: "Bosporus-zeilen — 6 jachten, 10 tot 150 gasten, hele boot voor u",
     description:
-      "Bij de privé jachtcharter van MerrySails is het hele jacht exclusief voor uw gezelschap. U bepaalt zelf de route, het vertrektijdstip en de invulling aan boord — de perfecte keuze voor een huwelijksaanzoek, verjaardag, trouwdag of bedrijfsevenement op de Bosporus.",
+      "De MerrySails-vloot loopt van het 10-gasten zeiljacht met klein dek tot het 150-gasten mega-eventjacht. Elke boeking houdt het hele schip voor uw gezelschap vast. Kapitein, bemanning, brandstof, frisdrank en snacks zitten in de dekprijs; vanaf drie uur vaart wordt tien procent automatisch en vlak afgetrokken. Eten, barservice, DJ en eventstyling lopen via een aparte briefing. Geëxploiteerd door Merry Tourism, TÜRSAB A-categorie gecertificeerd sinds 2001.",
     whyChooseHeading: "Waarom kiezen voor een privé jachtcharter in Istanbul?",
     reasons: [
       {
@@ -293,15 +303,15 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "Ideaal voor een huwelijksaanzoek, verjaardag, jubileum of bedrijfsevenement. Bloemen, taart, fotograaf en decoratie zijn op verzoek mogelijk.",
       },
       {
-        title: "Heldere pakketstructuur",
-        desc: "Drie transparante pakketten: Essential €280, Premium €380 en VIP €680 — telkens voor een privétocht van 2 uur, verlenging mogelijk.",
+        title: "Prijs per jacht in EUR",
+        desc: "De hele vloot wordt per jacht in euro's geprijsd. Klein dek vanaf €200/2 u, groepsdek vanaf €280/2 u; eventjachten programma-gebaseerd. Vanaf drie uur wordt tien procent automatisch en vlak afgetrokken.",
       },
     ],
     howItWorks: {
       heading: "Zo boekt u",
       steps: [
         "Stuur ons datum, tijdstip en groepsgrootte via WhatsApp of telefoon zodat wij de beschikbaarheid kunnen controleren.",
-        "Ons team adviseert het passende pakket (Essential, Premium of VIP) en voegt uw speciale wensen toe — bloemen, taart of fotograaf.",
+        "Ons team adviseert het juiste jacht voor uw groepsgrootte; speciale wensen (catering, alcohol, DJ, bloemen, taart, fotograaf) worden apart geprijsd.",
         "Na bevestiging wordt uw boeking gegarandeerd met een aanbetaling. Op de dag zelf vertrekt u vanaf Kabataş of een door u gekozen aanlegsteiger.",
       ],
     },
@@ -310,30 +320,31 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         question: "Hoe lang duurt een jachtcharter?",
         answer:
-          "Onze standaardpakketten zijn een privétocht van 2 uur. Op verzoek kunt u verlengen naar 3, 4 uur of een hele dag.",
+          "Minimaal twee uur. De vloot werkt in blokken van 2 tot 8 uur; vanaf drie uur wordt tien procent automatisch en vlak afgetrokken.",
       },
       {
         question: "Hoeveel personen kunnen aan boord?",
         answer:
-          "Afhankelijk van het pakket nemen wij 8 tot 30 personen mee. Voor grotere groepen kunt u via WhatsApp contact opnemen; wij dragen dan een passend jacht aan.",
+          "Onze vloot omvat zes jachten — van het 10-gasten zeiljacht tot het 150-gasten eventjacht. Wij dragen het passende jacht aan op basis van uw groepsgrootte.",
       },
       {
         question: "Organiseert u huwelijksaanzoeken?",
         answer:
-          "Ja. Bloemversiering, taart, een romantische muzieklijst en een professionele fotograaf kunnen worden toegevoegd. Voor een verrassing vragen wij minimaal 48 uur vooraf bericht.",
+          "Ja. Bloemversiering, taart, een romantische muzieklijst en een professionele fotograaf worden per briefing apart geprijsd. Voor een verrassing vragen wij minimaal 48 uur vooraf bericht.",
       },
       {
         question: "Zijn eten en drinken inbegrepen?",
         answer:
-          "In de Premium- en VIP-pakketten zijn een aperitiefschotel, fruit en drankjes inbegrepen. Bij Essential zijn drankjes optioneel; volledige menu's bieden wij op onze diner-jachttochten.",
+          "Frisdrank, water en lichte snacks horen bij de dekprijs op alle jachten. Volledige menu's, alcohol, barservice, DJ en dansoptredens lopen via een aparte briefing.",
       },
     ],
     tableHeading: "In één oogopslag",
     tableRows: [
-      { label: "Duur", value: "2 uur (te verlengen)" },
+      { label: "Duur", value: "2–8 uur (min. 2)" },
       { label: "Vertrek", value: "Kabataş / Beşiktaş / Bebek" },
-      { label: "Vanaf-prijs", value: "€280 (Essential)" },
-      { label: "Topcategorie", value: "€680 (VIP)" },
+      { label: "Vanaf-prijs", value: "€200 (klein dek · 2 uur)" },
+      { label: "Vloot", value: "6 jachten · 10–150 gasten" },
+      { label: "Korting", value: "Vanaf 3 uur tien procent vlak" },
       { label: "Licentie", value: "TÜRSAB A-categorie (sinds 2001)" },
     ],
     ctaWhatsapp: "Contact via WhatsApp",
@@ -415,10 +426,10 @@ export default async function LocaleYachtCharterPage({
     areaServed: { "@type": "City", name: "İstanbul" },
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: Math.min(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),
-      highPrice: Math.max(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),
+      lowPrice: getCharterLowestEntryPriceEur(),
+      highPrice: getCharterHighestTotalPriceEur(),
       priceCurrency: "EUR",
-      offerCount: yachtTour.packages?.length ?? 1,
+      offerCount: getCharterFleet().filter((b) => b.bookable).length,
       availability: "https://schema.org/InStock",
     },
   };
@@ -445,9 +456,9 @@ export default async function LocaleYachtCharterPage({
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "EUR",
-      lowPrice: Math.min(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),
-      highPrice: Math.max(...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur])),
-      offerCount: yachtTour.packages?.length ?? 1,
+      lowPrice: getCharterLowestEntryPriceEur(),
+      highPrice: getCharterHighestTotalPriceEur(),
+      offerCount: getCharterFleet().filter((b) => b.bookable).length,
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },
     },
@@ -533,6 +544,13 @@ export default async function LocaleYachtCharterPage({
           </header>
 
           <TourDetailClient tour={yachtTour} related={relatedTours} />
+
+          <FleetShowcase
+            locale={locale as SiteLocale}
+            strings={getFleetStrings(locale as SiteLocale)}
+            reservationBasePath={`/${locale}/reservation`}
+            yachtTourSlug={yachtTour.slug}
+          />
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="yacht" />
 

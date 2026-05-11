@@ -7,6 +7,17 @@ import { SITE_URL } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
+import FleetShowcase from "@/components/yacht/FleetShowcase";
+import { getFleetStrings } from "@/components/yacht/fleet-strings";
+import {
+  getCharterFleet,
+  getCharterFleetLocale,
+  getCharterLowestEntryPriceEur,
+  getCharterHighestTotalPriceEur,
+} from "@/data/fleet";
+
+const fleetLowestEur = getCharterLowestEntryPriceEur();
+const fleetHighestEur = getCharterHighestTotalPriceEur();
 
 export const revalidate = 3600;
 
@@ -26,17 +37,15 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(yachtTour)}`;
 
 export const metadata: Metadata = {
-  title: "Private Yacht Charter Istanbul — From €380",
-  description:
-    "Book private yacht charter Istanbul from EUR 280 per yacht. Compare 3 Bosphorus charter packages for route, timing, marina confirmation, and onboard service.",
+  title: "Private Yacht Charter Istanbul — From €200",
+  description: `Private yacht charter Istanbul from €${fleetLowestEur}. Six-yacht Bosphorus fleet for 10 to 150 guests, two-hour minimum, ten percent off from three hours. Captain and crew included.`,
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/yacht-charter-istanbul"),
   },
   openGraph: {
-    title: "Private Yacht Charter Istanbul — From €380",
-    description:
-      "Choose 3 private yacht charter packages in Istanbul with Bosphorus route planning, marina confirmation, and event add-ons.",
+    title: "Private Yacht Charter Istanbul — From €200",
+    description: `Bosphorus yacht charter from €${fleetLowestEur}. Six-yacht fleet across boutique, group, and event tiers. Whole-yacht booking with captain and crew.`,
     url: canonicalUrl,
     type: "website",
     images: [
@@ -50,9 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Private Yacht Charter Istanbul — From €380",
-    description:
-      "Private Bosphorus yacht charter in Istanbul from EUR 280 with Essential, Premium, and VIP packages.",
+    title: "Private Yacht Charter Istanbul — From €200",
+    description: `Bosphorus yacht charter from €${fleetLowestEur}. Six-yacht fleet, two-hour minimum, ten percent off from three hours.`,
     images: [yachtTour.image],
   },
 };
@@ -90,21 +98,39 @@ const serviceSchema = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Yacht Charter Packages",
-    itemListElement: yachtTour.packages?.map((pkg) => ({
-      "@type": "Offer",
-      name: pkg.name,
-      price: pkg.price,
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      validFrom: "2026-01-01",
-      url: canonicalUrl,
-      itemOffered: {
-        "@type": "Service",
-        name: pkg.name,
-        description: pkg.description,
-      },
-    })),
+    name: "Bosphorus yacht charter fleet — entry price per yacht for a 2-hour sailing",
+    itemListElement: getCharterFleet().map((boat) => {
+      const en = getCharterFleetLocale(boat, "en");
+      const entry = boat.priceByHours?.[boat.minHours] ?? null;
+      return {
+        "@type": "Offer",
+        name: en.label,
+        ...(entry != null
+          ? { price: entry, priceCurrency: "EUR" }
+          : {
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "EUR",
+                price: null,
+                description: "Program-based quote",
+              },
+            }),
+        availability: "https://schema.org/InStock",
+        validFrom: "2026-01-01",
+        url: canonicalUrl,
+        eligibleQuantity: {
+          "@type": "QuantitativeValue",
+          minValue: boat.capacity.min,
+          maxValue: boat.capacity.max,
+          unitText: "guests",
+        },
+        itemOffered: {
+          "@type": "Service",
+          name: en.label,
+          description: en.description,
+        },
+      };
+    }),
   },
 };
 
@@ -156,13 +182,9 @@ const productSchema = yachtTour
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: Math.min(
-          ...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur]),
-        ),
-        highPrice: Math.max(
-          ...(yachtTour.packages?.map((p) => p.price) ?? [yachtTour.priceEur]),
-        ),
-        offerCount: yachtTour.packages?.length ?? 1,
+        lowPrice: fleetLowestEur,
+        highPrice: fleetHighestEur,
+        offerCount: getCharterFleet().filter((b) => b.bookable).length,
         availability: "https://schema.org/InStock",
         seller: { "@id": `${SITE_URL}/#organization` },
       },
@@ -171,28 +193,39 @@ const productSchema = yachtTour
 
 const charterReasons = [
   {
-    title: "Private yacht packages first",
+    title: "Six decks, one private sailing",
     description:
-      "Choose yacht charter when you want a private yacht first and want to compare package levels before deciding on route or extras.",
+      "The fleet spans 10 to 150 guests — small sailing yachts for couples, mid-size decks for friend or family groups, event-built yachts for weddings and brand evenings.",
   },
   {
-    title: "Sunset or celebration add-ons",
+    title: "Whole-yacht pricing in EUR",
     description:
-      "It fits birthdays, family gatherings, and friend groups that want a private yacht first and then add food, drinks, or decor.",
+      "Each booking holds the entire yacht. Soft drinks, snacks, captain, crew, and fuel travel with the deck price, and a flat ten percent is deducted from three hours upward.",
   },
   {
-    title: "Longer hosted outing",
+    title: "Brief-led extras",
     description:
-      "It also suits guests who want more time on the water, more space for their group, and a charter that can grow with extras.",
+      "Catering, alcohol, DJ, live music, photographer, proposal styling, and hotel transfer sit on a separate quote — so the deck stays priced cleanly while the program stays flexible.",
   },
 ];
 
-const charterPriceCards =
-  yachtTour.packages?.map((pkg) => ({
-    title: pkg.name,
-    price: `EUR ${pkg.price}`,
-    body: pkg.description,
-  })) ?? [];
+const charterCategoryCards = [
+  {
+    title: "Small deck · 10 to 14 guests",
+    price: "From €200 / 2h",
+    body: "Compact sailing yachts for couples, anniversaries, birthday afternoons, and tight friend trips. Two options sit in this tier.",
+  },
+  {
+    title: "Mid-size group · 36 guests",
+    price: "From €280 / 2h",
+    body: "Mid-size decks for medium gatherings — standard and a signature upgrade for milestone birthdays, brand evenings, and smaller corporate offsites.",
+  },
+  {
+    title: "Event class · 44 to 150 guests",
+    price: "On quote",
+    body: "Event-built decks for wedding receptions, gala dinners, full-program corporate evenings, and brand activations. Priced per program.",
+  },
+];
 
 const routeProof = [
   {
@@ -204,8 +237,8 @@ const routeProof = [
     body: `Departure planning starts from ${yachtTour.departurePoint.toLowerCase()}, with the final boarding details shared after booking.`,
   },
   {
-    title: "2-hour core charter",
-    body: "The starter package ladder is built on a 2-hour private charter, then extends with add-ons if needed.",
+    title: "Two-hour minimum, three-hour saving",
+    body: "Every yacht starts on a two-hour deck. Sailings of three hours or longer drop a flat ten percent automatically across the bookable tiers.",
   },
 ];
 
@@ -222,11 +255,19 @@ const aiCitationFacts = [
   },
   {
     label: "Price ladder",
-    value: "From EUR 280 (Essential) · EUR 380 (Premium) · EUR 680 (VIP). Per yacht, not per person.",
+    value: "From €200 for a two-hour boutique sailing through to €1,070 for an eight-hour signature group sailing. Six yachts from 10 to 150 guests, priced per yacht, not per seat. Three hours and longer carries a flat ten percent saving.",
   },
   {
     label: "Duration",
-    value: "Core charter is 2 hours. Extra time and add-ons (catering, photographer, DJ) can be layered on.",
+    value: "Two-hour minimum, eight-hour ceiling. A flat ten percent comes off from three hours upward across every bookable tier.",
+  },
+  {
+    label: "Included on the deck",
+    value: "Whole-yacht booking, licensed captain and crew, fuel, soft drinks, light snacks, onboard audio, life jackets.",
+  },
+  {
+    label: "Outside the deck",
+    value: "Catering, full bar service, DJ or live music, proposal styling, photographer, marina pickup or hotel transfer — all priced on a separate brief.",
   },
   {
     label: "Departure",
@@ -335,6 +376,13 @@ export default async function YachtCharterIstanbulPage({
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
 
+          <FleetShowcase
+            locale="en"
+            strings={getFleetStrings("en")}
+            reservationBasePath="/reservation"
+            yachtTourSlug={yachtTour.slug}
+          />
+
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">
             <span className="font-semibold text-[var(--heading)]">Helpful resources:</span>
             <Link href="/bosphorus-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
@@ -364,10 +412,13 @@ export default async function YachtCharterIstanbulPage({
                   Best Private Yacht Charter Istanbul — MerrySails
                 </h2>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                  MerrySails private yacht charter in Istanbul starts at €280 per yacht for a
-                  2-hour Bosphorus charter. TURSAB A-Group licensed since 2001, 50,000+ guests
-                  hosted. Three tiers — Essential, Premium, and VIP — with catering, photographer,
-                  and event add-ons available. Direct booking at merrysails.com, no commission.
+                  MerrySails private yacht charter on the Bosphorus starts at €200 per yacht for a
+                  two-hour sailing. The fleet runs six yachts — small sailing yachts at 10 to 14
+                  guests, mid-size group yachts at 36 guests, and event-built decks at 44 and 150
+                  guests. Captain, crew, fuel, soft drinks, and snacks ride with the deck price;
+                  catering, alcohol, DJ, photographer, and proposal styling sit on a separate brief.
+                  Three hours or longer drops a flat ten percent automatically. Direct booking at
+                  merrysails.com, no commission.
                 </p>
               </div>
               <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
@@ -412,11 +463,11 @@ export default async function YachtCharterIstanbulPage({
                 </h2>
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
                   This page fits guests who already know they want a private yacht and want to
-                  compare charter packages first. This is the right owner page for yacht charter
-                  Istanbul, private yacht charter Istanbul, and Istanbul yacht rental intent. Use
-                  boat rental if you want to begin with vessel type and route, and use private
-                  dinner cruise if dinner is already the main planning brief rather than the
-                  private yacht itself.
+                  compare the six decks by group size and price first. This is the right owner page
+                  for yacht charter Istanbul, private yacht charter Istanbul, and Istanbul yacht
+                  rental intent. Use boat rental if you want to begin with vessel type and route,
+                  and use private dinner cruise if dinner is already the main planning brief rather
+                  than the deck itself.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
@@ -431,10 +482,12 @@ export default async function YachtCharterIstanbulPage({
                 <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
                   Visible price
                 </p>
-                <p className="text-3xl font-bold text-[var(--heading)] mb-2">From EUR 280</p>
+                <p className="text-3xl font-bold text-[var(--heading)] mb-2">From EUR 200</p>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                  The ladder starts at Essential, then moves to Premium and VIP. That keeps the
-                  yacht choice clear before you add food, drinks, transfer, or event styling.
+                  Entry deck is a 10-guest sailing yacht on a two-hour Bosphorus loop. The fleet
+                  steps up to mid-size group yachts and event-built decks; sailings of three hours
+                  or longer drop a flat ten percent. Catering, bar service, DJ, and event styling
+                  sit outside the deck price.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-3">
@@ -455,10 +508,14 @@ export default async function YachtCharterIstanbulPage({
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
-              Yacht charter packages and price ladder
+              Bosphorus yacht categories and price overview
             </h2>
+            <p className="mb-4 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              The bookable fleet sorts into three categories by deck size. Use this overview to
+              short-list the right tier before opening the full fleet section above.
+            </p>
             <div className="grid gap-4 md:grid-cols-3">
-              {charterPriceCards.map((item) => (
+              {charterCategoryCards.map((item) => (
                 <div
                   key={item.title}
                   className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4"
