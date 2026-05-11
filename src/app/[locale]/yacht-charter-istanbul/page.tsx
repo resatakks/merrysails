@@ -649,6 +649,32 @@ export default async function LocaleYachtCharterPage({
             </div>
           </section>
 
+          {/* Locale-aware related-guide section. For TR locale, surfaces the
+              new yat-kiralama-fiyat-rehberi-2026 pillar (3,800 vol/mo target,
+              published 2026-05-10). Without this inbound link the pillar stays
+              "Discovered, not indexed" in Google. */}
+          {locale === "tr" && (
+            <div className="mt-8 rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+                Detaylı rehber
+              </p>
+              <h2 className="mt-2 text-xl font-bold text-[var(--heading)]">
+                Yat Kiralama İstanbul Fiyat Rehberi 2026
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                Yat kiralama ile tekne kiralama farkı, paket karşılaştırması, doğum günü ve evlilik teklifi senaryoları,
+                kalkış noktaları ve gerçek 2026 fiyatları — hepsi tek rehberde.
+              </p>
+              <Link
+                href="/tr/blog/yat-kiralama-istanbul-fiyat-rehberi-2026"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)] hover:underline"
+              >
+                Rehberi oku
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          )}
+
           <div className="mt-8 flex justify-end">
             <Link
               href="/yacht-charter-istanbul"

@@ -1916,5 +1916,253 @@ export const commercialCruiseGuides: BlogPost[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
     relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect"]
+  },
+
+  {
+    slug: "istanbul-cruise-complete-guide-2026",
+    title: "Istanbul Cruise Guide 2026",
+    metaDescription: "Istanbul cruise complete guide 2026: Bosphorus sunset cruise from €34, dinner cruise from €30, private yacht from €280. TURSAB licensed since 2001.",
+    excerpt: "Everything you need to plan your Istanbul cruise in 2026 — sunset cruise, dinner cruise, private yacht charter, departure points, and what to expect on the Bosphorus.",
+    category: "cruise-guide",
+    date: "2026-05-11",
+    dateModified: "2026-05-11",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Istanbul cruise on the Bosphorus with the Ortakoy Mosque and Bosphorus Bridge in the golden-hour background",
+    keywords: [
+      "istanbul cruise",
+      "istanbul cruise 2026",
+      "bosphorus cruise istanbul",
+      "istanbul boat trip",
+      "istanbul dinner cruise",
+      "istanbul sunset cruise",
+      "private cruise istanbul",
+      "istanbul cruise guide",
+      "istanbul cruise price 2026",
+      "bosphorus boat tour istanbul"
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "An Istanbul cruise is a Bosphorus cruise — the same waterway, the same iconic skyline, three distinct product tiers from €30 to €680",
+      "Sunset cruise from €34 / €40 (2 hours shared), dinner cruise from €30 (3.5 hours shared, 4 packages), private yacht charter from €280 (2+ hours, full vessel)",
+      "TURSAB A Group licensed Merry Tourism has been operating Istanbul cruises since 2001 with 50,000+ guests hosted",
+      "Cruises depart from Kabataş, Karakoy, Eminönü, and Kuruçeşme depending on the product — always confirm your specific boarding point after booking",
+      "Booking direct with MerrySails saves 15–35% versus third-party platforms"
+    ],
+    sections: [
+      {
+        heading: "What Is an Istanbul Cruise?",
+        answerCapsule: "An Istanbul cruise is a guided boat journey along the Bosphorus strait — the natural waterway that divides European and Asian Istanbul. When travellers search for an “Istanbul cruise,” they are looking for exactly the same experience as a “Bosphorus cruise”: a scenic boat ride past the city’s most iconic palaces, mosques, and bridges.",
+        content: `An Istanbul cruise is one of the most rewarding single activities you can do in the city. The Bosphorus strait runs approximately 31 km from the Black Sea to the Sea of Marmara, and an istanbul cruise covers the scenic central stretch between the historic peninsula and the second Bosphorus Bridge — roughly 15 km of uninterrupted skyline.
+
+From the water, you see Istanbul the way it was always meant to be seen. Dolmabahce Palace spreads for 600 metres along the European shore. The Bosphorus Bridge links the two continents overhead. Beylerbeyi Palace anchors the Asian side. Rumeli Fortress guards the narrowest point of the strait. No single land route gives you all of this within two hours.
+
+The term "istanbul cruise" and "bosphorus cruise" are completely interchangeable. Tour operators, travel guides, and search engines use both terms for the same product — a tourist boat journey along the Bosphorus from a central Istanbul pier. At [MerrySails](/bosphorus-cruise), the istanbul cruise comes in three main formats: a shared sunset cruise, a shared dinner cruise, and a private yacht charter. Each serves a different kind of traveller and a different part of the day.`
+      },
+      {
+        heading: "Istanbul Cruise Options — 2026 Overview",
+        answerCapsule: "In 2026, the main istanbul cruise options fall into three tiers: a 2-hour shared sunset cruise from €34, a 3.5-hour shared dinner cruise from €30, and a private yacht charter from €280 for the full vessel.",
+        content: `The istanbul cruise market in 2026 offers a cleaner product ladder than in previous years. Shared cruises operate on a fixed schedule with other guests; private charters give you the full vessel on your chosen timing and route.
+
+Here is the current MerrySails istanbul cruise lineup at a glance:`,
+        table: {
+          headers: ["Istanbul Cruise Type", "Duration", "Price From", "Format", "Best For"],
+          rows: [
+            ["Sunset Cruise", "2 hours", "€34 / €40", "Shared", "Photography, couples, golden hour"],
+            ["Dinner Cruise — Silver Soft", "3.5 hours", "€30", "Shared", "Budget full evening"],
+            ["Dinner Cruise — Silver Alcoholic", "3.5 hours", "€45", "Shared", "Drinks included evening"],
+            ["Dinner Cruise — Gold Soft", "3.5 hours", "€80", "Shared", "Premium seating, soft drinks"],
+            ["Dinner Cruise — Gold Unlimited", "3.5 hours", "€90", "Shared", "Premium, unlimited alcohol"],
+            ["Private Yacht — Essential", "2+ hours", "€280", "Private", "Small group, flexible route"],
+            ["Private Yacht — Premium", "2+ hours", "€380", "Private", "Larger group, luxury vessel"],
+            ["Private Yacht — VIP", "2+ hours", "€680", "Private", "Superyacht, celebrations"]
+          ]
+        }
+      },
+      {
+        heading: "Bosphorus Sunset Cruise Istanbul (€34 / €40, 2 Hours Shared)",
+        answerCapsule: "The [Bosphorus sunset cruise](/cruises/bosphorus-sunset-cruise) is the lightest and most photogenic istanbul cruise format. It runs for 2 hours on a shared vessel, departing in the late afternoon to catch the golden hour over the Ortakoy Mosque and the bridge. Price: €34 without wine, €40 with a glass of wine included.",
+        content: `The sunset cruise is the fastest way to experience an istanbul cruise without committing to a full evening. You board at Kabatas pier, and the vessel heads north along the European shore before crossing to return along the Asian side. The route passes Dolmabahce Palace, Ciragan Palace, Ortakoy Mosque, and the iconic Bosphorus Bridge — all in golden-hour light that makes for some of the strongest travel photography in Europe.
+
+The istanbul cruise at sunset runs in shared format: other guests are onboard, but the atmosphere is relaxed and social rather than crowded. An English-speaking guide provides live commentary throughout. Light snacks are served, and the wine-included option (€40) means you arrive at dinner still within a reasonable budget.
+
+TURSAB A Group licensed Merry Tourism has operated the sunset istanbul cruise route since 2001. The sunset timing shifts seasonally — in summer (June–August), departures are later in the evening to match the longer days.
+
+**Who should book the sunset cruise?**
+- Couples wanting a romantic istanbul cruise without the dinner price
+- Photography travellers who want the best light for Bosphorus Bridge shots
+- Travellers on a two-day Istanbul itinerary who want an efficient shared istanbul cruise
+- Solo travellers who want to meet other guests in a casual setting`
+      },
+      {
+        heading: "Bosphorus Dinner Cruise Istanbul (€30–€90, 3.5 Hours Shared)",
+        answerCapsule: "The [Bosphorus dinner cruise](/istanbul-dinner-cruise) is the most complete shared istanbul cruise experience — 3.5 hours, dinner served onboard, live Turkish music, belly dance performance, and the full Bosphorus night skyline. Four price tiers from €30 to €90.",
+        content: `The dinner istanbul cruise is the right choice if you want to combine sightseeing, dining, and cultural entertainment in a single evening. The vessel departs from Kabatas at dusk and follows the Bosphorus north as the city lights up. Dinner is served during the cruise, with live Turkish music and a belly dance performance as the centrepiece of the evening.
+
+The four-tier dinner istanbul cruise pricing at MerrySails in 2026:
+
+- **Silver Soft €30** — dinner + soft drinks, standard seating
+- **Silver Alcoholic €45** — dinner + beer/wine, standard seating
+- **Gold Soft €80** — dinner + soft drinks, premium seating, upgraded menu
+- **Gold Unlimited Alcohol €90** — dinner + unlimited open bar, premium seating
+
+All four tiers include the same 3.5-hour istanbul cruise route and the same live entertainment. The upgrade is in seating position, menu quality, and beverage inclusion — not the show or the route.
+
+Merry Tourism has been running the dinner istanbul cruise since 2001 under TURSAB A Group licensing. With 50,000+ guests hosted, the dinner cruise format is the most booked product in the MerrySails lineup. Booking direct at merrysails.com saves you 15–35% versus platforms like GetYourGuide or Viator, which add commission on top of the listed price.
+
+**Who should book the dinner cruise?**
+- Travellers who want the fullest single-evening istanbul cruise experience
+- Families or mixed groups who want dinner and entertainment in one booking
+- Visitors who have only one evening free in Istanbul`
+      },
+      {
+        heading: "Private Yacht Charter Istanbul (From €280, Full Vessel)",
+        answerCapsule: "The [private yacht charter](/yacht-charter-istanbul) is the premium istanbul cruise format — the entire vessel is reserved for your group, with a custom route and timing on the Bosphorus. Three tiers: Essential €280, Premium €380, VIP €680 for 2 hours.",
+        content: `A private istanbul cruise by yacht charter is a different product from the shared formats above. You book the entire vessel — no other guests — and work with the MerrySails team to set your departure time, route preferences, and any extras (catering, photography, decorations for proposals or birthdays).
+
+**2026 private istanbul cruise pricing:**
+
+| Tier | Price (2 hours) | Capacity | Best For |
+|------|----------------|----------|----------|
+| Essential | €280 | 2–10 guests | Small group private cruise |
+| Premium | €380 | 2–12 guests | Celebration, anniversary |
+| VIP | €680 | 2–16 guests | Corporate event, proposal, superyacht |
+
+Extra hours are available: €125/hr (Essential), €150/hr (Premium), €300/hr (VIP). Captain and crew are always included. Catering, photography, and live music are optional add-ons priced separately.
+
+The private istanbul cruise departs from marinas including Kuruçeşme, Karakoy, or Kabatas depending on vessel assignment. TURSAB A Group licensed Merry Tourism handles all logistics — you receive full boarding and route details in writing after confirmation.
+
+**Who should book the private yacht charter?**
+- Proposals and honeymoons — a private istanbul cruise with a champagne service
+- Corporate groups who need a private venue on the water
+- Birthday celebrations (10–16 guests)
+- Travellers who want complete flexibility over timing and route`
+      },
+      {
+        heading: "Public Ferry vs. Tourist Cruise — What’s the Difference?",
+        answerCapsule: "Istanbul’s public ferries are a cheap way to cross the strait, but they are not an istanbul cruise. A tourist istanbul cruise offers guided commentary, a dedicated scenic route, and onboard services. The public IETT/İDO ferries follow commuter timetables between fixed piers without any of these features.",
+        content: `Many first-time visitors to Istanbul ask: "Should I take the public ferry or a proper istanbul cruise?" The answer depends entirely on what you want from the experience.
+
+**Public ferry (İDO/Şehir Hatları)**
+- Cost: €0.50–1.50 per crossing
+- Route: Fixed pier-to-pier commuter crossings
+- Duration: 20–40 minutes depending on route
+- Includes: A seat, a view, other commuters
+- No guide, no route commentary, no entertainment, no dedicated Bosphorus scenery
+
+**Tourist istanbul cruise (MerrySails)**
+- Cost: €30–€90 shared, €280+ private
+- Route: Dedicated scenic Bosphorus route past palaces and bridges
+- Duration: 2–3.5 hours
+- Includes: English guide, onboard service, dinner/drinks depending on package
+
+The [Bosphorus cruise vs ferry comparison](/blog/bosphorus-cruise-vs-ferry-istanbul-2026) goes into more detail, but the short answer is: if you want a commuter crossing, take the public ferry. If you want an istanbul cruise — a curated, scenic, guided experience — book a tourist vessel.
+
+Some travellers do both: ferry to Uskudar for the Asian-side experience, then an evening istanbul cruise for the panoramic guided route. This is an excellent combination for a two-day Istanbul itinerary.`
+      },
+      {
+        heading: "Where Do Istanbul Cruises Depart From?",
+        answerCapsule: "Istanbul cruise departure points vary by product. Shared cruises (sunset and dinner) depart from Kabataş. Some sightseeing services use Eminönü or Karakoy. Private yacht charters confirm the marina after booking — commonly Kuruçeşme, Kabataş, or Karakoy. See the [departure points guide](/bosphorus-cruise-departure-points) for full pier maps.",
+        content: `One of the most common istanbul cruise questions from arriving travellers is: "Where exactly do I go?" The answer depends on which istanbul cruise you have booked.
+
+**Kabataş Pier** — Main departure point for MerrySails shared istanbul cruise products (sunset cruise and dinner cruise). Kabatas is on the European shore near Dolmabahce, well connected by tram (T1 line, Kabatas stop) and funicular.
+
+**Eminönü Pier** — Historic pier at the foot of Galata Bridge. Some sightseeing and daytime istanbul cruise operators depart from here. Not the MerrySails shared-cruise pier, but useful to know for comparison shopping.
+
+**Karakoy Pier** — Between Galata Bridge and the cruise port. Used by some private istanbul cruise operators and accessible from Karakoy tram stop.
+
+**Kuruçeşme Marina** — Primary private yacht charter departure point for MerrySails. Located on the European shore north of Ortakoy, 15 minutes by taxi from Taksim Square.
+
+**The golden rule for your istanbul cruise:** always use the boarding details sent with your own confirmation. Do not assume every istanbul cruise departs from the same pier — the format of your booking determines the departure point.
+
+See the full [Bosphorus cruise departure points guide](/bosphorus-cruise-departure-points) for pier maps, transport links, and walking directions from major hotels.`
+      },
+      {
+        heading: "How to Choose the Right Istanbul Cruise for Your Trip",
+        answerCapsule: "Choose the sunset istanbul cruise for a 2-hour shared golden-hour experience from €34. Choose the dinner istanbul cruise for a full 3.5-hour shared evening from €30. Choose the private yacht charter for a fully private istanbul cruise from €280. The deciding factor is how much of your evening you want to spend on the water and whether you want a private or shared format.",
+        content: `After helping 50,000+ guests plan their istanbul cruise since 2001, the MerrySails team has identified the clearest decision tree:
+
+**Choose the sunset cruise if:**
+- You want a 2-hour istanbul cruise at golden hour for photography
+- Your group is 2–4 people and you want to keep the evening flexible after the cruise
+- Your budget is €34–€40 per person
+- You are a solo traveller or couple wanting a relaxed shared format
+
+**Choose the dinner cruise if:**
+- You want the most complete single-evening istanbul cruise experience
+- You want dinner, drinks, and entertainment included in one booking
+- Your group is comfortable in a shared venue format
+- Your budget is €30–€90 per person
+
+**Choose the private yacht charter if:**
+- You want the entire vessel reserved exclusively for your group
+- You are planning a proposal, birthday celebration, or corporate event
+- You want flexible timing and a customisable route
+- Your budget is €280+ for the full vessel (not per person)
+
+For a deeper comparison, read the [Bosphorus cruise prices 2026 guide](/blog/bosphorus-cruise-price-istanbul-2026) and the [Bosphorus cruise vs ferry comparison](/blog/bosphorus-cruise-vs-ferry-istanbul-2026). The main [Bosphorus cruise hub](/bosphorus-cruise) also has a structured comparison across all formats.
+
+TURSAB A Group licensed Merry Tourism offers all three formats with direct booking at merrysails.com. All bookings include free cancellation up to 24 hours before departure.`
+      },
+      {
+        heading: "Frequently Asked Questions About Istanbul Cruises",
+        answerCapsule: "The most common istanbul cruise questions answered — from pricing and duration to departure points and what’s included.",
+        content: `Whether you are planning your first istanbul cruise or comparing options for a group trip, the questions below cover the full range of what travellers ask before booking.
+
+**Is an istanbul cruise worth it?**
+
+Yes — an istanbul cruise is consistently ranked among the top three experiences in Istanbul alongside the Grand Bazaar and Hagia Sophia. The Bosphorus is the reason Istanbul exists: it divides Europe and Asia, and every major palace and fortress was built to control or admire it. Seeing these landmarks from the water, with an English-speaking guide and the city skyline on both sides, cannot be replicated from land. With shared options from €30, the value-to-experience ratio is among the highest of any istanbul cruise destination in Europe.
+
+**Can I book an istanbul cruise last minute?**
+
+Shared sunset and dinner istanbul cruises can often be booked 1–2 days in advance during off-peak season (October–April). During peak season (May–September), departure slots fill 5–7 days ahead. Private yacht charters require at least 48 hours notice and 72+ hours for customised setups (catering, decorations). The safest approach is to book your istanbul cruise before you arrive in Istanbul.
+
+**What should I wear on an istanbul cruise?**
+
+Smart casual is appropriate for all MerrySails istanbul cruise formats. For sunset cruises, a light jacket is recommended — the Bosphorus breeze drops the perceived temperature by 3–5 degrees even in summer. For dinner cruises, slightly smarter dress is appropriate (no formal dress code, but shorts and flip-flops are underdressed for the Gold tier). For private yacht charters, dress to match your occasion.
+
+**Is the istanbul cruise child-friendly?**
+
+Yes. Shared sunset and dinner cruises are suitable for children. The dinner cruise includes entertainment (live music, belly dance, whirling dervish) that many children enjoy. Private yacht charters are fully child-friendly with no minimum age. Children under 5 typically travel free on shared cruises — confirm at booking.`,
+        proTip: "Book your istanbul cruise for the second or third evening of your trip rather than the first. Having already walked the Eminonu waterfront and looked across from Galata Bridge makes the on-water perspective significantly more rewarding."
+      }
+    ],
+    faqs: [
+      {
+        q: "What is an Istanbul cruise?",
+        a: "An Istanbul cruise is a guided tourist boat journey along the Bosphorus strait — the waterway that separates the European and Asian sides of Istanbul. The terms ‘istanbul cruise’ and ‘bosphorus cruise’ are interchangeable. MerrySails offers three main istanbul cruise formats: a 2-hour shared sunset cruise, a 3.5-hour shared dinner cruise, and a private yacht charter for groups."
+      },
+      {
+        q: "How much does an Istanbul cruise cost in 2026?",
+        a: "Istanbul cruise prices in 2026 at MerrySails: sunset cruise €34 (no wine) or €40 (with wine), dinner cruise €30–€90 across four packages (Silver Soft, Silver Alcoholic, Gold Soft, Gold Unlimited), private yacht charter €280–€680 for the full vessel. All prices are direct-booking prices with no hidden fees."
+      },
+      {
+        q: "What’s the difference between an Istanbul cruise and a Bosphorus cruise?",
+        a: "There is no difference. ‘Istanbul cruise’ and ‘Bosphorus cruise’ refer to the same experience: a tourist boat journey along the Bosphorus strait with Istanbul landmarks on both shores. Some operators use ‘istanbul cruise’ to attract travellers who don’t yet know that the main waterway in Istanbul is called the Bosphorus."
+      },
+      {
+        q: "Is the Istanbul cruise worth it?",
+        a: "Yes. An istanbul cruise is one of the highest-value experiences in Istanbul. Shared dinner cruises from €30 include 3.5 hours on the water, dinner, and live entertainment. The sunset cruise from €34 gives you two hours of the best photography in the city. Private yacht charters from €280 offer a fully tailored istanbul cruise for groups. TURSAB A Group licensed Merry Tourism has hosted 50,000+ guests on istanbul cruises since 2001."
+      },
+      {
+        q: "How long is an Istanbul cruise?",
+        a: "Istanbul cruise duration depends on the format. The shared sunset cruise runs for 2 hours. The shared dinner cruise runs for 3.5 hours. Private yacht charters start at 2 hours and can be extended. Actual sailing time on the Bosphorus covers approximately 15 km of the central strait — enough to see all major landmarks on both the European and Asian shores."
+      },
+      {
+        q: "Where does the Istanbul cruise depart from?",
+        a: "MerrySails shared istanbul cruises (sunset and dinner) depart from Kabatas Pier on the European shore, served by tram T1 (Kabatas stop) and the Taksim funicular. Some sightseeing services use Eminonu or Karakoy. Private yacht charters depart from Kurucesme Marina or another confirmed pier depending on vessel assignment. Always use the boarding details sent with your specific confirmation."
+      },
+      {
+        q: "What’s included in an Istanbul cruise?",
+        a: "On a MerrySails sunset istanbul cruise: English-speaking guide, light snacks, non-alcoholic drinks, and optional wine (€40 tier). On a dinner istanbul cruise: full dinner, live Turkish music, belly dance and whirling dervish performance, drinks as per package tier (€30–€90). On a private yacht charter: captain and crew, custom route on the Bosphorus, catering and extras as arranged."
+      },
+      {
+        q: "Can I book a private Istanbul cruise?",
+        a: "Yes. MerrySails offers private istanbul cruise packages for groups from 2 to 16 guests. The Essential tier (€280 for 2 hours) covers small groups on a comfortable private vessel. The Premium tier (€380) handles larger groups on a luxury yacht. The VIP tier (€680) is the superyacht format for celebrations, proposals, and corporate events. All private istanbul cruise bookings are confirmed in writing with full boarding details."
+      }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["bosphorus-cruise-prices-2026", "best-istanbul-cruise-2026", "bosphorus-cruise-vs-ferry-istanbul-2026"]
   }
+
 ];

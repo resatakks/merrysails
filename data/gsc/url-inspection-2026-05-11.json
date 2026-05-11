@@ -1,0 +1,130 @@
+[
+  {
+    "url": "https://merrysails.com/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-07",
+    "rich": "FAIL",
+    "richItems": "Breadcrumbs,FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/tr/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-06",
+    "rich": "FAIL",
+    "richItems": "Breadcrumbs,FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/yat-kiralama-istanbul-fiyat-rehberi-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/de/bosphorus-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/tr/yacht-charter-istanbul",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/de/blog/bosporus-kreuzfahrt-preise-rehber-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/fr/blog/croisiere-bosphore-prix-guide-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/nl/blog/bosphorus-cruise-prijzen-gids-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/yacht-charter-istanbul",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-04-04",
+    "rich": "PASS",
+    "richItems": "FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/istanbul-dinner-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-07",
+    "rich": "PASS",
+    "richItems": "Breadcrumbs,Events,FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-09",
+    "rich": "PASS",
+    "richItems": "Breadcrumbs,Events,FAQ,Review snippets,Videos"
+  },
+  {
+    "url": "https://merrysails.com/nl/bosphorus-cruise",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered - currently not ind",
+    "lastCrawl": "?",
+    "rich": "NONE",
+    "richItems": ""
+  },
+  {
+    "url": "https://merrysails.com/fr/bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-07",
+    "rich": "PASS",
+    "richItems": "Product snippets,Breadcrumbs,FAQ,Review snippets"
+  },
+  {
+    "url": "https://merrysails.com/blog/bosphorus-cruise-departure-points",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-04-19",
+    "rich": "PASS",
+    "richItems": "Breadcrumbs,FAQ"
+  },
+  {
+    "url": "https://merrysails.com/blog/what-to-wear-bosphorus-cruise",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-05-06",
+    "rich": "PASS",
+    "richItems": "Breadcrumbs,FAQ"
+  }
+]
