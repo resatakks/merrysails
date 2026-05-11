@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import TourDetailClient from "@/components/tours/TourDetailClient";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
@@ -543,13 +542,12 @@ export default async function LocaleYachtCharterPage({
             <p className="text-lg text-[var(--text-muted)]">{t.subtitle}</p>
           </header>
 
-          <TourDetailClient tour={yachtTour} related={relatedTours} />
-
           <FleetShowcase
             locale={locale as SiteLocale}
             strings={getFleetStrings(locale as SiteLocale)}
             reservationBasePath={`/${locale}/reservation`}
             yachtTourSlug={yachtTour.slug}
+            fleetDetailBasePath={`/${locale}/yacht-charter-istanbul`}
           />
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="yacht" />

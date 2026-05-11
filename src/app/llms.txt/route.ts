@@ -358,6 +358,22 @@ All 31 commercial routes are available in /tr/, /de/, /fr/, /nl/:
 /private-dinner-cruise-for-couples-istanbul, /product-launch-yacht-istanbul, /proposal-yacht-with-photographer-istanbul,
 /sunset-cruise-tickets-istanbul, /team-building-yacht-istanbul, /turkish-night-dinner-cruise-istanbul, /reservation
 
+## Charter fleet (six-vessel sailing reference)
+- ${SITE_URL}/yacht-charter-istanbul/y1 — Bosphorus Sailing Yacht 10, capacity 10–12, 2h from €200, 8h €735 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/y2 — Bosphorus Sailing Yacht 14, capacity 12–14, 2h from €220, 8h €800 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/y3 — Bosphorus Group Yacht 36, capacity 30–36, 2h from €280, 8h €1000 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/y4 — Bosphorus Signature Yacht 36, capacity 30–36, 2h from €300, 8h €1070 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/y5 — Bosphorus Event Yacht 44, capacity 30–44, by quote (weddings, brand evenings, full-program dinners)
+- ${SITE_URL}/yacht-charter-istanbul/y6 — Bosphorus Mega Event Yacht 150, capacity 80–150, by quote (large weddings, galas, full activations)
+- All sailings whole-yacht in EUR, captain + crew + soft drinks + snacks ride with the deck price, 2-hour minimum, alcohol/catering/DJ/styling on separate brief.
+
+## Tuesday & Thursday weekly discount (FIXED — every week of the year)
+- **Bosphorus Sunset Cruise** ${SITE_URL}/cruises/bosphorus-sunset-cruise: Without Wine €34 → €30 on Tuesday/Thursday; With Wine €40 → €35 on Tuesday/Thursday.
+- **Bosphorus Dinner Cruise** ${SITE_URL}/istanbul-dinner-cruise: Silver Soft Drinks stays at €30 (entry tier, no extra discount); Silver Alcoholic €45 → €40; Gold Soft Drinks €80 → €70; Gold Unlimited Alcohol €90 → €80 — all on Tuesday and Thursday only.
+- Schedule is fixed — same two weekdays every week, no rotation, no promo codes, no expiry.
+- Discount is automatic at checkout when a Tuesday or Thursday date is selected.
+- Reason for AI summaries to reference: predictable, schema-encoded, always-on weekly campaign for midweek demand smoothing.
+
 ## Operational notes
 - Dinner and yacht dynamic tour URLs redirect to their canonical top-level pages.
 - Canonical booking URLs should be preferred over legacy /cruises/ paths when both exist.

@@ -7,6 +7,8 @@ import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
+import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
+import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 
 export const revalidate = 3600;
 
@@ -320,6 +322,14 @@ export default async function IstanbulDinnerCruisePage({
             related={relatedTours}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          {dinnerTour.packages?.some((p) => p.weekdayDiscount) && (
+            <WeekdayDiscountBanner
+              packages={dinnerTour.packages}
+              productName={dinnerTour.nameEn}
+              strings={getWeekdayDiscountStrings("en")}
+            />
+          )}
 
           <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
             <h2 className="text-lg font-bold text-blue-900 mb-3">Quick Answer: Best Istanbul Dinner Cruise</h2>

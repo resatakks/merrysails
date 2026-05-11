@@ -24,6 +24,7 @@ type Props = {
   strings: FleetShowcaseStrings;
   reservationBasePath: string;
   yachtTourSlug: string;
+  fleetDetailBasePath: string;
 };
 
 export default function FleetShowcase({
@@ -31,6 +32,7 @@ export default function FleetShowcase({
   strings,
   reservationBasePath,
   yachtTourSlug,
+  fleetDetailBasePath,
 }: Props) {
   const fleet = getCharterFleet();
   const hourColumns = [2, 3, 4, 5, 6, 7, 8];
@@ -65,6 +67,7 @@ export default function FleetShowcase({
             strings={strings}
             reservationBasePath={reservationBasePath}
             yachtTourSlug={yachtTourSlug}
+            fleetDetailBasePath={fleetDetailBasePath}
           />
         ))}
       </div>

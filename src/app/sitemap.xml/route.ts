@@ -45,6 +45,12 @@ const LOCALIZED_PATHS = [
   "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
+  "/yacht-charter-istanbul/y1",
+  "/yacht-charter-istanbul/y2",
+  "/yacht-charter-istanbul/y3",
+  "/yacht-charter-istanbul/y4",
+  "/yacht-charter-istanbul/y5",
+  "/yacht-charter-istanbul/y6",
 ];
 
 const LOCALIZED_SET = new Set(LOCALIZED_PATHS);

@@ -5,6 +5,11 @@ export interface Package {
   description: string;
   features: string[];
   addOns?: AddOn[];
+  weekdayDiscount?: {
+    weekdays: number[];
+    discountedPrice: number;
+    label?: string;
+  };
 }
 
 export interface AddOn {
@@ -164,6 +169,7 @@ export const tours: Tour[] = [
           "Nuts, chips, crackers, pretzels and fruit plate",
           "12-language audio guide",
         ],
+        weekdayDiscount: { weekdays: [2, 4], discountedPrice: 30, label: "Tuesday & Thursday Sailings" },
       },
       {
         name: "Bosphorus Sunset Cruise with Wine",
@@ -178,6 +184,7 @@ export const tours: Tour[] = [
           "Nuts, chips, crackers, pretzels and fruit plate",
           "Live tour guide and 12-language audio guide",
         ],
+        weekdayDiscount: { weekdays: [2, 4], discountedPrice: 35, label: "Tuesday & Thursday Sailings" },
       },
     ],
     includes: [
@@ -292,6 +299,7 @@ export const tours: Tour[] = [
         name: "Silver Dinner Cruise - Alcoholic",
         price: 45,
         originalPrice: 60,
+        weekdayDiscount: { weekdays: [2, 4], discountedPrice: 40, label: "Tuesday & Thursday Sailings" },
         description: "Shared dinner cruise with standard seating and local alcoholic service",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",
@@ -308,6 +316,7 @@ export const tours: Tour[] = [
         name: "Gold Dinner Cruise - Soft Drinks",
         price: 80,
         originalPrice: 110,
+        weekdayDiscount: { weekdays: [2, 4], discountedPrice: 70, label: "Tuesday & Thursday Sailings" },
         description: "Premium shared dinner cruise with guaranteed stage-close VIP table and unlimited soft drinks",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",
@@ -324,6 +333,7 @@ export const tours: Tour[] = [
         name: "Gold Dinner Cruise - Unlimited Alcohol",
         price: 90,
         originalPrice: 120,
+        weekdayDiscount: { weekdays: [2, 4], discountedPrice: 80, label: "Tuesday & Thursday Sailings" },
         description: "Premium shared dinner cruise with best stage-view VIP tables and unlimited local plus imported alcoholic drinks",
         features: [
           "3.5-hour shared Bosphorus dinner cruise",

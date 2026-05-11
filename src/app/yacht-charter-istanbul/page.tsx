@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
-import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
@@ -315,16 +313,10 @@ const comparePages = [
   },
 ];
 
-export default async function YachtCharterIstanbulPage({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
+export default async function YachtCharterIstanbulPage() {
   if (!yachtTour) {
     notFound();
   }
-
-  const resolvedSearchParams = await searchParams;
 
   return (
     <>
@@ -366,21 +358,21 @@ export default async function YachtCharterIstanbulPage({
             <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
           </nav>
 
-          {/* Server-rendered H1 — visible heading is rendered by TourDetailClient as h2; */}
-          {/* this sr-only H1 ensures Google/Bing/AI crawlers see the canonical page heading. */}
-          <h1 className="sr-only">{yachtTour.nameEn} — Private Yacht Charter Istanbul</h1>
-
-          <TourDetailClient
-            tour={yachtTour}
-            related={relatedTours}
-            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
-          />
+          <header className="mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--heading)] tracking-tight">
+              {yachtTour.nameEn} — Private Yacht Charter Istanbul
+            </h1>
+            <p className="mt-2 text-base text-[var(--text-muted)]">
+              {yachtTour.description}
+            </p>
+          </header>
 
           <FleetShowcase
             locale="en"
             strings={getFleetStrings("en")}
             reservationBasePath="/reservation"
             yachtTourSlug={yachtTour.slug}
+            fleetDetailBasePath="/yacht-charter-istanbul"
           />
 
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">

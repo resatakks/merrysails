@@ -18,6 +18,7 @@ export type BoatCardStrings = {
   saveLabel: string;
   reserve: string;
   requestQuote: string;
+  viewDetails: string;
   popularBadge: string;
   eventBadge: string;
   boutiqueBadge: string;
@@ -35,6 +36,7 @@ type Props = {
   strings: BoatCardStrings;
   reservationBasePath: string; // "/reservation" or "/{locale}/reservation"
   yachtTourSlug: string; // "yacht-charter-in-istanbul"
+  fleetDetailBasePath: string; // "/yacht-charter-istanbul" or "/{locale}/yacht-charter-istanbul"
 };
 
 const BADGE_CLASSES: Record<NonNullable<CharterFleetItem["badges"]>[number], string> = {
@@ -69,6 +71,7 @@ export default function BoatCard({
   strings,
   reservationBasePath,
   yachtTourSlug,
+  fleetDetailBasePath,
 }: Props) {
   const t = getCharterFleetLocale(boat, locale);
   const allImages = useMemo(
@@ -253,23 +256,33 @@ export default function BoatCard({
         ) : null}
 
         <div className="mt-auto">
-          {boat.bookable && reserveHref ? (
+          <div className="grid gap-2 sm:grid-cols-2">
             <Link
-              href={reserveHref}
-              className="block w-full rounded-xl bg-[var(--brand-primary)] py-3 text-center text-sm font-bold text-white transition-colors hover:bg-[var(--brand-primary)]/90"
+              href={`${fleetDetailBasePath}/${boat.slug}`}
+              className="block w-full rounded-xl border-2 border-[var(--brand-primary)] bg-white py-3 text-center text-sm font-bold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)]/5"
             >
-              {strings.reserve}
+              {strings.viewDetails}
             </Link>
-          ) : (
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full rounded-xl bg-emerald-600 py-3 text-center text-sm font-bold text-white transition-colors hover:bg-emerald-700"
-            >
-              {strings.requestQuote}
-            </a>
-          )}
+            {boat.bookable && reserveHref ? (
+              <Link
+                href={reserveHref}
+                style={{ color: "#ffffff" }}
+                className="block w-full rounded-xl bg-[var(--brand-primary)] py-3 text-center text-sm font-bold !text-white transition-colors hover:bg-[var(--brand-primary-hover,var(--brand-primary))] hover:opacity-95"
+              >
+                {strings.reserve}
+              </Link>
+            ) : (
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#ffffff" }}
+                className="block w-full rounded-xl bg-emerald-600 py-3 text-center text-sm font-bold !text-white transition-colors hover:bg-emerald-700"
+              >
+                {strings.requestQuote}
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </article>

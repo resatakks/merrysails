@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
+import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
+import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
@@ -495,6 +497,14 @@ export default async function LocaleSunsetCruisePage({
           </nav>
 
           <TourDetailClient tour={sunsetTour} related={relatedTours} />
+
+          {sunsetTour.packages?.some((p) => p.weekdayDiscount) && (
+            <WeekdayDiscountBanner
+              packages={sunsetTour.packages}
+              productName={sunsetTour.nameEn}
+              strings={getWeekdayDiscountStrings(locale as SiteLocale)}
+            />
+          )}
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="sunset" />
 

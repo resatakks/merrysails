@@ -10,6 +10,8 @@ import {
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
+import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
+import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -637,6 +639,14 @@ export default async function TourDetailPage({
             related={related}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          {tour.packages?.some((p) => p.weekdayDiscount) && (
+            <WeekdayDiscountBanner
+              packages={tour.packages}
+              productName={tour.nameEn}
+              strings={getWeekdayDiscountStrings("en")}
+            />
+          )}
 
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">
             <span className="font-semibold text-[var(--heading)]">Helpful resources:</span>

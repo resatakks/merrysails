@@ -10,6 +10,7 @@ type FleetStringsCommon = {
   saveLabel: string;
   reserve: string;
   requestQuote: string;
+  viewDetails: string;
   popularBadge: string;
   eventBadge: string;
   boutiqueBadge: string;
@@ -45,6 +46,7 @@ const EN: FleetStringsCommon = {
   saveLabel: "Saving",
   reserve: "Book this yacht",
   requestQuote: "Request a quote",
+  viewDetails: "See full yacht page",
   popularBadge: "Most booked",
   eventBadge: "Events",
   boutiqueBadge: "Small deck",
@@ -99,6 +101,7 @@ const TR: FleetStringsCommon = {
   saveLabel: "Tasarruf",
   reserve: "Bu yatı al",
   requestQuote: "Teklif iste",
+  viewDetails: "Yat sayfasına geç",
   popularBadge: "En çok tercih",
   eventBadge: "Etkinlik",
   boutiqueBadge: "Küçük güverte",
@@ -153,6 +156,7 @@ const DE: FleetStringsCommon = {
   saveLabel: "Ersparnis",
   reserve: "Diese Yacht buchen",
   requestQuote: "Angebot anfordern",
+  viewDetails: "Zur Yacht-Seite",
   popularBadge: "Am meisten gebucht",
   eventBadge: "Events",
   boutiqueBadge: "Kleines Deck",
@@ -207,6 +211,7 @@ const FR: FleetStringsCommon = {
   saveLabel: "Économie",
   reserve: "Réserver ce yacht",
   requestQuote: "Demander un devis",
+  viewDetails: "Voir la fiche yacht",
   popularBadge: "Le plus réservé",
   eventBadge: "Événements",
   boutiqueBadge: "Petit pont",
@@ -261,6 +266,7 @@ const NL: FleetStringsCommon = {
   saveLabel: "Besparing",
   reserve: "Dit jacht boeken",
   requestQuote: "Offerte aanvragen",
+  viewDetails: "Naar jacht-pagina",
   popularBadge: "Meest geboekt",
   eventBadge: "Events",
   boutiqueBadge: "Klein dek",

@@ -9,6 +9,8 @@ import {
 } from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
+import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
+import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
 
@@ -280,6 +282,14 @@ export default async function LocaleTourDetailPage({
             related={related}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          {tour.packages?.some((p) => p.weekdayDiscount) && (
+            <WeekdayDiscountBanner
+              packages={tour.packages}
+              productName={tour.nameEn}
+              strings={getWeekdayDiscountStrings(locale as SiteLocale)}
+            />
+          )}
         </div>
       </div>
     </>
