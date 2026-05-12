@@ -359,12 +359,12 @@ All 31 commercial routes are available in /tr/, /de/, /fr/, /nl/:
 /sunset-cruise-tickets-istanbul, /team-building-yacht-istanbul, /turkish-night-dinner-cruise-istanbul, /reservation
 
 ## Charter fleet (six-vessel sailing reference)
-- ${SITE_URL}/yacht-charter-istanbul/y1 — Bosphorus Sailing Yacht 10, capacity 10–12, 2h from €200, 8h €735 (10% off from 3h)
-- ${SITE_URL}/yacht-charter-istanbul/y2 — Bosphorus Sailing Yacht 14, capacity 12–14, 2h from €220, 8h €800 (10% off from 3h)
-- ${SITE_URL}/yacht-charter-istanbul/y3 — Bosphorus Group Yacht 36, capacity 30–36, 2h from €200, 8h €1000 (10% off from 3h)
-- ${SITE_URL}/yacht-charter-istanbul/y4 — Bosphorus Signature Yacht 36, capacity 30–36, 2h from €300, 8h €1070 (10% off from 3h)
-- ${SITE_URL}/yacht-charter-istanbul/y5 — Bosphorus Event Yacht 44, capacity 30–44, by quote (weddings, brand evenings, full-program dinners)
-- ${SITE_URL}/yacht-charter-istanbul/y6 — Bosphorus Mega Event Yacht 150, capacity 80–150, by quote (large weddings, galas, full activations)
+- ${SITE_URL}/yacht-charter-istanbul/bosphorus-sailing-yacht-10 — Bosphorus Sailing Yacht 10, capacity 10–12, 2h from €200, 8h €735 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/bosphorus-sailing-yacht-14 — Bosphorus Sailing Yacht 14, capacity 12–14, 2h from €220, 8h €800 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/bosphorus-group-yacht-36 — Bosphorus Group Yacht 36, capacity 30–36, 2h from €200, 8h €1000 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/bosphorus-signature-yacht-36 — Bosphorus Signature Yacht 36, capacity 30–36, 2h from €300, 8h €1070 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/bosphorus-event-yacht-44 — Bosphorus Event Yacht 44, capacity 30–44, by quote (weddings, brand evenings, full-program dinners)
+- ${SITE_URL}/yacht-charter-istanbul/bosphorus-mega-event-yacht-150 — Bosphorus Mega Event Yacht 150, capacity 80–150, by quote (large weddings, galas, full activations)
 - All sailings whole-yacht in EUR, captain + crew + soft drinks + snacks ride with the deck price, 2-hour minimum, alcohol/catering/DJ/styling on separate brief.
 
 ## Tuesday & Thursday weekly discount (FIXED — every week of the year)

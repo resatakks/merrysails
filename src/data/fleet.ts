@@ -71,7 +71,7 @@ export const fleet: Yacht[] = [
  * Boat brand names never appear in UI. Capacity-tier labels only.
  * ------------------------------------------------------------------------ */
 
-export type CharterFleetSlug = "y1" | "y2" | "y3" | "y4" | "y5" | "y6";
+export type CharterFleetSlug = "bosphorus-sailing-yacht-10" | "bosphorus-sailing-yacht-14" | "bosphorus-group-yacht-36" | "bosphorus-signature-yacht-36" | "bosphorus-event-yacht-44" | "bosphorus-mega-event-yacht-150";
 
 export type CharterFleetLocaleStrings = {
   label: string;
@@ -110,7 +110,7 @@ const altDescriptors = {
 
 const CHARTER_FLEET: CharterFleetItem[] = [
   {
-    slug: "y1",
+    slug: "bosphorus-sailing-yacht-10",
     internalCode: "boutique-10",
     capacity: { min: 10, max: 12 },
     hourlyEur: 100,
@@ -173,7 +173,7 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     },
   },
   {
-    slug: "y2",
+    slug: "bosphorus-sailing-yacht-14",
     internalCode: "premium-14",
     capacity: { min: 12, max: 14 },
     hourlyEur: 110,
@@ -232,7 +232,7 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     },
   },
   {
-    slug: "y3",
+    slug: "bosphorus-group-yacht-36",
     internalCode: "group-standard-36",
     capacity: { min: 30, max: 36 },
     hourlyEur: 140,
@@ -290,7 +290,7 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     },
   },
   {
-    slug: "y4",
+    slug: "bosphorus-signature-yacht-36",
     internalCode: "group-signature-36",
     capacity: { min: 30, max: 36 },
     hourlyEur: 150,
@@ -350,7 +350,7 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     },
   },
   {
-    slug: "y5",
+    slug: "bosphorus-event-yacht-44",
     internalCode: "event-44",
     capacity: { min: 30, max: 44 },
     hourlyEur: null,
@@ -418,7 +418,7 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     },
   },
   {
-    slug: "y6",
+    slug: "bosphorus-mega-event-yacht-150",
     internalCode: "mega-150",
     capacity: { min: 80, max: 150 },
     hourlyEur: null,

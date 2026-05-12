@@ -41,6 +41,67 @@ const nextConfig: NextConfig = {
         destination: "/yacht-charter-istanbul",
         permanent: true,
       },
+      // SEO: legacy short fleet slugs → descriptive slugs (2026-05-12)
+      {
+        source: "/yacht-charter-istanbul/y1",
+        destination: "/yacht-charter-istanbul/bosphorus-sailing-yacht-10",
+        permanent: true,
+      },
+      {
+        source: "/yacht-charter-istanbul/y2",
+        destination: "/yacht-charter-istanbul/bosphorus-sailing-yacht-14",
+        permanent: true,
+      },
+      {
+        source: "/yacht-charter-istanbul/y3",
+        destination: "/yacht-charter-istanbul/bosphorus-group-yacht-36",
+        permanent: true,
+      },
+      {
+        source: "/yacht-charter-istanbul/y4",
+        destination: "/yacht-charter-istanbul/bosphorus-signature-yacht-36",
+        permanent: true,
+      },
+      {
+        source: "/yacht-charter-istanbul/y5",
+        destination: "/yacht-charter-istanbul/bosphorus-event-yacht-44",
+        permanent: true,
+      },
+      {
+        source: "/yacht-charter-istanbul/y6",
+        destination: "/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/yacht-charter-istanbul/y1",
+        destination: "/:locale/yacht-charter-istanbul/bosphorus-sailing-yacht-10",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/yacht-charter-istanbul/y2",
+        destination: "/:locale/yacht-charter-istanbul/bosphorus-sailing-yacht-14",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/yacht-charter-istanbul/y3",
+        destination: "/:locale/yacht-charter-istanbul/bosphorus-group-yacht-36",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/yacht-charter-istanbul/y4",
+        destination: "/:locale/yacht-charter-istanbul/bosphorus-signature-yacht-36",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/yacht-charter-istanbul/y5",
+        destination: "/:locale/yacht-charter-istanbul/bosphorus-event-yacht-44",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/yacht-charter-istanbul/y6",
+        destination: "/:locale/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
+        permanent: true,
+      },
       {
         source: "/cruises/bosphorus-dinner-cruise",
         destination: "/istanbul-dinner-cruise",

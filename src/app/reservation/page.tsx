@@ -30,7 +30,7 @@ interface ReservationPageProps {
   }>;
 }
 
-const FLEET_SLUGS = new Set(["y1", "y2", "y3", "y4", "y5", "y6"]);
+const FLEET_SLUGS = new Set(["bosphorus-sailing-yacht-10", "bosphorus-sailing-yacht-14", "bosphorus-group-yacht-36", "bosphorus-signature-yacht-36", "bosphorus-event-yacht-44", "bosphorus-mega-event-yacht-150"]);
 
 export default async function ReservationPage({ searchParams }: ReservationPageProps) {
   const resolvedSearchParams = searchParams ? await searchParams : undefined;

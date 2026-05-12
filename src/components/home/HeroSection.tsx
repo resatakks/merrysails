@@ -18,8 +18,8 @@ const heroProducts = [
   {
     href: "/yacht-charter-istanbul",
     title: "Yacht Charter Istanbul",
-    meta: "3 private yacht tiers",
-    price: "From €280",
+    meta: "6 yachts · 10–150 guests",
+    price: "From €200",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function HeroSection() {
               <span className="mt-1 block text-[var(--brand-gold)] sm:mt-0 sm:inline"> — Dinner, Sunset & Yacht Charter</span>
             </h1>
             <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-relaxed text-white/84 sm:mt-4 sm:text-base md:text-lg">
-              Book direct with Istanbul&apos;s TURSAB-licensed operator — sunset from €34, dinner from €30, private yacht from €280.
+              Book direct with Istanbul&apos;s TURSAB-licensed operator — sunset from €30, dinner from €30, private yacht from €200 across a 6-vessel Bosphorus fleet.
             </p>
           </div>
 

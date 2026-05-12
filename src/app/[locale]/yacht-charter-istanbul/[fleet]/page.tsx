@@ -26,7 +26,7 @@ export function generateStaticParams() {
   return params;
 }
 
-const VALID_SLUGS: CharterFleetSlug[] = ["y1", "y2", "y3", "y4", "y5", "y6"];
+const VALID_SLUGS: CharterFleetSlug[] = ["bosphorus-sailing-yacht-10", "bosphorus-sailing-yacht-14", "bosphorus-group-yacht-36", "bosphorus-signature-yacht-36", "bosphorus-event-yacht-44", "bosphorus-mega-event-yacht-150"];
 function isValidSlug(s: string): s is CharterFleetSlug {
   return (VALID_SLUGS as string[]).includes(s);
 }
