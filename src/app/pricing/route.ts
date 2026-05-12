@@ -103,7 +103,7 @@ A: The Bosphorus Sunset Cruise without wine starts at €34 per person. This is 
 A: Dinner cruises start from €30 per person (Silver Soft Drinks). The Silver Alcoholic package is €45/person. Gold VIP packages are €80 (soft drinks) or €90 (unlimited alcohol). Hotel pickup from Sultanahmet or Taksim is included in the Gold Unlimited Alcohol (€90) package.
 
 **Q: How much does a private yacht charter in Istanbul cost?**
-A: Private yacht charter starts from €280 for the entire boat (not per person) for 2 hours, up to 8 guests. The VIP package for larger groups is €680.
+A: Private yacht charter starts from €200 for the entire boat (not per person) for 2 hours, up to 8 guests. The VIP package for larger groups is €680.
 
 **Q: Are prices per person or per boat?**
 A: Sunset Cruise and Dinner Cruise prices are per person (shared tours). Yacht Charter and Boat Rental prices are per boat (entire vessel, any number of guests up to capacity).

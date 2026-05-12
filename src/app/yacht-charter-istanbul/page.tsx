@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
+import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
@@ -215,7 +217,7 @@ const charterCategoryCards = [
   },
   {
     title: "Mid-size group · 36 guests",
-    price: "From €280 / 2h",
+    price: "From €200 / 2h",
     body: "Mid-size decks for medium gatherings — standard and a signature upgrade for milestone birthdays, brand evenings, and smaller corporate offsites.",
   },
   {
@@ -313,10 +315,20 @@ const comparePages = [
   },
 ];
 
-export default async function YachtCharterIstanbulPage() {
+export default async function YachtCharterIstanbulPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   if (!yachtTour) {
     notFound();
   }
+
+  const resolvedSearchParams = await searchParams;
+  const hasPrefill = typeof resolvedSearchParams.prefill === "string" && resolvedSearchParams.prefill.length > 0;
+  const bookingPrefill = hasPrefill
+    ? await resolveBookingPrefill(resolvedSearchParams)
+    : null;
 
   return (
     <>
@@ -366,6 +378,14 @@ export default async function YachtCharterIstanbulPage() {
               {yachtTour.description}
             </p>
           </header>
+
+          {bookingPrefill && (
+            <TourDetailClient
+              tour={yachtTour}
+              related={relatedTours}
+              bookingPrefill={bookingPrefill}
+            />
+          )}
 
           <FleetShowcase
             locale="en"

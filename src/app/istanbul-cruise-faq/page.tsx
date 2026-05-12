@@ -32,7 +32,7 @@ const FAQ_SECTIONS: Array<{
     questions: [
       {
         q: "How much does a Bosphorus cruise cost in 2026?",
-        a: "Bosphorus cruise prices in 2026 start at €30 per person for the Silver Soft Drinks dinner cruise and €34 per person for the sunset cruise without wine. Private yacht charter starts at €280 for the entire boat (up to 8 guests). All prices are EUR-fixed at booking and paid in TRY at the daily rate.",
+        a: "Bosphorus cruise prices in 2026 start at €30 per person for the Silver Soft Drinks dinner cruise and €34 per person for the sunset cruise without wine. Private yacht charter starts at €200 for the entire boat (up to 8 guests). All prices are EUR-fixed at booking and paid in TRY at the daily rate.",
       },
       {
         q: "What is the cheapest Bosphorus cruise in Istanbul?",
@@ -380,7 +380,7 @@ export default function CruiseFAQPage() {
               Dinner cruise from €30 →
             </Link>
             <Link href="/yacht-charter-istanbul" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
-              Yacht charter from €280 →
+              Yacht charter from €200 →
             </Link>
             <Link href="/pricing" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Full pricing →

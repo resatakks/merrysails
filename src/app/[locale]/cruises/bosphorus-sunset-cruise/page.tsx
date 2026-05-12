@@ -229,7 +229,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         href: "/fr/yacht-charter-istanbul",
         title: "Yacht Privé",
-        desc: "Expérience entièrement privée à partir de €280.",
+        desc: "Expérience entièrement privée à partir de €200.",
       },
       {
         href: "/cruises/bosphorus-sunset-cruise",

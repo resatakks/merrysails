@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`;
 export const metadata: Metadata = {
   title: "Private Dinner Cruise for Couples Istanbul 2026",
   description:
-    "Private dinner cruise for couples Istanbul from EUR 280. Quiet Bosphorus evening on a private yacht — your own table, custom route, no shared format.",
+    "Private dinner cruise for couples Istanbul from EUR 200. Quiet Bosphorus evening on a private yacht — your own table, custom route, no shared format.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/private-dinner-cruise-for-couples-istanbul"),

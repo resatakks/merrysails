@@ -129,7 +129,7 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
     { question: "How many guests can a private yacht hold in Istanbul?", answer: "The public Essential, Premium, and VIP starter packages are positioned around a private 2-person setup, but larger groups can still be matched to the right yacht and extras plan depending on the vessel assigned." },
     { question: "Can I customize the yacht cruise route?", answer: "Absolutely! One of the biggest advantages of a private yacht charter is complete route flexibility. Your captain will work with you to create a custom itinerary — whether you want to cruise past specific landmarks, stop for swimming, or focus on sunset views." },
     { question: "Is catering available on the yacht charter?", answer: "Yes. The yacht charter page includes a visible add-on structure for meals, drinks, transfer, entertainment, cake, and extra service requests." },
-    { question: "How much does yacht rental cost in Istanbul?", answer: "The public yacht charter packages currently start from EUR 280 for Essential, EUR 380 for Premium, and EUR 680 for VIP." },
+    { question: "How much does yacht rental cost in Istanbul?", answer: "The public yacht charter packages currently start from EUR 200 for Essential, EUR 380 for Premium, and EUR 680 for VIP." },
     { question: "How far in advance should I book a yacht charter?", answer: "We recommend booking at least 48 hours in advance to secure your preferred date and yacht. For peak season (June–September) and weekends, booking 1–2 weeks ahead is advisable. Last-minute bookings are possible subject to availability." },
   ],
   "bosphorus-sightseeing-cruise": [
@@ -328,8 +328,8 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Book the Bosphorus dinner cruise in Istanbul from EUR 30. Shared 3.5-hour evening cruise with Silver and Gold package choices, package-based drinks, and hotel pickup support.",
   },
   "yacht-charter-in-istanbul": {
-    title: "Yacht Charter Istanbul 2026 — 3 Packages from EUR 280 | Book Online",
-    description: "Book yacht charter in Istanbul from EUR 280 per yacht. Choose Essential, Premium, or VIP and expand the charter with meals, drinks, transfer, and event add-ons.",
+    title: "Yacht Charter Istanbul 2026 — 3 Packages from EUR 200 | Book Online",
+    description: "Book yacht charter in Istanbul from EUR 200 per yacht. Choose Essential, Premium, or VIP and expand the charter with meals, drinks, transfer, and event add-ons.",
   },
   "corporate-event-bosphorus-cruise": {
     title: "Corporate Event Cruise Istanbul 2026 | Bosphorus Yacht Venue",

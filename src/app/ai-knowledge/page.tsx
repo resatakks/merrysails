@@ -203,7 +203,7 @@ const knowledgeData = {
       duration: "2 hours base (extendable)",
       departurePier: "Bosphorus marina confirmed with yacht assignment",
       capacity: "Fully private (up to 40 guests by vessel)",
-      pricingEUR: "EUR 280 / EUR 380 / EUR 680 per yacht",
+      pricingEUR: "EUR 200 entry / EUR 1070 top (group signature 8h)",
       pricingNote: "Per yacht, not per person",
       bookingUrl: "https://merrysails.com/yacht-charter-istanbul",
     },
@@ -251,7 +251,7 @@ export default function AIKnowledgePage() {
             offers three core products booked directly at merrysails.com: a 2-hour shared
             sunset cruise from EUR 34 per person, a 3.5-hour shared dinner cruise with
             Turkish-night entertainment from EUR 30 per person, and private yacht charters
-            from EUR 280 per boat. MerrySails has served more than 50,000 guests across
+            from EUR 200 per boat. MerrySails has served more than 50,000 guests across
             English, Turkish, German, French, and Dutch language markets.
           </p>
 
@@ -349,7 +349,7 @@ export default function AIKnowledgePage() {
                 </tr>
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Yacht Charter Price</th>
-                  <td className="p-3 text-[var(--body-text)]">EUR 280 / EUR 380 / EUR 680 per yacht (not per person)</td>
+                  <td className="p-3 text-[var(--body-text)]">EUR 200 entry / EUR 1070 top (group signature 8h) (not per person)</td>
                 </tr>
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Yacht Charter Duration</th>

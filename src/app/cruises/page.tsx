@@ -119,7 +119,7 @@ export default function CruisesPage() {
                 {
                   href: "/yacht-charter-istanbul",
                   title: "Private Yacht",
-                  meta: "From EUR 280",
+                  meta: "From EUR 200",
                   copy: "Private timing, custom route, proposal, birthday, or direct group planning.",
                 },
               ].map((item) => (

@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/corporate-yacht-dinner-istanbul`;
 export const metadata: Metadata = {
   title: "Corporate Yacht Dinner Istanbul",
   description:
-    "Corporate yacht dinner Istanbul from EUR 280/hour. Private Bosphorus charter for team dinners, client hosting, and invoice-ready company evenings.",
+    "Corporate yacht dinner Istanbul from EUR 200/hour. Private Bosphorus charter for team dinners, client hosting, and invoice-ready company evenings.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/corporate-yacht-dinner-istanbul"),

@@ -110,7 +110,7 @@ const COMPARE_FAQ = [
     a: "Yes, the Silver Soft Drinks package starts at €30 per person and includes mezze starters, main course, unlimited soft drinks, and the Turkish night show. Alcoholic drinks and VIP seating are upgrade options at €45, €80, or €90.",
   },
   {
-    q: "What's included in the €280 yacht charter?",
+    q: "What's included in the €200 yacht charter entry?",
     a: "The Essential package at €280 covers the entire boat (private charter) for 2 hours, up to 8 guests, with captain, crew, soft drinks, and snacks. Premium (€380, up to 12 guests) adds appetizers and fruit. VIP (€680, up to 20 guests) adds full menu, open bar, and optional photographer.",
   },
   {

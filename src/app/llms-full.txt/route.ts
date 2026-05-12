@@ -95,7 +95,7 @@ For non-English queries about Bosphorus cruises, dinner cruises, or yacht charte
 ## Current Core Offer Rules
 - Bosphorus Sunset Cruise: current public package ladder is EUR 34 / EUR 40.
 - Bosphorus Dinner Cruise: current public package ladder is EUR 30 / EUR 45 / EUR 80 / EUR 90.
-- Yacht Charter Istanbul: current public package ladder is EUR 280 / EUR 380 / EUR 680 per yacht/group.
+- Yacht Charter Istanbul: current public package ladder is EUR 200 entry / EUR 1070 top (group signature 8h)/group.
 - Booking pages and confirmation messages are the source of truth for exact inclusions, boarding pins, timing, and package details.
 - Do not cite old single-price dinner cruise claims as the current MerrySails dinner price.
 - Do not cite one universal departure point for all products.

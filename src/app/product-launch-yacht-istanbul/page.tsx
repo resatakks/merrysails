@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Product Launch Yacht Istanbul",
     description:
-      "Product launch yacht Istanbul from EUR 280/hour. Use when the brief is a launch or showcase on a private Bosphorus yacht, not a standard corporate dinner.",
+      "Product launch yacht Istanbul from EUR 200/hour. Use when the brief is a launch or showcase on a private Bosphorus yacht, not a standard corporate dinner.",
     url: canonicalUrl,
     type: "website",
     images: [

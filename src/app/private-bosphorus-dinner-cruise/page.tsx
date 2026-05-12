@@ -11,7 +11,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Private Bosphorus Dinner Cruise",
   description:
-    "Private Bosphorus dinner cruise Istanbul from EUR 280. Full vessel for couples and small groups — private dinner table, custom route timed for sunset or city lights.",
+    "Private Bosphorus dinner cruise Istanbul from EUR 200. Full vessel for couples and small groups — private dinner table, custom route timed for sunset or city lights.",
   alternates: {
     canonical: `${SITE_URL}/private-bosphorus-dinner-cruise`,
     languages: buildHreflang("/private-bosphorus-dinner-cruise"),

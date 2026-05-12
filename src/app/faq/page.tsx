@@ -30,7 +30,7 @@ export const metadata = {
 const faqs = [
   {
     q: "How much does a Bosphorus cruise cost in Istanbul?",
-    a: "Prices depend on the experience you choose. The Bosphorus Sunset Cruise currently starts from EUR 34 for the Without Wine option and EUR 40 for the wine-served option, the Bosphorus Dinner Cruise spans EUR 30 to EUR 90 across four shared packages, and Yacht Charter Istanbul starts from EUR 280 per yacht. Proposal, private dinner, boat rental, and corporate events are priced according to the setup you request.",
+    a: "Prices depend on the experience you choose. The Bosphorus Sunset Cruise currently starts from EUR 34 for the Without Wine option and EUR 40 for the wine-served option, the Bosphorus Dinner Cruise spans EUR 30 to EUR 90 across four shared packages, and Yacht Charter Istanbul starts from EUR 200 per yacht. Proposal, private dinner, boat rental, and corporate events are priced according to the setup you request.",
   },
   {
     q: "How do I book a Bosphorus boat tour?",

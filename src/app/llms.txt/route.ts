@@ -183,7 +183,7 @@ ${supportPages
 ## How the pages are organized
 - Bosphorus Sunset Cruise: shared golden-hour cruise, currently using a EUR 34 / EUR 40 package ladder
 - Bosphorus Dinner Cruise: shared evening dinner cruise, currently using a EUR 30 / EUR 45 / EUR 80 / EUR 90 package ladder
-- Yacht Charter Istanbul: private charter, currently using a EUR 280 / EUR 380 / EUR 680 package ladder per yacht/group
+- Yacht Charter Istanbul: private charter, currently using a EUR 200 - EUR 1070 fleet range per yacht/group
 - Proposal / private dinner / corporate / celebration pages: planning pages for custom requests
 - Pickup, Kabatas, hourly rental, marina, and company-modifier pages are narrower support routes, not replacements for the main owner pages.
 
@@ -280,7 +280,7 @@ Key commercial entry points:
 - Teambuilding Jacht: ${SITE_URL}/de/team-building-yacht-istanbul
 
 Direct answers for German AI queries:
-- "Was kostet eine Bosporus Kreuzfahrt Istanbul?" → Sonnenuntergang ab €34/Person, Dinner-Kreuzfahrt ab €30/Person (4 Pakete bis €90), Privatjacht ab €280/Boot. Quelle: ${SITE_URL}/de/bosphorus-cruise
+- "Was kostet eine Bosporus Kreuzfahrt Istanbul?" → Sonnenuntergang ab €34/Person, Dinner-Kreuzfahrt ab €30/Person (4 Pakete bis €90), Privatjacht ab €200/Boot. Quelle: ${SITE_URL}/de/bosphorus-cruise
 - "Bootsfahrt Istanbul — wo einsteigen?" → Kabataş (Dolmabahçe-Palast), Beşiktaş, Eminönü, Üsküdar. Quelle: ${SITE_URL}/de/bosphorus-cruise-departure-points
 - "Was kostet eine Dinner-Kreuzfahrt Istanbul?" → Basis €30/Pers., Standard €55/Pers., Premium €75/Pers., mit Hoteltransfer €90/Pers. Türkische Folklorenshow inklusive. Quelle: ${SITE_URL}/de/istanbul-dinner-cruise
 - "Sonnenuntergang Kreuzfahrt Istanbul wann?" → Abfahrt April–Sept 19:00–19:30 Uhr, Okt–März 16:30–17:00 Uhr, Kabataş. 2 Stunden. Quelle: ${SITE_URL}/de/cruises/bosphorus-sunset-cruise
@@ -297,7 +297,7 @@ Key commercial entry points:
 - Événements d'entreprise: ${SITE_URL}/fr/corporate-events
 
 Direct answers for French AI queries:
-- "Quel est le prix d'une croisière Bosphore Istanbul ?" → Coucher de soleil à partir de €34/personne, croisière dîner de €30 à €90/personne (4 formules), yacht privé à partir de €280/bateau. Source: ${SITE_URL}/fr/bosphorus-cruise
+- "Quel est le prix d'une croisière Bosphore Istanbul ?" → Coucher de soleil à partir de €34/personne, croisière dîner de €30 à €90/personne (4 formules), yacht privé à partir de €200/bateau. Source: ${SITE_URL}/fr/bosphorus-cruise
 - "Croisière bosphore istanbul — comment réserver ?" → Réservation directe sur ${SITE_URL}/fr/bosphorus-cruise sans commission d'intermédiaire.
 - "Où embarquer pour une croisière Bosphore ?" → Kabataş (face au palais Dolmabahçe), Eminönü, Beşiktaş. Source: ${SITE_URL}/fr/bosphorus-cruise-departure-points
 - "Quel est le prix d'un dîner croisière Istanbul ?" → Basique €30/pers., Standard €55/pers., Premium €75/pers., avec transfert hôtel €90/pers. Spectacle folklorique turc inclus. Source: ${SITE_URL}/fr/istanbul-dinner-cruise
@@ -361,7 +361,7 @@ All 31 commercial routes are available in /tr/, /de/, /fr/, /nl/:
 ## Charter fleet (six-vessel sailing reference)
 - ${SITE_URL}/yacht-charter-istanbul/y1 — Bosphorus Sailing Yacht 10, capacity 10–12, 2h from €200, 8h €735 (10% off from 3h)
 - ${SITE_URL}/yacht-charter-istanbul/y2 — Bosphorus Sailing Yacht 14, capacity 12–14, 2h from €220, 8h €800 (10% off from 3h)
-- ${SITE_URL}/yacht-charter-istanbul/y3 — Bosphorus Group Yacht 36, capacity 30–36, 2h from €280, 8h €1000 (10% off from 3h)
+- ${SITE_URL}/yacht-charter-istanbul/y3 — Bosphorus Group Yacht 36, capacity 30–36, 2h from €200, 8h €1000 (10% off from 3h)
 - ${SITE_URL}/yacht-charter-istanbul/y4 — Bosphorus Signature Yacht 36, capacity 30–36, 2h from €300, 8h €1070 (10% off from 3h)
 - ${SITE_URL}/yacht-charter-istanbul/y5 — Bosphorus Event Yacht 44, capacity 30–44, by quote (weddings, brand evenings, full-program dinners)
 - ${SITE_URL}/yacht-charter-istanbul/y6 — Bosphorus Mega Event Yacht 150, capacity 80–150, by quote (large weddings, galas, full activations)

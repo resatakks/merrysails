@@ -102,7 +102,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "Wie viel kostet eine Bosporus-Kreuzfahrt in Istanbul?",
-        a: "Die Preise hängen vom gewählten Erlebnis ab. Die Bosporus-Sonnenuntergangs-Kreuzfahrt beginnt derzeit bei EUR 34 für die Variante ohne Wein und EUR 40 für die Variante mit Weinservice. Die Bosporus-Dinner-Kreuzfahrt liegt zwischen EUR 30 und EUR 90 in vier geteilten Paketen, und der Jachtcharter Istanbul beginnt bei EUR 280 pro Jacht. Heiratsanträge, private Dinner, Bootsverleih und Firmenevents werden je nach gewünschtem Setup individuell kalkuliert.",
+        a: "Die Preise hängen vom gewählten Erlebnis ab. Die Bosporus-Sonnenuntergangs-Kreuzfahrt beginnt derzeit bei EUR 34 für die Variante ohne Wein und EUR 40 für die Variante mit Weinservice. Die Bosporus-Dinner-Kreuzfahrt liegt zwischen EUR 30 und EUR 90 in vier geteilten Paketen, und der Jachtcharter Istanbul beginnt bei EUR 200 pro Jacht. Heiratsanträge, private Dinner, Bootsverleih und Firmenevents werden je nach gewünschtem Setup individuell kalkuliert.",
       },
       {
         q: "Wie buche ich eine Bosporus-Bootstour?",
@@ -168,7 +168,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "Combien coûte une croisière sur le Bosphore à Istanbul ?",
-        a: "Les prix dépendent de l'expérience choisie. La croisière coucher de soleil sur le Bosphore commence actuellement à EUR 34 pour l'option sans vin et EUR 40 pour l'option avec vin. La croisière dîner sur le Bosphore varie de EUR 30 à EUR 90 sur quatre formules partagées, et le charter de yacht à Istanbul commence à EUR 280 par yacht. Les demandes en mariage, dîners privés, locations de bateau et événements d'entreprise sont tarifés selon la configuration demandée.",
+        a: "Les prix dépendent de l'expérience choisie. La croisière coucher de soleil sur le Bosphore commence actuellement à EUR 34 pour l'option sans vin et EUR 40 pour l'option avec vin. La croisière dîner sur le Bosphore varie de EUR 30 à EUR 90 sur quatre formules partagées, et le charter de yacht à Istanbul commence à EUR 200 par yacht. Les demandes en mariage, dîners privés, locations de bateau et événements d'entreprise sont tarifés selon la configuration demandée.",
       },
       {
         q: "Comment réserver une excursion en bateau sur le Bosphore ?",
@@ -234,7 +234,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "Hoeveel kost een Bosporus cruise in Istanbul?",
-        a: "Prijzen zijn afhankelijk van de gekozen ervaring. De Bosporus Zonsondergang Cruise begint vanaf EUR 34 voor de optie zonder wijn en EUR 40 voor de optie met wijnservice. De Bosporus Diner Cruise loopt van EUR 30 tot EUR 90 in vier gedeelde pakketten, en Jachtcharter Istanbul begint vanaf EUR 280 per jacht. Huwelijksaanzoeken, privédiners, boothuur en bedrijfsevenementen worden geprijsd volgens de gewenste opzet.",
+        a: "Prijzen zijn afhankelijk van de gekozen ervaring. De Bosporus Zonsondergang Cruise begint vanaf EUR 34 voor de optie zonder wijn en EUR 40 voor de optie met wijnservice. De Bosporus Diner Cruise loopt van EUR 30 tot EUR 90 in vier gedeelde pakketten, en Jachtcharter Istanbul begint vanaf EUR 200 per jacht. Huwelijksaanzoeken, privédiners, boothuur en bedrijfsevenementen worden geprijsd volgens de gewenste opzet.",
       },
       {
         q: "Hoe boek ik een Bosporus boottocht?",

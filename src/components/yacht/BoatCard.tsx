@@ -106,19 +106,32 @@ export default function BoatCard({
     .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`);
   const whatsappHref = `${WHATSAPP_URL}?text=${encodeURIComponent(quotePrefill)}`;
 
+  const detailHref = `${fleetDetailBasePath}/${boat.slug}`;
+
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-sm transition-shadow hover:shadow-md">
-      <div className="relative aspect-[4/3] w-full bg-[var(--surface-alt)]">
-        {currentImage && (
-          <Image
-            src={currentImage}
-            alt={`${t.label} — ${boat.altDescriptor}`}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-cover"
-            priority={false}
-          />
-        )}
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[var(--brand-primary)]/40">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--surface-alt)]">
+        <Link
+          href={detailHref}
+          className="absolute inset-0 z-0 block"
+          aria-label={`${t.label} — ${strings.viewDetails}`}
+        >
+          {currentImage && (
+            <Image
+              src={currentImage}
+              alt={`${t.label} — ${boat.altDescriptor}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              priority={false}
+            />
+          )}
+        </Link>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-end p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span className="rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-bold text-[var(--brand-primary)] shadow-md backdrop-blur-sm">
+            {strings.viewDetails} →
+          </span>
+        </div>
 
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
           {boat.badges?.map((b) => (
@@ -137,23 +150,31 @@ export default function BoatCard({
         </div>
 
         {visibleImages.length > 1 && (
-          <div className="absolute inset-x-0 bottom-3 flex items-center justify-between px-3">
+          <div className="absolute inset-x-0 bottom-3 z-30 flex items-center justify-between px-3">
             <button
               type="button"
               aria-label="Previous"
-              onClick={() => setImageIdx((i) => (i - 1 + visibleImages.length) % visibleImages.length)}
-              className="rounded-full bg-black/40 px-2.5 py-1 text-white backdrop-blur-sm transition-colors hover:bg-black/60"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setImageIdx((i) => (i - 1 + visibleImages.length) % visibleImages.length);
+              }}
+              className="rounded-full bg-black/50 px-2.5 py-1 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
             >
               ‹
             </button>
-            <span className="rounded-full bg-black/40 px-2.5 py-0.5 text-[11px] font-medium text-white backdrop-blur-sm">
+            <span className="rounded-full bg-black/50 px-2.5 py-0.5 text-[11px] font-medium text-white backdrop-blur-sm">
               {(imageIdx % visibleImages.length) + 1} / {visibleImages.length}
             </span>
             <button
               type="button"
               aria-label="Next"
-              onClick={() => setImageIdx((i) => (i + 1) % visibleImages.length)}
-              className="rounded-full bg-black/40 px-2.5 py-1 text-white backdrop-blur-sm transition-colors hover:bg-black/60"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setImageIdx((i) => (i + 1) % visibleImages.length);
+              }}
+              className="rounded-full bg-black/50 px-2.5 py-1 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
             >
               ›
             </button>

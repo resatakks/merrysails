@@ -232,7 +232,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       },
       {
         title: "Tarification par yacht en EUR",
-        desc: "Toute la flotte est tarifée par yacht en euros. Petit pont à partir de €200/2 h, pont de groupe à partir de €280/2 h ; yachts événement chiffrés au programme. Dès trois heures, dix pour cent partent automatiquement à plat.",
+        desc: "Toute la flotte est tarifée par yacht en euros. Petit pont à partir de €200/2 h, pont de groupe à partir de €200/2 h ; yachts événement chiffrés au programme. Dès trois heures, dix pour cent partent automatiquement à plat.",
       },
     ],
     howItWorks: {

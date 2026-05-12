@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/client-hosting-yacht-istanbul`;
 export const metadata: Metadata = {
   title: "Client Hosting Yacht Istanbul",
   description:
-    "Client hosting yacht Istanbul from EUR 280/hour. Private Bosphorus charter for companies focused on hospitality, guest experience, and invoice-ready planning.",
+    "Client hosting yacht Istanbul from EUR 200/hour. Private Bosphorus charter for companies focused on hospitality, guest experience, and invoice-ready planning.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/client-hosting-yacht-istanbul"),

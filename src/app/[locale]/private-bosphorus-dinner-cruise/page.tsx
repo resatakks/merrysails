@@ -226,7 +226,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     tableRows: [
       { label: "Type de bateau", value: "Yacht privé – réservé à votre groupe" },
       { label: "Taille du groupe", value: "2 à 10 personnes (couple ou petit groupe)" },
-      { label: "Prix de départ", value: "Forfaits à partir de €280" },
+      { label: "Prix de départ", value: "Forfaits à partir de €200" },
       { label: "Heure de départ", value: "Coucher du soleil ou soirée — flexible" },
       { label: "Licence", value: "Agréé TÜRSAB Groupe A depuis 2001" },
     ],
@@ -354,7 +354,7 @@ const COMPARE_LINKS_BY_LOCALE: Record<
     {
       href: "/yacht-charter-istanbul",
       title: "Location de Yacht Privé",
-      description: "Yachts entièrement privés à partir de €280, plus flexibles qu'un dîner classique.",
+      description: "Yachts entièrement privés à partir de €200, plus flexibles qu'un dîner classique.",
     },
     {
       href: "/boat-rental-istanbul",

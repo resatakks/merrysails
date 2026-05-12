@@ -60,7 +60,7 @@ const CONTENT: Record<string, LocaleContent> = {
     tourOptions: [
       { slug: "sunset", title: "Boğaz Gün Batımı Turu", price: "€34", duration: "2 saat", tag: "En çok tercih edilen", desc: "İki seçenek: Şarapsız €34, Şaraplı €40. Altın saat manzarası, canlı rehber ve hafif ikramlar dahil. Günbatımı ışığında Boğaz köprüleri ve tarihi yalılar." },
       { slug: "dinner", title: "İstanbul Akşam Yemeği Turu", price: "€30", duration: "3,5 saat", tag: "4 paket seçeneği", desc: "€30'dan €90'a kadar 4 farklı paket. Türk gecesi gösterisi, akşam yemeği ve Sultanahmet/Taksim'den otel transfer desteği." },
-      { slug: "yacht", title: "Özel Yat Kiralama", price: "€280", duration: "2+ saat", tag: "Tam özel deneyim", desc: "Tüm tekne size özel. Evlilik teklifi, doğum günü, aile kutlaması ve kurumsal etkinlikler için ideal. Güzergah ve menüyü siz belirlersiniz." },
+      { slug: "yacht", title: "Özel Yat Kiralama", price: "€200", duration: "2+ saat", tag: "Tam özel deneyim", desc: "Tüm tekne size özel. Evlilik teklifi, doğum günü, aile kutlaması ve kurumsal etkinlikler için ideal. Güzergah ve menüyü siz belirlersiniz." },
       { slug: "boat", title: "Tekne Kiralama İstanbul", price: "Saatlik", duration: "Esnek", tag: "Önce tekne seçin", desc: "Tekne ve güzergahı siz belirleyin, dilediğiniz ekstraları sonra ekleyin. 2 saatten günlük kiralamaya kadar tüm süreler mevcuttur." },
     ],
     priceTableTitle: "İstanbul Boğaz Turu Fiyatları 2026",
@@ -119,11 +119,11 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     htmlLang: "de-DE",
     title: "Bosporus Kreuzfahrt Istanbul — Ab €34",
-    description: "Bosporus Kreuzfahrt Istanbul: Sonnenuntergang ab €34, Dinner-Kreuzfahrt ab €30, Privatjacht ab €280. TÜRSAB-lizenziert seit 2001, 50.000+ Gäste.",
+    description: "Bosporus Kreuzfahrt Istanbul: Sonnenuntergang ab €34, Dinner-Kreuzfahrt ab €30, Privatjacht ab €200. TÜRSAB-lizenziert seit 2001, 50.000+ Gäste.",
     canonicalPath: "/de/bosphorus-cruise",
     h1: "Bosporus Kreuzfahrt Istanbul",
     subtitle: "MerrySails Istanbul",
-    intro: "Der Bosporus ist die 31 Kilometer lange Meerenge, die Europa und Asien trennt — und das Herzstück jedes Istanbulbesuchs. Eine Bosporus Kreuzfahrt führt Sie an osmanischen Palästen, jahrhundertealten Festungen und malerischen Holzvillen (Yalı) vorbei, während zwei Kontinente gleichzeitig am Horizont leuchten. Merry Tourism, TURSAB A-Gruppe lizenziert seit 2001, bietet Ihnen drei Erlebniskategorien: Sonnenuntergangs-Kreuzfahrt ab €34, Dinner-Kreuzfahrt ab €30 und Privatjacht ab €280. Über 50.000 Gäste haben mit uns die Meerenge zwischen zwei Welten erlebt — buchen Sie direkt beim Anbieter, ohne Aufpreis.",
+    intro: "Der Bosporus ist die 31 Kilometer lange Meerenge, die Europa und Asien trennt — und das Herzstück jedes Istanbulbesuchs. Eine Bosporus Kreuzfahrt führt Sie an osmanischen Palästen, jahrhundertealten Festungen und malerischen Holzvillen (Yalı) vorbei, während zwei Kontinente gleichzeitig am Horizont leuchten. Merry Tourism, TURSAB A-Gruppe lizenziert seit 2001, bietet Ihnen drei Erlebniskategorien: Sonnenuntergangs-Kreuzfahrt ab €34, Dinner-Kreuzfahrt ab €30 und Privatjacht ab €200. Über 50.000 Gäste haben mit uns die Meerenge zwischen zwei Welten erlebt — buchen Sie direkt beim Anbieter, ohne Aufpreis.",
     trustBadge: "TÜRSAB A-Gruppe lizenziert · seit 2001 · 50.000+ Gäste",
     keyFacts: [
       { label: "Sonnenuntergang-Tour", value: "ab €34" },
@@ -134,7 +134,7 @@ const CONTENT: Record<string, LocaleContent> = {
     tourOptions: [
       { slug: "sunset", title: "Bosporus Sonnenuntergang-Kreuzfahrt", price: "€34", duration: "2 Std.", tag: "Beliebteste Option", desc: "Die Sonnenuntergangs-Kreuzfahrt ist die meistgebuchte Erfahrung auf dem Bosporus. Zwei Optionen: Ohne Wein €34, mit einem Glas türkischem Wein €40 — jeweils inklusive Guide, Erfrischungen und Brückendurchfahrt. Die Route führt am Dolmabahçe-Palast, der Rumeli Hisarı-Festung und den Herrenhäusern am Ufer entlang, während das goldene Abendlicht die Silhouette des europäischen und asiatischen Ufers in sanftes Orange taucht." },
       { slug: "dinner", title: "Istanbul Dinner Cruise", price: "€30", duration: "3,5 Std.", tag: "4 Pakete", desc: "Die Dinner-Kreuzfahrt kombiniert ein 3,5-stündiges Fahrerlebnis auf dem Bosporus mit einem mehrgängigen türkischen Abendessen und einer traditionellen Kulturshow. Vier Pakete stehen zur Wahl: Basis (€30), Silver mit Alkohol (€45), Gold ohne Alkohol (€80) und Komfortpaket mit Hoteltransfer ab Sultanahmet oder Taksim (€90). Vegetarische Optionen und Kindermenüs sind auf Anfrage erhältlich." },
-      { slug: "yacht", title: "Privatjachtcharter", price: "€280", duration: "2+ Std.", tag: "Vollständig privat", desc: "Beim Privatjachtcharter gehört das gesamte Schiff ausschließlich Ihrer Gruppe — ideal für Heiratsanträge, Geburtstagsfeiern, Familientreffen und Firmenevents. Route, Menü und Zeitplan bestimmen Sie selbst. Unsere Flotte bietet Kapazitäten für 2 bis 30 Personen; Merry Tourism berät Sie kostenlos bei der Auswahl des passenden Schiffs." },
+      { slug: "yacht", title: "Privatjachtcharter", price: "€200", duration: "2+ Std.", tag: "Vollständig privat", desc: "Beim Privatjachtcharter gehört das gesamte Schiff ausschließlich Ihrer Gruppe — ideal für Heiratsanträge, Geburtstagsfeiern, Familientreffen und Firmenevents. Route, Menü und Zeitplan bestimmen Sie selbst. Unsere Flotte bietet Kapazitäten für 2 bis 30 Personen; Merry Tourism berät Sie kostenlos bei der Auswahl des passenden Schiffs." },
       { slug: "boat", title: "Bootsverleih Istanbul", price: "Stündlich", duration: "Flexibel", tag: "Boot zuerst wählen", desc: "Wählen Sie Ihr Wunschboot aus unserer Flotte, legen Sie Route und Dauer selbst fest und fügen Sie optional Catering, Guide oder besondere Dekoration hinzu. Buchbar von 2 Stunden bis zur ganzen Tagesmiete, ganzjährig verfügbar." },
     ],
     priceTableTitle: "Bosporus Kreuzfahrt Preistabelle 2026",
@@ -150,7 +150,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
     compareSectionTitle: "Welche Bosporus-Tour passt zu Ihnen?",
     compareItems: [
-      { title: "Dauer und Budget", desc: "Für ein kompaktes 2-Stunden-Erlebnis bei Sonnenuntergang empfehlen wir die Sonnenuntergangs-Kreuzfahrt ab €34 — perfekt für Reisende mit knappem Zeitplan. Wer einen vollständigen Abend mit türkischer Küche und Kulturshow erleben möchte, wählt die Dinner-Kreuzfahrt (€30–€90, 3,5 Stunden). Für maximale Privatsphäre, maßgeschneiderte Route und individuelle Gruppengrößen ab 2 Personen bietet sich die Privatjacht ab €280 an." },
+      { title: "Dauer und Budget", desc: "Für ein kompaktes 2-Stunden-Erlebnis bei Sonnenuntergang empfehlen wir die Sonnenuntergangs-Kreuzfahrt ab €34 — perfekt für Reisende mit knappem Zeitplan. Wer einen vollständigen Abend mit türkischer Küche und Kulturshow erleben möchte, wählt die Dinner-Kreuzfahrt (€30–€90, 3,5 Stunden). Für maximale Privatsphäre, maßgeschneiderte Route und individuelle Gruppengrößen ab 2 Personen bietet sich die Privatjacht ab €200 an." },
       { title: "Privat oder gemeinsam?", desc: "Sonnenuntergangs- und Dinner-Kreuzfahrten finden auf geteilten Booten mit anderen Gästen statt — gesellig, erschwinglich und ideal für Einzelreisende oder Paare. Möchten Sie einen romantischen Heiratsantrag machen, eine Geburtstagsfeier veranstalten oder mit einer Firmengruppe alleine auf dem Bosporus sein? Dann ist die Privatjacht die richtige Wahl: Das Boot gehört ausschließlich Ihnen, und Sie gestalten das Erlebnis von Anfang bis Ende selbst." },
       { title: "Buchungstiming", desc: "In der Hauptsaison von Mai bis September sind die beliebtesten Abendtermine häufig 1 bis 2 Wochen im Voraus ausgebucht, besonders an Wochenenden und türkischen Feiertagen. Wir empfehlen, bei einem festen Reisedatum frühzeitig online zu reservieren. Außerhalb der Hochsaison (Oktober–April) sind kurzfristige Buchungen meist problemlos möglich, und die Boote sind ruhiger." },
     ],
@@ -196,11 +196,11 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     htmlLang: "fr-FR",
     title: "Croisière Bosphore Istanbul — À partir de €34",
-    description: "Croisière Bosphore Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €280. Agence TÜRSAB groupe A, 50 000+ clients. Réservez en ligne.",
+    description: "Croisière Bosphore Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €200. Agence TÜRSAB groupe A, 50 000+ clients. Réservez en ligne.",
     canonicalPath: "/fr/bosphorus-cruise",
     h1: "Croisière Bosphore Istanbul",
     subtitle: "MerrySails Istanbul",
-    intro: "Comparez toutes les options de croisière sur le Bosphore à Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €280. Agence certifiée TÜRSAB depuis 2001, plus de 50 000 clients satisfaits.",
+    intro: "Comparez toutes les options de croisière sur le Bosphore à Istanbul : coucher de soleil dès €34, dîner dès €30, yacht privé dès €200. Agence certifiée TÜRSAB depuis 2001, plus de 50 000 clients satisfaits.",
     trustBadge: "Certifié TÜRSAB groupe A · depuis 2001 · 50 000+ clients",
     keyFacts: [
       { label: "Coucher de soleil", value: "dès €34" },
@@ -211,7 +211,7 @@ const CONTENT: Record<string, LocaleContent> = {
     tourOptions: [
       { slug: "sunset", title: "Croisière Coucher de Soleil Bosphore", price: "€34", duration: "2h", tag: "Option la plus populaire", desc: "Deux formules : sans vin €34, avec vin €40. Panorama doré, guide en direct et rafraîchissements inclus. Passage sous les ponts et villas ottomanes." },
       { slug: "dinner", title: "Croisière Dîner Istanbul", price: "€30", duration: "3h30", tag: "4 formules", desc: "4 formules de €30 à €90. Spectacle de nuit turc, dîner et transfert hôtel depuis Sultanahmet/Taksim disponible." },
-      { slug: "yacht", title: "Charter Yacht Privé", price: "€280", duration: "2h+", tag: "Entièrement privatisé", desc: "Le bateau entier rien que pour vous. Idéal pour demande en mariage, anniversaire, fête familiale et événements d'entreprise. Itinéraire et menu personnalisés." },
+      { slug: "yacht", title: "Charter Yacht Privé", price: "€200", duration: "2h+", tag: "Entièrement privatisé", desc: "Le bateau entier rien que pour vous. Idéal pour demande en mariage, anniversaire, fête familiale et événements d'entreprise. Itinéraire et menu personnalisés." },
       { slug: "boat", title: "Location de Bateau Istanbul", price: "À l'heure", duration: "Flexible", tag: "Choisissez d'abord le bateau", desc: "Choisissez bateau et itinéraire, puis ajoutez les extras souhaités. De 2 heures à la journée complète." },
     ],
     priceTableTitle: "Tableau des Prix — Croisière Bosphore 2026",
@@ -227,7 +227,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
     compareSectionTitle: "Quelle croisière vous convient ?",
     compareItems: [
-      { title: "Durée et budget", desc: "Coucher de soleil (€34) pour 2h légères, dîner (€30–€90) pour une soirée complète, yacht privé (€280+) pour une intimité totale." },
+      { title: "Durée et budget", desc: "Coucher de soleil (€34) pour 2h légères, dîner (€30–€90) pour une soirée complète, yacht privé (€200+) pour une intimité totale." },
       { title: "Privé ou partagé ?", desc: "Les croisières coucher de soleil et dîner sont sur des bateaux partagés. Pour une demande en mariage, une fête ou un groupe privatisé, optez pour le yacht privé." },
       { title: "Quand réserver ?", desc: "En haute saison (mai–septembre), les dates populaires se remplissent 1 à 2 semaines à l'avance. Réservez tôt si vous avez une date précise." },
     ],
@@ -248,7 +248,7 @@ const CONTENT: Record<string, LocaleContent> = {
     ],
     faqTitle: "Questions fréquentes",
     faqs: [
-      { q: "Quel est le prix d'une croisière Bosphore Istanbul ?", a: "Une croisière Bosphore Istanbul coûte à partir de €34 par personne pour la croisière coucher de soleil (2h). La croisière dîner commence à €30/personne. Le charter de yacht privé est disponible à partir de €280 par bateau. Tous les prix incluent le capitaine, l'équipage et les accompagnements de base." },
+      { q: "Quel est le prix d'une croisière Bosphore Istanbul ?", a: "Une croisière Bosphore Istanbul coûte à partir de €34 par personne pour la croisière coucher de soleil (2h). La croisière dîner commence à €30/personne. Le charter de yacht privé est disponible à partir de €200 par bateau. Tous les prix incluent le capitaine, l'équipage et les accompagnements de base." },
       { q: "Combien de temps dure une croisière sur le Bosphore ?", a: "La croisière coucher de soleil dure 2 heures, la croisière dîner environ 3h30. Pour le charter de yacht privé, c'est vous qui choisissez la durée ; minimum 2 heures." },
       { q: "Quelle est la meilleure période pour une croisière sur le Bosphore ?", a: "Les croisières ont lieu toute l'année. La haute saison est mai–septembre. Le printemps (avril) et le début de l'automne (octobre) offrent les meilleures conditions. Les croisières d'hiver sont plus calmes et très photogéniques." },
       { q: "Y a-t-il des réductions pour les enfants ?", a: "Les enfants de moins de 6 ans voyagent gratuitement. Les enfants de 6 à 12 ans bénéficient de 50 % de réduction. Merci d'indiquer l'âge des enfants lors de la réservation." },
@@ -283,7 +283,7 @@ const CONTENT: Record<string, LocaleContent> = {
     tourOptions: [
       { slug: "sunset", title: "Bosporus Zonsondergang Cruise", price: "€34", duration: "2 uur", tag: "Meest populair", desc: "Twee opties: zonder wijn €34, met wijn €40. Gouden uur panorama, live gids en versnaperingen inbegrepen. Doorvaart onder de bruggen en historische villa's." },
       { slug: "dinner", title: "Istanbul Diner Cruise", price: "€30", duration: "3,5 uur", tag: "4 pakketten", desc: "4 pakketten van €30 tot €90. Turkse avondshow, diner en hotelophaal vanuit Sultanahmet/Taksim beschikbaar." },
-      { slug: "yacht", title: "Privé Jachtcharter", price: "€280", duration: "2+ uur", tag: "Volledig privé", desc: "Het hele schip voor uzelf. Ideaal voor huwelijksaanzoek, verjaardag, familiefeest en bedrijfsevenementen. Route en menu naar wens." },
+      { slug: "yacht", title: "Privé Jachtcharter", price: "€200", duration: "2+ uur", tag: "Volledig privé", desc: "Het hele schip voor uzelf. Ideaal voor huwelijksaanzoek, verjaardag, familiefeest en bedrijfsevenementen. Route en menu naar wens." },
       { slug: "boat", title: "Boothuur Istanbul", price: "Per uur", duration: "Flexibel", tag: "Boot eerst kiezen", desc: "Kies boot en route, voeg vervolgens extra's toe. Van 2 uur tot een hele dag, alles is mogelijk." },
     ],
     priceTableTitle: "Bosporus Cruise Prijstabel 2026",
