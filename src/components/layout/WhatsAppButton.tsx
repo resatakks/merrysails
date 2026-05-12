@@ -10,10 +10,13 @@ export default function WhatsAppButton() {
   // Strip optional locale prefix (e.g. /tr/, /de/) so localized tour pages also
   // get the lifted offset that keeps the WhatsApp button above the booking bar.
   const normalizedPath = pathname.replace(/^\/(tr|de|fr|nl)(?=\/|$)/, "") || "/";
+  // Yacht charter page no longer has a sticky bottom booking bar by default —
+  // TourDetailClient only mounts when ?prefill= is in URL. Keep the buttons at
+  // the standard bottom offset on the fleet listing and on the yacht detail
+  // pages so they do not overlap the first boat card on mobile.
   const hasStickyBookingUi =
     normalizedPath.startsWith("/cruises/") ||
-    normalizedPath === "/istanbul-dinner-cruise" ||
-    normalizedPath === "/yacht-charter-istanbul";
+    normalizedPath === "/istanbul-dinner-cruise";
   const mobileBottomOffset = hasStickyBookingUi
     ? "bottom-[calc(env(safe-area-inset-bottom)+5.75rem)]"
     : "bottom-[calc(env(safe-area-inset-bottom)+1rem)]";
@@ -31,7 +34,7 @@ export default function WhatsAppButton() {
             location: pathname,
           })
         }
-        className={`fixed left-4 z-40 flex items-center gap-2 rounded-full border border-white/20 bg-[linear-gradient(135deg,#182987,#ff0844)] px-3.5 py-2.5 text-white shadow-[0_18px_32px_rgba(24,41,135,0.34)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_22px_38px_rgba(24,41,135,0.44)] ${mobileBottomOffset} ${desktopBottomOffset} md:left-6 md:px-4`}
+        className={`fixed left-4 z-40 flex items-center gap-2 rounded-full border border-white/20 bg-[linear-gradient(135deg,#C44536,#E66E48)] px-3.5 py-2.5 text-white shadow-[0_18px_32px_rgba(196,69,54,0.34)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_22px_38px_rgba(196,69,54,0.44)] ${mobileBottomOffset} ${desktopBottomOffset} md:left-6 md:px-4`}
         aria-label={`Call ${PHONE_DISPLAY}`}
       >
         <Phone className="h-4 w-4 text-white md:h-5 md:w-5" />

@@ -4,7 +4,12 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, Mail, Shield } from "lucide-react";
 import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import ReservationSearch from "./ReservationSearch";
-import { getCoreTours } from "@/data/tours";
+import { getCoreTours, getTourBySlug } from "@/data/tours";
+import {
+  getCharterFleetItem,
+  type CharterFleetSlug,
+} from "@/data/fleet";
+import YachtReservationFlow from "@/components/yacht/YachtReservationFlow";
 
 export const metadata: Metadata = {
   title: "Book a Bosphorus Cruise — Istanbul",
@@ -18,8 +23,14 @@ const coreTours = getCoreTours();
 interface ReservationPageProps {
   searchParams?: Promise<{
     tour?: string;
+    fleet?: string;
+    hours?: string;
+    date?: string;
+    guests?: string;
   }>;
 }
+
+const FLEET_SLUGS = new Set(["y1", "y2", "y3", "y4", "y5", "y6"]);
 
 export default async function ReservationPage({ searchParams }: ReservationPageProps) {
   const resolvedSearchParams = searchParams ? await searchParams : undefined;
@@ -27,6 +38,65 @@ export default async function ReservationPage({ searchParams }: ReservationPageP
   const initialTourSlug = coreTours.some((tour) => tour.slug === requestedTourSlug)
     ? requestedTourSlug
     : undefined;
+
+  const fleetSlug = resolvedSearchParams?.fleet;
+  const fleetBoat =
+    fleetSlug && FLEET_SLUGS.has(fleetSlug)
+      ? getCharterFleetItem(fleetSlug as CharterFleetSlug)
+      : null;
+  const fleetHoursParam = Number(resolvedSearchParams?.hours);
+  const fleetHours = Number.isFinite(fleetHoursParam) && fleetHoursParam >= 2 ? fleetHoursParam : 2;
+  const fleetGuestsParam = Number(resolvedSearchParams?.guests);
+  const fleetGuests = Number.isFinite(fleetGuestsParam) ? fleetGuestsParam : undefined;
+  const yachtTour = fleetBoat ? getTourBySlug("yacht-charter-in-istanbul") : null;
+
+  if (fleetBoat && yachtTour) {
+    return (
+      <main className="min-h-screen overflow-x-hidden bg-[var(--surface-alt)] pt-28 pb-32">
+        <div className="mx-auto max-w-[68rem] px-4">
+          <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-xs text-[var(--text-muted)]">
+            <Link href="/" className="hover:text-[var(--brand-primary)]">Home</Link>
+            <span>/</span>
+            <Link href="/yacht-charter-istanbul" className="hover:text-[var(--brand-primary)]">Yacht Charter Istanbul</Link>
+            <span>/</span>
+            <span className="text-[var(--heading)]">Reserve</span>
+          </nav>
+          <header className="mb-6">
+            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">Reserve your yacht</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[var(--heading)]">
+              Confirm date and group — open the booking form
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--body-text)]">
+              The whole yacht is reserved for your group. Pick a date and your group size, then continue to the booking form.
+            </p>
+          </header>
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.62fr)_minmax(19rem,0.78fr)]">
+            <YachtReservationFlow
+              boat={fleetBoat}
+              initialHours={fleetHours}
+              initialDate={resolvedSearchParams?.date}
+              initialGuests={fleetGuests}
+              tourSlug={yachtTour.slug}
+              tourName={yachtTour.nameEn}
+              locale="en"
+            />
+            <div className="space-y-6">
+              <section id="track-reservation" className="rounded-[2rem] border border-[var(--line)] bg-white p-6 shadow-sm">
+                <div className="mb-4">
+                  <h2 className="mb-1 text-xl font-bold text-[var(--heading)]">Track Your Reservation</h2>
+                  <p className="text-sm text-[var(--body-text)]">Look up your booking by reservation ID or email address.</p>
+                </div>
+                <ReservationSearch />
+              </section>
+              <Link href="/yacht-charter-istanbul" className="block rounded-2xl border border-[var(--line)] bg-white p-4 text-center text-sm font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--surface-alt)]">
+                ← Choose a different yacht
+              </Link>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[var(--surface-alt)] pt-28 pb-32">
