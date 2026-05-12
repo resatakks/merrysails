@@ -277,12 +277,6 @@ export default async function LocaleTourDetailPage({
             <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
           </nav>
 
-          <TourDetailClient
-            tour={tour}
-            related={related}
-            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
-          />
-
           {tour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={tour.packages}
@@ -290,6 +284,12 @@ export default async function LocaleTourDetailPage({
               strings={getWeekdayDiscountStrings(locale as SiteLocale)}
             />
           )}
+
+          <TourDetailClient
+            tour={tour}
+            related={related}
+            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
+          />
         </div>
       </div>
     </>

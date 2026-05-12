@@ -594,8 +594,6 @@ export default async function LocaleDinnerCruisePage({
             <span className="text-[var(--heading)] truncate">{t.breadcrumb}</span>
           </nav>
 
-          <TourDetailClient tour={dinnerTour} related={relatedTours} />
-
           {dinnerTour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={dinnerTour.packages}
@@ -603,6 +601,8 @@ export default async function LocaleDinnerCruisePage({
               strings={getWeekdayDiscountStrings(locale as SiteLocale)}
             />
           )}
+
+          <TourDetailClient tour={dinnerTour} related={relatedTours} />
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="dinner" />
 

@@ -317,12 +317,6 @@ export default async function IstanbulDinnerCruisePage({
             <span className="text-[var(--heading)] truncate">{dinnerTour.nameEn}</span>
           </nav>
 
-          <TourDetailClient
-            tour={dinnerTour}
-            related={relatedTours}
-            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
-          />
-
           {dinnerTour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={dinnerTour.packages}
@@ -330,6 +324,12 @@ export default async function IstanbulDinnerCruisePage({
               strings={getWeekdayDiscountStrings("en")}
             />
           )}
+
+          <TourDetailClient
+            tour={dinnerTour}
+            related={relatedTours}
+            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
+          />
 
           <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
             <h2 className="text-lg font-bold text-blue-900 mb-3">Quick Answer: Best Istanbul Dinner Cruise</h2>
