@@ -535,11 +535,11 @@ export default async function LocaleYachtCharterPage({
             <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
           </nav>
 
-          <header className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-[var(--heading)] mb-2">
+          <header className="mb-3 md:mb-4">
+            <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] mb-1 leading-tight">
               {t.title}
             </h1>
-            <p className="text-lg text-[var(--text-muted)]">{t.subtitle}</p>
+            <p className="text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">{t.subtitle}</p>
           </header>
 
           <FleetShowcase

@@ -370,11 +370,11 @@ export default async function YachtCharterIstanbulPage({
             <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
           </nav>
 
-          <header className="mb-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-[var(--heading)] tracking-tight">
+          <header className="mb-3 md:mb-4">
+            <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
               {yachtTour.nameEn} — Private Yacht Charter Istanbul
             </h1>
-            <p className="mt-2 text-base text-[var(--text-muted)]">
+            <p className="mt-1.5 text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">
               {yachtTour.description}
             </p>
           </header>

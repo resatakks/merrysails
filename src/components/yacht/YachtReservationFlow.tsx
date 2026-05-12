@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 import BookingModal from "@/components/booking/BookingModal";
+import { PlannerDateCalendar } from "@/components/booking/PlannerDateCalendar";
 import type { CharterFleetItem } from "@/data/fleet";
 import { getCharterFleetLocale } from "@/data/fleet";
 import type { SiteLocale } from "@/i18n/config";
@@ -35,6 +36,19 @@ function defaultDateString(): string {
   return d.toISOString().split("T")[0];
 }
 
+function isoToDate(s: string | undefined): Date | undefined {
+  if (!s) return undefined;
+  const d = new Date(s + "T00:00:00");
+  return isNaN(d.getTime()) ? undefined : d;
+}
+
+function dateToIso(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
 export default function YachtReservationFlow({
   boat,
   initialHours,
@@ -62,22 +76,18 @@ export default function YachtReservationFlow({
     : availableHours[0] ?? minHours;
 
   const [hours, setHours] = useState<number>(safeInitialHours);
-  const [date, setDate] = useState<string>(initialDate || defaultDateString());
+  const initialDateStr = initialDate || defaultDateString();
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(isoToDate(initialDateStr));
   const [guests, setGuests] = useState<number>(
     Math.min(Math.max(initialGuests ?? minGuests, minGuests), maxGuests),
   );
   const [modalOpen, setModalOpen] = useState(false);
 
+  const date = selectedDate ? dateToIso(selectedDate) : "";
   const total = boat.priceByHours?.[hours] ?? 0;
   const isDiscount = hours >= boat.discountFromHours;
   const regularTotal = (boat.hourlyEur ?? 0) * hours;
   const savings = isDiscount && boat.hourlyEur ? regularTotal - total : 0;
-
-  const minDateStr = useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 1);
-    return d.toISOString().split("T")[0];
-  }, []);
 
   function decGuests() {
     setGuests((g) => Math.max(minGuests, g - 1));
@@ -175,16 +185,14 @@ export default function YachtReservationFlow({
           </div>
 
           <div>
-            <label htmlFor="yrf-date" className="block text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)]">
+            <label className="block text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-1.5">
               Date
             </label>
-            <input
-              id="yrf-date"
-              type="date"
-              value={date}
-              min={minDateStr}
-              onChange={(e) => setDate(e.target.value)}
-              className="mt-1.5 w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-sm font-semibold text-[var(--heading)] focus:border-[var(--brand-primary)] focus:outline-none"
+            <PlannerDateCalendar
+              tourSlug={tourSlug}
+              priceEur={total}
+              value={selectedDate}
+              onSelect={(d) => setSelectedDate(d)}
             />
           </div>
 

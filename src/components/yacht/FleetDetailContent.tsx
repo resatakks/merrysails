@@ -1,9 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { CharterFleetItem } from "@/data/fleet";
 import { getCharterFleetLocale } from "@/data/fleet";
 import type { SiteLocale } from "@/i18n/config";
 import { WHATSAPP_URL } from "@/lib/constants";
+import FleetGallery from "./FleetGallery";
+import FleetHeroImage from "./FleetHeroImage";
 
 type DetailStrings = {
   breadcrumbHome: string;
@@ -106,19 +107,22 @@ export default function FleetDetailContent({
           <span className="text-[var(--heading)] truncate">{t.label}</span>
         </nav>
 
-        <header className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center mb-10">
-          <div>
+        <header className="grid gap-6 lg:grid-cols-[1fr_1.05fr] lg:items-stretch lg:gap-8 mb-8">
+          {/* Image first on mobile (order-1), right column on desktop */}
+          <FleetHeroImage
+            images={[...boat.exteriorImages, ...boat.interiorImages]}
+            alt={`${t.label} — ${boat.altDescriptor}`}
+            className="aspect-[4/3] w-full order-1 lg:order-2 lg:aspect-auto lg:min-h-[24rem]"
+          />
+          <div className="order-2 lg:order-1 flex flex-col">
             <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
               {strings.capacityLabel} · {boat.capacity.min}–{boat.capacity.max} {strings.guests}
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--heading)] tracking-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[var(--heading)] tracking-tight">
               {t.label}
             </h1>
-            <p className="mt-3 text-lg text-[var(--text-muted)]">{t.tagline}</p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--text-muted)]">
-              {t.description}
-            </p>
-            <div className="mt-5 grid grid-cols-2 gap-3 max-w-md">
+            <p className="mt-2 text-base md:text-lg text-[var(--text-muted)]">{t.tagline}</p>
+            <div className="mt-4 grid grid-cols-2 gap-3">
               <div className="rounded-xl border border-[var(--line)] bg-white p-3">
                 <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
                   {strings.capacity}
@@ -136,12 +140,12 @@ export default function FleetDetailContent({
                 </p>
               </div>
             </div>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-4 flex flex-wrap gap-2">
               {boat.bookable ? (
                 <Link
                   href={reserveHref}
                   style={{ color: "#ffffff" }}
-                  className="rounded-xl bg-[var(--brand-primary)] px-6 py-3 text-sm font-bold !text-white transition-opacity hover:opacity-90"
+                  className="rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-bold !text-white transition-opacity hover:opacity-90"
                 >
                   {strings.reserveCta}
                 </Link>
@@ -151,28 +155,21 @@ export default function FleetDetailContent({
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#ffffff" }}
-                  className="rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold !text-white transition-opacity hover:opacity-90"
+                  className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-bold !text-white transition-opacity hover:opacity-90"
                 >
                   {strings.quoteCta}
                 </a>
               )}
               <Link
                 href={charterHref}
-                className="rounded-xl border border-[var(--brand-primary)] bg-white px-6 py-3 text-sm font-bold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)]/5"
+                className="rounded-xl border border-[var(--brand-primary)] bg-white px-5 py-3 text-sm font-bold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)]/5"
               >
                 {strings.backToFleet}
               </Link>
             </div>
-          </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[var(--surface-alt)]">
-            <Image
-              src={boat.coverImage}
-              alt={`${t.label} — ${boat.altDescriptor}`}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+            <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
+              {t.description}
+            </p>
           </div>
         </header>
 
@@ -281,50 +278,14 @@ export default function FleetDetailContent({
           <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
             {strings.galleryHeading}
           </h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-3">
-                {strings.galleryExterior}
-              </h3>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {boat.exteriorImages.map((src, idx) => (
-                  <div
-                    key={src}
-                    className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[var(--surface-alt)]"
-                  >
-                    <Image
-                      src={src}
-                      alt={`${t.label} exterior view ${idx + 1} — ${boat.altDescriptor}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-3">
-                {strings.galleryInterior}
-              </h3>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {boat.interiorImages.map((src, idx) => (
-                  <div
-                    key={src}
-                    className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[var(--surface-alt)]"
-                  >
-                    <Image
-                      src={src}
-                      alt={`${t.label} interior view ${idx + 1} — ${boat.altDescriptor}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <FleetGallery
+            exteriorImages={boat.exteriorImages}
+            interiorImages={boat.interiorImages}
+            altPrefix={t.label}
+            altDescriptor={boat.altDescriptor}
+            exteriorLabel={strings.galleryExterior}
+            interiorLabel={strings.galleryInterior}
+          />
         </section>
 
         <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">

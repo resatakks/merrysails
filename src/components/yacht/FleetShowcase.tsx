@@ -41,20 +41,18 @@ export default function FleetShowcase({
     <section
       id="fleet"
       aria-labelledby="fleet-heading"
-      className="mt-10 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8"
+      className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4 md:mt-8 md:p-7"
     >
-      <header className="mb-6">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
-          {strings.sectionEyebrow}
-        </p>
+      {/* Compact eyebrow + section H2 — single line on desktop, two lines on mobile */}
+      <header className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <h2
           id="fleet-heading"
-          className="text-2xl font-bold text-[var(--heading)] md:text-3xl"
+          className="text-lg font-bold leading-tight text-[var(--heading)] md:text-xl"
         >
           {strings.sectionTitle}
         </h2>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
-          {strings.sectionIntro}
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+          {strings.sectionEyebrow}
         </p>
       </header>
 
@@ -71,6 +69,11 @@ export default function FleetShowcase({
           />
         ))}
       </div>
+
+      {/* Section intro paragraph below cards — preserves SEO content but doesn't push cards below fold */}
+      <p className="mt-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+        {strings.sectionIntro}
+      </p>
 
       {/* Static pricing table — fully indexable, AI-citation-friendly */}
       <div className="mt-10">
