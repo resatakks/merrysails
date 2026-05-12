@@ -41,6 +41,15 @@ interface Props {
   tourSlug: string;
   priceEur: number;
   originalPriceEur?: number;
+  /**
+   * Optional recurring weekday discount. When provided, calendar cells that
+   * fall on one of the listed weekdays render at `discountedPrice` with a
+   * subtle emerald accent. Uses JS Date.getDay() encoding (0=Sun, 1=Mon, ...).
+   */
+  weekdayDiscount?: {
+    weekdays: number[];
+    discountedPrice: number;
+  };
   tourName: string;
   departureTime?: string;
   departurePoint?: string;
@@ -80,6 +89,7 @@ export default function BookingCalendar({
   tourSlug,
   priceEur,
   originalPriceEur,
+  weekdayDiscount,
   tourName,
   departureTime,
   priceMode = "perPerson",
@@ -390,10 +400,19 @@ export default function BookingCalendar({
                     className={`text-[10px] font-semibold ${
                       isSelected
                         ? "text-white/80"
+                        : weekdayDiscount && weekdayDiscount.weekdays.includes(getDay(day))
+                        ? "text-emerald-600"
                         : "text-[var(--brand-gold)]"
                     }`}
                   >
-                    €{priceEur}
+                    €{
+                      weekdayDiscount && weekdayDiscount.weekdays.includes(getDay(day))
+                        ? weekdayDiscount.discountedPrice
+                        : priceEur
+                    }
+                    {weekdayDiscount && weekdayDiscount.weekdays.includes(getDay(day)) && !isSelected && (
+                      <span className="ml-0.5 text-[8px] font-bold text-emerald-700">−</span>
+                    )}
                   </div>
                 ) : null}
               </button>
@@ -618,7 +637,7 @@ export default function BookingCalendar({
 
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
+                href={`https://wa.me/905065438223?text=Hi, I'd like to book ${tourName} on ${format(
                   selectedDate,
                   "dd MMM yyyy"
                 )} for ${totalGuests} guests.`}
@@ -626,7 +645,7 @@ export default function BookingCalendar({
                 rel="noopener noreferrer"
                 onClick={(event) =>
                   handleTrackedContactNavigation(event, {
-                    href: `https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
+                    href: `https://wa.me/905065438223?text=Hi, I'd like to book ${tourName} on ${format(
                       selectedDate,
                       "dd MMM yyyy"
                     )} for ${totalGuests} guests.`,

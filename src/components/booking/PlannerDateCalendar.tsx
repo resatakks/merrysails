@@ -36,6 +36,16 @@ interface PlannerDateCalendarProps {
   priceEur: number;
   departureTime?: string;
   value?: Date;
+  /**
+   * Optional recurring weekday discount. When provided, days that fall on one
+   * of the listed weekdays render at `discountedPrice` instead of `priceEur`,
+   * and pick up a subtle "−" badge so guests can see the deal at a glance.
+   * Weekday values use the JS Date.getDay() convention (0=Sun, 1=Mon, ...).
+   */
+  weekdayDiscount?: {
+    weekdays: number[];
+    discountedPrice: number;
+  };
   onSelect: (
     date: Date | undefined,
     context: { departureTimeOverride?: string | null; note?: string | null }
@@ -50,6 +60,7 @@ export function PlannerDateCalendar({
   priceEur,
   departureTime,
   value,
+  weekdayDiscount,
   onSelect,
 }: PlannerDateCalendarProps) {
   const selectedDate = value ? startOfDay(value) : undefined;
@@ -261,13 +272,32 @@ export function PlannerDateCalendar({
                     Last spots!
                   </div>
                 ) : !isPast ? (
-                  <div
-                    className={`text-[10px] font-semibold ${
-                      isSelected ? "text-white/80" : "text-[var(--brand-gold)]"
-                    }`}
-                  >
-                    €{priceEur}
-                  </div>
+                  (() => {
+                    const isDiscountDay = Boolean(
+                      weekdayDiscount && weekdayDiscount.weekdays.includes(getDay(day))
+                    );
+                    const dayPrice = isDiscountDay
+                      ? weekdayDiscount!.discountedPrice
+                      : priceEur;
+                    return (
+                      <div
+                        className={`text-[10px] font-semibold ${
+                          isSelected
+                            ? "text-white/80"
+                            : isDiscountDay
+                            ? "text-emerald-600"
+                            : "text-[var(--brand-gold)]"
+                        }`}
+                      >
+                        €{dayPrice}
+                        {isDiscountDay && !isSelected && (
+                          <span className="ml-0.5 text-[8px] font-bold text-emerald-700">
+                            −
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })()
                 ) : null}
               </button>
             );

@@ -368,6 +368,14 @@ export default function CoreBookingPlanner({
           <PlannerDateCalendar
             tourSlug={selectedTour.slug}
             priceEur={selectedPackage?.price ?? selectedTour.priceEur}
+            weekdayDiscount={
+              selectedPackage?.weekdayDiscount
+                ? {
+                    weekdays: selectedPackage.weekdayDiscount.weekdays,
+                    discountedPrice: selectedPackage.weekdayDiscount.discountedPrice,
+                  }
+                : undefined
+            }
             departureTime={selectedTour.departureTime}
             value={date}
             onSelect={(nextDate, context) => {

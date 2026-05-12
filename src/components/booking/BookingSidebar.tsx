@@ -163,7 +163,7 @@ export default function BookingSidebar({
       <div id="booking" ref={sidebarRef} className="lg:col-span-1">
         <div className="sticky top-[100px] space-y-4">
           {!isQuote && tour.showPricing && (
-            <div className="overflow-hidden rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(255,8,68,0.08),rgba(255,184,0,0.1))] p-5 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(230,110,72,0.08),rgba(255,184,0,0.1))] p-5 shadow-sm">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--brand-primary)]">
@@ -314,7 +314,7 @@ export default function BookingSidebar({
                   {tour.enquiryLabel || "Plan on WhatsApp"}
                 </a>
                 <a
-                  href="mailto:info@merrysails.com"
+                  href="mailto:info@goldensunsettour.com"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
                 >
                   Email Your Brief
@@ -326,6 +326,14 @@ export default function BookingSidebar({
               tourSlug={tour.slug}
               priceEur={price}
               originalPriceEur={currentOriginalPrice}
+              weekdayDiscount={
+                selectedPackage?.weekdayDiscount
+                  ? {
+                      weekdays: selectedPackage.weekdayDiscount.weekdays,
+                      discountedPrice: selectedPackage.weekdayDiscount.discountedPrice,
+                    }
+                  : undefined
+              }
               tourName={tour.nameEn}
               departureTime={tour.departureTime}
               departurePoint={tour.departurePoint}
@@ -361,10 +369,10 @@ export default function BookingSidebar({
               Live Support on WhatsApp
             </a>
             <a
-              href="tel:+905448989812"
+              href="tel:+905065438223"
               onClick={(event) =>
                 handleTrackedContactNavigation(event, {
-                  href: "tel:+905448989812",
+                  href: "tel:+905065438223",
                   intent: "during_booking",
                   kind: "phone",
                   label: PHONE_DISPLAY,
@@ -451,10 +459,10 @@ export default function BookingSidebar({
               <div className="safe-area-bottom px-4 py-3">
                 <div className="flex items-center gap-3">
                   <a
-                    href="tel:+905448989812"
+                    href="tel:+905065438223"
                     onClick={(event) =>
                       handleTrackedContactNavigation(event, {
-                        href: "tel:+905448989812",
+                        href: "tel:+905065438223",
                         intent: "during_booking",
                         kind: "phone",
                         label: PHONE_DISPLAY,
