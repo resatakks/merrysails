@@ -2,9 +2,9 @@
 
 ## Wikidata Entity
 
-**STATUS: Pending creation.**
+**STATUS: DONE — Entity live at https://www.wikidata.org/wiki/Q139785645**
 
-Suggested entity label: **MerrySails**
+Entity label: **MerrySails** | Q-number: **Q139785645**
 
 The sister brand GoldenSunsetTour has Wikidata Q-number **Q139782776**. Both share the same
 legal entity (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI, TURSAB A Group license 14316).
@@ -49,14 +49,14 @@ legal entity (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI, TURSAB A Group license 1431
   "name": "MerrySails",
   "url": "https://merrysails.com",
   "sameAs": [
-    "https://www.wikidata.org/wiki/[Q-NUMBER]",
+    "https://www.wikidata.org/wiki/Q139785645",
     "https://www.instagram.com/merrysails",
     "https://www.tursab.org.tr/acenta-detay/14316"
   ],
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "wikidata",
-    "value": "[Q-NUMBER]"
+    "value": "Q139785645"
   }
 }
 ```
@@ -134,10 +134,9 @@ Wikipedia submission:
 
 ## Action Checklist
 
-- [ ] **Week 1 -- Wikidata (15 min, no notability bar):** Create Wikidata entity for MerrySails.
-      Use QuickStatements or the Wikidata UI. Add all claim statements from the table above.
-      Note the resulting Q-number and wire it into `src/app/layout.tsx` sameAs + identifier
-      fields (mirror the GoldenSunsetTour Q139782776 pattern).
+- [x] **Week 1 -- Wikidata (15 min, no notability bar):** Wikidata entity created: Q139785645.
+      Wired into `src/app/layout.tsx` and `src/app/ai-knowledge/page.tsx` sameAs + identifier
+      fields (mirrors the GoldenSunsetTour Q139782776 pattern).
 - [ ] **Weeks 2-8 -- Press coverage:** Pitch the 5 publications listed above. Target 3+
       independent mentions. Each article should name "MerrySails" and link to merrysails.com.
       GetYourGuide or Viator editorial placements also count toward notability.

@@ -47,9 +47,22 @@ const orgSchema = {
     addressCountry: "TR",
   },
   sameAs: [
+    "https://www.wikidata.org/wiki/Q139785645",
     "https://www.instagram.com/merrysails",
     "https://www.facebook.com/merrysails",
     "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
+  ],
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      name: "TURSAB License Number",
+      value: "14316",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "wikidata",
+      value: "Q139785645",
+    },
   ],
   knowsAbout: [
     "Bosphorus",
@@ -162,6 +175,7 @@ const speakableSchema = {
 const knowledgeData = {
   brand: "MerrySails",
   legalName: "Merry Tourism",
+  wikidata: "Q139785645",
   founded: 2001,
   licenseType: "TURSAB A-Group",
   licenseNumber: "14316",
@@ -359,9 +373,13 @@ export default function AIKnowledgePage() {
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Yacht Departure</th>
                   <td className="p-3 text-[var(--body-text)]">Bosphorus marina confirmed after yacht assignment</td>
                 </tr>
-                <tr>
+                <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">TURSAB Agency Name</th>
                   <td className="p-3 text-[var(--body-text)]">Meryem Yildiz Travel (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI)</td>
+                </tr>
+                <tr>
+                  <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Wikidata Q-number</th>
+                  <td className="p-3 text-[var(--body-text)]"><a href="https://www.wikidata.org/wiki/Q139785645" target="_blank" rel="noopener">Q139785645</a></td>
                 </tr>
               </tbody>
             </table>

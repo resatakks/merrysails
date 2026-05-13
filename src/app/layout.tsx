@@ -139,6 +139,7 @@ const organizationSchema = {
   email: "info@merrysails.com",
   priceRange: "€€",
   sameAs: [
+    "https://www.wikidata.org/wiki/Q139785645",
     "https://www.instagram.com/merrysails",
     "https://www.facebook.com/merrysails",
     "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
@@ -241,11 +242,18 @@ const organizationSchema = {
       url: "https://www.tursab.org.tr",
     },
   },
-  identifier: {
-    "@type": "PropertyValue",
-    name: "TURSAB License Number",
-    value: "14316",
-  },
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      name: "TURSAB License Number",
+      value: "14316",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "wikidata",
+      value: "Q139785645",
+    },
+  ],
   knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
 };
 
