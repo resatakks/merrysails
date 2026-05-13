@@ -768,4 +768,112 @@ export const dutchProductPosts: BlogPost[] = [
     calloutText:
       "Merry Tourism is TURSAB A-Groep vergund sinds 2001 (licentienummer #14316) en heeft meer dan 50.000 gasten op de Bosphorus verwelkomd. Boek direct op merrysails.com en bespaar tot 25% ten opzichte van boekingsplatformen.",
   },
+  {
+    slug: "prinseneilanden-istanbul-dagtocht-2026",
+    locale: "nl",
+    title: "Prinseneilanden Istanbul 2026: Dagtocht, Veerboot & Jacht",
+    metaDescription: "Prinseneilanden dagtocht Istanbul 2026: Büyükada, Heybeliada. Veerboot vanaf €5, privé jacht vanaf €280. TURSAB-vergund sinds 2001.",
+    excerpt: "Een dag op de Prinseneilanden: autovrije rust, victoriaanse villa's en de Zee van Marmara vlak voor Istanbul. Merry Tourism — TURSAB A-Groep vergund sinds 2001, meer dan 50.000 gasten — begeleidt u bij het plannen van deze onvergetelijke uitstap.",
+    category: "istanbul",
+    date: "2026-05-13",
+    readTime: "10 min leestijd",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Büyükada Prinseneilanden Istanbul — koetsen voor historische Ottomaanse villa's",
+    keywords: [
+      "prinseneilanden istanbul",
+      "prinseneilanden dagtocht",
+      "buyukada istanbul",
+      "heybeliada uitstap",
+      "veerboot prinseneilanden istanbul",
+      "prive jacht prinseneilanden",
+      "adalar istanbul bezoek",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "De Prinseneilanden (Adalar) liggen 20 km ten zuidoosten van Istanbul in de Zee van Marmara — geen auto's, victoriaanse villa's, koetsen",
+      "Openbare veerboot (Şehir Hatları) vanaf Kabataş of Eminönü: vanaf ca. €5 — regelmatige dagelijkse vertrekken",
+      "Privé jachtcharter vanaf €280 voor de gehele boot — hop-on hop-off tussen de eilanden op uw eigen tempo",
+      "Büyükada is het grootste eiland; Heybeliada, Burgazada en Kınalıada zijn de moeite waard voor hun authenticiteit",
+    ],
+    sections: [
+      {
+        heading: "Wat zijn de Prinseneilanden?",
+        answerCapsule: "De Prinseneilanden (Adalar) zijn een archipel van negen eilanden in de Zee van Marmara, ca. 20 km van Istanbul. Vier zijn bewoond: Büyükada, Heybeliada, Burgazada en Kınalıada. Er rijden geen auto's — alleen koetsen en fietsen.",
+        content: "De Prinseneilanden — in het Turks \"Adalar\" (de eilanden) — zijn het best bewaarde geheim van Istanbul. Op slechts 20 kilometer van de metropool ligt een wereld waar geen auto's rijden, waar gietijzeren balkons van oude zomerhuizen het straatbeeld bepalen en de lucht naar pijnhars ruikt in plaats van uitlaatgassen.\n\nHun naam \"Prinseneilanden\" stamt uit het Byzantijnse Rijk, toen leden van de keizerlijke familie er naartoe werden verbannen. Later werden ze de zomervakantiebestemming van de Ottomaanse en Griekse elite — honderden houten villa's uit de 19e eeuw getuigen daar nog steeds van.\n\nVoor Nederlandse reizigers die Istanbul bezoeken, bieden de eilanden een perfect contrast met de metropool: hier rijden koetsen (faytonlar) in plaats van taxi's, ruisen dennenbossen in de zeewind, en ziet men geen enkel flatgebouw. Een dagtocht duurt ca. 4 tot 6 uur inclusief de veerbootreis.\n\nMerry Tourism — [TURSAB A-Groep vergund](/tursab) sinds 2001, meer dan 50.000 gasten — kent deze wateren al een kwart eeuw en biedt zowel de klassieke veerboorroute als privé jachttochten naar de eilanden aan.",
+        callout: {
+          type: "info",
+          text: "De Prinseneilanden liggen in de Zee van Marmara — niet in de Bosphorus. De veerboot vaart in zuidoostelijke richting vanuit Istanbul, langs de Aziatische kust. De Zee van Marmara kan ruwer zijn dan de Bosphorus, met name in herfst en winter.",
+        },
+      },
+      {
+        heading: "Hoe kom je bij de Prinseneilanden?",
+        answerCapsule: "Er zijn twee hoofdopties: de openbare Şehir Hatları-veerboot vanaf Kabataş of Eminönü (ca. €5, 60–90 min) of een privé jachtcharter met MerrySails (vanaf €280 voor de boot, flexibel vertrek). In de zomer zijn ook snelle IDO-veerboten beschikbaar.",
+        content: "Voor Nederlandse reizigers of bezoekers van Turkije zijn de reisopties overzichtelijk:\n\n**Optie 1: Openbare veerboot (Şehir Hatları)**\nDe goedkoopste en meest gebruikte optie. De Şehir Hatları (stadslijnen) verzorgen regelmatige dagelijkse vertrekken vanaf Kabataş (Europese zijde) en Eminönü (oude stad), met tussenstops op meerdere eilanden. Prijs: ca. €5 per rit (Istanbulkart of contant aan het terminal). Reistijd naar Büyükada: ca. 60 tot 90 minuten afhankelijk van de tussenstops. De veerboot is comfortabel, heeft een café aan boord en biedt spectaculaire uitzichten op de skyline van Istanbul bij het vertrek.\n\n**Optie 2: IDO-snelveerboot**\nDe private IDO-veerboten zijn sneller (ca. 35–40 min naar Büyükada) en comfortabeler, maar duurder en niet altijd in bedrijf — het seizoen en het weer bepalen dit. Boeken via de IDO-app of aan het terminal.\n\n**Optie 3: Privé jacht met MerrySails**\nVoor groepen of bijzondere gelegenheden is het privé [jachtcharter Istanbul](/nl/yacht-charter-istanbul) de exclusiefste optie. Vanaf €280 voor de gehele boot (2 tot 8 personen) bereikt u de eilanden via de directe waterroute, met zwempauzes onderweg en een volledig gepersonaliseerd tempo. Ideaal voor huwelijksreizen, families of kleine bedrijfsgroepen.\n\n**Let op:** Bij harde wind of storm kan de veerverbinding beperkt of opgeschort worden — de Zee van Marmara is meer blootgesteld dan de Bosphorus. Plan bij onzeker weer een alternatieve reisdag in.",
+      },
+      {
+        heading: "Openbare veerboot (Şehir Hatları) — prijzen en praktische details",
+        answerCapsule: "De Şehir Hatları-veerboot naar de Prinseneilanden kost ca. €5 per persoon per rit (Istanbulkart). Hij vertrekt vanaf Kabataş en Eminönü met regelmatige dagelijkse diensten. Reistijd naar Büyükada: 60 tot 90 minuten.",
+        content: "De openbare Şehir Hatları-veerboot is voor de meeste bezoekers het meest logische startpunt:\n\n**Vertrekplaatsen:**\n- **Kabataş-steiger:** Direct naast het Dolmabahçe-paleis, bereikbaar vanuit Taksim-plein in 15 minuten met tram T3\n- **Eminönü-steiger:** Het historische hart van Istanbul, op 15 minuten loopafstand van de Hagia Sophia of via tram T1\n\n**Prijs:** Regelmatige dagelijkse vertrekken; tickets vanaf ca. €5 per persoon per rit (te betalen in Turkse lira aan het terminal; prijs kan licht variëren door wisselkoers). Istanbulkart-houders betalen iets goedkoper.\n\n**Reistijd:**\n- Kabataş → Büyükada: ca. 60–90 min (met tussenstops in Kınalıada, Burgazada, Heybeliada)\n- Directe veerboten: ca. 60 min; diensten met alle stops: ca. 90 min\n\n**Zitplaatsen:** De veerboten hebben binnen- en buitendekken; in de zomer is het buitendek 's ochtends vroeg de beste plek voor foto's.\n\n**Terugkeer:** De laatste veerboot van Büyükada naar Istanbul vertrekt afhankelijk van het seizoen tussen 18:00 en 22:00 uur — controleer het actuele schema aan het terminal of op de website van Şehir Hatları. Mis de laatste boot niet!\n\n**Praktische tip:** In de zomerweekenden zijn de veerboten extreem vol. Vertrek vroeg (vóór 9:00 uur) of kies een doordeweekse dag.",
+        callout: {
+          type: "tip",
+          text: "Koop een Istanbulkart (oplaadbare OV-kaart, verkrijgbaar bij automaten op de steiger). Hij is ook geldig voor bussen, trams en de metro — ideaal voor uw gehele verblijf in Istanbul.",
+        },
+      },
+      {
+        heading: "MerrySails privé jacht — vanaf €280 naar de eilanden",
+        answerCapsule: "Een privé jacht naar de Prinseneilanden kost vanaf €280 voor de gehele boot (2 tot 8 personen, 2 uur). Grotere groepen betalen €500 tot €900 (8 tot 20 pers.). Kapitein, bemanning en verzekering zijn altijd inbegrepen.",
+        content: "Voor reizigers die de Prinseneilanden willen ontdekken buiten de veerbootmassa's om, is het [privé jachtcharter Istanbul](/nl/yacht-charter-istanbul) van Merry Tourism de elegantste oplossing.\n\n**Wat biedt het privé jacht?**\n- Directe vaart naar het eiland van uw keuze (geen tussenstops op andere eilanden)\n- Zwempauzes onderweg — het Turkse water is kristalhelder\n- Catering naar wens (cateringpartner optioneel)\n- Flexibel vertrektijdstip (zonsondergangstour naar de eilanden beschikbaar!)\n- Kapitein en bemanning van Merry Tourism — TURSAB A-Groep vergund sinds 2001\n\n**Prijsoverzicht:**\n\n| Bootstype | Capaciteit | Duur | Prijs |\n|---|---|---|---|\n| Kleine boot | 2–8 personen | 2 uur | vanaf €280 |\n| Middelgrote boot | 8–20 personen | 2–4 uur | €500–900 |\n| Grote boot | 20–50 personen | 4–8 uur | vanaf €1.000 |\n\nBijzonder populair: gecombineerde tochten — 's ochtends [Bosphorus-cruise](/nl/bosphorus-cruise), 's middags privévaart naar de Prinseneilanden. Neem contact op met het team via WhatsApp (+90 537 040 68 22) voor een persoonlijk aanbod.\n\n**Voor wie is het privé jacht geschikt?**\n- Koppels voor een romantische eilanddag\n- Families met kinderen (geen gedrang, eigen tempo)\n- Kleine bedrijfsgroepen voor een teamervaring\n- Reizigers voor een huwelijk of jubileum",
+        proTip: "Bij 6 personen kost het privéjacht (€280 ÷ 6 = ca. €47/persoon) nauwelijks meer dan de veerboot plus entrees — maar u heeft de gehele boot voor uzelf.",
+      },
+      {
+        heading: "Büyükada — Het hoofdeiland",
+        answerCapsule: "Büyükada (\"Groot Eiland\") is het grootste en bekendste van de Prinseneilanden. Bezienswaardigheden: Aya Yorgi-klooster (op de heuvel), stranden, historische houten villa's en koetsritten.",
+        content: "Büyükada is het hart van de Prinseneilanden en de bestemming van de meeste bezoekers. Met een oppervlakte van ca. 5,4 km² is het eiland goed te verkennen in een halve dag — per fiets, koets of te voet.\n\n**Wat te zien en te doen:**\n\n**Aya Yorgi-klooster (heuvel):** Dit Grieks-orthodoxe klooster op het hoogste punt van het eiland is het bekendste symbool van Büyükada. De beklimming duurt ca. 20 tot 30 minuten te voet of per koets. Bovenaan wacht een panoramisch uitzicht over de Zee van Marmara.\n\n**Historische houten villa's:** De Prinkipo-architectuur — victoriaanse en Ottomaanse zomerhuizen — bepaalt het stadsbeeld van het eiland. Sommige zijn prachtig gerestaureerd, andere romantisch verweerd door de tijd.\n\n**Koetsen (Fayton):** Het iconische vervoermiddel van de eilanden. Rondritten gaan rond het eiland (ca. 45 min) of naar het klooster (ca. 25 min). Tarieven variëren — vraag de actuele prijs bij het koetsstation bij de steiger.\n\n**Stranden:** Het centraal strand bij de steiger is schoon maar druk in de zomer. Alternatief: fiets naar de rustigere stranden aan de achterkant van het eiland.\n\n**Eten op het eiland:** Talrijke visrestaurants bij de steiger serveren verse vangst en zeevruchten. Een portie gegrilde vis met brood en Turkse thee kost ca. €8 tot €15.\n\nMerry Tourism heeft meer dan 50.000 gasten door deze wateren begeleid — de Prinseneilanden maken al jaren deel uit van onze aanbevelingen voor [Istanbul-bezoekers](/nl/bosphorus-cruise).",
+      },
+      {
+        heading: "De andere eilanden — Heybeliada, Burgazada, Kınalıada",
+        answerCapsule: "Heybeliada is het tweede eiland, rustiger — ideaal voor wandelen en fietsen. Burgazada heeft een authentiek dorpsgevoel. Kınalıada is het dichtst bij Istanbul en het minst toeristisch.",
+        content: "Wie verder kijkt dan Büyükada, ontdekt eilanden die nog minder toeristisch zijn:\n\n**Heybeliada (Halki):** Het tweede eiland in grootte is rustiger en minder druk dan Büyükada. Het heeft meerdere kleine stranden, wandelroutes door dennenbossen en enkele goede visrestaurants bij de steiger. Ideaal voor reizigers die rust zoeken.\n\n**Burgazada:** Aanzienlijk minder bezoekers dan de eerste twee eilanden. Een authentiek, levendig dorpscentrum met kleine cafés en een Grieks-orthodox klooster op de heuvel. Voor reizigers die het echte eilandleven zoeken buiten het toeristische gewoel.\n\n**Kınalıada:** Het aan de stad grenzende eiland is ook het kleinste van de vier bewoonde eilanden. Veel Istanbullers brengen er weekenden door; weinig internationaal toerisme. Mooie zwembaaien en een ontspannen dorpssfeer.\n\n**Tip voor meerdere eilanden:** Als u meerdere eilanden wilt bezoeken, zijn er veerboten die alle stops aandoen. Met het privéjacht kiest u zelf de volgorde en kunt u ook stranden bereiken die met de openbare veerboot niet toegankelijk zijn. Informatie over [vertrekpunten Bosphorus-cruise](/nl/bosphorus-cruise-departure-points).",
+      },
+      {
+        heading: "Beste reistijd en praktische tips",
+        answerCapsule: "De beste reistijd voor de Prinseneilanden is mei tot juni en september tot oktober — warm, maar zonder de zomerdrukte. Juli en augustus zijn erg druk, maar ideaal voor zwemmen. Winter is rustig en goedkoper.",
+        content: "**Seizoensoverzicht:**\n\n**Mei–juni (aanbevolen):** Aangenaam weer (22–28°C), niet te druk. De beste combinatie van goed weer en redelijke drukte.\n\n**Juli–augustus (hoogseizoen):** Het water is het warmst (26–28°C), maar de eilanden — met name Büyükada — zijn extreem druk. Veerboten raken snel vol. Vertrek vroeg (eerste veerboot 's ochtends).\n\n**September–oktober (najaar, sterk aanbevolen):** De rustigste periode met nog steeds aangenaam weer (18–24°C). De drukte neemt spectaculair af.\n\n**November–april (winterseizoen):** De eilanden zijn bijna verlaten, maar veel restaurants en winkels zijn gesloten. Veerboten rijden minder frequent.\n\n**Praktische tips:**\n- **Contant geld meenemen:** Op de eilanden is betalen met kaart niet overal mogelijk, met name in kleinere cafés\n- **Fiets huren:** Op Büyükada en Heybeliada zijn fietsverhuurders aanwezig bij de steiger — goedkoper en flexibeler dan een koets voor individuele reizigers\n- **Zonnebescherming:** Het reflectie-effect van het water versterkt de zonnestraling — SPF 50+ aanbevolen\n- **Schoeisel voor hellingen:** Het klooster ligt op een heuvel — stevig schoeisel is aan te raden\n- **Check de laatste veerboot:** Mis de laatste avondveerboot niet — overnachtingscapaciteit op de eilanden is beperkt en duur",
+        callout: {
+          type: "tip",
+          text: "Combineer de Prinseneilanden-dagtocht met een zonsondergangcruise op de Bosphorus dezelfde avond: eilanden 's ochtends, Bosphorus 's avonds. MerrySails biedt beide ervaringen — contact via WhatsApp: +90 537 040 68 22.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Hoe kom ik van Istanbul naar de Prinseneilanden?",
+        a: "De handigste en goedkoopste optie is de Şehir Hatları-veerboot vanaf de Kabataş-steiger (naast het Dolmabahçe-paleis) of Eminönü-steiger (oude stad). Regelmatige dagelijkse vertrekken; reistijd naar Büyükada ca. 60 tot 90 minuten. Prijs ca. €5 per persoon. Alternatief: IDO-snelveerboot (ca. 35–40 min, duurder). Voor groepen biedt MerrySails privéjachten vanaf €280 voor de gehele boot.",
+      },
+      {
+        q: "Wat kost de veerboot naar de Prinseneilanden?",
+        a: "De openbare Şehir Hatları-veerboot naar de Prinseneilanden kost ca. €5 per persoon per rit (te betalen in Turkse lira aan het terminal; prijs kan licht variëren door wisselkoers). Istanbulkart-houders betalen iets goedkoper. Privéjacht MerrySails vanaf €280 voor de gehele boot (2 tot 8 personen).",
+      },
+      {
+        q: "Is de dagtocht naar de Prinseneilanden de moeite waard?",
+        a: "Ja, zeker — met name voor reizigers die een adempauze zoeken van de hectiek van Istanbul. De eilanden bieden een totaal andere sfeer: geen auto's, historische houten villa's, dennenbossen en Turks kustgevoel. Een halve dag (inclusief heen en terug) is goed te plannen. We raden een doordeweekse dag of het voorjaar/najaar aan voor minder drukte.",
+      },
+      {
+        q: "Kan ik een privéjacht huren naar de Prinseneilanden?",
+        a: "Ja. Merry Tourism biedt privéjachten naar de Prinseneilanden aan vanaf €280 voor de gehele boot (2 tot 8 personen, 2 uur). Voor grotere groepen (8 tot 20 pers.) kost het jacht €500 tot €900 voor 2 tot 4 uur. Kapitein en bemanning zijn altijd inbegrepen. Contact: WhatsApp +90 537 040 68 22. Meer informatie: [privéjacht charter Istanbul](/nl/yacht-charter-istanbul).",
+      },
+      {
+        q: "Hoe lang duurt de uitstap naar de Prinseneilanden?",
+        a: "De veerbootreis van Kabataş naar Büyükada duurt ca. 60 tot 90 minuten. Voor een ontspannen dagtocht rekent u 5 tot 6 uur: heen en terug (2 tot 3 uur) plus 2 tot 3 uur op het eiland. Met een privéjacht kunt u uw programma flexibeler indelen en ook meerdere eilanden bezoeken.",
+      },
+      {
+        q: "Wat is de beste tijd om de Prinseneilanden te bezoeken?",
+        a: "De beste reistijd is mei tot juni en september tot oktober: mooi weer, minder druk dan in de zomer. Juli en augustus zijn de drukste maanden — ideaal voor zwemmen, maar vol. Doordeweeks is het beduidend rustiger dan in het weekend. Winter (november–april) is rustig, maar koeler en veel voorzieningen zijn gesloten.",
+      },
+    ],
+    relatedTours: ["bosphorus-cruise", "bosphorus-sunset-cruise", "yacht-charter-istanbul"],
+    relatedPosts: ["bosporus-cruise-prijzen-istanbul", "jacht-huren-istanbul-gids", "huwelijksaanzoek-op-de-bosporus"],
+    proTip: "Combineer de Prinseneilanden met een zonsondergangcruise op de Bosphorus dezelfde dag: 's ochtends eilanden per veerboot, 's avonds Bosphorus met MerrySails (€34–40). Voor boekingen en vragen: WhatsApp +90 537 040 68 22.",
+    calloutText: "Merry Tourism is TURSAB A-Groep vergund sinds 2001 (licentienummer #14316) en heeft meer dan 50.000 gasten in Istanbul verwelkomd. Boek uw Prinseneilanden-dagtocht per privéjacht direct op merrysails.com.",
+  },
 ];

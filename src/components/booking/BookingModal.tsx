@@ -29,6 +29,7 @@ import { motion } from "framer-motion";
 import type { Package as PackageType, AddOn, PriceMode } from "@/data/tours";
 import { createReservation } from "@/app/actions/reservation";
 import { applyGroupDiscount } from "@/lib/group-discount";
+import { applyWeeklyDiscount } from "@/lib/weekly-discount";
 import {
   getStoredAttribution,
   handleTrackedContactNavigation,
@@ -51,6 +52,7 @@ interface BookingDetails {
   priceMode?: PriceMode;
   departurePoint?: string;
   tourImage?: string;
+  rawDate?: Date | null;
 }
 
 interface Props {
@@ -158,7 +160,13 @@ export default function BookingModal({ booking, onClose }: Props) {
     };
   }, []);
 
-  const packagePrice = booking.selectedPackage?.price ?? booking.basePrice;
+  const weeklyDiscountResult = applyWeeklyDiscount(
+    booking.selectedPackage,
+    booking.rawDate ?? null,
+  );
+  const packagePrice = weeklyDiscountResult.eligible
+    ? weeklyDiscountResult.effectivePrice
+    : (booking.selectedPackage?.price ?? booking.basePrice);
   const isPerGroup = booking.priceMode === "perGroup";
   const addOnsText = booking.selectedAddOns.map((a) => a.name).join(", ");
 
@@ -990,6 +998,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                               {a.name} ({a.price})
                             </span>
                           ))}
+                        </div>
+                      </div>
+                    )}
+                    {weeklyDiscountResult.eligible && (
+                      <div className="pt-2 border-t border-[var(--line)]">
+                        <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
+                          {weeklyDiscountResult.label || "Weekday discount applied"} — €{weeklyDiscountResult.savingsPerUnit}/person saved
                         </div>
                       </div>
                     )}

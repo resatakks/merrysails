@@ -107,7 +107,7 @@ export default function CruisesPage() {
                 {
                   href: "/cruises/bosphorus-sunset-cruise",
                   title: "Sunset Cruise",
-                  meta: "From EUR 34",
+                  meta: "From EUR 30 (Tue & Thu)",
                   copy: "Golden-hour shared yacht route. Best if the intent is views, photos, and a shorter premium cruise.",
                 },
                 {
@@ -217,7 +217,7 @@ export default function CruisesPage() {
               around the golden-hour window and glides past Maiden&apos;s Tower, Dolmabahce Palace,
               Ortakoy Mosque, and Rumeli Fortress as the sky shifts from gold to blue. The page is
               structured around two public sunset options on the same route, with the current live
-              ladder showing EUR 34 for Without Wine and EUR 40 for the wine-served option.
+              ladder showing from EUR 30 (Tue & Thu) / EUR 34 for Without Wine and from EUR 35 (Tue & Thu) / EUR 40 for the wine-served option.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Bosphorus Dinner Cruise</h3>

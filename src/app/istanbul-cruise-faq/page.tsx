@@ -32,11 +32,11 @@ const FAQ_SECTIONS: Array<{
     questions: [
       {
         q: "How much does a Bosphorus cruise cost in 2026?",
-        a: "Bosphorus cruise prices in 2026 start at €30 per person for the Silver Soft Drinks dinner cruise and €34 per person for the sunset cruise without wine. Private yacht charter starts at €200 for the entire boat (up to 8 guests). All prices are EUR-fixed at booking and paid in TRY at the daily rate.",
+        a: "Bosphorus cruise prices in 2026 start at €30 per person — both for the Silver Soft Drinks dinner cruise and for the sunset cruise without wine on Tuesdays and Thursdays. On other days the sunset without wine is €34. Private yacht charter starts at €200 for the entire boat (up to 8 guests). All prices are EUR-fixed at booking and paid in TRY at the daily rate.",
       },
       {
         q: "What is the cheapest Bosphorus cruise in Istanbul?",
-        a: "The cheapest live-guided Bosphorus cruise is the Sunset Cruise without wine at €34 per person for 2 hours, or the Silver Soft Drinks dinner cruise at €30 per person for 3.5 hours including dinner and Turkish night show.",
+        a: "The cheapest live-guided Bosphorus cruise is the Sunset Cruise without wine from €30 per person (Tue & Thu) for 2 hours, or the Silver Soft Drinks dinner cruise at €30 per person for 3.5 hours including dinner and Turkish night show.",
       },
       {
         q: "Are Bosphorus cruise prices per person or per boat?",
@@ -374,7 +374,7 @@ export default function CruiseFAQPage() {
               Compare side-by-side →
             </Link>
             <Link href="/cruises/bosphorus-sunset-cruise" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
-              Sunset cruise from €34 →
+              Sunset cruise from €30 →
             </Link>
             <Link href="/istanbul-dinner-cruise" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Dinner cruise from €30 →

@@ -251,6 +251,7 @@ export async function createReservation(input: CreateReservationInput) {
       guests: input.guests,
       packageName: input.packageName,
       addOns: input.addOns,
+      date: reservationDate,
     });
 
     const reservationId = await generateReservationId();
@@ -290,6 +291,7 @@ export async function createReservation(input: CreateReservationInput) {
               originalTotal: pricing.originalTotal,
               total: pricing.total,
               groupDiscount: pricing.groupDiscount,
+              weeklyDiscount: pricing.weeklyDiscount,
             },
           }) ?? null,
         ...sanitizeAttribution(input.attribution),
@@ -335,6 +337,7 @@ export async function createReservation(input: CreateReservationInput) {
                 originalTotal: pricing.originalTotal,
                 total: pricing.total,
                 groupDiscount: pricing.groupDiscount,
+                weeklyDiscount: pricing.weeklyDiscount,
               },
               status: "Received",
             });

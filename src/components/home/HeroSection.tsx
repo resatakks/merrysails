@@ -7,7 +7,7 @@ const heroProducts = [
     href: "/cruises/bosphorus-sunset-cruise",
     title: "Bosphorus Sunset Cruise",
     meta: "2 shared options",
-    price: "From €34",
+    price: "From €30",
   },
   {
     href: "/istanbul-dinner-cruise",

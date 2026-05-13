@@ -77,7 +77,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
         eyebrow: "Altın saat",
         title: "Boğaz Gün Batımı Turu",
         description: "Net fiyatlı, tarihe göre planlı, paylaşımlı altın saat yelken keyfi.",
-        price: "€34'ten başlayan fiyatlarla",
+        price: "€30'dan başlayan fiyatlarla (Sal & Per)",
       },
       dinner: {
         eyebrow: "Paylaşımlı akşam",
@@ -169,7 +169,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
         eyebrow: "Goldene Stunde",
         title: "Bosporus Sonnenuntergangs-Kreuzfahrt",
         description: "Geteilte Sonnenuntergangs-Fahrt mit klaren Preisen und festen Buchungsterminen.",
-        price: "Ab €34",
+        price: "Ab €30 (Di & Do)",
       },
       dinner: {
         eyebrow: "Gemeinsamer Abend",
@@ -261,7 +261,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
         eyebrow: "Heure dorée",
         title: "Croisière Coucher de Soleil",
         description: "Croisière partagée à l'heure dorée avec tarifs transparents et créneaux fixes.",
-        price: "À partir de €34",
+        price: "À partir de €30 (mar & jeu)",
       },
       dinner: {
         eyebrow: "Soirée partagée",
@@ -353,7 +353,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
         eyebrow: "Gouden uur",
         title: "Bosporus Zonsondergangs-Cruise",
         description: "Gedeelde zonsondergangscruise met heldere prijzen en vaste boekingstijden.",
-        price: "Vanaf €34",
+        price: "Vanaf €30 (di & do)",
       },
       dinner: {
         eyebrow: "Gedeelde avond",

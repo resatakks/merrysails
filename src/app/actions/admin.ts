@@ -269,6 +269,13 @@ function buildManualPricingSnapshot(input: {
       effectivePct: 0,
       code: "SAIL10",
     },
+    weeklyDiscount: {
+      eligible: false,
+      standardPrice: baseUnitPrice,
+      effectivePrice: baseUnitPrice,
+      savingsPerUnit: 0,
+      label: "",
+    },
   };
 }
 

@@ -63,6 +63,13 @@ function sanitizePricingSnapshot(
     effectivePct: 0,
     code: "SAIL10",
   };
+  const weeklyDiscount = pricing.weeklyDiscount ?? {
+    eligible: false,
+    standardPrice: roundMoney(pricing.subtotal / Math.max(1, pricing.guests)),
+    effectivePrice: roundMoney(pricing.subtotal / Math.max(1, pricing.guests)),
+    savingsPerUnit: 0,
+    label: "",
+  };
 
   return {
     currency: pricing.currency === "EUR" ? "EUR" : "EUR",
@@ -74,6 +81,7 @@ function sanitizePricingSnapshot(
     originalTotal,
     total,
     groupDiscount,
+    weeklyDiscount,
   };
 }
 

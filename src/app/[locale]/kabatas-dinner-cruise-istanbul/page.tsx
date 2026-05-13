@@ -666,22 +666,22 @@ const CONTENT: Record<string, LocaleContent> = {
 const RELATED_LINKS: Record<string, { href: string; title: string; desc: string }[]> = {
   tr: [
     { href: "/istanbul-dinner-cruise", title: "İstanbul Akşam Yemeği Turu", desc: "Ana tur sayfası — tüm paketler ve fiyatlar" },
-    { href: "/cruises/bosphorus-sunset-cruise", title: "Gün Batımı Turu", desc: "€34'ten başlayan 2 saatlik altın saat turu" },
+    { href: "/cruises/bosphorus-sunset-cruise", title: "Gün Batımı Turu", desc: "€30'dan başlayan 2 saatlik altın saat turu (Sal & Per)" },
     { href: "/private-bosphorus-dinner-cruise", title: "Özel Akşam Yemeği Turu", desc: "Sadece sizin grubunuz için özel yat deneyimi" },
   ],
   de: [
     { href: "/istanbul-dinner-cruise", title: "Istanbul Dinner Cruise", desc: "Hauptseite — alle Pakete und Preise" },
-    { href: "/cruises/bosphorus-sunset-cruise", title: "Sonnenuntergang-Tour", desc: "2-stündige Tour ab €34" },
+    { href: "/cruises/bosphorus-sunset-cruise", title: "Sonnenuntergang-Tour", desc: "2-stündige Tour ab €30 (Di & Do)" },
     { href: "/private-bosphorus-dinner-cruise", title: "Private Dinner Kreuzfahrt", desc: "Exklusive Yacht nur für Ihre Gruppe" },
   ],
   fr: [
     { href: "/istanbul-dinner-cruise", title: "Croisière Dîner Istanbul", desc: "Page principale — toutes les formules et tarifs" },
-    { href: "/cruises/bosphorus-sunset-cruise", title: "Croisière Coucher de Soleil", desc: "Croisière de 2h à partir de €34" },
+    { href: "/cruises/bosphorus-sunset-cruise", title: "Croisière Coucher de Soleil", desc: "Croisière de 2h à partir de €30 (mar & jeu)" },
     { href: "/private-bosphorus-dinner-cruise", title: "Dîner Privé en Yacht", desc: "Yacht exclusif pour votre groupe uniquement" },
   ],
   nl: [
     { href: "/istanbul-dinner-cruise", title: "Istanbul Dinercruise", desc: "Hoofdpagina — alle pakketten en prijzen" },
-    { href: "/cruises/bosphorus-sunset-cruise", title: "Zonsondergang Cruise", desc: "Cruise van 2 uur vanaf €34" },
+    { href: "/cruises/bosphorus-sunset-cruise", title: "Zonsondergang Cruise", desc: "Cruise van 2 uur vanaf €30 (di & do)" },
     { href: "/private-bosphorus-dinner-cruise", title: "Privé Dinercruise", desc: "Exclusieve jacht alleen voor uw groep" },
   ],
 };

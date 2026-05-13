@@ -312,8 +312,8 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with an audio guide in 12 languages.",
   },
   "bosphorus-sunset-cruise": {
-    title: "Bosphorus Sunset Cruise Istanbul — From €34",
-    description: "Book the Bosphorus sunset cruise in Istanbul from EUR 34. Two shared 2-hour sunset options on the same route: Without Wine and With Wine, with snacks, drinks, and landmark views on the water.",
+    title: "Bosphorus Sunset Cruise Istanbul — From €30",
+    description: "Book the Bosphorus sunset cruise in Istanbul from EUR 30 (Tue & Thu). Two shared 2-hour sunset options on the same route: Without Wine and With Wine, with snacks, drinks, and landmark views on the water.",
   },
   "wedding-anniversary": {
     title: "Anniversary Yacht Cruise Istanbul 2026 | Private Bosphorus Celebration",
@@ -690,7 +690,7 @@ export default async function TourDetailPage({
                   </h2>
                   <p className="text-sm leading-relaxed text-[var(--text-muted)]">
                     {slug === "bosphorus-sunset-cruise"
-                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €34 (without wine) or €40 (with wine). Runs daily, timed around Istanbul's sunset. TURSAB A-Group licensed since 2001, rated 4.9 from 998 reviews. Direct online booking at merrysails.com."
+                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Tue & Thu) or €40. Runs daily, timed around Istanbul's sunset. TURSAB A-Group licensed since 2001, rated 4.9 from 998 reviews. Direct online booking at merrysails.com."
                       : `This page is the protected owner URL for ${tour.nameEn} intent. Use it when the guest already knows the product direction and needs the clearest package, timing, and booking-fit summary.`}
                   </p>
                 </div>

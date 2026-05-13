@@ -11,6 +11,7 @@ import {
   applyGroupDiscount,
   type GroupDiscountResult,
 } from "@/lib/group-discount";
+import { applyWeeklyDiscount, type WeeklyDiscountResult } from "@/lib/weekly-discount";
 
 const MAX_GUESTS = 20;
 
@@ -39,6 +40,8 @@ export interface ReservationPricingSnapshot {
   total: number;
   /** Group discount result. Always present; check `eligible` flag. */
   groupDiscount: GroupDiscountResult;
+  /** Weekly (day-of-week) discount result. Always present; check `eligible` flag. */
+  weeklyDiscount: WeeklyDiscountResult;
 }
 
 export interface ReservationSelectionSnapshot extends ReservationPricingSnapshot {
@@ -55,6 +58,8 @@ interface ReservationPricingInput {
   guests: number;
   packageName?: string;
   addOns?: string[];
+  /** ISO date string (yyyy-MM-dd) or Date object for weekday-discount resolution. */
+  date?: string | Date | null;
 }
 
 function normalizeGuests(guests: number): number {
@@ -140,6 +145,7 @@ export function buildReservationPricingSnapshot({
   guests,
   packageName,
   addOns = [],
+  date,
 }: ReservationPricingInput): ReservationSelectionSnapshot {
   const tour = getTourBySlug(tourSlug);
 
@@ -170,7 +176,10 @@ export function buildReservationPricingSnapshot({
   const selectedAddOns = pickAddOns(availableAddOns, addOns);
 
   const baseLabel = selectedPackage?.name ?? tour.nameEn;
-  const baseUnitPrice = selectedPackage?.price ?? tour.priceEur;
+  const weeklyDiscount = applyWeeklyDiscount(selectedPackage, date ?? null);
+  const baseUnitPrice = weeklyDiscount.eligible
+    ? weeklyDiscount.effectivePrice
+    : (selectedPackage?.price ?? tour.priceEur);
   const baseQuantity = priceMode === "perGroup" ? 1 : safeGuests;
   const baseUnitLabel = priceMode === "perGroup" ? "/group" : "/person";
   const subtotal = baseUnitPrice * baseQuantity;
@@ -227,5 +236,6 @@ export function buildReservationPricingSnapshot({
     originalTotal,
     total,
     groupDiscount,
+    weeklyDiscount,
   };
 }

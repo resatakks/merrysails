@@ -1012,4 +1012,112 @@ export const frenchProductPosts: BlogPost[] = [
     calloutText:
       "MerrySails — agence licenciée TURSAB Groupe A n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 invités. Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 280 €.",
   },
+  {
+    slug: "iles-des-princes-istanbul-excursion-2026",
+    locale: "fr",
+    title: "Îles des Princes Istanbul 2026 : Excursion, Ferry & Yacht",
+    metaDescription: "Excursion aux Îles des Princes Istanbul 2026 : Büyükada, Heybeliada. Ferry dès €5, yacht privé dès €280. Licence TURSAB depuis 2001.",
+    excerpt: "Une journée aux Îles des Princes : calme sans voitures, villas victoriennes et mer de Marmara à deux pas d'Istanbul. Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001, plus de 50 000 invités — vous guide pour organiser cette excursion inoubliable.",
+    category: "istanbul",
+    date: "2026-05-13",
+    readTime: "10 min de lecture",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Büyükada Îles des Princes Istanbul — calèches devant les villas ottomanes historiques",
+    keywords: [
+      "iles des princes istanbul",
+      "excursion iles des princes",
+      "buyukada istanbul",
+      "heybeliada excursion",
+      "ferry iles des princes istanbul",
+      "yacht prive iles des princes",
+      "adalar istanbul visite",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Les Îles des Princes (Adalar) se trouvent à 20 km au sud-est d'Istanbul dans la mer de Marmara — aucune voiture, villas victoriennes, calèches",
+      "Ferry public (Şehir Hatları) depuis Kabataş ou Eminönü : à partir de €5 — départs réguliers quotidiens",
+      "Location de yacht privé dès €280 pour le bateau entier — hop-on hop-off entre les îles à votre rythme",
+      "Büyükada est la plus grande île ; Heybeliada, Burgazada et Kınalıada valent le détour pour leur authenticité",
+    ],
+    sections: [
+      {
+        heading: "Que sont les Îles des Princes ?",
+        answerCapsule: "Les Îles des Princes (Adalar) forment un archipel de neuf îles dans la mer de Marmara, à environ 20 km d'Istanbul. Quatre sont habitées : Büyükada, Heybeliada, Burgazada et Kınalıada. Aucune voiture n'y circule — uniquement des calèches et des vélos.",
+        content: "Les Îles des Princes — en turc \"Adalar\" (les îles) — sont le secret le mieux gardé d'Istanbul. À seulement 20 kilomètres de la métropole s'étend un monde où aucune voiture ne circule, où les balcons en fer forgé des anciennes maisons d'été dessinent les ruelles et où l'air sent la résine de pin plutôt que les gaz d'échappement.\n\nLeur nom \"Îles des Princes\" remonte à l'Empire byzantin, lorsque des membres de la famille impériale y étaient exilés. Elles sont ensuite devenues la villégiature estivale des élites ottomanes et grecques — des centaines de villas en bois du XIXe siècle en témoignent encore aujourd'hui.\n\nPour les voyageurs français visitant Istanbul, les îles offrent un contraste parfait avec la métropole : ici, des calèches (faytonlar) remplacent les taxis, des forêts de pins bruissent dans la brise marine, et aucun immeuble de hauteur ne vient troubler l'horizon. Une excursion d'une journée dure environ 4 à 6 heures, transfert en ferry inclus.\n\nMerry Tourism — [agence licenciée TURSAB Groupe A](/tursab) depuis 2001, plus de 50 000 invités — connaît ces eaux depuis un quart de siècle et propose aussi bien la route classique en ferry que des excursions en yacht privé vers les îles.",
+        callout: {
+          type: "info",
+          text: "Les Îles des Princes se trouvent dans la mer de Marmara — pas dans le Bosphore. Le ferry part en direction sud-est depuis Istanbul, longeant la côte asiatique. La mer de Marmara peut être plus agitée que le Bosphore, notamment en automne et en hiver.",
+        },
+      },
+      {
+        heading: "Comment se rendre aux Îles des Princes ?",
+        answerCapsule: "Il existe deux options principales : le ferry public Şehir Hatları depuis Kabataş ou Eminönü (environ €5, 60–90 min) ou la location d'un yacht privé avec MerrySails (dès €280 pour le bateau, départ flexible). En été, des ferries rapides IDO sont également disponibles.",
+        content: "Pour les voyageurs français ou en visite en Turquie, les options de transport sont clairement structurées :\n\n**Option 1 : Ferry public (Şehir Hatları)**\nL'option la plus économique et la plus utilisée. Les Şehir Hatları (lignes de la ville) assurent des départs réguliers quotidiens depuis Kabataş (rive européenne) et Eminönü (vieille ville), avec des escales sur plusieurs îles. Prix : environ €5 par trajet (Istanbulkart ou paiement en espèces au terminal). Durée jusqu'à Büyükada : 60 à 90 minutes selon les escales. Le ferry est confortable, dispose d'un café à bord et offre des vues spectaculaires sur la skyline d'Istanbul au départ.\n\n**Option 2 : Ferry rapide IDO**\nLes ferries privés IDO sont plus rapides (environ 35–40 min jusqu'à Büyükada) et plus confortables, mais plus chers et pas toujours en service — la saison et la météo en décident. Réservation via l'application IDO ou au terminal.\n\n**Option 3 : Yacht privé avec MerrySails**\nPour les groupes ou les occasions spéciales, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) est l'option la plus exclusive. Dès €280 pour le bateau entier (2 à 8 personnes), vous rejoignez les îles par voie directe, avec des pauses baignade en chemin et un rythme entièrement personnalisé. Idéal pour les voyages de noces, les familles ou les petits groupes d'entreprise.\n\n**Attention :** En cas de vent fort ou de tempête, la liaison en ferry peut être réduite ou suspendue — la mer de Marmara est plus exposée que le Bosphore. Prévoyez une journée alternative en cas de météo incertaine.",
+      },
+      {
+        heading: "Ferry public (Şehir Hatları) — prix et détails pratiques",
+        answerCapsule: "Le ferry Şehir Hatları vers les Îles des Princes coûte environ €5 par personne et par trajet (Istanbulkart). Il part de Kabataş et d'Eminönü avec des départs réguliers quotidiens. Durée jusqu'à Büyükada : 60 à 90 minutes.",
+        content: "Le ferry public Şehir Hatları est le point d'entrée le plus logique pour la plupart des visiteurs :\n\n**Points de départ :**\n- **Embarcadère de Kabataş :** Situé juste à côté du palais de Dolmabahçe, accessible depuis la place Taksim en 15 minutes par le tramway T3\n- **Embarcadère d'Eminönü :** Au cœur historique d'Istanbul, à 15 minutes à pied de Sainte-Sophie ou via le tramway T1\n\n**Prix :** Départs réguliers quotidiens ; billets à partir d'environ €5 par personne et par trajet (payable en lires turques au terminal ; le prix peut varier légèrement selon le taux de change). Les détenteurs d'une Istanbulkart bénéficient d'un tarif réduit.\n\n**Durée du trajet :**\n- Kabataş → Büyükada : environ 60 à 90 min (avec escales à Kınalıada, Burgazada, Heybeliada)\n- Ferries directs : environ 60 min ; trajets avec toutes les escales : environ 90 min\n\n**Sièges :** Les ferries disposent de ponts intérieurs et extérieurs ; en été, le pont extérieur tôt le matin est l'endroit idéal pour les photos.\n\n**Retour :** Le dernier ferry depuis Büyükada vers Istanbul part entre 18h00 et 22h00 selon la saison — consultez l'horaire actuel au terminal ou sur le site des Şehir Hatları. Ne ratez pas le dernier départ !\n\n**Conseil pratique :** Les week-ends d'été, les ferries sont bondés. Partez tôt (avant 9h00) ou choisissez un jour de semaine.",
+        callout: {
+          type: "tip",
+          text: "Achetez une Istanbulkart (carte rechargeable pour les transports en commun, disponible aux distributeurs sur le quai). Elle est valable aussi pour les bus, les tramways et le métro — idéale pour l'ensemble de votre séjour à Istanbul.",
+        },
+      },
+      {
+        heading: "Yacht privé MerrySails — dès €280 vers les îles",
+        answerCapsule: "Un yacht privé vers les Îles des Princes coûte dès €280 pour le bateau entier (2 à 8 personnes, 2 heures). Les groupes plus importants paient €500 à €900 (8 à 20 pers.). Capitaine, équipage et assurances sont toujours inclus.",
+        content: "Pour les voyageurs qui souhaitent découvrir les Îles des Princes loin de la foule des ferries, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) de Merry Tourism est la solution la plus élégante.\n\n**Ce que propose le yacht privé :**\n- Trajet direct vers l'île de votre choix (sans escales intermédiaires)\n- Pauses baignade en chemin — les eaux turques sont cristallines\n- Restauration selon vos souhaits (traiteur en option)\n- Départ à l'heure qui vous convient (formule coucher de soleil vers les îles disponible !)\n- Capitaine et équipage de Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001\n\n**Grille tarifaire :**\n\n| Type de bateau | Capacité | Durée | Prix |\n|---|---|---|---|\n| Petit bateau | 2–8 personnes | 2 heures | dès €280 |\n| Bateau moyen | 8–20 personnes | 2–4 heures | €500–900 |\n| Grand bateau | 20–50 personnes | 4–8 heures | dès €1 000 |\n\nParticulièrement prisé : les excursions combinées — le matin [croisière sur le Bosphore](/fr/bosphorus-cruise), l'après-midi trajet privé vers les Îles des Princes. Contactez l'équipe via WhatsApp (+90 537 040 68 22) pour une offre personnalisée.\n\n**Pour qui le yacht privé est-il recommandé ?**\n- Les couples pour une journée romantique sur les îles\n- Les familles avec enfants (pas de bousculade, rythme personnel)\n- Les petits groupes d'entreprise pour une team experience\n- Les voyageurs pour un mariage ou un anniversaire",
+        proTip: "À 6 personnes, le yacht privé (€280 ÷ 6 = environ €47/personne) ne coûte guère plus que le ferry plus les entrées — mais vous disposez du bateau entier pour vous seuls.",
+      },
+      {
+        heading: "Büyükada — L'île principale",
+        answerCapsule: "Büyükada (\"Grande Île\") est la plus grande et la plus connue des Îles des Princes. À voir : le monastère d'Aya Yorgi (sur la colline), les plages, les villas en bois historiques et les promenades en calèche.",
+        content: "Büyükada est le cœur des Îles des Princes et la destination de la majorité des visiteurs. Avec une superficie d'environ 5,4 km², elle se parcourt aisément en une demi-journée — à vélo, en calèche ou à pied.\n\n**Ce qu'il faut voir et faire :**\n\n**Monastère d'Aya Yorgi (colline) :** Ce monastère grec-orthodoxe, perché au point culminant de l'île, est le symbole de Büyükada. La montée prend environ 20 à 30 minutes à pied ou en calèche. Au sommet, un panorama exceptionnel s'ouvre sur la mer de Marmara.\n\n**Villas historiques en bois :** L'architecture de Prinkipo — maisons d'été victoriennes et ottomanes — caractérise le paysage urbain de l'île. Certaines sont magnifiquement restaurées, d'autres romantiquement patinées par le temps.\n\n**Calèches (Fayton) :** Le moyen de locomotion emblématique des îles. Les circuits font le tour de l'île (environ 45 min) ou montent jusqu'au monastère (environ 25 min). Les tarifs varient — renseignez-vous à la station de calèches près du quai.\n\n**Plages :** La plage principale près du quai est propre mais bondée en été. Alternative : louer un vélo pour rejoindre les plages plus calmes sur le revers de l'île.\n\n**Restaurants sur l'île :** De nombreux restaurants de poisson autour du quai servent des prises du jour et des fruits de mer. Un poisson grillé avec pain et thé turc coûte environ €8 à €15.\n\nMerry Tourism a accueilli plus de 50 000 invités dans ces eaux — les Îles des Princes font depuis longtemps partie de nos recommandations pour les [visiteurs d'Istanbul](/fr/bosphorus-cruise).",
+      },
+      {
+        heading: "Les autres îles — Heybeliada, Burgazada, Kınalıada",
+        answerCapsule: "Heybeliada est la deuxième île, plus calme — idéale pour la randonnée et le vélo. Burgazada offre une atmosphère de village authentique. Kınalıada est la plus proche d'Istanbul et la moins touristique.",
+        content: "Au-delà de Büyükada, les autres îles réservent des découvertes encore moins touristiques :\n\n**Heybeliada (Halki) :** La deuxième île en taille est plus paisible et moins fréquentée que Büyükada. Elle possède plusieurs petites plages, des sentiers de randonnée en forêt de pins et quelques bons restaurants de poisson autour du quai. Idéale pour les voyageurs en quête de tranquillité.\n\n**Burgazada :** Nettement moins de visiteurs que les deux premières îles. Un centre de village vivant et authentique avec de petits cafés et un monastère grec-orthodoxe sur la colline. Pour les voyageurs qui cherchent la vraie vie insulaire loin de l'agitation touristique.\n\n**Kınalıada :** L'île la plus proche de la ville est aussi la plus petite des quatre îles habitées. Beaucoup d'Istanbuliotes y passent leurs week-ends ; peu de tourisme international. De belles criques de baignade et une ambiance de village détendue.\n\n**Conseil iles multiples :** Si vous souhaitez visiter plusieurs îles, des ferries font escale sur toutes. Avec le yacht privé, vous choisissez vous-même l'ordre et pouvez aussi rejoindre des plages inaccessibles aux ferries publics. Informations sur les [points de départ des croisières du Bosphore](/fr/bosphorus-cruise-departure-points).",
+      },
+      {
+        heading: "Meilleure période et conseils pratiques",
+        answerCapsule: "La meilleure période pour les Îles des Princes est de mai à juin et de septembre à octobre — chaud, mais sans la foule estivale. Juillet et août sont très fréquentés mais idéaux pour se baigner. L'hiver est calme et moins cher.",
+        content: "**Aperçu des saisons :**\n\n**Mai–juin (recommandé) :** Températures agréables (22–28°C), pas encore bondées. La meilleure combinaison entre beau temps et fréquentation raisonnable.\n\n**Juillet–août (haute saison) :** L'eau est la plus chaude (26–28°C), mais les îles — surtout Büyükada — sont extrêmement fréquentées. Les ferries se remplissent vite. Partez tôt (premier ferry du matin).\n\n**Septembre–octobre (automne, très recommandé) :** La période la plus calme, avec des températures encore agréables (18–24°C). La fréquentation diminue de façon spectaculaire.\n\n**Novembre–avril (saison hivernale) :** Les îles sont presque désertes, mais de nombreux restaurants et commerces sont fermés. Les ferries sont moins fréquents.\n\n**Conseils pratiques :**\n- **Emportez du liquide :** Le paiement par carte n'est pas toujours possible sur les îles, notamment dans les petits cafés\n- **Louer un vélo :** À Büyükada et Heybeliada, des loueurs sont présents sur le quai — plus économique et flexible que la calèche pour les voyageurs individuels\n- **Protection solaire :** L'effet de réflexion de la mer amplifie le rayonnement solaire — SPF 50+ recommandé\n- **Chaussures adaptées aux pentes :** Le monastère est en hauteur — des chaussures fermées sont conseillées\n- **Vérifier le dernier ferry :** Ne ratez pas le dernier départ du soir — les capacités d'hébergement sur les îles sont limitées et onéreuses",
+        callout: {
+          type: "tip",
+          text: "Combinez l'excursion aux Îles des Princes avec une croisière au coucher de soleil sur le Bosphore le même soir : îles le matin, Bosphore le soir. MerrySails propose les deux expériences — contact via WhatsApp : +90 537 040 68 22.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Comment se rendre aux Îles des Princes depuis Istanbul ?",
+        a: "L'option la plus pratique et la plus économique est le ferry Şehir Hatları depuis l'embarcadère de Kabataş (à côté du palais de Dolmabahçe) ou d'Eminönü (vieille ville). Départs réguliers quotidiens ; durée jusqu'à Büyükada : environ 60 à 90 minutes. Prix environ €5 par personne. Alternative : ferry rapide IDO (environ 35–40 min, plus cher). Pour les groupes, MerrySails propose des yachts privés dès €280 pour le bateau entier.",
+      },
+      {
+        q: "Quel est le prix du ferry pour les Îles des Princes ?",
+        a: "Le ferry public Şehir Hatları vers les Îles des Princes coûte environ €5 par personne et par trajet (payable en lires turques au terminal ; le prix peut légèrement varier selon le taux de change). Les détenteurs d'une Istanbulkart bénéficient d'un tarif légèrement réduit. Le yacht privé MerrySails est disponible dès €280 pour le bateau entier (2 à 8 personnes).",
+      },
+      {
+        q: "L'excursion d'une journée aux Îles des Princes en vaut-elle la peine ?",
+        a: "Oui, absolument — surtout pour les voyageurs en quête d'une pause loin de l'agitation d'Istanbul. Les îles offrent une atmosphère radicalement différente : pas de voitures, villas historiques en bois, forêts de pins et charme côtier turc. Une demi-journée (aller-retour inclus) est facilement organisable. Nous recommandons un jour de semaine ou la saison de printemps/automne pour éviter la foule.",
+      },
+      {
+        q: "Peut-on louer un yacht privé pour aller aux Îles des Princes ?",
+        a: "Oui. Merry Tourism propose des yachts privés vers les Îles des Princes dès €280 pour le bateau entier (2 à 8 personnes, 2 heures). Pour les groupes plus importants (8 à 20 pers.), le yacht coûte €500 à €900 pour 2 à 4 heures. Capitaine et équipage sont toujours inclus. Contact : WhatsApp +90 537 040 68 22. Plus d'informations : [yacht privé Istanbul](/fr/yacht-charter-istanbul).",
+      },
+      {
+        q: "Combien de temps dure l'excursion aux Îles des Princes ?",
+        a: "Le trajet en ferry depuis Kabataş jusqu'à Büyükada prend environ 60 à 90 minutes. Pour une excursion d'une journée détendue, comptez 5 à 6 heures au total : aller-retour (2 à 3 h) plus 2 à 3 heures sur l'île. Avec un yacht privé, vous pouvez organiser votre programme plus librement et visiter plusieurs îles.",
+      },
+      {
+        q: "Quelle est la meilleure période pour visiter les Îles des Princes ?",
+        a: "La meilleure période est de mai à juin et de septembre à octobre : beau temps, moins de monde qu'en plein été. Juillet et août sont les mois les plus fréquentés — idéaux pour se baigner, mais bondés. En semaine, la fréquentation est nettement moins importante que le week-end. L'hiver (novembre–avril) est calme, mais plus frais et de nombreux équipements sont fermés.",
+      },
+    ],
+    relatedTours: ["bosphorus-cruise", "bosphorus-sunset-cruise", "yacht-charter-istanbul"],
+    relatedPosts: ["guide-croisiere-bosphore-istanbul-2026", "location-yacht-istanbul-guide", "croisiere-bosphore-prix-istanbul"],
+    proTip: "Combinez les Îles des Princes avec une croisière coucher de soleil sur le Bosphore le même jour : îles le matin en ferry, Bosphore le soir avec MerrySails (€34–40). Pour les réservations et questions : WhatsApp +90 537 040 68 22.",
+    calloutText: "MerrySails — agence licenciée TURSAB Groupe A depuis 2001 (licence n°14316) — a accueilli plus de 50 000 invités à Istanbul. Réservez votre excursion en yacht privé vers les Îles des Princes directement sur merrysails.com.",
+  },
 ];

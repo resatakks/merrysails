@@ -555,6 +555,7 @@ export default function BookingSidebar({
               basePrice: effectivePrice,
               departurePoint: tour.departurePoint,
               tourImage: tour.image,
+              rawDate: bookingDate,
             }}
             onClose={() => setBookingModal(false)}
           />

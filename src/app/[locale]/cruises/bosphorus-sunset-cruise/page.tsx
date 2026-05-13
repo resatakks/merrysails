@@ -45,9 +45,9 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Boğaz Gün Batımı Turu İstanbul — €34'dan başlayan fiyatlar",
+    title: "Boğaz Gün Batımı Turu İstanbul — €30'dan başlayan fiyatlar",
     description:
-      "İstanbul'da Boğaz gün batımı turu €34'ten başlıyor. 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
+      "İstanbul'da Boğaz gün batımı turu €30'dan başlıyor (Sal & Per). 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
     h1: "Boğaz Gün Batımı Turu Istanbul — Özel Yat",
     canonicalPath: "/tr/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Ana Sayfa",
@@ -55,7 +55,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Gün Batımı Turu",
     aboutTitle: "Boğaz Gün Batımı Turu Hakkında",
     aboutBody: [
-      "MerrySails Boğaz Gün Batımı Turu, İstanbul'un en ikonik manzaralarını altın saat ışığında izlemek isteyen misafirler için tasarlanmış 2 saatlik paylaşımlı lüks yat deneyimidir. Tur, €34 (şarapsız) ve €40 (şaraplı) olmak üzere iki net seçenek sunar.",
+      "MerrySails Boğaz Gün Batımı Turu, İstanbul'un en ikonik manzaralarını altın saat ışığında izlemek isteyen misafirler için tasarlanmış 2 saatlik paylaşımlı lüks yat deneyimidir. Tur iki net seçenek sunar: Şarapsız €30 (Sal & Per) / €34, Şaraplı €35 (Sal & Per) / €40.",
       "Güzergah Boğaz'ın güney kesimini kapsar; Dolmabahçe Sarayı, Ortaköy Camii ve Boğaz Köprüleri yat üzerinden izlenir. Canlı rehber eşliğinde, 12 dilde sesli rehber, çay, Türk kahvesi, limonata, su, atıştırmalık ve meyve tabağı ikramları dahildir. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir.",
     ],
     trustSignal:
@@ -76,7 +76,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       },
       {
         q: "Şaraplı ve şarapsız seçenek arasındaki fark nedir?",
-        a: "İki seçenek de aynı 2 saatlik güzergahı, canlı rehberi ve standart ikramları kapsar. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir; fiyat €34'ten €40'a çıkar.",
+        a: "İki seçenek de aynı 2 saatlik güzergahı, canlı rehberi ve standart ikramları kapsar. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir; şarapsız €30 (Sal & Per) / €34, şaraplı €35 (Sal & Per) / €40.",
       },
       {
         q: "Tur nereden başlıyor?",
@@ -111,9 +111,9 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "WhatsApp ile Yaz",
   },
   de: {
-    title: "Bosporus Sonnenuntergang Istanbul — Ab €34",
+    title: "Bosporus Sonnenuntergang Istanbul — Ab €30",
     description:
-      "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €34. 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €40. TÜRSAB-lizenziert. Direkt buchen.",
+      "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €30 (Di & Do). 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €35 (Di & Do). TÜRSAB-lizenziert. Direkt buchen.",
     h1: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Privatyacht",
     canonicalPath: "/de/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Startseite",
@@ -121,7 +121,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Sonnenuntergang Kreuzfahrt",
     aboutTitle: "Über die Bosporus Sonnenuntergang Kreuzfahrt",
     aboutBody: [
-      "Die MerrySails Bosporus Sonnenuntergang Kreuzfahrt ist ein zweistündiges Erlebnis auf einer geteilten Luxusjacht – ideal für Gäste, die Istanbuls berühmte Skyline im goldenen Licht der Abendstunde erleben möchten. Sie wählen zwischen zwei klaren Paketen: €34 ohne Wein oder €40 inklusive zwei Gläsern Wein pro Person.",
+      "Die MerrySails Bosporus Sonnenuntergang Kreuzfahrt ist ein zweistündiges Erlebnis auf einer geteilten Luxusjacht – ideal für Gäste, die Istanbuls berühmte Skyline im goldenen Licht der Abendstunde erleben möchten. Sie wählen zwischen zwei klaren Paketen: Ohne Wein ab €30 (Di & Do) / €34, oder mit zwei Gläsern Wein ab €35 (Di & Do) / €40 pro Person.",
       "Die Route führt durch den südlichen Bosporus, vorbei am Dolmabahçe-Palast, der Ortaköy-Moschee und den beleuchteten Brücken. An Bord erwarten Sie ein Live-Guide, ein Audio-Guide in 12 Sprachen sowie Tee, türkischer Kaffee, Limonade, Wasser, Snacks und ein Obstteller.",
     ],
     trustSignal:
@@ -142,7 +142,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       },
       {
         q: "Was ist der Unterschied zwischen Option mit und ohne Wein?",
-        a: "Beide Optionen beinhalten dieselbe 2-stündige Route, denselben Live-Guide und dieselben Standard-Erfrischungen. Die Option mit Wein enthält zusätzlich 2 Gläser Wein pro Person; der Preis steigt von €34 auf €40.",
+        a: "Beide Optionen beinhalten dieselbe 2-stündige Route, denselben Live-Guide und dieselben Standard-Erfrischungen. Die Option mit Wein enthält zusätzlich 2 Gläser Wein pro Person; Ohne Wein ab €30 (Di & Do) / €34, Mit Wein ab €35 (Di & Do) / €40.",
       },
       {
         q: "Wo startet die Tour?",
@@ -177,9 +177,9 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Per WhatsApp anfragen",
   },
   fr: {
-    title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €34",
+    title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €30",
     description:
-      "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €34. 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €40. Réservez.",
+      "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €30 (mar & jeu). 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €35 (mar & jeu). Réservez.",
     h1: "Croisière Coucher de Soleil Bosphore Istanbul — Yacht Privé",
     canonicalPath: "/fr/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Accueil",
@@ -187,7 +187,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Croisière Coucher de Soleil",
     aboutTitle: "À propos de la Croisière Coucher de Soleil",
     aboutBody: [
-      "La Croisière Coucher de Soleil sur le Bosphore de MerrySails est une expérience de 2 heures à bord d'un yacht de luxe partagé, conçue pour admirer les panoramas iconiques d'Istanbul à l'heure dorée. Deux formules claires sont proposées : €34 sans vin ou €40 avec vin (2 verres par personne).",
+      "La Croisière Coucher de Soleil sur le Bosphore de MerrySails est une expérience de 2 heures à bord d'un yacht de luxe partagé, conçue pour admirer les panoramas iconiques d'Istanbul à l'heure dorée. Deux formules claires : sans vin dès €30 (mar & jeu) / €34, avec vin dès €35 (mar & jeu) / €40 (2 verres par personne).",
       "L'itinéraire couvre la partie sud du Bosphore et passe devant le palais de Dolmabahçe, la mosquée d'Ortaköy et les ponts illuminés. À bord, vous bénéficiez d'un guide en direct, d'un audio-guide en 12 langues, ainsi que de thé, café turc, citronnade, eau, encas salés et plateau de fruits.",
     ],
     trustSignal:
@@ -208,7 +208,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       },
       {
         q: "Quelle est la différence entre l'option avec et sans vin ?",
-        a: "Les deux formules incluent le même itinéraire de 2 heures, le même guide live et les mêmes rafraîchissements standards. L'option avec vin ajoute 2 verres de vin par personne ; le tarif passe de €34 à €40.",
+        a: "Les deux formules incluent le même itinéraire de 2 heures, le même guide live et les mêmes rafraîchissements standards. L'option avec vin ajoute 2 verres de vin par personne ; sans vin dès €30 (mar & jeu) / €34, avec vin dès €35 (mar & jeu) / €40.",
       },
       {
         q: "D'où part la croisière ?",
@@ -243,9 +243,9 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Contacter par WhatsApp",
   },
   nl: {
-    title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €34",
+    title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €30",
     description:
-      "Bosporus zonsondergang cruise Istanbul vanaf €34. 2 uur op luxe jacht met live gids en hapjes. Wijnoptie €40. Direct boeken, TÜRSAB-gecertificeerd.",
+      "Bosporus zonsondergang cruise Istanbul vanaf €30 (di & do). 2 uur op luxe jacht met live gids en hapjes. Wijnoptie v.a. €35 (di & do). Direct boeken, TÜRSAB-gecertificeerd.",
     h1: "Bosporus Zonsondergang Cruise Istanbul — Privé Jacht",
     canonicalPath: "/nl/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Home",
@@ -253,7 +253,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Zonsondergang Cruise",
     aboutTitle: "Over de Bosporus Zonsondergang Cruise",
     aboutBody: [
-      "De MerrySails Bosporus Zonsondergang Cruise is een 2 uur durende ervaring op een gedeeld luxe jacht, perfect voor wie Istanbul tijdens het gouden uur wil zien. U kiest tussen twee duidelijke opties: €34 zonder wijn of €40 met wijn (2 glazen per persoon).",
+      "De MerrySails Bosporus Zonsondergang Cruise is een 2 uur durende ervaring op een gedeeld luxe jacht, perfect voor wie Istanbul tijdens het gouden uur wil zien. U kiest tussen twee duidelijke opties: zonder wijn v.a. €30 (di & do) / €34, met wijn v.a. €35 (di & do) / €40 (2 glazen per persoon).",
       "De route volgt het zuidelijke deel van de Bosporus en vaart langs het Dolmabahçe-paleis, de Ortaköy-moskee en de verlichte bruggen. Aan boord zijn een live gids, een audiogids in 12 talen en versnaperingen inbegrepen: thee, Turkse koffie, limonade, water, hapjes en een fruitschaal.",
     ],
     trustSignal:
@@ -274,7 +274,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       },
       {
         q: "Wat is het verschil tussen de optie met en zonder wijn?",
-        a: "Beide opties hebben dezelfde route van 2 uur, dezelfde live gids en dezelfde standaardversnaperingen. De optie met wijn voegt 2 glazen wijn per persoon toe; de prijs gaat van €34 naar €40.",
+        a: "Beide opties hebben dezelfde route van 2 uur, dezelfde live gids en dezelfde standaardversnaperingen. De optie met wijn voegt 2 glazen wijn per persoon toe; zonder wijn v.a. €30 (di & do) / €34, met wijn v.a. €35 (di & do) / €40.",
       },
       {
         q: "Waar vertrekt de cruise?",

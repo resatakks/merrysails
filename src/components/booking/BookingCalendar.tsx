@@ -125,7 +125,15 @@ export default function BookingCalendar({
     selectedOperation?.departureTimeOverride || departureTime;
 
   const totalGuests = adults + children;
-  const total = isPerGroup ? priceEur : priceEur * totalGuests;
+  const selectedDayOfWeek = selectedDate ? selectedDate.getDay() : -1;
+  const isWeekdayDiscountDay = weekdayDiscount
+    ? weekdayDiscount.weekdays.includes(selectedDayOfWeek)
+    : false;
+  const effectivePriceEur =
+    isWeekdayDiscountDay && weekdayDiscount
+      ? weekdayDiscount.discountedPrice
+      : priceEur;
+  const total = isPerGroup ? effectivePriceEur : effectivePriceEur * totalGuests;
   const hasDiscount =
     typeof originalPriceEur === "number" && originalPriceEur > priceEur;
   const originalTotal = hasDiscount
@@ -589,14 +597,19 @@ export default function BookingCalendar({
                     <span className="line-through">€{originalTotal}</span>
                   </div>
                 )}
+                {isWeekdayDiscountDay && weekdayDiscount && (
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
+                    Weekday discount — €{weekdayDiscount.discountedPrice} instead of €{priceEur}/person
+                  </div>
+                )}
                 <div className="flex items-center justify-between text-sm">
                   {isPerGroup ? (
                     <span className="text-[var(--body-text)]">
-                      €{priceEur} private charter price
+                      €{effectivePriceEur} private charter price
                     </span>
                   ) : (
                     <span className="text-[var(--body-text)]">
-                      €{priceEur} × {totalGuests} guest
+                      €{effectivePriceEur} × {totalGuests} guest
                       {totalGuests > 1 ? "s" : ""}
                     </span>
                   )}

@@ -25,7 +25,7 @@ export const fleet: Yacht[] = [
     length: "24 metre",
     features: ["Klimalı salon", "Açık üst güverte", "VIP bölüm", "Profesyonel mutfak", "Ses sistemi", "LED aydınlatma"],
     description: "MerrySails filosunun amiral gemisi. 50 kişiye kadar misafir ağırlayabilen Merry Star, lüks salonu ve geniş üst güvertesiyle grup turları ve özel organizasyonlar için ideal.",
-    image: "/images/tours/yacht-charter-in-istanbul/01.jpeg",
+    image: "/images/tours/yacht-charter-in-istanbul/01.webp",
     pricePerHour: 300,
   },
   {
@@ -37,7 +37,7 @@ export const fleet: Yacht[] = [
     length: "18 metre",
     features: ["Geleneksel ahşap tasarım", "Açık güverte", "Gölgelik alan", "Ses sistemi", "Mini mutfak"],
     description: "Otantik İstanbul deneyimi sunan klasik ahşap teknemiz. Boğaz'ın ruhunu en iyi yansıtan Merry Breeze, gün batımı ve keşif turları için mükemmel.",
-    image: "/images/tours/yacht-charter-in-istanbul/05.jpeg",
+    image: "/images/tours/yacht-charter-in-istanbul/05.webp",
     pricePerHour: 200,
   },
   {

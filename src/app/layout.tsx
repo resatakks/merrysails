@@ -159,7 +159,7 @@ const organizationSchema = {
             },
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: 34,
+              price: 30,
               priceCurrency: "EUR",
               valueAddedTaxIncluded: true,
             },

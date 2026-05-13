@@ -2796,6 +2796,132 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     calloutText:
       "TURSAB A Grubu lisanslı Merry Tourism (#14316), 2001'den bu yana 50.000+ misafirle İstanbul Boğazı'nda yat kiralama deneyimi sunuyor. Yat kiralama rezervasyonu ve fiyat için WhatsApp: +90 537 040 68 22",
   },
-
+  {
+    slug: "adalar-turu-istanbul-buyukada-rehberi-2026",
+    title: "Adalar Turu İstanbul Rehberi 2026 — Büyükada, Heybeliada",
+    metaDescription: "İstanbul Adalar turu 2026: Büyükada, Heybeliada, Burgazada. Vapur ile €5'den, özel yat ile €280'den. TURSAB lisanslı.",
+    excerpt: "İstanbul'un en güzel kaçış noktası: arabasız dört ada, Osmanlı köşkleri, fayton gezintileri ve Marmara manzarası. 2026 sezonu için Adalar turu rehberiniz burada.",
+    category: "cruise-guide",
+    date: "2026-05-12",
+    dateModified: "2026-05-12",
+    readTime: "10 dk okuma",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Büyükada sahilinden görünen Splendid Palace Oteli ve çam ormanlarıyla kaplı Prens Adaları",
+    keywords: ["adalar turu istanbul", "büyükada turu", "princes islands türkiye", "ada turu istanbul", "ada vapur", "büyükada gezi rehberi", "istanbul adalar", "adalar vapuru"],
+    author: "editorial",
+    keyTakeaways: [
+      "Adalar, İstanbul Marmara'sında dört arabasız adadan oluşur — Büyükada, Heybeliada, Burgazada ve Kınalıada",
+      "Şehir Hatları vapuruyla Eminönü'nden Büyükada'ya yaklaşık 90 dakika, gidiş-dönüş yaklaşık €5",
+      "MerrySails özel yat kiralama seçeneğiyle Adalara €280'den (tüm tekne) ulaşabilirsiniz — kuyruk yok, sabit program yok",
+      "TURSAB A Grubu lisanslı Merry Tourism, 2001'den bu yana 50.000+ misafirle İstanbul ve Ada turları düzenliyor"
+    ],
+    sections: [
+      {
+        heading: "Adalar Nedir? Prens Adaları Hakkında Her Şey",
+        answerCapsule: "Adalar (Prens Adaları veya Prenses Adaları olarak da bilinir), İstanbul'un Marmara denizindeki dokuz adanın genel adıdır. Ziyaretçilere açık dört yerleşim adası bulunur: Büyükada, Heybeliada, Burgazada ve Kınalıada.",
+        content: "Adalar, İstanbul'un güneydoğusunda Marmara Denizi'nde yer alır; Kabataş'a olan mesafesi yaklaşık 15–30 km'dir. Adalar'ın tarihi kökleri Bizans dönemine uzanır: azizler, prensler ve muhalif figürler sürgün olarak bu adalara gönderilmiş; Osmanlı döneminde de aynı gelenek sürmüştür.\n\nYirminci yüzyılın en ünlü adalar sakinlerinden biri Leon Trotsky'dir. Büyükada'da 1929–1933 yılları arasında sürgünde yaşayan Trotsky, burada ünlü Rus Devrimi Tarihi'ni kaleme almıştır.\n\n**Dört Adanın Kısa Tanıtımı:**\n\n- **Büyükada** — Adaların en büyüğü ve en çok ziyaret edileni. Tarihi köşkler, Aya Yorgi Manastırı, Splendid Palace Oteli ve zengin restoran seçenekleriyle öne çıkar\n- **Heybeliada** — Daha sakin, yerel halk tarafından tercih edilen ikinci büyük ada. Çam ormanları, Deniz Harp Okulu ve Heybeliada Ruhban Okulu ile tarihî önem taşır\n- **Burgazada** — Balıkçı köyü atmosferi. Az turist, bisiklet dostu yollar ve ünlü yazar Sait Faik Abasıyanık'ın evi\n- **Kınalıada** — İstanbul'a en yakın ada. Ermeni ailelerinin yaz tatili adası olarak bilinir\n\nBütün adalarda motorlu taşıt yasaktır. Bu nedenle ulaşım yalnızca fayton (at arabası), bisiklet ve yürüyüşle sağlanır. Bu özellik, Adalar'ı İstanbul'un gürültüsünden gerçek anlamda kopardığı için pek çok İstanbullunun hâlâ en sevdiği hafta sonu rotasıdır."
+      },
+      {
+        heading: "İstanbul'dan Adalara Nasıl Gidilir?",
+        answerCapsule: "İki temel seçenek: Şehir Hatları vapuruyla Eminönü veya Kabataş'tan yaklaşık 90 dakikada, €5 gidiş-dönüş. Ya da MerrySails özel yat kiralama ile €280'den (tüm tekne), dilediğiniz saatte.",
+        content: "**Seçenek 1: Şehir Hatları Vapuru**\n\nŞehir Hatları'nın Adalar seferleri, Eminönü İskelesi (Galata Köprüsü yanı) ve Kabataş İskelesi'nden kalkar. Vapur sırasıyla Kınalıada, Burgazada, Heybeliada ve Büyükada'ya uğrar. Eminönü'nden Büyükada'ya geçiş süresi yaklaşık 90 dakika, Kabataş'tan yaklaşık 75 dakikadır.\n\nBiletler İstanbulkart ile alınır (yaklaşık 30 TRY tek yön). Kart sahibi olmayan ziyaretçiler için güncel tam fiyat yaklaşık €2–3 arasındadır. Gidiş-dönüş bütçe: kişi başı yaklaşık €5.\n\nYaz aylarında ve hafta sonlarında vapur kalabalık olur. Sabah 10:00–13:00 arası seferler ve 17:00–20:00 dönüş seferleri en yoğun dilimlerdir. Hafta içi veya sabahın erken saatleri (08:00–09:00) daha rahat bir seyahat sunar.\n\n**Seçenek 2: MerrySails Özel Yat Kiralama**\n\nGrup seyahati, özel kutlama veya kalabalıktan kaçmak isteyenler için MerrySails özel yat kiralama, Adalara ulaşmanın en keyifli yoludur. Kuruçeşme Marina'dan kalkan yat, Boğaz'ın ağzını aşıp Marmara'ya girer ve yaklaşık 45 dakikada Büyükada'ya varır. Program tamamen size aittir: gidiş-dönüş saati, Adalarda geçirilecek süre ve güzergah.\n\nFiyatlar tekne başına €280'den başlar. Detaylar için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın.",
+        callout: {
+          type: "tip",
+          text: "Yaz tatili sezonunda (Temmuz–Ağustos) hafta sonu Adalar vapurları dolup taşar. Eminönü'ne en az 45 dakika erken gidin ya da sabahın erken seferini (08:00) tercih edin."
+        }
+      },
+      {
+        heading: "Ada Vapuru — Şehir Hatları ile Büyükada Turu",
+        answerCapsule: "Şehir Hatları vapuru, Adalara ulaşmanın en ucuz ve en popüler yoludur. Eminönü'nden Büyükada'ya 90 dakika, gidiş-dönüş yaklaşık €5.",
+        content: "Şehir Hatları vapurları, İstanbulluların yüzyıllardır kullandığı ikonik deniz toplu taşıma araçlarıdır. Adalar hattı, bu vapurların en güzel rotalarından biridir: Galata Köprüsü'nden kalkan tekne Ayasofya ve Topkapı Sarayı siluetinin önünden geçerek Marmara açılır.\n\n**Pratik Vapur Bilgileri:**\n- Ana kalkış iskeleleri: Eminönü (Galata Köprüsü yanı), Kabataş (T1 tramvayı son durağı)\n- Büyükada'ya geçiş süresi: Eminönü'nden ~90 dk, Kabataş'tan ~75 dk\n- Fiyat: ~€5 gidiş-dönüş/kişi\n- Sefer saatleri: sehirhatlari.com.tr (mevsimsel değişiklik olabilir)\n- Uğrak noktaları (sırayla): Kınalıada → Burgazada → Heybeliada → Büyükada\n\nYalnızca Büyükada'ya gidiyorsanız ara iskelelerde inmeden vapurda kalın.\n\nTüm İstanbul su ulaşım seçeneklerini karşılaştırmak için [Boğaz turu iskele rehberi](/tr/bosphorus-cruise-departure-points) sayfasına göz atabilirsiniz."
+      },
+      {
+        heading: "Adalara Özel Yat ile Gitmek — MerrySails Seçeneği",
+        answerCapsule: "MerrySails özel yat kiralama seçeneği, Adalara tüm tekne €280'den başlayan fiyatlarla ulaştırır. Kuruçeşme'den Büyükada'ya yolculuk yaklaşık 45 dakikadır.",
+        content: "Vapur kuyruğundan, kalabalık güverteden ve sabit tarifeden kaçmak isteyenler için özel yat kiralama, Adalara en özgür ulaşım şeklidir.\n\nMerrySails, Kuruçeşme Marina'dan (Boğaz'ın Avrupa yakası) özel yat seferleri düzenler. Güzergah Boğaz ağzından Marmara'ya açılır ve Adalara yaklaşık 45 dakikada ulaşılır. Bu süre zarfında Tarihi Yarımada silueti ve her iki kıyının manzarası eşsiz bir panorama sunar.\n\n**MerrySails Yat Kiralama Paketleri (tekne başına):**\n- Essential — €280 / 2 saat: Boğaz ve Marmara deneyimi; adaya demirlemeden kısa bir gezinti\n- Premium — €380 / 2–3 saat: Büyükada yakınlarında demir atma, yüzme imkânı\n- VIP — €680 / 4+ saat: Tam gün ada rotası, ikram, fotoğrafçı, özel güzergah\n\n6 kişi ve üzeri gruplarda özel yat kiralama kişi başı maliyeti, vapur bileti + ada içi ulaşım + yemek toplamına yaklaşmaktadır — ancak buna ek olarak tam mahremiyet ve esneklik gelir.\n\nTüm fiyatlar ve kalkış noktaları için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın. İstanbul dönüşünde [Boğaz gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile günü taçlandırabilirsiniz.",
+        expertQuote: {
+          text: "Marmara açılımında her iki kıyı ve Tarihi Yarımada siluetini görmek, en deneyimli yolcuları bile etkiler. Adalara açılan yat rotası, Boğaz içi turdan bambaşka bir İstanbul perspektifi sunar.",
+          author: "Kaptan Mehmet Akın",
+          title: "30 Yıllık Boğaz Kaptanı, MerrySails"
+        }
+      },
+      {
+        heading: "Büyükada — Adaların Yıldızı",
+        answerCapsule: "Büyükada, Prens Adaları'nın en büyük ve en çok ziyaret edilen adasıdır. Aya Yorgi Manastırı, tarihi köşkler, fayton turları ve canlı iskele meydanıyla dolu bir gün geçirebilirsiniz.",
+        content: "Büyükada, yaklaşık 5,4 km² yüzölçümü ve 8.000 kişilik kalıcı nüfusuyla Adalar'ın merkezi konumundadır. Yaz aylarında hafta sonları on binlerce ziyaretçi ağırlar.\n\n**Büyükada'da Neler Yapılır:**\n\n**Aya Yorgi (Aziz George) Manastırı** — Adanın en yüksek noktasında (202 metre) yer alan Rum Ortodoks manastırı. Geleneksel olarak hac yolcuları aşağıdan ip bağlayıp manastıra kadar çıkar ve inişte ipi geri alır. Tepeden tüm Adaların ve İstanbul silüetinin görüntüsü görülür. Yürüyerek (yaklaşık 40 dakika) veya faytonla ulaşılabilir.\n\n**Splendid Palace Oteli** — 1906'da inşa edilen Osmanlı dönemi oteli, vapurdan görülebilen ikonik yapılardan biridir. Konaklama planlamıyorsanız bile teras kafe manzarası için uğranılabilir.\n\n**Leon Trotsky'nin Evi** — Trotsky, 1929–1933 yılları arasında Büyükada'da sürgünde yaşamış ve Rus Devrimi Tarihi'ni burada yazmıştır. Ev özel mülk olup ziyaretçilere açık değildir; ancak tarihe ilgi duyanlar için ada, bu bağlamda özel bir anlam taşır.\n\n**İskele Meydanı ve Restoranlar** — İskele çevresi taze balık, ızgara ve pastane seçenekleriyle doludur. Vapur yolculuğunun ardından iskelede taze balık ekmek yemek, Büyükada ritüellerinin en güzelidir.\n\n**Fayton ve Bisiklet** — İskele yakınındaki kiralık bisikletler saatte 50–80 TRY'dir. Faytonlar büyük tur (iki tepe) için carriage başına yaklaşık 600–800 TRY ücret alır (1–4 kişi). Büyük turu fayton yerine yürüyerek yapmak isteyen sağlıklı ziyaretçiler için yaklaşık 2 saatlik bir rotadır.\n\nBüyükada için en az 4–5 saat ayırın; manastır, iskele turu ve bir öğle yemeği için bu süre yeterlidir. Tam bir gün (09:00–18:00) rahat bir tempoyla adanın büyük kısmını görmenizi sağlar."
+      },
+      {
+        heading: "Heybeliada — Sakin Bir Alternatif",
+        answerCapsule: "Heybeliada, İstanbul'un en gözde yerel tatil adalarından biridir. Büyükada'dan daha sakin, daha az turistik; çam ormanları, Deniz Harp Okulu ve otantik mahalle dokusuyla öne çıkar.",
+        content: "Heybeliada, yaklaşık 2,4 km² yüzölçümü ve 3.000 kişilik kalıcı nüfusuyla Adalar'ın ikinci büyük adasıdır. İstanbul'un yerel halkı arasında en çok tercih edilen adaların başında gelir.\n\n**Heybeliada'yı Farklı Kılan Nedir:**\n\n- Yamaçları kaplayan çam ormanları — yazın reçine kokusu, adanın en belirgin atmosfer unsurudur\n- Deniz Harp Okulu kampüsü — kuzey yamacını dolduran tarihi yapılar ziyaretçilere kapalı olsa da manzarayı zenginleştirir\n- Heybeliada Ruhban Okulu — 1971'de Türk hükümeti tarafından kapatılan Rum Ortodoks ilahiyat okulu. Uluslararası diplomaside güncelliğini korur ve önemli tarihi değer taşır\n- Büyükada'ya göre çok daha az kalabalık — pazar günleri bile lokantalar nefes aldırır\n- Daha yerel bir mutfak — balıkçı lokantaları ve aile işletmeleri ağır basar\n\nHeybeliada, birden fazla kez İstanbul'a gelen ya da kalabalıktan uzak daha otantik bir deneyim arayanlar için idealdir. Vapur sırasıyla Kınalıada, Burgazada, Heybeliada ve ardından Büyükada'ya uğrar — plan yaparken bu sırayı göz önünde bulundurun."
+      },
+      {
+        heading: "Burgazada ve Kınalıada — Küçük Adalar",
+        answerCapsule: "Burgazada, balıkçı köyü dokusuyla sakin bir kaçış sunar; Kınalıada ise İstanbul'a en yakın ada olmasıyla Ermeni ailelerin geleneksel yaz tatil noktasıdır.",
+        content: "**Burgazada**, yaklaşık 1,5 km² ile dört adanın en işlenmemiş olanıdır. Küçük bir meydan, birkaç balıkçı lokantası, Rum Ortodoks kilisesi ve çam ormanlarından ibaret altyapısıyla turistik baskıdan tamamen uzaktır. Ünlü Türk hikâyecisi Sait Faik Abasıyanık, yazlarını Burgazada'da geçirmiş ve kısa hikâyelerinin önemli bir bölümünü burada yazmıştır; evi bugün müze olarak hizmet vermektedir. Sakin bir kaçış, bisiklet ve yürüyüş arayan ziyaretçiler için Burgazada bilinçli bir tercih olabilir.\n\n**Kınalıada** ('kına adası'), dört yerleşim adasının en küçüğü ve İstanbul'a en yakın olanıdır. İstanbul Ermeni topluluğunun yaz tatili geleneğinin sürdüğü ada olarak bilinir; nesiller boyunca aynı yazlıklar devredilmiştir. İki tepe, birkaç plaj ve küçük bir Bizans kilisesi barındırır.\n\nİstanbul'a ilk kez gelen çoğu ziyaretçi için Büyükada tek başına tam gün doldurmaya yeter. Burgazada ve Kınalıada, ikinci ya da üçüncü İstanbul ziyaretine veya özel yatla çoklu ada turuna eklenebilir.",
+        proTip: "Vapur, Kınalıada'ya ilk yanaşır, ardından Burgazada, sonra Heybeliada, en son Büyükada'ya gelir. Yalnızca Büyükada'ya gidiyorsanız tüm ara iskelelerde vapurda kalın."
+      },
+      {
+        heading: "Adalara Gitmek İçin En İyi Mevsim",
+        answerCapsule: "Nisan–Haziran ve Eylül–Ekim ideal aylardır: ılık hava, az kalabalık, fotoğraf için en güzel ışık. Temmuz–Ağustos yoğundur. Kasım–Mart sakin ama soğuktur.",
+        content: "**İlkbahar (Nisan–Haziran):** En ideal pencere. Sıcaklık 18–25°C arasındadır, bitki örtüsü yağmurların ardından canlıdır ve hafta sonu kalabalığı henüz doruk noktasına ulaşmamıştır. MerrySails, özel yat kiralama ile Ada ziyaretini birleştirmek için bu dönemi özellikle önerir. Mayıs ve Haziran ışığı fotoğrafçılık için mükemmeldir.\n\n**Yaz (Temmuz–Ağustos):** En yoğun dönem. İstanbul'dan kaçan tatilcilerle adalar dolup taşar; hafta sonu vapurları her zaman kalabalıktır. Sıcaklık 30–35°C'ye çıkar. Deniz yüzmek için idealdir — hem yat güvertesinden hem de adaların kayalık kıyılarından. Yaz ziyareti için hafta içi ve sabah erken seferleri tercih edin.\n\n**Sonbahar (Eylül–Ekim):** Adaların en güzel mevsimi olduğunu savunanlar var. Ağustos'un ardından kalabalık belirgin biçimde azalır, sıcaklık 20–28°C'ye düşer ve güneş açısının alçalmasıyla Osmanlı köşkleri üzerinde altın renkli ışık oluşur. Ekim, [Boğaz gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile Adalar gezi planını birleştirmek için yılın en iyi aylarından biridir.\n\n**Kış (Kasım–Mart):** Adalar çok sakindir; pek çok restoran ve pansiyon kapalıdır. Vapur seferleri sürmekle birlikte yaz atmosferini aramak doğru olmaz. Tarih ve mimariyle ilgilenen ziyaretçiler için kışın Büyükada'yı keşfetmek farklı ve etkileyici bir deneyim olabilir.",
+        expertQuote: {
+          text: "Mayıs, Adalara gitmek için en iyi ay. Yaz sıcağı henüz başlamamış, yabani çiçekler açmış, Büyükada hâlâ bir tatil köyü değil gerçek bir ada gibi duruyordur.",
+          author: "Ayşe Yılmaz",
+          title: "İstanbul Gezi Rehberi, Merry Tourism Editoryal Ekibi"
+        }
+      },
+      {
+        heading: "Pratik Bilgiler ve Adaya Gitmeden Önce Bilinmesi Gerekenler",
+        answerCapsule: "Yürüyüş ayakkabısı, güneş kremi ve nakit getirin. Vapura 30 dakika erken gidin (hafta sonları). Ada içi ATM sınırlıdır.",
+        content: "**Ulaşım:**\n- Taksim'den: F1 fünikülerle Kabataş'a, oradan Kabataş İskelesi'ne yürüyün (5 dakika)\n- Sultanahmet'ten: T1 tramvayıyla Eminönü'ne, oradan İskeleler'e yürüyün\n- Sefer saatleri için: sehirhatlari.com.tr (Google Translate ile kullanılabilir)\n\n**Adada:**\n- Tüm adalarda motorlu taşıt yasaktır. Ulaşım fayton, bisiklet veya yürüyüşle sağlanır\n- Nakit önemlidir — küçük kafeler, fayton sürücüleri ve bisiklet kiralama genellikle kart kabul etmez\n- Güneş kremi zorunludur — yamaç yolları açık ve deniz yansıması UV'yi artırır\n- Su taşıyın — Büyükada ve Heybeliada'da şişe su satılır, küçük adalarda daha az\n- Aya Yorgi Manastırı yokuşu için rahat yürüyüş ayakkabısı şarttır\n\n**Dönüş:**\n- Büyükada'dan Eminönü'ne son vapur yaz sezonunda genellikle 20:00–22:00 arasında kalkar — ada iskelesi tahtasını kontrol edin\n- Özel yat kiralama kullanıyorsanız dönüş saati tamamen size aittir\n\n**Boğaz Turu ile Birleştirin:**\nAdalar, [Boğaz turu](/tr/bosphorus-cruise) ve [gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile aynı ya da ertesi gün birlikte planlanabilir. Sabah vapurla Büyükada, akşam şehirde Boğaz gün batımı turu — İstanbul'un en tatmin edici iki günlük programı.\n\n**TURSAB Lisanslı Rezervasyon:**\nÖzel yat kiralama ile Ada turu için doğrudan MerrySails'i arayın: merrysails.com veya WhatsApp +90 537 040 68 22. Merry Tourism, [TURSAB](/tursab) A Grubu lisanslı olarak 2001'den bu yana faaliyet göstermekte ve 50.000+ misafir ağırlamıştır."
+      },
+      {
+        heading: "Sık Sorulan Sorular — Adalar Turu",
+        answerCapsule: "Adalar turu planlayan ziyaretçilerin en çok sorduğu sorular — vapur, fiyat, en iyi ada ve özel yat seçeneğine dair.",
+        content: "Aşağıdaki SSS bölümünde, MerrySails rezervasyon ekibinin İngilizce ve Türkçe konuşan misafirlerden en çok duyduğu sorulara yanıtlar derlenmiştir.\n\nİstanbul'daki tüm deniz tabanlı deneyimler için [Boğaz turu ana sayfası](/tr/bosphorus-cruise) kapsamlı bir başlangıç noktasıdır."
+      }
+    ],
+    faqs: [
+      {
+        q: "Adalar'a İstanbul'dan nasıl gidilir?",
+        a: "Ana seçenek Şehir Hatları vapurudur. Eminönü İskelesi'nden (Galata Köprüsü yanı) veya Kabataş İskelesi'nden kalkar; Büyükada'ya geçiş Eminönü'nden yaklaşık 90 dakikadır. Gidiş-dönüş bilet yaklaşık €5'tir. İkinci seçenek MerrySails özel yat kiralama: €280'den başlayan fiyatlarla (tüm tekne), sabit programa bağlı kalmadan."
+      },
+      {
+        q: "Adalar vapuru kaç para?",
+        a: "Şehir Hatları'nın Adalar vapuru, İstanbulkart ile yaklaşık 30 TRY (tek yön) ya da ziyaretçiler için yaklaşık €2–3 tam fiyattır. Gidiş-dönüş bütçe kişi başı yaklaşık €5'tir. MerrySails özel yat kiralama, tüm tekne için €280'den başlar — kişi başı fiyat değildir."
+      },
+      {
+        q: "Büyükada turu değer mi?",
+        a: "Evet — Büyükada, İstanbul'un motorlu taşıtlardan tamamen arındırılmış tek büyük refahıdır. Osmanlı köşkleri, çam ormanları, Aya Yorgi Manastırı ve Marmara manzarası eşsiz bir birleşim sunar. İstanbul'da 3 veya daha fazla günü olan ziyaretçiler için Büyükada günübirlik gezisi kesinlikle önerilir."
+      },
+      {
+        q: "Adalara özel yat ile gidilir mi?",
+        a: "Evet. MerrySails, Kuruçeşme Marina'dan Prens Adaları'na özel yat seferleri düzenler. Essential paketi (€280, 2 saat) Boğaz ve Marmara deneyimi sunar; Büyükada yakınlarında demir atmak için Premium (€380) veya VIP (€680) paketleri önerilir. Detaylar için yat kiralama İstanbul sayfasına bakın."
+      },
+      {
+        q: "Adalar turu kaç saat sürer?",
+        a: "Şehir Hatları vapuruyla tam gün Büyükada turu kapı-to-kapı yaklaşık 7–8 saat sürer: Eminönü'nden 90 dakika gidiş, adada 4–5 saat, 90 dakika dönüş. MerrySails özel yatıyla gidiş yaklaşık 45 dakikadır ve toplam süre tamamen size aittir."
+      },
+      {
+        q: "Adalara gitmek için en iyi mevsim nedir?",
+        a: "Nisan–Haziran ve Eylül–Ekim: ılık hava, az kalabalık ve fotoğraf için ideal ışık. Temmuz–Ağustos yoğundur; hafta içi ve erken sabah seferleri tercih edin. Kasım–Mart sakin ama soğuk; pek çok işletme kapalıdır."
+      },
+      {
+        q: "Adalarda araba var mı?",
+        a: "Hayır. Büyükada, Heybeliada, Burgazada ve Kınalıada dahil dört yerleşim adasında motorlu taşıt yasaktır. Ulaşım yalnızca fayton (at arabası), bisiklet ve yürüyüşle mümkündür. Bu kural, Adalar'ın İstanbul'un gürültüsünden gerçek anlamda kopmasını sağlar."
+      },
+      {
+        q: "İlk kez gidenler için en iyi ada hangisi?",
+        a: "Büyükada, ilk ziyaret için açık ara en iyi tercihtir. En çok görülecek yer (Aya Yorgi Manastırı, tarihi köşkler, iskele meydanı), en fazla restoran seçeneği ve en sık vapur bağlantısına sahiptir. Heybeliada, daha sakin ve yerel bir deneyim isteyenler için ikinci ziyarette tercih edilmesi gereken adıdır."
+      }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: [
+      "bogaz-turu-fiyat-rehberi-istanbul-2026",
+      "yat-kiralama-istanbul-fiyat-rehberi-2026",
+      "istanbul-bogaz-turu-fiyatlari-2026"
+    ]
+  }
 
 ];

@@ -934,4 +934,112 @@ export const germanProductPosts: BlogPost[] = [
     calloutText:
       "Merry Tourism ist seit 2001 TURSAB A-Gruppe lizenziert (Lizenznummer #14316) und hat über 50.000 Gäste auf dem Bosporus begrüßt. Buchen Sie direkt auf merrysails.com und sparen Sie bis zu 25 % gegenüber Buchungsplattformen.",
   },
+  {
+    slug: "prinzeninseln-istanbul-tagesausflug-2026",
+    locale: "de",
+    title: "Prinzeninseln Istanbul 2026: Tagesausflug, Fähre & Privatyacht",
+    metaDescription: "Prinzeninseln-Tagesausflug Istanbul 2026: Büyükada, Heybeliada. Fähre ab €5, private Yacht ab €280. TURSAB lizenziert seit 2001.",
+    excerpt: "Ein Tag auf den Prinzeninseln: autofreie Ruhe, viktorianische Villen und azurblaues Marmarameer vor den Toren Istanbuls. Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001 mit über 50.000 Gästen — zeigt Ihnen, wie Sie am besten dorthin kommen und was Sie erwartet.",
+    category: "istanbul",
+    date: "2026-05-13",
+    readTime: "10 min Lesezeit",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    imageAlt: "Büyükada Prinzeninsel Istanbul — Pferdekutschen vor historischen osmanischen Villen",
+    keywords: [
+      "Prinzeninseln Istanbul",
+      "Prinzeninseln Tagesausflug",
+      "Büyükada Istanbul",
+      "Heybeliada Ausflug",
+      "Istanbul Inseln Fähre",
+      "Prinzeninseln Fähre Preis",
+      "Privatyacht Prinzeninseln Istanbul",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Die Prinzeninseln (Adalar) liegen 20 km südöstlich Istanbuls im Marmarameer — kein Autoverkehr, viktorianische Villen, Pferdekutschen",
+      "Öffentliche Fähre (Şehir Hatları) ab Kabataş oder Eminönü: ab ca. €5 — reguläre tägliche Abfahrten",
+      "Private Yacht-Charter ab €280 für das gesamte Boot — Inselhüpfen nach eigenem Tempo",
+      "Büyükada ist die größte und bekannteste Insel; Heybeliada, Burgazada und Kınalıada lohnen als Geheimtipps",
+    ],
+    sections: [
+      {
+        heading: "Was sind die Prinzeninseln?",
+        answerCapsule: "Die Prinzeninseln (Adalar) sind eine Gruppe von neun Inseln im Marmarameer, ca. 20 km vor Istanbul. Vier davon sind bewohnbar: Büyükada, Heybeliada, Burgazada und Kınalıada. Kein Autoverkehr — nur Pferdekutschen und Fahrräder.",
+        content: "Die Prinzeninseln — auf Türkisch \"Adalar\" (die Inseln) — sind das bestgehütete Geheimnis von Istanbul. Nur 20 Kilometer vor der Großstadt liegt eine Welt, in der keine Autos fahren, in der schmiedeeiserne Balkone alter Sommerhäuser das Bild prägen und die Luft nach Pinienharz riecht statt nach Abgasen.\n\nDen Namen \"Prinzeninseln\" erhielten sie im Byzantinischen Reich, als Mitglieder der kaiserlichen Familie auf die Inseln verbannt wurden. Später wurden sie zum Sommerresort der osmanischen und griechischen Eliten — Hunderte von Holzvillen aus dem 19. Jahrhundert zeugen davon bis heute.\n\nFür Deutschland-Reisende, die Istanbul besuchen, bieten die Inseln den perfekten Kontrast zur Metropole: Hier fahren Pferdekutschen (Faytonlar) statt Taxis, hier rascheln Pinienwälder im Meereswind, und hier sieht man kein einziges Hochhaus. Ein Tagesausflug dauert ca. 4–6 Stunden inklusive Fährfahrt.\n\nMerry Tourism — [TURSAB A-Gruppe lizenziert](/tursab) seit 2001, über 50.000 Gäste — kennt diese Gewässer seit einem Vierteljahrhundert und bietet sowohl die klassische Fährroute als auch private Yacht-Ausflüge zu den Inseln an.",
+        callout: {
+          type: "info",
+          text: "Die Prinzeninseln liegen im Marmarameer — nicht im Bosporus. Die Fähre fährt südöstlich von Istanbul, vorbei an der asiatischen Küste. Wetter und Wellengang können stärker sein als auf dem Bosporus, besonders im Herbst und Winter.",
+        },
+      },
+      {
+        heading: "Wie kommt man zu den Prinzeninseln?",
+        answerCapsule: "Es gibt zwei Hauptwege: die öffentliche Şehir Hatları-Fähre ab Kabataş oder Eminönü (ca. €5, 60–90 Min.) oder eine private Yacht-Charter mit MerrySails (ab €280 für das Boot, flexible Abfahrt). Im Sommer gibt es auch Schnellfähren (IDO).",
+        content: "Für Besucher aus Deutschland oder auf einer Türkei-Reise sind die Anreise-Optionen klar strukturiert:\n\n**Option 1: Öffentliche Fähre (Şehir Hatları)**\nDie günstigste und meistgenutzte Variante. Die Şehir Hatları (Stadtlinien) betreiben reguläre tägliche Fahrten ab Kabataş (europäische Seite) und Eminönü (Altstadt) mit Stopps auf mehreren Inseln. Preis: ca. €5 pro Strecke (Istanbulkart oder Barzahlung am Terminal). Fahrzeit nach Büyükada: ca. 60–90 Minuten je nach Zwischenstopps. Die Fähre ist gemütlich, hat ein Café an Bord und bietet spektakuläre Ausblicke auf die Istanbuler Skyline beim Ablegen.\n\n**Option 2: IDO-Schnellfähre**\nDie privaten IDO-Fähren sind schneller (ca. 35–40 Min. nach Büyükada) und komfortabler, aber teurer und nicht immer im Betrieb — Saison und Wetterlage entscheiden. Buchung über die IDO-App oder am Terminal.\n\n**Option 3: Private Yacht mit MerrySails**\nFür Gruppen oder besondere Anlässe ist die private [Yacht-Charter Istanbul](/de/yacht-charter-istanbul) die exklusivste Variante. Ab €280 für das gesamte Boot (2–8 Personen) können Sie auf dem direkten Wasserweg zu den Inseln gelangen, unterwegs Badepausen einlegen und das Tempo selbst bestimmen. Ideal für Hochzeitsreisende, Familien oder kleine Firmengruppen.\n\n**Achtung:** Bei sehr starkem Wind oder Sturm kann die Fährverbindung eingeschränkt oder ausgesetzt werden — das Marmarameer ist offener als der Bosporus. Planen Sie bei unsicherem Wetter einen alternativen Reisetag ein.",
+      },
+      {
+        heading: "Öffentliche Fähre (Şehir Hatları) — Preise und Details",
+        answerCapsule: "Die Şehir Hatları-Fähre zu den Prinzeninseln kostet ca. €5 pro Person und Fahrt (Istanbulkart). Sie fährt ab Kabataş und Eminönü mit regulären täglichen Abfahrten. Fahrzeit nach Büyükada: 60–90 Minuten.",
+        content: "Die öffentliche Şehir Hatları-Fähre ist für viele Besucher der logischste Einstiegspunkt:\n\n**Abfahrtsorte:**\n- **Kabataş-Pier:** Direkt neben Dolmabahçe-Palast, mit der T3-Straßenbahn vom Taksim-Platz in 15 Minuten erreichbar\n- **Eminönü-Pier:** Historisches Herz Istanbuls, Fußweg von der Hagia Sophia (15 Min.) oder mit Straßenbahn T1\n\n**Preis:** Reguläre tägliche Abfahrten; Tickets ab ca. €5 pro Person und Strecke (bei Zahlung in TRY am Terminal; Preis kann je nach Wechselkurs variieren). Istanbulkart-Inhaber zahlen mit Rabatt.\n\n**Fahrtzeit:**\n- Kabataş → Büyükada: ca. 60–90 Min. (mit Zwischenstopps in Kınalıada, Burgazada, Heybeliada)\n- Direktfähren: ca. 60 Min., Fahrten mit allen Stopps: ca. 90 Min.\n\n**Sitzplätze:** Die Fähren bieten Innen- und Außendecks; im Sommer ist das Außendeck in der Früh der beste Platz für Fotos.\n\n**Rückfahrt:** Die letzte Fähre ab Büyükada nach Istanbul fährt je nach Saison zwischen 18:00 und 22:00 Uhr — prüfen Sie den aktuellen Fahrplan am Terminal oder auf der Şehir Hatları-Website. Verpassen Sie die letzte Fähre nicht!\n\n**Praktischer Tipp:** An Sommerwochenenden sind die Fähren extrem voll. Früh (vor 9:00 Uhr) aufbrechen oder einen Werktag wählen.",
+        callout: {
+          type: "tip",
+          text: "Kaufen Sie eine Istanbulkart (wiederaufladbare ÖPNV-Karte, erhältlich an Automaten am Pier). Sie gilt auch für Busse, Straßenbahnen und die Metro — ideal für den Gesamturlaub in Istanbul.",
+        },
+      },
+      {
+        heading: "MerrySails Privatyacht — ab €280 zu den Inseln",
+        answerCapsule: "Eine Privatyacht zu den Prinzeninseln kostet ab €280 für das gesamte Boot (2–8 Personen, 2 Stunden). Größere Gruppen zahlen €500–900 (8–20 Pers.). Kapitän, Crew und Versicherung sind immer inbegriffen.",
+        content: "Für Reisende, die die Prinzeninseln abseits der Fährmassen erleben wollen, ist der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) von Merry Tourism die eleganteste Lösung.\n\n**Was bietet die Privatyacht?**\n- Direktfahrt zu Ihrer Wunschinsel (kein Stopp an anderen Inseln)\n- Badepausen auf dem Weg — die türkische Küste hat brillantklares Wasser\n- Verpflegung nach Absprache (Catering optional)\n- Flexibler Abfahrtszeitpunkt (Sonnenuntergangs-Tour zu den Inseln buchbar!)\n- Kapitän und Crew von Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001\n\n**Preisübersicht:**\n\n| Bootstyp | Kapazität | Dauer | Preis |\n|---|---|---|---|\n| Kleinboot | 2–8 Personen | 2 Stunden | ab €280 |\n| Mittelboot | 8–20 Personen | 2–4 Stunden | €500–900 |\n| Großboot | 20–50 Personen | 4–8 Stunden | ab €1.000 |\n\nBesonders beliebt: kombinierte Touren — morgens [Bosporus-Kreuzfahrt](/de/bosphorus-cruise), nachmittags private Fahrt zu den Prinzeninseln. Kontaktieren Sie das Team über WhatsApp (+90 537 040 68 22) für ein individuelles Angebot.\n\n**Für wen lohnt sich die Privatyacht?**\n- Paare für einen romantischen Inseltag\n- Familien mit Kindern (kein Gedränge, eigenes Tempo)\n- Kleine Firmengruppen für ein Team-Erlebnis\n- Heirats- oder Jubiläumsreisende",
+        proTip: "Bei 6 Personen kostet die Privatyacht (€280 ÷ 6 = ca. €47/Person) nicht viel mehr als die Fähre plus Eintritte — aber Sie haben das gesamte Boot für sich.",
+      },
+      {
+        heading: "Büyükada — Die Hauptinsel",
+        answerCapsule: "Büyükada (\"Große Insel\") ist die größte und bekannteste der Prinzeninseln. Sehenswürdigkeiten: Aya Yorgi-Kloster (Hügel), Strände, historische Holzvillen, Pferdekutschen-Tour.",
+        content: "Büyükada ist das Herz der Prinzeninseln und das Ziel der meisten Besucher. Mit einer Fläche von ca. 5,4 km² ist sie trotzdem in einem halben Tag gut erkundbar — per Fahrrad, Pferdekutsche oder zu Fuß.\n\n**Was sehen und erleben:**\n\n**Aya Yorgi-Kloster (Hügel):** Das griechisch-orthodoxe Kloster auf dem höchsten Punkt der Insel ist das bekannteste Wahrzeichen von Büyükada. Der Aufstieg dauert ca. 20–30 Minuten zu Fuß oder per Pferdekutsche. Oben erwartet Sie ein Panoramablick über das Marmarameer.\n\n**Historische Holzvillen:** Die Prinkipo-Architektur — viktorianische und osmanische Sommerhäuser — prägt das Stadtbild der Insel. Teils wunderschön restauriert, teils romantisch verwittert.\n\n**Pferdekutschen (Fayton):** Das ikonische Fortbewegungsmittel der Inseln. Touren führen rund um die Insel (ca. 45 Min.) oder zum Kloster (ca. 25 Min.). Preise variieren — fragen Sie nach dem aktuellen Tarif am Kutschenstand beim Pier.\n\n**Strände:** Der zentrale Strand in der Nähe des Piers ist sauber, aber im Sommer voll. Alternativ: Radfahrt zu den ruhigeren Stränden auf der Rückseite der Insel.\n\n**Essen auf der Insel:** Zahlreiche Fischrestaurants am Pier bieten frischen Fang und Meeresfrüchte. Eine Portion gegrillter Fisch mit Brot und einem Glas türkischen Tees kostet ca. €8–15.\n\nMerry Tourism hat über 50.000 Gäste durch diese Gewässer geführt — die Prinzeninseln sind seit Jahren Teil unserer Empfehlungsrouten für [Istanbul-Besucher](/de/bosphorus-cruise).",
+      },
+      {
+        heading: "Die anderen Inseln — Heybeliada, Burgazada, Kınalıada",
+        answerCapsule: "Heybeliada ist die zweitgrößte und ruhigste Insel — ideal zum Wandern und Radfahren. Burgazada hat ein authentisches Dorfgefühl. Kınalıada ist die nächstgelegene Insel und weniger touristisch.",
+        content: "Wer über Büyükada hinausgeht, entdeckt Inseln, die noch weniger touristisch sind:\n\n**Heybeliada (Halki):** Die zweitgrößte Insel ist entspannter und weniger überlaufen als Büyükada. Die Insel hat mehrere kleine Strände, Pinienwald-Wanderwege und einige gute Fischrestaurants am Pier. Ideal für ruhesuchende Reisende.\n\n**Burgazada:** Deutlich weniger Besucher als die ersten beiden Inseln. Ein authentisches, lebendiges Dorfzentrum mit kleinen Cafés und einem griechisch-orthodoxen Kloster auf dem Hügel. Für Reisende, die das echte Inselleben jenseits des Touristenrummels suchen.\n\n**Kınalıada:** Die der Stadt nächste Insel ist auch die kleinste der vier bewohnten Inseln. Viele Istanbuler verbringen hier Wochenenden, entsprechend wenig Tourismus. Schöne Schwimmbuchten und ein entspanntes Dorftreiben.\n\n**Inseltipp:** Wenn Sie mehrere Inseln besuchen möchten, gibt es Fähren, die alle Stopps anfahren. Mit der Privatyacht können Sie die Reihenfolge selbst wählen. Informieren Sie sich bei [Bosporus-Kreuzfahrt-Abfahrtspunkten](/de/bosphorus-cruise-departure-points).",
+      },
+      {
+        heading: "Beste Reisezeit und praktische Tipps",
+        answerCapsule: "Die beste Reisezeit ist Mai bis Juni und September bis Oktober — warm, aber ohne Hochsommer-Gedränge. Juli und August sind sehr voll, aber ideal zum Schwimmen. Winter ist ruhig und günstiger.",
+        content: "**Saisonüberblick:**\n\n**Mai–Juni (Empfehlenswert):** Angenehme Temperaturen (22–28°C), nicht überfüllt. Die beste Kombination aus gutem Wetter und vertretbaren Menschenmassen.\n\n**Juli–August (Hochsaison):** Das Wasser ist am wärmsten (26–28°C), aber die Inseln — besonders Büyükada — sind extrem voll. Fähren füllen sich schnell. Frühzeitig fahren (erste Fähre morgens).\n\n**September–Oktober (Herbst, sehr empfehlenswert):** Die ruhigste Zeit der Inseln bei immer noch angenehmen Temperaturen (18–24°C). Das Gedränge nimmt dramatisch ab.\n\n**November–April (Wintersaison):** Die Inseln sind fast leer, aber viele Restaurants und Geschäfte haben geschlossen. Fähren fahren seltener.\n\n**Praktische Tipps:**\n- **Bargeld mitbringen:** Auf den Inseln sind Kartenzahlungen nicht überall möglich\n- **Fahrrad mieten:** Auf Büyükada und Heybeliada gibt es Fahrradverleih am Pier\n- **Lichtschutz:** Der Reflexionseffekt des Meeres verstärkt die Sonneneinstrahlung — SPF 50+ empfohlen\n- **Schuhe für Steigungen:** Das Kloster liegt auf einem Hügel — festes Schuhwerk empfohlen\n- **Rückfähre prüfen:** Die letzte Abendfahrt nicht verpassen — Übernachtungskapazitäten auf den Inseln sind begrenzt",
+        callout: {
+          type: "tip",
+          text: "Kombinieren Sie den Prinzeninseln-Tagesausflug mit einer Abend-Bosporus-Kreuzfahrt: morgens Inseln, abends Bosporus. MerrySails bietet beide Erlebnisse — Kontakt via WhatsApp: +90 537 040 68 22.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        q: "Wie komme ich von Istanbul zu den Prinzeninseln?",
+        a: "Die bequemste und günstigste Option ist die Şehir Hatları-Fähre ab Kabataş-Pier (neben Dolmabahçe-Palast) oder Eminönü-Pier (Altstadt). Reguläre tägliche Abfahrten; Fahrzeit nach Büyükada ca. 60–90 Minuten. Preis ca. €5 pro Person. Alternativ: IDO-Schnellfähre (ca. 35–40 Min., teurer). Für Gruppen bietet MerrySails private Yacht-Charter ab €280 für das gesamte Boot.",
+      },
+      {
+        q: "Was kostet die Fähre zu den Prinzeninseln?",
+        a: "Die öffentliche Şehir Hatları-Fähre zu den Prinzeninseln kostet ca. €5 pro Person und Strecke (bei Zahlung in türkischen Lira; Preis kann je nach Wechselkurs leicht variieren). Istanbulkart-Inhaber zahlen etwas günstiger. Privatyacht-Charter ab €280 für das gesamte Boot (2–8 Personen).",
+      },
+      {
+        q: "Lohnt sich der Tagesausflug zu den Prinzeninseln?",
+        a: "Ja, definitiv — besonders für Reisende, die eine Pause vom Trubel Istanbuls suchen. Die Inseln bieten eine völlig andere Atmosphäre: keine Autos, historische Holzvillen, Pinienwälder und türkisches Küstenflair. Ein Halbtagesausflug (inkl. Hin- und Rückfahrt) ist gut planbar. Wir empfehlen einen Werktag oder das Frühjahr/Herbst für weniger Andrang.",
+      },
+      {
+        q: "Kann ich eine Privatyacht zu den Prinzeninseln mieten?",
+        a: "Ja. Merry Tourism bietet Privatyacht-Charter zu den Prinzeninseln ab €280 für das gesamte Boot (2–8 Personen, 2 Stunden). Für größere Gruppen (8–20 Pers.) kostet die Yacht €500–900 für 2–4 Stunden. Kapitän und Crew sind immer inbegriffen. Kontakt: WhatsApp +90 537 040 68 22. Mehr Informationen: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
+      },
+      {
+        q: "Wie lange dauert der Ausflug zu den Prinzeninseln?",
+        a: "Die Fährfahrt von Kabataş nach Büyükada dauert ca. 60–90 Minuten. Für einen entspannten Tagesausflug planen Sie 5–6 Stunden ein: Hin- und Rückfahrt (2–3 Std.) plus 2–3 Stunden auf der Insel. Mit einer Privatyacht können Sie flexibler planen und auch mehrere Inseln ansteuern.",
+      },
+      {
+        q: "Wann ist die beste Zeit für einen Besuch der Prinzeninseln?",
+        a: "Die beste Reisezeit ist Mai–Juni und September–Oktober: warmes Wetter, geringerer Andrang als im Hochsommer. Juli und August sind die belebtesten Monate — ideal zum Schwimmen, aber voll. Wochentags ist deutlich weniger los als an Wochenenden. Winter (November–April) ist ruhig, aber kühler und viele Einrichtungen sind geschlossen.",
+      },
+    ],
+    relatedTours: ["bosphorus-cruise", "bosphorus-sunset-cruise", "yacht-charter-istanbul"],
+    relatedPosts: ["bosporus-bootstour-istanbul-2026-ratgeber", "yacht-charter-istanbul-ratgeber", "bosporus-kreuzfahrt-preise-istanbul"],
+    proTip: "Kombinieren Sie die Prinzeninseln mit einer Sonnenuntergangs-Bosporus-Kreuzfahrt am gleichen Tag: morgens Inseln per Fähre, abends Bosporus mit MerrySails (€34–40). Für Buchungen und Fragen: WhatsApp +90 537 040 68 22.",
+    calloutText: "Merry Tourism ist TURSAB A-Gruppe lizenziert seit 2001 (Lizenznummer #14316) und hat über 50.000 Gäste in Istanbul betreut. Buchen Sie Ihren Prinzeninseln-Ausflug per Privatyacht direkt auf merrysails.com.",
+  },
 ];

@@ -24,7 +24,7 @@ const sunsetTour = requireTour("bosphorus-sunset-cruise", "Sunset cruise");
 export const metadata: Metadata = {
   title: "Sunset Cruise Tickets Istanbul",
   description:
-    "Sunset cruise tickets Istanbul from EUR 34. Shared golden-hour Bosphorus cruise — package options, ticket clarity, and reserve-direct flow from Karakoy waterfront.",
+    "Sunset cruise tickets Istanbul from EUR 30 (Tue & Thu). Shared golden-hour Bosphorus cruise — package options, ticket clarity, and reserve-direct flow from Karakoy waterfront.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/sunset-cruise-tickets-istanbul"),
@@ -101,7 +101,7 @@ const faqItems = [
   },
   {
     q: "What are the current shared sunset options?",
-    a: "The current public structure shows two shared sunset options on the same route: Without Wine at EUR 34 and With Wine at EUR 40.",
+    a: "The current public structure shows two shared sunset options on the same route: Without Wine from EUR 30 (Tue & Thu) / EUR 34 (other days) and With Wine from EUR 35 (Tue & Thu) / EUR 40 (other days).",
   },
   {
     q: "Should I use this page if I am still deciding between sunset and dinner?",
@@ -172,7 +172,7 @@ const decisionRows = [
 ];
 
 const ticketRows = [
-  ["Without Wine", "EUR 34", "Guests who want the shared sunset route with light hospitality and no wine service"],
+  ["Without Wine", "from EUR 30 (Tue & Thu) / EUR 34", "Guests who want the shared sunset route with light hospitality and no wine service"],
   ["With Wine", "EUR 40", "Guests who want the same shared route with 2 glasses of wine per guest"],
 ];
 
@@ -282,7 +282,7 @@ export default function SunsetCruiseTicketsIstanbulPage() {
                 <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
                   Current shared sunset ladder
                 </p>
-                <p className="text-3xl font-bold text-[var(--heading)]">EUR 34 / EUR 40</p>
+                <p className="text-3xl font-bold text-[var(--heading)]">from EUR 30 / EUR 35 (Tue & Thu)</p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
                   The current public sunset structure shows two shared options on the same golden-hour route:
                   Without Wine and With Wine.

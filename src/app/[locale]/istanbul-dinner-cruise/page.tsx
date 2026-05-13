@@ -114,7 +114,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         href: "/cruises/bosphorus-sunset-cruise",
         title: "Boğaz Gün Batımı Turu",
-        desc: "€34'ten başlayan 2 saatlik altın saat gün batımı turu.",
+        desc: "€30'dan başlayan 2 saatlik altın saat gün batımı turu (Sal & Per).",
       },
       {
         href: "/yacht-charter-istanbul",
@@ -220,7 +220,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         href: "/cruises/bosphorus-sunset-cruise",
         title: "Bosporus Sonnenuntergang-Tour",
-        desc: "2-stündige Tour zur goldenen Stunde ab €34.",
+        desc: "2-stündige Tour zur goldenen Stunde ab €30 (Di & Do).",
       },
       {
         href: "/yacht-charter-istanbul",
@@ -326,7 +326,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         href: "/cruises/bosphorus-sunset-cruise",
         title: "Croisière Coucher de Soleil",
-        desc: "Croisière de 2 heures à l'heure dorée à partir de €34.",
+        desc: "Croisière de 2 heures à l'heure dorée à partir de €30 (mar & jeu).",
       },
       {
         href: "/yacht-charter-istanbul",
@@ -432,7 +432,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         href: "/cruises/bosphorus-sunset-cruise",
         title: "Bosporus Zonsondergang Cruise",
-        desc: "Cruise van 2 uur tijdens het gouden uur vanaf €34.",
+        desc: "Cruise van 2 uur tijdens het gouden uur vanaf €30 (di & do).",
       },
       {
         href: "/yacht-charter-istanbul",

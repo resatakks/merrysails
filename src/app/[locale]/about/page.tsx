@@ -51,7 +51,7 @@ const CONTENT: Record<string, LocaleContent> = {
       "MerrySails, TÜRSAB (Türkiye Seyahat Acenteleri Birliği) tarafından lisanslı A Grubu seyahat acentesi olan Merry Tourism tarafından işletilmektedir. A Grubu lisansı, hem yurt içi hem de yurt dışı tur operasyonu yetkisi verir ve sektörün en kapsamlı lisans kategorisidir.",
     servicesHeading: "Sunduğumuz Hizmetler",
     services: [
-      { title: "Boğaz Gün Batımı Turu", desc: "2 saatlik paylaşımlı altın saat seyiri. €34'ten başlayan fiyatlarla." },
+      { title: "Boğaz Gün Batımı Turu", desc: "2 saatlik paylaşımlı altın saat seyiri. €30'dan başlayan fiyatlarla (Sal & Per)." },
       { title: "İstanbul Akşam Yemeği Turu", desc: "Türk gecesi gösterisi ile 3,5 saatlik akşam programı. €30–€90 arası 4 paket." },
       { title: "Özel Yat Kiralama", desc: "Tam özel etkinlikler için yat kiralama. Evlilik teklifi, kutlama ve kurumsal etkinliklere uygun." },
       { title: "Tekne Kiralama", desc: "Saatlik özel tekne kiralama. Esnek güzergah ve özelleştirilebilir ekstralar." },
@@ -84,7 +84,7 @@ const CONTENT: Record<string, LocaleContent> = {
       "MerrySails wird von Merry Tourism betrieben, einer von TÜRSAB (Verband der türkischen Reisebüros) lizenzierten Reiseagentur der A-Gruppe. Die A-Gruppen-Lizenz erteilt die Befugnis, sowohl inländische als auch internationale Touroperationen durchzuführen und ist die umfassendste Lizenzkategorie der Branche.",
     servicesHeading: "Unsere Leistungen",
     services: [
-      { title: "Bosporus Sonnenuntergangs-Kreuzfahrt", desc: "2-stündige geteilte Goldstunden-Kreuzfahrt. Preise ab €34." },
+      { title: "Bosporus Sonnenuntergangs-Kreuzfahrt", desc: "2-stündige geteilte Goldstunden-Kreuzfahrt. Preise ab €30 (Di & Do)." },
       { title: "Istanbul Dinner-Kreuzfahrt", desc: "3,5-stündiges Abendprogramm mit türkischer Show. 4 Pakete von €30 bis €90." },
       { title: "Privater Jachtcharter", desc: "Jachtcharter für vollständig private Veranstaltungen. Ideal für Heiratsanträge, Feiern und Firmenevents." },
       { title: "Bootsverleih", desc: "Stündlicher privater Bootsverleih. Flexible Routen und individuell anpassbare Extras." },
@@ -117,7 +117,7 @@ const CONTENT: Record<string, LocaleContent> = {
       "MerrySails est exploitée par Merry Tourism, une agence de voyages du groupe A licenciée par TÜRSAB (Association des agences de voyages de Turquie). La licence du groupe A confère le pouvoir d'exploiter à la fois des tours nationaux et internationaux et constitue la catégorie de licence la plus complète du secteur.",
     servicesHeading: "Nos services",
     services: [
-      { title: "Croisière Coucher de Soleil Bosphore", desc: "Croisière partagée de 2h pendant l'heure dorée. À partir de €34." },
+      { title: "Croisière Coucher de Soleil Bosphore", desc: "Croisière partagée de 2h pendant l'heure dorée. À partir de €30 (mar & jeu)." },
       { title: "Croisière Dîner Istanbul", desc: "Programme de soirée de 3h30 avec spectacle turc. 4 formules de €30 à €90." },
       { title: "Charter de Yacht Privé", desc: "Charter de yacht pour événements entièrement privés. Idéal pour demandes en mariage, célébrations et événements d'entreprise." },
       { title: "Location de Bateau", desc: "Location de bateau privé à l'heure. Itinéraire flexible et extras personnalisables." },
@@ -150,7 +150,7 @@ const CONTENT: Record<string, LocaleContent> = {
       "MerrySails wordt geëxploiteerd door Merry Tourism, een door TÜRSAB (Vereniging van Turkse Reisbureaus) gelicentieerd A-groep reisbureau. De A-groep licentie geeft bevoegdheid voor zowel binnenlandse als internationale touroperaties en is de meest uitgebreide licentiecategorie in de branche.",
     servicesHeading: "Onze diensten",
     services: [
-      { title: "Bosporus Zonsondergang Cruise", desc: "2 uur durende gedeelde gouden uur cruise. Vanaf €34." },
+      { title: "Bosporus Zonsondergang Cruise", desc: "2 uur durende gedeelde gouden uur cruise. Vanaf €30 (di & do)." },
       { title: "Istanbul Diner Cruise", desc: "3,5 uur durend avondprogramma met Turkse show. 4 pakketten van €30 tot €90." },
       { title: "Privé Jachtcharter", desc: "Jachtcharter voor volledig privé-evenementen. Ideaal voor huwelijksaanzoeken, vieringen en bedrijfsevenementen." },
       { title: "Boothuur", desc: "Privé boothuur per uur. Flexibele routes en aanpasbare extra's." },
