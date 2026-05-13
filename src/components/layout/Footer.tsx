@@ -281,11 +281,13 @@ const companyLinks = [
   { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
+  { label: "Meet the Team", href: "/about/team" },
   { label: "Contact", href: "/contact" },
   { label: "TURSAB License", href: "/tursab" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
   { label: "Istanbul Guides", href: "/guides" },
+  { label: "AI Knowledge Hub", href: "/ai-knowledge" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms" },
 ];

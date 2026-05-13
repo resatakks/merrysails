@@ -313,6 +313,36 @@ const comparePages = [
     description:
       "Open this if the charter is for client hosting, a launch, or a company evening with an invoice-led brief.",
   },
+  {
+    href: "/corporate-yacht-dinner-istanbul",
+    title: "Corporate Yacht Dinner",
+    description:
+      "Open this if the company brief is specifically a dinner-led private yacht evening rather than a broad corporate event.",
+  },
+  {
+    href: "/team-building-yacht-istanbul",
+    title: "Team Building Yacht",
+    description:
+      "Open this if the brief is team building on a yacht — group games, photo ops, structured activities at sea.",
+  },
+  {
+    href: "/client-hosting-yacht-istanbul",
+    title: "Client Hosting Yacht",
+    description:
+      "Open this if guest hospitality and client impression matter more than a broad company-event format.",
+  },
+  {
+    href: "/product-launch-yacht-istanbul",
+    title: "Product Launch Yacht",
+    description:
+      "Open this if the yacht is the venue for a product launch — branded event, press, photographer-led setup.",
+  },
+  {
+    href: "/proposal-yacht-with-photographer-istanbul",
+    title: "Proposal with Photographer",
+    description:
+      "Open this if proposal photography coverage is the deciding factor — paired yacht + photographer package.",
+  },
 ];
 
 export default async function YachtCharterIstanbulPage({

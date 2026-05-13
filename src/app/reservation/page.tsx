@@ -63,9 +63,14 @@ export default async function ReservationPage({ searchParams }: ReservationPageP
           </nav>
           <header className="mb-6">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">Reserve your yacht</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[var(--heading)]">
+            {/* Demoted from <h1> to <h2> 2026-05-11 — the page already has a
+                primary <h1> at the hero (line 110). Two H1s on the same page
+                violate CLAUDE.md rule 11 and Google's heading hierarchy spec.
+                The hero H1 is the broader page intent; this header is
+                contextual to the booking-form sub-section. */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[var(--heading)]">
               Confirm date and group — open the booking form
-            </h1>
+            </h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--body-text)]">
               The whole yacht is reserved for your group. Pick a date and your group size, then continue to the booking form.
             </p>
