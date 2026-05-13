@@ -234,13 +234,27 @@ Her gün başlatıldığında (kullanıcı "devam et" / "ne durumdayız" dediği
 
 ### Yüksek hacimli keyword PRIORITY indexing
 
-Yandex/IndexNow/GSC URL submit listelerinde sırayı **vol/mo'dan yüksek → düşük** olarak yap. Mevcut high-priority KW pages (vol/mo desc):
-- yat kiralama / tekne kiralama istanbul (3,800 vol TR) → /tr/yacht-charter-istanbul + yat-kiralama pillar
-- boğaz turu (6,600 vol TR) → /tr/bosphorus-cruise + TR pillars
-- bosphorus cruise istanbul / cruise istanbul (1,200 EN US+GB) → /bosphorus-cruise + sunset
-- bosporus rundfahrt + kreuzfahrt + istanbul (1,440 vol DE combined) → /de/bosphorus-cruise
-- croisière bosphore istanbul (600 vol FR combined) → /fr/bosphorus-cruise
-- bosporus cruise istanbul (170 NL) → /nl/bosphorus-cruise
+**KURAL (2026-05-13):** GSC Manual Request Indexing + Yandex Reindex listelerinde sıra **commercial intent × vol/mo** olmalı. Yat/sunset/dinner cruise SAYFA'ları (booking conversion happens here) HER ZAMAN Princes Islands gibi informational pillar'lardan ÖNCE submit edilir. Princes Islands gibi adalar/şehir gezisi içeriği "discovery" tipi — düşük booking intent.
+
+#### Tier 1 — Commercial booking pages (her gün submit kullanılırken ilk):
+- `/tr/yacht-charter-istanbul` + `/tr/blog/yat-kiralama-istanbul-fiyat-rehberi-2026` (3,800 vol TR yat kiralama)
+- `/yacht-charter-istanbul` (EN core 590 vol)
+- `/cruises/bosphorus-sunset-cruise` + `/[locale]/cruises/bosphorus-sunset-cruise` (480 EN + 360 TR + 480 DE)
+- `/istanbul-dinner-cruise` + `/[locale]/istanbul-dinner-cruise` (1,600 EN + 1,400 TR)
+- `/tr/bosphorus-cruise` (6,600 vol TR — boğaz turu)
+- `/bosphorus-cruise` (EN compare hub)
+
+#### Tier 2 — Commercial pillars (next):
+- `/blog/istanbul-cruise-complete-guide-2026` (1,200 EN)
+- `/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026` (1,490 TR)
+- `/de/bosphorus-cruise` + `/de/blog/bosporus-kreuzfahrt-preise-rehber-2026` (1,440 DE)
+- `/fr/bosphorus-cruise` + `/fr/blog/croisiere-bosphore-prix-guide-2026` (600 FR)
+- `/nl/blog/bosphorus-cruise-prijzen-gids-2026` (170 NL)
+
+#### Tier 3 — Informational/discovery (lower priority, do only after Tier 1+2 are crawled):
+- 5 Princes Islands pillars (EN+TR+DE+FR+NL)
+- Galataport shore excursion (when built — 6,450 vol US/GB)
+- All blog support posts (CTR rewrites)
 
 ### Yeni sayfa / yeni içerik geldiyse — otomatik tetikle
 
