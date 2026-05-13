@@ -22,6 +22,7 @@ import {
 } from "@/lib/constants";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import NewsletterSignup from "@/components/marketing/NewsletterSignup";
+import PaymentTrust from "@/components/marketing/PaymentTrust";
 
 type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
 
@@ -112,9 +113,9 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
     ],
     partnerLinks: [
-      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
-      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
-      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
+      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+      { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Bosphorus Cruises", href: "https://www.goldensunsettour.com/" },
@@ -147,9 +148,9 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "İstanbul Tekne Kiralama", href: "/tr/boat-rental-istanbul" },
     ],
     partnerLinks: [
-      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
-      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
-      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
+      { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
+      { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
+      { label: "VIP Transfer İstanbul", href: "https://www.merrytourism.com/tr/vip-transfer" },
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Boğaz Turları", href: "https://www.goldensunsettour.com/" },
@@ -182,9 +183,9 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Bootsvermietung Istanbul", href: "/de/boat-rental-istanbul" },
     ],
     partnerLinks: [
-      { label: "Istanbul Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/istanbul-airport-transfer" },
-      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/de/istanbul-vip-transfer" },
-      { label: "Antalya Flughafen Transfer", href: "https://www.kingsworldtransfer.com/de/antalya-airport-transfer" },
+      { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
+      { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/de/sabiha-gokcen-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/de/vip-transfer" },
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Bosporus-Kreuzfahrten", href: "https://www.goldensunsettour.com/" },
@@ -217,9 +218,9 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Location Bateau Istanbul", href: "/fr/boat-rental-istanbul" },
     ],
     partnerLinks: [
-      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
-      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
-      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
+      { label: "Transfert Aeroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+      { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
     ],
     sisterLinks: [
       { label: "GoldenSunsetTour — Croisières Bosphore", href: "https://www.goldensunsettour.com/" },
@@ -252,11 +253,14 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Bootsverhuur Istanbul", href: "/nl/boat-rental-istanbul" },
     ],
     partnerLinks: [
-      { label: "Istanbul Airport Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-airport-transfer" },
-      { label: "Istanbul VIP Transfer", href: "https://www.kingsworldtransfer.com/en/istanbul-vip-transfer" },
-      { label: "Antalya Airport Transfer", href: "https://www.kingsworldtransfer.com/en/antalya-airport-transfer" },
+      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+      { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
     ],
     sisterLinks: [
+      { label: "GoldenSunsetTour — Bosporus Cruises", href: "https://www.goldensunsettour.com/" },
+      { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+      { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
       { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
       { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
       { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
@@ -549,6 +553,9 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 mt-10">
           <NewsletterSignup variant="footer" source="footer" />
+          <div className="mt-6">
+            <PaymentTrust />
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 md:flex-row">
