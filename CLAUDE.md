@@ -234,27 +234,30 @@ Her gün başlatıldığında (kullanıcı "devam et" / "ne durumdayız" dediği
 
 ### Yüksek hacimli keyword PRIORITY indexing
 
-**KURAL (2026-05-13):** GSC Manual Request Indexing + Yandex Reindex listelerinde sıra **commercial intent × vol/mo** olmalı. Yat/sunset/dinner cruise SAYFA'ları (booking conversion happens here) HER ZAMAN Princes Islands gibi informational pillar'lardan ÖNCE submit edilir. Princes Islands gibi adalar/şehir gezisi içeriği "discovery" tipi — düşük booking intent.
+**KURAL (2026-05-14 güncel):** Kullanıcı "yat / sunset / dinner cruise odaklı müşteri çekmek" diye netleştirdi. Özel etkinlik sayfaları (proposal, team-building, corporate-yacht-dinner, product-launch, client-hosting, photographer) **düşük converting** — manual indexing slot'unu YEMEK Yat/Sunset/Dinner için kullan. Event sub-page'ler sitemap'te ve yat hub'dan link var, organic discovery yeterli.
 
-#### Tier 1 — Commercial booking pages (her gün submit kullanılırken ilk):
-- `/tr/yacht-charter-istanbul` + `/tr/blog/yat-kiralama-istanbul-fiyat-rehberi-2026` (3,800 vol TR yat kiralama)
-- `/yacht-charter-istanbul` (EN core 590 vol)
-- `/cruises/bosphorus-sunset-cruise` + `/[locale]/cruises/bosphorus-sunset-cruise` (480 EN + 360 TR + 480 DE)
-- `/istanbul-dinner-cruise` + `/[locale]/istanbul-dinner-cruise` (1,600 EN + 1,400 TR)
-- `/tr/bosphorus-cruise` (6,600 vol TR — boğaz turu)
+#### Tier 1 — 3 Core commercial pages (her gün manual indexing önce burada):
+- **YAT KİRALAMA** — `/tr/yacht-charter-istanbul` + `/yacht-charter-istanbul` + `/tr/blog/yat-kiralama-istanbul-fiyat-rehberi-2026` (3,800 TR + 590 EN = **4,390 vol/mo**)
+- **SUNSET CRUISE** — `/cruises/bosphorus-sunset-cruise` + `/tr/cruises/bosphorus-sunset-cruise` + `/de/cruises/bosphorus-sunset-cruise` (480 EN + 360 TR + 480 DE = **1,320 vol/mo**)
+- **DİNNER CRUISE** — `/istanbul-dinner-cruise` + `/tr/istanbul-dinner-cruise` (1,600 EN + 1,400 TR = **3,000 vol/mo**)
+
+#### Tier 2 — Compare hubs + commercial pillars (sonra):
+- `/tr/bosphorus-cruise` (6,600 vol TR boğaz turu)
 - `/bosphorus-cruise` (EN compare hub)
-
-#### Tier 2 — Commercial pillars (next):
 - `/blog/istanbul-cruise-complete-guide-2026` (1,200 EN)
 - `/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026` (1,490 TR)
 - `/de/bosphorus-cruise` + `/de/blog/bosporus-kreuzfahrt-preise-rehber-2026` (1,440 DE)
 - `/fr/bosphorus-cruise` + `/fr/blog/croisiere-bosphore-prix-guide-2026` (600 FR)
 - `/nl/blog/bosphorus-cruise-prijzen-gids-2026` (170 NL)
 
-#### Tier 3 — Informational/discovery (lower priority, do only after Tier 1+2 are crawled):
+#### Tier 3 — Informational pillars (low booking intent, organic discovery yeterli):
 - 5 Princes Islands pillars (EN+TR+DE+FR+NL)
 - Galataport shore excursion (when built — 6,450 vol US/GB)
 - All blog support posts (CTR rewrites)
+
+#### Tier 4 — DEPRIORITIZED (manual indexing slot harcamayın):
+- Event-specific yat sub-pages: `/proposal-yacht-rental-istanbul`, `/proposal-yacht-with-photographer-istanbul`, `/corporate-yacht-dinner-istanbul`, `/team-building-yacht-istanbul`, `/client-hosting-yacht-istanbul`, `/product-launch-yacht-istanbul`
+- Kullanıcı 2026-05-14: "özel etkinlikler, doğum günü, evlilik teklifi vs. çok da gelmiyor". Sitemap + yat hub link yeterli, manual quota'yı buralarda harcamayın.
 
 ### Yeni sayfa / yeni içerik geldiyse — otomatik tetikle
 
