@@ -131,6 +131,143 @@ const breadcrumbSchema = {
   ],
 };
 
+const restaurantSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Restaurant", "FoodEstablishment"],
+  "@id": `${SITE_URL}/istanbul-dinner-cruise#restaurant`,
+  name: "MerrySails Istanbul Bosphorus Dinner Cruise",
+  url: canonicalUrl,
+  image: dinnerTour.image,
+  telephone: "+905448989812",
+  email: "info@merrysails.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Kabataş İskelesi",
+    addressLocality: "Kabataş, Beşiktaş",
+    addressRegion: "Istanbul",
+    postalCode: "34357",
+    addressCountry: "TR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 41.0378,
+    longitude: 28.9978,
+  },
+  servesCuisine: ["Turkish", "Mediterranean"],
+  priceRange: "€€–€€€",
+  acceptsReservations: true,
+  hasMenu: `${SITE_URL}/istanbul-dinner-cruise#menu`,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "20:30",
+      closes: "00:00",
+    },
+  ],
+  areaServed: {
+    "@type": "City",
+    name: "Istanbul",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: dinnerTour.rating,
+    reviewCount: dinnerTour.reviewCount,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  currenciesAccepted: "EUR",
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Live Entertainment", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Hotel Pickup", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Bosphorus Views", value: true },
+  ],
+};
+
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "@id": `${SITE_URL}/istanbul-dinner-cruise#menu`,
+  name: "Bosphorus Dinner Cruise Menu",
+  url: canonicalUrl,
+  inLanguage: "en",
+  hasMenuSection: [
+    {
+      "@type": "MenuSection",
+      name: "Silver Dinner Cruise — Soft Drinks",
+      description: "Standard seating package with full dinner service and unlimited soft drinks. From €30 per person.",
+      offers: {
+        "@type": "Offer",
+        price: 30,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: canonicalUrl,
+      },
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Welcome Cocktail", description: "Non-alcoholic welcome drink on boarding" },
+        { "@type": "MenuItem", name: "Cold Meze Spread (10 varieties)", description: "Yaprak sarma (stuffed vine leaves), hummus, tarama, shepherd's salad, roasted red pepper, cacık, eggplant salad, white bean salad, white cheese, seasonal pickles" },
+        { "@type": "MenuItem", name: "Fresh Seasonal Salad" },
+        { "@type": "MenuItem", name: "Hot Starter" },
+        { "@type": "MenuItem", name: "Main Course (live selection)", description: "Choice of fish, chicken, or meat; vegetarian grilled vegetable plate or pasta available on request" },
+        { "@type": "MenuItem", name: "Baklava", description: "Flaky pistachio and honey syrup pastry" },
+        { "@type": "MenuItem", name: "Fresh Fruit Plate with Turkish Coffee or Tea" },
+        { "@type": "MenuItem", name: "Unlimited Soft Drinks", description: "Includes soft drinks and tea throughout the cruise" },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Silver Dinner Cruise — Alcoholic",
+      description: "Standard seating package with full dinner service and local alcoholic drinks. From €45 per person.",
+      offers: {
+        "@type": "Offer",
+        price: 45,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: canonicalUrl,
+      },
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Full Silver Dinner Menu", description: "Same multi-course dinner as Silver Soft Drinks" },
+        { "@type": "MenuItem", name: "2 Glasses Local Alcoholic Drinks", description: "Local wine or beer included; imported drinks available at extra charge" },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Gold Dinner Cruise — Soft Drinks",
+      description: "VIP stage-close table with expanded dinner menu and unlimited soft drinks. From €80 per person.",
+      offers: {
+        "@type": "Offer",
+        price: 80,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: canonicalUrl,
+      },
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Guaranteed VIP Table (stage-close)", description: "Priority placement within 5 metres of the stage" },
+        { "@type": "MenuItem", name: "Expanded VIP Dinner Menu", description: "Additional starter choices and chef-attended main-course service" },
+        { "@type": "MenuItem", name: "Unlimited Soft Drinks" },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Gold Dinner Cruise — Unlimited Alcohol",
+      description: "Best VIP table with premium dinner menu and unlimited local and imported alcoholic drinks. From €90 per person.",
+      offers: {
+        "@type": "Offer",
+        price: 90,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: canonicalUrl,
+      },
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Best VIP Table (stage-close guaranteed)", description: "Top table placement with full stage visibility" },
+        { "@type": "MenuItem", name: "Premium VIP Dinner Menu", description: "Full VIP menu with live chef service selection" },
+        { "@type": "MenuItem", name: "Unlimited Local & Imported Alcoholic Drinks", description: "Includes raki, wine, beer, and spirits" },
+        { "@type": "MenuItem", name: "Unlimited Soft Drinks" },
+      ],
+    },
+  ],
+};
+
 const eventSchema = {
   "@context": "https://schema.org",
   "@type": "Event",
@@ -297,6 +434,14 @@ export default async function IstanbulDinnerCruisePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
       />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">

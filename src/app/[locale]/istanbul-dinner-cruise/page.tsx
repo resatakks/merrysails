@@ -576,12 +576,84 @@ export default async function LocaleDinnerCruisePage({
     })),
   };
 
+  const restaurantSchema = {
+    "@context": "https://schema.org",
+    "@type": ["Restaurant", "FoodEstablishment"],
+    "@id": `${canonicalUrl}#restaurant`,
+    name: t.h1,
+    url: canonicalUrl,
+    image: dinnerTour.image,
+    telephone: "+905448989812",
+    email: "info@merrysails.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kabataş İskelesi",
+      addressLocality: "Kabataş, Beşiktaş",
+      addressRegion: "Istanbul",
+      postalCode: "34357",
+      addressCountry: "TR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.0378,
+      longitude: 28.9978,
+    },
+    servesCuisine: ["Turkish", "Mediterranean"],
+    priceRange: "€€–€€€",
+    acceptsReservations: true,
+    hasMenu: `${canonicalUrl}#menu`,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "20:30",
+        closes: "00:00",
+      },
+    ],
+    areaServed: {
+      "@type": "City",
+      name: "Istanbul",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: dinnerTour.rating,
+      reviewCount: dinnerTour.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    currenciesAccepted: "EUR",
+    inLanguage: locale,
+  };
+
+  const menuSchema = {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "@id": `${canonicalUrl}#menu`,
+    name: t.packageSectionTitle,
+    url: canonicalUrl,
+    inLanguage: locale,
+    hasMenuSection: t.packages.map((pkg) => ({
+      "@type": "MenuSection",
+      name: pkg.name,
+      description: pkg.items.join("; "),
+      offers: {
+        "@type": "Offer",
+        price: parseInt(pkg.price.replace("€", ""), 10),
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: canonicalUrl,
+      },
+    })),
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }} />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
