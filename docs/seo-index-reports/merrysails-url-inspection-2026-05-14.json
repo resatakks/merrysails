@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-05-14T21:48:22.893Z",
+  "siteUrl": "sc-domain:merrysails.com",
+  "results": [
+    {
+      "url": "https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-09T11:59:01Z",
+      "googleCanonical": "https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide",
+      "userCanonical": "https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide",
+      "referringUrls": [
+        "https://merrysails.com/blog/istanbul-cruise-photography-spots",
+        "https://merrysails.com/sitemap.xml",
+        "https://merrysails.com/blog"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-06T23:11:34Z",
+      "googleCanonical": "https://merrysails.com/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "userCanonical": "https://merrysails.com/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "referringUrls": [
+        "https://merrysails.com/blog?q={search_term_string}"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/blog/bosphorus-cruise-with-kids",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-06T05:25:41Z",
+      "googleCanonical": "https://merrysails.com/blog/bosphorus-cruise-with-kids",
+      "userCanonical": "https://merrysails.com/blog/bosphorus-cruise-with-kids",
+      "referringUrls": [
+        "https://merrysails.com/blog/sultanahmet-tourist-guide",
+        "https://merrysails.com/sitemap.xml",
+        "https://merrysails.com/blog"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    }
+  ]
+}
