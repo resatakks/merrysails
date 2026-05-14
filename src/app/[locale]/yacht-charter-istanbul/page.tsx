@@ -148,7 +148,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     title: "Privater Yachtcharter Istanbul",
     subtitle: "Bosporus-Sailing — 6 Yachten, 10 bis 150 Gäste, das ganze Schiff für Sie",
     description:
-      "Bei MerrySails reicht die Flotte von der 10-Gäste-Sailing-Yacht mit kleinem Deck bis zur 150-Gäste-Mega-Event-Yacht. Jede Buchung sichert das gesamte Schiff für Ihre Gruppe. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach zehn Prozent automatisch abgezogen. Essen, Bar-Service, DJ und Event-Styling laufen über ein separates Briefing. Betrieben von Merry Tourism, TÜRSAB-A-Gruppe lizenziert seit 2001.",
+      "Bei MerrySails reicht die Flotte von der 10-Gäste-Sailing-Yacht (Einsteiger-Deck, ab €280 / 2 Std.) über die 14-Gäste-Sailing-Yacht, die 36-Gäste-Gruppen-Yacht und die 36-Gäste-Signature-Yacht bis zur 44-Gäste-Event-Yacht und zur 150-Gäste-Mega-Event-Yacht (ab €680 / 2 Std.). Jede Buchung sichert das gesamte Schiff exklusiv für Ihre Gruppe – keine Fremden an Bord. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach 10 % automatisch abgezogen. Auf Wunsch organisieren wir Hochzeitsanträge, Geburtstagsfeiern, Firmenevents und Jubiläen – inklusive Blumendekoration, Torte, DJ und professionellem Fotografen (separates Briefing). Alle Yachten legen in der Kuruçeşme Marina oder am Anleger Kabataş ab; den bevorzugten Startpunkt geben Sie bei der Buchung an. Betrieben von Merry Tourism, TURSAB-A-Gruppe lizenziert seit 2001.",
     whyChooseHeading: "Warum einen privaten Yachtcharter in Istanbul wählen?",
     reasons: [
       {
@@ -193,6 +193,26 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         question: "Sind Speisen und Getränke inklusive?",
         answer:
           "Softdrinks, Wasser und leichte Snacks gehören auf allen Yachten zum Deckpreis. Vollmenüs, Alkohol, Bar-Service, DJ und Tanz-Acts werden über ein separates Briefing angeboten.",
+      },
+      {
+        question: "Wie groß ist die Yachtflotte von MerrySails?",
+        answer:
+          "Die Flotte umfasst sechs Yachten: Sailing-Yacht 10 Gäste (ab €280), Sailing-Yacht 14 Gäste, Gruppen-Yacht 36 Gäste, Signature-Yacht 36 Gäste, Event-Yacht 44 Gäste und Mega-Event-Yacht 150 Gäste (ab €680). So finden wir für jede Gruppengröße das passende Schiff.",
+      },
+      {
+        question: "Wo legt die Yacht ab? Welche Marina?",
+        answer:
+          "Standard-Abfahrt ist die Kuruçeşme Marina auf der europäischen Seite. Auf Wunsch ist auch ein Ablegen vom Anleger Kabataş, Beşiktaş oder Bebek möglich. Den bevorzugten Startpunkt teilen Sie bitte bei der Buchung mit; der genaue Treffpunkt wird nach der Buchungsbestätigung zugesandt.",
+      },
+      {
+        question: "Ist der Yachtcharter familienfreundlich?",
+        answer:
+          "Ja, alle Yachten sind familienfreundlich. Kinder sind herzlich willkommen; die ruhige Fahrt auf dem Bosporus ist auch für kleine Gäste gut geeignet. Bitte geben Sie die Anzahl der Kinder bei der Buchung an, damit wir die passende Yacht und Sitzplätze sicherstellen.",
+      },
+      {
+        question: "Was ist im Yacht-Preis inbegriffen?",
+        answer:
+          "Im Deckpreis enthalten sind: Kapitän und Crew, Treibstoff, Softdrinks (Wasser, Limonade, Cola), leichte Snacks und die Nutzung des gesamten Schiffes exklusiv für Ihre Gruppe. Alkohol, Vollmenü, Bar-Service, DJ, Blumendekoration, Torte und Fotografen sind als Add-ons separat buchbar. Ab drei Stunden Charter wird automatisch 10 % Rabatt abgezogen.",
       },
     ],
     tableHeading: "Auf einen Blick",

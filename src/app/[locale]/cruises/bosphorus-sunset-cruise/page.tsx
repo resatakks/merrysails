@@ -55,8 +55,9 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Gün Batımı Turu",
     aboutTitle: "Boğaz Gün Batımı Turu Hakkında",
     aboutBody: [
-      "MerrySails Boğaz Gün Batımı Turu, İstanbul'un en ikonik manzaralarını altın saat ışığında izlemek isteyen misafirler için tasarlanmış 2 saatlik paylaşımlı lüks yat deneyimidir. Tur iki net seçenek sunar: Şarapsız €30 (Sal & Per) / €34, Şaraplı €35 (Sal & Per) / €40.",
-      "Güzergah Boğaz'ın güney kesimini kapsar; Dolmabahçe Sarayı, Ortaköy Camii ve Boğaz Köprüleri yat üzerinden izlenir. Canlı rehber eşliğinde, 12 dilde sesli rehber, çay, Türk kahvesi, limonata, su, atıştırmalık ve meyve tabağı ikramları dahildir. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir.",
+      "MerrySails Boğaz Gün Batımı Turu, İstanbul'un en ikonik manzaralarını altın saat ışığında izlemek isteyen misafirler için tasarlanmış 2 saatlik paylaşımlı lüks yat deneyimidir. Tur iki net seçenek sunar: Şarapsız €30 (Sal & Per) / €34 (diğer günler), Şaraplı €35 (Sal & Per) / €40 (diğer günler). Salı ve Perşembe rezervasyonu yapan misafirler kişi başı €4 tasarruf eder.",
+      "Yola çıkış Karaköy iskelesinden yapılır; gün batımından 30 dakika önce hareket ederek en güçlü altın saat ışığını yakalamayı garanti eder. Fotoğraf meraklıları için güneş Boğaz ekseni boyunca Marmara'ya doğru alçalır ve köprü silüetlerini ateş tonlarında boyar. Bu ışık penceresi yaklaşık 40 dakika sürer.",
+      "Güzergah Boğaz'ın güney kesimini kapsar: Dolmabahçe Sarayı cephesinden geçilir, Kız Kulesi önünde yavaşlanır, Ortaköy Camii ile Boğaz Köprüsü yan yana çerçevelenir, ardından Rumeli Hisarı görüntülenerek geri dönülür. Canlı rehber eşliğinde 12 dilde sesli rehber aktif olup çay, Türk kahvesi, limonata, su, atıştırmalık ve meyve tabağı tüm biletlere dahildir. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir.",
     ],
     trustSignal:
       "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism, 50.000'den fazla misafiri ağırlamış deneyimiyle güvenilir hizmet sunmaktadır. Kalkış noktası Kabataş bölgesindedir; tam adres rezervasyon onayından sonra paylaşılır.",
@@ -85,6 +86,18 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         q: "Akşam yemeği turu yerine gün batımı turu ne zaman tercih edilmeli?",
         a: "Türk gecesi eğlencesi ve uzun yemekli program yerine daha kısa, sakin ve hafif bir deneyim isteyenler için gün batımı turu idealdir. Çiftler, fotoğraf meraklıları ve İstanbul'a ilk kez gelenler için önerilir.",
+      },
+      {
+        q: "Gün batımı turu için en iyi mevsim hangisi?",
+        a: "İlkbahar (Nisan–Mayıs) ve sonbahar (Eylül–Ekim) en dramatik gün batımı renklerini sunar. Yaz aylarında gün batımı daha geç olup turun hareket saati de buna göre ayarlanır. Kış aylarında tur seyrek katılımla daha sakin geçer; ışık kısa ama güçlüdür.",
+      },
+      {
+        q: "Şaraplı seçeneğin standart ikramdan farkı nedir?",
+        a: "Her iki pakette çay, Türk kahvesi, limonata, su, atıştırmalık ve meyve tabağı yer alır. Şaraplı seçenekte (€35 Sal&Per / €40) bu ikramlara ek olarak kişi başı seçkin 2 kadeh şarap eklenir. Alkol tercih etmeyenler şarapsız paketi seçerek aynı güzergah ve hizmetten yararlanır.",
+      },
+      {
+        q: "Turun rotasında hangi tarihi yerler yer alıyor?",
+        a: "Tur Dolmabahçe Sarayı cephesinden başlar, Kız Kulesi'ni soldan geçer, Ortaköy Camii ile 1. Boğaz Köprüsü'nü iç içe çerçeveler ve Rumeli Hisarı görüntülenerek Karaköy'e geri döner. Canlı rehber her yapı hakkında tarih ve mimari bilgi aktarır.",
       },
     ],
     otherOptionsTitle: "Diğer Seçenekler",
@@ -121,8 +134,9 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     breadcrumbCurrent: "Sonnenuntergang Kreuzfahrt",
     aboutTitle: "Über die Bosporus Sonnenuntergang Kreuzfahrt",
     aboutBody: [
-      "Die MerrySails Bosporus Sonnenuntergang Kreuzfahrt ist ein zweistündiges Erlebnis auf einer geteilten Luxusjacht – ideal für Gäste, die Istanbuls berühmte Skyline im goldenen Licht der Abendstunde erleben möchten. Sie wählen zwischen zwei klaren Paketen: Ohne Wein ab €30 (Di & Do) / €34, oder mit zwei Gläsern Wein ab €35 (Di & Do) / €40 pro Person.",
-      "Die Route führt durch den südlichen Bosporus, vorbei am Dolmabahçe-Palast, der Ortaköy-Moschee und den beleuchteten Brücken. An Bord erwarten Sie ein Live-Guide, ein Audio-Guide in 12 Sprachen sowie Tee, türkischer Kaffee, Limonade, Wasser, Snacks und ein Obstteller.",
+      "Die MerrySails Bosporus Sonnenuntergang Kreuzfahrt ist ein zweistündiges Erlebnis auf einer geteilten Luxusjacht – ideal für Gäste, die Istanbuls berühmte Skyline im goldenen Licht der Abendstunde erleben möchten. Sie wählen zwischen zwei klaren Paketen: Ohne Wein ab €30 (Di & Do) / €34 (übrige Tage), oder mit zwei Gläsern Wein ab €35 (Di & Do) / €40 pro Person. Dienstag und Donnerstag bieten die günstigste Buchungsmöglichkeit – bis zu €4 Ersparnis pro Person.",
+      "Die Abfahrt erfolgt am Karaköy-Anleger, rund 30 Minuten vor dem eigentlichen Sonnenuntergang. So ist garantiert, dass das Boot die optimale Goldene Stunde auf dem Wasser erlebt: Das Sonnenlicht fällt in einem flachen Winkel entlang der Bosporus-Achse und taucht die Brückensilhouetten in Orange- und Rottöne. Dieses Lichtfenster dauert etwa 40 Minuten – ideal für unvergessliche Fotos.",
+      "Die Route umfasst den südlichen Bosporus: Vorbei an der Fassade des Dolmabahçe-Palastes, mit Blick auf den Mädchenturm (Kız Kulesi), der Ortaköy-Moschee im Gegenlicht der Bosporus-Brücke und schließlich einem Blick auf die Rumeli-Festung, bevor die Jacht nach Karaköy zurückkehrt. An Bord stehen Ihnen ein Live-Guide, ein Audio-Guide in 12 Sprachen sowie Tee, türkischer Kaffee, Limonade, Wasser, Snacks und ein Obstteller zur Verfügung.",
     ],
     trustSignal:
       "Merry Tourism ist seit 2001 TÜRSAB-A-lizenziert und hat über 50.000 Gäste begrüßt – Sie buchen also bei einem geprüften, erfahrenen Anbieter. Abfahrt ist im Bereich Kabataş; die genaue Adresse erhalten Sie nach der Buchungsbestätigung.",
@@ -151,6 +165,18 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         q: "Sonnenuntergang oder Dinner-Kreuzfahrt – was passt besser?",
         a: "Wenn Sie ein kürzeres, ruhigeres Erlebnis ohne Show- und Dinner-Programm bevorzugen, ist die Sonnenuntergangstour ideal. Besonders empfohlen für Paare, Fotofans und Istanbul-Erstbesucher.",
+      },
+      {
+        q: "Welche Jahreszeit eignet sich am besten für die Sonnenuntergang Kreuzfahrt?",
+        a: "Frühling (April–Mai) und Herbst (September–Oktober) bieten die farbenprächtigsten Sonnenuntergänge mit warmen Orange- und Rottönen über dem Bosporus. Im Sommer verschiebt sich die Abfahrtszeit entsprechend des späteren Sonnenuntergangs. Im Winter ist die Tour ruhiger, aber das Licht ist kurz und intensiv.",
+      },
+      {
+        q: "Was unterscheidet die Wein-Option von der Standard-Option?",
+        a: "Beide Pakete beinhalten Tee, türkischen Kaffee, Limonade, Wasser, Snacks und einen Obstteller. Die Wein-Option (€35 Di&Do / €40) ergänzt dieses Angebot um 2 Gläser ausgewählten Wein pro Person. Gäste, die keinen Alkohol trinken, wählen einfach die Standard-Option und genießen denselben Ausblick und Service.",
+      },
+      {
+        q: "Welche Sehenswürdigkeiten sind auf der Route zu sehen?",
+        a: "Die Kreuzfahrt führt an der Fassade des Dolmabahçe-Palastes vorbei, am Mädchenturm (Kız Kulesi), rahmt die Ortaköy-Moschee vor der beleuchteten Bosporus-Brücke ein und bietet einen Blick auf die Rumeli-Festung, bevor die Jacht nach Karaköy zurückkehrt. Ein Live-Guide erläutert die Geschichte jedes Bauwerks.",
       },
     ],
     otherOptionsTitle: "Weitere Optionen",
