@@ -53,9 +53,11 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     bosphorusLabel: "Boğaz Turu",
     aboutTitle: "İstanbul Boğaz Akşam Yemeği Turu Nedir?",
     aboutBody: [
-      "MerrySails İstanbul Akşam Yemeği Turu, Boğaz'ın en güzel manzaralarını izlerken akşam yemeği ve Türk gecesi eğlencesinin bir arada sunulduğu paylaşımlı tekne deneyimidir. Tur yaklaşık 3,5 saat sürer, Kabataş İskelesi'nden hareket eder ve dört farklı paket seçeneği sunar: €30, €45, €80 ve €90.",
-      "Her paketin içeriği — koltuk tipi, içecek çeşitleri ve yemek menüsü düzeyi — net olarak ayrılmıştır. 50.000'den fazla misafiri ağırladık.",
-      "Bazı merkezi Avrupa yakası otelleri için servis transferi mevcuttur. Transfer detayları rezervasyon onayından sonra yazılı olarak iletilir.",
+      "MerrySails İstanbul Akşam Yemeği Turu, Boğaz'ın eşsiz manzaralarını izlerken otantik Türk mutfağı ve canlı Türk gecesi eğlencesinin bir arada sunulduğu paylaşımlı tekne deneyimidir. Tur yaklaşık 3,5 saat sürer, Kabataş İskelesi'nden saat 20:30'da hareket eder ve dört farklı paket seçeneği sunar: €30, €45, €80 ve €90.",
+      "Silver paketlerde standart oturma düzeni, tam akşam yemeği servisi ve Türk gecesi gösterisi yer alır. Gold paketlerde sahneye yakın VIP masa garantisi, genişletilmiş menü ve sınırsız alkol seçeneği mevcuttur. Tüm paketlerde yemek menüsü aynı rotada; mezelerin yanında sıcak başlangıç, ana yemek ve tatlı servisi yapılır.",
+      "Akşam yemeği menüsü yaklaşık 10 çeşit soğuk meze ile başlar: yaprak sarma, humus, tarama, cacık, çoban salatası, beyaz peynir, patlıcan salatası, salatalık turşusu ve mevsime göre değişen ek mezeler. Ardından sıcak başlangıç ve ana yemek gelir — balık, tavuk veya et seçenekleri; istek üzerine vejetaryen ızgara sebze tabağı veya makarna da sunulmaktadır. Tatlı olarak fıstıklı baklava, meyve tabağı ve Türk kahvesi ikram edilir.",
+      "3 perdelik Türk gecesi gösterisi boyunca sahne Türkiye'nin farklı bölgelerini yansıtan halk danslarını, Oryantal performansları ve sürpriz seyirci katılım oyunlarını kapsar. Gösteriler tekne hareket halindeyken yürütülür; böylece ışıklı Boğaz silüeti eşliğinde unutulmaz bir gece geçirirsiniz.",
+      "Çocuk politikası: 3 yaş ve altı ücretsiz, 4–10 yaş arası çocuklar için indirimli fiyat uygulanır. Vejetaryen misafirler için özel tabak önceden talep edilebilir. Merkezi Avrupa yakasındaki pek çok otel için otel transfer servisi mevcuttur; kesin alım saatleri rezervasyon onayından sonra yazılı bildirilir.",
     ],
     trustSignal: "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism tarafından sunulmaktadır.",
     tableRows: [
@@ -108,6 +110,26 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         q: "Ne zaman rezervasyon yapmalıyım?",
         a: "Yaz sezonunda (Mayıs–Eylül) en az 3–5 gün öncesinden rezervasyon yapmanızı öneririz. Turlar çoğunlukla dolup taşmaktadır.",
       },
+      {
+        q: "Akşam yemekli boğaz turu menüsü vejetaryen mi?",
+        a: "Standart menü balık, tavuk veya et içermektedir. Vejetaryen misafirler için ızgara sebze tabağı veya makarna reservasyon sırasında önceden talep edilebilir. Taleplerin rezervasyon onayından önce bildirilmesi gerekmektedir.",
+      },
+      {
+        q: "Çocuklar akşam yemekli boğaz turuna katılabilir mi?",
+        a: "Evet, tüm yaş grupları kabul edilmektedir. 3 yaş ve altı çocuklar ücretsizdir. 4–10 yaş arası çocuklar için indirimli çocuk fiyatı uygulanır; rezervasyon sırasında kaç çocuk katıldığını belirtmeniz yeterlidir.",
+      },
+      {
+        q: "Sultanahmet'ten otel transferi dahil mi?",
+        a: "Sultanahmet ve diğer merkezi Avrupa yakası otelleri için servis transfer imkânı mevcuttur. Kesin alım saatleri ve güzergah detayları rezervasyon onayının ardından yazılı olarak bildirilir. Anadolu yakası otellerinden bireysel ulaşım gerekmektedir.",
+      },
+      {
+        q: "Akşam yemekli boğaz turu için kıyafet kuralı var mı?",
+        a: "Zorunlu bir kıyafet kuralı bulunmamaktadır. Smart casual tercih edilmekle birlikte rahat kıyafetler de kabul edilir. Tekne üstünde akşam saatlerinde hava serinleyebileceği için hafif bir üst giysisi almanız önerilir.",
+      },
+      {
+        q: "Akşam yemekli boğaz turunda kaç tabak yemek servisi yapılır?",
+        a: "Menü 4 aşamalıdır: soğuk meze tabağı (yaklaşık 10 çeşit — yaprak sarma, humus, tarama, cacık, çoban salatası, beyaz peynir vb.), sıcak başlangıç, ana yemek (balık/tavuk/et seçenekli) ve tatlı (fıstıklı baklava, meyve tabağı, Türk kahvesi). Tüm Silver ve Gold paketlerde bu 4 aşama eksiksiz sunulmaktadır.",
+      },
     ],
     otherOptionsTitle: "Diğer Seçenekler",
     otherOptions: [
@@ -137,11 +159,13 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     canonicalPath: "/de/istanbul-dinner-cruise",
     homeLabel: "Startseite",
     bosphorusLabel: "Bosporus-Tour",
-    aboutTitle: "Was ist die Istanbul Dinner Cruise?",
+    aboutTitle: "Was ist die Istanbul Dinner Cruise auf dem Bosporus?",
     aboutBody: [
-      "Die MerrySails Dinner Cruise ist eine geteilte Bootsfahrt auf dem Bosporus, die Abendessen, türkische Live-Show und einen unvergleichlichen Blick auf das beleuchtete Istanbul kombiniert. Die Fahrt dauert rund 3,5 Stunden, startet am Anleger Kabataş und bietet vier Pakete zur Auswahl: €30, €45, €80 und €90.",
-      "Jedes Paket ist klar abgegrenzt – nach Sitzplatzkategorie, Getränkeumfang und Menüstufe. Wir haben bereits über 50.000 Gäste an Bord begrüßt.",
-      "Für viele zentrale Hotels auf der europäischen Seite bieten wir einen Shuttle-Service an. Die genauen Abholzeiten erhalten Sie schriftlich nach Buchungsbestätigung.",
+      "Die MerrySails Dinner Cruise ist eine geteilte Bootsfahrt auf dem Bosporus, die ein authentisches türkisches Abendessen, türkische Live-Show und einen unvergleichlichen Blick auf das beleuchtete Istanbul kombiniert. Die Fahrt dauert rund 3,5 Stunden, startet um 20:30 Uhr am Anleger Kabataş und bietet vier Pakete zur Auswahl: €30, €45, €80 und €90.",
+      "Die Silver-Pakete umfassen einen Standard-Sitzplatz, ein vollständiges Abendmenü sowie die türkische Abendshow. Die Gold-Pakete bieten einen garantierten VIP-Tisch in Bühnennähe, ein erweitertes Menü und wahlweise unbegrenzte alkoholische Getränke. Route und Fahrtdauer sind in allen Paketen identisch.",
+      "Das Abendmenü beginnt mit einer kalten Meze-Platte mit rund 10 Spezialitäten: Yaprak Sarma (gefüllte Weinblätter), Hummus, Tarama (Fischroggencreme), Cacık (türkischer Joghurt-Dip), Hirtensalat, weißer Käse, Auberginensalat, eingelegte Gurken sowie weitere saisonale Beilagen. Darauf folgen ein warmer Starter und ein Hauptgericht zur Auswahl – Fisch, Hühnchen oder Fleisch. Auf Anfrage ist auch ein vegetarisches Gericht (gegrilltes Gemüse oder Pasta) erhältlich.",
+      "Zum Abschluss werden Baklava mit Pistazie, eine Obstplatte und türkischer Kaffee serviert. Während der gesamten Fahrt läuft eine dreiaktige türkische Abendshow mit Volkstänzen aus verschiedenen Regionen der Türkei, Orientalischem Tanz und Gäste-Einlagen.",
+      "Kinderpolitik: Kinder unter 3 Jahren fahren kostenlos mit. Für Kinder zwischen 4 und 10 Jahren gilt ein ermäßigter Kinderpreis – bitte bei der Buchung angeben. Für die meisten zentralen Hotels auf der europäischen Seite steht ein kostenloser Shuttle bereit; die genauen Abholzeiten werden schriftlich nach Buchungsbestätigung mitgeteilt.",
     ],
     trustSignal: "Veranstalter Merry Tourism – seit 2001 TÜRSAB-A-Gruppe lizenziert.",
     tableRows: [
@@ -213,6 +237,26 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       {
         q: "Wann sollte ich buchen?",
         a: "In der Hochsaison (Mai bis September) empfehlen wir eine Buchung mindestens 3–5 Tage im Voraus. Die Touren sind häufig ausgebucht.",
+      },
+      {
+        q: "Ist das Menü bei der Dinner Cruise vegetarisch?",
+        a: "Das Standardmenü enthält Fisch, Hühnchen oder Fleisch als Hauptgericht. Vegetarier können bei der Buchung ein vegetarisches Gericht (gegrilltes Gemüse oder Pasta) vorab anfragen. Bitte geben Sie dies bei der Reservierung an, damit wir es vorbereiten können.",
+      },
+      {
+        q: "Sind Kinder bei der Dinner Cruise willkommen?",
+        a: "Ja, alle Altersgruppen sind herzlich willkommen. Kinder unter 3 Jahren fahren kostenlos mit. Für Kinder zwischen 4 und 10 Jahren gilt ein ermäßigter Kinderpreis. Bitte geben Sie die Anzahl der Kinder bei der Buchung an.",
+      },
+      {
+        q: "Ist ein Hoteltransfer ab Sultanahmet inklusive?",
+        a: "Für viele zentrale Hotels auf der europäischen Seite – darunter Sultanahmet, Taksim und Beyoğlu – steht ein kostenloser Shuttle-Service zur Verfügung. Die genauen Abholzeiten und der Treffpunkt werden schriftlich nach Buchungsbestätigung mitgeteilt. Gäste von der asiatischen Seite reisen eigenständig an.",
+      },
+      {
+        q: "Gibt es einen Dresscode für die Dinner Cruise?",
+        a: "Es gibt keinen verbindlichen Dresscode. Smart Casual wird empfohlen, bequeme Alltagskleidung ist jedoch ebenfalls willkommen. Da es auf dem Bosporus abends kühler werden kann, empfehlen wir eine leichte Jacke mitzunehmen.",
+      },
+      {
+        q: "Wie viele Gänge werden bei der Dinner Cruise serviert?",
+        a: "Das Menü besteht aus 4 Gängen: kalte Meze-Platte (ca. 10 Spezialitäten, darunter Yaprak Sarma, Hummus, Tarama, Cacık, Hirtensalat, weißer Käse), warmer Starter, Hauptgericht (Fisch, Hühnchen oder Fleisch) sowie Dessert (Baklava, Obstplatte und türkischer Kaffee). Alle vier Gänge sind sowohl in den Silver- als auch in den Gold-Paketen enthalten.",
       },
     ],
     otherOptionsTitle: "Weitere Optionen",
