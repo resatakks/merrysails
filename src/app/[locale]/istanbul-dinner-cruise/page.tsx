@@ -39,14 +39,19 @@ type LocaleContent = {
   faqs: { q: string; a: string }[];
   otherOptionsTitle: string;
   otherOptions: { href: string; title: string; desc: string }[];
+  menuDetailSection?: {
+    title: string;
+    intro: string;
+    sections: { heading: string; items: string; note?: string }[];
+  };
 };
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "İstanbul Akşam Yemeği Turu — €30'dan başlayan fiyatlar",
+    title: "Akşam Yemekli Boğaz Turu — €30'dan Başlıyor",
     description:
-      "İstanbul'da Boğaz akşam yemeği turu paketleri €30'dan başlıyor. Türk gecesi eğlencesi, otel transfer desteği ve 4 farklı paket seçeneği. Hemen rezervasyon yapın.",
-    h1: "İstanbul Boğaz Yemekli Turu — Akşam Cruise",
+      "Akşam yemekli boğaz turu paketleri €30'dan başlıyor. Boğazda akşam yemeği, Türk gecesi eğlencesi, otel transfer desteği ve 4 farklı paket seçeneği. Hemen rezervasyon yapın.",
+    h1: "İstanbul Akşam Yemekli Boğaz Turu — Tekneli Yemekli Tur",
     breadcrumb: "Akşam Yemeği Turu",
     canonicalPath: "/tr/istanbul-dinner-cruise",
     homeLabel: "Ana Sayfa",
@@ -130,6 +135,22 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         q: "Akşam yemekli boğaz turunda kaç tabak yemek servisi yapılır?",
         a: "Menü 4 aşamalıdır: soğuk meze tabağı (yaklaşık 10 çeşit — yaprak sarma, humus, tarama, cacık, çoban salatası, beyaz peynir vb.), sıcak başlangıç, ana yemek (balık/tavuk/et seçenekli) ve tatlı (fıstıklı baklava, meyve tabağı, Türk kahvesi). Tüm Silver ve Gold paketlerde bu 4 aşama eksiksiz sunulmaktadır.",
       },
+      {
+        q: "Akşam yemekli boğaz turunda hangi yemekler servis edilir?",
+        a: "Menü dört bölümden oluşur. Mezeler: Humus, Babagannuş, Patlıcan Salatası, Sigara Böreği, Dolma. Ara sıcak: Karides Güveç (Silver paket), Levrek Buğulama (Gold/premium). Ana yemek: Izgara Levrek, Köfte, Tavuk Şiş veya Tavuklu Pilav. Tatlı: Baklava, Sütlaç, Türk Lokumu ve Meyve Tabağı. Tüm Silver ve Gold paketlerde bu tabaklar eksiksiz servis edilir.",
+      },
+      {
+        q: "Vejetaryen menü seçeneği var mı?",
+        a: "Evet. Standart menüde balık, tavuk veya et yer alır; ancak vejetaryen misafirler için ızgara sebze tabağı veya makarna rezervasyon sırasında önceden talep edilebilir. Diyetinizi rezervasyon formunda belirtmeniz yeterlidir.",
+      },
+      {
+        q: "Çocuk menüsü mevcut mu?",
+        a: "3 yaş ve altı çocuklar için ayrı bir ücret alınmaz ve menü paylaşılabilir. 4–10 yaş arası çocuklar için indirimli fiyat uygulanır; bu yaş grubuna Tavuklu Pilav gibi daha hafif seçenekler sunulabilir. Çocuk sayısını ve yaşlarını rezervasyon sırasında belirtmeniz yeterlidir.",
+      },
+      {
+        q: "Türk gecesi gösterisi neleri içerir?",
+        a: "3 perdelik Türk gecesi gösterisi; Türkiye'nin farklı bölgelerinden halk danslarını, Oryantal performansları ve seyirci katılım bölümlerini kapsar. Gold paketlerde gösteriye ek olarak DJ müziği eşliğinde dans pisti de açılmaktadır. Gösteriler seyir halindeyken yürütülür, böylece Boğaz manzarasını eş zamanlı izleyebilirsiniz.",
+      },
     ],
     otherOptionsTitle: "Diğer Seçenekler",
     otherOptions: [
@@ -149,6 +170,40 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
         desc: "View this tour in English.",
       },
     ],
+    menuDetailSection: {
+      title: "Akşam Yemekli Boğaz Turunda Ne Yenir? Menü Detayı",
+      intro:
+        "MerrySails akşam yemekli boğaz turunda Türk mutfağının en seçkin lezzetleri 4 aşamalı olarak sunulmaktadır. Menü tüm Silver ve Gold paketlerde aynıdır; paketler arası fark içecek kapsamı ve oturma önceliğidir.",
+      sections: [
+        {
+          heading: "Mezeler",
+          items:
+            "Humus, Babagannuş, Patlıcan Salatası, Sigara Böreği, Dolma (yaprak sarma), Cacık, Çoban Salatası, Beyaz Peynir ve mevsime göre ek soğuk mezeler.",
+          note:
+            "Yaklaşık 10 çeşit soğuk meze tabak ortasına konur; masada paylaşılarak yenir.",
+        },
+        {
+          heading: "Ara Sıcak",
+          items:
+            "Silver paketlerde Karides Güveç; Gold/premium paketlerde Levrek Buğulama.",
+        },
+        {
+          heading: "Ana Yemek",
+          items:
+            "Izgara Levrek, Köfte, Tavuk Şiş veya Tavuklu Pilav (çocuklar ve balık yemeyenler için idealdir). Vejetaryen seçenek: ızgara sebze tabağı veya makarna (rezervasyon sırasında talep edin).",
+        },
+        {
+          heading: "Tatlı",
+          items:
+            "Baklava, Sütlaç, Türk Lokumu ve Meyve Tabağı. Türk kahvesi veya çay ikram edilir.",
+        },
+        {
+          heading: "İçecek",
+          items:
+            "Temel (Silver Soft Drinks €30): Sınırsız alkolsüz içecek. Silver Alcoholic (€45): Yerel bira ve rakı dahil. Gold Soft Drinks (€80): Sınırsız alkolsüz içecek + VIP masa. Gold Unlimited Alkol (€90): Sınırsız yerel ve ithal alkol + VIP masa + DJ.",
+        },
+      ],
+    },
   },
   de: {
     title: "Istanbul Dinner-Kreuzfahrt ab €30",
@@ -669,6 +724,98 @@ export default async function LocaleDinnerCruisePage({
     inLanguage: locale,
   };
 
+  const trMenuSections =
+    locale === "tr"
+      ? [
+          {
+            "@type": "MenuSection",
+            name: "Silver Soft Drinks — €30",
+            description: "Standart koltuk, sınırsız alkolsüz içecek, tam akşam yemeği servisi ve Türk gecesi gösterisi.",
+            offers: {
+              "@type": "Offer",
+              price: 30,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+            hasMenuItem: [
+              { "@type": "MenuItem", name: "Karışık Meze Tabağı", description: "Humus, Babagannuş, Patlıcan Salatası, Sigara Böreği, Dolma, Cacık, Çoban Salatası, Beyaz Peynir" },
+              { "@type": "MenuItem", name: "Karides Güveç", description: "Ara sıcak" },
+              { "@type": "MenuItem", name: "Ana Yemek Seçeneği", description: "Izgara Levrek, Köfte, Tavuk Şiş veya Tavuklu Pilav" },
+              { "@type": "MenuItem", name: "Baklava", description: "Fıstıklı baklava" },
+              { "@type": "MenuItem", name: "Sütlaç" },
+              { "@type": "MenuItem", name: "Türk Lokumu" },
+              { "@type": "MenuItem", name: "Meyve Tabağı ve Türk Kahvesi" },
+              { "@type": "MenuItem", name: "Sınırsız Alkolsüz İçecek", description: "Meşrubat ve çay dahil" },
+            ],
+          },
+          {
+            "@type": "MenuSection",
+            name: "Silver Alcoholic — €45",
+            description: "Standart koltuk, yerel alkollü içecekler dahil, tam akşam yemeği servisi ve Türk gecesi gösterisi.",
+            offers: {
+              "@type": "Offer",
+              price: 45,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+            hasMenuItem: [
+              { "@type": "MenuItem", name: "Silver Menüsü (Tam)", description: "Silver Soft Drinks ile aynı 4 aşamalı yemek menüsü" },
+              { "@type": "MenuItem", name: "Yerel Bira ve Rakı", description: "Yerel alkollü içecekler dahil; ithal içecekler ek ücretlidir" },
+            ],
+          },
+          {
+            "@type": "MenuSection",
+            name: "Gold Soft Drinks — €80",
+            description: "VIP sahne yakını koltuk garantisi, genişletilmiş premium menü, sınırsız alkolsüz içecek ve Türk gecesi + DJ.",
+            offers: {
+              "@type": "Offer",
+              price: 80,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+            hasMenuItem: [
+              { "@type": "MenuItem", name: "Karışık Meze Tabağı (Genişletilmiş)", description: "Humus, Babagannuş, Patlıcan Salatası, Sigara Böreği, Dolma ve ek mezeler" },
+              { "@type": "MenuItem", name: "Levrek Buğulama", description: "Premium ara sıcak" },
+              { "@type": "MenuItem", name: "Premium Ana Yemek", description: "Izgara Levrek, Köfte, Tavuk Şiş veya Tavuklu Pilav; şef servisi" },
+              { "@type": "MenuItem", name: "Baklava, Sütlaç, Türk Lokumu, Meyve Tabağı" },
+              { "@type": "MenuItem", name: "VIP Sahne Yakını Koltuk Garantisi" },
+              { "@type": "MenuItem", name: "Sınırsız Alkolsüz İçecek" },
+            ],
+          },
+          {
+            "@type": "MenuSection",
+            name: "Gold Unlimited Alkol — €90",
+            description: "En iyi VIP koltuk, premium menü, sınırsız yerel ve ithal alkol dahil, Türk gecesi + DJ.",
+            offers: {
+              "@type": "Offer",
+              price: 90,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+            hasMenuItem: [
+              { "@type": "MenuItem", name: "Gold Premium Menüsü", description: "Gold Soft Drinks ile aynı genişletilmiş 4 aşamalı yemek menüsü" },
+              { "@type": "MenuItem", name: "Sınırsız Yerel ve İthal Alkol", description: "Rakı, şarap, bira ve diğer alkollü içecekler dahil" },
+              { "@type": "MenuItem", name: "VIP Öncelikli Masa", description: "Sahneye en yakın masalar" },
+            ],
+          },
+        ]
+      : t.packages.map((pkg) => ({
+          "@type": "MenuSection",
+          name: pkg.name,
+          description: pkg.items.join("; "),
+          offers: {
+            "@type": "Offer",
+            price: parseInt(pkg.price.replace("€", ""), 10),
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            url: canonicalUrl,
+          },
+        }));
+
   const menuSchema = {
     "@context": "https://schema.org",
     "@type": "Menu",
@@ -676,18 +823,7 @@ export default async function LocaleDinnerCruisePage({
     name: t.packageSectionTitle,
     url: canonicalUrl,
     inLanguage: locale,
-    hasMenuSection: t.packages.map((pkg) => ({
-      "@type": "MenuSection",
-      name: pkg.name,
-      description: pkg.items.join("; "),
-      offers: {
-        "@type": "Offer",
-        price: parseInt(pkg.price.replace("€", ""), 10),
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-        url: canonicalUrl,
-      },
-    })),
+    hasMenuSection: trMenuSections,
   };
 
   return (
@@ -768,6 +904,24 @@ export default async function LocaleDinnerCruisePage({
               ))}
             </div>
           </section>
+
+          {t.menuDetailSection && (
+            <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+              <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">{t.menuDetailSection.title}</h2>
+              <p className="text-sm leading-relaxed text-[var(--text-muted)] mb-6">{t.menuDetailSection.intro}</p>
+              <div className="grid gap-4 md:grid-cols-2">
+                {t.menuDetailSection.sections.map((sec) => (
+                  <div key={sec.heading} className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
+                    <h3 className="font-semibold text-[var(--heading)] mb-2">{sec.heading}</h3>
+                    <p className="text-sm leading-relaxed text-[var(--text-muted)]">{sec.items}</p>
+                    {sec.note && (
+                      <p className="mt-2 text-xs text-[var(--text-muted)] italic">{sec.note}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">{t.faqTitle}</h2>

@@ -115,8 +115,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "galata-bridge-eminonu",
-    title: "Galata Bridge & Eminönü Waterfront — Istanbul's Bosphorus Cruise Hub",
-    metaDescription: "Complete Eminönü waterfront guide 2026: Bosphorus cruise departure piers, Galata Bridge fish restaurants, Spice Bazaar, transport from Sultanahmet, and the best Istanbul cruise boarding logistics.",
+    title: "Eminönü Waterfront 2026 — Bosphorus Cruise Hub",
+    metaDescription: "Eminönü waterfront guide: Bosphorus cruise piers, Galata Bridge fish restaurants, Spice Bazaar, transport from Sultanahmet, boarding logistics for €30 cruises.",
     excerpt: "Eminönü waterfront is Istanbul's busiest cruise departure hub — Bosphorus boat tours, ferries, and yacht transfers all begin here, just a short tram ride from Sultanahmet.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
     keywords: ["eminonu waterfront", "eminonu istanbul", "galata bridge", "istanbul cruise departure", "eminonu pier", "bosphorus cruise from eminonu", "eminönü boğaz turu kalkış"],

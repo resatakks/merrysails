@@ -135,8 +135,9 @@ export function GET() {
     { url: `${SITE_URL}/bosphorus-cruise-departure-points`, changefreq: "weekly", priority: "0.71", lastmod: contentLastmod, hreflang: hreflangXml("/bosphorus-cruise-departure-points") },
     { url: `${SITE_URL}/private-bosphorus-dinner-cruise`, changefreq: "weekly", priority: "0.78", lastmod: contentLastmod, hreflang: hreflangXml("/private-bosphorus-dinner-cruise") },
     { url: `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod, hreflang: hreflangXml("/private-dinner-cruise-for-couples-istanbul") },
-    { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "weekly", priority: "0.76", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-rental-istanbul") },
-    { url: `${SITE_URL}/proposal-yacht-with-photographer-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-with-photographer-istanbul") },
+    // 0-impression niche event pages (3-month GSC) — kept for Ads landing, but deprioritized organically per ROADMAP audit 2026-05-17
+    { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-rental-istanbul") },
+    { url: `${SITE_URL}/proposal-yacht-with-photographer-istanbul`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-with-photographer-istanbul") },
     { url: `${SITE_URL}/yacht-charter-istanbul`, changefreq: "weekly", priority: "0.96", lastmod: contentLastmod, hreflang: hreflangXml("/yacht-charter-istanbul") },
     { url: `${SITE_URL}/kurucesme-marina-yacht-charter`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/kurucesme-marina-yacht-charter") },
     { url: `${SITE_URL}/boat-rental-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/boat-rental-istanbul") },
