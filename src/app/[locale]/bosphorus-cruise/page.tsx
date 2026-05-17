@@ -31,6 +31,18 @@ type LocaleContent = {
   departureTitle: string;
   departureParagraph: string;
   departurePoints: string[];
+  scheduleSection?: {
+    title: string;
+    intro: string;
+    rows: { season: string; sunsetTour: string; dinnerTour: string; note: string }[];
+    footnote: string;
+  };
+  uskudarSection?: {
+    title: string;
+    intro: string;
+    bullets: { label: string; desc: string }[];
+    cta: string;
+  };
   faqTitle: string;
   faqs: FaqItem[];
   homeLabel: string;
@@ -95,8 +107,32 @@ const CONTENT: Record<string, LocaleContent> = {
       "Kuruçeşme Marina — Özel yat kiralamalar için lüks marina",
       "Sultanahmet & Taksim — Seçili paketlerde ücretsiz otel transfer",
     ],
+    scheduleSection: {
+      title: "Boğaz Turu Saatleri 2026 — Hangi Saatte Kalkış Var?",
+      intro: "MerrySails boğaz turu saatleri sezona, güneşin batış vaktine ve hava koşullarına göre dinamik olarak güncellenir. Aşağıdaki tablo 2026 sezonu için tipik kalkış saatlerini özetler. Net rezervasyon saatiniz onay e-postanızda ve WhatsApp bildiriminizde yer alır; iskeleye kalkıştan en az 30 dakika önce gelmenizi öneririz.",
+      rows: [
+        { season: "Mayıs – Haziran", sunsetTour: "19:30 – 21:30", dinnerTour: "20:30 – 24:00", note: "Yoğun sezon — 1 hafta önceden rezervasyon" },
+        { season: "Temmuz – Ağustos", sunsetTour: "19:45 – 21:45", dinnerTour: "20:30 – 24:00", note: "En yoğun sezon — 2 hafta önceden rezervasyon" },
+        { season: "Eylül – Ekim", sunsetTour: "18:30 – 20:30", dinnerTour: "20:00 – 23:30", note: "İdeal hava — fotoğraf için en güzel ışık" },
+        { season: "Kasım – Şubat", sunsetTour: "16:30 – 18:30", dinnerTour: "20:00 – 23:30", note: "Sakin sezon — son dakika rezervasyon mümkün" },
+        { season: "Mart – Nisan", sunsetTour: "18:00 – 20:00", dinnerTour: "20:00 – 23:30", note: "Bahar ışığı — turist yoğunluğu düşük" },
+      ],
+      footnote: "Özel yat kiralama için saat tamamen size özeldir; gündüz, gün batımı veya gece kalkış mümkündür. Eminönü kalkışlı turlar için ek 15 dakika erken hareket bekleyebilirsiniz.",
+    },
+    uskudarSection: {
+      title: "Üsküdar Boğaz Turu — Anadolu Yakasından Nasıl Katılırım?",
+      intro: "Üsküdar boğaz turu en sık sorulan sorularımızdan biri: Anadolu yakasında konaklıyorsanız MerrySails turlarına dört kolay yöntemden biriyle ulaşabilirsiniz. Üsküdar, Kadıköy, Kuzguncuk veya Beylerbeyi'nden gelen misafirler için en pratik bağlantıları aşağıda özetledik. Özel yat kiralama paketlerinde Anadolu yakasındaki marinalardan kalkış ayarlanabilir.",
+      bullets: [
+        { label: "Üsküdar – Kabataş Vapuru (önerilen)", desc: "Şehir Hatları vapuru ile 10 dakikada Kabataş İskelesi'ne ulaşırsınız (₺27 / yetişkin). Vapur seferleri 06:30 – 23:00 arası 15 – 20 dakikada bir hareket eder. Kabataş bizim ana kalkış noktamızdır; turdan sonra aynı vapurla Üsküdar'a dönebilirsiniz." },
+        { label: "Üsküdar – Eminönü Vapuru", desc: "Yarımada (Eminönü) tarafı için doğrudan vapur hattı ~12 dakika sürer. Akşam yemeği turlarımızın bir kısmı Eminönü İskelesi'nden hareket eder; rezervasyonunuzdan kalkış iskelesini önceden teyit ediniz." },
+        { label: "Marmaray (Üsküdar – Sirkeci)", desc: "Üsküdar'dan Marmaray ile Sirkeci'ye 4 dakikada geçersiniz; oradan 5 dakika yürüyüşle Eminönü İskelesi'ndesiniz. Yağmurlu veya rüzgârlı havalarda vapur yerine tercih edilebilir." },
+        { label: "Özel Yat — Anadolu Yakası Kalkışı", desc: "Özel yat kiralama paketlerinde €280'den başlayan tekne başına fiyatlarla Kuzguncuk, Beylerbeyi veya Çengelköy iskelelerinden kalkış ayarlayabiliriz. Üsküdar / Salacak bölgesinde konaklayan grupların kullanmaktan en çok memnun kaldığı seçenektir." },
+      ],
+      cta: "Anadolu yakası kalkışıyla ilgili WhatsApp üzerinden detay alabilirsiniz — kalkış iskelesini sizin lokasyonunuza göre planlarız.",
+    },
     faqTitle: "Sık Sorulan Sorular",
     faqs: [
+      { q: "Boğaz turu ne kadar? Fiyatlar 2026", a: "Boğaz turu fiyatları MerrySails'te kişi başı €30'dan başlar: gün batımı boğaz turu €30 (Salı & Perşembe) / €34 (diğer günler), yemekli boğaz turu €30 – €90 arası 4 paket, özel yat kiralama €280'den başlayan tekne başına fiyat (8 kişiye kadar tek fiyat). Eminönü, Kabataş ve Beşiktaş kalkışları için fiyat farkı yoktur; otel transfer dahil paket €90'dır. Komisyonsuz doğrudan rezervasyon — OTA platformlarına göre %20'ye kadar avantajlıdır." },
       { q: "Boğaz turu ne kadar sürer?", a: "Gün batımı turları 2 saat, akşam yemeği turları yaklaşık 3,5 saattir. Özel yat kiralama için süreyi siz belirlersiniz; minimum 2 saat olup istediğiniz kadar uzatabilirsiniz." },
       { q: "Boğaz turu için en iyi dönem ne zaman?", a: "Yıl boyunca tur düzenlenmektedir. Mayıs–Eylül en yoğun sezon olmakla birlikte, Nisan ve Ekim en ideal hava koşullarını sunar. Kışın Boğaz daha sakin ve fotoğrafik bir atmosfer kazanır." },
       { q: "Tekne turunda çocuk indirimi var mı?", a: "6 yaş altı çocuklar ücretsizdir. 6–12 yaş arası çocuklara %50 indirim uygulanır. Rezervasyon sırasında çocuk sayısını ve yaşlarını belirtmenizi öneririz." },
@@ -618,6 +654,58 @@ export default async function LocaleBosphorusCruisePage({
           </ul>
         </div>
       </div>
+
+      {/* Schedule (Boğaz turu saatleri) — high-volume TR keyword section */}
+      {c.scheduleSection && (
+        <div className="py-16 bg-white">
+          <div className="container-main max-w-4xl">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">{c.scheduleSection.title}</h2>
+            <p className="text-[var(--body-text)] mb-6">{c.scheduleSection.intro}</p>
+            <div className="overflow-x-auto rounded-2xl border border-[var(--line)] bg-white">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-[var(--line)] bg-[var(--surface-alt)]">
+                    <th className="px-4 py-3 text-left font-semibold text-[var(--heading)]">Sezon</th>
+                    <th className="px-4 py-3 text-left font-semibold text-[var(--heading)]">Gün Batımı Turu Kalkış</th>
+                    <th className="px-4 py-3 text-left font-semibold text-[var(--heading)]">Akşam Yemeği Turu Kalkış</th>
+                    <th className="px-4 py-3 text-left font-semibold text-[var(--heading)]">Not</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {c.scheduleSection.rows.map((row) => (
+                    <tr key={row.season} className="border-b border-[var(--line)] last:border-0 hover:bg-[var(--surface-alt)]">
+                      <td className="px-4 py-3 font-medium text-[var(--heading)]">{row.season}</td>
+                      <td className="px-4 py-3 font-semibold text-[var(--brand-primary)]">{row.sunsetTour}</td>
+                      <td className="px-4 py-3 font-semibold text-[var(--brand-primary)]">{row.dinnerTour}</td>
+                      <td className="px-4 py-3 text-[var(--text-muted)]">{row.note}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-sm text-[var(--text-muted)]">{c.scheduleSection.footnote}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Üsküdar / Anatolian side section — 1,300 vol TR keyword */}
+      {c.uskudarSection && (
+        <div className="py-16 bg-[var(--surface-alt)]">
+          <div className="container-main max-w-4xl">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">{c.uskudarSection.title}</h2>
+            <p className="text-[var(--body-text)] mb-6">{c.uskudarSection.intro}</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {c.uskudarSection.bullets.map((b) => (
+                <div key={b.label} className="rounded-xl border border-[var(--line)] bg-white p-5">
+                  <h3 className="font-semibold text-[var(--heading)] mb-2">{b.label}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--body-text)]">{b.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-[var(--text-muted)]">{c.uskudarSection.cta}</p>
+          </div>
+        </div>
+      )}
 
       {/* FAQ */}
       <div className="py-16 bg-white">
