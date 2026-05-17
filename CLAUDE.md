@@ -1,5 +1,20 @@
 # MerrySails — CLAUDE.md
 
+## ⚠️ SEO/GEO/AI Visibility Project Rules
+
+Bu projedeki TÜM commercial sayfa, schema, metadata, locale work için:
+
+- **RULES.md** → universal SEO/GEO/AI standards (Semrush P0/P1/P2 fix guide dahil)
+- **KEYWORDS.md** → bu markanın commercial keyword inventory + rank baseline
+- **ROADMAP.md** → 90-günlük plan + 30/60/90 milestones
+
+Workflow:
+- Yeni sayfa yazımı: KEYWORDS.md'den target keyword seç → RULES.md kalite kontrolü → ROADMAP'i işaretle
+- "Kurallara göre yap" emri: RULES.md uygula
+- Pillar/cluster/programmatic kararı için ROADMAP'e bak
+
+---
+
 ## ⚠️ SEO Rules — Bunlar Bozulursa Tüm Çalışma Boşa Gider
 
 ### Schema (Structured Data) Kuralları
