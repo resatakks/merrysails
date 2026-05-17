@@ -50,7 +50,7 @@ const experienceSupportGuides: Record<string, ExperienceSupportGuide> = {
     facts: [
       { label: "Meeting flow", value: "Karakoy meeting point near Arap Cami / Uskufcular Street" },
       { label: "Public route", value: "T1 tram to Karakoy or M2 metro to Karakoy-Azap Kapi" },
-      { label: "Departure plan", value: "Sunset departure, usually around 18:30 depending on the date" },
+      { label: "Departure plan", value: "Sunset departure, usually around 19:00 depending on the date" },
       { label: "Format", value: "2-hour shared luxury yacht cruise" },
     ],
     directions: [

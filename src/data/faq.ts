@@ -7,7 +7,7 @@ export interface FAQItem {
 export const faqItems: FAQItem[] = [
   {
     question: "Turlar hangi saatlerde kalkıyor?",
-    answer: "Paylaşımlı Bosphorus Sunset Cruise için görünen kalkış saati 18:30, Bosphorus Dinner Cruise için 20:30'dur. Sabah ve keşif turlarında saatler ürün tipine göre değişebilir. Özel yat kiralama ve etkinliklerde saat tamamen size bağlıdır.",
+    answer: "Paylaşımlı Bosphorus Sunset Cruise için görünen kalkış saati 19:00, Bosphorus Dinner Cruise için 20:30'dur. Sabah ve keşif turlarında saatler ürün tipine göre değişebilir. Özel yat kiralama ve etkinliklerde saat tamamen size bağlıdır.",
     category: "Genel",
   },
   {

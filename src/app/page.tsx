@@ -161,7 +161,7 @@ const homepageQuickFacts = [
   { label: "What", value: "Bosphorus cruise operator in Istanbul — sunset, dinner & private yacht" },
   { label: "Prices from", value: "€34 sunset cruise, €30 dinner cruise, €200 private yacht" },
   { label: "Duration", value: "2h sunset / 3.5h dinner / custom private" },
-  { label: "Departure", value: "Karaköy pier, 18:30 sunset / 20:30 dinner" },
+  { label: "Departure", value: "Karaköy pier, 19:00 sunset / 20:30 dinner" },
   { label: "License", value: "TÜRSAB A-Group licensed, operating since 2001, 50,000+ guests" },
 ] as const;
 

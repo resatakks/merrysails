@@ -195,7 +195,7 @@ export function AdminManualReservationForm({
           <span className={labelText}>Time</span>
           <input
             name="time"
-            placeholder={selectedTour?.defaultTime || "18:30"}
+            placeholder={selectedTour?.defaultTime || "19:00"}
             defaultValue={selectedTour?.defaultTime || ""}
             key={selectedTour?.slug}
             className={inputClass}

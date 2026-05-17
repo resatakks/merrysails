@@ -192,7 +192,7 @@ const knowledgeData = {
     {
       name: "Bosphorus Sunset Cruise",
       duration: "2 hours",
-      departureTime: "Seasonally adjusted to golden hour (~18:30-19:30)",
+      departureTime: "Seasonally adjusted to golden hour (~19:00-19:30)",
       departurePier: "Karakoy meeting point, Istanbul",
       capacity: "Shared (open)",
       pricingEUR: "from EUR 30 (Tue & Thu) / EUR 34 (other days) without wine; from EUR 35 (Tue & Thu) / EUR 40 with wine",
@@ -339,7 +339,7 @@ export default function AIKnowledgePage() {
                 </tr>
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Sunset Cruise Departure</th>
-                  <td className="p-3 text-[var(--body-text)]">Karakoy meeting point, seasonally adjusted (~18:30-19:30)</td>
+                  <td className="p-3 text-[var(--body-text)]">Karakoy meeting point, seasonally adjusted (~19:00-19:30)</td>
                 </tr>
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Sunset Cruise Rating</th>
