@@ -148,6 +148,8 @@ export function GET() {
     { url: `${SITE_URL}/client-hosting-yacht-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/client-hosting-yacht-istanbul") },
     { url: `${SITE_URL}/product-launch-yacht-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/product-launch-yacht-istanbul") },
     { url: `${SITE_URL}/kabatas-dinner-cruise-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/kabatas-dinner-cruise-istanbul") },
+    // TR-only cluster page targeting "kabataş boğaz turu" 210 vol/mo (KD=38)
+    { url: `${SITE_URL}/tr/kabatas-bogaz-turu`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod },
     { url: `${SITE_URL}/private-events`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/private-events") },
     { url: `${SITE_URL}/blog`, changefreq: "daily", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/blog") },
     { url: `${SITE_URL}/guides`, changefreq: "weekly", priority: "0.7", lastmod: contentLastmod, hreflang: hreflangXml("/guides") },

@@ -652,6 +652,16 @@ export default async function LocaleBosphorusCruisePage({
               </li>
             ))}
           </ul>
+          {/* Kabataş-specific cluster link — TR only */}
+          {locale === "tr" && (
+            <p className="mt-5 text-sm text-[var(--text-muted)]">
+              Kabataş kalkışlı turlar hakkında detaylı bilgi için{" "}
+              <Link href="/tr/kabatas-bogaz-turu" className="text-[var(--brand-primary)] underline hover:opacity-80">
+                Kabataş Boğaz Turu
+              </Link>{" "}
+              sayfamızı ziyaret edin.
+            </p>
+          )}
         </div>
       </div>
 

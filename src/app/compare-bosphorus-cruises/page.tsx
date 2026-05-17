@@ -475,6 +475,9 @@ export default function CompareCruisesPage() {
             <Link href="/guides/kabatas-pier" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Kabataş Pier guide →
             </Link>
+            <Link href="/best-bosphorus-sunset-cruise-2026" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+              Best sunset cruise 2026 — 6 operators ranked →
+            </Link>
           </div>
         </section>
 

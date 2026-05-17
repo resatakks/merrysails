@@ -244,6 +244,12 @@ const comparePages = [
     description:
       "Use the reservation flow when you already know the sunset product is right and want to continue into the booking process.",
   },
+  {
+    href: "/best-bosphorus-sunset-cruise-2026",
+    title: "Best Sunset Cruise 2026 — 6 Operators Ranked",
+    description:
+      "Use this comparison guide when you want to evaluate MerrySails against other Istanbul sunset cruise operators before booking.",
+  },
 ];
 
 export default function SunsetCruiseTicketsIstanbulPage() {

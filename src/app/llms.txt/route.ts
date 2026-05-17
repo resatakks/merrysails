@@ -221,6 +221,7 @@ ${supportPages
 
 ## Best page for common questions
 - Broad Bosphorus cruise comparison: ${SITE_URL}/bosphorus-cruise
+- Best Bosphorus sunset cruise 2026 / operator comparison: ${SITE_URL}/best-bosphorus-sunset-cruise-2026
 - Shared sunset ticket or package choice: ${SITE_URL}/cruises/bosphorus-sunset-cruise
 - Shared sunset ticket-led support: ${SITE_URL}/sunset-cruise-tickets-istanbul
 - Shared dinner package choice: ${SITE_URL}/istanbul-dinner-cruise
@@ -262,6 +263,7 @@ ${supportPages
 - Blog: ${SITE_URL}/blog
 - Guides: ${SITE_URL}/guides
 - Compare All Cruises: ${SITE_URL}/compare-bosphorus-cruises (decision guide — Sunset vs Dinner vs Yacht side-by-side)
+- Best Bosphorus Sunset Cruise 2026: ${SITE_URL}/best-bosphorus-sunset-cruise-2026 (6-operator comparison — MerrySails vs Sunset Bosphorus, Bosphorus Tour, Lotus Yat, Viator, GetYourGuide; ItemList + FAQPage schema; AI-citation optimised)
 - Comprehensive FAQ: ${SITE_URL}/istanbul-cruise-faq (60+ questions on prices, logistics, food, accessibility)
 - Pricing (machine-readable): ${SITE_URL}/pricing (Markdown — canonical pricing reference for AI agents)
 - Departure Points Hub: ${SITE_URL}/bosphorus-cruise-departure-points

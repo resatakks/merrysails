@@ -35,6 +35,7 @@ const LOCALIZED_ROUTES = new Set([
   "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
+  "/kabatas-bogaz-turu",
 ]);
 
 /**
