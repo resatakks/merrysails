@@ -23,7 +23,13 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, "..");
 const redirectUri = "http://127.0.0.1";
-const scopes = ["https://www.googleapis.com/auth/analytics.readonly"];
+// Default: read-only (for ga4-insights.mjs). Pass `edit` as the LAST arg to
+// auth-url to also request analytics.edit — needed by ga4-keyevents.mjs to mark
+// conversion events as Key Events. The edit token is stored as GA4_EDIT_TOKEN.
+const wantEdit = process.argv.includes("edit");
+const scopes = wantEdit
+  ? ["https://www.googleapis.com/auth/analytics.edit"]
+  : ["https://www.googleapis.com/auth/analytics.readonly"];
 
 loadEnv(path.join(rootDir, ".env.local"));
 
@@ -92,10 +98,10 @@ if (cmd === "auth-url") {
     console.error("Exchange failed:", json);
     process.exit(1);
   }
-  console.log("\n✅ GA4_REFRESH_TOKEN — paste into .env.local AND Vercel env:\n");
+  const envName = wantEdit ? "GA4_EDIT_TOKEN" : "GA4_REFRESH_TOKEN";
+  console.log(`\n✅ ${envName} — paste into .env.local:\n`);
   console.log(json.refresh_token);
-  console.log("\nLocal:  add line  GA4_REFRESH_TOKEN=\"<token>\"  to .env.local");
-  console.log("Vercel: vercel env add GA4_REFRESH_TOKEN production   # paste token\n");
+  console.log(`\nAdd line:  ${envName}="<token>"  to .env.local\n`);
 } else {
   console.log("Usage: node scripts/ga4-oauth.mjs auth-url | exchange \"<url>\"");
 }
