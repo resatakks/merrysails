@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
-import BlogIndexClient from "@/components/blog/BlogIndexClient";
+import BlogIndexClient, { type BlogCardData } from "@/components/blog/BlogIndexClient";
 import { blogCollections, blogPosts } from "@/data/blog";
 import { commercialSupportPosts } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
 import { buildHreflang } from "@/lib/hreflang";
+
+// Strip article bodies (content/sections/faq) before passing to the client
+// component — keeps the hydration payload small (~2 MB → ~150 KB HTML).
+const toCard = (p: (typeof blogPosts)[number] | (typeof commercialSupportPosts)[number]): BlogCardData => ({
+  slug: p.slug,
+  title: p.title,
+  excerpt: p.excerpt,
+  image: p.image,
+  imageAlt: p.imageAlt,
+  category: p.category,
+  readTime: p.readTime,
+  date: p.date,
+  dateModified: p.dateModified,
+});
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Blog — Istanbul Travel Guides",
@@ -67,9 +81,9 @@ export default function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <BlogIndexClient
-        blogPosts={blogPosts}
+        blogPosts={blogPosts.map(toCard)}
         blogCollections={blogCollections}
-        commercialSupportPosts={commercialSupportPosts}
+        commercialSupportPosts={commercialSupportPosts.map(toCard)}
       />
     </>
   );

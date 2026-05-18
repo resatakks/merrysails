@@ -9,10 +9,19 @@ import { cleanContentText } from "@/lib/content-text";
 
 type CategoryFilterValue = "all" | BlogPost["category"];
 
+// Only the fields the blog index actually renders. Passing full BlogPost
+// objects (with `content`/`sections`/`faq`) serialized all 157 article
+// bodies into the page's hydration payload — ~2 MB HTML (Semrush
+// "too large HTML size"). The index page now maps to this lite shape.
+export type BlogCardData = Pick<
+  BlogPost,
+  "slug" | "title" | "excerpt" | "image" | "imageAlt" | "category" | "readTime" | "date" | "dateModified"
+>;
+
 type BlogIndexClientProps = {
-  blogPosts: BlogPost[];
+  blogPosts: BlogCardData[];
   blogCollections: BlogCollection[];
-  commercialSupportPosts: BlogPost[];
+  commercialSupportPosts: BlogCardData[];
 };
 
 const categories: Array<{ label: string; value: CategoryFilterValue }> = [
@@ -172,6 +181,15 @@ export default function BlogIndexClient({
         .filter(isDefined),
       }));
   }, [blogCollections, normalizedBlogPosts]);
+
+  // Posts not assigned to any cluster — without this section they would be
+  // orphaned (in the sitemap but with no internal link from /blog).
+  const otherPosts = useMemo(() => {
+    const collected = new Set(
+      groupedCollections.flatMap((collection) => collection.posts.map((post) => post.slug))
+    );
+    return normalizedBlogPosts.filter((post) => !collected.has(post.slug));
+  }, [groupedCollections, normalizedBlogPosts]);
 
   const commercialSupportIndex = useMemo(
     () => new Map(normalizedCommercialSupportPosts.map((post) => [post.slug, post])),
@@ -523,6 +541,34 @@ export default function BlogIndexClient({
                 </ul>
               </section>
             ))}
+
+            {otherPosts.length > 0 ? (
+              <section id="cluster-more-guides" className="scroll-mt-32">
+                <div className="max-w-3xl mb-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
+                    More Guides
+                  </p>
+                  <h2 className="text-lg md:text-xl font-bold text-[var(--heading)]">
+                    More Istanbul &amp; Bosphorus Articles
+                  </h2>
+                  <p className="mt-2 text-sm text-[var(--text-muted)]">
+                    Additional cruise, yacht, and Istanbul travel guides outside the core clusters.
+                  </p>
+                </div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+                  {otherPosts.map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors line-clamp-1"
+                      >
+                        {post.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
           </div>
         </nav>
       </div>
