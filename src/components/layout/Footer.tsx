@@ -281,6 +281,8 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
+  { label: "All Bosphorus Cruises", href: "/cruises" },
+  { label: "Private Tours", href: "/private-tours" },
   { label: "Compare All Cruises", href: "/compare-bosphorus-cruises" },
   { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
   { label: "Pricing", href: "/pricing" },
