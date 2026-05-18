@@ -5,6 +5,7 @@ import Script from "next/script";
 import AnalyticsRouteTracker from "@/components/analytics/AnalyticsRouteTracker";
 import ClarityIdentityProvider from "@/components/analytics/ClarityIdentityProvider";
 import ErrorTracker from "@/components/analytics/ErrorTracker";
+import GlobalContactClickTracker from "@/components/analytics/GlobalContactClickTracker";
 import WebVitalsReporter from "@/components/analytics/WebVitalsReporter";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
@@ -506,6 +507,7 @@ export default function RootLayout({
           <ErrorTracker />
         </Suspense>
         <WebVitalsReporter />
+        <GlobalContactClickTracker />
         <ToastProvider>
           <SiteChrome>{children}</SiteChrome>
         </ToastProvider>

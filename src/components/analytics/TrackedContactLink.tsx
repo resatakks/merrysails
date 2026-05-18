@@ -31,6 +31,10 @@ export default function TrackedContactLink({
   return (
     <a
       href={href}
+      // Marks this anchor as already instrumented so the global delegated
+      // contact-click listener (GlobalContactClickTracker) skips it — prevents
+      // double-counting WhatsApp/phone conversion events.
+      data-contact-tracked="1"
       onClick={(event) => {
         onClick?.(event);
 
