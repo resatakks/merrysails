@@ -40,7 +40,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-for-couples",
-    title: "Romantic Bosphorus Cruise for Couples",
+    title: "Couples Bosphorus Cruise Guide Istanbul",
     metaDescription: "Use this couples planning guide to compare sunset, dinner, and private yacht options in Istanbul before moving to the right romantic owner page.",
     excerpt: "This support guide helps couples compare the most romantic Bosphorus formats and choose the right next booking page for their Istanbul trip.",
     category: "cruise-guide",
@@ -1111,7 +1111,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "corporate-events-yacht-istanbul",
-    title: "Corporate Yacht Event Planning Istanbul",
+    title: "Istanbul Corporate Yacht Events Guide",
     metaDescription: "Use this planning guide to shape a Bosphorus corporate event in Istanbul before moving to the main corporate events page for the live proposal flow.",
     excerpt: "This support guide helps company teams compare vessel fit, AV needs, and group format before they move to the main corporate events page.",
     category: "events",
