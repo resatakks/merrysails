@@ -514,7 +514,7 @@ export const planningAndSupportGuides: BlogPost[] = [
     date: "2025-09-28",
     dateModified: "2026-03-24",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1568781269764-1546a2e67767?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
     imageAlt: "Passengers boarding a ferry at Eminönü pier for a day trip to the Princes' Islands with clear blue water visible",
     keywords: ["istanbul day trips", "day trips from istanbul", "princes islands day trip", "istanbul excursions", "istanbul day trips 2026", "istanbul day trips tips 2026", "best istanbul day trips guide"],
     author: "editorial",

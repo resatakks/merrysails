@@ -95,10 +95,13 @@ export async function generateMetadata({
     description: cleanDescription,
     keywords: post.keywords,
     alternates: {
+      // Locale blog posts are standalone locale-market content with no
+      // cross-language equivalent. Emitting x-default → /blog was wrong:
+      // /blog never reciprocates to the individual post, so Semrush flagged
+      // it as a broken/incorrect hreflang. Self-referencing hreflang only.
       canonical,
       languages: {
         [locale]: canonical,
-        "x-default": `${SITE_URL}/blog`,
       },
     },
     robots: {
