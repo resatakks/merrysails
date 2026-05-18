@@ -55,7 +55,7 @@ const CONTENT: Record<string, LocaleContent> = {
   tr: {
     metaTitle: "Türk Gecesi Akşam Yemeği Turu İstanbul — €30'dan İtibaren",
     metaDescription:
-      "İstanbul Türk gecesi akşam yemeği turu: Boğaz'da canlı halk oyunları, davul zurna, zeybek dansı ve Türk mutfağı büfesi. €30'dan başlayan paketler, TÜRSAB A Grubu lisanslı. Hemen rezervasyon.",
+      "İstanbul Türk gecesi akşam yemeği turu: Boğaz'da halk oyunları, zeybek, davul zurna ve Türk mutfağı büfesi. €30'dan paketler, TÜRSAB lisanslı.",
     canonicalPath: "/tr/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbDinner: "Akşam Yemeği Turu",
@@ -210,7 +210,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     metaTitle: "Türkischer Abend Dinner Kreuzfahrt Istanbul — Ab €30",
     metaDescription:
-      "Türkischer Abend Dinner Kreuzfahrt Istanbul: Zeybek-Tänze, Davul-Zurna, türkisches Buffet auf dem Bosporus. Pakete ab €30, TÜRSAB-lizenziert seit 2001, 50.000+ Gäste. Jetzt buchen.",
+      "Türkischer Abend Dinner Kreuzfahrt Istanbul: Zeybek-Tänze, Davul-Zurna, türkisches Buffet auf dem Bosporus. Pakete ab €30, TÜRSAB-lizenziert.",
     canonicalPath: "/de/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbDinner: "Dinner Kreuzfahrt",
@@ -365,7 +365,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     metaTitle: "Soirée Turque Croisière Dîner Istanbul — À partir de €30",
     metaDescription:
-      "Soirée turque croisière dîner à Istanbul : danses Zeybek, Davul-Zurna, buffet turc sur le Bosphore. Formules dès €30, agréé TÜRSAB depuis 2001, plus de 50 000 clients. Réservez maintenant.",
+      "Soirée turque croisière dîner Istanbul : danses Zeybek, Davul-Zurna, buffet turc sur le Bosphore. Formules dès €30, agréé TÜRSAB. Réservez maintenant.",
     canonicalPath: "/fr/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbDinner: "Croisière Dîner",
@@ -520,7 +520,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     metaTitle: "Turkse Avond Dinercruise Istanbul — Vanaf €30",
     metaDescription:
-      "Turkse avond dinercruise Istanbul: Zeybek-dansen, Davul-Zurna, Turks buffet op de Bosporus. Pakketten vanaf €30, TÜRSAB-gecertificeerd sinds 2001, 50.000+ gasten. Boek nu.",
+      "Turkse avond dinercruise Istanbul: Zeybek-dansen, Davul-Zurna, Turks buffet op de Bosporus. Pakketten vanaf €30, TÜRSAB-gecertificeerd. Boek nu.",
     canonicalPath: "/nl/turkish-night-dinner-cruise-istanbul",
     breadcrumbHome: "Home",
     breadcrumbDinner: "Dinercruise",
@@ -800,6 +800,7 @@ export default async function TurkishNightDinnerCruiseLocalePage({
     },
     offers: {
       "@type": "Offer",
+      price: "30",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

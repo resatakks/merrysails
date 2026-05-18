@@ -9,7 +9,7 @@ import { buildHreflang } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul — From €30",
   description:
-    "Compare Bosphorus cruise options in Istanbul: sunset from EUR 30 (Tue & Thu), dinner from EUR 30, and private yacht from EUR 200. Find the right MerrySails booking page fast.",
+    "Compare Bosphorus cruise options in Istanbul: sunset from €30 (Tue & Thu), dinner from €30, private yacht from €200. Find the right booking page fast.",
   alternates: {
     canonical: `${SITE_URL}/bosphorus-cruise`,
     languages: buildHreflang("/bosphorus-cruise"),
@@ -36,7 +36,7 @@ const guideSchema = {
   "@type": ["TouristTrip", "Service"],
   "@id": `${SITE_URL}/bosphorus-cruise#tour`,
   name: "Bosphorus Cruise Istanbul",
-  description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €30 (Tue & Thu), dinner cruise from €30, and private yacht charter from €200. TURSAB-licensed operator since 2001.",
+  description: "Bosphorus cruises in Istanbul: sunset from €30 (Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
   url: `${SITE_URL}/bosphorus-cruise`,
   provider: {
     "@type": "TouristInformationCenter",
@@ -266,7 +266,7 @@ const howToSchema = {
   "@type": "HowTo",
   name: "How to book a Bosphorus cruise in Istanbul",
   description:
-    "Step-by-step guide to choosing and booking the right Bosphorus cruise — sunset, dinner, or private yacht charter — directly with the licensed operator MerrySails (TURSAB A Group, since 2001).",
+    "How to choose and book the right Bosphorus cruise — sunset, dinner, or private yacht — directly with MerrySails (TURSAB A Group licensed since 2001).",
   totalTime: "PT5M",
   estimatedCost: { "@type": "MonetaryAmount", currency: "EUR", value: "30" },
   supply: [

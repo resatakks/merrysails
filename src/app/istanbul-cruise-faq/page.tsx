@@ -7,7 +7,7 @@ const SITE_URL = "https://merrysails.com";
 export const metadata: Metadata = {
   title: "Istanbul Cruise FAQ — 60+ Answers",
   description:
-    "Bosphorus cruise FAQ answered by MerrySails: prices, departure points, durations, dress code, weather policy, group discounts, kids, accessibility and dietary options.",
+    "Bosphorus cruise FAQ by MerrySails: prices, departure points, durations, dress code, weather policy, group discounts, kids, accessibility and dietary options.",
   alternates: {
     canonical: `${SITE_URL}/istanbul-cruise-faq`,
     languages: buildHreflang("/istanbul-cruise-faq"),

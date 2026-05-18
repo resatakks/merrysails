@@ -30,7 +30,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    title: "Hakkımızda — MerrySails ve TÜRSAB Lisanslı Merry Tourism | İstanbul",
+    title: "Hakkımızda — TÜRSAB Lisanslı MerrySails | İstanbul",
     description:
       "MerrySails, 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism'in Boğaz turu ve yat kiralama markasıdır. İstanbul'da 50.000+ misafire hizmet verdik.",
     canonicalPath: "/tr/about",
@@ -63,7 +63,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   de: {
-    title: "Über uns — MerrySails und TÜRSAB-lizenzierte Merry Tourism | Istanbul",
+    title: "Über uns — TÜRSAB-lizenzierte MerrySails Istanbul",
     description:
       "MerrySails ist die Bosporus-Kreuzfahrt- und Jachtcharter-Marke der seit 2001 TÜRSAB A-Gruppe lizenzierten Merry Tourism. Über 50.000 Gäste in Istanbul betreut.",
     canonicalPath: "/de/about",
@@ -96,7 +96,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "À propos — MerrySails et Merry Tourism agréé TÜRSAB | Istanbul",
+    title: "À propos — MerrySails agréé TÜRSAB | Istanbul",
     description:
       "MerrySails est la marque de croisières Bosphore et charter de yacht de Merry Tourism, agence agréée TÜRSAB groupe A depuis 2001. Plus de 50 000 invités à Istanbul.",
     canonicalPath: "/fr/about",
@@ -129,7 +129,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   nl: {
-    title: "Over ons — MerrySails en TÜRSAB-gelicentieerde Merry Tourism | Istanbul",
+    title: "Over ons — TÜRSAB-gecertificeerde MerrySails Istanbul",
     description:
       "MerrySails is het Bosporus cruise- en jachtchartermerk van Merry Tourism, sinds 2001 TÜRSAB A-groep gelicentieerd. Meer dan 50.000 gasten bediend in Istanbul.",
     canonicalPath: "/nl/about",

@@ -211,7 +211,7 @@ export const germanProductPosts: BlogPost[] = [
       {
         heading: "Warum der Bosporus ideal für einen Heiratsantrag ist",
         content:
-          "Ein Heiratsantrag auf dem Bosporus ist kein gewöhnlicher Moment — er ist ein Erlebnis, das tief ins Gedächtnis eingraviert wird. Istanbul ist eine der romantischsten Städte der Welt, und der Bosporus ist ihr Herzstück: Zwei Kontinente, zwei Kulturen, und das Schimmern des Wassers im Abendlicht. Kein Hotelzimmer und kein Restaurant können die Atmosphäre eines privaten Bootes inmitten dieser Stadtlandschaft ersetzen. Die Bosporus-Brücke im Hintergrund, die Minarette der osmanischen Paläste, der Duft der Meeresluft — all das macht diesen Ort einzigartig für den Antrag Ihres Lebens.",
+          "Ein Heiratsantrag auf dem Bosporus ist kein gewöhnlicher Moment — er ist ein Erlebnis, das tief ins Gedächtnis eingraviert wird. Istanbul ist eine der romantischsten Städte der Welt, und der Bosporus ist ihr Herzstück: Zwei Kontinente, zwei Kulturen, und das Schimmern des Wassers im Abendlicht. Kein Hotelzimmer und kein Restaurant können die Atmosphäre eines privaten Bootes inmitten dieser Stadtlandschaft ersetzen.\n\nDie Bosporus-Brücke im Hintergrund, die Minarette der osmanischen Paläste, der Duft der Meeresluft — all das macht diesen Ort einzigartig für den Antrag Ihres Lebens.",
         answerCapsule:
           "Der Bosporus verbindet Europa und Asien — er ist die romantischste Bühne Istanbuls für einen Heiratsantrag auf dem Wasser.",
         callout: {
@@ -601,7 +601,7 @@ export const germanProductPosts: BlogPost[] = [
         answerCapsule:
           "Wählen Sie die Sonnenuntergangs-Kreuzfahrt für ein günstiges Panorama-Erlebnis (€34/Person), die Dinner-Kreuzfahrt für Abendstimmung mit Menü (ab €30/Person) oder die Privatyacht für vollständige Privatsphäre (ab €280/Boot).",
         content:
-          "Der Bosporus ist 31 km lang, trennt Europa und Asien und zählt zu den meistbefahrenen Wasserstraßen der Welt. Für Besucher Istanbuls gibt es grundsätzlich drei Wege, diese Meerenge zu erleben: die öffentliche Fähre, eine geteilte Bootstour oder eine private Charteryacht. Die öffentliche Fähre ist günstig, bietet aber keinen Guide, keine feste Route und keinen Mehrwert gegenüber dem normalen Nahverkehr. Die entscheidende Frage ist nicht \"Bootstour oder nicht\" — sondern welche Art von Bootstour zu Ihrem Reisestil, Ihrer Gruppe und Ihrem Budget passt. Dieser Ratgeber hilft Ihnen bei der Entscheidung. Er basiert auf echten Preisen, realen Abfahrtzeiten und dem Erfahrungsschatz aus über 50.000 Gästen seit 2001.",
+          "Der Bosporus ist 31 km lang, trennt Europa und Asien und zählt zu den meistbefahrenen Wasserstraßen der Welt. Für Besucher Istanbuls gibt es grundsätzlich drei Wege, diese Meerenge zu erleben: die öffentliche Fähre, eine geteilte Bootstour oder eine private Charteryacht. Die öffentliche Fähre ist günstig, bietet aber keinen Guide, keine feste Route und keinen Mehrwert gegenüber dem normalen Nahverkehr.\n\nDie entscheidende Frage ist nicht \"Bootstour oder nicht\" — sondern welche Art von Bootstour zu Ihrem Reisestil, Ihrer Gruppe und Ihrem Budget passt. Dieser Ratgeber hilft Ihnen bei der Entscheidung. Er basiert auf echten Preisen, realen Abfahrtzeiten und dem Erfahrungsschatz aus über 50.000 Gästen seit 2001.",
         table: {
           headers: ["Kriterium", "Sonnenuntergang", "Dinner-Kreuzfahrt", "Privatyacht"],
           rows: [

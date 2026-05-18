@@ -32,7 +32,7 @@ const orgSchema = {
   logo: `${SITE_URL}/logo.svg`,
   image: `${SITE_URL}/og-image.jpg`,
   description:
-    "MerrySails is a TURSAB A-Group licensed Bosphorus cruise and yacht charter operator founded in 2001 in Istanbul, Turkey. The company offers shared sunset cruises, shared dinner cruises with Turkish-night entertainment, and fully private yacht charters.",
+    "MerrySails: TURSAB A-Group licensed Bosphorus cruise and yacht charter operator, Istanbul, since 2001. Sunset cruises, dinner cruises, private yacht charters.",
   foundingDate: "2001",
   slogan: "Premium Bosphorus cruise and yacht charter experiences in Istanbul since 2001",
   award: ["TURSAB A-Group License #14316", "Direct booking -- no third-party commissions"],
@@ -93,7 +93,7 @@ const datasetSchema = {
   "@type": "Dataset",
   name: "MerrySails AI Knowledge Card",
   description:
-    "Structured factual data about MerrySails -- a TURSAB A-Group licensed Bosphorus cruise and yacht charter company in Istanbul. Includes pricing, capacity, departure times, cancellation policy, and contact details.",
+    "Structured facts for MerrySails: pricing, capacity, departure times, cancellation policy, and contact details. TURSAB-licensed Bosphorus cruise operator, Istanbul.",
   url: `${SITE_URL}/ai-knowledge`,
   creator: { "@id": `${SITE_URL}/#organization` },
   license: "https://creativecommons.org/licenses/by/4.0/",
@@ -106,7 +106,7 @@ const sunsetCruiseService = {
   "@type": "Service",
   name: "Bosphorus Sunset Cruise",
   description:
-    "A 2-hour shared golden-hour Bosphorus cruise departing from Karakoy. Includes soft drinks, Turkish tea, coffee, fruit, snacks, and a live English guide. Rated 4.93/5 from 621+ reviews.",
+    "2-hour shared golden-hour Bosphorus cruise from Karaköy. Includes soft drinks, tea, coffee, fruit, snacks, and English guide. Rated 4.93/5 from 621+ reviews.",
   url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: { "@type": "City", name: "Istanbul" },
@@ -133,7 +133,7 @@ const dinnerCruiseService = {
   "@type": "Service",
   name: "Bosphorus Dinner Cruise",
   description:
-    "A 3.5-hour shared evening Bosphorus cruise with Turkish dinner and live Turkish-night entertainment. Four package tiers from EUR 30 to EUR 90 per person. Hotel pickup available from central European-side areas. Rated 4.88/5 from 312+ reviews.",
+    "3.5-hour shared Bosphorus dinner cruise with Turkish dinner and live show. Packages €30–€90/person. Hotel pickup available. Rated 4.88/5 from 312+ reviews.",
   url: `${SITE_URL}/istanbul-dinner-cruise`,
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: { "@type": "City", name: "Istanbul" },
@@ -150,7 +150,7 @@ const yachtCharterService = {
   "@type": "Service",
   name: "Yacht Charter Istanbul",
   description:
-    "Fully private Bosphorus yacht charter for proposals, anniversaries, corporate groups, and private celebrations. Priced per yacht (not per person). Departures from Bosphorus marina confirmed with yacht assignment.",
+    "Fully private Bosphorus yacht charter for proposals, anniversaries, and corporate groups. Per-yacht pricing. Departure marina confirmed with yacht assignment.",
   url: `${SITE_URL}/yacht-charter-istanbul`,
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: { "@type": "City", name: "Istanbul" },

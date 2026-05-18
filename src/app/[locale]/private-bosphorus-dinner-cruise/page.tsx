@@ -107,7 +107,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   de: {
     metaTitle: "Privates Bosporus-Abendessen auf der Yacht | Privatjacht-Dinner Istanbul",
     metaDescription:
-      "Privates Abendessen auf einer eigenen Yacht am Bosporus: privater Tisch, flexible Route, Sonnenuntergang oder Abendlichter. Ideal für Heiratsantrag, Jahrestag und Geburtstag.",
+      "Privates Abendessen auf eigener Yacht am Bosporus: privater Tisch, flexible Route, Sonnenuntergang oder Abendlichter. Für Heiratsantrag, Jahrestag, Geburtstag.",
     canonicalPath: "/de/private-bosphorus-dinner-cruise",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus-Tour",
@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   fr: {
     metaTitle: "Dîner Privé sur le Bosphore en Yacht | Croisière Dîner Privée Istanbul",
     metaDescription:
-      "Dîner privé en yacht sur le Bosphore : votre propre bateau, table privée, itinéraire flexible au coucher du soleil ou en soirée. Idéal pour demande en mariage, anniversaire et anniversaire de mariage.",
+      "Dîner privé en yacht sur le Bosphore : table privée, itinéraire flexible au coucher du soleil ou en soirée. Idéal pour demande en mariage et anniversaire.",
     canonicalPath: "/fr/private-bosphorus-dinner-cruise",
     breadcrumbHome: "Accueil",
     breadcrumbCruise: "Croisière Bosphore",
@@ -241,7 +241,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   nl: {
     metaTitle: "Privédiner op Jacht op de Bosporus | Privé Dinercruise Istanbul",
     metaDescription:
-      "Privédiner op een eigen jacht op de Bosporus: privétafel, flexibele route, vertrek bij zonsondergang of avondlichten. Ideaal voor huwelijksaanzoek, jubileum en verjaardag.",
+      "Privédiner op eigen jacht op de Bosporus: privétafel, flexibele route, zonsondergang of avond. Ideaal voor huwelijksaanzoek, jubileum en verjaardag.",
     canonicalPath: "/nl/private-bosphorus-dinner-cruise",
     breadcrumbHome: "Home",
     breadcrumbCruise: "Bosporus Cruise",

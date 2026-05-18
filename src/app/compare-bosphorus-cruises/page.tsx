@@ -7,7 +7,7 @@ const SITE_URL = "https://merrysails.com";
 export const metadata: Metadata = {
   title: "Compare Bosphorus Cruises Istanbul",
   description:
-    "Compare all Bosphorus cruise options in Istanbul: prices, durations, and best-for criteria across Sunset (€34), Dinner (€30), Yacht Charter (€280), and Hourly Boat Rental.",
+    "Compare Bosphorus cruise options in Istanbul: Sunset (€34), Dinner (€30), Yacht Charter (€280), and Boat Rental — prices, durations, and best-for criteria.",
   alternates: {
     canonical: `${SITE_URL}/compare-bosphorus-cruises`,
     languages: buildHreflang("/compare-bosphorus-cruises"),

@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 // Only add a path here once its locale/page.tsx files exist — hreflang pointing
 // to 404s hurts crawl quality. EN stays at root; other locales get a /<locale>/ prefix.
 const LOCALIZED_ROUTES = new Set([
+  "", // homepage — EN root "/" + /tr /de /fr /nl
   "/bosphorus-cruise",
   "/istanbul-dinner-cruise",
   "/cruises/bosphorus-sunset-cruise",
@@ -35,7 +36,9 @@ const LOCALIZED_ROUTES = new Set([
   "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
-  "/kabatas-bogaz-turu",
+  // NOTE: /kabatas-bogaz-turu is TR-ONLY — explicitly excluded from LOCALIZED_ROUTES
+  // to prevent emitting hreflang annotations for non-existent /de/, /fr/, /nl/, / variants.
+  // Adding it here causes 4×404 in Semrush (Source: 2026-05-17 audit).
 ]);
 
 /**

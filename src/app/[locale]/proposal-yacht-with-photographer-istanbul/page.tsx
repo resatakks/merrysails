@@ -33,7 +33,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     metaTitle: "İstanbul Fotoğrafçılı Evlilik Teklifi Yatı 2026 | Boğaz'da Gizli Çekim",
     metaDescription:
-      "İstanbul'da fotoğrafçılı evlilik teklifi yatı: anın doğal ve gizli bir şekilde fotoğraflanması, özel rota planlaması ve Boğaz manzarası eşliğinde özel bir teklif formatı.",
+      "İstanbul'da fotoğrafçılı evlilik teklifi yatı: anın gizli fotoğraflanması, özel rota planlaması ve Boğaz manzarası eşliğinde teklif formatı.",
     canonicalPath: "/tr/proposal-yacht-with-photographer-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCurrent: "Fotoğrafçılı Teklif Yatı İstanbul",

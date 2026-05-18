@@ -47,7 +47,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     title: "Boğaz Gün Batımı Turu İstanbul — €30'dan başlayan fiyatlar",
     description:
-      "İstanbul'da Boğaz gün batımı turu €30'dan başlıyor (Sal & Per). 2 saatlik paylaşımlı lüks yat turu, canlı rehber, hafif ikramlar ve şarap seçeneği. Hemen rezervasyon.",
+      "Boğaz gün batımı turu €30'dan (Sal & Per). 2 saatlik lüks yat, canlı rehber, ikramlar ve şarap seçeneği. TÜRSAB lisanslı. Hemen rezervasyon.",
     h1: "Boğaz Gün Batımı Turu Istanbul — Özel Yat",
     canonicalPath: "/tr/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Ana Sayfa",
@@ -126,7 +126,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   de: {
     title: "Bosporus Sonnenuntergang Istanbul — Ab €30",
     description:
-      "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €30 (Di & Do). 2 Stunden Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €35 (Di & Do). TÜRSAB-lizenziert. Direkt buchen.",
+      "Bosporus Sonnenuntergang Kreuzfahrt Istanbul ab €30 (Di & Do). 2h Luxusjacht, Live-Guide, Erfrischungen. Mit Wein ab €35. TÜRSAB-lizenziert.",
     h1: "Bosporus Sonnenuntergangs-Kreuzfahrt Istanbul — Privatyacht",
     canonicalPath: "/de/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Startseite",
@@ -203,9 +203,9 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Per WhatsApp anfragen",
   },
   fr: {
-    title: "Croisière Coucher de Soleil Bosphore Istanbul — À partir de €30",
+    title: "Croisière Coucher de Soleil Bosphore Istanbul — Dès €30",
     description:
-      "Croisière coucher de soleil sur le Bosphore à Istanbul à partir de €30 (mar & jeu). 2 heures en yacht de luxe, guide live, rafraîchissements. Avec vin dès €35 (mar & jeu). Réservez.",
+      "Croisière coucher de soleil Bosphore Istanbul dès €30 (mar & jeu). 2h yacht de luxe, guide live, rafraîchissements. Avec vin dès €35. Réservez en ligne.",
     h1: "Croisière Coucher de Soleil Bosphore Istanbul — Yacht Privé",
     canonicalPath: "/fr/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Accueil",
@@ -271,7 +271,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   nl: {
     title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €30",
     description:
-      "Bosporus zonsondergang cruise Istanbul vanaf €30 (di & do). 2 uur op luxe jacht met live gids en hapjes. Wijnoptie v.a. €35 (di & do). Direct boeken, TÜRSAB-gecertificeerd.",
+      "Bosporus zonsondergang cruise Istanbul v.a. €30 (di & do). 2u luxe jacht, live gids, hapjes. Wijnoptie v.a. €35. TÜRSAB-gecertificeerd, direct boeken.",
     h1: "Bosporus Zonsondergang Cruise Istanbul — Privé Jacht",
     canonicalPath: "/nl/cruises/bosphorus-sunset-cruise",
     breadcrumbHome: "Home",

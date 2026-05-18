@@ -11,7 +11,7 @@ const canonicalUrl = `${SITE_URL}/bosphorus-cruise-departure-points`;
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Pickup Points",
   description:
-    "Find your MerrySails boarding point: Kabataş pier for dinner, Karaköy waterfront for sunset, Kurucesme Marina for private yacht. Metro, tram and taxi directions from major Istanbul hotels.",
+    "MerrySails boarding points: Kabataş pier for dinner, Karaköy for sunset, Kurucesme Marina for yacht. Metro, tram and taxi directions from major Istanbul hotels.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/bosphorus-cruise-departure-points"),
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bosphorus Cruise Pickup Points",
     description:
-      "Kabataş, Karaköy or Kurucesme Marina — find your exact boarding point with metro, tram and taxi directions from any Istanbul hotel. All MerrySails departures covered.",
+      "Kabataş, Karaköy or Kurucesme Marina — find your boarding point with metro, tram and taxi directions from any Istanbul hotel. All MerrySails departures covered.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -38,7 +38,7 @@ const pageSchema = {
   "@type": "WebPage",
   name: "Bosphorus Cruise Departure Points Istanbul",
   description:
-    "Where to board MerrySails Bosphorus cruises in Istanbul: Kabataş pier for dinner cruise, Karaköy waterfront for sunset cruise, Kurucesme Marina for private yacht charter.",
+    "Where to board MerrySails in Istanbul: Kabataş pier for dinner cruise, Karaköy waterfront for sunset cruise, Kurucesme Marina for private yacht charter.",
   url: canonicalUrl,
 };
 
@@ -56,7 +56,7 @@ const flowCards = [
     title: "Kabataş pier — shared dinner cruise",
     eyebrow: "Shared dinner product",
     description:
-      "The shared dinner cruise boards from the Kabataş side of the Bosphorus waterfront. Kabataş is directly accessible by tram (T1 line, Kabataş stop), funicular from Taksim (F1 line), and taxi from Sultanahmet in 10–15 minutes. The pier is at the foot of Dolmabahçe Palace on the European shore. Dinner cruise guests with hotel-transfer support are routed here after the central pickup completes.",
+      "Dinner cruise boards at Kabataş pier (European shore, foot of Dolmabahçe Palace). Tram T1 Kabataş stop, F1 funicular from Taksim, or taxi from Sultanahmet ~10 min.",
     ownerHref: "/istanbul-dinner-cruise",
     ownerLabel: "Open dinner owner page",
     supportHref: "/kabatas-dinner-cruise-istanbul",
@@ -66,7 +66,7 @@ const flowCards = [
     title: "Karaköy waterfront — shared sunset cruise",
     eyebrow: "Shared golden-hour product",
     description:
-      "The sunset cruise uses a Karaköy-side meeting flow on the European Bosphorus waterfront. Karaköy is a 5-minute walk from the Galata Bridge and reachable by tram (T1 line, Karaköy stop) or taxi from Taksim in around 10 minutes. The final meeting pin is confirmed after booking for your specific date and seasonal departure time.",
+      "Sunset cruise meets at Karaköy waterfront — 5-min walk from Galata Bridge. Tram T1 Karaköy stop or taxi from Taksim ~10 min. Meeting pin confirmed after booking.",
     ownerHref: "/cruises/bosphorus-sunset-cruise",
     ownerLabel: "Open sunset owner page",
     supportHref: "/guides/karakoy-waterfront",
@@ -76,7 +76,7 @@ const flowCards = [
     title: "Kurucesme Marina — private yacht charters",
     eyebrow: "Private charter direction",
     description:
-      "Private yacht charters typically depart from Kurucesme Marina, located on the European Bosphorus shore between Ortaköy and Arnavutköy — approximately 7 km from Taksim. The marina is accessible by taxi (15–20 minutes from central Istanbul) or by the Bosphorus ferry from Eminönü. Your confirmation message specifies the exact marina gate and assigned berth for your vessel.",
+      "Private yachts depart from Kurucesme Marina (European shore, between Ortaköy and Arnavutköy, ~7 km from Taksim). Taxi 15–20 min or Bosphorus ferry from Eminönü.",
     ownerHref: "/yacht-charter-istanbul",
     ownerLabel: "Open yacht owner page",
     supportHref: "/kurucesme-marina-yacht-charter",

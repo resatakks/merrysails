@@ -118,7 +118,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     metaTitle: "Heiratsantrag auf der Jacht Istanbul | Privater Bosporus-Antrag",
     metaDescription:
-      "Privater Heiratsantrag auf einer Jacht in Istanbul. Antrag auf dem Bosporus bei Sonnenuntergang mit Blumen, Fotograf, Geiger und Dekoration. Romantische Überraschung.",
+      "Heiratsantrag auf einer Jacht in Istanbul: Bosporus bei Sonnenuntergang, Blumen, Fotograf, Geiger und Dekoration. Romantische Überraschung.",
     canonicalPath: "/de/proposal-yacht-rental-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus-Tour",
@@ -455,6 +455,7 @@ export default async function LocaleProposalYachtRentalPage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-proposal-yacht-rental-istanbul-${locale}`,
     category: "Proposal Yacht Rental",
@@ -467,6 +468,7 @@ export default async function LocaleProposalYachtRentalPage({
     },
     offers: {
       "@type": "Offer",
+      price: "280",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

@@ -157,7 +157,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     title: "FAQ — Croisière Bosphore Questions Fréquentes",
     description:
-      "Questions fréquemment posées sur les croisières du Bosphore à Istanbul : réservation, politique d'annulation, prix, services inclus, points de départ et réductions de groupe.",
+      "FAQ croisières Bosphore Istanbul : réservation, annulation, prix, services inclus, points de départ et réductions de groupe.",
     canonicalPath: "/fr/faq",
     pageTitle: "Croisière Bosphore Istanbul — Questions Fréquentes",
     pageDescription:

@@ -545,7 +545,7 @@ export default async function LocalePrivateDinnerCouplesPage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.heroDescription,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-private-dinner-cruise-for-couples-istanbul-${locale}`,
     category: "Private Dinner Cruise for Couples",
@@ -558,6 +558,7 @@ export default async function LocalePrivateDinnerCouplesPage({
     },
     offers: {
       "@type": "Offer",
+      price: "280",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

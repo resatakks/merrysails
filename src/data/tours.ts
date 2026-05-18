@@ -609,6 +609,7 @@ export const tours: Tour[] = [
   {
     id: "5",
     slug: "private-bosphorus-sunset-cruise",
+    canonicalPath: "/private-bosphorus-dinner-cruise",
     name: "Özel Boğaz Gün Batımı Yat Turu",
     nameEn: "Private Bosphorus Sunset Cruise",
     description: "Watch the sunset from your own private yacht. An intimate Bosphorus experience with professional crew and complimentary beverages.",
@@ -651,6 +652,7 @@ export const tours: Tour[] = [
   {
     id: "6",
     slug: "private-bosphorus-dinner-yacht-cruise",
+    canonicalPath: "/private-bosphorus-dinner-cruise",
     name: "Özel Boğaz Yemekli Yat Turu",
     nameEn: "Private Bosphorus Dinner Yacht Cruise",
     description: "A private dinner cruise on the Bosphorus with gourmet Turkish cuisine, candlelit atmosphere, and illuminated skyline views.",
@@ -723,6 +725,7 @@ export const tours: Tour[] = [
   {
     id: "8",
     slug: "bosphorus-sightseeing-yacht-cruise",
+    canonicalPath: "/private-bosphorus-dinner-cruise",
     name: "Boğaz Tekne Turu (Yat)",
     nameEn: "Bosphorus Sightseeing Yacht Cruise",
     description: "Private yacht sightseeing cruise along the Bosphorus. See all the highlights from your own boat.",
@@ -760,6 +763,7 @@ export const tours: Tour[] = [
   {
     id: "9",
     slug: "romantic-marriage-proposal",
+    canonicalPath: "/proposal-yacht-rental-istanbul",
     name: "Romantik Evlilik Teklifi",
     nameEn: "Romantic Marriage Proposal on Yacht",
     description: "Create the most magical proposal moment against the backdrop of the Bosphorus sunset with rose petals, candles, and live music.",
@@ -807,6 +811,7 @@ export const tours: Tour[] = [
   {
     id: "10",
     slug: "yacht-birthday-party",
+    canonicalPath: "/proposal-yacht-rental-istanbul",
     name: "Yat Doğum Günü Partisi",
     nameEn: "Yacht Birthday Party Istanbul",
     description: "The ultimate party boat in Istanbul — celebrate your birthday on a private yacht on the Bosphorus with DJ, custom cake, and decoration support.",
@@ -853,6 +858,7 @@ export const tours: Tour[] = [
   {
     id: "11",
     slug: "yacht-weddings",
+    canonicalPath: "/proposal-yacht-rental-istanbul",
     name: "Yat Düğünü",
     nameEn: "Exclusive Yacht Wedding Istanbul",
     description: "Host your dream wedding on a luxury yacht cruising the Bosphorus. Complete event coordination and customizable packages.",
@@ -890,6 +896,7 @@ export const tours: Tour[] = [
   {
     id: "12",
     slug: "wedding-anniversary",
+    canonicalPath: "/proposal-yacht-rental-istanbul",
     name: "Yat Evlilik Yıldönümü",
     nameEn: "Wedding Anniversary on Yacht",
     description: "Celebrate your love story on a private yacht with romantic decoration, gourmet dinner, and Bosphorus views.",
@@ -926,6 +933,7 @@ export const tours: Tour[] = [
   {
     id: "13",
     slug: "bachelorette-yacht-party",
+    canonicalPath: "/proposal-yacht-rental-istanbul",
     name: "Bekarlığa Veda Yat Partisi",
     nameEn: "Bachelorette Yacht Party Istanbul",
     description: "The ultimate bachelorette party on a private yacht. Music, decorations, and Bosphorus fun.",
@@ -962,6 +970,7 @@ export const tours: Tour[] = [
   {
     id: "14",
     slug: "corporate-event-bosphorus-cruise",
+    canonicalPath: "/corporate-events",
     name: "Kurumsal Etkinlik Boğaz Turu",
     nameEn: "Corporate Event Bosphorus Cruise",
     description: "Host your corporate event on the Bosphorus. Professional event coordination, A/V equipment, and full catering.",
@@ -998,6 +1007,7 @@ export const tours: Tour[] = [
   {
     id: "15",
     slug: "private-yacht-swimming-tour",
+    canonicalPath: "/private-bosphorus-dinner-cruise",
     name: "Özel Yat Yüzme Turu",
     nameEn: "Private Istanbul Yacht Swimming Tour",
     description: "Swim in the Bosphorus from your private yacht. Crystal clear waters, stunning views, and total freedom.",

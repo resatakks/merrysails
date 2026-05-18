@@ -24,7 +24,7 @@ const sunsetTour = requireTour("bosphorus-sunset-cruise", "Sunset cruise");
 export const metadata: Metadata = {
   title: "Sunset Cruise Tickets Istanbul",
   description:
-    "Sunset cruise tickets Istanbul from EUR 30 (Tue & Thu). Shared golden-hour Bosphorus cruise — package options, ticket clarity, and reserve-direct flow from Karakoy waterfront.",
+    "Sunset cruise tickets Istanbul from €30 (Tue & Thu). Golden-hour Bosphorus cruise — package options, ticket clarity, and direct booking from Karakoy waterfront.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/sunset-cruise-tickets-istanbul"),
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sunset Cruise Tickets Istanbul",
     description:
-      "Use this page when the shared sunset cruise is already the likely fit and the main question is ticket, package, and reserve-direct clarity before booking in Istanbul.",
+      "Use this page when the shared sunset cruise is the likely fit and the main question is ticket, package, and direct-booking clarity before booking in Istanbul.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -51,7 +51,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Sunset Cruise Tickets Istanbul",
   description:
-    "Commercial support page for guests comparing shared Bosphorus sunset-cruise tickets in Istanbul when package fit and reserve-direct clarity are the main decision points.",
+    "Support page for guests comparing Bosphorus sunset-cruise tickets in Istanbul when package fit and direct-booking clarity are the main decision points.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   openingHours: "Mo-Su 00:00-23:59",

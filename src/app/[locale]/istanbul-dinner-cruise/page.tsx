@@ -50,7 +50,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
     title: "Akşam Yemekli Boğaz Turu — €30'dan Başlıyor",
     description:
-      "Akşam yemekli boğaz turu paketleri €30'dan başlıyor. Boğazda akşam yemeği, Türk gecesi eğlencesi, otel transfer desteği ve 4 farklı paket seçeneği. Hemen rezervasyon yapın.",
+      "Akşam yemekli Boğaz turu €30'dan: Türk gecesi eğlencesi, otel transfer desteği ve 4 farklı paket. TÜRSAB lisanslı. Hemen rezervasyon yapın.",
     h1: "İstanbul Akşam Yemekli Boğaz Turu — Tekneli Yemekli Tur",
     breadcrumb: "Akşam Yemeği Turu",
     canonicalPath: "/tr/istanbul-dinner-cruise",
@@ -721,7 +721,8 @@ export default async function LocaleDinnerCruisePage({
       worstRating: 1,
     },
     currenciesAccepted: "EUR",
-    inLanguage: locale,
+    // NOTE: inLanguage removed — Google's LocalBusiness/Restaurant validator does not
+    // recognize this property on LocalBusiness subclasses. (Source: Semrush audit 2026-05-17)
   };
 
   const trMenuSections =

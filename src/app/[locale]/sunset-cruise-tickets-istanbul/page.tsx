@@ -268,7 +268,7 @@ export default async function SunsetCruiseTicketsLocalePage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-sunset-cruise-tickets-istanbul-${locale}`,
     category: "Bosphorus Sunset Cruise Tickets",
@@ -281,6 +281,7 @@ export default async function SunsetCruiseTicketsLocalePage({
     },
     offers: {
       "@type": "Offer",
+      price: "30",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

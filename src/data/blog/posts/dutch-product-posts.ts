@@ -215,7 +215,7 @@ export const dutchProductPosts: BlogPost[] = [
       {
         heading: "Waarom de Bosporus Ideaal is voor een Huwelijksaanzoek",
         content:
-          "Een huwelijksaanzoek op de Bosporus is geen gewoon moment — het is een belevenis die diep in het geheugen gegrift wordt. Istanbul behoort tot de meest romantische steden ter wereld, en de Bosporus is haar hart: twee continenten, twee culturen en het schitteren van het water in het avondlicht. Geen hotelkamer en geen restaurant kan de sfeer van een privé boot midden in dit stadslandschap evenaren. De Bosporusbrug op de achtergrond, de minaretten van de Ottomaanse paleizen, de geur van de zeelucht — dit alles maakt deze plek uniek voor het aanzoek van uw leven.",
+          "Een huwelijksaanzoek op de Bosporus is geen gewoon moment — het is een belevenis die diep in het geheugen gegrift wordt. Istanbul behoort tot de meest romantische steden ter wereld, en de Bosporus is haar hart: twee continenten, twee culturen en het schitteren van het water in het avondlicht. Geen hotelkamer en geen restaurant kan de sfeer van een privé boot midden in dit stadslandschap evenaren.\n\nDe Bosporusbrug op de achtergrond, de minaretten van de Ottomaanse paleizen, de geur van de zeelucht — dit alles maakt deze plek uniek voor het aanzoek van uw leven.",
         answerCapsule:
           "De Bosporus verbindt Europa en Azië — het is het meest romantische podium van Istanbul voor een huwelijksaanzoek op het water.",
         callout: {

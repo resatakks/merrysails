@@ -57,7 +57,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "İstanbul Akşam Yemeği Turu Otel Transfer Dahil — €30'dan",
     metaDescription:
-      "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy'den akşam 18:30–19:15 arası alım. 4 paket €30–€119. TURSAB A Grubu lisanslı.",
+      "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy alım 18:30–19:15. 4 paket €30–€119.",
     canonicalPath: "/tr/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCruise: "Boğaz Turu",
@@ -235,7 +235,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Istanbul Dinner Kreuzfahrt mit Hotelabholung — Ab €30",
     metaDescription:
-      "Istanbul Dinner Kreuzfahrt Hotelabholung: Abholung ab 18:30–19:15 Uhr aus Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli und Kadıköy. 4 Pakete €30–€119. TURSAB A-Gruppe lizenziert.",
+      "Istanbul Dinner Kreuzfahrt mit Hotelabholung: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ab 18:30–19:15. 4 Pakete €30–€119.",
     canonicalPath: "/de/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus-Tour",
@@ -414,7 +414,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Croisière Dîner Istanbul Transfert Hôtel Inclus — À partir de €30",
     metaDescription:
-      "Croisière dîner Istanbul avec transfert hôtel inclus : prise en charge 18h30–19h15 depuis Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli et Kadıköy. 4 formules €30–€119.",
+      "Croisière dîner Istanbul transfert hôtel inclus : Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy — 18h30–19h15. 4 formules €30–€119.",
     canonicalPath: "/fr/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbCruise: "Croisière Bosphore",
@@ -593,7 +593,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Istanbul Diner Cruise met Hotelophaal — Vanaf €30",
     metaDescription:
-      "Istanbul diner cruise met hotelophaal: ophaal 18:30–19:15 vanuit Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli en Kadıköy. 4 pakketten €30–€119. TURSAB A-categorie gecertificeerd.",
+      "Istanbul diner cruise met hotelophaal: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ophaal 18:30–19:15. 4 pakketten €30–€119.",
     canonicalPath: "/nl/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Home",
     breadcrumbCruise: "Bosporus Cruise",
@@ -862,7 +862,7 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-dinner-cruise-with-hotel-pickup-istanbul-${locale}`,
     category: "Bosphorus Dinner Cruise with Hotel Pickup",
@@ -875,6 +875,7 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
     },
     offers: {
       "@type": "Offer",
+      price: "90",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

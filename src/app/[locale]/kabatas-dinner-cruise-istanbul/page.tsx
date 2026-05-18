@@ -55,7 +55,7 @@ const CONTENT: Record<string, LocaleContent> = {
   tr: {
     metaTitle: "Kabataş Akşam Yemeği Turu — €30'dan İtibaren | İstanbul Boğaz Teknesi",
     metaDescription:
-      "Kabataş iskelesinden kalkan Boğaz akşam yemeği turu: €30'dan başlayan paketler, Türk gecesi eğlencesi, Dolmabahçe manzarası. TÜRSAB A Grubu lisanslı, 50.000+ misafir. Hemen rezervasyon.",
+      "Kabataş'tan Boğaz akşam yemeği turu: €30'dan paketler, Türk gecesi eğlencesi, Dolmabahçe manzarası. TÜRSAB A Grubu lisanslı. Hemen rezervasyon.",
     canonicalPath: "/tr/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbDinner: "Akşam Yemeği Turu",
@@ -207,7 +207,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     metaTitle: "Kabatas Dinner Kreuzfahrt Istanbul — Ab €30 | Bosporus Abendessen",
     metaDescription:
-      "Dinner Kreuzfahrt ab Kabatas-Pier in Istanbul: Pakete ab €30, Türkische Abendshow, Blick auf den Dolmabahce-Palast. TÜRSAB-lizenziert seit 2001, über 50.000 Gäste. Jetzt buchen.",
+      "Dinner Kreuzfahrt ab Kabatas-Pier Istanbul: Pakete ab €30, Türkische Abendshow, Dolmabahce-Palast. TÜRSAB-lizenziert. Jetzt buchen.",
     canonicalPath: "/de/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbDinner: "Dinner Kreuzfahrt",
@@ -359,7 +359,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     metaTitle: "Croisière Dîner Kabataş Istanbul — À partir de €30 | Bosphore",
     metaDescription:
-      "Croisière dîner au départ de Kabataş à Istanbul : formules dès €30, spectacle de nuit turque, vue sur le Palais Dolmabahçe. Agréé TÜRSAB depuis 2001, plus de 50 000 clients. Réservez maintenant.",
+      "Croisière dîner depuis Kabataş Istanbul : formules dès €30, spectacle turc, vue Palais Dolmabahçe. Agréé TÜRSAB. Réservez maintenant.",
     canonicalPath: "/fr/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbDinner: "Croisière Dîner",
@@ -511,7 +511,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     metaTitle: "Kabataş Dinercruise Istanbul — Vanaf €30 | Bosporus Avondeten",
     metaDescription:
-      "Dinercruise vertrek Kabataş Istanbul: pakketten vanaf €30, Turkse avondshow, uitzicht op Dolmabahçe Paleis. TÜRSAB-gecertificeerd sinds 2001, meer dan 50.000 gasten. Boek nu.",
+      "Dinercruise vertrek Kabataş Istanbul: pakketten vanaf €30, Turkse avondshow, uitzicht Dolmabahçe Paleis. TÜRSAB-gecertificeerd. Boek nu.",
     canonicalPath: "/nl/kabatas-dinner-cruise-istanbul",
     breadcrumbHome: "Home",
     breadcrumbDinner: "Dinercruise",
@@ -788,6 +788,7 @@ export default async function KabatasDinnerCruiseLocalePage({
     },
     offers: {
       "@type": "Offer",
+      price: "30",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

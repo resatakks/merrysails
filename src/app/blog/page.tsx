@@ -8,7 +8,7 @@ import { buildHreflang } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Blog — Istanbul Travel Guides",
   description:
-    "Bosphorus cruise guides and Istanbul travel tips from MerrySails — sunset cruise tips, yacht charter advice, dinner cruise reviews, TURSAB A Group licensed since 2001.",
+    "Bosphorus cruise guides and Istanbul travel tips from MerrySails — sunset tips, yacht charter advice, dinner cruise reviews. TURSAB A Group licensed since 2001.",
   keywords: [
     "bosphorus cruise guide",
     "istanbul travel blog",

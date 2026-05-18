@@ -268,7 +268,7 @@ export default async function TeamBuildingYachtLocalePage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-team-building-yacht-istanbul-${locale}`,
     category: "Team Building Yacht Charter",
@@ -281,6 +281,7 @@ export default async function TeamBuildingYachtLocalePage({
     },
     offers: {
       "@type": "Offer",
+      price: "280",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

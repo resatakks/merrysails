@@ -444,6 +444,18 @@ export default async function LocaleBosphorusCruisePage({
       "@type": "TouristInformationCenter",
       name: "MerrySails",
       url: SITE_URL,
+      // RULES.md rule 2: LocalBusiness/TravelAgency MUST have inline address.
+      // (Source: Semrush 2026-05-17 structured_data_markup_errors audit)
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Kabataş İskelesi",
+        addressLocality: "Beşiktaş",
+        addressRegion: "Istanbul",
+        postalCode: "34357",
+        addressCountry: "TR",
+      },
+      telephone: "+905448989812",
+      email: "info@merrysails.com",
     },
     offers: c.tourOptions.map((opt) => ({
       "@type": "Offer",

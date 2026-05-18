@@ -1,0 +1,130 @@
+{
+  "brands": [
+    {
+      "id": "merrysails",
+      "brand": "merrysails",
+      "domain": "merrysails.com",
+      "aliases": ["merry sails", "merrysails.com"],
+      "tier": "A",
+      "vertical": "cruise",
+      "prompts": [
+        "best sunset cruise istanbul",
+        "istanbul dinner cruise with turkish show",
+        "private yacht rental bosphorus istanbul",
+        "bosphorus cruise small group tour"
+      ]
+    },
+    {
+      "id": "goldensunsettour",
+      "brand": "goldensunsettour",
+      "domain": "goldensunsettour.com",
+      "aliases": ["golden sunset tour", "goldensunsettour.com"],
+      "tier": "A",
+      "vertical": "cruise",
+      "prompts": [
+        "sunset boat tour istanbul booking",
+        "bosphorus dinner cruise tickets",
+        "yacht charter istanbul price",
+        "cheap istanbul cruise tour"
+      ]
+    },
+    {
+      "id": "kingsworldtransfer",
+      "brand": "kingsworldtransfer",
+      "domain": "kingsworldtransfer.com",
+      "aliases": ["kings world transfer", "kings transfer"],
+      "tier": "A",
+      "vertical": "transfer",
+      "prompts": [
+        "istanbul airport vip transfer service",
+        "antalya airport private transfer mercedes",
+        "dalaman airport transfer to fethiye",
+        "bodrum airport transfer mercedes vito"
+      ]
+    },
+    {
+      "id": "merryturizm",
+      "brand": "merryturizm",
+      "domain": "merryturizm.com",
+      "aliases": ["merry turizm", "merry tourism"],
+      "tier": "A",
+      "vertical": "transfer",
+      "prompts": [
+        "istanbul airport transfer tursab licensed",
+        "antalya private transfer vito",
+        "dalaman private transfer service",
+        "bodrum airport vip transfer service"
+      ]
+    },
+    {
+      "id": "pinogareroofrestaurant",
+      "brand": "pinogare",
+      "domain": "pinogareroofrestaurant.com",
+      "aliases": ["pinogare rooftop", "pinogare restaurant"],
+      "tier": "A",
+      "vertical": "restaurant",
+      "prompts": [
+        "best rooftop restaurant istanbul sirkeci",
+        "istanbul restaurant with bosphorus view",
+        "romantic dinner restaurant sultanahmet",
+        "rooftop bar istanbul old city"
+      ]
+    },
+    {
+      "id": "rentacarsaw",
+      "brand": "rentacarsaw",
+      "domain": "rentacarsaw.com",
+      "aliases": ["rent a car saw", "rentacarsaw.com"],
+      "tier": "A",
+      "vertical": "car-rental",
+      "prompts": [
+        "mietwagen istanbul flughafen sabiha",
+        "auto mieten istanbul günstig",
+        "günstig auto mieten istanbul ohne kaution",
+        "cheap car rental istanbul airport"
+      ]
+    },
+    {
+      "id": "sawrentacar",
+      "brand": "sawrentacar",
+      "domain": "sawrentacar.com",
+      "aliases": ["saw rent a car", "saw rentacar"],
+      "tier": "B",
+      "vertical": "car-rental",
+      "prompts": [
+        "saw rent a car istanbul reviews",
+        "istanbul car rental sabiha gokcen",
+        "rent suv istanbul long term"
+      ]
+    },
+    {
+      "id": "ersintattoo",
+      "brand": "ersintattoo",
+      "domain": "ersintattoo.com",
+      "aliases": ["ersin tattoo", "ersin dövme"],
+      "tier": "B",
+      "vertical": "tattoo",
+      "prompts": [
+        "bakırköy dövmeci tavsiye",
+        "istanbul minimal dövme stüdyosu"
+      ]
+    },
+    {
+      "id": "acilkaseniz",
+      "brand": "acilkaseniz",
+      "domain": "acilkaseniz.com",
+      "aliases": ["acılı kaşe", "acıl kaşe niz"],
+      "tier": "B",
+      "vertical": "food",
+      "prompts": [
+        "istanbul acılı kaşe sipariş",
+        "online acıl kaşe en yakın"
+      ]
+    }
+  ],
+  "models": [
+    {"id": "openai/gpt-4o-mini", "cost_per_1k_in": 0.00015, "cost_per_1k_out": 0.00060, "web_search": false},
+    {"id": "anthropic/claude-haiku-4.5", "cost_per_1k_in": 0.00100, "cost_per_1k_out": 0.00500, "web_search": false},
+    {"id": "perplexity/sonar", "cost_per_1k_in": 0.00100, "cost_per_1k_out": 0.00100, "web_search": true, "search_cost": 0.005}
+  ]
+}

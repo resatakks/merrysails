@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { buildHreflang } from "@/lib/hreflang";
 
 export const revalidate = 3600;
 
@@ -445,6 +446,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `${SITE_URL}/${locale}`,
+      languages: buildHreflang(""),
     },
     openGraph: {
       title: t.metaTitle,

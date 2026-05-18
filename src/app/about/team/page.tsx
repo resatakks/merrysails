@@ -9,7 +9,7 @@ const SITE_URL = "https://merrysails.com";
 export const metadata: Metadata = {
   title: "Meet the Team",
   description:
-    "Meet the people behind MerrySails: a TURSAB-licensed founder with 25 years in Istanbul tourism, a master-licensed Bosphorus captain, and a multilingual guest experience lead.",
+    "Meet the MerrySails team: TURSAB-licensed founder, master-licensed Bosphorus captain, and multilingual guest experience lead — 25 years in Istanbul tourism.",
   alternates: {
     canonical: `${SITE_URL}/about/team`,
   },
@@ -27,7 +27,7 @@ interface TeamCardProps {
   name: string;
   role: string;
   bio: string;
-  image: string;
+  image?: string;
   knowsAbout: string[];
 }
 
@@ -54,14 +54,16 @@ function TeamCard({ name, role, bio, image, knowsAbout }: TeamCardProps) {
           >
             {initials}
           </span>
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="object-cover z-10"
-            sizes="80px"
-            onError={undefined}
-          />
+          {image && (
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="object-cover z-10"
+              sizes="80px"
+              onError={undefined}
+            />
+          )}
         </div>
         <div>
           <h2 className="text-xl font-bold text-[var(--heading)]">{name}</h2>
@@ -162,7 +164,7 @@ export default function TeamPage() {
               name="Captain Ahmet Yildiz"
               role="Senior Captain & Bosphorus Routes Lead"
               bio="22+ years navigating the Bosphorus under a Turkish Maritime Authority master license, Captain Ahmet has piloted Bosphorus, Marmara, and Aegean cruises. He designs every route MerrySails operates and speaks Turkish, English, and basic German."
-              image="/team/captain-ahmet.jpg"
+              
               knowsAbout={[
                 "Bosphorus navigation",
                 "Istanbul harbor pilotage",
@@ -174,7 +176,7 @@ export default function TeamPage() {
               name="Resat Akkus"
               role="Founder & Operations Director"
               bio="TURSAB A-Group licensed operator since 2001, Resat built MerrySails alongside sister brands GoldenSunsetTour and MerryTourism. The portfolio has now served 50,000+ guests and remains the only direct-book boutique Bosphorus operator in Istanbul."
-              image="/team/resat-akkus.jpg"
+              
               knowsAbout={[
                 "Tour operations",
                 "Turkish tourism licensing",
@@ -186,7 +188,7 @@ export default function TeamPage() {
               name="Kayra Sevli"
               role="Guest Experience Lead"
               bio="Kayra manages reservations, hotel pickup logistics, and guest support across 5 languages (EN, TR, DE, FR, NL). Every confirmation email and voucher that reaches a MerrySails guest passes through her hands."
-              image="/team/kayra-sevli.jpg"
+              
               knowsAbout={[
                 "Tour booking workflows",
                 "Hotel pickup logistics",

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dinner Cruise with Hotel Pickup Istanbul 2026",
     description:
-      "Use this page when hotel pickup is the deciding factor for a shared Bosphorus dinner cruise in Istanbul. Compare package fit, pickup logic, and Kabatas boarding context.",
+      "Use this page when hotel pickup is the deciding factor for a shared Bosphorus dinner cruise in Istanbul. Compare package fit, pickup logic, and Kabatas boarding.",
     url: canonicalUrl,
     type: "website",
     images: [
@@ -140,12 +140,12 @@ const flowSteps = [
   {
     title: "Start with the main dinner package fit",
     description:
-      "First confirm that a shared Bosphorus dinner cruise is the right product. The protected dinner owner page remains the main place to compare Silver and Gold package choices.",
+      "First confirm a shared Bosphorus dinner cruise is the right product. The dinner owner page is the main place to compare Silver and Gold package choices.",
   },
   {
     title: "Send hotel and date details",
     description:
-      "Share your hotel, guest count, and date. Pickup support depends on location, street access, and whether your stay fits the selected central European-side operating zones.",
+      "Share your hotel, guest count, and date. Pickup support depends on hotel location, street access, and whether you are in the central European-side operating zones.",
   },
   {
     title: "Receive pickup or meeting-point confirmation",

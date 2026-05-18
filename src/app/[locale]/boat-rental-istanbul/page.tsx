@@ -323,7 +323,7 @@ export default async function LocaleBoatRentalPage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.description,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-boat-rental-istanbul-${locale}`,
     category: "Bosphorus Boat Rental",
@@ -336,6 +336,7 @@ export default async function LocaleBoatRentalPage({
     },
     offers: {
       "@type": "Offer",
+      price: "380",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

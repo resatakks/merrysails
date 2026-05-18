@@ -1,0 +1,128 @@
+{
+  "_note": "Top 5-10 commercial keywords per brand for weekly rank tracking. Locations: 2792=TR, 2826=UK, 2840=US, 2276=DE, 2250=FR, 2528=NL. Languages: tr, en, de, fr, nl.",
+  "_estimated_cost_per_run": "~$0.20 for ~65 checks at $0.003 each",
+  "brands": [
+    {
+      "id": "merrysails",
+      "brand": "merrysails",
+      "domain": "merrysails.com",
+      "keywords": [
+        {"keyword": "boğaz turu", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "istanbul boğaz turu", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "boğaz turu fiyat", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "yat kiralama istanbul", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "akşam yemekli boğaz turu", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "bosphorus cruise istanbul", "location_code": 2826, "language_code": "en"},
+        {"keyword": "istanbul dinner cruise", "location_code": 2826, "language_code": "en"},
+        {"keyword": "bosphorus sunset cruise", "location_code": 2826, "language_code": "en"},
+        {"keyword": "yacht charter istanbul", "location_code": 2826, "language_code": "en"}
+      ]
+    },
+    {
+      "id": "goldensunsettour",
+      "brand": "goldensunsettour",
+      "domain": "goldensunsettour.com",
+      "keywords": [
+        {"keyword": "istanbul dinner cruise", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "yacht rental istanbul", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "sunset cruise istanbul", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "private bosphorus dinner cruise istanbul", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "bosphorus dinner cruise", "location_code": 2826, "language_code": "en"},
+        {"keyword": "yacht charter istanbul", "location_code": 2826, "language_code": "en"},
+        {"keyword": "bachelor party boat istanbul", "location_code": 2826, "language_code": "en"},
+        {"keyword": "honeymoon cruise istanbul", "location_code": 2826, "language_code": "en"}
+      ]
+    },
+    {
+      "id": "kingsworldtransfer",
+      "brand": "kingsworldtransfer",
+      "domain": "kingsworldtransfer.com",
+      "keywords": [
+        {"keyword": "antalya airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "istanbul airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "dalaman airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "bodrum airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "antalya flughafen transfer", "location_code": 2276, "language_code": "de"},
+        {"keyword": "istanbul flughafen transfer", "location_code": 2276, "language_code": "de"},
+        {"keyword": "antalya airport transfer", "location_code": 2840, "language_code": "en"},
+        {"keyword": "istanbul airport transfer", "location_code": 2840, "language_code": "en"}
+      ]
+    },
+    {
+      "id": "merryturizm",
+      "brand": "merryturizm",
+      "domain": "merryturizm.com",
+      "keywords": [
+        {"keyword": "antalya airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "istanbul airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "dalaman airport transfer", "location_code": 2826, "language_code": "en"},
+        {"keyword": "antalya flughafen transfer", "location_code": 2276, "language_code": "de"},
+        {"keyword": "istanbul flughafen transfer", "location_code": 2276, "language_code": "de"},
+        {"keyword": "bodrum flughafen transfer", "location_code": 2276, "language_code": "de"}
+      ]
+    },
+    {
+      "id": "pinogareroofrestaurant",
+      "brand": "pinogare",
+      "domain": "pinogareroofrestaurant.com",
+      "keywords": [
+        {"keyword": "sultanahmet rooftop", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "sirkeci restaurant", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "sultanahmet rooftop restaurant", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "eminönü restaurant", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "boğaz manzaralı restaurant", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "best rooftop restaurant istanbul", "location_code": 2826, "language_code": "en"},
+        {"keyword": "sultanahmet rooftop", "location_code": 2826, "language_code": "en"},
+        {"keyword": "rooftop restaurant near hagia sophia", "location_code": 2826, "language_code": "en"}
+      ]
+    },
+    {
+      "id": "rentacarsaw",
+      "brand": "rentacarsaw",
+      "domain": "rentacarsaw.com",
+      "keywords": [
+        {"keyword": "türkei mietwagen", "location_code": 2276, "language_code": "de"},
+        {"keyword": "mietwagen istanbul", "location_code": 2276, "language_code": "de"},
+        {"keyword": "autovermietung antalya", "location_code": 2276, "language_code": "de"},
+        {"keyword": "mietwagen istanbul flughafen", "location_code": 2276, "language_code": "de"},
+        {"keyword": "araç kiralama fiyat karşılaştırma", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "yolcu360 vs rentacarsaw", "location_code": 2792, "language_code": "tr"}
+      ]
+    },
+    {
+      "id": "sawrentacar",
+      "brand": "sawrentacar",
+      "domain": "sawrentacar.com",
+      "keywords": [
+        {"keyword": "türkiye araç kiralama", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "istanbul araç kiralama", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "antalya araç kiralama", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "sabiha gökçen araç kiralama", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "bodrum araç kiralama", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "antalya havalimanı araç kiralama", "location_code": 2792, "language_code": "tr"}
+      ]
+    },
+    {
+      "id": "ersintattoo",
+      "brand": "ersintattoo",
+      "domain": "ersintattoo.com",
+      "keywords": [
+        {"keyword": "bakırköy dövme", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "bakırköy tattoo", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "bakırköy piercing", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "istanbul dövme", "location_code": 2792, "language_code": "tr"}
+      ]
+    },
+    {
+      "id": "acilkaseniz",
+      "brand": "acilkaseniz",
+      "domain": "acilkaseniz.com",
+      "keywords": [
+        {"keyword": "bahçeşehir kaşe", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "acılı kaşe", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "istanbul acılı kaşe", "location_code": 2792, "language_code": "tr"},
+        {"keyword": "avcılar kaşe", "location_code": 2792, "language_code": "tr"}
+      ]
+    }
+  ]
+}

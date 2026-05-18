@@ -176,7 +176,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     metaTitle:
       "Dîner d'Entreprise Yacht Istanbul 2026 | Dîner Privé Bosphore",
     metaDescription:
-      "Dîner d'entreprise sur yacht à Istanbul : dîners d'équipe, réceptions clients et soirées dirigeants sur le Bosphore. Planification orientée dîner, facture officielle.",
+      "Dîner d'entreprise sur yacht à Istanbul : équipe, clients et direction sur le Bosphore. Planification orientée dîner, devis et facture officielle.",
     canonicalPath: "/fr/corporate-yacht-dinner-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Dîner d'Entreprise Yacht Istanbul",

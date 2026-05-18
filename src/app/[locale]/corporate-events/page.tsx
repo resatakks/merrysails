@@ -176,7 +176,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     metaTitle:
       "Événement d'Entreprise Bosphore 2026 | Soirée d'Entreprise Istanbul",
     metaDescription:
-      "Événement d'entreprise sur le Bosphore : dîner d'équipe, réception clients, lancement et soirée d'entreprise sur yacht privé. Planification sur devis, facture officielle.",
+      "Événement d'entreprise sur le Bosphore : dîner d'équipe, réception clients et soirée sur yacht privé à Istanbul. Devis et facture officielle.",
     canonicalPath: "/fr/corporate-events",
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Événements d'entreprise",
@@ -400,7 +400,7 @@ export default async function LocaleCorporateEventsPage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.heroDescription,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-corporate-events-${locale}`,
     category: "Corporate Yacht Event",
@@ -413,6 +413,7 @@ export default async function LocaleCorporateEventsPage({
     },
     offers: {
       "@type": "Offer",
+      price: "280",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

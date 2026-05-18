@@ -5,6 +5,34 @@
 
 ---
 
+## 🚨 KATI KURALLAR — Bu hatalar çıkarsa CI fail, deploy yok (2026-05-18 enforcement)
+
+Her commit öncesi `node scripts/lint-schema.mjs` çalıştır — sıfır error olmadan push yok.
+
+### P0 — Asla yapılmayacaklar
+1. **Nested `Offer` schema'da `price` field eksik** — Google Merchant listing + Product snippet reddedilir
+   - ✅ DOĞRU: `{ "@type": "Offer", "price": "30", "priceCurrency": "EUR", ... }`
+   - ❌ YANLIŞ: `{ "@type": "Offer", "name": "..." }` (price yok)
+   - ❌ YANLIŞ: `{ "@type": "Offer", "price": "€30" }` (currency in string)
+   - ❌ YANLIŞ: `{ "@type": "Offer", "price": null }` veya `""`
+2. **LocalBusiness/Restaurant'ta `inLanguage` kullanma** — Google validator reddediyor (Schema.org'da geçerli ama Google'da değil). Sadece FAQPage + Menu + Article gibi content type'larda kullan.
+3. **LocalBusiness/TravelAgency/TouristInformationCenter** — `address` ZORUNLU inline (`@type: "PostalAddress"`, streetAddress + addressLocality + addressRegion + postalCode + addressCountry hepsi). `@id` reference YETMİYOR.
+4. **TR-only sayfa için `LOCALIZED_ROUTES`'a EKLEME** — hreflang non-existent /de/, /fr/ vs sayfalara işaret eder, 4×404 verir. Sadece TR'de canonical olarak emit et.
+5. **Sitemap'te redirect URL OLAMAZ** — `next.config.ts`'de redirect varsa, slug'ı `EXCLUDED_TOUR_SLUGS`'a ekle veya elle çıkar.
+6. **Title comment'inde `<h1>` veya `<h2>` HTML tag yazma** — lint regex false-positive verir. Yerine "H1", "H2" yaz.
+7. **`?w=...&q=80&w=3840&q=75`** — Next.js Image component zaten size param'i ekliyor, Unsplash URL'inde manuel `?w=` koyma (double param 404).
+8. **Title >32 char (suffix hariç) yazma** — root layout `template: "%s | MerrySails Istanbul 2026"` ile +28 char ekler. Suffix dahil 60 cap. Local pages'de çevirisi uzunsa BRAND'i çıkar (suffix kapatıyor zaten).
+
+### P1 — Yapmasak iyi olur
+9. Paragraph >80 word — Semrush "paragraphs too long" verir, readability düşer
+10. Meta description <130 veya >160 char — Google rewrite veya truncate
+11. H1 + Title aynı kelime sırası — duplicate content sinyali
+12. Internal link 308 redirect üzerinden — link juice azalır, direkt canonical URL kullan
+13. Orphan page (sitemap'te ama tek internal link bile yok) — düşük crawl priority
+14. Schema'da `priceSpecification` kullanma eğer `price` yeterse — simple > nested
+
+---
+
 ## 🧱 SCHEMA RULES (zorunlu — Schema.org validator pass)
 
 ### Schema type combos
@@ -385,6 +413,46 @@ Her commit'te bu script. P0 fail = commit reddedilir.
 | Weekly | Lighthouse CI + broken-link check |
 | Monthly | Full Semrush audit (manual, shared Guru hesabı, MCP YOK ban risk) |
 | Quarterly | DataForSEO keyword refresh + competitor backlink scan |
+
+---
+
+## 🔒 2026-05-18 AUDIT — DÜZELTİLEN HATALAR → KALICI ÖNLEME KURALLARI
+
+> Bu hatalar 2026-05-18 audit'inde bulundu + düzeltildi. **Bir daha yapılmayacak.**
+> `node scripts/lint-schema.mjs` her commit'te bunları yakalar.
+
+### 1. Meta description uzunluğu — ZORUNLU 140-160 karakter
+- **Hata**: 74 sayfada meta description >165 char → Google SERP'te kesiyor.
+- **Kural**: Her `description:` / `metaDescription:` metadata alanı **140-160 karakter**. 165 üstü = hata.
+- **Yeni sayfa yazarken**: description'ı yazdıktan sonra karakter say. Filler kelime ("you can", "we offer", gereksiz sıfat) at.
+- Locale sayfalarında: TR/DE/FR/NL description'ları da 140-160 — kendi dilinde, çeviri uzunluğu kontrol et.
+
+### 2. Title uzunluğu — ZORUNLU ≤60 karakter (toplam)
+- **Hata**: 153 başlık >60 char (template suffix dahil).
+- **Kural**: `title:` alanı ≤58 char. Root layout template suffix (` | MerrySails Istanbul 2026` = 28 char) hariç sayfa-parçası ≤32 char.
+- Title'a **asla** `| MerrySails` veya `| İstanbul` manuel ekleme — template ekliyor, duplicate olur.
+- Blog post / guide title'ları da ≤32 char (suffix dahil ≤60).
+
+### 3. Schema combo — ["TouristTrip","Product"] YASAK
+- **Kural**: `["TouristTrip","Service"]` veya tek `TouristTrip`. Review snippet için ayrı `Product` node (`@id` suffix `#product`).
+
+### 4. LocalBusiness/TravelAgency/Restaurant — inline PostalAddress ZORUNLU
+- `@id` referansı yetmez — `address: { "@type": "PostalAddress", streetAddress, addressLocality, postalCode, addressCountry }` inline yazılacak.
+- LocalBusiness subclass'larına **`inLanguage` YAZMA** — Google validator reddediyor (Menu/CreativeWork'te OK).
+
+### 5. Event schema — location + organizer + performer + offers ZORUNLU
+- Event node'unda: `name, startDate, endDate, location, eventStatus, eventAttendanceMode, organizer, performer, image, description`.
+- Event `offers`: `availability, validFrom, price, priceCurrency, url`.
+
+### 6. canonical + hreflang
+- Her indexlenebilir sayfada `alternates.canonical` (shorthand `{ canonical }` de OK).
+- Multi-locale sayfa: `alternates.languages = buildHreflang(path)`. Path `LOCALIZED_ROUTES`'ta olmalı.
+- TR-only sayfa (örn. `/kabatas-bogaz-turu`): `LOCALIZED_ROUTES`'a **EKLEME** — yoksa de/fr/nl için 4×404 hreflang üretir.
+- `noindex` sayfalar (reservation, meeting-points): canonical/hreflang gerekmiyor.
+
+### 7. lint-schema.mjs doğru kullanım
+- Lint regex'leri 2026-05-18'de precision fix aldı: title/desc artık satır-başı 2-4 boşluk indent ile sadece metadata-level alanları yakalıyor (nested `tourOptions[].title`, MenuItem `description` false-positive vermez). Türkçe apostrof (`"€30'dan"`) artık capture'ı kırmıyor.
+- Commit öncesi: `node scripts/lint-schema.mjs` → çıktıda `[meta-desc-long]`, `[title-too-long]`, `[title-suffix-duplicate]`, `[tourist-product-combo]`, `[localbusiness-*]`, `[event-*]` = **0 olmalı**.
 
 ---
 

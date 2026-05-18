@@ -13,7 +13,7 @@ const startingRate = Math.min(...fleet.map((boat) => boat.pricePerHour));
 export const metadata: Metadata = {
   title: `Boat Rental Istanbul — From €380`,
   description:
-    `Private boat rental Istanbul from EUR ${startingRate}/hour. Choose your vessel and Bosphorus route first, then add dinner, sunset, proposal, or celebration extras.`,
+    `Private boat rental Istanbul from EUR ${startingRate}/hour. Choose your vessel and Bosphorus route, then add dinner, sunset, proposal, or celebration extras.`,
   alternates: {
     canonical: `${SITE_URL}/boat-rental-istanbul`,
     languages: buildHreflang("/boat-rental-istanbul"),
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Boat Rental Istanbul — From €380`,
     description:
-      `Private Bosphorus boat rental and private boat hire in Istanbul from EUR ${startingRate}/hour with vessel-first planning, custom routes, and add-ons for dinner, sunset, and celebrations.`,
+      `Private boat rental in Istanbul from EUR ${startingRate}/hour. Vessel-first planning with custom Bosphorus routes and add-ons for dinner, sunset, and celebrations.`,
     url: `${SITE_URL}/boat-rental-istanbul`,
     type: "website",
     images: [

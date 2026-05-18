@@ -11,6 +11,15 @@ const EXCLUDED_TOUR_SLUGS = new Set([
   "romantic-marriage-proposal",
   "corporate-event-bosphorus-cruise",
   "private-bosphorus-dinner-yacht-cruise",
+  // Tours that 308 redirect via next.config.ts — must not appear in sitemap
+  // (Source: Semrush 2026-05-17 wrong_pages_found_in_sitemap audit)
+  "private-yacht-swimming-tour",
+  "yacht-weddings",
+  "wedding-anniversary",
+  "yacht-birthday-party",
+  "bosphorus-sightseeing-yacht-cruise",
+  "bachelorette-yacht-party",
+  "private-bosphorus-sunset-cruise",
 ]);
 
 // Routes that have live locale pages — must match src/app/[locale]/ folders exactly

@@ -51,7 +51,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Kabatas Dinner Cruise Istanbul",
   description:
-    "Commercial support page for guests comparing the shared Bosphorus dinner cruise in Istanbul when Kabatas Pier boarding and arrival logistics are the main decision point.",
+    "Support page for guests deciding on the shared Bosphorus dinner cruise when Kabatas Pier boarding and arrival logistics are the main decision point.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   openingHours: "Mo-Su 00:00-23:59",

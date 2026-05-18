@@ -60,7 +60,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Sultanahmet Taksim Akşam Yemeği Turu Transfer — €30'dan",
     metaDescription:
-      "Sultanahmet ve Taksim'den Boğaz akşam yemeği turu için transfer: Hipodrom, Ayasofya, İstiklal Caddesi ve büyük oteller yakınından alım. Combine rota: Sultanahmet 18:30 → Taksim 19:00 → iskele 19:20.",
+      "Sultanahmet ve Taksim'den Boğaz akşam yemeği turu transferi: Hipodrom, Ayasofya, İstiklal çevresinden alım. Rota: 18:30 → 19:00 → iskele 19:20. €30'dan.",
     canonicalPath: "/tr/dinner-cruise-pickup-sultanahmet-taksim",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCruise: "Boğaz Turu",
@@ -219,7 +219,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Sultanahmet Taksim Dinner Cruise Abholung — Ab €30",
     metaDescription:
-      "Bosporus Dinner Kreuzfahrt Transfer von Sultanahmet und Taksim: Hippodrom, Hagia Sophia, İstiklal-Straße und große Hotels. Kombinierte Route: Sultanahmet 18:30 → Taksim 19:00 → Anleger 19:20.",
+      "Bosporus Dinner Kreuzfahrt Transfer ab Sultanahmet und Taksim: Hippodrom, Hagia Sophia, İstiklal. Route: 18:30 → 19:00 → Anleger 19:20. Ab €30.",
     canonicalPath: "/de/dinner-cruise-pickup-sultanahmet-taksim",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus-Tour",
@@ -378,7 +378,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Navette Croisière Dîner Sultanahmet Taksim — À partir de €30",
     metaDescription:
-      "Navette croisière dîner Bosphore depuis Sultanahmet et Taksim : Hippodrome, Sainte-Sophie, rue İstiklal et grands hôtels. Route combinée : Sultanahmet 18h30 → Taksim 19h00 → embarcadère 19h20.",
+      "Navette croisière dîner Bosphore depuis Sultanahmet et Taksim : Hippodrome, Sainte-Sophie, İstiklal. Route : 18h30 → 19h00 → embarcadère 19h20. Dès €30.",
     canonicalPath: "/fr/dinner-cruise-pickup-sultanahmet-taksim",
     breadcrumbHome: "Accueil",
     breadcrumbCruise: "Croisière Bosphore",
@@ -537,7 +537,7 @@ const CONTENT: Record<string, LocaleContent> = {
     metaTitle:
       "Sultanahmet Taksim Diner Cruise Shuttle — Vanaf €30",
     metaDescription:
-      "Bosporus diner cruise shuttle vanuit Sultanahmet en Taksim: Hippodroom, Hagia Sophia, İstiklalstraat en grote hotels. Gecombineerde route: Sultanahmet 18:30 → Taksim 19:00 → aanlegsteiger 19:20.",
+      "Bosporus diner cruise shuttle vanuit Sultanahmet en Taksim: Hippodroom, Hagia Sophia, İstiklal. Route: 18:30 → 19:00 → aanlegsteiger 19:20. Vanaf €30.",
     canonicalPath: "/nl/dinner-cruise-pickup-sultanahmet-taksim",
     breadcrumbHome: "Home",
     breadcrumbCruise: "Bosporus Cruise",
@@ -789,7 +789,7 @@ export default async function LocaleDinnerCruisePickupSultanahmetTaksimPage({
     "@id": `${canonicalUrl}#product`,
     name: t.heroTitle,
     description: t.metaDescription,
-    image: "",
+    image: `${SITE_URL}/og-image.jpg`,
     brand: { "@type": "Brand", name: "MerrySails" },
     sku: `merrysails-dinner-cruise-pickup-sultanahmet-taksim-${locale}`,
     category: "Bosphorus Dinner Cruise with Pickup",
@@ -802,6 +802,7 @@ export default async function LocaleDinnerCruisePickupSultanahmetTaksimPage({
     },
     offers: {
       "@type": "Offer",
+      price: "30",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

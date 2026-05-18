@@ -38,7 +38,7 @@ const canonicalUrl = `${SITE_URL}${getTourPath(yachtTour)}`;
 
 export const metadata: Metadata = {
   title: "Private Yacht Charter Istanbul — From €200",
-  description: `Private yacht charter Istanbul from €${fleetLowestEur}. Six-yacht Bosphorus fleet for 10 to 150 guests, two-hour minimum, ten percent off from three hours. Captain and crew included.`,
+  description: `Private yacht charter Istanbul from €${fleetLowestEur}. Six-yacht fleet, 10–150 guests, 2-hour minimum, 10% off from 3 hours. Captain and crew included.`,
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/yacht-charter-istanbul"),
@@ -200,12 +200,12 @@ const charterReasons = [
   {
     title: "Whole-yacht pricing in EUR",
     description:
-      "Each booking holds the entire yacht. Soft drinks, snacks, captain, crew, and fuel travel with the deck price, and a flat ten percent is deducted from three hours upward.",
+      "Each booking holds the entire yacht. Soft drinks, snacks, captain, crew, and fuel are included in the deck price. Flat 10% off from three hours upward.",
   },
   {
     title: "Brief-led extras",
     description:
-      "Catering, alcohol, DJ, live music, photographer, proposal styling, and hotel transfer sit on a separate quote — so the deck stays priced cleanly while the program stays flexible.",
+      "Catering, alcohol, DJ, live music, photographer, proposal styling, and hotel transfer are on a separate quote — deck price stays clean, program stays flexible.",
   },
 ];
 

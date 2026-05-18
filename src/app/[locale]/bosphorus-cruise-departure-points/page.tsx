@@ -132,7 +132,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
   fr: {
     metaTitle: "Points de Départ Croisière Bosphore Istanbul 2026",
     metaDescription:
-      "Points de départ croisière Bosphore : Kabatas pour le dîner-croisière, point de rendez-vous Karakoy pour le coucher de soleil, marina Kurucesme pour les yachts privés.",
+      "Points de départ croisière Bosphore : Kabatas pour le dîner, Karakoy pour le coucher de soleil, marina Kurucesme pour les yachts privés.",
     canonicalPath: "/fr/bosphorus-cruise-departure-points",
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Points de Départ",

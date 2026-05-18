@@ -222,6 +222,7 @@ export default async function KabatasBagazTuruPage({
     },
     offers: {
       "@type": "Offer",
+      price: "30",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

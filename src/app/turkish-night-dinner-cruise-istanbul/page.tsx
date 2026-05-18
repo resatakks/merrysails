@@ -51,7 +51,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Turkish Night Dinner Cruise Istanbul",
   description:
-    "Commercial support page for guests comparing a shared Bosphorus dinner cruise in Istanbul when the Turkish-night show and dinner-led package fit are the main decision points.",
+    "Support page for guests deciding on a Bosphorus dinner cruise when the Turkish-night show and dinner-led package fit are the main decision points.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   openingHours: "Mo-Su 00:00-23:59",
@@ -171,7 +171,7 @@ const flowSteps = [
       "The real question here is whether a stage-entertainment-led evening and a shared dinner boat match the mood you want.",
   },
   {
-    title: "Move to pickup or Kabatas pages only if logistics become the blocker",
+    title: "Use pickup or Kabatas pages when logistics are the blocker",
     description:
       "Show fit, pickup fit, and boarding fit are three different sub-intents. Use the narrower page only for the blocker you actually have.",
   },

@@ -103,7 +103,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     title: "Private Bosporus-Eventtypen in Istanbul",
     description:
-      "Vergleichen Sie private Bosporus-Eventseiten für Heiratsanträge, private Dinner, Feiern und Firmenanfragen. Für allgemeinen privaten Jachtcharter beginnen Sie mit Yacht Charter Istanbul.",
+      "Private Bosporus-Events in Istanbul: Heiratsantrag, Privatdinner, Feiern und Firmenevent. Für allgemeinen Jachtcharter: Yacht Charter Istanbul.",
     canonicalPath: "/de/private-tours",
     pageTitle: "Private Bosporus-Eventtypen in Istanbul",
     pageDescription:
@@ -170,7 +170,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     title: "Types d'événements privés sur le Bosphore à Istanbul",
     description:
-      "Comparez les pages d'événements privés pour demandes en mariage, dîners privés, célébrations et demandes d'entreprise. Pour le charter de yacht général, commencez par Yacht Charter Istanbul.",
+      "Événements privés Bosphore Istanbul : demande en mariage, dîner privé, célébration et entreprise. Charter général : commencez par Yacht Charter Istanbul.",
     canonicalPath: "/fr/private-tours",
     pageTitle: "Types d'événements privés sur le Bosphore à Istanbul",
     pageDescription:
@@ -237,7 +237,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     title: "Privé Bosporus Evenementtypes in Istanbul",
     description:
-      "Vergelijk privé Bosporus evenementpagina's voor huwelijksaanzoeken, privédiners, vieringen en zakelijke aanvragen. Voor algemene privé jachtcharter begin met Yacht Charter Istanbul.",
+      "Privé Bosporus evenementen Istanbul: huwelijksaanzoek, privédiner, viering en zakelijk event. Voor algemeen jachtcharter: Yacht Charter Istanbul.",
     canonicalPath: "/nl/private-tours",
     pageTitle: "Privé Bosporus Evenementtypes in Istanbul",
     pageDescription:

@@ -145,12 +145,23 @@ function lintFile(filePath) {
     });
   }
 
-  // Rule 3: Event schema required fields
-  const eventBlockRegex = /"@type"\s*:\s*"Event"[\s\S]*?(?=\n\s*\}\s*[;,)]|\n\s*\}\s*$)/g;
+  // Rule 3: Event schema required fields.
+  // Extract the FULL Event object via brace-matching (regex lookahead breaks on the
+  // first nested object close — e.g. an eventSchedule {} — and truncates the block
+  // before location/organizer, causing false "missing field" reports).
+  const eventTypeRegex = /"@type"\s*:\s*"Event"/g;
   let m3;
-  while ((m3 = eventBlockRegex.exec(src)) !== null) {
-    const block = m3[0];
-    const blockStart = m3.index;
+  while ((m3 = eventTypeRegex.exec(src)) !== null) {
+    // Walk back to the object's opening brace, then forward counting braces.
+    let openIdx = src.lastIndexOf("{", m3.index);
+    if (openIdx === -1) continue;
+    let depth = 0, closeIdx = -1;
+    for (let i = openIdx; i < src.length; i++) {
+      if (src[i] === "{") depth++;
+      else if (src[i] === "}") { depth--; if (depth === 0) { closeIdx = i; break; } }
+    }
+    const block = closeIdx === -1 ? src.slice(openIdx) : src.slice(openIdx, closeIdx + 1);
+    const blockStart = openIdx;
     for (const field of EVENT_REQUIRED_FIELDS) {
       const fieldRegex = new RegExp(`\\b${field}\\s*:`);
       if (!fieldRegex.test(block)) {
@@ -162,8 +173,10 @@ function lintFile(filePath) {
         });
       }
     }
-    // Check Event offers required fields
-    const offersMatch = block.match(/offers\s*:\s*\{[\s\S]*?\}/);
+    // Check Event offers required fields. Strip `${...}` template expressions first
+    // so their `}` does not prematurely terminate the lazy offers-block capture.
+    const blockNoTpl = block.replace(/\$\{[^}]*\}/g, "XXX");
+    const offersMatch = blockNoTpl.match(/offers\s*:\s*\{[\s\S]*?\}/);
     if (offersMatch) {
       for (const field of EVENT_OFFER_REQUIRED) {
         const fieldRegex = new RegExp(`\\b${field}\\s*:`);
@@ -179,12 +192,17 @@ function lintFile(filePath) {
     }
   }
 
-  // Rule 5: title suffix
+  // Rule 5: title suffix — match ONLY metadata-level `title:` (line-anchored, 2-4 space indent).
+  // Excludes nested object titles (tourOptions[].title, faqs[].title @ 6+ spaces) AND
+  // prefixed variants (metaTitle/subtitle/ctaTitle/priceTableTitle) since the leading
+  // spaces in `^ {2,4}title:` cannot match a letter-prefixed key.
   if (isPage) {
-    const titleRegex = /title:\s*[`"']([^`"']+)[`"']/g;
+    // Quote-matching capture (dm[1]=quote, dm[2]=content) so Turkish apostrophes
+    // inside double-quoted titles ("€30'dan") do not truncate the capture.
+    const titleRegex = /^ {2,4}title\s*:\s*(["'`])((?:[^\\]|\\.)*?)\1/gm;
     let m5;
     while ((m5 = titleRegex.exec(src)) !== null) {
-      const title = m5[1];
+      const title = m5[2];
       for (const pattern of MS_TITLE_SUFFIX_PATTERNS) {
         if (pattern.test(title)) {
           errors.push({
@@ -224,13 +242,26 @@ function lintFile(filePath) {
   // Semrush audit rules — only run on page.tsx
   if (!isPage) return;
 
-  // S1. Meta description length 140-160 (warn if outside, error if missing on commercial page)
-  const descRegex = /description\s*:\s*[`"']([^`"']+(?:\$\{[^}]+\}[^`"']*)*)[`"']/g;
+  // S1. Meta description length 140-160 — match metadata-level `description:`
+  // (line-anchored, 2-4 space indent). Excludes nested schema/MenuItem/service
+  // descriptions (6+ spaces). Pages using a separate `metaDescription:` field for
+  // the <meta> tag are checked via that exact field name instead.
+  // The capture group matches the OPENING quote char and reads until the matching
+  // close quote — so Turkish apostrophes inside double-quoted strings ("€200'den")
+  // do not prematurely terminate the capture.
+  const descField = /^ {2,4}metaDescription\s*:/m.test(src) ? "metaDescription" : "description";
+  const descRegex = new RegExp(`^ {2,4}${descField}\\s*:\\s*(["'\`])((?:[^\\\\]|\\\\.)*?)\\1`, "gm");
   let dm;
   let foundDesc = false;
   while ((dm = descRegex.exec(src)) !== null) {
+    // Skip link-card objects: a `{ href, title, description }` internal-link card
+    // is not a page meta description. Take the text from the object's opening `{`
+    // up to this match — if it contains an `href:` sibling, it is a link card.
+    const objOpen = src.lastIndexOf("{", dm.index);
+    const sameObjCtx = objOpen === -1 ? "" : src.slice(objOpen, dm.index);
+    if (/\bhref\s*:/.test(sameObjCtx)) continue;
     foundDesc = true;
-    const desc = dm[1].replace(/\$\{[^}]+\}/g, "XXX"); // approximate template
+    const desc = dm[2].replace(/\$\{[^}]+\}/g, "XXX"); // dm[1]=quote char, dm[2]=content
     if (desc.length < 70) {
       warnings.push({
         file: rel(filePath), line: src.slice(0, dm.index).split("\n").length,
@@ -253,9 +284,13 @@ function lintFile(filePath) {
     });
   }
 
-  // S3. canonical URL check
-  if (/export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src)) {
-    if (!/canonical\s*:/.test(src)) {
+  // Noindex pages (robots index:false) are excluded from canonical/hreflang checks —
+  // Google never indexes them, so those signals are irrelevant.
+  const isNoindex = /robots\s*:\s*\{[^}]*index\s*:\s*false/.test(src);
+
+  // S3. canonical URL check — accepts ES6 shorthand `{ canonical }` (no colon).
+  if (!isNoindex && /export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src)) {
+    if (!/canonical\s*[:,}]/.test(src)) {
       warnings.push({
         file: rel(filePath), line: 1, rule: "canonical-missing",
         msg: `Page metadata lacks canonical URL (alternates.canonical).`,
@@ -263,8 +298,14 @@ function lintFile(filePath) {
     }
   }
 
-  // S4. hreflang languages check
-  if (/export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src)) {
+  // S4. hreflang languages check.
+  // Intentionally EN-only pages (legal docs, AI-knowledge endpoint, internal team
+  // page) have no locale variants — hreflang would be meaningless. Exempt them.
+  const HREFLANG_EXEMPT = [
+    "/privacy-policy/", "/terms/", "/ai-knowledge/", "/about/team/",
+  ];
+  const isHreflangExempt = HREFLANG_EXEMPT.some((p) => filePath.includes(p));
+  if (!isNoindex && !isHreflangExempt && /export\s+(const\s+metadata|async\s+function\s+generateMetadata)/.test(src)) {
     if (!/buildHreflang|languages\s*:/.test(src)) {
       warnings.push({
         file: rel(filePath), line: 1, rule: "hreflang-missing",
@@ -273,8 +314,12 @@ function lintFile(filePath) {
     }
   }
 
-  // S5. Multiple H1 detection (within JSX returns) — only count <h1 in non-import lines
-  const h1Matches = [...src.matchAll(/<h1[\s>]/g)];
+  // S5. Multiple H1 detection (within JSX returns) — strip comments first to avoid false-positives
+  const srcNoComments = src
+    .replace(/\/\*[\s\S]*?\*\//g, "")  // /* ... */
+    .replace(/\/\/[^\n]*/g, "")        // // ...
+    .replace(/\{\/\*[\s\S]*?\*\/\}/g, ""); // JSX {/* ... */}
+  const h1Matches = [...srcNoComments.matchAll(/<h1[\s>]/g)];
   if (h1Matches.length > 1) {
     warnings.push({
       file: rel(filePath), line: 0, rule: "multiple-h1",
@@ -299,6 +344,74 @@ function lintFile(filePath) {
       file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
       rule: "next-image-alt-missing",
       msg: `Next/Image without alt attribute (Semrush + a11y).`,
+    });
+  }
+
+  // S8 [P0]: Nested Offer schema must have `price` field
+  // Semrush 2026-05-17 audit: ~80 locale pages emit Offer without price → Google Merchant + Product snippet rejected.
+  // Match Offer object literals (not arrays/spreads) and require price within.
+  const offerBlocks = [...src.matchAll(/\{\s*[^{}]*?"@type"\s*:\s*"Offer"[^{}]*?\}/g)];
+  for (const m of offerBlocks) {
+    const block = m[0];
+    if (!/\bprice\s*:/.test(block) && !/priceSpecification/.test(block)) {
+      errors.push({
+        file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
+        rule: "offer-missing-price",
+        msg: `Offer schema missing "price" field — Google rejects Merchant listing + Product snippet (RULES.md P0 rule 1).`,
+      });
+    }
+    // Also catch price: "€30" or "€ 30" — currency must be in priceCurrency
+    const priceMatch = block.match(/\bprice\s*:\s*["']([^"']+)["']/);
+    if (priceMatch && /[€$£¥]/.test(priceMatch[1])) {
+      errors.push({
+        file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
+        rule: "offer-price-currency-in-string",
+        msg: `Offer price contains currency symbol "${priceMatch[1]}" — use numeric string + priceCurrency field.`,
+      });
+    }
+  }
+
+  // S9 [P0]: LocalBusiness/Restaurant/TouristInformationCenter must NOT have inLanguage
+  // Google validator: "The property inLanguage is not recognized by Schema.org vocabulary"
+  // Even though Schema.org allows it, Google's LocalBusiness parser rejects it.
+  // The window stops at the object boundary (`\n};` — top-level schema const close)
+  // so an inLanguage on a SEPARATE sibling schema (e.g. a Menu const below a
+  // Restaurant const) is not mis-attributed to the LocalBusiness object.
+  const lbWithInLang = /"@type"\s*:\s*(?:"(?:LocalBusiness|TravelAgency|Restaurant|FoodEstablishment|TouristInformationCenter|TouristAttraction|Hotel)"|\[[^\]]*?"(?:LocalBusiness|TravelAgency|Restaurant|FoodEstablishment|TouristInformationCenter)"[^\]]*?\])(?:(?!\n\};)[\s\S]){0,2000}?inLanguage\s*:/g;
+  let lbMatch;
+  while ((lbMatch = lbWithInLang.exec(src)) !== null) {
+    errors.push({
+      file: rel(filePath), line: src.slice(0, lbMatch.index).split("\n").length,
+      rule: "localbusiness-inlanguage",
+      msg: `LocalBusiness/Restaurant has inLanguage — Google validator rejects this property on LocalBusiness subclasses (RULES.md P0 rule 2).`,
+    });
+  }
+
+  // S10 [P0]: LocalBusiness/TravelAgency/TouristInformationCenter must have inline address
+  // (Schema.org allows @id reference but Google validator can't dereference)
+  // Window stops at object boundary (`\n};`) so the block does not get truncated
+  // before the `address:` field by an unrelated nested `}` (e.g. a PropertyValue).
+  const lbBlocks = [...src.matchAll(/\{[^{}]*?"@type"\s*:\s*(?:"(?:LocalBusiness|TravelAgency|TouristInformationCenter|Restaurant|FoodEstablishment)"|\[[^\]]*?"(?:LocalBusiness|TravelAgency|TouristInformationCenter)"[^\]]*?\])(?:(?!\n\};)[\s\S]){0,4000}?\n\};/g)];
+  for (const m of lbBlocks) {
+    const block = m[0];
+    // Check for inline PostalAddress (not just an @id reference)
+    const hasInlineAddress = /address\s*:\s*\{[\s\S]*?"@type"\s*:\s*"PostalAddress"/.test(block);
+    if (!hasInlineAddress) {
+      errors.push({
+        file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
+        rule: "localbusiness-no-address",
+        msg: `LocalBusiness/TravelAgency/TouristInformationCenter without inline PostalAddress — Google validator rejects (RULES.md P0 rule 3).`,
+      });
+    }
+  }
+
+  // S11 [P0]: Unsplash URLs with double ?w= param (Next/Image breaks these → 404)
+  const doubleParamUnsplash = [...src.matchAll(/images\.unsplash\.com[^"'\s)]+\?w=\d+[^"'\s)]*[?&]w=\d+/g)];
+  for (const m of doubleParamUnsplash) {
+    errors.push({
+      file: rel(filePath), line: src.slice(0, m.index).split("\n").length,
+      rule: "unsplash-double-w-param",
+      msg: `Unsplash URL has double ?w= param — Next/Image breaks these (RULES.md P0 rule 7). Use single base URL like "?w=1200&q=80".`,
     });
   }
 }

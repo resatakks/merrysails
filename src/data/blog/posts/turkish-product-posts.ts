@@ -709,7 +709,7 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Paylaşımlı Boğaz Gün Batımı Turu: İlk Saniyeden Son Saniyeye",
         content:
-          "Boğaz gün batımı turu deneyimi, Ortaköy İskelesi'nden tekneye adım attığınız anda başlar. İstanbul'un ikonik silüeti henüz günışığındayken tekne yavaşça ilerler; Dolmabahçe Sarayı'nın sarı taşları görünür, Beşiktaş'ın gürültüsü geride kalır. Ardından Bebek Koyu'nun sakin suları, Rumeli Hisarı'nın 15. yüzyıldan kalma taşları, Boğaz Köprüsü'nün olağanüstü genişliği — ve tam bu anda güneş batı ufkunda alçalmaya başlar. Profesyonel rehberin Türkçe ve İngilizce anlattığı tarihi bilgiler eşliğinde 2,5 saat, nasıl geçtiğini anlamadan tamamlanır. 50.000'den fazla misafiri ağırlamış TÜRSAB A Grubu lisanslı MerrySails ile bu tur her yaştan ve her kültürden ziyaretçinin favorisi olmaya devam ediyor.",
+          "Boğaz gün batımı turu deneyimi, Ortaköy İskelesi'nden tekneye adım attığınız anda başlar. İstanbul'un ikonik silüeti henüz günışığındayken tekne yavaşça ilerler; Dolmabahçe Sarayı'nın sarı taşları görünür, Beşiktaş'ın gürültüsü geride kalır. Ardından Bebek Koyu'nun sakin suları, Rumeli Hisarı'nın 15. yüzyıldan kalma taşları, Boğaz Köprüsü'nün olağanüstü genişliği — ve tam bu anda güneş batı ufkunda alçalmaya başlar. Profesyonel rehberin Türkçe ve İngilizce anlattığı tarihi bilgiler eşliğinde 2,5 saat, nasıl geçtiğini anlamadan tamamlanır.\n\n50.000'den fazla misafiri ağırlamış TÜRSAB A Grubu lisanslı MerrySails ile bu tur her yaştan ve her kültürden ziyaretçinin favorisi olmaya devam ediyor.",
         callout: {
           type: "tip",
           text:

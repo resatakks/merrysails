@@ -220,7 +220,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     metaTitle:
       "Yacht Charter Marina Kuruçeşme Istanbul 2026 | Yacht Privé Bosphore",
     metaDescription:
-      "Location de yacht privé au départ de la marina de Kuruçeşme : croisière Bosphore, embarquement, accès à la marina et détails du charter privé. Devis selon date et groupe.",
+      "Location de yacht privé depuis la marina de Kuruçeşme : croisière Bosphore, embarquement et détails charter. Devis selon date et groupe.",
     canonicalPath: "/fr/kurucesme-marina-yacht-charter",
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Yacht Charter Marina Kuruçeşme",

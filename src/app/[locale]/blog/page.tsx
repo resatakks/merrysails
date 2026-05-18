@@ -36,7 +36,7 @@ const CONTENT: Record<string, LocaleContent> = {
   tr: {
     title: "Boğaz Turu Blog — İstanbul Seyahat Rehberleri",
     description:
-      "İstanbul Boğaz turu rehberleri: gün batımı turu ipuçları, yat kiralama tavsiyeleri, akşam yemeği turu yorumları ve yerel seyahat içgörüleri — 2001'den bu yana TÜRSAB A Grubu lisanslı.",
+      "İstanbul Boğaz turu rehberleri: gün batımı ipuçları, yat kiralama tavsiyeleri, akşam yemeği turu yorumları — 2001'den beri TÜRSAB A Grubu lisanslı.",
     canonicalPath: "/tr/blog",
     pageTitle: "Boğaz Turu Blog — İstanbul Seyahat Rehberleri",
     pageDescription:
@@ -61,7 +61,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     title: "Bosporus Kreuzfahrt Blog — Istanbul Reiseführer",
     description:
-      "Expertenführer für Istanbul: Bosporus Sonnenuntergangs-Kreuzfahrt-Tipps, Jachtcharter-Beratung, Dinner-Kreuzfahrt-Bewertungen und lokale Reisetipps — TÜRSAB A-Gruppe lizenziert seit 2001.",
+      "Expertenführer für Istanbul: Bosporus Sonnenuntergangs-Tipps, Jachtcharter, Dinner-Kreuzfahrt-Bewertungen und Reisetipps — TÜRSAB A-Gruppe lizenziert.",
     canonicalPath: "/de/blog",
     pageTitle: "Bosporus Kreuzfahrt Blog — Istanbul Reiseführer",
     pageDescription:
@@ -86,7 +86,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     title: "Blog Croisière Bosphore — Guides Voyage Istanbul",
     description:
-      "Guides experts pour Istanbul : conseils croisière coucher de soleil sur le Bosphore, charter de yacht, avis sur les croisières dîner et insights voyage locaux — agréé TÜRSAB groupe A depuis 2001.",
+      "Guides experts Istanbul : croisière coucher de soleil Bosphore, charter de yacht, avis croisières dîner et conseils voyage — agréé TÜRSAB groupe A depuis 2001.",
     canonicalPath: "/fr/blog",
     pageTitle: "Blog Croisière Bosphore — Guides Voyage Istanbul",
     pageDescription:
@@ -111,7 +111,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     title: "Bosporus Cruise Blog — Istanbul Reisgidsen",
     description:
-      "Expertgidsen voor Istanbul: Bosporus zonsondergang cruise tips, jachtcharter advies, diner cruise reviews en lokale reisinzichten — TÜRSAB A-groep gelicentieerd sinds 2001.",
+      "Expertgidsen voor Istanbul: Bosporus zonsondergang cruise, jachtcharter advies, diner cruise reviews en reisinzichten — TÜRSAB A-groep gelicentieerd.",
     canonicalPath: "/nl/blog",
     pageTitle: "Bosporus Cruise Blog — Istanbul Reisgidsen",
     pageDescription:
