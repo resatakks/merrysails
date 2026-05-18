@@ -19,7 +19,7 @@ type BlogCategory = BlogPost["category"];
 export const commercialSupportPosts: BlogPost[] = [
   {
     slug: "bosphorus-sunset-cruise-vs-dinner-cruise",
-    title: "Bosphorus Sunset Cruise vs Dinner Cruise: Which One Fits the Night?",
+    title: "Sunset Cruise vs Dinner Cruise Istanbul",
     metaDescription:
       "Compare the Bosphorus sunset cruise and dinner cruise in Istanbul, when each one works best, and when to switch to the private dinner page instead.",
     excerpt:
@@ -220,7 +220,7 @@ If they are saying "we need dinner" or "we need a proposal," skip the generic hi
   },
   {
     slug: "proposal-yacht-rental-istanbul-planning-guide",
-    title: "Proposal Yacht Rental Istanbul: How to Plan the Moment Without Overthinking It",
+    title: "Proposal Yacht Rental Istanbul — Guide",
     metaDescription:
       "A practical guide for proposal yacht planning in Istanbul with privacy, timing, styling, and the right moment to choose dinner or a shorter setup.",
     excerpt:
@@ -310,7 +310,7 @@ Tell us the date, preferred timing, whether you want sunset or evening light, wh
   },
   {
     slug: "corporate-yacht-events-on-the-bosphorus",
-    title: "Corporate Yacht Events on the Bosphorus: What Companies Usually Need",
+    title: "Corporate Yacht Events on the Bosphorus",
     metaDescription:
       "A planning guide for corporate yacht events in Istanbul with guest flow, catering, branding, and where to route the request if it is actually a private dinner.",
     excerpt:

@@ -3,7 +3,7 @@ import type { BlogPost } from "../types";
 export const commercialConversionGuides: BlogPost[] = [
 {
     slug: "private-yacht-charter-istanbul-prices",
-    title: "How Istanbul Private Yacht Quotes Are Built — Base Ladder, Extras & Approval Flow",
+    title: "Istanbul Private Yacht Quotes Explained",
     metaDescription: "Use this pricing explainer to understand how Istanbul private yacht quotes are built, then move to the main yacht owner page for the live offer.",
     excerpt: "This support guide explains how the public private-yacht ladder, extras, and approval flow work before you move to the main yacht owner page.",
     category: "yacht-guide",
@@ -42,7 +42,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-dinner-cruise-booking",
-    title: "How Istanbul Dinner Cruise Booking Works — Packages, Prices & Pickup",
+    title: "Istanbul Dinner Cruise Booking Guide",
     metaDescription: "Use this dinner-booking guide to compare the shared package ladder in Istanbul, understand pickup logic, and move to the dinner owner page for the live offer.",
     excerpt: "This support guide explains how the shared dinner package ladder works, what changes between tiers, and how to move into the main dinner owner page.",
     category: "cruise-guide",
@@ -81,7 +81,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-sunset-cruise-booking",
-    title: "How the Istanbul Sunset Cruise Booking Flow Works — Timing, Prices & Reservation Tips",
+    title: "Istanbul Sunset Cruise Booking Guide",
     metaDescription: "Use this sunset-booking guide to understand timing, inclusions, and reservation flow, then move to the main sunset owner page for the live offer.",
     excerpt: "This support guide explains how the shared sunset cruise booking flow works, what is included, and why timing matters before you move to the owner page.",
     category: "cruise-guide",
@@ -122,7 +122,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-boat-party-private",
-    title: "Private Boat Party Planning in Istanbul — Guest Size, DJ & Event Flow",
+    title: "Private Boat Party Planning Istanbul",
     metaDescription: "Use this support guide to compare private boat party formats in Istanbul before moving to the right owner page for birthdays, events, or company-led celebrations.",
     excerpt: "This support guide helps you compare private boat party formats, guest flow, and add-ons before moving to the right owner page.",
     category: "events",
@@ -161,7 +161,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-prices-comparison",
-    title: "Bosphorus Cruise Prices 2026 — Complete Price Guide & Comparison",
+    title: "Bosphorus Cruise Prices 2026: Full Guide",
     metaDescription: "Compare MerrySails' main Bosphorus cruise prices for 2026: sunset €34 / €40, dinner €30–€90, [yacht charter](/yacht-charter-istanbul) €280–€680, plus how custom quote daytime services fit into the structure.",
     excerpt: "How much does a Bosphorus cruise really cost in 2026? This guide now focuses on MerrySails' three core price ranges and explains where tailored daytime service pages sit in the pricing structure.",
     category: "cruise-guide",
@@ -201,7 +201,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-corporate-yacht-event-booking",
-    title: "How Corporate Yacht Event Booking Works in Istanbul — Formats, AV & Proposal Flow",
+    title: "Corporate Yacht Event Booking Istanbul",
     metaDescription: "Use this support guide to understand Bosphorus corporate-event formats, AV needs, and proposal flow before moving to the main corporate events page.",
     excerpt: "This support guide explains how corporate yacht event booking works in Istanbul before you move to the main corporate events page for a live proposal.",
     category: "events",
@@ -240,7 +240,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-proposal-yacht-cruise",
-    title: "How Yacht Proposal Planning Works in Istanbul — Timing, Styling & Surprise Flow",
+    title: "Yacht Proposal Planning in Istanbul",
     metaDescription: "Use this proposal-planning guide to understand yacht timing, styling, and surprise flow in Istanbul before moving to the main proposal owner page.",
     excerpt: "This support guide explains how a Bosphorus yacht proposal is planned before you move to the main proposal owner page for the live offer.",
     category: "events",
@@ -279,7 +279,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-night-cruise",
-    title: "Istanbul Night Cruise 2026 — Prices, Routes & Best Options",
+    title: "Istanbul Night Cruise 2026: Best Options",
     metaDescription: "Compare Istanbul night cruise options for 2026: sunset from €34, dinner from €30, yacht charter from €280. See prices, routes, inclusions, and departure logic.",
     excerpt: "Istanbul comes alive after dark — and the best way to see it is from the water. Compare sunset cruise, dinner cruise, and private yacht charter to find the right Bosphorus night plan.",
     category: "cruise-guide",
@@ -347,7 +347,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "party-boat-istanbul",
-    title: "Private Party Boat Planning in Istanbul — Birthdays, Bachelorettes & Event Formats",
+    title: "Private Party Boat Planning Istanbul",
     metaDescription: "Use this planning guide to compare private party-boat formats in Istanbul before moving to the right private-events, yacht, or corporate owner page.",
     excerpt: "This support guide explains how party-boat planning works in Istanbul so you can choose the right event page before requesting a live proposal.",
     category: "events",
@@ -420,7 +420,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-vs-ferry",
-    title: "Bosphorus Cruise vs Public Ferry — Which Should You Choose?",
+    title: "Bosphorus Cruise vs Public Ferry Istanbul",
     metaDescription: "Bosphorus cruise or Şehir Hatları ferry? Compare price, comfort, route, food & experience. Honest side-by-side guide to help you choose the best Bosphorus boat trip in Istanbul.",
     excerpt: "Should you take a private Bosphorus cruise or the public Şehir Hatları ferry? We compare price, comfort, duration, food, and overall experience to help you make the right choice.",
     category: "tips",
@@ -492,7 +492,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "corporate-boat-hire-istanbul",
-    title: "Corporate Event Boat Planning in Istanbul — AV, Catering & Proposal Flow",
+    title: "Corporate Event Boat Planning Istanbul",
     metaDescription: "Use this support guide to understand AV, catering, and proposal flow for Bosphorus corporate events before moving to the main corporate owner page.",
     excerpt: "This support guide explains how Bosphorus corporate event planning works before you move to the main corporate events page for the live proposal flow.",
     category: "events",
@@ -566,7 +566,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "birthday-party-boat-istanbul",
-    title: "Birthday Party Boat Istanbul — Private Bosphorus Birthday Cruise Guide",
+    title: "Birthday Party Boat Istanbul Guide",
     metaDescription: "Book a birthday party boat in Istanbul on the Bosphorus. Private cruise planning for birthday groups with decoration, DJ, catering, and cake support.",
     excerpt: "Celebrate your birthday on a private yacht on the Bosphorus in Istanbul. Decoration, DJ, catering, and birthday cake packages for groups of 10 to 100 guests.",
     category: "events",
@@ -635,7 +635,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-sunset-cruise-istanbul",
-    title: "Bosphorus Sunset Timing & Photography Guide for Istanbul",
+    title: "Bosphorus Sunset Timing & Photo Guide",
     metaDescription: "Use this support guide to understand Bosphorus sunset timing, seasonality, and photography before moving to the main sunset owner page for the live offer.",
     excerpt: "This support guide explains sunset timing, seasonality, and photography conditions before you move to the main Bosphorus sunset owner page.",
     category: "cruise-guide",
@@ -716,7 +716,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-boat-tour-price-2026",
-    title: "Istanbul Boat Tour Price 2026 — Bosphorus Cruise Cost Comparison & What's Included",
+    title: "Istanbul Boat Tour Price 2026: What's Included",
     metaDescription: "Complete Istanbul boat tour price guide for 2026. Compare sunset €34 / €40, dinner €30–€90, yacht charter €280–€680, and how custom request pages fit into the structure.",
     excerpt: "This price guide now focuses on MerrySails' three core main booking ladders and shows where tailored daytime service pages fit into the Bosphorus pricing structure.",
     category: "cruise-guide",
@@ -790,7 +790,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-charter-istanbul-price",
-    title: "Private Yacht Price Guide for Istanbul — Essential, Premium & VIP Explained",
+    title: "Private Yacht Price Guide Istanbul 2026",
     metaDescription: "Use this support guide to understand the public private-yacht ladder in Istanbul, what changes between tiers, and when to move to the main yacht owner page.",
     excerpt: "This support guide explains the public private-yacht ladder, what changes between Essential, Premium, and VIP, and how the final quote is shaped.",
     category: "events",
@@ -862,7 +862,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "best-time-for-bosphorus-cruise-istanbul",
-    title: "Best Time for a Bosphorus Cruise in Istanbul — Month-by-Month Guide 2026",
+    title: "Best Time for a Bosphorus Cruise 2026",
     metaDescription: "The best time for a Bosphorus cruise in Istanbul is April–June and September–October. Month-by-month weather guide, seasonal tips, photography advice, and FAQ.",
     excerpt: "Planning a Bosphorus cruise and wondering when to go? This complete guide covers the best months for weather, photography, and value — plus a month-by-month suitability table.",
     category: "tips",
@@ -979,7 +979,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-hire-istanbul-2026",
-    title: "How to Choose the Right Private Yacht in Istanbul — Format, Season & Occasion Guide",
+    title: "Choose the Right Private Yacht Istanbul",
     metaDescription: "Use this support guide to choose the right private yacht format in Istanbul, then move to the main yacht owner page for the live offer.",
     excerpt: "This support guide explains how to choose the right private-yacht format in Istanbul before you move to the main yacht owner page.",
     category: "yacht-guide",
@@ -1101,7 +1101,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-cruise-for-groups",
-    title: "Group Cruise Planning in Istanbul — Guest Size, Vessel Fit & Proposal Flow",
+    title: "Group Cruise Planning in Istanbul",
     metaDescription: "Use this group-planning guide to compare vessel fit, group type, and proposal flow in Istanbul before moving to the right owner page.",
     excerpt: "This support guide helps groups choose the right Bosphorus route and owner page before sending a live proposal request.",
     category: "cruise-guide",
@@ -1230,7 +1230,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-sunset-dinner-cruise-vs-lunch",
-    title: "Bosphorus Dinner Cruise vs Sunset Cruise vs Daytime Bosphorus Services",
+    title: "Dinner vs Sunset vs Daytime Bosphorus Cruise",
     metaDescription: "Compare Bosphorus dinner cruise, sunset cruise, and tailored daytime Bosphorus services in Istanbul. Understand prices, timing, and which format fits your trip best.",
     excerpt: "Not sure whether to book dinner, sunset, or a tailored daytime Bosphorus plan? This comparison shows which format fits your timing, budget, and travel style best.",
     category: "cruise-guide",
@@ -1362,7 +1362,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-groups-istanbul",
-    title: "Private Group Bosphorus Planning in Istanbul — Corporate, Birthday & Travel Formats",
+    title: "Private Group Bosphorus Planning Istanbul",
     metaDescription: "Use this support guide to compare private group Bosphorus formats in Istanbul before moving to the right celebration or corporate owner page.",
     excerpt: "This support guide helps private groups understand vessel logic and the right next owner page before requesting a Bosphorus proposal.",
     category: "cruise-guide",
@@ -1474,7 +1474,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-dinner-cruise-price-guide-2026",
-    title: "How Istanbul Dinner Cruise Pricing Works in 2026 — Shared Package Guide",
+    title: "Istanbul Dinner Cruise Pricing 2026",
     metaDescription: "Use this support guide to understand the Istanbul dinner cruise price ladder, then move to the main dinner owner page for the live shared offer.",
     excerpt: "This support guide explains the current shared dinner ladder, what changes between tiers, and when you should move to the main dinner owner page.",
     category: "cruise-guide",
@@ -1552,7 +1552,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-boarding-points-guide-2026",
-    title: "Bosphorus Cruise Boarding Points 2026 — Which Pier for Sunset, Dinner & Yacht",
+    title: "Bosphorus Cruise Boarding Points 2026",
     metaDescription: "Bosphorus cruise departure points 2026: Kabataş for sunset €34 & dinner €30 cruises, marina for private yacht from €280. Get to the right pier, stress-free.",
     excerpt: "The right pier depends on the cruise type first and the hotel location second. This guide keeps the boarding choice simple so you can reach the right boat without second-guessing the map.",
     category: "tips",
@@ -1623,7 +1623,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "corporate-yacht-event-planning-istanbul",
-    title: "Corporate Yacht Event Planning in Istanbul - Guest Count, AV, Catering, and Boarding Flow",
+    title: "Corporate Yacht Event Planning Istanbul",
     metaDescription: "Plan a corporate yacht event in Istanbul with the right guest count, AV setup, catering style, and boarding flow. Practical Bosphorus planning tips for company events.",
     excerpt: "A useful planning guide for company teams, client hosts, and executive assistants choosing the right Bosphorus yacht setup before they request a quote.",
     category: "events",

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "bosphorus cruise 2026",
     "istanbul boat tour 2026",
   ],
-  alternates: { canonical: "https://merrysails.com", languages: buildHreflang("/") },
+  alternates: { canonical: "https://merrysails.com", languages: buildHreflang("") },
   openGraph: {
     title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
     description:

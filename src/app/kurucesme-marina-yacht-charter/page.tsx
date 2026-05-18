@@ -126,12 +126,12 @@ const fitCards = [
 
 const flowSteps = [
   {
-    title: "Confirm private yacht charter is the right owner path",
+    title: "Confirm private yacht charter is the right path",
     description:
       "The yacht owner page should still carry package comparison. This page exists after the private-charter direction is already clear.",
   },
   {
-    title: "Use Kurucesme as the practical departure reference",
+    title: "Use Kurucesme as the departure reference",
     description:
       "Kurucesme Marina is the cleanest public reference point for many private departures without turning every waterfront mention into a guarantee.",
   },

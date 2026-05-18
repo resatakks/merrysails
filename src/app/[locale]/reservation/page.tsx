@@ -11,22 +11,22 @@ export function generateStaticParams() {
 
 const META: Record<string, { title: string; description: string }> = {
   tr: {
-    title: "Boğaz Turu Rezervasyon | Gün Batımı, Akşam Yemeği & Yat",
+    title: "Boğaz Turu Rezervasyon — Gün Batımı & Yat",
     description:
       "İstanbul Boğaz turu rezervasyonu: gün batımı turu, akşam yemeği turu veya özel yat kiralama için tarih ve misafir sayısını seçin.",
   },
   de: {
-    title: "Bosporus Kreuzfahrt Reservierung | Sunset, Dinner & Yacht",
+    title: "Bosporus Kreuzfahrt Reservierung Istanbul",
     description:
       "Bosporus-Kreuzfahrt in Istanbul buchen: Sonnenuntergangs-Tour, Dinner-Kreuzfahrt oder Yacht-Charter — Datum und Personenzahl auswählen.",
   },
   fr: {
-    title: "Réservation Croisière Bosphore | Coucher de Soleil, Dîner",
+    title: "Réservation Croisière Bosphore Istanbul",
     description:
       "Réservez une croisière sur le Bosphore à Istanbul : croisière coucher de soleil, dîner-croisière ou charter de yacht — choisissez la date et le nombre de personnes.",
   },
   nl: {
-    title: "Bosporus Cruise Reservering | Zonsondergang, Diner & Jacht",
+    title: "Bosporus Cruise Reservering Istanbul",
     description:
       "Boek een Bosporus-cruise in Istanbul: zonsondergangs-cruise, dinercruise of jachtcharter — selecteer datum en aantal personen.",
   },

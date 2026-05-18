@@ -110,7 +110,7 @@ const fitCards = [
       "This page fits companies that want a premium setting with tighter movement, arrival, and host control than a generic venue usually allows.",
   },
   {
-    title: "The launch brief is narrower than a corporate event build",
+    title: "Launch brief is narrower than an event build",
     description:
       "It works when the company does not need a catch-all event page, but does need a cleaner answer for a launch-led Bosphorus format.",
   },

@@ -57,7 +57,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   de: {
-    title: "MerrySails Bosporus-Kreuzfahrt-Katalog | Istanbul 2026",
+    title: "MerrySails Bosporus-Kreuzfahrten Istanbul 2026",
     description:
       "Vollständiger MerrySails-Katalog mit Bosporus-Kreuzfahrten, Sonnenuntergang, Dinner-Kreuzfahrten und Jachtcharter-Angeboten in Istanbul.",
     canonicalPath: "/de/cruises",

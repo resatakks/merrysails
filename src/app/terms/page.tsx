@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Terms & Conditions — MerrySails Bosphorus Cruises",
+  title: "Terms & Conditions — MerrySails Bosphorus",
   description:
     "MerrySails booking terms and conditions. Cancellation policy, pricing, safety guidelines, and private charter terms for Bosphorus cruises in Istanbul.",
   alternates: { canonical: "https://merrysails.com/terms" },

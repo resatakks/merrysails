@@ -213,13 +213,35 @@ function lintFile(filePath) {
           });
         }
       }
-      // Title length check (max 60, suffix is 28 chars → page title max 32)
-      if (title.length > 60 && !/{.*}/.test(title)) {
+      // Title length: rendered = source + " | MerrySails" (13-char template
+      // suffix). Source > 47 → rendered > 60 → Semrush "long title".
+      if (title.length > 47 && !/{.*}/.test(title)) {
         warnings.push({
           file: rel(filePath),
           line: src.slice(0, m5.index).split("\n").length,
           rule: "title-too-long",
-          msg: `Title length ${title.length} > 60 (CLAUDE.md rule 6).`,
+          msg: `Title source length ${title.length} > 47 → rendered ${title.length + 13} > 60 (RULES.md).`,
+        });
+      }
+    }
+  }
+
+  // Rule 5b: data-file titles (blog posts, guides, tours, content) — these
+  // become page <title> via [slug] generateMetadata + the root template, so
+  // the same 47-char source budget applies. Match line-anchored title:/metaTitle:
+  // at 2-6 space indent (post/guide/tour level); nested expertQuote.title is
+  // mid-line and section objects use `heading:`, so neither is caught.
+  if (/\/src\/(data|content)\//.test(filePath.replace(/\\/g, "/"))) {
+    const dataTitleRegex = /^ {2,6}(?:metaTitle|title)\s*:\s*(["'`])((?:[^\\]|\\.)*?)\1/gm;
+    let dt;
+    while ((dt = dataTitleRegex.exec(src)) !== null) {
+      const title = dt[2];
+      if (title.length > 47 && !/\$\{/.test(title)) {
+        warnings.push({
+          file: rel(filePath),
+          line: src.slice(0, dt.index).split("\n").length,
+          rule: "title-too-long",
+          msg: `Data-file title source length ${title.length} > 47 → rendered ${title.length + 13} > 60 (RULES.md). "${title.slice(0, 50)}"`,
         });
       }
     }
@@ -425,6 +447,8 @@ function main() {
     files = walkDir(path.join(rootDir, "src/app"));
     files.push(...walkDir(path.join(rootDir, "src/components")));
     files.push(...walkDir(path.join(rootDir, "src/lib")));
+    files.push(...walkDir(path.join(rootDir, "src/data")));
+    files.push(...walkDir(path.join(rootDir, "src/content")));
   }
 
   for (const f of files) lintFile(f);

@@ -5,7 +5,7 @@ export const dutchProductPosts: BlogPost[] = [
     slug: "bosporus-cruise-prijzen-istanbul",
     locale: "nl",
     title:
-      "Bosporus Cruise Prijzen Istanbul 2026: Gedeeld, Diner & Privé — Volledig Vergelijk",
+      "Bosporus Cruise Prijzen Istanbul 2026",
     metaDescription:
       "Bosporus cruise prijs 2026: gedeelde tour vanaf €34/persoon, diner cruise €64–119, privé jachtcharter €380–1.800. Seizoenstarieven, pakkettenvergelijk en tips voor de beste prijs-kwaliteitsverhouding in Istanbul.",
     excerpt:
@@ -183,7 +183,7 @@ export const dutchProductPosts: BlogPost[] = [
     slug: "huwelijksaanzoek-op-de-bosporus",
     locale: "nl",
     title:
-      "Huwelijksaanzoek op de Bosporus Istanbul: Complete Gids voor een Onvergetelijk Moment",
+      "Huwelijksaanzoek op de Bosporus Istanbul",
     metaDescription:
       "Huwelijksaanzoek op de Bosporus Istanbul: pakketten vanaf €380, decoratietips, fotografenservice en de mooiste locaties op het water. TÜRSAB groep A-vergunning sinds 2001.",
     excerpt:
@@ -382,7 +382,7 @@ export const dutchProductPosts: BlogPost[] = [
     slug: "jacht-huren-istanbul-gids",
     locale: "nl",
     title:
-      "Jacht Huren Istanbul: Complete Gids 2026 — Prijzen, Boottypen en Routes",
+      "Jacht Huren Istanbul 2026 — Prijzen & Routes",
     metaDescription:
       "Jacht huren Istanbul 2026: tarieven vanaf €380, 4 boottypen, 5 Bosporusroutes en TÜRSAB A-licentie uitgelegd. Volledige gids voor privéboot huren op de Bosporus.",
     excerpt:
@@ -771,7 +771,7 @@ export const dutchProductPosts: BlogPost[] = [
   {
     slug: "prinseneilanden-istanbul-dagtocht-2026",
     locale: "nl",
-    title: "Prinseneilanden Istanbul 2026: Dagtocht, Veerboot & Jacht",
+    title: "Prinseneilanden Istanbul 2026: Dagtocht",
     metaDescription: "Prinseneilanden dagtocht Istanbul 2026: Büyükada, Heybeliada. Veerboot vanaf €5, privé jacht vanaf €280. TURSAB-vergund sinds 2001.",
     excerpt: "Een dag op de Prinseneilanden: autovrije rust, victoriaanse villa's en de Zee van Marmara vlak voor Istanbul. Merry Tourism — TURSAB A-Groep vergund sinds 2001, meer dan 50.000 gasten — begeleidt u bij het plannen van deze onvergetelijke uitstap.",
     category: "istanbul",

@@ -4,7 +4,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "istanbul-bogaz-turu-fiyatlari-2026",
     locale: "tr",
-    title: "İstanbul Boğaz Turu Fiyatları 2026: Paylaşımlı, Akşam Yemeği ve Özel Tur Karşılaştırması",
+    title: "İstanbul Boğaz Turu Fiyatları 2026",
     metaDescription:
       "2026 yılında İstanbul Boğaz turu fiyatları: paylaşımlı tur €34–40, akşam yemeği turu €55–119, özel yat kiralama €380–1.800. Sezon, paket ve kapasite karşılaştırması.",
     excerpt:
@@ -189,7 +189,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "istanbul-evlilik-teklifi-tekne",
     locale: "tr",
-    title: "İstanbul'da Teknede Evlilik Teklifi: Boğaz'da Unutulmaz Bir An Planlama Rehberi",
+    title: "İstanbul'da Teknede Evlilik Teklifi",
     metaDescription:
       "İstanbul'da teknede evlilik teklifi için eksiksiz rehber: fiyatlar, organizasyon ipuçları, en iyi güzergahlar, dekorasyon ve gerçek hikayeler. Özel yat €380'den başlar.",
     excerpt:
@@ -342,7 +342,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "istanbul-yat-kiralama-rehberi-2026",
     locale: "tr",
-    title: "İstanbul Yat Kiralama Rehberi 2026: Fiyatlar, Tekne Tipleri, Rotalar ve Dikkat Edilmesi Gerekenler",
+    title: "İstanbul Yat Kiralama Rehberi 2026",
     metaDescription:
       "İstanbul yat kiralama için kapsamlı 2026 rehberi: fiyatlar €380–1.800, tekne tipleri, Boğaz rotaları, dahil hizmetler ve TÜRSAB lisanslı operatör seçimi.",
     excerpt:
@@ -525,7 +525,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "istanbul-aksam-yemegi-turu-rehberi",
     locale: "tr",
-    title: "İstanbul Akşam Yemeği Boğaz Turu Rehberi 2026: Paketler, Fiyatlar ve İpuçları",
+    title: "İstanbul Akşam Yemeği Boğaz Turu 2026",
     metaDescription:
       "2026 yılında İstanbul akşam yemeği turu rehberi: Silver €30'dan Gold €90'a 4 paket, folklor gösterisi, otel transferi ve Boğaz manzarası. Rezervasyon ipuçları.",
     excerpt:
@@ -680,7 +680,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "istanbul-bogaz-gun-batimi-turu-deneyimi",
     locale: "tr",
-    title: "İstanbul Boğaz Gün Batımı Turu Deneyimi: Paylaşımlı Tur Nasıl Bir Şey?",
+    title: "İstanbul Boğaz Gün Batımı Turu 2026",
     metaDescription:
       "Boğaz gün batımı turu deneyimi: rota, ışık, rehberli anlatım ve pratik bilgiler. Paylaşımlı tur €40, 2,5 saat, Ortaköy'den kalkış. 2026 güncel rehberi.",
     excerpt:
@@ -839,7 +839,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "istanbul-bogaz-turu-saatleri-2026",
     locale: "tr",
-    title: "İstanbul Boğaz Turu Saatleri 2026: Kalkış Saatleri, Güzergah ve Rezervasyon İpuçları",
+    title: "İstanbul Boğaz Turu Saatleri 2026",
     metaDescription:
       "2026 İstanbul Boğaz turu kalkış saatleri: gün batımı turu 19:00 (yaz) / 16:30 (kış), akşam yemeği turu 20:30. Kabataş kalkışlı tüm program burada.",
     excerpt:
@@ -977,7 +977,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "yat-kiralama-tekne-fiyatlari-istanbul-2026",
     locale: "tr",
-    title: "Yat Kiralama ve Tekne Fiyatları İstanbul 2026 — Şeffaf Rehber",
+    title: "Yat Kiralama Fiyatları İstanbul 2026",
     metaDescription:
       "Yat kiralama fiyatları İstanbul 2026: özel yat €280'den başlar, paylaşımlı Boğaz turu kişi başı €34. Tekne tipleri, paket karşılaştırması ve rezervasyon rehberi.",
     excerpt:
@@ -1261,7 +1261,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "dogum-gunu-yat-kiralama-istanbul-2026",
     locale: "tr",
-    title: "Doğum Günü Yat Kiralama İstanbul 2026 — Şeffaf Rehber",
+    title: "Doğum Günü Yat Kiralama İstanbul 2026",
     metaDescription:
       "İstanbul Boğazı'nda doğum günü yat kiralama: €280 Essential'dan €680 VIP'e kadar 3 paket. Pasta, çiçek, fotoğrafçı eklentileri, sürpriz planlama takvimi ve rezervasyon rehberi.",
     excerpt:
@@ -1509,7 +1509,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "eminonu-karakoy-kabatas-bogaz-turu-2026",
     locale: "tr",
-    title: "Eminönü, Karaköy, Kabataş — Boğaz Turu Nereden Kalkar 2026",
+    title: "Boğaz Turu Nereden Kalkar? İstanbul 2026",
     metaDescription:
       "Eminönü, Karaköy ve Kabataş iskelelerinden kalkan Boğaz turları: hangi iskele hangi tur için uygun? Fiyat, ulaşım ve TÜRSAB lisanslı operatör rehberi.",
     excerpt:
@@ -1822,7 +1822,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
     locale: "tr",
-    title: "Eminönü, Karaköy, Kabataş Boğaz Turu İskele Rehberi 2026",
+    title: "Boğaz Turu İskele Rehberi İstanbul 2026",
     metaDescription:
       "Eminönü boğaz turu, Kabataş ve Karaköy iskelelerinden kalkış rehberi: gün batımı €34–40, akşam yemeği €30–90. TURSAB lisanslı MerrySails ile 2026 sefer saatleri ve ulaşım.",
     excerpt:
@@ -2145,7 +2145,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "bogaz-turu-fiyat-rehberi-istanbul-2026",
     locale: "tr",
-    title: "Boğaz Turu Fiyat Rehberi 2026 — €30'dan Başlayan İstanbul",
+    title: "Boğaz Turu Fiyat Rehberi 2026 İstanbul",
     metaDescription:
       "Boğaz turu fiyat 2026: akşam yemeği €30'dan, gün batımı €34'ten, özel yat €280'den. TURSAB lisanslı MerrySails ile boğaz turu ücreti karşılaştırması ve paket seçim rehberi.",
     excerpt:
@@ -2332,7 +2332,7 @@ export const turkishProductPosts: BlogPost[] = [
   {
     slug: "bogaz-turu-kac-saat-surer-rehberi-2026",
     locale: "tr",
-    title: "Boğaz Turu Kaç Saat Sürer? 2026 Süre ve Sefer Rehberi",
+    title: "Boğaz Turu Kaç Saat Sürer? 2026 Rehberi",
     metaDescription:
       "Boğaz turu kaç saat sürer? 2026: gün batımı turu 2 saat (€34–40), akşam yemeği 3.5 saat (€30–90), özel yat 2+ saat (€280+). TURSAB lisanslı MerrySails ile kısa ve tam gün sefer rehberi.",
     excerpt:
@@ -2798,7 +2798,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
   },
   {
     slug: "adalar-turu-istanbul-buyukada-rehberi-2026",
-    title: "Adalar Turu İstanbul Rehberi 2026 — Büyükada, Heybeliada",
+    title: "Adalar Turu İstanbul Rehberi 2026",
     metaDescription: "İstanbul Adalar turu 2026: Büyükada, Heybeliada, Burgazada. Vapur ile €5'den, özel yat ile €280'den. TURSAB lisanslı.",
     excerpt: "İstanbul'un en güzel kaçış noktası: arabasız dört ada, Osmanlı köşkleri, fayton gezintileri ve Marmara manzarası. 2026 sezonu için Adalar turu rehberiniz burada.",
     category: "cruise-guide",

@@ -110,7 +110,7 @@ const fitCards = [
       "This page fits companies that want more control, calmer flow, and better host attention than a public venue usually allows.",
   },
   {
-    title: "The hosting brief is narrower than a broad event build",
+    title: "Hosting brief is narrower than an event build",
     description:
       "It works when the company does not need a full launch or large activation, but still wants a premium Bosphorus setting for guests.",
   },

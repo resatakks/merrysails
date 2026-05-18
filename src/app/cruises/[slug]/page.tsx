@@ -308,7 +308,7 @@ export function generateStaticParams() {
 /* CTR-optimised title/description overrides for pages with impressions but zero clicks */
 const metaOverrides: Record<string, { title: string; description: string }> = {
   "bosphorus-sightseeing-cruise": {
-    title: "Bosphorus Sightseeing Cruise Istanbul 2026 — €15",
+    title: "Bosphorus Sightseeing Cruise Istanbul — €15",
     description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with an audio guide in 12 languages.",
   },
   "bosphorus-sunset-cruise": {
@@ -316,27 +316,27 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Bosphorus sunset cruise Istanbul from €30 (Tue & Thu). Two 2-hour options: Without Wine or With Wine. Snacks, drinks, and Bosphorus landmark views included.",
   },
   "wedding-anniversary": {
-    title: "Anniversary Yacht Cruise Istanbul 2026 — Private Bosphorus",
+    title: "Anniversary Yacht Cruise Istanbul — Bosphorus",
     description: "Celebrate your anniversary on a private yacht in Istanbul with a romantic Bosphorus cruise, decoration options, and sunset views.",
   },
   "romantic-marriage-proposal": {
-    title: "Marriage Proposal Yacht Istanbul 2026 — Private Bosphorus",
+    title: "Marriage Proposal Yacht Istanbul — Bosphorus",
     description: "Private Bosphorus yacht for a proposal with roses, candles, a Maiden's Tower backdrop, and optional photography support.",
   },
   "bosphorus-dinner-cruise": {
-    title: "Bosphorus Dinner Cruise Istanbul 2026 — 4 Packages from €30",
+    title: "Bosphorus Dinner Cruise Istanbul — from €30",
     description: "Bosphorus dinner cruise Istanbul from €30. Shared 3.5-hour evening with Silver and Gold package choices, package-based drinks, and hotel pickup support.",
   },
   "yacht-charter-in-istanbul": {
-    title: "Yacht Charter Istanbul 2026 — 3 Packages from €200",
+    title: "Yacht Charter Istanbul — 3 Packages from €200",
     description: "Book yacht charter in Istanbul from EUR 200 per yacht. Choose Essential, Premium, or VIP and expand the charter with meals, drinks, transfer, and event add-ons.",
   },
   "corporate-event-bosphorus-cruise": {
-    title: "Corporate Event Cruise Istanbul 2026 | Bosphorus Yacht Venue",
+    title: "Corporate Event Cruise Istanbul — Yacht Venue",
     description: "Host your corporate event on the Bosphorus with A/V, catering, branding, and private-yacht planning support for business groups. TURSAB licensed since 2001.",
   },
   "istanbul-princes-island-tour": {
-    title: "Princes Islands Tour Istanbul 2026 — €45 Full Day",
+    title: "Princes Islands Tour Istanbul — €45 Full Day",
     description: "Visit the car-free Princes Islands from Istanbul on a full-day tour with ferry, lunch, and guided island stops.",
   },
 };

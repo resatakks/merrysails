@@ -183,7 +183,7 @@ const flowSteps = [
       "Sunset, bridge lights, and quieter stretches of the Bosphorus all change how the coverage should be staged.",
   },
   {
-    title: "Keep the final written proposal as the source of truth",
+    title: "The written proposal is the source of truth",
     description:
       "The final booking message still confirms the actual photography, timing, and yacht setup on your chosen date.",
   },

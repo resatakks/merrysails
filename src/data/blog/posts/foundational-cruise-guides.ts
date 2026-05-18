@@ -41,7 +41,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-sunset-cruise-experience",
-    title: "Istanbul Bosphorus Sunset Cruise 2026 — Experience, Route & What to Expect",
+    title: "Istanbul Bosphorus Sunset Cruise 2026",
     metaDescription: "What to expect on a Bosphorus sunset cruise in Istanbul: 2-hour route, Maiden Tower, Ortakoy, drinks and snacks included. Shared cruise from €34 per person.",
     excerpt: "The Istanbul sunset cruise is one of the most magical experiences the city offers. Sail the Bosphorus as the sun sets behind minarets and palaces — here is everything you need to know.",
     category: "cruise-guide",
@@ -79,7 +79,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-dinner-cruise-what-to-expect",
-    title: "Istanbul Dinner Cruise from €30 — What's Really on Board (2026)",
+    title: "Istanbul Dinner Cruise from €30 (2026)",
     metaDescription: "From €30 (Silver) to €90 (Gold Unlimited): honest Istanbul dinner cruise breakdown — menu, Turkish show, 20:30 Kabataş boarding, direct booking tips.",
     excerpt: "The Bosphorus dinner cruise now runs as four shared packages from €30 to €90. Here is what changes between Silver and Gold, what is on the menu, and what to expect before booking.",
     category: "cruise-guide",
@@ -117,7 +117,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "short-bosphorus-cruise-tour",
-    title: "Short Bosphorus Cruise in Istanbul — Daytime Route Guide (2026)",
+    title: "Short Bosphorus Cruise Istanbul 2026",
     metaDescription: "Understand short Bosphorus cruise routes, daytime departure logic, and when a compact Bosphorus plan makes sense in Istanbul. Compare it with sunset and dinner cruises.",
     excerpt: "Short on time? This guide explains how a compact daytime Bosphorus route works, who it suits best, and when you should choose the sunset or dinner cruise instead.",
     category: "cruise-guide",
@@ -165,7 +165,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-lunch-cruise-bosphorus",
-    title: "Istanbul Lunch Cruise Ideas on the Bosphorus — Daytime Planning Guide",
+    title: "Istanbul Lunch Cruise on the Bosphorus",
     metaDescription: "Explore how a lunch-led daytime Bosphorus plan can work in Istanbul, what a typical route includes, and when a custom daytime service is better than a fixed shared cruise.",
     excerpt: "A lunch-led Bosphorus experience can still be a great fit for daytime travellers, families, and custom groups. This guide explains how to plan it without turning it into a competing hero sales page.",
     category: "cruise-guide",
@@ -213,7 +213,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "princes-islands-boat-tour-istanbul",
-    title: "Princes' Islands Boat Tour — Guided Cruise from Istanbul (2026)",
+    title: "Princes' Islands Boat Tour Istanbul 2026",
     metaDescription: "Guided Princes' Islands boat tour from Istanbul: Büyükada, Heybeliada, scenic Marmara views. Cruise from €35 per person with live commentary — day trip guide 2026.",
     excerpt: "Escape Istanbul's bustle with a day trip to the Princes' Islands. Discover car-free streets, Victorian mansions, pine forests, and stunning Marmara Sea views.",
     category: "cruise-guide",
@@ -357,7 +357,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-boat-tour-vs-ferry",
-    title: "Istanbul Boat Tour vs Ferry — Cost Breakdown & Budget Guide (2026)",
+    title: "Istanbul Boat Tour vs Ferry — Cost Guide",
     metaDescription: "Istanbul boat tour vs public ferry price comparison: €3 ferry vs €15–65 cruise. Real cost per hour, hidden expenses & which gives the best value.",
     excerpt: "Public ferry or private boat tour? We compare both Bosphorus options so you can decide which experience suits your budget, schedule, and travel style.",
     category: "cruise-guide",
@@ -395,7 +395,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-safety-tips",
-    title: "Bosphorus Cruise Safety Tips — Everything You Need to Know",
+    title: "Bosphorus Cruise Safety Tips Istanbul",
     metaDescription: "Is a Bosphorus cruise safe? Complete safety guide covering weather, seasickness, licensed companies, and what to know before boarding in Istanbul.",
     excerpt: "Everything you need to know about safety on Bosphorus cruises — from choosing licensed companies to handling weather and staying comfortable on the water.",
     category: "cruise-guide",
@@ -482,7 +482,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-night-cruise-guide",
-    title: "Bosphorus Night Cruise — Sightseeing & Photography Guide",
+    title: "Bosphorus Night Cruise — Photography Guide",
     metaDescription: "Photograph Istanbul's illuminated Bosphorus on a night sightseeing cruise. Camera settings, best viewpoints, glowing palaces & lit bridges from the water.",
     excerpt: "Istanbul transforms after dark — mosques glow, palaces shimmer, and the Bosphorus bridges become ribbons of light. Here is your guide to the magical night cruise.",
     category: "cruise-guide",
@@ -531,7 +531,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-departure-times-istanbul-2026",
-    title: "Bosphorus Cruise Departure Times Istanbul 2026 — When Do Sunset & Evening Cruises Start?",
+    title: "Bosphorus Cruise Departure Times 2026",
     metaDescription: "Bosphorus cruise departure times 2026 by month — sunset cruise departs 18:00–19:30 (seasonal), dinner cruise departs 20:30 year-round. Exact boarding times, moonlight cruise schedule, and what to expect.",
     excerpt: "Knowing when your Bosphorus cruise departs makes the difference between a golden-hour deck experience and boarding in the dark. Here are exact 2026 departure times for every cruise type, updated monthly.",
     category: "cruise-guide",
@@ -585,7 +585,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-price-istanbul-2026",
-    title: "Bosphorus Cruise Prices Istanbul 2026 — Full Comparison: Sunset, Dinner & Private Yacht",
+    title: "Bosphorus Cruise Prices Istanbul 2026",
     metaDescription: "Bosphorus cruise prices 2026: sunset cruise from €34, dinner cruise €30–€90 (4 packages), private yacht from €280. What's included at each price, hidden costs to know, and how to book direct for best rate.",
     excerpt: "Bosphorus cruise prices range from €30 for a shared dinner cruise to €680+ for a VIP private yacht. Here is exactly what each price tier includes in 2026, with no hidden fees.",
     category: "cruise-guide",
@@ -912,7 +912,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "istanbul-dinner-cruise-etiquette-2026",
-    title: "Istanbul Dinner Cruise Etiquette & What to Expect 2026",
+    title: "Istanbul Dinner Cruise Etiquette 2026",
     metaDescription: "Istanbul dinner cruise step-by-step: dress code, tip culture, drinks etiquette, photo rules, food expectations, and what changes between Silver (€30-45) and Gold (€80-90) tiers.",
     excerpt: "First-time dinner cruise on the Bosphorus? The honest guide to what to wear, how the evening flows, and what every package tier actually delivers.",
     category: "cruise-guide",
@@ -1009,7 +1009,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "private-yacht-charter-istanbul-2026-buyers-guide",
-    title: "Private Yacht Charter Istanbul 2026 — Honest Buyer's Guide",
+    title: "Private Yacht Charter Istanbul 2026",
     metaDescription: "Private yacht charter in Istanbul: Essential €280, Premium €380, VIP €680 per yacht. Honest breakdown of what each package includes, when it makes financial sense, and how to compare operators.",
     excerpt: "A private Bosphorus yacht charter starts at €280 per boat — here is an honest breakdown of what each package delivers, when it makes financial sense versus a shared cruise, and what to look for when comparing Istanbul operators.",
     category: "yacht-guide",

@@ -3,7 +3,7 @@ import type { BlogPost } from "../types";
 export const privateYachtAndOccasionGuides: BlogPost[] = [
 {
     slug: "private-yacht-charter-istanbul-guide",
-    title: "How Private Yacht Charter Works in Istanbul — Planning Guide",
+    title: "Private Yacht Charter Istanbul — Planning",
     metaDescription: "Understand how private yacht charter works in Istanbul: base pricing, route choices, add-ons, and when to use the live /yacht-charter-istanbul booking page.",
     excerpt: "A planning-first guide to private yacht charter in Istanbul — base tiers, route logic, add-ons, and the practical steps behind a smooth Bosphorus booking.",
     category: "yacht-guide",
@@ -195,7 +195,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
   },
 {
     slug: "marriage-proposal-yacht-istanbul",
-    title: "How to Plan a Bosphorus Yacht Proposal in Istanbul",
+    title: "Bosphorus Yacht Proposal Istanbul — Guide",
     metaDescription: "Planning guide for a Bosphorus yacht proposal in Istanbul: timing, setup, photographer flow, and when to use the live /proposal-yacht-rental-istanbul page.",
     excerpt: "A planning-first guide to Bosphorus yacht proposals in Istanbul — timing, styling, photographer coordination, and the steps behind a smooth surprise.",
     category: "events",
@@ -243,7 +243,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
   },
 {
     slug: "yacht-birthday-party-ideas",
-    title: "Yacht Birthday Party Istanbul — Themes, Decorations & Planning",
+    title: "Yacht Birthday Party Istanbul — Themes",
     metaDescription: "Plan a yacht birthday on the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus): theme ideas for 30th/40th/50th, decoration packages, cake options, surprise party tips & milestone celebration plans.",
     excerpt: "Celebrate your birthday on the Bosphorus! From themed decorations to custom cakes, here is everything you need to plan an unforgettable yacht birthday party.",
     category: "events",
@@ -387,7 +387,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
   },
 {
     slug: "corporate-event-yacht-bosphorus",
-    title: "Corporate Hosting on a Bosphorus Yacht — Client Entertainment Guide",
+    title: "Corporate Yacht Hosting on the Bosphorus",
     metaDescription: "Host clients, product launches & executive dinners on a Bosphorus yacht. AV setup, catering packages, branded events & corporate charter pricing.",
     excerpt: "Elevate your corporate events with a private yacht on the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus). From team building to client entertaining, create lasting impressions on the water.",
     category: "events",

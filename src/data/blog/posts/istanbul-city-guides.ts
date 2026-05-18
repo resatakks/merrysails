@@ -195,7 +195,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-hidden-gems-local-guide",
-    title: "Istanbul Hidden Gems — 10 Local Secrets Most Tourists Miss",
+    title: "Istanbul Hidden Gems — 10 Local Secrets",
     metaDescription: "Discover Istanbul's hidden gems beyond the tourist trail. the [Balat](https://en.wikipedia.org/wiki/Balat,_Istanbul) neighborhood's colorful streets, Çamlıca Hill, local meyhanes, secret gardens & neighborhood markets.",
     excerpt: "Go beyond the tourist trail with these 10 Istanbul hidden gems — colorful neighborhoods, secret gardens, local markets, and experiences most visitors never find.",
     category: "istanbul",
@@ -243,7 +243,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "best-restaurants-near-bosphorus",
-    title: "Best Restaurants Near the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus) Istanbul",
+    title: "Best Restaurants Near the Bosphorus Istanbul",
     metaDescription: "Find the best restaurants near the Bosphorus in Istanbul with waterfront views. From fresh seafood to Ottoman cuisine, here's where to eat with a view.",
     excerpt: "Dine with a Bosphorus view at Istanbul's best waterfront restaurants — from casual fish restaurants to fine dining, here are the top picks for every budget.",
     category: "istanbul",
@@ -292,7 +292,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "galata-tower-neighborhood-guide",
-    title: "the [Galata Tower](https://en.wikipedia.org/wiki/Galata_Tower) & Neighborhood Guide Istanbul",
+    title: "Galata Tower & Neighborhood Guide Istanbul",
     metaDescription: "Explore the Galata Tower and its charming neighborhood in Istanbul. Discover cafes, art galleries, boutiques, and local tips for the coolest quarter.",
     excerpt: "The Galata Tower and surrounding neighborhood offer medieval history, panoramic views, cobblestone lanes, and Istanbul's best cafe and gallery scene.",
     category: "istanbul",
@@ -341,7 +341,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "grand-bazaar-shopping-guide",
-    title: "the [Grand Bazaar](https://en.wikipedia.org/wiki/Grand_Bazaar,_Istanbul) Istanbul — Shopping Guide",
+    title: "Grand Bazaar Istanbul — Shopping Guide",
     metaDescription: "Navigate the Grand Bazaar in Istanbul like a pro. Our shopping guide covers what to buy, how to bargain, best stalls, and insider tips for first-timers.",
     excerpt: "The Grand Bazaar is one of the world's oldest and largest covered markets. This guide helps you navigate, bargain, and find genuine treasures.",
     category: "istanbul",
@@ -439,7 +439,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-nightlife-guide",
-    title: "Istanbul Nightlife Guide — Best Bars, Clubs & Rooftop Venues",
+    title: "Istanbul Nightlife — Bars, Clubs & Rooftops",
     metaDescription: "Istanbul nightlife guide. Best rooftop bars, live music venues, meyhanes & clubs in the [Beyoğlu](https://en.wikipedia.org/wiki/Beyo%C4%9Flu) district, Karaköy, Bebek & Kadıköy. Where locals go out after dark.",
     excerpt: "Istanbul's nightlife ranges from rooftop cocktail bars to traditional meyhane taverns and thumping clubs. Here is where to go for the best after-dark experiences.",
     category: "istanbul",

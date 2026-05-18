@@ -132,7 +132,7 @@ const faqSchema = {
 
 const fitCards = [
   {
-    title: "The shared sunset route is already the right product",
+    title: "The shared sunset route is the right product",
     description:
       "Use this page when you already know you want the shared golden-hour cruise and do not need to compare dinner or private yacht options anymore.",
   },
@@ -142,7 +142,7 @@ const fitCards = [
       "This page is for the narrower case where the real question is which shared sunset option to reserve and how the public ticket logic works.",
   },
   {
-    title: "You want reserve-direct clarity before contacting the team",
+    title: "You want reserve-direct clarity before the team",
     description:
       "Use this page when the next step is moving toward the owner page or reservation flow rather than reading another broad comparison article.",
   },
@@ -192,7 +192,7 @@ const trustSignals = [
 
 const flowSteps = [
   {
-    title: "Confirm the shared sunset route is the right product",
+    title: "Confirm the shared sunset route is right",
     description:
       "This page only makes sense after you know the plan should stay on the shared golden-hour route rather than dinner or private yacht.",
   },
@@ -202,7 +202,7 @@ const flowSteps = [
       "The key choice is between the public shared sunset options, not between multiple different sunset routes.",
   },
   {
-    title: "Use Karakoy guidance only if the arrival flow is the blocker",
+    title: "Use Karakoy guidance if arrival is the blocker",
     description:
       "Ticket fit and meeting-flow fit are different sub-intents. Switch to the local guide only when arrival confidence is the real blocker.",
   },

@@ -107,7 +107,7 @@ const fitCards = [
       "This page fits couples who prefer a quieter Bosphorus evening over a louder entertainment-led cruise format.",
   },
   {
-    title: "The evening is romantic but not necessarily a proposal",
+    title: "Romantic evening, not necessarily a proposal",
     description:
       "It works when the booking is for a date night, honeymoon evening, or anniversary dinner without needing a full proposal build.",
   },

@@ -70,13 +70,15 @@ hasMerchantReturnPolicy.returnMethod
 
 | Element | Limit | Not |
 |---|---|---|
-| Title (page) | ≤32 char | + template suffix 28 char = 60 total |
-| Title (template suffix) | Brand name | Otomatik root layout'tan gelir, sayfaya yazma |
+| Title (kaynak `title:`) | **≤47 char** | + template suffix ` \| MerrySails` 13 char = ≤60 render |
+| Title (template suffix) | ` \| MerrySails` | Otomatik root layout'tan gelir, sayfaya yazma. (2026-05-18: 27→13 char kısaltıldı) |
+| Title (data dosyaları) | ≤47 char | blog/guide/tour post-level `title`/`metaTitle` de aynı kurala tabi — template suffix alıyor |
 | Meta description | 130-160 char | Truncate ise: 155 ideal |
 | H1 | 1 adet/sayfa | Keyword-rich, brand co-occurrence |
 | H2 | Keyword cluster | LSI variant'lar |
 
-**Kural**: Title'a brand adını **manuel ekleme** — template ekliyor. "X | Brand | Brand 2026" duplicate olur.
+**Kural**: Title'a brand adını **manuel ekleme** — template ekliyor.
+**Kural**: Kaynak title ≤47 char (render = +13 char suffix = ≤60). `lint-schema.mjs` `src/app` + `src/data` + `src/content` tarar, 47 üstünü `title-too-long` warning'le flag eder.
 
 ---
 

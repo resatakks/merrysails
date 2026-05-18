@@ -133,23 +133,23 @@ const expertise = [
 const writtenFor = [
   {
     href: "/blog/best-bosphorus-cruise-istanbul-guide",
-    title: "Best Bosphorus Cruise Istanbul 2026 — Honest Guide",
+    title: "Best Bosphorus Cruise Istanbul 2026 — Guide",
   },
   {
     href: "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
-    title: "Best Bosphorus Sunset Cruise Istanbul 2026 — Comparison",
+    title: "Best Bosphorus Sunset Cruise Istanbul 2026",
   },
   {
     href: "/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
-    title: "Bosphorus Cruise vs Ferry — Tourist Decision Guide 2026",
+    title: "Bosphorus Cruise vs Ferry — Decision Guide 2026",
   },
   {
     href: "/blog/istanbul-dinner-cruise-etiquette-2026",
-    title: "Istanbul Dinner Cruise Etiquette & What to Expect 2026",
+    title: "Istanbul Dinner Cruise Etiquette & Tips 2026",
   },
   {
     href: "/blog/private-yacht-charter-istanbul-2026-buyers-guide",
-    title: "Private Yacht Charter Istanbul 2026 — Honest Buyer's Guide",
+    title: "Private Yacht Charter Istanbul 2026 — Guide",
   },
 ];
 

@@ -168,7 +168,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "Types d'événements privés sur le Bosphore à Istanbul",
+    title: "Événements privés Bosphore Istanbul — Types",
     description:
       "Événements privés Bosphore Istanbul : demande en mariage, dîner privé, célébration et entreprise. Charter général : commencez par Yacht Charter Istanbul.",
     canonicalPath: "/fr/private-tours",

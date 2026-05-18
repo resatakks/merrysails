@@ -45,7 +45,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Boğaz Gün Batımı Turu İstanbul — €30'dan başlayan fiyatlar",
+    title: "Boğaz Gün Batımı Turu İstanbul — €30'dan",
     description:
       "Boğaz gün batımı turu €30'dan (Sal & Per). 2 saatlik lüks yat, canlı rehber, ikramlar ve şarap seçeneği. TÜRSAB lisanslı. Hemen rezervasyon.",
     h1: "Boğaz Gün Batımı Turu Istanbul — Özel Yat",
@@ -203,7 +203,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Per WhatsApp anfragen",
   },
   fr: {
-    title: "Croisière Coucher de Soleil Bosphore Istanbul — Dès €30",
+    title: "Croisière Coucher Soleil Bosphore Istanbul €30",
     description:
       "Croisière coucher de soleil Bosphore Istanbul dès €30 (mar & jeu). 2h yacht de luxe, guide live, rafraîchissements. Avec vin dès €35. Réservez en ligne.",
     h1: "Croisière Coucher de Soleil Bosphore Istanbul — Yacht Privé",
@@ -269,7 +269,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaWhatsappLabel: "Contacter par WhatsApp",
   },
   nl: {
-    title: "Bosporus Zonsondergang Cruise Istanbul — Vanaf €30",
+    title: "Bosporus Zonsondergang Cruise Istanbul — €30",
     description:
       "Bosporus zonsondergang cruise Istanbul v.a. €30 (di & do). 2u luxe jacht, live gids, hapjes. Wijnoptie v.a. €35. TÜRSAB-gecertificeerd, direct boeken.",
     h1: "Bosporus Zonsondergang Cruise Istanbul — Privé Jacht",

@@ -39,8 +39,12 @@ const CLARITY_PROJECT_ID =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "MerrySails — Bosphorus Cruise & Yacht Charter Istanbul 2026 | Book Online",
-    template: "%s | MerrySails Istanbul 2026",
+    // Suffix kept short (" | MerrySails" = 13 chars) so the page-specific part
+    // has a ~47-char budget before the 60-char limit. The old 27-char suffix
+    // (" | MerrySails Istanbul 2026") pushed 138 pages over Semrush's long-title
+    // threshold — "Istanbul" is already in nearly every page title anyway.
+    default: "Bosphorus Cruise & Yacht Charter Istanbul | MerrySails",
+    template: "%s | MerrySails",
   },
   description:
     "MerrySails focuses on Bosphorus sunset cruises, Bosphorus dinner cruises, and yacht charter in Istanbul, with dedicated private event, proposal, and corporate pages.",

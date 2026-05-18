@@ -158,7 +158,7 @@ const flowSteps = [
       "Dinner, flowers, cake, music, and other extras can still be added later if the brief grows beyond a simple hourly hire.",
   },
   {
-    title: "Move to a broader owner page when the brief gets heavier",
+    title: "Move to an owner page if the brief gets heavier",
     description:
       "If the request becomes package-led, dinner-led, proposal-led, or company-led, it usually belongs on a more specific owner or support page.",
   },

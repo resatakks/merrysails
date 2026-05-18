@@ -164,7 +164,7 @@ const comparePages = [
 
 const flowSteps = [
   {
-    title: "Start with the team objective, not the boat alone",
+    title: "Start with the team objective, not the boat",
     description:
       "The most useful team-building quotes begin with what the company wants the group to feel or achieve, then move to vessel and service fit.",
   },

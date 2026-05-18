@@ -28,8 +28,8 @@ Workflow:
 4d. **`npm run lint:schema`** her commit öncesi çalıştır — `scripts/lint-schema.mjs` rules 1-7'yi enforce eder + Event required fields + title suffix + price reality. ZERO ERROR olmadan deploy etme.
 
 ### Title Tag Kuralları
-5. **Asla `| MerrySails` yazma** title sonuna — root layout zaten `template: "%s | MerrySails Istanbul 2026"` ekliyor. Yazarsan duplicate olur: "X | MerrySails | MerrySails Istanbul 2026".
-6. Title max 60 karakter (template suffix dahil). Suffix 28 karakter, demek sayfa kısmı max 32 karakter.
+5. **Asla `| MerrySails` yazma** title sonuna — root layout zaten `template: "%s | MerrySails"` ekliyor. Yazarsan duplicate olur. (2026-05-18: suffix `"%s | MerrySails Istanbul 2026"` 27 char → `"%s | MerrySails"` 13 char kısaltıldı — 138 sayfa Semrush long-title eşiğini aşıyordu.)
+6. Title max 60 karakter render (= kaynak + ` | MerrySails` 13 char). Demek **kaynak `title:` max 47 karakter** — blog/guide/tour data dosyalarındaki post-level title dahil. `lint-schema.mjs` 47 üstünü flag eder + `src/data` + `src/content` tarar.
 7. Locale title'larında fiyat gösteriyorsan **gerçek fiyatı** yaz: dinner €30 (NOT €55), sunset €34, yacht €280. Yanlış fiyat = yanlış intent.
 
 ### URL & Redirect Kuralları

@@ -84,7 +84,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "Blog Croisière Bosphore — Guides Voyage Istanbul",
+    title: "Blog Croisière Bosphore — Guides Istanbul",
     description:
       "Guides experts Istanbul : croisière coucher de soleil Bosphore, charter de yacht, avis croisières dîner et conseils voyage — agréé TÜRSAB groupe A depuis 2001.",
     canonicalPath: "/fr/blog",

@@ -3,7 +3,7 @@ import type { BlogPost } from "../types";
 export const commercialCruiseGuides: BlogPost[] = [
 {
     slug: "best-istanbul-cruise-2026",
-    title: "Which MerrySails Istanbul Cruise Should You Choose in 2026? Comparison Guide",
+    title: "Best Istanbul Cruise to Choose 2026",
     metaDescription: "Use this comparison guide after the main Bosphorus cruise hub to compare MerrySails sunset, dinner, and yacht options without replacing the core owner page.",
     excerpt: "This comparison guide helps you narrow sunset, dinner, and yacht choices after the main Bosphorus cruise hub has already captured the broad intent.",
     category: "cruise-guide",
@@ -41,7 +41,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-honeymoon-cruise-guide",
-    title: "Honeymoon Cruise Istanbul — Romantic Bosphorus (2026)",
+    title: "Honeymoon Bosphorus Cruise Istanbul 2026",
     metaDescription: "Plan your Istanbul honeymoon cruise on the Bosphorus — private yacht from €280 with champagne, decoration & photographer. Book direct at merrysails.com.",
     excerpt: "A Bosphorus honeymoon cruise in Istanbul combines two-continent views, Ottoman palace backdrops, and total privacy on a private yacht. Here is everything you need to plan the most romantic evening of your trip.",
     category: "cruise-guide",
@@ -122,7 +122,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-reviews-guide",
-    title: "Bosphorus Cruise Reviews — How to Read Guest Feedback (2026)",
+    title: "Bosphorus Cruise Reviews Istanbul 2026",
     metaDescription: "Learn how to read Bosphorus cruise reviews before booking. Compare dinner cruise, sunset cruise, yacht charter, boarding, food, route, and value signals.",
     excerpt: "Bosphorus cruise reviews are most useful when you know what to look for: route clarity, boarding, food, table setup, crew communication, and whether the selected product matched the guest's intent.",
     category: "cruise-guide",
@@ -207,7 +207,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-cruise-package-deals",
-    title: "Istanbul Cruise Packages — Compare, Save & Book Direct (2026)",
+    title: "Istanbul Cruise Packages: Compare & Book 2026",
     metaDescription: "Compare all Istanbul cruise packages — sunset (€34/€40), dinner (€30–€90), and private yacht (€280/€380/€680). Book direct with MerrySails and avoid reseller markup.",
     excerpt: "Istanbul cruise packages range from €15 budget sightseeing tours to €680 all-inclusive private yacht experiences. This guide compares every option, breaks down what is actually included, and explains how to save up to 35% by booking direct.",
     category: "cruise-guide",
@@ -291,7 +291,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "how-to-avoid-seasickness-cruise",
-    title: "How to Avoid Seasickness on a Bosphorus Cruise — Expert Tips",
+    title: "Avoid Seasickness on a Bosphorus Cruise",
     metaDescription: "Worried about seasickness on a Bosphorus cruise? Expert tips on the best seats, natural remedies, medications, and why the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus) is calmer than open sea.",
     excerpt: "Seasickness concerns stop many visitors from booking a Bosphorus cruise — often unnecessarily. The strait is one of the calmest waterways in the region. Here are expert tips for staying comfortable on any Istanbul cruise.",
     category: "tips",
@@ -371,7 +371,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-currency-tips-tourists",
-    title: "Istanbul Currency Guide for Tourists — TRY, EUR & Tipping (2026)",
+    title: "Istanbul Currency Guide: TRY, EUR & Tips",
     metaDescription: "Complete Istanbul currency guide for tourists in 2026 — exchange TRY, use EUR on cruises, ATM tips, tipping customs, and how to avoid common money scams.",
     excerpt: "Istanbul uses the the [Turkish Lira](https://en.wikipedia.org/wiki/Turkish_lira) (TRY), but EUR and USD are widely accepted at tourist services including Bosphorus cruises. Here is a practical 2026 guide to currency exchange, ATMs, tipping customs, and avoiding money mistakes.",
     category: "istanbul",
@@ -458,7 +458,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-party-istanbul-guide",
-    title: "Private Yacht Party in Istanbul — Guest Size, Setup & Booking Guide 2026",
+    title: "Private Yacht Party Istanbul 2026 Guide",
     metaDescription: "Plan a private yacht party in Istanbul with the right guest count, yacht class, food, styling, and booking flow. A practical Bosphorus celebration guide for 2026.",
     excerpt: "Everything you need to plan an unforgettable private yacht party on the Bosphorus, from choosing the right yacht and service level to music, catering, decorations, and boarding logistics.",
     category: "yacht-guide",
@@ -526,7 +526,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-sunset-cruise-guide",
-    title: "Istanbul Sunset Cruise — Ultimate Guide to Golden Hour on the Bosphorus",
+    title: "Istanbul Sunset Cruise Golden Hour Guide",
     metaDescription: "Experience Istanbul's most magical sunset from the Bosphorus. From €40. Routes, best months, photography tips & booking advice. Complete 2026 guide.",
     excerpt: "A comprehensive guide to sunset cruises on the Bosphorus — covering the best seasons, routes, photography opportunities, and what makes watching the sun set between two continents an unforgettable Istanbul experience.",
     category: "cruise-guide",
@@ -593,7 +593,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-landmarks-cruise-tour",
-    title: "Bosphorus Landmarks Cruise — 14 Historic Sites You Will See from the Water",
+    title: "Bosphorus Landmarks Cruise: 14 Sites",
     metaDescription: "Explore Istanbul's greatest landmarks from the Bosphorus. Ottoman palaces, Byzantine fortresses, iconic bridges & more. Complete sightseeing cruise guide 2026.",
     excerpt: "A detailed guide to the historic landmarks visible from a Bosphorus cruise — from Ottoman palaces and Byzantine fortresses to iconic bridges and waterfront mansions. Discover the stories behind what you see from the water.",
     category: "cruise-guide",
@@ -667,7 +667,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-corporate-yacht-events",
-    title: "Corporate Yacht Events in Istanbul — Bosphorus Business Entertaining Guide 2026",
+    title: "Corporate Yacht Events Istanbul 2026",
     metaDescription: "Host unforgettable corporate events on a Bosphorus yacht. Team building, client entertaining, product launches from €680. Full-service packages available.",
     excerpt: "A comprehensive guide to hosting corporate events on Bosphorus yachts — from team-building cruises and client entertaining to product launches and executive retreats. Discover why Istanbul's waterway is the world's most impressive business venue.",
     category: "events",
@@ -746,7 +746,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "how-to-get-istanbul-airport-to-bosphorus-cruise",
-    title: "How to Get from Istanbul Airport to Your Bosphorus Cruise",
+    title: "Istanbul Airport to Bosphorus Cruise",
     metaDescription: "Step-by-step guide from Istanbul Airport (IST) to Bosphorus cruise piers. Compare taxis, shuttles, private transfers & public transport. Prices from €10.",
     excerpt: "Arriving at Istanbul Airport and heading straight to a Bosphorus cruise? This guide covers every transfer option — from private airport transfers to public transport — so you reach the pier relaxed and on time.",
     category: "istanbul",
@@ -824,7 +824,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-cruise-weekend-itinerary",
-    title: "Istanbul Cruise Weekend Itinerary — 2 Days of Bosphorus Magic",
+    title: "Istanbul Cruise Weekend Itinerary 2026",
     metaDescription: "Plan the perfect Istanbul cruise weekend: airport arrival, Bosphorus dinner cruise, yacht charter & Old City tour. Day-by-day itinerary with prices & tips.",
     excerpt: "Two days in Istanbul built around unforgettable Bosphorus cruises — from airport transfer to sunset sailing, dinner cruise to Old City exploration. Your complete weekend plan.",
     category: "cruise-guide",
@@ -905,7 +905,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "best-istanbul-activities-after-bosphorus-cruise",
-    title: "15 Best Istanbul Activities After Your Bosphorus Cruise",
+    title: "Best Istanbul Activities After Bosphorus",
     metaDescription: "What to do after your Bosphorus cruise in Istanbul? 15 must-try activities: historic tours, food walks, hammam visits, shopping & nightlife. Expert local guide.",
     excerpt: "Your Bosphorus cruise was breathtaking — now what? Discover the best Istanbul activities to continue the magic, from ancient landmarks and food tours to hammam rituals and vibrant nightlife.",
     category: "istanbul",
@@ -986,7 +986,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-3-day-itinerary-cruises-tours",
-    title: "Istanbul 3-Day Itinerary — Best Cruises, Tours & Hidden Gems",
+    title: "Istanbul 3-Day Itinerary: Cruises & Tours",
     metaDescription: "The ultimate Istanbul 3-day itinerary: Bosphorus cruises, guided tours, food walks & local gems. Day-by-day plan with prices, timing & expert insider tips.",
     excerpt: "Three days in Istanbul combining Bosphorus cruises, historic tours, culinary adventures, and neighbourhood exploration. A day-by-day itinerary crafted by local experts for an unforgettable visit.",
     category: "istanbul",
@@ -1079,7 +1079,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-prices-2026",
-    title: "Bosphorus Cruise Prices 2026 — Sunset, Dinner, and Yacht Comparison Guide",
+    title: "Bosphorus Cruise Prices 2026 Comparison",
     metaDescription: "Use this Bosphorus price guide after the main compare hub to understand the MerrySails sunset, dinner, and yacht ladders without confusing the broad owner page.",
     excerpt: "This price guide explains the MerrySails sunset, dinner, and yacht ladders after the main Bosphorus cruise hub has already handled the broad-intent comparison.",
     category: "cruise-guide",
@@ -1183,7 +1183,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-rental-istanbul",
-    title: "Private Yacht Rental Istanbul — Prices, Boats & Booking Guide 2026",
+    title: "Private Yacht Rental Istanbul 2026",
     metaDescription: "Rent a private yacht in Istanbul from EUR 280. Compare yacht types, capacities & routes on the Bosphorus. Corporate events, weddings, birthdays — complete 2026 booking guide.",
     excerpt: "Everything you need to know about renting a private yacht in Istanbul: yacht types, pricing tiers, popular Bosphorus routes, and how to plan the perfect event on the water — from intimate proposals to corporate gatherings.",
     category: "yacht-guide",
@@ -1274,7 +1274,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "best-time-bosphorus-cruise",
-    title: "Best Time for a Bosphorus Cruise — Morning vs Sunset vs Night",
+    title: "Best Time for a Bosphorus Cruise",
     metaDescription: "When is the best time for a Bosphorus cruise? Monthly weather guide, golden hour times, crowd levels & photography tips. Plan your perfect Istanbul cruise in 2026.",
     excerpt: "Discover the ideal time of day, month, and season for your Bosphorus cruise in Istanbul. This guide covers morning vs sunset vs night cruises, monthly weather patterns, photography conditions, and seasonal events to help you plan the perfect trip.",
     category: "cruise-guide",
@@ -1376,7 +1376,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "top-10-bosphorus-landmarks",
-    title: "Top 10 Things to See on a Bosphorus Cruise — Landmarks Guide",
+    title: "Top 10 Bosphorus Cruise Landmarks",
     metaDescription: "Discover the top 10 landmarks on a Bosphorus cruise in Istanbul. From Dolmabahce Palace to Rumeli Fortress — history, photo tips & insider facts for every stop.",
     excerpt: "A Bosphorus cruise passes some of the most remarkable architecture in the world. Here are the top 10 landmarks you will see, with history, photo tips, and insider knowledge from decades on the water.",
     category: "cruise-guide",
@@ -1417,7 +1417,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-vs-princes-islands",
-    title: "Bosphorus Cruise vs Princes Islands Tour — Which to Choose?",
+    title: "Bosphorus Cruise vs Princes Islands Tour",
     metaDescription: "Bosphorus cruise or Princes Islands tour? Compare duration, cost, experience & best season for each. Honest advice to help you choose the right Istanbul boat trip.",
     excerpt: "Two of Istanbul's best water experiences — but which one suits your trip? We compare the Bosphorus cruise and Princes Islands tour side by side to help you decide.",
     category: "cruise-guide",
@@ -1456,7 +1456,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-boat-party-events",
-    title: "Istanbul Boat Party — Birthday, Proposal & Corporate Events",
+    title: "Istanbul Boat Party: Private Events Guide",
     metaDescription: "Plan the perfect Istanbul boat party for birthdays, proposals, corporate events & celebrations. Private yacht hire on the Bosphorus from €280. Custom packages available.",
     excerpt: "From intimate proposals to milestone birthdays and corporate team events — an Istanbul boat party on the Bosphorus is the most memorable way to celebrate. Here is how to plan yours.",
     category: "events",
@@ -1494,7 +1494,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-lunch-cruise-guide",
-    title: "Bosphorus Lunch Cruise Guide — Daytime Dining on the Bosphorus",
+    title: "Bosphorus Lunch Cruise Guide Istanbul",
     metaDescription: "Learn how a lunch-style Bosphorus experience works in Istanbul, what a daytime dining route can include, and when to use a tailored service page instead of a fixed public cruise.",
     excerpt: "This guide explains lunch-style Bosphorus planning, menu expectations, and why MerrySails now treats midday dining requests as tailored service pages rather than core published-price products.",
     category: "cruise-guide",
@@ -1533,7 +1533,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "book-bosphorus-cruise-safely",
-    title: "How to Book a Bosphorus Cruise — Skip the Scams, Book Direct",
+    title: "How to Book a Bosphorus Cruise Direct",
     metaDescription: "Avoid overpriced tours and Bosphorus cruise scams in Istanbul. Learn how to book direct with a TURSAB-licensed company, compare prices, and protect your money.",
     excerpt: "Tourist traps, inflated prices, and fake 'free' cruises are common in Istanbul. This guide shows you exactly how to book a legitimate Bosphorus cruise and avoid every scam.",
     category: "tips",
@@ -1571,7 +1571,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-eminonu",
-    title: "Bosphorus Cruise from Eminönü 2026 | Prices, Schedules & Best Tours",
+    title: "Bosphorus Cruise from Eminönü 2026",
     metaDescription: "Bosphorus cruise from Eminönü pier: departure times, prices from €15, which tours leave from Eminönü & insider tips. Complete 2026 guide with transport directions.",
     excerpt: "Eminonu is Istanbul's main departure point for Bosphorus cruises. Here is your complete guide to getting there, choosing the right cruise, and making the most of your time at the pier.",
     category: "cruise-guide",
@@ -1609,7 +1609,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-sunset-photography-cruise",
-    title: "Istanbul Sunset Cruise — Best Routes for Golden Hour Photos",
+    title: "Istanbul Sunset Cruise Golden Hour Routes",
     metaDescription: "Capture stunning golden hour photos on an Istanbul sunset cruise. Professional photography tips, best camera angles, routes & timing for the perfect Bosphorus sunset shot.",
     excerpt: "The Bosphorus sunset is one of the world's great photography subjects. This guide covers the best cruise routes, camera settings, timing, and angles for unforgettable golden hour shots.",
     category: "cruise-guide",
@@ -1647,7 +1647,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-winter-guide",
-    title: "Bosphorus Cruise in Winter — Is It Worth It? Tips for Cold Season",
+    title: "Bosphorus Cruise in Winter: Is It Worth It?",
     metaDescription: "Is a Bosphorus cruise worth it in winter? Yes — lower prices, no crowds & atmospheric views. Complete winter cruise guide with what to wear, expect & book in Istanbul.",
     excerpt: "Winter on the Bosphorus is quieter, cheaper, and surprisingly beautiful. Here is everything you need to know about taking a Bosphorus cruise during Istanbul's cold season.",
     category: "tips",
@@ -1685,7 +1685,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-romantic-cruise-couples",
-    title: "Romantic Bosphorus Cruise for Couples — Sunset & Dinner Options",
+    title: "Romantic Bosphorus Cruise for Couples",
     metaDescription: "Plan the perfect romantic Bosphorus cruise for couples. Sunset sailing, dinner cruise, and private yacht ideas for anniversaries, honeymoons, and unforgettable date nights in Istanbul.",
     excerpt: "The Bosphorus at sunset is one of the most romantic settings in the world. Here is how to choose the perfect couples cruise — from budget-friendly sunset sailings to private yacht experiences.",
     category: "cruise-guide",
@@ -1723,7 +1723,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-family-cruise-kids-guide",
-    title: "Bosphorus Cruise with Kids 2026 — Which Format Suits Your Family?",
+    title: "Bosphorus Cruise with Kids 2026",
     metaDescription: "Sightseeing, sunset or private yacht — which Bosphorus cruise suits your family? Age-by-age guide with duration, evening timing and booking tips.",
     excerpt: "This family support guide helps parents match children's ages and energy levels to the right Bosphorus cruise format instead of using it as a broad generic cruise page.",
     category: "tips",
@@ -1762,7 +1762,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-companies-comparison",
-    title: "Bosphorus Cruise Companies Compared: Which Tour Is Best? 2026",
+    title: "Bosphorus Cruise Companies Compared 2026",
     metaDescription: "Compare Bosphorus cruise companies in Istanbul 2026: licensed companies vs street vendors vs OTAs. Pricing, safety, value — honest comparison from a TURSAB-licensed company.",
     excerpt: "Not all Bosphorus cruise companies are equal. Compare licensed companies, street vendors, OTAs, and hotel desks — pricing, safety, inclusions, and real value breakdown for 2026.",
     category: "cruise-guide",
@@ -1800,7 +1800,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-boat-tour-prices-comparison",
-    title: "Istanbul Boat Tour Prices 2026: Budget vs Premium vs Luxury",
+    title: "Istanbul Boat Tour Prices 2026",
     metaDescription: "Istanbul boat tour prices 2026 compared: sunset €34 / €40, dinner €30–€90, yacht charter €280–€680, and how custom quote daytime service pages fit into the structure.",
     excerpt: "This 2026 Istanbul boat tour price guide focuses on the three core MerrySails ladders and explains when a custom quote daytime service is better than a public ticket.",
     category: "cruise-guide",
@@ -1840,7 +1840,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-vs-golden-horn-vs-princes-islands",
-    title: "Bosphorus vs Golden Horn vs Princes Islands: Which Cruise to Choose?",
+    title: "Bosphorus vs Golden Horn vs Princes Islands",
     metaDescription: "Bosphorus cruise vs Golden Horn vs Princes Islands 2026: Compare routes, prices, duration, landmarks, and experiences. Which Istanbul cruise is right for you?",
     excerpt: "Istanbul offers three distinct cruise experiences — Bosphorus, Golden Horn, and Princes Islands. Each delivers a completely different perspective on the city. Here is how to choose.",
     category: "cruise-guide",
@@ -1877,7 +1877,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "book-bosphorus-cruise-istanbul",
-    title: "How to Book MerrySails Bosphorus Cruise Options in Istanbul — Direct Guide 2026",
+    title: "Book MerrySails Bosphorus Cruise Istanbul",
     metaDescription: "Use this direct-booking guide after the main Bosphorus cruise hub to compare MerrySails sunset, dinner, and yacht options without confusing the primary owner page.",
     excerpt: "This support guide explains how to book the right MerrySails Bosphorus cruise after you have already narrowed the format to sunset, dinner, or yacht.",
     category: "cruise-guide",
@@ -2169,7 +2169,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
 ,
   {
     slug: "princes-islands-istanbul-day-trip-guide-2026",
-    title: "Princes Islands Day Trip 2026 — Ferry or Private Yacht?",
+    title: "Princes Islands Day Trip 2026",
     metaDescription: "Princes Islands day trip from Istanbul 2026: ferry vs private yacht from €280. Büyükada, Heybeliada — full guide. TURSAB licensed since 2001.",
     excerpt: "The Princes Islands are Istanbul's most underrated escape: four car-free islands 90 minutes by ferry, each with Ottoman mansions, horse-drawn carriages, and Bosphorus panoramas. Here is everything you need to plan your 2026 day trip.",
     category: "cruise-guide",
@@ -2292,7 +2292,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
   },
   {
     slug: "comparing-istanbul-cruise-operators-2026",
-    title: "Comparing Istanbul Cruise Operators 2026: How to Choose",
+    title: "Istanbul Cruise Operators 2026: How to Pick",
     metaDescription: "A 2026 guide to comparing Istanbul Bosphorus cruise operators — TURSAB licensing, OTA vs direct booking, red flags, pricing benchmarks, and how to choose a trustworthy operator.",
     excerpt: "Istanbul has 60+ cruise operators competing for the same Bosphorus route. This editorial guide explains how the industry works, what TURSAB licensing actually means, why OTA economics disadvantage buyers, and what separates trustworthy operators from the rest.",
     category: "cruise-guide",

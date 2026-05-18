@@ -36,7 +36,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    title: "Tekne Kiralama İstanbul — €380'dan başlayan fiyatlar",
+    title: "Tekne Kiralama İstanbul — €380'dan başlıyor",
     description: `İstanbul'da tekne kiralama saatlik €${startingRate}'dan başlıyor. Boğaz'da özel tekne turu, yemek ve gün batımı ekstraları dahil edilebilir. Hemen teklif alın.`,
     canonicalPath: "/tr/boat-rental-istanbul",
     eyebrow: "MerrySails İstanbul",

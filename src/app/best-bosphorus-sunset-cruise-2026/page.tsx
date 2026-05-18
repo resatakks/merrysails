@@ -4,7 +4,7 @@ import { buildHreflang } from "@/lib/hreflang";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Best Bosphorus Sunset Cruise 2026 — Compared & Ranked",
+  title: "Best Bosphorus Sunset Cruise 2026 — Ranked",
   description:
     "6-operator comparison of Bosphorus sunset cruises in 2026. MerrySails from €30 (TURSAB A licensed, 4.9★/487). Includes Viator & GetYourGuide OTA markup analysis.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     languages: buildHreflang("/best-bosphorus-sunset-cruise-2026"),
   },
   openGraph: {
-    title: "Best Bosphorus Sunset Cruise 2026 — Compared & Ranked",
+    title: "Best Bosphorus Sunset Cruise 2026 — Ranked",
     description:
       "Side-by-side comparison of 6 Istanbul sunset cruise operators: price, license, reviews, route, inclusions, cancellation. Updated May 2026.",
     url: `${SITE_URL}/best-bosphorus-sunset-cruise-2026`,

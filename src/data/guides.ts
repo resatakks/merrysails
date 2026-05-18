@@ -31,7 +31,7 @@ export interface Guide {
 export const guides: Guide[] = [
   {
     slug: "bosphorus-strait",
-    title: "The Bosphorus Strait — Istanbul's Legendary Waterway",
+    title: "Bosphorus Strait — Istanbul's Waterway",
     metaDescription: "Complete guide to the Bosphorus Strait in Istanbul. History, landmarks, cruise options, and why this 31km waterway is one of the world's most famous.",
     excerpt: "Discover everything about the Bosphorus Strait — the iconic waterway that divides Europe and Asia, lined with Ottoman palaces, medieval fortresses, and modern bridges.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
@@ -49,7 +49,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "maidens-tower",
-    title: "Maiden's Tower (Kız Kulesi) — Istanbul's Most Romantic Landmark",
+    title: "Maiden's Tower Istanbul — Kız Kulesi",
     metaDescription: "Guide to Maiden's Tower in Istanbul. History, legends, visiting info, and how to see it on a Bosphorus cruise. Recently restored and reopened.",
     excerpt: "The iconic Maiden's Tower rises from the Bosphorus waters near the Asian shore — a symbol of Istanbul wrapped in legends of love, tragedy, and mystery.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
@@ -66,7 +66,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "dolmabahce-palace",
-    title: "Dolmabahçe Palace — Istanbul's Grandest Waterfront Palace",
+    title: "Dolmabahçe Palace — Bosphorus Waterfront",
     metaDescription: "Complete visitor guide to Dolmabahce Palace. Opening hours, tickets, architecture highlights, and how to see it from a Bosphorus cruise.",
     excerpt: "Dolmabahçe Palace stretches 600 meters along the Bosphorus shore — a breathtaking blend of Baroque, Rococo, and Ottoman architecture that served as the last seat of the Ottoman Empire.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
@@ -83,7 +83,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "ortakoy-mosque",
-    title: "Ortaköy Mosque — Istanbul's Most Photogenic Waterfront Mosque",
+    title: "Ortaköy Mosque — Istanbul Bosphorus",
     metaDescription: "Guide to Ortaköy Mosque (Büyük Mecidiye Camii) in Istanbul. History, architecture, visiting tips, and the iconic view from the Bosphorus.",
     excerpt: "Ortaköy Mosque sits at the water's edge beneath the Bosphorus Bridge — creating what is arguably Istanbul's most iconic and photographed composition.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
@@ -99,7 +99,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "rumeli-fortress",
-    title: "Rumeli Fortress (Rumeli Hisarı) — The Conqueror's Castle on the Bosphorus",
+    title: "Rumeli Fortress Istanbul — Bosphorus Castle",
     metaDescription: "Guide to Rumeli Fortress in Istanbul. Built by Sultan Mehmed II in 1452 to conquer Constantinople. History, visiting hours, and views from the water.",
     excerpt: "Built in just four months by Sultan Mehmed the Conqueror, Rumeli Fortress stands as a powerful testament to Ottoman military engineering at the narrowest point of the Bosphorus.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
@@ -134,7 +134,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "buyukada-princes-islands",
-    title: "Büyükada & the Princes' Islands — Istanbul's Car-Free Escape",
+    title: "Büyükada & Princes' Islands Istanbul",
     metaDescription: "Complete guide to Büyükada and the Princes' Islands. How to get there, what to see, beaches, food, and why it's Istanbul's best day trip.",
     excerpt: "The Princes' Islands are a car-free archipelago in the Sea of Marmara — just an hour from Istanbul but a world away, with Victorian mansions, pine forests, and peaceful beaches.",
     image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&q=80",
@@ -151,7 +151,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "kurucesme-marina",
-    title: "Kuruçeşme Marina — Istanbul's Private Yacht Departure Point",
+    title: "Kuruçeşme Marina — Yacht Departure Istanbul",
     metaDescription: "Guide to Kuruçeşme Marina in Istanbul. Private yacht charter departure point, how to get there, nearby restaurants, and what to expect.",
     excerpt: "Kuruçeşme Marina is where most private Bosphorus yacht experiences begin — a scenic marina on the European shore nestled between the Bosphorus Bridge and Ortaköy.",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80",
@@ -167,7 +167,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "kabatas-pier",
-    title: "Kabatas Pier — Dinner Cruise Boarding & Bosphorus Connections in Istanbul",
+    title: "Kabataş Pier — Dinner Cruise Istanbul",
     metaDescription: "Guide to Kabatas Pier in Istanbul for Bosphorus dinner cruise boarding, public transport links, pickup logic, and when Kabatas matters in the booking flow.",
     excerpt: "Kabatas Pier is one of Istanbul's key Bosphorus transport nodes and the main public reference point for MerrySails dinner-cruise boarding.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
@@ -252,7 +252,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "karakoy-waterfront",
-    title: "Karakoy Waterfront — Sunset Cruise Meeting Flow & Bosphorus Access",
+    title: "Karakoy Waterfront — Sunset Cruise Istanbul",
     metaDescription: "Guide to the Karakoy waterfront in Istanbul for Bosphorus sunset cruise meeting flow, tram/metro access, and how to arrive for shared golden-hour departures.",
     excerpt: "Karakoy is the practical waterfront approach for the MerrySails sunset cruise, with tram, metro, and walking connections into the meeting-flow area.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
@@ -269,7 +269,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "golden-horn",
-    title: "The Golden Horn — Istanbul's Historic Natural Harbor",
+    title: "Golden Horn — Istanbul's Historic Harbor",
     metaDescription: "Guide to the Golden Horn (Haliç) in Istanbul. History, landmarks, parks, and how this famous inlet connects to the Bosphorus cruise experience.",
     excerpt: "The Golden Horn is Istanbul's ancient natural harbor — a curved inlet where the Byzantine fleet was once anchored and where the city's story began thousands of years ago.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
@@ -285,7 +285,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "istanbul-bosphorus-bridges",
-    title: "Istanbul's Three Bosphorus Bridges — Engineering Wonders Connecting Continents",
+    title: "Istanbul Bosphorus Bridges — Three Spans",
     metaDescription: "Guide to Istanbul's three Bosphorus bridges. History, engineering facts, and the experience of sailing beneath them on a Bosphorus cruise.",
     excerpt: "Three magnificent suspension bridges span the Bosphorus, connecting Europe and Asia — and sailing beneath them on a cruise is one of Istanbul's most thrilling experiences.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",

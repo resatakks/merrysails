@@ -5,7 +5,7 @@ export const germanProductPosts: BlogPost[] = [
     slug: "bosporus-kreuzfahrt-preise-istanbul",
     locale: "de",
     title:
-      "Bosporus Kreuzfahrt Preise Istanbul 2026: Gemeinsam, Dinner & Privat im Vergleich",
+      "Bosporus Kreuzfahrt Preise Istanbul 2026",
     metaDescription:
       "Bosporus Kreuzfahrt Preise 2026: Geteilte Tour ab €34, Dinner-Kreuzfahrt €55–119, Private Yacht €380–1.800. Saisonale Preisunterschiede, Paketvergleich und Spartipps für Istanbul.",
     excerpt:
@@ -179,7 +179,7 @@ export const germanProductPosts: BlogPost[] = [
     slug: "heiratsantrag-auf-dem-bosporus-istanbul",
     locale: "de",
     title:
-      "Heiratsantrag auf dem Bosporus: Romantischer Moment auf einer Privatjacht in Istanbul",
+      "Heiratsantrag auf dem Bosporus Istanbul",
     metaDescription:
       "Heiratsantrag auf dem Bosporus Istanbul: Pakete ab €380, Dekorations-Tipps, Fotograf-Service und die besten Locations direkt am Wasser. TURSAB A-Gruppe lizenziert seit 2001.",
     excerpt:
@@ -373,7 +373,7 @@ export const germanProductPosts: BlogPost[] = [
     slug: "yacht-charter-istanbul-ratgeber",
     locale: "de",
     title:
-      "Yacht Charter Istanbul 2026: Preise, Bootstypen, Routen und Tipps",
+      "Yacht Charter Istanbul 2026: Preise & Routen",
     metaDescription:
       "Yacht Charter Istanbul 2026: Preise ab €380, 4 Bootstypen, 5 Bosporus-Routen und TURSAB A-Lizenz erklärt. Vollständiger Ratgeber für Boot mieten Istanbul.",
     excerpt:
@@ -567,7 +567,7 @@ export const germanProductPosts: BlogPost[] = [
   {
     slug: "bosporus-bootstour-istanbul-2026-ratgeber",
     locale: "de",
-    title: "Bosporus Bootstour Istanbul 2026 — Ehrlicher Ratgeber",
+    title: "Bosporus Bootstour Istanbul 2026",
     metaDescription:
       "Bosporus Bootstour Istanbul 2026: Sonnenuntergang ab €34, Dinner €30–€90, Privatyacht ab €280. Direktpreise, TURSAB-Lizenz #14316, ehrlicher Vergleich aller Optionen.",
     excerpt:
@@ -937,7 +937,7 @@ export const germanProductPosts: BlogPost[] = [
   {
     slug: "prinzeninseln-istanbul-tagesausflug-2026",
     locale: "de",
-    title: "Prinzeninseln Istanbul 2026: Tagesausflug, Fähre & Privatyacht",
+    title: "Prinzeninseln Istanbul 2026: Tagesausflug",
     metaDescription: "Prinzeninseln-Tagesausflug Istanbul 2026: Büyükada, Heybeliada. Fähre ab €5, private Yacht ab €280. TURSAB lizenziert seit 2001.",
     excerpt: "Ein Tag auf den Prinzeninseln: autofreie Ruhe, viktorianische Villen und azurblaues Marmarameer vor den Toren Istanbuls. Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001 mit über 50.000 Gästen — zeigt Ihnen, wie Sie am besten dorthin kommen und was Sie erwartet.",
     category: "istanbul",

@@ -37,7 +37,7 @@ const ADDRESS = "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402,
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    title: "İletişim — MerrySails | Telefon, WhatsApp ve E-posta",
+    title: "İletişim — MerrySails Telefon ve WhatsApp",
     description:
       "MerrySails ile iletişim: +90 544 898 98 12 arayın, WhatsApp yazın veya info@merrysails.com e-posta gönderin. Her gün 09:00–22:00 açık.",
     canonicalPath: "/tr/contact",
@@ -61,7 +61,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   de: {
-    title: "Kontakt — MerrySails | Telefon, WhatsApp und E-Mail",
+    title: "Kontakt — MerrySails Telefon und WhatsApp",
     description:
       "MerrySails kontaktieren: +90 544 898 98 12 anrufen, WhatsApp oder E-Mail info@merrysails.com. Bosporus-Kreuzfahrt buchen — täglich 09:00–22:00 geöffnet.",
     canonicalPath: "/de/contact",
@@ -85,7 +85,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "Contact — MerrySails | Téléphone, WhatsApp et E-mail",
+    title: "Contact — MerrySails Téléphone et WhatsApp",
     description:
       "Contactez MerrySails : appelez +90 544 898 98 12, WhatsApp ou e-mail info@merrysails.com. Croisière Bosphore — ouvert tous les jours 09h00–22h00.",
     canonicalPath: "/fr/contact",
@@ -109,7 +109,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   nl: {
-    title: "Contact — MerrySails | Telefoon, WhatsApp en E-mail",
+    title: "Contact — MerrySails Telefoon en WhatsApp",
     description:
       "MerrySails contact: bel +90 544 898 98 12, stuur WhatsApp of e-mail info@merrysails.com. Bosporus cruise boeken — dagelijks 09:00–22:00.",
     canonicalPath: "/nl/contact",

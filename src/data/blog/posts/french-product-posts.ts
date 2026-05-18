@@ -5,7 +5,7 @@ export const frenchProductPosts: BlogPost[] = [
     slug: "croisiere-bosphore-prix-istanbul",
     locale: "fr",
     title:
-      "Croisière Bosphore Istanbul Prix 2026 : Partagée, Dîner & Privée — Comparatif Complet",
+      "Croisière Bosphore Istanbul Prix 2026",
     metaDescription:
       "Croisière Bosphore prix 2026 : croisière partagée dès €34/personne, dîner croisière €55–119, yacht privé €380–1 800. Comparatif complet des tarifs Istanbul avec conseils saisonniers.",
     excerpt:
@@ -183,7 +183,7 @@ export const frenchProductPosts: BlogPost[] = [
     slug: "demande-en-mariage-sur-le-bosphore",
     locale: "fr",
     title:
-      "Demande en Mariage sur le Bosphore à Istanbul : Guide Complet pour un Moment Inoubliable",
+      "Demande en Mariage Bosphore Istanbul",
     metaDescription:
       "Demande en mariage sur le Bosphore Istanbul : yachts privatifs dès €380, décoration, photographe et meilleurs emplacements. Guide complet pour organiser la surprise parfaite.",
     excerpt:
@@ -381,7 +381,7 @@ export const frenchProductPosts: BlogPost[] = [
     slug: "location-yacht-istanbul-guide",
     locale: "fr",
     title:
-      "Location Yacht Istanbul : Guide Complet 2026 — Prix, Types de Bateaux et Itinéraires",
+      "Location Yacht Istanbul 2026 — Prix & Bateaux",
     metaDescription:
       "Location yacht Istanbul 2026 : tarifs dès €380, 4 types de bateaux, 5 itinéraires Bosphore et certification TÜRSAB expliquée. Guide complet pour louer un bateau privatif à Istanbul.",
     excerpt:
@@ -577,7 +577,7 @@ export const frenchProductPosts: BlogPost[] = [
   {
     slug: "guide-croisiere-bosphore-istanbul-2026",
     locale: "fr",
-    title: "Guide Croisière Bosphore Istanbul 2026 — Comparatif Honnête",
+    title: "Guide Croisière Bosphore Istanbul 2026",
     metaDescription:
       "Croisière Bosphore Istanbul 2026 : coucher de soleil €34–40/pers., dîner €30–90/pers., yacht privé €280–680. Comparatif honnête et réservation directe.",
     excerpt:
@@ -1015,7 +1015,7 @@ export const frenchProductPosts: BlogPost[] = [
   {
     slug: "iles-des-princes-istanbul-excursion-2026",
     locale: "fr",
-    title: "Îles des Princes Istanbul 2026 : Excursion, Ferry & Yacht",
+    title: "Îles des Princes Istanbul 2026 : Excursion",
     metaDescription: "Excursion aux Îles des Princes Istanbul 2026 : Büyükada, Heybeliada. Ferry dès €5, yacht privé dès €280. Licence TURSAB depuis 2001.",
     excerpt: "Une journée aux Îles des Princes : calme sans voitures, villas victoriennes et mer de Marmara à deux pas d'Istanbul. Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001, plus de 50 000 invités — vous guide pour organiser cette excursion inoubliable.",
     category: "istanbul",

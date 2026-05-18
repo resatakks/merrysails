@@ -32,7 +32,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    title: "İstanbul Boğaz Turu, Tarihi Yer ve Biniş Rehberleri",
+    title: "İstanbul Boğaz Turu ve Biniş Rehberleri",
     description:
       "Boğaz turları, özel yat ve yat kiralama için İstanbul tarihi yer rehberleri, biniş alanı bilgileri ve rezervasyon sayfası önerileri.",
     canonicalPath: "/tr/guides",
@@ -56,7 +56,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   de: {
-    title: "Istanbul Bosporus, Sehenswürdigkeiten & Boarding-Guides",
+    title: "Istanbul Bosporus Sehenswürdigkeiten & Boarding",
     description:
       "Istanbul-Reiseführer zu Sehenswürdigkeiten, Boarding-Bereichen und den Buchungsseiten für Bosporus-Kreuzfahrten, Privatboote und Jachtcharter.",
     canonicalPath: "/de/guides",
@@ -80,7 +80,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   fr: {
-    title: "Guides Bosphore, Monuments & Embarquement Istanbul",
+    title: "Guides Bosphore Monuments & Embarquement",
     description:
       "Guides des monuments d'Istanbul, des zones d'embarquement et des pages de réservation pour les croisières Bosphore, bateaux privés et charter de yacht.",
     canonicalPath: "/fr/guides",
@@ -104,7 +104,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "English →",
   },
   nl: {
-    title: "Istanbul Bosporus, Bezienswaardigheden & Boarding Gidsen",
+    title: "Istanbul Bosporus Bezienswaardigheden Boarding",
     description:
       "Istanbul-gidsen voor bezienswaardigheden, boarding-gebieden en boekingspagina's voor Bosporus cruises, privéboten en jachtcharters.",
     canonicalPath: "/nl/guides",

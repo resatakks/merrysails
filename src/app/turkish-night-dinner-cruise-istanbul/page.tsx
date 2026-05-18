@@ -125,12 +125,12 @@ const fitCards = [
       "Use this page when the guest already wants the shared evening and needs clearer Turkish-night, stage, and dinner-flow context before booking.",
   },
   {
-    title: "A shared public dinner cruise is still the right product",
+    title: "A shared public dinner cruise is the right fit",
     description:
       "This page is not for guests who need a private yacht, a private dinner table, or a custom proposal or company brief.",
   },
   {
-    title: "Package fit matters more than marina or route planning",
+    title: "Package fit matters more than route planning",
     description:
       "Use this page when the practical question is what kind of evening entertainment and shared dinner structure to expect.",
   },
@@ -161,7 +161,7 @@ const decisionRows = [
 
 const flowSteps = [
   {
-    title: "Confirm the shared dinner route is the right product",
+    title: "Confirm the shared dinner route is right",
     description:
       "This support page only makes sense after you know the evening should stay on the main shared Bosphorus dinner path.",
   },
@@ -171,12 +171,12 @@ const flowSteps = [
       "The real question here is whether a stage-entertainment-led evening and a shared dinner boat match the mood you want.",
   },
   {
-    title: "Use pickup or Kabatas pages when logistics are the blocker",
+    title: "Use pickup or Kabatas pages for logistics",
     description:
       "Show fit, pickup fit, and boarding fit are three different sub-intents. Use the narrower page only for the blocker you actually have.",
   },
   {
-    title: "Finish the booking on the main dinner owner page",
+    title: "Finish the booking on the main dinner page",
     description:
       "Once the format is clear, move back to the owner page for package comparison, reservation flow, and the live dinner-cruise details.",
   },

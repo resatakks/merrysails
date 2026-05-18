@@ -3,7 +3,7 @@ import type { BlogPost } from "../types";
 export const planningAndSupportGuides: BlogPost[] = [
 {
     slug: "bosphorus-cruise-with-kids",
-    title: "Family Bosphorus Cruise Istanbul 2026 — Kids Ages, Tips & Best Options",
+    title: "Family Bosphorus Cruise Istanbul 2026",
     metaDescription: "Family Bosphorus cruise 2026: kids under 6 sail free, ages 6–12 get 30% off. Which cruise suits your child's age? Sunset €34, dinner €30, private yacht from €280.",
     excerpt: "This support guide helps parents plan a Bosphorus cruise day with kids, compare the right formats by age, and arrive better prepared.",
     category: "cruise-guide",
@@ -40,7 +40,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-for-couples",
-    title: "Romantic Bosphorus Cruise Planning for Couples — Sunset, Dinner, or Private Yacht?",
+    title: "Romantic Bosphorus Cruise for Couples",
     metaDescription: "Use this couples planning guide to compare sunset, dinner, and private yacht options in Istanbul before moving to the right romantic owner page.",
     excerpt: "This support guide helps couples compare the most romantic Bosphorus formats and choose the right next booking page for their Istanbul trip.",
     category: "cruise-guide",
@@ -78,7 +78,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-cruise-booking-tips",
-    title: "How Bosphorus Cruise Booking Works in Istanbul — Smart Direct-Booking Tips",
+    title: "Bosphorus Cruise Booking Guide Istanbul",
     metaDescription: "Use this booking guide to compare the right Bosphorus owner pages, avoid reseller confusion, and book direct with clearer pricing and safer route fit.",
     excerpt: "This support guide explains how Bosphorus booking works in Istanbul and how to choose the right owner page before sending a reservation request.",
     category: "tips",
@@ -126,7 +126,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "avoid-tourist-traps-istanbul-cruises",
-    title: "Istanbul Cruise Scams — 5 Tourist Traps & How to Spot Them",
+    title: "Istanbul Cruise Scams — 5 Tourist Traps",
     metaDescription: "Avoid the 5 most common Istanbul cruise scams: street touts, fake 'free' cruises, hidden fees, bait-and-switch boats & unlicensed companies. Red flags checklist.",
     excerpt: "Street touts, hidden fees, and bait-and-switch tactics — learn how to spot and avoid the most common tourist traps when booking a Bosphorus cruise.",
     category: "tips",
@@ -180,7 +180,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-weather-cruise-planning",
-    title: "Istanbul Weather by Month — Temperature, Rain & What to Wear on a Cruise",
+    title: "Istanbul Weather by Month for Cruises",
     metaDescription: "Month-by-month Istanbul weather data for cruise planning: temperatures, rainfall, wind, sea conditions & a packing checklist for every season.",
     excerpt: "Istanbul's weather varies dramatically by season. This month-by-month guide helps you choose the best time for your Bosphorus cruise experience.",
     category: "tips",
@@ -556,7 +556,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "fishing-boat-tour-bosphorus",
-    title: "Fishing Boat Tour on the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus) Istanbul",
+    title: "Fishing Boat Tour on the Bosphorus Istanbul",
     metaDescription: "Join a fishing boat tour on the Bosphorus and catch bluefish and sea bass in Istanbul. Discover what to expect, best seasons, and how to book your trip.",
     excerpt: "The Bosphorus is one of Turkey's best fishing spots. Join a fishing boat tour and try your hand at catching bluefish, sea bass, and bonito in Istanbul's iconic strait.",
     category: "yacht-guide",
@@ -659,7 +659,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "group-bosphorus-cruise-guide",
-    title: "Group Bosphorus Cruise Planning — 10 to 50+ Guests",
+    title: "Group Bosphorus Cruise Planning Guide",
     metaDescription: "Use this group-planning guide to compare private, celebration, and corporate Bosphorus formats before moving to the right owner page.",
     excerpt: "This support guide helps groups compare vessel fit, logistics, and the right next owner page without treating every Bosphorus group as the same product.",
     category: "cruise-guide",
@@ -795,7 +795,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-night-cruise-guide",
-    title: "Istanbul Night Cruise — Dinner, Shows & Entertainment",
+    title: "Istanbul Night Cruise — Dinner & Shows",
     metaDescription: "Book an Istanbul night cruise with Turkish dinner, belly dance, whirling dervish & live music. 3.5-hour Bosphorus entertainment experience with shared packages from €30.",
     excerpt: "As darkness falls, Istanbul transforms into a city of light. The night cruise on the Bosphorus combines Turkish dinner, live entertainment, and views of illuminated palaces and bridges for an unforgettable evening.",
     category: "cruise-guide",
@@ -833,7 +833,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "princes-island-day-trip-istanbul",
-    title: "Princes' Islands Day Trip — DIY Itinerary & Ferry Guide",
+    title: "Princes' Islands Day Trip — Ferry Guide",
     metaDescription: "Plan your own Princes' Islands day trip: ferry timetables, Istanbulkart tips, [Büyükada](https://en.wikipedia.org/wiki/B%C3%BCy%C3%BCkada) cycling routes, beaches, restaurants & a full hour-by-hour itinerary.",
     excerpt: "Escape the city buzz with a day trip to the Princes' Islands — a car-free archipelago in the Sea of Marmara just 90 minutes from central Istanbul, known for Victorian mansions, pristine beaches, and horse-drawn carriages.",
     category: "istanbul",
@@ -871,7 +871,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "party-boat-istanbul-birthday",
-    title: "Birthday Boat Planning in Istanbul — Private Bosphorus Event Formats",
+    title: "Birthday Boat Planning in Istanbul",
     metaDescription: "Use this birthday-planning guide to compare private Bosphorus celebration formats, decoration levels, and quote flow before moving to the right owner page.",
     excerpt: "This support guide helps you compare private birthday formats on the Bosphorus before moving to the right owner page for a live quote.",
     category: "events",
@@ -920,7 +920,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "yacht-rental-istanbul-prices",
-    title: "How Private Yacht Quotes Work in Istanbul — Base Tiers, Extras & Timing",
+    title: "Private Yacht Quotes in Istanbul — Guide",
     metaDescription: "Use this pricing explainer to understand MerrySails' private-yacht base ladder, quote variables, and when to move to the main yacht owner page for the live offer.",
     excerpt: "This support guide explains how the private-yacht quote is built in Istanbul, what the public base ladder means, and what changes the final proposal.",
     category: "yacht-guide",
@@ -959,7 +959,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-ferry-vs-cruise-comparison",
-    title: "Bosphorus Ferry vs Cruise — Route, Comfort & Experience Compared",
+    title: "Bosphorus Ferry vs Cruise Compared",
     metaDescription: "Ferry vs cruise on the Bosphorus: compare routes, seating comfort, commentary, food & the overall experience. Which gives a better sightseeing trip?",
     excerpt: "Should you take the public Bosphorus ferry or book a private cruise? We compare price, comfort, route, food, and overall experience so you can choose the best option for your Istanbul trip.",
     category: "cruise-guide",
@@ -997,7 +997,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-dinner-cruise-menu-guide",
-    title: "Bosphorus Dinner Cruise Menu — Every Dish & Drink Explained",
+    title: "Bosphorus Dinner Cruise Menu Explained",
     metaDescription: "Full menu breakdown for the [Bosphorus](https://en.wikipedia.org/wiki/Bosphorus) dinner cruise: 4-course Turkish dishes, drink packages, dietary options & Standard vs Gold upgrade comparison.",
     excerpt: "Wondering what food is served on a Bosphorus dinner cruise? Here is the complete menu breakdown — from mezes and salads to mains, desserts, and drinks — plus dietary options and upgrade packages.",
     category: "cruise-guide",
@@ -1035,7 +1035,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "luxury-yacht-bosphorus-experience",
-    title: "Inside a Premium Bosphorus Yacht Brief — Comfort, Route & Dining Flow",
+    title: "Inside a Premium Bosphorus Yacht Brief",
     metaDescription: "Use this support guide to understand how a premium Bosphorus yacht brief is shaped before moving to the main yacht owner page for the live private-charter offer.",
     excerpt: "This support guide explains how comfort level, route rhythm, dining style, and occasion type shape a premium Bosphorus yacht brief.",
     category: "yacht-guide",
@@ -1073,7 +1073,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-departure-points-istanbul",
-    title: "Private Yacht Departure Points in Istanbul — What to Expect",
+    title: "Private Yacht Departure Points Istanbul",
     metaDescription: "Planning a private yacht charter in Istanbul? Learn how marina confirmation works, which Bosphorus areas are commonly used, and how to reach the right boarding point without confusion.",
     excerpt: "Private yacht charters do not all use the same public pier. This guide explains how MerrySails confirms marinas, what to expect on boarding day, and how to avoid departure-point mistakes.",
     category: "tips",
@@ -1111,7 +1111,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "corporate-events-yacht-istanbul",
-    title: "Corporate Yacht Event Planning in Istanbul — Team Format, AV & Group Flow",
+    title: "Corporate Yacht Event Planning Istanbul",
     metaDescription: "Use this planning guide to shape a Bosphorus corporate event in Istanbul before moving to the main corporate events page for the live proposal flow.",
     excerpt: "This support guide helps company teams compare vessel fit, AV needs, and group format before they move to the main corporate events page.",
     category: "events",
@@ -1150,7 +1150,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-travel-tips-transfer-and-cruise-pairing",
-    title: "Istanbul Travel Tips -- Airport Transfer + Bosphorus Cruise Pairing",
+    title: "Istanbul Travel Tips — Airport & Cruise",
     metaDescription: "How to pair your Istanbul airport transfer with a Bosphorus cruise on the same evening. Practical first-day itinerary, timing tips, and booking guide for first-time visitors.",
     excerpt: "Two pre-bookings unlock the best first evening in Istanbul: a private airport transfer and a Bosphorus cruise. Here is how to pair them seamlessly for any arrival time.",
     category: "tips",
