@@ -1,21 +1,21 @@
 # MerrySails URL Inspection
 
-Generated: 2026-05-18T09:05:20.465Z
+Generated: 2026-05-18T17:50:11.401Z
 Property: sc-domain:merrysails.com
 
 ## Non-indexed Or Unknown
 
-- `https://merrysails.com/corporate-events` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/corporate-events` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
 - `https://merrysails.com/private-events` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
 - `https://merrysails.com/product-launch-yacht-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
-- `https://merrysails.com/proposal-yacht-rental-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/proposal-yacht-rental-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
 
 ## Full Results
 
-- `https://merrysails.com/corporate-events` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/corporate-events` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
 - `https://merrysails.com/private-events` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
 - `https://merrysails.com/product-launch-yacht-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
-- `https://merrysails.com/proposal-yacht-rental-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/proposal-yacht-rental-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
 - `https://merrysails.com/boat-rental-hourly-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-23T23:26:59Z`
 - `https://merrysails.com/boat-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T09:58:48Z`
 - `https://merrysails.com/bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T21:48:05Z`

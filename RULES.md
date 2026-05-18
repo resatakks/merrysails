@@ -391,19 +391,23 @@ Senin paylaştığın Semrush audit raporundaki hataları sınıflandır, otomat
 #### **Permanent redirects** (613)
 - **Verdict**: Eski URL → yeni URL = doğru SEO. Bu hata değil, hijyen. IGNORE.
 
-### 📋 Semrush audit automation
+### 📋 Semrush audit automation — ENFORCEMENT (2026-05-18 kuruldu)
 
-Pre-commit + weekly local audit:
-```bash
-# scripts/seo-audit.sh
-npm run lint:schema           # P0: schema valid
-npm run lint:meta             # P0: title/desc unique + length
-npx tsc --noEmit              # P0: TS strict
-npx broken-link-checker URL   # P0: internal links
-npm run lighthouse:ci         # P1: CWV
-```
+İki katmanlı, gerçek enforcement (artık "olmalı" değil, otomatik çalışıyor):
 
-Her commit'te bu script. P0 fail = commit reddedilir.
+1. **`prebuild` hook** — `package.json`'da `"prebuild": "node scripts/lint-schema.mjs"`.
+   npm `build`'den önce otomatik çalışır. Vercel `npm run build` koştuğu için:
+   **schema P0 hatası varsa → prebuild exit 1 → build abort → DEPLOY OLMAZ.**
+2. **CI workflow** — `.github/workflows/seo-lint.yml`. Her push + PR'da
+   `lint-schema.mjs` koşar. P0 hata → check kırmızı → merge bloklu.
+
+`lint-schema.mjs` exit kodu: ERROR varsa `1`, sadece WARNING varsa `0`.
+- **ERROR (deploy/merge bloklar)**: tourist-product-combo, localbusiness-no-address,
+  localbusiness-inlanguage, event-required-field, title-suffix-duplicate, meta-desc-missing.
+- **WARNING (build log'da görünür, bloklamaz)**: meta-desc-long/short, title-too-long,
+  canonical-missing, hreflang-missing. Bunlar görünür — yeni sayfada çıkarsa düzelt.
+
+Manuel ek kontrol: `npm run lint:all` (eslint + schema) + `npx tsc --noEmit`.
 
 ### 🎯 Audit cadence
 

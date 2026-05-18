@@ -1,21 +1,17 @@
 {
-  "generatedAt": "2026-05-18T09:05:20.459Z",
+  "generatedAt": "2026-05-18T17:50:11.400Z",
   "siteUrl": "sc-domain:merrysails.com",
   "results": [
     {
       "url": "https://merrysails.com/corporate-events",
-      "inspectionStatus": "not_indexed",
-      "coverageState": "Discovered - currently not indexed",
+      "inspectionStatus": "unknown",
+      "coverageState": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawlTime": "",
       "googleCanonical": "",
       "userCanonical": "",
-      "referringUrls": [
-        "https://merrysails.com/blog/bosphorus-cruise-groups-istanbul"
-      ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "referringUrls": [],
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/private-events",
@@ -41,14 +37,18 @@
     },
     {
       "url": "https://merrysails.com/proposal-yacht-rental-istanbul",
-      "inspectionStatus": "unknown",
-      "coverageState": "URL is unknown to Google",
+      "inspectionStatus": "not_indexed",
+      "coverageState": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawlTime": "",
       "googleCanonical": "",
       "userCanonical": "",
-      "referringUrls": [],
-      "sitemap": []
+      "referringUrls": [
+        "https://merrysails.com/sitemap.xml"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/boat-rental-hourly-istanbul",
@@ -123,9 +123,7 @@
         "https://merrysails.com/blog/istanbul-corporate-yacht-event-booking",
         "https://merrysails.com/blog/marriage-proposal-yacht-istanbul"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/corporate-yacht-dinner-istanbul",
@@ -139,9 +137,7 @@
         "https://merrysails.com/blog/bosphorus-sunset-cruise-vs-dinner-cruise",
         "https://merrysails.com/proposal-yacht-with-photographer-istanbul"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
@@ -202,9 +198,7 @@
         "https://merrysails.com/de/istanbul-dinner-cruise",
         "https://merrysails.com/sitemap.xml"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/kabatas-dinner-cruise-istanbul",
@@ -217,9 +211,7 @@
       "referringUrls": [
         "https://merrysails.com/istanbul-dinner-cruise"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/kurucesme-marina-yacht-charter",
@@ -232,9 +224,7 @@
       "referringUrls": [
         "https://merrysails.com/tr/kurucesme-marina-yacht-charter"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/private-dinner-cruise-for-couples-istanbul",
@@ -247,9 +237,7 @@
       "referringUrls": [
         "https://merrysails.com/de/private-dinner-cruise-for-couples-istanbul"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/proposal-yacht-with-photographer-istanbul",
@@ -262,9 +250,7 @@
       "referringUrls": [
         "https://merrysails.com/blog?q={search_term_string}"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/sunset-cruise-tickets-istanbul",
@@ -278,9 +264,7 @@
         "https://merrysails.com/blog/short-bosphorus-cruise-tour",
         "https://merrysails.com/boat-rental-hourly-istanbul"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/team-building-yacht-istanbul",
@@ -294,7 +278,9 @@
         "https://merrysails.com/blog/bosphorus-sunset-cruise-vs-dinner-cruise",
         "https://merrysails.com/turkish-night-dinner-cruise-istanbul"
       ],
-      "sitemap": []
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/turkish-night-dinner-cruise-istanbul",
@@ -322,9 +308,7 @@
         "https://merrysails.com/nl/reservation?tour=yacht-charter-in-istanbul&packageName=Bosporus%20Groepsjacht%20%C2%B7%2036%20%E2%80%94%202h&hours=2&fleet=bosphorus-group-yacht-36",
         "https://merrysails.com/sitemap.xml"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     }
   ]
 }

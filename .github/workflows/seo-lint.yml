@@ -1,0 +1,24 @@
+name: SEO Schema Lint
+
+# Enforces the SEO/schema rules in RULES.md on every push + PR.
+# scripts/lint-schema.mjs exits 1 on P0 errors (bad schema combos, LocalBusiness
+# without inline address, Event missing required fields, manual "| MerrySails"
+# title suffix, missing meta description) — a failing run blocks the merge.
+# Title/meta length issues print as warnings (visible in the log, non-blocking).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  schema-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run SEO schema lint
+        run: node scripts/lint-schema.mjs
