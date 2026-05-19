@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <circle cx="24" cy="24" r="22" fill="#1a5276" stroke="#e8d5b7" stroke-width="2"/>
+  <!-- Walls -->
+  <rect x="8" y="22" width="32" height="14" rx="1" fill="#c4a67d"/>
+  <!-- Towers -->
+  <rect x="6" y="18" width="6" height="18" rx="1" fill="#e8d5b7"/>
+  <rect x="36" y="18" width="6" height="18" rx="1" fill="#e8d5b7"/>
+  <!-- Battlements -->
+  <rect x="6" y="16" width="2" height="3" fill="#e8d5b7"/>
+  <rect x="10" y="16" width="2" height="3" fill="#e8d5b7"/>
+  <rect x="36" y="16" width="2" height="3" fill="#e8d5b7"/>
+  <rect x="40" y="16" width="2" height="3" fill="#e8d5b7"/>
+  <!-- Imperial Gate -->
+  <path d="M19 36 L19 26 Q24 20 29 26 L29 36" fill="#1a5276" opacity="0.6"/>
+  <!-- Dome behind -->
+  <path d="M16 22 Q24 12 32 22" fill="#e8d5b7" stroke="#d4c4a0" stroke-width="0.5"/>
+  <!-- Crescent -->
+  <circle cx="24" cy="13" r="1.2" fill="#f4d03f"/>
+  <!-- Diamond hint -->
+  <path d="M22 28 L24 26 L26 28 L24 30Z" fill="#f4d03f" opacity="0.7"/>
+</svg>

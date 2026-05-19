@@ -48,7 +48,8 @@ export type Landmark = {
   era: string;
   lat: number;
   lng: number;
-  text: Record<GuideLangCode, LandmarkText>;
+  // English is always present; other languages are filled in incrementally.
+  text: { en: LandmarkText } & Partial<Record<GuideLangCode, LandmarkText>>;
 };
 
 export const BOSPHORUS_LANDMARKS: Landmark[] = [
@@ -1087,96 +1088,1130 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     },
   },
   {
-    id: "emirgan-bebek",
+    id: "suleymaniye",
     side: "Europe",
-    category: "Waterfront district",
-    era: "Ottoman gardens",
-    lat: 41.0776,
-    lng: 29.0435,
+    category: "Imperial mosque",
+    era: "1557 · Ottoman",
+    lat: 41.0165,
+    lng: 28.9639,
     text: {
       en: {
-        name: "Bebek & Emirgan Shore",
+        name: "Süleymaniye Mosque",
         summary:
-          "Between the fortresses and the bridges, the European shore softens into Bebek and Emirgan — leafy bays lined with wooden waterfront mansions known as yalı. Once aristocratic summer retreats, these timber houses still stand at the water's edge, and Emirgan's tulip gardens above them are a spring highlight of the strait.",
+          "The Süleymaniye Mosque, the masterpiece of the architect Sinan, was completed in 1557 for Sultan Süleyman the Magnificent. Set on one of the old city's seven hills, its balanced domes and four minarets command the Golden Horn skyline.",
         lookFor:
-          "Rows of old wooden mansions in soft colours, hugging the European shore around a gentle curved bay.",
+          "A grey-domed mosque with four minarets crowning the highest ridge of the old city, above the Golden Horn.",
       },
       tr: {
-        name: "Bebek ve Emirgan Kıyısı",
+        name: "Süleymaniye Camii",
         summary:
-          "Hisarlarla köprüler arasında Avrupa kıyısı yumuşayarak Bebek ve Emirgan'a dönüşür — yalı denen ahşap kıyı konaklarıyla çevrili yeşil koylar. Bir zamanlar aristokrat yazlıkları olan bu ahşap evler hâlâ su kenarında durur; üstlerindeki Emirgan'ın lale bahçeleri boğazın bahar şöleni olur.",
+          "Mimar Sinan'ın başyapıtı Süleymaniye Camii, 1557'de Kanuni Sultan Süleyman için tamamlandı. Eski şehrin yedi tepesinden birine kurulan caminin dengeli kubbeleri ve dört minaresi Haliç siluetine hakimdir.",
         lookFor:
-          "Yumuşak renklerde, hafif kavisli bir koyu saran, Avrupa kıyısına sıralanmış eski ahşap konaklar.",
+          "Eski şehrin en yüksek sırtını taçlandıran, gri kubbeli ve dört minareli cami; Haliç'in üzerinde.",
       },
       de: {
-        name: "Ufer von Bebek & Emirgan",
+        name: "Süleymaniye-Moschee",
         summary:
-          "Zwischen den Festungen und den Brücken wird das europäische Ufer in Bebek und Emirgan sanfter — grüne Buchten, gesäumt von hölzernen Ufervillen, den sogenannten yalı. Einst aristokratische Sommersitze, stehen diese Holzhäuser noch am Wasser; die Tulpengärten von Emirgan darüber sind ein Frühlingshöhepunkt.",
+          "Die Süleymaniye-Moschee, das Meisterwerk des Architekten Sinan, wurde 1557 für Sultan Süleyman den Prächtigen vollendet. Auf einem der sieben Hügel der Altstadt beherrschen ihre Kuppeln und vier Minarette das Goldene Horn.",
         lookFor:
-          "Reihen alter Holzvillen in sanften Farben, die sich am europäischen Ufer um eine leicht geschwungene Bucht schmiegen.",
+          "Eine graue Kuppelmoschee mit vier Minaretten, die den höchsten Kamm der Altstadt über dem Goldenen Horn krönt.",
       },
       fr: {
-        name: "Rive de Bebek & Emirgan",
+        name: "Mosquée Süleymaniye",
         summary:
-          "Entre les forteresses et les ponts, la rive européenne s'adoucit en Bebek et Emirgan — des baies verdoyantes bordées de demeures de bois en bord d'eau, les yalı. Anciennes résidences d'été aristocratiques, ces maisons de bois bordent encore l'eau, et les jardins de tulipes d'Emirgan font le printemps du détroit.",
+          "La mosquée Süleymaniye, chef-d'œuvre de l'architecte Sinan, fut achevée en 1557 pour Soliman le Magnifique. Sur l'une des sept collines de la vieille ville, ses coupoles et quatre minarets dominent la Corne d'Or.",
         lookFor:
-          "Des rangées d'anciennes demeures de bois aux teintes douces, épousant la rive européenne autour d'une baie courbe.",
+          "Une mosquée à coupole grise et quatre minarets couronnant la plus haute crête de la vieille ville.",
       },
       es: {
-        name: "Orilla de Bebek y Emirgan",
+        name: "Mezquita de Süleymaniye",
         summary:
-          "Entre las fortalezas y los puentes, la orilla europea se suaviza en Bebek y Emirgan — bahías frondosas bordeadas de mansiones de madera junto al agua, llamadas yalı. Antes retiros veraniegos aristocráticos, estas casas de madera siguen al borde del agua, y los jardines de tulipanes de Emirgan animan la primavera.",
+          "La mezquita de Süleymaniye, obra maestra del arquitecto Sinan, se terminó en 1557 para Solimán el Magnífico. Sobre una de las siete colinas de la ciudad vieja, sus cúpulas y cuatro minaretes dominan el Cuerno de Oro.",
         lookFor:
-          "Hileras de antiguas mansiones de madera en tonos suaves, abrazando la orilla europea en torno a una bahía curva.",
+          "Una mezquita de cúpula gris y cuatro minaretes que corona la cresta más alta de la ciudad vieja.",
       },
       ru: {
-        name: "Берег Бебека и Эмиргана",
+        name: "Мечеть Сулеймание",
         summary:
-          "Между крепостями и мостами европейский берег смягчается в Бебеке и Эмиргане — зелёные бухты с деревянными прибрежными особняками, которые называют ялы. Когда-то аристократические летние резиденции, эти деревянные дома и сегодня стоят у воды, а тюльпановые сады Эмиргана — весенняя жемчужина пролива.",
+          "Мечеть Сулеймание, шедевр зодчего Синана, была завершена в 1557 году для султана Сулеймана Великолепного. Стоящая на одном из семи холмов старого города, она с куполами и четырьмя минаретами господствует над Золотым Рогом.",
         lookFor:
-          "Ряды старинных деревянных особняков мягких тонов, обнимающих европейский берег вдоль плавно изогнутой бухты.",
+          "Мечеть с серым куполом и четырьмя минаретами, венчающая высший гребень старого города.",
       },
       it: {
-        name: "Riva di Bebek & Emirgan",
+        name: "Moschea di Solimano",
         summary:
-          "Tra le fortezze e i ponti, la riva europea si addolcisce in Bebek ed Emirgan — baie verdeggianti orlate da ville di legno sull'acqua, le yalı. Un tempo residenze estive aristocratiche, queste case di legno costeggiano ancora l'acqua, e i giardini di tulipani di Emirgan animano la primavera.",
+          "La moschea di Solimano, capolavoro dell'architetto Sinan, fu completata nel 1557 per Solimano il Magnifico. Su uno dei sette colli della città vecchia, le sue cupole e quattro minareti dominano il Corno d'Oro.",
         lookFor:
-          "File di antiche ville di legno dai toni tenui, lungo la riva europea attorno a una baia curva.",
+          "Una moschea dalla cupola grigia e quattro minareti che corona la cresta più alta della città vecchia.",
       },
       nl: {
-        name: "Oever van Bebek & Emirgan",
+        name: "Süleymaniye-moskee",
         summary:
-          "Tussen de forten en de bruggen verzacht de Europese oever tot Bebek en Emirgan — groene baaien omzoomd door houten oevervilla's, de yalı. Ooit aristocratische zomerverblijven, staan deze houten huizen nog aan het water, en de tulpentuinen van Emirgan zijn een lentehoogtepunt.",
+          "De Süleymaniye-moskee, het meesterwerk van architect Sinan, werd in 1557 voltooid voor sultan Süleyman de Grote. Op een van de zeven heuvels van de oude stad beheersen haar koepels en vier minaretten de Gouden Hoorn.",
         lookFor:
-          "Rijen oude houten villa's in zachte tinten, langs de Europese oever rond een licht gebogen baai.",
+          "Een moskee met grijze koepel en vier minaretten die de hoogste kam van de oude stad bekroont.",
       },
       ar: {
-        name: "ساحل بيبك وإميرغان",
+        name: "جامع السليمانية",
         summary:
-          "بين القلاع والجسور يلين الساحل الأوروبي إلى بيبك وإميرغان — خلجان خضراء تحفّها قصور خشبية على الماء تُعرف بالـ«يالي». كانت يوماً مصايف للأرستقراطيين، ولا تزال هذه البيوت الخشبية على حافة الماء، وحدائق التوليب في إميرغان فوقها متعة الربيع.",
+          "جامع السليمانية، تحفة المعماري سنان، اكتمل عام 1557 للسلطان سليمان القانوني. يقوم على إحدى تلال المدينة القديمة السبع، وتهيمن قبابه ومآذنه الأربع على القرن الذهبي.",
         lookFor:
-          "صفوف من القصور الخشبية القديمة بألوان هادئة تعانق الساحل الأوروبي حول خليج منحنٍ بلطف.",
+          "جامع بقبة رمادية وأربع مآذن يتوّج أعلى تلال المدينة القديمة فوق القرن الذهبي.",
       },
       ja: {
-        name: "ベベックとエミルガンの岸",
+        name: "スレイマニエ・モスク",
         summary:
-          "城塞群と橋の間で、ヨーロッパ岸はベベックとエミルガンへと和らぎます——「ヤル」と呼ばれる木造の水辺の邸宅が並ぶ緑の入り江です。かつて貴族の夏の別荘だったこれらの木造家屋は今も水際に立ち、上手のエミルガンのチューリップ庭園は春の見どころです。",
+          "建築家スィナンの傑作スレイマニエ・モスクは、1557年にスレイマン大帝のために完成しました。旧市街の七つの丘の一つに建ち、ドームと四本のミナレットが金角湾を見渡します。",
         lookFor:
-          "穏やかな色合いの古い木造邸宅が、緩く湾曲した入り江に沿って欧州岸に並びます。",
+          "金角湾を見下ろす旧市街の最も高い尾根に建つ、灰色のドームと四本のミナレットのモスク。",
       },
       zh: {
-        name: "贝贝克与埃米尔甘岸",
+        name: "苏莱曼尼耶清真寺",
         summary:
-          "在城堡与大桥之间，欧洲岸渐趋柔和，化为贝贝克与埃米尔甘——绿意盎然的海湾，岸边排列着称为「亚勒」的木造水滨宅邸。这些昔日贵族的避暑别墅至今仍立于水畔，上方埃米尔甘的郁金香花园是海峡的春日亮点。",
+          "苏莱曼尼耶清真寺是建筑大师锡南的杰作，1557年为苏莱曼大帝建成。它坐落于旧城七丘之一，匀称的穹顶与四座宣礼塔俯瞰金角湾。",
         lookFor:
-          "色调柔和的古老木造宅邸成排，沿着欧洲岸环绕一处缓缓弯曲的海湾。",
+          "一座灰色穹顶、四座宣礼塔的清真寺，矗立于旧城最高山脊，俯瞰金角湾。",
       },
       pt: {
-        name: "Margem de Bebek & Emirgan",
+        name: "Mesquita de Solimão",
         summary:
-          "Entre as fortalezas e as pontes, a margem europeia suaviza-se em Bebek e Emirgan — baías verdejantes ladeadas de mansões de madeira à beira-água, as yalı. Outrora retiros de verão aristocráticos, estas casas de madeira ainda ladeiam a água, e os jardins de tulipas de Emirgan animam a primavera.",
+          "A Mesquita de Solimão (Süleymaniye), obra-prima do arquiteto Sinan, foi concluída em 1557 para Solimão, o Magnífico. Sobre uma das sete colinas da cidade velha, as suas cúpulas e quatro minaretes dominam o Corno de Ouro.",
         lookFor:
-          "Filas de antigas mansões de madeira em tons suaves, ao longo da margem europeia em torno de uma baía curva.",
+          "Uma mesquita de cúpula cinzenta e quatro minaretes a coroar a crista mais alta da cidade velha.",
+      },
+    },
+  },
+  {
+    id: "topkapi",
+    side: "Europe",
+    category: "Imperial palace",
+    era: "1478 · Ottoman",
+    lat: 41.0115,
+    lng: 28.9834,
+    text: {
+      en: {
+        name: "Topkapı Palace",
+        summary:
+          "Topkapı Palace was the seat of the Ottoman sultans for nearly four centuries. Spread across the gardens of Sarayburnu, its low pavilions, courtyards and pointed-roof towers look out over the meeting of three waters.",
+        lookFor:
+          "Low Ottoman pavilions and pointed-roof towers among trees on the headland above Sarayburnu.",
+      },
+      tr: {
+        name: "Topkapı Sarayı",
+        summary:
+          "Topkapı Sarayı, yaklaşık dört yüzyıl boyunca Osmanlı padişahlarının merkeziydi. Sarayburnu'nun bahçelerine yayılan alçak köşkleri, avluları ve sivri çatılı kuleleri üç denizin buluştuğu noktaya bakar.",
+        lookFor:
+          "Sarayburnu'nun üzerindeki burunda, ağaçlar arasında alçak Osmanlı köşkleri ve sivri çatılı kuleler.",
+      },
+      de: {
+        name: "Topkapı-Palast",
+        summary:
+          "Der Topkapı-Palast war fast vier Jahrhunderte lang der Sitz der osmanischen Sultane. Über die Gärten von Sarayburnu verteilt, blicken seine niedrigen Pavillons, Höfe und Spitzdachtürme auf das Zusammentreffen dreier Gewässer.",
+        lookFor:
+          "Niedrige osmanische Pavillons und Spitzdachtürme zwischen Bäumen auf der Landzunge über Sarayburnu.",
+      },
+      fr: {
+        name: "Palais de Topkapı",
+        summary:
+          "Le palais de Topkapı fut le siège des sultans ottomans pendant près de quatre siècles. Étalé sur les jardins de Sarayburnu, ses pavillons bas, ses cours et ses tours pointues dominent la rencontre de trois eaux.",
+        lookFor:
+          "Des pavillons ottomans bas et des tours à toit pointu parmi les arbres, sur le promontoire au-dessus de Sarayburnu.",
+      },
+      es: {
+        name: "Palacio de Topkapı",
+        summary:
+          "El palacio de Topkapı fue la sede de los sultanes otomanos durante casi cuatro siglos. Repartido por los jardines de Sarayburnu, sus pabellones bajos, patios y torres puntiagudas miran al encuentro de tres aguas.",
+        lookFor:
+          "Pabellones otomanos bajos y torres de tejado puntiagudo entre árboles, en el promontorio sobre Sarayburnu.",
+      },
+      ru: {
+        name: "Дворец Топкапы",
+        summary:
+          "Дворец Топкапы почти четыре века был резиденцией османских султанов. Раскинувшийся в садах Сарайбурну, его невысокие павильоны, дворы и башни с островерхими крышами смотрят на слияние трёх вод.",
+        lookFor:
+          "Невысокие османские павильоны и башни с островерхими крышами среди деревьев на мысу над Сарайбурну.",
+      },
+      it: {
+        name: "Palazzo di Topkapı",
+        summary:
+          "Il palazzo di Topkapı fu la sede dei sultani ottomani per quasi quattro secoli. Disteso sui giardini di Sarayburnu, i suoi padiglioni bassi, cortili e torri appuntite si affacciano sull'incontro di tre acque.",
+        lookFor:
+          "Bassi padiglioni ottomani e torri dal tetto a punta tra gli alberi, sul promontorio sopra Sarayburnu.",
+      },
+      nl: {
+        name: "Topkapı-paleis",
+        summary:
+          "Het Topkapı-paleis was bijna vier eeuwen de zetel van de Ottomaanse sultans. Verspreid over de tuinen van Sarayburnu kijken de lage paviljoens, binnenplaatsen en spitse torens uit op de samenkomst van drie wateren.",
+        lookFor:
+          "Lage Ottomaanse paviljoens en spitse torens tussen bomen op de landtong boven Sarayburnu.",
+      },
+      ar: {
+        name: "قصر توبكابي",
+        summary:
+          "كان قصر توبكابي مقر السلاطين العثمانيين قرابة أربعة قرون. ينتشر على حدائق سراي بورنو، وتطل أجنحته المنخفضة وساحاته وأبراجه المدببة على ملتقى المياه الثلاث.",
+        lookFor:
+          "أجنحة عثمانية منخفضة وأبراج مدببة بين الأشجار على الرأس فوق سراي بورنو.",
+      },
+      ja: {
+        name: "トプカプ宮殿",
+        summary:
+          "トプカプ宮殿は約四世紀にわたりオスマン帝国スルタンの居城でした。サライブルヌの庭園に広がり、低い東屋や中庭、とがった屋根の塔が三つの水域の交わりを見渡します。",
+        lookFor:
+          "サライブルヌの岬の木々の間に建つ、低いオスマンの東屋ととがった屋根の塔。",
+      },
+      zh: {
+        name: "托普卡帕宫",
+        summary:
+          "托普卡帕宫近四个世纪是奥斯曼苏丹的居所。它铺展在萨拉布努的花园中，低矮的亭阁、庭院与尖顶塔楼俯瞰三处水域的交汇。",
+        lookFor:
+          "萨拉布努岬角树林间，低矮的奥斯曼亭阁与尖顶塔楼。",
+      },
+      pt: {
+        name: "Palácio de Topkapı",
+        summary:
+          "O palácio de Topkapı foi a sede dos sultões otomanos durante quase quatro séculos. Espalhado pelos jardins de Sarayburnu, os seus pavilhões baixos, pátios e torres pontiagudas dão para o encontro de três águas.",
+        lookFor:
+          "Pavilhões otomanos baixos e torres de telhado pontiagudo entre árvores, no promontório sobre Sarayburnu.",
+      },
+    },
+  },
+  {
+    id: "hagia-sophia",
+    side: "Europe",
+    category: "Byzantine monument",
+    era: "537 · Byzantine",
+    lat: 41.0086,
+    lng: 28.9802,
+    text: {
+      en: {
+        name: "Hagia Sophia",
+        summary:
+          "Hagia Sophia has stood for almost 1,500 years — first a Byzantine cathedral, then an Ottoman mosque, a museum, and a mosque once more. Its vast shallow dome was the largest in the world for a thousand years.",
+        lookFor:
+          "A massive ochre-red domed building flanked by minarets, dominating the Historic Peninsula skyline.",
+      },
+      tr: {
+        name: "Ayasofya",
+        summary:
+          "Ayasofya neredeyse 1.500 yıldır ayakta — önce Bizans katedrali, sonra Osmanlı camisi, müze ve yeniden cami. Geniş ve basık kubbesi bin yıl boyunca dünyanın en büyüğüydü.",
+        lookFor:
+          "Minarelerle çevrili, kocaman kızıl-kerpiç renkli kubbeli yapı; tarihi yarımada siluetine hakim.",
+      },
+      de: {
+        name: "Hagia Sophia",
+        summary:
+          "Die Hagia Sophia steht seit fast 1.500 Jahren — erst byzantinische Kathedrale, dann osmanische Moschee, Museum und wieder Moschee. Ihre weite flache Kuppel war tausend Jahre lang die größte der Welt.",
+        lookFor:
+          "Ein gewaltiger ockerroter Kuppelbau mit Minaretten, der die Skyline der historischen Halbinsel beherrscht.",
+      },
+      fr: {
+        name: "Sainte-Sophie",
+        summary:
+          "Sainte-Sophie est debout depuis près de 1 500 ans — d'abord cathédrale byzantine, puis mosquée ottomane, musée, et de nouveau mosquée. Sa vaste coupole surbaissée fut la plus grande du monde pendant mille ans.",
+        lookFor:
+          "Un immense édifice à coupole ocre-rouge flanqué de minarets, dominant l'horizon de la péninsule historique.",
+      },
+      es: {
+        name: "Santa Sofía",
+        summary:
+          "Santa Sofía lleva en pie casi 1.500 años — primero catedral bizantina, luego mezquita otomana, museo y de nuevo mezquita. Su amplia cúpula rebajada fue la mayor del mundo durante mil años.",
+        lookFor:
+          "Un enorme edificio de cúpula ocre-roja flanqueado por minaretes, que domina el horizonte de la península histórica.",
+      },
+      ru: {
+        name: "Собор Святой Софии",
+        summary:
+          "Святая София стоит почти 1500 лет — сначала византийский собор, затем османская мечеть, музей и снова мечеть. Её широкий пологий купол тысячу лет оставался крупнейшим в мире.",
+        lookFor:
+          "Громадное здание с охристо-красным куполом и минаретами, господствующее над историческим полуостровом.",
+      },
+      it: {
+        name: "Santa Sofia",
+        summary:
+          "Santa Sofia è in piedi da quasi 1.500 anni — prima cattedrale bizantina, poi moschea ottomana, museo e di nuovo moschea. La sua ampia cupola ribassata fu la più grande del mondo per mille anni.",
+        lookFor:
+          "Un enorme edificio dalla cupola ocra-rossa affiancato da minareti, che domina la penisola storica.",
+      },
+      nl: {
+        name: "Hagia Sophia",
+        summary:
+          "De Hagia Sophia staat er al bijna 1.500 jaar — eerst Byzantijnse kathedraal, dan Ottomaanse moskee, museum en weer moskee. Haar brede vlakke koepel was duizend jaar lang de grootste ter wereld.",
+        lookFor:
+          "Een enorm okerrood koepelgebouw met minaretten, dat de skyline van het historische schiereiland beheerst.",
+      },
+      ar: {
+        name: "آيا صوفيا",
+        summary:
+          "تقف آيا صوفيا منذ نحو 1500 عام — كاتدرائية بيزنطية أولاً، ثم جامعاً عثمانياً، فمتحفاً، ثم جامعاً من جديد. كانت قبتها الواسعة المنخفضة الأكبر في العالم لألف عام.",
+        lookFor:
+          "مبنى ضخم بقبة بلون أحمر مغرة تحفّه المآذن، يهيمن على أفق شبه الجزيرة التاريخية.",
+      },
+      ja: {
+        name: "アヤソフィア",
+        summary:
+          "アヤソフィアは約1500年立ち続けています——初めはビザンツの聖堂、のちオスマンのモスク、博物館、そして再びモスクに。その広く浅いドームは千年間世界最大でした。",
+        lookFor:
+          "ミナレットを従えた巨大な黄土赤色のドーム建築。歴史半島のスカイラインを圧します。",
+      },
+      zh: {
+        name: "圣索菲亚",
+        summary:
+          "圣索菲亚屹立近1500年——先是拜占庭主教座堂，后为奥斯曼清真寺、博物馆，又复为清真寺。其宽阔扁平的穹顶曾千年居世界之最。",
+        lookFor:
+          "一座赭红色巨大穹顶建筑，两侧立有宣礼塔，主宰历史半岛的天际线。",
+      },
+      pt: {
+        name: "Hagia Sophia",
+        summary:
+          "A Hagia Sophia ergue-se há quase 1.500 anos — primeiro catedral bizantina, depois mesquita otomana, museu e de novo mesquita. A sua ampla cúpula rebaixada foi a maior do mundo durante mil anos.",
+        lookFor:
+          "Um enorme edifício de cúpula ocre-avermelhada ladeado por minaretes, dominando a península histórica.",
+      },
+    },
+  },
+  {
+    id: "blue-mosque",
+    side: "Europe",
+    category: "Imperial mosque",
+    era: "1616 · Ottoman",
+    lat: 41.0054,
+    lng: 28.9768,
+    text: {
+      en: {
+        name: "Blue Mosque",
+        summary:
+          "The Sultan Ahmed Mosque, known worldwide as the Blue Mosque for the İznik tiles lining its interior, was completed in 1616. Its cascade of domes and six slender minarets crown the Historic Peninsula skyline.",
+        lookFor:
+          "A great mosque with six slender minarets and a pyramid of domes on the peninsula skyline.",
+      },
+      tr: {
+        name: "Sultanahmet Camii",
+        summary:
+          "İç duvarlarını kaplayan İznik çinileri yüzünden dünyaca Mavi Cami olarak bilinen Sultanahmet Camii, 1616'da tamamlandı. Kademeli kubbeleri ve altı ince minaresi tarihi yarımada siluetini taçlandırır.",
+        lookFor:
+          "Tarihi yarımada siluetinde altı ince minareli ve piramit gibi yükselen kubbeli büyük cami.",
+      },
+      de: {
+        name: "Blaue Moschee",
+        summary:
+          "Die Sultan-Ahmed-Moschee, weltweit als Blaue Moschee für die İznik-Fliesen ihres Inneren bekannt, wurde 1616 vollendet. Ihre gestaffelten Kuppeln und sechs schlanken Minarette krönen die Skyline der historischen Halbinsel.",
+        lookFor:
+          "Eine große Moschee mit sechs schlanken Minaretten und einer Pyramide aus Kuppeln an der Halbinsel-Skyline.",
+      },
+      fr: {
+        name: "Mosquée Bleue",
+        summary:
+          "La mosquée du Sultan Ahmed, connue dans le monde entier comme la Mosquée Bleue pour les carreaux d'İznik de son intérieur, fut achevée en 1616. Ses coupoles étagées et six minarets élancés couronnent la péninsule historique.",
+        lookFor:
+          "Une grande mosquée à six minarets élancés et une pyramide de coupoles sur l'horizon de la péninsule.",
+      },
+      es: {
+        name: "Mezquita Azul",
+        summary:
+          "La mezquita del Sultán Ahmed, conocida mundialmente como Mezquita Azul por los azulejos de İznik de su interior, se terminó en 1616. Sus cúpulas escalonadas y seis esbeltos minaretes coronan la península histórica.",
+        lookFor:
+          "Una gran mezquita con seis esbeltos minaretes y una pirámide de cúpulas en el horizonte de la península.",
+      },
+      ru: {
+        name: "Голубая мечеть",
+        summary:
+          "Мечеть Султанахмет, во всём мире известная как Голубая мечеть из-за изникских изразцов внутри, была завершена в 1616 году. Каскад её куполов и шесть стройных минаретов венчают исторический полуостров.",
+        lookFor:
+          "Большая мечеть с шестью стройными минаретами и пирамидой куполов на горизонте полуострова.",
+      },
+      it: {
+        name: "Moschea Blu",
+        summary:
+          "La moschea del Sultano Ahmed, nota in tutto il mondo come Moschea Blu per le piastrelle di İznik dell'interno, fu completata nel 1616. La sua cascata di cupole e sei minareti slanciati coronano la penisola storica.",
+        lookFor:
+          "Una grande moschea con sei minareti slanciati e una piramide di cupole sull'orizzonte della penisola.",
+      },
+      nl: {
+        name: "Blauwe Moskee",
+        summary:
+          "De Sultan Ahmed-moskee, wereldwijd bekend als de Blauwe Moskee om de İznik-tegels binnenin, werd in 1616 voltooid. Haar getrapte koepels en zes slanke minaretten bekronen het historische schiereiland.",
+        lookFor:
+          "Een grote moskee met zes slanke minaretten en een piramide van koepels aan de skyline van het schiereiland.",
+      },
+      ar: {
+        name: "الجامع الأزرق",
+        summary:
+          "جامع السلطان أحمد، المعروف عالمياً بالجامع الأزرق بفضل بلاط إزنيق المبطّن لداخله، اكتمل عام 1616. تتوّج قبابه المتدرجة ومآذنه الست النحيلة أفق شبه الجزيرة التاريخية.",
+        lookFor:
+          "جامع كبير بست مآذن نحيلة وهرم من القباب على أفق شبه الجزيرة.",
+      },
+      ja: {
+        name: "ブルーモスク",
+        summary:
+          "内部を彩るイズニックタイルから世界でブルーモスクと呼ばれるスルタンアフメト・モスクは、1616年に完成しました。連なるドームと六本の細いミナレットが歴史半島の空を飾ります。",
+        lookFor:
+          "半島のスカイラインに、六本の細いミナレットとピラミッド状のドームを持つ大モスク。",
+      },
+      zh: {
+        name: "蓝色清真寺",
+        summary:
+          "苏丹艾哈迈德清真寺因内部铺满伊兹尼克瓷砖而以蓝色清真寺闻名于世，1616年建成。层叠的穹顶与六座纤细宣礼塔为历史半岛天际线加冕。",
+        lookFor:
+          "半岛天际线上，一座有六座纤细宣礼塔与金字塔状穹顶的大清真寺。",
+      },
+      pt: {
+        name: "Mesquita Azul",
+        summary:
+          "A Mesquita do Sultão Ahmed, conhecida mundialmente como Mesquita Azul pelos azulejos de İznik do seu interior, foi concluída em 1616. As cúpulas escalonadas e seis minaretes esguios coroam a península histórica.",
+        lookFor:
+          "Uma grande mesquita com seis minaretes esguios e uma pirâmide de cúpulas no horizonte da península.",
+      },
+    },
+  },
+  {
+    id: "sarayburnu",
+    side: "Europe",
+    category: "Historic cape",
+    era: "Seraglio Point",
+    lat: 41.0134,
+    lng: 28.9839,
+    text: {
+      en: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, or Seraglio Point, is the sharp green cape where the Golden Horn, the Bosphorus and the Sea of Marmara all meet. Topkapı Palace sits in the gardens above it, and the point marks the very start of the cruise route.",
+        lookFor:
+          "A green wooded headland at the tip of the old city, with palace walls and gardens rising behind it.",
+      },
+      tr: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, Haliç'in, Boğaz'ın ve Marmara Denizi'nin buluştuğu keskin yeşil burundur. Üzerindeki bahçelerde Topkapı Sarayı yer alır ve burun, tur rotasının tam başlangıcını işaretler.",
+        lookFor:
+          "Eski şehrin ucunda, arkasında saray surları ve bahçeler yükselen yeşil ağaçlık burun.",
+      },
+      de: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, die Seraglio-Spitze, ist die scharfe grüne Landzunge, wo Goldenes Horn, Bosporus und Marmarameer zusammentreffen. Darüber liegt der Topkapı-Palast, und die Spitze markiert den Beginn der Route.",
+        lookFor:
+          "Eine grüne bewaldete Landzunge an der Spitze der Altstadt, dahinter Palastmauern und Gärten.",
+      },
+      fr: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, la Pointe du Sérail, est le cap vert acéré où la Corne d'Or, le Bosphore et la mer de Marmara se rejoignent. Le palais de Topkapı le surplombe, et la pointe marque le début de la croisière.",
+        lookFor:
+          "Un promontoire vert et boisé à la pointe de la vieille ville, avec murs de palais et jardins derrière.",
+      },
+      es: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, la Punta del Serrallo, es el agudo cabo verde donde el Cuerno de Oro, el Bósforo y el mar de Mármara se encuentran. El palacio de Topkapı lo corona y la punta marca el inicio del crucero.",
+        lookFor:
+          "Un promontorio verde y arbolado en la punta de la ciudad vieja, con murallas de palacio y jardines detrás.",
+      },
+      ru: {
+        name: "Сарайбурну",
+        summary:
+          "Сарайбурну, или мыс Сераль, — острый зелёный мыс, где сходятся Золотой Рог, Босфор и Мраморное море. Над ним в садах стоит дворец Топкапы, и мыс отмечает самое начало маршрута круиза.",
+        lookFor:
+          "Зелёный лесистый мыс на оконечности старого города, за ним поднимаются дворцовые стены и сады.",
+      },
+      it: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, la Punta del Serraglio, è l'aguzzo capo verde dove il Corno d'Oro, il Bosforo e il Mar di Marmara si incontrano. Il palazzo di Topkapı lo sovrasta e la punta segna l'inizio della crociera.",
+        lookFor:
+          "Un promontorio verde e boscoso sulla punta della città vecchia, con mura del palazzo e giardini dietro.",
+      },
+      nl: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, de Seraglio-punt, is de scherpe groene kaap waar de Gouden Hoorn, de Bosporus en de Zee van Marmara samenkomen. Het Topkapı-paleis ligt erboven en de punt markeert het begin van de route.",
+        lookFor:
+          "Een groene beboste landtong op de punt van de oude stad, met paleismuren en tuinen erachter.",
+      },
+      ar: {
+        name: "سراي بورنو",
+        summary:
+          "سراي بورنو، أو رأس السراي، هو الرأس الأخضر الحاد حيث يلتقي القرن الذهبي والبوسفور وبحر مرمرة. يعلوه قصر توبكابي، ويمثّل الرأس بداية مسار الرحلة.",
+        lookFor:
+          "رأس أخضر مشجّر عند طرف المدينة القديمة، تعلوه أسوار القصر والحدائق.",
+      },
+      ja: {
+        name: "サライブルヌ",
+        summary:
+          "サライブルヌ（宮廷の岬）は、金角湾とボスポラスとマルマラ海が出会う鋭い緑の岬です。その上の庭園にトプカプ宮殿が建ち、岬は航路の出発点を示します。",
+        lookFor:
+          "旧市街の先端の緑深い岬。背後に宮殿の城壁と庭園がそびえます。",
+      },
+      zh: {
+        name: "萨拉布努",
+        summary:
+          "萨拉布努（宫角）是金角湾、博斯普鲁斯与马尔马拉海交汇的尖锐绿色海岬。托普卡帕宫坐落其上的花园，海岬标示着航线的起点。",
+        lookFor:
+          "旧城尖端一处绿树成荫的岬角，背后耸立宫墙与花园。",
+      },
+      pt: {
+        name: "Sarayburnu",
+        summary:
+          "Sarayburnu, a Ponta do Serralho, é o agudo cabo verde onde o Corno de Ouro, o Bósforo e o Mar de Mármara se encontram. O palácio de Topkapı ergue-se acima e a ponta marca o início do cruzeiro.",
+        lookFor:
+          "Um promontório verde e arborizado na ponta da cidade velha, com muralhas de palácio e jardins atrás.",
+      },
+    },
+  },
+  {
+    id: "galata-bridge",
+    side: "Strait",
+    category: "Bascule bridge",
+    era: "1994",
+    lat: 41.0202,
+    lng: 28.9737,
+    text: {
+      en: {
+        name: "Galata Bridge",
+        summary:
+          "The Galata Bridge spans the mouth of the Golden Horn, linking the old city to Karaköy. Anglers line its rails day and night while ferries pass beneath, and its lower deck of fish restaurants makes it a sociable crossing.",
+        lookFor:
+          "A low, wide bridge crowded with fishing rods across the mouth of the Golden Horn.",
+      },
+      tr: {
+        name: "Galata Köprüsü",
+        summary:
+          "Galata Köprüsü, Haliç'in ağzını aşarak eski şehri Karaköy'e bağlar. Altından vapurlar geçerken korkuluklarında gece gündüz balıkçılar dizilir; alt katındaki balık lokantaları onu canlı bir geçit yapar.",
+        lookFor:
+          "Haliç'in ağzı boyunca uzanan, oltalarla dolu alçak ve geniş köprü.",
+      },
+      de: {
+        name: "Galata-Brücke",
+        summary:
+          "Die Galata-Brücke überspannt die Mündung des Goldenen Horns und verbindet die Altstadt mit Karaköy. Tag und Nacht reihen sich Angler an ihrem Geländer, und ihr unteres Deck voller Fischrestaurants macht sie gesellig.",
+        lookFor:
+          "Eine niedrige, breite Brücke voller Angelruten über der Mündung des Goldenen Horns.",
+      },
+      fr: {
+        name: "Pont de Galata",
+        summary:
+          "Le pont de Galata franchit l'embouchure de la Corne d'Or, reliant la vieille ville à Karaköy. Des pêcheurs bordent ses rambardes jour et nuit et son niveau inférieur de restaurants de poisson en fait une traversée animée.",
+        lookFor:
+          "Un pont bas et large hérissé de cannes à pêche, sur l'embouchure de la Corne d'Or.",
+      },
+      es: {
+        name: "Puente de Gálata",
+        summary:
+          "El puente de Gálata cruza la desembocadura del Cuerno de Oro y une la ciudad vieja con Karaköy. Pescadores se alinean en sus barandillas día y noche y su nivel inferior de restaurantes de pescado lo hace animado.",
+        lookFor:
+          "Un puente bajo y ancho repleto de cañas de pescar sobre la desembocadura del Cuerno de Oro.",
+      },
+      ru: {
+        name: "Галатский мост",
+        summary:
+          "Галатский мост перекрывает устье Золотого Рога, соединяя старый город с Каракёем. У его перил днём и ночью стоят рыбаки, а нижний ярус с рыбными ресторанами делает переход оживлённым.",
+        lookFor:
+          "Низкий широкий мост, усеянный удочками, над устьем Золотого Рога.",
+      },
+      it: {
+        name: "Ponte di Galata",
+        summary:
+          "Il ponte di Galata scavalca la foce del Corno d'Oro, collegando la città vecchia a Karaköy. Pescatori ne affollano le ringhiere giorno e notte e il livello inferiore di ristoranti di pesce lo rende vivace.",
+        lookFor:
+          "Un ponte basso e largo gremito di canne da pesca sulla foce del Corno d'Oro.",
+      },
+      nl: {
+        name: "Galatabrug",
+        summary:
+          "De Galatabrug overspant de monding van de Gouden Hoorn en verbindt de oude stad met Karaköy. Dag en nacht staan er hengelaars langs de reling, en het onderdek vol visrestaurants maakt het een levendige oversteek.",
+        lookFor:
+          "Een lage, brede brug vol hengels over de monding van de Gouden Hoorn.",
+      },
+      ar: {
+        name: "جسر غلطة",
+        summary:
+          "يعبر جسر غلطة مصبّ القرن الذهبي، واصلاً المدينة القديمة بكاراكوي. يصطفّ الصيادون على حواجزه ليلاً ونهاراً، ويجعله طابقه السفلي من مطاعم السمك معبراً نابضاً.",
+        lookFor:
+          "جسر منخفض عريض مكتظ بصنّارات الصيد فوق مصبّ القرن الذهبي.",
+      },
+      ja: {
+        name: "ガラタ橋",
+        summary:
+          "ガラタ橋は金角湾の河口をまたぎ、旧市街とカラキョイを結びます。手すりには昼夜釣り人が並び、下層の魚料理店が橋を賑やかな渡り場にしています。",
+        lookFor:
+          "金角湾の河口にかかる、釣り竿でひしめく低く幅広い橋。",
+      },
+      zh: {
+        name: "加拉塔大桥",
+        summary:
+          "加拉塔大桥横跨金角湾入海口，连接旧城与卡拉柯伊。栏杆边昼夜垂钓者成排，下层的鱼餐馆使它成为热闹的通道。",
+        lookFor:
+          "横跨金角湾口、布满钓竿的一座低矮宽阔大桥。",
+      },
+      pt: {
+        name: "Ponte de Gálata",
+        summary:
+          "A Ponte de Gálata atravessa a foz do Corno de Ouro, ligando a cidade velha a Karaköy. Pescadores alinham-se nas grades dia e noite e o piso inferior de restaurantes de peixe torna-a uma travessia animada.",
+        lookFor:
+          "Uma ponte baixa e larga cheia de canas de pesca sobre a foz do Corno de Ouro.",
+      },
+    },
+  },
+  {
+    id: "halic-bridge",
+    side: "Strait",
+    category: "Metro bridge",
+    era: "2014",
+    lat: 41.027,
+    lng: 28.962,
+    text: {
+      en: {
+        name: "Golden Horn Metro Bridge",
+        summary:
+          "The Golden Horn Metro Bridge carries the M2 line across the Golden Horn on slender cable-stayed pylons. Opened in 2014, its sail-like design was kept deliberately light so it would not crowd the historic skyline behind it.",
+        lookFor:
+          "A modern cable-stayed bridge with tall white pylons crossing the Golden Horn.",
+      },
+      tr: {
+        name: "Haliç Metro Köprüsü",
+        summary:
+          "Haliç Metro Köprüsü, M2 hattını ince eğik askılı kuleler üzerinde Haliç'in karşısına taşır. 2014'te açılan yelken benzeri tasarımı, arkasındaki tarihi silueti gölgelememek için bilinçli olarak hafif tutuldu.",
+        lookFor:
+          "Haliç'i aşan, uzun beyaz kuleli modern eğik askılı köprü.",
+      },
+      de: {
+        name: "Goldenes-Horn-Metrobrücke",
+        summary:
+          "Die Goldenes-Horn-Metrobrücke führt die M2-Linie auf schlanken Schrägseilpylonen über das Goldene Horn. 2014 eröffnet, wurde ihr segelartiges Design bewusst leicht gehalten, um die historische Skyline nicht zu überladen.",
+        lookFor:
+          "Eine moderne Schrägseilbrücke mit hohen weißen Pylonen über dem Goldenen Horn.",
+      },
+      fr: {
+        name: "Pont de métro de la Corne d'Or",
+        summary:
+          "Le pont de métro de la Corne d'Or porte la ligne M2 au-dessus de la Corne d'Or sur de fins pylônes haubanés. Ouvert en 2014, son dessin en voile fut volontairement allégé pour ne pas surcharger l'horizon historique.",
+        lookFor:
+          "Un pont haubané moderne aux hauts pylônes blancs franchissant la Corne d'Or.",
+      },
+      es: {
+        name: "Puente del metro del Cuerno de Oro",
+        summary:
+          "El puente del metro del Cuerno de Oro lleva la línea M2 sobre el Cuerno de Oro en finos pilonos atirantados. Inaugurado en 2014, su diseño de vela se mantuvo ligero para no recargar el horizonte histórico.",
+        lookFor:
+          "Un moderno puente atirantado con altos pilonos blancos que cruza el Cuerno de Oro.",
+      },
+      ru: {
+        name: "Метромост Золотой Рог",
+        summary:
+          "Метромост Золотой Рог несёт линию M2 над Золотым Рогом на тонких вантовых пилонах. Открытый в 2014 году, его парусный силуэт намеренно сделали лёгким, чтобы не загромождать исторический горизонт.",
+        lookFor:
+          "Современный вантовый мост с высокими белыми пилонами через Золотой Рог.",
+      },
+      it: {
+        name: "Ponte metropolitana del Corno d'Oro",
+        summary:
+          "Il ponte della metropolitana del Corno d'Oro porta la linea M2 oltre il Corno d'Oro su sottili piloni strallati. Aperto nel 2014, il suo profilo a vela fu tenuto leggero per non gravare sull'orizzonte storico.",
+        lookFor:
+          "Un moderno ponte strallato con alti piloni bianchi che attraversa il Corno d'Oro.",
+      },
+      nl: {
+        name: "Gouden Hoorn-metrobrug",
+        summary:
+          "De Gouden Hoorn-metrobrug draagt de M2-lijn over de Gouden Hoorn op slanke tuipylonen. Geopend in 2014, werd het zeilachtige ontwerp bewust licht gehouden om de historische skyline niet te overladen.",
+        lookFor:
+          "Een moderne tuibrug met hoge witte pylonen over de Gouden Hoorn.",
+      },
+      ar: {
+        name: "جسر مترو القرن الذهبي",
+        summary:
+          "يحمل جسر مترو القرن الذهبي خط M2 فوق القرن الذهبي على دعامات نحيلة مشدودة بالكوابل. افتُتح عام 2014، وأبقي تصميمه الشراعي خفيفاً كي لا يزحم الأفق التاريخي خلفه.",
+        lookFor:
+          "جسر حديث مشدود بالكوابل بدعامات بيضاء عالية يعبر القرن الذهبي.",
+      },
+      ja: {
+        name: "金角湾メトロ橋",
+        summary:
+          "金角湾メトロ橋は、細い斜張ケーブルの主塔でM2線を金角湾の対岸へ渡します。2014年開通、帆を思わせる意匠は背後の歴史的景観を圧迫しないよう軽やかに保たれました。",
+        lookFor:
+          "白く高い主塔を持つ、金角湾を渡る現代的な斜張橋。",
+      },
+      zh: {
+        name: "金角湾地铁桥",
+        summary:
+          "金角湾地铁桥以纤细的斜拉索桥塔承载M2线跨越金角湾。2014年通车，其风帆般的造型刻意保持轻盈，以免压过背后的历史天际线。",
+        lookFor:
+          "一座白色高塔的现代斜拉桥，横跨金角湾。",
+      },
+      pt: {
+        name: "Ponte de metro do Corno de Ouro",
+        summary:
+          "A Ponte de metro do Corno de Ouro leva a linha M2 sobre o Corno de Ouro em esguios pilones atirantados. Inaugurada em 2014, o seu desenho de vela foi mantido leve para não sobrecarregar o horizonte histórico.",
+        lookFor:
+          "Uma moderna ponte atirantada com altos pilones brancos a cruzar o Corno de Ouro.",
+      },
+    },
+  },
+  {
+    id: "galataport",
+    side: "Europe",
+    category: "Cruise port",
+    era: "2021",
+    lat: 41.0247,
+    lng: 28.981,
+    text: {
+      en: {
+        name: "Galataport",
+        summary:
+          "Galataport is Istanbul's modern cruise terminal — a kilometre of restored Karaköy waterfront opened in 2021. Built as the world's first underground cruise terminal, it keeps the quay open as a public promenade of galleries and shops.",
+        lookFor:
+          "A long contemporary stone-and-glass promenade along the Karaköy shore.",
+      },
+      tr: {
+        name: "Galataport",
+        summary:
+          "Galataport, İstanbul'un modern kruvaziyer terminali — 2021'de açılan, restore edilmiş bir kilometrelik Karaköy kıyısı. Dünyanın ilk yer altı kruvaziyer terminali olarak kurulmuş; rıhtımı galeri ve dükkânlarla dolu halka açık bir gezinti alanı tutar.",
+        lookFor:
+          "Karaköy kıyısı boyunca uzanan, uzun ve çağdaş taş-cam gezinti alanı.",
+      },
+      de: {
+        name: "Galataport",
+        summary:
+          "Galataport ist Istanbuls modernes Kreuzfahrtterminal — ein Kilometer restauriertes Karaköy-Ufer, 2021 eröffnet. Als weltweit erstes unterirdisches Kreuzfahrtterminal gebaut, bleibt der Kai eine öffentliche Promenade mit Galerien und Läden.",
+        lookFor:
+          "Eine lange, moderne Stein-und-Glas-Promenade entlang des Ufers von Karaköy.",
+      },
+      fr: {
+        name: "Galataport",
+        summary:
+          "Galataport est le terminal de croisière moderne d'Istanbul — un kilomètre de quais de Karaköy restaurés, ouvert en 2021. Premier terminal de croisière souterrain au monde, il garde le quai en promenade publique de galeries et boutiques.",
+        lookFor:
+          "Une longue promenade contemporaine de pierre et de verre le long du rivage de Karaköy.",
+      },
+      es: {
+        name: "Galataport",
+        summary:
+          "Galataport es la moderna terminal de cruceros de Estambul — un kilómetro de costa de Karaköy restaurada, inaugurada en 2021. Como primera terminal de cruceros subterránea del mundo, mantiene el muelle como paseo público de galerías y tiendas.",
+        lookFor:
+          "Un largo paseo contemporáneo de piedra y cristal a lo largo de la orilla de Karaköy.",
+      },
+      ru: {
+        name: "Галатапорт",
+        summary:
+          "Галатапорт — современный круизный терминал Стамбула, километр восстановленной набережной Каракёя, открытый в 2021 году. Построенный как первый в мире подземный круизный терминал, он оставляет причал открытым променадом с галереями и магазинами.",
+        lookFor:
+          "Длинный современный променад из камня и стекла вдоль берега Каракёя.",
+      },
+      it: {
+        name: "Galataport",
+        summary:
+          "Galataport è il moderno terminal crociere di Istanbul — un chilometro di lungomare di Karaköy restaurato, aperto nel 2021. Primo terminal crociere sotterraneo al mondo, mantiene la banchina come passeggiata pubblica di gallerie e negozi.",
+        lookFor:
+          "Una lunga passeggiata contemporanea di pietra e vetro lungo la riva di Karaköy.",
+      },
+      nl: {
+        name: "Galataport",
+        summary:
+          "Galataport is Istanboels moderne cruiseterminal — een kilometer gerestaureerde Karaköy-kade, geopend in 2021. Gebouwd als 's werelds eerste ondergrondse cruiseterminal, blijft de kade een openbare promenade met galerieën en winkels.",
+        lookFor:
+          "Een lange eigentijdse promenade van steen en glas langs de oever van Karaköy.",
+      },
+      ar: {
+        name: "غالاتابورت",
+        summary:
+          "غالاتابورت محطة الرحلات البحرية الحديثة في إسطنبول — كيلومتر من واجهة كاراكوي البحرية المرمَّمة، افتُتح عام 2021. بُني كأول محطة رحلات بحرية تحت الأرض في العالم، فيبقى الرصيف ممشى عاماً للمعارض والمتاجر.",
+        lookFor:
+          "ممشى حديث طويل من الحجر والزجاج على امتداد ساحل كاراكوي.",
+      },
+      ja: {
+        name: "ガラタポート",
+        summary:
+          "ガラタポートはイスタンブールの近代的なクルーズターミナル——2021年開業、修復されたカラキョイの1キロの水辺です。世界初の地下クルーズターミナルとして造られ、岸壁は画廊や店の並ぶ公共の遊歩道のままです。",
+        lookFor:
+          "カラキョイの岸に沿う、石とガラスの長い現代的な遊歩道。",
+      },
+      zh: {
+        name: "加拉塔港",
+        summary:
+          "加拉塔港是伊斯坦布尔现代化的邮轮码头——一公里修复后的卡拉柯伊海滨，2021年开放。它是世界首座地下邮轮码头，使码头保持为画廊与商铺林立的公共步道。",
+        lookFor:
+          "沿卡拉柯伊岸边延展的一条石材与玻璃的现代长廊。",
+      },
+      pt: {
+        name: "Galataport",
+        summary:
+          "Galataport é o moderno terminal de cruzeiros de Istambul — um quilómetro de orla de Karaköy restaurada, inaugurado em 2021. Construído como o primeiro terminal de cruzeiros subterrâneo do mundo, mantém o cais como passeio público de galerias e lojas.",
+        lookFor:
+          "Um longo passeio contemporâneo de pedra e vidro ao longo da margem de Karaköy.",
+      },
+    },
+  },
+  {
+    id: "besiktas",
+    side: "Europe",
+    category: "Ferry district",
+    era: "Historic quarter",
+    lat: 41.042,
+    lng: 29.0061,
+    text: {
+      en: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş is one of the liveliest districts on the European shore — a transport hub where ferries, the Dolmabahçe Palace and a famous football stadium all meet the water. Its busy quay has been a Bosphorus landing point since Ottoman times.",
+        lookFor:
+          "A busy waterfront with ferry piers and a dense skyline, just north of Dolmabahçe Palace.",
+      },
+      tr: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş, Avrupa yakasının en hareketli semtlerinden biri — vapurların, Dolmabahçe Sarayı'nın ve ünlü bir futbol stadının suyla buluştuğu bir ulaşım merkezi. İşlek iskelesi Osmanlı'dan beri bir Boğaz durağıdır.",
+        lookFor:
+          "Dolmabahçe Sarayı'nın hemen kuzeyinde, vapur iskeleleri ve yoğun siluetiyle hareketli kıyı.",
+      },
+      de: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş ist eines der lebhaftesten Viertel am europäischen Ufer — ein Verkehrsknoten, wo Fähren, der Dolmabahçe-Palast und ein berühmtes Fußballstadion ans Wasser treffen. Sein Kai ist seit osmanischer Zeit ein Bosporus-Anleger.",
+        lookFor:
+          "Eine belebte Uferzone mit Fähranlegern und dichter Skyline, gleich nördlich des Dolmabahçe-Palasts.",
+      },
+      fr: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş est l'un des quartiers les plus animés de la rive européenne — un nœud de transport où ferries, palais de Dolmabahçe et un célèbre stade de football rejoignent l'eau. Son quai est un débarcadère du Bosphore depuis l'époque ottomane.",
+        lookFor:
+          "Un front de mer animé avec embarcadères de ferry et skyline dense, juste au nord du palais de Dolmabahçe.",
+      },
+      es: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş es uno de los barrios más animados de la orilla europea — un nudo de transporte donde ferris, el palacio de Dolmabahçe y un famoso estadio de fútbol llegan al agua. Su muelle es un embarcadero del Bósforo desde época otomana.",
+        lookFor:
+          "Un paseo marítimo animado con embarcaderos de ferri y un perfil denso, justo al norte del palacio de Dolmabahçe.",
+      },
+      ru: {
+        name: "Бешикташ",
+        summary:
+          "Бешикташ — один из самых оживлённых районов европейского берега, транспортный узел, где паромы, дворец Долмабахче и знаменитый футбольный стадион выходят к воде. Его причал служит босфорской пристанью со времён османов.",
+        lookFor:
+          "Оживлённая набережная с паромными причалами и плотным силуэтом, к северу от дворца Долмабахче.",
+      },
+      it: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş è uno dei quartieri più vivaci della riva europea — un nodo dei trasporti dove traghetti, il palazzo di Dolmabahçe e un celebre stadio di calcio incontrano l'acqua. La sua banchina è un approdo del Bosforo dall'epoca ottomana.",
+        lookFor:
+          "Un lungomare animato con pontili dei traghetti e uno skyline denso, appena a nord del palazzo di Dolmabahçe.",
+      },
+      nl: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş is een van de levendigste wijken aan de Europese oever — een vervoersknooppunt waar veerboten, het Dolmabahçe-paleis en een beroemd voetbalstadion het water raken. De kade is sinds de Ottomaanse tijd een Bosporus-aanlegplaats.",
+        lookFor:
+          "Een drukke waterkant met veersteigers en een dichte skyline, net ten noorden van het Dolmabahçe-paleis.",
+      },
+      ar: {
+        name: "بشكطاش",
+        summary:
+          "بشكطاش من أكثر أحياء الضفة الأوروبية حيوية — عقدة نقل تلتقي فيها العبّارات وقصر دولمة بهجة وملعب كرة قدم شهير عند الماء. ورصيفه مرفأ على البوسفور منذ العهد العثماني.",
+        lookFor:
+          "واجهة بحرية مزدحمة بأرصفة العبّارات وأفق كثيف، إلى الشمال من قصر دولمة بهجة مباشرة.",
+      },
+      ja: {
+        name: "ベシクタシュ",
+        summary:
+          "ベシクタシュは欧州岸で最も活気ある地区の一つ——フェリー、ドルマバフチェ宮殿、有名なサッカースタジアムが水辺で出会う交通の要所です。賑わう桟橋はオスマン時代からのボスポラスの船着き場です。",
+        lookFor:
+          "フェリー桟橋と密集した街並みの賑やかな水辺。ドルマバフチェ宮殿のすぐ北。",
+      },
+      zh: {
+        name: "贝希克塔什",
+        summary:
+          "贝希克塔什是欧洲岸最热闹的城区之一——渡轮、多尔玛巴赫切宫与一座著名足球场都在此临水交汇的交通枢纽。其繁忙码头自奥斯曼时代起便是博斯普鲁斯的登船点。",
+        lookFor:
+          "渡轮码头与密集天际线的繁忙水岸，就在多尔玛巴赫切宫以北。",
+      },
+      pt: {
+        name: "Beşiktaş",
+        summary:
+          "Beşiktaş é um dos bairros mais animados da margem europeia — um nó de transportes onde ferries, o palácio de Dolmabahçe e um famoso estádio de futebol chegam à água. O seu cais é um ancoradouro do Bósforo desde a época otomana.",
+        lookFor:
+          "Uma orla movimentada com cais de ferry e um horizonte denso, mesmo a norte do palácio de Dolmabahçe.",
+      },
+    },
+  },
+  {
+    id: "galatasaray-island",
+    side: "Strait",
+    category: "Bosphorus islet",
+    era: "Ottoman islet",
+    lat: 41.047,
+    lng: 29.0322,
+    text: {
+      en: {
+        name: "Galatasaray Island",
+        summary:
+          "Galatasaray Island is a tiny private islet off the Kuruçeşme shore, just large enough for a cluster of low buildings and a terrace. Once an Ottoman coal depot, it later became a celebrated summer club.",
+        lookFor:
+          "A very small islet close to the European shore near Kuruçeşme, covered by a single low building.",
+      },
+      tr: {
+        name: "Galatasaray Adası",
+        summary:
+          "Galatasaray Adası, Kuruçeşme kıyısı açıklarında küçük, özel bir adacık — ancak birkaç alçak yapı ve bir terasa yetecek büyüklükte. Bir zamanlar Osmanlı kömür deposu olan ada sonradan ünlü bir yazlık kulüp oldu.",
+        lookFor:
+          "Kuruçeşme yakınında, Avrupa kıyısına yakın, tek alçak yapıyla kaplı çok küçük adacık.",
+      },
+      de: {
+        name: "Galatasaray-Insel",
+        summary:
+          "Die Galatasaray-Insel ist ein winziges privates Eiland vor der Küste von Kuruçeşme, gerade groß genug für ein paar niedrige Gebäude und eine Terrasse. Einst osmanisches Kohlelager, wurde sie später ein gefeierter Sommerclub.",
+        lookFor:
+          "Ein sehr kleines Eiland nahe dem europäischen Ufer bei Kuruçeşme, von einem einzigen niedrigen Gebäude bedeckt.",
+      },
+      fr: {
+        name: "Île de Galatasaray",
+        summary:
+          "L'île de Galatasaray est un minuscule îlot privé au large de Kuruçeşme, à peine assez grand pour quelques bâtiments bas et une terrasse. Ancien dépôt de charbon ottoman, elle devint plus tard un club d'été célèbre.",
+        lookFor:
+          "Un très petit îlot près de la rive européenne à Kuruçeşme, couvert d'un seul bâtiment bas.",
+      },
+      es: {
+        name: "Isla de Galatasaray",
+        summary:
+          "La isla de Galatasaray es un diminuto islote privado frente a Kuruçeşme, apenas lo bastante grande para unos edificios bajos y una terraza. Antiguo depósito de carbón otomano, después se hizo un célebre club de verano.",
+        lookFor:
+          "Un islote muy pequeño cerca de la orilla europea en Kuruçeşme, cubierto por un solo edificio bajo.",
+      },
+      ru: {
+        name: "Остров Галатасарай",
+        summary:
+          "Остров Галатасарай — крошечный частный островок у берега Куручешме, едва вмещающий несколько низких построек и террасу. Бывший османский угольный склад, позже он стал знаменитым летним клубом.",
+        lookFor:
+          "Совсем маленький островок у европейского берега близ Куручешме, занятый единственной низкой постройкой.",
+      },
+      it: {
+        name: "Isola di Galatasaray",
+        summary:
+          "L'isola di Galatasaray è un minuscolo isolotto privato al largo di Kuruçeşme, appena grande per qualche edificio basso e una terrazza. Un tempo deposito di carbone ottomano, divenne poi un celebre club estivo.",
+        lookFor:
+          "Un isolotto piccolissimo presso la riva europea a Kuruçeşme, coperto da un solo edificio basso.",
+      },
+      nl: {
+        name: "Galatasaray-eiland",
+        summary:
+          "Het Galatasaray-eiland is een piepklein privé-eilandje voor de kust van Kuruçeşme, net groot genoeg voor wat lage gebouwen en een terras. Ooit een Ottomaans kolendepot, werd het later een gevierde zomerclub.",
+        lookFor:
+          "Een heel klein eilandje dicht bij de Europese oever bij Kuruçeşme, bedekt door één laag gebouw.",
+      },
+      ar: {
+        name: "جزيرة غلطة سراي",
+        summary:
+          "جزيرة غلطة سراي جزيرة خاصة صغيرة جداً قبالة ساحل كوروتشيشمه، بالكاد تتسع لبضعة مبانٍ منخفضة وشرفة. كانت مستودع فحم عثمانياً ثم صارت نادياً صيفياً شهيراً.",
+        lookFor:
+          "جزيرة صغيرة جداً قرب الضفة الأوروبية عند كوروتشيشمه، يغطيها مبنى منخفض واحد.",
+      },
+      ja: {
+        name: "ガラタサライ島",
+        summary:
+          "ガラタサライ島はクルチェシメ沖の小さな私有の島で、低い建物がいくつかとテラスが収まる程度の広さです。かつてオスマンの石炭置き場で、のちに名高い夏のクラブとなりました。",
+        lookFor:
+          "クルチェシメの欧州岸近くの、ごく小さな島。低い建物ひとつに覆われています。",
+      },
+      zh: {
+        name: "加拉塔萨雷岛",
+        summary:
+          "加拉塔萨雷岛是库鲁切什梅岸外一座极小的私人岛屿，仅够容下数座低矮建筑与一处露台。它曾是奥斯曼煤库，后来成为著名的夏季会所。",
+        lookFor:
+          "库鲁切什梅附近、紧邻欧洲岸的极小岛屿，被一座低矮建筑覆盖。",
+      },
+      pt: {
+        name: "Ilha de Galatasaray",
+        summary:
+          "A Ilha de Galatasaray é um ilhéu privado minúsculo ao largo de Kuruçeşme, apenas grande o suficiente para alguns edifícios baixos e um terraço. Outrora depósito de carvão otomano, tornou-se depois um célebre clube de verão.",
+        lookFor:
+          "Um ilhéu muito pequeno junto à margem europeia em Kuruçeşme, coberto por um único edifício baixo.",
+      },
+    },
+  },
+  {
+    id: "arnavutkoy",
+    side: "Europe",
+    category: "Waterfront village",
+    era: "Ottoman yalı",
+    lat: 41.068,
+    lng: 29.0428,
+    text: {
+      en: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy is one of the best-preserved old Bosphorus villages, its European shore lined with pastel wooden mansions — the yalı — that once belonged to Ottoman bankers and pashas, their bay windows leaning over the water.",
+        lookFor:
+          "A tight row of ornate wooden mansions in faded pastel colours, leaning over the water.",
+      },
+      tr: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy, en iyi korunmuş eski Boğaz köylerinden biri; Avrupa kıyısı, bir zamanlar Osmanlı bankerlerine ve paşalarına ait pastel renkli ahşap yalılarla dizili, cumbaları suyun üzerine sarkıyor.",
+        lookFor:
+          "Solmuş pastel renklerde, suyun üzerine eğilen sık sıralı süslü ahşap yalılar.",
+      },
+      de: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy ist eines der am besten erhaltenen alten Bosporus-Dörfer; sein europäisches Ufer ist von pastellfarbenen Holzvillen — den yalı — gesäumt, die einst osmanischen Bankiers und Paschas gehörten, ihre Erker über dem Wasser.",
+        lookFor:
+          "Eine dichte Reihe verzierter Holzvillen in verblassten Pastelltönen, über das Wasser geneigt.",
+      },
+      fr: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy est l'un des villages anciens du Bosphore les mieux conservés ; sa rive européenne est bordée de demeures de bois pastel — les yalı — ayant appartenu à des banquiers et pachas ottomans, leurs bow-windows penchés sur l'eau.",
+        lookFor:
+          "Une rangée serrée de demeures de bois ornées aux teintes pastel passées, penchées sur l'eau.",
+      },
+      es: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy es uno de los antiguos pueblos del Bósforo mejor conservados; su orilla europea está bordeada de mansiones de madera pastel — las yalı — que pertenecieron a banqueros y bajás otomanos, sus miradores sobre el agua.",
+        lookFor:
+          "Una hilera apretada de mansiones de madera ornadas en tonos pastel desvaídos, inclinadas sobre el agua.",
+      },
+      ru: {
+        name: "Арнавуткёй",
+        summary:
+          "Арнавуткёй — одна из лучше всего сохранившихся старых босфорских деревень; европейский берег здесь застроен пастельными деревянными особняками — ялы, — что принадлежали османским банкирам и пашам, их эркеры нависают над водой.",
+        lookFor:
+          "Плотный ряд резных деревянных особняков выцветших пастельных тонов, склонённых над водой.",
+      },
+      it: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy è uno dei villaggi antichi del Bosforo meglio conservati; la sua riva europea è orlata di ville di legno pastello — le yalı — un tempo di banchieri e pascià ottomani, con bovindi sporti sull'acqua.",
+        lookFor:
+          "Una fila serrata di ville di legno ornate dai toni pastello sbiaditi, inclinate sull'acqua.",
+      },
+      nl: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy is een van de best bewaarde oude Bosporusdorpen; de Europese oever is omzoomd met pastelkleurige houten villa's — de yalı — die ooit van Ottomaanse bankiers en pasja's waren, met erkers boven het water.",
+        lookFor:
+          "Een dichte rij sierlijke houten villa's in verbleekte pasteltinten, overhellend boven het water.",
+      },
+      ar: {
+        name: "أرناووتكوي",
+        summary:
+          "أرناووتكوي من أفضل قرى البوسفور القديمة حفظاً؛ يصطفّ على ضفّتها الأوروبية قصور خشبية بألوان باستيل — الـ«يالي» — كانت لمصرفيين وباشاوات عثمانيين، نوافذها البارزة تميل فوق الماء.",
+        lookFor:
+          "صفّ متراصّ من القصور الخشبية المزخرفة بألوان باستيل باهتة، مائلة فوق الماء.",
+      },
+      ja: {
+        name: "アルナヴトキョイ",
+        summary:
+          "アルナヴトキョイは最もよく保存されたボスポラスの古い村の一つ。欧州岸には、かつてオスマンの銀行家やパシャが所有したパステル色の木造邸宅「ヤル」が並び、出窓が水上に張り出します。",
+        lookFor:
+          "色あせたパステル色の装飾的な木造邸宅が、水上に張り出して密に並ぶ一画。",
+      },
+      zh: {
+        name: "阿尔纳武特柯伊",
+        summary:
+          "阿尔纳武特柯伊是保存最完好的博斯普鲁斯古村之一；其欧洲岸排列着粉彩木造宅邸——「亚勒」，曾属奥斯曼银行家与帕夏，凸窗探向水面。",
+        lookFor:
+          "成排紧密、色调淡雅渐褪的精致木造宅邸，向水面倾探。",
+      },
+      pt: {
+        name: "Arnavutköy",
+        summary:
+          "Arnavutköy é uma das aldeias antigas do Bósforo mais bem preservadas; a sua margem europeia é ladeada de mansões de madeira em tons pastel — as yalı — outrora de banqueiros e paxás otomanos, com janelas salientes sobre a água.",
+        lookFor:
+          "Uma fila cerrada de mansões de madeira ornamentadas em tons pastel desbotados, inclinadas sobre a água.",
+      },
+    },
+  },
+  {
+    id: "kuleli",
+    side: "Asia",
+    category: "Military school",
+    era: "1845 · Ottoman",
+    lat: 41.0762,
+    lng: 29.054,
+    text: {
+      en: {
+        name: "Kuleli Military School",
+        summary:
+          "The Kuleli Military High School stretches along the Asian shore at Çengelköy, its long facade bookended by two distinctive towers — kule — that give it its name. Founded in 1845, it is one of Turkey's oldest military schools.",
+        lookFor:
+          "A long pale building on the Asian shore with a tall pointed tower at each end.",
+      },
+      tr: {
+        name: "Kuleli Askerî Lisesi",
+        summary:
+          "Kuleli Askerî Lisesi, Çengelköy'de Anadolu kıyısı boyunca uzanır; uzun cephesinin iki ucunda ona adını veren iki belirgin kule yükselir. 1845'te kurulan okul, Türkiye'nin en eski askerî okullarından biridir.",
+        lookFor:
+          "Anadolu kıyısında, iki ucunda birer uzun sivri kule bulunan upuzun açık renkli yapı.",
+      },
+      de: {
+        name: "Militärschule Kuleli",
+        summary:
+          "Die Militäroberschule Kuleli erstreckt sich am asiatischen Ufer bei Çengelköy; ihre lange Fassade wird an beiden Enden von zwei markanten Türmen — kule — abgeschlossen, die ihr den Namen geben. 1845 gegründet, ist sie eine der ältesten Militärschulen der Türkei.",
+        lookFor:
+          "Ein langes helles Gebäude am asiatischen Ufer mit je einem hohen Spitzturm an beiden Enden.",
+      },
+      fr: {
+        name: "École militaire de Kuleli",
+        summary:
+          "Le lycée militaire de Kuleli s'étire le long de la rive asiatique à Çengelköy ; sa longue façade est encadrée par deux tours distinctives — kule — qui lui donnent son nom. Fondé en 1845, c'est l'une des plus anciennes écoles militaires de Turquie.",
+        lookFor:
+          "Un long bâtiment clair sur la rive asiatique, avec une haute tour pointue à chaque extrémité.",
+      },
+      es: {
+        name: "Escuela Militar de Kuleli",
+        summary:
+          "El liceo militar de Kuleli se extiende por la orilla asiática en Çengelköy; su larga fachada está rematada por dos torres distintivas — kule — que le dan nombre. Fundado en 1845, es una de las escuelas militares más antiguas de Turquía.",
+        lookFor:
+          "Un largo edificio claro en la orilla asiática, con una alta torre puntiaguda en cada extremo.",
+      },
+      ru: {
+        name: "Военная школа Кулели",
+        summary:
+          "Военный лицей Кулели тянется вдоль азиатского берега у Ченгелькёя; его длинный фасад с обоих концов завершают две приметные башни — куле, — давшие ему имя. Основанный в 1845 году, это одна из старейших военных школ Турции.",
+        lookFor:
+          "Длинное светлое здание на азиатском берегу с высокой островерхой башней на каждом конце.",
+      },
+      it: {
+        name: "Scuola Militare di Kuleli",
+        summary:
+          "Il liceo militare di Kuleli si distende lungo la riva asiatica a Çengelköy; la sua lunga facciata è chiusa da due torri caratteristiche — kule — che le danno il nome. Fondata nel 1845, è una delle più antiche scuole militari della Turchia.",
+        lookFor:
+          "Un lungo edificio chiaro sulla riva asiatica, con un'alta torre appuntita a ciascuna estremità.",
+      },
+      nl: {
+        name: "Militaire School Kuleli",
+        summary:
+          "De militaire middelbare school Kuleli strekt zich uit langs de Aziatische oever bij Çengelköy; haar lange gevel wordt aan beide einden afgesloten door twee kenmerkende torens — kule — die haar de naam geven. Gesticht in 1845, is het een van Turkijes oudste militaire scholen.",
+        lookFor:
+          "Een lang lichtkleurig gebouw aan de Aziatische oever, met aan elk uiteinde een hoge spitse toren.",
+      },
+      ar: {
+        name: "مدرسة كولالي العسكرية",
+        summary:
+          "تمتد ثانوية كولالي العسكرية على الساحل الآسيوي عند تشنغلكوي؛ تحدّ واجهتها الطويلة من طرفيها برجان مميّزان — kule — منهما اسمها. تأسست عام 1845، وهي من أقدم المدارس العسكرية في تركيا.",
+        lookFor:
+          "مبنى طويل فاتح اللون على الساحل الآسيوي، بطرفيه برج مدبّب عالٍ.",
+      },
+      ja: {
+        name: "クレリ陸軍学校",
+        summary:
+          "クレリ陸軍高等学校はチェンゲルキョイのアジア岸に長く延び、長大なファサードの両端に学校名の由来となる二つの特徴的な塔——クレ——が立ちます。1845年創設、トルコ最古級の軍学校です。",
+        lookFor:
+          "アジア岸に建つ長い淡色の建物。両端にそれぞれ高くとがった塔があります。",
+      },
+      zh: {
+        name: "库莱利军事学校",
+        summary:
+          "库莱利军事高中沿亚洲岸延伸于琴盖尔柯伊；其修长立面两端各立一座醒目塔楼——「kule」，校名由此而来。学校创立于1845年，是土耳其最古老的军校之一。",
+        lookFor:
+          "亚洲岸一座修长的浅色建筑，两端各有一座高耸尖塔。",
+      },
+      pt: {
+        name: "Escola Militar de Kuleli",
+        summary:
+          "O liceu militar de Kuleli estende-se ao longo da margem asiática em Çengelköy; a sua longa fachada é rematada por duas torres distintivas — kule — que lhe dão o nome. Fundada em 1845, é uma das mais antigas escolas militares da Turquia.",
+        lookFor:
+          "Um longo edifício claro na margem asiática, com uma alta torre pontiaguda em cada extremidade.",
       },
     },
   },

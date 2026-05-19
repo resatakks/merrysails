@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <circle cx="24" cy="24" r="22" fill="#1a5276" stroke="#e8d5b7" stroke-width="2"/>
+  <!-- Palace -->
+  <rect x="10" y="22" width="28" height="12" rx="1" fill="#e8d5b7"/>
+  <rect x="14" y="18" width="20" height="6" rx="0.5" fill="#e8d5b7"/>
+  <!-- Central section -->
+  <path d="M18 18 Q24 12 30 18" fill="#e8d5b7"/>
+  <circle cx="24" cy="14" r="1.5" fill="#f4d03f" opacity="0.8"/>
+  <!-- Columns -->
+  <rect x="16" y="22" width="1.5" height="10" fill="#1a5276" opacity="0.2"/>
+  <rect x="22" y="22" width="1.5" height="10" fill="#1a5276" opacity="0.2"/>
+  <rect x="28" y="22" width="1.5" height="10" fill="#1a5276" opacity="0.2"/>
+  <!-- Garden trees -->
+  <circle cx="10" cy="34" r="3" fill="#27ae60" opacity="0.6"/>
+  <circle cx="38" cy="34" r="3" fill="#27ae60" opacity="0.6"/>
+  <!-- Gate -->
+  <rect x="22" y="28" width="4" height="6" rx="2" fill="#8b4513"/>
+</svg>

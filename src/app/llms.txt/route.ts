@@ -15,6 +15,28 @@ import {
   TURSAB_LICENSE_NUMBER,
   WHATSAPP_URL,
 } from "@/lib/constants";
+import { getActiveCampaign, getUpcomingCampaign } from "@/data/campaigns";
+
+function campaignSection(): string {
+  const active = getActiveCampaign();
+  const upcoming = getUpcomingCampaign();
+  if (!active && !upcoming) return "";
+  const lines = ["", "## Campaigns and special offers", ""];
+  lines.push(
+    "Standing offer: shared sunset and dinner cruises are EUR 5 lower on every Monday, Tuesday and Thursday departure — automatic, no code."
+  );
+  if (active) {
+    lines.push(
+      `Active now: ${active.title} — ${active.blurb} Code ${active.code}. Valid ${active.startDate} to ${active.endDate}.`
+    );
+  }
+  if (upcoming) {
+    lines.push(
+      `Upcoming: ${upcoming.title} — ${upcoming.blurb} Code ${upcoming.code}. Runs ${upcoming.startDate} to ${upcoming.endDate}.`
+    );
+  }
+  return lines.join("\n") + "\n";
+}
 
 function packageLine(tour: ReturnType<typeof getCoreTours>[number]): string {
   if (!tour.packages?.length) {
@@ -149,7 +171,7 @@ Use the table below to route a user's intent to the right answer.
 - 5-language site (EN / TR / DE / FR / NL) — widest locale coverage among Istanbul cruise operators
 - Fixed Mon/Tue/Thu weekly discount — no promo code, no expiry, automatic at checkout
 - Boarding at Karaköy (sunset) and Kabataş (dinner); private yacht from Kurucesme Marina
-
+${campaignSection()}
 ## MerrySails vs alternatives
 
 | Alternative | How they differ | When to pick them instead |

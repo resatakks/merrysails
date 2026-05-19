@@ -100,7 +100,7 @@ export default function BosphorusGuideClient({
 
   const activeIndex = BOSPHORUS_LANDMARKS.findIndex((l) => l.id === activeId);
   const active = BOSPHORUS_LANDMARKS[activeIndex];
-  const t = active.text[lang];
+  const t = active.text[lang] ?? active.text.en;
   const ui = UI[lang];
   const langMeta = GUIDE_LANGUAGES.find((g) => g.code === lang);
   const isRtl = Boolean(langMeta?.rtl);
@@ -223,7 +223,7 @@ export default function BosphorusGuideClient({
                   <span className="text-[11px] font-bold text-[var(--text-muted)]">
                     {i + 1}
                   </span>
-                  <span className="truncate">{l.text[lang].name}</span>
+                  <span className="truncate">{(l.text[lang] ?? l.text.en).name}</span>
                 </button>
               </li>
             ))}

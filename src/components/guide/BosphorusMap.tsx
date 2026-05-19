@@ -1,7 +1,7 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
 import { LocateFixed, Loader2 } from "lucide-react";
@@ -14,21 +14,19 @@ type Props = {
   locateLabel: string;
 };
 
-const BOSPHORUS_CENTER: [number, number] = [41.058, 29.02];
+const BOSPHORUS_CENTER: [number, number] = [41.045, 29.005];
 
-function pinIcon(num: number, active: boolean): L.DivIcon {
-  const color = active ? "#ff0844" : "#0f3d5e";
-  const h = active ? 46 : 34;
-  const w = h * 0.74;
+function pinIcon(id: string, active: boolean): L.DivIcon {
+  // Each landmark has its own round badge icon at /images/guide/<id>-icon.svg
+  const size = active ? 52 : 38;
+  const ring = active
+    ? "box-shadow:0 0 0 4px #ff0844,0 2px 6px rgba(0,0,0,0.45);"
+    : "box-shadow:0 1px 5px rgba(0,0,0,0.4);";
   return L.divIcon({
     className: "",
-    html: `<svg width="${w}" height="${h}" viewBox="0 0 28 38" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.35))">
-      <path d="M14 0C6.27 0 0 6.27 0 14c0 9.6 14 24 14 24s14-14.4 14-24C28 6.27 21.73 0 14 0Z" fill="${color}"/>
-      <circle cx="14" cy="14" r="8.6" fill="#ffffff"/>
-      <text x="14" y="17.8" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="${color}">${num}</text>
-    </svg>`,
-    iconSize: [w, h],
-    iconAnchor: [w / 2, h],
+    html: `<img src="/images/guide/${id}-icon.svg" alt="" style="width:${size}px;height:${size}px;display:block;border-radius:50%;${ring}transition:all .15s"/>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
   });
 }
 
@@ -49,7 +47,14 @@ function MapController({
   userPos: [number, number] | null;
 }) {
   const map = useMap();
+  const first = useRef(true);
   useEffect(() => {
+    // Keep the initial wide view that shows every landmark; only fly once the
+    // visitor actually picks a landmark.
+    if (first.current) {
+      first.current = false;
+      return;
+    }
     map.flyTo(target, Math.max(map.getZoom(), 14), { duration: 0.7 });
   }, [target, map]);
   useEffect(() => {
@@ -89,7 +94,7 @@ export default function BosphorusMap({ activeId, lang, onSelect, locateLabel }: 
     <div className="relative h-[420px] w-full overflow-hidden rounded-xl border border-[var(--line)]">
       <MapContainer
         center={BOSPHORUS_CENTER}
-        zoom={12}
+        zoom={11}
         scrollWheelZoom
         className="h-full w-full"
         style={{ background: "#aadaff" }}
@@ -98,16 +103,16 @@ export default function BosphorusMap({ activeId, lang, onSelect, locateLabel }: 
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
-        {BOSPHORUS_LANDMARKS.map((l, i) => (
+        {BOSPHORUS_LANDMARKS.map((l) => (
           <Marker
             key={`${l.id}-${l.id === activeId}`}
             position={[l.lat, l.lng]}
-            icon={pinIcon(i + 1, l.id === activeId)}
+            icon={pinIcon(l.id, l.id === activeId)}
             zIndexOffset={l.id === activeId ? 1000 : 0}
             eventHandlers={{ click: () => onSelect(l.id) }}
           >
-            <Tooltip direction="top" offset={[0, -30]}>
-              {i + 1}. {l.text[lang].name}
+            <Tooltip direction="top" offset={[0, -24]}>
+              {(l.text[lang] ?? l.text.en).name}
             </Tooltip>
           </Marker>
         ))}

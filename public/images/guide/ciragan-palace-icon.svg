@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <circle cx="24" cy="24" r="22" fill="#1a5276" stroke="#e8d5b7" stroke-width="2"/>
+  <!-- Ornate palace -->
+  <rect x="10" y="22" width="28" height="14" rx="1" fill="#e8d5b7"/>
+  <!-- Arches -->
+  <path d="M14 22 Q14 18 18 18 Q22 18 22 22" fill="#1a5276"/>
+  <path d="M26 22 Q26 18 30 18 Q34 18 34 22" fill="#1a5276"/>
+  <!-- Top ornament -->
+  <rect x="16" y="18" width="16" height="4" fill="#e8d5b7"/>
+  <path d="M20 18 Q24 13 28 18" fill="#f4d03f" opacity="0.7"/>
+  <!-- Windows -->
+  <rect x="14" y="26" width="3" height="4" rx="1" fill="#1a5276"/>
+  <rect x="22" y="26" width="4" height="8" rx="2" fill="#1a5276"/>
+  <rect x="31" y="26" width="3" height="4" rx="1" fill="#1a5276"/>
+</svg>
