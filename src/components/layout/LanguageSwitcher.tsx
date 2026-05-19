@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { ACTIVE_LOCALES, LOCALE_LABELS, LOCALIZED_ROUTES, type SiteLocale } from "@/i18n/config";
@@ -69,8 +70,35 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
   const pathname = usePathname() ?? "/";
   const router = useRouter();
   const { locale: currentLocale, route } = detectFromPathname(pathname);
+  // Click-toggle (not hover-only): hover menus are dead clicks on desktop and
+  // completely unreachable on touch devices. Clarity showed the language
+  // selector was the #1 click target AND the #1 dead-click source on mobile.
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [open]);
+
+  // Close the menu whenever navigation changes the path.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const handleSwitch = (target: SiteLocale) => {
+    setOpen(false);
     if (target === currentLocale) return;
     router.push(buildTargetPath(target, route));
   };
@@ -78,24 +106,35 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
   const activeLocales = ACTIVE_LOCALES as SiteLocale[];
 
   return (
-    <div className={`relative group ${className}`}>
+    <div ref={wrapRef} className={`relative ${className}`}>
       <button
+        type="button"
         aria-label="Change language"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
       >
         <span className="text-base leading-none">{LOCALE_FLAGS[currentLocale]}</span>
         {!compact && (
           <span className="hidden lg:inline">{LOCALE_LABELS[currentLocale]}</span>
         )}
-        <ChevronDown className="h-3.5 w-3.5 text-[var(--text-muted)] transition-transform group-hover:rotate-180 duration-150" />
+        <ChevronDown
+          className={`h-3.5 w-3.5 text-[var(--text-muted)] transition-transform duration-150 ${open ? "rotate-180" : ""}`}
+        />
       </button>
 
-      <div className="absolute right-0 top-full z-50 pt-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150">
+      <div
+        className={`absolute right-0 top-full z-50 pt-1 transition-all duration-150 ${
+          open ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+      >
         <div className="min-w-[168px] rounded-xl border border-gray-100 bg-white py-1.5 shadow-lg ring-1 ring-black/5">
           {activeLocales.map((locale) => {
             return (
               <button
                 key={locale}
+                type="button"
                 onClick={() => handleSwitch(locale)}
                 className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
                   locale === currentLocale
