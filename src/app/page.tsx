@@ -108,7 +108,7 @@ const homepageFaqSchema = {
       name: "What is the best Bosphorus cruise company in Istanbul?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MerrySails is a TURSAB A Group licensed Bosphorus cruise operator in Istanbul, running since 2001 with 50,000+ guests served. It offers the Bosphorus Sunset Cruise from €30 (Tue & Thu), Istanbul Dinner Cruise from €30, and private Yacht Charter from €200. Direct booking without third-party commissions is available at merrysails.com.",
+        text: "MerrySails is a TURSAB A Group licensed Bosphorus cruise operator in Istanbul, running since 2001 with 50,000+ guests served. It offers the Bosphorus Sunset Cruise from €30 (Mon, Tue & Thu), Istanbul Dinner Cruise from €30, and private Yacht Charter from €200. Direct booking without third-party commissions is available at merrysails.com.",
       },
     },
     {
@@ -124,7 +124,7 @@ const homepageFaqSchema = {
       name: "What is the best sunset cruise in Istanbul?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Tue & Thu) or €40 (standard). It runs daily and covers the full Bosphorus strait past Dolmabahçe, Beşiktaş, and the first bridge. TURSAB licensed, available for direct online booking.",
+        text: "The MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Mon, Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Mon, Tue & Thu) or €40 (standard). It runs daily and covers the full Bosphorus strait past Dolmabahçe, Beşiktaş, and the first bridge. TURSAB licensed, available for direct online booking.",
       },
     },
   ],

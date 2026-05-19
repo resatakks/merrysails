@@ -7,6 +7,7 @@ import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
+import HowToGetThere from "@/components/tours/HowToGetThere";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 
@@ -475,6 +476,10 @@ export default async function IstanbulDinnerCruisePage({
             related={relatedTours}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          <div className="my-8">
+            <HowToGetThere slug="bosphorus-dinner-cruise" />
+          </div>
 
           <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
             <h2 className="text-lg font-bold text-blue-900 mb-3">Quick Answer: Best Istanbul Dinner Cruise</h2>

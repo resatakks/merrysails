@@ -25,7 +25,7 @@ const OPERATORS = [
     rank: 1,
     name: "MerrySails",
     url: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
-    priceFrom: "€30 (Tue/Thu) · €34 other days",
+    priceFrom: "€30 (Mon/Tue/Thu) · €34 other days",
     duration: "2 hours",
     tursab: "Yes — A Group since 2001",
     reviews: "4.9★ / 487 reviews",
@@ -98,7 +98,7 @@ const OPERATORS = [
 const FAQS = [
   {
     q: "What is the cheapest Bosphorus sunset cruise in 2026?",
-    a: "MerrySails offers the cheapest TURSAB-licensed Bosphorus sunset cruise in 2026 at €30 per person on Tuesdays and Thursdays (without wine). On other days the price is €34 per person. Both include a multi-lingual host, refreshments, and a 2-hour Bosphorus route passing the Bosphorus Bridge and historic palaces.",
+    a: "MerrySails offers the cheapest TURSAB-licensed Bosphorus sunset cruise in 2026 at €30 per person on Mondays, Tuesdays and Thursdays (without wine). On other days the price is €34 per person. Both include a multi-lingual host, refreshments, and a 2-hour Bosphorus route passing the Bosphorus Bridge and historic palaces.",
   },
   {
     q: "Is booking through Viator cheaper than booking direct?",
@@ -118,7 +118,7 @@ const FAQS = [
   },
   {
     q: "What does a Bosphorus sunset cruise include?",
-    a: "The MerrySails sunset cruise includes a multi-lingual host (12 languages), tea, coffee, lemonade, light snacks, and bridge passage commentary. The 'With Wine' upgrade (€35 Tue/Thu, €40 other days) adds one glass of wine per person.",
+    a: "The MerrySails sunset cruise includes a multi-lingual host (12 languages), tea, coffee, lemonade, light snacks, and bridge passage commentary. The 'With Wine' upgrade (€35 Mon/Tue/Thu, €40 other days) adds one glass of wine per person.",
   },
   {
     q: "Can I cancel a Bosphorus sunset cruise booking for free?",
@@ -305,7 +305,7 @@ export default function BestSunsetCruise2026Page() {
                 <Link href="/cruises/bosphorus-sunset-cruise" className="font-semibold text-orange-600 underline-offset-2 hover:underline">
                   MerrySails Sunset Cruise
                 </Link>{" "}
-                — from €30 Tue/Thu, free cancellation 48 h, 4.9★/487 reviews.
+                — from €30 Mon/Tue/Thu, free cancellation 48 h, 4.9★/487 reviews.
               </p>
             </div>
             <div className="flex gap-3 items-start">
@@ -330,7 +330,7 @@ export default function BestSunsetCruise2026Page() {
               <span className="font-bold text-orange-600 shrink-0">→</span>
               <p>
                 <strong>Price is the only criterion and you want the absolute cheapest listing:</strong>{" "}
-                Compare MerrySails (€30 Tue/Thu direct), Sunset Bosphorus, and Bosphorus Tour —
+                Compare MerrySails (€30 Mon/Tue/Thu direct), Sunset Bosphorus, and Bosphorus Tour —
                 all three publish public pricing on their direct sites.
               </p>
             </div>
@@ -409,7 +409,7 @@ export default function BestSunsetCruise2026Page() {
             <p className="mt-3 text-slate-600">
               The 2-hour route passes Dolmabahçe Palace, Çırağan Palace, and Beylerbeyi Palace with
               live multi-lingual commentary in up to 12 languages. Included on all tiers: tea, coffee,
-              lemonade, and light snacks. The With Wine upgrade (€35 Tue/Thu, €40 other days) adds one
+              lemonade, and light snacks. The With Wine upgrade (€35 Mon/Tue/Thu, €40 other days) adds one
               glass of local wine per person. The Tuesday/Thursday discount of €4 per person is
               automatically applied at checkout — no promo code required.
             </p>
@@ -450,7 +450,7 @@ export default function BestSunsetCruise2026Page() {
               Sunset Bosphorus is an established Istanbul cruise operator with a dedicated sunset cruise
               product. Their digital presence covers multiple languages and they maintain a direct booking
               site. Publicly available pricing as of May 2026 is approximately €35–€45 per person, placing
-              them above the MerrySails Tue/Thu direct rate.
+              them above the MerrySails Mon/Tue/Thu direct rate.
             </p>
             <p className="mt-3 text-slate-600">
               Licensing details are listed on their website. For direct price and inclusion

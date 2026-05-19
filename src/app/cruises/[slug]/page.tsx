@@ -8,6 +8,7 @@ import {
   tours,
 } from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
+import HowToGetThere from "@/components/tours/HowToGetThere";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
@@ -313,7 +314,7 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
   },
   "bosphorus-sunset-cruise": {
     title: "Bosphorus Sunset Cruise Istanbul — From €30",
-    description: "Bosphorus sunset cruise Istanbul from €30 (Tue & Thu). Two 2-hour options: Without Wine or With Wine. Snacks, drinks, and Bosphorus landmark views included.",
+    description: "Bosphorus sunset cruise Istanbul from €30 (Mon, Tue & Thu). Two 2-hour options: Without Wine or With Wine. Snacks, drinks, and Bosphorus landmark views included.",
   },
   "wedding-anniversary": {
     title: "Anniversary Yacht Cruise Istanbul — Bosphorus",
@@ -648,6 +649,10 @@ export default async function TourDetailPage({
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
 
+          <div className="my-8">
+            <HowToGetThere slug={tour.slug} />
+          </div>
+
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">
             <span className="font-semibold text-[var(--heading)]">Helpful resources:</span>
             <Link href="/bosphorus-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
@@ -690,7 +695,7 @@ export default async function TourDetailPage({
                   </h2>
                   <p className="text-sm leading-relaxed text-[var(--text-muted)]">
                     {slug === "bosphorus-sunset-cruise"
-                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Tue & Thu) or €40. Runs daily, timed around Istanbul's sunset. TURSAB A-Group licensed since 2001, rated 4.9 from 998 reviews. Direct online booking at merrysails.com."
+                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Mon, Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Mon, Tue & Thu) or €40. Runs daily, timed around Istanbul's sunset. TURSAB A-Group licensed since 2001, rated 4.9 from 998 reviews. Direct online booking at merrysails.com."
                       : `This page is the protected owner URL for ${tour.nameEn} intent. Use it when the guest already knows the product direction and needs the clearest package, timing, and booking-fit summary.`}
                   </p>
                 </div>

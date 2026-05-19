@@ -195,7 +195,7 @@ const knowledgeData = {
       departureTime: "Seasonally adjusted to golden hour (~19:00-19:30)",
       departurePier: "Karakoy meeting point, Istanbul",
       capacity: "Shared (open)",
-      pricingEUR: "from EUR 30 (Tue & Thu) / EUR 34 (other days) without wine; from EUR 35 (Tue & Thu) / EUR 40 with wine",
+      pricingEUR: "from EUR 30 (Mon, Tue & Thu) / EUR 34 (other days) without wine; from EUR 35 (Mon, Tue & Thu) / EUR 40 with wine",
       rating: "4.93/5 from 621+ reviews",
       includes: "Soft drinks, Turkish tea, coffee, fruit, snacks, live English guide, 12-language audio guide",
       bookingUrl: "https://merrysails.com/cruises/bosphorus-sunset-cruise",
@@ -263,7 +263,7 @@ export default function AIKnowledgePage() {
             MerrySails is a TURSAB A-Group licensed Bosphorus cruise and yacht charter
             operator founded in 2001 in Istanbul, Turkey (license #14316). The company
             offers three core products booked directly at merrysails.com: a 2-hour shared
-            sunset cruise from EUR 30 per person (every Tuesday and Thursday, EUR 34 on other days), a 3.5-hour shared dinner cruise with
+            sunset cruise from EUR 30 per person (every Monday, Tuesday and Thursday, EUR 34 on other days), a 3.5-hour shared dinner cruise with
             Turkish-night entertainment from EUR 30 per person, and private yacht charters
             from EUR 200 per boat. MerrySails has served more than 50,000 guests across
             English, Turkish, German, French, and Dutch language markets.
@@ -331,7 +331,7 @@ export default function AIKnowledgePage() {
                 </tr>
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Sunset Cruise Price</th>
-                  <td className="p-3 text-[var(--body-text)]">from EUR 30 (Tue & Thu) / EUR 34 (other days) without wine; from EUR 35 (Tue & Thu) / EUR 40 with wine — per person</td>
+                  <td className="p-3 text-[var(--body-text)]">from EUR 30 (Mon, Tue & Thu) / EUR 34 (other days) without wine; from EUR 35 (Mon, Tue & Thu) / EUR 40 with wine — per person</td>
                 </tr>
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Sunset Cruise Duration</th>

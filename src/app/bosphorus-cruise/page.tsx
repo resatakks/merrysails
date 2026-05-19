@@ -9,7 +9,7 @@ import { buildHreflang } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul — From €30",
   description:
-    "Compare Bosphorus cruise options in Istanbul: sunset from €30 (Tue & Thu), dinner from €30, private yacht from €200. Find the right booking page fast.",
+    "Compare Bosphorus cruise options in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. Find the right booking page fast.",
   alternates: {
     canonical: `${SITE_URL}/bosphorus-cruise`,
     languages: buildHreflang("/bosphorus-cruise"),
@@ -36,7 +36,7 @@ const guideSchema = {
   "@type": ["TouristTrip", "Service"],
   "@id": `${SITE_URL}/bosphorus-cruise#tour`,
   name: "Bosphorus Cruise Istanbul",
-  description: "Bosphorus cruises in Istanbul: sunset from €30 (Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
+  description: "Bosphorus cruises in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
   url: `${SITE_URL}/bosphorus-cruise`,
   provider: {
     "@type": "TouristInformationCenter",
@@ -83,7 +83,7 @@ const productSchema = {
   "@type": "Product",
   "@id": `${SITE_URL}/bosphorus-cruise#product`,
   name: "Bosphorus Cruise Istanbul Booking",
-  description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €30 (Tue & Thu), dinner cruise from €30, and private yacht charter from €200.",
+  description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €30 (Mon, Tue & Thu), dinner cruise from €30, and private yacht charter from €200.",
   image: `${SITE_URL}/og-image.jpg`,
   brand: { "@type": "Brand", name: "MerrySails" },
   sku: "merrysails-bosphorus-cruise-en",
@@ -229,7 +229,7 @@ const faqItems = [
   },
   {
     q: "How much does a Bosphorus cruise in Istanbul cost?",
-    a: "Current MerrySails public options start from EUR 30 (Tue & Thu) or EUR 34 (other days) for the shared sunset cruise, EUR 30 to EUR 90 for dinner cruise packages, and from EUR 200 per yacht for private yacht charter.",
+    a: "Current MerrySails public options start from EUR 30 (Mon, Tue & Thu) or EUR 34 (other days) for the shared sunset cruise, EUR 30 to EUR 90 for dinner cruise packages, and from EUR 200 per yacht for private yacht charter.",
   },
   {
     q: "Is a Bosphorus boat tour the same as a private yacht charter?",
@@ -283,7 +283,7 @@ const howToSchema = {
       "@type": "HowToStep",
       position: 1,
       name: "Pick the cruise format",
-      text: "Choose between the shared sunset cruise (2 hours, from EUR 30 on Tue & Thu or EUR 34 other days), the shared dinner cruise (3.5 hours, EUR 30 to EUR 90 across four packages), or a private yacht charter (from EUR 200 per yacht, 2 hours).",
+      text: "Choose between the shared sunset cruise (2 hours, from EUR 30 on Mon, Tue & Thu or EUR 34 other days), the shared dinner cruise (3.5 hours, EUR 30 to EUR 90 across four packages), or a private yacht charter (from EUR 200 per yacht, 2 hours).",
       url: `${SITE_URL}/bosphorus-cruise`,
     },
     {
@@ -381,7 +381,7 @@ export default function BosphorusCruisePage() {
                   badge: "Most popular",
                   title: "Bosphorus Sunset Cruise",
                   price: "€30",
-                  per: "per person (Tue & Thu)",
+                  per: "per person (Mon, Tue & Thu)",
                   highlights: ["2.5-hour cruise", "Open bar included", "Kabataş departure", "Shared small-group"],
                   href: "/cruises/bosphorus-sunset-cruise",
                   cta: "Book Sunset Cruise",
@@ -463,7 +463,7 @@ export default function BosphorusCruisePage() {
               MerrySails is Istanbul&apos;s TURSAB A-Group licensed cruise operator (since 2001, 50,000+ guests). All cruises depart from Kabataş pier. Book direct — no middlemen, no markup, instant WhatsApp support.
             </p>
             <ul className="text-sm text-amber-800 space-y-1.5">
-              <li>🌅 <strong>Sunset Cruise:</strong> from €30/person (Tue & Thu) · 2.5 hours · open bar · <Link href="/cruises/bosphorus-sunset-cruise" className="underline">Book now</Link></li>
+              <li>🌅 <strong>Sunset Cruise:</strong> from €30/person (Mon, Tue & Thu) · 2.5 hours · open bar · <Link href="/cruises/bosphorus-sunset-cruise" className="underline">Book now</Link></li>
               <li>🍽️ <strong>Dinner Cruise:</strong> from €30/person · 3 hours · live show · <Link href="/istanbul-dinner-cruise" className="underline">Book now</Link></li>
               <li>⛵ <strong>Private Yacht:</strong> from €200/yacht · your schedule · <Link href="/yacht-charter-istanbul" className="underline">Book now</Link></li>
               <li>🚢 <strong>Boat Rental:</strong> from €60/hr · hourly hire · <Link href="/boat-rental-istanbul" className="underline">Book now</Link></li>
@@ -482,7 +482,7 @@ export default function BosphorusCruisePage() {
                 </h2>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
                   MerrySails offers three Bosphorus cruise options in Istanbul: sunset cruise from
-                  €30 (Tue & Thu), dinner cruise from €30, and private yacht charter from €200. TURSAB A-Group
+                  €30 (Mon, Tue & Thu), dinner cruise from €30, and private yacht charter from €200. TURSAB A-Group
                   licensed since 2001, 50,000+ guests hosted, rated 4.9 from 998 reviews. Direct
                   booking at merrysails.com — no third-party commissions. Choose the right product
                   from the comparison below.
@@ -496,7 +496,7 @@ export default function BosphorusCruisePage() {
                         Sunset
                       </th>
                       <td className="p-4 leading-relaxed text-[var(--text-muted)]">
-                        Shared golden-hour cruise from EUR 30 (Tue & Thu). Best owner:{" "}
+                        Shared golden-hour cruise from EUR 30 (Mon, Tue & Thu). Best owner:{" "}
                         <Link href="/cruises/bosphorus-sunset-cruise" className="text-[var(--brand-primary)] hover:underline">
                           Bosphorus Sunset Cruise
                         </Link>

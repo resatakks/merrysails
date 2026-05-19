@@ -1,0 +1,1187 @@
+// Bosphorus landmark guide — data for the interactive /bosphorus-guide route.
+// Ordered south (Marmara Sea) → north (Black Sea).
+// mapX / mapY are percentage positions on the stylized strait map.
+// Each landmark carries text (name + summary + "look for") in 12 languages,
+// so the on-page audio guide (Web Speech API) can narrate in each one.
+
+export type BosphorusSide = "Europe" | "Asia" | "Strait";
+
+export type GuideLangCode =
+  | "en" | "tr" | "de" | "fr" | "es" | "ru"
+  | "it" | "nl" | "ar" | "ja" | "zh" | "pt";
+
+export type GuideLanguage = {
+  code: GuideLangCode;
+  label: string;
+  flag: string;
+  /** BCP-47 tag passed to SpeechSynthesisUtterance.lang */
+  bcp47: string;
+  /** Right-to-left script */
+  rtl?: boolean;
+};
+
+export const GUIDE_LANGUAGES: GuideLanguage[] = [
+  { code: "en", label: "English", flag: "🇬🇧", bcp47: "en-US" },
+  { code: "tr", label: "Türkçe", flag: "🇹🇷", bcp47: "tr-TR" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪", bcp47: "de-DE" },
+  { code: "fr", label: "Français", flag: "🇫🇷", bcp47: "fr-FR" },
+  { code: "es", label: "Español", flag: "🇪🇸", bcp47: "es-ES" },
+  { code: "ru", label: "Русский", flag: "🇷🇺", bcp47: "ru-RU" },
+  { code: "it", label: "Italiano", flag: "🇮🇹", bcp47: "it-IT" },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱", bcp47: "nl-NL" },
+  { code: "ar", label: "العربية", flag: "🇸🇦", bcp47: "ar-SA", rtl: true },
+  { code: "ja", label: "日本語", flag: "🇯🇵", bcp47: "ja-JP" },
+  { code: "zh", label: "中文", flag: "🇨🇳", bcp47: "zh-CN" },
+  { code: "pt", label: "Português", flag: "🇵🇹", bcp47: "pt-PT" },
+];
+
+export type LandmarkText = {
+  name: string;
+  summary: string;
+  lookFor: string;
+};
+
+export type Landmark = {
+  id: string;
+  side: BosphorusSide;
+  category: string;
+  era: string;
+  mapX: number;
+  mapY: number;
+  text: Record<GuideLangCode, LandmarkText>;
+};
+
+export const BOSPHORUS_LANDMARKS: Landmark[] = [
+  {
+    id: "galata-tower",
+    side: "Europe",
+    category: "Medieval tower",
+    era: "1348 · Genoese",
+    mapX: 33,
+    mapY: 88,
+    text: {
+      en: {
+        name: "Galata Tower",
+        summary:
+          "Built by the Genoese in 1348 as the high point of their fortified colony, the Galata Tower has watched over the harbour entrance for almost seven centuries. It survived fires and earthquakes, later serving the Ottomans as a fire-watch station, and its conical cap is the first landmark most travellers recognise on the European skyline.",
+        lookFor:
+          "A round stone tower with a pointed roof rising above the rooftops just behind the Karaköy waterfront.",
+      },
+      tr: {
+        name: "Galata Kulesi",
+        summary:
+          "Cenevizliler tarafından 1348'de surlu kolonilerinin en yüksek noktası olarak inşa edilen Galata Kulesi, neredeyse yedi yüzyıldır liman girişini izliyor. Yangınlardan ve depremlerden sağ çıktı, Osmanlı döneminde yangın gözetleme kulesi olarak kullanıldı. Konik külahı, Avrupa siluetinde gezginlerin tanıdığı ilk simgedir.",
+        lookFor:
+          "Karaköy kıyısının hemen arkasında, çatıların üzerinde yükselen sivri çatılı yuvarlak taş kule.",
+      },
+      de: {
+        name: "Galataturm",
+        summary:
+          "Der 1348 von den Genuesen als höchster Punkt ihrer befestigten Kolonie errichtete Galataturm wacht seit fast sieben Jahrhunderten über die Hafeneinfahrt. Er überstand Brände und Erdbeben und diente den Osmanen später als Feuerwachturm. Seine kegelförmige Spitze ist das erste Wahrzeichen, das Reisende an der europäischen Skyline erkennen.",
+        lookFor:
+          "Ein runder Steinturm mit spitzem Dach, der direkt hinter der Uferpromenade von Karaköy über die Dächer ragt.",
+      },
+      fr: {
+        name: "Tour de Galata",
+        summary:
+          "Édifiée par les Génois en 1348 comme point culminant de leur colonie fortifiée, la tour de Galata veille sur l'entrée du port depuis près de sept siècles. Elle a survécu aux incendies et aux séismes, servant ensuite de tour de guet aux Ottomans. Son toit conique est le premier repère que reconnaissent les voyageurs.",
+        lookFor:
+          "Une tour de pierre ronde au toit pointu qui s'élève au-dessus des toits, juste derrière le quai de Karaköy.",
+      },
+      es: {
+        name: "Torre de Gálata",
+        summary:
+          "Construida por los genoveses en 1348 como punto más alto de su colonia fortificada, la Torre de Gálata vigila la entrada del puerto desde hace casi siete siglos. Sobrevivió a incendios y terremotos y sirvió a los otomanos como torre de vigilancia de incendios. Su remate cónico es el primer hito del horizonte europeo.",
+        lookFor:
+          "Una torre de piedra redonda con tejado puntiagudo que se alza sobre los tejados, justo detrás del muelle de Karaköy.",
+      },
+      ru: {
+        name: "Галатская башня",
+        summary:
+          "Построенная генуэзцами в 1348 году как высшая точка их укреплённой колонии, Галатская башня уже почти семь веков следит за входом в гавань. Она пережила пожары и землетрясения, при османах служила пожарной вышкой. Её коническая вершина — первый ориентир, который путешественники узнают на европейском берегу.",
+        lookFor:
+          "Круглая каменная башня с остроконечной крышей, поднимающаяся над крышами сразу за набережной Каракёя.",
+      },
+      it: {
+        name: "Torre di Galata",
+        summary:
+          "Costruita dai genovesi nel 1348 come punto più alto della loro colonia fortificata, la Torre di Galata sorveglia l'ingresso del porto da quasi sette secoli. Sopravvisse a incendi e terremoti e servì agli ottomani come torre di vedetta antincendio.",
+        lookFor:
+          "Una torre di pietra rotonda con tetto a punta che svetta sui tetti dietro la riva di Karaköy.",
+      },
+      nl: {
+        name: "Galatatoren",
+        summary:
+          "In 1348 door de Genuezen gebouwd als hoogste punt van hun versterkte kolonie, bewaakt de Galatatoren al bijna zeven eeuwen de haveningang. Hij overleefde branden en aardbevingen en diende de Ottomanen later als brandwachttoren.",
+        lookFor:
+          "Een ronde stenen toren met een puntig dak die boven de daken uitsteekt, vlak achter de kade van Karaköy.",
+      },
+      ar: {
+        name: "برج غلطة",
+        summary:
+          "بناه الجنويون عام 1348 كأعلى نقطة في مستعمرتهم المحصّنة، ويراقب برج غلطة مدخل الميناء منذ نحو سبعة قرون. نجا من الحرائق والزلازل، واستخدمه العثمانيون لاحقاً كبرج لمراقبة الحرائق.",
+        lookFor:
+          "برج حجري مستدير بسقف مدبّب يرتفع فوق الأسطح خلف واجهة كاراكوي البحرية مباشرة.",
+      },
+      ja: {
+        name: "ガラタ塔",
+        summary:
+          "1348年にジェノヴァ人が要塞都市の最高地点として築いたガラタ塔は、約7世紀にわたり港の入口を見守ってきました。火災や地震を乗り越え、オスマン時代には火の見櫓として使われました。",
+        lookFor:
+          "カラキョイの海沿いのすぐ後ろ、屋根の上にそびえる、とがった屋根の円い石造りの塔。",
+      },
+      zh: {
+        name: "加拉塔",
+        summary:
+          "加拉塔由热那亚人于1348年建造，是其要塞殖民地的制高点，近七个世纪以来一直守望着港口入口。它历经火灾与地震，后来被奥斯曼人用作火警瞭望塔。",
+        lookFor:
+          "卡拉柯伊海滨后方、屋顶之上耸立的一座圆形尖顶石塔。",
+      },
+      pt: {
+        name: "Torre de Gálata",
+        summary:
+          "Construída pelos genoveses em 1348 como ponto mais alto da sua colónia fortificada, a Torre de Gálata vigia a entrada do porto há quase sete séculos. Sobreviveu a incêndios e sismos e serviu aos otomanos como torre de vigia de incêndios.",
+        lookFor:
+          "Uma torre de pedra redonda com telhado pontiagudo que se ergue acima dos telhados, logo atrás do cais de Karaköy.",
+      },
+    },
+  },
+  {
+    id: "dolmabahce-palace",
+    side: "Europe",
+    category: "Imperial palace",
+    era: "1856 · Ottoman",
+    mapX: 35,
+    mapY: 78,
+    text: {
+      en: {
+        name: "Dolmabahçe Palace",
+        summary:
+          "Dolmabahçe replaced Topkapı as the main imperial residence in 1856, when the sultans wanted a European-style court on the water. Its 600-metre marble façade, ceremonial sea gate and the world's heaviest crystal chandelier signalled a new era. The last Ottoman sultans lived here, and Atatürk spent his final days in one of its rooms.",
+        lookFor:
+          "A long, brilliant-white marble palace running right along the European shoreline, with ornate sea-facing gates.",
+      },
+      tr: {
+        name: "Dolmabahçe Sarayı",
+        summary:
+          "Dolmabahçe, padişahların su kenarında Avrupa tarzı bir saray istemesiyle 1856'da Topkapı'nın yerini aldı. 600 metrelik mermer cephesi, törensel deniz kapısı ve dünyanın en ağır kristal avizesi yeni bir dönemin habercisiydi. Son Osmanlı padişahları burada yaşadı; Atatürk son günlerini bu sarayın bir odasında geçirdi.",
+        lookFor:
+          "Avrupa kıyısı boyunca uzanan, denize bakan süslü kapıları olan upuzun, parlak beyaz mermer saray.",
+      },
+      de: {
+        name: "Dolmabahçe-Palast",
+        summary:
+          "Dolmabahçe löste 1856 den Topkapı als imperiale Hauptresidenz ab, als die Sultane einen Hof im europäischen Stil am Wasser wünschten. Die 600 Meter lange Marmorfassade, das zeremonielle Seetor und der schwerste Kristallleuchter der Welt kündeten von einer neuen Ära. Hier lebten die letzten Sultane, und Atatürk verbrachte hier seine letzten Tage.",
+        lookFor:
+          "Ein langer, strahlend weißer Marmorpalast direkt am europäischen Ufer mit prunkvollen, zum Meer gewandten Toren.",
+      },
+      fr: {
+        name: "Palais de Dolmabahçe",
+        summary:
+          "Dolmabahçe a remplacé Topkapı comme résidence impériale principale en 1856, lorsque les sultans voulurent une cour de style européen au bord de l'eau. Sa façade de marbre de 600 mètres, sa porte de mer cérémonielle et le plus lourd lustre en cristal du monde annonçaient une ère nouvelle. Atatürk y passa ses derniers jours.",
+        lookFor:
+          "Un long palais de marbre d'un blanc éclatant longeant la rive européenne, aux portes ouvragées tournées vers la mer.",
+      },
+      es: {
+        name: "Palacio de Dolmabahçe",
+        summary:
+          "Dolmabahçe sustituyó a Topkapı como residencia imperial principal en 1856, cuando los sultanes quisieron una corte de estilo europeo junto al agua. Su fachada de mármol de 600 metros, su puerta ceremonial al mar y la araña de cristal más pesada del mundo anunciaban una nueva era. Atatürk pasó aquí sus últimos días.",
+        lookFor:
+          "Un largo palacio de mármol de un blanco brillante a lo largo de la orilla europea, con puertas labradas hacia el mar.",
+      },
+      ru: {
+        name: "Дворец Долмабахче",
+        summary:
+          "Долмабахче сменил Топкапы как главную императорскую резиденцию в 1856 году, когда султаны захотели двор в европейском стиле у воды. Мраморный фасад длиной 600 метров, церемониальные морские ворота и самая тяжёлая в мире хрустальная люстра возвещали новую эпоху. Здесь провёл последние дни Ататюрк.",
+        lookFor:
+          "Длинный ослепительно-белый мраморный дворец вдоль европейского берега с резными воротами, обращёнными к морю.",
+      },
+      it: {
+        name: "Palazzo di Dolmabahçe",
+        summary:
+          "Dolmabahçe sostituì Topkapı come residenza imperiale principale nel 1856, quando i sultani vollero una corte in stile europeo sull'acqua. La facciata di marmo di 600 metri e il più pesante lampadario di cristallo al mondo annunciavano una nuova era. Atatürk vi trascorse i suoi ultimi giorni.",
+        lookFor:
+          "Un lungo palazzo di marmo bianco brillante lungo la riva europea, con portali decorati rivolti al mare.",
+      },
+      nl: {
+        name: "Dolmabahçe-paleis",
+        summary:
+          "Dolmabahçe verving Topkapı als belangrijkste keizerlijke residentie in 1856, toen de sultans een hof in Europese stijl aan het water wilden. De 600 meter lange marmeren gevel en 's werelds zwaarste kristallen luchter luidden een nieuw tijdperk in. Atatürk bracht hier zijn laatste dagen door.",
+        lookFor:
+          "Een lang, helderwit marmeren paleis langs de Europese oever, met sierlijke poorten naar zee.",
+      },
+      ar: {
+        name: "قصر دولمة بهجة",
+        summary:
+          "حلّ قصر دولمة بهجة محل توبكابي كمقر إمبراطوري رئيسي عام 1856، حين أراد السلاطين بلاطاً على الطراز الأوروبي عند الماء. واجهته الرخامية الممتدة 600 متر وأثقل ثريا كريستالية في العالم بشّرت بعهد جديد. قضى أتاتورك أيامه الأخيرة هنا.",
+        lookFor:
+          "قصر رخامي طويل ناصع البياض يمتد على الساحل الأوروبي ببوابات مزخرفة تطل على البحر.",
+      },
+      ja: {
+        name: "ドルマバフチェ宮殿",
+        summary:
+          "1856年、スルタンが水辺にヨーロッパ風の宮廷を求め、ドルマバフチェ宮殿がトプカプに代わり主たる宮殿となりました。600メートルの大理石ファサードと世界一重いシャンデリアが新時代を告げました。アタテュルクは晩年をここで過ごしました。",
+        lookFor:
+          "ヨーロッパ岸沿いに延びる、海に面した装飾的な門を持つ真っ白な大理石の長い宮殿。",
+      },
+      zh: {
+        name: "多尔玛巴赫切宫",
+        summary:
+          "1856年，苏丹希望在水边建一座欧式宫廷，多尔玛巴赫切宫取代托普卡帕成为主要皇宫。其600米长的大理石立面和世界最重的水晶吊灯昭示着新时代。阿塔图尔克在此度过生命最后时光。",
+        lookFor:
+          "沿欧洲岸延伸的洁白大理石长宫，面海一侧设有华丽门廊。",
+      },
+      pt: {
+        name: "Palácio de Dolmabahçe",
+        summary:
+          "Dolmabahçe substituiu Topkapı como residência imperial principal em 1856, quando os sultões quiseram uma corte de estilo europeu junto à água. A fachada de mármore de 600 metros e o mais pesado lustre de cristal do mundo anunciavam uma nova era. Atatürk passou aqui os seus últimos dias.",
+        lookFor:
+          "Um longo palácio de mármore branco brilhante ao longo da margem europeia, com portões ornamentados virados ao mar.",
+      },
+    },
+  },
+  {
+    id: "maidens-tower",
+    side: "Strait",
+    category: "Islet tower",
+    era: "12th century · Byzantine",
+    mapX: 56,
+    mapY: 82,
+    text: {
+      en: {
+        name: "Maiden's Tower",
+        summary:
+          "The Maiden's Tower sits on a tiny islet about 200 metres off the Asian shore, where the Bosphorus meets the Marmara. A watchtower has stood here since Byzantine times, later serving as a lighthouse, quarantine station and customs point. Layers of legend — most famously a prophecy-defying princess — give it its name.",
+        lookFor:
+          "A small white tower rising straight out of the water on its own islet, mid-channel near Üsküdar.",
+      },
+      tr: {
+        name: "Kız Kulesi",
+        summary:
+          "Kız Kulesi, Boğaz'ın Marmara ile buluştuğu yerde, Anadolu kıyısından yaklaşık 200 metre açıkta küçük bir adacığın üzerinde durur. Bizans döneminden beri burada bir gözetleme kulesi var; sonradan deniz feneri, karantina istasyonu ve gümrük noktası oldu. Adını, kaderini yenmeye çalışan bir prenses efsanesinden alır.",
+        lookFor:
+          "Üsküdar yakınında, kanalın ortasında kendi adacığının üzerinde sudan yükselen küçük beyaz kule.",
+      },
+      de: {
+        name: "Mädchenturm (Kız Kulesi)",
+        summary:
+          "Der Mädchenturm steht auf einer winzigen Insel rund 200 Meter vor dem asiatischen Ufer, wo der Bosporus auf das Marmarameer trifft. Seit byzantinischer Zeit steht hier ein Wachturm, später Leuchtturm, Quarantänestation und Zollpunkt. Zahlreiche Legenden — vor allem die einer Prinzessin, die ihrem Schicksal trotzte — gaben ihm seinen Namen.",
+        lookFor:
+          "Ein kleiner weißer Turm, der nahe Üsküdar mitten im Kanal auf seiner eigenen Insel direkt aus dem Wasser ragt.",
+      },
+      fr: {
+        name: "Tour de Léandre",
+        summary:
+          "La tour de Léandre se dresse sur un îlot minuscule à environ 200 mètres de la rive asiatique, là où le Bosphore rejoint la Marmara. Une tour de guet existe ici depuis l'époque byzantine, devenue ensuite phare, station de quarantaine et poste de douane. Les légendes — surtout celle d'une princesse — lui donnent son nom.",
+        lookFor:
+          "Une petite tour blanche surgissant de l'eau sur son propre îlot, au milieu du chenal près d'Üsküdar.",
+      },
+      es: {
+        name: "Torre de la Doncella",
+        summary:
+          "La Torre de la Doncella se alza sobre un islote diminuto a unos 200 metros de la orilla asiática, donde el Bósforo se encuentra con el Mármara. Aquí hay una torre de vigilancia desde época bizantina; después fue faro, estación de cuarentena y aduana. Las leyendas de una princesa le dan su nombre.",
+        lookFor:
+          "Una pequeña torre blanca que surge del agua sobre su propio islote, en mitad del canal cerca de Üsküdar.",
+      },
+      ru: {
+        name: "Девичья башня",
+        summary:
+          "Девичья башня стоит на крошечном островке примерно в 200 метрах от азиатского берега, там где Босфор встречается с Мраморным морем. Сторожевая башня здесь со времён Византии; позже она была маяком, карантином и таможней. Множество легенд — прежде всего о принцессе — дали ей имя.",
+        lookFor:
+          "Небольшая белая башня, поднимающаяся прямо из воды на своём островке посреди пролива у Ускюдара.",
+      },
+      it: {
+        name: "Torre della Fanciulla",
+        summary:
+          "La Torre della Fanciulla sorge su un minuscolo isolotto a circa 200 metri dalla riva asiatica, dove il Bosforo incontra il Mar di Marmara. Una torre di guardia esiste qui dall'epoca bizantina; fu poi faro, stazione di quarantena e dogana. Le leggende di una principessa le danno il nome.",
+        lookFor:
+          "Una piccola torre bianca che emerge dall'acqua sul proprio isolotto, in mezzo al canale presso Üsküdar.",
+      },
+      nl: {
+        name: "Meisjestoren",
+        summary:
+          "De Meisjestoren staat op een minuscuul eilandje zo'n 200 meter voor de Aziatische oever, waar de Bosporus de Marmarazee ontmoet. Sinds de Byzantijnse tijd staat hier een wachttoren, later vuurtoren, quarantainepost en douane. Legendes over een prinses gaven hem zijn naam.",
+        lookFor:
+          "Een kleine witte toren die op een eigen eilandje midden in het kanaal bij Üsküdar uit het water rijst.",
+      },
+      ar: {
+        name: "برج الفتاة",
+        summary:
+          "يقوم برج الفتاة على جزيرة صغيرة على بُعد نحو 200 متر من الساحل الآسيوي، حيث يلتقي البوسفور ببحر مرمرة. وُجد هنا برج مراقبة منذ العهد البيزنطي، ثم صار منارة ومحجراً صحياً ونقطة جمارك. وأساطير عن أميرة منحته اسمه.",
+        lookFor:
+          "برج أبيض صغير يرتفع من الماء على جزيرته الخاصة، في وسط المضيق قرب أسكدار.",
+      },
+      ja: {
+        name: "乙女の塔",
+        summary:
+          "乙女の塔は、ボスポラスがマルマラ海と出会う地点で、アジア岸から約200メートル沖の小島に立っています。ビザンツ時代から見張り塔があり、後に灯台、検疫所、税関として使われました。運命に抗う王女の伝説がその名の由来です。",
+        lookFor:
+          "ウスキュダル付近、海峡の中ほどの小島から水面に直接そびえる小さな白い塔。",
+      },
+      zh: {
+        name: "少女塔",
+        summary:
+          "少女塔坐落于博斯普鲁斯与马尔马拉海交汇处、距亚洲岸约200米的小岛上。自拜占庭时代起此地便有瞭望塔，后来用作灯塔、检疫站和海关。关于一位公主的传说赋予了它名字。",
+        lookFor:
+          "于宇斯屈达尔附近、海峡中央的小岛上直接拔水而起的白色小塔。",
+      },
+      pt: {
+        name: "Torre da Donzela",
+        summary:
+          "A Torre da Donzela ergue-se sobre um ilhéu minúsculo a cerca de 200 metros da margem asiática, onde o Bósforo encontra o Mármara. Existe aqui uma torre de vigia desde a época bizantina; foi depois farol, posto de quarentena e alfândega. Lendas de uma princesa dão-lhe o nome.",
+        lookFor:
+          "Uma pequena torre branca que emerge da água no seu próprio ilhéu, a meio do canal junto a Üsküdar.",
+      },
+    },
+  },
+  {
+    id: "ortakoy-mosque",
+    side: "Europe",
+    category: "Baroque mosque",
+    era: "1853 · Ottoman",
+    mapX: 37,
+    mapY: 66,
+    text: {
+      en: {
+        name: "Ortaköy Mosque",
+        summary:
+          "The Ortaköy Mosque, finished in 1853, is one of the most photographed buildings on the Bosphorus. Its neo-Baroque design places tall windows around the prayer hall so light pours in off the water. Framed against the first Bosphorus bridge, it has become the postcard image of the strait's European shore.",
+        lookFor:
+          "A small, ornate mosque with two slender minarets right at the water's edge, the bridge towering behind it.",
+      },
+      tr: {
+        name: "Ortaköy Camii",
+        summary:
+          "1853'te tamamlanan Ortaköy Camii, Boğaz'ın en çok fotoğraflanan yapılarından biridir. Neo-Barok tasarımı, ibadet salonunun çevresine yüksek pencereler yerleştirir; böylece ışık sudan içeri dolar. Birinci Boğaz Köprüsü'nün önünde, boğazın Avrupa kıyısının kartpostal görüntüsü olmuştur.",
+        lookFor:
+          "Tam su kenarında, arkasında köprü yükselen, iki ince minareli küçük ve süslü cami.",
+      },
+      de: {
+        name: "Ortaköy-Moschee",
+        summary:
+          "Die 1853 fertiggestellte Ortaköy-Moschee ist eines der meistfotografierten Bauwerke am Bosporus. Ihr neobarocker Entwurf setzt hohe Fenster rund um den Gebetssaal, sodass das Licht vom Wasser hereinflutet. Vor der ersten Bosporus-Brücke ist sie zum Postkartenmotiv des europäischen Ufers geworden.",
+        lookFor:
+          "Eine kleine, reich verzierte Moschee mit zwei schlanken Minaretten direkt am Wasser, dahinter die aufragende Brücke.",
+      },
+      fr: {
+        name: "Mosquée d'Ortaköy",
+        summary:
+          "La mosquée d'Ortaköy, achevée en 1853, est l'un des bâtiments les plus photographiés du Bosphore. Son style néo-baroque dispose de hautes fenêtres autour de la salle de prière, laissant entrer la lumière venue de l'eau. Devant le premier pont, elle est devenue l'image de carte postale de la rive européenne.",
+        lookFor:
+          "Une petite mosquée ornée à deux minarets élancés, juste au bord de l'eau, le pont s'élevant derrière elle.",
+      },
+      es: {
+        name: "Mezquita de Ortaköy",
+        summary:
+          "La Mezquita de Ortaköy, terminada en 1853, es uno de los edificios más fotografiados del Bósforo. Su diseño neobarroco coloca altas ventanas alrededor de la sala de oración, de modo que la luz entra desde el agua. Ante el primer puente del Bósforo, es la imagen de postal de la orilla europea.",
+        lookFor:
+          "Una pequeña mezquita ornamentada con dos esbeltos minaretes al borde del agua, con el puente alzándose detrás.",
+      },
+      ru: {
+        name: "Мечеть Ортакёй",
+        summary:
+          "Мечеть Ортакёй, завершённая в 1853 году, — одно из самых фотографируемых зданий Босфора. Её необарочный облик с высокими окнами вокруг молитвенного зала впускает свет, отражённый от воды. На фоне первого моста через Босфор она стала открыточным образом европейского берега.",
+        lookFor:
+          "Небольшая нарядная мечеть с двумя стройными минаретами у самой воды, за ней возвышается мост.",
+      },
+      it: {
+        name: "Moschea di Ortaköy",
+        summary:
+          "La Moschea di Ortaköy, completata nel 1853, è uno degli edifici più fotografati del Bosforo. Il suo stile neobarocco dispone alte finestre attorno alla sala di preghiera, così la luce entra riflessa dall'acqua. Davanti al primo ponte è diventata l'immagine da cartolina della riva europea.",
+        lookFor:
+          "Una piccola moschea ornata con due minareti slanciati proprio sull'acqua, con il ponte che svetta dietro.",
+      },
+      nl: {
+        name: "Ortaköy-moskee",
+        summary:
+          "De Ortaköy-moskee, voltooid in 1853, is een van de meest gefotografeerde gebouwen aan de Bosporus. Het neobarokke ontwerp plaatst hoge ramen rond de gebedszaal, zodat het licht vanaf het water naar binnen valt. Voor de eerste brug is ze het ansichtkaartbeeld van de Europese oever.",
+        lookFor:
+          "Een kleine, sierlijke moskee met twee slanke minaretten vlak aan het water, met de brug erachter.",
+      },
+      ar: {
+        name: "جامع أورتاكوي",
+        summary:
+          "جامع أورتاكوي، الذي اكتمل عام 1853، من أكثر المباني تصويراً على البوسفور. يضع تصميمه النيوباروكي نوافذ عالية حول قاعة الصلاة فيتدفق الضوء المنعكس عن الماء. أمام جسر البوسفور الأول صار صورة بطاقة بريدية للساحل الأوروبي.",
+        lookFor:
+          "جامع صغير مزخرف بمئذنتين نحيلتين عند حافة الماء تماماً، والجسر يعلو خلفه.",
+      },
+      ja: {
+        name: "オルタキョイ・モスク",
+        summary:
+          "1853年に完成したオルタキョイ・モスクは、ボスポラスで最も撮影される建物のひとつです。ネオバロック様式で礼拝堂の周りに高い窓を配し、水面からの光が差し込みます。最初のボスポラス橋を背に、ヨーロッパ岸の絵葉書の風景となりました。",
+        lookFor:
+          "水際に立つ二本の細い尖塔を持つ小さく華麗なモスク。その後ろに橋がそびえます。",
+      },
+      zh: {
+        name: "奥尔塔科伊清真寺",
+        summary:
+          "建成于1853年的奥尔塔科伊清真寺，是博斯普鲁斯最常被拍摄的建筑之一。其新巴洛克式设计在礼拜厅四周设高窗，让水面反射的光线倾泻而入。在第一座博斯普鲁斯大桥映衬下，它成为欧洲岸的明信片画面。",
+        lookFor:
+          "紧贴水边、有两座纤细宣礼塔的精巧小清真寺，身后高桥耸立。",
+      },
+      pt: {
+        name: "Mesquita de Ortaköy",
+        summary:
+          "A Mesquita de Ortaköy, concluída em 1853, é um dos edifícios mais fotografados do Bósforo. O seu estilo neobarroco coloca janelas altas em redor da sala de oração, deixando entrar a luz vinda da água. Diante da primeira ponte, tornou-se a imagem de postal da margem europeia.",
+        lookFor:
+          "Uma pequena mesquita ornamentada com dois minaretes esguios à beira da água, com a ponte a erguer-se atrás.",
+      },
+    },
+  },
+  {
+    id: "ciragan-palace",
+    side: "Europe",
+    category: "Imperial palace",
+    era: "1871 · Ottoman",
+    mapX: 36,
+    mapY: 70,
+    text: {
+      en: {
+        name: "Çırağan Palace",
+        summary:
+          "Çırağan was the last palace the Ottoman dynasty built, completed in 1871. A 1910 fire gutted the interior, and for decades only its marble shell survived. A careful restoration in the 1990s turned it into a waterfront hotel, so the façade once more glows along the European bank exactly as the sultans intended.",
+        lookFor:
+          "An elegant pale palace façade between Beşiktaş and Ortaköy, low and long against the shore.",
+      },
+      tr: {
+        name: "Çırağan Sarayı",
+        summary:
+          "Çırağan, Osmanlı hanedanının inşa ettiği son saraydır; 1871'de tamamlandı. 1910'daki bir yangın iç mekânı tahrip etti ve onlarca yıl yalnızca mermer kabuğu ayakta kaldı. 1990'lardaki özenli bir restorasyon onu bir kıyı oteline dönüştürdü; cephe yeniden padişahların istediği gibi Avrupa yakasında parlıyor.",
+        lookFor:
+          "Beşiktaş ile Ortaköy arasında, kıyı boyunca alçak ve uzun uzanan zarif, açık renkli saray cephesi.",
+      },
+      de: {
+        name: "Çırağan-Palast",
+        summary:
+          "Çırağan war der letzte Palast, den die osmanische Dynastie errichtete, fertiggestellt 1871. Ein Brand von 1910 zerstörte das Innere, und über Jahrzehnte blieb nur die Marmorhülle. Eine sorgfältige Restaurierung in den 1990ern machte ihn zum Uferhotel — die Fassade leuchtet wieder am europäischen Ufer wie einst gedacht.",
+        lookFor:
+          "Eine elegante, helle Palastfassade zwischen Beşiktaş und Ortaköy, niedrig und lang am Ufer.",
+      },
+      fr: {
+        name: "Palais de Çırağan",
+        summary:
+          "Çırağan fut le dernier palais bâti par la dynastie ottomane, achevé en 1871. Un incendie en 1910 ravagea l'intérieur et, pendant des décennies, seule sa coque de marbre subsista. Une restauration soignée dans les années 1990 en a fait un hôtel de bord d'eau ; la façade rayonne de nouveau sur la rive européenne.",
+        lookFor:
+          "Une élégante façade de palais claire entre Beşiktaş et Ortaköy, basse et allongée le long de la rive.",
+      },
+      es: {
+        name: "Palacio de Çırağan",
+        summary:
+          "Çırağan fue el último palacio que construyó la dinastía otomana, terminado en 1871. Un incendio en 1910 destruyó el interior y, durante décadas, solo sobrevivió su estructura de mármol. Una cuidadosa restauración en los años 1990 lo convirtió en hotel junto al agua; la fachada vuelve a brillar en la orilla europea.",
+        lookFor:
+          "Una elegante fachada palaciega de tono claro entre Beşiktaş y Ortaköy, baja y alargada junto a la orilla.",
+      },
+      ru: {
+        name: "Дворец Чираган",
+        summary:
+          "Чираган — последний дворец, построенный османской династией, завершён в 1871 году. Пожар 1910 года уничтожил интерьеры, и десятилетиями сохранялась лишь мраморная оболочка. Тщательная реставрация 1990-х превратила его в отель на берегу — фасад вновь сияет на европейском берегу, как и задумывали султаны.",
+        lookFor:
+          "Изящный светлый дворцовый фасад между Бешикташем и Ортакёем, низкий и протяжённый вдоль берега.",
+      },
+      it: {
+        name: "Palazzo di Çırağan",
+        summary:
+          "Çırağan fu l'ultimo palazzo costruito dalla dinastia ottomana, completato nel 1871. Un incendio nel 1910 ne distrusse gli interni e per decenni sopravvisse solo il guscio di marmo. Un attento restauro negli anni '90 lo trasformò in un hotel sull'acqua, e la facciata torna a brillare sulla riva europea.",
+        lookFor:
+          "Un'elegante facciata di palazzo dai toni chiari tra Beşiktaş e Ortaköy, bassa e allungata lungo la riva.",
+      },
+      nl: {
+        name: "Çırağan-paleis",
+        summary:
+          "Çırağan was het laatste paleis dat de Ottomaanse dynastie bouwde, voltooid in 1871. Een brand in 1910 verwoestte het interieur en decennialang bleef alleen de marmeren schil over. Een zorgvuldige restauratie in de jaren 1990 maakte er een hotel aan het water van.",
+        lookFor:
+          "Een elegante, lichte paleisgevel tussen Beşiktaş en Ortaköy, laag en langgerekt langs de oever.",
+      },
+      ar: {
+        name: "قصر تشيراغان",
+        summary:
+          "كان تشيراغان آخر قصر بنته السلالة العثمانية، واكتمل عام 1871. التهم حريق عام 1910 داخله، ولعقود لم يبقَ سوى هيكله الرخامي. حوّله ترميم دقيق في التسعينيات إلى فندق على الواجهة المائية، فعادت الواجهة تتلألأ على الضفة الأوروبية.",
+        lookFor:
+          "واجهة قصر أنيقة فاتحة اللون بين بشكطاش وأورتاكوي، منخفضة وممتدة بمحاذاة الساحل.",
+      },
+      ja: {
+        name: "チュラーン宮殿",
+        summary:
+          "チュラーンはオスマン朝が建てた最後の宮殿で、1871年に完成しました。1910年の火災で内部が焼け、数十年は大理石の外殻だけが残りました。1990年代の丁寧な修復で水辺のホテルとなり、ファサードは再び欧州岸に輝いています。",
+        lookFor:
+          "ベシクタシュとオルタキョイの間、岸沿いに低く長く延びる優美で淡い色の宮殿のファサード。",
+      },
+      zh: {
+        name: "奇拉昂宫",
+        summary:
+          "奇拉昂宫是奥斯曼王朝建造的最后一座宫殿，于1871年落成。1910年的大火烧毁了内部，数十年间只剩大理石外壳。1990年代的精心修复将其改造为水滨酒店，立面再度在欧洲岸闪耀。",
+        lookFor:
+          "贝希克塔什与奥尔塔科伊之间，沿岸低长延展的淡色优雅宫殿立面。",
+      },
+      pt: {
+        name: "Palácio de Çırağan",
+        summary:
+          "Çırağan foi o último palácio construído pela dinastia otomana, concluído em 1871. Um incêndio em 1910 destruiu o interior e, durante décadas, só sobreviveu a casca de mármore. Um restauro cuidadoso nos anos 1990 transformou-o num hotel à beira-água.",
+        lookFor:
+          "Uma elegante fachada palaciana de tom claro entre Beşiktaş e Ortaköy, baixa e alongada junto à margem.",
+      },
+    },
+  },
+  {
+    id: "beylerbeyi-palace",
+    side: "Asia",
+    category: "Summer palace",
+    era: "1865 · Ottoman",
+    mapX: 64,
+    mapY: 62,
+    text: {
+      en: {
+        name: "Beylerbeyi Palace",
+        summary:
+          "Beylerbeyi served as the sultans' summer residence and their guest house for visiting royalty — Empress Eugénie of France among them. Completed in 1865 on the Asian shore, it pairs restrained marble architecture with shaded gardens and seaside pavilions, a cooler retreat from the formal life of Dolmabahçe across the water.",
+        lookFor:
+          "A symmetrical white summer palace on the Asian side, tucked just north of the first bridge.",
+      },
+      tr: {
+        name: "Beylerbeyi Sarayı",
+        summary:
+          "Beylerbeyi, padişahların yazlık konutu ve gelen hanedan misafirlerinin ağırlandığı yer olarak hizmet verdi — Fransa İmparatoriçesi Eugénie de bunlardan biriydi. 1865'te Anadolu kıyısında tamamlandı; sade mermer mimarisini gölgeli bahçeler ve deniz köşkleriyle birleştirir; karşıdaki Dolmabahçe'ye göre serin bir sığınaktı.",
+        lookFor:
+          "Anadolu yakasında, birinci köprünün hemen kuzeyine yerleşmiş simetrik beyaz yazlık saray.",
+      },
+      de: {
+        name: "Beylerbeyi-Palast",
+        summary:
+          "Beylerbeyi diente den Sultanen als Sommerresidenz und Gästehaus für besuchende Königshäuser — darunter Kaiserin Eugénie von Frankreich. 1865 am asiatischen Ufer fertiggestellt, verbindet er zurückhaltende Marmorarchitektur mit schattigen Gärten und Pavillons am Wasser — ein kühlerer Rückzugsort gegenüber dem förmlichen Dolmabahçe.",
+        lookFor:
+          "Ein symmetrischer weißer Sommerpalast auf der asiatischen Seite, gleich nördlich der ersten Brücke.",
+      },
+      fr: {
+        name: "Palais de Beylerbeyi",
+        summary:
+          "Beylerbeyi servit de résidence d'été aux sultans et de maison d'hôtes pour les souverains en visite — dont l'impératrice Eugénie de France. Achevé en 1865 sur la rive asiatique, il marie une architecture de marbre sobre à des jardins ombragés et des pavillons au bord de l'eau, refuge plus frais que Dolmabahçe.",
+        lookFor:
+          "Un palais d'été blanc et symétrique sur la rive asiatique, juste au nord du premier pont.",
+      },
+      es: {
+        name: "Palacio de Beylerbeyi",
+        summary:
+          "Beylerbeyi fue la residencia de verano de los sultanes y su casa de huéspedes para la realeza visitante, entre ella la emperatriz Eugenia de Francia. Terminado en 1865 en la orilla asiática, combina una arquitectura de mármol sobria con jardines sombreados y pabellones junto al mar, un refugio más fresco que Dolmabahçe.",
+        lookFor:
+          "Un palacio de verano blanco y simétrico en el lado asiático, justo al norte del primer puente.",
+      },
+      ru: {
+        name: "Дворец Бейлербейи",
+        summary:
+          "Бейлербейи служил летней резиденцией султанов и гостевым домом для приезжих монархов — среди них была французская императрица Евгения. Завершённый в 1865 году на азиатском берегу, он сочетает сдержанную мраморную архитектуру с тенистыми садами и павильонами у воды — более прохладное убежище, чем Долмабахче.",
+        lookFor:
+          "Симметричный белый летний дворец на азиатской стороне, чуть севернее первого моста.",
+      },
+      it: {
+        name: "Palazzo di Beylerbeyi",
+        summary:
+          "Beylerbeyi fu la residenza estiva dei sultani e la foresteria per i reali in visita — tra cui l'imperatrice Eugenia di Francia. Completato nel 1865 sulla riva asiatica, unisce una sobria architettura di marmo a giardini ombrosi e padiglioni sul mare, rifugio più fresco del formale Dolmabahçe.",
+        lookFor:
+          "Un palazzo estivo bianco e simmetrico sul lato asiatico, appena a nord del primo ponte.",
+      },
+      nl: {
+        name: "Beylerbeyi-paleis",
+        summary:
+          "Beylerbeyi diende als zomerresidentie van de sultans en als gastenverblijf voor bezoekende vorsten — onder wie keizerin Eugénie van Frankrijk. Voltooid in 1865 aan de Aziatische oever, combineert het sobere marmerarchitectuur met schaduwrijke tuinen en paviljoens aan zee.",
+        lookFor:
+          "Een symmetrisch wit zomerpaleis aan de Aziatische zijde, net ten noorden van de eerste brug.",
+      },
+      ar: {
+        name: "قصر بيلربيي",
+        summary:
+          "كان قصر بيلربيي مقر الصيف للسلاطين ودار ضيافتهم للملوك الزائرين — ومنهم الإمبراطورة أوجيني ملكة فرنسا. اكتمل عام 1865 على الساحل الآسيوي، ويجمع بين عمارة رخامية متزنة وحدائق ظليلة وأجنحة بحرية، ملاذٌ أبرد من دولمة بهجة.",
+        lookFor:
+          "قصر صيفي أبيض متناظر على الجانب الآسيوي، إلى الشمال من الجسر الأول مباشرة.",
+      },
+      ja: {
+        name: "ベイレルベイ宮殿",
+        summary:
+          "ベイレルベイはスルタンの夏の離宮であり、来訪する王族の迎賓館でもありました——フランス皇后ウジェニーもその一人です。1865年にアジア岸に完成し、簡素な大理石建築と木陰の庭、海辺の東屋を組み合わせた、対岸ドルマバフチェより涼やかな隠れ家でした。",
+        lookFor:
+          "アジア側、最初の橋のすぐ北に佇む左右対称の白い夏の宮殿。",
+      },
+      zh: {
+        name: "贝伊莱尔贝伊宫",
+        summary:
+          "贝伊莱尔贝伊曾是苏丹的夏宫，也是接待来访王室的宾馆——法国皇后欧仁妮便是宾客之一。该宫1865年于亚洲岸建成，将简练的大理石建筑与绿荫花园、海滨亭阁相结合，是比对岸多尔玛巴赫切更清凉的去处。",
+        lookFor:
+          "亚洲岸、第一座大桥以北不远处一座对称的白色夏宫。",
+      },
+      pt: {
+        name: "Palácio de Beylerbeyi",
+        summary:
+          "Beylerbeyi serviu de residência de verão dos sultões e de casa de hóspedes para a realeza em visita — incluindo a imperatriz Eugénie de França. Concluído em 1865 na margem asiática, alia uma arquitetura de mármore sóbria a jardins sombreados e pavilhões à beira-mar.",
+        lookFor:
+          "Um palácio de verão branco e simétrico no lado asiático, logo a norte da primeira ponte.",
+      },
+    },
+  },
+  {
+    id: "kucuksu-pavilion",
+    side: "Asia",
+    category: "Hunting lodge",
+    era: "1857 · Ottoman",
+    mapX: 66,
+    mapY: 46,
+    text: {
+      en: {
+        name: "Küçüksu Pavilion",
+        summary:
+          "Küçüksu is a jewel-box hunting lodge built in 1857, where sultans paused between the two streams the Ottomans nicknamed the Sweet Waters of Asia. Small but lavishly decorated, its curved Baroque façade and ornamental fountain were designed to be admired from the water as much as from the meadow behind it.",
+        lookFor:
+          "A small, highly decorated pavilion on the Asian shore between the two bridges, set just back from the quay.",
+      },
+      tr: {
+        name: "Küçüksu Kasrı",
+        summary:
+          "Küçüksu, 1857'de inşa edilen bir mücevher kutusu gibi av köşküdür; padişahlar Osmanlıların Asya'nın Tatlı Suları dediği iki dere arasında burada mola verirdi. Küçük ama görkemli süslemeli yapının kavisli Barok cephesi ve süs çeşmesi, hem arkadaki çayırdan hem de sudan hayranlıkla izlenmek üzere tasarlandı.",
+        lookFor:
+          "İki köprü arasında, Anadolu kıyısında, rıhtımdan biraz geride duran küçük ve çok süslü kasır.",
+      },
+      de: {
+        name: "Küçüksu-Pavillon",
+        summary:
+          "Küçüksu ist ein juwelengleiches Jagdschlösschen von 1857, wo die Sultane zwischen den beiden Bächen rasteten, die die Osmanen die Süßen Wasser Asiens nannten. Klein, aber prächtig verziert, wurden seine geschwungene Barockfassade und der Zierbrunnen entworfen, um vom Wasser wie von der Wiese bewundert zu werden.",
+        lookFor:
+          "Ein kleiner, reich verzierter Pavillon am asiatischen Ufer zwischen den beiden Brücken, etwas vom Kai zurückgesetzt.",
+      },
+      fr: {
+        name: "Pavillon de Küçüksu",
+        summary:
+          "Küçüksu est un pavillon de chasse précieux bâti en 1857, où les sultans faisaient halte entre les deux ruisseaux que les Ottomans surnommaient les Eaux Douces d'Asie. Petit mais somptueusement décoré, sa façade baroque incurvée et sa fontaine ornementale furent conçues pour être admirées depuis l'eau.",
+        lookFor:
+          "Un petit pavillon très orné sur la rive asiatique, entre les deux ponts, légèrement en retrait du quai.",
+      },
+      es: {
+        name: "Pabellón de Küçüksu",
+        summary:
+          "Küçüksu es un pabellón de caza de joyería construido en 1857, donde los sultanes descansaban entre los dos arroyos que los otomanos llamaban las Aguas Dulces de Asia. Pequeño pero lujosamente decorado, su fachada barroca curva y su fuente ornamental se diseñaron para admirarse desde el agua.",
+        lookFor:
+          "Un pequeño pabellón muy decorado en la orilla asiática, entre los dos puentes, algo retirado del muelle.",
+      },
+      ru: {
+        name: "Павильон Кючюксу",
+        summary:
+          "Кючюксу — изящный охотничий павильон 1857 года, где султаны отдыхали между двумя ручьями, которые османы прозвали Сладкими водами Азии. Небольшой, но богато украшенный, его изогнутый барочный фасад и декоративный фонтан были задуманы, чтобы любоваться ими прямо с воды.",
+        lookFor:
+          "Небольшой богато украшенный павильон на азиатском берегу между двумя мостами, чуть в глубине от набережной.",
+      },
+      it: {
+        name: "Padiglione di Küçüksu",
+        summary:
+          "Küçüksu è un prezioso padiglione di caccia del 1857, dove i sultani sostavano tra i due ruscelli che gli ottomani chiamavano le Dolci Acque d'Asia. Piccolo ma riccamente decorato, la sua facciata barocca curva e la fontana ornamentale furono pensate per essere ammirate dall'acqua.",
+        lookFor:
+          "Un piccolo padiglione molto decorato sulla riva asiatica, tra i due ponti, leggermente arretrato dalla banchina.",
+      },
+      nl: {
+        name: "Küçüksu-paviljoen",
+        summary:
+          "Küçüksu is een juweelachtig jachtpaviljoen uit 1857, waar sultans rustten tussen de twee beken die de Ottomanen de Zoete Wateren van Azië noemden. Klein maar rijk versierd, met een gebogen barokgevel en sierfontein, ontworpen om vanaf het water bewonderd te worden.",
+        lookFor:
+          "Een klein, rijk versierd paviljoen aan de Aziatische oever tussen de twee bruggen, iets terug van de kade.",
+      },
+      ar: {
+        name: "قصر كوتشوكسو",
+        summary:
+          "كوتشوكسو جناح صيد صغير كعلبة جواهر بُني عام 1857، حيث كان السلاطين يستريحون بين الجدولين اللذين سمّاهما العثمانيون مياه آسيا العذبة. صغير لكنه فاخر الزخرفة، صُممت واجهته الباروكية المنحنية ونافورته ليُتأمّلا من الماء.",
+        lookFor:
+          "جناح صغير شديد الزخرفة على الساحل الآسيوي بين الجسرين، متراجع قليلاً عن الرصيف.",
+      },
+      ja: {
+        name: "キュチュクス離宮",
+        summary:
+          "キュチュクスは1857年に建てられた宝石箱のような狩猟離宮で、オスマン人が「アジアの甘き水」と呼んだ二つの小川の間でスルタンが憩いました。小さくも華麗で、湾曲したバロックのファサードと装飾噴水は水上から眺められるよう設計されました。",
+        lookFor:
+          "二つの橋の間、アジア岸の岸壁からやや奥まって立つ、小さく装飾豊かな離宮。",
+      },
+      zh: {
+        name: "小水阁",
+        summary:
+          "小水阁是1857年建造的珠宝盒般的狩猎别墅，苏丹曾在奥斯曼人称为「亚洲甜水」的两条溪流之间在此小憩。它虽小却装饰华丽，弧形巴洛克立面与装饰喷泉皆为从水上观赏而设计。",
+        lookFor:
+          "两座大桥之间、亚洲岸稍离码头的一座装饰繁复的小阁。",
+      },
+      pt: {
+        name: "Pavilhão de Küçüksu",
+        summary:
+          "Küçüksu é um precioso pavilhão de caça construído em 1857, onde os sultões paravam entre os dois ribeiros que os otomanos apelidavam de Águas Doces da Ásia. Pequeno mas ricamente decorado, a sua fachada barroca curva e a fonte ornamental foram pensadas para serem admiradas da água.",
+        lookFor:
+          "Um pequeno pavilhão muito decorado na margem asiática, entre as duas pontes, ligeiramente recuado do cais.",
+      },
+    },
+  },
+  {
+    id: "rumeli-fortress",
+    side: "Europe",
+    category: "Ottoman fortress",
+    era: "1452 · Ottoman",
+    mapX: 32,
+    mapY: 40,
+    text: {
+      en: {
+        name: "Rumeli Fortress",
+        summary:
+          "Mehmed II raised Rumeli Fortress in just four months in 1452 to choke off the Bosphorus before his conquest of Constantinople. Its three great towers and connecting walls climb steeply up the European hillside at the strait's narrowest point, directly opposite an older Ottoman fortress on the Asian side.",
+        lookFor:
+          "Massive stone towers and ramparts climbing the European hill at the narrowest neck of the strait.",
+      },
+      tr: {
+        name: "Rumeli Hisarı",
+        summary:
+          "Fatih Sultan Mehmed, İstanbul'un fethinden önce Boğaz'ı kapatmak için Rumeli Hisarı'nı 1452'de yalnızca dört ayda inşa ettirdi. Üç büyük kulesi ve bağlantı surları, boğazın en dar noktasında Avrupa yamacını dik biçimde tırmanır; tam karşısında Anadolu yakasındaki daha eski Osmanlı hisarı bulunur.",
+        lookFor:
+          "Boğazın en dar boğumunda Avrupa tepesini tırmanan devasa taş kuleler ve surlar.",
+      },
+      de: {
+        name: "Festung Rumeli Hisarı",
+        summary:
+          "Mehmed II. ließ die Festung Rumeli Hisarı 1452 in nur vier Monaten errichten, um den Bosporus vor der Eroberung Konstantinopels abzuriegeln. Ihre drei großen Türme und Verbindungsmauern steigen an der engsten Stelle der Meerenge steil den europäischen Hang hinauf — direkt gegenüber einer älteren Festung am asiatischen Ufer.",
+        lookFor:
+          "Gewaltige Steintürme und Wälle, die an der engsten Stelle der Meerenge den europäischen Hang hinaufklettern.",
+      },
+      fr: {
+        name: "Forteresse de Rumeli",
+        summary:
+          "Mehmed II fit élever la forteresse de Rumeli en seulement quatre mois en 1452 pour verrouiller le Bosphore avant la conquête de Constantinople. Ses trois grandes tours et ses courtines escaladent le versant européen au point le plus étroit du détroit, face à une forteresse ottomane plus ancienne sur la rive asiatique.",
+        lookFor:
+          "D'énormes tours de pierre et des remparts gravissant la colline européenne au passage le plus étroit du détroit.",
+      },
+      es: {
+        name: "Fortaleza de Rumeli",
+        summary:
+          "Mehmed II levantó la fortaleza de Rumeli en solo cuatro meses en 1452 para cerrar el Bósforo antes de la conquista de Constantinopla. Sus tres grandes torres y murallas trepan la ladera europea en el punto más estrecho del estrecho, justo frente a una fortaleza otomana más antigua en la orilla asiática.",
+        lookFor:
+          "Enormes torres de piedra y murallas que trepan la colina europea en el punto más angosto del estrecho.",
+      },
+      ru: {
+        name: "Крепость Румелихисары",
+        summary:
+          "Мехмед II возвёл крепость Румелихисары всего за четыре месяца в 1452 году, чтобы перекрыть Босфор перед завоеванием Константинополя. Три могучие башни и соединяющие их стены круто взбираются по европейскому склону в самом узком месте пролива — прямо напротив более старой османской крепости на азиатском берегу.",
+        lookFor:
+          "Громадные каменные башни и стены, взбирающиеся по европейскому склону в самом узком месте пролива.",
+      },
+      it: {
+        name: "Fortezza di Rumeli",
+        summary:
+          "Mehmed II eresse la fortezza di Rumeli in soli quattro mesi nel 1452 per sbarrare il Bosforo prima della conquista di Costantinopoli. Le sue tre grandi torri e le mura di collegamento salgono ripide il pendio europeo nel punto più stretto dello stretto, di fronte a una fortezza più antica sulla riva asiatica.",
+        lookFor:
+          "Imponenti torri di pietra e bastioni che salgono la collina europea nel punto più stretto dello stretto.",
+      },
+      nl: {
+        name: "Rumeli-fort",
+        summary:
+          "Mehmed II liet het Rumeli-fort in slechts vier maanden bouwen in 1452 om de Bosporus af te sluiten vóór de verovering van Constantinopel. De drie grote torens en verbindingsmuren beklimmen steil de Europese helling op het smalste punt, tegenover een ouder Ottomaans fort.",
+        lookFor:
+          "Massieve stenen torens en wallen die de Europese heuvel beklimmen op de smalste plek van de zeestraat.",
+      },
+      ar: {
+        name: "قلعة روملي",
+        summary:
+          "بنى محمد الثاني قلعة روملي في أربعة أشهر فقط عام 1452 لإغلاق البوسفور قبل فتح القسطنطينية. تتسلق أبراجها الثلاثة الكبرى وأسوارها المنحدر الأوروبي عند أضيق نقطة في المضيق، مقابل قلعة عثمانية أقدم على الساحل الآسيوي.",
+        lookFor:
+          "أبراج وأسوار حجرية ضخمة تتسلق التل الأوروبي عند أضيق عنق في المضيق.",
+      },
+      ja: {
+        name: "ルメリ城塞",
+        summary:
+          "メフメト2世は1452年、コンスタンティノープル征服に先立ってボスポラスを封鎖するため、わずか4か月でルメリ城塞を築きました。三つの大塔と連結壁は海峡最狭部の欧州側斜面を急峻に登り、対岸のより古い城塞と向かい合います。",
+        lookFor:
+          "海峡の最も狭い部分で、ヨーロッパ側の丘を登る巨大な石造の塔と城壁。",
+      },
+      zh: {
+        name: "鲁梅利城堡",
+        summary:
+          "1452年，穆罕默德二世仅用四个月便筑起鲁梅利城堡，以在征服君士坦丁堡前封锁博斯普鲁斯。三座巨塔与连墙在海峡最窄处沿欧洲山坡陡然攀升，正对亚洲岸一座更古老的奥斯曼城堡。",
+        lookFor:
+          "在海峡最狭窄处、沿欧洲山坡攀升的巨大石塔与城墙。",
+      },
+      pt: {
+        name: "Fortaleza de Rumeli",
+        summary:
+          "Mehmed II ergueu a fortaleza de Rumeli em apenas quatro meses em 1452 para fechar o Bósforo antes da conquista de Constantinopla. As suas três grandes torres e muralhas sobem a íngreme encosta europeia no ponto mais estreito do estreito, frente a uma fortaleza otomana mais antiga.",
+        lookFor:
+          "Enormes torres de pedra e muralhas que sobem a colina europeia no ponto mais estreito do estreito.",
+      },
+    },
+  },
+  {
+    id: "anadolu-fortress",
+    side: "Asia",
+    category: "Ottoman fortress",
+    era: "1394 · Ottoman",
+    mapX: 68,
+    mapY: 38,
+    text: {
+      en: {
+        name: "Anadolu Fortress",
+        summary:
+          "Anadolu Fortress is the older and smaller of the strait's two Ottoman castles, built around 1394 by Bayezid I. Paired with Rumeli Fortress on the opposite bank, it let the Ottomans control every ship passing the narrowest channel — the strategy that sealed the fate of Byzantine Constantinople half a century later.",
+        lookFor:
+          "A compact stone keep on the Asian shore, directly across the narrows from the much larger Rumeli Fortress.",
+      },
+      tr: {
+        name: "Anadolu Hisarı",
+        summary:
+          "Anadolu Hisarı, boğazın iki Osmanlı kalesinin daha eski ve küçük olanıdır; 1394 dolaylarında Yıldırım Bayezid tarafından inşa edildi. Karşı kıyıdaki Rumeli Hisarı ile birlikte, Osmanlıların en dar kanaldan geçen her gemiyi denetlemesini sağladı — yarım yüzyıl sonra Bizans'ın kaderini belirleyen strateji.",
+        lookFor:
+          "Anadolu kıyısında, çok daha büyük Rumeli Hisarı'nın tam karşısında, dar boğazda duran sağlam taş kale.",
+      },
+      de: {
+        name: "Festung Anadolu Hisarı",
+        summary:
+          "Anadolu Hisarı ist die ältere und kleinere der beiden osmanischen Burgen der Meerenge, um 1394 von Bayezid I. errichtet. Zusammen mit Rumeli Hisarı am gegenüberliegenden Ufer konnten die Osmanen jedes Schiff im engsten Kanal kontrollieren — die Strategie, die ein halbes Jahrhundert später Konstantinopels Schicksal besiegelte.",
+        lookFor:
+          "Eine kompakte Steinburg am asiatischen Ufer, direkt gegenüber der weit größeren Festung Rumeli Hisarı.",
+      },
+      fr: {
+        name: "Forteresse d'Anadolu",
+        summary:
+          "La forteresse d'Anadolu est la plus ancienne et la plus petite des deux châteaux ottomans du détroit, bâtie vers 1394 par Bayezid Ier. Associée à la forteresse de Rumeli en face, elle permit aux Ottomans de contrôler chaque navire du chenal le plus étroit — stratégie décisive un demi-siècle plus tard.",
+        lookFor:
+          "Un donjon de pierre compact sur la rive asiatique, juste en face de la forteresse de Rumeli bien plus grande.",
+      },
+      es: {
+        name: "Fortaleza de Anadolu",
+        summary:
+          "La fortaleza de Anadolu es el más antiguo y pequeño de los dos castillos otomanos del estrecho, construido hacia 1394 por Bayezid I. Junto con la fortaleza de Rumeli en la orilla opuesta, permitió a los otomanos controlar cada barco del canal más estrecho — la estrategia que decidiría el destino de Constantinopla.",
+        lookFor:
+          "Un compacto torreón de piedra en la orilla asiática, justo frente a la mucho mayor fortaleza de Rumeli.",
+      },
+      ru: {
+        name: "Крепость Анадолухисары",
+        summary:
+          "Анадолухисары — более старая и малая из двух османских крепостей пролива, построена около 1394 года Баязидом I. Вместе с крепостью Румелихисары на противоположном берегу она позволяла османам контролировать каждый корабль в самом узком месте — стратегия, решившая судьбу Константинополя полвека спустя.",
+        lookFor:
+          "Компактная каменная крепость на азиатском берегу, прямо напротив куда более крупной Румелихисары.",
+      },
+      it: {
+        name: "Fortezza di Anadolu",
+        summary:
+          "La fortezza di Anadolu è il più antico e piccolo dei due castelli ottomani dello stretto, costruito intorno al 1394 da Bayezid I. Insieme alla fortezza di Rumeli sulla riva opposta, permise agli ottomani di controllare ogni nave del canale più stretto.",
+        lookFor:
+          "Un compatto mastio di pietra sulla riva asiatica, proprio di fronte alla ben più grande fortezza di Rumeli.",
+      },
+      nl: {
+        name: "Anadolu-fort",
+        summary:
+          "Het Anadolu-fort is het oudste en kleinste van de twee Ottomaanse kastelen van de zeestraat, rond 1394 gebouwd door Bayezid I. Samen met het Rumeli-fort aan de overkant kon de Ottomaan elk schip in het smalste kanaal controleren.",
+        lookFor:
+          "Een compacte stenen burcht aan de Aziatische oever, recht tegenover het veel grotere Rumeli-fort.",
+      },
+      ar: {
+        name: "قلعة الأناضول",
+        summary:
+          "قلعة الأناضول هي الأقدم والأصغر بين قلعتي المضيق العثمانيتين، بناها بايزيد الأول نحو عام 1394. ومع قلعة روملي على الضفة المقابلة، مكّنت العثمانيين من مراقبة كل سفينة تعبر أضيق قناة.",
+        lookFor:
+          "حصن حجري صغير متماسك على الساحل الآسيوي، مقابل قلعة روملي الأكبر بكثير تماماً.",
+      },
+      ja: {
+        name: "アナドル城塞",
+        summary:
+          "アナドル城塞は海峡の二つのオスマン城塞のうち古く小さい方で、1394年頃にバヤズィト1世が築きました。対岸のルメリ城塞と対をなし、オスマン人は最狭水路を通る全ての船を支配できました。",
+        lookFor:
+          "アジア岸にある小ぶりで堅固な石造の城。対岸の遥かに大きいルメリ城塞の真向かい。",
+      },
+      zh: {
+        name: "安纳托利亚城堡",
+        summary:
+          "安纳托利亚城堡是海峡两座奥斯曼城堡中较古老、较小的一座，约1394年由巴耶济德一世建造。它与对岸的鲁梅利城堡相配，使奥斯曼人得以掌控通过最窄水道的每一艘船。",
+        lookFor:
+          "亚洲岸一座结构紧凑的石堡，正对岸边那座大得多的鲁梅利城堡。",
+      },
+      pt: {
+        name: "Fortaleza de Anadolu",
+        summary:
+          "A fortaleza de Anadolu é o mais antigo e pequeno dos dois castelos otomanos do estreito, construído por volta de 1394 por Bayezid I. Em conjunto com a fortaleza de Rumeli na margem oposta, permitiu aos otomanos controlar cada navio do canal mais estreito.",
+        lookFor:
+          "Um compacto torreão de pedra na margem asiática, mesmo em frente à muito maior fortaleza de Rumeli.",
+      },
+    },
+  },
+  {
+    id: "bosphorus-bridge",
+    side: "Strait",
+    category: "Suspension bridge",
+    era: "1973",
+    mapX: 50,
+    mapY: 64,
+    text: {
+      en: {
+        name: "15 July Martyrs Bridge",
+        summary:
+          "Opened in 1973 as the first fixed link between Europe and Asia, this suspension bridge spans just over a kilometre between Ortaköy and Beylerbeyi. It carries the symbolic weight of joining two continents, and after dark its cables run through a slow colour-changing light show best seen from the deck of a boat.",
+        lookFor:
+          "The southern of the two great suspension bridges, springing from Ortaköy on the European side.",
+      },
+      tr: {
+        name: "15 Temmuz Şehitler Köprüsü",
+        summary:
+          "1973'te Avrupa ile Asya arasındaki ilk sabit bağlantı olarak açılan bu asma köprü, Ortaköy ile Beylerbeyi arasında bir kilometreden biraz uzun bir açıklığa sahiptir. İki kıtayı birleştirmenin simgesel ağırlığını taşır; karanlık çökünce halatları, tekneden en iyi izlenen yavaş bir renk gösterisine bürünür.",
+        lookFor:
+          "İki büyük asma köprünün güneydekisi; Avrupa yakasında Ortaköy'den yükselir.",
+      },
+      de: {
+        name: "Märtyrerbrücke des 15. Juli",
+        summary:
+          "1973 als erste feste Verbindung zwischen Europa und Asien eröffnet, überspannt diese Hängebrücke etwas mehr als einen Kilometer zwischen Ortaköy und Beylerbeyi. Sie trägt die symbolische Last, zwei Kontinente zu verbinden; nach Einbruch der Dunkelheit zeigen ihre Kabel ein langsames Farbspiel, am besten vom Boot aus zu sehen.",
+        lookFor:
+          "Die südlichere der beiden großen Hängebrücken, die auf der europäischen Seite von Ortaköy aufsteigt.",
+      },
+      fr: {
+        name: "Pont des Martyrs du 15-Juillet",
+        summary:
+          "Inauguré en 1973 comme premier lien fixe entre l'Europe et l'Asie, ce pont suspendu franchit un peu plus d'un kilomètre entre Ortaköy et Beylerbeyi. Il porte le poids symbolique d'unir deux continents ; la nuit, ses câbles s'illuminent d'un lent jeu de couleurs, mieux vu depuis le pont d'un bateau.",
+        lookFor:
+          "Le plus au sud des deux grands ponts suspendus, s'élançant d'Ortaköy sur la rive européenne.",
+      },
+      es: {
+        name: "Puente de los Mártires del 15 de Julio",
+        summary:
+          "Inaugurado en 1973 como el primer enlace fijo entre Europa y Asia, este puente colgante salva algo más de un kilómetro entre Ortaköy y Beylerbeyi. Lleva el peso simbólico de unir dos continentes; al anochecer, sus cables ofrecen un lento juego de luces de color, mejor visto desde la cubierta de un barco.",
+        lookFor:
+          "El más meridional de los dos grandes puentes colgantes, que arranca de Ortaköy en el lado europeo.",
+      },
+      ru: {
+        name: "Мост мучеников 15 июля",
+        summary:
+          "Открытый в 1973 году как первая постоянная связь между Европой и Азией, этот висячий мост перекрывает чуть более километра между Ортакёем и Бейлербейи. Он несёт символический вес соединения двух континентов; с наступлением темноты его тросы переливаются медленной цветовой подсветкой, лучше всего видной с борта судна.",
+        lookFor:
+          "Южный из двух больших висячих мостов, начинающийся от Ортакёя на европейской стороне.",
+      },
+      it: {
+        name: "Ponte dei Martiri del 15 Luglio",
+        summary:
+          "Inaugurato nel 1973 come primo collegamento fisso tra Europa e Asia, questo ponte sospeso supera poco più di un chilometro tra Ortaköy e Beylerbeyi. Porta il peso simbolico di unire due continenti; di notte i cavi offrono un lento gioco di luci colorate, meglio visto da una barca.",
+        lookFor:
+          "Il più meridionale dei due grandi ponti sospesi, che si slancia da Ortaköy sul lato europeo.",
+      },
+      nl: {
+        name: "Brug van de Martelaren van 15 Juli",
+        summary:
+          "In 1973 geopend als eerste vaste verbinding tussen Europa en Azië, overspant deze hangbrug ruim een kilometer tussen Ortaköy en Beylerbeyi. Ze draagt het symbolische gewicht van het verbinden van twee continenten; na donker tonen de kabels een traag kleurenspel.",
+        lookFor:
+          "De zuidelijkste van de twee grote hangbruggen, opstijgend vanaf Ortaköy aan de Europese zijde.",
+      },
+      ar: {
+        name: "جسر شهداء 15 يوليو",
+        summary:
+          "افتُتح هذا الجسر المعلّق عام 1973 كأول وصلة ثابتة بين أوروبا وآسيا، ويمتد لأكثر من كيلومتر قليلاً بين أورتاكوي وبيلربيي. يحمل الثقل الرمزي لوصل قارتين، وبعد حلول الظلام تتوهج كوابله بعرض ضوئي بطيء متغيّر الألوان.",
+        lookFor:
+          "الأجنوبي من الجسرين المعلّقين الكبيرين، ينطلق من أورتاكوي على الجانب الأوروبي.",
+      },
+      ja: {
+        name: "7月15日殉教者の橋",
+        summary:
+          "1973年に欧州とアジアを結ぶ初の常設橋として開通したこの吊り橋は、オルタキョイとベイレルベイの間を1キロ余り渡します。二大陸を結ぶ象徴的な重みを担い、日没後はケーブルがゆっくり色を変える光の演出を見せます。",
+        lookFor:
+          "二つの大吊り橋のうち南側。ヨーロッパ側のオルタキョイから立ち上がります。",
+      },
+      zh: {
+        name: "七一五烈士大桥",
+        summary:
+          "这座吊桥于1973年作为欧亚之间首座固定通道开通，在奥尔塔科伊与贝伊莱尔贝伊之间跨越一公里有余。它承载着连接两大洲的象征意义，入夜后缆索会呈现缓慢变色的灯光秀。",
+        lookFor:
+          "两座大吊桥中偏南的一座，自欧洲岸的奥尔塔科伊起跨。",
+      },
+      pt: {
+        name: "Ponte dos Mártires de 15 de Julho",
+        summary:
+          "Inaugurada em 1973 como a primeira ligação fixa entre a Europa e a Ásia, esta ponte suspensa atravessa pouco mais de um quilómetro entre Ortaköy e Beylerbeyi. Carrega o peso simbólico de unir dois continentes; ao anoitecer, os cabos exibem um lento jogo de luzes coloridas.",
+        lookFor:
+          "A mais a sul das duas grandes pontes suspensas, partindo de Ortaköy no lado europeu.",
+      },
+    },
+  },
+  {
+    id: "fatih-bridge",
+    side: "Strait",
+    category: "Suspension bridge",
+    era: "1988",
+    mapX: 50,
+    mapY: 39,
+    text: {
+      en: {
+        name: "Fatih Sultan Mehmet Bridge",
+        summary:
+          "The second Bosphorus crossing, opened in 1988, leaps the strait exactly between the two historic fortresses — a deliberate echo of the 1453 conquest it is named for. Sunset cruises usually turn back near this point, so the bridge marks the natural northern edge of the classic Bosphorus sightseeing route.",
+        lookFor:
+          "The northern suspension bridge, framed between Rumeli and Anadolu fortresses on either bank.",
+      },
+      tr: {
+        name: "Fatih Sultan Mehmet Köprüsü",
+        summary:
+          "1988'de açılan ikinci Boğaz geçişi, boğazı tam olarak iki tarihi hisarın arasından aşar — adını aldığı 1453 fethine kasıtlı bir göndermedir. Gün batımı turları genellikle bu noktada geri döner; bu yüzden köprü, klasik Boğaz gezi rotasının doğal kuzey sınırını işaret eder.",
+        lookFor:
+          "Kuzeydeki asma köprü; her iki kıyıda Rumeli ve Anadolu hisarları arasında çerçevelenir.",
+      },
+      de: {
+        name: "Fatih-Sultan-Mehmet-Brücke",
+        summary:
+          "Die 1988 eröffnete zweite Bosporus-Querung springt genau zwischen den beiden historischen Festungen über die Meerenge — ein bewusster Verweis auf die Eroberung von 1453, nach der sie benannt ist. Sonnenuntergangsfahrten kehren meist hier um, sodass die Brücke die natürliche Nordgrenze der klassischen Route markiert.",
+        lookFor:
+          "Die nördliche Hängebrücke, eingerahmt von den Festungen Rumeli und Anadolu an beiden Ufern.",
+      },
+      fr: {
+        name: "Pont Fatih Sultan Mehmet",
+        summary:
+          "La deuxième traversée du Bosphore, ouverte en 1988, franchit le détroit exactement entre les deux forteresses historiques — un écho voulu de la conquête de 1453 dont il porte le nom. Les croisières au coucher du soleil font généralement demi-tour ici, le pont marquant la limite nord de la route classique.",
+        lookFor:
+          "Le pont suspendu nord, encadré par les forteresses de Rumeli et d'Anadolu sur chaque rive.",
+      },
+      es: {
+        name: "Puente Fatih Sultan Mehmet",
+        summary:
+          "El segundo cruce del Bósforo, inaugurado en 1988, salva el estrecho justo entre las dos fortalezas históricas — un eco deliberado de la conquista de 1453 que le da nombre. Los cruceros del atardecer suelen dar la vuelta aquí, así que el puente marca el límite norte de la ruta clásica.",
+        lookFor:
+          "El puente colgante norte, enmarcado entre las fortalezas de Rumeli y Anadolu en cada orilla.",
+      },
+      ru: {
+        name: "Мост Султана Мехмеда Фатиха",
+        summary:
+          "Второй переход через Босфор, открытый в 1988 году, перешагивает пролив ровно между двумя историческими крепостями — намеренная отсылка к завоеванию 1453 года, в честь которого он назван. Закатные круизы обычно поворачивают назад здесь, и мост отмечает северную границу классического маршрута.",
+        lookFor:
+          "Северный висячий мост, обрамлённый крепостями Румелихисары и Анадолухисары на обоих берегах.",
+      },
+      it: {
+        name: "Ponte Fatih Sultan Mehmet",
+        summary:
+          "La seconda traversata del Bosforo, aperta nel 1988, scavalca lo stretto esattamente tra le due fortezze storiche — un richiamo voluto alla conquista del 1453 da cui prende il nome. Le crociere al tramonto di solito invertono la rotta qui, e il ponte segna il limite nord del percorso classico.",
+        lookFor:
+          "Il ponte sospeso nord, incorniciato tra le fortezze di Rumeli e Anadolu sulle due rive.",
+      },
+      nl: {
+        name: "Fatih Sultan Mehmet-brug",
+        summary:
+          "De tweede Bosporusoversteek, geopend in 1988, springt over de zeestraat precies tussen de twee historische forten — een bewuste verwijzing naar de verovering van 1453 waarnaar ze is genoemd. Zonsondergangcruises keren hier meestal om, zodat de brug de noordgrens van de klassieke route markeert.",
+        lookFor:
+          "De noordelijke hangbrug, omlijst door de forten Rumeli en Anadolu aan beide oevers.",
+      },
+      ar: {
+        name: "جسر السلطان محمد الفاتح",
+        summary:
+          "العبور الثاني للبوسفور، الذي افتُتح عام 1988، يثب فوق المضيق تماماً بين القلعتين التاريخيتين — صدى مقصود لفتح 1453 الذي سُمّي تيمّناً به. عادةً ما تعود رحلات الغروب أدراجها هنا، فيشكّل الجسر الحد الشمالي للمسار الكلاسيكي.",
+        lookFor:
+          "الجسر المعلّق الشمالي، مؤطّراً بين قلعتي روملي والأناضول على الضفتين.",
+      },
+      ja: {
+        name: "ファーティフ・スルタン・メフメト橋",
+        summary:
+          "1988年に開通した二番目のボスポラス架橋は、二つの歴史的城塞のちょうど間で海峡を跨ぎます——名の由来である1453年の征服への意図的な呼応です。夕陽クルーズは通常この付近で折り返し、橋は古典的観光航路の北端を示します。",
+        lookFor:
+          "北側の吊り橋。両岸のルメリ城塞とアナドル城塞に挟まれて見えます。",
+      },
+      zh: {
+        name: "征服者苏丹穆罕默德大桥",
+        summary:
+          "1988年通车的第二座博斯普鲁斯大桥，恰好在两座历史城堡之间跨越海峡——这是对其得名的1453年征服的有意呼应。日落游船通常在此折返，因此该桥标志着经典观光航线的北端。",
+        lookFor:
+          "北侧的吊桥，被两岸的鲁梅利城堡与安纳托利亚城堡所环抱。",
+      },
+      pt: {
+        name: "Ponte Fatih Sultan Mehmet",
+        summary:
+          "A segunda travessia do Bósforo, aberta em 1988, salta o estreito exatamente entre as duas fortalezas históricas — um eco deliberado da conquista de 1453 que lhe dá o nome. Os cruzeiros ao pôr do sol costumam inverter a rota aqui, marcando a ponte o limite norte do percurso clássico.",
+        lookFor:
+          "A ponte suspensa norte, emoldurada entre as fortalezas de Rumeli e Anadolu em cada margem.",
+      },
+    },
+  },
+  {
+    id: "emirgan-bebek",
+    side: "Europe",
+    category: "Waterfront district",
+    era: "Ottoman gardens",
+    mapX: 34,
+    mapY: 52,
+    text: {
+      en: {
+        name: "Bebek & Emirgan Shore",
+        summary:
+          "Between the fortresses and the bridges, the European shore softens into Bebek and Emirgan — leafy bays lined with wooden waterfront mansions known as yalı. Once aristocratic summer retreats, these timber houses still stand at the water's edge, and Emirgan's tulip gardens above them are a spring highlight of the strait.",
+        lookFor:
+          "Rows of old wooden mansions in soft colours, hugging the European shore around a gentle curved bay.",
+      },
+      tr: {
+        name: "Bebek ve Emirgan Kıyısı",
+        summary:
+          "Hisarlarla köprüler arasında Avrupa kıyısı yumuşayarak Bebek ve Emirgan'a dönüşür — yalı denen ahşap kıyı konaklarıyla çevrili yeşil koylar. Bir zamanlar aristokrat yazlıkları olan bu ahşap evler hâlâ su kenarında durur; üstlerindeki Emirgan'ın lale bahçeleri boğazın bahar şöleni olur.",
+        lookFor:
+          "Yumuşak renklerde, hafif kavisli bir koyu saran, Avrupa kıyısına sıralanmış eski ahşap konaklar.",
+      },
+      de: {
+        name: "Ufer von Bebek & Emirgan",
+        summary:
+          "Zwischen den Festungen und den Brücken wird das europäische Ufer in Bebek und Emirgan sanfter — grüne Buchten, gesäumt von hölzernen Ufervillen, den sogenannten yalı. Einst aristokratische Sommersitze, stehen diese Holzhäuser noch am Wasser; die Tulpengärten von Emirgan darüber sind ein Frühlingshöhepunkt.",
+        lookFor:
+          "Reihen alter Holzvillen in sanften Farben, die sich am europäischen Ufer um eine leicht geschwungene Bucht schmiegen.",
+      },
+      fr: {
+        name: "Rive de Bebek & Emirgan",
+        summary:
+          "Entre les forteresses et les ponts, la rive européenne s'adoucit en Bebek et Emirgan — des baies verdoyantes bordées de demeures de bois en bord d'eau, les yalı. Anciennes résidences d'été aristocratiques, ces maisons de bois bordent encore l'eau, et les jardins de tulipes d'Emirgan font le printemps du détroit.",
+        lookFor:
+          "Des rangées d'anciennes demeures de bois aux teintes douces, épousant la rive européenne autour d'une baie courbe.",
+      },
+      es: {
+        name: "Orilla de Bebek y Emirgan",
+        summary:
+          "Entre las fortalezas y los puentes, la orilla europea se suaviza en Bebek y Emirgan — bahías frondosas bordeadas de mansiones de madera junto al agua, llamadas yalı. Antes retiros veraniegos aristocráticos, estas casas de madera siguen al borde del agua, y los jardines de tulipanes de Emirgan animan la primavera.",
+        lookFor:
+          "Hileras de antiguas mansiones de madera en tonos suaves, abrazando la orilla europea en torno a una bahía curva.",
+      },
+      ru: {
+        name: "Берег Бебека и Эмиргана",
+        summary:
+          "Между крепостями и мостами европейский берег смягчается в Бебеке и Эмиргане — зелёные бухты с деревянными прибрежными особняками, которые называют ялы. Когда-то аристократические летние резиденции, эти деревянные дома и сегодня стоят у воды, а тюльпановые сады Эмиргана — весенняя жемчужина пролива.",
+        lookFor:
+          "Ряды старинных деревянных особняков мягких тонов, обнимающих европейский берег вдоль плавно изогнутой бухты.",
+      },
+      it: {
+        name: "Riva di Bebek & Emirgan",
+        summary:
+          "Tra le fortezze e i ponti, la riva europea si addolcisce in Bebek ed Emirgan — baie verdeggianti orlate da ville di legno sull'acqua, le yalı. Un tempo residenze estive aristocratiche, queste case di legno costeggiano ancora l'acqua, e i giardini di tulipani di Emirgan animano la primavera.",
+        lookFor:
+          "File di antiche ville di legno dai toni tenui, lungo la riva europea attorno a una baia curva.",
+      },
+      nl: {
+        name: "Oever van Bebek & Emirgan",
+        summary:
+          "Tussen de forten en de bruggen verzacht de Europese oever tot Bebek en Emirgan — groene baaien omzoomd door houten oevervilla's, de yalı. Ooit aristocratische zomerverblijven, staan deze houten huizen nog aan het water, en de tulpentuinen van Emirgan zijn een lentehoogtepunt.",
+        lookFor:
+          "Rijen oude houten villa's in zachte tinten, langs de Europese oever rond een licht gebogen baai.",
+      },
+      ar: {
+        name: "ساحل بيبك وإميرغان",
+        summary:
+          "بين القلاع والجسور يلين الساحل الأوروبي إلى بيبك وإميرغان — خلجان خضراء تحفّها قصور خشبية على الماء تُعرف بالـ«يالي». كانت يوماً مصايف للأرستقراطيين، ولا تزال هذه البيوت الخشبية على حافة الماء، وحدائق التوليب في إميرغان فوقها متعة الربيع.",
+        lookFor:
+          "صفوف من القصور الخشبية القديمة بألوان هادئة تعانق الساحل الأوروبي حول خليج منحنٍ بلطف.",
+      },
+      ja: {
+        name: "ベベックとエミルガンの岸",
+        summary:
+          "城塞群と橋の間で、ヨーロッパ岸はベベックとエミルガンへと和らぎます——「ヤル」と呼ばれる木造の水辺の邸宅が並ぶ緑の入り江です。かつて貴族の夏の別荘だったこれらの木造家屋は今も水際に立ち、上手のエミルガンのチューリップ庭園は春の見どころです。",
+        lookFor:
+          "穏やかな色合いの古い木造邸宅が、緩く湾曲した入り江に沿って欧州岸に並びます。",
+      },
+      zh: {
+        name: "贝贝克与埃米尔甘岸",
+        summary:
+          "在城堡与大桥之间，欧洲岸渐趋柔和，化为贝贝克与埃米尔甘——绿意盎然的海湾，岸边排列着称为「亚勒」的木造水滨宅邸。这些昔日贵族的避暑别墅至今仍立于水畔，上方埃米尔甘的郁金香花园是海峡的春日亮点。",
+        lookFor:
+          "色调柔和的古老木造宅邸成排，沿着欧洲岸环绕一处缓缓弯曲的海湾。",
+      },
+      pt: {
+        name: "Margem de Bebek & Emirgan",
+        summary:
+          "Entre as fortalezas e as pontes, a margem europeia suaviza-se em Bebek e Emirgan — baías verdejantes ladeadas de mansões de madeira à beira-água, as yalı. Outrora retiros de verão aristocráticos, estas casas de madeira ainda ladeiam a água, e os jardins de tulipas de Emirgan animam a primavera.",
+        lookFor:
+          "Filas de antigas mansões de madeira em tons suaves, ao longo da margem europeia em torno de uma baía curva.",
+      },
+    },
+  },
+];
+
+export function getLandmark(id: string): Landmark | undefined {
+  return BOSPHORUS_LANDMARKS.find((l) => l.id === id);
+}

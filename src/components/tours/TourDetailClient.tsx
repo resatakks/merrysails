@@ -20,6 +20,8 @@ import {
 } from "@/data/tours";
 import BookingSidebar from "@/components/booking/BookingSidebar";
 import ImageLightbox from "@/components/ui/ImageLightbox";
+import TourFeatureStrip from "@/components/tours/TourFeatureStrip";
+import TourGalleryMobile from "@/components/tours/TourGalleryMobile";
 import SalePrice from "@/components/ui/SalePrice";
 import TourCard from "@/components/tours/TourCard";
 import SocialProof from "@/components/tours/SocialProof";
@@ -167,11 +169,20 @@ export default function TourDetailClient({
     (effectivePrice === basePrice ? tour.originalPriceEur : undefined);
   const selectedOptionLabel = hasPackages ? "Selected package" : "Current fare";
   const hasVideoPreview = Boolean(tour.videoSrc);
+  const showFeatureStrip = tour.slug === "bosphorus-sunset-cruise";
 
   return (
     <>
-      {/* Hero Gallery — 3-image layout: 1 large + 2 stacked */}
-      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-2 rounded-2xl overflow-hidden mb-8 h-[280px] sm:h-[360px] md:h-[440px]">
+      {/* Hero Gallery — mobile: swipeable auto-advancing carousel */}
+      <TourGalleryMobile
+        images={allImages}
+        alt={`${tour.nameEn} — ${tour.route} in Istanbul`}
+        onOpen={openLightbox}
+        className="md:hidden mb-8"
+      />
+
+      {/* Hero Gallery — desktop: 3-image layout (1 large + 2 stacked) */}
+      <div className="relative hidden md:grid md:grid-cols-3 gap-2 rounded-2xl overflow-hidden mb-8 h-[280px] sm:h-[360px] md:h-[440px]">
         {/* Main large image */}
         <div
           className="md:col-span-2 relative cursor-pointer group"
@@ -286,6 +297,8 @@ export default function TourDetailClient({
           </div>
         </button>
       </div>
+
+      {showFeatureStrip && <TourFeatureStrip />}
 
       {hasVideoPreview ? (
         <div className="mb-8 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm">

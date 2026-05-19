@@ -204,6 +204,23 @@ export default async function ReservationDetailPage({ params }: { params: Promis
           </div>
         )}
 
+        {isUpcoming && (
+          <Link
+            href="/bosphorus-guide"
+            className="block rounded-2xl border border-emerald-200 bg-emerald-50 p-5 transition-colors hover:border-emerald-400"
+          >
+            <div className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-1">
+              Free interactive guide
+            </div>
+            <div className="text-sm font-bold text-emerald-900">
+              Explore the Bosphorus before you sail →
+            </div>
+            <p className="mt-1 text-xs text-emerald-700">
+              12 landmarks, an interactive map and an audio guide in 12 languages.
+            </p>
+          </Link>
+        )}
+
         <ReservationDocumentCenter reservationId={r.reservationId} />
 
         {/* Actions */}
