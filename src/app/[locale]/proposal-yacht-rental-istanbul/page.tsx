@@ -35,7 +35,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "Evlilik Teklifi Yat Kiralama İstanbul | Boğaz'da Sürpriz Teklif",
+    metaTitle: "Evlilik Teklifi Yat Kiralama İstanbul Boğaz",
     metaDescription:
       "İstanbul'da evlilik teklifi için özel yat kiralama. Gün batımında Boğaz'da çiftinize özel rota, çiçek, fotoğrafçı, kemancı ve dekorasyon. Hemen WhatsApp.",
     canonicalPath: "/tr/proposal-yacht-rental-istanbul",
@@ -116,7 +116,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   de: {
-    metaTitle: "Heiratsantrag auf der Jacht Istanbul | Privater Bosporus-Antrag",
+    metaTitle: "Heiratsantrag auf der Jacht Istanbul Bosporus",
     metaDescription:
       "Heiratsantrag auf einer Jacht in Istanbul: Bosporus bei Sonnenuntergang, Blumen, Fotograf, Geiger und Dekoration. Romantische Überraschung.",
     canonicalPath: "/de/proposal-yacht-rental-istanbul",
@@ -197,7 +197,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   fr: {
-    metaTitle: "Demande en Mariage en Yacht Istanbul | Surprise Bosphore",
+    metaTitle: "Demande en Mariage en Yacht Istanbul Bosphore",
     metaDescription:
       "Demande en mariage en yacht privé à Istanbul. Surprise romantique sur le Bosphore au coucher de soleil avec fleurs, photographe, violoniste et décoration.",
     canonicalPath: "/fr/proposal-yacht-rental-istanbul",
@@ -278,7 +278,7 @@ const CONTENT: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   nl: {
-    metaTitle: "Huwelijksaanzoek op Jacht Istanbul | Privé Bosporus Aanzoek",
+    metaTitle: "Huwelijksaanzoek op Jacht Istanbul Bosporus",
     metaDescription:
       "Privé huwelijksaanzoek op een jacht in Istanbul. Romantische verrassing op de Bosporus bij zonsondergang met bloemen, fotograaf, violist en decoratie.",
     canonicalPath: "/nl/proposal-yacht-rental-istanbul",

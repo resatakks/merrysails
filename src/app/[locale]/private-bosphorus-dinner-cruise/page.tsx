@@ -38,7 +38,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "Boğaz'da Özel Akşam Yemeği Turu | Çift İçin Özel Tekne",
+    metaTitle: "Boğaz'da Özel Akşam Yemeği Turu İstanbul",
     metaDescription:
       "Boğaz'da özel yatta akşam yemeği turu: kendi teknenizde özel masa, esnek rota, gün batımı veya gece kalkış. Evlilik teklifi, yıl dönümü ve doğum günü için ideal.",
     canonicalPath: "/tr/private-bosphorus-dinner-cruise",
@@ -105,7 +105,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   de: {
-    metaTitle: "Privates Bosporus-Abendessen auf der Yacht | Privatjacht-Dinner Istanbul",
+    metaTitle: "Privates Bosporus-Dinner auf der Yacht Istanbul",
     metaDescription:
       "Privates Abendessen auf eigener Yacht am Bosporus: privater Tisch, flexible Route, Sonnenuntergang oder Abendlichter. Für Heiratsantrag, Jahrestag, Geburtstag.",
     canonicalPath: "/de/private-bosphorus-dinner-cruise",
@@ -172,7 +172,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   fr: {
-    metaTitle: "Dîner Privé sur le Bosphore en Yacht | Croisière Dîner Privée Istanbul",
+    metaTitle: "Dîner Privé en Yacht sur le Bosphore Istanbul",
     metaDescription:
       "Dîner privé en yacht sur le Bosphore : table privée, itinéraire flexible au coucher du soleil ou en soirée. Idéal pour demande en mariage et anniversaire.",
     canonicalPath: "/fr/private-bosphorus-dinner-cruise",
@@ -239,7 +239,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English",
   },
   nl: {
-    metaTitle: "Privédiner op Jacht op de Bosporus | Privé Dinercruise Istanbul",
+    metaTitle: "Privédiner op Jacht Bosporus Istanbul",
     metaDescription:
       "Privédiner op eigen jacht op de Bosporus: privétafel, flexibele route, zonsondergang of avond. Ideaal voor huwelijksaanzoek, jubileum en verjaardag.",
     canonicalPath: "/nl/private-bosphorus-dinner-cruise",

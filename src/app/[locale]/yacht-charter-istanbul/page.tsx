@@ -141,7 +141,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle: "Yachtcharter Istanbul ab €200 — Private Bosporus-Jacht",
+    metaTitle: "Yachtcharter Istanbul ab €200 — Bosporus",
     metaDescription:
       "Yachtcharter Istanbul ab €200. Flotte aus 6 Yachten für 10 bis 150 Gäste, Mindestcharter 2 Stunden, ab 3 Stunden flach 10 % Rabatt. Mit Kapitän und Crew.",
     canonicalPath: "/de/yacht-charter-istanbul",

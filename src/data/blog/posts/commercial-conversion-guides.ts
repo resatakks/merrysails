@@ -49,7 +49,7 @@ export const commercialConversionGuides: BlogPost[] = [
     date: "2026-03-28",
     dateModified: "2026-04-23",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1621789098261-60e5cbfc3dd6?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?w=1200&q=80",
     imageAlt: "Elegant dinner table on a Bosphorus cruise boat with illuminated Istanbul skyline at night",
     keywords: ["istanbul dinner cruise booking guide", "how dinner cruise booking works in istanbul", "dinner package ladder istanbul", "shared dinner cruise pickup guide", "bosphorus dinner package comparison", "istanbul dinner cruise planning"],
     author: "captain-ahmet",

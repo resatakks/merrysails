@@ -142,6 +142,24 @@ const yachtVipAddOns: AddOn[] = [
   { name: "Add 1 Hour Extra", price: "EUR 300" },
 ];
 
+// Deprecated tour slugs that 308-redirect via next.config.ts. They stay in
+// `tours` for legacy metaOverrides/relatedTours references, but must NOT be
+// surfaced as internal links (sitemap, /cruises hub) — linking to a redirect
+// is a Semrush "permanent redirect" issue.
+export const REDIRECTED_TOUR_SLUGS = new Set<string>([
+  "romantic-marriage-proposal",
+  "corporate-event-bosphorus-cruise",
+  "private-bosphorus-dinner-yacht-cruise",
+  "private-yacht-swimming-tour",
+  "yacht-weddings",
+  "wedding-anniversary",
+  "yacht-birthday-party",
+  "bosphorus-sightseeing-yacht-cruise",
+  "bachelorette-yacht-party",
+  "private-bosphorus-sunset-cruise",
+  "private-bosphorus-lunch-yacht-cruise",
+]);
+
 export const tours: Tour[] = [
   // ========== BOSPHORUS CRUISES ==========
   {

@@ -33,8 +33,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle:
-      "Saatlik Tekne Kiralama İstanbul 2026 | Boğaz'da Saat Bazlı Özel Tekne",
+    metaTitle: "Saatlik Tekne Kiralama İstanbul — Boğaz",
     metaDescription:
       "İstanbul'da saatlik tekne kiralama: paket bazlı yat kiralama yerine saat bazlı özel tekne arayan misafirler için Boğaz'da esnek özel tekne hizmeti.",
     canonicalPath: "/tr/boat-rental-hourly-istanbul",
@@ -83,8 +82,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle:
-      "Stündliche Bootsmiete Istanbul 2026 | Privatboot pro Stunde Bosporus",
+    metaTitle: "Stündliche Bootsmiete Istanbul — Bosporus",
     metaDescription:
       "Stündliche Bootsmiete in Istanbul: privates Boot pro Stunde auf dem Bosporus statt paketbasierter Yachtcharter. Flexible Planung, vessel-first.",
     canonicalPath: "/de/boat-rental-hourly-istanbul",
@@ -133,8 +131,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   fr: {
-    metaTitle:
-      "Location de Bateau à l'Heure Istanbul 2026 | Bateau Privé par Heure Bosphore",
+    metaTitle: "Location Bateau Heure Istanbul — Bosphore",
     metaDescription:
       "Location de bateau à l'heure à Istanbul : bateau privé par heure sur le Bosphore plutôt qu'une location de yacht en formule. Planification flexible, vessel-first.",
     canonicalPath: "/fr/boat-rental-hourly-istanbul",
@@ -183,8 +180,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   nl: {
-    metaTitle:
-      "Boot per Uur Huren Istanbul 2026 | Privéboot per Uur Bosporus",
+    metaTitle: "Boot per Uur Huren Istanbul — Bosporus",
     metaDescription:
       "Boot per uur huren in Istanbul: een privéboot per uur op de Bosporus in plaats van een pakket-yachtcharter. Flexibele planning, vessel-first.",
     canonicalPath: "/nl/boat-rental-hourly-istanbul",

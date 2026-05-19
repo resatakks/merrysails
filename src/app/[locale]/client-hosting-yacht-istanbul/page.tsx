@@ -35,8 +35,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle:
-      "Müşteri Ağırlama Yatı İstanbul 2026 | Boğaz'da Özel Misafir Akşamı",
+    metaTitle: "Müşteri Ağırlama Yatı İstanbul — Boğaz",
     metaDescription:
       "İstanbul'da müşteri ağırlama için özel yat: yatırımcı, partner ve VIP misafir akşamları için Boğaz'da kurumsal hospitality. Faturalı, brife özel planlama.",
     canonicalPath: "/tr/client-hosting-yacht-istanbul",
@@ -104,8 +103,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle:
-      "Kundenempfang Jacht Istanbul 2026 | VIP-Hospitality am Bosporus",
+    metaTitle: "Kundenempfang Jacht Istanbul — Bosporus VIP",
     metaDescription:
       "Privater Kundenempfang am Bosporus: Investorenabende, Partner-Hospitality und VIP-Gästeempfänge auf privater Jacht in Istanbul. Briefingbasiert, mit Rechnung.",
     canonicalPath: "/de/client-hosting-yacht-istanbul",
@@ -173,8 +171,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   fr: {
-    metaTitle:
-      "Yacht Réception Clients Istanbul 2026 | Hospitality VIP sur le Bosphore",
+    metaTitle: "Yacht Réception Clients Istanbul — Bosphore",
     metaDescription:
       "Réception clients sur yacht privé à Istanbul : soirées investisseurs, hospitality partenaires et accueil VIP sur le Bosphore. Sur devis, facture officielle.",
     canonicalPath: "/fr/client-hosting-yacht-istanbul",
@@ -242,8 +239,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   nl: {
-    metaTitle:
-      "Klantenontvangst Jacht Istanbul 2026 | VIP-hospitality Bosporus",
+    metaTitle: "Klantenontvangst Jacht Istanbul — Bosporus",
     metaDescription:
       "Klantenontvangst op een privéjacht in Istanbul: investeerdersavonden, partner-hospitality en VIP-ontvangsten op de Bosporus. Op offerte, met officiële factuur.",
     canonicalPath: "/nl/client-hosting-yacht-istanbul",

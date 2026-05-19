@@ -52,7 +52,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const cleanDescription = cleanContentText(post.metaDescription);
 
   return {
-    title: cleanTitle,
+    // absolute title with brand suffix so the <title> differs from the H1
+    // (Semrush "duplicate H1 and title content"). cleanTitle is ≤47 chars,
+    // + " | MerrySails" (13) = ≤60.
+    title: { absolute: `${cleanTitle} | MerrySails` },
     description: cleanDescription,
     keywords: post.keywords,
     alternates: {

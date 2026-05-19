@@ -3,19 +3,23 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle, PhoneCall } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import CruisesFilter from "@/components/tours/CruisesFilter";
-import { getTourPath, isPricingVisible, tours } from "@/data/tours";
+import { getTourPath, isPricingVisible, tours, REDIRECTED_TOUR_SLUGS } from "@/data/tours";
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 
 const SITE_URL = "https://merrysails.com";
+
+// Exclude deprecated tours that 308-redirect — never surface them as links
+// from the hub (Semrush "permanent redirect" internal-link issue).
+const visibleTours = tours.filter((tour) => !REDIRECTED_TOUR_SLUGS.has(tour.slug));
 
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "MerrySails Cruise Catalog",
   description: "Catalog of MerrySails cruises, yacht charter options, and private Bosphorus service pages in Istanbul.",
-  numberOfItems: tours.length,
-  itemListElement: tours.map((tour, i) => ({
+  numberOfItems: visibleTours.length,
+  itemListElement: visibleTours.map((tour, i) => ({
     "@type": "ListItem",
     position: i + 1,
     url: `${SITE_URL}${getTourPath(tour)}`,
@@ -172,13 +176,13 @@ export default function CruisesPage() {
         </section>
 
         {/* Interactive filter (client component) */}
-        <CruisesFilter tours={tours} />
+        <CruisesFilter tours={visibleTours} />
 
         {/* SEO: Full tour index for search engine crawlers (all links rendered in HTML) */}
         <nav aria-label="All cruise and tour options" className="mt-16 border-t border-[var(--line)] pt-8">
           <h2 className="text-xl font-bold mb-4 text-[var(--heading)]">Catalog URLs for browsing after route selection</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
-            {tours.map((tour) => (
+            {visibleTours.map((tour) => (
               <li key={tour.slug}>
                 <Link
                   href={getTourPath(tour)}

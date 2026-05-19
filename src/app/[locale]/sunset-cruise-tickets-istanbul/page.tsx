@@ -31,7 +31,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Gün Batımı Turu Bileti 2026 | Boğaz Gün Batımı Bilet Desteği",
+    metaTitle: "İstanbul Gün Batımı Turu Bileti | Boğaz",
     metaDescription:
       "İstanbul Boğaz gün batımı turu bileti için paket seçimi, rezervasyon ve direkt booking desteği. Paylaşımlı gün batımı turu zaten seçildiyse buradan başlayın.",
     canonicalPath: "/tr/sunset-cruise-tickets-istanbul",
@@ -76,7 +76,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     mainPageLabel: "Tam Gün Batımı Turu Sayfasına Git",
   },
   de: {
-    metaTitle: "Sonnenuntergang Kreuzfahrt Tickets Istanbul 2026 | Bosporus Sunset Tickets",
+    metaTitle: "Sonnenuntergang Kreuzfahrt Tickets Istanbul",
     metaDescription:
       "Tickets für die geteilte Bosporus-Sonnenuntergangskreuzfahrt in Istanbul: Paketauswahl, Direktbuchung und Reservierungssupport.",
     canonicalPath: "/de/sunset-cruise-tickets-istanbul",
@@ -121,7 +121,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     mainPageLabel: "Zur vollständigen Sunset-Kreuzfahrt-Seite",
   },
   fr: {
-    metaTitle: "Billets Croisière Coucher de Soleil Istanbul 2026 | Bosphore Sunset",
+    metaTitle: "Billets Croisière Coucher de Soleil Istanbul",
     metaDescription:
       "Billets pour la croisière coucher de soleil partagée sur le Bosphore à Istanbul : sélection de forfait, réservation directe et support réservation.",
     canonicalPath: "/fr/sunset-cruise-tickets-istanbul",
@@ -166,7 +166,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     mainPageLabel: "Voir la page complète de la croisière coucher de soleil",
   },
   nl: {
-    metaTitle: "Zonsondergang Cruise Tickets Istanbul 2026 | Bosporus Sunset Tickets",
+    metaTitle: "Zonsondergang Cruise Tickets Istanbul Bosporus",
     metaDescription:
       "Tickets voor de gedeelde Bosporus-zonsondergangs-cruise in Istanbul: pakketkeuze, directe boeking en reserveringsondersteuning.",
     canonicalPath: "/nl/sunset-cruise-tickets-istanbul",

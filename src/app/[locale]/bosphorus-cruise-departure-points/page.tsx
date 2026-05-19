@@ -130,7 +130,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaLabel: "WhatsApp für Reservierung",
   },
   fr: {
-    metaTitle: "Points de Départ Croisière Bosphore Istanbul 2026",
+    metaTitle: "Départs Croisière Bosphore Istanbul 2026",
     metaDescription:
       "Points de départ croisière Bosphore : Kabatas pour le dîner, Karakoy pour le coucher de soleil, marina Kurucesme pour les yachts privés.",
     canonicalPath: "/fr/bosphorus-cruise-departure-points",

@@ -35,8 +35,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle:
-      "Kurumsal Tekne Etkinliği İstanbul 2026 | Boğaz'da Şirket Etkinliği",
+    metaTitle: "Kurumsal Etkinlik İstanbul — Boğaz'da Yat",
     metaDescription:
       "Boğaz'da kurumsal etkinlik: şirket akşam yemeği, müşteri ağırlama, lansman ve ekip toplantıları için özel yat. Teklif bazlı planlama, faturalı kurumsal hizmet.",
     canonicalPath: "/tr/corporate-events",
@@ -104,8 +103,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   de: {
-    metaTitle:
-      "Firmenveranstaltung Bosporus 2026 | Firmenevents Istanbul",
+    metaTitle: "Firmenveranstaltung Bosporus — Istanbul",
     metaDescription:
       "Firmenevents Istanbul auf dem Bosporus: Teamdinner, Kundenveranstaltung, Produktlaunch und Führungsabende auf privater Jacht. Angebotsbasierte Planung mit Rechnung.",
     canonicalPath: "/de/corporate-events",
@@ -173,8 +171,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   fr: {
-    metaTitle:
-      "Événement d'Entreprise Bosphore 2026 | Soirée d'Entreprise Istanbul",
+    metaTitle: "Événement d'Entreprise Bosphore Istanbul",
     metaDescription:
       "Événement d'entreprise sur le Bosphore : dîner d'équipe, réception clients et soirée sur yacht privé à Istanbul. Devis et facture officielle.",
     canonicalPath: "/fr/corporate-events",
@@ -242,8 +239,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     viewInEnglish: "View in English →",
   },
   nl: {
-    metaTitle:
-      "Zakelijk Evenement Bosporus 2026 | Bedrijfsfeest Istanbul",
+    metaTitle: "Zakelijk Evenement Bosporus — Istanbul",
     metaDescription:
       "Zakelijk evenement op de Bosporus: teamdiner, klantenontvangst, productlancering en bedrijfsfeest Istanbul op een privéjacht. Op offerte, met officiële factuur.",
     canonicalPath: "/nl/corporate-events",

@@ -31,7 +31,7 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "İstanbul Yat Takım Oluşturma 2026 | Boğaz'da Kurumsal Etkinlik",
+    metaTitle: "İstanbul Yat Takım Oluşturma | Boğaz Etkinliği",
     metaDescription:
       "İstanbul'da yat üzerinde takım oluşturma etkinliği: Boğaz'da özel yat, grup dinamiklerini güçlendirme ve kurumsal bağ için özgün bir deneyim.",
     canonicalPath: "/tr/team-building-yacht-istanbul",
@@ -76,7 +76,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "WhatsApp ile Teklif Alın",
   },
   de: {
-    metaTitle: "Teambuilding Yacht Istanbul 2026 | Bosporus Firmenveranstaltung",
+    metaTitle: "Teambuilding Yacht Istanbul — Bosporus Firma",
     metaDescription:
       "Teambuilding auf einer Privatyacht am Bosporus in Istanbul: gemeinsame Erlebnisse, exklusive Gruppenformate und Firmenbindung weit über das Restaurantabend hinaus.",
     canonicalPath: "/de/team-building-yacht-istanbul",
@@ -121,7 +121,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "Angebot via WhatsApp",
   },
   fr: {
-    metaTitle: "Team Building Yacht Istanbul 2026 | Événement d'Entreprise Bosphore",
+    metaTitle: "Team Building Yacht Istanbul — Bosphore",
     metaDescription:
       "Team building sur yacht privé au Bosphore à Istanbul : expériences partagées, format de groupe exclusif et cohésion d'équipe bien au-delà d'un dîner en restaurant.",
     canonicalPath: "/fr/team-building-yacht-istanbul",
@@ -166,7 +166,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     ctaBtn: "Devis via WhatsApp",
   },
   nl: {
-    metaTitle: "Teambuilding Jacht Istanbul 2026 | Bosporus Bedrijfsevenement",
+    metaTitle: "Teambuilding Jacht Istanbul — Bosporus Bedrijf",
     metaDescription:
       "Teambuilding op een privéjacht aan de Bosporus in Istanbul: gedeelde ervaringen, exclusief groepsformaat en bedrijfscohesie ver boven een restaurantavond.",
     canonicalPath: "/nl/team-building-yacht-istanbul",

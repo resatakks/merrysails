@@ -1,4 +1,4 @@
-import { getTourPath, tours } from "@/data/tours";
+import { getTourPath, tours, REDIRECTED_TOUR_SLUGS } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
 import { guides } from "@/data/guides";
 import { commercialSupportPosts } from "@/content/blog";
@@ -7,20 +7,8 @@ import { ACTIVE_LOCALES } from "@/i18n/config";
 import { getAllLocalePostsForLocale } from "@/data/blog/locale-posts";
 
 const SITE_URL = "https://merrysails.com";
-const EXCLUDED_TOUR_SLUGS = new Set([
-  "romantic-marriage-proposal",
-  "corporate-event-bosphorus-cruise",
-  "private-bosphorus-dinner-yacht-cruise",
-  // Tours that 308 redirect via next.config.ts — must not appear in sitemap
-  // (Source: Semrush 2026-05-17 wrong_pages_found_in_sitemap audit)
-  "private-yacht-swimming-tour",
-  "yacht-weddings",
-  "wedding-anniversary",
-  "yacht-birthday-party",
-  "bosphorus-sightseeing-yacht-cruise",
-  "bachelorette-yacht-party",
-  "private-bosphorus-sunset-cruise",
-]);
+// Deprecated/redirecting tour slugs — single source of truth in tours.ts.
+const EXCLUDED_TOUR_SLUGS = REDIRECTED_TOUR_SLUGS;
 
 // Routes that have live locale pages — must match src/app/[locale]/ folders exactly
 const LOCALIZED_PATHS = [

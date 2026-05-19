@@ -91,7 +91,9 @@ export async function generateMetadata({
   const canonical = `${SITE_URL}/${locale}/blog/${post.slug}`;
 
   return {
-    title: cleanTitle,
+    // absolute title with brand suffix so <title> differs from the H1
+    // (Semrush "duplicate H1 and title content").
+    title: { absolute: `${cleanTitle} | MerrySails` },
     description: cleanDescription,
     keywords: post.keywords,
     alternates: {

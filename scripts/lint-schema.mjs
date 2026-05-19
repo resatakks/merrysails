@@ -199,7 +199,7 @@ function lintFile(filePath) {
   if (isPage) {
     // Quote-matching capture (dm[1]=quote, dm[2]=content) so Turkish apostrophes
     // inside double-quoted titles ("€30'dan") do not truncate the capture.
-    const titleRegex = /^ {2,4}title\s*:\s*(["'`])((?:[^\\]|\\.)*?)\1/gm;
+    const titleRegex = /^ {2,4}(?:metaTitle|title)\s*:\s*(["'`])((?:[^\\]|\\.)*?)\1/gm;
     let m5;
     while ((m5 = titleRegex.exec(src)) !== null) {
       const title = m5[2];

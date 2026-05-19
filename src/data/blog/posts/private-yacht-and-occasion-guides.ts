@@ -495,7 +495,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
     date: "2025-11-30",
     dateModified: "2026-03-24",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1467810563316-b5476525c0f8?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?w=1200&q=80",
     imageAlt: "Fireworks exploding over the [Bosphorus Bridge](https://en.wikipedia.org/wiki/Bosphorus_Bridge) and Istanbul skyline at midnight on New Year's Eve from a cruise boat",
     keywords: ["new years eve bosphorus cruise", "istanbul nye cruise", "new year istanbul boat", "new years eve cruise istanbul", "new years eve bosphorus cruise 2026", "is new years eve bosphorus cruise worth it", "what to expect new years eve bosphorus cruise", "new years bosphorus cruise booking tips"],
     author: "captain-ahmet",

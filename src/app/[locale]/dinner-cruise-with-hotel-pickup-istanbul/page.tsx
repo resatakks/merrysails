@@ -54,8 +54,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle:
-      "İstanbul Akşam Yemeği Turu Otel Transfer Dahil — €30'dan",
+    metaTitle: "İstanbul Akşam Yemeği Turu Otel Transfer — €30",
     metaDescription:
       "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy alım 18:30–19:15. 4 paket €30–€119.",
     canonicalPath: "/tr/dinner-cruise-with-hotel-pickup-istanbul",
@@ -232,8 +231,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   de: {
-    metaTitle:
-      "Istanbul Dinner Kreuzfahrt mit Hotelabholung — Ab €30",
+    metaTitle: "Istanbul Dinner Cruise Hotelabholung — €30",
     metaDescription:
       "Istanbul Dinner Kreuzfahrt mit Hotelabholung: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ab 18:30–19:15. 4 Pakete €30–€119.",
     canonicalPath: "/de/dinner-cruise-with-hotel-pickup-istanbul",
@@ -411,8 +409,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   fr: {
-    metaTitle:
-      "Croisière Dîner Istanbul Transfert Hôtel Inclus — À partir de €30",
+    metaTitle: "Croisière Dîner Istanbul Hôtel Inclus — €30",
     metaDescription:
       "Croisière dîner Istanbul transfert hôtel inclus : Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy — 18h30–19h15. 4 formules €30–€119.",
     canonicalPath: "/fr/dinner-cruise-with-hotel-pickup-istanbul",
@@ -590,8 +587,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   nl: {
-    metaTitle:
-      "Istanbul Diner Cruise met Hotelophaal — Vanaf €30",
+    metaTitle: "Istanbul Diner Cruise Hotelophaal — €30",
     metaDescription:
       "Istanbul diner cruise met hotelophaal: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ophaal 18:30–19:15. 4 pakketten €30–€119.",
     canonicalPath: "/nl/dinner-cruise-with-hotel-pickup-istanbul",

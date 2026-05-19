@@ -53,7 +53,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle: "Türk Gecesi Akşam Yemeği Turu İstanbul — €30'dan İtibaren",
+    metaTitle: "Türk Gecesi Akşam Yemeği Turu İstanbul — €30",
     metaDescription:
       "İstanbul Türk gecesi akşam yemeği turu: Boğaz'da halk oyunları, zeybek, davul zurna ve Türk mutfağı büfesi. €30'dan paketler, TÜRSAB lisanslı.",
     canonicalPath: "/tr/turkish-night-dinner-cruise-istanbul",
@@ -208,7 +208,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   de: {
-    metaTitle: "Türkischer Abend Dinner Kreuzfahrt Istanbul — Ab €30",
+    metaTitle: "Türkischer Abend Dinner Kreuzfahrt — €30",
     metaDescription:
       "Türkischer Abend Dinner Kreuzfahrt Istanbul: Zeybek-Tänze, Davul-Zurna, türkisches Buffet auf dem Bosporus. Pakete ab €30, TÜRSAB-lizenziert.",
     canonicalPath: "/de/turkish-night-dinner-cruise-istanbul",
@@ -363,7 +363,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   fr: {
-    metaTitle: "Soirée Turque Croisière Dîner Istanbul — À partir de €30",
+    metaTitle: "Soirée Turque Croisière Dîner Istanbul — €30",
     metaDescription:
       "Soirée turque croisière dîner Istanbul : danses Zeybek, Davul-Zurna, buffet turc sur le Bosphore. Formules dès €30, agréé TÜRSAB. Réservez maintenant.",
     canonicalPath: "/fr/turkish-night-dinner-cruise-istanbul",

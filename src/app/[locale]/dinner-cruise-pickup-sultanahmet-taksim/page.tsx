@@ -57,8 +57,7 @@ type LocaleContent = {
 
 const CONTENT: Record<string, LocaleContent> = {
   tr: {
-    metaTitle:
-      "Sultanahmet Taksim Akşam Yemeği Turu Transfer — €30'dan",
+    metaTitle: "Sultanahmet Taksim Akşam Yemeği — €30'dan",
     metaDescription:
       "Sultanahmet ve Taksim'den Boğaz akşam yemeği turu transferi: Hipodrom, Ayasofya, İstiklal çevresinden alım. Rota: 18:30 → 19:00 → iskele 19:20. €30'dan.",
     canonicalPath: "/tr/dinner-cruise-pickup-sultanahmet-taksim",
@@ -216,8 +215,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   de: {
-    metaTitle:
-      "Sultanahmet Taksim Dinner Cruise Abholung — Ab €30",
+    metaTitle: "Sultanahmet Taksim Dinner Cruise — Ab €30",
     metaDescription:
       "Bosporus Dinner Kreuzfahrt Transfer ab Sultanahmet und Taksim: Hippodrom, Hagia Sophia, İstiklal. Route: 18:30 → 19:00 → Anleger 19:20. Ab €30.",
     canonicalPath: "/de/dinner-cruise-pickup-sultanahmet-taksim",
@@ -375,8 +373,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   fr: {
-    metaTitle:
-      "Navette Croisière Dîner Sultanahmet Taksim — À partir de €30",
+    metaTitle: "Navette Dîner Sultanahmet Taksim — €30",
     metaDescription:
       "Navette croisière dîner Bosphore depuis Sultanahmet et Taksim : Hippodrome, Sainte-Sophie, İstiklal. Route : 18h30 → 19h00 → embarcadère 19h20. Dès €30.",
     canonicalPath: "/fr/dinner-cruise-pickup-sultanahmet-taksim",
@@ -534,8 +531,7 @@ const CONTENT: Record<string, LocaleContent> = {
   },
 
   nl: {
-    metaTitle:
-      "Sultanahmet Taksim Diner Cruise Shuttle — Vanaf €30",
+    metaTitle: "Sultanahmet Taksim Diner Cruise — €30",
     metaDescription:
       "Bosporus diner cruise shuttle vanuit Sultanahmet en Taksim: Hippodroom, Hagia Sophia, İstiklal. Route: 18:30 → 19:00 → aanlegsteiger 19:20. Vanaf €30.",
     canonicalPath: "/nl/dinner-cruise-pickup-sultanahmet-taksim",
