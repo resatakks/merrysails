@@ -1,21 +1,17 @@
 {
-  "generatedAt": "2026-05-18T21:18:02.666Z",
+  "generatedAt": "2026-05-19T13:35:08.573Z",
   "siteUrl": "sc-domain:merrysails.com",
   "results": [
     {
       "url": "https://merrysails.com/corporate-events",
-      "inspectionStatus": "not_indexed",
-      "coverageState": "Discovered - currently not indexed",
+      "inspectionStatus": "unknown",
+      "coverageState": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawlTime": "",
       "googleCanonical": "",
       "userCanonical": "",
-      "referringUrls": [
-        "https://merrysails.com/blog/bosphorus-cruise-groups-istanbul"
-      ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "referringUrls": [],
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/private-events",
@@ -48,21 +44,6 @@
       ]
     },
     {
-      "url": "https://merrysails.com/proposal-yacht-rental-istanbul",
-      "inspectionStatus": "not_indexed",
-      "coverageState": "Discovered - currently not indexed",
-      "verdict": "NEUTRAL",
-      "lastCrawlTime": "",
-      "googleCanonical": "",
-      "userCanonical": "",
-      "referringUrls": [
-        "https://merrysails.com/sitemap.xml"
-      ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
-    },
-    {
       "url": "https://merrysails.com/boat-rental-hourly-istanbul",
       "inspectionStatus": "indexed",
       "coverageState": "Submitted and indexed",
@@ -74,7 +55,9 @@
         "https://merrysails.com/blog/short-bosphorus-cruise-tour",
         "https://merrysails.com/guides/kurucesme-marina"
       ],
-      "sitemap": []
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/boat-rental-istanbul",
@@ -88,7 +71,9 @@
         "https://merrysails.com/blog/bosphorus-vs-princes-islands",
         "https://merrysails.com/blog/bosphorus-sunset-dinner-cruise-vs-lunch"
       ],
-      "sitemap": []
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/bosphorus-cruise",
@@ -133,9 +118,7 @@
         "https://merrysails.com/blog/istanbul-corporate-yacht-event-booking",
         "https://merrysails.com/blog/marriage-proposal-yacht-istanbul"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/corporate-yacht-dinner-istanbul",
@@ -195,9 +178,7 @@
       "referringUrls": [
         "https://merrysails.com/guides/rumeli-fortress"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/istanbul-dinner-cruise",
@@ -212,7 +193,9 @@
         "https://merrysails.com/de/istanbul-dinner-cruise",
         "https://merrysails.com/sitemap.xml"
       ],
-      "sitemap": []
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/kabatas-dinner-cruise-istanbul",
@@ -225,7 +208,9 @@
       "referringUrls": [
         "https://merrysails.com/istanbul-dinner-cruise"
       ],
-      "sitemap": []
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/kurucesme-marina-yacht-charter",
@@ -238,7 +223,9 @@
       "referringUrls": [
         "https://merrysails.com/tr/kurucesme-marina-yacht-charter"
       ],
-      "sitemap": []
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
     },
     {
       "url": "https://merrysails.com/private-dinner-cruise-for-couples-istanbul",
@@ -254,6 +241,19 @@
       "sitemap": []
     },
     {
+      "url": "https://merrysails.com/proposal-yacht-rental-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-19T05:27:56Z",
+      "googleCanonical": "https://merrysails.com/proposal-yacht-rental-istanbul",
+      "userCanonical": "https://merrysails.com/proposal-yacht-rental-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/sitemap.xml"
+      ],
+      "sitemap": []
+    },
+    {
       "url": "https://merrysails.com/proposal-yacht-with-photographer-istanbul",
       "inspectionStatus": "indexed",
       "coverageState": "Submitted and indexed",
@@ -264,9 +264,7 @@
       "referringUrls": [
         "https://merrysails.com/blog?q={search_term_string}"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/sunset-cruise-tickets-istanbul",
@@ -296,9 +294,7 @@
         "https://merrysails.com/blog/bosphorus-sunset-cruise-vs-dinner-cruise",
         "https://merrysails.com/turkish-night-dinner-cruise-istanbul"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/turkish-night-dinner-cruise-istanbul",
@@ -312,9 +308,7 @@
         "https://merrysails.com/guides/rumeli-fortress",
         "https://merrysails.com/guides/kurucesme-marina"
       ],
-      "sitemap": [
-        "https://merrysails.com/sitemap.xml"
-      ]
+      "sitemap": []
     },
     {
       "url": "https://merrysails.com/yacht-charter-istanbul",

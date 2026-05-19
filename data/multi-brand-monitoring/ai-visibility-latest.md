@@ -1,60 +1,64 @@
-# AI Visibility Scan — 2026-05-18
+# AI Visibility Scan — 2026-05-19
 
-**Scanned**: 1 brands, 12 queries (~$0.0300)
+**Scanned**: 1 brands, 12 queries (~$0.0307)
 **Models**: openai/gpt-4o-mini, anthropic/claude-haiku-4.5, perplexity/sonar
 
 ## Brand visibility scoreboard
 
 | Brand | Tier | Vertical | Visibility | Queries | Cost |
 |---|---|---|---:|---|---:|
-| merrysails | A | cruise | 0.0% | 0/12 | $0.0300 |
+| merrysails | A | cruise | 0.0% | 0/12 | $0.0307 |
 
 ## Top cited domains (15)
 
 | Domain | Mentions |
 |---|---:|
+| bosphorustour.com | 2 |
+| getyourguide.com | 2 |
+| sunsetbosphorus.com | 1 |
+| sunsetcruiseistanbul.com | 1 |
+| viator.com | 1 |
 | lotusyat.com | 1 |
-| bosphorustour.com | 1 |
-| tripadvisor.com | 1 |
+| istanbulyachtcharter.com | 1 |
+| yachtcharterbosphorus.com | 1 |
 | bosphorusyacht.com | 1 |
-| whiteistanbulyacht.com | 1 |
 | getmyboat.com | 1 |
-| getyourguide.com | 1 |
 | sailo.com | 1 |
+| clickandboat.com | 1 |
 
 ## Top competitor brand names (15)
 
 | Name | Mentions |
 |---|---:|
-| Scenic Views | 4 |
-| Duration | 4 |
-| Bosphorus Sunset Cruise | 3 |
+| Duration: | 6 |
+| GetYourGuide | 6 |
+| Viator | 5 |
+| Duration | 5 |
+| Includes: | 4 |
+| Best for: | 3 |
 | Sunset Bosphorus | 3 |
-| Private Yacht Charters | 2 |
+| Scenic Views | 3 |
+| Bosphorus Sunset Cruise | 2 |
+| Istanbul Dinner Cruises | 2 |
+| Private Yacht Rentals | 2 |
+| Bosphorus Cruise with Drinks | 2 |
+| Traditional Turkish Gulet Cruises | 2 |
 | Public Ferries | 2 |
-| Dinner Cruises | 2 |
-| Galata Bridge Area | 2 |
-| Bosphorus Sunset Cruise (bosphorustour.com) | 2 |
-| Istanbul Sunset Cruise (sunsetcruiseistanbul.com) | 2 |
-| Velena Travel | 2 |
-| Viator / GetYourGuide | 2 |
-| GetYourGuide | 2 |
-| Dinner | 2 |
-| Turkish Show | 2 |
+| Views: | 2 |
 
 ## Per-brand details
 
 ### merrysails — 0.0% (0/12)
 
 Top cited domains for this brand:
+- 2× bosphorustour.com
+- 2× getyourguide.com
+- 1× sunsetbosphorus.com
+- 1× sunsetcruiseistanbul.com
+- 1× viator.com
 - 1× lotusyat.com
-- 1× bosphorustour.com
-- 1× tripadvisor.com
-- 1× bosphorusyacht.com
-- 1× whiteistanbulyacht.com
-- 1× getmyboat.com
-- 1× getyourguide.com
-- 1× sailo.com
+- 1× istanbulyachtcharter.com
+- 1× yachtcharterbosphorus.com
 
 Per-prompt status:
 
