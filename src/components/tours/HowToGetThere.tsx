@@ -12,9 +12,10 @@ export default function HowToGetThere({ slug }: Props) {
   const mp = MEETING_POINTS[slug];
   if (!mp) return null;
 
-  const { lat, lng } = mp.geo;
-  const googleMaps = `https://www.google.com/maps/search/?api=1&query=${lat}%2C${lng}`;
-  const appleMaps = `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(mp.mapQuery)}`;
+  const dest = encodeURIComponent(mp.mapQuery);
+  // "Get directions" → routing to the meeting point by name (resolves to the exact place pin).
+  const googleMaps = `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
+  const appleMaps = `https://maps.apple.com/?daddr=${dest}`;
 
   return (
     <section
@@ -57,7 +58,7 @@ export default function HowToGetThere({ slug }: Props) {
               href={googleMaps}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--brand-primary)] px-3.5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--brand-primary)] px-3.5 py-2 text-sm font-semibold !text-white transition-opacity hover:opacity-90"
             >
               <Navigation className="h-4 w-4" />
               Get directions

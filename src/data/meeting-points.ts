@@ -25,14 +25,15 @@ export type MeetingPoint = {
 
 export const MEETING_POINTS: Record<string, MeetingPoint> = {
   "bosphorus-sunset-cruise": {
-    name: "Karaköy boarding point",
+    name: "Karaköy boarding point — Balıkçı Kemal",
     district: "Arap Camii · Karaköy, Beyoğlu",
     addressLines: [
+      "Meeting point: in front of Balıkçı Kemal restaurant",
       "Arap Camii Mahallesi, Üsküfçüler Sokak",
       "Karaköy / Beyoğlu, 34421 İstanbul",
     ],
-    geo: { lat: 41.0237, lng: 28.9744 },
-    mapQuery: "Karaköy Arap Camii, Beyoğlu, Istanbul",
+    geo: { lat: 41.0235, lng: 28.9745 },
+    mapQuery: "Balıkçı Kemal, Karaköy, Beyoğlu, İstanbul",
     travelOptions: [
       {
         mode: "Tram (T1)",
@@ -48,10 +49,10 @@ export const MEETING_POINTS: Record<string, MeetingPoint> = {
       },
       {
         mode: "Taxi",
-        detail: "Tell the driver \"Karaköy, Arap Camii\" — the boarding area is on Üsküfçüler Sokak.",
+        detail: "Tell the driver \"Karaköy, Balıkçı Kemal\" — the boarding flow starts in front of the Balıkçı Kemal restaurant on Üsküfçüler Sokak.",
       },
     ],
-    arriveTip: "Arrive at least 15 minutes before departure — the boarding flow starts 15 minutes early.",
+    arriveTip: "Arrive at least 15 minutes early — the boarding flow starts in front of Balıkçı Kemal, 15 minutes before departure.",
   },
   "bosphorus-dinner-cruise": {
     name: "Kabataş Pier",

@@ -162,9 +162,13 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* Layered so Tailwind text-color utilities (text-white, etc.) win over this
+   default — otherwise unlayered `a` beats all layered utilities. */
+@layer base {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .safe-area-bottom {

@@ -1,6 +1,6 @@
 // Bosphorus landmark guide — data for the interactive /bosphorus-guide route.
 // Ordered south (Marmara Sea) → north (Black Sea).
-// mapX / mapY are percentage positions on the stylized strait map.
+// lat / lng are real WGS84 coordinates for the interactive Leaflet map.
 // Each landmark carries text (name + summary + "look for") in 12 languages,
 // so the on-page audio guide (Web Speech API) can narrate in each one.
 
@@ -46,8 +46,8 @@ export type Landmark = {
   side: BosphorusSide;
   category: string;
   era: string;
-  mapX: number;
-  mapY: number;
+  lat: number;
+  lng: number;
   text: Record<GuideLangCode, LandmarkText>;
 };
 
@@ -57,8 +57,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Europe",
     category: "Medieval tower",
     era: "1348 · Genoese",
-    mapX: 33,
-    mapY: 88,
+    lat: 41.0256,
+    lng: 28.9741,
     text: {
       en: {
         name: "Galata Tower",
@@ -151,8 +151,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Europe",
     category: "Imperial palace",
     era: "1856 · Ottoman",
-    mapX: 35,
-    mapY: 78,
+    lat: 41.0391,
+    lng: 29.0001,
     text: {
       en: {
         name: "Dolmabahçe Palace",
@@ -245,8 +245,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Strait",
     category: "Islet tower",
     era: "12th century · Byzantine",
-    mapX: 56,
-    mapY: 82,
+    lat: 41.0211,
+    lng: 29.0041,
     text: {
       en: {
         name: "Maiden's Tower",
@@ -339,8 +339,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Europe",
     category: "Baroque mosque",
     era: "1853 · Ottoman",
-    mapX: 37,
-    mapY: 66,
+    lat: 41.0473,
+    lng: 29.027,
     text: {
       en: {
         name: "Ortaköy Mosque",
@@ -433,8 +433,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Europe",
     category: "Imperial palace",
     era: "1871 · Ottoman",
-    mapX: 36,
-    mapY: 70,
+    lat: 41.0436,
+    lng: 29.0146,
     text: {
       en: {
         name: "Çırağan Palace",
@@ -527,8 +527,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Asia",
     category: "Summer palace",
     era: "1865 · Ottoman",
-    mapX: 64,
-    mapY: 62,
+    lat: 41.0428,
+    lng: 29.0419,
     text: {
       en: {
         name: "Beylerbeyi Palace",
@@ -621,8 +621,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Asia",
     category: "Hunting lodge",
     era: "1857 · Ottoman",
-    mapX: 66,
-    mapY: 46,
+    lat: 41.0827,
+    lng: 29.064,
     text: {
       en: {
         name: "Küçüksu Pavilion",
@@ -715,8 +715,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Europe",
     category: "Ottoman fortress",
     era: "1452 · Ottoman",
-    mapX: 32,
-    mapY: 40,
+    lat: 41.0843,
+    lng: 29.0566,
     text: {
       en: {
         name: "Rumeli Fortress",
@@ -809,8 +809,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Asia",
     category: "Ottoman fortress",
     era: "1394 · Ottoman",
-    mapX: 68,
-    mapY: 38,
+    lat: 41.0851,
+    lng: 29.0668,
     text: {
       en: {
         name: "Anadolu Fortress",
@@ -903,8 +903,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Strait",
     category: "Suspension bridge",
     era: "1973",
-    mapX: 50,
-    mapY: 64,
+    lat: 41.0451,
+    lng: 29.0344,
     text: {
       en: {
         name: "15 July Martyrs Bridge",
@@ -997,8 +997,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Strait",
     category: "Suspension bridge",
     era: "1988",
-    mapX: 50,
-    mapY: 39,
+    lat: 41.0911,
+    lng: 29.0608,
     text: {
       en: {
         name: "Fatih Sultan Mehmet Bridge",
@@ -1091,8 +1091,8 @@ export const BOSPHORUS_LANDMARKS: Landmark[] = [
     side: "Europe",
     category: "Waterfront district",
     era: "Ottoman gardens",
-    mapX: 34,
-    mapY: 52,
+    lat: 41.0776,
+    lng: 29.0435,
     text: {
       en: {
         name: "Bebek & Emirgan Shore",
