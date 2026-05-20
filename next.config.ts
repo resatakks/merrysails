@@ -197,6 +197,15 @@ const nextConfig: NextConfig = {
         destination: "/private-bosphorus-dinner-cruise",
         permanent: true,
       },
+      // Cannibalization fix (GSC 30d): /blog/bosphorus-cruise-departure-points
+      // outranks the canonical /bosphorus-cruise-departure-points (pos 2.5 vs 6)
+      // for "bosphorus cruise departure points istanbul" — 301 the blog to the
+      // canonical so all equity consolidates on the page meant to convert.
+      {
+        source: "/blog/bosphorus-cruise-departure-points",
+        destination: "/bosphorus-cruise-departure-points",
+        permanent: true,
+      },
     ];
   },
   async headers() {

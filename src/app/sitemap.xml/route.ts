@@ -10,6 +10,12 @@ const SITE_URL = "https://merrysails.com";
 // Deprecated/redirecting tour slugs — single source of truth in tours.ts.
 const EXCLUDED_TOUR_SLUGS = REDIRECTED_TOUR_SLUGS;
 
+// Blog slugs whose URL is 301-redirected (next.config.ts) — keep them out of
+// the sitemap so audit tools don't flag "redirect in sitemap".
+const EXCLUDED_BLOG_SLUGS = new Set<string>([
+  "bosphorus-cruise-departure-points",
+]);
+
 // Routes that have live locale pages — must match src/app/[locale]/ folders exactly
 const LOCALIZED_PATHS = [
   "/bosphorus-cruise",
@@ -235,6 +241,7 @@ export function GET() {
   const seenBlogSlugs = new Set<string>();
   const blogPages: SitemapPage[] = allBlogPosts
     .filter((post) => {
+      if (EXCLUDED_BLOG_SLUGS.has(post.slug)) return false;
       if (seenBlogSlugs.has(post.slug)) return false;
       seenBlogSlugs.add(post.slug);
       return true;
