@@ -5,7 +5,9 @@ import { ArrowRight } from "lucide-react";
 import { SITE_URL } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
-import { getTourPath, isPricingVisible, tours } from "@/data/tours";
+import { getTourPath, isPricingVisible, tours, REDIRECTED_TOUR_SLUGS } from "@/data/tours";
+
+const visibleTours = tours.filter((tour) => !REDIRECTED_TOUR_SLUGS.has(tour.slug));
 
 export const revalidate = 3600;
 
@@ -232,7 +234,7 @@ export default async function LocaleCruisesPage({
             <h2 className="text-2xl font-bold mb-3 text-[var(--heading)]">{c.catalogHeading}</h2>
             <p className="text-sm text-[var(--text-muted)] mb-6">{c.catalogBody}</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
-              {tours.map((tour) => (
+              {visibleTours.map((tour) => (
                 <li key={tour.slug}>
                   <Link
                     href={getTourPath(tour)}
