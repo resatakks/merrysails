@@ -46,7 +46,7 @@ export async function generateMetadata({
   const canonicalUrl = `${SITE_URL}/${locale}/yacht-charter-istanbul/${fleet}`;
   const title = entryPrice
     ? `${t.label} — €${entryPrice} / 2h`
-    : `${t.label} — ${getFleetDetailStrings(locale as SiteLocale).campaignLine}`;
+    : t.label;
   const description = `${t.label} — ${t.tagline}. ${t.description.slice(0, 130)}`;
 
   return {

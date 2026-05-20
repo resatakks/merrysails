@@ -65,7 +65,7 @@ export async function generateMetadata({
   const showPricing = isPricingVisible(tour);
   const title = showPricing
     ? `${tour.nameEn} — From €${tour.priceEur} | MerrySails`
-    : `${tour.nameEn} | MerrySails Service Page`;
+    : `${tour.nameEn} | MerrySails`;
   const description = showPricing
     ? `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Book your ${tour.nameEn} in Istanbul today.`
     : `${tour.description} Explore the service structure, highlights, and best-fit use cases for ${tour.nameEn} in Istanbul.`;

@@ -1128,7 +1128,7 @@ export const tours: Tour[] = [
     id: "18",
     slug: "istanbul-bosphorus-lunch-cruise",
     name: "Boğaz Öğle Yemeği Turu",
-    nameEn: "Istanbul Bosphorus Lunch Cruise & Two Continents Tour",
+    nameEn: "Istanbul Bosphorus Lunch Cruise",
     description: "Istanbul boat cruise combining a Bosphorus tour with a two-continents visit to both European and Asian sides. Lunch included. The best cruise in Istanbul.",
     longDescription: "Experience the best of both worlds — literally — on this unique Istanbul boat cruise that combines a scenic Bosphorus cruise with guided visits to both the European and Asian sides of Istanbul.\n\nThe day begins with a comfortable boat cruise through Istanbul's famous strait past palaces and fortresses, followed by a traditional Turkish lunch at a seaside restaurant. Then cross to the Asian side to explore the colorful Kadıköy neighborhood and the vibrant Moda district — one of the most complete cruise experiences in Istanbul.",
     duration: "7 hours",

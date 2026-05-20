@@ -352,7 +352,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const showPricing = isPricingVisible(tour);
   const title = showPricing
     ? override?.title ?? `${tour.nameEn} — From €${tour.priceEur} | MerrySails`
-    : `${tour.nameEn} | MerrySails Service Page`;
+    : `${tour.nameEn} | MerrySails`;
   const description = showPricing
     ? override?.description ??
       `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Book your ${tour.nameEn} in Istanbul today.`
