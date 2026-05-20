@@ -53,15 +53,24 @@ export function RelatedPosts({
 
   // Fallback 2: same category posts
   if (posts.length < 3) {
-    const fallbacks = blogPosts
-      .filter(
-        (p) =>
-          p.category === category &&
-          p.slug !== currentSlug &&
-          !deduped.has(p.slug) &&
-          !slugs?.includes(p.slug) &&
-          !prioritySlugs?.includes(p.slug)
-      )
+    // Shuffle deterministically by the current slug so each post points to a
+    // different subset, distributing internal-link equity across all 130+ posts
+    // instead of repeatedly picking the first few in the category.
+    const seed = (s: string) => {
+      let h = 0;
+      for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+      return h;
+    };
+    const pool = blogPosts.filter(
+      (p) =>
+        p.category === category &&
+        p.slug !== currentSlug &&
+        !deduped.has(p.slug) &&
+        !slugs?.includes(p.slug) &&
+        !prioritySlugs?.includes(p.slug)
+    );
+    const fallbacks = [...pool]
+      .sort((a, b) => seed(currentSlug + a.slug) - seed(currentSlug + b.slug))
       .slice(0, 3 - posts.length);
     posts = [...posts, ...fallbacks];
   }
