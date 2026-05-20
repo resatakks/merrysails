@@ -585,7 +585,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-price-istanbul-2026",
-    title: "Bosphorus Cruise Prices Istanbul 2026",
+    title: "Bosphorus Cruise Prices Istanbul 2026: From €30",
     metaDescription: "Bosphorus cruise prices 2026: sunset cruise from €34, dinner cruise €30–€90 (4 packages), private yacht from €280. What's included at each price, hidden costs to know, and how to book direct for best rate.",
     excerpt: "Bosphorus cruise prices range from €30 for a shared dinner cruise to €680+ for a VIP private yacht. Here is exactly what each price tier includes in 2026, with no hidden fees.",
     category: "cruise-guide",

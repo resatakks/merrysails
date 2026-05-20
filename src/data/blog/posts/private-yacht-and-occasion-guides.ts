@@ -339,7 +339,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
   },
 {
     slug: "yacht-wedding-istanbul-bosphorus",
-    title: "Yacht Wedding Istanbul — Bosphorus Guide",
+    title: "Bosphorus Wedding Yacht — Istanbul 2026",
     metaDescription: "Plan your dream yacht wedding in Istanbul on the Bosphorus. Discover intimate ceremony packages, venues, and expert tips for an unforgettable celebration.",
     excerpt: "Say 'I do' on the Bosphorus with Istanbul's skyline as your witness. The complete guide to planning an intimate yacht wedding ceremony in Istanbul.",
     category: "events",
