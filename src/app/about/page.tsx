@@ -10,7 +10,7 @@ import {
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata = {
-  title: `About ${SITE_NAME} — ${COMPANY_NAME} and TURSAB License`,
+  title: `About ${SITE_NAME} — TURSAB-Licensed`,
   description:
     `${SITE_NAME} by ${COMPANY_NAME} — TURSAB-licensed A Group travel agency in Istanbul since 2001, focused on Bosphorus cruises, yacht charter, and clear booking support.`,
   keywords: [

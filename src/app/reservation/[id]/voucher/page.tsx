@@ -16,6 +16,7 @@ import { getReservation } from "@/app/actions/reservation";
 import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 import { getTourBySlug, getTourPath } from "@/data/tours";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { parseReservationItems } from "@/lib/reservation-items";
 import {
   getReservationStatusLabel,
   getReservationStatusTone,
@@ -62,6 +63,7 @@ export default async function ReservationVoucherPage({
   const normalizedStatus = normalizeReservationStatus(reservation.status);
   const statusLabel = getReservationStatusLabel(normalizedStatus);
   const reservationMeta = parseReservationNotes(reservation.notes);
+  const mixedItems = parseReservationItems(reservation.items);
   // Custom phone-arranged bookings have an empty `time` value — used as the
   // marker to hide guest count, departure time, package details, and the
   // generic "arrive 15 minutes early" reminder so the voucher stays minimal.
@@ -75,7 +77,8 @@ export default async function ReservationVoucherPage({
     ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
     : (tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
   const hasSelectedOptions = !isCustomBooking && Boolean(
-    reservationMeta.packageName ||
+    mixedItems ||
+      reservationMeta.packageName ||
       reservationMeta.addOns.length > 0 ||
       reservationMeta.privateTransferRequested ||
       reservationMeta.additionalGuests.length > 0
@@ -280,12 +283,25 @@ export default async function ReservationVoucherPage({
                           Selected booking option
                         </p>
                         <div className="mt-2 space-y-2 text-sm leading-relaxed text-[var(--body-text)]">
-                          {reservationMeta.packageName && (
+                          {mixedItems ? (
+                            <div>
+                              <p>
+                                <span className="font-semibold text-[var(--heading)]">Packages:</span>
+                              </p>
+                              <ul className="mt-1 list-disc pl-5">
+                                {mixedItems.map((it) => (
+                                  <li key={it.packageName}>
+                                    {it.packageName} — {it.guests} guest{it.guests > 1 ? "s" : ""}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ) : reservationMeta.packageName ? (
                             <p>
                               <span className="font-semibold text-[var(--heading)]">Package:</span>{" "}
                               {reservationMeta.packageName}
                             </p>
-                          )}
+                          ) : null}
                           {reservationMeta.privateTransferRequested && (
                             <p>
                               <span className="font-semibold text-[var(--heading)]">Transfer:</span>{" "}

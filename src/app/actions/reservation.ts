@@ -50,6 +50,13 @@ interface CreateReservationInput {
   notes?: string;
   honeypot?: string;
   attribution?: AttributionPayload;
+  /**
+   * Optional mixed-package breakdown. When present and has ≥2 entries the
+   * booking is treated as a mixed-package reservation (some guests on one
+   * package, others on a different one). Sum of items[].guests must equal
+   * `guests`. Single-entry / absent → legacy single-package behavior.
+   */
+  items?: { packageName: string; guests: number }[];
 }
 
 function sanitizeAttribution(input?: AttributionPayload) {
@@ -246,13 +253,43 @@ export async function createReservation(input: CreateReservationInput) {
       };
     }
 
+    // Normalize the mixed-package items array: keep only well-formed entries
+    // with a packageName + integer guests ≥1. Drop the array when it collapses
+    // to fewer than 2 entries (single-package = legacy path).
+    const normalizedItems = Array.isArray(input.items)
+      ? input.items
+          .map((it) => ({
+            packageName: typeof it.packageName === "string" ? it.packageName.trim() : "",
+            guests: Number.isFinite(it.guests) ? Math.trunc(it.guests) : 0,
+          }))
+          .filter((it) => it.packageName.length > 0 && it.guests > 0)
+      : [];
+    const mixedItems = normalizedItems.length >= 2 ? normalizedItems : undefined;
+
     const pricing = buildReservationPricingSnapshot({
       tourSlug: input.tourSlug,
       guests: input.guests,
       packageName: input.packageName,
       addOns: input.addOns,
       date: reservationDate,
+      items: mixedItems,
     });
+
+    // Snapshot of mixed-package line items persisted in the `items` JSONB
+    // column so renderers can show per-package guest split + prices without
+    // re-pricing. Stays null for legacy single-package reservations.
+    const persistedItems = mixedItems
+      ? pricing.lineItems
+          .filter((line) => line.type === "package")
+          .map((line) => ({
+            packageName: line.label,
+            guests: line.quantity,
+            unitPrice: line.unitPrice,
+            unitLabel: line.unitLabel,
+            total: line.total,
+            currency: pricing.currency,
+          }))
+      : null;
 
     const reservationId = await generateReservationId();
     const initialStatus = "new";
@@ -274,6 +311,7 @@ export async function createReservation(input: CreateReservationInput) {
         customerEmail,
         customerPhone,
         customerCountry: customerCountry || null,
+        items: persistedItems ?? undefined,
         notes:
           serializeReservationNotes({
             packageName: pricing.packageName,

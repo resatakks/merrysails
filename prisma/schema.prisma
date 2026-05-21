@@ -22,6 +22,11 @@ model Reservation {
   internalCostEur Float?
   confirmedAt   DateTime?
   completedAt   DateTime?
+  /// Multi-package booking line items. When present and has ≥2 entries this
+  /// is a mixed-package booking (e.g. some guests on alcohol, others on
+  /// soft-drinks). null / single-item = legacy single-package booking;
+  /// renderers fall back to the existing pricing snapshot in that case.
+  items         Json?
 
   // Customer info
   customerName    String

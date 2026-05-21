@@ -14,6 +14,7 @@ import { getReservation } from "@/app/actions/reservation";
 import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 import { getTourBySlug } from "@/data/tours";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { parseReservationItems } from "@/lib/reservation-items";
 
 export const metadata: Metadata = {
   title: "Reservation Invoice",
@@ -93,8 +94,26 @@ export default async function ReservationInvoicePage({
     ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
     : (tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
 
+  const mixedItems = parseReservationItems(reservation.items);
+
+  // Mixed-package bookings: synthesize line items from the JSONB column when
+  // the persisted pricing snapshot doesn't already carry multi-package lines.
+  // For new bookings this never fires (pricing snapshot already correct), but
+  // it keeps historical bookings + manual data tweaks rendering cleanly.
+  const lineItemsFromMixed: InvoiceLineItem[] | null =
+    mixedItems && (!pricing || pricing.lineItems.filter((l) => l.type === "package").length < 2)
+      ? mixedItems.map((it) => ({
+          label: it.packageName,
+          quantity: it.guests,
+          unitPrice: it.unitPrice,
+          unitLabel: it.unitLabel,
+          total: it.total,
+        }))
+      : null;
+
   const lineItems: InvoiceLineItem[] =
-    pricing?.lineItems?.length
+    lineItemsFromMixed ??
+    (pricing?.lineItems?.length
       ? pricing.lineItems
       : [
           {
@@ -104,7 +123,7 @@ export default async function ReservationInvoicePage({
             unitLabel: "/booking",
             total: Number(reservation.totalPrice),
           },
-        ];
+        ]);
 
   const subtotal = pricing?.subtotal ?? Number(reservation.totalPrice);
   const addOnsTotal = pricing?.addOnsTotal ?? 0;

@@ -340,6 +340,10 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     title: "Princes Islands Tour Istanbul — €45 Full Day",
     description: "Visit the car-free Princes Islands from Istanbul on a full-day tour with ferry, lunch, and guided island stops.",
   },
+  "istanbul-bosphorus-lunch-cruise": {
+    title: "Istanbul Bosphorus Lunch Cruise 2026",
+    description: "Istanbul Bosphorus lunch cruise with two continents tour. Sail past palaces and bridges while enjoying lunch on board.",
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

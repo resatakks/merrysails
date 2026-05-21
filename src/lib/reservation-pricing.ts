@@ -53,6 +53,11 @@ export interface ReservationSelectionSnapshot extends ReservationPricingSnapshot
 
 export class ReservationValidationError extends Error {}
 
+export interface ReservationItemInput {
+  packageName: string;
+  guests: number;
+}
+
 interface ReservationPricingInput {
   tourSlug: string;
   guests: number;
@@ -60,6 +65,15 @@ interface ReservationPricingInput {
   addOns?: string[];
   /** ISO date string (yyyy-MM-dd) or Date object for weekday-discount resolution. */
   date?: string | Date | null;
+  /**
+   * Optional mixed-package breakdown. When present and has ≥2 entries the
+   * snapshot produces one "package" line item per entry instead of a single
+   * primary package line. Add-ons apply to the booking as a whole.
+   * The sum of items[].guests MUST equal `guests`. Per-group tours can't be
+   * split; the mixed branch silently degrades to legacy single-package for
+   * them.
+   */
+  items?: ReservationItemInput[];
 }
 
 function normalizeGuests(guests: number): number {
@@ -146,6 +160,7 @@ export function buildReservationPricingSnapshot({
   packageName,
   addOns = [],
   date,
+  items,
 }: ReservationPricingInput): ReservationSelectionSnapshot {
   const tour = getTourBySlug(tourSlug);
 
@@ -172,6 +187,30 @@ export function buildReservationPricingSnapshot({
     );
   }
 
+  // Mixed-package booking: only valid for per-person pricing with ≥2 distinct
+  // entries whose guest counts sum to `guests`. Per-group tours fall back to
+  // the legacy single-package path silently.
+  const useMixed =
+    Array.isArray(items) && items.length >= 2 && priceMode !== "perGroup";
+  if (useMixed) {
+    const totalItemGuests = items!.reduce(
+      (sum, it) => sum + (Number.isFinite(it.guests) ? Math.trunc(it.guests) : 0),
+      0
+    );
+    if (totalItemGuests !== safeGuests) {
+      throw new ReservationValidationError(
+        "The package guest counts do not add up to the total guests."
+      );
+    }
+    for (const it of items!) {
+      if (!Number.isInteger(it.guests) || it.guests < 1) {
+        throw new ReservationValidationError(
+          "Each selected package must include at least 1 guest."
+        );
+      }
+    }
+  }
+
   const availableAddOns = selectedPackage?.addOns ?? tour.addOns ?? [];
   const selectedAddOns = pickAddOns(availableAddOns, addOns);
 
@@ -182,18 +221,45 @@ export function buildReservationPricingSnapshot({
     : (selectedPackage?.price ?? tour.priceEur);
   const baseQuantity = priceMode === "perGroup" ? 1 : safeGuests;
   const baseUnitLabel = priceMode === "perGroup" ? "/group" : "/person";
-  const subtotal = baseUnitPrice * baseQuantity;
 
-  const lineItems: ReservationPricingLineItem[] = [
-    {
-      type: "package",
-      label: baseLabel,
-      quantity: baseQuantity,
-      unitPrice: baseUnitPrice,
-      unitLabel: baseUnitLabel,
-      total: subtotal,
-    },
-  ];
+  let lineItems: ReservationPricingLineItem[];
+  let subtotal: number;
+
+  if (useMixed) {
+    const packageLines: ReservationPricingLineItem[] = items!.map((entry) => {
+      const pkg = pickPackage(tour, entry.packageName);
+      if (!pkg) {
+        throw new ReservationValidationError(
+          `The selected package "${entry.packageName}" could not be verified.`
+        );
+      }
+      const itemWeekly = applyWeeklyDiscount(pkg, date ?? null);
+      const unit = itemWeekly.eligible ? itemWeekly.effectivePrice : pkg.price;
+      const qty = entry.guests;
+      return {
+        type: "package",
+        label: pkg.name,
+        quantity: qty,
+        unitPrice: unit,
+        unitLabel: "/person",
+        total: unit * qty,
+      };
+    });
+    subtotal = packageLines.reduce((sum, l) => sum + l.total, 0);
+    lineItems = packageLines;
+  } else {
+    subtotal = baseUnitPrice * baseQuantity;
+    lineItems = [
+      {
+        type: "package",
+        label: baseLabel,
+        quantity: baseQuantity,
+        unitPrice: baseUnitPrice,
+        unitLabel: baseUnitLabel,
+        total: subtotal,
+      },
+    ];
+  }
 
   for (const addOn of selectedAddOns) {
     const unitPrice = parseAddOnUnitPrice(addOn);
@@ -209,7 +275,7 @@ export function buildReservationPricingSnapshot({
   }
 
   const addOnsTotal = lineItems
-    .slice(1)
+    .filter((item) => item.type === "addon")
     .reduce((sum, item) => sum + item.total, 0);
   const originalTotal = subtotal + addOnsTotal;
 

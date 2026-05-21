@@ -48,6 +48,9 @@ interface BookingDetails {
   guests: number;
   selectedPackage?: PackageType;
   selectedAddOns: AddOn[];
+  /** Full list of packages for this tour. Powers the optional "Some guests
+   * want a different package?" mixed-package toggle. */
+  availablePackages?: PackageType[];
   basePrice: number;
   priceMode?: PriceMode;
   departurePoint?: string;
@@ -122,6 +125,38 @@ export default function BookingModal({ booking, onClose }: Props) {
   const [showTransferInfo, setShowTransferInfo] = useState(false);
   const [showAdditionalGuests, setShowAdditionalGuests] = useState(false);
   const [additionalGuestsText, setAdditionalGuestsText] = useState("");
+
+  // Mixed-package toggle: lets the customer split the booking across two
+  // packages (e.g. some guests on alcohol, others on soft-drinks). Only the
+  // secondary package + its guest count are tracked here; the primary stays
+  // `booking.selectedPackage` and its guest count is derived as
+  // `booking.guests - mixedSecondaryGuests`.
+  const [mixedEnabled, setMixedEnabled] = useState(false);
+  const otherPackages = (booking.availablePackages ?? []).filter(
+    (pkg) => pkg.name !== booking.selectedPackage?.name
+  );
+  const [mixedSecondaryName, setMixedSecondaryName] = useState(
+    otherPackages[0]?.name ?? ""
+  );
+  const [mixedSecondaryGuests, setMixedSecondaryGuests] = useState(1);
+  const mixedAvailable =
+    otherPackages.length > 0 &&
+    booking.guests >= 2 &&
+    booking.priceMode !== "perGroup";
+  const mixedActive = mixedEnabled && mixedAvailable && booking.guests >= 2;
+  const mixedPrimaryGuests = mixedActive
+    ? Math.max(1, booking.guests - mixedSecondaryGuests)
+    : booking.guests;
+  const mixedSecondaryPackage = mixedActive
+    ? booking.availablePackages?.find((pkg) => pkg.name === mixedSecondaryName)
+    : undefined;
+  // Auto-clamp secondary guests to a valid range whenever the source changes.
+  useEffect(() => {
+    if (!mixedActive) return;
+    const max = booking.guests - 1;
+    if (mixedSecondaryGuests > max) setMixedSecondaryGuests(max);
+    if (mixedSecondaryGuests < 1) setMixedSecondaryGuests(1);
+  }, [mixedActive, booking.guests, mixedSecondaryGuests]);
 
   const [touchedName, setTouchedName] = useState(false);
   const [touchedEmail, setTouchedEmail] = useState(false);
@@ -323,6 +358,17 @@ export default function BookingModal({ booking, onClose }: Props) {
       .filter(Boolean)
       .join("\n\n");
 
+    const mixedItems =
+      mixedActive && booking.selectedPackage?.name && mixedSecondaryName
+        ? [
+            {
+              packageName: booking.selectedPackage.name,
+              guests: mixedPrimaryGuests,
+            },
+            { packageName: mixedSecondaryName, guests: mixedSecondaryGuests },
+          ]
+        : undefined;
+
     const result = await createReservation({
       tourSlug: booking.tourSlug,
       date: booking.date,
@@ -337,6 +383,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       privateTransferRequested,
       notes: combinedNotes || undefined,
       honeypot: company,
+      items: mixedItems,
       attribution: getStoredAttribution() ?? undefined,
     });
 
@@ -980,6 +1027,84 @@ export default function BookingModal({ booking, onClose }: Props) {
                           {booking.selectedPackage.name} — €
                           {booking.selectedPackage.price}
                           {isPerGroup ? "/group" : "/person"}
+                        </div>
+                      )}
+                      {mixedActive && mixedSecondaryPackage && (
+                        <div className="flex items-center gap-2 text-[var(--body-text)]">
+                          <Package className="w-4 h-4 text-[var(--brand-primary)]" />
+                          {mixedSecondaryPackage.name} — €
+                          {mixedSecondaryPackage.price}
+                          /person
+                        </div>
+                      )}
+                      {mixedActive && (
+                        <p className="text-xs text-[var(--text-muted)] pl-6">
+                          {mixedPrimaryGuests} guest{mixedPrimaryGuests > 1 ? "s" : ""} on{" "}
+                          {booking.selectedPackage?.name}, {mixedSecondaryGuests} guest
+                          {mixedSecondaryGuests > 1 ? "s" : ""} on {mixedSecondaryName}.
+                        </p>
+                      )}
+
+                      {/* Mixed-package toggle — only shown when the tour has
+                       * additional packages and there are ≥2 guests, so the
+                       * split is meaningful. Single-guest bookings or
+                       * single-package tours skip this entirely. */}
+                      {mixedAvailable && (
+                        <div className="mt-3 rounded-lg border border-dashed border-[var(--line)] p-3 space-y-3">
+                          <label className="flex items-start gap-3 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={mixedEnabled}
+                              onChange={(e) => setMixedEnabled(e.target.checked)}
+                              className="mt-0.5 h-4 w-4 accent-[var(--brand-primary)]"
+                            />
+                            <div className="text-xs leading-snug text-[var(--body-text)]">
+                              <span className="font-semibold text-[var(--heading)]">
+                                Some guests want a different package?
+                              </span>
+                              <p className="mt-0.5 text-[var(--text-muted)]">
+                                Split the booking across two packages (e.g. some
+                                with alcohol, others soft drinks).
+                              </p>
+                            </div>
+                          </label>
+                          {mixedActive && (
+                            <div className="grid grid-cols-2 gap-2 text-xs">
+                              <label className="flex flex-col gap-1">
+                                <span className="text-[var(--text-muted)] font-medium">
+                                  Second package
+                                </span>
+                                <select
+                                  value={mixedSecondaryName}
+                                  onChange={(e) => setMixedSecondaryName(e.target.value)}
+                                  className="rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-[var(--heading)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
+                                >
+                                  {otherPackages.map((pkg) => (
+                                    <option key={pkg.name} value={pkg.name}>
+                                      {pkg.name} (€{pkg.price})
+                                    </option>
+                                  ))}
+                                </select>
+                              </label>
+                              <label className="flex flex-col gap-1">
+                                <span className="text-[var(--text-muted)] font-medium">
+                                  Guests on second
+                                </span>
+                                <input
+                                  type="number"
+                                  min={1}
+                                  max={booking.guests - 1}
+                                  value={mixedSecondaryGuests}
+                                  onChange={(e) => {
+                                    const v = Number.parseInt(e.target.value, 10);
+                                    if (!Number.isFinite(v)) return;
+                                    setMixedSecondaryGuests(v);
+                                  }}
+                                  className="rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-[var(--heading)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
+                                />
+                              </label>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
