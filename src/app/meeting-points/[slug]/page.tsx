@@ -6,6 +6,7 @@ import {
   getExperienceSupportGuide,
   type ExperienceSupportGuide,
 } from "@/lib/experience-support";
+import HowToGetThere from "@/components/tours/HowToGetThere";
 
 const supportedSlugs = ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"] as const;
 
@@ -87,6 +88,10 @@ export default async function MeetingPointGuidePage({
             <SupportFacts guide={guide} />
           </div>
         </section>
+
+        <div className="mt-8">
+          <HowToGetThere slug={slug} />
+        </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <section className="space-y-6">
