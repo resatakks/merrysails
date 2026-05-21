@@ -219,7 +219,22 @@ export default function BookingModal({ booking, onClose }: Props) {
     return sum + value;
   }, 0);
 
-  const originalTotal = (isPerGroup ? packagePrice : packagePrice * booking.guests) + addOnsTotal;
+  // Mixed-package subtotal: primary package × primary guests + secondary
+  // package × secondary guests. Falls back to the single-package formula
+  // whenever the toggle is off or the secondary package is unresolved.
+  const mixedSecondaryWeekly = mixedActive
+    ? applyWeeklyDiscount(mixedSecondaryPackage, booking.rawDate ?? null)
+    : null;
+  const mixedSecondaryUnit = mixedSecondaryWeekly?.eligible
+    ? mixedSecondaryWeekly.effectivePrice
+    : (mixedSecondaryPackage?.price ?? 0);
+  const packageSubtotal =
+    mixedActive && mixedSecondaryPackage
+      ? packagePrice * mixedPrimaryGuests + mixedSecondaryUnit * mixedSecondaryGuests
+      : isPerGroup
+        ? packagePrice
+        : packagePrice * booking.guests;
+  const originalTotal = packageSubtotal + addOnsTotal;
   const groupDiscount = applyGroupDiscount(
     originalTotal,
     booking.tourSlug,
@@ -1050,59 +1065,115 @@ export default function BookingModal({ booking, onClose }: Props) {
                        * split is meaningful. Single-guest bookings or
                        * single-package tours skip this entirely. */}
                       {mixedAvailable && (
-                        <div className="mt-3 rounded-lg border border-dashed border-[var(--line)] p-3 space-y-3">
-                          <label className="flex items-start gap-3 cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={mixedEnabled}
-                              onChange={(e) => setMixedEnabled(e.target.checked)}
-                              className="mt-0.5 h-4 w-4 accent-[var(--brand-primary)]"
-                            />
-                            <div className="text-xs leading-snug text-[var(--body-text)]">
-                              <span className="font-semibold text-[var(--heading)]">
-                                Some guests want a different package?
+                        <div
+                          className={`mt-3 rounded-xl border bg-white p-3 transition-colors ${
+                            mixedEnabled
+                              ? "border-[var(--brand-primary)]/40 shadow-[0_0_0_3px_rgba(255,78,80,0.06)]"
+                              : "border-[var(--line)] hover:border-[var(--brand-primary)]/25"
+                          }`}
+                        >
+                          <button
+                            type="button"
+                            onClick={() => setMixedEnabled(!mixedEnabled)}
+                            className="w-full flex items-start gap-3 text-left"
+                          >
+                            {/* iOS-style switch */}
+                            <span
+                              className={`relative inline-flex h-6 w-10 shrink-0 rounded-full transition-colors mt-0.5 ${
+                                mixedEnabled
+                                  ? "bg-[var(--brand-primary)]"
+                                  : "bg-gray-200"
+                              }`}
+                              aria-hidden
+                            >
+                              <span
+                                className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
+                                  mixedEnabled ? "translate-x-[18px]" : "translate-x-0.5"
+                                }`}
+                              />
+                            </span>
+                            <div className="text-xs leading-snug text-[var(--body-text)] flex-1">
+                              <span className="font-semibold text-[var(--heading)] text-sm">
+                                Mixed packages
                               </span>
                               <p className="mt-0.5 text-[var(--text-muted)]">
-                                Split the booking across two packages (e.g. some
-                                with alcohol, others soft drinks).
+                                Some guests want a different package? Split the
+                                booking across two (e.g. alcohol + soft drinks).
                               </p>
                             </div>
-                          </label>
+                          </button>
                           {mixedActive && (
-                            <div className="grid grid-cols-2 gap-2 text-xs">
-                              <label className="flex flex-col gap-1">
-                                <span className="text-[var(--text-muted)] font-medium">
-                                  Second package
-                                </span>
+                            <div className="mt-3 pt-3 border-t border-[var(--line)] space-y-3">
+                              {/* Primary package read-only summary */}
+                              <div className="flex items-center justify-between rounded-lg bg-[var(--surface-alt)] px-3 py-2">
+                                <div className="min-w-0">
+                                  <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                                    Package 1
+                                  </div>
+                                  <div className="text-sm font-semibold text-[var(--heading)] truncate">
+                                    {booking.selectedPackage?.name}
+                                  </div>
+                                </div>
+                                <div className="shrink-0 text-right">
+                                  <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                                    Guests
+                                  </div>
+                                  <div className="text-sm font-bold text-[var(--brand-primary)]">
+                                    {mixedPrimaryGuests}
+                                  </div>
+                                </div>
+                              </div>
+                              {/* Secondary package picker */}
+                              <div className="rounded-lg bg-[var(--surface-alt)] px-3 py-2 space-y-2">
+                                <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                                  Package 2
+                                </div>
                                 <select
                                   value={mixedSecondaryName}
                                   onChange={(e) => setMixedSecondaryName(e.target.value)}
-                                  className="rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-[var(--heading)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
+                                  className="w-full rounded-md border border-[var(--line)] bg-white px-2.5 py-2 text-sm font-medium text-[var(--heading)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
                                 >
                                   {otherPackages.map((pkg) => (
                                     <option key={pkg.name} value={pkg.name}>
-                                      {pkg.name} (€{pkg.price})
+                                      {pkg.name} (€{pkg.price}/person)
                                     </option>
                                   ))}
                                 </select>
-                              </label>
-                              <label className="flex flex-col gap-1">
-                                <span className="text-[var(--text-muted)] font-medium">
-                                  Guests on second
-                                </span>
-                                <input
-                                  type="number"
-                                  min={1}
-                                  max={booking.guests - 1}
-                                  value={mixedSecondaryGuests}
-                                  onChange={(e) => {
-                                    const v = Number.parseInt(e.target.value, 10);
-                                    if (!Number.isFinite(v)) return;
-                                    setMixedSecondaryGuests(v);
-                                  }}
-                                  className="rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-[var(--heading)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
-                                />
-                              </label>
+                                <div className="flex items-center justify-between gap-3">
+                                  <span className="text-xs text-[var(--text-muted)]">
+                                    Guests on Package 2
+                                  </span>
+                                  <div className="inline-flex items-center rounded-full border border-[var(--line)] bg-white">
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setMixedSecondaryGuests((v) => Math.max(1, v - 1))
+                                      }
+                                      disabled={mixedSecondaryGuests <= 1}
+                                      className="h-8 w-8 text-lg leading-none text-[var(--heading)] disabled:opacity-30 hover:bg-[var(--surface-alt)] rounded-l-full"
+                                      aria-label="Decrease"
+                                    >
+                                      −
+                                    </button>
+                                    <span className="min-w-[28px] text-center text-sm font-bold text-[var(--heading)]">
+                                      {mixedSecondaryGuests}
+                                    </span>
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setMixedSecondaryGuests((v) =>
+                                          Math.min(booking.guests - 1, v + 1)
+                                        )
+                                      }
+                                      disabled={mixedSecondaryGuests >= booking.guests - 1}
+                                      className="h-8 w-8 text-lg leading-none text-[var(--heading)] disabled:opacity-30 hover:bg-[var(--surface-alt)] rounded-r-full"
+                                      aria-label="Increase"
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           )}
                         </div>
