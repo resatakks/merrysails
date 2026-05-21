@@ -34,6 +34,16 @@ export async function getReservationDocumentPayload(reservationId: string) {
 
   const meta = parseReservationNotes(reservation.notes);
 
+  const isCustomBooking = !reservation.time;
+  const pickupFromNotes = (() => {
+    const raw = reservation.notes ?? "";
+    const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);
+    return match ? match[1].trim() : null;
+  })();
+  const meetingPointOverride = isCustomBooking
+    ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
+    : undefined;
+
   const documentInput: ReservationPdfInput = {
     reservationId: reservation.reservationId,
     customerName: reservation.customerName,
@@ -53,6 +63,8 @@ export async function getReservationDocumentPayload(reservationId: string) {
     notes: meta.customerNote,
     pricing: meta.pricing,
     status: formatReservationStatus(reservation.status),
+    isCustomBooking,
+    meetingPointOverride,
   };
 
   return {

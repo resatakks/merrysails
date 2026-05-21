@@ -80,6 +80,18 @@ export default async function ReservationInvoicePage({
   const currency = pricing?.currency ?? reservation.currency;
   const invoiceDate = format(new Date(), "MMMM d, yyyy");
   const serviceDate = format(new Date(reservation.date), "EEEE, MMMM d, yyyy");
+  // Custom phone-arranged bookings have an empty `time` value — hide guest
+  // count, departure time, and the structured "extras" block, and override the
+  // departure point with the pickup parsed from notes.
+  const isCustomBooking = !reservation.time;
+  const pickupFromNotes = (() => {
+    const raw = reservation.notes ?? "";
+    const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);
+    return match ? match[1].trim() : null;
+  })();
+  const meetingPointLabel = isCustomBooking
+    ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
+    : (tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
 
   const lineItems: InvoiceLineItem[] =
     pricing?.lineItems?.length
@@ -191,20 +203,22 @@ export default async function ReservationInvoicePage({
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-full bg-white p-2">
-                      <Users className="h-4 w-4 text-[var(--brand-primary)]" />
+                  {!isCustomBooking && (
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-white p-2">
+                        <Users className="h-4 w-4 text-[var(--brand-primary)]" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                          Guests
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                          {reservation.guests} guest
+                          {reservation.guests > 1 ? "s" : ""}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                        Guests
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {reservation.guests} guest
-                        {reservation.guests > 1 ? "s" : ""}
-                      </p>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </section>
 
@@ -242,19 +256,21 @@ export default async function ReservationInvoicePage({
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <div className="rounded-full bg-[var(--surface-alt)] p-2">
-                        <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
+                    {!isCustomBooking && (
+                      <div className="flex items-start gap-3">
+                        <div className="rounded-full bg-[var(--surface-alt)] p-2">
+                          <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                            Departure
+                          </p>
+                          <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                            {reservation.time}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                          Departure
-                        </p>
-                        <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                          {reservation.time}
-                        </p>
-                      </div>
-                    </div>
+                    )}
                   </div>
 
                   <div className="flex items-start gap-3">
@@ -263,16 +279,15 @@ export default async function ReservationInvoicePage({
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                        Departure point
+                        {isCustomBooking ? "Pickup" : "Departure point"}
                       </p>
                       <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {tour?.departurePoint ??
-                          "Final meeting instructions are shared after confirmation."}
+                        {meetingPointLabel}
                       </p>
                     </div>
                   </div>
 
-                  {(reservationMeta.privateTransferRequested ||
+                  {!isCustomBooking && (reservationMeta.privateTransferRequested ||
                     reservationMeta.additionalGuests.length > 0) && (
                     <div className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">

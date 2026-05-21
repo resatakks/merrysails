@@ -33,6 +33,11 @@ export interface ReservationPdfInput {
   notes?: string | null;
   pricing?: ReservationPricingSnapshot;
   status?: string;
+  // Set when this is a phone-arranged booking. When true the PDF hides
+  // guests/departure-time/selected-option and uses meetingPointOverride
+  // instead of the tour's default departure point.
+  isCustomBooking?: boolean;
+  meetingPointOverride?: string;
 }
 
 let regularFontBase64: string | null = null;
@@ -306,20 +311,6 @@ function drawInvoiceTable(doc: jsPDF, input: ReservationPdfInput, startY: number
   doc.text("Add-ons", 136, summaryY);
   doc.text(formatMoney(addOnsTotal, input.currency), 188, summaryY, { align: "right" });
 
-  const groupDiscount = input.pricing?.groupDiscount;
-  if (groupDiscount?.eligible && groupDiscount.savings > 0) {
-    summaryY += 6;
-    doc.setTextColor(22, 101, 52);
-    doc.text("Group discount", 136, summaryY);
-    doc.text(
-      `-${formatMoney(groupDiscount.savings, input.currency)}`,
-      188,
-      summaryY,
-      { align: "right" }
-    );
-    doc.setTextColor(71, 85, 105);
-  }
-
   doc.setFillColor(15, 23, 42);
   doc.roundedRect(118, summaryY + 4, 74, 16, 5, 5, "F");
   doc.setTextColor(255, 255, 255);
@@ -377,11 +368,13 @@ export async function generateReservationInvoicePdf(
   let rightY = 72;
   rightY = writeLabelValue(doc, "Experience", safe(input.tourName), 108, rightY, 82) + 5;
   rightY = writeLabelValue(doc, "Service Date", serviceDate, 108, rightY, 82) + 5;
-  rightY = writeLabelValue(doc, "Departure", safe(input.time), 108, rightY, 82) + 5;
+  if (!input.isCustomBooking) {
+    rightY = writeLabelValue(doc, "Departure", safe(input.time), 108, rightY, 82) + 5;
+  }
   rightY = writeLabelValue(
     doc,
-    "Departure Point",
-    safe(tour?.departurePoint),
+    input.isCustomBooking ? "Pickup" : "Departure Point",
+    safe(input.meetingPointOverride ?? tour?.departurePoint),
     108,
     rightY,
     82
@@ -392,17 +385,19 @@ export async function generateReservationInvoicePdf(
 
   const tableEndY = drawInvoiceTable(doc, input, detailsBottomY + 8);
 
-  const selectedOptions = [
-    input.packageName ? `Package: ${input.packageName}` : null,
-    input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
-    input.privateTransferRequested
-      ? "Private transfer requested. Our team will contact the guest to confirm pickup details."
-      : null,
-    input.additionalGuests && input.additionalGuests.length > 0
-      ? `Other passengers: ${input.additionalGuests.join(", ")}`
-      : null,
-    input.notes ? `Guest note: ${input.notes}` : null,
-  ].filter(Boolean) as string[];
+  const selectedOptions = input.isCustomBooking
+    ? ([input.notes ? `Guest note: ${input.notes}` : null].filter(Boolean) as string[])
+    : ([
+        input.packageName ? `Package: ${input.packageName}` : null,
+        input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
+        input.privateTransferRequested
+          ? "Private transfer requested. Our team will contact the guest to confirm pickup details."
+          : null,
+        input.additionalGuests && input.additionalGuests.length > 0
+          ? `Other passengers: ${input.additionalGuests.join(", ")}`
+          : null,
+        input.notes ? `Guest note: ${input.notes}` : null,
+      ].filter(Boolean) as string[]);
 
   if (selectedOptions.length > 0) {
     doc.setFillColor(255, 251, 235);
@@ -450,72 +445,81 @@ export async function generateReservationVoucherPdf(
   leftY = writeLabelValue(doc, "Lead Guest", safe(input.customerName), 14, leftY, 82) + 5;
   leftY = writeLabelValue(doc, "Email", safe(input.customerEmail), 14, leftY, 82) + 5;
   leftY = writeLabelValue(doc, "Phone", safe(input.customerPhone), 14, leftY, 82) + 5;
-  leftY = writeLabelValue(
-    doc,
-    "Guests",
-    `${input.guests} guest${input.guests > 1 ? "s" : ""}`,
-    14,
-    leftY,
-    82
-  ) + 5;
+  if (!input.isCustomBooking) {
+    leftY = writeLabelValue(
+      doc,
+      "Guests",
+      `${input.guests} guest${input.guests > 1 ? "s" : ""}`,
+      14,
+      leftY,
+      82
+    ) + 5;
+  }
 
   let rightY = 88;
   rightY = writeLabelValue(doc, "Experience", safe(input.tourName), 108, rightY, 82) + 5;
   rightY = writeLabelValue(doc, "Date", serviceDate, 108, rightY, 82) + 5;
-  rightY = writeLabelValue(doc, "Departure", safe(input.time), 108, rightY, 82) + 5;
+  if (!input.isCustomBooking) {
+    rightY = writeLabelValue(doc, "Departure", safe(input.time), 108, rightY, 82) + 5;
+  }
   rightY = writeLabelValue(
     doc,
-    "Meeting Point",
-    safe(tour?.departurePoint),
+    input.isCustomBooking ? "Pickup" : "Meeting Point",
+    safe(input.meetingPointOverride ?? tour?.departurePoint),
     108,
     rightY,
     82
   ) + 5;
 
-  const optionsY = Math.max(leftY, rightY) + 6;
-  doc.setFillColor(248, 250, 252);
-  doc.roundedRect(14, optionsY, 182, 36, 6, 6, "F");
-  doc.setFont("Roboto", "bold");
-  doc.setFontSize(9);
-  doc.setTextColor(15, 23, 42);
-  doc.text("Selected Booking Option", 18, optionsY + 8);
-  doc.setFont("Roboto", "normal");
-  doc.setTextColor(71, 85, 105);
-  writeWrappedText(
-    doc,
-    [
-      input.packageName ? `Package: ${input.packageName}` : null,
-      input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
-      input.privateTransferRequested
-        ? "Private transfer requested. Our team will contact you with pickup details."
-        : null,
-      input.additionalGuests && input.additionalGuests.length > 0
-        ? `Other passengers: ${input.additionalGuests.join(", ")}`
-        : null,
-    ]
-      .filter(Boolean)
-      .join(" • ") || "Base reservation details are stored in the booking record.",
-    18,
-    optionsY + 15,
-    174,
-    5
-  );
+  let optionsY = Math.max(leftY, rightY) + 6;
+  if (!input.isCustomBooking) {
+    doc.setFillColor(248, 250, 252);
+    doc.roundedRect(14, optionsY, 182, 36, 6, 6, "F");
+    doc.setFont("Roboto", "bold");
+    doc.setFontSize(9);
+    doc.setTextColor(15, 23, 42);
+    doc.text("Selected Booking Option", 18, optionsY + 8);
+    doc.setFont("Roboto", "normal");
+    doc.setTextColor(71, 85, 105);
+    writeWrappedText(
+      doc,
+      [
+        input.packageName ? `Package: ${input.packageName}` : null,
+        input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
+        input.privateTransferRequested
+          ? "Private transfer requested. Our team will contact you with pickup details."
+          : null,
+        input.additionalGuests && input.additionalGuests.length > 0
+          ? `Other passengers: ${input.additionalGuests.join(", ")}`
+          : null,
+      ]
+        .filter(Boolean)
+        .join(" • ") || "Base reservation details are stored in the booking record.",
+      18,
+      optionsY + 15,
+      174,
+      5
+    );
+    optionsY += 46;
+  }
 
-  const noteY = optionsY + 46;
+  const noteY = optionsY;
   doc.setFillColor(255, 251, 235);
   doc.roundedRect(14, noteY, 182, 42, 6, 6, "F");
   doc.setFont("Roboto", "bold");
   doc.setTextColor(146, 64, 14);
   doc.setFontSize(9);
-  doc.text("Before You Arrive", 18, noteY + 8);
+  doc.text(input.isCustomBooking ? "Good to know" : "Before You Arrive", 18, noteY + 8);
   doc.setFont("Roboto", "normal");
   doc.setTextColor(120, 53, 15);
   writeWrappedText(
     doc,
     [
-      "Please arrive 15 minutes before departure for a smooth boarding flow.",
+      input.isCustomBooking
+        ? null
+        : "Please arrive 15 minutes before departure for a smooth boarding flow.",
       "Keep your reservation ID and this voucher ready on your phone.",
-      input.privateTransferRequested
+      !input.isCustomBooking && input.privateTransferRequested
         ? "Private transfer was requested separately. Our team will contact you with the final pickup plan."
         : null,
       input.notes ? `Guest note: ${input.notes}` : null,

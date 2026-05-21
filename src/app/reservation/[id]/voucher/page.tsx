@@ -62,7 +62,19 @@ export default async function ReservationVoucherPage({
   const normalizedStatus = normalizeReservationStatus(reservation.status);
   const statusLabel = getReservationStatusLabel(normalizedStatus);
   const reservationMeta = parseReservationNotes(reservation.notes);
-  const hasSelectedOptions = Boolean(
+  // Custom phone-arranged bookings have an empty `time` value — used as the
+  // marker to hide guest count, departure time, package details, and the
+  // generic "arrive 15 minutes early" reminder so the voucher stays minimal.
+  const isCustomBooking = !reservation.time;
+  const pickupFromNotes = (() => {
+    const raw = reservation.notes ?? "";
+    const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);
+    return match ? match[1].trim() : null;
+  })();
+  const meetingPointLabel = isCustomBooking
+    ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
+    : (tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
+  const hasSelectedOptions = !isCustomBooking && Boolean(
     reservationMeta.packageName ||
       reservationMeta.addOns.length > 0 ||
       reservationMeta.privateTransferRequested ||
@@ -179,16 +191,29 @@ export default async function ReservationVoucherPage({
                       <Users className="h-4 w-4 text-[var(--brand-primary)]" />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                        Guests
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {reservation.guests} guest
-                        {reservation.guests > 1 ? "s" : ""}
-                      </p>
-                      <p className="mt-1 text-sm text-[var(--text-muted)]">
-                        {reservation.customerPhone}
-                      </p>
+                      {isCustomBooking ? (
+                        <>
+                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                            Phone
+                          </p>
+                          <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                            {reservation.customerPhone}
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                            Guests
+                          </p>
+                          <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                            {reservation.guests} guest
+                            {reservation.guests > 1 ? "s" : ""}
+                          </p>
+                          <p className="mt-1 text-sm text-[var(--text-muted)]">
+                            {reservation.customerPhone}
+                          </p>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -213,19 +238,21 @@ export default async function ReservationVoucherPage({
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-full bg-[var(--surface-alt)] p-2">
-                      <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
+                  {!isCustomBooking && (
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-[var(--surface-alt)] p-2">
+                        <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                          Departure time
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                          {reservation.time}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                        Departure time
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {reservation.time}
-                      </p>
-                    </div>
-                  </div>
+                  )}
 
                   <div className="flex items-start gap-3 sm:col-span-2">
                     <div className="rounded-full bg-[var(--surface-alt)] p-2">
@@ -233,10 +260,10 @@ export default async function ReservationVoucherPage({
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                        Departure point
+                        {isCustomBooking ? "Pickup" : "Departure point"}
                       </p>
                       <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {tour?.departurePoint ?? "Final meeting instructions are shared after confirmation."}
+                        {meetingPointLabel}
                       </p>
                     </div>
                   </div>
@@ -336,7 +363,9 @@ export default async function ReservationVoucherPage({
                   Before You Board
                 </h3>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--body-text)]">
-                  <p>Arrive at least 15 minutes before departure.</p>
+                  {!isCustomBooking && (
+                    <p>Arrive at least 15 minutes before departure.</p>
+                  )}
                   <p>Keep your reservation ID ready when you meet the team.</p>
                   <p>
                     Payment collection and final operational notes follow the
