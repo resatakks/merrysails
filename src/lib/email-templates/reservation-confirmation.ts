@@ -33,6 +33,9 @@ interface ReservationConfirmationData {
   groupDiscountSavings?: number;
   /** Promo code (kept for reference; not shown in UI). */
   groupDiscountCode?: string;
+  /** Mixed-package booking line items (≥2 entries). When set, renders the
+   * package mix instead of the single `packageName` row. */
+  items?: { packageName: string; guests: number }[];
 }
 
 function renderFactsTable(
@@ -296,6 +299,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
       </div>
 
       ${
+        (data.items && data.items.length >= 2) ||
         data.packageName ||
         (data.addOns && data.addOns.length > 0) ||
         data.privateTransferRequested ||
@@ -303,7 +307,18 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           ? `
         <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;margin-bottom:22px;">
           <p style="color:#0f172a;font-size:14px;font-weight:700;margin:0 0 10px;">Selected Booking Option</p>
-          ${data.packageName ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>` : ""}
+          ${
+            data.items && data.items.length >= 2
+              ? `<p style="color:#334155;font-size:14px;margin:0 0 4px;"><strong>Packages:</strong></p><ul style="color:#334155;font-size:14px;margin:0 0 8px;padding-left:20px;line-height:1.7;">${data.items
+                  .map(
+                    (it) =>
+                      `<li>${escapeHtml(it.packageName)} — ${it.guests} guest${it.guests > 1 ? "s" : ""}</li>`
+                  )
+                  .join("")}</ul>`
+              : data.packageName
+                ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>`
+                : ""
+          }
           ${
             data.addOns && data.addOns.length > 0
               ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Add-ons:</strong> ${escapeHtml(data.addOns.join(", "))}</p>`

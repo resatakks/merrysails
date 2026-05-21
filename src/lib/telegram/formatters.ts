@@ -6,6 +6,7 @@ import {
 } from "@/lib/booking-abandonment";
 import { getReservationLinkContext } from "@/lib/reservation-links";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { parseReservationItems } from "@/lib/reservation-items";
 import { getExperienceSupportPageUrl } from "@/lib/experience-support";
 import { normalizeReservationStatus } from "@/lib/reservation-status";
 import { getWhatsAppUrl } from "./phone-links";
@@ -153,7 +154,15 @@ export function formatReservationDetail(r: SailsReservation): string {
   msg += `📅 <b>Tarih:</b> ${dateStr}\n`;
   msg += `🕐 <b>Saat:</b> ${esc(r.time)}\n`;
   msg += `👥 <b>Misafir:</b> ${r.guests} kişi\n`;
-  if (meta.packageName) msg += `📦 <b>Paket:</b> ${esc(meta.packageName)}\n`;
+  const detailMixedItems = parseReservationItems(r.items);
+  if (detailMixedItems) {
+    msg += `📦 <b>Karışık paket:</b>\n`;
+    for (const it of detailMixedItems) {
+      msg += `   • ${esc(it.packageName)} — ${it.guests} kişi\n`;
+    }
+  } else if (meta.packageName) {
+    msg += `📦 <b>Paket:</b> ${esc(meta.packageName)}\n`;
+  }
   if (meta.addOns.length > 0) msg += `➕ <b>Ekstra:</b> ${esc(meta.addOns.join(", "))}\n`;
   if (meta.privateTransferRequested) {
     msg += `🚗 <b>Transfer:</b> Private transfer istendi, ekip pickup detaylari icin iletisime gececek\n`;
@@ -222,7 +231,15 @@ export function formatNewReservation(r: SailsReservation): string {
   msg += `\n⛵ ${esc(r.tourName)}\n`;
   msg += `📅 ${dateStr} | 🕐 ${esc(r.time)}\n`;
   msg += `👥 ${r.guests} kişi\n`;
-  if (meta.packageName) msg += `📦 ${esc(meta.packageName)}\n`;
+  const newResMixedItems = parseReservationItems(r.items);
+  if (newResMixedItems) {
+    msg += `📦 <b>Karışık paket:</b>\n`;
+    for (const it of newResMixedItems) {
+      msg += `   • ${esc(it.packageName)} — ${it.guests} kişi\n`;
+    }
+  } else if (meta.packageName) {
+    msg += `📦 ${esc(meta.packageName)}\n`;
+  }
   if (meta.addOns.length > 0) msg += `➕ ${esc(meta.addOns.join(", "))}\n`;
   if (meta.privateTransferRequested) {
     msg += `🚗 Private transfer istendi — ekip pickup plani icin misafirle iletisime gececek\n`;

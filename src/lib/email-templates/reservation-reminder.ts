@@ -21,6 +21,9 @@ interface ReservationReminderData {
   packageName?: string;
   addOns?: string[];
   privateTransferRequested?: boolean;
+  /** Mixed-package booking line items (≥2 entries) — when set, the reminder
+   * shows the package split instead of a single Package fact row. */
+  items?: { packageName: string; guests: number }[];
 }
 
 function renderReminderFacts(
@@ -47,8 +50,10 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
   const voucherUrl = getReservationVoucherUrl(data.reservationId);
   const supportGuide = getExperienceSupportGuide(data.tourSlug);
   const supportGuideUrl = getExperienceSupportPageUrl(data.tourSlug);
+  const hasMixed = Array.isArray(data.items) && data.items.length >= 2;
   const hasExtras = Boolean(
-    data.packageName ||
+    hasMixed ||
+      data.packageName ||
       (data.addOns && data.addOns.length > 0) ||
       data.privateTransferRequested
   );
@@ -93,7 +98,18 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
           { label: "Date", value: data.date },
           { label: "Departure time", value: data.time },
           { label: "Guests", value: String(data.guests) },
-          ...(data.packageName ? [{ label: "Package", value: data.packageName }] : []),
+          ...(hasMixed
+            ? [
+                {
+                  label: "Packages",
+                  value: data.items!
+                    .map((it) => `${it.packageName} (${it.guests})`)
+                    .join(" · "),
+                },
+              ]
+            : data.packageName
+              ? [{ label: "Package", value: data.packageName }]
+              : []),
         ])}
       </div>
 
@@ -130,7 +146,18 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
           ? `
         <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;margin-bottom:20px;">
           <p style="color:#0f172a;margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Selected Option</p>
-          ${data.packageName ? `<p style="color:#334155;font-size:14px;line-height:1.7;margin:0 0 4px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>` : ""}
+          ${
+            hasMixed
+              ? `<p style="color:#334155;font-size:14px;line-height:1.7;margin:0 0 4px;"><strong>Packages:</strong></p><ul style="color:#334155;font-size:14px;margin:0 0 6px;padding-left:18px;line-height:1.7;">${data.items!
+                  .map(
+                    (it) =>
+                      `<li>${escapeHtml(it.packageName)} — ${it.guests} guest${it.guests > 1 ? "s" : ""}</li>`
+                  )
+                  .join("")}</ul>`
+              : data.packageName
+                ? `<p style="color:#334155;font-size:14px;line-height:1.7;margin:0 0 4px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>`
+                : ""
+          }
           ${data.addOns && data.addOns.length > 0 ? `<p style="color:#334155;font-size:14px;line-height:1.7;margin:0 0 4px;"><strong>Add-ons:</strong> ${escapeHtml(data.addOns.join(", "))}</p>` : ""}
           ${
             data.privateTransferRequested

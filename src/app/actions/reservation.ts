@@ -378,6 +378,7 @@ export async function createReservation(input: CreateReservationInput) {
                 weeklyDiscount: pricing.weeklyDiscount,
               },
               status: "Received",
+              items: persistedItems ?? undefined,
             });
           } catch (pdfErr) {
             console.error("Failed to build reservation PDF attachments:", pdfErr);
@@ -412,6 +413,12 @@ export async function createReservation(input: CreateReservationInput) {
                 : undefined,
               groupDiscountCode: pricing.groupDiscount.eligible
                 ? pricing.groupDiscount.code
+                : undefined,
+              items: persistedItems
+                ? persistedItems.map(({ packageName, guests }) => ({
+                    packageName,
+                    guests,
+                  }))
                 : undefined,
             }),
             attachments,

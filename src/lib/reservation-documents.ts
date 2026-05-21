@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { parseReservationItems } from "@/lib/reservation-items";
 import type { ReservationPdfInput } from "@/lib/reservation-pdf";
 
 function formatReservationStatus(status: string): string {
@@ -65,6 +66,7 @@ export async function getReservationDocumentPayload(reservationId: string) {
     status: formatReservationStatus(reservation.status),
     isCustomBooking,
     meetingPointOverride,
+    items: parseReservationItems(reservation.items) ?? undefined,
   };
 
   return {

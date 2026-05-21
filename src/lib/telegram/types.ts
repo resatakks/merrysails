@@ -71,6 +71,10 @@ export interface SailsReservation {
   customerPhone: string;
   customerCountry?: string | null;
   notes?: string | null;
+  /** Mixed-package booking line items (JSONB). Typed as `unknown` so the
+   * formatter can defensively parse via `parseReservationItems` without
+   * coupling to the shared ReservationLineItem type. */
+  items?: unknown;
   createdAt?: string | Date;
   internalCostEur?: number | null;
   confirmedAt?: string | Date | null;

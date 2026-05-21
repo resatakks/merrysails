@@ -18,6 +18,7 @@ import Link from "next/link";
 import CancelButton from "./CancelButton";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { parseReservationItems } from "@/lib/reservation-items";
 import { ReservationDocumentCenter } from "@/components/reservation/ReservationDocumentCenter";
 import {
   getReservationStatusIcon,
@@ -73,8 +74,9 @@ export default async function ReservationDetailPage({ params }: { params: Promis
   const isCustomBooking = !r.time;
   const departurePoint = tour?.departurePoint;
   const reservationMeta = parseReservationNotes(r.notes);
+  const mixedItems = parseReservationItems(r.items);
   const hasSelectedOptions = Boolean(
-    reservationMeta.packageName || reservationMeta.addOns.length > 0
+    mixedItems || reservationMeta.packageName || reservationMeta.addOns.length > 0
   );
 
   return (
@@ -134,12 +136,25 @@ export default async function ReservationDetailPage({ params }: { params: Promis
                   Booking Selection
                 </div>
                 <div className="space-y-2 text-sm text-[var(--body-text)]">
-                  {reservationMeta.packageName && (
+                  {mixedItems ? (
+                    <div>
+                      <p>
+                        <span className="font-semibold text-[var(--heading)]">Packages:</span>
+                      </p>
+                      <ul className="mt-1 list-disc pl-5">
+                        {mixedItems.map((it) => (
+                          <li key={it.packageName}>
+                            {it.packageName} — {it.guests} guest{it.guests > 1 ? "s" : ""}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : reservationMeta.packageName ? (
                     <p>
                       <span className="font-semibold text-[var(--heading)]">Package:</span>{" "}
                       {reservationMeta.packageName}
                     </p>
-                  )}
+                  ) : null}
                   {reservationMeta.addOns.length > 0 && (
                     <p>
                       <span className="font-semibold text-[var(--heading)]">Add-ons:</span>{" "}

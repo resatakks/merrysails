@@ -13,6 +13,8 @@ import {
   TURSAB_LICENSE_NUMBER,
 } from "@/lib/constants";
 import type { ReservationPricingSnapshot } from "@/lib/reservation-pricing";
+import type { ReservationLineItem } from "@/lib/reservation-items";
+import { formatItemsSummary } from "@/lib/reservation-items";
 
 export interface ReservationPdfInput {
   reservationId: string;
@@ -38,6 +40,14 @@ export interface ReservationPdfInput {
   // instead of the tour's default departure point.
   isCustomBooking?: boolean;
   meetingPointOverride?: string;
+  /**
+   * Mixed-package booking line items. When present and has ≥2 entries the PDF
+   * voucher swaps the "Selected Booking Option" copy for a per-package
+   * summary. The invoice table is driven by `pricing.lineItems` so it
+   * already renders one row per package — items here are mainly a fallback
+   * for legacy/manual data without a multi-package pricing snapshot.
+   */
+  items?: ReservationLineItem[];
 }
 
 let regularFontBase64: string | null = null;
@@ -201,6 +211,19 @@ function writeHeader(doc: jsPDF, title: string, subtitle: string) {
 function getLineItems(input: ReservationPdfInput) {
   if (input.pricing?.lineItems?.length) {
     return input.pricing.lineItems;
+  }
+
+  // Fall back to the persisted items snapshot when the booking is mixed-
+  // package but the pricing snapshot was missing (legacy / manual rows).
+  if (input.items && input.items.length >= 2) {
+    return input.items.map((it) => ({
+      type: "package" as const,
+      label: it.packageName,
+      quantity: it.guests,
+      unitPrice: it.unitPrice,
+      unitLabel: it.unitLabel,
+      total: it.total,
+    }));
   }
 
   return [
@@ -385,10 +408,15 @@ export async function generateReservationInvoicePdf(
 
   const tableEndY = drawInvoiceTable(doc, input, detailsBottomY + 8);
 
+  const hasMixedInvoice = Array.isArray(input.items) && input.items.length >= 2;
   const selectedOptions = input.isCustomBooking
     ? ([input.notes ? `Guest note: ${input.notes}` : null].filter(Boolean) as string[])
     : ([
-        input.packageName ? `Package: ${input.packageName}` : null,
+        hasMixedInvoice
+          ? `Packages: ${formatItemsSummary(input.items!)}`
+          : input.packageName
+            ? `Package: ${input.packageName}`
+            : null,
         input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
         input.privateTransferRequested
           ? "Private transfer requested. Our team will contact the guest to confirm pickup details."
@@ -481,10 +509,15 @@ export async function generateReservationVoucherPdf(
     doc.text("Selected Booking Option", 18, optionsY + 8);
     doc.setFont("Roboto", "normal");
     doc.setTextColor(71, 85, 105);
+    const hasMixed = Array.isArray(input.items) && input.items.length >= 2;
     writeWrappedText(
       doc,
       [
-        input.packageName ? `Package: ${input.packageName}` : null,
+        hasMixed
+          ? `Packages: ${formatItemsSummary(input.items!)}`
+          : input.packageName
+            ? `Package: ${input.packageName}`
+            : null,
         input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
         input.privateTransferRequested
           ? "Private transfer requested. Our team will contact you with pickup details."
