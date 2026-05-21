@@ -366,11 +366,15 @@ export default async function ReservationVoucherPage({
                   {!isCustomBooking && (
                     <p>Arrive at least 15 minutes before departure.</p>
                   )}
-                  <p>Keep your reservation ID ready when you meet the team.</p>
-                  <p>
-                    Payment collection and final operational notes follow the
-                    terms shown on your booked experience page.
-                  </p>
+                  <p>Keep your reservation ID and voucher handy on your phone.</p>
+                  {isCustomBooking ? (
+                    <p>Free cancellation up to 24 hours before departure.</p>
+                  ) : (
+                    <p>
+                      Payment collection and final operational notes follow the
+                      terms shown on your booked experience page.
+                    </p>
+                  )}
                 </div>
               </section>
 

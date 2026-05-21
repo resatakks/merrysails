@@ -415,15 +415,27 @@ export default async function ReservationInvoicePage({
 
               <section className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5">
                 <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">
-                  Payment Note
+                  {isCustomBooking ? "Good to Know" : "Payment Note"}
                 </h3>
                 <div className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--body-text)]">
-                  <p>This reservation summary is linked to your booking record.</p>
-                  <p>Payment collection follows the operational terms of the booked experience.</p>
-                  <p>
-                    For corporate billing or formal invoice requests, contact the
-                    team before departure with your reservation ID.
-                  </p>
+                  {isCustomBooking ? (
+                    <>
+                      <p>Free cancellation up to 24 hours before departure.</p>
+                      <p>
+                        For any change to your booking, contact the team with
+                        your reservation ID.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>This reservation summary is linked to your booking record.</p>
+                      <p>Payment collection follows the operational terms of the booked experience.</p>
+                      <p>
+                        For corporate billing or formal invoice requests, contact the
+                        team before departure with your reservation ID.
+                      </p>
+                    </>
+                  )}
                 </div>
               </section>
             </div>

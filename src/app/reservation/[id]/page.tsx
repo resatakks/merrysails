@@ -70,6 +70,7 @@ export default async function ReservationDetailPage({ params }: { params: Promis
   const canCancel = r.status !== "cancelled" && r.status !== "completed" && (new Date(r.date).getTime() - now) > 24 * 60 * 60 * 1000;
   const isUpcoming = r.status !== "cancelled" && r.status !== "completed" && new Date(r.date).getTime() > now;
   const normalizedStatus = normalizeReservationStatus(r.status);
+  const isCustomBooking = !r.time;
   const departurePoint = tour?.departurePoint;
   const reservationMeta = parseReservationNotes(r.notes);
   const hasSelectedOptions = Boolean(
@@ -188,14 +189,18 @@ export default async function ReservationDetailPage({ params }: { params: Promis
           <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] p-5">
             <div className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-3">Good to Know</div>
             <div className="space-y-3">
-              <div className="flex items-start gap-3 text-sm text-[var(--body-text)]">
-                <Info className="w-4 h-4 text-[var(--brand-primary)] shrink-0 mt-0.5" />
-                <span>Payment is collected onboard — no prepayment needed</span>
-              </div>
-              <div className="flex items-start gap-3 text-sm text-[var(--body-text)]">
-                <Camera className="w-4 h-4 text-[var(--brand-primary)] shrink-0 mt-0.5" />
-                <span>Bring your camera — the Bosphorus views are spectacular!</span>
-              </div>
+              {!isCustomBooking && (
+                <div className="flex items-start gap-3 text-sm text-[var(--body-text)]">
+                  <Info className="w-4 h-4 text-[var(--brand-primary)] shrink-0 mt-0.5" />
+                  <span>Payment is collected onboard — no prepayment needed</span>
+                </div>
+              )}
+              {!isCustomBooking && (
+                <div className="flex items-start gap-3 text-sm text-[var(--body-text)]">
+                  <Camera className="w-4 h-4 text-[var(--brand-primary)] shrink-0 mt-0.5" />
+                  <span>Bring your camera — the Bosphorus views are spectacular!</span>
+                </div>
+              )}
               <div className="flex items-start gap-3 text-sm text-[var(--body-text)]">
                 <Shield className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                 <span>Free cancellation available up to 24 hours before departure</span>
