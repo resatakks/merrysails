@@ -244,20 +244,40 @@ export default function TourDetailClient({
           controls in the booking sidebar. Duration + Format remain static (no UX
           signal that they should be interactive). */}
       <div className="mb-8 grid grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-white md:grid-cols-4">
-        <div className="flex items-center gap-2.5 border-b border-r border-[var(--line)] px-5 py-4 md:border-b-0">
+        {/* Duration + Format are now also clickable — Clarity heatmap (2026-05-23)
+         * showed lingering dead clicks here even after the 2026-05-08 fix that
+         * only converted Departure + Pick-up. All four tiles now scroll to the
+         * booking sidebar so any tile a guest taps becomes useful action. */}
+        <button
+          type="button"
+          onClick={() => {
+            const el = document.getElementById("booking-sidebar");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          aria-label={`Open booking — duration ${tour.duration}`}
+          className="flex w-full items-center gap-2.5 border-b border-r border-[var(--line)] px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40 md:border-b-0"
+        >
           <Clock className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Duration</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tour.duration}</div>
           </div>
-        </div>
-        <div className="flex items-center gap-2.5 border-b border-[var(--line)] px-5 py-4 md:border-b-0 md:border-r">
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const el = document.getElementById("booking-sidebar");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          aria-label={`Open booking — format ${tourFormat}`}
+          className="flex w-full items-center gap-2.5 border-b border-[var(--line)] px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40 md:border-b-0 md:border-r"
+        >
           <Users className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
             <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Format</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tourFormat}</div>
           </div>
-        </div>
+        </button>
         <button
           type="button"
           onClick={() => {
