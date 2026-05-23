@@ -1,0 +1,122 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MerrySails Public API",
+    "summary": "Public reservation endpoint for Bosphorus cruises and yacht charter in Istanbul.",
+    "description": "MerrySails is a Bosphorus cruise & yacht charter operator. This document declares the public-facing reservation endpoint and discovery resources for AI agents and integrators.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "MerrySails Operations",
+      "url": "https://merrysails.com/contact"
+    },
+    "license": { "name": "Proprietary", "url": "https://merrysails.com/terms" }
+  },
+  "servers": [{ "url": "https://merrysails.com", "description": "Production" }],
+  "tags": [
+    { "name": "reservation", "description": "Cruise / yacht booking" },
+    { "name": "discovery", "description": "Site discovery resources" }
+  ],
+  "paths": {
+    "/sitemap.xml": {
+      "get": {
+        "tags": ["discovery"],
+        "operationId": "getSitemap",
+        "summary": "Sitemap.",
+        "responses": { "200": { "description": "XML sitemap", "content": { "application/xml": {} } } }
+      }
+    },
+    "/agents.md": {
+      "get": {
+        "tags": ["discovery"],
+        "operationId": "getAgentReference",
+        "summary": "Compact Markdown reference for AI agents.",
+        "responses": { "200": { "description": "Markdown document", "content": { "text/markdown": {} } } }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "tags": ["discovery"],
+        "operationId": "getLlmsIndex",
+        "summary": "LLM-friendly site index.",
+        "responses": { "200": { "description": "Plain text", "content": { "text/plain": {} } } }
+      }
+    },
+    "/api/reservation": {
+      "post": {
+        "tags": ["reservation"],
+        "operationId": "createReservation",
+        "summary": "Submit a cruise or yacht-charter reservation request.",
+        "description": "Equivalent of submitting the public reservation form at /reservation. Reviewed by a human operator who confirms via WhatsApp.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": { "schema": { "$ref": "#/components/schemas/ReservationRequest" } }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Reservation accepted, awaiting operator confirmation.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ReservationResponse" } } }
+          },
+          "400": { "description": "Validation error" },
+          "429": { "description": "Rate limit exceeded — wait 60s and retry." }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ReservationRequest": {
+        "type": "object",
+        "required": ["product", "date", "time", "guests", "name", "contact"],
+        "properties": {
+          "product": {
+            "type": "string",
+            "description": "Cruise or yacht type (e.g., bosphorus-dinner-cruise, sunset-cruise, private-yacht-charter, yacht-charter-istanbul).",
+            "example": "bosphorus-dinner-cruise"
+          },
+          "boatId": {
+            "type": "string",
+            "description": "Specific yacht slug if private charter (e.g., bosphorus-signature-yacht-36).",
+            "example": "bosphorus-signature-yacht-36"
+          },
+          "date": { "type": "string", "format": "date", "example": "2026-07-15" },
+          "time": { "type": "string", "example": "19:30" },
+          "duration": {
+            "type": "string",
+            "description": "Hours or preset duration (e.g., 2h, 3h, half-day).",
+            "example": "3h"
+          },
+          "guests": { "type": "integer", "minimum": 1, "maximum": 150, "example": 6 },
+          "pickupHotel": { "type": "string", "example": "Sultanahmet, Istanbul" },
+          "name": { "type": "string", "example": "Jane Doe" },
+          "contact": { "type": "string", "description": "Phone or email", "example": "+44 7700 900123" },
+          "occasion": {
+            "type": "string",
+            "description": "Optional context for personalization.",
+            "enum": ["dinner", "sunset", "proposal", "anniversary", "birthday", "corporate", "wedding", "other"]
+          },
+          "locale": {
+            "type": "string",
+            "enum": ["en", "tr", "de", "fr", "nl"],
+            "default": "en"
+          },
+          "notes": { "type": "string" }
+        }
+      },
+      "ReservationResponse": {
+        "type": "object",
+        "properties": {
+          "reservationId": { "type": "string", "example": "MSL-2026-07-15-A1B2" },
+          "status": { "type": "string", "enum": ["pending", "confirmed", "rejected"], "example": "pending" },
+          "estimatedPriceEur": { "type": "number", "example": 320 },
+          "whatsappLink": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Agent + booking reference (compact, preferred for AI consumption).",
+    "url": "https://merrysails.com/agents.md"
+  }
+}

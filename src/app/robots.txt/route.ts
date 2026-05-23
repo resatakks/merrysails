@@ -3,6 +3,7 @@ export function GET() {
 # https://merrysails.com
 
 User-agent: *
+Content-Signal: search=yes, ai-train=no, ai-input=yes
 Allow: /
 Disallow: /api/
 

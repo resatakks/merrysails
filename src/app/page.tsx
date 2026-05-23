@@ -255,6 +255,27 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
       />
+      {/* Speakable schema — surfaces key headings & FAQ answers to voice
+          assistants (Bing Copilot, Alexa, Google Assistant) and AI Overviews. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: "https://merrysails.com/",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: [
+                "h1",
+                "h2",
+                ".faq-question",
+                "[itemprop=\"acceptedAnswer\"]",
+              ],
+            },
+          }),
+        }}
+      />
       <HeroSection />
       <TourGrid />
 

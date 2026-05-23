@@ -222,6 +222,11 @@ const nextConfig: NextConfig = {
         key: "Permissions-Policy",
         value: "camera=(), microphone=(), geolocation=(self)",
       },
+      // Link header — declares sitemap relation for agent crawlers (RFC 8288)
+      {
+        key: "Link",
+        value: '<https://merrysails.com/sitemap.xml>; rel="sitemap"',
+      },
     ];
 
     if (process.env.NODE_ENV === "production") {
@@ -236,7 +241,46 @@ const nextConfig: NextConfig = {
         source: "/(.*)",
         headers: sharedHeaders,
       },
+      // RFC 9727 Linkset — agent API catalog
+      {
+        source: "/.well-known/api-catalog",
+        headers: [
+          { key: "Content-Type", value: "application/linkset+json" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400" },
+        ],
+      },
+      // OpenAPI document
+      {
+        source: "/openapi.json",
+        headers: [
+          { key: "Content-Type", value: "application/vnd.oai.openapi+json;version=3.1" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400" },
+        ],
+      },
+      // Explicit text/markdown for agents.md
+      {
+        source: "/agents.md",
+        headers: [
+          { key: "Content-Type", value: "text/markdown; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400" },
+        ],
+      },
     ];
+  },
+
+  // Markdown for Agents — content negotiation on homepage.
+  // When Accept: text/markdown, route "/" to /api/md (serves public/agents.md).
+  // Spec: https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          has: [{ type: "header", key: "accept", value: "(.*)text/markdown(.*)" }],
+          destination: "/api/md",
+        },
+      ],
+    };
   },
 };
 
