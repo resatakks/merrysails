@@ -1,6 +1,7 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { trackPixel } from "@/lib/meta-pixel";
 
 type AnalyticsPrimitive = string | number | boolean;
 type AnalyticsValue =
@@ -650,6 +651,17 @@ export function trackBeginCheckout(params: {
     tour_slug: params.tourSlug,
     value: params.value,
   });
+
+  // Meta Pixel + CAPI (auto-deduped via shared event_id).
+  trackPixel("InitiateCheckout", {
+    currency: params.currency ?? "EUR",
+    value: params.value,
+    content_name: params.tourName,
+    content_ids: [params.tourSlug],
+    content_category: "bosphorus-cruise",
+    content_type: "product",
+    num_items: params.guests,
+  });
 }
 
 export function trackPurchase(params: {
@@ -700,6 +712,28 @@ export function trackPurchase(params: {
     transaction_id: params.transactionId,
     value: params.value,
   });
+
+  // Meta Pixel + CAPI (PII hashed server-side in /api/meta-capi).
+  trackPixel(
+    "Purchase",
+    {
+      currency: params.currency ?? "EUR",
+      value: params.value,
+      content_name: params.tourName,
+      content_ids: [params.tourSlug],
+      content_category: "bosphorus-cruise",
+      content_type: "product",
+      num_items: params.guests,
+      order_id: params.transactionId,
+    },
+    {
+      email: params.customerEmail,
+      phone: params.customerPhone,
+      firstName: params.customerName?.split(" ")[0],
+      lastName: params.customerName?.split(" ").slice(1).join(" "),
+      externalId: params.transactionId,
+    },
+  );
 }
 
 export function trackContactSubmitSuccess(params: {
@@ -729,6 +763,22 @@ export function trackContactSubmitSuccess(params: {
     currency: CONVERSION_VALUE_CURRENCY,
     value: CONVERSION_VALUES.contact,
   });
+
+  // Meta Pixel + CAPI — contact form submit = Lead.
+  trackPixel(
+    "Lead",
+    {
+      content_name: params.subject,
+      content_category: "contact-form",
+      currency: CONVERSION_VALUE_CURRENCY,
+      value: CONVERSION_VALUES.contact,
+    },
+    {
+      email: params.customerEmail,
+      firstName: params.customerName?.split(" ")[0],
+      lastName: params.customerName?.split(" ").slice(1).join(" "),
+    },
+  );
 }
 
 export function trackBookingAbandonment(params: {
@@ -766,6 +816,25 @@ export function trackBookingAbandonment(params: {
     currency: CONVERSION_VALUE_CURRENCY,
     value: CONVERSION_VALUES.abandonment,
   });
+
+  // Meta Pixel + CAPI — booking abandonment = AddToCart (partial intent signal).
+  // Meta optimizes retargeting + custom audiences around this event.
+  trackPixel(
+    "AddToCart",
+    {
+      currency: "EUR",
+      value: params.value,
+      content_name: params.tourName,
+      content_ids: [params.tourSlug],
+      content_category: "bosphorus-cruise",
+      content_type: "product",
+      num_items: params.guests,
+    },
+    {
+      email: params.customerEmail,
+      phone: params.customerPhone,
+    },
+  );
 }
 
 export function trackPhoneClick(params: {
@@ -788,6 +857,14 @@ export function trackPhoneClick(params: {
     currency: CONVERSION_VALUE_CURRENCY,
     value: CONVERSION_VALUES.phone,
   });
+
+  // Meta Pixel + CAPI — phone click = Contact.
+  trackPixel("Contact", {
+    content_name: params.label,
+    content_category: "phone-click",
+    currency: CONVERSION_VALUE_CURRENCY,
+    value: CONVERSION_VALUES.phone,
+  });
 }
 
 export function trackWhatsAppClick(params: {
@@ -807,6 +884,16 @@ export function trackWhatsAppClick(params: {
 
   trackGoogleAdsConversion("whatsapp", {
     contact_intent: params.intent ?? "pre_booking",
+    currency: CONVERSION_VALUE_CURRENCY,
+    value: CONVERSION_VALUES.whatsapp,
+  });
+
+  // Meta Pixel + CAPI — WhatsApp click = Lead (high-intent contact).
+  // CAPI keeps attribution alive even when the click leaves the browser context
+  // (mobile WhatsApp app deep-link, ad blocker, iOS ATT).
+  trackPixel("Lead", {
+    content_name: params.label,
+    content_category: "whatsapp-click",
     currency: CONVERSION_VALUE_CURRENCY,
     value: CONVERSION_VALUES.whatsapp,
   });
