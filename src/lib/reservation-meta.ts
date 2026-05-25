@@ -74,6 +74,12 @@ function sanitizePricingSnapshot(
   return {
     currency: pricing.currency === "EUR" ? "EUR" : "EUR",
     guests: Math.max(1, Math.trunc(pricing.guests)),
+    guestBreakdown: pricing.guestBreakdown ?? {
+      adults: Math.max(1, Math.trunc(pricing.guests)),
+      children: 0,
+      infants: 0,
+    },
+    childDiscountSavings: pricing.childDiscountSavings ?? 0,
     priceMode: pricing.priceMode,
     lineItems,
     subtotal: roundMoney(pricing.subtotal),

@@ -39,6 +39,10 @@ interface CreateReservationInput {
   date: string;
   time: string;
   guests: number;
+  /** 3-8 yaş, 50% indirim (defaults to 0). Ignored in mixed-package bookings. */
+  children?: number;
+  /** 0-3 yaş, ücretsiz (defaults to 0). Ignored in mixed-package bookings. */
+  infants?: number;
   customerName: string;
   customerEmail: string;
   customerPhone: string;
@@ -269,6 +273,8 @@ export async function createReservation(input: CreateReservationInput) {
     const pricing = buildReservationPricingSnapshot({
       tourSlug: input.tourSlug,
       guests: input.guests,
+      children: input.children,
+      infants: input.infants,
       packageName: input.packageName,
       addOns: input.addOns,
       date: reservationDate,
@@ -322,6 +328,8 @@ export async function createReservation(input: CreateReservationInput) {
             pricing: {
               currency: pricing.currency,
               guests: pricing.guests,
+              guestBreakdown: pricing.guestBreakdown,
+              childDiscountSavings: pricing.childDiscountSavings,
               priceMode: pricing.priceMode,
               lineItems: pricing.lineItems,
               subtotal: pricing.subtotal,
@@ -368,6 +376,8 @@ export async function createReservation(input: CreateReservationInput) {
               pricing: {
                 currency: pricing.currency,
                 guests: pricing.guests,
+                guestBreakdown: pricing.guestBreakdown,
+                childDiscountSavings: pricing.childDiscountSavings,
                 priceMode: pricing.priceMode,
                 lineItems: pricing.lineItems,
                 subtotal: pricing.subtotal,
@@ -420,6 +430,11 @@ export async function createReservation(input: CreateReservationInput) {
                     guests,
                   }))
                 : undefined,
+              guestBreakdown: pricing.guestBreakdown,
+              childDiscountSavings:
+                pricing.childDiscountSavings > 0
+                  ? pricing.childDiscountSavings
+                  : undefined,
             }),
             attachments,
           });

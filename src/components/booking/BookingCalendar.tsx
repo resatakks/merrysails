@@ -57,7 +57,19 @@ interface Props {
   initialDate?: Date;
   initialGuests?: number;
   initialTime?: string;
-  onBook?: (date: Date, guests: number, time: string) => void;
+  /**
+   * Fires when the user confirms the booking step on the calendar. The 4th
+   * argument carries the optional child/infant breakdown introduced on
+   * 2026-05-25 — adults = guests - children - infants (kept backward
+   * compatible: legacy callers that read only the first three params still
+   * receive the full head count).
+   */
+  onBook?: (
+    date: Date,
+    guests: number,
+    time: string,
+    breakdown?: { children?: number; infants?: number },
+  ) => void;
 }
 
 interface TourOperationClientSnapshot {
@@ -110,7 +122,12 @@ export default function BookingCalendar({
   const [currentMonth, setCurrentMonth] = useState<Date | null>(safeInitialDate);
   const [selectedDate, setSelectedDate] = useState<Date | null>(safeInitialDate);
   const [adults, setAdults] = useState(safeInitialGuests);
+  // Çocuk indirimi (per ops 2026-05-25):
+  //   children: 3-8 yaş, paket fiyatının %50'si
+  //   infants:  0-3 yaş, ücretsiz
+  // Alkollü paket seçildiğinde her ikisi de 0'a sıfırlanır + sayaç UI disable.
   const [children, setChildren] = useState(0);
+  const [infants, setInfants] = useState(0);
   const [selectedTime, setSelectedTime] = useState(initialTime ?? "");
   const [operations, setOperations] = useState<TourOperationClientSnapshot[]>([]);
   const isPerGroup = priceMode === "perGroup";
@@ -124,7 +141,7 @@ export default function BookingCalendar({
   const activeDepartureTime =
     selectedOperation?.departureTimeOverride || departureTime;
 
-  const totalGuests = adults + children;
+  const totalGuests = adults + children + infants;
   const selectedDayOfWeek = selectedDate ? selectedDate.getDay() : -1;
   const isWeekdayDiscountDay = weekdayDiscount
     ? weekdayDiscount.weekdays.includes(selectedDayOfWeek)
@@ -133,13 +150,29 @@ export default function BookingCalendar({
     isWeekdayDiscountDay && weekdayDiscount
       ? weekdayDiscount.discountedPrice
       : priceEur;
-  const total = isPerGroup ? effectivePriceEur : effectivePriceEur * totalGuests;
+  // Alkollü paket detection — UI only; pricing layer also enforces this.
+  // Detect against tourName because BookingCalendar doesn't have the package
+  // object directly here; the parent (TourDetailClient) reflects the selected
+  // package into the tour heading. A separate prop would be cleaner; this keeps
+  // the surface change minimal for now.
+  const isAlcoholicSelection = /alcohol|with wine|şarapl|saraplı|şarapli|mit wein|avec vin|met wijn|unlimited alcohol/i.test(
+    tourName ?? "",
+  );
+  // If user toggled into an alcoholic package, snap child/infant back to 0.
+  // Guarded by a ref to avoid effect loops; this is a render-time correction.
+  const effectiveChildren = isAlcoholicSelection ? 0 : children;
+  const effectiveInfants = isAlcoholicSelection ? 0 : infants;
+  const childUnitPrice = Math.round(effectivePriceEur * 0.5 * 100) / 100;
+  const total = isPerGroup
+    ? effectivePriceEur
+    : effectivePriceEur * adults + childUnitPrice * effectiveChildren;
   const hasDiscount =
     typeof originalPriceEur === "number" && originalPriceEur > priceEur;
   const originalTotal = hasDiscount
     ? isPerGroup
       ? originalPriceEur
-      : originalPriceEur * totalGuests
+      : originalPriceEur * adults +
+        Math.round(originalPriceEur * 0.5 * 100) / 100 * effectiveChildren
     : undefined;
   const totalSavings = originalTotal ? originalTotal - total : 0;
   const timeOptions = parseTimeOptions(activeDepartureTime);
@@ -209,7 +242,12 @@ export default function BookingCalendar({
 
   const handleBookNow = () => {
     if (selectedDate && onBook) {
-      onBook(selectedDate, totalGuests, effectiveTime || activeDepartureTime || "");
+      onBook(
+        selectedDate,
+        totalGuests,
+        effectiveTime || activeDepartureTime || "",
+        { children: effectiveChildren, infants: effectiveInfants },
+      );
     }
   };
 
@@ -545,9 +583,9 @@ export default function BookingCalendar({
                     </span>
                     <button
                       onClick={() =>
-                        setAdults(Math.min(MAX_BOOKING_GUESTS - children, adults + 1))
+                        setAdults(Math.min(MAX_BOOKING_GUESTS - children - infants, adults + 1))
                       }
-                      disabled={adults + children >= MAX_BOOKING_GUESTS}
+                      disabled={adults + children + infants >= MAX_BOOKING_GUESTS}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
                     >
                       <Plus className="w-3.5 h-3.5" />
@@ -555,33 +593,88 @@ export default function BookingCalendar({
                   </div>
                 </div>
 
-                {/* Children */}
+                {/* Children — 3-8 yaş, %50 indirim */}
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-medium text-[var(--heading)]">
-                      Children
+                      Çocuk / Child
                     </div>
                     <div className="text-xs text-[var(--text-muted)]">
-                      Age 0–12
+                      3–8 yaş · %50 indirim
+                      {isAlcoholicSelection ? " · alkollü paketlere eklenemez" : ""}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setChildren(Math.max(0, children - 1))}
-                      disabled={children <= 0}
+                      disabled={children <= 0 || isAlcoholicSelection}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
+                      aria-label="Bir çocuk az"
                     >
                       <Minus className="w-3.5 h-3.5" />
                     </button>
                     <span className="font-bold w-8 text-center text-lg">
-                      {children}
+                      {effectiveChildren}
                     </span>
                     <button
                       onClick={() =>
-                        setChildren(Math.min(MAX_BOOKING_GUESTS - adults, children + 1))
+                        setChildren(
+                          Math.min(
+                            MAX_BOOKING_GUESTS - adults - infants,
+                            children + 1,
+                          ),
+                        )
                       }
-                      disabled={adults + children >= MAX_BOOKING_GUESTS}
+                      disabled={
+                        isAlcoholicSelection ||
+                        adults + children + infants >= MAX_BOOKING_GUESTS
+                      }
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
+                      aria-label="Bir çocuk fazla"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Infants — 0-3 yaş, ücretsiz */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm font-medium text-[var(--heading)]">
+                      Bebek / Infant
+                    </div>
+                    <div className="text-xs text-[var(--text-muted)]">
+                      0–3 yaş · ücretsiz
+                      {isAlcoholicSelection ? " · alkollü paketlere eklenemez" : ""}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => setInfants(Math.max(0, infants - 1))}
+                      disabled={infants <= 0 || isAlcoholicSelection}
+                      className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
+                      aria-label="Bir bebek az"
+                    >
+                      <Minus className="w-3.5 h-3.5" />
+                    </button>
+                    <span className="font-bold w-8 text-center text-lg">
+                      {effectiveInfants}
+                    </span>
+                    <button
+                      onClick={() =>
+                        setInfants(
+                          Math.min(
+                            MAX_BOOKING_GUESTS - adults - children,
+                            infants + 1,
+                          ),
+                        )
+                      }
+                      disabled={
+                        isAlcoholicSelection ||
+                        adults + children + infants >= MAX_BOOKING_GUESTS
+                      }
+                      className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
+                      aria-label="Bir bebek fazla"
                     >
                       <Plus className="w-3.5 h-3.5" />
                     </button>

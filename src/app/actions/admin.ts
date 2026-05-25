@@ -244,6 +244,8 @@ function buildManualPricingSnapshot(input: {
   return {
     currency: "EUR",
     guests: input.guests,
+    guestBreakdown: { adults: input.guests, children: 0, infants: 0 },
+    childDiscountSavings: 0,
     priceMode,
     lineItems: [
       {
@@ -311,6 +313,11 @@ async function sendReservationCustomerEmail(reservationId: string) {
     privateTransferRequested: meta.privateTransferRequested,
     notes: meta.customerNote,
     variant: isConfirmed ? "confirmed" as const : "received" as const,
+    guestBreakdown: meta.pricing?.guestBreakdown,
+    childDiscountSavings:
+      meta.pricing?.childDiscountSavings && meta.pricing.childDiscountSavings > 0
+        ? meta.pricing.childDiscountSavings
+        : undefined,
   };
 
   const attachments = await buildReservationPdfAttachments({

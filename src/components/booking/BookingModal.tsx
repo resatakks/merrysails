@@ -46,6 +46,10 @@ interface BookingDetails {
   date: string;
   time: string;
   guests: number;
+  /** 3-8 yaş — 50% indirim (defaults to 0). */
+  children?: number;
+  /** 0-3 yaş — ücretsiz (defaults to 0). */
+  infants?: number;
   selectedPackage?: PackageType;
   selectedAddOns: AddOn[];
   /** Full list of packages for this tour. Powers the optional "Some guests
@@ -389,6 +393,11 @@ export default function BookingModal({ booking, onClose }: Props) {
       date: booking.date,
       time: booking.time || "17:00",
       guests: booking.guests,
+      // Child/infant breakdown (2026-05-25): pricing layer applies a 50%
+      // discount to children (3-8) and €0 to infants (0-3). Mixed-package
+      // bookings ignore this breakdown server-side.
+      children: booking.children ?? 0,
+      infants: booking.infants ?? 0,
       customerName: name.trim(),
       customerEmail: email.trim(),
       customerPhone: phone.trim(),

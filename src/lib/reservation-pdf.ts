@@ -474,14 +474,32 @@ export async function generateReservationVoucherPdf(
   leftY = writeLabelValue(doc, "Email", safe(input.customerEmail), 14, leftY, 82) + 5;
   leftY = writeLabelValue(doc, "Phone", safe(input.customerPhone), 14, leftY, 82) + 5;
   if (!input.isCustomBooking) {
-    leftY = writeLabelValue(
-      doc,
-      "Guests",
-      `${input.guests} guest${input.guests > 1 ? "s" : ""}`,
-      14,
-      leftY,
-      82
-    ) + 5;
+    // Guest summary — show the adult/child/infant breakdown when it is
+    // present in the pricing snapshot, so the voucher matches the price
+    // breakdown line items below. Falls back to the total count for legacy
+    // reservations that pre-date the 2026-05-25 child-discount feature.
+    const breakdown = input.pricing?.guestBreakdown;
+    const guestSummary = (() => {
+      if (!breakdown) {
+        return `${input.guests} guest${input.guests > 1 ? "s" : ""}`;
+      }
+      const parts: string[] = [];
+      if (breakdown.adults > 0) {
+        parts.push(`${breakdown.adults} adult${breakdown.adults > 1 ? "s" : ""}`);
+      }
+      if (breakdown.children > 0) {
+        parts.push(
+          `${breakdown.children} child${breakdown.children > 1 ? "ren" : ""} (3-8)`,
+        );
+      }
+      if (breakdown.infants > 0) {
+        parts.push(
+          `${breakdown.infants} infant${breakdown.infants > 1 ? "s" : ""} (0-3)`,
+        );
+      }
+      return parts.length > 0 ? parts.join(", ") : `${input.guests} guests`;
+    })();
+    leftY = writeLabelValue(doc, "Guests", guestSummary, 14, leftY, 82) + 5;
   }
 
   let rightY = 88;

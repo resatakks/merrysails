@@ -60,6 +60,10 @@ export default function BookingSidebar({
   const [bookingModal, setBookingModal] = useState(false);
   const [bookingDate, setBookingDate] = useState<Date | null>(null);
   const [bookingGuests, setBookingGuests] = useState(2);
+  // Children (3-8 yaş) ve infants (0-3 yaş) breakdown — defaults to 0.
+  // Pricing layer applies 50% discount to children and €0 to infants.
+  const [bookingChildren, setBookingChildren] = useState(0);
+  const [bookingInfants, setBookingInfants] = useState(0);
   const [bookingTime, setBookingTime] = useState("");
   const [showMobileBar, setShowMobileBar] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(false);
@@ -109,7 +113,14 @@ export default function BookingSidebar({
   }, []);
 
   const handleBook = useCallback(
-    (date: Date, guests: number, time: string) => {
+    (
+      date: Date,
+      guests: number,
+      time: string,
+      breakdown?: { children?: number; infants?: number },
+    ) => {
+      const childrenCount = Math.max(0, breakdown?.children ?? 0);
+      const infantsCount = Math.max(0, breakdown?.infants ?? 0);
       trackBeginCheckout({
         date: format(date, "yyyy-MM-dd"),
         guests,
@@ -121,6 +132,8 @@ export default function BookingSidebar({
       });
       setBookingDate(date);
       setBookingGuests(guests);
+      setBookingChildren(childrenCount);
+      setBookingInfants(infantsCount);
       setBookingTime(time);
       setBookingModal(true);
     },
@@ -550,6 +563,8 @@ export default function BookingSidebar({
               date: format(bookingDate, "dd MMM yyyy"),
               time: bookingTime,
               guests: bookingGuests,
+              children: bookingChildren,
+              infants: bookingInfants,
               selectedPackage,
               selectedAddOns,
               availablePackages: tour.packages,

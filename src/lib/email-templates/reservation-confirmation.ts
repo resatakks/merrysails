@@ -36,6 +36,12 @@ interface ReservationConfirmationData {
   /** Mixed-package booking line items (≥2 entries). When set, renders the
    * package mix instead of the single `packageName` row. */
   items?: { packageName: string; guests: number }[];
+  /** Age-tier breakdown — 2026-05-25 child discount feature.
+   * adults pay full, children (3-8) pay 50%, infants (0-3) are free. */
+  guestBreakdown?: { adults: number; children: number; infants: number };
+  /** € saved via the child 50% discount. Surfaced as a "Çocuk indirimi"
+   * line under the price table when > 0. */
+  childDiscountSavings?: number;
 }
 
 function renderFactsTable(
@@ -275,8 +281,34 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           </tr>
           <tr>
             <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">Guests</td>
-            <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${data.guests} ${data.guests === 1 ? "guest" : "guests"}</td>
+            <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${
+              data.guestBreakdown && (data.guestBreakdown.children > 0 || data.guestBreakdown.infants > 0)
+                ? (() => {
+                    const parts: string[] = [];
+                    if (data.guestBreakdown.adults > 0) {
+                      parts.push(`${data.guestBreakdown.adults} adult${data.guestBreakdown.adults > 1 ? "s" : ""}`);
+                    }
+                    if (data.guestBreakdown.children > 0) {
+                      parts.push(`${data.guestBreakdown.children} child${data.guestBreakdown.children > 1 ? "ren" : ""} (3-8)`);
+                    }
+                    if (data.guestBreakdown.infants > 0) {
+                      parts.push(`${data.guestBreakdown.infants} infant${data.guestBreakdown.infants > 1 ? "s" : ""} (0-3)`);
+                    }
+                    return parts.join(", ");
+                  })()
+                : `${data.guests} ${data.guests === 1 ? "guest" : "guests"}`
+            }</td>
           </tr>
+          ${
+            data.childDiscountSavings && data.childDiscountSavings > 0
+              ? `
+          <tr>
+            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">Çocuk indirimi (3-8 %50, 0-3 ücretsiz)</td>
+            <td style="color:#16a34a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:700;">−${symbol}${data.childDiscountSavings}</td>
+          </tr>
+          `
+              : ""
+          }
           ${
             data.groupDiscountSavings && data.groupDiscountSavings > 0 && data.originalTotal
               ? `
