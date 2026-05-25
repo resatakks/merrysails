@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import fs from "node:fs";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
 import dotenv from "dotenv";
 
 let transporter: nodemailer.Transporter | null = null;
@@ -167,12 +168,43 @@ interface SendEmailOptions {
   to: string;
   subject: string;
   html: string;
+  /** Optional plain-text alternative.  If omitted, a stripped version of the
+   *  HTML is generated automatically so every outgoing email is multipart —
+   *  Gmail rewards multipart/alternative senders. */
+  text?: string;
   cc?: string | string[];
+  /** Optional override for the public Reply-To header.  Defaults to the
+   *  SMTP user (info@merrysails.com). */
+  replyTo?: string;
+  /** Mark as a transactional / system-generated email so receivers
+   *  (Gmail, Outlook) classify it correctly.  Defaults true since all
+   *  current senders are reservation / contact notifications. */
+  transactional?: boolean;
   attachments?: {
     filename: string;
     content: Buffer | string;
     contentType?: string;
   }[];
+}
+
+/** Strip HTML to a readable plain-text fallback for the multipart/alternative
+ *  body.  Not pretty, but Gmail just needs SOMETHING parseable. */
+function htmlToPlainText(html: string): string {
+  return html
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/p>/gi, "\n\n")
+    .replace(/<\/li>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 function normalizeRecipients(values: Array<string | null | undefined>): string[] {
@@ -210,18 +242,50 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function sendEmail({ to, subject, html, cc, attachments }: SendEmailOptions) {
+export async function sendEmail({
+  to,
+  subject,
+  html,
+  text,
+  cc,
+  replyTo,
+  transactional = true,
+  attachments,
+}: SendEmailOptions) {
   let lastError: unknown = null;
   const { fromName, fromEmail } = getMailerConfig();
+  const resolvedReplyTo = replyTo ?? fromEmail ?? "info@merrysails.com";
+  const plainText = text ?? htmlToPlainText(html);
+  const entityRefId = randomUUID();
+
+  // Headers that lift Gmail / Outlook deliverability without changing the
+  // visible content. List-Unsubscribe is required by Gmail's 2024 bulk
+  // sender rules and is a positive signal even for transactional senders.
+  // X-Entity-Ref-ID gives Gmail a stable per-message fingerprint so identical
+  // resend retries don't get flagged as duplicates.
+  const baseHeaders: Record<string, string> = {
+    "List-Unsubscribe": `<mailto:unsubscribe@merrysails.com?subject=unsubscribe>, <https://merrysails.com/unsubscribe?e=${encodeURIComponent(to)}>`,
+    "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+    "X-Entity-Ref-ID": entityRefId,
+  };
+
+  if (transactional) {
+    // Gmail uses this to classify the message as auto-generated; it suppresses
+    // out-of-office replies and signals "system mail, not promotional".
+    baseHeaders["Auto-Submitted"] = "auto-generated";
+  }
 
   for (let attempt = 0; attempt < SMTP_SEND_ATTEMPTS; attempt += 1) {
     try {
       return await getEmailTransporter().sendMail({
         from: `"${fromName}" <${fromEmail}>`,
+        replyTo: resolvedReplyTo,
         to,
         cc,
         subject,
         html,
+        text: plainText,
+        headers: baseHeaders,
         attachments,
       });
     } catch (error) {
@@ -250,6 +314,8 @@ export async function sendEmail({ to, subject, html, cc, attachments }: SendEmai
       cc,
       subject,
       html,
+      text: plainText,
+      headers: baseHeaders,
       attachments,
       replyTo: trimEnv(process.env.GMAIL_USER) ?? fallbackConfig.fromEmail,
     });
