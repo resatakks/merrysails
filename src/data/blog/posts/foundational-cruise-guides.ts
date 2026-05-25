@@ -309,7 +309,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-departure-points",
-    title: "Bosphorus Cruise Pier Guide 2026",
+    title: "Where to Board a Bosphorus Cruise 2026",
     metaDescription: "Where do Bosphorus cruises depart in 2026? Karaköy, Kabataş, Eminönü — exact pier-by-pier guide with €34 sunset / €30 dinner pricing. TURSAB licensed since 2001.",
     excerpt: "Know exactly where to go for your Bosphorus cruise. This guide covers all departure points in Istanbul with transport directions and tips for each location.",
     category: "cruise-guide",

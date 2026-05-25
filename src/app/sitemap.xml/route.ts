@@ -242,6 +242,8 @@ export function GET() {
   const blogPages: SitemapPage[] = allBlogPosts
     .filter((post) => {
       if (EXCLUDED_BLOG_SLUGS.has(post.slug)) return false;
+      // Drop noIndex posts from sitemap so Google doesn't try to crawl them again.
+      if ((post as { noIndex?: boolean }).noIndex) return false;
       if (seenBlogSlugs.has(post.slug)) return false;
       seenBlogSlugs.add(post.slug);
       return true;

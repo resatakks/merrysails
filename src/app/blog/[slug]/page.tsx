@@ -63,10 +63,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       languages: buildHreflang(`/blog/${post.slug}`),
     },
     robots: {
-      index: true,
+      index: !post.noIndex,
       follow: true,
       googleBot: {
-        index: true,
+        index: !post.noIndex,
         follow: true,
         "max-video-preview": -1,
         "max-image-preview": "large" as const,

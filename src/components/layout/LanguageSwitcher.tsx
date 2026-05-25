@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { ACTIVE_LOCALES, LOCALE_LABELS, LOCALIZED_ROUTES, type SiteLocale } from "@/i18n/config";
 
@@ -68,7 +69,6 @@ interface Props {
 
 export default function LanguageSwitcher({ className = "", compact = false }: Props) {
   const pathname = usePathname() ?? "/";
-  const router = useRouter();
   const { locale: currentLocale, route } = detectFromPathname(pathname);
   // Click-toggle (not hover-only): hover menus are dead clicks on desktop and
   // completely unreachable on touch devices. Clarity showed the language
@@ -96,12 +96,6 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
-
-  const handleSwitch = (target: SiteLocale) => {
-    setOpen(false);
-    if (target === currentLocale) return;
-    router.push(buildTargetPath(target, route));
-  };
 
   const activeLocales = ACTIVE_LOCALES as SiteLocale[];
 
@@ -131,25 +125,29 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
       >
         <div className="min-w-[168px] rounded-xl border border-gray-100 bg-white py-1.5 shadow-lg ring-1 ring-black/5">
           {activeLocales.map((locale) => {
+            const targetHref = buildTargetPath(locale, route);
+            const isCurrent = locale === currentLocale;
             return (
-              <button
+              <Link
                 key={locale}
-                type="button"
-                onClick={() => handleSwitch(locale)}
+                href={targetHref}
+                hrefLang={locale}
+                onClick={() => setOpen(false)}
+                aria-current={isCurrent ? "page" : undefined}
                 className={`flex w-full items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
-                  locale === currentLocale
+                  isCurrent
                     ? "bg-[var(--surface-alt)] font-semibold text-[var(--brand-primary)]"
                     : "text-[var(--body-text)] hover:bg-[var(--surface-alt)] hover:text-[var(--brand-primary)]"
                 }`}
               >
                 <span className="text-base leading-none">{LOCALE_FLAGS[locale]}</span>
                 <span className="flex-1 text-left">{LOCALE_LABELS[locale]}</span>
-                {locale === currentLocale && (
+                {isCurrent && (
                   <svg className="h-3.5 w-3.5 shrink-0 text-[var(--brand-primary)]" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 )}
-              </button>
+              </Link>
             );
           })}
         </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getAuthor } from "@/data/team";
 import { Shield } from "lucide-react";
 
@@ -33,6 +34,10 @@ export function AuthorCard({ authorId, variant = "compact" }: { authorId?: strin
         </div>
         <p className="text-xs text-[var(--text-muted)] mt-0.5">{author.role}</p>
         <p className="text-sm text-[var(--body-text)] mt-2 leading-relaxed">{author.bio}</p>
+        <p className="text-xs text-[var(--text-muted)] mt-3 leading-relaxed">
+          Learn more <Link href="/about" className="text-[var(--brand-primary)] hover:underline">about MerrySails</Link> &amp; our <Link href="/about/team" className="text-[var(--brand-primary)] hover:underline">licensed crew</Link>, or{" "}
+          <Link href="/contact" className="text-[var(--brand-primary)] hover:underline">contact us</Link> to plan your Bosphorus trip.
+        </p>
       </div>
     </div>
   );

@@ -99,6 +99,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-street-food-guide",
+    noIndex: true,
     title: "Istanbul Street Food — 15 Must-Try Bites",
     metaDescription: "Best Istanbul street food guide. Try simit, döner, balık ekmek, lahmacun, kumpir & more. Where to find them, prices & local tips. Updated 2026.",
     excerpt: "Istanbul's street food scene is legendary. From simit carts to fish sandwich boats, discover the 15 must-try street foods and where to find the best versions.",
@@ -243,6 +244,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "best-restaurants-near-bosphorus",
+    noIndex: true,
     title: "Best Restaurants Near the Bosphorus Istanbul",
     metaDescription: "Find the best restaurants near the Bosphorus in Istanbul with waterfront views. From fresh seafood to Ottoman cuisine, here's where to eat with a view.",
     excerpt: "Dine with a Bosphorus view at Istanbul's best waterfront restaurants — from casual fish restaurants to fine dining, here are the top picks for every budget.",
@@ -341,6 +343,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "grand-bazaar-shopping-guide",
+    noIndex: true,
     title: "Grand Bazaar Istanbul — Shopping Guide",
     metaDescription: "Navigate the Grand Bazaar in Istanbul like a pro. Our shopping guide covers what to buy, how to bargain, best stalls, and insider tips for first-timers.",
     excerpt: "The Grand Bazaar is one of the world's oldest and largest covered markets. This guide helps you navigate, bargain, and find genuine treasures.",
@@ -390,6 +393,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "kadikoy-asian-side-istanbul",
+    noIndex: true,
     title: "Kadikoy — Istanbul's Asian Side Guide",
     metaDescription: "Discover Kadikoy and Istanbul's Asian side with our local guide. Explore markets, street food, cafes, and neighborhoods tourists haven't found yet.",
     excerpt: "Cross the Bosphorus to discover Istanbul's authentic Asian side — [Kadıköy](https://en.wikipedia.org/wiki/Kad%C4%B1k%C3%B6y)'s vibrant markets, Moda's seaside charm, and the local culture tourists rarely see.",
@@ -439,6 +443,7 @@ export const istanbulCityGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-nightlife-guide",
+    noIndex: true,
     title: "Istanbul Nightlife — Bars, Clubs & Rooftops",
     metaDescription: "Istanbul nightlife guide. Best rooftop bars, live music venues, meyhanes & clubs in the [Beyoğlu](https://en.wikipedia.org/wiki/Beyo%C4%9Flu) district, Karaköy, Bebek & Kadıköy. Where locals go out after dark.",
     excerpt: "Istanbul's nightlife ranges from rooftop cocktail bars to traditional meyhane taverns and thumping clubs. Here is where to go for the best after-dark experiences.",

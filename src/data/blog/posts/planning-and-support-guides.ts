@@ -219,6 +219,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-transportation-guide-tourists",
+    noIndex: true,
     title: "Istanbul Transportation Guide for Tourists",
     metaDescription: "Get around Istanbul with ease using our tourist transportation guide. Compare the metro, tram, ferry, and bus options to plan every journey confidently.",
     excerpt: "Istanbul's transport system is extensive and affordable. This guide covers everything from airport transfers to ferries, trams, and the essential Istanbulkart.",
@@ -404,6 +405,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-museums-near-bosphorus",
+    noIndex: true,
     title: "Top 5 Museums Near the Bosphorus (2026)",
     metaDescription: "Insider guide to Istanbul's best waterfront museums — Dolmabahce, [Istanbul Modern](https://en.wikipedia.org/wiki/Istanbul_Modern) & more. Combine with a 4.9★ cruise from €15. Book your perfect museum-cruise day.",
     excerpt: "The Bosphorus waterfront is lined with world-class museums. From contemporary art to Ottoman history, discover the cultural treasures along Istanbul's iconic strait.",
@@ -453,6 +455,7 @@ export const planningAndSupportGuides: BlogPost[] = [
   },
 {
     slug: "istanbul-seaside-neighborhoods",
+    noIndex: true,
     title: "Istanbul Seaside Neighborhoods — Local Guide",
     metaDescription: "Explore Istanbul's seaside neighborhoods: [Bebek](https://en.wikipedia.org/wiki/Bebek,_Istanbul), Arnavutköy, the [Ortaköy](https://en.wikipedia.org/wiki/Ortak%C3%B6y) neighborhood, Kuzguncuk & more. Waterfront walks, cafes & local charm along the Bosphorus.",
     excerpt: "Istanbul's Bosphorus-side neighborhoods each have distinct character. From upscale Bebek to charming Kuzguncuk, discover the waterfront areas locals love most.",

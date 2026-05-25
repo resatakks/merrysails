@@ -458,7 +458,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "private-yacht-party-istanbul-guide",
-    title: "Private Yacht Party Istanbul 2026 Guide",
+    title: "Yacht Party Istanbul 2026: From €280",
     metaDescription: "Plan a private yacht party in Istanbul with the right guest count, yacht class, food, styling, and booking flow. A practical Bosphorus celebration guide for 2026.",
     excerpt: "Everything you need to plan an unforgettable private yacht party on the Bosphorus, from choosing the right yacht and service level to music, catering, decorations, and boarding logistics.",
     category: "yacht-guide",
@@ -1417,7 +1417,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-vs-princes-islands",
-    title: "Bosphorus Cruise vs Princes Islands Tour",
+    title: "Bosphorus Cruise vs Princes Islands: Which?",
     metaDescription: "Bosphorus cruise or Princes Islands tour? Compare duration, cost, experience & best season for each. Honest advice to help you choose the right Istanbul boat trip.",
     excerpt: "Two of Istanbul's best water experiences — but which one suits your trip? We compare the Bosphorus cruise and Princes Islands tour side by side to help you decide.",
     category: "cruise-guide",
@@ -1723,7 +1723,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-family-cruise-kids-guide",
-    title: "Bosphorus Cruise with Kids 2026",
+    title: "Bosphorus Cruise with Kids: 2026 Family Guide",
     metaDescription: "Sightseeing, sunset or private yacht — which Bosphorus cruise suits your family? Age-by-age guide with duration, evening timing and booking tips.",
     excerpt: "This family support guide helps parents match children's ages and energy levels to the right Bosphorus cruise format instead of using it as a broad generic cruise page.",
     category: "tips",
@@ -2169,7 +2169,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
 ,
   {
     slug: "princes-islands-istanbul-day-trip-guide-2026",
-    title: "Princes Islands Day Trip 2026",
+    title: "Princes Islands Day Trip: Ferry or Yacht 2026",
     metaDescription: "Princes Islands day trip from Istanbul 2026: ferry vs private yacht from €280. Büyükada, Heybeliada — full guide. TURSAB licensed since 2001.",
     excerpt: "The Princes Islands are Istanbul's most underrated escape: four car-free islands 90 minutes by ferry, each with Ottoman mansions, horse-drawn carriages, and Bosphorus panoramas. Here is everything you need to plan your 2026 day trip.",
     category: "cruise-guide",
