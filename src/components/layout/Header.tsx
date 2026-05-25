@@ -211,15 +211,20 @@ export default function Header() {
       >
         <div className="container-main">
           <div className="flex h-[3.75rem] items-center justify-between gap-2 sm:h-16 sm:gap-3">
-            <Link href={locale === "en" ? "/" : `/${locale}`} className="flex min-w-0 items-center gap-2 shrink">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-primary)] sm:h-10 sm:w-10">
+            <Link
+              href={locale === "en" ? "/" : `/${locale}`}
+              className="flex min-w-0 shrink items-center gap-2"
+              translate="no"
+            >
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[var(--brand-primary)] sm:h-10 sm:w-10">
                 <Anchor className="h-4 w-4 text-white sm:h-5 sm:w-5" />
               </div>
-              <div className="min-w-0" translate="no">
-                <span className="block truncate text-lg font-bold leading-none text-[var(--heading)] sm:text-xl">
+              <div className="min-w-0 leading-tight">
+                <span className="block whitespace-nowrap text-base font-bold text-[var(--heading)] sm:text-lg lg:text-xl">
                   Merry<span className="text-[var(--brand-primary)]">Sails</span>
                 </span>
-                <span className="mt-0.5 block text-[9px] leading-none text-[var(--text-muted)] sm:text-[10px]">
+                {/* Sub-tagline hidden on mobile + tablet to prevent header overflow; appears only on lg+ */}
+                <span className="mt-0.5 hidden whitespace-nowrap text-[10px] leading-none text-[var(--text-muted)] lg:block">
                   Merry Tourism
                 </span>
               </div>
