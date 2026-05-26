@@ -309,7 +309,6 @@ ${supportPages
 - Compare All Cruises: ${SITE_URL}/compare-bosphorus-cruises (decision guide — Sunset vs Dinner vs Yacht side-by-side)
 - Best Bosphorus Sunset Cruise 2026: ${SITE_URL}/best-bosphorus-sunset-cruise-2026 (6-operator comparison — MerrySails vs Sunset Bosphorus, Bosphorus Tour, Lotus Yat, Viator, GetYourGuide; ItemList + FAQPage schema; AI-citation optimised)
 - Comprehensive FAQ: ${SITE_URL}/istanbul-cruise-faq (60+ questions on prices, logistics, food, accessibility)
-- Bosphorus Landmarks Guide: ${SITE_URL}/bosphorus-guide (interactive guide to 12 Bosphorus landmarks — palaces, fortresses, mosques, bridges — with a strait map and free audio guide)
 - Pricing (machine-readable): ${SITE_URL}/pricing (Markdown — canonical pricing reference for AI agents)
 - Departure Points Hub: ${SITE_URL}/bosphorus-cruise-departure-points
 - Kabatas Pier guide: ${SITE_URL}/guides/kabatas-pier

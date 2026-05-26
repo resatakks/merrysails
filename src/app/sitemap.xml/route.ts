@@ -160,7 +160,7 @@ export function GET() {
     { url: `${SITE_URL}/compare-bosphorus-cruises`, changefreq: "monthly", priority: "0.85", lastmod: contentLastmod },
     { url: `${SITE_URL}/best-bosphorus-sunset-cruise-2026`, changefreq: "monthly", priority: "0.82", lastmod: contentLastmod },
     { url: `${SITE_URL}/istanbul-cruise-faq`, changefreq: "monthly", priority: "0.80", lastmod: contentLastmod },
-    { url: `${SITE_URL}/bosphorus-guide`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod },
+    // { url: `${SITE_URL}/bosphorus-guide`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod }, // parked 2026-05-26 — page returns 404
     { url: `${SITE_URL}/about`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/about") },
     { url: `${SITE_URL}/contact`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/contact") },
     { url: `${SITE_URL}/faq`, changefreq: "monthly", priority: "0.5", lastmod: contentLastmod, hreflang: hreflangXml("/faq") },

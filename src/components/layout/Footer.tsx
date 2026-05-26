@@ -111,7 +111,6 @@ const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
       { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
       { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
       { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
-      { label: "Bosphorus Landmarks Guide", href: "/bosphorus-guide" },
     ],
     partnerLinks: [
       { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },

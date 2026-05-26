@@ -1,3 +1,14 @@
+import { notFound } from "next/navigation";
+
+// /bosphorus-guide page parked 2026-05-26 — returns 404 to remove the audio-guide
+// landing page from the public site. To restore, delete the notFound() call and
+// uncomment the original implementation in the block below.
+
+export default function BosphorusGuidePage() {
+  notFound();
+}
+
+/* ===== Original page (commented out 2026-05-26) =====
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildHreflang } from "@/lib/hreflang";
@@ -132,3 +143,4 @@ export default function BosphorusGuidePage() {
     </>
   );
 }
+===== End commented block ===== */
