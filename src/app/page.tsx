@@ -185,7 +185,7 @@ const coreBookingPages = [
     eyebrow: "Premium charter",
     title: "Yacht Charter Istanbul",
     description: "Private charter demand with yacht packages, add-ons, and higher-ticket booking intent.",
-    image: "/images/tours/yacht-charter-in-istanbul/02.jpeg",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
   },
 ] as const;
 

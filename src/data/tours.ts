@@ -386,33 +386,12 @@ export const tours: Tour[] = [
     highlights: ["Silver and Gold package ladder", "Guaranteed VIP tables on Gold", "Dinner service", "Turkish night entertainment", "Hotel transfer from central areas"],
     badge: "Best Seller",
     badgeColor: "bg-[var(--brand-primary)] text-white",
-    image: "/images/dinner-etkinlik-13.jpeg",
-    gallery: [
-      "/images/dinner-etkinlik-13.jpeg",
-      "/images/dinner-etkinlik.jpeg",
-      "/images/dinner-etkinlik-2.jpeg",
-      "/images/dinner-etkinlik-3.jpeg",
-      "/images/dinner-etkinlik-4.jpeg",
-      "/images/dinner-etkinlik-5.jpeg",
-      "/images/dinnet-etkinlik-6.jpeg",
-      "/images/dinner-etkinlik-7.jpeg",
-      "/images/dinner-etkinlik-8.jpeg",
-      "/images/dinner-etkinlik-9.jpeg",
-      "/images/dinner-etkinlik-10.jpeg",
-      "/images/dinner-etkinlik-11.jpeg",
-      "/images/dinner-etkinlik-12.jpeg",
-      "/images/dinner-etkinlik-13.jpeg",
-      "/images/vip-menu.jpeg",
-      "/images/vip-menu-1.jpeg",
-      "/images/vip-menu-2.jpeg",
-      "/images/fix-vip-menu.jpeg",
-      "/images/fix-vip-menu-2.jpeg",
-      "/images/meze.jpeg",
-      "/images/meze-1.jpeg",
-      "/images/vip-meyve.jpeg",
-      "/images/balik-fix-vip.jpeg",
-      "/images/vegan-fix-vip.jpeg",
-    ],
+    // DMCA-disputed images moved off public/ on 2026-05-26 pending resolution.
+    // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
+    // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
+    // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    gallery: [],
     route: "Kabatas departure → illuminated Bosphorus route → return to central pier",
     departureTime: "20:30",
     departurePoint: "Kabatas Pier",
@@ -546,15 +525,12 @@ export const tours: Tour[] = [
     ],
     badge: "Premium",
     badgeColor: "bg-amber-500 text-white",
-    image: "/images/tours/yacht-charter-in-istanbul/01.webp",
-    gallery: [
-      "/images/tours/yacht-charter-in-istanbul/01.webp",
-      "/images/tours/yacht-charter-in-istanbul/02.webp",
-      "/images/tours/yacht-charter-in-istanbul/03.webp",
-      "/images/tours/yacht-charter-in-istanbul/04.webp",
-      "/images/tours/yacht-charter-in-istanbul/05.webp",
-      "/images/tours/yacht-charter-in-istanbul/06.webp",
-    ],
+    // DMCA-disputed images moved off public/ on 2026-05-26 pending resolution.
+    // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
+    // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
+    // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    gallery: [],
     route: "Custom route based on preference",
     departureTime: "Flexible",
     departurePoint: "Bosphorus marina confirmed with yacht assignment",
@@ -661,15 +637,12 @@ export const tours: Tour[] = [
     highlights: ["Private sunset experience", "Maiden's Tower views", "Dolmabahçe Palace", "Bosphorus Bridge", "Professional crew"],
     badge: "Romantic",
     badgeColor: "bg-rose-500 text-white",
-    image: "/images/tours/private-bosphorus-sunset-cruise/01.webp",
-    gallery: [
-      "/images/tours/private-bosphorus-sunset-cruise/01.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/02.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/03.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/04.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/05.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/06.webp",
-    ],
+    // DMCA-disputed images moved off public/ on 2026-05-26 pending resolution.
+    // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
+    // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
+    // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    gallery: [],
     route: "Kuruçeşme → Maiden's Tower → Bosphorus Bridge → Return",
     departureTime: "Timed with sunset",
     departurePoint: "Kuruçeşme Marina",
@@ -698,15 +671,12 @@ export const tours: Tour[] = [
     highlights: ["Private dining", "Gourmet Turkish cuisine", "Illuminated Bosphorus", "Candlelit atmosphere", "Flexible timing"],
     badge: "Gourmet",
     badgeColor: "bg-[var(--brand-primary)] text-white",
-    image: "/images/tours/private-bosphorus-dinner-yacht-cruise/01.webp",
-    gallery: [
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/01.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/02.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/03.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/04.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/05.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/06.webp",
-    ],
+    // DMCA-disputed images moved off public/ on 2026-05-26 pending resolution.
+    // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
+    // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
+    // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    gallery: [],
     route: "Kuruçeşme → Bosphorus Night Tour → Return",
     departureTime: "19:00 / 20:00",
     departurePoint: "Kuruçeşme Marina",
@@ -820,15 +790,12 @@ export const tours: Tour[] = [
     highlights: ["Maiden's Tower backdrop", "Sunset timing", "Romantic decoration", "Complete privacy", "Customizable"],
     badge: "Romantic",
     badgeColor: "bg-rose-500 text-white",
-    image: "/images/tours/romantic-marriage-proposal/01.webp",
-    gallery: [
-      "/images/tours/romantic-marriage-proposal/01.webp",
-      "/images/tours/romantic-marriage-proposal/02.webp",
-      "/images/tours/romantic-marriage-proposal/03.webp",
-      "/images/tours/romantic-marriage-proposal/04.webp",
-      "/images/tours/romantic-marriage-proposal/05.webp",
-      "/images/tours/romantic-marriage-proposal/06.webp",
-    ],
+    // DMCA-disputed images moved off public/ on 2026-05-26 pending resolution.
+    // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
+    // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
+    // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    gallery: [],
     route: "Special romantic route (around Maiden's Tower)",
     departureTime: "Timed with sunset",
     departurePoint: "Kuruçeşme Marina",
