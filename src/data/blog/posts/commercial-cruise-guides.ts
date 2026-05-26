@@ -1079,7 +1079,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-prices-2026",
-    title: "Bosphorus Cruise Prices 2026 Comparison",
+    title: "Bosphorus Cruise Prices 2026: From €30",
     metaDescription: "Use this Bosphorus price guide after the main compare hub to understand the MerrySails sunset, dinner, and yacht ladders without confusing the broad owner page.",
     excerpt: "This price guide explains the MerrySails sunset, dinner, and yacht ladders after the main Bosphorus cruise hub has already handled the broad-intent comparison.",
     category: "cruise-guide",
@@ -1723,6 +1723,7 @@ export const commercialCruiseGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-family-cruise-kids-guide",
+    noIndex: true,
     title: "Bosphorus Cruise with Kids: 2026 Family Guide",
     metaDescription: "Sightseeing, sunset or private yacht — which Bosphorus cruise suits your family? Age-by-age guide with duration, evening timing and booking tips.",
     excerpt: "This family support guide helps parents match children's ages and energy levels to the right Bosphorus cruise format instead of using it as a broad generic cruise page.",

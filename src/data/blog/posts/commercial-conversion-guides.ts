@@ -420,6 +420,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
 {
     slug: "bosphorus-cruise-vs-ferry",
+    noIndex: true,
     title: "Bosphorus Cruise vs Public Ferry Istanbul",
     metaDescription: "Bosphorus cruise or Şehir Hatları ferry? Compare price, comfort, route, food & experience. Honest side-by-side guide to help you choose the best Bosphorus boat trip in Istanbul.",
     excerpt: "Should you take a private Bosphorus cruise or the public Şehir Hatları ferry? We compare price, comfort, duration, food, and overall experience to help you make the right choice.",
