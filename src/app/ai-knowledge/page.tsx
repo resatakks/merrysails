@@ -197,7 +197,7 @@ const knowledgeData = {
       capacity: "Shared (open)",
       pricingEUR: "from EUR 30 (Mon, Tue & Thu) / EUR 34 (other days) without wine; from EUR 35 (Mon, Tue & Thu) / EUR 40 with wine",
       rating: "4.93/5 from 621+ reviews",
-      includes: "Soft drinks, Turkish tea, coffee, fruit, snacks, live English guide, 12-language audio guide",
+      includes: "Hot drinks (tea, Turkish coffee), cold drinks (iced tea, lemonade, juice, water), snack platter (mixed nuts, crackers, fruit), live English-speaking guide",
       bookingUrl: "https://merrysails.com/cruises/bosphorus-sunset-cruise",
     },
     {

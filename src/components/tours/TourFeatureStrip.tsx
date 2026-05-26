@@ -71,7 +71,7 @@ export default function TourFeatureStrip({ brand = "MerrySails" }: Props) {
             </span>
           </div>
           <Link
-            href="/bosphorus-guide"
+            href="/bosphorus-cruise"
             className="text-xs font-bold text-[var(--brand-primary)] hover:underline"
           >
             Open the interactive guide →

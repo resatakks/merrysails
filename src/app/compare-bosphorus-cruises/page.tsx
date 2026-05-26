@@ -31,7 +31,7 @@ const CRUISE_OPTIONS = [
     priceTo: 40,
     priceNote: "per person",
     capacity: "Up to 80",
-    includes: ["Live guide", "Tea, coffee, lemonade", "Light snacks", "Audio guide (12 languages)"],
+    includes: ["Live English-speaking guide", "Hot & cold drinks", "Snack platter"],
     excludes: ["Dinner", "Hotel pickup"],
     departTime: "1.5h before sunset",
     bestFor: "Couples, photographers, first-time visitors on a budget",

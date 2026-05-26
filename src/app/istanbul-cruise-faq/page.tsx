@@ -132,11 +132,11 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "Is there a live guide on the cruise?",
-        a: "Yes, the Sunset Cruise includes a live English-speaking guide explaining landmarks (Dolmabahçe Palace, Ortaköy Mosque, Bosphorus bridges, Beylerbeyi Palace). The dinner cruise focuses on dinner and entertainment but staff are bilingual. Audio guides are available in 12 languages.",
+        a: "Yes, the Sunset Cruise includes a live English-speaking guide explaining landmarks (Dolmabahçe Palace, Ortaköy Mosque, Bosphorus bridges, Beylerbeyi Palace). The dinner cruise focuses on dinner and entertainment but staff are bilingual.",
       },
       {
         q: "What languages are guides available in?",
-        a: "Live guides primarily speak English and Turkish. Audio guides on the Sunset Cruise are available in 12 languages: English, Turkish, German, French, Spanish, Italian, Russian, Arabic, Chinese, Japanese, Korean, Portuguese.",
+        a: "Live commentary on the Sunset Cruise is provided in English. Crew members are bilingual (English / Turkish) and can assist in additional languages on request.",
       },
       {
         q: "Can I drink alcohol on the cruise if I'm under 21?",

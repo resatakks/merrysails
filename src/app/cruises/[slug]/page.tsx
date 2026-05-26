@@ -136,8 +136,8 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
   "bosphorus-sightseeing-cruise": [
     { question: "How long is the short Bosphorus sightseeing cruise?", answer: "The Bosphorus short cruise lasts 1.5 hours, making it perfect for travelers with limited time. You'll see all the essential landmarks including Maiden's Tower, Dolmabahçe Palace, and Ortaköy Mosque." },
     { question: "What time does the sightseeing cruise depart?", answer: "The sightseeing cruise offers three daily departure times: 10:00, 14:00, and 16:00 from Eminönü Pier. This gives you flexibility to fit the cruise into your Istanbul itinerary." },
-    { question: "Is there an audio guide on the sightseeing cruise?", answer: "Yes, the cruise includes a professional audio guide available in 12 languages. The commentary covers the history and significance of each landmark you pass, bringing centuries of Istanbul's heritage to life." },
-    { question: "How much does the Bosphorus sightseeing cruise cost?", answer: "The Bosphorus short cruise costs just €15 per person, making it one of the most affordable ways to experience the Bosphorus. The price includes audio guide, soft drinks, WiFi, and designated photo spots." },
+    { question: "Is there a live guide on the sightseeing cruise?", answer: "Yes, the cruise includes a live English-speaking guide who narrates the history and significance of each landmark you pass." },
+    { question: "How much does the Bosphorus sightseeing cruise cost?", answer: "The Bosphorus short cruise costs just €15 per person, making it one of the most affordable ways to experience the Bosphorus. The price includes a live guide, soft drinks, WiFi, and designated photo spots." },
     { question: "What landmarks will I see on the Bosphorus cruise?", answer: "The cruise route passes Maiden's Tower, Dolmabahçe Palace, Ortaköy Mosque, and offers stunning views of both European and Asian continental shorelines. The 1.5-hour route covers the most photogenic section of the strait." },
   ],
   "istanbul-princes-island-tour": [
@@ -310,7 +310,7 @@ export function generateStaticParams() {
 const metaOverrides: Record<string, { title: string; description: string }> = {
   "bosphorus-sightseeing-cruise": {
     title: "Bosphorus Sightseeing Cruise Istanbul — €15",
-    description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with an audio guide in 12 languages.",
+    description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with a live English-speaking guide.",
   },
   "bosphorus-sunset-cruise": {
     title: "Bosphorus Sunset Cruise Istanbul — From €30",

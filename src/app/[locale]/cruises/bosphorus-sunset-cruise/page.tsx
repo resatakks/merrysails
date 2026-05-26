@@ -57,7 +57,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     aboutBody: [
       "MerrySails Boğaz Gün Batımı Turu, İstanbul'un en ikonik manzaralarını altın saat ışığında izlemek isteyen misafirler için tasarlanmış 2 saatlik paylaşımlı lüks yat deneyimidir. Tur iki net seçenek sunar: Şarapsız €30 (Sal & Per) / €34 (diğer günler), Şaraplı €35 (Sal & Per) / €40 (diğer günler). Pazartesi, Salı ve Perşembe rezervasyonu yapan misafirler kişi başı €4 tasarruf eder.",
       "Yola çıkış Karaköy iskelesinden yapılır; gün batımından 30 dakika önce hareket ederek en güçlü altın saat ışığını yakalamayı garanti eder. Fotoğraf meraklıları için güneş Boğaz ekseni boyunca Marmara'ya doğru alçalır ve köprü silüetlerini ateş tonlarında boyar. Bu ışık penceresi yaklaşık 40 dakika sürer.",
-      "Güzergah Boğaz'ın güney kesimini kapsar: Dolmabahçe Sarayı cephesinden geçilir, Kız Kulesi önünde yavaşlanır, Ortaköy Camii ile Boğaz Köprüsü yan yana çerçevelenir, ardından Rumeli Hisarı görüntülenerek geri dönülür. Canlı rehber eşliğinde 12 dilde sesli rehber aktif olup çay, Türk kahvesi, limonata, su, atıştırmalık ve meyve tabağı tüm biletlere dahildir. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir.",
+      "Güzergah Boğaz'ın güney kesimini kapsar: Dolmabahçe Sarayı cephesinden geçilir, Kız Kulesi önünde yavaşlanır, Ortaköy Camii ile Boğaz Köprüsü yan yana çerçevelenir, ardından Rumeli Hisarı görüntülenerek geri dönülür. Canlı İngilizce rehber eşliğinde sıcak içecekler (çay, Türk kahvesi), soğuk içecekler (buzlu çay, limonata, meyve suyu, su) ve atıştırmalık tabağı (kuruyemiş, kraker, mevsim meyveleri) tüm biletlere dahildir. Şaraplı seçenekte kişi başı 2 kadeh şarap eklenir.",
     ],
     trustSignal:
       "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism, 50.000'den fazla misafiri ağırlamış deneyimiyle güvenilir hizmet sunmaktadır. Kalkış noktası Kabataş bölgesindedir; tam adres rezervasyon onayından sonra paylaşılır.",
@@ -66,8 +66,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       ["Tekne tipi", "Paylaşımlı lüks yat"],
       ["Şarapsız", "€34 / kişi"],
       ["Şaraplı", "€40 / kişi (2 kadeh)"],
-      ["Rehber", "Canlı rehber + 12 dil sesli"],
-      ["İkramlar", "Çay, kahve, limonata, atıştırmalık, meyve"],
+      ["Rehber", "Canlı İngilizce rehber"],
+      ["İkramlar", "Sıcak/soğuk içecekler + atıştırmalık tabağı"],
     ],
     faqTitle: "Sıkça Sorulan Sorular",
     faqs: [

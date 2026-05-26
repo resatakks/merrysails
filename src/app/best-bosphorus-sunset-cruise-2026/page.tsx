@@ -118,7 +118,7 @@ const FAQS = [
   },
   {
     q: "What does a Bosphorus sunset cruise include?",
-    a: "The MerrySails sunset cruise includes a multi-lingual host (12 languages), tea, coffee, lemonade, light snacks, and bridge passage commentary. The 'With Wine' upgrade (€35 Mon/Tue/Thu, €40 other days) adds one glass of wine per person.",
+    a: "The MerrySails sunset cruise includes a live English-speaking guide, hot drinks (tea, Turkish coffee), cold drinks (iced tea, lemonade, juice, water), a snack platter (mixed nuts, crackers, fresh fruit), and bridge passage commentary. The 'With Wine' upgrade (€35 Mon/Tue/Thu, €40 other days) adds two glasses of wine per person.",
   },
   {
     q: "Can I cancel a Bosphorus sunset cruise booking for free?",
@@ -408,9 +408,10 @@ export default function BestSunsetCruise2026Page() {
             </p>
             <p className="mt-3 text-slate-600">
               The 2-hour route passes Dolmabahçe Palace, Çırağan Palace, and Beylerbeyi Palace with
-              live multi-lingual commentary in up to 12 languages. Included on all tiers: tea, coffee,
-              lemonade, and light snacks. The With Wine upgrade (€35 Mon/Tue/Thu, €40 other days) adds one
-              glass of local wine per person. The Tuesday/Thursday discount of €4 per person is
+              live English-speaking commentary on board. Included on all tiers: hot drinks (tea,
+              Turkish coffee), cold drinks (iced tea, lemonade, juice, water) and a snack platter
+              (mixed nuts, crackers, fresh fruit). The With-Wine upgrade (€35 Mon/Tue/Thu, €40 other
+              days) adds two glasses of wine per person. The midweek discount of €4 per person is
               automatically applied at checkout — no promo code required.
             </p>
             <p className="mt-3 text-slate-600">

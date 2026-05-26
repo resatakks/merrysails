@@ -34,7 +34,7 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 
 **Cancellation:** Free cancellation up to 48 hours before departure
 **Min group:** 1 person (shared tour)
-**Languages:** English, Turkish, Audio guide in 12 languages
+**Languages:** English (live guide), Turkish (crew)
 **Route:** Dolmabahçe Palace → Ortaköy Mosque → Bosphorus Bridges
 
 ---

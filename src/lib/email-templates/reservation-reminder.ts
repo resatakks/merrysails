@@ -200,7 +200,7 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
           ? `<div style="margin:0 0 14px;padding:14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;text-align:center;">
         <p style="color:#166534;font-size:13px;font-weight:700;margin:0 0 4px;">Get ready for your cruise</p>
         <p style="color:#15803d;font-size:12px;margin:0 0 10px;line-height:1.6;">Free interactive Bosphorus guide — 12 landmarks with a map and an audio guide in 12 languages.</p>
-        <a href="${SITE_URL}/bosphorus-guide" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:999px;font-weight:700;font-size:13px;">Open the Bosphorus Guide</a>
+        <a href="${SITE_URL}/bosphorus-cruise" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:999px;font-weight:700;font-size:13px;">Open the Bosphorus Guide</a>
       </div>`
           : ""
       }

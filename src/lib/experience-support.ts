@@ -63,11 +63,10 @@ const experienceSupportGuides: Record<string, ExperienceSupportGuide> = {
     mapLabel: "Open the Karakoy meeting point map",
     included: [
       "2 glasses of wine per guest",
-      "Live tour guide",
-      "Luxury yacht Bosphorus sunset cruise",
-      "Nuts, chips, crackers, pretzels, and fruit plate",
-      "Tea, Turkish coffee, lemonade, and water",
-      "Audio guide in 12 languages",
+      "Live English-speaking guide on board",
+      "Luxury yacht Bosphorus sunset sailing",
+      "Hot drinks (tea, Turkish coffee) and cold drinks (iced tea, lemonade, juice, water)",
+      "Snack platter (mixed nuts, crackers, fresh fruit)",
     ],
     excluded: [
       "Other alcoholic drinks",

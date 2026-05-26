@@ -41,6 +41,19 @@ const nextConfig: NextConfig = {
         destination: "/yacht-charter-istanbul",
         permanent: true,
       },
+      // /bosphorus-guide parked 2026-05-26 — 301 to the commercial pillar so
+      // backlinks + email-template links keep their weight.  Locale variants
+      // covered by the wildcard below.
+      {
+        source: "/bosphorus-guide",
+        destination: "/bosphorus-cruise",
+        permanent: true,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/bosphorus-guide",
+        destination: "/:locale/bosphorus-cruise",
+        permanent: true,
+      },
       // SEO: legacy short fleet slugs → descriptive slugs (2026-05-12)
       {
         source: "/yacht-charter-istanbul/y1",
