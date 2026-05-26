@@ -221,13 +221,13 @@ export const tours: Tour[] = [
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Rumeli Fortress", "Bosphorus Bridge"],
     badge: "",
     badgeColor: "",
-    // Original sunset gallery + video parked 2026-05-26 — restore alongside the new
-    // original photo shoot. Placeholder is a CC0 Bosphorus skyline from Unsplash so
-    // the SEO-critical hero/og:image surface stays populated.
+    // Sunset visuals parked 2026-05-26 — fresh original shoot pending.
+    // `image` keeps a generic CC0 Bosphorus skyline so og:image + JSON-LD
+    // Product image stay populated for SEO/social previews. `gallery` is
+    // intentionally empty so the visible hero gallery does not render
+    // (TourDetailClient skips the block when gallery.length === 0).
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
-    ],
+    gallery: [],
     /* Parked 2026-05-26 — restore when new originals are ready:
     image: "/images/sunset5.jpeg",
     gallery: [
@@ -608,12 +608,12 @@ export const tours: Tour[] = [
     slug: "bosphorus-sightseeing-cruise",
     name: "Boğaz Kısa Tur",
     nameEn: "Bosphorus Short Cruise",
-    description: "A short Bosphorus sightseeing route for guests who want a compact daytime overview of Istanbul's landmark shoreline with audio guides in 12 languages.",
-    longDescription: "This short Bosphorus cruise is designed for travelers with limited time or those who want a compact daytime overview of the strait. The route covers the essential southern Bosphorus highlights in an efficient format and works best as a supporting daytime guide rather than a competing booking focus.\n\nDepart from the historic Eminönü Pier and immediately be greeted by the stunning panorama of Istanbul's layered skyline — minarets, domes, and modern towers rising together in perfect harmony.\n\nYour audio guide, available in 12 languages, brings each landmark to life with fascinating historical commentary as you pass the mysterious Maiden's Tower, the magnificent Dolmabahçe Palace, and the picturesque Ortaköy Mosque. A Bosphorus boat ride that covers the strait's southern half, showcasing the best of Istanbul from the water.",
+    description: "A short Bosphorus sightseeing route for guests who want a compact daytime overview of Istanbul's landmark shoreline with a live English-speaking guide.",
+    longDescription: "This short Bosphorus cruise is designed for travelers with limited time or those who want a compact daytime overview of the strait. The route covers the essential southern Bosphorus highlights in an efficient format and works best as a supporting daytime guide rather than a competing booking focus.\n\nDepart from the historic Eminönü Pier and immediately be greeted by the stunning panorama of Istanbul's layered skyline — minarets, domes, and modern towers rising together in perfect harmony.\n\nA live English-speaking guide brings each landmark to life with fascinating historical commentary as you pass the mysterious Maiden's Tower, the magnificent Dolmabahçe Palace, and the picturesque Ortaköy Mosque. A Bosphorus boat ride that covers the strait's southern half, showcasing the best of Istanbul from the water.",
     duration: "1.5 hours",
     capacity: "Max 50 guests",
     priceEur: 15,
-    includes: ["Audio guide (12 languages)", "Soft drinks", "WiFi", "Photo spots"],
+    includes: ["Live English-speaking guide", "Soft drinks", "WiFi", "Photo spots"],
     notIncluded: ["Hotel pickup", "Alcoholic beverages", "Meals", "Guide tip"],
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Continental views", "Affordable sightseeing"],
     badge: "Budget Friendly",

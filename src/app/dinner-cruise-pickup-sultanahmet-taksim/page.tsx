@@ -39,7 +39,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Dinner Cruise Pickup from Sultanahmet and Taksim Istanbul",
   description:
-    "Narrow commercial support page for shared Bosphorus dinner-cruise guests checking Sultanahmet, Taksim, Sirkeci, and Karakoy pickup fit before booking.",
+    "Pickup support page for shared Bosphorus dinner-cruise guests checking Sultanahmet, Taksim, Sirkeci, and Karakoy pickup fit before booking.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   openingHours: "Mo-Su 00:00-23:59",

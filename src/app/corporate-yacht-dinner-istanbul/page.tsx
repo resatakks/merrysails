@@ -205,9 +205,6 @@ export default function CorporateYachtDinnerIstanbulPage() {
 
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="mb-4 inline-flex rounded-full bg-[var(--brand-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
-                Narrow commercial support page
-              </p>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">
                 Corporate Yacht Dinner Istanbul
               </h1>

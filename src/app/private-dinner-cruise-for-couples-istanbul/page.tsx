@@ -209,9 +209,6 @@ export default function PrivateDinnerCruiseForCouplesIstanbulPage() {
 
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="mb-4 inline-flex rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-700">
-                Narrow commercial support page
-              </p>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">
                 Private Dinner Cruise for Couples Istanbul
               </h1>

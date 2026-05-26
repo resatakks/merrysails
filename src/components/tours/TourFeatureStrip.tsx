@@ -67,7 +67,7 @@ export default function TourFeatureStrip({ brand = "MerrySails" }: Props) {
               {brand} Bosphorus Guide
             </span>
             <span className="text-xs font-medium text-[var(--text-muted)]">
-              · audio guide available in 12 languages
+              · live English-speaking guide on board
             </span>
           </div>
           <Link

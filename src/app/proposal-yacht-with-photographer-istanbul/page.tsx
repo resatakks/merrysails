@@ -220,9 +220,6 @@ export default function ProposalYachtWithPhotographerIstanbulPage() {
 
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="mb-4 inline-flex rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-700">
-                Narrow commercial support page
-              </p>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">
                 Proposal Yacht with Photographer Istanbul
               </h1>
@@ -359,11 +356,13 @@ export default function ProposalYachtWithPhotographerIstanbulPage() {
           <section className="rounded-3xl bg-[var(--heading)] px-6 py-10 text-white md:px-10">
             <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--brand-gold)]">
                   Proposal-photo planning
                 </p>
-                <h2 className="mb-3 text-3xl font-bold">Tell us how discreet and how complete the coverage should be</h2>
-                <p className="max-w-2xl text-sm leading-relaxed text-white/80">
+                <h2 className="mb-3 text-3xl font-bold text-white leading-tight">
+                  Tell us how discreet and how complete the coverage should be
+                </h2>
+                <p className="max-w-2xl text-sm leading-relaxed text-white/90">
                   Send the date, preferred light, and whether you want only the reveal or also couple
                   portraits afterward. We will shape the cleanest proposal-photo setup around it.
                 </p>

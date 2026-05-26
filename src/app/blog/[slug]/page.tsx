@@ -265,20 +265,23 @@ export default async function BlogPostPage({
               ))}
             </div>
 
-            {/* Desktop Sidebar */}
+            {/* Desktop Sidebar — single sticky wrapper around Contents + CTA
+                so the CTA never scrolls up and overlaps the table of contents. */}
             <aside className="hidden lg:block w-64 shrink-0">
-              <TableOfContents headings={post.sections.map((s) => s.heading)} />
+              <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1">
+                <TableOfContents headings={post.sections.map((s) => s.heading)} />
 
-              {/* Sidebar CTA */}
-              <div className="mt-8 rounded-xl bg-[var(--brand-primary)] p-5 text-center">
-                <p className="text-white font-bold text-sm mb-2">Plan Your Cruise</p>
-                <p className="text-white/70 text-xs mb-4">Browse shared and private Bosphorus options in one place.</p>
-                <Link
-                  href="/bosphorus-cruise"
-                  className="inline-flex items-center gap-1.5 bg-white text-[var(--brand-primary)] font-bold py-2.5 px-5 rounded-full text-xs hover:shadow-lg transition-all w-full justify-center"
-                >
-                  Compare Cruise Options <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                {/* Sidebar CTA */}
+                <div className="mt-8 rounded-xl bg-[var(--brand-primary)] p-5 text-center">
+                  <p className="text-white font-bold text-sm mb-2">Plan Your Cruise</p>
+                  <p className="text-white/70 text-xs mb-4">Browse shared and private Bosphorus options in one place.</p>
+                  <Link
+                    href="/bosphorus-cruise"
+                    className="inline-flex items-center gap-1.5 bg-white text-[var(--brand-primary)] font-bold py-2.5 px-5 rounded-full text-xs hover:shadow-lg transition-all w-full justify-center"
+                  >
+                    Compare Cruise Options <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </aside>
           </div>

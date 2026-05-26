@@ -228,22 +228,30 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking Confirmation - MerrySails</title>
+  <style>
+    @media only screen and (max-width:480px) {
+      .ms-hero { padding: 22px 18px 24px !important; }
+      .ms-hero-title { font-size: 22px !important; line-height: 1.2 !important; margin-top: 14px !important; }
+      .ms-hero-sub { font-size: 13px !important; line-height: 1.6 !important; }
+      .ms-hero-badge { padding: 7px 14px !important; font-size: 11px !important; }
+      .ms-wrap { padding: 16px 12px !important; }
+    }
+  </style>
 </head>
 <body style="margin:0;padding:0;background-color:#f0f4f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
-  <div style="max-width:600px;margin:0 auto;padding:24px 16px;">
+  <div class="ms-wrap" style="max-width:600px;margin:0 auto;padding:24px 16px;">
 
-    <div style="background:linear-gradient(135deg,#0c1b2e 0%,#1a3a5c 50%,#0f2847 100%);border-radius:18px 18px 0 0;padding:28px 24px 34px;position:relative;overflow:hidden;">
-      <div style="position:absolute;inset:auto 0 0 0;height:32px;background:linear-gradient(180deg,rgba(247,181,44,0) 0%,rgba(247,181,44,0.22) 100%);"></div>
+    <div class="ms-hero" style="background:linear-gradient(135deg,#0c1b2e 0%,#1a3a5c 55%,#1f3a5f 100%);border-radius:18px 18px 0 0;padding:30px 28px 30px;">
       ${emailLogoBlock({ onDark: true })}
 
-      <div style="margin-top:22px;">
-        <div style="display:inline-block;background:rgba(34,197,94,0.16);border:1px solid rgba(74,222,128,0.35);border-radius:999px;padding:9px 18px;color:#4ade80;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">
+      <div style="margin-top:24px;">
+        <span class="ms-hero-badge" style="display:inline-block;background:rgba(34,197,94,0.18);border:1px solid rgba(74,222,128,0.4);border-radius:999px;padding:8px 16px;color:#86efac;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">
           ${heroBadge}
-        </div>
+        </span>
       </div>
 
-      <h1 style="color:#ffffff;margin:18px 0 0;font-size:28px;font-weight:800;line-height:1.15;">${escapeHtml(data.tourName)}</h1>
-      <p style="color:#cbd5e1;margin:10px 0 0;font-size:14px;line-height:1.7;">
+      <h1 class="ms-hero-title" style="color:#ffffff;margin:16px 0 0;font-size:26px;font-weight:800;line-height:1.2;letter-spacing:-0.3px;">${escapeHtml(data.tourName)}</h1>
+      <p class="ms-hero-sub" style="color:#cbd5e1;margin:10px 0 0;font-size:14px;line-height:1.65;">
         ${greetingBody}
       </p>
     </div>
@@ -426,7 +434,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         data.tourSlug === "bosphorus-sunset-cruise"
           ? `<div style="text-align:center;margin-bottom:22px;padding:16px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;">
         <p style="color:#166534;font-size:13px;font-weight:700;margin:0 0 4px;">Get ready for your cruise</p>
-        <p style="color:#15803d;font-size:12px;margin:0 0 12px;line-height:1.6;">Explore our free interactive Bosphorus guide — 12 landmarks with a map and an audio guide in 12 languages.</p>
+        <p style="color:#15803d;font-size:12px;margin:0 0 12px;line-height:1.6;">Explore our free interactive Bosphorus guide — 12 landmarks with a map and an live English-speaking guide.</p>
         <a href="${SITE_URL}/bosphorus-cruise" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;padding:11px 24px;border-radius:999px;font-weight:700;font-size:13px;">
           Open the Bosphorus Guide
         </a>
@@ -434,13 +442,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           : ""
       }
 
-      <div style="text-align:center;margin-bottom:22px;padding:16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;">
-        <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0 0 4px;">Need a transfer in Istanbul?</p>
-        <p style="color:#64748b;font-size:12px;margin:0 0 12px;line-height:1.6;">MerryTourism — our VIP transfer brand — arranges private airport and hotel transfers. Choose your route and vehicle.</p>
-        <a href="https://www.merrytourism.com/en/vip-transfer" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:11px 24px;border-radius:999px;font-weight:700;font-size:13px;">
-          Explore VIP Transfer
-        </a>
-      </div>
+      <!-- MerryTourism VIP transfer CTA removed 2026-05-26 (cross-brand cleanup) -->
 
       <div style="text-align:center;padding-top:18px;border-top:1px solid #e2e8f0;">
         <p style="color:#64748b;font-size:14px;margin:0 0 14px;">Need help? We are here for you.</p>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Clock, Shield, Star } from "lucide-react";
 
 const heroProducts = [
@@ -25,7 +24,9 @@ const heroProducts = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1e3a] via-[#2a3f6b] to-[#c97a3a]">
+      {/* Hero photograph parked 2026-05-26 — fresh original shoot pending. Restore by
+          uncommenting the Image import + the block below, and re-add the hero-overlay div.
       <Image
         src="/images/sunset5.jpeg"
         alt="Bosphorus sunset cruise in Istanbul"
@@ -35,6 +36,13 @@ export default function HeroSection() {
         sizes="100vw"
       />
       <div className="hero-overlay absolute inset-0" />
+      */}
+      {/* Decorative atmospheric overlay (no photo) — radial highlight + soft vignette */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(255,200,120,0.35),transparent_55%),radial-gradient(ellipse_at_20%_80%,rgba(11,30,58,0.55),transparent_60%)]"
+      />
+      <div aria-hidden className="absolute inset-0 bg-black/25" />
 
       <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-24 pb-6 sm:min-h-[100svh] sm:justify-center sm:pt-32 sm:pb-16">
         <div className="mx-auto w-full max-w-4xl">

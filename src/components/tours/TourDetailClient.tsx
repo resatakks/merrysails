@@ -170,9 +170,16 @@ export default function TourDetailClient({
   const selectedOptionLabel = hasPackages ? "Selected package" : "Current fare";
   const hasVideoPreview = Boolean(tour.videoSrc);
   const showFeatureStrip = tour.slug === "bosphorus-sunset-cruise";
+  // Hero gallery visibility — when the tour data has an empty `gallery` array,
+  // the entire mobile + desktop hero gallery block is skipped (e.g. sunset cruise
+  // parked 2026-05-26 pending fresh original shoot). og:image + Product schema
+  // image still use tour.image for SEO/social previews.
+  const showHeroGallery = tour.gallery.length > 0;
 
   return (
     <>
+      {showHeroGallery && (
+        <>
       {/* Hero Gallery — mobile: swipeable auto-advancing carousel */}
       <TourGalleryMobile
         images={allImages}
@@ -235,6 +242,8 @@ export default function TourDetailClient({
           View all {allImages.length} photos
         </button>
       </div>
+        </>
+      )}
 
       {/* Quick Info Bar — horizontal with dividers.
           Departure + Pick-up tiles are clickable buttons that scroll to the booking

@@ -40,8 +40,9 @@ export function TableOfContents({ headings }: { headings: string[] }) {
         )}
       </div>
 
-      {/* Desktop: sticky sidebar */}
-      <nav className="hidden lg:block sticky top-28 space-y-1.5">
+      {/* Desktop: scrolls inside the parent's sticky wrapper so the trailing
+          "Plan Your Cruise" CTA cannot scroll up and overlap the contents list. */}
+      <nav className="hidden lg:block space-y-1.5">
         <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-3">
           <List className="w-3.5 h-3.5" />
           Contents

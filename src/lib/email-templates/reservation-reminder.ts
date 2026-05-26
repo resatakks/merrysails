@@ -199,16 +199,12 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
         data.tourSlug === "bosphorus-sunset-cruise"
           ? `<div style="margin:0 0 14px;padding:14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;text-align:center;">
         <p style="color:#166534;font-size:13px;font-weight:700;margin:0 0 4px;">Get ready for your cruise</p>
-        <p style="color:#15803d;font-size:12px;margin:0 0 10px;line-height:1.6;">Free interactive Bosphorus guide — 12 landmarks with a map and an audio guide in 12 languages.</p>
+        <p style="color:#15803d;font-size:12px;margin:0 0 10px;line-height:1.6;">Free interactive Bosphorus guide — 12 landmarks with a map and an live English-speaking guide.</p>
         <a href="${SITE_URL}/bosphorus-cruise" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:999px;font-weight:700;font-size:13px;">Open the Bosphorus Guide</a>
       </div>`
           : ""
       }
-      <div style="margin:0 0 18px;padding:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;text-align:center;">
-        <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0 0 4px;">Need a transfer in Istanbul?</p>
-        <p style="color:#64748b;font-size:12px;margin:0 0 10px;line-height:1.6;">MerryTourism — our VIP transfer brand — arranges private airport and hotel transfers. Choose your route and vehicle.</p>
-        <a href="https://www.merrytourism.com/en/vip-transfer" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:999px;font-weight:700;font-size:13px;">Explore VIP Transfer</a>
-      </div>
+      <!-- MerryTourism VIP transfer CTA removed 2026-05-26 (cross-brand cleanup) -->
 
       <p style="color:#64748b;font-size:13px;margin:0;line-height:1.7;">
         Need to reach us quickly? WhatsApp: <a href="https://wa.me/905448989812" style="color:#f59e0b;font-weight:700;">+90 544 898 98 12</a>

@@ -260,9 +260,6 @@ export default function TurkishNightDinnerCruiseIstanbulPage() {
 
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="mb-4 inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
-                Narrow commercial support page
-              </p>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">
                 Turkish Night Dinner Cruise Istanbul
               </h1>

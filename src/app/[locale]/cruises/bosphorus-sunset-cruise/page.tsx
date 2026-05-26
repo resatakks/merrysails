@@ -136,7 +136,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     aboutBody: [
       "Die MerrySails Bosporus Sonnenuntergang Kreuzfahrt ist ein zweistündiges Erlebnis auf einer geteilten Luxusjacht – ideal für Gäste, die Istanbuls berühmte Skyline im goldenen Licht der Abendstunde erleben möchten. Sie wählen zwischen zwei klaren Paketen: Ohne Wein ab €30 (Di & Do) / €34 (übrige Tage), oder mit zwei Gläsern Wein ab €35 (Di & Do) / €40 pro Person. Montag, Dienstag und Donnerstag bieten die günstigste Buchungsmöglichkeit – bis zu €4 Ersparnis pro Person.",
       "Die Abfahrt erfolgt am Karaköy-Anleger, rund 30 Minuten vor dem eigentlichen Sonnenuntergang. So ist garantiert, dass das Boot die optimale Goldene Stunde auf dem Wasser erlebt: Das Sonnenlicht fällt in einem flachen Winkel entlang der Bosporus-Achse und taucht die Brückensilhouetten in Orange- und Rottöne. Dieses Lichtfenster dauert etwa 40 Minuten – ideal für unvergessliche Fotos.",
-      "Die Route umfasst den südlichen Bosporus: Vorbei an der Fassade des Dolmabahçe-Palastes, mit Blick auf den Mädchenturm (Kız Kulesi), der Ortaköy-Moschee im Gegenlicht der Bosporus-Brücke und schließlich einem Blick auf die Rumeli-Festung, bevor die Jacht nach Karaköy zurückkehrt. An Bord stehen Ihnen ein Live-Guide, ein Audio-Guide in 12 Sprachen sowie Tee, türkischer Kaffee, Limonade, Wasser, Snacks und ein Obstteller zur Verfügung.",
+      "Die Route umfasst den südlichen Bosporus: Vorbei an der Fassade des Dolmabahçe-Palastes, mit Blick auf den Mädchenturm (Kız Kulesi), der Ortaköy-Moschee im Gegenlicht der Bosporus-Brücke und schließlich einem Blick auf die Rumeli-Festung, bevor die Jacht nach Karaköy zurückkehrt. An Bord stehen Ihnen ein Live-Guide, ein sowie Tee, türkischer Kaffee, Limonade, Wasser, Snacks und ein Obstteller zur Verfügung.",
     ],
     trustSignal:
       "Merry Tourism ist seit 2001 TÜRSAB-A-lizenziert und hat über 50.000 Gäste begrüßt – Sie buchen also bei einem geprüften, erfahrenen Anbieter. Abfahrt ist im Bereich Kabataş; die genaue Adresse erhalten Sie nach der Buchungsbestätigung.",
@@ -214,7 +214,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     aboutTitle: "À propos de la Croisière Coucher de Soleil",
     aboutBody: [
       "La Croisière Coucher de Soleil sur le Bosphore de MerrySails est une expérience de 2 heures à bord d'un yacht de luxe partagé, conçue pour admirer les panoramas iconiques d'Istanbul à l'heure dorée. Deux formules claires : sans vin dès €30 (mar & jeu) / €34, avec vin dès €35 (mar & jeu) / €40 (2 verres par personne).",
-      "L'itinéraire couvre la partie sud du Bosphore et passe devant le palais de Dolmabahçe, la mosquée d'Ortaköy et les ponts illuminés. À bord, vous bénéficiez d'un guide en direct, d'un audio-guide en 12 langues, ainsi que de thé, café turc, citronnade, eau, encas salés et plateau de fruits.",
+      "L'itinéraire couvre la partie sud du Bosphore et passe devant le palais de Dolmabahçe, la mosquée d'Ortaköy et les ponts illuminés. À bord, vous bénéficiez d'un guide en direct, d'un guide anglophone en direct, ainsi que de thé, café turc, citronnade, eau, encas salés et plateau de fruits.",
     ],
     trustSignal:
       "Merry Tourism est licencié TÜRSAB Groupe A depuis 2001 et a accueilli plus de 50 000 voyageurs – vous réservez auprès d'un prestataire reconnu et expérimenté. Le départ se fait dans le quartier de Kabataş ; l'adresse exacte est communiquée après la confirmation de réservation.",
@@ -223,7 +223,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
       ["Type de bateau", "Yacht de luxe partagé"],
       ["Sans vin", "€34 / personne"],
       ["Avec vin", "€40 / personne (2 verres)"],
-      ["Guide", "Guide live + audio 12 langues"],
+      ["Guide", "Guide anglophone en direct"],
       ["Rafraîchissements", "Thé, café, citronnade, encas, fruits"],
     ],
     faqTitle: "Questions fréquentes",
