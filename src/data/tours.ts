@@ -581,7 +581,7 @@ export const tours: Tour[] = [
     importantNotes: [
       "The real package difference is mainly yacht size, comfort, and stability level",
       "The public starter packages are positioned around a private setup for 2 guests, while larger groups can be matched to the right yacht and extras plan",
-      "All packages are captained private charters, so no boating license is needed from the guest side",
+      "Every package is a captained private charter; guests are not asked to skipper the vessel themselves",
       "Add-on rates change by yacht tier, especially for extra hours, wine, meal menus, and proposal decoration",
       "The live booking flow presents all three packages as a standard 2-hour cruise, then opens customization through optional extras at checkout",
       "Booking 2 to 3 days ahead is recommended for standard charters, while larger event plans should be arranged 1 to 2 weeks earlier",

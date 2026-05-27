@@ -1527,7 +1527,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "When a Private Yacht Is the Better Buy",
-        content: "A private yacht makes more sense when the group wants control over timing, privacy, and onboard atmosphere. That usually means birthdays, proposals, family groups, or corporate hosting where the shared dinner format feels too fixed. The Bosphorus route can still be beautiful on a private charter, but the value comes from the fact that the boat is yours for the booked time.\n\nIf you are choosing between a shared dinner cruise and a private charter, the simplest test is this: if you care more about the social evening format, pick the dinner cruise; if you care more about the group itself, pick the yacht.",
+        content: "A private yacht makes more sense when the group wants control over timing, privacy, and onboard atmosphere. That usually means birthdays, proposals, family groups, or corporate hosting where the shared dinner format feels too fixed. The Bosphorus route can still be beautiful on a private charter, but the value comes from having the whole vessel locked in to your group for the booked window.\n\nIf you are choosing between a shared dinner cruise and a private charter, the simplest test is this: if you care more about the social evening format, pick the dinner cruise; if you care more about the group itself, pick the yacht.",
       },
       {
         heading: "What Each Dinner Tier Actually Buys You On The Day",
