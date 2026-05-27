@@ -221,13 +221,13 @@ export const tours: Tour[] = [
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Rumeli Fortress", "Bosphorus Bridge"],
     badge: "",
     badgeColor: "",
-    // Sunset visuals parked 2026-05-27 — CC0 sunset-yacht is the primary
-    // `image` (hero main slot + og:image); skyline kept as a secondary
-    // gallery entry so the right-hand stacked slot is populated.
-    image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=2000&q=80&auto=format&fit=crop",
+    // Sunset visuals parked 2026-05-27 — fresh original shoot pending.
+    // Using our own yacht photos from the fleet folder as placeholder.
+    image: "/images/fleet/y3/exterior-1.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=2000&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+      "/images/fleet/y3/exterior-1.jpg",
+      "/images/fleet/y3/exterior-2.jpg",
+      "/images/fleet/y3/exterior-3.jpg",
     ],
     /* Parked 2026-05-26 — restore when new originals are ready:
     image: "/images/sunset5.jpeg",

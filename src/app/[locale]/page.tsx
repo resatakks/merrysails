@@ -491,7 +491,7 @@ export default async function LocaleHomePage({
     {
       key: "sunset" as const,
       href: `/${locale}/cruises/bosphorus-sunset-cruise`,
-      image: "/images/sunset1.jpeg",
+      image: "/images/fleet/y3/exterior-1.jpg",
       content: t.products.sunset,
     },
     {

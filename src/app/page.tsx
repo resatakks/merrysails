@@ -171,7 +171,7 @@ const coreBookingPages = [
     eyebrow: "Golden hour",
     title: "Bosphorus Sunset Cruise",
     description: "Shared sunset sailing with clear pricing and date-led golden-hour bookings.",
-    image: "/images/sunset1.jpeg",
+    image: "/images/fleet/y3/exterior-1.jpg",
   },
   {
     href: "/istanbul-dinner-cruise",
