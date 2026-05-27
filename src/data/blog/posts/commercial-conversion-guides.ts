@@ -1070,7 +1070,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
       {
         heading: "Private Yacht Hire vs Shared Cruises",
-        content: "The key difference between private yacht hire and a standard [Bosphorus cruise](/bosphorus-cruise) tour is control. On a private yacht hire, the vessel is booked exclusively for your group — no strangers, no shared space, and no fixed social atmosphere. Standard shared cruises are still excellent for solo travelers, couples, or smaller groups who want a straightforward product with a public timetable.\n\nPrivate yacht hire becomes the stronger choice when the privacy itself matters, when you are celebrating, when you want route flexibility, or when the group experience is more important than simply getting onto the water at the lowest ticket price.",
+        content: "The key difference between private yacht hire and a standard [Bosphorus cruise](/bosphorus-cruise) tour is control. On a private yacht hire, the vessel is held end-to-end for a single booking — no strangers, no shared space, and no fixed social atmosphere. Standard shared cruises are still excellent for solo travelers, couples, or smaller groups who want a straightforward product with a public timetable.\n\nPrivate yacht hire becomes the stronger choice when the privacy itself matters, when you are celebrating, when you want route flexibility, or when the group experience is more important than simply getting onto the water at the lowest ticket price.",
       },
       {
         heading: "Which Bosphorus Route Works Best?",

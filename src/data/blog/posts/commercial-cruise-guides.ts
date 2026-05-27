@@ -2096,7 +2096,7 @@ See the full [Bosphorus cruise departure points guide](/bosphorus-cruise-departu
 - Your budget is €30–€90 per person
 
 **Choose the private yacht charter if:**
-- You want the entire vessel reserved exclusively for your group
+- You want the whole vessel held end-to-end for a single booking
 - You are planning a proposal, birthday celebration, or corporate event
 - You want flexible timing and a customisable route
 - Your budget is €280+ for the full vessel (not per person)
