@@ -190,9 +190,18 @@ function checkLlmsTxtUrls(routes) {
       return pattern.test(urlPath);
     });
     if (!isStatic && !isDynamic) {
-      // Check if the locale path exists
+      // Check if the locale path exists by stripping the leading locale
+      // and re-applying both static + dynamic route tests against the
+      // unprefixed path. Locale pages live under src/app/[locale]/... so
+      // every locale URL must resolve to the same route as its EN twin.
       const localeStrip = urlPath.replace(/^\/(tr|de|fr|nl|ru|ar|sa|zh|ja|ko|es)\//, "/");
-      if (!routes.has(localeStrip) && !routes.has(urlPath.replace(/\/[^/]+$/, "/:slug"))) {
+      const stripIsStatic = routes.has(localeStrip);
+      const stripIsDynamic = [...routes].some((r) => {
+        if (!r.includes(":")) return false;
+        const pattern = new RegExp("^" + r.replace(/:\w+/g, "[^/]+") + "$");
+        return pattern.test(localeStrip);
+      });
+      if (!stripIsStatic && !stripIsDynamic) {
         addIssue("P2", "llms-url-stale", llmsPath, 0,
           `llms.txt references URL "${urlPath}" which may not exist as a route.`);
       }
