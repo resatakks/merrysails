@@ -9,17 +9,17 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/bosphorus-cruise-departure-points`;
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Departure Points Istanbul 2026",
+  title: "Bosphorus Cruise Departure Piers 2026 — Pick the Right Dock",
   description:
-    "Bosphorus cruise departure points in Istanbul: Kabataş for dinner, Karaköy for sunset (from €30), Kuruçeşme Marina for yachts — with metro & taxi directions.",
+    "Bosphorus cruise pier guide 2026: Kabataş for sunset (€34) and dinner (€30), Eminönü for sightseeing, Kuruçeşme for yacht charter. Avoid the wrong-dock mistake.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/bosphorus-cruise-departure-points"),
   },
   openGraph: {
-    title: "Bosphorus Cruise Departure Points Istanbul 2026",
+    title: "Bosphorus Cruise Departure Piers 2026 — Pick the Right Dock",
     description:
-      "Every Bosphorus cruise departure point in one map: Kabataş, Karaköy and Kuruçeşme — with tram, metro and taxi directions from any Istanbul hotel.",
+      "Every Bosphorus cruise pier in one map: Kabataş (sunset €34 / dinner €30), Eminönü (sightseeing) and Kuruçeşme (yacht charter). Tram, metro and taxi directions.",
     url: canonicalUrl,
     type: "website",
     images: [

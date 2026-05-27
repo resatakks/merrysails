@@ -15,7 +15,7 @@ import { buildHreflang } from "@/lib/hreflang";
 import CrossBrandPromo from "@/components/marketing/CrossBrandPromo";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
+  title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
   description:
     "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001. No OTA markup.",
   keywords: [
