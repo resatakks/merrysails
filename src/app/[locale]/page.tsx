@@ -503,7 +503,7 @@ export default async function LocaleHomePage({
     {
       key: "yacht" as const,
       href: `/${locale}/yacht-charter-istanbul`,
-      image: "/images/tours/yacht-charter-in-istanbul/04.jpeg",
+      image: "/images/fleet/y3/exterior-1.jpg",
       content: t.products.yacht,
     },
   ];

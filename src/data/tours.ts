@@ -221,13 +221,15 @@ export const tours: Tour[] = [
     highlights: ["Maiden's Tower", "Dolmabahçe Palace", "Ortaköy Mosque", "Rumeli Fortress", "Bosphorus Bridge"],
     badge: "",
     badgeColor: "",
-    // Sunset visuals parked 2026-05-26 — fresh original shoot pending.
-    // `image` keeps a generic CC0 Bosphorus skyline so og:image + JSON-LD
-    // Product image stay populated for SEO/social previews. `gallery` is
-    // intentionally empty so the visible hero gallery does not render
-    // (TourDetailClient skips the block when gallery.length === 0).
+    // Sunset visuals parked 2026-05-27 — fresh original shoot pending. Using
+    // two CC0 photos (Unsplash, license-free) so the page is not blank.
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
-    gallery: [],
+    gallery: [
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=2000&q=80&auto=format&fit=crop",
+    ],
+    galleryAlts: [
+      "White motor yacht crossing calm water at golden hour with warm sky behind",
+    ],
     /* Parked 2026-05-26 — restore when new originals are ready:
     image: "/images/sunset5.jpeg",
     gallery: [
