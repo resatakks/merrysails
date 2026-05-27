@@ -17,7 +17,7 @@ import CrossBrandPromo from "@/components/marketing/CrossBrandPromo";
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
   description:
-    "Compare the 3 core MerrySails experiences in Istanbul: Bosphorus Sunset Cruise, Bosphorus Dinner Cruise, and Yacht Charter in Istanbul.",
+    "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001. No OTA markup.",
   keywords: [
     "istanbul cruise",
     "bosphorus sunset cruise",
@@ -32,18 +32,18 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://merrysails.com", languages: buildHreflang("") },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
+    title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
     description:
-      "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
+      "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001.",
     url: "https://merrysails.com",
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul 2026" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bosphorus Cruise Istanbul | Sunset & Dinner",
+    title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
     description:
-      "Find the right Bosphorus experience for Sunset Cruise, Dinner Cruise, and Yacht Charter in Istanbul.",
+      "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001.",
     images: ["https://merrysails.com/og-image.jpg"],
   },
 };

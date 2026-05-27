@@ -1720,8 +1720,8 @@ export const commercialConversionGuides: BlogPost[] = [
   },
   {
     slug: "best-istanbul-bosphorus-cruise-comparison-2026",
-    title: "Best Bosphorus Cruise 2026 — Honest Comparison",
-    metaDescription: "Honest 2026 comparison of Istanbul Bosphorus cruises: shared sunset €34, dinner €30–€90, private yacht €280–€680. Direct booking saves €5–€15 per guest vs OTAs.",
+    title: "Best Bosphorus Cruise 2026: Operator Comparison",
+    metaDescription: "Operator-side Bosphorus cruise comparison for 2026: sunset €34, dinner €30-€90, yacht €280-€680. Booking direct saves €5-€15/guest vs Viator and GetYourGuide.",
     excerpt: "An operator-side comparison of the main Bosphorus cruise types in 2026, with verified direct prices, what each option actually delivers, and where Viator and GetYourGuide markups apply.",
     category: "cruise-guide",
     date: "2026-05-23",
