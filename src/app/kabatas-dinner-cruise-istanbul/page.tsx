@@ -6,6 +6,7 @@ import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -65,6 +66,7 @@ const serviceSchema = {
   serviceType: "Shared Bosphorus Dinner Cruise Boarding Support",
   offers: {
     "@type": "Offer",
+    ...OFFER_MERCHANT_DEFAULTS,
     priceCurrency: "EUR",
     price: String(dinnerTour.packages?.[0]?.price ?? "30"),
     availability: "https://schema.org/InStock",

@@ -6,6 +6,7 @@ import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -66,6 +67,7 @@ const serviceSchema = {
   offers: [
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "Without Wine",
       priceCurrency: "EUR",
       price: String(sunsetTour.packages?.[0]?.price ?? "34"),
@@ -75,6 +77,7 @@ const serviceSchema = {
     },
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "With Wine",
       priceCurrency: "EUR",
       price: String(sunsetTour.packages?.[1]?.price ?? "40"),

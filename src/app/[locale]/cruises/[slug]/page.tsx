@@ -13,6 +13,7 @@ import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 const OWNER_REDIRECTS: Record<string, string> = {
   "bosphorus-dinner-cruise": "/istanbul-dinner-cruise",
@@ -164,6 +165,7 @@ export default async function LocaleTourDetailPage({
       ? {
           offers: {
             "@type": "Offer",
+            ...OFFER_MERCHANT_DEFAULTS,
             price: tour.priceEur,
             priceCurrency: "EUR",
             availability: "https://schema.org/InStock",

@@ -8,6 +8,7 @@ import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-s
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -734,6 +735,7 @@ export default async function LocaleDinnerCruisePage({
             description: "Standart koltuk, sınırsız alkolsüz içecek, tam akşam yemeği servisi ve Türk gecesi gösterisi.",
             offers: {
               "@type": "Offer",
+              ...OFFER_MERCHANT_DEFAULTS,
               price: 30,
               priceCurrency: "EUR",
               availability: "https://schema.org/InStock",
@@ -756,6 +758,7 @@ export default async function LocaleDinnerCruisePage({
             description: "Standart koltuk, yerel alkollü içecekler dahil, tam akşam yemeği servisi ve Türk gecesi gösterisi.",
             offers: {
               "@type": "Offer",
+              ...OFFER_MERCHANT_DEFAULTS,
               price: 45,
               priceCurrency: "EUR",
               availability: "https://schema.org/InStock",
@@ -772,6 +775,7 @@ export default async function LocaleDinnerCruisePage({
             description: "VIP sahne yakını koltuk garantisi, genişletilmiş premium menü, sınırsız alkolsüz içecek ve Türk gecesi + DJ.",
             offers: {
               "@type": "Offer",
+              ...OFFER_MERCHANT_DEFAULTS,
               price: 80,
               priceCurrency: "EUR",
               availability: "https://schema.org/InStock",
@@ -792,6 +796,7 @@ export default async function LocaleDinnerCruisePage({
             description: "En iyi VIP koltuk, premium menü, sınırsız yerel ve ithal alkol dahil, Türk gecesi + DJ.",
             offers: {
               "@type": "Offer",
+              ...OFFER_MERCHANT_DEFAULTS,
               price: 90,
               priceCurrency: "EUR",
               availability: "https://schema.org/InStock",
@@ -810,6 +815,7 @@ export default async function LocaleDinnerCruisePage({
           description: pkg.items.join("; "),
           offers: {
             "@type": "Offer",
+            ...OFFER_MERCHANT_DEFAULTS,
             price: parseInt(pkg.price.replace("€", ""), 10),
             priceCurrency: "EUR",
             availability: "https://schema.org/InStock",

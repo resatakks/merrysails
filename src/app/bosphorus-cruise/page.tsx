@@ -5,6 +5,7 @@ import { ArrowRight, Sunset, UtensilsCrossed, Anchor, Compass, MessageCircle, Ph
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul — From €30",
@@ -52,6 +53,7 @@ const guideSchema = {
   offers: [
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "Bosphorus Sunset Cruise",
       price: "34",
       priceCurrency: "EUR",
@@ -59,6 +61,7 @@ const guideSchema = {
     },
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "Istanbul Dinner Cruise",
       price: "30",
       priceCurrency: "EUR",
@@ -66,6 +69,7 @@ const guideSchema = {
     },
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "Private Yacht Charter Istanbul",
       price: "280",
       priceCurrency: "EUR",

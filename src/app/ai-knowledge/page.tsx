@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const metadata: Metadata = {
   title: "AI Knowledge Card",
@@ -113,6 +114,7 @@ const sunsetCruiseService = {
   offers: [
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "Without Wine",
       price: "34",
       priceCurrency: "EUR",
@@ -120,6 +122,7 @@ const sunsetCruiseService = {
     },
     {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: "With Wine",
       price: "40",
       priceCurrency: "EUR",

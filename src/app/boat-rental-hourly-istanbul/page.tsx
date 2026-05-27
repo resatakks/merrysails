@@ -5,6 +5,7 @@ import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { fleet } from "@/data/fleet";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -55,6 +56,7 @@ const serviceSchema = {
   serviceType: "Hourly Private Boat Rental",
   offers: {
     "@type": "Offer",
+    ...OFFER_MERCHANT_DEFAULTS,
     priceCurrency: "EUR",
     price: String(startingRate),
     availability: "https://schema.org/InStock",

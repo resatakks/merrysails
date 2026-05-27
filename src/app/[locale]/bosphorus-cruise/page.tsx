@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -459,6 +460,7 @@ export default async function LocaleBosphorusCruisePage({
     },
     offers: c.tourOptions.map((opt) => ({
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: opt.title,
       price: opt.price.replace(/[^0-9]/g, "") || opt.price,
       priceCurrency: "EUR",

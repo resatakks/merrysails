@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -55,6 +56,7 @@ const serviceSchema = {
   serviceType: "Bosphorus Dinner Cruise Pickup Area Support",
   offers: {
     "@type": "Offer",
+    ...OFFER_MERCHANT_DEFAULTS,
     priceCurrency: "EUR",
     price: "30",
     availability: "https://schema.org/InStock",

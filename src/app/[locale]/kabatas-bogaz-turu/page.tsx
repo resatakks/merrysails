@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -222,6 +223,7 @@ export default async function KabatasBagazTuruPage({
     },
     offers: {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       price: "30",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",

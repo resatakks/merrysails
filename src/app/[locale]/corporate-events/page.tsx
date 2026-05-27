@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -379,6 +380,7 @@ export default async function LocaleCorporateEventsPage({
       name: t.formatsHeading,
       itemListElement: t.formats.map((f) => ({
         "@type": "Offer",
+        ...OFFER_MERCHANT_DEFAULTS,
         itemOffered: {
           "@type": "Service",
           name: f.title,
@@ -409,6 +411,7 @@ export default async function LocaleCorporateEventsPage({
     },
     offers: {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       price: "280",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",

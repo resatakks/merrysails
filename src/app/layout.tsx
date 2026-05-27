@@ -11,6 +11,7 @@ import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
 import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
 import "./globals.css";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -168,6 +169,7 @@ const organizationSchema = {
         itemListElement: [
           {
             "@type": "Offer",
+            ...OFFER_MERCHANT_DEFAULTS,
             itemOffered: {
               "@type": "Service",
               name: "Bosphorus Sunset Cruise",
@@ -187,6 +189,7 @@ const organizationSchema = {
         itemListElement: [
           {
             "@type": "Offer",
+            ...OFFER_MERCHANT_DEFAULTS,
             itemOffered: {
               "@type": "Service",
               name: "Bosphorus Dinner Cruise",
@@ -206,6 +209,7 @@ const organizationSchema = {
         itemListElement: [
           {
             "@type": "Offer",
+            ...OFFER_MERCHANT_DEFAULTS,
             itemOffered: {
               "@type": "Service",
               name: "Yacht Charter Istanbul",

@@ -162,11 +162,10 @@ export default function CompareCruisesPage() {
           highPrice: c.priceTo,
           priceCurrency: "EUR",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: c.rating,
-          reviewCount: c.reviews,
-        },
+        // aggregateRating intentionally removed — TouristTrip is not a
+        // valid AggregateRating parent per Google Review snippet spec
+        // (CLAUDE.md rule 4a).  Rating signals come from the dedicated
+        // detail-page Product/Event schemas linked via url above.
       },
     })),
   };

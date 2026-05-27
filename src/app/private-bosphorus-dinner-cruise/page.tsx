@@ -3,6 +3,7 @@ import Link from "next/link";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 const SITE_URL = "https://merrysails.com";
 
@@ -78,6 +79,7 @@ const serviceJsonLd = {
   serviceType: "Private Yacht Dinner Cruise",
   offers: {
     "@type": "Offer",
+    ...OFFER_MERCHANT_DEFAULTS,
     priceCurrency: "EUR",
     price: "280",
     availability: "https://schema.org/InStock",

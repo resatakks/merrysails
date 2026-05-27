@@ -9,6 +9,7 @@ import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
 import { getFleetStrings } from "@/components/yacht/fleet-strings";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 import {
   getCharterFleet,
   getCharterFleetLocale,
@@ -89,13 +90,11 @@ const serviceSchema = {
     "@type": "City",
     name: "Istanbul",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: yachtTour.rating ?? 4.9,
-    reviewCount: yachtTour.reviewCount ?? 120,
-    bestRating: 5,
-    worstRating: 1,
-  },
+  // aggregateRating intentionally NOT here — per Google Review snippet
+  // spec, AggregateRating must sit on Event/Product/LocalBusiness/
+  // Organization/Recipe/Movie/Course/Book/HowTo, never on Service/TouristTrip.
+  // The valid AggregateRating is rendered separately on the Product schema
+  // below (CLAUDE.md rule 4a).
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Bosphorus yacht charter fleet — entry price per yacht for a 2-hour sailing",
@@ -104,6 +103,7 @@ const serviceSchema = {
       const entry = boat.priceByHours?.[boat.minHours] ?? null;
       return {
         "@type": "Offer",
+        ...OFFER_MERCHANT_DEFAULTS,
         name: en.label,
         ...(entry != null
           ? { price: entry, priceCurrency: "EUR" }

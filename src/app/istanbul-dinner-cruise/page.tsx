@@ -10,6 +10,7 @@ import RelatedTours from "@/components/ui/RelatedTours";
 import HowToGetThere from "@/components/tours/HowToGetThere";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -93,6 +94,7 @@ const serviceSchema = {
     name: "Dinner Cruise Packages",
     itemListElement: dinnerTour.packages?.map((pkg) => ({
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: pkg.name,
       price: pkg.price,
       priceCurrency: "EUR",
@@ -199,6 +201,7 @@ const menuSchema = {
       description: "Standard seating package with full dinner service and unlimited soft drinks. From €30 per person.",
       offers: {
         "@type": "Offer",
+        ...OFFER_MERCHANT_DEFAULTS,
         price: 30,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
@@ -221,6 +224,7 @@ const menuSchema = {
       description: "Standard seating package with full dinner service and local alcoholic drinks. From €45 per person.",
       offers: {
         "@type": "Offer",
+        ...OFFER_MERCHANT_DEFAULTS,
         price: 45,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
@@ -237,6 +241,7 @@ const menuSchema = {
       description: "VIP stage-close table with expanded dinner menu and unlimited soft drinks. From €80 per person.",
       offers: {
         "@type": "Offer",
+        ...OFFER_MERCHANT_DEFAULTS,
         price: 80,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
@@ -254,6 +259,7 @@ const menuSchema = {
       description: "Best VIP table with premium dinner menu and unlimited local and imported alcoholic drinks. From €90 per person.",
       offers: {
         "@type": "Offer",
+        ...OFFER_MERCHANT_DEFAULTS,
         price: 90,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
@@ -306,6 +312,7 @@ const eventSchema = {
   },
   offers: {
     "@type": "Offer",
+    ...OFFER_MERCHANT_DEFAULTS,
     url: "https://merrysails.com/istanbul-dinner-cruise",
     price: dinnerTour.priceEur,
     priceCurrency: "EUR",

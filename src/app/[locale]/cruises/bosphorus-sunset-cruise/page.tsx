@@ -9,6 +9,7 @@ import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import RelatedTours from "@/components/ui/RelatedTours";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -489,6 +490,7 @@ export default async function LocaleSunsetCruisePage({
     },
     offers: {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       url: canonicalUrl,
       price: sunsetTour.priceEur,
       priceCurrency: "EUR",

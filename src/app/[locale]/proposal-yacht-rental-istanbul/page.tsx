@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -468,6 +469,7 @@ export default async function LocaleProposalYachtRentalPage({
     },
     offers: {
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       price: "280",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",

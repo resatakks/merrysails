@@ -6,6 +6,14 @@ User-agent: *
 Content-Signal: search=yes, ai-train=no, ai-input=yes
 Allow: /
 Disallow: /api/
+# Next.js framework assets — never index these, they waste crawl budget and
+# show up as "Crawled - currently not indexed" in GSC.
+Disallow: /_next/static/
+Disallow: /_next/data/
+Disallow: /_next/image
+# Private/auth surfaces — keep crawlers off entirely.
+Disallow: /admin/
+Disallow: /unsubscribe
 
 User-agent: Googlebot
 Allow: /

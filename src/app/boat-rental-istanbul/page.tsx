@@ -48,13 +48,9 @@ const serviceSchema = {
     "@id": `${SITE_URL}/#organization`,
   },
   areaServed: { "@type": "City", name: "Istanbul" },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "150",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  // aggregateRating intentionally NOT here — Service is not a valid
+  // AggregateRating parent (Google Review snippet spec). See CLAUDE.md
+  // rule 4a. Rating is conveyed through the Organization schema instead.
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Boat Rental Formats",

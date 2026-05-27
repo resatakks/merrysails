@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { getTourBySlug } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
@@ -49,6 +50,7 @@ const serviceSchema = {
     name: "Corporate Event Formats",
     itemListElement: corporateTour.packages?.map((pkg) => ({
       "@type": "Offer",
+      ...OFFER_MERCHANT_DEFAULTS,
       name: pkg.name,
       price: pkg.price,
       priceCurrency: "EUR",
