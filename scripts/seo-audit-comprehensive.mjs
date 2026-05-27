@@ -30,10 +30,14 @@ const rootDir = path.resolve(__dirname, "..");
 const srcDir = path.join(rootDir, "src");
 const appDir = path.join(srcDir, "app");
 
-const TITLE_SUFFIX = " | MerrySails Istanbul 2026"; // 27 chars
-const TITLE_SUFFIX_LEN = TITLE_SUFFIX.length; // 27
-// Google SERP truncation at ~60 chars. With 27-char suffix, page portion max = 33.
-// But we flag P0 only for clear violations (>80 total), P1 for 60-80 range.
+// Suffix shortened from " | MerrySails Istanbul 2026" (27 chars) to
+// " | MerrySails" (13 chars) on 2026-05-18 — CLAUDE.md rule 5. Keep
+// this constant in sync with `template:` in src/app/layout.tsx or
+// title-marginal will fire on titles that actually fit.
+const TITLE_SUFFIX = " | MerrySails"; // 13 chars
+const TITLE_SUFFIX_LEN = TITLE_SUFFIX.length; // 13
+// Google SERP truncation at ~60 chars. With 13-char suffix, page portion max = 47.
+// We flag P0 only for clear violations (>80 total), P1 for 60-80 range.
 const TITLE_MAX_TOTAL_P0 = 80; // definitely truncated
 const TITLE_MAX_TOTAL_P1 = 60; // ideal limit
 const DESC_MIN = 140;
@@ -134,10 +138,47 @@ function getAllInternalLinks() {
     const src = fs.readFileSync(f, "utf8");
     const lines = src.split("\n");
     for (let i = 0; i < lines.length; i++) {
-      const re = /href=["'](\/[^"'?#]*)["']/g;
+      // String/quoted literals
+      const reQuoted = /href=["'](\/[^"'?#]*)["']/g;
       let m;
-      while ((m = re.exec(lines[i])) !== null) {
+      while ((m = reQuoted.exec(lines[i])) !== null) {
         links.push({ href: m[1], file: f, line: i + 1 });
+      }
+      // Template literal hrefs with a leading static segment, e.g.
+      //   href={`/yacht-charter-istanbul/${slug}`}
+      //   `${SITE_URL}/cruises/${tour.slug}`
+      // We extract just the static prefix up to the first ${ — but record
+      // it WITHOUT the trailing "/" since the audit's broken-link checker
+      // only knows about full routes, never directory-style prefixes.
+      // The prefix is recorded as the parent route so the audit picks up
+      // the *parent* as having outgoing links (this is enough to defeat
+      // sitemap-orphan checks for the parent), without falsely flagging
+      // the prefix itself as a missing route.
+      const reTpl = /href=\{`(\/[^`$]+)/g;
+      while ((m = reTpl.exec(lines[i])) !== null) {
+        const prefix = m[1].replace(/\/+$/, "");
+        // Skip if the prefix has nothing useful — e.g. matched just "/".
+        if (prefix.length <= 1) continue;
+        // Note: we mark the link as "template-prefix" so the broken-link
+        // checker can ignore it (these prefixes are NEVER real routes).
+        links.push({ href: prefix, file: f, line: i + 1, isTemplatePrefix: true });
+      }
+      // Bare template-literal building of SITE_URL + "/foo/${slug}"
+      const reSiteTpl = /\$\{SITE_URL\}(\/[^`$"'\s]+)/g;
+      while ((m = reSiteTpl.exec(lines[i])) !== null) {
+        const rawPath = m[1].replace(/[)`,;].*$/, "").trim();
+        if (rawPath.length <= 1 || rawPath.includes("$") || rawPath.includes("{")) continue;
+        const cleaned = rawPath.replace(/\/+$/, "");
+        // Mark as a template-prefix path so the broken-link checker
+        // doesn't flag e.g. "/cruises/" or "/guides/" as 404s — they
+        // are template-literal prefixes, never real routes.
+        const isPrefix = rawPath.endsWith("/");
+        links.push({
+          href: cleaned,
+          file: f,
+          line: i + 1,
+          isTemplatePrefix: isPrefix,
+        });
       }
     }
   }
@@ -158,9 +199,16 @@ function getSitemapUrls() {
   let m;
   while ((m = pathRe.exec(src)) !== null) {
     const p = m[1];
-    if (p.startsWith("/") && !p.includes("$") && !p.includes("{") && p.length > 1) {
-      urls.add(p);
-    }
+    if (!p.startsWith("/") || p.length <= 1) continue;
+    if (p.includes("$") || p.includes("{")) continue;
+    // Skip XML/HTML closing-tag artifacts that look like paths but are
+    // really fragments of the surrounding string literals — e.g. the
+    // `</>` self-closing snippets used while building <xhtml:link>
+    // markup.
+    if (p.includes(">") || p.includes("<") || p.includes("`")) continue;
+    // Skip path-like regex/replace artifacts ("/g", "/i" etc).
+    if (p.length <= 3 && /^\/[a-z]{1,2}$/.test(p)) continue;
+    urls.add(p);
   }
   return [...urls];
 }
@@ -268,16 +316,28 @@ function checkMetaCoverage() {
       }
     }
 
-    // Meta description length
-    for (const m of src.matchAll(/description\s*:\s*["'`]([^"'`]+)["'`]/g)) {
-      const desc = m[1].replace(/\$\{[^}]+\}/g, "XXX");
-      const line = src.slice(0, m.index).split("\n").length;
-      if (desc.length < 70) {
-        addIssue("P2", "meta-desc-short", f, line,
-          `Meta description too short (${desc.length} chars, optimal 140-160).`);
-      } else if (desc.length > DESC_MAX + 5) {
-        addIssue("P1", "meta-desc-long", f, line,
-          `Meta description too long (${desc.length} chars) — Google truncates at ~160.`);
+    // Meta description length — ONLY scan inside the `metadata` /
+    // `generateMetadata()` block. Previously this matched every
+    // `description: "…"` in the file (including TypeScript type interface
+    // declarations like `description: string;`, schema descriptions buried
+    // deep in the page, and translation copy) which produced a flood of
+    // false positives. The metadata block window is bounded to the first
+    // ~1500 chars after the declaration — Next metadata objects are short.
+    const metaStart = src.search(/export\s+const\s+metadata\s*:\s*Metadata|export\s+async\s+function\s+generateMetadata|export\s+function\s+generateMetadata/);
+    if (metaStart >= 0) {
+      const metaWindow = src.slice(metaStart, metaStart + 2500);
+      const descMatch = metaWindow.match(/description\s*:\s*["'`]([^"'`]+)["'`]/);
+      if (descMatch) {
+        const desc = descMatch[1].replace(/\$\{[^}]+\}/g, "XXX");
+        const absIdx = metaStart + descMatch.index;
+        const line = src.slice(0, absIdx).split("\n").length;
+        if (desc.length < 70) {
+          addIssue("P2", "meta-desc-short", f, line,
+            `Meta description too short (${desc.length} chars, optimal 140-160).`);
+        } else if (desc.length > DESC_MAX + 5) {
+          addIssue("P1", "meta-desc-long", f, line,
+            `Meta description too long (${desc.length} chars) — Google truncates at ~160.`);
+        }
       }
     }
   }
@@ -301,21 +361,37 @@ function checkRedirectLinks(redirects, links) {
 // ============================================================
 function checkBrokenLinks(routes, redirects, links) {
   const checked = new Set();
-  for (const { href, file, line } of links) {
+  for (const link of links) {
+    const { href, file, line, isTemplatePrefix } = link;
     if (checked.has(href)) continue;
     checked.add(href);
+    // Skip prefixes harvested from template literals — these are never
+    // real routes on their own (they always serve a sub-page).
+    if (isTemplatePrefix) continue;
     // Skip admin/api/anchors/external
     if (href.startsWith("/admin") || href.startsWith("/api") ||
         href.includes("#") || href.includes("?") || href.includes(".")) continue;
     // Skip redirected URLs (covered by checkRedirectLinks)
     if (redirects.has(href)) continue;
-    // Check if route exists
-    const exists = routes.has(href) ||
+    // Root "/" is always served by app/page.tsx — the route extractor
+    // currently doesn't add it as a literal "/" entry because the path
+    // walk yields the empty string. Whitelist it explicitly.
+    if (href === "/") continue;
+    // Check if route exists (static or dynamic).  For locale-prefixed
+    // links like /tr/foo, also strip the prefix and re-test, since the
+    // route extractor stores [locale]-aware pages under their unprefixed
+    // path (e.g. /bosphorus-cruise covers /tr/bosphorus-cruise too).
+    const hrefVariants = [href];
+    const localeStrip = href.replace(/^\/(tr|de|fr|nl|ru|ar|sa|zh|ja|ko|es)(\/|$)/, "/");
+    if (localeStrip !== href) hrefVariants.push(localeStrip);
+    const exists = hrefVariants.some((candidate) =>
+      routes.has(candidate) ||
       [...routes].some((r) => {
         if (!r.includes(":")) return false;
         const pattern = new RegExp("^" + r.replace(/:\w+/g, "[^/]+") + "$");
-        return pattern.test(href);
-      });
+        return pattern.test(candidate);
+      }),
+    );
     if (!exists) {
       addIssue("P1", "broken-link", file, line,
         `Internal link href="${href}" has no matching page route.`);
