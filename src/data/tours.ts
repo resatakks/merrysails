@@ -227,9 +227,6 @@ export const tours: Tour[] = [
     gallery: [
       "https://images.unsplash.com/photo-1542362567-b07e54358753?w=2000&q=80&auto=format&fit=crop",
     ],
-    galleryAlts: [
-      "White motor yacht crossing calm water at golden hour with warm sky behind",
-    ],
     /* Parked 2026-05-26 — restore when new originals are ready:
     image: "/images/sunset5.jpeg",
     gallery: [
