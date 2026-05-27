@@ -25,7 +25,7 @@ export const fleet: Yacht[] = [
     length: "24 metre",
     features: ["Klimalı salon", "Açık üst güverte", "VIP bölüm", "Profesyonel mutfak", "Ses sistemi", "LED aydınlatma"],
     description: "MerrySails filosunun amiral gemisi. 50 kişiye kadar misafir ağırlayabilen Merry Star, lüks salonu ve geniş üst güvertesiyle grup turları ve özel organizasyonlar için ideal.",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    image: "/images/tours/yacht-charter-in-istanbul/01.webp",
     pricePerHour: 300,
   },
   {
@@ -37,7 +37,7 @@ export const fleet: Yacht[] = [
     length: "18 metre",
     features: ["Geleneksel ahşap tasarım", "Açık güverte", "Gölgelik alan", "Ses sistemi", "Mini mutfak"],
     description: "Otantik İstanbul deneyimi sunan klasik ahşap teknemiz. Boğaz'ın ruhunu en iyi yansıtan Merry Breeze, gün batımı ve keşif turları için mükemmel.",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    image: "/images/tours/yacht-charter-in-istanbul/05.webp",
     pricePerHour: 200,
   },
   {
@@ -49,7 +49,7 @@ export const fleet: Yacht[] = [
     length: "28 metre",
     features: ["Jacuzzi", "Üst güverte bar", "Master suite", "Jet ski platformu", "Full mutfak", "Sinema sistemi"],
     description: "Ultra lüks VIP deneyimi için tasarlanmış Merry Diamond. Jacuzzi, sinema sistemi ve özel bar ile Boğaz'da en prestijli deneyimi sunuyor.",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    image: "/images/tours/yacht-charter-in-istanbul/10.webp",
     pricePerHour: 600,
   },
   {
@@ -61,7 +61,7 @@ export const fleet: Yacht[] = [
     length: "20 metre",
     features: ["Geniş güverte", "Stabilite", "Kapalı salon", "Açık bar", "WiFi", "USB şarj"],
     description: "Çift gövdeli tasarımıyla yüksek stabilite sunan Merry Pearl, deniz tutması endişesi olanlar için ideal. Geniş güvertesi ve modern iç mekanıyla konforlu bir yolculuk vaat ediyor.",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1920&q=80&auto=format&fit=crop",
+    image: "/images/tours/yacht-charter-in-istanbul/15.jpg",
     pricePerHour: 250,
   },
 ];
