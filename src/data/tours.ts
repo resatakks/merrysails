@@ -223,11 +223,21 @@ export const tours: Tour[] = [
     badgeColor: "",
     // Sunset visuals parked 2026-05-27 — fresh original shoot pending.
     // Using our own yacht photos from the fleet folder as placeholder.
-    image: "/images/fleet/y3/exterior-1.jpg",
+    image: "/images/sunset-2026/hero.jpeg",
     gallery: [
-      "/images/fleet/y3/exterior-1.jpg",
-      "/images/fleet/y3/exterior-2.jpg",
-      "/images/fleet/y3/exterior-3.jpg",
+      "/images/sunset-2026/hero.jpeg",
+      "/images/sunset-2026/01.jpeg",
+      "/images/sunset-2026/02.jpeg",
+      "/images/sunset-2026/03.jpeg",
+      "/images/sunset-2026/04.jpeg",
+      "/images/sunset-2026/05.jpeg",
+      "/images/sunset-2026/06.jpeg",
+      "/images/sunset-2026/07.jpeg",
+      "/images/sunset-2026/08.jpeg",
+      "/images/sunset-2026/09.jpeg",
+      "/images/sunset-2026/10.jpeg",
+      "/images/sunset-2026/11.jpeg",
+      "/images/sunset-2026/12.jpeg",
     ],
     /* Parked 2026-05-26 — restore when new originals are ready:
     image: "/images/sunset5.jpeg",
@@ -667,7 +677,7 @@ export const tours: Tour[] = [
     // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
     // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
     // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
-    image: "/images/fleet/y3/exterior-1.jpg",
+    image: "/images/fleet/y9/01.jpeg",
     gallery: [],
     route: "Kuruçeşme → Maiden's Tower → Bosphorus Bridge → Return",
     departureTime: "Timed with sunset",
@@ -701,7 +711,7 @@ export const tours: Tour[] = [
     // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
     // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
     // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
-    image: "/images/fleet/y3/exterior-1.jpg",
+    image: "/images/fleet/y9/01.jpeg",
     gallery: [],
     route: "Kuruçeşme → Bosphorus Night Tour → Return",
     departureTime: "19:00 / 20:00",
@@ -820,7 +830,7 @@ export const tours: Tour[] = [
     // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
     // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
     // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
-    image: "/images/fleet/y3/exterior-1.jpg",
+    image: "/images/fleet/y9/01.jpeg",
     gallery: [],
     route: "Special romantic route (around Maiden's Tower)",
     departureTime: "Timed with sunset",

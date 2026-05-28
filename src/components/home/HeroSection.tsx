@@ -28,8 +28,8 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-[#0b1e3a]">
       {/* Hero — CC0 Bosphorus Bridge at sunset (Unsplash, license-free, swappable when fresh originals arrive) */}
       <Image
-        src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=2400&q=80&auto=format&fit=crop"
-        alt="Istanbul Bosphorus at golden hour with the first Bosphorus Bridge in view"
+        src="/images/sunset-2026/hero.jpeg"
+        alt="MerrySails Bosphorus sunset cruise — golden hour on the strait"
         fill
         className="object-cover object-center"
         priority

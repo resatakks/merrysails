@@ -1,6 +1,9 @@
 import type { SiteLocale } from "@/i18n/config";
 
-/* Legacy fleet entries consumed by boat-rental routes. Kept intact. */
+/* ---------------------------------------------------------------------------
+ * Legacy fleet (consumed by boat-rental pages). Do not remove without
+ * refactoring those pages — kept verbatim for backward compatibility.
+ * ------------------------------------------------------------------------ */
 
 export interface Yacht {
   id: string;
@@ -25,7 +28,7 @@ export const fleet: Yacht[] = [
     length: "24 metre",
     features: ["Klimalı salon", "Açık üst güverte", "VIP bölüm", "Profesyonel mutfak", "Ses sistemi", "LED aydınlatma"],
     description: "MerrySails filosunun amiral gemisi. 50 kişiye kadar misafir ağırlayabilen Merry Star, lüks salonu ve geniş üst güvertesiyle grup turları ve özel organizasyonlar için ideal.",
-    image: "/images/tours/yacht-charter-in-istanbul/01.webp",
+    image: "/images/tours/yacht-charter-in-istanbul/03.jpeg",
     pricePerHour: 300,
   },
   {
@@ -37,7 +40,7 @@ export const fleet: Yacht[] = [
     length: "18 metre",
     features: ["Geleneksel ahşap tasarım", "Açık güverte", "Gölgelik alan", "Ses sistemi", "Mini mutfak"],
     description: "Otantik İstanbul deneyimi sunan klasik ahşap teknemiz. Boğaz'ın ruhunu en iyi yansıtan Merry Breeze, gün batımı ve keşif turları için mükemmel.",
-    image: "/images/tours/yacht-charter-in-istanbul/05.webp",
+    image: "/images/tours/yacht-charter-in-istanbul/05.jpeg",
     pricePerHour: 200,
   },
   {
@@ -67,11 +70,18 @@ export const fleet: Yacht[] = [
 ];
 
 /* ---------------------------------------------------------------------------
- * Charter fleet — yacht-charter-istanbul page. Six vessels, EUR-priced.
- * Boat brand names never appear in UI. Capacity-tier labels only.
+ * Charter fleet (yacht-charter-istanbul page). Six vessels, EUR-priced,
+ * capacity-tier labels — boat brand names never surface in UI.
  * ------------------------------------------------------------------------ */
 
-export type CharterFleetSlug = "bosphorus-sailing-yacht-10" | "bosphorus-sailing-yacht-14" | "bosphorus-group-yacht-36" | "bosphorus-signature-yacht-36" | "bosphorus-event-yacht-44" | "bosphorus-mega-event-yacht-150";
+export type CharterFleetSlug =
+  | "premium-yacht-14"
+  | "mega-event-yacht-150"
+  | "boutique-yacht-12"
+  | "premium-yacht-15"
+  | "group-yacht-40-standard"
+  | "group-yacht-40-signature"
+  | "event-yacht-90";
 
 export type CharterFleetLocaleStrings = {
   label: string;
@@ -84,8 +94,10 @@ export type CharterFleetItem = {
   internalCode: string;
   capacity: { min: number; max: number };
   hourlyEur: number | null;
-  minHours: 2;
-  discountFromHours: 3;
+  // 2026-05-28 fleet refresh: event-yacht-90 only starts from 4h and discounts
+  // kick in from 5h, so these literal types were relaxed to `number`.
+  minHours: number;
+  discountFromHours: number;
   discountPercent: 10;
   priceByHours: Record<number, number> | null;
   coverImage: string;
@@ -94,86 +106,67 @@ export type CharterFleetItem = {
   bookable: boolean;
   badges?: Array<"popular" | "discount" | "event" | "boutique" | "mega">;
   altDescriptor: string;
+  /** Partial — every item must include "en". Other locales fall back to en. */
   i18n: Partial<Record<SiteLocale, CharterFleetLocaleStrings>> & {
     en: CharterFleetLocaleStrings;
   };
 };
 
 const altDescriptors = {
-  y1: "10-guest sailing yacht for an intimate Bosphorus voyage",
-  y2: "14-guest sailing yacht for friend or family groups on the Bosphorus",
-  y3: "36-guest charter yacht for medium-sized group sailings on the Bosphorus",
-  y4: "36-guest signature charter yacht for upgraded Bosphorus sailing",
-  y5: "44-guest event yacht for weddings and corporate gatherings on the Bosphorus",
-  y6: "150-guest mega event yacht for large Bosphorus celebrations and galas",
+  y2: "14-guest premium private yacht for Bosphorus charter",
+  y6: "150-guest mega event yacht for Bosphorus large gatherings",
+  y7: "12-guest boutique private yacht for Bosphorus charter",
+  y8: "15-guest premium private yacht for Bosphorus charter",
+  y9: "40-guest group charter yacht for Bosphorus group cruise",
+  y10: "90-guest event yacht for Bosphorus corporate and large private events",
 } as const;
 
 const CHARTER_FLEET: CharterFleetItem[] = [
   {
-    slug: "bosphorus-sailing-yacht-10",
-    internalCode: "boutique-10",
-    capacity: { min: 10, max: 12 },
-    hourlyEur: 100,
+    slug: "boutique-yacht-12",
+    internalCode: "boutique-12",
+    capacity: { min: 0, max: 12 },
+    hourlyEur: 110,
     minHours: 2,
     discountFromHours: 3,
     discountPercent: 10,
-    priceByHours: { 2: 200, 3: 275, 4: 370, 5: 460, 6: 550, 7: 640, 8: 735 },
-    coverImage: "/images/fleet/y1/exterior-1.jpg",
+    priceByHours: { 2: 220, 3: 297, 4: 396, 5: 495, 6: 594, 7: 693, 8: 792 },
+    coverImage: "/images/fleet/y7/01.jpeg",
     exteriorImages: [
-      "/images/fleet/y1/exterior-1.jpg",
-      "/images/fleet/y1/exterior-2.jpg",
-      "/images/fleet/y1/exterior-3.jpg",
-      "/images/fleet/y1/exterior-4.jpg",
+      "/images/fleet/y7/01.jpeg",
+      "/images/fleet/y7/02.jpeg",
+      "/images/fleet/y7/03.jpeg",
+      "/images/fleet/y7/04.jpeg",
+      "/images/fleet/y7/05.jpeg",
+      "/images/fleet/y7/06.jpeg",
     ],
     interiorImages: [
-      "/images/fleet/y1/interior-1.jpg",
-      "/images/fleet/y1/interior-2.jpg",
-      "/images/fleet/y1/interior-3.jpg",
-      "/images/fleet/y1/interior-4.jpg",
-      "/images/fleet/y1/interior-5.jpg",
-      "/images/fleet/y1/interior-6.jpg",
-      "/images/fleet/y1/interior-7.jpg",
-      "/images/fleet/y1/interior-8.jpg",
-      "/images/fleet/y1/interior-9.jpg",
+      "/images/fleet/y7/07.jpeg",
+      "/images/fleet/y7/08.jpeg",
+      "/images/fleet/y7/09.jpeg",
+      "/images/fleet/y7/10.jpeg",
+      "/images/fleet/y7/11.jpeg",
     ],
     bookable: true,
     badges: ["boutique"],
-    altDescriptor: altDescriptors.y1,
+    altDescriptor: altDescriptors.y7,
     i18n: {
       en: {
-        label: "Bosphorus Sailing Yacht · 10",
-        tagline: "Small-deck sailing for couples and close-knit groups",
+        label: "Boutique Yacht · 12 Guests",
+        tagline: "Intimate private deck for couples and small groups",
         description:
-          "An intimate sailing yacht tuned for couples, anniversaries, and tight friend groups looking for a calm Bosphorus afternoon. Soft drinks and a light snack tray come with the deck.",
+          "Compact boutique-class private yacht for up to 12 guests. Built for proposals, anniversaries, and tight friend groups who want the Bosphorus to feel personal. From €220 for a 2-hour charter, with an automatic 10% discount from 3 hours onward.",
       },
       tr: {
-        label: "Boğaz Sailing Yatı · 10 Kişi",
-        tagline: "Çiftler ve yakın gruplar için küçük güverteli sailing",
+        label: "Butik Yat · 12 Kişilik",
+        tagline: "Çiftler ve küçük gruplar için samimi özel güverte",
         description:
-          "Çiftlerin, yıl dönümü kutlamalarının ve yakın arkadaş gruplarının Boğaz'da sakin bir öğleden sonra geçirmesi için ölçeklenmiş samimi bir sailing yatı. Yumuşak içecek ve hafif bir atıştırmalık tabağı güverteyle birlikte gelir.",
-      },
-      de: {
-        label: "Bosporus-Sailing-Yacht · 10",
-        tagline: "Kleines Deck für Paare und enge Gruppen",
-        description:
-          "Eine intime Sailing-Yacht, abgestimmt auf Paare, Jubiläen und enge Freundeskreise, die einen ruhigen Bosporus-Nachmittag suchen. Softdrinks und ein leichter Snack-Teller gehören zum Deck dazu.",
-      },
-      fr: {
-        label: "Voilier Bosphore · 10",
-        tagline: "Petit pont pour couples et groupes restreints",
-        description:
-          "Un voilier intime taillé pour les couples, les anniversaires de mariage et les petits cercles d'amis en quête d'un après-midi paisible sur le Bosphore. Boissons sans alcool et un plateau d'amuse-bouches accompagnent le pont.",
-      },
-      nl: {
-        label: "Bosporus Zeiljacht · 10",
-        tagline: "Klein dek voor stellen en kleine groepen",
-        description:
-          "Een intieme zeiljacht, afgestemd op stellen, jubilea en kleine vriendengroepen die een rustige Bosporus-middag zoeken. Frisdrank en een licht snackbord horen bij het dek.",
+          "12 kişiye kadar misafir ağırlayan kompakt butik sınıfı özel yat. Evlilik teklifi, yıl dönümü ve dar arkadaş grupları için ideal. 2 saatlik özel kiralama €220'den başlar, 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim uygulanır.",
       },
     },
   },
   {
-    slug: "bosphorus-sailing-yacht-14",
+    slug: "premium-yacht-14",
     internalCode: "premium-14",
     capacity: { min: 12, max: 14 },
     hourlyEur: 110,
@@ -200,225 +193,202 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     altDescriptor: altDescriptors.y2,
     i18n: {
       en: {
-        label: "Bosphorus Sailing Yacht · 14",
-        tagline: "Wider deck and salon for friends and families",
+        label: "Premium Yacht · 14 Guests",
+        tagline: "Spacious deck and lounge for family or friend groups",
         description:
-          "A step up in deck space and salon comfort, this sailing yacht works for birthday afternoons, family meetups, and friend trips where everyone wants room to drift between sun and shade. Soft drinks and snacks aboard.",
+          "Larger premium private yacht with a roomier lounge and a wider top deck. Ideal for birthdays, family outings, and small celebrations where everyone wants to spread out. Soft drinks and snacks included.",
       },
       tr: {
-        label: "Boğaz Sailing Yatı · 14 Kişi",
-        tagline: "Arkadaşlar ve aileler için geniş güverte ve salon",
+        label: "Premium Yat · 14 Kişilik",
+        tagline: "Aile ve arkadaş grupları için ferah güverte ve salon",
         description:
-          "Güverte alanı ve salon konforu bir tık yukarıda; doğum günü öğleden sonraları, aile buluşmaları ve herkesin güneşle gölge arasında rahat hareket etmek istediği arkadaş çıkışları için yapılmış bir sailing yatı. Tekne yumuşak içecek ve atıştırmalıkla yola çıkar.",
+          "Daha geniş bir salon ve daha geniş üst güverte ile büyük premium özel yat. Doğum günleri, aile çıkışları ve herkesin rahatça yayılmak istediği küçük kutlamalar için ideal. Yumuşak içecek ve atıştırmalık dahildir.",
       },
       de: {
-        label: "Bosporus-Sailing-Yacht · 14",
-        tagline: "Breiteres Deck und Salon für Freunde und Familien",
+        label: "Premium-Yacht · 14 Gäste",
+        tagline: "Großzügiges Deck und Lounge für Familien- und Freundesgruppen",
         description:
-          "Eine Stufe mehr Deckfläche und Salonkomfort. Diese Sailing-Yacht passt zu Geburtstagsnachmittagen, Familientreffen und Freundesausflügen, bei denen alle Platz haben sollen, um zwischen Sonne und Schatten zu wechseln. Softdrinks und Snacks an Bord.",
+          "Größere Premium-Privatjacht mit geräumigerer Lounge und breiterem Oberdeck. Ideal für Geburtstage, Familienausflüge und kleinere Feiern. Softdrinks und Snacks inklusive.",
       },
       fr: {
-        label: "Voilier Bosphore · 14",
-        tagline: "Pont et salon plus larges pour amis et familles",
+        label: "Yacht Premium · 14 Invités",
+        tagline: "Pont et salon spacieux pour familles et groupes d'amis",
         description:
-          "Un niveau au-dessus en surface de pont et confort de salon. Ce voilier convient aux après-midis d'anniversaire, aux retrouvailles familiales et aux escapades entre amis où chacun veut pouvoir circuler entre soleil et ombre. Boissons sans alcool et collations à bord.",
+          "Yacht privé premium plus grand avec un salon plus spacieux et un pont supérieur plus large. Idéal pour les anniversaires, sorties familiales et petites célébrations. Boissons sans alcool et collations incluses.",
       },
       nl: {
-        label: "Bosporus Zeiljacht · 14",
-        tagline: "Breder dek en salon voor vrienden en familie",
+        label: "Premium Jacht · 14 Gasten",
+        tagline: "Ruim dek en lounge voor familie- of vriendengroepen",
         description:
-          "Een stap groter in dekruimte en saloncomfort. Deze zeiljacht past bij verjaardagsmiddagen, familiebijeenkomsten en uitstapjes met vrienden waar iedereen wil kunnen schuiven tussen zon en schaduw. Frisdrank en snacks aan boord.",
+          "Een groter premium privéjacht met een ruimere lounge en breder bovendek. Ideaal voor verjaardagen, familie-uitjes en kleine vieringen. Frisdrank en snacks inbegrepen.",
       },
     },
   },
   {
-    slug: "bosphorus-group-yacht-36",
-    internalCode: "group-standard-36",
-    capacity: { min: 30, max: 36 },
-    hourlyEur: 140,
+    slug: "premium-yacht-15",
+    internalCode: "premium-15",
+    capacity: { min: 0, max: 15 },
+    hourlyEur: 160,
     minHours: 2,
     discountFromHours: 3,
     discountPercent: 10,
-    priceByHours: { 2: 280, 3: 375, 4: 500, 5: 625, 6: 750, 7: 875, 8: 1000 },
-    coverImage: "/images/fleet/y3/exterior-1.jpg",
+    priceByHours: { 2: 320, 3: 432, 4: 576, 5: 720, 6: 864, 7: 1008, 8: 1152 },
+    coverImage: "/images/fleet/y8/01.jpeg",
     exteriorImages: [
-      "/images/fleet/y3/exterior-1.jpg",
-      "/images/fleet/y3/exterior-2.jpg",
-      "/images/fleet/y3/exterior-3.jpg",
-      "/images/fleet/y3/exterior-4.jpg",
-      "/images/fleet/y3/exterior-5.jpg",
+      "/images/fleet/y8/01.jpeg",
+      "/images/fleet/y8/02.jpeg",
+      "/images/fleet/y8/03.jpeg",
+      "/images/fleet/y8/04.jpeg",
+      "/images/fleet/y8/05.jpeg",
     ],
-    interiorImages: [
-      "/images/fleet/y3/interior-1.jpg",
-      "/images/fleet/y3/interior-2.jpg",
-      "/images/fleet/y3/interior-3.jpg",
-      "/images/fleet/y3/interior-4.jpg",
-    ],
+    interiorImages: [],
     bookable: true,
-    altDescriptor: altDescriptors.y3,
+    badges: ["popular"],
+    altDescriptor: altDescriptors.y8,
     i18n: {
       en: {
-        label: "Bosphorus Group Yacht · 36",
-        tagline: "Mid-size deck for medium-sized celebrations",
+        label: "Premium Yacht · 15 Guests",
+        tagline: "Larger deck and lounge for mid-size groups",
         description:
-          "A practical mid-size group yacht — comfortable for 30 to 36 guests across bachelor afternoons, milestone birthdays, and smaller corporate offsites. Soft drinks and snacks already on board; everything else builds from there.",
+          "Premium private yacht for up to 15 guests with a wider top deck and a more refined lounge than the boutique tier. Ideal for birthdays, family days, and small celebrations. From €320 for a 2-hour charter; 10% discount from 3 hours onward.",
       },
       tr: {
-        label: "Boğaz Grup Yatı · 36 Kişi",
-        tagline: "Orta ölçek güvertede orta ölçek kutlamalar",
+        label: "Premium Yat · 15 Kişilik",
+        tagline: "Orta gruplar için daha geniş güverte ve salon",
         description:
-          "Pragmatik orta sınıf grup yatı — bekarlığa veda öğleden sonraları, yuvarlak yaş doğum günleri ve daha kompakt kurumsal off-site'lar için 30-36 kişiyi rahat ağırlar. Yumuşak içecek ve atıştırmalık zaten teknede; gerisi buradan kurulur.",
-      },
-      de: {
-        label: "Bosporus Gruppen-Yacht · 36",
-        tagline: "Mittelgroßes Deck für mittelgroße Feiern",
-        description:
-          "Praktische mittelgroße Gruppen-Yacht — komfortabel für 30 bis 36 Gäste, ob Junggesellinnen-Nachmittag, runder Geburtstag oder kompakter Firmen-Offsite. Softdrinks und Snacks sind bereits an Bord; alles weitere bauen Sie darauf auf.",
-      },
-      fr: {
-        label: "Yacht de Groupe Bosphore · 36",
-        tagline: "Pont moyen pour célébrations moyennes",
-        description:
-          "Yacht de groupe pratique de taille moyenne — confortable pour 30 à 36 invités, qu'il s'agisse d'un après-midi entre copines, d'un anniversaire marquant ou d'un offsite d'entreprise compact. Boissons sans alcool et collations déjà à bord ; tout le reste se construit ensuite.",
-      },
-      nl: {
-        label: "Bosporus Groepsjacht · 36",
-        tagline: "Middelgroot dek voor middelgrote vieringen",
-        description:
-          "Praktisch middelgroot groepsjacht — comfortabel voor 30 tot 36 gasten, of het nu om een vrijgezellenmiddag, een mijlpaalverjaardag of een compacte bedrijfsoffsite gaat. Frisdrank en snacks staan al aan boord; al het andere wordt daarop opgebouwd.",
+          "15 kişiye kadar misafir ağırlayan premium özel yat. Butik sınıfına göre daha geniş üst güverte ve daha rafine bir salon sunar. Doğum günleri, aile günleri ve küçük kutlamalar için ideal. 2 saatlik özel kiralama €320'den başlar; 3 saat ve üzeri rezervasyonlarda %10 indirim uygulanır.",
       },
     },
   },
   {
-    slug: "bosphorus-signature-yacht-36",
-    internalCode: "group-signature-36",
-    capacity: { min: 30, max: 36 },
-    hourlyEur: 150,
+    slug: "group-yacht-40-standard",
+    internalCode: "group-standard-40",
+    capacity: { min: 0, max: 15 },
+    hourlyEur: 190,
     minHours: 2,
     discountFromHours: 3,
     discountPercent: 10,
-    priceByHours: { 2: 300, 3: 400, 4: 535, 5: 670, 6: 800, 7: 935, 8: 1070 },
-    coverImage: "/images/fleet/y4/exterior-1.jpg",
+    priceByHours: { 2: 380, 3: 513, 4: 684, 5: 855, 6: 1026, 7: 1197, 8: 1368 },
+    coverImage: "/images/fleet/y9/01.jpeg",
     exteriorImages: [
-      "/images/fleet/y4/exterior-1.jpg",
-      "/images/fleet/y4/exterior-2.jpg",
-      "/images/fleet/y4/exterior-3.jpg",
-      "/images/fleet/y4/exterior-4.jpg",
+      "/images/fleet/y9/01.jpeg",
+      "/images/fleet/y9/02.jpeg",
+      "/images/fleet/y9/03.jpeg",
+      "/images/fleet/y9/04.jpeg",
+      "/images/fleet/y9/05.jpeg",
+      "/images/fleet/y9/06.jpeg",
     ],
     interiorImages: [
-      "/images/fleet/y4/interior-1.jpg",
-      "/images/fleet/y4/interior-2.jpg",
-      "/images/fleet/y4/interior-3.jpg",
-      "/images/fleet/y4/interior-4.jpg",
-      "/images/fleet/y4/interior-5.jpg",
-      "/images/fleet/y4/interior-6.jpg",
+      "/images/fleet/y9/07.jpeg",
+      "/images/fleet/y9/08.jpeg",
+      "/images/fleet/y9/09.jpeg",
+      "/images/fleet/y9/10.jpeg",
+      "/images/fleet/y9/11.jpeg",
+    ],
+    bookable: true,
+    altDescriptor: altDescriptors.y9,
+    i18n: {
+      en: {
+        label: "Group Yacht · 40 Guests · Standard",
+        tagline: "Group charter at the smaller-group rate (up to 15 guests)",
+        description:
+          "Group-class private yacht for up to 40 guests, priced at the smaller-group tier when the booking is for 15 guests or fewer. Suited to bachelor parties, birthdays, and small corporate gatherings. From €380 for a 2-hour charter; 10% discount from 3 hours onward.",
+      },
+      tr: {
+        label: "Grup Yatı · 40 Kişilik · Standart",
+        tagline: "15 kişiye kadar grup tarifesi (40 kişilik yatta)",
+        description:
+          "40 kişiye kadar misafir ağırlayan grup sınıfı özel yat — 15 kişiye kadar olan rezervasyonlar için Standart tarife uygulanır. Bekarlığa veda, doğum günü ve küçük kurumsal toplantılar için uygun. 2 saatlik özel kiralama €380'den başlar; 3 saat ve üzeri rezervasyonlarda %10 indirim.",
+      },
+    },
+  },
+  {
+    slug: "group-yacht-40-signature",
+    internalCode: "group-signature-40",
+    capacity: { min: 15, max: 40 },
+    hourlyEur: 250,
+    minHours: 2,
+    discountFromHours: 3,
+    discountPercent: 10,
+    priceByHours: { 2: 500, 3: 675, 4: 900, 5: 1125, 6: 1350, 7: 1575, 8: 1800 },
+    coverImage: "/images/fleet/y9/02.jpeg",
+    exteriorImages: [
+      "/images/fleet/y9/02.jpeg",
+      "/images/fleet/y9/03.jpeg",
+      "/images/fleet/y9/04.jpeg",
+      "/images/fleet/y9/05.jpeg",
+      "/images/fleet/y9/06.jpeg",
+      "/images/fleet/y9/01.jpeg",
+    ],
+    interiorImages: [
+      "/images/fleet/y9/07.jpeg",
+      "/images/fleet/y9/08.jpeg",
+      "/images/fleet/y9/09.jpeg",
+      "/images/fleet/y9/10.jpeg",
+      "/images/fleet/y9/11.jpeg",
     ],
     bookable: true,
     badges: ["popular"],
-    altDescriptor: altDescriptors.y4,
+    altDescriptor: altDescriptors.y9,
     i18n: {
       en: {
-        label: "Bosphorus Signature Yacht · 36",
-        tagline: "Upgraded interior and a smoother ride at 36 guests",
+        label: "Group Yacht · 40 Guests · Signature",
+        tagline: "Group charter at the larger-group rate (15–40 guests)",
         description:
-          "Same 36-guest footprint, dialed-in interior, calmer ride at cruise speed. The signature option for milestone birthdays, brand evenings, and weddings that want a sharper finish without jumping to event class.",
+          "Same 40-guest group-class yacht, priced at the larger-group tier when the booking is for 15 to 40 guests. Ideal for milestone celebrations, brand evenings, and mid-size corporate events. From €500 for a 2-hour charter; 10% discount from 3 hours onward.",
       },
       tr: {
-        label: "Boğaz Signature Yatı · 36 Kişi",
-        tagline: "36 kişide rafine iç mekan ve daha sakin seyir",
+        label: "Grup Yatı · 40 Kişilik · Signature",
+        tagline: "15–40 kişi için grup tarifesi (40 kişilik yatta)",
         description:
-          "Aynı 36 kişilik ölçek, ince ayarlı iç mekan, seyir hızında daha sakin sürüş. Etkinlik sınıfına geçmeden daha keskin bir final isteyen yuvarlak yaş doğum günleri, marka geceleri ve düğünler için signature seçenek.",
-      },
-      de: {
-        label: "Bosporus Signature-Yacht · 36",
-        tagline: "Edleres Interieur und ruhigere Fahrt für 36 Gäste",
-        description:
-          "Gleiche 36-Gäste-Größe, abgestimmter Innenraum, ruhigere Fahrt bei Reisegeschwindigkeit. Die Signature-Option für runde Geburtstage, Markenabende und Hochzeiten, die ein schärferes Finish wollen, ohne in die Event-Klasse zu wechseln.",
-      },
-      fr: {
-        label: "Yacht Signature Bosphore · 36",
-        tagline: "Intérieur soigné et navigation plus douce pour 36 invités",
-        description:
-          "Même format 36 invités, intérieur peaufiné, navigation plus douce à vitesse de croisière. L'option signature pour les anniversaires marquants, les soirées de marque et les mariages qui veulent une finition plus nette sans passer en classe événement.",
-      },
-      nl: {
-        label: "Bosporus Signature Jacht · 36",
-        tagline: "Verfijnder interieur en rustigere vaart bij 36 gasten",
-        description:
-          "Zelfde 36-gasten formaat, fijngestemd interieur, rustigere vaart op kruissnelheid. De signature-optie voor mijlpaalverjaardagen, merkavonden en bruiloften die een scherpere afwerking willen zonder naar de event-klasse over te stappen.",
+          "Aynı 40 kişilik grup yatı — 15 ile 40 kişi arasındaki rezervasyonlar için Signature tarife uygulanır. Önemli kutlamalar, marka geceleri ve orta ölçekli kurumsal etkinlikler için ideal. 2 saatlik özel kiralama €500'den başlar; 3 saat ve üzeri rezervasyonlarda %10 indirim.",
       },
     },
   },
   {
-    slug: "bosphorus-event-yacht-44",
-    internalCode: "event-44",
-    capacity: { min: 30, max: 44 },
-    hourlyEur: null,
-    minHours: 2,
-    discountFromHours: 3,
+    slug: "event-yacht-90",
+    internalCode: "event-90",
+    capacity: { min: 30, max: 90 },
+    hourlyEur: 300,
+    minHours: 4,
+    discountFromHours: 5,
     discountPercent: 10,
-    priceByHours: null,
-    coverImage: "/images/fleet/y5/exterior-1.jpg",
+    // 4h is the entry tier (no discount); from 5h onward a 10% discount is applied
+    // on top of the per-hour rate. Pre-discount totals would be 1500/1800/2100/2400.
+    priceByHours: { 4: 1200, 5: 1350, 6: 1620, 7: 1890, 8: 2160 },
+    coverImage: "/images/fleet/y10/01.jpeg",
     exteriorImages: [
-      "/images/fleet/y5/exterior-1.jpg",
-      "/images/fleet/y5/exterior-2.jpg",
-      "/images/fleet/y5/exterior-3.jpg",
-      "/images/fleet/y5/exterior-4.jpg",
-      "/images/fleet/y5/exterior-5.jpg",
-      "/images/fleet/y5/exterior-6.jpg",
+      "/images/fleet/y10/01.jpeg",
+      "/images/fleet/y10/02.jpeg",
+      "/images/fleet/y10/03.jpeg",
+      "/images/fleet/y10/04.jpeg",
+      "/images/fleet/y10/05.jpeg",
     ],
     interiorImages: [
-      "/images/fleet/y5/interior-1.jpg",
-      "/images/fleet/y5/interior-2.jpg",
-      "/images/fleet/y5/interior-3.jpg",
-      "/images/fleet/y5/interior-4.jpg",
-      "/images/fleet/y5/interior-5.jpg",
-      "/images/fleet/y5/interior-6.jpg",
-      "/images/fleet/y5/interior-7.jpg",
-      "/images/fleet/y5/interior-8.jpg",
-      "/images/fleet/y5/interior-9.jpg",
-      "/images/fleet/y5/interior-10.jpg",
-      "/images/fleet/y5/interior-11.jpg",
-      "/images/fleet/y5/interior-12.jpg",
+      "/images/fleet/y10/06.jpeg",
+      "/images/fleet/y10/07.jpeg",
+      "/images/fleet/y10/08.jpeg",
     ],
-    bookable: false,
+    bookable: true,
     badges: ["event"],
-    altDescriptor: altDescriptors.y5,
+    altDescriptor: altDescriptors.y10,
     i18n: {
       en: {
-        label: "Bosphorus Event Yacht · 44",
-        tagline: "Wedding receptions, brand evenings, full-scale dinners",
+        label: "Event Yacht · 90 Guests",
+        tagline: "Corporate evenings, weddings, and large private parties",
         description:
-          "An event-built deck for up to 44 guests — wedding receptions, brand evenings, product launches, and dinner parties that need a real stage on the water. Costs are scoped per brief; send the plan and a fixed proposal comes back.",
+          "Event-class yacht built for corporate evenings, product launches, wedding receptions, and large private parties up to 90 guests. Minimum booking is 4 hours at €1,200; the per-hour rate is €300 and a 10% discount kicks in from 5 hours onward.",
       },
       tr: {
-        label: "Boğaz Etkinlik Yatı · 44 Kişi",
-        tagline: "Düğün resepsiyonları, marka geceleri, tam ölçekli yemekler",
+        label: "Etkinlik Yatı · 90 Kişilik",
+        tagline: "Kurumsal akşamlar, düğünler ve büyük özel partiler",
         description:
-          "44 kişiye kadar etkinlik için tasarlanmış güverte — düğün resepsiyonları, marka geceleri, lansmanlar ve su üstünde gerçek bir sahne isteyen yemekli partiler. Maliyet brief'e göre belirlenir; planı gönderin, sabit teklif geri döner.",
-      },
-      de: {
-        label: "Bosporus Event-Yacht · 44",
-        tagline: "Hochzeitsempfänge, Markenabende, große Dinnerformate",
-        description:
-          "Ein eventfähiges Deck für bis zu 44 Gäste — Hochzeitsempfänge, Markenabende, Produktlaunches und Dinnerpartys, die eine echte Bühne auf dem Wasser brauchen. Die Kosten werden pro Briefing definiert; Plan schicken, ein Festangebot kommt zurück.",
-      },
-      fr: {
-        label: "Yacht Événement Bosphore · 44",
-        tagline: "Réceptions de mariage, soirées de marque, dîners en grand",
-        description:
-          "Un pont conçu pour l'événement jusqu'à 44 invités — réceptions de mariage, soirées de marque, lancements et dîners de réception qui demandent une vraie scène sur l'eau. Les coûts se calent sur le brief ; envoyez le plan, un devis fixe revient.",
-      },
-      nl: {
-        label: "Bosporus Event Jacht · 44",
-        tagline: "Bruiloftsrecepties, merkavonden, volwaardige diners",
-        description:
-          "Een eventklaar dek voor maximaal 44 gasten — bruiloftsrecepties, merkavonden, productlanceringen en diners die een echt podium op het water nodig hebben. Kosten worden per briefing bepaald; stuur het plan en een vast voorstel komt terug.",
+          "Kurumsal akşamlar, lansmanlar, düğün resepsiyonları ve 90 kişiye kadar büyük özel partiler için tasarlanmış etkinlik sınıfı yat. Minimum rezervasyon 4 saat €1.200, saat ücreti €300'dür ve 5 saat ve üzeri rezervasyonlarda %10 indirim uygulanır.",
       },
     },
   },
   {
-    slug: "bosphorus-mega-event-yacht-150",
+    slug: "mega-event-yacht-150",
     internalCode: "mega-150",
     capacity: { min: 80, max: 150 },
     hourlyEur: null,
@@ -441,34 +411,34 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     altDescriptor: altDescriptors.y6,
     i18n: {
       en: {
-        label: "Bosphorus Mega Event Yacht · 150",
-        tagline: "Large weddings, galas, and full-program brand activations",
+        label: "Mega Event Yacht · 150 Guests",
+        tagline: "Large-scale gatherings, gala dinners, and weddings",
         description:
-          "The largest vessel in the fleet, set up for full programs — large weddings, gala dinners, full-floor brand activations, and corporate evenings up to 150 guests. Quote-only; pricing tracks the program, not a per-hour formula.",
+          "Our largest event vessel, configured for large weddings, gala dinners, brand activations, and corporate-scale gatherings up to 150 guests. Booked by quote only.",
       },
       tr: {
-        label: "Boğaz Mega Etkinlik Yatı · 150 Kişi",
-        tagline: "Büyük düğünler, galalar ve tam programlı marka aktivasyonları",
+        label: "Mega Etkinlik Yatı · 150 Kişilik",
+        tagline: "Büyük ölçekli toplantılar, gala yemekleri ve düğünler",
         description:
-          "Filodaki en büyük tekne, tam programlar için kurulu — büyük düğünler, gala yemekleri, kat dolusu marka aktivasyonları ve 150 kişiye kadar kurumsal akşamlar. Yalnız teklif; fiyat saatlik bir formüle değil, programa göre belirlenir.",
+          "Büyük düğünler, gala yemekleri, marka aktivasyonları ve 150 kişiye kadar kurumsal ölçekte toplantılar için yapılandırılmış en büyük etkinlik teknemiz. Yalnızca teklif ile rezerve edilir.",
       },
       de: {
-        label: "Bosporus Mega-Event-Yacht · 150",
-        tagline: "Große Hochzeiten, Galas und volle Markenprogramme",
+        label: "Mega-Event-Yacht · 150 Gäste",
+        tagline: "Großveranstaltungen, Galadinner und Hochzeiten",
         description:
-          "Das größte Schiff der Flotte, eingerichtet für volle Programme — große Hochzeiten, Galadinner, ganzflächige Markenaktivierungen und Firmenabende für bis zu 150 Gäste. Nur auf Angebot; der Preis richtet sich nach dem Programm, nicht nach einer Stundenformel.",
+          "Unser größtes Eventschiff, konfiguriert für große Hochzeiten, Galadinner, Markenaktivierungen und Firmenveranstaltungen bis zu 150 Gäste. Buchung ausschließlich auf Angebotsbasis.",
       },
       fr: {
-        label: "Yacht Méga-Événement Bosphore · 150",
-        tagline: "Grands mariages, galas et activations de marque complètes",
+        label: "Yacht Méga-Événement · 150 Invités",
+        tagline: "Rassemblements de grande envergure, dîners de gala et mariages",
         description:
-          "Le plus grand bateau de la flotte, monté pour des programmes complets — grands mariages, dîners de gala, activations de marque sur tout le plateau et soirées d'entreprise jusqu'à 150 invités. Uniquement sur devis ; le prix suit le programme, pas une formule horaire.",
+          "Notre plus grand navire événementiel, configuré pour les grands mariages, dîners de gala, activations de marque et événements d'entreprise jusqu'à 150 invités. Réservation uniquement sur devis.",
       },
       nl: {
-        label: "Bosporus Mega Event Jacht · 150",
-        tagline: "Grote bruiloften, gala's en volledige merkactivaties",
+        label: "Mega Event Jacht · 150 Gasten",
+        tagline: "Grootschalige bijeenkomsten, galadiners en bruiloften",
         description:
-          "Het grootste schip van de vloot, ingericht voor volledige programma's — grote bruiloften, galadiners, merkactivaties over de hele vloer en bedrijfsavonden tot 150 gasten. Alleen op offerte; de prijs volgt het programma, niet een uurformule.",
+          "Ons grootste eventschip, ingericht voor grote bruiloften, galadiners, merkactivaties en bedrijfsbijeenkomsten tot 150 gasten. Alleen op offertebasis.",
       },
     },
   },

@@ -48,12 +48,12 @@ const LOCALIZED_PATHS = [
   "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
-  "/yacht-charter-istanbul/bosphorus-sailing-yacht-10",
-  "/yacht-charter-istanbul/bosphorus-sailing-yacht-14",
-  "/yacht-charter-istanbul/bosphorus-group-yacht-36",
-  "/yacht-charter-istanbul/bosphorus-signature-yacht-36",
-  "/yacht-charter-istanbul/bosphorus-event-yacht-44",
-  "/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
+  "/yacht-charter-istanbul/boutique-yacht-12",
+  "/yacht-charter-istanbul/premium-yacht-14",
+  "/yacht-charter-istanbul/group-yacht-40-standard",
+  "/yacht-charter-istanbul/group-yacht-40-signature",
+  "/yacht-charter-istanbul/event-yacht-90",
+  "/yacht-charter-istanbul/mega-event-yacht-150",
 ];
 
 const LOCALIZED_SET = new Set(LOCALIZED_PATHS);

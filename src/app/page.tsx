@@ -171,7 +171,7 @@ const coreBookingPages = [
     eyebrow: "Golden hour",
     title: "Bosphorus Sunset Cruise",
     description: "Shared sunset sailing with clear pricing and date-led golden-hour bookings.",
-    image: "/images/fleet/y3/exterior-1.jpg",
+    image: "/images/fleet/y9/01.jpeg",
   },
   {
     href: "/istanbul-dinner-cruise",
@@ -185,7 +185,7 @@ const coreBookingPages = [
     eyebrow: "Premium charter",
     title: "Yacht Charter Istanbul",
     description: "Private charter demand with yacht packages, add-ons, and higher-ticket booking intent.",
-    image: "/images/fleet/y3/exterior-1.jpg",
+    image: "/images/fleet/y9/01.jpeg",
   },
 ] as const;
 
