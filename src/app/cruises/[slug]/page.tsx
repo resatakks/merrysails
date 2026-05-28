@@ -513,7 +513,7 @@ export default async function TourDetailPage({
             name: "Karaköy Meeting Point — MerrySails",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Arap Cami Mah., Uskufcular Sk.",
+              streetAddress: "Karakoy ferry pier, Mimar Sinan Heykeli yani",
               addressLocality: "Karaköy, Beyoğlu",
               addressRegion: "Istanbul",
               postalCode: "34425",

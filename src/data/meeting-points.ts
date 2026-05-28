@@ -26,10 +26,10 @@ export type MeetingPoint = {
 export const MEETING_POINTS: Record<string, MeetingPoint> = {
   "bosphorus-sunset-cruise": {
     name: "Karaköy boarding point — Balıkçı Kemal",
-    district: "Arap Camii · Karaköy, Beyoğlu",
+    district: "Karaköy ferry pier · Mimar Sinan Heykeli, Beyoğlu",
     addressLines: [
       "Meeting point: in front of Balıkçı Kemal restaurant",
-      "Arap Camii Mahallesi, Üsküfçüler Sokak",
+      "Karaköy ferry pier, next to the Mimar Sinan statue (by Marmaray exit and Balıkçı Kemal restaurant)",
       "Karaköy / Beyoğlu, 34421 İstanbul",
     ],
     geo: { lat: 41.0235, lng: 28.9745 },
@@ -49,7 +49,7 @@ export const MEETING_POINTS: Record<string, MeetingPoint> = {
       },
       {
         mode: "Taxi",
-        detail: "Tell the driver \"Karaköy, Balıkçı Kemal\" — the boarding flow starts in front of the Balıkçı Kemal restaurant on Üsküfçüler Sokak.",
+        detail: "Tell the driver \"Karaköy iskele, Mimar Sinan Heykeli\" — the boarding flow starts in front of the Balıkçı Kemal restaurant, right by the Mimar Sinan statue at the ferry pier.",
       },
     ],
     arriveTip: "Arrive at least 15 minutes early — the boarding flow starts in front of Balıkçı Kemal, 15 minutes before departure.",
