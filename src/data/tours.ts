@@ -168,7 +168,7 @@ export const tours: Tour[] = [
     name: "Boğaz Gün Batımı Turu",
     nameEn: "Bosphorus Sunset Cruise",
     description: "Bosphorus sunset cruise Istanbul — from €30 Mon, Tue & Thu (€34 other days). 2-hour golden-hour sailing, live guide, light hospitality, two options: Without Wine and With Wine.",
-    longDescription: "MerrySails operates a shared Bosphorus sunset sailing built for guests who want the golden-hour experience on the strait without sitting through a full evening dinner programme. Boarding begins around 18:30 from the Karaköy waterfront — a short walk north of the Galata Bridge — and the yacht leaves the pier at 19:00 for an approximately 2-hour loop along the southern Bosphorus.\n\nThe Bosphorus is a 31-kilometre strait separating Europe from Asia, linking the Black Sea to the Sea of Marmara. Istanbul straddles both banks, and the southern stretch of the strait — from the old city up to Rumeli Hisarı — holds the densest concentration of Ottoman waterfront heritage in the country. From the deck the route passes Dolmabahçe Sarayı (the 1856 imperial residence built for Sultan Abdülmecid I), the Maiden's Tower on its small islet about 200 metres off the Asian shore, the 1853 Baroque façade of Ortaköy Camii against the first Bosphorus Bridge, and finally Rumeli Hisarı — the 1452 fortress Mehmed II raised in four months to control the strait before the conquest of Constantinople. The yacht turns there and heads back south as the sky moves into blue hour.\n\nWe operate two pricing tiers on the same route. The base Without-Wine fare is €34 (€30 on Monday, Tuesday and Thursday sailings), and the With-Wine fare is €40 (€35 on the same three weekdays). The midweek discount applies automatically at checkout — no coupon code is needed, and the structure is fixed every week of the year.\n\nOnboard hospitality is laid out across three small categories rather than one long list. Hot drinks include freshly brewed tea and Turkish coffee. The cold-drink selection is iced tea, house lemonade, a seasonal fruit juice and bottled water. A snack platter with mixed nuts, salted crackers and a fresh-fruit plate is served from the moment guests board. Guests on the With-Wine package additionally receive two glasses of wine each. A live English-speaking guide narrates the landmarks as the vessel passes each one.\n\nMerrySails operates under Meryem Yıldız Travel — TURSAB A Group licensed since 2001 with 50,000+ guests hosted on the Bosphorus over that period.",
+    longDescription: "MerrySails operates a shared Bosphorus sunset sailing built for guests who want the golden-hour experience on the strait without sitting through a full evening dinner programme. Boarding begins around 18:30 from Beşiktaş İskele Meydanı, beside the Mimar Sinan statue — and the yacht leaves the pier at 19:00 for an approximately 2-hour loop along the southern Bosphorus.\n\nThe Bosphorus is a 31-kilometre strait separating Europe from Asia, linking the Black Sea to the Sea of Marmara. Istanbul straddles both banks, and the southern stretch of the strait — from the old city up to Rumeli Hisarı — holds the densest concentration of Ottoman waterfront heritage in the country. From the deck the route passes Dolmabahçe Sarayı (the 1856 imperial residence built for Sultan Abdülmecid I), the Maiden's Tower on its small islet about 200 metres off the Asian shore, the 1853 Baroque façade of Ortaköy Camii against the first Bosphorus Bridge, and finally Rumeli Hisarı — the 1452 fortress Mehmed II raised in four months to control the strait before the conquest of Constantinople. The yacht turns there and heads back south as the sky moves into blue hour.\n\nWe operate two pricing tiers on the same route. The base Without-Wine fare is €34 (€30 on Monday, Tuesday and Thursday sailings), and the With-Wine fare is €40 (€35 on the same three weekdays). The midweek discount applies automatically at checkout — no coupon code is needed, and the structure is fixed every week of the year.\n\nOnboard hospitality is laid out across three small categories rather than one long list. Hot drinks include freshly brewed tea and Turkish coffee. The cold-drink selection is iced tea, house lemonade, a seasonal fruit juice and bottled water. A snack platter with mixed nuts, salted crackers and a fresh-fruit plate is served from the moment guests board. Guests on the With-Wine package additionally receive two glasses of wine each. A live English-speaking guide narrates the landmarks as the vessel passes each one.\n\nMerrySails operates under Meryem Yıldız Travel — TURSAB A Group licensed since 2001 with 50,000+ guests hosted on the Bosphorus over that period.",
     duration: "2 hours",
     capacity: "Shared sunset yacht seating",
     priceEur: 30,
@@ -241,9 +241,9 @@ export const tours: Tour[] = [
     ],
     videoSrc: "/images/sunsetvideo.mp4",
     */
-    route: "Karaköy waterfront (north of Galata Bridge) → Dolmabahçe & Ortaköy → First Bosphorus Bridge → Rumeli Hisarı turnaround → return at blue hour",
+    route: "Beşiktaş İskele Meydanı (Mimar Sinan Heykeli) → Dolmabahçe & Ortaköy → First Bosphorus Bridge → Rumeli Hisarı turnaround → return at blue hour",
     departureTime: "19:00 (boarding from 18:30)",
-    departurePoint: "Karaköy waterfront just north of the Galata Bridge — exact boarding berth confirmed by WhatsApp after booking",
+    departurePoint: "Beşiktaş İskele Meydanı, next to the Mimar Sinan statue at the ferry plaza — exact boarding berth confirmed by WhatsApp after booking",
     category: "cruise",
     rating: 4.93,
     reviewCount: 621,
@@ -261,7 +261,7 @@ export const tours: Tour[] = [
     importantNotes: [
       "The live public sunset ladder starts from EUR 30 (every Mon, Tue & Thu) — EUR 34 on other days for Without Wine; wine option from EUR 35 (Mon, Tue & Thu) or EUR 40 on other days",
       "The shared sunset product runs as a small-group luxury-yacht format and the final boarding count can vary by departure",
-      "The cruise departs from the Karaköy waterfront just north of the Galata Bridge — boarding from 18:30, vessel leaves at 19:00",
+      "The cruise departs from Beşiktaş İskele Meydanı, next to the Mimar Sinan statue — boarding from 18:30, vessel leaves at 19:00",
       "The same sunset route can be booked with or without wine service depending on the selected option",
       "A live English-speaking guide narrates the landmarks during the sailing",
       "Hotel pickup and drop-off are available as an extra service on the shared sunset cruise",
@@ -287,7 +287,7 @@ export const tours: Tour[] = [
       { question: "How many sunset options are there?", answer: "The public sunset cruise is structured around two shared options on the same route: Without Wine and Bosphorus Sunset Cruise with Wine." },
       { question: "What is included in the sunset cruise?", answer: "Both packages cover the full 2-hour sailing with a live English-speaking guide. Onboard hospitality is grouped into three categories: hot drinks (tea, Turkish coffee), cold drinks (iced tea, lemonade, fruit juice, bottled water) and a snack platter with mixed nuts, crackers and a fresh-fruit plate. The With-Wine package adds 2 glasses of wine per guest." },
       { question: "How long does the cruise last?", answer: "The sunset cruise lasts approximately 2 hours and the public booking flow is shown as a 19:00 departure." },
-      { question: "Where does the sunset cruise depart from?", answer: "The cruise departs from the Karaköy waterfront just north of the Galata Bridge. Boarding starts at 18:30 and the vessel leaves the pier at 19:00. The exact boarding berth is shared by WhatsApp after booking." },
+      { question: "Where does the sunset cruise depart from?", answer: "The cruise departs from Beşiktaş İskele Meydanı, beside the Mimar Sinan statue. Boarding starts at 18:30 and the vessel leaves the pier at 19:00. The exact boarding berth is shared by WhatsApp after booking." },
       { question: "What happens if the weather is bad?", answer: "If sailing conditions become unsafe, the cruise can be moved to another departure or refunded according to the booking terms." },
       { question: "What time does the Bosphorus sunset cruise depart in 2026?", answer: "The departure time adjusts seasonally to stay inside the golden-hour window. In summer (June-August) departures are typically around 20:00-20:30, spring and autumn (April-May, September-October) around 18:30-19:30, and winter (November-March) around 17:00-17:30. The confirmed slot is shared at booking." },
       { question: "Is the Bosphorus sunset cruise worth it?", answer: "Yes — the istanbul sunset cruise is one of the most efficient ways to see the Bosphorus landmarks and the city skyline in the best light of the day, without committing to a 3.5-hour dinner program. From EUR 30 (Mon, Tue & Thu) on a shared luxury yacht with live guiding, it is a strong value for a 2-hour golden hour bosphorus experience. The shared format means you are alongside other guests rather than on a private charter, but the yacht is a luxury vessel and the group size stays manageable. For first-time visitors who want the Bosphorus context before choosing a private or dinner product, this is the most direct 2-hour entry point." },
@@ -667,14 +667,8 @@ export const tours: Tour[] = [
     // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
     // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
     // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
-    image: "/images/tours/private-bosphorus-sunset-cruise/02.webp",
-    gallery: [
-      "/images/tours/private-bosphorus-sunset-cruise/02.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/03.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/04.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/05.webp",
-      "/images/tours/private-bosphorus-sunset-cruise/06.webp",
-    ],
+    image: "/images/fleet/y3/exterior-1.jpg",
+    gallery: [],
     route: "Kuruçeşme → Maiden's Tower → Bosphorus Bridge → Return",
     departureTime: "Timed with sunset",
     departurePoint: "Kuruçeşme Marina",
@@ -707,15 +701,8 @@ export const tours: Tour[] = [
     // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
     // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
     // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
-    image: "/images/tours/private-bosphorus-dinner-yacht-cruise/01.webp",
-    gallery: [
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/01.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/02.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/03.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/04.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/05.webp",
-      "/images/tours/private-bosphorus-dinner-yacht-cruise/06.webp",
-    ],
+    image: "/images/fleet/y3/exterior-1.jpg",
+    gallery: [],
     route: "Kuruçeşme → Bosphorus Night Tour → Return",
     departureTime: "19:00 / 20:00",
     departurePoint: "Kuruçeşme Marina",
@@ -833,15 +820,8 @@ export const tours: Tour[] = [
     // Originals preserved at ~/Desktop/_dmca-backup-2026-05-26 for evidence/restoration.
     // image kept as generic CC0 Bosphorus skyline so og:image + Product JSON-LD remain
     // populated; gallery [] hides the visible hero block (TourDetailClient skips render).
-    image: "/images/tours/romantic-marriage-proposal/01.webp",
-    gallery: [
-      "/images/tours/romantic-marriage-proposal/01.webp",
-      "/images/tours/romantic-marriage-proposal/02.webp",
-      "/images/tours/romantic-marriage-proposal/03.webp",
-      "/images/tours/romantic-marriage-proposal/04.webp",
-      "/images/tours/romantic-marriage-proposal/05.webp",
-      "/images/tours/romantic-marriage-proposal/06.webp",
-    ],
+    image: "/images/fleet/y3/exterior-1.jpg",
+    gallery: [],
     route: "Special romantic route (around Maiden's Tower)",
     departureTime: "Timed with sunset",
     departurePoint: "Kuruçeşme Marina",
