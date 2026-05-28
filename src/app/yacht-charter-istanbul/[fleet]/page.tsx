@@ -17,7 +17,7 @@ export function generateStaticParams() {
   return getCharterFleet().map((boat) => ({ fleet: boat.slug }));
 }
 
-const VALID_SLUGS: CharterFleetSlug[] = ["boutique-yacht-12", "premium-yacht-14", "group-yacht-40-standard", "group-yacht-40-signature", "event-yacht-90", "mega-event-yacht-150"];
+const VALID_SLUGS: CharterFleetSlug[] = ["boutique-yacht-12", "premium-yacht-14", "premium-yacht-15", "group-yacht-40-standard", "group-yacht-40-signature", "event-yacht-90", "mega-event-yacht-150"];
 function isValidSlug(s: string): s is CharterFleetSlug {
   return (VALID_SLUGS as string[]).includes(s);
 }

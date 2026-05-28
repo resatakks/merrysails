@@ -50,6 +50,7 @@ const LOCALIZED_PATHS = [
   "/turkish-night-dinner-cruise-istanbul",
   "/yacht-charter-istanbul/boutique-yacht-12",
   "/yacht-charter-istanbul/premium-yacht-14",
+  "/yacht-charter-istanbul/premium-yacht-15",
   "/yacht-charter-istanbul/group-yacht-40-standard",
   "/yacht-charter-istanbul/group-yacht-40-signature",
   "/yacht-charter-istanbul/event-yacht-90",
