@@ -30,7 +30,8 @@ interface ReservationPageProps {
   }>;
 }
 
-const FLEET_SLUGS = new Set(["boutique-yacht-12", "premium-yacht-14", "premium-yacht-15", "group-yacht-40-standard", "group-yacht-40-signature", "event-yacht-90", "mega-event-yacht-150"]);
+const FLEET_SLUGS = new Set(["boutique-yacht-12",
+"premium-yacht-15", "group-yacht-40-standard", "group-yacht-40-signature", "event-yacht-90", "mega-event-yacht-150"]);
 
 export default async function ReservationPage({ searchParams }: ReservationPageProps) {
   const resolvedSearchParams = searchParams ? await searchParams : undefined;

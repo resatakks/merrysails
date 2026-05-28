@@ -26,14 +26,17 @@ const heroProducts = [
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-[#0b1e3a]">
-      {/* Hero — CC0 Bosphorus Bridge at sunset (Unsplash, license-free, swappable when fresh originals arrive) */}
+      {/* Hero — our own sunset cruise photo. object-position centres on the
+          subject (guests watching the sunset) without cropping their faces
+          on tall viewports. */}
       <Image
         src="/images/sunset-2026/hero.jpeg"
-        alt="MerrySails Bosphorus sunset cruise — golden hour on the strait"
+        alt="MerrySails Bosphorus sunset cruise — guests watching golden hour"
         fill
-        className="object-cover object-center"
+        className="object-cover [object-position:50%_35%]"
         priority
         sizes="100vw"
+        quality={85}
       />
       <div
         aria-hidden

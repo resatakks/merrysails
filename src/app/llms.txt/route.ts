@@ -438,7 +438,6 @@ All 31 commercial routes are available in /tr/, /de/, /fr/, /nl/:
 
 ## Charter fleet (six-vessel sailing reference)
 - ${SITE_URL}/yacht-charter-istanbul/boutique-yacht-12 — Bosphorus Sailing Yacht 10, capacity 10–12, 2h from €200, 8h €735 (10% off from 3h)
-- ${SITE_URL}/yacht-charter-istanbul/premium-yacht-14 — Bosphorus Sailing Yacht 14, capacity 12–14, 2h from €220, 8h €800 (10% off from 3h)
 - ${SITE_URL}/yacht-charter-istanbul/group-yacht-40-standard — Bosphorus Group Yacht 36, capacity 30–36, 2h from €200, 8h €1000 (10% off from 3h)
 - ${SITE_URL}/yacht-charter-istanbul/group-yacht-40-signature — Bosphorus Signature Yacht 36, capacity 30–36, 2h from €300, 8h €1070 (10% off from 3h)
 - ${SITE_URL}/yacht-charter-istanbul/event-yacht-90 — Bosphorus Event Yacht 44, capacity 30–44, by quote (weddings, brand evenings, full-program dinners)

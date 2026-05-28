@@ -75,7 +75,6 @@ export const fleet: Yacht[] = [
  * ------------------------------------------------------------------------ */
 
 export type CharterFleetSlug =
-  | "premium-yacht-14"
   | "mega-event-yacht-150"
   | "boutique-yacht-12"
   | "premium-yacht-15"
@@ -113,7 +112,6 @@ export type CharterFleetItem = {
 };
 
 const altDescriptors = {
-  y2: "14-guest premium private yacht for Bosphorus charter",
   y6: "150-guest mega event yacht for Bosphorus large gatherings",
   y7: "12-guest boutique private yacht for Bosphorus charter",
   y8: "15-guest premium private yacht for Bosphorus charter",
@@ -162,65 +160,6 @@ const CHARTER_FLEET: CharterFleetItem[] = [
         tagline: "Çiftler ve küçük gruplar için samimi özel güverte",
         description:
           "12 kişiye kadar misafir ağırlayan kompakt butik sınıfı özel yat. Evlilik teklifi, yıl dönümü ve dar arkadaş grupları için ideal. 2 saatlik özel kiralama €220'den başlar, 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim uygulanır.",
-      },
-    },
-  },
-  {
-    slug: "premium-yacht-14",
-    internalCode: "premium-14",
-    capacity: { min: 12, max: 14 },
-    hourlyEur: 110,
-    minHours: 2,
-    discountFromHours: 3,
-    discountPercent: 10,
-    priceByHours: { 2: 220, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800 },
-    coverImage: "/images/fleet/y2/exterior-1.jpg",
-    exteriorImages: [
-      "/images/fleet/y2/exterior-1.jpg",
-      "/images/fleet/y2/exterior-2.jpg",
-      "/images/fleet/y2/exterior-3.jpg",
-    ],
-    interiorImages: [
-      "/images/fleet/y2/interior-1.jpg",
-      "/images/fleet/y2/interior-2.jpg",
-      "/images/fleet/y2/interior-3.jpg",
-      "/images/fleet/y2/interior-4.jpg",
-      "/images/fleet/y2/interior-5.jpg",
-      "/images/fleet/y2/interior-6.jpg",
-    ],
-    bookable: true,
-    badges: ["popular"],
-    altDescriptor: altDescriptors.y2,
-    i18n: {
-      en: {
-        label: "Premium Yacht · 14 Guests",
-        tagline: "Spacious deck and lounge for family or friend groups",
-        description:
-          "Larger premium private yacht with a roomier lounge and a wider top deck. Ideal for birthdays, family outings, and small celebrations where everyone wants to spread out. Soft drinks and snacks included.",
-      },
-      tr: {
-        label: "Premium Yat · 14 Kişilik",
-        tagline: "Aile ve arkadaş grupları için ferah güverte ve salon",
-        description:
-          "Daha geniş bir salon ve daha geniş üst güverte ile büyük premium özel yat. Doğum günleri, aile çıkışları ve herkesin rahatça yayılmak istediği küçük kutlamalar için ideal. Yumuşak içecek ve atıştırmalık dahildir.",
-      },
-      de: {
-        label: "Premium-Yacht · 14 Gäste",
-        tagline: "Großzügiges Deck und Lounge für Familien- und Freundesgruppen",
-        description:
-          "Größere Premium-Privatjacht mit geräumigerer Lounge und breiterem Oberdeck. Ideal für Geburtstage, Familienausflüge und kleinere Feiern. Softdrinks und Snacks inklusive.",
-      },
-      fr: {
-        label: "Yacht Premium · 14 Invités",
-        tagline: "Pont et salon spacieux pour familles et groupes d'amis",
-        description:
-          "Yacht privé premium plus grand avec un salon plus spacieux et un pont supérieur plus large. Idéal pour les anniversaires, sorties familiales et petites célébrations. Boissons sans alcool et collations incluses.",
-      },
-      nl: {
-        label: "Premium Jacht · 14 Gasten",
-        tagline: "Ruim dek en lounge voor familie- of vriendengroepen",
-        description:
-          "Een groter premium privéjacht met een ruimere lounge en breder bovendek. Ideaal voor verjaardagen, familie-uitjes en kleine vieringen. Frisdrank en snacks inbegrepen.",
       },
     },
   },
