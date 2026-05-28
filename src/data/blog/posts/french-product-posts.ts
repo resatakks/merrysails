@@ -13,8 +13,7 @@ export const frenchProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 min de lecture",
-    image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/fleet/y7/05.jpeg",
     imageAlt:
       "Croisière sur le Bosphore à Istanbul au coucher du soleil — vue sur les ponts et les palais ottomans",
     keywords: [
@@ -191,8 +190,7 @@ export const frenchProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "10 min de lecture",
-    image:
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1200&q=80",
+    image: "/images/fleet/y9/03.jpeg",
     imageAlt:
       "Yacht romantique au coucher du soleil sur le Bosphore à Istanbul — ambiance idéale pour une demande en mariage",
     keywords: [
@@ -389,8 +387,7 @@ export const frenchProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "11 min de lecture",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y7/01.jpeg",
     imageAlt:
       "Location yacht Istanbul — bateau privatif sur le Bosphore avec vue sur la skyline d'Istanbul",
     keywords: [
@@ -585,8 +582,7 @@ export const frenchProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-05-07",
     readTime: "11 min de lecture",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y9/04.jpeg",
     imageAlt:
       "Vue panoramique sur le Bosphore depuis un bateau au coucher du soleil — pont du Bosphore et minarets d'Istanbul",
     keywords: [
@@ -851,8 +847,7 @@ export const frenchProductPosts: BlogPost[] = [
     date: "2026-05-10",
     dateModified: "2026-05-10",
     readTime: "9 min de lecture",
-    image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/fleet/y9/04.jpeg",
     imageAlt:
       "Croisière du Bosphore au coucher du soleil avec vue sur les palais ottomans d'Istanbul",
     keywords: [
@@ -1021,7 +1016,7 @@ export const frenchProductPosts: BlogPost[] = [
     category: "istanbul",
     date: "2026-05-13",
     readTime: "10 min de lecture",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y10/01.jpeg",
     imageAlt: "Büyükada Îles des Princes Istanbul — calèches devant les villas ottomanes historiques",
     keywords: [
       "iles des princes istanbul",

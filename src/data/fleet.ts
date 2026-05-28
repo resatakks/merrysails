@@ -208,16 +208,19 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     discountFromHours: 3,
     discountPercent: 10,
     priceByHours: { 2: 380, 3: 513, 4: 684, 5: 855, 6: 1026, 7: 1197, 8: 1368 },
-    coverImage: "/images/fleet/y9/01.jpeg",
+    // Cover order updated 2026-05-28: first two photos in y9 are interior
+    // shots; the third (03.jpeg) is the first exterior frame and is the
+    // image we want guests to see first.
+    coverImage: "/images/fleet/y9/03.jpeg",
     exteriorImages: [
-      "/images/fleet/y9/01.jpeg",
-      "/images/fleet/y9/02.jpeg",
       "/images/fleet/y9/03.jpeg",
       "/images/fleet/y9/04.jpeg",
       "/images/fleet/y9/05.jpeg",
       "/images/fleet/y9/06.jpeg",
     ],
     interiorImages: [
+      "/images/fleet/y9/01.jpeg",
+      "/images/fleet/y9/02.jpeg",
       "/images/fleet/y9/07.jpeg",
       "/images/fleet/y9/08.jpeg",
       "/images/fleet/y9/09.jpeg",
@@ -250,16 +253,17 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     discountFromHours: 3,
     discountPercent: 10,
     priceByHours: { 2: 500, 3: 675, 4: 900, 5: 1125, 6: 1350, 7: 1575, 8: 1800 },
-    coverImage: "/images/fleet/y9/02.jpeg",
+    // Same y9 yacht as Standard, exterior-first ordering (see Standard above).
+    coverImage: "/images/fleet/y9/03.jpeg",
     exteriorImages: [
-      "/images/fleet/y9/02.jpeg",
       "/images/fleet/y9/03.jpeg",
       "/images/fleet/y9/04.jpeg",
       "/images/fleet/y9/05.jpeg",
       "/images/fleet/y9/06.jpeg",
-      "/images/fleet/y9/01.jpeg",
     ],
     interiorImages: [
+      "/images/fleet/y9/01.jpeg",
+      "/images/fleet/y9/02.jpeg",
       "/images/fleet/y9/07.jpeg",
       "/images/fleet/y9/08.jpeg",
       "/images/fleet/y9/09.jpeg",

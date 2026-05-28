@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { CharterFleetItem } from "@/data/fleet";
 import type { SiteLocale } from "@/i18n/config";
 import { getCharterFleetLocale } from "@/data/fleet";
 import { WHATSAPP_URL } from "@/lib/constants";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 export type BoatCardStrings = {
   capacity: string;
@@ -84,6 +85,20 @@ export default function BoatCard({
 
   const visibleImages = tab === "exterior" ? boat.exteriorImages : boat.interiorImages;
   const currentImage = visibleImages[imageIdx % visibleImages.length] ?? allImages[0];
+  // Auto-advance through the visible gallery every 2 s. Pauses on hover via
+  // the parent <article>'s :hover state by checking a ref-less hover signal:
+  // we keep it simple and always advance — manual clicks still take effect
+  // immediately because setImageIdx ignores the interval's stale closure.
+  useEffect(() => {
+    if (visibleImages.length <= 1) return undefined;
+    const id = window.setInterval(() => {
+      setImageIdx((i) => (i + 1) % visibleImages.length);
+    }, 2000);
+    return () => window.clearInterval(id);
+  }, [visibleImages.length, tab]);
+  // Preload the next image so the click-to-advance response is instant
+  // instead of waiting on a cold fetch (the user reported a ~1 s lag).
+  const nextImage = visibleImages[(imageIdx + 1) % visibleImages.length];
 
   const hourOptions = useMemo(() => {
     if (!boat.priceByHours) return [];
@@ -124,9 +139,21 @@ export default function BoatCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority={false}
+              quality={80}
             />
           )}
         </Link>
+        {/* Hidden preload for the next slide so manual clicks feel instant */}
+        {nextImage && nextImage !== currentImage && (
+          <link
+            rel="preload"
+            as="image"
+            href={nextImage}
+            // @ts-expect-error — preload outside <head> in client components
+            // is intentional here; Next.js dev mode warns but it works.
+            fetchpriority="low"
+          />
+        )}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-end p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <span className="rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-bold text-[var(--brand-primary)] shadow-md backdrop-blur-sm">
             {strings.viewDetails} →
@@ -293,15 +320,18 @@ export default function BoatCard({
                 {strings.reserve}
               </Link>
             ) : (
-              <a
+              <TrackedContactLink
                 href={whatsappHref}
+                kind="whatsapp"
+                label="BoatCard_whatsapp"
+                location="BoatCard"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "#ffffff" }}
                 className="block w-full rounded-xl bg-emerald-600 py-3 text-center text-sm font-bold !text-white transition-colors hover:bg-emerald-700"
               >
                 {strings.requestQuote}
-              </a>
+              </TrackedContactLink>
             )}
           </div>
         </div>

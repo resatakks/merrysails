@@ -491,7 +491,7 @@ export default async function LocaleHomePage({
     {
       key: "sunset" as const,
       href: `/${locale}/cruises/bosphorus-sunset-cruise`,
-      image: "/images/fleet/y9/01.jpeg",
+      image: "/images/fleet/y9/03.jpeg",
       content: t.products.sunset,
     },
     {
@@ -503,7 +503,7 @@ export default async function LocaleHomePage({
     {
       key: "yacht" as const,
       href: `/${locale}/yacht-charter-istanbul`,
-      image: "/images/fleet/y9/01.jpeg",
+      image: "/images/fleet/y9/03.jpeg",
       content: t.products.yacht,
     },
   ];

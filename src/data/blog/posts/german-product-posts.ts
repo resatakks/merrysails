@@ -13,8 +13,7 @@ export const germanProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 Min. Lesezeit",
-    image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/fleet/y9/05.jpeg",
     imageAlt:
       "Bosporus Kreuzfahrt Istanbul bei Sonnenuntergang — Blick auf die Brücken und osmanischen Paläste",
     keywords: [
@@ -187,8 +186,7 @@ export const germanProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "10 Min. Lesezeit",
-    image:
-      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80",
+    image: "/images/fleet/y8/01.jpeg",
     imageAlt:
       "Romantische Privatjacht auf dem Bosporus Istanbul bei Sonnenuntergang — Heiratsantrag auf dem Wasser",
     keywords: [
@@ -381,8 +379,7 @@ export const germanProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "11 Min. Lesezeit",
-    image:
-      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
+    image: "/images/fleet/y9/06.jpeg",
     imageAlt:
       "Yacht Charter Istanbul — Privatboot auf dem Bosporus mit Blick auf die Skyline",
     keywords: [
@@ -575,8 +572,7 @@ export const germanProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-05-07",
     readTime: "12 Min. Lesezeit",
-    image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/fleet/y10/02.jpeg",
     imageAlt:
       "Bootstour auf dem Bosporus Istanbul bei Sonnenuntergang — osmanische Paläste und die Bosporus-Brücke",
     keywords: [
@@ -752,8 +748,7 @@ export const germanProductPosts: BlogPost[] = [
     date: "2026-05-10",
     dateModified: "2026-05-10",
     readTime: "9 min Lesezeit",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y7/03.jpeg",
     imageAlt:
       "Bosporus-Kreuzfahrt Istanbul bei Abenddämmerung — osmanische Paläste und Bosporus-Brücke im Abendlicht",
     keywords: [
@@ -943,7 +938,7 @@ export const germanProductPosts: BlogPost[] = [
     category: "istanbul",
     date: "2026-05-13",
     readTime: "10 min Lesezeit",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/sunset-2026/09.jpeg",
     imageAlt: "Büyükada Prinzeninsel Istanbul — Pferdekutschen vor historischen osmanischen Villen",
     keywords: [
       "Prinzeninseln Istanbul",

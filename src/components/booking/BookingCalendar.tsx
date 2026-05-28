@@ -1,6 +1,76 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
+
+// Guest-counter labels per active locale. Falls back to English when the
+// pathname starts with a locale segment we have not translated yet.
+type BookingLocale = "en" | "tr" | "de" | "fr" | "nl";
+
+const GUEST_LABELS: Record<BookingLocale, {
+  adults: string;
+  adultsHint: string;
+  children: string;
+  childrenHint: string;
+  infants: string;
+  infantsHint: string;
+  noAlcoholHint: string;
+}> = {
+  en: {
+    adults: "Adults",
+    adultsHint: "Age 13+",
+    children: "Children",
+    childrenHint: "Ages 3–8 · 50% off",
+    infants: "Infants",
+    infantsHint: "Ages 0–3 · free",
+    noAlcoholHint: " · not available on alcoholic packages",
+  },
+  tr: {
+    adults: "Yetişkin",
+    adultsHint: "13+ yaş",
+    children: "Çocuk",
+    childrenHint: "3–8 yaş · %50 indirim",
+    infants: "Bebek",
+    infantsHint: "0–3 yaş · ücretsiz",
+    noAlcoholHint: " · alkollü paketlere eklenemez",
+  },
+  de: {
+    adults: "Erwachsene",
+    adultsHint: "Ab 13 Jahren",
+    children: "Kinder",
+    childrenHint: "3–8 Jahre · 50% Rabatt",
+    infants: "Kleinkinder",
+    infantsHint: "0–3 Jahre · kostenlos",
+    noAlcoholHint: " · nicht in Paketen mit Alkohol verfügbar",
+  },
+  fr: {
+    adults: "Adultes",
+    adultsHint: "13 ans et plus",
+    children: "Enfants",
+    childrenHint: "3–8 ans · 50% de réduction",
+    infants: "Bébés",
+    infantsHint: "0–3 ans · gratuit",
+    noAlcoholHint: " · non disponible sur les forfaits alcoolisés",
+  },
+  nl: {
+    adults: "Volwassenen",
+    adultsHint: "Vanaf 13 jaar",
+    children: "Kinderen",
+    childrenHint: "3–8 jaar · 50% korting",
+    infants: "Baby's",
+    infantsHint: "0–3 jaar · gratis",
+    noAlcoholHint: " · niet beschikbaar bij alcoholpakketten",
+  },
+};
+
+function detectBookingLocale(pathname: string | null): BookingLocale {
+  if (!pathname) return "en";
+  const first = pathname.split("/").filter(Boolean)[0];
+  if (first === "tr" || first === "de" || first === "fr" || first === "nl") {
+    return first;
+  }
+  return "en";
+}
 import {
   format,
   addMonths,
@@ -119,6 +189,10 @@ export default function BookingCalendar({
       ? Math.max(1, Math.min(MAX_BOOKING_GUESTS, initialGuests))
       : 2;
 
+  const pathname = usePathname();
+  const bookingLocale = detectBookingLocale(pathname);
+  const bookingLabels = GUEST_LABELS[bookingLocale];
+
   const [currentMonth, setCurrentMonth] = useState<Date | null>(safeInitialDate);
   const [selectedDate, setSelectedDate] = useState<Date | null>(safeInitialDate);
   const [adults, setAdults] = useState(safeInitialGuests);
@@ -142,6 +216,7 @@ export default function BookingCalendar({
     selectedOperation?.departureTimeOverride || departureTime;
 
   const totalGuests = adults + children + infants;
+  // Resolve weekday-discount price when a Mon/Tue/Thu date is selected
   const selectedDayOfWeek = selectedDate ? selectedDate.getDay() : -1;
   const isWeekdayDiscountDay = weekdayDiscount
     ? weekdayDiscount.weekdays.includes(selectedDayOfWeek)
@@ -564,10 +639,10 @@ export default function BookingCalendar({
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-medium text-[var(--heading)]">
-                      Adults
+                      {bookingLabels.adults}
                     </div>
                     <div className="text-xs text-[var(--text-muted)]">
-                      Age 13+
+                      {bookingLabels.adultsHint}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -597,11 +672,11 @@ export default function BookingCalendar({
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-medium text-[var(--heading)]">
-                      Çocuk / Child
+                      {bookingLabels.children}
                     </div>
                     <div className="text-xs text-[var(--text-muted)]">
-                      3–8 yaş · %50 indirim
-                      {isAlcoholicSelection ? " · alkollü paketlere eklenemez" : ""}
+                      {bookingLabels.childrenHint}
+                      {isAlcoholicSelection ? bookingLabels.noAlcoholHint : ""}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -641,11 +716,11 @@ export default function BookingCalendar({
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-medium text-[var(--heading)]">
-                      Bebek / Infant
+                      {bookingLabels.infants}
                     </div>
                     <div className="text-xs text-[var(--text-muted)]">
-                      0–3 yaş · ücretsiz
-                      {isAlcoholicSelection ? " · alkollü paketlere eklenemez" : ""}
+                      {bookingLabels.infantsHint}
+                      {isAlcoholicSelection ? bookingLabels.noAlcoholHint : ""}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -684,15 +759,16 @@ export default function BookingCalendar({
 
               {/* Price breakdown */}
               <div className="space-y-2 py-3 border-t border-[var(--line)]">
+                {isWeekdayDiscountDay && weekdayDiscount && (
+                  <div className="flex items-center justify-between text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2 py-1">
+                    <span>{weekdayDiscount && (selectedDate ? (selectedDate.getDay() === 2 ? "Tue" : "Thu") : "") + " discount"}</span>
+                    <span>€{priceEur} → €{weekdayDiscount.discountedPrice}/person</span>
+                  </div>
+                )}
                 {originalTotal && (
                   <div className="flex items-center justify-between text-sm text-[var(--text-muted)]">
                     <span>Standard direct fare</span>
                     <span className="line-through">€{originalTotal}</span>
-                  </div>
-                )}
-                {isWeekdayDiscountDay && weekdayDiscount && (
-                  <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
-                    Weekday discount — €{weekdayDiscount.discountedPrice} instead of €{priceEur}/person
                   </div>
                 )}
                 <div className="flex items-center justify-between text-sm">
@@ -743,7 +819,7 @@ export default function BookingCalendar({
 
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/905065438223?text=Hi, I'd like to book ${tourName} on ${format(
+                href={`https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
                   selectedDate,
                   "dd MMM yyyy"
                 )} for ${totalGuests} guests.`}
@@ -751,7 +827,7 @@ export default function BookingCalendar({
                 rel="noopener noreferrer"
                 onClick={(event) =>
                   handleTrackedContactNavigation(event, {
-                    href: `https://wa.me/905065438223?text=Hi, I'd like to book ${tourName} on ${format(
+                    href: `https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
                       selectedDate,
                       "dd MMM yyyy"
                     )} for ${totalGuests} guests.`,

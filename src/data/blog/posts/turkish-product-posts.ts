@@ -12,7 +12,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 dk okuma",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/sunset-2026/07.jpeg",
     imageAlt: "İstanbul Boğazı'nda gün batımı tekne turu — köprü ve Osmanlı sarayları manzarası",
     keywords: [
       "boğaz turu fiyat",
@@ -197,7 +197,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "10 dk okuma",
-    image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1200&q=80",
+    image: "/images/fleet/y7/03.jpeg",
     imageAlt: "İstanbul Boğazı'nda gün batımında özel yat teknesi — romantik evlilik teklifi ortamı",
     keywords: [
       "istanbul evlilik teklifi tekne",
@@ -350,7 +350,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "11 dk okuma",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y9/07.jpeg",
     imageAlt: "İstanbul Boğazı'nda lüks motor yat — Boğaz köprüsü arka planda",
     keywords: [
       "yat kiralama istanbul",
@@ -533,7 +533,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "10 dk okuma",
-    image: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=1200&q=80",
+    image: "/images/fleet/y10/02.jpeg",
     imageAlt: "İstanbul Boğazı'nda gece teknesi — akşam yemeği ve Türk gecesi eğlencesi",
     keywords: [
       "istanbul akşam yemeği turu",
@@ -688,7 +688,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 dk okuma",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/sunset-2026/04.jpeg",
     imageAlt: "İstanbul Boğazı'nda gün batımı teknesi — köprü ve minareler altın ışıkta",
     keywords: [
       "boğaz gün batımı turu deneyimi",
@@ -847,7 +847,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-05-01",
     readTime: "7 dk okuma",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/sunset-2026/08.jpeg",
     imageAlt: "Kabataş'tan kalkan İstanbul Boğaz turu teknesi — gün batımı ışığında Boğaz manzarası",
     keywords: [
       "boğaz turu saatleri",
@@ -985,7 +985,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-05-07",
     readTime: "11 dk okuma",
-    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
+    image: "/images/fleet/y10/04.jpeg",
     imageAlt: "İstanbul Boğazı'nda lüks özel yat — Boğaz köprüsü ve Osmanlı yalıları arka planda",
     keywords: [
       "yat kiralama istanbul",
@@ -1269,8 +1269,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-05-06",
     readTime: "10 dk okuma",
-    image:
-      "https://images.unsplash.com/photo-1504253163759-c23fccaebb55?w=1200&q=80",
+    image: "/images/fleet/y7/05.jpeg",
     imageAlt:
       "İstanbul Boğazı'nda gün batımı ışığında süslenmiş özel yat — doğum günü kutlaması",
     keywords: [
@@ -1517,8 +1516,7 @@ export const turkishProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-05-07",
     readTime: "11 dk okuma",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y7/03.jpeg",
     imageAlt:
       "İstanbul Boğazı'nda Karaköy rıhtımından görünen tekne ve köprü manzarası",
     keywords: [
@@ -1831,8 +1829,7 @@ export const turkishProductPosts: BlogPost[] = [
     date: "2026-05-08",
     dateModified: "2026-05-08",
     readTime: "10 dk okuma",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/sunset-2026/09.jpeg",
     imageAlt:
       "Karaköy rıhtımından İstanbul Boğazı manzarası — arka planda Galata Kulesi ve Boğaz köprüsü",
     keywords: [
@@ -2154,8 +2151,7 @@ export const turkishProductPosts: BlogPost[] = [
     date: "2026-05-08",
     dateModified: "2026-05-08",
     readTime: "9 dk okuma",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+    image: "/images/fleet/y9/07.jpeg",
     imageAlt:
       "İstanbul Boğazı'nda gün batımı — kırmızıya boyanan gökyüzü ve güverteye çıkmış yolcular",
     keywords: [
@@ -2341,8 +2337,7 @@ export const turkishProductPosts: BlogPost[] = [
     date: "2026-05-08",
     dateModified: "2026-05-08",
     readTime: "8 dk okuma",
-    image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/sunset-2026/10.jpeg",
     imageAlt:
       "İstanbul Boğazı'nda gün batımı ışıklarında seyreden tekne — köprü ve yalılar arka planda",
     keywords: [
@@ -2534,8 +2529,7 @@ export const turkishProductPosts: BlogPost[] = [
     date: "2026-05-10",
     dateModified: "2026-05-10",
     readTime: "10 dk okuma",
-    image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
+    image: "/images/fleet/y10/04.jpeg",
     imageAlt:
       "İstanbul Boğazı'nda lüks özel yat — köprü ve saraya karşı gün batımı manzarası",
     keywords: [
@@ -2805,7 +2799,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     date: "2026-05-12",
     dateModified: "2026-05-12",
     readTime: "10 dk okuma",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/sunset-2026/12.jpeg",
     imageAlt: "Büyükada sahilinden görünen Splendid Palace Oteli ve çam ormanlarıyla kaplı Prens Adaları",
     keywords: ["adalar turu istanbul", "büyükada turu", "princes islands türkiye", "ada turu istanbul", "ada vapur", "büyükada gezi rehberi", "istanbul adalar", "adalar vapuru"],
     author: "editorial",

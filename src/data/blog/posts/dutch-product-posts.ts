@@ -13,8 +13,7 @@ export const dutchProductPosts: BlogPost[] = [
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 min lezen",
-    image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&q=80",
+    image: "/images/fleet/y10/02.jpeg",
     imageAlt:
       "Bosporus cruise Istanbul bij zonsondergang — uitzicht op de bruggen en Ottomaanse paleizen",
     keywords: [
@@ -191,8 +190,7 @@ export const dutchProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "10 min lezen",
-    image:
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1200&q=80",
+    image: "/images/fleet/y9/04.jpeg",
     imageAlt:
       "Romantisch privé jacht op de Bosporus Istanbul bij zonsondergang — huwelijksaanzoek op het water",
     keywords: [
@@ -390,8 +388,7 @@ export const dutchProductPosts: BlogPost[] = [
     category: "yacht-guide",
     date: "2026-04-29",
     readTime: "11 min lezen",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y10/01.jpeg",
     imageAlt:
       "Jacht huren Istanbul — privéboot op de Bosporus met uitzicht op de skyline",
     keywords: [
@@ -586,8 +583,7 @@ export const dutchProductPosts: BlogPost[] = [
     date: "2026-05-10",
     dateModified: "2026-05-10",
     readTime: "9 min leestijd",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/sunset-2026/08.jpeg",
     imageAlt:
       "Bosphorus cruise Istanbul bij zonsondergang — Ottomaanse paleizen en de Bosporus-brug in het avondlicht",
     keywords: [
@@ -777,7 +773,7 @@ export const dutchProductPosts: BlogPost[] = [
     category: "istanbul",
     date: "2026-05-13",
     readTime: "10 min leestijd",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+    image: "/images/fleet/y7/03.jpeg",
     imageAlt: "Büyükada Prinseneilanden Istanbul — koetsen voor historische Ottomaanse villa's",
     keywords: [
       "prinseneilanden istanbul",
