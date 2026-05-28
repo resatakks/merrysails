@@ -75,7 +75,7 @@ export default async function ReservationVoucherPage({
   })();
   const meetingPointLabel = isCustomBooking
     ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
-    : (tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
+    : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
   const hasSelectedOptions = !isCustomBooking && Boolean(
     mixedItems ||
       reservationMeta.packageName ||

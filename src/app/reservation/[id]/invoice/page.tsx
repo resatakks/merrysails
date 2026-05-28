@@ -92,7 +92,7 @@ export default async function ReservationInvoicePage({
   })();
   const meetingPointLabel = isCustomBooking
     ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
-    : (tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
+    : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
 
   const mixedItems = parseReservationItems(reservation.items);
 
