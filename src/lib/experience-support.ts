@@ -43,24 +43,24 @@ const experienceSupportGuides: Record<string, ExperienceSupportGuide> = {
       "Meeting point directions, included items, exclusions, and arrival tips for the MerrySails Bosphorus Sunset Cruise.",
     heroTitle: "Bosphorus Sunset Cruise meeting point and boarding guide",
     heroBody:
-      "Use this page for the exact Beşiktaş İskele Meydanı meeting point (next to the Mimar Sinan statue), public transport directions, included items, and quick arrival notes before your sunset cruise.",
+      "Use this page for the exact Karaköy ferry pier meeting point (next to the Mimar Sinan statue, by Marmaray and Balıkçı Kemal), public transport directions, included items, and quick arrival notes before your sunset cruise.",
     supportLabel: "Sunset Cruise Guide",
     summary:
-      "The easiest route is the Kabataş–Beşiktaş tram or any city bus to Beşiktaş İskele, then a 1-minute walk to the Mimar Sinan statue at the ferry plaza.",
+      "The easiest route is the T1 tram to Karaköy stop, then a 1-minute walk to the Mimar Sinan statue at the ferry pier (next to the Marmaray exit and Balıkçı Kemal).",
     facts: [
-      { label: "Meeting flow", value: "Beşiktaş İskele Meydanı next to the Mimar Sinan statue" },
-      { label: "Public route", value: "Tram/bus to Beşiktaş İskele, then walk to the Mimar Sinan statue at the ferry plaza" },
+      { label: "Meeting flow", value: "Karaköy ferry pier next to the Mimar Sinan statue (by Marmaray, near Balıkçı Kemal)" },
+      { label: "Public route", value: "T1 tram to Karaköy or Marmaray to Karaköy, then walk to the Mimar Sinan statue at the ferry pier" },
       { label: "Departure plan", value: "Sunset departure, usually around 19:00 depending on the date" },
       { label: "Format", value: "2-hour shared luxury yacht cruise" },
     ],
     directions: [
-      "Take the T1 tram to Kabataş and walk 10 minutes north to Beşiktaş İskele Meydanı.",
-      "Walk to the Mimar Sinan statue at Beşiktaş ferry plaza; the boarding berth is 1 minute from the statue.",
-      "Or take any of the numerous city buses that stop at Beşiktaş İskele.",
+      "Take the T1 tram and get off at Karaköy; the Mimar Sinan statue is at the ferry pier.",
+      "Walk to the Mimar Sinan statue at Karaköy ferry pier; the boarding berth is 1 minute from the statue.",
+      "Or use the Marmaray and exit at Karaköy — the Mimar Sinan statue is right at the pier.",
       "Keep your voucher and reservation ID ready while approaching the Mimar Sinan statue meeting point.",
     ],
     mapUrl: "https://maps.app.goo.gl/Z3eKXCyH5WM4Xzsi8",
-    mapLabel: "Open the Beşiktaş İskele Meydanı meeting point map",
+    mapLabel: "Open the Karaköy ferry pier meeting point map",
     included: [
       "2 glasses of wine per guest",
       "Live English-speaking guide on board",
