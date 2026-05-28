@@ -43,7 +43,7 @@ export async function getReservationDocumentPayload(reservationId: string) {
   })();
   const meetingPointOverride = isCustomBooking
     ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
-    : undefined;
+    : (pickupFromNotes ?? undefined);
 
   const documentInput: ReservationPdfInput = {
     reservationId: reservation.reservationId,
