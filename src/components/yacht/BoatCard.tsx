@@ -186,7 +186,7 @@ export default function BoatCard({
                 e.stopPropagation();
                 setImageIdx((i) => (i - 1 + visibleImages.length) % visibleImages.length);
               }}
-              className="rounded-full bg-black/50 px-2.5 py-1 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-base font-semibold leading-none text-white backdrop-blur-sm transition-colors hover:bg-black/75 active:bg-black/85 md:h-9 md:w-9 md:text-sm"
             >
               ‹
             </button>
@@ -201,7 +201,7 @@ export default function BoatCard({
                 e.stopPropagation();
                 setImageIdx((i) => (i + 1) % visibleImages.length);
               }}
-              className="rounded-full bg-black/50 px-2.5 py-1 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-base font-semibold leading-none text-white backdrop-blur-sm transition-colors hover:bg-black/75 active:bg-black/85 md:h-9 md:w-9 md:text-sm"
             >
               ›
             </button>

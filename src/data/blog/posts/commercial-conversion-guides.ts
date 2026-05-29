@@ -1720,7 +1720,7 @@ export const commercialConversionGuides: BlogPost[] = [
   },
   {
     slug: "best-istanbul-bosphorus-cruise-comparison-2026",
-    title: "Best Bosphorus Cruise 2026: Operator Comparison",
+    title: "Bosphorus Cruise: Sunset vs Dinner vs Yacht",
     metaDescription: "Operator-side Bosphorus cruise comparison for 2026: sunset €34, dinner €30-€90, yacht €280-€680. Booking direct saves €5-€15/guest vs Viator and GetYourGuide.",
     excerpt: "An operator-side comparison of the main Bosphorus cruise types in 2026, with verified direct prices, what each option actually delivers, and where Viator and GetYourGuide markups apply.",
     category: "cruise-guide",

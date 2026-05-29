@@ -145,6 +145,20 @@ export default function TourDetailClient({
         nextAvailableAddOns.some((item) => item.name === addon.name)
       )
     );
+
+    // Provide immediate visual feedback on mobile.  Clarity dead-click
+    // analysis (2026-05-29) showed users tapping package titles and
+    // perceiving no response because the booking sidebar lives below the
+    // fold on phones — they didn't realise the selection had registered.
+    // On screens narrower than the lg breakpoint we now scroll the
+    // booking sidebar into view; on desktop the sidebar is already
+    // visible so we leave the viewport untouched.
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      const sidebar = document.getElementById("booking-sidebar");
+      if (sidebar) {
+        sidebar.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
   };
 
 

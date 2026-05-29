@@ -49,7 +49,24 @@ export default function HeroSection() {
           <div className="hero-fade-in mx-auto max-w-3xl text-center">
             <h1 className="text-[1.6rem] font-bold leading-[1.1] text-white sm:text-5xl md:text-[4.2rem] md:leading-[0.98]">
               Bosphorus Cruise Istanbul
-              <span className="mt-1 block text-[var(--brand-gold)] sm:mt-0 sm:inline"> — Dinner, Sunset & Yacht Charter</span>
+              {/* Clarity (2026-05-29) showed 32 dead-clicks on this gold
+                  sub-heading — users were treating it as a CTA. We now
+                  expose each of the three products as inline anchor links
+                  so the tap goes somewhere useful instead of nothing. */}
+              <span className="mt-1 block text-[var(--brand-gold)] sm:mt-0 sm:inline">
+                {" — "}
+                <Link href="/istanbul-dinner-cruise" className="underline-offset-[6px] hover:underline focus:underline">
+                  Dinner
+                </Link>
+                {", "}
+                <Link href="/cruises/bosphorus-sunset-cruise" className="underline-offset-[6px] hover:underline focus:underline">
+                  Sunset
+                </Link>
+                {" & "}
+                <Link href="/yacht-charter-istanbul" className="underline-offset-[6px] hover:underline focus:underline">
+                  Yacht Charter
+                </Link>
+              </span>
             </h1>
             <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-relaxed text-white/84 sm:mt-4 sm:text-base md:text-lg">
               Book direct with Istanbul&apos;s TURSAB-licensed operator — sunset from €30, dinner from €30, private yacht from €200 across a 6-vessel Bosphorus fleet.
@@ -97,19 +114,32 @@ export default function HeroSection() {
             </Link>
           </div>
 
+          {/* Trust badges — converted from <span> to <Link> after Clarity
+              (2026-05-29) showed 24 dead-clicks on "Shared and private
+              cruise options".  Users were treating each badge as a tappable
+              chip, so we route them to the relevant proof page. */}
           <div className="hero-fade-in hero-fade-in-delay-3 mt-7 hidden flex-wrap items-center justify-center gap-5 text-sm text-white/76 sm:flex">
-            <div className="flex items-center gap-2">
+            <Link
+              href="/compare-bosphorus-cruises"
+              className="flex items-center gap-2 transition-colors hover:text-white"
+            >
               <Star className="h-4 w-4 text-[var(--brand-gold)]" />
               <span>Shared and private cruise options</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </Link>
+            <Link
+              href="/pricing"
+              className="flex items-center gap-2 transition-colors hover:text-white"
+            >
               <Shield className="h-4 w-4 text-[var(--brand-gold)]" />
               <span>Direct booking with clear pricing</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </Link>
+            <Link
+              href="/tursab"
+              className="flex items-center gap-2 transition-colors hover:text-white"
+            >
               <Clock className="h-4 w-4 text-[var(--brand-gold)]" />
               <span>TURSAB-licensed since 2001</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

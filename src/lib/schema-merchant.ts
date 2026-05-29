@@ -34,3 +34,17 @@ export const OFFER_MERCHANT_DEFAULTS = {
     returnMethod: "https://schema.org/ReturnByMail",
   },
 } as const;
+
+/**
+ * Shared inLanguage hint for the brand's "primary" surfaces (Organization,
+ * WebSite, Captain Person schemas) rendered in the root layout. Yandex
+ * weighs the schema-level `inLanguage` signal more heavily than Google does
+ * for language attribution; without it, the Russian Wikidata graph + Yandex
+ * "Translate this page" hints fall through to OG `locale`, which is weaker.
+ *
+ * The site root layout is hard-coded to `en` (other locales are middleware-
+ * rewritten), so the brand-level entity declarations all advertise English
+ * here. Per-page schemas (tours, blog posts, locale pages) override this
+ * with their own `inLanguage` to match the surface they live on.
+ */
+export const BRAND_IN_LANGUAGE = "en" as const;
