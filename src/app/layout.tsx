@@ -11,7 +11,7 @@ import SiteChrome from "@/components/layout/SiteChrome";
 import { ToastProvider } from "@/components/ui/Toast";
 import { DEFAULT_LOCALE, getHtmlDir } from "@/i18n/config";
 import "./globals.css";
-import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import { BRAND_IN_LANGUAGE, OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -122,6 +122,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["TravelAgency", "LocalBusiness"],
   "@id": `${SITE_URL}/#organization`,
+  inLanguage: BRAND_IN_LANGUAGE,
   name: "MerrySails",
   alternateName: ["Merry Tourism", "Meryem Yildiz Travel"],
   legalName: "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI",
@@ -279,6 +280,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
+  inLanguage: BRAND_IN_LANGUAGE,
   name: "MerrySails",
   url: SITE_URL,
   description: "Bosphorus cruise and yacht charter booking in Istanbul — sunset cruise, dinner cruise, private yacht.",
@@ -297,6 +299,7 @@ const captainSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#captain-ahmet`,
+  inLanguage: BRAND_IN_LANGUAGE,
   name: "Captain Ahmet Yılmaz",
   givenName: "Ahmet",
   familyName: "Yılmaz",
