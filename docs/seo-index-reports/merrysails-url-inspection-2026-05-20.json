@@ -1,0 +1,332 @@
+{
+  "generatedAt": "2026-05-20T07:50:27.908Z",
+  "siteUrl": "sc-domain:merrysails.com",
+  "results": [
+    {
+      "url": "https://merrysails.com/best-bosphorus-sunset-cruise-2026",
+      "inspectionStatus": "unknown",
+      "coverageState": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "lastCrawlTime": "",
+      "googleCanonical": "",
+      "userCanonical": "",
+      "referringUrls": [],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-17T21:38:48Z",
+      "googleCanonical": "https://merrysails.com/",
+      "userCanonical": "https://merrysails.com/",
+      "referringUrls": [
+        "https://merrysails.com/tr",
+        "https://merrysails.com/tursab",
+        "https://www.pickupspoint.com/fr/transfer/belek-antalya-havalimani-transfer",
+        "http://merrysails.com/"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/boat-rental-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-09T09:58:48Z",
+      "googleCanonical": "https://merrysails.com/boat-rental-istanbul",
+      "userCanonical": "https://merrysails.com/boat-rental-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/blog/bosphorus-vs-princes-islands",
+        "https://merrysails.com/blog/bosphorus-sunset-dinner-cruise-vs-lunch"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-14T21:48:05Z",
+      "googleCanonical": "https://merrysails.com/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/blog/istanbul-cruise-complete-guide-2026",
+        "https://merrysails.com/tr/bosphorus-cruise"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/bosphorus-guide",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-19T22:33:40Z",
+      "googleCanonical": "https://merrysails.com/bosphorus-guide",
+      "userCanonical": "https://merrysails.com/bosphorus-guide",
+      "referringUrls": [],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/compare-bosphorus-cruises",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-03T07:22:36Z",
+      "googleCanonical": "https://merrysails.com/compare-bosphorus-cruises",
+      "userCanonical": "https://merrysails.com/compare-bosphorus-cruises",
+      "referringUrls": [
+        "https://merrysails.com/blog/best-bosphorus-sunset-cruise-istanbul-2026"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/corporate-events",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-20T05:28:15Z",
+      "googleCanonical": "https://merrysails.com/corporate-events",
+      "userCanonical": "https://merrysails.com/corporate-events",
+      "referringUrls": [
+        "https://merrysails.com/tr/corporate-events",
+        "https://merrysails.com/blog/bosphorus-cruise-groups-istanbul"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-17T03:03:35Z",
+      "googleCanonical": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "userCanonical": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "referringUrls": [
+        "https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
+        "https://merrysails.com/cruises/full-day-istanbul-old-city-tour",
+        "http://merrysails.com/"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/de/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-13T12:03:34Z",
+      "googleCanonical": "https://merrysails.com/de/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/de/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/bosphorus-cruise",
+        "https://merrysails.com/tr/bosphorus-cruise",
+        "https://merrysails.com/de/guides"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/dinner-cruise-with-hotel-pickup-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-04-23T20:55:28Z",
+      "googleCanonical": "https://merrysails.com/dinner-cruise-with-hotel-pickup-istanbul",
+      "userCanonical": "https://merrysails.com/dinner-cruise-with-hotel-pickup-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/guides/rumeli-fortress"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/fr/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-07T15:50:53Z",
+      "googleCanonical": "https://merrysails.com/fr/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/fr/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/bosphorus-cruise",
+        "https://merrysails.com/tr/bosphorus-cruise"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/istanbul-cruise-faq",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-14T06:59:29Z",
+      "googleCanonical": "https://merrysails.com/istanbul-cruise-faq",
+      "userCanonical": "https://merrysails.com/istanbul-cruise-faq",
+      "referringUrls": [
+        "https://merrysails.com/blog/istanbul-romantic-cruise-couples",
+        "https://merrysails.com/blog/best-bosphorus-sunset-cruise-istanbul-2026"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/istanbul-dinner-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-17T02:59:25Z",
+      "googleCanonical": "https://merrysails.com/istanbul-dinner-cruise",
+      "userCanonical": "https://merrysails.com/istanbul-dinner-cruise",
+      "referringUrls": [
+        "https://merrysails.com/blog/bosphorus-sunset-cruise-vs-dinner-cruise",
+        "https://merrysails.com/de/istanbul-dinner-cruise",
+        "https://merrysails.com/sitemap.xml"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/kabatas-dinner-cruise-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-04-23T20:57:39Z",
+      "googleCanonical": "https://merrysails.com/kabatas-dinner-cruise-istanbul",
+      "userCanonical": "https://merrysails.com/kabatas-dinner-cruise-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/istanbul-dinner-cruise"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/kurucesme-marina-yacht-charter",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-05T13:01:57Z",
+      "googleCanonical": "https://merrysails.com/kurucesme-marina-yacht-charter",
+      "userCanonical": "https://merrysails.com/kurucesme-marina-yacht-charter",
+      "referringUrls": [
+        "https://merrysails.com/tr/kurucesme-marina-yacht-charter"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/nl/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-19T23:43:12Z",
+      "googleCanonical": "https://merrysails.com/nl/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/nl/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/bosphorus-cruise",
+        "https://merrysails.com/de/bosphorus-cruise",
+        "https://merrysails.com/tr/bosphorus-cruise",
+        "https://merrysails.com/fr/bosphorus-cruise",
+        "https://merrysails.com/nl/contact"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/private-bosphorus-dinner-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-20T01:11:11Z",
+      "googleCanonical": "https://merrysails.com/private-bosphorus-dinner-cruise",
+      "userCanonical": "https://merrysails.com/private-bosphorus-dinner-cruise",
+      "referringUrls": [
+        "https://merrysails.com/blog/private-yacht-charter-istanbul-2026-buyers-guide"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/proposal-yacht-rental-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-19T13:55:07Z",
+      "googleCanonical": "https://merrysails.com/proposal-yacht-rental-istanbul",
+      "userCanonical": "https://merrysails.com/proposal-yacht-rental-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/sitemap.xml"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/sunset-cruise-tickets-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-20T07:16:35Z",
+      "googleCanonical": "https://merrysails.com/sunset-cruise-tickets-istanbul",
+      "userCanonical": "https://merrysails.com/sunset-cruise-tickets-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/tr/sunset-cruise-tickets-istanbul",
+        "https://merrysails.com/blog/short-bosphorus-cruise-tour",
+        "https://merrysails.com/boat-rental-hourly-istanbul"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-13T12:03:34Z",
+      "googleCanonical": "https://merrysails.com/tr/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/tr/bosphorus-cruise",
+      "referringUrls": [],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/turkish-night-dinner-cruise-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-04-25T23:34:37Z",
+      "googleCanonical": "https://merrysails.com/turkish-night-dinner-cruise-istanbul",
+      "userCanonical": "https://merrysails.com/turkish-night-dinner-cruise-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/guides/rumeli-fortress",
+        "https://merrysails.com/guides/kurucesme-marina"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-04-04T03:02:27Z",
+      "googleCanonical": "https://merrysails.com/yacht-charter-istanbul",
+      "userCanonical": "https://merrysails.com/yacht-charter-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/nl/reservation?tour=yacht-charter-in-istanbul&packageName=Bosporus%20Groepsjacht%20%C2%B7%2036%20%E2%80%94%202h&hours=2&fleet=bosphorus-group-yacht-36",
+        "https://merrysails.com/sitemap.xml"
+      ],
+      "sitemap": []
+    }
+  ]
+}

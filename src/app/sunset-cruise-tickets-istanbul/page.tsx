@@ -51,6 +51,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Sunset Cruise Tickets Istanbul",
+  alternateName: [
+    "Sunset Cruise Tickets Istanbul",
+    "Билеты на закатный круиз по Босфору в Стамбуле",
+    "Закатная прогулка на яхте — бронирование билетов",
+  ],
   description:
     "Support page for guests comparing Bosphorus sunset-cruise tickets in Istanbul when package fit and direct-booking clarity are the main decision points.",
   url: canonicalUrl,
@@ -120,10 +125,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоят билеты на закатный круиз по Босфору?",
+    a: "Билеты на закатный круиз: пакет без вина — от 30 EUR (понедельник, вторник, четверг) или 34 EUR (другие дни). Пакет с вином — от 35 EUR (пн/вт/чт) или 40 EUR. Все пакеты — у лицензированного оператора TÜRSAB Группы А. Уточните доступность в Telegram @merrysails.",
+  },
+  {
+    q: "От какого причала отправляется закатный круиз?",
+    a: "Закатный круиз отправляется с пирса Каракёй (Karaköy) на европейской стороне Босфора. Добраться можно трамваем T1 до остановки Karaköy или такси (10 минут от Таксима). Точное место сбора подтверждается в Telegram @merrysails после бронирования.",
+  },
+  {
+    q: "Что включено в билет на закатный круиз?",
+    a: "В билет включены: 2 часа на яхте, англоязычный гид, безалкогольные напитки и закуски, виды на дворец Долмабахче, Босфорский мост и Румелийскую крепость. Пакет с вином добавляет неограниченное вино. Лицензия TÜRSAB Группы А. Подробности в Telegram @merrysails.",
+  },
+  {
+    q: "Нужно ли бронировать билет заранее или можно купить на месте?",
+    a: "Рекомендуем бронировать заранее — особенно на выходные и в высокий сезон (май–октябрь) места заполняются за 1–2 дня. Билеты на месте часто недоступны. Забронировать можно через сайт или напрямую в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

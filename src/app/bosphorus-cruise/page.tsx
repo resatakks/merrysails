@@ -37,6 +37,11 @@ const guideSchema = {
   "@type": ["TouristTrip", "Service"],
   "@id": `${SITE_URL}/bosphorus-cruise#tour`,
   name: "Bosphorus Cruise Istanbul",
+  alternateName: [
+    "Bosphorus Cruise Istanbul",
+    "Круиз по Босфору в Стамбуле",
+    "Прогулка на яхте по Босфору",
+  ],
   description: "Bosphorus cruises in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
   url: `${SITE_URL}/bosphorus-cruise`,
   provider: {
@@ -245,6 +250,25 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит круиз по Босфору в Стамбуле?",
+    a: "Текущие цены MerrySails: закатный круиз от 30 EUR (пн, вт, чт) или 34 EUR (другие дни), ужин-круиз от 30 до 90 EUR, частная аренда яхты от 200 EUR за яхту. Оператор лицензирован TÜRSAB Группы А. Уточнить актуальные тарифы можно в Telegram @merrysails.",
+  },
+  {
+    q: "От какого причала отправляются круизы по Босфору?",
+    a: "Закатные круизы отправляются с пирса Каракёй (Karaköy), ужин-круизы — с пирса Кабаташ (Kabataş), частные яхты — с пирсов Кабаташ или Куручешме (Kuruçeşme). Точное место посадки подтверждается после бронирования через Telegram @merrysails.",
+  },
+  {
+    q: "Что включено в круиз по Босфору?",
+    a: "В закатный круиз включены: 2 часа на яхте, англоязычный гид, безалкогольные напитки. В ужин-круиз — 3,5 часа, мезе, основное блюдо, шоу с танцем живота. Все туры по лицензии TÜRSAB Группы А. Подробности — в Telegram @merrysails.",
+  },
+  {
+    q: "Какой круиз выбрать для первого визита в Стамбул?",
+    a: "Для первого визита рекомендуем закатный круиз — это самый универсальный 2-часовой формат с лучшими видами на дворец Долмабахче, Босфорский мост и Румелийскую крепость. Для романтического вечера выбирайте ужин-круиз. Свяжитесь с нами в Telegram @merrysails для рекомендации.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -252,7 +276,7 @@ const faqSchema = {
     "@type": "SpeakableSpecification",
     cssSelector: ["h1", ".faq-section", ".faq-section dt", ".faq-section dd"],
   },
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

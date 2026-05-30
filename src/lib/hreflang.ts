@@ -41,6 +41,19 @@ const LOCALIZED_ROUTES = new Set([
   // Adding it here causes 4×404 in Semrush (Source: 2026-05-17 audit).
 ]);
 
+// Subset of LOCALIZED_ROUTES that ALSO have a live /ru/<path> page.
+// Russian rollout is staged: only the top-3 commercial tours + homepage have a
+// fully translated /ru page so far. Other routes in LOCALIZED_ROUTES are
+// EN/TR/DE/FR/NL only and must NOT emit a ru hreflang (pointing at a 404 hurts
+// crawl quality). Add a path here once src/app/[locale]/<path>/page.tsx ships a
+// ru TRANSLATIONS block.
+const RU_ENABLED_ROUTES = new Set([
+  "", // homepage
+  "/cruises/bosphorus-sunset-cruise",
+  "/istanbul-dinner-cruise",
+  "/yacht-charter-istanbul",
+]);
+
 /**
  * Builds alternates.languages for Next.js generateMetadata().
  * Returns undefined for routes not in LOCALIZED_ROUTES, so they get no hreflang.
@@ -55,9 +68,10 @@ export function buildHreflang(path: string): Record<string, string> | undefined 
   };
 
   for (const locale of ACTIVE_LOCALES) {
-    if (locale !== "en") {
-      languages[locale] = `${SITE_URL}/${locale}${path}`;
-    }
+    if (locale === "en") continue;
+    // Stage ru: only emit hreflang for paths that have a live /ru page.
+    if (locale === "ru" && !RU_ENABLED_ROUTES.has(path)) continue;
+    languages[locale] = `${SITE_URL}/${locale}${path}`;
   }
 
   return languages;

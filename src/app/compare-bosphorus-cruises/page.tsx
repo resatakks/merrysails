@@ -123,6 +123,25 @@ const COMPARE_FAQ = [
   },
 ];
 
+const COMPARE_FAQ_RU = [
+  {
+    q: "Какой круиз по Босфору самый доступный по цене?",
+    a: "Самый доступный — закатный круиз по Босфору от 34 EUR с человека или ужин-круиз пакет Silver от 30 EUR с человека. Все цены указаны для лицензированного оператора TÜRSAB Группы А. Уточнить актуальные тарифы можно в Telegram @merrysails.",
+  },
+  {
+    q: "От какого причала отправляются круизы по Босфору?",
+    a: "Закатные и обзорные круизы отправляются с причала Кабаташ (Kabataş). Ужин-круизы — также с Кабаташа. Частные яхты могут отправляться с пирсов Кабаташ или Куручешме (Kuruçeşme). Точное место сообщается после бронирования через Telegram @merrysails.",
+  },
+  {
+    q: "Что включено в стоимость ужин-круиза?",
+    a: "В пакет Silver (от 30 EUR) включены: мезе, основное блюдо, безалкогольные напитки и турецкое шоу с танцем живота. Пакет Gold Unlimited Alcohol (90 EUR) добавляет VIP-места, неограниченный алкоголь и трансфер от отеля. Все услуги по лицензии TÜRSAB Группы А.",
+  },
+  {
+    q: "Какой круиз выбрать для семьи с детьми?",
+    a: "Для семей с детьми оптимален закатный обзорный круиз — 2 часа, безопасный формат, мягкое время. Дети до 6 лет бесплатно, скидки на детей 6–12 лет 30–50%. Уточните тарифы для детей в Telegram @merrysails перед бронированием.",
+  },
+];
+
 export default function CompareCruisesPage() {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -149,6 +168,11 @@ export default function CompareCruisesPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Bosphorus Cruise Options Istanbul",
+    alternateName: [
+      "Bosphorus Cruise Options Istanbul",
+      "Сравнение круизов по Босфору в Стамбуле",
+      "Варианты круизов по Босфору 2026",
+    ],
     itemListElement: CRUISE_OPTIONS.map((c, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -173,7 +197,7 @@ export default function CompareCruisesPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: COMPARE_FAQ.map((f) => ({
+    mainEntity: [...COMPARE_FAQ, ...COMPARE_FAQ_RU].map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },

@@ -50,10 +50,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит аренда яхты для предложения руки и сердца в Стамбуле?",
+    a: "Стоимость частной яхты для предложения начинается от 280 EUR за 2 часа (пакет Essential, до 8 гостей). Пакет Premium с украшением, тортом и фотографом — от 380 EUR. Уточнить точную цену можно через Telegram @merrysails.",
+  },
+  {
+    q: "От какого причала отправляется яхта для предложения?",
+    a: "Мы отправляемся с пирса Кабаташ (Kabataş) или Куручешме (Kuruçeşme), в зависимости от выбранной яхты. Точный пирс посадки подтверждается в Telegram @merrysails после бронирования.",
+  },
+  {
+    q: "Что включено в пакет для предложения руки и сердца?",
+    a: "В пакет включены: частная яхта на 2 часа, капитан и команда, безалкогольные напитки, лицензия TÜRSAB Группы А. Дополнительно можно заказать букет, торт, фотографа, видеографа и скрипача через Telegram @merrysails.",
+  },
+  {
+    q: "Подходит ли яхта для предложения руки и сердца на закате?",
+    a: "Да, мы рекомендуем именно закатный тайминг — мягкий свет и виды на первый Босфорский мост создают идеальный фон. Время посадки рассчитываем индивидуально под закат. Свяжитесь с нами через Telegram @merrysails для согласования времени.",
+  },
+];
+
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
@@ -67,6 +86,11 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Proposal Yacht Rental Istanbul",
+  alternateName: [
+    "Proposal Yacht Rental Istanbul",
+    "Аренда яхты для предложения руки и сердца в Стамбуле",
+    "Частная яхта для помолвки на Босфоре",
+  ],
   description:
     "Private yacht rental on the Bosphorus for marriage proposals, romantic setups, and premium proposal planning in Istanbul.",
   url: `${SITE_URL}/proposal-yacht-rental-istanbul`,

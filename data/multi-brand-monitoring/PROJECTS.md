@@ -121,7 +121,10 @@ Each brief contains a self-contained prompt user can paste into that brand's Cla
 
 ## 🤖 AI Visibility Status
 
-**LBM (cancelled 2026-05-17)** — refund requested via WhatsApp support. 24 credits burned on failed scan, transcript null on all 3 models.
+**LBM (cancelled 2026-05-17, refund CONFIRMED in processing 2026-05-21)** — Resolution via Serpstat live chat (LBM is Serpstat's product). Roman submitted to finance department. Confirmed: < 1 business day Serpstat-side processing, future payments auto-cancelled, refund confirmation will arrive via chat + email. Bank transfer 5-10 days after that. Closing notes:
+- $49 refund pending ($39 Pro + $10 PAYG)
+- 9 LBM projects created during testing — archive when refund lands (or keep dormant)
+- Custom OpenRouter solution replaces this fully (~$15/month vs $49+ scaling limits)
 
 **Replacement strategy** — under evaluation:
 - DataForSEO `ai_optimization/llm_mentions/search/live` endpoint (lib already wired in `src/lib/dataforseo.ts:197`)

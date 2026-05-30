@@ -38,6 +38,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Private Dinner Cruise for Couples Istanbul",
+  alternateName: [
+    "Private Dinner Cruise for Couples Istanbul",
+    "Частный ужин-круиз для пар в Стамбуле",
+    "Романтический ужин на яхте для двоих",
+  ],
   description:
     "Support page for couples comparing a private Bosphorus dinner cruise when privacy and dinner-led yacht flow matter more than a shared evening.",
   provider: {
@@ -82,10 +87,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит частный ужин-круиз для пары в Стамбуле?",
+    a: "Частный ужин-круиз для пары начинается от 280 EUR за всю яхту (пакет Essential, 2 часа). Финальная цена зависит от выбора яхты, маршрута, меню и дополнений (цветы, торт, фотограф). Цены — у оператора с лицензией TÜRSAB Группы А. Уточните в Telegram @merrysails.",
+  },
+  {
+    q: "От какого причала отправляется романтический ужин-круиз?",
+    a: "Романтические частные ужины обычно отправляются с пирса Кабаташ (Kabataş) у дворца Долмабахче или с Куручешме Марины (Kuruçeşme). Точное место посадки сообщается в Telegram @merrysails после подтверждения бронирования.",
+  },
+  {
+    q: "Что включено в частный ужин для двоих?",
+    a: "В базовый пакет включены: вся яхта только для пары, капитан и команда, сервированный ужин на двоих, безалкогольные напитки, маршрут по Босфору. Опционально — шампанское, торт, букет, скрипач, фотограф. Все услуги по лицензии TÜRSAB Группы А. Связаться: Telegram @merrysails.",
+  },
+  {
+    q: "Подходит ли этот формат для годовщины или медового месяца?",
+    a: "Да, формат идеально подходит для годовщин, свадебных путешествий и романтических вечеров. Вы получаете только свою яхту, отдельный стол с видом на огни Босфорского моста и индивидуальный маршрут. Дополнения (цветы, торт, музыка) — через Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

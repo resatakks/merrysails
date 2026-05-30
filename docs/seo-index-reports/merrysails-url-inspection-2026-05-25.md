@@ -1,0 +1,498 @@
+# MerrySails URL Inspection
+
+Generated: 2026-05-25T09:38:13.408Z
+Property: sc-domain:merrysails.com
+
+## Non-indexed Or Unknown
+
+- `https://merrysails.com/about` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/best-bosphorus-sunset-cruise-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/avoid-tourist-traps-istanbul-cruises` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/best-restaurants-near-bosphorus` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/best-time-bosphorus-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/best-yacht-routes-bosphorus` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/bosphorus-cruise-prices-comparison` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/bosphorus-cruise-reviews-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/bosphorus-dinner-cruise-booking` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/bosphorus-night-cruise-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/corporate-events-yacht-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/grand-bazaar-shopping-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/how-to-avoid-seasickness-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-3-day-itinerary-cruises-tours` | status=`not_indexed` | coverage=`Crawled - currently not indexed` | canonical=`https://merrysails.com/blog/istanbul-3-day-itinerary-cruises-tours`
+- `https://merrysails.com/blog/istanbul-boat-party-private` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-boat-tour-vs-ferry` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-corporate-yacht-event-booking` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-cruise-package-deals` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-dinner-cruise-menu-guide` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-museums-near-bosphorus` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-night-cruise-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-nightlife-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-proposal-yacht-cruise` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-seaside-neighborhoods` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-street-food-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/istanbul-transportation-guide-tourists` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/blog/kadikoy-asian-side-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/luxury-yacht-bosphorus-experience` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/luxury-yacht-rental-bosphorus` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/new-years-eve-bosphorus-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/princes-island-day-trip-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/private-yacht-charter-istanbul-prices` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/yacht-catering-menu-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/blog/yacht-decoration-ideas-istanbul` | status=`not_indexed` | coverage=`Crawled - currently not indexed` | canonical=`https://merrysails.com/blog/yacht-decoration-ideas-istanbul`
+- `https://merrysails.com/blog/yacht-rental-istanbul-prices` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/contact` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/cruises/bosphorus-cruise-for-cruise-passengers` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/cruises/full-day-istanbul-old-city-tour` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/cruises/new-years-eve-party-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/blog/bosporus-bootstour-istanbul-2026-ratgeber` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/blog/bosporus-kreuzfahrt-preise-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/blog/yacht-charter-istanbul-ratgeber` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/client-hosting-yacht-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/de/kurucesme-marina-yacht-charter` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/private-bosphorus-dinner-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/blog/croisiere-bosphore-prix-guide-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/blog/croisiere-bosphore-prix-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/blog/demande-en-mariage-sur-le-bosphore` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/blog/location-yacht-istanbul-guide` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/boat-rental-hourly-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/boat-rental-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/bosphorus-cruise-departure-points` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/client-hosting-yacht-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/contact` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/corporate-events` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/cruises` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/dinner-cruise-pickup-sultanahmet-taksim` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/private-bosphorus-dinner-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/proposal-yacht-with-photographer-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/team-building-yacht-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/turkish-night-dinner-cruise-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-group-yacht-36` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/about` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/blog/bosphorus-cruise-prijzen-gids-2026` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/nl/blog/bosporus-cruise-prijzen-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/blog/huwelijksaanzoek-op-de-bosporus` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/blog/jacht-huren-istanbul-gids` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/boat-rental-hourly-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/boat-rental-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/cruises` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/nl/cruises/bosphorus-sunset-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/dinner-cruise-pickup-sultanahmet-taksim` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/dinner-cruise-with-hotel-pickup-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/faq` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/private-bosphorus-dinner-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/private-tours` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/nl/product-launch-yacht-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/proposal-yacht-rental-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/turkish-night-dinner-cruise-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/adalar-turu-istanbul-buyukada-rehberi-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/bogaz-turu-kac-saat-surer-rehberi-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/dogum-gunu-yat-kiralama-istanbul-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-2026` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-aksam-yemegi-turu-rehberi` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-bogaz-gun-batimi-turu-deneyimi` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-bogaz-turu-fiyatlari-2026` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-bogaz-turu-saatleri-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-evlilik-teklifi-tekne` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-yat-kiralama-rehberi-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/blog/yat-kiralama-tekne-fiyatlari-istanbul-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/contact` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/dinner-cruise-with-hotel-pickup-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/kabatas-dinner-cruise-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-group-yacht-36` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`unknown` | coverage=`URL is unknown to Google` | canonical=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | canonical=`n/a`
+
+## Full Results
+
+- `https://merrysails.com/about` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/best-bosphorus-sunset-cruise-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/avoid-tourist-traps-istanbul-cruises` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/best-restaurants-near-bosphorus` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/best-time-bosphorus-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/best-yacht-routes-bosphorus` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/bosphorus-cruise-prices-comparison` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/bosphorus-cruise-reviews-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/bosphorus-dinner-cruise-booking` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/bosphorus-night-cruise-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/corporate-events-yacht-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/grand-bazaar-shopping-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/how-to-avoid-seasickness-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-3-day-itinerary-cruises-tours` | status=`not_indexed` | coverage=`Crawled - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`2026-05-18T02:50:15Z`
+- `https://merrysails.com/blog/istanbul-boat-party-private` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-boat-tour-vs-ferry` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-corporate-yacht-event-booking` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-cruise-package-deals` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-dinner-cruise-menu-guide` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-museums-near-bosphorus` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-night-cruise-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-nightlife-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-proposal-yacht-cruise` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-seaside-neighborhoods` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-street-food-guide` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/istanbul-transportation-guide-tourists` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/kadikoy-asian-side-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/luxury-yacht-bosphorus-experience` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/luxury-yacht-rental-bosphorus` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/new-years-eve-bosphorus-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/princes-island-day-trip-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/private-yacht-charter-istanbul-prices` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/yacht-catering-menu-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/blog/yacht-decoration-ideas-istanbul` | status=`not_indexed` | coverage=`Crawled - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`2026-05-14T08:51:30Z`
+- `https://merrysails.com/blog/yacht-rental-istanbul-prices` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/contact` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/cruises/bosphorus-cruise-for-cruise-passengers` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/cruises/full-day-istanbul-old-city-tour` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/cruises/new-years-eve-party-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/blog/bosporus-bootstour-istanbul-2026-ratgeber` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/blog/bosporus-kreuzfahrt-preise-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/blog/yacht-charter-istanbul-ratgeber` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/client-hosting-yacht-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/kurucesme-marina-yacht-charter` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/private-bosphorus-dinner-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/blog/croisiere-bosphore-prix-guide-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/blog/croisiere-bosphore-prix-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/blog/demande-en-mariage-sur-le-bosphore` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/blog/location-yacht-istanbul-guide` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/boat-rental-hourly-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/boat-rental-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/bosphorus-cruise-departure-points` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/client-hosting-yacht-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/contact` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/corporate-events` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/cruises` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/dinner-cruise-pickup-sultanahmet-taksim` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/private-bosphorus-dinner-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/proposal-yacht-with-photographer-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/team-building-yacht-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/turkish-night-dinner-cruise-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-group-yacht-36` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/about` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/blog/bosphorus-cruise-prijzen-gids-2026` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/blog/bosporus-cruise-prijzen-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/blog/huwelijksaanzoek-op-de-bosporus` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/blog/jacht-huren-istanbul-gids` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/boat-rental-hourly-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/boat-rental-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/cruises` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/cruises/bosphorus-sunset-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/dinner-cruise-pickup-sultanahmet-taksim` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/dinner-cruise-with-hotel-pickup-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/faq` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/private-bosphorus-dinner-cruise` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/private-tours` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/product-launch-yacht-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/proposal-yacht-rental-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/turkish-night-dinner-cruise-istanbul` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/adalar-turu-istanbul-buyukada-rehberi-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/bogaz-turu-kac-saat-surer-rehberi-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/dogum-gunu-yat-kiralama-istanbul-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-2026` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-aksam-yemegi-turu-rehberi` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-bogaz-gun-batimi-turu-deneyimi` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-bogaz-turu-fiyatlari-2026` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-bogaz-turu-saatleri-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-evlilik-teklifi-tekne` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/istanbul-yat-kiralama-rehberi-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/blog/yat-kiralama-tekne-fiyatlari-istanbul-2026` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/contact` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/dinner-cruise-with-hotel-pickup-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/kabatas-dinner-cruise-istanbul` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-event-yacht-44` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-group-yacht-36` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-mega-event-yacht-150` | status=`unknown` | coverage=`URL is unknown to Google` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-sailing-yacht-10` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-sailing-yacht-14` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/tr/yacht-charter-istanbul/bosphorus-signature-yacht-36` | status=`not_indexed` | coverage=`Discovered - currently not indexed` | verdict=`NEUTRAL` | lastCrawl=`n/a`
+- `https://merrysails.com/` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T14:54:26Z`
+- `https://merrysails.com/about/team` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T14:51:01Z`
+- `https://merrysails.com/ai-knowledge` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T14:51:01Z`
+- `https://merrysails.com/blog` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T12:34:16Z`
+- `https://merrysails.com/blog/accessible-bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T13:13:09Z`
+- `https://merrysails.com/blog/bachelorette-party-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:55:21Z`
+- `https://merrysails.com/blog/best-bosphorus-cruise-istanbul-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T11:59:01Z`
+- `https://merrysails.com/blog/best-bosphorus-sunset-cruise-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-06T23:11:34Z`
+- `https://merrysails.com/blog/best-bosphorus-sunset-cruise-operators-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:07:29Z`
+- `https://merrysails.com/blog/best-istanbul-activities-after-bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T06:45:19Z`
+- `https://merrysails.com/blog/best-istanbul-bosphorus-cruise-comparison-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T22:29:22Z`
+- `https://merrysails.com/blog/best-istanbul-cruise-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T13:23:02Z`
+- `https://merrysails.com/blog/best-time-for-bosphorus-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T23:46:46Z`
+- `https://merrysails.com/blog/birthday-party-boat-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T12:42:52Z`
+- `https://merrysails.com/blog/boat-rental-vs-yacht-charter-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-20T07:31:40Z`
+- `https://merrysails.com/blog/book-bosphorus-cruise-direct-save-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T22:29:22Z`
+- `https://merrysails.com/blog/book-bosphorus-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T11:10:31Z`
+- `https://merrysails.com/blog/book-bosphorus-cruise-safely` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T07:56:57Z`
+- `https://merrysails.com/blog/bosphorus-cruise-boarding-points-guide-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-20T00:38:26Z`
+- `https://merrysails.com/blog/bosphorus-cruise-companies-comparison` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T13:51:36Z`
+- `https://merrysails.com/blog/bosphorus-cruise-departure-times-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-29T15:28:07Z`
+- `https://merrysails.com/blog/bosphorus-cruise-eminonu` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-10T07:10:46Z`
+- `https://merrysails.com/blog/bosphorus-cruise-for-couples` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T18:39:23Z`
+- `https://merrysails.com/blog/bosphorus-cruise-groups-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T04:06:42Z`
+- `https://merrysails.com/blog/bosphorus-cruise-price-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T10:33:39Z`
+- `https://merrysails.com/blog/bosphorus-cruise-prices-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-15T21:42:56Z`
+- `https://merrysails.com/blog/bosphorus-cruise-safety-tips` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T09:39:25Z`
+- `https://merrysails.com/blog/bosphorus-cruise-vs-ferry` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T12:07:16Z`
+- `https://merrysails.com/blog/bosphorus-cruise-vs-ferry-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:29:55Z`
+- `https://merrysails.com/blog/bosphorus-cruise-vs-golden-horn-vs-princes-islands` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T03:13:03Z`
+- `https://merrysails.com/blog/bosphorus-cruise-winter-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T09:58:02Z`
+- `https://merrysails.com/blog/bosphorus-cruise-with-kids` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T07:06:53Z`
+- `https://merrysails.com/blog/bosphorus-dinner-cruise-what-to-expect` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T10:49:42Z`
+- `https://merrysails.com/blog/bosphorus-family-cruise-kids-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-22T05:06:09Z`
+- `https://merrysails.com/blog/bosphorus-ferry-vs-cruise-comparison` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:55:20Z`
+- `https://merrysails.com/blog/bosphorus-landmarks-cruise-tour` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T21:11:54Z`
+- `https://merrysails.com/blog/bosphorus-lunch-cruise-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T13:19:28Z`
+- `https://merrysails.com/blog/bosphorus-moonlight-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T14:34:55Z`
+- `https://merrysails.com/blog/bosphorus-sunset-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T01:11:22Z`
+- `https://merrysails.com/blog/bosphorus-sunset-cruise-vs-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T11:11:50Z`
+- `https://merrysails.com/blog/bosphorus-sunset-dinner-cruise-vs-lunch` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:07:35Z`
+- `https://merrysails.com/blog/bosphorus-vs-princes-islands` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T13:30:28Z`
+- `https://merrysails.com/blog/comparing-istanbul-cruise-operators-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T22:46:29Z`
+- `https://merrysails.com/blog/corporate-boat-hire-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T10:42:46Z`
+- `https://merrysails.com/blog/corporate-event-yacht-bosphorus` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T11:03:11Z`
+- `https://merrysails.com/blog/corporate-yacht-event-planning-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T05:17:14Z`
+- `https://merrysails.com/blog/corporate-yacht-events-on-the-bosphorus` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T02:55:25Z`
+- `https://merrysails.com/blog/fishing-boat-tour-bosphorus` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T09:11:24Z`
+- `https://merrysails.com/blog/galata-tower-neighborhood-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T10:46:13Z`
+- `https://merrysails.com/blog/group-bosphorus-cruise-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T15:52:24Z`
+- `https://merrysails.com/blog/how-to-get-istanbul-airport-to-bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T17:56:34Z`
+- `https://merrysails.com/blog/istanbul-boat-party-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T04:27:55Z`
+- `https://merrysails.com/blog/istanbul-boat-tour-price-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:52:29Z`
+- `https://merrysails.com/blog/istanbul-boat-tour-prices-comparison` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:52:31Z`
+- `https://merrysails.com/blog/istanbul-corporate-yacht-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T04:04:15Z`
+- `https://merrysails.com/blog/istanbul-cruise-booking-tips` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T07:33:38Z`
+- `https://merrysails.com/blog/istanbul-cruise-buyer-guide-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T22:46:30Z`
+- `https://merrysails.com/blog/istanbul-cruise-complete-guide-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-11T07:05:33Z`
+- `https://merrysails.com/blog/istanbul-cruise-for-groups` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T23:38:48Z`
+- `https://merrysails.com/blog/istanbul-cruise-photography-spots` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T09:42:38Z`
+- `https://merrysails.com/blog/istanbul-cruise-weekend-itinerary` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T13:55:31Z`
+- `https://merrysails.com/blog/istanbul-currency-tips-tourists` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T03:04:15Z`
+- `https://merrysails.com/blog/istanbul-day-trips-from-bosphorus` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T03:04:15Z`
+- `https://merrysails.com/blog/istanbul-dinner-cruise-etiquette-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-06T23:11:33Z`
+- `https://merrysails.com/blog/istanbul-dinner-cruise-price-guide-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-20T07:31:40Z`
+- `https://merrysails.com/blog/istanbul-hidden-gems-local-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T10:59:35Z`
+- `https://merrysails.com/blog/istanbul-honeymoon-cruise-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T02:49:58Z`
+- `https://merrysails.com/blog/istanbul-lunch-cruise-bosphorus` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-03-27T12:26:05Z`
+- `https://merrysails.com/blog/istanbul-night-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:55:29Z`
+- `https://merrysails.com/blog/istanbul-old-city-walking-tour` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-16T07:21:10Z`
+- `https://merrysails.com/blog/istanbul-romantic-cruise-couples` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T07:30:59Z`
+- `https://merrysails.com/blog/istanbul-sunset-cruise-booking` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T20:47:23Z`
+- `https://merrysails.com/blog/istanbul-sunset-cruise-experience` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T07:03:53Z`
+- `https://merrysails.com/blog/istanbul-sunset-cruise-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T20:25:03Z`
+- `https://merrysails.com/blog/istanbul-sunset-photography-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T15:17:48Z`
+- `https://merrysails.com/blog/istanbul-travel-guide-first-timers` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-03-08T10:30:05Z`
+- `https://merrysails.com/blog/istanbul-travel-tips-transfer-and-cruise-pairing` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T22:57:42Z`
+- `https://merrysails.com/blog/istanbul-weather-cruise-planning` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T10:54:15Z`
+- `https://merrysails.com/blog/marriage-proposal-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T03:50:05Z`
+- `https://merrysails.com/blog/party-boat-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:54:56Z`
+- `https://merrysails.com/blog/party-boat-istanbul-birthday` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T12:08:28Z`
+- `https://merrysails.com/blog/princes-islands-boat-tour-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-08T03:52:10Z`
+- `https://merrysails.com/blog/princes-islands-istanbul-day-trip-guide-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:19:31Z`
+- `https://merrysails.com/blog/private-yacht-charter-istanbul-2026-buyers-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-07T15:09:55Z`
+- `https://merrysails.com/blog/private-yacht-charter-istanbul-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-03-26T07:41:57Z`
+- `https://merrysails.com/blog/private-yacht-charter-istanbul-price` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-10T12:11:49Z`
+- `https://merrysails.com/blog/private-yacht-departure-points-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T05:09:12Z`
+- `https://merrysails.com/blog/private-yacht-hire-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T18:37:00Z`
+- `https://merrysails.com/blog/private-yacht-party-istanbul-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-21T21:11:43Z`
+- `https://merrysails.com/blog/private-yacht-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T16:08:07Z`
+- `https://merrysails.com/blog/proposal-yacht-rental-istanbul-planning-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-20T07:31:39Z`
+- `https://merrysails.com/blog/short-bosphorus-cruise-tour` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-11T08:28:45Z`
+- `https://merrysails.com/blog/sultanahmet-tourist-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-03-07T16:23:39Z`
+- `https://merrysails.com/blog/swimming-yacht-tour-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T20:14:33Z`
+- `https://merrysails.com/blog/top-10-bosphorus-landmarks` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T08:04:46Z`
+- `https://merrysails.com/blog/top-things-to-do-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T08:40:12Z`
+- `https://merrysails.com/blog/turkish-etiquette-guide-tourists` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T10:32:19Z`
+- `https://merrysails.com/blog/valentines-day-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T15:54:11Z`
+- `https://merrysails.com/blog/wedding-anniversary-yacht-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T16:46:32Z`
+- `https://merrysails.com/blog/what-to-wear-bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T02:16:34Z`
+- `https://merrysails.com/blog/yacht-birthday-party-ideas` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T17:00:07Z`
+- `https://merrysails.com/blog/yacht-party-ideas-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T09:11:13Z`
+- `https://merrysails.com/blog/yacht-wedding-istanbul-bosphorus` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-03-21T20:54:30Z`
+- `https://merrysails.com/boat-rental-hourly-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T08:03:08Z`
+- `https://merrysails.com/boat-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T09:58:48Z`
+- `https://merrysails.com/bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T21:48:05Z`
+- `https://merrysails.com/bosphorus-cruise-departure-points` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T05:09:00Z`
+- `https://merrysails.com/bosphorus-guide` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:33:40Z`
+- `https://merrysails.com/client-hosting-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-23T23:26:59Z`
+- `https://merrysails.com/compare-bosphorus-cruises` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-03T07:22:36Z`
+- `https://merrysails.com/corporate-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T05:28:15Z`
+- `https://merrysails.com/corporate-yacht-dinner-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T07:43:35Z`
+- `https://merrysails.com/cruises` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T22:12:35Z`
+- `https://merrysails.com/cruises/bosphorus-sightseeing-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-21T21:01:53Z`
+- `https://merrysails.com/cruises/bosphorus-sunset-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:03:35Z`
+- `https://merrysails.com/cruises/istanbul-bosphorus-lunch-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T05:18:57Z`
+- `https://merrysails.com/cruises/istanbul-lunch-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:33:14Z`
+- `https://merrysails.com/cruises/istanbul-princes-island-tour` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-08T04:17:10Z`
+- `https://merrysails.com/de` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T23:54:54Z`
+- `https://merrysails.com/de/about` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T18:19:53Z`
+- `https://merrysails.com/de/blog` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T11:54:55Z`
+- `https://merrysails.com/de/blog/bosporus-kreuzfahrt-preise-rehber-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T12:07:36Z`
+- `https://merrysails.com/de/blog/heiratsantrag-auf-dem-bosporus-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T15:02:02Z`
+- `https://merrysails.com/de/blog/prinzeninseln-istanbul-tagesausflug-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T21:56:48Z`
+- `https://merrysails.com/de/boat-rental-hourly-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T09:45:46Z`
+- `https://merrysails.com/de/boat-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T10:32:08Z`
+- `https://merrysails.com/de/bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T12:03:34Z`
+- `https://merrysails.com/de/bosphorus-cruise-departure-points` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:20:09Z`
+- `https://merrysails.com/de/contact` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T13:50:42Z`
+- `https://merrysails.com/de/corporate-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T02:36:49Z`
+- `https://merrysails.com/de/corporate-yacht-dinner-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T10:39:50Z`
+- `https://merrysails.com/de/cruises` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T17:38:15Z`
+- `https://merrysails.com/de/cruises/bosphorus-sunset-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-07T05:18:39Z`
+- `https://merrysails.com/de/dinner-cruise-pickup-sultanahmet-taksim` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:25:25Z`
+- `https://merrysails.com/de/dinner-cruise-with-hotel-pickup-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:59:08Z`
+- `https://merrysails.com/de/faq` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T06:59:17Z`
+- `https://merrysails.com/de/guides` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:58:15Z`
+- `https://merrysails.com/de/istanbul-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:15:27Z`
+- `https://merrysails.com/de/kabatas-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:21:52Z`
+- `https://merrysails.com/de/private-dinner-cruise-for-couples-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T08:53:31Z`
+- `https://merrysails.com/de/private-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T10:42:15Z`
+- `https://merrysails.com/de/private-tours` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T20:21:22Z`
+- `https://merrysails.com/de/product-launch-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T14:09:15Z`
+- `https://merrysails.com/de/proposal-yacht-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T14:09:29Z`
+- `https://merrysails.com/de/proposal-yacht-with-photographer-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T19:39:53Z`
+- `https://merrysails.com/de/sunset-cruise-tickets-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T15:17:48Z`
+- `https://merrysails.com/de/team-building-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T21:14:10Z`
+- `https://merrysails.com/de/turkish-night-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:15:51Z`
+- `https://merrysails.com/de/yacht-charter-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T17:04:02Z`
+- `https://merrysails.com/de/yacht-charter-istanbul/bosphorus-group-yacht-36` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T23:01:24Z`
+- `https://merrysails.com/dinner-cruise-pickup-sultanahmet-taksim` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T11:44:14Z`
+- `https://merrysails.com/dinner-cruise-with-hotel-pickup-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-25T00:56:41Z`
+- `https://merrysails.com/faq` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T18:39:46Z`
+- `https://merrysails.com/fr` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T23:54:54Z`
+- `https://merrysails.com/fr/about` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T09:27:32Z`
+- `https://merrysails.com/fr/blog` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-02T00:16:15Z`
+- `https://merrysails.com/fr/blog/guide-croisiere-bosphore-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T06:20:19Z`
+- `https://merrysails.com/fr/blog/iles-des-princes-istanbul-excursion-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T21:56:48Z`
+- `https://merrysails.com/fr/bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-07T15:50:53Z`
+- `https://merrysails.com/fr/corporate-yacht-dinner-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T07:12:44Z`
+- `https://merrysails.com/fr/cruises/bosphorus-sunset-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T19:13:34Z`
+- `https://merrysails.com/fr/dinner-cruise-with-hotel-pickup-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T05:53:15Z`
+- `https://merrysails.com/fr/faq` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:21:54Z`
+- `https://merrysails.com/fr/guides` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T00:52:02Z`
+- `https://merrysails.com/fr/istanbul-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T06:31:05Z`
+- `https://merrysails.com/fr/kabatas-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T17:53:47Z`
+- `https://merrysails.com/fr/kurucesme-marina-yacht-charter` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-06T09:14:59Z`
+- `https://merrysails.com/fr/private-dinner-cruise-for-couples-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T21:16:42Z`
+- `https://merrysails.com/fr/private-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T13:39:49Z`
+- `https://merrysails.com/fr/private-tours` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T10:42:15Z`
+- `https://merrysails.com/fr/product-launch-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-04T07:07:32Z`
+- `https://merrysails.com/fr/proposal-yacht-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T01:12:40Z`
+- `https://merrysails.com/fr/sunset-cruise-tickets-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T08:12:59Z`
+- `https://merrysails.com/guides` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-08T06:57:20Z`
+- `https://merrysails.com/guides/bosphorus-strait` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T11:11:46Z`
+- `https://merrysails.com/guides/buyukada-princes-islands` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T08:32:02Z`
+- `https://merrysails.com/guides/dolmabahce-palace` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T07:27:04Z`
+- `https://merrysails.com/guides/galata-bridge-eminonu` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T04:00:28Z`
+- `https://merrysails.com/guides/golden-horn` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-16T05:21:53Z`
+- `https://merrysails.com/guides/istanbul-bosphorus-bridges` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-21T22:42:39Z`
+- `https://merrysails.com/guides/kabatas-pier` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T16:40:12Z`
+- `https://merrysails.com/guides/karakoy-waterfront` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T07:16:30Z`
+- `https://merrysails.com/guides/kurucesme-marina` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T02:20:18Z`
+- `https://merrysails.com/guides/maidens-tower` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-21T22:20:00Z`
+- `https://merrysails.com/guides/ortakoy-mosque` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-16T02:49:14Z`
+- `https://merrysails.com/guides/rumeli-fortress` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-09T07:48:09Z`
+- `https://merrysails.com/istanbul-cruise-faq` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-14T06:59:29Z`
+- `https://merrysails.com/istanbul-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T02:59:25Z`
+- `https://merrysails.com/kabatas-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T18:39:50Z`
+- `https://merrysails.com/kurucesme-marina-yacht-charter` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-05T13:01:57Z`
+- `https://merrysails.com/nl` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T23:54:55Z`
+- `https://merrysails.com/nl/blog` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-10T08:37:58Z`
+- `https://merrysails.com/nl/blog/prinseneilanden-istanbul-dagtocht-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T23:59:02Z`
+- `https://merrysails.com/nl/bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T23:43:12Z`
+- `https://merrysails.com/nl/bosphorus-cruise-departure-points` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T07:12:44Z`
+- `https://merrysails.com/nl/client-hosting-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T01:12:12Z`
+- `https://merrysails.com/nl/contact` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T00:33:52Z`
+- `https://merrysails.com/nl/corporate-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T22:27:53Z`
+- `https://merrysails.com/nl/corporate-yacht-dinner-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:24:08Z`
+- `https://merrysails.com/nl/guides` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T22:01:08Z`
+- `https://merrysails.com/nl/istanbul-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-01T09:39:32Z`
+- `https://merrysails.com/nl/kabatas-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T18:36:05Z`
+- `https://merrysails.com/nl/kurucesme-marina-yacht-charter` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T10:52:24Z`
+- `https://merrysails.com/nl/private-dinner-cruise-for-couples-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T00:43:52Z`
+- `https://merrysails.com/nl/private-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T06:57:45Z`
+- `https://merrysails.com/nl/proposal-yacht-with-photographer-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T01:15:28Z`
+- `https://merrysails.com/nl/sunset-cruise-tickets-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T08:57:25Z`
+- `https://merrysails.com/nl/team-building-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T14:49:00Z`
+- `https://merrysails.com/nl/yacht-charter-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-22T02:20:12Z`
+- `https://merrysails.com/nl/yacht-charter-istanbul/bosphorus-group-yacht-36` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-12T13:18:53Z`
+- `https://merrysails.com/privacy-policy` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T22:47:42Z`
+- `https://merrysails.com/private-bosphorus-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T05:10:10Z`
+- `https://merrysails.com/private-dinner-cruise-for-couples-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-24T00:31:34Z`
+- `https://merrysails.com/private-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T20:15:23Z`
+- `https://merrysails.com/private-tours` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T07:10:47Z`
+- `https://merrysails.com/product-launch-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:08:12Z`
+- `https://merrysails.com/proposal-yacht-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T15:18:04Z`
+- `https://merrysails.com/proposal-yacht-with-photographer-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T11:06:52Z`
+- `https://merrysails.com/sunset-cruise-tickets-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T07:16:35Z`
+- `https://merrysails.com/team-building-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T06:07:33Z`
+- `https://merrysails.com/terms` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-07T09:01:24Z`
+- `https://merrysails.com/tr` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T23:54:54Z`
+- `https://merrysails.com/tr/about` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T05:14:17Z`
+- `https://merrysails.com/tr/blog` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T03:27:21Z`
+- `https://merrysails.com/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T12:07:37Z`
+- `https://merrysails.com/tr/blog/yat-kiralama-istanbul-fiyat-rehberi-2026` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:21:42Z`
+- `https://merrysails.com/tr/boat-rental-hourly-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:20:11Z`
+- `https://merrysails.com/tr/boat-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T09:20:36Z`
+- `https://merrysails.com/tr/bosphorus-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T12:03:34Z`
+- `https://merrysails.com/tr/bosphorus-cruise-departure-points` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T12:45:55Z`
+- `https://merrysails.com/tr/client-hosting-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T21:13:34Z`
+- `https://merrysails.com/tr/corporate-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:35:26Z`
+- `https://merrysails.com/tr/corporate-yacht-dinner-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:07:43Z`
+- `https://merrysails.com/tr/cruises` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T01:18:11Z`
+- `https://merrysails.com/tr/cruises/bosphorus-sunset-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:13:34Z`
+- `https://merrysails.com/tr/dinner-cruise-pickup-sultanahmet-taksim` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:51:35Z`
+- `https://merrysails.com/tr/faq` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T07:10:10Z`
+- `https://merrysails.com/tr/guides` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T19:56:13Z`
+- `https://merrysails.com/tr/istanbul-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-17T03:11:27Z`
+- `https://merrysails.com/tr/kabatas-bogaz-turu` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-24T03:10:24Z`
+- `https://merrysails.com/tr/kurucesme-marina-yacht-charter` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T10:51:28Z`
+- `https://merrysails.com/tr/private-bosphorus-dinner-cruise` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T01:57:29Z`
+- `https://merrysails.com/tr/private-dinner-cruise-for-couples-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T04:57:47Z`
+- `https://merrysails.com/tr/private-events` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T00:52:03Z`
+- `https://merrysails.com/tr/private-tours` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-20T11:51:18Z`
+- `https://merrysails.com/tr/product-launch-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-30T13:42:49Z`
+- `https://merrysails.com/tr/proposal-yacht-rental-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T21:26:50Z`
+- `https://merrysails.com/tr/proposal-yacht-with-photographer-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T17:54:26Z`
+- `https://merrysails.com/tr/sunset-cruise-tickets-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T22:03:31Z`
+- `https://merrysails.com/tr/team-building-yacht-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-19T13:49:01Z`
+- `https://merrysails.com/tr/turkish-night-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-21T22:53:38Z`
+- `https://merrysails.com/tr/yacht-charter-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-13T12:05:27Z`
+- `https://merrysails.com/turkish-night-dinner-cruise-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-04-25T23:34:37Z`
+- `https://merrysails.com/tursab` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-18T00:35:46Z`
+- `https://merrysails.com/yacht-charter-istanbul` | status=`indexed` | coverage=`Submitted and indexed` | verdict=`PASS` | lastCrawl=`2026-05-23T16:51:43Z`
+

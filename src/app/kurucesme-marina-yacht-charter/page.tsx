@@ -39,6 +39,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Kurucesme Marina Yacht Charter Istanbul",
+  alternateName: [
+    "Kurucesme Marina Yacht Charter Istanbul",
+    "Аренда яхты с Куручешме Марины в Стамбуле",
+    "Частная яхта от пирса Куручешме",
+  ],
   description:
     "Commercial support page for guests comparing private yacht charter in Istanbul when Kurucesme Marina departure and boarding context are the deciding questions.",
   url: canonicalUrl,
@@ -95,10 +100,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит аренда яхты с Куручешме Марины?",
+    a: "Аренда частной яхты с пирса Куручешме начинается от 280 EUR за 2 часа (пакет Essential, до 8 гостей). Пакет Premium — от 380 EUR, VIP — от 680 EUR. Цены — у лицензированного оператора TÜRSAB Группы А. Точную стоимость уточните в Telegram @merrysails.",
+  },
+  {
+    q: "Как добраться до Куручешме Марины (Kuruçeşme)?",
+    a: "Куручешме Марина расположена между Ортакёй и Арнавуткёй, около 7 км от площади Таксим. Прямого метро нет — добраться можно на такси (15–20 минут от центра) или на пароме по Босфору от Эминоню. Точное место швартовки сообщается в Telegram @merrysails.",
+  },
+  {
+    q: "Что включено в аренду яхты с Куручешме?",
+    a: "В пакет включены: вся яхта только для вашей группы, капитан и команда, безалкогольные напитки, выбор маршрута, лицензия TÜRSAB Группы А. Опционально — ужин, алкоголь, торт, цветы, фотограф, скрипач. Связаться: Telegram @merrysails.",
+  },
+  {
+    q: "Можно ли организовать трансфер от отеля до Куручешме?",
+    a: "Да, мы организуем трансфер от любого отеля в центре Стамбула (Султанахмет, Таксим, Бешикташ) до пирса Куручешме как опцию к аренде яхты. Время в пути — 15–25 минут. Уточнить условия и стоимость трансфера можно в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

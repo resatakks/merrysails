@@ -1,0 +1,155 @@
+{
+  "date": "2026-05-18",
+  "site": "sc-domain:merrysails.com",
+  "totals": {
+    "clicks": 0,
+    "impressions": 38,
+    "ctr": 0,
+    "avgPosition": 50.6
+  },
+  "topQueries": [
+    {
+      "query": "best bosphorus cruise",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 67.8
+    },
+    {
+      "query": "best bosphorus sunset cruise istanbul 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "boat rental istanbul",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 45.7
+    },
+    {
+      "query": "bosphorus boat rental",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 36
+    },
+    {
+      "query": "bosphorus bridge",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 52
+    },
+    {
+      "query": "bosphorus bridge istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 39
+    },
+    {
+      "query": "bosphorus dinner cruise price",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "query": "bosphorus dinner cruise tickets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 35
+    },
+    {
+      "query": "bosphorus wedding yacht",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "query": "bridge in istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 59
+    }
+  ],
+  "topPages": [
+    {
+      "page": "/",
+      "clicks": 2,
+      "impressions": 4,
+      "ctr": 50,
+      "position": 1.8
+    },
+    {
+      "page": "/blog/best-bosphorus-cruise-istanbul-guide",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6.8
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-operators-istanbul-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4.5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-points",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 5.9
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-times-istanbul-2026",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 9.3
+    },
+    {
+      "page": "/blog/bosphorus-cruise-eminonu",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 9.2
+    },
+    {
+      "page": "/blog/bosphorus-cruise-price-istanbul-2026",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 21.3
+    },
+    {
+      "page": "/blog/bosphorus-cruise-with-kids",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7.5
+    }
+  ],
+  "capturedAt": "2026-05-21T10:38:11.126Z"
+}

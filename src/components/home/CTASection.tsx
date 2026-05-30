@@ -1,8 +1,20 @@
 import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight, Send } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import { getContactChannel } from "@/lib/constants";
 
-export default function CTASection() {
+type Locale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
+
+export default function CTASection({ locale = "en" }: { locale?: Locale } = {}) {
+  // Russia blocked WhatsApp in Feb 2026 — route the messenger CTA to Telegram
+  // for /ru so the button is actually reachable. Telegram brand blue replaces
+  // --brand-whatsapp; lucide's Send icon stands in for the paper-plane mark.
+  const channel = getContactChannel(locale);
+  const isTelegram = channel.icon === "telegram";
+  const chatLabel = isTelegram ? "Telegram" : "WhatsApp";
+  const chatBgClass = isTelegram
+    ? "bg-[#229ED9] hover:bg-[#1B85B8]"
+    : "bg-[var(--brand-whatsapp)] hover:brightness-110";
   return (
     <section className="relative py-20 md:py-28 bg-[var(--brand-dark)] overflow-hidden">
       {/* Decorative circles */}
@@ -24,16 +36,19 @@ export default function CTASection() {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <TrackedContactLink
-            href="https://wa.me/905448989812"
+            href={channel.url}
+            // Analytics surface stays "whatsapp" (the contact-channel kind in
+            // analytics.ts is a closed union) — the channel is encoded in the
+            // label so the dashboards still see /ru clicks routing to Telegram.
             kind="whatsapp"
-            label="homepage_cta_whatsapp"
+            label={`homepage_cta_${channel.icon}`}
             location="homepage_cta"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[var(--brand-whatsapp)] text-white font-bold py-3.5 px-8 rounded-full hover:brightness-110 transition-all"
+            className={`inline-flex items-center gap-2 text-white font-bold py-3.5 px-8 rounded-full transition-all ${chatBgClass}`}
           >
-            <Phone className="w-4 h-4" />
-            WhatsApp
+            {isTelegram ? <Send className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
+            {chatLabel}
           </TrackedContactLink>
           <TrackedContactLink
             href="tel:+905448989812"

@@ -50,10 +50,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит частный ужин-круиз по Босфору?",
+    a: "Стоимость частного ужин-круиза начинается от 280 EUR за яхту (пакет Essential, до 8 гостей, 2 часа). Пакет Premium с приветственными закусками — от 380 EUR. VIP-пакет с полным меню и открытым баром — от 680 EUR. Оператор TÜRSAB Группы А. Уточните цену в Telegram @merrysails.",
+  },
+  {
+    q: "С какого причала отправляется частный ужин-круиз?",
+    a: "Частные ужин-круизы отправляются с пирса Кабаташ (Kabataş) у дворца Долмабахче или с Куручешме Марины (Kuruçeşme) в зависимости от выбранной яхты. Точное место посадки подтверждается в Telegram @merrysails после бронирования.",
+  },
+  {
+    q: "Что включено в частный ужин-круиз?",
+    a: "В пакет включены: вся яхта только для вашей группы, капитан и команда, сервированный ужин, безалкогольные напитки, маршрут по вашему выбору, лицензия TÜRSAB Группы А. Опционально — алкоголь, торт, цветы, фотограф, скрипач. Свяжитесь с нами в Telegram @merrysails.",
+  },
+  {
+    q: "Подходит ли частный ужин для романтического вечера или годовщины?",
+    a: "Да, формат идеально подходит для пар, годовщин, помолвок и романтических ужинов. Вы получаете отдельный стол, выбираете маршрут (включая виды на дворец Долмабахче и Босфорский мост), время и атмосферу. Дополнительные опции (цветы, торт, музыка) — через Telegram @merrysails.",
+  },
+];
+
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
@@ -67,6 +86,11 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Private Bosphorus Dinner Cruise",
+  alternateName: [
+    "Private Bosphorus Dinner Cruise",
+    "Частный ужин-круиз по Босфору",
+    "Приватный ужин на яхте в Стамбуле",
+  ],
   description:
     "Private yacht dinner cruise in Istanbul for couples, proposals, birthdays, anniversaries, and small groups who want dinner on their own Bosphorus yacht.",
   url: `${SITE_URL}/private-bosphorus-dinner-cruise`,

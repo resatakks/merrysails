@@ -39,6 +39,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Boat Rental Istanbul",
+  alternateName: [
+    "Boat Rental Istanbul",
+    "Аренда лодки в Стамбуле",
+    "Прокат частного катера на Босфоре",
+  ],
   description:
     "Private Bosphorus boat rental in Istanbul for sightseeing cruises, sunset outings, birthdays, proposals, and flexible group trips.",
   url: `${SITE_URL}/boat-rental-istanbul`,
@@ -112,6 +117,38 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. Boat rental can stay simple as a private cruise, or it can include dinner, drinks, cake, flowers, music, and other celebration details depending on the vessel and event format.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Сколько стоит аренда частной лодки в Стамбуле?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Стоимость аренды лодки начинается от 200 EUR за яхту за 2 часа. Финальная цена зависит от размера судна, маршрута, длительности и дополнительных опций (ужин, торт, цветы). Все цены — у лицензированного оператора TÜRSAB Группы А. Уточните стоимость в Telegram @merrysails.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "От какого причала отправляется арендованная лодка?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Частные лодки обычно отправляются с пирсов Куручешме (Kuruçeşme), Кабаташ (Kabataş) или Бебек (Bebek) на европейской стороне Босфора. Точный пирс посадки подтверждается после выбора яхты через Telegram @merrysails.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Что включено в аренду частной лодки?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "В базовый пакет включены: частное судно с капитаном и командой, безалкогольные напитки, лицензия TÜRSAB Группы А и страхование. Опционально — ужин, алкоголь, торт, цветы, музыка, фотограф. Полный список услуг — в Telegram @merrysails.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Можно ли арендовать лодку для большой группы?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Да, у нас есть лодки разной вместимости — от компактных яхт для пар до больших судов до 20 гостей. Вы можете выбрать формат: маленькая частная яхта, праздничная лодка или большое судно для группы. Свяжитесь с нами через Telegram @merrysails для подбора.",
       },
     },
   ],

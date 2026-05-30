@@ -37,6 +37,11 @@ const pageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Bosphorus Cruise Departure Points Istanbul",
+  alternateName: [
+    "Bosphorus Cruise Departure Points Istanbul",
+    "Точки отправления круизов по Босфору в Стамбуле",
+    "Причалы для посадки на круиз по Босфору",
+  ],
   description:
     "Where to board MerrySails in Istanbul: Kabataş pier for dinner cruise, Karaköy waterfront for sunset cruise, Kurucesme Marina for private yacht charter.",
   url: canonicalUrl,
@@ -158,10 +163,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Где находится причал Кабаташ (Kabataş) для ужин-круиза?",
+    a: "Причал Кабаташ расположен у подножия дворца Долмабахче на европейском берегу. Добраться можно на трамвае T1 до остановки Kabataş или фуникулёром F1 от площади Таксим. Такси от Султанахмета — 10–15 минут. Точные координаты подтверждаются в Telegram @merrysails после бронирования.",
+  },
+  {
+    q: "Сколько стоят круизы с разных причалов?",
+    a: "Закатный круиз от пирса Каракёй — от 34 EUR с человека (понедельник, вторник, четверг — от 30 EUR). Ужин-круиз с Кабаташа — от 30 EUR. Частная аренда яхты с Куручешме — от 200 EUR за яхту. Все туры — у оператора с лицензией TÜRSAB Группы А. Уточните цену в Telegram @merrysails.",
+  },
+  {
+    q: "Как добраться до пристани Куручешме (Kuruçeşme)?",
+    a: "Куручешме Марина находится между Ортакёй и Арнавуткёй, около 7 км от Таксима. Прямого метро нет — рекомендуем такси (15–20 минут от центра) или паром по Босфору от Эминоню. Точное место швартовки сообщается в Telegram @merrysails после подтверждения бронирования.",
+  },
+  {
+    q: "Включён ли трансфер от отеля в стоимость круиза?",
+    a: "Трансфер от отеля доступен для ужин-круиза из районов Султанахмет, Таксим, Сиркеджи и Каракёй. Гостей с трансфером доставляют к причалу Кабаташ. Для других туров трансфер можно добавить как опцию через Telegram @merrysails. Услуги по лицензии TÜRSAB Группы А.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

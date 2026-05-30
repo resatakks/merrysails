@@ -1,0 +1,155 @@
+{
+  "date": "2026-05-17",
+  "site": "sc-domain:merrysails.com",
+  "totals": {
+    "clicks": 0,
+    "impressions": 41,
+    "ctr": 0,
+    "avgPosition": 47.4
+  },
+  "topQueries": [
+    {
+      "query": "bosphorus bridge",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 51.5
+    },
+    {
+      "query": "bosphorus bridge istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "query": "bosphorus bridges",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "query": "bosphorus cruise departure points istanbul",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "bosphorus golden horn",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 17
+    },
+    {
+      "query": "bosporus bridges",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 58.5
+    },
+    {
+      "query": "bridge istanbul",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 37.5
+    },
+    {
+      "query": "bridges in istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 36
+    },
+    {
+      "query": "eminonu pier",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 34
+    },
+    {
+      "query": "eminonu waterfront istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    }
+  ],
+  "topPages": [
+    {
+      "page": "/",
+      "clicks": 1,
+      "impressions": 8,
+      "ctr": 12.5,
+      "position": 2.6
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-points",
+      "clicks": 1,
+      "impressions": 26,
+      "ctr": 3.8,
+      "position": 4.6
+    },
+    {
+      "page": "/blog",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "page": "/blog/best-bosphorus-cruise-istanbul-guide",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 8.6
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-operators-istanbul-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-times-istanbul-2026",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 6.9
+    },
+    {
+      "page": "/blog/bosphorus-cruise-eminonu",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-price-istanbul-2026",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 9.4
+    },
+    {
+      "page": "/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 7.6
+    }
+  ],
+  "capturedAt": "2026-05-20T08:01:37.900Z"
+}

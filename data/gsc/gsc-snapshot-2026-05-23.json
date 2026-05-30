@@ -1,0 +1,155 @@
+{
+  "date": "2026-05-23",
+  "site": "sc-domain:merrysails.com",
+  "totals": {
+    "clicks": 0,
+    "impressions": 25,
+    "ctr": 0,
+    "avgPosition": 56
+  },
+  "topQueries": [
+    {
+      "query": "bosphorus boat rental",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 35
+    },
+    {
+      "query": "bosphorus bridge",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 56
+    },
+    {
+      "query": "bosphorus cruise or ferry",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "query": "dolmabahçe sarayı",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "golden horn istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
+    },
+    {
+      "query": "how many bridges cross the bosphorus",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "istanbul bridge",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "istanbul bridge bosphorus",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 53
+    },
+    {
+      "query": "istanbul da tekne kiralama",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 73
+    },
+    {
+      "query": "istanbul tekne kiralama",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
+    }
+  ],
+  "topPages": [
+    {
+      "page": "/",
+      "clicks": 2,
+      "impressions": 27,
+      "ctr": 7.4,
+      "position": 8.4
+    },
+    {
+      "page": "/blog/what-to-wear-bosphorus-cruise",
+      "clicks": 1,
+      "impressions": 20,
+      "ctr": 5,
+      "position": 4.2
+    },
+    {
+      "page": "/blog",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 6.3
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "/blog/book-bosphorus-cruise-safely",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-points",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-groups-istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "/blog/bosphorus-cruise-prices-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 10.5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-with-kids",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 8.6
+    }
+  ],
+  "capturedAt": "2026-05-26T19:48:23.855Z"
+}

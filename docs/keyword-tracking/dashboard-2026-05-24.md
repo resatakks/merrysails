@@ -78,4 +78,4 @@ _Ranked yesterday, not in today's snapshot._
 | istanbul da tekne kiralama | 73.0 | 1 | 0 |
 | istanbul tekne kiralama | 76.0 | 1 | 0 |
 
-_Generated 2026-05-27T14:02:24.874Z from merrysails/data/gsc/gsc-snapshot-2026-05-24.json_
+_Generated 2026-05-27T21:26:11.843Z from merrysails/data/gsc/gsc-snapshot-2026-05-24.json_

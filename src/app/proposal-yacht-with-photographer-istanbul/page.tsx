@@ -39,6 +39,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Proposal Yacht with Photographer Istanbul",
+  alternateName: [
+    "Proposal Yacht with Photographer Istanbul",
+    "Яхта для предложения с фотографом в Стамбуле",
+    "Помолвка на яхте с профессиональной съёмкой",
+  ],
   description:
     "Commercial support page for Bosphorus proposal yacht bookings in Istanbul when photographer coverage is one of the main buying questions.",
   url: canonicalUrl,
@@ -95,10 +100,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит яхта с фотографом для предложения руки и сердца?",
+    a: "Базовый пакет — частная яхта от 280 EUR (Essential) или 380 EUR (Premium с украшением). Услуги фотографа добавляются как опция — от 150 EUR. VIP-пакет с фотографом и съёмкой обычно от 680 EUR. Оператор лицензирован TÜRSAB Группы А. Уточните в Telegram @merrysails.",
+  },
+  {
+    q: "С какого причала отправляется яхта с фотографом?",
+    a: "Мы отправляемся с пирса Кабаташ (Kabataş) или Куручешме (Kuruçeşme), в зависимости от выбранной яхты. Фотограф встречает на пирсе или уже на борту — деталь согласовывается заранее. Точное место подтверждается в Telegram @merrysails после бронирования.",
+  },
+  {
+    q: "Что включено в пакет с фотографом?",
+    a: "В пакет включены: частная яхта на 2 часа, капитан и команда, безалкогольные напитки, профессиональный фотограф, обработанные фото (обычно 30–80 кадров), лицензия TÜRSAB Группы А. Опционально — видеограф, торт, цветы, скрипач. Уточните в Telegram @merrysails.",
+  },
+  {
+    q: "Может ли фотограф оставаться незамеченным до момента предложения?",
+    a: "Да, мы планируем съёмку так, чтобы фотограф оставался в стороне и не выдавал момент. Партнёр не должен заранее заподозрить съёмку — фотограф работает с длинных дистанций до самого момента. Согласовать сценарий можно в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

@@ -59,6 +59,15 @@ const LOCALIZED_PATHS = [
 const LOCALIZED_SET = new Set(LOCALIZED_PATHS);
 const NON_EN_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en");
 
+// Staged ru rollout: only emit /ru sitemap URLs for paths that have a live
+// /ru page (translated TRANSLATIONS block). Mirror of RU_ENABLED_ROUTES in
+// src/lib/hreflang.ts — keep these two in sync when adding new /ru pages.
+const RU_ENABLED_PATHS = new Set<string>([
+  "/cruises/bosphorus-sunset-cruise",
+  "/istanbul-dinner-cruise",
+  "/yacht-charter-istanbul",
+]);
+
 function toAbsoluteUrl(url: string): string {
   if (url.startsWith("http://") || url.startsWith("https://")) return url;
   return `${SITE_URL}${url.startsWith("/") ? url : `/${url}`}`;
@@ -84,6 +93,8 @@ function hreflangXml(path: string): string {
     `    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(`${SITE_URL}${path}`)}"/>`,
   ];
   for (const locale of NON_EN_LOCALES) {
+    // Stage ru: only emit hreflang for paths with a live /ru page.
+    if (locale === "ru" && !RU_ENABLED_PATHS.has(path)) continue;
     lines.push(`    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
   }
   return lines.join("\n");
@@ -96,6 +107,7 @@ function hreflangLocaleXml(path: string, thisLocale: string): string {
     `    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(`${SITE_URL}${path}`)}"/>`,
   ];
   for (const locale of NON_EN_LOCALES) {
+    if (locale === "ru" && !RU_ENABLED_PATHS.has(path)) continue;
     lines.push(`    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
   }
   return lines.join("\n");
@@ -194,18 +206,21 @@ export function GET() {
     "/yacht-charter-istanbul",
   ]);
   const localePages: SitemapPage[] = NON_EN_LOCALES.flatMap((locale) =>
-    LOCALIZED_PATHS.map((path) => ({
-      url: `${SITE_URL}/${locale}${path}`,
-      changefreq: PILLAR_PATHS.has(path) ? "weekly" : "monthly",
-      priority:
-        path === "/bosphorus-cruise"
-          ? "0.97"
-          : PILLAR_PATHS.has(path)
-            ? "0.95"
-            : "0.70",
-      lastmod: contentLastmod,
-      hreflang: hreflangLocaleXml(path, locale),
-    }))
+    LOCALIZED_PATHS
+      // Stage ru: only emit /ru sitemap entries for paths with live ru content.
+      .filter((path) => locale !== "ru" || RU_ENABLED_PATHS.has(path))
+      .map((path) => ({
+        url: `${SITE_URL}/${locale}${path}`,
+        changefreq: PILLAR_PATHS.has(path) ? "weekly" : "monthly",
+        priority:
+          path === "/bosphorus-cruise"
+            ? "0.97"
+            : PILLAR_PATHS.has(path)
+              ? "0.95"
+              : "0.70",
+        lastmod: contentLastmod,
+        hreflang: hreflangLocaleXml(path, locale),
+      }))
   );
 
   const tourPages: SitemapPage[] = tours

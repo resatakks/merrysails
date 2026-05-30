@@ -1,0 +1,1246 @@
+{
+  "generatedAt": "2026-05-23T13:26:02.089Z",
+  "measurementId": "G-9B3Q7FM7X8",
+  "propertyId": "534226524",
+  "dateRange": {
+    "startDate": "7daysAgo",
+    "endDate": "today"
+  },
+  "reports": [
+    {
+      "name": "traffic_by_campaign",
+      "dimensionHeaders": [
+        "date",
+        "sessionSourceMedium",
+        "sessionCampaignName"
+      ],
+      "metricHeaders": [
+        "sessions",
+        "totalUsers",
+        "screenPageViews",
+        "engagedSessions",
+        "eventCount",
+        "conversions"
+      ],
+      "rows": [
+        {
+          "dimensions": [
+            "20260517",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "15",
+            "15",
+            "39",
+            "12",
+            "91",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "15",
+            "15",
+            "59",
+            "15",
+            "167",
+            "5"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "14",
+            "14",
+            "15",
+            "1",
+            "52",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "13",
+            "12",
+            "68",
+            "9",
+            "169",
+            "1"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "11",
+            "11",
+            "26",
+            "8",
+            "87",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "9",
+            "8",
+            "34",
+            "9",
+            "73",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "6",
+            "6",
+            "19",
+            "4",
+            "37",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "6",
+            "6",
+            "23",
+            "6",
+            "56",
+            "3"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "6",
+            "6",
+            "28",
+            "6",
+            "53",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "5",
+            "4",
+            "16",
+            "5",
+            "32",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "(not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "5",
+            "5",
+            "16",
+            "0",
+            "33",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "chatgpt.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "4",
+            "2",
+            "3",
+            "1",
+            "12",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "4",
+            "3",
+            "24",
+            "4",
+            "42",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "yandex.com.tr / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "4",
+            "4",
+            "4",
+            "2",
+            "14",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "4",
+            "4",
+            "8",
+            "4",
+            "31",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "4",
+            "3",
+            "27",
+            "3",
+            "62",
+            "7"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "4",
+            "4",
+            "8",
+            "4",
+            "27",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "4",
+            "4",
+            "10",
+            "4",
+            "30",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "4",
+            "4",
+            "26",
+            "4",
+            "53",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "chatgpt.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "3",
+            "3",
+            "16",
+            "3",
+            "39",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "chatgpt.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "3",
+            "3",
+            "7",
+            "2",
+            "15",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "3",
+            "3",
+            "32",
+            "3",
+            "73",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "3",
+            "3",
+            "6",
+            "3",
+            "18",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "3",
+            "3",
+            "8",
+            "3",
+            "32",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "3",
+            "2",
+            "18",
+            "3",
+            "36",
+            "1"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "3",
+            "3",
+            "5",
+            "1",
+            "12",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "2",
+            "2",
+            "6",
+            "2",
+            "19",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "2",
+            "2",
+            "16",
+            "2",
+            "34",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "2",
+            "1",
+            "2",
+            "1",
+            "11",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "chatgpt.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "2",
+            "1",
+            "4",
+            "1",
+            "13",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "2",
+            "2",
+            "8",
+            "2",
+            "12",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "9",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "merrysails.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "biztools.corp.google.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "8",
+            "1",
+            "16",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "cn.bing.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "9",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "m.facebook.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "yahoo / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "chatgpt.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "9",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "yahoo / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "chatgpt.com / referral",
+            "(referral)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "11",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "yahoo / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "10",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "0",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "google / cpc",
+            "intl_pmax_controlled"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "0",
+            "4",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "paid_landing_pages",
+      "dimensionHeaders": [
+        "landingPagePlusQueryString",
+        "sessionSourceMedium",
+        "sessionCampaignName"
+      ],
+      "metricHeaders": [
+        "sessions",
+        "totalUsers",
+        "engagedSessions",
+        "conversions"
+      ],
+      "rows": [
+        {
+          "dimensions": [
+            "/",
+            "google / cpc",
+            "intl_pmax_controlled"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "events",
+      "dimensionHeaders": [
+        "date",
+        "eventName"
+      ],
+      "metricHeaders": [
+        "eventCount",
+        "conversions"
+      ],
+      "rows": [
+        {
+          "dimensions": [
+            "20260517",
+            "page_view"
+          ],
+          "metrics": [
+            "139",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "web_vital"
+          ],
+          "metrics": [
+            "104",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "page_view"
+          ],
+          "metrics": [
+            "100",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "web_vital"
+          ],
+          "metrics": [
+            "95",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "page_view"
+          ],
+          "metrics": [
+            "82",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "page_view"
+          ],
+          "metrics": [
+            "75",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "page_view"
+          ],
+          "metrics": [
+            "74",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "page_view"
+          ],
+          "metrics": [
+            "66",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "web_vital"
+          ],
+          "metrics": [
+            "61",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "web_vital"
+          ],
+          "metrics": [
+            "54",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "page_view"
+          ],
+          "metrics": [
+            "53",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "web_vital"
+          ],
+          "metrics": [
+            "52",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "web_vital"
+          ],
+          "metrics": [
+            "39",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "web_vital"
+          ],
+          "metrics": [
+            "38",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "session_start"
+          ],
+          "metrics": [
+            "36",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "session_start"
+          ],
+          "metrics": [
+            "36",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "first_visit"
+          ],
+          "metrics": [
+            "31",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "first_visit"
+          ],
+          "metrics": [
+            "30",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "session_start"
+          ],
+          "metrics": [
+            "26",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "session_start"
+          ],
+          "metrics": [
+            "25",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "page_view"
+          ],
+          "metrics": [
+            "25",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "first_visit"
+          ],
+          "metrics": [
+            "21",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "first_visit"
+          ],
+          "metrics": [
+            "21",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "session_start"
+          ],
+          "metrics": [
+            "19",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "web_vital"
+          ],
+          "metrics": [
+            "18",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "session_start"
+          ],
+          "metrics": [
+            "17",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "first_visit"
+          ],
+          "metrics": [
+            "17",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "session_start"
+          ],
+          "metrics": [
+            "14",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "first_visit"
+          ],
+          "metrics": [
+            "12",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "first_visit"
+          ],
+          "metrics": [
+            "11",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "user_engagement"
+          ],
+          "metrics": [
+            "10",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "user_engagement"
+          ],
+          "metrics": [
+            "10",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "user_engagement"
+          ],
+          "metrics": [
+            "10",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "scroll"
+          ],
+          "metrics": [
+            "9",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "user_engagement"
+          ],
+          "metrics": [
+            "9",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260520",
+            "begin_checkout"
+          ],
+          "metrics": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "user_engagement"
+          ],
+          "metrics": [
+            "6",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "scroll"
+          ],
+          "metrics": [
+            "5",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "user_engagement"
+          ],
+          "metrics": [
+            "5",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "user_engagement"
+          ],
+          "metrics": [
+            "5",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "session_start"
+          ],
+          "metrics": [
+            "5",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "form_start"
+          ],
+          "metrics": [
+            "4",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260517",
+            "form_submit"
+          ],
+          "metrics": [
+            "4",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "contact_us"
+          ],
+          "metrics": [
+            "4",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260521",
+            "whatsapp_click"
+          ],
+          "metrics": [
+            "4",
+            "4"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "first_visit"
+          ],
+          "metrics": [
+            "4",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260518",
+            "click"
+          ],
+          "metrics": [
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260519",
+            "scroll"
+          ],
+          "metrics": [
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "scroll"
+          ],
+          "metrics": [
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260516",
+            "scroll"
+          ],
+          "metrics": [
+            "2",
+            "0"
+          ]
+        }
+      ]
+    }
+  ]
+}

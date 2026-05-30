@@ -3,12 +3,14 @@ import { turkishProductPosts } from "./posts/turkish-product-posts";
 import { germanProductPosts } from "./posts/german-product-posts";
 import { frenchProductPosts } from "./posts/french-product-posts";
 import { dutchProductPosts } from "./posts/dutch-product-posts";
+import { russianProductPosts } from "./posts/russian-product-posts";
 
 const LOCALE_POSTS: Record<string, BlogPost[]> = {
   tr: turkishProductPosts,
   de: germanProductPosts,
   fr: frenchProductPosts,
   nl: dutchProductPosts,
+  ru: russianProductPosts,
 };
 
 export function getLocalePostBySlug(locale: string, slug: string): BlogPost | undefined {

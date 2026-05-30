@@ -1,0 +1,64 @@
+{
+  "EN": {
+    "tier": "EN",
+    "sheets": {
+      "links!": {
+        "total": 1193,
+        "high_authority": 228,
+        "low_value_spam": 100,
+        "unique_domains": 850,
+        "top_5_domains": {
+          "podcasts.apple.com": 200,
+          "fliphtml5.com": 29,
+          "challonge.com": 28,
+          "pxhere.com": 27,
+          "tools.org.ua": 14
+        }
+      },
+      "redirect": {
+        "total": 32,
+        "high_authority": 32,
+        "low_value_spam": 0,
+        "unique_domains": 31,
+        "top_5_domains": {
+          "proxy-tu.researchport.umd.edu": 2,
+          "donanimhaber.com": 1,
+          "eduplus.hk": 1,
+          "proxy-bl.researchport.umd.edu": 1,
+          "pdc.edu": 1
+        }
+      }
+    }
+  },
+  "DE": {
+    "tier": "DE",
+    "sheets": {
+      "links!": {
+        "total": 1165,
+        "high_authority": 228,
+        "low_value_spam": 100,
+        "unique_domains": 822,
+        "top_5_domains": {
+          "podcasts.apple.com": 200,
+          "fliphtml5.com": 29,
+          "challonge.com": 28,
+          "pxhere.com": 27,
+          "tools.org.ua": 14
+        }
+      },
+      "redirect": {
+        "total": 32,
+        "high_authority": 32,
+        "low_value_spam": 0,
+        "unique_domains": 31,
+        "top_5_domains": {
+          "proxy-tu.researchport.umd.edu": 2,
+          "donanimhaber.com": 1,
+          "eduplus.hk": 1,
+          "proxy-bl.researchport.umd.edu": 1,
+          "pdc.edu": 1
+        }
+      }
+    }
+  }
+}

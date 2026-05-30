@@ -51,6 +51,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Turkish Night Dinner Cruise Istanbul",
+  alternateName: [
+    "Turkish Night Dinner Cruise Istanbul",
+    "Ужин-круиз с турецким шоу в Стамбуле",
+    "Турецкая ночь на Босфоре с танцем живота",
+  ],
   description:
     "Support page for guests deciding on a Bosphorus dinner cruise when the Turkish-night show and dinner-led package fit are the main decision points.",
   url: canonicalUrl,
@@ -107,10 +112,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит ужин-круиз с турецким шоу в Стамбуле?",
+    a: "Ужин-круиз с турецким шоу начинается от 30 EUR с человека (пакет Silver Soft Drinks). Пакет Gold Unlimited Alcohol — 90 EUR с VIP-местами у сцены и неограниченным алкоголем. Все пакеты включают шоу с танцем живота. Оператор TÜRSAB Группы А. Уточните цену в Telegram @merrysails.",
+  },
+  {
+    q: "От какого причала отправляется ужин с турецким шоу?",
+    a: "Ужин-круиз с турецким шоу отправляется с пирса Кабаташ (Kabataş) у дворца Долмабахче. Добраться можно трамваем T1 или фуникулёром F1 от Таксима. Прибыть рекомендуем за 15 минут. Точные координаты подтверждаются в Telegram @merrysails.",
+  },
+  {
+    q: "Что включено в программу турецкого шоу?",
+    a: "В шоу включены: танец живота, фольклорные танцоры разных регионов Турции, живой DJ и интерактивные моменты с гостями. Дополнительно — мезе, основное блюдо, безалкогольные напитки (Silver) или открытый бар (Gold). Лицензия TÜRSAB Группы А. Подробности в Telegram @merrysails.",
+  },
+  {
+    q: "Подходит ли турецкое шоу для семьи или это формат только для взрослых?",
+    a: "Турецкое шоу подходит для всей семьи — это культурное представление с танцем живота и фольклорными танцами без возрастных ограничений. Дети до 6 лет бесплатно, скидки 30–50% на детей 6–12 лет. Уточните детские тарифы в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

@@ -1,0 +1,361 @@
+{
+  "generatedAt": "2026-05-23T13:17:05.987Z",
+  "measurementId": "G-9B3Q7FM7X8",
+  "propertyId": "534226524",
+  "dateRange": {
+    "startDate": "yesterday",
+    "endDate": "today"
+  },
+  "reports": [
+    {
+      "name": "traffic_by_campaign",
+      "dimensionHeaders": [
+        "date",
+        "sessionSourceMedium",
+        "sessionCampaignName"
+      ],
+      "metricHeaders": [
+        "sessions",
+        "totalUsers",
+        "screenPageViews",
+        "engagedSessions",
+        "eventCount",
+        "conversions"
+      ],
+      "rows": [
+        {
+          "dimensions": [
+            "20260522",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "6",
+            "6",
+            "28",
+            "6",
+            "53",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "(not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "5",
+            "5",
+            "16",
+            "0",
+            "33",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "(direct) / (none)",
+            "(direct)"
+          ],
+          "metrics": [
+            "4",
+            "4",
+            "26",
+            "4",
+            "53",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "google / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "3",
+            "2",
+            "18",
+            "3",
+            "36",
+            "1"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "chatgpt.com / (not set)",
+            "(not set)"
+          ],
+          "metrics": [
+            "2",
+            "2",
+            "4",
+            "1",
+            "9",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "10",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "bing / organic",
+            "(organic)"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "0",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "google / cpc",
+            "intl_pmax_controlled"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "2",
+            "0",
+            "4",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "paid_landing_pages",
+      "dimensionHeaders": [
+        "landingPagePlusQueryString",
+        "sessionSourceMedium",
+        "sessionCampaignName"
+      ],
+      "metricHeaders": [
+        "sessions",
+        "totalUsers",
+        "engagedSessions",
+        "conversions"
+      ],
+      "rows": [
+        {
+          "dimensions": [
+            "/",
+            "google / cpc",
+            "intl_pmax_controlled"
+          ],
+          "metrics": [
+            "1",
+            "1",
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "events",
+      "dimensionHeaders": [
+        "date",
+        "eventName"
+      ],
+      "metricHeaders": [
+        "eventCount",
+        "conversions"
+      ],
+      "rows": [
+        {
+          "dimensions": [
+            "20260522",
+            "page_view"
+          ],
+          "metrics": [
+            "74",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "web_vital"
+          ],
+          "metrics": [
+            "39",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "page_view"
+          ],
+          "metrics": [
+            "24",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "web_vital"
+          ],
+          "metrics": [
+            "18",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "session_start"
+          ],
+          "metrics": [
+            "14",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "first_visit"
+          ],
+          "metrics": [
+            "12",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "user_engagement"
+          ],
+          "metrics": [
+            "5",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "session_start"
+          ],
+          "metrics": [
+            "4",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "scroll"
+          ],
+          "metrics": [
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "first_visit"
+          ],
+          "metrics": [
+            "3",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "begin_checkout"
+          ],
+          "metrics": [
+            "2",
+            "2"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "booking_abandonment"
+          ],
+          "metrics": [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "form_start"
+          ],
+          "metrics": [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260522",
+            "purchase"
+          ],
+          "metrics": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "begin_checkout"
+          ],
+          "metrics": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "purchase"
+          ],
+          "metrics": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "dimensions": [
+            "20260523",
+            "user_engagement"
+          ],
+          "metrics": [
+            "1",
+            "0"
+          ]
+        }
+      ]
+    }
+  ]
+}

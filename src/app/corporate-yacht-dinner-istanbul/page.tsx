@@ -38,6 +38,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Corporate Yacht Dinner Istanbul",
+  alternateName: [
+    "Corporate Yacht Dinner Istanbul",
+    "Корпоративный ужин на яхте в Стамбуле",
+    "Деловой ужин на Босфоре",
+  ],
   description:
     "Private yacht dinner Istanbul support page for client hosting, team dinners, and executive evenings on the Bosphorus.",
   url: canonicalUrl,
@@ -85,10 +90,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит корпоративный ужин на яхте в Стамбуле?",
+    a: "Стоимость корпоративного ужина начинается от 380 EUR за яхту (пакет Premium, до 12 гостей, 2 часа). VIP-пакет с полным меню и открытым баром — от 680 EUR. Для больших групп — индивидуальный расчёт. Оператор TÜRSAB Группы А, счёт-фактура предоставляется. Уточните в Telegram @merrysails.",
+  },
+  {
+    q: "С какого причала отправляется корпоративный ужин-круиз?",
+    a: "Корпоративные ужин-круизы отправляются с пирса Кабаташ (Kabataş) или с Куручешме Марины (Kuruçeşme) — выбор зависит от размера группы и яхты. Точное место посадки подтверждается в Telegram @merrysails после согласования брифа.",
+  },
+  {
+    q: "Что включено в корпоративный ужин-круиз?",
+    a: "В пакет включены: вся яхта только для вашей компании, капитан и команда, сервированный ужин, безалкогольные напитки, маршрут по Босфору, лицензия TÜRSAB Группы А, счёт-фактура для бухгалтерии. Опционально — алкоголь, брендинг, фотограф, трансферы. Свяжитесь в Telegram @merrysails.",
+  },
+  {
+    q: "Подходит ли формат для приёма клиентов или VIP-гостей?",
+    a: "Да, формат идеально подходит для приёма клиентов, ужинов с топ-менеджментом и VIP-гостями. Закрытая яхта обеспечивает приватность для переговоров, а виды на Босфор создают премиальное впечатление. Согласовать детали можно в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

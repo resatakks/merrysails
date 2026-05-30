@@ -51,6 +51,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Kabatas Dinner Cruise Istanbul",
+  alternateName: [
+    "Kabatas Dinner Cruise Istanbul",
+    "Ужин-круиз от причала Кабаташ в Стамбуле",
+    "Ужин на Босфоре с посадкой в Кабаташ",
+  ],
   description:
     "Support page for guests deciding on the shared Bosphorus dinner cruise when Kabatas Pier boarding and arrival logistics are the main decision point.",
   url: canonicalUrl,
@@ -107,10 +112,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит ужин-круиз с посадкой в Кабаташ?",
+    a: "Ужин-круиз с пирса Кабаташ начинается от 30 EUR с человека (пакет Silver Soft Drinks). Gold Unlimited Alcohol — 90 EUR с VIP-местами и трансфером. Оператор лицензирован TÜRSAB Группы А. Уточните актуальные тарифы в Telegram @merrysails.",
+  },
+  {
+    q: "Как добраться до причала Кабаташ (Kabataş)?",
+    a: "Причал Кабаташ находится у подножия дворца Долмабахче. Добраться можно: трамваем T1 до остановки Kabataş, фуникулёром F1 от Таксима, или такси (10–15 минут от Султанахмета). Рекомендуем прибыть за 15 минут до отправления. Точные координаты — в Telegram @merrysails.",
+  },
+  {
+    q: "Что включено в ужин-круиз от Кабаташ?",
+    a: "В стандартный пакет включены: 3,5 часа на яхте, мезе, основное блюдо, безалкогольные напитки, турецкое шоу с танцем живота и фольклорной программой. Пакеты Gold добавляют алкоголь и VIP-места. Лицензия TÜRSAB Группы А. Подробности в Telegram @merrysails.",
+  },
+  {
+    q: "Доступен ли трансфер от отеля до Кабаташ?",
+    a: "Да, трансфер от отеля доступен для гостей из Султанахмета, Таксима, Сиркеджи и Каракёя (в пакете Gold или как опция). После сбора гостей доставляют прямо к пирсу Кабаташ. Согласовать трансфер можно в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

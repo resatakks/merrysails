@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { CharterFleetItem } from "@/data/fleet";
 import { getCharterFleetLocale } from "@/data/fleet";
 import type { SiteLocale } from "@/i18n/config";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { getContactChannel } from "@/lib/constants";
 import FleetGallery from "./FleetGallery";
 import FleetHeroImage from "./FleetHeroImage";
 
@@ -83,11 +83,17 @@ export default function FleetDetailContent({
     yachtTourSlug,
   )}&packageName=${encodeURIComponent(`${t.label} — ${boat.minHours}h`)}&hours=${boat.minHours}&fleet=${boat.slug}#core-booking-planner`;
 
-  const whatsappHref = `${WHATSAPP_URL}?text=${encodeURIComponent(
-    strings.whatsappPrefill
-      .replace("{label}", t.label)
-      .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`),
-  )}`;
+  // Locale-aware: /ru → Telegram (WhatsApp blocked in Russia, Feb 2026).
+  // Telegram t.me silently drops the prefill query.
+  const channel = getContactChannel(locale);
+  const whatsappHref =
+    channel.icon === "telegram"
+      ? channel.url
+      : `${channel.url}?text=${encodeURIComponent(
+          strings.whatsappPrefill
+            .replace("{label}", t.label)
+            .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`),
+        )}`;
 
   return (
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">

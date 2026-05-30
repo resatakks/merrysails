@@ -51,6 +51,11 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Dinner Cruise with Hotel Pickup Istanbul",
+  alternateName: [
+    "Dinner Cruise with Hotel Pickup Istanbul",
+    "Ужин-круиз с трансфером от отеля в Стамбуле",
+    "Босфорский ужин с забором из отеля",
+  ],
   description:
     "Support page for guests comparing a shared Bosphorus dinner cruise in Istanbul when hotel pickup from selected central European-side zones is part of the decision.",
   url: canonicalUrl,
@@ -107,10 +112,29 @@ const faqItems = [
   },
 ];
 
+const faqItemsRu = [
+  {
+    q: "Сколько стоит ужин-круиз с трансфером от отеля?",
+    a: "Ужин-круиз с трансфером начинается от 30 EUR с человека (пакет Silver Soft Drinks). В пакетах Gold (80–90 EUR) трансфер от отеля включён бесплатно. В Silver — трансфер доступен как опция. Оператор TÜRSAB Группы А. Уточните цену в Telegram @merrysails.",
+  },
+  {
+    q: "Из каких районов работает трансфер до пирса Кабаташ?",
+    a: "Трансфер работает из центральных районов европейской стороны: Султанахмет, Таксим, Сиркеджи, Каракёй, Бешикташ. Все гости доставляются к пирсу Кабаташ (Kabataş) у дворца Долмабахче. Уточнить доступность для вашего отеля можно в Telegram @merrysails.",
+  },
+  {
+    q: "Что включено в ужин-круиз с трансфером?",
+    a: "В пакет включены: трансфер от отеля и обратно, 3,5 часа на яхте, мезе, основное блюдо, безалкогольные напитки (Silver) или открытый бар (Gold), турецкое шоу с танцем живота, лицензия TÜRSAB Группы А. Подробности — в Telegram @merrysails.",
+  },
+  {
+    q: "Доступен ли трансфер для гостей с азиатской стороны Стамбула?",
+    a: "Стандартный трансфер работает только для центральной европейской стороны. Гостям с азиатской стороны (Кадыкёй, Юскюдар) обычно рекомендуем самостоятельно добраться до Кабаташ или согласовать индивидуальный трансфер за доплату. Свяжитесь с нами в Telegram @merrysails.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {

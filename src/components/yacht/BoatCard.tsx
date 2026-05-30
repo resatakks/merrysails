@@ -6,7 +6,7 @@ import Link from "next/link";
 import type { CharterFleetItem } from "@/data/fleet";
 import type { SiteLocale } from "@/i18n/config";
 import { getCharterFleetLocale } from "@/data/fleet";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { getContactChannel } from "@/lib/constants";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 
 export type BoatCardStrings = {
@@ -119,7 +119,14 @@ export default function BoatCard({
   const quotePrefill = strings.whatsappPrefill
     .replace("{label}", t.label)
     .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`);
-  const whatsappHref = `${WHATSAPP_URL}?text=${encodeURIComponent(quotePrefill)}`;
+  // Locale-aware: /ru visitors are routed to Telegram (WhatsApp blocked in
+  // Russia, Feb 2026). Telegram t.me ignores the ?text= prefill silently — we
+  // accept that and still open a chat with the right account.
+  const channel = getContactChannel(locale);
+  const whatsappHref =
+    channel.icon === "telegram"
+      ? channel.url
+      : `${channel.url}?text=${encodeURIComponent(quotePrefill)}`;
 
   const detailHref = `${fleetDetailBasePath}/${boat.slug}`;
 
