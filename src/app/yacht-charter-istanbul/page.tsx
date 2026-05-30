@@ -14,6 +14,11 @@ import { getFleetStrings } from "@/components/yacht/fleet-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
 import {
+  buildPricingTableSchema,
+  buildReserveActionSchema,
+} from "@/lib/travel-action-schema";
+import PricingTable from "@/components/ai/PricingTable";
+import {
   getCharterFleet,
   getCharterFleetLocale,
   getCharterLowestEntryPriceEur,
@@ -201,6 +206,34 @@ const productSchema = yachtTour
       },
     }
   : null;
+
+// Citation-ready fleet pricing rows — used by both the visual
+// PricingTable below and the schema.org/Table emitted alongside.
+const fleetPricingRows = getCharterFleet().slice(0, 6).map((boat) => {
+  const en = getCharterFleetLocale(boat, "en");
+  const entry = boat.priceByHours?.[boat.minHours];
+  return {
+    name: en.label,
+    fromPrice: entry != null ? `From €${entry}` : "On request",
+    unit: `per yacht / ${boat.minHours}h minimum`,
+    note: `${boat.capacity.min}-${boat.capacity.max} guests`,
+    includes: "captain, crew, soft drinks, snacks",
+  };
+});
+
+const fleetPricingTableSchema = buildPricingTableSchema({
+  name: "Bosphorus yacht charter — entry pricing per vessel",
+  description:
+    "Whole-yacht hire on the Bosphorus across six vessels; entry-tier rate per minimum-charter window, EUR per yacht (not per guest).",
+  pageUrl: canonicalUrl,
+  rows: fleetPricingRows,
+});
+
+const yachtReserveActionSchema = buildReserveActionSchema({
+  productUrl: canonicalUrl,
+  productName: "Private Bosphorus yacht charter",
+  fromPriceEur: fleetLowestEur,
+});
 
 const charterReasons = [
   {
@@ -400,6 +433,14 @@ export default async function YachtCharterIstanbulPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(fleetPricingTableSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(yachtReserveActionSchema) }}
+      />
       {yachtTour.faq && yachtTour.faq.length > 0 && (
         <script
           type="application/ld+json"
@@ -452,6 +493,15 @@ export default async function YachtCharterIstanbulPage({
             reservationBasePath="/reservation"
             yachtTourSlug={yachtTour.slug}
             fleetDetailBasePath="/yacht-charter-istanbul"
+          />
+
+          {/* AI-citation pricing table — paired with schema.org/Table JSON-LD
+              above so the same numbers exist in two retrievable surfaces. */}
+          <PricingTable
+            caption="Bosphorus Yacht Charter Pricing — From €200"
+            intro="Whole-yacht hire per minimum-charter window. Captain, crew, soft drinks and snacks included in every tier. Catering, alcohol, photographer and styling are on a separate quote."
+            rows={fleetPricingRows}
+            note="Prices in EUR per yacht (not per guest). 10% off from 3 hours upward. Custom event quotes available via WhatsApp +90 544 898 98 12."
           />
 
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">

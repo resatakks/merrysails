@@ -8,6 +8,12 @@ export function AuthorCard({ authorId, variant = "compact" }: { authorId?: strin
 
   const initials = author.name.split(" ").map((w) => w[0]).join("").slice(0, 2);
 
+  // Authors with a dedicated profile page get a real <a href> byline so
+  // Google + AI retrievers can resolve the Person entity. Editorial team
+  // (group byline) stays as plain text — no page exists for them.
+  const authorHref =
+    author.id === "captain-ahmet" ? "/authors/captain-ahmet" : null;
+
   if (variant === "compact") {
     return (
       <div className="flex items-center gap-3">
@@ -15,7 +21,18 @@ export function AuthorCard({ authorId, variant = "compact" }: { authorId?: strin
           <span className="text-[var(--brand-primary)] font-bold text-sm">{initials}</span>
         </div>
         <div>
-          <p className="text-sm font-semibold text-[var(--heading)]">{author.name}</p>
+          <p className="text-sm font-semibold text-[var(--heading)]">
+            {authorHref ? (
+              <Link
+                href={authorHref}
+                className="hover:text-[var(--brand-primary)] hover:underline"
+              >
+                {author.name}
+              </Link>
+            ) : (
+              author.name
+            )}
+          </p>
           <p className="text-xs text-[var(--text-muted)]">{author.credential}</p>
         </div>
       </div>
@@ -29,7 +46,18 @@ export function AuthorCard({ authorId, variant = "compact" }: { authorId?: strin
       </div>
       <div>
         <div className="flex items-center gap-2">
-          <span className="font-semibold text-[var(--heading)]">{author.name}</span>
+          <span className="font-semibold text-[var(--heading)]">
+            {authorHref ? (
+              <Link
+                href={authorHref}
+                className="hover:text-[var(--brand-primary)] hover:underline"
+              >
+                {author.name}
+              </Link>
+            ) : (
+              author.name
+            )}
+          </span>
           <Shield className="w-4 h-4 text-[var(--brand-primary)]" />
         </div>
         <p className="text-xs text-[var(--text-muted)] mt-0.5">{author.role}</p>

@@ -12,6 +12,11 @@ import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
+import {
+  buildPricingTableSchema,
+  buildReserveActionSchema,
+} from "@/lib/travel-action-schema";
+import PricingTable from "@/components/ai/PricingTable";
 import ComparisonTable from "@/components/ai/ComparisonTable";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 
@@ -474,6 +479,40 @@ export default async function IstanbulDinnerCruisePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildPricingTableSchema({
+              name: "Bosphorus dinner cruise — package pricing",
+              description:
+                "Shared 3.5-hour dinner cruise on the Bosphorus with Turkish night show; four package tiers from Silver Soft Drinks to Gold Unlimited Alcohol.",
+              pageUrl: `${SITE_URL}/istanbul-dinner-cruise`,
+              rows: (dinnerTour.packages ?? []).map((pkg) => ({
+                name: pkg.name,
+                fromPrice: `From €${pkg.price}`,
+                unit: "per guest",
+                note: pkg.weekdayDiscount
+                  ? `Mon/Tue/Thu €${pkg.weekdayDiscount.discountedPrice}`
+                  : undefined,
+                includes: pkg.description.slice(0, 60),
+              })),
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildReserveActionSchema({
+              productUrl: `${SITE_URL}/istanbul-dinner-cruise`,
+              productName: "Bosphorus dinner cruise",
+              fromPriceEur: 30,
+            }),
+          ),
+        }}
       />
       <script
         type="application/ld+json"
