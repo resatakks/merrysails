@@ -155,6 +155,65 @@ const nextConfig: NextConfig = {
         destination: "/pricing",
         permanent: true,
       },
+      // Legacy / common-typo URLs that were 404-ing — discovered via GSC
+      // "Bulunamadı (404)" report on 2026-05-30.  Permanent 301 to the
+      // canonical commercial sibling so any inbound links / branded SERP
+      // listings recover their authority.
+      {
+        source: "/private-yacht-charter",
+        destination: "/yacht-charter-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/private-yacht",
+        destination: "/yacht-charter-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/yacht-rental",
+        destination: "/yacht-charter-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/bosphorus-cruise-tour",
+        destination: "/bosphorus-cruise",
+        permanent: true,
+      },
+      {
+        source: "/istanbul-cruise",
+        destination: "/bosphorus-cruise",
+        permanent: true,
+      },
+      {
+        source: "/turkish-night",
+        destination: "/turkish-night-dinner-cruise-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/events",
+        destination: "/private-events",
+        permanent: true,
+      },
+      {
+        source: "/private-event",
+        destination: "/private-events",
+        permanent: true,
+      },
+      {
+        source: "/corporate-event",
+        destination: "/corporate-events",
+        permanent: true,
+      },
+      {
+        source: "/weddings",
+        destination: "/private-events",
+        permanent: true,
+      },
+      {
+        source: "/istanbul-boat-rental",
+        destination: "/boat-rental-istanbul",
+        permanent: true,
+      },
       {
         source: "/cruises/bachelorette-yacht-party",
         destination: "/proposal-yacht-rental-istanbul",
