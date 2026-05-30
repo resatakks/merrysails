@@ -7,6 +7,7 @@ import QuickAnswer from "@/components/ai/QuickAnswer";
 import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul — From €30",
@@ -366,6 +367,19 @@ export default function BosphorusCruisePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildLocalBusinessSchema({
+              pageUrl: `${SITE_URL}/bosphorus-cruise`,
+              priceRange: "€€-€€€€ (€30-€680 across products)",
+              description:
+                "Bosphorus cruise comparison hub for Istanbul: sunset (€30 Mon/Tue/Thu, €34 other days), dinner (€30-€90), private yacht charter (€280-€680). TURSAB licensed since 2001.",
+            }),
+          ),
+        }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />

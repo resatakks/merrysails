@@ -12,6 +12,7 @@ import ComparisonTable from "@/components/ai/ComparisonTable";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import { getFleetStrings } from "@/components/yacht/fleet-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
 import {
   getCharterFleet,
   getCharterFleetLocale,
@@ -375,6 +376,19 @@ export default async function YachtCharterIstanbulPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildLocalBusinessSchema({
+              pageUrl: canonicalUrl,
+              priceRange: `€€€-€€€€ (€${fleetLowestEur}-€${fleetHighestEur} per yacht)`,
+              description:
+                "Private Bosphorus yacht charter in Istanbul — six-yacht fleet covering boutique sailing yachts, group decks, and event-built yachts for weddings, corporate dinners, and proposals.",
+            }),
+          ),
+        }}
       />
       <script
         type="application/ld+json"

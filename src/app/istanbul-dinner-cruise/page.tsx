@@ -11,6 +11,7 @@ import HowToGetThere from "@/components/tours/HowToGetThere";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
 import ComparisonTable from "@/components/ai/ComparisonTable";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 
@@ -438,6 +439,19 @@ export default async function IstanbulDinnerCruisePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildLocalBusinessSchema({
+              pageUrl: `${SITE_URL}/istanbul-dinner-cruise`,
+              priceRange: "€€-€€€ (€30-€90 per guest)",
+              description:
+                "Bosphorus dinner cruise with Turkish night show: Silver (€30-€45), Gold (€80-€90). 3.5-hour shared evening cruise with mezzes, main course, drinks, belly dance, DJ.",
+            }),
+          ),
+        }}
       />
       <script
         type="application/ld+json"

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { fleet } from "@/data/fleet";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
 import RelatedTours from "@/components/ui/RelatedTours";
 
 export const revalidate = 3600;
@@ -308,6 +309,19 @@ export default function BoatRentalIstanbulPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildLocalBusinessSchema({
+              pageUrl: `${SITE_URL}/boat-rental-istanbul`,
+              priceRange: `€€-€€€ (from €${startingRate}/hour)`,
+              description:
+                "Private boat rental in Istanbul for sightseeing cruises, sunset outings, birthdays, proposals, and flexible group trips on the Bosphorus.",
+            }),
+          ),
+        }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
