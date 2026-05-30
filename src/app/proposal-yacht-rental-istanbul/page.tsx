@@ -223,6 +223,7 @@ export default function ProposalYachtRentalIstanbulPage() {
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Proposal Yacht Rental Istanbul
             </h1>
+            <QuickAnswer productKey="proposal-yacht-rental-istanbul" locale="en" />
             <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-2xl">
               A proposal yacht rental in Istanbul keeps the reveal private, the timing controlled,
               and the setup focused on the moment itself. Built for proposals where the reveal is

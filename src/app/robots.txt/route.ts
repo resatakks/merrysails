@@ -1,3 +1,32 @@
+/**
+ * robots.txt for MerrySails
+ *
+ * AI bot policy notes (2026-05-30 audit — Perplexity research backs this up):
+ *
+ *   USER-TRIGGERED LIVE-FETCH BOTS (NOT training crawlers)
+ *   These hit our pages only when a real user asks Claude / ChatGPT /
+ *   Perplexity a question. Blocking them = our content is invisible inside
+ *   the answer. Explicit Allow: / is defensive, not stylistic.
+ *     - Claude-User          (Claude live search on user prompts)
+ *     - ChatGPT-User         (ChatGPT live search on user prompts)
+ *     - Perplexity-User      (Perplexity live fetch on user prompts)
+ *     - OAI-SearchBot        (ChatGPT Search index — answers engine)
+ *
+ *   TRAINING / AI-OVERVIEWS CRAWLERS (separately decided)
+ *   These read at scale to feed model training or AI Overviews. We allow
+ *   them by default because brand visibility in AI answers is worth the
+ *   reuse. Flip to Disallow if commercial copy starts showing up verbatim.
+ *     - GPTBot               (OpenAI training)
+ *     - ClaudeBot            (Anthropic training)
+ *     - Google-Extended      (Google AI Overviews + Gemini training)
+ *     - PerplexityBot        (Perplexity training)
+ *     - Applebot-Extended    (Apple Intelligence training)
+ *     - Meta-ExternalAgent   (Meta AI training)
+ *     - Anthropic-AI, Claude-Web (legacy Anthropic UAs, still seen in logs)
+ *
+ *   SEARCH-ENGINE INDEXERS
+ *     - Googlebot, Bingbot, YandexBot, Yandex, Applebot, Brave-Search, etc.
+ */
 export function GET() {
   const robotsTxt = `# MerrySails — Bosphorus Cruise & Yacht Charter
 # https://merrysails.com
@@ -21,34 +50,49 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# OpenAI — training crawler (decided allow, monitor citations)
 User-agent: GPTBot
 Allow: /
 
+# OpenAI — user-triggered live fetch (ChatGPT browsing on user prompts).
+# MUST stay allowed or ChatGPT can't quote us in real-time answers.
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
+# OpenAI — ChatGPT Search index (answers engine).
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: Google-Extended
+# Anthropic — training crawler (decided allow, monitor citations)
+User-agent: ClaudeBot
 Allow: /
 
+# Anthropic — user-triggered live fetch (Claude browsing on user prompts).
+# MUST stay allowed or Claude can't quote us in real-time answers.
+User-agent: Claude-User
+Allow: /
+
+# Anthropic — legacy training UA, still seen in logs
 User-agent: Anthropic-AI
 Allow: /
 
+# Anthropic — legacy live-fetch UA
+User-agent: Claude-Web
+Allow: /
+
+# Google — AI Overviews + Gemini training opt-in (decided allow)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity — training crawler
 User-agent: PerplexityBot
 Allow: /
 
+# Perplexity — user-triggered live fetch on user prompts. MUST stay allowed.
 User-agent: Perplexity-User
 Allow: /
 
 User-agent: Gemini
-Allow: /
-
-User-agent: Claude-Web
 Allow: /
 
 User-agent: Bytespider
@@ -66,12 +110,14 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+# Apple Intelligence training opt-in
 User-agent: Applebot-Extended
 Allow: /
 
 User-agent: Applebot-Webindex
 Allow: /
 
+# Meta AI training opt-in
 User-agent: Meta-ExternalAgent
 Allow: /
 

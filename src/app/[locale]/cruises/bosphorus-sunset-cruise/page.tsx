@@ -8,6 +8,7 @@ import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-s
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import RelatedTours from "@/components/ui/RelatedTours";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
@@ -611,6 +612,8 @@ export default async function LocaleSunsetCruisePage({
               strings={getWeekdayDiscountStrings(locale as SiteLocale)}
             />
           )}
+
+          <QuickAnswer productKey="bosphorus-sunset-cruise" locale={locale} />
 
           <TourDetailClient tour={sunsetTour} related={relatedTours} />
 

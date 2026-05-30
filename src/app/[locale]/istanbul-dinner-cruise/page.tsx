@@ -8,6 +8,7 @@ import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-s
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
@@ -947,6 +948,7 @@ export default async function LocaleDinnerCruisePage({
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
           <h1 className="sr-only">{t.h1}</h1>
+          <QuickAnswer productKey="istanbul-dinner-cruise" locale={locale} />
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
             <Link href={`/${locale}`} className="hover:text-[var(--brand-primary)]">{t.homeLabel}</Link>
             <span>/</span>

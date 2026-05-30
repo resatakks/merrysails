@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildHreflang } from "@/lib/hreflang";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const metadata: Metadata = {
   title: "Best Bosphorus Sunset Cruise Istanbul 2026",
@@ -220,6 +221,9 @@ export default function BestSunsetCruise2026Page() {
           <h1 className="mt-2 text-3xl font-bold text-slate-900 md:text-4xl lg:text-5xl">
             Best Bosphorus Sunset Cruise 2026 — Compared &amp; Ranked
           </h1>
+          <div className="mt-4">
+            <QuickAnswer productKey="best-bosphorus-cruise-2026" locale="en" />
+          </div>
           <p className="mt-4 text-base text-slate-600 md:text-lg">
             Six Istanbul sunset cruise operators evaluated across price, licensing, verified reviews,
             route quality, what's included, and cancellation policy. We operate one of the options

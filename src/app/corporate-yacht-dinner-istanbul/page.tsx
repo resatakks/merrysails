@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 
@@ -232,6 +233,7 @@ export default function CorporateYachtDinnerIstanbulPage() {
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">
                 Corporate Yacht Dinner Istanbul
               </h1>
+              <QuickAnswer productKey="corporate-yacht-dinner-istanbul" locale="en" />
               <p className="mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
                 Use this page when the company brief is clearly dinner-led: client hosting,
                 executive dinners, board dinners, or a polished team evening on a private yacht.

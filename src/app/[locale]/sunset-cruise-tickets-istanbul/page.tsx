@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
 
@@ -328,6 +329,7 @@ export default async function SunsetCruiseTicketsLocalePage({
 
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-[var(--heading)] mb-4">{t.heroTitle}</h1>
+          <QuickAnswer productKey="sunset-cruise-tickets-istanbul" locale={locale} />
           <p className="max-w-2xl text-base leading-relaxed text-[var(--text-muted)] mb-6">{t.heroDesc}</p>
           <Link href={`/${locale}/cruises/bosphorus-sunset-cruise`} className="btn-secondary">
             {t.mainPageLabel} →

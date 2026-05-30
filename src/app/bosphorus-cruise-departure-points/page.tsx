@@ -212,6 +212,44 @@ const pierTableSchema = {
   url: canonicalUrl,
 };
 
+// Dataset schema on the pier × product × transport matrix. Perplexity
+// research (2026-05-30 deep audit) shows Dataset @type on structured
+// tabular data lifts statistical-query AI citations by ~67%. Sibling to
+// pierTableSchema. This dataset is non-pricing but captures the same
+// structured per-row data signal AI engines look for.
+const pierDatasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Bosphorus Cruise Departure Points Istanbul — Pier × Product Matrix 2026",
+  description:
+    "Per-pier matrix for MerrySails Bosphorus cruise departures in Istanbul. Covers Kabataş (dinner cruise), Karaköy (sunset cruise), Kurucesme Marina (private yacht charter) and Eminönü (selected sunset variants) with address, metro/tram access, and taxi distance for 2026.",
+  url: canonicalUrl,
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  creator: { "@id": `${SITE_URL}/#organization` },
+  inLanguage: ["en"],
+  temporalCoverage: "2026",
+  spatialCoverage: { "@type": "Place", name: "Istanbul, Turkey" },
+  keywords: [
+    "Bosphorus cruise departure piers",
+    "Istanbul cruise meeting points 2026",
+    "Kabataş Karaköy Kuruçeşme Eminönü",
+  ],
+  distribution: [
+    {
+      "@type": "DataDownload",
+      encodingFormat: "text/html",
+      contentUrl: canonicalUrl,
+    },
+  ],
+  variableMeasured: pierDetails.flatMap((p) => [
+    { "@type": "PropertyValue", name: `${p.name} — Product`, value: p.product },
+    { "@type": "PropertyValue", name: `${p.name} — Address`, value: p.address },
+    { "@type": "PropertyValue", name: `${p.name} — Metro / Tram`, value: p.metro },
+    { "@type": "PropertyValue", name: `${p.name} — Taxi Distance`, value: p.taxi },
+    { "@type": "PropertyValue", name: `${p.name} — Landmark`, value: p.landmark },
+  ]),
+};
+
 export default function BosphorusCruiseDeparturePointsPage() {
   return (
     <>
@@ -230,6 +268,10 @@ export default function BosphorusCruiseDeparturePointsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pierTableSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pierDatasetSchema) }}
       />
 
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">

@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
 
@@ -511,6 +512,7 @@ export default async function LocaleProposalYachtRentalPage({
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               {t.heroTitle}
             </h1>
+            <QuickAnswer productKey="proposal-yacht-rental-istanbul" locale={locale} />
             <p className="text-lg text-gray-700 leading-relaxed mb-3 max-w-2xl">
               {t.heroSubtitle}
             </p>

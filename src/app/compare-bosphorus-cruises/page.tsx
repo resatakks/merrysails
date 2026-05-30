@@ -213,6 +213,72 @@ export default function CompareCruisesPage() {
     url: `${SITE_URL}/compare-bosphorus-cruises`,
   };
 
+  // Dataset schema on the numerical comparison matrix — Perplexity research
+  // shows Dataset @type on pricing tables lifts statistical-query citations
+  // by ~67% (2026-05-30 deep audit). Sibling to the Table schema above.
+  const datasetSchema = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Bosphorus Cruise Comparison Pricing Matrix 2026",
+    description:
+      "Side-by-side numerical comparison of four Bosphorus cruise options in Istanbul (Sunset, Dinner, Private Yacht, Hourly Boat Rental) covering entry and ceiling EUR prices, capacity, rating, and review count for 2026.",
+    url: `${SITE_URL}/compare-bosphorus-cruises`,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    creator: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: ["en"],
+    temporalCoverage: "2026",
+    spatialCoverage: { "@type": "Place", name: "Istanbul, Turkey" },
+    keywords: [
+      "Bosphorus cruise comparison",
+      "Istanbul cruise prices 2026",
+      "sunset cruise vs dinner cruise",
+      "yacht charter price Istanbul",
+    ],
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/html",
+        contentUrl: `${SITE_URL}/compare-bosphorus-cruises`,
+      },
+    ],
+    variableMeasured: CRUISE_OPTIONS.flatMap((c) => [
+      {
+        "@type": "PropertyValue",
+        name: `${c.name} — Price From (EUR)`,
+        value: c.priceFrom,
+        unitText: "EUR",
+        description: c.priceNote,
+      },
+      {
+        "@type": "PropertyValue",
+        name: `${c.name} — Price To (EUR)`,
+        value: c.priceTo,
+        unitText: "EUR",
+      },
+      {
+        "@type": "PropertyValue",
+        name: `${c.name} — Duration`,
+        value: c.duration,
+      },
+      {
+        "@type": "PropertyValue",
+        name: `${c.name} — Capacity`,
+        value: c.capacity,
+      },
+      {
+        "@type": "PropertyValue",
+        name: `${c.name} — Rating`,
+        value: c.rating,
+        maxValue: 5,
+      },
+      {
+        "@type": "PropertyValue",
+        name: `${c.name} — Reviews`,
+        value: c.reviews,
+      },
+    ]),
+  };
+
   return (
     <>
       <script
@@ -230,6 +296,10 @@ export default function CompareCruisesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(tableSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
 
       <main className="mx-auto w-full max-w-6xl px-4 py-12 md:py-16">

@@ -8,6 +8,7 @@ import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
 import { getFleetStrings } from "@/components/yacht/fleet-strings";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import {
   getCharterFleet,
   getCharterLowestEntryPriceEur,
@@ -646,6 +647,7 @@ export default async function LocaleYachtCharterPage({
               {t.title}
             </h1>
             <p className="text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">{t.subtitle}</p>
+            <QuickAnswer productKey="yacht-charter-istanbul" locale={locale} />
           </header>
 
           <FleetShowcase

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
 
@@ -518,6 +519,7 @@ export default async function LocalePrivateBosphorusDinnerCruisePage({
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
             {t.heroTitle}
           </h1>
+          <QuickAnswer productKey="private-bosphorus-dinner-cruise" locale={locale} />
           <p className="text-lg font-medium text-rose-700 mb-4">{t.heroSubtitle}</p>
           <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-3xl">
             {t.heroDescription}

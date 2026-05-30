@@ -1,0 +1,64 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card.v0.json",
+  "serverInfo": {
+    "name": "merrysails-public",
+    "version": "0.1.0",
+    "title": "MerrySails — Bosphorus Cruise Read-Only MCP",
+    "description": "Public, unauthenticated, read-only MCP surface for AI agents that need real-time pricing, availability windows, and content references for Bosphorus cruises operated by MerrySails (TÜRSAB A-Group #14316, Istanbul, since 2001). Booking + payment intentionally NOT exposed via MCP — those run through the agent-skills `request-quote` contact channel (WhatsApp / Telegram @merrysails / email).",
+    "homepage": "https://merrysails.com",
+    "legal": {
+      "operator": "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI",
+      "license": "TÜRSAB A Group #14316",
+      "address": "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih, Istanbul, Turkey"
+    }
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://merrysails.com/api/mcp",
+    "status": "planned",
+    "note": "Endpoint is reserved; live MCP transport will follow once SEP-1649 finalizes the server-card schema. Until then, agents should consume the equivalent data via /openapi.json (OpenAPI 3.1), /agents.md, and /.well-known/agent-skills/index.json."
+  },
+  "capabilities": {
+    "resources": {
+      "list": true,
+      "read": true
+    },
+    "tools": {
+      "list": false
+    },
+    "prompts": {
+      "list": false
+    }
+  },
+  "advertisedResources": [
+    {
+      "uri": "https://merrysails.com/sitemap.xml",
+      "name": "sitemap",
+      "description": "Canonical sitemap index — every commercial page, blog post, and guide on merrysails.com.",
+      "mediaType": "application/xml"
+    },
+    {
+      "uri": "https://merrysails.com/.well-known/api-catalog",
+      "name": "api-catalog",
+      "description": "RFC 9727 API catalog pointing to the OpenAPI service description.",
+      "mediaType": "application/linkset+json"
+    },
+    {
+      "uri": "https://merrysails.com/openapi.json",
+      "name": "service-desc",
+      "description": "Public REST API surface (OpenAPI 3.1) — pricing, package list, departure schedule.",
+      "mediaType": "application/vnd.oai.openapi+json;version=3.1"
+    },
+    {
+      "uri": "https://merrysails.com/ai-knowledge",
+      "name": "service-meta",
+      "description": "Machine-readable single source of truth (Dataset + Service + Article JSON-LD).",
+      "mediaType": "text/html"
+    }
+  ],
+  "contact": {
+    "email": "info@merrysails.com",
+    "whatsapp": "+905448989812",
+    "telegram": "https://t.me/merrysails"
+  }
+}

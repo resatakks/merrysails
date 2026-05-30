@@ -5,6 +5,7 @@ import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
 
@@ -539,6 +540,9 @@ export default async function LocaleBosphorusCruisePage({
 
           <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">{c.subtitle}</p>
           <h1 className="mb-4 text-4xl font-bold text-[var(--heading)] md:text-5xl">{c.h1}</h1>
+          <div className="max-w-2xl">
+            <QuickAnswer productKey="bosphorus-cruise" locale={locale} />
+          </div>
           <p className="max-w-2xl text-lg text-[var(--body-text)]">{c.intro}</p>
           <p className="mt-3 text-sm font-semibold text-[var(--text-muted)]">{c.trustBadge}</p>
 

@@ -6,6 +6,7 @@ import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
 
@@ -448,6 +449,7 @@ export default async function LocaleCorporateYachtDinnerPage({
             <h1 className="text-3xl md:text-5xl font-bold text-[var(--heading)] mb-4 leading-tight">
               {t.heroTitle}
             </h1>
+            <QuickAnswer productKey="corporate-yacht-dinner-istanbul" locale={locale} />
             <p className="text-lg text-[var(--text-muted)] max-w-3xl mb-4">
               {t.heroSubtitle}
             </p>

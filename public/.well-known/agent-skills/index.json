@@ -1,0 +1,74 @@
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/skills-index.json",
+  "version": "0.2.0",
+  "issuer": {
+    "name": "MerrySails",
+    "url": "https://merrysails.com",
+    "legal": "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI — TÜRSAB A Group #14316"
+  },
+  "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
+  "skills": [
+    {
+      "name": "browse-cruises",
+      "type": "read",
+      "description": "List MerrySails' shared and private Bosphorus cruise products with current pricing, durations, departure piers (Karaköy for sunset, Kabataş for dinner, Kuruçeşme Marina for private yacht), package tiers, capacity, and the Mon/Tue/Thu weekday-discount calendar.",
+      "url": "https://merrysails.com/llms-full.txt",
+      "mediaType": "text/plain",
+      "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
+      "descriptions": {
+        "ru": "Список круизных продуктов MerrySails (общие и частные) по Босфору: цены в евро, длительность, причалы отправления (Карайёй для заката, Кабаташ для ужина, Куручешме Марина для частной яхты), уровни пакетов, вместимость и календарь скидок по будням (пн/вт/чт)."
+      }
+    },
+    {
+      "name": "cruise-pricing",
+      "type": "read",
+      "description": "Read structured per-cruise pricing for Bosphorus sunset cruise (EUR 30/34 without wine, EUR 35/40 with wine), dinner cruise (EUR 30 / 45 / 80 / 90 across Silver and Gold packages), and yacht charter (from EUR 200 entry to EUR 1,070 group signature 8h). Includes adult / 3-8 yaş child (50%) / 0-3 yaş infant (free) tiering and the alcoholic-package adult-only restriction.",
+      "url": "https://merrysails.com/openapi.json",
+      "mediaType": "application/vnd.oai.openapi+json;version=3.1",
+      "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
+      "descriptions": {
+        "ru": "Структурированные цены MerrySails: закат (€30/€34 без вина, €35/€40 с вином), ужин (€30 / €45 / €80 / €90 — пакеты Silver и Gold), чартер яхты (от €200 до €1070 за 8 часов). Возрастная сетка: 0–3 года бесплатно, 3–8 лет 50% скидка, 8+ полная цена. Пакеты с алкоголем — только для взрослых (18+)."
+      }
+    },
+    {
+      "name": "ai-knowledge-card",
+      "type": "read",
+      "description": "Machine-readable single source of truth for MerrySails: legal entity (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI), founding date (2001), guests-served (50,000+), TÜRSAB licence #14316, address, phone, vessel fleet specs (6 yachts: boutique 10-12 / premium 14 / group 36 / group signature 36 / event 44 / mega event 150), cancellation policy, payment methods, supported languages, and JSON-LD organization graph for citation.",
+      "url": "https://merrysails.com/ai-knowledge",
+      "mediaType": "text/html",
+      "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
+      "descriptions": {
+        "ru": "Машиночитаемый источник истины для MerrySails: юр. лицо (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI), год основания (2001), число гостей (50 000+), лицензия TÜRSAB №14316, адрес, телефон, спецификации флота (6 яхт), политика отмены, способы оплаты, языки сервиса и JSON-LD граф организации для цитирования."
+      }
+    },
+    {
+      "name": "agent-reference",
+      "type": "read",
+      "description": "Compact agent-facing reference markdown (one page) — best for short LLM context windows that need MerrySails' identity, pricing range, and direct booking channels (web, WhatsApp +90 544 898 98 12, email info@merrysails.com).",
+      "url": "https://merrysails.com/agents.md",
+      "mediaType": "text/markdown",
+      "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
+      "descriptions": {
+        "ru": "Компактный one-page справочник в Markdown для AI-ассистентов с коротким контекстным окном: идентичность MerrySails, ценовой диапазон и каналы прямого бронирования (сайт, Telegram @merrysails, телефон +90 544 898 98 12, email info@merrysails.com)."
+      }
+    },
+    {
+      "name": "request-quote",
+      "type": "contact",
+      "description": "Direct booking and quote requests reach the operator within 60 minutes during 09:00-22:00 Istanbul time. Use WhatsApp for the fastest reply on private yacht and dinner-cruise inquiries.",
+      "url": "https://wa.me/905448989812",
+      "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
+      "alternateContacts": {
+        "ru": {
+          "channel": "telegram",
+          "handle": "@merrysails",
+          "url": "https://t.me/merrysails",
+          "note": "Для российских клиентов рекомендуем Telegram — WhatsApp недоступен в РФ с февраля 2026."
+        }
+      },
+      "descriptions": {
+        "ru": "Прямое бронирование и запросы расчёта поступают оператору в течение 60 минут с 09:00 до 22:00 по Стамбулу. Для русскоязычных клиентов рекомендуем Telegram @merrysails — WhatsApp заблокирован в РФ с февраля 2026."
+      }
+    }
+  ]
+}

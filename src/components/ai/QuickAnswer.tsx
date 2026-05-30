@@ -71,11 +71,30 @@ export function QuickAnswer(props: QuickAnswerProps) {
     },
   };
 
+  // WebPageElement + SpeakableSpecification — hints to AI / voice assistants
+  // that this block is the primary answer surface on the page. The CSS
+  // selector targets the rendered aside below, plus the page H1 so the
+  // product name is paired with the facts.
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPageElement",
+    isAccessibleForFree: true,
+    cssSelector: ".quick-answer",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".quick-answer"],
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(answerSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
       <aside
         aria-label={label}

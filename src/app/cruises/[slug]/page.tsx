@@ -13,6 +13,8 @@ import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
+import QuickAnswer from "@/components/ai/QuickAnswer";
+import { hasQuickAnswerLocale, type QuickAnswerKey } from "@/data/quick-answers";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -645,6 +647,10 @@ export default async function TourDetailPage({
               productName={tour.nameEn}
               strings={getWeekdayDiscountStrings("en")}
             />
+          )}
+
+          {hasQuickAnswerLocale(slug as QuickAnswerKey, "en") && (
+            <QuickAnswer productKey={slug as QuickAnswerKey} locale="en" />
           )}
 
           <TourDetailClient
