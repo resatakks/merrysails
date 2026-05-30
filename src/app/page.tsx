@@ -281,6 +281,18 @@ export default function HomePage() {
       <HeroSection />
       <TourGrid />
 
+      {/* First-party trust evidence — citation-ready stats for AI
+          retrievers (Perplexity / Bing Copilot / ChatGPT).  The Dataset
+          schema emitted below carries the same numbers in structured
+          form so retrievers can consume either the prose or the JSON. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(trustEvidenceDatasetSchema("https://merrysails.com")),
+        }}
+      />
+      <TrustEvidence />
+
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
