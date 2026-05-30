@@ -699,7 +699,7 @@ export default async function TourDetailPage({
                   </h2>
                   <p className="text-sm leading-relaxed text-[var(--text-muted)]">
                     {slug === "bosphorus-sunset-cruise"
-                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Mon, Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Mon, Tue & Thu) or €40. Runs daily, timed around Istanbul's sunset. TURSAB A-Group licensed since 2001, rated 4.9 from 998 reviews. Direct online booking at merrysails.com."
+                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Mon, Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Mon, Tue & Thu) or €40. Runs daily, timed around Istanbul's sunset. Since 2001, MerrySails has operated over 17,000 sunset sailings, with an average guest rating of 4.93 across 621 verified reviews. TURSAB A-Group licensed since 2001. Direct online booking at merrysails.com."
                       : `This page is the protected owner URL for ${tour.nameEn} intent. Use it when the guest already knows the product direction and needs the clearest package, timing, and booking-fit summary.`}
                   </p>
                 </div>

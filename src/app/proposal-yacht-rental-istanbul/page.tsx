@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";

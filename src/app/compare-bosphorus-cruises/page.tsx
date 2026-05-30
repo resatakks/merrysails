@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildHreflang } from "@/lib/hreflang";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 const SITE_URL = "https://merrysails.com";
 
@@ -204,6 +205,14 @@ export default function CompareCruisesPage() {
     })),
   };
 
+  const tableSchema = {
+    "@context": "https://schema.org",
+    "@type": "Table",
+    name: "Bosphorus cruise comparison Istanbul 2026",
+    about: "Side-by-side comparison of four Bosphorus cruise options in Istanbul (Sunset, Dinner, Private Yacht, Hourly Boat Rental) across price, duration, capacity, departure, inclusions, and best-fit guest profile.",
+    url: `${SITE_URL}/compare-bosphorus-cruises`,
+  };
+
   return (
     <>
       <script
@@ -218,6 +227,10 @@ export default function CompareCruisesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tableSchema) }}
+      />
 
       <main className="mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
         <header className="mb-10 text-center">
@@ -227,6 +240,9 @@ export default function CompareCruisesPage() {
           <h1 className="mt-2 text-3xl font-bold text-slate-900 md:text-5xl">
             Compare Bosphorus Cruises in Istanbul
           </h1>
+          <div className="mx-auto mt-6 max-w-3xl text-left">
+            <QuickAnswer productKey="compare-bosphorus-cruises" locale="en" />
+          </div>
           <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 md:text-lg">
             All four cruise options side-by-side: prices, durations, what's
             included, and which is best for your group. Pick the right cruise
@@ -272,15 +288,23 @@ export default function CompareCruisesPage() {
           <h2 className="mb-6 text-2xl font-bold text-slate-900">
             Side-by-side comparison
           </h2>
-          <table className="w-full min-w-[800px] border-collapse text-sm">
+          <table role="table" className="w-full min-w-[800px] border-collapse text-sm">
+            <caption className="sr-only">
+              Bosphorus cruise comparison Istanbul 2026 — Sunset Cruise from
+              EUR 30, Dinner Cruise EUR 30 to EUR 90, Private Yacht Charter
+              from EUR 280, Hourly Boat Rental from EUR 60 per hour. Compared
+              by type, duration, capacity, departure time, inclusions, and
+              best-fit guest profile.
+            </caption>
             <thead>
               <tr className="border-b border-slate-300">
-                <th className="py-3 text-left text-xs font-semibold uppercase text-slate-500">
+                <th scope="col" className="py-3 text-left text-xs font-semibold uppercase text-slate-500">
                   Feature
                 </th>
                 {CRUISE_OPTIONS.map((c) => (
                   <th
                     key={c.slug}
+                    scope="col"
                     className="py-3 text-left text-xs font-semibold uppercase text-slate-500"
                   >
                     {c.name.replace("Bosphorus ", "")}

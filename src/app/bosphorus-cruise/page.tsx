@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Sunset, UtensilsCrossed, Anchor, Compass, MessageCircle, PhoneCall } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -399,6 +400,7 @@ export default function BosphorusCruisePage() {
         </section>
 
         <div className="container-main pt-10">
+          <QuickAnswer productKey="bosphorus-cruise" locale="en" />
           <section className="mb-10">
             {/* Pricing grid — 3 booking cards */}
             <div className="grid gap-4 md:grid-cols-3 mb-8">

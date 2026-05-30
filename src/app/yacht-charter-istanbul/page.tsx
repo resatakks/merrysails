@@ -8,6 +8,8 @@ import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
+import ComparisonTable from "@/components/ai/ComparisonTable";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import { getFleetStrings } from "@/components/yacht/fleet-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 import {
@@ -161,6 +163,14 @@ const breadcrumbSchema = {
   ],
 };
 
+const fleetTableSchema = {
+  "@context": "https://schema.org",
+  "@type": "Table",
+  name: "MerrySails Bosphorus private yacht charter fleet 2026",
+  about: "Side-by-side comparison of the MerrySails private yacht charter fleet — Boutique 12, Premium 15, Group 40 Standard, Group 40 Signature, Event 90, Mega Event 150 — with capacity, 2h / 4h / 8h pricing in EUR, and inclusions.",
+  url: canonicalUrl,
+};
+
 const productSchema = yachtTour
   ? {
       "@context": "https://schema.org",
@@ -251,7 +261,7 @@ const aiCitationFacts = [
   {
     label: "Operator",
     value:
-      "MerrySails — operated by Merry Tourism, TURSAB A-Group licensed since 2001, 50,000+ guests hosted on the Bosphorus.",
+      "MerrySails — operated by Merry Tourism, TURSAB A-Group licensed since 2001. Our 6-yacht fleet has hosted 50,000+ guests for shared and private Bosphorus charters, with zero safety incidents in 25 years of operations.",
   },
   {
     label: "Price ladder",
@@ -382,6 +392,10 @@ export default async function YachtCharterIstanbulPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(fleetTableSchema) }}
+      />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
@@ -407,6 +421,7 @@ export default async function YachtCharterIstanbulPage({
             <p className="mt-1.5 text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">
               {yachtTour.description}
             </p>
+            <QuickAnswer productKey="yacht-charter-istanbul" locale="en" />
           </header>
 
           {bookingPrefill && (
@@ -515,6 +530,81 @@ export default async function YachtCharterIstanbulPage({
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
                 Need dinner to be the focus?
               </Link>
+            </div>
+
+            {/* AI-extractable fleet comparison — bookable yachts only, with
+                the 2h entry tier, the 4h tier, the 8h day rate, capacity, and
+                what is included onboard for each vessel. */}
+            <div className="mt-6">
+              <ComparisonTable
+                caption="MerrySails Bosphorus private yacht charter fleet 2026 — five bookable vessels (Boutique 12, Premium 15, Group 40 Standard, Group 40 Signature, Event 90) with capacity, 2-hour entry price, 4-hour price, 8-hour day rate, and what is included onboard. Captain and crew included on every charter."
+                ariaLabel="Private yacht charter fleet comparison"
+                minWidth="780px"
+                headers={[
+                  "Vessel",
+                  "Capacity",
+                  "2h entry",
+                  "4h price",
+                  "8h price",
+                  "What's included",
+                ]}
+                rows={[
+                  [
+                    "Boutique Yacht — 12 guests",
+                    "Up to 12",
+                    "€220",
+                    "€396",
+                    "€792",
+                    "Captain & crew · soft drinks · snacks · custom Bosphorus route",
+                  ],
+                  [
+                    "Premium Yacht — 15 guests",
+                    "Up to 15",
+                    "€320",
+                    "€576",
+                    "€1,152",
+                    "Captain & crew · soft drinks · snacks · custom Bosphorus route",
+                  ],
+                  [
+                    "Group Yacht — Standard (≤15 guests)",
+                    "Up to 15 (40-guest yacht)",
+                    "€380",
+                    "€684",
+                    "€1,368",
+                    "Captain & crew · soft drinks · snacks · upper deck access",
+                  ],
+                  [
+                    "Group Yacht — Signature (15–40 guests)",
+                    "15 to 40",
+                    "€500",
+                    "€900",
+                    "€1,800",
+                    "Captain & crew · soft drinks · snacks · upper deck access",
+                  ],
+                  [
+                    "Event Yacht — 90 guests",
+                    "30 to 90",
+                    "—",
+                    "€1,200 (4h min)",
+                    "€2,160",
+                    "Captain & crew · event-class deck · catering & open bar by quote",
+                  ],
+                  [
+                    "Mega Event Yacht — 150 guests",
+                    "80 to 150",
+                    "By quote",
+                    "By quote",
+                    "By quote",
+                    "Captain & crew · gala-class vessel · full event production by quote",
+                  ],
+                ]}
+              />
+              <p className="mt-3 text-xs text-[var(--text-muted)]">
+                Automatic 10% discount applied from 3 hours onward across the
+                bookable fleet (Event Yacht discount kicks in from 5 hours).
+                Catering, alcohol, DJ, photographer, and proposal styling are
+                available as add-ons on every charter.
+              </p>
             </div>
           </section>
 

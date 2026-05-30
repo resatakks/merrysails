@@ -204,6 +204,14 @@ const planningNotes = [
   "All MerrySails products are TURSAB A Group licensed — the boarding flow and final instructions are part of the confirmed booking service.",
 ];
 
+const pierTableSchema = {
+  "@context": "https://schema.org",
+  "@type": "Table",
+  name: "MerrySails Bosphorus departure piers",
+  about: "Pier-by-pier guide to MerrySails Bosphorus cruise departure points in Istanbul (Karaköy, Kabataş, Kuruçeşme Marina) with address, metro / tram access, and taxi distance from Sultanahmet and Taksim.",
+  url: canonicalUrl,
+};
+
 export default function BosphorusCruiseDeparturePointsPage() {
   return (
     <>
@@ -218,6 +226,10 @@ export default function BosphorusCruiseDeparturePointsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pierTableSchema) }}
       />
 
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">
@@ -280,14 +292,20 @@ export default function BosphorusCruiseDeparturePointsPage() {
               Each MerrySails product uses a specific pier on the Istanbul waterfront. Below are the confirmed departure points, exact locations, and transport options for each cruise type. Always verify your final boarding details in the booking confirmation message.
             </p>
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
+              <table role="table" className="w-full border-collapse text-sm">
+                <caption className="sr-only">
+                  MerrySails Bosphorus cruise departure piers in Istanbul —
+                  Karaköy, Kabataş, Kuruçeşme Marina — with the product served
+                  at each pier, address, nearest metro or tram stop, and
+                  approximate taxi distance from central Sultanahmet / Taksim.
+                </caption>
                 <thead>
                   <tr className="border-b-2 border-[var(--brand-primary)]/20 bg-[var(--surface-alt)]">
-                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Pier</th>
-                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Product</th>
-                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Address</th>
-                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Metro / Tram</th>
-                    <th className="p-4 text-left font-semibold text-[var(--heading)]">Taxi from Centre</th>
+                    <th scope="col" className="p-4 text-left font-semibold text-[var(--heading)]">Pier</th>
+                    <th scope="col" className="p-4 text-left font-semibold text-[var(--heading)]">Product</th>
+                    <th scope="col" className="p-4 text-left font-semibold text-[var(--heading)]">Address</th>
+                    <th scope="col" className="p-4 text-left font-semibold text-[var(--heading)]">Metro / Tram</th>
+                    <th scope="col" className="p-4 text-left font-semibold text-[var(--heading)]">Taxi from Centre</th>
                   </tr>
                 </thead>
                 <tbody>

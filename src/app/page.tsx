@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSection from "@/components/home/HeroSection";
+import TrustEvidence from "@/components/home/TrustEvidence";
+import { trustEvidenceDatasetSchema } from "@/lib/trust-evidence";
 import TourGrid from "@/components/home/TourGrid";
 import FeaturedTour from "@/components/home/FeaturedTour";
 import WhyUs from "@/components/home/WhyUs";

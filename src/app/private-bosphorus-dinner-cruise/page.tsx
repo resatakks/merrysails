@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -215,6 +216,7 @@ export default function PrivateBosphorusDinnerCruisePage() {
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Private Bosphorus Dinner Cruise
             </h1>
+            <QuickAnswer productKey="private-bosphorus-dinner-cruise" locale="en" />
             <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-2xl">
               A private Bosphorus dinner cruise keeps the yacht, the table, and the timing on your
               side. It works for couples, proposals, birthdays, anniversaries, and small groups

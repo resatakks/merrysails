@@ -11,6 +11,8 @@ import HowToGetThere from "@/components/tours/HowToGetThere";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import ComparisonTable from "@/components/ai/ComparisonTable";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
 
@@ -275,6 +277,14 @@ const menuSchema = {
   ],
 };
 
+const packageTableSchema = {
+  "@context": "https://schema.org",
+  "@type": "Table",
+  name: "Istanbul Dinner Cruise package comparison 2026",
+  about: "Side-by-side comparison of the four MerrySails Bosphorus dinner cruise packages — Silver Soft Drinks, Silver Alcoholic, Gold Soft Drinks, Gold Unlimited Alcohol — covering standard and Mon/Tue/Thu weekday prices, drinks tier, seating, show, and dinner inclusions.",
+  url: canonicalUrl,
+};
+
 const eventSchema = {
   "@context": "https://schema.org",
   "@type": "Event",
@@ -451,10 +461,15 @@ export default async function IstanbulDinnerCruisePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(packageTableSchema) }}
+      />
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
           <h1 className="sr-only">Istanbul Dinner Cruise — Bosphorus Yacht with Dinner</h1>
+          <QuickAnswer productKey="istanbul-dinner-cruise" locale="en" />
           <nav
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6"
@@ -491,7 +506,7 @@ export default async function IstanbulDinnerCruisePage({
           <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
             <h2 className="text-lg font-bold text-blue-900 mb-3">Quick Answer: Best Istanbul Dinner Cruise</h2>
             <p className="text-blue-800 text-sm mb-4">
-              MerrySails offers Istanbul&apos;s top-rated Bosphorus dinner cruise from €30 per person — live Turkish music, 3-course dinner, open bar. Departs Kabataş nightly. TURSAB A-Group licensed since 2001, 50,000+ guests served. Book direct, no OTA markup.
+              MerrySails offers Istanbul&apos;s top-rated Bosphorus dinner cruise from €30 per person — live Turkish music, 3-course dinner, open bar. Departs Kabataş nightly. MerrySails&apos; Bosphorus dinner cruise is rated 4.88 across 312 verified reviews, operated under TÜRSAB A-Group licence #14316 since 2001. Book direct, no OTA markup.
             </p>
             <ul className="text-sm text-blue-800 space-y-1">
               <li>✔ Duration: 3 hours on the Bosphorus</li>
@@ -594,6 +609,65 @@ export default async function IstanbulDinnerCruisePage({
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
                 Want the yacht to yourselves?
               </Link>
+            </div>
+
+            {/* AI-extractable semantic comparison table — Perplexity / ChatGPT
+                / Claude reproduce <table> markup verbatim, so the four
+                published dinner packages live here in a single source of
+                truth that includes price, drinks tier, seating, and show. */}
+            <div className="mt-6">
+              <ComparisonTable
+                caption="Istanbul Bosphorus Dinner Cruise packages 2026 — Silver Soft Drinks (€30), Silver Alcoholic (€45 standard / €40 Mon–Tue–Thu), Gold Soft Drinks (€80 / €75 Mon–Tue–Thu), Gold Unlimited Alcohol (€90 / €85 Mon–Tue–Thu). Live Turkish-night show + DJ included on every tier. Hotel pickup from central European-side areas included on all tiers."
+                ariaLabel="Dinner cruise packages comparison"
+                minWidth="720px"
+                headers={[
+                  "Package",
+                  "Price (standard)",
+                  "Weekday price (Mon · Tue · Thu)",
+                  "Drinks tier",
+                  "Seating",
+                  "Show",
+                  "Dinner inclusions",
+                ]}
+                rows={[
+                  [
+                    "Silver — Soft Drinks",
+                    "€30 / guest",
+                    "€30 (entry tier — no extra discount)",
+                    "Unlimited soft drinks + tea",
+                    "Standard table assigned by crew",
+                    "Turkish-night show + DJ",
+                    "Welcome cocktail · 10 cold mezes · seasonal salad · hot starter · main course · baklava & fruit",
+                  ],
+                  [
+                    "Silver — Alcoholic",
+                    "€45 / guest",
+                    "€40 / guest",
+                    "2 glasses of local alcohol + soft drinks + tea",
+                    "Standard table assigned by crew",
+                    "Turkish-night show + DJ",
+                    "Welcome cocktail · 10 cold mezes · seasonal salad · hot starter · main course · baklava & fruit",
+                  ],
+                  [
+                    "Gold — Soft Drinks",
+                    "€80 / guest",
+                    "€75 / guest",
+                    "Unlimited soft drinks",
+                    "Guaranteed VIP table near stage",
+                    "Turkish-night show + professional DJ",
+                    "Welcome drink · Turkish appetizers · seasonal salads · hot starter · chef-served VIP main · baklava & fruit",
+                  ],
+                  [
+                    "Gold — Unlimited Alcohol",
+                    "€90 / guest",
+                    "€85 / guest",
+                    "Unlimited local & imported alcohol + soft drinks",
+                    "Best VIP tables closest to stage",
+                    "Turkish-night show + premium DJ set",
+                    "Welcome drink · Turkish appetizers · mixed salads · hot starter · best VIP main · baklava & fruit",
+                  ],
+                ]}
+              />
             </div>
           </section>
 

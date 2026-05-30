@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import QuickAnswer from "@/components/ai/QuickAnswer";
 import { getTourBySlug } from "@/data/tours";
 import { PHONE_DISPLAY, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
@@ -299,6 +300,7 @@ export default function SunsetCruiseTicketsIstanbulPage() {
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">
                 Sunset Cruise Tickets Istanbul
               </h1>
+              <QuickAnswer productKey="sunset-cruise-tickets-istanbul" locale="en" />
               <p className="mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
                 Use this page when the shared Bosphorus sunset cruise is already the likely fit and the real
                 question is how the public sunset ticket options work. The protected owner page is still{" "}
