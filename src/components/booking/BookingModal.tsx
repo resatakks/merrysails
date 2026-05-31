@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import {
   X,
@@ -38,7 +38,11 @@ import {
   trackWhatsAppClick,
 } from "@/lib/analytics";
 import { hasBookingAbandonmentContact } from "@/lib/booking-abandonment";
-import { PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/constants";
+import { PHONE_DISPLAY, getContactChannel, getContactChannelWithMessage } from "@/lib/constants";
+import {
+  detectBookingLocaleFromPathname,
+  getBookingModalStrings,
+} from "@/i18n/booking-strings";
 
 interface BookingDetails {
   tourName: string;
@@ -68,12 +72,6 @@ interface Props {
 }
 
 type ModalState = "form" | "loading" | "success" | "error";
-
-const steps = [
-  { num: 1, label: "Details" },
-  { num: 2, label: "Contact" },
-  { num: 3, label: "Confirm" },
-];
 
 function buildCalendarUrl(booking: BookingDetails): string {
   const dateStr = booking.date.replace(/\s/g, " ");
@@ -114,6 +112,16 @@ function buildCalendarUrl(booking: BookingDetails): string {
 
 export default function BookingModal({ booking, onClose }: Props) {
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = detectBookingLocaleFromPathname(pathname);
+  const t = getBookingModalStrings(locale);
+  // Localised contact channel: `/ru` → Telegram, everything else → WhatsApp.
+  const contactChannel = getContactChannel(locale);
+  const steps = [
+    { num: 1, label: t.stepDetails },
+    { num: 2, label: t.stepContact },
+    { num: 3, label: t.stepConfirm },
+  ];
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -264,10 +272,10 @@ export default function BookingModal({ booking, onClose }: Props) {
     .filter(Boolean);
   const transferSummaryNote =
     booking.tourSlug === "bosphorus-dinner-cruise"
-      ? "Private transfer requested in addition to the standard dinner-cruise hotel shuttle flow. Quote separately and confirm after contact."
+      ? t.transferSummaryNoteDinner
       : booking.tourSlug === "bosphorus-sunset-cruise"
-      ? "Extra hotel pickup / private transfer requested for the sunset cruise. Quote separately and confirm after contact."
-      : "Private transfer requested. Quote separately and confirm after contact.";
+      ? t.transferSummaryNoteSunset
+      : t.transferSummaryNoteDefault;
   const bookingPreviewImage =
     booking.tourSlug === "bosphorus-dinner-cruise"
       ? "/images/dinner-etkinlik-4.jpeg"
@@ -335,14 +343,14 @@ export default function BookingModal({ booking, onClose }: Props) {
     if (!nameValid) {
       nameInputRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       nameInputRef.current?.focus();
-      setValidationMessage("Please enter your full name first.");
+      setValidationMessage(t.validationNameMissing);
       return;
     }
 
     if (!emailValid) {
       emailInputRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       emailInputRef.current?.focus();
-      setValidationMessage("Please enter a valid email address.");
+      setValidationMessage(t.validationEmailInvalid);
       return;
     }
 
@@ -352,7 +360,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       if (phoneInput instanceof HTMLInputElement) {
         phoneInput.focus();
       }
-      setValidationMessage("Please add a reachable phone number to continue.");
+      setValidationMessage(t.validationPhoneMissing);
     }
   };
 
@@ -371,7 +379,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       message.trim(),
       privateTransferRequested ? transferSummaryNote : "",
       additionalGuestNames.length > 0
-        ? `Additional guests: ${additionalGuestNames.join(", ")}`
+        ? `${t.additionalGuestsNotePrefix}: ${additionalGuestNames.join(", ")}`
         : "",
     ]
       .filter(Boolean)
@@ -439,7 +447,7 @@ export default function BookingModal({ booking, onClose }: Props) {
         router.push(`/reservation/${result.reservationId}`);
       }, 700);
     } else {
-      setErrorMessage(result.error || "Something went wrong");
+      setErrorMessage(result.error || t.fallbackError);
       setModalState("error");
     }
   };
@@ -451,30 +459,36 @@ export default function BookingModal({ booking, onClose }: Props) {
       location: booking.tourSlug,
     });
 
+    const w = t.whatsappBookingMessage;
+    const perUnit = isPerGroup ? t.perGroup : t.perPerson;
     const lines = [
-      `Hi, I'd like to book:`,
+      w.intro,
       ``,
-      `Tour: ${booking.tourName}`,
-      `Date: ${booking.date}`,
-      booking.time ? `Time: ${booking.time}` : "",
-      `Guests: ${booking.guests}`,
+      `${w.tour}: ${booking.tourName}`,
+      `${w.date}: ${booking.date}`,
+      booking.time ? `${w.time}: ${booking.time}` : "",
+      `${w.guests}: ${booking.guests}`,
       booking.selectedPackage
-        ? `Package: ${booking.selectedPackage.name} (€${booking.selectedPackage.price}${isPerGroup ? "/group" : "/person"})`
-        : `Price: €${booking.basePrice}${isPerGroup ? "/group" : "/person"}`,
-      addOnsText ? `Add-ons: ${addOnsText}` : "",
-      privateTransferRequested ? "Extra service: Private transfer requested (to be quoted separately)" : "",
-      additionalGuestNames.length > 0 ? `Additional guests: ${additionalGuestNames.join(", ")}` : "",
-      `Total: €${total}`,
+        ? `${w.package}: ${booking.selectedPackage.name} (€${booking.selectedPackage.price}${perUnit})`
+        : `${w.price}: €${booking.basePrice}${perUnit}`,
+      addOnsText ? `${w.addOns}: ${addOnsText}` : "",
+      privateTransferRequested ? w.privateTransferNote : "",
+      additionalGuestNames.length > 0
+        ? `${w.additionalGuests}: ${additionalGuestNames.join(", ")}`
+        : "",
+      `${w.total}: €${total}`,
       ``,
-      name ? `Name: ${name}` : "",
-      email ? `Email: ${email}` : "",
-      phone ? `Phone: ${phone}` : "",
-      message ? `Message: ${message}` : "",
+      name ? `${w.name}: ${name}` : "",
+      email ? `${w.email}: ${email}` : "",
+      phone ? `${w.phone}: ${phone}` : "",
+      message ? `${w.message}: ${message}` : "",
     ]
       .filter(Boolean)
       .join("\n");
 
-    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(lines)}`, "_blank");
+    // ru → Telegram (no prefill query supported); everything else → WhatsApp
+    const channel = getContactChannelWithMessage(locale, lines);
+    window.open(channel.url, "_blank");
   };
 
   const sendAbandonment = async (trigger: string) => {
@@ -646,15 +660,15 @@ export default function BookingModal({ booking, onClose }: Props) {
           <div className="p-5 flex items-center justify-between">
             <h2 className="text-lg font-bold text-[var(--heading)]">
               {modalState === "success"
-                ? "Booking Confirmed!"
+                ? t.headerTitleSuccess
                 : modalState === "error"
-                ? "Booking Failed"
-                : "Complete Your Booking"}
+                ? t.headerTitleError
+                : t.headerTitleForm}
             </h2>
             <button
               onClick={() => handleModalClose("close_button")}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface-alt)] text-[var(--heading)] shadow-sm transition-colors hover:bg-white"
-              aria-label="Close booking modal"
+              aria-label={t.closeModalAria}
             >
               <X className="h-4.5 w-4.5" />
             </button>
@@ -758,11 +772,10 @@ export default function BookingModal({ booking, onClose }: Props) {
                     ))}
                   </motion.div>
                   <h3 className="text-xl font-bold text-[var(--heading)]">
-                    Thank you, {name}!
+                    {t.thankYouHeading(name)}
                   </h3>
                   <p className="text-[var(--body-text)] text-sm mt-1">
-                    Your reservation has been received. Our team will contact
-                    you shortly to confirm your booking.
+                    {t.successBody}
                   </p>
                 </div>
 
@@ -774,20 +787,20 @@ export default function BookingModal({ booking, onClose }: Props) {
                   className="bg-[var(--surface-alt)] rounded-xl p-4 text-center"
                 >
                   <div className="text-xs text-[var(--text-muted)] mb-1">
-                    Reservation ID
+                    {t.reservationIdLabel}
                   </div>
                   <div className="text-2xl font-bold text-[var(--brand-primary)] tracking-wider font-mono">
                     {reservationId}
                   </div>
                   <p className="text-xs text-[var(--text-muted)] mt-2">
-                    Confirmation sent to <strong>{email}</strong>
+                    {t.confirmationSentLine(email)}
                   </p>
                 </motion.div>
 
                 {/* Booking summary */}
                 <div className="bg-white border border-[var(--line)] rounded-xl p-4 space-y-2.5">
                   <div className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
-                    Your Booking
+                    {t.yourBookingLabel}
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div className="flex items-center gap-2 text-[var(--body-text)]">
@@ -818,13 +831,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                       <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                       <div>
                         <div className="text-sm font-semibold text-blue-900">
-                          Meeting Point
+                          {t.meetingPointTitle}
                         </div>
                         <div className="text-sm text-blue-800 mt-0.5">
                           {booking.departurePoint}
                         </div>
                         <div className="text-xs text-blue-600 mt-1">
-                          Please arrive 15 minutes before departure
+                          {t.arriveEarlyNote}
                         </div>
                       </div>
                     </div>
@@ -834,26 +847,20 @@ export default function BookingModal({ booking, onClose }: Props) {
                 {/* Tips */}
                 <div className="rounded-xl border border-[var(--line)] p-4">
                   <div className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-2.5">
-                    Good to Know
+                    {t.goodToKnowTitle}
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-start gap-2.5 text-sm text-[var(--body-text)]">
                       <Info className="w-3.5 h-3.5 text-[var(--brand-primary)] shrink-0 mt-0.5" />
-                      <span>
-                        Payment is collected onboard — no prepayment needed
-                      </span>
+                      <span>{t.goodToKnowPaymentLine}</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-sm text-[var(--body-text)]">
                       <Camera className="w-3.5 h-3.5 text-[var(--brand-primary)] shrink-0 mt-0.5" />
-                      <span>
-                        Bring your camera — the views are spectacular!
-                      </span>
+                      <span>{t.goodToKnowCameraLine}</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-sm text-[var(--body-text)]">
                       <Shield className="w-3.5 h-3.5 text-green-500 shrink-0 mt-0.5" />
-                      <span>
-                        Free cancellation up to 24 hours before departure
-                      </span>
+                      <span>{t.goodToKnowCancellationLine}</span>
                     </div>
                   </div>
                 </div>
@@ -864,21 +871,21 @@ export default function BookingModal({ booking, onClose }: Props) {
                     href={`/reservation/${reservationId}`}
                     className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                   >
-                    Track Your Reservation
+                    {t.trackReservationCta}
                   </a>
                   <a
                     href={`/reservation/${reservationId}/invoice`}
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
                   >
                     <FileText className="w-4 h-4" />
-                    Open Reservation Invoice
+                    {t.openInvoiceCta}
                   </a>
                   <a
                     href={`/reservation/${reservationId}/voucher`}
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--heading)] text-white font-semibold hover:brightness-110 transition-all text-sm"
                   >
                     <Package className="w-4 h-4" />
-                    Open Travel Voucher
+                    {t.openVoucherCta}
                   </a>
                   <a
                     href={buildCalendarUrl(booking)}
@@ -887,35 +894,46 @@ export default function BookingModal({ booking, onClose }: Props) {
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
                   >
                     <CalendarPlus className="w-4 h-4" />
-                    Add to Google Calendar
+                    {t.addToCalendarCta}
                   </a>
-                  <a
-                    href={`https://wa.me/905448989812?text=${encodeURIComponent(
-                      `Hi! My reservation ID is ${reservationId}. I'd like to confirm my booking.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(event) =>
-                      handleTrackedContactNavigation(event, {
-                        href: `https://wa.me/905448989812?text=${encodeURIComponent(
-                          `Hi! My reservation ID is ${reservationId}. I'd like to confirm my booking.`
-                        )}`,
-                        intent: "post_booking",
-                        kind: "whatsapp",
-                        label: "reservation_confirmation_whatsapp",
-                        location: booking.tourSlug,
-                      })
-                    }
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Confirm via WhatsApp
-                  </a>
+                  {(() => {
+                    // ru → Telegram (prefill dropped), other locales → WhatsApp
+                    const confirmChannel = getContactChannelWithMessage(
+                      locale,
+                      t.confirmReservationMessage(reservationId),
+                    );
+                    return (
+                      <a
+                        href={confirmChannel.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(event) =>
+                          handleTrackedContactNavigation(event, {
+                            href: confirmChannel.url,
+                            intent: "post_booking",
+                            // analytics ContactNavigationKind has no
+                            // "telegram"; bucket Telegram under whatsapp,
+                            // disambiguate via label.
+                            kind: "whatsapp",
+                            label:
+                              confirmChannel.icon === "telegram"
+                                ? "reservation_confirmation_telegram"
+                                : "reservation_confirmation_whatsapp",
+                            location: booking.tourSlug,
+                          })
+                        }
+                        className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                      >
+                        <Phone className="w-4 h-4" />
+                        {t.confirmViaContactCta(confirmChannel.label)}
+                      </a>
+                    );
+                  })()}
                   <button
                     onClick={() => handleModalClose("close_button")}
                     className="w-full py-2.5 text-[var(--text-muted)] font-medium hover:text-[var(--body-text)] transition-all text-sm"
                   >
-                    Close
+                    {t.closeCta}
                   </button>
                 </div>
               </motion.div>
@@ -938,18 +956,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                 </motion.div>
                 <div>
                   <h3 className="text-xl font-bold text-[var(--heading)]">
-                    Something went wrong
+                    {t.errorTitle}
                   </h3>
                   <p className="text-[var(--body-text)] text-sm mt-2 max-w-sm mx-auto">
                     {errorMessage}
                   </p>
                 </div>
                 <div className="bg-red-50 border border-red-100 rounded-xl p-4 text-left max-w-sm mx-auto">
-                  <p className="text-sm text-red-700">
-                    Don&apos;t worry — no charges have been made. You can try
-                    again or reach us directly on WhatsApp for immediate
-                    assistance.
-                  </p>
+                  <p className="text-sm text-red-700">{t.errorBody}</p>
                 </div>
                 <div className="space-y-2.5 pt-2">
                   <button
@@ -957,14 +971,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                     className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                   >
                     <RefreshCw className="w-4 h-4" />
-                    Try Again
+                    {t.tryAgainCta}
                   </button>
                   <button
                     onClick={handleWhatsApp}
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                   >
                     <Phone className="w-4 h-4" />
-                    Book via WhatsApp Instead
+                    {t.bookViaContactInstead(contactChannel.label)}
                   </button>
                 </div>
               </motion.div>
@@ -985,10 +999,10 @@ export default function BookingModal({ booking, onClose }: Props) {
                 </motion.div>
                 <div>
                   <p className="text-[var(--heading)] font-semibold">
-                    Creating your reservation...
+                    {t.loadingTitle}
                   </p>
                   <p className="text-sm text-[var(--text-muted)] mt-1">
-                    This will only take a moment
+                    {t.loadingSubtitle}
                   </p>
                 </div>
               </div>
@@ -1037,7 +1051,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                       )}
                       <div className="flex items-center gap-2 text-[var(--body-text)]">
                         <Users className="w-4 h-4 text-[var(--brand-primary)]" />
-                        {booking.guests} guest{booking.guests > 1 ? "s" : ""}
+                        {t.guestsLabel(booking.guests)}
                       </div>
                       {booking.departurePoint && (
                         <div className="flex items-center gap-2 text-[var(--body-text)]">
@@ -1050,7 +1064,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                           <Package className="w-4 h-4 text-[var(--brand-primary)]" />
                           {booking.selectedPackage.name} — €
                           {booking.selectedPackage.price}
-                          {isPerGroup ? "/group" : "/person"}
+                          {isPerGroup ? t.perGroup : t.perPerson}
                         </div>
                       )}
                       {mixedActive && mixedSecondaryPackage && (
@@ -1058,14 +1072,17 @@ export default function BookingModal({ booking, onClose }: Props) {
                           <Package className="w-4 h-4 text-[var(--brand-primary)]" />
                           {mixedSecondaryPackage.name} — €
                           {mixedSecondaryPackage.price}
-                          /person
+                          {t.perPerson}
                         </div>
                       )}
                       {mixedActive && (
                         <p className="text-xs text-[var(--text-muted)] pl-6">
-                          {mixedPrimaryGuests} guest{mixedPrimaryGuests > 1 ? "s" : ""} on{" "}
-                          {booking.selectedPackage?.name}, {mixedSecondaryGuests} guest
-                          {mixedSecondaryGuests > 1 ? "s" : ""} on {mixedSecondaryName}.
+                          {t.mixedSummaryLine(
+                            mixedPrimaryGuests,
+                            booking.selectedPackage?.name ?? "",
+                            mixedSecondaryGuests,
+                            mixedSecondaryName,
+                          )}
                         </p>
                       )}
 
@@ -1103,11 +1120,10 @@ export default function BookingModal({ booking, onClose }: Props) {
                             </span>
                             <div className="text-xs leading-snug text-[var(--body-text)] flex-1">
                               <span className="font-semibold text-[var(--heading)] text-sm">
-                                Mixed packages
+                                {t.mixedPackagesTitle}
                               </span>
                               <p className="mt-0.5 text-[var(--text-muted)]">
-                                Some guests want a different package? Split the
-                                booking across two (e.g. alcohol + soft drinks).
+                                {t.mixedPackagesHelp}
                               </p>
                             </div>
                           </button>
@@ -1117,7 +1133,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                               <div className="flex items-center justify-between rounded-lg bg-[var(--surface-alt)] px-3 py-2">
                                 <div className="min-w-0">
                                   <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
-                                    Package 1
+                                    {t.package1}
                                   </div>
                                   <div className="text-sm font-semibold text-[var(--heading)] truncate">
                                     {booking.selectedPackage?.name}
@@ -1125,7 +1141,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                                 </div>
                                 <div className="shrink-0 text-right">
                                   <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
-                                    Guests
+                                    {t.guestsHeader}
                                   </div>
                                   <div className="text-sm font-bold text-[var(--brand-primary)]">
                                     {mixedPrimaryGuests}
@@ -1135,7 +1151,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                               {/* Secondary package picker */}
                               <div className="rounded-lg bg-[var(--surface-alt)] px-3 py-2 space-y-2">
                                 <div className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
-                                  Package 2
+                                  {t.package2}
                                 </div>
                                 <select
                                   value={mixedSecondaryName}
@@ -1144,13 +1160,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                                 >
                                   {otherPackages.map((pkg) => (
                                     <option key={pkg.name} value={pkg.name}>
-                                      {pkg.name} (€{pkg.price}/person)
+                                      {pkg.name} (€{pkg.price}{t.perPerson})
                                     </option>
                                   ))}
                                 </select>
                                 <div className="flex items-center justify-between gap-3">
                                   <span className="text-xs text-[var(--text-muted)]">
-                                    Guests on Package 2
+                                    {t.guestsOnPackage2}
                                   </span>
                                   <div className="inline-flex items-center rounded-full border border-[var(--line)] bg-white">
                                     <button
@@ -1160,7 +1176,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                                       }
                                       disabled={mixedSecondaryGuests <= 1}
                                       className="h-8 w-8 text-lg leading-none text-[var(--heading)] disabled:opacity-30 hover:bg-[var(--surface-alt)] rounded-l-full"
-                                      aria-label="Decrease"
+                                      aria-label={t.decreaseAria}
                                     >
                                       −
                                     </button>
@@ -1176,7 +1192,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                                       }
                                       disabled={mixedSecondaryGuests >= booking.guests - 1}
                                       className="h-8 w-8 text-lg leading-none text-[var(--heading)] disabled:opacity-30 hover:bg-[var(--surface-alt)] rounded-r-full"
-                                      aria-label="Increase"
+                                      aria-label={t.increaseAria}
                                     >
                                       +
                                     </button>
@@ -1191,7 +1207,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                     {booking.selectedAddOns.length > 0 && (
                       <div className="pt-2 border-t border-[var(--line)]">
                         <div className="text-xs text-[var(--text-muted)] mb-1">
-                          Add-ons:
+                          {t.addOnsLabel}
                         </div>
                         <div className="flex flex-wrap gap-1.5">
                           {booking.selectedAddOns.map((a) => (
@@ -1209,24 +1225,27 @@ export default function BookingModal({ booking, onClose }: Props) {
                     {weeklyDiscountResult.eligible && (
                       <div className="pt-2 border-t border-[var(--line)]">
                         <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
-                          {weeklyDiscountResult.label || "Weekday discount applied"} — €{weeklyDiscountResult.savingsPerUnit}/person saved
+                          {t.weekdayDiscountSavingsLine(
+                            weeklyDiscountResult.label || t.weekdayDiscountFallback,
+                            weeklyDiscountResult.savingsPerUnit,
+                          )}
                         </div>
                       </div>
                     )}
                     {groupDiscount.eligible && groupDiscount.savings > 0 && (
                       <div className="pt-2 border-t border-[var(--line)] space-y-1">
                         <div className="flex items-center justify-between text-xs text-[var(--text-muted)]">
-                          <span>Subtotal</span>
+                          <span>{t.subtotal}</span>
                           <span>€{originalTotal}</span>
                         </div>
                         <div className="flex items-center justify-between text-xs font-semibold text-emerald-700">
-                          <span>Group discount</span>
+                          <span>{t.groupDiscount}</span>
                           <span>−€{groupDiscount.savings}</span>
                         </div>
                       </div>
                     )}
                     <div className="pt-2 border-t border-[var(--line)] flex items-center justify-between">
-                      <span className="font-semibold text-sm">Total</span>
+                      <span className="font-semibold text-sm">{t.total}</span>
                       <span className="text-xl font-bold text-[var(--heading)]">
                         €{total}
                       </span>
@@ -1237,11 +1256,11 @@ export default function BookingModal({ booking, onClose }: Props) {
                   <div className="hidden md:block space-y-2.5 text-xs text-[var(--text-muted)]">
                     <div className="flex items-center gap-2">
                       <Shield className="w-3.5 h-3.5 text-green-500" />
-                      Free cancellation up to 24h before
+                      {t.freeCancellation}
                     </div>
                     <div className="flex items-center gap-2">
                       <Info className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
-                      Pay onboard — no prepayment
+                      {t.payOnboard}
                     </div>
                   </div>
                 </div>
@@ -1266,7 +1285,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                   {/* Full Name */}
                   <div>
                     <label className="block text-sm font-medium mb-1.5 text-[var(--heading)]">
-                      Full Name *
+                      {t.fullNameLabel}
                     </label>
                     <input
                       ref={nameInputRef}
@@ -1283,13 +1302,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
                           : "border-[var(--line)] focus:border-[var(--brand-primary)]"
                       }`}
-                      placeholder="John Doe"
+                      placeholder={t.fullNamePlaceholder}
                       required
                     />
                     {showNameError && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        Please enter your full name (at least 2 characters)
+                        {t.fullNameError}
                       </p>
                     )}
                   </div>
@@ -1297,7 +1316,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                   {/* Email */}
                   <div>
                     <label className="block text-sm font-medium mb-1.5 text-[var(--heading)]">
-                      Email *
+                      {t.emailLabel}
                     </label>
                     <input
                       ref={emailInputRef}
@@ -1314,13 +1333,13 @@ export default function BookingModal({ booking, onClose }: Props) {
                           ? "border-red-300 focus:border-red-400 bg-red-50/50"
                           : "border-[var(--line)] focus:border-[var(--brand-primary)]"
                       }`}
-                      placeholder="john@example.com"
+                      placeholder={t.emailPlaceholder}
                       required
                     />
                     {showEmailError && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        Please enter a valid email address
+                        {t.emailError}
                       </p>
                     )}
                   </div>
@@ -1328,7 +1347,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                   {/* Phone */}
                   <div ref={phoneFieldRef}>
                     <label className="block text-sm font-medium mb-1.5 text-[var(--heading)]">
-                      Phone *
+                      {t.phoneLabel}
                     </label>
                     <PhoneInput
                       defaultCountry="tr"
@@ -1345,14 +1364,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                       className="!w-full"
                       inputProps={{
                         autoComplete: "tel",
-                        placeholder: "+90 5xx xxx xx xx",
+                        placeholder: t.phonePlaceholder,
                         onBlur: () => setTouchedPhone(true),
                       }}
                     />
                     {showPhoneError && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        Please enter a valid phone number
+                        {t.phoneError}
                       </p>
                     )}
                   </div>
@@ -1372,30 +1391,29 @@ export default function BookingModal({ booking, onClose }: Props) {
                             htmlFor="private-transfer-request"
                             className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm font-semibold text-[var(--heading)]"
                           >
-                            I want private transfer support
+                            {t.transferTitle}
                             <span className="text-xs font-normal text-[var(--text-muted)]">
-                              (no extra fee at this step — we&apos;ll coordinate
-                              pickup details over WhatsApp)
+                              {t.transferNoExtraFee}
                             </span>
                             <button
                               type="button"
                               onClick={() => setShowTransferInfo((value) => !value)}
                               className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-[var(--brand-primary)]"
-                              aria-label="Show private transfer details"
+                              aria-label={t.transferAria}
                             >
                               <Info className="h-3.5 w-3.5" />
                             </button>
                           </label>
                           <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
                             {booking.tourSlug === "bosphorus-dinner-cruise"
-                              ? "Dinner cruise reservations already use the central hotel shuttle flow when the route includes it."
-                              : "Sunset cruise guests can request hotel pickup and drop-off as an extra service."}
+                              ? t.transferDinnerCruiseBody
+                              : t.transferSunsetCruiseBody}
                           </p>
                           {showTransferInfo && (
                             <div className="mt-2 rounded-xl border border-[var(--brand-primary)]/15 bg-white px-3 py-2 text-xs leading-relaxed text-[var(--body-text)]">
                               {booking.tourSlug === "bosphorus-dinner-cruise"
-                                ? "The shared dinner cruise already works with the operational shuttle flow for central areas. If you want a private transfer instead, tick this option and our team will quote it separately."
-                                : "The sunset cruise does not include a free hotel shuttle by default. If you want hotel pickup, drop-off, or a private transfer, tick this option and our team will quote it separately."}
+                                ? t.transferDinnerCruiseExpanded
+                                : t.transferSunsetCruiseExpanded}
                             </div>
                           )}
                         </div>
@@ -1418,11 +1436,10 @@ export default function BookingModal({ booking, onClose }: Props) {
                             htmlFor="additional-guests-toggle"
                             className="text-sm font-semibold text-[var(--heading)]"
                           >
-                            Add other passenger names
+                            {t.additionalGuestsTitle}
                           </label>
                           <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
-                            Optional. You can add the names of the other {booking.guests - 1} guest
-                            {booking.guests - 1 > 1 ? "s" : ""} for smoother follow-up.
+                            {t.additionalGuestsHelp(booking.guests - 1)}
                           </p>
                           {showAdditionalGuests && (
                             <textarea
@@ -1430,7 +1447,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                               onChange={(event) => setAdditionalGuestsText(event.target.value)}
                               rows={Math.min(5, Math.max(2, booking.guests - 1))}
                               className="mt-3 w-full rounded-xl border-2 border-[var(--line)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--brand-primary)] md:text-sm"
-                              placeholder={"One passenger per line\nJane Doe\nMichael Doe"}
+                              placeholder={t.additionalGuestsPlaceholder}
                             />
                           )}
                         </div>
@@ -1441,14 +1458,14 @@ export default function BookingModal({ booking, onClose }: Props) {
                   {/* Special Requests */}
                   <div>
                     <label className="block text-sm font-medium mb-1.5 text-[var(--heading)]">
-                      Special Requests
+                      {t.specialRequestsLabel}
                     </label>
                     <textarea
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows={3}
                       className="w-full resize-none rounded-xl border-2 border-[var(--line)] px-4 py-3 text-base transition-colors focus:border-[var(--brand-primary)] focus:outline-none md:text-sm"
-                      placeholder="Any special requests or requirements..."
+                      placeholder={t.specialRequestsPlaceholder}
                     />
                   </div>
 
@@ -1465,25 +1482,24 @@ export default function BookingModal({ booking, onClose }: Props) {
                       whileTap={{ scale: 0.98 }}
                     >
                       <Check className="w-4 h-4" />
-                      Confirm Booking — €{total}
+                      {t.confirmBookingCta(total)}
                     </motion.button>
                     <button
                       onClick={handleWhatsApp}
                       className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                     >
                       <Phone className="w-4 h-4" />
-                      Or Book via WhatsApp
+                      {t.orBookViaContact(contactChannel.label)}
                     </button>
                   </div>
 
                   {/* Trust on mobile */}
                   <div className="md:hidden flex items-center gap-2 text-xs text-[var(--text-muted)] justify-center pb-2">
                     <Shield className="w-3.5 h-3.5" />
-                    Free cancellation up to 24h before the tour &bull; Pay
-                    onboard
+                    {t.mobileTrustLine}
                   </div>
                   <div className="md:hidden text-center text-[11px] text-[var(--text-muted)]">
-                    Need help first? Call or WhatsApp {PHONE_DISPLAY}
+                    {t.mobileNeedHelpLine(PHONE_DISPLAY)}
                   </div>
                 </div>
               </div>

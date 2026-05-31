@@ -9,10 +9,15 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { PHONE_DISPLAY } from "@/lib/constants";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import {
+  detectChromeLocaleFromPathname,
+  getHeaderStrings,
+  type ChromeLocale,
+} from "@/i18n/chrome-strings";
 
-type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
+type NavLocale = ChromeLocale;
 
-const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl"];
+const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
 const LOCALIZED_ROUTES = new Set<string>([
   "/bosphorus-cruise",
@@ -64,99 +69,6 @@ type NavLabelKey =
   | "reserveOnline"
   | "reserve";
 
-const NAV_LABELS: Record<NavLocale, Record<NavLabelKey, string>> = {
-  en: {
-    cruises: "Cruises",
-    sunsetCruise: "Sunset Cruise",
-    dinnerCruise: "Dinner Cruise",
-    yachtCharter: "Yacht Charter",
-    guides: "Guides",
-    blog: "Blog",
-    istanbulGuides: "Istanbul Guides",
-    kabatasPier: "Kabatas Pier",
-    karakoyWaterfront: "Karakoy Waterfront",
-    faq: "FAQ",
-    about: "About",
-    contact: "Contact",
-    reserveOnline: "Reserve Online",
-    reserve: "Reserve",
-  },
-  tr: {
-    cruises: "Turlar",
-    sunsetCruise: "Gün Batımı Turu",
-    dinnerCruise: "Akşam Yemeği Turu",
-    yachtCharter: "Yat Kiralama",
-    guides: "Rehberler",
-    blog: "Blog",
-    istanbulGuides: "İstanbul Rehberleri",
-    kabatasPier: "Kabataş İskelesi",
-    karakoyWaterfront: "Karaköy Sahili",
-    faq: "SSS",
-    about: "Hakkımızda",
-    contact: "İletişim",
-    reserveOnline: "Online Rezervasyon",
-    reserve: "Rezervasyon",
-  },
-  de: {
-    cruises: "Kreuzfahrten",
-    sunsetCruise: "Sonnenuntergang",
-    dinnerCruise: "Dinner-Kreuzfahrt",
-    yachtCharter: "Yachtcharter",
-    guides: "Reiseführer",
-    blog: "Blog",
-    istanbulGuides: "Istanbul-Reiseführer",
-    kabatasPier: "Kabataş-Pier",
-    karakoyWaterfront: "Karaköy-Uferpromenade",
-    faq: "FAQ",
-    about: "Über uns",
-    contact: "Kontakt",
-    reserveOnline: "Online Buchen",
-    reserve: "Buchen",
-  },
-  fr: {
-    cruises: "Croisières",
-    sunsetCruise: "Coucher de Soleil",
-    dinnerCruise: "Dîner-Croisière",
-    yachtCharter: "Location Yacht",
-    guides: "Guides",
-    blog: "Blog",
-    istanbulGuides: "Guides Istanbul",
-    kabatasPier: "Débarcadère Kabataş",
-    karakoyWaterfront: "Front de mer Karaköy",
-    faq: "FAQ",
-    about: "À propos",
-    contact: "Contact",
-    reserveOnline: "Réserver en Ligne",
-    reserve: "Réserver",
-  },
-  nl: {
-    cruises: "Rondvaarten",
-    sunsetCruise: "Zonsondergang",
-    dinnerCruise: "Diner-Cruise",
-    yachtCharter: "Jachthuur",
-    guides: "Gidsen",
-    blog: "Blog",
-    istanbulGuides: "Istanbul Gidsen",
-    kabatasPier: "Kabataş Pier",
-    karakoyWaterfront: "Karaköy Waterkant",
-    faq: "FAQ",
-    about: "Over ons",
-    contact: "Contact",
-    reserveOnline: "Online Reserveren",
-    reserve: "Reserveren",
-  },
-};
-
-function detectLocale(pathname: string | null): NavLocale {
-  if (!pathname) return "en";
-  const segments = pathname.split("/").filter(Boolean);
-  const first = segments[0];
-  if (first && (NAV_LOCALES as string[]).includes(first)) {
-    return first as NavLocale;
-  }
-  return "en";
-}
-
 function localizeHref(href: string, locale: NavLocale): string {
   if (locale === "en") return href;
   if (LOCALIZED_ROUTES.has(href)) {
@@ -193,8 +105,8 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const locale = detectLocale(pathname);
-  const t = NAV_LABELS[locale];
+  const locale = detectChromeLocaleFromPathname(pathname);
+  const t = getHeaderStrings(locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -294,13 +206,13 @@ export default function Header() {
                     variant="ghost"
                     size="icon"
                     className="h-10 w-10 lg:hidden"
-                    aria-label="Open navigation menu"
+                    aria-label={t.openNavMenu}
                   >
                     <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-80 bg-white p-0">
-                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                  <SheetTitle className="sr-only">{t.navigationMenu}</SheetTitle>
                   <div className="flex h-full flex-col overflow-y-auto">
                     <div className="p-6 pb-0">
                       <div className="mb-6 flex items-center gap-2">
@@ -330,7 +242,11 @@ export default function Header() {
                                       openMobileDropdown === item.labelKey ? null : item.labelKey
                                     )
                                   }
-                                  aria-label={`${openMobileDropdown === item.labelKey ? "Collapse" : "Expand"} ${t[item.labelKey]} menu`}
+                                  aria-label={
+                                    openMobileDropdown === item.labelKey
+                                      ? t.collapseMenu(t[item.labelKey])
+                                      : t.expandMenu(t[item.labelKey])
+                                  }
                                   className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-gray-50"
                                 >
                                   <ChevronDown
@@ -367,7 +283,7 @@ export default function Header() {
                     </nav>
                     <div className="space-y-3 border-t border-gray-100 p-6 pt-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-[var(--text-muted)]">Language</span>
+                        <span className="text-sm font-medium text-[var(--text-muted)]">{t.languageHeading}</span>
                         <LanguageSwitcher compact />
                       </div>
                       <a

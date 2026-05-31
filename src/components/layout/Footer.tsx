@@ -23,10 +23,15 @@ import {
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import NewsletterSignup from "@/components/marketing/NewsletterSignup";
 import PaymentTrust from "@/components/marketing/PaymentTrust";
+import {
+  detectChromeLocaleFromPathname,
+  getFooterStrings,
+  type ChromeLocale,
+} from "@/i18n/chrome-strings";
 
-type NavLocale = "en" | "tr" | "de" | "fr" | "nl";
+type NavLocale = ChromeLocale;
 
-const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl"];
+const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
 const FOOTER_LOCALIZED_ROUTES = new Set([
   "/bosphorus-cruise",
@@ -69,203 +74,135 @@ function localizeHref(href: string, locale: NavLocale): string {
 }
 
 type FooterCoreLink = { label: string; href: string };
-
 type PartnerLink = { label: string; href: string };
 
-type FooterTranslation = {
-  description: string;
-  coreProducts: string;
-  supportRoutes: string;
-  company: string;
-  blogHighlights: string;
-  guideTopics: string;
-  partnerServices: string;
-  sisterBrands: string;
-  viewLicense: string;
-  copyright: string;
-  privacyPolicy: string;
-  terms: string;
-  coreLinks: FooterCoreLink[];
-  partnerLinks: PartnerLink[];
-  sisterLinks: PartnerLink[];
+const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
+  en: [
+    { label: "Bosphorus Cruise Istanbul", href: "/bosphorus-cruise" },
+    { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
+    { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
+    { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
+    { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
+  ],
+  tr: [
+    { label: "İstanbul Boğaz Turu", href: "/tr/bosphorus-cruise" },
+    { label: "Boğaz Gün Batımı Turu", href: "/tr/cruises/bosphorus-sunset-cruise" },
+    { label: "Boğaz Akşam Yemeği Turu", href: "/tr/istanbul-dinner-cruise" },
+    { label: "İstanbul Yat Kiralama", href: "/tr/yacht-charter-istanbul" },
+    { label: "İstanbul Tekne Kiralama", href: "/tr/boat-rental-istanbul" },
+  ],
+  de: [
+    { label: "Bosporus-Kreuzfahrt Istanbul", href: "/de/bosphorus-cruise" },
+    { label: "Bosporus-Sonnenuntergangsfahrt", href: "/de/cruises/bosphorus-sunset-cruise" },
+    { label: "Bosporus-Dinner-Kreuzfahrt", href: "/de/istanbul-dinner-cruise" },
+    { label: "Yachtcharter Istanbul", href: "/de/yacht-charter-istanbul" },
+    { label: "Bootsvermietung Istanbul", href: "/de/boat-rental-istanbul" },
+  ],
+  fr: [
+    { label: "Croisière Bosphore Istanbul", href: "/fr/bosphorus-cruise" },
+    { label: "Croisière Coucher de Soleil", href: "/fr/cruises/bosphorus-sunset-cruise" },
+    { label: "Dîner-Croisière Bosphore", href: "/fr/istanbul-dinner-cruise" },
+    { label: "Location Yacht Istanbul", href: "/fr/yacht-charter-istanbul" },
+    { label: "Location Bateau Istanbul", href: "/fr/boat-rental-istanbul" },
+  ],
+  nl: [
+    { label: "Bosporus Cruise Istanbul", href: "/nl/bosphorus-cruise" },
+    { label: "Bosporus Zonsondergangtocht", href: "/nl/cruises/bosphorus-sunset-cruise" },
+    { label: "Bosporus Dinercruise", href: "/nl/istanbul-dinner-cruise" },
+    { label: "Jachthuur Istanbul", href: "/nl/yacht-charter-istanbul" },
+    { label: "Bootsverhuur Istanbul", href: "/nl/boat-rental-istanbul" },
+  ],
+  ru: [
+    { label: "Круиз по Босфору Стамбул", href: "/ru/bosphorus-cruise" },
+    { label: "Круиз на закат по Босфору", href: "/ru/cruises/bosphorus-sunset-cruise" },
+    { label: "Ужин-круиз по Босфору", href: "/ru/istanbul-dinner-cruise" },
+    { label: "Аренда яхты в Стамбуле", href: "/ru/yacht-charter-istanbul" },
+    { label: "Аренда катера в Стамбуле", href: "/ru/boat-rental-istanbul" },
+  ],
 };
 
-const FOOTER_TRANSLATIONS: Record<NavLocale, FooterTranslation> = {
-  en: {
-    description:
-      "Direct Bosphorus bookings for sunset cruise, dinner cruise, and private yacht charter in Istanbul.",
-    coreProducts: "Core Products",
-    supportRoutes: "Support Routes",
-    company: "Company",
-    blogHighlights: "Blog Highlights",
-    guideTopics: "Guide Topics",
-    partnerServices: "Partner Services",
-    sisterBrands: "Group Brands",
-    viewLicense: "View license details",
-    copyright: "All rights reserved.",
-    privacyPolicy: "Privacy Policy",
-    terms: "Terms & Conditions",
-    coreLinks: [
-      { label: "Bosphorus Cruise Istanbul", href: "/bosphorus-cruise" },
-      { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
-      { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
-      { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
-      { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
-    ],
-    partnerLinks: [
-      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-      { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-    ],
-    sisterLinks: [
-      { label: "GoldenSunsetTour — Bosphorus Cruises", href: "https://www.goldensunsettour.com/" },
-      { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-      { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-      { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
-      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-    ],
-  },
-  tr: {
-    description:
-      "İstanbul'da gün batımı turu, akşam yemeği turu ve özel yat kiralama için doğrudan Boğaz rezervasyonları.",
-    coreProducts: "Ana Ürünler",
-    supportRoutes: "Destek Sayfaları",
-    company: "Şirket",
-    blogHighlights: "Blog",
-    guideTopics: "Rehberler",
-    partnerServices: "Ortak Hizmetler",
-    sisterBrands: "Grup Markaları",
-    viewLicense: "Lisans detaylarını görüntüle",
-    copyright: "Tüm hakları saklıdır.",
-    privacyPolicy: "Gizlilik Politikası",
-    terms: "Kullanım Şartları",
-    coreLinks: [
-      { label: "İstanbul Boğaz Turu", href: "/tr/bosphorus-cruise" },
-      { label: "Boğaz Gün Batımı Turu", href: "/tr/cruises/bosphorus-sunset-cruise" },
-      { label: "Boğaz Akşam Yemeği Turu", href: "/tr/istanbul-dinner-cruise" },
-      { label: "İstanbul Yat Kiralama", href: "/tr/yacht-charter-istanbul" },
-      { label: "İstanbul Tekne Kiralama", href: "/tr/boat-rental-istanbul" },
-    ],
-    partnerLinks: [
-      { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
-      { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
-      { label: "VIP Transfer İstanbul", href: "https://www.merrytourism.com/tr/vip-transfer" },
-    ],
-    sisterLinks: [
-      { label: "GoldenSunsetTour — Boğaz Turları", href: "https://www.goldensunsettour.com/" },
-      { label: "GoldenSunsetTour — Gün Batımı Turu", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-      { label: "GoldenSunsetTour — Akşam Yemeği Turu", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-      { label: "MerryTourism — Transfer", href: "https://www.merrytourism.com/tr" },
-      { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
-      { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
-    ],
-  },
-  de: {
-    description:
-      "Direkte Buchungen für Sonnenuntergangs-Kreuzfahrten, Dinner-Kreuzfahrten und privaten Yachtcharter auf dem Bosporus in Istanbul.",
-    coreProducts: "Hauptprodukte",
-    supportRoutes: "Support-Seiten",
-    company: "Unternehmen",
-    blogHighlights: "Blog",
-    guideTopics: "Reiseführer",
-    partnerServices: "Partner-Services",
-    sisterBrands: "Konzernmarken",
-    viewLicense: "Lizenzdetails ansehen",
-    copyright: "Alle Rechte vorbehalten.",
-    privacyPolicy: "Datenschutzrichtlinie",
-    terms: "Nutzungsbedingungen",
-    coreLinks: [
-      { label: "Bosporus-Kreuzfahrt Istanbul", href: "/de/bosphorus-cruise" },
-      { label: "Bosporus-Sonnenuntergangsfahrt", href: "/de/cruises/bosphorus-sunset-cruise" },
-      { label: "Bosporus-Dinner-Kreuzfahrt", href: "/de/istanbul-dinner-cruise" },
-      { label: "Yachtcharter Istanbul", href: "/de/yacht-charter-istanbul" },
-      { label: "Bootsvermietung Istanbul", href: "/de/boat-rental-istanbul" },
-    ],
-    partnerLinks: [
-      { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
-      { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/de/sabiha-gokcen-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/de/vip-transfer" },
-    ],
-    sisterLinks: [
-      { label: "GoldenSunsetTour — Bosporus-Kreuzfahrten", href: "https://www.goldensunsettour.com/" },
-      { label: "GoldenSunsetTour — Sonnenuntergangsfahrt", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-      { label: "GoldenSunsetTour — Dinner-Kreuzfahrt", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-      { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/de" },
-      { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
-      { label: "VIP Transfer Istanbul Festpreis", href: "https://www.merrytourism.com/de/vip-transfer" },
-    ],
-  },
-  fr: {
-    description:
-      "Réservations directes pour croisière coucher de soleil, dîner-croisière et yacht privé sur le Bosphore à Istanbul.",
-    coreProducts: "Produits Phares",
-    supportRoutes: "Pages d'assistance",
-    company: "Entreprise",
-    blogHighlights: "Blog",
-    guideTopics: "Guides de voyage",
-    partnerServices: "Services Partenaires",
-    sisterBrands: "Marques du Groupe",
-    viewLicense: "Voir les détails de la licence",
-    copyright: "Tous droits réservés.",
-    privacyPolicy: "Politique de confidentialité",
-    terms: "Conditions d'utilisation",
-    coreLinks: [
-      { label: "Croisière Bosphore Istanbul", href: "/fr/bosphorus-cruise" },
-      { label: "Croisière Coucher de Soleil", href: "/fr/cruises/bosphorus-sunset-cruise" },
-      { label: "Dîner-Croisière Bosphore", href: "/fr/istanbul-dinner-cruise" },
-      { label: "Location Yacht Istanbul", href: "/fr/yacht-charter-istanbul" },
-      { label: "Location Bateau Istanbul", href: "/fr/boat-rental-istanbul" },
-    ],
-    partnerLinks: [
-      { label: "Transfert Aeroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-      { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-    ],
-    sisterLinks: [
-      { label: "GoldenSunsetTour — Croisières Bosphore", href: "https://www.goldensunsettour.com/" },
-      { label: "GoldenSunsetTour — Coucher de Soleil", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-      { label: "GoldenSunsetTour — Dîner Croisière", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-      { label: "MerryTourism — Transferts", href: "https://www.merrytourism.com/en" },
-      { label: "Transfert Aéroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-    ],
-  },
-  nl: {
-    description:
-      "Directe boekingen voor zonsondergangstochten, dinercruises en privéjachtverhuur op de Bosporus in Istanbul.",
-    coreProducts: "Hoofdproducten",
-    supportRoutes: "Ondersteuningspagina's",
-    company: "Bedrijf",
-    blogHighlights: "Blog",
-    guideTopics: "Reisidsen",
-    partnerServices: "Partnerservices",
-    sisterBrands: "Groepsmerken",
-    viewLicense: "Licentiedetails bekijken",
-    copyright: "Alle rechten voorbehouden.",
-    privacyPolicy: "Privacybeleid",
-    terms: "Algemene Voorwaarden",
-    coreLinks: [
-      { label: "Bosporus Cruise Istanbul", href: "/nl/bosphorus-cruise" },
-      { label: "Bosporus Zonsondergangtocht", href: "/nl/cruises/bosphorus-sunset-cruise" },
-      { label: "Bosporus Dinercruise", href: "/nl/istanbul-dinner-cruise" },
-      { label: "Jachthuur Istanbul", href: "/nl/yacht-charter-istanbul" },
-      { label: "Bootsverhuur Istanbul", href: "/nl/boat-rental-istanbul" },
-    ],
-    partnerLinks: [
-      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-      { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-    ],
-    sisterLinks: [
-      { label: "GoldenSunsetTour — Bosporus Cruises", href: "https://www.goldensunsettour.com/" },
-      { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-      { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-      { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
-      { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-      { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-    ],
-  },
+const PARTNER_LINKS: Record<NavLocale, PartnerLink[]> = {
+  en: [
+    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+  tr: [
+    { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
+    { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
+    { label: "VIP Transfer İstanbul", href: "https://www.merrytourism.com/tr/vip-transfer" },
+  ],
+  de: [
+    { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
+    { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/de/sabiha-gokcen-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/de/vip-transfer" },
+  ],
+  fr: [
+    { label: "Transfert Aeroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+  nl: [
+    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+  ru: [
+    { label: "Трансфер аэропорт Стамбул", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "Трансфер Сабиха Гёкчен", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
+    { label: "VIP-трансфер Стамбул", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+};
+
+const SISTER_LINKS: Record<NavLocale, PartnerLink[]> = {
+  en: [
+    { label: "GoldenSunsetTour — Bosphorus Cruises", href: "https://www.goldensunsettour.com/" },
+    { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+    { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
+    { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
+    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+  tr: [
+    { label: "GoldenSunsetTour — Boğaz Turları", href: "https://www.goldensunsettour.com/" },
+    { label: "GoldenSunsetTour — Gün Batımı Turu", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+    { label: "GoldenSunsetTour — Akşam Yemeği Turu", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
+    { label: "MerryTourism — Transfer", href: "https://www.merrytourism.com/tr" },
+    { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
+    { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
+  ],
+  de: [
+    { label: "GoldenSunsetTour — Bosporus-Kreuzfahrten", href: "https://www.goldensunsettour.com/" },
+    { label: "GoldenSunsetTour — Sonnenuntergangsfahrt", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+    { label: "GoldenSunsetTour — Dinner-Kreuzfahrt", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
+    { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/de" },
+    { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
+    { label: "VIP Transfer Istanbul Festpreis", href: "https://www.merrytourism.com/de/vip-transfer" },
+  ],
+  fr: [
+    { label: "GoldenSunsetTour — Croisières Bosphore", href: "https://www.goldensunsettour.com/" },
+    { label: "GoldenSunsetTour — Coucher de Soleil", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+    { label: "GoldenSunsetTour — Dîner Croisière", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
+    { label: "MerryTourism — Transferts", href: "https://www.merrytourism.com/en" },
+    { label: "Transfert Aéroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+  nl: [
+    { label: "GoldenSunsetTour — Bosporus Cruises", href: "https://www.goldensunsettour.com/" },
+    { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+    { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
+    { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
+    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
+  ru: [
+    { label: "GoldenSunsetTour — Круизы по Босфору", href: "https://www.goldensunsettour.com/" },
+    { label: "GoldenSunsetTour — Круиз на закат", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
+    { label: "GoldenSunsetTour — Ужин-круиз", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
+    { label: "MerryTourism — Трансферы", href: "https://www.merrytourism.com/en" },
+    { label: "Трансфер аэропорт Стамбул", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
+    { label: "VIP-трансфер Стамбул", href: "https://www.merrytourism.com/en/vip-transfer" },
+  ],
 };
 
 const serviceLinks = [
@@ -312,20 +249,13 @@ const guideLinks = [
   { label: "Rumeli Fortress", href: "/guides/rumeli-fortress" },
 ];
 
-function detectLocale(pathname: string | null): NavLocale {
-  if (!pathname) return "en";
-  const segments = pathname.split("/").filter(Boolean);
-  const first = segments[0];
-  if (first && (NAV_LOCALES as string[]).includes(first)) {
-    return first as NavLocale;
-  }
-  return "en";
-}
-
 export default function Footer() {
   const pathname = usePathname();
-  const locale = detectLocale(pathname);
-  const t = FOOTER_TRANSLATIONS[locale];
+  const locale = detectChromeLocaleFromPathname(pathname);
+  const t = getFooterStrings(locale);
+  const coreLinks = CORE_LINKS[locale] ?? CORE_LINKS.en;
+  const partnerLinks = PARTNER_LINKS[locale] ?? PARTNER_LINKS.en;
+  const sisterLinks = SISTER_LINKS[locale] ?? SISTER_LINKS.en;
 
   return (
     <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">
@@ -408,13 +338,13 @@ export default function Footer() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-gold)]">
-                    TURSAB Licensed
+                    {t.tursabLicensed}
                   </p>
                   <p className="mt-2 text-sm font-semibold text-white" translate="no">
                     {TURSAB_AGENCY_NAME}
                   </p>
                   <p className="mt-1 text-xs leading-relaxed text-white/65" translate="no">
-                    Belge No {TURSAB_LICENSE_NUMBER} · {TURSAB_LEGAL_NAME}
+                    {t.tursabLicenseNumberPrefix} {TURSAB_LICENSE_NUMBER} · {TURSAB_LEGAL_NAME}
                   </p>
                   <Link
                     href="/tursab"
@@ -432,7 +362,7 @@ export default function Footer() {
               {t.coreProducts}
             </h3>
             <ul className="space-y-2.5">
-              {t.coreLinks.map((link) => (
+              {coreLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -486,7 +416,7 @@ export default function Footer() {
               {t.partnerServices}
             </h3>
             <ul className="space-y-2.5">
-              {t.partnerLinks.map((link) => (
+              {partnerLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -502,7 +432,7 @@ export default function Footer() {
               {t.sisterBrands}
             </h3>
             <ul className="space-y-2.5">
-              {t.sisterLinks.map((link) => (
+              {sisterLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -562,7 +492,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 md:flex-row">
           <p className="text-sm text-white/70" translate="no">
-            © 2026 MerrySails — Merry Tourism. TURSAB license {TURSAB_LICENSE_NUMBER}. {t.copyright}
+            © 2026 MerrySails — Merry Tourism. {t.tursabLicenseNumberPrefix} {TURSAB_LICENSE_NUMBER}. {t.allRightsReserved}
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="text-sm text-white/70 transition-colors hover:text-white">

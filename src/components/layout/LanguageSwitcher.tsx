@@ -5,6 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { ACTIVE_LOCALES, LOCALE_LABELS, LOCALIZED_ROUTES, type SiteLocale } from "@/i18n/config";
+import {
+  detectChromeLocaleFromPathname,
+  getLanguageSwitcherStrings,
+} from "@/i18n/chrome-strings";
 
 const LOCALE_FLAGS: Partial<Record<SiteLocale, string>> = {
   en: "🇬🇧",
@@ -69,6 +73,7 @@ interface Props {
 
 export default function LanguageSwitcher({ className = "", compact = false }: Props) {
   const pathname = usePathname() ?? "/";
+  const t = getLanguageSwitcherStrings(detectChromeLocaleFromPathname(pathname));
   const { locale: currentLocale, route } = detectFromPathname(pathname);
   // Click-toggle (not hover-only): hover menus are dead clicks on desktop and
   // completely unreachable on touch devices. Clarity showed the language
@@ -103,7 +108,7 @@ export default function LanguageSwitcher({ className = "", compact = false }: Pr
     <div ref={wrapRef} className={`relative ${className}`}>
       <button
         type="button"
-        aria-label="Change language"
+        aria-label={t.changeLanguage}
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
