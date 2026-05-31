@@ -429,7 +429,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
   },
   ru: {
     htmlLang: "ru-RU",
-    metaTitle: "Круиз по Босфору в Стамбуле | Закат, Ужин и Яхта",
+    metaTitle: "Круиз по Босфору — Закат, Ужин, Яхта",
     metaDescription:
       "Эксклюзивные круизы по Босфору от MerrySails: круиз на закате, ужин-круиз и аренда частной яхты. Лицензия TÜRSAB группы А, более 50 000 гостей с 2001 года.",
     hero: {

@@ -718,7 +718,7 @@ export const russianProductPosts: BlogPost[] = [
   {
     slug: "prichaly-otpravleniya-tura-po-bosforu-stambul",
     locale: "ru",
-    title: "Гид по причалам круиза по Босфору в Стамбуле 2026",
+    title: "Причалы круиза по Босфору — Стамбул 2026",
     metaDescription:
       "Эминёню, Кабаташ, Каракёй — какой причал для какого круиза по Босфору. Закатный тур €34–40, ужин-круиз €30–90. Расписание 2026 от лицензированного оператора ТЮРСАБ MerrySails.",
     excerpt:

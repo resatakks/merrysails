@@ -178,7 +178,13 @@ function lintFile(filePath) {
     const blockNoTpl = block.replace(/\$\{[^}]*\}/g, "XXX");
     const offersMatch = blockNoTpl.match(/offers\s*:\s*\{[\s\S]*?\}/);
     if (offersMatch) {
+      // AggregateOffer uses lowPrice/highPrice instead of a single price. If the
+      // offers block declares @type AggregateOffer and supplies lowPrice, the
+      // `price` requirement is satisfied (Google Event spec accepts either form).
+      const isAggregateOffer = /["']?@type["']?\s*:\s*["']AggregateOffer["']/.test(offersMatch[0]);
+      const hasLowPrice = /\blowPrice\s*:/.test(offersMatch[0]);
       for (const field of EVENT_OFFER_REQUIRED) {
+        if (field === "price" && isAggregateOffer && hasLowPrice) continue;
         const fieldRegex = new RegExp(`\\b${field}\\s*:`);
         if (!fieldRegex.test(offersMatch[0])) {
           warnings.push({
@@ -231,7 +237,12 @@ function lintFile(filePath) {
   // the same 47-char source budget applies. Match line-anchored title:/metaTitle:
   // at 2-6 space indent (post/guide/tour level); nested expertQuote.title is
   // mid-line and section objects use `heading:`, so neither is caught.
-  if (/\/src\/(data|content)\//.test(filePath.replace(/\\/g, "/"))) {
+  // quick-answers.ts holds inline display headings used by the QuickAnswer
+  // component (rendered as a <p> inside the page body, with intentional
+  // "— MerrySails" suffix for visual branding). These are NOT page meta titles
+  // and don't go through the root template — skip the 47-char budget for them.
+  const isQuickAnswersFile = /\/src\/data\/quick-answers\.ts$/.test(filePath.replace(/\\/g, "/"));
+  if (/\/src\/(data|content)\//.test(filePath.replace(/\\/g, "/")) && !isQuickAnswersFile) {
     const dataTitleRegex = /^ {2,6}(?:metaTitle|title)\s*:\s*(["'`])((?:[^\\]|\\.)*?)\1/gm;
     let dt;
     while ((dt = dataTitleRegex.exec(src)) !== null) {
@@ -282,6 +293,10 @@ function lintFile(filePath) {
     const objOpen = src.lastIndexOf("{", dm.index);
     const sameObjCtx = objOpen === -1 ? "" : src.slice(objOpen, dm.index);
     if (/\bhref\s*:/.test(sameObjCtx)) continue;
+    // Skip JSON-LD schema objects: a Dataset / Service / FAQPage description
+    // is structured-data text, not a <meta> page description. Same-object marker
+    // is the presence of `"@type":` or `"@context":` siblings before the description.
+    if (/["']@(?:type|context)["']\s*:/.test(sameObjCtx)) continue;
     foundDesc = true;
     const desc = dm[2].replace(/\$\{[^}]+\}/g, "XXX"); // dm[1]=quote char, dm[2]=content
     if (desc.length < 70) {
