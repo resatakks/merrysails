@@ -1,4 +1,5 @@
 import { getTourPath, tours, REDIRECTED_TOUR_SLUGS } from "@/data/tours";
+import { getCharterFleet } from "@/data/fleet";
 import { blogPosts } from "@/data/blog";
 import { guides } from "@/data/guides";
 import { commercialSupportPosts } from "@/content/blog";
@@ -49,7 +50,7 @@ const LOCALIZED_PATHS = [
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
   "/yacht-charter-istanbul/boutique-yacht-12",
-"/yacht-charter-istanbul/premium-yacht-15",
+  "/yacht-charter-istanbul/premium-yacht-15",
   "/yacht-charter-istanbul/group-yacht-40-standard",
   "/yacht-charter-istanbul/group-yacht-40-signature",
   "/yacht-charter-istanbul/event-yacht-90",
@@ -252,6 +253,22 @@ export function GET() {
     };
   });
 
+  // EN fleet pages — /yacht-charter-istanbul/<fleet>. The /[locale]/ variants
+  // are emitted by localePages via LOCALIZED_PATHS, but the EN canonical URLs
+  // were previously missing from the sitemap (Bing flagged "new pages missing
+  // from sitemaps" 2026-05-31). Generated from the same single source of truth
+  // as the fleet-detail page's generateStaticParams.
+  const fleetPages: SitemapPage[] = getCharterFleet().map((boat) => {
+    const path = `/yacht-charter-istanbul/${boat.slug}`;
+    return {
+      url: `${SITE_URL}${path}`,
+      changefreq: "weekly",
+      priority: "0.78",
+      lastmod: contentLastmod,
+      hreflang: LOCALIZED_SET.has(path) ? hreflangXml(path) : undefined,
+    };
+  });
+
   const seenBlogSlugs = new Set<string>();
   const blogPages: SitemapPage[] = allBlogPosts
     .filter((post) => {
@@ -307,6 +324,7 @@ export function GET() {
     ...localeHomepages,
     ...localePages,
     ...tourPages,
+    ...fleetPages,
     ...blogPages,
     ...guidePages,
     ...localeBlogPages,
