@@ -236,10 +236,12 @@ const companyLinks = [
 ];
 
 const blogLinks = [
-  { label: "Sunset vs Dinner Cruise", href: "/blog/bosphorus-sunset-cruise-vs-dinner-cruise" },
-  { label: "Corporate Yacht Events", href: "/blog/corporate-yacht-events-on-the-bosphorus" },
-  { label: "Cruise Boarding Points", href: "/blog/bosphorus-cruise-boarding-points-guide-2026" },
-  { label: "Private Yacht Departure Points", href: "/blog/private-yacht-departure-points-istanbul" },
+  { label: "Best Bosphorus Cruise 2026 — Comparison", href: "/blog/best-istanbul-bosphorus-cruise-comparison-2026" },
+  { label: "3-Day Istanbul Itinerary with Cruise", href: "/blog/istanbul-3-day-itinerary-bosphorus-cruise-2026" },
+  { label: "Book Bosphorus Cruise Direct — Save €5-€15", href: "/blog/book-bosphorus-cruise-direct-save-2026" },
+  { label: "Yacht Size Guide for Bosphorus Charter", href: "/blog/choosing-yacht-size-bosphorus-charter-istanbul-2026" },
+  { label: "Bosphorus Cruise vs Princes Islands", href: "/blog/bosphorus-cruise-vs-princes-islands-tour-istanbul-2026" },
+  { label: "What to Wear by Season", href: "/blog/what-to-wear-bosphorus-cruise-by-season" },
 ];
 
 const guideLinks = [

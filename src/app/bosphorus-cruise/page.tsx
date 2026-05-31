@@ -812,6 +812,53 @@ export default function BosphorusCruisePage() {
               </TrackedContactLink>
             </div>
           </section>
+
+          {/* Featured Reading — internal-link surface to high-intent 2026 posts.
+              Adds 6 internal links from the pillar to product-feeding content,
+              addresses the prior "orphan pillar" structure (no blog references
+              in the pillar before this change). */}
+          <section className="mt-12 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Featured reading — planning your Bosphorus cruise in 2026</h2>
+            <p className="text-sm text-[var(--text-muted)] mb-6">Operator-side guides written for first-time and returning Istanbul visitors. Each post is built on verified direct pricing and the actual six-yacht MerrySails fleet.</p>
+            <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <li>
+                <Link href="/blog/best-istanbul-bosphorus-cruise-comparison-2026" className="block rounded-xl border border-gray-200 p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Best Bosphorus Cruise 2026 — Sunset vs Dinner vs Yacht</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Direct-price comparison of the three flagship formats with where each one fits.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/istanbul-3-day-itinerary-bosphorus-cruise-2026" className="block rounded-xl border border-gray-200 p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">3-Day Istanbul Itinerary with Bosphorus Cruise</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Day-by-day plan ending with the cruise as the Day 3 evening finale.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/book-bosphorus-cruise-direct-save-2026" className="block rounded-xl border border-gray-200 p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Book Direct — Save €5–€15 per Guest</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Operator-side direct booking versus Viator and GetYourGuide markups.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/bosphorus-cruise-vs-princes-islands-tour-istanbul-2026" className="block rounded-xl border border-gray-200 p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Bosphorus Cruise vs Princes Islands Tour</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Two water trips, two different needs — which one fits a one-day Istanbul plan.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/choosing-yacht-size-bosphorus-charter-istanbul-2026" className="block rounded-xl border border-gray-200 p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Choosing the Right Yacht Size</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Mapping the six-yacht fleet to group sizes 2–150 and avoiding the overshoot mistake.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/what-to-wear-bosphorus-cruise-by-season" className="block rounded-xl border border-gray-200 p-4 transition-colors hover:border-[var(--brand-primary)] hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">What to Wear on a Bosphorus Cruise by Season</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Month-by-month dress code with deck-temperature reality from a 30-year captain.</span>
+                </Link>
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
     </>
