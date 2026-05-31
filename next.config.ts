@@ -214,6 +214,15 @@ const nextConfig: NextConfig = {
         destination: "/boat-rental-istanbul",
         permanent: true,
       },
+      // /pricing is a single-source machine-readable route (Markdown for AI
+      // agents per /llms.txt). Locale variants of it return 404; redirect
+      // them all to the canonical so /tr/pricing, /de/pricing etc. stop
+      // being indexable dead URLs.
+      {
+        source: "/:locale(tr|de|fr|nl|ru)/pricing",
+        destination: "/pricing",
+        permanent: true,
+      },
       {
         source: "/cruises/bachelorette-yacht-party",
         destination: "/proposal-yacht-rental-istanbul",
