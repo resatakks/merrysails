@@ -107,7 +107,7 @@ export default async function BlogPostPage({
 
   const author = getAuthor(post.author || "editorial");
   const relatedTours = (post.relatedTours ?? [])
-    .map(getTourBySlug)
+    .map((s) => getTourBySlug(s))
     .filter(Boolean)
     .slice(0, 3);
   const routingCopy = getBlogRoutingCopy(post);

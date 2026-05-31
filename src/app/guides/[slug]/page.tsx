@@ -96,7 +96,7 @@ export default async function GuidePage({
   const cleanExcerpt = cleanContentText(guide.excerpt);
 
   const relatedTours = guide.relatedTours
-    .map(getTourBySlug)
+    .map((s) => getTourBySlug(s))
     .filter(Boolean)
     .slice(0, 4);
 

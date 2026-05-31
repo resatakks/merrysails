@@ -1247,8 +1247,14 @@ export const tours: Tour[] = [
   },
 ];
 
-export function getTourBySlug(slug: string): Tour | undefined {
-  return tours.find((tour) => tour.slug === slug);
+export function getTourBySlug(slug: string, locale?: string): Tour | undefined {
+  const tour = tours.find((t) => t.slug === slug);
+  if (!tour || !locale || locale === "en") return tour;
+  // Lazy import to avoid a circular dep — tour-locales depends on Tour type
+  // from this file.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { applyTourLocale } = require("@/data/tour-locales") as typeof import("@/data/tour-locales");
+  return applyTourLocale(tour, locale);
 }
 
 export function isCoreProduct(tour: Tour): boolean {

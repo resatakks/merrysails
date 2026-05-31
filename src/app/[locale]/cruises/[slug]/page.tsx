@@ -60,7 +60,7 @@ export async function generateMetadata({
   if (!isActiveLocale(locale as SiteLocale) || locale === "en") {
     return {};
   }
-  const tour = getTourBySlug(slug);
+  const tour = getTourBySlug(slug, locale);
   if (!tour) return { title: "Tour Not Found" };
 
   const showPricing = isPricingVisible(tour);
@@ -126,7 +126,9 @@ export default async function LocaleTourDetailPage({
   const ownerRedirect = OWNER_REDIRECTS[slug];
   if (ownerRedirect) redirect(`/${locale}${ownerRedirect}`);
 
-  const tour = getTourBySlug(slug);
+  // Pass the locale so getTourBySlug merges any tour-locales.ts override.
+  // Empty/missing fields fall back to EN automatically.
+  const tour = getTourBySlug(slug, locale);
   if (!tour) notFound();
   const showPricing = isPricingVisible(tour);
 
