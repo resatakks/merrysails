@@ -757,6 +757,80 @@ export default async function LocaleBosphorusCruisePage({
         </div>
       </div>
 
+      {/* Featured reading — locale-aware internal-link surface from pillar to
+          native-language blog posts. Each locale gets its own anchor text and
+          its own target post slugs (no English titles in localised pages). */}
+      <div className="py-16 bg-[var(--surface-alt)]">
+        <div className="container-main max-w-4xl">
+          {locale === "tr" && (
+            <>
+              <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">Boğaz turu planlama — 2026 rehberleri</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-6">İstanbul boğaz turu, akşam yemekli yat ve yat kiralama için operatör tarafından yazılmış güncel rehberler.</p>
+              <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <li><Link href="/tr/blog/istanbul-bogaz-turu-fiyatlari-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">2026 boğaz turu fiyatları — paket karşılaştırma</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Akşam yemekli, gün batımı ve yat kiralama gerçek fiyatları yan yana.</span></Link></li>
+                <li><Link href="/tr/blog/istanbul-bogaz-turu-saatleri-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Boğaz turu saatleri 2026 — mevsime göre kalkış</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Hangi mevsimde hangi saatte hangi iskeleden kalkış var.</span></Link></li>
+                <li><Link href="/tr/blog/eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Eminönü, Karaköy, Kabataş — hangi iskele kimin için</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Üç ana iskelenin avantajları ve hangi gruba uygun olduğu.</span></Link></li>
+                <li><Link href="/tr/blog/istanbul-aksam-yemegi-yat-rezervasyon-rehberi-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Akşam yemekli yat rezervasyon rehberi</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Doğru paketi seçmek için yapılması ve kaçınılması gerekenler.</span></Link></li>
+                <li><Link href="/tr/blog/istanbul-yat-kiralama-rehberi-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">İstanbul yat kiralama rehberi 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Yat tipi seçimi, fiyatlama, kalkış noktası ve ek hizmetler.</span></Link></li>
+                <li><Link href="/tr/blog/istanbul-yat-kiralama-evlilik-teklifi-rehberi-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Evlilik teklifi yat kiralama rehberi</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Sürpriz anının planlanması, en iyi rota ve fotoğraf desteği.</span></Link></li>
+              </ul>
+            </>
+          )}
+          {locale === "de" && (
+            <>
+              <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">Bosporus-Kreuzfahrt planen — 2026 Ratgeber</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-6">Operatorseitig geschriebene Ratgeber für Dinner-Kreuzfahrt, Sonnenuntergangsfahrt und Yacht-Charter.</p>
+              <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <li><Link href="/de/blog/bosporus-kreuzfahrt-preise-istanbul" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Bosporus-Kreuzfahrt Preise Istanbul</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Aktuelle Preise für Dinner, Sonnenuntergang und privaten Yacht-Charter.</span></Link></li>
+                <li><Link href="/de/blog/bosporus-bootstour-istanbul-2026-ratgeber" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Bosporus-Bootstour 2026 — kompletter Ratgeber</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Welche Tour passt zu welchem Reiseplan und wie wird gebucht.</span></Link></li>
+                <li><Link href="/de/blog/yacht-charter-istanbul-ratgeber" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Yacht-Charter Istanbul — Planungsratgeber</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Yacht-Größe, Programm, Catering und Hafenwahl auf einen Blick.</span></Link></li>
+                <li><Link href="/de/blog/heiratsantrag-auf-dem-bosporus-istanbul" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Heiratsantrag auf dem Bosporus</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Wie der Überraschungs-Moment auf einer privaten Yacht funktioniert.</span></Link></li>
+                <li><Link href="/de/blog/prinzeninseln-istanbul-tagesausflug-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Prinzeninseln — Tagesausflug 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Wann der Inseltag und wann die Bosporus-Fahrt der richtige Plan ist.</span></Link></li>
+              </ul>
+            </>
+          )}
+          {locale === "fr" && (
+            <>
+              <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">Planifier votre croisière Bosphore — guides 2026</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-6">Guides écrits par l'opérateur pour croisière-dîner, coucher de soleil et location de yacht.</p>
+              <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <li><Link href="/fr/blog/croisiere-bosphore-prix-istanbul" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Prix de la croisière Bosphore — Istanbul</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Tarifs réels pour dîner, coucher de soleil et yacht privé.</span></Link></li>
+                <li><Link href="/fr/blog/guide-croisiere-bosphore-istanbul-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Guide complet croisière Bosphore 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Quel format pour quel voyage et comment réserver directement.</span></Link></li>
+                <li><Link href="/fr/blog/location-yacht-istanbul-guide" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Location de yacht à Istanbul — guide</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Choisir la taille, le programme et le port de départ.</span></Link></li>
+                <li><Link href="/fr/blog/demande-en-mariage-sur-le-bosphore" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Demande en mariage sur le Bosphore</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Comment organiser le moment surprise sur un yacht privé.</span></Link></li>
+                <li><Link href="/fr/blog/iles-des-princes-istanbul-excursion-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Îles des Princes — excursion 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Quand choisir l'excursion aux îles plutôt que la croisière Bosphore.</span></Link></li>
+              </ul>
+            </>
+          )}
+          {locale === "nl" && (
+            <>
+              <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">Bosporus-cruise plannen — 2026 gidsen</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-6">Operator-zijde gidsen voor dinercruise, zonsondergangscruise en jacht-charter.</p>
+              <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <li><Link href="/nl/blog/bosporus-cruise-prijzen-istanbul" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Bosporus-cruise prijzen Istanbul</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Actuele tarieven voor diner, zonsondergang en privé-jacht.</span></Link></li>
+                <li><Link href="/nl/blog/bosphorus-cruise-prijzen-gids-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Complete prijsgids cruise 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Welke optie past bij welk reisplan en hoe direct te boeken.</span></Link></li>
+                <li><Link href="/nl/blog/jacht-huren-istanbul-gids" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Jacht huren Istanbul — gids</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Jachtgrootte, programma en haven van vertrek.</span></Link></li>
+                <li><Link href="/nl/blog/huwelijksaanzoek-op-de-bosporus" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Huwelijksaanzoek op de Bosporus</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Hoe het verrassings-moment op een privé-jacht werkt.</span></Link></li>
+                <li><Link href="/nl/blog/prinseneilanden-istanbul-dagtocht-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Prinseneilanden — dagtocht 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Wanneer de eilanden en wanneer de Bosporus-cruise de juiste keuze is.</span></Link></li>
+              </ul>
+            </>
+          )}
+          {locale === "ru" && (
+            <>
+              <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">Планирование круиза по Босфору — гиды 2026</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-6">Гиды от оператора: круиз с ужином, круиз на закате и аренда яхты.</p>
+              <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <li><Link href="/ru/blog/stoimost-tura-po-bosforu-stambul-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Стоимость тура по Босфору в 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Реальные цены на ужин, закат и частную яхту.</span></Link></li>
+                <li><Link href="/ru/blog/zakatnyy-kruiz-po-bosforu-stambul-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Круиз по Босфору на закате 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Маршрут золотого часа, пакеты и тайминг.</span></Link></li>
+                <li><Link href="/ru/blog/uzhin-kruiz-po-bosforu-stambul-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Круиз с ужином по Босфору 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Четыре пакета, программа турецкой ночи и трансфер.</span></Link></li>
+                <li><Link href="/ru/blog/arenda-yakhty-stambul-2026" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Аренда яхты в Стамбуле 2026</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Выбор размера яхты, маршрут и дополнительные опции.</span></Link></li>
+                <li><Link href="/ru/blog/prichaly-otpravleniya-tura-po-bosforu-stambul" className="block rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"><span className="block font-semibold text-[var(--heading)]">Причалы отправления — какой подходит вам</span><span className="mt-1 block text-sm text-[var(--text-muted)]">Эминёню, Каракёй и Кабаташ — отличия и для каких туров.</span></Link></li>
+              </ul>
+            </>
+          )}
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="py-16 bg-[var(--brand-primary)]">
         <div className="container-main text-center">
