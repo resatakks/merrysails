@@ -47,7 +47,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
       { q: "Can I extend the charter beyond 2 hours?", a: "Yes, but the cleanest approach is to request the longer duration before confirming the booking. Extra-hour pricing depends on the selected yacht and availability after your cruise." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "bosphorus-sunset-cruise"],
-    relatedPosts: ["yacht-rental-istanbul-prices", "luxury-yacht-rental-bosphorus", "best-yacht-routes-bosphorus"],
+    relatedPosts: ["yacht-rental-istanbul-prices", "luxury-yacht-rental-bosphorus", "choosing-yacht-size-bosphorus-charter-istanbul-2026", "party-boat-istanbul", "istanbul-boat-party-private", "private-yacht-charter-istanbul-price"],
   },
 {
     slug: "luxury-yacht-rental-bosphorus",
@@ -143,7 +143,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
       { q: "Can we have a yacht party at night?", a: "Yes! Evening charters with LED lighting create an amazing party atmosphere. The illuminated Bosphorus adds to the ambiance." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "yacht-birthday-party", "bachelorette-yacht-party", "corporate-event-bosphorus-cruise"],
-    relatedPosts: ["birthday-party-boat-istanbul", "yacht-birthday-party-ideas", "yacht-decoration-ideas-istanbul"],
+    relatedPosts: ["birthday-party-boat-istanbul", "yacht-birthday-party-ideas", "bosphorus-cruise-new-year-eve-istanbul-2026-2027", "party-boat-istanbul", "istanbul-boat-party-private", "yacht-decoration-ideas-istanbul"],
   },
 {
     slug: "swimming-yacht-tour-istanbul",
@@ -239,7 +239,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
       { q: "What is the best time of year to propose on the Bosphorus?", a: "Any time is magical, but April–June and September–October offer the most pleasant weather and dramatic sunsets. Winter proposals are intimate and moody with earlier sunsets." }
     ],
     relatedTours: ["romantic-marriage-proposal", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-for-couples", "yacht-decoration-ideas-istanbul", "luxury-yacht-bosphorus-experience"],
+    relatedPosts: ["bosphorus-cruise-for-couples", "yacht-decoration-ideas-istanbul", "choosing-yacht-size-bosphorus-charter-istanbul-2026", "private-yacht-charter-istanbul-prices", "istanbul-proposal-yacht-cruise", "valentines-day-cruise-istanbul"],
   },
 {
     slug: "yacht-birthday-party-ideas",

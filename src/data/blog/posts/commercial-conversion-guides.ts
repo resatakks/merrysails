@@ -38,7 +38,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "What happens if the weather is bad on my yacht charter day?", a: "MerrySails monitors weather closely. If conditions are unsafe, you receive a full rescheduling to your preferred alternative date or a 100% refund." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "corporate-event-bosphorus-cruise"],
-    relatedPosts: ["private-yacht-departure-points-istanbul", "proposal-yacht-rental-istanbul-planning-guide", "private-yacht-charter-istanbul-guide"]
+    relatedPosts: ["private-yacht-departure-points-istanbul", "marriage-proposal-yacht-istanbul", "private-yacht-charter-istanbul-guide"]
   },
 {
     slug: "bosphorus-dinner-cruise-booking",
@@ -343,7 +343,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Can I book a private night cruise on the Bosphorus?", a: "Yes. Private yacht night charters start at €280 for 2 hours with flexible departure times. You choose the route, music, and can add catering and decoration packages for special occasions." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
-    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-dinner-cruise-what-to-expect", "best-istanbul-bosphorus-cruise-comparison-2026"]
   },
 {
     slug: "party-boat-istanbul",
@@ -489,7 +489,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Do I need to book the Şehir Hatları ferry in advance?", a: "No, tickets are purchased at the pier or by tapping an Istanbulkart. However, arrive 30 minutes early as the ferry fills up in peak season and standing passengers have limited views." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise"],
-    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["istanbul-sunset-cruise-experience", "bosphorus-cruise-prices-2026", "best-istanbul-bosphorus-cruise-comparison-2026"]
   },
 {
     slug: "corporate-boat-hire-istanbul",
@@ -976,7 +976,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["istanbul-weather-cruise-planning", "istanbul-sunset-cruise-experience", "istanbul-dinner-cruise-menu-guide"],
+    relatedPosts: ["istanbul-weather-cruise-planning", "istanbul-sunset-cruise-experience", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "bosphorus-cruise-vs-ferry", "what-to-wear-bosphorus-cruise-by-season"],
   },
 {
     slug: "private-yacht-hire-istanbul-2026",
@@ -1098,7 +1098,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Is private yacht hire in Istanbul good value?", a: "Yes, especially when privacy, route control, and celebration value matter more than buying the lowest public ticket. Because the yacht is priced per vessel, the value improves quickly once the cost is shared across a real group." },
     ],
     relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
-    relatedPosts: ["private-yacht-departure-points-istanbul", "best-time-for-bosphorus-cruise-istanbul", "proposal-yacht-rental-istanbul-planning-guide"],
+    relatedPosts: ["private-yacht-departure-points-istanbul", "best-time-for-bosphorus-cruise-istanbul", "marriage-proposal-yacht-istanbul"],
   },
 {
     slug: "istanbul-cruise-for-groups",
@@ -1471,7 +1471,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["private-yacht-hire-istanbul-2026", "corporate-boat-hire-istanbul", "boat-rental-vs-yacht-charter-istanbul"],
+    relatedPosts: ["private-yacht-hire-istanbul-2026", "corporate-boat-hire-istanbul", "private-yacht-charter-istanbul-guide"],
   },
 {
     slug: "istanbul-dinner-cruise-price-guide-2026",
@@ -1620,7 +1620,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Should I pick the pier or the cruise first?", a: "Pick the cruise first. The pier follows the experience, not the other way around." },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-departure-points", "istanbul-dinner-cruise-price-guide-2026", "private-yacht-charter-istanbul-price"],
+    relatedPosts: ["bosphorus-cruise-departure-points", "istanbul-dinner-cruise-price-guide-2026", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "istanbul-airport-to-bosphorus-cruise-transfer-guide", "bosphorus-cruise-eminonu"],
   },
 {
     slug: "corporate-yacht-event-planning-istanbul",
@@ -1716,7 +1716,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["corporate-event-bosphorus-cruise", "yacht-charter-in-istanbul", "private-bosphorus-dinner-yacht-cruise"],
-    relatedPosts: ["corporate-boat-hire-istanbul", "private-yacht-charter-istanbul-price", "bosphorus-cruise-boarding-points-guide-2026"],
+    relatedPosts: ["corporate-boat-hire-istanbul", "private-yacht-charter-istanbul-price", "choosing-yacht-size-bosphorus-charter-istanbul-2026", "bosphorus-cruise-groups-istanbul", "istanbul-cruise-for-groups"],
   },
   {
     slug: "best-istanbul-bosphorus-cruise-comparison-2026",
@@ -1753,7 +1753,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "How do I book a Bosphorus cruise without going through an OTA?", a: "Book at merrysails.com directly, or send a WhatsApp message to +90 537 040 68 22 (priority) or +90 544 898 98 12. Instant confirmation, payment onboard for shared cruises (no prepayment), free cancellation up to 24 hours before departure." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-istanbul-cruise-2026", "bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise"],
+    relatedPosts: ["best-istanbul-cruise-2026", "bosphorus-cruise-prices-2026", "best-istanbul-bosphorus-cruise-comparison-2026", "bosphorus-cruise-vs-golden-horn-vs-princes-islands", "bosphorus-cruise-price-istanbul-2026"],
   },
   {
     slug: "book-bosphorus-cruise-direct-save-2026",
@@ -1789,7 +1789,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "Is direct booking secure?", a: "Yes. MerrySails has been [TURSAB](https://www.tursab.org.tr/en) A Group licensed since 2001 and is the registered Turkish travel agency arranging the cruises. The same legal protections apply to direct bookings as to OTA bookings — only the resale layer is removed." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "bosphorus-cruise-prices-2026", "best-istanbul-cruise-2026"],
+    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "bosphorus-cruise-prices-2026", "best-istanbul-cruise-2026", "comparing-istanbul-cruise-operators-2026", "bosphorus-cruise-reviews-guide", "avoid-tourist-traps-istanbul-cruises"],
   },
   {
     slug: "istanbul-tipping-guide-2026",
@@ -1865,7 +1865,7 @@ export const commercialConversionGuides: BlogPost[] = [
       { q: "How much do I tip housekeeping in Istanbul hotels?", a: "50 TL per day per occupied room is the standard. For a 4-night stay, 200 TL total left on the bedside table on departure day is generous. Daily tipping (leaving 50 TL each morning) is also fine and reaches the actual housekeeper assigned to your room." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["istanbul-currency-tips-tourists", "what-to-wear-bosphorus-cruise", "best-istanbul-bosphorus-cruise-comparison-2026"],
+    relatedPosts: ["istanbul-currency-tips-tourists", "what-to-wear-bosphorus-cruise", "best-istanbul-bosphorus-cruise-comparison-2026", "turkish-etiquette-guide-tourists"],
   },
   {
     slug: "istanbul-atm-currency-exchange-2026",
@@ -1977,7 +1977,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["istanbul-currency-tips-tourists", "istanbul-tipping-guide-2026", "bosphorus-cruise-prices-comparison"],
+    relatedPosts: ["istanbul-currency-tips-tourists", "istanbul-tipping-guide-2026", "bosphorus-cruise-prices-comparison", "turkish-etiquette-guide-tourists"],
   },
   {
     slug: "what-to-wear-bosphorus-cruise-by-season",
@@ -2089,7 +2089,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-time-for-bosphorus-cruise-istanbul", "bosphorus-sunset-cruise-istanbul", "bosphorus-cruise-boarding-points-guide-2026"],
+    relatedPosts: ["best-time-for-bosphorus-cruise-istanbul", "bosphorus-sunset-cruise-istanbul", "bosphorus-cruise-boarding-points-guide-2026", "how-to-avoid-seasickness-cruise"],
   },
   {
     slug: "istanbul-eid-bayram-cruise-guide-2026",
@@ -2200,7 +2200,7 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "private-bosphorus-dinner-yacht-cruise"],
-    relatedPosts: ["best-time-for-bosphorus-cruise-istanbul", "private-yacht-charter-istanbul-price", "istanbul-cruise-for-groups"],
+    relatedPosts: ["best-time-for-bosphorus-cruise-istanbul", "private-yacht-charter-istanbul-price", "istanbul-cruise-for-groups", "bosphorus-family-cruise-kids-guide"],
   },
   {
     slug: "istanbul-airport-to-bosphorus-cruise-transfer-guide",
@@ -2310,6 +2310,6 @@ export const commercialConversionGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-boarding-points-guide-2026", "best-time-for-bosphorus-cruise-istanbul", "istanbul-currency-tips-tourists"],
+    relatedPosts: ["bosphorus-cruise-boarding-points-guide-2026", "best-time-for-bosphorus-cruise-istanbul", "istanbul-currency-tips-tourists", "istanbul-travel-tips-transfer-and-cruise-pairing", "how-to-get-istanbul-airport-to-bosphorus-cruise"],
   }
 ];

@@ -75,7 +75,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Can I book a private sunset cruise?", a: "Yes, private yacht charters can be scheduled at sunset time. Public yacht packages currently start from €280 per vessel, and the final yacht is matched to your group size, preferred comfort level, and any add-ons you want for the sunset slot." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "romantic-marriage-proposal"],
-    relatedPosts: ["istanbul-cruise-photography-spots", "best-time-bosphorus-cruise", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["istanbul-cruise-photography-spots", "best-time-bosphorus-cruise", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "bosphorus-sunset-dinner-cruise-vs-lunch", "istanbul-sunset-cruise-booking"]
   },
 {
     slug: "bosphorus-dinner-cruise-what-to-expect",
@@ -113,7 +113,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Can I celebrate a birthday or anniversary on the dinner cruise?", a: "Yes! Inform us when booking and we can arrange a cake, special table decoration, and a celebratory announcement. These extras are often complimentary." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "istanbul-bosphorus-lunch-cruise"],
-    relatedPosts: ["istanbul-dinner-cruise-etiquette-2026", "bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["istanbul-dinner-cruise-etiquette-2026", "bosphorus-cruise-prices-2026", "istanbul-tipping-guide-2026", "bosphorus-sunset-dinner-cruise-vs-lunch", "bosphorus-dinner-cruise-booking", "istanbul-dinner-cruise-menu-guide"]
   },
 {
     slug: "short-bosphorus-cruise-tour",
@@ -353,7 +353,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Is there parking near the cruise departure points?", a: "Public and marina parking options depend on the exact boarding location. If you plan to drive, check the confirmed pier or marina before the day of departure. In central Istanbul, public transport is usually easier than driving." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["istanbul-transportation-guide-tourists", "istanbul-cruise-booking-tips", "bosphorus-cruise-departure-points"],
+    relatedPosts: ["istanbul-transportation-guide-tourists", "istanbul-cruise-booking-tips", "bosphorus-cruise-departure-points", "top-10-bosphorus-landmarks", "bosphorus-cruise-eminonu"],
   },
 {
     slug: "istanbul-boat-tour-vs-ferry",
@@ -478,7 +478,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "What is the best time of day for Bosphorus photography?", a: "Golden hour (1 hour before sunset) produces the most spectacular light — warm, directional, and flattering for palace and mosque facades. The 2-hour sunset cruise (€34) is perfectly timed for this window. Blue hour (15–30 minutes after sunset) creates a stunning cobalt sky with emerging city lights." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise", "istanbul-sunset-photography-cruise"],
   },
 {
     slug: "bosphorus-night-cruise-guide",
@@ -786,7 +786,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-cruise-with-kids", "bosphorus-cruise-prices-2026"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-cruise-with-kids", "bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-guide", "best-bosphorus-sunset-cruise-operators-istanbul-2026"],
     proTip: "If the published sunset cruise is sold out for your date, check the same-day [yacht charter](/yacht-charter-istanbul) starting at €280 — for couples, splitting a private 2-hour charter often costs less than two aggregator-resold tickets and gives you the deck to yourselves.",
     calloutText: "MerrySails Bosphorus sunset cruise: €34 (no wine) or €40 (with wine), 2 hours from Karaköy pier, daily year-round. TURSAB licensed since 2001, 50,000+ guests, free 24h cancellation. Book at merrysails.com or WhatsApp +90 544 898 98 12.",
   },

@@ -36,7 +36,7 @@ export const planningAndSupportGuides: BlogPost[] = [
       { q: "Can I bring a stroller on the cruise?", a: "Yes, strollers can be brought on shared cruises. There is space to park them in the indoor area." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "istanbul-princes-island-tour", "bosphorus-dinner-cruise"],
-    relatedPosts: ["short-bosphorus-cruise-tour", "bosphorus-cruise-safety-tips", "istanbul-cruise-booking-tips"],
+    relatedPosts: ["short-bosphorus-cruise-tour", "bosphorus-cruise-safety-tips", "istanbul-eid-bayram-cruise-guide-2026", "bosphorus-family-cruise-kids-guide", "accessible-bosphorus-cruise"],
   },
 {
     slug: "bosphorus-cruise-for-couples",
@@ -74,7 +74,7 @@ export const planningAndSupportGuides: BlogPost[] = [
       { q: "What is the best season for a romantic Bosphorus cruise?", a: "April–May and September–October offer the ideal combination — warm evenings, dramatic sunset skies, and manageable crowds. Summer (June–August) provides the longest golden hours but more tourists. Winter cruises have an intimate, cozy quality with heated indoor salons and fewer guests on board." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "romantic-marriage-proposal", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["istanbul-sunset-cruise-experience", "marriage-proposal-yacht-istanbul", "valentines-day-cruise-istanbul"],
+    relatedPosts: ["istanbul-sunset-cruise-experience", "marriage-proposal-yacht-istanbul", "bosphorus-cruise-solo-traveler-istanbul-2026", "party-boat-istanbul", "istanbul-sunset-cruise-booking"],
   },
 {
     slug: "istanbul-cruise-booking-tips",
@@ -122,7 +122,7 @@ export const planningAndSupportGuides: BlogPost[] = [
       { q: "How do I know if a cruise company is legitimate?", a: "Check for [TURSAB](https://www.tursab.org.tr/en) licensing, read recent Google/TripAdvisor reviews, verify transparent pricing, and ensure professional communication." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
-    relatedPosts: ["avoid-tourist-traps-istanbul-cruises", "bosphorus-cruise-prices-2026", "best-istanbul-cruise-2026"],
+    relatedPosts: ["avoid-tourist-traps-istanbul-cruises", "bosphorus-cruise-prices-2026", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "bosphorus-cruise-vs-ferry", "bosphorus-dinner-cruise-booking"],
   },
 {
     slug: "avoid-tourist-traps-istanbul-cruises",
@@ -958,7 +958,7 @@ export const planningAndSupportGuides: BlogPost[] = [
       { q: "Do I need a license to rent a yacht?", a: "No license required. All MerrySails yachts come with a professional captain and crew. You are a guest — sit back, relax, and enjoy the Bosphorus." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise", "romantic-marriage-proposal", "yacht-birthday-party"],
-    relatedPosts: ["private-yacht-departure-points-istanbul", "proposal-yacht-rental-istanbul-planning-guide", "bosphorus-cruise-prices-2026"],
+    relatedPosts: ["private-yacht-departure-points-istanbul", "marriage-proposal-yacht-istanbul", "bosphorus-cruise-prices-2026"],
   },
 {
     slug: "bosphorus-ferry-vs-cruise-comparison",
@@ -1072,7 +1072,7 @@ export const planningAndSupportGuides: BlogPost[] = [
       { q: "Can I customize the yacht experience for a proposal?", a: "Yes. MerrySails specializes in proposal yacht experiences with rose petals, 'Will You Marry Me?' banner, concealed photographer, live music, and champagne. Over 200 successful proposals since 2001. Book 1–2 weeks ahead." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-sunset-cruise", "romantic-marriage-proposal", "private-bosphorus-dinner-yacht-cruise"],
-    relatedPosts: ["private-yacht-departure-points-istanbul", "proposal-yacht-rental-istanbul-planning-guide", "private-yacht-charter-istanbul-guide"],
+    relatedPosts: ["private-yacht-departure-points-istanbul", "marriage-proposal-yacht-istanbul", "private-yacht-charter-istanbul-guide"],
   },
 {
     slug: "private-yacht-departure-points-istanbul",
@@ -1209,6 +1209,6 @@ export const planningAndSupportGuides: BlogPost[] = [
       { q: "How far is the MerrySails cruise pier from Sultanahmet hotels?", a: "Most Sultanahmet hotels are within 15-20 minutes walk or a short taxi ride from the central Istanbul departure piers. Your Merry Tourism driver can advise on the best drop-off point relative to your hotel and the cruise pier." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-for-couples", "bosphorus-cruise-with-kids", "bosphorus-cruise-booking-guide"]
+    relatedPosts: ["bosphorus-cruise-for-couples", "bosphorus-cruise-with-kids", "istanbul-cruise-booking-tips"]
   }
 ];

@@ -37,7 +37,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Are Istanbul cruises safe?", a: "Yes. All MerrySails vessels are licensed by Turkish maritime authorities with full safety equipment, professional captains, and insurance. The Bosphorus is a sheltered strait with calm waters — not open sea. MerrySails has operated safely since 2001." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "romantic-marriage-proposal"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "bosphorus-sunset-cruise-vs-dinner-cruise", "istanbul-cruise-booking-tips"],
+    relatedPosts: ["bosphorus-cruise-prices-2026", "best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-cruise-booking-tips"],
   },
 {
     slug: "istanbul-honeymoon-cruise-guide",
@@ -118,7 +118,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Is hotel pickup included in honeymoon packages?", a: "Hotel pickup is not standard in private yacht packages but can be arranged for a supplement. Most couples arrive independently at Kuruçeşme Marina; we provide exact directions and parking information. Taxi from central Istanbul takes 15–25 minutes." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "private-bosphorus-dinner-yacht-cruise"],
-    relatedPosts: ["bosphorus-sunset-cruise-vs-dinner-cruise", "istanbul-sunset-cruise-experience", "bosphorus-cruise-for-couples"]
+    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-sunset-cruise-experience", "bosphorus-cruise-for-couples"]
   },
 {
     slug: "bosphorus-cruise-reviews-guide",
@@ -454,7 +454,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Is it safe to use ATMs in Istanbul?", a: "Yes, using ATMs at major bank branches (Garanti, İşbank, Yapı Kredi) is safe. The key rule: always choose to be charged in TRY, not your home currency — declining Dynamic Currency Conversion saves 5–8% per transaction. Inform your bank before travel to prevent fraud blocks." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
-    relatedPosts: ["how-to-avoid-seasickness-cruise", "istanbul-cruise-package-deals", "avoid-tourist-traps-istanbul-cruises"]
+    relatedPosts: ["how-to-avoid-seasickness-cruise", "istanbul-cruise-package-deals", "istanbul-atm-currency-exchange-2026"]
   },
 {
     slug: "private-yacht-party-istanbul-guide",
@@ -1179,7 +1179,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Should I tip on a Bosphorus cruise?", a: "Tipping is not obligatory but appreciated. For shared cruises, EUR 2-5 per person is generous. For dinner cruises, EUR 5-10 per couple is common. For private yacht charters, 10-15% of the charter price is standard for exceptional service." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["private-yacht-rental-istanbul", "private-yacht-departure-points-istanbul", "best-time-bosphorus-cruise"]
+    relatedPosts: ["private-yacht-rental-istanbul", "private-yacht-departure-points-istanbul", "bosphorus-cruise-vs-princes-islands-tour-istanbul-2026", "bosphorus-cruise-prices-comparison", "istanbul-dinner-cruise-price-guide-2026", "best-istanbul-cruise-2026"]
   },
 {
     slug: "private-yacht-rental-istanbul",
@@ -1372,7 +1372,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Does it rain a lot during Istanbul cruise season?", a: "Istanbul averages 5-8 rainy days per month year-round. Rain showers are usually brief. Cruises operate in light rain with covered deck options. Only severe storms cause cancellations — these are rare and result in free rescheduling." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-experience", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-experience", "best-istanbul-bosphorus-cruise-comparison-2026"]
   },
 {
     slug: "top-10-bosphorus-landmarks",
@@ -1413,7 +1413,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Do Bosphorus cruises have guides who explain the landmarks?", a: "MerrySails cruises include English-speaking commentary. The sunset and dinner cruises have live guides who share historical context, architectural details, and local stories about each landmark as you pass." }
     ],
     relatedTours: ["bosphorus-sightseeing-cruise", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-landmarks-cruise-tour", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise"]
+    relatedPosts: ["bosphorus-landmarks-cruise-tour", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise", "istanbul-museums-near-bosphorus"]
   },
 {
     slug: "bosphorus-vs-princes-islands",
@@ -1681,7 +1681,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       { q: "Are winter Bosphorus cruise prices cheaper?", a: "Sometimes, but not every departure follows a fixed winter discount. The safest approach is to check the live price range for your date because promotions and operational pricing can change by product." }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise"],
-    relatedPosts: ["istanbul-weather-cruise-planning", "best-time-bosphorus-cruise", "bosphorus-sunset-cruise-vs-dinner-cruise"]
+    relatedPosts: ["istanbul-weather-cruise-planning", "best-time-bosphorus-cruise", "bosphorus-cruise-new-year-eve-istanbul-2026-2027"]
   },
 {
     slug: "istanbul-romantic-cruise-couples",
@@ -2424,7 +2424,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "book-bosphorus-cruise-safely", "best-istanbul-cruise-2026"]
+    relatedPosts: ["bosphorus-cruise-prices-2026", "book-bosphorus-cruise-safely", "book-bosphorus-cruise-direct-save-2026", "best-bosphorus-sunset-cruise-operators-istanbul-2026", "bosphorus-cruise-reviews-guide"]
   },
   {
     slug: "istanbul-cruise-buyer-guide-2026",
@@ -2682,7 +2682,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-airport-to-bosphorus-cruise-transfer-guide", "best-time-for-bosphorus-cruise-istanbul"],
+    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-airport-to-bosphorus-cruise-transfer-guide", "best-time-for-bosphorus-cruise-istanbul", "princes-islands-istanbul-day-trip-guide-2026", "istanbul-3-day-itinerary-cruises-tours", "istanbul-cruise-booking-tips"],
   },
   {
     slug: "bosphorus-cruise-new-year-eve-istanbul-2026-2027",
@@ -2777,7 +2777,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "private-bosphorus-dinner-yacht-cruise"],
-    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "private-yacht-charter-istanbul-price", "bosphorus-cruise-winter-guide"],
+    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "private-yacht-charter-istanbul-price", "bosphorus-cruise-winter-guide", "new-years-eve-bosphorus-cruise"],
   },
   {
     slug: "bosphorus-cruise-solo-traveler-istanbul-2026",
@@ -2975,7 +2975,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "bosphorus-cruise-solo-traveler-istanbul-2026"],
+    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "bosphorus-cruise-solo-traveler-istanbul-2026", "bosphorus-vs-princes-islands", "bosphorus-cruise-vs-golden-horn-vs-princes-islands"],
   },
   {
     slug: "choosing-yacht-size-bosphorus-charter-istanbul-2026",
@@ -3074,6 +3074,6 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-dinner-yacht-cruise", "romantic-marriage-proposal"],
-    relatedPosts: ["private-yacht-charter-istanbul-price", "best-istanbul-bosphorus-cruise-comparison-2026", "corporate-yacht-event-planning-istanbul"],
+    relatedPosts: ["private-yacht-charter-istanbul-price", "best-istanbul-bosphorus-cruise-comparison-2026", "corporate-yacht-event-planning-istanbul", "private-yacht-rental-istanbul"],
   }
 ];

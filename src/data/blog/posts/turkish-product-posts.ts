@@ -183,7 +183,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter"],
-    relatedPosts: ["istanbul-yat-kiralama-rehberi-2026", "istanbul-evlilik-teklifi-tekne"],
+    relatedPosts: ["istanbul-yat-kiralama-rehberi-2026", "istanbul-evlilik-teklifi-tekne", "bogaz-turu-kac-saat-surer-rehberi-2026", "istanbul-aksam-yemegi-yat-rezervasyon-rehberi-2026", "yat-kiralama-tekne-fiyatlari-istanbul-2026"],
   },
 
   {
@@ -674,7 +674,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise"],
-    relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-yat-kiralama-rehberi-2026"],
+    relatedPosts: ["istanbul-bogaz-turu-fiyatlari-2026", "istanbul-yat-kiralama-rehberi-2026", "bogaz-turu-kac-saat-surer-rehberi-2026", "istanbul-aksam-yemegi-yat-rezervasyon-rehberi-2026", "eminonu-karakoy-kabatas-bogaz-turu-2026"],
   },
 
   {
