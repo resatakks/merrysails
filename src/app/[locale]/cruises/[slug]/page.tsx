@@ -292,6 +292,7 @@ export default async function LocaleTourDetailPage({
           <TourDetailClient
             tour={tour}
             related={related}
+            locale={locale as SiteLocale}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
         </div>

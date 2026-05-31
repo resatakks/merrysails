@@ -2,10 +2,14 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
+import {
+  detectBookingLocaleFromPathname,
+  getBookingCalendarStrings,
+  type BookingLocale,
+} from "@/i18n/booking-strings";
 
 // Guest-counter labels per active locale. Falls back to English when the
 // pathname starts with a locale segment we have not translated yet.
-type BookingLocale = "en" | "tr" | "de" | "fr" | "nl";
 
 const GUEST_LABELS: Record<BookingLocale, {
   adults: string;
@@ -61,16 +65,16 @@ const GUEST_LABELS: Record<BookingLocale, {
     infantsHint: "0–3 jaar · gratis",
     noAlcoholHint: " · niet beschikbaar bij alcoholpakketten",
   },
+  ru: {
+    adults: "Взрослые",
+    adultsHint: "От 13 лет",
+    children: "Дети",
+    childrenHint: "3–8 лет · −50%",
+    infants: "Младенцы",
+    infantsHint: "0–3 года · бесплатно",
+    noAlcoholHint: " · недоступно для пакетов с алкоголем",
+  },
 };
-
-function detectBookingLocale(pathname: string | null): BookingLocale {
-  if (!pathname) return "en";
-  const first = pathname.split("/").filter(Boolean)[0];
-  if (first === "tr" || first === "de" || first === "fr" || first === "nl") {
-    return first;
-  }
-  return "en";
-}
 import {
   format,
   addMonths,
@@ -164,7 +168,6 @@ function parseTimeOptions(dt?: string): string[] {
     .filter((t) => /^\d{2}:\d{2}$/.test(t));
 }
 
-const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const emptySubscribe = () => () => {};
 
 export default function BookingCalendar({
@@ -190,8 +193,10 @@ export default function BookingCalendar({
       : 2;
 
   const pathname = usePathname();
-  const bookingLocale = detectBookingLocale(pathname);
+  const bookingLocale = detectBookingLocaleFromPathname(pathname);
   const bookingLabels = GUEST_LABELS[bookingLocale];
+  const t = getBookingCalendarStrings(bookingLocale);
+  const dayLabels = t.dayLabels;
 
   const [currentMonth, setCurrentMonth] = useState<Date | null>(safeInitialDate);
   const [selectedDate, setSelectedDate] = useState<Date | null>(safeInitialDate);
@@ -261,15 +266,11 @@ export default function BookingCalendar({
         selectedOperation?.departureTimeOverride || selectedTime || departureTime
       )
     : false;
-  const bookingLabel = isPerGroup
-    ? "Request now, confirm with operations"
-    : "Reserve now, pay onboard";
+  const bookingLabel = isPerGroup ? t.requestNowConfirm : t.reserveNowPayOnboard;
   const bookingMetaText = isPerGroup
-    ? "Private charters are reviewed and confirmed in writing"
-    : "Selected date and guests update the total below";
-  const bookingPillText = isPerGroup
-    ? "Private charter request"
-    : "Shared cruise request";
+    ? t.privateChartersReviewedAndConfirmed
+    : t.selectedDateAndGuestsUpdate;
+  const bookingPillText = isPerGroup ? t.privateCharterRequest : t.sharedCruiseRequest;
   const normalizedSelectedTime =
     timeOptions.length > 1 && timeOptions.includes(selectedTime)
       ? selectedTime
@@ -333,7 +334,7 @@ export default function BookingCalendar({
           <SalePrice
             price={priceEur}
             originalPrice={originalPriceEur}
-            suffix={isPerGroup ? "/group" : "/person"}
+            suffix={isPerGroup ? t.perGroup : t.perPerson}
             label={bookingLabel}
             size="lg"
             tone="overlay"
@@ -369,7 +370,7 @@ export default function BookingCalendar({
           <SalePrice
             price={priceEur}
             originalPrice={originalPriceEur}
-            suffix={isPerGroup ? "/group" : "/person"}
+            suffix={isPerGroup ? t.perGroup : t.perPerson}
             label={bookingLabel}
             size="lg"
             tone="overlay"
@@ -379,7 +380,7 @@ export default function BookingCalendar({
           />
           <div className="hidden rounded-2xl border border-white/10 bg-white/10 px-3 py-2 sm:block">
             <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
-              Booking
+              {t.booking}
             </div>
             <div className="mt-1 text-sm font-semibold text-white">
               {bookingPillText}
@@ -393,7 +394,7 @@ export default function BookingCalendar({
         <div className="px-5 pt-5 pb-2">
           <div className="flex items-center gap-2 text-sm font-medium text-[var(--heading)]">
             <Calendar className="w-4 h-4 text-[var(--brand-primary)]" />
-            Select your preferred date
+            {t.selectYourPreferredDate}
           </div>
         </div>
       )}
@@ -494,11 +495,11 @@ export default function BookingCalendar({
                 </div>
                 {isSoldOut ? (
                   <div className="text-[9px] font-semibold text-gray-400">
-                    Sold Out
+                    {t.soldOut}
                   </div>
                 ) : isCutoffClosed ? (
                   <div className="text-[9px] font-semibold text-gray-400">
-                    Closed
+                    {t.closed}
                   </div>
                 ) : operation?.departureTimeOverride ? (
                   <div
@@ -514,7 +515,7 @@ export default function BookingCalendar({
                       isSelected ? "text-white/90" : "text-red-500"
                     }`}
                   >
-                    Last spots!
+                    {t.lastSpots}
                   </div>
                 ) : !isPast ? (
                   <div
@@ -563,7 +564,7 @@ export default function BookingCalendar({
                   onClick={() => setSelectedDate(null)}
                   className="ml-auto text-xs text-[var(--text-muted)] hover:text-[var(--body-text)] transition-colors"
                 >
-                  Change
+                  {t.change}
                 </button>
               </div>
 
@@ -572,7 +573,7 @@ export default function BookingCalendar({
                 <div>
                   <label className="text-sm font-medium mb-2 flex items-center gap-1.5 text-[var(--heading)]">
                     <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
-                    Departure Time
+                    {t.departureTime}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {timeOptions.map((time) => (
@@ -598,7 +599,7 @@ export default function BookingCalendar({
               {timeOptions.length === 1 && (
                 <div className="flex items-center gap-2 text-sm text-[var(--body-text)]">
                   <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
-                  Departure:{" "}
+                  {t.departure}:{" "}
                   <span className="font-semibold">{timeOptions[0]}</span>
                 </div>
               )}
@@ -629,10 +630,10 @@ export default function BookingCalendar({
               <div className="space-y-3">
                 <label className="text-sm font-medium flex items-center gap-1.5 text-[var(--heading)]">
                   <Users className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
-                  Guests
+                  {t.guests}
                 </label>
                 <p className="text-xs text-[var(--text-muted)]">
-                  A maximum of {MAX_BOOKING_GUESTS} guests can be added in one booking flow.
+                  {t.maxGuestsLine(MAX_BOOKING_GUESTS)}
                 </p>
 
                 {/* Adults */}
@@ -761,32 +762,41 @@ export default function BookingCalendar({
               <div className="space-y-2 py-3 border-t border-[var(--line)]">
                 {isWeekdayDiscountDay && weekdayDiscount && (
                   <div className="flex items-center justify-between text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2 py-1">
-                    <span>{weekdayDiscount && (selectedDate ? (selectedDate.getDay() === 2 ? "Tue" : "Thu") : "") + " discount"}</span>
-                    <span>€{priceEur} → €{weekdayDiscount.discountedPrice}/person</span>
+                    <span>
+                      {t.weekdayDiscountLine(
+                        selectedDate
+                          ? selectedDate.getDay() === 2
+                            ? t.weekdayShort.tue
+                            : t.weekdayShort.thu
+                          : ""
+                      )}
+                    </span>
+                    <span>
+                      €{priceEur} → €{weekdayDiscount.discountedPrice}{t.perPerson}
+                    </span>
                   </div>
                 )}
                 {originalTotal && (
                   <div className="flex items-center justify-between text-sm text-[var(--text-muted)]">
-                    <span>Standard direct fare</span>
+                    <span>{t.standardDirectFare}</span>
                     <span className="line-through">€{originalTotal}</span>
                   </div>
                 )}
                 <div className="flex items-center justify-between text-sm">
                   {isPerGroup ? (
                     <span className="text-[var(--body-text)]">
-                      €{effectivePriceEur} private charter price
+                      €{effectivePriceEur} {t.privateCharterPrice}
                     </span>
                   ) : (
                     <span className="text-[var(--body-text)]">
-                      €{effectivePriceEur} × {totalGuests} guest
-                      {totalGuests > 1 ? "s" : ""}
+                      {t.perPersonPriceLine(effectivePriceEur, totalGuests)}
                     </span>
                   )}
                   <span className="font-medium">€{total}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-[var(--heading)]">
-                    Total
+                    {t.total}
                   </span>
                   <span className="text-2xl font-bold text-[var(--heading)]">
                     €{total}
@@ -794,8 +804,7 @@ export default function BookingCalendar({
                 </div>
                 {originalTotal && (
                   <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700">
-                    You save €{totalSavings} on this reservation when you book the
-                    current fare.
+                    {t.youSaveOnReservation(totalSavings)}
                   </div>
                 )}
               </div>
@@ -811,41 +820,42 @@ export default function BookingCalendar({
                 whileTap={{ scale: 0.98 }}
               >
                 {sameDayClosedForSelectedDate
-                  ? "Same-Day Booking Closed"
+                  ? t.sameDayBookingClosed
                   : timeOptions.length > 1 && !normalizedSelectedTime
-                  ? "Select a Departure Time"
-                  : "Continue to booking"}
+                  ? t.selectDepartureTime
+                  : t.continueToBooking}
               </motion.button>
 
               {/* WhatsApp */}
-              <a
-                href={`https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
-                  selectedDate,
-                  "dd MMM yyyy"
-                )} for ${totalGuests} guests.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) =>
-                  handleTrackedContactNavigation(event, {
-                    href: `https://wa.me/905448989812?text=Hi, I'd like to book ${tourName} on ${format(
-                      selectedDate,
-                      "dd MMM yyyy"
-                    )} for ${totalGuests} guests.`,
-                    intent: "during_booking",
-                    kind: "whatsapp",
-                    label: "booking_calendar_whatsapp",
-                    location: tourSlug,
-                  })
-                }
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--brand-whatsapp)] text-white font-semibold hover:brightness-110 transition-all text-sm"
-              >
-                <Phone className="w-4 h-4" />
-                Book via WhatsApp
-              </a>
+              {(() => {
+                const dateLabel = format(selectedDate, "dd MMM yyyy");
+                const whatsappBody = t.whatsappBookingMessage(tourName, dateLabel, totalGuests);
+                const whatsappHref = `https://wa.me/905448989812?text=${encodeURIComponent(whatsappBody)}`;
+                return (
+                  <a
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) =>
+                      handleTrackedContactNavigation(event, {
+                        href: whatsappHref,
+                        intent: "during_booking",
+                        kind: "whatsapp",
+                        label: "booking_calendar_whatsapp",
+                        location: tourSlug,
+                      })
+                    }
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--brand-whatsapp)] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {t.bookViaWhatsApp}
+                  </a>
+                );
+              })()}
 
               <div className="flex items-center gap-2 text-xs text-[var(--text-muted)] justify-center">
                 <Shield className="w-3.5 h-3.5" />
-                Free cancellation up to 24h before
+                {t.freeCancellation}
               </div>
             </div>
           </motion.div>

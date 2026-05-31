@@ -27,10 +27,18 @@ import TourCard from "@/components/tours/TourCard";
 import SocialProof from "@/components/tours/SocialProof";
 import BestPriceBadge from "@/components/tours/BestPriceBadge";
 import { MAX_BOOKING_GUESTS } from "@/lib/constants";
+import type { SiteLocale } from "@/i18n/config";
+
+type DetailLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
+
+function toDetailLocale(locale: SiteLocale | undefined): DetailLocale {
+  return locale && locale in UI_LABELS ? (locale as DetailLocale) : "en";
+}
 
 interface Props {
   tour: Tour;
   related: Tour[];
+  locale?: SiteLocale;
   bookingPrefill?: {
     packageName?: string;
     date?: string;
@@ -41,12 +49,366 @@ interface Props {
 
 type TabKey = "overview" | "itinerary" | "included" | "faq";
 
-const TAB_LABELS: { key: TabKey; label: string }[] = [
-  { key: "overview", label: "Overview" },
-  { key: "itinerary", label: "Itinerary" },
-  { key: "included", label: "What's Included" },
-  { key: "faq", label: "FAQ" },
-];
+type UiLabels = {
+  tabOverview: string;
+  tabItinerary: string;
+  tabIncluded: string;
+  tabFaq: string;
+  duration: string;
+  format: string;
+  departure: string;
+  pickup: string;
+  pickupIncluded: string;
+  pickupOptional: string;
+  pickupCheck: string;
+  viewAllPhotos: (n: number) => string;
+  reviews: string;
+  about: (h: string) => string;
+  packageOptions: (h: string) => string;
+  serviceScope: (h: string) => string;
+  priceOnRequest: string;
+  selected: string;
+  selectedScope: string;
+  addOnServices: string;
+  availableOnRequest: string;
+  routeDeparture: (h: string) => string;
+  departureLabel: string;
+  highlights: (h: string) => string;
+  bestFor: string;
+  importantNotes: string;
+  freeCancellation: string;
+  freeCancellationBody: string;
+  itineraryTitle: (h: string) => string;
+  includedTitle: (h: string) => string;
+  includedCol: string;
+  notIncludedCol: string;
+  faqTitle: (h: string) => string;
+  youMightAlsoLike: string;
+  selectedPackage: string;
+  currentFare: string;
+  packages: string;
+  publicOptions: (n: number) => string;
+  singleFare: string;
+  booking: string;
+  directRequestFlow: string;
+  directBookingMeta: string;
+  currentDirectFare: string;
+  onBoardPreview: string;
+  onBoardHeading: (h: string) => string;
+  onBoardBody: string;
+  sharedSunsetSailing: (t: string) => string;
+  experienceType: string;
+  smallGroupRoute: string;
+};
+
+const UI_LABELS: Record<DetailLocale, UiLabels> = {
+  en: {
+    tabOverview: "Overview",
+    tabItinerary: "Itinerary",
+    tabIncluded: "What's Included",
+    tabFaq: "FAQ",
+    duration: "Duration",
+    format: "Format",
+    departure: "Departure",
+    pickup: "Pick-up",
+    pickupIncluded: "Included",
+    pickupOptional: "Optional",
+    pickupCheck: "Check details",
+    viewAllPhotos: (n) => `View all ${n} photos`,
+    reviews: "reviews",
+    about: (h) => `About ${h}`,
+    packageOptions: (h) => `${h} Package Options`,
+    serviceScope: (h) => `${h} Service Scope`,
+    priceOnRequest: "Price on request",
+    selected: "Selected",
+    selectedScope: "Selected scope",
+    addOnServices: "Add-On Services",
+    availableOnRequest: "Available on request",
+    routeDeparture: (h) => `${h} Route & Departure`,
+    departureLabel: "Departure",
+    highlights: (h) => `${h} Highlights`,
+    bestFor: "Best For",
+    importantNotes: "Important Booking Notes",
+    freeCancellation: "Free Cancellation",
+    freeCancellationBody: "Full refund available with 24+ hours advance notice. No questions asked.",
+    itineraryTitle: (h) => `${h} Itinerary`,
+    includedTitle: (h) => `What's Included in ${h}`,
+    includedCol: "Included",
+    notIncludedCol: "Not Included",
+    faqTitle: (h) => `${h} Frequently Asked Questions`,
+    youMightAlsoLike: "You Might Also Like",
+    selectedPackage: "Selected package",
+    currentFare: "Current fare",
+    packages: "Packages",
+    publicOptions: (n) => `${n} public options`,
+    singleFare: "Single public fare",
+    booking: "Booking",
+    directRequestFlow: "Direct request flow",
+    directBookingMeta: "Direct booking price shown on this page",
+    currentDirectFare: "Current direct booking fare",
+    onBoardPreview: "On-board preview",
+    onBoardHeading: (h) => `${h} — On Board the Bosphorus`,
+    onBoardBody: "See the actual on-board experience before you book: the Bosphorus views, golden-hour light, and yacht atmosphere of a shared MerrySails departure.",
+    sharedSunsetSailing: (t) => `${t} shared sunset sailing`,
+    experienceType: "Experience type",
+    smallGroupRoute: "Small-group luxury yacht route",
+  },
+  tr: {
+    tabOverview: "Genel Bakış",
+    tabItinerary: "Program",
+    tabIncluded: "Neler Dahil",
+    tabFaq: "SSS",
+    duration: "Süre",
+    format: "Format",
+    departure: "Kalkış",
+    pickup: "Alış",
+    pickupIncluded: "Dahil",
+    pickupOptional: "Opsiyonel",
+    pickupCheck: "Detayları kontrol edin",
+    viewAllPhotos: (n) => `${n} fotoğrafın tümünü gör`,
+    reviews: "değerlendirme",
+    about: (h) => `${h} Hakkında`,
+    packageOptions: (h) => `${h} Paket Seçenekleri`,
+    serviceScope: (h) => `${h} Hizmet Kapsamı`,
+    priceOnRequest: "Fiyat talep üzerine",
+    selected: "Seçildi",
+    selectedScope: "Seçilen kapsam",
+    addOnServices: "Ek Hizmetler",
+    availableOnRequest: "Talep üzerine mevcut",
+    routeDeparture: (h) => `${h} Güzergah ve Kalkış`,
+    departureLabel: "Kalkış",
+    highlights: (h) => `${h} Öne Çıkanlar`,
+    bestFor: "Kimler İçin İdeal",
+    importantNotes: "Önemli Rezervasyon Notları",
+    freeCancellation: "Ücretsiz İptal",
+    freeCancellationBody: "24+ saat önceden bildirimle tam iade mevcuttur. Hiçbir soru sorulmaz.",
+    itineraryTitle: (h) => `${h} Programı`,
+    includedTitle: (h) => `${h} Neleri İçerir`,
+    includedCol: "Dahil",
+    notIncludedCol: "Dahil Değil",
+    faqTitle: (h) => `${h} Sıkça Sorulan Sorular`,
+    youMightAlsoLike: "Şunları da Beğenebilirsiniz",
+    selectedPackage: "Seçilen paket",
+    currentFare: "Güncel ücret",
+    packages: "Paketler",
+    publicOptions: (n) => `${n} genel seçenek`,
+    singleFare: "Tek genel ücret",
+    booking: "Rezervasyon",
+    directRequestFlow: "Doğrudan talep akışı",
+    directBookingMeta: "Bu sayfada gösterilen doğrudan rezervasyon fiyatı",
+    currentDirectFare: "Güncel doğrudan rezervasyon ücreti",
+    onBoardPreview: "Teknede önizleme",
+    onBoardHeading: (h) => `${h} — Boğaz'da Tekne Üzerinde`,
+    onBoardBody: "Rezervasyon yapmadan önce gerçek tekne deneyimini görün: Boğaz manzarası, altın saat ışığı ve paylaşımlı bir MerrySails seferinin yat atmosferi.",
+    sharedSunsetSailing: (t) => `${t} paylaşımlı gün batımı seferi`,
+    experienceType: "Deneyim türü",
+    smallGroupRoute: "Küçük grup lüks yat güzergahı",
+  },
+  de: {
+    tabOverview: "Überblick",
+    tabItinerary: "Ablauf",
+    tabIncluded: "Inklusivleistungen",
+    tabFaq: "FAQ",
+    duration: "Dauer",
+    format: "Format",
+    departure: "Abfahrt",
+    pickup: "Abholung",
+    pickupIncluded: "Inklusive",
+    pickupOptional: "Optional",
+    pickupCheck: "Details prüfen",
+    viewAllPhotos: (n) => `Alle ${n} Fotos ansehen`,
+    reviews: "Bewertungen",
+    about: (h) => `Über ${h}`,
+    packageOptions: (h) => `${h} Paketoptionen`,
+    serviceScope: (h) => `${h} Leistungsumfang`,
+    priceOnRequest: "Preis auf Anfrage",
+    selected: "Ausgewählt",
+    selectedScope: "Ausgewählter Umfang",
+    addOnServices: "Zusatzleistungen",
+    availableOnRequest: "Auf Anfrage verfügbar",
+    routeDeparture: (h) => `${h} Route & Abfahrt`,
+    departureLabel: "Abfahrt",
+    highlights: (h) => `${h} Highlights`,
+    bestFor: "Ideal für",
+    importantNotes: "Wichtige Buchungshinweise",
+    freeCancellation: "Kostenlose Stornierung",
+    freeCancellationBody: "Volle Rückerstattung bei Stornierung mindestens 24 Stunden im Voraus. Ohne Rückfragen.",
+    itineraryTitle: (h) => `${h} Ablauf`,
+    includedTitle: (h) => `Inklusivleistungen der ${h}`,
+    includedCol: "Inklusive",
+    notIncludedCol: "Nicht inklusive",
+    faqTitle: (h) => `${h} Häufig gestellte Fragen`,
+    youMightAlsoLike: "Das könnte Ihnen auch gefallen",
+    selectedPackage: "Ausgewähltes Paket",
+    currentFare: "Aktueller Preis",
+    packages: "Pakete",
+    publicOptions: (n) => `${n} öffentliche Optionen`,
+    singleFare: "Einzelner öffentlicher Preis",
+    booking: "Buchung",
+    directRequestFlow: "Direkter Anfrageprozess",
+    directBookingMeta: "Auf dieser Seite angezeigter Direktbuchungspreis",
+    currentDirectFare: "Aktueller Direktbuchungspreis",
+    onBoardPreview: "Vorschau an Bord",
+    onBoardHeading: (h) => `${h} — An Bord auf dem Bosporus`,
+    onBoardBody: "Sehen Sie das echte Bord-Erlebnis vor der Buchung: die Bosporus-Ausblicke, das Licht der goldenen Stunde und die Jacht-Atmosphäre einer geteilten MerrySails-Abfahrt.",
+    sharedSunsetSailing: (t) => `Geteilte Sonnenuntergangsfahrt um ${t}`,
+    experienceType: "Erlebnistyp",
+    smallGroupRoute: "Kleingruppen-Luxusjacht-Route",
+  },
+  fr: {
+    tabOverview: "Aperçu",
+    tabItinerary: "Itinéraire",
+    tabIncluded: "Ce qui est inclus",
+    tabFaq: "FAQ",
+    duration: "Durée",
+    format: "Format",
+    departure: "Départ",
+    pickup: "Prise en charge",
+    pickupIncluded: "Inclus",
+    pickupOptional: "Optionnel",
+    pickupCheck: "Voir les détails",
+    viewAllPhotos: (n) => `Voir les ${n} photos`,
+    reviews: "avis",
+    about: (h) => `À propos de ${h}`,
+    packageOptions: (h) => `Formules ${h}`,
+    serviceScope: (h) => `Étendue du service ${h}`,
+    priceOnRequest: "Prix sur demande",
+    selected: "Sélectionné",
+    selectedScope: "Étendue sélectionnée",
+    addOnServices: "Services supplémentaires",
+    availableOnRequest: "Disponible sur demande",
+    routeDeparture: (h) => `Itinéraire et départ ${h}`,
+    departureLabel: "Départ",
+    highlights: (h) => `Points forts ${h}`,
+    bestFor: "Idéal pour",
+    importantNotes: "Notes de réservation importantes",
+    freeCancellation: "Annulation gratuite",
+    freeCancellationBody: "Remboursement intégral avec un préavis de 24 heures ou plus. Sans justification.",
+    itineraryTitle: (h) => `Itinéraire ${h}`,
+    includedTitle: (h) => `Ce qui est inclus dans ${h}`,
+    includedCol: "Inclus",
+    notIncludedCol: "Non inclus",
+    faqTitle: (h) => `Questions fréquentes ${h}`,
+    youMightAlsoLike: "Vous pourriez aussi aimer",
+    selectedPackage: "Formule sélectionnée",
+    currentFare: "Tarif actuel",
+    packages: "Formules",
+    publicOptions: (n) => `${n} options publiques`,
+    singleFare: "Tarif public unique",
+    booking: "Réservation",
+    directRequestFlow: "Processus de demande directe",
+    directBookingMeta: "Prix de réservation directe affiché sur cette page",
+    currentDirectFare: "Tarif de réservation directe actuel",
+    onBoardPreview: "Aperçu à bord",
+    onBoardHeading: (h) => `${h} — À bord sur le Bosphore`,
+    onBoardBody: "Découvrez l'expérience réelle à bord avant de réserver : les vues sur le Bosphore, la lumière de l'heure dorée et l'ambiance yacht d'un départ partagé MerrySails.",
+    sharedSunsetSailing: (t) => `Croisière partagée au coucher du soleil à ${t}`,
+    experienceType: "Type d'expérience",
+    smallGroupRoute: "Itinéraire en yacht de luxe en petit groupe",
+  },
+  nl: {
+    tabOverview: "Overzicht",
+    tabItinerary: "Programma",
+    tabIncluded: "Wat is inbegrepen",
+    tabFaq: "FAQ",
+    duration: "Duur",
+    format: "Format",
+    departure: "Vertrek",
+    pickup: "Ophalen",
+    pickupIncluded: "Inbegrepen",
+    pickupOptional: "Optioneel",
+    pickupCheck: "Bekijk details",
+    viewAllPhotos: (n) => `Bekijk alle ${n} foto's`,
+    reviews: "beoordelingen",
+    about: (h) => `Over ${h}`,
+    packageOptions: (h) => `${h} Pakketopties`,
+    serviceScope: (h) => `${h} Servicebereik`,
+    priceOnRequest: "Prijs op aanvraag",
+    selected: "Geselecteerd",
+    selectedScope: "Geselecteerd bereik",
+    addOnServices: "Extra services",
+    availableOnRequest: "Beschikbaar op aanvraag",
+    routeDeparture: (h) => `${h} Route en vertrek`,
+    departureLabel: "Vertrek",
+    highlights: (h) => `${h} Hoogtepunten`,
+    bestFor: "Ideaal voor",
+    importantNotes: "Belangrijke boekingsnotities",
+    freeCancellation: "Gratis annulering",
+    freeCancellationBody: "Volledige terugbetaling bij annulering 24 uur of meer van tevoren. Zonder vragen.",
+    itineraryTitle: (h) => `${h} Programma`,
+    includedTitle: (h) => `Wat is inbegrepen bij ${h}`,
+    includedCol: "Inbegrepen",
+    notIncludedCol: "Niet inbegrepen",
+    faqTitle: (h) => `${h} Veelgestelde vragen`,
+    youMightAlsoLike: "Misschien vindt u dit ook leuk",
+    selectedPackage: "Geselecteerd pakket",
+    currentFare: "Huidige prijs",
+    packages: "Pakketten",
+    publicOptions: (n) => `${n} openbare opties`,
+    singleFare: "Enkele openbare prijs",
+    booking: "Boeking",
+    directRequestFlow: "Directe aanvraagstroom",
+    directBookingMeta: "Directe boekingsprijs getoond op deze pagina",
+    currentDirectFare: "Huidige directe boekingsprijs",
+    onBoardPreview: "Voorbeeld aan boord",
+    onBoardHeading: (h) => `${h} — Aan boord op de Bosporus`,
+    onBoardBody: "Bekijk de echte ervaring aan boord voordat u boekt: de uitzichten op de Bosporus, het licht van het gouden uur en de jachtsfeer van een gedeeld MerrySails-vertrek.",
+    sharedSunsetSailing: (t) => `Gedeelde zonsondergangvaart om ${t}`,
+    experienceType: "Soort ervaring",
+    smallGroupRoute: "Luxe jachtroute in kleine groep",
+  },
+  ru: {
+    tabOverview: "Обзор",
+    tabItinerary: "Программа",
+    tabIncluded: "Что включено",
+    tabFaq: "FAQ",
+    duration: "Длительность",
+    format: "Формат",
+    departure: "Отправление",
+    pickup: "Трансфер",
+    pickupIncluded: "Включён",
+    pickupOptional: "По запросу",
+    pickupCheck: "Уточнить детали",
+    viewAllPhotos: (n) => `Все фото — ${n}`,
+    reviews: "отзывов",
+    about: (h) => `О туре ${h}`,
+    packageOptions: (h) => `Пакеты ${h}`,
+    serviceScope: (h) => `Объём услуги ${h}`,
+    priceOnRequest: "Цена по запросу",
+    selected: "Выбрано",
+    selectedScope: "Выбранный объём",
+    addOnServices: "Дополнительные услуги",
+    availableOnRequest: "Доступно по запросу",
+    routeDeparture: (h) => `Маршрут и отправление — ${h}`,
+    departureLabel: "Отправление",
+    highlights: (h) => `Преимущества — ${h}`,
+    bestFor: "Кому подойдёт",
+    importantNotes: "Важные замечания по бронированию",
+    freeCancellation: "Бесплатная отмена",
+    freeCancellationBody: "Полный возврат при отмене за 24+ часа. Без лишних вопросов.",
+    itineraryTitle: (h) => `Программа — ${h}`,
+    includedTitle: (h) => `Что включено в ${h}`,
+    includedCol: "Включено",
+    notIncludedCol: "Не включено",
+    faqTitle: (h) => `Частые вопросы — ${h}`,
+    youMightAlsoLike: "Вам также может понравиться",
+    selectedPackage: "Выбранный пакет",
+    currentFare: "Текущая цена",
+    packages: "Пакеты",
+    publicOptions: (n) => `Открытых опций: ${n}`,
+    singleFare: "Единый общий тариф",
+    booking: "Бронирование",
+    directRequestFlow: "Прямой запрос",
+    directBookingMeta: "На странице показана цена прямого бронирования",
+    currentDirectFare: "Текущая цена прямого бронирования",
+    onBoardPreview: "На борту",
+    onBoardHeading: (h) => `${h} — на борту в Босфоре`,
+    onBoardBody: "Посмотрите реальный опыт на борту до бронирования: виды Босфора, золотой час и атмосфера яхты MerrySails.",
+    sharedSunsetSailing: (t) => `Совместный закатный круиз в ${t}`,
+    experienceType: "Тип опыта",
+    smallGroupRoute: "Маршрут на люксовой яхте в малой группе",
+  },
+};
 
 const SEO_HEADINGS_BY_SLUG: Record<string, string> = {
   "bosphorus-sunset-cruise": "Bosphorus Sunset Cruise",
@@ -54,11 +416,75 @@ const SEO_HEADINGS_BY_SLUG: Record<string, string> = {
   "yacht-charter-in-istanbul": "Yacht Charter Istanbul",
 };
 
+// Per-person price suffix per locale (perPerson is the only mode used by the
+// translated tours). EN keeps getPriceSuffix() for byte-identical output.
+const PRICE_SUFFIX: Record<Exclude<DetailLocale, "en">, string> = {
+  tr: "/kişi",
+  de: "/Person",
+  fr: "/personne",
+  nl: "/persoon",
+  ru: "/гость",
+};
+
+// Translated equivalents of getTourFormat() for the locale-aware tours.
+const TOUR_FORMAT_BY_LOCALE: Record<
+  Exclude<DetailLocale, "en">,
+  Record<string, string>
+> = {
+  tr: {
+    "bosphorus-sunset-cruise": "Paylaşımlı gün batımı turu",
+    "bosphorus-dinner-cruise": "Paylaşımlı yemekli tur",
+  },
+  de: {
+    "bosphorus-sunset-cruise": "Geteilte Sonnenuntergangsfahrt",
+    "bosphorus-dinner-cruise": "Geteilte Dinner-Kreuzfahrt",
+  },
+  fr: {
+    "bosphorus-sunset-cruise": "Croisière partagée au coucher du soleil",
+    "bosphorus-dinner-cruise": "Croisière dîner partagée",
+  },
+  nl: {
+    "bosphorus-sunset-cruise": "Gedeelde zonsondergangcruise",
+    "bosphorus-dinner-cruise": "Gedeelde dinercruise",
+  },
+  ru: {
+    "bosphorus-sunset-cruise": "Совместный закатный круиз",
+    "bosphorus-dinner-cruise": "Совместный ужин-круиз",
+  },
+};
+
 export default function TourDetailClient({
   tour,
   related,
+  locale: localeProp = "en",
   bookingPrefill,
 }: Props) {
+  const locale = toDetailLocale(localeProp);
+  const L = UI_LABELS[locale] ?? UI_LABELS.en;
+  const i18n =
+    locale !== "en" ? tour.i18n?.[locale] : undefined;
+
+  // Locale-resolved tour fields — fall back to English when no translation exists.
+  const tName = i18n?.nameEn ?? tour.nameEn;
+  const tDescription = i18n?.longDescription ?? tour.longDescription;
+  const tDuration = i18n?.duration ?? tour.duration;
+  const tDepartureTime = i18n?.departureTime ?? tour.departureTime;
+  const tDeparturePoint = i18n?.departurePoint ?? tour.departurePoint;
+  const tRoute = i18n?.route ?? tour.route;
+  const tHighlights = i18n?.highlights ?? tour.highlights;
+  const tBestFor = i18n?.bestFor ?? tour.bestFor;
+  const tImportantNotes = i18n?.importantNotes ?? tour.importantNotes;
+  const tIncludes = i18n?.includes ?? tour.includes;
+  const tNotIncluded = i18n?.notIncluded ?? tour.notIncluded;
+  const tFaq = i18n?.faq ?? tour.faq;
+  const tItinerary = (tour.itinerary ?? []).map((step, idx) => ({
+    ...step,
+    title: i18n?.itinerary?.[idx]?.title ?? step.title,
+    description: i18n?.itinerary?.[idx]?.description ?? step.description,
+  }));
+  // Translated package name/description/features matched by index.
+  const localizedPackage = (idx: number) => i18n?.packages?.[idx];
+
   const packageParam = bookingPrefill?.packageName;
   const dateParam = bookingPrefill?.date;
   const guestsParam = bookingPrefill?.guests;
@@ -82,11 +508,20 @@ export default function TourDetailClient({
   const hasPackages = tour.packages && tour.packages.length > 0;
   const hasItinerary = tour.itinerary && tour.itinerary.length > 0;
   const hasFaq = tour.faq && tour.faq.length > 0;
+  const TAB_LABELS: { key: TabKey; label: string }[] = [
+    { key: "overview", label: L.tabOverview },
+    { key: "itinerary", label: L.tabItinerary },
+    { key: "included", label: L.tabIncluded },
+    { key: "faq", label: L.tabFaq },
+  ];
   const showPricing = isPricingVisible(tour);
   const bookingMode = getBookingMode(tour);
   const priceMode = getPriceMode(tour);
-  const priceSuffix = getPriceSuffix(tour);
-  const tourFormat = getTourFormat(tour);
+  const priceSuffix = locale === "en" ? getPriceSuffix(tour) : PRICE_SUFFIX[locale];
+  const tourFormat =
+    locale !== "en" && TOUR_FORMAT_BY_LOCALE[locale]?.[tour.slug]
+      ? TOUR_FORMAT_BY_LOCALE[locale][tour.slug]
+      : getTourFormat(tour);
 
   const allImages = [tour.image, ...tour.gallery.filter((img) => img !== tour.image)];
   const prefilledDate = useMemo(() => {
@@ -104,22 +539,20 @@ export default function TourDetailClient({
     [selectedPackage, tour.addOns]
   );
   const pickupStatus = useMemo(() => {
-    const hasPickupIncluded = tour.includes.some((item) => {
+    const pickupTerms = ["pickup", "transfer", "abhol", "ophaal", "alış", "prise en charge"];
+    const matchesPickup = (item: string) => {
       const normalized = item.toLowerCase();
-      return normalized.includes("pickup") || normalized.includes("transfer");
-    }
-    );
-    const hasPickupExcluded = tour.notIncluded?.some((item) => {
-      const normalized = item.toLowerCase();
-      return normalized.includes("pickup") || normalized.includes("transfer");
-    }
-    );
+      return pickupTerms.some((term) => normalized.includes(term));
+    };
+    const hasPickupIncluded = tIncludes.some(matchesPickup);
+    const hasPickupExcluded = tNotIncluded?.some(matchesPickup);
 
-    if (hasPickupIncluded) return "Included";
-    if (hasPickupExcluded) return "Optional";
-    return "Check details";
-  }, [tour.includes, tour.notIncluded]);
-  const pageHeading = SEO_HEADINGS_BY_SLUG[tour.slug] ?? tour.nameEn;
+    if (hasPickupIncluded) return L.pickupIncluded;
+    if (hasPickupExcluded) return L.pickupOptional;
+    return L.pickupCheck;
+  }, [tIncludes, tNotIncluded, L]);
+  const pageHeading =
+    locale !== "en" ? tName : SEO_HEADINGS_BY_SLUG[tour.slug] ?? tour.nameEn;
 
   // Build available tabs based on tour data
   const availableTabs = TAB_LABELS.filter((tab) => {
@@ -145,20 +578,6 @@ export default function TourDetailClient({
         nextAvailableAddOns.some((item) => item.name === addon.name)
       )
     );
-
-    // Provide immediate visual feedback on mobile.  Clarity dead-click
-    // analysis (2026-05-29) showed users tapping package titles and
-    // perceiving no response because the booking sidebar lives below the
-    // fold on phones — they didn't realise the selection had registered.
-    // On screens narrower than the lg breakpoint we now scroll the
-    // booking sidebar into view; on desktop the sidebar is already
-    // visible so we leave the viewport untouched.
-    if (typeof window !== "undefined" && window.innerWidth < 1024) {
-      const sidebar = document.getElementById("booking-sidebar");
-      if (sidebar) {
-        sidebar.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
   };
 
 
@@ -181,9 +600,21 @@ export default function TourDetailClient({
   const effectiveOriginalPrice =
     selectedPackage?.originalPrice ??
     (effectivePrice === basePrice ? tour.originalPriceEur : undefined);
-  const selectedOptionLabel = hasPackages ? "Selected package" : "Current fare";
+  const selectedOptionLabel = hasPackages ? L.selectedPackage : L.currentFare;
   const hasVideoPreview = Boolean(tour.videoSrc);
   const showFeatureStrip = tour.slug === "bosphorus-sunset-cruise";
+  const selectedPackageIndex = selectedPackage
+    ? tour.packages?.findIndex((p) => p.name === selectedPackage.name) ?? -1
+    : -1;
+  const selectedPackageName =
+    (selectedPackageIndex >= 0
+      ? localizedPackage(selectedPackageIndex)?.name
+      : undefined) ?? selectedPackage?.name;
+  const selectedPackageDescription =
+    selectedPackageIndex >= 0
+      ? localizedPackage(selectedPackageIndex)?.description ?? selectedPackage?.description
+      : selectedPackage?.description;
+
   // Hero gallery visibility — when the tour data has an empty `gallery` array,
   // the entire mobile + desktop hero gallery block is skipped (e.g. sunset cruise
   // parked 2026-05-26 pending fresh original shoot). og:image + Product schema
@@ -211,7 +642,7 @@ export default function TourDetailClient({
         >
           <Image
             src={allImages[0]}
-            alt={`${tour.nameEn} — ${tour.route} in Istanbul`}
+            alt={`${tName} — ${tRoute} in Istanbul`}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             priority
@@ -237,7 +668,7 @@ export default function TourDetailClient({
             >
               <Image
                 src={img}
-                alt={`${tour.nameEn} ${i + 2}`}
+                alt={tour.galleryAlts?.[i + 1] ?? `${tName} ${i + 2}`}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -253,95 +684,47 @@ export default function TourDetailClient({
           className="absolute bottom-4 right-4 z-10 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg text-sm font-semibold text-[var(--heading)] shadow-md hover:bg-white transition-colors cursor-pointer"
         >
           <Camera className="w-4 h-4" />
-          View all {allImages.length} photos
+          {L.viewAllPhotos(allImages.length)}
         </button>
       </div>
         </>
       )}
 
-      {/* Quick Info Bar — horizontal with dividers.
-          Departure + Pick-up tiles are clickable buttons that scroll to the booking
-          sidebar. Clarity dead-click data (2026-05-08) showed 69 dead clicks on
-          "Pick-up Optional" + 13 on "Departure 18:30" because users perceived these
-          as interactive. Now they actually scroll the user to the date/time/pickup
-          controls in the booking sidebar. Duration + Format remain static (no UX
-          signal that they should be interactive). */}
+      {/* Quick Info Bar — horizontal with dividers */}
       <div className="mb-8 grid grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-white md:grid-cols-4">
-        {/* Duration + Format are now also clickable — Clarity heatmap (2026-05-23)
-         * showed lingering dead clicks here even after the 2026-05-08 fix that
-         * only converted Departure + Pick-up. All four tiles now scroll to the
-         * booking sidebar so any tile a guest taps becomes useful action. */}
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.getElementById("booking-sidebar");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          aria-label={`Open booking — duration ${tour.duration}`}
-          className="flex w-full items-center gap-2.5 border-b border-r border-[var(--line)] px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40 md:border-b-0"
-        >
+        <div className="flex items-center gap-2.5 border-b border-r border-[var(--line)] px-5 py-4 md:border-b-0">
           <Clock className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
-            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Duration</div>
-            <div className="text-sm font-semibold text-[var(--heading)]">{tour.duration}</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">{L.duration}</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tDuration}</div>
           </div>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.getElementById("booking-sidebar");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          aria-label={`Open booking — format ${tourFormat}`}
-          className="flex w-full items-center gap-2.5 border-b border-[var(--line)] px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40 md:border-b-0 md:border-r"
-        >
+        </div>
+        <div className="flex items-center gap-2.5 border-b border-[var(--line)] px-5 py-4 md:border-b-0 md:border-r">
           <Users className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
-            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Format</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">{L.format}</div>
             <div className="text-sm font-semibold text-[var(--heading)]">{tourFormat}</div>
           </div>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.getElementById("booking-sidebar");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          aria-label={`Open booking — change departure time, currently ${tour.departureTime}`}
-          className="flex w-full items-center gap-2.5 border-r border-[var(--line)] px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40"
-        >
+        </div>
+        <div className="flex items-center gap-2.5 border-r border-[var(--line)] px-5 py-4">
           <CalendarDays className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
-            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Departure</div>
-            <div className="text-sm font-semibold text-[var(--heading)]">{tour.departureTime}</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">{L.departure}</div>
+            <div className="text-sm font-semibold text-[var(--heading)]">{tDepartureTime}</div>
           </div>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.getElementById("booking-sidebar");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          aria-label={
-            pickupStatus === "Optional"
-              ? "Open booking — request hotel pickup as an extra"
-              : pickupStatus === "Included"
-              ? "Open booking — hotel pickup is included"
-              : "Open booking — see pickup details"
-          }
-          className="flex w-full items-center gap-2.5 px-5 py-4 text-left transition-colors hover:bg-[var(--surface-alt)] focus:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40"
-        >
+        </div>
+        <div className="flex items-center gap-2.5 px-5 py-4">
           <Navigation className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
           <div>
-            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">Pick-up</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-medium">{L.pickup}</div>
             <div className="text-sm font-semibold text-[var(--heading)]">
               {pickupStatus}
             </div>
           </div>
-        </button>
+        </div>
       </div>
 
-      {showFeatureStrip && <TourFeatureStrip />}
+      {showFeatureStrip && <TourFeatureStrip brand="MerrySails" />}
 
       {hasVideoPreview ? (
         <div className="mb-8 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm">
@@ -360,30 +743,30 @@ export default function TourDetailClient({
 
             <div className="flex flex-col justify-center p-6 md:p-7">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-primary)]">
-                On-board preview
+                {L.onBoardPreview}
               </p>
               <h2 className="mt-2 text-2xl font-bold text-[var(--heading)]">
-                {pageHeading} — On Board the Bosphorus
+                {L.onBoardHeading(pageHeading)}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
-                See the actual on-board experience before you book: the Bosphorus views, golden-hour light, and yacht atmosphere of a shared MerrySails departure.
+                {L.onBoardBody}
               </p>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-[1.35rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4">
                   <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    Departure
+                    {L.departure}
                   </div>
                   <div className="mt-2 text-base font-semibold text-[var(--heading)]">
-                    {tour.departureTime} shared sunset sailing
+                    {L.sharedSunsetSailing(tDepartureTime)}
                   </div>
                 </div>
                 <div className="rounded-[1.35rem] border border-[var(--line)] bg-[var(--surface-alt)] px-4 py-4">
                   <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    Experience type
+                    {L.experienceType}
                   </div>
                   <div className="mt-2 text-base font-semibold text-[var(--heading)]">
-                    Small-group luxury yacht route
+                    {L.smallGroupRoute}
                   </div>
                 </div>
               </div>
@@ -397,8 +780,8 @@ export default function TourDetailClient({
         <div className="order-2 space-y-6 lg:order-1 lg:col-span-2">
           {/* Title & Rating */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h2>
-            <p className="text-[var(--text-muted)] mb-3">{tour.name}</p>
+            <h1 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h1>
+            <p className="text-[var(--text-muted)] mb-3">{tName}</p>
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <div className="flex items-center gap-1">
                 <div className="flex">
@@ -407,13 +790,13 @@ export default function TourDetailClient({
                   ))}
                 </div>
                 <span className="font-semibold">{tour.rating}</span>
-                <span className="text-[var(--text-muted)]">({tour.reviewCount} reviews)</span>
+                <span className="text-[var(--text-muted)]">({tour.reviewCount} {L.reviews})</span>
               </div>
             </div>
           </div>
 
           {showPricing && (
-            <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(255,8,68,0.06),rgba(255,184,0,0.08))] p-5 md:p-6">
+            <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(230,110,72,0.06),rgba(255,184,0,0.08))] p-5 md:p-6">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div className="space-y-3">
                   <SalePrice
@@ -424,39 +807,38 @@ export default function TourDetailClient({
                     size="xl"
                     showBadge={Boolean(effectiveOriginalPrice)}
                     showMeta={Boolean(effectiveOriginalPrice)}
-                    metaText="Direct booking price shown on this page"
+                    metaText={L.directBookingMeta}
                   />
-                  <p className="max-w-2xl text-sm leading-relaxed text-[var(--body-text)]/80">
-                    {selectedPackage?.name ? `${selectedPackage.name}. ` : ""}
-                    We keep the booking flow focused on the live public option ladder,
-                    so your selected package, date, and guest count stay together all
-                    the way into the reservation step.
-                  </p>
+                  {selectedPackageDescription && (
+                    <p className="max-w-2xl text-sm leading-relaxed text-[var(--body-text)]/80">
+                      {selectedPackageDescription}
+                    </p>
+                  )}
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-3">
                   <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-                      Packages
+                      {L.packages}
                     </div>
                     <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                      {hasPackages ? `${tour.packages!.length} public options` : "Single public fare"}
+                      {hasPackages ? L.publicOptions(tour.packages!.length) : L.singleFare}
                     </div>
                   </div>
                   <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-                      Duration
+                      {L.duration}
                     </div>
                     <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                      {tour.duration}
+                      {tDuration}
                     </div>
                   </div>
                   <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-                      Booking
+                      {L.booking}
                     </div>
                     <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                      Direct request flow
+                      {L.directRequestFlow}
                     </div>
                   </div>
                 </div>
@@ -504,9 +886,9 @@ export default function TourDetailClient({
                 >
                   {/* Description */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-4">About {pageHeading}</h2>
+                    <h2 className="text-xl font-bold mb-4">{L.about(pageHeading)}</h2>
                     <div className="text-[var(--body-text)] leading-relaxed whitespace-pre-line">
-                      {tour.longDescription}
+                      {tDescription}
                     </div>
                   </div>
 
@@ -514,11 +896,15 @@ export default function TourDetailClient({
                   {hasPackages && (
                     <div className="bg-white rounded-2xl p-6 md:p-8">
                       <h2 className="text-xl font-bold mb-6">
-                        {showPricing ? `${pageHeading} Package Options` : `${pageHeading} Service Scope`}
+                        {showPricing ? L.packageOptions(pageHeading) : L.serviceScope(pageHeading)}
                       </h2>
                       <div className={`grid grid-cols-1 gap-4 ${tour.packages!.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
-                        {tour.packages!.map((pkg) => {
+                        {tour.packages!.map((pkg, pkgIdx) => {
                           const isSelected = selectedPackage?.name === pkg.name;
+                          const pkgL = localizedPackage(pkgIdx);
+                          const pkgName = pkgL?.name ?? pkg.name;
+                          const pkgDescription = pkgL?.description ?? pkg.description;
+                          const pkgFeatures = pkgL?.features ?? pkg.features;
                           return (
                             <button
                               key={pkg.name}
@@ -529,8 +915,8 @@ export default function TourDetailClient({
                                   : "border-[var(--line)] hover:border-[var(--brand-primary)]/30"
                               }`}
                             >
-                              <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
-                              <p className="text-sm text-[var(--text-muted)] mb-3">{pkg.description}</p>
+                              <h3 className="text-lg font-bold mb-1">{pkgName}</h3>
+                              <p className="text-sm text-[var(--text-muted)] mb-3">{pkgDescription}</p>
                               {showPricing ? (
                                 <div className="mb-4">
                                   <SalePrice
@@ -540,16 +926,16 @@ export default function TourDetailClient({
                                     size="md"
                                     showBadge={Boolean(pkg.originalPrice)}
                                     showMeta={Boolean(pkg.originalPrice)}
-                                    metaText="Current direct booking fare"
+                                    metaText={L.currentDirectFare}
                                   />
                                 </div>
                               ) : (
                                 <div className="mb-4 text-sm font-semibold text-[var(--brand-primary)]">
-                                  Price on request
+                                  {L.priceOnRequest}
                                 </div>
                               )}
                               <ul className="space-y-2">
-                                {pkg.features.map((f) => (
+                                {pkgFeatures.map((f) => (
                                   <li key={f} className="flex items-start gap-2 text-sm">
                                     <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                                     <span>{f}</span>
@@ -559,7 +945,7 @@ export default function TourDetailClient({
                               {isSelected && (
                                 <div className="mt-4 pt-3 border-t border-[var(--brand-primary)]/20 text-center">
                                   <span className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-wider">
-                                    {showPricing ? "Selected" : "Selected scope"}
+                                    {showPricing ? L.selected : L.selectedScope}
                                   </span>
                                 </div>
                               )}
@@ -573,7 +959,7 @@ export default function TourDetailClient({
                   {/* Add-ons */}
                   {availableAddOns.length > 0 && (
                     <div className="bg-white rounded-2xl p-6 md:p-8">
-                      <h2 className="text-xl font-bold mb-4">Add-On Services</h2>
+                      <h2 className="text-xl font-bold mb-4">{L.addOnServices}</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {availableAddOns.map((addon) => {
                           const isSelected = selectedAddOns.some((a) => a.name === addon.name);
@@ -598,7 +984,7 @@ export default function TourDetailClient({
                                 <span className="text-sm font-medium">{addon.name}</span>
                               </div>
                               <span className="text-sm font-bold text-[var(--brand-primary)]">
-                                {showPricing ? addon.price : "Available on request"}
+                                {showPricing ? addon.price : L.availableOnRequest}
                               </span>
                             </button>
                           );
@@ -609,22 +995,22 @@ export default function TourDetailClient({
 
                   {/* Route & Departure */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-4">{pageHeading} Route &amp; Departure</h2>
+                    <h2 className="text-xl font-bold mb-4">{L.routeDeparture(pageHeading)}</h2>
                     <div className="flex items-center gap-2 text-[var(--body-text)] mb-3">
                       <Anchor className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
-                      <span>{tour.route}</span>
+                      <span>{tRoute}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
                       <MapPin className="w-4 h-4 shrink-0" />
-                      Departure: {tour.departurePoint} &mdash; {tour.departureTime}
+                      {L.departureLabel}: {tDeparturePoint} &mdash; {tDepartureTime}
                     </div>
                   </div>
 
                   {/* Highlights */}
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-4">{pageHeading} Highlights</h2>
+                    <h2 className="text-xl font-bold mb-4">{L.highlights(pageHeading)}</h2>
                     <div className="flex flex-wrap gap-2">
-                      {tour.highlights.map((h) => (
+                      {tHighlights.map((h) => (
                         <span key={h} className="px-3 py-1.5 bg-[var(--surface-alt)] rounded-full text-sm font-medium">
                           {h}
                         </span>
@@ -632,13 +1018,13 @@ export default function TourDetailClient({
                     </div>
                   </div>
 
-                  {(tour.bestFor?.length || tour.importantNotes?.length) && (
+                  {(tBestFor?.length || tImportantNotes?.length) && (
                     <div className="grid gap-6 md:grid-cols-2">
-                      {tour.bestFor && tour.bestFor.length > 0 && (
+                      {tBestFor && tBestFor.length > 0 && (
                         <div className="bg-white rounded-2xl p-6 md:p-8">
-                          <h2 className="text-xl font-bold mb-4">Best For</h2>
+                          <h2 className="text-xl font-bold mb-4">{L.bestFor}</h2>
                           <div className="flex flex-wrap gap-2">
-                            {tour.bestFor.map((item) => (
+                            {tBestFor.map((item) => (
                               <span
                                 key={item}
                                 className="rounded-full bg-[var(--surface-alt)] px-3 py-2 text-sm font-medium text-[var(--body-text)]"
@@ -650,11 +1036,11 @@ export default function TourDetailClient({
                         </div>
                       )}
 
-                      {tour.importantNotes && tour.importantNotes.length > 0 && (
+                      {tImportantNotes && tImportantNotes.length > 0 && (
                         <div className="bg-white rounded-2xl p-6 md:p-8">
-                          <h2 className="text-xl font-bold mb-4">Important Booking Notes</h2>
+                          <h2 className="text-xl font-bold mb-4">{L.importantNotes}</h2>
                           <ul className="space-y-3">
-                            {tour.importantNotes.map((note) => (
+                            {tImportantNotes.map((note) => (
                               <li key={note} className="flex items-start gap-3 text-sm leading-relaxed text-[var(--body-text)]">
                                 <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--brand-primary)]" />
                                 <span>{note}</span>
@@ -671,9 +1057,9 @@ export default function TourDetailClient({
                     <div className="flex items-start gap-3">
                       <Shield className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
                       <div>
-                        <h3 className="font-semibold mb-1">Free Cancellation</h3>
+                        <h3 className="font-semibold mb-1">{L.freeCancellation}</h3>
                         <p className="text-sm text-[var(--text-muted)]">
-                          Full refund available with 24+ hours advance notice. No questions asked.
+                          {L.freeCancellationBody}
                         </p>
                       </div>
                     </div>
@@ -690,13 +1076,13 @@ export default function TourDetailClient({
                   transition={{ duration: 0.25 }}
                 >
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-8">{pageHeading} Itinerary</h2>
+                    <h2 className="text-xl font-bold mb-8">{L.itineraryTitle(pageHeading)}</h2>
                     <div className="relative">
                       {/* Continuous vertical line */}
                       <div className="absolute left-[39px] top-4 bottom-4 w-0.5 bg-[var(--brand-primary)]/15" />
 
                       <div className="space-y-0">
-                        {tour.itinerary!.map((step, i) => (
+                        {tItinerary.map((step, i) => (
                           <motion.div
                             key={i}
                             initial={{ opacity: 0, x: -16 }}
@@ -714,13 +1100,13 @@ export default function TourDetailClient({
                             {/* Dot on the line */}
                             <div className="flex flex-col items-center shrink-0 relative">
                               <div className="w-3 h-3 rounded-full bg-[var(--brand-primary)] ring-4 ring-[var(--brand-primary)]/10 shrink-0 mt-0.5 z-10" />
-                              {i < tour.itinerary!.length - 1 && (
+                              {i < tItinerary.length - 1 && (
                                 <div className="w-0.5 flex-1 bg-[var(--brand-primary)]/15 my-0" />
                               )}
                             </div>
 
                             {/* Content */}
-                            <div className={`pb-8 ${i === tour.itinerary!.length - 1 ? "pb-0" : ""} flex-1`}>
+                            <div className={`pb-8 ${i === tItinerary.length - 1 ? "pb-0" : ""} flex-1`}>
                               <h3 className="font-semibold text-[var(--heading)] mb-1 group-hover:text-[var(--brand-primary)] transition-colors">
                                 {step.title}
                               </h3>
@@ -743,7 +1129,7 @@ export default function TourDetailClient({
                   transition={{ duration: 0.25 }}
                 >
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-6">What&apos;s Included in {pageHeading}</h2>
+                    <h2 className="text-xl font-bold mb-6">{L.includedTitle(pageHeading)}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {/* Included column */}
                       <div>
@@ -751,10 +1137,10 @@ export default function TourDetailClient({
                           <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
                             <Check className="w-3.5 h-3.5 text-green-600" />
                           </div>
-                          <h3 className="font-semibold text-green-700">Included</h3>
+                          <h3 className="font-semibold text-green-700">{L.includedCol}</h3>
                         </div>
                         <ul className="space-y-3">
-                          {tour.includes.map((item) => (
+                          {tIncludes.map((item) => (
                             <li key={item} className="flex items-start gap-3 text-sm">
                               <div className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center shrink-0 mt-0.5">
                                 <Check className="w-3 h-3 text-green-500" />
@@ -766,16 +1152,16 @@ export default function TourDetailClient({
                       </div>
 
                       {/* Not Included column */}
-                      {tour.notIncluded && tour.notIncluded.length > 0 && (
+                      {tNotIncluded && tNotIncluded.length > 0 && (
                         <div>
                           <div className="flex items-center gap-2 mb-4">
                             <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center">
                               <X className="w-3.5 h-3.5 text-red-500" />
                             </div>
-                            <h3 className="font-semibold text-red-600">Not Included</h3>
+                            <h3 className="font-semibold text-red-600">{L.notIncludedCol}</h3>
                           </div>
                           <ul className="space-y-3">
-                            {tour.notIncluded.map((item) => (
+                            {tNotIncluded.map((item) => (
                               <li key={item} className="flex items-start gap-3 text-sm">
                                 <div className="w-5 h-5 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
                                   <X className="w-3 h-3 text-red-400" />
@@ -800,9 +1186,9 @@ export default function TourDetailClient({
                   transition={{ duration: 0.25 }}
                 >
                   <div className="bg-white rounded-2xl p-6 md:p-8">
-                    <h2 className="text-xl font-bold mb-6">{pageHeading} Frequently Asked Questions</h2>
+                    <h2 className="text-xl font-bold mb-6">{L.faqTitle(pageHeading)}</h2>
                     <div className="space-y-3">
-                      {tour.faq!.map((item, i) => {
+                      {tFaq!.map((item, i) => {
                         const isOpen = openFaqIndex === i;
                         return (
                           <div
@@ -853,12 +1239,12 @@ export default function TourDetailClient({
         </div>
 
         {/* Sidebar — sticky booking area with package cards + mobile bar */}
-        <div id="booking-sidebar" className="order-1 lg:order-2 scroll-mt-24">
+        <div className="order-1 lg:order-2">
           <BookingSidebar
           tour={{
             slug: tour.slug,
-            nameEn: tour.nameEn,
-            name: tour.name,
+            nameEn: tName,
+            name: tName,
             priceEur: tour.priceEur,
             originalPriceEur: tour.originalPriceEur,
             departureTime: tour.departureTime,
@@ -888,10 +1274,10 @@ export default function TourDetailClient({
       {/* Related tours */}
       {related.length > 0 && (
         <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">You Might Also Like</h2>
+          <h2 className="text-2xl font-bold mb-8">{L.youMightAlsoLike}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {related.map((t) => (
-              <TourCard key={t.id} tour={t} />
+            {related.map((relatedTour) => (
+              <TourCard key={relatedTour.id} tour={relatedTour} locale={locale} />
             ))}
           </div>
         </div>
@@ -904,15 +1290,7 @@ export default function TourDetailClient({
           currentIndex={lightboxIndex}
           onClose={() => setLightboxOpen(false)}
           onNavigate={setLightboxIndex}
-          alt={tour.nameEn}
-          cta={{
-            label: showPricing ? `Reserve ${tour.nameEn}` : `View ${tour.nameEn}`,
-            priceLabel: showPricing ? `From €${tour.priceEur}` : undefined,
-            onClick: () => {
-              const el = document.getElementById("booking-sidebar");
-              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-            },
-          }}
+          alt={tName}
         />
       )}
 

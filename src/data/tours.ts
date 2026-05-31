@@ -31,6 +31,30 @@ export interface FAQ {
 export type BookingMode = "book" | "quote";
 export type PriceMode = "perPerson" | "perGroup" | "custom";
 
+/**
+ * Per-locale translated copy for a tour. Optional everywhere — when a locale
+ * key is missing the UI falls back to the English (root) fields.
+ * `packages` / `itinerary` arrays are matched to the English source by index.
+ */
+export type TourLocale = "tr" | "de" | "fr" | "nl" | "ru";
+export type TourI18nEntry = {
+  nameEn?: string;
+  description?: string;
+  longDescription?: string;
+  route?: string;
+  duration?: string;
+  departureTime?: string;
+  departurePoint?: string;
+  highlights?: string[];
+  bestFor?: string[];
+  importantNotes?: string[];
+  packages?: { name: string; description?: string; features?: string[] }[];
+  itinerary?: { time?: string; title?: string; description?: string }[];
+  includes?: string[];
+  notIncluded?: string[];
+  faq?: { question: string; answer: string }[];
+};
+
 export interface Tour {
   id: string;
   slug: string;
@@ -51,6 +75,7 @@ export interface Tour {
   badgeColor: string;
   image: string;
   gallery: string[];
+  galleryAlts?: string[];
   videoSrc?: string;
   route: string;
   departureTime: string;
@@ -69,6 +94,7 @@ export interface Tour {
   bookingMode?: BookingMode;
   priceMode?: PriceMode;
   enquiryLabel?: string;
+  i18n?: Partial<Record<TourLocale, TourI18nEntry>>;
 }
 
 const yachtEssentialAddOns: AddOn[] = [

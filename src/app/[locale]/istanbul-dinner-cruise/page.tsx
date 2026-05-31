@@ -965,7 +965,11 @@ export default async function LocaleDinnerCruisePage({
             />
           )}
 
-          <TourDetailClient tour={dinnerTour} related={relatedTours} />
+          <TourDetailClient
+            tour={dinnerTour}
+            related={relatedTours}
+            locale={locale as SiteLocale}
+          />
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="dinner" />
 

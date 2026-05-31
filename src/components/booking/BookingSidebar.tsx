@@ -20,6 +20,10 @@ import {
 } from "@/lib/analytics";
 import SalePrice from "@/components/ui/SalePrice";
 import { PHONE_DISPLAY, getContactChannel } from "@/lib/constants";
+import {
+  detectBookingLocaleFromPathname,
+  getBookingSidebarStrings,
+} from "@/i18n/booking-strings";
 import BookingCalendar from "./BookingCalendar";
 import BookingModal from "./BookingModal";
 
@@ -64,8 +68,9 @@ export default function BookingSidebar({
   // here since the booking sidebar is dropped onto pages across both /en and
   // localized routes.
   const pathname = usePathname() ?? "/";
-  const localeMatch = pathname.match(/^\/(tr|de|fr|nl|ru)(?=\/|$)/);
-  const locale = localeMatch?.[1] ?? "en";
+  const bookingLocale = detectBookingLocaleFromPathname(pathname);
+  const locale = bookingLocale;
+  const t = getBookingSidebarStrings(bookingLocale);
   const channel = getContactChannel(locale);
   const isTelegram = channel.icon === "telegram";
 
@@ -88,7 +93,27 @@ export default function BookingSidebar({
     (price === tour.priceEur ? tour.originalPriceEur : undefined);
   const isQuote = tour.bookingMode === "quote";
   const isPerGroup = tour.priceMode === "perGroup";
-  const priceUnitLabel = isPerGroup ? "/group" : "/person";
+  // Per-locale price-unit suffix. Keep EN labels byte-identical so the
+  // English routes (already indexed) don't change.
+  const PRICE_UNIT_PER_PERSON: Record<typeof bookingLocale, string> = {
+    en: "/person",
+    tr: "/kişi",
+    de: "/Person",
+    fr: "/personne",
+    nl: "/persoon",
+    ru: "/гость",
+  };
+  const PRICE_UNIT_PER_GROUP: Record<typeof bookingLocale, string> = {
+    en: "/group",
+    tr: "/grup",
+    de: "/Gruppe",
+    fr: "/groupe",
+    nl: "/groep",
+    ru: "/группа",
+  };
+  const priceUnitLabel = isPerGroup
+    ? PRICE_UNIT_PER_GROUP[bookingLocale]
+    : PRICE_UNIT_PER_PERSON[bookingLocale];
 
   // Track sidebar visibility for mobile bar
   useEffect(() => {
@@ -170,12 +195,12 @@ export default function BookingSidebar({
   const selectedPackageName = selectedPackage?.name ?? tour.packages?.[0]?.name ?? tour.nameEn;
   const quoteMessage = encodeURIComponent(
     [
-      "Hi, I'd like a pricing and availability for this Bosphorus service.",
+      t.quoteMessageLines.intro,
       "",
-      `Service: ${tour.nameEn}`,
-      `Selected option: ${selectedPackageName}`,
+      `${t.quoteMessageLines.serviceLabel}: ${tour.nameEn}`,
+      `${t.quoteMessageLines.optionLabel}: ${selectedPackageName}`,
       selectedAddOns.length > 0
-        ? `Requested add-ons: ${selectedAddOns.map((addon) => addon.name).join(", ")}`
+        ? `${t.quoteMessageLines.addOnsLabel}: ${selectedAddOns.map((addon) => addon.name).join(", ")}`
         : "",
     ]
       .filter(Boolean)
@@ -192,7 +217,7 @@ export default function BookingSidebar({
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--brand-primary)]">
-                    Current Fare
+                    {t.currentFare}
                   </div>
                   <div className="mt-2">
                     <SalePrice
@@ -202,13 +227,13 @@ export default function BookingSidebar({
                       size="lg"
                       showBadge={Boolean(currentOriginalPrice)}
                       showMeta={Boolean(currentOriginalPrice)}
-                      metaText="Selected package stays prefilled below"
+                      metaText={t.selectedPackageMeta}
                     />
                   </div>
                 </div>
                 <div className="min-w-[96px] rounded-2xl bg-white/90 px-3 py-2 text-center shadow-sm">
                   <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    Option
+                    {t.option}
                   </div>
                   <div className="mt-1 text-sm font-semibold leading-tight text-[var(--heading)]">
                     {selectedPackageName}
@@ -223,7 +248,7 @@ export default function BookingSidebar({
             <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
               <div className="p-5 pb-3">
                 <h3 className="font-bold text-[var(--heading)] text-sm uppercase tracking-wider">
-                  {tour.showPricing ? "Choose Your Package" : "Choose Your Service Scope"}
+                  {tour.showPricing ? t.chooseYourPackage : t.chooseYourServiceScope}
                 </h3>
               </div>
               <div className="px-5 pb-5 space-y-3">
@@ -269,7 +294,7 @@ export default function BookingSidebar({
                             />
                           ) : (
                             <div className="text-xs font-semibold text-[var(--brand-primary)]">
-                              Price on request
+                              {t.priceOnRequest}
                             </div>
                           )}
                           {isSelected && (
@@ -318,7 +343,7 @@ export default function BookingSidebar({
             <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
               <div className="p-5 border-b border-[var(--line)]">
                 <h3 className="font-bold text-[var(--heading)] text-sm uppercase tracking-wider">
-                  Plan Your Tailor-Made Cruise
+                  {t.planYourTailorMadeCruise}
                 </h3>
               </div>
               <div className="p-5 space-y-4">
@@ -327,7 +352,7 @@ export default function BookingSidebar({
                     {selectedPackageName}
                   </p>
                   <p className="mt-1 text-sm text-[var(--text-muted)]">
-                    This page now works as a service-led route. We keep the package structure, but pricing is confirmed after the brief.
+                    {t.servicePageBriefDescription}
                   </p>
                 </div>
                 <a
@@ -336,13 +361,13 @@ export default function BookingSidebar({
                   rel="noopener noreferrer"
                   className="btn-cta flex w-full items-center justify-center"
                 >
-                  {tour.enquiryLabel || (isTelegram ? "Plan on Telegram" : "Plan on WhatsApp")}
+                  {tour.enquiryLabel || (isTelegram ? t.planOnTelegram : t.planOnWhatsApp)}
                 </a>
                 <a
-                  href="mailto:info@goldensunsettour.com"
+                  href="mailto:info@merrysails.com"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
                 >
-                  Email Your Brief
+                  {t.emailYourBrief}
                 </a>
               </div>
             </div>
@@ -373,7 +398,7 @@ export default function BookingSidebar({
           {/* Help card */}
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-[var(--line)]">
             <p className="text-sm font-medium mb-3">
-              {isQuote ? "Need help planning?" : "Need help choosing?"}
+              {isQuote ? t.needHelpPlanning : t.needHelpChoosing}
             </p>
             <a
               href={channel.url}
@@ -395,7 +420,7 @@ export default function BookingSidebar({
               }`}
             >
               {isTelegram ? <Send className="w-4 h-4" /> : <MessageCircle className="w-4 h-4" />}
-              {isTelegram ? "Live Support on Telegram" : "Live Support on WhatsApp"}
+              {isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}
             </a>
             <a
               href="tel:+905065438223"
@@ -440,7 +465,7 @@ export default function BookingSidebar({
                   >
                     <div className="p-4 space-y-2 max-h-[40vh] overflow-y-auto">
                       <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2">
-                        Select Package
+                        {t.selectPackage}
                       </div>
                       {tour.packages!.map((pkg) => {
                         const isSelected =
@@ -474,7 +499,7 @@ export default function BookingSidebar({
                               </div>
                             </div>
                             <span className="font-bold text-[var(--heading)] ml-2">
-                              {tour.showPricing ? `€${pkg.price}` : "Quote"}
+                              {tour.showPricing ? `€${pkg.price}` : t.quote}
                             </span>
                           </button>
                         );
@@ -499,7 +524,7 @@ export default function BookingSidebar({
                       })
                     }
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--brand-primary)] shadow-sm"
-                    aria-label="Call now"
+                    aria-label={t.callNow}
                   >
                     <Phone className="h-4 w-4" />
                   </a>
@@ -509,12 +534,12 @@ export default function BookingSidebar({
                       price={price}
                       originalPrice={currentOriginalPrice}
                       suffix={priceUnitLabel}
-                      label="From"
+                      label={t.from}
                       size="sm"
                     />
                   ) : (
                     <div className="text-sm font-semibold text-[var(--heading)]">
-                      Tailor-made plan
+                      {t.tailorMadePlan}
                     </div>
                   )}
                   {hasPackages && (
@@ -522,7 +547,7 @@ export default function BookingSidebar({
                       onClick={() => setMobileExpanded(!mobileExpanded)}
                       className="flex items-center gap-1 text-xs text-[var(--brand-primary)] font-medium mt-0.5"
                     >
-                      {selectedPackage?.name || "Select package"}
+                      {selectedPackage?.name || t.selectPackageMobile}
                       {mobileExpanded ? (
                         <ChevronDown className="w-3 h-3" />
                       ) : (
@@ -547,7 +572,7 @@ export default function BookingSidebar({
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white shadow-sm ${
                       isTelegram ? "bg-[#229ED9]" : "bg-[#25D366]"
                     }`}
-                    aria-label={isTelegram ? "Live support on Telegram" : "Live support on WhatsApp"}
+                    aria-label={isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}
                   >
                     {isTelegram ? (
                       <Send className="h-5 w-5" aria-hidden />
@@ -571,7 +596,7 @@ export default function BookingSidebar({
                   className="mt-3 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 text-sm font-bold text-white shadow-lg transition-all hover:brightness-110"
                   whileTap={{ scale: 0.95 }}
                 >
-                  {isQuote ? "Continue" : "Continue Booking"}
+                  {isQuote ? t.continue : t.continueBooking}
                 </motion.button>
               </div>
             </div>

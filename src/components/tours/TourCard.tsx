@@ -12,19 +12,41 @@ import {
 } from "@/data/tours";
 import SalePrice from "@/components/ui/SalePrice";
 
-const categoryLabel: Record<string, string> = {
-  cruise: "Cruise",
-  private: "Private Yacht",
-  event: "Event",
-  tour: "Tour",
-  organization: "Organization",
+type CardLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
+
+const categoryLabels: Record<CardLocale, Record<string, string>> = {
+  en: { cruise: "Cruise", private: "Private Yacht", event: "Event", tour: "Tour", organization: "Organization" },
+  tr: { cruise: "Tur", private: "Özel Yat", event: "Etkinlik", tour: "Tur", organization: "Organizasyon" },
+  de: { cruise: "Kreuzfahrt", private: "Private Yacht", event: "Event", tour: "Tour", organization: "Organisation" },
+  fr: { cruise: "Croisière", private: "Yacht Privé", event: "Événement", tour: "Tour", organization: "Organisation" },
+  nl: { cruise: "Cruise", private: "Privéjacht", event: "Evenement", tour: "Tour", organization: "Organisatie" },
+  ru: { cruise: "Круиз", private: "Частная яхта", event: "Событие", tour: "Тур", organization: "Организация" },
 };
 
-export default function TourCard({ tour }: { tour: Tour }) {
+const cardCopy: Record<CardLocale, { tailorMade: string; servicePage: string }> = {
+  en: { tailorMade: "Tailor-made plan", servicePage: "Service page" },
+  tr: { tailorMade: "Özel plan", servicePage: "Hizmet sayfası" },
+  de: { tailorMade: "Maßgeschneiderter Plan", servicePage: "Service-Seite" },
+  fr: { tailorMade: "Plan sur mesure", servicePage: "Page de service" },
+  nl: { tailorMade: "Plan op maat", servicePage: "Servicepagina" },
+  ru: { tailorMade: "Индивидуальный план", servicePage: "Страница услуги" },
+};
+
+export default function TourCard({ tour, locale = "en" }: { tour: Tour; locale?: CardLocale }) {
   const showPricing = isPricingVisible(tour);
   const bookingMode = getBookingMode(tour);
-  const href = getTourPath(tour);
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const href = `${prefix}${getTourPath(tour)}`;
   const priceSuffix = getPriceSuffix(tour);
+  const categoryLabel = categoryLabels[locale] ?? categoryLabels.en;
+  const copy = cardCopy[locale] ?? cardCopy.en;
+  // Locale-resolved display name. Tours that ship a per-locale i18n.nameEn
+  // (used as the translated display name) take precedence; fall back to
+  // English when no translation exists so SEO copy stays intact.
+  const localizedName =
+    locale !== "en"
+      ? (tour.i18n as Record<string, { nameEn?: string } | undefined> | undefined)?.[locale]?.nameEn ?? tour.nameEn
+      : tour.nameEn;
   const alt = showPricing
     ? `${tour.nameEn} — book from €${tour.priceEur} in Istanbul`
     : `${tour.nameEn} — Bosphorus tour in Istanbul`;
@@ -68,7 +90,7 @@ export default function TourCard({ tour }: { tour: Tour }) {
         {/* Content at bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
           <h3 className="text-lg font-bold text-white mb-1 leading-tight group-hover:text-[var(--brand-gold)] transition-colors">
-            {tour.nameEn}
+            {localizedName}
           </h3>
 
           {/* Rating stars */}
@@ -106,7 +128,7 @@ export default function TourCard({ tour }: { tour: Tour }) {
                 />
               ) : (
                 <span className="text-sm font-semibold text-[var(--brand-gold)]">
-                  {bookingMode === "quote" ? "Tailor-made plan" : "Service page"}
+                  {bookingMode === "quote" ? copy.tailorMade : copy.servicePage}
                 </span>
               )}
             </div>
