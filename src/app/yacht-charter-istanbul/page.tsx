@@ -767,6 +767,52 @@ export default async function YachtCharterIstanbulPage({
             </div>
           </section>
 
+          {/* Featured reading — yacht-charter-specific planning content.
+              Anchor text varies (sentence-form, not exact-match) per SEO
+              best practice for natural internal-link patterns. */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Yacht charter planning — operator-side guides</h2>
+            <p className="text-sm text-[var(--text-muted)] mb-6">Written for couples, groups, and event organisers comparing private yacht options on the Bosphorus.</p>
+            <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <li>
+                <Link href="/blog/choosing-yacht-size-bosphorus-charter-istanbul-2026" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Picking the right yacht size — 10 to 150 guests</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">How the six-yacht fleet maps to your group size, and the most expensive sizing mistake.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/private-yacht-charter-istanbul-guide" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Private yacht charter — complete planning guide</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">From first enquiry to onboard programme, what to confirm before booking.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/marriage-proposal-yacht-istanbul" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Proposal yacht — surprise styling and timing</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">How to plan the surprise moment around sunset and the bridge lights.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/yacht-party-ideas-istanbul" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Yacht party formats — what works on the Bosphorus</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Birthday, bachelorette, milestone celebrations — programme structures that hold up.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/corporate-yacht-event-planning-istanbul" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Corporate yacht events — hosting on the Bosphorus</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Team dinners, client receptions, product launches — what to ask for in the brief.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/bosphorus-cruise-new-year-eve-istanbul-2026-2027" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">NYE 2026/27 — private yacht charter rates</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">€1,200–€3,500 yacht-charter ladder for the busiest evening of the year.</span>
+                </Link>
+              </li>
+            </ul>
+          </section>
+
           <RelatedTours exclude="yacht" heading="Other Bosphorus experiences" />
         </div>
       </div>

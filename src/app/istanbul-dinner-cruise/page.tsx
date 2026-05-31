@@ -765,6 +765,52 @@ export default async function IstanbulDinnerCruisePage({
             </div>
           </section>
 
+          {/* Featured reading — internal-link surface from pillar to high-intent
+              decision/planning posts. Anchor text uses descriptive titles rather
+              than exact-match keywords (SEO best practice: anchor variety). */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Plan your dinner cruise — 2026 reading list</h2>
+            <p className="text-sm text-[var(--text-muted)] mb-6">Operator-side guides for booking the right package, choosing the boarding pier, and what to expect on the evening.</p>
+            <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <li>
+                <Link href="/blog/best-istanbul-bosphorus-cruise-comparison-2026" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Sunset vs Dinner vs Yacht — which one fits</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Honest comparison of the three flagship formats with real direct prices.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/book-bosphorus-cruise-direct-save-2026" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Save €5–€15 by booking direct, not via Viator</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Where OTA markups land and how to skip them on the same boats.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/istanbul-airport-to-bosphorus-cruise-transfer-guide" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">Airport to Kabataş — transfer timing</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">IST and SAW transit times for same-day cruise planning.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/what-to-wear-bosphorus-cruise-by-season" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">What to wear — by season, with deck temps</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Month-by-month dress code and the wind-chill reality.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/istanbul-3-day-itinerary-bosphorus-cruise-2026" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">3-Day Istanbul itinerary with the cruise as finale</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Day-by-day plan ending with the cruise as the Day 3 evening.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/bosphorus-cruise-new-year-eve-istanbul-2026-2027" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
+                  <span className="block font-semibold text-[var(--heading)]">New Year's Eve 2026/27 dinner cruise</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Special-evening pricing, fireworks viewing zone, booking deadline.</span>
+                </Link>
+              </li>
+            </ul>
+          </section>
+
           <RelatedTours exclude="dinner" heading="Other Bosphorus experiences" />
         </div>
       </div>
