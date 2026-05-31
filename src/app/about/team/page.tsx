@@ -175,7 +175,7 @@ export default function TeamPage() {
             <TeamCard
               name="Resat Akkus"
               role="Founder & Operations Director"
-              bio="TURSAB A-Group licensed operator since 2001, Resat built MerrySails alongside sister brands GoldenSunsetTour and MerryTourism. The portfolio has now served 50,000+ guests and remains the only direct-book boutique Bosphorus operator in Istanbul."
+              bio="TURSAB A-Group licensed operator since 2001. Resat founded MerrySails to give international guests a transparent, no-markup Bosphorus cruise platform — every guest books on the website at the price the boat actually runs at. Based in Fatih, Istanbul."
               
               knowsAbout={[
                 "Tour operations",

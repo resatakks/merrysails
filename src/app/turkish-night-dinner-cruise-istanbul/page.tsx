@@ -144,6 +144,98 @@ const faqSchema = {
   })),
 };
 
+// Event schema — recurring Turkish-night dinner cruise (nightly Bosphorus
+// dinner with live show). Emitted in addition to Service schema so AI
+// crawlers and event-aware surfaces (Google Discover, Bing event boxes)
+// can index the nightly departure as a scheduled experience.
+const turkishNightEventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "Turkish Night Dinner Cruise Istanbul",
+  description:
+    "Nightly Bosphorus dinner cruise from Kabatas with a Turkish-night live show — belly dance, folk dancers, DJ, mezze, main course, and drinks across Silver and Gold packages. TURSAB A-Group licensed operator since 2001.",
+  image: `${SITE_URL}/og-image.jpg`,
+  startDate: "2026-01-01T20:30:00+03:00",
+  endDate: "2026-12-31T00:00:00+03:00",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  eventSchedule: {
+    "@type": "Schedule",
+    byDay: [
+      "https://schema.org/Monday",
+      "https://schema.org/Tuesday",
+      "https://schema.org/Wednesday",
+      "https://schema.org/Thursday",
+      "https://schema.org/Friday",
+      "https://schema.org/Saturday",
+      "https://schema.org/Sunday",
+    ],
+    startTime: "20:30",
+    endTime: "00:00",
+    scheduleTimezone: "Europe/Istanbul",
+    repeatFrequency: "P1D",
+    startDate: "2026-01-01",
+    endDate: "2026-12-31",
+  },
+  location: {
+    "@type": "Place",
+    name: "Kabataş Pier — MerrySails",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kabataş İskelesi",
+      addressLocality: "Kabataş, Beşiktaş",
+      addressRegion: "Istanbul",
+      postalCode: "34357",
+      addressCountry: "TR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.0378,
+      longitude: 28.9978,
+    },
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    ...OFFER_MERCHANT_DEFAULTS,
+    url: canonicalUrl,
+    lowPrice: 30,
+    highPrice: 90,
+    priceCurrency: "EUR",
+    offerCount: dinnerTour.packages?.length ?? 4,
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
+    validThrough: "2026-12-31",
+    eligibleQuantity: {
+      "@type": "QuantitativeValue",
+      minValue: 1,
+      unitText: "guest",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "MerrySails",
+    url: SITE_URL,
+  },
+  performer: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "MerrySails",
+    url: SITE_URL,
+  },
+  ...(dinnerTour.rating && dinnerTour.reviewCount
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: dinnerTour.rating,
+          reviewCount: dinnerTour.reviewCount,
+          bestRating: 5,
+          worstRating: 1,
+        },
+      }
+    : {}),
+};
+
 const fitCards = [
   {
     title: "The show format is the deciding question",
@@ -269,6 +361,10 @@ export default function TurkishNightDinnerCruiseIstanbulPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(turkishNightEventSchema) }}
       />
 
       <main className="pt-28 pb-20 bg-[var(--surface-alt)]">

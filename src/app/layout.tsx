@@ -156,12 +156,7 @@ const organizationSchema = {
     "https://www.instagram.com/merrysails",
     "https://www.facebook.com/merrysails",
     "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
-    // Sister brands (Merry Tourism portfolio) — knowledge graph cross-link
-    "https://www.merrytourism.com",
-    "https://www.wikidata.org/wiki/Q139785651", // Merry Tourism Wikidata
     "https://kingsworldtransfer.com",
-    "https://goldensunsettour.com",
-    "https://www.wikidata.org/wiki/Q139782776", // GoldenSunsetTour Wikidata
     "https://acilkaseniz.com",
   ],
   hasOfferCatalog: {

@@ -489,6 +489,78 @@ export default async function TourDetailPage({
     ],
   };
 
+  // Event schema — recurring sunset cruise OR special holiday event (NYE)
+  const newYearsEveEventSchema =
+    slug === "new-years-eve-party-cruise"
+      ? {
+          "@context": "https://schema.org",
+          "@type": ["HolidayEvent", "Event"],
+          name: "New Year's Eve Party Cruise Istanbul 2026",
+          description:
+            "Ring in 2027 on the Bosphorus with a gala dinner, unlimited drinks, live DJ entertainment, and front-row views of Istanbul's midnight fireworks. Departs Eminönü Pier at 20:00 on 31 December.",
+          image: `${SITE_URL}${tour.image}`,
+          startDate: "2026-12-31T20:00:00+03:00",
+          endDate: "2027-01-01T01:00:00+03:00",
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+          eventStatus: "https://schema.org/EventScheduled",
+          location: {
+            "@type": "Place",
+            name: "Eminönü Pier — MerrySails",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Eminönü İskelesi",
+              addressLocality: "Eminönü, Fatih",
+              addressRegion: "Istanbul",
+              postalCode: "34110",
+              addressCountry: "TR",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 41.0175,
+              longitude: 28.9731,
+            },
+          },
+          offers: {
+            "@type": "Offer",
+            url: `${SITE_URL}${getTourPath(tour)}`,
+            price: tour.priceEur,
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            validFrom: "2026-06-01T00:00:00+03:00",
+            validThrough: "2026-12-31T19:00:00+03:00",
+            eligibleQuantity: {
+              "@type": "QuantitativeValue",
+              minValue: 1,
+              maxValue: 200,
+              unitText: "guest",
+            },
+          },
+          organizer: {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: "MerrySails",
+            url: SITE_URL,
+          },
+          performer: {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: "MerrySails",
+            url: SITE_URL,
+          },
+          ...(tour.rating && tour.reviewCount
+            ? {
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: tour.rating,
+                  reviewCount: tour.reviewCount,
+                  bestRating: 5,
+                  worstRating: 1,
+                },
+              }
+            : {}),
+        }
+      : null;
+
   // Event schema — only for the recurring sunset cruise departure
   const eventSchema =
     slug === "bosphorus-sunset-cruise"
@@ -621,6 +693,12 @@ export default async function TourDetailPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
+      {newYearsEveEventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(newYearsEveEventSchema) }}
         />
       )}
       {videoSchema && (

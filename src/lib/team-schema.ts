@@ -26,6 +26,17 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
       "Istanbul harbor pilotage",
       "Maritime safety",
       "Turkish coastal routes",
+      "Bosphorus history",
+      "Ottoman waterfront architecture",
+      "Istanbul maritime law",
+      "Sea of Marmara seamanship",
+      "Yacht charter operations",
+      "Golden Horn navigation",
+      "Bosphorus current patterns",
+      "TURSAB tourism regulation",
+      "Dolmabahce Palace shoreline",
+      "Rumeli Hisari historic fortress",
+      "Bosphorus Bridge crossing protocol",
     ],
     schemaId: `${SITE_URL}/#person-captain-ahmet`,
   },
@@ -81,6 +92,17 @@ export const teamPersonSchemas = TEAM_MEMBERS.map((m) => ({
   url: `${SITE_URL}/about/team`,
   ...(m.slug === "resat-akkus"
     ? {
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Founder & Operations Director",
+          occupationLocation: { "@type": "City", name: "Istanbul" },
+          skills: [
+            "Tour operations",
+            "Turkish tourism licensing",
+            "Bosphorus cruise pricing",
+            "Travel agency management",
+          ],
+        },
         hasCredential: {
           "@type": "EducationalOccupationalCredential",
           credentialCategory: "TURSAB A Group License",
@@ -91,6 +113,44 @@ export const teamPersonSchemas = TEAM_MEMBERS.map((m) => ({
             url: "https://www.tursab.org.tr",
           },
         },
+      }
+    : {}),
+  ...(m.slug === "captain-ahmet"
+    ? {
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Senior Bosphorus Captain",
+          occupationLocation: { "@type": "City", name: "Istanbul" },
+          experienceRequirements: "22+ years piloting passenger vessels on the Bosphorus, Sea of Marmara, and Turkish Aegean coast.",
+          skills: [
+            "Bosphorus navigation",
+            "Passenger-vessel command",
+            "Maritime safety drills",
+            "Bosphorus current and weather assessment",
+            "Multi-language guest briefings (TR/EN/DE)",
+          ],
+          qualifications: "Turkish Maritime Authority master license",
+        },
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Turkish Maritime Authority Master Captain License",
+            recognizedBy: {
+              "@type": "GovernmentOrganization",
+              name: "Turkish Maritime Authority (Denizcilik Genel Müdürlüğü)",
+              url: "https://denizcilik.uab.gov.tr",
+            },
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "STCW Basic Safety Training",
+            recognizedBy: {
+              "@type": "Organization",
+              name: "International Maritime Organization",
+              url: "https://www.imo.org",
+            },
+          },
+        ],
       }
     : {}),
 }));
