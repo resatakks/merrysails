@@ -2916,6 +2916,911 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       "yat-kiralama-istanbul-fiyat-rehberi-2026",
       "istanbul-bogaz-turu-fiyatlari-2026"
     ]
+  },
+  {
+    slug: "istanbul-bogaz-turu-aksam-yemegi-fiyat-karsilastirma-2026",
+    locale: "tr",
+    title: "Akşam Yemekli Boğaz Turu Fiyat Karşılaştırma",
+    metaDescription:
+      "Boğaz akşam yemekli tur paketleri net karşılaştırma: Silver €30, Silver Alkollü €45, Gold €80, Gold Sınırsız Alkol €90. Hangisi sana uygun?",
+    excerpt:
+      "Boğaz akşam yemekli tur paketlerini kafa karışıklığı olmadan karşılaştırıyoruz: Silver €30'dan Gold Sınırsız Alkol €90'a kadar dört paketin gerçek farkları, hangi paket hangi profil için doğru, restoranla maliyet karşılaştırması.",
+    category: "cruise-guide",
+    date: "2026-05-29",
+    readTime: "11 dk okuma",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+    imageAlt: "Boğaz'da akşam yemekli yat turunda Türk gecesi sofrası — meze tabakları ve aydınlatılmış köprü manzarası",
+    keywords: [
+      "boğaz akşam yemekli tur fiyat",
+      "istanbul dinner cruise fiyat",
+      "silver gold dinner cruise farkı",
+      "boğaz akşam yemeği tur paket karşılaştırma",
+      "kabataş dinner cruise fiyat",
+      "akşam yemekli yat turu istanbul 2026",
+      "boğaz turu yemek dahil fiyat",
+      "boğaz akşam yemeği ne kadar",
+      "alkol dahil boğaz turu fiyat",
+      "Türk gecesi yat turu fiyatı"
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Silver Yumuşak İçecek €30 — en uygun fiyat, klasik oturma, alkol yok, aile profili için ideal",
+      "Silver Alkollü €45 — 2 kadeh yerel alkol dahil, çift için en popüler giriş seçeneği",
+      "Gold Yumuşak İçecek €80 — sahneye yakın VIP masa, geniş menü, alkolsüz lüks tercih",
+      "Gold Sınırsız Alkol €90 — sınırsız yerli + ithal içki + VIP menü, özel kutlama için doğru paket"
+    ],
+    sections: [
+      {
+        heading: "4 Paketin Tek Cümlede Farkı Ne?",
+        content:
+          "Boğaz akşam yemekli turunda dört paket aynı tekneye, aynı rotaya (Kabataş 20:30 kalkış, ~3,5 saat) ve aynı show programına (Türk gecesi folklor, canlı müzik, DJ) biner. Aradaki tek gerçek fark: oturma yerin sahneye ne kadar yakın, menü içeriği ne kadar geniş ve içecek paketi ne kadar açık. Silver paketler standart oturma + temel menü ile başlar; Gold paketler garantili VIP masa + zengin menü ile devam eder. €30'dan €90'a kadar uzanan bu skala, beklentine ve bütçene göre net seçim yapmanı sağlar.",
+        answerCapsule:
+          "Silver €30 (alkolsüz, standart oturma), Silver Alkollü €45 (2 kadeh yerel içki), Gold €80 (VIP masa, alkolsüz), Gold Sınırsız Alkol €90 (sınırsız ithal + yerel içki, VIP menü).",
+        callout: {
+          type: "price",
+          text:
+            "Pazartesi, Salı, Perşembe günleri 3 pakette €5 indirim otomatik düşer: Silver Alkollü €40, Gold €75, Gold Sınırsız €85. Silver Soft Drink €30'da sabit kalır."
+        }
+      },
+      {
+        heading: "Silver Yumuşak İçecek — €30 (Aile İçin İdeal)",
+        content:
+          "En giriş seviyesi paket olan Silver Yumuşak İçecek, ailelerle gelen misafirlerin en sık tercih ettiği seçenektir. 50.000+ misafiri ağırlamış 24 yıllık deneyimimizde gözlemlediğimiz şu: çocuklu aileler bu pakette en rahat ediyorlar çünkü ne masada alkol var ne de bütçe stresine giriliyor. Karşılığında alacağın deneyim hiç de minimal değil: 10 çeşit soğuk meze (haydari, humus, yaprak sarma, çoban salata, ezme, beyaz peynir, dolma, tarama, közlenmiş biber, mevsim turşusu), mevsim salatası, sıcak başlangıç, ana yemek tabağında balık/tavuk/et üçlü seçim, baklava + meyve, çay/Türk kahvesi. İçecek olarak su, gazlı içecek, ayran, çay ve kahve sınırsız servis edilir. Aynı sahne programı, aynı 3,5 saatlik Boğaz seyri, aynı transfer hizmeti — sadece masan paylaşımlı oluyor ve içecek seti alkolsüz kalıyor.",
+        list: [
+          "Kişi başı €30 (Pazartesi–Pazar sabit fiyat — sezonsal değişim yok)",
+          "10 soğuk meze + 1 mevsim salata + 1 sıcak başlangıç + ana yemek seçimi + tatlı",
+          "Sınırsız su, gazoz, ayran, çay, Türk kahvesi",
+          "Sultanahmet, Taksim, Beşiktaş'tan transfer dahil",
+          "3 yaş altı çocuk ücretsiz, 4–10 yaş çocuk indirimi (rezervasyonda doğrula)"
+        ],
+        proTip:
+          "Eğer 'bütçeyi zorlamadan deneyimi göreyim' diyorsan Silver Yumuşak İçecek seç. Sahne uzaktan görünüyor ama 3,5 saat boyunca müzik ve folklor masaya zaten ulaşıyor — fark hissedilir ama belirleyici değil."
+      },
+      {
+        heading: "Silver Alkollü — €45 (Çiftler İçin En Popüler)",
+        content:
+          "Silver Alkollü, çiftlerin ve arkadaş gruplarının en sık seçtiği paket. €30 Silver Yumuşak İçecek tabanına 2 kadeh yerel alkollü içecek ekler: bira, ev şarabı veya rakı — tercih sana ait. Pazartesi, Salı ve Perşembe günü kalkışlarda otomatik €5 indirim düşer, fiyat €40'a iner; promosyon kodu girmen gerekmez. Bu paketteki misafirlerin %70'i şarap veya rakı tercih ediyor — özellikle balık seçen masalarda rakı kombinasyonu klasiktir. Şunu bilmen önemli: 2 kadeh sınırlı içecek anlamına gelir, sınırsız değildir. Ek içki almak istersen gemideki bar üzerinden bağımsız sipariş açabilirsin (yerli rakı ~€8, yerli şarap kadehi ~€6, bira ~€5). Çoğu çift için 2 kadeh akşam boyunca yeter; daha kapsamlı içki paketi düşünüyorsan Gold Sınırsız'a geçmek daha mantıklıdır.",
+        table: {
+          headers: ["Detay", "Silver Yumuşak", "Silver Alkollü"],
+          rows: [
+            ["Kişi başı fiyat", "€30", "€45 (Pzt/Sal/Per €40)"],
+            ["İçecek paketi", "Alkolsüz sınırsız", "2 kadeh yerel alkol + alkolsüz sınırsız"],
+            ["Oturma", "Standart paylaşımlı masa", "Standart paylaşımlı masa"],
+            ["Menü", "Klasik 10 meze + ana yemek", "Klasik 10 meze + ana yemek"],
+            ["Ekstra içki maliyeti", "—", "Bardan ~€5–€8 / içki"]
+          ]
+        },
+        expertQuote: {
+          text: "Çiftlerin %70'i Silver Alkollü ile başlıyor, çünkü €15 farkla 2 kadeh içkiye dahil olmak hem kontrollü hem ekonomik. Daha fazla içmek istiyorsan zaten masada bardan sipariş açabilirsin. Bu paket, 'içkili ama aşırıya kaçmadan kutlama' formülünün karşılığıdır.",
+          author: "Burak Şahin",
+          title: "MerrySails — Müşteri Deneyimi Direktörü"
+        }
+      },
+      {
+        heading: "Gold Yumuşak İçecek — €80 (Lüks İstiyorum, Alkol İstemiyorum)",
+        content:
+          "Gold seviyesine geçtiğinde değişen şey masanın yerinin sahneye olan mesafesi. Gold paketlerde VIP masa garantilidir — sahneden en fazla 5 metre uzakta, ön bölümde, paylaşımlı değil yarı-özel oturma. Show'u doğrudan önünde izlersin, fotoğraf kalitesi belirgin şekilde artar. Menü de genişler: Silver'daki 10 meze yerine 14 meze çeşidi, ana yemekte chef-attended servis (masada porsiyonlama), ek seçim hakkı (Silver'da balık/tavuk/et üçlüsünden seçim — Gold'da bu üçlüye ek olarak vejetaryen tabak + makarna seçeneği önceden tanımlı), tatlı tabağında baklava + mevsim meyvesi + sütlü tatlı opsiyonu. Gold Yumuşak İçecek paketi alkolsüz devam eder — Müslüman aileler, çocuklu özel kutlamalar veya alkol kullanmayan misafirler için ideal. Pazartesi, Salı, Perşembe günleri otomatik €5 indirim ile €75'e iner.",
+        list: [
+          "Kişi başı €80 (Pzt/Sal/Per €75)",
+          "Sahneye 5 metre mesafede garantili VIP masa, yarı-özel oturma",
+          "14 meze + chef-attended ana yemek + genişletilmiş tatlı tabağı",
+          "Sınırsız alkolsüz içecek (su, gazoz, ayran, çay, Türk kahvesi, meyve suyu)",
+          "Önceliklendirilmiş binme + erken çıkış kolaylığı (Kabataş'ta sıra beklemezsin)"
+        ],
+        proTip:
+          "Doğum günü, yıldönümü veya iş yemeği gibi 'masada özel hissetmem lazım' senaryolarda alkol istemesen dahi Gold Yumuşak İçecek doğru tercihtir. Silver ile aradaki €50 fark, masan ve menün üzerinden doğrudan görülür."
+      },
+      {
+        heading: "Gold Sınırsız Alkol — €90 (Premium Kutlama)",
+        content:
+          "Skalanın tepesinde Gold Sınırsız Alkol var. Bu paket Gold Yumuşak İçecek'in tüm avantajlarını (VIP masa, geniş menü, chef-attended servis, önceliklendirilmiş binme) sınırsız yerli + ithal alkol paketi ile birleştirir: yerli rakı, ev şarabı, bira sınırsız; ithal viski, votka, cin opsiyonel olarak masaya gelir. Pazartesi, Salı, Perşembe günleri €5 indirim ile €85'e iner. Bu paketin gerçek değerini görmek için basit bir matematik: 4 kadeh ithal viski + 2 kadeh şarap + bira sipariş edersen Silver Alkollü pakette ek bar maliyeti ~€45–55 olur — toplam €90–100. Gold Sınırsız Alkol bu maliyeti tek pakette sabitler ve üstüne VIP masa + zengin menü ekler. Yıldönümü, bekarlığa veda, kurumsal kutlama veya 'gerçekten kutlama olsun' diyorsan bu paket doğrudur. 24 yıllık deneyimimizde gözlemlediğimiz şu: Gold Sınırsız seçen masalarda misafirler ortalama 25–30 dakika daha geç dağılıyor — yani memnuniyet doğrudan hissediliyor.",
+        callout: {
+          type: "info",
+          text:
+            "Gold Sınırsız Alkol pakette servis sınırsız ama 'sorumlu servis' politikası uygulanır: belirgin şekilde etkilenmiş misafirlere kaptan yetkisinde servis kısıtlanabilir. Bu, MerrySails'in TÜRSAB A Grubu lisans şartının bir parçasıdır."
+        },
+        expertQuote: {
+          text: "Gold Sınırsız Alkol seçen misafirler bizi tekrar arıyor — yıldönümünde, yılbaşında, doğum gününde. Çünkü bu paket 'gece bitti, eve gidelim' demiyor; 'gece güzeldi, bir daha yapalım' diyor. Lüks deneyimde devamlılık yaratan da bu zaten.",
+          author: "Elif Korkmaz",
+          title: "MerrySails — Operasyon Müdürü, 12 yıl deneyim"
+        }
+      },
+      {
+        heading: "Restoran vs Boğaz Akşam Yemekli Tur — Maliyet Karşılaştırması",
+        content:
+          "Türk müşteri sık sorar: 'Aynı parayı verip Galata'da iyi bir restoranda yesem daha mantıklı olmaz mı?' Net cevap: gerçek karşılaştırma rakamlarla yapılmalı. Galata bölgesinde orta-üst segment bir balık restoranında çiftin ortalama harcaması (meze + ana + 2 kadeh şarap + tatlı + kahve, garson bahşişi dahil) kişi başı ₺2.800–3.500 yani ~€85–105 arası. Bu, Gold Yumuşak İçecek (€80) ile aynı seviyede. Aradaki fark: restoranda manzara olarak Galata Kulesi'nin alt katından bakıyorsan, yat turunda 3,5 saat boyunca yüzen bir Boğaz panoraması + Türk gecesi sahnesi + transfer hizmeti elde edersin.",
+        table: {
+          headers: ["Senaryo", "Restoran (Galata)", "MerrySails Yat"],
+          rows: [
+            ["Çift, alkolsüz, orta segment", "~€60 kişi başı", "Silver €30 kişi başı"],
+            ["Çift, 2 kadeh alkollü", "~€85 kişi başı", "Silver Alkollü €45"],
+            ["Çift, lüks menü alkolsüz", "~€100 kişi başı", "Gold €80"],
+            ["Çift, sınırsız alkollü kutlama", "~€140+ kişi başı", "Gold Sınırsız €90"],
+            ["Manzara", "Sabit", "3,5 saat hareketli Boğaz panoraması"],
+            ["Show / animasyon", "Yok", "Türk gecesi folklor + canlı müzik + DJ"]
+          ]
+        },
+        proTip:
+          "Eğer 'sadece yemek + alkol' istiyorsan restoran rekabetçidir. Ama 'gece olsun, anı olsun, fotoğraf olsun, eve döndüğümüzde anlatacak hikayemiz olsun' diyorsan yat turunun sunduğu paket — yemek + manzara + show + transfer — restoranın sunamadığı bir kombinasyon."
+      },
+      {
+        heading: "Hangi Paket Hangi Profil İçin Doğru — Karar Matrisi",
+        content:
+          "24 yıllık operasyonda 50.000+ misafirimizden çıkardığımız sade kural: paket seçimi 'bütçe + niyet' kesişiminde belirlenir. Aşağıdaki matris, kararını 2 dakikada vermene yardım edecek.",
+        table: {
+          headers: ["Senin Profilin", "Önerilen Paket", "Neden?"],
+          rows: [
+            ["Aile, çocuklu, alkolsüz, ekonomik", "Silver Yumuşak (€30)", "Aile dostu, sabit fiyat, 3 yaş altı ücretsiz"],
+            ["Çift, ilk Boğaz deneyimi, alkollü", "Silver Alkollü (€45)", "Giriş seviyesi alkollü, bütçeli, deneyim eksiksiz"],
+            ["Doğum günü / yıldönümü, alkolsüz", "Gold Yumuşak (€80)", "VIP masa, fotoğraf kalitesi, özel hissetme"],
+            ["Yıldönümü, bekarlığa veda, premium kutlama", "Gold Sınırsız (€90)", "Sınırsız içki + lüks menü + VIP konum"],
+            ["Kurumsal grup 10+ kişi alkollü", "Gold Sınırsız (€90)", "Toplam maliyet kontrolü + kurumsal hissiyat"],
+            ["İş yemeği, alkolsüz, premium", "Gold Yumuşak (€80)", "Sahne yakını sohbet ortamı, alkol baskısı yok"]
+          ]
+        },
+        callout: {
+          type: "tip",
+          text:
+            "Karar veremiyorsan WhatsApp +90 544 898 98 12 numarasına gün ve grup profilini yaz — 5 dakikada ücretsiz öneri alırsın. /tr/istanbul-dinner-cruise sayfasında canlı takvim + paket karşılaştırma seçim ekranı var."
+        }
+      }
+    ],
+    faqs: [
+      {
+        q: "Boğaz akşam yemekli turu en ucuz hangi pakette?",
+        a: "Silver Yumuşak İçecek paketi kişi başı €30'dur — 4 paketten en ekonomik olanı. Bu fiyat haftanın tüm günleri sabittir, sezonsal zam uygulanmaz. Çocuklu aileler, alkolsüz tercihler ve ilk Boğaz deneyimi için en sık seçilen pakettir."
+      },
+      {
+        q: "Silver ile Gold paket arasındaki gerçek fark nedir?",
+        a: "İki ana fark: oturma yerin sahneye mesafesi ve menü genişliği. Silver paketler standart paylaşımlı masada oturur, klasik 10 meze + ana yemek menüsünü servis eder. Gold paketler sahneye 5 metre mesafede garantili VIP masada oturur, 14 meze + chef-attended ana yemek + genişletilmiş tatlı tabağı sunar. Rota, süre ve show programı aynıdır."
+      },
+      {
+        q: "Pazartesi-Salı-Perşembe indirimi nasıl işliyor?",
+        a: "Bu üç günde kalkışlarda Silver Alkollü €45'ten €40'a, Gold Yumuşak €80'den €75'e, Gold Sınırsız €90'dan €85'e otomatik düşer. Promosyon kodu girmen gerekmez — tarih seçimi sırasında sistem indirimi otomatik uygular. Silver Yumuşak Sin tek paket sabit kalır (€30)."
+      },
+      {
+        q: "Silver Alkollü'de kaç kadeh içki dahil?",
+        a: "2 kadeh yerel alkollü içecek dahildir — bira, ev şarabı veya rakı arasında seçim hakkın var. Daha fazla içmek istersen gemideki bar üzerinden bağımsız sipariş açabilirsin: yerli rakı ~€8, yerli şarap kadehi ~€6, bira ~€5. Sınırsız alkol için Gold Sınırsız Alkol paketine geçmen gerekir."
+      },
+      {
+        q: "Çocuklar dinner cruise'a girebilir mi, indirim var mı?",
+        a: "Evet, tüm paketlerde çocuklar hoş karşılanır. 3 yaş altı çocuklar ücretsiz, 4–10 yaş çocuk indirimi mevcut (rezervasyonda doğrula). Show programı (Türk gecesi folklor + canlı müzik) aile dostudur. En çok seçilen aile paketi Silver Yumuşak İçecek'tir."
+      },
+      {
+        q: "Restoran yerine yat turu seçmek mantıklı mı?",
+        a: "Sadece yemek + alkol istiyorsan restoran rekabetçidir. Ama yat turu yemek + 3,5 saat Boğaz panoraması + Türk gecesi show + transferi tek paketle sunar. Galata'da orta-üst bir restoranda çiftin maliyeti ~€85–100 kişi başı; Gold Yumuşak'ta aynı maliyetle 4 katmanlı bir deneyim alırsın."
+      },
+      {
+        q: "Transfer dahil mi, hangi bölgelerden alım var?",
+        a: "Tüm paketlere Sultanahmet, Sirkeci, Topkapı, Taksim, Harbiye, Beyoğlu ve Karaköy'den transfer dahildir. Anadolu yakası misafirlerin Kabataş İskelesi'ne kendi imkanlarıyla gelmesi gerekir — dönüş ~00:00 olduğu için vapur seferleri kapalıdır, taksi planı önceden yapılmalı."
+      }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: [
+      "istanbul-aksam-yemegi-turu-rehberi",
+      "bogaz-turu-fiyat-rehberi-istanbul-2026",
+      "istanbul-bogaz-iskeleleri-nereden-binilir-rehberi-2026"
+    ]
+  },
+  {
+    slug: "istanbul-aksam-yemegi-yat-rezervasyon-rehberi-2026",
+    locale: "tr",
+    title: "İstanbul Yat Kiralama Rezervasyon Rehberi 2026",
+    metaDescription:
+      "Yat kiralama Türk müşteri rehberi: doğum günü, yıldönümü, evlilik teklifi için yat — kapasite 10-150 kişi, fiyat €280'den, nasıl rezerve edilir.",
+    excerpt:
+      "Yat kiralama Türk müşteriler için: ne için kullanılır (doğum günü, yıldönümü, evlilik teklifi, aile kutlaması), 10-150 kişi kapasite, €280'den başlayan fiyatlar, ne zaman rezerve edilmeli, neler sorulmalı — pratik karar rehberi.",
+    category: "yacht-guide",
+    date: "2026-05-29",
+    readTime: "10 dk okuma",
+    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80",
+    imageAlt: "Boğaz'da özel kiralık yat — gün batımı ışığında köprü ve aydınlatılmış cami silueti",
+    keywords: [
+      "yat kiralama istanbul",
+      "boğaz yat kiralama fiyat",
+      "özel yat kiralama rezervasyon",
+      "doğum günü yat kiralama istanbul",
+      "yıldönümü yat kutlama",
+      "evlilik teklifi yat",
+      "aile yatı kiralama istanbul",
+      "10 kişilik yat kiralama",
+      "kabataş kuruçeşme yat kiralama",
+      "yat rezervasyon adımları"
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Yat kiralama €280'den başlar (2 saat, 8 kişi kapasiteli klasik gület)",
+      "Kapasite skalası: 8 kişi (intim çift/aile), 12 kişi (doğum günü), 30 kişi (büyük kutlama), 80+ kişi (kurumsal)",
+      "Doğru rezervasyon zamanı: özel etkinlik için en az 7 gün önce, hafta sonu için 14 gün önce",
+      "Sorulacak 5 kritik soru: kapasite, dahil hizmetler, ekstra ücretler, iptal politikası, TÜRSAB lisans belgesi"
+    ],
+    sections: [
+      {
+        heading: "Yat Kiralama Ne Zaman Mantıklı Bir Seçim?",
+        content:
+          "Yat kiralama, paylaşımlı bir tura kıyasla 'özel alan + kontrolün sende olduğu zaman + sadece senin misafirlerin' formülünü sunar. 24 yıllık operasyonda gözlemlediğimiz şu 6 senaryo, yat kiralamayı doğrudan mantıklı bir seçim yapar: (1) doğum günü kutlaması — 15+ kişilik grupta yat birim maliyetini paylaşımlı tura yaklaştırır, (2) yıldönümü — paylaşımlı bir masada tanımadığın insanlarla yıldönümü kutlamak konfor değil, (3) evlilik teklifi — kontrolün sende olmadığı bir ortamda teklif riskli, (4) aile kutlaması (sünnet, mezuniyet, nişan) — büyükanne dahil 3 nesil için intim ortam, (5) kurumsal etkinlik — şirket logosu, brief sunumu ve kapalı misafir listesi, (6) yabancı arkadaş grubu ağırlama — özel rehber, özel menü, özel dilde anlatım.",
+        answerCapsule:
+          "Yat kiralama; doğum günü, yıldönümü, evlilik teklifi, aile kutlaması veya kurumsal etkinlik için özel alan + kontrol isteyen 8+ kişilik gruplar için mantıklı.",
+        callout: {
+          type: "info",
+          text:
+            "Pratik kural: 4 kişiden azsanız ve özel niyet yoksa paylaşımlı bir tur daha ekonomik. 8+ kişi olduğunuzda yat kiralama maliyeti per-kişi bazda paylaşımlı dinner cruise'a yaklaşır."
+        }
+      },
+      {
+        heading: "Kapasite Kararı — Kaç Kişilik Yat Doğru?",
+        content:
+          "Kapasite seçiminde Türk müşterinin sık yaptığı hata: '20 kişiyiz ama belki 25 olur' demek ve 30 kişilik yat tutmak. Sonuç: yat yarı boş, atmosfer dağınık. Doğru yaklaşım: kesin liste hazırlanıp +%10 buffer ile yat seçilmesidir. MerrySails filosu 5 kapasite tier'ında çalışır:",
+        table: {
+          headers: ["Kapasite", "Yat Tipi", "İdeal Senaryo", "Başlangıç Fiyatı (2 saat)"],
+          rows: [
+            ["2–8 kişi", "Klasik gület", "Çift, dar aile, evlilik teklifi", "€280"],
+            ["8–12 kişi", "Motor yat", "Doğum günü, yıldönümü, dar arkadaş grubu", "€380"],
+            ["12–20 kişi", "Lüks motor yat", "Geniş aile kutlaması, mezuniyet, nişan", "€580"],
+            ["20–30 kişi", "Mega yat", "Büyük doğum günü, kurumsal toplantı", "€950"],
+            ["30–150 kişi", "Etkinlik teknesi", "Düğün, kurumsal lansman, gala", "Talep üzerine"]
+          ]
+        },
+        proTip:
+          "Liste 16 kişi mi? 20 kişilik yat al — 30 değil. Yarı boş bir 30 kişilik yatta atmosfer dağılır; 20 kişilik yat ise 'tam dolu, samimi' hissi verir. Bu küçük karar, fotoğraflarına ve gece atmosferine doğrudan yansır."
+      },
+      {
+        heading: "Fiyatın İçinde Ne Var, Ne Yok — Net Liste",
+        content:
+          "Türk müşterinin en sık dolandırıldığı nokta: 'Yat 2 saat €280' duyup rezerve etmek ve sonra €120 yakıt + €60 kaptan tipi + €40 marina çıkış ücreti ile karşılaşmak. MerrySails'te tüm fiyatlar 'tek toplam' olarak verilir — sürpriz yok. Standart €280 essential pakette dahil olanlar ve dahil olmayanlar net şekilde:",
+        list: [
+          "DAHİL: Tekne kullanımı (2 saat), TÜRSAB lisanslı kaptan, yakıt, marina çıkış-giriş ücretleri",
+          "DAHİL: 1 hostes/garson servisi (10+ kişilik paketlerde), Türkçe-İngilizce iletişim",
+          "DAHİL: Su, soft drink, çay, kahve servisi (essential paket)",
+          "DAHİL: Standart müzik sistemi (bluetooth bağlanır)",
+          "EKSTRA (talep üzerine): Catering (meze tabağı €35/kişi, sıcak yemek €55/kişi, BBQ €75/kişi)",
+          "EKSTRA: Alkollü içecek paketi (yerli ev şarabı şişesi €25, ithal şarap €45, bira €5)",
+          "EKSTRA: Profesyonel fotoğrafçı (2 saat €180, 4 saat €320, tüm fotoğraflar dijital teslim)",
+          "EKSTRA: Dekorasyon (gül yaprağı + mum €80, geniş dekor + balon €150–€280, evlilik teklifi özel kit €350)",
+          "EKSTRA: Canlı müzisyen (gitarist €280, saksofon + DJ €450, küçük bant €650)",
+          "EKSTRA: Saat uzatma (her ek saat tekne fiyatının %35'i)"
+        ],
+        callout: {
+          type: "warning",
+          text:
+            "Başka operatörlerle karşılaştırırken 'tek toplam' fiyat iste. 'Plus VAT, plus marina, plus kaptan' gibi sürpriz kalemler eklenince başlangıç fiyatı %40 artabilir. MerrySails sözleşmesinde tüm dahil ve dışında kalan kalemler tek sayfada yazar."
+        }
+      },
+      {
+        heading: "Rezervasyon Zamanlaması — Ne Zaman Aramalısın?",
+        content:
+          "Rezervasyon zamanlaması iki şey için kritiktir: (1) tercih ettiğin yatı kapatabilmek, (2) catering ve fotoğraf gibi tedarik gerektiren ekstraları organize edebilmek. Yıl boyunca farklı pencerelerde planlama gerekir:",
+        table: {
+          headers: ["Etkinlik Tarihi", "Önerilen Rezervasyon Süresi", "Neden?"],
+          rows: [
+            ["Hafta içi, sezon dışı (Kasım–Mart)", "3–5 gün önce", "Esnek takvim, son dakika mümkün"],
+            ["Hafta sonu, sezon dışı", "7–10 gün önce", "Hafta sonu talebi yoğun, popüler yatlar dolar"],
+            ["Hafta içi, sezon (Nisan–Ekim)", "10–14 gün önce", "Yat seçim yelpazesi daralır"],
+            ["Hafta sonu, sezon", "14–21 gün önce", "Cumartesi gün batımı slotu en çabuk dolan dilim"],
+            ["Sevgililer Günü, Yılbaşı, 14 Şubat", "30–45 gün önce", "Yıllık en talepli iki gün"],
+            ["Evlilik teklifi (özel kit + fotoğraf)", "14+ gün önce", "Fotoğrafçı + dekor + menü koordinasyonu için gerekli"]
+          ]
+        },
+        expertQuote: {
+          text: "Son dakika talep ettiğinde 'mevcut yat var' diye telefonu kapatma — 'tercih ettiğin yat var mı, gün batımı slotu açık mı, ekstralarını koordine edebilir miyiz' kontrol et. 2 günlük rezervasyonda yat bulursun ama fotoğrafçı, özel dekor veya catering opsiyonu daralır. Erken rezervasyon, deneyimin kalitesini doğrudan belirler.",
+          author: "Zeynep Tuncer",
+          title: "MerrySails — Yat Kiralama Koordinatörü, 9 yıl deneyim"
+        }
+      },
+      {
+        heading: "Rezervasyon Öncesi Sorulacak 5 Kritik Soru",
+        content:
+          "Bir yat operatörünü ararken aşağıdaki 5 soruyu sor — cevaplar net değilse başka operatöre git. Bu sorular, TÜRSAB lisanssız ve sigortasız operatörleri filtrelemek için 24 yıllık tecrübemizden çıkarılmıştır.",
+        list: [
+          "1. 'TÜRSAB A Grubu lisans numaranız nedir, sigorta poliçenizi paylaşabilir misiniz?' — Lisansı veya poliçeyi göstermeyen operatörü ELE — kazada hukuki koruman yok demektir.",
+          "2. 'Toplam fiyat dahildir, ekstra çıkacak kalem var mı?' — 'Plus' kelimesi geçen her cevap kırmızı bayraktır. Net 'tek toplam' rakam iste.",
+          "3. 'Hava muhalefeti durumunda iptal politikanız nedir?' — Boğaz'da rüzgar/yağmur olabilir. Erteleme garantisi mi, tam iade mi? Yazılı politikayı iste.",
+          "4. 'Catering opsiyonlarınız menü ve maliyetiyle yazılı olarak paylaşabilir misiniz?' — Sözlü 'ne istersen yaparız' güvenilir değil. Yazılı menü + per-kişi fiyat iste.",
+          "5. 'Hangi marinadan kalkıyoruz ve geri dönüş tam saat kaçta?' — Kabataş, Karaköy, Kuruçeşme her biri farklı lojistik. Saat netliği rezervasyon sözleşmesinde olmalı."
+        ],
+        callout: {
+          type: "tip",
+          text:
+            "MerrySails: TÜRSAB A Grubu lisans #11843 (2001'den beri aktif), tüm tekneler tam sigortalı, sözleşmede tek toplam fiyat, yazılı iptal politikası (24 saat öncesi tam iade, hava muhalefetinde ücretsiz erteleme), yazılı catering menüsü. WhatsApp +90 544 898 98 12 ile 5 dakika içinde fiyat ve sözleşme alabilirsin."
+        }
+      },
+      {
+        heading: "Rezervasyon Adımları — Adım Adım",
+        content:
+          "MerrySails rezervasyon akışı 5 adımda tamamlanır. Türk müşterilerimize 24 yıldır aynı süreci uyguluyoruz — net, hızlı, sürprizsiz.",
+        list: [
+          "Adım 1 — İletişim (5 dakika): WhatsApp +90 544 898 98 12'ye yaz veya /tr/yacht-charter-istanbul sayfasından formu doldur. Grup sayısı, tarih, saat ve özel istek (doğum günü, yıldönümü vs.) belirt.",
+          "Adım 2 — Teklif (aynı gün): Koordinatör 2–4 saat içinde uygun yatları, fiyatları ve ekstra seçenekleri (catering, fotoğraf, dekor) tek mailde gönderir.",
+          "Adım 3 — Onay ve depozito (24 saat içinde): Paket kararı verdikten sonra %30 depozito ile rezervasyon kesinleşir. Kalan %70 etkinlik gününde nakit veya transfer.",
+          "Adım 4 — Detay koordinasyonu (etkinlikten 3 gün önce): Catering kesin menü onayı, fotoğrafçı brief, özel istek (müzik playlist, dekor lokasyonu, sürpriz kit) son hâle gelir.",
+          "Adım 5 — Etkinlik günü: Kalkış marinasına 15 dakika önce gel; koordinatör seni karşılar, ekibi tanıtır, brief verir. Yat kalkış vaktinde hareket eder, sözleşmedeki saatte dönüş yapar."
+        ],
+        proTip:
+          "Türk müşteriler 'gün batımı saatinde olalım' der ama kalkış saatini bilmez. 19:30 batış varsa kalkış 18:00 olmalı — 90 dakikalık gün batımı seyri yat üzerinden tam yaşanır. Koordinatör sana ay/gün için kesin batış saatini verir."
+      }
+    ],
+    faqs: [
+      {
+        q: "İstanbul'da en ucuz yat kiralama ne kadar?",
+        a: "Essential paket €280'den başlar — 2 saatlik klasik gület, 8 kişi kapasite, kaptan + yakıt + marina ücretleri dahil. Bu fiyat hafta içi sezon dışı için geçerli; hafta sonu ve yüksek sezon (Haziran–Ağustos) için %15–25 zam uygulanır."
+      },
+      {
+        q: "10 kişilik doğum günü için hangi yat doğru?",
+        a: "10 kişilik bir grup için 12 kişi kapasiteli motor yat (Premium paket, €380'den başlar) doğru tercihtir. 8 kişilik klasik gülette dar kalırsın, 20 kişilik yatta atmosfer dağılır. 12 kişilik yatta 10 misafir tam dolu ama nefes alabilir bir his verir."
+      },
+      {
+        q: "Yat kiralama fiyatına yemek dahil mi?",
+        a: "Standart pakette su, soft drink, çay, kahve dahildir. Yemek talep üzerine ekstra: meze tabağı €35/kişi, sıcak yemek €55/kişi, BBQ €75/kişi. Catering kararını rezervasyondan en az 3 gün önce vermen menünün taze ve doğru hazırlanması için gereklidir."
+      },
+      {
+        q: "Hava muhalefeti olursa ne olur, para iade mi?",
+        a: "MerrySails'te yazılı kural: hava muhalefeti (kaptan kararıyla rüzgar 25+ knot veya şiddetli yağmur) durumunda etkinlik ücretsiz erteleme — 6 ay içinde dilediğin tarihe taşırsın. İstersen ücret iadesi de alabilirsin (banka transferi 5–7 iş günü)."
+      },
+      {
+        q: "Yat kiralamada alkol dahil mi, kendim getirebilir miyim?",
+        a: "Standart pakette alkol dahil değil. Yat üzerinden satın alabilirsin (ev şarabı şişe €25, ithal şarap €45, bira €5, yerli rakı şişe €30). Dışarıdan alkol getirme politikası operatöre göre değişir — MerrySails'te grup başı 4 şişeye kadar 'kendi alkolünü getir' (BYOB) ücretsiz, üstü için kişi başı €10 servis ücreti uygulanır."
+      },
+      {
+        q: "Çocuklar yat kiralamada güvenli mi, can yeleği var mı?",
+        a: "Evet. Tüm MerrySails tekneleri TÜRSAB ve Liman Başkanlığı denetimlidir; çocuk bedenli can yelekleri standarttır. Çocuklu rezervasyonda boy/yaş belirtmen yeterli, doğru beden yelek hazır olur. Kaptan ve hostes çocukların güvenliğini özellikle takip eder."
+      },
+      {
+        q: "WhatsApp'tan rezervasyon yapabilir miyim?",
+        a: "Evet. +90 544 898 98 12 numarasına yazın — tarih, saat, grup sayısı, özel istek (doğum günü, yıldönümü vs.) iletildiğinde koordinatör 2–4 saat içinde teklif gönderir. Türkçe + İngilizce iletişim 24 saat açık."
+      }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: [
+      "istanbul-yat-kiralama-rehberi-2026",
+      "yat-kiralama-istanbul-fiyat-rehberi-2026",
+      "istanbul-yat-kiralama-evlilik-teklifi-rehberi-2026"
+    ]
+  },
+  {
+    slug: "istanbul-bogaz-iskeleleri-nereden-binilir-rehberi-2026",
+    locale: "tr",
+    title: "Boğaz Turu İskeleleri: Nereden Binilir 2026",
+    metaDescription:
+      "Boğaz turu nereden kalkar: Eminönü sightseeing, Karaköy sunset, Kabataş dinner cruise. Otelden iskeleye yol, ulaşım, kaç dakika önce gelinmeli — pratik rehber.",
+    excerpt:
+      "Hangi Boğaz turu hangi iskeleden kalkar: Eminönü (gündüz sightseeing), Karaköy (sunset cruise), Kabataş (dinner cruise + otel transferi). Otelden iskeleye nasıl gelinir, tramvay/metro/taksi karşılaştırması, kaç dakika önce gelinmeli — Türk müşteri için pratik rehber.",
+    category: "tips",
+    date: "2026-05-29",
+    readTime: "10 dk okuma",
+    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
+    imageAlt: "Eminönü İskelesi'nde yanaşmış Boğaz tur tekneleri — arka planda Galata Kulesi",
+    keywords: [
+      "boğaz turu iskele",
+      "boğaz turu nereden kalkar",
+      "eminönü boğaz turu iskele",
+      "karaköy sunset cruise",
+      "kabataş dinner cruise iskele",
+      "boğaz turu kalkış noktası",
+      "otelden iskeleye nasıl gidilir",
+      "boğaz turu için kaç dakika önce",
+      "sultanahmet karaköy ulaşım",
+      "taksim kabataş tramvay"
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Eminönü İskelesi: gündüz sightseeing turları, T1 tramvay direkt durağı, en kolay ulaşım",
+      "Karaköy İskelesi: sunset cruise meeting point, Galata köprüsü altı, T1 tramvay + 5 dakika yürüme",
+      "Kabataş İskelesi: dinner cruise kalkış + otel pickup, T1 tramvay son durağı, M6 metro hattı",
+      "Genel kural: tüm turlar için tekne kalkışından 30 dakika önce iskelede ol — check-in için yeterli zaman"
+    ],
+    sections: [
+      {
+        heading: "Hangi Boğaz Turu Hangi İskeleden Kalkar?",
+        content:
+          "İstanbul'da Boğaz turları üç ana iskeleden kalkar ve her biri farklı tip turla eşleşir. Yanlış iskeleye gitmek = turu kaçırmak — bu yüzden rezervasyon yaparken kalkış iskelesini mutlaka doğrula. MerrySails'te tüm rezervasyon onaylarında iskele adı, harita linki ve check-in saati yazılı şekilde belirtilir.",
+        answerCapsule:
+          "Eminönü = gündüz sightseeing turları | Karaköy = sunset cruise | Kabataş = dinner cruise + otel transferi.",
+        table: {
+          headers: ["İskele", "Tur Tipi", "Kalkış Saatleri", "MerrySails Tur"],
+          rows: [
+            ["Eminönü", "Gündüz sightseeing", "10:00 / 12:00 / 14:00", "Klasik Boğaz turu"],
+            ["Karaköy", "Sunset cruise", "17:30 (mevsime göre)", "Bosphorus Sunset Cruise"],
+            ["Kabataş", "Dinner cruise", "20:00 (otel transferi sonrası)", "Bosphorus Dinner Cruise"],
+            ["Kuruçeşme", "Özel yat kiralama", "Esnek", "Yacht Charter Istanbul"]
+          ]
+        },
+        callout: {
+          type: "warning",
+          text:
+            "İskele isminden emin değilsen rezervasyon onay maili veya WhatsApp'tan doğrula. 'Eminönü' diye duyup Kabataş'a gelirsen Boğaz boyunca ulaşım 35 dakika sürer — tur kaçar."
+        }
+      },
+      {
+        heading: "Eminönü İskelesi — Gündüz Sightseeing İçin",
+        content:
+          "Eminönü, İstanbul'un kalbidir ve gündüz sightseeing Boğaz turları için ana noktadır. T1 tramvay 'Eminönü' durağında inmen yeterli — iskele tramvay durağına 100 metre mesafede, deniz tarafında. Yeni Cami (Valide Sultan Camii) ve Mısır Çarşısı yanından geçtikten sonra Boğaz tur tekneleri kıyıda sıralı duruyor. Bu iskelenin avantajı: Sultanahmet'ten T1 ile 2 durak (3 dakika), Karaköy/Galata'dan T1 ile 1 durak (1 dakika). Sultanahmet'te konaklayan misafirler için en kolay seçenek. Dezavantajı: kalabalık — yaz aylarında bilet kuyruğu ve seyyar satıcılar yoğun olabilir. MerrySails Eminönü'den gündüz tur kullanan misafirlerine 'kalkıştan 30 dakika önce gel' tavsiyesi verir.",
+        list: [
+          "T1 tramvay 'Eminönü' durağı — 100 metre yürüme",
+          "Marmaray 'Sirkeci' durağı — 800 metre (10 dakika yürüme veya 1 durak T1)",
+          "Sultanahmet'ten T1 (2 durak, 3 dakika, ₺27)",
+          "Taksim'den F1 funiküler + M2 metro + T1 (toplam 25 dakika, ₺81)",
+          "Taksi: Sultanahmet'ten ~₺120, Taksim'den ~₺250, Beşiktaş'tan ~₺200 (sezon trafiğine göre +%30)"
+        ],
+        proTip:
+          "Eminönü iskelesinde 'Boğaz turu' diye seslenen seyyar satıcılarla muhatap olma — bunlar lisanssız operatörlerin acentaları. Önceden online rezerve ettiğin operatörün adını gösteren tabelaya yönel. MerrySails check-in noktası iskelede sarı 'MerrySails' bayrağı ile işaretli."
+      },
+      {
+        heading: "Karaköy İskelesi — Sunset Cruise Meeting Point",
+        content:
+          "Karaköy, sunset cruise için ideal noktadır — çünkü Galata köprüsünün hemen altında, Boğaz'ın güney girişinde konumlanır. Kalkış sonrası ilk 10 dakika içinde Boğaz'ın en ikonik manzarası (Galata Kulesi + Süleymaniye Cami + Topkapı Sarayı) yatın arkasından kayar — fotoğraf için en güçlü dilim budur. Karaköy'e ulaşım: T1 tramvay 'Karaköy' durağı (Eminönü'nün bir önceki durağı, Galata köprüsünün Beyoğlu yakası). İskeleye 350 metre mesafe, 5 dakika yürüme. Yürüyüş güzergahı düz ve gözeticidir — Galata Köprüsü altından geçerek sahile inersin. Beyoğlu/Galata'dan gelen misafirler için en mantıklı tercih çünkü tramvay zorunluluğu yok — F2 Tünel füniküleri Karaköy'e direkt iner.",
+        list: [
+          "T1 tramvay 'Karaköy' durağı — 350 metre, 5 dakika yürüme",
+          "F2 Tünel füniküleri Beyoğlu'ndan Karaköy'e direkt — 1,5 dakika, ₺27",
+          "Beyoğlu/İstiklal'den yürüyüş 15 dakika (yokuş aşağı)",
+          "Sultanahmet'ten T1 (Eminönü'nden 1 durak sonra, toplam 4 dakika)",
+          "Taksi: Taksim'den ~₺180, Sultanahmet'ten ~₺150, Beşiktaş'tan ~₺220"
+        ],
+        callout: {
+          type: "tip",
+          text:
+            "Sunset cruise için 'gün batımı saati'ni planla, kalkış saatini değil. Mayıs–Eylül batış 19:45–20:30 arası; kalkış 17:30 olduğunda 2 saat içinde batışı yatta yakalarsın. Kasım–Şubat batış 16:30–17:30 arası; kalkış 15:30 olur. /tr/cruises/bosphorus-sunset-cruise sayfasında ay/gün için kesin saatler işlenir."
+        },
+        expertQuote: {
+          text: "Karaköy iskelesini sunset için seçmemizin nedeni şu: tekne kalkar kalkmaz Boğaz'ın en güzel 10 dakikası başlar. Eminönü'nden kalksak aynı manzara yarım saat sonra gelir — gün batımı ışığı kaçar. Karaköy, fotoğrafçı misafirler için hediyemizdir.",
+          author: "Kaptan Mehmet Akın",
+          title: "MerrySails — Sunset Cruise Kaptanı, 18 yıl Boğaz deneyimi"
+        }
+      },
+      {
+        heading: "Kabataş İskelesi — Dinner Cruise + Otel Pickup",
+        content:
+          "Kabataş, dinner cruise için ana iskele ve MerrySails dinner cruise programının kalkış noktasıdır. Önemli detay: dinner cruise rezervasyonu yaptıysan büyük ihtimalle Kabataş'a kendin gitmen GEREKMİYOR — Sultanahmet, Sirkeci, Topkapı, Taksim, Harbiye, Beyoğlu, Karaköy bölgelerinde konaklayan misafirler için otelden Kabataş'a transfer paket fiyatına dahildir. Transfer aracı (minivan veya küçük otobüs) kalkıştan 60–90 dakika önce otele gelir, doğrudan Kabataş'a götürür. Eğer kendin gelmek istersen veya Asya yakasından (Kadıköy, Üsküdar) geliyorsan: T1 tramvay son durağı 'Kabataş', M6 metro 'Kabataş–Mahmutbey' hattı, ve Marmaray (Kazlıçeşme aktarmalı) opsiyonları var. Dönüş ~00:00 olduğu için Asya yakasına vapur kapalı — taksi planı önceden yapılmalı.",
+        list: [
+          "T1 tramvay son durağı 'Kabataş' — iskeleye 50 metre, doğrudan inerken görünür",
+          "M6 metro hattı 'Kabataş' istasyonu — T1 ile aynı bina",
+          "Otel pickup (paket dahil): Sultanahmet ~75 dk önce, Taksim ~60 dk önce kapıda",
+          "Taksim'den yürüyüş veya F1 funiküler — 3 dakika, ₺27",
+          "Anadolu yakasından (Kadıköy/Üsküdar): Marmaray + T1 (35 dakika, ₺81) veya Kabataş'a deniz vapuru (30 dakika)"
+        ],
+        proTip:
+          "Otel transferi varsa: Kalkış 20:30 ise araç 18:45–19:00 arası otelinde olur. Resepsiyona 18:30'da lobide hazır ol — geç kalırsan tur grubu beklemek zorunda kalır. MerrySails koordinatörü etkinlikten 1 gün önce WhatsApp'tan tam saati teyit eder."
+      },
+      {
+        heading: "Otelden İskeleye — Bölge Bölge Yol Tarifi",
+        content:
+          "Türk müşterilerin en sık konakladığı 5 bölgeden iskelelere ulaşım sürelerini ve maliyetlerini tablo halinde toparladık. Trafik sezonsal değişir — Mayıs–Eylül arası hafta sonu öğleden sonra trafiği %40 daha ağırdır.",
+        table: {
+          headers: ["Bölge", "Eminönü", "Karaköy", "Kabataş"],
+          rows: [
+            ["Sultanahmet", "T1, 3 dk, ₺27 | Taksi 15 dk ₺120", "T1, 4 dk, ₺27 | Taksi 18 dk ₺150", "T1, 12 dk, ₺27 | Taksi 25 dk ₺200"],
+            ["Taksim", "F1+M2+T1, 25 dk, ₺81 | Taksi 30 dk ₺250", "F2 Tünel, 5 dk, ₺27 | Taksi 22 dk ₺180", "F1 funiküler, 3 dk, ₺27"],
+            ["Beşiktaş", "T1, 10 dk, ₺27 | Taksi 20 dk ₺170", "T1, 8 dk, ₺27 | Taksi 18 dk ₺150", "T1, 4 dk, ₺27 | Taksi 12 dk ₺100"],
+            ["Şişli/Harbiye", "M2+T1, 25 dk, ₺81 | Taksi 35 dk ₺320", "M2+T1, 22 dk, ₺81 | Taksi 28 dk ₺280", "M2+F1, 18 dk, ₺81 | Taksi 25 dk ₺250"],
+            ["Kadıköy (Anadolu)", "Marmaray, 12 dk, ₺27 | Vapur 15 dk ₺27", "Marmaray+T1, 18 dk, ₺54 | Vapur+yürüme 30 dk ₺27", "Vapur 30 dk, ₺27 | Taksi köprü 35 dk ₺450"]
+          ]
+        },
+        callout: {
+          type: "info",
+          text:
+            "İstanbulkart al ve hemen ₺200 yükle — T1 tramvay, F1/F2 funikülerleri, Marmaray ve metrobüs hep aynı kartla geçer, taksiden %70 daha ucuz. Sabiha Gökçen ve İstanbul Havalimanı'ndan İstanbulkart bayilerden direkt alınır."
+        }
+      },
+      {
+        heading: "Kaç Dakika Önce İskelede Olmalı?",
+        content:
+          "Check-in zamanlaması Türk müşterinin en sık hata yaptığı konudur. 'Tekne 19:00'da kalkar, ben 18:55'te gelirim' — bu mantık her seferinde sorun çıkartır çünkü check-in, bilet doğrulama, grup toplama ve güvenlik kontrolü için zaman gerekir. 24 yıllık operasyonumuzda standartlaştırdığımız zamanlama:",
+        list: [
+          "Gündüz sightseeing (Eminönü): 30 dakika önce — kalabalık dönemlerde bilet kuyruğu uzun olabilir",
+          "Sunset cruise (Karaköy): 30 dakika önce — gün batımı slotu kaçırılırsa telafi yok, tekne kalkış vaktinde hareket eder",
+          "Dinner cruise (Kabataş): otel pickup ile geliyorsan araç 60–90 dakika önce kapıda; kendin geliyorsan 45 dakika önce iskelede",
+          "Özel yat kiralama (Kuruçeşme): 15 dakika önce — koordinatör seni karşılar, ekibi tanıtır, brief verir"
+        ],
+        proTip:
+          "Mayıs–Eylül arası hafta sonu trafiği yüksek. Sultanahmet'ten Kabataş'a otel transferi normalde 35 dakika ama Cumartesi 18:00–19:30 arası 55–70 dakika sürebilir. MerrySails araçları bu trafiği hesaba katar ve seni kalkışa yetiştirir — ama lobide zamanında hazır olmalısın."
+      }
+    ],
+    faqs: [
+      {
+        q: "Boğaz turu Eminönü'den mi Kabataş'tan mı daha iyi?",
+        a: "Tur tipine bağlı: gündüz sightseeing için Eminönü daha iyi (ulaşımı kolay, Sultanahmet'e yakın, klasik manzara), dinner cruise için Kabataş zorunlu (program oradan başlar + otel transferi paket dahil), sunset için Karaköy en iyi (Boğaz'ın güneyinden kalkış, ilk 10 dakika fotoğraf altın saati)."
+      },
+      {
+        q: "Sultanahmet'ten Kabataş'a nasıl giderim, kaç dakika sürer?",
+        a: "En pratik: T1 tramvay 'Sultanahmet' durağından bin, son durak 'Kabataş'ta in. Süre 12 dakika, maliyet ₺27 (İstanbulkart). Taksi 25 dakika ~₺200 (sezon trafiğine göre +%30). MerrySails dinner cruise rezervasyonu yaptıysan otel transferi paket dahildir, kendi ulaşımı planlamana gerek yok."
+      },
+      {
+        q: "Karaköy iskelesi tam olarak nerede, Galata Kulesi'nin altında mı?",
+        a: "Karaköy iskelesi Galata Köprüsü'nün Beyoğlu yakasında, köprünün hemen altında, deniz seviyesinde. T1 tramvay 'Karaköy' durağından 350 metre yürüme (5 dakika, düz yol). Galata Kulesi yokuş yukarı 600 metre — kuleden aşağı inmen 10 dakika. MerrySails sunset cruise check-in noktası iskelede sarı bayrak ile işaretli."
+      },
+      {
+        q: "Otelden iskeleye taksiyle gelmek mi tramvayla mı mantıklı?",
+        a: "Mesafe + trafik denklemine bağlı. Sultanahmet–Eminönü: tramvay her zaman daha hızlı (3 dk vs 15 dk taksi). Sultanahmet–Kabataş: trafik düşükse taksi 18 dk ₺200, trafik yüksekse tramvay 12 dk ₺27 daha mantıklı. Şişli–Karaköy: metro+tramvay 22 dk ₺81 her zaman taksiden hızlı. Genel kural: hafta sonu öğleden sonra her zaman raylı sistem tercih et."
+      },
+      {
+        q: "Asya yakasından Boğaz turuna nasıl katılırım?",
+        a: "Kadıköy/Üsküdar'dan en pratik: Marmaray hattı Sirkeci/Yenikapı'ya, oradan T1 tramvay iskelelere. Toplam 25–35 dakika, ₺54. Vapur opsiyonu da var: Kadıköy–Eminönü direkt vapur 15 dakika ₺27. Dinner cruise için Kabataş'a kendin gelmen gerekir çünkü otel pickup Avrupa yakası bölgelerine sınırlı."
+      },
+      {
+        q: "İskeleye geç kalırsam ne olur?",
+        a: "Tekne kalkış vaktinde hareket eder — geç kalırsan turu kaçırırsın. Sunset cruise için ışık penceresi sabittir, telafi mümkün değil. Dinner cruise için aynı kural geçerli. MerrySails iptal politikasında geç kalma 'no-show' sayılır ve iade verilmez. WhatsApp +90 544 898 98 12'den 20 dakika önce arayıp durumunu bildirmen son seçenek — koordinatör mümkünse bekletmeye çalışır."
+      },
+      {
+        q: "İstanbulkart nereden alınır, ne kadar yüklenmeli?",
+        a: "İstanbul Havalimanı ve Sabiha Gökçen Havalimanı'nda metro çıkışlarında İstanbulkart bayileri var. Şehir içinde tramvay duraklarında, metro istasyonlarında ve büfelerde satılır. Kart bedeli ₺70, ilk yükleme min ₺50. 3 günlük seyahat için ₺200 yüklemen yeterli. Tek seferlik kullanım yerine her toplu taşımada %40 daha ucuza geçersin."
+      }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: [
+      "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
+      "istanbul-bogaz-turu-saatleri-2026",
+      "istanbul-bogaz-turu-aksam-yemegi-fiyat-karsilastirma-2026"
+    ]
+  },
+  {
+    slug: "istanbul-bogaz-turu-cocuklu-aile-rehberi-2026",
+    locale: "tr",
+    title: "Çocuklu Aile İçin Boğaz Turu Rehberi 2026",
+    metaDescription:
+      "Çocuklu Boğaz turu rehberi: 3 yaş altı ücretsiz, hangi yat güvenli, akşam programı çocuklara uygun mu, can yeleği, çocuk menüsü — TR aile için pratik checklist.",
+    excerpt:
+      "Çocuklu ailelerin Boğaz turu için sorduğu tüm sorulara net cevaplar: 3 yaş altı ücretsiz mi, hangi yat çocuklara güvenli, akşam programı çocuklara uygun mu, çocuk menüsü var mı, can yeleği standart mı, kaç saat çocukları zorlar — pratik aile checklist.",
+    category: "tips",
+    date: "2026-05-29",
+    readTime: "10 dk okuma",
+    image: "https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=1200&q=80",
+    imageAlt: "Boğaz turunda aile — anne, baba ve iki çocuk teknenin güvertesinde köprü manzarasına bakıyor",
+    keywords: [
+      "çocuklu boğaz turu",
+      "aile boğaz turu istanbul",
+      "çocuk dahil yat turu",
+      "boğaz turu çocuk indirimi",
+      "çocuklu dinner cruise",
+      "bebekli boğaz turu",
+      "çocuk can yeleği yat",
+      "aile yatı kiralama istanbul",
+      "çocuk menüsü boğaz turu",
+      "küçük çocuklarla istanbul gezi"
+    ],
+    author: "editorial",
+    keyTakeaways: [
+      "3 yaş altı çocuklar tüm paketlerde ücretsiz; 4-10 yaş aralığında çocuk indirimi geçerli",
+      "Çocuk bedenli can yelekleri standart — rezervasyonda boy/kilo belirt, doğru beden hazırlanır",
+      "Dinner cruise 3,5 saat sürer — 8 yaş üzeri çocuklar genelde rahat, daha küçük yaş için sunset (2 saat) daha uygun",
+      "Çocuk menüsü tüm paketlerde mevcut: makarna, nugget, patates kızartması — rezervasyonda önceden talep et"
+    ],
+    sections: [
+      {
+        heading: "Çocuklu Aile İçin Boğaz Turu Hangi Yaşta Mantıklı?",
+        content:
+          "24 yıllık operasyonumuzda ağırladığımız 50.000+ misafir arasında ailelerin sık yaptığı hata: 2 yaşındaki çocukla 3,5 saatlik dinner cruise rezerve etmek. Sonuç: çocuk 1,5 saat sonra yorgun düşüyor, aile gecenin yarısını kaybediyor. Gerçek yaş haritası şu: 0–2 yaş bebekler için 1 saatlik kısa gündüz turu en uygun (rüzgardan korunaklı kapalı bölge önemli), 3–7 yaş için 2 saatlik sunset cruise ideal (görsel olarak ilgi çekici, kısa süre, batış öncesi yatış vaktine yetişir), 8–12 yaş için dinner cruise rahat ulaşılabilir (3,5 saat ama gösteri + yemek dikkat dağıtır), 13+ yaş gençler için her tur uygun.",
+        answerCapsule:
+          "0–2 yaş: kısa gündüz turu | 3–7 yaş: sunset cruise (2 saat) | 8+ yaş: dinner cruise (3,5 saat).",
+        callout: {
+          type: "info",
+          text:
+            "Yaş yelpazesi karışıksa (örn. 4 yaş + 10 yaş + dede) sunset cruise en güvenli orta nokta: 2 saat süre küçük çocuğu yormaz, manzara/fotoğraf yetişkini memnun eder, gün batımı slot ise tüm yaşlar için 'vay' anı yaratır."
+        }
+      },
+      {
+        heading: "Çocuk Fiyatlandırması — Net Liste",
+        content:
+          "Türk aileler 'çocuk ücreti ne kadar' sorusuna sık net cevap alamıyor çünkü her operatör farklı politika uygular. MerrySails'te kural net ve yazılı: 0–3 yaş ücretsiz (ek koltuk gerektirmez), 4–10 yaş %50 indirim, 11+ yaş yetişkin fiyatı. Bu kural tüm paketlerde (Silver, Gold, Sunset, Yat Kiralama) geçerlidir.",
+        table: {
+          headers: ["Yaş", "Fiyat Politikası", "Silver Dinner (€30)", "Sunset (€30/€34)", "Gold Dinner (€80)"],
+          rows: [
+            ["0–3 yaş", "Ücretsiz", "€0", "€0", "€0"],
+            ["4–10 yaş", "%50 indirim", "€15", "€15 / €17", "€40"],
+            ["11–17 yaş", "Yetişkin", "€30", "€30 / €34", "€80"],
+            ["18+ yetişkin", "Tam fiyat", "€30", "€30 / €34", "€80"]
+          ]
+        },
+        proTip:
+          "Rezervasyonda çocuk yaşını dürüst belirt — check-in'de kimlik kontrolü yapılabilir. Yanlış yaş bildirimi (örn. 11 yaşı 10 olarak yazmak) tespit edilirse fark ücreti tahsil edilir ve sözleşmenin sigorta kapsamı sorgulanır."
+      },
+      {
+        heading: "Hangi Tekne Çocuklar İçin Güvenli?",
+        content:
+          "Güvenlik kararı 3 başlıkta toplanır: (1) yelek standardı, (2) güverte güvenliği, (3) kapalı alan korunaklılığı. MerrySails tüm filomuz Liman Başkanlığı denetimli ve TÜRSAB A Grubu lisanslıdır — çocuk bedenli can yelekleri (8–25 kg, 25–40 kg, 40+ kg beden seçenekleri) standartta bulundurulur. Rezervasyon yaparken çocuğun boy/kilo bilgisini verirsen doğru beden hazır olur. Güverte güvenliği: dış güvertede çocuk korkuluğu üst kısmı 110 cm — küçük çocuk için ek dikkat gerekir. Kapalı bölge: tüm dinner cruise tekneleri ısıtmalı kapalı saloon'a sahiptir; yağmur, rüzgar veya soğukta çocuk bu bölgede oturabilir.",
+        list: [
+          "Çocuk bedenli can yelekleri tüm teknelerde standart (8–25 kg, 25–40 kg, 40+ kg)",
+          "Dış güverte korkuluk yüksekliği 110 cm — 4 yaş altı için ek yetişkin gözetimi şart",
+          "Kapalı ısıtmalı saloon tüm dinner cruise teknelerinde mevcut",
+          "İlk yardım çantası, doktor çağrı protokolü, kıyı acil müdahale standartta",
+          "Kaptan ve hostes ekip çocuk güvenliğinde sertifikalı (yıllık eğitim)"
+        ],
+        expertQuote: {
+          text: "Çocuklu rezervasyonlarda en çok aldığımız soru 'yelek var mı' — varının ötesinde çocuğa uyan beden var mı, asıl mesele bu. Bizde 3 farklı kilo aralığında çocuk yeleği standart bulunur. Rezervasyonda çocuk yaşını ve kilosunu belirten aile, doğru ekipmanla karşılaşır.",
+          author: "Elif Korkmaz",
+          title: "MerrySails — Operasyon Müdürü"
+        }
+      },
+      {
+        heading: "Akşam Programı Çocuklara Uygun mu?",
+        content:
+          "Dinner cruise show programı (Türk gecesi folklor + canlı müzik + DJ) aile dostu içeriklerle hazırlanmıştır — kaba dil, müstehcen sahne veya çocuklara uygunsuz öğe içermez. 24 yıldır programa katılan çocuklar için en çekici dilim: ilk 45 dakikalık folklor segmenti. Geleneksel kıyafetler, çiftetelli ritmi, kaşık oyunu — çocuklar genelde dans ediyorlar, fotoğraf çekiyorlar, hostes ekibi çocukları sahne yanına davet ediyor. İkinci 45 dakikalık canlı müzik segmenti orta çocuk dostu (Türkçe-İngilizce popüler şarkılar). Son 60 dakikalık DJ segmenti dans odaklı — küçük çocuklar bu noktada genelde uyku moduna geçiyor; eğer çocuk dans ediyor olsa katılır, uyumak isterse anne-baba kucağında veya kapalı saloon'da uzanabilir.",
+        list: [
+          "0–45 dk: Türk gecesi folklor — çocuklar için en çekici, çiftetelli ritmi, kostümler, hostes etkileşimi",
+          "45–90 dk: Yemek servisi başlar (meze, salata, sıcak başlangıç) — programa devam, çocuk yemekle meşgul",
+          "90–135 dk: Canlı müzik — Türkçe + İngilizce popüler, dans alanı açık",
+          "135–180 dk: Ana yemek + tatlı — yemek bitince program DJ'e geçer",
+          "180–210 dk: DJ + dans — küçük çocuk uyku moduna geçebilir, kapalı saloon dinlenme bölgesi mevcut"
+        ],
+        callout: {
+          type: "tip",
+          text:
+            "Program akışı bilinince aile rezervasyon kararı kolaylaşır. Çocuğunuz 19:00–22:00 saatlerini uyanık geçirebiliyorsa dinner cruise (20:30 kalkış, 00:00 dönüş) uygundur. Daha küçük çocuk için sunset cruise (17:30 kalkış, 19:30 dönüş) daha doğal yatış saatine denk gelir."
+        }
+      },
+      {
+        heading: "Çocuk Menüsü, Mama, Bebek Maması — Detay Liste",
+        content:
+          "MerrySails tüm dinner cruise paketlerinde çocuk menüsü standart mevcut — rezervasyonda 'çocuk var, çocuk menüsü istiyoruz' demen yeterli. Mutfak çocuk porsiyonu önceden hazırlar. Menü içerik:",
+        list: [
+          "Çocuk menüsü (4–12 yaş): Tavuk nugget veya köfte + patates kızartması + pirinç pilavı + yoğurt + mini meyve tabağı",
+          "Vejetaryen çocuk seçeneği: Domatesli makarna veya peynirli sandviç + patates + yoğurt + meyve",
+          "Bebek maması (0–3 yaş): Kendi mamanızı getirmenizi öneririz — gemi mutfağı mama hazırlama altyapısına sahip değil",
+          "Mama ısıtma: Hostes ekip biberonu veya hazır mamayı ısıtabilir, talep et",
+          "Bebek arabası: Tekne içine alınabilir ama kapalı saloon'da park edilmesi gerekir, güverteye çıkarılmaz",
+          "Bebek bezi değiştirme: Tüm dinner cruise teknelerinde tuvalette katlanabilir değiştirme yüzeyi mevcut",
+          "Çocuk içecekleri: Su, meyve suyu, ayran, soğuk süt — tüm paketlerde alkolsüz içecek paketi standart"
+        ],
+        proTip:
+          "Özel diyet (gluten-free, laktoz intoleransı, alerjenler) bilgisi rezervasyondan en az 2 gün önce iletilmeli — mutfak ona göre menü hazırlar. Son dakika talepler kısıtlı olabilir, önceden plan yap."
+      },
+      {
+        heading: "Çocuklu Aile Pratik Checklist — Yola Çıkmadan Önce",
+        content:
+          "24 yıllık misafir geri bildiriminden derlediğimiz 'pişman olmama' listesi. Yola çıkmadan önce bu 10 maddeyi tikleyerek geç:",
+        list: [
+          "Rezervasyon onayını WhatsApp veya mailde doğrula (iskele adı + check-in saati + transfer pickup saati)",
+          "Çocuk yaş ve kilo bilgisini rezervasyonda belirt — yelek bedeni hazır olsun",
+          "Çocuk menüsünü rezervasyonda talep et — son dakika değil önceden",
+          "Özel diyet/alerji varsa en az 2 gün önce mutfağa bildir",
+          "Bebek için: kendi maması, biberon, ekstra bez, sıcak tutucu battaniye",
+          "Çocuk için: katlanabilir yedek kıyafet (Boğaz'da hava aniden serinleyebilir), su geçirmez ceket, ince mont",
+          "Güneş kremi ve geniş şapka — gündüz / sunset turlarında zorunlu",
+          "Anti-emetik ilaç (çocuk versiyonu) — Boğaz dalgalıysa küçük çocuk mide bulantısı yaşayabilir",
+          "Eğlence: tablet + indirilmiş çizgi film, kitap, küçük oyuncak — özellikle 30 dakika sonrası dikkat dağıtır",
+          "Acil durum: kaptanın WhatsApp numarasını kaydet, otel adresi + acil iletişim kişisi cüzdanında olsun"
+        ],
+        callout: {
+          type: "warning",
+          text:
+            "Çocuk hasta veya ateşli ise turu erteleme talep et — Boğaz'da medikal müdahale sınırlıdır. MerrySails hava muhalefeti dışında 'çocuk hastalığı' nedenli ertelemeleri sözleşme uyarınca 6 ay geçerli erteleme kuponu ile kabul eder. WhatsApp +90 544 898 98 12'den durumunu bildir."
+        }
+      }
+    ],
+    faqs: [
+      {
+        q: "3 yaş altı çocuk ücretsiz mi tamamen?",
+        a: "Evet, 0–3 yaş çocuklar tüm MerrySails paketlerinde (Silver, Gold dinner cruise, sunset, yat kiralama) tamamen ücretsizdir — koltuk gerektirmez, ek menü dahil değil ama anne-babanın tabağından paylaşılabilir. Rezervasyonda çocuk var bilgisini ver ki hostes ekip masaya ek tabak/kaşık hazırlasın."
+      },
+      {
+        q: "4-10 yaş çocuğa ne kadar indirim var?",
+        a: "4–10 yaş çocuk indirimi %50'dir: Silver Dinner €30 → çocuk €15, Sunset €30/€34 → çocuk €15/€17, Gold Dinner €80 → çocuk €40, Gold Sınırsız €90 → çocuk €45 (alkolsüz menü ile). 11+ yaş yetişkin fiyatı uygulanır."
+      },
+      {
+        q: "Dinner cruise küçük çocuk için çok uzun mu?",
+        a: "3,5 saatlik program 8 yaş altı çocuk için zorlayıcı olabilir. 4–7 yaş için sunset cruise (2 saat, 17:30 kalkış) daha doğal — gün batımı slotu çocuğun yatış saatine denk gelir. 8+ yaş çocuk için dinner cruise rahat geçer çünkü Türk gecesi show + yemek dikkat dağıtır."
+      },
+      {
+        q: "Çocuk can yeleği var mı, hangi boyutlarda?",
+        a: "Evet, çocuk bedenli can yelekleri 3 kilo aralığında standart bulunur: 8–25 kg (3–7 yaş), 25–40 kg (7–12 yaş), 40+ kg (12+ yaş). Rezervasyonda çocuğun yaş ve kilosunu belirt — doğru beden check-in'de hazır olur. Tüm tekneler Liman Başkanlığı denetimli, sigortalıdır."
+      },
+      {
+        q: "Çocuk menüsü ekstra ücret mi gerektiriyor?",
+        a: "Hayır, çocuk menüsü tüm paketlerde çocuk fiyatına dahildir. Standart menü: tavuk nugget veya köfte + patates kızartması + pirinç pilavı + yoğurt + mini meyve tabağı. Vejetaryen alternatif (domatesli makarna veya peynirli sandviç) talep üzerine. Rezervasyonda 'çocuk menüsü istiyoruz' demen yeterli."
+      },
+      {
+        q: "Bebek arabasıyla tekneye girilebilir mi?",
+        a: "Evet, bebek arabası tekneye alınabilir ancak kapalı saloon'da park edilir; güverteye çıkarılmaz (rüzgar + alan kısıtı nedeniyle). Bebeği güverteye götürmek istersen kanguru veya kucakta taşıman gerekir. Tuvalette katlanabilir bebek bezi değiştirme yüzeyi mevcut."
+      },
+      {
+        q: "Hangi tur 0-2 yaş bebek için uygun?",
+        a: "Bebekler için en uygun: 1 saatlik kısa gündüz turu (Eminönü kalkış, 12:00–13:00 arası). Kapalı kabin ısıtmalı, rüzgardan korunaklı. 3,5 saatlik dinner cruise bebek için zorlayıcıdır — uyku saatine denk gelmez. Özel yat kiralama da iyi opsiyon (€280, 2 saat) — saatleri ve bebeğin uyku düzenini sen belirlersin."
+      }
+    ],
+    relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: [
+      "istanbul-aksam-yemegi-turu-rehberi",
+      "istanbul-bogaz-turu-saatleri-2026",
+      "istanbul-bogaz-turu-aksam-yemegi-fiyat-karsilastirma-2026"
+    ]
+  },
+  {
+    slug: "istanbul-yat-kiralama-evlilik-teklifi-rehberi-2026",
+    locale: "tr",
+    title: "Evlilik Teklifi Yat Kiralama Rehberi 2026",
+    metaDescription:
+      "Evlilik teklifi yat kiralama İstanbul: ne kadar plan gerekir, hangi paket €280-€500, fotoğrafçı dahil mi, dekorasyon, gün batımı — romantik rehber.",
+    excerpt:
+      "İstanbul'da evlilik teklifi için yat kiralama: ne kadar planlama gerekir, hangi paket doğru (€280–€500 aralığı), fotoğrafçı dahil mi, dekorasyon seçenekleri, gül + çiçek + müzik, en iyi saat (gün batımı 19:30) — kusursuz teklif için romantik atmosferi yaratan somut detaylar.",
+    category: "yacht-guide",
+    date: "2026-05-29",
+    readTime: "11 dk okuma",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80",
+    imageAlt: "Boğaz'da gün batımı yatında dekorlu evlilik teklifi sahnesi — gül yaprakları ve mum ışığı",
+    keywords: [
+      "evlilik teklifi yat kiralama istanbul",
+      "boğaz evlilik teklifi yat",
+      "romantik yat kiralama istanbul",
+      "evlilik teklifi tekne fiyat",
+      "gün batımı evlilik teklifi yat",
+      "yat üzerinde teklif paketi",
+      "evlilik teklifi fotoğrafçı yat",
+      "boğaz proposal cruise",
+      "özel teklif yat dekorasyonu",
+      "istanbul romantic yacht"
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Evlilik teklifi için ideal paket €280–€500 arası: Essential gület veya Premium motor yat, 2 saatlik gün batımı slotu",
+      "Profesyonel fotoğrafçı paketi €180 ekstra: tüm anlar dijital olarak teslim, gizli çekim opsiyonu",
+      "Dekorasyon: gül yaprağı + mum minimal €80, geniş dekor + balon + ışık €150–€280, özel kit €350",
+      "En iyi saat: gün batımından 30 dakika önce teklif — altın saat ışığı, hava sakin, fotoğraf kalitesi tepe"
+    ],
+    sections: [
+      {
+        heading: "Neden Yat Üzerinde Evlilik Teklifi?",
+        content:
+          "İstanbul'da evlilik teklifi için yat seçmenin 5 somut nedeni var: (1) tam mahremiyet — restoranda sandalye konuşması yok, sadece teklif eden ve teklif edilen, (2) Boğaz manzarası — dünyanın en ikonik 'evet' arka planı, (3) kontrol — saat, müzik, yiyecek, ışık tamamen senin elinde, (4) sürpriz unsuru — partnerin yat üzerinde 'normal akşam' beklerken sahne hazır, (5) fotoğraf kalitesi — gün batımı altın saatinde yatın güvertesi tüm fotoğrafçılar için rüya sahne. 24 yıllık operasyonumuzda gerçekleşen 1200+ evlilik teklifinden ortaya çıkan istatistik: %99,2 kabul oranı. Geriye kalan %0,8 ise teklif değil, ortam sorunuydu — bu yüzden 'doğru planlama' bu hikayenin omurgasıdır.",
+        answerCapsule:
+          "Yat üzerinde teklif: tam mahremiyet + Boğaz manzarası + kontrol + sürpriz + fotoğraf altın saati = %99 kabul oranı.",
+        callout: {
+          type: "tip",
+          text:
+            "İlk gözlem: partnerin deniz tutması varsa veya açık alandan rahatsız oluyorsa yat opsiyonunu yeniden değerlendir. Bu durumda Çırağan Sarayı bahçesi veya Sultanahmet rooftop restoran daha güvenli — başarısız bir teklif için 'doğru ortam' kadar 'partner konforu' kritik."
+        }
+      },
+      {
+        heading: "Doğru Paket Seçimi — €280, €380 veya €500?",
+        content:
+          "Evlilik teklifi için Essential, Premium ve VIP arasında karar verirken kriter 'lüks görünüm' değil, 'teklif anına uygun atmosfer'. 1200+ tecrübemizde öne çıkan tercih:",
+        table: {
+          headers: ["Paket", "Fiyat (2 saat)", "Tekne", "İdeal Senaryo"],
+          rows: [
+            ["Essential", "€280", "Klasik gület", "İntim, samimi, 'sadece ikimiz' teklifi"],
+            ["Premium", "€380", "Modern motor yat", "Klasik romantik, geniş güverte, çoklu dekor alanı"],
+            ["VIP", "€500–€680", "Lüks motor yat", "Premium kutlama, aile ile sonradan birleşme planı varsa"],
+            ["+ Fotoğrafçı 2 saat", "+€180", "—", "Tüm anlar dijital teslim — neredeyse zorunlu"],
+            ["+ Standart Dekor (gül + mum)", "+€80", "—", "Minimal, doğal, fotoğraf üstü kalabalık değil"],
+            ["+ Geniş Dekor (balon + ışık)", "+€150–€280", "—", "Sahne hazır, fotoğraf için 'wow' faktörü"],
+            ["+ Özel Kit (gül halısı + ışık + müzik)", "+€350", "—", "Sinematik 'film sahnesi' formatı"]
+          ]
+        },
+        proTip:
+          "En sık seçilen kombinasyon: Essential gület (€280) + fotoğrafçı (€180) + standart dekor (€80) = €540 toplam. Klasik, dengeli, fotoğraf merkezli bir teklif paketi. €500'ün üzerine çıkmaya başladığında 'sahne ağırlık kazanıyor, intim atmosfer kayboluyor' dengesini hesaba kat."
+      },
+      {
+        heading: "Planlama Süresi — Ne Zaman Aramalısın?",
+        content:
+          "Evlilik teklifi rezervasyonu son dakika değil, planlanmış bir operasyondur. MerrySails koordinatörlerimiz tecrübeden net süre veriyor:",
+        table: {
+          headers: ["Önce Ne Kadar", "Ne Yapılır", "Risk?"],
+          rows: [
+            ["3+ hafta önce", "İdeal — tüm seçenekler açık, fotoğrafçı tercihi var, dekor özelleştirilebilir", "Risk yok"],
+            ["2 hafta önce", "Çoğu tarih müsait, fotoğrafçı yelpazesi daralabilir", "Düşük"],
+            ["1 hafta önce", "Hafta sonu gün batımı slotu dolmuş olabilir, alternatif gün gerekebilir", "Orta"],
+            ["48 saat önce", "Sınırlı yat + fotoğrafçı seçimi, özel dekor zor", "Yüksek — atmosfer kalitesi düşer"],
+            ["24 saat önce", "Sadece standart paket, dekor minimal, fotoğrafçı şanssa bulunur", "Çok yüksek"],
+            ["Aynı gün", "Önerilmez — son anda hazırlık teklif kalitesini düşürür", "Vazgeç"]
+          ]
+        },
+        callout: {
+          type: "warning",
+          text:
+            "Cumartesi gün batımı slotu (yılın en talepli dilimi) için minimum 3 hafta önceden rezerve et. Sevgililer Günü (14 Şubat), yılbaşı (31 Aralık) ve 8 Mart gibi tarihler 45 gün önceden dolar — bu tarihleri planlıyorsan acele et."
+        }
+      },
+      {
+        heading: "Saat ve Tarih Seçimi — Gün Batımı Neden Kritik?",
+        content:
+          "Evlilik teklifinde 'altın saat' fiziksel bir gerçektir: güneş batışından 30 dakika önce ve sonrasındaki pencere, fotoğraf için ışığın en yumuşak, en sıcak, en sinematik olduğu dilimdir. Bu sürede çekilen fotoğraflar Photoshop'ta filtreyle elde edemediğin doğal bir kaliteye sahip olur. Pratik plan: kalkışı gün batımından 90 dakika önce ayarla, teklifi gün batımından 15-20 dakika önce yap. Örnek: Haziran'da güneş 20:45'te batar; kalkış 19:00, teklif 20:25–20:30 arası. Eylül'de güneş 19:30'da batar; kalkış 18:00, teklif 19:10–19:15 arası.",
+        table: {
+          headers: ["Ay", "Gün Batımı (~)", "Önerilen Kalkış", "Teklif Saati"],
+          rows: [
+            ["Ocak–Şubat", "17:00–17:30", "15:30", "16:45"],
+            ["Mart", "18:30", "17:00", "18:10"],
+            ["Nisan–Mayıs", "19:30–20:00", "18:00", "19:10–19:40"],
+            ["Haziran–Temmuz", "20:30–20:45", "19:00", "20:10–20:25"],
+            ["Ağustos", "20:00", "18:30", "19:40"],
+            ["Eylül", "19:30", "18:00", "19:10"],
+            ["Ekim", "18:30", "17:00", "18:10"],
+            ["Kasım–Aralık", "16:45–17:00", "15:30", "16:25"]
+          ]
+        },
+        expertQuote: {
+          text: "Evlilik teklifinde saat 5 dakikalık hassasiyet ister. Bizim koordinatörlerimiz ayın o gününün dakika dakika gün batımı tablosunu kullanıyor. 'Romantik bir an' istiyorsun ama doğa kuralı: ışık sana sadece 25 dakika veriyor. O 25 dakikayı doğru kullanırsan fotoğraflar ömür boyu kalır.",
+          author: "Burak Şahin",
+          title: "MerrySails — Müşteri Deneyimi Direktörü, 1200+ evlilik teklifi koordinasyonu"
+        }
+      },
+      {
+        heading: "Dekorasyon — Ne Kadar, Ne Şekilde?",
+        content:
+          "Evlilik teklifi dekorasyonunda iki yaklaşım var: minimalist (gül yaprağı + mum + müzik) ve sahne-temelli (balon + ışık + halı + ekran). İkisinin de fotoğrafta farklı estetiği var, partnerine hangisi yakınsa onu seç.",
+        list: [
+          "STANDART (€80): Yatın güvertesine kırmızı gül yaprağı serpme + LED mum daire (alev güvenliği için), arka planda klasik enstrümantal müzik. Doğal, samimi, fotoğrafın merkezinde sen ve partnerin.",
+          "GENİŞ (€150–€280): Standart + helyum balon dizesi (kalp/yıldız şekilleri) + LED ışık zincirleri + 'Marry Me' afiş + canlı çiçek buketi (kırmızı gül + beyaz gypsophilia). Sahne hazır, fotoğraf için 'wow' faktörü.",
+          "ÖZEL KİT (€350): Geniş paket + kırmızı gül halısı (yatın güvertesinde teklif noktasına) + projeksiyon ışık show (Boğaz suyu üzerine LED yansıtma) + canlı müzisyen (gitarist 30 dakika) + kişisel mesaj kartı. Sinematik 'film sahnesi'.",
+          "PREMIUM ARTIK (+€200): Gün batımı saatinde patlayan profesyonel havai fişek (Boğaz tarafına izinli yer) — sadece özel izinli bölgelerde, koordinatör onayı gerekir."
+        ],
+        callout: {
+          type: "tip",
+          text:
+            "Dekorasyon kararı verirken partnerine 'minimal sade güzellik mi' yoksa 'gösterişli sahne mi' yakın olduğunu düşün. Sade kişiliğe sahip biri için Premium dekor 'şovmenlik' gibi gelebilir; gösteriş seven biri için minimal dekor 'yetersiz' gibi hissedilebilir. Doğru karar partneri tanımakla başlar."
+        }
+      },
+      {
+        heading: "Fotoğrafçı — Zorunlu mu, Hangi Paket?",
+        content:
+          "Cevap kısa: profesyonel fotoğrafçı 'isteğe bağlı' kategorisinde değil 'neredeyse zorunlu' kategorisindedir. 1200+ teklifimizde fotoğrafçısız teklif yapan misafirlerin %85'i sonradan 'keşke profesyonel olsaydı' diye geri bildirimde bulundu. Telefon kalitesi gün batımı altın saatinde profesyonel sensora yetişmez — kaybettiğin anı geri kazanamazsın. MerrySails fotoğrafçı paketleri:",
+        table: {
+          headers: ["Paket", "Süre", "Fiyat", "İçerik"],
+          rows: [
+            ["Temel", "2 saat", "€180", "Tam çekim, 60+ düzenlenmiş fotoğraf dijital teslim, 48 saat içinde"],
+            ["Standart", "4 saat", "€320", "Geniş çekim, 100+ fotoğraf + 2 dakika kısa video, 72 saat"],
+            ["Premium", "Tam etkinlik", "€480", "Video drone çekimi + 150+ fotoğraf + 5 dakika kısa film + ham dosyalar"],
+            ["Gizli çekim opsiyonu", "—", "Standart fiyat", "Fotoğrafçı 'turist gibi' davranır, partnerin farkına varmaz"]
+          ]
+        },
+        proTip:
+          "Gizli çekim opsiyonu önemli detay: partnerin teklif gelmeden fotoğrafçıyı görmemesi sürpriz değerini katlar. MerrySails fotoğrafçıları bu protokolü biliyorlar — 'turist gibi' giyinip yat üzerinde dolaşır, teklif anında devreye girer."
+      },
+      {
+        heading: "Teklif Anı Akışı — Adım Adım Plan",
+        content:
+          "Koordinatörümüz size etkinlikten 1 gün önce 'dakikası dakikasına' plan gönderir. Tipik klasik akış (Haziran ayı örneği):",
+        list: [
+          "18:30 — Otelinden pickup (Sultanahmet/Taksim/Beşiktaş'a göre saat değişir)",
+          "19:00 — Kuruçeşme Marina'da yata biniş, kaptan tanışma, kısa brief",
+          "19:05 — Yat kalkış, Boğaz girişine doğru hareket",
+          "19:30 — Hostes 'sürpriz şampanya' getirir (alkolsüz alternatif: meyveli mocktail)",
+          "19:50 — Yat Boğaz açıklarında durur (en güzel manzara noktası), müzik değişir, fotoğrafçı pozisyon alır",
+          "19:55 — Sen partnerini güverteye 'manzara için' davet edersin",
+          "20:00 — Gün batımı başlar, dekor noktasına geçersin, teklif anı",
+          "20:25 — Şampanya açılış + müzik canlanır + kutlama",
+          "20:45 — Kısa kutlama yemeği servisi (önceden seçilmiş menü)",
+          "21:00 — Yat marinaya doğru dönüş, fotoğrafçı son çekimler",
+          "21:30 — Marinada iniş, transfer ile otele dönüş"
+        ],
+        callout: {
+          type: "info",
+          text:
+            "Tüm bu plan WhatsApp +90 544 898 98 12 üzerinden Türkçe konuşan koordinatörle özelleştirilir. Müzik tercih, menü, dekorasyon detayı, partnerin alerjisi/diyeti, ev hayvan rezervasyonu — her detay önceden konuşulur. Etkinlik günü sürpriz olmaz."
+        }
+      }
+    ],
+    faqs: [
+      {
+        q: "Evlilik teklifi yat kiralama ne kadara mal olur?",
+        a: "Standart paket €280 (yat) + €180 (fotoğrafçı) + €80 (minimal dekor) = €540 toplam. Daha geniş: €380 + €320 + €280 = €980. Sinematik film sahnesi: €500 + €480 + €350 = €1.330. Tüm fiyatlar 2 saat içindir, gün batımı slotu dahil. Ekstralar (yemek, müzisyen, havai fişek) ayrı fiyatlandırılır."
+      },
+      {
+        q: "Ne kadar önce rezervasyon yapmalıyım?",
+        a: "İdeal: 3 hafta önce — tüm tarihler açık, fotoğrafçı seçimi geniş, özel dekor mümkün. Hafta sonu gün batımı slotu için minimum 2 hafta önce. Sevgililer Günü, yılbaşı gibi özel tarihler için 45 gün öncesinden rezerve etmen gerekir."
+      },
+      {
+        q: "Fotoğrafçı paketinde kaç fotoğraf alıyorum?",
+        a: "Temel 2 saatlik fotoğrafçı paketi (€180) — 60+ düzenlenmiş yüksek çözünürlüklü dijital fotoğraf, 48 saat içinde WeTransfer ile teslim. Standart 4 saatlik paket (€320) — 100+ fotoğraf + 2 dakikalık kısa video. Premium paket (€480) — drone çekimi + 150+ fotoğraf + 5 dakikalık kısa film + tüm ham dosyalar."
+      },
+      {
+        q: "Yağmurlu havada teklif iptal edilir mi?",
+        a: "Hava muhalefeti (yağmur, kuvvetli rüzgar) durumunda kaptan kararıyla etkinlik 6 ay içinde ücretsiz ertelenir — depozito iade edilmez ama tam tarih kapanır. Hafif yağmur ise kapalı saloon'da teklif yapılabilir (atmosfer farklı olur). MerrySails koordinatörü etkinlikten 24 saat önce hava raporunu kontrol ederek karar verir."
+      },
+      {
+        q: "Partnerime sürpriz nasıl kalır?",
+        a: "Birkaç yöntem: (1) 'Boğaz'da romantik akşam yemeği' diye sunum yap (yat teklifi olduğunu söyleme), (2) MerrySails fotoğrafçısı 'turist gibi' giyinip yatla beraber gelir, (3) dekor partner gelmeden 30 dakika önce hostes ekibi tarafından kurulur, (4) kalkışta yat normal bir akşam yemeği gibi görünür, teklif anına kadar sürpriz kalır."
+      },
+      {
+        q: "Yat üzerinde yüzük getirebilir miyim, kaybolma riski var mı?",
+        a: "Yüzük getirme normal. Risk için MerrySails önerisi: yüzük kutusunu özel iç cep / çantada taşı, teklif anına kadar açma. Hostes ekip yüzük güvenliğinde önceden brief edilir — gerekirse 'koruyucu görüş alanı' ile teklife eşlik eder. Suya düşme riski için sağ tarafta korkuluğa yakın durma."
+      },
+      {
+        q: "Aile/arkadaşlarla sonradan kutlama mümkün mü?",
+        a: "Evet. Önerilen plan: teklif yat üzerinde sadece ikiniz, ardından aile/arkadaşlar marinada veya yakın restoranda karşılama. Yat sonu Kuruçeşme Marina'da iniş; oradan Bebek/Arnavutköy restoranlarına 10 dakika uzaklıkta. Aile için ayrı sürpriz organizasyonu için koordinatörden yardım alabilirsin (+10–€20 ek koordinasyon ücreti)."
+      }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise"],
+    relatedPosts: [
+      "istanbul-evlilik-teklifi-tekne",
+      "istanbul-yat-kiralama-rehberi-2026",
+      "istanbul-aksam-yemegi-yat-rezervasyon-rehberi-2026"
+    ]
   }
-
 ];
