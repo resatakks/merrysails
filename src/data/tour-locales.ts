@@ -105,6 +105,112 @@ const overrides: TourLocaleOverrides = {
       availability: "Tüm yıl",
       enquiryLabel: "WhatsApp ile sorgu yap",
     },
+    "bosphorus-dinner-cruise": {
+      name: "Boğaz Akşam Yemekli Turu",
+      description:
+        "İstanbul Boğaz akşam yemekli turu — Silver paket €30'dan, Gold Sınırsız Alkol €90'dan başlıyor. Kabataş iskelesinden 3,5 saatlik paylaşımlı tekne turu, çok tabaklı Türk akşam yemeği, içecek paketi seçenekleri ve canlı Türk gecesi eğlencesi.",
+      longDescription:
+        "Boğaz akşam yemekli turu aynı gece rotasında dört genel paket etrafında kurgulanmış paylaşımlı bir program: Silver Soft Drinks €30, Silver Alkollü €45, Gold Soft Drinks €80 ve Gold Sınırsız Alkol €90. Tüm paketler aynı yatta aynı rotayı izler — paket farkı masa kalitesi, içecek dahili ve menü zenginliğindedir.\n\nTur yaklaşık 3,5 saat sürer, paylaşımlı bir akşam yemekli tekne ile yapılır ve Kabataş iskelesi biniş akışını kullanır. Avrupa yakası merkezi otellerin büyük çoğunluğu için pickup ve drop-off, paylaşımlı akşam yemekli operasyonunun bir parçasıdır — biniş öncesi onaylanır. Canlı takvim şu anda 20:30 kalkışlarını gösteriyor.\n\nPaket farkına bakıldığında akşam, akşam yemeği servisi, sahne gösterisi, DJ ve aydınlatılmış Boğaz manzaralarının birleşiminden oluşur. Asıl farklar rota üzerinde değil, masa kademesi, içecek dahili ve akşam yemeği menüsü seviyesindedir. Silver paketleri operasyon tarafından düzenlenen standart oturma düzenini kullanır; Gold paketleri ise sahneye yakın garantili VIP masalara, daha geniş menüye ve daha premium servise geçer.\n\nAkşam yemeği menüsü klasik bir Türk gecesi banket yapısını izler. Silver ve Gold paketleri karşılama kokteyli ve yaklaşık 10 soğuk meze ile başlar — tipik olarak fasulye piyazı, yaprak sarması, humus, tarama, çoban salatası, közlenmiş kırmızı biber, cacık, patlıcan salatası, beyaz peynir ve mevsim turşuları. Taze mevsim salatası ve sıcak başlangıç ana yemekten önce servis edilir. Ana yemek masada canlı seçim formatında sunulur: misafirler balık, tavuk veya et seçeneklerinden birini seçer. Vejetaryen misafirler için biniş sırasında bilgi verirseniz ızgara sebze tabağı veya makarna alternatifi hazırlanır. Yemek baklava (fıstıklı, ballı, yufkalı) ve mevsim meyve tabağıyla kapatılır, Türk kahvesi veya çay eşliğinde.\n\nGold paketleri menüyü VIP seviyesine taşır — ek başlangıç seçenekleri, şef eşliğinde ana yemek servisi ve garantili sahneye yakın masa yerleşimi. Gold Sınırsız Alkol seçeneği VIP yemek menüsünün üstüne sınırsız yerli ve ithal alkollü içecek (rakı, şarap, bira, sert içkiler) ekler.\n\nÇocuklar tüm paketlerde memnuniyetle karşılanır. Çocuk dostu ortam, gösteri programı, aydınlatılmış Boğaz yelkeni ve aynı akşam yemeği menüsünü içerir. 3 yaş altı çocuklar ücretsizdir; 4-10 yaş arası için çocuk indirimi mevcuttur — rezervasyon sırasında doğrulayın. Aileler genellikle karma yaş grupları için en uygun format olarak Silver Soft Drinks paketini tercih eder.\n\nEğlence programı 3,5 saat içinde üç bölüm halinde akar: açılışta Türk folkloru ve oryantal dans, ortada Türk ve uluslararası hitlerden canlı müzik geçişi, finalde DJ liderliğinde dans. Sahne ana salonun merkezinde konumlanır — Gold masaları sahneye 5 metre içinde yerleştirilir. Program akşam yemeği servisiyle paralel yürür, böylece misafirler şovu izlemek için yemek molasına girmek zorunda kalmaz.\n\nİstanbul akşam yemekli boğaz turu Kabataş iskelesinden 20:30'da hareket eder. Avrupa yakası merkezi semtlerden (Sultanahmet, Sirkeci, Topkapı, Taksim, Harbiye, Beyoğlu, Karaköy) pickup tüm paketlere dahildir. Asya yakası misafirleri Kabataş'a kendi imkanlarıyla ulaşmalı — dönüş saati genellikle gece yarısı civarı olduğu için bu saatte ferry bağlantısı çalışmaz. 2001'den beri TURSAB A Grubu lisansıyla 50.000+ misafir ağırlamış olan Meryem Yıldız Travel, bu rotayı İstanbul'un en tutarlı puan alan paylaşımlı akşam yemekli tur ürünlerinden biri olarak işletmektedir.",
+      duration: "3,5 saat",
+      capacity: "Paylaşımlı akşam yemekli tekne (Silver standart / Gold sahneye yakın VIP)",
+      route:
+        "Kabataş iskelesi → Dolmabahçe önü → Boğaz Köprüsü kuzeyi → Rumeli Hisarı dönüşü → aydınlatılmış kıyı şeridi → Kabataş'a dönüş",
+      departureTime: "20:30 kalkış (biniş 20:00'da başlar)",
+      departurePoint:
+        "Kabataş iskelesi (Dolmabahçe Sarayı'nın hemen güneyi). Avrupa yakası merkezi otellerinden ücretsiz pickup tüm paketlere dahildir — biniş öncesi WhatsApp ile saat ve nokta onaylanır.",
+      includes: [
+        "3,5 saatlik paylaşımlı akşam yemekli Boğaz turu",
+        "Çok tabaklı Türk akşam yemeği (10 soğuk meze, salata, sıcak başlangıç, balık/tavuk/et ana yemek seçimi, baklava, meyve tabağı)",
+        "Türk kahvesi veya çay",
+        "Avrupa yakası merkezi otellerden ücretsiz pickup",
+        "Türk gecesi eğlencesi — folklor, oryantal dans, canlı müzik, DJ",
+        "Aydınlatılmış Boğaz yelken rotası",
+        "Silver Alkollü: 2 bardak yerli alkollü içecek (şarap veya bira)",
+        "Gold paketleri: sahneye yakın garantili VIP masa + daha geniş menü",
+        "Gold Sınırsız Alkol: sınırsız yerli ve ithal alkollü içecek",
+      ],
+      notIncluded: [
+        "Asya yakası pickup (sadece Avrupa yakası merkezi otellerden)",
+        "Seçilen paketin dışında ek alkollü içecek",
+        "Bahşiş (isteğe bağlı)",
+      ],
+      highlights: [
+        "Dolmabahçe Sarayı (gece aydınlatması)",
+        "Boğaz Köprüsü (renk şovu)",
+        "Ortaköy Camii (Barok cephe)",
+        "Kız Kulesi (uzaktan)",
+        "Türk gecesi eğlencesi",
+      ],
+      importantNotes: [
+        "Paketler: Silver Soft €30, Silver Alkollü €45, Gold Soft Drinks €80, Gold Sınırsız Alkol €90 — paket farkı içecek dahili ve masa kademesidir, rota aynıdır.",
+        "Biniş Kabataş'tan 20:00'da başlar, tekne 20:30'da hareket eder. Pickup saati otelinize göre 19:00-19:45 arasında değişir, biniş öncesi WhatsApp ile onaylanır.",
+        "Asya yakası misafirleri Kabataş'a kendi imkanlarıyla gelmeli — dönüş saati gece yarısı civarıdır, normal ferry hattı kapalıdır.",
+      ],
+      bestFor: [
+        "Grup yemekleri",
+        "Tam akşam eğlencesi arayanlar",
+        "Yemek sevenler",
+        "İstanbul'a ilk gelen turistler",
+      ],
+      availability: "Tüm yıl, 20:30 kalkış",
+      enquiryLabel: "WhatsApp ile akşam yemekli tur sorgusu",
+    },
+    "yacht-charter-in-istanbul": {
+      name: "İstanbul Özel Yat Kiralama",
+      description:
+        "İstanbul Boğaz'ında özel yat kiralama — €200'den başlıyor. Altı yatlık filo, 10-150 misafir kapasite aralığı, 2 saatlik minimum kiralama, 3 saatten itibaren %10 indirim. Kaptan ve mürettebat dahil.",
+      longDescription:
+        "MerrySails'in özel yat kiralama hizmeti, paylaşımlı turun aksine tüm tekneyi sadece sizin grubunuza ayırır. Filomuz altı farklı tekneden oluşur: çiftler ve küçük gruplar için butik yelken yatları (10-14 misafir), aile ve arkadaş buluşmaları için orta boy gruplar (15-40 misafir) ve düğün, kurumsal akşam yemekleri, marka açılışları gibi etkinlikler için event-yatları (40-150 misafir).\n\nTüm yat kiralamaları aynı temel formülü kullanır: tüm tekne özel olarak sizin için ayrılır, kaptan ve mürettebat hizmeti dahildir, alkolsüz içecekler ve atıştırmalıklar deck fiyatına dahildir, yakıt ve operasyon ücreti dahildir. Catering, alkol, DJ, canlı müzik, fotoğrafçı, evlilik teklifi süslemesi ve otel transferi ayrı tekliftedir — deck fiyatı temiz kalır, programı esnek tutarsınız.\n\nMinimum kiralama 2 saattir; 3 saatten itibaren toplam tutar üzerinden sabit %10 indirim uygulanır. Tipik kullanım senaryoları: 2 saatlik gün batımı veya Boğaz manzara turu, 3-4 saatlik kurumsal akşam yemeği veya doğum günü, 4-6 saatlik düğün veya tam etkinlik programı. Yat sınırı genelde 6 saattir, daha uzun program için özel teklif gerekir.\n\nRotayı siz seçersiniz. Kaptan size güncel hava ve trafik koşullarına göre öneride bulunur. En popüler rotalar: güney Boğaz hattı (Dolmabahçe → Ortaköy → Bebek → İlk Köprü → Rumeli Hisarı dönüşü, 2 saat), Kuruçeşme açıkları yüzme molası (yaz aylarında 3-4 saat), Karadeniz ağzına kadar uzun tur (5-6 saat, sadece düz havada). Tüm rotalar Kuruçeşme Marina kalkışlıdır — marina kapısı ve iskele numarası rezervasyon onayında bildirilir.\n\nFilodaki her yat Türk Denizcilik İdaresi güvenlik standartlarını karşılar ve maksimum yolcu sayısı operasyonel olarak kontrollüdür. Tüm yatlarda klimalı iç salon, ortak deck alanı ve özel banyo bulunur. Event-yatları (40+ kapasite) için ek hizmet alanları, DJ kurulumu için elektrik bağlantısı, garantili sahne alanı ve servis personeli için ayrı sıkça mevcuttur.\n\nMerrySails 2001'den beri TURSAB A Grubu lisansıyla faaliyet gösteren Meryem Yıldız Travel çatısı altındadır — 50.000+ misafir Boğaz'da ağırlanmıştır. Yat kiralama, evlilik teklifi, kurumsal kutlama, doğum günü ve düğün gibi yaşam dönüm noktalarınız için en sık tercih edilen format olmuştur.",
+      duration: "2 saat (minimum) — 6 saate kadar uzatılabilir",
+      capacity: "10-150 misafir (yatına bağlı olarak)",
+      route:
+        "Kuruçeşme Marina kalkışlı, rotayı siz belirlersiniz: güney Boğaz manzara, Kuruçeşme yüzme molası, Karadeniz ağzı uzun tur — kaptan hava ve trafik koşullarına göre önerir.",
+      departureTime: "Esnek (sizin programınıza göre)",
+      departurePoint:
+        "Kuruçeşme Marina — marina kapısı ve iskele numarası, rezervasyon onayında WhatsApp ile gönderilir.",
+      includes: [
+        "Tüm tekne özel olarak grubunuza ayrılır (paylaşım yok)",
+        "Kaptan ve mürettebat hizmeti",
+        "Yakıt ve operasyon ücreti",
+        "Alkolsüz içecekler — su, gazoz, çay, kahve",
+        "Atıştırmalıklar — kuruyemiş, kraker, meyve tabağı",
+        "Klimalı iç salon ve özel banyo",
+        "Esnek rota — Boğaz manzara, yüzme molası veya uzun tur",
+        "2 saat minimum, 3 saatten itibaren sabit %10 indirim",
+      ],
+      notIncluded: [
+        "Catering (chef menü, alkol) — ayrı teklifte özelleştirilir",
+        "DJ ve canlı müzik — ayrı tekliftedir",
+        "Profesyonel fotoğrafçı — ayrı tekliftedir",
+        "Evlilik teklifi süslemesi (çiçek, balon, mum) — ayrı tekliftedir",
+        "Otel transferi (talep üzerine eklenir)",
+      ],
+      highlights: [
+        "Kuruçeşme Marina'dan kalkış",
+        "Dolmabahçe Sarayı",
+        "Ortaköy Camii ve Boğaz Köprüsü",
+        "Rumeli Hisarı",
+        "Yüzme molası (yaz aylarında)",
+        "Kız Kulesi",
+      ],
+      importantNotes: [
+        "Fiyatlar yat tipine göre değişir: butik (€200-280/2sa), orta grup (€380-450/2sa), event-yatı (€680+/2sa). Tam fiyat WhatsApp talebinde grup büyüklüğü ve program detayına göre verilir.",
+        "3 saatten itibaren toplam tutar üzerinden sabit %10 indirim otomatik uygulanır.",
+        "Catering, alkol, DJ, fotoğrafçı gibi ekstralar deck fiyatına dahil değildir — istek doğrultusunda ayrı tekliftedir.",
+        "Düğün, evlilik teklifi veya kurumsal etkinlik için 2-3 hafta önceden rezervasyon önerilir (sezon yaz aylarında dolar).",
+      ],
+      bestFor: [
+        "Evlilik teklifi",
+        "Doğum günü",
+        "Yıldönümü",
+        "Kurumsal etkinlik",
+        "Düğün",
+        "Bekarlığa veda",
+        "Aile veya arkadaş grubu",
+      ],
+      availability: "Tüm yıl (yaz aylarında peak sezon)",
+      enquiryLabel: "WhatsApp ile özel yat sorgu",
+    },
   },
   de: {
     "bosphorus-sunset-cruise": {

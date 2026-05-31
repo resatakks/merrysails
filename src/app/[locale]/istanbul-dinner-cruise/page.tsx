@@ -966,7 +966,7 @@ export default async function LocaleDinnerCruisePage({
           )}
 
           <TourDetailClient
-            tour={dinnerTour}
+            tour={getTourBySlug("bosphorus-dinner-cruise", locale) ?? dinnerTour}
             related={relatedTours}
             locale={locale as SiteLocale}
           />
