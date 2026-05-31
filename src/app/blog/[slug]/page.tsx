@@ -11,6 +11,8 @@ import { TableOfContents } from "@/components/blog/table-of-contents";
 import { BlogSectionBlock } from "@/components/blog/blog-section";
 import { AuthorCard } from "@/components/blog/author-card";
 import { InlineCTA } from "@/components/blog/inline-cta";
+import InArticleBookingCTA from "@/components/blog/InArticleBookingCTA";
+import { inferCruiseTypeFromSlug } from "@/components/blog/infer-cruise-type";
 import { BlogRoutingPanel } from "@/components/blog/blog-routing-panel";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { getBlogRoutingCopy, getHighIntentBlogSlugs } from "@/content/blog";
@@ -112,6 +114,12 @@ export default async function BlogPostPage({
   const priorityRelatedSlugs = getHighIntentBlogSlugs(post);
 
   const midPoint = Math.floor(post.sections.length / 2);
+  // Index where the universal in-article CTA is spliced into the sections list.
+  // Targets the H2 boundary between the 3rd and 4th section so the CTA lands
+  // in the upper half of long-form posts. Clamped so short posts still get it.
+  const autoCtaMidIndex = Math.min(2, Math.max(0, post.sections.length - 2));
+  const ctaCruiseType = inferCruiseTypeFromSlug(post.slug);
+  const ctaLocale = "en";
 
   // Schema: BlogPosting
   const articleSchema = {
@@ -232,6 +240,18 @@ export default async function BlogPostPage({
             <AuthorCard authorId={post.author} variant="compact" />
           </header>
 
+          {/* Top in-article booking CTA — surfaces price + book button above the
+              fold for blog → product conversion. Skipped when the post opts out
+              via `disableAutoCTA`. */}
+          {!post.disableAutoCTA && (
+            <InArticleBookingCTA
+              cruiseType={ctaCruiseType}
+              locale={ctaLocale}
+              position="top"
+              slug={post.slug}
+            />
+          )}
+
           {/* Hero Image */}
           <div className="relative aspect-[2/1] rounded-2xl overflow-hidden mb-8 max-w-4xl">
             <Image
@@ -260,7 +280,17 @@ export default async function BlogPostPage({
               {post.sections.map((section, i) => (
                 <div key={i}>
                   <BlogSectionBlock section={section} index={i} />
-                  {i === midPoint && <InlineCTA />}
+                  {/* Auto in-article CTA — spliced between the 3rd and 4th H2. */}
+                  {!post.disableAutoCTA && i === autoCtaMidIndex && (
+                    <InArticleBookingCTA
+                      cruiseType={ctaCruiseType}
+                      locale={ctaLocale}
+                      position="mid"
+                      slug={post.slug}
+                    />
+                  )}
+                  {/* Existing mid-article InlineCTA kept for backwards compat. */}
+                  {i === midPoint && i !== autoCtaMidIndex && <InlineCTA />}
                 </div>
               ))}
             </div>
@@ -285,6 +315,17 @@ export default async function BlogPostPage({
               </div>
             </aside>
           </div>
+
+          {/* Bottom "Next Steps" booking panel — three booking options +
+              messaging channel right before the FAQ where intent peaks. */}
+          {!post.disableAutoCTA && (
+            <InArticleBookingCTA
+              cruiseType={ctaCruiseType}
+              locale={ctaLocale}
+              position="bottom"
+              slug={post.slug}
+            />
+          )}
 
           {/* FAQ Section */}
           {(post.faqs ?? []).length > 0 && (

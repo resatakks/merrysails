@@ -45,4 +45,10 @@ export interface BlogPost {
    * tag and sitemap behaviour change.
    */
   noIndex?: boolean;
+  /**
+   * When true, the blog [slug] page skips the auto-injected InArticleBookingCTA
+   * top/mid/bottom blocks. Use this for posts that already contain hand-written
+   * inline CTAs in their content so the page does not double-up.
+   */
+  disableAutoCTA?: boolean;
 }

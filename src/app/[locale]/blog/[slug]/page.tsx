@@ -8,6 +8,8 @@ import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { TableOfContents } from "@/components/blog/table-of-contents";
 import { BlogSectionBlock } from "@/components/blog/blog-section";
 import { AuthorCard } from "@/components/blog/author-card";
+import InArticleBookingCTA from "@/components/blog/InArticleBookingCTA";
+import { inferCruiseTypeFromSlug } from "@/components/blog/infer-cruise-type";
 import { isActiveLocale, ACTIVE_LOCALES, type SiteLocale } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
 import { cleanContentText } from "@/lib/content-text";
@@ -156,6 +158,10 @@ export default async function LocaleBlogPostPage({
   const dateLocale = DATE_LOCALE_MAP[locale] ?? "tr-TR";
 
   const midPoint = Math.floor(post.sections.length / 2);
+  // Index for the universal in-article booking CTA. Targets the 3rd→4th H2
+  // boundary so the CTA lands in the upper half of long-form posts.
+  const autoCtaMidIndex = Math.min(2, Math.max(0, post.sections.length - 2));
+  const ctaCruiseType = inferCruiseTypeFromSlug(post.slug);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -254,6 +260,16 @@ export default async function LocaleBlogPostPage({
             <AuthorCard authorId={post.author} variant="compact" />
           </header>
 
+          {/* Top in-article booking CTA — above-the-fold price + book button. */}
+          {!post.disableAutoCTA && (
+            <InArticleBookingCTA
+              cruiseType={ctaCruiseType}
+              locale={locale}
+              position="top"
+              slug={post.slug}
+            />
+          )}
+
           {/* Hero Image */}
           <div className="relative aspect-[2/1] rounded-2xl overflow-hidden mb-8 max-w-4xl">
             <Image
@@ -281,7 +297,19 @@ export default async function LocaleBlogPostPage({
               {post.sections.map((section, i) => (
                 <div key={i}>
                   <BlogSectionBlock section={section} index={i} />
-                  {i === midPoint && (
+                  {/* Auto in-article booking CTA, spliced between 3rd/4th H2. */}
+                  {!post.disableAutoCTA && i === autoCtaMidIndex && (
+                    <InArticleBookingCTA
+                      cruiseType={ctaCruiseType}
+                      locale={locale}
+                      position="mid"
+                      slug={post.slug}
+                    />
+                  )}
+                  {/* Legacy localized mid-CTA — runs only when the auto CTA is
+                      disabled or the mid index is elsewhere, so we never
+                      double-up on long posts. */}
+                  {(post.disableAutoCTA || i !== autoCtaMidIndex) && i === midPoint && (
                     <div className="my-8 rounded-2xl bg-[var(--brand-primary)] p-6 text-center">
                       <p className="text-white font-bold text-base mb-1">{ui.ctaHeading}</p>
                       <p className="text-white/80 text-sm mb-4">{ui.ctaBody}</p>
@@ -322,6 +350,17 @@ export default async function LocaleBlogPostPage({
               </div>
             </aside>
           </div>
+
+          {/* Bottom "Next Steps" booking panel — 3 booking options + messaging
+              channel right before the FAQ where intent peaks. */}
+          {!post.disableAutoCTA && (
+            <InArticleBookingCTA
+              cruiseType={ctaCruiseType}
+              locale={locale}
+              position="bottom"
+              slug={post.slug}
+            />
+          )}
 
           {/* FAQ */}
           {(post.faqs ?? []).length > 0 && (

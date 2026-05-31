@@ -1,0 +1,155 @@
+{
+  "date": "2026-05-28",
+  "site": "sc-domain:merrysails.com",
+  "totals": {
+    "clicks": 0,
+    "impressions": 32,
+    "ctr": 0,
+    "avgPosition": 21.9
+  },
+  "topQueries": [
+    {
+      "query": "boat cruise",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "bogaz turu",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "bosphorus bridge",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 36
+    },
+    {
+      "query": "bosphorus bridge length",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 19
+    },
+    {
+      "query": "bosphorus golden horn",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "query": "bosphorus wedding yacht",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "bosporus kreuzfahrt istanbul",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 26
+    },
+    {
+      "query": "boğaz hattı vapur",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "boğaz turu",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3.5
+    },
+    {
+      "query": "boğaz turu fiyatları",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    }
+  ],
+  "topPages": [
+    {
+      "page": "/",
+      "clicks": 1,
+      "impressions": 17,
+      "ctr": 5.9,
+      "position": 6.6
+    },
+    {
+      "page": "/blog/bosphorus-cruise-with-kids",
+      "clicks": 1,
+      "impressions": 37,
+      "ctr": 2.7,
+      "position": 6.1
+    },
+    {
+      "page": "/blog/what-to-wear-bosphorus-cruise",
+      "clicks": 1,
+      "impressions": 8,
+      "ctr": 12.5,
+      "position": 6.6
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "/blog/best-istanbul-activities-after-bosphorus-cruise",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 31
+    },
+    {
+      "page": "/blog/best-time-for-bosphorus-cruise-istanbul",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5.3
+    },
+    {
+      "page": "/blog/book-bosphorus-cruise-direct-save-2026",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "page": "/blog/bosphorus-cruise-departure-points",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 7.4
+    },
+    {
+      "page": "/blog/bosphorus-cruise-price-istanbul-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-prices-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    }
+  ],
+  "capturedAt": "2026-05-31T08:10:54.469Z"
+}
