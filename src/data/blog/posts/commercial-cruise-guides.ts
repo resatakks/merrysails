@@ -2875,5 +2875,205 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
     relatedPosts: ["istanbul-3-day-itinerary-bosphorus-cruise-2026", "what-to-wear-bosphorus-cruise-by-season", "best-istanbul-bosphorus-cruise-comparison-2026"],
+  },
+  {
+    slug: "bosphorus-cruise-vs-princes-islands-tour-istanbul-2026",
+    title: "Bosphorus Cruise vs Princes Islands Tour 2026",
+    metaDescription: "Bosphorus cruise (€30-€90) vs Princes Islands tour (€45 full day) — which fits a one-day Istanbul trip? Direct comparison: cost, time, energy, photography by MerrySails.",
+    excerpt: "An operator-side comparison of the two flagship Istanbul water experiences in 2026: the Bosphorus cruise versus the Princes Islands day tour. Which one fits which traveler, with verified direct prices.",
+    category: "cruise-guide",
+    date: "2026-05-31",
+    dateModified: "2026-05-31",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1604762524889-3e2fcc145683?w=1200&q=80",
+    imageAlt: "Side-by-side view of an Istanbul Bosphorus cruise yacht and a Princes Islands ferry with Buyukada in the distance",
+    keywords: [
+      "bosphorus cruise vs princes islands",
+      "istanbul bosphorus or princes islands",
+      "buyukada or bosphorus",
+      "istanbul one day water trip",
+      "princes islands tour vs bosphorus",
+      "best istanbul water trip 2026",
+      "istanbul ferry tour comparison",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "Bosphorus cruise: 2-3.5 hours, €30-€90 per person, evening-friendly, requires no full-day commitment",
+      "Princes Islands tour: 8-10 hours, €45 per person, day-trip with ferry transit time included, requires a full day",
+      "First-time visitors: Bosphorus cruise wins as the strongest single-evening experience; Princes Islands wins if you have 4+ days",
+      "Photographers: Bosphorus for skyline at golden hour; Princes Islands for car-free island streets and Sea of Marmara horizon",
+    ],
+    sections: [
+      {
+        heading: "Two Different Trips Sharing the Same Water",
+        answerCapsule: "The Bosphorus cruise is an evening experience focused on the Istanbul skyline. The Princes Islands tour is a full-day excursion focused on car-free island life on Büyükada. They share water transit but serve different traveler needs — book whichever matches the time you have, not both on a single short trip.",
+        content: "Both products run on the same body of water in different directions and at different cadences. The Bosphorus cruise stays on the strait between Karaköy / Kabataş and Rumeli Hisarı for 2-3.5 hours; the Princes Islands tour leaves Istanbul harbor entirely, crosses the Sea of Marmara for 90 minutes each way, and lands on Büyükada — the largest and most-visited of the four inhabited Princes Islands — for 4-5 hours of car-free exploration. The Bosphorus cruise is fundamentally an Istanbul experience reframed from the water. The Princes Islands tour is fundamentally a day off from Istanbul.\n\nAs a TURSAB A Group licensed operator running both products since 2001, the consistent pattern from 50,000+ hosted guests is that travelers who try to combine both on a short trip end up rushing one and shortchanging the other. The cleaner pattern is: for a 3-day trip, pick the Bosphorus cruise. For a 5-day trip, pick both — Princes Islands on Day 2 or 3, Bosphorus cruise on the final evening. For a 7-day trip, both products plus repeat options."
+      },
+      {
+        heading: "Cost Comparison: What You Actually Pay",
+        content: "On paper, the Princes Islands tour at €45 per person looks more expensive than the entry-level Bosphorus sunset cruise at €34 per person, but the comparison is more nuanced than headline price. The Princes Islands €45 covers a full 8-10 hour day including the high-speed ferry round-trip, the on-island guide, and a recommended lunch venue (lunch cost not included, typically €15-€25 on the island). It is a self-contained day; you walk to the boarding pier, sail, explore, eat, and return.\n\nThe Bosphorus cruise at €30-€90 per person covers 2-3.5 hours including the boat, route, snacks or full dinner (depending on package), entertainment (dinner cruise only), and hotel pickup from central European districts (dinner cruise). The lower tiers are not directly comparable to the Princes Islands day price because they serve a different purpose — the Bosphorus sunset cruise is an evening add-on rather than a day plan. The cleaner per-hour cost comparison is: Princes Islands at €45 / 9 hours = €5/hour. Bosphorus sunset cruise at €34 / 2 hours = €17/hour. Bosphorus dinner cruise Silver Soft at €30 / 3.5 hours = €8.6/hour with dinner included. The Princes Islands is cheaper per hour but consumes a full day.",
+        table: {
+          headers: ["Product", "Price", "Duration", "Per-hour cost", "Hotel pickup"],
+          rows: [
+            ["Princes Islands tour", "€45/person", "8-10 hours", "€4.5-€5.6/hour", "Not included"],
+            ["Bosphorus sunset cruise", "€34/person", "2 hours", "€17/hour", "Not included (self-arrive at Karaköy)"],
+            ["Bosphorus dinner cruise Silver Soft", "€30/person", "3.5 hours", "€8.6/hour", "Included"],
+            ["Bosphorus dinner cruise Gold Unlimited", "€90/person", "3.5 hours", "€25.7/hour", "Included"],
+          ]
+        }
+      },
+      {
+        heading: "Time Energy: Half-Day vs Full-Day Energy",
+        content: "The most under-rated comparison metric is energy. Princes Islands consumes the day — boarding at Kabataş at 09:00, ferry 09:30-11:00, exploring Büyükada 11:00-15:30, ferry back 16:00-17:30, hotel return 18:30. That is the day. You will not have energy for a dinner cruise that evening, and trying to schedule one is the single most common mistake travelers make. The Princes Islands tour earns the right to be the only big thing you do that day.\n\nThe Bosphorus cruise has the opposite energy structure. The sunset cruise at 19:00-21:00 fits into a day that has already included sightseeing in Sultanahmet or shopping in the Grand Bazaar. The dinner cruise at 20:30-00:00 closes a day — you can have a productive day touring the city and then commit to the cruise as the evening peak. The two products are non-competing in this sense: Princes Islands replaces a day, the Bosphorus cruise enhances one.",
+        proTip: "If you're considering both on a 5-day trip, schedule them at least 2 days apart with a rest day in between. Two full-day water trips back-to-back is exhausting for most travelers and reduces the enjoyment of the second one."
+      },
+      {
+        heading: "First-Time Visitor: Which One to Pick If You Can Only Do One",
+        content: "For a first-time visitor with one Istanbul water experience to pick, the Bosphorus cruise wins by a clear margin. The reasoning: the Bosphorus is the icon of Istanbul, the imperial palaces (Dolmabahçe), the Ottoman waterfront mosques (Ortaköy), and the legendary fortress (Rumeli Hisarı) are all on this route — they are what the city is famous for. Seeing them from the water is the perspective the city was historically built to be seen from. The Princes Islands are beautiful but they are essentially a quiet day-trip experience that could exist as a contrast destination off any Turkish coastal city.\n\nFor a returning visitor (second or third trip to Istanbul) or someone who has already done the Bosphorus cruise on a previous trip, the Princes Islands becomes the right answer. The car-free atmosphere, the Ottoman-era summer mansions on Büyükada, the phaeton (horse-drawn carriage) loops, and the Sea of Marmara horizons are an Istanbul experience that the central city does not provide. It is genuinely different from the dense Sultanahmet-Beyoglu loop."
+      },
+      {
+        heading: "Photography: Different Subject, Different Light",
+        content: "Both products are strong photography opportunities but the subject is fundamentally different. Bosphorus cruise photography focuses on the urban: Dolmabahçe Palace columns at golden hour, the Galata Tower from across the water, the first Bosphorus Bridge at twilight, Ortaköy Mosque against the bridge structure. The cruise route puts you in the position to shoot the iconic Istanbul skyline composition that is on every travel agency poster — and it puts you there at the right time of day (sunset cruise) or with the building lights on (dinner cruise return).\n\nPrinces Islands photography focuses on the pastoral: the Büyükada phaetons (horse-drawn carriages on car-free streets), the wooden Ottoman summer mansions (yalı), the wisteria-covered laneways, the Sea of Marmara horizon from the island's highest point at the Aya Yorgi monastery, and the contrast of dense Istanbul versus quiet island streets. Both are professional-grade photography destinations. The choice comes down to whether you want the urban skyline or the rural-island contrast in your final shot list.",
+        callout: {
+          type: "tip",
+          text: "Photographers planning a 4-day Istanbul trip get the strongest portfolio from: Day 1 Sultanahmet street photography, Day 2 Princes Islands daytime, Day 3 Beyoglu street + Galata Tower from the ground, Day 4 Bosphorus sunset cruise (golden hour) + dinner cruise return (blue hour for the city lights)."
+        }
+      },
+      {
+        heading: "Group Size and Family Considerations",
+        content: "Groups of 4+ have different considerations on each product. Bosphorus dinner cruise: shared-seating works well for groups of 4-10; the table is reserved for the group and the entertainment is shared with the wider room. Bosphorus private yacht (€280 Essential / €380 Premium / €680 VIP for 2 hours): the right pick for groups of 8+ who want privacy or a celebration moment. Princes Islands tour: the standard product is a shared group tour, fine for any group size up to about 20; for larger groups (25+) a private island boat charter can be quoted separately.\n\nFamilies with young children (under 6) face a specific consideration. The Bosphorus dinner cruise works for kids — meal service, entertainment they can watch, defined seat. The Princes Islands tour is harder with young children — long ferry transit, full-day energy demand, the phaeton tour involves moving carriages on narrow streets. For families with children under 6, the cleaner pick is the Bosphorus cruise (sunset or dinner depending on bedtime preferences). For families with children 8+, both work, and many travelers do both on a 5-day trip."
+      },
+      {
+        heading: "Booking Direct for Either Product",
+        content: "Both the Bosphorus cruise and the Princes Islands tour are sold through Viator, GetYourGuide, and concierge desks at a 15-30% markup over the operator-side direct price. MerrySails is the licensed operator running both products and direct booking on merrysails.com saves €5-€15 per guest on shared cruises, €50-€100 per yacht on private charters, and €5-€10 per guest on the Princes Islands tour.\n\nFor the Princes Islands tour specifically, booking direct also lets you customize the day in ways an OTA listing cannot: requesting a vegetarian-focused lunch venue, adding a specific Büyükada museum visit, or coordinating a half-day rather than the standard full-day return. For the Bosphorus cruise, direct booking unlocks the four-package dinner ladder (€30 Silver Soft / €45 Silver Alcoholic / €80 Gold Soft / €90 Gold Unlimited Alcohol) — OTAs typically list only the higher tiers, hiding the €30 entry point. Send your group size, preferred dates, and any specific requirements to WhatsApp +90 544 898 98 12 and the operations team will return a complete quote within 24 hours."
+      },
+    ],
+    faqs: [
+      {
+        q: "Should I do the Bosphorus cruise or the Princes Islands tour?",
+        a: "For first-time Istanbul visitors with 3 days, pick the Bosphorus cruise. For visitors with 5+ days, do both with at least 2 days between them. The Bosphorus cruise is the Istanbul-iconic experience; the Princes Islands tour is a day-off-from-Istanbul experience."
+      },
+      {
+        q: "How much does the Princes Islands tour cost in 2026?",
+        a: "€45 per person for the standard full-day tour with ferry round-trip and on-island guide. Lunch on the island (€15-€25) is not included. Larger groups (25+) can request a private island boat charter quote."
+      },
+      {
+        q: "Can I do both the Bosphorus cruise and the Princes Islands tour in one day?",
+        a: "Not realistically. The Princes Islands tour consumes a full 8-10 hour day; trying to add a Bosphorus cruise in the evening is exhausting and reduces the enjoyment of both. Spread them across separate days."
+      },
+      {
+        q: "Which is better for photography — Bosphorus or Princes Islands?",
+        a: "Different subjects. Bosphorus delivers the urban Istanbul skyline at golden hour. Princes Islands delivers car-free streets, Ottoman wooden mansions, and Sea of Marmara horizons. Both are professional-grade. The choice depends on your shot list."
+      },
+      {
+        q: "Are the Princes Islands worth visiting if I'm only in Istanbul for 3 days?",
+        a: "Probably not. A 3-day Istanbul trip is best spent on Sultanahmet, Beyoglu, the Grand Bazaar, and one strong Bosphorus cruise evening. The Princes Islands consume a full day that you do not have. Save them for a return trip."
+      },
+      {
+        q: "Can I book both the Bosphorus cruise and the Princes Islands tour direct?",
+        a: "Yes. Both products are operated by TURSAB-licensed agencies (MerrySails for the Bosphorus cruise, partner operators for the Princes Islands tour) and direct booking via merrysails.com or WhatsApp +90 544 898 98 12 saves €5-€15 per guest versus Viator/GetYourGuide markup."
+      }
+    ],
+    relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
+    relatedPosts: ["best-istanbul-bosphorus-cruise-comparison-2026", "istanbul-3-day-itinerary-bosphorus-cruise-2026", "bosphorus-cruise-solo-traveler-istanbul-2026"],
+  },
+  {
+    slug: "choosing-yacht-size-bosphorus-charter-istanbul-2026",
+    title: "Choosing Yacht Size for Bosphorus Charter 2026",
+    metaDescription: "Pick the right yacht size for your Bosphorus charter Istanbul 2026: 10-guest Essential €280, 14-guest Premium €380, 36-guest VIP €680, 150-guest event yacht. Direct guide.",
+    excerpt: "An operator-side guide to picking the right Bosphorus yacht size in Istanbul: how the six-yacht MerrySails fleet maps to group sizes 2-150, and how to avoid the most expensive sizing mistake.",
+    category: "yacht-guide",
+    date: "2026-05-31",
+    dateModified: "2026-05-31",
+    readTime: "9 min read",
+    image: "/images/fleet/y9/03.jpeg",
+    imageAlt: "Three Bosphorus yacht sizes compared: small boutique sailing yacht, mid-size group yacht, and a large event yacht at Kuruçeşme Marina",
+    keywords: [
+      "yacht charter istanbul group size",
+      "bosphorus yacht size guide",
+      "istanbul yacht for 12 people",
+      "istanbul yacht for 30 people",
+      "yacht charter 50 guests istanbul",
+      "best yacht size bosphorus",
+      "istanbul private yacht capacity",
+      "bosphorus yacht selection guide",
+    ],
+    author: "captain-ahmet",
+    keyTakeaways: [
+      "MerrySails fleet covers 10-150 guest capacity across six yacht classes (€280-€2,800 base for 2 hours)",
+      "The most expensive sizing mistake is overshooting — a 36-guest VIP yacht for a 10-guest party costs €400 more without adding experience value",
+      "For couples and proposals: 10-14 guest sailing yacht (€280-€380) is the right fit even if you are only 2 guests onboard",
+      "For corporate hosting 20-30 guests: VIP yacht at €680 is the sweet spot for stage-near tables, food service, and DJ setup",
+    ],
+    sections: [
+      {
+        heading: "Why Yacht Size Matters More Than Yacht Tier Naming",
+        answerCapsule: "Yacht sizing on the Bosphorus is the single most under-appreciated booking decision. A 10-guest yacht charged at €280 for 2 hours is a great proposal yacht with two guests onboard; the same proposal on a 30-guest yacht at €680 is no more romantic, just €400 more expensive. Match the yacht size to the actual group, not the marketing tier name.",
+        content: "The six-yacht MerrySails fleet covers Bosphorus charters across a 15× capacity range: from the 10-guest Essential boutique sailing yacht at €280 base for 2 hours, up to the 150-guest Event yacht at €2,800 base for 2 hours. The yachts are differentiated by capacity and amenities; the route is the same Bosphorus, the same captain training, the same TURSAB A Group license. What changes when you scale up the yacht is not the experience quality — it is the number of guests the boat can comfortably host and the production capabilities (stage space, sound system, kitchen, lounge areas).\n\nAs a TURSAB-licensed operator hosting more than 50,000 guests since 2001, the consistent pattern at MerrySails is that travelers overshoot yacht size by 30-50% when they book without operator advice. The booking-page intuition is 'bigger must be better' or 'I want extra space.' The operational reality is that a 10-guest yacht with 6 guests onboard feels intimate and premium; the same 6 guests on a 30-guest yacht feels under-populated and lonely. Right-sized yachts always feel better."
+      },
+      {
+        heading: "The Six-Yacht MerrySails Fleet Mapped to Group Sizes",
+        content: "The fleet covers six distinct group-size brackets with overlap zones where two yachts can both work. The Essential class (10-14 guests, €280 base) is the boutique sailing yacht — Y1 with 10-guest capacity and Y2 with 14-guest capacity. Best for couples and small groups including proposals, anniversaries, intimate birthday dinners. The Premium class (15-25 guests, €380 base) is the mid-size motoryacht — Y3 with comfortable indoor and outdoor zones. Best for family reunions, friend trips, and small corporate hosting.\n\nThe VIP class (26-36 guests, €680 base) is the larger event-ready motoryacht — Y4 with full kitchen support, dedicated DJ area, and stage-near table arrangement. Best for medium corporate events, milestone birthdays, and small weddings. The Event class (37-44 guests, €1,200 base) is Y5 with extended deck space, full event production hookups, and separate VIP zone. Best for corporate gala dinners, brand launches, and mid-size weddings. The Mega Event class (45-150 guests, €2,800 base) is Y6, the largest yacht in the fleet, used for full company events, large weddings, and brand activations. Best for any group above 50 guests where full event production matters more than intimate feel.",
+        table: {
+          headers: ["Yacht class", "Capacity", "Base 2hr charter", "Best for"],
+          rows: [
+            ["Essential (Y1, Y2)", "10-14 guests", "€280-€380", "Proposals, couples, intimate birthday dinners"],
+            ["Premium (Y3)", "15-25 guests", "€380", "Family reunions, friend trips, small corporate"],
+            ["VIP (Y4)", "26-36 guests", "€680", "Medium corporate events, milestone birthdays"],
+            ["Event (Y5)", "37-44 guests", "€1,200", "Corporate galas, brand launches, mid-size weddings"],
+            ["Mega Event (Y6)", "45-150 guests", "€2,800", "Full company events, large weddings, brand activations"],
+          ]
+        }
+      },
+      {
+        heading: "The Most Common Sizing Mistakes",
+        content: "Three mistakes consistently lead to over-sized or under-sized yacht bookings. Mistake 1: assuming 'I will add guests later, let me book the bigger yacht just in case.' In practice, group sizes rarely grow above 10-15% of the original count; you pay 40-100% more for the bigger yacht to absorb a worst-case 1-2 guest addition. Better: book the right size for the confirmed group, and add a small overflow buffer (10-15%) only if the event genuinely has uncertain guest list (corporate hosting, for example).\n\nMistake 2: confusing 'sailing yacht' (Essential class) with 'small yacht.' The Essential Y1 sailing yacht is genuinely premium — high-end Italian-built sailing vessel, with full crew, decorated for couples. The 'small' framing makes it sound budget; the reality is that it is the most-requested yacht for proposals in 2026 because the intimate scale is exactly what couples want. Don't pass on the Essential because the capacity sounds low.\n\nMistake 3: under-sizing for corporate events. A 25-guest corporate dinner on the 25-guest Premium yacht maxes the capacity and removes seating flexibility. For 25 confirmed corporate guests, the right yacht is the 36-guest VIP — gives you stage-near tables, dedicated DJ, full kitchen, and room for late arrivals. The €300 difference in base charter is a single corporate guest's evening cost; well worth the operational headroom.",
+        proTip: "Send the actual confirmed-plus-tentative guest count to WhatsApp +90 544 898 98 12 when requesting a yacht quote. The MerrySails team will recommend the right size — and will be honest about when a smaller yacht is actually the better answer for the brief. Operator-side recommendations beat self-selection by 80-90% for first-time charter customers."
+      },
+      {
+        heading: "Special Cases: Photography, Filming, Weddings",
+        content: "Three event types have non-standard yacht sizing logic. Photography or filming shoots: the right yacht is one size larger than the visible group, because you need crew space, camera positioning angles, and lighting setup room without people getting in the shot. A 4-person photoshoot is usually best on the 14-guest Y2, not the 10-guest Y1 — the extra space is for the camera operator, lighting assistant, and styling area, not for guests.\n\nWeddings: the right yacht is sized to the ceremony's headcount plus 20-30% for crew, photographers, videographers, officiants, and musicians who are on the yacht but not in the guest count. A 60-guest wedding needs the 80+ guest Y5 Event yacht; a 25-guest intimate wedding works on the Y4 VIP with margin.\n\nCorporate hosting with international VIPs: the right yacht has dedicated VIP zones. The Y5 Event class has a separate VIP lounge area that makes itself useful for senior executives who want to step away from the main group during the cruise. For corporate hosting under 30 guests where VIP zoning matters more than capacity, the Y5 is sometimes the right answer despite the higher base price."
+      },
+      {
+        heading: "Duration and Yacht Size: How They Interact",
+        content: "Yacht size and charter duration interact in non-obvious ways. For 2-hour bookings (the minimum), yacht size matters most because there is little buffer time — guests need to flow smoothly through boarding, the cruise, and disembarkation. Smaller yachts (10-25 guest) are easier to manage in 2 hours; larger yachts (40+) often need 3-hour minimum to give the event room to breathe.\n\nFor 3-hour bookings (where MerrySails applies the standard 10% discount on total), yacht sizes 14-36 are the sweet spot. The extra hour absorbs the corporate-dinner pacing (welcome drinks, mingling, seated dinner, after-dinner socializing). For 4-hour and longer bookings, the larger Event and Mega Event yachts come into their own — they have the kitchen capacity, the indoor/outdoor zone separation, and the production support for events that need multiple acts.\n\nThe right way to think about it: yacht size determines the maximum guest count, but duration determines how many activities you can run cleanly. A 2-hour Essential yacht with 8 guests is for a single peak moment (proposal, anniversary toast). A 4-hour VIP yacht with 30 guests is for a full event with multiple acts (welcome, dinner, speeches, dance floor).",
+        callout: {
+          type: "tip",
+          text: "For events lasting 5+ hours, the 10% multi-hour discount applies but the per-hour value also drops because guests' attention spans run out. The sweet spot for most Bosphorus charters is 3-4 hours — long enough for proper event pacing, short enough for sustained energy."
+        }
+      },
+      {
+        heading: "Getting an Honest Yacht Recommendation",
+        content: "The cleanest way to land on the right yacht size is to send the actual brief to the MerrySails operations team rather than self-selecting from the public listings. The information that moves the recommendation: confirmed guest count, event type (proposal / corporate / wedding / family), key requirements (privacy level, alcohol service, music preference, food preferences, photo or video needs, accessibility), and budget range. With this information, the team typically responds with 1-2 specific yacht recommendations within 24 hours, plus indicative pricing for the actual brief — not just the base 2-hour charter rate.\n\nWhat the operations team will not do: push the larger yacht when a smaller one is genuinely better, suggest add-ons that do not serve the brief, or quote a yacht that is unavailable for the requested date and hope you accept a substitute. The post-cruise feedback rate on the right-sized yacht is significantly higher than on the over-sized yacht, and a happy first-time charter customer is worth more than a single over-sold booking. Send the brief to WhatsApp +90 544 898 98 12 and the team will return the recommendation. For booking direct vs via Viator or GetYourGuide, the operator-side direct booking saves €50-€100 per yacht charter — see [our direct booking guide](/blog/book-bosphorus-cruise-direct-save-2026) for the full markup breakdown."
+      },
+    ],
+    faqs: [
+      {
+        q: "What size yacht do I need for a proposal in Istanbul?",
+        a: "The 10-guest Essential sailing yacht (Y1, €280 base for 2 hours) is the most-requested proposal yacht. Even if only 2 guests are onboard, the intimate scale is what the moment needs — a larger yacht feels under-populated and reduces the romantic feel."
+      },
+      {
+        q: "How big a yacht do I need for 30 corporate guests?",
+        a: "The 36-guest VIP yacht (Y4, €680 base) is the right answer for 30 corporate guests. It gives you stage-near tables, dedicated DJ setup, full kitchen support, and 6-guest overflow capacity for late arrivals."
+      },
+      {
+        q: "Can MerrySails accommodate a 100-guest wedding on a yacht?",
+        a: "Yes. The Mega Event yacht (Y6, 150-guest capacity, €2,800 base for 2 hours) handles 100-guest weddings with full production hookups, indoor and outdoor zones, and event-ready kitchen. Plus a 4-6 hour duration for full wedding flow."
+      },
+      {
+        q: "What is the cheapest yacht charter on the Bosphorus?",
+        a: "The Essential class sailing yacht at €280 base for 2 hours is the entry point. The total cost depends on the catering, alcohol, decoration, and event production add-ons you choose — the base €280 covers the yacht, captain, crew, fuel, and non-alcoholic drinks."
+      },
+      {
+        q: "Should I book a bigger yacht than my group size?",
+        a: "Usually no. Right-sized yachts always feel better than over-sized ones. The most common booking mistake is over-shooting yacht size by 30-50%, which adds €100-€400 without improving the experience. Book the right size for the confirmed group plus a small 10-15% buffer."
+      },
+      {
+        q: "What's included in the base yacht charter price?",
+        a: "Yacht, captain and crew, fuel and port fees, non-alcoholic drinks (water, soft drinks, juice, tea), basic snack platter, and the captain's route advice. Catering, alcohol, DJ, live music, photographer, decoration, and hotel transfer are separate options."
+      }
+    ],
+    relatedTours: ["yacht-charter-in-istanbul", "private-bosphorus-dinner-yacht-cruise", "romantic-marriage-proposal"],
+    relatedPosts: ["private-yacht-charter-istanbul-price", "best-istanbul-bosphorus-cruise-comparison-2026", "corporate-yacht-event-planning-istanbul"],
   }
 ];
