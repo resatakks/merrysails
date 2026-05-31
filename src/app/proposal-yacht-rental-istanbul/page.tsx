@@ -73,6 +73,10 @@ const faqItemsRu = [
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", ".answer-capsule"],
+  },
   mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
     "@type": "Question",
     name: item.q,

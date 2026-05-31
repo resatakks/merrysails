@@ -74,6 +74,10 @@ const corporatePlanningFormats = corporateTour.packages?.map((pkg) => ({
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", ".answer-capsule"],
+  },
   mainEntity: [
     {
       "@type": "Question",
