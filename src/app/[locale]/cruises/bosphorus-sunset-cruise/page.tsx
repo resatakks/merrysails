@@ -14,6 +14,11 @@ import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 
 export const revalidate = 3600;
 
+// Module-level EN baseline for fields that don't differ by locale (image,
+// schedule, capacity).  Per-request locale-aware copy is fetched inside
+// the render via getTourBySlug(slug, locale) so the override block in
+// src/data/tour-locales.ts can replace longDescription / route /
+// departurePoint / includes / etc.
 const sunsetTour = getTourBySlug("bosphorus-sunset-cruise");
 if (!sunsetTour) throw new Error("Sunset cruise data is missing.");
 
@@ -615,7 +620,11 @@ export default async function LocaleSunsetCruisePage({
 
           <QuickAnswer productKey="bosphorus-sunset-cruise" locale={locale} />
 
-          <TourDetailClient tour={sunsetTour} related={relatedTours} />
+          <TourDetailClient
+            tour={getTourBySlug("bosphorus-sunset-cruise", locale) ?? sunsetTour}
+            related={relatedTours}
+            locale={locale as SiteLocale}
+          />
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="sunset" />
 
@@ -702,7 +711,7 @@ export default async function LocaleSunsetCruisePage({
       </div>
 
       <div className="container-main pb-12">
-        <RelatedTours exclude="sunset" heading="Other Bosphorus experiences" />
+        <RelatedTours exclude="sunset" locale={locale as SiteLocale} />
       </div>
     </>
   );
