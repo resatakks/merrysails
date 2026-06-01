@@ -7,6 +7,12 @@ import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import { getFleetStrings } from "@/components/yacht/fleet-strings";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import {
@@ -514,6 +520,35 @@ export default async function LocaleYachtCharterPage({
 
   const canonicalUrl = `${SITE_URL}${t.canonicalPath}`;
 
+  const momentum = await getProductBookingMomentum("yacht-charter-in-istanbul");
+  const productLabelByLocale: Record<string, string> = {
+    en: "private yacht",
+    tr: "özel yat",
+    de: "private Yacht",
+    fr: "yacht privé",
+    nl: "privéjacht",
+    ru: "частная яхта",
+  };
+  const reserveLabelByLocale: Record<string, string> = {
+    en: "Quote from €200",
+    tr: "€200'den teklif al",
+    de: "Angebot ab €200",
+    fr: "Devis dès €200",
+    nl: "Offerte vanaf €200",
+    ru: "Запросить от €200",
+  };
+  const whatsappPrefillByLocale: Record<string, string> = {
+    en: "Hi MerrySails! I'd like a private yacht charter quote for the Bosphorus. Group size + date if known?",
+    tr: "Merhaba MerrySails! Boğaz için özel yat kiralama teklifi istiyorum. Grup büyüklüğü ve tarih (varsa) nedir?",
+    de: "Hallo MerrySails! Ich hätte gerne ein Angebot für einen privaten Yacht-Charter auf dem Bosporus. Gruppengröße + Datum (falls bekannt)?",
+    fr: "Bonjour MerrySails ! Je souhaite un devis pour la location d'un yacht privé sur le Bosphore. Taille du groupe + date (si connue) ?",
+    nl: "Hallo MerrySails! Ik wil een offerte voor privé jachtcharter op de Bosporus. Groepsgrootte + datum (indien bekend)?",
+    ru: "Здравствуйте, MerrySails! Прошу прислать смету частной аренды яхты по Босфору. Размер группы и дата (если известно)?",
+  };
+  const productLabel = productLabelByLocale[locale] ?? productLabelByLocale.en;
+  const reserveLabel = reserveLabelByLocale[locale] ?? reserveLabelByLocale.en;
+  const whatsappPrefill = whatsappPrefillByLocale[locale] ?? whatsappPrefillByLocale.en;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
@@ -650,6 +685,21 @@ export default async function LocaleYachtCharterPage({
             <QuickAnswer productKey="yacht-charter-istanbul" locale={locale} />
           </header>
 
+          {/* Locale conversion stack */}
+          <SocialProofBadges
+            variant="product"
+            productKey="yacht"
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+          <LiveBookingCounter locale={locale as SiteLocale} className="mb-4" />
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel={productLabel}
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+
           <FleetShowcase
             locale={locale as SiteLocale}
             strings={getFleetStrings(locale as SiteLocale)}
@@ -657,6 +707,10 @@ export default async function LocaleYachtCharterPage({
             yachtTourSlug={yachtTour.slug}
             fleetDetailBasePath={`/${locale}/yacht-charter-istanbul`}
           />
+
+          <div className="my-8">
+            <ReviewsCarousel productKey="yacht" locale={locale as SiteLocale} />
+          </div>
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="yacht" />
 
@@ -809,6 +863,13 @@ export default async function LocaleYachtCharterPage({
           </div>
         </div>
       </div>
+      <StickyMobileCta
+        reserveHref={`/${locale}/yacht-charter-istanbul#fleet`}
+        reserveLabel={reserveLabel}
+        locale={locale as SiteLocale}
+        whatsappLocation={`locale_yacht_${locale}`}
+        whatsappPrefill={whatsappPrefill}
+      />
     </>
   );
 }

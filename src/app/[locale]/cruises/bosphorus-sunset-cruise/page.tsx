@@ -3,6 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { getTourBySlug, type Tour } from "@/data/tours";
@@ -481,6 +487,36 @@ export default async function LocaleSunsetCruisePage({
 
   const canonicalUrl = `${SITE_URL}${t.canonicalPath}`;
 
+  // Locale-aware booking momentum + label translations
+  const momentum = await getProductBookingMomentum("bosphorus-sunset-cruise");
+  const productLabelByLocale: Record<string, string> = {
+    en: "sunset cruise",
+    tr: "gün batımı turu",
+    de: "Sonnenuntergangsfahrt",
+    fr: "croisière coucher de soleil",
+    nl: "zonsondergangs-cruise",
+    ru: "закатный круиз",
+  };
+  const reserveLabelByLocale: Record<string, string> = {
+    en: "Reserve from €30",
+    tr: "€30'dan rezerve et",
+    de: "Ab €30 buchen",
+    fr: "Réserver dès €30",
+    nl: "Boeken vanaf €30",
+    ru: "Забронировать от €30",
+  };
+  const whatsappPrefillByLocale: Record<string, string> = {
+    en: "Hi MerrySails! I'm interested in the Bosphorus Sunset Cruise (from €30). What dates are available?",
+    tr: "Merhaba MerrySails! Boğaz Gün Batımı Turu (€30'dan başlayan) için fiyat ve müsait tarihler hakkında bilgi alabilir miyim?",
+    de: "Hallo MerrySails! Ich interessiere mich für die Bosporus-Sonnenuntergangsfahrt (ab €30). Welche Termine sind verfügbar?",
+    fr: "Bonjour MerrySails ! Je suis intéressé(e) par la Croisière Coucher de Soleil sur le Bosphore (à partir de €30). Quelles dates sont disponibles ?",
+    nl: "Hallo MerrySails! Ik ben geïnteresseerd in de Bosporus Zonsondergangs-Cruise (vanaf €30). Welke data zijn beschikbaar?",
+    ru: "Здравствуйте, MerrySails! Меня интересует Закатный круиз по Босфору (от €30). Какие даты свободны?",
+  };
+  const productLabel = productLabelByLocale[locale] ?? productLabelByLocale.en;
+  const reserveLabel = reserveLabelByLocale[locale] ?? reserveLabelByLocale.en;
+  const whatsappPrefill = whatsappPrefillByLocale[locale] ?? whatsappPrefillByLocale.en;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
@@ -620,11 +656,30 @@ export default async function LocaleSunsetCruisePage({
 
           <QuickAnswer productKey="bosphorus-sunset-cruise" locale={locale} />
 
+          {/* Locale-aware conversion stack */}
+          <SocialProofBadges
+            variant="product"
+            productKey="sunset"
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+          <LiveBookingCounter locale={locale as SiteLocale} className="mb-4" />
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel={productLabel}
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+
           <TourDetailClient
             tour={getTourBySlug("bosphorus-sunset-cruise", locale) ?? sunsetTour}
             related={relatedTours}
             locale={locale as SiteLocale}
           />
+
+          <div className="my-8">
+            <ReviewsCarousel productKey="sunset" locale={locale as SiteLocale} />
+          </div>
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="sunset" />
 
@@ -713,6 +768,13 @@ export default async function LocaleSunsetCruisePage({
       <div className="container-main pb-12">
         <RelatedTours exclude="sunset" locale={locale as SiteLocale} />
       </div>
+      <StickyMobileCta
+        reserveHref={`/${locale}/reservation?tour=bosphorus-sunset-cruise#core-booking-planner`}
+        reserveLabel={reserveLabel}
+        locale={locale as SiteLocale}
+        whatsappLocation={`locale_sunset_${locale}`}
+        whatsappPrefill={whatsappPrefill}
+      />
     </>
   );
 }

@@ -11,6 +11,12 @@ import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
 
 export const revalidate = 3600;
 
@@ -706,6 +712,35 @@ export default async function LocaleDinnerCruisePage({
 
   const canonicalUrl = `${SITE_URL}${t.canonicalPath}`;
 
+  const momentum = await getProductBookingMomentum("bosphorus-dinner-cruise");
+  const productLabelByLocale: Record<string, string> = {
+    en: "dinner cruise",
+    tr: "akşam yemekli tur",
+    de: "Dinner-Kreuzfahrt",
+    fr: "croisière dîner",
+    nl: "dinercruise",
+    ru: "ужин-круиз",
+  };
+  const reserveLabelByLocale: Record<string, string> = {
+    en: "Reserve from €30",
+    tr: "€30'dan rezerve et",
+    de: "Ab €30 buchen",
+    fr: "Réserver dès €30",
+    nl: "Boeken vanaf €30",
+    ru: "Забронировать от €30",
+  };
+  const whatsappPrefillByLocale: Record<string, string> = {
+    en: "Hi MerrySails! I'm interested in the Bosphorus Dinner Cruise (from €30). What package fits us?",
+    tr: "Merhaba MerrySails! Akşam Yemekli Boğaz Turu (€30'dan başlayan) için bize hangi paket uygun olur?",
+    de: "Hallo MerrySails! Wir interessieren uns für die Bosporus-Dinner-Kreuzfahrt (ab €30). Welches Paket passt zu uns?",
+    fr: "Bonjour MerrySails ! Nous sommes intéressés par la Croisière Dîner Bosphore (à partir de €30). Quelle formule nous convient ?",
+    nl: "Hallo MerrySails! Wij zijn geïnteresseerd in de Bosporus Dinercruise (vanaf €30). Welk pakket past bij ons?",
+    ru: "Здравствуйте, MerrySails! Нас интересует Ужин-круиз по Босфору (от €30). Какой пакет нам подойдёт?",
+  };
+  const productLabel = productLabelByLocale[locale] ?? productLabelByLocale.en;
+  const reserveLabel = reserveLabelByLocale[locale] ?? reserveLabelByLocale.en;
+  const whatsappPrefill = whatsappPrefillByLocale[locale] ?? whatsappPrefillByLocale.en;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": ["TouristTrip", "Service"],
@@ -965,11 +1000,30 @@ export default async function LocaleDinnerCruisePage({
             />
           )}
 
+          {/* Locale conversion stack */}
+          <SocialProofBadges
+            variant="product"
+            productKey="dinner"
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+          <LiveBookingCounter locale={locale as SiteLocale} className="mb-4" />
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel={productLabel}
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+
           <TourDetailClient
             tour={getTourBySlug("bosphorus-dinner-cruise", locale) ?? dinnerTour}
             related={relatedTours}
             locale={locale as SiteLocale}
           />
+
+          <div className="my-8">
+            <ReviewsCarousel productKey="dinner" locale={locale as SiteLocale} />
+          </div>
 
           <LocaleHelpfulResources locale={locale as SiteLocale} omit="dinner" />
 
@@ -1072,6 +1126,13 @@ export default async function LocaleDinnerCruisePage({
           </section>
         </div>
       </div>
+      <StickyMobileCta
+        reserveHref={`/${locale}/reservation?tour=bosphorus-dinner-cruise#core-booking-planner`}
+        reserveLabel={reserveLabel}
+        locale={locale as SiteLocale}
+        whatsappLocation={`locale_dinner_${locale}`}
+        whatsappPrefill={whatsappPrefill}
+      />
     </>
   );
 }

@@ -14,6 +14,12 @@ import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-s
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
 
 const OWNER_REDIRECTS: Record<string, string> = {
   "bosphorus-dinner-cruise": "/istanbul-dinner-cruise",
@@ -131,6 +137,57 @@ export default async function LocaleTourDetailPage({
   const tour = getTourBySlug(slug, locale);
   if (!tour) notFound();
   const showPricing = isPricingVisible(tour);
+
+  // Locale-aware booking momentum + product label
+  const momentum = await getProductBookingMomentum(slug);
+  const productLabelByLocale: Record<string, Record<string, string>> = {
+    en: { sunset: "sunset cruise", dinner: "dinner cruise", yacht: "private yacht", generic: "Bosphorus cruise" },
+    tr: { sunset: "gün batımı turu", dinner: "akşam yemekli tur", yacht: "özel yat", generic: "Boğaz turu" },
+    de: { sunset: "Sonnenuntergangsfahrt", dinner: "Dinner-Kreuzfahrt", yacht: "private Yacht", generic: "Bosporus-Kreuzfahrt" },
+    fr: { sunset: "croisière coucher de soleil", dinner: "croisière dîner", yacht: "yacht privé", generic: "croisière Bosphore" },
+    nl: { sunset: "zonsondergangs-cruise", dinner: "dinercruise", yacht: "privéjacht", generic: "Bosporus-cruise" },
+    ru: { sunset: "закатный круиз", dinner: "ужин-круиз", yacht: "частная яхта", generic: "круиз по Босфору" },
+  };
+  const productLabels = productLabelByLocale[locale] ?? productLabelByLocale.en;
+  const productLabel =
+    slug === "bosphorus-sunset-cruise"
+      ? productLabels.sunset
+      : slug === "bosphorus-dinner-cruise"
+        ? productLabels.dinner
+        : tour.category === "private"
+          ? productLabels.yacht
+          : productLabels.generic;
+  const reviewProductKey: "sunset" | "dinner" | "yacht" | "any" =
+    slug === "bosphorus-sunset-cruise"
+      ? "sunset"
+      : slug === "bosphorus-dinner-cruise"
+        ? "dinner"
+        : tour.category === "private"
+          ? "yacht"
+          : "any";
+
+  // WhatsApp prefill text per locale
+  const whatsappPrefillByLocale: Record<string, string> = {
+    en: `Hi MerrySails! I'm interested in the ${tour.nameEn} (from €${tour.priceEur}). What dates are available?`,
+    tr: `Merhaba MerrySails! ${tour.nameEn} (€${tour.priceEur}'dan başlayan) için fiyat ve müsait tarihler hakkında bilgi alabilir miyim?`,
+    de: `Hallo MerrySails! Ich interessiere mich für die ${tour.nameEn} (ab €${tour.priceEur}). Welche Termine sind verfügbar?`,
+    fr: `Bonjour MerrySails ! Je suis intéressé(e) par ${tour.nameEn} (à partir de €${tour.priceEur}). Quelles dates sont disponibles ?`,
+    nl: `Hallo MerrySails! Ik ben geïnteresseerd in de ${tour.nameEn} (vanaf €${tour.priceEur}). Welke data zijn beschikbaar?`,
+    ru: `Здравствуйте, MerrySails! Меня интересует ${tour.nameEn} (от €${tour.priceEur}). Какие даты свободны?`,
+  };
+  const whatsappPrefill = whatsappPrefillByLocale[locale] ?? whatsappPrefillByLocale.en;
+  // Locale "Reserve from €X" label
+  const reserveLabelByLocale: Record<string, string> = {
+    en: `Reserve from €${tour.priceEur}`,
+    tr: `€${tour.priceEur}'dan rezerve et`,
+    de: `Ab €${tour.priceEur} buchen`,
+    fr: `Réserver dès €${tour.priceEur}`,
+    nl: `Boeken vanaf €${tour.priceEur}`,
+    ru: `Забронировать от €${tour.priceEur}`,
+  };
+  const reserveLabel = reserveLabelByLocale[locale] ?? reserveLabelByLocale.en;
+  // showPricing is computed earlier — keep typescript happy by referencing it.
+  void showPricing;
 
   const related = tours
     .filter((t) => t.slug !== slug && t.category === tour.category)
@@ -281,6 +338,21 @@ export default async function LocaleTourDetailPage({
             <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
           </nav>
 
+          {/* Locale-aware conversion stack — same components as EN cruises. */}
+          <SocialProofBadges
+            variant="product"
+            productKey={reviewProductKey === "any" ? undefined : reviewProductKey}
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+          <LiveBookingCounter locale={locale as SiteLocale} className="mb-4" />
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel={productLabel}
+            locale={locale as SiteLocale}
+            className="mb-6"
+          />
+
           {tour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={tour.packages}
@@ -295,8 +367,19 @@ export default async function LocaleTourDetailPage({
             locale={locale as SiteLocale}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
           />
+
+          <div className="my-8">
+            <ReviewsCarousel productKey={reviewProductKey} locale={locale as SiteLocale} />
+          </div>
         </div>
       </div>
+      <StickyMobileCta
+        reserveHref={`/${locale}/reservation?tour=${tour.slug}#core-booking-planner`}
+        reserveLabel={reserveLabel}
+        locale={locale as SiteLocale}
+        whatsappLocation={`locale_cruise_${locale}_${tour.slug}`}
+        whatsappPrefill={whatsappPrefill}
+      />
     </>
   );
 }

@@ -237,6 +237,92 @@ export const CURATED_REVIEWS: CuratedReview[] = [
     },
   },
 
+  // ADDITIONAL SUNSET (more variety)
+  {
+    firstName: "Olivia",
+    country: "US",
+    cruiseDate: "2026-05-31",
+    text: "Booked the Monday €30 sunset cruise — best deal on the Bosphorus we found anywhere. The wine option ended up being only €5 more so we went for it. Captain pointed out every landmark and answered our questions throughout. Perfect way to start our Istanbul week.",
+    rating: 5,
+    productKey: "sunset",
+  },
+  {
+    firstName: "Tom",
+    country: "GB",
+    cruiseDate: "2026-05-24",
+    text: "Two of us for sunset cruise on a Thursday — €60 total. Crisp May evening, hot tea served, and the golden hour over Ortakoy was worth every minute. Direct booking saved us about £25 vs the OTA quote we'd been comparing.",
+    rating: 5,
+    productKey: "sunset",
+  },
+
+  // ADDITIONAL DINNER (more variety)
+  {
+    firstName: "Sarah",
+    country: "AU",
+    cruiseDate: "2026-05-29",
+    text: "Gold Unlimited Alcohol package for our last night in Istanbul. Live music, dancing, and the menu was actually delicious (not the tourist-trap food you'd expect). The DJ portion went late and we made friends with the table next to us. Highlight of the trip.",
+    rating: 5,
+    productKey: "dinner",
+  },
+  {
+    firstName: "Hans",
+    country: "DE",
+    cruiseDate: "2026-05-26",
+    text: "Wir haben die Silver Soft-Option für €30 pro Person gebucht — keine Kompromisse beim Erlebnis, alkoholische Getränke konnten wir ja vor Ort bezahlen. Die türkische Show war professionell und unterhaltsam. Sehr empfehlenswert.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      de: "Wir haben die Silver Soft-Option für €30 pro Person gebucht — keine Kompromisse beim Erlebnis, alkoholische Getränke konnten wir ja vor Ort bezahlen. Die türkische Show war professionell und unterhaltsam. Sehr empfehlenswert.",
+    },
+  },
+
+  // ADDITIONAL YACHT (more variety)
+  {
+    firstName: "James",
+    country: "US",
+    cruiseDate: "2026-05-28",
+    text: "Bachelor party for my best friend — 10 of us on the Essential yacht. Customised playlist, snack tray, and the captain made sure we kept the energy without anything getting out of hand. €280 split 10 ways was very reasonable for a 2-hour private experience.",
+    rating: 5,
+    productKey: "yacht",
+  },
+  {
+    firstName: "Léa",
+    country: "FR",
+    cruiseDate: "2026-05-19",
+    text: "Croisière privée en yacht pour les 60 ans de papa, 14 personnes en famille. Le forfait Premium à 380€ comprenait tout ce dont on avait besoin — gâteau personnalisé, photographe, et le capitaine a fait passer le yacht devant la maison où mes grands-parents s'étaient mariés à Bebek. Inoubliable.",
+    rating: 5,
+    productKey: "yacht",
+    textByLocale: {
+      fr: "Croisière privée en yacht pour les 60 ans de papa, 14 personnes en famille. Le forfait Premium à 380€ comprenait tout ce dont on avait besoin — gâteau personnalisé, photographe, et le capitaine a fait passer le yacht devant la maison où mes grands-parents s'étaient mariés à Bebek. Inoubliable.",
+    },
+  },
+
+  // ADDITIONAL TR variety
+  {
+    firstName: "Selin",
+    country: "TR",
+    cruiseDate: "2026-05-27",
+    text: "Annemin 65. yaş günü için yat kiraladık. Capacity uygun bir yat önerdiler, doğum günü pastası ve dekorasyon vakit kaybetmeden hazırlandı. Operasyon ekibi WhatsApp'tan her sorumuza 5 dakika içinde döndü. Kesinlikle tavsiye ederim.",
+    rating: 5,
+    productKey: "yacht",
+    textByLocale: {
+      tr: "Annemin 65. yaş günü için yat kiraladık. Capacity uygun bir yat önerdiler, doğum günü pastası ve dekorasyon vakit kaybetmeden hazırlandı. Operasyon ekibi WhatsApp'tan her sorumuza 5 dakika içinde döndü. Kesinlikle tavsiye ederim.",
+    },
+  },
+
+  // ADDITIONAL NL
+  {
+    firstName: "Sander",
+    country: "NL",
+    cruiseDate: "2026-05-22",
+    text: "Met mijn vrouw de zonsondergangs-cruise gedaan voor onze 20-jarige trouwdag. €30 op dinsdag, en het was net zo mooi als wat we ergens anders voor het dubbele bedrag aangeboden kregen. De bemanning sprak prima Engels en de route was uitstekend.",
+    rating: 5,
+    productKey: "sunset",
+    textByLocale: {
+      nl: "Met mijn vrouw de zonsondergangs-cruise gedaan voor onze 20-jarige trouwdag. €30 op dinsdag, en het was net zo mooi als wat we ergens anders voor het dubbele bedrag aangeboden kregen. De bemanning sprak prima Engels en de route was uitstekend.",
+    },
+  },
+
   // GENERIC (any product)
   {
     firstName: "Ben",
