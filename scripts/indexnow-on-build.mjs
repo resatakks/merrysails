@@ -59,6 +59,10 @@ const EN_URLS = [
   "/team-building-yacht-istanbul",
   "/yacht-charter-istanbul",
   "/anniversary-yacht-cruise-istanbul",
+  "/merrysails-vs-bosphorustour",
+  "/bosphorus-cruise-from-sultanahmet",
+  "/bosphorus-cruise-from-taksim",
+  "/bosphorus-cruise-from-beyoglu",
   "/pricing",
   "/sitemap.xml",
 ];

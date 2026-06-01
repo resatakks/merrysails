@@ -170,6 +170,12 @@ export function GET() {
     { url: `${SITE_URL}/proposal-yacht-with-photographer-istanbul`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-with-photographer-istanbul") },
     // Anniversary niche page (2026-06-01) — separate SERP intent from proposal.
     { url: `${SITE_URL}/anniversary-yacht-cruise-istanbul`, changefreq: "monthly", priority: "0.68", lastmod: contentLastmod },
+    // Operator comparison page (2026-06-01) — high commercial intent.
+    { url: `${SITE_URL}/merrysails-vs-bosphorustour`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod },
+    // Hotel-cluster landing pages (2026-06-01) — Tier-2 high-intent SERP capture.
+    { url: `${SITE_URL}/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/yacht-charter-istanbul`, changefreq: "weekly", priority: "0.96", lastmod: contentLastmod, hreflang: hreflangXml("/yacht-charter-istanbul") },
     { url: `${SITE_URL}/kurucesme-marina-yacht-charter`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/kurucesme-marina-yacht-charter") },
     { url: `${SITE_URL}/boat-rental-istanbul`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/boat-rental-istanbul") },
