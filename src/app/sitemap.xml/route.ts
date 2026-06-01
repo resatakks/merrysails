@@ -23,6 +23,7 @@ const LOCALIZED_PATHS = [
   "/istanbul-dinner-cruise",
   "/cruises/bosphorus-sunset-cruise",
   "/yacht-charter-istanbul",
+  "/honeymoon-yacht-cruise-istanbul",
   "/boat-rental-istanbul",
   "/boat-rental-hourly-istanbul",
   "/private-bosphorus-dinner-cruise",
@@ -81,6 +82,7 @@ const RU_ENABLED_PATHS = new Set<string>([
   "/kabatas-dinner-cruise-istanbul",
   "/team-building-yacht-istanbul",
   "/kurucesme-marina-yacht-charter",
+  "/honeymoon-yacht-cruise-istanbul",
 ]);
 
 function toAbsoluteUrl(url: string): string {

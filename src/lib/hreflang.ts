@@ -36,6 +36,7 @@ const LOCALIZED_ROUTES = new Set([
   "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
+  "/honeymoon-yacht-cruise-istanbul",
   // NOTE: /kabatas-bogaz-turu is TR-ONLY — explicitly excluded from LOCALIZED_ROUTES
   // to prevent emitting hreflang annotations for non-existent /de/, /fr/, /nl/, / variants.
   // Adding it here causes 4×404 in Semrush (Source: 2026-05-17 audit).
