@@ -711,13 +711,42 @@ export default async function TourDetailPage({
         <div className="container-main">
           <h1 className="sr-only">{tour.nameEn} — Istanbul Bosphorus</h1>
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-4">
             <Link href="/" className="hover:text-[var(--brand-primary)]">Home</Link>
             <span>/</span>
             <Link href="/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">Bosphorus Cruise</Link>
             <span>/</span>
             <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
           </nav>
+
+          {/* Above-the-fold conversion summary — Clarity (2026-05-25 → 06-01)
+              showed avg scroll depth 12-25% on cruise pages with 90% bounce
+              on 20 sunset sessions. Users were bouncing before the price +
+              Reserve button (deep below gallery + banner + quick answer).
+              This compact summary surfaces nameEn + From €X + Reserve CTA
+              ABOVE all secondary blocks so the booking intent is satisfied
+              within the first viewport on mobile. */}
+          <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-[var(--brand-primary)]/15 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:p-5">
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">
+                {tour.duration} · {tour.category === "private" ? "Private yacht" : "Shared cruise"}
+              </p>
+              <h2 className="mt-1 text-xl font-bold leading-tight text-[var(--heading)] sm:text-2xl">
+                {tour.nameEn}
+              </h2>
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
+                <span className="font-semibold text-[var(--heading)]">From €{tour.priceEur}</span>
+                <span className="mx-2">·</span>
+                <span>★ {tour.rating}/5 ({tour.reviewCount} reviews)</span>
+              </p>
+            </div>
+            <Link
+              href={`/reservation?tour=${tour.slug}#core-booking-planner`}
+              className="btn-cta !whitespace-nowrap !px-5 !py-3 text-sm sm:text-base"
+            >
+              Reserve from €{tour.priceEur}
+            </Link>
+          </div>
 
           {tour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
