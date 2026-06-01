@@ -65,6 +65,14 @@ const FOOTER_LOCALIZED_ROUTES = new Set([
   "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
+  // 2026-06-02: Audience-segment pages — each shipped in all 5 active
+  // non-EN locales with native content. Adding here makes the footer
+  // route directly to the locale variant when the visitor is on /tr/
+  // /de/ /fr/ /nl/ /ru/ pages.
+  "/honeymoon-yacht-cruise-istanbul",
+  "/anniversary-yacht-cruise-istanbul",
+  "/bosphorus-cruise-for-couples",
+  "/bosphorus-cruise-for-families",
 ]);
 
 function localizeHref(href: string, locale: NavLocale): string {

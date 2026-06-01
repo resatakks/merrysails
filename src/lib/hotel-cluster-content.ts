@@ -23,6 +23,149 @@ export type HotelClusterDistrict = {
   faqs: Array<{ q: string; a: string }>;
 };
 
+/**
+ * Turkish locale variants — used by /tr/bosphorus-cruise-from-<district>.
+ * Native Turkish content (NOT machine-translated). Shares the same
+ * underlying structure so the HotelClusterPage component renders both
+ * EN + TR with the same shape.
+ */
+export const HOTEL_CLUSTER_DISTRICTS_TR: Record<string, HotelClusterDistrict> = {
+  sultanahmet: {
+    slug: "bosphorus-cruise-from-sultanahmet",
+    name: "Sultanahmet",
+    side: "European",
+    introCapsule:
+      "Sultanahmet'ten Boğaz turu — paylaşımlı gün batımı (Pzt/Sal/Per) €30'dan, akşam yemekli (Silver Soft) €30'dan. Sultanahmet otelleri Kabataş iskelesine T1 tramvayıyla 8-12 dakika, taksi 15 dakika. Akşam yemekli turda otel pickup dahil — rezervasyon sonrası WhatsApp ile teyit edilir.",
+    knownHotels: [
+      "Four Seasons Sultanahmet",
+      "Sirkeci Mansion",
+      "Hotel Amira",
+      "Sura Hagia Sophia",
+      "White House Hotel",
+      "Hotel Sphendon",
+    ],
+    transportToPier: [
+      { mode: "T1 Tramvayı", detail: "Sultanahmet durağı → Kabataş son durak (8-12 dk, ~30 TL)" },
+      { mode: "Taksi (BiTaksi)", detail: "Sultanahmet → Kabataş (~15 dk yoğun olmayan saatlerde, 80-120 TL)" },
+      { mode: "Yürüyüş", detail: "Önerilmez — Hipodrom ve Gülhane üzerinden 30+ dakika yokuşlu" },
+      { mode: "Otel transferi", detail: "Akşam yemekli turda dahil — pickup zamanı WhatsApp ile teyit edilir" },
+    ],
+    recommendedCruise: "dinner",
+    pickupEligible: true,
+    walkingTimeMin: 30,
+    taxiCostTL: "80-120 TL",
+    faqs: [
+      {
+        q: "Sultanahmet'ten akşam yemekli boğaz turunda otel pickup dahil mi?",
+        a: "Evet. Dört akşam yemekli paket de (€30 Silver Soft, €45 Silver Alkollü, €80 Gold Soft, €90 Gold Sınırsız Alkol) Sultanahmet otellerinden otel pickup içerir. Pickup zamanı bir gün önce WhatsApp ile teyit edilir, genelde 20:30 Kabataş kalkışından 30-45 dakika önce.",
+      },
+      {
+        q: "Sultanahmet'ten kendi başıma iskeleye nasıl giderim?",
+        a: "En basit yol T1 tramvayı: Sultanahmet'ten binin, son durak Kabataş, iskele tramvay durağından 30 metre. Yolculuk 8-12 dakika. Taksiyle (BiTaksi veya iTaksi) Sultanahmet → Kabataş yoğun olmayan saatlerde 15 dakika, 80-120 TL.",
+      },
+      {
+        q: "Sultanahmet otelinden hangi tur formatı en uygun?",
+        a: "Akşam yemekli tur (€30 Silver Soft → €90 Gold Sınırsız Alkol) çünkü otel pickup dahil — ulaşım adımını atlıyorsunuz. Gün batımı turu (€34, Pzt/Sal/Per €30) Karaköy iskelesine kendi başınıza ulaşmayı gerektirir — Sultanahmet'ten T1 tramvayı + 5 dakika yürüyüş demek.",
+      },
+      {
+        q: "Aynı gün İstanbul Havalimanı'na indikten sonra boğaz turuna gidebilir miyim?",
+        a: "Mümkün ama dar. IST varışından Kabataş iskelesine 3 saat hesaplayın (90 dakika transfer + tampon). 20:30 akşam yemekli tur kalkışı için uçağın 16:30'a kadar inmesi gerekir. Daha rahat yol: 1. gün otel check-in + dinlenme, 2. gün akşam tur.",
+      },
+    ],
+  },
+  taksim: {
+    slug: "bosphorus-cruise-from-taksim",
+    name: "Taksim",
+    side: "European",
+    introCapsule:
+      "Taksim'den Boğaz turu — gün batımı €30 (Pzt/Sal/Per) ve akşam yemekli Silver Soft €30. Taksim otelleri Kabataş iskelesine F1 füniküleriyle 5-7 dakika (tek durak) veya taksi 10 dakika. Füniküler 06:00'dan gece yarısına kadar her 4 dakikada bir.",
+    knownHotels: [
+      "The Marmara Taksim",
+      "Swissotel The Bosphorus",
+      "Hyatt Regency Istanbul Atakoy",
+      "Pera Palace Hotel Jumeirah",
+      "Park Bosphorus Hotel",
+      "DoubleTree by Hilton Istanbul Esentepe",
+      "InterContinental Istanbul",
+      "Hilton Istanbul Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "F1 Füniküleri", detail: "Taksim → Kabataş (1 durak, 4-5 dk, ~30 TL)" },
+      { mode: "Taksi (BiTaksi)", detail: "Taksim → Kabataş (~10 dk, 60-90 TL)" },
+      { mode: "Yürüyüş", detail: "Mümkün — Sıraselviler üzerinden 15 dk yokuş aşağı" },
+      { mode: "Otel transferi", detail: "Akşam yemekli turda dahil — pickup zamanı WhatsApp ile teyit edilir" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 15,
+    taxiCostTL: "60-90 TL",
+    faqs: [
+      {
+        q: "Taksim'den iskeleye ne kadar sürer?",
+        a: "F1 füniküleriyle 5-7 dakika (Taksim metro'dan Kabataş'a tek durak, 06:00'dan gece yarısına her 4 dakikada). Taksiyle yoğun olmayan saatlerde 10 dakika, 60-90 TL. Yürüyerek Sıraselviler caddesi üzerinden 15 dakika yokuş aşağı.",
+      },
+      {
+        q: "Taksim'den akşam yemekli turda otel pickup dahil mi?",
+        a: "Evet — dört akşam yemekli paket de Taksim otellerinden otel pickup içerir. Pickup zamanı bir gün önce WhatsApp ile teyit edilir, genelde 20:30 Kabataş kalkışından 30-45 dakika önce.",
+      },
+      {
+        q: "Taksim otelinden hangi tur formatı en uygun?",
+        a: "Her ikisi de iyi ama gün batımı turu (€30 Pzt/Sal/Per, €34 diğer günler) Taksim'den özellikle kolay — F1 füniküleri sizi Kabataş'a 5 dakikada bırakır, 19:00 kalkış için otelden 18:15'te ayrılabilirsiniz. Akşam yemekli tur da pickup dahil çalışır.",
+      },
+      {
+        q: "Taksim'den iskeleye yürüyebilir miyim?",
+        a: "Evet — Sıraselviler Caddesi üzerinden 15 dakika yokuş aşağı. İlkbahar/sonbaharda hoş ama yaz sıcağında veya kış yağmurunda rahatsız. F1 füniküleri akşam turları için çok daha iyi seçim — taze varırsınız.",
+      },
+    ],
+  },
+  beyoglu: {
+    slug: "bosphorus-cruise-from-beyoglu",
+    name: "Beyoğlu",
+    side: "European",
+    introCapsule:
+      "Beyoğlu'ndan Boğaz turu — paylaşımlı gün batımı veya akşam yemekli Silver Soft €30'dan. Beyoğlu otelleri (Karaköy, Galata, Cihangir, Pera) Kabataş iskelesine tramvay veya taksiyle 10-25 dakika. Karaköy otelleri gün batımı turu iskelesine en yakın (5 dakika yürüyüş).",
+    knownHotels: [
+      "Soho House Istanbul",
+      "Sumahan on the Water",
+      "10 Karaköy",
+      "Pera Palace Hotel Jumeirah",
+      "Tomtom Suites",
+      "Witt Istanbul Suites",
+      "Georges Hotel Galata",
+      "The Stay Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Yürüyüş (Karaköy)", detail: "Karaköy otelleri → Karaköy iskelesi (gün batımı turu): 5 dakika" },
+      { mode: "T1 Tramvayı", detail: "Karaköy / Tophane durağı → Kabataş (1-2 durak, 4-6 dk)" },
+      { mode: "F1 Füniküleri", detail: "Galata / Tünel bölgesi → Taksim üzerinden Kabataş (toplam 8 dk)" },
+      { mode: "Taksi (BiTaksi)", detail: "Pera / Cihangir → Kabataş (~10 dk, 70-100 TL)" },
+      { mode: "Otel transferi", detail: "Akşam yemekli turda merkezi Beyoğlu mahallelerinden dahil" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 5,
+    taxiCostTL: "70-100 TL",
+    faqs: [
+      {
+        q: "Karaköy otelleri gün batımı turu iskelesine ne kadar yakın?",
+        a: "Çok yakın. Karaköy otelleri (10 Karaköy, Soho House, Sumahan on the Water) gün batımı turunun bindiği Karaköy iskelesinden 5 dakika yürüyüş. Biniş noktası Galata Köprüsü'nün hemen kuzeyinde, Mimar Sinan heykelinin yanında.",
+      },
+      {
+        q: "Beyoğlu'ndan akşam yemekli turda otel pickup var mı?",
+        a: "Evet, merkezi Beyoğlu mahallelerinden (Karaköy, Galata, Cihangir, Pera, Beyoğlu) pickup mevcut. Pickup aracı sizi otelden alır ve 20:30 akşam yemekli tur kalkışı için Kabataş iskelesine bırakır. Pickup zamanı bir gün önce WhatsApp ile teyit edilir.",
+      },
+      {
+        q: "Boğaz turu için en uygun Beyoğlu otel bölgesi hangisi?",
+        a: "Karaköy gün batımı turu iskelesine en yakın (5 dakika yürüyüş). Galata her ikisi için iyi — akşam yemekli için 8 dakikalık füniküler, gün batımı için 5 dakika Karaköy'e iniş. Pera ve Cihangir tramvay veya taksi gerektirir ama yine de 10-15 dakika toplam.",
+      },
+      {
+        q: "Beyoğlu'ndan akşam iskeleye yürüyebilir miyim?",
+        a: "Karaköy'den evet — 5 dakika her hava koşulunda yürünebilir. Galata'dan 12-15 dakika yokuş aşağı (geri dönüşte yokuş yukarı). Pera veya Cihangir'den yürüyüş 20-30 dakika ve karanlık sonrası Tarlabaşı'nı içeren rota önerilmez.",
+      },
+    ],
+  },
+};
+
 export const HOTEL_CLUSTER_DISTRICTS: Record<string, HotelClusterDistrict> = {
   sultanahmet: {
     slug: "bosphorus-cruise-from-sultanahmet",

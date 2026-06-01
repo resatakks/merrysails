@@ -1,0 +1,207 @@
+# SISTER-BRAND robots.txt TEMPLATE (2026-06-02)
+# Copy-paste verbatim into each sister-brand's robots.txt route handler.
+# Update the Host: and Sitemap: lines + the comment header to match the
+# brand. The bot allowlist (29 names) stays identical across all brands.
+#
+# Apply to: goldensunsettour.com · merrytourism.com · kingsworldtransfer.com
+#           pinogare.com · acilkaseniz.com · all future brands
+#
+# Reference: data/universal-robots-template-2026-06-01.md
+# Reference: src/app/robots.txt/route.ts (this brand)
+# ============================================================
+
+# <BRAND> — <one-line brand purpose>
+# https://<brand-domain>
+
+User-agent: *
+Content-Signal: search=yes, ai-train=no, ai-input=yes
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /_next/data/
+Disallow: /_next/image
+Disallow: /admin/
+Disallow: /unsubscribe
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# OpenAI — training crawler (decided allow, monitor citations)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI — user-triggered live fetch (ChatGPT browsing on user prompts).
+# MUST stay allowed or ChatGPT can't quote us in real-time answers.
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — ChatGPT Search index (answers engine).
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic — training crawler (decided allow, monitor citations)
+User-agent: ClaudeBot
+Allow: /
+
+# Anthropic — user-triggered live fetch (Claude browsing on user prompts).
+# MUST stay allowed or Claude can't quote us in real-time answers.
+User-agent: Claude-User
+Allow: /
+
+# Anthropic — legacy training UA, still seen in logs
+User-agent: Anthropic-AI
+Allow: /
+
+# Anthropic — legacy live-fetch UA
+User-agent: Claude-Web
+Allow: /
+
+# Google — AI Overviews + Gemini training opt-in (decided allow)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity — training crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity — user-triggered live fetch on user prompts. MUST stay allowed.
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Apple Intelligence training opt-in
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Applebot-Webindex
+Allow: /
+
+# Meta AI training opt-in
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Brave-Search
+Allow: /
+
+User-agent: Bravebot
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: iaskBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+# === Multi-engine push (2026-06-01) ===
+# East-Asia + Russian/Czech/Korean — explicit Allow ensures conservative
+# crawlers actually allocate budget instead of relying on User-agent: *.
+
+# Naver — Korean search market leader.
+User-agent: Yeti
+Allow: /
+
+# Daum — secondary Korean engine.
+User-agent: Daumoa
+Allow: /
+
+# Sogou — Chinese search engine (3rd after Baidu and Shenma).
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+# Baidu — Chinese search market leader. Limited indexation for non-.cn
+# without ICP, but BaiduSpider still crawls and ranks for some queries.
+User-agent: Baiduspider
+Allow: /
+
+# 360 Search (Haosou / Qihoo) — second-tier Chinese engine.
+User-agent: 360Spider
+Allow: /
+
+User-agent: HaosouSpider
+Allow: /
+
+# Seznam — Czech search engine. Slovakian / Czech tourists segment.
+User-agent: SeznamBot
+Allow: /
+
+# DuckDuckGo — pulls from Bing index but has own crawler too.
+User-agent: DuckDuckBot
+Allow: /
+
+# Mojeek — independent EU search engine.
+User-agent: MojeekBot
+Allow: /
+
+# Marginalia — independent search engine, used by AI tools.
+User-agent: search.marginalia.nu
+Allow: /
+
+# Petal — Huawei AppGallery / Petal Search.
+User-agent: PetalBot
+Allow: /
+
+Host: https://<BRAND-DOMAIN>
+Sitemap: https://<BRAND-DOMAIN>/sitemap.xml
+
+# AI content files
+# https://<BRAND-DOMAIN>/llms.txt
+# https://<BRAND-DOMAIN>/llms-full.txt
+
+# ============================================================
+# DEPLOY CHECKLIST per sister brand:
+#   1. Replace <BRAND> / <BRAND-DOMAIN> placeholders
+#   2. Drop into the brand's robots.txt route handler
+#   3. Deploy + curl <domain>/robots.txt to verify
+#   4. Submit sitemap to Bing Webmaster, Yandex Webmaster, Naver Search
+#      Advisor (manual user-side step per brand)
+#
+# NEVER block bots in this allowlist — see
+# data/universal-robots-template-2026-06-01.md for the rationale.
+# ============================================================
