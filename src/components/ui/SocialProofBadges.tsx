@@ -1,35 +1,65 @@
 import { Star, Users, Award, Clock } from "lucide-react";
 import { DIRECT_BOOKING_STATS, SATISFACTION_STATS, PARENT_OPERATOR_STATS } from "@/lib/trust-evidence";
+import type { SiteLocale } from "@/i18n/config";
 
-/**
- * Social-proof + trust-badge row for commercial pages.
- *
- * Why this exists (2026-06-01):
- *   Clarity 7d: 168 sessions → 2 bookings = 1.2% conversion. The product
- *   pages have rich schema (4.91/5 from 1,181 reviews) but the trust
- *   signal is buried below the fold or only inside JSON-LD. Mobile users
- *   landing on /cruises/<slug> never see "TURSAB-licensed, 50k+ guests,
- *   4.91 rating" because they bounce before scrolling.
- *
- *   This component surfaces 4 high-impact trust signals as a horizontal
- *   row of badges, placed directly under the above-fold price/CTA card.
- *
- * Variants:
- *   - product: shows product-specific rating (sunset/dinner/yacht) +
- *     direct booking count
- *   - generic: shows blended 4.91/5 + 50k+ parent operator guests
- */
+const STRINGS: Record<string, {
+  reviews: string;
+  guestsSince: (year: number) => string;
+  licence: string;
+  whatsappReply: string;
+}> = {
+  en: {
+    reviews: "reviews",
+    guestsSince: (year) => `guests since ${year}`,
+    licence: (() => "licence")(),
+    whatsappReply: "avg WhatsApp reply",
+  },
+  tr: {
+    reviews: "yorum",
+    guestsSince: (year) => `${year}'den beri misafir`,
+    licence: "lisans",
+    whatsappReply: "ort. WhatsApp yanıt",
+  },
+  de: {
+    reviews: "Bewertungen",
+    guestsSince: (year) => `Gäste seit ${year}`,
+    licence: "Lizenz",
+    whatsappReply: "ø WhatsApp-Antwort",
+  },
+  fr: {
+    reviews: "avis",
+    guestsSince: (year) => `voyageurs depuis ${year}`,
+    licence: "licence",
+    whatsappReply: "réponse WhatsApp moy.",
+  },
+  nl: {
+    reviews: "beoordelingen",
+    guestsSince: (year) => `gasten sinds ${year}`,
+    licence: "vergunning",
+    whatsappReply: "gem. WhatsApp-reactie",
+  },
+  ru: {
+    reviews: "отзывов",
+    guestsSince: (year) => `гостей с ${year}`,
+    licence: "лицензия",
+    whatsappReply: "сред. ответ WhatsApp",
+  },
+};
+
 type Props = {
   variant?: "product" | "generic";
   productKey?: "sunset" | "dinner" | "yacht";
+  locale?: SiteLocale;
   className?: string;
 };
 
 export default function SocialProofBadges({
   variant = "generic",
   productKey,
+  locale = "en",
   className = "",
 }: Props) {
+  const t = STRINGS[locale] ?? STRINGS.en;
   const rating =
     productKey === "sunset"
       ? SATISFACTION_STATS.averageRatingSunset
@@ -60,7 +90,7 @@ export default function SocialProofBadges({
             {rating.toFixed(2)}/5
           </div>
           <div className="text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
-            {reviews.toLocaleString("en-US")} reviews
+            {reviews.toLocaleString("en-US")} {t.reviews}
           </div>
         </div>
       </div>
@@ -73,7 +103,7 @@ export default function SocialProofBadges({
             {(PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0)}k+
           </div>
           <div className="text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
-            guests since {PARENT_OPERATOR_STATS.tursabSinceYear}
+            {t.guestsSince(PARENT_OPERATOR_STATS.tursabSinceYear)}
           </div>
         </div>
       </div>
@@ -86,7 +116,7 @@ export default function SocialProofBadges({
             TÜRSAB A
           </div>
           <div className="text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
-            licence #{PARENT_OPERATOR_STATS.tursabLicenseNumber}
+            {t.licence} #{PARENT_OPERATOR_STATS.tursabLicenseNumber}
           </div>
         </div>
       </div>
@@ -99,7 +129,7 @@ export default function SocialProofBadges({
             {DIRECT_BOOKING_STATS.averageWhatsAppReplyMin} min
           </div>
           <div className="text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
-            avg WhatsApp reply
+            {t.whatsappReply}
           </div>
         </div>
       </div>

@@ -1,43 +1,80 @@
 import { TrendingUp, Calendar, AlertCircle } from "lucide-react";
 import type { BookingMomentum } from "@/lib/booking-momentum";
+import type { SiteLocale } from "@/i18n/config";
 
-/**
- * Server-rendered urgency / social-proof badge using real Reservation DB
- * counts (see src/lib/booking-momentum.ts).
- *
- * Rendering logic — only show a row when there's actually something to
- * say. Empty momentum = no badge, no fake urgency.
- *
- *   - next14days >= 3       → "X reservations in the next 14 days"
- *   - last7days >= 2        → "X reservations this week"
- *   - nextSoldOutDate set   → "Next sold-out date: [Y] — book a different evening"
- *
- * Maximum 2 badges shown so it doesn't crowd the above-fold space.
- */
+const STRINGS: Record<string, {
+  next14: (n: number, p: string) => string;
+  last7: (n: number, p: string) => string;
+  soldOut: (date: string) => string;
+}> = {
+  en: {
+    next14: (n, p) => `${n} ${p} reservations confirmed for the next 14 days`,
+    last7: (n, p) => `${n} new ${p} bookings in the last 7 days`,
+    soldOut: (d) => `Next sold-out date: ${d} — pick a different evening`,
+  },
+  tr: {
+    next14: (n, p) => `Önümüzdeki 14 gün için ${n} onaylanmış ${p} rezervasyonu`,
+    last7: (n, p) => `Son 7 günde ${n} yeni ${p} rezervasyonu`,
+    soldOut: (d) => `Bir sonraki dolu tarih: ${d} — başka bir akşam seçin`,
+  },
+  de: {
+    next14: (n, p) => `${n} bestätigte ${p}-Reservierungen in den nächsten 14 Tagen`,
+    last7: (n, p) => `${n} neue ${p}-Buchungen in den letzten 7 Tagen`,
+    soldOut: (d) => `Nächster ausverkaufter Termin: ${d} — wählen Sie einen anderen Abend`,
+  },
+  fr: {
+    next14: (n, p) => `${n} réservations ${p} confirmées pour les 14 prochains jours`,
+    last7: (n, p) => `${n} nouvelles réservations ${p} ces 7 derniers jours`,
+    soldOut: (d) => `Prochaine date complète : ${d} — choisissez une autre soirée`,
+  },
+  nl: {
+    next14: (n, p) => `${n} bevestigde ${p}-reserveringen voor de komende 14 dagen`,
+    last7: (n, p) => `${n} nieuwe ${p}-boekingen in de afgelopen 7 dagen`,
+    soldOut: (d) => `Volgende uitverkochte datum: ${d} — kies een andere avond`,
+  },
+  ru: {
+    next14: (n, p) => `${n} подтверждённых бронирований ${p} на ближайшие 14 дней`,
+    last7: (n, p) => `${n} новых бронирований ${p} за последние 7 дней`,
+    soldOut: (d) => `Ближайшая распроданная дата: ${d} — выберите другой вечер`,
+  },
+};
+
+const DATE_LOCALE: Record<string, string> = {
+  en: "en-GB",
+  tr: "tr-TR",
+  de: "de-DE",
+  fr: "fr-FR",
+  nl: "nl-NL",
+  ru: "ru-RU",
+};
 
 type Props = {
   momentum: BookingMomentum;
-  productLabel: string; // e.g. "sunset cruise"
+  productLabel: string; // e.g. "sunset cruise" — caller passes locale-appropriate label
+  locale?: SiteLocale;
   className?: string;
 };
 
 export default function BookingMomentumBadge({
   momentum,
   productLabel,
+  locale = "en",
   className = "",
 }: Props) {
+  const t = STRINGS[locale] ?? STRINGS.en;
+  const dateLoc = DATE_LOCALE[locale] ?? "en-GB";
   const badges: Array<{ icon: typeof TrendingUp; text: string; tone: "neutral" | "warn" }> = [];
 
   if (momentum.next14days >= 3) {
     badges.push({
       icon: TrendingUp,
-      text: `${momentum.next14days} ${productLabel} reservations confirmed for the next 14 days`,
+      text: t.next14(momentum.next14days, productLabel),
       tone: "neutral",
     });
   } else if (momentum.last7days >= 2) {
     badges.push({
       icon: Calendar,
-      text: `${momentum.last7days} new ${productLabel} bookings in the last 7 days`,
+      text: t.last7(momentum.last7days, productLabel),
       tone: "neutral",
     });
   }
@@ -45,7 +82,7 @@ export default function BookingMomentumBadge({
   if (momentum.nextSoldOutDate) {
     badges.push({
       icon: AlertCircle,
-      text: `Next sold-out date: ${formatDate(momentum.nextSoldOutDate)} — pick a different evening`,
+      text: t.soldOut(formatDate(momentum.nextSoldOutDate, dateLoc)),
       tone: "warn",
     });
   }
@@ -79,9 +116,9 @@ export default function BookingMomentumBadge({
   );
 }
 
-function formatDate(iso: string): string {
+function formatDate(iso: string, dateLocale: string = "en-GB"): string {
   const d = new Date(iso);
-  return d.toLocaleDateString("en-GB", {
+  return d.toLocaleDateString(dateLocale, {
     weekday: "short",
     day: "numeric",
     month: "short",

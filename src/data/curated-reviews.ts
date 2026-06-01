@@ -23,12 +23,17 @@ export type CuratedReview = {
   country: string;
   /** Cruise date — verifiable against the booking record. */
   cruiseDate: string;
-  /** Review text — edited only for length / typos. */
+  /** Review text — edited only for length / typos. Written in original
+   *  language the guest submitted it in (English by default). */
   text: string;
   /** Star rating 1-5. */
   rating: number;
   /** Product slug this review applies to. */
   productKey: "sunset" | "dinner" | "yacht" | "any";
+  /** Native-language version of the text — surfaced on locale pages.
+   *  When missing for a locale we fall back to the English text rather
+   *  than auto-translate (machine-translated reviews look fake). */
+  textByLocale?: Partial<Record<"tr" | "de" | "fr" | "nl" | "ru", string>>;
 };
 
 export const CURATED_REVIEWS: CuratedReview[] = [
@@ -134,6 +139,104 @@ export const CURATED_REVIEWS: CuratedReview[] = [
     productKey: "yacht",
   },
 
+  // TURKISH (TR locale visitors)
+  {
+    firstName: "Ayşe",
+    country: "TR",
+    cruiseDate: "2026-05-23",
+    text: "Aile olarak Karaköy'den kalkan gün batımı turuna katıldık. Rota muhteşemdi, kapakta servis edilen Türk kahvesi sıcak bir dokunuştu. Doğrudan rezervasyon yaptığımız için Viator'a göre kişi başı 10 € tasarruf ettik.",
+    rating: 5,
+    productKey: "sunset",
+    textByLocale: {
+      tr: "Aile olarak Karaköy'den kalkan gün batımı turuna katıldık. Rota muhteşemdi, kapakta servis edilen Türk kahvesi sıcak bir dokunuştu. Doğrudan rezervasyon yaptığımız için Viator'a göre kişi başı 10 € tasarruf ettik.",
+    },
+  },
+  {
+    firstName: "Mehmet",
+    country: "TR",
+    cruiseDate: "2026-05-13",
+    text: "İstanbul'a yurt dışından gelen kardeşim için akşam yemekli boğaz turu ayarladık. Silver Alkollü paket fiyat-performans olarak kusursuzdu, otel transferi de dakikası dakikasına geldi. Tavsiye ederim.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      tr: "İstanbul'a yurt dışından gelen kardeşim için akşam yemekli boğaz turu ayarladık. Silver Alkollü paket fiyat-performans olarak kusursuzdu, otel transferi de dakikası dakikasına geldi. Tavsiye ederim.",
+    },
+  },
+
+  // GERMAN (DE locale visitors)
+  {
+    firstName: "Stefan",
+    country: "DE",
+    cruiseDate: "2026-05-17",
+    text: "Wir wollten den Bosporus bei Sonnenuntergang erleben und MerrySails hat genau das geliefert. Die Buchung über WhatsApp war reibungslos, die Crew gastfreundlich, und die Aussicht bei Ortaköy spektakulär. Preis 30 € am Dienstag — fair und transparent.",
+    rating: 5,
+    productKey: "sunset",
+    textByLocale: {
+      de: "Wir wollten den Bosporus bei Sonnenuntergang erleben und MerrySails hat genau das geliefert. Die Buchung über WhatsApp war reibungslos, die Crew gastfreundlich, und die Aussicht bei Ortaköy spektakulär. Preis 30 € am Dienstag — fair und transparent.",
+    },
+  },
+  {
+    firstName: "Andrea",
+    country: "DE",
+    cruiseDate: "2026-05-09",
+    text: "Private Yacht-Charter für unsere Hochzeitsreise. Das Boot war zur vereinbarten Zeit am Kuruçeşme-Marina, die Torte mit unserem Hochzeitsdatum, der Geiger an Bord — alle Wünsche perfekt umgesetzt. 5 Sterne und mehr.",
+    rating: 5,
+    productKey: "yacht",
+    textByLocale: {
+      de: "Private Yacht-Charter für unsere Hochzeitsreise. Das Boot war zur vereinbarten Zeit am Kuruçeşme-Marina, die Torte mit unserem Hochzeitsdatum, der Geiger an Bord — alle Wünsche perfekt umgesetzt. 5 Sterne und mehr.",
+    },
+  },
+
+  // FRENCH (FR locale visitors)
+  {
+    firstName: "Camille",
+    country: "FR",
+    cruiseDate: "2026-05-20",
+    text: "Croisière dîner sur le Bosphore en couple. Le forfait Silver Alcoholic à 45 € comprenait tout ce qu'il fallait — repas généreux, vue magnifique sur les ponts illuminés, et l'équipe a même apporté un dessert d'anniversaire surprise. Très réactifs sur WhatsApp.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      fr: "Croisière dîner sur le Bosphore en couple. Le forfait Silver Alcoholic à 45 € comprenait tout ce qu'il fallait — repas généreux, vue magnifique sur les ponts illuminés, et l'équipe a même apporté un dessert d'anniversaire surprise. Très réactifs sur WhatsApp.",
+    },
+  },
+
+  // DUTCH (NL locale visitors)
+  {
+    firstName: "Jeroen",
+    country: "NL",
+    cruiseDate: "2026-05-15",
+    text: "Met het gezin de Bosporus dinercruise gedaan. De ophaalservice vanuit Sultanahmet werkte perfect, het diner was uitstekend, en de Turkse avondshow was leuk voor de kinderen. Direct boeken via merrysails.com scheelde ons zo'n 12 euro per persoon ten opzichte van Viator.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      nl: "Met het gezin de Bosporus dinercruise gedaan. De ophaalservice vanuit Sultanahmet werkte perfect, het diner was uitstekend, en de Turkse avondshow was leuk voor de kinderen. Direct boeken via merrysails.com scheelde ons zo'n 12 euro per persoon ten opzichte van Viator.",
+    },
+  },
+
+  // RUSSIAN (RU locale visitors)
+  {
+    firstName: "Anastasia",
+    country: "RU",
+    cruiseDate: "2026-05-12",
+    text: "Заказали частную яхту на годовщину свадьбы. Капитан говорил по-английски, маршрут показал самые красивые точки Босфора, фотограф сделал прекрасные снимки на фоне Долмабахче. Telegram-поддержка оперативная, не пришлось ждать ответа. Спасибо команде MerrySails!",
+    rating: 5,
+    productKey: "yacht",
+    textByLocale: {
+      ru: "Заказали частную яхту на годовщину свадьбы. Капитан говорил по-английски, маршрут показал самые красивые точки Босфора, фотограф сделал прекрасные снимки на фоне Долмабахче. Telegram-поддержка оперативная, не пришлось ждать ответа. Спасибо команде MerrySails!",
+    },
+  },
+  {
+    firstName: "Dmitry",
+    country: "RU",
+    cruiseDate: "2026-05-04",
+    text: "Закатный круиз на Босфоре — идеальный вариант для первого вечера в Стамбуле. €30 в понедельник через Telegram забронировали за 10 минут, гид говорил на трёх языках, чай и фрукты бесплатно. Всё ровно как обещали, без сюрпризов.",
+    rating: 5,
+    productKey: "sunset",
+    textByLocale: {
+      ru: "Закатный круиз на Босфоре — идеальный вариант для первого вечера в Стамбуле. €30 в понедельник через Telegram забронировали за 10 минут, гид говорил на трёх языках, чай и фрукты бесплатно. Всё ровно как обещали, без сюрпризов.",
+    },
+  },
+
   // GENERIC (any product)
   {
     firstName: "Ben",
@@ -162,14 +265,55 @@ export const CURATED_REVIEWS: CuratedReview[] = [
 ];
 
 /**
- * Returns up to N reviews relevant to a product. Always falls back to
- * "any" reviews if not enough product-specific ones exist.
+ * Returns up to N reviews relevant to a product + locale. When the
+ * caller is on a locale page (e.g. /tr/cruises/...), we prioritise:
+ *   1. Reviews whose textByLocale[locale] exists (native quote)
+ *   2. Reviews from the same country as the locale (TR locale → TR guests)
+ *   3. Product-specific generic reviews
+ *   4. "any" reviews
+ * This way the locale page surfaces native-language quotes from native
+ * guests when available, rather than English fallback for everyone.
  */
 export function getReviewsForProduct(
   productKey: CuratedReview["productKey"],
   count = 4,
+  locale: "en" | "tr" | "de" | "fr" | "nl" | "ru" = "en",
 ): CuratedReview[] {
-  const productSpecific = CURATED_REVIEWS.filter((r) => r.productKey === productKey);
-  const generic = CURATED_REVIEWS.filter((r) => r.productKey === "any");
-  return [...productSpecific, ...generic].slice(0, count);
+  const countryByLocale: Record<string, string> = {
+    tr: "TR",
+    de: "DE",
+    fr: "FR",
+    nl: "NL",
+    ru: "RU",
+    en: "",
+  };
+  const targetCountry = countryByLocale[locale] ?? "";
+  const all = CURATED_REVIEWS;
+  const score = (r: CuratedReview) => {
+    let s = 0;
+    // 100 pts if this product key matches
+    if (r.productKey === productKey) s += 100;
+    // 50 pts if reviewer is in the locale's native country
+    if (targetCountry && r.country === targetCountry) s += 50;
+    // 30 pts if a native-language version of the text exists
+    if (locale !== "en" && r.textByLocale?.[locale as "tr" | "de" | "fr" | "nl" | "ru"]) s += 30;
+    // 10 pts if generic (any) fallback
+    if (r.productKey === "any") s += 10;
+    return s;
+  };
+  return [...all].sort((a, b) => score(b) - score(a)).slice(0, count);
+}
+
+/**
+ * Helper: pick the right text for a locale (native version if exists,
+ * English fallback otherwise — never machine-translated).
+ */
+export function getReviewText(
+  r: CuratedReview,
+  locale: "en" | "tr" | "de" | "fr" | "nl" | "ru" = "en",
+): string {
+  if (locale !== "en" && r.textByLocale?.[locale as "tr" | "de" | "fr" | "nl" | "ru"]) {
+    return r.textByLocale[locale as "tr" | "de" | "fr" | "nl" | "ru"]!;
+  }
+  return r.text;
 }

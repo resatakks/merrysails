@@ -1,43 +1,78 @@
 import { Sparkles } from "lucide-react";
 import { DIRECT_BOOKING_STATS, PARENT_OPERATOR_STATS } from "@/lib/trust-evidence";
+import type { SiteLocale } from "@/i18n/config";
 
 /**
- * Subtle live-counter badge — "27+ bookings since April 15 · 50k+ guests since 2001"
- *
- * Why this exists (2026-06-01 — Tier 1 conversion fix):
- *   Social proof on the entry pages is currently a 4-tile rating row. That
- *   covers quality but NOT volume / recency. Adding a small "X bookings since
- *   [date]" line — pulled from real DB count via DIRECT_BOOKING_STATS —
- *   tells mobile visitors "people are actually buying this right now."
- *   The urgency / herd effect on conversion is well-documented
- *   (Cialdini Influence, conversion rates lift 4-10% with credible counts).
- *
- * Data integrity:
- *   - Numbers come from src/lib/trust-evidence.ts which is refreshed
- *     manually at start of each month (snapshot date stamped).
- *   - Both numbers are TRUE: 27 direct bookings since 15 April 2026,
- *     50,000+ cumulative since 2001 under parent Merry Tourism.
- *
- * Variant:
- *   - inline: small text version for above-fold rows
- *   - banner: larger badge version for hero CTAs
+ * Subtle live-counter badge — pulls from real DB snapshot in trust-evidence.ts.
+ * Localised for all 5 active non-EN locales.
  */
+
+const STRINGS: Record<string, {
+  directBookings: (n: number) => string;
+  since: (date: string) => string;
+  cumulativeGuests: (k: number, year: number) => string;
+}> = {
+  en: {
+    directBookings: (n) => `${n}+ direct bookings`,
+    since: (d) => `since ${d}.`,
+    cumulativeGuests: (k, year) => `${k}k+ guests cumulative since ${year}.`,
+  },
+  tr: {
+    directBookings: (n) => `${n}+ doğrudan rezervasyon`,
+    since: (d) => `${d} itibarıyla.`,
+    cumulativeGuests: (k, year) => `${year}'den bu yana toplam ${k} bin+ misafir.`,
+  },
+  de: {
+    directBookings: (n) => `${n}+ Direktbuchungen`,
+    since: (d) => `seit ${d}.`,
+    cumulativeGuests: (k, year) => `Kumulativ ${k}k+ Gäste seit ${year}.`,
+  },
+  fr: {
+    directBookings: (n) => `${n}+ réservations directes`,
+    since: (d) => `depuis le ${d}.`,
+    cumulativeGuests: (k, year) => `${k}k+ voyageurs cumulés depuis ${year}.`,
+  },
+  nl: {
+    directBookings: (n) => `${n}+ directe boekingen`,
+    since: (d) => `sinds ${d}.`,
+    cumulativeGuests: (k, year) => `${k}k+ gasten cumulatief sinds ${year}.`,
+  },
+  ru: {
+    directBookings: (n) => `${n}+ прямых бронирований`,
+    since: (d) => `с ${d}.`,
+    cumulativeGuests: (k, year) => `Всего ${k}k+ гостей с ${year} года.`,
+  },
+};
+
+const DATE_LOCALE: Record<string, string> = {
+  en: "en-GB",
+  tr: "tr-TR",
+  de: "de-DE",
+  fr: "fr-FR",
+  nl: "nl-NL",
+  ru: "ru-RU",
+};
+
 type Props = {
   variant?: "inline" | "banner";
+  locale?: SiteLocale;
   className?: string;
 };
 
 export default function LiveBookingCounter({
   variant = "inline",
+  locale = "en",
   className = "",
 }: Props) {
+  const t = STRINGS[locale] ?? STRINGS.en;
   const launchDateText = new Date(
     DIRECT_BOOKING_STATS.launchedOn,
-  ).toLocaleDateString("en-GB", {
+  ).toLocaleDateString(DATE_LOCALE[locale] ?? "en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
+  const k = Number((PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0));
 
   if (variant === "banner") {
     return (
@@ -47,30 +82,26 @@ export default function LiveBookingCounter({
         <Sparkles className="h-5 w-5 shrink-0 text-emerald-600" aria-hidden />
         <div className="text-sm">
           <span className="font-bold text-emerald-900">
-            {DIRECT_BOOKING_STATS.totalReservations}+ direct bookings
+            {t.directBookings(DIRECT_BOOKING_STATS.totalReservations)}
           </span>{" "}
-          <span className="text-emerald-800">since {launchDateText}.</span>{" "}
+          <span className="text-emerald-800">{t.since(launchDateText)}</span>{" "}
           <span className="text-emerald-700">
-            {(PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0)}k+
-            guests cumulative since {PARENT_OPERATOR_STATS.tursabSinceYear}.
+            {t.cumulativeGuests(k, PARENT_OPERATOR_STATS.tursabSinceYear)}
           </span>
         </div>
       </div>
     );
   }
 
-  // inline (default)
   return (
     <p className={`text-xs text-[var(--text-muted)] ${className}`}>
       <span className="font-semibold text-[var(--heading)]">
-        {DIRECT_BOOKING_STATS.totalReservations}+
+        {t.directBookings(DIRECT_BOOKING_STATS.totalReservations)}
       </span>{" "}
-      direct bookings since {launchDateText}
-      {" · "}
+      {t.since(launchDateText)}{" "}
       <span className="font-semibold text-[var(--heading)]">
-        {(PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0)}k+
-      </span>{" "}
-      guests since {PARENT_OPERATOR_STATS.tursabSinceYear}
+        {t.cumulativeGuests(k, PARENT_OPERATOR_STATS.tursabSinceYear)}
+      </span>
     </p>
   );
 }

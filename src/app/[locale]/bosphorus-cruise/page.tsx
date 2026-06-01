@@ -6,6 +6,9 @@ import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 import QuickAnswer from "@/components/ai/QuickAnswer";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 
 export const revalidate = 3600;
 
@@ -546,6 +549,12 @@ export default async function LocaleBosphorusCruisePage({
           <p className="max-w-2xl text-lg text-[var(--body-text)]">{c.intro}</p>
           <p className="mt-3 text-sm font-semibold text-[var(--text-muted)]">{c.trustBadge}</p>
 
+          {/* Locale-aware social-proof row — same component as EN, translated. */}
+          <div className="mt-6">
+            <SocialProofBadges variant="generic" locale={locale as SiteLocale} />
+            <LiveBookingCounter locale={locale as SiteLocale} className="mt-2" />
+          </div>
+
           {/* Key facts bar */}
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {c.keyFacts.map((f) => (
@@ -754,6 +763,14 @@ export default async function LocaleBosphorusCruisePage({
               </details>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Locale-aware guest reviews — pulls native-language quotes
+          when available, falls back to English. */}
+      <div className="py-12 bg-white">
+        <div className="container-main max-w-5xl">
+          <ReviewsCarousel productKey="any" locale={locale as SiteLocale} />
         </div>
       </div>
 
