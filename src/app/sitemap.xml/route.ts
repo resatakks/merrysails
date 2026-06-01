@@ -170,6 +170,8 @@ export function GET() {
     { url: `${SITE_URL}/proposal-yacht-with-photographer-istanbul`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-with-photographer-istanbul") },
     // Anniversary niche page (2026-06-01) — separate SERP intent from proposal.
     { url: `${SITE_URL}/anniversary-yacht-cruise-istanbul`, changefreq: "monthly", priority: "0.68", lastmod: contentLastmod },
+    // Honeymoon yacht page (2026-06-01) — distinct from anniversary + proposal.
+    { url: `${SITE_URL}/honeymoon-yacht-cruise-istanbul`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },
     // Operator comparison page (2026-06-01) — high commercial intent.
     { url: `${SITE_URL}/merrysails-vs-bosphorustour`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod },
     // Hotel-cluster landing pages (2026-06-01) — Tier-2 high-intent SERP capture.

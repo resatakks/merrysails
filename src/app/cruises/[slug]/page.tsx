@@ -18,6 +18,9 @@ import { hasQuickAnswerLocale, type QuickAnswerKey } from "@/data/quick-answers"
 import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import SocialProofBadges from "@/components/ui/SocialProofBadges";
 import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -422,6 +425,18 @@ export default async function TourDetailPage({
 
   const related = tours.filter((t) => t.slug !== slug && t.category === tour.category).slice(0, 4);
 
+  // Live booking momentum — counts confirmed Reservations in the DB.
+  // Returns zeros silently on DB error so the badge just hides.
+  const momentum = await getProductBookingMomentum(slug);
+  const productLabel =
+    slug === "bosphorus-sunset-cruise"
+      ? "sunset cruise"
+      : slug === "bosphorus-dinner-cruise"
+        ? "dinner cruise"
+        : tour.category === "private"
+          ? "private yacht"
+          : "Bosphorus cruise";
+
   // JSON-LD TouristTrip + Product schema
   const tourSchema = {
     "@context": "https://schema.org",
@@ -768,6 +783,14 @@ export default async function TourDetailPage({
             }
           />
 
+          {/* Live booking-momentum row — shown only when there's real
+              data to surface. Silent (renders null) on empty / DB error. */}
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel={productLabel}
+            className="mb-6"
+          />
+
           {tour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={tour.packages}
@@ -788,6 +811,21 @@ export default async function TourDetailPage({
 
           <div className="my-8">
             <HowToGetThere slug={tour.slug} />
+          </div>
+
+          {/* Recent guest reviews — curated from WhatsApp/email follow-up. */}
+          <div className="my-8">
+            <ReviewsCarousel
+              productKey={
+                slug === "bosphorus-sunset-cruise"
+                  ? "sunset"
+                  : slug === "bosphorus-dinner-cruise"
+                    ? "dinner"
+                    : tour.category === "private"
+                      ? "yacht"
+                      : "any"
+              }
+            />
           </div>
 
           <div className="my-6 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:flex-wrap">

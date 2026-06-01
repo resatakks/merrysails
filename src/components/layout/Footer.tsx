@@ -224,6 +224,7 @@ const companyLinks = [
   { label: "MerrySails vs Bosphorustour", href: "/merrysails-vs-bosphorustour" },
   { label: "MerrySails vs Viator", href: "/merrysails-vs-viator" },
   { label: "Anniversary Yacht Cruise", href: "/anniversary-yacht-cruise-istanbul" },
+  { label: "Honeymoon Yacht Cruise", href: "/honeymoon-yacht-cruise-istanbul" },
   { label: "Cruise for Couples", href: "/bosphorus-cruise-for-couples" },
   { label: "Cruise for Families", href: "/bosphorus-cruise-for-families" },
   { label: "Cruise from Sultanahmet", href: "/bosphorus-cruise-from-sultanahmet" },

@@ -9,6 +9,9 @@ import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
 import ComparisonTable from "@/components/ai/ComparisonTable";
 import QuickAnswer from "@/components/ai/QuickAnswer";
@@ -406,6 +409,8 @@ export default async function YachtCharterIstanbulPage({
     ? await resolveBookingPrefill(resolvedSearchParams)
     : null;
 
+  const momentum = await getProductBookingMomentum("yacht-charter-in-istanbul");
+
   return (
     <>
       <script
@@ -484,6 +489,12 @@ export default async function YachtCharterIstanbulPage({
           {/* Trust signals above the fold — 4.9/5 yacht rating + TÜRSAB + 50k+
               guests + 3-min WhatsApp reply. */}
           <SocialProofBadges variant="product" productKey="yacht" />
+
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel="private yacht"
+            className="mb-6"
+          />
 
           {bookingPrefill && (
             <TourDetailClient
@@ -818,6 +829,10 @@ export default async function YachtCharterIstanbulPage({
               </li>
             </ul>
           </section>
+
+          <div className="mb-8">
+            <ReviewsCarousel productKey="yacht" />
+          </div>
 
           <RelatedTours exclude="yacht" heading="Other Bosphorus experiences" />
         </div>

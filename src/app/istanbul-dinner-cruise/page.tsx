@@ -10,6 +10,9 @@ import RelatedTours from "@/components/ui/RelatedTours";
 import HowToGetThere from "@/components/tours/HowToGetThere";
 import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
+import { getProductBookingMomentum } from "@/lib/booking-momentum";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -440,6 +443,7 @@ export default async function IstanbulDinnerCruisePage({
   }
 
   const resolvedSearchParams = await searchParams;
+  const momentum = await getProductBookingMomentum("bosphorus-dinner-cruise");
 
   return (
     <>
@@ -544,6 +548,12 @@ export default async function IstanbulDinnerCruisePage({
               guests + 3-min WhatsApp reply at top of pillar page. */}
           <SocialProofBadges variant="product" productKey="dinner" />
 
+          <BookingMomentumBadge
+            momentum={momentum}
+            productLabel="dinner cruise"
+            className="mb-6"
+          />
+
           {dinnerTour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={dinnerTour.packages}
@@ -560,6 +570,10 @@ export default async function IstanbulDinnerCruisePage({
 
           <div className="my-8">
             <HowToGetThere slug="bosphorus-dinner-cruise" />
+          </div>
+
+          <div className="my-8">
+            <ReviewsCarousel productKey="dinner" />
           </div>
 
           <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
