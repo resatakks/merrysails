@@ -63,6 +63,9 @@ const EN_URLS = [
   "/bosphorus-cruise-from-sultanahmet",
   "/bosphorus-cruise-from-taksim",
   "/bosphorus-cruise-from-beyoglu",
+  "/merrysails-vs-viator",
+  "/bosphorus-cruise-for-couples",
+  "/bosphorus-cruise-for-families",
   "/pricing",
   "/sitemap.xml",
 ];
