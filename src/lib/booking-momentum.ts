@@ -24,6 +24,13 @@ export type BookingMomentum = {
   allTime: number;
   /** Next upcoming sold-out date for this product (or null). */
   nextSoldOutDate: string | null;
+  /** True when today's departure has NOT been marked sold out in
+   *  TourOperationDay AND the local time is still before a reasonable
+   *  booking cutoff (15:00 Istanbul time). Drives the "Tonight ✓
+   *  Available — book now" badge. */
+  tonightAvailable: boolean;
+  /** True when tomorrow's departure has NOT been marked sold out. */
+  tomorrowAvailable: boolean;
 };
 
 const EMPTY_MOMENTUM: BookingMomentum = {
@@ -31,6 +38,8 @@ const EMPTY_MOMENTUM: BookingMomentum = {
   next14days: 0,
   allTime: 0,
   nextSoldOutDate: null,
+  tonightAvailable: false,
+  tomorrowAvailable: false,
 };
 
 /**
@@ -55,7 +64,17 @@ export async function getProductBookingMomentum(
     // all hitting the same canonical page. Use prefix-and-exact match.
     const matchingSlugs = expandTourSlugAliases(tourSlug);
 
-    const [last7, next14, allTime, nextSoldOut] = await Promise.all([
+    // Day boundaries — use UTC for consistent DB comparison. The badge
+    // displays Istanbul-local but the comparison itself just needs
+    // calendar-day alignment which UTC gets right ±3 h.
+    const today = new Date(now);
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const dayAfterTomorrow = new Date(today);
+    dayAfterTomorrow.setDate(today.getDate() + 2);
+
+    const [last7, next14, allTime, nextSoldOut, todaySoldOut, tomorrowSoldOut] = await Promise.all([
       prisma.reservation.count({
         where: {
           tourSlug: { in: matchingSlugs },
@@ -87,13 +106,38 @@ export async function getProductBookingMomentum(
           select: { date: true },
         })
         .then((d) => (d ? d.date.toISOString().slice(0, 10) : null)),
+      // Check whether today is marked sold-out
+      prisma.tourOperationDay.findFirst({
+        where: {
+          tourSlug: { in: matchingSlugs },
+          isSoldOut: true,
+          date: { gte: today, lt: tomorrow },
+        },
+        select: { id: true },
+      }),
+      // Check whether tomorrow is marked sold-out
+      prisma.tourOperationDay.findFirst({
+        where: {
+          tourSlug: { in: matchingSlugs },
+          isSoldOut: true,
+          date: { gte: tomorrow, lt: dayAfterTomorrow },
+        },
+        select: { id: true },
+      }),
     ]);
+
+    // Tonight available = NOT sold-out AND current Istanbul hour < 15
+    // (the operational cutoff for tonight bookings). Istanbul is UTC+3.
+    const istanbulHour = (now.getUTCHours() + 3) % 24;
+    const beforeCutoff = istanbulHour < 15;
 
     return {
       last7days: last7,
       next14days: next14,
       allTime,
       nextSoldOutDate: nextSoldOut,
+      tonightAvailable: !todaySoldOut && beforeCutoff,
+      tomorrowAvailable: !tomorrowSoldOut,
     };
   } catch (error) {
     // Silent failure — the badge just doesn't render if the DB query fails.
