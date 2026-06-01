@@ -68,7 +68,21 @@ export default function CoreBookingPlanner({
   const [packageSelectionByTour, setPackageSelectionByTour] = useState<Record<string, string>>(
     () => Object.fromEntries(coreTours.map((tour) => [tour.slug, getDefaultPackageName(tour)]))
   );
+  // Smart date default — pre-select tomorrow rather than leaving the calendar
+  // empty. Pre-filled forms convert measurably better than blank forms; users
+  // can still change the date but they don't have to commit to a date-pick
+  // step before seeing the price/CTA come alive. Computed in useEffect so
+  // the server-rendered HTML doesn't drift from the client (today differs
+  // between SSR + hydration windows).
   const [date, setDate] = useState<Date | undefined>(undefined);
+  useEffect(() => {
+    if (date) return; // user already chose
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    setDate(tomorrow);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [selectedDepartureTime, setSelectedDepartureTime] = useState<string | undefined>(
     undefined
   );

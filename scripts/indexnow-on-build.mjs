@@ -58,6 +58,7 @@ const EN_URLS = [
   "/product-launch-yacht-istanbul",
   "/team-building-yacht-istanbul",
   "/yacht-charter-istanbul",
+  "/anniversary-yacht-cruise-istanbul",
   "/pricing",
   "/sitemap.xml",
 ];
