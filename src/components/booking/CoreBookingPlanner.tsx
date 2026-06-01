@@ -225,7 +225,26 @@ export default function CoreBookingPlanner({
               <button
                 key={tour.slug}
                 type="button"
-                onClick={() => setSelectedTourSlug(tour.slug)}
+                onClick={() => {
+                  // Clarity (May 27 session 4) showed users clicking the
+                  // "Selected" badge of the already-selected tour expecting
+                  // some action — it registered as a dead click because the
+                  // tour was already selected. Fix: scroll the package
+                  // selector into view so the click has a visible response
+                  // even when the tour state doesn't change.
+                  setSelectedTourSlug(tour.slug);
+                  if (isSelected && typeof document !== "undefined") {
+                    const packageSelect = document.querySelector<HTMLElement>(
+                      "[data-booking-package-selector]",
+                    );
+                    if (packageSelect) {
+                      packageSelect.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                      });
+                    }
+                  }
+                }}
                 className={cn(
                   "rounded-[1.6rem] border p-3 text-left transition-all",
                   isSelected
@@ -281,7 +300,10 @@ export default function CoreBookingPlanner({
         </div>
 
         <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1.18fr)] xl:grid-cols-[minmax(0,1.02fr)_minmax(0,1.28fr)_minmax(16rem,0.92fr)]">
-          <section className="min-w-0 rounded-[1.7rem] border border-[var(--line)] bg-[var(--surface-alt)] p-4 xl:p-5">
+          <section
+            data-booking-package-selector
+            className="min-w-0 rounded-[1.7rem] border border-[var(--line)] bg-[var(--surface-alt)] p-4 xl:p-5"
+          >
             <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
               <Sparkles className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
               Package

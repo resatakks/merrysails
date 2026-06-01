@@ -824,6 +824,7 @@ export default async function IstanbulDinnerCruisePage({
         reserveHref={`/reservation?tour=${dinnerTour.slug}#core-booking-planner`}
         reserveLabel={`Reserve from €${dinnerTour.priceEur}`}
         whatsappLocation="istanbul_dinner_cruise_pillar"
+        whatsappPrefill={`Hi MerrySails! I'm interested in the Bosphorus Dinner Cruise (from €${dinnerTour.priceEur}). What dates work and which package fits us best?`}
       />
     </>
   );

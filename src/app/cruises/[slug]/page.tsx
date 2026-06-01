@@ -17,6 +17,7 @@ import QuickAnswer from "@/components/ai/QuickAnswer";
 import { hasQuickAnswerLocale, type QuickAnswerKey } from "@/data/quick-answers";
 import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -741,6 +742,7 @@ export default async function TourDetailPage({
                 <span className="mx-2">·</span>
                 <span>★ {tour.rating}/5 ({tour.reviewCount} reviews)</span>
               </p>
+              <LiveBookingCounter className="mt-2" />
             </div>
             <Link
               href={`/reservation?tour=${tour.slug}#core-booking-planner`}
@@ -873,6 +875,7 @@ export default async function TourDetailPage({
         reserveHref={`/reservation?tour=${tour.slug}#core-booking-planner`}
         reserveLabel={`Reserve from €${tour.priceEur}`}
         whatsappLocation={`cruise_detail_${tour.slug}`}
+        whatsappPrefill={`Hi MerrySails! I'm interested in the ${tour.nameEn} (from €${tour.priceEur}). What dates are available?`}
       />
     </>
   );

@@ -826,6 +826,7 @@ export default async function YachtCharterIstanbulPage({
         reserveHref="/yacht-charter-istanbul#fleet"
         reserveLabel={`Quote from €${fleetLowestEur}`}
         whatsappLocation="yacht_charter_pillar"
+        whatsappPrefill={`Hi MerrySails! I'd like a private yacht charter quote for the Bosphorus. Group size + date if known?`}
       />
     </>
   );

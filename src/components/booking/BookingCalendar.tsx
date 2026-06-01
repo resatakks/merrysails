@@ -802,6 +802,14 @@ export default function BookingCalendar({
                     €{total}
                   </span>
                 </div>
+                {/* Clarity (May 27) showed users clicking the €{total} text
+                    expecting interaction. Adding a clear "pay onboard" sub-line
+                    converts the dead intent into a trust signal — no upfront
+                    payment is one of the highest-converting cues for direct
+                    booking (vs OTAs that demand prepayment). */}
+                <p className="-mt-1 text-xs text-[var(--text-muted)]">
+                  Pay onboard · no upfront payment · free cancellation up to 24 h before departure
+                </p>
                 {originalTotal && (
                   <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700">
                     {t.youSaveOnReservation(totalSavings)}

@@ -31,6 +31,7 @@ type Props = {
   reserveLabel: string; // e.g. "Reserve from €30"
   locale?: SiteLocale;
   whatsappLocation?: string; // for Clarity / GA4 tracking
+  whatsappPrefill?: string; // pre-fill text e.g. "Hi, I'm interested in the sunset cruise — what dates are available?"
 };
 
 export default function StickyMobileCta({
@@ -38,6 +39,7 @@ export default function StickyMobileCta({
   reserveLabel,
   locale = "en",
   whatsappLocation = "sticky_mobile_cta",
+  whatsappPrefill,
 }: Props) {
   const [visible, setVisible] = useState(false);
 
@@ -53,8 +55,11 @@ export default function StickyMobileCta({
 
   const channel = getContactChannel(locale);
   // For RU visitors (WhatsApp blocked in Russia from Feb 2026) we route to
-  // Telegram instead — getContactChannel handles that switch.
-  const whatsappHref = channel.url;
+  // Telegram instead — getContactChannel handles that switch. Telegram t.me
+  // ignores ?text= silently but we still build it for the WhatsApp case.
+  const whatsappHref = whatsappPrefill && channel.icon !== "telegram"
+    ? `${channel.url}?text=${encodeURIComponent(whatsappPrefill)}`
+    : channel.url;
 
   return (
     <div
