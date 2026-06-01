@@ -15,6 +15,8 @@ import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import { hasQuickAnswerLocale, type QuickAnswerKey } from "@/data/quick-answers";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -748,6 +750,22 @@ export default async function TourDetailPage({
             </Link>
           </div>
 
+          {/* Trust signal row — TURSAB licence + cumulative guests + rating +
+              avg WhatsApp reply. Surfaces social proof above the fold so
+              mobile bouncers see the credibility before deciding to leave. */}
+          <SocialProofBadges
+            variant="product"
+            productKey={
+              slug === "bosphorus-sunset-cruise"
+                ? "sunset"
+                : slug === "bosphorus-dinner-cruise"
+                  ? "dinner"
+                  : tour.category === "private"
+                    ? "yacht"
+                    : undefined
+            }
+          />
+
           {tour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={tour.packages}
@@ -848,6 +866,14 @@ export default async function TourDetailPage({
           )}
         </div>
       </div>
+      {/* Mobile sticky bottom CTA — keeps Reserve + WhatsApp accessible at
+          every scroll depth. Clarity (2026-05-25 → 06-01) showed mobile
+          users bouncing before reaching the in-page Reserve button. */}
+      <StickyMobileCta
+        reserveHref={`/reservation?tour=${tour.slug}#core-booking-planner`}
+        reserveLabel={`Reserve from €${tour.priceEur}`}
+        whatsappLocation={`cruise_detail_${tour.slug}`}
+      />
     </>
   );
 }

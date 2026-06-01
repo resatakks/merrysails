@@ -8,6 +8,8 @@ import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import HowToGetThere from "@/components/tours/HowToGetThere";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -538,6 +540,10 @@ export default async function IstanbulDinnerCruisePage({
             <span className="text-[var(--heading)] truncate">{dinnerTour.nameEn}</span>
           </nav>
 
+          {/* Above-fold trust row — surfaces 4.88/5 rating + TURSAB + 50k+
+              guests + 3-min WhatsApp reply at top of pillar page. */}
+          <SocialProofBadges variant="product" productKey="dinner" />
+
           {dinnerTour.packages?.some((p) => p.weekdayDiscount) && (
             <WeekdayDiscountBanner
               packages={dinnerTour.packages}
@@ -814,6 +820,11 @@ export default async function IstanbulDinnerCruisePage({
           <RelatedTours exclude="dinner" heading="Other Bosphorus experiences" />
         </div>
       </div>
+      <StickyMobileCta
+        reserveHref={`/reservation?tour=${dinnerTour.slug}#core-booking-planner`}
+        reserveLabel={`Reserve from €${dinnerTour.priceEur}`}
+        whatsappLocation="istanbul_dinner_cruise_pillar"
+      />
     </>
   );
 }

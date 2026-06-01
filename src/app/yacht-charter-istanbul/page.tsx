@@ -7,6 +7,8 @@ import { SITE_URL } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
+import SocialProofBadges from "@/components/ui/SocialProofBadges";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
 import ComparisonTable from "@/components/ai/ComparisonTable";
 import QuickAnswer from "@/components/ai/QuickAnswer";
@@ -479,6 +481,10 @@ export default async function YachtCharterIstanbulPage({
             <QuickAnswer productKey="yacht-charter-istanbul" locale="en" />
           </header>
 
+          {/* Trust signals above the fold — 4.9/5 yacht rating + TÜRSAB + 50k+
+              guests + 3-min WhatsApp reply. */}
+          <SocialProofBadges variant="product" productKey="yacht" />
+
           {bookingPrefill && (
             <TourDetailClient
               tour={yachtTour}
@@ -816,6 +822,11 @@ export default async function YachtCharterIstanbulPage({
           <RelatedTours exclude="yacht" heading="Other Bosphorus experiences" />
         </div>
       </div>
+      <StickyMobileCta
+        reserveHref="/yacht-charter-istanbul#fleet"
+        reserveLabel={`Quote from €${fleetLowestEur}`}
+        whatsappLocation="yacht_charter_pillar"
+      />
     </>
   );
 }
