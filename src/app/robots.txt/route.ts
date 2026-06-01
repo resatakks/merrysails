@@ -157,6 +157,62 @@ Allow: /
 User-agent: AhrefsBot
 Allow: /
 
+# === Multi-engine push (2026-06-01) ===
+# East-Asia search engines + Russian/Czech/Korean — explicit Allow keeps
+# crawlers active even when our default User-agent: * already permits them.
+# This matters because some engines (Naver/Yeti, Sogou) crawl conservatively
+# unless they see their UA listed by name.
+
+# Naver — Korean search market leader. Korean tourists to Istanbul are a
+# meaningful segment (~600k/year inbound to Türkiye).
+User-agent: Yeti
+Allow: /
+
+# Daum — secondary Korean engine.
+User-agent: Daumoa
+Allow: /
+
+# Sogou — Chinese search engine (3rd after Baidu and Shenma). Crawls .com
+# domains without ICP licence, unlike Baidu spider.
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+# Baidu — Chinese search market leader. Limited indexation for non-.cn
+# without ICP, but BaiduSpider still crawls and ranks for some queries.
+User-agent: Baiduspider
+Allow: /
+
+# 360 Search (Haosou / Qihoo) — second-tier Chinese engine.
+User-agent: 360Spider
+Allow: /
+
+User-agent: HaosouSpider
+Allow: /
+
+# Seznam — Czech search engine. Slovakian / Czech tourists segment.
+User-agent: SeznamBot
+Allow: /
+
+# DuckDuckGo — pulls from Bing index but has own crawler too. Privacy-
+# conscious EU/US visitor segment.
+User-agent: DuckDuckBot
+Allow: /
+
+# Mojeek — independent EU search engine, growing 2025-2026.
+User-agent: MojeekBot
+Allow: /
+
+# Marginalia — independent search engine, frequently used by AI tools.
+User-agent: search.marginalia.nu
+Allow: /
+
+# Petal — Huawei AppGallery / Petal Search (Android Asian market).
+User-agent: PetalBot
+Allow: /
+
 Host: https://merrysails.com
 Sitemap: https://merrysails.com/sitemap.xml
 

@@ -34,7 +34,7 @@ const VERCEL_ENV = process.env.VERCEL_ENV;
 
 // Curated commercial / pricing surface — these get a fresh IndexNow ping on
 // every production deploy. Add new commercial pages here as they ship.
-const URLS_TO_PING = [
+const EN_URLS = [
   "/",
   "/bosphorus-cruise",
   "/bosphorus-cruise-departure-points",
@@ -57,9 +57,51 @@ const URLS_TO_PING = [
   "/kurucesme-marina-yacht-charter",
   "/product-launch-yacht-istanbul",
   "/team-building-yacht-istanbul",
+  "/yacht-charter-istanbul",
   "/pricing",
   "/sitemap.xml",
-].map((p) => `${SITE_URL}${p}`);
+];
+
+// Locale commercial pages — RU added 2026-06-01 (full Russian build-out
+// across 8 commercial pages); TR/DE/FR/NL already shipped earlier.
+const LOCALE_COMMERCIAL_SLUGS = [
+  "/bosphorus-cruise",
+  "/istanbul-dinner-cruise",
+  "/yacht-charter-istanbul",
+  "/cruises/bosphorus-sunset-cruise",
+  "/boat-rental-istanbul",
+  "/proposal-yacht-rental-istanbul",
+  "/private-bosphorus-dinner-cruise",
+  "/corporate-events",
+  "/private-events",
+  "/kabatas-dinner-cruise-istanbul",
+  "/team-building-yacht-istanbul",
+  "/kurucesme-marina-yacht-charter",
+];
+
+const LOCALE_URLS = ["tr", "de", "fr", "nl", "ru"].flatMap((locale) =>
+  LOCALE_COMMERCIAL_SLUGS.map((slug) => `/${locale}${slug}`),
+);
+
+// Featured 2026 blog posts — high-citation-value content shipped May-June.
+const FEATURED_BLOG_URLS = [
+  "/blog/istanbul-3-day-itinerary-bosphorus-cruise-2026",
+  "/blog/bosphorus-cruise-new-year-eve-istanbul-2026-2027",
+  "/blog/bosphorus-cruise-solo-traveler-istanbul-2026",
+  "/blog/bosphorus-cruise-vs-princes-islands-tour-istanbul-2026",
+  "/blog/choosing-yacht-size-bosphorus-charter-istanbul-2026",
+  "/blog/istanbul-atm-currency-exchange-2026",
+  "/blog/what-to-wear-bosphorus-cruise-by-season",
+  "/blog/istanbul-eid-bayram-cruise-guide-2026",
+  "/blog/istanbul-airport-to-bosphorus-cruise-transfer-guide",
+  "/blog/best-istanbul-bosphorus-cruise-comparison-2026",
+  "/blog/book-bosphorus-cruise-direct-save-2026",
+  "/blog/istanbul-tipping-guide-2026",
+];
+
+const URLS_TO_PING = [...EN_URLS, ...LOCALE_URLS, ...FEATURED_BLOG_URLS].map(
+  (p) => `${SITE_URL}${p}`,
+);
 
 async function main() {
   // Gate 1 — only fire on Vercel production builds.
