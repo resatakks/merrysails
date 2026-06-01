@@ -75,20 +75,15 @@ export default function BoatCard({
   fleetDetailBasePath,
 }: Props) {
   const t = getCharterFleetLocale(boat, locale);
-  const allImages = useMemo(
-    () => [...boat.exteriorImages, ...boat.interiorImages],
-    [boat],
-  );
   const [imageIdx, setImageIdx] = useState(0);
   const [tab, setTab] = useState<"exterior" | "interior">("exterior");
   const [hours, setHours] = useState<number>(boat.minHours);
 
   const visibleImages = tab === "exterior" ? boat.exteriorImages : boat.interiorImages;
-  const currentImage = visibleImages[imageIdx % visibleImages.length] ?? allImages[0];
-  // Auto-advance through the visible gallery every 2 s. Pauses on hover via
-  // the parent <article>'s :hover state by checking a ref-less hover signal:
-  // we keep it simple and always advance — manual clicks still take effect
-  // immediately because setImageIdx ignores the interval's stale closure.
+  // Auto-advance through the visible gallery every 2 s. Manual arrow clicks
+  // still take effect immediately because all images are stacked with opacity
+  // (see render below) — the click is an instant local opacity toggle, not a
+  // network fetch.
   useEffect(() => {
     if (visibleImages.length <= 1) return undefined;
     const id = window.setInterval(() => {
@@ -96,9 +91,6 @@ export default function BoatCard({
     }, 2000);
     return () => window.clearInterval(id);
   }, [visibleImages.length, tab]);
-  // Preload the next image so the click-to-advance response is instant
-  // instead of waiting on a cold fetch (the user reported a ~1 s lag).
-  const nextImage = visibleImages[(imageIdx + 1) % visibleImages.length];
 
   const hourOptions = useMemo(() => {
     if (!boat.priceByHours) return [];
@@ -138,29 +130,37 @@ export default function BoatCard({
           className="absolute inset-0 z-0 block"
           aria-label={`${t.label} — ${strings.viewDetails}`}
         >
-          {currentImage && (
-            <Image
-              src={currentImage}
-              alt={`${t.label} — ${boat.altDescriptor}`}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              priority={false}
-              quality={80}
-            />
-          )}
+          {/* All visible images render simultaneously as a stack — the active
+              one is opacity-100, others opacity-0. This makes the arrow click
+              an instant opacity toggle instead of a fresh network fetch (root
+              cause of the 60 dead-clicks reported by Clarity on this page:
+              users clicked ›, saw nothing for ~1 s while the next image loaded,
+              clicked again — Clarity recorded the wait period as a dead click).
+
+              The first image gets `priority` so the LCP element resolves fast;
+              the rest load eagerly in the background. Total payload is the
+              same — we just front-load it. */}
+          {visibleImages.map((src, i) => {
+            const isActive = i === imageIdx % visibleImages.length;
+            return (
+              <Image
+                key={src}
+                src={src}
+                alt={`${t.label} — ${boat.altDescriptor}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                className={`object-cover transition-opacity duration-300 ${
+                  isActive
+                    ? "opacity-100 group-hover:scale-105 transition-transform duration-500"
+                    : "opacity-0"
+                }`}
+                priority={i === 0}
+                loading={i === 0 ? undefined : "eager"}
+                quality={75}
+              />
+            );
+          })}
         </Link>
-        {/* Hidden preload for the next slide so manual clicks feel instant */}
-        {nextImage && nextImage !== currentImage && (
-          <link
-            rel="preload"
-            as="image"
-            href={nextImage}
-            // @ts-expect-error — preload outside <head> in client components
-            // is intentional here; Next.js dev mode warns but it works.
-            fetchpriority="low"
-          />
-        )}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-end p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <span className="rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-bold text-[var(--brand-primary)] shadow-md backdrop-blur-sm">
             {strings.viewDetails} →

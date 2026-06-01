@@ -29,9 +29,10 @@ interface TeamCardProps {
   bio: string;
   image?: string;
   knowsAbout: string[];
+  profileHref?: string;
 }
 
-function TeamCard({ name, role, bio, image, knowsAbout }: TeamCardProps) {
+function TeamCard({ name, role, bio, image, knowsAbout, profileHref }: TeamCardProps) {
   const initials = name
     .split(" ")
     .filter((w) => /^[A-Za-z]/.test(w))
@@ -40,8 +41,13 @@ function TeamCard({ name, role, bio, image, knowsAbout }: TeamCardProps) {
     .slice(0, 2)
     .toUpperCase();
 
-  return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8 flex flex-col gap-5">
+  // Clarity reported 15 dead-clicks on "22+ years navigating..." bio text on
+  // /about/team — users were clicking the bio expecting to read more or
+  // navigate to a profile. Wrap each card in a Link when a profile route
+  // exists, and add an explicit "Read full bio →" CTA so the affordance is
+  // clear instead of phantom.
+  const cardInner = (
+    <div className="rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8 flex flex-col gap-5 transition-colors hover:border-[var(--brand-primary)]/40">
       {/* Photo */}
       <div className="flex items-center gap-4">
         <div
@@ -93,8 +99,23 @@ function TeamCard({ name, role, bio, image, knowsAbout }: TeamCardProps) {
           ))}
         </ul>
       </div>
+
+      {profileHref && (
+        <p className="mt-1 text-sm font-semibold text-[var(--brand-primary)]">
+          Read full bio →
+        </p>
+      )}
     </div>
   );
+
+  if (profileHref) {
+    return (
+      <Link href={profileHref} className="block">
+        {cardInner}
+      </Link>
+    );
+  }
+  return cardInner;
 }
 
 const speakableSchema = {
@@ -164,7 +185,7 @@ export default function TeamPage() {
               name="Captain Ahmet Yildiz"
               role="Senior Captain & Bosphorus Routes Lead"
               bio="22+ years navigating the Bosphorus under a Turkish Maritime Authority master license, Captain Ahmet has piloted Bosphorus, Marmara, and Aegean cruises. He designs every route MerrySails operates and speaks Turkish, English, and basic German."
-              
+              profileHref="/authors/captain-ahmet"
               knowsAbout={[
                 "Bosphorus navigation",
                 "Istanbul harbor pilotage",
