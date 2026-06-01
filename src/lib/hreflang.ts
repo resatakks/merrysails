@@ -47,11 +47,24 @@ const LOCALIZED_ROUTES = new Set([
 // EN/TR/DE/FR/NL only and must NOT emit a ru hreflang (pointing at a 404 hurts
 // crawl quality). Add a path here once src/app/[locale]/<path>/page.tsx ships a
 // ru TRANSLATIONS block.
+// RU now covers 13 paths (2026-06-01 expansion). Adding to this set enables
+// ru hreflang alternates on the EN canonical page, which is what crawlers use
+// to discover the Russian variant. Stage-set must match RU_ENABLED_PATHS in
+// src/app/sitemap.xml/route.ts.
 const RU_ENABLED_ROUTES = new Set([
   "", // homepage
+  "/bosphorus-cruise",
   "/cruises/bosphorus-sunset-cruise",
   "/istanbul-dinner-cruise",
   "/yacht-charter-istanbul",
+  "/boat-rental-istanbul",
+  "/proposal-yacht-rental-istanbul",
+  "/private-bosphorus-dinner-cruise",
+  "/corporate-events",
+  "/private-events",
+  "/kabatas-dinner-cruise-istanbul",
+  "/team-building-yacht-istanbul",
+  "/kurucesme-marina-yacht-charter",
 ]);
 
 /**

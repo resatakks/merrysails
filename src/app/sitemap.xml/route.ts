@@ -63,10 +63,24 @@ const NON_EN_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en");
 // Staged ru rollout: only emit /ru sitemap URLs for paths that have a live
 // /ru page (translated TRANSLATIONS block). Mirror of RU_ENABLED_ROUTES in
 // src/lib/hreflang.ts — keep these two in sync when adding new /ru pages.
+// RU now covers 11 commercial paths (2026-06-01 expansion after building
+// native Russian content for proposal-yacht, private-dinner, corporate,
+// kabatas-dinner, team-building, private-events, boat-rental, kurucesme).
+// Pillar /bosphorus-cruise also has full RU content via the locale pillar
+// system. Adding to sitemap unlocks crawl + hreflang for Yandex.
 const RU_ENABLED_PATHS = new Set<string>([
+  "/bosphorus-cruise",
   "/cruises/bosphorus-sunset-cruise",
   "/istanbul-dinner-cruise",
   "/yacht-charter-istanbul",
+  "/boat-rental-istanbul",
+  "/proposal-yacht-rental-istanbul",
+  "/private-bosphorus-dinner-cruise",
+  "/corporate-events",
+  "/private-events",
+  "/kabatas-dinner-cruise-istanbul",
+  "/team-building-yacht-istanbul",
+  "/kurucesme-marina-yacht-charter",
 ]);
 
 function toAbsoluteUrl(url: string): string {
