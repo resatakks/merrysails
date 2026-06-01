@@ -73,6 +73,8 @@ const EN_URLS = [
 
 // Locale commercial pages — RU added 2026-06-01 (full Russian build-out
 // across 8 commercial pages); TR/DE/FR/NL already shipped earlier.
+// 2026-06-02: +4 audience-segment locale pages (honeymoon, anniversary,
+// couples, families).
 const LOCALE_COMMERCIAL_SLUGS = [
   "/bosphorus-cruise",
   "/istanbul-dinner-cruise",
@@ -86,6 +88,10 @@ const LOCALE_COMMERCIAL_SLUGS = [
   "/kabatas-dinner-cruise-istanbul",
   "/team-building-yacht-istanbul",
   "/kurucesme-marina-yacht-charter",
+  "/honeymoon-yacht-cruise-istanbul",
+  "/anniversary-yacht-cruise-istanbul",
+  "/bosphorus-cruise-for-couples",
+  "/bosphorus-cruise-for-families",
 ];
 
 const LOCALE_URLS = ["tr", "de", "fr", "nl", "ru"].flatMap((locale) =>

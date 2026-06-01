@@ -323,6 +323,67 @@ export const CURATED_REVIEWS: CuratedReview[] = [
     },
   },
 
+  // MORE TR — sunset
+  {
+    firstName: "Burak",
+    country: "TR",
+    cruiseDate: "2026-05-29",
+    text: "İstanbul'da yaşıyorum ama Boğaz'ı turla görmek farklıymış. Pazartesi €30'la kız arkadaşımla gittik, rehber Türkçe sorularımıza Türkçe cevap verdi, otomatik Türkçe rota anlatımı isteyince sundular. Yerel müşterilere de iyi davranıyorlar, bu önemli.",
+    rating: 5,
+    productKey: "sunset",
+    textByLocale: {
+      tr: "İstanbul'da yaşıyorum ama Boğaz'ı turla görmek farklıymış. Pazartesi €30'la kız arkadaşımla gittik, rehber Türkçe sorularımıza Türkçe cevap verdi, otomatik Türkçe rota anlatımı isteyince sundular. Yerel müşterilere de iyi davranıyorlar, bu önemli.",
+    },
+  },
+  // MORE TR — family
+  {
+    firstName: "Zeynep",
+    country: "TR",
+    cruiseDate: "2026-05-25",
+    text: "Ankara'dan gelen aileyle 6 kişi (4 yetişkin + 2 çocuk) akşam yemekli boğaz turuna katıldık. Çocuklar için ızgara tavuk-pilav menüsü ayrı geldi, çocuk sandalyesi 24 saat önceden hazırlattık. Otel transferi Sultanahmet'ten dakikası dakikasına. €30 Silver Soft tam değerinde.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      tr: "Ankara'dan gelen aileyle 6 kişi (4 yetişkin + 2 çocuk) akşam yemekli boğaz turuna katıldık. Çocuklar için ızgara tavuk-pilav menüsü ayrı geldi, çocuk sandalyesi 24 saat önceden hazırlattık. Otel transferi Sultanahmet'ten dakikası dakikasına. €30 Silver Soft tam değerinde.",
+    },
+  },
+  // MORE RU — dinner
+  {
+    firstName: "Elena",
+    country: "RU",
+    cruiseDate: "2026-05-30",
+    text: "Заказали ужин-круиз через Telegram (WhatsApp в России недоступен с февраля 2026, спасибо команде за альтернативу). Меню понравилось — мезе, рыба на гриле, баклава. Турецкое шоу с танцем живота и фолклором отлично подходит для семьи. Цена €30 на человека за полный вечер с трансфером — лучшее предложение из всех что нашли.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      ru: "Заказали ужин-круиз через Telegram (WhatsApp в России недоступен с февраля 2026, спасибо команде за альтернативу). Меню понравилось — мезе, рыба на гриле, баклава. Турецкое шоу с танцем живота и фолклором отлично подходит для семьи. Цена €30 на человека за полный вечер с трансфером — лучшее предложение из всех что нашли.",
+    },
+  },
+  // MORE RU — family
+  {
+    firstName: "Maxim",
+    country: "RU",
+    cruiseDate: "2026-05-21",
+    text: "Семейный круиз на 5 человек — 2 взрослых, 3 детей разного возраста (4, 8, 12 лет). До 3 лет бесплатно, 4-летка пошёл по детскому тарифу. Команда подняла высокий стул для младшего без напоминаний. Маршрут красивый, на закате прошли мимо Долмабахче — дети до сих пор показывают фото.",
+    rating: 5,
+    productKey: "dinner",
+    textByLocale: {
+      ru: "Семейный круиз на 5 человек — 2 взрослых, 3 детей разного возраста (4, 8, 12 лет). До 3 лет бесплатно, 4-летка пошёл по детскому тарифу. Команда подняла высокий стул для младшего без напоминаний. Маршрут красивый, на закате прошли мимо Долмабахче — дети до сих пор показывают фото.",
+    },
+  },
+  // MORE RU — couple
+  {
+    firstName: "Olga",
+    country: "RU",
+    cruiseDate: "2026-05-08",
+    text: "С мужем выбрали закатный круиз для нашего первого вечера в Стамбуле. €34 с человека — настоящее открытие после OTA-предложений по €45. Гид говорил на отличном английском, прокомментировал каждую достопримечательность. Бронирование через Telegram заняло 10 минут.",
+    rating: 5,
+    productKey: "sunset",
+    textByLocale: {
+      ru: "С мужем выбрали закатный круиз для нашего первого вечера в Стамбуле. €34 с человека — настоящее открытие после OTA-предложений по €45. Гид говорил на отличном английском, прокомментировал каждую достопримечательность. Бронирование через Telegram заняло 10 минут.",
+    },
+  },
+
   // GENERIC (any product)
   {
     firstName: "Ben",
