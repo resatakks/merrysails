@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-06-01T17:00:11.776Z",
+  "siteUrl": "sc-domain:merrysails.com",
+  "results": [
+    {
+      "url": "https://merrysails.com/ru/bosphorus-cruise",
+      "inspectionStatus": "unknown",
+      "coverageState": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "lastCrawlTime": "",
+      "googleCanonical": "",
+      "userCanonical": "",
+      "referringUrls": [],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/de/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-13T12:03:34Z",
+      "googleCanonical": "https://merrysails.com/de/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/de/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/tr/bosphorus-cruise",
+        "https://merrysails.com/bosphorus-cruise",
+        "https://merrysails.com/de/guides"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/fr/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-07T15:50:53Z",
+      "googleCanonical": "https://merrysails.com/fr/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/fr/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/bosphorus-cruise",
+        "https://merrysails.com/tr/bosphorus-cruise"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/nl/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-19T23:43:12Z",
+      "googleCanonical": "https://merrysails.com/nl/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/nl/bosphorus-cruise",
+      "referringUrls": [
+        "https://merrysails.com/bosphorus-cruise",
+        "https://merrysails.com/tr/bosphorus-cruise",
+        "https://merrysails.com/de/bosphorus-cruise",
+        "https://merrysails.com/fr/bosphorus-cruise",
+        "https://merrysails.com/nl/contact"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-13T12:03:34Z",
+      "googleCanonical": "https://merrysails.com/tr/bosphorus-cruise",
+      "userCanonical": "https://merrysails.com/tr/bosphorus-cruise",
+      "referringUrls": [],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/tr/cruises/bosphorus-sunset-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-17T03:13:34Z",
+      "googleCanonical": "https://merrysails.com/tr/cruises/bosphorus-sunset-cruise",
+      "userCanonical": "https://merrysails.com/tr/cruises/bosphorus-sunset-cruise",
+      "referringUrls": [
+        "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+        "https://merrysails.com/tr/blog/istanbul-evlilik-teklifi-tekne"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/tr/istanbul-dinner-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-17T03:11:27Z",
+      "googleCanonical": "https://merrysails.com/tr/istanbul-dinner-cruise",
+      "userCanonical": "https://merrysails.com/tr/istanbul-dinner-cruise",
+      "referringUrls": [
+        "https://merrysails.com/de/istanbul-dinner-cruise",
+        "https://merrysails.com/istanbul-dinner-cruise",
+        "https://merrysails.com/tr/blog/istanbul-evlilik-teklifi-tekne"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/tr/yacht-charter-istanbul",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-05-13T12:05:27Z",
+      "googleCanonical": "https://merrysails.com/tr/yacht-charter-istanbul",
+      "userCanonical": "https://merrysails.com/tr/yacht-charter-istanbul",
+      "referringUrls": [
+        "https://merrysails.com/tr/contact"
+      ],
+      "sitemap": []
+    }
+  ]
+}

@@ -1,7 +1,7 @@
-# Keyword Rank Snapshot — 2026-05-26
+# Keyword Rank Snapshot — 2026-06-01
 
-**Total checks**: 9   **Cost**: ~$0.1335
-**Compared to**: 2026-05-25
+**Total checks**: 9   **Cost**: ~$0.1320
+**Compared to**: 2026-05-26
 
 ## merrysails
 
