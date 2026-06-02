@@ -141,6 +141,18 @@ docs/
 - Prices in EUR only in user-facing copy
 - WhatsApp CTA: +90 544 898 98 12
 
+### Contact channel — WhatsApp ONLY (all locales, incl. ru)
+- **Every locale, including Russian, contacts us via WhatsApp. There is NO
+  Telegram contact button/CTA anywhere.** `getContactChannel(locale)` returns
+  WhatsApp for ALL locales — do not add a `ru → Telegram` branch.
+- Do NOT write "WhatsApp is blocked in Russia / use Telegram" copy or AI
+  guardrails — that claim is wrong for this brand. Russian customers reach us
+  on WhatsApp. (Operator decision 2026-06-02.)
+- `TelegramUser` Prisma model + Telegram bot = internal ops notifications,
+  unrelated to customer contact. Leave them.
+- Any ru copy (pages, blog, quick-answers, llms.txt) references WhatsApp,
+  never Telegram.
+
 ### i18n
 - Default and only active locale: `en`
 - 11 future locales in `FUTURE_LOCALES` — architecture is ready but routes not built
