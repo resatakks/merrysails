@@ -1,0 +1,97 @@
+{
+  "date": "2026-06-02",
+  "site": "https://merrysails.com",
+  "siteStatus": {
+    "d": {
+      "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+      "AnchorCount": 3716,
+      "DiscoveryDate": "/Date(1697871600000-0700)/",
+      "DocumentSize": 498017,
+      "HttpStatus": 0,
+      "IsPage": true,
+      "LastCrawledDate": "/Date(1780242051000)/",
+      "TotalChildUrlCount": 0,
+      "Url": "https://merrysails.com"
+    }
+  },
+  "siteStatusOk": true,
+  "inspected": 4,
+  "results": [
+    {
+      "url": "https://merrysails.com/bosphorus-cruise",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1778482800000-0700)/",
+          "DocumentSize": 195199,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780150991000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/bosphorus-cruise"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/istanbul-dinner-cruise",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 1080,
+          "DiscoveryDate": "/Date(1776582000000-0700)/",
+          "DocumentSize": 370454,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780180463000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/istanbul-dinner-cruise"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 971,
+          "DiscoveryDate": "/Date(1774681200000-0700)/",
+          "DocumentSize": 247369,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780149571000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/cruises/bosphorus-sunset-cruise"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise-from-sultanahmet",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1780383600000-0700)/",
+          "DocumentSize": 0,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780393108000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/tr/bosphorus-cruise-from-sultanahmet"
+        }
+      },
+      "error": null
+    }
+  ]
+}

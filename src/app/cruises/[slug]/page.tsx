@@ -321,8 +321,12 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Short Bosphorus sightseeing cruise in Istanbul. A 1.5-hour route past palaces, mosques, and both bridges with a live English-speaking guide.",
   },
   "bosphorus-sunset-cruise": {
-    title: "Bosphorus Sunset Cruise Istanbul — From €30",
-    description: "Bosphorus sunset cruise Istanbul from €30 (Mon, Tue & Thu). Two 2-hour options: Without Wine or With Wine. Snacks, drinks, and Bosphorus landmark views included.",
+    // 2026-06-02: was "Bosphorus Sunset Cruise Istanbul — From €30" at pos 6 / 0 click
+    // for "best bosphorus sunset cruise istanbul 2026". Year + price-led format
+    // mirrors the query and adds the operator USP ("Pay onboard") that AI
+    // engines (ChatGPT, Perplexity) cite verbatim.
+    title: "Best Bosphorus Sunset Cruise Istanbul — €30",
+    description: "Best Bosphorus sunset cruise Istanbul 2026 — €30 (Mon/Tue/Thu), 2-hour route with snacks & drinks. TÜRSAB-licensed since 2001, pay onboard.",
   },
   "wedding-anniversary": {
     title: "Anniversary Yacht Cruise Istanbul — Bosphorus",
