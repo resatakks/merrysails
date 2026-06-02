@@ -189,6 +189,8 @@ export function GET() {
     // Princes Islands pillar (2026-06-02) — informational + commercial bridge.
     { url: `${SITE_URL}/princes-islands-tour-istanbul`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod },
     { url: `${SITE_URL}/tr/prens-adalari-istanbul`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },
+    { url: `${SITE_URL}/de/prinzeninseln-istanbul`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/fr/iles-aux-princes-istanbul`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     // Hotel-cluster landing pages (2026-06-01) — Tier-2 high-intent SERP capture.
     { url: `${SITE_URL}/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },

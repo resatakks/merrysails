@@ -85,6 +85,8 @@ const EN_URLS = [
   "/merrysails-vs-viator",
   "/princes-islands-tour-istanbul",
   "/tr/prens-adalari-istanbul",
+  "/de/prinzeninseln-istanbul",
+  "/fr/iles-aux-princes-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
   "/pricing",
