@@ -3,631 +3,631 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { format } from "date-fns";
 import {
-  Check,
-  Phone,
-  Crown,
-  ChevronDown,
-  ChevronUp,
-  MessageCircle,
-  Send,
+ Check,
+ Phone,
+ Crown,
+ ChevronDown,
+ ChevronUp,
+ MessageCircle,
+ Send,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import type { AddOn, BookingMode, Package, PriceMode } from "@/data/tours";
 import {
-  handleTrackedContactNavigation,
-  trackBeginCheckout,
+ handleTrackedContactNavigation,
+ trackBeginCheckout,
 } from "@/lib/analytics";
 import SalePrice from "@/components/ui/SalePrice";
 import { PHONE_DISPLAY, getContactChannel } from "@/lib/constants";
 import {
-  detectBookingLocaleFromPathname,
-  getBookingSidebarStrings,
+ detectBookingLocaleFromPathname,
+ getBookingSidebarStrings,
 } from "@/i18n/booking-strings";
 import BookingCalendar from "./BookingCalendar";
 import BookingModal from "./BookingModal";
 
 interface Props {
-  tour: {
-    slug: string;
-    nameEn: string;
-    name: string;
-    priceEur: number;
-    originalPriceEur?: number;
-    departureTime?: string;
-    departurePoint?: string;
-    image: string;
-    packages?: Package[];
-    addOns?: AddOn[];
-    bookingMode: BookingMode;
-    priceMode: PriceMode;
-    showPricing: boolean;
-    enquiryLabel?: string;
-  };
-  effectivePrice: number;
-  selectedPackage?: Package;
-  onSelectPackage?: (pkg: Package) => void;
-  selectedAddOns: AddOn[];
-  initialDate?: Date;
-  initialGuests?: number;
-  initialTime?: string;
+ tour: {
+ slug: string;
+ nameEn: string;
+ name: string;
+ priceEur: number;
+ originalPriceEur?: number;
+ departureTime?: string;
+ departurePoint?: string;
+ image: string;
+ packages?: Package[];
+ addOns?: AddOn[];
+ bookingMode: BookingMode;
+ priceMode: PriceMode;
+ showPricing: boolean;
+ enquiryLabel?: string;
+ };
+ effectivePrice: number;
+ selectedPackage?: Package;
+ onSelectPackage?: (pkg: Package) => void;
+ selectedAddOns: AddOn[];
+ initialDate?: Date;
+ initialGuests?: number;
+ initialTime?: string;
 }
 
 export default function BookingSidebar({
-  tour,
-  effectivePrice,
-  selectedPackage,
-  onSelectPackage,
-  selectedAddOns,
-  initialDate,
-  initialGuests,
-  initialTime,
+ tour,
+ effectivePrice,
+ selectedPackage,
+ onSelectPackage,
+ selectedAddOns,
+ initialDate,
+ initialGuests,
+ initialTime,
 }: Props) {
-  // Locale-aware contact channel — Russian visitors see Telegram because
-  // WhatsApp is blocked in Russia (Feb 2026). Pathname is the source of truth
-  // here since the booking sidebar is dropped onto pages across both /en and
-  // localized routes.
-  const pathname = usePathname() ?? "/";
-  const bookingLocale = detectBookingLocaleFromPathname(pathname);
-  const locale = bookingLocale;
-  const t = getBookingSidebarStrings(bookingLocale);
-  const channel = getContactChannel(locale);
-  const isTelegram = channel.icon === "telegram";
+ // Locale-aware contact channel — Russian visitors see Telegram because
+ // WhatsApp is blocked in Russia (Feb 2026). Pathname is the source of truth
+ // here since the booking sidebar is dropped onto pages across both /en and
+ // localized routes.
+ const pathname = usePathname() ?? "/";
+ const bookingLocale = detectBookingLocaleFromPathname(pathname);
+ const locale = bookingLocale;
+ const t = getBookingSidebarStrings(bookingLocale);
+ const channel = getContactChannel(locale);
+ const isTelegram = channel.icon === "telegram";
 
-  const [bookingModal, setBookingModal] = useState(false);
-  const [bookingDate, setBookingDate] = useState<Date | null>(null);
-  const [bookingGuests, setBookingGuests] = useState(2);
-  // Children (3-8 yaş) ve infants (0-3 yaş) breakdown — defaults to 0.
-  // Pricing layer applies 50% discount to children and €0 to infants.
-  const [bookingChildren, setBookingChildren] = useState(0);
-  const [bookingInfants, setBookingInfants] = useState(0);
-  const [bookingTime, setBookingTime] = useState("");
-  const [showMobileBar, setShowMobileBar] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState(false);
-  const sidebarRef = useRef<HTMLDivElement>(null);
-  const footerInViewRef = useRef(false);
+ const [bookingModal, setBookingModal] = useState(false);
+ const [bookingDate, setBookingDate] = useState<Date | null>(null);
+ const [bookingGuests, setBookingGuests] = useState(2);
+ // Children (3-8 yaş) ve infants (0-3 yaş) breakdown — defaults to 0.
+ // Pricing layer applies 50% discount to children and €0 to infants.
+ const [bookingChildren, setBookingChildren] = useState(0);
+ const [bookingInfants, setBookingInfants] = useState(0);
+ const [bookingTime, setBookingTime] = useState("");
+ const [showMobileBar, setShowMobileBar] = useState(false);
+ const [mobileExpanded, setMobileExpanded] = useState(false);
+ const sidebarRef = useRef<HTMLDivElement>(null);
+ const footerInViewRef = useRef(false);
 
-  const price = selectedPackage?.price ?? effectivePrice;
-  const currentOriginalPrice =
-    selectedPackage?.originalPrice ??
-    (price === tour.priceEur ? tour.originalPriceEur : undefined);
-  const isQuote = tour.bookingMode === "quote";
-  const isPerGroup = tour.priceMode === "perGroup";
-  // Per-locale price-unit suffix. Keep EN labels byte-identical so the
-  // English routes (already indexed) don't change.
-  const PRICE_UNIT_PER_PERSON: Record<typeof bookingLocale, string> = {
-    en: "/person",
-    tr: "/kişi",
-    de: "/Person",
-    fr: "/personne",
-    nl: "/persoon",
-    ru: "/гость",
-  };
-  const PRICE_UNIT_PER_GROUP: Record<typeof bookingLocale, string> = {
-    en: "/group",
-    tr: "/grup",
-    de: "/Gruppe",
-    fr: "/groupe",
-    nl: "/groep",
-    ru: "/группа",
-  };
-  const priceUnitLabel = isPerGroup
-    ? PRICE_UNIT_PER_GROUP[bookingLocale]
-    : PRICE_UNIT_PER_PERSON[bookingLocale];
+ const price = selectedPackage?.price ?? effectivePrice;
+ const currentOriginalPrice =
+ selectedPackage?.originalPrice ??
+ (price === tour.priceEur ? tour.originalPriceEur : undefined);
+ const isQuote = tour.bookingMode === "quote";
+ const isPerGroup = tour.priceMode === "perGroup";
+ // Per-locale price-unit suffix. Keep EN labels byte-identical so the
+ // English routes (already indexed) don't change.
+ const PRICE_UNIT_PER_PERSON: Record<typeof bookingLocale, string> = {
+ en: "/person",
+ tr: "/kişi",
+ de: "/Person",
+ fr: "/personne",
+ nl: "/persoon",
+ ru: "/гость",
+ };
+ const PRICE_UNIT_PER_GROUP: Record<typeof bookingLocale, string> = {
+ en: "/group",
+ tr: "/grup",
+ de: "/Gruppe",
+ fr: "/groupe",
+ nl: "/groep",
+ ru: "/группа",
+ };
+ const priceUnitLabel = isPerGroup
+ ? PRICE_UNIT_PER_GROUP[bookingLocale]
+ : PRICE_UNIT_PER_PERSON[bookingLocale];
 
-  // Track sidebar visibility for mobile bar
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowMobileBar(!entry.isIntersecting && !footerInViewRef.current);
-      },
-      { threshold: 0.1 }
-    );
+ // Track sidebar visibility for mobile bar
+ useEffect(() => {
+ const observer = new IntersectionObserver(
+ ([entry]) => {
+ setShowMobileBar(!entry.isIntersecting && !footerInViewRef.current);
+ },
+ { threshold: 0.1 }
+ );
 
-    const el = sidebarRef.current;
-    if (el) observer.observe(el);
-    return () => {
-      if (el) observer.unobserve(el);
-    };
-  }, []);
+ const el = sidebarRef.current;
+ if (el) observer.observe(el);
+ return () => {
+ if (el) observer.unobserve(el);
+ };
+ }, []);
 
-  useEffect(() => {
-    const footer = document.querySelector("footer");
-    if (!footer) return;
+ useEffect(() => {
+ const footer = document.querySelector("footer");
+ if (!footer) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        footerInViewRef.current = entry.isIntersecting;
-        if (entry.isIntersecting) {
-          setShowMobileBar(false);
-        }
-      },
-      { threshold: 0.08 }
-    );
+ const observer = new IntersectionObserver(
+ ([entry]) => {
+ footerInViewRef.current = entry.isIntersecting;
+ if (entry.isIntersecting) {
+ setShowMobileBar(false);
+ }
+ },
+ { threshold: 0.08 }
+ );
 
-    observer.observe(footer);
-    return () => observer.disconnect();
-  }, []);
+ observer.observe(footer);
+ return () => observer.disconnect();
+ }, []);
 
-  const handleBook = useCallback(
-    (
-      date: Date,
-      guests: number,
-      time: string,
-      breakdown?: { children?: number; infants?: number },
-    ) => {
-      const childrenCount = Math.max(0, breakdown?.children ?? 0);
-      const infantsCount = Math.max(0, breakdown?.infants ?? 0);
-      trackBeginCheckout({
-        date: format(date, "yyyy-MM-dd"),
-        guests,
-        packageName: selectedPackage?.name,
-        source: "booking_sidebar",
-        tourName: tour.nameEn,
-        tourSlug: tour.slug,
-        value: price,
-      });
-      setBookingDate(date);
-      setBookingGuests(guests);
-      setBookingChildren(childrenCount);
-      setBookingInfants(infantsCount);
-      setBookingTime(time);
-      setBookingModal(true);
-    },
-    [price, selectedPackage?.name, tour.nameEn, tour.slug]
-  );
+ const handleBook = useCallback(
+ (
+ date: Date,
+ guests: number,
+ time: string,
+ breakdown?: { children?: number; infants?: number },
+ ) => {
+ const childrenCount = Math.max(0, breakdown?.children ?? 0);
+ const infantsCount = Math.max(0, breakdown?.infants ?? 0);
+ trackBeginCheckout({
+ date: format(date, "yyyy-MM-dd"),
+ guests,
+ packageName: selectedPackage?.name,
+ source: "booking_sidebar",
+ tourName: tour.nameEn,
+ tourSlug: tour.slug,
+ value: price,
+ });
+ setBookingDate(date);
+ setBookingGuests(guests);
+ setBookingChildren(childrenCount);
+ setBookingInfants(infantsCount);
+ setBookingTime(time);
+ setBookingModal(true);
+ },
+ [price, selectedPackage?.name, tour.nameEn, tour.slug]
+ );
 
-  const handleMobileBookClick = () => {
-    const bookingCalendar = document.getElementById("booking-calendar");
-    if (bookingCalendar) {
-      bookingCalendar.scrollIntoView({ behavior: "smooth", block: "start" });
-      setShowMobileBar(false);
-      return;
-    }
+ const handleMobileBookClick = () => {
+ const bookingCalendar = document.getElementById("booking-calendar");
+ if (bookingCalendar) {
+ bookingCalendar.scrollIntoView({ behavior: "smooth", block: "start" });
+ setShowMobileBar(false);
+ return;
+ }
 
-    if (sidebarRef.current) {
-      sidebarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-      setShowMobileBar(false);
-    }
-  };
+ if (sidebarRef.current) {
+ sidebarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+ setShowMobileBar(false);
+ }
+ };
 
-  const hasPackages = tour.packages && tour.packages.length > 0;
-  const selectedPackageName = selectedPackage?.name ?? tour.packages?.[0]?.name ?? tour.nameEn;
-  const quoteMessage = encodeURIComponent(
-    [
-      t.quoteMessageLines.intro,
-      "",
-      `${t.quoteMessageLines.serviceLabel}: ${tour.nameEn}`,
-      `${t.quoteMessageLines.optionLabel}: ${selectedPackageName}`,
-      selectedAddOns.length > 0
-        ? `${t.quoteMessageLines.addOnsLabel}: ${selectedAddOns.map((addon) => addon.name).join(", ")}`
-        : "",
-    ]
-      .filter(Boolean)
-      .join("\n")
-  );
+ const hasPackages = tour.packages && tour.packages.length > 0;
+ const selectedPackageName = selectedPackage?.name ?? tour.packages?.[0]?.name ?? tour.nameEn;
+ const quoteMessage = encodeURIComponent(
+ [
+ t.quoteMessageLines.intro,
+ "",
+ `${t.quoteMessageLines.serviceLabel}: ${tour.nameEn}`,
+ `${t.quoteMessageLines.optionLabel}: ${selectedPackageName}`,
+ selectedAddOns.length > 0
+ ? `${t.quoteMessageLines.addOnsLabel}: ${selectedAddOns.map((addon) => addon.name).join(", ")}`
+ : "",
+ ]
+ .filter(Boolean)
+ .join("\n")
+ );
 
-  return (
-    <>
-      {/* Desktop sticky sidebar */}
-      <div id="booking" ref={sidebarRef} className="lg:col-span-1">
-        <div className="sticky top-[100px] space-y-4">
-          {!isQuote && tour.showPricing && (
-            <div className="overflow-hidden rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(230,110,72,0.08),rgba(255,184,0,0.1))] p-5 shadow-sm">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--brand-primary)]">
-                    {t.currentFare}
-                  </div>
-                  <div className="mt-2">
-                    <SalePrice
-                      price={price}
-                      originalPrice={currentOriginalPrice}
-                      suffix={priceUnitLabel}
-                      size="lg"
-                      showBadge={Boolean(currentOriginalPrice)}
-                      showMeta={Boolean(currentOriginalPrice)}
-                      metaText={t.selectedPackageMeta}
-                    />
-                  </div>
-                </div>
-                <div className="min-w-[96px] rounded-2xl bg-white/90 px-3 py-2 text-center shadow-sm">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    {t.option}
-                  </div>
-                  <div className="mt-1 text-sm font-semibold leading-tight text-[var(--heading)]">
-                    {selectedPackageName}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+ return (
+ <>
+ {/* Desktop sticky sidebar */}
+ <div id="booking" ref={sidebarRef} className="lg:col-span-1">
+ <div className="sticky top-[100px] space-y-4">
+ {!isQuote && tour.showPricing && (
+ <div className="overflow-hidden rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(230,110,72,0.08),rgba(255,184,0,0.1))] p-5 shadow-sm">
+ <div className="flex items-start justify-between gap-3">
+ <div>
+ <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--brand-primary)]">
+ {t.currentFare}
+ </div>
+ <div className="mt-2">
+ <SalePrice
+ price={price}
+ originalPrice={currentOriginalPrice}
+ suffix={priceUnitLabel}
+ size="lg"
+ showBadge={Boolean(currentOriginalPrice)}
+ showMeta={Boolean(currentOriginalPrice)}
+ metaText={t.selectedPackageMeta}
+ />
+ </div>
+ </div>
+ <div className="min-w-[96px] rounded-2xl bg-white/90 px-3 py-2 text-center shadow-sm">
+ <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+ {t.option}
+ </div>
+ <div className="mt-1 text-sm font-semibold leading-tight text-[var(--heading)]">
+ {selectedPackageName}
+ </div>
+ </div>
+ </div>
+ </div>
+ )}
 
-          {/* Package Selection Cards */}
-          {hasPackages && (
-            <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
-              <div className="p-5 pb-3">
-                <h3 className="font-bold text-[var(--heading)] text-sm uppercase tracking-wider">
-                  {tour.showPricing ? t.chooseYourPackage : t.chooseYourServiceScope}
-                </h3>
-              </div>
-              <div className="px-5 pb-5 space-y-3">
-                {tour.packages!.map((pkg) => {
-                  const isSelected = selectedPackage?.name === pkg.name;
+ {/* Package Selection Cards */}
+ {hasPackages && (
+ <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
+ <div className="p-5 pb-3">
+ <h3 className="font-bold text-[var(--heading)] text-sm uppercase tracking-wider">
+ {tour.showPricing ? t.chooseYourPackage : t.chooseYourServiceScope}
+ </h3>
+ </div>
+ <div className="px-5 pb-5 space-y-3">
+ {tour.packages!.map((pkg) => {
+ const isSelected = selectedPackage?.name === pkg.name;
 
-                  return (
-                    <motion.button
-                      key={pkg.name}
-                      onClick={() => onSelectPackage?.(pkg)}
-                      className={`relative w-full text-left rounded-xl border-2 p-4 transition-all ${
-                        isSelected
-                          ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5 shadow-md"
-                          : "border-[var(--line)] hover:border-[var(--brand-primary)]/30"
-                      }`}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-bold text-[var(--heading)]">
-                              {pkg.name}
-                            </h4>
-                            {pkg.name.toLowerCase().includes("vip") && (
-                              <Crown className="w-4 h-4 text-[var(--brand-gold)]" />
-                            )}
-                          </div>
-                          <p className="mt-0.5 text-xs text-[var(--text-muted)] line-clamp-2">
-                            {pkg.description}
-                          </p>
-                        </div>
-                        <div className="shrink-0 text-right">
-                          {tour.showPricing ? (
-                            <SalePrice
-                              price={pkg.price}
-                              originalPrice={pkg.originalPrice}
-                              suffix={priceUnitLabel}
-                              size="sm"
-                              align="right"
-                              showBadge={Boolean(pkg.originalPrice)}
-                              className="items-end gap-1"
-                              priceClassName="text-[var(--heading)]"
-                            />
-                          ) : (
-                            <div className="text-xs font-semibold text-[var(--brand-primary)]">
-                              {t.priceOnRequest}
-                            </div>
-                          )}
-                          {isSelected && (
-                            <div className="mt-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-primary)]">
-                              <Check className="h-3.5 w-3.5 text-white" />
-                            </div>
-                          )}
-                        </div>
-                      </div>
+ return (
+ <motion.button
+ key={pkg.name}
+ onClick={() => onSelectPackage?.(pkg)}
+ className={`relative w-full text-left rounded-xl border-2 p-4 transition-all ${
+ isSelected
+ ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5 shadow-md"
+ : "border-[var(--line)] hover:border-[var(--brand-primary)]/30"
+ }`}
+ whileTap={{ scale: 0.98 }}
+ >
+ <div className="flex items-start gap-3">
+ <div className="min-w-0 flex-1">
+ <div className="flex items-center gap-2">
+ <h4 className="font-bold text-[var(--heading)]">
+ {pkg.name}
+ </h4>
+ {pkg.name.toLowerCase().includes("vip") && (
+ <Crown className="w-4 h-4 text-[var(--brand-gold)]" />
+ )}
+ </div>
+ <p className="mt-0.5 text-xs text-[var(--text-muted)] line-clamp-2">
+ {pkg.description}
+ </p>
+ </div>
+ <div className="shrink-0 text-right">
+ {tour.showPricing ? (
+ <SalePrice
+ price={pkg.price}
+ originalPrice={pkg.originalPrice}
+ suffix={priceUnitLabel}
+ size="sm"
+ align="right"
+ showBadge={Boolean(pkg.originalPrice)}
+ className="items-end gap-1"
+ priceClassName="text-[var(--heading)]"
+ />
+ ) : (
+ <div className="text-xs font-semibold text-[var(--brand-primary)]">
+ {t.priceOnRequest}
+ </div>
+ )}
+ {isSelected && (
+ <div className="mt-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-primary)]">
+ <Check className="h-3.5 w-3.5 text-white" />
+ </div>
+ )}
+ </div>
+ </div>
 
-                      {/* Features — show on selected */}
-                      <AnimatePresence>
-                        {isSelected && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
-                          >
-                            <ul className="mt-3 pt-3 border-t border-[var(--brand-primary)]/15 space-y-1.5">
-                              {pkg.features.map((f) => (
-                                <li
-                                  key={f}
-                                  className="flex items-start gap-2 text-xs"
-                                >
-                                  <Check className="w-3.5 h-3.5 text-green-500 shrink-0 mt-0.5" />
-                                  <span className="text-[var(--body-text)]">
-                                    {f}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+ {/* Features — show on selected */}
+ <AnimatePresence>
+ {isSelected && (
+ <motion.div
+ initial={{ height: 0, opacity: 0 }}
+ animate={{ height: "auto", opacity: 1 }}
+ exit={{ height: 0, opacity: 0 }}
+ transition={{ duration: 0.2 }}
+ className="overflow-hidden"
+ >
+ <ul className="mt-3 pt-3 border-t border-[var(--brand-primary)]/15 space-y-1.5">
+ {pkg.features.map((f) => (
+ <li
+ key={f}
+ className="flex items-start gap-2 text-xs"
+ >
+ <Check className="w-3.5 h-3.5 text-green-500 shrink-0 mt-0.5" />
+ <span className="text-[var(--body-text)]">
+ {f}
+ </span>
+ </li>
+ ))}
+ </ul>
+ </motion.div>
+ )}
+ </AnimatePresence>
 
-                    </motion.button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+ </motion.button>
+ );
+ })}
+ </div>
+ </div>
+ )}
 
-          {isQuote ? (
-            <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
-              <div className="p-5 border-b border-[var(--line)]">
-                <h3 className="font-bold text-[var(--heading)] text-sm uppercase tracking-wider">
-                  {t.planYourTailorMadeCruise}
-                </h3>
-              </div>
-              <div className="p-5 space-y-4">
-                <div className="rounded-xl bg-[var(--surface-alt)] p-4">
-                  <p className="text-sm font-semibold text-[var(--heading)]">
-                    {selectedPackageName}
-                  </p>
-                  <p className="mt-1 text-sm text-[var(--text-muted)]">
-                    {t.servicePageBriefDescription}
-                  </p>
-                </div>
-                <a
-                  href={isTelegram ? channel.url : `${channel.url}?text=${quoteMessage}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-cta flex w-full items-center justify-center"
-                >
-                  {tour.enquiryLabel || (isTelegram ? t.planOnTelegram : t.planOnWhatsApp)}
-                </a>
-                <a
-                  href="mailto:info@merrysails.com"
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
-                >
-                  {t.emailYourBrief}
-                </a>
-              </div>
-            </div>
-          ) : (
-            <BookingCalendar
-              tourSlug={tour.slug}
-              priceEur={price}
-              originalPriceEur={currentOriginalPrice}
-              weekdayDiscount={
-                selectedPackage?.weekdayDiscount
-                  ? {
-                      weekdays: selectedPackage.weekdayDiscount.weekdays,
-                      discountedPrice: selectedPackage.weekdayDiscount.discountedPrice,
-                    }
-                  : undefined
-              }
-              tourName={tour.nameEn}
-              departureTime={tour.departureTime}
-              departurePoint={tour.departurePoint}
-              priceMode={tour.priceMode}
-              initialDate={initialDate}
-              initialGuests={initialGuests}
-              initialTime={initialTime}
-              onBook={handleBook}
-            />
-          )}
+ {isQuote ? (
+ <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
+ <div className="p-5 border-b border-[var(--line)]">
+ <h3 className="font-bold text-[var(--heading)] text-sm uppercase tracking-wider">
+ {t.planYourTailorMadeCruise}
+ </h3>
+ </div>
+ <div className="p-5 space-y-4">
+ <div className="rounded-xl bg-[var(--surface-alt)] p-4">
+ <p className="text-sm font-semibold text-[var(--heading)]">
+ {selectedPackageName}
+ </p>
+ <p className="mt-1 text-sm text-[var(--text-muted)]">
+ {t.servicePageBriefDescription}
+ </p>
+ </div>
+ <a
+ href={isTelegram ? channel.url : `${channel.url}?text=${quoteMessage}`}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="btn-cta flex w-full items-center justify-center"
+ >
+ {tour.enquiryLabel || (isTelegram ? t.planOnTelegram : t.planOnWhatsApp)}
+ </a>
+ <a
+ href="mailto:info@merrysails.com"
+ className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
+ >
+ {t.emailYourBrief}
+ </a>
+ </div>
+ </div>
+ ) : (
+ <BookingCalendar
+ tourSlug={tour.slug}
+ priceEur={price}
+ originalPriceEur={currentOriginalPrice}
+ weekdayDiscount={
+ selectedPackage?.weekdayDiscount
+ ? {
+ weekdays: selectedPackage.weekdayDiscount.weekdays,
+ discountedPrice: selectedPackage.weekdayDiscount.discountedPrice,
+ }
+ : undefined
+ }
+ tourName={tour.nameEn}
+ departureTime={tour.departureTime}
+ departurePoint={tour.departurePoint}
+ priceMode={tour.priceMode}
+ initialDate={initialDate}
+ initialGuests={initialGuests}
+ initialTime={initialTime}
+ onBook={handleBook}
+ />
+ )}
 
-          {/* Help card */}
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-[var(--line)]">
-            <p className="text-sm font-medium mb-3">
-              {isQuote ? t.needHelpPlanning : t.needHelpChoosing}
-            </p>
-            <a
-              href={channel.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(event) =>
-                handleTrackedContactNavigation(event, {
-                  href: channel.url,
-                  intent: "during_booking",
-                  kind: "whatsapp",
-                  label: `booking_sidebar_${channel.icon}`,
-                  location: tour.slug,
-                })
-              }
-              className={`flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-white font-semibold text-sm transition-all ${
-                isTelegram
-                  ? "bg-[#229ED9] hover:bg-[#1B85B8]"
-                  : "bg-[#25D366] hover:brightness-110"
-              }`}
-            >
-              {isTelegram ? <Send className="w-4 h-4" /> : <MessageCircle className="w-4 h-4" />}
-              {isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}
-            </a>
-            <a
-              href="tel:+905065438223"
-              onClick={(event) =>
-                handleTrackedContactNavigation(event, {
-                  href: "tel:+905065438223",
-                  intent: "during_booking",
-                  kind: "phone",
-                  label: PHONE_DISPLAY,
-                  location: `booking_sidebar_${tour.slug}`,
-                })
-              }
-              className="flex items-center justify-center gap-2 w-full py-2.5 mt-2 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              {PHONE_DISPLAY}
-            </a>
-          </div>
-        </div>
-      </div>
+ {/* Help card */}
+ <div className="bg-white rounded-2xl p-5 shadow-sm border border-[var(--line)]">
+ <p className="text-sm font-medium mb-3">
+ {isQuote ? t.needHelpPlanning : t.needHelpChoosing}
+ </p>
+ <a
+ href={channel.url}
+ target="_blank"
+ rel="noopener noreferrer"
+ onClick={(event) =>
+ handleTrackedContactNavigation(event, {
+ href: channel.url,
+ intent: "during_booking",
+ kind: "whatsapp",
+ label: `booking_sidebar_${channel.icon}`,
+ location: tour.slug,
+ })
+ }
+ className={`flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-white font-semibold text-sm transition-all ${
+ isTelegram
+ ? "bg-[#229ED9] hover:bg-[#1B85B8]"
+ : "bg-[#25D366] hover:brightness-110"
+ }`}
+ >
+ {isTelegram ? <Send className="w-4 h-4" /> : <MessageCircle className="w-4 h-4" />}
+ {isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}
+ </a>
+ <a
+ href="tel:+905065438223"
+ onClick={(event) =>
+ handleTrackedContactNavigation(event, {
+ href: "tel:+905065438223",
+ intent: "during_booking",
+ kind: "phone",
+ label: PHONE_DISPLAY,
+ location: `booking_sidebar_${tour.slug}`,
+ })
+ }
+ className="flex items-center justify-center gap-2 w-full py-2.5 mt-2 rounded-full border border-[var(--line)] text-[var(--body-text)] font-medium text-sm hover:bg-gray-50 transition-all"
+ >
+ <Phone className="w-4 h-4" />
+ {PHONE_DISPLAY}
+ </a>
+ </div>
+ </div>
+ </div>
 
-      {/* Mobile floating bottom bar */}
-      <AnimatePresence>
-        {showMobileBar && (
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-0 left-0 right-0 z-[70] lg:hidden"
-          >
-            <div className="bg-white border-t border-[var(--line)] shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
-              {/* Expandable package selector for mobile */}
-              <AnimatePresence>
-                {mobileExpanded && hasPackages && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden border-b border-[var(--line)]"
-                  >
-                    <div className="p-4 space-y-2 max-h-[40vh] overflow-y-auto">
-                      <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2">
-                        {t.selectPackage}
-                      </div>
-                      {tour.packages!.map((pkg) => {
-                        const isSelected =
-                          selectedPackage?.name === pkg.name;
-                        return (
-                          <button
-                            key={pkg.name}
-                            onClick={() => {
-                              onSelectPackage?.(pkg);
-                              setMobileExpanded(false);
-                            }}
-                            className={`w-full flex items-center justify-between p-3 rounded-xl border-2 transition-all text-left ${
-                              isSelected
-                                ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5"
-                                : "border-[var(--line)]"
-                            }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              {isSelected && (
-                                <div className="w-5 h-5 rounded-full bg-[var(--brand-primary)] flex items-center justify-center">
-                                  <Check className="w-3 h-3 text-white" />
-                                </div>
-                              )}
-                              <div>
-                                <span className="font-semibold text-sm">
-                                  {pkg.name}
-                                </span>
-                                <span className="text-xs text-[var(--text-muted)]">
-                                  {pkg.description}
-                                </span>
-                              </div>
-                            </div>
-                            <span className="font-bold text-[var(--heading)] ml-2">
-                              {tour.showPricing ? `€${pkg.price}` : t.quote}
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+ {/* Mobile floating bottom bar */}
+ <AnimatePresence>
+ {showMobileBar && (
+ <motion.div
+ initial={{ y: 100, opacity: 0 }}
+ animate={{ y: 0, opacity: 1 }}
+ exit={{ y: 100, opacity: 0 }}
+ transition={{ type: "spring", stiffness: 300, damping: 30 }}
+ className="fixed bottom-0 left-0 right-0 z-[70] lg:hidden"
+ >
+ <div className="bg-white border-t border-[var(--line)] shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+ {/* Expandable package selector for mobile */}
+ <AnimatePresence>
+ {mobileExpanded && hasPackages && (
+ <motion.div
+ initial={{ height: 0, opacity: 0 }}
+ animate={{ height: "auto", opacity: 1 }}
+ exit={{ height: 0, opacity: 0 }}
+ transition={{ duration: 0.3 }}
+ className="overflow-hidden border-b border-[var(--line)]"
+ >
+ <div className="p-4 space-y-2 max-h-[40vh] overflow-y-auto">
+ <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2">
+ {t.selectPackage}
+ </div>
+ {tour.packages!.map((pkg) => {
+ const isSelected =
+ selectedPackage?.name === pkg.name;
+ return (
+ <button
+ key={pkg.name}
+ onClick={() => {
+ onSelectPackage?.(pkg);
+ setMobileExpanded(false);
+ }}
+ className={`w-full flex items-center justify-between p-3 rounded-xl border-2 transition-all text-left ${
+ isSelected
+ ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/5"
+ : "border-[var(--line)]"
+ }`}
+ >
+ <div className="flex items-center gap-2">
+ {isSelected && (
+ <div className="w-5 h-5 rounded-full bg-[var(--brand-primary)] flex items-center justify-center">
+ <Check className="w-3 h-3 text-white" />
+ </div>
+ )}
+ <div>
+ <span className="font-semibold text-sm">
+ {pkg.name}
+ </span>
+ <span className="text-xs text-[var(--text-muted)]">
+ {pkg.description}
+ </span>
+ </div>
+ </div>
+ <span className="font-bold text-[var(--heading)] ml-2">
+ {tour.showPricing ? `€${pkg.price}` : t.quote}
+ </span>
+ </button>
+ );
+ })}
+ </div>
+ </motion.div>
+ )}
+ </AnimatePresence>
 
-              {/* Main bar */}
-              <div className="safe-area-bottom px-4 py-3">
-                <div className="flex items-center gap-3">
-                  <a
-                    href="tel:+905065438223"
-                    onClick={(event) =>
-                      handleTrackedContactNavigation(event, {
-                        href: "tel:+905065438223",
-                        intent: "during_booking",
-                        kind: "phone",
-                        label: PHONE_DISPLAY,
-                        location: `booking_mobile_bar_${tour.slug}`,
-                      })
-                    }
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--brand-primary)] shadow-sm"
-                    aria-label={t.callNow}
-                  >
-                    <Phone className="h-4 w-4" />
-                  </a>
-                  <div className="min-w-0 flex-1">
-                  {tour.showPricing ? (
-                    <SalePrice
-                      price={price}
-                      originalPrice={currentOriginalPrice}
-                      suffix={priceUnitLabel}
-                      label={t.from}
-                      size="sm"
-                    />
-                  ) : (
-                    <div className="text-sm font-semibold text-[var(--heading)]">
-                      {t.tailorMadePlan}
-                    </div>
-                  )}
-                  {hasPackages && (
-                    <button
-                      onClick={() => setMobileExpanded(!mobileExpanded)}
-                      className="flex items-center gap-1 text-xs text-[var(--brand-primary)] font-medium mt-0.5"
-                    >
-                      {selectedPackage?.name || t.selectPackageMobile}
-                      {mobileExpanded ? (
-                        <ChevronDown className="w-3 h-3" />
-                      ) : (
-                        <ChevronUp className="w-3 h-3" />
-                      )}
-                    </button>
-                  )}
-                  </div>
-                  <a
-                    href={channel.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(event) =>
-                      handleTrackedContactNavigation(event, {
-                        href: channel.url,
-                        intent: "during_booking",
-                        kind: "whatsapp",
-                        label: `booking_mobile_bar_${channel.icon}`,
-                        location: `booking_mobile_bar_${tour.slug}`,
-                      })
-                    }
-                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white shadow-sm ${
-                      isTelegram ? "bg-[#229ED9]" : "bg-[#25D366]"
-                    }`}
-                    aria-label={isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}
-                  >
-                    {isTelegram ? (
-                      <Send className="h-5 w-5" aria-hidden />
-                    ) : (
-                      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                      </svg>
-                    )}
-                  </a>
-                </div>
-                <motion.button
-                  onClick={
-                    isQuote
-                      ? () =>
-                          window.open(
-                            isTelegram ? channel.url : `${channel.url}?text=${quoteMessage}`,
-                            "_blank",
-                          )
-                      : handleMobileBookClick
-                  }
-                  className="mt-3 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 text-sm font-bold text-white shadow-lg transition-all hover:brightness-110"
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {isQuote ? t.continue : t.continueBooking}
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+ {/* Main bar */}
+ <div className="safe-area-bottom px-4 py-3">
+ <div className="flex items-center gap-3">
+ <a
+ href="tel:+905065438223"
+ onClick={(event) =>
+ handleTrackedContactNavigation(event, {
+ href: "tel:+905065438223",
+ intent: "during_booking",
+ kind: "phone",
+ label: PHONE_DISPLAY,
+ location: `booking_mobile_bar_${tour.slug}`,
+ })
+ }
+ className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--brand-primary)] shadow-sm"
+ aria-label={t.callNow}
+ >
+ <Phone className="h-4 w-4" />
+ </a>
+ <div className="min-w-0 flex-1">
+ {tour.showPricing ? (
+ <SalePrice
+ price={price}
+ originalPrice={currentOriginalPrice}
+ suffix={priceUnitLabel}
+ label={t.from}
+ size="sm"
+ />
+ ) : (
+ <div className="text-sm font-semibold text-[var(--heading)]">
+ {t.tailorMadePlan}
+ </div>
+ )}
+ {hasPackages && (
+ <button
+ onClick={() => setMobileExpanded(!mobileExpanded)}
+ className="flex items-center gap-1 text-xs text-[var(--brand-primary)] font-medium mt-0.5"
+ >
+ {selectedPackage?.name || t.selectPackageMobile}
+ {mobileExpanded ? (
+ <ChevronDown className="w-3 h-3" />
+ ) : (
+ <ChevronUp className="w-3 h-3" />
+ )}
+ </button>
+ )}
+ </div>
+ <a
+ href={channel.url}
+ target="_blank"
+ rel="noopener noreferrer"
+ onClick={(event) =>
+ handleTrackedContactNavigation(event, {
+ href: channel.url,
+ intent: "during_booking",
+ kind: "whatsapp",
+ label: `booking_mobile_bar_${channel.icon}`,
+ location: `booking_mobile_bar_${tour.slug}`,
+ })
+ }
+ className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white shadow-sm ${
+ isTelegram ? "bg-[#229ED9]" : "bg-[#25D366]"
+ }`}
+ aria-label={isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}
+ >
+ {isTelegram ? (
+ <Send className="h-5 w-5" aria-hidden />
+ ) : (
+ <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white" aria-hidden="true">
+ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+ </svg>
+ )}
+ </a>
+ </div>
+ <motion.button
+ onClick={
+ isQuote
+ ? () =>
+ window.open(
+ isTelegram ? channel.url : `${channel.url}?text=${quoteMessage}`,
+ "_blank",
+ )
+ : handleMobileBookClick
+ }
+ className="mt-3 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 text-sm font-bold text-white shadow-lg transition-all hover:brightness-110"
+ whileTap={{ scale: 0.95 }}
+ >
+ {isQuote ? t.continue : t.continueBooking}
+ </motion.button>
+ </div>
+ </div>
+ </motion.div>
+ )}
+ </AnimatePresence>
 
-      {/* Booking Modal */}
-      <AnimatePresence>
-        {bookingModal && bookingDate && (
-          <BookingModal
-            booking={{
-              tourName: tour.nameEn,
-              tourSlug: tour.slug,
-              date: format(bookingDate, "dd MMM yyyy"),
-              time: bookingTime,
-              guests: bookingGuests,
-              children: bookingChildren,
-              infants: bookingInfants,
-              selectedPackage,
-              selectedAddOns,
-              availablePackages: tour.packages,
-              basePrice: effectivePrice,
-              departurePoint: tour.departurePoint,
-              tourImage: tour.image,
-              rawDate: bookingDate,
-            }}
-            onClose={() => setBookingModal(false)}
-          />
-        )}
-      </AnimatePresence>
-    </>
-  );
+ {/* Booking Modal */}
+ <AnimatePresence>
+ {bookingModal && bookingDate && (
+ <BookingModal
+ booking={{
+ tourName: tour.nameEn,
+ tourSlug: tour.slug,
+ date: format(bookingDate, "dd MMM yyyy"),
+ time: bookingTime,
+ guests: bookingGuests,
+ children: bookingChildren,
+ infants: bookingInfants,
+ selectedPackage,
+ selectedAddOns,
+ availablePackages: tour.packages,
+ basePrice: effectivePrice,
+ departurePoint: tour.departurePoint,
+ tourImage: tour.image,
+ rawDate: bookingDate,
+ }}
+ onClose={() => setBookingModal(false)}
+ />
+ )}
+ </AnimatePresence>
+ </>
+ );
 }

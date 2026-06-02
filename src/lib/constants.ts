@@ -11,48 +11,33 @@ export const TURSAB_LICENSE_NUMBER = "14316";
 export const TURSAB_AGENCY_NAME = "Meryem Yildiz Travel";
 export const TURSAB_LEGAL_NAME = "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI";
 
-// Telegram contact channel — primary fallback for Russian visitors.
-// WhatsApp has been blocked inside Russia since Feb 2026, so every WhatsApp
-// CTA on `/ru` routes must route to Telegram instead. Handle is a placeholder
-// until the user confirms the production Telegram account.
-export const TELEGRAM_HANDLE = "merrysails"; // placeholder
-export const TELEGRAM_URL = `https://t.me/${TELEGRAM_HANDLE}`;
-export const TELEGRAM_DISPLAY = "@merrysails";
+// 2026-06-02 — One contact channel for ALL locales: WhatsApp.
+// (Previously /ru routed to Telegram on the false premise that WhatsApp was
+// blocked in Russia from Feb 2026. That carve-out is removed everywhere.)
+// `getContactChannel` still returns the same shape so downstream UI keeps
+// branching on `icon`; the `"telegram"` branch never fires from this helper
+// but the union member stays for type-compat with admin-only call sites.
 
 /**
  * Returns the preferred messaging channel for a given locale.
- * - `ru` → Telegram (WhatsApp blocked in Russia since Feb 2026)
- * - anything else → WhatsApp
- *
- * Render layer can branch on `icon` to swap the lucide icon (or inline SVG).
- * `url` already includes the deep-link target and is safe for `<a href>`.
+ * Always WhatsApp now — single channel across en/tr/de/fr/nl/ru.
  */
-export function getContactChannel(locale: string | null | undefined): {
+export function getContactChannel(_locale: string | null | undefined): {
   url: string;
   label: string;
   icon: "whatsapp" | "telegram";
 } {
-  if (locale === "ru") {
-    return { url: TELEGRAM_URL, label: "Telegram", icon: "telegram" };
-  }
   return { url: WHATSAPP_URL, label: "WhatsApp", icon: "whatsapp" };
 }
 
 /**
  * Variant of getContactChannel that appends a prefilled message body.
- * Useful for "Plan on WhatsApp" / "Plan on Telegram" intent CTAs.
- *
- * - WhatsApp uses `?text=` query (wa.me supports this)
- * - Telegram t.me does NOT support a prefill query, so the message is dropped
- *   silently — clicking still opens a chat with the account.
+ * WhatsApp uses `?text=` query (wa.me supports this).
  */
 export function getContactChannelWithMessage(
   locale: string | null | undefined,
   message: string,
 ): { url: string; label: string; icon: "whatsapp" | "telegram" } {
   const base = getContactChannel(locale);
-  if (base.icon === "whatsapp") {
-    return { ...base, url: `${base.url}?text=${encodeURIComponent(message)}` };
-  }
-  return base;
+  return { ...base, url: `${base.url}?text=${encodeURIComponent(message)}` };
 }

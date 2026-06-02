@@ -5,8 +5,6 @@ import { ArrowRight, Anchor, Ship, Sunset, Utensils } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import {
   getContactChannel,
-  TELEGRAM_URL,
-  TELEGRAM_DISPLAY,
   SITE_URL,
   SITE_NAME,
   TURSAB_LICENSE_NUMBER,
@@ -260,10 +258,7 @@ function ContactButton({
   variant: "filled" | "outline";
 }) {
   const channel = getContactChannel(locale);
-  const label =
-    channel.icon === "telegram"
-      ? `Telegram ${TELEGRAM_DISPLAY}`
-      : "WhatsApp +90 544 898 98 12";
+  const label = "WhatsApp +90 544 898 98 12";
 
   const base =
     "inline-flex items-center justify-center gap-2 font-semibold rounded-full text-sm py-3 px-5 min-h-[44px] transition-all w-full sm:w-auto";
