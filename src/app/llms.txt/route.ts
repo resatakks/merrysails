@@ -197,6 +197,16 @@ export function GET() {
  url: `${SITE_URL}/fr/iles-aux-princes-istanbul`,
  description: "French Princes Islands pillar — tour journée €45 ou yacht privé dès €280.",
  },
+ {
+ name: "Prinseneilanden (NL)",
+ url: `${SITE_URL}/nl/prinseneilanden-istanbul`,
+ description: "Dutch Princes Islands pillar — gedeelde dagtour €45 of privéjacht vanaf €280.",
+ },
+ {
+ name: "Принцевы острова (RU)",
+ url: `${SITE_URL}/ru/prinkipo-ostrova-istanbul`,
+ description: "Russian Princes Islands pillar — общий тур €45 или частная яхта от €280.",
+ },
  // ── Hotel-cluster TR landing pages (2026-06: high TR volume intent) ──
  {
  name: "Boğaz Turu — Sultanahmet'ten",

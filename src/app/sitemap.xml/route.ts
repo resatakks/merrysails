@@ -191,6 +191,8 @@ export function GET() {
     { url: `${SITE_URL}/tr/prens-adalari-istanbul`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },
     { url: `${SITE_URL}/de/prinzeninseln-istanbul`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/fr/iles-aux-princes-istanbul`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/nl/prinseneilanden-istanbul`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
+    { url: `${SITE_URL}/ru/prinkipo-ostrova-istanbul`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
     // Hotel-cluster landing pages (2026-06-01) — Tier-2 high-intent SERP capture.
     { url: `${SITE_URL}/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },

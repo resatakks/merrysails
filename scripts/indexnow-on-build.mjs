@@ -87,6 +87,8 @@ const EN_URLS = [
   "/tr/prens-adalari-istanbul",
   "/de/prinzeninseln-istanbul",
   "/fr/iles-aux-princes-istanbul",
+  "/nl/prinseneilanden-istanbul",
+  "/ru/prinkipo-ostrova-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
   "/pricing",
