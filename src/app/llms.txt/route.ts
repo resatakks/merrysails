@@ -176,6 +176,27 @@ export function GET() {
  url: `${SITE_URL}/merrysails-vs-viator`,
  description: "Direct-vs-OTA comparison covering 15-25% Viator markup, refund timeline, instant confirmation.",
  },
+ // ── Princes Islands pillars (2026-06-02 — info-to-commercial bridge) ──
+ {
+ name: "Princes Islands Tour Istanbul",
+ url: `${SITE_URL}/princes-islands-tour-istanbul`,
+ description: "Informational + commercial pillar — €45 shared ferry tour vs €280 private yacht charter, 4 inhabited islands, transport options, 7-question FAQ.",
+ },
+ {
+ name: "Prens Adaları Turu (TR)",
+ url: `${SITE_URL}/tr/prens-adalari-istanbul`,
+ description: "Turkish Princes Islands pillar — ferry vs yacht compare, Şehir Hatları schedule, İstanbulkart fares.",
+ },
+ {
+ name: "Prinzeninseln Tour (DE)",
+ url: `${SITE_URL}/de/prinzeninseln-istanbul`,
+ description: "German Princes Islands pillar — Ganztagsausflug €45 oder private Yacht ab €280.",
+ },
+ {
+ name: "Îles aux Princes (FR)",
+ url: `${SITE_URL}/fr/iles-aux-princes-istanbul`,
+ description: "French Princes Islands pillar — tour journée €45 ou yacht privé dès €280.",
+ },
  // ── Hotel-cluster TR landing pages (2026-06: high TR volume intent) ──
  {
  name: "Boğaz Turu — Sultanahmet'ten",

@@ -73,12 +73,14 @@ const FOOTER_LOCALIZED_ROUTES = new Set([
   "/anniversary-yacht-cruise-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
-  // 2026-06-02: Hotel-cluster pages — TR/DE/FR variants shipped, NL/RU deferred.
-  // localizeHref falls back to the EN URL for locales without a variant, which
-  // is the right behaviour while the rest of the locales catch up.
+  // 2026-06-02: Hotel-cluster pages — 5-locale coverage (TR/DE/FR/NL/RU).
   "/bosphorus-cruise-from-sultanahmet",
   "/bosphorus-cruise-from-taksim",
   "/bosphorus-cruise-from-beyoglu",
+  // 2026-06-02: Princes Islands EN pillar. TR/DE/FR variants use
+  // locale-native slugs (prens-adalari, prinzeninseln, iles-aux-princes)
+  // and are not localized via this footer set — they're standalone entries.
+  "/princes-islands-tour-istanbul",
 ]);
 
 function localizeHref(href: string, locale: NavLocale): string {
@@ -244,6 +246,7 @@ const companyLinks = [
   { label: "Cruise from Sultanahmet", href: "/bosphorus-cruise-from-sultanahmet" },
   { label: "Cruise from Taksim", href: "/bosphorus-cruise-from-taksim" },
   { label: "Cruise from Beyoğlu", href: "/bosphorus-cruise-from-beyoglu" },
+  { label: "Princes Islands Tour", href: "/princes-islands-tour-istanbul" },
   { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
