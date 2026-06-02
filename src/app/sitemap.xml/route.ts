@@ -89,6 +89,10 @@ const RU_ENABLED_PATHS = new Set<string>([
   "/anniversary-yacht-cruise-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
+  // 2026-06-02: Hotel-cluster RU variants shipped.
+  "/bosphorus-cruise-from-sultanahmet",
+  "/bosphorus-cruise-from-taksim",
+  "/bosphorus-cruise-from-beyoglu",
 ]);
 
 function toAbsoluteUrl(url: string): string {
@@ -196,6 +200,12 @@ export function GET() {
     { url: `${SITE_URL}/fr/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/fr/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/fr/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/nl/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
+    { url: `${SITE_URL}/nl/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
+    { url: `${SITE_URL}/nl/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
+    { url: `${SITE_URL}/ru/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
+    { url: `${SITE_URL}/ru/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
+    { url: `${SITE_URL}/ru/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.70", lastmod: contentLastmod },
     // Audience-segment landing pages (2026-06-01)
     { url: `${SITE_URL}/merrysails-vs-viator`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod },
     { url: `${SITE_URL}/bosphorus-cruise-for-couples`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },

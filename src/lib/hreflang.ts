@@ -40,6 +40,10 @@ const LOCALIZED_ROUTES = new Set([
   "/anniversary-yacht-cruise-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
+  // 2026-06-02: Hotel-cluster pages — shipped in EN + TR + DE + FR + NL + RU.
+  "/bosphorus-cruise-from-sultanahmet",
+  "/bosphorus-cruise-from-taksim",
+  "/bosphorus-cruise-from-beyoglu",
   // NOTE: /kabatas-bogaz-turu is TR-ONLY — explicitly excluded from LOCALIZED_ROUTES
   // to prevent emitting hreflang annotations for non-existent /de/, /fr/, /nl/, / variants.
   // Adding it here causes 4×404 in Semrush (Source: 2026-05-17 audit).
@@ -69,6 +73,10 @@ const RU_ENABLED_ROUTES = new Set([
   "/kabatas-dinner-cruise-istanbul",
   "/team-building-yacht-istanbul",
   "/kurucesme-marina-yacht-charter",
+  // 2026-06-02: Hotel-cluster RU variants shipped.
+  "/bosphorus-cruise-from-sultanahmet",
+  "/bosphorus-cruise-from-taksim",
+  "/bosphorus-cruise-from-beyoglu",
 ]);
 
 /**

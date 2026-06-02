@@ -8,16 +8,20 @@ import {
   HOTEL_CLUSTER_DISTRICTS_TR,
   HOTEL_CLUSTER_DISTRICTS_DE,
   HOTEL_CLUSTER_DISTRICTS_FR,
+  HOTEL_CLUSTER_DISTRICTS_NL,
+  HOTEL_CLUSTER_DISTRICTS_RU,
 } from "@/lib/hotel-cluster-content";
 
 const REGISTRY = {
   tr: HOTEL_CLUSTER_DISTRICTS_TR,
   de: HOTEL_CLUSTER_DISTRICTS_DE,
   fr: HOTEL_CLUSTER_DISTRICTS_FR,
+  nl: HOTEL_CLUSTER_DISTRICTS_NL,
+  ru: HOTEL_CLUSTER_DISTRICTS_RU,
 } as const;
 
 type SupportedLocale = keyof typeof REGISTRY;
-const SUPPORTED: SupportedLocale[] = ["tr", "de", "fr"];
+const SUPPORTED: SupportedLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
 const META: Record<SupportedLocale, { title: string; description: string; ogTitle: string; ogDescription: string }> = {
   tr: {
@@ -40,6 +44,20 @@ const META: Record<SupportedLocale, { title: string; description: string; ogTitl
       "Croisière sur le Bosphore depuis Beyoğlu (Karaköy, Galata, Pera, Cihangir). Karaköy 5 min de l'embarcadère coucher de soleil. Croisière-dîner avec prise en charge.",
     ogTitle: "Croisière Bosphore depuis Beyoğlu",
     ogDescription: "Croisière sur le Bosphore depuis Beyoğlu — hôtels Karaköy à 5 min de l'embarcadère coucher de soleil. Réservation directe.",
+  },
+  nl: {
+    title: "Bosporuscruise vanuit Beyoğlu — €30",
+    description:
+      "Bosporuscruise vanuit Beyoğlu (Karaköy, Galata, Pera, Cihangir). Vanuit Karaköy 5 min naar de zonsondergangssteiger. Hotelophaling bij dinercruise.",
+    ogTitle: "Bosporuscruise vanuit Beyoğlu",
+    ogDescription: "Bosporuscruise vanuit Beyoğlu — Karaköy-hotels 5 min van de zonsondergangssteiger. Directe boeking, hotelophaling bij dinercruise.",
+  },
+  ru: {
+    title: "Круиз по Босфору из Бейоглу — €30",
+    description:
+      "Круиз по Босфору из Бейоглу (Карайёй, Галата, Пера, Джихангир). От Карайёй 5 мин до причала заката. Трансфер в ужин-круизе включён.",
+    ogTitle: "Круиз по Босфору из Бейоглу",
+    ogDescription: "Круиз по Босфору из Бейоглу — отели Карайёй 5 мин до причала заката. Прямое бронирование, трансфер в ужин-круизе.",
   },
 };
 

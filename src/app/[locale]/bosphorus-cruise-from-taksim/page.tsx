@@ -8,16 +8,20 @@ import {
   HOTEL_CLUSTER_DISTRICTS_TR,
   HOTEL_CLUSTER_DISTRICTS_DE,
   HOTEL_CLUSTER_DISTRICTS_FR,
+  HOTEL_CLUSTER_DISTRICTS_NL,
+  HOTEL_CLUSTER_DISTRICTS_RU,
 } from "@/lib/hotel-cluster-content";
 
 const REGISTRY = {
   tr: HOTEL_CLUSTER_DISTRICTS_TR,
   de: HOTEL_CLUSTER_DISTRICTS_DE,
   fr: HOTEL_CLUSTER_DISTRICTS_FR,
+  nl: HOTEL_CLUSTER_DISTRICTS_NL,
+  ru: HOTEL_CLUSTER_DISTRICTS_RU,
 } as const;
 
 type SupportedLocale = keyof typeof REGISTRY;
-const SUPPORTED: SupportedLocale[] = ["tr", "de", "fr"];
+const SUPPORTED: SupportedLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
 const META: Record<SupportedLocale, { title: string; description: string; ogTitle: string; ogDescription: string }> = {
   tr: {
@@ -40,6 +44,20 @@ const META: Record<SupportedLocale, { title: string; description: string; ogTitl
       "Croisière sur le Bosphore depuis Taksim — funiculaire F1 vers Kabataş en 5 min, taxi 10 min. Coucher de soleil lun/mar/jeu €30. Croisière-dîner avec prise en charge.",
     ogTitle: "Croisière Bosphore depuis Taksim",
     ogDescription: "Croisière sur le Bosphore depuis Taksim — funiculaire F1 dépose à Kabataş en 5 min. Réservation directe, prise en charge sur la croisière-dîner.",
+  },
+  nl: {
+    title: "Bosporuscruise vanuit Taksim — €30",
+    description:
+      "Bosporuscruise vanuit Taksim — funiculaire F1 naar Kabataş in 5 min, taxi 10 min. Zonsondergang ma/di/do €30. Dinercruise met hotelophaling.",
+    ogTitle: "Bosporuscruise vanuit Taksim",
+    ogDescription: "Bosporuscruise vanuit Taksim — funiculaire F1 zet u in 5 min af bij Kabataş. Directe boeking, hotelophaling bij dinercruise.",
+  },
+  ru: {
+    title: "Круиз по Босфору из Таксима — €30",
+    description:
+      "Круиз по Босфору из Таксима — фуникулёр F1 до Кабаташа 5 мин, такси 10 мин. Закат пн/вт/чт €30. Ужин-круиз с трансфером от отеля.",
+    ogTitle: "Круиз по Босфору из Таксима",
+    ogDescription: "Круиз по Босфору из Таксима — фуникулёр F1 доставит до Кабаташа за 5 мин. Прямое бронирование, трансфер в ужин-круизе.",
   },
 };
 

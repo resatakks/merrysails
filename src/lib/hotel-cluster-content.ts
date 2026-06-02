@@ -444,6 +444,284 @@ export const HOTEL_CLUSTER_DISTRICTS_FR: Record<string, HotelClusterDistrict> = 
   },
 };
 
+/**
+ * Dutch locale variants — used by /nl/bosphorus-cruise-from-<district>.
+ * Native Dutch content (NOT machine-translated).
+ */
+export const HOTEL_CLUSTER_DISTRICTS_NL: Record<string, HotelClusterDistrict> = {
+  sultanahmet: {
+    slug: "bosphorus-cruise-from-sultanahmet",
+    name: "Sultanahmet",
+    side: "European",
+    introCapsule:
+      "Bosporuscruise vanuit Sultanahmet — gedeelde zonsondergangscruise (ma/di/do) vanaf €30, dinercruise (Silver Soft) vanaf €30. Sultanahmet-hotels zijn 8-12 minuten van Kabataş-steiger met tram T1, of 15 minuten met taxi. Hotelophaling inbegrepen bij dinercruise — bevestigd via WhatsApp.",
+    knownHotels: [
+      "Four Seasons Sultanahmet",
+      "Sirkeci Mansion",
+      "Hotel Amira",
+      "Sura Hagia Sophia",
+      "White House Hotel",
+      "Hotel Sphendon",
+    ],
+    transportToPier: [
+      { mode: "Tram T1", detail: "Sultanahmet → eindstation Kabataş (8-12 min, ~30 TL)" },
+      { mode: "Taxi (BiTaksi)", detail: "Sultanahmet → Kabataş (~15 min buiten spits, 80-120 TL)" },
+      { mode: "Lopen", detail: "Niet aangeraden — 30+ min bergop via Hippodroom en Gülhane" },
+      { mode: "Hoteltransfer", detail: "Inbegrepen bij dinercruise — ophaaltijd bevestigd via WhatsApp" },
+    ],
+    recommendedCruise: "dinner",
+    pickupEligible: true,
+    walkingTimeMin: 30,
+    taxiCostTL: "80-120 TL",
+    faqs: [
+      {
+        q: "Is de hotelophaling vanuit Sultanahmet inbegrepen bij de dinercruise?",
+        a: "Ja. Alle vier dinercruise-pakketten (€30 Silver Soft, €45 Silver met Alcohol, €80 Gold Soft, €90 Gold Onbeperkt Alcohol) bevatten hotelophaling vanuit Sultanahmet. De ophaaltijd wordt een dag tevoren bevestigd via WhatsApp, meestal 30-45 minuten voor het 20:30 vertrek vanuit Kabataş.",
+      },
+      {
+        q: "Hoe kom ik zelfstandig van Sultanahmet naar de steiger?",
+        a: "Het eenvoudigst met tram T1: instappen bij halte Sultanahmet, eindstation Kabataş (8-12 min). De steiger ligt 30 meter van de tramhalte. Per taxi (BiTaksi) buiten de spits 15 min, 80-120 TL.",
+      },
+      {
+        q: "Welk cruise-formaat past het best bij Sultanahmet-hotels?",
+        a: "De dinercruise (€30 Silver Soft → €90 Gold Onbeperkt Alcohol), omdat de hotelophaling inbegrepen is — de transportstap vervalt. De zonsondergangscruise (€34, ma/di/do €30) vereist eigen aankomst bij de Karaköy-steiger, vanaf Sultanahmet T1 + 5 min lopen.",
+      },
+      {
+        q: "Kan ik op de aankomstdag vanuit luchthaven IST direct naar de cruise?",
+        a: "Mogelijk maar krap. Reken 3 uur vanaf IST tot Kabataş-steiger (90 min transfer + buffer). Voor de 20:30 dinercruise moet het vliegtuig vóór 16:30 landen. Comfortabeler: dag 1 hotelcheck-in + rust, dag 2 avondcruise.",
+      },
+    ],
+  },
+  taksim: {
+    slug: "bosphorus-cruise-from-taksim",
+    name: "Taksim",
+    side: "European",
+    introCapsule:
+      "Bosporuscruise vanuit Taksim — zonsondergangscruise €30 (ma/di/do) en dinercruise Silver Soft €30. Taksim-hotels bereiken Kabataş-steiger in 5-7 minuten met de F1-funiculaire (één halte) of 10 minuten met taxi. De funiculaire rijdt van 06:00 tot middernacht, elke 4 minuten.",
+    knownHotels: [
+      "The Marmara Taksim",
+      "Swissotel The Bosphorus",
+      "Pera Palace Hotel Jumeirah",
+      "Park Bosphorus Hotel",
+      "DoubleTree by Hilton Istanbul Esentepe",
+      "InterContinental Istanbul",
+      "Hilton Istanbul Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Funiculaire F1", detail: "Taksim → Kabataş (1 halte, 4-5 min, ~30 TL)" },
+      { mode: "Taxi (BiTaksi)", detail: "Taksim → Kabataş (~10 min, 60-90 TL)" },
+      { mode: "Lopen", detail: "Mogelijk — 15 min bergaf via Sıraselviler" },
+      { mode: "Hoteltransfer", detail: "Inbegrepen bij dinercruise — ophaaltijd bevestigd via WhatsApp" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 15,
+    taxiCostTL: "60-90 TL",
+    faqs: [
+      {
+        q: "Hoe lang duurt het van Taksim naar de steiger?",
+        a: "Met de F1-funiculaire 5-7 minuten (Taksim metro → Kabataş, één halte, elke 4 min van 06:00 tot middernacht). Per taxi buiten de spits 10 min, 60-90 TL. Lopend via Sıraselviler 15 min bergaf.",
+      },
+      {
+        q: "Hotelophaling vanuit Taksim bij de dinercruise?",
+        a: "Ja — alle vier dinercruise-pakketten bevatten hotelophaling vanuit Taksim-hotels. Ophaaltijd wordt een dag tevoren bevestigd via WhatsApp, meestal 30-45 min voor het 20:30 vertrek vanuit Kabataş.",
+      },
+      {
+        q: "Welk formaat past bij een Taksim-hotel?",
+        a: "Beide werken, maar de zonsondergangscruise (€30 ma/di/do, €34 andere dagen) is bijzonder handig — de F1-funiculaire brengt u in 5 min naar Kabataş, hotelvertrek om 18:15 voor 19:00 afvaart volstaat. De dinercruise werkt ook met inbegrepen ophaling.",
+      },
+      {
+        q: "Kan ik lopend naar de steiger vanuit Taksim?",
+        a: "Ja — 15 min bergaf via Sıraselviler-straat. Aangenaam in lente/herfst maar oncomfortabel bij zomerse hitte of winterregen. F1-funiculaire blijft de beste keuze voor avondcruises — fris arriveren.",
+      },
+    ],
+  },
+  beyoglu: {
+    slug: "bosphorus-cruise-from-beyoglu",
+    name: "Beyoğlu",
+    side: "European",
+    introCapsule:
+      "Bosporuscruise vanuit Beyoğlu — gedeelde zonsondergang of dinercruise Silver Soft vanaf €30. Beyoğlu-hotels (Karaköy, Galata, Cihangir, Pera) bereiken Kabataş-steiger in 10-25 min met tram of taxi. Karaköy-hotels liggen het dichtst bij de zonsondergangssteiger (5 min lopen).",
+    knownHotels: [
+      "Soho House Istanbul",
+      "Sumahan on the Water",
+      "10 Karaköy",
+      "Pera Palace Hotel Jumeirah",
+      "Tomtom Suites",
+      "Georges Hotel Galata",
+      "The Stay Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Lopen (Karaköy)", detail: "Karaköy-hotels → Karaköy-steiger (zonsondergangscruise): 5 min" },
+      { mode: "Tram T1", detail: "Karaköy / Tophane → Kabataş (1-2 haltes, 4-6 min)" },
+      { mode: "Funiculaire F1", detail: "Galata / Tünel → Taksim → Kabataş (totaal 8 min)" },
+      { mode: "Taxi (BiTaksi)", detail: "Pera / Cihangir → Kabataş (~10 min, 70-100 TL)" },
+      { mode: "Hoteltransfer", detail: "Bij dinercruise vanuit centrale Beyoğlu-wijken inbegrepen" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 5,
+    taxiCostTL: "70-100 TL",
+    faqs: [
+      {
+        q: "Hoe dichtbij liggen Karaköy-hotels de zonsondergangssteiger?",
+        a: "Heel dichtbij. Karaköy-hotels (10 Karaköy, Soho House, Sumahan on the Water) liggen 5 min lopen van de Karaköy-steiger waar de zonsondergangscruise vertrekt. Het ontmoetingspunt is net ten noorden van de Galata-brug, bij het Mimar Sinan-monument.",
+      },
+      {
+        q: "Hotelophaling vanuit Beyoğlu bij de dinercruise?",
+        a: "Ja, ophaling vanuit centrale Beyoğlu-wijken (Karaköy, Galata, Cihangir, Pera, Beyoğlu) is inbegrepen. De transfer haalt u op bij het hotel en brengt u voor het 20:30 vertrek naar Kabataş. Ophaaltijd wordt een dag tevoren bevestigd via WhatsApp.",
+      },
+      {
+        q: "Welke Beyoğlu-buurt is best gelegen?",
+        a: "Karaköy het dichtst bij de zonsondergangssteiger (5 min lopen). Galata goed voor beide — 8 min funiculaire voor diner, 5 min bergaf naar Karaköy voor zonsondergang. Pera en Cihangir vereisen tram of taxi maar blijven binnen 10-15 min totaal.",
+      },
+      {
+        q: "Kan ik 's avonds lopend naar de steiger vanuit Beyoğlu?",
+        a: "Vanuit Karaköy ja — 5 min loopbaar bij elk weer. Vanuit Galata 12-15 min bergaf (terug bergop). Vanuit Pera of Cihangir 20-30 min, en de route via Tarlabaşı na zonsondergang wordt afgeraden.",
+      },
+    ],
+  },
+};
+
+/**
+ * Russian locale variants — used by /ru/bosphorus-cruise-from-<district>.
+ * Native Russian content (NOT machine-translated). Formal address (Вы).
+ */
+export const HOTEL_CLUSTER_DISTRICTS_RU: Record<string, HotelClusterDistrict> = {
+  sultanahmet: {
+    slug: "bosphorus-cruise-from-sultanahmet",
+    name: "Sultanahmet",
+    side: "European",
+    introCapsule:
+      "Круиз по Босфору из Султанахмета — общий круиз на закате (пн/вт/чт) от €30, ужин-круиз (Silver Soft) от €30. Отели Султанахмета — 8-12 минут от причала Кабаташ на трамвае Т1 или 15 минут на такси. Трансфер от отеля включён в ужин-круизе — подтверждается в WhatsApp.",
+    knownHotels: [
+      "Four Seasons Sultanahmet",
+      "Sirkeci Mansion",
+      "Hotel Amira",
+      "Sura Hagia Sophia",
+      "White House Hotel",
+      "Hotel Sphendon",
+    ],
+    transportToPier: [
+      { mode: "Трамвай Т1", detail: "Султанахмет → конечная Кабаташ (8-12 мин, ~30 TL)" },
+      { mode: "Такси (BiTaksi)", detail: "Султанахмет → Кабаташ (~15 мин вне часов пик, 80-120 TL)" },
+      { mode: "Пешком", detail: "Не рекомендуется — 30+ мин в гору через Ипподром и Гюльхане" },
+      { mode: "Трансфер от отеля", detail: "Включён в ужин-круизе — время согласуется в WhatsApp" },
+    ],
+    recommendedCruise: "dinner",
+    pickupEligible: true,
+    walkingTimeMin: 30,
+    taxiCostTL: "80-120 TL",
+    faqs: [
+      {
+        q: "Входит ли трансфер от отеля в Султанахмете в стоимость ужин-круиза?",
+        a: "Да. Все четыре пакета ужин-круиза (€30 Silver Soft, €45 Silver с алкоголем, €80 Gold Soft, €90 Gold Безлимитный алкоголь) включают трансфер от отелей Султанахмета. Время согласуется накануне в WhatsApp, обычно за 30-45 минут до отправления в 20:30 от Кабаташа.",
+      },
+      {
+        q: "Как самостоятельно добраться от Султанахмета до причала?",
+        a: "Проще всего трамваем Т1: садитесь на остановке Султанахмет, конечная — Кабаташ (8-12 мин). Причал в 30 метрах от трамвайной остановки. На такси (BiTaksi) вне часов пик 15 мин, 80-120 TL.",
+      },
+      {
+        q: "Какой формат круиза подходит для отелей в Султанахмете?",
+        a: "Ужин-круиз (€30 Silver Soft → €90 Gold Безлимитный алкоголь), потому что трансфер от отеля включён — этап транспорта исключён. Круиз на закате (€34, пн/вт/чт €30) требует самостоятельной поездки к причалу Карайёй: Т1 + 5 мин пешком от Султанахмета.",
+      },
+      {
+        q: "Можно ли в день прилёта из аэропорта IST успеть на круиз?",
+        a: "Возможно, но впритык. Закладывайте 3 часа от IST до Кабаташа (90 мин трансфера + запас). Для ужин-круиза в 20:30 самолёт должен сесть до 16:30. Комфортнее: день 1 — заселение + отдых, день 2 — вечерний круиз.",
+      },
+    ],
+  },
+  taksim: {
+    slug: "bosphorus-cruise-from-taksim",
+    name: "Taksim",
+    side: "European",
+    introCapsule:
+      "Круиз по Босфору из Таксима — закат €30 (пн/вт/чт) и ужин-круиз Silver Soft €30. Отели Таксима — 5-7 минут до Кабаташа на фуникулёре F1 (одна остановка) или 10 минут на такси. Фуникулёр работает с 06:00 до полуночи, каждые 4 минуты.",
+    knownHotels: [
+      "The Marmara Taksim",
+      "Swissotel The Bosphorus",
+      "Pera Palace Hotel Jumeirah",
+      "Park Bosphorus Hotel",
+      "DoubleTree by Hilton Istanbul Esentepe",
+      "InterContinental Istanbul",
+      "Hilton Istanbul Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Фуникулёр F1", detail: "Таксим → Кабаташ (1 остановка, 4-5 мин, ~30 TL)" },
+      { mode: "Такси (BiTaksi)", detail: "Таксим → Кабаташ (~10 мин, 60-90 TL)" },
+      { mode: "Пешком", detail: "Возможно — 15 мин вниз по Сыраселвилер" },
+      { mode: "Трансфер от отеля", detail: "Включён в ужин-круизе — время согласуется в WhatsApp" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 15,
+    taxiCostTL: "60-90 TL",
+    faqs: [
+      {
+        q: "Сколько ехать от Таксима до причала?",
+        a: "Фуникулёр F1 — 5-7 минут (метро Таксим → Кабаташ, одна остановка, каждые 4 мин с 06:00 до полуночи). На такси вне часов пик 10 мин, 60-90 TL. Пешком по Сыраселвилер — 15 мин вниз.",
+      },
+      {
+        q: "Включён ли трансфер от отеля в Таксиме в ужин-круиз?",
+        a: "Да — все четыре пакета ужин-круиза включают трансфер от отелей Таксима. Время согласуется накануне в WhatsApp, обычно за 30-45 мин до отправления в 20:30 от Кабаташа.",
+      },
+      {
+        q: "Какой формат выбрать из отеля в Таксиме?",
+        a: "Оба удобны, но круиз на закате (€30 пн/вт/чт, €34 другие дни) особенно прост — фуникулёр F1 доставит до Кабаташа за 5 мин, выходить из отеля можно в 18:15 на отправление в 19:00. Ужин-круиз тоже работает — с включённым трансфером.",
+      },
+      {
+        q: "Можно ли дойти до причала пешком из Таксима?",
+        a: "Да — 15 мин вниз по улице Сыраселвилер. Приятно весной/осенью, но неудобно в летнюю жару или зимний дождь. Фуникулёр F1 — лучший выбор для вечерних круизов: прибываете свежим.",
+      },
+    ],
+  },
+  beyoglu: {
+    slug: "bosphorus-cruise-from-beyoglu",
+    name: "Beyoğlu",
+    side: "European",
+    introCapsule:
+      "Круиз по Босфору из Бейоглу — общий закат или ужин-круиз Silver Soft от €30. Отели Бейоглу (Карайёй, Галата, Джихангир, Пера) — 10-25 мин до причала Кабаташ трамваем или такси. Отели Карайёй ближе всего к причалу заката (5 мин пешком).",
+    knownHotels: [
+      "Soho House Istanbul",
+      "Sumahan on the Water",
+      "10 Karaköy",
+      "Pera Palace Hotel Jumeirah",
+      "Tomtom Suites",
+      "Georges Hotel Galata",
+      "The Stay Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Пешком (Карайёй)", detail: "Отели Карайёй → причал Карайёй (круиз на закате): 5 мин" },
+      { mode: "Трамвай Т1", detail: "Карайёй / Тофане → Кабаташ (1-2 остановки, 4-6 мин)" },
+      { mode: "Фуникулёр F1", detail: "Галата / Тюнель → Таксим → Кабаташ (всего 8 мин)" },
+      { mode: "Такси (BiTaksi)", detail: "Пера / Джихангир → Кабаташ (~10 мин, 70-100 TL)" },
+      { mode: "Трансфер от отеля", detail: "Из центральных кварталов Бейоглу — включён в ужин-круизе" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 5,
+    taxiCostTL: "70-100 TL",
+    faqs: [
+      {
+        q: "Насколько отели Карайёй близко к причалу заката?",
+        a: "Очень близко. Отели Карайёй (10 Karaköy, Soho House, Sumahan on the Water) — 5 мин пешком до причала Карайёй, откуда отправляется круиз на закате. Место встречи сразу к северу от Галатского моста, у памятника Мимару Синану.",
+      },
+      {
+        q: "Трансфер от отеля в Бейоглу для ужин-круиза?",
+        a: "Да, трансфер из центральных кварталов Бейоглу (Карайёй, Галата, Джихангир, Пера, Бейоглу) включён. Машина забирает Вас от отеля и доставляет к Кабаташу к 20:30. Время согласуется накануне в WhatsApp.",
+      },
+      {
+        q: "Какой квартал Бейоглу удобнее?",
+        a: "Карайёй ближе всего к причалу заката (5 мин пешком). Галата хорош для обоих — 8 мин фуникулёра для ужина, 5 мин вниз к Карайёй для заката. Пера и Джихангир требуют трамвая или такси, но 10-15 мин в сумме.",
+      },
+      {
+        q: "Можно ли вечером пешком до причала из Бейоглу?",
+        a: "Из Карайёй да — 5 мин в любую погоду. Из Галаты 12-15 мин вниз (обратно в гору). Из Пера или Джихангира 20-30 мин, и маршрут через Тарлабаши после темноты не рекомендуется.",
+      },
+    ],
+  },
+};
+
 export const HOTEL_CLUSTER_DISTRICTS: Record<string, HotelClusterDistrict> = {
   sultanahmet: {
     slug: "bosphorus-cruise-from-sultanahmet",
