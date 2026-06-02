@@ -166,6 +166,284 @@ export const HOTEL_CLUSTER_DISTRICTS_TR: Record<string, HotelClusterDistrict> = 
   },
 };
 
+/**
+ * German locale variants — used by /de/bosphorus-cruise-from-<district>.
+ * Native German content (NOT machine-translated). Same shape as TR/EN.
+ */
+export const HOTEL_CLUSTER_DISTRICTS_DE: Record<string, HotelClusterDistrict> = {
+  sultanahmet: {
+    slug: "bosphorus-cruise-from-sultanahmet",
+    name: "Sultanahmet",
+    side: "European",
+    introCapsule:
+      "Bosporus-Kreuzfahrt ab Sultanahmet — Sonnenuntergangs-Tour (Mo/Di/Do) ab €30, Dinner-Cruise (Silver Soft) ab €30. Sultanahmet-Hotels sind 8-12 Minuten mit der T1-Straßenbahn vom Kabataş-Anleger entfernt, mit dem Taxi 15 Minuten. Hotel-Abholung in den Dinner-Cruise-Paketen enthalten — Bestätigung per WhatsApp.",
+    knownHotels: [
+      "Four Seasons Sultanahmet",
+      "Sirkeci Mansion",
+      "Hotel Amira",
+      "Sura Hagia Sophia",
+      "White House Hotel",
+      "Hotel Sphendon",
+    ],
+    transportToPier: [
+      { mode: "Straßenbahn T1", detail: "Sultanahmet → Endstation Kabataş (8-12 Min., ~30 TL)" },
+      { mode: "Taxi (BiTaksi)", detail: "Sultanahmet → Kabataş (~15 Min. außerhalb der Stoßzeiten, 80-120 TL)" },
+      { mode: "Zu Fuß", detail: "Nicht empfohlen — 30+ Min. bergauf über Hippodrom und Gülhane" },
+      { mode: "Hotel-Transfer", detail: "Im Dinner-Cruise inklusive — Abholzeit per WhatsApp bestätigt" },
+    ],
+    recommendedCruise: "dinner",
+    pickupEligible: true,
+    walkingTimeMin: 30,
+    taxiCostTL: "80-120 TL",
+    faqs: [
+      {
+        q: "Ist die Hotel-Abholung von Sultanahmet im Dinner-Cruise enthalten?",
+        a: "Ja. Alle vier Dinner-Cruise-Pakete (€30 Silver Soft, €45 Silver Alkohol, €80 Gold Soft, €90 Gold Unbegrenzt Alkohol) beinhalten Hotel-Abholung aus Sultanahmet. Die Abholzeit wird einen Tag vorher per WhatsApp bestätigt, meist 30-45 Minuten vor der 20:30 Abfahrt in Kabataş.",
+      },
+      {
+        q: "Wie komme ich von Sultanahmet allein zum Anleger?",
+        a: "Am einfachsten mit der T1-Straßenbahn: an der Haltestelle Sultanahmet einsteigen, Endstation Kabataş (8-12 Min.). Der Anleger ist 30 Meter von der Straßenbahnhaltestelle. Per Taxi (BiTaksi) außerhalb der Stoßzeiten 15 Min., 80-120 TL.",
+      },
+      {
+        q: "Welches Cruise-Format passt am besten zu Sultanahmet-Hotels?",
+        a: "Der Dinner-Cruise (€30 Silver Soft → €90 Gold Unbegrenzt Alkohol), weil die Hotel-Abholung inklusive ist — der Transport-Schritt entfällt. Die Sonnenuntergangs-Tour (€34, Mo/Di/Do €30) erfordert eigene Anreise zum Karaköy-Anleger, von Sultanahmet T1 + 5 Min. zu Fuß.",
+      },
+      {
+        q: "Kann ich am Anreisetag vom Flughafen IST direkt zum Cruise?",
+        a: "Möglich, aber knapp. Vom Flughafen IST zum Kabataş-Anleger 3 Stunden einplanen (90 Min. Transfer + Puffer). Für den 20:30 Dinner-Cruise sollte die Maschine bis 16:30 landen. Komfortabler: Tag 1 Hotel-Check-in + Erholung, Tag 2 Abend-Cruise.",
+      },
+    ],
+  },
+  taksim: {
+    slug: "bosphorus-cruise-from-taksim",
+    name: "Taksim",
+    side: "European",
+    introCapsule:
+      "Bosporus-Kreuzfahrt ab Taksim — Sonnenuntergangs-Tour €30 (Mo/Di/Do) und Dinner-Cruise Silver Soft €30. Taksim-Hotels erreichen den Kabataş-Anleger in 5-7 Minuten mit der F1-Standseilbahn (eine Station) oder 10 Minuten mit dem Taxi. Die Standseilbahn fährt von 06:00 bis Mitternacht alle 4 Minuten.",
+    knownHotels: [
+      "The Marmara Taksim",
+      "Swissotel The Bosphorus",
+      "Pera Palace Hotel Jumeirah",
+      "Park Bosphorus Hotel",
+      "DoubleTree by Hilton Istanbul Esentepe",
+      "InterContinental Istanbul",
+      "Hilton Istanbul Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Standseilbahn F1", detail: "Taksim → Kabataş (1 Station, 4-5 Min., ~30 TL)" },
+      { mode: "Taxi (BiTaksi)", detail: "Taksim → Kabataş (~10 Min., 60-90 TL)" },
+      { mode: "Zu Fuß", detail: "Möglich — 15 Min. bergab über Sıraselviler" },
+      { mode: "Hotel-Transfer", detail: "Im Dinner-Cruise inklusive — Abholzeit per WhatsApp bestätigt" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 15,
+    taxiCostTL: "60-90 TL",
+    faqs: [
+      {
+        q: "Wie lange braucht man von Taksim zum Anleger?",
+        a: "Mit der F1-Standseilbahn 5-7 Minuten (Taksim Metro → Kabataş, eine Station, alle 4 Min. von 06:00 bis Mitternacht). Per Taxi außerhalb der Stoßzeiten 10 Min., 60-90 TL. Zu Fuß über Sıraselviler 15 Min. bergab.",
+      },
+      {
+        q: "Ist die Hotel-Abholung von Taksim im Dinner-Cruise enthalten?",
+        a: "Ja — alle vier Dinner-Cruise-Pakete beinhalten Hotel-Abholung aus Taksim-Hotels. Die Abholzeit wird einen Tag vorher per WhatsApp bestätigt, meist 30-45 Min. vor der 20:30 Abfahrt in Kabataş.",
+      },
+      {
+        q: "Welches Cruise-Format passt zu Taksim-Hotels?",
+        a: "Beide funktionieren, aber die Sonnenuntergangs-Tour (€30 Mo/Di/Do, €34 andere Tage) ist besonders einfach — die F1-Standseilbahn bringt Sie in 5 Min. nach Kabataş, für die 19:00 Abfahrt reicht ein Hotel-Aufbruch um 18:15. Der Dinner-Cruise funktioniert auch mit inkl. Abholung.",
+      },
+      {
+        q: "Kann ich von Taksim zu Fuß zum Anleger?",
+        a: "Ja — 15 Min. bergab über die Sıraselviler-Straße. Im Frühling/Herbst angenehm, aber bei Sommerhitze oder Winterregen unbequem. Die F1-Standseilbahn ist die bessere Wahl für Abendtouren — frisch ankommen.",
+      },
+    ],
+  },
+  beyoglu: {
+    slug: "bosphorus-cruise-from-beyoglu",
+    name: "Beyoğlu",
+    side: "European",
+    introCapsule:
+      "Bosporus-Kreuzfahrt ab Beyoğlu — Sonnenuntergangs- oder Dinner-Cruise Silver Soft ab €30. Beyoğlu-Hotels (Karaköy, Galata, Cihangir, Pera) erreichen den Kabataş-Anleger in 10-25 Min. mit Tram oder Taxi. Karaköy-Hotels liegen am nächsten zum Sonnenuntergangs-Anleger (5 Min. zu Fuß).",
+    knownHotels: [
+      "Soho House Istanbul",
+      "Sumahan on the Water",
+      "10 Karaköy",
+      "Pera Palace Hotel Jumeirah",
+      "Tomtom Suites",
+      "Georges Hotel Galata",
+      "The Stay Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Zu Fuß (Karaköy)", detail: "Karaköy-Hotels → Karaköy-Anleger (Sonnenuntergangs-Tour): 5 Min." },
+      { mode: "Straßenbahn T1", detail: "Karaköy / Tophane → Kabataş (1-2 Stationen, 4-6 Min.)" },
+      { mode: "Standseilbahn F1", detail: "Galata / Tünel-Bereich → Taksim → Kabataş (insgesamt 8 Min.)" },
+      { mode: "Taxi (BiTaksi)", detail: "Pera / Cihangir → Kabataş (~10 Min., 70-100 TL)" },
+      { mode: "Hotel-Transfer", detail: "Im Dinner-Cruise aus zentralen Beyoğlu-Vierteln inkl." },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 5,
+    taxiCostTL: "70-100 TL",
+    faqs: [
+      {
+        q: "Wie nah sind Karaköy-Hotels am Sonnenuntergangs-Anleger?",
+        a: "Sehr nah. Karaköy-Hotels (10 Karaköy, Soho House, Sumahan on the Water) sind 5 Min. zu Fuß vom Karaköy-Anleger, wo die Sonnenuntergangs-Tour startet. Der Treffpunkt liegt direkt nördlich der Galata-Brücke, beim Mimar-Sinan-Denkmal.",
+      },
+      {
+        q: "Hotel-Abholung von Beyoğlu im Dinner-Cruise?",
+        a: "Ja, Abholung aus zentralen Beyoğlu-Vierteln (Karaköy, Galata, Cihangir, Pera, Beyoğlu) ist enthalten. Der Transfer holt Sie ab und bringt Sie für die 20:30 Abfahrt nach Kabataş. Abholzeit per WhatsApp am Vortag bestätigt.",
+      },
+      {
+        q: "Welches Beyoğlu-Viertel passt am besten?",
+        a: "Karaköy am nächsten zum Sonnenuntergangs-Anleger (5 Min. zu Fuß). Galata gut für beide — 8 Min. Standseilbahn für Dinner, 5 Min. bergab nach Karaköy für Sonnenuntergang. Pera und Cihangir brauchen Tram oder Taxi, aber insgesamt nur 10-15 Min.",
+      },
+      {
+        q: "Kann man abends von Beyoğlu zum Anleger zu Fuß?",
+        a: "Von Karaköy ja — 5 Min. bei jedem Wetter gehbar. Von Galata 12-15 Min. bergab (zurück bergauf). Von Pera oder Cihangir 20-30 Min., und die Route via Tarlabaşı nach Dunkelheit nicht empfohlen.",
+      },
+    ],
+  },
+};
+
+/**
+ * French locale variants — used by /fr/bosphorus-cruise-from-<district>.
+ * Native French content (NOT machine-translated).
+ */
+export const HOTEL_CLUSTER_DISTRICTS_FR: Record<string, HotelClusterDistrict> = {
+  sultanahmet: {
+    slug: "bosphorus-cruise-from-sultanahmet",
+    name: "Sultanahmet",
+    side: "European",
+    introCapsule:
+      "Croisière sur le Bosphore depuis Sultanahmet — coucher de soleil (lun/mar/jeu) à partir de €30, croisière-dîner (Silver Soft) à partir de €30. Les hôtels de Sultanahmet sont à 8-12 min de l'embarcadère de Kabataş par le tramway T1, ou 15 min en taxi. Prise en charge à l'hôtel incluse sur les forfaits dîner — confirmation par WhatsApp.",
+    knownHotels: [
+      "Four Seasons Sultanahmet",
+      "Sirkeci Mansion",
+      "Hotel Amira",
+      "Sura Hagia Sophia",
+      "White House Hotel",
+      "Hotel Sphendon",
+    ],
+    transportToPier: [
+      { mode: "Tramway T1", detail: "Sultanahmet → terminus Kabataş (8-12 min, ~30 TL)" },
+      { mode: "Taxi (BiTaksi)", detail: "Sultanahmet → Kabataş (~15 min hors heures de pointe, 80-120 TL)" },
+      { mode: "À pied", detail: "Non recommandé — 30+ min en montée par l'Hippodrome et Gülhane" },
+      { mode: "Transfert hôtelier", detail: "Inclus sur la croisière-dîner — horaire confirmé par WhatsApp" },
+    ],
+    recommendedCruise: "dinner",
+    pickupEligible: true,
+    walkingTimeMin: 30,
+    taxiCostTL: "80-120 TL",
+    faqs: [
+      {
+        q: "La prise en charge à l'hôtel depuis Sultanahmet est-elle incluse sur la croisière-dîner ?",
+        a: "Oui. Les quatre forfaits dîner (€30 Silver Soft, €45 Silver Alcoolisé, €80 Gold Soft, €90 Gold Alcool Illimité) incluent la prise en charge depuis les hôtels de Sultanahmet. L'horaire est confirmé par WhatsApp la veille, généralement 30-45 min avant le départ de 20h30 à Kabataş.",
+      },
+      {
+        q: "Comment se rendre seul de Sultanahmet à l'embarcadère ?",
+        a: "Le plus simple : tramway T1 depuis l'arrêt Sultanahmet jusqu'au terminus Kabataş (8-12 min). L'embarcadère est à 30 m de l'arrêt. En taxi (BiTaksi) hors heures de pointe : 15 min, 80-120 TL.",
+      },
+      {
+        q: "Quel format de croisière convient le mieux aux hôtels Sultanahmet ?",
+        a: "La croisière-dîner (€30 Silver Soft → €90 Gold Alcool Illimité) car la prise en charge à l'hôtel est incluse — vous évitez l'étape transport. La croisière coucher de soleil (€34, lun/mar/jeu €30) demande de rejoindre seul l'embarcadère de Karaköy, soit T1 + 5 min à pied depuis Sultanahmet.",
+      },
+      {
+        q: "Puis-je faire la croisière le jour même de l'arrivée à l'aéroport IST ?",
+        a: "Possible mais serré. Compter 3 h depuis IST jusqu'à Kabataş (90 min de transfert + marge). Pour la croisière-dîner de 20h30, l'avion doit atterrir avant 16h30. Plus confortable : jour 1 check-in + repos, jour 2 croisière du soir.",
+      },
+    ],
+  },
+  taksim: {
+    slug: "bosphorus-cruise-from-taksim",
+    name: "Taksim",
+    side: "European",
+    introCapsule:
+      "Croisière sur le Bosphore depuis Taksim — coucher de soleil à €30 (lun/mar/jeu) et croisière-dîner Silver Soft à €30. Les hôtels de Taksim rejoignent l'embarcadère de Kabataş en 5-7 min par le funiculaire F1 (1 station) ou 10 min en taxi. Le funiculaire circule de 06h à minuit toutes les 4 minutes.",
+    knownHotels: [
+      "The Marmara Taksim",
+      "Swissotel The Bosphorus",
+      "Pera Palace Hotel Jumeirah",
+      "Park Bosphorus Hotel",
+      "DoubleTree by Hilton Istanbul Esentepe",
+      "InterContinental Istanbul",
+      "Hilton Istanbul Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "Funiculaire F1", detail: "Taksim → Kabataş (1 station, 4-5 min, ~30 TL)" },
+      { mode: "Taxi (BiTaksi)", detail: "Taksim → Kabataş (~10 min, 60-90 TL)" },
+      { mode: "À pied", detail: "Possible — 15 min en descente par Sıraselviler" },
+      { mode: "Transfert hôtelier", detail: "Inclus sur la croisière-dîner — horaire confirmé par WhatsApp" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 15,
+    taxiCostTL: "60-90 TL",
+    faqs: [
+      {
+        q: "Combien de temps de Taksim à l'embarcadère ?",
+        a: "Funiculaire F1 : 5-7 min (Taksim métro → Kabataş, 1 station, toutes les 4 min de 06h à minuit). Taxi hors heures de pointe : 10 min, 60-90 TL. À pied via Sıraselviler : 15 min en descente.",
+      },
+      {
+        q: "Prise en charge à l'hôtel depuis Taksim sur la croisière-dîner ?",
+        a: "Oui — les quatre forfaits dîner incluent la prise en charge depuis les hôtels de Taksim. Horaire confirmé par WhatsApp la veille, généralement 30-45 min avant le départ de 20h30 à Kabataş.",
+      },
+      {
+        q: "Quel format choisir depuis un hôtel à Taksim ?",
+        a: "Les deux fonctionnent, mais la croisière coucher de soleil (€30 lun/mar/jeu, €34 autres jours) est particulièrement pratique — le funiculaire F1 vous dépose à Kabataş en 5 min, départ d'hôtel à 18h15 pour le 19h. La croisière-dîner fonctionne aussi avec la prise en charge.",
+      },
+      {
+        q: "Puis-je rejoindre l'embarcadère à pied depuis Taksim ?",
+        a: "Oui — 15 min en descente par la rue Sıraselviler. Agréable au printemps/automne mais inconfortable en été ou par temps de pluie. Le funiculaire F1 reste le meilleur choix pour les croisières du soir — vous arrivez frais.",
+      },
+    ],
+  },
+  beyoglu: {
+    slug: "bosphorus-cruise-from-beyoglu",
+    name: "Beyoğlu",
+    side: "European",
+    introCapsule:
+      "Croisière sur le Bosphore depuis Beyoğlu — coucher de soleil ou croisière-dîner Silver Soft à partir de €30. Les hôtels de Beyoğlu (Karaköy, Galata, Cihangir, Pera) rejoignent l'embarcadère de Kabataş en 10-25 min en tramway ou taxi. Les hôtels de Karaköy sont les plus proches de l'embarcadère coucher de soleil (5 min à pied).",
+    knownHotels: [
+      "Soho House Istanbul",
+      "Sumahan on the Water",
+      "10 Karaköy",
+      "Pera Palace Hotel Jumeirah",
+      "Tomtom Suites",
+      "Georges Hotel Galata",
+      "The Stay Bosphorus",
+    ],
+    transportToPier: [
+      { mode: "À pied (Karaköy)", detail: "Hôtels Karaköy → embarcadère Karaköy (croisière coucher de soleil) : 5 min" },
+      { mode: "Tramway T1", detail: "Karaköy / Tophane → Kabataş (1-2 stations, 4-6 min)" },
+      { mode: "Funiculaire F1", detail: "Galata / Tünel → Taksim → Kabataş (8 min au total)" },
+      { mode: "Taxi (BiTaksi)", detail: "Pera / Cihangir → Kabataş (~10 min, 70-100 TL)" },
+      { mode: "Transfert hôtelier", detail: "Inclus sur la croisière-dîner depuis les quartiers centraux de Beyoğlu" },
+    ],
+    recommendedCruise: "sunset",
+    pickupEligible: true,
+    walkingTimeMin: 5,
+    taxiCostTL: "70-100 TL",
+    faqs: [
+      {
+        q: "À quelle distance les hôtels Karaköy de l'embarcadère coucher de soleil ?",
+        a: "Très proches. Les hôtels Karaköy (10 Karaköy, Soho House, Sumahan on the Water) sont à 5 min à pied de l'embarcadère Karaköy d'où part la croisière coucher de soleil. Le point de rendez-vous est juste au nord du pont de Galata, près de la statue de Mimar Sinan.",
+      },
+      {
+        q: "Prise en charge à l'hôtel depuis Beyoğlu sur la croisière-dîner ?",
+        a: "Oui, prise en charge depuis les quartiers centraux de Beyoğlu (Karaköy, Galata, Cihangir, Pera, Beyoğlu) incluse. Le transfert vous récupère à l'hôtel pour le départ de 20h30 à Kabataş. Horaire confirmé par WhatsApp la veille.",
+      },
+      {
+        q: "Quel quartier de Beyoğlu est le mieux placé ?",
+        a: "Karaköy au plus près de l'embarcadère coucher de soleil (5 min à pied). Galata bien pour les deux — 8 min de funiculaire pour le dîner, 5 min en descente vers Karaköy pour le coucher de soleil. Pera et Cihangir demandent tram ou taxi mais restent à 10-15 min au total.",
+      },
+      {
+        q: "Peut-on rejoindre l'embarcadère à pied depuis Beyoğlu le soir ?",
+        a: "Depuis Karaköy oui — 5 min praticable par tous temps. Depuis Galata 12-15 min en descente (remontée au retour). Depuis Pera ou Cihangir 20-30 min, et la route via Tarlabaşı est déconseillée après la tombée du jour.",
+      },
+    ],
+  },
+};
+
 export const HOTEL_CLUSTER_DISTRICTS: Record<string, HotelClusterDistrict> = {
   sultanahmet: {
     slug: "bosphorus-cruise-from-sultanahmet",

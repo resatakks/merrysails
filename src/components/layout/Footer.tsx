@@ -73,6 +73,12 @@ const FOOTER_LOCALIZED_ROUTES = new Set([
   "/anniversary-yacht-cruise-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
+  // 2026-06-02: Hotel-cluster pages — TR/DE/FR variants shipped, NL/RU deferred.
+  // localizeHref falls back to the EN URL for locales without a variant, which
+  // is the right behaviour while the rest of the locales catch up.
+  "/bosphorus-cruise-from-sultanahmet",
+  "/bosphorus-cruise-from-taksim",
+  "/bosphorus-cruise-from-beyoglu",
 ]);
 
 function localizeHref(href: string, locale: NavLocale): string {

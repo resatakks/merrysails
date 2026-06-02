@@ -186,10 +186,16 @@ export function GET() {
     { url: `${SITE_URL}/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     { url: `${SITE_URL}/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
-    // TR hotel-cluster variants (2026-06-02) — only TR currently shipped.
+    // TR/DE/FR hotel-cluster variants (2026-06-02) — NL/RU deferred.
     { url: `${SITE_URL}/tr/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },
     { url: `${SITE_URL}/tr/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },
     { url: `${SITE_URL}/tr/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },
+    { url: `${SITE_URL}/de/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/de/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/de/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/fr/bosphorus-cruise-from-sultanahmet`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/fr/bosphorus-cruise-from-taksim`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
+    { url: `${SITE_URL}/fr/bosphorus-cruise-from-beyoglu`, changefreq: "monthly", priority: "0.72", lastmod: contentLastmod },
     // Audience-segment landing pages (2026-06-01)
     { url: `${SITE_URL}/merrysails-vs-viator`, changefreq: "monthly", priority: "0.78", lastmod: contentLastmod },
     { url: `${SITE_URL}/bosphorus-cruise-for-couples`, changefreq: "monthly", priority: "0.74", lastmod: contentLastmod },

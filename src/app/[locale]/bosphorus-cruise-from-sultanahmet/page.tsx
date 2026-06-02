@@ -4,29 +4,65 @@ import { SITE_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
 import HotelClusterPage from "@/components/cruise/HotelClusterPage";
-import { HOTEL_CLUSTER_DISTRICTS_TR } from "@/lib/hotel-cluster-content";
+import {
+  HOTEL_CLUSTER_DISTRICTS_TR,
+  HOTEL_CLUSTER_DISTRICTS_DE,
+  HOTEL_CLUSTER_DISTRICTS_FR,
+} from "@/lib/hotel-cluster-content";
 
-// Only TR for now — DE/FR/NL/RU variants can be added by extending
-// hotel-cluster-content.ts and the CHROME_STRINGS in HotelClusterPage.
+// Locale → district-map registry. NL/RU deferred until CHROME_STRINGS expand.
+const REGISTRY = {
+  tr: HOTEL_CLUSTER_DISTRICTS_TR,
+  de: HOTEL_CLUSTER_DISTRICTS_DE,
+  fr: HOTEL_CLUSTER_DISTRICTS_FR,
+} as const;
+
+type SupportedLocale = keyof typeof REGISTRY;
+const SUPPORTED: SupportedLocale[] = ["tr", "de", "fr"];
+
+const META: Record<SupportedLocale, { title: string; description: string; ogTitle: string; ogDescription: string }> = {
+  tr: {
+    title: "Sultanahmet'ten Boğaz Turu — €30",
+    description:
+      "Sultanahmet otellerinden Boğaz turu. Akşam yemekli turda otel pickup dahil (€30'dan). T1 tramvayıyla Kabataş'a 8-12 dk. TÜRSAB A lisanslı.",
+    ogTitle: "Sultanahmet'ten Boğaz Turu",
+    ogDescription: "Sultanahmet'ten Boğaz turu — doğrudan rezervasyon, akşam yemekli turda otel pickup dahil, Kabataş iskelesine T1 tramvayı + taksi seçenekleri.",
+  },
+  de: {
+    title: "Bosporus-Kreuzfahrt ab Sultanahmet — €30",
+    description:
+      "Bosporus-Kreuzfahrt ab Sultanahmet — Hotel-Abholung im Dinner-Cruise inkl. (€30+). T1-Tram nach Kabataş 8-12 Min. TÜRSAB A-Gruppe lizenziert.",
+    ogTitle: "Bosporus-Kreuzfahrt ab Sultanahmet",
+    ogDescription: "Direkte Buchung — Dinner-Cruise mit Hotel-Abholung aus Sultanahmet, T1-Straßenbahn + Taxi-Optionen zum Kabataş-Anleger.",
+  },
+  fr: {
+    title: "Croisière Bosphore depuis Sultanahmet — €30",
+    description:
+      "Croisière sur le Bosphore depuis Sultanahmet — prise en charge à l'hôtel incluse sur la croisière-dîner (dès €30). Tramway T1 vers Kabataş 8-12 min.",
+    ogTitle: "Croisière Bosphore depuis Sultanahmet",
+    ogDescription: "Réservation directe — croisière-dîner avec prise en charge depuis Sultanahmet, tramway T1 + taxi vers l'embarcadère de Kabataş.",
+  },
+};
+
 export async function generateStaticParams() {
-  return [{ locale: "tr" }];
+  return SUPPORTED.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== "tr") return {};
-  const district = HOTEL_CLUSTER_DISTRICTS_TR.sultanahmet;
+  if (!SUPPORTED.includes(locale as SupportedLocale)) return {};
+  const district = REGISTRY[locale as SupportedLocale].sultanahmet;
+  const meta = META[locale as SupportedLocale];
   return {
-    title: "Sultanahmet'ten Boğaz Turu — €30",
-    description:
-      "Sultanahmet otellerinden Boğaz turu. Akşam yemekli turda otel pickup dahil (€30'dan). T1 tramvayıyla Kabataş'a 8-12 dk. TÜRSAB A lisanslı.",
+    title: meta.title,
+    description: meta.description,
     alternates: {
       canonical: `${SITE_URL}/${locale}/${district.slug}`,
       languages: buildHreflang(`/${district.slug}`),
     },
     openGraph: {
-      title: "Sultanahmet'ten Boğaz Turu",
-      description: "Sultanahmet'ten Boğaz turu — doğrudan rezervasyon, akşam yemekli turda otel pickup dahil, Kabataş iskelesine T1 tramvayı + taksi seçenekleri.",
+      title: meta.ogTitle,
+      description: meta.ogDescription,
       url: `${SITE_URL}/${locale}/${district.slug}`,
       type: "article",
     },
@@ -35,6 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  if (!isActiveLocale(locale as SiteLocale) || locale !== "tr") notFound();
-  return <HotelClusterPage district={HOTEL_CLUSTER_DISTRICTS_TR.sultanahmet} locale={locale as SiteLocale} />;
+  if (!isActiveLocale(locale as SiteLocale) || !SUPPORTED.includes(locale as SupportedLocale)) notFound();
+  const district = REGISTRY[locale as SupportedLocale].sultanahmet;
+  return <HotelClusterPage district={district} locale={locale as SiteLocale} />;
 }
