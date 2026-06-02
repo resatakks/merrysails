@@ -82,13 +82,11 @@ function parseArgs(argv) {
   return out;
 }
 
-async function bingApiCall(endpoint, body) {
-  const url = `https://ssl.bing.com/webmaster/api.svc/json/${endpoint}?apikey=${API_KEY}`;
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=utf-8" },
-    body: JSON.stringify(body),
-  });
+async function bingApiCall(endpoint, params) {
+  // Bing Webmaster API read endpoints use GET with query params.
+  const qs = new URLSearchParams({ apikey: API_KEY, ...params }).toString();
+  const url = `https://ssl.bing.com/webmaster/api.svc/json/${endpoint}?${qs}`;
+  const res = await fetch(url, { method: "GET", headers: { Accept: "application/json" } });
   const txt = await res.text();
   if (!res.ok) {
     return { ok: false, status: res.status, body: txt.slice(0, 500) };
@@ -102,14 +100,11 @@ async function bingApiCall(endpoint, body) {
 
 async function inspectUrl(absUrl) {
   // GetUrlInfo returns crawl + index status for the supplied URL.
-  return bingApiCall("GetUrlInfo", {
-    siteUrl: SITE_URL,
-    url: absUrl,
-  });
+  return bingApiCall("GetUrlInfo", { siteUrl: SITE_URL, url: absUrl });
 }
 
 async function getSiteStatus() {
-  return bingApiCall("GetSiteStats", { siteUrl: SITE_URL });
+  return bingApiCall("GetUrlInfo", { siteUrl: SITE_URL, url: SITE_URL });
 }
 
 async function main() {
