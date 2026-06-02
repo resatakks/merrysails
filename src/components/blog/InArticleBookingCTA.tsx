@@ -220,7 +220,7 @@ const COPY: Record<
     dinnerCard: "Ужин-круиз — €30",
     yachtCard: "Частная яхта — €200+",
     ruWaDisclaimer:
-      "WhatsApp заблокирован в РФ — мы отвечаем в Telegram круглосуточно.",
+      "Мы отвечаем в WhatsApp круглосуточно — пишите в любое время.",
   },
 };
 
