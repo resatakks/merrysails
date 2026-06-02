@@ -64,6 +64,18 @@ const EN_URLS = [
   "/bosphorus-cruise-from-sultanahmet",
   "/bosphorus-cruise-from-taksim",
   "/bosphorus-cruise-from-beyoglu",
+  // 2026-06-02 — TR/DE/FR hotel-cluster variants (NL/RU not yet shipped).
+  // Listed explicitly because LOCALE_URLS would also create /nl/ + /ru/
+  // paths that don't exist yet.
+  "/tr/bosphorus-cruise-from-sultanahmet",
+  "/tr/bosphorus-cruise-from-taksim",
+  "/tr/bosphorus-cruise-from-beyoglu",
+  "/de/bosphorus-cruise-from-sultanahmet",
+  "/de/bosphorus-cruise-from-taksim",
+  "/de/bosphorus-cruise-from-beyoglu",
+  "/fr/bosphorus-cruise-from-sultanahmet",
+  "/fr/bosphorus-cruise-from-taksim",
+  "/fr/bosphorus-cruise-from-beyoglu",
   "/merrysails-vs-viator",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
