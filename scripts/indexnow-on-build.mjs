@@ -83,6 +83,7 @@ const EN_URLS = [
   "/ru/bosphorus-cruise-from-taksim",
   "/ru/bosphorus-cruise-from-beyoglu",
   "/merrysails-vs-viator",
+  "/princes-islands-tour-istanbul",
   "/bosphorus-cruise-for-couples",
   "/bosphorus-cruise-for-families",
   "/pricing",
