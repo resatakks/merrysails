@@ -115,7 +115,12 @@ export default function BookingSidebar({
  ? PRICE_UNIT_PER_GROUP[bookingLocale]
  : PRICE_UNIT_PER_PERSON[bookingLocale];
 
- // Track sidebar visibility for mobile bar
+ // Track sidebar visibility for mobile bar.
+ // 2026-06-03 — was `observer.unobserve(el)` which throws `NotFoundError:
+ // The object can not be found here.` on iOS Chrome (CriOS) when the
+ // sidebar element has already been detached before cleanup runs. Switched
+ // to `observer.disconnect()` (idempotent, never throws) — matches the
+ // pattern used on the footer observer below.
  useEffect(() => {
  const observer = new IntersectionObserver(
  ([entry]) => {
@@ -127,7 +132,7 @@ export default function BookingSidebar({
  const el = sidebarRef.current;
  if (el) observer.observe(el);
  return () => {
- if (el) observer.unobserve(el);
+ observer.disconnect();
  };
  }, []);
 
