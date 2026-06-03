@@ -9,7 +9,6 @@ import {
   getExperienceSupportPageUrl,
 } from "@/lib/experience-support";
 import { currencySymbol, emailLegalFooter, emailLogoBlock, escapeHtml } from "./helpers";
-import { SITE_URL } from "@/lib/constants";
 
 interface ReservationConfirmationData {
   reservationId: string;
@@ -311,7 +310,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
             data.childDiscountSavings && data.childDiscountSavings > 0
               ? `
           <tr>
-            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">Çocuk indirimi (3-8 %50, 0-3 ücretsiz)</td>
+            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">Child discount (ages 3-8 save 50%, ages 0-3 free)</td>
             <td style="color:#16a34a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:700;">−${symbol}${data.childDiscountSavings}</td>
           </tr>
           `
@@ -430,17 +429,10 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         </a>
       </div>
 
-      ${
-        data.tourSlug === "bosphorus-sunset-cruise"
-          ? `<div style="text-align:center;margin-bottom:22px;padding:16px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;">
-        <p style="color:#166534;font-size:13px;font-weight:700;margin:0 0 4px;">Get ready for your cruise</p>
-        <p style="color:#15803d;font-size:12px;margin:0 0 12px;line-height:1.6;">Explore our free interactive Bosphorus guide — 12 landmarks with a map and an live English-speaking guide.</p>
-        <a href="${SITE_URL}/bosphorus-cruise" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;padding:11px 24px;border-radius:999px;font-weight:700;font-size:13px;">
-          Open the Bosphorus Guide
-        </a>
-      </div>`
-          : ""
-      }
+      <!-- 2026-06-03: "Get ready / Bosphorus Guide" CTA block removed —
+           per user feedback the section was visually disruptive and the
+           Track Reservation / Open Invoice / Open Voucher buttons above
+           already give guests the navigation they need. -->
 
       <!-- MerryTourism VIP transfer CTA removed 2026-05-26 (cross-brand cleanup) -->
 

@@ -42,36 +42,21 @@ const SITE_URL =
  * iOS Mail render it; Outlook degrades gracefully to the navy tile).
  */
 export function emailLogoBlock(opts: { onDark?: boolean } = {}): string {
+  // 2026-06-03 redesign — the previous block crammed a coloured anchor tile,
+  // a multi-coloured wordmark, and an all-caps "MERYEM YİLDİZ TRAVEL" line
+  // into the hero. Reviewed live in Gmail desktop + iOS Mail and it looked
+  // cluttered, especially when stacked on mobile. New treatment: clean
+  // wordmark only, single accent colour for "Sails", optional onDark/onLight
+  // variant. Trust signal moved to the body header (Reservation ID block).
   const onDark = opts.onDark ?? true;
   const merryColor = onDark ? "#ffffff" : "#0f172a";
   const sailsColor = onDark ? "#7da6ff" : "#182987";
   const subColor = onDark ? "#94a3b8" : "#64748b";
   return `
-    <table role="presentation" style="border-collapse:collapse;">
-      <tr>
-        <td style="vertical-align:middle;padding-right:10px;">
-          <a href="${SITE_URL}" style="text-decoration:none;display:inline-block;">
-            <table role="presentation" style="border-collapse:collapse;width:44px;height:44px;border-radius:14px;background:#182987;">
-              <tr>
-                <td style="width:44px;height:44px;text-align:center;vertical-align:middle;line-height:44px;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;">
-                    <path d="M12 22V8"/>
-                    <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
-                    <circle cx="12" cy="5" r="3"/>
-                  </svg>
-                </td>
-              </tr>
-            </table>
-          </a>
-        </td>
-        <td style="vertical-align:middle;">
-          <a href="${SITE_URL}" style="text-decoration:none;color:inherit;">
-            <span style="display:block;font-size:22px;font-weight:800;letter-spacing:-0.4px;line-height:1.1;color:${merryColor};">Merry<span style="color:${sailsColor};">Sails</span></span>
-            <span style="display:block;margin-top:4px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:${subColor};">${escapeHtml(TURSAB_AGENCY_NAME)}</span>
-          </a>
-        </td>
-      </tr>
-    </table>
+    <a href="${SITE_URL}" style="display:inline-block;text-decoration:none;color:inherit;">
+      <span style="display:block;font-size:24px;font-weight:800;letter-spacing:-0.4px;line-height:1;color:${merryColor};">Merry<span style="color:${sailsColor};">Sails</span></span>
+      <span style="display:block;margin-top:6px;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:${subColor};font-weight:600;">Bosphorus Cruises &amp; Yacht Charter</span>
+    </a>
   `;
 }
 

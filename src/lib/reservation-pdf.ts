@@ -270,14 +270,18 @@ function drawInvoiceTable(doc: jsPDF, input: ReservationPdfInput, startY: number
   const lineItems = getLineItems(input);
   const discountContext = getPackageDiscountContext(input, lineItems);
 
+  // 2026-06-03 column layout — widened description column from 84→104mm
+  // (now spans 18→122mm) so age-tier labels never wrap into Qty. Qty moved
+  // right-aligned at 132mm, Unit Rate stays left at 142mm but with wider
+  // wrap budget for "/booking" style suffixes, Amount right-aligned at 188.
   doc.setFillColor(248, 250, 252);
   doc.roundedRect(14, startY, 182, 11, 4, 4, "F");
   doc.setFont("Roboto", "bold");
   doc.setFontSize(9);
   doc.setTextColor(100, 116, 139);
   doc.text("Description", 18, startY + 7);
-  doc.text("Qty", 118, startY + 7);
-  doc.text("Unit Rate", 137, startY + 7);
+  doc.text("Qty", 132, startY + 7, { align: "right" });
+  doc.text("Unit Rate", 142, startY + 7);
   doc.text("Amount", 188, startY + 7, { align: "right" });
 
   let cursorY = startY + 16;
@@ -286,13 +290,13 @@ function drawInvoiceTable(doc: jsPDF, input: ReservationPdfInput, startY: number
     doc.setFont("Roboto", "normal");
     doc.setFontSize(10.5);
     doc.setTextColor(17, 24, 39);
-    const descriptionBottom = writeWrappedText(doc, item.label, 18, cursorY, 84, 4.8);
-    doc.text(String(item.quantity), 118, cursorY);
-    doc.text(formatMoney(item.unitPrice, input.currency), 137, cursorY);
+    const descriptionBottom = writeWrappedText(doc, item.label, 18, cursorY, 104, 4.8);
+    doc.text(String(item.quantity), 132, cursorY, { align: "right" });
+    doc.text(formatMoney(item.unitPrice, input.currency), 142, cursorY);
     doc.setFont("Roboto", "normal");
     doc.setFontSize(8.5);
     doc.setTextColor(100, 116, 139);
-    doc.text(item.unitLabel, 137, cursorY + 4.4);
+    doc.text(item.unitLabel, 142, cursorY + 4.4);
     doc.setFont("Roboto", "bold");
     doc.setFontSize(10.5);
     doc.setTextColor(17, 24, 39);
@@ -312,14 +316,14 @@ function drawInvoiceTable(doc: jsPDF, input: ReservationPdfInput, startY: number
   doc.setTextColor(71, 85, 105);
 
   if (discountContext) {
-    doc.text("Public package value", 136, summaryY);
+    doc.text("Public package value", 142, summaryY);
     doc.text(formatMoney(discountContext.publicValue, input.currency), 188, summaryY, {
       align: "right",
     });
     summaryY += 6;
 
     doc.setTextColor(22, 101, 52);
-    doc.text("Direct booking saving", 136, summaryY);
+    doc.text("Direct booking saving", 142, summaryY);
     doc.text(`-${formatMoney(discountContext.directSaving, input.currency)}`, 188, summaryY, {
       align: "right",
     });
@@ -327,11 +331,11 @@ function drawInvoiceTable(doc: jsPDF, input: ReservationPdfInput, startY: number
     doc.setTextColor(71, 85, 105);
   }
 
-  doc.text("Package subtotal", 136, summaryY);
+  doc.text("Package subtotal", 142, summaryY);
   doc.text(formatMoney(subtotal, input.currency), 188, summaryY, { align: "right" });
   summaryY += 6;
 
-  doc.text("Add-ons", 136, summaryY);
+  doc.text("Add-ons", 142, summaryY);
   doc.text(formatMoney(addOnsTotal, input.currency), 188, summaryY, { align: "right" });
 
   doc.setFillColor(15, 23, 42);

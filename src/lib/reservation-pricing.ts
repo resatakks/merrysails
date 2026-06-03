@@ -368,7 +368,13 @@ export function buildReservationPricingSnapshot({
     if (adultsCount > 0) {
       lineItems.push({
         type: "package",
-        label: `${baseLabel} — Yetişkin (8+)`,
+        // 2026-06-03 — Was Turkish ("Yetişkin (8+)") which leaked into the
+        // English invoice/voucher PDF. Standardise on English everywhere
+        // since the entire customer-facing email/PDF flow is English-only.
+        // Age ranges intentionally omitted from labels (they live in the
+        // Guests row already) so the invoice description column doesn't
+        // wrap once the booking has ≥2 age tiers.
+        label: `${baseLabel} — Adult`,
         quantity: adultsCount,
         unitPrice: baseUnitPrice,
         unitLabel: "/person",
@@ -378,7 +384,7 @@ export function buildReservationPricingSnapshot({
     if (childrenCount > 0) {
       lineItems.push({
         type: "package",
-        label: `${baseLabel} — Çocuk (3-8, %50)`,
+        label: `${baseLabel} — Child (50% off)`,
         quantity: childrenCount,
         unitPrice: childUnit,
         unitLabel: "/person",
@@ -391,7 +397,7 @@ export function buildReservationPricingSnapshot({
       // need a new branch.
       lineItems.push({
         type: "package",
-        label: `${baseLabel} — Bebek (0-3, ücretsiz)`,
+        label: `${baseLabel} — Infant (free)`,
         quantity: infantsCount,
         unitPrice: 0,
         unitLabel: "/person",

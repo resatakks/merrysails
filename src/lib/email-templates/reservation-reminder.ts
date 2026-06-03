@@ -7,7 +7,6 @@ import {
   getExperienceSupportPageUrl,
 } from "@/lib/experience-support";
 import { emailLegalFooter, escapeHtml } from "./helpers";
-import { SITE_URL } from "@/lib/constants";
 
 interface ReservationReminderData {
   reservationId: string;
@@ -195,15 +194,9 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
         }
       </div>
 
-      ${
-        data.tourSlug === "bosphorus-sunset-cruise"
-          ? `<div style="margin:0 0 14px;padding:14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;text-align:center;">
-        <p style="color:#166534;font-size:13px;font-weight:700;margin:0 0 4px;">Get ready for your cruise</p>
-        <p style="color:#15803d;font-size:12px;margin:0 0 10px;line-height:1.6;">Free interactive Bosphorus guide — 12 landmarks with a map and an live English-speaking guide.</p>
-        <a href="${SITE_URL}/bosphorus-cruise" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:999px;font-weight:700;font-size:13px;">Open the Bosphorus Guide</a>
-      </div>`
-          : ""
-      }
+      <!-- 2026-06-03 — "Get ready / Bosphorus Guide" CTA removed (same
+           rationale as reservation-confirmation.ts). The reminder already
+           covers everything the guest needs: time, pier, voucher link. -->
       <!-- MerryTourism VIP transfer CTA removed 2026-05-26 (cross-brand cleanup) -->
 
       <p style="color:#64748b;font-size:13px;margin:0;line-height:1.7;">

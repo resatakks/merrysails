@@ -346,6 +346,32 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400" },
         ],
       },
+      // 2026-06-03 — X-Robots-Tag: noindex for Next.js framework chunks.
+      // GSC was reporting 948 "Crawled - currently not indexed" URLs under
+      // /_next/static/chunks/*.{js,css}?dpl=… because robots.txt Disallow
+      // tells Googlebot "don't crawl" but doesn't tell it "don't show as
+      // not-indexed in your report". X-Robots-Tag noindex is the right
+      // signal — Google still won't crawl (per robots), and when it does
+      // see one of these URLs from a referrer it removes it from the
+      // index report. Belt-and-braces approach.
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+      {
+        source: "/_next/data/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+      {
+        source: "/_next/image",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
     ];
   },
 

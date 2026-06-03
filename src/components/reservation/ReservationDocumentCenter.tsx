@@ -69,7 +69,7 @@ export function ReservationDocumentCenter({
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[var(--brand-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_32px_rgba(255,78,80,0.18)] transition-all hover:brightness-110"
                     >
                       <FileText className="h-4 w-4" />
-                      Open in modal
+                      Open
                     </button>
                     <a
                       href={`/reservation/${reservationId}/${docType}/pdf?download=1`}
