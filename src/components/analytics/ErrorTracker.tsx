@@ -68,9 +68,36 @@ export default function ErrorTracker() {
       return true;
     };
 
+    // 2026-06-03 — Known-safe iOS WebKit DOM races. These fire during route
+    // transitions / animation cleanups and never actually break the user
+    // flow (the underlying node was simply unmounted before cleanup ran).
+    // Preventing them avoids triggering outer React error boundaries which
+    // would unmount the page on locales like ar/sa where iOS WebKit is
+    // more aggressive about gc'ing detached nodes mid-transition.
+    const KNOWN_SAFE_DOM_ERRORS = [
+      /NotFoundError: The object can not be found here\.?/i,
+      /ResizeObserver loop (?:limit exceeded|completed with undelivered notifications)/i,
+      /The operation is insecure\.?/i, // private-window storage races
+    ];
+
+    const isKnownSafe = (msg: string) =>
+      KNOWN_SAFE_DOM_ERRORS.some((re) => re.test(msg));
+
     const onError = (event: ErrorEvent) => {
       const message = String(event.message || "unknown");
       const source = `${event.filename || ""}:${event.lineno || ""}:${event.colno || ""}`;
+
+      // Swallow known-safe DOM races so they don't break the page or
+      // pollute Clarity / GA4. Still log once per session at info-level
+      // so we know they fired (helps detect new regressions).
+      if (isKnownSafe(message)) {
+        event.preventDefault?.();
+        if (typeof console !== "undefined" && shouldReport(`safe|${message}`)) {
+          console.info("[ErrorTracker] suppressed known-safe DOM race:", message);
+        }
+        return;
+      }
+
       const key = `error|${message}|${source}`;
       if (!shouldReport(key)) return;
 
@@ -90,6 +117,14 @@ export default function ErrorTracker() {
         reason instanceof Error
           ? `${reason.message}\n${(reason.stack || "").slice(0, 300)}`
           : String(reason ?? "unhandled rejection");
+
+      // Same known-safe filter as onError — promise rejections from
+      // fetch-after-unmount, abort signals, etc. shouldn't bubble.
+      if (isKnownSafe(message) || /AbortError/i.test(message)) {
+        event.preventDefault?.();
+        return;
+      }
+
       const key = `rejection|${message.slice(0, 200)}`;
       if (!shouldReport(key)) return;
 
