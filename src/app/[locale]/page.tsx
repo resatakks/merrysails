@@ -12,7 +12,7 @@ export function generateStaticParams() {
  return ACTIVE_LOCALES.filter((l) => l !== "en").map((l) => ({ locale: l }));
 }
 
-type LocaleKey = "tr" | "de" | "fr" | "nl" | "ru";
+type LocaleKey = "tr" | "de" | "fr" | "nl" | "ru" | "zh";
 
 type FaqItem = { q: string; a: string };
 
@@ -521,6 +521,108 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  intro: "Напишите нам в WhatsApp или оформите бронирование онлайн.",
  bookButton: "Онлайн-бронирование",
  whatsappButton: "Написать в WhatsApp",
+ },
+ },
+ // 2026-06-04: Chinese (Simplified) locale — native Mandarin for the growing
+ // China-traffic segment (Clarity 3d shows China is #2 source country after
+ // Turkey, ahead of US/UK). Targets both Mainland CN tourists (when on Google
+ // via HK/abroad) and global Chinese-diaspora visitors. Hreflang stage-set
+ // is ZH_ENABLED_ROUTES in src/lib/hreflang.ts — only emits where /zh page
+ // exists. Sitemap is gated by ZH_ENABLED_PATHS.
+ zh: {
+ htmlLang: "zh-CN",
+ metaTitle: "伊斯坦布尔博斯普鲁斯海峡游船 — 日落 / 晚宴 / 游艇",
+ metaDescription:
+ "MerrySails 提供伊斯坦布尔博斯普鲁斯海峡日落游船、晚宴游船及私人游艇包租。直接预订，TÜRSAB A 类许可，自 2001 年起接待 50,000+ 位客人。WhatsApp 中文/英文/土耳其语对接。",
+ hero: {
+ tagline: "MerrySails 博斯普鲁斯海峡专家",
+ heading: "伊斯坦布尔博斯普鲁斯海峡游船 — 日落、晚宴与私人游艇",
+ subheading:
+ "三种核心产品:共享日落游船、共享晚宴游船、私人游艇包租。直接预订,价格透明,持牌运营。",
+ bookNow: "立即预订",
+ trustLine: "TÜRSAB A 类许可 · 50,000+ 位客人 · 直接预订",
+ fromLabel: "起价",
+ },
+ products: {
+ sunset: {
+ eyebrow: "黄金时刻",
+ title: "博斯普鲁斯日落游船",
+ description: "2 小时共享日落游船,价格透明,固定出发日期(周一/二/四 €30,其他日期 €34)。",
+ price: "€30 起 (周一/二/四)",
+ },
+ dinner: {
+ eyebrow: "共享晚宴",
+ title: "博斯普鲁斯晚宴游船",
+ description: "3.5 小时晚宴游船,含三道菜土耳其晚餐、土耳其之夜表演,Kabataş 码头出发,可从中央酒店接送。",
+ price: "€30 起",
+ },
+ yacht: {
+ eyebrow: "私人包船",
+ title: "伊斯坦布尔私人游艇包租",
+ description: "私人游艇包租,可选餐饮、装饰、摄影、音乐与接送。求婚、生日、企业活动、家庭团聚理想之选。",
+ price: "€280 起 / 整船",
+ },
+ },
+ coreSection: {
+ heading: "选择您的博斯普鲁斯体验",
+ intro: "三种直接预订的核心产品:日落、晚宴、私人游艇。",
+ seeDetails: "查看详情 →",
+ compareHubLabel: "比较所有博斯普鲁斯游船",
+ departurePointsLabel: "博斯普鲁斯游船从哪里出发?",
+ },
+ whyUs: {
+ heading: "为什么选择 MerrySails?",
+ intro: "作为伊斯坦布尔博斯普鲁斯专家,我们为客人提供清晰、可靠、透明的体验。",
+ cards: [
+ {
+ title: "直接预订",
+ description: "无中介,无 OTA 佣金 (Viator/GetYourGuide 加价 20-30%)。直接与运营方对接,快速确认,价格透明。",
+ },
+ {
+ title: "TÜRSAB A 类许可",
+ description: "自 2001 年起持有 TÜRSAB A 类旅行社许可证 (#14316),是土耳其官方旅游执照体系的最高级别。",
+ },
+ {
+ title: "博斯普鲁斯专家",
+ description: "日落游船、晚宴游船与私人游艇均有独立的策划经验,船长团队自 2001 年起服务于本航线。",
+ },
+ ],
+ },
+ faqSection: {
+ heading: "伊斯坦布尔博斯普鲁斯海峡游船 — 常见问题",
+ intro: "预订前您需要了解的全部信息。",
+ items: [
+ {
+ q: "博斯普鲁斯游船包含什么?",
+ a: "MerrySails 提供多种博斯普鲁斯游船形式。日落游船为 2 小时共享航行,黄金时刻,包含饮品、小食,根据套餐可选葡萄酒。晚宴游船含晚餐、土耳其之夜表演节目。私人游艇包租提供私人套餐,可选餐饮、饮品、接送和娱乐节目。",
+ },
+ {
+ q: "博斯普鲁斯游船持续多久?",
+ a: "日落游船约 2 小时,共享晚宴游船约 3.5 小时,私人游艇包租从 2 小时起,可延长至全天。",
+ },
+ {
+ q: "博斯普鲁斯游船从哪里出发?",
+ a: "出发点因产品而异。日落游船使用 Karaköy 码头中心集合点,预订后确认。晚宴游船从 Kabataş 码头出发,支持苏丹艾哈迈德/塔克西姆/卡拉柯伊中心酒店的接送服务。私人游艇通常从 Kurucesme 码头出发,具体取决于船型。",
+ },
+ {
+ q: "哪种产品适合中国游客?",
+ a: "推荐共享日落游船作为入门选择 (€30,2 小时,无需预付,船上付款)。如果家人或朋友 6 人以上,推荐私人游艇 (€280 起/整船,价格远低于 Viator/GetYourGuide 的同等私船)。晚宴游船适合喜欢土耳其文化表演与晚餐的客人 (€30-90,4 个套餐可选)。",
+ },
+ {
+ q: "可以使用银联或支付宝/微信支付吗?",
+ a: "船上付款支持现金 (EUR/USD/TRY) 和国际信用卡 (Visa/Mastercard/AmEx)。中国银联和支付宝/微信目前不直接受理,但我们正在与本地伙伴合作以便很快支持。建议携带 Visa/Mastercard,或在伊斯坦布尔银行兑换部分欧元/里拉现金。",
+ },
+ {
+ q: "中文服务可用吗?",
+ a: "我们的 WhatsApp 客服可以中文、英文、土耳其语对接 (+90 544 898 98 12)。船上船长团队主要使用英文和土耳其语,但日落和晚宴产品在船上配有英文讲解。私人游艇包租可以预约普通话讲解员 (需提前 48 小时通知,€80 加费)。",
+ },
+ ],
+ },
+ bottomCta: {
+ heading: "预订您的博斯普鲁斯游船",
+ intro: "WhatsApp 联系我们或在线下单。中英土三语支持,工作时间内几分钟确认。",
+ bookButton: "在线预订",
+ whatsappButton: "WhatsApp 中文咨询",
  },
  },
 };

@@ -79,6 +79,13 @@ const RU_ENABLED_ROUTES = new Set([
   "/bosphorus-cruise-from-beyoglu",
 ]);
 
+// 2026-06-04: Chinese (Simplified) staged rollout — homepage only at v1.
+// Add a path once src/app/[locale]/<path>/page.tsx ships a zh TRANSLATIONS
+// block. Must mirror ZH_ENABLED_PATHS in src/app/sitemap.xml/route.ts.
+const ZH_ENABLED_ROUTES = new Set([
+  "", // homepage only at v1
+]);
+
 /**
  * Builds alternates.languages for Next.js generateMetadata().
  * Returns undefined for routes not in LOCALIZED_ROUTES, so they get no hreflang.
@@ -96,6 +103,8 @@ export function buildHreflang(path: string): Record<string, string> | undefined 
     if (locale === "en") continue;
     // Stage ru: only emit hreflang for paths that have a live /ru page.
     if (locale === "ru" && !RU_ENABLED_ROUTES.has(path)) continue;
+    // Stage zh: only emit hreflang for paths that have a live /zh page.
+    if (locale === "zh" && !ZH_ENABLED_ROUTES.has(path)) continue;
     languages[locale] = `${SITE_URL}/${locale}${path}`;
   }
 

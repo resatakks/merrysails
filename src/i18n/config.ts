@@ -11,6 +11,7 @@ export const SUPPORTED_LOCALES = [
   "nl",
   "sa",
   "el",
+  "zh",
 ] as const;
 
 export type SiteLocale = (typeof SUPPORTED_LOCALES)[number];
@@ -19,7 +20,7 @@ export const DEFAULT_LOCALE: SiteLocale = "en";
 
 // Rollout is staged intentionally so we don't emit hreflang signals
 // for locales that do not yet have public routes and translated content.
-export const ACTIVE_LOCALES: SiteLocale[] = ["en", "tr", "de", "fr", "nl", "ru"];
+export const ACTIVE_LOCALES: SiteLocale[] = ["en", "tr", "de", "fr", "nl", "ru", "zh"];
 
 export const FUTURE_LOCALES: SiteLocale[] = SUPPORTED_LOCALES.filter(
   (locale) => !ACTIVE_LOCALES.includes(locale)
@@ -40,6 +41,7 @@ export const LOCALE_LABELS: Record<SiteLocale, string> = {
   nl: "Nederlands",
   sa: "العربية",
   el: "Ελληνικά",
+  zh: "中文",
 };
 
 export function isSupportedLocale(value: string): value is SiteLocale {

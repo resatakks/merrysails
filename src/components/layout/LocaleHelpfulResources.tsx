@@ -122,6 +122,15 @@ const TRANSLATIONS: Record<
     pricing: "Τιμές →",
     faq: "Συχνές ερωτήσεις →",
   },
+  zh: {
+    label: "相关链接:",
+    hub: "全部博斯普鲁斯游船选择 →",
+    sunset: "日落游船 €30 起 →",
+    dinner: "晚宴游船 €30 起 →",
+    yacht: "私人游艇 €280 起 →",
+    pricing: "价格 →",
+    faq: "常见问题 →",
+  },
 };
 
 /**

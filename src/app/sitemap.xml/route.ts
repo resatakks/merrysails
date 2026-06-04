@@ -95,6 +95,14 @@ const RU_ENABLED_PATHS = new Set<string>([
   "/bosphorus-cruise-from-beyoglu",
 ]);
 
+// 2026-06-04: Chinese (Simplified) staged rollout. Mirror of ZH_ENABLED_ROUTES
+// in src/lib/hreflang.ts. Homepage only at v1 — expand path-by-path as zh
+// content lands. ZH_ENABLED_PATHS uses "/" for homepage (sitemap convention)
+// while ZH_ENABLED_ROUTES in hreflang uses "" (path-suffix convention).
+const ZH_ENABLED_PATHS = new Set<string>([
+  "/", // homepage
+]);
+
 function toAbsoluteUrl(url: string): string {
   if (url.startsWith("http://") || url.startsWith("https://")) return url;
   return `${SITE_URL}${url.startsWith("/") ? url : `/${url}`}`;
@@ -122,6 +130,7 @@ function hreflangXml(path: string): string {
   for (const locale of NON_EN_LOCALES) {
     // Stage ru: only emit hreflang for paths with a live /ru page.
     if (locale === "ru" && !RU_ENABLED_PATHS.has(path)) continue;
+    if (locale === "zh" && !ZH_ENABLED_PATHS.has(path)) continue;
     lines.push(`    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
   }
   return lines.join("\n");
@@ -135,6 +144,7 @@ function hreflangLocaleXml(path: string, thisLocale: string): string {
   ];
   for (const locale of NON_EN_LOCALES) {
     if (locale === "ru" && !RU_ENABLED_PATHS.has(path)) continue;
+    if (locale === "zh" && !ZH_ENABLED_PATHS.has(path)) continue;
     lines.push(`    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
   }
   return lines.join("\n");
@@ -273,6 +283,8 @@ export function GET() {
     LOCALIZED_PATHS
       // Stage ru: only emit /ru sitemap entries for paths with live ru content.
       .filter((path) => locale !== "ru" || RU_ENABLED_PATHS.has(path))
+      // Stage zh: only emit /zh sitemap entries for paths with live zh content.
+      .filter((path) => locale !== "zh" || ZH_ENABLED_PATHS.has(path))
       .map((path) => ({
         url: `${SITE_URL}/${locale}${path}`,
         changefreq: PILLAR_PATHS.has(path) ? "weekly" : "monthly",
