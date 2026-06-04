@@ -60,12 +60,15 @@ const CRUISE_OPTIONS = [
  slug: "/yacht-charter-istanbul",
  type: "Private",
  duration: "2 hours (extendable)",
- priceFrom: 280,
+ // 2026-06-04: was 280 — actual entry price is €200 for the Boutique
+ // Yacht 10 (small-deck sailing, 10-12 guests, 2h) per src/data/tours.ts.
+ // €280 is the Group Yacht 36 starting price, not the fleet minimum.
+ priceFrom: 200,
  priceTo: 680,
  priceNote: "per boat (entire vessel)",
- capacity: "Up to 20",
- includes: ["Captain & crew", "Soft drinks / snacks (Essential)", "Full menu + open bar (VIP)", "Custom route"],
- excludes: ["Default photographer (add-on)"],
+ capacity: "Up to 150",
+ includes: ["Captain & crew", "Soft drinks / snacks", "Custom route", "10% off from 3 hours"],
+ excludes: ["Catering / alcohol (add-on)", "Photographer (add-on)"],
  departTime: "Flexible (your time)",
  bestFor: "Proposals, birthdays, anniversaries, corporate events",
  rating: 4.9,
@@ -75,12 +78,15 @@ const CRUISE_OPTIONS = [
  name: "Hourly Boat Rental",
  slug: "/boat-rental-istanbul",
  type: "Private",
- duration: "Min 2 hours",
- priceFrom: 60,
- priceTo: 200,
- priceNote: "per hour, captain included",
- capacity: "Up to 30",
- includes: ["Captain", "Custom route", "Optional catering"],
+ duration: "2 hours minimum",
+ // 2026-06-04: was "€60/hour" which was misleading — minimum 2h means
+ // effective entry €200 (same Boutique Yacht 10). Aligned with the fleet
+ // floor; per-hour notation kept in priceNote for clarity.
+ priceFrom: 200,
+ priceTo: 1070,
+ priceNote: "per boat, 2h minimum (10% off from 3h)",
+ capacity: "Up to 150",
+ includes: ["Captain & crew", "Soft drinks / snacks", "Optional catering"],
  excludes: ["Standard menu (add-on)"],
  departTime: "Flexible",
  bestFor: "Custom itineraries, photography sessions, video shoots",
@@ -598,13 +604,16 @@ export default function CompareCruisesPage() {
  </div>
  </section>
 
- {/* CTA */}
+ {/* CTA — 2026-06-04: explicit color on h2 (was inheriting --heading var
+ from globals.css which renders dark navy on dark-navy bg → invisible).
+ Forced text-white at the h2 level so the global --heading override
+ doesn't cascade through. */}
  <section className="rounded-3xl bg-slate-900 px-6 py-10 text-center text-white">
- <h2 className="text-2xl font-bold md:text-3xl">
- Still not sure? We'll match you in 2 minutes.
+ <h2 className="text-2xl font-bold md:text-3xl text-white">
+ Still not sure? We&apos;ll match you in 2 minutes.
  </h2>
  <p className="mx-auto mt-3 max-w-xl text-sm text-slate-300">
- TURSAB-licensed since 2001 · 50,000+ guests · 4.9★ across Google,
+ TÜRSAB-licensed since 2001 · 50,000+ guests · 4.9★ across Google,
  TripAdvisor, Viator
  </p>
  <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row">

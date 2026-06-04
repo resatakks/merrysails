@@ -23,6 +23,7 @@ const LOCALE_FLAGS: Partial<Record<SiteLocale, string>> = {
   hu: "🇭🇺",
   sa: "🇸🇦",
   el: "🇬🇷",
+  zh: "🇨🇳", // 2026-06-04: Chinese (Simplified) added — staged commercial funnel
 };
 
 
