@@ -122,6 +122,15 @@ const LOCALE_URLS = ["tr", "de", "fr", "nl", "ru"].flatMap((locale) =>
   LOCALE_COMMERCIAL_SLUGS.map((slug) => `/${locale}${slug}`),
 );
 
+// Chinese (Simplified) staged URLs — homepage + top 4 commercial only at v1.
+const ZH_URLS = [
+  "/zh",
+  "/zh/bosphorus-cruise",
+  "/zh/cruises/bosphorus-sunset-cruise",
+  "/zh/istanbul-dinner-cruise",
+  "/zh/yacht-charter-istanbul",
+];
+
 // Featured 2026 blog posts — high-citation-value content shipped May-June.
 const FEATURED_BLOG_URLS = [
   "/blog/istanbul-3-day-itinerary-bosphorus-cruise-2026",
@@ -138,7 +147,7 @@ const FEATURED_BLOG_URLS = [
   "/blog/istanbul-tipping-guide-2026",
 ];
 
-const URLS_TO_PING = [...EN_URLS, ...LOCALE_URLS, ...FEATURED_BLOG_URLS].map(
+const URLS_TO_PING = [...EN_URLS, ...LOCALE_URLS, ...ZH_URLS, ...FEATURED_BLOG_URLS].map(
   (p) => `${SITE_URL}${p}`,
 );
 

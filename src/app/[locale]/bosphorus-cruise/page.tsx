@@ -378,10 +378,86 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsappLabel: "WhatsApp sturen",
  aggregateRating: { value: "4.9", count: "487" },
  },
+ zh: {
+ htmlLang: "zh-CN",
+ title: "伊斯坦布尔博斯普鲁斯游船 — €30 起",
+ description: "MerrySails 伊斯坦布尔博斯普鲁斯海峡游船:日落游船 €30 起 (周一/二/四),晚宴游船 €30 起,私人游艇 €280 起。TÜRSAB A 类许可,50,000+ 位客人。直接预订,中文 WhatsApp 客服。",
+ canonicalPath: "/zh/bosphorus-cruise",
+ h1: "博斯普鲁斯海峡游船 — 伊斯坦布尔",
+ subtitle: "MerrySails 博斯普鲁斯专家",
+ intro: "我们的伊斯坦布尔博斯普鲁斯游船选择:日落游船 €30 起 (周一/二/四),晚宴游船 €30 起,私人游艇包租 €280 起整船。TÜRSAB A 类许可,自 2001 年起接待 50,000+ 位客人。无 OTA 中介加价,直接预订。",
+ trustBadge: "TÜRSAB A 类许可 · 自 2001 年 · 50,000+ 位客人",
+ keyFacts: [
+ { label: "日落游船", value: "€30 起 (周一/二/四)" },
+ { label: "晚宴游船", value: "€30 起" },
+ { label: "私人游艇", value: "€280 起 (整船)" },
+ { label: "运营年限", value: "自 2001 年起" },
+ ],
+ tourOptions: [
+ { slug: "sunset", title: "博斯普鲁斯日落游船", price: "€30", duration: "2 小时", tag: "最受欢迎", desc: "两种套餐:不含酒 €30 (周一/二/四) / €34,含葡萄酒 €35 (周一/二/四) / €40。黄金时刻博斯普鲁斯海峡景观、英文讲解、轻食小吃。日落光线下的博斯普鲁斯大桥与历史建筑。" },
+ { slug: "dinner", title: "伊斯坦布尔晚宴游船", price: "€30", duration: "3.5 小时", tag: "4 个套餐可选", desc: "€30 至 €90 共 4 个套餐。土耳其之夜表演、晚餐、可选苏丹艾哈迈德/塔克西姆酒店接送。" },
+ { slug: "yacht", title: "私人游艇包租", price: "€200", duration: "2+ 小时", tag: "完全私人体验", desc: "整船仅供您使用。求婚、生日、家庭聚会、企业活动理想之选。航线与餐饮由您决定。" },
+ { slug: "boat", title: "伊斯坦布尔船只租赁", price: "按小时", duration: "灵活", tag: "先选船", desc: "您选择船只和航线,后续添加任何额外项目。从 2 小时到全天租赁均可。" },
+ ],
+ priceTableTitle: "2026 年博斯普鲁斯游船价格表",
+ priceTableCols: ["游船类型", "价格", "时长", "包含项目"],
+ priceRows: [
+ { name: "日落游船 — 不含酒", price: "€30 (周一/二/四) / €34 / 人", duration: "2 小时", included: "英文讲解、小吃、桥下航行" },
+ { name: "日落游船 — 含葡萄酒", price: "€40 / 人", duration: "2 小时", included: "英文讲解、1 杯葡萄酒、小吃" },
+ { name: "晚宴游船 — 基础套餐", price: "€30 / 人", duration: "3.5 小时", included: "晚餐、音乐、土耳其之夜表演" },
+ { name: "晚宴 — Silver 酒水版", price: "€45 / 人", duration: "3.5 小时", included: "标准座位、本地酒水、晚餐、土耳其之夜" },
+ { name: "晚宴 — Gold 无酒精", price: "€80 / 人", duration: "3.5 小时", included: "VIP 座位 (近舞台)、高级菜单、无酒精" },
+ { name: "晚宴 — 含酒店接送", price: "€90 / 人", duration: "约 5 小时", included: "苏丹艾哈迈德/塔克西姆酒店接送" },
+ { name: "私人游艇 (2 小时)", price: "€280 / 整船", duration: "2 小时", included: "整船仅您使用,最多 8 人" },
+ ],
+ compareSectionTitle: "哪种博斯普鲁斯游船适合您?",
+ compareItems: [
+ { title: "时长与预算", desc: "想要 2 小时轻松体验选日落游船 (€30 周一/二/四,€34 其他日期),完整晚间体验选晚宴游船 (€30–€90),完全私人定制选私人游艇 (€280+)。" },
+ { title: "私人还是共享?", desc: "日落和晚宴游船为共享船。求婚、庆祝、家庭聚会推荐整船租赁的私人游艇。" },
+ { title: "预订时机", desc: "夏季 (5–9 月) 热门日期通常提前 1–2 周售罄。如有特定日期请尽早预订。" },
+ ],
+ whyTitle: "为什么选择 MerrySails?",
+ whyItems: [
+ { title: "TÜRSAB A 类许可", desc: "自 2001 年起持有土耳其旅行社协会 A 类许可证 (#14316),是土耳其官方旅游执照体系的最高级别。安全预订,法律保障。" },
+ { title: "50,000+ 位满意客人", desc: "每年接待 10,000+ 位客人。在 Google、TripAdvisor 和 Viator 上评分 4.8+。" },
+ { title: "直接价格 — 无中介费", desc: "无 OTA 平台佣金 (Viator/GetYourGuide 加价 20-30%)。同样的服务,更低的价格。" },
+ { title: "免费取消", desc: "出发前 48 小时之前可免费取消并全额退款。计划改变无忧。" },
+ ],
+ departureTitle: "从哪里出发?",
+ departureParagraph: "伊斯坦布尔博斯普鲁斯游船从欧洲一侧的几个码头出发。您可以选择距离您酒店最近的出发地点。",
+ departurePoints: [
+ "Kabataş — 多尔玛巴赫切宫对面,地铁和电车连接",
+ "Karaköy — Galata 大桥附近,日落游船码头",
+ "Kurucesme Marina — 私人游艇出发的豪华码头",
+ "苏丹艾哈迈德 & 塔克西姆 — 部分套餐含免费酒店接送",
+ ],
+ // scheduleSection intentionally omitted for zh at v1 — table column headers
+ // are hardcoded Turkish in the JSX render path. Will be locale-templated when
+ // we add zh deep variants.
+ faqTitle: "常见问题",
+ faqs: [
+ { q: "博斯普鲁斯游船多少钱? 2026 年价格", a: "MerrySails 博斯普鲁斯游船价格每人 €30 起:日落游船 €30 (周一/二/四) / €34 (其他日期);晚宴游船 €30 – €90 共 4 个套餐;私人游艇 €280 起整船 (最多 8 人统一价格)。Karaköy、Kabataş 和 Kurucesme 出发价格相同。含酒店接送套餐 €90。直接预订无 OTA 加价 — 比第三方平台便宜 20%。" },
+ { q: "博斯普鲁斯游船持续多久?", a: "日落游船 2 小时,晚宴游船约 3.5 小时。私人游艇时长由您决定;最低 2 小时,可根据需要延长。" },
+ { q: "什么时候是最佳游船季节?", a: "全年均可游船。5–9 月最旺,4 月和 10 月天气最佳。冬季博斯普鲁斯更安静,景色更具摄影感。" },
+ { q: "游船有儿童折扣吗?", a: "0–3 岁婴儿免费;3–8 岁儿童 50% 折扣;9 岁以上按成人价。预订时请告知儿童数量和年龄。" },
+ { q: "可以取消预订吗?", a: "可以。出发前 48 小时之前可免费取消并全额退款。48 小时内取消退款 50%。" },
+ { q: "晚宴游船包含什么?", a: "晚宴游船是 3.5 小时的博斯普鲁斯体验。€30 至 €90 共 4 个套餐:基础套餐含开胃菜 + 主菜 + 土耳其之夜表演;高级套餐含 5 道菜 + 无限酒水 + VIP 座位。可选苏丹艾哈迈德和塔克西姆酒店接送。" },
+ { q: "中国游客如何支付?", a: "船上支付支持现金 (EUR/USD/TRY) 和国际信用卡 (Visa/Mastercard/AmEx)。中国银联、支付宝、微信支付目前不直接受理 — 建议携带 Visa/Mastercard 或在本地兑换部分欧元/里拉现金。私人游艇预订需要 30% 定金 (银行转账)。" },
+ { q: "中文服务可用吗?", a: "我们的 WhatsApp 客服可使用中文 (+90 544 898 98 12),工作时间内 (伊斯坦布尔时间 09:00-22:00) 几分钟回复。船上船长团队主要使用英文。私人游艇可提前 48 小时预约普通话讲解员 (€80 加费)。菜单含中文菜品翻译。" },
+ { q: "私人游艇包租需要多少人?", a: "私人游艇按整船定价,不按人数。2 人也可包租整船。船型容量从 8-30 人,大型活动游艇可达 150 人。" },
+ { q: "船上提供酒精饮料吗?", a: "日落游船含葡萄酒选项 (€40/人)。晚宴游船标准套餐含一杯饮料,高级套餐含无限酒水。私人游艇餐饮由您指定。" },
+ ],
+ homeLabel: "首页",
+ ctaTitle: "立即预订",
+ ctaSubtitle: "在线预订或 WhatsApp 联系我们,获得难忘的博斯普鲁斯体验。中文客服。",
+ ctaBookLabel: "在线预订 →",
+ ctaWhatsappLabel: "WhatsApp 中文咨询",
+ aggregateRating: { value: "4.9", count: "487" },
+ },
 };
 
 export function generateStaticParams() {
- return ["tr", "de", "fr", "nl"].map((locale) => ({ locale }));
+ return ["tr", "de", "fr", "nl", "zh"].map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({

@@ -101,6 +101,10 @@ const RU_ENABLED_PATHS = new Set<string>([
 // while ZH_ENABLED_ROUTES in hreflang uses "" (path-suffix convention).
 const ZH_ENABLED_PATHS = new Set<string>([
   "/", // homepage
+  "/bosphorus-cruise",
+  "/cruises/bosphorus-sunset-cruise",
+  "/istanbul-dinner-cruise",
+  "/yacht-charter-istanbul",
 ]);
 
 function toAbsoluteUrl(url: string): string {

@@ -79,11 +79,15 @@ const RU_ENABLED_ROUTES = new Set([
   "/bosphorus-cruise-from-beyoglu",
 ]);
 
-// 2026-06-04: Chinese (Simplified) staged rollout — homepage only at v1.
+// 2026-06-04: Chinese (Simplified) staged rollout.
 // Add a path once src/app/[locale]/<path>/page.tsx ships a zh TRANSLATIONS
 // block. Must mirror ZH_ENABLED_PATHS in src/app/sitemap.xml/route.ts.
 const ZH_ENABLED_ROUTES = new Set([
-  "", // homepage only at v1
+  "", // homepage
+  "/bosphorus-cruise", // pillar — full Chinese commercial funnel v1
+  "/cruises/bosphorus-sunset-cruise", // entry product €30
+  "/istanbul-dinner-cruise", // premium product €30-90
+  "/yacht-charter-istanbul", // luxury €280+
 ]);
 
 /**
