@@ -1,0 +1,173 @@
+{
+  "date": "2026-06-04",
+  "site": "https://merrysails.com",
+  "siteStatus": {
+    "d": {
+      "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+      "AnchorCount": 3790,
+      "DiscoveryDate": "/Date(1697871600000-0700)/",
+      "DocumentSize": 498017,
+      "HttpStatus": 0,
+      "IsPage": true,
+      "LastCrawledDate": "/Date(1780429742000)/",
+      "TotalChildUrlCount": 0,
+      "Url": "https://merrysails.com"
+    }
+  },
+  "siteStatusOk": true,
+  "inspected": 8,
+  "results": [
+    {
+      "url": "https://merrysails.com/bosphorus-cruise",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1778482800000-0700)/",
+          "DocumentSize": 195199,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780150991000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/bosphorus-cruise"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 971,
+          "DiscoveryDate": "/Date(1774681200000-0700)/",
+          "DocumentSize": 247369,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780149571000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/cruises/bosphorus-sunset-cruise"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/istanbul-dinner-cruise",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 2924,
+          "DiscoveryDate": "/Date(1776582000000-0700)/",
+          "DocumentSize": 375667,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780551469000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/istanbul-dinner-cruise"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1778742000000-0700)/",
+          "DocumentSize": 242497,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780181462000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/yacht-charter-istanbul"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/princes-islands-tour-istanbul",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1780383600000-0700)/",
+          "DocumentSize": 0,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780420627000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/princes-islands-tour-istanbul"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/tr/prens-adalari-istanbul",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1780470000000-0700)/",
+          "DocumentSize": 0,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780478222000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/tr/prens-adalari-istanbul"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/tr/bosphorus-cruise-from-sultanahmet",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1780383600000-0700)/",
+          "DocumentSize": 0,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780393108000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/tr/bosphorus-cruise-from-sultanahmet"
+        }
+      },
+      "error": null
+    },
+    {
+      "url": "https://merrysails.com/de/prinzeninseln-istanbul",
+      "ok": true,
+      "status": 200,
+      "data": {
+        "d": {
+          "__type": "UrlInfo:#Microsoft.Bing.Webmaster.Api",
+          "AnchorCount": 0,
+          "DiscoveryDate": "/Date(1780470000000-0700)/",
+          "DocumentSize": 0,
+          "HttpStatus": 0,
+          "IsPage": true,
+          "LastCrawledDate": "/Date(1780478210000)/",
+          "TotalChildUrlCount": 0,
+          "Url": "https://merrysails.com/de/prinzeninseln-istanbul"
+        }
+      },
+      "error": null
+    }
+  ]
+}

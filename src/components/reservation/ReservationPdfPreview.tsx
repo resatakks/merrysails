@@ -60,8 +60,14 @@ export function ReservationPdfPreview({
             <Eye className="h-4 w-4" />
             Open PDF
           </a>
+          {/* 2026-06-04: Clarity logged 1 dead click on "Download PDF" from
+              iOS user. Without the `download` attribute, iOS Safari/Chrome
+              opens the PDF inline in the preview iframe instead of triggering
+              the system share/download sheet. Adding both `download` and
+              target="_self" so iOS honors Content-Disposition: attachment. */}
           <a
             href={downloadHref}
+            download
             onClick={() => handleEngagement("download")}
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]"
           >

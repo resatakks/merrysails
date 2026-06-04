@@ -185,18 +185,30 @@ export default async function ReservationDetailPage({ params }: { params: Promis
           </div>
         </div>
 
-        {/* Meeting Point — only for upcoming bookings */}
+        {/* Meeting Point — only for upcoming bookings.
+            2026-06-04: Clarity logged 2 dead clicks on "Meeting Point" text +
+            location string — guests AFTER booking want to tap to open Google
+            Maps for directions. Wrapped in <a> with maps deep link. */}
         {isUpcoming && departurePoint && (
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5">
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(departurePoint + " Istanbul")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-blue-50 border border-blue-200 rounded-2xl p-5 hover:bg-blue-100 transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+            aria-label={`Open ${departurePoint} in Google Maps`}
+          >
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-              <div>
-                <div className="font-semibold text-blue-900">Meeting Point</div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-blue-900">Meeting Point</span>
+                  <span className="text-xs font-medium text-blue-600 underline">Open in Maps</span>
+                </div>
                 <div className="text-sm text-blue-800 mt-0.5">{departurePoint}</div>
                 <div className="text-xs text-blue-600 mt-1.5">Please arrive 15 minutes before departure</div>
               </div>
             </div>
-          </div>
+          </a>
         )}
 
         {/* Practical Tips — only for upcoming bookings */}
