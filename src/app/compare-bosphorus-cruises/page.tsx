@@ -8,7 +8,7 @@ const SITE_URL = "https://merrysails.com";
 export const metadata: Metadata = {
  title: "Compare Bosphorus Cruises Istanbul",
  description:
- "Compare Bosphorus cruise options in Istanbul: Sunset (€34), Dinner (€30), Yacht Charter (€280), and Boat Rental — prices, durations, and best-for criteria.",
+ "Compare Bosphorus cruise options in Istanbul: Sunset (€34), Dinner (€30), Yacht Charter (€200), and Boat Rental — prices, durations, and best-for criteria.",
  alternates: {
  canonical: `${SITE_URL}/compare-bosphorus-cruises`,
  languages: buildHreflang("/compare-bosphorus-cruises"),
@@ -106,7 +106,7 @@ const COMPARE_FAQ = [
  },
  {
  q: "Is a private yacht worth it for couples?",
- a: "Yes, if you want privacy for a proposal, anniversary, or romantic dinner. The Essential package at €280 covers up to 8 guests for 2 hours — for couples that's about €140 per person versus €40 on a shared sunset cruise. The premium is the privacy and custom route.",
+ a: "Yes, if you want privacy for a proposal, anniversary, or romantic dinner. The Boutique Yacht 10 (entry tier) at €200 covers up to 10-12 guests for 2 hours — for couples that's about €100 per person versus €34 on a shared sunset cruise. The premium is the privacy and custom route.",
  },
  {
  q: "Which cruise has the best Turkish dinner show?",
@@ -117,8 +117,8 @@ const COMPARE_FAQ = [
  a: "Yes, the Silver Soft Drinks package starts at €30 per person and includes mezze starters, main course, unlimited soft drinks, and the Turkish night show. Alcoholic drinks and VIP seating are upgrade options at €45, €80, or €90.",
  },
  {
- q: "What's included in the €200 yacht charter entry?",
- a: "The Essential package at €280 covers the entire boat (private charter) for 2 hours, up to 8 guests, with captain, crew, soft drinks, and snacks. Premium (€380, up to 12 guests) adds appetizers and fruit. VIP (€680, up to 20 guests) adds full menu, open bar, and optional photographer.",
+ q: "What is included in the €200 yacht charter entry?",
+ a: "The Boutique Yacht 10 (entry tier) at €200 covers the entire boat (private charter) for 2 hours, up to 10-12 guests, with captain, crew, soft drinks, and snacks. Group Yacht 36 (€280-300, up to 36 guests) is the next tier. Larger event yachts go up to €1,070+ for the 8-hour Signature sailing. From 3 hours onward, a 10% automatic discount applies fleet-wide.",
  },
  {
  q: "Can I bring children on a Bosphorus cruise?",
@@ -368,9 +368,9 @@ export default function CompareCruisesPage() {
  <caption className="sr-only">
  Bosphorus cruise comparison Istanbul 2026 — Sunset Cruise from
  EUR 30, Dinner Cruise EUR 30 to EUR 90, Private Yacht Charter
- from EUR 280, Hourly Boat Rental from EUR 60 per hour. Compared
- by type, duration, capacity, departure time, inclusions, and
- best-fit guest profile.
+ from EUR 200, Hourly Boat Rental from EUR 200 (2h minimum).
+ Compared by type, duration, capacity, departure time,
+ inclusions, and best-fit guest profile.
  </caption>
  <thead>
  <tr className="border-b border-slate-300">
