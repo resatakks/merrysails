@@ -118,7 +118,23 @@ export default function YachtReservationFlow({
   };
 
   function handleContinue() {
-    if (!date) return;
+    if (!date) {
+      // 2026-06-06: Clarity flagged 32 dead clicks on "Continue booking" in 7d.
+      // Date is normally pre-filled (today+2), so this branch is rare — but
+      // when it triggers we now scroll the calendar into view and ring-focus
+      // it instead of silently blocking. Old behavior just returned, which
+      // Clarity classified as a dead click.
+      if (typeof document !== "undefined") {
+        const cal = document.getElementById("yacht-charter-calendar");
+        cal?.scrollIntoView({ behavior: "smooth", block: "center" });
+        cal?.classList.add("ring-2", "ring-[var(--brand-primary)]");
+        window.setTimeout(
+          () => cal?.classList.remove("ring-2", "ring-[var(--brand-primary)]"),
+          1800,
+        );
+      }
+      return;
+    }
     setModalOpen(true);
   }
 
@@ -184,7 +200,7 @@ export default function YachtReservationFlow({
             </div>
           </div>
 
-          <div>
+          <div id="yacht-charter-calendar" className="scroll-mt-24 rounded-2xl transition-shadow">
             <label className="block text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-1.5">
               Date
             </label>
@@ -246,12 +262,17 @@ export default function YachtReservationFlow({
             </div>
           </div>
 
+          {/* 2026-06-06: removed pure `disabled` — disabled buttons swallow
+              clicks silently, which Clarity registers as a dead click (32 in
+              7d). Now `aria-disabled` so screen readers still announce state
+              but the click event fires and handleContinue() scrolls the user
+              to the calendar with visual feedback. */}
           <button
             type="button"
             onClick={handleContinue}
-            disabled={!date}
+            aria-disabled={!date}
             style={{ color: "#ffffff" }}
-            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--brand-primary)] px-6 py-4 text-base font-bold !text-white shadow-md transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+            className={`flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--brand-primary)] px-6 py-4 text-base font-bold !text-white shadow-md transition-opacity hover:opacity-90 ${!date ? "opacity-50" : ""}`}
           >
             Continue booking
             <ArrowRight className="h-5 w-5" />

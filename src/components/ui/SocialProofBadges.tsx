@@ -82,8 +82,17 @@ export default function SocialProofBadges({
       className={`mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 ${className}`}
       aria-label="Trust signals"
     >
-      {/* Rating */}
-      <div className="flex items-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 py-2.5">
+      {/* Rating — 2026-06-06: wrapped in <a href="#reviews"> after Clarity
+          surfaced 84 dead clicks on this card in the last 7d on
+          /istanbul-dinner-cruise alone. Users tap the rating expecting it to
+          scroll to the reviews carousel. ReviewsCarousel renders with
+          id="reviews" + scroll-mt-24 so the anchor lands cleanly under the
+          sticky header. */}
+      <a
+        href="#reviews"
+        aria-label={`${rating.toFixed(2)} out of 5 — read recent guest reviews`}
+        className="flex items-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 py-2.5 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
+      >
         <Star className="h-5 w-5 shrink-0 fill-[var(--brand-gold)] text-[var(--brand-gold)]" />
         <div className="min-w-0">
           <div className="text-sm font-bold text-[var(--heading)]">
@@ -93,7 +102,7 @@ export default function SocialProofBadges({
             {reviews.toLocaleString("en-US")} {t.reviews}
           </div>
         </div>
-      </div>
+      </a>
 
       {/* Guests served (parent operator scale) */}
       <div className="flex items-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 py-2.5">

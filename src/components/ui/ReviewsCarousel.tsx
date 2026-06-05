@@ -143,8 +143,9 @@ export default function ReviewsCarousel({
         />
       ))}
       <section
+        id="reviews"
         aria-label={t.heading}
-        className={`rounded-2xl border border-[var(--line)] bg-white p-6 ${className}`}
+        className={`scroll-mt-24 rounded-2xl border border-[var(--line)] bg-white p-6 ${className}`}
       >
         <h2 className="mb-1 text-xl font-bold text-[var(--heading)]">{t.heading}</h2>
         <p className="mb-5 text-xs text-[var(--text-muted)]">{t.disclaimer}</p>
