@@ -93,6 +93,12 @@ const RU_ENABLED_PATHS = new Set<string>([
   "/bosphorus-cruise-from-sultanahmet",
   "/bosphorus-cruise-from-taksim",
   "/bosphorus-cruise-from-beyoglu",
+  // 2026-06-05: audience pages ALSO live in RU. Adding so /ru/audience URLs
+  // appear in sitemap. Mirror in src/lib/hreflang.ts RU_ENABLED_ROUTES.
+  "/anniversary-yacht-cruise-istanbul",
+  "/honeymoon-yacht-cruise-istanbul",
+  "/bosphorus-cruise-for-couples",
+  "/bosphorus-cruise-for-families",
 ]);
 
 // 2026-06-04: Chinese (Simplified) staged rollout. Mirror of ZH_ENABLED_ROUTES

@@ -77,6 +77,13 @@ const RU_ENABLED_ROUTES = new Set([
   "/bosphorus-cruise-from-sultanahmet",
   "/bosphorus-cruise-from-taksim",
   "/bosphorus-cruise-from-beyoglu",
+  // 2026-06-05: audience pages ALSO live in RU (CONTENT block exists). Adding
+  // here so /ru/audience pages emit self-ref hreflang. Semrush 2026-06-05
+  // audit flagged "No self-referencing hreflang" on these 4 paths.
+  "/anniversary-yacht-cruise-istanbul",
+  "/honeymoon-yacht-cruise-istanbul",
+  "/bosphorus-cruise-for-couples",
+  "/bosphorus-cruise-for-families",
 ]);
 
 // 2026-06-04: Chinese (Simplified) staged rollout.

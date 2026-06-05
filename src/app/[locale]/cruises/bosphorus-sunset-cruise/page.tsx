@@ -14,6 +14,7 @@ import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-s
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { buildHreflang } from "@/lib/hreflang";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import RelatedTours from "@/components/ui/RelatedTours";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -530,15 +531,10 @@ export async function generateMetadata({
  description: t.description,
  alternates: {
  canonical: canonicalUrl,
- languages: {
- "x-default": `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
- en: `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
- tr: `${SITE_URL}/tr/cruises/bosphorus-sunset-cruise`,
- de: `${SITE_URL}/de/cruises/bosphorus-sunset-cruise`,
- fr: `${SITE_URL}/fr/cruises/bosphorus-sunset-cruise`,
- nl: `${SITE_URL}/nl/cruises/bosphorus-sunset-cruise`,
- ru: `${SITE_URL}/ru/cruises/bosphorus-sunset-cruise`,
- },
+ // 2026-06-05: switched from hardcoded dict (missing zh) to buildHreflang
+ // so the staging gates control which locales emit. Tied to ZH_ENABLED_ROUTES
+ // and RU_ENABLED_ROUTES in src/lib/hreflang.ts.
+ languages: buildHreflang("/cruises/bosphorus-sunset-cruise"),
  },
  openGraph: {
  title: t.title,

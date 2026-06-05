@@ -1,0 +1,102 @@
+{
+  "$schema": "first-party-authority/content-gate-v1",
+  "brand": "MerrySails",
+  "vertical": "cruise",
+  "voiceTemplate": "captain-cruise",
+  "primaryAuthor": {
+    "name": "Captain Ahmet",
+    "id": "captain-ahmet",
+    "title": "Captain & Operator",
+    "credentialDisplay": "TÜRSAB A-805 — Licensed since 2001 (24 years)",
+    "facePhoto": "/images/team/captain-ahmet.jpg",
+    "bioFile": "src/data/team.ts#captain-ahmet"
+  },
+  "secondaryAuthors": [
+    {
+      "name": "Editorial",
+      "id": "editorial",
+      "restriction": "ONLY for non-operational city-guide content (e.g., Sultanahmet history primers). Forbidden on commercial pages."
+    }
+  ],
+  "firstPartyDataSources": [
+    "TÜRSAB A-805, 2001'den 24 yıl aralıksız renewed",
+    "50,000+ guests since 2001 (aggregate)",
+    "Fleet: 38-pax Princess + custom 12-pax (data/fleet-specs.json — TO BE CREATED)",
+    "Captain Ahmet logbook (data/captain-log/ — TO BE CREATED)",
+    "Boarding zaman dağılımı dataset (postgres: Reservation → confirmedAt vs departureAt — TO BE EXTRACTED)",
+    "Wind window aggregate 24 yıl (data/wind-window-2001-2025.csv — TO BE CREATED)",
+    "Capacity sezon raporu (postgres: TourOperationDay → toplam booked/capacity)"
+  ],
+  "dataExtractionTodos": [
+    "scripts/seo/extract-boarding-stats.mjs — son 12 ay Reservation confirmedAt - departureAt median",
+    "scripts/seo/extract-capacity-by-month.mjs — TourOperationDay aggregate",
+    "data/captain-log/2026-06.md — Captain Ahmet kısa not (sezon güncel)",
+    "data/fleet-specs.json — vessel specs JSON"
+  ],
+  "publishGate": "strict",
+  "dateModifiedRefresh": {
+    "pillar": {
+      "cadence": "monthly",
+      "pages": [
+        "/bosphorus-cruise",
+        "/istanbul-dinner-cruise",
+        "/cruises/bosphorus-sunset-cruise",
+        "/yacht-charter-istanbul",
+        "/tr/bosphorus-cruise",
+        "/tr/istanbul-dinner-cruise",
+        "/tr/cruises/bosphorus-sunset-cruise",
+        "/tr/yacht-charter-istanbul",
+        "/de/bosphorus-cruise",
+        "/de/cruises/bosphorus-sunset-cruise",
+        "/fr/bosphorus-cruise",
+        "/nl/blog/bosphorus-cruise-prijzen-gids-2026"
+      ]
+    },
+    "support": "quarterly",
+    "evergreen": "semiannually"
+  },
+  "editorialBacklinkTargets": [
+    { "publication": "Time Out Istanbul", "angle": "24-year wind data + Captain Ahmet quote" },
+    { "publication": "Daily Sabah Travel", "angle": "TÜRSAB licensed operator — local English-language" },
+    { "publication": "Lonely Planet Istanbul online", "angle": "Submission form: cruise operator update" },
+    { "publication": "Geo Saison (DE)", "angle": "Mediterranean cruise feature, DE locale post" },
+    { "publication": "Routard Mag (FR)", "angle": "Istanbul guide update, FR locale post" }
+  ],
+  "editorialOutreachTracker": "data/editorial-outreach.json",
+  "freshnessCronPath": "data/freshness-cron.json",
+  "captainLogPath": "data/captain-log/",
+  "derivativePruneStatus": {
+    "lastScan": null,
+    "totalPosts": 114,
+    "derivativeCount": null,
+    "derivativeRatio": null,
+    "target": 0.15,
+    "scanCommand": "see ~/.agents/skills/seo-first-party-authority/checklists/optimization-trigger.md"
+  },
+  "sisterBrandConflict": {
+    "checkAgainst": ["goldensunsettour", "merrytourism"],
+    "rule": "Captain Ahmet byline ONLY on MerrySails. GoldenSunset MUST have a different named captain. MerryTourism cruise content must use a third name OR pivot to non-Captain authorship (e.g., 'Cruise Operations Team' if no real third operator exists). Author name overlap across these 3 brands = scaled content abuse classifier signal."
+  },
+  "trustSignalRequirements": {
+    "everyCommercialPage": [
+      "TÜRSAB A-805 license number visible (header or footer)",
+      "Years since 2001 (24+ years) — homepage hero",
+      "Captain Ahmet face photo + bio link on author byline",
+      "Original boat photos (EXIF preserved, no Unsplash)"
+    ],
+    "everyPillarPage": [
+      "130-160 word self-contained answer block at top",
+      "≥2 first-party datums in body",
+      "Captain Ahmet quote (in-text)",
+      "FAQPage schema (AI signal — rich result öldü Mayıs 7 2026, schema KEEP)",
+      "dateModified within 30 days"
+    ]
+  },
+  "notes": [
+    "Mueller 2024 verbatim: 'separate websites not a problem' carve-out applies ONLY if quality bar uniform across all brands.",
+    "Same-city same-niche hard cap 6 brand / 12 ay (AST Tourism precedent = 3 brand).",
+    "FAQ schema KEEP (AI signal) even though rich result died May 7 2026 — Google docs verbatim: 'continue to use FAQ structured data to better understand pages'.",
+    "JSON-LD MUST be native <script type='application/ld+json'> lowercase, not Next.js <Script> capital S (Googlebot SSR'da görmez).",
+    "Information Gain test (US Patent 11,354,342 B2): each post must contain at least 1 paragraph not present in top-3 SERP results."
+  ]
+}

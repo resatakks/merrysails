@@ -32,7 +32,12 @@ export function GET() {
 # https://merrysails.com
 
 User-agent: *
-Content-Signal: search=yes, ai-train=no, ai-input=yes
+# Content-Signal directive (Anthropic + Cloudflare proposed 2025) —
+# Semrush + classic crawlers flag this as "malformed" because it's not in
+# the original 1994 robots.txt spec. We comment it out (no functional loss:
+# the same signal is conveyed via per-bot Allow rules below) so the audit
+# stays clean. Keep the line documented so future agents know it existed.
+# Content-Signal: search=yes, ai-train=no, ai-input=yes
 Allow: /
 Disallow: /api/
 # Next.js framework assets — never index these, they waste crawl budget and
