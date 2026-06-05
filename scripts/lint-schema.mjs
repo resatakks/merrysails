@@ -451,6 +451,210 @@ function lintFile(filePath) {
       msg: `Unsplash URL has double ?w= param — Next/Image breaks these (RULES.md P0 rule 7). Use single base URL like "?w=1200&q=80".`,
     });
   }
+
+  // S12 [P0 — 2026-06-05]: Hardcoded hreflang languages dict in /[locale]/ pages.
+  // Semrush flagged broken hreflang on /ru/bosphorus-cruise because the dict
+  // was literally written `{ "x-default": ..., en: ..., tr: ..., de: ..., fr: ..., nl: ... }`
+  // (missing ru + zh). The single source of truth for which locales emit
+  // hreflang is src/lib/hreflang.ts buildHreflang(). Any /[locale]/ page that
+  // hand-rolls the dict will drift the moment we add a new locale.
+  if (filePath.includes("/[locale]/")) {
+    const hardcodedHreflang = /alternates\s*:\s*\{[^}]*?languages\s*:\s*\{[^}]*"x-default"/s.exec(src);
+    if (hardcodedHreflang) {
+      errors.push({
+        file: rel(filePath),
+        line: src.slice(0, hardcodedHreflang.index).split("\n").length,
+        rule: "hardcoded-hreflang-dict",
+        msg: `Hardcoded hreflang languages dict — drifts when locales are added. Use \`languages: buildHreflang("/your-path")\` from "@/lib/hreflang" instead (see RULES.md hreflang section, fix from Semrush 2026-06-05).`,
+      });
+    }
+  }
+
+  // S13 [P0 — 2026-06-05]: Multiple <h1> on the same page. CLAUDE.md rule 11:
+  // every page must have exactly one <h1>. Conflict comes from a page that
+  // adds its own <h1> while also rendering TourDetailClient (which has h1)
+  // or another shared component that emits h1. Semrush 2026-06-05 flagged
+  // 21 /cruises/[slug] pages and 8 /[locale]/{istanbul-dinner-cruise,cruises/sunset}
+  // pages with duplicate h1.
+  if (isPage) {
+    // Strip /* … */ block comments AND {/* … */} JSX comments before counting
+    // — comment text like "removed page-level <h1>" was being matched as a
+    // real tag, producing phantom warnings even after the h1 was removed.
+    const srcNoComments = src
+      .replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, "")
+      .replace(/\/\*[\s\S]*?\*\//g, "");
+    const h1Matches = [...srcNoComments.matchAll(/<h1[\s>]/g)];
+    if (h1Matches.length > 1) {
+      warnings.push({
+        file: rel(filePath),
+        line: src.slice(0, h1Matches[0].index).split("\n").length,
+        rule: "multiple-h1",
+        msg: `Page emits ${h1Matches.length} <h1> tags. CLAUDE.md rule 11 requires exactly one. Check if a shared component (TourDetailClient, hero) already renders the h1.`,
+      });
+    }
+    // Soft check: also flag if both a literal <h1> and a known shared component
+    // that owns the h1 are present.
+    const ownsH1Components = ["TourDetailClient"];
+    const h1ComponentUse = ownsH1Components.some((c) => new RegExp(`<${c}\\b`).test(srcNoComments));
+    if (h1ComponentUse && h1Matches.length >= 1) {
+      warnings.push({
+        file: rel(filePath),
+        line: srcNoComments.slice(0, h1Matches[0].index).split("\n").length,
+        rule: "multiple-h1-via-component",
+        msg: `Page uses TourDetailClient (which emits its own <h1>) AND has a literal <h1> — almost certainly a duplicate. Remove the page-level <h1> or pass a flag to TourDetailClient.`,
+      });
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// 2026-06-05: Cross-file sanity checks. Run AFTER the per-file pass so we
+// have access to aggregated state. Catches the kinds of issues a single-
+// file linter can't see — duplicate metadata across locale variants,
+// staging-gate drift between hreflang.ts and sitemap.xml/route.ts, and
+// /[locale]/ pages whose CONTENT dict is missing keys for the locales they
+// claim to serve in generateStaticParams.
+// ─────────────────────────────────────────────────────────────────────────
+function crossFileChecks(files) {
+  // S14: Duplicate title/meta across locales — yacht/[slug] details are the
+  // big offender (zh/de/fr/nl/ru all share the same EN string). Group every
+  // /[locale]/ page's literal `title` and `description` metadata strings
+  // and flag any string used in 3+ locale variants of the same route.
+  const titlesByRoute = new Map(); // route → Map<title, Set<locale>>
+  const descsByRoute = new Map();
+  for (const f of files) {
+    const m = f.match(/\/app\/\[locale\]\/(.+)\/page\.tsx$/);
+    if (!m) continue;
+    const route = m[1];
+    const src = fs.readFileSync(f, "utf8");
+    // Crude but effective: capture each `title: "..."` and `description: "..."`
+    // inside a CONTENT/TRANSLATIONS block. Walk locale keys.
+    const localeBlocks = [...src.matchAll(/^\s*(tr|de|fr|nl|ru|zh):\s*\{/gm)];
+    for (let i = 0; i < localeBlocks.length; i++) {
+      const start = localeBlocks[i].index;
+      const end = i + 1 < localeBlocks.length ? localeBlocks[i + 1].index : src.length;
+      const block = src.slice(start, end);
+      const locale = localeBlocks[i][1];
+      const titleM = block.match(/(?:^|\s)title:\s*"([^"]+)"/);
+      const descM = block.match(/(?:^|\s)(?:description|metaDescription):\s*"([^"]+)"/);
+      if (titleM) {
+        if (!titlesByRoute.has(route)) titlesByRoute.set(route, new Map());
+        const t = titlesByRoute.get(route);
+        if (!t.has(titleM[1])) t.set(titleM[1], new Set());
+        t.get(titleM[1]).add(locale);
+      }
+      if (descM) {
+        if (!descsByRoute.has(route)) descsByRoute.set(route, new Map());
+        const d = descsByRoute.get(route);
+        if (!d.has(descM[1])) d.set(descM[1], new Set());
+        d.get(descM[1]).add(locale);
+      }
+    }
+  }
+  for (const [route, byTitle] of titlesByRoute) {
+    for (const [title, locales] of byTitle) {
+      if (locales.size >= 3) {
+        warnings.push({
+          file: `src/app/[locale]/${route}/page.tsx`,
+          line: 0,
+          rule: "cross-locale-duplicate-title",
+          msg: `${locales.size} locales (${[...locales].join(", ")}) share identical title "${title.slice(0, 50)}…" — Semrush flags duplicate-title cluster. Localize per locale.`,
+        });
+      }
+    }
+  }
+  for (const [route, byDesc] of descsByRoute) {
+    for (const [desc, locales] of byDesc) {
+      if (locales.size >= 3) {
+        warnings.push({
+          file: `src/app/[locale]/${route}/page.tsx`,
+          line: 0,
+          rule: "cross-locale-duplicate-meta-desc",
+          msg: `${locales.size} locales (${[...locales].join(", ")}) share identical meta description — Semrush flags duplicate-meta cluster. Localize per locale.`,
+        });
+      }
+    }
+  }
+
+  // S15: Staging-gate drift between hreflang.ts and sitemap.xml/route.ts.
+  // Both files declare RU_ENABLED + ZH_ENABLED sets; they MUST mirror each
+  // other or we emit hreflang pointing at sitemap-excluded URLs (or vice versa).
+  try {
+    const hreflangSrc = fs.readFileSync(path.join(rootDir, "src/lib/hreflang.ts"), "utf8");
+    const sitemapSrc = fs.readFileSync(path.join(rootDir, "src/app/sitemap.xml/route.ts"), "utf8");
+    // Strip line comments before regex match so commented-out paths and
+    // explanatory text inside the set definition aren't picked up as members.
+    const stripComments = (s) => s.replace(/\/\/[^\n]*/g, "");
+    const extract = (text, name) => {
+      const cleaned = stripComments(text);
+      const m = cleaned.match(new RegExp(`${name}\\s*=\\s*new Set[^\\[]*\\[([^\\]]+)\\]`));
+      if (!m) return null;
+      return [...m[1].matchAll(/"([^"]*)"/g)].map((x) => x[1]);
+    };
+    for (const pair of [["RU_ENABLED_ROUTES", "RU_ENABLED_PATHS"], ["ZH_ENABLED_ROUTES", "ZH_ENABLED_PATHS"]]) {
+      const routes = extract(hreflangSrc, pair[0]);
+      const paths = extract(sitemapSrc, pair[1]);
+      if (!routes || !paths) continue;
+      // Sitemap uses "/" for homepage where hreflang uses "" — normalize.
+      // Homepage is special-cased in sitemap (always emitted via separate
+      // logic, never listed in RU_ENABLED_PATHS), so skip "" / "/" entries
+      // from the comparison to avoid a false positive.
+      const HOMEPAGE = new Set(["", "/"]);
+      const routesNorm = new Set(
+        routes.filter((r) => !HOMEPAGE.has(r)).map((r) => r),
+      );
+      const pathsNorm = new Set(paths.filter((p) => !HOMEPAGE.has(p)));
+      for (const p of pathsNorm) if (!routesNorm.has(p)) {
+        errors.push({
+          file: "src/lib/hreflang.ts",
+          line: 0,
+          rule: "staging-gate-drift",
+          msg: `${pair[1]} has "${p}" but ${pair[0]} doesn't — sitemap will emit a URL that hreflang skips. Add to both sets.`,
+        });
+      }
+      for (const r of routesNorm) if (!pathsNorm.has(r)) {
+        errors.push({
+          file: "src/app/sitemap.xml/route.ts",
+          line: 0,
+          rule: "staging-gate-drift",
+          msg: `${pair[0]} has "${r === "/" ? "" : r}" but ${pair[1]} doesn't — hreflang will point at a sitemap-excluded URL. Add to both sets.`,
+        });
+      }
+    }
+  } catch (_) {
+    // hreflang.ts or sitemap.xml/route.ts missing — skip silently
+  }
+
+  // S16: /[locale]/ pages whose generateStaticParams returns a locale that
+  // isn't a key in CONTENT/TRANSLATIONS dict → 404 at runtime (the bug we
+  // just fixed on /ru/bosphorus-cruise). Detect by comparing the static
+  // string array literal next to generateStaticParams to the locale keys
+  // detected from the dict block.
+  for (const f of files) {
+    if (!/\/app\/\[locale\]\/.+\/page\.tsx$/.test(f)) continue;
+    const src = fs.readFileSync(f, "utf8");
+    // Skip pages that don't use a CONTENT/TRANSLATIONS dict pattern — those
+    // hardcode their metadata inline (single-locale slug pages like
+    // /[locale]/prinzeninseln-istanbul, /[locale]/prens-adalari-istanbul,
+    // /[locale]/kabatas-bogaz-turu) and don't need the dict-key check.
+    const usesContentDict = /\bconst\s+(?:CONTENT|TRANSLATIONS)\s*:/m.test(src);
+    if (!usesContentDict) continue;
+    const paramsM = src.match(/generateStaticParams\s*\(\s*\)\s*\{[^}]*?\[([^\]]+)\][^}]*?\}/s);
+    if (!paramsM) continue;
+    const declared = [...paramsM[1].matchAll(/"(tr|de|fr|nl|ru|zh|en)"/g)].map((x) => x[1]);
+    const hasKeys = new Set([...src.matchAll(/^\s*(tr|de|fr|nl|ru|zh):\s*\{/gm)].map((x) => x[1]));
+    for (const loc of declared) {
+      if (loc === "en") continue;
+      if (!hasKeys.has(loc)) {
+        errors.push({
+          file: rel(f),
+          line: src.slice(0, paramsM.index).split("\n").length,
+          rule: "locale-content-missing",
+          msg: `generateStaticParams returns "${loc}" but CONTENT/TRANSLATIONS dict has no "${loc}: { ... }" block → /${loc}/${f.match(/\/\[locale\]\/(.+)\/page\.tsx$/)[1]} will 404 at runtime.`,
+        });
+      }
+    }
+  }
 }
 
 function main() {
@@ -467,6 +671,11 @@ function main() {
   }
 
   for (const f of files) lintFile(f);
+
+  // 2026-06-05: cross-file post-pass (duplicates across locales, staging-gate
+  // drift, locale CONTENT key parity). Only meaningful when scanning the full
+  // repo, not single-file mode.
+  if (args.length === 0) crossFileChecks(files);
 
   if (errors.length === 0 && warnings.length === 0) {
     console.log(`✓ Schema lint passed (${files.length} files scanned)`);

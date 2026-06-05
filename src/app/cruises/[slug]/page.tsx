@@ -731,7 +731,9 @@ export default async function TourDetailPage({
       )}
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
-          <h1 className="sr-only">{tour.nameEn} — Istanbul Bosphorus</h1>
+          {/* 2026-06-05: removed page-level sr-only <h1> — TourDetailClient
+              already renders the canonical visible <h1> (line ~783) with the
+              SEO-optimized heading. Two <h1> tags fail Semrush + GSC. */}
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-4">
             <Link href="/" className="hover:text-[var(--brand-primary)]">Home</Link>

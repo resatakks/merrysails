@@ -527,7 +527,8 @@ export default async function IstanbulDinnerCruisePage({
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
-          <h1 className="sr-only">Istanbul Dinner Cruise — Bosphorus Yacht with Dinner</h1>
+          {/* 2026-06-05: removed page-level sr-only <h1> — TourDetailClient
+              already renders the canonical visible <h1>. Two <h1> = Semrush fail. */}
           <QuickAnswer productKey="istanbul-dinner-cruise" locale="en" />
           <nav
             aria-label="Breadcrumb"

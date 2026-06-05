@@ -31,14 +31,27 @@ const OWNER_REDIRECTS: Record<string, string> = {
 
 export const revalidate = 3600;
 
+// 2026-06-05 [P1-A — Semrush duplicate-meta cluster]: previously this route
+// generated `tour.slug` × 5 non-EN locales = ~95 pages. The bulk of each page
+// rendered EN strings (tour.nameEn, tour.description) because tour-locales.ts
+// only ships translations for 3 slugs (sunset, dinner, yacht-charter), all of
+// which either have a dedicated static page or live in OWNER_REDIRECTS. The
+// 16 untranslated slugs × 5 locales = 80 pages were duplicate-EN content under
+// non-English URLs → language mismatch + duplicate-meta + thin-content trio.
+//
+// Fix: only pre-render slugs that REDIRECT (OWNER_REDIRECTS map). Everything
+// else returns 404 (dynamicParams = false). When translation budget exists,
+// add per-slug native content + readd to generateStaticParams.
+export const dynamicParams = false;
+
+const OWNER_REDIRECT_SLUGS = Object.keys(OWNER_REDIRECTS);
+
 export function generateStaticParams() {
   const localeSlugs: { locale: string; slug: string }[] = [];
   for (const locale of ACTIVE_LOCALES) {
     if (locale === "en") continue;
-    for (const tour of tours) {
-      // Skip slugs that have a static [locale]/cruises/<slug> page already
-      if (tour.slug === "bosphorus-sunset-cruise") continue;
-      localeSlugs.push({ locale, slug: tour.slug });
+    for (const slug of OWNER_REDIRECT_SLUGS) {
+      localeSlugs.push({ locale, slug });
     }
   }
   return localeSlugs;

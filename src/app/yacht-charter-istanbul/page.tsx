@@ -477,9 +477,13 @@ export default async function YachtCharterIstanbulPage({
           </nav>
 
           <header className="mb-3 md:mb-4">
-            <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
+            {/* 2026-06-05: demoted to h2 — TourDetailClient below already
+                renders the canonical <h1>. Two <h1> tags = Semrush fail
+                + Googlebot picks whichever it lands on first. Keeping the
+                visible heading text (it's good for users) but as h2. */}
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
               {yachtTour.nameEn} — Private Yacht Charter Istanbul
-            </h1>
+            </h2>
             <p className="mt-1.5 text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">
               {yachtTour.description}
             </p>
