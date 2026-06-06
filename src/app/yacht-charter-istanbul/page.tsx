@@ -108,43 +108,105 @@ const serviceSchema = {
   // Organization/Recipe/Movie/Course/Book/HowTo, never on Service/TouristTrip.
   // The valid AggregateRating is rendered separately on the Product schema
   // below (CLAUDE.md rule 4a).
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Bosphorus yacht charter fleet — entry price per yacht for a 2-hour sailing",
-    itemListElement: getCharterFleet().map((boat) => {
-      const en = getCharterFleetLocale(boat, "en");
-      const entry = boat.priceByHours?.[boat.minHours] ?? null;
-      return {
-        "@type": "Offer",
-        ...OFFER_MERCHANT_DEFAULTS,
-        name: en.label,
-        ...(entry != null
-          ? { price: entry, priceCurrency: "EUR" }
-          : {
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                priceCurrency: "EUR",
-                price: null,
-                description: "Program-based quote",
-              },
-            }),
-        availability: "https://schema.org/InStock",
-        validFrom: "2026-01-01",
-        url: canonicalUrl,
-        eligibleQuantity: {
-          "@type": "QuantitativeValue",
-          minValue: boat.capacity.min,
-          maxValue: boat.capacity.max,
-          unitText: "guests",
-        },
-        itemOffered: {
-          "@type": "Service",
+  hasOfferCatalog: [
+    {
+      "@type": "OfferCatalog",
+      name: "Bosphorus yacht charter fleet — entry price per yacht for a 2-hour sailing",
+      itemListElement: getCharterFleet().map((boat) => {
+        const en = getCharterFleetLocale(boat, "en");
+        const entry = boat.priceByHours?.[boat.minHours] ?? null;
+        return {
+          "@type": "Offer",
+          ...OFFER_MERCHANT_DEFAULTS,
           name: en.label,
-          description: en.description,
-        },
-      };
-    }),
-  },
+          ...(entry != null
+            ? { price: entry, priceCurrency: "EUR" }
+            : {
+                priceSpecification: {
+                  "@type": "PriceSpecification",
+                  priceCurrency: "EUR",
+                  price: null,
+                  description: "Program-based quote",
+                },
+              }),
+          availability: "https://schema.org/InStock",
+          validFrom: "2026-01-01",
+          url: canonicalUrl,
+          eligibleQuantity: {
+            "@type": "QuantitativeValue",
+            minValue: boat.capacity.min,
+            maxValue: boat.capacity.max,
+            unitText: "guests",
+          },
+          itemOffered: {
+            "@type": "Service",
+            name: en.label,
+            description: en.description,
+          },
+        };
+      }),
+    },
+    {
+      // 2026-06-06: hourly UnitPriceSpecification tier catalog so AI
+      // engines can answer "private yacht Istanbul cost per hour" with
+      // structured data. Competitors (getmyboat, suyat, nautal) expose
+      // hourly tiers for the same 590/mo "yacht charter istanbul" query
+      // — without this block, our schema only modelled the entry tier.
+      // unitText "HUR" is the schema.org / UN/CEFACT code for hours;
+      // referenceQuantity carries the duration anchor for each tier.
+      "@type": "OfferCatalog",
+      name: "Bosphorus yacht charter — hourly rate tiers per yacht",
+      itemListElement: getCharterFleet().flatMap((boat) => {
+        if (!boat.priceByHours) return [];
+        const en = getCharterFleetLocale(boat, "en");
+        const hours = Object.keys(boat.priceByHours)
+          .map(Number)
+          .sort((a, b) => a - b);
+        return hours.map((h) => {
+          const total = boat.priceByHours![h];
+          const perHour = Math.round((total / h) * 100) / 100;
+          const isDiscounted = h >= boat.discountFromHours;
+          return {
+            "@type": "Offer",
+            ...OFFER_MERCHANT_DEFAULTS,
+            name: `${en.label} — ${h}-hour charter`,
+            description: isDiscounted
+              ? `${h}-hour private charter of the ${en.label.toLowerCase()} (10% discount applied from ${boat.discountFromHours} hours onward).`
+              : `${h}-hour private charter of the ${en.label.toLowerCase()} (entry tier, ${boat.minHours}-hour minimum).`,
+            price: total,
+            priceCurrency: "EUR",
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: perHour,
+              priceCurrency: "EUR",
+              unitText: "HUR",
+              unitCode: "HUR",
+              referenceQuantity: {
+                "@type": "QuantitativeValue",
+                value: h,
+                unitText: "HUR",
+                unitCode: "HUR",
+              },
+            },
+            availability: "https://schema.org/InStock",
+            validFrom: "2026-01-01",
+            url: canonicalUrl,
+            eligibleQuantity: {
+              "@type": "QuantitativeValue",
+              minValue: boat.capacity.min,
+              maxValue: boat.capacity.max,
+              unitText: "guests",
+            },
+            itemOffered: {
+              "@type": "Service",
+              name: en.label,
+              description: en.description,
+            },
+          };
+        });
+      }),
+    },
+  ],
 };
 
 const faqSchema = {

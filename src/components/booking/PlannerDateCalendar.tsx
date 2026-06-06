@@ -194,8 +194,16 @@ export function PlannerDateCalendar({
         </div>
 
         <div className="grid grid-cols-7 gap-y-1">
+          {/* 2026-06-06: pointer-events-none + aria-hidden so taps on the
+              pre-first-of-month placeholders don't register as dead clicks.
+              Clarity flagged 265 clicks on " " whitespace in 7d on
+              /reservation — root cause was these empty grid cells. */}
           {Array.from({ length: blanks }).map((_, index) => (
-            <div key={`blank-${index}`} />
+            <div
+              key={`blank-${index}`}
+              className="pointer-events-none"
+              aria-hidden="true"
+            />
           ))}
 
           {days.map((day) => {

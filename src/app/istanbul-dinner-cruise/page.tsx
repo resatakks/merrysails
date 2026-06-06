@@ -306,14 +306,31 @@ const eventSchema = {
   endDate: "2026-12-31T00:00:00+03:00",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
-  eventSchedule: {
-    "@type": "Schedule",
-    byDay: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    startTime: "20:30",
-    endTime: "00:00",
-    scheduleTimezone: "Europe/Istanbul",
-    repeatFrequency: "P1D",
-  },
+  // 2026-06-06: upgraded to recurring Schedule array with full schema.org
+  // byDay URIs + duration + start/end window. AI engines (Bing Copilot,
+  // Google AI Overviews) use this to surface "tonight at 20:30" rich
+  // results for "dinner cruise Istanbul" queries — competitors don't.
+  eventSchedule: [
+    {
+      "@type": "Schedule",
+      byDay: [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday",
+      ],
+      startTime: "20:30",
+      endTime: "00:00",
+      duration: "PT3H30M",
+      scheduleTimezone: "Europe/Istanbul",
+      repeatFrequency: "P1D",
+      startDate: "2026-01-01",
+      endDate: "2027-12-31",
+    },
+  ],
   location: {
     "@type": "Place",
     name: "Kabataş Pier — MerrySails",

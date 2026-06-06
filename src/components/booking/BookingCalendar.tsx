@@ -437,9 +437,16 @@ export default function BookingCalendar({
         </div>
 
         {/* Days grid */}
-        <div className="grid grid-cols-7">
+        <div className="grid grid-cols-7 gap-y-1">
+          {/* 2026-06-06: pointer-events-none + aria-hidden — see twin fix in
+              PlannerDateCalendar.tsx. Also added gap-y-1 for visual parity
+              with the other calendar (was 0, leading to touching rows). */}
           {Array.from({ length: blanks }).map((_, i) => (
-            <div key={`blank-${i}`} />
+            <div
+              key={`blank-${i}`}
+              className="pointer-events-none"
+              aria-hidden="true"
+            />
           ))}
           {days.map((day) => {
             const isPast = isBefore(day, today);
