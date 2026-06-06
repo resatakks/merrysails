@@ -32,4 +32,6 @@ function createPrismaClient() {
 
 export const prisma = globalForPrisma.prisma || createPrismaClient();
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+// Set global instance in all envs — Vercel serverless reuses warm instances,
+// so persisting the client prevents connection pool leaks on every invocation.
+globalForPrisma.prisma = prisma;

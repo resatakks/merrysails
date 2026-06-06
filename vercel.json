@@ -7,16 +7,8 @@
   "framework": "nextjs",
   "crons": [
     {
-      "path": "/api/telegram/daily-morning",
-      "schedule": "0 5 * * *"
-    },
-    {
       "path": "/api/telegram/daily-evening",
       "schedule": "30 15 * * *"
-    },
-    {
-      "path": "/api/telegram/daily-stats",
-      "schedule": "0 20 * * *"
     },
     {
       "path": "/api/telegram/reminder",
