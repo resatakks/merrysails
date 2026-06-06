@@ -3,7 +3,7 @@
     "fra1"
   ],
   "buildCommand": "prisma generate && next build",
-  "installCommand": "npm install",
+  "installCommand": "npm install --no-audit --prefer-offline --no-fund",
   "framework": "nextjs",
   "crons": [
     {
@@ -33,26 +33,6 @@
     {
       "path": "/api/google-ads/budget-review",
       "schedule": "0 6 * * 1"
-    },
-    {
-      "path": "/api/gsc/snapshot",
-      "schedule": "0 7 */3 * *"
-    },
-    {
-      "path": "/api/seo/rankings",
-      "schedule": "0 7 */3 * *"
-    },
-    {
-      "path": "/api/disavow/audit",
-      "schedule": "0 8 1 * *"
-    },
-    {
-      "path": "/api/cron/lighthouse",
-      "schedule": "0 4 * * 1"
-    },
-    {
-      "path": "/api/cron/llm-mentions",
-      "schedule": "0 5 * * 1"
     }
   ],
   "git": {
