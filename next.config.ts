@@ -399,23 +399,24 @@ const nextConfig: NextConfig = {
       "date-fns",
       "dayjs",
     ],
-    outputFileTracingExcludes: {
-      "*": [
-        "data/seo/**",
-        "docs/**",
-        "scripts/**",
-        ".next/cache/**",
-        "node_modules/@swc/core-linux-x64-gnu",
-        "node_modules/@swc/core-linux-x64-musl",
-        "node_modules/@esbuild/**",
-        "node_modules/webpack/**",
-        "node_modules/terser/**",
-        "node_modules/typescript/**",
-        "node_modules/.cache/**",
-        "node_modules/eslint/**",
-        "node_modules/prettier/**",
-      ],
-    },
+  },
+  // Next 16+: outputFileTracingExcludes moved out of experimental to top-level.
+  outputFileTracingExcludes: {
+    "*": [
+      "data/seo/**",
+      "docs/**",
+      "scripts/**",
+      ".next/cache/**",
+      "node_modules/@swc/core-linux-x64-gnu",
+      "node_modules/@swc/core-linux-x64-musl",
+      "node_modules/@esbuild/**",
+      "node_modules/webpack/**",
+      "node_modules/terser/**",
+      "node_modules/typescript/**",
+      "node_modules/.cache/**",
+      "node_modules/eslint/**",
+      "node_modules/prettier/**",
+    ],
   },
 };
 
