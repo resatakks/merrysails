@@ -7,6 +7,10 @@
   "framework": "nextjs",
   "crons": [
     {
+      "path": "/api/telegram/daily-evening",
+      "schedule": "0 19 * * *"
+    },
+    {
       "path": "/api/google-ads/safety-check",
       "schedule": "0 */2 * * *"
     },
