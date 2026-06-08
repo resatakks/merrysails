@@ -34,8 +34,11 @@ const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
 const GOOGLE_ADS_ID =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "";
+// No fallback Clarity ID — when env unset we render null. Hard-coding the
+// production ID into source meant every preview/local build sent traffic to
+// the live Clarity project, polluting heatmaps and session recordings.
 const CLARITY_PROJECT_ID =
-  process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "wfsykdd4gb";
+  (process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "").trim();
 const META_PIXEL_ID =
   (process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "").trim();
 
