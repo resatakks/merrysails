@@ -152,7 +152,11 @@ export default function CruisesPage() {
               <Link href="/bosphorus-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
                 Bosphorus cruise in Istanbul
               </Link>
-            , use the comparison hub first. This `/cruises` page is the full MerrySails catalog for users who want to browse every experience, not the main owner page for generic cruise intent.
+            , use the comparison hub first. This `/cruises` page is the full MerrySails catalog for users who want to browse every experience, not the main owner page for generic cruise intent. Specifically researching sunset departures? Read our{" "}
+              <Link href="/best-bosphorus-sunset-cruise-2026" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                best Bosphorus sunset cruise 2026 operator comparison
+              </Link>
+            {" "}— six operators benchmarked side by side.
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link

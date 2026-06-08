@@ -85,6 +85,48 @@ const guideSchema = {
  ],
  touristType: ["FamilyTourist", "CouplesTourist", "LuxuryTourist"],
  availableLanguage: ["English", "Turkish", "German", "French"],
+ tripOrigin: {
+ "@type": "BoatTerminal",
+ "@id": `${SITE_URL}/#kabatas-pier`,
+ name: "Kabataş Cruise Terminal",
+ address: {
+ "@type": "PostalAddress",
+ streetAddress: "Kabataş Iskelesi 1",
+ addressLocality: "Beyoğlu",
+ addressRegion: "Istanbul",
+ postalCode: "34427",
+ addressCountry: "TR",
+ },
+ geo: { "@type": "GeoCoordinates", latitude: 41.0335, longitude: 28.9913 },
+ },
+ itinerary: {
+ "@type": "ItemList",
+ itemListOrder: "ItemListOrderAscending",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, item: { "@type": "TouristAttraction", name: "Dolmabahçe Palace", sameAs: "https://www.wikidata.org/wiki/Q252181" } },
+ { "@type": "ListItem", position: 2, item: { "@type": "TouristAttraction", name: "Ortaköy Mosque", sameAs: "https://www.wikidata.org/wiki/Q1259617" } },
+ { "@type": "ListItem", position: 3, item: { "@type": "TouristAttraction", name: "Bosphorus Bridge", sameAs: "https://www.wikidata.org/wiki/Q188929" } },
+ { "@type": "ListItem", position: 4, item: { "@type": "TouristAttraction", name: "Rumeli Fortress", sameAs: "https://www.wikidata.org/wiki/Q372884" } },
+ { "@type": "ListItem", position: 5, item: { "@type": "TouristAttraction", name: "Maiden's Tower", sameAs: "https://www.wikidata.org/wiki/Q748186" } },
+ ],
+ },
+ subjectOf: {
+ "@type": "BodyOfWater",
+ name: "Bosphorus Strait",
+ sameAs: "https://www.wikidata.org/wiki/Q83329",
+ },
+ potentialAction: {
+ "@type": "ReserveAction",
+ target: {
+ "@type": "EntryPoint",
+ urlTemplate: `${SITE_URL}/reservation?tour=bosphorus-cruise`,
+ actionPlatform: [
+ "http://schema.org/DesktopWebPlatform",
+ "http://schema.org/MobileWebPlatform",
+ ],
+ },
+ result: { "@type": "Reservation", name: "Bosphorus cruise reservation" },
+ },
 };
 
 // Separate Product schema for Google Review snippet rich result
@@ -274,10 +316,6 @@ const faqItemsRu = [
 const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- speakable: {
- "@type": "SpeakableSpecification",
- cssSelector: ["h1", ".faq-section", ".faq-section dt", ".faq-section dd"],
- },
  mainEntity: [...faqItems, ...faqItemsRu].map((item) => ({
  "@type": "Question",
  name: item.q,
@@ -789,6 +827,10 @@ export default function BosphorusCruisePage() {
  <span className="hidden sm:inline">·</span>
  <Link href="/compare-bosphorus-cruises" className="font-semibold text-[var(--brand-primary)] hover:underline">
  Compare all cruise options →
+ </Link>
+ <span className="hidden sm:inline">·</span>
+ <Link href="/best-bosphorus-sunset-cruise-2026" className="font-semibold text-[var(--brand-primary)] hover:underline">
+ Best Bosphorus sunset cruise 2026 →
  </Link>
  <span className="hidden sm:inline">·</span>
  <Link href="/pricing" className="font-semibold text-[var(--brand-primary)] hover:underline">
