@@ -20,18 +20,6 @@ export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
   description:
     "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001. No OTA markup.",
-  keywords: [
-    "istanbul cruise",
-    "bosphorus sunset cruise",
-    "istanbul dinner cruise",
-    "yacht charter istanbul",
-    "yacht charter in istanbul",
-    "boat tour istanbul",
-    "bosphorus boat tour",
-    "istanbul boat trip",
-    "bosphorus cruise 2026",
-    "istanbul boat tour 2026",
-  ],
   alternates: { canonical: "https://merrysails.com", languages: buildHreflang("") },
   openGraph: {
     title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
