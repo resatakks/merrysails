@@ -539,11 +539,16 @@ export default async function YachtCharterIstanbulPage({
           </nav>
 
           <header className="mb-3 md:mb-4">
-            {/* 2026-06-05: demoted to h2 — TourDetailClient below already
-                renders the canonical <h1>. Two <h1> tags = Semrush fail
-                + Googlebot picks whichever it lands on first. Keeping the
-                visible heading text (it's good for users) but as h2. */}
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
+            {/* 2026-06-08: SSR <h1> reinstated — TourDetailClient's h1 only
+                renders when bookingPrefill is set (query-string deep-link),
+                so the default page visit had NO h1 server-rendered. This
+                broke the backlink anchor / Googlebot heading signal flagged
+                in the 2026-05-04 audit. Sub-heading kept as h2 below for
+                the existing visible copy. */}
+            <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
+              Yacht Charter Istanbul
+            </h1>
+            <h2 className="mt-2 text-xl md:text-2xl font-semibold text-[var(--heading)] tracking-tight leading-tight">
               {yachtTour.nameEn} — Private Yacht Charter Istanbul
             </h2>
             <p className="mt-1.5 text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">
