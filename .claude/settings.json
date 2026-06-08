@@ -25,7 +25,17 @@
     "performance-audit"
   ],
   "inactive_skills": [
-    "seo-programmatic"
+    "seo-programmatic",
+    "seo-eeat",
+    "seo-schema",
+    "seo-meta",
+    "seo-content-plan",
+    "seo-rich-results",
+    "seo-technical",
+    "seo-internal-linking",
+    "seo-audit",
+    "analytics-setup",
+    "performance-audit"
   ],
   "notes": "Google Ads ACTIVE (GoogleAdsLead model + docs/ads/). Meta Ads: unknown. Yandex Metrika: not integrated. Bing Webmaster: env var exists."
 }

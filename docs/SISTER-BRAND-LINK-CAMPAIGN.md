@@ -161,7 +161,7 @@ Cancel the next planned link if any of these happen:
 ## 🔁 Cross-link with editorial outreach (real third-party)
 
 Sister-brand links are **supplementary**, not primary. Real authority needs:
-- **5 third-party editorial links / year** target (Time Out, Daily Sabah, Lonely Planet, Routard, Geo Saison) — see `~/.agents/skills/seo-first-party-authority/references/editorial-outreach.md`
+- **5 third-party editorial links / year** target (Time Out, Daily Sabah, Lonely Planet, Routard, Geo Saison) — see `~/.agents/skills/seo-ops/references/content/editorial-outreach.md`
 - Sister links act as **base layer** (steady stream), editorial links act as **authority spikes** (DR jumps).
 - Ratio target: 70% editorial, 30% sister-brand.
 

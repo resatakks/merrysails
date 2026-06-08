@@ -1,0 +1,41 @@
+# Cross-brand similarity audit URL list
+# Format: brand,url,vertical,page_type
+# - brand:     must match an id in ~/.agents/skills/daily-ops/brand-registry.json
+# - vertical:  cruise | yacht-charter | transfer | tattoo | restaurant | car-rental | car-wrap | stamp
+# - page_type: pillar | commercial | blog
+#
+# Cosine is only compared within the same vertical + same locale + different brand.
+# Cross-locale (e.g. /tr/... vs /de/...) pairs are filtered out automatically.
+#
+# Operator: extend this list per audit. Cap = 200 URLs/run.
+
+# --- cruise pillars (EN) ---
+merrysails,https://merrysails.com/bosphorus-cruise,cruise,pillar
+merrytourism,https://merrytourism.com/bosphorus-cruise,cruise,pillar
+goldensunsettour,https://goldensunsettour.com/bosphorus-cruise,cruise,pillar
+
+# --- dinner cruise commercial (EN) ---
+merrysails,https://merrysails.com/istanbul-dinner-cruise,cruise,commercial
+merrytourism,https://merrytourism.com/istanbul-dinner-cruise,cruise,commercial
+
+# --- sunset cruise commercial (EN) ---
+merrysails,https://merrysails.com/cruises/bosphorus-sunset-cruise,cruise,commercial
+goldensunsettour,https://goldensunsettour.com/cruises/bosphorus-sunset-cruise,cruise,commercial
+
+# --- yacht charter (EN) ---
+merrysails,https://merrysails.com/yacht-charter-istanbul,yacht-charter,pillar
+merrytourism,https://merrytourism.com/yacht-charter-istanbul,yacht-charter,pillar
+
+# --- airport transfer pillars (EN) ---
+kwt,https://kingsworldtransfer.com/airport-transfer,transfer,pillar
+pickupspoint,https://www.pickupspoint.com/airport-transfer,transfer,pillar
+pakbodrum,https://pakbodrum.com/airport-transfer,transfer,pillar
+
+# --- TR locale pillars (compared only within tr locale) ---
+merrysails,https://merrysails.com/tr/bosphorus-cruise,cruise,pillar
+merrytourism,https://merrytourism.com/tr/bosphorus-cruise,cruise,pillar
+goldensunsettour,https://goldensunsettour.com/tr/bosphorus-cruise,cruise,pillar
+
+# --- example blog comparison ---
+# merrysails,https://merrysails.com/blog/istanbul-cruise-complete-guide-2026,cruise,blog
+# merrytourism,https://merrytourism.com/blog/istanbul-cruise-guide-2026,cruise,blog

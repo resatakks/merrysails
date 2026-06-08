@@ -71,7 +71,7 @@
     "derivativeCount": null,
     "derivativeRatio": null,
     "target": 0.15,
-    "scanCommand": "see ~/.agents/skills/seo-first-party-authority/checklists/optimization-trigger.md"
+    "scanCommand": "see ~/.agents/skills/seo-ops/checklists/optimization-trigger.md"
   },
   "sisterBrandConflict": {
     "checkAgainst": ["goldensunsettour", "merrytourism"],
