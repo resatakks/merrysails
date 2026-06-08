@@ -6,6 +6,11 @@ import { commercialSupportPosts } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
 import { ACTIVE_LOCALES } from "@/i18n/config";
 import { getAllLocalePostsForLocale } from "@/data/blog/locale-posts";
+import {
+  LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES,
+  RU_ENABLED_ROUTES,
+  ZH_ENABLED_ROUTES,
+} from "@/i18n/localized-routes";
 
 const SITE_URL = "https://merrysails.com";
 // Deprecated/redirecting tour slugs — single source of truth in tours.ts.
@@ -17,42 +22,13 @@ const EXCLUDED_BLOG_SLUGS = new Set<string>([
   "bosphorus-cruise-departure-points",
 ]);
 
-// Routes that have live locale pages — must match src/app/[locale]/ folders exactly
+// Routes that have live locale pages — derived from the hoisted core set in
+// src/i18n/localized-routes.ts (single source of truth shared with hreflang.ts
+// and Header/Footer). The sitemap adds 6 yacht-charter sub-paths that don't
+// appear in the core LOCALIZED_ROUTES because they're tour-detail variants
+// owned by yacht-charter-istanbul.
 const LOCALIZED_PATHS = [
-  "/bosphorus-cruise",
-  "/istanbul-dinner-cruise",
-  "/cruises/bosphorus-sunset-cruise",
-  "/yacht-charter-istanbul",
-  "/honeymoon-yacht-cruise-istanbul",
-  "/anniversary-yacht-cruise-istanbul",
-  "/bosphorus-cruise-for-couples",
-  "/bosphorus-cruise-for-families",
-  "/boat-rental-istanbul",
-  "/boat-rental-hourly-istanbul",
-  "/private-bosphorus-dinner-cruise",
-  "/proposal-yacht-rental-istanbul",
-  "/corporate-events",
-  "/private-events",
-  "/faq",
-  "/about",
-  "/contact",
-  "/blog",
-  "/guides",
-  "/cruises",
-  "/private-tours",
-  "/bosphorus-cruise-departure-points",
-  "/client-hosting-yacht-istanbul",
-  "/corporate-yacht-dinner-istanbul",
-  "/dinner-cruise-pickup-sultanahmet-taksim",
-  "/dinner-cruise-with-hotel-pickup-istanbul",
-  "/kabatas-dinner-cruise-istanbul",
-  "/kurucesme-marina-yacht-charter",
-  "/private-dinner-cruise-for-couples-istanbul",
-  "/product-launch-yacht-istanbul",
-  "/proposal-yacht-with-photographer-istanbul",
-  "/sunset-cruise-tickets-istanbul",
-  "/team-building-yacht-istanbul",
-  "/turkish-night-dinner-cruise-istanbul",
+  ...Array.from(CORE_LOCALIZED_ROUTES).filter((r) => r !== ""),
   "/yacht-charter-istanbul/boutique-yacht-12",
   "/yacht-charter-istanbul/premium-yacht-15",
   "/yacht-charter-istanbul/group-yacht-40-standard",
@@ -65,53 +41,18 @@ const LOCALIZED_SET = new Set(LOCALIZED_PATHS);
 const NON_EN_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en");
 
 // Staged ru rollout: only emit /ru sitemap URLs for paths that have a live
-// /ru page (translated TRANSLATIONS block). Mirror of RU_ENABLED_ROUTES in
-// src/lib/hreflang.ts — keep these two in sync when adding new /ru pages.
-// RU now covers 11 commercial paths (2026-06-01 expansion after building
-// native Russian content for proposal-yacht, private-dinner, corporate,
-// kabatas-dinner, team-building, private-events, boat-rental, kurucesme).
-// Pillar /bosphorus-cruise also has full RU content via the locale pillar
-// system. Adding to sitemap unlocks crawl + hreflang for Yandex.
-const RU_ENABLED_PATHS = new Set<string>([
-  "/bosphorus-cruise",
-  "/cruises/bosphorus-sunset-cruise",
-  "/istanbul-dinner-cruise",
-  "/yacht-charter-istanbul",
-  "/boat-rental-istanbul",
-  "/proposal-yacht-rental-istanbul",
-  "/private-bosphorus-dinner-cruise",
-  "/corporate-events",
-  "/private-events",
-  "/kabatas-dinner-cruise-istanbul",
-  "/team-building-yacht-istanbul",
-  "/kurucesme-marina-yacht-charter",
-  "/honeymoon-yacht-cruise-istanbul",
-  "/anniversary-yacht-cruise-istanbul",
-  "/bosphorus-cruise-for-couples",
-  "/bosphorus-cruise-for-families",
-  // 2026-06-02: Hotel-cluster RU variants shipped.
-  "/bosphorus-cruise-from-sultanahmet",
-  "/bosphorus-cruise-from-taksim",
-  "/bosphorus-cruise-from-beyoglu",
-  // 2026-06-05: audience pages ALSO live in RU. Adding so /ru/audience URLs
-  // appear in sitemap. Mirror in src/lib/hreflang.ts RU_ENABLED_ROUTES.
-  "/anniversary-yacht-cruise-istanbul",
-  "/honeymoon-yacht-cruise-istanbul",
-  "/bosphorus-cruise-for-couples",
-  "/bosphorus-cruise-for-families",
-]);
+// /ru page. Derived from the hoisted RU_ENABLED_ROUTES (core set uses "" for
+// homepage path-suffix convention; the sitemap doesn't iterate homepage here).
+const RU_ENABLED_PATHS = new Set<string>(
+  Array.from(RU_ENABLED_ROUTES).filter((r) => r !== ""),
+);
 
-// 2026-06-04: Chinese (Simplified) staged rollout. Mirror of ZH_ENABLED_ROUTES
-// in src/lib/hreflang.ts. Homepage only at v1 — expand path-by-path as zh
-// content lands. ZH_ENABLED_PATHS uses "/" for homepage (sitemap convention)
-// while ZH_ENABLED_ROUTES in hreflang uses "" (path-suffix convention).
-const ZH_ENABLED_PATHS = new Set<string>([
-  "/", // homepage
-  "/bosphorus-cruise",
-  "/cruises/bosphorus-sunset-cruise",
-  "/istanbul-dinner-cruise",
-  "/yacht-charter-istanbul",
-]);
+// 2026-06-04: Chinese (Simplified) staged rollout. Sitemap uses "/" for
+// homepage (sitemap URL convention) while the hoisted set uses "" (path-suffix
+// convention) — translate the homepage entry here.
+const ZH_ENABLED_PATHS = new Set<string>(
+  Array.from(ZH_ENABLED_ROUTES).map((r) => (r === "" ? "/" : r)),
+);
 
 function toAbsoluteUrl(url: string): string {
   if (url.startsWith("http://") || url.startsWith("https://")) return url;

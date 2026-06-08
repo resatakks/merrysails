@@ -28,58 +28,19 @@ import {
   getFooterStrings,
   type ChromeLocale,
 } from "@/i18n/chrome-strings";
+import { LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES } from "@/i18n/localized-routes";
 
 type NavLocale = ChromeLocale;
 
 const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
-const FOOTER_LOCALIZED_ROUTES = new Set([
-  "/bosphorus-cruise",
-  "/istanbul-dinner-cruise",
-  "/cruises/bosphorus-sunset-cruise",
-  "/yacht-charter-istanbul",
-  "/boat-rental-istanbul",
-  "/boat-rental-hourly-istanbul",
-  "/private-bosphorus-dinner-cruise",
-  "/proposal-yacht-rental-istanbul",
-  "/corporate-events",
-  "/private-events",
-  "/faq",
-  "/about",
-  "/contact",
+// Footer extends the core LOCALIZED_ROUTES with `/reservation` (form route)
+// and `/princes-islands-tour-istanbul` (EN pillar — TR/DE/FR use
+// locale-native slugs prens-adalari/prinzeninseln/iles-aux-princes that don't
+// match this set). Both are footer-only concerns, not hreflang/sitemap ones.
+const FOOTER_LOCALIZED_ROUTES = new Set<string>([
+  ...Array.from(CORE_LOCALIZED_ROUTES).filter((r) => r !== ""),
   "/reservation",
-  "/blog",
-  "/guides",
-  "/cruises",
-  "/private-tours",
-  "/bosphorus-cruise-departure-points",
-  "/client-hosting-yacht-istanbul",
-  "/corporate-yacht-dinner-istanbul",
-  "/dinner-cruise-pickup-sultanahmet-taksim",
-  "/dinner-cruise-with-hotel-pickup-istanbul",
-  "/kabatas-dinner-cruise-istanbul",
-  "/kurucesme-marina-yacht-charter",
-  "/private-dinner-cruise-for-couples-istanbul",
-  "/product-launch-yacht-istanbul",
-  "/proposal-yacht-with-photographer-istanbul",
-  "/sunset-cruise-tickets-istanbul",
-  "/team-building-yacht-istanbul",
-  "/turkish-night-dinner-cruise-istanbul",
-  // 2026-06-02: Audience-segment pages — each shipped in all 5 active
-  // non-EN locales with native content. Adding here makes the footer
-  // route directly to the locale variant when the visitor is on /tr/
-  // /de/ /fr/ /nl/ /ru/ pages.
-  "/honeymoon-yacht-cruise-istanbul",
-  "/anniversary-yacht-cruise-istanbul",
-  "/bosphorus-cruise-for-couples",
-  "/bosphorus-cruise-for-families",
-  // 2026-06-02: Hotel-cluster pages — 5-locale coverage (TR/DE/FR/NL/RU).
-  "/bosphorus-cruise-from-sultanahmet",
-  "/bosphorus-cruise-from-taksim",
-  "/bosphorus-cruise-from-beyoglu",
-  // 2026-06-02: Princes Islands EN pillar. TR/DE/FR variants use
-  // locale-native slugs (prens-adalari, prinzeninseln, iles-aux-princes)
-  // and are not localized via this footer set — they're standalone entries.
   "/princes-islands-tour-istanbul",
 ]);
 

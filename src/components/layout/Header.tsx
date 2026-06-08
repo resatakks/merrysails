@@ -14,43 +14,17 @@ import {
   getHeaderStrings,
   type ChromeLocale,
 } from "@/i18n/chrome-strings";
+import { LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES } from "@/i18n/localized-routes";
 
 type NavLocale = ChromeLocale;
 
 const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
+// Header extends the core LOCALIZED_ROUTES set with `/reservation`, which is
+// localized for header CTAs but excluded from hreflang/sitemap (form route).
 const LOCALIZED_ROUTES = new Set<string>([
-  "/bosphorus-cruise",
-  "/istanbul-dinner-cruise",
-  "/cruises/bosphorus-sunset-cruise",
-  "/yacht-charter-istanbul",
-  "/boat-rental-istanbul",
-  "/private-bosphorus-dinner-cruise",
-  "/proposal-yacht-rental-istanbul",
-  "/corporate-events",
-  "/private-events",
-  "/faq",
-  "/about",
-  "/contact",
+  ...Array.from(CORE_LOCALIZED_ROUTES).filter((r) => r !== ""),
   "/reservation",
-  "/blog",
-  "/guides",
-  "/cruises",
-  "/private-tours",
-  "/boat-rental-hourly-istanbul",
-  "/bosphorus-cruise-departure-points",
-  "/client-hosting-yacht-istanbul",
-  "/corporate-yacht-dinner-istanbul",
-  "/dinner-cruise-pickup-sultanahmet-taksim",
-  "/dinner-cruise-with-hotel-pickup-istanbul",
-  "/kabatas-dinner-cruise-istanbul",
-  "/kurucesme-marina-yacht-charter",
-  "/private-dinner-cruise-for-couples-istanbul",
-  "/product-launch-yacht-istanbul",
-  "/proposal-yacht-with-photographer-istanbul",
-  "/sunset-cruise-tickets-istanbul",
-  "/team-building-yacht-istanbul",
-  "/turkish-night-dinner-cruise-istanbul",
 ]);
 
 type NavLabelKey =
