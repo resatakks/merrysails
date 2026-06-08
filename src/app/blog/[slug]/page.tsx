@@ -290,7 +290,9 @@ export default async function BlogPostPage({
                     />
                   )}
                   {/* Existing mid-article InlineCTA kept for backwards compat. */}
-                  {i === midPoint && i !== autoCtaMidIndex && <InlineCTA />}
+                  {i === midPoint && i !== autoCtaMidIndex && (
+                    <InlineCTA variant={ctaCruiseType} slug={post.slug} />
+                  )}
                 </div>
               ))}
             </div>
