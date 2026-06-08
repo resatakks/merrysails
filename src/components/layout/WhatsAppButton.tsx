@@ -85,6 +85,7 @@ export default function WhatsAppButton() {
           }
           className={`relative flex h-12 w-12 items-center justify-center rounded-full text-white shadow-xl transition-all duration-300 hover:scale-105 md:h-14 md:w-14 ${channelBgClass}`}
           aria-label={ariaLabel}
+          data-wa-source="sticky-cta"
         >
           <span className={`absolute inset-0 rounded-full opacity-70 animate-[wa-ping_2s_cubic-bezier(0,0,0.2,1)_infinite] ${pingBgClass}`} />
           {isTelegram ? (

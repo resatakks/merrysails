@@ -2,6 +2,7 @@
 
 import type { MouseEvent } from "react";
 import { trackPixel } from "@/lib/meta-pixel";
+import { pushWhatsAppClickV2 } from "@/lib/analytics-whatsapp";
 
 type AnalyticsPrimitive = string | number | boolean;
 type AnalyticsValue =
@@ -881,6 +882,16 @@ export function trackWhatsAppClick(params: {
 
   trackEvent("whatsapp_click", payload);
   trackEvent("contact_us", payload);
+
+  // WhatsApp Click v2 — dedicated dataLayer event consumed by Clarity for
+  // attribution. The legacy `whatsapp_click` event is kept for GA4 / Ads /
+  // pixel back-compat; v2 normalizes the payload (source/label/page_path/ts)
+  // so Clarity custom filters can group by whatsapp_source.
+  pushWhatsAppClickV2({
+    whatsapp_source: params.label,
+    whatsapp_label: params.label,
+    page_path: params.location,
+  });
 
   trackGoogleAdsConversion("whatsapp", {
     contact_intent: params.intent ?? "pre_booking",
