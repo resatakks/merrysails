@@ -14,7 +14,6 @@ import CommercialIntentSection from "@/components/home/CommercialIntentSection";
 import Link from "next/link";
 import { tours } from "@/data/tours";
 import { buildHreflang } from "@/lib/hreflang";
-import CrossBrandPromo from "@/components/marketing/CrossBrandPromo";
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
@@ -429,8 +428,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <CrossBrandPromo />
 
       <CTASection />
     </>
