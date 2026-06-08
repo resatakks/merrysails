@@ -84,15 +84,18 @@ export default async function ReservationInvoicePage({
   // Custom phone-arranged bookings have an empty `time` value — hide guest
   // count, departure time, and the structured "extras" block, and override the
   // departure point with the pickup parsed from notes.
-  const isCustomBooking = !reservation.time;
+  const isCustomBooking =
+    !reservation.time || reservationMeta.emailTemplate === "custom-booking";
   const pickupFromNotes = (() => {
     const raw = reservation.notes ?? "";
     const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);
     return match ? match[1].trim() : null;
   })();
-  const meetingPointLabel = isCustomBooking
-    ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
-    : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
+  const meetingPointLabel = reservationMeta.meetingPointNote
+    ? reservationMeta.meetingPointNote
+    : isCustomBooking
+      ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
+      : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
 
   const mixedItems = parseReservationItems(reservation.items);
 

@@ -35,15 +35,26 @@ export async function getReservationDocumentPayload(reservationId: string) {
 
   const meta = parseReservationNotes(reservation.notes);
 
-  const isCustomBooking = !reservation.time;
+  // `isCustomBooking` drives downstream layout: skips the "Selected Booking
+  // Option" block, swaps "Departure Point" → "Pickup", and changes the
+  // "Good to know" copy. Treat any reservation flagged with the custom-booking
+  // email template as a custom booking, even when a fixed time is set
+  // (phone-arranged private dinners often have a specific window).
+  const isCustomBooking =
+    !reservation.time || meta.emailTemplate === "custom-booking";
   const pickupFromNotes = (() => {
     const raw = reservation.notes ?? "";
     const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);
     return match ? match[1].trim() : null;
   })();
-  const meetingPointOverride = isCustomBooking
-    ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
-    : (pickupFromNotes ?? undefined);
+  // Prefer the explicit operator-typed meeting-point text (set in the admin
+  // form). Falls back to the legacy regex parse, then to a generic Karaköy
+  // placeholder for time-less custom bookings.
+  const meetingPointOverride =
+    meta.meetingPointNote ??
+    (isCustomBooking && !reservation.time
+      ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
+      : pickupFromNotes ?? undefined);
 
   const documentInput: ReservationPdfInput = {
     reservationId: reservation.reservationId,

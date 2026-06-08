@@ -64,10 +64,12 @@ export default async function ReservationVoucherPage({
   const statusLabel = getReservationStatusLabel(normalizedStatus);
   const reservationMeta = parseReservationNotes(reservation.notes);
   const mixedItems = parseReservationItems(reservation.items);
-  // Custom phone-arranged bookings have an empty `time` value — used as the
-  // marker to hide guest count, departure time, package details, and the
-  // generic "arrive 15 minutes early" reminder so the voucher stays minimal.
-  const isCustomBooking = !reservation.time;
+  // Custom phone-arranged bookings hide guest count, departure time, package
+  // details, and the generic "arrive 15 minutes early" reminder. Either an
+  // empty `time` (legacy custom rezs) or the explicit emailTemplate flag (set
+  // by the admin form template picker) triggers the custom layout.
+  const isCustomBooking =
+    !reservation.time || reservationMeta.emailTemplate === "custom-booking";
   const pickupFromNotes = (() => {
     const raw = reservation.notes ?? "";
     const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);

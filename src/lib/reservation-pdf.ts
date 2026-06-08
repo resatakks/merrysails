@@ -522,7 +522,26 @@ export async function generateReservationVoucherPdf(
   ) + 5;
 
   let optionsY = Math.max(leftY, rightY) + 6;
-  if (!input.isCustomBooking) {
+  const hasMixed = Array.isArray(input.items) && input.items.length >= 2;
+  const selectedOptionLines = [
+    hasMixed
+      ? `Packages: ${formatItemsSummary(input.items!)}`
+      : input.packageName
+        ? `Package: ${input.packageName}`
+        : null,
+    input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
+    input.privateTransferRequested
+      ? "Private transfer requested. Our team will contact you with pickup details."
+      : null,
+    input.additionalGuests && input.additionalGuests.length > 0
+      ? `Other passengers: ${input.additionalGuests.join(", ")}`
+      : null,
+  ].filter(Boolean) as string[];
+  // Skip the "Selected Booking Option" block when there is nothing to show
+  // (and always skip on custom phone-arranged bookings) — the previous
+  // "Base reservation details are stored in the booking record" placeholder
+  // confused customers when no package/add-on existed.
+  if (!input.isCustomBooking && selectedOptionLines.length > 0) {
     doc.setFillColor(248, 250, 252);
     doc.roundedRect(14, optionsY, 182, 36, 6, 6, "F");
     doc.setFont("Roboto", "bold");
@@ -531,25 +550,9 @@ export async function generateReservationVoucherPdf(
     doc.text("Selected Booking Option", 18, optionsY + 8);
     doc.setFont("Roboto", "normal");
     doc.setTextColor(71, 85, 105);
-    const hasMixed = Array.isArray(input.items) && input.items.length >= 2;
     writeWrappedText(
       doc,
-      [
-        hasMixed
-          ? `Packages: ${formatItemsSummary(input.items!)}`
-          : input.packageName
-            ? `Package: ${input.packageName}`
-            : null,
-        input.addOns && input.addOns.length > 0 ? `Add-ons: ${input.addOns.join(", ")}` : null,
-        input.privateTransferRequested
-          ? "Private transfer requested. Our team will contact you with pickup details."
-          : null,
-        input.additionalGuests && input.additionalGuests.length > 0
-          ? `Other passengers: ${input.additionalGuests.join(", ")}`
-          : null,
-      ]
-        .filter(Boolean)
-        .join(" • ") || "Base reservation details are stored in the booking record.",
+      selectedOptionLines.join(" • "),
       18,
       optionsY + 15,
       174,
