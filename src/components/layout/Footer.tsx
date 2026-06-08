@@ -51,7 +51,6 @@ function localizeHref(href: string, locale: NavLocale): string {
 }
 
 type FooterCoreLink = { label: string; href: string };
-type PartnerLink = { label: string; href: string };
 
 const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
   en: [
@@ -95,90 +94,6 @@ const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
     { label: "Ужин-круиз по Босфору", href: "/ru/istanbul-dinner-cruise" },
     { label: "Аренда яхты в Стамбуле", href: "/ru/yacht-charter-istanbul" },
     { label: "Аренда катера в Стамбуле", href: "/ru/boat-rental-istanbul" },
-  ],
-};
-
-const PARTNER_LINKS: Record<NavLocale, PartnerLink[]> = {
-  en: [
-    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-  tr: [
-    { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
-    { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
-    { label: "VIP Transfer İstanbul", href: "https://www.merrytourism.com/tr/vip-transfer" },
-  ],
-  de: [
-    { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
-    { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/de/sabiha-gokcen-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/de/vip-transfer" },
-  ],
-  fr: [
-    { label: "Transfert Aeroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-  nl: [
-    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "Sabiha Gokcen Transfer", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-  ru: [
-    { label: "Трансфер аэропорт Стамбул", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "Трансфер Сабиха Гёкчен", href: "https://www.merrytourism.com/en/sabiha-gokcen-airport-transfer" },
-    { label: "VIP-трансфер Стамбул", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-};
-
-const SISTER_LINKS: Record<NavLocale, PartnerLink[]> = {
-  en: [
-    { label: "GoldenSunsetTour — Bosphorus Cruises", href: "https://www.goldensunsettour.com/" },
-    { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-    { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-    { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
-    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-  tr: [
-    { label: "GoldenSunsetTour — Boğaz Turları", href: "https://www.goldensunsettour.com/" },
-    { label: "GoldenSunsetTour — Gün Batımı Turu", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-    { label: "GoldenSunsetTour — Akşam Yemeği Turu", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-    { label: "MerryTourism — Transfer", href: "https://www.merrytourism.com/tr" },
-    { label: "İstanbul Havalimanı Transfer", href: "https://www.merrytourism.com/tr/istanbul-airport-transfer" },
-    { label: "Sabiha Gökçen Transfer", href: "https://www.merrytourism.com/tr/sabiha-gokcen-airport-transfer" },
-  ],
-  de: [
-    { label: "GoldenSunsetTour — Bosporus-Kreuzfahrten", href: "https://www.goldensunsettour.com/" },
-    { label: "GoldenSunsetTour — Sonnenuntergangsfahrt", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-    { label: "GoldenSunsetTour — Dinner-Kreuzfahrt", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-    { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/de" },
-    { label: "Istanbul Flughafen Transfer", href: "https://www.merrytourism.com/de/istanbul-airport-transfer" },
-    { label: "VIP Transfer Istanbul Festpreis", href: "https://www.merrytourism.com/de/vip-transfer" },
-  ],
-  fr: [
-    { label: "GoldenSunsetTour — Croisières Bosphore", href: "https://www.goldensunsettour.com/" },
-    { label: "GoldenSunsetTour — Coucher de Soleil", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-    { label: "GoldenSunsetTour — Dîner Croisière", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-    { label: "MerryTourism — Transferts", href: "https://www.merrytourism.com/en" },
-    { label: "Transfert Aéroport Istanbul", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-  nl: [
-    { label: "GoldenSunsetTour — Bosporus Cruises", href: "https://www.goldensunsettour.com/" },
-    { label: "GoldenSunsetTour — Sunset Cruise", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-    { label: "GoldenSunsetTour — Dinner Cruise", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-    { label: "MerryTourism — Transfers", href: "https://www.merrytourism.com/en" },
-    { label: "Istanbul Airport Transfer", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "VIP Transfer Istanbul", href: "https://www.merrytourism.com/en/vip-transfer" },
-  ],
-  ru: [
-    { label: "GoldenSunsetTour — Круизы по Босфору", href: "https://www.goldensunsettour.com/" },
-    { label: "GoldenSunsetTour — Круиз на закат", href: "https://www.goldensunsettour.com/cruises/bosphorus-sunset-cruise" },
-    { label: "GoldenSunsetTour — Ужин-круиз", href: "https://www.goldensunsettour.com/istanbul-dinner-cruise" },
-    { label: "MerryTourism — Трансферы", href: "https://www.merrytourism.com/en" },
-    { label: "Трансфер аэропорт Стамбул", href: "https://www.merrytourism.com/en/istanbul-airport-transfer" },
-    { label: "VIP-трансфер Стамбул", href: "https://www.merrytourism.com/en/vip-transfer" },
   ],
 };
 
@@ -243,13 +158,11 @@ export default function Footer() {
   const locale = detectChromeLocaleFromPathname(pathname);
   const t = getFooterStrings(locale);
   const coreLinks = CORE_LINKS[locale] ?? CORE_LINKS.en;
-  const partnerLinks = PARTNER_LINKS[locale] ?? PARTNER_LINKS.en;
-  const sisterLinks = SISTER_LINKS[locale] ?? SISTER_LINKS.en;
 
   return (
     <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">
       <div className="container-main pt-20 pb-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr_0.85fr]">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
           <div>
             <Link href={locale === "en" ? "/" : `/${locale}`} className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
@@ -400,39 +313,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              {t.partnerServices}
-            </h3>
-            <ul className="space-y-2.5">
-              {partnerLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-7 mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              {t.sisterBrands}
-            </h3>
-            <ul className="space-y-2.5">
-              {sisterLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-2">
