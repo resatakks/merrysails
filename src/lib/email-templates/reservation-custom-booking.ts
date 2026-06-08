@@ -21,6 +21,8 @@ export interface ReservationCustomBookingEmailData {
   currency: string;
   paymentNote?: string;
   customerPhone?: string;
+  meetingPointNote?: string;
+  guestCount?: number;
 }
 
 export function reservationCustomBookingEmail(
@@ -36,7 +38,7 @@ export function reservationCustomBookingEmail(
   return `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only"></head>
 <body style="margin:0;padding:0;background:#f1f5f9;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="max-width:640px;margin:0 auto;padding:24px 16px;">
 
@@ -89,7 +91,7 @@ export function reservationCustomBookingEmail(
           <tr>
             <td style="width:50%;padding:0 12px 14px 0;vertical-align:top;">
               <div style="color:#64748b;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:11px;">Lead Guest</div>
-              <div style="color:#0f172a;font-weight:600;margin-top:5px;font-size:14px;">${escapeHtml(data.customerName)}</div>
+              <div style="color:#0f172a;font-weight:600;margin-top:5px;font-size:14px;">${escapeHtml(data.customerName)}${data.guestCount && data.guestCount > 0 ? ` (${data.guestCount} guest${data.guestCount > 1 ? "s" : ""})` : ""}</div>
             </td>
             <td style="width:50%;padding:0 0 14px 12px;vertical-align:top;">
               <div style="color:#64748b;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:11px;">Experience</div>
@@ -118,6 +120,15 @@ export function reservationCustomBookingEmail(
               : ""
           }
         </table>
+
+        ${
+          data.meetingPointNote?.trim()
+            ? `<div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:14px;padding:16px 18px;margin-bottom:18px;">
+          <p style="font-size:13px;color:#1e3a8a;font-weight:700;margin:0 0 8px;">Meeting point</p>
+          <p style="margin:0;font-size:13px;color:#1e3a8a;line-height:1.7;">${escapeHtml(data.meetingPointNote.trim())}</p>
+        </div>`
+            : ""
+        }
 
         <div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:14px;padding:16px 18px;margin-bottom:22px;">
           <p style="font-size:13px;color:#92400e;font-weight:700;margin:0 0 8px;">Good to know</p>

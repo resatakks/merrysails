@@ -73,9 +73,13 @@ export default async function ReservationVoucherPage({
     const match = raw.match(/pickup\s+from\s+([^,.\n—-]+?)(?:\s+time\s+flexible|[,.\n—-]|$)/i);
     return match ? match[1].trim() : null;
   })();
-  const meetingPointLabel = isCustomBooking
-    ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
-    : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
+  // Prefer the explicit operator-typed meeting-point text (set in the admin
+  // form) over the regex-parsed pickup line. Falls back to legacy behaviour.
+  const meetingPointLabel = reservationMeta.meetingPointNote
+    ? reservationMeta.meetingPointNote
+    : isCustomBooking
+      ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
+      : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
   const hasSelectedOptions = !isCustomBooking && Boolean(
     mixedItems ||
       reservationMeta.packageName ||

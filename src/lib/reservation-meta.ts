@@ -3,6 +3,24 @@ import type { ReservationPricingSnapshot } from "@/lib/reservation-pricing";
 const META_START = "[MERRYSAILS_META]";
 const META_END = "[/MERRYSAILS_META]";
 
+/**
+ * Payment methods surfaced in admin reservation creation. `cash_on_board` and
+ * `card_on_board` map to the same customer-facing copy on shared cruises;
+ * `card_paid` means the booking is settled (no on-board collection).
+ */
+export type ReservationPaymentMethod =
+  | "cash_on_board"
+  | "card_on_board"
+  | "card_paid"
+  | "bank_transfer";
+
+/**
+ * Email template flag — written to meta so resend uses the same flow.
+ * `custom-booking` switches sendReservationCustomerEmail to the minimal
+ * private-booking template (with optional meeting-point note).
+ */
+export type ReservationEmailTemplate = "standard" | "custom-booking";
+
 interface ReservationMetaPayload {
   packageName?: string;
   addOns?: string[];
@@ -10,6 +28,10 @@ interface ReservationMetaPayload {
   additionalGuests?: string[];
   privateTransferRequested?: boolean;
   pricing?: ReservationPricingSnapshot;
+  meetingPointNote?: string;
+  paymentMethod?: ReservationPaymentMethod;
+  internalOperatorNote?: string;
+  emailTemplate?: ReservationEmailTemplate;
 }
 
 export interface ParsedReservationMeta {
@@ -20,6 +42,10 @@ export interface ParsedReservationMeta {
   privateTransferRequested: boolean;
   pricing?: ReservationPricingSnapshot;
   hasStructuredMeta: boolean;
+  meetingPointNote?: string;
+  paymentMethod?: ReservationPaymentMethod;
+  internalOperatorNote?: string;
+  emailTemplate?: ReservationEmailTemplate;
 }
 
 function roundMoney(value: number): number {
@@ -107,6 +133,10 @@ export function serializeReservationNotes(
         .filter(Boolean) ?? [],
     privateTransferRequested: payload.privateTransferRequested || undefined,
     pricing: sanitizePricingSnapshot(payload.pricing),
+    meetingPointNote: payload.meetingPointNote?.trim() || undefined,
+    paymentMethod: payload.paymentMethod,
+    internalOperatorNote: payload.internalOperatorNote?.trim() || undefined,
+    emailTemplate: payload.emailTemplate,
   };
 
   if (
@@ -115,7 +145,11 @@ export function serializeReservationNotes(
     !cleanedPayload.customerNote &&
     (!cleanedPayload.additionalGuests || cleanedPayload.additionalGuests.length === 0) &&
     !cleanedPayload.privateTransferRequested &&
-    !cleanedPayload.pricing
+    !cleanedPayload.pricing &&
+    !cleanedPayload.meetingPointNote &&
+    !cleanedPayload.paymentMethod &&
+    !cleanedPayload.internalOperatorNote &&
+    !cleanedPayload.emailTemplate
   ) {
     return null;
   }
@@ -173,6 +207,10 @@ export function parseReservationNotes(
       privateTransferRequested: Boolean(parsed.privateTransferRequested),
       pricing: sanitizePricingSnapshot(parsed.pricing),
       hasStructuredMeta: true,
+      meetingPointNote: parsed.meetingPointNote?.trim() || undefined,
+      paymentMethod: parsed.paymentMethod,
+      internalOperatorNote: parsed.internalOperatorNote?.trim() || undefined,
+      emailTemplate: parsed.emailTemplate,
     };
   } catch {
     return {

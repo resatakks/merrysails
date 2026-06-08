@@ -9,7 +9,7 @@ export function contactNotificationEmail(data: ContactNotificationData): string 
   return `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only"></head>
 <body style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="max-width:600px;margin:0 auto;padding:20px;">
     <div style="background:#3b82f6;border-radius:12px 12px 0 0;padding:24px;text-align:center;">

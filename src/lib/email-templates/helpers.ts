@@ -4,6 +4,24 @@ import {
   TURSAB_LICENSE_NUMBER,
 } from "@/lib/constants";
 
+/**
+ * Canonical <head> block for every transactional email.
+ *
+ * The `color-scheme` + `supported-color-schemes` meta tags + matching root
+ * style declaration opt out of Apple Mail / iOS Mail auto-dark-mode inversion
+ * that was rendering our dark navy header as a washed-out cream/blue on
+ * mobile dark mode. Gmail mobile honours the inline backgrounds independently.
+ */
+export function emailHead(): string {
+  return `<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<style>:root{color-scheme:light only;supported-color-schemes:light only;}body{margin:0;padding:0;}</style>
+</head>`;
+}
+
 export function escapeHtml(value: string | number | null | undefined): string {
   if (value === null || value === undefined) {
     return "";

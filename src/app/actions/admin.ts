@@ -21,7 +21,13 @@ import { getPriceMode, getTourBySlug } from "@/data/tours";
 import { generateReservationId } from "@/lib/reservation-id";
 import { getNotificationInbox, getReservationCcRecipients, sendEmail } from "@/lib/email";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
-import { parseReservationNotes, serializeReservationNotes } from "@/lib/reservation-meta";
+import { reservationCustomBookingEmail } from "@/lib/email-templates/reservation-custom-booking";
+import {
+  parseReservationNotes,
+  serializeReservationNotes,
+  type ReservationEmailTemplate,
+  type ReservationPaymentMethod,
+} from "@/lib/reservation-meta";
 import { buildReservationPdfAttachments } from "@/lib/reservation-pdf";
 import type { ReservationPricingSnapshot } from "@/lib/reservation-pricing";
 import {
@@ -281,6 +287,36 @@ function buildManualPricingSnapshot(input: {
   };
 }
 
+function paymentMethodToNote(
+  method: ReservationPaymentMethod | undefined,
+  totalDisplay: string
+): string | undefined {
+  switch (method) {
+    case "cash_on_board":
+      return `Payment: ${totalDisplay} cash on board.`;
+    case "card_on_board":
+      return `Payment: ${totalDisplay} by card on board.`;
+    case "card_paid":
+      return `Payment received in full (${totalDisplay}). Nothing due on board.`;
+    case "bank_transfer":
+      return `Payment by bank transfer (${totalDisplay}). Please share the proof if not already sent.`;
+    default:
+      return undefined;
+  }
+}
+
+function formatPickupForEmail(
+  pickup: string | undefined,
+  time: string | undefined
+): string {
+  const trimmedPickup = pickup?.trim();
+  const trimmedTime = time?.trim();
+  if (trimmedPickup && trimmedTime) return `${trimmedPickup} · ${trimmedTime}`;
+  if (trimmedPickup) return trimmedPickup;
+  if (trimmedTime) return trimmedTime;
+  return "To be confirmed";
+}
+
 async function sendReservationCustomerEmail(reservationId: string) {
   const reservation = await prisma.reservation.findUnique({
     where: { reservationId },
@@ -294,9 +330,64 @@ async function sendReservationCustomerEmail(reservationId: string) {
   const normalizedStatus = normalizeReservationStatus(reservation.status);
   const isConfirmed = normalizedStatus === "confirmed" || normalizedStatus === "completed";
   const totalPrice = Number(reservation.totalPrice);
-  const formattedDate = format(new Date(reservation.date), "MMMM d, yyyy");
+  const formattedDate = format(new Date(reservation.date), "EEEE, MMMM d, yyyy");
   const notificationInbox = getNotificationInbox();
   const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
+
+  // Branch to the custom-booking template when the operator flagged the
+  // reservation as phone-arranged. Avoids the package/breakdown copy from
+  // reservation-confirmation that doesn't apply.
+  if (meta.emailTemplate === "custom-booking") {
+    const currencySymbol = reservation.currency === "USD" ? "$" : "€";
+    const totalDisplay = `${currencySymbol}${totalPrice.toFixed(2)}`;
+
+    const html = reservationCustomBookingEmail({
+      reservationId: reservation.reservationId,
+      customerName: reservation.customerName,
+      tourName: reservation.tourName,
+      date: formattedDate,
+      pickup: formatPickupForEmail(undefined, reservation.time),
+      totalPrice,
+      currency: reservation.currency,
+      paymentNote:
+        paymentMethodToNote(meta.paymentMethod, totalDisplay) ??
+        "Payment is collected directly on the day of the experience.",
+      customerPhone: reservation.customerPhone,
+      meetingPointNote: meta.meetingPointNote,
+      guestCount: reservation.guests,
+    });
+
+    const attachments = await buildReservationPdfAttachments({
+      reservationId: reservation.reservationId,
+      customerName: reservation.customerName,
+      customerEmail: reservation.customerEmail,
+      customerPhone: reservation.customerPhone,
+      tourSlug: reservation.tourSlug,
+      tourName: reservation.tourName,
+      serviceDate: new Date(reservation.date),
+      time: reservation.time,
+      guests: reservation.guests,
+      totalPrice,
+      currency: reservation.currency,
+      packageName: meta.packageName,
+      addOns: meta.addOns,
+      additionalGuests: meta.additionalGuests,
+      privateTransferRequested: meta.privateTransferRequested,
+      notes: meta.customerNote,
+      pricing: meta.pricing,
+      status: isConfirmed ? "Confirmed" : "Received",
+    });
+
+    await sendEmail({
+      to: reservation.customerEmail,
+      cc: reservationCcRecipients,
+      subject: `MerrySails — Private booking confirmation · ${reservation.reservationId}`,
+      html,
+      attachments,
+    });
+    return;
+  }
+
   const emailPayload = {
     reservationId: reservation.reservationId,
     customerName: reservation.customerName,
@@ -679,6 +770,33 @@ export async function createManualReservationAdminAction(
   const shouldSendEmail = formData.get("sendEmail") === "on";
   const serviceDate = parseAdminDateInput(dateInput);
 
+  const rawCurrency = sanitizeText(formData.get("currency"), 8).toUpperCase();
+  const currency: "EUR" | "USD" = rawCurrency === "USD" ? "USD" : "EUR";
+  const rawPaymentMethod = sanitizeText(formData.get("paymentMethod"), 32);
+  const paymentMethod: ReservationPaymentMethod | undefined =
+    rawPaymentMethod === "cash_on_board" ||
+    rawPaymentMethod === "card_on_board" ||
+    rawPaymentMethod === "card_paid" ||
+    rawPaymentMethod === "bank_transfer"
+      ? rawPaymentMethod
+      : undefined;
+  const rawEmailTemplate = sanitizeText(formData.get("emailTemplate"), 24);
+  const emailTemplate: ReservationEmailTemplate =
+    rawEmailTemplate === "custom-booking" ? "custom-booking" : "standard";
+  const meetingPointNote = sanitizeText(formData.get("meetingPointNote"), 1200);
+  const internalOperatorNote = sanitizeText(
+    formData.get("internalOperatorNote"),
+    1200
+  );
+  const pickup = sanitizeText(formData.get("pickup"), 200);
+  const customerNoteWithPickup = (() => {
+    if (!pickup) return customerNote;
+    const pickupHint = `Pickup from ${pickup}`;
+    if (!customerNote) return pickupHint;
+    if (customerNote.toLowerCase().includes(pickup.toLowerCase())) return customerNote;
+    return `${pickupHint}. ${customerNote}`;
+  })();
+
   if (!tour) {
     return { success: false, error: "Please choose a valid tour.", reservationId: "", emailSent: false };
   }
@@ -735,7 +853,7 @@ export async function createManualReservationAdminAction(
         time,
         guests,
         totalPrice,
-        currency: "EUR",
+        currency,
         status,
         internalCostEur,
         confirmedAt: status === "confirmed" || status === "completed" ? now : null,
@@ -748,10 +866,14 @@ export async function createManualReservationAdminAction(
           serializeReservationNotes({
             packageName: packageName || undefined,
             addOns,
-            customerNote: customerNote || undefined,
+            customerNote: customerNoteWithPickup || undefined,
             additionalGuests,
             privateTransferRequested,
             pricing,
+            meetingPointNote: meetingPointNote || undefined,
+            paymentMethod,
+            internalOperatorNote: internalOperatorNote || undefined,
+            emailTemplate,
           }) ?? null,
       },
     });

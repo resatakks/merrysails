@@ -60,7 +60,7 @@ export function reservationReminderEmail(data: ReservationReminderData): string 
   return `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only"></head>
 <body style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="max-width:600px;margin:0 auto;padding:20px 16px;">
     <div style="background:linear-gradient(135deg,#0f172a 0%,#1b3160 55%,#15284f 100%);border-radius:18px 18px 0 0;padding:26px 22px;">
