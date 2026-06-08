@@ -77,6 +77,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": ["TouristTrip", "Service"],
+  "@id": `${canonicalUrl}#trip`,
   name: dinnerTour.nameEn,
   alternateName: [
     "Istanbul Dinner Cruise",
@@ -93,6 +94,37 @@ const serviceSchema = {
   areaServed: {
     "@type": "City",
     name: "Istanbul",
+  },
+  tripOrigin: {
+    "@type": "BoatTerminal",
+    "@id": `${SITE_URL}/#kabatas-pier`,
+    name: "Kabataş Cruise Terminal",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kabataş Iskelesi 1",
+      addressLocality: "Beyoğlu",
+      addressRegion: "Istanbul",
+      postalCode: "34427",
+      addressCountry: "TR",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: 41.0335, longitude: 28.9913 },
+  },
+  subjectOf: {
+    "@type": "BodyOfWater",
+    name: "Bosphorus Strait",
+    sameAs: "https://www.wikidata.org/wiki/Q83329",
+  },
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/reservation?tour=dinner-cruise`,
+      actionPlatform: [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
+      ],
+    },
+    result: { "@type": "Reservation", name: "Dinner cruise reservation" },
   },
   offers: {
     "@type": "AggregateOffer",
@@ -123,10 +155,6 @@ const serviceSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  speakable: {
-    "@type": "SpeakableSpecification",
-    cssSelector: ["h1", ".faq-section", ".faq-section dt", ".faq-section dd"],
-  },
   mainEntity: dinnerTour.faq?.map((item) => ({
     "@type": "Question",
     name: item.question,

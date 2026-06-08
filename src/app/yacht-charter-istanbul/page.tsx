@@ -99,9 +99,30 @@ const serviceSchema = {
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
-  areaServed: {
-    "@type": "City",
-    name: "Istanbul",
+  areaServed: [
+    { "@type": "City", name: "Istanbul", sameAs: "https://www.wikidata.org/wiki/Q406" },
+    { "@type": "BodyOfWater", name: "Bosphorus Strait", sameAs: "https://www.wikidata.org/wiki/Q83329" },
+    { "@type": "BodyOfWater", name: "Sea of Marmara", sameAs: "https://www.wikidata.org/wiki/Q132680" },
+  ],
+  availableLanguage: ["English", "Turkish", "German", "French", "Dutch", "Russian"],
+  tripOrigin: {
+    "@type": "BoatTerminal",
+    "@id": `${SITE_URL}/#kabatas-pier`,
+    name: "Kabataş Cruise Terminal",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kabataş Iskelesi 1",
+      addressLocality: "Beyoğlu",
+      addressRegion: "Istanbul",
+      postalCode: "34427",
+      addressCountry: "TR",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: 41.0335, longitude: 28.9913 },
+  },
+  subjectOf: {
+    "@type": "BodyOfWater",
+    name: "Bosphorus Strait",
+    sameAs: "https://www.wikidata.org/wiki/Q83329",
   },
   // aggregateRating intentionally NOT here — per Google Review snippet
   // spec, AggregateRating must sit on Event/Product/LocalBusiness/
@@ -212,10 +233,6 @@ const serviceSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  speakable: {
-    "@type": "SpeakableSpecification",
-    cssSelector: ["h1", ".faq-section", ".faq-section dt", ".faq-section dd"],
-  },
   mainEntity: yachtTour.faq?.map((item) => ({
     "@type": "Question",
     name: item.question,
@@ -676,7 +693,15 @@ export default async function YachtCharterIstanbulPage({
                   for yacht charter Istanbul, private yacht charter Istanbul, and Istanbul yacht
                   rental intent. Use boat rental if you want to begin with vessel type and route,
                   and use private dinner cruise if dinner is already the main planning brief rather
-                  than the deck itself.
+                  than the deck itself. For shared seated dinner options with set menu and live music
+                  see our{" "}
+                  <Link
+                    href="/istanbul-dinner-cruise"
+                    className="font-semibold text-[var(--brand-primary)] underline-offset-4 hover:underline"
+                  >
+                    Istanbul Bosphorus dinner cruise
+                  </Link>{" "}
+                  page instead.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
