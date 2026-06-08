@@ -38,17 +38,9 @@ export const metadata: Metadata = {
   },
 };
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "MerrySails",
-  alternateName: "Merry Tourism",
-  url: "https://merrysails.com",
-  publisher: {
-    "@id": "https://merrysails.com/#organization",
-  },
-};
-
+// WebSite JSON-LD is emitted once globally from src/app/layout.tsx (#website
+// node). Duplicating it on the homepage caused Schema Validator to flag
+// "Multiple WebSite entities" and pollutes the @id graph.
 const homepageFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -233,10 +225,6 @@ const supportPages = [
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
