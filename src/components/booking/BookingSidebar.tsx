@@ -574,7 +574,7 @@ export default function BookingSidebar({
  location: `booking_mobile_bar_${tour.slug}`,
  })
  }
- className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white shadow-sm ${
+ className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow-sm ${
  isTelegram ? "bg-[#229ED9]" : "bg-[#25D366]"
  }`}
  aria-label={isTelegram ? t.liveSupportTelegram : t.liveSupportWhatsApp}

@@ -365,6 +365,16 @@ export default function BookingModal({ booking, onClose }: Props) {
   };
 
   const handleSubmit = async () => {
+    // Re-entry guard: rapid mobile double-taps register two `handleSubmit`
+    // calls before React swaps the form for the loading state. Without this
+    // ref the second tap fires a duplicate `createReservation` (and 2x
+    // trackPurchase). Clarity logged 39 dead clicks / 11 submits = 3.5
+    // dc/submit — most of those are second taps after a button press already
+    // "felt" unresponsive on a slow network. (Error→Try Again still works
+    // because that path resets modalState to "form" before the user retries.)
+    if (modalState === "loading") {
+      return;
+    }
     setSubmitAttempted(true);
 
     if (!isValid) {
@@ -869,20 +879,20 @@ export default function BookingModal({ booking, onClose }: Props) {
                 <div className="space-y-2.5 pt-1">
                   <a
                     href={`/reservation/${reservationId}`}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
+                    className="flex min-h-[52px] items-center justify-center gap-2 w-full px-4 py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                   >
                     {t.trackReservationCta}
                   </a>
                   <a
                     href={`/reservation/${reservationId}/invoice`}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
+                    className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
                   >
                     <FileText className="w-4 h-4" />
                     {t.openInvoiceCta}
                   </a>
                   <a
                     href={`/reservation/${reservationId}/voucher`}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[var(--heading)] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                    className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full bg-[var(--heading)] text-white font-semibold hover:brightness-110 transition-all text-sm"
                   >
                     <Package className="w-4 h-4" />
                     {t.openVoucherCta}
@@ -891,7 +901,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                     href={buildCalendarUrl(booking)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
+                    className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full border-2 border-[var(--line)] text-[var(--body-text)] font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all text-sm"
                   >
                     <CalendarPlus className="w-4 h-4" />
                     {t.addToCalendarCta}
@@ -922,7 +932,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                             location: booking.tourSlug,
                           })
                         }
-                        className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                        className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                       >
                         <Phone className="w-4 h-4" />
                         {t.confirmViaContactCta(confirmChannel.label)}
@@ -930,8 +940,9 @@ export default function BookingModal({ booking, onClose }: Props) {
                     );
                   })()}
                   <button
+                    type="button"
                     onClick={() => handleModalClose("close_button")}
-                    className="w-full py-2.5 text-[var(--text-muted)] font-medium hover:text-[var(--body-text)] transition-all text-sm"
+                    className="w-full min-h-[44px] py-2.5 text-[var(--text-muted)] font-medium hover:text-[var(--body-text)] transition-all text-sm"
                   >
                     {t.closeCta}
                   </button>
@@ -967,15 +978,20 @@ export default function BookingModal({ booking, onClose }: Props) {
                 </div>
                 <div className="space-y-2.5 pt-2">
                   <button
-                    onClick={() => setModalState("form")}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
+                    type="button"
+                    onClick={() => {
+                      formSubmittedRef.current = false;
+                      setModalState("form");
+                    }}
+                    className="flex min-h-[52px] items-center justify-center gap-2 w-full px-4 py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
                   >
                     <RefreshCw className="w-4 h-4" />
                     {t.tryAgainCta}
                   </button>
                   <button
+                    type="button"
                     onClick={handleWhatsApp}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                    className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                   >
                     <Phone className="w-4 h-4" />
                     {t.bookViaContactInstead(contactChannel.label)}
@@ -1476,17 +1492,23 @@ export default function BookingModal({ booking, onClose }: Props) {
                         {validationMessage}
                       </div>
                     )}
+                    {/* 2026-06-08: explicit type="button" + min-h-[48px]
+                        (Apple HIG). Submit + secondary CTAs were 44-46px on
+                        mobile and registering as dead clicks — 39 dc / 11
+                        submits = 3.5 dc/submit. */}
                     <motion.button
+                      type="button"
                       onClick={handleSubmit}
-                      className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all"
+                      className="flex min-h-[52px] items-center justify-center gap-2 w-full px-4 py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:cursor-wait disabled:opacity-80"
                       whileTap={{ scale: 0.98 }}
                     >
                       <Check className="w-4 h-4" />
                       {t.confirmBookingCta(total)}
                     </motion.button>
                     <button
+                      type="button"
                       onClick={handleWhatsApp}
-                      className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
+                      className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                     >
                       <Phone className="w-4 h-4" />
                       {t.orBookViaContact(contactChannel.label)}

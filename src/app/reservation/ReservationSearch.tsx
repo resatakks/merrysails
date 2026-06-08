@@ -69,11 +69,14 @@ export default function ReservationSearch() {
 
   return (
     <div className="space-y-4">
-      {/* Tab switcher */}
+      {/* Tab switcher — 2026-06-08: bumped tabs to min-h-[48px] (Apple HIG).
+          Previous py-2.5 produced ~36px tap targets contributing to mobile
+          dead clicks on /reservation. */}
       <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] p-1.5 flex gap-1">
         <button
+          type="button"
           onClick={() => { setMode("id"); setResults(null); setError(""); }}
-          className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+          className={`flex-1 flex min-h-[48px] items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all ${
             mode === "id"
               ? "bg-[var(--brand-primary)] text-white shadow-sm"
               : "text-[var(--text-muted)] hover:text-[var(--body-text)]"
@@ -83,8 +86,9 @@ export default function ReservationSearch() {
           Reservation ID
         </button>
         <button
+          type="button"
           onClick={() => { setMode("email"); setResults(null); setError(""); }}
-          className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+          className={`flex-1 flex min-h-[48px] items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all ${
             mode === "email"
               ? "bg-[var(--brand-primary)] text-white shadow-sm"
               : "text-[var(--text-muted)] hover:text-[var(--body-text)]"
@@ -103,10 +107,12 @@ export default function ReservationSearch() {
               <label className="block text-sm font-medium mb-2">Reservation ID</label>
               <input
                 type="text"
+                inputMode="text"
+                autoComplete="off"
                 value={id}
                 onChange={(e) => setId(e.target.value)}
                 placeholder="MRY-2026-0001"
-                className="w-full px-4 py-3 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-center text-lg font-mono tracking-wider uppercase"
+                className="w-full min-h-[48px] px-4 py-3 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-center text-lg font-mono tracking-wider uppercase"
               />
               <p className="text-xs text-[var(--text-muted)] mt-1.5 text-center">
                 Find this in your confirmation email
@@ -115,7 +121,8 @@ export default function ReservationSearch() {
             <button
               type="submit"
               disabled={!id.trim()}
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Find reservation"
+              className="flex min-h-[52px] items-center justify-center gap-2 w-full px-4 py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Search className="w-4 h-4" />
               Find Reservation
@@ -127,10 +134,12 @@ export default function ReservationSearch() {
               <label className="block text-sm font-medium mb-2">Email Address</label>
               <input
                 type="email"
+                inputMode="email"
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-center text-sm"
+                className="w-full min-h-[48px] px-4 py-3 rounded-xl border-2 border-[var(--line)] focus:border-[var(--brand-primary)] focus:outline-none transition-colors text-center text-base md:text-sm"
               />
               <p className="text-xs text-[var(--text-muted)] mt-1.5 text-center">
                 The email you used when booking
@@ -139,7 +148,8 @@ export default function ReservationSearch() {
             <button
               type="submit"
               disabled={loading || !email.trim()}
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label={loading ? "Searching reservations" : "Find my bookings"}
+              className="flex min-h-[52px] items-center justify-center gap-2 w-full px-4 py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
