@@ -47,7 +47,7 @@ const guideSchema = {
  description: "Bosphorus cruises in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
  url: `${SITE_URL}/bosphorus-cruise`,
  provider: {
- "@type": "TouristInformationCenter",
+ "@type": "TravelAgency",
  name: "MerrySails",
  url: SITE_URL,
  address: {
