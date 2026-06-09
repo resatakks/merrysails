@@ -556,18 +556,17 @@ export default async function YachtCharterIstanbulPage({
           </nav>
 
           <header className="mb-3 md:mb-4">
-            {/* 2026-06-08: SSR <h1> reinstated — TourDetailClient's h1 only
-                renders when bookingPrefill is set (query-string deep-link),
-                so the default page visit had NO h1 server-rendered. This
-                broke the backlink anchor / Googlebot heading signal flagged
-                in the 2026-05-04 audit. Sub-heading kept as h2 below for
-                the existing visible copy. */}
-            <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
+            {/* 2026-06-10: page-level <h1> demoted to <h2> — TourDetailClient's
+                <h1> is unconditional (line ~819, renders regardless of
+                bookingPrefill). Prior comment claimed h1 was conditional but
+                code review shows otherwise. Two <h1> SSR'd was failing
+                Semrush/Bing Site Scan. Keeping visible copy via h2/h3 chain. */}
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
               Yacht Charter Istanbul
-            </h1>
-            <h2 className="mt-2 text-xl md:text-2xl font-semibold text-[var(--heading)] tracking-tight leading-tight">
-              {yachtTour.nameEn} — Private Yacht Charter Istanbul
             </h2>
+            <p className="mt-2 text-xl md:text-2xl font-semibold text-[var(--heading)] tracking-tight leading-tight">
+              {yachtTour.nameEn} — Private Yacht Charter Istanbul
+            </p>
             <p className="mt-1.5 text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">
               {yachtTour.description}
             </p>
