@@ -416,6 +416,37 @@ const SEO_HEADINGS_BY_SLUG: Record<string, string> = {
   "yacht-charter-in-istanbul": "Yacht Charter Istanbul",
 };
 
+// Locale-specific SEO headings (h1 + meta title source). 2026-06-10: added
+// because /de/cruises/bosphorus-sunset-cruise was rendering English h1 — bug:
+// pageHeading fell back to tName = i18n?.nameEn, which is always English.
+const LOCALE_HEADINGS_BY_SLUG: Record<Exclude<DetailLocale, "en">, Record<string, string>> = {
+  tr: {
+    "bosphorus-sunset-cruise": "Boğaz Gün Batımı Turu — İstanbul",
+    "bosphorus-dinner-cruise": "İstanbul Boğaz Yemekli Turu",
+    "yacht-charter-in-istanbul": "İstanbul Yat Kiralama",
+  },
+  de: {
+    "bosphorus-sunset-cruise": "Bosporus Sonnenuntergangsfahrt Istanbul",
+    "bosphorus-dinner-cruise": "Istanbul Dinner-Kreuzfahrt am Bosporus",
+    "yacht-charter-in-istanbul": "Yachtcharter Istanbul",
+  },
+  fr: {
+    "bosphorus-sunset-cruise": "Croisière au coucher du soleil sur le Bosphore",
+    "bosphorus-dinner-cruise": "Croisière dîner sur le Bosphore — Istanbul",
+    "yacht-charter-in-istanbul": "Location de yacht à Istanbul",
+  },
+  nl: {
+    "bosphorus-sunset-cruise": "Bosporus zonsondergangcruise Istanbul",
+    "bosphorus-dinner-cruise": "Istanbul Bosporus diner-cruise",
+    "yacht-charter-in-istanbul": "Jachtcharter Istanbul",
+  },
+  ru: {
+    "bosphorus-sunset-cruise": "Круиз по Босфору на закате — Стамбул",
+    "bosphorus-dinner-cruise": "Ужин-круиз по Босфору — Стамбул",
+    "yacht-charter-in-istanbul": "Аренда яхты в Стамбуле",
+  },
+};
+
 // Per-person price suffix per locale (perPerson is the only mode used by the
 // translated tours). EN keeps getPriceSuffix() for byte-identical output.
 const PRICE_SUFFIX: Record<Exclude<DetailLocale, "en">, string> = {
@@ -551,8 +582,13 @@ export default function TourDetailClient({
     if (hasPickupExcluded) return L.pickupOptional;
     return L.pickupCheck;
   }, [tIncludes, tNotIncluded, L]);
+  // 2026-06-10: locale-specific heading lookup. Prior bug: non-EN locales fell
+  // through to tName = i18n?.nameEn (always English). German page now correctly
+  // renders "Bosporus Sonnenuntergangsfahrt Istanbul" etc.
   const pageHeading =
-    locale !== "en" ? tName : SEO_HEADINGS_BY_SLUG[tour.slug] ?? tour.nameEn;
+    locale === "en"
+      ? SEO_HEADINGS_BY_SLUG[tour.slug] ?? tour.nameEn
+      : LOCALE_HEADINGS_BY_SLUG[locale]?.[tour.slug] ?? tName;
 
   // Build available tabs based on tour data
   const availableTabs = TAB_LABELS.filter((tab) => {
