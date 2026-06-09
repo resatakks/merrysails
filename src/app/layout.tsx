@@ -341,6 +341,10 @@ export default function RootLayout({
       className={dmSans.variable}
     >
       <head>
+        {/* Bing/Copilot grounding eligibility — per Bing Webmaster Guidelines
+            Feb 27 2026 rewrite ("doesn't guarantee citations but grounding
+            eligibility"). Clone of goldensunsettour pattern. 2026-06-09. */}
+        <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* Google tag (gtag.js) loaded directly to make window.gtag available
