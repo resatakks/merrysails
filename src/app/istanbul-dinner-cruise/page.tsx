@@ -24,6 +24,7 @@ import {
 import PricingTable from "@/components/ai/PricingTable";
 import ComparisonTable from "@/components/ai/ComparisonTable";
 import QuickAnswer from "@/components/ai/QuickAnswer";
+import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 
 export const revalidate = 3600;
 
@@ -85,6 +86,8 @@ const serviceSchema = {
     "Bosphorus Night Cruise with Dinner",
   ],
   description: dinnerTour.description,
+  datePublished: SITE_PUBLISHED,
+  dateModified: SITE_LAST_MODIFIED,
   touristType: "Cultural Tourism",
   url: canonicalUrl,
   image: dinnerTour.image,

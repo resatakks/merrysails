@@ -21,6 +21,7 @@ import LiveBookingCounter from "@/components/ui/LiveBookingCounter";
 import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
 import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
+import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -447,6 +448,8 @@ export default async function TourDetailPage({
     "@type": ["TouristTrip", "Service"],
     name: tour.nameEn,
     description: tour.description,
+    datePublished: SITE_PUBLISHED,
+    dateModified: SITE_LAST_MODIFIED,
     touristType: "Leisure",
     url: `${SITE_URL}${getTourPath(tour)}`,
     image: tour.image,

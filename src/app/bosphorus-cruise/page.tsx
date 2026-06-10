@@ -8,6 +8,7 @@ import { PHONE, PHONE_DISPLAY, SITE_URL, TURSAB_LICENSE_NUMBER, WHATSAPP_URL } f
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
 import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
+import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 
 export const metadata: Metadata = {
  title: "Bosphorus Cruise Istanbul — From €30",
@@ -45,6 +46,8 @@ const guideSchema = {
  "Прогулка на яхте по Босфору",
  ],
  description: "Bosphorus cruises in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
+ datePublished: SITE_PUBLISHED,
+ dateModified: SITE_LAST_MODIFIED,
  url: `${SITE_URL}/bosphorus-cruise`,
  provider: {
  "@type": "TravelAgency",

@@ -29,6 +29,7 @@ import {
   getCharterLowestEntryPriceEur,
   getCharterHighestTotalPriceEur,
 } from "@/data/fleet";
+import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 
 const fleetLowestEur = getCharterLowestEntryPriceEur();
 const fleetHighestEur = getCharterHighestTotalPriceEur();
@@ -92,6 +93,8 @@ const serviceSchema = {
     "Private Bosphorus Cruise",
   ],
   description: yachtTour.description,
+  datePublished: SITE_PUBLISHED,
+  dateModified: SITE_LAST_MODIFIED,
   serviceType: "Private Yacht Charter",
   url: canonicalUrl,
   image: yachtTour.image,
