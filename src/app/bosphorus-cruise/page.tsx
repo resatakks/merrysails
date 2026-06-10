@@ -13,7 +13,7 @@ import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 export const metadata: Metadata = {
  title: "Bosphorus Cruise Istanbul — From €30",
  description:
- "Compare Bosphorus cruise options in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. Find the right booking page fast.",
+ "Bosphorus cruise Istanbul for family, couples & groups — sunset €30, dinner €30, private yacht €200. 50,000+ guests, TÜRSAB-licensed. Book direct.",
  alternates: {
  canonical: `${SITE_URL}/bosphorus-cruise`,
  languages: buildHreflang("/bosphorus-cruise"),

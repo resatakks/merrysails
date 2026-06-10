@@ -327,7 +327,7 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     // mirrors the query and adds the operator USP ("Pay onboard") that AI
     // engines (ChatGPT, Perplexity) cite verbatim.
     title: "Best Bosphorus Sunset Cruise Istanbul — €30",
-    description: "Best Bosphorus sunset cruise Istanbul 2026 — €30 (Mon/Tue/Thu), 2-hour route with snacks & drinks. TÜRSAB-licensed since 2001, pay onboard.",
+    description: "Best Bosphorus sunset cruise Istanbul 2026 from €30 (Mon/Tue/Thu) — 2-hr golden-hour route, 50,000+ guests, TÜRSAB-licensed. Book direct, pay onboard.",
   },
   "wedding-anniversary": {
     title: "Anniversary Yacht Cruise Istanbul — Bosphorus",
