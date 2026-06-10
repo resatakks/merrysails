@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   BarChart3,
+  Briefcase,
   CalendarDays,
   ClipboardList,
   Gauge,
@@ -17,7 +18,8 @@ interface AdminShellProps {
     | "/admin/reservations"
     | "/admin/operations"
     | "/admin/calendar"
-    | "/admin/reports";
+    | "/admin/reports"
+    | "/admin/external";
   title: string;
   description: string;
   children: React.ReactNode;
@@ -34,6 +36,7 @@ const navItems: Array<{
   { href: "/admin/calendar", label: "Calendar", Icon: CalendarDays },
   { href: "/admin/reports", label: "Reports", Icon: BarChart3 },
   { href: "/admin/operations", label: "Operations", Icon: ShipWheel },
+  { href: "/admin/external", label: "External Work", Icon: Briefcase },
 ];
 
 export function AdminShell({

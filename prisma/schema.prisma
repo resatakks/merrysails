@@ -62,6 +62,63 @@ model Reservation {
   @@index([utmCampaign])
 }
 
+// ─── External Job ───────────────────────────────────────────
+// Bookings/voucher+invoice generated on behalf of OTHER companies.
+// Independent from the website's own tours — the voucher/invoice
+// PDF renders the EXTERNAL company's logo + tax/address details,
+// not MerrySails brand.
+
+model ExternalJob {
+  id    String @id @default(cuid())
+  jobId String @unique // EXT-MRY-2026-0001
+
+  // The company we're issuing the voucher/invoice FOR
+  // (their branding appears on the PDF, not MerrySails')
+  companyName    String
+  companyAddress String?
+  companyTaxId   String?
+  companyEmail   String?
+  companyPhone   String?
+  companyLogoUrl String?
+
+  // End customer the external company is serving
+  customerName    String
+  customerEmail   String?
+  customerPhone   String?
+  customerCountry String?
+
+  // Service / job details
+  serviceTitle       String
+  serviceDescription String?
+  jobDate            DateTime
+  jobTime            String?
+  guests             Int     @default(1)
+  pickupPoint        String?
+
+  // Pricing & payment
+  amount          Float
+  currency        String  @default("EUR")
+  paymentMethod   String  @default("cash_on_board") // cash_on_board | card_on_board | card_paid | bank_transfer
+  paymentStatus   String  @default("pending") // pending | paid | refunded
+  internalCostEur Float?
+
+  // Status & ops
+  status       String  @default("new") // new | confirmed | completed | cancelled
+  notes        String?
+  internalNote String?
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  confirmedAt DateTime?
+  completedAt DateTime?
+  cancelledAt DateTime?
+
+  @@index([status])
+  @@index([jobDate])
+  @@index([companyName])
+  @@index([createdAt])
+}
+
 // ─── Telegram User ──────────────────────────────────────────
 
 model TelegramUser {
