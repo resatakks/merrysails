@@ -427,10 +427,12 @@ export default function RootLayout({
                 `,
               }}
             />
+            {/* GTM external — lazyOnload (defer 60-100 KB blocking JS until after LCP).
+                Mobile CWV fix 2026-06-11. */}
             <Script
               id="gtm-script"
               src={`https://www.googletagmanager.com/gtm.js?id=${GTM_CONTAINER_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
           </>
         ) : null}
@@ -466,9 +468,10 @@ export default function RootLayout({
               `,
               }}
             />
+            {/* Clarity tag — lazyOnload (mobile CWV fix 2026-06-11). */}
             <Script
               id="microsoft-clarity"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
               dangerouslySetInnerHTML={{
                 __html: `
                 (function(c,l,a,r,i,t,y){
@@ -502,7 +505,7 @@ export default function RootLayout({
             server-side CAPI dedup. Skipped when NEXT_PUBLIC_META_PIXEL_ID is
             not set so unconfigured deploys are safe. */}
         {META_PIXEL_ID && (
-          <Script id="meta-pixel" strategy="afterInteractive">
+          <Script id="meta-pixel" strategy="lazyOnload">
             {`
               !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
