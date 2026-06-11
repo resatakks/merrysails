@@ -187,6 +187,11 @@ export default function FleetDetailContent({
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
               {strings.pricingIntro}
             </p>
+            {/* 2026-06-12: Clarity logged 124 dead clicks on these pricing tiles
+                across yacht detail pages — operators tap each row expecting it
+                to open the reservation flow pre-filled with that duration. Now
+                every row is a Link to /reservation with tour+package+hours
+                params (bookable boats) or WhatsApp deep-link (non-bookable). */}
             <div className="mt-4 overflow-x-auto rounded-xl border border-[var(--line)]">
               <table className="w-full border-collapse text-left text-sm">
                 <thead className="bg-[var(--surface-alt)]">
@@ -200,6 +205,9 @@ export default function FleetDetailContent({
                     <th className="px-4 py-3 font-semibold text-[var(--heading)]">
                       {strings.savingsColumn}
                     </th>
+                    <th className="px-4 py-3 font-semibold text-[var(--heading)]">
+                      <span className="sr-only">{strings.reserveCta}</span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -208,8 +216,21 @@ export default function FleetDetailContent({
                     const isDiscount = h >= boat.discountFromHours;
                     const regular = (boat.hourlyEur ?? 0) * h;
                     const saving = isDiscount && regular && value ? regular - value : 0;
+                    const tierHref = boat.bookable
+                      ? `${reservationBasePath}?tour=${encodeURIComponent(
+                          yachtTourSlug,
+                        )}&packageName=${encodeURIComponent(`${t.label} — ${h}h`)}&hours=${h}&fleet=${boat.slug}#core-booking-planner`
+                      : channel.icon === "telegram"
+                      ? channel.url
+                      : `${channel.url}?text=${encodeURIComponent(
+                          `Hi! I'm interested in the ${t.label} — ${h} hour charter (€${value}). Could you share availability?`,
+                        )}`;
+                    const isExternal = !boat.bookable && channel.icon !== "telegram";
                     return (
-                      <tr key={h} className="border-t border-[var(--line)]">
+                      <tr
+                        key={h}
+                        className="border-t border-[var(--line)] transition-colors hover:bg-[var(--brand-primary)]/5"
+                      >
                         <td className="px-4 py-3 font-semibold text-[var(--heading)]">
                           {h} {strings.duration}
                         </td>
@@ -223,6 +244,30 @@ export default function FleetDetailContent({
                             </span>
                           ) : (
                             <span className="text-[var(--text-muted)]">—</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-3 text-right">
+                          {boat.bookable ? (
+                            <Link
+                              href={tierHref}
+                              className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-primary)] px-3 py-1.5 text-xs font-bold !text-white transition-opacity hover:opacity-90"
+                              style={{ color: "#ffffff" }}
+                              aria-label={`${strings.reserveCta} — ${h} ${strings.duration} (€${value})`}
+                            >
+                              {strings.reserveCta}
+                            </Link>
+                          ) : (
+                            <a
+                              href={tierHref}
+                              {...(isExternal
+                                ? { target: "_blank", rel: "noopener noreferrer" }
+                                : {})}
+                              className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-bold !text-white transition-opacity hover:opacity-90"
+                              style={{ color: "#ffffff" }}
+                              aria-label={`${strings.quoteCta} — ${h} ${strings.duration} (€${value})`}
+                            >
+                              {strings.quoteCta}
+                            </a>
                           )}
                         </td>
                       </tr>
