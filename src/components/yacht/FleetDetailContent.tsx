@@ -128,23 +128,68 @@ export default function FleetDetailContent({
               {t.label}
             </h1>
             <p className="mt-2 text-base md:text-lg text-[var(--text-muted)]">{t.tagline}</p>
+            {/* 2026-06-12: stat tiles were dead-click magnets (capacity 31,
+                price 31). Wrapped in Link/anchor to feed taps into the same
+                CTA destinations as the buttons below. */}
             <div className="mt-4 grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-[var(--line)] bg-white p-3">
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
-                  {strings.capacity}
-                </p>
-                <p className="mt-1 text-base font-bold text-[var(--heading)]">
-                  {boat.capacity.min}–{boat.capacity.max} {strings.guests}
-                </p>
-              </div>
-              <div className="rounded-xl border border-[var(--line)] bg-white p-3">
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
-                  {strings.fromPrice}
-                </p>
-                <p className="mt-1 text-base font-bold text-[var(--heading)]">
-                  {entryPrice ? `€${entryPrice}` : "—"}
-                </p>
-              </div>
+              {boat.bookable ? (
+                <Link
+                  href={reserveHref}
+                  className="rounded-xl border border-[var(--line)] bg-white p-3 hover:border-[var(--brand-primary)]/30 hover:bg-[var(--brand-primary)]/5 transition-colors"
+                  aria-label={`${strings.capacity}: ${boat.capacity.min}–${boat.capacity.max} ${strings.guests} — ${strings.reserveCta}`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
+                    {strings.capacity}
+                  </p>
+                  <p className="mt-1 text-base font-bold text-[var(--heading)]">
+                    {boat.capacity.min}–{boat.capacity.max} {strings.guests}
+                  </p>
+                </Link>
+              ) : (
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-[var(--line)] bg-white p-3 hover:border-[var(--brand-primary)]/30 hover:bg-[var(--brand-primary)]/5 transition-colors"
+                  aria-label={`${strings.capacity}: ${boat.capacity.min}–${boat.capacity.max} ${strings.guests} — ${strings.quoteCta}`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
+                    {strings.capacity}
+                  </p>
+                  <p className="mt-1 text-base font-bold text-[var(--heading)]">
+                    {boat.capacity.min}–{boat.capacity.max} {strings.guests}
+                  </p>
+                </a>
+              )}
+              {boat.bookable ? (
+                <Link
+                  href={reserveHref}
+                  className="rounded-xl border border-[var(--line)] bg-white p-3 hover:border-[var(--brand-primary)]/30 hover:bg-[var(--brand-primary)]/5 transition-colors"
+                  aria-label={`${strings.fromPrice} ${entryPrice ? `€${entryPrice}` : ""} — ${strings.reserveCta}`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
+                    {strings.fromPrice}
+                  </p>
+                  <p className="mt-1 text-base font-bold text-[var(--heading)]">
+                    {entryPrice ? `€${entryPrice}` : "—"}
+                  </p>
+                </Link>
+              ) : (
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-[var(--line)] bg-white p-3 hover:border-[var(--brand-primary)]/30 hover:bg-[var(--brand-primary)]/5 transition-colors"
+                  aria-label={`${strings.fromPrice} ${entryPrice ? `€${entryPrice}` : ""} — ${strings.quoteCta}`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--text-muted)]">
+                    {strings.fromPrice}
+                  </p>
+                  <p className="mt-1 text-base font-bold text-[var(--heading)]">
+                    {entryPrice ? `€${entryPrice}` : "—"}
+                  </p>
+                </a>
+              )}
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {boat.bookable ? (
@@ -187,105 +232,99 @@ export default function FleetDetailContent({
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
               {strings.pricingIntro}
             </p>
-            {/* 2026-06-12: Clarity logged 124 dead clicks on these pricing tiles
-                across yacht detail pages — operators tap each row expecting it
-                to open the reservation flow pre-filled with that duration. Now
-                every row is a Link to /reservation with tour+package+hours
-                params (bookable boats) or WhatsApp deep-link (non-bookable). */}
-            <div className="mt-4 overflow-x-auto rounded-xl border border-[var(--line)]">
-              <table className="w-full border-collapse text-left text-sm">
-                <thead className="bg-[var(--surface-alt)]">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold text-[var(--heading)]">
-                      {strings.durationColumn}
-                    </th>
-                    <th className="px-4 py-3 font-semibold text-[var(--heading)]">
-                      {strings.totalColumn}
-                    </th>
-                    <th className="px-4 py-3 font-semibold text-[var(--heading)]">
-                      {strings.savingsColumn}
-                    </th>
-                    <th className="px-4 py-3 font-semibold text-[var(--heading)]">
-                      <span className="sr-only">{strings.reserveCta}</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {hourRows.map((h) => {
-                    const value = boat.priceByHours?.[h];
-                    const isDiscount = h >= boat.discountFromHours;
-                    const regular = (boat.hourlyEur ?? 0) * h;
-                    const saving = isDiscount && regular && value ? regular - value : 0;
-                    const tierHref = boat.bookable
-                      ? `${reservationBasePath}?tour=${encodeURIComponent(
-                          yachtTourSlug,
-                        )}&packageName=${encodeURIComponent(`${t.label} — ${h}h`)}&hours=${h}&fleet=${boat.slug}#core-booking-planner`
-                      : channel.icon === "telegram"
-                      ? channel.url
-                      : `${channel.url}?text=${encodeURIComponent(
-                          `Hi! I'm interested in the ${t.label} — ${h} hour charter (€${value}). Could you share availability?`,
-                        )}`;
-                    const isExternal = !boat.bookable && channel.icon !== "telegram";
-                    return (
-                      <tr
-                        key={h}
-                        className="border-t border-[var(--line)] transition-colors hover:bg-[var(--brand-primary)]/5"
+            {/* 2026-06-12 (v2): Previous fix wrapped only the small Reserve pill
+                — Clarity still logged 124+ dead clicks on row body cells (€720
+                amount, "5 hours" label). Operators tap the row, not the pill.
+                Rebuilt as a list of Link cards so the entire row is one tap
+                target. Removed table semantics (no longer columnar). */}
+            <ul className="mt-4 grid gap-2">
+              {hourRows.map((h) => {
+                const value = boat.priceByHours?.[h];
+                const isDiscount = h >= boat.discountFromHours;
+                const regular = (boat.hourlyEur ?? 0) * h;
+                const saving = isDiscount && regular && value ? regular - value : 0;
+                const tierHref = boat.bookable
+                  ? `${reservationBasePath}?tour=${encodeURIComponent(
+                      yachtTourSlug,
+                    )}&packageName=${encodeURIComponent(`${t.label} — ${h}h`)}&hours=${h}&fleet=${boat.slug}#core-booking-planner`
+                  : channel.icon === "telegram"
+                  ? channel.url
+                  : `${channel.url}?text=${encodeURIComponent(
+                      `Hi! I'm interested in the ${t.label} — ${h} hour charter (€${value}). Could you share availability?`,
+                    )}`;
+                const isExternal = !boat.bookable && channel.icon !== "telegram";
+                const ariaLabel = `${
+                  boat.bookable ? strings.reserveCta : strings.quoteCta
+                } — ${h} ${strings.duration} (€${value})`;
+                const rowClass =
+                  "group flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] bg-white px-4 py-3 transition-colors hover:bg-[var(--brand-primary)]/5 hover:border-[var(--brand-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]";
+                const rowBody = (
+                  <>
+                    <div className="flex flex-1 items-center gap-4 min-w-0">
+                      <span className="font-semibold text-[var(--heading)] whitespace-nowrap">
+                        {h} {strings.duration}
+                      </span>
+                      <span className="font-semibold text-[var(--heading)] whitespace-nowrap">
+                        €{value}
+                      </span>
+                      {isDiscount ? (
+                        <span className="font-semibold text-emerald-700 whitespace-nowrap text-xs sm:text-sm">
+                          −€{saving} ({boat.discountPercent}%)
+                        </span>
+                      ) : null}
+                    </div>
+                    <span
+                      aria-hidden
+                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-white transition-opacity group-hover:opacity-90 ${
+                        boat.bookable ? "bg-[var(--brand-primary)]" : "bg-emerald-600"
+                      }`}
+                      style={{ color: "#ffffff" }}
+                    >
+                      {boat.bookable ? strings.reserveCta : strings.quoteCta} →
+                    </span>
+                  </>
+                );
+                return (
+                  <li key={h}>
+                    {boat.bookable ? (
+                      <Link
+                        href={tierHref}
+                        className={rowClass}
+                        aria-label={ariaLabel}
                       >
-                        <td className="px-4 py-3 font-semibold text-[var(--heading)]">
-                          {h} {strings.duration}
-                        </td>
-                        <td className="px-4 py-3 font-semibold text-[var(--heading)]">
-                          €{value}
-                        </td>
-                        <td className="px-4 py-3 text-sm">
-                          {isDiscount ? (
-                            <span className="font-semibold text-emerald-700">
-                              −€{saving} ({boat.discountPercent}%)
-                            </span>
-                          ) : (
-                            <span className="text-[var(--text-muted)]">—</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-3 text-right">
-                          {boat.bookable ? (
-                            <Link
-                              href={tierHref}
-                              className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-primary)] px-3 py-1.5 text-xs font-bold !text-white transition-opacity hover:opacity-90"
-                              style={{ color: "#ffffff" }}
-                              aria-label={`${strings.reserveCta} — ${h} ${strings.duration} (€${value})`}
-                            >
-                              {strings.reserveCta}
-                            </Link>
-                          ) : (
-                            <a
-                              href={tierHref}
-                              {...(isExternal
-                                ? { target: "_blank", rel: "noopener noreferrer" }
-                                : {})}
-                              className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-bold !text-white transition-opacity hover:opacity-90"
-                              style={{ color: "#ffffff" }}
-                              aria-label={`${strings.quoteCta} — ${h} ${strings.duration} (€${value})`}
-                            >
-                              {strings.quoteCta}
-                            </a>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                        {rowBody}
+                      </Link>
+                    ) : (
+                      <a
+                        href={tierHref}
+                        {...(isExternal
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className={rowClass}
+                        aria-label={ariaLabel}
+                      >
+                        {rowBody}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
             <p className="mt-3 text-xs text-[var(--text-muted)]">{strings.taxIncluded}</p>
           </section>
         )}
 
+        {/* 2026-06-12: Clarity logged 124 dead clicks on "Included" list +
+            62 on "On request" — users tap each ✓/+ row expecting to toggle
+            extras. Lists stay informational (cursor-default removes pointer
+            affordance) and each panel gets a real CTA at the bottom routing
+            to reservation/WhatsApp so taps inside the panel land somewhere. */}
         <section className="mt-8 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+          <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 flex flex-col">
             <h2 className="text-base font-bold text-emerald-900">
               {strings.includedHeading}
             </h2>
-            <ul className="mt-3 space-y-1.5 text-sm text-emerald-900">
+            <ul className="mt-3 space-y-1.5 text-sm text-emerald-900 cursor-default">
               {strings.includedItems.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span aria-hidden>✓</span>
@@ -293,12 +332,31 @@ export default function FleetDetailContent({
                 </li>
               ))}
             </ul>
+            <div className="mt-4 pt-4 border-t border-emerald-200">
+              {boat.bookable ? (
+                <Link
+                  href={reserveHref}
+                  className="inline-flex items-center gap-1 text-sm font-bold text-emerald-900 hover:text-emerald-700"
+                >
+                  {strings.reserveCta} →
+                </Link>
+              ) : (
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-bold text-emerald-900 hover:text-emerald-700"
+                >
+                  {strings.quoteCta} →
+                </a>
+              )}
+            </div>
           </div>
-          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 flex flex-col">
             <h2 className="text-base font-bold text-amber-900">
               {strings.onRequestHeading}
             </h2>
-            <ul className="mt-3 space-y-1.5 text-sm text-amber-900">
+            <ul className="mt-3 space-y-1.5 text-sm text-amber-900 cursor-default">
               {strings.onRequestItems.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span aria-hidden>+</span>
@@ -306,6 +364,16 @@ export default function FleetDetailContent({
                 </li>
               ))}
             </ul>
+            <div className="mt-4 pt-4 border-t border-amber-200">
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-bold text-amber-900 hover:text-amber-700"
+              >
+                {strings.quoteCta} →
+              </a>
+            </div>
           </div>
         </section>
 
