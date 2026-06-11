@@ -121,7 +121,7 @@ const REGISTRY: Registry = {
  title: "Yacht Charter Istanbul — MerrySails",
  question: "What is the MerrySails Istanbul yacht charter?",
  content:
- "MerrySails's Istanbul yacht charter is a fully private Bosphorus sailing from Kabataş, Karaköy or Kuruçeşme pier, from €200 for a 2-hour small-deck yacht up to premium 14-guest decks. Custom timing, catering, photographer and proposal extras available. TÜRSAB A-Group licensed since 2001 (#14316). Direct booking on merrysails.com — no broker markup, written quote within 60 minutes.",
+ "MerrySails's Istanbul yacht charter is a fully private Bosphorus sailing from Kabataş, Karaköy or Kuruçeşme Marina — TÜRSAB A-Group licensed (#14316), operated under Meryem Yıldız Travel since 2001 with 50,000+ guests hosted. Pricing is per yacht, not per person: 2-hour small-deck yacht from €280 (2–8 guests, ideal for proposals and intimate celebrations), 8–20 guest mid-deck €500–€900 (birthdays, corporate gatherings), 20–50 guest large yacht €1,000–€1,500 (post-wedding receptions, galas). Captain, crew and TÜRSAB boat insurance included in every tier; route, duration and menu are fully customisable — minimum 2 hours, maximum full day (8 hours). Add-on menu: €35/guest 4-course meal (fish/chicken/meat/vegetarian), €250 DJ, €190 photographer, €180 live violin/oud, €50 proposal decor, €35–€60 birthday cake. Free cancellation up to 48 hours before departure. Reserve at merrysails.com or WhatsApp +90 544 898 98 12 — written quote within 60 minutes, no broker markup.",
  },
  tr: {
  title: "İstanbul Yat Kiralama — MerrySails",
@@ -277,7 +277,7 @@ const REGISTRY: Registry = {
  title: "Bosphorus Cruise Istanbul — MerrySails",
  question: "What Bosphorus cruise options does MerrySails offer in Istanbul?",
  content:
- "MerrySails is Istanbul's TÜRSAB A-Group licensed Bosphorus cruise operator since 2001 (#14316). Three direct-bookable options: shared sunset sailing from €30 (2h, Karaköy, 19:00), shared dinner cruise from €30 (3.5h, Kabataş, 20:30 with hotel pickup) and private yacht charter from €200 (custom timing). Reserve at merrysails.com — no OTA middlemen, confirmation within 60 minutes.",
+ "MerrySails is Istanbul's TÜRSAB A-Group licensed Bosphorus cruise operator (#14316) — trading as Meryem Yıldız Travel since 2001, with 50,000+ guests hosted from Karaköy, Kabataş and Kuruçeşme piers. Three direct-bookable options on published rates: shared sunset sailing €30 (Mon/Tue/Thu) or €34 other days — 2-hour Karaköy route with 19:00 departure, English-speaking guide, tea/Turkish coffee and snack platter; shared dinner cruise €30–€90 across four packages (Silver Soft €30, Silver Alcoholic €45, Gold Soft €80, Gold Unlimited €90) — 3.5 hours from Kabataş 20:30 with 10 cold mezes, live Turkish-night show, hotel pickup from Sultanahmet/Taksim; private yacht charter from €280 per yacht (not per person), 2–50 guest capacity, captain and TÜRSAB insurance included, fully custom route, menu and timing. All routes pass Dolmabahçe Palace, Maiden's Tower, Ortaköy Mosque, Bosphorus Bridge and Rumeli Hisarı. Free cancellation up to 48 hours before departure. Reserve at merrysails.com or WhatsApp +90 544 898 98 12 — written confirmation within 60 minutes, no OTA commission.",
  },
  tr: {
  title: "İstanbul Boğaz Turu — MerrySails",
