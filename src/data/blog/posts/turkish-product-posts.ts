@@ -79,7 +79,7 @@ export const turkishProductPosts: BlogPost[] = [
         },
         expertQuote: {
           text: "Akşam yemeği turu, Türk kültürünü — müziği, mutfağı ve Boğaz'ı — tek bir güzel gecede bir araya getirir. Bu deneyim için gerekli bütçeyi ayıran misafirler büyük ölçüde memnun ayrılır.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
         },
       },
@@ -132,7 +132,7 @@ export const turkishProductPosts: BlogPost[] = [
         },
         expertQuote: {
           text: "Eylül Boğaz'ını fotoğraflamanın en iyi ayıdır. Sıcak-soğuk hava kütlelerinin buluşmasıyla oluşan bulut formasyonları, gün batımında İstanbul'u benzersiz kılar.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan",
         },
       },
@@ -267,7 +267,7 @@ export const turkishProductPosts: BlogPost[] = [
         ],
         expertQuote: {
           text: "En güzel teklifler, planın en sade olduğu anlarda gerçekleşir. Gökyüzü dramatik, su sakin ve partnerinizin yüzü gün batımı ışığıyla parlıyorken — hiçbir dekorasyon bu kadar güçlü konuşamaz.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, yüzlerce teklif anına tanık",
         },
       },
@@ -429,7 +429,7 @@ export const turkishProductPosts: BlogPost[] = [
         ],
         expertQuote: {
           text: "Özel turda en güzel an, grubun rotayı şekillendirebildiği fark ettiği andır. Bebek'te balık yediniz mi? Elbette durabiliriz. Anadolu kıyısında güneş banyosu yapmak istiyorsunuz? Limana demirleyebiliriz.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
         },
       },
@@ -592,7 +592,7 @@ export const turkishProductPosts: BlogPost[] = [
         ],
         expertQuote: {
           text: "Folklor dansçılarımız Kültür Bakanlığı onaylı, her biri kendi bölgesinin geleneksel sanatını sahneleyen profesyonellerdir. Misafirlerimizin çoğu bu gösteriyi beklemedikleri için çok daha büyük etki bırakır.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
         },
       },
@@ -752,7 +752,7 @@ export const turkishProductPosts: BlogPost[] = [
         },
         expertQuote: {
           text: "Eylül ve Ekim'de Boğaz'ın üzerindeki hava kütlelerinin karışımı inanılmaz bulut formasyonları yaratır. Güneş batarken bulutların alt yüzeyine yansıyan pembe-turuncu ışık, hayatınızda gördüğünüz en güzel fotoğraf karelerinden birini oluşturur.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
         },
       },
@@ -1114,7 +1114,7 @@ export const turkishProductPosts: BlogPost[] = [
         },
         expertQuote: {
           text: "Çifti veya küçük grubu olan misafirler paylaşımlı tura çok memnun ayrılıyor. Ama 8–10 kişilik aile grubu geldiğinde biz mutlaka özel yatı öneririz — fiyat neredeyse aynı, deneyim çok farklı.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
         },
       },
@@ -1172,7 +1172,7 @@ export const turkishProductPosts: BlogPost[] = [
         },
         expertQuote: {
           text: "Biz 2001'den bu yana 50.000'den fazla misafiri ağırladık. Direkt rezervasyon yapan misafirlerimizle kişisel ilişki kurabiliyoruz — tercihlerini not edebiliyoruz, rotayı değiştirebiliyoruz, beklenmedik durumda anında iletişim kurabiliyoruz. Aracı platformda bu mümkün değil.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan",
         },
       },
@@ -1595,7 +1595,7 @@ export const turkishProductPosts: BlogPost[] = [
           "Eminönü, İstanbul'un en yoğun ve en tanınan iskele noktalarından biridir. Buradaki büyük çift katlı vapurlar birçok turistin zihninde 'Boğaz turu' imgesiyle özdeşleşmiştir. Ancak bu vapurlar, Şehir Hatları A.Ş. tarafından işletilen ve İETT gibi kamu toplu taşımacılığı kapsamında değerlendirilen hatlardır.\n\nAnadolu Kavağı'na kadar uzanan uzun hat yaklaşık 6 saatte gidip gelirken, kısalttılmış 'Boğaz Turu' seferleri 1,5–2 saat sürer ve Küçüksu ile Kanlıca'ya kadar uğrar. İstanbulkart ile binilebilir; bilet ücreti ₺50–200 arasında değişir. Bu seferler şehri denizden görmek için ucuz ve işlevsel bir seçenek sunar — ancak İngilizce yorum, özel güverte, ikram servisi veya grup rehberliği içermez.\n\nKısacası: Eminönü vapuru ulaşım aracıdır, turistik turizm ürünü değil. İki saatlik bir seyir süresince Boğaz'ı geçmek isteyenler için uygundur; ancak yorumlanan, içecek dahil, rehberli bir deneyim arıyorsanız yanlış iskeledesiniz.",
         expertQuote: {
           text: "Şehir Hatları vapurları İstanbul'un rutin Boğaz geçişlerini taşır — harika bir deneyim, ama turizm turu değil. Misafirlerimiz sık sık 'büyük vapura bindim ama kimse bir şey açıklamadı' diye şikayet eder. O vapur sizi Üsküdar'a götürür, Osmanlı saraylarını anlatmaz.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, 24 yıl Boğaz deneyimi",
         },
         proTip:
@@ -1760,7 +1760,7 @@ export const turkishProductPosts: BlogPost[] = [
           "Sultanahmet Meydanı, Arasta Çarşısı çevresi ve Mısır Çarşısı önünde turistlere yaklaşan bazı kişiler 'bedava Boğaz turu' ya da '€5–10'a gemi turu' teklif eder. Bu tekliflerin büyük çoğunluğu şu senaryolardan birine aittir:\n\nBirinci senaryo: Turu üstlendiğini söyleyen kişi sizi bir 'toplantı noktasına' götürür; orada halı, deri veya takı mağazasına uğratılırsınız. Tur, bu alışveriş durağına katılımın 'karşılığı' olarak sunulur. İkinci senaryo: TÜRSAB lisansı olmayan küçük balıkçı teknelerine bindirilirsiniz. Tekne, can yeleği standardına veya deniz emniyeti kurallarına uymayabilir. Üçüncü senaryo: Fiyat başlangıçta düşük söylenir, ancak gemide alkol, fotoğraf veya 'güverte üstü oturma' için ek ücret talep edilir.\n\nMerrySails gibi [TÜRSAB A Grubu lisanslı](/tursab) operatörler devlet tarafından denetlenir; sigorta, can kurtarma ekipmanı ve güzergah standartlarına uymak zorundadır. Lisans numarasını sormak hem hakkınız hem de güvenliğinizin temelidir.",
         expertQuote: {
           text: "Her yıl, iskele önünde tura çekilen ve sonra mağazaya götürülen ya da beklediklerini bulamayan onlarca misafir anlatır. Bu durumun önüne geçmenin tek yolu: turu direkt operatörden, yazılı onay alarak rezerve etmek.",
-          author: "Kaptan Ahmet Yılmaz",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Baş Kaptan, TÜRSAB #14316",
         },
         callout: {
@@ -2835,7 +2835,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
         content: "Vapur kuyruğundan, kalabalık güverteden ve sabit tarifeden kaçmak isteyenler için özel yat kiralama, Adalara en özgür ulaşım şeklidir.\n\nMerrySails, Kuruçeşme Marina'dan (Boğaz'ın Avrupa yakası) özel yat seferleri düzenler. Güzergah Boğaz ağzından Marmara'ya açılır ve Adalara yaklaşık 45 dakikada ulaşılır. Bu süre zarfında Tarihi Yarımada silueti ve her iki kıyının manzarası eşsiz bir panorama sunar.\n\n**MerrySails Yat Kiralama Paketleri (tekne başına):**\n- Essential — €280 / 2 saat: Boğaz ve Marmara deneyimi; adaya demirlemeden kısa bir gezinti\n- Premium — €380 / 2–3 saat: Büyükada yakınlarında demir atma, yüzme imkânı\n- VIP — €680 / 4+ saat: Tam gün ada rotası, ikram, fotoğrafçı, özel güzergah\n\n6 kişi ve üzeri gruplarda özel yat kiralama kişi başı maliyeti, vapur bileti + ada içi ulaşım + yemek toplamına yaklaşmaktadır — ancak buna ek olarak tam mahremiyet ve esneklik gelir.\n\nTüm fiyatlar ve kalkış noktaları için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın. İstanbul dönüşünde [Boğaz gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile günü taçlandırabilirsiniz.",
         expertQuote: {
           text: "Marmara açılımında her iki kıyı ve Tarihi Yarımada siluetini görmek, en deneyimli yolcuları bile etkiler. Adalara açılan yat rotası, Boğaz içi turdan bambaşka bir İstanbul perspektifi sunar.",
-          author: "Kaptan Mehmet Akın",
+          author: "Kaptan Ahmet Yıldız",
           title: "30 Yıllık Boğaz Kaptanı, MerrySails"
         }
       },
@@ -3362,7 +3362,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
         },
         expertQuote: {
           text: "Karaköy iskelesini sunset için seçmemizin nedeni şu: tekne kalkar kalkmaz Boğaz'ın en güzel 10 dakikası başlar. Eminönü'nden kalksak aynı manzara yarım saat sonra gelir — gün batımı ışığı kaçar. Karaköy, fotoğrafçı misafirler için hediyemizdir.",
-          author: "Kaptan Mehmet Akın",
+          author: "Kaptan Ahmet Yıldız",
           title: "MerrySails — Sunset Cruise Kaptanı, 18 yıl Boğaz deneyimi"
         }
       },

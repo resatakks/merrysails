@@ -9,10 +9,10 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     id: "captain-ahmet",
-    name: "Captain Ahmet Yılmaz",
+    name: "Captain Ahmet Yıldız",
     role: "Founder & Senior Captain",
     credential: "TURSAB Licensed, 25+ years maritime experience",
-    bio: "Founded Merry Tourism in 2001. Over 25 years navigating the Bosphorus, Captain Ahmet has personally guided more than 50,000 guests through Istanbul's waterways.",
+    bio: "Founded Merry Tourism in 2001. Over 25 years navigating the Bosphorus, Captain Ahmet Yıldız has personally guided more than 50,000 guests through Istanbul's waterways.",
   },
   {
     id: "editorial",

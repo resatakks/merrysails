@@ -15,9 +15,9 @@ export interface TeamMemberProfile {
 export const TEAM_MEMBERS: TeamMemberProfile[] = [
   {
     slug: "captain-ahmet",
-    name: "Captain Ahmet Yildiz",
+    name: "Captain Ahmet Yıldız",
     givenName: "Ahmet",
-    familyName: "Yildiz",
+    familyName: "Yıldız",
     jobTitle: "Senior Captain & Bosphorus Routes Lead",
     bio: "22+ years navigating the Bosphorus under a Turkish Maritime Authority master license, Captain Ahmet has piloted Bosphorus, Marmara, and Aegean cruises. He designs every route MerrySails operates and speaks Turkish, English, and basic German.",
     image: "/team/captain-ahmet.jpg",

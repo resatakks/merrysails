@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Meet the MerrySails Team",
     description:
-      "Captain Ahmet Yildiz, Resat Akkus, and Kayra Sevli -- the experts behind every MerrySails cruise.",
+      "Captain Ahmet Yıldız, Resat Akkus, and Kayra Sevli -- the experts behind every MerrySails cruise.",
     url: `${SITE_URL}/about/team`,
     type: "website",
     images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }],
@@ -182,7 +182,7 @@ export default function TeamPage() {
           {/* Cards */}
           <div className="grid gap-8 lg:grid-cols-1">
             <TeamCard
-              name="Captain Ahmet Yildiz"
+              name="Captain Ahmet Yıldız"
               role="Senior Captain & Bosphorus Routes Lead"
               bio="22+ years navigating the Bosphorus under a Turkish Maritime Authority master license, Captain Ahmet has piloted Bosphorus, Marmara, and Aegean cruises. He designs every route MerrySails operates and speaks Turkish, English, and basic German."
               profileHref="/authors/captain-ahmet"

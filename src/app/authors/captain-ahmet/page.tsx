@@ -8,20 +8,20 @@ import { buildHreflang } from "@/lib/hreflang";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Captain Ahmet Yılmaz — MerrySails Founder",
+  title: "Captain Ahmet Yıldız — MerrySails Founder",
   description:
-    "Captain Ahmet Yılmaz founded MerrySails in 2001 and has personally guided 50,000+ guests across the Bosphorus. TURSAB licensed, 25+ years maritime experience.",
+    "Captain Ahmet Yıldız founded MerrySails in 2001 and has personally guided 50,000+ guests across the Bosphorus. TURSAB licensed, 25+ years maritime experience.",
   alternates: {
     canonical: `${SITE_URL}/authors/captain-ahmet`,
     languages: buildHreflang("/authors/captain-ahmet"),
   },
   openGraph: {
-    title: "Captain Ahmet Yılmaz — Founder, MerrySails",
+    title: "Captain Ahmet Yıldız — Founder, MerrySails",
     description:
       "Founder and senior captain of MerrySails. 25+ years of Bosphorus navigation experience, TURSAB licensed.",
     url: `${SITE_URL}/authors/captain-ahmet`,
     type: "profile",
-    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: "Captain Ahmet Yılmaz — MerrySails founder" }],
+    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: "Captain Ahmet Yıldız — MerrySails founder" }],
   },
 };
 
@@ -29,9 +29,9 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#captain-ahmet`,
-  name: "Captain Ahmet Yılmaz",
+  name: "Captain Ahmet Yıldız",
   givenName: "Ahmet",
-  familyName: "Yılmaz",
+  familyName: "Yıldız",
   jobTitle: "Founder & Senior Captain",
   description:
     "Founded Merry Tourism in 2001. Over 25 years navigating the Bosphorus, Captain Ahmet has personally guided more than 50,000 guests through Istanbul's waterways.",
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
     { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
-    { "@type": "ListItem", position: 3, name: "Captain Ahmet Yılmaz", item: `${SITE_URL}/authors/captain-ahmet` },
+    { "@type": "ListItem", position: 3, name: "Captain Ahmet Yıldız", item: `${SITE_URL}/authors/captain-ahmet` },
   ],
 };
 
@@ -166,7 +166,7 @@ export default function CaptainAhmetPage() {
             <span>/</span>
             <Link href="/about" className="hover:text-[var(--brand-primary)]">About</Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">Captain Ahmet Yılmaz</span>
+            <span className="text-[var(--heading)]">Captain Ahmet Yıldız</span>
           </nav>
 
           <section className="rounded-[2rem] overflow-hidden bg-white border border-[var(--line)] shadow-sm">
@@ -189,7 +189,7 @@ export default function CaptainAhmetPage() {
                     Founder · Senior Captain
                   </p>
                   <h1 className="text-3xl md:text-4xl font-bold text-[var(--heading)]" translate="no">
-                    Captain Ahmet Yılmaz
+                    Captain Ahmet Yıldız
                   </h1>
                   <p className="mt-2 text-base text-[var(--body-text)]">
                     25+ years navigating the Bosphorus · TURSAB-licensed since 2001 · 50,000+ guests hosted
