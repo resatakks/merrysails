@@ -108,6 +108,46 @@ const homepageFaqSchema = {
         text: "The MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Mon, Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Mon, Tue & Thu) or €40 (standard). It runs daily and covers the full Bosphorus strait past Dolmabahçe, Beşiktaş, and the first bridge. TURSAB licensed, available for direct online booking.",
       },
     },
+    {
+      "@type": "Question",
+      name: "What time should I arrive for boarding on the Bosphorus dinner cruise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Boarding for the shared Bosphorus dinner cruise opens at 20:00 at Kabataş Pier and the boat departs at 20:30. We ask guests to arrive 20-30 minutes before departure so seating, table assignment, and welcome drinks can be completed before cast-off. Hotel pickup guests are collected 45-60 minutes earlier from central Sultanahmet, Taksim, Beyoğlu and Beşiktaş zones; the exact pickup window is confirmed on the WhatsApp reservation thread the day before. Late arrivals after 20:30 cannot board because the vessel must clear the pier on schedule.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there a dress code for the Bosphorus dinner cruise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There is no formal dress code on any MerrySails Bosphorus cruise. Smart-casual is the standard guests choose — closed-toe shoes are recommended because the deck can be damp during boarding, and a light jacket or shawl is advised between October and April even on calm evenings since the temperature on the water is 4-6°C below the city. For proposal yacht and corporate charters we are happy to coordinate a more formal brief, but the shared sunset and dinner cruises are deliberately relaxed so guests can focus on the strait, the food, and the view rather than a wardrobe.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why book MerrySails directly instead of through Viator or GetYourGuide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Booking through Viator, GetYourGuide or other OTAs adds a 20-30% reseller commission on top of the operator price and routes guest support through the OTA's call centre rather than the operator. Booking directly at merrysails.com gives the same TURSAB-licensed boat, the same captain, and the same menu, but the price is the operator's price, the WhatsApp thread reaches the boarding desk in real time, and date or pickup changes are handled by the same team that runs the cruise. Captain Ahmet has operated the Bosphorus since 2001 (TURSAB A-Group licence #14316) and over 50,000 guests have boarded directly without an intermediary.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I avoid Istanbul Bosphorus cruise scams?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Three operator-side checks remove almost all of the scam risk on Istanbul Bosphorus cruises. First, confirm the operator's TURSAB licence number on tursab.org.tr before paying — every licensed agency carries a public A-Group or related number (MerrySails is #14316). Second, refuse pier-side touts at Eminönü and Karaköy who advertise '€10 Bosphorus tours' on laminated cards — these are short Golden Horn loops that never reach the Bosphorus bridges and rarely return on time. Third, confirm the boarding pier in writing before the day of the cruise; legitimate operators always confirm Kabataş, Karaköy or a named marina, not a vague 'meet me at the bridge' message. MerrySails confirms boarding pier, time and meeting point on the WhatsApp thread within minutes of reservation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the best time of year for a Bosphorus sunset cruise in winter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Late December through early February the Bosphorus sunset window is 16:30-17:15, which means the sunset cruise departs in the late afternoon rather than the standard summer 19:00 slot. Winter sailings run on heated covered decks; visibility on a clear winter day is often sharper than in summer because the haze layer lifts after the first rain. We continue to operate the shared sunset cruise daily through winter except during a high-wind warning from the Istanbul harbour master, in which case the booking is rolled forward at no charge. Wine and dinner packages remain on the menu year-round.",
+      },
+    },
   ],
 };
 
