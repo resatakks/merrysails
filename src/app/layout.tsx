@@ -104,6 +104,12 @@ export const metadata: Metadata = {
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
     other: {
       "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION ? [process.env.NEXT_PUBLIC_BING_VERIFICATION] : [],
+      // 2026-06-12: Baidu Zhanzhang (百度搜索资源平台) site verification for
+      // Chinese organic + AI grounding visibility (DeepSeek/Doubao/Kimi
+      // ground on Baidu surfaces). Set NEXT_PUBLIC_BAIDU_VERIFICATION in
+      // Vercel env once operator runs the ziyuan.baidu.com property-add flow
+      // (codeva-XXXXX format). Empty array when unset — no premature signals.
+      "baidu-site-verification": process.env.NEXT_PUBLIC_BAIDU_VERIFICATION ? [process.env.NEXT_PUBLIC_BAIDU_VERIFICATION] : [],
     },
   },
 };
