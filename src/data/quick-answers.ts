@@ -88,7 +88,7 @@ const REGISTRY: Registry = {
  title: "İstanbul Akşam Yemekli Boğaz Turu — MerrySails",
  question: "MerrySails İstanbul Akşam Yemekli Boğaz Turu nedir?",
  content:
- "MerrySails İstanbul Akşam Yemekli Boğaz Turu, Kabataş iskeleden kalkan 3,5 saatlik paylaşımlı bir akşam programıdır. Dört paket: €30 (Gümüş, soft içecek) ile €90 (Altın, sınırsız alkol) arası. Kalkış 20:30, otel transferi, Türk mutfağı menüsü, canlı folklor gösterisi ve DJ dahildir. TÜRSAB A Grubu lisanslı, 2001'den beri (#14316). merrysails.com üzerinden direkt rezervasyon.",
+ "MerrySails İstanbul Akşam Yemekli Boğaz Turu, Kabataş İskelesi'nden her gece saat 20:30'da kalkan 3,5 saatlik paylaşımlı bir Boğaz programıdır — 2001'den bu yana TÜRSAB A Grubu lisanslı (#14316) Meryem Yıldız Travel ünvanı altında işletilir, bugüne kadar 50.000'i aşkın misafir tekneye bindi. Dört paket sunulur: Silver Soft €30 (üç çeşit yemek, alkolsüz içecek), Silver Alkollü €45 (yerel bira ve şarap dahil), Gold Soft €80 (premium menü + VIP sahne yakını koltuk, alkolsüz), Gold Unlimited €90 (sınırsız rakı/şarap/kokteyl + Sultanahmet ve Taksim otellerinden ücretsiz oda transfer dahil). Rota Dolmabahçe Sarayı'ndan başlayıp Boğaziçi Köprüsü altından geçer, Rumeli Hisarı'nda U dönüşü yapıp Anadolu yakası yalılarına (Kandilli, Vaniköy, Çengelköy) yönelir; saat 00:00 civarında Kabataş'a döner. Tekne içinde canlı Türk gecesi gösterisi (keman, ud, vokal, göbek dansçısı) sahnelenir. Çocuklar 6 yaş altı ücretsiz, 6–12 yaş %50 indirim. Doğrudan rezervasyon: merrysails.com veya WhatsApp +90 544 898 98 12 — 60 dakikada yazılı onay, 48 saat öncesine kadar ücretsiz iptal.",
  },
  de: {
  title: "Istanbul Dinner-Kreuzfahrt — MerrySails",
@@ -127,7 +127,7 @@ const REGISTRY: Registry = {
  title: "İstanbul Yat Kiralama — MerrySails",
  question: "MerrySails İstanbul yat kiralama nedir?",
  content:
- "MerrySails İstanbul yat kiralama, Kabataş, Karaköy veya Kuruçeşme iskelelerinden kalkan tamamen özel bir Boğaz turudur. 2 saatlik küçük güverte yatından €200, 14 kişilik premium güverteye kadar uzanır. Saat seçimi, catering, fotoğrafçı ve evlilik teklifi ekleri mevcuttur. TÜRSAB A Grubu lisanslı, 2001'den beri (#14316). merrysails.com üzerinden direkt rezervasyon, yazılı teklif 60 dakikada.",
+ "MerrySails İstanbul yat kiralama, Kabataş, Karaköy veya Kuruçeşme Marina iskelelerinden kalkan, teknenin tamamının size özel olarak kiralandığı premium Boğaz deneyimidir — TÜRSAB A Grubu lisanslı (#14316), 2001'den beri Meryem Yıldız Travel ünvanı altında işletilir, 50.000+ misafire ev sahipliği yapmıştır. Fiyatlandırma tekne başınadır, kişi başı değildir: 2 saatlik küçük yat €280'dan başlar (2–8 kişi, evlilik teklifi ve butik kutlama için ideal), 8–20 kişilik orta yat €500–€900 arası (doğum günü, kurumsal etkinlik), 20–50 kişilik büyük yat €1.000–€1.500 (düğün sonrası, gala). Tüm paketlerde kaptan, mürettebat ve TÜRSAB tekne sigortası dahildir; rota, süre ve menü tamamen size özeldir — minimum 2 saat, maksimum tam gün (8 saat). Eklenti menüsü: €35/kişi 4 çeşit yemek (balık/tavuk/et/vejetaryen), €250 DJ, €190 fotoğrafçı, €180 keman/ud, €50 evlilik teklifi dekoru, €35–€60 doğum günü pastası. Doğrudan rezervasyon: merrysails.com veya WhatsApp +90 544 898 98 12 — yazılı teklif 60 dakikada, kalkıştan 48 saat öncesine kadar ücretsiz iptal.",
  },
  de: {
  title: "Yacht-Charter Istanbul — MerrySails",
