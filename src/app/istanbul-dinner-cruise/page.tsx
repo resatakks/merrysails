@@ -216,13 +216,9 @@ const restaurantSchema = {
     "@type": "City",
     name: "Istanbul",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: dinnerTour.rating,
-    reviewCount: dinnerTour.reviewCount,
-    bestRating: 5,
-    worstRating: 1,
-  },
+  // 2026-06-11: aggregateRating removed from Restaurant — kept on Event only.
+  // Rule #4a: same page with multiple AR parents (Restaurant + Event) =
+  // Google parser conflict. Event is the canonical AR parent for cruise.
   currenciesAccepted: "EUR",
   amenityFeature: [
     { "@type": "LocationFeatureSpecification", name: "Live Entertainment", value: true },

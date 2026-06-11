@@ -961,13 +961,9 @@ export default async function LocaleDinnerCruisePage({
  "@type": "City",
  name: "Istanbul",
  },
- aggregateRating: {
- "@type": "AggregateRating",
- ratingValue: dinnerTour.rating,
- reviewCount: dinnerTour.reviewCount,
- bestRating: 5,
- worstRating: 1,
- },
+ // 2026-06-11: aggregateRating removed from Restaurant — kept on Product only.
+ // Rule #4a: same page with multiple AR parents (Restaurant + Product) =
+ // Google parser conflict. Product is the canonical AR parent for the locale dinner-cruise page.
  currenciesAccepted: "EUR",
  // NOTE: inLanguage removed — Google's LocalBusiness/Restaurant validator does not
  // recognize this property on LocalBusiness subclasses. (Source: Semrush audit 2026-05-17)
