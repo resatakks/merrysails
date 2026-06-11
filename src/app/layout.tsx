@@ -41,6 +41,11 @@ const CLARITY_PROJECT_ID =
   (process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "").trim();
 const META_PIXEL_ID =
   (process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "").trim();
+// Yandex Metrica — counter ID for CIS/RU organic + Yandex Webmaster pairing.
+// Set NEXT_PUBLIC_YANDEX_METRICA_ID in Vercel env (operator provides). When
+// unset (preview/local) the script is skipped — no fallback ID.
+const YANDEX_METRICA_ID =
+  (process.env.NEXT_PUBLIC_YANDEX_METRICA_ID ?? "").trim();
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -516,6 +521,38 @@ export default function RootLayout({
               fbq('track', 'PageView');
             `}
           </Script>
+        )}
+        {/* Yandex Metrica — CIS/RU funnel + Yandex Webmaster pairing. Loads
+            lazyOnload to keep mobile LCP unaffected. Skipped when
+            NEXT_PUBLIC_YANDEX_METRICA_ID is unset (preview/local safe). */}
+        {YANDEX_METRICA_ID && (
+          <>
+            <Script id="yandex-metrica" strategy="lazyOnload">
+              {`
+                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                ym(${YANDEX_METRICA_ID}, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true,
+                  webvisor:true,
+                  ecommerce:"dataLayer"
+                });
+              `}
+            </Script>
+            <noscript>
+              <div>
+                <img
+                  src={`https://mc.yandex.ru/watch/${YANDEX_METRICA_ID}`}
+                  style={{ position: "absolute", left: "-9999px" }}
+                  alt=""
+                />
+              </div>
+            </noscript>
+          </>
         )}
       </head>
       <body className="font-sans antialiased">
