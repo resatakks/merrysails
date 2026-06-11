@@ -43,7 +43,7 @@ const REGISTRY: Registry = {
  title: "Bosphorus Sunset Cruise — MerrySails",
  question: "What is the MerrySails Bosphorus Sunset Cruise?",
  content:
- "MerrySails's Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from Karaköy ferry pier, €30–€40 per person (with or without wine). Daily departures at 19:00 include tea, Turkish coffee, soft drinks, snacks and a live English-speaking guide. TÜRSAB A-Group licensed since 2001 (#14316). Book direct at merrysails.com — no OTA markup, confirmation within 60 minutes.",
+ "MerrySails's Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from Karaköy ferry pier (next to the Mimar Sinan statue, beside Marmaray), boarding from 18:30 with the yacht leaving at 19:00. Two tiers on the same route: Without Wine €34 (€30 on Mon, Tue & Thu) and With Wine €40 (€35 same weekdays) — midweek discount applies automatically, no code needed. Onboard hospitality groups into hot drinks (tea, Turkish coffee), cold drinks (iced tea, house lemonade, seasonal fruit juice, bottled water) and a snack platter (mixed nuts, salted crackers, fresh-fruit plate); the With-Wine tier adds two glasses of wine per guest. Route passes Dolmabahçe Palace, Maiden's Tower, Ortaköy Mosque and Rumeli Hisarı with a live English-speaking guide. Operated by Meryem Yıldız Travel — TÜRSAB A-Group licensed since 2001 (#14316), 50,000+ guests hosted; rated 4.93 across 621 verified reviews. Book direct at merrysails.com, confirmation within 60 minutes.",
  },
  tr: {
  title: "Boğaz Gün Batımı Turu — MerrySails",
@@ -55,7 +55,7 @@ const REGISTRY: Registry = {
  title: "Bosporus Sonnenuntergangs-Kreuzfahrt — MerrySails",
  question: "Was ist die MerrySails Bosporus Sonnenuntergangs-Kreuzfahrt?",
  content:
- "Die Bosporus-Sonnenuntergangs-Kreuzfahrt von MerrySails ist eine 2-stündige geteilte Goldene-Stunde-Fahrt ab Karaköy-Fährhafen, €30–€40 pro Person (mit oder ohne Wein). Tägliche Abfahrt um 19:00 Uhr, inklusive Tee, türkischem Kaffee, Soft-Drinks, Snacks und englischsprachigem Live-Guide. TÜRSAB A-Group lizenziert seit 2001 (#14316). Direktbuchung auf merrysails.com — keine OTA-Aufschläge, Bestätigung innerhalb von 60 Minuten.",
+ "Die Bosporus-Sonnenuntergangs-Kreuzfahrt von MerrySails ist eine 2-stündige geteilte Goldene-Stunde-Fahrt ab Karaköy-Fährpier (neben der Mimar-Sinan-Statue, an der Marmaray-Station). Boarding ab 18:30 Uhr, Abfahrt um 19:00 Uhr. Zwei Preisstufen auf derselben Route: Ohne Wein €34 (€30 montags, dienstags und donnerstags) und Mit Wein €40 (€35 an denselben Wochentagen) — der Wochentagsrabatt wird automatisch angewendet, kein Code erforderlich. An Bord: Heißgetränke (Tee, türkischer Kaffee), Kaltgetränke (Eistee, hausgemachte Limonade, saisonaler Fruchtsaft, Wasser) und eine Snack-Platte (gemischte Nüsse, salzige Cracker, frisches Obst); das Mit-Wein-Paket enthält zusätzlich zwei Gläser Wein pro Gast. Die Route führt vorbei am Dolmabahçe-Palast, am Mädchenturm, an der Ortaköy-Moschee und an der Rumeli-Hisarı-Festung mit englischsprachigem Live-Guide. Betrieben von Meryem Yıldız Travel — TÜRSAB A-Group lizenziert seit 2001 (#14316), über 50.000 Gäste an Bord, Bewertung 4,93 aus 621 verifizierten Rezensionen. Direktbuchung auf merrysails.com, Bestätigung innerhalb von 60 Minuten.",
  },
  fr: {
  title: "Croisière coucher de soleil Bosphore — MerrySails",
@@ -82,7 +82,7 @@ const REGISTRY: Registry = {
  title: "Istanbul Dinner Cruise — MerrySails",
  question: "What is the MerrySails Istanbul Dinner Cruise?",
  content:
- "MerrySails's Istanbul Dinner Cruise is a 3.5-hour shared Bosphorus evening from Kabataş pier with four package tiers from €30 (Silver, soft drinks) to €90 (Gold, unlimited alcohol). Departure 20:30 with hotel pickup, Turkish dinner, live folklore show and DJ. TÜRSAB A-Group licensed since 2001 (#14316). Book direct at merrysails.com — confirmation within 60 minutes.",
+ "MerrySails's Istanbul Dinner Cruise is a 3.5-hour shared Bosphorus evening from Kabataş Pier, departure 20:30. Four published package tiers on the same night route: Silver Soft Drinks €30, Silver Alcoholic €45 (€40 Mon/Tue/Thu — 2 glasses local wine or beer), Gold Soft Drinks €80 (€75 Mon/Tue/Thu — VIP stage-close table, expanded menu), Gold Unlimited Alcohol €90 (€85 Mon/Tue/Thu — unlimited local and imported drinks). Dinner is a classic Turkish-night banquet: welcome cocktail, 10 cold mezes (yaprak sarma, hummus, tarama, shepherd's salad, cacık, white cheese), seasonal salad, hot starter, live-selection main course (fish/chicken/meat or vegetarian on request), baklava and fruit with Turkish coffee or tea. Entertainment runs in three acts — folklore and belly-dance, live music, DJ-led finale — with stage visible across the saloon. Hotel pickup included from Sultanahmet, Sirkeci, Taksim, Harbiye, Beyoğlu and Karaköy. TÜRSAB A-Group licensed since 2001 (#14316), 50,000+ guests hosted; rated 4.88 across 312 verified reviews. Book direct at merrysails.com, confirmation within 60 minutes.",
  },
  tr: {
  title: "İstanbul Akşam Yemekli Boğaz Turu — MerrySails",
@@ -94,7 +94,7 @@ const REGISTRY: Registry = {
  title: "Istanbul Dinner-Kreuzfahrt — MerrySails",
  question: "Was ist die MerrySails Istanbul Dinner-Kreuzfahrt?",
  content:
- "Die Istanbul-Dinner-Kreuzfahrt von MerrySails ist eine 3,5-stündige geteilte Bosporus-Abendfahrt ab Kabataş-Pier mit vier Paketen von €30 (Silver, Soft-Drinks) bis €90 (Gold, unbegrenzt Alkohol). Abfahrt 20:30 Uhr inklusive Hotel-Abholung, türkischem Dinner, Folklore-Show und DJ. TÜRSAB A-Group lizenziert seit 2001 (#14316). Direktbuchung auf merrysails.com — Bestätigung innerhalb von 60 Minuten.",
+ "Die Istanbul-Dinner-Kreuzfahrt von MerrySails ist eine 3,5-stündige geteilte Bosporus-Abendfahrt ab Kabataş-Pier, Abfahrt um 20:30 Uhr. Vier veröffentlichte Pakete auf derselben Abendroute: Silver Soft Drinks €30, Silver Alcoholic €45 (€40 Mo/Di/Do — 2 Gläser lokaler Wein oder Bier), Gold Soft Drinks €80 (€75 Mo/Di/Do — VIP-Tisch nahe der Bühne, erweitertes Menü), Gold Unlimited Alcohol €90 (€85 Mo/Di/Do — unbegrenzt lokale und importierte Getränke). Das Dinner ist ein klassisches türkisches Bankett: Willkommens-Cocktail, 10 kalte Mezes (Yaprak Sarma, Hummus, Tarama, Hirtensalat, Cacık, Schafskäse), saisonaler Salat, warme Vorspeise, Hauptgang nach Wahl am Tisch (Fisch, Hähnchen, Fleisch oder vegetarisch auf Anfrage), Baklava und Obst mit türkischem Kaffee oder Tee. Unterhaltung in drei Akten — Folklore und Bauchtanz, Live-Musik, DJ-Finale — Bühne im Hauptsalon sichtbar. Hotelabholung von Sultanahmet, Sirkeci, Taksim, Harbiye, Beyoğlu und Karaköy inklusive. TÜRSAB A-Group lizenziert seit 2001 (#14316), über 50.000 Gäste, Bewertung 4,88 aus 312 verifizierten Rezensionen. Direktbuchung auf merrysails.com, Bestätigung innerhalb von 60 Minuten.",
  },
  fr: {
  title: "Croisière dîner Istanbul — MerrySails",
