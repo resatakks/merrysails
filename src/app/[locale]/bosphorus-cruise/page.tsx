@@ -49,6 +49,22 @@ type LocaleContent = {
  bullets: { label: string; desc: string }[];
  cta: string;
  };
+ itinerarySection?: {
+ title: string;
+ intro: string;
+ sunsetSteps: { time: string; landmark: string; desc: string }[];
+ dinnerSteps: { time: string; landmark: string; desc: string }[];
+ sunsetLabel: string;
+ dinnerLabel: string;
+ footnote: string;
+ };
+ operatorQuoteSection?: {
+ title: string;
+ intro: string;
+ quotes: { headline: string; body: string }[];
+ attribution: string;
+ attributionTitle: string;
+ };
  faqTitle: string;
  faqs: FaqItem[];
  homeLabel: string;
@@ -135,6 +151,54 @@ const CONTENT: Record<string, LocaleContent> = {
  { label: "Özel Yat — Anadolu Yakası Kalkışı", desc: "Özel yat kiralama paketlerinde €280'den başlayan tekne başına fiyatlarla Kuzguncuk, Beylerbeyi veya Çengelköy iskelelerinden kalkış ayarlayabiliriz. Üsküdar / Salacak bölgesinde konaklayan grupların kullanmaktan en çok memnun kaldığı seçenektir." },
  ],
  cta: "Anadolu yakası kalkışıyla ilgili WhatsApp üzerinden detay alabilirsiniz — kalkış iskelesini sizin lokasyonunuza göre planlarız.",
+ },
+ itinerarySection: {
+ title: "Boğaz Turu Rotası — Saat Saat Programı",
+ intro: "MerrySails boğaz turu güzergahı, Boğaz'ın güney 14 kilometrelik kıyısını — Karaköy / Kabataş'tan Rumeli Hisarı'na kadar — kapsayan sabit bir rotada ilerler. Aşağıdaki tablo gün batımı ve akşam yemekli turlarımızın tipik saat akışını gösterir. Saatler yaz sezonu (Haziran–Ağustos) referansıyla verilmiştir; kış aylarında gün batımı kalkışı yaklaşık 2 saat öne çekilir, akşam yemekli tur saati ise sabit kalır.",
+ sunsetLabel: "Gün Batımı Turu (2 saat, Karaköy kalkışı)",
+ dinnerLabel: "Akşam Yemekli Tur (3,5 saat, Kabataş kalkışı)",
+ sunsetSteps: [
+ { time: "18:30", landmark: "Karaköy İskelesi'nde biniş", desc: "Mimar Sinan heykelinin yanı, Marmaray çıkışına 200 m. Bağışlanan İngilizce rehber misafirleri karşılar; ikram tepsisi (kuruyemiş, mevsim meyveleri, su, ev limonatası) servise başlar. Şaraplı pakette iki kadeh yerel şarap sunulur." },
+ { time: "19:00", landmark: "Karaköy çıkışı + Galata Kulesi", desc: "Tekne iskeleden ayrılır, Karaköy rıhtımı boyunca kuzeye yönelir. Sağda Galata Kulesi, solda Kız Kulesi'nin Anadolu yakasındaki silueti net görünür. Rehber Boğaz'ın 31 km uzunluğu ve iki kıta arasındaki konumunu anlatır." },
+ { time: "19:15", landmark: "Dolmabahçe Sarayı geçişi", desc: "1856 yılında Sultan Abdülmecid için yaptırılan imparatorluk rezidansı. 285 oda, 46 salon, dünyanın en büyük baccarat avizesi (4,5 ton). Cepheye 80 m mesafeden yaklaşırız; fotoğraf için ideal mesafe budur." },
+ { time: "19:30", landmark: "Ortaköy Camii + Boğaziçi Köprüsü", desc: "1853 Baroque cephe, birinci Boğaziçi Köprüsü (1973, 1.560 m açıklık) altından geçeriz. Köprü altı geçişi turun en fotoğraflanan anıdır — güverte üst katına geçmek için 5 dakikalık duraklama vardır." },
+ { time: "19:50", landmark: "Rumeli Hisarı dönüşü", desc: "1452'de Fatih Sultan Mehmet'in İstanbul'un fethinden önce Boğaz kontrolü için 4 ay içinde inşa ettirdiği kale. Tekne burada U dönüşü yapar; geri dönüşte gökyüzü mavi saate (blue hour) geçer." },
+ { time: "20:30", landmark: "Karaköy İskelesi'nde iniş", desc: "Aynı iskeleye dönüş. Karaköy metro istasyonu 150 m, Eminönü tarafı T1 tramvayı 5 dk yürüyüş mesafesindedir. Tur sonunda QR ile dijital fotoğraf paketi opsiyonel satılır (€15)." },
+ ],
+ dinnerSteps: [
+ { time: "20:00", landmark: "Otel transfer (Sultanahmet & Taksim)", desc: "€90 paketinde, Sultanahmet (Ayasofya'ya 300 m içerisi) ve Taksim Meydanı çevresindeki otellerden klimalı VIP araçla pickup. WhatsApp üzerinden tam adres + oda numarası ile koordinasyon yapılır." },
+ { time: "20:30", landmark: "Kabataş İskelesi'nden kalkış", desc: "Dolmabahçe Sarayı'nın hemen yanı, T1 tramvayı son durağı + Marmaray bağlantılı merkezi iskele. Tekne kapasitesi 80–120 misafir; oturma planı rezervasyon sırasında (Standart / Silver / Gold / VIP) belirlenir." },
+ { time: "20:45", landmark: "Hoşgeldin servisi + meze servisi", desc: "Tekne Boğaz'ın güneyine doğru hareket eder. Üç çeşit meze (humus, sigara böreği, dolma) ve içecek (Silver Soft: alkolsüz / Silver Alkollü: yerel bira-şarap / Gold: premium menü / Gold Unlimited: sınırsız rakı-şarap-kokteyl) sofrada yerini alır." },
+ { time: "21:15", landmark: "Boğaziçi Köprüsü altından geçiş", desc: "Tekne köprü altına yaklaşır, ışık şovu (FSM Köprüsü resmi aydınlatma takvimi: günbatımı + 30 dk) güvertede izlenir. Bu nokta turun en çok Instagram'a yansıyan anıdır — fotoğraf için 10 dakikalık güverte molası verilir." },
+ { time: "21:30", landmark: "Ana yemek + canlı Türk gecesi gösterisi", desc: "Izgara balık (mevsim) veya tavuk şiş + bulgur pilavı; vejetaryen alternatif (sebze güveç) önceden talep edilmelidir. 4 sanatçı: keman, ud, vokal, göbek dansçısı (Gold Unlimited paketinde 2 dansçı + DJ)." },
+ { time: "23:00", landmark: "Rumeli Hisarı + Anadolu kıyısı dönüşü", desc: "Boğaz'ın kuzey ucunda U dönüşü; geri dönüşte Anadolu yakasındaki yalılar (Kandilli, Vaniköy, Çengelköy — 17. yüzyıl Osmanlı yapıları) gece ışıklarıyla görüntülenir. Tatlı servisi: künefe veya baklava + Türk kahvesi." },
+ { time: "00:00", landmark: "Kabataş İskelesi'nde iniş", desc: "Tekne Kabataş'a yanaşır. €90 paketinde otel dönüş transferi aynı şoför + araçla otele kadar; diğer paketlerde T1 tramvayı son seferi (00:30) veya taksi (Kabataş–Sultanahmet ortalama ₺250) önerilir." },
+ ],
+ footnote: "Saatler hava muhalefeti, deniz koşulu veya iskele yoğunluğu nedeniyle ±10 dakika değişebilir. Kesin kalkış saati rezervasyon onay e-postanızda ve tur gününden 24 saat önce gelen WhatsApp hatırlatma mesajınızda yer alır.",
+ },
+ operatorQuoteSection: {
+ title: "Operatör Notu — Captain Ahmet",
+ intro: "MerrySails'in operasyonel rotalarını ve hospitality standartlarını 2001'den bu yana planlayan Captain Ahmet'in misafirlerimize doğrudan önerileri:",
+ quotes: [
+ {
+ headline: "Hangi saat ışık için en güzel?",
+ body: "\"Boğaz'ın altın saati günbatımından 45 dakika önce başlar ve günbatımından 20 dakika sonra biter — toplam 65 dakikalık bir pencere. Yaz aylarında bu pencere 19:30 – 20:35 arası, kasımdan şubata kadar 16:00 – 17:05 arasıdır. Karaköy'den 19:00 kalkışlı sunset turunda Boğaziçi Köprüsü altından geçişimiz tam altın saatin orta noktasına denk gelir. Fotoğraf için bunu özellikle planlıyoruz; tesadüf değil.\""
+ },
+ {
+ headline: "İlk gelen ne için iyi yer kapıyor?",
+ body: "\"Tekneye 18:30'da bindiğinizde sağ taraf güverte (starboard) Dolmabahçe ve Ortaköy fotoğrafları için doğru taraftır; sol taraf Kız Kulesi ve Üsküdar ışıkları için. Akşam yemekli turlarımızda pencere kenarı oturma için 20:00'a kadar iskeleye gelin — bu 30 dakikalık erken biniş, sahne yakını koltukları kapma şansını ikiye katlar. Geç gelirseniz ortada bir yer kalır ki o da kötü değil ama pencere bambaşka bir deneyim.\""
+ },
+ {
+ headline: "Yağmurlu havada ne yapıyoruz?",
+ body: "\"İstanbul'da hafif yağmur turu iptal etmemizi gerektirmez — teknelerimizin tamamı kapalı salonlu (klimalı kış / serin yaz). Sadece şiddetli lodos (kuzeydoğu rüzgârı, 25+ knot) veya görüş 500 metre altına düştüğünde turu iptal ederiz; bu durumda kalkıştan 4 saat önce WhatsApp ile bildirim atarız ve %100 iade veya başka tarihe ücretsiz değişim sunarız. 2024 sezonunda 312 günden sadece 7'sinde tur iptal ettik.\""
+ },
+ {
+ headline: "Hangi paket hangi kişiye uygun?",
+ body: "\"Çiftler için: gün batımı şaraplı €40 — 2 saatlik kompakt deneyim, fotoğraf ve manzara odaklı. Aileler için: akşam yemekli Silver Soft €30 — çocuk menüsü + Türk gecesi şovu (8 yaş üstü için ideal). Evlilik teklifi: özel yat €280 + €50 sürpriz dekor — sadece sizin teknenizdir, 2 kişi de 20 kişi de aynı fiyattır. Doğum günü ya da kurumsal: özel yat €500–€900 (16–20 kişi) — pasta, DJ, fotoğrafçı eklenti listesinden seçilir.\""
+ },
+ ],
+ attribution: "Captain Ahmet",
+ attributionTitle: "Operasyon Direktörü · MerrySails · TÜRSAB A Grubu Lisanslı 2001'den Bu Yana",
  },
  faqTitle: "Sık Sorulan Sorular",
  faqs: [
@@ -887,6 +951,69 @@ export default async function LocaleBosphorusCruisePage({
  ))}
  </div>
  <p className="mt-6 text-sm text-[var(--text-muted)]">{c.uskudarSection.cta}</p>
+ </div>
+ </div>
+ )}
+
+ {/* Hour-by-hour itinerary — verifiable specificity, AI-grounding signal */}
+ {c.itinerarySection && (
+ <div className="py-16 bg-white">
+ <div className="container-main max-w-4xl">
+ <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">{c.itinerarySection.title}</h2>
+ <p className="text-[var(--body-text)] mb-8">{c.itinerarySection.intro}</p>
+ <div className="grid gap-8 lg:grid-cols-2">
+ <section>
+ <h3 className="text-lg font-semibold text-[var(--heading)] mb-4">{c.itinerarySection.sunsetLabel}</h3>
+ <ol className="flex flex-col gap-4">
+ {c.itinerarySection.sunsetSteps.map((step) => (
+ <li key={step.time} className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
+ <div className="flex items-baseline gap-3 mb-1">
+ <span className="text-base font-bold text-[var(--brand-primary)]">{step.time}</span>
+ <span className="text-sm font-semibold text-[var(--heading)]">{step.landmark}</span>
+ </div>
+ <p className="text-sm leading-relaxed text-[var(--body-text)]">{step.desc}</p>
+ </li>
+ ))}
+ </ol>
+ </section>
+ <section>
+ <h3 className="text-lg font-semibold text-[var(--heading)] mb-4">{c.itinerarySection.dinnerLabel}</h3>
+ <ol className="flex flex-col gap-4">
+ {c.itinerarySection.dinnerSteps.map((step) => (
+ <li key={step.time} className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
+ <div className="flex items-baseline gap-3 mb-1">
+ <span className="text-base font-bold text-[var(--brand-primary)]">{step.time}</span>
+ <span className="text-sm font-semibold text-[var(--heading)]">{step.landmark}</span>
+ </div>
+ <p className="text-sm leading-relaxed text-[var(--body-text)]">{step.desc}</p>
+ </li>
+ ))}
+ </ol>
+ </section>
+ </div>
+ <p className="mt-6 text-sm text-[var(--text-muted)]">{c.itinerarySection.footnote}</p>
+ </div>
+ </div>
+ )}
+
+ {/* Operator first-party quote — E-E-A-T signal, AI citation source */}
+ {c.operatorQuoteSection && (
+ <div className="py-16 bg-[var(--surface-alt)]">
+ <div className="container-main max-w-4xl">
+ <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">{c.operatorQuoteSection.title}</h2>
+ <p className="text-[var(--body-text)] mb-8">{c.operatorQuoteSection.intro}</p>
+ <div className="grid gap-5 md:grid-cols-2">
+ {c.operatorQuoteSection.quotes.map((q) => (
+ <blockquote key={q.headline} className="rounded-xl border-l-4 border-[var(--brand-primary)] bg-white p-5 shadow-sm">
+ <p className="font-semibold text-[var(--heading)] mb-2">{q.headline}</p>
+ <p className="text-sm leading-relaxed text-[var(--body-text)] italic">{q.body}</p>
+ </blockquote>
+ ))}
+ </div>
+ <footer className="mt-6 border-t border-[var(--line)] pt-4">
+ <p className="font-semibold text-[var(--heading)]">— {c.operatorQuoteSection.attribution}</p>
+ <p className="mt-0.5 text-sm text-[var(--text-muted)]">{c.operatorQuoteSection.attributionTitle}</p>
+ </footer>
  </div>
  </div>
  )}

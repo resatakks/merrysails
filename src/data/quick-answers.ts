@@ -283,7 +283,7 @@ const REGISTRY: Registry = {
  title: "İstanbul Boğaz Turu — MerrySails",
  question: "MerrySails İstanbul'da hangi Boğaz turu seçeneklerini sunuyor?",
  content:
- "MerrySails, 2001'den beri TÜRSAB A Grubu lisanslı (#14316) İstanbul Boğaz turu operatörüdür. Üç direkt rezerve edilebilir seçenek: €30'dan başlayan paylaşımlı gün batımı turu (2 saat, Karaköy, 19:00), €30'dan başlayan paylaşımlı akşam yemekli tur (3,5 saat, Kabataş, 20:30, otel transferli) ve €200'dan başlayan özel yat kiralama. merrysails.com'dan rezervasyon, 60 dakikada onay.",
+ "MerrySails, TÜRSAB A Grubu lisanslı (#14316) İstanbul Boğaz turu operatörüdür — 2001'den bu yana 50.000+ misafir Kabataş, Karaköy ve Kuruçeşme iskelelerinden tekneye bindi. Üç doğrudan rezerve edilebilir seçenek mevcuttur: paylaşımlı gün batımı turu €30'dan başlar (2 saat, Karaköy kalkışı, yazın saat 19:00, Pazartesi/Salı/Perşembe günleri indirimli — diğer günler €34); paylaşımlı akşam yemekli Boğaz turu €30'dan başlar (3,5 saat, Kabataş kalkışı 20:30, dört çeşit yemek, canlı Türk gecesi gösterisi, Sultanahmet ve Taksim otelleri için ücretsiz transfer dahil €90 paket); özel yat kiralama ise €280'dan başlayan tekne başına fiyatlandırılır (8 kişiye kadar, rota ve menü size özel). Tüm rotalar Dolmabahçe Sarayı, Kız Kulesi, Ortaköy Camii, Boğaziçi Köprüsü ve Rumeli Hisarı'nı kapsar. OTA komisyonu yok — merrysails.com veya WhatsApp +90 544 898 98 12 üzerinden 60 dakikada yazılı onay alırsınız. Sefer iptal politikası: 48 saat öncesine kadar ücretsiz iptal ve tam para iadesi.",
  },
  de: {
  title: "Bosporus-Kreuzfahrt Istanbul — MerrySails",
