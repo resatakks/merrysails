@@ -8,11 +8,18 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
+    id: "meryem-yildiz",
+    name: "Meryem Yıldız",
+    role: "TÜRSAB Licensed Tour Operator & Founder",
+    credential: "TÜRSAB A-Group License #14316, holder for MerrySails + GoldenSunsetTour + MerryTourism",
+    bio: "TÜRSAB A-Group licensed tour operator and the founder behind the parent travel agency that operates MerrySails (Bosphorus cruises & yacht charters), GoldenSunsetTour (sunset & dinner cruises) and MerryTourism (Istanbul airport transfers and multi-vertical tourism). All three brands share the same TÜRSAB licensee since 2001.",
+  },
+  {
     id: "captain-ahmet",
     name: "Captain Ahmet Yıldız",
-    role: "Founder & Senior Captain",
-    credential: "TURSAB Licensed, 25+ years maritime experience",
-    bio: "Founded Merry Tourism in 2001. Over 25 years navigating the Bosphorus, Captain Ahmet Yıldız has personally guided more than 50,000 guests through Istanbul's waterways.",
+    role: "Senior Captain",
+    credential: "Turkish Maritime Authority master license, 25+ years Bosphorus experience",
+    bio: "Senior captain at MerrySails. Over 25 years navigating the Bosphorus, Captain Ahmet Yıldız has personally guided more than 50,000 guests through Istanbul's waterways under a Turkish Maritime Authority master license.",
   },
   {
     id: "editorial",

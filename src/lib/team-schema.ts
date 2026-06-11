@@ -41,18 +41,35 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     schemaId: `${SITE_URL}/#person-captain-ahmet`,
   },
   {
+    slug: "meryem-yildiz",
+    name: "Meryem Yıldız",
+    givenName: "Meryem",
+    familyName: "Yıldız",
+    jobTitle: "TÜRSAB Licensed Tour Operator & Founder",
+    bio: "TÜRSAB A-Group licensed tour operator (license #14316) and the founder behind MERYEM YILDIZ TURIZM SEYAHAT ACENTASI, which trades publicly under three brands: MerrySails (Bosphorus cruises & yacht charters), GoldenSunsetTour (sunset & dinner cruises), and MerryTourism (Istanbul airport transfers and multi-vertical tourism). All three brands share the same TÜRSAB licensee and the same regulatory entity since 2001.",
+    image: "/team/meryem-yildiz.jpg",
+    knowsAbout: [
+      "TÜRSAB tourism licensing",
+      "Turkish travel agency regulation",
+      "Multi-brand tour operator management",
+      "Bosphorus cruise operations",
+      "Istanbul airport transfer operations",
+    ],
+    schemaId: `${SITE_URL}/#person-meryem-yildiz`,
+  },
+  {
     slug: "resat-akkus",
     name: "Resat Akkus",
     givenName: "Resat",
     familyName: "Akkus",
-    jobTitle: "Founder & Operations Director",
-    bio: "TURSAB A-Group licensed operator since 2001, Resat built MerrySails alongside sister brands GoldenSunsetTour and MerryTourism. The portfolio has now served 50,000+ guests and remains the only direct-book boutique Bosphorus operator in Istanbul.",
+    jobTitle: "Operations Director",
+    bio: "Operations Director at MerrySails, responsible for the day-to-day cruise schedule, captain assignments, fleet maintenance, partner-pier coordination (Kabataş, Beşiktaş, Üsküdar), and guest support workflows. Works under the TÜRSAB A-Group license held by Meryem Yıldız, the parent licensee of MerrySails, GoldenSunsetTour and MerryTourism.",
     image: "/team/resat-akkus.jpg",
     knowsAbout: [
       "Tour operations",
-      "Turkish tourism licensing",
       "Bosphorus cruise pricing",
       "Travel agency management",
+      "Fleet & captain coordination",
     ],
     schemaId: `${SITE_URL}/#person-resat`,
   },
@@ -94,13 +111,28 @@ export const teamPersonSchemas = TEAM_MEMBERS.map((m) => ({
     ? {
         hasOccupation: {
           "@type": "Occupation",
-          name: "Founder & Operations Director",
+          name: "Operations Director",
           occupationLocation: { "@type": "City", name: "Istanbul" },
           skills: [
             "Tour operations",
-            "Turkish tourism licensing",
             "Bosphorus cruise pricing",
+            "Fleet and captain coordination",
             "Travel agency management",
+          ],
+        },
+      }
+    : {}),
+  ...(m.slug === "meryem-yildiz"
+    ? {
+        jobTitle: "TÜRSAB Licensed Tour Operator & Founder",
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "TÜRSAB Licensed Tour Operator",
+          occupationLocation: { "@type": "City", name: "Istanbul" },
+          skills: [
+            "TÜRSAB tourism licensing",
+            "Turkish travel agency regulation",
+            "Multi-brand tour operator management",
           ],
         },
         hasCredential: {

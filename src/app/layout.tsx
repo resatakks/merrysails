@@ -269,6 +269,65 @@ const organizationSchema = {
     },
   ],
   knowsAbout: ["Bosphorus Cruise Tours", "Yacht Charter Istanbul", "Private Boat Tours", "Dinner Cruise Istanbul", "Corporate Event Cruises"],
+  // Parent disclosure — same TÜRSAB licensee (Meryem Yıldız) operates
+  // MerrySails + GoldenSunsetTour + MerryTourism. MS hosts the canonical
+  // parent node; sibling brands reference by @id.
+  parentOrganization: { "@id": `${SITE_URL}/#parent-tursab-licensee` },
+};
+
+// Shared parent disclosure node — referenced by GoldenSunsetTour and
+// MerryTourism Organization schemas via @id. Hosted here on MerrySails as the
+// canonical disclosure surface for the multi-brand TÜRSAB licensee group.
+const parentTursabLicenseeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#parent-tursab-licensee`,
+  name: "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI",
+  alternateName: ["Meryem Yıldız Turizm", "TÜRSAB Licensed Operator (License #14316)"],
+  legalName: "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI",
+  url: SITE_URL,
+  description:
+    "TÜRSAB A-Group licensed Turkish travel agency (license #14316) trading publicly under three consumer brands: MerrySails, GoldenSunsetTour, and MerryTourism. Same licensee, same regulatory entity since 2001.",
+  foundingDate: "2001-01-01",
+  founder: {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person-meryem-yildiz`,
+    name: "Meryem Yıldız",
+    jobTitle: "TÜRSAB Licensed Tour Operator & Founder",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402",
+    addressLocality: "Fatih",
+    addressRegion: "İstanbul",
+    postalCode: "34093",
+    addressCountry: "TR",
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "TURSAB A Group License",
+    identifier: "14316",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "TURSAB — Association of Turkish Travel Agencies",
+      url: "https://www.tursab.org.tr",
+    },
+  },
+  subOrganization: [
+    { "@id": `${SITE_URL}/#organization` },
+    {
+      "@type": "Organization",
+      "@id": "https://goldensunsettour.com/#organization",
+      name: "GoldenSunsetTour",
+      url: "https://goldensunsettour.com",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.merrytourism.com/#organization",
+      name: "Merry Tourism",
+      url: "https://www.merrytourism.com",
+    },
+  ],
 };
 
 const websiteSchema = {
@@ -298,14 +357,47 @@ const captainSchema = {
   name: "Captain Ahmet Yıldız",
   givenName: "Ahmet",
   familyName: "Yıldız",
-  jobTitle: "Founder & Senior Captain",
-  description: "Founded Merry Tourism in 2001. Over 25 years navigating the Bosphorus, Captain Ahmet Yıldız has personally guided more than 50,000 guests through Istanbul's waterways.",
+  jobTitle: "Senior Captain",
+  description: "Senior captain at MerrySails. Over 25 years navigating the Bosphorus, Captain Ahmet Yıldız has personally guided more than 50,000 guests through Istanbul's waterways under a Turkish Maritime Authority master license.",
   worksFor: { "@id": `${SITE_URL}/#organization` },
   knowsAbout: ["Bosphorus Cruise", "Yacht Charter Istanbul", "Istanbul Maritime Tourism", "Private Boat Tours"],
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
     name: "TURSAB A-Group License",
     credentialCategory: "Professional License",
+  },
+  url: `${SITE_URL}/about`,
+};
+
+const meryemSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/#person-meryem-yildiz`,
+  inLanguage: BRAND_IN_LANGUAGE,
+  name: "Meryem Yıldız",
+  givenName: "Meryem",
+  familyName: "Yıldız",
+  jobTitle: "TÜRSAB Licensed Tour Operator & Founder",
+  description:
+    "TÜRSAB A-Group licensed tour operator (license #14316). Founder of the parent travel agency MERYEM YILDIZ TURIZM SEYAHAT ACENTASI, which operates MerrySails, GoldenSunsetTour and MerryTourism under the same single license.",
+  worksFor: { "@id": `${SITE_URL}/#parent-tursab-licensee` },
+  founderOf: { "@id": `${SITE_URL}/#parent-tursab-licensee` },
+  knowsAbout: [
+    "TÜRSAB tourism licensing",
+    "Turkish travel agency regulation",
+    "Multi-brand tour operator management",
+    "Bosphorus cruise operations",
+    "Istanbul airport transfer operations",
+  ],
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "TURSAB A Group License",
+    identifier: "14316",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "TURSAB — Association of Turkish Travel Agencies",
+      url: "https://www.tursab.org.tr",
+    },
   },
   url: `${SITE_URL}/about`,
 };
@@ -510,6 +602,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(captainSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(parentTursabLicenseeSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(meryemSchema) }}
         />
         {/* Meta Pixel — fires PageView on init; explicit events go through
             src/lib/meta-pixel.ts which also mirrors to /api/meta-capi for
