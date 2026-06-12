@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import CancelButton from "./CancelButton";
+import AISurveyAfterBooking from "@/components/conversion/AISurveyAfterBooking";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { parseReservationItems } from "@/lib/reservation-items";
@@ -89,6 +90,9 @@ export default async function ReservationDetailPage({ params }: { params: Promis
             {getReservationStatusLabel(normalizedStatus)}
           </span>
         </div>
+
+        {/* Post-booking AI discovery survey — measures ChatGPT/Gemini/Claude/Perplexity attribution */}
+        <AISurveyAfterBooking reservationId={r.reservationId} />
 
         {/* Main Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] overflow-hidden">
