@@ -83,8 +83,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "ortakoy-mosque",
-    title: "Ortaköy Mosque — Istanbul Bosphorus",
-    metaDescription: "Guide to Ortaköy Mosque (Büyük Mecidiye Camii) in Istanbul. History, architecture, visiting tips, and the iconic view from the Bosphorus.",
+    title: "Ortaköy Mosque 2026: Visit Tips + Cruise View",
+    metaDescription: "Ortaköy Mosque (Büyük Mecidiye Camii) guide — Bosphorus Bridge view, free entry, opening hours, and the cruise route that frames it best.",
     excerpt: "Ortaköy Mosque sits at the water's edge beneath the Bosphorus Bridge — creating what is arguably Istanbul's most iconic and photographed composition.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",
     keywords: ["ortakoy mosque", "istanbul mosque", "bosphorus mosque", "istanbul landmarks"],
@@ -285,8 +285,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "istanbul-bosphorus-bridges",
-    title: "Istanbul Bosphorus Bridges — Three Spans",
-    metaDescription: "Guide to Istanbul's three Bosphorus bridges. History, engineering facts, and the experience of sailing beneath them on a Bosphorus cruise.",
+    title: "3 Bosphorus Bridges Istanbul: Best Cruise Views",
+    metaDescription: "Sail under 3 Bosphorus bridges — Fatih Sultan Mehmet, 15 July, Yavuz Sultan Selim. Heights, lengths, night LED show, and the best cruise to see them all.",
     excerpt: "Three magnificent suspension bridges span the Bosphorus, connecting Europe and Asia — and sailing beneath them on a cruise is one of Istanbul's most thrilling experiences.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
     keywords: ["bosphorus bridge", "istanbul bridge", "bosphorus bridges", "istanbul landmarks"],
