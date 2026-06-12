@@ -132,7 +132,7 @@ export default async function GuidePage({
     description: cleanDescription,
     image: guide.image,
     datePublished: "2025-09-15",
-    dateModified: "2026-04-23",
+    dateModified: "2026-06-13",
     author: {
       "@type": "Organization",
       "@id": "https://merrysails.com/#organization",
