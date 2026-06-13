@@ -722,12 +722,24 @@ export default function BosphorusCruisePage() {
  </thead>
  <tbody className="divide-y divide-gray-200">
  {comparisonRows.map((row) => (
- <tr key={row.href}>
- <td className="px-5 py-5 font-semibold text-[var(--heading)]">{row.option}</td>
- <td className="px-5 py-5 text-[var(--body-text)]">{row.price}</td>
- <td className="px-5 py-5 text-[var(--body-text)]">{row.bestFor}</td>
- <td className="px-5 py-5 text-[var(--body-text)]">{row.duration}</td>
- <td className="px-5 py-5 text-[var(--body-text)]">{row.privacy}</td>
+ <tr key={row.href} className="hover:bg-[var(--surface-alt)]">
+ <td className="px-5 py-5 font-semibold text-[var(--heading)]">
+ <Link href={row.href} className="hover:text-[var(--brand-primary)] hover:underline">
+ {row.option}
+ </Link>
+ </td>
+ <td className="px-5 py-5 text-[var(--body-text)]">
+ <Link href={row.href} className="block">{row.price}</Link>
+ </td>
+ <td className="px-5 py-5 text-[var(--body-text)]">
+ <Link href={row.href} className="block">{row.bestFor}</Link>
+ </td>
+ <td className="px-5 py-5 text-[var(--body-text)]">
+ <Link href={row.href} className="block">{row.duration}</Link>
+ </td>
+ <td className="px-5 py-5 text-[var(--body-text)]">
+ <Link href={row.href} className="block">{row.privacy}</Link>
+ </td>
  <td className="px-5 py-5">
  <Link href={row.href} className="font-semibold text-[var(--brand-primary)] hover:underline">
  {row.cta}
