@@ -209,6 +209,10 @@ export default function BookingCalendar({
   const [infants, setInfants] = useState(0);
   const [selectedTime, setSelectedTime] = useState(initialTime ?? "");
   const [operations, setOperations] = useState<TourOperationClientSnapshot[]>([]);
+  // Clarity dead-click signal: users tap the disabled "Continue to booking"
+  // button when no time slot is picked. We flash the time-pill row + scroll
+  // it into view so the gating reason is obvious instead of silent.
+  const [timeNudge, setTimeNudge] = useState(false);
   const isPerGroup = priceMode === "perGroup";
   const operationsByDate = Object.fromEntries(
     operations.map((operation) => [operation.date, operation])
@@ -577,10 +581,23 @@ export default function BookingCalendar({
 
               {/* Time slot pills */}
               {timeOptions.length > 1 && (
-                <div>
+                <div
+                  id="time-slot-pills"
+                  className={`transition-all ${
+                    timeNudge && !normalizedSelectedTime
+                      ? "rounded-xl bg-amber-50 ring-2 ring-amber-300 p-2 -m-2"
+                      : ""
+                  }`}
+                  aria-busy={timeNudge}
+                >
                   <label className="text-sm font-medium mb-2 flex items-center gap-1.5 text-[var(--heading)]">
                     <Clock className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
                     {t.departureTime}
+                    {timeNudge && !normalizedSelectedTime && (
+                      <span className="ml-1 text-xs font-semibold text-amber-700">
+                        ←
+                      </span>
+                    )}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {timeOptions.map((time) => (
@@ -824,10 +841,30 @@ export default function BookingCalendar({
                 )}
               </div>
 
-              {/* Book button */}
+              {/* Book button — note: NOT disabled when only the time slot is
+                  missing. Instead we intercept the click and nudge the user to
+                  the time-pill row (Clarity showed dead-click rage on the
+                  disabled state). The sameDay-closed case stays disabled. */}
               <motion.button
-                onClick={handleBookNow}
-                disabled={
+                onClick={() => {
+                  if (sameDayClosedForSelectedDate) return;
+                  if (timeOptions.length > 1 && !normalizedSelectedTime) {
+                    setTimeNudge(true);
+                    const target = document.getElementById("time-slot-pills");
+                    if (target) {
+                      const top =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        110;
+                      window.scrollTo({ top, behavior: "smooth" });
+                    }
+                    window.setTimeout(() => setTimeNudge(false), 2000);
+                    return;
+                  }
+                  handleBookNow();
+                }}
+                disabled={sameDayClosedForSelectedDate}
+                aria-disabled={
                   sameDayClosedForSelectedDate ||
                   (timeOptions.length > 1 && !normalizedSelectedTime)
                 }

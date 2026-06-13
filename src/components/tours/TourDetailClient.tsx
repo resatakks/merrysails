@@ -614,6 +614,24 @@ export default function TourDetailClient({
         nextAvailableAddOns.some((item) => item.name === addon.name)
       )
     );
+
+    // Clarity 7d showed 18 sessions on dinner-cruise where users tapped a
+    // package card and got no visible feedback — the BookingCalendar lives in
+    // the sticky sidebar on desktop but is far down-scroll on mobile, so the
+    // selection looked silent. We now smooth-scroll to the calendar and pulse
+    // it briefly so the package→date→time funnel reads as one motion.
+    if (typeof window !== "undefined") {
+      const target = document.getElementById("booking-calendar");
+      if (target) {
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top, behavior: "smooth" });
+        target.classList.add("ring-2", "ring-[var(--brand-primary)]");
+        window.setTimeout(() => {
+          target.classList.remove("ring-2", "ring-[var(--brand-primary)]");
+        }, 1400);
+      }
+    }
   };
 
 
