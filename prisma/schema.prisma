@@ -72,16 +72,22 @@ model ExternalJob {
   id    String @id @default(cuid())
   jobId String @unique // EXT-MRY-2026-0001
 
-  // The company we're issuing the voucher/invoice FOR
-  // (their branding appears on the PDF, not MerrySails')
-  companyName    String
+  // Event type — drives the front-end template that pre-fills inclusions,
+  // duration, voucher title. Free-text fallback "custom".
+  eventType    String  @default("custom") // engagement | birthday | wedding | corporate | family | custom
+
+  // Optional B2B "Bill to" company. When present, invoice shows a Bill-to
+  // block with companyName + taxId + address. When null, invoice renders as
+  // a normal B2C customer invoice. Voucher/invoice branding is ALWAYS
+  // MerrySails — companyLogoUrl is no longer used to override the header.
+  companyName    String?
   companyAddress String?
   companyTaxId   String?
   companyEmail   String?
   companyPhone   String?
   companyLogoUrl String?
 
-  // End customer the external company is serving
+  // End customer
   customerName    String
   customerEmail   String?
   customerPhone   String?
@@ -92,20 +98,31 @@ model ExternalJob {
   serviceDescription String?
   jobDate            DateTime
   jobTime            String?
+  durationHours      Float?
   guests             Int     @default(1)
   pickupPoint        String?
+
+  // What's included on board — bulleted list rendered on voucher.
+  // e.g. ["Catering & food service", "Table decorations", "Music speaker"]
+  inclusions       String[] @default([])
+  voucherExtraTitle String? // e.g. "Engagement Package & Schedule"
 
   // Pricing & payment
   amount          Float
   currency        String  @default("EUR")
   paymentMethod   String  @default("cash_on_board") // cash_on_board | card_on_board | card_paid | bank_transfer
   paymentStatus   String  @default("pending") // pending | paid | refunded
+  paymentNotes    String? // free-text payment instructions for voucher/invoice
   internalCostEur Float?
 
   // Status & ops
   status       String  @default("new") // new | confirmed | completed | cancelled
   notes        String?
   internalNote String?
+
+  // Email tracking
+  emailSent      Boolean   @default(false)
+  emailSentAt    DateTime?
 
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
@@ -116,6 +133,7 @@ model ExternalJob {
   @@index([status])
   @@index([jobDate])
   @@index([companyName])
+  @@index([eventType])
   @@index([createdAt])
 }
 
@@ -375,4 +393,29 @@ model NewsletterSubscriber {
 
   @@index([createdAt])
   @@index([source])
+}
+
+// ─── Post-booking review request (operator-pending Twilio approval) ───
+// Tracks WhatsApp review-request messages sent 24-72h after a completed
+// reservation. Skeleton state — cron route exists but is gated on
+// WHATSAPP_API_TOKEN being set. See:
+//   src/app/api/cron/review-request/route.ts
+//   ~/.agents/scripts/manual-helpers/whatsapp-review-request-template.ts
+
+model ReviewRequest {
+  id            String   @id @default(cuid())
+  reservationId String   @unique // FK by value to Reservation.reservationId
+  customerPhone String
+  customerName  String
+  locale        String   @default("en")
+  channel       String   @default("whatsapp") // whatsapp | sms | email
+  status        String   @default("pending")  // pending | sent | failed | skipped
+  providerMsgId String? // Twilio SID or Cloud API message id
+  errorMessage  String?
+  sentAt        DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
 }
