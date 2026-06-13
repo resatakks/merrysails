@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { DM_Sans } from "next/font/google";
 import Script from "next/script";
 import AnalyticsRouteTracker from "@/components/analytics/AnalyticsRouteTracker";
+import EngagementTracker from "@/components/analytics/EngagementTracker";
 import ClarityIdentityProvider from "@/components/analytics/ClarityIdentityProvider";
 import ErrorTracker from "@/components/analytics/ErrorTracker";
 import GlobalContactClickTracker from "@/components/analytics/GlobalContactClickTracker";
@@ -674,6 +675,7 @@ export default function RootLayout({
         ) : null}
         <Suspense fallback={null}>
           <AnalyticsRouteTracker />
+          <EngagementTracker />
           <ClarityIdentityProvider />
           <ErrorTracker />
         </Suspense>

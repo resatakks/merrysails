@@ -910,6 +910,43 @@ export function trackWhatsAppClick(params: {
   });
 }
 
+// --- Engagement / behavior tracking (2026-06-13) ---------------------------
+// Universal events: scroll_depth, time_on_page, cta_view, external_link_click,
+// faq_open. Cruise-vertical: package_select, time_select, passenger_count_change.
+
+export function trackScrollDepth(percent: 25 | 50 | 75 | 90) {
+  trackEvent("scroll_depth", { percent, page_path: typeof window !== "undefined" ? window.location.pathname : undefined });
+}
+
+export function trackTimeOnPage(seconds: 10 | 30 | 60 | 180) {
+  trackEvent("time_on_page", { seconds, page_path: typeof window !== "undefined" ? window.location.pathname : undefined });
+}
+
+export function trackCtaView(label: string, location?: string) {
+  trackEvent("cta_view", { click_label: label, click_location: location });
+}
+
+export function trackExternalLinkClick(href: string, label?: string) {
+  trackEvent("external_link_click", { external_url: href, click_label: label });
+}
+
+export function trackFaqOpen(question: string, location?: string) {
+  trackEvent("faq_open", { faq_question: question, click_location: location });
+}
+
+// Cruise vertical
+export function trackPackageSelect(packageName: string, tourSlug?: string) {
+  trackEvent("package_select", { package_name: packageName, tour_slug: tourSlug });
+}
+
+export function trackTimeSelect(time: string, tourSlug?: string) {
+  trackEvent("time_select", { selected_time: time, tour_slug: tourSlug });
+}
+
+export function trackPassengerCountChange(count: number, tourSlug?: string) {
+  trackEvent("passenger_count_change", { guests: count, tour_slug: tourSlug });
+}
+
 const CONTACT_NAVIGATION_DELAY_MS = 180;
 
 type ContactNavigationKind = "phone" | "whatsapp";
