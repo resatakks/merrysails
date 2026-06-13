@@ -5,6 +5,14 @@ export const PHONE = "+905448989812";
 export const PHONE_DISPLAY = "+90 544 898 98 12";
 export const EMAIL = "info@merrysails.com";
 export const WHATSAPP_URL = "https://wa.me/905448989812";
+
+// Google Business Profile review URL — operator-facing CTA for direct review
+// asks (post-cruise WhatsApp, post-booking email, in-cabin QR). Discovered via
+// Places API findplacefromtext 2026-06-13. Also injected into Organization
+// sameAs so AI engines + Google entity graph reconcile the brand to its GBP.
+export const GBP_PLACE_ID = "ChIJo5HLfp5GCgsRKqlEhm13b3k";
+export const GBP_REVIEW_URL = `https://search.google.com/local/writereview?placeid=${GBP_PLACE_ID}`;
+
 export const ADDRESS = "Alemdar Mah. Divanyolu Cad. Oğul Han No:62 İç Kapı No: 402, 34093 Fatih, Istanbul, Turkey";
 export const MAX_BOOKING_GUESTS = 25;
 export const TURSAB_LICENSE_NUMBER = "14316";

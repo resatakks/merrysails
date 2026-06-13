@@ -153,6 +153,10 @@ const organizationSchema = {
     "https://www.instagram.com/merrysails",
     "https://www.facebook.com/merrysails",
     "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
+    // 2026-06-13: GBP review URL — anchors brand to Google Business Profile
+    // entity (Place ID ChIJo5HLfp5GCgsRKqlEhm13b3k). Improves Knowledge Graph
+    // reconciliation + lets AI engines surface "leave a review" CTA inline.
+    "https://search.google.com/local/writereview?placeid=ChIJo5HLfp5GCgsRKqlEhm13b3k",
     "https://kingsworldtransfer.com",
     "https://acilkaseniz.com",
   ],
