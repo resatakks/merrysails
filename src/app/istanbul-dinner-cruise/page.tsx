@@ -830,6 +830,34 @@ export default async function IstanbulDinnerCruisePage({
             </div>
           </section>
 
+          {/* Information Gain — operator first-hand pricing logic + the
+              "why the cheap ones aren't cheap" insight competitor OTA listings
+              never publish. Sub-query fan-out: "how much is a dinner cruise". */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+              How much is a Bosphorus dinner cruise in Istanbul — and why the cheapest ticket isn&apos;t the cheapest?
+            </h2>
+            <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              Our shared seated dinner cruise starts at €30 per person — a fixed direct-booking price with
+              no agency commission. After running this product for years on the Bosphorus, here is what
+              we tell guests who message us comparing it against the €15-€20 tickets they find on listing
+              sites: the headline price almost never matches the on-board reality. The very cheap tickets
+              typically split into a low base fare plus paid drinks, paid table upgrades, a mandatory
+              &quot;animation&quot; surcharge, or a forced shared-transfer add-on that quietly doubles the
+              total. Our €30 fare includes the seated three-course dinner, the full 2.5-hour Bosphorus
+              route past Dolmabahçe, Ortaköy and the bridges, and the live Turkish-night programme — the
+              extras we charge separately (premium drinks, hotel pickup) are listed line by line before
+              you pay, not sprung on you at the pier.
+            </p>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              The practical test we suggest: ask any operator what the all-in price is with dinner, the
+              cruise, and the show before you decide. As a TÜRSAB A-Group licensed operator (#14316) that
+              has hosted 50,000+ guests on the Bosphorus since 2001, the figure we confirm at booking is
+              the figure you pay — that transparency is the actual difference between a €30 dinner cruise
+              and a &quot;€15&quot; one.
+            </p>
+          </section>
+
           {/* Featured reading — internal-link surface from pillar to high-intent
               decision/planning posts. Anchor text uses descriptive titles rather
               than exact-match keywords (SEO best practice: anchor variety). */}

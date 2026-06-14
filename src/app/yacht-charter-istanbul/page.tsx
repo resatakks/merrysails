@@ -882,6 +882,35 @@ export default async function YachtCharterIstanbulPage({
             </div>
           </section>
 
+          {/* Information Gain — operator first-hand cost breakdown + sizing
+              note that competitor listing pages do not publish. Sub-query
+              fan-out: "how much does a yacht charter cost in Istanbul". */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+              How much does a private yacht charter in Istanbul cost in 2026?
+            </h2>
+            <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              The honest answer from running this fleet ourselves: the deck price is the floor, not the
+              total. A two-hour Bosphorus charter on our smallest boutique yacht starts at €280 per
+              yacht (not per person) with captain, crew, fuel, soft drinks and snacks already included.
+              From there the number moves on three levers — duration, group size and catering. Three
+              hours or more drops a flat 10% off the deck rate automatically; the 36-guest group deck
+              and the 150-guest event yacht carry higher base rates because they run a larger crew. The
+              extras that surprise first-time charterers are always the same: hot-food catering, alcohol,
+              a DJ or live act, and proposal styling. We quote those line by line rather than folding
+              them into a single inflated headline price, so a couple booking a sunset proposal and a
+              company booking a 40-guest reception start from the same transparent deck figure.
+            </p>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+              The most expensive mistake we watch guests make is sizing up "to be safe". A 12-guest party
+              on the 40-guest deck pays for a vessel and crew they never fill. Across 50,000+ guests since
+              2001, the bookings that land on budget are the ones that match deck size to the real head
+              count and then add hours — not capacity. As a TÜRSAB A-Group licensed operator (#14316),
+              every charter is fully insured and the price you confirm at merrysails.com is the price you
+              pay, with no agency commission layered on top.
+            </p>
+          </section>
+
           {/* Featured reading — yacht-charter-specific planning content.
               Anchor text varies (sentence-form, not exact-match) per SEO
               best practice for natural internal-link patterns. */}
