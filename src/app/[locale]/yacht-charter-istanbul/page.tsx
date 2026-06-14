@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import LocaleHelpfulResources from "@/components/layout/LocaleHelpfulResources";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/constants";
-import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { ACTIVE_LOCALES, isActiveLocale, getBcp47, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import FleetShowcase from "@/components/yacht/FleetShowcase";
 import SocialProofBadges from "@/components/ui/SocialProofBadges";
@@ -653,6 +653,7 @@ export default async function LocaleYachtCharterPage({
  "Istanbul Yacht Charter",
  ],
  description: t.description,
+ inLanguage: getBcp47(locale),
  url: canonicalUrl,
  image: yachtTour.image,
  provider: { "@id": `${SITE_URL}/#organization` },
@@ -720,6 +721,7 @@ export default async function LocaleYachtCharterPage({
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
+ inLanguage: getBcp47(locale),
  mainEntity: t.faqs.map((faq) => ({
  "@type": "Question",
  name: faq.question,

@@ -13,7 +13,7 @@ import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
-import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { isActiveLocale, getBcp47, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import RelatedTours from "@/components/ui/RelatedTours";
@@ -603,6 +603,7 @@ export default async function LocaleSunsetCruisePage({
  alternateName: ["Bosphorus Sunset Cruise", "Boğaz Gün Batımı Turu", "Bosporus Sonnenuntergang Kreuzfahrt", "Croisière Coucher de Soleil Bosphore"],
  description: sunsetTour.description,
  touristType: "Cultural Tourism",
+ inLanguage: getBcp47(locale),
  url: canonicalUrl,
  image: sunsetTour.image,
  provider: { "@id": `${SITE_URL}/#organization` },
@@ -630,6 +631,7 @@ export default async function LocaleSunsetCruisePage({
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
+ inLanguage: getBcp47(locale),
  mainEntity: t.faqs.map((f) => ({
  "@type": "Question",
  name: f.q,

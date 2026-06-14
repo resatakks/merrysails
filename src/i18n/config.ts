@@ -93,3 +93,26 @@ export const LOCALIZED_ROUTES = new Set([
 export function getHtmlDir(locale: SiteLocale): "ltr" | "rtl" {
   return RTL_LOCALES.includes(locale) ? "rtl" : "ltr";
 }
+
+// BCP-47 language tags for schema.org `inLanguage`. Keep these region/script
+// codes consistent with the per-page `htmlLang` fields (tr-TR, de-DE, zh-CN…).
+// zh → zh-CN: Simplified Chinese, mainland target (Baidu/China visa-free market).
+const BCP47_TAGS: Record<SiteLocale, string> = {
+  en: "en-US",
+  tr: "tr-TR",
+  de: "de-DE",
+  es: "es-ES",
+  fr: "fr-FR",
+  it: "it-IT",
+  pt: "pt-PT",
+  ru: "ru-RU",
+  hu: "hu-HU",
+  nl: "nl-NL",
+  sa: "ar-SA",
+  el: "el-GR",
+  zh: "zh-CN",
+};
+
+export function getBcp47(locale: string): string {
+  return BCP47_TAGS[locale as SiteLocale] ?? "en-US";
+}

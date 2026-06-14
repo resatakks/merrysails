@@ -7,7 +7,7 @@ import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
 import { getTourBySlug, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
-import { isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { isActiveLocale, getBcp47, type SiteLocale } from "@/i18n/config";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -915,7 +915,7 @@ export default async function LocaleDinnerCruisePage({
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- inLanguage: locale,
+ inLanguage: getBcp47(locale),
  mainEntity: t.faqs.map((f) => ({
  "@type": "Question",
  name: f.q,
@@ -1072,7 +1072,7 @@ export default async function LocaleDinnerCruisePage({
  "@id": `${canonicalUrl}#menu`,
  name: t.packageSectionTitle,
  url: canonicalUrl,
- inLanguage: locale,
+ inLanguage: getBcp47(locale),
  hasMenuSection: trMenuSections,
  };
 
