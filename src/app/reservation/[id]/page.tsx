@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import CancelButton from "./CancelButton";
 import AISurveyAfterBooking from "@/components/conversion/AISurveyAfterBooking";
+import ReviewCtaBlock from "@/components/conversion/ReviewCtaBlock";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { parseReservationItems } from "@/lib/reservation-items";
@@ -243,6 +244,10 @@ export default async function ReservationDetailPage({ params }: { params: Promis
         {/* /bosphorus-cruise CTA removed 2026-05-26 — route parked */}
 
         <ReservationDocumentCenter reservationId={r.reservationId} />
+
+        {/* Review CTA — post-conversion happy moment. Drive Google review
+            velocity (operator goal). Hidden on cancelled bookings. */}
+        {normalizedStatus !== "cancelled" && <ReviewCtaBlock />}
 
         {/* Actions */}
         <div className="space-y-2.5">
