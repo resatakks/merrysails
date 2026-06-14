@@ -87,6 +87,14 @@ function hreflangXml(path: string): string {
   return lines.join("\n");
 }
 
+// Symmetric en↔tr hreflang for the best-cruise-companies listicle, which is
+// built in English (root) and Turkish (/tr) only — no de/fr/nl variants.
+const bestCruiseListicleHreflang = [
+  `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(`${SITE_URL}/best-bosphorus-cruise-istanbul-2026`)}"/>`,
+  `    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(`${SITE_URL}/best-bosphorus-cruise-istanbul-2026`)}"/>`,
+  `    <xhtml:link rel="alternate" hreflang="tr" href="${escapeXml(`${SITE_URL}/tr/best-bosphorus-cruise-istanbul-2026`)}"/>`,
+].join("\n");
+
 // Build hreflang block for a locale page
 function hreflangLocaleXml(path: string, thisLocale: string): string {
   const lines: string[] = [
@@ -196,6 +204,11 @@ export function GET() {
     { url: `${SITE_URL}/guides`, changefreq: "weekly", priority: "0.7", lastmod: contentLastmod, hreflang: hreflangXml("/guides") },
     { url: `${SITE_URL}/compare-bosphorus-cruises`, changefreq: "monthly", priority: "0.85", lastmod: contentLastmod },
     { url: `${SITE_URL}/best-bosphorus-sunset-cruise-2026`, changefreq: "monthly", priority: "0.82", lastmod: contentLastmod },
+    // Best-cruise-companies listicle exists in EN (root) + TR only — emit a
+    // symmetric en↔tr hreflang cluster inline (NOT hreflangXml, which would add
+    // de/fr/nl alternates pointing at non-existent pages = asymmetric harm).
+    { url: `${SITE_URL}/best-bosphorus-cruise-istanbul-2026`, changefreq: "monthly", priority: "0.88", lastmod: contentLastmod, hreflang: bestCruiseListicleHreflang },
+    { url: `${SITE_URL}/tr/best-bosphorus-cruise-istanbul-2026`, changefreq: "monthly", priority: "0.85", lastmod: contentLastmod, hreflang: bestCruiseListicleHreflang },
     { url: `${SITE_URL}/istanbul-cruise-faq`, changefreq: "monthly", priority: "0.80", lastmod: contentLastmod },
     { url: `${SITE_URL}/about`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/about") },
     { url: `${SITE_URL}/contact`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/contact") },
