@@ -287,6 +287,27 @@ const nextConfig: NextConfig = {
         destination: "/bosphorus-cruise-departure-points",
         permanent: true,
       },
+      // DMCA recovery (2026-06-16): bare topic-slugs that have always 404'd
+      // (never existed as routes — confirmed via git history) but match the
+      // intent of a new clean-slug page shipped in 3f47213. 301 them to the
+      // matching clean slug so any branded SERP / inbound links land on the
+      // single intended canonical instead of a dead page. These are NOT the
+      // DMCA-tainted pillars (those stay live, no 301 — avoids flag transfer).
+      {
+        source: "/private-bosphorus-sunset-cruise",
+        destination: "/private-sunset-cruise-bosphorus-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/bosphorus-dinner-cruise",
+        destination: "/bosphorus-evening-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/private-bosphorus-dinner-yacht-cruise",
+        destination: "/private-bosphorus-dinner-yacht-charter",
+        permanent: true,
+      },
     ];
   },
   async headers() {
