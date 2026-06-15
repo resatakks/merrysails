@@ -148,11 +148,14 @@ export function GET() {
     // DMCA-recovery clean-slug commercial pages (2026-06-15) — fresh URLs for
     // the deindexed money-page concepts. Original copy, clean data-layer images.
     { url: `${SITE_URL}/private-sunset-cruise-bosphorus-istanbul`, changefreq: "weekly", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/private-sunset-cruise-bosphorus-istanbul") },
-    { url: `${SITE_URL}/istanbul-yacht-charter-rental`, changefreq: "weekly", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/istanbul-yacht-charter-rental") },
     { url: `${SITE_URL}/bosphorus-evening-dinner-cruise`, changefreq: "weekly", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/bosphorus-evening-dinner-cruise") },
-    { url: `${SITE_URL}/istanbul-dinner-cruise-bosphorus`, changefreq: "weekly", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/istanbul-dinner-cruise-bosphorus") },
-    { url: `${SITE_URL}/sunset-cruise-istanbul-tickets-booking`, changefreq: "weekly", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/sunset-cruise-istanbul-tickets-booking") },
-    { url: `${SITE_URL}/private-bosphorus-dinner-yacht-charter`, changefreq: "weekly", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/private-bosphorus-dinner-yacht-charter") },
+    // DMCA cannibalization resolution (2026-06-16): four clean slugs removed from
+    // sitemap because they now 301 -> their established indexed pillar (one
+    // indexable URL per intent). Sitemap must never list a redirecting URL.
+    // istanbul-yacht-charter-rental -> /yacht-charter-istanbul
+    // istanbul-dinner-cruise-bosphorus -> /istanbul-dinner-cruise
+    // sunset-cruise-istanbul-tickets-booking -> /sunset-cruise-tickets-istanbul
+    // private-bosphorus-dinner-yacht-charter -> /private-bosphorus-dinner-cruise
     { url: `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod, hreflang: hreflangXml("/private-dinner-cruise-for-couples-istanbul") },
     // 0-impression niche event pages (3-month GSC) — kept for Ads landing, but deprioritized organically per ROADMAP audit 2026-05-17
     { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-rental-istanbul") },

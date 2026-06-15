@@ -241,16 +241,6 @@ export const commercialIntents: CommercialIntent[] = [
     preserveIndexedUrl: false,
   },
   {
-    keyword: { en: "istanbul yacht charter rental" },
-    title: { en: "Charter buyers who want to rent the whole boat by headcount" },
-    description: {
-      en: "Guests renting a private Bosphorus yacht should use the charter rental page to match the right vessel, crew and route.",
-    },
-    href: "/istanbul-yacht-charter-rental",
-    targetType: "service-page",
-    preserveIndexedUrl: false,
-  },
-  {
     keyword: { en: "bosphorus evening dinner cruise" },
     title: { en: "Evening-sailing buyers who want dinner and a show on the water" },
     description: {
@@ -260,34 +250,12 @@ export const commercialIntents: CommercialIntent[] = [
     targetType: "service-page",
     preserveIndexedUrl: false,
   },
-  {
-    keyword: { en: "istanbul dinner cruise bosphorus" },
-    title: { en: "Dinner-cruise buyers choosing a package on the classic evening route" },
-    description: {
-      en: "Guests booking the Istanbul dinner cruise should use this page to match a Silver or Gold package before reserving.",
-    },
-    href: "/istanbul-dinner-cruise-bosphorus",
-    targetType: "service-page",
-    preserveIndexedUrl: false,
-  },
-  {
-    keyword: { en: "sunset cruise istanbul tickets booking" },
-    title: { en: "Sunset buyers ready to confirm a ticket tier and a date" },
-    description: {
-      en: "Guests set on the shared golden-hour sailing should use the sunset tickets and booking page for tiers and the midweek price.",
-    },
-    href: "/sunset-cruise-istanbul-tickets-booking",
-    targetType: "service-page",
-    preserveIndexedUrl: false,
-  },
-  {
-    keyword: { en: "private bosphorus dinner yacht charter" },
-    title: { en: "Buyers who want a private four-course dinner on their own yacht" },
-    description: {
-      en: "Groups who want a private evening dinner charter rather than the shared dinner cruise should start on the private dinner yacht page.",
-    },
-    href: "/private-bosphorus-dinner-yacht-charter",
-    targetType: "service-page",
-    preserveIndexedUrl: false,
-  },
+  // DMCA cannibalization resolution (2026-06-16): the four clean slugs that
+  // duplicated established indexed pillars (yacht charter, dinner cruise,
+  // sunset tickets, private dinner) now 301 -> their pillar. Their homepage
+  // intent cards were removed here because the original pillar cards above
+  // (yacht-charter-istanbul, istanbul-dinner-cruise, sunset-cruise-tickets-
+  // istanbul) already surface those intents — keeping both would link the
+  // homepage to redirecting URLs and re-create the cannibalization. The two
+  // genuinely distinct angles (private-sunset, evening-dinner) are retained.
 ];

@@ -298,14 +298,55 @@ const nextConfig: NextConfig = {
         destination: "/private-sunset-cruise-bosphorus-istanbul",
         permanent: true,
       },
+      // Old flat public-sunset URL (pre-/cruises/ move) — GSC "Not found (404)"
+      // 16-URL bucket 2026-06-16. 301 to the live public sunset page (not the
+      // DMCA-tainted /sunset-cruise-tickets-istanbul; this flat slug was never
+      // in the Lumen notice).
+      {
+        source: "/bosphorus-sunset-cruise",
+        destination: "/cruises/bosphorus-sunset-cruise",
+        permanent: true,
+      },
       {
         source: "/bosphorus-dinner-cruise",
         destination: "/bosphorus-evening-dinner-cruise",
         permanent: true,
       },
+      // DMCA cannibalization resolution (2026-06-16): GSC URL Inspection proved
+      // the four "DMCA-tainted" pillars were NEVER deindexed — all return
+      // verdict=PASS "Submitted and indexed" and serve impressions (yacht 484imp
+      // pos22.9, sunset-tickets pos7.2, private-dinner pos10.9). The four clean
+      // slugs shipped in 3f47213 are 0 clicks / 0 imp / ~1 day old with no
+      // independent equity, so they cannibalize the established pillars. One
+      // indexable URL per intent => 301 each new slug -> its pillar (content is
+      // already clean ⇒ no re-file risk; consolidates the minimal freshness
+      // signal onto the page that already ranks/converts).
+      {
+        source: "/istanbul-yacht-charter-rental",
+        destination: "/yacht-charter-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/istanbul-dinner-cruise-bosphorus",
+        destination: "/istanbul-dinner-cruise",
+        permanent: true,
+      },
+      {
+        source: "/sunset-cruise-istanbul-tickets-booking",
+        destination: "/sunset-cruise-tickets-istanbul",
+        permanent: true,
+      },
+      {
+        source: "/private-bosphorus-dinner-yacht-charter",
+        destination: "/private-bosphorus-dinner-cruise",
+        permanent: true,
+      },
+      // Chain-flatten: the dead bare slug below previously 301'd to the clean
+      // slug above; now that the clean slug 301s onward to the pillar, point the
+      // dead slug straight at the pillar so there is no 2-hop redirect chain.
       {
         source: "/private-bosphorus-dinner-yacht-cruise",
-        destination: "/private-bosphorus-dinner-yacht-charter",
+        destination: "/private-bosphorus-dinner-cruise",
         permanent: true,
       },
     ];

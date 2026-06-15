@@ -706,6 +706,9 @@ export default async function IstanbulDinnerCruisePage({
               <Link href="/kabatas-dinner-cruise-istanbul" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">
                 Kabatas dinner boarding
               </Link>
+              <Link href="/bosphorus-evening-dinner-cruise" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">
+                Bosphorus evening dinner cruise
+              </Link>
             </div>
           </section>
 
