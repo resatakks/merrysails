@@ -230,4 +230,64 @@ export const commercialIntents: CommercialIntent[] = [
     targetType: "commercial-guide",
     preserveIndexedUrl: true,
   },
+  {
+    keyword: { en: "private sunset cruise bosphorus istanbul" },
+    title: { en: "Private golden-hour buyers who want the whole yacht to themselves" },
+    description: {
+      en: "Groups who want the sunset hour to themselves should start on the private sunset cruise page before any shared sailing.",
+    },
+    href: "/private-sunset-cruise-bosphorus-istanbul",
+    targetType: "service-page",
+    preserveIndexedUrl: false,
+  },
+  {
+    keyword: { en: "istanbul yacht charter rental" },
+    title: { en: "Charter buyers who want to rent the whole boat by headcount" },
+    description: {
+      en: "Guests renting a private Bosphorus yacht should use the charter rental page to match the right vessel, crew and route.",
+    },
+    href: "/istanbul-yacht-charter-rental",
+    targetType: "service-page",
+    preserveIndexedUrl: false,
+  },
+  {
+    keyword: { en: "bosphorus evening dinner cruise" },
+    title: { en: "Evening-sailing buyers who want dinner and a show on the water" },
+    description: {
+      en: "Guests after a seated dinner, Turkish-night show and DJ on the Bosphorus should start on the evening dinner cruise page.",
+    },
+    href: "/bosphorus-evening-dinner-cruise",
+    targetType: "service-page",
+    preserveIndexedUrl: false,
+  },
+  {
+    keyword: { en: "istanbul dinner cruise bosphorus" },
+    title: { en: "Dinner-cruise buyers choosing a package on the classic evening route" },
+    description: {
+      en: "Guests booking the Istanbul dinner cruise should use this page to match a Silver or Gold package before reserving.",
+    },
+    href: "/istanbul-dinner-cruise-bosphorus",
+    targetType: "service-page",
+    preserveIndexedUrl: false,
+  },
+  {
+    keyword: { en: "sunset cruise istanbul tickets booking" },
+    title: { en: "Sunset buyers ready to confirm a ticket tier and a date" },
+    description: {
+      en: "Guests set on the shared golden-hour sailing should use the sunset tickets and booking page for tiers and the midweek price.",
+    },
+    href: "/sunset-cruise-istanbul-tickets-booking",
+    targetType: "service-page",
+    preserveIndexedUrl: false,
+  },
+  {
+    keyword: { en: "private bosphorus dinner yacht charter" },
+    title: { en: "Buyers who want a private four-course dinner on their own yacht" },
+    description: {
+      en: "Groups who want a private evening dinner charter rather than the shared dinner cruise should start on the private dinner yacht page.",
+    },
+    href: "/private-bosphorus-dinner-yacht-charter",
+    targetType: "service-page",
+    preserveIndexedUrl: false,
+  },
 ];
