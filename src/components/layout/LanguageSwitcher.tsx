@@ -5,10 +5,31 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { ACTIVE_LOCALES, LOCALE_LABELS, LOCALIZED_ROUTES, type SiteLocale } from "@/i18n/config";
+import { RU_ENABLED_ROUTES, ZH_ENABLED_ROUTES } from "@/i18n/localized-routes";
 import {
   detectChromeLocaleFromPathname,
   getLanguageSwitcherStrings,
 } from "@/i18n/chrome-strings";
+
+// Staged locales only ship content for a subset of LOCALIZED_ROUTES. Linking
+// them to a route outside their enabled set lands on a notFound() 404 (a
+// customer switching to 中文 on /about was lost — 2026-06-16). The gate sets in
+// localized-routes.ts use a leading slash and "" for the homepage; map each
+// staged locale to its set so the switcher can fall back to the locale
+// homepage instead of a dead link.
+const STAGED_LOCALE_ROUTES: Partial<Record<SiteLocale, Set<string>>> = {
+  ru: RU_ENABLED_ROUTES,
+  zh: ZH_ENABLED_ROUTES,
+};
+
+// True when `targetLocale` actually ships the given switcher `route`
+// (route is slug-less, "" = homepage). Non-staged locales (tr/de/fr/nl) ship
+// every LOCALIZED_ROUTES path, so they always pass.
+function localeHasRoute(targetLocale: SiteLocale, route: string): boolean {
+  const gate = STAGED_LOCALE_ROUTES[targetLocale];
+  if (!gate) return true;
+  return gate.has(route === "" ? "" : `/${route}`);
+}
 
 const LOCALE_FLAGS: Partial<Record<SiteLocale, string>> = {
   en: "🇬🇧",
@@ -64,7 +85,12 @@ function buildTargetPath(targetLocale: SiteLocale, route: string): string {
     // No locale version — send to locale homepage so the user stays in their language.
     return `/${targetLocale}`;
   }
-  return targetLocale === "en" ? `/${route}` : `/${targetLocale}/${route}`;
+  if (targetLocale === "en") return `/${route}`;
+  // Staged locales (ru/zh) only ship a subset of LOCALIZED_ROUTES. Linking to a
+  // route they don't have yet lands on a notFound() 404. Fall back to the locale
+  // homepage so the user stays in their language instead of hitting a dead page.
+  if (!localeHasRoute(targetLocale, route)) return `/${targetLocale}`;
+  return `/${targetLocale}/${route}`;
 }
 
 interface Props {
