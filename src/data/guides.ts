@@ -1,3 +1,5 @@
+import { SITE_LAST_MODIFIED } from "@/lib/freshness";
+
 export interface GuideSubsection {
   heading: string;
   content: string;
@@ -26,6 +28,10 @@ export interface Guide {
   sections: GuideSection[];
   relatedTours: string[];
   geo?: { lat: number; lng: number };
+  /** Author profile id (see src/data/team.ts). Authorship E-E-A-T signal. */
+  author?: string;
+  /** ISO date string. Wired to SITE_LAST_MODIFIED for the freshness signal. */
+  dateModified?: string;
 }
 
 export const guides: Guide[] = [
@@ -42,10 +48,13 @@ export const guides: Guide[] = [
       { heading: "Key Landmarks Along the Bosphorus", content: "Cruising the Bosphorus reveals centuries of architecture. The Dolmabahçe Palace (1856) stretches 600 meters along the European shore with its stunning Baroque-Ottoman facade. The Ortaköy Mosque stands photogenically at the foot of the Bosphorus Bridge. The Maiden's Tower (Kız Kulesi) rises from a tiny islet near the Asian shore, surrounded by legends of imprisoned princesses. Rumeli Fortress, built in just four months by Sultan Mehmed II, guards the narrowest point. Elegant yalıs (waterfront mansions) line both shores, some dating back to the 18th century." },
       { heading: "How to Experience the Bosphorus", content: "The most popular way to experience the Bosphorus is by boat cruise. Options range from budget-friendly sightseeing cruises (from €15) and romantic sunset cruises (from €34) to dinner cruises with Turkish night entertainment (from €30, depending on package tier) and private yacht charters (from €280). Public ferries operated by İDO and Şehir Hatları also cross the strait regularly, though they don't offer the commentary and curated route of a dedicated cruise. For the best experience, choose a sunset or dinner cruise to see Istanbul's skyline illuminated." },
       { heading: "Bosphorus Bridges", content: "Three suspension bridges span the Bosphorus, connecting Europe and Asia. The 15 July Martyrs Bridge (1973) was the first, stretching 1,560 meters and illuminated with colorful LED lights at night. The Fatih Sultan Mehmet Bridge (1988) sits at the strait's narrowest point. The Yavuz Sultan Selim Bridge (2016) near the Black Sea is the widest suspension bridge in the world. Sailing beneath these engineering marvels is a highlight of any Bosphorus cruise." },
-      { heading: "Best Time to Cruise the Bosphorus", content: "The Bosphorus is stunning year-round, but each season offers something different. Spring (April–May) brings mild weather and tulip displays along the shores. Summer (June–August) is perfect for swimming tours and late sunsets. Autumn (September–November) offers golden light and fewer crowds. Winter (December–March) features dramatic skies and some of the strongest value on shared departures — current public sunset fares can drop to €34 during promotional periods. For photography, the golden hour just before sunset creates magical lighting on the palaces and mosques." }
+      { heading: "Best Time to Cruise the Bosphorus", content: "The Bosphorus is stunning year-round, but each season offers something different. Spring (April–May) brings mild weather and tulip displays along the shores. Summer (June–August) is perfect for swimming tours and late sunsets. Autumn (September–November) offers golden light and fewer crowds. Winter (December–March) features dramatic skies and some of the strongest value on shared departures — current public sunset fares can drop to €34 during promotional periods. For photography, the golden hour just before sunset creates magical lighting on the palaces and mosques." },
+      { heading: "What I point out from the wheelhouse", content: "After 25 years steering this strait, here is what I tell guests to watch for that the guidebooks miss. The current runs surprisingly hard — up to four knots southbound through the Rumeli Hisarı narrows — which is why the water swirls and boils there even on a flat day; that is the same current Mehmed II's fleet had to fight in 1453. As we round Kandilli on the Asian shore I always point out the wooden yalıs: the ochre-red Köprülü yalı near Anadolu Hisarı is the oldest surviving waterfront mansion on the Bosphorus, built in 1699, and you can only see its true scale from the water. My one piece of advice — sit on the European (port) side heading north for the palaces, then swap to starboard on the return so the low sun is behind you for the Maiden's Tower shot." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "bosphorus-sightseeing-cruise"],
     geo: { lat: 41.1167, lng: 29.0778 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "maidens-tower",
@@ -63,6 +72,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "romantic-marriage-proposal", "private-bosphorus-sunset-cruise"],
     geo: { lat: 41.0211, lng: 29.0041 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "dolmabahce-palace",
@@ -76,10 +87,13 @@ export const guides: Guide[] = [
       { heading: "Architecture Highlights", content: "The palace's main ceremonial hall (Muayede Salonu) is a masterpiece featuring a 36-meter-high dome and the world's largest Bohemian crystal chandelier, weighing 4.5 tons with 750 lights — a gift from Queen Victoria. The Crystal Staircase, with its banisters made of Baccarat crystal, is another showstopper. The exterior blends European Baroque and Rococo styles with traditional Ottoman elements, creating a facade that's best appreciated from the water during a Bosphorus cruise." },
       { heading: "Visiting Information", content: "Dolmabahçe Palace is open every day except Monday from 09:00 to 18:00 (last entry 17:00). There are two sections to visit: the Selamlık (official state rooms) and the Harem (private quarters). Combined tickets cost approximately 650 TL for foreign visitors. Guided tours run in groups every 15–20 minutes. The palace is located in the Beşiktaş district, easily reached by tram (Kabataş stop) or bus. Photography is not permitted inside the palace rooms." },
       { heading: "Seeing Dolmabahçe from the Water", content: "Arguably the best view of Dolmabahçe Palace is from the Bosphorus itself. The 600-meter-long waterfront facade is a stunning sight, especially during golden hour when the white marble glows warmly. Every Bosphorus cruise passes directly in front of the palace, and guides provide commentary about its history. For the most impressive view, take a sunset cruise — the palace is on the European shore and catches beautiful evening light." },
-      { heading: "Atatürk's Connection", content: "Dolmabahçe Palace holds deep significance for modern Turkey. Mustafa Kemal Atatürk, the founder of the Turkish Republic, used the palace as his Istanbul residence and it was here that he passed away on November 10, 1938, at 9:05 AM. All the clocks in the palace were stopped at this time and remain so today. His bedroom, preserved exactly as it was, is one of the most visited rooms in the palace." }
+      { heading: "Atatürk's Connection", content: "Dolmabahçe Palace holds deep significance for modern Turkey. Mustafa Kemal Atatürk, the founder of the Turkish Republic, used the palace as his Istanbul residence and it was here that he passed away on November 10, 1938, at 9:05 AM. All the clocks in the palace were stopped at this time and remain so today. His bedroom, preserved exactly as it was, is one of the most visited rooms in the palace." },
+      { heading: "The captain's view of Dolmabahçe", content: "From the deck I tell guests Dolmabahçe is the one landmark you should photograph from the water, not the land — and here is why. The 600-metre marble facade was built deliberately to be read from the Bosphorus, which is where visiting heads of state arrived by boat; from the road you only ever catch fragments behind the security gates. The detail I always flag as we pass: the ornate Imperial Gate and the clock tower line up perfectly for about fifteen seconds when we hold position off the Beşiktaş shore. On a sunset cruise the white Marmara marble turns a warm amber around 18:30 in summer — that is the frame worth waiting for. We slow the boat right down along this stretch precisely so guests can get it; the public ferries blow straight past at full speed." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"],
     geo: { lat: 41.0391, lng: 29.0003 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "ortakoy-mosque",
@@ -96,6 +110,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
     geo: { lat: 41.0481, lng: 29.0275 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "rumeli-fortress",
@@ -112,6 +128,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-sightseeing-yacht-cruise"],
     geo: { lat: 41.0826, lng: 29.0584 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "galata-bridge-eminonu",
@@ -131,6 +149,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"],
     geo: { lat: 41.0165, lng: 28.9699 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "buyukada-princes-islands",
@@ -148,22 +168,27 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["istanbul-princes-island-tour"],
     geo: { lat: 40.8745, lng: 29.1257 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "kurucesme-marina",
     title: "Kuruçeşme Marina — Yacht Departure Istanbul",
     metaDescription: "Guide to Kuruçeşme Marina in Istanbul. Private yacht charter departure point, how to get there, nearby restaurants, and what to expect.",
-    excerpt: "Kuruçeşme Marina is where most private Bosphorus yacht experiences begin — a scenic marina on the European shore nestled between the Bosphorus Bridge and Ortaköy.",
+    excerpt: "Kuruçeşme Marina is where most private Bosphorus yacht charters board — a small-craft marina on the European shore, just upstream of Ortaköy and under the Bosphorus Bridge, so yachts launch without crossing the commercial harbour.",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80",
     keywords: ["kurucesme marina", "istanbul marina", "yacht departure istanbul", "private yacht istanbul"],
     sections: [
       { heading: "About Kuruçeşme Marina", content: "Kuruçeşme Marina is located on the European side of Istanbul, between Ortaköy and Arnavutköy, directly beneath the Bosphorus Bridge. This picturesque marina serves as the primary departure point for private yacht charters, marriage proposal cruises, birthday parties, and other yacht events on the Bosphorus. The marina is home to a variety of vessels — from intimate 10-person yachts to spacious luxury boats accommodating 50 guests." },
       { heading: "Getting to the Marina", content: "Kuruçeşme is easily accessible from central Istanbul. By bus, take the 25E, 40, or 42T from Kabataş or Taksim (Kuruçeşme stop). By taxi, it's about 15 minutes from Taksim Square or 20 minutes from Sultanahmet. If you've booked a VIP yacht package, private car pickup from your hotel can be arranged as an add-on. The marina has a small car park for those driving. Look for the meeting point instructions in your booking confirmation." },
       { heading: "What to Expect", content: "When you arrive at Kuruçeşme Marina for your private yacht charter, you'll be greeted by the yacht crew who will guide you to your vessel. Boarding typically begins 10–15 minutes before departure. Your yacht will be set up according to your package — Essential, Premium, or VIP — with any add-on decorations, food, or entertainment you've requested. The professional captain briefs you on safety before setting sail along one of the most beautiful waterways in the world." },
-      { heading: "Nearby Attractions", content: "Before or after your yacht experience, explore the charming Kuruçeşme waterfront. Several excellent restaurants and cafes line the shore, including some of Istanbul's best fish restaurants. The nearby Ortaköy neighborhood (a 10-minute walk) offers the famous kumpir stalls, weekend craft market, and the stunning Ortaköy Mosque. The Kuruçeşme coastline also hosts open-air concerts and events during summer months." }
+      { heading: "Nearby Attractions", content: "Before or after your yacht experience, explore the charming Kuruçeşme waterfront. Several excellent restaurants and cafes line the shore, including some of Istanbul's best fish restaurants. The nearby Ortaköy neighborhood (a 10-minute walk) offers the famous kumpir stalls, weekend craft market, and the stunning Ortaköy Mosque. The Kuruçeşme coastline also hosts open-air concerts and events during summer months." },
+      { heading: "Why we run the yachts out of Kuruçeşme", content: "We base the private charters at Kuruçeşme for a reason worth knowing before you book. It sits directly under the 15 July Martyrs Bridge between Ortaköy and Arnavutköy, which means the moment you cast off you are already in the best stretch of the Bosphorus — no thirty-minute transit out of a commercial harbour like the city-centre piers. For proposals, this is the detail I coach couples on: ask the captain to hold the yacht just off Ortaköy Mosque as the bridge lights come up around dusk, with the floodlit mosque on one side and the illuminated span overhead. It is the single most photographed position on the water and we can sit there as long as you like because the boat is yours. Parking is tight at the marina, so arrive by taxi or take our pickup — the 25E bus drops a steep ten-minute walk away." }
     ],
     relatedTours: ["yacht-charter-in-istanbul", "romantic-marriage-proposal", "yacht-birthday-party", "private-bosphorus-sunset-cruise"],
     geo: { lat: 41.0608, lng: 29.0487 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "kabatas-pier",
@@ -246,9 +271,12 @@ export const guides: Guide[] = [
           text: "A busy public pier does not automatically mean the correct MerrySails boarding queue. Follow the confirmed pin and host instructions instead of improvising on the waterfront.",
         },
       },
+      { heading: "What boarding at Kabataş is actually like", content: "I run the dinner cruise out of Kabataş most evenings, so let me tell you what the arrival is really like rather than the map version. The pier sits right where the T1 tram, the Kabataş–Taksim funicular and the ferry terminal all meet, which makes it easy to reach but genuinely chaotic at 20:00 — there are usually three or four boats loading at once and guests routinely walk toward the wrong gangway. Our crew stands at the boarding point with a MerrySails board from 20:00 for the 20:30 cast-off; look for that, not the boat name painted on the hull. My standing advice to guests: come up from the tram exit, keep the water on your right, and do not follow the first queue you see. If you booked hotel pickup, our driver waits kerbside on Meclis-i Mebusan Caddesi, not inside the pier." },
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "istanbul-lunch-cruise"],
     geo: { lat: 41.0337, lng: 28.9930 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "karakoy-waterfront",
@@ -266,6 +294,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise"],
     geo: { lat: 41.0224, lng: 28.9761 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "golden-horn",
@@ -282,6 +312,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "full-day-istanbul-old-city-tour"],
     geo: { lat: 41.0324, lng: 28.9403 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
   {
     slug: "istanbul-bosphorus-bridges",
@@ -299,6 +331,8 @@ export const guides: Guide[] = [
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
     geo: { lat: 41.0458, lng: 29.0337 },
+    author: "captain-ahmet",
+    dateModified: SITE_LAST_MODIFIED,
   },
 ];
 

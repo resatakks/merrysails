@@ -44,6 +44,12 @@ const STRINGS: Record<string, {
     licence: "лицензия",
     whatsappReply: "сред. ответ WhatsApp",
   },
+  zh: {
+    reviews: "条评价",
+    guestsSince: (year) => `${year} 年至今接待`,
+    licence: "许可证",
+    whatsappReply: "平均 WhatsApp 回复",
+  },
 };
 
 type Props = {

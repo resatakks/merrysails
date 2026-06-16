@@ -60,6 +60,12 @@ const STRINGS: Record<string, {
       "Собраны напрямую через WhatsApp и e-mail после круиза. Имя, страна и дата — реальные; фамилии не публикуются для конфиденциальности гостей.",
     cruisedOn: (d) => `круиз ${d}`,
   },
+  zh: {
+    heading: "近期客人评价",
+    disclaimer:
+      "均于游船结束后通过 WhatsApp 和电子邮件直接收集。名字、国家和日期均真实;为保护客人隐私,不公开全名。",
+    cruisedOn: (d) => `${d} 出游`,
+  },
 };
 
 const DATE_LOCALE: Record<string, string> = {
@@ -69,6 +75,7 @@ const DATE_LOCALE: Record<string, string> = {
   fr: "fr-FR",
   nl: "nl-NL",
   ru: "ru-RU",
+  zh: "zh-CN",
 };
 
 type Props = {

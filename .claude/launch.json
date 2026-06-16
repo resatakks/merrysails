@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lumayacht",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/resat/Desktop/lumayacht && npm run dev -- --port 3210"],
+      "port": 3210
+    },
+    {
+      "name": "vesper",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/resat/Desktop/vesper && npm run dev -- --port 3220"],
+      "port": 3220
+    }
+  ]
+}

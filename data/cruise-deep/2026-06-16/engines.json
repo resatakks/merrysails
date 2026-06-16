@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-16", "window": "GSC/GA4=30d, Bing=full, Yandex=snapshot",
+  "merrysails": {
+    "gsc": {"clicks":117,"impressions":16050,"ctr":0.73,"position":11.1},
+    "gsc_pages": {"indexed":329,"crawled_not_indexed":1258,"discovered_not_indexed":121,"not_found_404":16,"redirect":10,"noindex":5,"note":"1258 = benign _next/static chunks"},
+    "bing": {"days":37,"clicks":33,"impressions":896,"crawled":6970,"crawl_errors":1590,"in_index":101},
+    "yandex": {"sqi":0,"top_query":"ужин на яхте/boğaz turu (RU/TR informational)"},
+    "ga4": {"sessions":800,"users":656,"keyEvents":229,"purchase":16,"begin_checkout":55,"whatsapp_click":76,"contact_us":80,"ai_assistant_sessions":64,"page_not_found":0},
+    "pillars_indexed": ["istanbul-dinner-cruise","yacht-charter-istanbul","sunset-cruise-tickets-istanbul","private-bosphorus-dinner-cruise"]
+  },
+  "goldensunset": {
+    "gsc": {"clicks":122,"impressions":13887,"ctr":0.88,"position":11.4},
+    "gsc_pages": {"indexed":503,"crawled_not_indexed":31,"discovered_not_indexed":42,"not_found_404":39,"redirect":14,"noindex":5,"blocked_401":1},
+    "bing": {"days":34,"clicks":4,"impressions":96,"crawled":1247,"crawl_errors":65,"in_index":0,"note":"0 indexed — submitted 10/10 + IndexNow 2026-06-16"},
+    "yandex": {"sqi":0,"top_query":"ужин на яхте стамбул pos4.2 (RU)"},
+    "ga4": {"sessions":512,"users":399,"keyEvents":8,"purchase":8,"begin_checkout":26,"whatsapp_click":25,"contact_us":29,"ai_assistant_sessions":55,"page_not_found":13,"note":"only 8 keyEvents — soft conversions not marked as key events (config gap vs MS)"},
+    "tr_striking_distance": {"boğaz turu fiyatları 2026":"117imp pos10.9","istanbul bogaz turu fiyat 2026":"143imp pos9.7","eminönü boğaz turu fiyatları 2026":"149imp pos11.9"}
+  }
+}

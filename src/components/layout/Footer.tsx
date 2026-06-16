@@ -95,6 +95,14 @@ const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
     { label: "Аренда яхты в Стамбуле", href: "/ru/yacht-charter-istanbul" },
     { label: "Аренда катера в Стамбуле", href: "/ru/boat-rental-istanbul" },
   ],
+  // zh ships only the 4 staged money pages (ZH_ENABLED_ROUTES). Boat-rental has
+  // no /zh page yet — linking it would 404, so it is intentionally omitted here.
+  zh: [
+    { label: "伊斯坦布尔博斯普鲁斯游船", href: "/zh/bosphorus-cruise" },
+    { label: "博斯普鲁斯日落游船", href: "/zh/cruises/bosphorus-sunset-cruise" },
+    { label: "博斯普鲁斯晚宴游船", href: "/zh/istanbul-dinner-cruise" },
+    { label: "伊斯坦布尔私人游艇包租", href: "/zh/yacht-charter-istanbul" },
+  ],
 };
 
 const serviceLinks = [

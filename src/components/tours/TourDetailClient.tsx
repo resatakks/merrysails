@@ -27,6 +27,7 @@ import TourCard from "@/components/tours/TourCard";
 import SocialProof from "@/components/tours/SocialProof";
 import BestPriceBadge from "@/components/tours/BestPriceBadge";
 import { MAX_BOOKING_GUESTS } from "@/lib/constants";
+import { localizeBadge } from "@/lib/tour-badge";
 import type { SiteLocale } from "@/i18n/config";
 
 type DetailLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
@@ -706,7 +707,7 @@ export default function TourDetailClient({
           <div className="absolute top-4 left-4 z-10">
             {tour.badge && (
               <span className={`inline-block px-3 py-1 text-xs font-bold rounded-md ${tour.badgeColor}`}>
-                {tour.badge}
+                {localizeBadge(tour.badge, localeProp)}
               </span>
             )}
           </div>

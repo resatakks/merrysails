@@ -3,6 +3,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { Calendar, FileText, MapPin, Receipt, User } from "lucide-react";
 import { prisma } from "@/lib/db";
+import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 
 export const metadata: Metadata = {
   title: "External Invoice",
@@ -92,36 +93,27 @@ export default async function ExternalInvoicePage({
           </div>
         </div>
 
+        <ReservationPdfPreview
+          eyebrow="Invoice PDF"
+          title="Preview the invoice PDF"
+          description="Review the invoice here, open it in a dedicated viewer, or download the original file directly."
+          previewHref={`/external/${job.jobId}/invoice/pdf`}
+          downloadHref={`/external/${job.jobId}/invoice/pdf?download=1`}
+        />
+
         <section className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm print:rounded-none print:border-0 print:shadow-none">
           <div className="bg-[var(--heading)] px-6 py-8 text-white md:px-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
-                {job.companyLogoUrl ? (
-                  <div className="mb-4 flex h-16 items-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={job.companyLogoUrl}
-                      alt={`${job.companyName} logo`}
-                      className="max-h-16 max-w-[220px] object-contain"
-                    />
-                  </div>
-                ) : null}
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
-                  {job.companyName}
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand-primary)]/90">
+                  MerrySails Istanbul
                 </p>
                 <h2 className="mt-3 text-3xl font-bold">Invoice</h2>
-                {job.companyAddress ? (
-                  <p className="mt-2 max-w-md whitespace-pre-line text-sm leading-relaxed text-white/65">
-                    {job.companyAddress}
-                  </p>
-                ) : null}
-                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-white/65">
-                  {job.companyPhone ? <span>{job.companyPhone}</span> : null}
-                  {job.companyEmail ? <span>{job.companyEmail}</span> : null}
-                  {job.companyTaxId ? (
-                    <span>Tax ID: {job.companyTaxId}</span>
-                  ) : null}
-                </div>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-white/65">
+                  Merry Travel Acentası · TURSAB A-9889
+                  <br />
+                  Karaköy, Istanbul, Turkey
+                </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left md:min-w-[260px]">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
@@ -141,31 +133,75 @@ export default async function ExternalInvoicePage({
             <div className="space-y-6">
               <section className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5">
                 <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">
-                  Billing Details
+                  {job.companyName ? "Bill To" : "Billing Details"}
                 </h3>
-                <div className="mt-4 flex items-start gap-3">
-                  <div className="rounded-full bg-white p-2">
-                    <User className="h-4 w-4 text-[var(--brand-primary)]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                      Customer
+                {job.companyName ? (
+                  <div className="mt-4 space-y-2">
+                    <p className="text-sm font-bold text-[var(--heading)]">
+                      {job.companyName}
                     </p>
-                    <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                      {job.customerName}
-                    </p>
-                    {job.customerEmail ? (
-                      <p className="mt-1 text-sm text-[var(--text-muted)]">
-                        {job.customerEmail}
+                    {job.companyAddress ? (
+                      <p className="whitespace-pre-line text-sm leading-relaxed text-[var(--body-text)]">
+                        {job.companyAddress}
                       </p>
                     ) : null}
-                    {job.customerPhone ? (
-                      <p className="mt-1 text-sm text-[var(--text-muted)]">
-                        {job.customerPhone}
+                    {job.companyTaxId ? (
+                      <p className="text-sm text-[var(--text-muted)]">
+                        <span className="font-semibold text-[var(--heading)]">Tax ID:</span>{" "}
+                        {job.companyTaxId}
                       </p>
                     ) : null}
+                    {job.companyEmail ? (
+                      <p className="text-sm text-[var(--text-muted)]">{job.companyEmail}</p>
+                    ) : null}
+                    {job.companyPhone ? (
+                      <p className="text-sm text-[var(--text-muted)]">{job.companyPhone}</p>
+                    ) : null}
+                    <div className="mt-3 border-t border-[var(--line)] pt-3 text-xs text-[var(--text-muted)]">
+                      <p className="font-semibold uppercase tracking-[0.12em]">
+                        Service for
+                      </p>
+                      <p className="mt-1 text-sm text-[var(--heading)]">
+                        {job.customerName}
+                        {job.customerEmail ? ` · ${job.customerEmail}` : ""}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="mt-4 flex items-start gap-3">
+                    <div className="rounded-full bg-white p-2">
+                      <User className="h-4 w-4 text-[var(--brand-primary)]" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                        Customer
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                        {job.customerName}
+                      </p>
+                      {job.customerEmail ? (
+                        <p className="mt-1 text-sm text-[var(--text-muted)]">
+                          {job.customerEmail}
+                        </p>
+                      ) : null}
+                      {job.customerPhone ? (
+                        <p className="mt-1 text-sm text-[var(--text-muted)]">
+                          {job.customerPhone}
+                        </p>
+                      ) : null}
+                    </div>
+                  </div>
+                )}
+                {job.paymentNotes ? (
+                  <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-amber-800">
+                      Payment terms
+                    </p>
+                    <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-amber-900">
+                      {job.paymentNotes}
+                    </p>
+                  </div>
+                ) : null}
               </section>
 
               <section className="rounded-2xl border border-[var(--line)] bg-white p-5">

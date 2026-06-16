@@ -1,0 +1,129 @@
+{
+ "date": "2026-06-16",
+ "results": {
+  "merrysails": [
+   {
+    "url": "https://merrysails.com/",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-15",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/bosphorus-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-11",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/istanbul-dinner-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-10",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-13",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/yacht-charter-istanbul",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-10",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/sunset-cruise-tickets-istanbul",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-02",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-10",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/bosphorus-cruise-departure-points",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-03",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/tr/bosphorus-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-05-13",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://merrysails.com/ru/istanbul-dinner-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-05-31",
+    "verdict": "PASS"
+   }
+  ],
+  "goldensunsettour": [
+   {
+    "url": "https://goldensunsettour.com/",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-16",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/bosphorus-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-05",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/istanbul-dinner-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-06",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/cruises/bosphorus-sunset-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-05",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/yacht-charter-istanbul",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-13",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/best-bosphorus-cruise-2026",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-05",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/blog/best-restaurants-near-bosphorus",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-06",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/tr/bosphorus-cruise",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-07",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/private-sunset-yacht-bosphorus-istanbul",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-15",
+    "verdict": "PASS"
+   },
+   {
+    "url": "https://goldensunsettour.com/bosphorus-dinner-cruise-tour-istanbul",
+    "cov": "Submitted and indexed",
+    "crawl": "2026-06-15",
+    "verdict": "PASS"
+   }
+  ]
+ }
+}

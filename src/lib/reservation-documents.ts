@@ -78,6 +78,8 @@ export async function getReservationDocumentPayload(reservationId: string) {
     isCustomBooking,
     meetingPointOverride,
     items: parseReservationItems(reservation.items) ?? undefined,
+    voucherExtraNote: meta.voucherExtraNote,
+    voucherExtraNoteTitle: meta.voucherExtraNoteTitle,
   };
 
   return {

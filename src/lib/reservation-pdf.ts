@@ -40,6 +40,10 @@ export interface ReservationPdfInput {
   // instead of the tour's default departure point.
   isCustomBooking?: boolean;
   meetingPointOverride?: string;
+  /** Voucher-only extra block (e.g. menu / engagement package). Hidden on invoice. */
+  voucherExtraNote?: string;
+  /** Voucher-only extra block title — defaults to "On Board & Inclusions". */
+  voucherExtraNoteTitle?: string;
   /**
    * Mixed-package booking line items. When present and has ≥2 entries the PDF
    * voucher swaps the "Selected Booking Option" copy for a per-package
@@ -562,33 +566,77 @@ export async function generateReservationVoucherPdf(
   }
 
   const noteY = optionsY;
+  const beforeArriveText = [
+    input.isCustomBooking
+      ? null
+      : "Please arrive 15 minutes before departure for a smooth boarding flow.",
+    "Keep your reservation ID and this voucher ready on your phone.",
+    !input.isCustomBooking && input.privateTransferRequested
+      ? "Private transfer was requested separately. Our team will contact you with the final pickup plan."
+      : null,
+    input.notes ? `Guest note: ${input.notes}` : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  doc.setFontSize(9);
+  doc.setFont("Roboto", "normal");
+  const beforeArriveLines = doc.splitTextToSize(beforeArriveText, 174) as string[];
+  const beforeArriveBoxHeight = 12 + beforeArriveLines.length * 5 + 4;
   doc.setFillColor(255, 251, 235);
-  doc.roundedRect(14, noteY, 182, 42, 6, 6, "F");
+  doc.roundedRect(14, noteY, 182, beforeArriveBoxHeight, 6, 6, "F");
   doc.setFont("Roboto", "bold");
   doc.setTextColor(146, 64, 14);
   doc.setFontSize(9);
   doc.text(input.isCustomBooking ? "Good to know" : "Before You Arrive", 18, noteY + 8);
   doc.setFont("Roboto", "normal");
   doc.setTextColor(120, 53, 15);
-  writeWrappedText(
-    doc,
-    [
-      input.isCustomBooking
-        ? null
-        : "Please arrive 15 minutes before departure for a smooth boarding flow.",
-      "Keep your reservation ID and this voucher ready on your phone.",
-      !input.isCustomBooking && input.privateTransferRequested
-        ? "Private transfer was requested separately. Our team will contact you with the final pickup plan."
-        : null,
-      input.notes ? `Guest note: ${input.notes}` : null,
-    ]
-      .filter(Boolean)
-      .join(" "),
-    18,
-    noteY + 15,
-    174,
-    5
-  );
+  writeWrappedText(doc, beforeArriveText, 18, noteY + 15, 174, 5);
+
+  if (input.voucherExtraNote && input.voucherExtraNote.trim().length > 0) {
+    const extraY = noteY + beforeArriveBoxHeight + 6;
+    const extraFontSize = 8;
+    const extraLineHeight = 4;
+    const extraEmptyLineHeight = 2;
+    doc.setFontSize(extraFontSize);
+    doc.setFont("Roboto", "normal");
+    const sourceLines = input.voucherExtraNote.split("\n");
+    type WrapEntry = { text: string; height: number };
+    const wrapped: WrapEntry[] = [];
+    for (const raw of sourceLines) {
+      const line = raw.trimEnd();
+      if (line.trim().length === 0) {
+        wrapped.push({ text: "", height: extraEmptyLineHeight });
+        continue;
+      }
+      const segments = doc.splitTextToSize(line, 174) as string[];
+      for (const segment of segments) {
+        wrapped.push({ text: segment, height: extraLineHeight });
+      }
+    }
+    const contentHeight = wrapped.reduce((sum, e) => sum + e.height, 0);
+    const extraBoxHeight = 12 + contentHeight + 4;
+    doc.setFillColor(255, 251, 235);
+    doc.roundedRect(14, extraY, 182, extraBoxHeight, 6, 6, "F");
+    doc.setFont("Roboto", "bold");
+    doc.setTextColor(146, 64, 14);
+    doc.setFontSize(9);
+    doc.text(
+      (input.voucherExtraNoteTitle ?? "On Board & Inclusions").toUpperCase(),
+      18,
+      extraY + 8
+    );
+    doc.setFont("Roboto", "normal");
+    doc.setFontSize(extraFontSize);
+    doc.setTextColor(120, 53, 15);
+    let cursor = extraY + 14;
+    for (const entry of wrapped) {
+      if (entry.text) {
+        doc.text(entry.text, 18, cursor);
+      }
+      cursor += entry.height;
+    }
+  }
 
   writeFooter(doc, input.reservationId);
   return asBuffer(doc);

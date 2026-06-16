@@ -15,10 +15,11 @@
 //   - FR formal "vous"
 //   - NL formal "u"
 //   - RU formal "Вы"
+//   - ZH Simplified Chinese (mainland), formal/neutral register
 
-export type ChromeLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
+export type ChromeLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru" | "zh";
 
-export const CHROME_LOCALES: ChromeLocale[] = ["en", "tr", "de", "fr", "nl", "ru"];
+export const CHROME_LOCALES: ChromeLocale[] = ["en", "tr", "de", "fr", "nl", "ru", "zh"];
 
 /** Header navigation + reserve CTA + a11y labels. */
 export interface HeaderStrings {
@@ -239,6 +240,28 @@ const HEADER: Record<ChromeLocale, HeaderStrings> = {
     expandMenu: (label) => `Развернуть меню «${label}»`,
     languageHeading: "Язык",
   },
+  zh: {
+    cruises: "游船",
+    sunsetCruise: "日落游船",
+    dinnerCruise: "晚宴游船",
+    yachtCharter: "私人游艇",
+    guides: "攻略",
+    blog: "博客",
+    istanbulGuides: "伊斯坦布尔攻略",
+    kabatasPier: "卡巴塔什码头",
+    karakoyWaterfront: "卡拉科伊海滨",
+    faq: "常见问题",
+    about: "关于我们",
+    contact: "联系我们",
+    reserveOnline: "在线预订",
+    reserve: "预订",
+    callUs: "致电我们",
+    openNavMenu: "打开导航菜单",
+    navigationMenu: "导航菜单",
+    collapseMenu: (label) => `收起${label}菜单`,
+    expandMenu: (label) => `展开${label}菜单`,
+    languageHeading: "语言",
+  },
 };
 
 // ----------------------------------------------------------------------------
@@ -354,6 +377,24 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     terms: "Условия использования",
     aiKnowledge: "AI-знания",
   },
+  zh: {
+    description:
+      "在伊斯坦布尔直接预订博斯普鲁斯日落游船、晚宴游船和私人游艇包租。",
+    coreProducts: "核心产品",
+    supportRoutes: "服务页面",
+    company: "公司",
+    blogHighlights: "博客精选",
+    guideTopics: "攻略主题",
+    partnerServices: "合作服务",
+    sisterBrands: "集团品牌",
+    viewLicense: "查看许可证详情",
+    tursabLicensed: "TÜRSAB 持牌",
+    tursabLicenseNumberPrefix: "许可证号",
+    allRightsReserved: "版权所有。",
+    privacyPolicy: "隐私政策",
+    terms: "使用条款",
+    aiKnowledge: "AI 知识库",
+  },
 };
 
 // ----------------------------------------------------------------------------
@@ -367,6 +408,7 @@ const LANGUAGE_SWITCHER: Record<ChromeLocale, LanguageSwitcherStrings> = {
   fr: { changeLanguage: "Changer de langue", selectLanguage: "Sélectionner une langue", language: "Langue" },
   nl: { changeLanguage: "Taal wijzigen", selectLanguage: "Taal selecteren", language: "Taal" },
   ru: { changeLanguage: "Сменить язык", selectLanguage: "Выберите язык", language: "Язык" },
+  zh: { changeLanguage: "切换语言", selectLanguage: "选择语言", language: "语言" },
 };
 
 // ----------------------------------------------------------------------------
@@ -416,11 +458,19 @@ const MOBILE_BOOKING_BAR: Record<ChromeLocale, MobileBookingBarStrings> = {
   },
   ru: {
     book: "Забронировать",
-    chat: "Telegram",
+    chat: "WhatsApp",
     from: "от",
     hubBrand: "Круизы по Босфору",
     hubBook: "Смотреть круизы",
     quickBookRegion: "Быстрое бронирование",
+  },
+  zh: {
+    book: "立即预订",
+    chat: "WhatsApp",
+    from: "",
+    hubBrand: "博斯普鲁斯游船",
+    hubBook: "查看游船",
+    quickBookRegion: "快速预订",
   },
 };
 
@@ -495,6 +545,17 @@ const ERROR_PAGE: Record<ChromeLocale, ErrorPageStrings> = {
     errorDescription: "Произошла неожиданная ошибка. Пожалуйста, попробуйте снова или свяжитесь с нами.",
     tryAgain: "Попробовать снова",
   },
+  zh: {
+    notFoundCode: "404",
+    notFoundTitle: "页面未找到",
+    notFoundDescription:
+      "您查找的页面不存在或已被移动。在博斯普鲁斯海峡上迷路很美妙——但在网上可不行!",
+    backToHome: "返回首页",
+    compareCruises: "对比游船",
+    errorTitle: "出了点问题",
+    errorDescription: "我们遇到了意外错误。请重试,如果问题持续,请联系我们。",
+    tryAgain: "重试",
+  },
 };
 
 // ----------------------------------------------------------------------------
@@ -508,6 +569,7 @@ const BREADCRUMBS: Record<ChromeLocale, BreadcrumbStrings> = {
   fr: { home: "Accueil" },
   nl: { home: "Home" },
   ru: { home: "Главная" },
+  zh: { home: "首页" },
 };
 
 // ----------------------------------------------------------------------------
@@ -553,7 +615,8 @@ export function detectChromeLocaleFromPathname(
     first === "de" ||
     first === "fr" ||
     first === "nl" ||
-    first === "ru"
+    first === "ru" ||
+    first === "zh"
   ) {
     return first;
   }

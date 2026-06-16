@@ -40,6 +40,7 @@ const LABEL_BY_LOCALE: Record<string, string> = {
   fr: "Réponse rapide",
   nl: "Snel antwoord",
   ru: "Кратко",
+  zh: "快速解答",
 };
 
 export function QuickAnswer(props: QuickAnswerProps) {

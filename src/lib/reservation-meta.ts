@@ -32,6 +32,8 @@ interface ReservationMetaPayload {
   paymentMethod?: ReservationPaymentMethod;
   internalOperatorNote?: string;
   emailTemplate?: ReservationEmailTemplate;
+  voucherExtraNote?: string;
+  voucherExtraNoteTitle?: string;
 }
 
 export interface ParsedReservationMeta {
@@ -46,6 +48,8 @@ export interface ParsedReservationMeta {
   paymentMethod?: ReservationPaymentMethod;
   internalOperatorNote?: string;
   emailTemplate?: ReservationEmailTemplate;
+  voucherExtraNote?: string;
+  voucherExtraNoteTitle?: string;
 }
 
 function roundMoney(value: number): number {
@@ -137,6 +141,8 @@ export function serializeReservationNotes(
     paymentMethod: payload.paymentMethod,
     internalOperatorNote: payload.internalOperatorNote?.trim() || undefined,
     emailTemplate: payload.emailTemplate,
+    voucherExtraNote: payload.voucherExtraNote?.trim() || undefined,
+    voucherExtraNoteTitle: payload.voucherExtraNoteTitle?.trim() || undefined,
   };
 
   if (
@@ -149,7 +155,8 @@ export function serializeReservationNotes(
     !cleanedPayload.meetingPointNote &&
     !cleanedPayload.paymentMethod &&
     !cleanedPayload.internalOperatorNote &&
-    !cleanedPayload.emailTemplate
+    !cleanedPayload.emailTemplate &&
+    !cleanedPayload.voucherExtraNote
   ) {
     return null;
   }
@@ -211,6 +218,8 @@ export function parseReservationNotes(
       paymentMethod: parsed.paymentMethod,
       internalOperatorNote: parsed.internalOperatorNote?.trim() || undefined,
       emailTemplate: parsed.emailTemplate,
+      voucherExtraNote: parsed.voucherExtraNote?.trim() || undefined,
+      voucherExtraNoteTitle: parsed.voucherExtraNoteTitle?.trim() || undefined,
     };
   } catch {
     return {

@@ -1,0 +1,32 @@
+{
+  "date": "2026-06-16",
+  "vertical": "cruise",
+  "brands": {
+    "merrysails": {
+      "gsc_30d": {"clicks": 117, "impressions": 16050, "ctr": 0.73, "position": 11.1},
+      "bing": {"days": 37, "clicks": 33, "impressions": 896, "crawled": 6970, "crawl_errors": 1590, "in_index": 101},
+      "yandex": {"sqi": 0, "problems": {"RECOMMENDATION": 1}},
+      "ga4_28d": {"sessions": 800, "users": 656, "keyEvents": 229, "purchase": 16, "begin_checkout": 55, "whatsapp_click": 76, "contact_us": 80, "ai_assistant_sessions": 64},
+      "clean_slugs_indexed": "4/6",
+      "clean_slug_laggards": ["bosphorus-evening-dinner-cruise", "istanbul-dinner-cruise-bosphorus"],
+      "page_not_found_28d": 0,
+      "content_human_score": 6.5
+    },
+    "goldensunset": {
+      "gsc_30d": {"clicks": 122, "impressions": 13887, "ctr": 0.88, "position": 11.4},
+      "bing": {"days": 34, "clicks": 4, "impressions": 96, "crawled": 1247, "crawl_errors": 65, "in_index": 0},
+      "yandex": {"sqi": 0, "problems": {"RECOMMENDATION": 1}},
+      "ga4_28d": {"sessions": 512, "users": 399, "keyEvents": 8, "purchase": 8, "begin_checkout": 26, "whatsapp_click": 25, "contact_us": 29, "ai_assistant_sessions": 55, "page_not_found": 13},
+      "clean_slugs_indexed": "6/6",
+      "page_not_found_paths": {"/ru/yacht-charter-istanbul/premium-yacht-15": 8, "/bachelorette-cruise-istanbul": 2, "/bosphorus-sunset-cruise": 1},
+      "content_human_score": 6.0,
+      "content_family_distinct_score": 5.0
+    }
+  },
+  "cross_brand_findings": {
+    "usa_ctr_crisis": {"ms": "5156imp/15clk=0.29%", "gs": "3402imp/10clk=0.29%"},
+    "clone_pair_rating_leak": "GS publishes MS 4.88/312 in 52 code locations; GS canonical = 4.78/264 (brand-stats.ts)",
+    "gs_bing_zero_index": "GS has 0 pages in Bing index",
+    "ms_fake_expert_quotes": "243 fabricated expertQuote blocks across 100+ MS posts, 7 invented personas, no author pages"
+  }
+}

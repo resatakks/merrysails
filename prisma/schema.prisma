@@ -137,6 +137,76 @@ model ExternalJob {
   @@index([createdAt])
 }
 
+// ─── Parser sessions (Telegram conversational booking) ───
+// One row per "operator forwarded a message" event. Survives across the
+// preview → confirm/edit/cancel flow so callback_data can carry a short
+// session id (within Telegram's 64-byte limit) instead of the full payload.
+
+model ParseSession {
+  id          String   @id @default(cuid())
+  chatId      String   // Telegram chat id of the operator
+  brand       String   @default("merrysails")
+  originalMessage String   @db.Text
+  /// Hash of original message — same operator forwarding same content twice
+  /// within an hour returns the existing session so we don't double-create.
+  messageHash String
+  /// Parsed JSON ↔ ParsedExternalJob shape (see external-parser/schema.ts).
+  parsedData  Json
+  /// Operator can override the model's intent before confirming.
+  intent      String   // "reservation" | "external" | "update"
+  /// Operator-edited overrides — merged on top of parsedData before finalize.
+  overrides   Json     @default("{}")
+  state       String   @default("pending") // pending | confirmed | cancelled | editing
+  /// When state=editing, which field is currently being captured from operator's next message.
+  editingField String?
+  /// When intent=update, the existing record id we're modifying.
+  referenceId String?
+  /// After confirm, the created reservation id / external job id.
+  createdRecordId   String?
+  createdRecordType String? // "reservation" | "external"
+  /// Telegram message id of the preview card so we can edit it in place.
+  previewMessageId  Int?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  expiresAt   DateTime // TTL 24h — bot rejects expired callbacks
+
+  @@index([chatId, state])
+  @@index([messageHash])
+  @@index([expiresAt])
+}
+
+// ─── Parse audit log ────────────────────────────────────
+// Every LLM call is logged for cost tracking + future fine-tuning data.
+// Sessions can be derived from this if Session is deleted.
+
+model ParseLog {
+  id          String   @id @default(cuid())
+  chatId      String
+  brand       String   @default("merrysails")
+  messageHash String
+  /// Full input text, kept for review / fine-tuning. Operator forwards
+  /// already include phone+email so privacy posture is same as Reservation.
+  messageText String   @db.Text
+  model       String
+  latencyMs   Int
+  confidence  Float?
+  inputTokens  Int?
+  outputTokens Int?
+  costUsd      Float?
+  parsedJson  Json?
+  warnings    String[] @default([])
+  errorMessage String?
+  /// What the operator ultimately did with this parse.
+  outcome     String   @default("pending") // pending | confirmed | edited | cancelled | error
+
+  createdAt   DateTime @default(now())
+
+  @@index([chatId])
+  @@index([createdAt])
+  @@index([outcome])
+}
+
 // ─── Telegram User ──────────────────────────────────────────
 
 model TelegramUser {

@@ -296,6 +296,16 @@ Her commit'ten sonra (özellikle yeni blog post, yeni service page, yeni locale 
 
 Bu rutini ben otomatik yaparım — kullanıcı her seferinde "Yandex'e submit ettin mi" diye sormak zorunda kalmasın.
 
+### 🌅 Boot-up auto-ritual (operator hatırlatma yapmamalı)
+
+Operator "devam et" / "başla" / "günaydın" derken — global CLAUDE.md "Boot-up Daily Ritual" section'ı tetikle:
+1. 13 brand × 3 engine (GSC URL Inspection + GSC Pages Errors + Yandex Webmaster + Bing Webmaster) **paralel** sweep
+2. Brand atlamak YASAK — MerryTourism Bing raporu örneği (2026-06-09 atlandı, tekrar etmemeli)
+3. Her brand'i direkt URL ile dene, memory-based "yok" varsayımı geçme
+4. P0 listesi sonra sunulur, başlatma operator izniyle değil otomatik
+
+Per-brand cursors: `~/.agents/state/brand-data-cursors.json`. Detay: global CLAUDE.md "🌅 Boot-up Daily Ritual" section.
+
 ---
 
 ## Active Missions

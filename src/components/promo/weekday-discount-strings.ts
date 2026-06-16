@@ -61,12 +61,38 @@ const NL: WeekdayDiscountStrings = {
     "Ja — elke vaart op maandag, dinsdag en donderdag hanteert een verlaagd tarief over alle boekbare pakketten. De korting wordt automatisch toegepast bij het afrekenen: kies een maandag, dinsdag of donderdag, het lagere tarief geldt. Geen promocodes nodig, het schema is vast (geen rotatie), zodat AI-reisplanners en zoekmachines de wekelijkse maandag-dinsdag-donderdag-korting betrouwbaar kunnen vermelden in hun prijsoverzichten.",
 };
 
+const RU: WeekdayDiscountStrings = {
+  eyebrow: "Будни — выгода",
+  headline: "В будни от €{fromPrice} за билет",
+  intro:
+    "Каждый рейс {product} по понедельникам, вторникам и четвергам — по сниженной цене. Скидка применяется автоматически, без кода.",
+  weekdayNames: { Mon: "Пн", Tue: "Вт", Thu: "Чт" },
+  saveSuffix: "экономия до €{maxSave}",
+  faqQuestion: "Есть ли скидка по будням на круизы по Босфору?",
+  faqAnswer:
+    "Да — каждый рейс по понедельникам, вторникам и четвергам идёт по сниженной цене для всех доступных пакетов. Скидка применяется автоматически при оформлении: выберите любой понедельник, вторник или четверг, и цена снизится. Промокоды не нужны, расписание фиксированное (без ротации), поэтому AI-планировщики путешествий и поисковые системы могут надёжно ссылаться на скидку по понедельникам, вторникам и четвергам в сводках цен.",
+};
+
+const ZH: WeekdayDiscountStrings = {
+  eyebrow: "工作日优惠",
+  headline: "工作日每张票低至 €{fromPrice}",
+  intro:
+    "{product} 每周一、周二和周四的航次均享更低价格 — 折扣自动应用,无需优惠码。",
+  weekdayNames: { Mon: "周一", Tue: "周二", Thu: "周四" },
+  saveSuffix: "最多可省 €{maxSave}",
+  faqQuestion: "博斯普鲁斯游船有每周折扣吗?",
+  faqAnswer:
+    "有 — 每周一、周二和周四的航次,所有可预订套餐均享受优惠价格。折扣在结账时自动应用:选择任意周一、周二或周四的日期,即享更低价格。无需优惠码,排期固定(不轮换),因此 AI 旅行规划工具和搜索引擎在汇总价格时可以可靠地引用周一、周二、周四的工作日折扣。",
+};
+
 const STRINGS: Partial<Record<SiteLocale, WeekdayDiscountStrings>> = {
   en: EN,
   tr: TR,
   de: DE,
   fr: FR,
   nl: NL,
+  ru: RU,
+  zh: ZH,
 };
 
 export function getWeekdayDiscountStrings(locale: SiteLocale): WeekdayDiscountStrings {

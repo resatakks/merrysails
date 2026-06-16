@@ -829,6 +829,7 @@ export default async function LocaleDinnerCruisePage({
  fr: "croisière dîner",
  nl: "dinercruise",
  ru: "ужин-круиз",
+ zh: "晚宴游船",
  };
  const reserveLabelByLocale: Record<string, string> = {
  en: "Reserve from €30",
@@ -837,6 +838,7 @@ export default async function LocaleDinnerCruisePage({
  fr: "Réserver dès €30",
  nl: "Boeken vanaf €30",
  ru: "Забронировать от €30",
+ zh: "€30 起预订",
  };
  const whatsappPrefillByLocale: Record<string, string> = {
  en: "Hi MerrySails! I'm interested in the Bosphorus Dinner Cruise (from €30). What package fits us?",
@@ -845,6 +847,7 @@ export default async function LocaleDinnerCruisePage({
  fr: "Bonjour MerrySails ! Nous sommes intéressés par la Croisière Dîner Bosphore (à partir de €30). Quelle formule nous convient ?",
  nl: "Hallo MerrySails! Wij zijn geïnteresseerd in de Bosporus Dinercruise (vanaf €30). Welk pakket past bij ons?",
  ru: "Здравствуйте, MerrySails! Нас интересует Ужин-круиз по Босфору (от €30). Какой пакет нам подойдёт?",
+ zh: "您好,MerrySails!我对博斯普鲁斯晚宴游船(€30 起)感兴趣。哪个套餐适合我们?",
  };
  const productLabel = productLabelByLocale[locale] ?? productLabelByLocale.en;
  const reserveLabel = reserveLabelByLocale[locale] ?? reserveLabelByLocale.en;

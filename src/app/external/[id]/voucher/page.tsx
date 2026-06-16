@@ -9,12 +9,14 @@ import {
   Phone,
   User,
   Users,
+  UtensilsCrossed,
 } from "lucide-react";
 import { prisma } from "@/lib/db";
+import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 
 export const metadata: Metadata = {
   title: "External Voucher",
-  description: "Internal voucher document for an external-company booking.",
+  description: "Voucher document for an external-work booking.",
   robots: { index: false, follow: false },
 };
 
@@ -49,6 +51,21 @@ function formatMoney(amount: number, currency: string): string {
   })}`;
 }
 
+function paymentMethodLabel(method: string): string {
+  switch (method) {
+    case "cash_on_board":
+      return "Cash on board";
+    case "card_on_board":
+      return "Card on board";
+    case "card_paid":
+      return "Card paid";
+    case "bank_transfer":
+      return "Bank transfer";
+    default:
+      return method.replace(/_/g, " ");
+  }
+}
+
 export default async function ExternalVoucherPage({
   params,
 }: {
@@ -80,6 +97,10 @@ export default async function ExternalVoucherPage({
   }
 
   const statusKey = job.status in STATUS_LABELS ? job.status : "new";
+  const durationLabel = job.durationHours
+    ? `${job.durationHours} hour${job.durationHours === 1 ? "" : "s"}`
+    : null;
+  const timeLine = [job.jobTime, durationLabel].filter(Boolean).join(" · ");
 
   return (
     <main className="min-h-screen bg-[var(--surface-alt)] px-4 py-10 print:bg-white print:px-0 print:py-0">
@@ -87,10 +108,10 @@ export default async function ExternalVoucherPage({
         <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">
-              External Voucher
+              External Work · Voucher
             </p>
             <h1 className="mt-2 text-3xl font-bold text-[var(--heading)]">
-              Service voucher — {job.companyName}
+              {job.serviceTitle}
             </h1>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -109,36 +130,32 @@ export default async function ExternalVoucherPage({
           </div>
         </div>
 
+        <ReservationPdfPreview
+          eyebrow="Voucher PDF"
+          title="Preview the boarding voucher PDF"
+          description="Open the travel-ready voucher inside the page, switch to the full PDF viewer, or download the original file for offline access before departure."
+          previewHref={`/external/${job.jobId}/voucher/pdf`}
+          downloadHref={`/external/${job.jobId}/voucher/pdf?download=1`}
+        />
+
         <section className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm print:rounded-none print:border-0 print:shadow-none">
           <div className="bg-[var(--heading)] px-6 py-8 text-white md:px-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
-                {job.companyLogoUrl ? (
-                  <div className="mb-4 flex h-16 items-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={job.companyLogoUrl}
-                      alt={`${job.companyName} logo`}
-                      className="max-h-16 max-w-[220px] object-contain"
-                    />
-                  </div>
-                ) : null}
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
-                  {job.companyName}
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand-primary)]/90">
+                  MerrySails Istanbul
                 </p>
                 <h2 className="mt-3 text-3xl font-bold">{job.serviceTitle}</h2>
-                {job.companyAddress ? (
-                  <p className="mt-2 max-w-md whitespace-pre-line text-sm leading-relaxed text-white/65">
-                    {job.companyAddress}
+                {job.serviceDescription ? (
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/70">
+                    {job.serviceDescription}
                   </p>
                 ) : null}
-                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-white/65">
-                  {job.companyPhone ? <span>{job.companyPhone}</span> : null}
-                  {job.companyEmail ? <span>{job.companyEmail}</span> : null}
-                  {job.companyTaxId ? (
-                    <span>Tax ID: {job.companyTaxId}</span>
-                  ) : null}
-                </div>
+                {job.companyName ? (
+                  <p className="mt-3 inline-block rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                    Bill to: {job.companyName}
+                  </p>
+                ) : null}
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left md:min-w-[240px]">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
@@ -201,11 +218,9 @@ export default async function ExternalVoucherPage({
                           <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
                             {job.customerPhone}
                           </p>
-                          {job.guests > 1 ? (
-                            <p className="mt-1 text-sm text-[var(--text-muted)]">
-                              {job.guests} guests
-                            </p>
-                          ) : null}
+                          <p className="mt-1 text-sm text-[var(--text-muted)]">
+                            {job.guests} guest{job.guests > 1 ? "s" : ""}
+                          </p>
                         </>
                       ) : (
                         <>
@@ -241,7 +256,7 @@ export default async function ExternalVoucherPage({
                     </div>
                   </div>
 
-                  {job.jobTime ? (
+                  {timeLine ? (
                     <div className="flex items-start gap-3">
                       <div className="rounded-full bg-[var(--surface-alt)] p-2">
                         <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
@@ -251,34 +266,26 @@ export default async function ExternalVoucherPage({
                           Time
                         </p>
                         <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                          {job.jobTime}
+                          {timeLine}
                         </p>
                       </div>
                     </div>
                   ) : null}
 
-                  {job.pickupPoint ? (
-                    <div className="flex items-start gap-3 sm:col-span-2">
-                      <div className="rounded-full bg-[var(--surface-alt)] p-2">
-                        <MapPin className="h-4 w-4 text-[var(--brand-primary)]" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                          Pickup / meeting point
-                        </p>
-                        <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                          {job.pickupPoint}
-                        </p>
-                      </div>
+                  <div className="flex items-start gap-3 sm:col-span-2">
+                    <div className="rounded-full bg-[var(--surface-alt)] p-2">
+                      <MapPin className="h-4 w-4 text-[var(--brand-primary)]" />
                     </div>
-                  ) : null}
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                        Pickup / meeting point
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                        {job.pickupPoint ?? "To be confirmed"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-
-                {job.serviceDescription ? (
-                  <p className="mt-5 whitespace-pre-line text-sm leading-relaxed text-[var(--body-text)]">
-                    {job.serviceDescription}
-                  </p>
-                ) : null}
 
                 {job.notes ? (
                   <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-4">
@@ -294,6 +301,39 @@ export default async function ExternalVoucherPage({
             </div>
 
             <div className="space-y-6">
+              {job.inclusions.length > 0 ? (
+                <section className="overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-5 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="rounded-full bg-amber-100 p-2.5">
+                      <UtensilsCrossed className="h-4 w-4 text-amber-700" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-amber-800">
+                        {job.voucherExtraTitle ?? "On Board & Inclusions"}
+                      </h3>
+                      <div className="mt-4 space-y-1.5 text-sm leading-relaxed text-[var(--body-text)]">
+                        {job.inclusions.map((line, idx) => (
+                          <div key={idx} className="flex items-start gap-2 pl-1">
+                            <span className="mt-0.5 text-amber-600">✓</span>
+                            <span>{line}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {job.paymentNotes ? (
+                        <div className="mt-5 rounded-xl border border-amber-200/60 bg-white/60 p-3 text-sm leading-relaxed text-amber-900">
+                          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-amber-800">
+                            Payment
+                          </p>
+                          <p className="mt-1.5 whitespace-pre-line">
+                            {job.paymentNotes}
+                          </p>
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                </section>
+              ) : null}
+
               <section className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5">
                 <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">
                   Voucher Summary
@@ -307,8 +347,8 @@ export default async function ExternalVoucherPage({
                   </span>
                 </div>
                 <p className="mt-2 text-xs text-[var(--text-muted)]">
-                  Payment: {job.paymentMethod.replace(/_/g, " ")} (
-                  {job.paymentStatus})
+                  Payment: {paymentMethodLabel(job.paymentMethod)} ·{" "}
+                  {job.paymentStatus}
                 </p>
               </section>
 
@@ -319,14 +359,12 @@ export default async function ExternalVoucherPage({
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">
-                      How to use this voucher
+                      Before You Arrive
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-[var(--body-text)]">
-                      Present this voucher with the voucher ID at check-in. The
-                      service is delivered under{" "}
-                      <strong>{job.companyName}</strong>. For changes or
-                      cancellations, contact the company directly using the
-                      details above.
+                      Please arrive 15 minutes before departure. Keep your
+                      voucher ID handy on your phone. For changes, message us
+                      on WhatsApp.
                     </p>
                   </div>
                 </div>

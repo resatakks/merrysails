@@ -620,6 +620,7 @@ export default async function LocaleYachtCharterPage({
  fr: "yacht privé",
  nl: "privéjacht",
  ru: "частная яхта",
+ zh: "私人游艇",
  };
  const reserveLabelByLocale: Record<string, string> = {
  en: "Quote from €200",
@@ -628,6 +629,7 @@ export default async function LocaleYachtCharterPage({
  fr: "Devis dès €200",
  nl: "Offerte vanaf €200",
  ru: "Запросить от €200",
+ zh: "€280 起报价",
  };
  const whatsappPrefillByLocale: Record<string, string> = {
  en: "Hi MerrySails! I'd like a private yacht charter quote for the Bosphorus. Group size + date if known?",
@@ -636,6 +638,7 @@ export default async function LocaleYachtCharterPage({
  fr: "Bonjour MerrySails ! Je souhaite un devis pour la location d'un yacht privé sur le Bosphore. Taille du groupe + date (si connue) ?",
  nl: "Hallo MerrySails! Ik wil een offerte voor privé jachtcharter op de Bosporus. Groepsgrootte + datum (indien bekend)?",
  ru: "Здравствуйте, MerrySails! Прошу прислать смету частной аренды яхты по Босфору. Размер группы и дата (если известно)?",
+ zh: "您好,MerrySails!我想咨询博斯普鲁斯私人游艇包租报价。人数和日期(如已确定)?",
  };
  const productLabel = productLabelByLocale[locale] ?? productLabelByLocale.en;
  const reserveLabel = reserveLabelByLocale[locale] ?? reserveLabelByLocale.en;

@@ -65,7 +65,7 @@ const COMPANIES: Company[] = [
     priceFrom: "€30 dinner · €34 sunset · €280 private yacht",
     type: "Sunset / dinner / private yacht — direct operator",
     tursab: "Yes — A Group #14316, since 2001",
-    reviews: "4.9★ / 487 reviews",
+    reviews: "4.9★ / 1134 reviews",
     bestFor: "Best overall value for booking direct",
     verdict: "Best overall",
   },
@@ -246,7 +246,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "487",
+      reviewCount: "1134",
       bestRating: "5",
       worstRating: "1",
     },
@@ -546,7 +546,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
             <p className="mt-3 text-slate-600">
               Every cruise includes a live English-speaking guide and refreshments; dinner cruises
               add a 3-course Turkish dinner and a stage show. Free cancellation is available up to
-              48 hours before departure. With 4.9 stars across 487 verified reviews, MerrySails
+              48 hours before departure. With 4.9 stars across 1134 verified reviews, MerrySails
               holds the strongest review position among the guided operators on this list. Direct
               booking at merrysails.com avoids the 15–25% markup the same product carries on Viator.
             </p>
@@ -758,10 +758,10 @@ export default function BestBosphorusCruiseCompanies2026Page() {
               </p>
             </div>
             <div>
-              <h3 className="mb-1 font-semibold text-orange-400">3. 4.9★ across 487 reviews over 25 years</h3>
+              <h3 className="mb-1 font-semibold text-orange-400">3. 4.9★ across 1134 reviews over 25 years</h3>
               <p className="text-sm text-slate-300">
                 MerrySails has hosted over 50,000 guests since 2001 — the same captains and fleet on
-                the Bosphorus for decades. A 4.9 rating across 487 reviews is harder to sustain at
+                the Bosphorus for decades. A 4.9 rating across 1134 reviews is harder to sustain at
                 volume than at low volume. Recurring themes: punctual departures, knowledgeable
                 multilingual guides, and smooth boarding at Eminönü.
               </p>
@@ -865,7 +865,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
         {/* Final CTA */}
         <section className="rounded-3xl bg-gradient-to-br from-orange-600 to-amber-500 px-6 py-10 text-center text-white">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider opacity-80">
-            TÜRSAB A Group #{TURSAB_LICENSE_NUMBER} · Since 2001 · 50,000+ guests · 4.9★ / 487 reviews
+            TÜRSAB A Group #{TURSAB_LICENSE_NUMBER} · Since 2001 · 50,000+ guests · 4.9★ / 1134 reviews
           </p>
           <h2 className="text-2xl font-bold md:text-3xl">
             Book the Bosphorus cruise direct — from €30

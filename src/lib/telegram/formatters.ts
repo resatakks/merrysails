@@ -625,6 +625,7 @@ export function formatWelcome(firstName?: string): string {
   msg += `📋 <b>Rezervasyon Takibi</b>\nmerrysails.com üzerinden gelen tüm\nrezervasyonları anlık takip edin.\n\n`;
   msg += `✅ <b>Hızlı İşlem</b>\nTek tuşla onayla veya iptal et; tamamlandı için önce EUR maliyet gir.\n\n`;
   msg += `📊 <b>Günlük Raporlar</b>\nSabah brifing, akşam özet ve gün sonu\nraporu otomatik olarak gelir.\n\n`;
+  msg += `🤖 <b>AI Parse (YENİ)</b>\nWhatsApp'tan gelen müşteri/iş mesajlarını\nbu sohbete <b>yapıştır veya forward et</b> — bot\notomatik parse eder, sen onaylarsın, voucher\n+ invoice hemen oluşur.\n\n`;
   msg += `Başlamak için aşağıdaki butonları kullanın\nveya /yardim yazın.`;
   return msg;
 }
@@ -635,6 +636,7 @@ export function formatHelp(): string {
   msg += `📅 <b>Günlük Takip</b>\n├ /bugun — Bugünkü turlar\n├ /yarin — Yarınki turlar\n└ /hafta — Bu haftanın turları\n\n`;
   msg += `🔍 <b>Sorgulama</b>\n├ /bekleyen — Onay bekleyen turlar\n├ /durum [ID] — Rezervasyon detayı\n└ /ara [isim/tel] — Rezervasyon ara\n\n`;
   msg += `💶 <b>Maliyet</b>\n└ /maliyet [ID] [EUR] — Tamamlandı öncesi maliyet gir\n\n`;
+  msg += `🤖 <b>Yeni İş (AI parse)</b>\n├ Forward WhatsApp mesajı — otomatik parse\n├ /yenis [mesaj] — Manuel parse\n├ /yenis_son — Son 10 parse\n├ /yenis_bekleyen — Onay bekleyen parse\n└ /yenis_maliyet — Aylık API maliyeti\n\n`;
   msg += `📊 <b>Raporlar</b>\n└ /istatistik — Dönemsel istatistikler\n\n`;
   msg += `⚙️ <b>Ayarlar</b>\n├ /bildirimler — Bildirim tercihleri\n└ /yardim — Bu mesajı göster\n\n`;
   msg += `🔔 <b>Otomatik Bildirimler</b>\n├ Yeni rezervasyon bildirimi\n├ 2 saat kala hatırlatma\n├ 08:00 Sabah brifing\n├ 18:30 Akşam özet\n└ 23:00 Gün sonu rapor`;

@@ -9,6 +9,10 @@
     {
       "path": "/api/telegram/daily-evening",
       "schedule": "0 19 * * *"
+    },
+    {
+      "path": "/api/cron/parser-cleanup",
+      "schedule": "0 1 * * *"
     }
   ],
   "git": {

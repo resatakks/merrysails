@@ -12,6 +12,12 @@ export interface TelegramMessage {
   chat: TelegramChat;
   date: number;
   text?: string;
+  caption?: string;
+  /** Modern forwarded-message origin (Telegram Bot API 7.0+). */
+  forward_origin?: Record<string, unknown>;
+  /** Legacy forwarded-from fields kept for older clients. */
+  forward_from?: TelegramUser;
+  forward_from_chat?: TelegramChat;
 }
 
 export interface TelegramUser {

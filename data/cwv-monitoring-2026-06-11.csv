@@ -1,0 +1,5 @@
+ts_utc,brand,page_type,strategy,url,perf_score,lcp_ms,lcp_display,lcp_category,cls,cls_display,cls_category,tbt_ms,tbt_category,fcp_ms,si_ms,tti_ms,error
+2026-06-10T21:40:39.899639,pakbodrum,home,mobile,https://www.pakbodrum.com/,74.0,5772.0111687012595,5.8 s,POOR,0.0,0,GOOD,237.0,NEEDS,981.011168701259,2421.34379805168,7377.011168701258,
+2026-06-10T21:40:39.899639,pakbodrum,home,desktop,https://www.pakbodrum.com/,99.0,646.0087583153991,0.6 s,GOOD,0.0,0,GOOD,83.50000000000011,GOOD,343.00875831539906,967.8803285625742,1625.008758315399,
+2026-06-10T21:40:39.899639,pakbodrum,pillar,mobile,https://www.pakbodrum.com/fiyatlar,98.0,2325.0515661775785,2.3 s,GOOD,0.0,0,GOOD,100.5,GOOD,929.0515661775783,1835.4322167906641,6911.05156617758,
+2026-06-10T21:40:39.899639,pakbodrum,pillar,desktop,https://www.pakbodrum.com/fiyatlar,100,757.5350440496381,0.8 s,GOOD,0.0,0,GOOD,43.00000000000023,GOOD,277.03504404963815,360.1241195760108,1144.5350440496386,

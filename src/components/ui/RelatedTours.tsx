@@ -4,7 +4,16 @@ import type { SiteLocale } from "@/i18n/config";
 
 type TourKey = "bosphorus" | "sunset" | "dinner" | "yacht" | "boat";
 
-type CardLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
+type CardLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru" | "zh";
+
+// Slugs that have a live /zh/<slug> page (ZH_ENABLED_ROUTES). Cards whose slug
+// is not here are hidden on zh so we never link to a /zh 404 (boat-rental).
+const ZH_LIVE_SLUGS = new Set<string>([
+  "bosphorus-cruise",
+  "cruises/bosphorus-sunset-cruise",
+  "istanbul-dinner-cruise",
+  "yacht-charter-istanbul",
+]);
 
 interface TourCardData {
   key: TourKey;
@@ -27,6 +36,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Croisière sur le Bosphore",
       nl: "Bosporus-cruise Istanbul",
       ru: "Круиз по Босфору в Стамбуле",
+      zh: "伊斯坦布尔博斯普鲁斯游船",
     },
     tagline: {
       en: "Compare all cruise types — shared, private & dinner",
@@ -35,6 +45,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Comparez tous les types — partagé, privé & dîner",
       nl: "Vergelijk alle cruise-types — gedeeld, privé & diner",
       ru: "Сравните все типы — групповые, частные и с ужином",
+      zh: "对比所有游船类型 — 共享、私人与晚宴",
     },
     price: "From €25",
   },
@@ -49,6 +60,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Croisière au coucher du soleil",
       nl: "Bosporus zonsondergangcruise",
       ru: "Круиз по Босфору на закате",
+      zh: "博斯普鲁斯日落游船",
     },
     tagline: {
       en: "2-hour cruise at golden hour with open bar",
@@ -57,6 +69,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Croisière de 2 h à l'heure dorée avec open bar",
       nl: "2-uur cruise tijdens het gouden uur met open bar",
       ru: "2-часовой круиз в золотой час с открытым баром",
+      zh: "2 小时黄金时刻航程,含畅饮酒吧",
     },
     price: "From €35",
   },
@@ -71,6 +84,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Dîner-croisière Istanbul",
       nl: "Istanbul dinercruise",
       ru: "Ужин-круиз в Стамбуле",
+      zh: "伊斯坦布尔晚宴游船",
     },
     tagline: {
       en: "3-hour dinner, live show & unlimited drinks",
@@ -79,6 +93,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Dîner de 3 h, show live & boissons illimitées",
       nl: "3 uur diner, liveshow & onbeperkt drinken",
       ru: "3 часа ужина, шоу и безлимитные напитки",
+      zh: "3 小时晚宴、现场表演与无限畅饮",
     },
     price: "From €55",
   },
@@ -93,6 +108,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Location de yacht Istanbul",
       nl: "Jachtcharter Istanbul",
       ru: "Аренда яхты в Стамбуле",
+      zh: "伊斯坦布尔私人游艇包租",
     },
     tagline: {
       en: "Private yacht — your route, your schedule",
@@ -101,6 +117,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Yacht privé — votre itinéraire, votre horaire",
       nl: "Privéjacht — uw route, uw schema",
       ru: "Частная яхта — ваш маршрут, ваше расписание",
+      zh: "私人游艇 — 您的航线,您的时间",
     },
     price: "From €350",
   },
@@ -115,6 +132,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Location de bateau Istanbul",
       nl: "Bootverhuur Istanbul",
       ru: "Аренда лодки в Стамбуле",
+      zh: "伊斯坦布尔租船",
     },
     tagline: {
       en: "Hire a boat by the hour with or without captain",
@@ -123,6 +141,7 @@ const ALL_TOURS: TourCardData[] = [
       fr: "Louez un bateau à l'heure avec ou sans capitaine",
       nl: "Boot per uur huren met of zonder kapitein",
       ru: "Аренда лодки почасово — с капитаном или без",
+      zh: "按小时租船,可选配船长",
     },
     price: "From €150/hr",
   },
@@ -135,6 +154,7 @@ const DEFAULT_HEADING: Record<CardLocale, string> = {
   fr: "Également populaires sur le Bosphore",
   nl: "Ook populair op de Bosporus",
   ru: "Также популярно на Босфоре",
+  zh: "博斯普鲁斯热门之选",
 };
 
 interface RelatedToursProps {
@@ -151,7 +171,8 @@ function toCardLocale(locale: SiteLocale | CardLocale | undefined): CardLocale {
     locale === "de" ||
     locale === "fr" ||
     locale === "nl" ||
-    locale === "ru"
+    locale === "ru" ||
+    locale === "zh"
   ) {
     return locale;
   }
@@ -160,7 +181,10 @@ function toCardLocale(locale: SiteLocale | CardLocale | undefined): CardLocale {
 
 export default function RelatedTours({ exclude, heading, locale }: RelatedToursProps) {
   const l = toCardLocale(locale);
-  const tours = ALL_TOURS.filter((t) => t.key !== exclude);
+  const tours = ALL_TOURS.filter((t) => t.key !== exclude)
+    // On zh, only show cards whose target slug has a live /zh page — avoids
+    // linking the boat-rental card to a /zh 404.
+    .filter((t) => l !== "zh" || ZH_LIVE_SLUGS.has(t.hrefSlug));
   const finalHeading = heading ?? DEFAULT_HEADING[l];
   const localePrefix = l === "en" ? "" : `/${l}`;
 

@@ -51,6 +51,13 @@ const STRINGS: Record<string, {
     tonightAvailable: (p) => `Сегодня вечером ✓ свободно — бронируйте ${p} прямо сейчас`,
     tomorrowAvailable: (p) => `Завтра ✓ свободно — открыты места на ${p}`,
   },
+  zh: {
+    next14: (n, p) => `未来 14 天已确认 ${n} 笔${p}预订`,
+    last7: (n, p) => `过去 7 天新增 ${n} 笔${p}预订`,
+    soldOut: (d) => `下一个售罄日期:${d} — 请选择其他晚上`,
+    tonightAvailable: (p) => `今晚 ✓ 有位 — 立即预订今晚的${p}`,
+    tomorrowAvailable: (p) => `明天 ✓ 有位 — ${p}早鸟名额开放`,
+  },
 };
 
 const DATE_LOCALE: Record<string, string> = {
@@ -60,6 +67,7 @@ const DATE_LOCALE: Record<string, string> = {
   fr: "fr-FR",
   nl: "nl-NL",
   ru: "ru-RU",
+  zh: "zh-CN",
 };
 
 type Props = {

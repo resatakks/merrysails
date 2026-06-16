@@ -820,6 +820,32 @@ export default function BosphorusCruisePage() {
  </div>
  </section>
 
+ {/* Information Gain — operator first-person steering logic that no
+ OTA listing publishes: which format the booking desk pushes
+ first-timers toward, the two-pier boarding reality, and the #1
+ sunset-vs-dinner mistake. 134-167 words, self-contained for AI
+ citation. Sub-query fan-out: "which Bosphorus cruise is best". */}
+ <section className="mb-12 rounded-2xl border border-[var(--brand-primary)]/15 bg-white p-6 md:p-8">
+ <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+ From the wheelhouse — Captain Ahmet
+ </p>
+ <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+ Which Bosphorus cruise our booking desk actually steers you to first
+ </h2>
+ <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+ After 25 years on this water, here is the honest steer we give first-timers. Nine times out
+ of ten we send a first-time visitor to the €34 sunset cruise, not the €30 dinner. The reason
+ is the light: the 19:00 Karaköy departure puts Dolmabahçe&apos;s marble facade, Ortaköy
+ Mosque and the bridge cables in golden hour for a full hour, and you are off the boat by
+ 21:30 with the evening still open. The dinner cruise — boarding Kabataş at 20:30 — is the
+ right call only when the meal and the Turkish-night show are the actual point, not the view.
+ The most expensive mistake we watch guests make is booking dinner expecting daylight scenery:
+ by 21:00 the shoreline is dark and you are paying €30+ for a dinner-show you could have had
+ ashore. Whichever you pick, reach the pier 30 minutes early — Kabataş tram traffic backs up
+ and our lines cast off on the minute, not Istanbul time.
+ </p>
+ </section>
+
  <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
  <h2 className="text-2xl font-bold text-[var(--heading)] mb-6">Bosphorus cruise FAQs</h2>
  <div className="space-y-4">

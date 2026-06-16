@@ -16,23 +16,23 @@ import { tours } from "@/data/tours";
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
+  title: "Bosphorus Cruise Istanbul — Sunset €34",
   description:
-    "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001. No OTA markup.",
+    "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
   alternates: { canonical: "https://merrysails.com", languages: buildHreflang("") },
   openGraph: {
-    title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
+    title: "Bosphorus Cruise Istanbul — Sunset €34",
     description:
-      "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001.",
+      "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
     url: "https://merrysails.com",
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul 2026" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bosphorus Cruise Istanbul 2026 — Sunset €34, Yachts",
+    title: "Bosphorus Cruise Istanbul — Sunset €34",
     description:
-      "Direct-book Bosphorus cruises in Istanbul 2026: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB #14316 licensed since 2001.",
+      "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
     images: ["https://merrysails.com/og-image.jpg"],
   },
 };

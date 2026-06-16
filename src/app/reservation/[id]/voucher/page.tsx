@@ -11,6 +11,7 @@ import {
   Sparkles,
   User,
   Users,
+  UtensilsCrossed,
 } from "lucide-react";
 import { getReservation } from "@/app/actions/reservation";
 import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
@@ -379,6 +380,65 @@ export default async function ReservationVoucherPage({
                   ))}
                 </ul>
               </section>
+
+              {reservationMeta.voucherExtraNote && (
+                <section className="overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-5 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="rounded-full bg-amber-100 p-2.5">
+                      <UtensilsCrossed className="h-4 w-4 text-amber-700" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-amber-800">
+                        {reservationMeta.voucherExtraNoteTitle ?? "On Board & Inclusions"}
+                      </h3>
+                      <div className="mt-4 space-y-1.5 text-sm leading-relaxed text-[var(--body-text)]">
+                        {reservationMeta.voucherExtraNote
+                          .split("\n")
+                          .map((line, idx) => {
+                            const trimmed = line.trim();
+                            if (!trimmed) {
+                              return <div key={idx} className="h-2" aria-hidden />;
+                            }
+                            const isBullet = trimmed.startsWith("•") || trimmed.startsWith("-");
+                            const isHeading =
+                              !isBullet &&
+                              trimmed.endsWith(":") === false &&
+                              /^(Menu|Cold Appetizers|Salad|Main Course|Dessert|Hot Appetizers|Starters|Included on board|Schedule|Payment|Package)/i.test(
+                                trimmed
+                              );
+                            if (isBullet) {
+                              return (
+                                <div key={idx} className="flex items-start gap-2 pl-1">
+                                  <span className="mt-0.5 text-amber-600">✓</span>
+                                  <span>{trimmed.replace(/^[•\-]\s*/, "")}</span>
+                                </div>
+                              );
+                            }
+                            if (isHeading) {
+                              const [label, ...rest] = trimmed.split(":");
+                              if (rest.length > 0) {
+                                return (
+                                  <p key={idx}>
+                                    <span className="font-semibold text-amber-900">
+                                      {label}:
+                                    </span>
+                                    {rest.join(":")}
+                                  </p>
+                                );
+                              }
+                              return (
+                                <p key={idx} className="mt-2 font-semibold text-amber-900">
+                                  {trimmed}
+                                </p>
+                              );
+                            }
+                            return <p key={idx}>{trimmed}</p>;
+                          })}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
 
               <section className="rounded-2xl border border-[var(--line)] bg-white p-5">
                 <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">

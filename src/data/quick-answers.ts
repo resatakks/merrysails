@@ -10,8 +10,8 @@
  * - content: 40-60 word paragraph with price floor, duration, pier, booking
  * - question: the buyer-intent question this answers (powers JSON-LD)
  *
- * RU locale routes every booking reference through Telegram because
- * WhatsApp has been blocked inside Russia since Feb 2026.
+ * All locales (including RU and ZH) route booking references through
+ * WhatsApp — it is the single customer contact channel for this brand.
  *
  * Word counts (English) are verified manually; translations stay within
  * 40-60 words of running text.
@@ -75,6 +75,12 @@ const REGISTRY: Registry = {
  content:
  "Круиз на закате по Босфору от MerrySails — это 2-часовое групповое плавание в золотой час от пирса Каракёй, €30–€40 с человека (с вином или без). Ежедневные отправления в 19:00 включают чай, турецкий кофе, безалкогольные напитки, закуски и англоязычного гида. Лицензия TÜRSAB A с 2001 года (#14316). Бронируйте напрямую на merrysails.com через WhatsApp.",
  },
+ zh: {
+ title: "博斯普鲁斯日落游船 — MerrySails",
+ question: "MerrySails 博斯普鲁斯日落游船是什么?",
+ content:
+ "MerrySails 博斯普鲁斯日落游船是从卡拉科伊码头出发的 2 小时共享黄金时刻航程,每人 €30–€40(含酒或不含酒)。每天 19:00 出航,含茶、土耳其咖啡、软饮、小吃及英文实时讲解。周一、周二、周四预订享优惠价 €30。自 2001 年起持有 TÜRSAB A 类许可(#14316),已接待 50,000+ 位客人。在 merrysails.com 直接预订,60 分钟内确认。",
+ },
  },
 
  "istanbul-dinner-cruise": {
@@ -114,6 +120,12 @@ const REGISTRY: Registry = {
  content:
  "Ужин-круиз MerrySails — это 3,5-часовая групповая вечерняя прогулка по Босфору от пирса Кабаташ, четыре пакета: от €30 (Silver, безалкогольные напитки) до €90 (Gold, неограниченный алкоголь). Отправление в 20:30 с трансфером из отеля, турецким ужином, фольклорным шоу и DJ. Лицензия TÜRSAB A с 2001 года (#14316). Бронирование через WhatsApp.",
  },
+ zh: {
+ title: "伊斯坦布尔晚宴游船 — MerrySails",
+ question: "MerrySails 伊斯坦布尔晚宴游船是什么?",
+ content:
+ "MerrySails 伊斯坦布尔晚宴游船是从卡巴塔什码头出发的 3.5 小时共享博斯普鲁斯夜游,共四个套餐:从 €30(Silver,软饮)到 €90(Gold,无限畅饮)。20:30 出发,含酒店接送、土耳其晚宴、现场民俗表演和 DJ。自 2001 年起持有 TÜRSAB A 类许可(#14316),已接待 50,000+ 位客人。在 merrysails.com 直接预订,60 分钟内确认。",
+ },
  },
 
  "yacht-charter-istanbul": {
@@ -152,6 +164,12 @@ const REGISTRY: Registry = {
  question: "Что такое аренда яхты в Стамбуле от MerrySails?",
  content:
  "Аренда яхты MerrySails — это полностью частная прогулка по Босфору от пирсов Кабаташ, Каракёй или Куручешме. От €200 за 2-часовую яхту с малой палубой до премиум-палуб на 14 гостей. Гибкое время, кейтеринг, фотограф и опции для предложения руки. Лицензия TÜRSAB A с 2001 года (#14316). Письменное предложение в течение 60 минут через WhatsApp.",
+ },
+ zh: {
+ title: "伊斯坦布尔私人游艇包租 — MerrySails",
+ question: "MerrySails 伊斯坦布尔私人游艇包租是什么?",
+ content:
+ "MerrySails 私人游艇包租是从卡巴塔什、卡拉科伊或库鲁切什梅码头出发的完全私人博斯普鲁斯航程。按整艘游艇计价(非按人):2 小时小型游艇 €280 起(2–8 人),中型游艇 €500–€900(8–20 人),大型游艇 €1,000–€1,500(20–50 人)。船长、船员及 TÜRSAB 船只保险均含;航线、时长与菜单可完全定制。自 2001 年起持有 TÜRSAB A 类许可(#14316)。通过 WhatsApp 60 分钟内出具书面报价。",
  },
  },
 
@@ -308,6 +326,12 @@ const REGISTRY: Registry = {
  question: "Какие круизы по Босфору предлагает MerrySails в Стамбуле?",
  content:
  "MerrySails — оператор круизов по Босфору в Стамбуле по лицензии TÜRSAB A с 2001 года (#14316). Три варианта прямого бронирования: групповой закатный круиз от €30 (2 ч, Каракёй, 19:00), групповой ужин-круиз от €30 (3,5 ч, Кабаташ, 20:30, с трансфером) и частная яхта от €200 (гибкое время). Бронирование через WhatsApp, подтверждение за 60 минут.",
+ },
+ zh: {
+ title: "伊斯坦布尔博斯普鲁斯游船 — MerrySails",
+ question: "MerrySails 在伊斯坦布尔提供哪些博斯普鲁斯游船选择?",
+ content:
+ "MerrySails 是伊斯坦布尔持有 TÜRSAB A 类许可(#14316)的博斯普鲁斯游船运营商,自 2001 年起已接待 50,000+ 位客人。三种直接预订选择:共享日落游船 €30 起(2 小时,卡拉科伊,19:00 出发);共享晚宴游船 €30–€90 共四个套餐(3.5 小时,卡巴塔什,20:30 出发,含酒店接送);私人游艇包租 €280 起(按整艘计价,2–50 人,含船长与 TÜRSAB 保险,航线菜单可定制)。所有航线均经过多尔玛巴赫切宫、少女塔、奥塔科伊清真寺与鲁梅利堡。在 merrysails.com 直接预订,60 分钟内确认。",
  },
  },
 

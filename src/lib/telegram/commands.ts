@@ -535,6 +535,21 @@ export async function handleCommand(message: TelegramMessage) {
     case "/ara": return handleAra(message);
     case "/istatistik": return handleIstatistik(message);
     case "/bildirimler": return handleBildirimler(message);
+    case "/yenis_son":
+    case "/yenis_sonlar": {
+      const { handleYenisSon } = await import("./parse-admin");
+      return handleYenisSon(message);
+    }
+    case "/yenis_bekleyen":
+    case "/yenis_bekleyenler": {
+      const { handleYenisBekleyen } = await import("./parse-admin");
+      return handleYenisBekleyen(message);
+    }
+    case "/parser_maliyet":
+    case "/yenis_maliyet": {
+      const { handleParserMaliyet } = await import("./parse-admin");
+      return handleParserMaliyet(message);
+    }
     case "/yardim": case "/help":
       return sendMessage({ chat_id: String(message.chat.id), text: formatHelp() });
     default:

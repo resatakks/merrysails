@@ -5,9 +5,11 @@ import { ArrowLeft, ArrowRight, MapPin, BookOpen } from "lucide-react";
 import { guides, getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
 import { getTourBySlug, getTourPath, isPricingVisible } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
+import { getAuthor } from "@/data/team";
 import { cleanContentText } from "@/lib/content-text";
 import { BlogSectionBlock } from "@/components/blog/blog-section";
 import { buildHreflang } from "@/lib/hreflang";
+import { SITE_LAST_MODIFIED } from "@/lib/freshness";
 
 const defaultGuideSupportSlugs = [
   "bosphorus-cruise-boarding-points-guide-2026",
@@ -125,6 +127,10 @@ export default async function GuidePage({
     ],
   };
 
+  // Authorship + freshness signal — author resolves through team.ts to a
+  // named Person (Captain Ahmet by default); Google's Article spec wants
+  // author as an array of Person objects, not an Organization/Thing merge.
+  const guideAuthor = getAuthor(guide.author ?? "captain-ahmet");
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -132,13 +138,21 @@ export default async function GuidePage({
     description: cleanDescription,
     image: guide.image,
     datePublished: "2025-09-15",
-    dateModified: "2026-06-13",
-    author: {
-      "@type": "Organization",
-      "@id": "https://merrysails.com/#organization",
-      name: "MerrySails",
-      url: "https://merrysails.com",
-    },
+    dateModified: guide.dateModified ?? SITE_LAST_MODIFIED,
+    author: [
+      {
+        "@type": "Person",
+        name: guideAuthor?.name ?? "Captain Ahmet Yıldız",
+        jobTitle: guideAuthor?.role ?? "Senior Captain",
+        description: guideAuthor?.bio,
+        worksFor: {
+          "@type": "Organization",
+          "@id": "https://merrysails.com/#organization",
+          name: "MerrySails",
+          url: "https://merrysails.com",
+        },
+      },
+    ],
     publisher: {
       "@type": "Organization",
       "@id": "https://merrysails.com/#organization",

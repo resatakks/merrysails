@@ -42,6 +42,11 @@ const STRINGS: Record<string, {
     since: (d) => `с ${d}.`,
     cumulativeGuests: (k, year) => `Всего ${k}k+ гостей с ${year} года.`,
   },
+  zh: {
+    directBookings: (n) => `${n}+ 笔直接预订`,
+    since: (d) => `自 ${d} 起。`,
+    cumulativeGuests: (k, year) => `自 ${year} 年以来累计接待 ${k} 千+ 位客人。`,
+  },
 };
 
 const DATE_LOCALE: Record<string, string> = {
@@ -51,6 +56,7 @@ const DATE_LOCALE: Record<string, string> = {
   fr: "fr-FR",
   nl: "nl-NL",
   ru: "ru-RU",
+  zh: "zh-CN",
 };
 
 type Props = {

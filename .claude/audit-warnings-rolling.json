@@ -1,0 +1,1773 @@
+{
+  "brand": "merrysails",
+  "runs": [
+    {
+      "ts": "2026-06-09",
+      "scanned": 117,
+      "errors": 379,
+      "warnings": 161,
+      "details": [
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Tekne Kiralama\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Bootsverleih\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Boothuur\" is only 8 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P1-desc-too-short",
+          "message": "Meta desc is only 16 chars (min recommended 110)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 159 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"MerrySails est la marque de croisières B...\" is 163 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/about/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/blog/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 150 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/blog/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 159 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Privatboot pro Stunde auf dem ...\" is 72 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Privéboot per uur op de Bospor...\" is 70 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Geniş Filo\" is only 10 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Ücretsiz İptal\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Özelleştirme\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Große Flotte\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Rundum-Service\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Grande flotte\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Grote vloot\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Большой флот\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P1-desc-too-short",
+          "message": "Meta desc is only 8 chars (min recommended 110)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Bootsverleih Istanbul ab €${startingRate...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/boat-rental-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Süre ve bütçe\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Ücretsiz İptal\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 56 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Boğaz\" is only 5 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Buchungstiming\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Sichern Sie sich Ihren Platz f...\" is 117 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Réservez en ligne ou contactez...\" is 97 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Duur en budget\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Reserveer online of neem conta...\" is 97 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Время и бюджет\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Незабываемый Босфор — забронир...\" is 66 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"博斯普鲁斯日落游船\" is only 9 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"伊斯坦布尔晚宴游船\" is only 9 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"私人游艇包租\" is only 6 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"伊斯坦布尔船只租赁\" is only 9 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"时长与预算\" is only 5 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"私人还是共享?\" is only 7 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"预订时机\" is only 4 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"TÜRSAB A 类许可\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"50,000+ 位满意客人\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"直接价格 — 无中介费\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"免费取消\" is only 4 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P1-desc-too-short",
+          "message": "Meta desc is only 43 chars (min recommended 110)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 154 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Croisière Bosphore Istanbul : coucher de...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 154 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Круиз по Босфору в Стамбуле: круиз на за...\" is 179 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise-for-families/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"2001\" is only 4 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise-from-beyoglu/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Beyoğlu\" is only 7 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise-from-beyoglu/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise-from-sultanahmet/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Sultanahmet\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise-from-sultanahmet/page.tsx",
+          "rule": "P1-desc-too-short",
+          "message": "Meta desc is only 66 chars (min recommended 110)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise-from-taksim/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Taksim\" is only 6 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise-from-taksim/page.tsx",
+          "rule": "P1-desc-too-short",
+          "message": "Meta desc is only 56 chars (min recommended 110)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/bosphorus-cruise-from-taksim/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/bosphorus-cruise-from-taksim/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Croisière sur le Bosphore depuis Taksim ...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/client-hosting-yacht-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"VIP-Gäste, Investoren und Gesc...\" is 73 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/client-hosting-yacht-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Soirées VIP, investisseurs et ...\" is 72 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/client-hosting-yacht-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"VIP-gasten, investeerders en p...\" is 82 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/contact/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Şirket akşam yemekleri, müşter...\" is 65 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Teamdinner, Kundenveranstaltun...\" is 90 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Dîners d\" is only 8 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Dîner d\" is only 7 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Teamdiners, klantenontvangsten...\" is 82 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Teamdiner\" is only 9 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Командные ужины, приёмы клиент...\" is 79 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Командный ужин\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-events/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Приём клиентов\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-yacht-dinner-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Şirket akşam yemekleri, müşter...\" is 72 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-yacht-dinner-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Teamdinner, Kundenempfang und ...\" is 72 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-yacht-dinner-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Dîners d\" is only 8 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-yacht-dinner-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Soirée d\" is only 8 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-yacht-dinner-istanbul/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Dîner de fin d\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/corporate-yacht-dinner-istanbul/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Teamdiners, klantenontvangsten...\" is 64 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/[slug]/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Tour Not Found\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"English Page\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Boğaz\" is only 5 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"English Page\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Sichern Sie sich Ihren Platz f...\" is 73 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Yacht Privé\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"English Page\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Réservez votre place pour la c...\" is 73 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Dinercruise\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"English Page\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Ужин-круиз\" is only 10 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"English Page\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 56 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"晚宴游船\" is only 4 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"私人游艇包租\" is only 6 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"English Page\" is only 12 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P1-desc-too-short",
+          "message": "Meta desc is only 25 chars (min recommended 110)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 150 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/dinner-cruise-pickup-sultanahmet-taksim/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"İstanbul\" is only 8 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/dinner-cruise-pickup-sultanahmet-taksim/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Otel adresinizi belirtin, biz ...\" is 64 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/dinner-cruise-pickup-sultanahmet-taksim/page.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"Kombinierter Transfer aus Ista...\" is 102 chars (max 60)",
+          "timestamp": "2026-06-09"
+        }
+      ]
+    },
+    {
+      "ts": "2026-06-09",
+      "scanned": 117,
+      "errors": 26,
+      "warnings": 26,
+      "details": [
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/istanbul-dinner-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/about/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"${SITE_NAME} by ${COMPANY_NAME} — TURSAB...\" is 167 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/about/team/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Meet the Team\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/about/team/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 156 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/admin/calendar/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Admin Calendar\" is only 14 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/admin/leads/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Admin Leads\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/admin/login/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Admin Login\" is only 11 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/admin/reports/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Admin Reports\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/ai-knowledge/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/anniversary-yacht-cruise-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Private yacht for your anniversary on th...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/authors/captain-ahmet/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/best-bosphorus-sunset-cruise-2026/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"6-operator comparison of Bosphorus sunse...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/blog/layout.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Practical guides for Istanbul boat tours...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/blog/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 59 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Hourly boat rental in Istanbul from EUR ...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/boat-rental-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 157 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-departure-points/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-for-couples/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-from-sultanahmet/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/client-hosting-yacht-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/compare-bosphorus-cruises/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/cruises/[slug]/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "3 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/cruises/layout.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"MerrySails Cruise Catalog | Co...\" is 62 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/dinner-cruise-pickup-sultanahmet-taksim/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/honeymoon-yacht-cruise-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honeymoon yacht cruise on the Bosphorus,...\" is 164 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/istanbul-cruise-faq/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/istanbul-dinner-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 154 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/istanbul-dinner-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "3 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/kabatas-dinner-cruise-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 156 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/kurucesme-marina-yacht-charter/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/layout.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 57 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/layout.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"MerrySails focuses on Bosphorus sunset c...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/merrysails-vs-bosphorustour/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honest 2026 comparison of MerrySails and...\" is 164 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/merrysails-vs-viator/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honest comparison: direct booking with M...\" is 163 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/princes-islands-tour-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Princes Islands tour from Istanbul 2026 ...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/private-bosphorus-dinner-cruise/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Private Bosphorus dinner cruise Istanbul...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/private-tours/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/proposal-yacht-rental-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Book a marriage proposal yacht rental in...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/proposal-yacht-with-photographer-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/reservation/[id]/invoice/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/reservation/[id]/voucher/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/reservation/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/sunset-cruise-tickets-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Sunset cruise tickets Istanbul from €30 ...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/terms/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 150 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/turkish-night-dinner-cruise-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/tursab/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 153 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/yacht-charter-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/yacht-charter-istanbul/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        }
+      ]
+    },
+    {
+      "ts": "2026-06-09",
+      "scanned": 110,
+      "errors": 22,
+      "warnings": 26,
+      "details": [
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/istanbul-dinner-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/about/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"${SITE_NAME} by ${COMPANY_NAME} — TURSAB...\" is 167 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/about/team/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Meet the Team\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/about/team/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 156 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/ai-knowledge/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/anniversary-yacht-cruise-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Private yacht for your anniversary on th...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/authors/captain-ahmet/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/best-bosphorus-sunset-cruise-2026/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"6-operator comparison of Bosphorus sunse...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/blog/layout.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Practical guides for Istanbul boat tours...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/blog/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 59 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Hourly boat rental in Istanbul from EUR ...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/boat-rental-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 157 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-departure-points/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-for-couples/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-from-sultanahmet/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/client-hosting-yacht-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/compare-bosphorus-cruises/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/cruises/[slug]/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "3 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/cruises/layout.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"MerrySails Cruise Catalog | Co...\" is 62 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/dinner-cruise-pickup-sultanahmet-taksim/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/honeymoon-yacht-cruise-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honeymoon yacht cruise on the Bosphorus,...\" is 164 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/istanbul-cruise-faq/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/istanbul-dinner-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 154 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/istanbul-dinner-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "3 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/kabatas-dinner-cruise-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 156 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/kurucesme-marina-yacht-charter/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/layout.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 57 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/layout.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"MerrySails focuses on Bosphorus sunset c...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/merrysails-vs-bosphorustour/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honest 2026 comparison of MerrySails and...\" is 164 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/merrysails-vs-viator/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honest comparison: direct booking with M...\" is 163 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/princes-islands-tour-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Princes Islands tour from Istanbul 2026 ...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/private-bosphorus-dinner-cruise/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Private Bosphorus dinner cruise Istanbul...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/private-tours/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/proposal-yacht-rental-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Book a marriage proposal yacht rental in...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/proposal-yacht-with-photographer-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/reservation/[id]/invoice/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/reservation/[id]/voucher/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/reservation/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/sunset-cruise-tickets-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Sunset cruise tickets Istanbul from €30 ...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/terms/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 150 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/turkish-night-dinner-cruise-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/tursab/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 153 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/yacht-charter-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/yacht-charter-istanbul/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        }
+      ]
+    },
+    {
+      "ts": "2026-06-09",
+      "scanned": 110,
+      "errors": 22,
+      "warnings": 26,
+      "details": [
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/cruises/bosphorus-sunset-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/[locale]/istanbul-dinner-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/about/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"${SITE_NAME} by ${COMPANY_NAME} — TURSAB...\" is 167 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/about/team/page.tsx",
+          "rule": "P0-title-too-short",
+          "message": "Title \"Meet the Team\" is only 13 chars",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/about/team/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 156 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/ai-knowledge/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/anniversary-yacht-cruise-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Private yacht for your anniversary on th...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/authors/captain-ahmet/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/best-bosphorus-sunset-cruise-2026/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"6-operator comparison of Bosphorus sunse...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/blog/layout.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Practical guides for Istanbul boat tours...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/blog/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 59 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/boat-rental-hourly-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Hourly boat rental in Istanbul from EUR ...\" is 166 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/boat-rental-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 157 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-departure-points/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-for-couples/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/bosphorus-cruise-from-sultanahmet/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/client-hosting-yacht-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/compare-bosphorus-cruises/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/cruises/[slug]/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "3 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/cruises/layout.tsx",
+          "rule": "P0-title-too-long",
+          "message": "Title \"MerrySails Cruise Catalog | Co...\" is 62 chars (max 60)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/dinner-cruise-pickup-sultanahmet-taksim/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/honeymoon-yacht-cruise-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honeymoon yacht cruise on the Bosphorus,...\" is 164 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/istanbul-cruise-faq/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/istanbul-dinner-cruise/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 154 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/istanbul-dinner-cruise/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "3 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/kabatas-dinner-cruise-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 156 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/kurucesme-marina-yacht-charter/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/layout.tsx",
+          "rule": "P1-title-near-truncation",
+          "message": "Title is 57 chars (close to 60 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/layout.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"MerrySails focuses on Bosphorus sunset c...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/merrysails-vs-bosphorustour/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honest 2026 comparison of MerrySails and...\" is 164 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/merrysails-vs-viator/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Honest comparison: direct booking with M...\" is 163 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 158 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/princes-islands-tour-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Princes Islands tour from Istanbul 2026 ...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/private-bosphorus-dinner-cruise/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Private Bosphorus dinner cruise Istanbul...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/private-tours/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 160 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/proposal-yacht-rental-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Book a marriage proposal yacht rental in...\" is 161 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/proposal-yacht-with-photographer-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/reservation/[id]/invoice/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/reservation/[id]/voucher/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/reservation/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 151 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/sunset-cruise-tickets-istanbul/page.tsx",
+          "rule": "P0-desc-too-long",
+          "message": "Meta desc \"Sunset cruise tickets Istanbul from €30 ...\" is 165 chars (max 160)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/terms/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 150 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/turkish-night-dinner-cruise-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 155 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/tursab/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 153 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "warning",
+          "file": "src/app/yacht-charter-istanbul/page.tsx",
+          "rule": "P1-desc-near-truncation",
+          "message": "Meta desc is 152 chars (close to 160 truncation)",
+          "timestamp": "2026-06-09"
+        },
+        {
+          "severity": "error",
+          "file": "src/app/yacht-charter-istanbul/page.tsx",
+          "rule": "P0-multiple-h1",
+          "message": "2 <h1> tags found in single page component (max 1)",
+          "timestamp": "2026-06-09"
+        }
+      ]
+    }
+  ]
+}
