@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Clock,
+  Loader2,
   Minus,
   Plus,
   Shield,
@@ -61,6 +62,12 @@ export default function CoreBookingPlanner({
 }: CoreBookingPlannerProps) {
   const router = useRouter();
   const [isOpeningBooking, setIsOpeningBooking] = useState(false);
+  // Clarity (14d /reservation): 25 dead clicks on "Without Wine", 26 on
+  // "€220" — users tap the read-only "Selected Plan" summary card and the
+  // package name expecting to change the option, but the real control is the
+  // small <Select> trigger above. Controlling the dropdown open-state lets the
+  // summary card act as a second, larger tap target that opens the picker.
+  const [isPackageMenuOpen, setIsPackageMenuOpen] = useState(false);
   const safeInitialTourSlug = coreTours.some((tour) => tour.slug === initialTourSlug)
     ? initialTourSlug
     : coreTours[0]?.slug ?? "";
@@ -323,6 +330,8 @@ export default function CoreBookingPlanner({
               Package
             </label>
             <Select
+              open={isPackageMenuOpen}
+              onOpenChange={setIsPackageMenuOpen}
               value={selectedPackageName}
               onValueChange={(value) =>
                 setPackageSelectionByTour((current) => ({
@@ -350,11 +359,25 @@ export default function CoreBookingPlanner({
               </SelectContent>
             </Select>
 
-            <div className="mt-4 rounded-2xl border border-white/70 bg-white px-4 py-4">
+            <button
+              type="button"
+              onClick={() => {
+                if ((selectedTour.packages?.length ?? 0) > 1) {
+                  setIsPackageMenuOpen(true);
+                }
+              }}
+              aria-label={`Change package — currently ${selectedPackage?.name ?? selectedTour.nameEn}`}
+              className="mt-4 w-full rounded-2xl border border-white/70 bg-white px-4 py-4 text-left transition-colors hover:border-[var(--brand-primary)]/30"
+            >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                     Selected Plan
+                    {(selectedTour.packages?.length ?? 0) > 1 && (
+                      <span className="text-[10px] font-medium normal-case tracking-normal text-[var(--brand-primary)]">
+                        · tap to change
+                      </span>
+                    )}
                   </div>
                   <div className="mt-1 text-base font-semibold text-[var(--heading)]">
                     {selectedPackage?.name ?? selectedTour.nameEn}
@@ -398,7 +421,7 @@ export default function CoreBookingPlanner({
                   {selectedOperationNote}
                 </div>
               )}
-            </div>
+            </button>
           </section>
 
           <PlannerDateCalendar
@@ -463,15 +486,32 @@ export default function CoreBookingPlanner({
               />
               <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-[var(--text-muted)]">
                 {effectiveDepartureTime && (
-                  <span className="inline-flex items-center gap-1.5">
+                  <span
+                    className="inline-flex items-center gap-1.5"
+                    title={
+                      /flexible/i.test(effectiveDepartureTime)
+                        ? "Departure time is arranged with you after booking"
+                        : undefined
+                    }
+                  >
                     <Clock className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
                     {effectiveDepartureTime}
                   </span>
                 )}
-                <span className="inline-flex items-center gap-1.5">
+                {/* Clarity (14d /reservation): 16 dead clicks on the
+                    "Up to 25 guests" text — it reads like a control sitting
+                    right under the guest stepper. Wire it as a real shortcut
+                    that jumps the counter to the maximum for large groups,
+                    so the click does something instead of nothing. */}
+                <button
+                  type="button"
+                  onClick={() => setGuests(MAX_BOOKING_GUESTS)}
+                  disabled={guests >= MAX_BOOKING_GUESTS}
+                  className="inline-flex items-center gap-1.5 rounded-full transition-colors hover:text-[var(--brand-primary)] disabled:cursor-default disabled:hover:text-[var(--text-muted)]"
+                >
                   <Users className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
                   Up to {MAX_BOOKING_GUESTS} guests
-                </span>
+                </button>
               </div>
             </div>
 
@@ -511,18 +551,29 @@ export default function CoreBookingPlanner({
               );
             })()}
 
+            {/* Clarity (14d /reservation): 45 dead clicks + 1 rage click on
+                "Continue booking". The handler is sound (it writes a prefill
+                row then navigates), but the network round-trip leaves the
+                button looking idle, so users re-tap. A spinner + busy state
+                makes the wait unmistakable; aria-busy announces it to AT. */}
             <button
               type="button"
               onClick={handleContinue}
               disabled={isOpeningBooking}
+              aria-busy={isOpeningBooking}
               className="mt-4 inline-flex min-h-[3.75rem] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--brand-primary)] px-5 py-4 text-center text-[15px] font-semibold leading-tight text-white transition-all hover:brightness-110 disabled:cursor-wait disabled:opacity-80 sm:text-base"
             >
-              {isOpeningBooking
-                ? "Opening booking..."
-                : pageVariant
-                ? "Continue booking"
-                : "Continue with this booking"}
-              <ArrowRight className="h-4 w-4 shrink-0" />
+              {isOpeningBooking ? (
+                <>
+                  <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
+                  Opening booking...
+                </>
+              ) : (
+                <>
+                  {pageVariant ? "Continue booking" : "Continue with this booking"}
+                  <ArrowRight className="h-4 w-4 shrink-0" />
+                </>
+              )}
             </button>
           </section>
         </div>

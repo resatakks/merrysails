@@ -169,9 +169,19 @@ export function PlannerDateCalendar({
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
-          <span className="font-semibold text-[var(--heading)]">
+          {/* Clarity (14d /reservation): 18 dead clicks on the "June 2026"
+              month label — users tap the title expecting it to advance the
+              calendar like the chevrons. Wire it to the next month so the
+              tap has a response (it sits next to the forward chevron, which
+              is the dominant browsing direction when scouting dates). */}
+          <button
+            type="button"
+            onClick={() => setNavigationMonth(addMonths(currentMonth, 1))}
+            aria-label={`${format(currentMonth, "MMMM yyyy")} — go to ${format(addMonths(currentMonth, 1), "MMMM yyyy")}`}
+            className="rounded-lg px-2 py-1 font-semibold text-[var(--heading)] transition-colors hover:bg-white"
+          >
             {format(currentMonth, "MMMM yyyy")}
-          </span>
+          </button>
           <button
             type="button"
             onClick={() => setNavigationMonth(addMonths(currentMonth, 1))}
@@ -231,13 +241,26 @@ export function PlannerDateCalendar({
               <button
                 key={dayKey}
                 type="button"
-                onClick={() =>
-                  !isDisabled &&
+                onClick={() => {
+                  if (isDisabled) return;
+                  // Clarity (14d /reservation): dead clicks on "Last spots!"
+                  // (19) and the cell price (e.g. "€220", 26) — tomorrow is
+                  // pre-selected, so re-tapping the already-selected cell was
+                  // a no-op. Scroll the date confirmation + CTA into view so
+                  // the re-tap has a visible response instead of nothing.
+                  if (isSelected) {
+                    if (typeof document !== "undefined") {
+                      document
+                        .getElementById("planner-selected-date")
+                        ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                    }
+                    return;
+                  }
                   onSelect(day, {
                     departureTimeOverride: operation?.departureTimeOverride,
                     note: operation?.note,
-                  })
-                }
+                  });
+                }}
                 disabled={isDisabled}
                 className={`relative rounded-lg py-2 text-center text-sm transition-all ${
                   isSoldOut
@@ -314,7 +337,7 @@ export function PlannerDateCalendar({
       </div>
 
       {selectedDate && (
-        <div className="mt-4 space-y-3">
+        <div id="planner-selected-date" className="mt-4 scroll-mt-24 space-y-3">
           <div className="flex items-center gap-2 rounded-xl bg-[var(--brand-primary)]/5 px-3 py-2.5">
             <Calendar className="h-4 w-4 text-[var(--brand-primary)]" />
             <span className="text-sm font-semibold text-[var(--heading)]">
@@ -334,12 +357,17 @@ export function PlannerDateCalendar({
             </div>
           )}
 
+          {/* Clarity (14d /reservation): 26 dead clicks on "Choose your date
+              here" — a date is already pre-selected when this shows, so the
+              instruction-style copy read like a tappable CTA. Reworded to a
+              plain confirmation hint (no imperative) so it stops inviting
+              clicks; the calendar grid above is the actual date control. */}
           {!selectedOperation?.note && (
             <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
               {selectedDate && isSameDay(selectedDate, today)
                 ? getSameDayBookingClosedMessage(tourSlug, departureTime) ??
                   "Same-day reservations depend on departure cutoffs."
-                : "Choose your date here and continue with the same validation rules used on the product pages."}
+                : "This date uses the same validation rules as the product pages. Pick another day in the calendar above any time."}
             </div>
           )}
         </div>
