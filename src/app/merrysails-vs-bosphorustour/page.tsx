@@ -49,13 +49,13 @@ const ROWS: Array<{
   {
     category: "Starting price (sunset cruise)",
     merrysails: "€30 (Mon/Tue/Thu) · €34 other days",
-    bosphorustour: "€35–€45 (rate varies by booking channel)",
+    bosphorustour: "€50–€60 on their own site · higher via OTA resale",
     winner: "merrysails",
   },
   {
     category: "Starting price (dinner cruise)",
     merrysails: "€30 Silver Soft · €45 Silver Alcoholic · €80 Gold · €90 Gold Unlimited",
-    bosphorustour: "€60–€90 (single all-inclusive package)",
+    bosphorustour: "Not published — “ask for price” on-site, OTA-gated",
     winner: "merrysails",
   },
   {
@@ -85,7 +85,7 @@ const ROWS: Array<{
   {
     category: "Package depth (dinner cruise)",
     merrysails: "4-tier ladder (€30/€45/€80/€90) — clear price-vs-tier mapping",
-    bosphorustour: "Single all-inclusive tier — simpler but no entry-price option",
+    bosphorustour: "Dinner price not published (“ask for price”) — no transparent tier ladder",
     winner: "merrysails",
   },
   {
@@ -140,7 +140,7 @@ const faqJsonLd = {
       name: "Is MerrySails or Bosphorustour cheaper for a Bosphorus sunset cruise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MerrySails is cheaper on shared cruises. The sunset cruise direct price is €30 on Mon/Tue/Thu and €34 on other days. Bosphorustour rates typically land in the €35–€45 range, partly because much of their booking volume flows through Viator and GetYourGuide which add a 15–30% OTA markup.",
+        text: "MerrySails is cheaper on shared cruises. The sunset cruise direct price is €30 on Mon/Tue/Thu and €34 on other days. Bosphorustour's own-site sunset rate is €50–€60, and climbs higher again where booking volume flows through Viator and GetYourGuide, which add a 15–30% OTA markup.",
       },
     },
     {
