@@ -52,6 +52,8 @@ export interface HeaderStrings {
 export interface FooterStrings {
   description: string;
   coreProducts: string;
+  experiences: string;
+  planYourCruise: string;
   supportRoutes: string;
   company: string;
   blogHighlights: string;
@@ -273,6 +275,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "Direct Bosphorus bookings for sunset cruise, dinner cruise, and private yacht charter in Istanbul.",
     coreProducts: "Core Products",
+    experiences: "Experiences",
+    planYourCruise: "Plan Your Cruise",
     supportRoutes: "Support Routes",
     company: "Company",
     blogHighlights: "Blog Highlights",
@@ -291,6 +295,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "İstanbul'da gün batımı turu, akşam yemeği turu ve özel yat kiralama için doğrudan Boğaz rezervasyonları.",
     coreProducts: "Ana Ürünler",
+    experiences: "Deneyimler",
+    planYourCruise: "Turunu Planla",
     supportRoutes: "Destek Sayfaları",
     company: "Şirket",
     blogHighlights: "Blog",
@@ -309,6 +315,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "Direkte Buchungen für Sonnenuntergangs-Kreuzfahrten, Dinner-Kreuzfahrten und privaten Yachtcharter auf dem Bosporus in Istanbul.",
     coreProducts: "Hauptprodukte",
+    experiences: "Erlebnisse",
+    planYourCruise: "Fahrt planen",
     supportRoutes: "Support-Seiten",
     company: "Unternehmen",
     blogHighlights: "Blog",
@@ -327,6 +335,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "Réservations directes pour croisière coucher de soleil, dîner-croisière et yacht privé sur le Bosphore à Istanbul.",
     coreProducts: "Produits Phares",
+    experiences: "Expériences",
+    planYourCruise: "Préparez votre croisière",
     supportRoutes: "Pages d'assistance",
     company: "Entreprise",
     blogHighlights: "Blog",
@@ -345,6 +355,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "Directe boekingen voor zonsondergangstochten, dinercruises en privéjachtverhuur op de Bosporus in Istanbul.",
     coreProducts: "Hoofdproducten",
+    experiences: "Ervaringen",
+    planYourCruise: "Plan je cruise",
     supportRoutes: "Ondersteuningspagina's",
     company: "Bedrijf",
     blogHighlights: "Blog",
@@ -363,6 +375,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "Прямые бронирования на круизы по Босфору: круиз на закате, ужин-круиз и частная аренда яхты в Стамбуле.",
     coreProducts: "Основные продукты",
+    experiences: "Впечатления",
+    planYourCruise: "Спланируйте круиз",
     supportRoutes: "Сервисные страницы",
     company: "Компания",
     blogHighlights: "Блог",
@@ -381,6 +395,8 @@ const FOOTER: Record<ChromeLocale, FooterStrings> = {
     description:
       "在伊斯坦布尔直接预订博斯普鲁斯日落游船、晚宴游船和私人游艇包租。",
     coreProducts: "核心产品",
+    experiences: "体验项目",
+    planYourCruise: "规划您的游船",
     supportRoutes: "服务页面",
     company: "公司",
     blogHighlights: "博客精选",

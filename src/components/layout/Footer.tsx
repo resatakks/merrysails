@@ -117,32 +117,40 @@ const serviceLinks = [
   { label: "Departure Points Hub", href: "/bosphorus-cruise-departure-points" },
 ];
 
-const companyLinks = [
+// Former 25-link `companyLinks` column, split into three intent-balanced
+// columns so no single column towers over CORE PRODUCTS. Privacy Policy and
+// Terms & Conditions were removed here — they already render in the bottom
+// bar, so keeping them in the column was a duplicate.
+const experienceLinks = [
   { label: "All Bosphorus Cruises", href: "/cruises" },
   { label: "Private Tours", href: "/private-tours" },
+  { label: "Cruise for Couples", href: "/bosphorus-cruise-for-couples" },
+  { label: "Cruise for Families", href: "/bosphorus-cruise-for-families" },
+  { label: "Anniversary Yacht Cruise", href: "/anniversary-yacht-cruise-istanbul" },
+  { label: "Honeymoon Yacht Cruise", href: "/honeymoon-yacht-cruise-istanbul" },
+  { label: "Princes Islands Tour", href: "/princes-islands-tour-istanbul" },
+];
+
+const planLinks = [
   { label: "Compare All Cruises", href: "/compare-bosphorus-cruises" },
   { label: "MerrySails vs Bosphorustour", href: "/merrysails-vs-bosphorustour" },
   { label: "MerrySails vs Viator", href: "/merrysails-vs-viator" },
-  { label: "Anniversary Yacht Cruise", href: "/anniversary-yacht-cruise-istanbul" },
-  { label: "Honeymoon Yacht Cruise", href: "/honeymoon-yacht-cruise-istanbul" },
-  { label: "Cruise for Couples", href: "/bosphorus-cruise-for-couples" },
-  { label: "Cruise for Families", href: "/bosphorus-cruise-for-families" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
   { label: "Cruise from Sultanahmet", href: "/bosphorus-cruise-from-sultanahmet" },
   { label: "Cruise from Taksim", href: "/bosphorus-cruise-from-taksim" },
   { label: "Cruise from Beyoğlu", href: "/bosphorus-cruise-from-beyoglu" },
-  { label: "Princes Islands Tour", href: "/princes-islands-tour-istanbul" },
-  { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
-  { label: "Pricing", href: "/pricing" },
+];
+
+const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Meet the Team", href: "/about/team" },
   { label: "Contact", href: "/contact" },
   { label: "TURSAB License", href: "/tursab" },
+  { label: "AI Knowledge Hub", href: "/ai-knowledge" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
   { label: "Istanbul Guides", href: "/guides" },
-  { label: "AI Knowledge Hub", href: "/ai-knowledge" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms" },
 ];
 
 const blogLinks = [
@@ -170,7 +178,7 @@ export default function Footer() {
   return (
     <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">
       <div className="container-main pt-20 pb-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.85fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_2.6fr]">
           <div>
             <Link href={locale === "en" ? "/" : `/${locale}`} className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
@@ -267,63 +275,100 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              {t.coreProducts}
-            </h3>
-            <ul className="space-y-2.5">
-              {coreLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+                {t.coreProducts}
+              </h3>
+              <ul className="space-y-2.5">
+                {coreLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              {t.supportRoutes}
-            </h3>
-            <ul className="space-y-2.5">
-              {serviceLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={localizeHref(link.href, locale)}
-                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+                {t.experiences}
+              </h3>
+              <ul className="space-y-2.5">
+                {experienceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={localizeHref(link.href, locale)}
+                      className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
-              {t.company}
-            </h3>
-            <ul className="space-y-2.5">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={localizeHref(link.href, locale)}
-                    className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+                {t.planYourCruise}
+              </h3>
+              <ul className="space-y-2.5">
+                {planLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={localizeHref(link.href, locale)}
+                      className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+                {t.company}
+              </h3>
+              <ul className="space-y-2.5">
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={localizeHref(link.href, locale)}
+                      className="text-sm text-white/80 transition-colors hover:text-[var(--brand-gold)]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
         </div>
 
-        <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-2">
+        <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
+              {t.supportRoutes}
+            </h3>
+            <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-1">
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={localizeHref(link.href, locale)}
+                    className="text-sm text-white/70 transition-colors hover:text-[var(--brand-gold)]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div>
             <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--brand-gold)]">
               {t.blogHighlights}

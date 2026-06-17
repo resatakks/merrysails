@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSection from "@/components/home/HeroSection";
+import TrustCredentialsBand from "@/components/home/TrustCredentialsBand";
 import TrustEvidence from "@/components/home/TrustEvidence";
 import { trustEvidenceDatasetSchema } from "@/lib/trust-evidence";
 import TourGrid from "@/components/home/TourGrid";
@@ -210,57 +211,6 @@ const coreBookingPages = [
   },
 ] as const;
 
-const supportPages = [
-  {
-    href: "/sunset-cruise-tickets-istanbul",
-    eyebrow: "Shared sunset tickets",
-    title: "Sunset Ticket Support",
-    description: "Use this when the shared sunset route is already the likely fit and the remaining question is public ticket and option clarity.",
-  },
-  {
-    href: "/turkish-night-dinner-cruise-istanbul",
-    eyebrow: "Show-led shared dinner",
-    title: "Turkish Night Dinner Support",
-    description: "Use this when the Turkish-night dinner format matters more than pickup or Kabatas-side boarding questions.",
-  },
-  {
-    href: "/dinner-cruise-with-hotel-pickup-istanbul",
-    eyebrow: "Pickup-led brief",
-    title: "Dinner Pickup Support",
-    description: "Use this when the shared dinner route is already right and the main question is hotel pickup eligibility.",
-  },
-  {
-    href: "/dinner-cruise-pickup-sultanahmet-taksim",
-    eyebrow: "Central hotel pickup",
-    title: "Sultanahmet & Taksim Pickup",
-    description: "Use this when the blocker is whether Sultanahmet, Taksim, Sirkeci, or Karakoy fits the dinner pickup flow.",
-  },
-  {
-    href: "/boat-rental-hourly-istanbul",
-    eyebrow: "Hourly private hire",
-    title: "Boat Rental Hourly",
-    description: "Use this when the brief is shorter, lighter, and hour-led before a package-driven charter.",
-  },
-  {
-    href: "/bosphorus-cruise-departure-points",
-    eyebrow: "Waterfront logic",
-    title: "Departure Points Hub",
-    description: "Use this when the main question is where dinner, sunset, and private yacht products actually start in Istanbul.",
-  },
-  {
-    href: "/proposal-yacht-with-photographer-istanbul",
-    eyebrow: "Proposal coverage",
-    title: "Proposal Yacht with Photographer",
-    description: "Use this when discreet reveal coverage and couple portraits are part of the decision before booking.",
-  },
-  {
-    href: "/corporate-yacht-dinner-istanbul",
-    eyebrow: "Dinner-led company brief",
-    title: "Corporate Yacht Dinner",
-    description: "Use this when a private yacht dinner matters more than a broader client-hosting or launch format.",
-  },
-] as const;
-
 export default function HomePage() {
   return (
     <>
@@ -295,6 +245,11 @@ export default function HomePage() {
       />
       <HeroSection />
       <TourGrid />
+
+      {/* Trust & credentials band — corporate verification stack (real
+          first-party aggregate + review-platform badges + folded-in
+          safety/licensing points) placed high so credibility lands early. */}
+      <TrustCredentialsBand />
 
       {/* First-party trust evidence — citation-ready stats for AI
           retrievers (Perplexity / Bing Copilot / ChatGPT).  The Dataset
@@ -350,61 +305,8 @@ export default function HomePage() {
       <FeaturedTour tour={tours[1]} reverse />
       <FeaturedTour tour={tours[2]} />
 
-      <section className="py-12 bg-[var(--surface-alt)]">
-        <div className="mx-auto max-w-6xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
-            Use These Support Routes Only When The Brief Is Already Narrow
-          </h2>
-          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
-            Broad searchers should still start with sunset, dinner, yacht charter, or the Bosphorus compare hub. These links are only for narrower pickup, corporate dinner, proposal, and departure-logic briefs.
-          </p>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {supportPages.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl border border-gray-200 bg-white p-5 transition-colors hover:border-[var(--brand-primary)] hover:bg-white"
-                >
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-primary)]">
-                  See details →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CommercialIntentSection compact />
       <WhyUs />
-
-      {/* Trust notes — AI Visibility */}
-      <section className="py-12 bg-[var(--surface-alt)]">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-semibold text-center mb-6">Bosphorus Cruise Safety & Licensing Standards</h2>
-          <div className="space-y-4">
-            <div className="border-l-4 border-[var(--brand-primary)] pl-4 text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <h3 className="text-sm font-semibold text-gray-900 mb-1">Licensed travel-agency operation</h3>
-              <p className="text-sm leading-relaxed">
-                MerrySails is operated by Merry Tourism, a TURSAB A Group licensed travel agency. This keeps licensing, booking support, and guest communication tied to a named Istanbul operator.
-              </p>
-            </div>
-            <div className="border-l-4 border-[var(--brand-primary)] pl-4 text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <h3 className="text-sm font-semibold text-gray-900 mb-1">Bosphorus-specific planning</h3>
-              <p className="text-sm leading-relaxed">
-                Sunset, dinner, and private yacht bookings use different timing, boarding, package, and route logic. The site separates those intents so guests can choose the right product before contacting the team.
-              </p>
-            </div>
-            <div className="border-l-4 border-[var(--brand-primary)] pl-4 text-gray-600 bg-white py-3 px-4 rounded-r-lg">
-              <h3 className="text-sm font-semibold text-gray-900 mb-1">Safety and boarding clarity</h3>
-              <p className="text-sm leading-relaxed">
-                Booking pages and confirmation messages are treated as the source of truth for exact meeting points, inclusions, timing, and vessel-specific details.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <BosphorusGuideSection />
       <LatestBlogPosts />
