@@ -77,8 +77,8 @@
           },
           "boatId": {
             "type": "string",
-            "description": "Specific yacht slug if private charter (e.g., bosphorus-signature-yacht-36).",
-            "example": "bosphorus-signature-yacht-36"
+            "description": "Specific yacht slug if private charter (e.g., group-yacht-40-signature).",
+            "example": "group-yacht-40-signature"
           },
           "date": { "type": "string", "format": "date", "example": "2026-07-15" },
           "time": { "type": "string", "example": "19:30" },
