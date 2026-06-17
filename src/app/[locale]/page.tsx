@@ -6,6 +6,7 @@ import { Anchor, Sunset, UtensilsCrossed, Briefcase } from "lucide-react";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import HeroSection from "@/components/home/HeroSection";
 import TrustCredentialsBand from "@/components/home/TrustCredentialsBand";
 
 export const revalidate = 3600;
@@ -25,14 +26,6 @@ type LocaleContent = {
  htmlLang: string;
  metaTitle: string;
  metaDescription: string;
- hero: {
- tagline: string;
- heading: string;
- subheading: string;
- bookNow: string;
- trustLine: string;
- fromLabel: string;
- };
  products: {
  sunset: { eyebrow: string; title: string; description: string; price: string };
  dinner: { eyebrow: string; title: string; description: string; price: string };
@@ -82,15 +75,6 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  metaTitle: "Boğaz Turu İstanbul | Gün Batımı & Yemek",
  metaDescription:
  "İstanbul'un özel Boğaz deneyimleri: gün batımı turu, akşam yemekli Boğaz turu ve özel yat kiralama. TÜRSAB A Grubu lisanslı, 50.000+ misafir.",
- hero: {
- tagline: "İstanbul'un Özel Boğaz Deneyimi",
- heading: "İstanbul Boğaz Turu — Gün Batımı, Akşam Yemeği & Yat Kiralama",
- subheading:
- "Gün batımı turu, akşam yemekli tekne turu ve özel yat kiralama — direkt rezervasyon, lisanslı operatör, net fiyatlar.",
- bookNow: "Hemen Rezervasyon",
- trustLine: "TÜRSAB A Grubu Lisanslı · 50.000+ Misafir · Direkt Rezervasyon",
- fromLabel: "Başlangıç fiyatı",
- },
  products: {
  sunset: {
  eyebrow: "Altın saat",
@@ -211,15 +195,6 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  metaTitle: "Bosporus Kreuzfahrt Istanbul",
  metaDescription:
  "Istanbuls exklusive Bosporus-Erlebnisse: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und private Yacht-Charter. TURSAB A-Gruppe lizenziert, 50.000+ Gäste.",
- hero: {
- tagline: "Istanbuls exklusive Bosporus-Erlebnisse",
- heading: "Bosporus Kreuzfahrt Istanbul — Sonnenuntergang, Dinner & Yacht-Charter",
- subheading:
- "Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und privater Yacht-Charter — direkte Buchung, lizenzierter Veranstalter, transparente Preise.",
- bookNow: "Jetzt Buchen",
- trustLine: "TURSAB A-Gruppe lizenziert · 50.000+ Gäste · Direkte Buchung",
- fromLabel: "Ab",
- },
  products: {
  sunset: {
  eyebrow: "Goldene Stunde",
@@ -340,15 +315,6 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  metaTitle: "Croisière Bosphore Istanbul | Dîner & Yacht",
  metaDescription:
  "L'expérience exclusive du Bosphore à Istanbul : croisière coucher de soleil, croisière dîner et charter de yacht privé. TURSAB Groupe A licencié, 50 000+ invités.",
- hero: {
- tagline: "L'expérience exclusive du Bosphore à Istanbul",
- heading: "Croisière Bosphore Istanbul — Coucher de Soleil, Dîner & Yacht",
- subheading:
- "Croisière coucher de soleil, croisière dîner et charter de yacht privé — réservation directe, opérateur licencié, prix transparents.",
- bookNow: "Réserver Maintenant",
- trustLine: "TURSAB Groupe A licencié · 50 000+ invités · Réservation directe",
- fromLabel: "À partir de",
- },
  products: {
  sunset: {
  eyebrow: "Heure dorée",
@@ -469,15 +435,6 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  metaTitle: "Bosporus Cruise Istanbul | Diner & Jacht",
  metaDescription:
  "Istanbul's exclusieve Bosporus-ervaring: zonsondergangs-cruise, dinercruise en privé jachtcharter. TURSAB A Groep gelicentieerd, 50.000+ gasten.",
- hero: {
- tagline: "Istanbul's exclusieve Bosporus-ervaring",
- heading: "Bosporus Cruise Istanbul — Zonsondergang, Diner & Jacht",
- subheading:
- "Zonsondergangs-cruise, dinercruise en privé jachtcharter — directe boeking, gelicentieerde aanbieder, transparante prijzen.",
- bookNow: "Nu Boeken",
- trustLine: "TURSAB A Groep gelicentieerd · 50.000+ gasten · Directe boeking",
- fromLabel: "Vanaf",
- },
  products: {
  sunset: {
  eyebrow: "Gouden uur",
@@ -598,15 +555,6 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  metaTitle: "Круиз по Босфору — Закат, Ужин, Яхта",
  metaDescription:
  "Эксклюзивные круизы по Босфору от MerrySails: круиз на закате, ужин-круиз и аренда частной яхты. Лицензия TÜRSAB группы А, более 50 000 гостей с 2001 года.",
- hero: {
- tagline: "Эксклюзивный Босфор от MerrySails",
- heading: "Круиз по Босфору в Стамбуле — закат, ужин и аренда яхты",
- subheading:
- "Круиз на закате, ужин-круиз и частная аренда яхты — прямое бронирование, лицензированный оператор, прозрачные цены.",
- bookNow: "Забронировать сейчас",
- trustLine: "Лицензия TÜRSAB группы А · 50 000+ гостей · прямое бронирование",
- fromLabel: "От",
- },
  products: {
  sunset: {
  eyebrow: "Золотой час",
@@ -737,15 +685,6 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  metaTitle: "伊斯坦布尔博斯普鲁斯海峡游船 — 日落 / 晚宴 / 游艇",
  metaDescription:
  "MerrySails 提供伊斯坦布尔博斯普鲁斯海峡日落游船、晚宴游船及私人游艇包租。直接预订，TÜRSAB A 类许可，自 2001 年起接待 50,000+ 位客人。WhatsApp 中文/英文/土耳其语对接。",
- hero: {
- tagline: "MerrySails 博斯普鲁斯海峡专家",
- heading: "伊斯坦布尔博斯普鲁斯海峡游船 — 日落、晚宴与私人游艇",
- subheading:
- "三种核心产品:共享日落游船、共享晚宴游船、私人游艇包租。直接预订,价格透明,持牌运营。",
- bookNow: "立即预订",
- trustLine: "TÜRSAB A 类许可 · 50,000+ 位客人 · 直接预订",
- fromLabel: "起价",
- },
  products: {
  sunset: {
  eyebrow: "黄金时刻",
@@ -1038,70 +977,13 @@ export default async function LocaleHomePage({
  dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
  />
 
- {/* Hero */}
- <section className="relative overflow-hidden bg-gradient-to-b from-[var(--surface-alt)] to-white">
- <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
- <div className="text-center">
- <p className="text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)] mb-4">
- {t.hero.tagline}
- </p>
- <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 max-w-3xl mx-auto leading-tight">
- {t.hero.heading}
- </h1>
- <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
- {t.hero.subheading}
- </p>
- <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
- <Link
- href={reservationHref}
- className="inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] px-8 py-3 text-base font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
- >
- {t.hero.bookNow}
- </Link>
- <a
- href={WHATSAPP_URL}
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-gray-900 transition-colors hover:border-[var(--brand-primary)]"
- >
- WhatsApp
- </a>
- </div>
- <p className="text-xs md:text-sm text-gray-500">{t.hero.trustLine}</p>
- </div>
+ {/* Hero — the SAME immersive image hero as the EN root `/` homepage,
+     localized.  HeroSection is locale-aware (background image + scrim +
+     all visual treatment identical to EN; only text + link targets
+     change per locale). */}
+ <HeroSection locale={locale as LocaleKey} />
 
- {/* Hero product cards (quick scan) */}
- <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
- {products.map((p) => (
- <Link
- key={p.key}
- href={p.href}
- className="group flex items-center gap-4 rounded-2xl border border-gray-200 bg-white p-4 transition-colors hover:border-[var(--brand-primary)]"
- >
- <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-xl">
- <Image
- src={p.image}
- alt={p.content.title}
- fill
- sizes="64px"
- className="object-cover transition-transform duration-500 group-hover:scale-110"
- />
- </div>
- <div className="min-w-0 flex-1">
- <h3 className="text-sm font-semibold text-gray-900 truncate">
- {p.content.title}
- </h3>
- <p className="text-xs text-[var(--brand-primary)] font-medium mt-0.5">
- {p.content.price}
- </p>
- </div>
- </Link>
- ))}
- </div>
- </div>
- </section>
-
- {/* Trust & credentials band — placed high (mirrors EN homepage) so
+  {/* Trust & credentials band — placed high (mirrors EN homepage) so
  credibility lands before the visitor scrolls into the products.
  Locale-aware: real stats from trust-evidence.ts, labels translated. */}
  <TrustCredentialsBand locale={locale as LocaleKey} />
