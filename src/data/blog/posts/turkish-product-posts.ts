@@ -6,9 +6,9 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "İstanbul Boğaz Turu Fiyatları 2026",
     metaDescription:
-      "2026 yılında İstanbul Boğaz turu fiyatları: paylaşımlı tur €34–40, akşam yemeği turu €55–119, özel yat kiralama €380–1.800. Sezon, paket ve kapasite karşılaştırması.",
+      "2026 yılında İstanbul Boğaz turu fiyatları: paylaşımlı tur €34–40, akşam yemeği turu €55–119, özel yat kiralama €220'den. Sezon, paket ve kapasite karşılaştırması.",
     excerpt:
-      "Boğaz turu fiyatları, tur tipine ve sezona göre kişi başı €34'ten başlayıp özel yat kiralama için €1.800'e kadar çıkabilir. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 fiyat rehberi.",
+      "Boğaz turu fiyatları, tur tipine ve sezona göre kişi başı €34'ten başlayıp özel yat kiralama için tekne başı €220'den çıkabilir. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 fiyat rehberi.",
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 dk okuma",
@@ -27,16 +27,16 @@ export const turkishProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Paylaşımlı Boğaz turu: kişi başı €34 (gündüz) veya €40 (gün batımı) — en ekonomik seçenek",
       "Akşam yemeği turu: €55–€119 arası 4 farklı paket, folklor gösterisi ve transfer dahil",
-      "Özel yat kiralama: €380–€1.800 arasında tekne başı, kapasite ve süreye göre değişir",
+      "Özel yat kiralama: €220'den tekne başı (Premium €320, Grup €380/€500, Etkinlik €600), kapasite ve süreye göre değişir",
       "Yüksek sezonda (Haziran–Ağustos) fiyatlar %15–20 daha yüksek; Ekim–Nisan döneminde önemli indirimler mevcut",
     ],
     sections: [
       {
         heading: "2026'da İstanbul Boğaz Turu Ne Kadar?",
         content:
-          "İstanbul Boğaz turlarında fiyat aralığı oldukça geniştir çünkü üç farklı tur kategorisi tamamen farklı deneyimler sunar. Paylaşımlı tur kişi başı €34'ten başlar; özel yat kiralama €380'den itibaren tekne başına fiyatlandırılır. Bu rehberde 2026 sezon fiyatlarını, paket içeriklerini ve en iyi değer nasıl elde edileceğini detaylıca ele alıyoruz.",
+          "İstanbul Boğaz turlarında fiyat aralığı oldukça geniştir çünkü üç farklı tur kategorisi tamamen farklı deneyimler sunar. Paylaşımlı tur kişi başı €34'ten başlar; özel yat kiralama €220'den itibaren tekne başına fiyatlandırılır. Bu rehberde 2026 sezon fiyatlarını, paket içeriklerini ve en iyi değer nasıl elde edileceğini detaylıca ele alıyoruz.",
         answerCapsule:
-          "Paylaşımlı Boğaz turu kişi başı €34–40, akşam yemeği turu €55–119, özel yat kiralama tekne başı €380–1.800.",
+          "Paylaşımlı Boğaz turu kişi başı €34–40, akşam yemeği turu €55–119, özel yat kiralama tekne başı €220'den.",
         callout: {
           type: "price",
           text:
@@ -86,14 +86,15 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Özel Yat Kiralama Fiyatları",
         content:
-          "Özel Boğaz turları, kendi grubunuzla özel bir tekne kiralamak anlamına gelir. Fiyatlar tekne kapasitesine, süresine ve ekstra hizmetlere göre belirlenir. Tüm özel turlar minimum 2 saatlik kiralama gerektirir:",
+          "Özel Boğaz turları, kendi grubunuzla özel bir yat kiralamak anlamına gelir. Fiyat tekne başınadır (kişi başı değil); yatın büyüklüğüne ve süreye göre belirlenir. Özel yat kiralama €220'den başlar, minimum 2 saattir ve 3 saatten itibaren %10 indirim uygulanır:",
         table: {
-          headers: ["Paket", "Tekne", "Kapasite", "2 Saatlik Fiyat", "4 Saatlik Fiyat"],
+          headers: ["Yat", "Kapasite", "2 Saat", "4 Saat"],
           rows: [
-            ["Essential", "Gület (klasik)", "2–8 kişi", "€380", "€620"],
-            ["Premium", "Motor yat", "2–12 kişi", "€580", "€950"],
-            ["VIP", "Lüks motor yat", "2–20 kişi", "€950", "€1.550"],
-            ["Ultra VIP", "Mega yat", "2–30 kişi", "€1.200", "€1.800"],
+            ["Butik Yat", "12 kişiye kadar", "€220", "€396"],
+            ["Premium Yat", "15 kişiye kadar", "€320", "€576"],
+            ["Grup Yatı · Standart", "15 kişiye kadar", "€380", "€684"],
+            ["Grup Yatı · Signature", "15–40 kişi", "€500", "€900"],
+            ["Etkinlik Yatı", "90 kişiye kadar", "4 saat €1.200", "—"],
           ],
         },
         proTip:
@@ -155,7 +156,7 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "İstanbul Boğaz turu ne kadar tutar?",
-        a: "Paylaşımlı Boğaz turları kişi başı €34 (gündüz) veya €40 (gün batımı) fiyatından başlar. Akşam yemeği turunun pakete göre kişi başı fiyatı €55–€119 arasındadır. Özel yat kiralama 2 saatlik turlar için €380'den itibaren tekne başına fiyatlandırılır. Haziran–Ağustos yüksek sezonunda fiyatlar yaklaşık %15–20 artış gösterir.",
+        a: "Paylaşımlı Boğaz turları kişi başı €34 (gündüz) veya €40 (gün batımı) fiyatından başlar. Akşam yemeği turunun pakete göre kişi başı fiyatı €55–€119 arasındadır. Özel yat kiralama 2 saatlik turlar için €220'den itibaren tekne başına fiyatlandırılır. Haziran–Ağustos yüksek sezonunda fiyatlar yaklaşık %15–20 artış gösterir.",
       },
       {
         q: "Boğaz gün batımı turu ne zaman başlar?",
@@ -191,7 +192,7 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "İstanbul'da Teknede Evlilik Teklifi",
     metaDescription:
-      "İstanbul'da teknede evlilik teklifi için eksiksiz rehber: fiyatlar, organizasyon ipuçları, en iyi güzergahlar, dekorasyon ve gerçek hikayeler. Özel yat €380'den başlar.",
+      "İstanbul'da teknede evlilik teklifi için eksiksiz rehber: fiyatlar, organizasyon ipuçları, en iyi güzergahlar, dekorasyon ve gerçek hikayeler. Özel yat €220'den başlar.",
     excerpt:
       "İstanbul Boğazı'nda gün batımı altında yapılan evlilik teklifi, en sinematik anlardan biridir. 50.000'den fazla misafiri ağırlamış TÜRSAB A Grubu lisanslı MerrySails'in özel teklif rehberi.",
     category: "yacht-guide",
@@ -228,18 +229,18 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Özel Tekne Teklif Paketleri ve Fiyatlar",
         content:
-          "MerrySails, evlilik teklifi için üç farklı özel tekne paketi sunar. Tüm paketler yalnızca iki kişilik turu kapsar; ister bütçe dostu ister ultra lüks bir deneyim isteyin, ihtiyacınıza uygun bir seçenek bulunur:",
+          "MerrySails evlilik teklifi için özel yat kiralar — fiyat tekne başınadır, kişi sayısından bağımsızdır. İki kişilik romantik bir kaçamak için en küçük yat €220'den başlar; daha geniş güverte ve tam servis isteyenler için üst tarifeler mevcuttur. Tüm fiyatlar 2 saatlik turu kapsar ve 3 saatten itibaren %10 indirim uygulanır:",
         table: {
-          headers: ["Paket", "Tekne", "Süre", "Fiyat", "Dahil Olanlar"],
+          headers: ["Yat", "Kapasite", "Fiyat (2 saat)", "Dahil Olanlar"],
           rows: [
-            ["Romantik Kaçamak", "Klasik gület", "2 saat", "€380", "Şampanya, gül yaprakları, navigasyon"],
-            ["Gün Batımı Teklifi", "Motor yat", "3 saat", "€580", "Şampanya, çiçek, dekorasyon, güverte servisi"],
-            ["VIP Özel An", "Lüks motor yat", "4 saat", "€950", "Şampanya, butik çiçek, fotoğrafçı koordinasyonu, akşam yemeği, dekorasyon"],
-            ["Ultra VIP Bosphorus", "Mega yat", "4 saat", "€1.200", "Tüm VIP içerik + profesyonel fotoğrafçı, drone çekimi, video montaj"],
+            ["Butik Yat", "12 kişiye kadar", "€220", "Şampanya, gül yaprakları, navigasyon"],
+            ["Premium Yat", "15 kişiye kadar", "€320", "Şampanya, çiçek, dekorasyon, güverte servisi"],
+            ["Grup Yatı · Signature", "15–40 kişi", "€500", "Şampanya, butik çiçek, fotoğrafçı koordinasyonu, dekorasyon"],
+            ["Etkinlik Yatı", "90 kişiye kadar", "4 saat €1.200'den", "Büyük grup için tam servis + profesyonel fotoğrafçı koordinasyonu"],
           ],
         },
         proTip:
-          "VIP veya Ultra VIP paket seçerseniz, teklif anı fotoğraflarını gece teslim alabiliriz. Fotoğrafçı koordinasyonunu en az 5 iş günü öncesinden talep etmenizi öneririz.",
+          "Fotoğrafçı koordinasyonu eklerseniz, teklif anı fotoğraflarını aynı gece dijital olarak teslim alabilirsiniz. Fotoğrafçıyı en az 5 iş günü öncesinden talep etmenizi öneririz.",
       },
       {
         heading: "Mükemmel Teklif Anını Planlamak: Adım Adım Rehber",
@@ -247,7 +248,7 @@ export const turkishProductPosts: BlogPost[] = [
           "Hayatınızın bu önemli anını stressiz ve kusursuz organize etmek için aşağıdaki süreci takip etmenizi öneririz. MerrySails planlama ekibi, her adımda size rehberlik eder:",
         list: [
           "1. Tarih ve saati belirleyin: Gün batımı 2–4 hafta içinse hemen rezervasyon yapın; yüksek sezonda (Haz–Ağu) daha erken planlama gerekir.",
-          "2. Tekne paketini seçin: İki kişinin bütçesine ve hangi ekstraları istediğinize (fotoğrafçı, yemek, dekor) göre karar verin.",
+          "2. Yatı seçin: İki kişinin bütçesine ve hangi ekstraları istediğinize (fotoğrafçı, yemek, dekor) göre Butik (€220) veya Premium (€320) yat arasında karar verin.",
           "3. Sürprizi planlayın: Partnerinizin 'normal bir Boğaz turu' sandığı sürpriz teklifler, organizasyonumuza dahil edilebilir.",
           "4. Dekorasyon tercihlerinizi bildirin: Gül yaprakları, mum düzeni, kişisel fotoğraf kolajı — önceden belirtilen detaylar tekneye yüklenir.",
           "5. Özel isteklerinizi iletişime geçin: Özel şarkı, müzik listesi, ekstra menü — hepsini WhatsApp (+90 544 898 98 12) üzerinden koordine edebilirsiniz.",
@@ -278,7 +279,7 @@ export const turkishProductPosts: BlogPost[] = [
         list: [
           "Çiçek dekorasyonu: Kırmızı gül buketi (standart), özelleştirilmiş aranjman (lale, beyaz şakayık, gül karışımı), güverte gül yaprakları serpme.",
           "Fotoğrafçı: Boğaz fotoğrafçılığı konusunda uzman, teklif anının 50–80 kareden oluşan seçkisi gece dijital olarak teslim edilir.",
-          "Drone çekimi (Ultra VIP): Boğaz köprüsü veya hisarlar önünde aerial teklif fotoğrafı/videosu — tek çekim, 3–5 dakika montajlı video.",
+          "Drone çekimi (talebe bağlı): Boğaz köprüsü veya hisarlar önünde aerial teklif fotoğrafı/videosu — tek çekim, 3–5 dakika montajlı video.",
           "Şampanya ve ikramlar: Dom Pérignon, Moët & Chandon veya yerel köpüklü şarap seçeneği; atıştırmalık tabağı, çikolata.",
           "Kişisel dokunuşlar: Fotoğraf kolajı çerçevesi, 'Evlenecek Misin?' bayrağı veya tekne üzerinde kişisel mesaj — rezervasyon sırasında belirtin.",
         ],
@@ -295,10 +296,10 @@ export const turkishProductPosts: BlogPost[] = [
         table: {
           headers: ["Bütçe Senaryosu", "Paket", "Ekstralar", "Toplam Tahmin"],
           rows: [
-            ["Ekonomik", "Romantik Kaçamak €380", "Sadece şampanya ve çiçek dahil", "€380–450"],
-            ["Orta", "Gün Batımı Teklifi €580", "Fotoğrafçı (+€200)", "€780"],
-            ["Premium", "VIP Özel An €950", "Fotoğrafçı dahil, akşam yemeği dahil", "€950–1.100"],
-            ["Lüks", "Ultra VIP €1.200", "Drone, fotoğraf, video dahil", "€1.200–1.400"],
+            ["Ekonomik", "Butik Yat €220", "Sadece şampanya ve çiçek dahil", "€220–320"],
+            ["Orta", "Premium Yat €320", "Fotoğrafçı (+€190)", "€510"],
+            ["Premium", "Grup Yatı Signature €500", "Fotoğrafçı + dekorasyon dahil", "€700–800"],
+            ["Lüks", "Etkinlik Yatı €1.200 (4 saat)", "Drone, fotoğraf, video dahil", "€1.400–1.600"],
           ],
         },
         proTip:
@@ -308,7 +309,7 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "İstanbul'da teknede evlilik teklifi için ne kadar ödenir?",
-        a: "İki kişilik özel Boğaz turu €380'den başlar. Fotoğrafçı, dekorasyon ve drone eklendikçe toplam €1.400'e kadar çıkabilir. Paket seçimine ve ekstraların kombinasyonuna göre fiyat değişir.",
+        a: "İki kişilik özel Boğaz turu €220'den başlar (Butik Yat, 2 saat). Fotoğrafçı, dekorasyon ve drone eklendikçe toplam daha yüksek tarifelere çıkabilir. Yat tipine ve ekstraların kombinasyonuna göre fiyat değişir.",
       },
       {
         q: "Teklif için en iyi ay hangisi?",
@@ -324,7 +325,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Fotoğrafçı organizasyonunu nasıl yaparım?",
-        a: "VIP ve Ultra VIP paketlere fotoğrafçı koordinasyonu dahildir. Diğer paketlere en az 5 iş günü önceden ek olarak eklenebilir. Fotoğrafçı tekneye biner ve teklif anını doğal, habersiz çekimlerle belgeler. Seçki aynı gece dijital olarak teslim edilir.",
+        a: "Üst tarifelere fotoğrafçı koordinasyonu dahil edilebilir; tüm yatlara en az 5 iş günü önceden ek olarak eklenebilir. Fotoğrafçı tekneye biner ve teklif anını doğal, habersiz çekimlerle belgeler. Seçki aynı gece dijital olarak teslim edilir.",
       },
       {
         q: "Yağmurlu veya kötü hava olursa ne olur?",
@@ -332,7 +333,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "İstanbul dışından gelenler için nasıl bir lojistik önerisiniz?",
-        a: "İskelelerimiz Ortaköy ve Beşiktaş'ta bulunur, her ikisi de Taksim'e ~15 dakika, Sultanahmet'e ~25 dakikadır. Havalimanından transfer, isteğe bağlı olarak VIP paketlere eklenebilir. Turdan önce veya sonra romantik bir akşam yemeği için yakın çevredeki restoranları da öneririz.",
+        a: "İskelelerimiz Ortaköy ve Beşiktaş'ta bulunur, her ikisi de Taksim'e ~15 dakika, Sultanahmet'e ~25 dakikadır. Havalimanından transfer, isteğe bağlı olarak tüm yatlara eklenebilir. Turdan önce veya sonra romantik bir akşam yemeği için yakın çevredeki restoranları da öneririz.",
       },
     ],
     relatedTours: ["yacht-charter", "bosphorus-sunset-cruise"],
@@ -344,7 +345,7 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "İstanbul Yat Kiralama Rehberi 2026",
     metaDescription:
-      "İstanbul yat kiralama için kapsamlı 2026 rehberi: fiyatlar €380–1.800, tekne tipleri, Boğaz rotaları, dahil hizmetler ve TÜRSAB lisanslı operatör seçimi.",
+      "İstanbul yat kiralama için kapsamlı 2026 rehberi: fiyatlar €220'den, tekne tipleri, Boğaz rotaları, dahil hizmetler ve TÜRSAB lisanslı operatör seçimi.",
     excerpt:
       "İstanbul'da özel yat kiralama, Boğaz'ı kendi grubunuzla keşfetmenin en özgür yoludur. TÜRSAB A Grubu lisanslı MerrySails'in 2026 güncel yat kiralama fiyatları ve rehberi.",
     category: "yacht-guide",
@@ -363,8 +364,8 @@ export const turkishProductPosts: BlogPost[] = [
     ],
     author: "captain-ahmet",
     keyTakeaways: [
-      "İstanbul yat kiralama fiyatları 2 saatlik tur için €380'den başlar; 4 saatlik tur için €620–1.800 arasında değişir",
-      "4 tekne kategorisi: klasik gület, motor yat, lüks motor yat ve mega yat — kapasite 2'den 30 kişiye",
+      "İstanbul yat kiralama fiyatları 2 saatlik tur için €220'den başlar; 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim uygulanır",
+      "Yatlar kapasiteye göre: Butik (12), Premium (15), Grup (40), Etkinlik (90) — fiyat tekne başınadır",
       "Kalkış noktaları: Ortaköy, Beşiktaş veya Karaköy; tüm Boğaz rotaları özelleştirilebilir",
       "TÜRSAB A Grubu lisansı ve tam sigorta koşulunu mutlaka doğrulayın — lisanssız tekne yasal ve güvenlik riski taşır",
     ],
@@ -372,9 +373,9 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "İstanbul'da Yat Kiralama Neden Bu Kadar Popüler?",
         content:
-          "İstanbul Boğazı, dünya üzerinde kalabalık bir metropolün ortasında deniz üzerinde seyahat imkânı sunan nadir coğrafyalardan biridir. 2025 yılında Boğaz'da 3,2 milyon yolcu seyahati gerçekleşti; bu rakamın %12'si özel yat ve tekne kiralama kanalıyla sağlandı. İstanbul'da yat kiralamanın bu denli yaygınlaşmasının temelinde üç faktör yatar: eşsiz manzara (iki kıta, tarihî saraylar, köprüler), güçlü bir fiyat-değer dengesi ve şehrin tam ortasında olmanın getirdiği erişilebilirlik.",
+          "İstanbul Boğazı, dünya üzerinde kalabalık bir metropolün ortasında deniz üzerinde seyahat imkânı sunan nadir coğrafyalardan biridir. 2025 yılında Boğaz'da 3,2 milyon yolcu seyahati gerçekleşti; bu rakamın önemli bir kısmı özel yat ve tekne kiralama kanalıyla sağlandı. İstanbul'da yat kiralamanın bu denli yaygınlaşmasının temelinde üç faktör yatar: eşsiz manzara (iki kıta, tarihî saraylar, köprüler), güçlü bir fiyat-değer dengesi ve şehrin tam ortasında olmanın getirdiği erişilebilirlik.",
         answerCapsule:
-          "İstanbul'da yat kiralama, 2 saatlik tur için €380'den başlar. Tekne başına fiyatlandırılır; grubun büyüklüğüne göre kişi başı maliyet hızla düşer.",
+          "İstanbul'da yat kiralama, 2 saatlik tur için €220'den başlar. Tekne başına fiyatlandırılır; grubun büyüklüğüne göre kişi başı maliyet hızla düşer.",
         callout: {
           type: "info",
           text:
@@ -400,20 +401,21 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "2026 Yat Kiralama Fiyatları",
         content:
-          "MerrySails yat kiralama fiyatları tekne başınadır — içindeki kişi sayısına göre değil. Bu nedenle büyük gruplar için kişi başı maliyet hızla rekabetçi hale gelir. Aşağıdaki fiyatlar 2026 sezonu için geçerlidir ve düşük sezonu (Kasım–Mart) kapsar; yüksek sezonda %15–20 ek ücret uygulanır:",
+          "MerrySails yat kiralama fiyatları tekne başınadır — içindeki kişi sayısına göre değil. Bu nedenle büyük gruplar için kişi başı maliyet hızla rekabetçi hale gelir. Minimum kiralama 2 saattir ve 3 saat ile üzeri rezervasyonlarda otomatik %10 indirim uygulanır:",
         table: {
-          headers: ["Paket", "2 Saat", "4 Saat", "6 Saat", "Gün (8 saat)"],
+          headers: ["Yat", "2 Saat", "3 Saat", "4 Saat", "Tam Gün"],
           rows: [
-            ["Essential (gület, 2–8 kişi)", "€380", "€620", "€880", "€1.100"],
-            ["Premium (motor yat, 2–12 kişi)", "€580", "€950", "€1.300", "€1.650"],
-            ["VIP (lüks motor, 2–20 kişi)", "€950", "€1.550", "€2.100", "€2.600"],
-            ["Ultra VIP (mega yat, 2–30 kişi)", "€1.200", "€1.800", "€2.400", "€3.000"],
+            ["Butik (12 kişiye kadar)", "€220", "€297", "€396", "—"],
+            ["Premium (15 kişiye kadar)", "€320", "€432", "€576", "—"],
+            ["Grup · Standart (15 kişiye kadar)", "€380", "€513", "€684", "—"],
+            ["Grup · Signature (15–40 kişi)", "€500", "€675", "€900", "—"],
+            ["Etkinlik (90 kişiye kadar)", "—", "—", "€1.200 (4 saat)", "teklif"],
           ],
         },
         callout: {
           type: "price",
           text:
-            "10 kişilik grup hesabı: Premium motor yat 4 saatlik tur €950 ÷ 10 = kişi başı €95. Karşılaştırma: akşam yemeği turu VIP paketi €95/kişi. Yani aynı fiyata size özel tekne!",
+            "10 kişilik grup hesabı: Butik yat 2 saatlik tur €220 ÷ 10 = kişi başı €22. Karşılaştırma: paylaşımlı gün batımı turu kişi başı €34. Yani daha az fiyata size özel tekne!",
         },
       },
       {
@@ -487,7 +489,7 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "İstanbul'da yat kiralama ne kadar tutar?",
-        a: "İstanbul yat kiralama fiyatları 2 saatlik tur için €380 (klasik gület, 2–8 kişi) ile €1.200 (mega yat, 2–30 kişi) arasında değişir. Fiyatlar tekne başınadır. Kişi sayısı arttıkça kişi başı maliyet düşer. Yüksek sezonda (Haziran–Ağustos) %15–20 ek ücret uygulanır.",
+        a: "İstanbul yat kiralama fiyatları 2 saatlik tur için €220 (Butik, 12 kişiye kadar) ile €500 (Grup Signature, 15–40 kişi) arasında değişir; 90 kişilik etkinlik yatı 4 saatlik €1.200'den başlar. Fiyatlar tekne başınadır ve kişi sayısı arttıkça kişi başı maliyet düşer. 3 saat ve üzeri rezervasyonlarda %10 indirim uygulanır.",
       },
       {
         q: "Yat kiralama için minimum kaç kişi gerekir?",
@@ -515,7 +517,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Büyük gruplar için yat kiralama mı, akşam yemeği turu mu daha uygun?",
-        a: "10 veya daha fazla kişilik gruplar için hesap yapmaya değer: 10 kişi × akşam yemeği VIP €95 = €950. Premium motor yat 4 saatlik kiralama €950. Özel tekne aynı fiyata size özel güzergah, tam esneklik ve özelleştirilmiş catering imkânı sunar.",
+        a: "10 veya daha fazla kişilik gruplar için hesap yapmaya değer: 10 kişi × paylaşımlı gün batımı €34 = €340. Butik özel yat 2 saatlik kiralama €220. Özel tekne daha düşük toplam fiyata size özel güzergah, tam esneklik ve özelleştirilmiş catering imkânı sunar.",
       },
     ],
     relatedTours: ["yacht-charter", "bosphorus-sunset-cruise"],
@@ -788,7 +790,7 @@ export const turkishProductPosts: BlogPost[] = [
         content:
           "Her iki seçenek de aynı Boğaz'ı, aynı gün batımını sunar; ancak deneyimin niteliği ve maliyeti belirgin biçimde ayrışır. Doğru seçim, grubunuzun büyüklüğüne, bütçesine ve tercihlerine bağlıdır:",
         table: {
-          headers: ["Kriter", "Paylaşımlı Tur (€40/kişi)", "Özel Yat Kiralama (€380+)"],
+          headers: ["Kriter", "Paylaşımlı Tur (€40/kişi)", "Özel Yat Kiralama (€220+)"],
           rows: [
             ["Grup büyüklüğü", "~25 kişilik karma grup", "Yalnızca kendi grubunuz (min. 2 kişi)"],
             ["Güzergah", "Standart, sabit rota", "Tamamen özelleştirilebilir"],
@@ -796,7 +798,7 @@ export const turkishProductPosts: BlogPost[] = [
             ["Rehber", "Grup rehberi, tüm gruba", "Opsiyonel, kişisel rehber mümkün"],
             ["Catering", "İçecek servisi dahil", "Özel menü, ızgara, alkol paketi mümkün"],
             ["Fotoğraf rahatlığı", "Kalabalık güverte, sıra bekleme", "Tam güverte serbestisi"],
-            ["10 kişi için maliyet", "€400 toplam (€40 × 10)", "€580 toplam (motor yat, 4 saat)"],
+            ["10 kişi için maliyet", "€400 toplam (€40 × 10)", "€220 toplam (butik yat, 2 saat)"],
           ],
         },
         proTip:
@@ -979,9 +981,9 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "Yat Kiralama Fiyatları İstanbul 2026",
     metaDescription:
-      "Yat kiralama fiyatları İstanbul 2026: özel yat €280'den başlar, paylaşımlı Boğaz turu kişi başı €34. Tekne tipleri, paket karşılaştırması ve rezervasyon rehberi.",
+      "Yat kiralama fiyatları İstanbul 2026: özel yat €220'den başlar, paylaşımlı Boğaz turu kişi başı €34. Tekne tipleri, paket karşılaştırması ve rezervasyon rehberi.",
     excerpt:
-      "İstanbul'da yat ve tekne kiralama fiyatları kişi başı €34'ten başlayıp özel yat için €680'e kadar uzanır. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 şeffaf fiyat rehberi.",
+      "İstanbul'da tekne kiralama fiyatları paylaşımlı turda kişi başı €34'ten, özel yat kiralamada tekne başı €220'den başlar. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in 2026 şeffaf fiyat rehberi.",
     category: "yacht-guide",
     date: "2026-05-07",
     readTime: "11 dk okuma",
@@ -999,7 +1001,7 @@ export const turkishProductPosts: BlogPost[] = [
     ],
     author: "captain-ahmet",
     keyTakeaways: [
-      "Özel yat kiralama tekne başına €280 (Essential) / €380 (Premium) / €680 (VIP) — 2 saat, grup için sabit fiyat",
+      "Özel yat kiralama tekne başına €220'den (Butik) başlar — Premium €320, Grup €380/€500, Etkinlik €600; 2 saat, grup için sabit fiyat",
       "Paylaşımlı Boğaz turu kişi başı €34 (gün batımı €40) — 8 kişiden az grup için en ekonomik seçenek",
       "10+ kişilik gruplar için özel yat kiralama, paylaşımlı tura göre kişi başına eşit veya daha uygun çıkabilir",
       "TÜRSAB A Grubu lisans #14316 ile 2001'den bu yana faaliyet; [lisansı doğrulayın](https://www.tursab.org.tr/en)",
@@ -1008,7 +1010,7 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "İstanbul'da Yat ve Tekne Kiralama Fiyatları Nasıl Belirlenir?",
         answerCapsule:
-          "Fiyatlar iki temel modele göre şekillenir: kişi başı fiyatlandırılan paylaşımlı turlar (€34–€40) ve tekne başı fiyatlandırılan özel yat kiralama (€280–€680). Grup büyüklüğü, süre ve tekne tipi belirleyici faktörlerdir.",
+          "Fiyatlar iki temel modele göre şekillenir: kişi başı fiyatlandırılan paylaşımlı turlar (€34–€40) ve tekne başı fiyatlandırılan özel yat kiralama (€220'den). Grup büyüklüğü, süre ve tekne tipi belirleyici faktörlerdir.",
         content:
           "İstanbul'da 'tekne kiralama' dendiğinde aklınıza iki farklı model gelmeli. Birincisi paylaşımlı tur: siz bilet alırsınız, tekne başkalarıyla paylaşılır, kişi başı fiyat düşüktür. İkincisi özel yat kiralama: teknenin tamamı size aittir, fiyat kişi sayısından bağımsız olarak tekne başına belirlenir. Bu farkı anlamadan fiyat karşılaştırması yapmak yanıltıcı olur.\n\nPaylaşımlı turda kalabalığa alışkınsanız ve bütçe önceliğinizse, kişi başı €34 ciddi bir değer sunar. 31 km'lik Boğaz güzergahını iki saatte, profesyonel rehber eşliğinde geçersiniz. Özel kiralamada ise teknenin tamamı sizindir: kendi grubunuz, kendi ritminiz, güzergahı istediğiniz noktada yavaşlatma imkânı. Bunun fiyatı elbette farklıdır — ama 10 kişilik bir grup hesap yapıldığında rakamlar yaklaşır.",
         callout: {
@@ -1020,7 +1022,7 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "MerrySails Fiyat Listesi 2026 — Şeffaf Tarife",
         answerCapsule:
-          "MerrySails 2026 fiyatları: paylaşımlı gün batımı turu €34–€40/kişi; akşam yemeği turu €30–€90/kişi; özel yat kiralama €280–€680/tekne (2 saat). Tüm fiyatlar Euro cinsinden sabittir.",
+          "MerrySails 2026 fiyatları: paylaşımlı gün batımı turu €34–€40/kişi; akşam yemeği turu €30–€90/kişi; özel yat kiralama €220'den/tekne (2 saat). Tüm fiyatlar Euro cinsinden sabittir.",
         content:
           "Aşağıdaki tablo tüm tur ve kiralama seçeneklerini yan yana gösteriyor. [Tam fiyat sayfasında](/pricing) birim başına hesaplama yapabilirsiniz.",
         table: {
@@ -1069,25 +1071,25 @@ export const turkishProductPosts: BlogPost[] = [
               "Premium yemek, sınırsız alkol, folklor",
             ],
             [
-              "Özel Yat Kiralama — Essential",
+              "Özel Yat Kiralama — Butik (12 kişiye kadar)",
               "Özel, tekne başı",
               "2 saat",
-              "€280",
+              "€220",
               "Kaptan, tekne, navigasyon",
             ],
             [
-              "Özel Yat Kiralama — Premium",
+              "Özel Yat Kiralama — Premium (15 kişiye kadar)",
               "Özel, tekne başı",
               "2 saat",
-              "€380",
-              "Lüks motor yat, kaptan, içecek servisi",
+              "€320",
+              "Daha geniş güverte, kaptan, içecek servisi",
             ],
             [
-              "Özel Yat Kiralama — VIP",
+              "Özel Yat Kiralama — Grup (15–40 kişi)",
               "Özel, tekne başı",
               "2 saat",
-              "€680",
-              "VIP motor yat, tam servis, özelleştirilmiş güzergah",
+              "€380–€500",
+              "Grup yatı, tam servis, özelleştirilmiş güzergah",
             ],
           ],
         },
@@ -1099,12 +1101,12 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "1–7 kişilik gruplar için paylaşımlı tur ekonomik açıdan üstündür. 8 veya daha fazla kişide özel yat kiralamak kişi başına eşdeğer ya da daha düşük maliyete ulaşabilir.",
         content:
-          "İki seçeneği doğrudan karşılaştıralım. Paylaşımlı gün batımı turunda 2 kişi €68 öder ve diğer yolcularla birlikte seyahat eder. Aynı 2 kişi Essential özel yat için €280 öder — fark 4 kattır. Bu fark özellik ve mahremiyete yatırım; buna değer mi, bu tamamen grubunuzun önceliğine bağlı.\n\nAncak gruplar büyüdükçe denklem değişir. 10 kişilik bir arkadaş grubunu düşünün: paylaşımlı gün batımı turunda €34 × 10 = €340. Premium özel yat kiralama ise €380 — sadece €40 fark için teknenin tamamı sizin. Üstelik özel yatta güzergah esnekliği, özelleştirilmiş müzik seçimi ve istediğiniz anda yavaşlama imkânı da gelir.",
+          "İki seçeneği doğrudan karşılaştıralım. Paylaşımlı gün batımı turunda 2 kişi €68 öder ve diğer yolcularla birlikte seyahat eder. Aynı 2 kişi Butik özel yat için €220 öder — fark 3 kattır. Bu fark özellik ve mahremiyete yatırım; buna değer mi, bu tamamen grubunuzun önceliğine bağlı.\n\nAncak gruplar büyüdükçe denklem değişir. 10 kişilik bir arkadaş grubunu düşünün: paylaşımlı gün batımı turunda €34 × 10 = €340. Butik özel yat kiralama ise €220 — teknenin tamamı sizin ve kişi başı maliyet daha düşük. Üstelik özel yatta güzergah esnekliği, özelleştirilmiş müzik seçimi ve istediğiniz anda yavaşlama imkânı da gelir.",
         table: {
           headers: ["Kriter", "Paylaşımlı Tur", "Özel Yat"],
           rows: [
-            ["Fiyat (2 kişi, gün batımı)", "€68", "€280 (Essential)"],
-            ["Fiyat (10 kişi, gün batımı)", "€340", "€380 (Premium)"],
+            ["Fiyat (2 kişi, gün batımı)", "€68", "€220 (Butik)"],
+            ["Fiyat (10 kişi, gün batımı)", "€340", "€220 (Butik)"],
             ["Mahrem mi?", "Hayır (~25 kişi teknede)", "Evet, yalnızca sizin grubunuz"],
             ["Güzergah esnekliği", "Sabit rota", "Kaptan ile düzenlenebilir"],
             ["Kalkış saati", "Sabit (15:00, 19:00 vb.)", "Talebe göre (rezervasyonla)"],
@@ -1121,18 +1123,18 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Doğum Günü, Evlenme Teklifi, Kurumsal Etkinlik — Hangi Paket?",
         answerCapsule:
-          "Özel kutlamalar için en uygun paket grubun boyutuna ve etkinlik türüne göre değişir: çift için Essential/Premium, aile kutlaması için Premium, kurumsal için VIP önerilir.",
+          "Özel kutlamalar için en uygun yat grubun boyutuna ve etkinlik türüne göre değişir: çift için Butik (€220), aile kutlaması için Premium (€320), büyük grup ve kurumsal için Grup yatı (€380–€500) önerilir.",
         content:
-          "Her etkinlik tipinin kendine özgü gereksinimleri vardır. Doğum günü kutlaması için teknenin tamamını kiralamak, sürpriz organizasyon ve özel dekorasyon açısından büyük kolaylık sağlar. [Evlenme teklifi](/tr/proposal-yacht-rental-istanbul) içinse tam mahremiyet şarttır — paylaşımlı teknede o özel anı yaratmak mümkün değildir.\n\nKurumsal etkinlikler için VIP paket tercih edilir: müşteri ağırlama, ürün lansmanı veya ekip yemeği gibi organizasyonlarda teknenin görünümü ve hizmet kalitesi temsil değeri taşır. [Kurumsal etkinlikler sayfasında](/tr/corporate-events) özel fiyat teklifi alabilirsiniz.",
+          "Her etkinlik tipinin kendine özgü gereksinimleri vardır. Doğum günü kutlaması için teknenin tamamını kiralamak, sürpriz organizasyon ve özel dekorasyon açısından büyük kolaylık sağlar. [Evlenme teklifi](/tr/proposal-yacht-rental-istanbul) içinse tam mahremiyet şarttır — paylaşımlı teknede o özel anı yaratmak mümkün değildir.\n\nKurumsal etkinlikler için Grup yatı (Signature, €500) tercih edilir: müşteri ağırlama, ürün lansmanı veya ekip yemeği gibi organizasyonlarda teknenin görünümü ve hizmet kalitesi temsil değeri taşır. [Kurumsal etkinlikler sayfasında](/tr/corporate-events) özel fiyat teklifi alabilirsiniz.",
         table: {
           headers: ["Etkinlik Tipi", "Önerilen Paket", "Fiyat (2 saat)", "Neden?"],
           rows: [
-            ["Çift, romantik akşam", "Essential veya Premium", "€280–€380", "Mahremiyet, esneklik"],
-            ["Evlenme teklifi", "Premium veya VIP", "€380–€680", "Özel an, dekorasyon, kaptan desteği"],
-            ["Doğum günü (6–12 kişi)", "Premium", "€380", "Grup kapasitesi, kutlama desteği"],
-            ["Aile kutlaması (10–15 kişi)", "VIP", "€680", "Geniş güverte, tam servis"],
-            ["Kurumsal müşteri ağırlama", "VIP", "€680", "Temsil kalitesi, profesyonel sunum"],
-            ["Büyük grup (15–20 kişi)", "VIP", "€680", "Kapasite, tam özelleştirme"],
+            ["Çift, romantik akşam", "Butik veya Premium", "€220–€320", "Mahremiyet, esneklik"],
+            ["Evlenme teklifi", "Butik veya Premium", "€220–€320", "Özel an, dekorasyon, kaptan desteği"],
+            ["Doğum günü (6–12 kişi)", "Premium", "€320", "Grup kapasitesi, kutlama desteği"],
+            ["Aile kutlaması (10–15 kişi)", "Grup · Standart", "€380", "Geniş güverte, tam servis"],
+            ["Kurumsal müşteri ağırlama", "Grup · Signature", "€500", "Temsil kalitesi, profesyonel sunum"],
+            ["Büyük grup (15–40 kişi)", "Grup · Signature", "€500", "Kapasite, tam özelleştirme"],
           ],
         },
         callout: {
@@ -1144,20 +1146,20 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Saatlik ve Günlük Yat Kiralama Fiyatları",
         answerCapsule:
-          "MerrySails'te minimum kiralama süresi 2 saattir ve fiyat bu 2 saat için tekne başına belirlenir (€280–€680). Günlük tam gün charter için özel fiyat teklifi alınması gerekir.",
+          "MerrySails'te minimum kiralama süresi 2 saattir ve fiyat bu 2 saat için tekne başına belirlenir (€220'den). 3 saatten itibaren %10 indirim uygulanır; günlük tam gün charter için özel fiyat teklifi alınır.",
         content:
           "İstanbul'da 'saatlik tekne kiralama' ve 'günlük yat kiralama' aramaları farklı beklentilere işaret eder. MerrySails'in temel Boğaz turu paketi 2 saatlik kiralamayla başlar. Bu süreye Boğaz'ın iki köprüsünü, Dolmabahçe Sarayı önünü, Çırağan ve Çubuklu kıyılarını görmek için yeterlidir.\n\nDaha uzun turlar için süre ve fiyat özel olarak planlanır. 4 saatlik tur Boğaz'ın tamamını (31 km) rahatça kapsar; Anadolu yakasındaki koyları ve Adaları da dahil etmek isteyenler için 6–8 saatlik seçenek uygundur. [Saatlik tekne kiralama sayfasında](/tr/yacht-charter-istanbul) güncel paket detaylarına ulaşabilirsiniz.",
         table: {
-          headers: ["Süre", "Essential (€280 baz)", "Premium (€380 baz)", "VIP (€680 baz)"],
+          headers: ["Süre", "Butik (€220 baz)", "Premium (€320 baz)", "Grup Signature (€500 baz)"],
           rows: [
-            ["2 saat (baz paket)", "€280", "€380", "€680"],
-            ["3 saat", "Fiyat teklifi alın", "Fiyat teklifi alın", "Fiyat teklifi alın"],
-            ["4 saat (tam Boğaz)", "Fiyat teklifi alın", "Fiyat teklifi alın", "Fiyat teklifi alın"],
+            ["2 saat (baz paket)", "€220", "€320", "€500"],
+            ["3 saat (%10 indirim)", "€297", "€432", "€675"],
+            ["4 saat (tam Boğaz)", "€396", "€576", "€900"],
             ["Tam gün (8 saat+)", "Özel görüşme", "Özel görüşme", "Özel görüşme"],
           ],
         },
         proTip:
-          "3 saatten uzun turlar için WhatsApp üzerinden (+90 544 898 98 12) doğrudan fiyat alın. Uzun süreli kiralamada birim saatlik maliyet 2 saatlik paketin oldukça altına düşebilir.",
+          "3 saat ve üzeri turlarda otomatik %10 indirim uygulanır. Tam gün kiralama için WhatsApp üzerinden (+90 544 898 98 12) doğrudan fiyat alın — birim saatlik maliyet 2 saatlik paketin oldukça altına düşer.",
       },
       {
         heading: "Aracılı Satışta Neden Fiyatlar Daha Yüksek? — TÜRSAB Direkt Booking Avantajı",
@@ -1228,15 +1230,15 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "İstanbul'da yat kiralama fiyatları ne kadar?",
-        a: "MerrySails'te özel yat kiralama 2 saatlik tur için tekne başına €280 (Essential), €380 (Premium) veya €680 (VIP) olarak fiyatlandırılır. Bu fiyatlar grubun tüm üyeleri için geçerlidir — kişi sayısı arttıkça kişi başı maliyet düşer. Paylaşımlı Boğaz gün batımı turu kişi başı €34'tür.",
+        a: "MerrySails'te özel yat kiralama 2 saatlik tur için tekne başına €220'den başlar (Butik); Premium €320, Grup €380–€500, Etkinlik €600. Bu fiyatlar grubun tüm üyeleri için geçerlidir — kişi sayısı arttıkça kişi başı maliyet düşer. Paylaşımlı Boğaz gün batımı turu kişi başı €34'tür.",
       },
       {
         q: "Boğaz turu fiyatları ne kadar?",
-        a: "Paylaşımlı Boğaz gün batımı turu kişi başı €34 (şarapsız) veya €40 (şaraplı), 2 saat sürer. Akşam yemeği turu kişi başı €30 (Silver Soft) ile €90 (Gold Unlimited) arasında 4 farklı pakette sunulur, 3,5 saat sürer. Özel yat kiralama tekne başı €280–€680'den başlar.",
+        a: "Paylaşımlı Boğaz gün batımı turu kişi başı €34 (şarapsız) veya €40 (şaraplı), 2 saat sürer. Akşam yemeği turu kişi başı €30 (Silver Soft) ile €90 (Gold Unlimited) arasında 4 farklı pakette sunulur, 3,5 saat sürer. Özel yat kiralama tekne başı €220'den başlar.",
       },
       {
         q: "Tekne kiralamanın kişi başı fiyatı ne zaman özel yat kiralamaya eşit olur?",
-        a: "Grubunuz 8–10 kişilik olduğunda denklem değişir. Örnek: 10 kişi × paylaşımlı gün batımı €34 = €340. Premium özel yat kiralama €380. Sadece €40 fark için teknenin tamamını grubunuza ayırabilirsiniz. 12 veya daha fazla kişi için özel yat kiralama kişi başına düşen maliyette çoğunlukla daha avantajlıdır.",
+        a: "Grubunuz 8–10 kişilik olduğunda denklem değişir. Örnek: 10 kişi × paylaşımlı gün batımı €34 = €340. Butik özel yat kiralama €220. Teknenin tamamı grubunuzun olur ve kişi başı maliyet €22'ye düşer. 12 veya daha fazla kişi için özel yat kiralama kişi başına düşen maliyette çoğunlukla daha avantajlıdır.",
       },
       {
         q: "GetYourGuide veya Viator üzerinden rezervasyon yapmak ile direkt rezervasyon arasında fiyat farkı var mı?",
@@ -1263,9 +1265,9 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "Doğum Günü Yat Kiralama İstanbul 2026",
     metaDescription:
-      "İstanbul Boğazı'nda doğum günü yat kiralama: €280 Essential'dan €680 VIP'e kadar 3 paket. Pasta, çiçek, fotoğrafçı eklentileri, sürpriz planlama takvimi ve rezervasyon rehberi.",
+      "İstanbul Boğazı'nda doğum günü yat kiralama: Butik €220'den Grup yatına kadar gerçek tarifeler. Pasta, çiçek, fotoğrafçı eklentileri, sürpriz planlama takvimi ve rezervasyon rehberi.",
     excerpt:
-      "Doğum gününü İstanbul Boğazı'nda kutlamak için yat kiralama €280'den başlar. MerrySails'in şeffaf paket rehberi — sürpriz organizasyonu, eklenti hizmetler ve rezervasyon tavsiyesiyle.",
+      "Doğum gününü İstanbul Boğazı'nda kutlamak için yat kiralama €220'den başlar. MerrySails'in şeffaf paket rehberi — sürpriz organizasyonu, eklenti hizmetler ve rezervasyon tavsiyesiyle.",
     category: "yacht-guide",
     date: "2026-05-06",
     readTime: "10 dk okuma",
@@ -1283,7 +1285,7 @@ export const turkishProductPosts: BlogPost[] = [
     ],
     author: "captain-ahmet",
     keyTakeaways: [
-      "Doğum günü yat kiralama tekne başına €280 (Essential) / €380 (Premium) / €680 (VIP) — kişi sayısından bağımsız, 2 saatlik tur",
+      "Doğum günü yat kiralama tekne başına €220'den (Butik) başlar — Premium €320, Grup €380/€500; kişi sayısından bağımsız, 2 saatlik tur",
       "Pasta, çiçek, balon, müzik sistemi ve profesyonel fotoğrafçı gibi eklentiler WhatsApp üzerinden manuel teklif alarak organize edilir",
       "Sürpriz doğum günü için en az 5–7 gün önceden rezervasyon ve senaryo planlaması gerekir; yüksek sezonda 2 hafta öneriyoruz",
       "TÜRSAB A Grubu lisanslı MerrySails ile [güvenli rezervasyon](https://www.tursab.org.tr/en) yapabilir, tüm detayları WhatsApp'ta netleştirebilirsiniz",
@@ -1294,11 +1296,11 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "Özel yat kiralama, doğum günü kutlaması için paylaşımlı teknelerden üstündür: teknenin tamamı size aittir, müzik sistemi, dekorasyon ve pasta servisi için alan ve esneklik sunar. Paylaşımlı turda ise başka gruplar da bulunur, eklenti hizmet imkânı yoktur.",
         content:
-          "İstanbul'da doğum günü organizasyonu söz konusu olduğunda ilk soru şu: paylaşımlı tur mu, yoksa özel yat kiralama mı? Paylaşımlı Boğaz turu kişi başı €34'ten başlar ve ekonomiktir; ancak tekne başkalarıyla paylaşılır. Müzik sistemi istediğiniz ses seviyesinde çalamaz, pasta kesme için yeterli alan olmayabilir ve özel anı fotoğraflamak güçleşir.\n\nÖzel yat kiralamada ise teknenin tamamı sizindir. Grubunuz yalnızdır, dekorasyonu siz belirlersiniz, playlist tamamen size ait ve kaptan rotayı tercihlerinize göre ayarlayabilir. MerrySails'te özel yat kiralama tekne başına €280'den başlar; 10 kişilik bir grup için kişi başı hesaplandığında fark düşündüğünüzden azdır.\n\nSonuç: kutlama ciddiyse ve özel bir an yaratmak istiyorsanız özel yat kiralama; bütçe önceliğinizse ve grubunuz 4 kişiden azsa paylaşımlı tur da değerlendirilebilir.",
+          "İstanbul'da doğum günü organizasyonu söz konusu olduğunda ilk soru şu: paylaşımlı tur mu, yoksa özel yat kiralama mı? Paylaşımlı Boğaz turu kişi başı €34'ten başlar ve ekonomiktir; ancak tekne başkalarıyla paylaşılır. Müzik sistemi istediğiniz ses seviyesinde çalamaz, pasta kesme için yeterli alan olmayabilir ve özel anı fotoğraflamak güçleşir.\n\nÖzel yat kiralamada ise teknenin tamamı sizindir. Grubunuz yalnızdır, dekorasyonu siz belirlersiniz, playlist tamamen size ait ve kaptan rotayı tercihlerinize göre ayarlayabilir. MerrySails'te özel yat kiralama tekne başına €220'den başlar; 10 kişilik bir grup için kişi başı hesaplandığında fark düşündüğünüzden azdır.\n\nSonuç: kutlama ciddiyse ve özel bir an yaratmak istiyorsanız özel yat kiralama; bütçe önceliğinizse ve grubunuz 4 kişiden azsa paylaşımlı tur da değerlendirilebilir.",
         table: {
           headers: ["Özellik", "Paylaşımlı Tur", "Özel Yat Kiralama"],
           rows: [
-            ["Kişi başı fiyat (10 kişi)", "€34", "€28–68 (tekne €280–680)"],
+            ["Kişi başı fiyat (10 kişi)", "€34", "€22–38 (tekne €220–€380)"],
             ["Gemi yalnız size ait mi?", "Hayır", "Evet"],
             ["Dekorasyon kurulumu", "Yok", "Evet, önceden"],
             ["Müzik sistemi", "Sabit yayın", "Kendi playlist"],
@@ -1310,13 +1312,13 @@ export const turkishProductPosts: BlogPost[] = [
         callout: {
           type: "tip",
           text:
-            "6 kişi ve üzeri gruplar için özel yat kiralama matematiksel olarak da mantıklı olmaya başlar. 10 kişilik grup için Essential paket kişi başı €28'e denk gelir — paylaşımlı turun €6 üzerinde.",
+            "6 kişi ve üzeri gruplar için özel yat kiralama matematiksel olarak da mantıklı olmaya başlar. 10 kişilik grup için Butik yat kişi başı €22'ye denk gelir — paylaşımlı turdan bile uygun.",
         },
       },
       {
-        heading: "MerrySails Doğum Günü Yat Paketleri — €280'den",
+        heading: "MerrySails Doğum Günü Yatları — €220'den",
         answerCapsule:
-          "MerrySails 3 özel yat paketi sunar: Essential €280, Premium €380, VIP €680. Tüm fiyatlar tekne başına 2 saatlik Boğaz turu için geçerlidir; kişi sayısından bağımsızdır.",
+          "MerrySails özel yatları: Butik €220, Premium €320, Grup Standart €380, Grup Signature €500. Tüm fiyatlar tekne başına 2 saatlik Boğaz turu için geçerlidir; kişi sayısından bağımsızdır.",
         content:
           "MerrySails'in doğum günü yat kiralama fiyatları aşağıdaki tabloda özetlenmiştir. Tam fiyat detayları için [fiyat sayfasını](/pricing) inceleyebilirsiniz. Tüm paketlerde tekne size özeldir; kapasite ve tekne tipi pakete göre değişir.",
         table: {
@@ -1329,25 +1331,32 @@ export const turkishProductPosts: BlogPost[] = [
           ],
           rows: [
             [
-              "Essential",
-              "€280",
-              "8–12 kişi",
-              "Standart motor yat",
+              "Butik",
+              "€220",
+              "12 kişiye kadar",
+              "Butik özel yat",
               "Güverte, ses sistemi, soğutucu",
             ],
             [
               "Premium",
-              "€380",
-              "10–16 kişi",
-              "Orta sınıf lüks yat",
+              "€320",
+              "15 kişiye kadar",
+              "Premium özel yat",
               "Kapalı salon, güneş güvertesi, Bluetooth",
             ],
             [
-              "VIP",
-              "€680",
-              "12–20 kişi",
-              "Üst sınıf lüks yat",
-              "Üst güverte, özel hizmet, dekorasyon alanı",
+              "Grup · Standart",
+              "€380",
+              "15 kişiye kadar",
+              "Grup yatı",
+              "Daha geniş güverte, özel hizmet",
+            ],
+            [
+              "Grup · Signature",
+              "€500",
+              "15–40 kişi",
+              "Grup yatı (üst tarife)",
+              "Üst güverte, tam servis, dekorasyon alanı",
             ],
           ],
         },
@@ -1358,7 +1367,7 @@ export const turkishProductPosts: BlogPost[] = [
           title: "MerrySails Tekne Kaptanı, 20+ yıl Boğaz deneyimi",
         },
         proTip:
-          "VIP paket, grubunuz 12 kişinin üzerindeyse veya tekne üstünde sofra düzenlemek istiyorsanız en uygun seçenektir. Premium ise 10–14 kişilik orta büyüklükteki kutlamalar için ideal denge sunar.",
+          "Grup yatı (Signature, €500), grubunuz 15 kişinin üzerindeyse veya tekne üstünde geniş sofra düzenlemek istiyorsanız en uygun seçenektir. Premium (€320) ise 10–15 kişilik orta büyüklükteki kutlamalar için ideal denge sunar.",
       },
       {
         heading: "Pasta, Çiçek, Müzik, Fotoğrafçı — Eklenebilen Servisler",
@@ -1410,9 +1419,9 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Hangi Yaş Grubu İçin Hangi Paket?",
         answerCapsule:
-          "Çocuk doğum günü için Essential paket ve erken saatler önerilir. 18 yaş ve genç kutlamalar için Premium; 30/40/50 milestone doğum günleri için VIP veya Premium paketi tercih edilir.",
+          "Çocuk doğum günü için Butik yat ve erken saatler önerilir. 18 yaş ve genç kutlamalar için Premium; 30/40/50 milestone doğum günleri için Premium veya Grup yatı tercih edilir.",
         content:
-          "Doğum günü yat kiralama, yaş grubuna göre farklı ihtiyaçlar doğurur. Çocuklar için güvenli alan, erken saat ve basit kurulum öncelikli. Yetişkin kutlamalarında ise atmosfer ve mahremiyet öne çıkar. Aşağıdaki rehber paket seçiminizi kolaylaştırır:\n\n**Çocuk doğum günü (4–12 yaş):** Essential paket, 09:30 veya 14:00 saati, maksimum 10 çocuk + ebeveyn. Tekne üstünde geniş güverte şart; balon dekoru ve pasta eklentisi çok işe yarar. Çocuklar için yaşam yeleği mevcut, kaptan gruba göre hız ayarlar.\n\n**18 yaş ve genç kutlamalar:** Premium paket önerilir. Grup genellikle 12–16 kişidir ve müzik sistemi kritik önem taşır. Akşam saatlerinde gün batımı rotası atmosfere büyük katkı sağlar. Fotoğrafçı eklentisi bu yaş grubunda en çok talep edilendir.\n\n**30, 40, 50 milestone kutlamalar:** VIP paket ideal. Daha küçük ve yakın gruplar (8–12 kişi), sofra düzenlemesi, kaliteli içecek servisi ve mahremiyet beklentisi ön planda. Çiçek aranjmanı ve özel pasta bu yaş grubunda standart hale geliyor.",
+          "Doğum günü yat kiralama, yaş grubuna göre farklı ihtiyaçlar doğurur. Çocuklar için güvenli alan, erken saat ve basit kurulum öncelikli. Yetişkin kutlamalarında ise atmosfer ve mahremiyet öne çıkar. Aşağıdaki rehber paket seçiminizi kolaylaştırır:\n\n**Çocuk doğum günü (4–12 yaş):** Butik yat, 09:30 veya 14:00 saati, maksimum 10 çocuk + ebeveyn. Tekne üstünde geniş güverte şart; balon dekoru ve pasta eklentisi çok işe yarar. Çocuklar için yaşam yeleği mevcut, kaptan gruba göre hız ayarlar.\n\n**18 yaş ve genç kutlamalar:** Premium yat önerilir. Grup genellikle 12–16 kişidir ve müzik sistemi kritik önem taşır. Akşam saatlerinde gün batımı rotası atmosfere büyük katkı sağlar. Fotoğrafçı eklentisi bu yaş grubunda en çok talep edilendir.\n\n**30, 40, 50 milestone kutlamalar:** Premium veya Grup yatı ideal. Daha küçük ve yakın gruplar (8–15 kişi), sofra düzenlemesi, kaliteli içecek servisi ve mahremiyet beklentisi ön planda. Çiçek aranjmanı ve özel pasta bu yaş grubunda standart hale geliyor.",
         proTip:
           "50. doğum günü veya üzeri kutlamalar için 3–4 saatlik uzun tur seçeneği de istenilebilir. Kaptan ile önceden konuşun; rota Adalar yönüne veya Anadolu yakası koylarına uzatılabilir.",
       },
@@ -1475,7 +1484,7 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Doğum günü yat kiralama fiyatı kişi başı mı, tekne başı mı hesaplanıyor?",
-        a: "Tekne başı hesaplanır. Essential paket €280, Premium €380, VIP €680 — bu ücret teknenin tamamı için geçerlidir, kişi sayısına göre artmaz. 10 kişilik bir grup için kişi başı maliyet €28 ile €68 arasında olur; bu paylaşımlı tur fiyatıyla rekabetçidir.",
+        a: "Tekne başı hesaplanır. Butik €220, Premium €320, Grup €380–€500 — bu ücret teknenin tamamı için geçerlidir, kişi sayısına göre artmaz. 10 kişilik bir grup için kişi başı maliyet €22 ile €38 arasında olur; bu paylaşımlı tur fiyatıyla rekabetçidir.",
       },
       {
         q: "Pasta ve çiçek siparişi doğum günü yat paketine dahil mi?",
@@ -1487,7 +1496,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Çocuk doğum günü için yat kiralama uygun mu?",
-        a: "Evet, çocuklar için özellikle Essential paket ve 09:30–14:00 saatleri önerilir. Tüm teknelerde çocuk boyutlarında yaşam yeleği bulunur ve kaptan hız ayarlaması yapar. Güverte alanı balon dekorasyonu ve pasta kesimi için uygundur. 4 yaş altı çocuklarda ebeveyn gözetimi gereklidir.",
+        a: "Evet, çocuklar için özellikle Butik yat ve 09:30–14:00 saatleri önerilir. Tüm teknelerde çocuk boyutlarında yaşam yeleği bulunur ve kaptan hız ayarlaması yapar. Güverte alanı balon dekorasyonu ve pasta kesimi için uygundur. 4 yaş altı çocuklarda ebeveyn gözetimi gereklidir.",
       },
       {
         q: "Doğum günü yatını neden GetYourGuide veya Viator üzerinden değil de direkt rezerve etmeliyim?",
@@ -1575,7 +1584,7 @@ export const turkishProductPosts: BlogPost[] = [
             [
               "Kuruçeşme / Bebek Marinaları",
               "Özel Yat Kiralama",
-              "€280–680 / yat",
+              "€220'den / yat",
               "Kaptan dahil",
               "İsteğe göre özelleştirilir",
             ],
@@ -1682,7 +1691,7 @@ export const turkishProductPosts: BlogPost[] = [
               "₺50–200 / kişi",
               "€34–40 / kişi",
               "€30–90 / kişi",
-              "€280–680 / grup",
+              "€220'den / grup",
             ],
             ["Rehber", "Yok", "İngilizce", "Türkçe + İngilizce", "Kaptan"],
             [
@@ -1778,7 +1787,7 @@ export const turkishProductPosts: BlogPost[] = [
         callout: {
           type: "price",
           text:
-            "Hızlı Özet: Gün Batımı → Karaköy (€34/€40). Akşam Yemeği → Kabataş (€30/€45/€80/€90). Özel Yat → Kuruçeşme/Kabataş (€280/€380/€680 yat başı). WhatsApp: +90 537 040 68 22",
+            "Hızlı Özet: Gün Batımı → Karaköy (€34/€40). Akşam Yemeği → Kabataş (€30/€45/€80/€90). Özel Yat → Kuruçeşme/Kabataş (€220'den, Premium €320, Grup €380–€500). WhatsApp: +90 537 040 68 22",
         },
         proTip:
           "Rezervasyonunuzu tamamladıktan sonra onay e-postasındaki harita pinini telefon galerinizdeki ekran görüntüsüne alın. İnternet bağlantısı olmadan da konuma bakabilirsiniz.",
@@ -1889,7 +1898,7 @@ export const turkishProductPosts: BlogPost[] = [
             [
               "Kuruçeşme / Bebek Marinaları",
               "Özel Yat Kiralama",
-              "€280+ / yat",
+              "€220+ / yat",
               "2–8 saat",
               "Kaptan dahil",
             ],
@@ -2144,9 +2153,9 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "Boğaz Turu Fiyat Rehberi 2026 İstanbul",
     metaDescription:
-      "Boğaz turu fiyat 2026: akşam yemeği €30'dan, gün batımı €34'ten, özel yat €280'den. TURSAB lisanslı MerrySails ile boğaz turu ücreti karşılaştırması ve paket seçim rehberi.",
+      "Boğaz turu fiyat 2026: akşam yemeği €30'dan, gün batımı €34'ten, özel yat €220'den. TURSAB lisanslı MerrySails ile boğaz turu ücreti karşılaştırması ve paket seçim rehberi.",
     excerpt:
-      "Boğaz turu kaç TL? 2026 yılı için akşam yemeği turu €30–90, gün batımı turu €34–40, özel yat kiralama €280+ ile tüm paket fiyatları. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in şeffaf fiyat rehberi.",
+      "Boğaz turu kaç TL? 2026 yılı için akşam yemeği turu €30–90, gün batımı turu €34–40, özel yat kiralama €220+ ile tüm paket fiyatları. 2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails'in şeffaf fiyat rehberi.",
     category: "cruise-guide",
     date: "2026-05-08",
     dateModified: "2026-05-08",
@@ -2167,7 +2176,7 @@ export const turkishProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Akşam yemeği boğaz turu 2026 fiyatı: Silver Soft €30, Silver Alkollü €45, Gold Soft €60, Gold Unlimited €90 — kişi başı",
       "Gün batımı boğaz turu 2026 fiyatı: şarapsız €34, şarapla €40 — yaklaşık 2 saat, paylaşımlı",
-      "Özel yat kiralama €280'dan başlar (tüm yat, 2 saat); fiyat yat büyüklüğüne ve sürekeye göre değişir",
+      "Özel yat kiralama €220'den başlar (tüm yat, 2 saat); fiyat yat büyüklüğüne ve süreye göre değişir",
       "TÜRSAB A Grubu lisanslı operatörde fiyat şeffaftır — gizli ücret, yakıt farkı veya zorunlu bahşiş yoktur",
     ],
     sections: [
@@ -2175,7 +2184,7 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Boğaz Turu Fiyat 2026 — Kısa Özet Tablo",
         answerCapsule:
-          "2026 yılında İstanbul Boğaz turu fiyatı kişi başı €30'dan başlar ve özel yat kiralama için €280'e kadar çıkar. Temel belirleyici üç unsur: tur tipi (akşam yemeği, gün batımı, özel yat), paket içeriği (yemek/içecek/rehber) ve grup büyüklüğü.",
+          "2026 yılında İstanbul Boğaz turu fiyatı kişi başı €30'dan başlar ve özel yat kiralama için tekne başı €220'den başlar. Temel belirleyici üç unsur: tur tipi (akşam yemeği, gün batımı, özel yat), paket içeriği (yemek/içecek/rehber) ve grup büyüklüğü.",
         content:
           "'Boğaz turu kaç TL?' sorusu İstanbul'a gelen ziyaretçilerin ilk sorduğu sorular arasındadır. Kısa yanıt: tur tipine göre büyük fark var. Şehir Hatları vapuru (turistik değil, kamu taşımacılığı) ₺50–200 civarında seyrederken, TÜRSAB lisanslı özel rehberli turlar kişi başı €30'dan başlar.\n\nAşağıdaki tablo 2026 sezonunun güncel fiyatlarını özetlemektedir. Tüm EUR fiyatları [Merry Tourism](/tursab) tarafından sabitlenmiştir; kurun günlük dalgalanmasından etkilenmezler.",
         table: {
@@ -2201,7 +2210,7 @@ export const turkishProductPosts: BlogPost[] = [
             [
               "Özel Yat Kiralama",
               "2–8 saat",
-              "€280+ / yat",
+              "€220+ / yat",
               "Ekstra ücrete taşınır",
             ],
             [
@@ -2243,11 +2252,11 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         heading:
-          "Özel Yat Kiralama Fiyatları — €280'dan Başlayan İstanbul",
+          "Özel Yat Kiralama Fiyatları — €220'den Başlayan İstanbul",
         answerCapsule:
-          "Özel yat kiralama 2026 fiyatı €280'dan başlar (tüm tekne, minimum 2 saat). Tekne kapasitesi ve süreye göre fiyat €280–€1.500+ arasında değişir. Yemek/içecek ve kaptanlık hizmeti ayrıca planlanabilir.",
+          "Özel yat kiralama 2026 fiyatı €220'den başlar (tüm tekne, minimum 2 saat). Tekne kapasitesi ve süreye göre Premium €320, Grup €380–€500, 90 kişilik etkinlik yatı 4 saatlik €1.200'den. Yemek/içecek ve kaptanlık hizmeti ayrıca planlanabilir.",
         content:
-          "[Özel yat kiralama İstanbul](/tr/yacht-charter-istanbul), grup veya aile için teknenin tamamını kiraladığınız VIP deneyimidir. TÜRSAB A Grubu lisanslı Merry Tourism'un 2001'den bu yana sunduğu bu hizmet, 2–50 kişilik gruplara uygundur.\n\n**Küçük Tekne (2–8 kişi), 2 saat:** €280'dan başlar. Evlilik teklifi, küçük aile kutlaması, butik iş yemeği için idealdir.\n\n**Orta Boy Yat (8–20 kişi), 2–4 saat:** €500–€900 arasında değişir. Doğum günü partisi, kurumsal küçük etkinlik veya arkadaş grupları için tercih edilir.\n\n**Büyük Tur Yatı (20–50 kişi), 4–8 saat:** €1.000–€1.500+ arasında. Düğün sonrası kutlama, kurumsal gala veya tur grubu charter'ı için uygundur.\n\nTüm kiralama fiyatlarına kaptan ve tekne sigortası dahildir. İkram (yemek/içecek), catering firmasıyla koordineli olarak ekstra planlanabilir.",
+          "[Özel yat kiralama İstanbul](/tr/yacht-charter-istanbul), grup veya aile için teknenin tamamını kiraladığınız VIP deneyimidir. TÜRSAB A Grubu lisanslı Merry Tourism'un 2001'den bu yana sunduğu bu hizmet, 2–90 kişilik gruplara uygundur.\n\n**Butik Yat (12 kişiye kadar), 2 saat:** €220'den başlar. Evlilik teklifi, küçük aile kutlaması, butik iş yemeği için idealdir.\n\n**Premium / Grup Yatı (15–40 kişi), 2–4 saat:** €320 (Premium), €380–€500 (Grup) arasında değişir. Doğum günü partisi, kurumsal etkinlik veya arkadaş grupları için tercih edilir.\n\n**Etkinlik Yatı (90 kişiye kadar), 4–8 saat:** 4 saatlik €1.200'den başlar; 150 kişilik mega etkinlik yatı teklif ile. Düğün sonrası kutlama, kurumsal gala veya tur grubu charter'ı için uygundur.\n\nTüm kiralama fiyatlarına kaptan ve tekne sigortası dahildir. İkram (yemek/içecek), catering firmasıyla koordineli olarak ekstra planlanabilir. 3 saat ve üzeri rezervasyonlarda %10 indirim uygulanır.",
         proTip:
           "Özel yat fiyatı kişi başı değil, tüm tekne üzerinden hesaplanır. 10 kişilik grup için €500'lık bir tekne kişi başı €50'ye gelir — kalabalık gruplar için akşam yemeği turundan daha ekonomik olabilir.",
       },
@@ -2278,7 +2287,7 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Hangi Paket Sizin İçin Uygun? Hızlı Karar Rehberi",
         answerCapsule:
-          "Bütçe öncelikli çift veya aile → Silver Soft €30. Şarap içen çift → Gün Batımı €40. Özel kutlama (doğum günü, yıldönümü) → Gold Unlimited €90. Mahrem grup deneyimi → Özel yat €280+.",
+          "Bütçe öncelikli çift veya aile → Silver Soft €30. Şarap içen çift → Gün Batımı €40. Özel kutlama (doğum günü, yıldönümü) → Gold Unlimited €90. Mahrem grup deneyimi → Özel yat €220+.",
         content:
           "Doğru paketi seçmek için dört soruyu yanıtlayın:\n\n**1. Kaç kişisiniz?** 1–2 kişi: Gün Batımı veya Silver Soft en avantajlı. 8+ kişi: Özel yat kiralama kişi başı maliyeti düşürür.\n\n**2. Yemek istiyor musunuz?** Evet → Akşam Yemeği Turu. Hayır → Gün Batımı Turu.\n\n**3. Alkol tüketiyor musunuz?** Hayır → Silver Soft veya Gold Soft. Evet ve sınırsız istiyorum → Gold Unlimited.\n\n**4. Özel bir kutlama var mı?** Evlilik teklifi, yıldönümü, doğum günü → Özel yat veya Gold Unlimited.\n\n[Tüm paketleri ve müsaitlik durumunu](/tr/bosphorus-cruise) rezervasyon sayfamızda görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 537 040 68 22 numarasına yazın; Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
         callout: {
@@ -2291,7 +2300,7 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Boğaz turu fiyat 2026 ne kadar?",
-        a: "2026 yılında TÜRSAB lisanslı MerrySails ile boğaz turu fiyatı: Gün Batımı €34 (şarapsız) veya €40 (şarapla); Akşam Yemeği Silver Soft €30, Silver Alkollü €45, Gold Soft €60, Gold Unlimited €90 kişi başı. Özel yat kiralama €280'dan başlar (tüm tekne). Şehir Hatları kamu vapurları ₺50–200 arasındadır ancak rehber ve ikram içermez.",
+        a: "2026 yılında TÜRSAB lisanslı MerrySails ile boğaz turu fiyatı: Gün Batımı €34 (şarapsız) veya €40 (şarapla); Akşam Yemeği Silver Soft €30, Silver Alkollü €45, Gold Soft €60, Gold Unlimited €90 kişi başı. Özel yat kiralama €220'den başlar (tüm tekne). Şehir Hatları kamu vapurları ₺50–200 arasındadır ancak rehber ve ikram içermez.",
       },
       {
         q: "En ucuz boğaz turu hangisi?",
@@ -2307,7 +2316,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Özel yat kiralama günlük ne kadar?",
-        a: "Özel yat kiralama fiyatı tüm tekne üzerinden hesaplanır: küçük tekne (2–8 kişi) 2 saat için €280'dan başlar. Orta boy yat (8–20 kişi) 2–4 saat için €500–€900; büyük tur yatı (20–50 kişi) 4–8 saat için €1.000+ arasında değişir. Kaptan ve sigorta her pakette dahildir.",
+        a: "Özel yat kiralama fiyatı tüm tekne üzerinden hesaplanır: butik yat (12 kişiye kadar) 2 saat için €220'den başlar. Premium (€320) ve grup yatı (15–40 kişi) €380–€500; 90 kişilik etkinlik yatı 4 saatlik €1.200'den. Kaptan ve sigorta her pakette dahildir.",
       },
       {
         q: "Boğaz turu fiyatına neler dahildir?",
@@ -2330,7 +2339,7 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "Boğaz Turu Kaç Saat Sürer? 2026 Rehberi",
     metaDescription:
-      "Boğaz turu kaç saat sürer? 2026: gün batımı turu 2 saat (€34–40), akşam yemeği 3.5 saat (€30–90), özel yat 2+ saat (€280+). TURSAB lisanslı MerrySails ile kısa ve tam gün sefer rehberi.",
+      "Boğaz turu kaç saat sürer? 2026: gün batımı turu 2 saat (€34–40), akşam yemeği 3.5 saat (€30–90), özel yat 2+ saat (€220+). TURSAB lisanslı MerrySails ile kısa ve tam gün sefer rehberi.",
     excerpt:
       "Boğaz turunda kaç saat geçireceğinizi planlamak mı istiyorsunuz? 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism'un 2026 sefer süre rehberi: kısa tur 1.5 saat, gün batımı 2 saat, akşam yemeği 3.5 saat, özel yat 2+ saat.",
     category: "cruise-guide",
@@ -2354,7 +2363,7 @@ export const turkishProductPosts: BlogPost[] = [
       "Kısa boğaz turu alternatifi: Şehir Hatları 1.5–2 saatlik kamu seferi (rehbersiz, ikramsız) veya MerrySails 2 saatlik gün batımı turu (€34, rehberli)",
       "Gün batımı boğaz turu yaklaşık 2 saat sürer — Karaköy bölgesinden kalkar, €34 (şarapsız) veya €40 (şarapla)",
       "Akşam yemeği boğaz turu yaklaşık 3.5 saat sürer — Kabataş'tan 20:30 kalkış, gece 00:00 dönüş, €30–90 / kişi",
-      "Özel yat kiralama minimum 2 saat; grubun isteğine göre 2–8 saat arası planlanabilir — €280+ / tüm tekne",
+      "Özel yat kiralama minimum 2 saat; grubun isteğine göre 2–8 saat arası planlanabilir — €220+ / tüm tekne",
     ],
     sections: [
       {
@@ -2398,7 +2407,7 @@ export const turkishProductPosts: BlogPost[] = [
               "Özel Yat Kiralama",
               "2–8 saat",
               "Esnek",
-              "€280+ / yat",
+              "€220+ / yat",
               "Kaptan dahil",
             ],
           ],
@@ -2436,9 +2445,9 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Özel Yat Kiralama — 2 Saatten Tam Güne Esnek Planlama",
         answerCapsule:
-          "Özel yat kiralama minimum 2 saat; maksimum 8 saat veya daha uzun planlanabilir. Fiyat €280'dan (tüm tekne, 2 saat) başlar. Küçük aile, iş toplantısı veya kutlama için idealdir.",
+          "Özel yat kiralama minimum 2 saat; maksimum 8 saat veya daha uzun planlanabilir. Fiyat €220'den (tüm tekne, 2 saat) başlar. Küçük aile, iş toplantısı veya kutlama için idealdir.",
         content:
-          "[Özel yat kiralama İstanbul](/tr/yacht-charter-istanbul), grubun tüm tekneyi özel kullandığı VIP deneyimidir. Merry Tourism'un 2001'den bu yana sunduğu bu hizmet; süre, rota ve ikram açısından tamamen esnektir.\n\n**2 Saat (Minimum):** Boğaz'da kısa bir tur — Köprü altından geçiş, Bebek Koyu'na kadar gidip dönüş. Evlilik teklifi, butik kutlama veya iş yemeği için idealdir. €280'dan başlar.\n\n**3–4 Saat:** Boğaz'ın iki köprüsünü de kapsayan orta uzunlukta rota. Aile toplantısı, doğum günü partisi veya küçük kurumsal etkinlik için uygun. €500–€900 arasında değişir.\n\n**Tam Gün (6–8 saat):** Boğaz'ın tamamı + Adalar rotası veya Marmara turu. Düğün sonrası kutlama, büyük grup charter'ı için. €1.000+ başlar.\n\nTüm kiralama seçeneklerinde kaptan ve tekne sigortası dahildir. Catering, müzik sistemi veya fotoğrafçı gibi ekstra hizmetler koordineli olarak planlanabilir.",
+          "[Özel yat kiralama İstanbul](/tr/yacht-charter-istanbul), grubun tüm tekneyi özel kullandığı VIP deneyimidir. Merry Tourism'un 2001'den bu yana sunduğu bu hizmet; süre, rota ve ikram açısından tamamen esnektir.\n\n**2 Saat (Minimum):** Boğaz'da kısa bir tur — Köprü altından geçiş, Bebek Koyu'na kadar gidip dönüş. Evlilik teklifi, butik kutlama veya iş yemeği için idealdir. €220'den başlar.\n\n**3–4 Saat:** Boğaz'ın iki köprüsünü de kapsayan orta uzunlukta rota. Aile toplantısı, doğum günü partisi veya küçük kurumsal etkinlik için uygun. Premium €432'den, grup yatı €513–€900 arasında (3 saat %10 indirimli) değişir.\n\n**Tam Gün (6–8 saat):** Boğaz'ın tamamı + Adalar rotası veya Marmara turu. Düğün sonrası kutlama, büyük grup charter'ı için. 90 kişilik etkinlik yatı bu sürede çalışır; teklif ile fiyatlanır.\n\nTüm kiralama seçeneklerinde kaptan ve tekne sigortası dahildir. Catering, müzik sistemi veya fotoğrafçı gibi ekstra hizmetler koordineli olarak planlanabilir.",
         proTip:
           "10+ kişilik gruplar için özel yat kiralama kişi başı maliyeti açısından akşam yemeği turundan ucuz olabilir. Örneğin 12 kişilik €600'lık bir tekne, kişi başına €50 gelir — Silver Soft €30'dan pahalıdır ama tüm tekne sizin ve rota esnektir.",
       },
@@ -2469,7 +2478,7 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Hangi Boğaz Turu Süreye Göre Size Uygun?",
         answerCapsule:
-          "2 saatiniz varsa → Gün Batımı Turu (€34). Akşamı tamamen ayıracaksanız → Akşam Yemeği Turu (€30–90). Kendi programınızı yaratmak istiyorsanız → Özel Yat (€280+, 2–8 saat). Bütçe önceliğinizse → Şehir Hatları (₺50–200).",
+          "2 saatiniz varsa → Gün Batımı Turu (€34). Akşamı tamamen ayıracaksanız → Akşam Yemeği Turu (€30–90). Kendi programınızı yaratmak istiyorsanız → Özel Yat (€220+, 2–8 saat). Bütçe önceliğinizse → Şehir Hatları (₺50–200).",
         content:
           "Doğru turu seçmenin en hızlı yolu dört soruyu yanıtlamaktır:\n\n**Ne kadar vaktiniz var?**\n- 2 saat → Gün Batımı Turu\n- 3.5 saat (akşam) → Akşam Yemeği Turu\n- 2–8 saat (esnek) → Özel Yat\n- Sınırlı bütçe, esnek saat → Şehir Hatları\n\n**Yemek istiyor musunuz?**\n- Evet → Akşam Yemeği Turu\n- Hayır → Gün Batımı Turu\n\n**Özel kutlama var mı?**\n- Evet → Özel Yat Kiralama\n- Hayır → Paylaşımlı tur\n\n**Gündüzü başka etkinliklere mi ayırdınız?**\n- Sabah–öğlen tarihi yarımada → Akşam Gün Batımı Turu\n- Boş akşam → Akşam Yemeği Turu\n\nTüm tur seçeneklerini ve güncel müsaitlik durumunu [Boğaz turu rezervasyon sayfamızda](/tr/bosphorus-cruise) görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 537 040 68 22 numarasına yazın; 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
         callout: {
@@ -2482,7 +2491,7 @@ export const turkishProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Boğaz turu kaç saat sürer?",
-        a: "Boğaz turu süresine göre: Şehir Hatları kamu seferi 1.5–2 saat (tek yön), MerrySails Gün Batımı Turu yaklaşık 2 saat (€34–40), Akşam Yemeği Boğaz Turu yaklaşık 3.5 saat (20:30–00:00, €30–90) ve Özel Yat Kiralama 2–8 saat (€280+, esnek). Tur tipini programınıza göre seçin.",
+        a: "Boğaz turu süresine göre: Şehir Hatları kamu seferi 1.5–2 saat (tek yön), MerrySails Gün Batımı Turu yaklaşık 2 saat (€34–40), Akşam Yemeği Boğaz Turu yaklaşık 3.5 saat (20:30–00:00, €30–90) ve Özel Yat Kiralama 2–8 saat (€220+, esnek). Tur tipini programınıza göre seçin.",
       },
       {
         q: "Kısa boğaz turu var mı?",
@@ -2522,9 +2531,9 @@ export const turkishProductPosts: BlogPost[] = [
     locale: "tr",
     title: "Yat Kiralama İstanbul Fiyat 2026",
     metaDescription:
-      "Yat kiralama İstanbul fiyatları 2026: tekne kiralama €280'dan başlıyor. Boğaz'da özel yat, doğum günü, evlilik teklifi. TURSAB lisanslı 2001'den beri.",
+      "Yat kiralama İstanbul fiyatları 2026: tekne kiralama €220'den başlıyor. Boğaz'da özel yat, doğum günü, evlilik teklifi. TURSAB lisanslı 2001'den beri.",
     excerpt:
-      "İstanbul'da yat kiralama €280'dan başlıyor. Özel tekne kiralama fiyatları, paket karşılaştırması ve kalkış noktaları — doğum günü, evlilik teklifi, kurumsal etkinlik. TURSAB A Grubu lisanslı Merry Tourism, 2001'den beri.",
+      "İstanbul'da yat kiralama €220'den başlıyor. Özel tekne kiralama fiyatları, paket karşılaştırması ve kalkış noktaları — doğum günü, evlilik teklifi, kurumsal etkinlik. TURSAB A Grubu lisanslı Merry Tourism, 2001'den beri.",
     category: "cruise-guide",
     date: "2026-05-10",
     dateModified: "2026-05-10",
@@ -2543,7 +2552,7 @@ export const turkishProductPosts: BlogPost[] = [
     ],
     author: "editorial",
     keyTakeaways: [
-      "İstanbul yat kiralama fiyatı 2026: Essential €280, Premium €380, VIP €680 (2 saatlik özel charter, tüm yat)",
+      "İstanbul yat kiralama fiyatı 2026: Butik €220, Premium €320, Grup Standart €380, Grup Signature €500 (2 saatlik özel charter, tüm yat)",
       "Yat kiralama ve tekne kiralama aynı ürünü ifade eder — Boğaz'da özel charter deneyimi",
       "TURSAB A Grubu lisanslı Merry Tourism; 2001'den bu yana 50.000+ misafir ağırladı",
       "Kalkış noktaları: Kuruçeşme, Kabataş, Karaköy — otele yakın iskeleyi seçin",
@@ -2552,19 +2561,21 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Yat Kiralama İstanbul Fiyat 2026 — Özet Tablo",
         answerCapsule:
-          "İstanbul'da yat kiralama fiyatları 2026 sezonunda €280'dan başlıyor. Tekne büyüklüğüne, süreye ve ekstraya göre VIP pakette €680'e kadar çıkabiliyor. Fiyatlar tüm yat için geçerli; kişi başı değil.",
+          "İstanbul'da yat kiralama fiyatları 2026 sezonunda €220'den başlıyor. Tekne büyüklüğüne, süreye ve ekstraya göre üst tarifelerde Grup yatına (€500) kadar çıkabiliyor. Fiyatlar tüm yat için geçerli; kişi başı değil.",
         content:
-          `'Yat kiralama İstanbul ne kadar?' sorusu her gün düzinelerce kez WhatsApp hattımıza düşüyor. Yanıt net: yat kiralama, kişi başı bir ücret değil; tüm teknenin kiralanma bedelidir. 2026 sezonunda [Merry Tourism](/tursab) üç temel yat kiralama paketi sunmaktadır.
+          `'Yat kiralama İstanbul ne kadar?' sorusu her gün düzinelerce kez WhatsApp hattımıza düşüyor. Yanıt net: yat kiralama, kişi başı bir ücret değil; tüm teknenin kiralanma bedelidir. 2026 sezonunda [Merry Tourism](/tursab) farklı kapasitelerde özel yatlar sunmaktadır.
 
-**2026 Yat Kiralama Fiyat Tablosu**
+**2026 Yat Kiralama Fiyat Tablosu (2 saat, tekne başı)**
 
-| Paket | Fiyat (2 saat) | Yat Tipi | Kapasite |
-|-------|---------------|----------|----------|
-| Essential | €280 | Konforlu özel yat | 2–10 kişi |
-| Premium | €380 | Lüks özel yat | 2–12 kişi |
-| VIP | €680 | Süper lüks özel yat | 2–16 kişi |
+| Yat | Fiyat (2 saat) | Kapasite |
+|-----|---------------|----------|
+| Butik Yat | €220 | 12 kişiye kadar |
+| Premium Yat | €320 | 15 kişiye kadar |
+| Grup Yatı · Standart | €380 | 15 kişiye kadar |
+| Grup Yatı · Signature | €500 | 15–40 kişi |
+| Etkinlik Yatı | €1.200 (4 saat) | 90 kişiye kadar |
 
-Fiyata kaptan ve mürettebat dahildir. Yemek, içecek, fotoğrafçı veya canlı müzik gibi ekstralar ayrıca eklenir. Ek her saatin ücreti Essential'da €125, Premium'da €150, VIP'te €300'dür.
+Fiyata kaptan ve mürettebat dahildir. Yemek, içecek, fotoğrafçı veya canlı müzik gibi ekstralar ayrıca eklenir. Minimum kiralama 2 saattir; 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim uygulanır.
 
 Tekne kiralama ve yat kiralama fiyatları aynıdır — her iki terim de Boğaz özel charter ürünümüzü tanımlar. Rakip sitelerdeki 'tekne kiralama' ilanlarını incelerken ekstra ücretlere (kaptan, yakıt, liman vergisi) dikkat edin; MerrySails fiyatları her şey dahil fiyatlardır.`,
       },
@@ -2590,23 +2601,23 @@ Paylaşımlı turda 30–80 yabancıyla aynı güverteyi paylaşırsınız, kalk
 Bu nedenle doğum günü tekne kiralama, evlilik teklifi yat kiralama ve kurumsal etkinlikler neredeyse her zaman özel charter tercih eder.`,
       },
       {
-        heading: "Yat Fiyat Seviyeleri — Essential, Premium, VIP",
+        heading: "Yat Fiyat Seviyeleri — Butik, Premium, Grup",
         answerCapsule:
-          "MerrySails'te üç yat kiralama paketi var: €280 Essential, €380 Premium, €680 VIP. Fark yatın büyüklüğü, konforu ve kapasitesindedir.",
+          "MerrySails'te kapasiteye göre yatlar var: €220 Butik, €320 Premium, €380 Grup Standart, €500 Grup Signature. Fark yatın büyüklüğü, konforu ve kapasitesindedir.",
         content:
-          `**Essential Yat Kiralama — €280**
+          `**Butik Yat Kiralama — €220**
 
-Essential paket, iki kişilik romantik bir Boğaz deneyimi veya küçük aile grupları için idealdir. Yaklaşık 2 saat süren yat kiralama turunda Boğaz Köprüsü altından geçerek Rumeli ve Anadolu yakasının en ikonik silüetlerini izlersiniz. Kapasite en fazla 10 kişidir. Kaptan ve güverte yardımcısı dahil; yemek ve içecek ekstra.
+Butik yat, iki kişilik romantik bir Boğaz deneyimi veya küçük aile grupları için idealdir. Yaklaşık 2 saat süren yat kiralama turunda Boğaz Köprüsü altından geçerek Rumeli ve Anadolu yakasının en ikonik silüetlerini izlersiniz. Kapasite en fazla 12 kişidir. Kaptan ve güverte yardımcısı dahil; yemek ve içecek ekstra.
 
-**Premium Yat Kiralama — €380**
+**Premium Yat Kiralama — €320**
 
-Premium yatta daha geniş salon alanı, daha konforlu güverte ve geliştirilmiş ses sistemi bulunur. Doğum günü tekne kiralama organizasyonlarında pasta, balon, dekorasyon ve fotoğrafçı kombinasyonu en çok bu pakette tercih edilir. Kapasite 12 kişiye kadar. Ek saat €150.
+Premium yatta daha geniş salon alanı, daha konforlu güverte ve geliştirilmiş ses sistemi bulunur. Doğum günü tekne kiralama organizasyonlarında pasta, balon, dekorasyon ve fotoğrafçı kombinasyonu en çok bu yatta tercih edilir. Kapasite 15 kişiye kadar.
 
-**VIP Lüks Yat Kiralama — €680**
+**Grup Yatı Kiralama — €380 (Standart) / €500 (Signature)**
 
-VIP, İstanbul'da yat kiralamanın zirvesidir. Geniş güverte, tam donanımlı salon, yüksek kalite ses ve ışık sistemiyle sunar. Evlilik teklifi yat kiralama paketlerinin büyük çoğunluğu, kurumsal etkinlikler ve özel kutlamalar VIP tekneyi tercih eder. Kapasite 16 kişiye kadar; ek saat €300.
+Grup yatı, İstanbul'da büyük grup kiralamasının en konforlu seçeneğidir. Geniş güverte, tam donanımlı salon, yüksek kalite ses ve ışık sistemiyle sunulur. 15 kişiye kadar Standart (€380), 15–40 kişi için Signature (€500) tarife uygulanır. Evlilik teklifi, kurumsal etkinlikler ve büyük kutlamalar genellikle grup yatını tercih eder.
 
-Tüm paketlerde kaptan, mürettebat ve temel güvenlik ekipmanı dahildir. Kapsamlı eklenti menüsüne (yemek menüsü €35/kişi, DJ €250, fotoğrafçı €190, evlilik teklifi dekor €50) [yat kiralama sayfasından](/tr/yacht-charter-istanbul) ulaşabilirsiniz.`,
+Tüm yatlarda kaptan, mürettebat ve temel güvenlik ekipmanı dahildir; 3 saat ve üzeri rezervasyonlarda %10 indirim uygulanır. Kapsamlı eklenti menüsüne (yemek menüsü €35/kişi, DJ €250, fotoğrafçı €190, evlilik teklifi dekor €50) [yat kiralama sayfasından](/tr/yacht-charter-istanbul) ulaşabilirsiniz.`,
       },
       {
         heading: "Etkinliğe Göre Yat Kiralama İstanbul",
@@ -2622,13 +2633,13 @@ Tüm paketlerde kaptan, mürettebat ve temel güvenlik ekipmanı dahildir. Kapsa
 - Balon ve masa dekorasyonu: ayrıca ayarlanabilir
 - Sürpriz karşılama planlaması: kaptanla önceden koordine ederiz
 
-En popüler kombinasyon: Premium Yat Kiralama (€380) + Doğum Günü Pastası (€45) + Kokteyl Menüsü (€25/kişi). 8 kişilik bir grup için toplam yat kiralama maliyeti yaklaşık €625 çıkar.
+En popüler kombinasyon: Premium Yat Kiralama (€320) + Doğum Günü Pastası (€45) + Kokteyl Menüsü (€25/kişi). 8 kişilik bir grup için toplam yat kiralama maliyeti yaklaşık €565 çıkar.
 
 **Evlilik Teklifi için Yat Kiralama**
 
 Boğaz Köprüsü altında, Istanbul siluetine karşı bir evlilik teklifi — dünyada birkaç şehir bu sahneyi sunabilir. [Evlilik teklifi yat kiralama paketimizde](/tr/proposal-yacht-rental-istanbul) şunlar bulunur:
 
-- VIP yat önerisi (€680) — geniş güverte, romantik ambiyans
+- Premium yat önerisi (€320) — geniş güverte, romantik ambiyans
 - Evlilik teklifi masa dekorasyonu: €50 (güller, mumlar, pankart)
 - Fotoğrafçı: €190
 - Keman: €180
@@ -2691,7 +2702,7 @@ Hangi iskeleden kalkacağınızı bilmiyorsanız WhatsApp üzerinden otelin adı
 - Karın Dansı Gösterisi: €180
 - Doğum Günü Pastası (küçük): €35
 - Evlilik Teklifi Dekor: €50
-- +1 Saat Ek Süre: Essential'da €125, Premium'da €150, VIP'te €300
+- +1 Saat Ek Süre: 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim (saat başına ek ücret yoktur)
 
 Her eklenti rezervasyon aşamasında checkout sayfasında seçilebilir. Özel talepler için WhatsApp: +90 537 040 68 22`,
       },
@@ -2703,12 +2714,12 @@ Her eklenti rezervasyon aşamasında checkout sayfasında seçilebilir. Özel ta
           `MerrySails'te yat kiralama temel paketi 2 saattir. Bu süre zarfında Boğaz Köprüsü'nden geçerek Rumeli Hisarı ve Anadolu Hisarı önüne kadar gidip dönmek mümkündür. Kalkış saatine göre farklı atmosferler deneyimlenir:
 
 **2 Saatlik Yat Kiralama**
-- Essential: €280 / Premium: €380 / VIP: €680
+- Butik: €220 / Premium: €320 / Grup: €380–€500
 - İdeal güzergah: Köprü altı + iki yakayı kıyısı + dönüş
 - Doğum günü, evlilik teklifi, romantik tur için yeterli süre
 
-**3 Saatlik Yat Kiralama**
-- 2 saat baza + 1 ek saat: Essential'da €280+€125=€405, Premium'da €380+€150=€530, VIP'te €680+€300=€980
+**3 Saatlik Yat Kiralama (%10 indirimli)**
+- Butik €297, Premium €432, Grup Signature €675
 - Daha geniş güzergah; Bebek Koyu veya Anadolu Hisarı civarında daha fazla zaman
 - Akşam yemekli organizasyonlar için önerilen süre
 
@@ -2736,11 +2747,11 @@ Kalkış saati esnektir; sabah, öğleden sonra veya akşam seçilebilir. Gün b
 | Yolcu | 30–80 kişi | Sadece siz | Sadece siz |
 | Kalkış | Sabit | Esnek | Esnek |
 | Rota | Sabit | Özelleştirilebilir | Özelleştirilebilir |
-| Fiyat | Kişi başı €34–90 | Tüm tekne €280+ | Tüm tekne €280+ |
+| Fiyat | Kişi başı €34–90 | Tüm tekne €220+ | Tüm tekne €220+ |
 | Etkinlik | Yoktur | Eklenebilir | Eklenebilir |
 | Mahremiyet | Düşük | Yüksek | Yüksek |
 
-Paylaşımlı turlar bütçe uyumludur; ancak grup aktivitesi veya özel kutlama istiyorsanız tekne kiralama her zaman daha iyi sonuç verir. Kişi başı fiyat hesaplaması: 8 kişilik bir grupta €380'lik Premium yat kiralama, kişi başına yalnızca €47,5'a düşer — paylaşımlı turla neredeyse aynı fiyata özel deneyim.
+Paylaşımlı turlar bütçe uyumludur; ancak grup aktivitesi veya özel kutlama istiyorsanız tekne kiralama her zaman daha iyi sonuç verir. Kişi başı fiyat hesaplaması: 8 kişilik bir grupta €320'lik Premium yat kiralama, kişi başına yalnızca €40'a düşer — paylaşımlı turla neredeyse aynı fiyata özel deneyim.
 
 Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026) bakabilirsiniz. Tüm Boğaz cruise seçenekleri için [Boğaz turu ana sayfamız](/tr/bosphorus-cruise) kapsamlı bir başlangıç noktasıdır.`,
       },
@@ -2748,11 +2759,11 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     faqs: [
       {
         q: "İstanbul'da yat kiralama fiyatı ne kadar?",
-        a: "İstanbul yat kiralama fiyatı 2026 sezonunda tüm yat için €280'dan başlar. Essential paket €280 (2 saat), Premium €380 (2 saat), VIP €680 (2 saat). Fiyata kaptan, mürettebat, yakıt ve liman vergisi dahildir; yemek ve içecek ayrıca eklenir. 2001'den bu yana TURSAB A Grubu lisanslı Merry Tourism olarak fiyatlarımız şeffaf ve sabit EUR üzerindendir.",
+        a: "İstanbul yat kiralama fiyatı 2026 sezonunda tüm yat için €220'den başlar. Butik €220 (2 saat), Premium €320 (2 saat), Grup Standart €380, Grup Signature €500. Fiyata kaptan, mürettebat, yakıt ve liman vergisi dahildir; yemek ve içecek ayrıca eklenir. 2001'den bu yana TURSAB A Grubu lisanslı Merry Tourism olarak fiyatlarımız şeffaf ve sabit EUR üzerindendir.",
       },
       {
         q: "Tekne kiralama İstanbul ne kadar?",
-        a: "Tekne kiralama İstanbul 2026 fiyatı €280'dan başlıyor. Yat kiralama ve tekne kiralama Türkçede aynı ürünü ifade eder; her ikisi de tüm tekneyi özel olarak kiraladığınız charter deneyimidir. Kapasite, yat tipi ve süreye göre fiyat değişir: Essential €280, Premium €380, VIP €680.",
+        a: "Tekne kiralama İstanbul 2026 fiyatı €220'den başlıyor. Yat kiralama ve tekne kiralama Türkçede aynı ürünü ifade eder; her ikisi de tüm tekneyi özel olarak kiraladığınız charter deneyimidir. Kapasite, yat tipi ve süreye göre fiyat değişir: Butik €220, Premium €320, Grup €380–€500.",
       },
       {
         q: "Yat kiralama ile tekne kiralama arasındaki fark nedir?",
@@ -2760,15 +2771,15 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         q: "Doğum günü için tekne nasıl kiralanır?",
-        a: "Doğum günü tekne kiralama için şu adımları izleyin: 1) Yat kiralama sayfamızdan paket seçin (Premium €380 önerilir), 2) Checkout'ta doğum günü pastası (€35–60) ve fotoğrafçı (€190) ekleyin, 3) Tarih, saat ve özel notları belirtin. Sürpriz organizasyon için WhatsApp: +90 537 040 68 22 — grubun haberdar olmaması için gizli koordinasyon yaparız.",
+        a: "Doğum günü tekne kiralama için şu adımları izleyin: 1) Yat kiralama sayfamızdan yat seçin (Premium €320 önerilir), 2) Checkout'ta doğum günü pastası (€35–60) ve fotoğrafçı (€190) ekleyin, 3) Tarih, saat ve özel notları belirtin. Sürpriz organizasyon için WhatsApp: +90 537 040 68 22 — grubun haberdar olmaması için gizli koordinasyon yaparız.",
       },
       {
         q: "Evlilik teklifi için yat kiralama paketleri var mı?",
-        a: "Evet. Evlilik teklifi yat kiralama için özel paket sunuyoruz: VIP yat (€680) + evlilik teklifi dekor (€50) + fotoğrafçı (€190) + keman (€180) kombinasyonu en popüler seçimdir. Boğaz Köprüsü önünde veya Rumeli Hisarı manzarasına karşı İstanbul'un en unutulmaz evlilik teklifini planlıyoruz. Detaylar için: /tr/proposal-yacht-rental-istanbul",
+        a: "Evet. Evlilik teklifi yat kiralama için özel paket sunuyoruz: Premium yat (€320) + evlilik teklifi dekor (€50) + fotoğrafçı (€190) + keman (€180) kombinasyonu en popüler seçimdir. Boğaz Köprüsü önünde veya Rumeli Hisarı manzarasına karşı İstanbul'un en unutulmaz evlilik teklifini planlıyoruz. Detaylar için: /tr/proposal-yacht-rental-istanbul",
       },
       {
         q: "Yat kiralama saatleri nasıl?",
-        a: "Standart yat kiralama süresi 2 saattir ve kalkış saati esnektir: sabah, öğleden sonra veya akşam seçilebilir. Ek her saatin bedeli Essential'da €125, Premium'da €150, VIP'te €300'dür. Gün batımı yat kiralama için tercih edilen kalkış saati mevsime göre 17:00–19:00 arasındadır.",
+        a: "Standart yat kiralama süresi 2 saattir ve kalkış saati esnektir: sabah, öğleden sonra veya akşam seçilebilir. 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim uygulanır. Gün batımı yat kiralama için tercih edilen kalkış saati mevsime göre 17:00–19:00 arasındadır.",
       },
       {
         q: "Yat kiralama yapmadan önce nelere dikkat etmeli?",
@@ -2786,14 +2797,14 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       "istanbul-bogaz-turu-fiyatlari-2026",
     ],
     proTip:
-      "8+ kişilik grupta kişi başı hesaplaması yapın: €380 Premium yat kiralama, 8 kişiye bölününce kişi başı €47,5 eder — paylaşımlı sunset turla (€34–40) neredeyse aynı fiyata tamamen özel deneyim.",
+      "8+ kişilik grupta kişi başı hesaplaması yapın: €320 Premium yat kiralama, 8 kişiye bölününce kişi başı €40 eder — paylaşımlı sunset turla (€34–40) neredeyse aynı fiyata tamamen özel deneyim.",
     calloutText:
       "TURSAB A Grubu lisanslı Merry Tourism (#14316), 2001'den bu yana 50.000+ misafirle İstanbul Boğazı'nda yat kiralama deneyimi sunuyor. Yat kiralama rezervasyonu ve fiyat için WhatsApp: +90 537 040 68 22",
   },
   {
     slug: "adalar-turu-istanbul-buyukada-rehberi-2026",
     title: "Adalar Turu İstanbul Rehberi 2026",
-    metaDescription: "İstanbul Adalar turu 2026: Büyükada, Heybeliada, Burgazada. Vapur ile €5'den, özel yat ile €280'den. TURSAB lisanslı.",
+    metaDescription: "İstanbul Adalar turu 2026: Büyükada, Heybeliada, Burgazada. Vapur ile €5'den, özel yat ile €220'den. TURSAB lisanslı.",
     excerpt: "İstanbul'un en güzel kaçış noktası: arabasız dört ada, Osmanlı köşkleri, fayton gezintileri ve Marmara manzarası. 2026 sezonu için Adalar turu rehberiniz burada.",
     category: "cruise-guide",
     date: "2026-05-12",
@@ -2806,7 +2817,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     keyTakeaways: [
       "Adalar, İstanbul Marmara'sında dört arabasız adadan oluşur — Büyükada, Heybeliada, Burgazada ve Kınalıada",
       "Şehir Hatları vapuruyla Eminönü'nden Büyükada'ya yaklaşık 90 dakika, gidiş-dönüş yaklaşık €5",
-      "MerrySails özel yat kiralama seçeneğiyle Adalara €280'den (tüm tekne) ulaşabilirsiniz — kuyruk yok, sabit program yok",
+      "MerrySails özel yat kiralama seçeneğiyle Adalara €220'den (tüm tekne) ulaşabilirsiniz — kuyruk yok, sabit program yok",
       "TURSAB A Grubu lisanslı Merry Tourism, 2001'den bu yana 50.000+ misafirle İstanbul ve Ada turları düzenliyor"
     ],
     sections: [
@@ -2817,8 +2828,8 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         heading: "İstanbul'dan Adalara Nasıl Gidilir?",
-        answerCapsule: "İki temel seçenek: Şehir Hatları vapuruyla Eminönü veya Kabataş'tan yaklaşık 90 dakikada, €5 gidiş-dönüş. Ya da MerrySails özel yat kiralama ile €280'den (tüm tekne), dilediğiniz saatte.",
-        content: "**Seçenek 1: Şehir Hatları Vapuru**\n\nŞehir Hatları'nın Adalar seferleri, Eminönü İskelesi (Galata Köprüsü yanı) ve Kabataş İskelesi'nden kalkar. Vapur sırasıyla Kınalıada, Burgazada, Heybeliada ve Büyükada'ya uğrar. Eminönü'nden Büyükada'ya geçiş süresi yaklaşık 90 dakika, Kabataş'tan yaklaşık 75 dakikadır.\n\nBiletler İstanbulkart ile alınır (yaklaşık 30 TRY tek yön). Kart sahibi olmayan ziyaretçiler için güncel tam fiyat yaklaşık €2–3 arasındadır. Gidiş-dönüş bütçe: kişi başı yaklaşık €5.\n\nYaz aylarında ve hafta sonlarında vapur kalabalık olur. Sabah 10:00–13:00 arası seferler ve 17:00–20:00 dönüş seferleri en yoğun dilimlerdir. Hafta içi veya sabahın erken saatleri (08:00–09:00) daha rahat bir seyahat sunar.\n\n**Seçenek 2: MerrySails Özel Yat Kiralama**\n\nGrup seyahati, özel kutlama veya kalabalıktan kaçmak isteyenler için MerrySails özel yat kiralama, Adalara ulaşmanın en keyifli yoludur. Kuruçeşme Marina'dan kalkan yat, Boğaz'ın ağzını aşıp Marmara'ya girer ve yaklaşık 45 dakikada Büyükada'ya varır. Program tamamen size aittir: gidiş-dönüş saati, Adalarda geçirilecek süre ve güzergah.\n\nFiyatlar tekne başına €280'den başlar. Detaylar için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın.",
+        answerCapsule: "İki temel seçenek: Şehir Hatları vapuruyla Eminönü veya Kabataş'tan yaklaşık 90 dakikada, €5 gidiş-dönüş. Ya da MerrySails özel yat kiralama ile €220'den (tüm tekne), dilediğiniz saatte.",
+        content: "**Seçenek 1: Şehir Hatları Vapuru**\n\nŞehir Hatları'nın Adalar seferleri, Eminönü İskelesi (Galata Köprüsü yanı) ve Kabataş İskelesi'nden kalkar. Vapur sırasıyla Kınalıada, Burgazada, Heybeliada ve Büyükada'ya uğrar. Eminönü'nden Büyükada'ya geçiş süresi yaklaşık 90 dakika, Kabataş'tan yaklaşık 75 dakikadır.\n\nBiletler İstanbulkart ile alınır (yaklaşık 30 TRY tek yön). Kart sahibi olmayan ziyaretçiler için güncel tam fiyat yaklaşık €2–3 arasındadır. Gidiş-dönüş bütçe: kişi başı yaklaşık €5.\n\nYaz aylarında ve hafta sonlarında vapur kalabalık olur. Sabah 10:00–13:00 arası seferler ve 17:00–20:00 dönüş seferleri en yoğun dilimlerdir. Hafta içi veya sabahın erken saatleri (08:00–09:00) daha rahat bir seyahat sunar.\n\n**Seçenek 2: MerrySails Özel Yat Kiralama**\n\nGrup seyahati, özel kutlama veya kalabalıktan kaçmak isteyenler için MerrySails özel yat kiralama, Adalara ulaşmanın en keyifli yoludur. Kuruçeşme Marina'dan kalkan yat, Boğaz'ın ağzını aşıp Marmara'ya girer ve yaklaşık 45 dakikada Büyükada'ya varır. Program tamamen size aittir: gidiş-dönüş saati, Adalarda geçirilecek süre ve güzergah.\n\nFiyatlar tekne başına €220'den başlar. Detaylar için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın.",
         callout: {
           type: "tip",
           text: "Yaz tatili sezonunda (Temmuz–Ağustos) hafta sonu Adalar vapurları dolup taşar. Eminönü'ne en az 45 dakika erken gidin ya da sabahın erken seferini (08:00) tercih edin."
@@ -2831,8 +2842,8 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         heading: "Adalara Özel Yat ile Gitmek — MerrySails Seçeneği",
-        answerCapsule: "MerrySails özel yat kiralama seçeneği, Adalara tüm tekne €280'den başlayan fiyatlarla ulaştırır. Kuruçeşme'den Büyükada'ya yolculuk yaklaşık 45 dakikadır.",
-        content: "Vapur kuyruğundan, kalabalık güverteden ve sabit tarifeden kaçmak isteyenler için özel yat kiralama, Adalara en özgür ulaşım şeklidir.\n\nMerrySails, Kuruçeşme Marina'dan (Boğaz'ın Avrupa yakası) özel yat seferleri düzenler. Güzergah Boğaz ağzından Marmara'ya açılır ve Adalara yaklaşık 45 dakikada ulaşılır. Bu süre zarfında Tarihi Yarımada silueti ve her iki kıyının manzarası eşsiz bir panorama sunar.\n\n**MerrySails Yat Kiralama Paketleri (tekne başına):**\n- Essential — €280 / 2 saat: Boğaz ve Marmara deneyimi; adaya demirlemeden kısa bir gezinti\n- Premium — €380 / 2–3 saat: Büyükada yakınlarında demir atma, yüzme imkânı\n- VIP — €680 / 4+ saat: Tam gün ada rotası, ikram, fotoğrafçı, özel güzergah\n\n6 kişi ve üzeri gruplarda özel yat kiralama kişi başı maliyeti, vapur bileti + ada içi ulaşım + yemek toplamına yaklaşmaktadır — ancak buna ek olarak tam mahremiyet ve esneklik gelir.\n\nTüm fiyatlar ve kalkış noktaları için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın. İstanbul dönüşünde [Boğaz gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile günü taçlandırabilirsiniz.",
+        answerCapsule: "MerrySails özel yat kiralama seçeneği, Adalara tüm tekne €220'den başlayan fiyatlarla ulaştırır. Kuruçeşme'den Büyükada'ya yolculuk yaklaşık 45 dakikadır.",
+        content: "Vapur kuyruğundan, kalabalık güverteden ve sabit tarifeden kaçmak isteyenler için özel yat kiralama, Adalara en özgür ulaşım şeklidir.\n\nMerrySails, Kuruçeşme Marina'dan (Boğaz'ın Avrupa yakası) özel yat seferleri düzenler. Güzergah Boğaz ağzından Marmara'ya açılır ve Adalara yaklaşık 45 dakikada ulaşılır. Bu süre zarfında Tarihi Yarımada silueti ve her iki kıyının manzarası eşsiz bir panorama sunar.\n\n**MerrySails Yat Kiralama Paketleri (tekne başına):**\n- Butik — €220 / 2 saat: Boğaz ve Marmara deneyimi; adaya demirlemeden kısa bir gezinti\n- Premium — €320 / 2–3 saat: Büyükada yakınlarında demir atma, yüzme imkânı\n- Grup · Signature — €500 / 4+ saat: Tam gün ada rotası, ikram, fotoğrafçı, özel güzergah\n\n6 kişi ve üzeri gruplarda özel yat kiralama kişi başı maliyeti, vapur bileti + ada içi ulaşım + yemek toplamına yaklaşmaktadır — ancak buna ek olarak tam mahremiyet ve esneklik gelir.\n\nTüm fiyatlar ve kalkış noktaları için [yat kiralama İstanbul](/tr/yacht-charter-istanbul) sayfasına bakın. İstanbul dönüşünde [Boğaz gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile günü taçlandırabilirsiniz.",
         expertQuote: {
           text: "Marmara açılımında her iki kıyı ve Tarihi Yarımada siluetini görmek, en deneyimli yolcuları bile etkiler. Adalara açılan yat rotası, Boğaz içi turdan bambaşka bir İstanbul perspektifi sunar.",
           author: "Kaptan Ahmet Yıldız",
@@ -2879,11 +2890,11 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     faqs: [
       {
         q: "Adalar'a İstanbul'dan nasıl gidilir?",
-        a: "Ana seçenek Şehir Hatları vapurudur. Eminönü İskelesi'nden (Galata Köprüsü yanı) veya Kabataş İskelesi'nden kalkar; Büyükada'ya geçiş Eminönü'nden yaklaşık 90 dakikadır. Gidiş-dönüş bilet yaklaşık €5'tir. İkinci seçenek MerrySails özel yat kiralama: €280'den başlayan fiyatlarla (tüm tekne), sabit programa bağlı kalmadan."
+        a: "Ana seçenek Şehir Hatları vapurudur. Eminönü İskelesi'nden (Galata Köprüsü yanı) veya Kabataş İskelesi'nden kalkar; Büyükada'ya geçiş Eminönü'nden yaklaşık 90 dakikadır. Gidiş-dönüş bilet yaklaşık €5'tir. İkinci seçenek MerrySails özel yat kiralama: €220'den başlayan fiyatlarla (tüm tekne), sabit programa bağlı kalmadan."
       },
       {
         q: "Adalar vapuru kaç para?",
-        a: "Şehir Hatları'nın Adalar vapuru, İstanbulkart ile yaklaşık 30 TRY (tek yön) ya da ziyaretçiler için yaklaşık €2–3 tam fiyattır. Gidiş-dönüş bütçe kişi başı yaklaşık €5'tir. MerrySails özel yat kiralama, tüm tekne için €280'den başlar — kişi başı fiyat değildir."
+        a: "Şehir Hatları'nın Adalar vapuru, İstanbulkart ile yaklaşık 30 TRY (tek yön) ya da ziyaretçiler için yaklaşık €2–3 tam fiyattır. Gidiş-dönüş bütçe kişi başı yaklaşık €5'tir. MerrySails özel yat kiralama, tüm tekne için €220'den başlar — kişi başı fiyat değildir."
       },
       {
         q: "Büyükada turu değer mi?",
@@ -2891,7 +2902,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         q: "Adalara özel yat ile gidilir mi?",
-        a: "Evet. MerrySails, Kuruçeşme Marina'dan Prens Adaları'na özel yat seferleri düzenler. Essential paketi (€280, 2 saat) Boğaz ve Marmara deneyimi sunar; Büyükada yakınlarında demir atmak için Premium (€380) veya VIP (€680) paketleri önerilir. Detaylar için yat kiralama İstanbul sayfasına bakın."
+        a: "Evet. MerrySails, Kuruçeşme Marina'dan Prens Adaları'na özel yat seferleri düzenler. Butik yat (€220, 2 saat) Boğaz ve Marmara deneyimi sunar; Büyükada yakınlarında demir atmak için Premium (€320) veya Grup Signature (€500) önerilir. Detaylar için yat kiralama İstanbul sayfasına bakın."
       },
       {
         q: "Adalar turu kaç saat sürer?",
@@ -3107,9 +3118,9 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     locale: "tr",
     title: "İstanbul Yat Kiralama Rezervasyon Rehberi 2026",
     metaDescription:
-      "Yat kiralama Türk müşteri rehberi: doğum günü, yıldönümü, evlilik teklifi için yat — kapasite 10-150 kişi, fiyat €280'den, nasıl rezerve edilir.",
+      "Yat kiralama Türk müşteri rehberi: doğum günü, yıldönümü, evlilik teklifi için yat — kapasite 10-150 kişi, fiyat €220'den, nasıl rezerve edilir.",
     excerpt:
-      "Yat kiralama Türk müşteriler için: ne için kullanılır (doğum günü, yıldönümü, evlilik teklifi, aile kutlaması), 10-150 kişi kapasite, €280'den başlayan fiyatlar, ne zaman rezerve edilmeli, neler sorulmalı — pratik karar rehberi.",
+      "Yat kiralama Türk müşteriler için: ne için kullanılır (doğum günü, yıldönümü, evlilik teklifi, aile kutlaması), 10-150 kişi kapasite, €220'den başlayan fiyatlar, ne zaman rezerve edilmeli, neler sorulmalı — pratik karar rehberi.",
     category: "yacht-guide",
     date: "2026-05-29",
     readTime: "10 dk okuma",
@@ -3129,7 +3140,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     ],
     author: "captain-ahmet",
     keyTakeaways: [
-      "Yat kiralama €280'den başlar (2 saat, 8 kişi kapasiteli klasik gület)",
+      "Yat kiralama €220'den başlar (2 saat, 12 kişi kapasiteli butik yat)",
       "Kapasite skalası: 8 kişi (intim çift/aile), 12 kişi (doğum günü), 30 kişi (büyük kutlama), 80+ kişi (kurumsal)",
       "Doğru rezervasyon zamanı: özel etkinlik için en az 7 gün önce, hafta sonu için 14 gün önce",
       "Sorulacak 5 kritik soru: kapasite, dahil hizmetler, ekstra ücretler, iptal politikası, TÜRSAB lisans belgesi"
@@ -3154,11 +3165,11 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
         table: {
           headers: ["Kapasite", "Yat Tipi", "İdeal Senaryo", "Başlangıç Fiyatı (2 saat)"],
           rows: [
-            ["2–8 kişi", "Klasik gület", "Çift, dar aile, evlilik teklifi", "€280"],
-            ["8–12 kişi", "Motor yat", "Doğum günü, yıldönümü, dar arkadaş grubu", "€380"],
-            ["12–20 kişi", "Lüks motor yat", "Geniş aile kutlaması, mezuniyet, nişan", "€580"],
-            ["20–30 kişi", "Mega yat", "Büyük doğum günü, kurumsal toplantı", "€950"],
-            ["30–150 kişi", "Etkinlik teknesi", "Düğün, kurumsal lansman, gala", "Talep üzerine"]
+            ["12 kişiye kadar", "Butik yat", "Çift, dar aile, evlilik teklifi", "€220"],
+            ["15 kişiye kadar", "Premium yat", "Doğum günü, yıldönümü, dar arkadaş grubu", "€320"],
+            ["15 kişiye kadar", "Grup · Standart", "Geniş aile kutlaması, mezuniyet, nişan", "€380"],
+            ["15–40 kişi", "Grup · Signature", "Büyük doğum günü, kurumsal toplantı", "€500"],
+            ["90 kişiye kadar", "Etkinlik yatı", "Düğün, kurumsal lansman, gala", "4 saat €1.200"]
           ]
         },
         proTip:
@@ -3167,7 +3178,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       {
         heading: "Fiyatın İçinde Ne Var, Ne Yok — Net Liste",
         content:
-          "Türk müşterinin en sık dolandırıldığı nokta: 'Yat 2 saat €280' duyup rezerve etmek ve sonra €120 yakıt + €60 kaptan tipi + €40 marina çıkış ücreti ile karşılaşmak. MerrySails'te tüm fiyatlar 'tek toplam' olarak verilir — sürpriz yok. Standart €280 essential pakette dahil olanlar ve dahil olmayanlar net şekilde:",
+          "Türk müşterinin en sık dolandırıldığı nokta: 'Yat 2 saat €220' duyup rezerve etmek ve sonra €120 yakıt + €60 kaptan tipi + €40 marina çıkış ücreti ile karşılaşmak. MerrySails'te tüm fiyatlar 'tek toplam' olarak verilir — sürpriz yok. Standart €220 butik pakette dahil olanlar ve dahil olmayanlar net şekilde:",
         list: [
           "DAHİL: Tekne kullanımı (2 saat), TÜRSAB lisanslı kaptan, yakıt, marina çıkış-giriş ücretleri",
           "DAHİL: 1 hostes/garson servisi (10+ kişilik paketlerde), Türkçe-İngilizce iletişim",
@@ -3242,7 +3253,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     faqs: [
       {
         q: "İstanbul'da en ucuz yat kiralama ne kadar?",
-        a: "Essential paket €280'den başlar — 2 saatlik klasik gület, 8 kişi kapasite, kaptan + yakıt + marina ücretleri dahil. Bu fiyat hafta içi sezon dışı için geçerli; hafta sonu ve yüksek sezon (Haziran–Ağustos) için %15–25 zam uygulanır."
+        a: "Butik yat €220'den başlar — 2 saatlik butik özel yat, 12 kişi kapasite, kaptan + yakıt + marina ücretleri dahil. Bu fiyat hafta içi sezon dışı için geçerli; hafta sonu ve yüksek sezon (Haziran–Ağustos) için %15–25 zam uygulanır."
       },
       {
         q: "10 kişilik doğum günü için hangi yat doğru?",
@@ -3612,7 +3623,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         q: "Hangi tur 0-2 yaş bebek için uygun?",
-        a: "Bebekler için en uygun: 1 saatlik kısa gündüz turu (Eminönü kalkış, 12:00–13:00 arası). Kapalı kabin ısıtmalı, rüzgardan korunaklı. 3,5 saatlik dinner cruise bebek için zorlayıcıdır — uyku saatine denk gelmez. Özel yat kiralama da iyi opsiyon (€280, 2 saat) — saatleri ve bebeğin uyku düzenini sen belirlersin."
+        a: "Bebekler için en uygun: 1 saatlik kısa gündüz turu (Eminönü kalkış, 12:00–13:00 arası). Kapalı kabin ısıtmalı, rüzgardan korunaklı. 3,5 saatlik dinner cruise bebek için zorlayıcıdır — uyku saatine denk gelmez. Özel yat kiralama da iyi opsiyon (€220'den, 2 saat) — saatleri ve bebeğin uyku düzenini sen belirlersin."
       }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
@@ -3627,9 +3638,9 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     locale: "tr",
     title: "Evlilik Teklifi Yat Kiralama Rehberi 2026",
     metaDescription:
-      "Evlilik teklifi yat kiralama İstanbul: ne kadar plan gerekir, hangi paket €280-€500, fotoğrafçı dahil mi, dekorasyon, gün batımı — romantik rehber.",
+      "Evlilik teklifi yat kiralama İstanbul: ne kadar plan gerekir, hangi yat €220-€500, fotoğrafçı dahil mi, dekorasyon, gün batımı — romantik rehber.",
     excerpt:
-      "İstanbul'da evlilik teklifi için yat kiralama: ne kadar planlama gerekir, hangi paket doğru (€280–€500 aralığı), fotoğrafçı dahil mi, dekorasyon seçenekleri, gül + çiçek + müzik, en iyi saat (gün batımı 19:30) — kusursuz teklif için romantik atmosferi yaratan somut detaylar.",
+      "İstanbul'da evlilik teklifi için yat kiralama: ne kadar planlama gerekir, hangi yat doğru (€220–€500 aralığı), fotoğrafçı dahil mi, dekorasyon seçenekleri, gül + çiçek + müzik, en iyi saat (gün batımı 19:30) — kusursuz teklif için romantik atmosferi yaratan somut detaylar.",
     category: "yacht-guide",
     date: "2026-05-29",
     readTime: "11 dk okuma",
@@ -3649,7 +3660,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     ],
     author: "captain-ahmet",
     keyTakeaways: [
-      "Evlilik teklifi için ideal paket €280–€500 arası: Essential gület veya Premium motor yat, 2 saatlik gün batımı slotu",
+      "Evlilik teklifi için ideal yat €220–€500 arası: Butik veya Premium yat, 2 saatlik gün batımı slotu",
       "Profesyonel fotoğrafçı paketi €180 ekstra: tüm anlar dijital olarak teslim, gizli çekim opsiyonu",
       "Dekorasyon: gül yaprağı + mum minimal €80, geniş dekor + balon + ışık €150–€280, özel kit €350",
       "En iyi saat: gün batımından 30 dakika önce teklif — altın saat ışığı, hava sakin, fotoğraf kalitesi tepe"
@@ -3668,15 +3679,15 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
         }
       },
       {
-        heading: "Doğru Paket Seçimi — €280, €380 veya €500?",
+        heading: "Doğru Yat Seçimi — €220, €320 veya €500?",
         content:
-          "Evlilik teklifi için Essential, Premium ve VIP arasında karar verirken kriter 'lüks görünüm' değil, 'teklif anına uygun atmosfer'. 1200+ tecrübemizde öne çıkan tercih:",
+          "Evlilik teklifi için Butik, Premium ve Grup yatı arasında karar verirken kriter 'lüks görünüm' değil, 'teklif anına uygun atmosfer'. 1200+ tecrübemizde öne çıkan tercih:",
         table: {
           headers: ["Paket", "Fiyat (2 saat)", "Tekne", "İdeal Senaryo"],
           rows: [
-            ["Essential", "€280", "Klasik gület", "İntim, samimi, 'sadece ikimiz' teklifi"],
-            ["Premium", "€380", "Modern motor yat", "Klasik romantik, geniş güverte, çoklu dekor alanı"],
-            ["VIP", "€500–€680", "Lüks motor yat", "Premium kutlama, aile ile sonradan birleşme planı varsa"],
+            ["Butik", "€220", "Butik özel yat", "İntim, samimi, 'sadece ikimiz' teklifi"],
+            ["Premium", "€320", "Premium özel yat", "Klasik romantik, geniş güverte, çoklu dekor alanı"],
+            ["Grup · Signature", "€500", "Grup yatı", "Premium kutlama, aile ile sonradan birleşme planı varsa"],
             ["+ Fotoğrafçı 2 saat", "+€180", "—", "Tüm anlar dijital teslim — neredeyse zorunlu"],
             ["+ Standart Dekor (gül + mum)", "+€80", "—", "Minimal, doğal, fotoğraf üstü kalabalık değil"],
             ["+ Geniş Dekor (balon + ışık)", "+€150–€280", "—", "Sahne hazır, fotoğraf için 'wow' faktörü"],
@@ -3684,7 +3695,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
           ]
         },
         proTip:
-          "En sık seçilen kombinasyon: Essential gület (€280) + fotoğrafçı (€180) + standart dekor (€80) = €540 toplam. Klasik, dengeli, fotoğraf merkezli bir teklif paketi. €500'ün üzerine çıkmaya başladığında 'sahne ağırlık kazanıyor, intim atmosfer kayboluyor' dengesini hesaba kat."
+          "En sık seçilen kombinasyon: Butik yat (€220) + fotoğrafçı (€180) + standart dekor (€80) = €480 toplam. Klasik, dengeli, fotoğraf merkezli bir teklif paketi. €500'ün üzerine çıkmaya başladığında 'sahne ağırlık kazanıyor, intim atmosfer kayboluyor' dengesini hesaba kat."
       },
       {
         heading: "Planlama Süresi — Ne Zaman Aramalısın?",
@@ -3789,7 +3800,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     faqs: [
       {
         q: "Evlilik teklifi yat kiralama ne kadara mal olur?",
-        a: "Standart paket €280 (yat) + €180 (fotoğrafçı) + €80 (minimal dekor) = €540 toplam. Daha geniş: €380 + €320 + €280 = €980. Sinematik film sahnesi: €500 + €480 + €350 = €1.330. Tüm fiyatlar 2 saat içindir, gün batımı slotu dahil. Ekstralar (yemek, müzisyen, havai fişek) ayrı fiyatlandırılır."
+        a: "Standart paket €220 (yat) + €180 (fotoğrafçı) + €80 (minimal dekor) = €480 toplam. Daha geniş: €320 (yat) + €190 (fotoğrafçı) + €150 (geniş dekor) = €660. Sinematik film sahnesi: €500 (yat) + €190 (fotoğrafçı) + €350 (özel kit) = €1.040. Tüm fiyatlar 2 saat içindir, gün batımı slotu dahil. Ekstralar (yemek, müzisyen, havai fişek) ayrı fiyatlandırılır."
       },
       {
         q: "Ne kadar önce rezervasyon yapmalıyım?",

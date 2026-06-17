@@ -7,9 +7,9 @@ export const frenchProductPosts: BlogPost[] = [
     title:
       "Croisière Bosphore Istanbul Prix 2026",
     metaDescription:
-      "Croisière Bosphore prix 2026 : croisière partagée dès €34/personne, dîner croisière €55–119, yacht privé €380–1 800. Comparatif complet des tarifs Istanbul avec conseils saisonniers.",
+      "Croisière Bosphore prix 2026 : croisière partagée dès €34/personne, dîner croisière €55–119, yacht privé dès €220. Comparatif complet des tarifs Istanbul avec conseils saisonniers.",
     excerpt:
-      "Le prix d'une croisière sur le Bosphore commence à €34 par personne pour les croisières partagées et peut atteindre €1 800 pour un yacht privatif haut de gamme. MerrySails — agréé TÜRSAB groupe A depuis 2001 et plus de 50 000 clients — vous présente tous les tarifs 2026 en détail.",
+      "Le prix d'une croisière sur le Bosphore commence à €34 par personne pour les croisières partagées ; un yacht privatif est disponible dès €220 par bateau. MerrySails — agréé TÜRSAB groupe A depuis 2001 et plus de 50 000 clients — vous présente tous les tarifs 2026 en détail.",
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 min de lecture",
@@ -29,18 +29,18 @@ export const frenchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Croisière partagée dès €34/personne (journée) ou €40 (coucher de soleil) — meilleur rapport qualité-prix",
       "Croisière dîner de €55 à €119 selon le package — transfert hôtel inclus dans tous les forfaits",
-      "Location yacht privé de €380 à €1 800 par bateau selon capacité et durée",
+      "Location yacht privé dès €220 par bateau (Premium €320, yacht de groupe €380–€500, événementiel €600) selon capacité et durée",
       "Haute saison juin–août : tarifs +15–20 % ; meilleure période qualité/prix : septembre–octobre",
     ],
     sections: [
       {
         heading: "Prix des croisières sur le Bosphore en 2026 — Vue d'ensemble",
-        content: "Le prix d'une [croisière Bosphore](/fr/bosphorus-cruise) varie considérablement selon le type d'expérience recherché. La croisière partagée, dès €34 par personne, convient aux voyageurs solos et aux couples à budget raisonnable. La croisière dîner, entre €55 et €119, offre un repas à bord avec spectacle folklorique et transfert depuis l'hôtel. Enfin, la location de yacht privé, à partir de €380 par embarcation, garantit intimité totale et itinéraire sur mesure.\n\nCes trois catégories répondent à des attentes et des budgets très différents — voici comment choisir.",
+        content: "Le prix d'une [croisière Bosphore](/fr/bosphorus-cruise) varie considérablement selon le type d'expérience recherché. La croisière partagée, dès €34 par personne, convient aux voyageurs solos et aux couples à budget raisonnable. La croisière dîner, entre €55 et €119, offre un repas à bord avec spectacle folklorique et transfert depuis l'hôtel. Enfin, la location de yacht privé, à partir de €220 par embarcation, garantit intimité totale et itinéraire sur mesure.\n\nCes trois catégories répondent à des attentes et des budgets très différents — voici comment choisir.",
         answerCapsule:
-          "Croisière partagée : €34–55/pers. | Dîner croisière : €55–119/pers. | Yacht privé : €380–1 800/bateau.",
+          "Croisière partagée : €34–55/pers. | Dîner croisière : €55–119/pers. | Yacht privé : dès €220/bateau.",
         callout: {
           type: "price",
-          text: "Tarifs 2026 en bref : Croisière partagée journée €34 | Coucher de soleil €40 | Dîner croisière €55–119 | Yacht privatif €380–1 800",
+          text: "Tarifs 2026 en bref : Croisière partagée journée €34 | Coucher de soleil €40 | Dîner croisière €55–119 | Yacht privatif dès €220",
         },
       },
       {
@@ -80,18 +80,19 @@ export const frenchProductPosts: BlogPost[] = [
       {
         heading: "Location de yacht privé : tarifs 2026",
         content:
-          "Une croisière privée sur le Bosphore offre une flexibilité totale sur l'itinéraire, la durée et la restauration à bord. Les prix s'entendent par embarcation — plus le groupe est grand, moins la part par personne est élevée. La flotte MerrySails comprend gulets classiques, yachts à moteur modernes et yachts de luxe :",
+          "Une croisière privée sur le Bosphore offre une flexibilité totale sur l'itinéraire, la durée et la restauration à bord. Les prix s'entendent par embarcation — plus le groupe est grand, moins la part par personne est élevée. La location commence à €220 (2h), avec 10% de réduction dès 3h. La flotte MerrySails va du yacht boutique au yacht événementiel :",
         table: {
-          headers: ["Type de bateau", "Capacité", "2h", "4h", "Journée (8h)"],
+          headers: ["Yacht", "Capacité", "2h", "4h"],
           rows: [
-            ["Gulet classique", "2–8 personnes", "€380", "€620", "€1 100"],
-            ["Yacht à moteur (moyen)", "2–16 personnes", "€550", "€850", "€1 400"],
-            ["Yacht à moteur premium", "2–24 personnes", "€750", "€1 100", "€1 800"],
-            ["Méga-yacht de luxe", "2–30 personnes", "€1 200", "Sur devis", "Sur devis"],
+            ["Yacht boutique", "jusqu'à 12 personnes", "€220", "€396"],
+            ["Yacht premium", "jusqu'à 15 personnes", "€320", "€576"],
+            ["Yacht de groupe · Standard", "jusqu'à 15 personnes", "€380", "€684"],
+            ["Yacht de groupe · Signature", "15–40 personnes", "€500", "€900"],
+            ["Yacht événementiel", "jusqu'à 90 personnes", "dès 4h €1 200", "—"],
           ],
         },
         proTip:
-          "À partir de 10 personnes, faites le calcul : 10 × VIP Dîner €95 = €950 contre yacht à moteur 4h = €850. Le bateau privatif revient moins cher — et vous choisissez votre route.",
+          "À partir de 6 personnes, faites le calcul : 6 × dîner Premium €75 = €450 contre yacht boutique 2h = €220. Le bateau privatif revient moins cher — et vous choisissez votre route.",
       },
       {
         heading: "Facteurs qui influencent le prix",
@@ -228,33 +229,33 @@ export const frenchProductPosts: BlogPost[] = [
           headers: ["Package", "Tarif", "Contenu", "Pour qui ?"],
           rows: [
             [
-              "Romantique Essentiel",
-              "dès €380",
-              "Gulet privé 2h, pétales de roses, bougies, champagne (1 bouteille)",
+              "Romantique Boutique",
+              "dès €220",
+              "Yacht boutique privé 2h, pétales de roses, bougies, champagne (1 bouteille)",
               "Couples avec petit budget",
             ],
             [
               "Romantique Premium",
-              "dès €650",
-              "Yacht à moteur 3h, décoration, champagne, photographe (1h)",
+              "dès €320",
+              "Yacht premium 2h, décoration, champagne, photographe (1h)",
               "Couples souhaitant des photos",
             ],
             [
-              "Romantique VIP",
-              "dès €950",
-              "Yacht premium 4h, décoration complète, photographe, dîner pour 2",
+              "Romantique Signature",
+              "dès €500",
+              "Yacht de groupe (Signature) 2h, décoration complète, photographe",
               "Expérience inoubliable",
             ],
             [
-              "Romantique Ultra VIP",
-              "dès €1 400",
-              "Yacht de luxe journée, décoration, photographe + vidéaste, dîner gastronomique, transfert",
-              "Le moment de conte de fées parfait",
+              "Romantique Événementiel",
+              "dès €1 200",
+              "Yacht événementiel dès 4h, décoration, photographe + vidéaste, dîner gastronomique, transfert",
+              "Grande fête après la demande",
             ],
           ],
         },
         proTip:
-          "Le package Premium offre le meilleur rapport qualité-prix : avec 3 heures, un photographe professionnel et un élégant yacht à moteur, vous disposez de tout le nécessaire pour un moment parfait.",
+          "Le package Premium offre le meilleur rapport qualité-prix : avec un photographe professionnel et un élégant yacht premium, vous disposez de tout le nécessaire pour un moment parfait. Dès 3h, une réduction de 10% s'applique.",
       },
       {
         heading: "Les meilleurs emplacements sur le Bosphore",
@@ -315,25 +316,25 @@ export const frenchProductPosts: BlogPost[] = [
           rows: [
             [
               "Économique",
-              "Romantique Essentiel €380",
+              "Romantique Boutique €220",
               "Sans photographe, décoration basique",
-              "€380–420",
+              "€220–300",
             ],
             [
               "Confort",
-              "Romantique Premium €650",
+              "Romantique Premium €320",
               "Photographe 1h €150",
-              "€800–900",
+              "€470–520",
             ],
             [
               "Premium",
-              "Romantique VIP €950",
+              "Romantique Signature €500",
               "Photographe + vidéaste €400",
-              "€1 350–1 500",
+              "€900–1 000",
             ],
             [
               "Luxe",
-              "Ultra VIP €1 400",
+              "Événementiel €1 200 (4h)",
               "Tous suppléments inclus",
               "€1 400–1 600",
             ],
@@ -344,7 +345,7 @@ export const frenchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Combien coûte une demande en mariage sur un bateau à Istanbul ?",
-        a: "Les packages démarrent à €380 pour une croisière privée de 2h avec décoration de base et champagne. Avec un photographe professionnel et une décoration premium, le budget est typiquement de €800–1 000. Les packages Ultra VIP avec dîner gastronomique et vidéaste commencent à €1 400.",
+        a: "Les packages démarrent à €220 pour une croisière privée de 2h avec décoration de base et champagne. Avec un photographe professionnel et une décoration premium, le budget est typiquement de €470–700. Les packages événementiels avec dîner gastronomique et vidéaste, pour les grandes fêtes, commencent à €1 200 (4h).",
       },
       {
         q: "Quel est le meilleur mois pour une demande en mariage sur le Bosphore ?",
@@ -426,50 +427,51 @@ export const frenchProductPosts: BlogPost[] = [
           headers: ["Type de bateau", "Capacité", "Caractéristiques", "Prix de départ 2h"],
           rows: [
             [
-              "Gulet classique",
-              "2–8 personnes",
-              "Construction en bois, style ottoman traditionnel, navigation paisible, pont soleil",
+              "Yacht boutique",
+              "jusqu'à 12 personnes",
+              "Compact, privé, pont intime, idéal pour les couples",
+              "dès €220",
+            ],
+            [
+              "Yacht premium",
+              "jusqu'à 15 personnes",
+              "Pont plus large, salon raffiné, pont soleil",
+              "dès €320",
+            ],
+            [
+              "Yacht de groupe",
+              "jusqu'à 40 personnes",
+              "Grand pont, Standard (€380) à Signature (€500)",
               "dès €380",
             ],
             [
-              "Yacht à moteur (moyen)",
-              "2–16 personnes",
-              "Rapide, moderne, cabine, pont soleil, idéal pour les groupes",
-              "dès €550",
-            ],
-            [
-              "Yacht à moteur premium",
-              "2–24 personnes",
-              "Équipements luxe, salon climatisé, bar extérieur",
-              "dès €750",
-            ],
-            [
-              "Méga-yacht de luxe",
-              "2–30 personnes",
-              "Standing supérieur, jacuzzi (sur demande), cuisine gastronomique",
-              "dès €1 200",
+              "Yacht événementiel",
+              "jusqu'à 90 personnes",
+              "Soirées d'entreprise, mariages, grandes fêtes privées",
+              "dès €1 200 (4h)",
             ],
           ],
         },
         proTip:
-          "Pour un groupe de 10–16 personnes, le yacht à moteur moyen offre le meilleur rapport qualité-prix : design moderne, espace suffisant et coût ramené à €34–55 par personne pour une croisière de 4h.",
+          "Pour un groupe de 10–15 personnes, le yacht premium offre le meilleur rapport qualité-prix : design moderne, espace suffisant et coût ramené à environ €38 par personne (€576 ÷ 15 pour une croisière de 4h).",
       },
       {
         heading: "Tarifs 2026 : toutes catégories et durées",
         content:
-          "Le tableau ci-dessous présente les tarifs complets de location yacht Istanbul 2026 par catégorie et durée. Tous les prix s'entendent par bateau, capitaine, équipage, carburant et équipements de sécurité inclus :",
+          "Le tableau ci-dessous présente les tarifs complets de location yacht Istanbul 2026 par yacht et durée. Tous les prix s'entendent par bateau, capitaine, équipage, carburant et équipements de sécurité inclus ; une réduction de 10% s'applique dès 3h :",
         table: {
-          headers: ["Catégorie", "2 heures", "4 heures", "6 heures", "Journée (8h)"],
+          headers: ["Yacht", "2 heures", "3 heures", "4 heures", "Journée"],
           rows: [
-            ["Essentiel (Gulet)", "€380", "€620", "€850", "€1 100"],
-            ["Premium (Yacht à moteur)", "€550", "€850", "€1 150", "€1 400"],
-            ["VIP (Yacht premium)", "€750", "€1 100", "€1 450", "€1 800"],
-            ["Ultra VIP (Méga-yacht)", "€1 200", "Sur devis", "Sur devis", "Sur devis"],
+            ["Yacht boutique (jusqu'à 12 pers.)", "€220", "€297", "€396", "—"],
+            ["Yacht premium (jusqu'à 15 pers.)", "€320", "€432", "€576", "—"],
+            ["Yacht de groupe Standard (jusqu'à 15)", "€380", "€513", "€684", "—"],
+            ["Yacht de groupe Signature (15–40)", "€500", "€675", "€900", "—"],
+            ["Yacht événementiel (jusqu'à 90 pers.)", "—", "—", "€1 200 (4h)", "Sur devis"],
           ],
         },
         callout: {
           type: "price",
-          text: "Astuce tarif : la location 4h ne coûte que 60 % de plus que 2h — bien plus de temps pour presque le même effort. La journée complète offre le meilleur rapport coût/heure.",
+          text: "Astuce tarif : dès 3h, une réduction automatique de 10% s'applique sur le tarif horaire — bien plus de temps pour presque le même effort. Les longues croisières offrent le meilleur rapport coût/heure.",
         },
       },
       {
@@ -540,7 +542,7 @@ export const frenchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Quel est le tarif pour louer un yacht à Istanbul ?",
-        a: "La location d'un yacht à Istanbul démarre à €380 pour 2 heures (gulet classique, jusqu'à 8 personnes). Un yacht à moteur moyen coûte €550 pour 2h (jusqu'à 16 personnes). Les prix s'entendent par bateau, capitaine et carburant inclus.",
+        a: "La location d'un yacht à Istanbul démarre à €220 pour 2 heures (yacht boutique, jusqu'à 12 personnes). Un yacht premium coûte €320 pour 2h (jusqu'à 15 personnes), un yacht de groupe €380–€500 (jusqu'à 40 personnes). Les prix s'entendent par bateau, capitaine et carburant inclus.",
       },
       {
         q: "Faut-il un minimum de personnes pour louer un yacht ?",
@@ -576,7 +578,7 @@ export const frenchProductPosts: BlogPost[] = [
     locale: "fr",
     title: "Guide Croisière Bosphore Istanbul 2026",
     metaDescription:
-      "Croisière Bosphore Istanbul 2026 : coucher de soleil €34–40/pers., dîner €30–90/pers., yacht privé €280–680. Comparatif honnête et réservation directe.",
+      "Croisière Bosphore Istanbul 2026 : coucher de soleil €34–40/pers., dîner €30–90/pers., yacht privé dès €220. Comparatif honnête et réservation directe.",
     excerpt:
       "Trois options, des vrais prix, aucune commission cachée. MerrySails — licence TURSAB #14316, 50 000+ clients depuis 2001 — vous guide pour choisir la croisière Bosphore qui correspond vraiment à votre voyage à Istanbul.",
     category: "cruise-guide",
@@ -598,7 +600,7 @@ export const frenchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Croisière coucher de soleil : €34/personne (sans vin) ou €40 (avec vin) — la formule la plus populaire sur le Bosphore",
       "Dîner-croisière en 4 packages de €30 à €90/personne — inclut divertissement turc live et assistance transfert",
-      "Yacht privatif dès €280 pour le groupe entier (2h) — idéal à partir de 4–6 personnes",
+      "Yacht privatif dès €220 pour le groupe entier (2h) — idéal à partir de 4–6 personnes",
       "MerrySails est [agréé TURSAB groupe A n°14316](https://www.tursab.org.tr/en) depuis 2001 — garantie de conformité et d'assurance",
     ],
     sections: [
@@ -618,7 +620,7 @@ export const frenchProductPosts: BlogPost[] = [
         heading:
           "Les 3 options principales — Coucher de soleil, Dîner, Yacht privé",
         answerCapsule:
-          "Croisière coucher de soleil : €34–40/pers., 2h partagée. Dîner-croisière : €30–90/pers., 3h30 partagée. Yacht privé : €280–680 pour le groupe, 2h minimum.",
+          "Croisière coucher de soleil : €34–40/pers., 2h partagée. Dîner-croisière : €30–90/pers., 3h30 partagée. Yacht privé : dès €220 pour le groupe, 2h minimum.",
         content:
           "Avant de comparer les détails, voici un aperçu des trois formules disponibles chez MerrySails. Chaque option répond à un usage précis — il n'y a pas de «meilleure» croisière dans l'absolu, seulement celle qui correspond à ce que vous voulez vivre.",
         table: {
@@ -647,14 +649,14 @@ export const frenchProductPosts: BlogPost[] = [
             [
               "Yacht privatif",
               "2h minimum",
-              "€280–680/yacht",
+              "dès €220/yacht",
               "Groupe entier (2–12 pers.)",
               "Anniversaires, demandes, corporate",
             ],
           ],
         },
         proTip:
-          "Pour un groupe de 6 personnes : 6 × €90 (Gold dîner) = €540 vs yacht Essential €280. Le yacht revient moins cher et vous gardez l'intimité totale. Faites toujours ce calcul avant de choisir.",
+          "Pour un groupe de 6 personnes : 6 × €90 (Gold dîner) = €540 vs yacht boutique €220. Le yacht revient moins cher et vous gardez l'intimité totale. Faites toujours ce calcul avant de choisir.",
       },
       {
         heading:
@@ -724,11 +726,11 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         heading:
-          "Yacht privé sur le Bosphore — à partir de €280 pour le groupe",
+          "Yacht privé sur le Bosphore — à partir de €220 pour le groupe",
         answerCapsule:
-          "Trois niveaux : Essential €280, Premium €380, VIP €680 — prix par yacht (non par personne), pour 2h minimum. Itinéraire sur mesure, pas d'autres passagers à bord.",
+          "Niveaux par capacité : Boutique €220, Premium €320, Yacht de groupe €380–€500 — prix par yacht (non par personne), pour 2h minimum. Itinéraire sur mesure, pas d'autres passagers à bord.",
         content:
-          "Le [yacht privatif](/fr/yacht-charter-istanbul) est la seule option où vous n'avez personne d'autre à bord que votre groupe. L'itinéraire, l'heure et le rythme sont les vôtres. Kurucesme Marina ou le secteur de Kabataş servent de point d'embarquement selon l'embarcation choisie — confirmé par écrit après réservation.\n\nLes trois niveaux correspondent à la taille et au confort du bateau, pas à des services radicalement différents. L'Essential convient à 2–4 personnes pour un budget contenu. Le Premium, pensé pour 4–8 personnes, offre plus d'espace de pont. Le VIP accueille jusqu'à 12 personnes avec équipements haut de gamme. Pour les [demandes en mariage](/fr/proposal-yacht-rental-istanbul), les anniversaires et les événements d'entreprise, la formule privée est de loin la plus adaptée.",
+          "Le [yacht privatif](/fr/yacht-charter-istanbul) est la seule option où vous n'avez personne d'autre à bord que votre groupe. L'itinéraire, l'heure et le rythme sont les vôtres. Kurucesme Marina ou le secteur de Kabataş servent de point d'embarquement selon l'embarcation choisie — confirmé par écrit après réservation.\n\nLes niveaux correspondent à la capacité et au confort du bateau, pas à des services radicalement différents. Le yacht boutique convient jusqu'à 12 personnes pour un budget contenu. Le yacht premium (jusqu'à 15 personnes) offre plus d'espace de pont. Le yacht de groupe accueille jusqu'à 40 personnes (Standard €380 / Signature €500). Pour les [demandes en mariage](/fr/proposal-yacht-rental-istanbul), les anniversaires et les événements d'entreprise, la formule privée est de loin la plus adaptée. Une réduction de 10% s'applique dès 3h.",
         table: {
           headers: [
             "Niveau",
@@ -738,27 +740,27 @@ export const frenchProductPosts: BlogPost[] = [
           ],
           rows: [
             [
-              "Essential",
-              "€280",
-              "2–4 personnes",
+              "Boutique",
+              "€220",
+              "jusqu'à 12 personnes",
               "Couples, petits groupes intimes",
             ],
             [
               "Premium",
-              "€380",
-              "2–8 personnes",
+              "€320",
+              "jusqu'à 15 personnes",
               "Familles, groupes d'amis, anniversaires",
             ],
             [
-              "VIP",
-              "€680",
-              "2–12 personnes",
+              "Yacht de groupe",
+              "€380–€500",
+              "15–40 personnes",
               "Corporate, grandes occasions, demandes en mariage",
             ],
           ],
         },
         proTip:
-          "Le yacht Essential à €280 pour 2h est avantageux dès 6 personnes : €46/pers. seulement, moins cher que le Gold Dîner et avec l'intimité en prime. Calculez toujours le coût par personne avant de choisir.",
+          "Le yacht boutique à €220 pour 2h est avantageux dès 6 personnes : €37/pers. seulement, moins cher que le Gold Dîner et avec l'intimité en prime. Calculez toujours le coût par personne avant de choisir.",
       },
       {
         heading:
@@ -805,7 +807,7 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         q: "Le prix du yacht privatif est-il par personne ou par bateau ?",
-        a: "Le prix est par bateau (par groupe), pas par personne. Essential €280, Premium €380 et VIP €680 s'appliquent à l'embarcation entière pour 2 heures, quel que soit le nombre de passagers (dans la limite de capacité). Pour un groupe de 6 personnes sur l'Essential, cela revient à €46 par personne — moins cher que le Gold Dîner à €90.",
+        a: "Le prix est par bateau (par groupe), pas par personne. Boutique €220, Premium €320 et Yacht de groupe €380–€500 s'appliquent à l'embarcation entière pour 2 heures, quel que soit le nombre de passagers (dans la limite de capacité). Pour un groupe de 6 personnes sur le yacht boutique, cela revient à €37 par personne — moins cher que le Gold Dîner à €90.",
       },
       {
         q: "Peut-on faire une croisière sur le Bosphore en hiver ?",
@@ -833,16 +835,16 @@ export const frenchProductPosts: BlogPost[] = [
     proTip:
       "Réservez directement sur merrysails.com — vous évitez 15–25 % de commission des revendeurs et pouvez contacter l'équipe en français pour toute demande spéciale avant votre arrivée à Istanbul.",
     calloutText:
-      "MerrySails — TURSAB A Gruppe n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 clients. Croisière coucher de soleil dès €34, dîner-croisière dès €30, yacht privatif dès €280.",
+      "MerrySails — TURSAB A Gruppe n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 clients. Croisière coucher de soleil dès €34, dîner-croisière dès €30, yacht privatif dès €220.",
   },
   {
     slug: "croisiere-bosphore-prix-guide-2026",
     locale: "fr",
     title: "Croisière Bosphore Prix 2026",
     metaDescription:
-      "Quel prix pour une croisière du Bosphore en 2026 ? Coucher de soleil dès 34 €, dîner dès 30 €, yacht privé dès 280 €. Licence TURSAB depuis 2001. Guide complet par MerrySails.",
+      "Quel prix pour une croisière du Bosphore en 2026 ? Coucher de soleil dès 34 €, dîner dès 30 €, yacht privé dès 220 €. Licence TURSAB depuis 2001. Guide complet par MerrySails.",
     excerpt:
-      "Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 280 €. MerrySails — agence licenciée TURSAB Groupe A depuis 2001, plus de 50 000 invités — détaille tous les tarifs 2026 et vous aide à choisir la formule idéale.",
+      "Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 220 €. MerrySails — agence licenciée TURSAB Groupe A depuis 2001, plus de 50 000 invités — détaille tous les tarifs 2026 et vous aide à choisir la formule idéale.",
     category: "cruise-guide",
     date: "2026-05-10",
     dateModified: "2026-05-10",
@@ -863,14 +865,14 @@ export const frenchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Croisière dîner sur le Bosphore : Silver Soft 30 €, Silver Alcool 45 €, Gold Soft 60 €, Gold Illimité 90 € — par personne",
       "Croisière coucher de soleil : 34 € sans vin, 40 € avec vin — environ 2 heures, croisière partagée",
-      "Yacht privatif : à partir de 280 € pour le bateau entier (2 heures) — tarif selon taille et durée",
+      "Yacht privatif : à partir de 220 € pour le bateau entier (2 heures) — tarif selon taille et durée",
       "MerrySails est agence licenciée TURSAB Groupe A depuis 2001 — aucun frais caché, prix fixés en euros",
     ],
     sections: [
       {
         heading: "Prix croisière Bosphore 2026 — vue d\'ensemble",
         answerCapsule:
-          "En 2026, le prix d\'une croisière du Bosphore commence à 30 € par personne pour un dîner-croisière en formule de base, et monte à 280 € et plus pour un yacht privatif. Les trois grands types de croisière — dîner, coucher de soleil et yacht privé — varient selon la durée, les prestations incluses et la taille du groupe.",
+          "En 2026, le prix d\'une croisière du Bosphore commence à 30 € par personne pour un dîner-croisière en formule de base, et démarre à 220 € pour un yacht privatif (bateau entier). Les trois grands types de croisière — dîner, coucher de soleil et yacht privé — varient selon la durée, les prestations incluses et la taille du groupe.",
         content:
           "La première question de nombreux voyageurs qui planifient leur séjour à Istanbul est simple : combien coûte une croisière du Bosphore ? La réponse dépend surtout du type d\'expérience recherché.\n\nLes ferries publics de la ville (İDO, Şehir Hatları) proposent des traversées très économiques, mais sans guide, sans restauration et sans caractère touristique. Les croisières privées organisées par des opérateurs licenciés TURSAB offrent un cadre entièrement dédié au plaisir, avec capitaine certifié, équipage, restauration à bord et service en français sur demande.\n\nLe tableau ci-dessous récapitule les tarifs 2026 de [MerrySails](/fr/bosphorus-cruise), fixés en euros pour éviter toute surprise liée aux fluctuations de la livre turque.",
         table: {
@@ -896,7 +898,7 @@ export const frenchProductPosts: BlogPost[] = [
             [
               "Yacht privatif",
               "2–8 h",
-              "280 €+ / bateau",
+              "220 €+ / bateau",
               "En supplément",
             ],
             [
@@ -933,18 +935,18 @@ export const frenchProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "Yacht privatif à Istanbul — prix (280 € et plus)",
+        heading: "Yacht privatif à Istanbul — prix (220 € et plus)",
         answerCapsule:
-          "La location d\'un yacht privatif sur le Bosphore commence à 280 € pour le bateau entier (jusqu\'à 12 personnes, 2 heures). MerrySails propose trois niveaux : Classique, Premium et Luxury, selon la taille du yacht et les prestations souhaitées.",
+          "La location d\'un yacht privatif sur le Bosphore commence à 220 € pour le bateau entier (jusqu\'à 12 personnes, 2 heures). MerrySails propose plusieurs niveaux : Boutique, Premium et Yacht de groupe, selon la taille du yacht et les prestations souhaitées.",
         content:
-          "Le [yacht privatif](/fr/yacht-charter-istanbul) représente la formule idéale pour un anniversaire, une demande en mariage, un séminaire d\'entreprise ou simplement un moment d\'exception entre amis. Contrairement aux croisières partagées, vous disposez du bateau entier, de l\'équipage et du capitaine pour vous seul.\n\n**Niveau Classique (à partir de 280 €/bateau, 2 h)** — yacht moteur ou voilier de 10 à 12 mètres, jusqu\'à 12 passagers, capitaine et matelot inclus. Service traiteur optionnel (30–50 € supplémentaires par personne).\n\n**Niveau Premium (à partir de 480 €/bateau, 2 h)** — yacht de 14 à 18 mètres, jusqu\'à 20 passagers, décoration personnalisable, système audio, service traiteur inclus dans la formule.\n\n**Niveau Luxury (sur devis, minimum 800 €/2 h)** — yachts de prestige de 20 mètres et plus, jusqu\'à 50 passagers, chef à bord, équipage complet, itinéraire sur mesure entre les deux rives du Bosphore et jusqu\'aux îles des Princes.\n\nTous les yachts de la flotte MerrySails sont certifiés, assurés et inspectés annuellement. Merry Tourism, notre entité juridique, est agréée [TURSAB Groupe A](/tursab) depuis 2001 — vous bénéficiez de la même garantie légale que pour les croisières partagées.",
+          "Le [yacht privatif](/fr/yacht-charter-istanbul) représente la formule idéale pour un anniversaire, une demande en mariage, un séminaire d\'entreprise ou simplement un moment d\'exception entre amis. Contrairement aux croisières partagées, vous disposez du bateau entier, de l\'équipage et du capitaine pour vous seul.\n\n**Niveau Boutique (à partir de 220 €/bateau, 2 h)** — yacht boutique jusqu\'à 12 passagers, capitaine et matelot inclus. Service traiteur optionnel (30–50 € supplémentaires par personne).\n\n**Niveau Premium (à partir de 320 €/bateau, 2 h)** — yacht premium jusqu\'à 15 passagers, décoration personnalisable, système audio, pont plus large.\n\n**Yacht de groupe (380 € Standard / 500 € Signature, 2 h)** — yacht de groupe jusqu\'à 40 passagers, équipage complet, itinéraire sur mesure entre les deux rives du Bosphore et jusqu\'aux îles des Princes. Pour les très grands événements (jusqu\'à 90 invités), le yacht événementiel démarre à 1 200 € (4 h).\n\nTous les yachts de la flotte MerrySails sont certifiés, assurés et inspectés annuellement. Merry Tourism, notre entité juridique, est agréée [TURSAB Groupe A](/tursab) depuis 2001 — vous bénéficiez de la même garantie légale que pour les croisières partagées.",
       },
       {
         heading: "Qu\'est-ce qui est inclus dans le prix ?",
         answerCapsule:
           "Tous les tarifs MerrySails incluent la croisière elle-même, le capitaine certifié, l\'équipage, les taxes portuaires et les assurances obligatoires. Le repas et les boissons sont inclus dans les formules dîner et optionnels pour le coucher de soleil et le yacht privatif.",
         content:
-          "Il est important de comprendre précisément ce que comprennent (et ce qu\'ils n\'incluent pas) les tarifs affichés pour éviter toute déception. Voici un récapitulatif clair :\n\n**Toujours inclus dans tous les tarifs MerrySails :**\n- Croisière sur le Bosphore à bord d\'un bateau certifié\n- Capitaine diplômé et équipage qualifié\n- Taxes portuaires et droits de navigation\n- Assurance passagers obligatoire\n- Accès Wi-Fi à bord (sauf ferry public)\n\n**Inclus selon la formule :**\n- Dîner chaud (formules dîner-croisière Silver et Gold)\n- Boissons alcoolisées (formules Silver Alcool, Gold Illimité, coucher de soleil +vin)\n- Spectacle de folklore turc (formules dîner uniquement)\n- Service traiteur personnalisé (yacht Premium et Luxury)\n\n**Non inclus (options payantes) :**\n- Transfert hôtel–port (disponible sur demande, tarif selon quartier)\n- Photographies professionnelles à bord\n- Pourboires pour l\'équipage (apprécié mais non obligatoire)\n\nIl n\'existe aucun frais de carburant, aucune taxe cachée ni surcharge de saison dans les tarifs MerrySails. Le prix affiché au moment de la réservation est le prix final.",
+          "Il est important de comprendre précisément ce que comprennent (et ce qu\'ils n\'incluent pas) les tarifs affichés pour éviter toute déception. Voici un récapitulatif clair :\n\n**Toujours inclus dans tous les tarifs MerrySails :**\n- Croisière sur le Bosphore à bord d\'un bateau certifié\n- Capitaine diplômé et équipage qualifié\n- Taxes portuaires et droits de navigation\n- Assurance passagers obligatoire\n- Accès Wi-Fi à bord (sauf ferry public)\n\n**Inclus selon la formule :**\n- Dîner chaud (formules dîner-croisière Silver et Gold)\n- Boissons alcoolisées (formules Silver Alcool, Gold Illimité, coucher de soleil +vin)\n- Spectacle de folklore turc (formules dîner uniquement)\n- Service traiteur personnalisé (yacht premium et yacht de groupe)\n\n**Non inclus (options payantes) :**\n- Transfert hôtel–port (disponible sur demande, tarif selon quartier)\n- Photographies professionnelles à bord\n- Pourboires pour l\'équipage (apprécié mais non obligatoire)\n\nIl n\'existe aucun frais de carburant, aucune taxe cachée ni surcharge de saison dans les tarifs MerrySails. Le prix affiché au moment de la réservation est le prix final.",
       },
       {
         heading: "Ferry public vs. croisière privée — que choisir ?",
@@ -958,7 +960,7 @@ export const frenchProductPosts: BlogPost[] = [
         answerCapsule:
           "Choisissez la croisière dîner pour une soirée complète en groupe ou en couple, la croisière coucher de soleil pour une expérience courte et romantique, et le yacht privatif pour un événement exclusif. Consultez la page [croisières Bosphore](/fr/bosphorus-cruise) pour voir les disponibilités en temps réel.",
         content:
-          "Voici un guide rapide pour choisir la formule adaptée à votre séjour :\n\n**Vous êtes en couple pour une soirée romantique** → [Croisière coucher de soleil](/fr/cruises/bosphorus-sunset-cruise) avec vin (40 €) ou dîner-croisière Silver Alcool (45 €). Les deux créent une atmosphère intime avec le panorama nocturne d\'Istanbul en toile de fond.\n\n**Vous voyagez en famille avec des enfants** → Croisière dîner Silver Soft (30 €/pers.). La formule sans alcool convient à tous les âges ; les enfants de moins de 7 ans embarquent gratuitement.\n\n**Vous organisez un événement d\'entreprise ou un séminaire** → Yacht privatif Premium ou Luxury (à partir de 480 €). Privatisation totale, décoration sur mesure, équipage dédié.\n\n**Vous êtes un couple souhaitant faire une demande en mariage** → Yacht Classique privatif (à partir de 280 €). L\'équipe MerrySails peut coordonner décoration florale, champagne et photographe à bord sur demande.\n\n**Vous êtes un groupe d\'amis en voyage organisé (10+ personnes)** → Dîner-croisière Gold Illimité (90 €/pers.) ou tarif groupe négocié. Contactez-nous via WhatsApp au +90 537 040 68 22 pour un devis personnalisé.\n\nPour comparer toutes les options disponibles et réserver en ligne, rendez-vous sur notre page [croisières Bosphore Istanbul](/fr/bosphorus-cruise). La réservation directe vous garantit les meilleurs tarifs sans commission d\'intermédiaire.",
+          "Voici un guide rapide pour choisir la formule adaptée à votre séjour :\n\n**Vous êtes en couple pour une soirée romantique** → [Croisière coucher de soleil](/fr/cruises/bosphorus-sunset-cruise) avec vin (40 €) ou dîner-croisière Silver Alcool (45 €). Les deux créent une atmosphère intime avec le panorama nocturne d\'Istanbul en toile de fond.\n\n**Vous voyagez en famille avec des enfants** → Croisière dîner Silver Soft (30 €/pers.). La formule sans alcool convient à tous les âges ; les enfants de moins de 7 ans embarquent gratuitement.\n\n**Vous organisez un événement d\'entreprise ou un séminaire** → Yacht de groupe privatif (à partir de 380 €). Privatisation totale, décoration sur mesure, équipage dédié.\n\n**Vous êtes un couple souhaitant faire une demande en mariage** → Yacht boutique privatif (à partir de 220 €). L\'équipe MerrySails peut coordonner décoration florale, champagne et photographe à bord sur demande.\n\n**Vous êtes un groupe d\'amis en voyage organisé (10+ personnes)** → Dîner-croisière Gold Illimité (90 €/pers.) ou tarif groupe négocié. Contactez-nous via WhatsApp au +90 537 040 68 22 pour un devis personnalisé.\n\nPour comparer toutes les options disponibles et réserver en ligne, rendez-vous sur notre page [croisières Bosphore Istanbul](/fr/bosphorus-cruise). La réservation directe vous garantit les meilleurs tarifs sans commission d\'intermédiaire.",
         callout: {
           type: "tip",
           text:
@@ -969,7 +971,7 @@ export const frenchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Quel est le prix d\'une croisière du Bosphore en 2026 ?",
-        a: "En 2026, le prix d\'une croisière du Bosphore chez MerrySails commence à 30 € par personne pour un dîner-croisière en formule Silver Soft, et monte à 90 € pour la formule Gold Illimité. La croisière coucher de soleil est proposée à partir de 34 €, et la location d\'un yacht privatif à partir de 280 € pour le bateau entier. Ces tarifs sont fixés en euros et n\'incluent aucun frais caché.",
+        a: "En 2026, le prix d\'une croisière du Bosphore chez MerrySails commence à 30 € par personne pour un dîner-croisière en formule Silver Soft, et monte à 90 € pour la formule Gold Illimité. La croisière coucher de soleil est proposée à partir de 34 €, et la location d\'un yacht privatif à partir de 220 € pour le bateau entier. Ces tarifs sont fixés en euros et n\'incluent aucun frais caché.",
       },
       {
         q: "Quelle est la croisière la moins chère ?",
@@ -985,11 +987,11 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         q: "Combien coûte la location d\'un yacht privé à Istanbul ?",
-        a: "La location d\'un yacht privatif à Istanbul chez MerrySails commence à 280 € pour le bateau entier (2 heures, jusqu\'à 12 personnes). Les formules Premium (jusqu\'à 20 passagers) démarrent à 480 €, et les yachts Luxury sont disponibles sur devis à partir de 800 € pour 2 heures. Tous les yachts incluent le capitaine, l\'équipage et les assurances obligatoires.",
+        a: "La location d\'un yacht privatif à Istanbul chez MerrySails commence à 220 € pour le bateau entier (2 heures, jusqu\'à 12 personnes). Les formules Premium (jusqu\'à 15 passagers) démarrent à 320 €, et le yacht de groupe (jusqu\'à 40 passagers) à 380–500 €. Tous les yachts incluent le capitaine, l\'équipage et les assurances obligatoires ; réduction de 10% dès 3h.",
       },
       {
         q: "Le transfert hôtel et le dîner sont-ils inclus ?",
-        a: "Le dîner est inclus dans toutes les formules de dîner-croisière (Silver et Gold). Le transfert hôtel-port n\'est pas inclus par défaut, mais il est disponible en option sur demande, à un tarif variable selon le quartier. La croisière coucher de soleil inclut les boissons non alcoolisées ; le vin est en option à 6 € supplémentaires. Pour les yachts privatifs, le service traiteur est inclus dans les formules Premium et Luxury, et disponible en option pour la formule Classique.",
+        a: "Le dîner est inclus dans toutes les formules de dîner-croisière (Silver et Gold). Le transfert hôtel-port n\'est pas inclus par défaut, mais il est disponible en option sur demande, à un tarif variable selon le quartier. La croisière coucher de soleil inclut les boissons non alcoolisées ; le vin est en option à 6 € supplémentaires. Pour les yachts privatifs, le service traiteur est disponible en option sur toutes les formules.",
       },
     ],
     relatedTours: [
@@ -1005,13 +1007,13 @@ export const frenchProductPosts: BlogPost[] = [
     proTip:
       "Réservez directement sur merrysails.com et économisez 15 à 25 % par rapport aux plateformes OTA (TripAdvisor, GetYourGuide, Viator). L\'équipe de Merry Tourism peut vous répondre en français pour toute demande spéciale avant votre arrivée à Istanbul.",
     calloutText:
-      "MerrySails — agence licenciée TURSAB Groupe A n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 invités. Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 280 €.",
+      "MerrySails — agence licenciée TURSAB Groupe A n°14316 — opère sur le Bosphore depuis 2001. Plus de 50 000 invités. Croisière coucher de soleil dès 34 €, dîner-croisière dès 30 €, yacht privatif dès 220 €.",
   },
   {
     slug: "iles-des-princes-istanbul-excursion-2026",
     locale: "fr",
     title: "Îles des Princes Istanbul 2026 : Excursion",
-    metaDescription: "Excursion aux Îles des Princes Istanbul 2026 : Büyükada, Heybeliada. Ferry dès €5, yacht privé dès €280. Licence TURSAB depuis 2001.",
+    metaDescription: "Excursion aux Îles des Princes Istanbul 2026 : Büyükada, Heybeliada. Ferry dès €5, yacht privé dès €220. Licence TURSAB depuis 2001.",
     excerpt: "Une journée aux Îles des Princes : calme sans voitures, villas victoriennes et mer de Marmara à deux pas d'Istanbul. Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001, plus de 50 000 invités — vous guide pour organiser cette excursion inoubliable.",
     category: "istanbul",
     date: "2026-05-13",
@@ -1031,7 +1033,7 @@ export const frenchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Les Îles des Princes (Adalar) se trouvent à 20 km au sud-est d'Istanbul dans la mer de Marmara — aucune voiture, villas victoriennes, calèches",
       "Ferry public (Şehir Hatları) depuis Kabataş ou Eminönü : à partir de €5 — départs réguliers quotidiens",
-      "Location de yacht privé dès €280 pour le bateau entier — hop-on hop-off entre les îles à votre rythme",
+      "Location de yacht privé dès €220 pour le bateau entier — hop-on hop-off entre les îles à votre rythme",
       "Büyükada est la plus grande île ; Heybeliada, Burgazada et Kınalıada valent le détour pour leur authenticité",
     ],
     sections: [
@@ -1046,8 +1048,8 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         heading: "Comment se rendre aux Îles des Princes ?",
-        answerCapsule: "Il existe deux options principales : le ferry public Şehir Hatları depuis Kabataş ou Eminönü (environ €5, 60–90 min) ou la location d'un yacht privé avec MerrySails (dès €280 pour le bateau, départ flexible). En été, des ferries rapides IDO sont également disponibles.",
-        content: "Pour les voyageurs français ou en visite en Turquie, les options de transport sont clairement structurées :\n\n**Option 1 : Ferry public (Şehir Hatları)**\nL'option la plus économique et la plus utilisée. Les Şehir Hatları (lignes de la ville) assurent des départs réguliers quotidiens depuis Kabataş (rive européenne) et Eminönü (vieille ville), avec des escales sur plusieurs îles. Prix : environ €5 par trajet (Istanbulkart ou paiement en espèces au terminal). Durée jusqu'à Büyükada : 60 à 90 minutes selon les escales.\n\nLe ferry est confortable, dispose d'un café à bord et offre des vues spectaculaires sur la skyline d'Istanbul au départ.\n\n**Option 2 : Ferry rapide IDO**\nLes ferries privés IDO sont plus rapides (environ 35–40 min jusqu'à Büyükada) et plus confortables, mais plus chers et pas toujours en service — la saison et la météo en décident. Réservation via l'application IDO ou au terminal.\n\n**Option 3 : Yacht privé avec MerrySails**\nPour les groupes ou les occasions spéciales, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) est l'option la plus exclusive. Dès €280 pour le bateau entier (2 à 8 personnes), vous rejoignez les îles par voie directe, avec des pauses baignade en chemin et un rythme entièrement personnalisé. Idéal pour les voyages de noces, les familles ou les petits groupes d'entreprise.\n\n**Attention :** En cas de vent fort ou de tempête, la liaison en ferry peut être réduite ou suspendue — la mer de Marmara est plus exposée que le Bosphore. Prévoyez une journée alternative en cas de météo incertaine.",
+        answerCapsule: "Il existe deux options principales : le ferry public Şehir Hatları depuis Kabataş ou Eminönü (environ €5, 60–90 min) ou la location d'un yacht privé avec MerrySails (dès €220 pour le bateau, départ flexible). En été, des ferries rapides IDO sont également disponibles.",
+        content: "Pour les voyageurs français ou en visite en Turquie, les options de transport sont clairement structurées :\n\n**Option 1 : Ferry public (Şehir Hatları)**\nL'option la plus économique et la plus utilisée. Les Şehir Hatları (lignes de la ville) assurent des départs réguliers quotidiens depuis Kabataş (rive européenne) et Eminönü (vieille ville), avec des escales sur plusieurs îles. Prix : environ €5 par trajet (Istanbulkart ou paiement en espèces au terminal). Durée jusqu'à Büyükada : 60 à 90 minutes selon les escales.\n\nLe ferry est confortable, dispose d'un café à bord et offre des vues spectaculaires sur la skyline d'Istanbul au départ.\n\n**Option 2 : Ferry rapide IDO**\nLes ferries privés IDO sont plus rapides (environ 35–40 min jusqu'à Büyükada) et plus confortables, mais plus chers et pas toujours en service — la saison et la météo en décident. Réservation via l'application IDO ou au terminal.\n\n**Option 3 : Yacht privé avec MerrySails**\nPour les groupes ou les occasions spéciales, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) est l'option la plus exclusive. Dès €220 pour le bateau entier (jusqu'à 12 personnes), vous rejoignez les îles par voie directe, avec des pauses baignade en chemin et un rythme entièrement personnalisé. Idéal pour les voyages de noces, les familles ou les petits groupes d'entreprise.\n\n**Attention :** En cas de vent fort ou de tempête, la liaison en ferry peut être réduite ou suspendue — la mer de Marmara est plus exposée que le Bosphore. Prévoyez une journée alternative en cas de météo incertaine.",
       },
       {
         heading: "Ferry public (Şehir Hatları) — prix et détails pratiques",
@@ -1059,10 +1061,10 @@ export const frenchProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "Yacht privé MerrySails — dès €280 vers les îles",
-        answerCapsule: "Un yacht privé vers les Îles des Princes coûte dès €280 pour le bateau entier (2 à 8 personnes, 2 heures). Les groupes plus importants paient €500 à €900 (8 à 20 pers.). Capitaine, équipage et assurances sont toujours inclus.",
-        content: "Pour les voyageurs qui souhaitent découvrir les Îles des Princes loin de la foule des ferries, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) de Merry Tourism est la solution la plus élégante.\n\n**Ce que propose le yacht privé :**\n- Trajet direct vers l'île de votre choix (sans escales intermédiaires)\n- Pauses baignade en chemin — les eaux turques sont cristallines\n- Restauration selon vos souhaits (traiteur en option)\n- Départ à l'heure qui vous convient (formule coucher de soleil vers les îles disponible !)\n- Capitaine et équipage de Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001\n\n**Grille tarifaire :**\n\n| Type de bateau | Capacité | Durée | Prix |\n|---|---|---|---|\n| Petit bateau | 2–8 personnes | 2 heures | dès €280 |\n| Bateau moyen | 8–20 personnes | 2–4 heures | €500–900 |\n| Grand bateau | 20–50 personnes | 4–8 heures | dès €1 000 |\n\nParticulièrement prisé : les excursions combinées — le matin [croisière sur le Bosphore](/fr/bosphorus-cruise), l'après-midi trajet privé vers les Îles des Princes. Contactez l'équipe via WhatsApp (+90 537 040 68 22) pour une offre personnalisée.\n\n**Pour qui le yacht privé est-il recommandé ?**\n- Les couples pour une journée romantique sur les îles\n- Les familles avec enfants (pas de bousculade, rythme personnel)\n- Les petits groupes d'entreprise pour une team experience\n- Les voyageurs pour un mariage ou un anniversaire",
-        proTip: "À 6 personnes, le yacht privé (€280 ÷ 6 = environ €47/personne) ne coûte guère plus que le ferry plus les entrées — mais vous disposez du bateau entier pour vous seuls.",
+        heading: "Yacht privé MerrySails — dès €220 vers les îles",
+        answerCapsule: "Un yacht privé vers les Îles des Princes coûte dès €220 pour le bateau entier (jusqu'à 12 personnes, 2 heures). Les groupes plus importants paient €380 à €500 (jusqu'à 40 pers.). Capitaine, équipage et assurances sont toujours inclus.",
+        content: "Pour les voyageurs qui souhaitent découvrir les Îles des Princes loin de la foule des ferries, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) de Merry Tourism est la solution la plus élégante.\n\n**Ce que propose le yacht privé :**\n- Trajet direct vers l'île de votre choix (sans escales intermédiaires)\n- Pauses baignade en chemin — les eaux turques sont cristallines\n- Restauration selon vos souhaits (traiteur en option)\n- Départ à l'heure qui vous convient (formule coucher de soleil vers les îles disponible !)\n- Capitaine et équipage de Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001\n\n**Grille tarifaire :**\n\n| Type de bateau | Capacité | Durée | Prix |\n|---|---|---|---|\n| Yacht boutique | jusqu'à 12 personnes | 2 heures | dès €220 |\n| Yacht de groupe | 15–40 personnes | 2–4 heures | €380–€500 |\n| Yacht événementiel | jusqu'à 90 personnes | 4–8 heures | dès €1 200 |\n\nParticulièrement prisé : les excursions combinées — le matin [croisière sur le Bosphore](/fr/bosphorus-cruise), l'après-midi trajet privé vers les Îles des Princes. Contactez l'équipe via WhatsApp (+90 537 040 68 22) pour une offre personnalisée.\n\n**Pour qui le yacht privé est-il recommandé ?**\n- Les couples pour une journée romantique sur les îles\n- Les familles avec enfants (pas de bousculade, rythme personnel)\n- Les petits groupes d'entreprise pour une team experience\n- Les voyageurs pour un mariage ou un anniversaire",
+        proTip: "À 6 personnes, le yacht privé (€220 ÷ 6 = environ €37/personne) ne coûte guère plus que le ferry plus les entrées — mais vous disposez du bateau entier pour vous seuls.",
       },
       {
         heading: "Büyükada — L'île principale",
@@ -1087,11 +1089,11 @@ export const frenchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Comment se rendre aux Îles des Princes depuis Istanbul ?",
-        a: "L'option la plus pratique et la plus économique est le ferry Şehir Hatları depuis l'embarcadère de Kabataş (à côté du palais de Dolmabahçe) ou d'Eminönü (vieille ville). Départs réguliers quotidiens ; durée jusqu'à Büyükada : environ 60 à 90 minutes. Prix environ €5 par personne. Alternative : ferry rapide IDO (environ 35–40 min, plus cher). Pour les groupes, MerrySails propose des yachts privés dès €280 pour le bateau entier.",
+        a: "L'option la plus pratique et la plus économique est le ferry Şehir Hatları depuis l'embarcadère de Kabataş (à côté du palais de Dolmabahçe) ou d'Eminönü (vieille ville). Départs réguliers quotidiens ; durée jusqu'à Büyükada : environ 60 à 90 minutes. Prix environ €5 par personne. Alternative : ferry rapide IDO (environ 35–40 min, plus cher). Pour les groupes, MerrySails propose des yachts privés dès €220 pour le bateau entier.",
       },
       {
         q: "Quel est le prix du ferry pour les Îles des Princes ?",
-        a: "Le ferry public Şehir Hatları vers les Îles des Princes coûte environ €5 par personne et par trajet (payable en lires turques au terminal ; le prix peut légèrement varier selon le taux de change). Les détenteurs d'une Istanbulkart bénéficient d'un tarif légèrement réduit. Le yacht privé MerrySails est disponible dès €280 pour le bateau entier (2 à 8 personnes).",
+        a: "Le ferry public Şehir Hatları vers les Îles des Princes coûte environ €5 par personne et par trajet (payable en lires turques au terminal ; le prix peut légèrement varier selon le taux de change). Les détenteurs d'une Istanbulkart bénéficient d'un tarif légèrement réduit. Le yacht privé MerrySails est disponible dès €220 pour le bateau entier (jusqu'à 12 personnes).",
       },
       {
         q: "L'excursion d'une journée aux Îles des Princes en vaut-elle la peine ?",
@@ -1099,7 +1101,7 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         q: "Peut-on louer un yacht privé pour aller aux Îles des Princes ?",
-        a: "Oui. Merry Tourism propose des yachts privés vers les Îles des Princes dès €280 pour le bateau entier (2 à 8 personnes, 2 heures). Pour les groupes plus importants (8 à 20 pers.), le yacht coûte €500 à €900 pour 2 à 4 heures. Capitaine et équipage sont toujours inclus. Contact : WhatsApp +90 537 040 68 22. Plus d'informations : [yacht privé Istanbul](/fr/yacht-charter-istanbul).",
+        a: "Oui. Merry Tourism propose des yachts privés vers les Îles des Princes dès €220 pour le bateau entier (jusqu'à 12 personnes, 2 heures). Pour les groupes plus importants (jusqu'à 40 pers.), le yacht coûte €380 à €500 pour 2 à 4 heures. Capitaine et équipage sont toujours inclus. Contact : WhatsApp +90 537 040 68 22. Plus d'informations : [yacht privé Istanbul](/fr/yacht-charter-istanbul).",
       },
       {
         q: "Combien de temps dure l'excursion aux Îles des Princes ?",

@@ -7,9 +7,9 @@ export const germanProductPosts: BlogPost[] = [
     title:
       "Bosporus Kreuzfahrt Preise Istanbul 2026",
     metaDescription:
-      "Bosporus Kreuzfahrt Preise 2026: Geteilte Tour ab €34, Dinner-Kreuzfahrt €55–119, Private Yacht €380–1.800. Saisonale Preisunterschiede, Paketvergleich und Spartipps für Istanbul.",
+      "Bosporus Kreuzfahrt Preise 2026: Geteilte Tour ab €34, Dinner-Kreuzfahrt €55–119, Private Yacht ab €220. Saisonale Preisunterschiede, Paketvergleich und Spartipps für Istanbul.",
     excerpt:
-      "Der Preis für eine Bosporus Kreuzfahrt beginnt bei €34 pro Person für geteilte Touren und reicht bis €1.800 für exklusive Privat-Yachten. MerrySails — TURSAB A-Gruppe lizenziert seit 2001 mit über 50.000 Gästen — erklärt alle Preisstufen für 2026.",
+      "Der Preis für eine Bosporus Kreuzfahrt beginnt bei €34 pro Person für geteilte Touren; private Yachten gibt es ab €220 pro Boot. MerrySails — TURSAB A-Gruppe lizenziert seit 2001 mit über 50.000 Gästen — erklärt alle Preisstufen für 2026.",
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 Min. Lesezeit",
@@ -29,19 +29,19 @@ export const germanProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Geteilte Bosporus-Kreuzfahrt: ab €34 pro Person (Tagestour) oder €40 (Sonnenuntergang) — günstigste Option",
       "Dinner-Kreuzfahrt: vier Pakete zwischen €55 und €119 mit Transfer, Büfett und Live-Musik",
-      "Private Yacht-Charter: €380–€1.800 pro Boot je nach Kapazität und Dauer",
+      "Private Yacht-Charter: ab €220 pro Boot (Premium €320, Gruppen-Yacht €380–€500, Event €600) je nach Kapazität und Dauer",
       "Hochsaison (Juni–August) kostet 15–20 % mehr; Oktober–April bietet die besten Schnäppchen",
     ],
     sections: [
       {
         heading: "Bosporus Kreuzfahrt Preise 2026 — Überblick",
         content:
-          "Der Bosporus Kreuzfahrt Preis variiert stark je nach Tourtyp. Wer günstig reist, wählt die geteilte Kreuzfahrt ab €34. Wer eine besondere Atmosphäre mit Abendessen sucht, zahlt €55–119 pro Person. Für Paare, Familien oder Gruppen, die völlige Privatsphäre wünschen, beginnt die private Yacht-Charter bei €380 für das gesamte Boot. Diese drei Kategorien bedienen völlig unterschiedliche Reiseerlebnisse — und unterschiedliche Budgets.",
+          "Der Bosporus Kreuzfahrt Preis variiert stark je nach Tourtyp. Wer günstig reist, wählt die geteilte Kreuzfahrt ab €34. Wer eine besondere Atmosphäre mit Abendessen sucht, zahlt €55–119 pro Person. Für Paare, Familien oder Gruppen, die völlige Privatsphäre wünschen, beginnt die private Yacht-Charter bei €220 für das gesamte Boot. Diese drei Kategorien bedienen völlig unterschiedliche Reiseerlebnisse — und unterschiedliche Budgets.",
         answerCapsule:
-          "Geteilte Bosporus-Tour: €34–40 p.P. | Dinner-Kreuzfahrt: €55–119 p.P. | Private Yacht: €380–1.800 pro Boot.",
+          "Geteilte Bosporus-Tour: €34–40 p.P. | Dinner-Kreuzfahrt: €55–119 p.P. | Private Yacht: ab €220 pro Boot.",
         callout: {
           type: "price",
-          text: "2026 Preisübersicht: Geteilte Tagestour €34 | Sonnenuntergang €40 | Dinner-Kreuzfahrt €55–119 | Private Yacht €380–1.800",
+          text: "2026 Preisübersicht: Geteilte Tagestour €34 | Sonnenuntergang €40 | Dinner-Kreuzfahrt €55–119 | Private Yacht ab €220",
         },
       },
       {
@@ -81,18 +81,19 @@ export const germanProductPosts: BlogPost[] = [
       {
         heading: "Private Yacht-Charter Preise Istanbul",
         content:
-          "Eine private Bosporus-Kreuzfahrt bietet vollständige Flexibilität bei Route, Dauer und Bordverpflegung. Die Preise verstehen sich pro Boot — je mehr Personen, desto günstiger wird es pro Kopf. MerrySails betreibt eine Flotte aus klassischen Gulets, modernen Motorjachten und Luxus-Motoryachten:",
+          "Eine private Bosporus-Kreuzfahrt bietet vollständige Flexibilität bei Route, Dauer und Bordverpflegung. Die Preise verstehen sich pro Boot — je mehr Personen, desto günstiger wird es pro Kopf. Die private Yacht-Charter beginnt bei €220 (2 Std., 10% Rabatt ab 3 Std.). MerrySails betreibt eine Flotte vom Boutique-Yacht bis zur Event-Yacht:",
         table: {
-          headers: ["Bootstyp", "Kapazität", "2 Std.", "4 Std.", "Ganztag (8 Std.)"],
+          headers: ["Yacht", "Kapazität", "2 Std.", "4 Std."],
           rows: [
-            ["Klassische Gulet", "2–8 Personen", "€380", "€620", "€1.100"],
-            ["Motorjacht (mittel)", "2–16 Personen", "€550", "€850", "€1.400"],
-            ["Premium Motorjacht", "2–24 Personen", "€750", "€1.100", "€1.800"],
-            ["Luxus Mega-Jacht", "2–30 Personen", "€1.200", "auf Anfrage", "auf Anfrage"],
+            ["Boutique-Yacht", "bis 12 Personen", "€220", "€396"],
+            ["Premium-Yacht", "bis 15 Personen", "€320", "€576"],
+            ["Gruppen-Yacht · Standard", "bis 15 Personen", "€380", "€684"],
+            ["Gruppen-Yacht · Signature", "15–40 Personen", "€500", "€900"],
+            ["Event-Yacht", "bis 90 Personen", "ab 4 Std. €1.200", "—"],
           ],
         },
         proTip:
-          "Ab 10 Personen lohnt sich die Kalkulation: 10 × VIP Dinner €95 = €950 vs. eigene Motorjacht 4 Std. = €850. Das private Boot ist dann günstiger — und Sie bestimmen die Route selbst.",
+          "Ab 6 Personen lohnt sich die Kalkulation: 6 × Silver-Dinner €45 = €270 vs. eigene Boutique-Yacht 2 Std. = €220. Das private Boot ist dann günstiger — und Sie bestimmen die Route selbst.",
       },
       {
         heading: "Faktoren, die den Preis beeinflussen",
@@ -225,33 +226,33 @@ export const germanProductPosts: BlogPost[] = [
           headers: ["Paket", "Preis", "Inhalt", "Für wen geeignet"],
           rows: [
             [
-              "Romantik Basis",
-              "ab €380",
-              "Private Gulet 2 Std., Rosenblätter, Kerzen, Champagner (1 Flasche)",
+              "Romantik Boutique",
+              "ab €220",
+              "Private Boutique-Yacht 2 Std., Rosenblätter, Kerzen, Champagner (1 Flasche)",
               "Paare mit kompaktem Budget",
             ],
             [
               "Romantik Premium",
-              "ab €650",
-              "Motorjacht 3 Std., Dekoration, Champagner, Fotograf (1 Std.)",
+              "ab €320",
+              "Premium-Yacht 2 Std., Dekoration, Champagner, Fotograf (1 Std.)",
               "Paare die Fotos wünschen",
             ],
             [
-              "Romantik VIP",
-              "ab €950",
-              "Premium-Jacht 4 Std., vollständige Dekoration, Fotograf, Abendessen für 2",
+              "Romantik Signature",
+              "ab €500",
+              "Gruppen-Yacht (Signature) 2 Std., vollständige Dekoration, Fotograf",
               "Unvergessliches Erlebnis",
             ],
             [
-              "Romantik Ultra VIP",
-              "ab €1.400",
-              "Luxusjacht Ganztag, Dekoration, Fotograf + Videograf, Gourmet-Dinner, Transfer",
-              "Perfekter Märchenmoment",
+              "Romantik Event",
+              "ab €1.200",
+              "Event-Yacht ab 4 Std., Dekoration, Fotograf + Videograf, Gourmet-Dinner, Transfer",
+              "Große Feier nach dem Antrag",
             ],
           ],
         },
         proTip:
-          "Das Premium-Paket bietet das beste Preis-Leistungs-Verhältnis: Mit 3 Stunden Zeit, einem professionellen Fotografen und einer eleganten Motorjacht haben Sie alles, was Sie für einen perfekten Moment brauchen.",
+          "Das Premium-Paket bietet das beste Preis-Leistungs-Verhältnis: mit einem professionellen Fotografen und einer eleganten Premium-Yacht haben Sie alles, was Sie für einen perfekten Moment brauchen. Ab 3 Std. gibt es 10% Rabatt.",
       },
       {
         heading: "Die besten Locations auf dem Bosporus",
@@ -307,25 +308,25 @@ export const germanProductPosts: BlogPost[] = [
           rows: [
             [
               "Budget-bewusst",
-              "Romantik Basis €380",
+              "Romantik Boutique €220",
               "Kein Fotograf, Basisdeko",
-              "€380–420",
+              "€220–300",
             ],
             [
               "Komfort",
-              "Romantik Premium €650",
+              "Romantik Premium €320",
               "Fotograf 1 Std. €150",
-              "€800–900",
+              "€470–520",
             ],
             [
               "Premium",
-              "Romantik VIP €950",
+              "Romantik Signature €500",
               "Fotograf + Videograf €400",
-              "€1.350–1.500",
+              "€900–1.000",
             ],
             [
               "Luxus",
-              "Ultra VIP €1.400",
+              "Event €1.200 (4 Std.)",
               "Alle Extras inklusive",
               "€1.400–1.600",
             ],
@@ -340,7 +341,7 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         q: "Was kostet ein Heiratsantrag auf einer Yacht in Istanbul?",
-        a: "Die Pakete beginnen bei €380 für eine private 2-stündige Bootsfahrt mit Basisdekoration und Champagner. Mit professionellem Fotografen und Premium-Dekoration liegen die Kosten typischerweise bei €800–1.000. Ultra-VIP-Pakete mit Gourmet-Dinner und Videograf kosten ab €1.400.",
+        a: "Die Pakete beginnen bei €220 für eine private 2-stündige Bootsfahrt mit Basisdekoration und Champagner. Mit professionellem Fotografen und Premium-Dekoration liegen die Kosten typischerweise bei €470–700. Event-Pakete mit Gourmet-Dinner und Videograf für große Feiern starten ab €1.200 (4 Std.).",
       },
       {
         q: "Kann ich die Route für den Heiratsantrag selbst bestimmen?",
@@ -418,50 +419,51 @@ export const germanProductPosts: BlogPost[] = [
           headers: ["Bootstyp", "Kapazität", "Besonderheiten", "Startpreis 2 Std."],
           rows: [
             [
-              "Klassische Gulet",
-              "2–8 Personen",
-              "Holzbau, traditionell türkisch, ruhige Fahrt, Sonnendeck",
+              "Boutique-Yacht",
+              "bis 12 Personen",
+              "Kompakt, privat, intimes Deck, ideal für Paare",
+              "ab €220",
+            ],
+            [
+              "Premium-Yacht",
+              "bis 15 Personen",
+              "Breiteres Deck, gehobener Salon, Sonnendeck",
+              "ab €320",
+            ],
+            [
+              "Gruppen-Yacht",
+              "bis 40 Personen",
+              "Großes Deck, Standard (€380) bis Signature (€500)",
               "ab €380",
             ],
             [
-              "Motorjacht (mittel)",
-              "2–16 Personen",
-              "Schnell, modern, Kajüte, Sonnendeck, ideal für Gruppen",
-              "ab €550",
-            ],
-            [
-              "Premium-Motorjacht",
-              "2–24 Personen",
-              "Luxusausstattung, klimatisierter Salon, Außenbar",
-              "ab €750",
-            ],
-            [
-              "Luxus-Megajacht",
-              "2–30 Personen",
-              "Top-Ausstattung, Jacuzzi (auf Anfrage), Gourmet-Küche",
-              "ab €1.200",
+              "Event-Yacht",
+              "bis 90 Personen",
+              "Firmenabende, Hochzeiten, große Privatpartys",
+              "ab €1.200 (4 Std.)",
             ],
           ],
         },
         proTip:
-          "Für Gruppen von 10–16 Personen ist die mittlere Motorjacht das beste Preis-Leistungs-Verhältnis: modernes Design, ausreichend Platz und faire Kosten von €34–55 pro Person bei 4-stündiger Fahrt.",
+          "Für Gruppen von 10–15 Personen ist die Premium-Yacht das beste Preis-Leistungs-Verhältnis: modernes Design, ausreichend Platz und faire Kosten von €38 pro Person bei der 2-Stunden-Charter (€576 ÷ 15 bei 4 Std.).",
       },
       {
         heading: "Preistabelle 2026: Alle Bootsklassen und Dauern",
         content:
-          "Die folgende Tabelle zeigt die vollständigen Yacht-Charter-Preise 2026 nach Bootsklasse und Mietdauer. Alle Preise verstehen sich pro Boot, inkl. Kapitän, Crew, Treibstoff und Sicherheitsausrüstung:",
+          "Die folgende Tabelle zeigt die vollständigen Yacht-Charter-Preise 2026 nach Yacht und Mietdauer. Alle Preise verstehen sich pro Boot, inkl. Kapitän, Crew, Treibstoff und Sicherheitsausrüstung; ab 3 Std. gilt 10% Rabatt:",
         table: {
-          headers: ["Bootsklasse", "2 Stunden", "4 Stunden", "6 Stunden", "Ganztag (8 Std.)"],
+          headers: ["Yacht", "2 Stunden", "3 Stunden", "4 Stunden", "Ganztag"],
           rows: [
-            ["Essential (Gulet)", "€380", "€620", "€850", "€1.100"],
-            ["Premium (Motorjacht mittel)", "€550", "€850", "€1.150", "€1.400"],
-            ["VIP (Premium-Motorjacht)", "€750", "€1.100", "€1.450", "€1.800"],
-            ["Ultra VIP (Megajacht)", "€1.200", "auf Anfrage", "auf Anfrage", "auf Anfrage"],
+            ["Boutique-Yacht (bis 12 Pers.)", "€220", "€297", "€396", "—"],
+            ["Premium-Yacht (bis 15 Pers.)", "€320", "€432", "€576", "—"],
+            ["Gruppen-Yacht Standard (bis 15)", "€380", "€513", "€684", "—"],
+            ["Gruppen-Yacht Signature (15–40)", "€500", "€675", "€900", "—"],
+            ["Event-Yacht (bis 90 Pers.)", "—", "—", "€1.200 (4 Std.)", "auf Anfrage"],
           ],
         },
         callout: {
           type: "price",
-          text: "Preis-Tipp: 4-stündige Charter kostet nur 60 % mehr als 2 Stunden — mehr Zeit für fast gleichen Aufwand. Ganztags-Touren bieten das beste Preis-pro-Stunde-Verhältnis.",
+          text: "Preis-Tipp: ab 3 Stunden gilt automatisch 10% Rabatt auf den Stundensatz — mehr Zeit für fast gleichen Aufwand. Längere Touren bieten das beste Preis-pro-Stunde-Verhältnis.",
         },
       },
       {
@@ -526,11 +528,11 @@ export const germanProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Wie viel kostet eine Yacht Charter in Istanbul?",
-        a: "Yacht Charter Istanbul kostet ab €380 für 2 Stunden (klassische Gulet, bis 8 Personen). Premium-Motorjachten starten bei €550 für 2 Stunden. Ganztages-Charter (8 Stunden) ist ab €1.100 erhältlich. Alle Preise verstehen sich pro Boot inklusive Kapitän und Crew.",
+        a: "Yacht Charter Istanbul kostet ab €220 für 2 Stunden (Boutique-Yacht, bis 12 Personen). Premium-Yachten starten bei €320, Gruppen-Yachten bei €380–€500 für 2 Stunden. Die Event-Yacht (bis 90 Personen) ist ab €1.200 für 4 Stunden erhältlich. Alle Preise verstehen sich pro Boot inklusive Kapitän und Crew; ab 3 Std. 10% Rabatt.",
       },
       {
         q: "Wie viele Personen passen auf ein Charter-Boot in Istanbul?",
-        a: "Je nach Bootstyp zwischen 2 und 30 Personen. Klassische Gulets fassen 2–8 Gäste, mittlere Motorjachten 2–16, Premium-Motorjachten 2–24 und Luxus-Megajachten bis zu 30 Personen.",
+        a: "Je nach Yacht zwischen 2 und 90 Personen. Die Boutique-Yacht fasst bis 12 Gäste, die Premium-Yacht bis 15, die Gruppen-Yacht bis 40 und die Event-Yacht bis zu 90 Personen.",
       },
       {
         q: "Muss ich als Gruppe selbst ein Boot steuern können?",
@@ -566,7 +568,7 @@ export const germanProductPosts: BlogPost[] = [
     locale: "de",
     title: "Bosporus Bootstour Istanbul 2026",
     metaDescription:
-      "Bosporus Bootstour Istanbul 2026: Sonnenuntergang ab €34, Dinner €30–€90, Privatyacht ab €280. Direktpreise, TURSAB-Lizenz #14316, ehrlicher Vergleich aller Optionen.",
+      "Bosporus Bootstour Istanbul 2026: Sonnenuntergang ab €34, Dinner €30–€90, Privatyacht ab €220. Direktpreise, TURSAB-Lizenz #14316, ehrlicher Vergleich aller Optionen.",
     excerpt:
       "Welche Bosporus-Bootstour ist die richtige für Sie? MerrySails — TURSAB A-Gruppe lizenziert seit 2001, über 50.000 Gäste — vergleicht alle drei Hauptoptionen: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und Privatyacht. Mit echten Preisen und ohne Werbeversprechen.",
     category: "cruise-guide",
@@ -588,20 +590,20 @@ export const germanProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Die Sonnenuntergangs-Kreuzfahrt (2 Std., €34 ohne Wein / €40 mit Wein) ist die günstigste Einstiegsoption für Einzelreisende und Paare",
       "Die Dinner-Kreuzfahrt (3,5 Std.) bietet vier Pakete: Silver Soft Drinks €30, Silver Alcoholic €45, Gold Soft Drinks €80, Gold Unlimited Alcohol €90 — alle mit türkischer Live-Unterhaltung",
-      "Privatyacht-Charter (2 Std.) für das gesamte Boot: Essential €280, Premium €380, VIP €680 — ideal für Geburtstage, Anträge und Firmenfeiern",
+      "Privatyacht-Charter (2 Std.) für das gesamte Boot: Boutique €220, Premium €320, Gruppen-Yacht €380–€500 — ideal für Geburtstage, Anträge und Firmenfeiern",
       "MerrySails ist [TURSAB A-Gruppe lizenziert (Lizenz #14316)](https://www.tursab.org.tr/en) seit 2001 — buchen Sie niemals bei unlizenziertem Anbieter am Kai",
     ],
     sections: [
       {
         heading: "Welche Bosporus-Bootstour passt zu Ihnen?",
         answerCapsule:
-          "Wählen Sie die Sonnenuntergangs-Kreuzfahrt für ein günstiges Panorama-Erlebnis (€34/Person), die Dinner-Kreuzfahrt für Abendstimmung mit Menü (ab €30/Person) oder die Privatyacht für vollständige Privatsphäre (ab €280/Boot).",
+          "Wählen Sie die Sonnenuntergangs-Kreuzfahrt für ein günstiges Panorama-Erlebnis (€34/Person), die Dinner-Kreuzfahrt für Abendstimmung mit Menü (ab €30/Person) oder die Privatyacht für vollständige Privatsphäre (ab €220/Boot).",
         content:
           "Der Bosporus ist 31 km lang, trennt Europa und Asien und zählt zu den meistbefahrenen Wasserstraßen der Welt. Für Besucher Istanbuls gibt es grundsätzlich drei Wege, diese Meerenge zu erleben: die öffentliche Fähre, eine geteilte Bootstour oder eine private Charteryacht. Die öffentliche Fähre ist günstig, bietet aber keinen Guide, keine feste Route und keinen Mehrwert gegenüber dem normalen Nahverkehr.\n\nDie entscheidende Frage ist nicht \"Bootstour oder nicht\" — sondern welche Art von Bootstour zu Ihrem Reisestil, Ihrer Gruppe und Ihrem Budget passt. Dieser Ratgeber hilft Ihnen bei der Entscheidung. Er basiert auf echten Preisen, realen Abfahrtzeiten und dem Erfahrungsschatz aus über 50.000 Gästen seit 2001.",
         table: {
           headers: ["Kriterium", "Sonnenuntergang", "Dinner-Kreuzfahrt", "Privatyacht"],
           rows: [
-            ["Preis/Person", "€34–40", "€30–90", "€280–680 pro Boot"],
+            ["Preis/Person", "€34–40", "€30–90", "€220+ pro Boot"],
             ["Dauer", "2 Stunden", "3,5 Stunden", "2 Stunden (erweiterbar)"],
             ["Gruppentyp", "Einzelreisende, Paare", "Paare, Kleingruppen", "Familien, Feiern"],
             ["Essen inklusive", "Snacks, Tee, Kaffee", "Vollständiges Menü", "Auf Anfrage (Catering extra)"],
@@ -668,21 +670,21 @@ export const germanProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "Privatyacht-Charter auf dem Bosporus — ab €280 pro Boot",
+        heading: "Privatyacht-Charter auf dem Bosporus — ab €220 pro Boot",
         answerCapsule:
-          "Die Privatyacht (2 Stunden) kostet €280 (Essential), €380 (Premium) oder €680 (VIP) für das gesamte Boot. Ideal für Geburtstagsfeiern, Heiratsanträge, Firmenfeiern oder Jubiläen.",
+          "Die Privatyacht (2 Stunden) kostet €220 (Boutique), €320 (Premium) oder €380–€500 (Gruppen-Yacht) für das gesamte Boot. Ideal für Geburtstagsfeiern, Heiratsanträge, Firmenfeiern oder Jubiläen.",
         content:
-          "Wer vollständige Privatsphäre auf dem Bosporus sucht, bucht eine Privatyacht. Der Preis gilt pro Boot — nicht pro Person. Bei einer Gruppe von 6 Personen und dem Essential-Paket (€280) kostet das nur €47 pro Kopf — weniger als eine Dinner-Kreuzfahrt, dafür komplett privat und mit individueller Route.\n\nMerrySails bietet drei Kategorien an: Essential (kleineres Boot, bis 8 Personen), Premium (komfortable Motorjacht, bis 14 Personen) und VIP (Luxusjacht mit Premium-Ausstattung). Die Route können Sie selbst bestimmen: entlang der europäischen Paläste, bis zur zweiten Bosporus-Brücke, oder eine spezielle Strecke für Fotografie und Fotoshootings.\n\nBesondere Anlässe wie Heiratsanträge, Geburtstagsfeiern oder Firmenfeiern lassen sich auf Anfrage mit Dekoration, Catering und Fotograf ergänzen. Alle Pakete beinhalten Kapitän, Crew, Treibstoff und Teeservice. Mehr dazu auf der [Privatyacht-Seite](/de/yacht-charter-istanbul) und der [Heiratsantrag-Seite](/de/proposal-yacht-rental-istanbul).",
+          "Wer vollständige Privatsphäre auf dem Bosporus sucht, bucht eine Privatyacht. Der Preis gilt pro Boot — nicht pro Person. Bei einer Gruppe von 6 Personen und der Boutique-Yacht (€220) kostet das nur €37 pro Kopf — weniger als eine Dinner-Kreuzfahrt, dafür komplett privat und mit individueller Route.\n\nMerrySails bietet mehrere Kategorien an: Boutique-Yacht (bis 12 Personen), Premium-Yacht (bis 15 Personen) und Gruppen-Yacht (bis 40 Personen, Standard €380 / Signature €500). Die Route können Sie selbst bestimmen: entlang der europäischen Paläste, bis zur zweiten Bosporus-Brücke, oder eine spezielle Strecke für Fotografie und Fotoshootings.\n\nBesondere Anlässe wie Heiratsanträge, Geburtstagsfeiern oder Firmenfeiern lassen sich auf Anfrage mit Dekoration, Catering und Fotograf ergänzen. Alle Yachten beinhalten Kapitän, Crew, Treibstoff und Teeservice; ab 3 Std. gilt 10% Rabatt. Mehr dazu auf der [Privatyacht-Seite](/de/yacht-charter-istanbul) und der [Heiratsantrag-Seite](/de/proposal-yacht-rental-istanbul).",
         table: {
           headers: ["Paket", "Preis/Boot", "Kapazität", "Empfohlen für"],
           rows: [
-            ["Essential", "€280 / 2 Std.", "Bis 8 Personen", "Kleine Gruppen, Paare"],
-            ["Premium", "€380 / 2 Std.", "Bis 14 Personen", "Familien, Jubiläen, Anträge"],
-            ["VIP", "€680 / 2 Std.", "Bis 20 Personen", "Firmenfeiern, Luxuserlebnis"],
+            ["Boutique-Yacht", "€220 / 2 Std.", "Bis 12 Personen", "Kleine Gruppen, Paare"],
+            ["Premium-Yacht", "€320 / 2 Std.", "Bis 15 Personen", "Familien, Jubiläen, Anträge"],
+            ["Gruppen-Yacht", "€380–€500 / 2 Std.", "15–40 Personen", "Firmenfeiern, große Feiern"],
           ],
         },
         proTip:
-          "Rechnen Sie nach: 8 Personen × €45 (Silver Alcoholic Dinner) = €360. Die Essential-Privatyacht für dieselbe Gruppe kostet nur €280 — privat, flexibel und günstiger pro Kopf.",
+          "Rechnen Sie nach: 8 Personen × €45 (Silver Alcoholic Dinner) = €360. Die Boutique-Privatyacht für dieselbe Gruppe kostet nur €220 — privat, flexibel und günstiger pro Kopf.",
       },
       {
         heading: "Ehrliche Preise — Direktbuchung vs. Vermittler",
@@ -714,7 +716,7 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         q: "Wie viel kostet eine Bosporus-Bootstour in Istanbul 2026?",
-        a: "Die Preise variieren je nach Tourentyp: Sonnenuntergangs-Kreuzfahrt €34 (ohne Wein) oder €40 (mit Wein) pro Person. Dinner-Kreuzfahrt €30–90 pro Person, je nach Paket. Privatyacht €280–680 pro Boot für 2 Stunden.",
+        a: "Die Preise variieren je nach Tourentyp: Sonnenuntergangs-Kreuzfahrt €34 (ohne Wein) oder €40 (mit Wein) pro Person. Dinner-Kreuzfahrt €30–90 pro Person, je nach Paket. Privatyacht ab €220 pro Boot für 2 Stunden (Premium €320, Gruppen-Yacht €380–€500).",
       },
       {
         q: "Von wo startet die Bosporus-Bootstour in Istanbul?",
@@ -741,9 +743,9 @@ export const germanProductPosts: BlogPost[] = [
     locale: "de",
     title: "Bosporus Kreuzfahrt Preise 2026",
     metaDescription:
-      "Was kostet eine Bosporus-Kreuzfahrt 2026? Sonnenuntergang ab €34, Dinner ab €30, Privatyacht ab €280. TURSAB lizenziert seit 2001 — direkt buchen.",
+      "Was kostet eine Bosporus-Kreuzfahrt 2026? Sonnenuntergang ab €34, Dinner ab €30, Privatyacht ab €220. TURSAB lizenziert seit 2001 — direkt buchen.",
     excerpt:
-      "Alle Bosporus-Kreuzfahrt Preise 2026 auf einen Blick: Sonnenuntergangsfahrt ab €34, Dinner-Kreuzfahrt ab €30, Privatyacht ab €280. Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001, über 50.000 Gäste. Transparent, ohne versteckte Gebühren.",
+      "Alle Bosporus-Kreuzfahrt Preise 2026 auf einen Blick: Sonnenuntergangsfahrt ab €34, Dinner-Kreuzfahrt ab €30, Privatyacht ab €220. Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001, über 50.000 Gäste. Transparent, ohne versteckte Gebühren.",
     category: "cruise-guide",
     date: "2026-05-10",
     dateModified: "2026-05-10",
@@ -764,14 +766,14 @@ export const germanProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Sonnenuntergangsfahrt: €34 (ohne Wein) oder €40 (mit Wein) pro Person — ca. 2 Stunden, geführte Gemeinschaftstour",
       "Dinner-Kreuzfahrt: vier Pakete von €30 (Silver Soft) bis €90 (Gold Unlimited) pro Person — inkl. Abendessen und Live-Musik",
-      "Privatyacht-Charter: ab €280 für das gesamte Boot (2 Stunden) — ideal für Gruppen, Paare und besondere Anlässe",
+      "Privatyacht-Charter: ab €220 für das gesamte Boot (2 Stunden) — ideal für Gruppen, Paare und besondere Anlässe",
       "TURSAB A-Gruppe lizenziert seit 2001 — keine versteckten Kosten, Stornierung bis 72 Stunden vor Abfahrt kostenlos",
     ],
     sections: [
       {
         heading: "Bosporus-Kreuzfahrt Preise 2026 — Übersicht",
         answerCapsule:
-          "Eine Bosporus-Kreuzfahrt kostet 2026 zwischen €30 und €280+. Sonnenuntergangsfahrten kosten €34–40 pro Person, Dinner-Kreuzfahrten €30–90 pro Person, Privatyachten ab €280 für das ganze Boot.",
+          "Eine Bosporus-Kreuzfahrt kostet 2026 zwischen €30 und €220+. Sonnenuntergangsfahrten kosten €34–40 pro Person, Dinner-Kreuzfahrten €30–90 pro Person, Privatyachten ab €220 für das ganze Boot.",
         content:
           "Wer eine Bosporus-Kreuzfahrt in Istanbul plant, begegnet schnell einer unklaren Preisspanne. Günstige Angebote starten bei €30, exklusive Privat-Yachten reichen bis weit über €1.000. Der Schlüssel liegt im Tourentyp — und in der Wahl des richtigen Anbieters.\n\n[Merry Tourism](/tursab), Betreiber von MerrySails, ist seit 2001 TURSAB A-Gruppe lizenziert und hat über 50.000 Gäste auf dem Bosporus begrüßt. Die folgenden Preise sind für die Saison 2026 festgelegt — in Euro, unabhängig vom täglichen Wechselkurs.",
         table: {
@@ -813,28 +815,28 @@ export const germanProductPosts: BlogPost[] = [
               "4-Gang-Menü + unbegrenzt Alkohol",
             ],
             [
-              "Privatyacht (kl., 2–8 Pers.)",
+              "Privatyacht (Boutique, bis 12 Pers.)",
               "2+ Stunden",
-              "ab €280 / Boot",
+              "ab €220 / Boot",
               "Optional zubuchbar",
             ],
             [
-              "Privatyacht (mittel, 8–20 Pers.)",
+              "Privatyacht (Gruppen, 15–40 Pers.)",
               "2–4 Stunden",
-              "€500–900 / Boot",
+              "€380–€500 / Boot",
               "Optional zubuchbar",
             ],
             [
-              "Privatyacht (groß, 20–50 Pers.)",
+              "Event-Yacht (bis 90 Pers.)",
               "4–8 Stunden",
-              "€1.000+ / Boot",
+              "ab €1.200 (4 Std.) / Boot",
               "Optional zubuchbar",
             ],
           ],
         },
         callout: {
           type: "price",
-          text: "Preise 2026 in Kürze: Sonnenuntergang €34–40 | Dinner €30–90 | Privatyacht ab €280 (ganzes Boot). Alle Preise in Euro — kein Währungsrisiko.",
+          text: "Preise 2026 in Kürze: Sonnenuntergang €34–40 | Dinner €30–90 | Privatyacht ab €220 (ganzes Boot). Alle Preise in Euro — kein Währungsrisiko.",
         },
       },
       {
@@ -858,13 +860,13 @@ export const germanProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "Privatyacht Preise — ab €280 für Ihr ganzes Boot",
+        heading: "Privatyacht Preise — ab €220 für Ihr ganzes Boot",
         answerCapsule:
-          "Eine Privatyacht am Bosporus kostet ab €280 für das gesamte Boot (2 Stunden, 2–8 Personen). Mittelgroße Yachten (8–20 Pers.) kosten €500–900, große Charterboote (20–50 Pers.) ab €1.000. Kapitan und Versicherung sind immer inbegriffen.",
+          "Eine Privatyacht am Bosporus kostet ab €220 für das gesamte Boot (2 Stunden, bis 12 Personen). Größere Yachten (bis 40 Pers.) kosten €380–€500, die Event-Yacht (bis 90 Pers.) ab €1.200 (4 Std.). Kapitän und Versicherung sind immer inbegriffen.",
         content:
-          "Der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) ist die ultimative Wahl, wenn Sie den Bosporus ohne Fremde genießen möchten. Ob Heiratsantrag, Familienfest oder Firmen-Event — Sie buchen das gesamte Boot für Ihre Gruppe.\n\nMerry Tourism verfügt über eine Flotte mit drei Größenkategorien:\n\n**Klein (2–8 Personen), 2 Stunden: ab €280 / Boot**\nIdeal für Paare, Familien oder kleine Gruppen. Perfekt für einen Heiratsantrag auf dem Bosporus oder ein romantisches Privatdinner. Preis pro Person bei 4 Gästen: €70 — vergleichbar mit einem Dinner-Kreuzfahrt-Ticket.\n\n**Mittel (8–20 Personen), 2–4 Stunden: €500–900 / Boot**\nGeeignet für Geburtstagsgesellschaften, kleine Firmengruppen oder Freundesrunden. Bei 15 Personen und €700 sind das nur €47 pro Person.\n\n**Groß (20–50 Personen), 4–8 Stunden: €1.000+ / Boot**\nFür Hochzeiten, Galas oder Gruppenreisen. Catering, Dekoration und Fotografen können gegen Aufpreis organisiert werden.\n\nIn jedem Paket inbegriffen: Kapitan, Crew, gesetzliche Versicherung. Speisen und Getränke können über einen Catering-Partner zugebucht werden — bitte beim Reservieren anfragen.",
+          "Der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) ist die ultimative Wahl, wenn Sie den Bosporus ohne Fremde genießen möchten. Ob Heiratsantrag, Familienfest oder Firmen-Event — Sie buchen das gesamte Boot für Ihre Gruppe.\n\nMerry Tourism verfügt über eine Flotte mit mehreren Kapazitätskategorien:\n\n**Boutique-Yacht (bis 12 Personen), 2 Stunden: ab €220 / Boot**\nIdeal für Paare, Familien oder kleine Gruppen. Perfekt für einen Heiratsantrag auf dem Bosporus oder ein romantisches Privatdinner. Preis pro Person bei 4 Gästen: €55 — vergleichbar mit einem Dinner-Kreuzfahrt-Ticket.\n\n**Premium- / Gruppen-Yacht (15–40 Personen), 2–4 Stunden: €320–€500 / Boot**\nGeeignet für Geburtstagsgesellschaften, kleine Firmengruppen oder Freundesrunden. Bei 15 Personen und der Gruppen-Yacht (€500) sind das nur €33 pro Person.\n\n**Event-Yacht (bis 90 Personen), 4–8 Stunden: ab €1.200 / Boot**\nFür Hochzeiten, Galas oder Gruppenreisen. Catering, Dekoration und Fotografen können gegen Aufpreis organisiert werden.\n\nIn jeder Yacht inbegriffen: Kapitän, Crew, gesetzliche Versicherung; ab 3 Std. 10% Rabatt. Speisen und Getränke können über einen Catering-Partner zugebucht werden — bitte beim Reservieren anfragen.",
         proTip:
-          "Der Preis bezieht sich auf das gesamte Boot, nicht pro Person. Schon ab 6 Gästen kann die Privatyacht (€280 / 6 = €47 pro Person) günstiger sein als eine Dinner-Kreuzfahrt.",
+          "Der Preis bezieht sich auf das gesamte Boot, nicht pro Person. Schon ab 6 Gästen kann die Privatyacht (€220 / 6 = €37 pro Person) günstiger sein als eine Dinner-Kreuzfahrt.",
       },
       {
         heading: "Was ist im Preis enthalten?",
@@ -887,9 +889,9 @@ export const germanProductPosts: BlogPost[] = [
       {
         heading: "Welche Kreuzfahrt passt zu Ihrem Reisestil?",
         answerCapsule:
-          "Budget & Familie: Silver Soft Dinner €30. Romantisches Paar: Sonnenuntergang €40. Besonderer Anlass: Gold Unlimited €90. Gruppe / Exklusiv: Privatyacht ab €280.",
+          "Budget & Familie: Silver Soft Dinner €30. Romantisches Paar: Sonnenuntergang €40. Besonderer Anlass: Gold Unlimited €90. Gruppe / Exklusiv: Privatyacht ab €220.",
         content:
-          "Um die richtige Wahl zu treffen, beantworten Sie vier kurze Fragen:\n\n**1. Wie viele Personen sind Sie?**\n1–2 Personen: Sonnenuntergangsfahrt (€34–40) oder Silver Soft (€30) sind die besten Optionen.\n6+ Personen: Eine Privatyacht kann pro Person günstiger werden als eine Dinner-Kreuzfahrt.\n\n**2. Möchten Sie Abendessen an Bord?**\nJa → Dinner-Kreuzfahrt (Silver Soft €30 oder Gold €60–90).\nNein → Sonnenuntergangsfahrt (€34–40).\n\n**3. Trinken Sie Alkohol?**\nNein → Silver Soft (€30) oder Gold Soft (€60).\nJa, unbegrenzt → Gold Unlimited (€90).\n\n**4. Haben Sie einen besonderen Anlass?**\nHeiratsantrag, Jubiläum, Geburtstag → Privatyacht ab €280 oder Gold Unlimited.\n\nBei Fragen helfen wir gerne per WhatsApp weiter: +90 537 040 68 22. Alle Verfügbarkeiten finden Sie unter [/de/bosphorus-cruise](/de/bosphorus-cruise).",
+          "Um die richtige Wahl zu treffen, beantworten Sie vier kurze Fragen:\n\n**1. Wie viele Personen sind Sie?**\n1–2 Personen: Sonnenuntergangsfahrt (€34–40) oder Silver Soft (€30) sind die besten Optionen.\n6+ Personen: Eine Privatyacht kann pro Person günstiger werden als eine Dinner-Kreuzfahrt.\n\n**2. Möchten Sie Abendessen an Bord?**\nJa → Dinner-Kreuzfahrt (Silver Soft €30 oder Gold €60–90).\nNein → Sonnenuntergangsfahrt (€34–40).\n\n**3. Trinken Sie Alkohol?**\nNein → Silver Soft (€30) oder Gold Soft (€60).\nJa, unbegrenzt → Gold Unlimited (€90).\n\n**4. Haben Sie einen besonderen Anlass?**\nHeiratsantrag, Jubiläum, Geburtstag → Privatyacht ab €220 oder Gold Unlimited.\n\nBei Fragen helfen wir gerne per WhatsApp weiter: +90 537 040 68 22. Alle Verfügbarkeiten finden Sie unter [/de/bosphorus-cruise](/de/bosphorus-cruise).",
         callout: {
           type: "tip",
           text: "In der Hochsaison (Juni–August) sind Sonnenuntergangsfahrten und Gold-Dinner-Pakete oft 3–5 Tage im Voraus ausgebucht. Frühzeitig reservieren lohnt sich.",
@@ -899,7 +901,7 @@ export const germanProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Was kostet eine Bosporus-Kreuzfahrt 2026?",
-        a: "Eine Bosporus-Kreuzfahrt 2026 kostet: Sonnenuntergangsfahrt €34 (ohne Wein) oder €40 (mit Wein) pro Person; Dinner-Kreuzfahrt €30 (Silver Soft) bis €90 (Gold Unlimited) pro Person; Privatyacht ab €280 für das gesamte Boot. Alle Preise bei MerrySails (Merry Tourism), TURSAB A-Gruppe lizenziert seit 2001.",
+        a: "Eine Bosporus-Kreuzfahrt 2026 kostet: Sonnenuntergangsfahrt €34 (ohne Wein) oder €40 (mit Wein) pro Person; Dinner-Kreuzfahrt €30 (Silver Soft) bis €90 (Gold Unlimited) pro Person; Privatyacht ab €220 für das gesamte Boot. Alle Preise bei MerrySails (Merry Tourism), TURSAB A-Gruppe lizenziert seit 2001.",
       },
       {
         q: "Welche ist die günstigste Bosporus-Kreuzfahrt?",
@@ -915,7 +917,7 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         q: "Wie viel kostet ein Privatyacht-Charter in Istanbul?",
-        a: "Ein Privatyacht-Charter in Istanbul kostet ab €280 für das gesamte Boot (2 Stunden, 2–8 Personen). Mittelgroße Yachten (8–20 Pers.) kosten €500–900 für 2–4 Stunden. Große Boote (20–50 Pers.) ab €1.000. Kapitan und Versicherung sind immer inbegriffen. Alle Details: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
+        a: "Ein Privatyacht-Charter in Istanbul kostet ab €220 für das gesamte Boot (2 Stunden, bis 12 Personen). Größere Yachten (bis 40 Pers.) kosten €380–€500 für 2–4 Stunden. Die Event-Yacht (bis 90 Pers.) ab €1.200 (4 Std.). Kapitän und Versicherung sind immer inbegriffen. Alle Details: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
       },
       {
         q: "Sind Hoteltransfer und Abendessen im Preis enthalten?",
@@ -933,7 +935,7 @@ export const germanProductPosts: BlogPost[] = [
     slug: "prinzeninseln-istanbul-tagesausflug-2026",
     locale: "de",
     title: "Prinzeninseln Istanbul 2026: Tagesausflug",
-    metaDescription: "Prinzeninseln-Tagesausflug Istanbul 2026: Büyükada, Heybeliada. Fähre ab €5, private Yacht ab €280. TURSAB lizenziert seit 2001.",
+    metaDescription: "Prinzeninseln-Tagesausflug Istanbul 2026: Büyükada, Heybeliada. Fähre ab €5, private Yacht ab €220. TURSAB lizenziert seit 2001.",
     excerpt: "Ein Tag auf den Prinzeninseln: autofreie Ruhe, viktorianische Villen und azurblaues Marmarameer vor den Toren Istanbuls. Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001 mit über 50.000 Gästen — zeigt Ihnen, wie Sie am besten dorthin kommen und was Sie erwartet.",
     category: "istanbul",
     date: "2026-05-13",
@@ -953,7 +955,7 @@ export const germanProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Die Prinzeninseln (Adalar) liegen 20 km südöstlich Istanbuls im Marmarameer — kein Autoverkehr, viktorianische Villen, Pferdekutschen",
       "Öffentliche Fähre (Şehir Hatları) ab Kabataş oder Eminönü: ab ca. €5 — reguläre tägliche Abfahrten",
-      "Private Yacht-Charter ab €280 für das gesamte Boot — Inselhüpfen nach eigenem Tempo",
+      "Private Yacht-Charter ab €220 für das gesamte Boot — Inselhüpfen nach eigenem Tempo",
       "Büyükada ist die größte und bekannteste Insel; Heybeliada, Burgazada und Kınalıada lohnen als Geheimtipps",
     ],
     sections: [
@@ -968,8 +970,8 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         heading: "Wie kommt man zu den Prinzeninseln?",
-        answerCapsule: "Es gibt zwei Hauptwege: die öffentliche Şehir Hatları-Fähre ab Kabataş oder Eminönü (ca. €5, 60–90 Min.) oder eine private Yacht-Charter mit MerrySails (ab €280 für das Boot, flexible Abfahrt). Im Sommer gibt es auch Schnellfähren (IDO).",
-        content: "Für Besucher aus Deutschland oder auf einer Türkei-Reise sind die Anreise-Optionen klar strukturiert:\n\n**Option 1: Öffentliche Fähre (Şehir Hatları)**\nDie günstigste und meistgenutzte Variante. Die Şehir Hatları (Stadtlinien) betreiben reguläre tägliche Fahrten ab Kabataş (europäische Seite) und Eminönü (Altstadt) mit Stopps auf mehreren Inseln. Preis: ca. €5 pro Strecke (Istanbulkart oder Barzahlung am Terminal). Fahrzeit nach Büyükada: ca. 60–90 Minuten je nach Zwischenstopps. Die Fähre ist gemütlich, hat ein Café an Bord und bietet spektakuläre Ausblicke auf die Istanbuler Skyline beim Ablegen.\n\n**Option 2: IDO-Schnellfähre**\nDie privaten IDO-Fähren sind schneller (ca. 35–40 Min. nach Büyükada) und komfortabler, aber teurer und nicht immer im Betrieb — Saison und Wetterlage entscheiden. Buchung über die IDO-App oder am Terminal.\n\n**Option 3: Private Yacht mit MerrySails**\nFür Gruppen oder besondere Anlässe ist die private [Yacht-Charter Istanbul](/de/yacht-charter-istanbul) die exklusivste Variante. Ab €280 für das gesamte Boot (2–8 Personen) können Sie auf dem direkten Wasserweg zu den Inseln gelangen, unterwegs Badepausen einlegen und das Tempo selbst bestimmen. Ideal für Hochzeitsreisende, Familien oder kleine Firmengruppen.\n\n**Achtung:** Bei sehr starkem Wind oder Sturm kann die Fährverbindung eingeschränkt oder ausgesetzt werden — das Marmarameer ist offener als der Bosporus. Planen Sie bei unsicherem Wetter einen alternativen Reisetag ein.",
+        answerCapsule: "Es gibt zwei Hauptwege: die öffentliche Şehir Hatları-Fähre ab Kabataş oder Eminönü (ca. €5, 60–90 Min.) oder eine private Yacht-Charter mit MerrySails (ab €220 für das Boot, flexible Abfahrt). Im Sommer gibt es auch Schnellfähren (IDO).",
+        content: "Für Besucher aus Deutschland oder auf einer Türkei-Reise sind die Anreise-Optionen klar strukturiert:\n\n**Option 1: Öffentliche Fähre (Şehir Hatları)**\nDie günstigste und meistgenutzte Variante. Die Şehir Hatları (Stadtlinien) betreiben reguläre tägliche Fahrten ab Kabataş (europäische Seite) und Eminönü (Altstadt) mit Stopps auf mehreren Inseln. Preis: ca. €5 pro Strecke (Istanbulkart oder Barzahlung am Terminal). Fahrzeit nach Büyükada: ca. 60–90 Minuten je nach Zwischenstopps. Die Fähre ist gemütlich, hat ein Café an Bord und bietet spektakuläre Ausblicke auf die Istanbuler Skyline beim Ablegen.\n\n**Option 2: IDO-Schnellfähre**\nDie privaten IDO-Fähren sind schneller (ca. 35–40 Min. nach Büyükada) und komfortabler, aber teurer und nicht immer im Betrieb — Saison und Wetterlage entscheiden. Buchung über die IDO-App oder am Terminal.\n\n**Option 3: Private Yacht mit MerrySails**\nFür Gruppen oder besondere Anlässe ist die private [Yacht-Charter Istanbul](/de/yacht-charter-istanbul) die exklusivste Variante. Ab €220 für das gesamte Boot (bis 12 Personen) können Sie auf dem direkten Wasserweg zu den Inseln gelangen, unterwegs Badepausen einlegen und das Tempo selbst bestimmen. Ideal für Hochzeitsreisende, Familien oder kleine Firmengruppen.\n\n**Achtung:** Bei sehr starkem Wind oder Sturm kann die Fährverbindung eingeschränkt oder ausgesetzt werden — das Marmarameer ist offener als der Bosporus. Planen Sie bei unsicherem Wetter einen alternativen Reisetag ein.",
       },
       {
         heading: "Öffentliche Fähre (Şehir Hatları) — Preise und Details",
@@ -981,10 +983,10 @@ export const germanProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "MerrySails Privatyacht — ab €280 zu den Inseln",
-        answerCapsule: "Eine Privatyacht zu den Prinzeninseln kostet ab €280 für das gesamte Boot (2–8 Personen, 2 Stunden). Größere Gruppen zahlen €500–900 (8–20 Pers.). Kapitän, Crew und Versicherung sind immer inbegriffen.",
-        content: "Für Reisende, die die Prinzeninseln abseits der Fährmassen erleben wollen, ist der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) von Merry Tourism die eleganteste Lösung.\n\n**Was bietet die Privatyacht?**\n- Direktfahrt zu Ihrer Wunschinsel (kein Stopp an anderen Inseln)\n- Badepausen auf dem Weg — die türkische Küste hat brillantklares Wasser\n- Verpflegung nach Absprache (Catering optional)\n- Flexibler Abfahrtszeitpunkt (Sonnenuntergangs-Tour zu den Inseln buchbar!)\n- Kapitän und Crew von Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001\n\n**Preisübersicht:**\n\n| Bootstyp | Kapazität | Dauer | Preis |\n|---|---|---|---|\n| Kleinboot | 2–8 Personen | 2 Stunden | ab €280 |\n| Mittelboot | 8–20 Personen | 2–4 Stunden | €500–900 |\n| Großboot | 20–50 Personen | 4–8 Stunden | ab €1.000 |\n\nBesonders beliebt: kombinierte Touren — morgens [Bosporus-Kreuzfahrt](/de/bosphorus-cruise), nachmittags private Fahrt zu den Prinzeninseln. Kontaktieren Sie das Team über WhatsApp (+90 537 040 68 22) für ein individuelles Angebot.\n\n**Für wen lohnt sich die Privatyacht?**\n- Paare für einen romantischen Inseltag\n- Familien mit Kindern (kein Gedränge, eigenes Tempo)\n- Kleine Firmengruppen für ein Team-Erlebnis\n- Heirats- oder Jubiläumsreisende",
-        proTip: "Bei 6 Personen kostet die Privatyacht (€280 ÷ 6 = ca. €47/Person) nicht viel mehr als die Fähre plus Eintritte — aber Sie haben das gesamte Boot für sich.",
+        heading: "MerrySails Privatyacht — ab €220 zu den Inseln",
+        answerCapsule: "Eine Privatyacht zu den Prinzeninseln kostet ab €220 für das gesamte Boot (bis 12 Personen, 2 Stunden). Größere Gruppen zahlen €380–€500 (bis 40 Pers.). Kapitän, Crew und Versicherung sind immer inbegriffen.",
+        content: "Für Reisende, die die Prinzeninseln abseits der Fährmassen erleben wollen, ist der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) von Merry Tourism die eleganteste Lösung.\n\n**Was bietet die Privatyacht?**\n- Direktfahrt zu Ihrer Wunschinsel (kein Stopp an anderen Inseln)\n- Badepausen auf dem Weg — die türkische Küste hat brillantklares Wasser\n- Verpflegung nach Absprache (Catering optional)\n- Flexibler Abfahrtszeitpunkt (Sonnenuntergangs-Tour zu den Inseln buchbar!)\n- Kapitän und Crew von Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001\n\n**Preisübersicht:**\n\n| Bootstyp | Kapazität | Dauer | Preis |\n|---|---|---|---|\n| Boutique-Yacht | bis 12 Personen | 2 Stunden | ab €220 |\n| Gruppen-Yacht | 15–40 Personen | 2–4 Stunden | €380–€500 |\n| Event-Yacht | bis 90 Personen | 4–8 Stunden | ab €1.200 |\n\nBesonders beliebt: kombinierte Touren — morgens [Bosporus-Kreuzfahrt](/de/bosphorus-cruise), nachmittags private Fahrt zu den Prinzeninseln. Kontaktieren Sie das Team über WhatsApp (+90 537 040 68 22) für ein individuelles Angebot.\n\n**Für wen lohnt sich die Privatyacht?**\n- Paare für einen romantischen Inseltag\n- Familien mit Kindern (kein Gedränge, eigenes Tempo)\n- Kleine Firmengruppen für ein Team-Erlebnis\n- Heirats- oder Jubiläumsreisende",
+        proTip: "Bei 6 Personen kostet die Privatyacht (€220 ÷ 6 = ca. €37/Person) nicht viel mehr als die Fähre plus Eintritte — aber Sie haben das gesamte Boot für sich.",
       },
       {
         heading: "Büyükada — Die Hauptinsel",
@@ -1009,11 +1011,11 @@ export const germanProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Wie komme ich von Istanbul zu den Prinzeninseln?",
-        a: "Die bequemste und günstigste Option ist die Şehir Hatları-Fähre ab Kabataş-Pier (neben Dolmabahçe-Palast) oder Eminönü-Pier (Altstadt). Reguläre tägliche Abfahrten; Fahrzeit nach Büyükada ca. 60–90 Minuten. Preis ca. €5 pro Person. Alternativ: IDO-Schnellfähre (ca. 35–40 Min., teurer). Für Gruppen bietet MerrySails private Yacht-Charter ab €280 für das gesamte Boot.",
+        a: "Die bequemste und günstigste Option ist die Şehir Hatları-Fähre ab Kabataş-Pier (neben Dolmabahçe-Palast) oder Eminönü-Pier (Altstadt). Reguläre tägliche Abfahrten; Fahrzeit nach Büyükada ca. 60–90 Minuten. Preis ca. €5 pro Person. Alternativ: IDO-Schnellfähre (ca. 35–40 Min., teurer). Für Gruppen bietet MerrySails private Yacht-Charter ab €220 für das gesamte Boot.",
       },
       {
         q: "Was kostet die Fähre zu den Prinzeninseln?",
-        a: "Die öffentliche Şehir Hatları-Fähre zu den Prinzeninseln kostet ca. €5 pro Person und Strecke (bei Zahlung in türkischen Lira; Preis kann je nach Wechselkurs leicht variieren). Istanbulkart-Inhaber zahlen etwas günstiger. Privatyacht-Charter ab €280 für das gesamte Boot (2–8 Personen).",
+        a: "Die öffentliche Şehir Hatları-Fähre zu den Prinzeninseln kostet ca. €5 pro Person und Strecke (bei Zahlung in türkischen Lira; Preis kann je nach Wechselkurs leicht variieren). Istanbulkart-Inhaber zahlen etwas günstiger. Privatyacht-Charter ab €220 für das gesamte Boot (bis 12 Personen).",
       },
       {
         q: "Lohnt sich der Tagesausflug zu den Prinzeninseln?",
@@ -1021,7 +1023,7 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         q: "Kann ich eine Privatyacht zu den Prinzeninseln mieten?",
-        a: "Ja. Merry Tourism bietet Privatyacht-Charter zu den Prinzeninseln ab €280 für das gesamte Boot (2–8 Personen, 2 Stunden). Für größere Gruppen (8–20 Pers.) kostet die Yacht €500–900 für 2–4 Stunden. Kapitän und Crew sind immer inbegriffen. Kontakt: WhatsApp +90 537 040 68 22. Mehr Informationen: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
+        a: "Ja. Merry Tourism bietet Privatyacht-Charter zu den Prinzeninseln ab €220 für das gesamte Boot (bis 12 Personen, 2 Stunden). Für größere Gruppen (bis 40 Pers.) kostet die Yacht €380–€500 für 2–4 Stunden. Kapitän und Crew sind immer inbegriffen. Kontakt: WhatsApp +90 537 040 68 22. Mehr Informationen: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
       },
       {
         q: "Wie lange dauert der Ausflug zu den Prinzeninseln?",

@@ -7,9 +7,9 @@ export const dutchProductPosts: BlogPost[] = [
     title:
       "Bosporus Cruise Prijzen Istanbul 2026",
     metaDescription:
-      "Bosporus cruise prijs 2026: gedeelde tour vanaf €34/persoon, diner cruise €64–119, privé jachtcharter €380–1.800. Seizoenstarieven, pakkettenvergelijk en tips voor de beste prijs-kwaliteitsverhouding in Istanbul.",
+      "Bosporus cruise prijs 2026: gedeelde tour vanaf €34/persoon, diner cruise €64–119, privé jachtcharter vanaf €220. Seizoenstarieven, pakkettenvergelijk en tips voor de beste prijs-kwaliteitsverhouding in Istanbul.",
     excerpt:
-      "De Bosporus cruise prijs begint bij €34 per persoon voor een gedeelde dagtour en loopt op tot €1.800 voor een exclusief privé jacht. MerrySails — TÜRSAB groep A-vergunning sinds 2001 en meer dan 50.000 gasten — legt alle tarieven voor 2026 helder uit, inclusief het volledige pakketoverzicht.",
+      "De Bosporus cruise prijs begint bij €34 per persoon voor een gedeelde dagtour; een exclusief privé jacht is beschikbaar vanaf €220 per boot. MerrySails — TÜRSAB groep A-vergunning sinds 2001 en meer dan 50.000 gasten — legt alle tarieven voor 2026 helder uit, inclusief het volledige pakketoverzicht.",
     category: "cruise-guide",
     date: "2026-04-29",
     readTime: "9 min lezen",
@@ -29,18 +29,18 @@ export const dutchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Gedeelde cruise vanaf €34/persoon (overdag) of €40 (zonsondergang) — beste prijs-kwaliteitsverhouding",
       "Diner cruise van €64 tot €119 afhankelijk van pakket — hotelovername in alle pakketten inbegrepen",
-      "Privé jachtcharter van €380 tot €1.800 per boot afhankelijk van capaciteit en duur",
+      "Privé jachtcharter vanaf €220 per boot (Premium €320, groepsjacht €380–€500, event €600) afhankelijk van capaciteit en duur",
       "Hoogseizoen juni–augustus: tarieven +15–20%; beste periode: september–oktober",
     ],
     sections: [
       {
         heading: "Bosporus Cruise Prijzen 2026 — Overzicht",
-        content: "De [Bosporus cruise](/nl/bosphorus-cruise) prijs in 2026 varieert sterk naargelang het type tour. Reizigers die op budget willen genieten, kiezen voor een gedeelde dagtour vanaf €34 per persoon. Wie een bijzondere avond wil beleven met een volwaardig diner, betaalt €64–119 per persoon. Stellen, families of groepen die volledige privacy wensen, gaan voor een privé jachtcharter vanaf €380 voor de gehele boot. Deze drie categorieën bedienen totaal verschillende reiservaringen — en verschillende budgetten.",
+        content: "De [Bosporus cruise](/nl/bosphorus-cruise) prijs in 2026 varieert sterk naargelang het type tour. Reizigers die op budget willen genieten, kiezen voor een gedeelde dagtour vanaf €34 per persoon. Wie een bijzondere avond wil beleven met een volwaardig diner, betaalt €64–119 per persoon. Stellen, families of groepen die volledige privacy wensen, gaan voor een privé jachtcharter vanaf €220 voor de gehele boot. Deze drie categorieën bedienen totaal verschillende reiservaringen — en verschillende budgetten.",
         answerCapsule:
-          "Gedeelde Bosporus-tour: €34–40 p.p. | Diner cruise: €64–119 p.p. | Privé jacht: €380–1.800 per boot.",
+          "Gedeelde Bosporus-tour: €34–40 p.p. | Diner cruise: €64–119 p.p. | Privé jacht: vanaf €220 per boot.",
         callout: {
           type: "price",
-          text: "2026 Prijsoverzicht: Gedeelde dagtour €34 | Zonsondergang €40 | Diner cruise €64–119 | Privé jacht €380–1.800",
+          text: "2026 Prijsoverzicht: Gedeelde dagtour €34 | Zonsondergang €40 | Diner cruise €64–119 | Privé jacht vanaf €220",
         },
       },
       {
@@ -80,18 +80,19 @@ export const dutchProductPosts: BlogPost[] = [
       {
         heading: "Privé Jachtcharter Prijzen Istanbul",
         content:
-          "Een privé Bosporus cruise biedt volledige flexibiliteit wat betreft route, duur en catering aan boord. De prijzen gelden per boot — hoe meer personen, hoe goedkoper per hoofd. MerrySails beschikt over een vloot klassieke gulets, moderne motorjachten en luxe motoryachten:",
+          "Een privé Bosporus cruise biedt volledige flexibiliteit wat betreft route, duur en catering aan boord. De prijzen gelden per boot — hoe meer personen, hoe goedkoper per hoofd. Een privé jacht is beschikbaar vanaf €220 (2 uur), met 10% korting vanaf 3 uur. De vloot van MerrySails gaat van het boutiquejacht tot het eventjacht:",
         table: {
-          headers: ["Boottype", "Capaciteit", "2 uur", "4 uur", "Hele dag (8 uur)"],
+          headers: ["Jacht", "Capaciteit", "2 uur", "4 uur"],
           rows: [
-            ["Klassieke gulet", "2–8 personen", "€380", "€620", "€1.100"],
-            ["Motorjacht (middelgroot)", "2–16 personen", "€550", "€850", "€1.400"],
-            ["Premium motorjacht", "2–24 personen", "€750", "€1.100", "€1.800"],
-            ["Luxe mega-jacht", "2–30 personen", "€1.200", "op aanvraag", "op aanvraag"],
+            ["Boutiquejacht", "tot 12 personen", "€220", "€396"],
+            ["Premiumjacht", "tot 15 personen", "€320", "€576"],
+            ["Groepsjacht · Standaard", "tot 15 personen", "€380", "€684"],
+            ["Groepsjacht · Signature", "15–40 personen", "€500", "€900"],
+            ["Eventjacht", "tot 90 personen", "vanaf 4 uur €1.200", "—"],
           ],
         },
         proTip:
-          "Vanaf 10 personen loont de vergelijking: 10 × VIP diner €99 = €990 versus eigen motorjacht 4 uur = €850. De privé boot is dan goedkoper — én u bepaalt de route zelf.",
+          "Vanaf 6 personen loont de vergelijking: 6 × Premium diner €79 = €474 versus eigen boutiquejacht 2 uur = €220. De privé boot is dan goedkoper — én u bepaalt de route zelf.",
       },
       {
         heading: "Factoren die de Prijs Beïnvloeden",
@@ -229,33 +230,33 @@ export const dutchProductPosts: BlogPost[] = [
           headers: ["Pakket", "Prijs", "Inhoud", "Geschikt voor"],
           rows: [
             [
-              "Romantiek Basis",
-              "vanaf €380",
-              "Privé gulet 2 uur, rozenblaadjes, kaarsen, champagne (1 fles)",
+              "Romantiek Boutique",
+              "vanaf €220",
+              "Privé boutiquejacht 2 uur, rozenblaadjes, kaarsen, champagne (1 fles)",
               "Stellen met compact budget",
             ],
             [
               "Romantiek Premium",
-              "vanaf €650",
-              "Motorjacht 3 uur, decoratie, champagne, fotograaf (1 uur)",
+              "vanaf €320",
+              "Premiumjacht 2 uur, decoratie, champagne, fotograaf (1 uur)",
               "Stellen die foto's wensen",
             ],
             [
-              "Romantiek VIP",
-              "vanaf €950",
-              "Premium jacht 4 uur, volledige decoratie, fotograaf, diner voor 2",
+              "Romantiek Signature",
+              "vanaf €500",
+              "Groepsjacht (Signature) 2 uur, volledige decoratie, fotograaf",
               "Onvergetelijke ervaring",
             ],
             [
-              "Romantiek Ultra VIP",
-              "vanaf €1.400",
-              "Luxejacht hele dag, decoratie, fotograaf + videograaf, gastronomisch diner, transfer",
-              "Perfecte sprookjesmoment",
+              "Romantiek Event",
+              "vanaf €1.200",
+              "Eventjacht vanaf 4 uur, decoratie, fotograaf + videograaf, gastronomisch diner, transfer",
+              "Groot feest na het aanzoek",
             ],
           ],
         },
         proTip:
-          "Het Premium-pakket biedt de beste prijs-kwaliteitsverhouding: met 3 uur tijd, een professionele fotograaf en een elegante motorjacht heeft u alles voor een perfect moment.",
+          "Het Premium-pakket biedt de beste prijs-kwaliteitsverhouding: met een professionele fotograaf en een elegant premiumjacht heeft u alles voor een perfect moment. Vanaf 3 uur geldt 10% korting.",
       },
       {
         heading: "Stappenplan voor de Planning",
@@ -311,25 +312,25 @@ export const dutchProductPosts: BlogPost[] = [
           rows: [
             [
               "Bewust budget",
-              "Romantiek Basis €380",
+              "Romantiek Boutique €220",
               "Geen fotograaf, basisdecoratie",
-              "€380–420",
+              "€220–300",
             ],
             [
               "Comfort",
-              "Romantiek Premium €650",
+              "Romantiek Premium €320",
               "Fotograaf 1 uur €150",
-              "€800–900",
+              "€470–520",
             ],
             [
               "Premium",
-              "Romantiek VIP €950",
+              "Romantiek Signature €500",
               "Fotograaf + videograaf €400",
-              "€1.350–1.500",
+              "€900–1.000",
             ],
             [
               "Luxe",
-              "Ultra VIP €1.400",
+              "Event €1.200 (4 uur)",
               "Alle extra's inbegrepen",
               "€1.400–1.600",
             ],
@@ -345,7 +346,7 @@ export const dutchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Hoeveel kost een huwelijksaanzoek op de Bosporus in Istanbul?",
-        a: "De pakketten beginnen bij €380 voor een privé boottocht van 2 uur met basisdecoratie en champagne. Met een professionele fotograaf en premiumdecoratie liggen de totaalkosten typisch op €800–1.000. Ultra VIP-pakketten met gastronomisch diner en videograaf kosten vanaf €1.400.",
+        a: "De pakketten beginnen bij €220 voor een privé boottocht van 2 uur met basisdecoratie en champagne. Met een professionele fotograaf en premiumdecoratie liggen de totaalkosten typisch op €470–700. Eventpakketten met gastronomisch diner en videograaf, voor grote feesten, kosten vanaf €1.200 (4 uur).",
       },
       {
         q: "Welke maand is het beste voor een huwelijksaanzoek op de Bosporus?",
@@ -413,7 +414,7 @@ export const dutchProductPosts: BlogPost[] = [
         content:
           "Jacht huren op de Bosporus is voor reizigers uit Nederland en België een van de meest gezochte ervaringen in Istanbul. De Bosporus verbindt Europa en Azië over 31 kilometer — langs zijn oevers staan Ottomaanse paleizen, middeleeuwse forten en moderne villa's. Een privé boottocht biedt u een perspectief dat geen stadsbus of rondvaartboot kan evenaren. Jacht huren Istanbul — dat is vrijheid, privacy en het beste van Istanbul in één ervaring.",
         answerCapsule:
-          "Jacht huren Istanbul biedt privacy en flexibele routes op de Bosporus — vanaf €380 per boot voor 2–8 personen.",
+          "Jacht huren Istanbul biedt privacy en flexibele routes op de Bosporus — vanaf €220 per boot voor tot 12 personen.",
         callout: {
           type: "info",
           text: "MerrySails beschikt over een TÜRSAB groep A-vergunning sinds 2001 en heeft meer dan 50.000 gasten verwelkomd. Alle boten zijn volledig verzekerd en worden bestuurd door gecertificeerde kapiteins.",
@@ -422,55 +423,56 @@ export const dutchProductPosts: BlogPost[] = [
       {
         heading: "Boottypen en Capaciteiten",
         content:
-          "De keuze van de juiste boot hangt af van uw groepsgrootte, budget en gewenste beleving. MerrySails exploiteert vier bootklassen:",
+          "De keuze van de juiste boot hangt af van uw groepsgrootte, budget en gewenste beleving. MerrySails exploiteert verschillende jachtklassen:",
         table: {
           headers: ["Boottype", "Capaciteit", "Kenmerken", "Startprijs 2 uur"],
           rows: [
             [
-              "Klassieke gulet",
-              "2–8 personen",
-              "Houten romp, traditioneel Turks, rustige vaart, zonnedek",
+              "Boutiquejacht",
+              "tot 12 personen",
+              "Compact, privé, intiem dek, ideaal voor stellen",
+              "vanaf €220",
+            ],
+            [
+              "Premiumjacht",
+              "tot 15 personen",
+              "Breder dek, verfijnde salon, zonnedek",
+              "vanaf €320",
+            ],
+            [
+              "Groepsjacht",
+              "tot 40 personen",
+              "Groot dek, Standaard (€380) tot Signature (€500)",
               "vanaf €380",
             ],
             [
-              "Motorjacht (middelgroot)",
-              "2–16 personen",
-              "Snel, modern, kajuit, zonnedek, ideaal voor groepen",
-              "vanaf €550",
-            ],
-            [
-              "Luxe motorjacht",
-              "2–24 personen",
-              "Luxueuze uitrusting, geklimatiseerde salon, buitenbar",
-              "vanaf €750",
-            ],
-            [
-              "Mega-jacht",
-              "2–30 personen",
-              "Topuitrusting, jacuzzi op aanvraag, gastronomische keuken",
-              "vanaf €1.200",
+              "Eventjacht",
+              "tot 90 personen",
+              "Bedrijfsavonden, bruiloften, grote privéfeesten",
+              "vanaf €1.200 (4 uur)",
             ],
           ],
         },
         proTip:
-          "Voor groepen van 10–16 personen biedt het middelgrote motorjacht de beste prijs-kwaliteitsverhouding: modern design, voldoende ruimte en een kostprijs van €34–55 per persoon bij een 4-uurs charter.",
+          "Voor groepen van 10–15 personen biedt het premiumjacht de beste prijs-kwaliteitsverhouding: modern design, voldoende ruimte en een kostprijs van circa €38 per persoon (€576 ÷ 15 bij een 4-uurs charter).",
       },
       {
         heading: "Prijstabel 2026: Alle Bootklassen en Duren",
         content:
-          "De onderstaande tabel toont de volledige jacht-charter tarieven 2026 per bootklasse en huurduur. Alle prijzen zijn per boot, inclusief kapitein, bemanning, brandstof en veiligheidsuitrusting:",
+          "De onderstaande tabel toont de volledige jacht-charter tarieven 2026 per jacht en huurduur. Alle prijzen zijn per boot, inclusief kapitein, bemanning, brandstof en veiligheidsuitrusting; vanaf 3 uur geldt 10% korting:",
         table: {
-          headers: ["Bootklasse", "2 uur", "4 uur", "6 uur", "Hele dag (8 uur)"],
+          headers: ["Jacht", "2 uur", "3 uur", "4 uur", "Hele dag"],
           rows: [
-            ["Essential (gulet)", "€380", "€620", "€850", "€1.100"],
-            ["Premium (motorjacht middelgroot)", "€550", "€850", "€1.150", "€1.400"],
-            ["VIP (luxe motorjacht)", "€750", "€1.100", "€1.450", "€1.800"],
-            ["Ultra VIP (mega-jacht)", "€1.200", "op aanvraag", "op aanvraag", "op aanvraag"],
+            ["Boutiquejacht (tot 12 pers.)", "€220", "€297", "€396", "—"],
+            ["Premiumjacht (tot 15 pers.)", "€320", "€432", "€576", "—"],
+            ["Groepsjacht Standaard (tot 15)", "€380", "€513", "€684", "—"],
+            ["Groepsjacht Signature (15–40)", "€500", "€675", "€900", "—"],
+            ["Eventjacht (tot 90 pers.)", "—", "—", "€1.200 (4 uur)", "op aanvraag"],
           ],
         },
         callout: {
           type: "price",
-          text: "Prijstip: een 4-uurs charter kost slechts 60% meer dan 2 uur — veel meer tijd voor bijna dezelfde inspanning. Hele-dag-tochten bieden de beste prijs-per-uurverhouding.",
+          text: "Prijstip: vanaf 3 uur geldt automatisch 10% korting op het uurtarief — veel meer tijd voor bijna dezelfde inspanning. Langere tochten bieden de beste prijs-per-uurverhouding.",
         },
       },
       {
@@ -540,7 +542,7 @@ export const dutchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Hoeveel kost het huren van een jacht in Istanbul?",
-        a: "Jacht huren in Istanbul begint bij €380 voor 2 uur (klassieke gulet, tot 8 personen). Premium motorjachten starten bij €550 voor 2 uur. Hele-dag-charter (8 uur) is beschikbaar vanaf €1.100. Alle prijzen zijn per boot inclusief kapitein en bemanning.",
+        a: "Jacht huren in Istanbul begint bij €220 voor 2 uur (boutiquejacht, tot 12 personen). Premiumjachten starten bij €320, groepsjachten bij €380–€500 voor 2 uur. Het eventjacht (tot 90 personen) is beschikbaar vanaf €1.200 voor 4 uur. Alle prijzen zijn per boot inclusief kapitein en bemanning; vanaf 3 uur 10% korting.",
       },
       {
         q: "Wat is het minimum aantal personen voor een jacht charter?",
@@ -576,9 +578,9 @@ export const dutchProductPosts: BlogPost[] = [
     locale: "nl",
     title: "Bosphorus Cruise Prijzen 2026",
     metaDescription:
-      "Wat kost een Bosphorus cruise in 2026? Zonsondergang vanaf €34, diner vanaf €30, privéjacht vanaf €280. TURSAB-vergund sinds 2001 — direct boeken.",
+      "Wat kost een Bosphorus cruise in 2026? Zonsondergang vanaf €34, diner vanaf €30, privéjacht vanaf €220. TURSAB-vergund sinds 2001 — direct boeken.",
     excerpt:
-      "Alle Bosphorus cruise prijzen 2026 in één overzicht: zonsondergang vanaf €34, dinercruise vanaf €30, privéjacht vanaf €280. Merry Tourism — TURSAB A-Groep vergund sinds 2001, meer dan 50.000 gasten. Transparant, zonder verborgen kosten.",
+      "Alle Bosphorus cruise prijzen 2026 in één overzicht: zonsondergang vanaf €34, dinercruise vanaf €30, privéjacht vanaf €220. Merry Tourism — TURSAB A-Groep vergund sinds 2001, meer dan 50.000 gasten. Transparant, zonder verborgen kosten.",
     category: "cruise-guide",
     date: "2026-05-10",
     dateModified: "2026-05-10",
@@ -599,16 +601,16 @@ export const dutchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Zonsondergangcruise: €34 (zonder wijn) of €40 (met wijn) per persoon — ca. 2 uur, begeleide groepstour",
       "Dinercruise: vier pakketten van €30 (Silver Soft) tot €90 (Gold Unlimited) per persoon — inclusief diner en livemuziek",
-      "Privéjacht: vanaf €280 voor de gehele boot (2 uur) — ideaal voor koppels, families en speciale gelegenheden",
+      "Privéjacht: vanaf €220 voor de gehele boot (2 uur) — ideaal voor koppels, families en speciale gelegenheden",
       "TURSAB A-Groep vergund sinds 2001 — geen verborgen kosten, gratis annulering tot 72 uur voor vertrek",
     ],
     sections: [
       {
         heading: "Bosphorus cruise prijzen 2026 — overzicht",
         answerCapsule:
-          "Een Bosphorus cruise kost in 2026 tussen €30 en €280+. Zonsondergangcruises kosten €34–40 per persoon, dinercruises €30–90 per persoon, privéjachten vanaf €280 voor de gehele boot.",
+          "Een Bosphorus cruise kost in 2026 tussen €30 en €220+. Zonsondergangcruises kosten €34–40 per persoon, dinercruises €30–90 per persoon, privéjachten vanaf €220 voor de gehele boot.",
         content:
-          "Wie een Bosphorus cruise in Istanbul plant, stuit al snel op onduidelijke prijsverschillen. Goedkope aanbiedingen beginnen bij €30; exclusieve privéjachten lopen op tot boven de €1.000. De sleutel ligt in het type tour — en in de keuze van de juiste aanbieder.\n\n[Merry Tourism](/tursab), de exploitant achter MerrySails, is TURSAB A-Groep vergund sinds 2001 en heeft meer dan 50.000 gasten op de Bosphorus verwelkomd. De onderstaande prijzen gelden voor het seizoen 2026 en zijn vastgelegd in euro — ongeacht de dagelijkse wisselkoers.",
+          "Wie een Bosphorus cruise in Istanbul plant, stuit al snel op onduidelijke prijsverschillen. Goedkope aanbiedingen beginnen bij €30; privéjachten beginnen bij €220 voor de gehele boot. De sleutel ligt in het type tour — en in de keuze van de juiste aanbieder.\n\n[Merry Tourism](/tursab), de exploitant achter MerrySails, is TURSAB A-Groep vergund sinds 2001 en heeft meer dan 50.000 gasten op de Bosphorus verwelkomd. De onderstaande prijzen gelden voor het seizoen 2026 en zijn vastgelegd in euro — ongeacht de dagelijkse wisselkoers.",
         table: {
           headers: [
             "Cruisetype",
@@ -648,28 +650,28 @@ export const dutchProductPosts: BlogPost[] = [
               "4-gangen menu + onbeperkt alcohol",
             ],
             [
-              "Privéjacht (kl., 2–8 pers.)",
+              "Privéjacht (boutique, tot 12 pers.)",
               "2+ uur",
-              "v.a. €280 / boot",
+              "v.a. €220 / boot",
               "Optioneel bij te boeken",
             ],
             [
-              "Privéjacht (mid., 8–20 pers.)",
+              "Privéjacht (groep, 15–40 pers.)",
               "2–4 uur",
-              "€500–900 / boot",
+              "€380–€500 / boot",
               "Optioneel bij te boeken",
             ],
             [
-              "Privéjacht (gr., 20–50 pers.)",
+              "Eventjacht (tot 90 pers.)",
               "4–8 uur",
-              "€1.000+ / boot",
+              "vanaf €1.200 (4 uur) / boot",
               "Optioneel bij te boeken",
             ],
           ],
         },
         callout: {
           type: "price",
-          text: "Prijzen 2026 in het kort: Zonsondergang €34–40 | Diner €30–90 | Privéjacht v.a. €280 (gehele boot). Alle prijzen in euro — geen valutarisico.",
+          text: "Prijzen 2026 in het kort: Zonsondergang €34–40 | Diner €30–90 | Privéjacht v.a. €220 (gehele boot). Alle prijzen in euro — geen valutarisico.",
         },
       },
       {
@@ -693,13 +695,13 @@ export const dutchProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "Privéjacht prijzen — vanaf €280 voor uw eigen boot",
+        heading: "Privéjacht prijzen — vanaf €220 voor uw eigen boot",
         answerCapsule:
-          "Een privéjacht op de Bosphorus kost vanaf €280 voor de gehele boot (2 uur, 2–8 personen). Middelgrote jachten (8–20 pers.) kosten €500–900, grote charterbooten (20–50 pers.) vanaf €1.000. Kapitein en verzekering zijn altijd inbegrepen.",
+          "Een privéjacht op de Bosphorus kost vanaf €220 voor de gehele boot (2 uur, tot 12 personen). Grotere jachten (tot 40 pers.) kosten €380–€500, het eventjacht (tot 90 pers.) vanaf €1.200 (4 uur). Kapitein en verzekering zijn altijd inbegrepen.",
         content:
-          "De [privéjacht charter Istanbul](/nl/yacht-charter-istanbul) is de ultieme keuze als u de Bosphorus zonder vreemden wilt beleven. Of het nu gaat om een huwelijksaanzoek, een familiefeest of een bedrijfsevenement — u boekt de gehele boot voor uw groep.\n\nMerry Tourism beschikt over een vloot met drie groottegroepen:\n\n**Klein (2–8 personen), 2 uur: v.a. €280 / boot**\nIdeaal voor koppels, families of kleine groepen. Perfect voor een huwelijksaanzoek op de Bosphorus of een romantisch privédiner. Prijs per persoon bij 4 gasten: €70 — vergelijkbaar met een dinercruise-ticket.\n\n**Middelgroot (8–20 personen), 2–4 uur: €500–900 / boot**\nGeschikt voor verjaardagsgezelschappen, kleine bedrijfsgroepen of vriendengroepen. Bij 15 personen en €700 is dat slechts €47 per persoon.\n\n**Groot (20–50 personen), 4–8 uur: €1.000+ / boot**\nVoor bruiloften, gala's of groepsreizen. Catering, decoratie en fotografen zijn tegen meerprijs te regelen.\n\nIn elk pakket inbegrepen: kapitein, bemanning, wettelijke verzekering. Eten en drinken zijn te boeken via een cateringpartner — geef dit aan bij reservering.",
+          "De [privéjacht charter Istanbul](/nl/yacht-charter-istanbul) is de ultieme keuze als u de Bosphorus zonder vreemden wilt beleven. Of het nu gaat om een huwelijksaanzoek, een familiefeest of een bedrijfsevenement — u boekt de gehele boot voor uw groep.\n\nMerry Tourism beschikt over een vloot met meerdere capaciteitsklassen:\n\n**Boutiquejacht (tot 12 personen), 2 uur: v.a. €220 / boot**\nIdeaal voor koppels, families of kleine groepen. Perfect voor een huwelijksaanzoek op de Bosphorus of een romantisch privédiner. Prijs per persoon bij 4 gasten: €55 — vergelijkbaar met een dinercruise-ticket.\n\n**Premium- / groepsjacht (15–40 personen), 2–4 uur: €320–€500 / boot**\nGeschikt voor verjaardagsgezelschappen, kleine bedrijfsgroepen of vriendengroepen. Bij 15 personen en het groepsjacht (€500) is dat slechts €33 per persoon.\n\n**Eventjacht (tot 90 personen), 4–8 uur: vanaf €1.200 / boot**\nVoor bruiloften, gala's of groepsreizen. Catering, decoratie en fotografen zijn tegen meerprijs te regelen.\n\nIn elk jacht inbegrepen: kapitein, bemanning, wettelijke verzekering; vanaf 3 uur 10% korting. Eten en drinken zijn te boeken via een cateringpartner — geef dit aan bij reservering.",
         proTip:
-          "De prijs geldt voor de gehele boot, niet per persoon. Vanaf 6 gasten kan het privéjacht (€280 / 6 = €47 per persoon) goedkoper uitvallen dan een dinercruise.",
+          "De prijs geldt voor de gehele boot, niet per persoon. Vanaf 6 gasten kan het privéjacht (€220 / 6 = €37 per persoon) goedkoper uitvallen dan een dinercruise.",
       },
       {
         heading: "Wat is inbegrepen in de prijs?",
@@ -722,9 +724,9 @@ export const dutchProductPosts: BlogPost[] = [
       {
         heading: "Welke cruise past bij uw reis?",
         answerCapsule:
-          "Budget & familie: Silver Soft diner €30. Romantisch koppel: zonsondergang €40. Speciale gelegenheid: Gold Unlimited €90. Groep / exclusief: privéjacht v.a. €280.",
+          "Budget & familie: Silver Soft diner €30. Romantisch koppel: zonsondergang €40. Speciale gelegenheid: Gold Unlimited €90. Groep / exclusief: privéjacht v.a. €220.",
         content:
-          "Om de juiste keuze te maken, beantwoordt u vier korte vragen:\n\n**1. Met hoeveel personen bent u?**\n1–2 personen: zonsondergangcruise (€34–40) of Silver Soft (€30) zijn de beste opties.\n6+ personen: een privéjacht kan per persoon goedkoper uitvallen dan een dinercruise.\n\n**2. Wilt u aan boord dineren?**\nJa → dinercruise (Silver Soft €30 of Gold €60–90).\nNee → zonsondergangcruise (€34–40).\n\n**3. Drinkt u alcohol?**\nNee → Silver Soft (€30) of Gold Soft (€60).\nJa, onbeperkt → Gold Unlimited (€90).\n\n**4. Is het een bijzondere gelegenheid?**\nHuwelijksaanzoek, jubileum, verjaardag → privéjacht v.a. €280 of Gold Unlimited.\n\nHeeft u vragen? Wij helpen u graag via WhatsApp: +90 537 040 68 22. Alle beschikbaarheden vindt u op [/nl/bosphorus-cruise](/nl/bosphorus-cruise).",
+          "Om de juiste keuze te maken, beantwoordt u vier korte vragen:\n\n**1. Met hoeveel personen bent u?**\n1–2 personen: zonsondergangcruise (€34–40) of Silver Soft (€30) zijn de beste opties.\n6+ personen: een privéjacht kan per persoon goedkoper uitvallen dan een dinercruise.\n\n**2. Wilt u aan boord dineren?**\nJa → dinercruise (Silver Soft €30 of Gold €60–90).\nNee → zonsondergangcruise (€34–40).\n\n**3. Drinkt u alcohol?**\nNee → Silver Soft (€30) of Gold Soft (€60).\nJa, onbeperkt → Gold Unlimited (€90).\n\n**4. Is het een bijzondere gelegenheid?**\nHuwelijksaanzoek, jubileum, verjaardag → privéjacht v.a. €220 of Gold Unlimited.\n\nHeeft u vragen? Wij helpen u graag via WhatsApp: +90 537 040 68 22. Alle beschikbaarheden vindt u op [/nl/bosphorus-cruise](/nl/bosphorus-cruise).",
         callout: {
           type: "tip",
           text: "In het hoogseizoen (juni–augustus) zijn zonsondergangcruises en Gold-dinerpakketten vaak 3–5 dagen van tevoren volgeboekt. Vroeg reserveren loont.",
@@ -734,7 +736,7 @@ export const dutchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Wat kost een Bosphorus cruise in 2026?",
-        a: "Een Bosphorus cruise in 2026 kost: zonsondergangcruise €34 (zonder wijn) of €40 (met wijn) per persoon; dinercruise €30 (Silver Soft) tot €90 (Gold Unlimited) per persoon; privéjacht v.a. €280 voor de gehele boot. Alle prijzen bij MerrySails (Merry Tourism), TURSAB A-Groep vergund sinds 2001.",
+        a: "Een Bosphorus cruise in 2026 kost: zonsondergangcruise €34 (zonder wijn) of €40 (met wijn) per persoon; dinercruise €30 (Silver Soft) tot €90 (Gold Unlimited) per persoon; privéjacht v.a. €220 voor de gehele boot. Alle prijzen bij MerrySails (Merry Tourism), TURSAB A-Groep vergund sinds 2001.",
       },
       {
         q: "Welke is de goedkoopste Bosphorus cruise?",
@@ -750,7 +752,7 @@ export const dutchProductPosts: BlogPost[] = [
       },
       {
         q: "Hoeveel kost een privéjacht in Istanbul?",
-        a: "Een privéjacht in Istanbul kost vanaf €280 voor de gehele boot (2 uur, 2–8 personen). Middelgrote jachten (8–20 pers.) kosten €500–900 voor 2–4 uur. Grote boten (20–50 pers.) vanaf €1.000. Kapitein en verzekering zijn altijd inbegrepen. Alle details: [privéjacht charter Istanbul](/nl/yacht-charter-istanbul).",
+        a: "Een privéjacht in Istanbul kost vanaf €220 voor de gehele boot (2 uur, tot 12 personen). Grotere jachten (tot 40 pers.) kosten €380–€500 voor 2–4 uur. Het eventjacht (tot 90 pers.) vanaf €1.200 (4 uur). Kapitein en verzekering zijn altijd inbegrepen. Alle details: [privéjacht charter Istanbul](/nl/yacht-charter-istanbul).",
       },
       {
         q: "Zijn hoteltransfer en diner inbegrepen in de prijs?",
@@ -768,7 +770,7 @@ export const dutchProductPosts: BlogPost[] = [
     slug: "prinseneilanden-istanbul-dagtocht-2026",
     locale: "nl",
     title: "Prinseneilanden Istanbul 2026: Dagtocht",
-    metaDescription: "Prinseneilanden dagtocht Istanbul 2026: Büyükada, Heybeliada. Veerboot vanaf €5, privé jacht vanaf €280. TURSAB-vergund sinds 2001.",
+    metaDescription: "Prinseneilanden dagtocht Istanbul 2026: Büyükada, Heybeliada. Veerboot vanaf €5, privé jacht vanaf €220. TURSAB-vergund sinds 2001.",
     excerpt: "Een dag op de Prinseneilanden: autovrije rust, victoriaanse villa's en de Zee van Marmara vlak voor Istanbul. Merry Tourism — TURSAB A-Groep vergund sinds 2001, meer dan 50.000 gasten — begeleidt u bij het plannen van deze onvergetelijke uitstap.",
     category: "istanbul",
     date: "2026-05-13",
@@ -788,7 +790,7 @@ export const dutchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "De Prinseneilanden (Adalar) liggen 20 km ten zuidoosten van Istanbul in de Zee van Marmara — geen auto's, victoriaanse villa's, koetsen",
       "Openbare veerboot (Şehir Hatları) vanaf Kabataş of Eminönü: vanaf ca. €5 — regelmatige dagelijkse vertrekken",
-      "Privé jachtcharter vanaf €280 voor de gehele boot — hop-on hop-off tussen de eilanden op uw eigen tempo",
+      "Privé jachtcharter vanaf €220 voor de gehele boot — hop-on hop-off tussen de eilanden op uw eigen tempo",
       "Büyükada is het grootste eiland; Heybeliada, Burgazada en Kınalıada zijn de moeite waard voor hun authenticiteit",
     ],
     sections: [
@@ -803,8 +805,8 @@ export const dutchProductPosts: BlogPost[] = [
       },
       {
         heading: "Hoe kom je bij de Prinseneilanden?",
-        answerCapsule: "Er zijn twee hoofdopties: de openbare Şehir Hatları-veerboot vanaf Kabataş of Eminönü (ca. €5, 60–90 min) of een privé jachtcharter met MerrySails (vanaf €280 voor de boot, flexibel vertrek). In de zomer zijn ook snelle IDO-veerboten beschikbaar.",
-        content: "Voor Nederlandse reizigers of bezoekers van Turkije zijn de reisopties overzichtelijk:\n\n**Optie 1: Openbare veerboot (Şehir Hatları)**\nDe goedkoopste en meest gebruikte optie. De Şehir Hatları (stadslijnen) verzorgen regelmatige dagelijkse vertrekken vanaf Kabataş (Europese zijde) en Eminönü (oude stad), met tussenstops op meerdere eilanden. Prijs: ca. €5 per rit (Istanbulkart of contant aan het terminal). Reistijd naar Büyükada: ca. 60 tot 90 minuten afhankelijk van de tussenstops. De veerboot is comfortabel, heeft een café aan boord en biedt spectaculaire uitzichten op de skyline van Istanbul bij het vertrek.\n\n**Optie 2: IDO-snelveerboot**\nDe private IDO-veerboten zijn sneller (ca. 35–40 min naar Büyükada) en comfortabeler, maar duurder en niet altijd in bedrijf — het seizoen en het weer bepalen dit. Boeken via de IDO-app of aan het terminal.\n\n**Optie 3: Privé jacht met MerrySails**\nVoor groepen of bijzondere gelegenheden is het privé [jachtcharter Istanbul](/nl/yacht-charter-istanbul) de exclusiefste optie. Vanaf €280 voor de gehele boot (2 tot 8 personen) bereikt u de eilanden via de directe waterroute, met zwempauzes onderweg en een volledig gepersonaliseerd tempo. Ideaal voor huwelijksreizen, families of kleine bedrijfsgroepen.\n\n**Let op:** Bij harde wind of storm kan de veerverbinding beperkt of opgeschort worden — de Zee van Marmara is meer blootgesteld dan de Bosphorus. Plan bij onzeker weer een alternatieve reisdag in.",
+        answerCapsule: "Er zijn twee hoofdopties: de openbare Şehir Hatları-veerboot vanaf Kabataş of Eminönü (ca. €5, 60–90 min) of een privé jachtcharter met MerrySails (vanaf €220 voor de boot, flexibel vertrek). In de zomer zijn ook snelle IDO-veerboten beschikbaar.",
+        content: "Voor Nederlandse reizigers of bezoekers van Turkije zijn de reisopties overzichtelijk:\n\n**Optie 1: Openbare veerboot (Şehir Hatları)**\nDe goedkoopste en meest gebruikte optie. De Şehir Hatları (stadslijnen) verzorgen regelmatige dagelijkse vertrekken vanaf Kabataş (Europese zijde) en Eminönü (oude stad), met tussenstops op meerdere eilanden. Prijs: ca. €5 per rit (Istanbulkart of contant aan het terminal). Reistijd naar Büyükada: ca. 60 tot 90 minuten afhankelijk van de tussenstops. De veerboot is comfortabel, heeft een café aan boord en biedt spectaculaire uitzichten op de skyline van Istanbul bij het vertrek.\n\n**Optie 2: IDO-snelveerboot**\nDe private IDO-veerboten zijn sneller (ca. 35–40 min naar Büyükada) en comfortabeler, maar duurder en niet altijd in bedrijf — het seizoen en het weer bepalen dit. Boeken via de IDO-app of aan het terminal.\n\n**Optie 3: Privé jacht met MerrySails**\nVoor groepen of bijzondere gelegenheden is het privé [jachtcharter Istanbul](/nl/yacht-charter-istanbul) de exclusiefste optie. Vanaf €220 voor de gehele boot (tot 12 personen) bereikt u de eilanden via de directe waterroute, met zwempauzes onderweg en een volledig gepersonaliseerd tempo. Ideaal voor huwelijksreizen, families of kleine bedrijfsgroepen.\n\n**Let op:** Bij harde wind of storm kan de veerverbinding beperkt of opgeschort worden — de Zee van Marmara is meer blootgesteld dan de Bosphorus. Plan bij onzeker weer een alternatieve reisdag in.",
       },
       {
         heading: "Openbare veerboot (Şehir Hatları) — prijzen en praktische details",
@@ -816,10 +818,10 @@ export const dutchProductPosts: BlogPost[] = [
         },
       },
       {
-        heading: "MerrySails privé jacht — vanaf €280 naar de eilanden",
-        answerCapsule: "Een privé jacht naar de Prinseneilanden kost vanaf €280 voor de gehele boot (2 tot 8 personen, 2 uur). Grotere groepen betalen €500 tot €900 (8 tot 20 pers.). Kapitein, bemanning en verzekering zijn altijd inbegrepen.",
-        content: "Voor reizigers die de Prinseneilanden willen ontdekken buiten de veerbootmassa's om, is het [privé jachtcharter Istanbul](/nl/yacht-charter-istanbul) van Merry Tourism de elegantste oplossing.\n\n**Wat biedt het privé jacht?**\n- Directe vaart naar het eiland van uw keuze (geen tussenstops op andere eilanden)\n- Zwempauzes onderweg — het Turkse water is kristalhelder\n- Catering naar wens (cateringpartner optioneel)\n- Flexibel vertrektijdstip (zonsondergangstour naar de eilanden beschikbaar!)\n- Kapitein en bemanning van Merry Tourism — TURSAB A-Groep vergund sinds 2001\n\n**Prijsoverzicht:**\n\n| Bootstype | Capaciteit | Duur | Prijs |\n|---|---|---|---|\n| Kleine boot | 2–8 personen | 2 uur | vanaf €280 |\n| Middelgrote boot | 8–20 personen | 2–4 uur | €500–900 |\n| Grote boot | 20–50 personen | 4–8 uur | vanaf €1.000 |\n\nBijzonder populair: gecombineerde tochten — 's ochtends [Bosphorus-cruise](/nl/bosphorus-cruise), 's middags privévaart naar de Prinseneilanden. Neem contact op met het team via WhatsApp (+90 537 040 68 22) voor een persoonlijk aanbod.\n\n**Voor wie is het privé jacht geschikt?**\n- Koppels voor een romantische eilanddag\n- Families met kinderen (geen gedrang, eigen tempo)\n- Kleine bedrijfsgroepen voor een teamervaring\n- Reizigers voor een huwelijk of jubileum",
-        proTip: "Bij 6 personen kost het privéjacht (€280 ÷ 6 = ca. €47/persoon) nauwelijks meer dan de veerboot plus entrees — maar u heeft de gehele boot voor uzelf.",
+        heading: "MerrySails privé jacht — vanaf €220 naar de eilanden",
+        answerCapsule: "Een privé jacht naar de Prinseneilanden kost vanaf €220 voor de gehele boot (tot 12 personen, 2 uur). Grotere groepen betalen €380 tot €500 (tot 40 pers.). Kapitein, bemanning en verzekering zijn altijd inbegrepen.",
+        content: "Voor reizigers die de Prinseneilanden willen ontdekken buiten de veerbootmassa's om, is het [privé jachtcharter Istanbul](/nl/yacht-charter-istanbul) van Merry Tourism de elegantste oplossing.\n\n**Wat biedt het privé jacht?**\n- Directe vaart naar het eiland van uw keuze (geen tussenstops op andere eilanden)\n- Zwempauzes onderweg — het Turkse water is kristalhelder\n- Catering naar wens (cateringpartner optioneel)\n- Flexibel vertrektijdstip (zonsondergangstour naar de eilanden beschikbaar!)\n- Kapitein en bemanning van Merry Tourism — TURSAB A-Groep vergund sinds 2001\n\n**Prijsoverzicht:**\n\n| Bootstype | Capaciteit | Duur | Prijs |\n|---|---|---|---|\n| Boutiquejacht | tot 12 personen | 2 uur | vanaf €220 |\n| Groepsjacht | 15–40 personen | 2–4 uur | €380–€500 |\n| Eventjacht | tot 90 personen | 4–8 uur | vanaf €1.200 |\n\nBijzonder populair: gecombineerde tochten — 's ochtends [Bosphorus-cruise](/nl/bosphorus-cruise), 's middags privévaart naar de Prinseneilanden. Neem contact op met het team via WhatsApp (+90 537 040 68 22) voor een persoonlijk aanbod.\n\n**Voor wie is het privé jacht geschikt?**\n- Koppels voor een romantische eilanddag\n- Families met kinderen (geen gedrang, eigen tempo)\n- Kleine bedrijfsgroepen voor een teamervaring\n- Reizigers voor een huwelijk of jubileum",
+        proTip: "Bij 6 personen kost het privéjacht (€220 ÷ 6 = ca. €37/persoon) nauwelijks meer dan de veerboot plus entrees — maar u heeft de gehele boot voor uzelf.",
       },
       {
         heading: "Büyükada — Het hoofdeiland",
@@ -844,11 +846,11 @@ export const dutchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Hoe kom ik van Istanbul naar de Prinseneilanden?",
-        a: "De handigste en goedkoopste optie is de Şehir Hatları-veerboot vanaf de Kabataş-steiger (naast het Dolmabahçe-paleis) of Eminönü-steiger (oude stad). Regelmatige dagelijkse vertrekken; reistijd naar Büyükada ca. 60 tot 90 minuten. Prijs ca. €5 per persoon. Alternatief: IDO-snelveerboot (ca. 35–40 min, duurder). Voor groepen biedt MerrySails privéjachten vanaf €280 voor de gehele boot.",
+        a: "De handigste en goedkoopste optie is de Şehir Hatları-veerboot vanaf de Kabataş-steiger (naast het Dolmabahçe-paleis) of Eminönü-steiger (oude stad). Regelmatige dagelijkse vertrekken; reistijd naar Büyükada ca. 60 tot 90 minuten. Prijs ca. €5 per persoon. Alternatief: IDO-snelveerboot (ca. 35–40 min, duurder). Voor groepen biedt MerrySails privéjachten vanaf €220 voor de gehele boot.",
       },
       {
         q: "Wat kost de veerboot naar de Prinseneilanden?",
-        a: "De openbare Şehir Hatları-veerboot naar de Prinseneilanden kost ca. €5 per persoon per rit (te betalen in Turkse lira aan het terminal; prijs kan licht variëren door wisselkoers). Istanbulkart-houders betalen iets goedkoper. Privéjacht MerrySails vanaf €280 voor de gehele boot (2 tot 8 personen).",
+        a: "De openbare Şehir Hatları-veerboot naar de Prinseneilanden kost ca. €5 per persoon per rit (te betalen in Turkse lira aan het terminal; prijs kan licht variëren door wisselkoers). Istanbulkart-houders betalen iets goedkoper. Privéjacht MerrySails vanaf €220 voor de gehele boot (tot 12 personen).",
       },
       {
         q: "Is de dagtocht naar de Prinseneilanden de moeite waard?",
@@ -856,7 +858,7 @@ export const dutchProductPosts: BlogPost[] = [
       },
       {
         q: "Kan ik een privéjacht huren naar de Prinseneilanden?",
-        a: "Ja. Merry Tourism biedt privéjachten naar de Prinseneilanden aan vanaf €280 voor de gehele boot (2 tot 8 personen, 2 uur). Voor grotere groepen (8 tot 20 pers.) kost het jacht €500 tot €900 voor 2 tot 4 uur. Kapitein en bemanning zijn altijd inbegrepen. Contact: WhatsApp +90 537 040 68 22. Meer informatie: [privéjacht charter Istanbul](/nl/yacht-charter-istanbul).",
+        a: "Ja. Merry Tourism biedt privéjachten naar de Prinseneilanden aan vanaf €220 voor de gehele boot (tot 12 personen, 2 uur). Voor grotere groepen (tot 40 pers.) kost het jacht €380 tot €500 voor 2 tot 4 uur. Kapitein en bemanning zijn altijd inbegrepen. Contact: WhatsApp +90 537 040 68 22. Meer informatie: [privéjacht charter Istanbul](/nl/yacht-charter-istanbul).",
       },
       {
         q: "Hoe lang duurt de uitstap naar de Prinseneilanden?",
