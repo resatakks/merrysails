@@ -22,13 +22,16 @@ export default function CTASection({ locale = "en" }: { locale?: Locale } = {}) 
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-[var(--brand-gold)]/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
       <div className="container-main relative z-10 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[var(--brand-gold)]">
+          Book direct with the operator
+        </p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Build Around the Three Core Booking Pages
+          Ready to sail the Bosphorus?
         </h2>
         <p className="text-white/80 mb-8 max-w-lg mx-auto text-lg">
-          Start with the sunset cruise, the dinner cruise, or the yacht charter page.
-          Service-led requests can then flow into proposal, private dinner, boat rental,
-          and corporate event pages.
+          Compare every sunset, dinner, and private yacht option side by side, or
+          message the team for a tailored plan — same boat and crew, direct
+          operator price, no hidden fees.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/bosphorus-cruise" className="btn-cta text-base !py-3.5 !px-8">
@@ -60,23 +63,6 @@ export default function CTASection({ locale = "en" }: { locale?: Locale } = {}) 
             <Phone className="w-4 h-4" />
             Call Us
           </TrackedContactLink>
-        </div>
-        <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
-          <Link href="/bosphorus-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Bosphorus Cruise Hub
-          </Link>
-          <span className="text-white/30">·</span>
-          <Link href="/cruises/bosphorus-sunset-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Bosphorus Sunset Cruise
-          </Link>
-          <span className="text-white/30">·</span>
-          <Link href="/istanbul-dinner-cruise" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Bosphorus Dinner Cruise
-          </Link>
-          <span className="text-white/30">·</span>
-          <Link href="/yacht-charter-istanbul" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">
-            Yacht Charter Istanbul
-          </Link>
         </div>
       </div>
     </section>

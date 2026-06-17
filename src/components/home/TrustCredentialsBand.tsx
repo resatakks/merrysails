@@ -9,10 +9,12 @@
  *      sourced from `src/lib/trust-evidence.ts`, so it stays truthful and
  *      stays in sync with the AI-citation TrustEvidence block below it.
  *   2. A verification / review-platform logo row (TripAdvisor, Google Reviews,
- *      Trustpilot, iyzico secure payment, TÜRSAB).  Framed truthfully as
- *      "verified on" / "secure payments via" — NO fabricated per-platform star
- *      counts.  Muted grayscale that warms to full brand colour on hover so it
- *      reads premium, not spammy.
+ *      Trustpilot, TÜRSAB) under "Reviewed & verified on", plus a dedicated
+ *      payment + security row (PaymentTrust, light tone) under "Secure payment"
+ *      carrying the real card / wallet marks + 256-bit SSL.  Framed truthfully
+ *      as "verified on" — NO fabricated per-platform star counts.  Muted
+ *      grayscale that warms to full brand colour on hover so it reads premium,
+ *      not spammy.
  *   3. The three safety / licensing trust points (licensed agency, Bosphorus-
  *      specific planning, safety & boarding clarity) — folded in from the old
  *      standalone text-wall on the homepage so the E-E-A-T / AI signal copy is
@@ -22,6 +24,7 @@
  */
 import { ShieldCheck, Compass, LifeBuoy } from "lucide-react";
 import { cn } from "@/lib/utils";
+import PaymentTrust from "@/components/marketing/PaymentTrust";
 import {
   PARENT_OPERATOR_STATS,
   SATISFACTION_STATS,
@@ -80,24 +83,6 @@ function TrustpilotBadge() {
   );
 }
 
-function IyzicoBadge() {
-  return (
-    <svg viewBox="0 0 64 18" className="h-4 w-auto" role="img" aria-label="iyzico secure payment">
-      <text
-        x="0"
-        y="14"
-        fontFamily="Arial, Helvetica, sans-serif"
-        fontSize="16"
-        fontWeight="700"
-        fill="#1E64FF"
-        letterSpacing="-0.5"
-      >
-        iyzico
-      </text>
-    </svg>
-  );
-}
-
 function TursabBadge() {
   return (
     <svg viewBox="0 0 64 18" className="h-4 w-auto" role="img" aria-label="TÜRSAB licensed">
@@ -121,7 +106,6 @@ const verificationBadges = [
   { node: <TripAdvisorBadge />, caption: "Tripadvisor", note: "Reviewed on" },
   { node: <GoogleReviewsBadge />, caption: "Google Reviews", note: "Verified on" },
   { node: <TrustpilotBadge />, caption: "Trustpilot", note: "Reviewed on" },
-  { node: <IyzicoBadge />, caption: "iyzico", note: "Secure payments" },
   { node: <TursabBadge />, caption: `#${PARENT_OPERATOR_STATS.tursabLicenseNumber}`, note: "Licensed agency" },
 ] as const;
 
@@ -241,6 +225,18 @@ export default function TrustCredentialsBand({ className }: Props) {
             </li>
           ))}
         </ul>
+
+        {/* Payment + security row — real card / wallet marks + SSL, legible on
+            the light band via PaymentTrust's "light" tone. */}
+        <p className="mt-9 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          Secure payment
+        </p>
+        <div className="mt-4 flex justify-center">
+          <PaymentTrust
+            tone="light"
+            className="justify-center rounded-2xl border border-[var(--line)] bg-white px-5 py-4"
+          />
+        </div>
 
         {/* Safety & licensing credentials */}
         <div className="mt-12 grid gap-4 md:grid-cols-3">

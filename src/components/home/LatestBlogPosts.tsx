@@ -21,52 +21,6 @@ const normalizedLatestPosts = latestPosts.map((post) => ({
   imageAlt: post.imageAlt ? cleanContentText(post.imageAlt) : post.imageAlt,
 }));
 
-const commercialNextSteps = [
-  {
-    href: "/proposal-yacht-rental-istanbul",
-    title: "Proposal Yacht Rental for the full reveal plan",
-    description: "Privacy, route timing, and the proposal setup stay together before you narrow into extras like photography.",
-  },
-  {
-    href: "/private-dinner-cruise-for-couples-istanbul",
-    title: "Couples Private Dinner for a quieter reserved evening",
-    description: "Reserved yacht dining, calmer pacing, and a couple-led private Bosphorus evening stay in one place.",
-  },
-  {
-    href: "/corporate-events",
-    title: "Corporate Events for broader company briefs",
-    description: "Client hosting, launches, team events, and invoice-led corporate planning stay centered before narrowing into a support page.",
-  },
-  {
-    href: "/yacht-charter-istanbul",
-    title: "Yacht Charter Istanbul for private crews and onboard service",
-    description: "Private yacht charter keeps route, crew, and service details in one place for higher-intent bookings.",
-  },
-];
-
-const searchIntentShortcuts = [
-  {
-    href: "/boat-rental-hourly-istanbul",
-    title: "Boat Rental Hourly for a lighter private brief",
-    description: "A shorter, hour-led private boat plan without moving straight into a fuller package-driven charter.",
-  },
-  {
-    href: "/dinner-cruise-with-hotel-pickup-istanbul",
-    title: "Dinner Pickup Support for hotel-led evening plans",
-    description: "Pickup logic, central-area eligibility, and the shared dinner route stay together before the booking step.",
-  },
-  {
-    href: "/proposal-yacht-with-photographer-istanbul",
-    title: "Proposal Yacht with Photographer for discreet coverage",
-    description: "Timing, privacy, photographer positioning, and celebration details stay centered on the proposal moment.",
-  },
-  {
-    href: "/corporate-yacht-dinner-istanbul",
-    title: "Corporate Yacht Dinner for a dinner-led company brief",
-    description: "Meal flow, guest hosting, and a private company evening stay in focus without forcing a broader event page.",
-  },
-];
-
 export default function LatestBlogPosts() {
   return (
     <section className="py-16 md:py-24 bg-[var(--surface-alt)]">
@@ -136,62 +90,6 @@ export default function LatestBlogPosts() {
               </article>
             </Link>
           ))}
-        </div>
-
-        <div className="mt-10 rounded-[2rem] border border-[var(--line)] bg-white p-6 md:p-8 shadow-sm">
-          <div className="max-w-3xl mb-6">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">
-              Need a more specific private plan?
-            </h3>
-            <p className="text-[var(--text-muted)]">
-              If your evening is already taking shape, these shortcuts point to
-              the most relevant private setup.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {commercialNextSteps.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5 hover:border-[var(--brand-primary)]/30 hover:shadow-md transition-all"
-              >
-                <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-sm text-[var(--text-muted)] mb-4">{item.description}</p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)]">
-                  See details
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 rounded-[2rem] border border-[var(--line)] bg-white p-6 md:p-8 shadow-sm">
-          <div className="max-w-3xl mb-6">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">
-              Explore the experience that matches your plan
-            </h3>
-            <p className="text-[var(--text-muted)]">
-              Some guests want a simpler boat rental, a private dinner, or a
-              celebration setup rather than a standard shared cruise.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {searchIntentShortcuts.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] p-5 hover:border-[var(--brand-primary)]/30 hover:shadow-md transition-all"
-              >
-                <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-sm text-[var(--text-muted)] mb-4">{item.description}</p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)]">
-                  See details
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
 
         {/* View All Link */}

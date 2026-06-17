@@ -136,6 +136,9 @@ const planLinks = [
   { label: "MerrySails vs Bosphorustour", href: "/merrysails-vs-bosphorustour" },
   { label: "MerrySails vs Viator", href: "/merrysails-vs-viator" },
   { label: "Pricing", href: "/pricing" },
+  // Preserved from the removed homepage CommercialIntentSection — the price
+  // guide was the only one of its 8 surfaced links not already in the footer.
+  { label: "Bosphorus Cruise Prices 2026", href: "/blog/bosphorus-cruise-prices-2026" },
   { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
   { label: "Cruise from Sultanahmet", href: "/bosphorus-cruise-from-sultanahmet" },
   { label: "Cruise from Taksim", href: "/bosphorus-cruise-from-taksim" },

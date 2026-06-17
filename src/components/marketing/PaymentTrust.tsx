@@ -52,12 +52,33 @@ function GooglePayIcon() {
 
 interface Props {
   className?: string;
+  /**
+   * Visual context for the row.
+   *
+   *  - "dark"  (default): built for the dark footer — gold SSL label, white/50
+   *    "Pay onboard" line, card SVGs sit bare on the dark surface.
+   *  - "light": for light/gradient surfaces (e.g. the homepage TrustCredentials
+   *    band). The SSL label + "Pay onboard" line switch to dark/brand text so
+   *    they stay legible, and the card icons get a subtle white chip so their
+   *    own backgrounds read cleanly against the gradient.
+   *
+   * The card SVGs carry their own backgrounds, so only the surrounding text
+   * and the icon chip change between tones.
+   */
+  tone?: "dark" | "light";
 }
 
-export default function PaymentTrust({ className = "" }: Props) {
+export default function PaymentTrust({ className = "", tone = "dark" }: Props) {
+  const isLight = tone === "light";
   return (
     <div className={`flex flex-wrap items-center gap-x-4 gap-y-2 ${className}`}>
-      <div className="flex items-center gap-1.5">
+      <div
+        className={
+          isLight
+            ? "flex items-center gap-1.5 rounded-xl border border-[var(--line)] bg-white px-2.5 py-1.5"
+            : "flex items-center gap-1.5"
+        }
+      >
         <VisaIcon />
         <MastercardIcon />
         <AmexIcon />
@@ -70,9 +91,17 @@ export default function PaymentTrust({ className = "" }: Props) {
           <path d="M5 7V5a3 3 0 0 1 6 0v2" stroke="currentColor" strokeWidth="1.5" fill="none" />
           <circle cx="8" cy="11" r="1.2" fill="white" />
         </svg>
-        <span className="text-[11px] font-medium text-[var(--brand-gold)]">256-bit SSL</span>
+        <span className="text-[11px] font-semibold text-[var(--brand-gold)]">256-bit SSL</span>
       </div>
-      <span className="text-[11px] text-white/50">Pay onboard or in advance &middot; &euro; &middot; &pound; &middot; $</span>
+      <span
+        className={
+          isLight
+            ? "text-[11px] font-medium text-[var(--text-muted)]"
+            : "text-[11px] text-white/50"
+        }
+      >
+        Pay onboard or in advance &middot; &euro; &middot; &pound; &middot; $
+      </span>
     </div>
   );
 }

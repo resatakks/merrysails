@@ -11,7 +11,6 @@ import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
 import LatestBlogPosts from "@/components/home/LatestBlogPosts";
 import BosphorusGuideSection from "@/components/home/BosphorusGuideSection";
-import CommercialIntentSection from "@/components/home/CommercialIntentSection";
 import Link from "next/link";
 import { tours } from "@/data/tours";
 import { buildHreflang } from "@/lib/hreflang";
@@ -305,7 +304,6 @@ export default function HomePage() {
       <FeaturedTour tour={tours[1]} reverse />
       <FeaturedTour tour={tours[2]} />
 
-      <CommercialIntentSection compact />
       <WhyUs />
 
       <BosphorusGuideSection />
