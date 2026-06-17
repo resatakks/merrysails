@@ -134,8 +134,8 @@ const HEADER: Record<ChromeLocale, HeaderStrings> = {
   },
   tr: {
     cruises: "Turlar",
-    sunsetCruise: "Gün Batımı Turu",
-    dinnerCruise: "Akşam Yemeği Turu",
+    sunsetCruise: "Gün Batımı",
+    dinnerCruise: "Akşam Yemeği",
     yachtCharter: "Yat Kiralama",
     guides: "Rehberler",
     blog: "Blog",
@@ -157,7 +157,7 @@ const HEADER: Record<ChromeLocale, HeaderStrings> = {
   de: {
     cruises: "Kreuzfahrten",
     sunsetCruise: "Sonnenuntergang",
-    dinnerCruise: "Dinner-Kreuzfahrt",
+    dinnerCruise: "Dinner-Cruise",
     yachtCharter: "Yachtcharter",
     guides: "Reiseführer",
     blog: "Blog",
