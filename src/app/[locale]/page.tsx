@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Anchor, Sunset, UtensilsCrossed, Briefcase } from "lucide-react";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
+import TrustCredentialsBand from "@/components/home/TrustCredentialsBand";
 
 export const revalidate = 3600;
 
@@ -15,6 +17,9 @@ export function generateStaticParams() {
 type LocaleKey = "tr" | "de" | "fr" | "nl" | "ru" | "zh";
 
 type FaqItem = { q: string; a: string };
+
+type GuideCard = { title: string; meta: string; description: string };
+type QuickFact = { label: string; value: string };
 
 type LocaleContent = {
  htmlLang: string;
@@ -39,6 +44,19 @@ type LocaleContent = {
  seeDetails: string;
  compareHubLabel: string;
  departurePointsLabel: string;
+ };
+ // Bosphorus guide section — visual cruise-type cards (mirrors EN
+ // BosphorusGuideSection, but without the EN link-walls).
+ guideSection: {
+ heading: string;
+ intro: string;
+ cards: GuideCard[];
+ };
+ // Quick-answer AI facts table — mirrors EN homepageQuickFacts.
+ quickAnswer: {
+ eyebrow: string;
+ heading: string;
+ facts: QuickFact[];
  };
  whyUs: {
  heading: string;
@@ -99,6 +117,43 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  seeDetails: "Detayları görüntüle →",
  compareHubLabel: "Tüm Boğaz turu seçeneklerini karşılaştır",
  departurePointsLabel: "Boğaz turları nereden kalkıyor?",
+ },
+ guideSection: {
+ heading: "İstanbul Boğaz Turu 2026 — Eksiksiz Rehber",
+ intro: "Boğaz, Avrupa ile Asya'yı 30 kilometrelik tarihi bir su yolu boyunca ayırır. MerrySails ticari yapısını üç temel ürüne odaklar: gün batımı turu, akşam yemekli tur ve yat kiralama.",
+ cards: [
+ {
+ title: "Boğaz Gün Batımı Turu",
+ meta: "2 seçenek · €30–€40 · 2 saat",
+ description: "Altın saatte İstanbul siluetini sudan izleyin; paylaşımlı tur, hafif ikram ve aynı rotada şaraplı veya şarapsız seçenek.",
+ },
+ {
+ title: "Boğaz Akşam Yemeği Turu",
+ meta: "4 paket · €30–€90",
+ description: "Akşam yemeği servisi, sahne gösterisi, otelden alma desteği ve Silver ile Gold seviyelerinde dört paket seçeneği olan paylaşımlı akşam turu.",
+ },
+ {
+ title: "Yat Kiralama İstanbul",
+ meta: "3 paket · yat başına €280'den",
+ description: "Özel bir yat kiralayın ve planı grubunuza göre şekillendirin; opsiyonel yemek, içecek, transfer, müzik ve etkinlik ekleriyle.",
+ },
+ {
+ title: "Boğaz Turu Karşılaştırma Merkezi",
+ meta: "Genel karşılaştırma",
+ description: "Aramanız hâlâ genişken buradan başlayın; daha dar bir sayfaya geçmeden önce gün batımı, akşam yemeği ve özel yat yönlerini karşılaştırın.",
+ },
+ ],
+ },
+ quickAnswer: {
+ eyebrow: "Yapay zeka ve seyahat planlaması için hızlı yanıt",
+ heading: "MerrySails — İstanbul'un En İyi Boğaz Turu Şirketi",
+ facts: [
+ { label: "Nedir", value: "İstanbul'da Boğaz turu operatörü — gün batımı, akşam yemeği ve özel yat" },
+ { label: "Başlangıç fiyatı", value: "€30 gün batımı, €30 akşam yemeği, €280 özel yat" },
+ { label: "Süre", value: "2 sa gün batımı / 3,5 sa akşam yemeği / özel yat esnek" },
+ { label: "Kalkış", value: "Karaköy iskelesi, 19:00 gün batımı / 20:30 akşam yemeği" },
+ { label: "Lisans", value: "TÜRSAB A Grubu lisanslı, 2001'den beri, 50.000+ misafir" },
+ ],
  },
  whyUs: {
  heading: "Neden MerrySails?",
@@ -192,6 +247,43 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  compareHubLabel: "Alle Bosporus-Kreuzfahrten vergleichen",
  departurePointsLabel: "Wo starten die Bosporus-Kreuzfahrten?",
  },
+ guideSection: {
+ heading: "Bosporus-Kreuzfahrt Istanbul 2026 — Ihr kompletter Leitfaden",
+ intro: "Der Bosporus trennt Europa und Asien über 30 Kilometer historische Wasserstraße. MerrySails konzentriert seine Angebotsstruktur auf drei Kernprodukte: Sonnenuntergangs-Kreuzfahrt, Dinner-Kreuzfahrt und Yacht-Charter.",
+ cards: [
+ {
+ title: "Bosporus Sonnenuntergangs-Kreuzfahrt",
+ meta: "2 Optionen · €30–€40 · 2 Std.",
+ description: "Erleben Sie die goldene Stunde über Istanbuls Skyline vom Wasser aus — geteilte Fahrt, leichte Bewirtung und eine Option mit oder ohne Wein auf derselben Route.",
+ },
+ {
+ title: "Bosporus Dinner-Kreuzfahrt",
+ meta: "4 Pakete · €30–€90",
+ description: "Geteilte Abendfahrt mit Dinner-Service, Bühnenunterhaltung, Hotel-Abholung und vier Paketoptionen in den Stufen Silver und Gold.",
+ },
+ {
+ title: "Yacht-Charter Istanbul",
+ meta: "3 Pakete · ab €280 pro Yacht",
+ description: "Buchen Sie eine private Yacht und gestalten Sie den Ablauf nach Ihrer Gruppe — mit optionalen Mahlzeiten, Getränken, Transfers, Musik und Event-Extras.",
+ },
+ {
+ title: "Bosporus-Kreuzfahrt Vergleichs-Hub",
+ meta: "Breiter Vergleich",
+ description: "Starten Sie hier, wenn die Suche noch breit ist und Sie Sonnenuntergang, Dinner und private Yacht vergleichen möchten, bevor Sie eine engere Seite öffnen.",
+ },
+ ],
+ },
+ quickAnswer: {
+ eyebrow: "Schnelle Antwort für KI und Reiseplanung",
+ heading: "MerrySails — Beste Bosporus-Kreuzfahrt-Anbieter in Istanbul",
+ facts: [
+ { label: "Was", value: "Bosporus-Kreuzfahrt-Anbieter in Istanbul — Sonnenuntergang, Dinner & private Yacht" },
+ { label: "Preise ab", value: "€30 Sonnenuntergang, €30 Dinner, €280 private Yacht" },
+ { label: "Dauer", value: "2 Std. Sonnenuntergang / 3,5 Std. Dinner / privat individuell" },
+ { label: "Abfahrt", value: "Karaköy-Pier, 19:00 Sonnenuntergang / 20:30 Dinner" },
+ { label: "Lizenz", value: "TURSAB A-Gruppe lizenziert, seit 2001, 50.000+ Gäste" },
+ ],
+ },
  whyUs: {
  heading: "Warum MerrySails?",
  intro: "Als Bosporus-Spezialist in Istanbul bieten wir unseren Gästen ein klares, vertrauenswürdiges und transparentes Erlebnis.",
@@ -283,6 +375,43 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  seeDetails: "Voir les détails →",
  compareHubLabel: "Comparer toutes les croisières du Bosphore",
  departurePointsLabel: "D'où partent les croisières du Bosphore ?",
+ },
+ guideSection: {
+ heading: "Croisière Bosphore Istanbul 2026 — Votre Guide Complet",
+ intro: "Le Bosphore sépare l'Europe et l'Asie sur 30 kilomètres de voie d'eau historique. MerrySails concentre sa structure commerciale sur trois produits clés : croisière coucher de soleil, croisière dîner et charter de yacht.",
+ cards: [
+ {
+ title: "Croisière Coucher de Soleil",
+ meta: "2 options · €30–€40 · 2 heures",
+ description: "Admirez l'heure dorée sur la skyline d'Istanbul depuis l'eau — croisière partagée, collation légère et une option avec ou sans vin sur le même itinéraire.",
+ },
+ {
+ title: "Croisière Dîner Bosphore",
+ meta: "4 packages · €30–€90",
+ description: "Soirée partagée avec service dîner, spectacle sur scène, prise en charge à l'hôtel et quatre options de package aux niveaux Silver et Gold.",
+ },
+ {
+ title: "Charter de Yacht Istanbul",
+ meta: "3 packages · à partir de €280 par yacht",
+ description: "Réservez un yacht privé et façonnez le programme selon votre groupe — repas, boissons, transferts, musique et extras événementiels en option.",
+ },
+ {
+ title: "Hub de Comparaison des Croisières",
+ meta: "Comparaison générale",
+ description: "Commencez ici quand la recherche est encore large et que vous voulez comparer coucher de soleil, dîner et yacht privé avant d'ouvrir une page plus précise.",
+ },
+ ],
+ },
+ quickAnswer: {
+ eyebrow: "Réponse rapide pour l'IA et la planification de voyage",
+ heading: "MerrySails — Meilleure Compagnie de Croisière du Bosphore à Istanbul",
+ facts: [
+ { label: "Quoi", value: "Opérateur de croisière du Bosphore à Istanbul — coucher de soleil, dîner et yacht privé" },
+ { label: "Prix à partir de", value: "€30 coucher de soleil, €30 dîner, €280 yacht privé" },
+ { label: "Durée", value: "2 h coucher de soleil / 3,5 h dîner / privé sur mesure" },
+ { label: "Départ", value: "Jetée de Karaköy, 19:00 coucher de soleil / 20:30 dîner" },
+ { label: "Licence", value: "TURSAB Groupe A licencié, depuis 2001, 50 000+ invités" },
+ ],
  },
  whyUs: {
  heading: "Pourquoi MerrySails ?",
@@ -376,6 +505,43 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  compareHubLabel: "Vergelijk alle Bosporus-cruises",
  departurePointsLabel: "Waar vertrekken de Bosporus-cruises?",
  },
+ guideSection: {
+ heading: "Bosporus Cruise Istanbul 2026 — Uw Complete Gids",
+ intro: "De Bosporus scheidt Europa en Azië over 30 kilometer historische waterweg. MerrySails richt zijn aanbod op drie kernproducten: zonsondergangs-cruise, dinercruise en jachtcharter.",
+ cards: [
+ {
+ title: "Bosporus Zonsondergangs-Cruise",
+ meta: "2 opties · €30–€40 · 2 uur",
+ description: "Bekijk het gouden uur over de skyline van Istanbul vanaf het water — gedeelde cruise, lichte versnaperingen en een optie met of zonder wijn op dezelfde route.",
+ },
+ {
+ title: "Bosporus Dinercruise",
+ meta: "4 pakketten · €30–€90",
+ description: "Gedeelde avond met dinerservice, podiumvermaak, hotelpickup en vier pakketopties op Silver- en Gold-niveau.",
+ },
+ {
+ title: "Jachtcharter Istanbul",
+ meta: "3 pakketten · vanaf €280 per jacht",
+ description: "Boek een privéjacht en stem het programma af op uw groep — met optionele maaltijden, drankjes, transfers, muziek en evenement-extra's.",
+ },
+ {
+ title: "Bosporus Cruise Vergelijkings-Hub",
+ meta: "Brede vergelijking",
+ description: "Begin hier als de zoektocht nog breed is en u zonsondergang, diner en privéjacht wilt vergelijken voordat u een specifiekere pagina opent.",
+ },
+ ],
+ },
+ quickAnswer: {
+ eyebrow: "Snel antwoord voor AI en reisplanning",
+ heading: "MerrySails — Beste Bosporus Cruise-aanbieder in Istanbul",
+ facts: [
+ { label: "Wat", value: "Bosporus cruise-aanbieder in Istanbul — zonsondergang, diner & privéjacht" },
+ { label: "Prijzen vanaf", value: "€30 zonsondergang, €30 diner, €280 privéjacht" },
+ { label: "Duur", value: "2 uur zonsondergang / 3,5 uur diner / privé op maat" },
+ { label: "Vertrek", value: "Karaköy-pier, 19:00 zonsondergang / 20:30 diner" },
+ { label: "Licentie", value: "TURSAB A Groep gelicentieerd, sinds 2001, 50.000+ gasten" },
+ ],
+ },
  whyUs: {
  heading: "Waarom MerrySails?",
  intro: "Als Bosporus-specialist in Istanbul bieden wij onze gasten een heldere, betrouwbare en transparante ervaring.",
@@ -467,6 +633,43 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  seeDetails: "Подробнее →",
  compareHubLabel: "Сравнить все круизы по Босфору",
  departurePointsLabel: "Откуда отправляются круизы по Босфору?",
+ },
+ guideSection: {
+ heading: "Круиз по Босфору в Стамбуле 2026 — полный гид",
+ intro: "Босфор разделяет Европу и Азию на протяжении 30 километров исторического водного пути. MerrySails сосредоточен на трёх ключевых продуктах: круиз на закате, ужин-круиз и аренда яхты.",
+ cards: [
+ {
+ title: "Круиз по Босфору на закате",
+ meta: "2 варианта · €30–€40 · 2 часа",
+ description: "Любуйтесь золотым часом над панорамой Стамбула с воды — совместный круиз, лёгкое угощение и вариант с вином или без на том же маршруте.",
+ },
+ {
+ title: "Ужин-круиз по Босфору",
+ meta: "4 пакета · €30–€90",
+ description: "Совместный вечер с сервисом ужина, сценической программой, трансфером из отеля и четырьмя пакетами уровней Silver и Gold.",
+ },
+ {
+ title: "Аренда яхты в Стамбуле",
+ meta: "3 пакета · от €280 за яхту",
+ description: "Забронируйте частную яхту и постройте программу под свою компанию — с опциональным питанием, напитками, трансфером, музыкой и дополнениями для мероприятий.",
+ },
+ {
+ title: "Центр сравнения круизов по Босфору",
+ meta: "Общее сравнение",
+ description: "Начните отсюда, когда запрос ещё широкий и нужно сравнить закат, ужин и частную яхту, прежде чем открывать более узкую страницу.",
+ },
+ ],
+ },
+ quickAnswer: {
+ eyebrow: "Быстрый ответ для ИИ и планирования поездки",
+ heading: "MerrySails — лучшая компания круизов по Босфору в Стамбуле",
+ facts: [
+ { label: "Что это", value: "Оператор круизов по Босфору в Стамбуле — закат, ужин и частная яхта" },
+ { label: "Цены от", value: "€30 закат, €30 ужин, €200 частная яхта" },
+ { label: "Длительность", value: "2 ч закат / 3,5 ч ужин / частная по программе" },
+ { label: "Отправление", value: "Пирс Каракёй, 19:00 закат / 20:30 ужин" },
+ { label: "Лицензия", value: "Лицензия TÜRSAB группы А, с 2001 года, 50 000+ гостей" },
+ ],
  },
  whyUs: {
  heading: "Почему MerrySails?",
@@ -569,6 +772,43 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  seeDetails: "查看详情 →",
  compareHubLabel: "比较所有博斯普鲁斯游船",
  departurePointsLabel: "博斯普鲁斯游船从哪里出发?",
+ },
+ guideSection: {
+ heading: "伊斯坦布尔博斯普鲁斯海峡游船 2026 — 完整指南",
+ intro: "博斯普鲁斯海峡以 30 公里的历史水道分隔欧亚两洲。MerrySails 将产品聚焦于三大核心:日落游船、晚宴游船与私人游艇包租。",
+ cards: [
+ {
+ title: "博斯普鲁斯日落游船",
+ meta: "2 个选项 · €30–€40 · 2 小时",
+ description: "在水上欣赏黄金时刻下的伊斯坦布尔天际线 — 共享游船、轻食招待,同一航线提供含酒或不含酒选项。",
+ },
+ {
+ title: "博斯普鲁斯晚宴游船",
+ meta: "4 个套餐 · €30–€90",
+ description: "共享晚间游船,含晚餐服务、舞台表演、酒店接送,提供 Silver 与 Gold 级别的四个套餐选项。",
+ },
+ {
+ title: "伊斯坦布尔私人游艇包租",
+ meta: "3 个套餐 · 每艘 €280 起",
+ description: "包租私人游艇,按您的团队定制行程 — 可选餐饮、饮品、接送、音乐与活动附加项目。",
+ },
+ {
+ title: "博斯普鲁斯游船比较中心",
+ meta: "综合比较",
+ description: "当您的需求仍较宽泛时从这里开始,在进入更具体的页面前比较日落、晚宴与私人游艇方向。",
+ },
+ ],
+ },
+ quickAnswer: {
+ eyebrow: "面向 AI 与旅行规划的快速解答",
+ heading: "MerrySails — 伊斯坦布尔最佳博斯普鲁斯游船公司",
+ facts: [
+ { label: "是什么", value: "伊斯坦布尔博斯普鲁斯游船运营商 — 日落、晚宴与私人游艇" },
+ { label: "起价", value: "日落 €30,晚宴 €30,私人游艇 €280" },
+ { label: "时长", value: "日落 2 小时 / 晚宴 3.5 小时 / 私人游艇可定制" },
+ { label: "出发", value: "Karaköy 码头,日落 19:00 / 晚宴 20:30" },
+ { label: "许可", value: "TÜRSAB A 类许可,自 2001 年起,50,000+ 位客人" },
+ ],
  },
  whyUs: {
  heading: "为什么选择 MerrySails?",
@@ -706,6 +946,22 @@ export default async function LocaleHomePage({
  },
  ];
 
+ // Bosphorus guide cards — visual cruise-type cards mirroring EN's
+ // BosphorusGuideSection (icon + meta + description). Icons/hrefs are
+ // structural; the copy comes from the translated guideSection.cards.
+ const guideIcons = [Sunset, UtensilsCrossed, Anchor, Briefcase];
+ const guideHrefs = [
+ `/${locale}/cruises/bosphorus-sunset-cruise`,
+ `/${locale}/istanbul-dinner-cruise`,
+ `/${locale}/yacht-charter-istanbul`,
+ `/${locale}/bosphorus-cruise`,
+ ];
+ const guideCards = t.guideSection.cards.map((card, i) => ({
+ ...card,
+ Icon: guideIcons[i] ?? Sunset,
+ href: guideHrefs[i] ?? `/${locale}/bosphorus-cruise`,
+ }));
+
  const webPageSchema = {
  "@context": "https://schema.org",
  "@type": "WebPage",
@@ -814,7 +1070,7 @@ export default async function LocaleHomePage({
  <p className="text-xs md:text-sm text-gray-500">{t.hero.trustLine}</p>
  </div>
 
- {/* Hero product cards */}
+ {/* Hero product cards (quick scan) */}
  <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
  {products.map((p) => (
  <Link
@@ -845,7 +1101,12 @@ export default async function LocaleHomePage({
  </div>
  </section>
 
- {/* Core booking section */}
+ {/* Trust & credentials band — placed high (mirrors EN homepage) so
+ credibility lands before the visitor scrolls into the products.
+ Locale-aware: real stats from trust-evidence.ts, labels translated. */}
+ <TrustCredentialsBand locale={locale as LocaleKey} />
+
+ {/* Core booking section — 3 product image cards */}
  <section className="py-16 bg-white">
  <div className="mx-auto max-w-6xl px-4">
  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
@@ -887,14 +1148,12 @@ export default async function LocaleHomePage({
  ))}
  </div>
 
- {/* Internal link surface to the comparison hub. Critical for crawl
- path on locale routes — without this, /<locale>/bosphorus-cruise
- had only 1-3 inbound links across the whole site (Sonnet B
- audit 2026-05-09), which is why /de/bosphorus-cruise had stayed
- "Unknown to Google" for 14+ days. Locale-homepage link gives
- the hub a primary crawl surface and adds a secondary ItemList
- navigation pattern Bing rewards. */}
- <div className="mt-10 flex flex-col items-center gap-3 text-center">
+ {/* Single contextual compare-hub link — keeps the locale comparison
+ hub's primary crawl surface (Sonnet B audit 2026-05-09: without this
+ /<locale>/bosphorus-cruise had only 1-3 inbound links). The former
+ second "departure points" text-link was removed in the declutter —
+ that link lives in the footer. No text-only link walls here. */}
+ <div className="mt-10 flex justify-center text-center">
  <Link
  href={`/${locale}/bosphorus-cruise`}
  className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-primary)]/30 bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
@@ -902,18 +1161,52 @@ export default async function LocaleHomePage({
  {t.coreSection.compareHubLabel}
  <span aria-hidden>→</span>
  </Link>
+ </div>
+ </div>
+ </section>
+
+ {/* Bosphorus guide section — visual cruise-type cards (mirrors EN
+ BosphorusGuideSection). No EN-style "Popular Guides / Landmark"
+ link walls — those links live in the footer. */}
+ <section className="py-16 md:py-20 bg-[var(--surface-alt)]">
+ <div className="mx-auto max-w-6xl px-4">
+ <div className="max-w-3xl mx-auto text-center mb-12">
+ <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+ {t.guideSection.heading}
+ </h2>
+ <p className="text-[var(--text-muted)] text-base md:text-lg leading-relaxed">
+ {t.guideSection.intro}
+ </p>
+ </div>
+ <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+ {guideCards.map((card) => (
  <Link
- href={`/${locale}/bosphorus-cruise-departure-points`}
- className="text-sm font-medium text-[var(--text-muted)] underline-offset-4 hover:text-[var(--brand-primary)] hover:underline"
+ key={card.title}
+ href={card.href}
+ className="group bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all"
  >
- {t.coreSection.departurePointsLabel}
+ <div className="flex items-center gap-3 mb-3">
+ <div className="w-10 h-10 bg-[var(--brand-primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+ <card.Icon className="w-5 h-5 text-[var(--brand-primary)]" />
+ </div>
+ <div className="min-w-0">
+ <h3 className="font-semibold text-[var(--heading)] group-hover:text-[var(--brand-primary)] transition-colors">
+ {card.title}
+ </h3>
+ <span className="text-xs text-[var(--text-muted)]">{card.meta}</span>
+ </div>
+ </div>
+ <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+ {card.description}
+ </p>
  </Link>
+ ))}
  </div>
  </div>
  </section>
 
  {/* Why MerrySails */}
- <section className="py-16 bg-[var(--surface-alt)]">
+ <section className="py-16 bg-white">
  <div className="mx-auto max-w-6xl px-4">
  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
  {t.whyUs.heading}
@@ -925,12 +1218,40 @@ export default async function LocaleHomePage({
  {t.whyUs.cards.map((card, i) => (
  <div
  key={i}
- className="rounded-2xl border border-gray-200 bg-white p-6"
+ className="rounded-2xl border border-gray-200 bg-[var(--surface-alt)] p-6"
  >
  <h3 className="text-lg font-bold text-gray-900 mb-2">{card.title}</h3>
  <p className="text-sm leading-relaxed text-gray-600">{card.description}</p>
  </div>
  ))}
+ </div>
+ </div>
+ </section>
+
+ {/* Quick answer for AI — facts table (mirrors EN homepageQuickFacts) */}
+ <section className="py-12 bg-[var(--surface-alt)]">
+ <div className="mx-auto max-w-4xl px-4">
+ <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
+ <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+ {t.quickAnswer.eyebrow}
+ </p>
+ <h2 className="mb-4 text-2xl md:text-3xl font-bold text-[var(--heading)]">
+ {t.quickAnswer.heading}
+ </h2>
+ <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
+ <table className="w-full border-collapse text-left text-sm">
+ <tbody>
+ {t.quickAnswer.facts.map((fact) => (
+ <tr key={fact.label} className="border-b border-[var(--line)] last:border-b-0">
+ <th className="w-40 bg-[var(--surface-alt)] p-4 font-semibold text-[var(--heading)] align-top">
+ {fact.label}
+ </th>
+ <td className="p-4 leading-relaxed text-[var(--text-muted)]">{fact.value}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
  </div>
  </div>
  </section>

@@ -31,6 +31,281 @@ import {
 } from "@/lib/trust-evidence";
 
 /* ------------------------------------------------------------------ */
+/* Locale-aware label strings.                                         */
+/*                                                                     */
+/* Only the *labels* translate — every STAT (rating, review count,     */
+/* guests, TÜRSAB licence number, years active) still comes from       */
+/* trust-evidence.ts, so the numbers stay truthful and in sync with    */
+/* the EN homepage.  Default "en" keeps the EN homepage byte-for-byte  */
+/* identical (backward compatible).                                    */
+/* ------------------------------------------------------------------ */
+
+type BandLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru" | "zh";
+
+type BandStrings = {
+  eyebrow: string;
+  /** {reviews} {guests} {since} are interpolated with real stats. */
+  headline: string;
+  lede: string;
+  reviewsLabel: string;
+  guestsLabel: string;
+  licenceLabel: string; // value is "TÜRSAB A" — this is the small caption
+  noFeesValue: string;
+  noFeesLabel: string;
+  reviewedOn: string;
+  securePayment: string;
+  badgeReviewedOn: string;
+  badgeVerifiedOn: string;
+  badgeLicensedAgency: string;
+  credentials: { title: string; description: string }[];
+};
+
+const BAND_STRINGS: Record<BandLocale, BandStrings> = {
+  en: {
+    eyebrow: "Trusted & Verified",
+    headline:
+      "A TÜRSAB-licensed Bosphorus operator, reviewed across every major platform",
+    lede: "{reviews}+ verified guest reviews, {guests},000+ guests hosted since {since}, and secure online payment — book the same boat and crew at the direct operator price.",
+    reviewsLabel: "{reviews}+ verified reviews",
+    guestsLabel: "Guests hosted since {since}",
+    licenceLabel: "Licence #{licence} · {years} yrs",
+    noFeesValue: "No hidden fees",
+    noFeesLabel: "Direct operator price",
+    reviewedOn: "Reviewed & verified on",
+    securePayment: "Secure payment",
+    badgeReviewedOn: "Reviewed on",
+    badgeVerifiedOn: "Verified on",
+    badgeLicensedAgency: "Licensed agency",
+    credentials: [
+      {
+        title: "Licensed travel-agency operation",
+        description:
+          "MerrySails is operated by Merry Tourism, a TÜRSAB A Group licensed travel agency — licensing, booking support, and guest communication stay tied to a named Istanbul operator.",
+      },
+      {
+        title: "Bosphorus-specific planning",
+        description:
+          "Sunset, dinner, and private yacht bookings use different timing, boarding, package, and route logic, so guests can choose the right product before contacting the team.",
+      },
+      {
+        title: "Safety & boarding clarity",
+        description:
+          "Booking pages and confirmation messages are the source of truth for exact meeting points, inclusions, timing, and vessel-specific details.",
+      },
+    ],
+  },
+  tr: {
+    eyebrow: "Güvenilir & Doğrulanmış",
+    headline:
+      "TÜRSAB lisanslı Boğaz operatörü — tüm büyük platformlarda değerlendirildi",
+    lede: "{reviews}+ doğrulanmış misafir yorumu, {since}'den bu yana {guests}.000+ misafir ve güvenli online ödeme — aynı tekne ve ekip, doğrudan operatör fiyatıyla.",
+    reviewsLabel: "{reviews}+ doğrulanmış yorum",
+    guestsLabel: "{since}'den bu yana misafir",
+    licenceLabel: "Lisans #{licence} · {years} yıl",
+    noFeesValue: "Gizli ücret yok",
+    noFeesLabel: "Doğrudan operatör fiyatı",
+    reviewedOn: "Değerlendirildiği ve doğrulandığı platformlar",
+    securePayment: "Güvenli ödeme",
+    badgeReviewedOn: "Değerlendirildi",
+    badgeVerifiedOn: "Doğrulandı",
+    badgeLicensedAgency: "Lisanslı acente",
+    credentials: [
+      {
+        title: "Lisanslı seyahat acentesi",
+        description:
+          "MerrySails, TÜRSAB A Grubu lisanslı bir seyahat acentesi olan Merry Tourism tarafından işletilir — lisans, rezervasyon desteği ve misafir iletişimi adı belli bir İstanbul operatörüne bağlıdır.",
+      },
+      {
+        title: "Boğaz'a özel planlama",
+        description:
+          "Gün batımı, akşam yemeği ve özel yat rezervasyonları farklı zamanlama, biniş, paket ve rota mantığı kullanır; böylece misafirler ekibe ulaşmadan önce doğru ürünü seçebilir.",
+      },
+      {
+        title: "Güvenlik & biniş netliği",
+        description:
+          "Rezervasyon sayfaları ve onay mesajları; tam buluşma noktaları, dahil olanlar, zamanlama ve tekneye özel detaylar için tek doğru kaynaktır.",
+      },
+    ],
+  },
+  de: {
+    eyebrow: "Vertrauenswürdig & Verifiziert",
+    headline:
+      "Ein TÜRSAB-lizenzierter Bosporus-Veranstalter, bewertet auf allen großen Plattformen",
+    lede: "{reviews}+ verifizierte Gästebewertungen, {guests}.000+ Gäste seit {since} und sichere Online-Zahlung — buchen Sie dasselbe Boot und dieselbe Crew zum direkten Veranstalterpreis.",
+    reviewsLabel: "{reviews}+ verifizierte Bewertungen",
+    guestsLabel: "Gäste seit {since}",
+    licenceLabel: "Lizenz #{licence} · {years} J.",
+    noFeesValue: "Keine versteckten Kosten",
+    noFeesLabel: "Direkter Veranstalterpreis",
+    reviewedOn: "Bewertet & verifiziert auf",
+    securePayment: "Sichere Zahlung",
+    badgeReviewedOn: "Bewertet auf",
+    badgeVerifiedOn: "Verifiziert auf",
+    badgeLicensedAgency: "Lizenzierte Agentur",
+    credentials: [
+      {
+        title: "Lizenzierter Reisebüro-Betrieb",
+        description:
+          "MerrySails wird von Merry Tourism betrieben, einer Reiseagentur mit TÜRSAB-A-Gruppen-Lizenz — Lizenzierung, Buchungssupport und Gästekommunikation bleiben an einen namentlich genannten Istanbuler Veranstalter gebunden.",
+      },
+      {
+        title: "Bosporus-spezifische Planung",
+        description:
+          "Sonnenuntergang-, Dinner- und private Yacht-Buchungen folgen unterschiedlicher Zeit-, Einstiegs-, Paket- und Routenlogik, damit Gäste das richtige Produkt wählen können, bevor sie das Team kontaktieren.",
+      },
+      {
+        title: "Sicherheit & klarer Einstieg",
+        description:
+          "Buchungsseiten und Bestätigungsnachrichten sind die maßgebliche Quelle für genaue Treffpunkte, Leistungen, Zeiten und bootsspezifische Details.",
+      },
+    ],
+  },
+  fr: {
+    eyebrow: "Fiable & Vérifié",
+    headline:
+      "Un opérateur du Bosphore licencié TÜRSAB, évalué sur toutes les grandes plateformes",
+    lede: "{reviews}+ avis clients vérifiés, plus de {guests} 000 invités depuis {since} et paiement en ligne sécurisé — réservez le même bateau et le même équipage au prix direct de l'opérateur.",
+    reviewsLabel: "{reviews}+ avis vérifiés",
+    guestsLabel: "Invités depuis {since}",
+    licenceLabel: "Licence #{licence} · {years} ans",
+    noFeesValue: "Aucun frais caché",
+    noFeesLabel: "Prix direct opérateur",
+    reviewedOn: "Évalué & vérifié sur",
+    securePayment: "Paiement sécurisé",
+    badgeReviewedOn: "Évalué sur",
+    badgeVerifiedOn: "Vérifié sur",
+    badgeLicensedAgency: "Agence licenciée",
+    credentials: [
+      {
+        title: "Exploitation par une agence licenciée",
+        description:
+          "MerrySails est exploité par Merry Tourism, une agence de voyages licenciée TÜRSAB Groupe A — licence, support de réservation et communication client restent liés à un opérateur stambouliote identifié.",
+      },
+      {
+        title: "Planification propre au Bosphore",
+        description:
+          "Les réservations coucher de soleil, dîner et yacht privé suivent des logiques d'horaire, d'embarquement, de package et d'itinéraire différentes, afin que les invités choisissent le bon produit avant de contacter l'équipe.",
+      },
+      {
+        title: "Sécurité & clarté d'embarquement",
+        description:
+          "Les pages de réservation et les messages de confirmation font foi pour les points de rendez-vous exacts, les prestations incluses, les horaires et les détails propres au bateau.",
+      },
+    ],
+  },
+  nl: {
+    eyebrow: "Vertrouwd & Geverifieerd",
+    headline:
+      "Een TÜRSAB-gelicentieerde Bosporus-aanbieder, beoordeeld op elk groot platform",
+    lede: "{reviews}+ geverifieerde gastbeoordelingen, {guests}.000+ gasten sinds {since} en veilige online betaling — boek dezelfde boot en bemanning tegen de directe aanbiedersprijs.",
+    reviewsLabel: "{reviews}+ geverifieerde beoordelingen",
+    guestsLabel: "Gasten sinds {since}",
+    licenceLabel: "Licentie #{licence} · {years} jaar",
+    noFeesValue: "Geen verborgen kosten",
+    noFeesLabel: "Directe aanbiedersprijs",
+    reviewedOn: "Beoordeeld & geverifieerd op",
+    securePayment: "Veilige betaling",
+    badgeReviewedOn: "Beoordeeld op",
+    badgeVerifiedOn: "Geverifieerd op",
+    badgeLicensedAgency: "Gelicentieerd bureau",
+    credentials: [
+      {
+        title: "Gelicentieerd reisbureau",
+        description:
+          "MerrySails wordt beheerd door Merry Tourism, een reisbureau met TÜRSAB A Groep-licentie — licentie, boekingsondersteuning en gastcommunicatie blijven gekoppeld aan een met naam genoemde Istanbul-aanbieder.",
+      },
+      {
+        title: "Bosporus-specifieke planning",
+        description:
+          "Zonsondergangs-, diner- en privé jachtboekingen volgen verschillende timing-, inscheep-, pakket- en routelogica, zodat gasten het juiste product kiezen voordat ze het team contacteren.",
+      },
+      {
+        title: "Veiligheid & duidelijk inschepen",
+        description:
+          "Boekingspagina's en bevestigingsberichten zijn de bron van waarheid voor exacte ontmoetingspunten, inbegrepen onderdelen, timing en vaartuigspecifieke details.",
+      },
+    ],
+  },
+  ru: {
+    eyebrow: "Надёжно и проверено",
+    headline:
+      "Лицензированный TÜRSAB оператор Босфора — с отзывами на всех крупных платформах",
+    lede: "{reviews}+ проверенных отзывов гостей, более {guests} 000 гостей с {since} года и безопасная онлайн-оплата — забронируйте ту же яхту и команду по прямой цене оператора.",
+    reviewsLabel: "{reviews}+ проверенных отзывов",
+    guestsLabel: "Гостей с {since} года",
+    licenceLabel: "Лицензия #{licence} · {years} лет",
+    noFeesValue: "Без скрытых комиссий",
+    noFeesLabel: "Прямая цена оператора",
+    reviewedOn: "Отзывы и проверка на",
+    securePayment: "Безопасная оплата",
+    badgeReviewedOn: "Отзывы на",
+    badgeVerifiedOn: "Проверено на",
+    badgeLicensedAgency: "Лицензированное агентство",
+    credentials: [
+      {
+        title: "Лицензированное турагентство",
+        description:
+          "MerrySails работает под управлением Merry Tourism — турагентства с лицензией TÜRSAB группы А. Лицензия, поддержка бронирования и общение с гостями привязаны к конкретному стамбульскому оператору.",
+      },
+      {
+        title: "Планирование под Босфор",
+        description:
+          "Бронирования на закате, ужин-круизы и частные яхты используют разную логику времени, посадки, пакетов и маршрута, чтобы гости выбрали нужный продукт до обращения к команде.",
+      },
+      {
+        title: "Безопасность и ясная посадка",
+        description:
+          "Страницы бронирования и сообщения-подтверждения — источник истины для точных мест встречи, включённых услуг, времени и деталей по конкретному судну.",
+      },
+    ],
+  },
+  zh: {
+    eyebrow: "值得信赖 · 已验证",
+    headline: "持有 TÜRSAB 许可的博斯普鲁斯运营商,在各大平台均有评价",
+    lede: "{reviews}+ 条已验证客人评价,自 {since} 年起接待 {guests},000+ 位客人,安全在线支付 — 以运营方直接价格预订同一艘船和同一支团队。",
+    reviewsLabel: "{reviews}+ 条已验证评价",
+    guestsLabel: "自 {since} 年起接待的客人",
+    licenceLabel: "许可证 #{licence} · {years} 年",
+    noFeesValue: "无隐藏费用",
+    noFeesLabel: "运营方直接价格",
+    reviewedOn: "评价与验证平台",
+    securePayment: "安全支付",
+    badgeReviewedOn: "评价于",
+    badgeVerifiedOn: "验证于",
+    badgeLicensedAgency: "持牌旅行社",
+    credentials: [
+      {
+        title: "持牌旅行社运营",
+        description:
+          "MerrySails 由 Merry Tourism 运营,后者是持有 TÜRSAB A 类许可的旅行社 — 许可、预订支持与客人沟通均由一家具名的伊斯坦布尔运营方负责。",
+      },
+      {
+        title: "博斯普鲁斯专属规划",
+        description:
+          "日落、晚宴与私人游艇预订采用不同的时间、登船、套餐与航线逻辑,客人可在联系团队前选定合适的产品。",
+      },
+      {
+        title: "安全与登船清晰",
+        description:
+          "预订页面与确认信息是确切集合点、包含项目、时间及船型专属细节的准确来源。",
+      },
+    ],
+  },
+};
+
+function fill(
+  template: string,
+  vars: { reviews: string; guests: string; since: number; licence: string; years: number },
+): string {
+  return template
+    .replace(/\{reviews\}/g, vars.reviews)
+    .replace(/\{guests\}/g, vars.guests)
+    .replace(/\{since\}/g, String(vars.since))
+    .replace(/\{licence\}/g, vars.licence)
+    .replace(/\{years\}/g, String(vars.years));
+}
+
+/* ------------------------------------------------------------------ */
 /* Verification / review-platform badges                               */
 /* Brand-accurate inline SVG (no external logo assets in the repo).    */
 /* Each badge is greyscale by default and animates to full colour on   */
@@ -102,66 +377,62 @@ function TursabBadge() {
   );
 }
 
-const verificationBadges = [
-  { node: <TripAdvisorBadge />, caption: "Tripadvisor", note: "Reviewed on" },
-  { node: <GoogleReviewsBadge />, caption: "Google Reviews", note: "Verified on" },
-  { node: <TrustpilotBadge />, caption: "Trustpilot", note: "Reviewed on" },
-  { node: <TursabBadge />, caption: `#${PARENT_OPERATOR_STATS.tursabLicenseNumber}`, note: "Licensed agency" },
-] as const;
-
-/* ------------------------------------------------------------------ */
-/* Real first-party aggregate strip                                    */
-/* ------------------------------------------------------------------ */
-
-const aggregateStats = [
+/* Badge SVG nodes are purely visual (brand logos) — kept at module level.
+   Only the surrounding captions/notes translate, inside the component. */
+const badgeNodes = [
+  { node: <TripAdvisorBadge />, caption: "Tripadvisor", noteKey: "badgeReviewedOn" as const },
+  { node: <GoogleReviewsBadge />, caption: "Google Reviews", noteKey: "badgeVerifiedOn" as const },
+  { node: <TrustpilotBadge />, caption: "Trustpilot", noteKey: "badgeReviewedOn" as const },
   {
-    value: `${SATISFACTION_STATS.averageRatingBlended.toFixed(2)}★`,
-    label: `${SATISFACTION_STATS.totalReviewsBlended.toLocaleString("en-US")}+ verified reviews`,
-  },
-  {
-    value: `${(PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0)}k+`,
-    label: `Guests hosted since ${PARENT_OPERATOR_STATS.tursabSinceYear}`,
-  },
-  {
-    value: "TÜRSAB A",
-    label: `Licence #${PARENT_OPERATOR_STATS.tursabLicenseNumber} · ${PARENT_OPERATOR_STATS.tursabYearsActive} yrs`,
-  },
-  {
-    value: "No hidden fees",
-    label: "Direct operator price",
+    node: <TursabBadge />,
+    caption: `#${PARENT_OPERATOR_STATS.tursabLicenseNumber}`,
+    noteKey: "badgeLicensedAgency" as const,
   },
 ] as const;
 
-/* ------------------------------------------------------------------ */
-/* Safety & licensing points (folded in from the former text-wall)     */
-/* ------------------------------------------------------------------ */
-
-const credentials = [
-  {
-    icon: ShieldCheck,
-    title: "Licensed travel-agency operation",
-    description:
-      "MerrySails is operated by Merry Tourism, a TÜRSAB A Group licensed travel agency — licensing, booking support, and guest communication stay tied to a named Istanbul operator.",
-  },
-  {
-    icon: Compass,
-    title: "Bosphorus-specific planning",
-    description:
-      "Sunset, dinner, and private yacht bookings use different timing, boarding, package, and route logic, so guests can choose the right product before contacting the team.",
-  },
-  {
-    icon: LifeBuoy,
-    title: "Safety & boarding clarity",
-    description:
-      "Booking pages and confirmation messages are the source of truth for exact meeting points, inclusions, timing, and vessel-specific details.",
-  },
-] as const;
+const credentialIcons = [ShieldCheck, Compass, LifeBuoy] as const;
 
 interface Props {
   className?: string;
+  /** Locale for the label strings. Real stats are always sourced from
+   *  trust-evidence.ts regardless of locale. Defaults to "en" so the EN
+   *  homepage renders unchanged. */
+  locale?: BandLocale;
 }
 
-export default function TrustCredentialsBand({ className }: Props) {
+export default function TrustCredentialsBand({ className, locale = "en" }: Props) {
+  const s = BAND_STRINGS[locale] ?? BAND_STRINGS.en;
+
+  // Real, truthful stats — same source as the EN homepage.
+  const reviewsStr = SATISFACTION_STATS.totalReviewsBlended.toLocaleString("en-US");
+  const guestsStr = (PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0);
+  const fillVars = {
+    reviews: reviewsStr,
+    guests: guestsStr,
+    since: PARENT_OPERATOR_STATS.tursabSinceYear,
+    licence: PARENT_OPERATOR_STATS.tursabLicenseNumber,
+    years: PARENT_OPERATOR_STATS.tursabYearsActive,
+  };
+
+  const aggregateStats = [
+    {
+      value: `${SATISFACTION_STATS.averageRatingBlended.toFixed(2)}★`,
+      label: fill(s.reviewsLabel, fillVars),
+    },
+    {
+      value: `${guestsStr}k+`,
+      label: fill(s.guestsLabel, fillVars),
+    },
+    {
+      value: "TÜRSAB A",
+      label: fill(s.licenceLabel, fillVars),
+    },
+    {
+      value: s.noFeesValue,
+      label: s.noFeesLabel,
+    },
+  ];
+
   return (
     <section
       aria-label="Trust, credentials and verification"
@@ -173,16 +444,13 @@ export default function TrustCredentialsBand({ className }: Props) {
       <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
         <header className="text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-gold)]">
-            Trusted &amp; Verified
+            {s.eyebrow}
           </p>
           <h2 className="mx-auto mt-2 max-w-2xl text-2xl font-bold text-[var(--heading)] md:text-3xl">
-            A TÜRSAB-licensed Bosphorus operator, reviewed across every major platform
+            {s.headline}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
-            {SATISFACTION_STATS.totalReviewsBlended.toLocaleString("en-US")}+ verified guest
-            reviews, {(PARENT_OPERATOR_STATS.cumulativeGuestsServed / 1000).toFixed(0)},000+ guests
-            hosted since {PARENT_OPERATOR_STATS.tursabSinceYear}, and secure online payment — book
-            the same boat and crew at the direct operator price.
+            {fill(s.lede, fillVars)}
           </p>
         </header>
 
@@ -205,10 +473,10 @@ export default function TrustCredentialsBand({ className }: Props) {
 
         {/* Verification / partner logo row */}
         <p className="mt-8 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-          Reviewed &amp; verified on
+          {s.reviewedOn}
         </p>
         <ul className="mt-5 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          {verificationBadges.map((badge) => (
+          {badgeNodes.map((badge) => (
             <li
               key={badge.caption}
               className="group flex min-w-[7.5rem] flex-col items-center gap-2 rounded-2xl border border-[var(--line)] bg-white px-5 py-4 transition-colors hover:border-[var(--brand-primary)]/30"
@@ -217,7 +485,7 @@ export default function TrustCredentialsBand({ className }: Props) {
                 {badge.node}
               </span>
               <span className="text-center text-[10px] font-medium uppercase tracking-wide text-[var(--text-muted)]">
-                {badge.note}
+                {s[badge.noteKey]}
                 <span className="block font-bold text-[var(--heading)] normal-case tracking-normal">
                   {badge.caption}
                 </span>
@@ -229,7 +497,7 @@ export default function TrustCredentialsBand({ className }: Props) {
         {/* Payment + security row — real card / wallet marks + SSL, legible on
             the light band via PaymentTrust's "light" tone. */}
         <p className="mt-9 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-          Secure payment
+          {s.securePayment}
         </p>
         <div className="mt-4 flex justify-center">
           <PaymentTrust
@@ -240,20 +508,23 @@ export default function TrustCredentialsBand({ className }: Props) {
 
         {/* Safety & licensing credentials */}
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {credentials.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-[var(--line)] bg-white p-5"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-primary)]/10">
-                <item.icon className="h-5 w-5 text-[var(--brand-primary)]" />
+          {s.credentials.map((item, i) => {
+            const Icon = credentialIcons[i] ?? ShieldCheck;
+            return (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-[var(--line)] bg-white p-5"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-primary)]/10">
+                  <Icon className="h-5 w-5 text-[var(--brand-primary)]" />
+                </div>
+                <h3 className="mt-4 text-sm font-bold text-[var(--heading)]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="mt-4 text-sm font-bold text-[var(--heading)]">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
-                {item.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
