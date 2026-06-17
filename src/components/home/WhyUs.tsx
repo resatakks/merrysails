@@ -20,17 +20,17 @@ const features = [
   {
     icon: MapPin,
     title: "Local Istanbul Experts",
-    description: "Our team helps guests choose the right Bosphorus route, boarding flow, package tier, and private-service setup before booking.",
+    description: "We help you pick the right Bosphorus route, boarding flow, and package tier before you book.",
   },
   {
     icon: Headphones,
     title: "24/7 Multilingual Support",
-    description: "Reach our team anytime via WhatsApp, phone (+90 544 898 98 12), or email. We respond within minutes.",
+    description: "Reach us anytime on WhatsApp, phone (+90 544 898 98 12), or email — we reply within minutes.",
   },
   {
     icon: CreditCard,
     title: "Flexible Confirmation Flow",
-    description: "Shared cruises are reserved first and paid onboard, while private yacht and event formats are confirmed manually with our team before payment timing is finalized.",
+    description: "Shared cruises reserve first and pay onboard. Private yacht and event bookings are confirmed with our team.",
   },
 ];
 
@@ -66,8 +66,7 @@ export default function WhyUs() {
           <div className="max-w-3xl">
             <h3 className="text-2xl font-bold mb-3">Not sure which Bosphorus plan fits your day?</h3>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed">
-              Start with the Bosphorus compare hub if you are still choosing between sunset, dinner, and private yacht.
-              Move into contact and quote routing only after the brief is clearly proposal, private dinner, celebration, pickup-led, or corporate-led.
+              Still choosing between sunset, dinner, and private yacht? Start with the compare hub. Ready with a brief — proposal, private dinner, celebration, or corporate — head straight to contact and quote routing.
             </p>
           </div>
           <div className="mt-5 grid gap-3 md:grid-cols-2">

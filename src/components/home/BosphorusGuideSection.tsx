@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { Anchor, Sunset, UtensilsCrossed, Briefcase, BookOpen } from "lucide-react";
+import {
+  Anchor,
+  Sunset,
+  UtensilsCrossed,
+  Briefcase,
+  BookOpen,
+  BadgeCheck,
+  CalendarRange,
+  Navigation,
+} from "lucide-react";
 
 const cruiseTypes = [
   {
@@ -81,63 +90,113 @@ export default function BosphorusGuideSection() {
           ))}
         </div>
 
-        {/* Rich text content for SEO */}
+        {/* Planning essentials — accordion keeps the full SEO/AI copy in the
+            DOM (every H2/H3 + entities) while presenting as scannable rows. */}
         <div className="max-w-3xl mx-auto">
-          <div className="prose prose-lg prose-gray mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-[var(--heading)]">
-              Why Book Your Bosphorus Cruise With MerrySails?
-            </h2>
-            <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              MerrySails is the cruise and yacht division of{" "}
-              <a
-                href="https://merrytourism.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--brand-primary)] hover:underline"
-              >
-                Merry Tourism
-              </a>
-              , a TURSAB A Group licensed travel agency operating in Istanbul since
-              2001. Each cruise page shows the current format, inclusions, and
-              pricing so you can compare options before you book.
-            </p>
-            <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Every cruise includes free cancellation up to 24 hours before
-              departure and a reserve-first booking flow. Shared dinner cruises can
-              include hotel pickup and drop-off from central European-side zones
-              such as Sultanahmet, Taksim, Beyoglu, and nearby areas. Our yacht
-              charters depart from Bosphorus marinas confirmed with the assigned
-              vessel and can be customized for any occasion — from intimate
-              proposals to large corporate events.
-            </p>
+          <div className="mb-5 flex items-center gap-2">
+            <span className="h-px flex-1 bg-[var(--line,#e5e7eb)]" />
+            <span className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
+              Bosphorus cruise planning essentials
+            </span>
+            <span className="h-px flex-1 bg-[var(--line,#e5e7eb)]" />
+          </div>
 
-            <h3 className="text-xl font-bold mb-3 text-[var(--heading)]">
-              Best Time for a Bosphorus Cruise in 2026
-            </h3>
-            <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              Istanbul offers year-round cruising. The peak season runs from April
-              to October, with warm weather and long golden hours perfect for
-              sunset cruises. Spring (April to June) and autumn (September to
-              October) deliver the most dramatic sunset colors. Summer evenings
-              extend past 20:00, while winter brings atmospheric mist over the
-              strait and lower prices. The dinner cruise operates indoors
-              year-round, making it comfortable in any season.
-            </p>
+          <div className="divide-y divide-[var(--line,#e5e7eb)] overflow-hidden rounded-2xl border border-[var(--line,#e5e7eb)] bg-white">
+            {/* Booking, licensing & what's included */}
+            <details className="group">
+              <summary className="flex cursor-pointer list-none items-center gap-3 p-5 transition-colors hover:bg-[var(--surface-alt)]">
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--brand-primary)]/10">
+                  <BadgeCheck className="h-5 w-5 text-[var(--brand-primary)]" />
+                </span>
+                <h2 className="flex-1 text-base font-semibold text-[var(--heading)] md:text-lg">
+                  Why Book Your Bosphorus Cruise With MerrySails?
+                </h2>
+                <span className="ml-2 flex-shrink-0 text-[var(--text-muted)] transition-transform group-open:rotate-180">
+                  ▼
+                </span>
+              </summary>
+              <div className="px-5 pb-5 pl-[4.25rem]">
+                <p className="mb-3 text-sm leading-relaxed text-[var(--body-text)]">
+                  MerrySails is the cruise and yacht division of{" "}
+                  <a
+                    href="https://merrytourism.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--brand-primary)] hover:underline"
+                  >
+                    Merry Tourism
+                  </a>
+                  , a TURSAB A Group licensed travel agency operating in Istanbul
+                  since 2001. Each cruise page shows the current format,
+                  inclusions, and pricing so you can compare options before you
+                  book.
+                </p>
+                <p className="text-sm leading-relaxed text-[var(--body-text)]">
+                  Every cruise includes free cancellation up to 24 hours before
+                  departure and a reserve-first booking flow. Shared dinner
+                  cruises can include hotel pickup and drop-off from central
+                  European-side zones such as Sultanahmet, Taksim, Beyoglu, and
+                  nearby areas. Our yacht charters depart from Bosphorus marinas
+                  confirmed with the assigned vessel and can be customized for any
+                  occasion — from intimate proposals to large corporate events.
+                </p>
+              </div>
+            </details>
 
-            <h3 className="text-xl font-bold mb-3 text-[var(--heading)]">
-              How to Get to the Bosphorus Cruise Departure Point
-            </h3>
-            <p className="text-[var(--body-text)] leading-relaxed mb-6">
-              Departure points now depend on the product. The{" "}
-              <strong>Bosphorus Sunset Cruise</strong> uses a Kabatas-side
-              boarding flow confirmed after booking, while the{" "}
-              <strong>Bosphorus Dinner Cruise</strong> is tied to Kabatas Pier
-              and can include hotel pickup from central European-side areas.
-              Some sightseeing departures still use{" "}
-              <strong>Eminonu Pier</strong> where relevant. Private yacht
-              charters depart from <strong>Bosphorus marinas</strong> on the
-              European Bosphorus shore.
-            </p>
+            {/* Best time / season */}
+            <details className="group">
+              <summary className="flex cursor-pointer list-none items-center gap-3 p-5 transition-colors hover:bg-[var(--surface-alt)]">
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--brand-primary)]/10">
+                  <CalendarRange className="h-5 w-5 text-[var(--brand-primary)]" />
+                </span>
+                <h3 className="flex-1 text-base font-semibold text-[var(--heading)] md:text-lg">
+                  Best Time for a Bosphorus Cruise in 2026
+                </h3>
+                <span className="ml-2 flex-shrink-0 text-[var(--text-muted)] transition-transform group-open:rotate-180">
+                  ▼
+                </span>
+              </summary>
+              <div className="px-5 pb-5 pl-[4.25rem]">
+                <p className="text-sm leading-relaxed text-[var(--body-text)]">
+                  Istanbul offers year-round cruising. The peak season runs from
+                  April to October, with warm weather and long golden hours
+                  perfect for sunset cruises. Spring (April to June) and autumn
+                  (September to October) deliver the most dramatic sunset colors.
+                  Summer evenings extend past 20:00, while winter brings
+                  atmospheric mist over the strait and lower prices. The dinner
+                  cruise operates indoors year-round, making it comfortable in any
+                  season.
+                </p>
+              </div>
+            </details>
+
+            {/* Departure points / how to get there */}
+            <details className="group">
+              <summary className="flex cursor-pointer list-none items-center gap-3 p-5 transition-colors hover:bg-[var(--surface-alt)]">
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--brand-primary)]/10">
+                  <Navigation className="h-5 w-5 text-[var(--brand-primary)]" />
+                </span>
+                <h3 className="flex-1 text-base font-semibold text-[var(--heading)] md:text-lg">
+                  How to Get to the Bosphorus Cruise Departure Point
+                </h3>
+                <span className="ml-2 flex-shrink-0 text-[var(--text-muted)] transition-transform group-open:rotate-180">
+                  ▼
+                </span>
+              </summary>
+              <div className="px-5 pb-5 pl-[4.25rem]">
+                <p className="text-sm leading-relaxed text-[var(--body-text)]">
+                  Departure points now depend on the product. The{" "}
+                  <strong>Bosphorus Sunset Cruise</strong> uses a Kabatas-side
+                  boarding flow confirmed after booking, while the{" "}
+                  <strong>Bosphorus Dinner Cruise</strong> is tied to Kabatas Pier
+                  and can include hotel pickup from central European-side areas.
+                  Some sightseeing departures still use{" "}
+                  <strong>Eminonu Pier</strong> where relevant. Private yacht
+                  charters depart from <strong>Bosphorus marinas</strong> on the
+                  European Bosphorus shore.
+                </p>
+              </div>
+            </details>
           </div>
 
           {/* Quick links */}
