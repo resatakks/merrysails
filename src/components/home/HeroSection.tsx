@@ -222,7 +222,7 @@ export default function HeroSection({ locale = "en" }: Props) {
         className="object-cover [object-position:50%_35%]"
         priority
         sizes="100vw"
-        quality={85}
+        quality={75}
       />
       <div
         aria-hidden
