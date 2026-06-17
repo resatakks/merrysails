@@ -123,7 +123,7 @@ export default function Header() {
                 >
                   <Link
                     href={localizeHref(item.href, locale)}
-                    className="flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)]"
+                    className="flex items-center gap-1 whitespace-nowrap rounded-lg px-1.5 py-2 text-[0.8125rem] font-medium text-[var(--body-text)] transition-colors hover:bg-gray-50 hover:text-[var(--brand-primary)] xl:px-3 xl:text-sm"
                   >
                     {t[item.labelKey]}
                     {item.children && <ChevronDown className="h-3.5 w-3.5" />}
