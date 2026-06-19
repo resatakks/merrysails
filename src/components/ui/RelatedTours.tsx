@@ -47,7 +47,7 @@ const ALL_TOURS: TourCardData[] = [
       ru: "Сравните все типы — групповые, частные и с ужином",
       zh: "对比所有游船类型 — 共享、私人与晚宴",
     },
-    price: "From €25",
+    price: "From €30",
   },
   {
     key: "sunset",
@@ -71,7 +71,7 @@ const ALL_TOURS: TourCardData[] = [
       ru: "2-часовой круиз в золотой час с открытым баром",
       zh: "2 小时黄金时刻航程,含畅饮酒吧",
     },
-    price: "From €35",
+    price: "From €30",
   },
   {
     key: "dinner",
@@ -95,7 +95,7 @@ const ALL_TOURS: TourCardData[] = [
       ru: "3 часа ужина, шоу и безлимитные напитки",
       zh: "3 小时晚宴、现场表演与无限畅饮",
     },
-    price: "From €55",
+    price: "From €30",
   },
   {
     key: "yacht",
@@ -119,7 +119,7 @@ const ALL_TOURS: TourCardData[] = [
       ru: "Частная яхта — ваш маршрут, ваше расписание",
       zh: "私人游艇 — 您的航线,您的时间",
     },
-    price: "From €350",
+    price: "From €220",
   },
   {
     key: "boat",

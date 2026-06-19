@@ -16,7 +16,7 @@ import { LOCALIZED_ROUTES } from "@/i18n/localized-routes";
 /*                                                                     */
 /* Prices match the locale homepage TRANSLATIONS object in             */
 /* src/app/[locale]/page.tsx (sunset/dinner from €30, private yacht    */
-/* from €200) so copy stays consistent across the page.               */
+/* from €220) so copy stays consistent across the page.               */
 /* ------------------------------------------------------------------ */
 
 type HeroLocale = "en" | "tr" | "de" | "fr" | "nl" | "ru" | "zh";
@@ -51,11 +51,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "Sunset",
     inlineYacht: "Yacht Charter",
     subtext:
-      "Book direct with Istanbul's TURSAB-licensed operator — sunset from €30, dinner from €30, private yacht from €200 across a 6-vessel Bosphorus fleet.",
+      "Book direct with Istanbul's TURSAB-licensed operator — sunset from €30, dinner from €30, private yacht from €220 across a 6-vessel Bosphorus fleet.",
     products: {
       sunset: { title: "Bosphorus Sunset Cruise", meta: "2 shared options", price: "From €30" },
       dinner: { title: "Bosphorus Dinner Cruise", meta: "4 shared packages", price: "From €30" },
-      yacht: { title: "Yacht Charter Istanbul", meta: "6 yachts · 10–150 guests", price: "From €200" },
+      yacht: { title: "Yacht Charter Istanbul", meta: "6 yachts · 10–150 guests", price: "From €220" },
     },
     openPage: "Open page",
     compareButton: "Compare Cruise Options",
@@ -70,11 +70,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "Gün Batımı",
     inlineYacht: "Yat Kiralama",
     subtext:
-      "İstanbul'un TÜRSAB lisanslı operatörüyle direkt rezervasyon — gün batımı €30'dan, akşam yemeği €30'dan, özel yat €200'den, 6 tekneli Boğaz filosuyla.",
+      "İstanbul'un TÜRSAB lisanslı operatörüyle direkt rezervasyon — gün batımı €30'dan, akşam yemeği €30'dan, özel yat €220'den, 6 tekneli Boğaz filosuyla.",
     products: {
       sunset: { title: "Boğaz Gün Batımı Turu", meta: "2 paylaşımlı seçenek", price: "€30'dan başlayan" },
       dinner: { title: "Boğaz Akşam Yemeği Turu", meta: "4 paylaşımlı paket", price: "€30'dan başlayan" },
-      yacht: { title: "Yat Kiralama İstanbul", meta: "6 yat · 10–150 misafir", price: "€200'den başlayan" },
+      yacht: { title: "Yat Kiralama İstanbul", meta: "6 yat · 10–150 misafir", price: "€220'den başlayan" },
     },
     openPage: "Sayfayı aç",
     compareButton: "Boğaz Turu Seçeneklerini Karşılaştır",
@@ -89,11 +89,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "Sonnenuntergang",
     inlineYacht: "Yacht-Charter",
     subtext:
-      "Buchen Sie direkt beim TURSAB-lizenzierten Istanbuler Veranstalter — Sonnenuntergang ab €30, Dinner ab €30, private Yacht ab €200 mit einer 6-Boote-Bosporus-Flotte.",
+      "Buchen Sie direkt beim TURSAB-lizenzierten Istanbuler Veranstalter — Sonnenuntergang ab €30, Dinner ab €30, private Yacht ab €220 mit einer 6-Boote-Bosporus-Flotte.",
     products: {
       sunset: { title: "Bosporus Sonnenuntergangs-Kreuzfahrt", meta: "2 geteilte Optionen", price: "Ab €30" },
       dinner: { title: "Bosporus Dinner-Kreuzfahrt", meta: "4 geteilte Pakete", price: "Ab €30" },
-      yacht: { title: "Yacht-Charter Istanbul", meta: "6 Yachten · 10–150 Gäste", price: "Ab €200" },
+      yacht: { title: "Yacht-Charter Istanbul", meta: "6 Yachten · 10–150 Gäste", price: "Ab €220" },
     },
     openPage: "Seite öffnen",
     compareButton: "Kreuzfahrt-Optionen vergleichen",
@@ -108,11 +108,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "Coucher de Soleil",
     inlineYacht: "Yacht",
     subtext:
-      "Réservez en direct avec l'opérateur stambouliote licencié TURSAB — coucher de soleil dès €30, dîner dès €30, yacht privé dès €200 avec une flotte de 6 bateaux sur le Bosphore.",
+      "Réservez en direct avec l'opérateur stambouliote licencié TURSAB — coucher de soleil dès €30, dîner dès €30, yacht privé dès €220 avec une flotte de 6 bateaux sur le Bosphore.",
     products: {
       sunset: { title: "Croisière Coucher de Soleil", meta: "2 options partagées", price: "À partir de €30" },
       dinner: { title: "Croisière Dîner Bosphore", meta: "4 packages partagés", price: "À partir de €30" },
-      yacht: { title: "Charter de Yacht Istanbul", meta: "6 yachts · 10–150 invités", price: "À partir de €200" },
+      yacht: { title: "Charter de Yacht Istanbul", meta: "6 yachts · 10–150 invités", price: "À partir de €220" },
     },
     openPage: "Ouvrir la page",
     compareButton: "Comparer les croisières",
@@ -127,11 +127,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "Zonsondergang",
     inlineYacht: "Jachtcharter",
     subtext:
-      "Boek direct bij Istanbul's TURSAB-gelicentieerde aanbieder — zonsondergang vanaf €30, diner vanaf €30, privéjacht vanaf €200 met een Bosporus-vloot van 6 boten.",
+      "Boek direct bij Istanbul's TURSAB-gelicentieerde aanbieder — zonsondergang vanaf €30, diner vanaf €30, privéjacht vanaf €220 met een Bosporus-vloot van 6 boten.",
     products: {
       sunset: { title: "Bosporus Zonsondergangs-Cruise", meta: "2 gedeelde opties", price: "Vanaf €30" },
       dinner: { title: "Bosporus Dinercruise", meta: "4 gedeelde pakketten", price: "Vanaf €30" },
-      yacht: { title: "Jachtcharter Istanbul", meta: "6 jachten · 10–150 gasten", price: "Vanaf €200" },
+      yacht: { title: "Jachtcharter Istanbul", meta: "6 jachten · 10–150 gasten", price: "Vanaf €220" },
     },
     openPage: "Pagina openen",
     compareButton: "Cruise-opties vergelijken",
@@ -146,11 +146,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "Закат",
     inlineYacht: "Аренда яхты",
     subtext:
-      "Бронируйте напрямую у лицензированного TÜRSAB оператора в Стамбуле — закат от €30, ужин от €30, частная яхта от €200, флот из 6 судов на Босфоре.",
+      "Бронируйте напрямую у лицензированного TÜRSAB оператора в Стамбуле — закат от €30, ужин от €30, частная яхта от €220, флот из 6 судов на Босфоре.",
     products: {
       sunset: { title: "Круиз по Босфору на закате", meta: "2 совместных варианта", price: "от €30" },
       dinner: { title: "Ужин-круиз по Босфору", meta: "4 совместных пакета", price: "от €30" },
-      yacht: { title: "Аренда яхты в Стамбуле", meta: "6 яхт · 10–150 гостей", price: "от €200" },
+      yacht: { title: "Аренда яхты в Стамбуле", meta: "6 яхт · 10–150 гостей", price: "от €220" },
     },
     openPage: "Открыть страницу",
     compareButton: "Сравнить варианты круизов",
@@ -165,11 +165,11 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     inlineSunset: "日落",
     inlineYacht: "游艇包租",
     subtext:
-      "向伊斯坦布尔持 TÜRSAB 许可的运营方直接预订 — 日落 €30 起、晚宴 €30 起、私人游艇 €200 起,博斯普鲁斯 6 艘船队。",
+      "向伊斯坦布尔持 TÜRSAB 许可的运营方直接预订 — 日落 €30 起、晚宴 €30 起、私人游艇 €220 起,博斯普鲁斯 6 艘船队。",
     products: {
       sunset: { title: "博斯普鲁斯日落游船", meta: "2 个共享选项", price: "€30 起" },
       dinner: { title: "博斯普鲁斯晚宴游船", meta: "4 个共享套餐", price: "€30 起" },
-      yacht: { title: "伊斯坦布尔私人游艇包租", meta: "6 艘游艇 · 10–150 位客人", price: "€200 起" },
+      yacht: { title: "伊斯坦布尔私人游艇包租", meta: "6 艘游艇 · 10–150 位客人", price: "€220 起" },
     },
     openPage: "打开页面",
     compareButton: "比较游船选项",

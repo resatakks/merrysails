@@ -30,7 +30,7 @@ const cruiseTypes = [
   {
     icon: Anchor,
     title: "Yacht Charter Istanbul",
-    meta: "3 packages · from EUR 280 per yacht",
+    meta: "from EUR 280 per yacht",
     description:
       "Book a private yacht and shape the plan around your group, with optional meals, drinks, transfers, music, and event extras.",
     href: "/yacht-charter-istanbul",

@@ -87,11 +87,11 @@ function getCruiseMeta(
       return {
         title: "Private Yacht Charter",
         href: localized("/yacht-charter-istanbul"),
-        priceFloor: "From €200/hr",
+        priceFloor: "From €220",
         pier: "Kuruçeşme Marina",
         icon: Ship,
         description:
-          "Private Bosphorus charter — Essential, Premium and VIP yacht tiers with verified per-hour pricing.",
+          "Private Bosphorus charter — whole-boat, per-vessel pricing from €220 (2-hour minimum, 6-yacht fleet).",
         offerName: "Bosphorus Private Yacht Charter",
         offerCurrency: "EUR",
         offerPriceNumeric: 200,

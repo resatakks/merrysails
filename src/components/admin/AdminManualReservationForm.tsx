@@ -123,7 +123,7 @@ const TEMPLATES: ReservationTemplate[] = [
     id: "private-dinner",
     label: "Private Dinner",
     emoji: "🥂",
-    helper: "€280 / 19:30-22:30 / Karaköy — düzenlenebilir",
+    helper: "€220 / 19:30-22:30 / Karaköy — düzenlenebilir",
     tourSlug: "private-bosphorus-dinner-yacht-cruise",
     time: "19:30 - 22:30",
     timeLocked: false,

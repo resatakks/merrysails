@@ -57,7 +57,7 @@ const CHROME_STRINGS: Record<string, {
     sunsetCardDesc: "2-hour golden hour from Karaköy pier.",
     dinnerCardTitle: "Dinner cruise — from €30",
     dinnerCardDesc: "3.5-hour evening with dinner + Turkish night show. Hotel pickup included.",
-    yachtCardTitle: "Private yacht — from €200",
+    yachtCardTitle: "Private yacht — from €220",
     yachtCardDesc: "Whole-yacht charter, 2-hour minimum, 10–150 guests.",
     ctaHeading: (name) => `Book your ${name} cruise`,
     ctaBody:
@@ -88,7 +88,7 @@ const CHROME_STRINGS: Record<string, {
     sunsetCardDesc: "2-stündige goldene Stunde ab Karaköy-Anleger.",
     dinnerCardTitle: "Dinner-Cruise — ab €30",
     dinnerCardDesc: "3,5-stündiger Abend mit Abendessen + türkischer Nacht-Show. Hotel-Abholung inkl.",
-    yachtCardTitle: "Privatyacht — ab €200",
+    yachtCardTitle: "Privatyacht — ab €220",
     yachtCardDesc: "Ganze Yacht charter, 2 Std. Minimum, 10-150 Gäste.",
     ctaHeading: (name) => `${name}-Kreuzfahrt buchen`,
     ctaBody:
@@ -119,7 +119,7 @@ const CHROME_STRINGS: Record<string, {
     sunsetCardDesc: "2 h d'heure dorée depuis l'embarcadère de Karaköy.",
     dinnerCardTitle: "Croisière-dîner — dès €30",
     dinnerCardDesc: "Soirée de 3,5 h avec dîner + spectacle de nuit turque. Prise en charge à l'hôtel incluse.",
-    yachtCardTitle: "Yacht privé — dès €200",
+    yachtCardTitle: "Yacht privé — dès €220",
     yachtCardDesc: "Affrètement complet, 2 h minimum, 10-150 invités.",
     ctaHeading: (name) => `Réservez votre croisière depuis ${name}`,
     ctaBody:
@@ -150,7 +150,7 @@ const CHROME_STRINGS: Record<string, {
     sunsetCardDesc: "2-uurs gouden uur vanaf de Karaköy-steiger.",
     dinnerCardTitle: "Dinercruise — vanaf €30",
     dinnerCardDesc: "3,5 uur 's avonds met diner + Turkse nachtshow. Hotelophaling inbegrepen.",
-    yachtCardTitle: "Privéjacht — vanaf €200",
+    yachtCardTitle: "Privéjacht — vanaf €220",
     yachtCardDesc: "Volledige jachtcharter, 2 uur minimum, 10-150 gasten.",
     ctaHeading: (name) => `Boek uw cruise vanuit ${name}`,
     ctaBody:
@@ -181,7 +181,7 @@ const CHROME_STRINGS: Record<string, {
     sunsetCardDesc: "2 часа золотого часа с причала Карайёй.",
     dinnerCardTitle: "Ужин-круиз — от €30",
     dinnerCardDesc: "3,5 часа вечера: ужин + турецкое ночное шоу. Трансфер от отеля включён.",
-    yachtCardTitle: "Частная яхта — от €200",
+    yachtCardTitle: "Частная яхта — от €220",
     yachtCardDesc: "Аренда всей яхты, минимум 2 часа, 10-150 гостей.",
     ctaHeading: (name) => `Забронируйте круиз из ${name}`,
     ctaBody:
@@ -212,7 +212,7 @@ const CHROME_STRINGS: Record<string, {
     sunsetCardDesc: "Karaköy iskelesinden 2 saatlik altın saat.",
     dinnerCardTitle: "Akşam yemekli tur — €30'dan",
     dinnerCardDesc: "3,5 saatlik akşam: yemek + Türk gecesi gösterisi. Otel pickup dahil.",
-    yachtCardTitle: "Özel yat — €200'den",
+    yachtCardTitle: "Özel yat — €220'den",
     yachtCardDesc: "Tüm tekne kiralama, 2 saat minimum, 10-150 misafir.",
     ctaHeading: (name) => `${name}'ten Boğaz turu rezervasyonu`,
     ctaBody: "Otel adı + tercih ettiğiniz akşamı WhatsApp'tan gönderin — pickup zamanı ve paketi dakikalar içinde teyit ediyoruz.",
@@ -260,7 +260,7 @@ export default function HotelClusterPage({ district, locale = "en" }: Props) {
       ? "€30"
       : district.recommendedCruise === "dinner"
         ? "€30"
-        : "€200";
+        : "€220";
   // Translated label for sticky CTA + WhatsApp prefill.
   const productLabel =
     district.recommendedCruise === "sunset"
