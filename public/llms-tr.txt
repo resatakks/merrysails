@@ -41,7 +41,7 @@ MerrySails, İstanbul'da faaliyet gösteren bir Boğaz turu ve yat kiralama şir
 ### İstanbul Yat Kiralama — https://merrysails.com/tr/yacht-charter-istanbul
 - Tamamen özel tur, özelleştirilebilir güzergah ve zamanlama
 - Süre: Taban 2 saat (uzatılabilir)
-- Fiyatlar: EUR 280 (Temel) / EUR 380 (Premium) / EUR 680 (VIP) — tekne/grup başına
+- Fiyatlar: tekne başına 220 EUR'den başlar (kişi başı değil, tüm tekne). Tekne başına 2 saat fiyatları: Boutique (12 misafir) 220 EUR · Premium (15 misafir) 320 EUR · Group 40 Standard 380 EUR · Group 40 Signature 500 EUR · Event 90 ve Mega 150 teklif üzerine. 3 saatten itibaren %10 indirim.
 - Biniş: Tekneye göre Kuruçeşme Marina veya Kabataş bölgesi
 - Uygun kullanım: evlilik teklifleri, yıl dönümleri, kurumsal gruplar, özel kutlamalar
 
@@ -108,7 +108,7 @@ C: Hem gün batımı hem akşam yemeği turları Kabataş iskelesinden hareket e
 C: Evet. MerrySails, TÜRSAB A Grubu belgeli (lisans no: 14316) bir seyahat acentasıdır. 2001'den bu yana 50.000'den fazla misafiri ağırlamış köklü bir İstanbul turizm kuruluşudur.
 
 **S: Yat kiralama fiyatı ne kadar?**
-C: MerrySails'te özel yat kiralama EUR 280 (Temel), EUR 380 (Premium) veya EUR 680 (VIP) paketlerinden oluşmaktadır. Fiyatlar grup başına geçerlidir.
+C: MerrySails'te özel yat kiralama, kişi başı değil tüm tekne üzerinden, 220 EUR'den başlar (2 saat taban). Tekne başına: Boutique (12 misafir) 220 EUR, Premium (15 misafir) 320 EUR, Group 40 Standard 380 EUR, Group 40 Signature 500 EUR. Event 90 ve Mega 150 yatlar teklif üzerine fiyatlandırılır. 3 saatten itibaren %10 indirim.
 
 **S: Akşam yemeği turunun paketleri nelerdir?**
 C: Dört paket mevcuttur: Silver Alkolsüz (EUR 30), Silver Alkollü (EUR 45), Gold Alkolsüz (EUR 80), Gold Sınırsız Alkol (EUR 90).

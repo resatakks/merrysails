@@ -126,7 +126,7 @@ export const CURATED_REVIEWS: CuratedReview[] = [
  firstName: "Karim",
  country: "EG",
  cruiseDate: "2026-05-16",
- text: "Corporate event for 25 people. The VIP yacht had everything we needed — DJ setup, food service to spec, microphone for our team toasts. Operations team replied to every adjustment within minutes.",
+ text: "Corporate event for 25 people. The event yacht had everything we needed — DJ setup, food service to spec, microphone for our team toasts. Operations team replied to every adjustment within minutes.",
  rating: 5,
  productKey: "yacht",
  },

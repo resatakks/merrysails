@@ -14,7 +14,11 @@ import {
   getHeaderStrings,
   type ChromeLocale,
 } from "@/i18n/chrome-strings";
-import { LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES } from "@/i18n/localized-routes";
+import {
+  LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES,
+  RU_ENABLED_ROUTES,
+  ZH_ENABLED_ROUTES,
+} from "@/i18n/localized-routes";
 
 type NavLocale = ChromeLocale;
 
@@ -43,9 +47,30 @@ type NavLabelKey =
   | "reserveOnline"
   | "reserve";
 
+// Staged locales (ru/zh) only ship a subset of LOCALIZED_ROUTES. Linking a
+// staged-locale nav item to a route it doesn't have yet lands on a notFound()
+// 404 (header + mobile nav linked /ru and /zh about/contact/guides/faq/blog/
+// reservation to dead pages). The gate sets use the same leading-slash href
+// keys ("/about", "/reservation", "" = homepage), so check the href directly
+// and fall back to the EN-root href (HTTP 200) for un-shipped routes.
+const STAGED_LOCALE_ROUTES: Partial<Record<NavLocale, Set<string>>> = {
+  ru: RU_ENABLED_ROUTES,
+  zh: ZH_ENABLED_ROUTES,
+};
+
+function localeHasRoute(locale: NavLocale, href: string): boolean {
+  const gate = STAGED_LOCALE_ROUTES[locale];
+  if (!gate) return true; // tr/de/fr/nl ship every LOCALIZED_ROUTES path
+  // /reservation ships a [locale] page for every active locale (its own META
+  // gate covers ru+zh), so it's always localizable even though it's excluded
+  // from the core enabled sets (form route, no hreflang/sitemap entry).
+  if (href === "/reservation") return true;
+  return gate.has(href);
+}
+
 function localizeHref(href: string, locale: NavLocale): string {
   if (locale === "en") return href;
-  if (LOCALIZED_ROUTES.has(href)) {
+  if (LOCALIZED_ROUTES.has(href) && localeHasRoute(locale, href)) {
     return `/${locale}${href}`;
   }
   return href;

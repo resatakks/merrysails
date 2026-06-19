@@ -155,7 +155,7 @@ const productSchema = {
  "@type": "AggregateOffer",
  priceCurrency: "EUR",
  lowPrice: "30",
- highPrice: "680",
+ highPrice: "600",
  offerCount: 3,
  availability: "https://schema.org/InStock",
  seller: { "@id": `${SITE_URL}/#organization` },
@@ -414,7 +414,7 @@ export default function BosphorusCruisePage() {
  __html: JSON.stringify(
  buildLocalBusinessSchema({
  pageUrl: `${SITE_URL}/bosphorus-cruise`,
- priceRange: "€€-€€€€ (€30-€600 across products)",
+ priceRange: "€€-€€€€ (€30-€500 across published products; event yachts by quote)",
  description:
  "Bosphorus cruise comparison hub for Istanbul: sunset (€30 Mon/Tue/Thu, €34 other days), dinner (€30-€90), private yacht charter (€220-€600). TURSAB licensed since 2001.",
  }),

@@ -143,7 +143,7 @@ const COPY: Record<
       "Three booking options. Same operator, same TÜRSAB licence. Pick the format that matches your group.",
     sunsetCard: "Sunset cruise — €30",
     dinnerCard: "Dinner cruise — €30",
-    yachtCard: "Private yacht — €200+",
+    yachtCard: "Private yacht — €220+",
     ruWaDisclaimer: "",
   },
   tr: {
@@ -158,7 +158,7 @@ const COPY: Record<
       "Üç rezervasyon seçeneği. Aynı operatör, aynı TÜRSAB lisansı. Grubunuza uygun olanı seçin.",
     sunsetCard: "Gün batımı turu — €30",
     dinnerCard: "Akşam yemekli tur — €30",
-    yachtCard: "Özel yat — €200+",
+    yachtCard: "Özel yat — €220+",
     ruWaDisclaimer: "",
   },
   de: {
@@ -173,7 +173,7 @@ const COPY: Record<
       "Drei Buchungsoptionen. Gleicher Anbieter, gleiche TÜRSAB-Lizenz. Wählen Sie das Format passend zu Ihrer Gruppe.",
     sunsetCard: "Sonnenuntergangs-Kreuzfahrt — €30",
     dinnerCard: "Dinner-Kreuzfahrt — €30",
-    yachtCard: "Private Yacht — €200+",
+    yachtCard: "Private Yacht — €220+",
     ruWaDisclaimer: "",
   },
   fr: {
@@ -188,7 +188,7 @@ const COPY: Record<
       "Trois options de réservation. Même opérateur, même licence TÜRSAB. Choisissez le format adapté à votre groupe.",
     sunsetCard: "Croisière coucher de soleil — €30",
     dinnerCard: "Croisière dîner — €30",
-    yachtCard: "Yacht privé — €200+",
+    yachtCard: "Yacht privé — €220+",
     ruWaDisclaimer: "",
   },
   nl: {
@@ -203,7 +203,7 @@ const COPY: Record<
       "Drie boekingsopties. Zelfde aanbieder, zelfde TÜRSAB-vergunning. Kies wat past bij je groep.",
     sunsetCard: "Sunset cruise — €30",
     dinnerCard: "Dinercruise — €30",
-    yachtCard: "Privéjacht — €200+",
+    yachtCard: "Privéjacht — €220+",
     ruWaDisclaimer: "",
   },
   ru: {
@@ -218,7 +218,7 @@ const COPY: Record<
       "Три варианта бронирования. Один оператор, одна лицензия TÜRSAB. Выберите формат для своей группы.",
     sunsetCard: "Закатный круиз — €30",
     dinnerCard: "Ужин-круиз — €30",
-    yachtCard: "Частная яхта — €200+",
+    yachtCard: "Частная яхта — €220+",
     ruWaDisclaimer:
       "Мы отвечаем в WhatsApp круглосуточно — пишите в любое время.",
   },

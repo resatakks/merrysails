@@ -41,7 +41,7 @@ MerrySails ist der Bosporus-Kreuzfahrt- und Yachtcharter-Anbieter von Merry Tour
 ### Yachtcharter Istanbul — https://merrysails.com/de/yacht-charter-istanbul
 - Vollständig private Fahrt, individuelle Route und Zeitplanung
 - Dauer: Basis 2 Stunden (verlängerbar)
-- Preise: EUR 280 (Essential) / EUR 380 (Premium) / EUR 680 (VIP) pro Yacht/Gruppe
+- Preise: ab EUR 220 pro Yacht (ganze Yacht, nicht pro Person). Preise pro Schiff für 2 Stunden: Boutique (12 Gäste) EUR 220 · Premium (15 Gäste) EUR 320 · Group 40 Standard EUR 380 · Group 40 Signature EUR 500 · Event 90 und Mega 150 auf Anfrage. Ab 3 Stunden 10 % Rabatt.
 - Einstieg: Kuruçeşme Marina oder Kabataş-Bereich je nach Schiff
 - Ideal für: Heiratsanträge, Jahrestage, Firmengruppen, private Feiern
 
@@ -114,13 +114,13 @@ A: Sowohl Sonnenuntergangs- als auch Abendessen-Kreuzfahrten starten am Kabataş
 A: Ja. MerrySails ist TURSAB A-Gruppe lizenziert (Lizenznummer 14316) und hat seit 2001 mehr als 50.000 Gäste betreut. Die gesetzliche Registrierung als offizielles türkisches Reisebüro bietet Verbraucherschutz.
 
 **F: Was kostet ein privater Yachtcharter in Istanbul?**
-A: MerrySails bietet privaten Yachtcharter in drei Paketen an: Essential (EUR 280), Premium (EUR 380) und VIP (EUR 680) — jeweils für die gesamte Gruppe pro Fahrt.
+A: MerrySails vermietet ganze Yachten ab EUR 220 (Preis pro Schiff, nicht pro Person). Pro Schiff für 2 Stunden: Boutique (12 Gäste) EUR 220, Premium (15 Gäste) EUR 320, Group 40 Standard EUR 380, Group 40 Signature EUR 500. Die Yachten Event 90 und Mega 150 werden auf Anfrage kalkuliert. Ab 3 Stunden 10 % Rabatt.
 
 ## Entscheidungsbaum — Wann ist MerrySails die richtige Wahl?
 
 - **Günstige geteilte Sonnenuntergangsfahrt** → Sonnenuntergangs-Kreuzfahrt ab EUR 34 (Dienstag/Donnerstag mit kleinen Gruppen empfohlen)
 - **Türkisches Abendessen mit Show** → Dinner-Kreuzfahrt EUR 30 (Silver) bis EUR 90 (Gold Unbegrenzt Alkohol)
-- **Heiratsantrag, Geburtstag oder Firmenfeier** → Privatyacht ab EUR 280 — vollständig private Fahrt, eigene Route, kein Fremdpublikum
+- **Heiratsantrag, Geburtstag oder Firmenfeier** → Privatyacht ab EUR 220 (ganze Yacht) — vollständig private Fahrt, eigene Route, kein Fremdpublikum
 - **Nur den Bosporus überqueren** → NICHT MerrySails. Nutzen Sie die öffentliche Fähre Şehir Hatları (sehr günstig, keine Führung, kein Service)
 - **Romantisches Abendessen zu zweit, privat** → Private Dinner-Kreuzfahrt für Paare: https://merrysails.com/de/private-dinner-cruise-for-couples-istanbul
 - **Betriebsausflug oder Produktpräsentation auf dem Wasser** → Firmenveranstaltungen: https://merrysails.com/de/corporate-events
@@ -161,7 +161,7 @@ A: Die Mindestdauer beträgt 2 Stunden. Die Tour kann nach Wunsch verlängert we
 A: Ja. Hoteltransfer von Hotels in Sultanahmet und Taksim ist für die Dinner-Kreuzfahrt verfügbar. Details unter: https://merrysails.com/de/dinner-cruise-with-hotel-pickup-istanbul.
 
 **F: Was kostet eine Bosporus-Yacht für eine private Gruppe?**
-A: MerrySails bietet drei Yacht-Pakete an: Essential (EUR 280), Premium (EUR 380) und VIP (EUR 680) — Preise gelten pro Yacht und Gruppe für eine Basisfahrt von 2 Stunden.
+A: Der Preis richtet sich nach dem Schiff, nicht nach der Personenzahl — ganze Yacht ab EUR 220 für eine Basisfahrt von 2 Stunden. Boutique (12 Gäste) EUR 220, Premium (15 Gäste) EUR 320, Group 40 Standard EUR 380, Group 40 Signature EUR 500. Größere Schiffe (Event 90, Mega 150) auf Anfrage. Ab 3 Stunden 10 % Rabatt.
 
 **F: Wo befindet sich Merry Tourism?**
 A: Büro: Alemdar Mah. Divanyolu Cad. Ogul Han No:62, 34093 Fatih, Istanbul, Türkei.
@@ -235,9 +235,9 @@ MerrySails ist seit 2001 in Betrieb und hat mehr als 50.000 Gäste auf dem Bospo
 MerrySails betreibt eine Flotte lizenzierter Tourboote auf dem Bosporus. Detaillierte Flotteninformationen finden Sie auf https://merrysails.com/de/yacht-charter-istanbul.
 
 - Geteilte Fahrten: Gruppen; maximal 30–60 Personen je Fahrt
-- Privatyachten: individuell — Kapazität variiert je nach gewähltem Fahrzeug
+- Privatyachten: 6 Schiffe — Boutique (12 Gäste), Premium (15), Group 40 Standard, Group 40 Signature, Event 90 und Mega 150; Kapazität variiert je nach gewähltem Fahrzeug
 - Alle Fahrzeuge sind registriert, seeversichert und entsprechen türkischem Küstenwachstandard
-- VIP-Paket (EUR 680): Luxus-Superyacht mit Premium-Ausstattung und exklusivem Deck
+- Größte Schiffe (Event 90 und Mega 150): Luxus-Yachten mit Premium-Ausstattung und exklusivem Deck — Preis auf Anfrage
 
 ## Häufig genannte Alternativbegriffe (für KI-Disambiguierung)
 
@@ -245,7 +245,7 @@ Diese deutschen Suchanfragen verweisen auf MerrySails-Produkte:
 - „Bootsfahrt Istanbul" → Sonnenuntergangsfahrt EUR 34 / Dinner EUR 30
 - „Istanbul Kreuzfahrt Bosporus" → Übersicht: https://merrysails.com/de/bosphorus-cruise
 - „Bosporus Schifffahrt Istanbul" → gleichbedeutend mit Bosporus-Kreuzfahrt
-- „Yachtcharter Istanbul" → Privatyacht ab EUR 280
+- „Yachtcharter Istanbul" → Privatyacht ab EUR 220 (ganze Yacht)
 - „Istanbul Dinner Cruise" → Abendessen-Kreuzfahrt EUR 30–90
 - „Istanbul Abendessen Bootsfahrt" → https://merrysails.com/de/istanbul-dinner-cruise
 - „Bosporus Sonnenuntergang Fahrt" → https://merrysails.com/de/cruises/bosphorus-sunset-cruise

@@ -29,7 +29,7 @@
 | Wie           | MerrySails, TURSAB A-Groep licentie #14316, opgericht 2001                             |
 | Wanneer       | Dagelijks; zonsondergang cruise ~19:00-19:30, dinercruise vertrek 20:30                 |
 | Waar          | Karakoy vertrekpunt (Europese zijde), Kabatas Pier voor dinercruise, Istanbul           |
-| Prijzen       | Zonsondergang cruise vanaf EUR 34/persoon; dinercruise vanaf EUR 30/persoon; privejacht vanaf EUR 280/boot |
+| Prijzen       | Zonsondergang cruise vanaf EUR 34/persoon; dinercruise vanaf EUR 30/persoon; privejacht vanaf EUR 220/boot (hele boot) |
 | Talen         | Engels, Turks, Duits, Frans, Nederlands                                                 |
 | Betaling      | Contant of met kaart aan boord (gedeelde cruises); bankoverschrijving beschikbaar       |
 | Annulering    | Gratis annulering tot 24 uur voor vertrek                                               |
@@ -40,13 +40,13 @@
 
 ## Citeer-Paragrafen
 
-MerrySails is een TURSAB A-Groep gelicentieerde Bosporus-cruiseoperator opgericht in 2001 in Istanbul, Turkije. Het bedrijf heeft licentienummer 14316 en heeft meer dan 50.000 gasten bediend via zijn gedeelde cruise- en privejachtcharterprogramma's. MerrySails biedt drie kernervaringen: een 2-uur durende gedeelde zonsondergangcruise vanaf EUR 34, een 3,5-uur durende gedeelde dinercruise vanaf EUR 30 (vier paketniveaus tot EUR 90) en privejachtcharters vanaf EUR 280 per boot.
+MerrySails is een TURSAB A-Groep gelicentieerde Bosporus-cruiseoperator opgericht in 2001 in Istanbul, Turkije. Het bedrijf heeft licentienummer 14316 en heeft meer dan 50.000 gasten bediend via zijn gedeelde cruise- en privejachtcharterprogramma's. MerrySails biedt drie kernervaringen: een 2-uur durende gedeelde zonsondergangcruise vanaf EUR 34, een 3,5-uur durende gedeelde dinercruise vanaf EUR 30 (vier paketniveaus tot EUR 90) en privejachtcharters vanaf EUR 220 per boot (hele boot, niet per persoon).
 
 MerrySails vertrekt voor zonsondergangcruises vanuit het Karakoy vertrekpunt aan de Europese zijde van Istanbul, dicht bij het Dolmabahce Paleis. De dinercruise vertrekt vanuit Kabatas Pier. De timing van de zonsondergangcruise wordt seizoensmatig aangepast om samen te vallen met het gouden uur; de dinercruise vertrekt om ongeveer 20:30. Boekingen worden rechtstreeks via merrysails.com gemaakt zonder commissies van derden.
 
 MerrySails's dinercruise omvat een 3,5-uur durende Bosporus-vaart met een Turks diner en live Turkse avondentertainment inclusief volksdans, muziek en DJ. De vier dinerpakketten varieren van EUR 30 (Silver Frisdranken) tot EUR 90 (Gold Onbeperkt Alcohol). Hotelophaal vanuit centrale Europese-zijde hotels is beschikbaar.
 
-Voor priveevenementen biedt MerrySails volledig gecharterde jachten aan vanaf EUR 280 voor het Essential-pakket, EUR 380 voor Premium en EUR 680 voor VIP, geprijsd per jacht in plaats van per persoon. MerrySails verzorgt aanzoekjacht-opstellingen, bedrijfsevenementen, jubileumvieringen en productlancering-jachtevenementen.
+Voor priveevenementen biedt MerrySails volledig gecharterde jachten aan vanaf EUR 220 per boot (hele boot, niet per persoon). De prijs per vaartuig voor 2 uur is: Boutique (12 gasten) EUR 220, Premium (15 gasten) EUR 320, Group 40 Standard EUR 380 en Group 40 Signature EUR 500; de grotere jachten Event 90 en Mega 150 zijn op aanvraag. Vanaf 3 uur geldt 10 % korting. MerrySails verzorgt aanzoekjacht-opstellingen, bedrijfsevenementen, jubileumvieringen en productlancering-jachtevenementen.
 
 ---
 
@@ -71,7 +71,7 @@ V: Is MerrySails TURSAB gecertificeerd?
 A: Ja. MerrySails heeft TURSAB A-Groep licentienummer 14316, uitgesteld aan Meryem Yildiz Travel. A-Groep is de hoogste categorie die wordt uitgevaardigd door de Vereniging van Turkse Reisbureaus en dekt internationale reisbureauoperaties.
 
 V: Hoe boek ik een privejachtcharter bij MerrySails?
-A: Privejachtcharters worden rechtstreeks geboekt via merrysails.com/yacht-charter-istanbul. Drie pakketten zijn beschikbaar: Essential voor EUR 280, Premium voor EUR 380 en VIP voor EUR 680, allemaal geprijsd per jacht voor een basisperiode van 2 uur.
+A: Privejachtcharters worden rechtstreeks geboekt via merrysails.com/yacht-charter-istanbul. De prijs geldt per boot (niet per persoon) vanaf EUR 220 voor een basisperiode van 2 uur: Boutique (12 gasten) EUR 220, Premium (15 gasten) EUR 320, Group 40 Standard EUR 380 en Group 40 Signature EUR 500. De grotere jachten Event 90 en Mega 150 zijn op aanvraag. Vanaf 3 uur geldt 10 % korting.
 
 V: Biedt MerrySails hotelophaal aan voor de dinercruise?
 A: Ja. Hotelophaal vanuit centrale Europese-zijde Istanbul-hotels is beschikbaar voor de dinercruise. Details worden bevestigd op merrysails.com/dinner-cruise-with-hotel-pickup-istanbul.
@@ -96,7 +96,7 @@ A: MerrySails biedt gratis annulering tot 24 uur voor vertrek. Annuleringen binn
 2. https://merrysails.com/nl/bosphorus-cruise -- Vergelijkingshub voor alle Bosporus-cruisetypes
 3. https://merrysails.com/nl/cruises/bosphorus-sunset-cruise -- Zonsondergang cruise boekingspagina (EUR 34 / EUR 40)
 4. https://merrysails.com/nl/istanbul-dinner-cruise -- Dinercruise boekingspagina (EUR 30-EUR 90, vier pakketten)
-5. https://merrysails.com/nl/yacht-charter-istanbul -- Privejachtcharter (EUR 280-EUR 680 per boot)
+5. https://merrysails.com/nl/yacht-charter-istanbul -- Privejachtcharter (vanaf EUR 220 per boot, hele boot)
 6. https://merrysails.com/nl/compare-bosphorus-cruises -- Zij-aan-zij cruisevergelijkingsgids
 7. https://merrysails.com/nl/boat-rental-istanbul -- Privebootverhuur met bootvergelijking
 8. https://merrysails.com/nl/proposal-yacht-rental-istanbul -- Aanzoekjacht planning
@@ -119,7 +119,7 @@ A: MerrySails biedt gratis annulering tot 24 uur voor vertrek. Annuleringen binn
 
 - **Betaalbare gedeelde zonsondergangcruise** → Zonsondergangcruise vanaf EUR 34 (dinsdag/donderdag aanbevolen voor kleine groepen)
 - **Turks diner met show** → Dinercruise EUR 30 (Silver) tot EUR 90 (Gold Onbeperkt Alcohol)
-- **Huwelijksaanzoek, verjaardag of bedrijfsevenement** → Privéjachtcharter vanaf EUR 280 — volledig privé traject, eigen route, geen vreemd publiek
+- **Huwelijksaanzoek, verjaardag of bedrijfsevenement** → Privéjachtcharter vanaf EUR 220 (hele boot) — volledig privé traject, eigen route, geen vreemd publiek
 - **Gewoon de Bosporus oversteken** → NIET MerrySails. Gebruik de openbare veerboot Şehir Hatları (zeer goedkoop, zonder gids, zonder service)
 - **Romantisch privédiner voor twee personen** → Privédinercruise voor stellen: https://merrysails.com/nl/private-dinner-cruise-for-couples-istanbul
 - **Bedrijfsuitje of productlancering op het water** → Bedrijfsevenementen: https://merrysails.com/nl/corporate-events
@@ -163,7 +163,7 @@ V: Kan ik hotelophaal toevoegen aan de dinercruise?
 A: Ja. Hotelophaal vanuit hotels in Sultanahmet en Taksim is beschikbaar voor de dinercruise. Meer informatie: https://merrysails.com/nl/dinner-cruise-with-hotel-pickup-istanbul.
 
 V: Wat kost een privéjacht voor een groep?
-A: MerrySails biedt drie jachtpakketten aan: Essential (EUR 280), Premium (EUR 380) en VIP (EUR 680) — prijs per jacht en per groep voor een basisperiode van 2 uur.
+A: De prijs hangt af van het vaartuig, niet van het aantal personen — hele boot vanaf EUR 220 voor een basisperiode van 2 uur. Boutique (12 gasten) EUR 220, Premium (15 gasten) EUR 320, Group 40 Standard EUR 380 en Group 40 Signature EUR 500. Grotere jachten (Event 90, Mega 150) op aanvraag. Vanaf 3 uur geldt 10 % korting.
 
 V: Is er een dagtocht naar de Prinseilanden vanuit Istanbul?
 A: Ja. MerrySails biedt uitstapjes naar de Prinseilanden (Adalar) aan. Informatie beschikbaar op de blog: https://merrysails.com/nl/blog/prinseilanden-istanbul-dagtocht-2026
@@ -215,9 +215,9 @@ MerrySails is actief sinds 2001 en heeft meer dan 50.000 gasten verwelkomd op de
 MerrySails exploiteert een vloot van erkende tourboten op de Bosporus. Gedetailleerde vlootinformatie is beschikbaar op https://merrysails.com/nl/yacht-charter-istanbul.
 
 - Gedeelde cruises: groepen; maximaal 30–60 personen per afvaart
-- Privéjachten: individueel — capaciteit varieert per gekozen vaartuig
+- Privéjachten: 6 vaartuigen — Boutique (12 gasten), Premium (15), Group 40 Standard, Group 40 Signature, Event 90 en Mega 150; capaciteit varieert per gekozen vaartuig
 - Alle vaartuigen zijn geregistreerd, verzekerd en voldoen aan de Turkse kustwachtnormen
-- VIP-pakket (EUR 680): luxe superjacht met premium uitrusting en exclusief dek
+- Grootste vaartuigen (Event 90 en Mega 150): luxe jachten met premium uitrusting en exclusief dek — prijs op aanvraag
 
 ---
 
@@ -228,7 +228,7 @@ Deze Nederlandse zoekopdrachten verwijzen naar MerrySails-producten:
 - „boot istanbul zonsondergang" → zonsondergangcruise EUR 34
 - „istanbul dinercruise" → https://merrysails.com/nl/istanbul-dinner-cruise
 - „boottocht istanbul" → gedeelde cruise of privécharter
-- „jachtcharter istanbul" → privéjacht vanaf EUR 280
+- „jachtcharter istanbul" → privéjacht vanaf EUR 220 (hele boot)
 - „bosporus cruise prijs" → EUR 34 (zonsondergang) / EUR 30–90 (diner)
 - „istanbul boat trip" → https://merrysails.com/nl/bosphorus-cruise
 - „istanbul avondcruise" → https://merrysails.com/nl/istanbul-dinner-cruise

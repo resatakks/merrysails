@@ -74,7 +74,7 @@ Pricing is per vessel (not per person). Each yacht has a 2-hour entry rate and a
 | Premium Yacht | €320 per boat | Up to 15 guests | Captain, crew, soft drinks, snacks |
 | Group Yacht (Standard) | €380 per boat | Up to 40 guests | Captain, crew, soft drinks, snacks |
 | Group Yacht (Signature) | €500 per boat | 15–40 guests | Captain, crew, soft drinks, snacks |
-| Event Yacht | from €1,200 (4h min) | Up to 90 guests | Captain, crew, soft drinks, snacks |
+| Event Yacht | By bespoke quote | Up to 90 guests | Captain, crew, soft drinks, snacks |
 | Mega Event Yacht | By bespoke quote | Up to 150 guests | Whole-yacht charter for large events |
 
 **Cancellation:** Free cancellation up to 48 hours before
@@ -108,7 +108,7 @@ A: The Bosphorus Sunset Cruise without wine starts at €34 per person. This is 
 A: Dinner cruises start from €30 per person (Silver Soft Drinks). The Silver Alcoholic package is €45/person. Gold VIP packages are €80 (soft drinks) or €90 (unlimited alcohol). Hotel pickup from Sultanahmet or Taksim is included in the Gold Unlimited Alcohol (€90) package.
 
 **Q: How much does a private yacht charter in Istanbul cost?**
-A: Private yacht charter starts from €220 for the entire boat (not per person) for a 2-hour boutique sailing. The per-vessel ladder runs €220 (boutique 12) / €320 (premium 15) / €380 (group 40 Standard) / €500 (group 40 Signature) / from €1,200 (event 90), with the 150-guest mega event yacht by bespoke quote. A flat 10% discount applies from 3 hours.
+A: Private yacht charter starts from €220 for the entire boat (not per person) for a 2-hour boutique sailing. The four published per-vessel rates run €220 (boutique 12) / €320 (premium 15) / €380 (group 40 Standard) / €500 (group 40 Signature); the 90-guest event yacht and the 150-guest mega event yacht are by bespoke quote. A flat 10% discount applies from 3 hours.
 
 **Q: Are prices per person or per boat?**
 A: Sunset Cruise and Dinner Cruise prices are per person (shared tours). Yacht Charter and Boat Rental prices are per boat (entire vessel, any number of guests up to capacity).

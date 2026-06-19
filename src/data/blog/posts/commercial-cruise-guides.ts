@@ -181,8 +181,8 @@ export const commercialCruiseGuides: BlogPost[] = [
       },
       {
         heading: "Private Yacht Charter Reviews — What to Check",
-        content: "For private yacht reviews, check whether the guest mentions the planning process, vessel fit, route control, decoration, food, photographer, or timing. Private yacht value depends on matching the package and add-ons to the occasion. The Essential, Premium, and VIP public tiers are starting points; any event-heavy brief should be judged by the final proposal, not by a generic review of another guest's celebration.",
-        proTip: "Read the package inclusions before booking. Essential, Premium, and VIP solve different needs, and event add-ons should be confirmed before the charter."
+        content: "For private yacht reviews, check whether the guest mentions the planning process, vessel fit, route control, decoration, food, photographer, or timing. Private yacht value depends on matching the right vessel and add-ons to the occasion. The fleet runs from the 12-guest Boutique yacht (from €220) up through the Premium 15, Group 40, and event-class vessels — each priced per boat; any event-heavy brief should be judged by the final proposal, not by a generic review of another guest's celebration.",
+        proTip: "Pick the yacht that fits your group size first, then confirm the event add-ons (catering, decoration, photography) before the charter — the boat is priced per vessel, not per person."
       },
       {
         heading: "How to Read Bosphorus Cruise Reviews Critically",
@@ -668,7 +668,7 @@ export const commercialCruiseGuides: BlogPost[] = [
 {
     slug: "istanbul-corporate-yacht-events",
     title: "Corporate Yacht Events Istanbul 2026",
-    metaDescription: "Host unforgettable corporate events on a Bosphorus yacht. Team building, client entertaining, product launches from €600/hour on the event yacht. Full-service packages available.",
+    metaDescription: "Host unforgettable corporate events on a Bosphorus yacht. Team building, client entertaining, product launches — group yachts from €380, event yacht by quote. Full-service packages.",
     excerpt: "A comprehensive guide to hosting corporate events on Bosphorus yachts — from team-building cruises and client entertaining to product launches and executive retreats. Discover why Istanbul's waterway is the world's most impressive business venue.",
     category: "events",
     date: "2026-03-17",
@@ -679,7 +679,7 @@ export const commercialCruiseGuides: BlogPost[] = [
     keywords: ["corporate yacht event istanbul", "bosphorus corporate cruise", "business event yacht istanbul", "team building yacht bosphorus", "corporate entertaining istanbul", "yacht event planning istanbul", "istanbul corporate boat hire 2026"],
     author: "captain-ahmet",
     keyTakeaways: [
-      "Corporate yacht events on the Bosphorus run on the event yacht (€600/hour, 4-hour minimum) and the bespoke-quote mega event yacht, accommodating up to 150 guests with full event management",
+      "Corporate yacht events on the Bosphorus run on the group 40 yacht (from €380 Standard, €500 Signature) and, for larger receptions, the by-quote event yacht 90 and mega event yacht 150 — accommodating up to 150 guests with full event management",
       "Istanbul offers 40–60% cost savings compared to equivalent corporate yacht events in Monaco, Dubai, or the French Riviera",
       "Full-service packages include AV equipment, catering, branding, and an event coordinator — eliminating the need for external vendors",
       "The Bosphorus setting consistently delivers 95%+ satisfaction ratings from corporate clients, with the venue itself becoming the primary talking point"
@@ -696,7 +696,7 @@ export const commercialCruiseGuides: BlogPost[] = [
         table: {
           headers: ["Event Type", "Typical Duration", "Guest Range", "Key Features", "Price From"],
           rows: [
-            ["Client Entertaining", "2.5–3.5 hrs", "10–40", "Dinner, drinks, conversation setting", "From €500 (group) / €600/h (event)"],
+            ["Client Entertaining", "2.5–3.5 hrs", "10–40", "Dinner, drinks, conversation setting", "From €500 (group) / event yacht by quote"],
             ["Team Building", "3–4 hrs", "15–80", "Activities, social bonding, meals", "€980"],
             ["Product Launch", "2–3 hrs", "30–100", "AV setup, branding, press area", "€1,500"],
             ["Executive Retreat", "3–5 hrs", "8–20", "Conference setup, privacy, WiFi", "€980"],
@@ -734,7 +734,7 @@ export const commercialCruiseGuides: BlogPost[] = [
       }
     ],
     faqs: [
-      { q: "How much does a corporate yacht event cost in Istanbul?", a: "Corporate yacht events run on the 40-guest group yacht (from €500 Signature) or the 90-guest event yacht (€600/hour, 4-hour minimum from €1,200) with basic catering. Full-service packages for 40 guests with premium catering, decoration, and photography typically range €2,800–3,500. Detailed itemised quotes are provided within 48 hours." },
+      { q: "How much does a corporate yacht event cost in Istanbul?", a: "Corporate yacht events run on the 40-guest group yacht (from €380 Standard, €500 Signature); the 90-guest event yacht and 150-guest mega event yacht are by bespoke quote. Full-service packages for 40 guests with premium catering, decoration, and photography typically range €2,800–3,500. Detailed itemised quotes are provided within 48 hours." },
       { q: "How many people can attend a corporate yacht event?", a: "Yacht capacity ranges from 10 guests on intimate vessels to 150 on large luxury yachts. For corporate events, we recommend 60–70% of maximum capacity to allow comfortable networking and movement between zones." },
       { q: "Is WiFi available on corporate yacht charters?", a: "Yes. All corporate charter vessels are equipped with high-speed WiFi sufficient for presentations, video calls, and simultaneous guest connectivity. For events requiring heavy bandwidth (live streaming, large file transfers), enhanced connectivity can be arranged." },
       { q: "Can we set up presentations and AV equipment on a yacht?", a: "Absolutely. Standard corporate setups include a 55–75 inch screen, HDMI connectivity, wireless microphone, and professional speakers. For larger events, LED walls, stage lighting, and multi-camera setups are available through our AV partners." },
@@ -2029,9 +2029,9 @@ Merry Tourism has been running the dinner istanbul cruise since 2001 under TURSA
 | Premium Yacht | €320 | up to 15 guests | Celebration, anniversary |
 | Group Standard | €380 | up to 15 guests | Mid-size group, more deck space |
 | Group Signature | €500 | 15–40 guests | Corporate event, large celebration |
-| Event Yacht | €600 | 30–90 guests | Receptions, big celebrations |
+| Event Yacht | By quote | 30–90 guests | Receptions, big celebrations |
 
-Extra hours are billed at the per-yacht hourly rate — €110/hr (Boutique) up to €300/hr (Event Yacht), with €160/hr Premium and €190–€250/hr group yachts; a 10% discount applies from 3 hours. Captain and crew are always included. Catering, photography, and live music are optional add-ons priced separately.
+Extra hours are billed at the per-yacht hourly rate — €110/hr (Boutique), €160/hr Premium and €190–€250/hr group yachts; a 10% discount applies from 3 hours. The Event Yacht 90 and Mega Event Yacht 150 are quoted per program. Captain and crew are always included. Catering, photography, and live music are optional add-ons priced separately.
 
 The private istanbul cruise departs from marinas including Kuruçeşme, Karakoy, or Kabatas depending on vessel assignment. TURSAB A Group licensed Merry Tourism handles all logistics — you receive full boarding and route details in writing after confirmation.
 
@@ -2689,7 +2689,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
   {
     slug: "bosphorus-cruise-new-year-eve-istanbul-2026-2027",
     title: "New Year's Eve Bosphorus Cruise 2026/27",
-    metaDescription: "New Year's Eve 2026/27 Bosphorus cruise Istanbul: private yacht from €1,200, shared dinner cruise €120, midnight fireworks viewing. TURSAB licensed since 2001.",
+    metaDescription: "New Year's Eve 2026/27 Bosphorus cruise Istanbul: private yacht by quote, shared dinner cruise €120, midnight fireworks viewing. TURSAB licensed since 2001.",
     excerpt: "A practical New Year's Eve cruise guide for Istanbul: which packages run on 31 December, where the fireworks view is sharpest, and how to book the right format for your group size.",
     category: "cruise-guide",
     date: "2026-05-31",
@@ -2711,15 +2711,15 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
     author: "captain-ahmet",
     keyTakeaways: [
       "New Year's Eve 2026/27 dinner cruise: €120 per person (vs €30 nightly Silver Soft) — premium menu, fireworks viewing window included",
-      "Private yacht charter for NYE: €1,200-€3,500 depending on yacht class and 4-6 hour programme",
+      "Private yacht charter for NYE: priced by bespoke quote depending on yacht class and 4-6 hour programme — a premium over standard charter rates",
       "Best fireworks viewing zone: Bosphorus between Ortaköy Mosque and the first Bosphorus Bridge (15 July Martyrs Bridge)",
       "Book by mid-November — peak demand from Gulf, European, and CIS visitors fills every NYE programme 4-6 weeks ahead",
     ],
     sections: [
       {
         heading: "What Changes on New Year's Eve in Istanbul",
-        answerCapsule: "New Year's Eve in Istanbul is one of the busiest evenings of the year on the Bosphorus. Dinner cruise prices roughly triple (€120 vs €30 nightly), private yacht charters double (€1,200 minimum for 4 hours), and every premium package books out 4-6 weeks ahead. The reward: fireworks across the Istanbul skyline viewed from the water — visible from the city, unmissable from a cruise.",
-        content: "New Year's Eve is the single largest demand spike on the Bosphorus calendar, well above bayram weeks, the European summer peak, and Valentine's Day. Three traveler segments converge on the same night: Gulf-Arab and CIS family groups treating Istanbul as a winter weekend, European couples on a romantic city-break, and Turkish nationals from Anatolia returning to celebrate in the city. The combined pressure on Bosphorus capacity is the same operational reality every year — every cruise vessel runs at full booking, every private yacht is reserved, and walk-up availability is essentially zero by mid-December.\n\nMerrySails — TURSAB A Group licensed since 2001 with 50,000+ guests hosted — runs two distinct NYE products: a shared dinner cruise on 31 December at €120 per person with a premium upgraded menu, and a private yacht charter ladder from €1,200 (2-hour Essential) through €3,500 (6-hour VIP with full event production). Both products time the route to put the boat in the optimal fireworks viewing zone for the midnight skyline display."
+        answerCapsule: "New Year's Eve in Istanbul is one of the busiest evenings of the year on the Bosphorus. Dinner cruise prices roughly triple (€120 vs €30 nightly), private yacht charters are by bespoke quote at a premium over standard rates, and every premium package books out 4-6 weeks ahead. The reward: fireworks across the Istanbul skyline viewed from the water — visible from the city, unmissable from a cruise.",
+        content: "New Year's Eve is the single largest demand spike on the Bosphorus calendar, well above bayram weeks, the European summer peak, and Valentine's Day. Three traveler segments converge on the same night: Gulf-Arab and CIS family groups treating Istanbul as a winter weekend, European couples on a romantic city-break, and Turkish nationals from Anatolia returning to celebrate in the city. The combined pressure on Bosphorus capacity is the same operational reality every year — every cruise vessel runs at full booking, every private yacht is reserved, and walk-up availability is essentially zero by mid-December.\n\nMerrySails — TURSAB A Group licensed since 2001 with 50,000+ guests hosted — runs two distinct NYE products: a shared dinner cruise on 31 December at €120 per person with a premium upgraded menu, and a private yacht charter quoted to the vessel and brief — from the boutique and premium yachts for smaller groups up through the group 40, event 90, and mega 150 with full event production, all at a premium over standard charter rates. Both products time the route to put the boat in the optimal fireworks viewing zone for the midnight skyline display."
       },
       {
         heading: "The €120 NYE Dinner Cruise: What You Get",
@@ -2729,12 +2729,12 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
         heading: "Private Yacht Charter for NYE: When It Makes Sense",
         content: "Private yacht charter on New Year's Eve is the cleanest format for groups of 8 or more who want their own space, their own menu, and the option to time the cruise around the fireworks specifically. New Year's Eve is a bespoke-quote night rather than a standard-rate sailing: NYE charters are priced to the vessel and the brief, scaling from the boutique and premium yachts for smaller groups up through the 40-guest group yacht and the 90-guest event yacht with full production support. Expect a premium over standard charter rates given the fireworks-night demand. All prices are per yacht, not per guest.\n\nWhat the charter price covers on NYE: yacht, captain and crew, fuel, port fees, non-alcoholic drinks, a basic snack platter, and the fireworks-viewing route timing. What is typically added on top: catering (€40-€80 per guest for a multi-course dinner), alcohol package (€25-€45 per guest), DJ or live music (€500-€1,200 for the night), event photographer (€600-€900), decoration (€300-€800), and hotel transfer (€60-€150 per vehicle). A 12-guest charter with full event production typically lands at €3,500-€5,500 total — comparable per-person cost to the shared NYE dinner cruise, but with privacy and full customization.",
         table: {
-          headers: ["Yacht class", "Capacity", "Duration", "Base charter (NYE)"],
+          headers: ["Yacht", "Capacity", "Standard from (per vessel)", "NYE rate"],
           rows: [
-            ["Essential", "10-12 guests", "2 hours", "€1,200"],
-            ["Premium", "14-18 guests", "3 hours", "€1,800"],
-            ["VIP", "20-30 guests", "4 hours", "€2,500"],
-            ["Event Yacht", "40-60 guests", "6 hours", "€3,500"],
+            ["Boutique Yacht", "12 guests", "€220", "By quote (premium over standard)"],
+            ["Premium Yacht", "15 guests", "€320", "By quote (premium over standard)"],
+            ["Group Yacht (Standard / Signature)", "40 guests", "€380 / €500", "By quote (premium over standard)"],
+            ["Event / Mega Event Yacht", "90 / 150 guests", "By quote", "By quote (premium over standard)"],
           ]
         }
       },
@@ -2745,7 +2745,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       {
         heading: "How to Book NYE Cruise in Istanbul",
         content: "The booking timeline for New Year's Eve Bosphorus cruises is the most aggressive of the year. Mid-November is the practical deadline — by early December, most premium packages and all yacht charters in the popular size ranges (12-30 guests) are fully booked. Late bookings (within 14 days) become matter of which vessel still has availability rather than which vessel best fits the brief.\n\nThe simplest booking flow: send your group size, hotel location, and any specific NYE preferences (private yacht vs shared, alcohol vs dry, language requests, menu customization) to WhatsApp +90 544 898 98 12 by 10 November. The MerrySails team will return a complete quote with available vessel options and a recommended package within 24 hours. Deposit is typically 30% to lock in the date, with the balance due 7 days before 31 December. Cancellation policy for NYE bookings is tighter than the year-round 24-hour rule: free cancellation up to 21 days before, 50% refund 14-21 days before, no refund within 14 days because the vessel cannot be rebooked at that lead time.",
-        proTip: "If your group is 8-12 guests with a clear celebration brief (corporate, family reunion, milestone birthday), the Essential or Premium private yacht is typically the right answer. The cost difference vs paying €120 × 12 on the shared dinner cruise is small once catering is added, and the privacy is the single biggest improvement to the NYE experience."
+        proTip: "If your group is up to 12-15 guests with a clear celebration brief (corporate, family reunion, milestone birthday), the Boutique 12 or Premium 15 private yacht is typically the right answer. The cost difference vs paying €120 × 12 on the shared dinner cruise is small once catering is added, and the privacy is the single biggest improvement to the NYE experience."
       },
       {
         heading: "What Not to Do on a NYE Bosphorus Cruise",
@@ -3015,21 +3015,22 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       },
       {
         heading: "The Six-Yacht MerrySails Fleet Mapped to Group Sizes",
-        content: "The fleet covers six distinct group-size brackets with overlap zones where two yachts can both work. The boutique class (up to 12 guests, from €220) is the boutique yacht — best for couples and small groups including proposals, anniversaries, intimate birthday dinners. The premium class (up to 15 guests, from €320) is the mid-size yacht with a wider top deck and a more refined lounge. Best for family reunions, friend trips, and small corporate hosting.\n\nThe group class (up to 40 guests, from €380 Standard / €500 Signature) is the larger event-ready yacht with full kitchen support, dedicated DJ area, and stage-near table arrangement. Best for medium corporate events, milestone birthdays, and small weddings. The event class (up to 90 guests, from €1,200 on a 4-hour minimum) has extended deck space, full event production hookups, and a separate VIP zone. Best for corporate gala dinners, brand launches, and mid-size weddings. The mega event class (up to 150 guests, bespoke quote) is the largest yacht in the fleet, used for full company events, large weddings, and brand activations. Best for any group above 50 guests where full event production matters more than intimate feel.",
+        content: "The fleet covers six distinct group-size brackets with overlap zones where two yachts can both work. The boutique class (up to 12 guests, from €220) is the boutique yacht — best for couples and small groups including proposals, anniversaries, intimate birthday dinners. The premium class (up to 15 guests, from €320) is the mid-size yacht with a wider top deck and a more refined lounge. Best for family reunions, friend trips, and small corporate hosting.\n\nThe group class (up to 40 guests, from €380 Standard / €500 Signature) is the larger event-ready yacht with full kitchen support, dedicated DJ area, and stage-near table arrangement. Best for medium corporate events, milestone birthdays, and small weddings. The event class (up to 90 guests, by bespoke quote) has extended deck space, full event production hookups, and a separate VIP zone. Best for corporate gala dinners, brand launches, and mid-size weddings. The mega event class (up to 150 guests, bespoke quote) is the largest yacht in the fleet, used for full company events, large weddings, and brand activations. Best for any group above 50 guests where full event production matters more than intimate feel.",
         table: {
-          headers: ["Yacht class", "Capacity", "Base 2hr charter", "Best for"],
+          headers: ["Yacht class", "Capacity", "Base charter (per vessel)", "Best for"],
           rows: [
-            ["Boutique / Premium", "up to 15 guests", "€220-€320", "Proposals, couples, intimate birthday dinners"],
-            ["Premium (Y3)", "15-25 guests", "€380", "Family reunions, friend trips, small corporate"],
-            ["Group (Signature)", "15-40 guests", "€500", "Medium corporate events, milestone birthdays"],
-            ["Event (Y5)", "37-44 guests", "€1,200", "Corporate galas, brand launches, mid-size weddings"],
+            ["Boutique", "up to 12 guests", "from €220 (2h)", "Proposals, couples, intimate birthday dinners"],
+            ["Premium", "up to 15 guests", "from €320 (2h)", "Family reunions, friend trips, small corporate"],
+            ["Group 40 (Standard)", "up to 40 guests", "from €380 (2h)", "Medium corporate events, milestone birthdays"],
+            ["Group 40 (Signature)", "15-40 guests", "from €500 (2h)", "Upgraded medium events and small weddings"],
+            ["Event", "up to 90 guests", "Bespoke quote", "Corporate galas, brand launches, mid-size weddings"],
             ["Mega Event", "up to 150 guests", "Bespoke quote", "Full company events, large weddings, brand activations"],
           ]
         }
       },
       {
         heading: "The Most Common Sizing Mistakes",
-        content: "Three mistakes consistently lead to over-sized or under-sized yacht bookings. Mistake 1: assuming 'I will add guests later, let me book the bigger yacht just in case.' In practice, group sizes rarely grow above 10-15% of the original count; you pay 40-100% more for the bigger yacht to absorb a worst-case 1-2 guest addition. Better: book the right size for the confirmed group, and add a small overflow buffer (10-15%) only if the event genuinely has uncertain guest list (corporate hosting, for example).\n\nMistake 2: confusing the boutique yacht with a generic 'small yacht.' The boutique sailing yacht is genuinely premium — high-end Italian-built sailing vessel, with full crew, decorated for couples. The 'small' framing makes it sound budget; the reality is that it is the most-requested yacht for proposals in 2026 because the intimate scale is exactly what couples want. Don't pass on the Essential because the capacity sounds low.\n\nMistake 3: under-sizing for corporate events. A 25-guest corporate dinner squeezed onto the 15-guest premium yacht maxes the capacity and removes seating flexibility. For 25 confirmed corporate guests, the right yacht is the 40-guest group yacht — gives you stage-near tables, dedicated DJ, full kitchen, and room for late arrivals. The €300 difference in base charter is a single corporate guest's evening cost; well worth the operational headroom.",
+        content: "Three mistakes consistently lead to over-sized or under-sized yacht bookings. Mistake 1: assuming 'I will add guests later, let me book the bigger yacht just in case.' In practice, group sizes rarely grow above 10-15% of the original count; you pay 40-100% more for the bigger yacht to absorb a worst-case 1-2 guest addition. Better: book the right size for the confirmed group, and add a small overflow buffer (10-15%) only if the event genuinely has uncertain guest list (corporate hosting, for example).\n\nMistake 2: confusing the boutique yacht with a generic 'small yacht.' The boutique sailing yacht is genuinely premium — high-end Italian-built sailing vessel, with full crew, decorated for couples. The 'small' framing makes it sound budget; the reality is that it is the most-requested yacht for proposals in 2026 because the intimate scale is exactly what couples want. Don't pass on the boutique yacht because the capacity sounds low.\n\nMistake 3: under-sizing for corporate events. A 25-guest corporate dinner squeezed onto the 15-guest premium yacht maxes the capacity and removes seating flexibility. For 25 confirmed corporate guests, the right yacht is the 40-guest group yacht — gives you stage-near tables, dedicated DJ, full kitchen, and room for late arrivals. The €300 difference in base charter is a single corporate guest's evening cost; well worth the operational headroom.",
         proTip: "Send the actual confirmed-plus-tentative guest count to WhatsApp +90 544 898 98 12 when requesting a yacht quote. The MerrySails team will recommend the right size — and will be honest about when a smaller yacht is actually the better answer for the brief. Operator-side recommendations beat self-selection by 80-90% for first-time charter customers."
       },
       {

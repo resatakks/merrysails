@@ -770,8 +770,8 @@ export default async function LocaleDinnerCruisePickupSultanahmetTaksimPage({
     touristType: "Cultural Tourism",
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: 55,
-      highPrice: 119,
+      lowPrice: 30,
+      highPrice: 90,
       priceCurrency: "EUR",
       offerCount: 4,
       availability: "https://schema.org/InStock",

@@ -29,7 +29,7 @@ export const frenchProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Croisière partagée dès €34/personne (journée) ou €40 (coucher de soleil) — meilleur rapport qualité-prix",
       "Croisière dîner de €55 à €119 selon le package — transfert hôtel inclus dans tous les forfaits",
-      "Location yacht privé dès €220 par bateau (Premium €320, yacht de groupe €380–€500, événementiel €600) selon capacité et durée",
+      "Location yacht privé dès €220 par bateau (Premium €320, yacht de groupe €380–€500 ; événementiel 90 et méga 150 sur devis) selon capacité et durée",
       "Haute saison juin–août : tarifs +15–20 % ; meilleure période qualité/prix : septembre–octobre",
     ],
     sections: [
@@ -88,7 +88,7 @@ export const frenchProductPosts: BlogPost[] = [
             ["Yacht premium", "jusqu'à 15 personnes", "€320", "€576"],
             ["Yacht de groupe · Standard", "jusqu'à 15 personnes", "€380", "€684"],
             ["Yacht de groupe · Signature", "15–40 personnes", "€500", "€900"],
-            ["Yacht événementiel", "jusqu'à 90 personnes", "dès 4h €1 200", "—"],
+            ["Yacht événementiel", "jusqu'à 90 personnes", "sur devis", "—"],
           ],
         },
         proTip:
@@ -248,8 +248,8 @@ export const frenchProductPosts: BlogPost[] = [
             ],
             [
               "Romantique Événementiel",
-              "dès €1 200",
-              "Yacht événementiel dès 4h, décoration, photographe + vidéaste, dîner gastronomique, transfert",
+              "sur devis",
+              "Yacht événementiel, décoration, photographe + vidéaste, dîner gastronomique, transfert",
               "Grande fête après la demande",
             ],
           ],
@@ -334,9 +334,9 @@ export const frenchProductPosts: BlogPost[] = [
             ],
             [
               "Luxe",
-              "Événementiel €1 200 (4h)",
+              "Événementiel (sur devis)",
               "Tous suppléments inclus",
-              "€1 400–1 600",
+              "sur devis",
             ],
           ],
         },
@@ -345,7 +345,7 @@ export const frenchProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Combien coûte une demande en mariage sur un bateau à Istanbul ?",
-        a: "Les packages démarrent à €220 pour une croisière privée de 2h avec décoration de base et champagne. Avec un photographe professionnel et une décoration premium, le budget est typiquement de €470–700. Les packages événementiels avec dîner gastronomique et vidéaste, pour les grandes fêtes, commencent à €1 200 (4h).",
+        a: "Les packages démarrent à €220 pour une croisière privée de 2h avec décoration de base et champagne. Avec un photographe professionnel et une décoration premium, le budget est typiquement de €470–700. Les packages événementiels avec dîner gastronomique et vidéaste, pour les grandes fêtes, sont établis sur devis.",
       },
       {
         q: "Quel est le meilleur mois pour une demande en mariage sur le Bosphore ?",
@@ -448,7 +448,7 @@ export const frenchProductPosts: BlogPost[] = [
               "Yacht événementiel",
               "jusqu'à 90 personnes",
               "Soirées d'entreprise, mariages, grandes fêtes privées",
-              "dès €1 200 (4h)",
+              "sur devis",
             ],
           ],
         },
@@ -466,7 +466,7 @@ export const frenchProductPosts: BlogPost[] = [
             ["Yacht premium (jusqu'à 15 pers.)", "€320", "€432", "€576", "—"],
             ["Yacht de groupe Standard (jusqu'à 15)", "€380", "€513", "€684", "—"],
             ["Yacht de groupe Signature (15–40)", "€500", "€675", "€900", "—"],
-            ["Yacht événementiel (jusqu'à 90 pers.)", "—", "—", "€1 200 (4h)", "Sur devis"],
+            ["Yacht événementiel (jusqu'à 90 pers.)", "—", "—", "Sur devis", "Sur devis"],
           ],
         },
         callout: {
@@ -939,7 +939,7 @@ export const frenchProductPosts: BlogPost[] = [
         answerCapsule:
           "La location d\'un yacht privatif sur le Bosphore commence à 220 € pour le bateau entier (jusqu\'à 12 personnes, 2 heures). MerrySails propose plusieurs niveaux : Boutique, Premium et Yacht de groupe, selon la taille du yacht et les prestations souhaitées.",
         content:
-          "Le [yacht privatif](/fr/yacht-charter-istanbul) représente la formule idéale pour un anniversaire, une demande en mariage, un séminaire d\'entreprise ou simplement un moment d\'exception entre amis. Contrairement aux croisières partagées, vous disposez du bateau entier, de l\'équipage et du capitaine pour vous seul.\n\n**Niveau Boutique (à partir de 220 €/bateau, 2 h)** — yacht boutique jusqu\'à 12 passagers, capitaine et matelot inclus. Service traiteur optionnel (30–50 € supplémentaires par personne).\n\n**Niveau Premium (à partir de 320 €/bateau, 2 h)** — yacht premium jusqu\'à 15 passagers, décoration personnalisable, système audio, pont plus large.\n\n**Yacht de groupe (380 € Standard / 500 € Signature, 2 h)** — yacht de groupe jusqu\'à 40 passagers, équipage complet, itinéraire sur mesure entre les deux rives du Bosphore et jusqu\'aux îles des Princes. Pour les très grands événements (jusqu\'à 90 invités), le yacht événementiel démarre à 1 200 € (4 h).\n\nTous les yachts de la flotte MerrySails sont certifiés, assurés et inspectés annuellement. Merry Tourism, notre entité juridique, est agréée [TURSAB Groupe A](/tursab) depuis 2001 — vous bénéficiez de la même garantie légale que pour les croisières partagées.",
+          "Le [yacht privatif](/fr/yacht-charter-istanbul) représente la formule idéale pour un anniversaire, une demande en mariage, un séminaire d\'entreprise ou simplement un moment d\'exception entre amis. Contrairement aux croisières partagées, vous disposez du bateau entier, de l\'équipage et du capitaine pour vous seul.\n\n**Niveau Boutique (à partir de 220 €/bateau, 2 h)** — yacht boutique jusqu\'à 12 passagers, capitaine et matelot inclus. Service traiteur optionnel (30–50 € supplémentaires par personne).\n\n**Niveau Premium (à partir de 320 €/bateau, 2 h)** — yacht premium jusqu\'à 15 passagers, décoration personnalisable, système audio, pont plus large.\n\n**Yacht de groupe (380 € Standard / 500 € Signature, 2 h)** — yacht de groupe jusqu\'à 40 passagers, équipage complet, itinéraire sur mesure entre les deux rives du Bosphore et jusqu\'aux îles des Princes. Pour les très grands événements (jusqu\'à 90 invités), le yacht événementiel est établi sur devis.\n\nTous les yachts de la flotte MerrySails sont certifiés, assurés et inspectés annuellement. Merry Tourism, notre entité juridique, est agréée [TURSAB Groupe A](/tursab) depuis 2001 — vous bénéficiez de la même garantie légale que pour les croisières partagées.",
       },
       {
         heading: "Qu\'est-ce qui est inclus dans le prix ?",
@@ -1063,7 +1063,7 @@ export const frenchProductPosts: BlogPost[] = [
       {
         heading: "Yacht privé MerrySails — dès €220 vers les îles",
         answerCapsule: "Un yacht privé vers les Îles des Princes coûte dès €220 pour le bateau entier (jusqu'à 12 personnes, 2 heures). Les groupes plus importants paient €380 à €500 (jusqu'à 40 pers.). Capitaine, équipage et assurances sont toujours inclus.",
-        content: "Pour les voyageurs qui souhaitent découvrir les Îles des Princes loin de la foule des ferries, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) de Merry Tourism est la solution la plus élégante.\n\n**Ce que propose le yacht privé :**\n- Trajet direct vers l'île de votre choix (sans escales intermédiaires)\n- Pauses baignade en chemin — les eaux turques sont cristallines\n- Restauration selon vos souhaits (traiteur en option)\n- Départ à l'heure qui vous convient (formule coucher de soleil vers les îles disponible !)\n- Capitaine et équipage de Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001\n\n**Grille tarifaire :**\n\n| Type de bateau | Capacité | Durée | Prix |\n|---|---|---|---|\n| Yacht boutique | jusqu'à 12 personnes | 2 heures | dès €220 |\n| Yacht de groupe | 15–40 personnes | 2–4 heures | €380–€500 |\n| Yacht événementiel | jusqu'à 90 personnes | 4–8 heures | dès €1 200 |\n\nParticulièrement prisé : les excursions combinées — le matin [croisière sur le Bosphore](/fr/bosphorus-cruise), l'après-midi trajet privé vers les Îles des Princes. Contactez l'équipe via WhatsApp (+90 537 040 68 22) pour une offre personnalisée.\n\n**Pour qui le yacht privé est-il recommandé ?**\n- Les couples pour une journée romantique sur les îles\n- Les familles avec enfants (pas de bousculade, rythme personnel)\n- Les petits groupes d'entreprise pour une team experience\n- Les voyageurs pour un mariage ou un anniversaire",
+        content: "Pour les voyageurs qui souhaitent découvrir les Îles des Princes loin de la foule des ferries, la [location de yacht privé à Istanbul](/fr/yacht-charter-istanbul) de Merry Tourism est la solution la plus élégante.\n\n**Ce que propose le yacht privé :**\n- Trajet direct vers l'île de votre choix (sans escales intermédiaires)\n- Pauses baignade en chemin — les eaux turques sont cristallines\n- Restauration selon vos souhaits (traiteur en option)\n- Départ à l'heure qui vous convient (formule coucher de soleil vers les îles disponible !)\n- Capitaine et équipage de Merry Tourism — agence licenciée TURSAB Groupe A depuis 2001\n\n**Grille tarifaire :**\n\n| Type de bateau | Capacité | Durée | Prix |\n|---|---|---|---|\n| Yacht boutique | jusqu'à 12 personnes | 2 heures | dès €220 |\n| Yacht de groupe | 15–40 personnes | 2–4 heures | €380–€500 |\n| Yacht événementiel | jusqu'à 90 personnes | 4–8 heures | sur devis |\n\nParticulièrement prisé : les excursions combinées — le matin [croisière sur le Bosphore](/fr/bosphorus-cruise), l'après-midi trajet privé vers les Îles des Princes. Contactez l'équipe via WhatsApp (+90 537 040 68 22) pour une offre personnalisée.\n\n**Pour qui le yacht privé est-il recommandé ?**\n- Les couples pour une journée romantique sur les îles\n- Les familles avec enfants (pas de bousculade, rythme personnel)\n- Les petits groupes d'entreprise pour une team experience\n- Les voyageurs pour un mariage ou un anniversaire",
         proTip: "À 6 personnes, le yacht privé (€220 ÷ 6 = environ €37/personne) ne coûte guère plus que le ferry plus les entrées — mais vous disposez du bateau entier pour vous seuls.",
       },
       {

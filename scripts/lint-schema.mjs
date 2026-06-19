@@ -493,10 +493,17 @@ function lintFile(filePath) {
       });
     }
     // Soft check: also flag if both a literal <h1> and a known shared component
-    // that owns the h1 are present.
+    // that owns the h1 are present. EXCEPTION: the yacht-charter pillar renders
+    // TourDetailClient only when {bookingPrefill && …} and renders its page-level
+    // <h1> only when {!bookingPrefill && …} — they are mutually exclusive, so
+    // exactly one <h1> ships on any given render. Don't warn on that pattern
+    // (re-demoting the page <h1> to <h2> here = the 2026-06-10 regression that
+    // left a 590/mo pillar with h1=0 on a normal load).
     const ownsH1Components = ["TourDetailClient"];
     const h1ComponentUse = ownsH1Components.some((c) => new RegExp(`<${c}\\b`).test(srcNoComments));
-    if (h1ComponentUse && h1Matches.length >= 1) {
+    const h1GatedByNoPrefill = /\{\s*!bookingPrefill\s*&&[\s\S]{0,80}<h1\b/.test(srcNoComments);
+    const tdcGatedByPrefill = /\{\s*bookingPrefill\s*&&[\s\S]{0,120}<TourDetailClient\b/.test(srcNoComments);
+    if (h1ComponentUse && h1Matches.length >= 1 && !(h1GatedByNoPrefill && tdcGatedByPrefill)) {
       warnings.push({
         file: rel(filePath),
         line: srcNoComments.slice(0, h1Matches[0].index).split("\n").length,

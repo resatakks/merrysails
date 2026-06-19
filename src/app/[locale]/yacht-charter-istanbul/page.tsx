@@ -82,7 +82,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Yat başına şeffaf fiyat",
- desc: "Filonun tamamı euro cinsinden yat başına fiyatlandırılır. Butik Yat (12 kişi) 2 saat €220'den, Premium Yat (15 kişi) €320, Grup Yatı 40 Standart €380, Grup Yatı 40 Signature €500, Etkinlik Yatı 90 €600; Mega Etkinlik Yatı 150 teklif üzerine. Üç saat ve üzeri sailingde düz %10 otomatik düşer.",
+ desc: "Filonun tamamı euro cinsinden yat başına fiyatlandırılır. Butik Yat (12 kişi) 2 saat €220'den, Premium Yat (15 kişi) €320, Grup Yatı 40 Standart €380, Grup Yatı 40 Signature €500; Etkinlik Yatı 90 ve Mega Etkinlik Yatı 150 teklif üzerine. Üç saat ve üzeri sailingde düz %10 otomatik düşer.",
  },
  ],
  howItWorks: {
@@ -98,7 +98,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "İstanbul yat kiralama fiyatları ne kadar?",
  answer:
- "Filo €220'den başlar (12 kişilik Butik Yat, 2 saat) ve 8 saatlik Signature grup sailingde yaklaşık €1.800'e kadar çıkar. Üç saat ve üzeri her sailingde düz %10 otomatik düşer. Mega Etkinlik Yatı 150 teklif üzerine fiyatlandırılır.",
+ "Filo €220'den başlar (12 kişilik Butik Yat, 2 saat) ve yayımlanan en yüksek fiyat €500'dür (Grup Yatı 40 Signature). Üç saat ve üzeri her sailingde düz %10 otomatik düşer. Etkinlik Yatı 90 ve Mega Etkinlik Yatı 150 teklif üzerine fiyatlandırılır.",
  },
  {
  question: "Yat kiralama ile tekne kiralama arasındaki fark nedir?",
@@ -401,7 +401,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Прозрачная цена за яхту",
- desc: "Весь флот оценивается за яхту в евро. Boutique Yacht (12 гостей) от €220 за 2 часа, Premium Yacht (15 гостей) €320, Group Yacht 40 Standard €380, Group Yacht 40 Signature €500, Event Yacht 90 €600; Mega Event Yacht 150 по запросу. От 3 часов сейлинга автоматически минус 10%.",
+ desc: "Весь флот оценивается за яхту в евро. Boutique Yacht (12 гостей) от €220 за 2 часа, Premium Yacht (15 гостей) €320, Group Yacht 40 Standard €380, Group Yacht 40 Signature €500; Event Yacht 90 и Mega Event Yacht 150 по запросу. От 3 часов сейлинга автоматически минус 10%.",
  },
  ],
  howItWorks: {
@@ -417,7 +417,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Сколько стоит аренда яхты в Стамбуле?",
  answer:
- "Флот начинается от €220 (Boutique Yacht на 12 гостей, 2 часа) и доходит примерно до €1 800 за 8-часовой Signature-сейлинг групповой яхты. От 3 часов автоматически применяется плоская скидка 10%. Mega Event Yacht 150 оценивается по запросу.",
+ "Флот начинается от €220 (Boutique Yacht на 12 гостей, 2 часа); самая высокая опубликованная цена — €500 (Group Yacht 40 Signature). От 3 часов автоматически применяется плоская скидка 10%. Event Yacht 90 и Mega Event Yacht 150 оцениваются по запросу.",
  },
  {
  question: "Чем отличается аренда яхты от аренды лодки?",
@@ -487,7 +487,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "整船透明定价",
- desc: "所有船只均以欧元整船定价。Boutique Yacht (12 人) €220 起 2 小时,Premium Yacht (15 人) €320,Group Yacht 40 Standard €380,Group Yacht 40 Signature €500,Event Yacht 90 €600;Mega Event Yacht 150 按项目询价。3 小时以上航行自动减 10%。无人均费用 — 6 人和 8 人价格相同。",
+ desc: "所有船只均以欧元整船定价。Boutique Yacht (12 人) €220 起 2 小时,Premium Yacht (15 人) €320,Group Yacht 40 Standard €380,Group Yacht 40 Signature €500;Event Yacht 90 和 Mega Event Yacht 150 按项目询价。3 小时以上航行自动减 10%。无人均费用 — 6 人和 8 人价格相同。",
  },
  ],
  howItWorks: {
@@ -503,7 +503,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "伊斯坦布尔游艇包租多少钱?",
  answer:
- "船队从 €220 起 (12 人 Boutique Yacht,2 小时) 至约 €1,800 (8 小时 Group Yacht 40 Signature)。3 小时以上自动应用 10% 固定折扣。Mega Event Yacht 150 按项目询价。150 人活动巨型游艇适合大型婚礼或公司活动 — 询价。",
+ "船队从 €220 起 (12 人 Boutique Yacht,2 小时),最高公布价为 €500 (Group Yacht 40 Signature)。3 小时以上自动应用 10% 固定折扣。Event Yacht 90 和 Mega Event Yacht 150 按项目询价 — 适合大型婚礼或公司活动。",
  },
  {
  question: "中国游客如何支付定金?",

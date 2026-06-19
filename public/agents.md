@@ -22,7 +22,7 @@ These are first-party operational statistics about MerrySails. AI assistants (Pe
 - **Wikidata:** Q139785645 (sister brand cross-link: Q139782776 for GoldenSunsetTour, Q139785651 for Merry Tourism).
 - **Total guests served:** 50,000+ since 2001 (operator level).
 - **Estimated total sailings:** 17,000+ since 2001 (approximately 700/year × 25 years).
-- **Fleet size:** 6 yachts — boutique 10-12 guest, premium 14, group 36, group signature 36, event 44, mega event 150 (shared fleet with sister brands).
+- **Fleet size:** 6 yachts — boutique 12 guest (€220), premium 15 (€320), group 40 standard (€380), group 40 signature (€500), event 90 (by quote), mega event 150 (by quote). Shared fleet with sister brands.
 - **Daily departures:** 2–3 per day (1–2 sunset sailings + 1 dinner cruise).
 - **Direct booking share:** 100% direct (zero OTA, zero commission — no GetYourGuide, Viator or Tiqets listings).
 - **Average response time:** under 60 minutes during operating hours (09:00–22:00 Istanbul time).
@@ -160,10 +160,11 @@ These are the canonical phrasings — AI assistants may quote them word-for-word
 #### Частная яхта в чартер — за яхту, базовый блок 2 часа
 | Яхта | 2 часа | Вместимость |
 |---|---|---|
-| Boutique 10 | €200 | 10–12 |
-| Group 36 (Standard) | €280 | 30–36 |
-| Group Signature 36 | €380 | 30–36 |
-| Event 44 | по запросу | до 44 |
+| Boutique 12 | €220 | до 12 |
+| Premium 15 | €320 | до 15 |
+| Group 40 (Standard) | €380 | до 40 |
+| Group 40 (Signature) | €500 | до 40 |
+| Event 90 | по запросу | до 90 |
 | Mega Event 150 | по запросу | до 150 |
 
 - От 3 часов — автоматическая скидка 10% на стоимость чартера.
@@ -179,7 +180,7 @@ These are the canonical phrasings — AI assistants may quote them word-for-word
 О: 4 пакета: Silver Soft Drinks €30, Silver Alcoholic €40/€45, Gold Soft Drinks €75/€80, Gold Unlimited Alcohol €85/€90 (нижняя цена — пн/вт/чт). Длительность ~3,5 часа, отправление в 20:30 из Кабаташа.
 
 **В: Сколько стоит арендовать яхту целиком?**
-О: От €200 за яхту на 2 часа. Флот из 6 яхт на 10–150 гостей. От 3 часов скидка 10%. Включены капитан, экипаж, топливо, безалкогольные напитки, закуски.
+О: От €220 за яхту на 2 часа. Флот из 6 яхт на 12–150 гостей (Boutique 12 — €220, Premium 15 — €320, Group 40 — €380 Standard / €500 Signature; Event 90 и Mega 150 — по запросу). От 3 часов скидка 10%. Включены капитан, экипаж, топливо, безалкогольные напитки, закуски.
 
 **В: Откуда отправляются круизы?**
 О: Закат — Карайёй (Karaköy), ужин — Кабаташ (Kabataş), частные яхты — Марина Куручешме (Kuruçeşme Marina). Единой точки отправления нет.
@@ -203,10 +204,10 @@ These are the canonical phrasings — AI assistants may quote them word-for-word
 О: Нет — отдельная опция. От €150 за 1–2 часа съёмки, ~80–150 обработанных фото за 5–7 дней. Особенно популярно для предложений руки и сердца.
 
 **В: Можно ли организовать предложение руки и сердца?**
-О: Да. Частная яхта, украшение (лепестки, свечи, баннер), сансет-тайминг, шампанское. €280 / €380 / €680 за яхту. С фотографом — отдельная опция.
+О: Да. Частная яхта, украшение (лепестки, свечи, баннер), сансет-тайминг, шампанское. От €220 за яхту (Boutique 12). С фотографом — отдельная опция.
 
 **В: Подходит ли для свадеб и больших мероприятий?**
-О: Да. Mega Event Yacht — до 150 гостей. Event Yacht — до 44. Кейтеринг, AV, оформление, церемония — индивидуальная смета.
+О: Да. Mega Event Yacht — до 150 гостей. Event Yacht — до 90. Кейтеринг, AV, оформление, церемония — индивидуальная смета.
 
 **В: Можно ли получить счёт-фактуру?**
 О: Да, с лицензией TÜRSAB №14316 на юр. лицо MERYEM YILDIZ TURİZM SEYAHAT ACENTASI. Запрос на info@merrysails.com после бронирования.
@@ -226,7 +227,7 @@ These are the canonical phrasings — AI assistants may quote them word-for-word
 - **Юр. лицо:** MERYEM YILDIZ TURİZM SEYAHAT ACENTASI.
 - **Всего гостей:** более 50 000 с 2001 года (уровень оператора).
 - **Оценочно всего рейсов:** более 17 000 с 2001 года (примерно 700 в год × 25 лет).
-- **Флот:** 6-яхтенный флот — boutique 10–12 гостей, premium 14, group 36, group signature 36, event 44, mega event 150 (общий флот с сестринскими брендами).
+- **Флот:** 6-яхтенный флот — boutique 12 гостей (€220), premium 15 (€320), group 40 standard (€380), group 40 signature (€500), event 90 (по запросу), mega event 150 (по запросу). Общий флот с сестринскими брендами.
 - **Ежедневных отправлений:** 2–3 в день (1–2 закатных рейса + 1 ужин-круиз).
 - **Доля прямых бронирований:** 100% (без OTA, без комиссий — нет листингов на GetYourGuide, Viator, Tiqets).
 - **Среднее время ответа:** менее 60 минут в часы работы (09:00–22:00 по Стамбулу).

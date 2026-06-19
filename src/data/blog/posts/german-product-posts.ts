@@ -29,7 +29,7 @@ export const germanProductPosts: BlogPost[] = [
     keyTakeaways: [
       "Geteilte Bosporus-Kreuzfahrt: ab €34 pro Person (Tagestour) oder €40 (Sonnenuntergang) — günstigste Option",
       "Dinner-Kreuzfahrt: vier Pakete zwischen €55 und €119 mit Transfer, Büfett und Live-Musik",
-      "Private Yacht-Charter: ab €220 pro Boot (Premium €320, Gruppen-Yacht €380–€500, Event €600) je nach Kapazität und Dauer",
+      "Private Yacht-Charter: ab €220 pro Boot (Premium €320, Gruppen-Yacht €380–€500; Event 90 und Mega 150 auf Anfrage) je nach Kapazität und Dauer",
       "Hochsaison (Juni–August) kostet 15–20 % mehr; Oktober–April bietet die besten Schnäppchen",
     ],
     sections: [
@@ -89,7 +89,7 @@ export const germanProductPosts: BlogPost[] = [
             ["Premium-Yacht", "bis 15 Personen", "€320", "€576"],
             ["Gruppen-Yacht · Standard", "bis 15 Personen", "€380", "€684"],
             ["Gruppen-Yacht · Signature", "15–40 Personen", "€500", "€900"],
-            ["Event-Yacht", "bis 90 Personen", "ab 4 Std. €1.200", "—"],
+            ["Event-Yacht", "bis 90 Personen", "auf Anfrage", "—"],
           ],
         },
         proTip:
@@ -245,8 +245,8 @@ export const germanProductPosts: BlogPost[] = [
             ],
             [
               "Romantik Event",
-              "ab €1.200",
-              "Event-Yacht ab 4 Std., Dekoration, Fotograf + Videograf, Gourmet-Dinner, Transfer",
+              "auf Anfrage",
+              "Event-Yacht, Dekoration, Fotograf + Videograf, Gourmet-Dinner, Transfer",
               "Große Feier nach dem Antrag",
             ],
           ],
@@ -326,9 +326,9 @@ export const germanProductPosts: BlogPost[] = [
             ],
             [
               "Luxus",
-              "Event €1.200 (4 Std.)",
+              "Event-Yacht (auf Anfrage)",
               "Alle Extras inklusive",
-              "€1.400–1.600",
+              "auf Anfrage",
             ],
           ],
         },
@@ -341,7 +341,7 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         q: "Was kostet ein Heiratsantrag auf einer Yacht in Istanbul?",
-        a: "Die Pakete beginnen bei €220 für eine private 2-stündige Bootsfahrt mit Basisdekoration und Champagner. Mit professionellem Fotografen und Premium-Dekoration liegen die Kosten typischerweise bei €470–700. Event-Pakete mit Gourmet-Dinner und Videograf für große Feiern starten ab €1.200 (4 Std.).",
+        a: "Die Pakete beginnen bei €220 für eine private 2-stündige Bootsfahrt mit Basisdekoration und Champagner. Mit professionellem Fotografen und Premium-Dekoration liegen die Kosten typischerweise bei €470–700. Event-Pakete mit Gourmet-Dinner und Videograf für große Feiern werden auf Anfrage kalkuliert.",
       },
       {
         q: "Kann ich die Route für den Heiratsantrag selbst bestimmen?",
@@ -440,7 +440,7 @@ export const germanProductPosts: BlogPost[] = [
               "Event-Yacht",
               "bis 90 Personen",
               "Firmenabende, Hochzeiten, große Privatpartys",
-              "ab €1.200 (4 Std.)",
+              "auf Anfrage",
             ],
           ],
         },
@@ -458,7 +458,7 @@ export const germanProductPosts: BlogPost[] = [
             ["Premium-Yacht (bis 15 Pers.)", "€320", "€432", "€576", "—"],
             ["Gruppen-Yacht Standard (bis 15)", "€380", "€513", "€684", "—"],
             ["Gruppen-Yacht Signature (15–40)", "€500", "€675", "€900", "—"],
-            ["Event-Yacht (bis 90 Pers.)", "—", "—", "€1.200 (4 Std.)", "auf Anfrage"],
+            ["Event-Yacht (bis 90 Pers.)", "—", "—", "auf Anfrage", "auf Anfrage"],
           ],
         },
         callout: {
@@ -528,7 +528,7 @@ export const germanProductPosts: BlogPost[] = [
     faqs: [
       {
         q: "Wie viel kostet eine Yacht Charter in Istanbul?",
-        a: "Yacht Charter Istanbul kostet ab €220 für 2 Stunden (Boutique-Yacht, bis 12 Personen). Premium-Yachten starten bei €320, Gruppen-Yachten bei €380–€500 für 2 Stunden. Die Event-Yacht (bis 90 Personen) ist ab €1.200 für 4 Stunden erhältlich. Alle Preise verstehen sich pro Boot inklusive Kapitän und Crew; ab 3 Std. 10% Rabatt.",
+        a: "Yacht Charter Istanbul kostet ab €220 für 2 Stunden (Boutique-Yacht, bis 12 Personen). Premium-Yachten starten bei €320, Gruppen-Yachten bei €380–€500 für 2 Stunden. Die Event-Yacht 90 und die Mega-Event-Yacht 150 sind auf Anfrage erhältlich. Alle Preise verstehen sich pro Boot inklusive Kapitän und Crew; ab 3 Std. 10% Rabatt.",
       },
       {
         q: "Wie viele Personen passen auf ein Charter-Boot in Istanbul?",
@@ -829,7 +829,7 @@ export const germanProductPosts: BlogPost[] = [
             [
               "Event-Yacht (bis 90 Pers.)",
               "4–8 Stunden",
-              "ab €1.200 (4 Std.) / Boot",
+              "auf Anfrage / Boot",
               "Optional zubuchbar",
             ],
           ],
@@ -862,9 +862,9 @@ export const germanProductPosts: BlogPost[] = [
       {
         heading: "Privatyacht Preise — ab €220 für Ihr ganzes Boot",
         answerCapsule:
-          "Eine Privatyacht am Bosporus kostet ab €220 für das gesamte Boot (2 Stunden, bis 12 Personen). Größere Yachten (bis 40 Pers.) kosten €380–€500, die Event-Yacht (bis 90 Pers.) ab €1.200 (4 Std.). Kapitän und Versicherung sind immer inbegriffen.",
+          "Eine Privatyacht am Bosporus kostet ab €220 für das gesamte Boot (2 Stunden, bis 12 Personen). Größere Yachten (bis 40 Pers.) kosten €380–€500, die Event-Yacht (bis 90 Pers.) und die Mega-Event-Yacht (bis 150 Pers.) sind auf Anfrage. Kapitän und Versicherung sind immer inbegriffen.",
         content:
-          "Der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) ist die ultimative Wahl, wenn Sie den Bosporus ohne Fremde genießen möchten. Ob Heiratsantrag, Familienfest oder Firmen-Event — Sie buchen das gesamte Boot für Ihre Gruppe.\n\nMerry Tourism verfügt über eine Flotte mit mehreren Kapazitätskategorien:\n\n**Boutique-Yacht (bis 12 Personen), 2 Stunden: ab €220 / Boot**\nIdeal für Paare, Familien oder kleine Gruppen. Perfekt für einen Heiratsantrag auf dem Bosporus oder ein romantisches Privatdinner. Preis pro Person bei 4 Gästen: €55 — vergleichbar mit einem Dinner-Kreuzfahrt-Ticket.\n\n**Premium- / Gruppen-Yacht (15–40 Personen), 2–4 Stunden: €320–€500 / Boot**\nGeeignet für Geburtstagsgesellschaften, kleine Firmengruppen oder Freundesrunden. Bei 15 Personen und der Gruppen-Yacht (€500) sind das nur €33 pro Person.\n\n**Event-Yacht (bis 90 Personen), 4–8 Stunden: ab €1.200 / Boot**\nFür Hochzeiten, Galas oder Gruppenreisen. Catering, Dekoration und Fotografen können gegen Aufpreis organisiert werden.\n\nIn jeder Yacht inbegriffen: Kapitän, Crew, gesetzliche Versicherung; ab 3 Std. 10% Rabatt. Speisen und Getränke können über einen Catering-Partner zugebucht werden — bitte beim Reservieren anfragen.",
+          "Der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) ist die ultimative Wahl, wenn Sie den Bosporus ohne Fremde genießen möchten. Ob Heiratsantrag, Familienfest oder Firmen-Event — Sie buchen das gesamte Boot für Ihre Gruppe.\n\nMerry Tourism verfügt über eine Flotte mit mehreren Kapazitätskategorien:\n\n**Boutique-Yacht (bis 12 Personen), 2 Stunden: ab €220 / Boot**\nIdeal für Paare, Familien oder kleine Gruppen. Perfekt für einen Heiratsantrag auf dem Bosporus oder ein romantisches Privatdinner. Preis pro Person bei 4 Gästen: €55 — vergleichbar mit einem Dinner-Kreuzfahrt-Ticket.\n\n**Premium- / Gruppen-Yacht (15–40 Personen), 2–4 Stunden: €320–€500 / Boot**\nGeeignet für Geburtstagsgesellschaften, kleine Firmengruppen oder Freundesrunden. Bei 15 Personen und der Gruppen-Yacht (€500) sind das nur €33 pro Person.\n\n**Event-Yacht (bis 90 Personen), 4–8 Stunden: auf Anfrage / Boot**\nFür Hochzeiten, Galas oder Gruppenreisen. Catering, Dekoration und Fotografen können gegen Aufpreis organisiert werden.\n\nIn jeder Yacht inbegriffen: Kapitän, Crew, gesetzliche Versicherung; ab 3 Std. 10% Rabatt. Speisen und Getränke können über einen Catering-Partner zugebucht werden — bitte beim Reservieren anfragen.",
         proTip:
           "Der Preis bezieht sich auf das gesamte Boot, nicht pro Person. Schon ab 6 Gästen kann die Privatyacht (€220 / 6 = €37 pro Person) günstiger sein als eine Dinner-Kreuzfahrt.",
       },
@@ -917,7 +917,7 @@ export const germanProductPosts: BlogPost[] = [
       },
       {
         q: "Wie viel kostet ein Privatyacht-Charter in Istanbul?",
-        a: "Ein Privatyacht-Charter in Istanbul kostet ab €220 für das gesamte Boot (2 Stunden, bis 12 Personen). Größere Yachten (bis 40 Pers.) kosten €380–€500 für 2–4 Stunden. Die Event-Yacht (bis 90 Pers.) ab €1.200 (4 Std.). Kapitän und Versicherung sind immer inbegriffen. Alle Details: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
+        a: "Ein Privatyacht-Charter in Istanbul kostet ab €220 für das gesamte Boot (2 Stunden, bis 12 Personen). Größere Yachten (bis 40 Pers.) kosten €380–€500 für 2–4 Stunden. Die Event-Yacht (bis 90 Pers.) und die Mega-Event-Yacht (bis 150 Pers.) sind auf Anfrage. Kapitän und Versicherung sind immer inbegriffen. Alle Details: [Privatyacht Charter Istanbul](/de/yacht-charter-istanbul).",
       },
       {
         q: "Sind Hoteltransfer und Abendessen im Preis enthalten?",
@@ -985,7 +985,7 @@ export const germanProductPosts: BlogPost[] = [
       {
         heading: "MerrySails Privatyacht — ab €220 zu den Inseln",
         answerCapsule: "Eine Privatyacht zu den Prinzeninseln kostet ab €220 für das gesamte Boot (bis 12 Personen, 2 Stunden). Größere Gruppen zahlen €380–€500 (bis 40 Pers.). Kapitän, Crew und Versicherung sind immer inbegriffen.",
-        content: "Für Reisende, die die Prinzeninseln abseits der Fährmassen erleben wollen, ist der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) von Merry Tourism die eleganteste Lösung.\n\n**Was bietet die Privatyacht?**\n- Direktfahrt zu Ihrer Wunschinsel (kein Stopp an anderen Inseln)\n- Badepausen auf dem Weg — die türkische Küste hat brillantklares Wasser\n- Verpflegung nach Absprache (Catering optional)\n- Flexibler Abfahrtszeitpunkt (Sonnenuntergangs-Tour zu den Inseln buchbar!)\n- Kapitän und Crew von Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001\n\n**Preisübersicht:**\n\n| Bootstyp | Kapazität | Dauer | Preis |\n|---|---|---|---|\n| Boutique-Yacht | bis 12 Personen | 2 Stunden | ab €220 |\n| Gruppen-Yacht | 15–40 Personen | 2–4 Stunden | €380–€500 |\n| Event-Yacht | bis 90 Personen | 4–8 Stunden | ab €1.200 |\n\nBesonders beliebt: kombinierte Touren — morgens [Bosporus-Kreuzfahrt](/de/bosphorus-cruise), nachmittags private Fahrt zu den Prinzeninseln. Kontaktieren Sie das Team über WhatsApp (+90 537 040 68 22) für ein individuelles Angebot.\n\n**Für wen lohnt sich die Privatyacht?**\n- Paare für einen romantischen Inseltag\n- Familien mit Kindern (kein Gedränge, eigenes Tempo)\n- Kleine Firmengruppen für ein Team-Erlebnis\n- Heirats- oder Jubiläumsreisende",
+        content: "Für Reisende, die die Prinzeninseln abseits der Fährmassen erleben wollen, ist der [Privatyacht-Charter Istanbul](/de/yacht-charter-istanbul) von Merry Tourism die eleganteste Lösung.\n\n**Was bietet die Privatyacht?**\n- Direktfahrt zu Ihrer Wunschinsel (kein Stopp an anderen Inseln)\n- Badepausen auf dem Weg — die türkische Küste hat brillantklares Wasser\n- Verpflegung nach Absprache (Catering optional)\n- Flexibler Abfahrtszeitpunkt (Sonnenuntergangs-Tour zu den Inseln buchbar!)\n- Kapitän und Crew von Merry Tourism — TURSAB A-Gruppe lizenziert seit 2001\n\n**Preisübersicht:**\n\n| Bootstyp | Kapazität | Dauer | Preis |\n|---|---|---|---|\n| Boutique-Yacht | bis 12 Personen | 2 Stunden | ab €220 |\n| Gruppen-Yacht | 15–40 Personen | 2–4 Stunden | €380–€500 |\n| Event-Yacht | bis 90 Personen | 4–8 Stunden | auf Anfrage |\n\nBesonders beliebt: kombinierte Touren — morgens [Bosporus-Kreuzfahrt](/de/bosphorus-cruise), nachmittags private Fahrt zu den Prinzeninseln. Kontaktieren Sie das Team über WhatsApp (+90 537 040 68 22) für ein individuelles Angebot.\n\n**Für wen lohnt sich die Privatyacht?**\n- Paare für einen romantischen Inseltag\n- Familien mit Kindern (kein Gedränge, eigenes Tempo)\n- Kleine Firmengruppen für ein Team-Erlebnis\n- Heirats- oder Jubiläumsreisende",
         proTip: "Bei 6 Personen kostet die Privatyacht (€220 ÷ 6 = ca. €37/Person) nicht viel mehr als die Fähre plus Eintritte — aber Sie haben das gesamte Boot für sich.",
       },
       {

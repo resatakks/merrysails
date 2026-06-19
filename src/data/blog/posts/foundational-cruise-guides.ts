@@ -589,7 +589,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
     slug: "bosphorus-cruise-price-istanbul-2026",
     title: "Bosphorus Cruise Prices Istanbul 2026: From €30",
     metaDescription: "Bosphorus cruise prices 2026: sunset cruise from €34, dinner cruise €30–€90 (4 packages), private yacht from €220. What's included at each price, hidden costs to know, and how to book direct for best rate.",
-    excerpt: "Bosphorus cruise prices range from €30 for a shared dinner cruise to €1,200+ for a large event yacht. Here is exactly what each price tier includes in 2026, with no hidden fees.",
+    excerpt: "Bosphorus cruise prices range from €30 for a shared dinner cruise to €500 for the Group 40 Signature yacht, with event yachts by quote. Here is exactly what each price tier includes in 2026, with no hidden fees.",
     category: "cruise-guide",
     date: "2026-04-29",
     dateModified: "2026-04-29",
@@ -622,7 +622,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       },
       {
         heading: "Private Yacht Charter: From €220 per Vessel for the Whole Boat",
-        content: "Private yacht pricing works completely differently from shared cruises — you pay per yacht, not per person. On [Yacht Charter Istanbul](/yacht-charter-istanbul) the boutique 12-guest yacht starts from €220 for a 2-hour sailing, with a captain, fuel, soft drinks, and a snack tray included. The premium 15-guest yacht (from €320) adds a wider top deck and a more refined lounge for mid-size groups.\n\nFor larger parties the 40-guest group yacht is from €380 in Standard trim (bookings up to 15) and from €500 in Signature trim (15–40 guests), while the 90-guest event yacht is from €1,200 on a 4-hour minimum and the 150-guest mega event yacht is by bespoke quote. Catering, decoration, photography, and a wider drinks selection are quoted separately on a per-vessel brief. Departure is from Kuruçeşme Marina rather than Kabataş, and start times are flexible between 10:00 and 22:00 based on availability.",
+        content: "Private yacht pricing works completely differently from shared cruises — you pay per yacht, not per person. On [Yacht Charter Istanbul](/yacht-charter-istanbul) the boutique 12-guest yacht starts from €220 for a 2-hour sailing, with a captain, fuel, soft drinks, and a snack tray included. The premium 15-guest yacht (from €320) adds a wider top deck and a more refined lounge for mid-size groups.\n\nFor larger parties the 40-guest group yacht is from €380 in Standard trim (bookings up to 15) and from €500 in Signature trim (15–40 guests), while the 90-guest event yacht and the 150-guest mega event yacht are by bespoke quote. Catering, decoration, photography, and a wider drinks selection are quoted separately on a per-vessel brief. Departure is from Kuruçeşme Marina rather than Kabataş, and start times are flexible between 10:00 and 22:00 based on availability.",
       },
       {
         heading: "Per-Person Math: When Private Yacht Beats Dinner Cruise",
@@ -1051,7 +1051,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
         answerCapsule:
           "Pricing is per vessel: the boutique 12-guest yacht is from €220, the premium 15-guest €320, and the 40-guest group yacht €380 (Standard) or €500 (Signature). Each is a 2-hour entry rate, with a flat 10% discount from 3 hours.",
         content:
-          "The fleet is built around vessel size and comfort rather than arbitrary luxury gradations. The boutique 12-guest yacht covers the core private experience: a licensed captain, crew, and a clean, comfortable deck on the Bosphorus from €220. The premium 15-guest yacht (€320) steps up to a wider top deck and a more refined lounge. The 40-guest group yacht runs at €380 in Standard trim for smaller groups and €500 in Signature trim for 15 to 40 guests, and the 90-guest event yacht (from €1,200) and 150-guest mega event yacht (by quote) cover large receptions and corporate evenings.\n\nFor the complete current breakdown of what each yacht includes, see the [yacht charter Istanbul](/yacht-charter-istanbul) product page or the [pricing reference](/pricing).",
+          "The fleet is built around vessel size and comfort rather than arbitrary luxury gradations. The boutique 12-guest yacht covers the core private experience: a licensed captain, crew, and a clean, comfortable deck on the Bosphorus from €220. The premium 15-guest yacht (€320) steps up to a wider top deck and a more refined lounge. The 40-guest group yacht runs at €380 in Standard trim for smaller groups and €500 in Signature trim for 15 to 40 guests, and the 90-guest event yacht and 150-guest mega event yacht (both by quote) cover large receptions and corporate evenings.\n\nFor the complete current breakdown of what each yacht includes, see the [yacht charter Istanbul](/yacht-charter-istanbul) product page or the [pricing reference](/pricing).",
         table: {
           headers: ["Yacht", "Price per Yacht (2h)", "Capacity", "Best For"],
           rows: [
@@ -1081,7 +1081,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
             ],
             [
               "Event / Mega Event Yacht",
-              "from €1,200 / on quote",
+              "By quote",
               "90 / 150",
               "Weddings, gala dinners, large corporate evenings",
             ],
@@ -1177,7 +1177,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
     faqs: [
       {
         q: "How much does a private yacht charter in Istanbul cost?",
-        a: "MerrySails prices each yacht per vessel, not per person: the boutique 12-guest yacht from €220, the premium 15-guest €320, and the 40-guest group yacht €380 (Standard) or €500 (Signature) for a 2-hour Bosphorus charter; the 90-guest event yacht is from €1,200 and the 150-guest mega yacht by quote. For the full breakdown see the pricing page at merrysails.com/pricing.",
+        a: "MerrySails prices each yacht per vessel, not per person: the boutique 12-guest yacht from €220, the premium 15-guest €320, and the 40-guest group yacht €380 (Standard) or €500 (Signature) for a 2-hour Bosphorus charter; the 90-guest event yacht and the 150-guest mega yacht are by quote. For the full breakdown see the pricing page at merrysails.com/pricing.",
       },
       {
         q: "How many people can join a private Bosphorus yacht charter?",

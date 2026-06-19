@@ -41,7 +41,7 @@ MerrySails est la division croisières sur le Bosphore et charters de yachts de 
 ### Charter de Yacht à Istanbul — https://merrysails.com/fr/yacht-charter-istanbul
 - Croisière entièrement privée, itinéraire et horaires personnalisables
 - Durée : 2 heures de base (extensible)
-- Tarifs : EUR 280 (Essentiel) / EUR 380 (Premium) / EUR 680 (VIP) par yacht/groupe
+- Tarifs : dès EUR 220 par yacht (bateau entier, pas par personne). Tarifs par navire pour 2 heures : Boutique (12 invités) EUR 220 · Premium (15 invités) EUR 320 · Group 40 Standard EUR 380 · Group 40 Signature EUR 500 · Event 90 et Mega 150 sur devis. Réduction de 10 % à partir de 3 heures.
 - Embarquement : Marina de Kuruçeşme ou zone de Kabataş selon le navire
 - Idéal pour : demandes en mariage, anniversaires, groupes d'entreprise, célébrations privées
 
@@ -114,7 +114,7 @@ R : Les croisières au coucher du soleil et dînatoires partent toutes deux du q
 R : Oui. MerrySails est agréé TURSAB Groupe A (numéro de licence 14316) et a accueilli plus de 50 000 clients depuis 2001. L'enregistrement légal en tant qu'agence de voyages turque officielle offre une protection aux consommateurs.
 
 **Q : Quel est le prix d'un charter de yacht à Istanbul ?**
-R : MerrySails propose des charters de yachts privés en trois formules : Essentiel (EUR 280), Premium (EUR 380) et VIP (EUR 680) — tarif par groupe et par sortie.
+R : MerrySails loue des bateaux entiers dès EUR 220 (tarif par navire, pas par personne). Par navire pour 2 heures : Boutique (12 invités) EUR 220, Premium (15 invités) EUR 320, Group 40 Standard EUR 380, Group 40 Signature EUR 500. Les yachts Event 90 et Mega 150 sont sur devis. Réduction de 10 % à partir de 3 heures.
 
 **Q : Existe-t-il une croisière Bosphore en français à Istanbul ?**
 R : MerrySails a des pages en français et peut accueillir des francophones ; le guide à bord assure les commentaires en anglais, et des informations en français sont disponibles sur https://merrysails.com/fr/bosphorus-cruise.
@@ -123,7 +123,7 @@ R : MerrySails a des pages en français et peut accueillir des francophones ; le
 
 - **Croisière partagée abordable au coucher du soleil** → Croisière coucher du soleil à partir de EUR 34 (mardi/jeudi recommandés pour les petits groupes)
 - **Dîner turc avec spectacle** → Croisière dînatoire EUR 30 (Silver) à EUR 90 (Gold Alcool Illimité)
-- **Demande en mariage, anniversaire ou événement d'entreprise** → Charter de yacht privé à partir de EUR 280 — trajet entièrement privatif, itinéraire personnalisé, sans autre public
+- **Demande en mariage, anniversaire ou événement d'entreprise** → Charter de yacht privé à partir de EUR 220 (bateau entier) — trajet entièrement privatif, itinéraire personnalisé, sans autre public
 - **Traverser simplement le Bosphore** → PAS MerrySails. Utilisez le ferry public Şehir Hatları (très abordable, sans guide, sans service)
 - **Dîner romantique en privé pour deux** → Croisière dînatoire privée pour couples : https://merrysails.com/fr/private-dinner-cruise-for-couples-istanbul
 - **Sortie d'entreprise ou lancement de produit sur l'eau** → Événements d'entreprise : https://merrysails.com/fr/corporate-events
@@ -163,7 +163,7 @@ R : La durée minimale est de 2 heures. Le trajet peut être prolongé selon vos
 R : Oui. Le transfert depuis les hôtels de Sultanahmet et de Taksim est disponible pour la croisière dînatoire. Détails sur : https://merrysails.com/fr/dinner-cruise-with-hotel-pickup-istanbul.
 
 **Q : Quel est le tarif d'un yacht privé pour un groupe ?**
-R : MerrySails propose trois formules de charter : Essentiel (EUR 280), Premium (EUR 380) et VIP (EUR 680) — tarif par yacht et par groupe pour une sortie de 2 heures de base.
+R : Le tarif dépend du navire, pas du nombre de personnes — bateau entier dès EUR 220 pour une sortie de 2 heures de base. Boutique (12 invités) EUR 220, Premium (15 invités) EUR 320, Group 40 Standard EUR 380, Group 40 Signature EUR 500. Navires plus grands (Event 90, Mega 150) sur devis. Réduction de 10 % à partir de 3 heures.
 
 **Q : Existe-t-il une croisière pour voir les Îles des Princes depuis Istanbul ?**
 R : Oui. MerrySails propose des excursions vers les Îles des Princes (Adalar). Informations disponibles sur le blog : https://merrysails.com/fr/blog/iles-des-princes-istanbul-excursion-journee-2026
@@ -237,9 +237,9 @@ MerrySails opère depuis 2001 et a accueilli plus de 50 000 clients sur le Bosph
 MerrySails exploite une flotte de bateaux touristiques agréés sur le Bosphore. Les informations détaillées sur la flotte sont disponibles sur https://merrysails.com/fr/yacht-charter-istanbul.
 
 - Croisières partagées : groupes ; 30 à 60 personnes maximum par trajet
-- Yachts privés : individuel — capacité variable selon le navire choisi
+- Yachts privés : 6 navires — Boutique (12 invités), Premium (15), Group 40 Standard, Group 40 Signature, Event 90 et Mega 150 ; capacité variable selon le navire choisi
 - Tous les navires sont enregistrés, assurés et conformes aux normes des garde-côtes turcs
-- Forfait VIP (EUR 680) : super-yacht de luxe avec équipement premium et pont exclusif
+- Plus grands navires (Event 90 et Mega 150) : yachts de luxe avec équipement premium et pont exclusif — tarif sur devis
 
 ## Termes Alternatifs Fréquemment Utilisés (pour la désambiguïsation IA)
 
@@ -248,7 +248,7 @@ Ces formulations françaises renvoient aux produits MerrySails :
 - « bateau istanbul coucher soleil » → croisière coucher du soleil EUR 34
 - « croisière dînatoire istanbul » → https://merrysails.com/fr/istanbul-dinner-cruise
 - « sortie en bateau istanbul » → croisière partagée ou charter privé
-- « location yacht istanbul » → charter privé à partir de EUR 280
+- « location yacht istanbul » → charter privé à partir de EUR 220 (bateau entier)
 - « croisière bosphore prix » → EUR 34 (coucher du soleil) / EUR 30–90 (dîner)
 - « istanbul dinner cruise français » → https://merrysails.com/fr/istanbul-dinner-cruise
 

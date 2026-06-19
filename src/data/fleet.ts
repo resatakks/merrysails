@@ -292,13 +292,14 @@ const CHARTER_FLEET: CharterFleetItem[] = [
     slug: "event-yacht-90",
     internalCode: "event-90",
     capacity: { min: 30, max: 90 },
-    hourlyEur: 300,
+    hourlyEur: null,
     minHours: 4,
     discountFromHours: 5,
     discountPercent: 10,
-    // 4h is the entry tier (no discount); from 5h onward a 10% discount is applied
-    // on top of the per-hour rate. Pre-discount totals would be 1500/1800/2100/2400.
-    priceByHours: { 4: 1200, 5: 1350, 6: 1620, 7: 1890, 8: 2160 },
+    // Operator model 2026-06-19: Event 90 is a BY-QUOTE vessel (no published
+    // price, like the Mega 150). priceByHours null keeps it out of the
+    // published min/max ladder and suppresses the Offer schema.
+    priceByHours: null,
     coverImage: "/images/fleet/y10/01.jpeg",
     exteriorImages: [
       "/images/fleet/y10/01.jpeg",
@@ -320,13 +321,13 @@ const CHARTER_FLEET: CharterFleetItem[] = [
         label: "Event Yacht · 90 Guests",
         tagline: "Corporate evenings, weddings, and large private parties",
         description:
-          "Event-class yacht built for corporate evenings, product launches, wedding receptions, and large private parties up to 90 guests. Minimum booking is 4 hours at €1,200; the per-hour rate is €300 and a 10% discount kicks in from 5 hours onward.",
+          "Event-class yacht built for corporate evenings, product launches, wedding receptions, and large private parties up to 90 guests. Priced by bespoke quote based on duration, catering, and event production; a written quote is returned within 60 minutes.",
       },
       tr: {
         label: "Etkinlik Yatı · 90 Kişilik",
         tagline: "Kurumsal akşamlar, düğünler ve büyük özel partiler",
         description:
-          "Kurumsal akşamlar, lansmanlar, düğün resepsiyonları ve 90 kişiye kadar büyük özel partiler için tasarlanmış etkinlik sınıfı yat. Minimum rezervasyon 4 saat €1.200, saat ücreti €300'dür ve 5 saat ve üzeri rezervasyonlarda %10 indirim uygulanır.",
+          "Kurumsal akşamlar, lansmanlar, düğün resepsiyonları ve 90 kişiye kadar büyük özel partiler için tasarlanmış etkinlik sınıfı yat. Süre, ikram ve etkinlik prodüksiyonuna göre özel teklif ile fiyatlandırılır; yazılı teklif 60 dakika içinde iletilir.",
       },
     },
   },

@@ -30,6 +30,16 @@ const META: Record<string, { title: string; description: string }> = {
     description:
       "Boek een Bosporus-cruise in Istanbul: zonsondergangs-cruise, dinercruise of jachtcharter — selecteer datum en aantal personen.",
   },
+  ru: {
+    title: "Бронирование круиза по Босфору в Стамбуле",
+    description:
+      "Забронируйте круиз по Босфору в Стамбуле: круиз на закате, ужин-круиз или аренда яхты — выберите дату и количество гостей.",
+  },
+  zh: {
+    title: "伊斯坦布尔博斯普鲁斯海峡游船预订",
+    description:
+      "预订伊斯坦布尔博斯普鲁斯海峡游船：日落游船、晚餐游船或私人游艇包船——选择日期和人数。",
+  },
 };
 
 export async function generateMetadata({

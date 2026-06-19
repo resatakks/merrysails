@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  openGraph: {
  title: "Compare Bosphorus Cruises Istanbul",
  description:
- "All Bosphorus cruise options compared: prices from €30 to €600, durations 2–4 hours, shared vs private. Pick the right cruise in 2 minutes.",
+ "All Bosphorus cruise options compared: prices from €30 to €500, durations 2–4 hours, shared vs private. Pick the right cruise in 2 minutes.",
  url: `${SITE_URL}/compare-bosphorus-cruises`,
  type: "article",
  },
@@ -116,7 +116,7 @@ const COMPARE_FAQ = [
  },
  {
  q: "What is included in the €220 yacht charter entry?",
- a: "The Boutique Yacht (entry tier) at €220 covers the entire boat (private charter) for 2 hours, up to 12 guests, with captain, crew, soft drinks, and snacks. The Group Yacht 40 (up to 40 guests) is the next tier from €380. Larger event yachts go up to €1,800 for the 8-hour Group 40 Signature sailing. From 3 hours onward, a 10% automatic discount applies fleet-wide.",
+ a: "The Boutique Yacht (entry tier) at €220 covers the entire boat (private charter) for 2 hours, up to 12 guests, with captain, crew, soft drinks, and snacks. The Group Yacht 40 (up to 40 guests) is the next tier from €380, rising to €500 (Signature) — up to €1,800 for an 8-hour Signature sailing. The 90-guest event yacht and 150-guest mega yacht are by quote. From 3 hours onward, a 10% automatic discount applies fleet-wide.",
  },
  {
  q: "Can I bring children on a Bosphorus cruise?",
@@ -541,7 +541,7 @@ export default function CompareCruisesPage() {
  🥂 Corporate event or large group
  </h3>
  <p className="mt-2 text-sm text-slate-600">
- Private Yacht — Group 40 Signature (15–40 guests) from €500 or the 90-guest Event yacht from €600, full menu and open
+ Private Yacht — Group 40 Signature (up to 40 guests) from €500 or the 90-guest Event yacht by quote, full menu and open
  bar. Or Hourly Boat Rental for full custom control.
  </p>
  <Link

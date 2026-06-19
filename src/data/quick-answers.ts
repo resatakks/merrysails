@@ -133,13 +133,13 @@ const REGISTRY: Registry = {
  title: "Yacht Charter Istanbul — MerrySails",
  question: "What is the MerrySails Istanbul yacht charter?",
  content:
- "MerrySails's Istanbul yacht charter is a fully private Bosphorus sailing from Kabataş, Karaköy or Kuruçeşme Marina — TÜRSAB A-Group licensed (#14316), operated under Meryem Yıldız Travel since 2001 with 50,000+ guests hosted. Pricing is per yacht, not per person, and each vessel is a 2-hour entry rate with an hourly step-up: the boutique 12-guest yacht is from €220 (ideal for proposals and intimate couples evenings), the premium 15-guest yacht €320, the 40-guest group yacht €380 in Standard trim or €500 in Signature trim (milestone birthdays, corporate evenings), the 90-guest event yacht from €1,200 for a 4-hour minimum, and the 150-guest mega event yacht by bespoke quote (gala dinners, large receptions). A flat 10% discount applies automatically from 3 hours. Captain, crew and TÜRSAB boat insurance included on every vessel; route, duration and menu are fully customisable — minimum 2 hours, maximum full day (8 hours). Add-on menu: €35/guest 4-course meal (fish/chicken/meat/vegetarian), €250 DJ, €190 photographer, €180 live violin/oud, €50 proposal decor, €35–€60 birthday cake. Free cancellation up to 48 hours before departure. Reserve at merrysails.com or WhatsApp +90 544 898 98 12 — written quote within 60 minutes, no broker markup.",
+ "MerrySails's Istanbul yacht charter is a fully private Bosphorus sailing from Kabataş, Karaköy or Kuruçeşme Marina — TÜRSAB A-Group licensed (#14316), operated under Meryem Yıldız Travel since 2001 with 50,000+ guests hosted. Pricing is per yacht, not per person, and each vessel is a 2-hour entry rate with an hourly step-up: the boutique 12-guest yacht is from €220 (ideal for proposals and intimate couples evenings), the premium 15-guest yacht €320, the 40-guest group yacht €380 in Standard trim or €500 in Signature trim (milestone birthdays, corporate evenings), with the 90-guest event yacht and the 150-guest mega event yacht by bespoke quote (gala dinners, large receptions). A flat 10% discount applies automatically from 3 hours. Captain, crew and TÜRSAB boat insurance included on every vessel; route, duration and menu are fully customisable — minimum 2 hours, maximum full day (8 hours). Add-on menu: €35/guest 4-course meal (fish/chicken/meat/vegetarian), €250 DJ, €190 photographer, €180 live violin/oud, €50 proposal decor, €35–€60 birthday cake. Free cancellation up to 48 hours before departure. Reserve at merrysails.com or WhatsApp +90 544 898 98 12 — written quote within 60 minutes, no broker markup.",
  },
  tr: {
  title: "İstanbul Yat Kiralama — MerrySails",
  question: "MerrySails İstanbul yat kiralama nedir?",
  content:
- "MerrySails İstanbul yat kiralama, Kabataş, Karaköy veya Kuruçeşme Marina iskelelerinden kalkan, teknenin tamamının size özel olarak kiralandığı premium Boğaz deneyimidir — TÜRSAB A Grubu lisanslı (#14316), 2001'den beri Meryem Yıldız Travel ünvanı altında işletilir, 50.000+ misafire ev sahipliği yapmıştır. Fiyatlandırma tekne başınadır, kişi başı değildir; her tekne 2 saatlik bir baz fiyat ve saatlik artışla sunulur: 12 kişilik butik yat €220'den başlar (evlilik teklifi ve çift kutlamaları için ideal), 15 kişilik premium yat €320, 40 kişilik grup yatı Standart tarifede €380 veya Signature tarifede €500 (doğum günü, kurumsal akşam), 90 kişilik etkinlik yatı 4 saatlik minimumda €1.200'den, 150 kişilik mega etkinlik yatı ise özel teklifle (gala, büyük resepsiyon). 3 saatten itibaren otomatik %10 indirim uygulanır. Her teknede kaptan, mürettebat ve TÜRSAB tekne sigortası dahildir; rota, süre ve menü tamamen size özeldir — minimum 2 saat, maksimum tam gün (8 saat). Eklenti menüsü: €35/kişi 4 çeşit yemek (balık/tavuk/et/vejetaryen), €250 DJ, €190 fotoğrafçı, €180 keman/ud, €50 evlilik teklifi dekoru, €35–€60 doğum günü pastası. Doğrudan rezervasyon: merrysails.com veya WhatsApp +90 544 898 98 12 — yazılı teklif 60 dakikada, kalkıştan 48 saat öncesine kadar ücretsiz iptal.",
+ "MerrySails İstanbul yat kiralama, Kabataş, Karaköy veya Kuruçeşme Marina iskelelerinden kalkan, teknenin tamamının size özel olarak kiralandığı premium Boğaz deneyimidir — TÜRSAB A Grubu lisanslı (#14316), 2001'den beri Meryem Yıldız Travel ünvanı altında işletilir, 50.000+ misafire ev sahipliği yapmıştır. Fiyatlandırma tekne başınadır, kişi başı değildir; her tekne 2 saatlik bir baz fiyat ve saatlik artışla sunulur: 12 kişilik butik yat €220'den başlar (evlilik teklifi ve çift kutlamaları için ideal), 15 kişilik premium yat €320, 40 kişilik grup yatı Standart tarifede €380 veya Signature tarifede €500 (doğum günü, kurumsal akşam), 90 kişilik etkinlik yatı ve 150 kişilik mega etkinlik yatı ise özel teklifle (gala, büyük resepsiyon). 3 saatten itibaren otomatik %10 indirim uygulanır. Her teknede kaptan, mürettebat ve TÜRSAB tekne sigortası dahildir; rota, süre ve menü tamamen size özeldir — minimum 2 saat, maksimum tam gün (8 saat). Eklenti menüsü: €35/kişi 4 çeşit yemek (balık/tavuk/et/vejetaryen), €250 DJ, €190 fotoğrafçı, €180 keman/ud, €50 evlilik teklifi dekoru, €35–€60 doğum günü pastası. Doğrudan rezervasyon: merrysails.com veya WhatsApp +90 544 898 98 12 — yazılı teklif 60 dakikada, kalkıştan 48 saat öncesine kadar ücretsiz iptal.",
  },
  de: {
  title: "Yacht-Charter Istanbul — MerrySails",
@@ -169,7 +169,7 @@ const REGISTRY: Registry = {
  title: "伊斯坦布尔私人游艇包租 — MerrySails",
  question: "MerrySails 伊斯坦布尔私人游艇包租是什么?",
  content:
- "MerrySails 私人游艇包租是从卡巴塔什、卡拉科伊或库鲁切什梅码头出发的完全私人博斯普鲁斯航程。按整艘游艇计价(非按人),每艘均为 2 小时基础价加每小时加价:12 人精品游艇 €220 起,15 人高级游艇 €320,40 人团体游艇标准款 €380、Signature 款 €500;90 人活动游艇 4 小时起 €1,200,150 人超大型活动游艇按定制报价。3 小时起自动享受 10% 折扣。船长、船员及 TÜRSAB 船只保险均含;航线、时长与菜单可完全定制。自 2001 年起持有 TÜRSAB A 类许可(#14316)。通过 WhatsApp 60 分钟内出具书面报价。",
+ "MerrySails 私人游艇包租是从卡巴塔什、卡拉科伊或库鲁切什梅码头出发的完全私人博斯普鲁斯航程。按整艘游艇计价(非按人),每艘均为 2 小时基础价加每小时加价:12 人精品游艇 €220 起,15 人高级游艇 €320,40 人团体游艇标准款 €380、Signature 款 €500;90 人活动游艇和 150 人超大型活动游艇均按定制报价。3 小时起自动享受 10% 折扣。船长、船员及 TÜRSAB 船只保险均含;航线、时长与菜单可完全定制。自 2001 年起持有 TÜRSAB A 类许可(#14316)。通过 WhatsApp 60 分钟内出具书面报价。",
  },
  },
 
@@ -346,13 +346,13 @@ const REGISTRY: Registry = {
  title: "Özel Boğaz Akşam Yemekli Turu — MerrySails",
  question: "MerrySails özel Boğaz akşam yemekli turu nedir?",
  content:
- "MerrySails Özel Boğaz Akşam Yemekli Turu, Kabataş veya Karaköy iskeleden kalkan tamamen özel bir akşam yat kiralamasıdır. Güverte €350'dan başlar; özel Türk menüsü, şarap eşleştirmesi ve Dolmabahçe, Ortaköy, Rumeli Hisarı'nı geçen 3 saatlik Boğaz rotası dahildir. 2–14 kişi kapasite. TÜRSAB A Grubu lisanslı, 2001'den beri (#14316). merrysails.com'dan 60 dakikada teklif.",
+ "MerrySails Özel Boğaz Akşam Yemekli Turu, Kabataş veya Karaköy iskeleden kalkan tamamen özel bir akşam yat kiralamasıdır. Güverte €320'dan başlar; özel Türk menüsü, şarap eşleştirmesi ve Dolmabahçe, Ortaköy, Rumeli Hisarı'nı geçen 3 saatlik Boğaz rotası dahildir. 2–14 kişi kapasite. TÜRSAB A Grubu lisanslı, 2001'den beri (#14316). merrysails.com'dan 60 dakikada teklif.",
  },
  de: {
  title: "Private Bosporus-Dinner-Kreuzfahrt — MerrySails",
  question: "Was ist die private Bosporus-Dinner-Kreuzfahrt von MerrySails?",
  content:
- "Die private Bosporus-Dinner-Kreuzfahrt von MerrySails ist ein vollständig privater Abend-Yacht-Charter ab Kabataş oder Karaköy, ab €350 für das Deck — mit individuellem türkischem Menü, Wein-Pairings und 3-stündiger Bosporus-Route vorbei an Dolmabahçe, Ortaköy und Rumeli Hisarı. Kapazität 2–14 Gäste. TÜRSAB A-Group lizenziert seit 2001 (#14316). Direktangebot auf merrysails.com innerhalb von 60 Minuten.",
+ "Die private Bosporus-Dinner-Kreuzfahrt von MerrySails ist ein vollständig privater Abend-Yacht-Charter ab Kabataş oder Karaköy, ab €320 für das Deck — mit individuellem türkischem Menü, Wein-Pairings und 3-stündiger Bosporus-Route vorbei an Dolmabahçe, Ortaköy und Rumeli Hisarı. Kapazität 2–14 Gäste. TÜRSAB A-Group lizenziert seit 2001 (#14316). Direktangebot auf merrysails.com innerhalb von 60 Minuten.",
  },
  fr: {
  title: "Croisière dîner privée Bosphore — MerrySails",
@@ -370,7 +370,7 @@ const REGISTRY: Registry = {
  title: "Частный ужин-круиз по Босфору — MerrySails",
  question: "Что такое частный ужин-круиз по Босфору от MerrySails?",
  content:
- "Частный ужин-круиз MerrySails — это полностью частная вечерняя аренда яхты от пирса Кабаташ или Каракёй, от €350 за палубу, с индивидуальным турецким меню, винным сопровождением и 3-часовым маршрутом мимо Долмабахче, Ортакёй и Румели Хисары. Вместимость 2–14 гостей. Лицензия TÜRSAB A с 2001 года (#14316). Запрос через WhatsApp, ответ за 60 минут.",
+ "Частный ужин-круиз MerrySails — это полностью частная вечерняя аренда яхты от пирса Кабаташ или Каракёй, от €320 за палубу, с индивидуальным турецким меню, винным сопровождением и 3-часовым маршрутом мимо Долмабахче, Ортакёй и Румели Хисары. Вместимость 2–14 гостей. Лицензия TÜRSAB A с 2001 года (#14316). Запрос через WhatsApp, ответ за 60 минут.",
  },
  },
 
@@ -424,19 +424,19 @@ const REGISTRY: Registry = {
  title: "İstanbul Kurumsal Yat Akşam Yemeği — MerrySails",
  question: "MerrySails İstanbul kurumsal yat akşam yemeği nedir?",
  content:
- "MerrySails İstanbul Kurumsal Yat Akşam Yemeği, Kabataş veya Karaköy iskeleden kalkan, şirket etkinlikleri için tamamen özel bir Boğaz kiralamasıdır. Güverte €350'dan başlar; özel catering, ses-görüntü kurulumu, marka yerleşimi ve 3–4 saatlik Boğaz rotası dahildir. 10–25 kişi kapasite. Meryem Yıldız Travel faturasıyla — TÜRSAB A Grubu lisanslı, 2001'den beri (#14316). 60 dakikada teklif ve sözleşme.",
+ "MerrySails İstanbul Kurumsal Yat Akşam Yemeği, Kabataş veya Karaköy iskeleden kalkan, şirket etkinlikleri için tamamen özel bir Boğaz kiralamasıdır. Güverte €320'dan başlar; özel catering, ses-görüntü kurulumu, marka yerleşimi ve 3–4 saatlik Boğaz rotası dahildir. 10–25 kişi kapasite. Meryem Yıldız Travel faturasıyla — TÜRSAB A Grubu lisanslı, 2001'den beri (#14316). 60 dakikada teklif ve sözleşme.",
  },
  de: {
  title: "Firmen-Yacht-Dinner Istanbul — MerrySails",
  question: "Was ist das MerrySails Firmen-Yacht-Dinner in Istanbul?",
  content:
- "Das Firmen-Yacht-Dinner Istanbul von MerrySails ist ein vollständig privater Bosporus-Charter für Firmenveranstaltungen ab Kabataş oder Karaköy, ab €350 für das Deck, mit individuellem Catering, AV-Setup, Branding-Platzierung und 3–4-stündiger Bosporus-Route. Kapazität 10–25 Gäste. Rechnungsstellung über Meryem Yıldız Travel — TÜRSAB A-Group lizenziert seit 2001 (#14316). Angebot und Vertrag innerhalb von 60 Minuten.",
+ "Das Firmen-Yacht-Dinner Istanbul von MerrySails ist ein vollständig privater Bosporus-Charter für Firmenveranstaltungen ab Kabataş oder Karaköy, ab €320 für das Deck, mit individuellem Catering, AV-Setup, Branding-Platzierung und 3–4-stündiger Bosporus-Route. Kapazität 10–25 Gäste. Rechnungsstellung über Meryem Yıldız Travel — TÜRSAB A-Group lizenziert seit 2001 (#14316). Angebot und Vertrag innerhalb von 60 Minuten.",
  },
  fr: {
  title: "Dîner yacht entreprise Istanbul — MerrySails",
  question: "Qu'est-ce que le dîner yacht entreprise MerrySails à Istanbul ?",
  content:
- "Le dîner yacht entreprise MerrySails est une location Bosphore entièrement privée pour événements professionnels au départ de Kabataş ou Karaköy, dès €350 le pont, avec traiteur sur mesure, équipement AV, placement de marque et parcours Bosphore de 3 à 4 heures. Capacité 10 à 25 invités. Facturé via Meryem Yıldız Travel — licence TÜRSAB groupe A depuis 2001 (#14316). Devis et contrat sous 60 minutes.",
+ "Le dîner yacht entreprise MerrySails est une location Bosphore entièrement privée pour événements professionnels au départ de Kabataş ou Karaköy, dès €320 le pont, avec traiteur sur mesure, équipement AV, placement de marque et parcours Bosphore de 3 à 4 heures. Capacité 10 à 25 invités. Facturé via Meryem Yıldız Travel — licence TÜRSAB groupe A depuis 2001 (#14316). Devis et contrat sous 60 minutes.",
  },
  nl: {
  title: "Zakelijke Yacht-Diner Istanbul — MerrySails",
@@ -448,7 +448,7 @@ const REGISTRY: Registry = {
  title: "Корпоративный ужин на яхте в Стамбуле — MerrySails",
  question: "Что такое корпоративный ужин на яхте от MerrySails в Стамбуле?",
  content:
- "Корпоративный ужин на яхте от MerrySails — это полностью частный чартер по Босфору для корпоративных мероприятий от пирса Кабаташ или Каракёй, от €350 за палубу, с кейтерингом под заказ, AV-оборудованием, размещением брендинга и 3–4-часовым маршрутом. Вместимость 10–25 гостей. Счёт через Meryem Yıldız Travel — лицензия TÜRSAB A с 2001 года (#14316). Договор за 60 минут через WhatsApp.",
+ "Корпоративный ужин на яхте от MerrySails — это полностью частный чартер по Босфору для корпоративных мероприятий от пирса Кабаташ или Каракёй, от €320 за палубу, с кейтерингом под заказ, AV-оборудованием, размещением брендинга и 3–4-часовым маршрутом. Вместимость 10–25 гостей. Счёт через Meryem Yıldız Travel — лицензия TÜRSAB A с 2001 года (#14316). Договор за 60 минут через WhatsApp.",
  },
  },
 };

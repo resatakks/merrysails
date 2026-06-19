@@ -194,7 +194,7 @@ const CONTENT: Record<string, LocaleContent> = {
  },
  {
  headline: "Hangi paket hangi kişiye uygun?",
- body: "\"Çiftler için: gün batımı şaraplı €40 — 2 saatlik kompakt deneyim, fotoğraf ve manzara odaklı. Aileler için: akşam yemekli Silver Soft €30 — çocuk menüsü + Türk gecesi şovu (8 yaş üstü için ideal). Evlilik teklifi: özel yat €220'den — sadece sizin teknenizdir, 2 kişi de 20 kişi de yat başına aynı fiyat. Sürpriz dekor, pasta, DJ ve fotoğrafçı talebe göre ayarlanır — kesin fiyat için WhatsApp. Doğum günü ya da kurumsal: grup yatı €380–€600 (yat başına, gruba göre).\""
+ body: "\"Çiftler için: gün batımı şaraplı €40 — 2 saatlik kompakt deneyim, fotoğraf ve manzara odaklı. Aileler için: akşam yemekli Silver Soft €30 — çocuk menüsü + Türk gecesi şovu (8 yaş üstü için ideal). Evlilik teklifi: özel yat €220'den — sadece sizin teknenizdir, 2 kişi de 20 kişi de yat başına aynı fiyat. Sürpriz dekor, pasta, DJ ve fotoğrafçı talebe göre ayarlanır — kesin fiyat için WhatsApp. Doğum günü ya da kurumsal: grup yatı €380–€500 (yat başına, gruba göre); 90 ve 150 kişilik etkinlik yatları teklif ile.\""
  },
  ],
  attribution: "Captain Ahmet",

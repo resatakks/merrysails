@@ -260,7 +260,7 @@ const fleetTableSchema = {
   "@context": "https://schema.org",
   "@type": "Table",
   name: "MerrySails Bosphorus private yacht charter fleet 2026",
-  about: "Side-by-side comparison of the MerrySails private yacht charter fleet — Boutique 12, Premium 15, Group 40 Standard, Group 40 Signature, Event 90, Mega Event 150 — with capacity, 2h / 4h / 8h pricing in EUR, and inclusions.",
+  about: "Side-by-side comparison of the MerrySails private yacht charter fleet — Boutique 12, Premium 15, Group 40 Standard, Group 40 Signature (published per-vessel pricing) plus Event 90 and Mega Event 150 by quote — with capacity, 2h / 4h / 8h pricing in EUR, and inclusions.",
   url: canonicalUrl,
 };
 
@@ -353,7 +353,7 @@ const charterCategoryCards = [
   },
   {
     title: "Event class · 90 to 150 guests",
-    price: "From €1,200 / on quote",
+    price: "By quote",
     body: "Event-built decks for wedding receptions, gala dinners, full-program corporate evenings, and brand activations. Priced per program.",
   },
 ];
@@ -386,7 +386,7 @@ const aiCitationFacts = [
   },
   {
     label: "Price ladder",
-    value: "From €220 for a two-hour boutique sailing through to €1,800 for an eight-hour Signature group sailing, with the 90-guest event yacht from €1,200 and the 150-guest mega event yacht on quote. Six yachts from 12 to 150 guests, priced per yacht, not per seat. Three hours and longer carries a flat ten percent saving.",
+    value: "From €220 for a two-hour boutique sailing through to €500 for the Group 40 Signature, with the 90-guest event yacht and the 150-guest mega event yacht by quote. Six yachts from 12 to 150 guests, priced per yacht, not per seat. Three hours and longer carries a flat ten percent saving.",
   },
   {
     label: "Duration",
@@ -559,14 +559,21 @@ export default async function YachtCharterIstanbulPage({
           </nav>
 
           <header className="mb-3 md:mb-4">
-            {/* 2026-06-10: page-level <h1> demoted to <h2> — TourDetailClient's
-                <h1> is unconditional (line ~819, renders regardless of
-                bookingPrefill). Prior comment claimed h1 was conditional but
-                code review shows otherwise. Two <h1> SSR'd was failing
-                Semrush/Bing Site Scan. Keeping visible copy via h2/h3 chain. */}
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
-              Yacht Charter Istanbul
-            </h2>
+            {/* 2026-06-19: page-level heading restored to <h1>. The prior
+                2026-06-10 demotion to <h2> was based on a false premise — it
+                claimed TourDetailClient's <h1> "renders regardless of
+                bookingPrefill", but TourDetailClient is gated behind
+                {bookingPrefill && …} below (line ~589). On a normal/crawled
+                load bookingPrefill is undefined, so that <h1> never renders →
+                the page had h1=0 on a 590/mo pillar + TÜRSAB backlink target.
+                Gating this <h1> to !bookingPrefill keeps exactly ONE <h1> in
+                both states: normal load uses this one; prefill load uses
+                TourDetailClient's. */}
+            {!bookingPrefill && (
+              <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
+                Yacht Charter Istanbul
+              </h1>
+            )}
             <p className="mt-2 text-xl md:text-2xl font-semibold text-[var(--heading)] tracking-tight leading-tight">
               {yachtTour.nameEn} — Private Yacht Charter Istanbul
             </p>
@@ -716,7 +723,7 @@ export default async function YachtCharterIstanbulPage({
                 what is included onboard for each vessel. */}
             <div className="mt-6">
               <ComparisonTable
-                caption="MerrySails Bosphorus private yacht charter fleet 2026 — five bookable vessels (Boutique 12, Premium 15, Group 40 Standard, Group 40 Signature, Event 90) with capacity, 2-hour entry price, 4-hour price, 8-hour day rate, and what is included onboard. Captain and crew included on every charter."
+                caption="MerrySails Bosphorus private yacht charter fleet 2026 — four published-price vessels (Boutique 12, Premium 15, Group 40 Standard, Group 40 Signature) plus the Event 90 and Mega 150 by quote, with capacity, 2-hour entry price, 4-hour price, 8-hour day rate, and what is included onboard. Captain and crew included on every charter."
                 ariaLabel="Private yacht charter fleet comparison"
                 minWidth="780px"
                 headers={[
@@ -763,9 +770,9 @@ export default async function YachtCharterIstanbulPage({
                   [
                     "Event Yacht — 90 guests",
                     "30 to 90",
-                    "—",
-                    "€1,200 (4h min)",
-                    "€2,160",
+                    "By quote",
+                    "By quote",
+                    "By quote",
                     "Captain & crew · event-class deck · catering & open bar by quote",
                   ],
                   [
@@ -951,7 +958,7 @@ export default async function YachtCharterIstanbulPage({
               <li>
                 <Link href="/blog/bosphorus-cruise-new-year-eve-istanbul-2026-2027" className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]">
                   <span className="block font-semibold text-[var(--heading)]">NYE 2026/27 — private yacht charter rates</span>
-                  <span className="mt-1 block text-sm text-[var(--text-muted)]">€1,200–€3,500 yacht-charter ladder for the busiest evening of the year.</span>
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">Private yacht-charter rates and by-quote event vessels for the busiest evening of the year.</span>
                 </Link>
               </li>
             </ul>
