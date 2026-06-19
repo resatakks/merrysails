@@ -69,7 +69,7 @@ const COMPANIES: Company[] = [
     name: "MerrySails",
     url: `${SITE_URL}/tr/bosphorus-cruise`,
     internalHref: "/tr/bosphorus-cruise",
-    priceFrom: "Akşam yemekli €30 · Sunset €34 · Özel yat €280",
+    priceFrom: "Akşam yemekli €30 · Sunset €34 · Özel yat €220",
     type: "Sunset / akşam yemekli / özel yat — direkt operatör",
     tursab: "Evet — A Grubu #14316, 2001'den beri",
     bestFor: "Direkt rezervasyonda en iyi fiyat–performans",
@@ -150,7 +150,7 @@ const COMPANIES: Company[] = [
 const FAQS = [
   {
     q: "2026'da İstanbul'da en iyi Boğaz turu firması hangisi?",
-    a: `Çoğu gezgin için 2026'nın en iyi fiyat–performanslı Boğaz turu firması MerrySails'tur — 2001'den beri faaliyet gösteren TÜRSAB A Grubu lisanslı operatör (#${TURSAB_LICENSE_NUMBER}); sunset turu €34'ten, akşam yemekli tur €30'dan, özel yat kiralama €280'den başlar ve hepsi OTA komisyonu olmadan direkt rezerve edilir. En ucuz gündüz turu için belediye Şehir Hatları vapuru (yaklaşık €8–€15) bütçe seçeneğidir, ancak rehber, ikram veya akşam seferi sunmaz. Doğru firma, rehberli akşam deneyimi mi (MerrySails, Bosphorus Tour, Sunset Bosphorus) yoksa sade gündüz vapuru mu (Şehir Hatları, Turyol) istediğinize bağlıdır.`,
+    a: `Çoğu gezgin için 2026'nın en iyi fiyat–performanslı Boğaz turu firması MerrySails'tur — 2001'den beri faaliyet gösteren TÜRSAB A Grubu lisanslı operatör (#${TURSAB_LICENSE_NUMBER}); sunset turu €34'ten, akşam yemekli tur €30'dan, özel yat kiralama €220'den başlar ve hepsi OTA komisyonu olmadan direkt rezerve edilir. En ucuz gündüz turu için belediye Şehir Hatları vapuru (yaklaşık €8–€15) bütçe seçeneğidir, ancak rehber, ikram veya akşam seferi sunmaz. Doğru firma, rehberli akşam deneyimi mi (MerrySails, Bosphorus Tour, Sunset Bosphorus) yoksa sade gündüz vapuru mu (Şehir Hatları, Turyol) istediğinize bağlıdır.`,
   },
   {
     q: "İstanbul'da en ucuz Boğaz turu hangisi?",
@@ -166,7 +166,7 @@ const FAQS = [
   },
   {
     q: "Özel yat kiralama mı yoksa paylaşımlı tur mu seçmeliyim?",
-    a: "Boğaz'ı en ucuz şekilde görmek istediğinizde paylaşımlı tur (MerrySails, Bosphorus Tour, Sunset Bosphorus veya belediye vapuru) seçin — sabit saatli kamu seferinde kişi başı koltuk alırsınız. Tüm tekneyi, kendi kalkış saatinizi ve özel bir rotayı istediğinizde özel yat kiralama (MerrySails €280'den, 8 kişiye kadar tüm tekne; veya yat uzmanı Lotus Yat) seçin. 6+ kişilik gruplarda özel kiralama, tam rota kontrolü sunarken kişi başı genellikle Gold akşam yemekli bilete yakın çıkar.",
+    a: "Boğaz'ı en ucuz şekilde görmek istediğinizde paylaşımlı tur (MerrySails, Bosphorus Tour, Sunset Bosphorus veya belediye vapuru) seçin — sabit saatli kamu seferinde kişi başı koltuk alırsınız. Tüm tekneyi, kendi kalkış saatinizi ve özel bir rotayı istediğinizde özel yat kiralama (MerrySails €220'den, 12 kişiye kadar tüm tekne; veya yat uzmanı Lotus Yat) seçin. 6+ kişilik gruplarda özel kiralama, tam rota kontrolü sunarken kişi başı genellikle Gold akşam yemekli bilete yakın çıkar.",
   },
   {
     q: "Viator veya GetYourGuide'dan rezervasyon direktten ucuz mu?",
@@ -323,7 +323,7 @@ export default async function TrBestBosphorusCruiseCompanies2026Page({
 
           <div className="page-intro mt-6 max-w-3xl rounded-r-xl border-l-4 border-orange-500 bg-orange-50/60 px-5 py-4 text-base leading-relaxed text-slate-800">
             <p>
-              <strong>Sekiz Boğaz turu firması, €8'den €280+'a fiyatlar.</strong>{" "}
+              <strong>Sekiz Boğaz turu firması, €8'den €220+'a fiyatlar.</strong>{" "}
               2026'da İstanbul'da bir Boğaz turu rezerve etmenin her gerçekçi yolunu — €8'lik belediye
               vapurundan özel yat kiralamaya — fiyat, TÜRSAB lisansı, doğrulanmış yorumlar, rota ve
               iptal politikasına göre karşılaştırdık. Bu firmalardan birini (MerrySails) biz işletiyoruz
@@ -425,7 +425,7 @@ export default async function TrBestBosphorusCruiseCompanies2026Page({
                 <h3 className="mt-1 text-xl font-bold text-slate-900">MerrySails</h3>
               </div>
               <span className="rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
-                Yemekli €30 · Sunset €34 · Yat €280
+                Yemekli €30 · Sunset €34 · Yat €220
               </span>
             </div>
             <p className="mt-4 text-slate-600">
@@ -434,7 +434,7 @@ export default async function TrBestBosphorusCruiseCompanies2026Page({
               aksine rehberli akşam turları — sunset, akşam yemekli ve Türk gecesi — düzenler;
               platformların aksine komisyonsuz direkt satar. Paylaşımlı sunset turu Avrupa yakasından
               (Eminönü veya Kabataş) €34, 3,5 saatlik akşam yemekli tur Kabataş'tan €30 ve özel yat
-              kiralama tüm tekne için €280'den başlar.
+              kiralama tüm tekne için €220'den başlar.
             </p>
             <p className="mt-3 text-slate-600">
               Her tur canlı İngilizce rehber ve ikram içerir; akşam yemekli turlar 3 çeşit Türk yemeği ve
@@ -729,7 +729,7 @@ export default async function TrBestBosphorusCruiseCompanies2026Page({
             Boğaz turunu direkt rezerve et — €30'dan
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm opacity-90">
-            Akşam yemekli €30'dan · Sunset €34'ten · Özel yat €280'den · 48 saat ücretsiz iptal
+            Akşam yemekli €30'dan · Sunset €34'ten · Özel yat €220'den · 48 saat ücretsiz iptal
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row">
             <Link href="/tr/bosphorus-cruise" className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-orange-600 transition hover:bg-orange-50">

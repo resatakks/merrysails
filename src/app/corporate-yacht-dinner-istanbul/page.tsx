@@ -13,7 +13,7 @@ const canonicalUrl = `${SITE_URL}/corporate-yacht-dinner-istanbul`;
 export const metadata: Metadata = {
  title: "Corporate Yacht Dinner Istanbul",
  description:
- "Corporate yacht dinner Istanbul from EUR 200/hour. Private Bosphorus charter for team dinners, client hosting, and invoice-ready company evenings.",
+ "Corporate yacht dinner Istanbul from EUR 220 per yacht. Private Bosphorus charter for team dinners, client hosting, and invoice-ready company evenings.",
  alternates: {
  canonical: canonicalUrl,
  languages: buildHreflang("/corporate-yacht-dinner-istanbul"),
@@ -94,7 +94,7 @@ const faqItems = [
 const faqItemsRu = [
  {
  q: "Сколько стоит корпоративный ужин на яхте в Стамбуле?",
- a: "Стоимость корпоративного ужина начинается от 380 EUR за яхту (пакет Premium, до 12 гостей, 2 часа). VIP-пакет с полным меню и открытым баром — от 680 EUR. Для больших групп — индивидуальный расчёт. Оператор TÜRSAB Группы А, счёт-фактура предоставляется. Уточните в WhatsApp.",
+ a: "Стоимость зависит от выбранной яхты и продолжительности. Цена указывается за всё судно: Group Yacht 40 (до 40 гостей) от 380 EUR за 2 часа, Event Yacht 90 (до 90 гостей) от 600 EUR. Для меньших групп подойдёт Boutique Yacht (до 12 гостей) от 220 EUR. С 3 часов — автоматическая скидка 10%. Оператор TÜRSAB Группы А, счёт-фактура предоставляется. Уточните в WhatsApp.",
  },
  {
  q: "С какого причала отправляется корпоративный ужин-круиз?",

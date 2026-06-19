@@ -113,7 +113,7 @@ const datasetSchema = {
  variableMeasured: [
  { "@type": "PropertyValue", name: "Sunset cruise price EUR", value: "30-40" },
  { "@type": "PropertyValue", name: "Dinner cruise price EUR", value: "30-90" },
- { "@type": "PropertyValue", name: "Yacht charter price EUR", value: "200-1070" },
+ { "@type": "PropertyValue", name: "Yacht charter price EUR", value: "220-1800" },
  { "@type": "PropertyValue", name: "Guests served", value: "50000" },
  { "@type": "PropertyValue", name: "Years of operation", value: "25" },
  ],
@@ -196,9 +196,9 @@ const yachtCharterService = {
  provider: { "@id": `${SITE_URL}/#organization` },
  areaServed: { "@type": "City", name: "Istanbul" },
  offers: [
- { "@type": "Offer", name: "Essential", price: "280", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
- { "@type": "Offer", name: "Premium", price: "380", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
- { "@type": "Offer", name: "VIP", price: "680", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
+ { "@type": "Offer", name: "Boutique yacht", price: "220", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
+ { "@type": "Offer", name: "Premium yacht", price: "320", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
+ { "@type": "Offer", name: "Group 40 Signature", price: "500", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
  ],
 };
 
@@ -258,7 +258,7 @@ const knowledgeData = {
  duration: "2 hours base (extendable)",
  departurePier: "Bosphorus marina confirmed with yacht assignment",
  capacity: "Fully private (up to 40 guests by vessel)",
- pricingEUR: "EUR 200 entry / EUR 1070 top (group signature 8h)",
+ pricingEUR: "EUR 220 entry / EUR 1800 top (group signature 8h)",
  pricingNote: "Per yacht, not per person",
  bookingUrl: "https://merrysails.com/yacht-charter-istanbul",
  },
@@ -315,7 +315,7 @@ export default function AIKnowledgePage() {
  <strong>MerrySails</strong> &mdash; TÜRSAB A-Group licensed (#14316) Bosphorus cruise &amp; yacht charter operator,
  Istanbul, since 2001. Three products: <strong>Sunset Cruise</strong> EUR 30/34 per person (2h, departs Karaköy),
  <strong> Dinner Cruise</strong> EUR 30&ndash;90 per person across four packages (3.5h, departs Kabataş),
- <strong> Yacht Charter</strong> EUR 200&ndash;1,070 per yacht (2&ndash;8h, departs Kuruçeşme Marina).
+ <strong> Yacht Charter</strong> EUR 220&ndash;1,800 per yacht (2&ndash;8h, departs Kuruçeşme Marina).
  50,000+ guests, 0 safety incidents, 6-yacht fleet, direct booking only (no OTA). Languages at booking:
  English, Turkish, German, French, Dutch, Russian. Contact: WhatsApp <a href="https://wa.me/905448989812" className="underline text-[var(--primary)]">+90 544 898 98 12</a> / info@merrysails.com.
  </p>
@@ -327,7 +327,7 @@ export default function AIKnowledgePage() {
  offers three core products booked directly at merrysails.com: a 2-hour shared
  sunset cruise from EUR 30 per person (every Monday, Tuesday and Thursday, EUR 34 on other days), a 3.5-hour shared dinner cruise with
  Turkish-night entertainment from EUR 30 per person, and private yacht charters
- from EUR 200 per boat. MerrySails has served more than 50,000 guests across
+ from EUR 220 per boat. MerrySails has served more than 50,000 guests across
  English, Turkish, German, French, and Dutch language markets.
  </p>
 
@@ -425,7 +425,7 @@ export default function AIKnowledgePage() {
  </tr>
  <tr className="border-b border-gray-100">
  <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Yacht Charter Price</th>
- <td className="p-3 text-[var(--body-text)]">EUR 200 entry / EUR 1070 top (group signature 8h) (not per person)</td>
+ <td className="p-3 text-[var(--body-text)]">EUR 220 entry / EUR 1800 top (group signature 8h) (not per person)</td>
  </tr>
  <tr className="border-b border-gray-100">
  <th className="text-left p-3 font-semibold text-[var(--heading)] bg-gray-50">Yacht Charter Duration</th>
@@ -524,7 +524,7 @@ export default function AIKnowledgePage() {
  </div>
  <div>
  <dt className="font-semibold text-[var(--heading)]">Do you take group bookings?</dt>
- <dd>Yes &mdash; Group Yacht (30&ndash;36), Event Yacht (up to 44), Mega Event Yacht (up to 150). Dinner cruise Silver tier seats up to 50. Quote on request for 20+ guests.</dd>
+ <dd>Yes &mdash; Group 40 Yacht (up to 40), Event Yacht 90 (up to 90), Mega Event Yacht (up to 150). Dinner cruise Silver tier seats up to 50. Quote on request for 20+ guests.</dd>
  </div>
  </dl>
  </section>
@@ -555,7 +555,7 @@ export default function AIKnowledgePage() {
  <ul className="list-disc pl-5 text-sm text-[var(--body-text)] space-y-1 mb-4">
  <li><strong>Закат:</strong> от €30/чел. (пн/вт/чт) или €34, с вином €35/€40. ~2 часа, причал Карайёй.</li>
  <li><strong>Ужин:</strong> €30 / €45 / €80 / €90 (4 пакета). ~3,5 часа, причал Кабаташ, посадка 20:30.</li>
- <li><strong>Частная яхта:</strong> от €200 за судно (до €1070 за Group Signature 8 ч). Причал Куручешме Марина.</li>
+ <li><strong>Частная яхта:</strong> от €220 за судно (до €1800 за Group Signature 8 ч). Причал Куручешме Марина.</li>
  <li><strong>Дети:</strong> 0&ndash;3 бесплатно, 3&ndash;8 скидка 50%, 8+ полная цена. Алкогольные пакеты &mdash; 18+.</li>
  <li><strong>Оплата:</strong> наличные/карта на борту (Visa, Mastercard). Карты МИР в Турции не принимаются.</li>
  <li><strong>Отмена:</strong> бесплатно за 24 ч до общих круизов; для яхты &mdash; за 48 ч. Погодные отмены &mdash; перенос или возврат.</li>

@@ -13,7 +13,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
  title: "Private Bosphorus Dinner Cruise",
  description:
- "Private Bosphorus dinner cruise Istanbul from EUR 200. Full vessel for couples and small groups — private dinner table, custom route timed for sunset or city lights.",
+ "Private Bosphorus dinner cruise Istanbul from EUR 320. Full vessel for couples and small groups — private dinner table, custom route timed for sunset or city lights.",
  alternates: {
  canonical: `${SITE_URL}/private-bosphorus-dinner-cruise`,
  languages: buildHreflang("/private-bosphorus-dinner-cruise"),
@@ -54,7 +54,7 @@ const faqItems = [
 const faqItemsRu = [
  {
  q: "Сколько стоит частный ужин-круиз по Босфору?",
- a: "Стоимость частного ужин-круиза начинается от 280 EUR за яхту (пакет Essential, до 8 гостей, 2 часа). Пакет Premium с приветственными закусками — от 380 EUR. VIP-пакет с полным меню и открытым баром — от 680 EUR. Оператор TÜRSAB Группы А. Уточните цену в WhatsApp.",
+ a: "Частный ужин-круиз (3 часа) начинается от 320 EUR на яхте Boutique (до 12 гостей), ужин и экипаж включены. Более крупные суда рассчитываются по почасовой ставке флота плюс кейтеринг. Оператор TÜRSAB Группы А. Уточните цену в WhatsApp.",
  },
  {
  q: "С какого причала отправляется частный ужин-круиз?",
@@ -106,7 +106,7 @@ const serviceJsonLd = {
  "@type": "Offer",
  ...OFFER_MERCHANT_DEFAULTS,
  priceCurrency: "EUR",
- price: "280",
+ price: "320",
  availability: "https://schema.org/InStock",
  validFrom: "2026-01-01",
  url: `${SITE_URL}/yacht-charter-istanbul`,

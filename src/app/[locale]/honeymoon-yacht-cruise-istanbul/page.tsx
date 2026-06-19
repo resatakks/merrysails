@@ -51,14 +51,14 @@ const CONTENT: Record<string, LocaleContent> = {
  tr: {
  metaTitle: "İstanbul Balayı Yat Kiralama — Boğaz",
  metaDescription:
- "Boğaz'da balayı için özel yat — 2 saat €280'den, pasta, şampanya, fotoğrafçı, gün batımı. TÜRSAB A lisanslı, 2001'den beri.",
+ "Boğaz'da balayı için özel yat — 2 saat €220'den, pasta, şampanya, fotoğrafçı, gün batımı. TÜRSAB A lisanslı, 2001'den beri.",
  canonicalPath: "/tr/honeymoon-yacht-cruise-istanbul",
  eyebrow: "Balayı · Yeni evli · Özel yat",
  h1: "İstanbul Balayı Yat Kiralama",
  intro:
- "Balayı çiftlerine özel Boğaz yat kiralaması — genellikle Kapadokya, Antalya veya Bodrum'u kapsayan 7-10 günlük bir Türkiye turuyla birlikte planlanır. 2 saatlik temel kiralama Essential butik yatımızda €280'den, geniş güverteli ve özel oturma düzenli Premium €380'den başlar. Çoğu çift pasta + şampanya + fotoğrafçıyı ekler — toplam akşam genelde €450-€600 aralığında olur.",
+ "Balayı çiftlerine özel Boğaz yat kiralaması — genellikle Kapadokya, Antalya veya Bodrum'u kapsayan 7-10 günlük bir Türkiye turuyla birlikte planlanır. 2 saatlik temel kiralama Boutique butik yatımızda €220'den, geniş güverteli ve özel oturma düzenli Premium €320'den başlar. Çoğu çift pasta + şampanya + fotoğrafçıyı ekler — bu eklentiler talebe göre ayarlanır — kesin fiyat için WhatsApp.",
  capsule:
- "İstanbul'da balayı yat kiralama, yeni evli çiftler için özel olarak hazırlanmış bir Boğaz yat deneyimidir. 2 saatlik özel kiralama €280'den başlar; şampanyalı karşılama, kişiye özel düğün tarihli pasta, profesyonel fotoğrafçı (7 gün içinde 50+ düzenlenmiş fotoğraf), canlı kemancı ve gün batımı zamanlaması istek üzerine eklenir. Kalkış Kabataş veya Kuruçeşme Marina'dan; tam iskele bilgisi rezervasyon sonrası WhatsApp ile teyit edilir. Türkiye gezisinin son İstanbul akşamı için en iyi tercih.",
+ "İstanbul'da balayı yat kiralama, yeni evli çiftler için özel olarak hazırlanmış bir Boğaz yat deneyimidir. 2 saatlik özel kiralama €220'den başlar; şampanyalı karşılama, kişiye özel düğün tarihli pasta, profesyonel fotoğrafçı (7 gün içinde 50+ düzenlenmiş fotoğraf), canlı kemancı ve gün batımı zamanlaması istek üzerine eklenir. Kalkış Kabataş veya Kuruçeşme Marina'dan; tam iskele bilgisi rezervasyon sonrası WhatsApp ile teyit edilir. Türkiye gezisinin son İstanbul akşamı için en iyi tercih.",
  reasonsHeading: "Balayı için neden bu format?",
  reasons: [
  {
@@ -95,7 +95,7 @@ const CONTENT: Record<string, LocaleContent> = {
  faqs: [
  {
  q: "İstanbul'da balayı yat kiralama ne kadar?",
- a: "Boutique Essential yat 2 saatlik kiralama €280'den başlar (10 kişiye kadar). Geniş güverteli Premium €380. Çoğu balayı çifti şampanya servisi (€60-€120), düğün tarihli kişiye özel pasta (~€80) ve fotoğrafçı ekler — toplam akşam genellikle €450-€600.",
+ a: "Boutique yat 2 saatlik kiralama €220'den başlar (12 kişiye kadar). Geniş güverteli Premium €320. Çoğu balayı çifti şampanya servisi (€60-€120), düğün tarihli kişiye özel pasta (~€80) ve fotoğrafçı ekler — bu eklentiler talebe göre ayarlanır — kesin fiyat için WhatsApp.",
  },
  {
  q: "Balayı kruvazı evlilik teklifi kruvazından nasıl farklı?",
@@ -124,19 +124,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Balayı brifini WhatsApp'tan gönder",
  whatsappPrefill: "Merhaba MerrySails! Balayımız için Boğaz'da özel yat kiralamak istiyoruz. Düğün tarihi: [tarih], İstanbul gezisi: [tarihler]. Pasta / şampanya / fotoğrafçı istiyoruz.",
  trustLine: `Meryem Yıldız Travel altında işletilir · TÜRSAB A Grubu lisans #${TURSAB_LICENSE_NUMBER} · 2001'den bu yana Boğaz'da 50.000+ misafir.`,
- reserveLabel: "€280'den teklif al",
+ reserveLabel: "€220'den teklif al",
  },
  de: {
  metaTitle: "Hochzeitsreise-Yacht Istanbul — Bosporus",
  metaDescription:
- "Privat-Yacht für Flitterwochen am Bosporus. 2-h-Charter ab €280, Torte, Champagner, Fotograf, Sonnenuntergang. TÜRSAB A-lizenziert.",
+ "Privat-Yacht für Flitterwochen am Bosporus. 2-h-Charter ab €220, Torte, Champagner, Fotograf, Sonnenuntergang. TÜRSAB A-lizenziert.",
  canonicalPath: "/de/honeymoon-yacht-cruise-istanbul",
  eyebrow: "Hochzeitsreise · Frisch verheiratet · Private Yacht",
  h1: "Hochzeitsreise-Yacht Istanbul",
  intro:
- "Private Yacht-Charter für Hochzeitsreisende — typischerweise kombiniert mit einer 7-10-tägigen Türkei-Reise inklusive Kappadokien, Antalya oder Bodrum. Basis-Charter für 2 Stunden auf unserer Essential-Boutique-Yacht ab €280; Premium mit erweitertem Deck und stilisiertem Setup ab €380. Die meisten Flitterwöchner fügen Torte, Champagner und Fotograf hinzu — der Abend kostet insgesamt meist €450-€600.",
+ "Private Yacht-Charter für Hochzeitsreisende — typischerweise kombiniert mit einer 7-10-tägigen Türkei-Reise inklusive Kappadokien, Antalya oder Bodrum. Basis-Charter für 2 Stunden auf unserer Boutique-Yacht ab €220; Premium mit erweitertem Deck und stilisiertem Setup ab €320. Die meisten Flitterwöchner fügen Torte, Champagner und Fotograf hinzu — diese Extras werden auf Anfrage arrangiert – genauen Preis per WhatsApp.",
  capsule:
- "Hochzeitsreise-Yacht-Charter auf dem Bosporus bietet frisch verheirateten Paaren eine private Yacht für 2-3 Stunden ab €280. Champagner-Empfang, individuelle Hochzeitsdatums-Torte, professioneller Fotograf (50+ bearbeitete Bilder in 7 Tagen), Live-Geiger und Sonnenuntergangs-Timing sind optional. Abfahrt von Kabataş oder Kuruçeşme Marina; der genaue Anleger wird nach der Buchung per WhatsApp bestätigt. Ideal für den letzten Istanbul-Abend vor dem Weiterflug nach Kappadokien oder Antalya.",
+ "Hochzeitsreise-Yacht-Charter auf dem Bosporus bietet frisch verheirateten Paaren eine private Yacht für 2-3 Stunden ab €220. Champagner-Empfang, individuelle Hochzeitsdatums-Torte, professioneller Fotograf (50+ bearbeitete Bilder in 7 Tagen), Live-Geiger und Sonnenuntergangs-Timing sind optional. Abfahrt von Kabataş oder Kuruçeşme Marina; der genaue Anleger wird nach der Buchung per WhatsApp bestätigt. Ideal für den letzten Istanbul-Abend vor dem Weiterflug nach Kappadokien oder Antalya.",
  reasonsHeading: "Warum dieses Format für Flitterwochen passt",
  reasons: [
  {
@@ -173,7 +173,7 @@ const CONTENT: Record<string, LocaleContent> = {
  faqs: [
  {
  q: "Wie viel kostet eine Hochzeitsreise-Yacht in Istanbul?",
- a: "Private Yacht-Charter für Hochzeitsreisen beginnt bei €280 für 2 Stunden auf unserer Essential-Boutique-Yacht (bis 10 Gäste). Premium mit erweitertem Deck und stilisiertem Setup ab €380. Die meisten Paare fügen Champagner (€60-€120), Torte (~€80) und Fotograf hinzu — Gesamtkosten meist €450-€600.",
+ a: "Private Yacht-Charter für Hochzeitsreisen beginnt bei €220 für 2 Stunden auf unserer Boutique-Yacht (bis 12 Gäste). Premium mit erweitertem Deck und stilisiertem Setup ab €320. Die meisten Paare fügen Champagner (€60-€120), Torte (~€80) und Fotograf hinzu — diese Extras werden auf Anfrage arrangiert – genauen Preis per WhatsApp.",
  },
  {
  q: "Wie unterscheidet sich Hochzeitsreise-Fahrt von Heiratsantrag-Fahrt?",
@@ -202,19 +202,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Hochzeitsreise-Brief per WhatsApp senden",
  whatsappPrefill: "Hallo MerrySails! Wir möchten eine private Yacht für unseren Hochzeitsreise-Abend auf dem Bosporus buchen. Hochzeitsdatum: [Datum], Istanbul-Reise: [Daten]. Wir möchten Torte / Champagner / Fotograf.",
  trustLine: `Betrieben unter Meryem Yıldız Travel · TÜRSAB-A-Lizenz #${TURSAB_LICENSE_NUMBER} · 50.000+ Gäste auf dem Bosporus seit 2001.`,
- reserveLabel: "Angebot ab €280",
+ reserveLabel: "Angebot ab €220",
  },
  fr: {
  metaTitle: "Croisière Lune de Miel Yacht Istanbul",
  metaDescription:
- "Yacht privé pour lune de miel sur le Bosphore. Croisière 2 h dès €280, gâteau, champagne, photographe, coucher de soleil. TÜRSAB A licencié.",
+ "Yacht privé pour lune de miel sur le Bosphore. Croisière 2 h dès €220, gâteau, champagne, photographe, coucher de soleil. TÜRSAB A licencié.",
  canonicalPath: "/fr/honeymoon-yacht-cruise-istanbul",
  eyebrow: "Lune de miel · Jeunes mariés · Yacht privé",
  h1: "Croisière Lune de Miel sur Yacht à Istanbul",
  intro:
- "Location privée de yacht pour les jeunes mariés — combinée généralement avec un séjour de 7-10 jours en Turquie incluant la Cappadoce, Antalya ou Bodrum. Charter de base 2 heures sur notre yacht Essential à partir de €280 ; Premium avec pont étendu et décor stylé à partir de €380. La plupart des couples ajoutent gâteau + champagne + photographe — la soirée coûte généralement €450-€600 au total.",
+ "Location privée de yacht pour les jeunes mariés — combinée généralement avec un séjour de 7-10 jours en Turquie incluant la Cappadoce, Antalya ou Bodrum. Charter de base 2 heures sur notre yacht Boutique à partir de €220 ; Premium avec pont étendu et décor stylé à partir de €320. La plupart des couples ajoutent gâteau + champagne + photographe — ces extras sont arrangés sur demande — devis précis par WhatsApp.",
  capsule:
- "La croisière de lune de miel en yacht à Istanbul offre aux jeunes mariés un yacht privé pour 2-3 heures à partir de €280. Champagne d'accueil, gâteau personnalisé avec votre date de mariage, photographe professionnel (50+ photos retouchées sous 7 jours), violoniste en direct et timing au coucher de soleil sont en option. Embarquement à Kabataş ou Kuruçeşme Marina ; le quai exact est confirmé par WhatsApp après réservation. Idéal pour la dernière soirée à Istanbul avant la Cappadoce ou Antalya.",
+ "La croisière de lune de miel en yacht à Istanbul offre aux jeunes mariés un yacht privé pour 2-3 heures à partir de €220. Champagne d'accueil, gâteau personnalisé avec votre date de mariage, photographe professionnel (50+ photos retouchées sous 7 jours), violoniste en direct et timing au coucher de soleil sont en option. Embarquement à Kabataş ou Kuruçeşme Marina ; le quai exact est confirmé par WhatsApp après réservation. Idéal pour la dernière soirée à Istanbul avant la Cappadoce ou Antalya.",
  reasonsHeading: "Pourquoi ce format fonctionne pour une lune de miel",
  reasons: [
  {
@@ -251,7 +251,7 @@ const CONTENT: Record<string, LocaleContent> = {
  faqs: [
  {
  q: "Combien coûte une croisière de lune de miel en yacht à Istanbul ?",
- a: "Le charter privé démarre à €280 pour 2 heures sur notre yacht Essential boutique (jusqu'à 10 invités). Premium avec pont étendu et décor stylé à partir de €380. La plupart des couples ajoutent champagne (€60-€120) + gâteau personnalisé (~€80) + photographe — total soirée €450-€600.",
+ a: "Le charter privé démarre à €220 pour 2 heures sur notre yacht Boutique (jusqu'à 12 invités). Premium avec pont étendu et décor stylé à partir de €320. La plupart des couples ajoutent champagne (€60-€120) + gâteau personnalisé (~€80) + photographe — ces extras sont arrangés sur demande — devis précis par WhatsApp.",
  },
  {
  q: "Différence avec une croisière demande en mariage ?",
@@ -280,19 +280,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Envoyer le briefing lune de miel par WhatsApp",
  whatsappPrefill: "Bonjour MerrySails ! Nous voulons réserver un yacht privé pour notre soirée de lune de miel sur le Bosphore. Date de mariage : [date], séjour Istanbul : [dates]. Nous voudrions gâteau / champagne / photographe.",
  trustLine: `Opéré sous Meryem Yıldız Travel · Licence TÜRSAB A #${TURSAB_LICENSE_NUMBER} · 50 000+ voyageurs sur le Bosphore depuis 2001.`,
- reserveLabel: "Devis dès €280",
+ reserveLabel: "Devis dès €220",
  },
  nl: {
  metaTitle: "Huwelijksreis Jacht Istanbul — Bosporus",
  metaDescription:
- "Privé jachtcharter voor huwelijksreis op de Bosporus. 2-uurs charter vanaf €280, taart, champagne, fotograaf, zonsondergangs-timing. TÜRSAB A-licentie sinds 2001.",
+ "Privé jachtcharter voor huwelijksreis op de Bosporus. 2-uurs charter vanaf €220, taart, champagne, fotograaf, zonsondergangs-timing. TÜRSAB A-licentie sinds 2001.",
  canonicalPath: "/nl/honeymoon-yacht-cruise-istanbul",
  eyebrow: "Huwelijksreis · Net getrouwd · Privé-jacht",
  h1: "Huwelijksreis Jacht Cruise Istanbul",
  intro:
- "Privé jachtcharter voor net-getrouwde stellen — meestal gecombineerd met een 7-10-daagse Turkije-reis inclusief Cappadocië, Antalya of Bodrum. Basis 2-uurs charter op onze Essential boutique-jacht vanaf €280; Premium met groter dek en gestileerde inrichting vanaf €380. De meeste paren voegen taart + champagne + fotograaf toe — totaalavond meestal €450-€600.",
+ "Privé jachtcharter voor net-getrouwde stellen — meestal gecombineerd met een 7-10-daagse Turkije-reis inclusief Cappadocië, Antalya of Bodrum. Basis 2-uurs charter op onze Boutique-jacht vanaf €220; Premium met groter dek en gestileerde inrichting vanaf €320. De meeste paren voegen taart + champagne + fotograaf toe — deze extra's worden op aanvraag geregeld — exacte prijs via WhatsApp.",
  capsule:
- "De huwelijksreis-jachtcruise in Istanbul biedt net-getrouwde stellen een privé-jacht voor 2-3 uur vanaf €280. Champagneontvangst, gepersonaliseerde taart met uw trouwdatum, professionele fotograaf (50+ bewerkte foto's binnen 7 dagen), live violist en zonsondergangs-timing zijn optioneel. Vertrek vanuit Kabataş of Kuruçeşme Marina; de exacte steiger wordt na boeking per WhatsApp bevestigd. Ideaal voor de laatste Istanbul-avond voor uw vlucht naar Cappadocië of Antalya.",
+ "De huwelijksreis-jachtcruise in Istanbul biedt net-getrouwde stellen een privé-jacht voor 2-3 uur vanaf €220. Champagneontvangst, gepersonaliseerde taart met uw trouwdatum, professionele fotograaf (50+ bewerkte foto's binnen 7 dagen), live violist en zonsondergangs-timing zijn optioneel. Vertrek vanuit Kabataş of Kuruçeşme Marina; de exacte steiger wordt na boeking per WhatsApp bevestigd. Ideaal voor de laatste Istanbul-avond voor uw vlucht naar Cappadocië of Antalya.",
  reasonsHeading: "Waarom dit formaat past bij een huwelijksreis",
  reasons: [
  {
@@ -329,7 +329,7 @@ const CONTENT: Record<string, LocaleContent> = {
  faqs: [
  {
  q: "Wat kost een huwelijksreis-jachtcruise in Istanbul?",
- a: "Privé jachtcharter voor huwelijksreizen begint vanaf €280 voor 2 uur op onze Essential boutique-jacht (tot 10 gasten). Premium met groter dek en gestileerde inrichting vanaf €380. De meeste paren voegen champagne (€60-€120), taart (~€80) en fotograaf toe — totaalavond meestal €450-€600.",
+ a: "Privé jachtcharter voor huwelijksreizen begint vanaf €220 voor 2 uur op onze Boutique-jacht (tot 12 gasten). Premium met groter dek en gestileerde inrichting vanaf €320. De meeste paren voegen champagne (€60-€120), taart (~€80) en fotograaf toe — deze extra's worden op aanvraag geregeld — exacte prijs via WhatsApp.",
  },
  {
  q: "Verschil tussen huwelijksreis- en huwelijksaanzoek-cruise?",
@@ -358,19 +358,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Stuur huwelijksreis-briefing via WhatsApp",
  whatsappPrefill: "Hallo MerrySails! We willen een privé-jacht boeken voor onze huwelijksreis-avond op de Bosporus. Trouwdatum: [datum], Istanbul-reis: [data]. Wij willen taart / champagne / fotograaf.",
  trustLine: `Geëxploiteerd onder Meryem Yıldız Travel · TÜRSAB A-licentie #${TURSAB_LICENSE_NUMBER} · 50.000+ gasten op de Bosporus sinds 2001.`,
- reserveLabel: "Offerte vanaf €280",
+ reserveLabel: "Offerte vanaf €220",
  },
  ru: {
  metaTitle: "Свадебное Путешествие Яхта Стамбул",
  metaDescription:
- "Частная аренда яхты для медового месяца на Босфоре. Чартер на 2 часа от €280, торт, шампанское, фотограф, тайминг заката. Лицензия TÜRSAB A с 2001 года.",
+ "Частная аренда яхты для медового месяца на Босфоре. Чартер на 2 часа от €220, торт, шампанское, фотограф, тайминг заката. Лицензия TÜRSAB A с 2001 года.",
  canonicalPath: "/ru/honeymoon-yacht-cruise-istanbul",
  eyebrow: "Медовый месяц · Молодожёны · Частная яхта",
  h1: "Свадебное Путешествие Яхта Босфор Стамбул",
  intro:
- "Частная аренда яхты для молодожёнов — обычно сочетается с 7-10-дневной поездкой по Турции, включая Каппадокию, Анталию или Бодрум. Базовый 2-часовой чартер на нашей яхте Essential от €280; Premium с расширенной палубой и стилизованной обстановкой от €380. Большинство пар добавляют торт, шампанское и фотографа — вечер обычно стоит €450-€600 в общей сложности.",
+ "Частная аренда яхты для молодожёнов — обычно сочетается с 7-10-дневной поездкой по Турции, включая Каппадокию, Анталию или Бодрум. Базовый 2-часовой чартер на нашей яхте Boutique от €220; Premium с расширенной палубой и стилизованной обстановкой от €320. Большинство пар добавляют торт, шампанское и фотографа — эти дополнения организуются по запросу — точная цена в WhatsApp.",
  capsule:
- "Свадебное путешествие на яхте по Босфору даёт молодожёнам частную яхту на 2-3 часа от €280. Встреча с шампанским, индивидуальный торт с датой вашей свадьбы, профессиональный фотограф (50+ обработанных фото за 7 дней), живой скрипач и тайминг заката — по запросу. Отправление от Кабаташ или марины Куручешме; точный причал подтверждается по WhatsApp/WhatsApp после бронирования. Идеально для последнего вечера в Стамбуле перед перелётом в Каппадокию или Анталию.",
+ "Свадебное путешествие на яхте по Босфору даёт молодожёнам частную яхту на 2-3 часа от €220. Встреча с шампанским, индивидуальный торт с датой вашей свадьбы, профессиональный фотограф (50+ обработанных фото за 7 дней), живой скрипач и тайминг заката — по запросу. Отправление от Кабаташ или марины Куручешме; точный причал подтверждается по WhatsApp/WhatsApp после бронирования. Идеально для последнего вечера в Стамбуле перед перелётом в Каппадокию или Анталию.",
  reasonsHeading: "Почему этот формат подходит для медового месяца",
  reasons: [
  {
@@ -407,7 +407,7 @@ const CONTENT: Record<string, LocaleContent> = {
  faqs: [
  {
  q: "Сколько стоит свадебное путешествие на яхте в Стамбуле?",
- a: "Частная аренда яхты для медового месяца начинается от €280 за 2 часа на нашей бутиковой яхте Essential (до 10 гостей). Premium с расширенной палубой и стилизованным оформлением от €380. Большинство пар добавляют шампанское (€60-€120), торт (~€80) и фотографа — вечер обычно стоит €450-€600 в общей сложности.",
+ a: "Частная аренда яхты для медового месяца начинается от €220 за 2 часа на нашей бутиковой яхте Boutique (до 12 гостей). Premium с расширенной палубой и стилизованным оформлением от €320. Большинство пар добавляют шампанское (€60-€120), торт (~€80) и фотографа — эти дополнения организуются по запросу — точная цена в WhatsApp.",
  },
  {
  q: "Чем отличается от круиза с предложением руки?",
@@ -436,7 +436,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Отправить бриф медового месяца через WhatsApp",
  whatsappPrefill: "Здравствуйте, MerrySails! Хотим забронировать частную яхту для вечера медового месяца на Босфоре. Дата свадьбы: [дата], поездка в Стамбул: [даты]. Нам нужны торт / шампанское / фотограф.",
  trustLine: `Управляется Meryem Yıldız Travel · Лицензия TÜRSAB A #${TURSAB_LICENSE_NUMBER} · Более 50 000 гостей на Босфоре с 2001 года.`,
- reserveLabel: "Запросить от €280",
+ reserveLabel: "Запросить от €220",
  },
 };
 
@@ -507,7 +507,7 @@ export default async function LocaleHoneymoonPage({
  offers: {
  "@type": "Offer",
  url: `${SITE_URL}${c.canonicalPath}`,
- price: "280",
+ price: "220",
  priceCurrency: "EUR",
  availability: "https://schema.org/InStock",
  validFrom: "2026-01-01",

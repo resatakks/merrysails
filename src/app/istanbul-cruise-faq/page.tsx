@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Istanbul Cruise FAQ — 60+ Answers",
     description:
-      "Bosphorus cruises: prices €30-€680, departure from Kabataş, year-round schedules, multilingual guides, dietary and accessibility info.",
+      "Bosphorus cruises: prices €30–€600, departure from Kabataş, year-round schedules, multilingual guides, dietary and accessibility info.",
     url: `${SITE_URL}/istanbul-cruise-faq`,
     type: "article",
   },
@@ -32,7 +32,7 @@ const FAQ_SECTIONS: Array<{
     questions: [
       {
         q: "How much does a Bosphorus cruise cost in 2026?",
-        a: "Bosphorus cruise prices in 2026 start at €30 per person — both for the Silver Soft Drinks dinner cruise and for the sunset cruise without wine on Mondays, Tuesdays and Thursdays. On other days the sunset without wine is €34. Private yacht charter starts at €200 for the entire boat (up to 8 guests). All prices are EUR-fixed at booking and paid in TRY at the daily rate.",
+        a: "Bosphorus cruise prices in 2026 start at €30 per person — both for the Silver Soft Drinks dinner cruise and for the sunset cruise without wine on Mondays, Tuesdays and Thursdays. On other days the sunset without wine is €34. Private yacht charter starts at €220 for the entire boat (up to 12 guests). All prices are EUR-fixed at booking and paid in TRY at the daily rate.",
       },
       {
         q: "What is the cheapest Bosphorus cruise in Istanbul?",
@@ -180,7 +180,7 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "Can I book a private yacht for a marriage proposal?",
-        a: "Yes, this is one of our most popular services. The Premium private yacht (€380, up to 12 guests) is most popular for proposals. We can arrange decoration, optional photographer, custom cake, and music. Contact WhatsApp +90 544 898 98 12 to plan.",
+        a: "Yes, this is one of our most popular services. A private yacht charter starts from €220 per vessel (up to 12 guests on the Boutique yacht); the final price depends on the boat, duration and date. Decoration, optional photographer, custom cake and music are arranged on request. Contact WhatsApp +90 544 898 98 12 for a precise quote.",
       },
       {
         q: "Can I rent a boat for a corporate event?",
@@ -380,7 +380,7 @@ export default function CruiseFAQPage() {
               Dinner cruise from €30 →
             </Link>
             <Link href="/yacht-charter-istanbul" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
-              Yacht charter from €200 →
+              Yacht charter from €220 →
             </Link>
             <Link href="/pricing" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Full pricing →

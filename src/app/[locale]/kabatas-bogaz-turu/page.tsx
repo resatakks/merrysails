@@ -40,7 +40,7 @@ const PRICE_ROWS: PriceRow[] = [
   { name: "Yemekli Boğaz Turu — Silver Alkollü", price: "€45 / kişi", duration: "3,5 saat", included: "Standart koltuk, yerel alkol, akşam yemeği, Türk gecesi" },
   { name: "Yemekli Boğaz Turu — Gold Alkolsüz", price: "€80 / kişi", duration: "3,5 saat", included: "VIP koltuk (sahne yakını), premium menü, alkolsüz" },
   { name: "Yemekli Boğaz Turu — Otel Transfer", price: "€90 / kişi", duration: "~5 saat", included: "Sultanahmet/Taksim transfer dahil" },
-  { name: "Özel Yat Kiralama (2 saat)", price: "€280 / tekne", duration: "2 saat", included: "Tüm tekne size özel, 8 kişiye kadar" },
+  { name: "Özel Yat Kiralama (2 saat)", price: "€220 / tekne", duration: "2 saat", included: "Tüm tekne size özel, 12 kişiye kadar" },
 ];
 
 const TOUR_CARDS: TourCard[] = [
@@ -58,7 +58,7 @@ const TOUR_CARDS: TourCard[] = [
   },
   {
     title: "Özel Yat Kiralama",
-    price: "€280'den",
+    price: "€220'den",
     tag: "Tam özel deneyim",
     desc: "Tüm tekne size özel — evlilik teklifi, doğum günü, aile kutlaması veya kurumsal etkinlik için idealdir. Güzergah ve menüyü siz belirlersiniz.",
   },
@@ -105,7 +105,7 @@ const FAQS: Faq[] = [
   },
   {
     q: "Kabataş boğaz turu fiyatları ne kadar?",
-    a: "Gün batımı turu €30'dan başlar (Salı & Perşembe, şarapsız); diğer günler €34. Şaraplı seçenek Sal & Per €35, diğer günler €40. Yemekli boğaz turu €30'dan (Temel paket), Silver Alkollü €45, Gold Alkolsüz €80, otel transfer dahil paket €90. Özel yat kiralama tekne başına €280'den (8 kişiye kadar).",
+    a: "Gün batımı turu €30'dan başlar (Salı & Perşembe, şarapsız); diğer günler €34. Şaraplı seçenek Sal & Per €35, diğer günler €40. Yemekli boğaz turu €30'dan (Temel paket), Silver Alkollü €45, Gold Alkolsüz €80, otel transfer dahil paket €90. Özel yat kiralama tekne başına €220'den (12 kişiye kadar).",
   },
   {
     q: "Kabataş'a Taksim'den nasıl gelinir?",
@@ -129,7 +129,7 @@ const FAQS: Faq[] = [
   },
   {
     q: "Kabataş'tan özel yat kiralama yapılır mı?",
-    a: "Evet. Özel yat kiralama turları Kabataş İskelesi'nden kalkış seçeneğiyle sunulmaktadır. Tekne başına €280'den başlayan fiyatlarla tüm tekneyi kiralayabilirsiniz. Evlilik teklifi, doğum günü ve kurumsal etkinlikler için özel paketler mevcuttur.",
+    a: "Evet. Özel yat kiralama turları Kabataş İskelesi'nden kalkış seçeneğiyle sunulmaktadır. Tekne başına €220'den başlayan fiyatlarla tüm tekneyi kiralayabilirsiniz. Evlilik teklifi, doğum günü ve kurumsal etkinlikler için özel paketler mevcuttur.",
   },
 ];
 
@@ -197,7 +197,7 @@ export default async function KabatasBagazTuruPage({
     offers: {
       "@type": "AggregateOffer",
       lowPrice: 30,
-      highPrice: 280,
+      highPrice: 220,
       priceCurrency: "EUR",
       offerCount: 9,
       availability: "https://schema.org/InStock",
@@ -286,7 +286,7 @@ export default async function KabatasBagazTuruPage({
                 Kabataş boğaz turu, İstanbul&apos;un Avrupa yakasında, Dolmabahçe Sarayı&apos;nın hemen karşısındaki Kabataş İskelesi&apos;nden hareket eder. Metro M2 ve füniküler F1 ile Taksim&apos;den sadece 5 dakika, tramvay T1 ile Sultanahmet&apos;ten yaklaşık 20 dakika uzaklıkta olan bu iskele, İstanbul&apos;daki Boğaz turlarının en kolay ulaşılan kalkış noktalarından biridir.
               </p>
               <p>
-                MerrySails olarak Kabataş İskelesi&apos;nden üç farklı tur seçeneği sunuyoruz: 2 saatlik gün batımı boğaz turu (€30&apos;dan, Salı &amp; Perşembe), Türk gecesi gösterili 3,5 saatlik yemekli boğaz turu (€30&apos;dan) ve tüm teknenin size özel olduğu özel yat kiralama (€280&apos;den, tekne başına). TÜRSAB A Grubu lisanslı Merry Tourism bünyesinde 2001&apos;den bu yana 50.000&apos;den fazla misafir ağırladık.
+                MerrySails olarak Kabataş İskelesi&apos;nden üç farklı tur seçeneği sunuyoruz: 2 saatlik gün batımı boğaz turu (€30&apos;dan, Salı &amp; Perşembe), Türk gecesi gösterili 3,5 saatlik yemekli boğaz turu (€30&apos;dan) ve tüm teknenin size özel olduğu özel yat kiralama (€220&apos;den, tekne başına). TÜRSAB A Grubu lisanslı Merry Tourism bünyesinde 2001&apos;den bu yana 50.000&apos;den fazla misafir ağırladık.
               </p>
               <p>
                 Kabataş&apos;tan kalkan turlarımızda tekne Dolmabahçe önünden ayrılır ayrılmaz Çırağan Sarayı, Ortaköy Camii ve Boğaz köprülerinin silueti görünür hale gelir. Rezervasyonlarınız kalkıştan 48 saat öncesine kadar ücretsiz olarak iptal edilebilir.

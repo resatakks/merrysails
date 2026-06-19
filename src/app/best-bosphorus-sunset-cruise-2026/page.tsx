@@ -327,7 +327,7 @@ export default function BestSunsetCruise2026Page() {
                 <Link href="/yacht-charter-istanbul" className="font-semibold text-orange-600 underline-offset-2 hover:underline">
                   MerrySails Yacht Charter
                 </Link>{" "}
-                from €280 for the entire vessel (up to 8 guests), or Lotus Yat for a yacht-specialist alternative.
+                from €220 for the entire vessel (up to 12 guests), or Lotus Yat for a yacht-specialist alternative.
               </p>
             </div>
             <div className="flex gap-3 items-start">

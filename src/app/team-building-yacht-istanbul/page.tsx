@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/team-building-yacht-istanbul`;
 export const metadata: Metadata = {
   title: "Team Building Yacht Istanbul",
   description:
-    "Team building yacht Istanbul from EUR 200/hour. Private Bosphorus format for companies focused on team connection and a structured group brief.",
+    "Team building yacht Istanbul from EUR 220 per yacht. Private Bosphorus format for companies focused on team connection and a structured group brief.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/team-building-yacht-istanbul"),

@@ -117,7 +117,7 @@ Start with [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) for golde
     slug: "boat-rental-vs-yacht-charter-istanbul",
     title: "Boat Rental vs Yacht Charter?",
     metaDescription:
-      "Boat rental vs yacht charter Istanbul: €280 private yacht or flexible vessel hire? Compare 3 tiers, who each fits & pick the right starting page — from €280.",
+      "Boat rental vs yacht charter Istanbul: €220 private yacht or flexible vessel hire? Compare the fleet, who each fits & pick the right starting page — from €220.",
     excerpt:
       "Some guests should start with vessel choice, while others should start with the private-yacht owner page. This guide helps you pick the cleaner first click.",
     category: "yacht-guide",

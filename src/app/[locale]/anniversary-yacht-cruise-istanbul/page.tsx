@@ -35,14 +35,14 @@ const CONTENT: Record<string, LocaleContent> = {
  tr: {
  metaTitle: "İstanbul Yıldönümü Yat Kiralama — Boğaz",
  metaDescription:
- "Boğaz'da yıldönümü için özel yat kiralama. 2 saat €280'den itibaren, pasta, fotoğrafçı, gün batımı zamanlaması. TÜRSAB A lisanslı 2001'den beri.",
+ "Boğaz'da yıldönümü için özel yat kiralama. 2 saat €220'den itibaren, pasta, fotoğrafçı, gün batımı zamanlaması. TÜRSAB A lisanslı 2001'den beri.",
  canonicalPath: "/tr/anniversary-yacht-cruise-istanbul",
  eyebrow: "Yıldönümü · Özel yat · Boğaz",
  h1: "İstanbul Yıldönümü Yat Kiralama",
  intro:
- "Yıldönümü çiftleri için özel Boğaz yat kiralaması — düğün tarihinize özel günlerde, evlilik yılınızı şehrin en fotojenik akşam manzarasında kutlayın. 2 saatlik temel kiralama Essential yat €280'den, geniş güverteli Premium €380'den başlar. Pasta, fotoğrafçı, şampanya servisi opsiyonel.",
+ "Yıldönümü çiftleri için özel Boğaz yat kiralaması — düğün tarihinize özel günlerde, evlilik yılınızı şehrin en fotojenik akşam manzarasında kutlayın. 2 saatlik temel kiralama Boutique yat €220'den, geniş güverteli Premium €320'den başlar. Pasta, fotoğrafçı, şampanya servisi opsiyonel.",
  capsule:
- "İstanbul yıldönümü yat kiralaması, evli çiftleri için özel olarak planlanır — sürpriz mekaniği yok, paylaşılan anı ve fotoğraf odaklı. 2 saatlik özel kiralama €280'den başlar; pasta (~€80), profesyonel fotoğrafçı, canlı kemancı eklenir. Rota düğün yılınızı simgeleyecek şekilde — örneğin ilk balayınızda kaldığınız Beşiktaş oteli önünden geçiş — özelleştirilebilir.",
+ "İstanbul yıldönümü yat kiralaması, evli çiftleri için özel olarak planlanır — sürpriz mekaniği yok, paylaşılan anı ve fotoğraf odaklı. 2 saatlik özel kiralama €220'den başlar; pasta (~€80), profesyonel fotoğrafçı, canlı kemancı eklenir. Rota düğün yılınızı simgeleyecek şekilde — örneğin ilk balayınızda kaldığınız Beşiktaş oteli önünden geçiş — özelleştirilebilir.",
  reasonsHeading: "Yıldönümü için neden bu format?",
  reasons: [
  { icon: Heart, title: "Çiftiniz için özel kurulum", desc: "Yat sadece sizin için; başka misafir yok. Tempo, müzik, akşam yemeği zamanlaması yıldönümü anınıza göre ayarlanır." },
@@ -52,7 +52,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ],
  faqHeading: "Yıldönümü SSS",
  faqs: [
- { q: "İstanbul'da yıldönümü yat kiralama ne kadar?", a: "Boutique Essential yat 2 saatlik kiralama €280'den, Premium €380'den. Pasta ~€80, fotoğrafçı ~€350-€500, şampanya €60-€120. Toplam akşam €450-€600 aralığında." },
+ { q: "İstanbul'da yıldönümü yat kiralama ne kadar?", a: "Boutique yat 2 saatlik kiralama €220'den, Premium €320'den. Pasta ~€80, fotoğrafçı ~€350-€500, şampanya €60-€120. Dekor, pasta, fotoğrafçı ve müzik talebe göre ayarlanır — kesin fiyat için WhatsApp." },
  { q: "Yıldönümü ve evlilik teklifi kruvazı farkı nedir?", a: "Yıldönümü zaten kurulmuş bir çifti kutlar — sürpriz gerekmiyor, akşam yemeği + altın saat fotoğrafı + ilişkinizin önemli yerlerinin geçişi öne çıkar. Evlilik teklifi kruvazı gizli bir anla kurulur. Aynı yat, farklı program." },
  { q: "Yıldönümü tarihimize göre saatleme yapabilir misiniz?", a: "Evet. Yıldönümünüzün tarihine ve o günkü İstanbul'daki güneşin batış saatine göre planlıyoruz. Yaz aylarında biniş 19:30, kış aylarında 16:00. Tarih ve özel istekleri gönderin, biz rota ve zamanı oturtuyoruz." },
  { q: "Pasta + fotoğrafçı + kemancı kombinasyonu mümkün mü?", a: "Evet — en sık talep edilen kombinasyon. Yıldönümü kruvazlarına eklenen yaygın ekler: yıl sayılı kişiye özel pasta, profesyonel fotoğrafçı (7 gün içinde 50+ düzenlenmiş fotoğraf), biniş anı için canlı kemancı, çiçek buketi, şampanya servisi, çok aşamalı akşam yemeği." },
@@ -63,19 +63,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Yıldönümü brifini WhatsApp'tan gönder",
  whatsappPrefill: "Merhaba MerrySails! Boğaz'da yıldönümü yat kiralama planlamak istiyoruz. Yıldönümü tarihimiz [tarih] ve [N] kişiyiz. [pasta/akşam yemeği/fotoğrafçı/müzik] istiyoruz.",
  trustLine: `Meryem Yıldız Travel altında işletilir · TÜRSAB A Grubu lisans #${TURSAB_LICENSE_NUMBER} · 2001'den bu yana Boğaz'da 50.000+ misafir.`,
- reserveLabel: "€280'den teklif al",
+ reserveLabel: "€220'den teklif al",
  },
  de: {
  metaTitle: "Jubiläums-Yacht Istanbul — Bosporus",
  metaDescription:
- "Private Yacht für Hochzeitstag am Bosporus. 2 Stunden ab €280, Torte, Fotograf, Sonnenuntergangs-Timing. TÜRSAB A-lizenziert seit 2001.",
+ "Private Yacht für Hochzeitstag am Bosporus. 2 Stunden ab €220, Torte, Fotograf, Sonnenuntergangs-Timing. TÜRSAB A-lizenziert seit 2001.",
  canonicalPath: "/de/anniversary-yacht-cruise-istanbul",
  eyebrow: "Hochzeitstag · Private Yacht · Bosporus",
  h1: "Hochzeitstag-Yacht Istanbul",
  intro:
- "Private Bosporus-Yacht-Charter für Hochzeitstag-Paare — feiern Sie Ihre Ehejahre vor Istanbuls fotogenster Abendkulisse. 2-Stunden-Basis-Charter auf der Essential-Yacht ab €280, Premium mit erweitertem Deck ab €380. Torte, Fotograf, Champagner-Service optional.",
+ "Private Bosporus-Yacht-Charter für Hochzeitstag-Paare — feiern Sie Ihre Ehejahre vor Istanbuls fotogenster Abendkulisse. 2-Stunden-Basis-Charter auf der Boutique-Yacht ab €220, Premium mit erweitertem Deck ab €320. Torte, Fotograf, Champagner-Service optional.",
  capsule:
- "Hochzeitstag-Yacht-Charter in Istanbul ist auf etablierte Paare zugeschnitten — keine Überraschungsmechanik, sondern gemeinsame Erinnerung + Foto-Fokus. 2-Stunden-Charter ab €280; Torte (~€80), Fotograf, Geiger als Add-ons. Route lässt sich personalisieren — z. B. Vorbeifahrt am Beşiktaş-Hotel Ihrer Flitterwochen.",
+ "Hochzeitstag-Yacht-Charter in Istanbul ist auf etablierte Paare zugeschnitten — keine Überraschungsmechanik, sondern gemeinsame Erinnerung + Foto-Fokus. 2-Stunden-Charter ab €220; Torte (~€80), Fotograf, Geiger als Add-ons. Route lässt sich personalisieren — z. B. Vorbeifahrt am Beşiktaş-Hotel Ihrer Flitterwochen.",
  reasonsHeading: "Warum dieses Format zum Hochzeitstag passt",
  reasons: [
  { icon: Heart, title: "Privatsphäre für das Paar", desc: "Yacht nur für Sie. Tempo, Musik, Dinner-Timing werden um Ihren Moment herum geplant — keine fremden Gäste." },
@@ -85,7 +85,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ],
  faqHeading: "Hochzeitstag-FAQ",
  faqs: [
- { q: "Wie viel kostet eine Hochzeitstag-Yacht in Istanbul?", a: "Essential-Yacht 2-Stunden-Charter ab €280, Premium ab €380. Torte ~€80, Fotograf ~€350-€500, Champagner €60-€120. Gesamtabend meist €450-€600." },
+ { q: "Wie viel kostet eine Hochzeitstag-Yacht in Istanbul?", a: "Boutique-Yacht 2-Stunden-Charter ab €220, Premium ab €320. Torte ~€80, Fotograf ~€350-€500, Champagner €60-€120. Dekoration, Torte, Fotograf und Musik auf Anfrage – genauen Preis per WhatsApp." },
  { q: "Was unterscheidet Hochzeitstag von Heiratsantrag?", a: "Hochzeitstag feiert ein bestehendes Paar — keine Überraschung nötig, mehr Fokus auf Dinner, Goldene-Stunde-Foto, Strecken-Höhepunkte. Heiratsantrag dreht sich um einen verborgenen Moment. Gleiche Yachts, anderes Programm." },
  { q: "Können Sie um unser Hochzeitsdatum herum planen?", a: "Ja. Wir planen den Charter um Ihr spezifisches Datum + die Sonnenuntergangsstunde dieses Tages in Istanbul. Sommer: Boarding 19:30. Winter: 16:00. Schicken Sie Datum + Sonderwünsche, wir planen Route und Timing." },
  { q: "Können wir Torte + Fotograf + Geiger kombinieren?", a: "Ja — die meistgewünschte Kombination. Übliche Add-ons: Torte mit Jahreszahl, professioneller Fotograf (50+ Bilder in 7 Tagen), Geiger beim Boarding, Blumenstrauß, Champagner-Service, Mehrgang-Dinner." },
@@ -96,19 +96,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Hochzeitstag-Brief per WhatsApp senden",
  whatsappPrefill: "Hallo MerrySails! Wir möchten eine Hochzeitstag-Yacht auf dem Bosporus buchen. Hochzeitsdatum: [Datum], Gruppengröße [N]. Wir möchten [Torte/Dinner/Fotograf/Musik].",
  trustLine: `Betrieben unter Meryem Yıldız Travel · TÜRSAB-A-Lizenz #${TURSAB_LICENSE_NUMBER} · 50.000+ Gäste auf dem Bosporus seit 2001.`,
- reserveLabel: "Angebot ab €280",
+ reserveLabel: "Angebot ab €220",
  },
  fr: {
  metaTitle: "Croisière Anniversaire Yacht Istanbul",
  metaDescription:
- "Yacht privé pour anniversaire de mariage sur le Bosphore. Croisière 2 h dès €280, gâteau, photographe, coucher de soleil. TÜRSAB A licencié.",
+ "Yacht privé pour anniversaire de mariage sur le Bosphore. Croisière 2 h dès €220, gâteau, photographe, coucher de soleil. TÜRSAB A licencié.",
  canonicalPath: "/fr/anniversary-yacht-cruise-istanbul",
  eyebrow: "Anniversaire · Yacht privé · Bosphore",
  h1: "Croisière Anniversaire de Mariage Yacht Istanbul",
  intro:
- "Location privée de yacht sur le Bosphore pour les couples qui célèbrent leur anniversaire de mariage. Charter 2 h sur notre yacht Essential dès €280, Premium avec pont étendu dès €380. Gâteau, photographe, service de champagne en option.",
+ "Location privée de yacht sur le Bosphore pour les couples qui célèbrent leur anniversaire de mariage. Charter 2 h sur notre yacht Boutique dès €220, Premium avec pont étendu dès €320. Gâteau, photographe, service de champagne en option.",
  capsule:
- "La croisière anniversaire en yacht à Istanbul est conçue pour les couples installés — pas de mécanique surprise, plutôt souvenir partagé + photos. Charter 2 h dès €280 ; gâteau (~€80), photographe, violoniste en option. Route personnalisable — par ex. passage devant l'hôtel de votre lune de miel à Beşiktaş.",
+ "La croisière anniversaire en yacht à Istanbul est conçue pour les couples installés — pas de mécanique surprise, plutôt souvenir partagé + photos. Charter 2 h dès €220 ; gâteau (~€80), photographe, violoniste en option. Route personnalisable — par ex. passage devant l'hôtel de votre lune de miel à Beşiktaş.",
  reasonsHeading: "Pourquoi ce format convient à un anniversaire",
  reasons: [
  { icon: Heart, title: "Intimité réservée au couple", desc: "Le yacht est réservé pour vous seuls. Rythme, musique, timing du dîner sont calés autour de votre moment — pas d'invités tiers." },
@@ -118,7 +118,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ],
  faqHeading: "FAQ anniversaire",
  faqs: [
- { q: "Combien coûte une croisière anniversaire en yacht à Istanbul ?", a: "Yacht Essential 2 h dès €280, Premium dès €380. Gâteau ~€80, photographe ~€350-€500, champagne €60-€120. Total soirée €450-€600." },
+ { q: "Combien coûte une croisière anniversaire en yacht à Istanbul ?", a: "Yacht Boutique 2 h dès €220, Premium dès €320. Gâteau ~€80, photographe ~€350-€500, champagne €60-€120. Décoration, gâteau, photographe et musique sur demande — devis précis par WhatsApp." },
  { q: "Différence entre anniversaire et demande en mariage ?", a: "L'anniversaire célèbre un couple établi — pas de surprise, plus l'accent sur dîner, photo heure dorée, et points marquants du parcours. La demande en mariage est construite autour d'un moment caché. Mêmes yachts, programme différent." },
  { q: "Pouvez-vous synchroniser avec notre date de mariage ?", a: "Oui. Nous calons l'horaire selon votre date + l'heure du coucher de soleil de ce jour à Istanbul. Été : embarquement 19h30. Hiver : 16h00. Envoyez date + demandes spéciales, nous adaptons route et timing." },
  { q: "Pouvons-nous combiner gâteau + photographe + violoniste ?", a: "Oui — combinaison la plus demandée. Options courantes : gâteau personnalisé avec nombre d'années, photographe pro (50+ photos sous 7 jours), violoniste à l'embarquement, bouquet, service champagne, dîner multi-services." },
@@ -129,19 +129,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Envoyer le briefing anniversaire par WhatsApp",
  whatsappPrefill: "Bonjour MerrySails ! Nous voulons réserver un yacht pour un anniversaire de mariage sur le Bosphore. Date du mariage : [date], groupe [N]. Nous voudrions [gâteau/dîner/photographe/musique].",
  trustLine: `Opéré sous Meryem Yıldız Travel · Licence TÜRSAB A #${TURSAB_LICENSE_NUMBER} · 50 000+ voyageurs sur le Bosphore depuis 2001.`,
- reserveLabel: "Devis dès €280",
+ reserveLabel: "Devis dès €220",
  },
  nl: {
  metaTitle: "Trouwdag Jacht Istanbul — Bosporus",
  metaDescription:
- "Privé jacht voor trouwdag op de Bosporus. 2-uurs charter vanaf €280, taart, fotograaf, zonsondergangs-timing. TÜRSAB A-licentie sinds 2001.",
+ "Privé jacht voor trouwdag op de Bosporus. 2-uurs charter vanaf €220, taart, fotograaf, zonsondergangs-timing. TÜRSAB A-licentie sinds 2001.",
  canonicalPath: "/nl/anniversary-yacht-cruise-istanbul",
  eyebrow: "Trouwdag · Privé-jacht · Bosporus",
  h1: "Trouwdag Jacht Cruise Istanbul",
  intro:
- "Privé jachtcharter op de Bosporus voor stellen die hun trouwdag vieren. 2-uurs basis-charter op onze Essential-jacht vanaf €280, Premium met groter dek vanaf €380. Taart, fotograaf, champagneservice optioneel.",
+ "Privé jachtcharter op de Bosporus voor stellen die hun trouwdag vieren. 2-uurs basis-charter op onze Boutique-jacht vanaf €220, Premium met groter dek vanaf €320. Taart, fotograaf, champagneservice optioneel.",
  capsule:
- "De trouwdag jachtcruise in Istanbul is bedoeld voor gevestigde stellen — geen verrassings-mechaniek, maar gedeelde herinnering + foto-focus. 2-uurs charter vanaf €280; taart (~€80), fotograaf, violist optioneel. Route aanpasbaar — bv. langs uw huwelijksreishotel in Beşiktaş varen.",
+ "De trouwdag jachtcruise in Istanbul is bedoeld voor gevestigde stellen — geen verrassings-mechaniek, maar gedeelde herinnering + foto-focus. 2-uurs charter vanaf €220; taart (~€80), fotograaf, violist optioneel. Route aanpasbaar — bv. langs uw huwelijksreishotel in Beşiktaş varen.",
  reasonsHeading: "Waarom dit formaat past bij een trouwdag",
  reasons: [
  { icon: Heart, title: "Privacy alleen voor het stel", desc: "Het jacht is alleen voor u. Tempo, muziek, diner-timing worden rond uw moment gepland — geen vreemde gasten." },
@@ -151,7 +151,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ],
  faqHeading: "Trouwdag FAQ",
  faqs: [
- { q: "Wat kost een trouwdag-jachtcruise in Istanbul?", a: "Essential jacht 2 uur vanaf €280, Premium vanaf €380. Taart ~€80, fotograaf ~€350-€500, champagne €60-€120. Totale avond €450-€600." },
+ { q: "Wat kost een trouwdag-jachtcruise in Istanbul?", a: "Boutique jacht 2 uur vanaf €220, Premium vanaf €320. Taart ~€80, fotograaf ~€350-€500, champagne €60-€120. Decoratie, taart, fotograaf en muziek op aanvraag — exacte prijs via WhatsApp." },
  { q: "Verschil trouwdag vs huwelijksaanzoek?", a: "Trouwdag viert een bestaand stel — geen verrassing nodig, meer nadruk op diner, gouden-uur-foto, route-hoogtepunten. Huwelijksaanzoek draait om een verborgen moment. Zelfde jachts, ander programma." },
  { q: "Kunnen jullie rond onze trouwdatum plannen?", a: "Ja. We plannen rond uw specifieke datum + de zonsondergangs-tijd van die dag in Istanbul. Zomer: instappen 19:30. Winter: 16:00. Stuur datum + speciale wensen, wij regelen route en timing." },
  { q: "Kunnen we taart + fotograaf + violist combineren?", a: "Ja — de meest gevraagde combinatie. Veelvoorkomende opties: taart met aantal jaren, professionele fotograaf (50+ bewerkte foto's in 7 dagen), violist bij boarding, boeket, champagneservice, meergangenmaaltijd." },
@@ -162,19 +162,19 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Stuur trouwdag-briefing via WhatsApp",
  whatsappPrefill: "Hallo MerrySails! We willen een jacht boeken voor onze trouwdag op de Bosporus. Trouwdatum: [datum], groep [N]. We willen [taart/diner/fotograaf/muziek].",
  trustLine: `Geëxploiteerd onder Meryem Yıldız Travel · TÜRSAB A-licentie #${TURSAB_LICENSE_NUMBER} · 50.000+ gasten op de Bosporus sinds 2001.`,
- reserveLabel: "Offerte vanaf €280",
+ reserveLabel: "Offerte vanaf €220",
  },
  ru: {
  metaTitle: "Годовщина Свадьбы Яхта Стамбул — Босфор",
  metaDescription:
- "Частная яхта для годовщины свадьбы на Босфоре. 2 часа от €280, торт, фотограф, тайминг заката. Лицензия TÜRSAB A с 2001.",
+ "Частная яхта для годовщины свадьбы на Босфоре. 2 часа от €220, торт, фотограф, тайминг заката. Лицензия TÜRSAB A с 2001.",
  canonicalPath: "/ru/anniversary-yacht-cruise-istanbul",
  eyebrow: "Годовщина · Частная яхта · Босфор",
  h1: "Круиз на Годовщину Свадьбы — Яхта Стамбул",
  intro:
- "Частная аренда яхты на Босфоре для пар, празднующих годовщину свадьбы. Базовый 2-часовой чартер на нашей яхте Essential от €280, Premium с расширенной палубой от €380. Торт, фотограф, шампанское — опционально.",
+ "Частная аренда яхты на Босфоре для пар, празднующих годовщину свадьбы. Базовый 2-часовой чартер на нашей яхте Boutique от €220, Premium с расширенной палубой от €320. Торт, фотограф, шампанское — опционально.",
  capsule:
- "Аренда яхты на годовщину свадьбы в Стамбуле создана для устоявшихся пар — без механики сюрприза, с акцентом на совместное воспоминание и фото. 2-часовой чартер от €280; торт (~€80), фотограф, скрипач — по желанию. Маршрут персонализируется — например, проход мимо отеля в Бешикташе, где вы жили в медовый месяц.",
+ "Аренда яхты на годовщину свадьбы в Стамбуле создана для устоявшихся пар — без механики сюрприза, с акцентом на совместное воспоминание и фото. 2-часовой чартер от €220; торт (~€80), фотограф, скрипач — по желанию. Маршрут персонализируется — например, проход мимо отеля в Бешикташе, где вы жили в медовый месяц.",
  reasonsHeading: "Почему этот формат подходит для годовщины",
  reasons: [
  { icon: Heart, title: "Приватность только для пары", desc: "Яхта зарезервирована только для вас. Темп, музыка, время ужина планируются вокруг вашего момента — без посторонних гостей." },
@@ -184,7 +184,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ],
  faqHeading: "FAQ годовщина",
  faqs: [
- { q: "Сколько стоит круиз на годовщину свадьбы в Стамбуле?", a: "Яхта Essential 2 часа от €280, Premium от €380. Торт ~€80, фотограф ~€350-€500, шампанское €60-€120. Общий вечер €450-€600." },
+ { q: "Сколько стоит круиз на годовщину свадьбы в Стамбуле?", a: "Яхта Boutique 2 часа от €220, Premium от €320. Торт ~€80, фотограф ~€350-€500, шампанское €60-€120. Декор, торт, фотограф и музыка — по запросу, точная цена в WhatsApp." },
  { q: "Чем годовщина отличается от круиза с предложением руки?", a: "Годовщина празднует уже существующую пару — без сюрприза, акцент на ужин, фото золотого часа, точки маршрута. Круиз с предложением строится вокруг скрытого момента. Те же яхты, разная программа." },
  { q: "Можете ли вы спланировать вокруг даты нашей свадьбы?", a: "Да. Планируем по вашей конкретной дате + времени заката в Стамбуле в этот день. Лето: посадка 19:30. Зима: 16:00. Отправьте дату + особые пожелания — мы настроим маршрут и тайминг." },
  { q: "Можно ли совместить торт + фотограф + скрипач?", a: "Да — самая запрашиваемая комбинация. Обычные опции: торт с количеством лет, профессиональный фотограф (50+ обработанных фото за 7 дней), скрипач при посадке, букет, шампанское, многокурсовый ужин." },
@@ -195,7 +195,7 @@ const CONTENT: Record<string, LocaleContent> = {
  ctaWhatsapp: "Отправить бриф годовщины через WhatsApp",
  whatsappPrefill: "Здравствуйте, MerrySails! Хотим заказать яхту на годовщину свадьбы на Босфоре. Дата свадьбы: [дата], группа [N]. Хотим [торт/ужин/фотограф/музыка].",
  trustLine: `Управляется Meryem Yıldız Travel · Лицензия TÜRSAB A #${TURSAB_LICENSE_NUMBER} · 50 000+ гостей на Босфоре с 2001 года.`,
- reserveLabel: "Запросить от €280",
+ reserveLabel: "Запросить от €220",
  },
 };
 
@@ -237,7 +237,7 @@ export default async function LocaleAnniversaryPage({ params }: { params: Promis
  description: c.metaDescription,
  provider: { "@id": `${SITE_URL}/#organization` },
  areaServed: { "@type": "City", name: "Istanbul" },
- offers: { "@type": "Offer", url: `${SITE_URL}${c.canonicalPath}`, price: "280", priceCurrency: "EUR", availability: "https://schema.org/InStock", validFrom: "2026-01-01" },
+ offers: { "@type": "Offer", url: `${SITE_URL}${c.canonicalPath}`, price: "220", priceCurrency: "EUR", availability: "https://schema.org/InStock", validFrom: "2026-01-01" },
  };
 
  return (

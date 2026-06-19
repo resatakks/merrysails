@@ -136,10 +136,10 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
     { question: "What changes between the packages?", answer: "The route stays the same, but Silver uses standard seating, Gold uses stage-close VIP tables, Silver Alcoholic adds a limited local-alcohol service, and Gold Unlimited Alcohol adds unlimited local plus imported alcoholic drinks." },
   ],
   "yacht-charter-in-istanbul": [
-    { question: "How many guests can a private yacht hold in Istanbul?", answer: "The public Essential, Premium, and VIP starter packages are positioned around a private 2-person setup, but larger groups can still be matched to the right yacht and extras plan depending on the vessel assigned." },
+    { question: "How many guests can a private yacht hold in Istanbul?", answer: "Capacity depends on the vessel: the Boutique yacht takes up to 12 guests, the Premium yacht up to 15, and larger Group and Event yachts scale to 40, 90, and up to 150 guests. Each yacht is hired whole, so the right vessel is matched to your group size and extras plan." },
     { question: "Can I customize the yacht cruise route?", answer: "Absolutely! One of the biggest advantages of a private yacht charter is complete route flexibility. Your captain will work with you to create a custom itinerary — whether you want to cruise past specific landmarks, stop for swimming, or focus on sunset views." },
     { question: "Is catering available on the yacht charter?", answer: "Yes. The yacht charter page includes a visible add-on structure for meals, drinks, transfer, entertainment, cake, and extra service requests." },
-    { question: "How much does yacht rental cost in Istanbul?", answer: "The public yacht charter packages currently start from EUR 200 for Essential, EUR 380 for Premium, and EUR 680 for VIP." },
+    { question: "How much does yacht rental cost in Istanbul?", answer: "Yacht charter is priced per vessel for a 2-hour minimum: from EUR 220 on the Boutique yacht (up to 12 guests), EUR 320 on the Premium yacht (up to 15), EUR 380 on the Group 40 Standard, and EUR 500 on the Group 40 Signature. Larger event yachts start from EUR 600, with a flat 10% off from 3 hours." },
     { question: "How far in advance should I book a yacht charter?", answer: "We recommend booking at least 48 hours in advance to secure your preferred date and yacht. For peak season (June–September) and weekends, booking 1–2 weeks ahead is advisable. Last-minute bookings are possible subject to availability." },
   ],
   "bosphorus-sightseeing-cruise": [
@@ -193,7 +193,7 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
   ],
   "yacht-weddings": [
     { question: "What wedding decoration options are available on the yacht?", answer: "Wedding decoration is planned around the guest count, ceremony style, and whether the event needs a simple romantic setup or a fuller reception-style production with flowers, table styling, and coordination support." },
-    { question: "How many guests can a yacht wedding accommodate?", answer: "Our yacht wedding service accommodates up to 50 guests. For intimate ceremonies, smaller yachts provide a cozy atmosphere, while the VIP luxury mega yacht is perfect for grand celebrations with full entertainment." },
+    { question: "How many guests can a yacht wedding accommodate?", answer: "Our yacht wedding service accommodates up to 150 guests on the largest vessel. For intimate ceremonies, smaller yachts provide a cozy atmosphere, while the luxury mega event yacht is perfect for grand celebrations with full entertainment." },
     { question: "What wedding packages are available?", answer: "Wedding events are structured as private, quote-based plans. Once the team understands your ceremony format, guest count, decoration brief, and catering or entertainment needs, it can match the right yacht and service build." },
     { question: "Can we have live music at our yacht wedding?", answer: "Yes. DJs, violinists, traditional musicians, and live-band setups can all be arranged depending on the vessel, guest count, and ceremony format." },
     { question: "How much does a yacht wedding cost in Istanbul?", answer: "Yacht weddings are quoted after confirming the guest count, vessel scale, ceremony and dining format, decoration level, and whether entertainment or full coordination is required." },
@@ -342,8 +342,8 @@ const metaOverrides: Record<string, { title: string; description: string }> = {
     description: "Bosphorus dinner cruise Istanbul from €30. Shared 3.5-hour evening with Silver and Gold package choices, package-based drinks, and hotel pickup support.",
   },
   "yacht-charter-in-istanbul": {
-    title: "Yacht Charter Istanbul — 3 Packages from €200",
-    description: "Book yacht charter in Istanbul from EUR 200 per yacht. Choose Essential, Premium, or VIP and expand the charter with meals, drinks, transfer, and event add-ons.",
+    title: "Yacht Charter Istanbul — From €220 per Yacht",
+    description: "Book yacht charter in Istanbul from EUR 220 per yacht, priced per vessel. Choose your yacht and expand the charter with meals, drinks, transfer, and event add-ons.",
   },
   "corporate-event-bosphorus-cruise": {
     title: "Corporate Event Cruise Istanbul — Yacht Venue",

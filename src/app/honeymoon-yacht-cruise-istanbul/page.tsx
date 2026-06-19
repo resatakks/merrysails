@@ -24,7 +24,7 @@ import StickyMobileCta from "@/components/ui/StickyMobileCta";
 export const metadata: Metadata = {
   title: "Honeymoon Yacht Cruise Istanbul",
   description:
-    "Honeymoon yacht cruise on the Bosphorus, Istanbul. Private 2-hour charter from €280 with cake, champagne, photographer, sunset timing. TÜRSAB A licensed since 2001.",
+    "Honeymoon yacht cruise on the Bosphorus, Istanbul. Private 2-hour charter from €220 with cake, champagne, photographer, sunset timing. TÜRSAB A licensed since 2001.",
   alternates: {
     canonical: `${SITE_URL}/honeymoon-yacht-cruise-istanbul`,
     languages: buildHreflang("/honeymoon-yacht-cruise-istanbul"),
@@ -64,7 +64,7 @@ const REASONS = [
 const faqItems = [
   {
     q: "How much is a honeymoon yacht cruise in Istanbul?",
-    a: "Private yacht charter for honeymoons starts at €280 for 2 hours on the boutique Essential yacht (10-guest sailing vessel). The Premium tier with extended deck and styled setup is €380. Most honeymoon couples add cake (~€80) + champagne service (~€60-€120 depending on label) + sunset-photo timing — total typically lands €450-€600 for the evening.",
+    a: "Private yacht charter for honeymoons starts at €220 for 2 hours on the Boutique yacht (up to 12 guests). The larger Premium yacht with extended deck and styled setup is €320 (up to 15 guests). Most honeymoon couples add cake (~€80) + champagne service (~€60-€120 depending on label) + sunset-photo timing — these add-ons are arranged on request, so WhatsApp us for a precise quote. Priced per yacht, not per head; 10% off from 3 hours.",
   },
   {
     q: "How is a honeymoon cruise different from a proposal cruise?",
@@ -118,7 +118,7 @@ const serviceJsonLd = {
   offers: {
     "@type": "Offer",
     url: `${SITE_URL}/honeymoon-yacht-cruise-istanbul`,
-    price: "280",
+    price: "220",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
@@ -170,7 +170,7 @@ export default function Page() {
                 Honeymoon Yacht Cruise Istanbul
               </h1>
               <p className="mt-1 text-sm text-[var(--text-muted)]">
-                <span className="font-semibold text-[var(--heading)]">From €280</span>
+                <span className="font-semibold text-[var(--heading)]">From €220</span>
                 <span className="mx-2">·</span>
                 <span>★ 4.9/5 honeymoon cruise rating</span>
               </p>
@@ -191,11 +191,11 @@ export default function Page() {
               <strong>A honeymoon yacht cruise in Istanbul</strong> books a
               private yacht for just-married couples — typically pairing with
               a wider 7-10 day Türkiye trip that includes Cappadocia, Antalya,
-              or Bodrum. The base 2-hour charter is <strong>€280</strong> on
-              our Essential boutique sailing yacht; Premium with extended
-              deck and styled setup is €380. Most honeymooners add{" "}
-              <strong>champagne, custom cake, and a photographer</strong> —
-              total evening usually runs <strong>€450-€600</strong> all in.
+              or Bodrum. The base 2-hour charter is <strong>€220</strong> on
+              our Boutique sailing yacht (up to 12 guests); the Premium yacht with extended
+              deck and styled setup is €320. Decoration,{" "}
+              <strong>champagne, custom cake, a photographer, and music</strong>{" "}
+              are arranged on request — WhatsApp for a precise quote.
               Boarding is from Kabataş or Kuruçeşme Marina; the exact pier
               depends on the yacht class and gets confirmed by WhatsApp on
               booking.
@@ -391,7 +391,7 @@ export default function Page() {
       </main>
       <StickyMobileCta
         reserveHref="/yacht-charter-istanbul#fleet"
-        reserveLabel="Quote from €280"
+        reserveLabel="Quote from €220"
         whatsappLocation="honeymoon_yacht_cruise"
         whatsappPrefill="Hi MerrySails! Honeymoon yacht enquiry — wedding date [date], Istanbul trip [dates]."
       />

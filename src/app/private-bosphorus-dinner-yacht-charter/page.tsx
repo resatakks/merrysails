@@ -84,7 +84,7 @@ const breadcrumbSchema = {
 const faqItems = [
   {
     "q": "How much is a private dinner yacht charter in Istanbul?",
-    "a": "Essential is €320 for a three-hour private charter with a four-course dinner, captain and crew. Premium is €550 with a larger yacht and wine pairing, and VIP is €850 with a luxury yacht, premium spirits and a personal chef."
+    "a": "A three-hour private dinner charter starts from €320 on the Boutique yacht (up to 12 guests), with a four-course dinner, captain and crew included. Larger vessels are priced per the fleet hourly rate plus catering — dinner and crew are included whichever yacht you choose."
   },
   {
     "q": "How is this different from the shared dinner cruise?",
@@ -92,7 +92,7 @@ const faqItems = [
   },
   {
     "q": "Is a dinner included in the charter?",
-    "a": "Yes — a four-course dinner is part of every tier, served on board during the sailing. Higher tiers add wine pairing, a dessert selection and, on VIP, a personal chef."
+    "a": "Yes — a four-course dinner is included on every yacht, served on board during the sailing. Larger vessels can add wine pairing, a dessert selection and a personal chef on request."
   },
   {
     "q": "Where does the private dinner yacht board?",
@@ -121,7 +121,7 @@ const fitCards = [
   },
   {
     "title": "Dinner is built in",
-    "description": "Every tier includes a four-course dinner on board, with wine pairing and a personal chef on the higher tiers."
+    "description": "Every yacht includes a four-course dinner on board, with wine pairing and a personal chef available on larger vessels."
   },
   {
     "title": "For occasions that matter",
@@ -164,12 +164,12 @@ export default function Page() {
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">Private Bosphorus Dinner Yacht Charter, Istanbul</h1>
-              <QuickAnswer locale="en" title={"Private Bosphorus Dinner Yacht Charter, Istanbul"} question={"What does a private Bosphorus dinner yacht charter cost in Istanbul?"} content={"A private Bosphorus dinner yacht charter with MerrySails starts at €320 (Essential, three hours, four-course dinner, captain and crew), with Premium at €550 adding wine pairing and a larger yacht, and VIP at €850 with a luxury vessel, premium spirits and a personal chef. The boat is yours alone for an evening dinner sailing past the lit shoreline."} />
+              <QuickAnswer locale="en" title={"Private Bosphorus Dinner Yacht Charter, Istanbul"} question={"What does a private Bosphorus dinner yacht charter cost in Istanbul?"} content={"A private Bosphorus dinner yacht charter with MerrySails starts from €320 on the Boutique yacht (up to 12 guests, three hours, four-course dinner, captain and crew included). Larger vessels are priced per the fleet hourly rate plus catering, with wine pairing, a dessert selection and a personal chef available on request. The boat is yours alone for an evening dinner sailing past the lit shoreline."} />
               <p className="page-intro mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">When dinner on the Bosphorus should feel like your own evening, this is the charter. You take the whole yacht, a four-course dinner is served on board, and the crew runs the sail while your group has the deck to itself.</p>
               <div className="mb-6 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-4">
                 <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">Private dinner from</p>
                 <p className="text-3xl font-bold text-[var(--heading)]">EUR 320</p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">Whole-yacht evening charter with a four-course dinner. Premium adds wine pairing and a larger boat; VIP brings a personal chef and premium spirits.</p>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">Whole-yacht evening charter with a four-course dinner. Larger vessels add wine pairing, a personal chef and premium spirits on request.</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link href="/private-bosphorus-dinner-cruise" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">

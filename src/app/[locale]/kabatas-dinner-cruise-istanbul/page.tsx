@@ -103,9 +103,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "Kabataş akşam yemeği turunda dört farklı paket mevcuttur. Tüm paketlerde rota ve süre aynıdır; fark koltuk tipi, yemek menüsü seviyesi ve içecek kapsamındadır.",
           "Silver Soft Drinks (€30): Standart koltuk, sınırsız alkolsüz içecek, akşam yemeği menüsü ve Türk gecesi eğlencesi dahildir. En popüler başlangıç paketidir.",
-          "Silver Alcoholic (€75): Standart koltuk, yerel alkollü içecekler (bira, şarap, rakı), akşam yemeği menüsü ve Türk gecesi dahildir. Bir üst seçenek arayanlar için idealdir.",
-          "Gold Soft Drinks (€95): VIP sahne yakını koltuk, sınırsız alkolsüz içecek, Premium menü ve Türk gecesi + DJ dahildir. Daha sessiz bir deneyim arayanlar için uygundur.",
-          "Gold Unlimited Alcohol (€119): VIP sahne yakını koltuk, sınırsız alkol dahil, Premium menü ve Türk gecesi + DJ. En kapsamlı pakettir.",
+          "Silver Alcoholic (€45): Standart koltuk, yerel alkollü içecekler (bira, şarap, rakı), akşam yemeği menüsü ve Türk gecesi dahildir. Bir üst seçenek arayanlar için idealdir.",
+          "Gold Soft Drinks (€80): VIP sahne yakını koltuk, sınırsız alkolsüz içecek, Premium menü ve Türk gecesi + DJ dahildir. Daha sessiz bir deneyim arayanlar için uygundur.",
+          "Gold Unlimited Alcohol (€90): VIP sahne yakını koltuk, sınırsız alkol dahil, Premium menü ve Türk gecesi + DJ. En kapsamlı pakettir.",
         ],
       },
       {
@@ -136,19 +136,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Standart koltuk", "Yerel alkollü içecekler", "Akşam yemeği menüsü", "Türk gecesi eğlencesi"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP sahne yakını koltuk", "Sınırsız alkolsüz içecek", "Premium yemek menüsü", "Türk gecesi + DJ"],
       },
       {
         name: "Gold Unlimited Alkol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP sahne yakını koltuk", "Sınırsız alkol dahil", "Premium yemek menüsü", "Türk gecesi + DJ"],
       },
@@ -177,7 +177,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Hangi paket en çok tercih ediliyor?",
-        a: "Silver Soft Drinks (€30) en popüler başlangıç paketidir. Türk gecesi eğlencesi ve akşam yemeği dahil olan bu paket, ilk kez katılanlar için idealdir. Alkol dahil seçenekler için Silver Alcoholic (€75) tercih edilir.",
+        a: "Silver Soft Drinks (€30) en popüler başlangıç paketidir. Türk gecesi eğlencesi ve akşam yemeği dahil olan bu paket, ilk kez katılanlar için idealdir. Alkol dahil seçenekler için Silver Alcoholic (€45) tercih edilir.",
       },
       {
         q: "Vejetaryen veya glutensiz menü var mı?",
@@ -255,9 +255,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "Für die Kabatas Dinner Kreuzfahrt stehen vier Pakete zur Auswahl. Route und Dauer sind bei allen Paketen identisch; der Unterschied liegt in Sitzplatzkategorie, Menüstufe und Getränkeumfang.",
           "Silver Soft Drinks (€30): Standard-Sitzplatz, alkoholfreie Getränke unbegrenzt, Abendmenü und Türkische Abendshow inklusive. Das beliebteste Einstiegspaket.",
-          "Silver Alcoholic (€75): Standard-Sitzplatz, lokale alkoholische Getränke (Bier, Wein, Raki), Abendmenü und Türkische Abendshow inklusive.",
-          "Gold Soft Drinks (€95): VIP-Platz nahe der Bühne, alkoholfreie Getränke unbegrenzt, Premium-Menü und Türkische Show + DJ.",
-          "Gold Unlimited Alcohol (€119): VIP-Platz nahe der Bühne, Alkohol unbegrenzt inklusive, Premium-Menü und Türkische Show + DJ. Das umfangreichste Paket.",
+          "Silver Alcoholic (€45): Standard-Sitzplatz, lokale alkoholische Getränke (Bier, Wein, Raki), Abendmenü und Türkische Abendshow inklusive.",
+          "Gold Soft Drinks (€80): VIP-Platz nahe der Bühne, alkoholfreie Getränke unbegrenzt, Premium-Menü und Türkische Show + DJ.",
+          "Gold Unlimited Alcohol (€90): VIP-Platz nahe der Bühne, Alkohol unbegrenzt inklusive, Premium-Menü und Türkische Show + DJ. Das umfangreichste Paket.",
         ],
       },
       {
@@ -288,19 +288,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Standard-Sitzplatz", "Lokale alkoholische Getränke", "Abendmenü", "Türkische Abendshow"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP nahe der Bühne", "Alkoholfreie Getränke unbegrenzt", "Premium-Menü", "Türkische Show + DJ"],
       },
       {
         name: "Gold Unlimited Alcohol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP nahe der Bühne", "Alkohol unbegrenzt inklusive", "Premium-Menü", "Türkische Show + DJ"],
       },
@@ -329,7 +329,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Welches Paket ist am beliebtesten?",
-        a: "Silver Soft Drinks (€30) ist das meistgebuchte Einstiegspaket. Türkische Abendshow und Abendessen sind bereits inklusive — ideal für Erstbesucher. Wer Alkohol bevorzugt, wählt Silver Alcoholic (€75).",
+        a: "Silver Soft Drinks (€30) ist das meistgebuchte Einstiegspaket. Türkische Abendshow und Abendessen sind bereits inklusive — ideal für Erstbesucher. Wer Alkohol bevorzugt, wählt Silver Alcoholic (€45).",
       },
       {
         q: "Gibt es vegetarische oder glutenfreie Optionen?",
@@ -407,9 +407,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "La croisière dîner Kabataş propose quatre formules. La route et la durée sont identiques pour toutes ; la différence porte sur la catégorie de place, le niveau du menu et l'offre de boissons.",
           "Silver Soft Drinks (€30) : Place standard, boissons sans alcool à volonté, menu dîner et spectacle de nuit turque inclus. La formule d'entrée de gamme la plus populaire.",
-          "Silver Alcoholic (€75) : Place standard, boissons alcoolisées locales (bière, vin, raki), menu dîner et spectacle de nuit turque inclus.",
-          "Gold Soft Drinks (€95) : Place VIP proche de la scène, boissons sans alcool à volonté, menu Premium et spectacle turc + DJ.",
-          "Gold Alcool Illimité (€119) : Place VIP proche de la scène, alcool à volonté inclus, menu Premium et spectacle turc + DJ. La formule la plus complète.",
+          "Silver Alcoholic (€45) : Place standard, boissons alcoolisées locales (bière, vin, raki), menu dîner et spectacle de nuit turque inclus.",
+          "Gold Soft Drinks (€80) : Place VIP proche de la scène, boissons sans alcool à volonté, menu Premium et spectacle turc + DJ.",
+          "Gold Alcool Illimité (€90) : Place VIP proche de la scène, alcool à volonté inclus, menu Premium et spectacle turc + DJ. La formule la plus complète.",
         ],
       },
       {
@@ -440,19 +440,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Place standard", "Boissons alcoolisées locales", "Menu dîner", "Spectacle de nuit turque"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["Place VIP proche scène", "Boissons sans alcool à volonté", "Menu Premium", "Spectacle turc + DJ"],
       },
       {
         name: "Gold Alcool Illimité",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["Place VIP proche scène", "Alcool à volonté inclus", "Menu Premium", "Spectacle turc + DJ"],
       },
@@ -481,7 +481,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Quelle formule est la plus populaire ?",
-        a: "Silver Soft Drinks (€30) est la formule d'entrée la plus choisie. Spectacle de nuit turque et dîner inclus — idéale pour une première expérience. Pour les boissons alcoolisées, Silver Alcoholic (€75) est recommandée.",
+        a: "Silver Soft Drinks (€30) est la formule d'entrée la plus choisie. Spectacle de nuit turque et dîner inclus — idéale pour une première expérience. Pour les boissons alcoolisées, Silver Alcoholic (€45) est recommandée.",
       },
       {
         q: "Des options végétariennes ou sans gluten sont-elles disponibles ?",
@@ -559,9 +559,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "De Kabataş dinercruise heeft vier pakketten. De route en duur zijn voor alle pakketten gelijk; het verschil zit in stoeltype, menuniveau en drankenaanbod.",
           "Silver Soft Drinks (€30): Standaard stoel, onbeperkt frisdrank, dinermenu en Turkse avondshow inbegrepen. Het populairste instappakket.",
-          "Silver Alcoholic (€75): Standaard stoel, lokale alcoholische dranken (bier, wijn, raki), dinermenu en Turkse avondshow inbegrepen.",
-          "Gold Soft Drinks (€95): VIP-stoel bij het podium, onbeperkt frisdrank, Premium menu en Turkse show + DJ.",
-          "Gold Onbeperkt Alcohol (€119): VIP-stoel bij het podium, onbeperkt alcohol inbegrepen, Premium menu en Turkse show + DJ. Het meest complete pakket.",
+          "Silver Alcoholic (€45): Standaard stoel, lokale alcoholische dranken (bier, wijn, raki), dinermenu en Turkse avondshow inbegrepen.",
+          "Gold Soft Drinks (€80): VIP-stoel bij het podium, onbeperkt frisdrank, Premium menu en Turkse show + DJ.",
+          "Gold Onbeperkt Alcohol (€90): VIP-stoel bij het podium, onbeperkt alcohol inbegrepen, Premium menu en Turkse show + DJ. Het meest complete pakket.",
         ],
       },
       {
@@ -592,19 +592,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Standaard stoel", "Lokale alcoholische dranken", "Dinermenu", "Turkse avondshow"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP-stoel bij podium", "Onbeperkt frisdrank", "Premium menu", "Turkse show + DJ"],
       },
       {
         name: "Gold Onbeperkt Alcohol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP-stoel bij podium", "Onbeperkt alcohol inbegrepen", "Premium menu", "Turkse show + DJ"],
       },
@@ -633,7 +633,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Welk pakket is het populairst?",
-        a: "Silver Soft Drinks (€30) is het meest geboekte instappakket. Turkse avondshow en diner zijn al inbegrepen — ideaal voor een eerste ervaring. Voor alcohol kiest u Silver Alcoholic (€75).",
+        a: "Silver Soft Drinks (€30) is het meest geboekte instappakket. Turkse avondshow en diner zijn al inbegrepen — ideaal voor een eerste ervaring. Voor alcohol kiest u Silver Alcoholic (€45).",
       },
       {
         q: "Zijn er vegetarische of glutenvrije opties?",
@@ -710,9 +710,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "У круиза с ужином от Кабаташ четыре пакета. Маршрут и продолжительность одинаковы для всех пакетов; разница — в типе места, уровне меню и предложении напитков.",
           "Silver Soft Drinks (€30): стандартное место, безлимитные безалкогольные напитки, меню ужина и турецкая вечерняя программа. Самый популярный вводный пакет.",
-          "Silver Alcoholic (€75): стандартное место, местные алкогольные напитки (пиво, вино, ракы), меню ужина и турецкая вечерняя программа.",
-          "Gold Soft Drinks (€95): VIP-место у сцены, безлимитные безалкогольные напитки, премиум-меню, турецкое шоу + DJ.",
-          "Gold Unlimited Alcohol (€119): VIP-место у сцены, безлимитный алкоголь, премиум-меню, турецкое шоу + DJ. Самый полный пакет.",
+          "Silver Alcoholic (€45): стандартное место, местные алкогольные напитки (пиво, вино, ракы), меню ужина и турецкая вечерняя программа.",
+          "Gold Soft Drinks (€80): VIP-место у сцены, безлимитные безалкогольные напитки, премиум-меню, турецкое шоу + DJ.",
+          "Gold Unlimited Alcohol (€90): VIP-место у сцены, безлимитный алкоголь, премиум-меню, турецкое шоу + DJ. Самый полный пакет.",
         ],
       },
       {
@@ -743,19 +743,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Стандартное место", "Местные алкогольные напитки", "Меню ужина", "Турецкая вечерняя программа"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP-место у сцены", "Безлимитные безалкогольные напитки", "Премиум-меню", "Турецкое шоу + DJ"],
       },
       {
         name: "Gold Unlimited Alcohol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP-место у сцены", "Безлимитный алкоголь", "Премиум-меню", "Турецкое шоу + DJ"],
       },
@@ -784,7 +784,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Какой пакет самый популярный?",
-        a: "Silver Soft Drinks (€30) — самый бронируемый вводный пакет. Турецкая вечерняя программа и ужин уже включены — идеально для первого опыта. Для алкоголя выбирайте Silver Alcoholic (€75).",
+        a: "Silver Soft Drinks (€30) — самый бронируемый вводный пакет. Турецкая вечерняя программа и ужин уже включены — идеально для первого опыта. Для алкоголя выбирайте Silver Alcoholic (€45).",
       },
       {
         q: "Есть ли вегетарианские или безглютеновые опции?",

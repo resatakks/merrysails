@@ -87,7 +87,7 @@ const faqJsonLd = {
       name: "What's the best Bosphorus cruise format for a family of 4?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For families of 4 (2 adults + 2 kids), the shared dinner cruise Silver Soft package (€30/adult) is the most common booking. It includes hotel pickup, a 3.5-hour Bosphorus route, dinner with child-friendly options, and a family-friendly Turkish night entertainment program. For families of 8+, the private yacht charter (€280+) reserves the whole boat for the group with custom pacing.",
+        text: "For families of 4 (2 adults + 2 kids), the shared dinner cruise Silver Soft package (€30/adult) is the most common booking. It includes hotel pickup, a 3.5-hour Bosphorus route, dinner with child-friendly options, and a family-friendly Turkish night entertainment program. For families of 8+, the private yacht charter (€220+) reserves the whole boat for the group with custom pacing.",
       },
     },
     {
@@ -230,10 +230,10 @@ export default function Page() {
                     <td className="px-3 py-2 text-[var(--body-text)]">€105 (under-3 free)</td>
                   </tr>
                   <tr className="border-b border-[var(--line)] last:border-0">
-                    <td className="px-3 py-2 font-medium text-[var(--heading)]">Private yacht 2h (€280 base)</td>
-                    <td className="px-3 py-2 text-[var(--body-text)]">€280 yacht</td>
-                    <td className="px-3 py-2 text-[var(--body-text)]">€280 yacht</td>
-                    <td className="px-3 py-2 text-[var(--body-text)]">€280 yacht</td>
+                    <td className="px-3 py-2 font-medium text-[var(--heading)]">Private yacht 2h (€220 base)</td>
+                    <td className="px-3 py-2 text-[var(--body-text)]">€220 yacht</td>
+                    <td className="px-3 py-2 text-[var(--body-text)]">€220 yacht</td>
+                    <td className="px-3 py-2 text-[var(--body-text)]">€220 yacht</td>
                   </tr>
                 </tbody>
               </table>

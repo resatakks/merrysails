@@ -111,9 +111,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "Türk gecesi akşam yemeği turunda dört paket sunulmaktadır. Tüm paketlerde Türk gecesi eğlencesi ve temel menü dahildir; fark koltuk tipi, içecek kapsamı ve menü seviyesindedir.",
           "Silver Soft Drinks (€30): Standart koltuk, sınırsız alkolsüz içecek, akşam yemeği menüsü ve tam Türk gecesi programı dahil. Popüler başlangıç seçeneği.",
-          "Silver Alcoholic (€75): Standart koltuk, yerel alkollü içecekler (bira, şarap, rakı), akşam yemeği menüsü ve Türk gecesi programı dahil.",
-          "Gold Soft Drinks (€95): VIP sahne yakını koltuk, sınırsız alkolsüz içecek, Premium menü, Türk gecesi + DJ seti.",
-          "Gold Unlimited Alcohol (€119): VIP sahne yakını koltuk, sınırsız alkol dahil, Premium menü, Türk gecesi + DJ seti. En kapsamlı paket.",
+          "Silver Alcoholic (€45): Standart koltuk, yerel alkollü içecekler (bira, şarap, rakı), akşam yemeği menüsü ve Türk gecesi programı dahil.",
+          "Gold Soft Drinks (€80): VIP sahne yakını koltuk, sınırsız alkolsüz içecek, Premium menü, Türk gecesi + DJ seti.",
+          "Gold Unlimited Alcohol (€90): VIP sahne yakını koltuk, sınırsız alkol dahil, Premium menü, Türk gecesi + DJ seti. En kapsamlı paket.",
         ],
       },
       {
@@ -136,19 +136,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Standart koltuk", "Yerel alkollü içecekler", "Akşam yemeği menüsü", "Türk gecesi tam programı"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP sahne yakını koltuk", "Sınırsız alkolsüz içecek", "Premium yemek menüsü", "Türk gecesi + DJ"],
       },
       {
         name: "Gold Unlimited Alkol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP sahne yakını koltuk", "Sınırsız alkol dahil", "Premium yemek menüsü", "Türk gecesi + DJ"],
       },
@@ -266,9 +266,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "Für die Türkische Abend Dinner Kreuzfahrt stehen vier Pakete zur Wahl. In allen Paketen ist die türkische Abendshow und ein Grundmenü enthalten; der Unterschied liegt in Sitzplatzkategorie, Getränkeumfang und Menüstufe.",
           "Silver Soft Drinks (€30): Standard-Sitzplatz, alkoholfreie Getränke unbegrenzt, Abendmenü und volles Türkische Nacht Programm inklusive. Die populärste Einstiegsoption.",
-          "Silver Alcoholic (€75): Standard-Sitzplatz, lokale alkoholische Getränke (Bier, Wein, Raki), Abendmenü und Türkische Nacht Programm.",
-          "Gold Soft Drinks (€95): VIP-Platz nahe der Bühne, alkoholfreie Getränke unbegrenzt, Premium-Menü, Türkische Nacht + DJ-Set.",
-          "Gold Unlimited Alcohol (€119): VIP-Platz nahe der Bühne, Alkohol unbegrenzt inklusive, Premium-Menü, Türkische Nacht + DJ-Set. Das umfangreichste Paket.",
+          "Silver Alcoholic (€45): Standard-Sitzplatz, lokale alkoholische Getränke (Bier, Wein, Raki), Abendmenü und Türkische Nacht Programm.",
+          "Gold Soft Drinks (€80): VIP-Platz nahe der Bühne, alkoholfreie Getränke unbegrenzt, Premium-Menü, Türkische Nacht + DJ-Set.",
+          "Gold Unlimited Alcohol (€90): VIP-Platz nahe der Bühne, Alkohol unbegrenzt inklusive, Premium-Menü, Türkische Nacht + DJ-Set. Das umfangreichste Paket.",
         ],
       },
       {
@@ -291,19 +291,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Standard-Sitzplatz", "Lokale alkoholische Getränke", "Abendmenü", "Türkische Nacht Vollprogramm"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP nahe der Bühne", "Alkoholfreie Getränke unbegrenzt", "Premium-Menü", "Türkische Nacht + DJ"],
       },
       {
         name: "Gold Unlimited Alcohol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP nahe der Bühne", "Alkohol unbegrenzt inklusive", "Premium-Menü", "Türkische Nacht + DJ"],
       },
@@ -421,9 +421,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "La croisière dîner soirée turque propose quatre formules. Le spectacle de nuit turque et un menu de base sont inclus dans toutes ; la différence porte sur la catégorie de place, l'offre de boissons et le niveau du menu.",
           "Silver Soft Drinks (€30) : Place standard, boissons sans alcool à volonté, menu dîner et programme complet de nuit turque inclus. L'option d'entrée de gamme la plus populaire.",
-          "Silver Alcoholic (€75) : Place standard, boissons alcoolisées locales (bière, vin, raki), menu dîner et programme de nuit turque.",
-          "Gold Soft Drinks (€95) : Place VIP proche de la scène, boissons sans alcool à volonté, menu Premium, nuit turque + set DJ.",
-          "Gold Alcool Illimité (€119) : Place VIP proche de la scène, alcool à volonté inclus, menu Premium, nuit turque + set DJ. La formule la plus complète.",
+          "Silver Alcoholic (€45) : Place standard, boissons alcoolisées locales (bière, vin, raki), menu dîner et programme de nuit turque.",
+          "Gold Soft Drinks (€80) : Place VIP proche de la scène, boissons sans alcool à volonté, menu Premium, nuit turque + set DJ.",
+          "Gold Alcool Illimité (€90) : Place VIP proche de la scène, alcool à volonté inclus, menu Premium, nuit turque + set DJ. La formule la plus complète.",
         ],
       },
       {
@@ -446,19 +446,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Place standard", "Boissons alcoolisées locales", "Menu dîner", "Programme complet nuit turque"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["Place VIP proche scène", "Boissons sans alcool à volonté", "Menu Premium", "Nuit turque + DJ"],
       },
       {
         name: "Gold Alcool Illimité",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["Place VIP proche scène", "Alcool à volonté inclus", "Menu Premium", "Nuit turque + DJ"],
       },
@@ -576,9 +576,9 @@ const CONTENT: Record<string, LocaleContent> = {
         body: [
           "De Turkse avond dinercruise biedt vier pakketten. De Turkse avondshow en een basismenu zijn in alle pakketten inbegrepen; het verschil zit in stoeltype, drankenaanbod en menuniveau.",
           "Silver Soft Drinks (€30): Standaard stoel, onbeperkt frisdrank, dinermenu en volledig Turks avondprogramma inbegrepen. De populairste instapoptie.",
-          "Silver Alcoholic (€75): Standaard stoel, lokale alcoholische dranken (bier, wijn, raki), dinermenu en Turks avondprogramma.",
-          "Gold Soft Drinks (€95): VIP-stoel bij het podium, onbeperkt frisdrank, Premium menu, Turkse avond + DJ-set.",
-          "Gold Onbeperkt Alcohol (€119): VIP-stoel bij het podium, onbeperkt alcohol inbegrepen, Premium menu, Turkse avond + DJ-set. Het meest uitgebreide pakket.",
+          "Silver Alcoholic (€45): Standaard stoel, lokale alcoholische dranken (bier, wijn, raki), dinermenu en Turks avondprogramma.",
+          "Gold Soft Drinks (€80): VIP-stoel bij het podium, onbeperkt frisdrank, Premium menu, Turkse avond + DJ-set.",
+          "Gold Onbeperkt Alcohol (€90): VIP-stoel bij het podium, onbeperkt alcohol inbegrepen, Premium menu, Turkse avond + DJ-set. Het meest uitgebreide pakket.",
         ],
       },
       {
@@ -601,19 +601,19 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         name: "Silver Alcoholic",
-        price: "€75",
+        price: "€45",
         highlight: false,
         items: ["Standaard stoel", "Lokale alcoholische dranken", "Dinermenu", "Volledig Turks avondprogramma"],
       },
       {
         name: "Gold Soft Drinks",
-        price: "€95",
+        price: "€80",
         highlight: true,
         items: ["VIP-stoel bij podium", "Onbeperkt frisdrank", "Premium menu", "Turkse avond + DJ"],
       },
       {
         name: "Gold Onbeperkt Alcohol",
-        price: "€119",
+        price: "€90",
         highlight: false,
         items: ["VIP-stoel bij podium", "Onbeperkt alcohol inbegrepen", "Premium menu", "Turkse avond + DJ"],
       },

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Prens Adaları Turu İstanbul — €45'ten",
     description:
-      "Prens Adaları turu İstanbul 2026 — paylaşımlı tam gün €45 (vapur + rehber + öğle) veya özel yat €280'den. Büyükada, Heybeliada, araba yasak adalar.",
+      "Prens Adaları turu İstanbul 2026 — paylaşımlı tam gün €45 (vapur + rehber + öğle) veya özel yat €220'den. Büyükada, Heybeliada, araba yasak adalar.",
     alternates: {
       canonical: canonicalUrl,
       // TR-only pillar — buildHreflang skipped because no EN/DE/FR/NL variant
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: "Prens Adaları Turu İstanbul — €45'ten",
       description:
-        "Prens Adaları'nı keşfetmek için iki yol: 8 saatlik paylaşımlı vapur turu €45 veya özel yat kiralama €280'den. İki formatı karşılaştırın.",
+        "Prens Adaları'nı keşfetmek için iki yol: 8 saatlik paylaşımlı vapur turu €45 veya özel yat kiralama €220'den. İki formatı karşılaştırın.",
       url: canonicalUrl,
       type: "article",
     },
@@ -81,7 +81,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Paylaşımlı vapur turu mu özel yat mı — hangisi daha iyi?",
-    a: "Paylaşımlı vapur turu (€45/kişi) yalnız gezginler, bütçe çiftleri ve rehber + öğle yemeği isteyenler için. Özel yat (€280'den/tüm tekne, 2 saat minimum, tam gün mevcut) 4+ kişi gruplar, aileler veya esneklik isteyenler için — kendi adalarınızı, duraklarınızı, zamanlamanızı seçin, yiyecek-içeceği yat üstünde organize edin.",
+    a: "Paylaşımlı vapur turu (€45/kişi) yalnız gezginler, bütçe çiftleri ve rehber + öğle yemeği isteyenler için. Özel yat (€220'den/tüm tekne, 2 saat minimum, tam gün mevcut) 4+ kişi gruplar, aileler veya esneklik isteyenler için — kendi adalarınızı, duraklarınızı, zamanlamanızı seçin, yiyecek-içeceği yat üstünde organize edin.",
   },
   {
     q: "Prens Adaları'na yılın hangi zamanı en iyi?",
@@ -93,7 +93,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "İstanbul'dan Prens Adaları'na özel yat kiralama var mı?",
-    a: "Evet — MerrySails Kuruçeşme Marina veya Kabataş'tan özel tam gün yat kiralama sunar. Tipik Prens Adaları yat günü 6-8 saat, Essential paket €280'den (8 kişiye kadar), Büyükada + Heybeliada + tercih ettiğiniz yüzme koyunda duraklar. 150 kişiye kadar daha büyük tekneler mevcuttur.",
+    a: "Evet — MerrySails Kuruçeşme Marina veya Kabataş'tan özel tam gün yat kiralama sunar. Tipik Prens Adaları yat günü 6-8 saat, Boutique yat €220'den (12 kişiye kadar), Büyükada + Heybeliada + tercih ettiğiniz yüzme koyunda duraklar. 150 kişiye kadar daha büyük tekneler mevcuttur.",
   },
 ];
 
@@ -102,7 +102,7 @@ const pageSchema = {
   "@type": "TouristAttraction",
   name: "Prens Adaları Turu İstanbul",
   description:
-    "İstanbul'dan Prens Adaları'nı keşfetmek için iki yol: paylaşımlı rehberli tam gün vapur turu €45 veya özel yat kiralama €280'den. Büyükada, Heybeliada, Burgazada ve Kınalıada — İstanbul'un araba yasak takımadaları.",
+    "İstanbul'dan Prens Adaları'nı keşfetmek için iki yol: paylaşımlı rehberli tam gün vapur turu €45 veya özel yat kiralama €220'den. Büyükada, Heybeliada, Burgazada ve Kınalıada — İstanbul'un araba yasak takımadaları.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   isAccessibleForFree: false,
@@ -161,7 +161,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           <p className="text-base sm:text-lg text-[var(--body-text)] max-w-3xl">
             <strong>Özet.</strong> İstanbul&apos;un araba yasak Prens Adaları&apos;nı keşfetmek için iki yol:
             paylaşımlı tam gün vapur turu <strong>€45/kişi</strong> (8 saat, öğle + rehber dahil)
-            veya 8 kişiye kadar özel yat kiralama <strong>€280&apos;den</strong> (esnek 6-8 saatlik gün,
+            veya 12 kişiye kadar özel yat kiralama <strong>€220&apos;den</strong> (esnek 6-8 saatlik gün,
             adaları ve yüzme koylarını siz seçersiniz). Dört yerleşik ada — Büyükada, Heybeliada,
             Burgazada, Kınalıada — yalnızca bisiklet, elektrikli araç ve yürüyüşle gezilir.
           </p>
@@ -176,7 +176,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               href="/tr/yacht-charter-istanbul"
               className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)] px-5 py-3 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand)]/5 transition"
             >
-              Özel yat €280&apos;den <ArrowRight className="w-4 h-4" />
+              Özel yat €220&apos;den <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href={`${WHATSAPP_URL}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`}
@@ -214,10 +214,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               <Anchor className="w-5 h-5" />
               <span className="text-xs font-bold uppercase tracking-wide">Özel yat kiralama</span>
             </div>
-            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">€280&apos;den / yat</h3>
+            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">€220&apos;den / yat</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>6-8 saat esnek · kalkış saatini siz seçin</span></li>
-              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 misafir (Essential 8 kişi)</span></li>
+              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 misafir (Boutique 12 kişiye kadar)</span></li>
               <li className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Rota size özel — Büyükada, Heybeliada, yüzme koyu</span></li>
               <li className="flex gap-2"><Trees className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Kaptan + mürettebat dahil, ikram opsiyonel</span></li>
             </ul>

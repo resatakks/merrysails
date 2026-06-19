@@ -124,7 +124,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/tr/yacht-charter-istanbul",
  title: "Özel Yat Kiralama",
- desc: "€280'den başlayan tam özel yat deneyimi.",
+ desc: "€220'den başlayan tam özel yat deneyimi.",
  },
  {
  href: "/cruises/bosphorus-sunset-cruise",
@@ -203,7 +203,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/de/yacht-charter-istanbul",
  title: "Private Yachtcharter",
- desc: "Komplett private Yacht-Erlebnisse ab €280.",
+ desc: "Komplett private Yacht-Erlebnisse ab €220.",
  },
  {
  href: "/cruises/bosphorus-sunset-cruise",
@@ -269,7 +269,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/fr/yacht-charter-istanbul",
  title: "Yacht Privé",
- desc: "Expérience entièrement privée à partir de €200.",
+ desc: "Expérience entièrement privée à partir de €220.",
  },
  {
  href: "/cruises/bosphorus-sunset-cruise",
@@ -335,7 +335,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/nl/yacht-charter-istanbul",
  title: "Privé Jachtcharter",
- desc: "Volledig privé jachtervaring vanaf €280.",
+ desc: "Volledig privé jachtervaring vanaf €220.",
  },
  {
  href: "/cruises/bosphorus-sunset-cruise",
@@ -414,7 +414,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/ru/yacht-charter-istanbul",
  title: "Частная аренда яхты",
- desc: "Полностью приватные пакеты яхты от €200.",
+ desc: "Полностью приватная аренда яхты от €220.",
  },
  {
  href: "/cruises/bosphorus-sunset-cruise",
@@ -497,7 +497,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/zh/yacht-charter-istanbul",
  title: "私人游艇包租",
- desc: "€280 起的完全私人游艇体验。",
+ desc: "€220 起的完全私人游艇体验。",
  },
  {
  href: "/cruises/bosphorus-sunset-cruise",

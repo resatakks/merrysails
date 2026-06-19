@@ -57,7 +57,7 @@ const CONTENT: Record<string, LocaleContent> = {
   tr: {
     metaTitle: "İstanbul Akşam Yemeği Turu Otel Transfer — €30",
     metaDescription:
-      "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy alım 18:30–19:15. 4 paket €30–€119.",
+      "İstanbul akşam yemeği turu otel transfer dahil: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli ve Kadıköy alım 18:30–19:15. 4 paket €30–€90.",
     canonicalPath: "/tr/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Ana Sayfa",
     breadcrumbCruise: "Boğaz Turu",
@@ -102,7 +102,7 @@ const CONTENT: Record<string, LocaleContent> = {
     perPerson: "kişi başı",
     packages: [
       {
-        name: "Standart",
+        name: "Silver Soft Drinks",
         price: "€30",
         highlight: false,
         items: [
@@ -114,8 +114,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Premium",
-        price: "€75",
+        name: "Silver Alcoholic",
+        price: "€45",
         highlight: true,
         items: [
           "Otel transferi dahil",
@@ -126,8 +126,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "VIP",
-        price: "€95",
+        name: "Gold Soft Drinks",
+        price: "€80",
         highlight: false,
         items: [
           "Otel transferi dahil",
@@ -138,15 +138,14 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Exclusive",
-        price: "€119",
+        name: "Gold Unlimited Alcohol",
+        price: "€90",
         highlight: false,
         items: [
           "Özel araç transferi",
           "VIP güverte — en iyi manzara",
           "Şef özel menüsü",
           "Tam program + sınırsız alkol",
-          "Fotoğraf paketi hediye",
         ],
       },
     ],
@@ -195,7 +194,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Transfer her pakete dahil mi?",
-        a: "Evet, Standart (€30), Premium (€75), VIP (€95) ve Exclusive (€119) paketlerinin tamamına transfer dahildir. Ek ücret talep edilmez.",
+        a: "Evet, Silver Soft Drinks (€30), Silver Alcoholic (€45), Gold Soft Drinks (€80) ve Gold Unlimited Alcohol (€90) paketlerinin tamamında otel transferi seçeneği sunulur. Detaylar için WhatsApp ile iletişime geçin.",
       },
       {
         q: "Alım saatine geç kalırsam ne olur?",
@@ -234,7 +233,7 @@ const CONTENT: Record<string, LocaleContent> = {
   de: {
     metaTitle: "Istanbul Dinner Cruise Hotelabholung — €30",
     metaDescription:
-      "Istanbul Dinner Kreuzfahrt mit Hotelabholung: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ab 18:30–19:15. 4 Pakete €30–€119.",
+      "Istanbul Dinner Kreuzfahrt mit Hotelabholung: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ab 18:30–19:15. 4 Pakete €30–€90.",
     canonicalPath: "/de/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Startseite",
     breadcrumbCruise: "Bosporus-Tour",
@@ -280,7 +279,7 @@ const CONTENT: Record<string, LocaleContent> = {
     perPerson: "pro Person",
     packages: [
       {
-        name: "Standard",
+        name: "Silver Soft Drinks",
         price: "€30",
         highlight: false,
         items: [
@@ -292,8 +291,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Premium",
-        price: "€75",
+        name: "Silver Alcoholic",
+        price: "€45",
         highlight: true,
         items: [
           "Hoteltransfer inklusive",
@@ -304,8 +303,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "VIP",
-        price: "€95",
+        name: "Gold Soft Drinks",
+        price: "€80",
         highlight: false,
         items: [
           "Hoteltransfer inklusive",
@@ -316,8 +315,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Exclusive",
-        price: "€119",
+        name: "Gold Unlimited Alcohol",
+        price: "€90",
         highlight: false,
         items: [
           "Privater Fahrzeugtransfer",
@@ -373,7 +372,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Ist der Transfer in allen Paketen enthalten?",
-        a: "Ja, alle vier Pakete — Standard (€30), Premium (€75), VIP (€95) und Exclusive (€119) — beinhalten den Transfer ohne Aufpreis.",
+        a: "Alle vier Pakete — Silver Soft Drinks (€30), Silver Alcoholic (€45), Gold Soft Drinks (€80) und Gold Unlimited Alcohol (€90) — bieten die Option auf Hotelabholung. Details per WhatsApp.",
       },
       {
         q: "Was passiert, wenn ich mich verspäte?",
@@ -412,7 +411,7 @@ const CONTENT: Record<string, LocaleContent> = {
   fr: {
     metaTitle: "Croisière Dîner Istanbul Hôtel Inclus — €30",
     metaDescription:
-      "Croisière dîner Istanbul transfert hôtel inclus : Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy — 18h30–19h15. 4 formules €30–€119.",
+      "Croisière dîner Istanbul transfert hôtel inclus : Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy — 18h30–19h15. 4 formules €30–€90.",
     canonicalPath: "/fr/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Accueil",
     breadcrumbCruise: "Croisière Bosphore",
@@ -458,7 +457,7 @@ const CONTENT: Record<string, LocaleContent> = {
     perPerson: "par personne",
     packages: [
       {
-        name: "Standard",
+        name: "Silver Soft Drinks",
         price: "€30",
         highlight: false,
         items: [
@@ -470,8 +469,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Premium",
-        price: "€75",
+        name: "Silver Alcoholic",
+        price: "€45",
         highlight: true,
         items: [
           "Transfert hôtel inclus",
@@ -482,8 +481,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "VIP",
-        price: "€95",
+        name: "Gold Soft Drinks",
+        price: "€80",
         highlight: false,
         items: [
           "Transfert hôtel inclus",
@@ -494,8 +493,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Exclusive",
-        price: "€119",
+        name: "Gold Unlimited Alcohol",
+        price: "€90",
         highlight: false,
         items: [
           "Transfert en véhicule privé",
@@ -551,7 +550,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Le transfert est-il inclus dans toutes les formules ?",
-        a: "Oui, les quatre formules — Standard (€30), Premium (€75), VIP (€95) et Exclusive (€119) — incluent le transfert sans supplément.",
+        a: "Les quatre formules — Silver Soft Drinks (€30), Silver Alcoholic (€45), Gold Soft Drinks (€80) et Gold Unlimited Alcohol (€90) — proposent l'option transfert hôtel. Détails par WhatsApp.",
       },
       {
         q: "Que se passe-t-il si je suis en retard ?",
@@ -590,7 +589,7 @@ const CONTENT: Record<string, LocaleContent> = {
   nl: {
     metaTitle: "Istanbul Diner Cruise Hotelophaal — €30",
     metaDescription:
-      "Istanbul diner cruise met hotelophaal: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ophaal 18:30–19:15. 4 pakketten €30–€119.",
+      "Istanbul diner cruise met hotelophaal: Sultanahmet, Taksim, Beyoğlu, Beşiktaş, Şişli, Kadıköy ophaal 18:30–19:15. 4 pakketten €30–€90.",
     canonicalPath: "/nl/dinner-cruise-with-hotel-pickup-istanbul",
     breadcrumbHome: "Home",
     breadcrumbCruise: "Bosporus Cruise",
@@ -636,7 +635,7 @@ const CONTENT: Record<string, LocaleContent> = {
     perPerson: "per persoon",
     packages: [
       {
-        name: "Standaard",
+        name: "Silver Soft Drinks",
         price: "€30",
         highlight: false,
         items: [
@@ -648,8 +647,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Premium",
-        price: "€75",
+        name: "Silver Alcoholic",
+        price: "€45",
         highlight: true,
         items: [
           "Hotelophaal inbegrepen",
@@ -660,8 +659,8 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "VIP",
-        price: "€95",
+        name: "Gold Soft Drinks",
+        price: "€80",
         highlight: false,
         items: [
           "Hotelophaal inbegrepen",
@@ -672,15 +671,14 @@ const CONTENT: Record<string, LocaleContent> = {
         ],
       },
       {
-        name: "Exclusive",
-        price: "€119",
+        name: "Gold Unlimited Alcohol",
+        price: "€90",
         highlight: false,
         items: [
           "Privé voertuig ophaal",
           "VIP-dek — beste uitzicht",
           "Speciaal chef-menu",
           "Volledig programma + onbeperkt alcohol",
-          "Fotopakket cadeau",
         ],
       },
     ],
@@ -729,7 +727,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Is ophaal inbegrepen in alle pakketten?",
-        a: "Ja, alle vier pakketten — Standaard (€30), Premium (€75), VIP (€95) en Exclusive (€119) — bevatten ophaal zonder bijbetaling.",
+        a: "Alle vier pakketten — Silver Soft Drinks (€30), Silver Alcoholic (€45), Gold Soft Drinks (€80) en Gold Unlimited Alcohol (€90) — bieden de optie hotelophaal. Details via WhatsApp.",
       },
       {
         q: "Wat gebeurt er als ik te laat ben?",

@@ -123,7 +123,7 @@ export default function CruisesPage() {
                 {
                   href: "/yacht-charter-istanbul",
                   title: "Private Yacht",
-                  meta: "From EUR 200",
+                  meta: "From EUR 220",
                   copy: "Private timing, custom route, proposal, birthday, or direct group planning.",
                 },
               ].map((item) => (
@@ -235,10 +235,10 @@ export default function CruisesPage() {
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Yacht Charter Istanbul</h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              For a truly private experience, the <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">yacht charter service in Istanbul</Link> gives
-              guests three public package levels before they add meals, drinks, transfers, decoration,
-              performances, or celebration extras. Essential, Premium, and VIP now each surface
-              their own extras table so pricing stays closer to the actual yacht tier.
+              For a truly private experience, the <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">yacht charter service in Istanbul</Link> is
+              priced per vessel — from €220 per yacht — before guests add meals, drinks, transfers, decoration,
+              performances, or celebration extras. Each yacht in the fleet surfaces its own extras table so
+              pricing stays closer to the actual vessel you book.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Istanbul Boat Tours & Private Hire</h3>

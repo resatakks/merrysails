@@ -60,7 +60,7 @@ const ROWS: Array<{
   },
   {
     category: "Yacht charter (2-hour minimum)",
-    merrysails: "€200–€2,800 (six-yacht fleet, 10–150 guests)",
+    merrysails: "€220–€2,800 (six-yacht fleet, 12–150 guests)",
     bosphorustour: "Limited — does not run boutique yacht charter at scale",
     winner: "merrysails",
   },
@@ -148,7 +148,7 @@ const faqJsonLd = {
       name: "Which operator is better for a private yacht charter?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MerrySails. The MerrySails six-yacht fleet covers boutique sailing yachts (10–14 guests) up to event yachts (150 guests) with a 2-hour minimum from €280 and a 10% discount on 3+ hour bookings. Bosphorustour is focused on group sightseeing sailings and does not run boutique yacht charter at the same depth.",
+        text: "MerrySails. The MerrySails six-yacht fleet covers boutique sailing yachts (up to 12 guests) up to event yachts (150 guests) with a 2-hour minimum from €220 and a 10% discount on 3+ hour bookings. Bosphorustour is focused on group sightseeing sailings and does not run boutique yacht charter at the same depth.",
       },
     },
     {
@@ -258,7 +258,7 @@ export default function ComparisonPage() {
               <p>
                 <strong>Choose MerrySails</strong> if you want the cheapest direct-booked
                 Bosphorus sunset cruise (€30 Mon/Tue/Thu), a 4-tier dinner ladder
-                (€30–€90), a boutique yacht charter from €280, or fastest WhatsApp
+                (€30–€90), a boutique yacht charter from €220, or fastest WhatsApp
                 response (3 min avg).
               </p>
               <p>
@@ -327,7 +327,7 @@ export default function ComparisonPage() {
               yacht moment, MerrySails has the more compelling product mix — direct-
               booking pricing (no OTA markup), a four-tier dinner ladder that lets
               budget-conscious couples start at €30 while premium guests can pick Gold
-              Unlimited Alcohol at €90, and a six-yacht charter fleet from €200 that
+              Unlimited Alcohol at €90, and a six-yacht charter fleet from €220 that
               Bosphorustour doesn't match operationally. For travellers specifically
               shopping for a budget daytime sightseeing sailing under €20, Bosphorustour
               is the easier-found option through OTA channels.
@@ -404,7 +404,7 @@ export default function ComparisonPage() {
                 className="flex flex-col items-start rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"
               >
                 <span className="text-[11px] font-bold uppercase tracking-wide text-[var(--brand-primary)]">
-                  From €200
+                  From €220
                 </span>
                 <span className="mt-1 font-semibold text-[var(--heading)]">Yacht charter</span>
                 <span className="mt-2 inline-flex items-center text-sm font-semibold text-[var(--brand-primary)]">

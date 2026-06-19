@@ -12,7 +12,7 @@ const canonicalUrl = `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`;
 export const metadata: Metadata = {
  title: "Private Dinner Cruise for Couples Istanbul 2026",
  description:
- "Private dinner cruise for couples Istanbul from EUR 200. Quiet Bosphorus evening on a private yacht — your own table, custom route, no shared format.",
+ "Private dinner cruise for couples Istanbul from EUR 320. Quiet Bosphorus evening on a private yacht — your own table, custom route, no shared format.",
  alternates: {
  canonical: canonicalUrl,
  languages: buildHreflang("/private-dinner-cruise-for-couples-istanbul"),
@@ -90,7 +90,7 @@ const faqItems = [
 const faqItemsRu = [
  {
  q: "Сколько стоит частный ужин-круиз для пары в Стамбуле?",
- a: "Частный ужин-круиз для пары начинается от 280 EUR за всю яхту (пакет Essential, 2 часа). Финальная цена зависит от выбора яхты, маршрута, меню и дополнений (цветы, торт, фотограф). Цены — у оператора с лицензией TÜRSAB Группы А. Уточните в WhatsApp.",
+ a: "Частный ужин-круиз для пары (3 часа) начинается от 320 EUR на яхте Boutique (до 12 гостей), ужин и экипаж включены. Финальная цена зависит от выбора яхты, маршрута, меню и дополнений (цветы, торт, фотограф). Цены — у оператора с лицензией TÜRSAB Группы А. Уточните в WhatsApp.",
  },
  {
  q: "От какого причала отправляется романтический ужин-круиз?",

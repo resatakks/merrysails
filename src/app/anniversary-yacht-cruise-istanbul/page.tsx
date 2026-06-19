@@ -24,7 +24,7 @@ import StickyMobileCta from "@/components/ui/StickyMobileCta";
 export const metadata: Metadata = {
   title: "Anniversary Yacht Cruise Istanbul",
   description:
-    "Private yacht for your anniversary on the Bosphorus. From €280 for 2 hours with captain and crew. Dinner, cake, photographer, sunset timing — built around your date.",
+    "Private yacht for your anniversary on the Bosphorus. From €220 for 2 hours with captain and crew. Dinner, cake, photographer, sunset timing — built around your date.",
   alternates: {
     canonical: `${SITE_URL}/anniversary-yacht-cruise-istanbul`,
     languages: buildHreflang("/anniversary-yacht-cruise-istanbul"),
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much is a private anniversary yacht cruise in Istanbul?",
-    a: "Private anniversary yacht charter starts at €280 for 2 hours on our Essential class (10-guest boutique sailing yacht). Premium tier with extended deck and decorated styling is €380. The price is per yacht — couple, family, or close-friend group all included. 10% discount on 3+ hour bookings.",
+    a: "Private anniversary yacht charter starts at €220 for 2 hours on our Boutique yacht (up to 12 guests). The larger Premium yacht with extended deck and decorated styling is €320 (up to 15 guests). The price is per yacht — couple, family, or close-friend group all included. 10% discount on 3+ hour bookings.",
   },
   {
     q: "What's the difference between an anniversary and proposal yacht cruise?",
@@ -103,13 +103,13 @@ const serviceJsonLd = {
   offers: {
     "@type": "Offer",
     url: `${SITE_URL}/anniversary-yacht-cruise-istanbul`,
-    price: "280",
+    price: "220",
     priceCurrency: "EUR",
     priceSpecification: {
       "@type": "PriceSpecification",
-      price: "280",
+      price: "220",
       priceCurrency: "EUR",
-      description: "From €280 for a 2-hour private yacht charter, all-included base price.",
+      description: "From €220 for a 2-hour private yacht charter, all-included base price.",
     },
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
@@ -161,7 +161,7 @@ export default function AnniversaryYachtCruisePage() {
                 Anniversary Yacht Cruise Istanbul
               </h1>
               <p className="mt-1 text-sm text-[var(--text-muted)]">
-                <span className="font-semibold text-[var(--heading)]">From €280</span>
+                <span className="font-semibold text-[var(--heading)]">From €220</span>
                 <span className="mx-2">·</span>
                 <span>★ 4.9/5 anniversary cruise rating</span>
               </p>
@@ -182,9 +182,9 @@ export default function AnniversaryYachtCruisePage() {
             <p className="answer-capsule text-sm leading-relaxed text-[var(--body-text)] md:text-base">
               <strong>An anniversary yacht cruise in Istanbul</strong> reserves a private boat
               for your couple (or close-family group) and times the route around the sunset hour
-              of your specific anniversary date. The base 2-hour charter starts at <strong>€280</strong>{" "}
-              on our boutique Essential yacht; the Premium tier with extended deck and styled
-              setup is €380. Dinner, custom cake, professional photographer, live violinist,
+              of your specific anniversary date. The base 2-hour charter starts at <strong>€220</strong>{" "}
+              on our Boutique yacht (up to 12 guests); the larger Premium yacht with extended deck and styled
+              setup is €320. Dinner, custom cake, professional photographer, live violinist,
               and flower bouquet are add-ons — most couples add at least the cake plus the
               photographer. Departures are from Kabataş or Kuruçeşme Marina; the exact
               pier is confirmed by WhatsApp on booking.
@@ -439,7 +439,7 @@ export default function AnniversaryYachtCruisePage() {
       </main>
       <StickyMobileCta
         reserveHref="/yacht-charter-istanbul#fleet"
-        reserveLabel="Quote from €280"
+        reserveLabel="Quote from €220"
         whatsappLocation="anniversary_yacht_cruise"
         whatsappPrefill="Hi MerrySails! We'd like to plan an anniversary yacht cruise. Our anniversary date is [date] and we are [N] guests."
       />

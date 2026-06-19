@@ -13,7 +13,7 @@ const canonicalUrl = `${SITE_URL}/kurucesme-marina-yacht-charter`;
 export const metadata: Metadata = {
  title: "Kurucesme Marina Yacht Charter Istanbul 2026",
  description:
- "Kurucesme Marina yacht charter Istanbul from EUR 200/hour. Departure logistics, marina access, and waterfront context for private Bosphorus yacht bookings.",
+ "Kurucesme Marina yacht charter Istanbul from EUR 220 per yacht. Departure logistics, marina access, and waterfront context for private Bosphorus yacht bookings.",
  alternates: {
  canonical: canonicalUrl,
  languages: buildHreflang("/kurucesme-marina-yacht-charter"),
@@ -61,7 +61,7 @@ const serviceSchema = {
  "@type": "Offer",
  ...OFFER_MERCHANT_DEFAULTS,
  priceCurrency: "EUR",
- price: "280",
+ price: "220",
  availability: "https://schema.org/InStock",
  validFrom: "2026-01-01",
  url: `${SITE_URL}/yacht-charter-istanbul`,
@@ -103,7 +103,7 @@ const faqItems = [
 const faqItemsRu = [
  {
  q: "Сколько стоит аренда яхты с Куручешме Марины?",
- a: "Аренда частной яхты с пирса Куручешме начинается от 280 EUR за 2 часа (пакет Essential, до 8 гостей). Пакет Premium — от 380 EUR, VIP — от 680 EUR. Цены — у лицензированного оператора TÜRSAB Группы А. Точную стоимость уточните в WhatsApp.",
+ a: "Аренда частной яхты с пирса Куручешме начинается от 220 EUR за 2 часа (яхта Boutique, до 12 гостей). Яхта Premium — от 320 EUR, яхта Group 40 Signature — от 500 EUR. Цены — у лицензированного оператора TÜRSAB Группы А. Точную стоимость уточните в WhatsApp.",
  },
  {
  q: "Как добраться до Куручешме Марины (Kuruçeşme)?",

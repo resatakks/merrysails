@@ -62,14 +62,14 @@ type LocaleContent = {
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
  tr: {
- metaTitle: "İstanbul Yat Kiralama Tekne Kiralama €200'den",
+ metaTitle: "İstanbul Yat Kiralama Tekne Kiralama €220'den",
  metaDescription:
- "İstanbul yat kiralama €200'den başlıyor. 10-150 kişi kapasiteli 6 yatlık filo, 2 saat minimum, 3 saatten itibaren %10 indirim. Kaptanlı özel Boğaz turu.",
+ "İstanbul yat kiralama €220'den başlıyor. 12-150 kişi kapasiteli 6 yatlık filo, 2 saat minimum, 3 saatten itibaren %10 indirim. Kaptanlı özel Boğaz turu.",
  canonicalPath: "/tr/yacht-charter-istanbul",
  title: "İstanbul Yat Kiralama ve Tekne Kiralama",
  subtitle: "Boğaz sailingi — 6 yat, 10-150 kişi, tüm tekne size özel",
  description:
- "MerrySails ile İstanbul yat ve tekne kiralama tek elden. Filo 10 kişilik küçük güverteli sailing yatından 150 kişilik mega etkinlik teknesine uzanır; her rezervasyon teknenin tamamını grubunuza tahsis eder. Yumuşak içecek, atıştırmalık, kaptan ve mürettebat güverte fiyatına dahildir; üç saat ve üzeri sailingde otomatik düz %10 düşülür. Yemek, alkol, DJ ve etkinlik stillemesi ayrı brief'le fiyatlandırılır. Merry Tourism çatısı altında 2001'den beri TURSAB A Grubu lisanslı operasyon.",
+ "MerrySails ile İstanbul yat ve tekne kiralama tek elden. Filo 12 kişilik Butik Yat'tan 150 kişilik Mega Etkinlik Yatı'na uzanır; her rezervasyon teknenin tamamını grubunuza tahsis eder. Yumuşak içecek, atıştırmalık, kaptan ve mürettebat güverte fiyatına dahildir; üç saat ve üzeri sailingde otomatik düz %10 düşülür. Yemek, alkol, DJ ve etkinlik stillemesi ayrı brief'le fiyatlandırılır. Merry Tourism çatısı altında 2001'den beri TURSAB A Grubu lisanslı operasyon.",
  whyChooseHeading: "İstanbul Özel Yat Kiralama Neden Tercih Edilir?",
  reasons: [
  {
@@ -82,7 +82,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Yat başına şeffaf fiyat",
- desc: "Filonun tamamı euro cinsinden yat başına fiyatlandırılır. Küçük güverte 2 saat €200'den, grup yatı 2 saat €280'den; etkinlik yatları programa göre teklif. Üç saat ve üzeri sailingde düz %10 otomatik düşer.",
+ desc: "Filonun tamamı euro cinsinden yat başına fiyatlandırılır. Butik Yat (12 kişi) 2 saat €220'den, Premium Yat (15 kişi) €320, Grup Yatı 40 Standart €380, Grup Yatı 40 Signature €500, Etkinlik Yatı 90 €600; Mega Etkinlik Yatı 150 teklif üzerine. Üç saat ve üzeri sailingde düz %10 otomatik düşer.",
  },
  ],
  howItWorks: {
@@ -98,7 +98,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "İstanbul yat kiralama fiyatları ne kadar?",
  answer:
- "Filo €200'den başlar (10 kişilik küçük güverte, 2 saat) ve 8 saatlik signature grup sailingde €1.070'e kadar çıkar. Üç saat ve üzeri her sailingde düz %10 otomatik düşer. Etkinlik sınıfı yatlar programa göre fiyatlandırılır.",
+ "Filo €220'den başlar (12 kişilik Butik Yat, 2 saat) ve 8 saatlik Signature grup sailingde yaklaşık €1.800'e kadar çıkar. Üç saat ve üzeri her sailingde düz %10 otomatik düşer. Mega Etkinlik Yatı 150 teklif üzerine fiyatlandırılır.",
  },
  {
  question: "Yat kiralama ile tekne kiralama arasındaki fark nedir?",
@@ -113,7 +113,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Yatta kaç kişi konaklayabilir?",
  answer:
- "Filo 10 kişilik küçük güverteli sailing yatından 150 kişilik mega etkinlik teknesine uzanan altı yat içerir. Grup büyüklüğünüze uygun yatı öneririz.",
+ "Filo 12 kişilik Butik Yat'tan 150 kişilik Mega Etkinlik Yatı'na uzanan altı yat içerir. Grup büyüklüğünüze uygun yatı öneririz.",
  },
  {
  question: "Tekne kiralama nereden kalkar?",
@@ -135,8 +135,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  tableRows: [
  { label: "Süre", value: "2-8 saat (min. 2)" },
  { label: "Kalkış", value: "Kabataş / Beşiktaş / Bebek" },
- { label: "Başlangıç fiyatı", value: "€200 (küçük güverte · 2 saat)" },
- { label: "Filo", value: "6 yat · 10-150 kişi" },
+ { label: "Başlangıç fiyatı", value: "€220 (Butik Yat · 2 saat)" },
+ { label: "Filo", value: "6 yat · 12-150 kişi" },
  { label: "İndirim", value: "3 saatten itibaren düz %10" },
  { label: "Lisans", value: "TÜRSAB A Grubu (2001'den beri)" },
  ],
@@ -148,14 +148,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  viewInEnglish: "View in English →",
  },
  de: {
- metaTitle: "Yachtcharter Istanbul ab €200 — Bosporus",
+ metaTitle: "Yachtcharter Istanbul ab €220 — Bosporus",
  metaDescription:
- "Yachtcharter Istanbul ab €200. Flotte aus 6 Yachten für 10 bis 150 Gäste, Mindestcharter 2 Stunden, ab 3 Stunden flach 10 % Rabatt. Mit Kapitän und Crew.",
+ "Yachtcharter Istanbul ab €220. Flotte aus 6 Yachten für 12 bis 150 Gäste, Mindestcharter 2 Stunden, ab 3 Stunden flach 10 % Rabatt. Mit Kapitän und Crew.",
  canonicalPath: "/de/yacht-charter-istanbul",
  title: "Privater Yachtcharter Istanbul",
  subtitle: "Bosporus-Sailing — 6 Yachten, 10 bis 150 Gäste, das ganze Schiff für Sie",
  description:
- "Bei MerrySails reicht die Flotte von der 10-Gäste-Sailing-Yacht (Einsteiger-Deck, ab €280 / 2 Std.) über die 14-Gäste-Sailing-Yacht, die 36-Gäste-Gruppen-Yacht und die 36-Gäste-Signature-Yacht bis zur 44-Gäste-Event-Yacht und zur 150-Gäste-Mega-Event-Yacht (ab €680 / 2 Std.). Jede Buchung sichert das gesamte Schiff exklusiv für Ihre Gruppe – keine Fremden an Bord. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach 10 % automatisch abgezogen. Auf Wunsch organisieren wir Hochzeitsanträge, Geburtstagsfeiern, Firmenevents und Jubiläen – inklusive Blumendekoration, Torte, DJ und professionellem Fotografen (separates Briefing). Alle Yachten legen in der Kuruçeşme Marina oder am Anleger Kabataş ab; den bevorzugten Startpunkt geben Sie bei der Buchung an. Betrieben von Merry Tourism, TURSAB-A-Gruppe lizenziert seit 2001.",
+ "Bei MerrySails reicht die Flotte von der Boutique-Yacht (12 Gäste, ab €220 / 2 Std.) über die Premium-Yacht (15 Gäste, €320), die Gruppen-Yacht 40 Standard (€380) und die Gruppen-Yacht 40 Signature (€500) bis zur Event-Yacht 90 (€600) und zur Mega-Event-Yacht 150 (auf Anfrage). Jede Buchung sichert das gesamte Schiff exklusiv für Ihre Gruppe – keine Fremden an Bord. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach 10 % automatisch abgezogen. Auf Wunsch organisieren wir Hochzeitsanträge, Geburtstagsfeiern, Firmenevents und Jubiläen – inklusive Blumendekoration, Torte, DJ und professionellem Fotografen (separates Briefing). Alle Yachten legen in der Kuruçeşme Marina oder am Anleger Kabataş ab; den bevorzugten Startpunkt geben Sie bei der Buchung an. Betrieben von Merry Tourism, TURSAB-A-Gruppe lizenziert seit 2001.",
  whyChooseHeading: "Warum einen privaten Yachtcharter in Istanbul wählen?",
  reasons: [
  {
@@ -168,7 +168,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Pro-Yacht-Preise in EUR",
- desc: "Über die gesamte Flotte gelten klare Pro-Yacht-Preise. Kleines Deck ab €200/2 Std., Gruppen-Deck ab €280/2 Std.; Event-Yachten programmbasiert. Ab drei Stunden Sailing werden flache zehn Prozent automatisch abgezogen.",
+ desc: "Über die gesamte Flotte gelten klare Pro-Yacht-Preise. Boutique-Yacht (12 Gäste) ab €220/2 Std., Premium-Yacht (15 Gäste) €320, Gruppen-Yacht 40 Standard €380, Gruppen-Yacht 40 Signature €500, Event-Yacht 90 €600; Mega-Event-Yacht 150 auf Anfrage. Ab drei Stunden Sailing werden flache zehn Prozent automatisch abgezogen.",
  },
  ],
  howItWorks: {
@@ -189,7 +189,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Wie viele Personen passen an Bord?",
  answer:
- "Unsere Flotte umfasst sechs Yachten — von der 10-Gäste-Sailing-Yacht bis zur 150-Gäste-Event-Yacht. Wir schlagen die passende Yacht für Ihre Gruppengröße vor.",
+ "Unsere Flotte umfasst sechs Yachten — von der Boutique-Yacht (12 Gäste) bis zur Mega-Event-Yacht 150. Wir schlagen die passende Yacht für Ihre Gruppengröße vor.",
  },
  {
  question: "Organisieren Sie Heiratsanträge?",
@@ -204,7 +204,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Wie groß ist die Yachtflotte von MerrySails?",
  answer:
- "Die Flotte umfasst sechs Yachten: Sailing-Yacht 10 Gäste (ab €280), Sailing-Yacht 14 Gäste, Gruppen-Yacht 36 Gäste, Signature-Yacht 36 Gäste, Event-Yacht 44 Gäste und Mega-Event-Yacht 150 Gäste (ab €680). So finden wir für jede Gruppengröße das passende Schiff.",
+ "Die Flotte umfasst sechs Yachten: Boutique-Yacht 12 Gäste (ab €220), Premium-Yacht 15 Gäste (€320), Gruppen-Yacht 40 Standard (€380), Gruppen-Yacht 40 Signature (€500), Event-Yacht 90 Gäste (€600) und Mega-Event-Yacht 150 Gäste (auf Anfrage). So finden wir für jede Gruppengröße das passende Schiff.",
  },
  {
  question: "Wo legt die Yacht ab? Welche Marina?",
@@ -226,8 +226,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  tableRows: [
  { label: "Dauer", value: "2–8 Stunden (Min. 2)" },
  { label: "Abfahrt", value: "Kabataş / Beşiktaş / Bebek" },
- { label: "Ab-Preis", value: "€200 (kleines Deck · 2 Std.)" },
- { label: "Flotte", value: "6 Yachten · 10–150 Gäste" },
+ { label: "Ab-Preis", value: "€220 (Boutique-Yacht · 2 Std.)" },
+ { label: "Flotte", value: "6 Yachten · 12–150 Gäste" },
  { label: "Rabatt", value: "Ab 3 Std. flach 10 %" },
  { label: "Lizenz", value: "TÜRSAB A-Gruppe (seit 2001)" },
  ],
@@ -239,14 +239,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  viewInEnglish: "View in English →",
  },
  fr: {
- metaTitle: "Location Yacht Istanbul — À partir de €200",
+ metaTitle: "Location Yacht Istanbul — À partir de €220",
  metaDescription:
- "Location yacht Istanbul à partir de €200. Flotte de 6 yachts pour 10 à 150 invités, 2 heures minimum, dix pour cent en moins dès 3 heures. Avec capitaine.",
+ "Location yacht Istanbul à partir de €220. Flotte de 6 yachts pour 12 à 150 invités, 2 heures minimum, dix pour cent en moins dès 3 heures. Avec capitaine.",
  canonicalPath: "/fr/yacht-charter-istanbul",
  title: "Location de Yacht Privé à Istanbul",
  subtitle: "Voile privée sur le Bosphore — 6 yachts, 10 à 150 invités, bateau entier",
  description:
- "La flotte MerrySails va du petit voilier 10 invités au méga-yacht événementiel 150 invités. Chaque réservation retient le bateau entier pour votre groupe. Capitaine, équipage, carburant, boissons sans alcool et collations accompagnent le prix du pont ; à partir de trois heures, dix pour cent partent automatiquement à plat. Restauration, service bar, DJ et stylisme événementiel passent par un brief séparé. Opéré par Merry Tourism, agréé TÜRSAB Groupe A depuis 2001.",
+ "La flotte MerrySails va du Boutique Yacht 12 invités au méga-yacht événementiel 150 invités. Chaque réservation retient le bateau entier pour votre groupe. Capitaine, équipage, carburant, boissons sans alcool et collations accompagnent le prix du pont ; à partir de trois heures, dix pour cent partent automatiquement à plat. Restauration, service bar, DJ et stylisme événementiel passent par un brief séparé. Opéré par Merry Tourism, agréé TÜRSAB Groupe A depuis 2001.",
  whyChooseHeading: "Pourquoi choisir un yacht privé à Istanbul ?",
  reasons: [
  {
@@ -259,7 +259,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Tarification par yacht en EUR",
- desc: "Toute la flotte est tarifée par yacht en euros. Petit pont à partir de €200/2 h, pont de groupe à partir de €200/2 h ; yachts événement chiffrés au programme. Dès trois heures, dix pour cent partent automatiquement à plat.",
+ desc: "Toute la flotte est tarifée par yacht en euros. Boutique Yacht (12 invités) à partir de €220/2 h, Premium Yacht (15 invités) €320, Group Yacht 40 Standard €380, Group Yacht 40 Signature €500, Event Yacht 90 €600 ; Mega Event Yacht 150 sur devis. Dès trois heures, dix pour cent partent automatiquement à plat.",
  },
  ],
  howItWorks: {
@@ -280,7 +280,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Combien de personnes peuvent monter à bord ?",
  answer:
- "Notre flotte comprend six yachts — du petit voilier 10 invités au méga-yacht événementiel 150 invités. Nous proposons le yacht adapté à la taille de votre groupe.",
+ "Notre flotte comprend six yachts — du Boutique Yacht 12 invités au méga-yacht événementiel 150 invités. Nous proposons le yacht adapté à la taille de votre groupe.",
  },
  {
  question: "Organisez-vous les demandes en fiançailles ?",
@@ -297,8 +297,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  tableRows: [
  { label: "Durée", value: "2 à 8 heures (min. 2)" },
  { label: "Départ", value: "Kabataş / Beşiktaş / Bebek" },
- { label: "Prix de départ", value: "€200 (petit pont · 2 h)" },
- { label: "Flotte", value: "6 yachts · 10 à 150 invités" },
+ { label: "Prix de départ", value: "€220 (Boutique Yacht · 2 h)" },
+ { label: "Flotte", value: "6 yachts · 12 à 150 invités" },
  { label: "Remise", value: "Dès 3 h : dix pour cent à plat" },
  { label: "Licence", value: "TÜRSAB Groupe A (depuis 2001)" },
  ],
@@ -310,14 +310,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  viewInEnglish: "View in English →",
  },
  nl: {
- metaTitle: "Jachthuur Istanbul — Vanaf €200",
+ metaTitle: "Jachthuur Istanbul — Vanaf €220",
  metaDescription:
- "Jachthuur Istanbul vanaf €200. Vloot van 6 jachten voor 10 tot 150 gasten, 2 uur minimum, tien procent korting vanaf 3 uur. Met kapitein en bemanning.",
+ "Jachthuur Istanbul vanaf €220. Vloot van 6 jachten voor 12 tot 150 gasten, 2 uur minimum, tien procent korting vanaf 3 uur. Met kapitein en bemanning.",
  canonicalPath: "/nl/yacht-charter-istanbul",
  title: "Privé Jachtcharter Istanbul",
  subtitle: "Bosporus-zeilen — 6 jachten, 10 tot 150 gasten, hele boot voor u",
  description:
- "De MerrySails-vloot loopt van het 10-gasten zeiljacht met klein dek tot het 150-gasten mega-eventjacht. Elke boeking houdt het hele schip voor uw gezelschap vast. Kapitein, bemanning, brandstof, frisdrank en snacks zitten in de dekprijs; vanaf drie uur vaart wordt tien procent automatisch en vlak afgetrokken. Eten, barservice, DJ en eventstyling lopen via een aparte briefing. Geëxploiteerd door Merry Tourism, TÜRSAB A-categorie gecertificeerd sinds 2001.",
+ "De MerrySails-vloot loopt van het Boutique Jacht (12 gasten) tot het 150-gasten mega-eventjacht. Elke boeking houdt het hele schip voor uw gezelschap vast. Kapitein, bemanning, brandstof, frisdrank en snacks zitten in de dekprijs; vanaf drie uur vaart wordt tien procent automatisch en vlak afgetrokken. Eten, barservice, DJ en eventstyling lopen via een aparte briefing. Geëxploiteerd door Merry Tourism, TÜRSAB A-categorie gecertificeerd sinds 2001.",
  whyChooseHeading: "Waarom kiezen voor een privé jachtcharter in Istanbul?",
  reasons: [
  {
@@ -330,7 +330,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Prijs per jacht in EUR",
- desc: "De hele vloot wordt per jacht in euro's geprijsd. Klein dek vanaf €200/2 u, groepsdek vanaf €280/2 u; eventjachten programma-gebaseerd. Vanaf drie uur wordt tien procent automatisch en vlak afgetrokken.",
+ desc: "De hele vloot wordt per jacht in euro's geprijsd. Boutique Jacht (12 gasten) vanaf €220/2 u, Premium Jacht (15 gasten) €320, Group Jacht 40 Standard €380, Group Jacht 40 Signature €500, Event Jacht 90 €600; Mega Event Jacht 150 op offerte. Vanaf drie uur wordt tien procent automatisch en vlak afgetrokken.",
  },
  ],
  howItWorks: {
@@ -351,7 +351,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Hoeveel personen kunnen aan boord?",
  answer:
- "Onze vloot omvat zes jachten — van het 10-gasten zeiljacht tot het 150-gasten eventjacht. Wij dragen het passende jacht aan op basis van uw groepsgrootte.",
+ "Onze vloot omvat zes jachten — van het Boutique Jacht (12 gasten) tot het 150-gasten eventjacht. Wij dragen het passende jacht aan op basis van uw groepsgrootte.",
  },
  {
  question: "Organiseert u huwelijksaanzoeken?",
@@ -368,8 +368,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  tableRows: [
  { label: "Duur", value: "2–8 uur (min. 2)" },
  { label: "Vertrek", value: "Kabataş / Beşiktaş / Bebek" },
- { label: "Vanaf-prijs", value: "€200 (klein dek · 2 uur)" },
- { label: "Vloot", value: "6 jachten · 10–150 gasten" },
+ { label: "Vanaf-prijs", value: "€220 (Boutique Jacht · 2 uur)" },
+ { label: "Vloot", value: "6 jachten · 12–150 gasten" },
  { label: "Korting", value: "Vanaf 3 uur tien procent vlak" },
  { label: "Licentie", value: "TÜRSAB A-categorie (sinds 2001)" },
  ],
@@ -381,14 +381,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  viewInEnglish: "View in English →",
  },
  ru: {
- metaTitle: "Аренда яхты в Стамбуле — от €200 за 2 часа",
+ metaTitle: "Аренда яхты в Стамбуле — от €220 за 2 часа",
  metaDescription:
- "Аренда яхты в Стамбуле от €200. Флот из 6 яхт на 10–150 гостей, минимум 2 часа, фикс. скидка 10% от 3 часов. Капитан и команда включены. Лицензия TÜRSAB.",
+ "Аренда яхты в Стамбуле от €220. Флот из 6 яхт на 12–150 гостей, минимум 2 часа, фикс. скидка 10% от 3 часов. Капитан и команда включены. Лицензия TÜRSAB.",
  canonicalPath: "/ru/yacht-charter-istanbul",
  title: "Частная аренда яхты в Стамбуле",
  subtitle: "Босфорский сейлинг — 6 яхт, от 10 до 150 гостей, всё судно — для Вас",
  description:
- "MerrySails объединяет аренду яхт и лодок в Стамбуле в одном окне. Флот варьируется от 10-местной яхты для небольших групп до мега-яхты для мероприятий на 150 человек; каждое бронирование закрепляет всё судно за Вашей группой. В цену включены безалкогольные напитки, лёгкие закуски, капитан и команда; при сейлинге от 3 часов автоматически применяется плоская скидка 10%. Питание, алкоголь, DJ и оформление мероприятия оцениваются отдельным бриф-расчётом. Операция под брендом Merry Tourism, лицензия группы А TÜRSAB (№14316) с 2001 года.",
+ "MerrySails объединяет аренду яхт и лодок в Стамбуле в одном окне. Флот варьируется от Boutique Yacht на 12 гостей до мега-яхты для мероприятий на 150 человек; каждое бронирование закрепляет всё судно за Вашей группой. В цену включены безалкогольные напитки, лёгкие закуски, капитан и команда; при сейлинге от 3 часов автоматически применяется плоская скидка 10%. Питание, алкоголь, DJ и оформление мероприятия оцениваются отдельным бриф-расчётом. Операция под брендом Merry Tourism, лицензия группы А TÜRSAB (№14316) с 2001 года.",
  whyChooseHeading: "Почему стоит выбрать частную аренду яхты в Стамбуле?",
  reasons: [
  {
@@ -401,7 +401,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Прозрачная цена за яхту",
- desc: "Весь флот оценивается за яхту в евро. Малая палуба от €200 за 2 часа, групповая яхта от €280 за 2 часа; яхты для мероприятий — по программе. От 3 часов сейлинга автоматически минус 10%.",
+ desc: "Весь флот оценивается за яхту в евро. Boutique Yacht (12 гостей) от €220 за 2 часа, Premium Yacht (15 гостей) €320, Group Yacht 40 Standard €380, Group Yacht 40 Signature €500, Event Yacht 90 €600; Mega Event Yacht 150 по запросу. От 3 часов сейлинга автоматически минус 10%.",
  },
  ],
  howItWorks: {
@@ -417,7 +417,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Сколько стоит аренда яхты в Стамбуле?",
  answer:
- "Флот начинается от €200 (малая палуба на 10 гостей, 2 часа) и доходит до €1 070 за 8-часовой signature-сейлинг групповой яхты. От 3 часов автоматически применяется плоская скидка 10%. Яхты для мероприятий оцениваются по программе.",
+ "Флот начинается от €220 (Boutique Yacht на 12 гостей, 2 часа) и доходит примерно до €1 800 за 8-часовой Signature-сейлинг групповой яхты. От 3 часов автоматически применяется плоская скидка 10%. Mega Event Yacht 150 оценивается по запросу.",
  },
  {
  question: "Чем отличается аренда яхты от аренды лодки?",
@@ -432,7 +432,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Сколько человек поместится на яхте?",
  answer:
- "Флот включает шесть яхт — от 10-местной малой палубы до мега-яхты для мероприятий на 150 человек. Мы подберём яхту под размер Вашей группы.",
+ "Флот включает шесть яхт — от Boutique Yacht на 12 гостей до мега-яхты для мероприятий на 150 человек. Мы подберём яхту под размер Вашей группы.",
  },
  {
  question: "Откуда отправляется яхта?",
@@ -454,8 +454,8 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  tableRows: [
  { label: "Длительность", value: "2–8 часов (мин. 2)" },
  { label: "Отправление", value: "Кабаташ / Бешикташ / Бебек" },
- { label: "Стартовая цена", value: "€200 (малая палуба · 2 часа)" },
- { label: "Флот", value: "6 яхт · 10–150 гостей" },
+ { label: "Стартовая цена", value: "€220 (Boutique Yacht · 2 часа)" },
+ { label: "Флот", value: "6 яхт · 12–150 гостей" },
  { label: "Скидка", value: "От 3 часов — плоские 10%" },
  { label: "Лицензия", value: "TÜRSAB группа А (с 2001 года)" },
  ],
@@ -467,14 +467,14 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  viewInEnglish: "View in English →",
  },
  zh: {
- metaTitle: "伊斯坦布尔私人游艇包租 — €200 起 (2 小时)",
+ metaTitle: "伊斯坦布尔私人游艇包租 — €220 起 (2 小时)",
  metaDescription:
- "伊斯坦布尔游艇包租 €200 起。6 艘船队 10-150 人,2 小时起,3 小时以上自动 10% 折扣。船长和船员包含。TÜRSAB 许可。中文 WhatsApp。",
+ "伊斯坦布尔游艇包租 €220 起。6 艘船队 12-150 人,2 小时起,3 小时以上自动 10% 折扣。船长和船员包含。TÜRSAB 许可。中文 WhatsApp。",
  canonicalPath: "/zh/yacht-charter-istanbul",
  title: "伊斯坦布尔私人游艇包租",
  subtitle: "博斯普鲁斯航行 — 6 艘游艇,10 至 150 人,整船仅供您使用",
  description:
- "MerrySails 将伊斯坦布尔游艇和船只租赁整合为一站式服务。船队包括 10 人小型游艇到 150 人活动巨型游艇;每次预订都将整船锁定给您的团队。价格含无酒精饮料、轻食、船长和船员;航行 3 小时以上自动应用 10% 固定折扣。餐饮、酒水、DJ 和活动装饰按单独询价计算。由 Merry Tourism 运营,持有 TÜRSAB A 类许可 (#14316),自 2001 年起。",
+ "MerrySails 将伊斯坦布尔游艇和船只租赁整合为一站式服务。船队包括 12 人 Boutique Yacht 到 150 人活动巨型游艇;每次预订都将整船锁定给您的团队。价格含无酒精饮料、轻食、船长和船员;航行 3 小时以上自动应用 10% 固定折扣。餐饮、酒水、DJ 和活动装饰按单独询价计算。由 Merry Tourism 运营,持有 TÜRSAB A 类许可 (#14316),自 2001 年起。",
  whyChooseHeading: "为什么选择伊斯坦布尔私人游艇包租?",
  reasons: [
  {
@@ -487,7 +487,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "整船透明定价",
- desc: "所有船只均以欧元整船定价。小型甲板 €200 起 2 小时,集团游艇 €280 起 2 小时;活动游艇按项目询价。3 小时以上航行自动减 10%。无人均费用 — 6 人和 8 人价格相同。",
+ desc: "所有船只均以欧元整船定价。Boutique Yacht (12 人) €220 起 2 小时,Premium Yacht (15 人) €320,Group Yacht 40 Standard €380,Group Yacht 40 Signature €500,Event Yacht 90 €600;Mega Event Yacht 150 按项目询价。3 小时以上航行自动减 10%。无人均费用 — 6 人和 8 人价格相同。",
  },
  ],
  howItWorks: {
@@ -503,7 +503,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "伊斯坦布尔游艇包租多少钱?",
  answer:
- "船队从 €200 起 (10 人小型甲板,2 小时) 至 €1,070 (8 小时集团游艇签名套餐)。3 小时以上自动应用 10% 固定折扣。活动游艇按项目询价。150 人活动巨型游艇适合大型婚礼或公司活动 — 询价 €5,000+。",
+ "船队从 €220 起 (12 人 Boutique Yacht,2 小时) 至约 €1,800 (8 小时 Group Yacht 40 Signature)。3 小时以上自动应用 10% 固定折扣。Mega Event Yacht 150 按项目询价。150 人活动巨型游艇适合大型婚礼或公司活动 — 询价。",
  },
  {
  question: "中国游客如何支付定金?",
@@ -523,7 +523,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "游艇能容纳多少人?",
  answer:
- "船队包括 6 艘游艇 — 从 10 人小型甲板到 150 人活动巨型游艇。我们根据您的团队规模匹配游艇。30 人以下推荐 Boutique Yacht 10 (€200 起) 或 Group Yacht 36 (€200 起)。",
+ "船队包括 6 艘游艇 — 从 12 人 Boutique Yacht 到 150 人活动巨型游艇。我们根据您的团队规模匹配游艇。30 人以下推荐 Boutique Yacht (12 人,€220 起) 或 Group Yacht 40 Standard (€380 起)。",
  },
  {
  question: "游艇从哪里出发?",
@@ -545,7 +545,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  tableRows: [
  { label: "时长", value: "2–8 小时 (最低 2)" },
  { label: "出发", value: "Kabataş / Beşiktaş / Bebek / Kuruçeşme" },
- { label: "起价", value: "€200 (小型甲板 · 2 小时)" },
+ { label: "起价", value: "€220 (Boutique Yacht · 2 小时)" },
  { label: "船队", value: "6 艘游艇 · 10–150 客人" },
  { label: "折扣", value: "3 小时以上自动 10%" },
  { label: "定金", value: "30% (Visa/MC 或银行转账)" },
@@ -623,13 +623,13 @@ export default async function LocaleYachtCharterPage({
  zh: "私人游艇",
  };
  const reserveLabelByLocale: Record<string, string> = {
- en: "Quote from €200",
- tr: "€200'den teklif al",
- de: "Angebot ab €200",
- fr: "Devis dès €200",
- nl: "Offerte vanaf €200",
- ru: "Запросить от €200",
- zh: "€280 起报价",
+ en: "Quote from €220",
+ tr: "€220'den teklif al",
+ de: "Angebot ab €220",
+ fr: "Devis dès €220",
+ nl: "Offerte vanaf €220",
+ ru: "Запросить от €220",
+ zh: "€220 起报价",
  };
  const whatsappPrefillByLocale: Record<string, string> = {
  en: "Hi MerrySails! I'd like a private yacht charter quote for the Bosphorus. Group size + date if known?",

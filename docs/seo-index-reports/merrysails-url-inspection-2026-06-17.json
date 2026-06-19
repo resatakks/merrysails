@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-06-17T12:54:01.324Z",
+  "siteUrl": "sc-domain:merrysails.com",
+  "results": [
+    {
+      "url": "https://merrysails.com/",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-06-15T08:29:10Z",
+      "googleCanonical": "https://merrysails.com/",
+      "userCanonical": "https://merrysails.com/",
+      "referringUrls": [
+        "https://merrysails.com/zh",
+        "https://merrysails.com/tr",
+        "https://merrysails.com/ru",
+        "https://merrysails.com/tursab",
+        "https://www.pickupspoint.com/fr/transfer/belek-antalya-havalimani-transfer",
+        "http://merrysails.com/"
+      ],
+      "sitemap": []
+    }
+  ]
+}

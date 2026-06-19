@@ -54,7 +54,7 @@ const faqItems = [
 const faqItemsRu = [
  {
  q: "Сколько стоит аренда яхты для предложения руки и сердца в Стамбуле?",
- a: "Стоимость частной яхты для предложения начинается от 280 EUR за 2 часа (пакет Essential, до 8 гостей). Пакет Premium с украшением, тортом и фотографом — от 380 EUR. Уточнить точную цену можно через WhatsApp.",
+ a: "Стоимость частной яхты для предложения начинается от 220 EUR за 2 часа (яхта Boutique, до 12 гостей). Яхта Premium с украшением, тортом и фотографом — от 320 EUR (до 15 гостей). Уточнить точную цену можно через WhatsApp.",
  },
  {
  q: "От какого причала отправляется яхта для предложения?",
@@ -110,7 +110,7 @@ const serviceJsonLd = {
  "@type": "Offer",
  ...OFFER_MERCHANT_DEFAULTS,
  priceCurrency: "EUR",
- price: "280",
+ price: "220",
  availability: "https://schema.org/InStock",
  validFrom: "2026-01-01",
  url: `${SITE_URL}/proposal-yacht-rental-istanbul`,

@@ -247,7 +247,7 @@ export function GET() {
   // All locale pages (30 routes × 4 locales).
   // Pillar pages get highest priority — bosphorus-cruise hub (0.97) is the
   // top organic target ("boğaz turu" 6,600/mo TR). Dinner, sunset, yacht
-  // (0.95) are the 3 product pillars with €30/€34/€280 starting prices.
+  // (0.95) are the 3 product pillars with €30/€34/€220 starting prices.
   const PILLAR_PATHS = new Set([
     "/bosphorus-cruise",
     "/istanbul-dinner-cruise",

@@ -61,7 +61,7 @@ const serviceSchema = {
  "@type": "Offer",
  ...OFFER_MERCHANT_DEFAULTS,
  priceCurrency: "EUR",
- price: "280",
+ price: "220",
  availability: "https://schema.org/InStock",
  validFrom: "2026-01-01",
  url: `${SITE_URL}/proposal-yacht-rental-istanbul`,
@@ -103,7 +103,7 @@ const faqItems = [
 const faqItemsRu = [
  {
  q: "Сколько стоит яхта с фотографом для предложения руки и сердца?",
- a: "Базовый пакет — частная яхта от 280 EUR (Essential) или 380 EUR (Premium с украшением). Услуги фотографа добавляются как опция — от 150 EUR. VIP-пакет с фотографом и съёмкой обычно от 680 EUR. Оператор лицензирован TÜRSAB Группы А. Уточните в WhatsApp.",
+ a: "Базовая аренда — частная яхта от 220 EUR (Boutique, до 12 гостей) или 320 EUR (Premium с украшением, до 15 гостей). Услуги фотографа добавляются как опция — от 150 EUR. Более крупные суда рассчитываются по почасовой ставке флота. Оператор лицензирован TÜRSAB Группы А. Уточните в WhatsApp.",
  },
  {
  q: "С какого причала отправляется яхта с фотографом?",

@@ -103,7 +103,7 @@ const milestones = [
   {
     year: "2026",
     title: "50,000+ guests",
-    body: "Crossed the 50,000-guest milestone. Three published shared cruise products plus three private yacht packages.",
+    body: "Crossed the 50,000-guest milestone. Three published shared cruise products plus a six-vessel private yacht fleet.",
   },
 ];
 

@@ -52,14 +52,14 @@ const relatedTours: Tour[] = [
 const canonicalUrl = `${SITE_URL}${getTourPath(yachtTour)}`;
 
 export const metadata: Metadata = {
-  title: "Private Yacht Charter Istanbul — From €200",
+  title: "Private Yacht Charter Istanbul — From €220",
   description: `Private yacht charter Istanbul from €${fleetLowestEur}. Six-yacht fleet, 10–150 guests, 2-hour minimum, 10% off from 3 hours. Captain and crew included.`,
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/yacht-charter-istanbul"),
   },
   openGraph: {
-    title: "Private Yacht Charter Istanbul — From €200",
+    title: "Private Yacht Charter Istanbul — From €220",
     description: `Bosphorus yacht charter from €${fleetLowestEur}. Six-yacht fleet across boutique, group, and event tiers. Whole-yacht booking with captain and crew.`,
     url: canonicalUrl,
     type: "website",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Private Yacht Charter Istanbul — From €200",
+    title: "Private Yacht Charter Istanbul — From €220",
     description: `Bosphorus yacht charter from €${fleetLowestEur}. Six-yacht fleet, two-hour minimum, ten percent off from three hours.`,
     images: [yachtTour.image],
   },
@@ -342,18 +342,18 @@ const charterReasons = [
 
 const charterCategoryCards = [
   {
-    title: "Small deck · 10 to 14 guests",
-    price: "From €200 / 2h",
-    body: "Compact sailing yachts for couples, anniversaries, birthday afternoons, and tight friend trips. Two options sit in this tier.",
+    title: "Boutique & premium · 12 to 15 guests",
+    price: "From €220 / 2h",
+    body: "Compact yachts for couples, anniversaries, birthday afternoons, and tight friend trips. The boutique 12-guest and premium 15-guest decks sit in this tier.",
   },
   {
-    title: "Mid-size group · 36 guests",
-    price: "From €200 / 2h",
-    body: "Mid-size decks for medium gatherings — standard and a signature upgrade for milestone birthdays, brand evenings, and smaller corporate offsites.",
+    title: "Group · 40 guests",
+    price: "From €380 / 2h",
+    body: "Mid-size decks for medium gatherings — a Standard rate and a Signature upgrade for milestone birthdays, brand evenings, and smaller corporate offsites.",
   },
   {
-    title: "Event class · 44 to 150 guests",
-    price: "On quote",
+    title: "Event class · 90 to 150 guests",
+    price: "From €1,200 / on quote",
     body: "Event-built decks for wedding receptions, gala dinners, full-program corporate evenings, and brand activations. Priced per program.",
   },
 ];
@@ -386,7 +386,7 @@ const aiCitationFacts = [
   },
   {
     label: "Price ladder",
-    value: "From €200 for a two-hour boutique sailing through to €1,070 for an eight-hour signature group sailing. Six yachts from 10 to 150 guests, priced per yacht, not per seat. Three hours and longer carries a flat ten percent saving.",
+    value: "From €220 for a two-hour boutique sailing through to €1,800 for an eight-hour Signature group sailing, with the 90-guest event yacht from €1,200 and the 150-guest mega event yacht on quote. Six yachts from 12 to 150 guests, priced per yacht, not per seat. Three hours and longer carries a flat ten percent saving.",
   },
   {
     label: "Duration",
@@ -605,7 +605,7 @@ export default async function YachtCharterIstanbulPage({
           {/* AI-citation pricing table — paired with schema.org/Table JSON-LD
               above so the same numbers exist in two retrievable surfaces. */}
           <PricingTable
-            caption="Bosphorus Yacht Charter Pricing — From €200"
+            caption="Bosphorus Yacht Charter Pricing — From €220"
             intro="Whole-yacht hire per minimum-charter window. Captain, crew, soft drinks and snacks included in every tier. Catering, alcohol, photographer and styling are on a separate quote."
             rows={fleetPricingRows}
             note="Prices in EUR per yacht (not per guest). 10% off from 3 hours upward. Custom event quotes available via WhatsApp +90 544 898 98 12."
@@ -640,10 +640,10 @@ export default async function YachtCharterIstanbulPage({
                   Best Private Yacht Charter Istanbul — MerrySails
                 </h2>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                  MerrySails private yacht charter on the Bosphorus starts at €200 per yacht for a
-                  two-hour sailing. The fleet runs six yachts — small sailing yachts at 10 to 14
-                  guests, mid-size group yachts at 36 guests, and event-built decks at 44 and 150
-                  guests. Captain, crew, fuel, soft drinks, and snacks ride with the deck price;
+                  MerrySails private yacht charter on the Bosphorus starts at €220 per yacht for a
+                  two-hour sailing. The fleet runs six yachts — a boutique 12-guest and premium
+                  15-guest yacht, 40-guest group yachts (Standard and Signature), and event-built
+                  decks at 90 and 150 guests. Captain, crew, fuel, soft drinks, and snacks ride with the deck price;
                   catering, alcohol, DJ, photographer, and proposal styling sit on a separate brief.
                   Three hours or longer drops a flat ten percent automatically. Direct booking at
                   merrysails.com, no commission.
@@ -793,9 +793,9 @@ export default async function YachtCharterIstanbulPage({
                 <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
                   Visible price
                 </p>
-                <p className="text-3xl font-bold text-[var(--heading)] mb-2">From EUR 200</p>
+                <p className="text-3xl font-bold text-[var(--heading)] mb-2">From EUR 220</p>
                 <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                  Entry deck is a 10-guest sailing yacht on a two-hour Bosphorus loop. The fleet
+                  Entry deck is a 12-guest boutique yacht on a two-hour Bosphorus loop. The fleet
                   steps up to mid-size group yachts and event-built decks; sailings of three hours
                   or longer drop a flat ten percent. Catering, bar service, DJ, and event styling
                   sit outside the deck price.
@@ -891,10 +891,10 @@ export default async function YachtCharterIstanbulPage({
             </h2>
             <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
               The honest answer from running this fleet ourselves: the deck price is the floor, not the
-              total. A two-hour Bosphorus charter on our smallest boutique yacht starts at €280 per
+              total. A two-hour Bosphorus charter on our smallest boutique yacht starts at €220 per
               yacht (not per person) with captain, crew, fuel, soft drinks and snacks already included.
               From there the number moves on three levers — duration, group size and catering. Three
-              hours or more drops a flat 10% off the deck rate automatically; the 36-guest group deck
+              hours or more drops a flat 10% off the deck rate automatically; the 40-guest group deck
               and the 150-guest event yacht carry higher base rates because they run a larger crew. The
               extras that surprise first-time charterers are always the same: hot-food catering, alcohol,
               a DJ or live act, and proposal styling. We quote those line by line rather than folding

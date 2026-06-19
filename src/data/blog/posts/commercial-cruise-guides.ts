@@ -2025,11 +2025,13 @@ Merry Tourism has been running the dinner istanbul cruise since 2001 under TURSA
 
 | Tier | Price (2 hours) | Capacity | Best For |
 |------|----------------|----------|----------|
-| Boutique Yacht | €220 | up to 12 guests | Small group private cruise |
-| Premium | €380 | 2–12 guests | Celebration, anniversary |
+| Boutique Yacht | €220 | up to 12 guests | Small-group private cruise |
+| Premium Yacht | €320 | up to 15 guests | Celebration, anniversary |
+| Group Standard | €380 | up to 15 guests | Mid-size group, more deck space |
 | Group Signature | €500 | 15–40 guests | Corporate event, large celebration |
+| Event Yacht | €600 | 30–90 guests | Receptions, big celebrations |
 
-Extra hours are available: €125/hr (Essential), €150/hr (Premium), €300/hr (VIP). Captain and crew are always included. Catering, photography, and live music are optional add-ons priced separately.
+Extra hours are billed at the per-yacht hourly rate — €110/hr (Boutique) up to €300/hr (Event Yacht), with €160/hr Premium and €190–€250/hr group yachts; a 10% discount applies from 3 hours. Captain and crew are always included. Catering, photography, and live music are optional add-ons priced separately.
 
 The private istanbul cruise departs from marinas including Kuruçeşme, Karakoy, or Kabatas depending on vessel assignment. TURSAB A Group licensed Merry Tourism handles all logistics — you receive full boarding and route details in writing after confirmation.
 

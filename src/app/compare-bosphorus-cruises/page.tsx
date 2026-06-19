@@ -8,7 +8,7 @@ const SITE_URL = "https://merrysails.com";
 export const metadata: Metadata = {
  title: "Compare Bosphorus Cruises Istanbul",
  description:
- "Compare Bosphorus cruise options in Istanbul: Sunset (€34), Dinner (€30), Yacht Charter (€200), and Boat Rental — prices, durations, and best-for criteria.",
+ "Compare Bosphorus cruise options in Istanbul: Sunset (€34), Dinner (€30), Yacht Charter (€220), and Boat Rental — prices, durations, and best-for criteria.",
  alternates: {
  canonical: `${SITE_URL}/compare-bosphorus-cruises`,
  languages: buildHreflang("/compare-bosphorus-cruises"),
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  openGraph: {
  title: "Compare Bosphorus Cruises Istanbul",
  description:
- "All Bosphorus cruise options compared: prices from €30 to €680, durations 2–4 hours, shared vs private. Pick the right cruise in 2 minutes.",
+ "All Bosphorus cruise options compared: prices from €30 to €600, durations 2–4 hours, shared vs private. Pick the right cruise in 2 minutes.",
  url: `${SITE_URL}/compare-bosphorus-cruises`,
  type: "article",
  },
@@ -60,10 +60,9 @@ const CRUISE_OPTIONS = [
  slug: "/yacht-charter-istanbul",
  type: "Private",
  duration: "2 hours (extendable)",
- // 2026-06-04: was 280 — actual entry price is €200 for the Boutique
- // Yacht 10 (small-deck sailing, 10-12 guests, 2h) per src/data/tours.ts.
- // €280 is the Group Yacht 36 starting price, not the fleet minimum.
- priceFrom: 200,
+ // Entry price is €220 for the Boutique Yacht (up to 12 guests, 2h)
+ // per src/data/fleet.ts — the per-vessel fleet floor.
+ priceFrom: 220,
  priceTo: 680,
  priceNote: "per boat (entire vessel)",
  capacity: "Up to 150",
@@ -79,11 +78,10 @@ const CRUISE_OPTIONS = [
  slug: "/boat-rental-istanbul",
  type: "Private",
  duration: "2 hours minimum",
- // 2026-06-04: was "€60/hour" which was misleading — minimum 2h means
- // effective entry €200 (same Boutique Yacht 10). Aligned with the fleet
- // floor; per-hour notation kept in priceNote for clarity.
- priceFrom: 200,
- priceTo: 1070,
+ // Minimum 2h means effective entry €220 (same Boutique Yacht, up to 12
+ // guests). Aligned with the fleet floor; per-hour notation in priceNote.
+ priceFrom: 220,
+ priceTo: 1800,
  priceNote: "per boat, 2h minimum (10% off from 3h)",
  capacity: "Up to 150",
  includes: ["Captain & crew", "Soft drinks / snacks", "Optional catering"],
@@ -106,7 +104,7 @@ const COMPARE_FAQ = [
  },
  {
  q: "Is a private yacht worth it for couples?",
- a: "Yes, if you want privacy for a proposal, anniversary, or romantic dinner. The Boutique Yacht 10 (entry tier) at €200 covers up to 10-12 guests for 2 hours — for couples that's about €100 per person versus €34 on a shared sunset cruise. The premium is the privacy and custom route.",
+ a: "Yes, if you want privacy for a proposal, anniversary, or romantic dinner. The Boutique Yacht (entry tier) at €220 covers up to 12 guests for 2 hours — for couples that's about €100 per person versus €34 on a shared sunset cruise. The premium is the privacy and custom route.",
  },
  {
  q: "Which cruise has the best Turkish dinner show?",
@@ -117,8 +115,8 @@ const COMPARE_FAQ = [
  a: "Yes, the Silver Soft Drinks package starts at €30 per person and includes mezze starters, main course, unlimited soft drinks, and the Turkish night show. Alcoholic drinks and VIP seating are upgrade options at €45, €80, or €90.",
  },
  {
- q: "What is included in the €200 yacht charter entry?",
- a: "The Boutique Yacht 10 (entry tier) at €200 covers the entire boat (private charter) for 2 hours, up to 10-12 guests, with captain, crew, soft drinks, and snacks. Group Yacht 36 (€280-300, up to 36 guests) is the next tier. Larger event yachts go up to €1,070+ for the 8-hour Signature sailing. From 3 hours onward, a 10% automatic discount applies fleet-wide.",
+ q: "What is included in the €220 yacht charter entry?",
+ a: "The Boutique Yacht (entry tier) at €220 covers the entire boat (private charter) for 2 hours, up to 12 guests, with captain, crew, soft drinks, and snacks. The Group Yacht 40 (up to 40 guests) is the next tier from €380. Larger event yachts go up to €1,800 for the 8-hour Group 40 Signature sailing. From 3 hours onward, a 10% automatic discount applies fleet-wide.",
  },
  {
  q: "Can I bring children on a Bosphorus cruise?",
@@ -126,7 +124,7 @@ const COMPARE_FAQ = [
  },
  {
  q: "Which cruise is best for a marriage proposal?",
- a: "The Private Yacht Charter Premium package (€380) is most popular for proposals — it includes proposal decoration, optional cake and photographer, and you choose the timing and route. The boat is fully private so the moment is uninterrupted.",
+ a: "A private yacht charter is most popular for proposals — base charter from €220 per vessel, with decoration, optional cake and photographer arranged on request, and you choose the timing and route. The boat is fully private so the moment is uninterrupted. WhatsApp +90 544 898 98 12 for a precise quote.",
  },
 ];
 
@@ -368,7 +366,7 @@ export default function CompareCruisesPage() {
  <caption className="sr-only">
  Bosphorus cruise comparison Istanbul 2026 — Sunset Cruise from
  EUR 30, Dinner Cruise EUR 30 to EUR 90, Private Yacht Charter
- from EUR 200, Hourly Boat Rental from EUR 200 (2h minimum).
+ from EUR 220, Hourly Boat Rental from EUR 220 (2h minimum).
  Compared by type, duration, capacity, departure time,
  inclusions, and best-fit guest profile.
  </caption>
@@ -528,8 +526,8 @@ export default function CompareCruisesPage() {
  💍 Marriage proposal
  </h3>
  <p className="mt-2 text-sm text-slate-600">
- Private Yacht Premium — €380, up to 12 guests, custom decoration
- and optional photographer add-on.
+ Private yacht charter — base from €220 per vessel; decoration,
+ cake and photographer arranged on request (WhatsApp for a quote).
  </p>
  <Link
  href="/proposal-yacht-rental-istanbul"
@@ -543,7 +541,7 @@ export default function CompareCruisesPage() {
  🥂 Corporate event or large group
  </h3>
  <p className="mt-2 text-sm text-slate-600">
- Private Yacht VIP — €680, up to 20 guests, full menu and open
+ Private Yacht — Group 40 Signature (15–40 guests) from €500 or the 90-guest Event yacht from €600, full menu and open
  bar. Or Hourly Boat Rental for full custom control.
  </p>
  <Link

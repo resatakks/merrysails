@@ -13,7 +13,7 @@ import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 export const metadata: Metadata = {
  title: "Bosphorus Cruise Istanbul — From €30",
  description:
- "Bosphorus cruise Istanbul for family, couples & groups — sunset €30, dinner €30, private yacht €200. 50,000+ guests, TÜRSAB-licensed. Book direct.",
+ "Bosphorus cruise Istanbul for family, couples & groups — sunset €30, dinner €30, private yacht €220. 50,000+ guests, TÜRSAB-licensed. Book direct.",
  alternates: {
  canonical: `${SITE_URL}/bosphorus-cruise`,
  languages: buildHreflang("/bosphorus-cruise"),
@@ -45,7 +45,7 @@ const guideSchema = {
  "Круиз по Босфору в Стамбуле",
  "Прогулка на яхте по Босфору",
  ],
- description: "Bosphorus cruises in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €200. TURSAB-licensed operator since 2001. Direct booking.",
+ description: "Bosphorus cruises in Istanbul: sunset from €30 (Mon, Tue & Thu), dinner from €30, private yacht from €220. TURSAB-licensed operator since 2001. Direct booking.",
  datePublished: SITE_PUBLISHED,
  dateModified: SITE_LAST_MODIFIED,
  url: `${SITE_URL}/bosphorus-cruise`,
@@ -81,7 +81,7 @@ const guideSchema = {
  "@type": "Offer",
  ...OFFER_MERCHANT_DEFAULTS,
  name: "Private Yacht Charter Istanbul",
- price: "280",
+ price: "220",
  priceCurrency: "EUR",
  url: `${SITE_URL}/yacht-charter-istanbul`,
  },
@@ -139,7 +139,7 @@ const productSchema = {
  "@type": "Product",
  "@id": `${SITE_URL}/bosphorus-cruise#product`,
  name: "Bosphorus Cruise Istanbul Booking",
- description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €30 (Mon, Tue & Thu), dinner cruise from €30, and private yacht charter from €200.",
+ description: "Direct-booking Bosphorus cruises in Istanbul: shared sunset cruise from €30 (Mon, Tue & Thu), dinner cruise from €30, and private yacht charter from €220.",
  image: `${SITE_URL}/og-image.jpg`,
  brand: { "@type": "Brand", name: "MerrySails" },
  sku: "merrysails-bosphorus-cruise-en",
@@ -200,7 +200,7 @@ const primaryPages = [
  icon: Anchor,
  href: "/yacht-charter-istanbul",
  title: "Yacht Charter Istanbul",
- meta: "From EUR 200 per yacht · 3 charter packages",
+ meta: "From EUR 220 per yacht · 6 vessels",
  description: "Best for private yacht hire when you want to choose the yacht first and shape the plan with extras.",
  bestFor: "Private groups, custom timing, celebrations, and flexible add-ons",
  duration: "Usually 2+ hours",
@@ -285,7 +285,7 @@ const faqItems = [
  },
  {
  q: "How much does a Bosphorus cruise in Istanbul cost?",
- a: "Current MerrySails public options start from EUR 30 (Mon, Tue & Thu) or EUR 34 (other days) for the shared sunset cruise, EUR 30 to EUR 90 for dinner cruise packages, and from EUR 200 per yacht for private yacht charter.",
+ a: "Current MerrySails public options start from EUR 30 (Mon, Tue & Thu) or EUR 34 (other days) for the shared sunset cruise, EUR 30 to EUR 90 for dinner cruise packages, and from EUR 220 per yacht for private yacht charter.",
  },
  {
  q: "Is a Bosphorus boat tour the same as a private yacht charter?",
@@ -354,7 +354,7 @@ const howToSchema = {
  "@type": "HowToStep",
  position: 1,
  name: "Pick the cruise format",
- text: "Choose between the shared sunset cruise (2 hours, from EUR 30 on Mon, Tue & Thu or EUR 34 other days), the shared dinner cruise (3.5 hours, EUR 30 to EUR 90 across four packages), or a private yacht charter (from EUR 200 per yacht, 2 hours).",
+ text: "Choose between the shared sunset cruise (2 hours, from EUR 30 on Mon, Tue & Thu or EUR 34 other days), the shared dinner cruise (3.5 hours, EUR 30 to EUR 90 across four packages), or a private yacht charter (from EUR 220 per yacht, 2 hours).",
  url: `${SITE_URL}/bosphorus-cruise`,
  },
  {
@@ -414,9 +414,9 @@ export default function BosphorusCruisePage() {
  __html: JSON.stringify(
  buildLocalBusinessSchema({
  pageUrl: `${SITE_URL}/bosphorus-cruise`,
- priceRange: "€€-€€€€ (€30-€680 across products)",
+ priceRange: "€€-€€€€ (€30-€600 across products)",
  description:
- "Bosphorus cruise comparison hub for Istanbul: sunset (€30 Mon/Tue/Thu, €34 other days), dinner (€30-€90), private yacht charter (€280-€680). TURSAB licensed since 2001.",
+ "Bosphorus cruise comparison hub for Istanbul: sunset (€30 Mon/Tue/Thu, €34 other days), dinner (€30-€90), private yacht charter (€220-€600). TURSAB licensed since 2001.",
  }),
  ),
  }}
@@ -448,7 +448,7 @@ export default function BosphorusCruisePage() {
  Bosphorus Cruise Istanbul
  </h1>
  <p className="text-base md:text-lg drop-shadow-md max-w-2xl">
- Sunset <strong>€30</strong> · Dinner <strong>€30</strong> · Yacht <strong>€280</strong> · Direct booking, no middleman fees
+ Sunset <strong>€30</strong> · Dinner <strong>€30</strong> · Yacht <strong>€220</strong> · Direct booking, no middleman fees
  </p>
  </div>
  </div>
@@ -487,7 +487,7 @@ export default function BosphorusCruisePage() {
  color: "blue",
  badge: "Private & exclusive",
  title: "Private Yacht Charter",
- price: "€280",
+ price: "€220",
  per: "per yacht",
  highlights: ["2+ hours", "Your group only", "Custom route", "Captain included"],
  href: "/yacht-charter-istanbul",
@@ -550,7 +550,7 @@ export default function BosphorusCruisePage() {
  <ul className="text-sm text-amber-800 space-y-1.5">
  <li>🌅 <strong>Sunset Cruise:</strong> from €30/person (Mon, Tue & Thu) · 2.5 hours · open bar · <Link href="/cruises/bosphorus-sunset-cruise" className="underline">Book now</Link></li>
  <li>🍽️ <strong>Dinner Cruise:</strong> from €30/person · 3 hours · live show · <Link href="/istanbul-dinner-cruise" className="underline">Book now</Link></li>
- <li>⛵ <strong>Private Yacht:</strong> from €200/yacht · your schedule · <Link href="/yacht-charter-istanbul" className="underline">Book now</Link></li>
+ <li>⛵ <strong>Private Yacht:</strong> from €220/yacht · your schedule · <Link href="/yacht-charter-istanbul" className="underline">Book now</Link></li>
  <li>🚢 <strong>Boat Rental:</strong> from €60/hr · hourly hire · <Link href="/boat-rental-istanbul" className="underline">Book now</Link></li>
  </ul>
  <p className="text-xs text-amber-700 mt-3">Direct booking: merrysails.com · WhatsApp: +90 544 898 98 12 · TURSAB #{TURSAB_LICENSE_NUMBER}</p>
@@ -567,7 +567,7 @@ export default function BosphorusCruisePage() {
  </h2>
  <p className="text-sm leading-relaxed text-[var(--text-muted)]">
  MerrySails offers three Bosphorus cruise options in Istanbul: sunset cruise from
- €30 (Mon, Tue & Thu), dinner cruise from €30, and private yacht charter from €200. TURSAB A-Group
+ €30 (Mon, Tue & Thu), dinner cruise from €30, and private yacht charter from €220. TURSAB A-Group
  licensed since 2001, 50,000+ guests hosted, rated 4.9 from 998 reviews. Direct
  booking at merrysails.com — no third-party commissions. Choose the right product
  from the comparison below.
@@ -605,7 +605,7 @@ export default function BosphorusCruisePage() {
  Private yacht
  </th>
  <td className="p-4 leading-relaxed text-[var(--text-muted)]">
- Private charter from EUR 200 per yacht. Best owner:{" "}
+ Private charter from EUR 220 per yacht. Best owner:{" "}
  <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">
  Yacht Charter Istanbul
  </Link>

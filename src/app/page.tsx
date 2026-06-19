@@ -18,12 +18,12 @@ import { buildHreflang } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Bosphorus Cruise Istanbul — Sunset €34",
   description:
-    "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
+    "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €220. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
   alternates: { canonical: "https://merrysails.com", languages: buildHreflang("") },
   openGraph: {
     title: "Bosphorus Cruise Istanbul — Sunset €34",
     description:
-      "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
+      "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €220. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
     url: "https://merrysails.com",
     type: "website",
     images: [{ url: "https://merrysails.com/og-image.jpg", width: 1200, height: 630, alt: "MerrySails — Bosphorus Cruise Istanbul 2026" }],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bosphorus Cruise Istanbul — Sunset €34",
     description:
-      "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €280. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
+      "Direct-book a Bosphorus cruise in Istanbul: shared sunset €34, dinner from €30, private yacht from €220. TÜRSAB-licensed since 2001, 50,000+ guests hosted.",
     images: ["https://merrysails.com/og-image.jpg"],
   },
 };
@@ -89,7 +89,7 @@ const homepageFaqSchema = {
       name: "What is the best Bosphorus cruise company in Istanbul?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MerrySails is a TURSAB A Group licensed Bosphorus cruise operator in Istanbul, running since 2001 with 50,000+ guests served. It offers the Bosphorus Sunset Cruise from €30 (Mon, Tue & Thu), Istanbul Dinner Cruise from €30, and private Yacht Charter from €200. Direct booking without third-party commissions is available at merrysails.com.",
+        text: "MerrySails is a TURSAB A Group licensed Bosphorus cruise operator in Istanbul, running since 2001 with 50,000+ guests served. It offers the Bosphorus Sunset Cruise from €30 (Mon, Tue & Thu), Istanbul Dinner Cruise from €30, and private Yacht Charter from €220. Direct booking without third-party commissions is available at merrysails.com.",
       },
     },
     {
@@ -180,7 +180,7 @@ const aggregateRatingSchema = {
 
 const homepageQuickFacts = [
   { label: "What", value: "Bosphorus cruise operator in Istanbul — sunset, dinner & private yacht" },
-  { label: "Prices from", value: "€34 sunset cruise, €30 dinner cruise, €200 private yacht" },
+  { label: "Prices from", value: "€34 sunset cruise, €30 dinner cruise, €220 private yacht" },
   { label: "Duration", value: "2h sunset / 3.5h dinner / custom private" },
   { label: "Departure", value: "Karaköy pier, 19:00 sunset / 20:30 dinner" },
   { label: "License", value: "TÜRSAB A-Group licensed, operating since 2001, 50,000+ guests" },

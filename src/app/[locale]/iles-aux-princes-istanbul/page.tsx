@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Îles aux Princes Istanbul — dès €45",
     description:
-      "Tour des Îles aux Princes Istanbul 2026 — journée partagée €45 (ferry + guide + déjeuner) ou yacht privé dès €280. Büyükada, Heybeliada, îles sans voitures.",
+      "Tour des Îles aux Princes Istanbul 2026 — journée partagée €45 (ferry + guide + déjeuner) ou yacht privé dès €220. Büyükada, Heybeliada, îles sans voitures.",
     alternates: {
       canonical: canonicalUrl,
       languages: undefined,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: "Îles aux Princes Istanbul — dès €45",
       description:
-        "Deux façons de visiter les Îles aux Princes depuis Istanbul : excursion ferry partagée 8 h à €45 ou yacht privé dès €280.",
+        "Deux façons de visiter les Îles aux Princes depuis Istanbul : excursion ferry partagée 8 h à €45 ou yacht privé dès €220.",
       url: canonicalUrl,
       type: "article",
     },
@@ -77,7 +77,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Ferry partagé ou yacht privé — lequel choisir ?",
-    a: "Le ferry partagé (€45/personne) convient aux voyageurs seuls, couples au budget serré et visiteurs qui veulent guide et déjeuner gérés. Le yacht privé (€280+ pour le bateau entier, 2 h minimum, journée disponible) convient mieux aux groupes de 4+, familles ou ceux qui veulent flexibilité — choisissez vos îles, vos arrêts, votre timing, restauration à bord en option.",
+    a: "Le ferry partagé (€45/personne) convient aux voyageurs seuls, couples au budget serré et visiteurs qui veulent guide et déjeuner gérés. Le yacht privé (€220+ pour le bateau entier, 2 h minimum, journée disponible) convient mieux aux groupes de 4+, familles ou ceux qui veulent flexibilité — choisissez vos îles, vos arrêts, votre timing, restauration à bord en option.",
   },
   {
     q: "Quelle est la meilleure période pour visiter les Îles aux Princes ?",
@@ -89,7 +89,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Y a-t-il des yachts privés depuis Istanbul vers les Îles aux Princes ?",
-    a: "Oui — MerrySails propose des affrètements journée privés depuis Kuruçeşme Marina ou Kabataş. Une journée yacht typique aux Îles aux Princes dure 6-8 heures à partir de €280 pour 8 invités maximum (forfait Essential), avec arrêts à Büyükada, Heybeliada et la crique de baignade de votre choix. Yachts plus grands pour groupes jusqu'à 150 personnes.",
+    a: "Oui — MerrySails propose des affrètements journée privés depuis Kuruçeşme Marina ou Kabataş. Une journée yacht typique aux Îles aux Princes dure 6-8 heures à partir de €220 pour 12 invités maximum (yacht Boutique), avec arrêts à Büyükada, Heybeliada et la crique de baignade de votre choix. Yachts plus grands pour groupes jusqu'à 150 personnes.",
   },
 ];
 
@@ -98,7 +98,7 @@ const pageSchema = {
   "@type": "TouristAttraction",
   name: "Tour des Îles aux Princes depuis Istanbul",
   description:
-    "Deux façons de visiter les Îles aux Princes depuis Istanbul : tour journée guidé ferry partagé à €45 ou yacht privé dès €280. Büyükada, Heybeliada, Burgazada et Kınalıada — l'archipel sans voitures d'Istanbul.",
+    "Deux façons de visiter les Îles aux Princes depuis Istanbul : tour journée guidé ferry partagé à €45 ou yacht privé dès €220. Büyükada, Heybeliada, Burgazada et Kınalıada — l'archipel sans voitures d'Istanbul.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   isAccessibleForFree: false,
@@ -154,7 +154,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           <p className="text-base sm:text-lg text-[var(--body-text)] max-w-3xl">
             <strong>En bref.</strong> Deux façons de visiter les Îles aux Princes sans voitures
             depuis Istanbul : tour ferry journée partagé à <strong>€45/personne</strong> (8 h,
-            déjeuner + guide inclus) ou yacht privé dès <strong>€280</strong> pour 8 invités
+            déjeuner + guide inclus) ou yacht privé dès <strong>€220</strong> pour 12 invités
             maximum (journée flexible 6-8 h, choisissez vos îles et criques de baignade). Les
             quatre îles habitées — Büyükada, Heybeliada, Burgazada, Kınalıada — n&apos;ont aucune
             voiture privée : vélo, navette électrique et marche uniquement.
@@ -164,7 +164,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               Tour partagé dès €45 <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/fr/yacht-charter-istanbul" className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)] px-5 py-3 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand)]/5 transition">
-              Yacht privé dès €280 <ArrowRight className="w-4 h-4" />
+              Yacht privé dès €220 <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white hover:brightness-110 transition">
               WhatsApp +90 544 898 98 12
@@ -197,10 +197,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               <Anchor className="w-5 h-5" />
               <span className="text-xs font-bold uppercase tracking-wide">Yacht privé</span>
             </div>
-            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">Dès €280 / yacht</h3>
+            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">Dès €220 / yacht</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>6-8 h flexible · choisissez l&apos;heure</span></li>
-              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 invités (Essential pour 8)</span></li>
+              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 invités (Boutique jusqu&apos;à 12)</span></li>
               <li className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Votre route — Büyükada, Heybeliada, criques</span></li>
               <li className="flex gap-2"><Trees className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Capitaine + équipage inclus, restauration optionnelle</span></li>
             </ul>

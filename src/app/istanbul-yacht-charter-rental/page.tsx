@@ -23,14 +23,14 @@ const tour = requireTour("yacht-charter-in-istanbul", "Istanbul Yacht Charter Re
 
 export const metadata: Metadata = {
   title: "Istanbul Yacht Charter Rental",
-  description: "Istanbul yacht charter rental from €200 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
+  description: "Istanbul yacht charter rental from €220 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/istanbul-yacht-charter-rental"),
   },
   openGraph: {
     title: "Istanbul Yacht Charter Rental",
-    description: "Istanbul yacht charter rental from €200 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
+    description: "Istanbul yacht charter rental from €220 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
     url: canonicalUrl,
     type: "website",
     images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: "Istanbul Yacht Charter Rental — MerrySails" }],
@@ -41,7 +41,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Istanbul Yacht Charter Rental",
-  description: "Istanbul yacht charter rental from €200 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
+  description: "Istanbul yacht charter rental from €220 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   provider: { "@id": `${SITE_URL}/#organization` },
@@ -53,7 +53,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Istanbul Yacht Charter Rental",
-  description: "Istanbul yacht charter rental from €200 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
+  description: "Istanbul yacht charter rental from €220 — rent a private Bosphorus yacht with captain, crew and a custom route. MerrySails, TURSAB A Group licensed.",
   image: Array.from(new Set([tour.image, ...(tour.gallery ?? [])])).slice(0, 6),
   sku: "merrysails-istanbul-yacht-charter-rental",
   category: "Istanbul Yacht Charter Rental",
@@ -84,7 +84,7 @@ const breadcrumbSchema = {
 const faqItems = [
   {
     "q": "How much does it cost to rent a yacht in Istanbul?",
-    "a": "A private whole-boat charter with MerrySails starts at €200 and scales with the vessel and duration you choose. The base rate covers the boat, a licensed captain and crew, fuel, soft drinks and snacks; catering and entertainment are quoted as add-ons."
+    "a": "A private whole-boat charter with MerrySails starts at €220 and scales with the vessel and duration you choose. The base rate covers the boat, a licensed captain and crew, fuel, soft drinks and snacks; catering and entertainment are quoted as add-ons."
   },
   {
     "q": "Does the yacht rental include a captain and crew?",
@@ -164,11 +164,11 @@ export default function Page() {
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">Istanbul Yacht Charter Rental</h1>
-              <QuickAnswer locale="en" title={"Istanbul Yacht Charter Rental"} question={"How do I rent a yacht in Istanbul?"} content={"To rent a yacht in Istanbul with MerrySails, pick a date and group size and we assign the right private vessel — from €200 for a whole-boat Bosphorus charter with a captain, crew, a custom route, soft drinks and snacks. Catering, wine and entertainment are added on request. Your group sails alone; the boat is yours for the booked window."} />
+              <QuickAnswer locale="en" title={"Istanbul Yacht Charter Rental"} question={"How do I rent a yacht in Istanbul?"} content={"To rent a yacht in Istanbul with MerrySails, pick a date and group size and we assign the right private vessel — from €220 for a whole-boat Bosphorus charter with a captain, crew, a custom route, soft drinks and snacks. Catering, wine and entertainment are added on request. Your group sails alone; the boat is yours for the booked window."} />
               <p className="page-intro mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">Renting a yacht in Istanbul should be simple: tell us the date and the headcount, and we hand you the right private boat with a captain and crew already aboard. The route is yours to shape along the Bosphorus.</p>
               <div className="mb-6 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-4">
                 <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">Charter rental from</p>
-                <p className="text-3xl font-bold text-[var(--heading)]">EUR 200</p>
+                <p className="text-3xl font-bold text-[var(--heading)]">EUR 220</p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">Whole-boat private charter with captain and crew. Tiers scale the vessel and the on-board comfort; catering and extras quoted per request.</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">

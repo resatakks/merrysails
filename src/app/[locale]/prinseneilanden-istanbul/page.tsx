@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Prinseneilanden Tour Istanbul — vanaf €45",
     description:
-      "Prinseneilanden-tour vanaf Istanbul 2026 — gedeelde dagtour €45 (veerboot + gids + lunch) of privéjacht vanaf €280. Büyükada, Heybeliada, autovrije eilanden.",
+      "Prinseneilanden-tour vanaf Istanbul 2026 — gedeelde dagtour €45 (veerboot + gids + lunch) of privéjacht vanaf €220. Büyükada, Heybeliada, autovrije eilanden.",
     alternates: { canonical: canonicalUrl, languages: undefined },
     openGraph: {
       title: "Prinseneilanden Tour Istanbul — vanaf €45",
-      description: "Twee manieren om de Prinseneilanden vanuit Istanbul te bezoeken: gedeelde 8-uurs veerboottour €45 of privéjacht vanaf €280.",
+      description: "Twee manieren om de Prinseneilanden vanuit Istanbul te bezoeken: gedeelde 8-uurs veerboottour €45 of privéjacht vanaf €220.",
       url: canonicalUrl, type: "article",
     },
   };
@@ -40,16 +40,16 @@ const FAQ_ITEMS = [
   { q: "Wat is de goedkoopste manier om de Prinseneilanden vanuit Istanbul te bezoeken?", a: "De publieke Şehir Hatları-veerboot vanuit Kabataş kost ongeveer ₺40 (€1,20) enkele reis en bereikt Büyükada in 75-90 minuten. De MerrySails dagtour van €45 bevat retour-veerboot, gids, lunch en een gestructureerde wandeling — handig als u niet zelf wilt navigeren of Turkse dienstregelingen wilt lezen." },
   { q: "Zijn auto's toegestaan op de Prinseneilanden?", a: "Nee — privé-auto's zijn verboden op alle vier bewoonde eilanden. Het enige gemotoriseerde vervoer zijn gemeentelijke elektrische voertuigen. Locals en bezoekers verplaatsen zich per fiets, elektrische shuttle of te voet. De autovrije sfeer is een van de grootste attracties." },
   { q: "Hoe lang duurt een Prinseneilanden-tour vanuit Istanbul?", a: "Een begeleide dagtour duurt 8 uur deur-tot-deur (vertrek 09:00, terug ~17:00). Een privéjacht-dagcharter is typisch 6-8 uur en volledig flexibel — kies vertrektijd, route tussen eilanden en hoe lang u op elk eiland blijft." },
-  { q: "Gedeelde veerboot of privéjacht — wat is beter?", a: "Gedeelde veerboot (€45/persoon) is geschikt voor alleenreizigers, koppels met budget en bezoekers die gids en lunch geregeld willen. Privéjacht (€280+ voor de hele boot, 2 uur minimum, hele dag mogelijk) is beter voor groepen vanaf 4, gezinnen of wie flexibiliteit wil — kies eilanden, stops en timing zelf, catering optioneel aan boord." },
+  { q: "Gedeelde veerboot of privéjacht — wat is beter?", a: "Gedeelde veerboot (€45/persoon) is geschikt voor alleenreizigers, koppels met budget en bezoekers die gids en lunch geregeld willen. Privéjacht (€220+ voor de hele boot, 2 uur minimum, hele dag mogelijk) is beter voor groepen vanaf 4, gezinnen of wie flexibiliteit wil — kies eilanden, stops en timing zelf, catering optioneel aan boord." },
   { q: "Wanneer is de beste tijd om de Prinseneilanden te bezoeken?", a: "Eind april — begin juni en midden september — oktober zijn ideaal — warm genoeg om te zwemmen, koel genoeg om te wandelen en veel minder druk dan in het hoogseizoen. Juli- en augustuszondagen zijn extreem druk met Istanbulse bewoners. Winterbezoeken zijn sfeervol maar de meeste strandrestaurants zijn dicht." },
   { q: "Kan men zwemmen op de Prinseneilanden?", a: "Ja — Büyükada heeft Yörükali Plajı en Nakibey Plajı (toegang betaald, ligstoelen). Heybeliada heeft Değirmenburnu en Yelken Klübü. De meeste openbare stranden zijn geopend van half mei tot half oktober. Watertemperatuur juli-augustus ~22-24°C." },
-  { q: "Is er een privéjacht vanuit Istanbul naar de Prinseneilanden?", a: "Ja — MerrySails biedt privé-dagcharters vanuit Kuruçeşme Marina of Kabataş. Een typische Prinseneilanden-jachtdag is 6-8 uur vanaf €280 voor maximaal 8 gasten (Essential), met stops bij Büyükada, Heybeliada en uw keuze van zwemkreek. Grotere jachten voor groepen tot 150." },
+  { q: "Is er een privéjacht vanuit Istanbul naar de Prinseneilanden?", a: "Ja — MerrySails biedt privé-dagcharters vanuit Kuruçeşme Marina of Kabataş. Een typische Prinseneilanden-jachtdag is 6-8 uur vanaf €220 voor maximaal 12 gasten (Boutique), met stops bij Büyükada, Heybeliada en uw keuze van zwemkreek. Grotere jachten voor groepen tot 150." },
 ];
 
 const pageSchema = {
   "@context": "https://schema.org", "@type": "TouristAttraction",
   name: "Prinseneilanden Tour vanaf Istanbul",
-  description: "Twee manieren om de Prinseneilanden vanuit Istanbul te bezoeken: gedeelde begeleide dagtour €45 of privéjacht vanaf €280. Büyükada, Heybeliada, Burgazada en Kınalıada — Istanbul's autovrije archipel.",
+  description: "Twee manieren om de Prinseneilanden vanuit Istanbul te bezoeken: gedeelde begeleide dagtour €45 of privéjacht vanaf €220. Büyükada, Heybeliada, Burgazada en Kınalıada — Istanbul's autovrije archipel.",
   url: canonicalUrl, image: `${SITE_URL}/og-image.jpg`,
   isAccessibleForFree: false, publicAccess: true,
   touristType: ["Koppels", "Gezinnen", "Solo-reizigers", "Groepen"],
@@ -88,11 +88,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           </nav>
           <h1 className="text-3xl sm:text-4xl font-bold text-[var(--heading)] mb-3">Prinseneilanden Tour vanaf Istanbul — Gids 2026</h1>
           <p className="text-base sm:text-lg text-[var(--body-text)] max-w-3xl">
-            <strong>Kort.</strong> Twee manieren om Istanbul&apos;s autovrije Prinseneilanden te bezoeken: een gedeelde dagtour per veerboot voor <strong>€45/persoon</strong> (8 uur, lunch + gids inbegrepen) of privéjacht vanaf <strong>€280</strong> voor maximaal 8 gasten (flexibele 6-8-uurs dag, kies uw eilanden en zwemkreken). De vier bewoonde eilanden — Büyükada, Heybeliada, Burgazada, Kınalıada — hebben geen privé-auto&apos;s, alleen fietsen, elektrische shuttles en wandelpaden.
+            <strong>Kort.</strong> Twee manieren om Istanbul&apos;s autovrije Prinseneilanden te bezoeken: een gedeelde dagtour per veerboot voor <strong>€45/persoon</strong> (8 uur, lunch + gids inbegrepen) of privéjacht vanaf <strong>€220</strong> voor maximaal 12 gasten (flexibele 6-8-uurs dag, kies uw eilanden en zwemkreken). De vier bewoonde eilanden — Büyükada, Heybeliada, Burgazada, Kınalıada — hebben geen privé-auto&apos;s, alleen fietsen, elektrische shuttles en wandelpaden.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link href="/cruises/istanbul-princes-island-tour" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand)] px-5 py-3 text-sm font-semibold text-white hover:brightness-110 transition">Gedeelde tour vanaf €45 <ArrowRight className="w-4 h-4" /></Link>
-            <Link href="/nl/yacht-charter-istanbul" className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)] px-5 py-3 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand)]/5 transition">Privéjacht vanaf €280 <ArrowRight className="w-4 h-4" /></Link>
+            <Link href="/nl/yacht-charter-istanbul" className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)] px-5 py-3 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand)]/5 transition">Privéjacht vanaf €220 <ArrowRight className="w-4 h-4" /></Link>
             <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white hover:brightness-110 transition">WhatsApp +90 544 898 98 12</a>
           </div>
         </div>
@@ -114,10 +114,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           </div>
           <div className="rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand)]/5 p-5">
             <div className="flex items-center gap-2 text-[var(--brand)] mb-2"><Anchor className="w-5 h-5" /><span className="text-xs font-bold uppercase tracking-wide">Privéjacht</span></div>
-            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">Vanaf €280 / jacht</h3>
+            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">Vanaf €220 / jacht</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>6-8 uur flexibel · kies tijdstip</span></li>
-              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 gasten (Essential voor 8)</span></li>
+              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 gasten (Boutique tot 12)</span></li>
               <li className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Uw route — Büyükada, Heybeliada, zwemkreken</span></li>
               <li className="flex gap-2"><Trees className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Kapitein + bemanning inbegrepen, catering optioneel</span></li>
             </ul>

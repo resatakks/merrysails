@@ -92,7 +92,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  eyebrow: "Premium charter",
  title: "Yat Kiralama İstanbul",
  description: "Özel yat paketleri, ek hizmetler ve premium rezervasyon seçenekleri.",
- price: "€280'den başlayan fiyatlarla",
+ price: "€220'den başlayan fiyatlarla",
  },
  },
  coreSection: {
@@ -118,7 +118,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  title: "Yat Kiralama İstanbul",
- meta: "3 paket · yat başına €280'den",
+ meta: "Yat başına €220'den",
  description: "Özel bir yat kiralayın ve planı grubunuza göre şekillendirin; opsiyonel yemek, içecek, transfer, müzik ve etkinlik ekleriyle.",
  },
  {
@@ -133,7 +133,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  heading: "MerrySails — İstanbul'un En İyi Boğaz Turu Şirketi",
  facts: [
  { label: "Nedir", value: "İstanbul'da Boğaz turu operatörü — gün batımı, akşam yemeği ve özel yat" },
- { label: "Başlangıç fiyatı", value: "€30 gün batımı, €30 akşam yemeği, €280 özel yat" },
+ { label: "Başlangıç fiyatı", value: "€30 gün batımı, €30 akşam yemeği, €220 özel yat" },
  { label: "Süre", value: "2 sa gün batımı / 3,5 sa akşam yemeği / özel yat esnek" },
  { label: "Kalkış", value: "Karaköy iskelesi, 19:00 gün batımı / 20:30 akşam yemeği" },
  { label: "Lisans", value: "TÜRSAB A Grubu lisanslı, 2001'den beri, 50.000+ misafir" },
@@ -212,7 +212,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  eyebrow: "Premium Charter",
  title: "Yacht-Charter Istanbul",
  description: "Private Charter-Pakete mit Add-Ons und exklusiven Buchungsoptionen.",
- price: "Ab €280",
+ price: "Ab €220",
  },
  },
  coreSection: {
@@ -238,7 +238,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  title: "Yacht-Charter Istanbul",
- meta: "3 Pakete · ab €280 pro Yacht",
+ meta: "Ab €220 pro Yacht",
  description: "Buchen Sie eine private Yacht und gestalten Sie den Ablauf nach Ihrer Gruppe — mit optionalen Mahlzeiten, Getränken, Transfers, Musik und Event-Extras.",
  },
  {
@@ -253,7 +253,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  heading: "MerrySails — Beste Bosporus-Kreuzfahrt-Anbieter in Istanbul",
  facts: [
  { label: "Was", value: "Bosporus-Kreuzfahrt-Anbieter in Istanbul — Sonnenuntergang, Dinner & private Yacht" },
- { label: "Preise ab", value: "€30 Sonnenuntergang, €30 Dinner, €280 private Yacht" },
+ { label: "Preise ab", value: "€30 Sonnenuntergang, €30 Dinner, €220 private Yacht" },
  { label: "Dauer", value: "2 Std. Sonnenuntergang / 3,5 Std. Dinner / privat individuell" },
  { label: "Abfahrt", value: "Karaköy-Pier, 19:00 Sonnenuntergang / 20:30 Dinner" },
  { label: "Lizenz", value: "TURSAB A-Gruppe lizenziert, seit 2001, 50.000+ Gäste" },
@@ -332,7 +332,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  eyebrow: "Charter premium",
  title: "Charter de Yacht Istanbul",
  description: "Packages de yacht privés avec options et réservations haut de gamme.",
- price: "À partir de €280",
+ price: "À partir de €220",
  },
  },
  coreSection: {
@@ -358,7 +358,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  title: "Charter de Yacht Istanbul",
- meta: "3 packages · à partir de €280 par yacht",
+ meta: "À partir de €220 par yacht",
  description: "Réservez un yacht privé et façonnez le programme selon votre groupe — repas, boissons, transferts, musique et extras événementiels en option.",
  },
  {
@@ -373,7 +373,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  heading: "MerrySails — Meilleure Compagnie de Croisière du Bosphore à Istanbul",
  facts: [
  { label: "Quoi", value: "Opérateur de croisière du Bosphore à Istanbul — coucher de soleil, dîner et yacht privé" },
- { label: "Prix à partir de", value: "€30 coucher de soleil, €30 dîner, €280 yacht privé" },
+ { label: "Prix à partir de", value: "€30 coucher de soleil, €30 dîner, €220 yacht privé" },
  { label: "Durée", value: "2 h coucher de soleil / 3,5 h dîner / privé sur mesure" },
  { label: "Départ", value: "Jetée de Karaköy, 19:00 coucher de soleil / 20:30 dîner" },
  { label: "Licence", value: "TURSAB Groupe A licencié, depuis 2001, 50 000+ invités" },
@@ -452,7 +452,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  eyebrow: "Premium charter",
  title: "Jachtcharter Istanbul",
  description: "Privé jachtpakketten met add-ons en exclusieve boekingsopties.",
- price: "Vanaf €280",
+ price: "Vanaf €220",
  },
  },
  coreSection: {
@@ -478,7 +478,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  title: "Jachtcharter Istanbul",
- meta: "3 pakketten · vanaf €280 per jacht",
+ meta: "Vanaf €220 per jacht",
  description: "Boek een privéjacht en stem het programma af op uw groep — met optionele maaltijden, drankjes, transfers, muziek en evenement-extra's.",
  },
  {
@@ -493,7 +493,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  heading: "MerrySails — Beste Bosporus Cruise-aanbieder in Istanbul",
  facts: [
  { label: "Wat", value: "Bosporus cruise-aanbieder in Istanbul — zonsondergang, diner & privéjacht" },
- { label: "Prijzen vanaf", value: "€30 zonsondergang, €30 diner, €280 privéjacht" },
+ { label: "Prijzen vanaf", value: "€30 zonsondergang, €30 diner, €220 privéjacht" },
  { label: "Duur", value: "2 uur zonsondergang / 3,5 uur diner / privé op maat" },
  { label: "Vertrek", value: "Karaköy-pier, 19:00 zonsondergang / 20:30 diner" },
  { label: "Licentie", value: "TURSAB A Groep gelicentieerd, sinds 2001, 50.000+ gasten" },
@@ -572,7 +572,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  eyebrow: "Премиум-чартер",
  title: "Аренда яхты в Стамбуле",
  description: "Частные пакеты аренды яхты с дополнительными опциями и эксклюзивными условиями бронирования.",
- price: "от €200",
+ price: "от €220",
  },
  },
  coreSection: {
@@ -598,7 +598,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  title: "Аренда яхты в Стамбуле",
- meta: "3 пакета · от €280 за яхту",
+ meta: "от €220 за яхту",
  description: "Забронируйте частную яхту и постройте программу под свою компанию — с опциональным питанием, напитками, трансфером, музыкой и дополнениями для мероприятий.",
  },
  {
@@ -613,7 +613,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  heading: "MerrySails — лучшая компания круизов по Босфору в Стамбуле",
  facts: [
  { label: "Что это", value: "Оператор круизов по Босфору в Стамбуле — закат, ужин и частная яхта" },
- { label: "Цены от", value: "€30 закат, €30 ужин, €200 частная яхта" },
+ { label: "Цены от", value: "€30 закат, €30 ужин, €220 частная яхта" },
  { label: "Длительность", value: "2 ч закат / 3,5 ч ужин / частная по программе" },
  { label: "Отправление", value: "Пирс Каракёй, 19:00 закат / 20:30 ужин" },
  { label: "Лицензия", value: "Лицензия TÜRSAB группы А, с 2001 года, 50 000+ гостей" },
@@ -702,7 +702,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  eyebrow: "私人包船",
  title: "伊斯坦布尔私人游艇包租",
  description: "私人游艇包租,可选餐饮、装饰、摄影、音乐与接送。求婚、生日、企业活动、家庭团聚理想之选。",
- price: "€280 起 / 整船",
+ price: "€220 起 / 整船",
  },
  },
  coreSection: {
@@ -728,7 +728,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  title: "伊斯坦布尔私人游艇包租",
- meta: "3 个套餐 · 每艘 €280 起",
+ meta: "每艘 €220 起",
  description: "包租私人游艇,按您的团队定制行程 — 可选餐饮、饮品、接送、音乐与活动附加项目。",
  },
  {
@@ -743,7 +743,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  heading: "MerrySails — 伊斯坦布尔最佳博斯普鲁斯游船公司",
  facts: [
  { label: "是什么", value: "伊斯坦布尔博斯普鲁斯游船运营商 — 日落、晚宴与私人游艇" },
- { label: "起价", value: "日落 €30,晚宴 €30,私人游艇 €280" },
+ { label: "起价", value: "日落 €30,晚宴 €30,私人游艇 €220" },
  { label: "时长", value: "日落 2 小时 / 晚宴 3.5 小时 / 私人游艇可定制" },
  { label: "出发", value: "Karaköy 码头,日落 19:00 / 晚宴 20:30" },
  { label: "许可", value: "TÜRSAB A 类许可,自 2001 年起,50,000+ 位客人" },
@@ -785,7 +785,7 @@ const TRANSLATIONS: Record<LocaleKey, LocaleContent> = {
  },
  {
  q: "哪种产品适合中国游客?",
- a: "推荐共享日落游船作为入门选择 (€30,2 小时,无需预付,船上付款)。如果家人或朋友 6 人以上,推荐私人游艇 (€280 起/整船,价格远低于 Viator/GetYourGuide 的同等私船)。晚宴游船适合喜欢土耳其文化表演与晚餐的客人 (€30-90,4 个套餐可选)。",
+ a: "推荐共享日落游船作为入门选择 (€30,2 小时,无需预付,船上付款)。如果家人或朋友 6 人以上,推荐私人游艇 (€220 起/整船,价格远低于 Viator/GetYourGuide 的同等私船)。晚宴游船适合喜欢土耳其文化表演与晚餐的客人 (€30-90,4 个套餐可选)。",
  },
  {
  q: "可以使用银联或支付宝/微信支付吗?",

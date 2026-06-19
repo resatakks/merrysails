@@ -21,9 +21,9 @@
  *     keywords=[{text:"croisière bosphore istanbul",matchType:"PHRASE"},{text:"croisière istanbul",matchType:"PHRASE"}],
  *     finalUrls=["https://merrysails.com/fr/bosphorus-cruise"],
  *     headlines=["Croisière Bosphore Istanbul","À Partir de €34","Coucher de Soleil Bosphore",
- *                "Dîner Croisière €30","Location Yacht €280","TÜRSAB Certifié 2001",
+ *                "Dîner Croisière €30","Location Yacht €220","TÜRSAB Certifié 2001",
  *                "50 000+ Voyageurs Satisfaits","Réservez Directement","Annulation Gratuite 48h"],
- *     descriptions=["Croisière Bosphore Istanbul : coucher de soleil €34, dîner €30, yacht privé €200. Réservation directe.",
+ *     descriptions=["Croisière Bosphore Istanbul : coucher de soleil €34, dîner €30, yacht privé €220. Réservation directe.",
  *                   "50 000+ clients satisfaits depuis 2001. Licence TÜRSAB. Annulation gratuite 48h avant le départ."]
  */
 import { NextRequest, NextResponse } from "next/server";

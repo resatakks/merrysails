@@ -66,11 +66,16 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 **Type:** Exclusive private charter — entire boat for your group
 **Departure:** Kabataş / Beşiktaş / Bebek (your choice)
 
-| Package | Price | Capacity | Includes |
-|---------|-------|----------|----------|
-| Essential | €280 per boat | Up to 8 guests | Captain, crew, soft drinks, snacks |
-| Premium | €380 per boat | Up to 12 guests | Captain, crew, appetizers, fruit, beverages |
-| VIP | €680 per boat | Up to 20 guests | Captain, crew, full menu, open bar, photographer option |
+Pricing is per vessel (not per person). Each yacht has a 2-hour entry rate and an hourly step-up; a flat 10% discount applies automatically from 3 hours.
+
+| Yacht | 2-hour price | Capacity | Includes |
+|-------|--------------|----------|----------|
+| Boutique Yacht | €220 per boat | Up to 12 guests | Captain, crew, soft drinks, snacks |
+| Premium Yacht | €320 per boat | Up to 15 guests | Captain, crew, soft drinks, snacks |
+| Group Yacht (Standard) | €380 per boat | Up to 40 guests | Captain, crew, soft drinks, snacks |
+| Group Yacht (Signature) | €500 per boat | 15–40 guests | Captain, crew, soft drinks, snacks |
+| Event Yacht | from €1,200 (4h min) | Up to 90 guests | Captain, crew, soft drinks, snacks |
+| Mega Event Yacht | By bespoke quote | Up to 150 guests | Whole-yacht charter for large events |
 
 **Cancellation:** Free cancellation up to 48 hours before
 **Add-ons available:** Wedding proposal decoration, birthday cake, professional photographer, live music, DJ
@@ -85,9 +90,9 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 
 | Boat Type | Hourly Rate | Capacity |
 |-----------|-------------|----------|
-| Motor yacht (small) | From €60/hour | 2–6 persons |
-| Luxury gulet | From €120/hour | 8–15 persons |
-| Large event boat | From €200/hour | Up to 30 persons |
+| Boutique Yacht | €110/hour (from €220 / 2h) | Up to 12 guests |
+| Premium Yacht | €160/hour (from €320 / 2h) | Up to 15 guests |
+| Group Yacht 40 | €190/hour (from €380 / 2h) | Up to 40 guests |
 
 **Minimum rental:** 2 hours
 **Optional extras:** Dinner catering, sunset timing, decoration, photographer
@@ -103,7 +108,7 @@ A: The Bosphorus Sunset Cruise without wine starts at €34 per person. This is 
 A: Dinner cruises start from €30 per person (Silver Soft Drinks). The Silver Alcoholic package is €45/person. Gold VIP packages are €80 (soft drinks) or €90 (unlimited alcohol). Hotel pickup from Sultanahmet or Taksim is included in the Gold Unlimited Alcohol (€90) package.
 
 **Q: How much does a private yacht charter in Istanbul cost?**
-A: Private yacht charter starts from €200 for the entire boat (not per person) for 2 hours, up to 8 guests. The VIP package for larger groups is €680.
+A: Private yacht charter starts from €220 for the entire boat (not per person) for a 2-hour boutique sailing. The per-vessel ladder runs €220 (boutique 12) / €320 (premium 15) / €380 (group 40 Standard) / €500 (group 40 Signature) / from €1,200 (event 90), with the 150-guest mega event yacht by bespoke quote. A flat 10% discount applies from 3 hours.
 
 **Q: Are prices per person or per boat?**
 A: Sunset Cruise and Dinner Cruise prices are per person (shared tours). Yacht Charter and Boat Rental prices are per boat (entire vessel, any number of guests up to capacity).

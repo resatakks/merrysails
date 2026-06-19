@@ -57,9 +57,9 @@ const ROWS: Array<{
     winner: "merrysails",
   },
   {
-    category: "Private yacht charter (Essential 2h)",
-    merrysails: "€280 — entire yacht",
-    viator: "€330-€360 for the same yacht (markup €50-€80)",
+    category: "Private yacht charter (Boutique 2h)",
+    merrysails: "€220 — entire yacht",
+    viator: "€255-€290 for the same yacht (markup €35-€70)",
     winner: "merrysails",
   },
   {
@@ -131,7 +131,7 @@ const faqJsonLd = {
       name: "Does Viator add a markup on Bosphorus cruises?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Viator adds 15-30% markup on the same operator-direct sunset, dinner, and yacht-charter prices. On a €30 MerrySails sunset cruise, Viator lists €36-€42. On a €280 yacht charter, Viator lists €330-€360. The boat, route, captain, and crew are identical — only the price differs.",
+        text: "Yes. Viator adds 15-30% markup on the same operator-direct sunset, dinner, and yacht-charter prices. On a €30 MerrySails sunset cruise, Viator lists €36-€42. On a €220 yacht charter, Viator lists €255-€290. The boat, route, captain, and crew are identical — only the price differs.",
       },
     },
     {
@@ -353,7 +353,7 @@ export default function Page() {
                 href="/yacht-charter-istanbul"
                 className="flex flex-col items-start rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"
               >
-                <span className="text-[11px] font-bold uppercase tracking-wide text-[var(--brand-primary)]">From €200</span>
+                <span className="text-[11px] font-bold uppercase tracking-wide text-[var(--brand-primary)]">From €220</span>
                 <span className="mt-1 font-semibold text-[var(--heading)]">Yacht charter direct</span>
                 <span className="mt-2 inline-flex items-center text-sm font-semibold text-[var(--brand-primary)]">
                   See the fleet <ArrowRight className="ml-1 h-3.5 w-3.5" />

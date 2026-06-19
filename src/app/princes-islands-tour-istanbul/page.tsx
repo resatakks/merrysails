@@ -11,7 +11,7 @@ const canonicalUrl = `${SITE_URL}/princes-islands-tour-istanbul`;
 export const metadata: Metadata = {
   title: "Princes Islands Tour Istanbul — €45 or Yacht",
   description:
-    "Princes Islands tour from Istanbul 2026 — shared full-day €45 (ferry + guide + lunch) or private yacht charter from €280. Büyükada, Heybeliada, car-free islands.",
+    "Princes Islands tour from Istanbul 2026 — shared full-day €45 (ferry + guide + lunch) or private yacht charter from €220. Büyükada, Heybeliada, car-free islands.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/princes-islands-tour-istanbul"),
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Princes Islands Tour Istanbul — €45 or Yacht",
     description:
-      "Two ways to visit the Princes Islands from Istanbul: shared 8-hour ferry tour at €45 or private yacht charter from €280. Compare both formats.",
+      "Two ways to visit the Princes Islands from Istanbul: shared 8-hour ferry tour at €45 or private yacht charter from €220. Compare both formats.",
     url: canonicalUrl,
     type: "article",
     images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: "Princes Islands Tour Istanbul — MerrySails" }],
@@ -68,7 +68,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Princes Islands shared ferry tour vs private yacht — which one is better?",
-    a: "Shared ferry tour (€45/person) is best for solo travellers, couples on a budget and visitors who want a guide and lunch handled. Private yacht charter (€280+ for the whole boat, 2-hour minimum, full-day available) is better for groups of 4+, families, or anyone wanting flexibility — pick your islands, your stops, your timing, and bring catering on board.",
+    a: "Shared ferry tour (€45/person) is best for solo travellers, couples on a budget and visitors who want a guide and lunch handled. Private yacht charter (€220+ for the whole boat, 2-hour minimum, full-day available) is better for groups of 4+, families, or anyone wanting flexibility — pick your islands, your stops, your timing, and bring catering on board.",
   },
   {
     q: "When is the best time of year to visit the Princes Islands?",
@@ -80,7 +80,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is there a private yacht charter from Istanbul that visits the Princes Islands?",
-    a: "Yes — MerrySails offers private full-day yacht charters from Kuruçeşme Marina or Kabataş. A typical Princes Islands yacht day is 6–8 hours starting from €280 for up to 8 guests (Essential package), with stops at Büyükada, Heybeliada and your choice of swim cove. Larger yachts available for groups up to 150.",
+    a: "Yes — MerrySails offers private full-day yacht charters from Kuruçeşme Marina or Kabataş. A typical Princes Islands yacht day is 6–8 hours starting from €220 for up to 12 guests (Boutique yacht), with stops at Büyükada, Heybeliada and your choice of swim cove. Larger yachts available for groups up to 150.",
   },
 ];
 
@@ -89,7 +89,7 @@ const pageSchema = {
   "@type": "TouristAttraction",
   name: "Princes Islands Tour from Istanbul",
   description:
-    "Two ways to visit the Princes Islands from Istanbul: shared guided ferry day tour at €45 or private yacht charter from €280. Büyükada, Heybeliada, Burgazada and Kınalıada — Istanbul's car-free archipelago.",
+    "Two ways to visit the Princes Islands from Istanbul: shared guided ferry day tour at €45 or private yacht charter from €220. Büyükada, Heybeliada, Burgazada and Kınalıada — Istanbul's car-free archipelago.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   isAccessibleForFree: false,
@@ -143,7 +143,7 @@ export default function PrincesIslandsPillarPage() {
           <p className="text-base sm:text-lg text-[var(--body-text)] max-w-3xl">
             <strong>TL;DR.</strong> Two ways to visit Istanbul&apos;s car-free Princes Islands: a shared full-day
             ferry tour at <strong>€45/person</strong> (8 hours, lunch + guide included) or a private
-            yacht charter from <strong>€280</strong> for up to 8 guests (flexible 6–8 hour day, pick
+            yacht charter from <strong>€220</strong> for up to 12 guests (flexible 6–8 hour day, pick
             your islands and swim coves). The four inhabited islands — Büyükada, Heybeliada,
             Burgazada, Kınalıada — have no private cars, only bicycles, electric shuttles and
             walking paths.
@@ -159,7 +159,7 @@ export default function PrincesIslandsPillarPage() {
               href="/yacht-charter-istanbul"
               className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)] px-5 py-3 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand)]/5 transition"
             >
-              Private yacht from €280 <ArrowRight className="w-4 h-4" />
+              Private yacht from €220 <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href={`${WHATSAPP_URL}?text=${encodeURIComponent("Hi MerrySails — I'd like to plan a Princes Islands day trip. Dates: [date], guests: [N]. Shared tour or private yacht?")}`}
@@ -198,10 +198,10 @@ export default function PrincesIslandsPillarPage() {
               <Anchor className="w-5 h-5" />
               <span className="text-xs font-bold uppercase tracking-wide">Private yacht charter</span>
             </div>
-            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">From €280 per yacht</h3>
+            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">From €220 per yacht</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>6–8 hours flexible · pick start time</span></li>
-              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2–150 guests (Essential 8-guest yacht)</span></li>
+              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2–150 guests (Boutique 12-guest yacht)</span></li>
               <li className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Your route — Büyükada, Heybeliada, swim coves</span></li>
               <li className="flex gap-2"><Trees className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Captain + crew included, catering optional</span></li>
             </ul>

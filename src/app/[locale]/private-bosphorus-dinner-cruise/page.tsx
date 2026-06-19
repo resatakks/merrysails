@@ -93,7 +93,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     tableRows: [
       { label: "Tekne tipi", value: "Özel yat (sadece sizin grubunuz)" },
       { label: "Grup boyutu", value: "2–10 kişi (çift veya küçük grup)" },
-      { label: "Başlangıç fiyatı", value: "€280'den itibaren paketler" },
+      { label: "Başlangıç fiyatı", value: "€220'den itibaren (yat başına)" },
       { label: "Kalkış saati", value: "Gün batımı veya akşam — esnek" },
       { label: "Lisans", value: "TÜRSAB A Grubu lisanslı (2001'den beri)" },
     ],
@@ -160,7 +160,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     tableRows: [
       { label: "Bootstyp", value: "Privatyacht – ausschließlich für Ihre Gruppe" },
       { label: "Gruppengröße", value: "2–10 Personen (Paar oder kleine Gruppe)" },
-      { label: "Ab-Preis", value: "Pakete ab €280" },
+      { label: "Ab-Preis", value: "Ab €220 pro Yacht" },
       { label: "Abfahrt", value: "Sonnenuntergang oder Abend – flexibel" },
       { label: "Lizenz", value: "TÜRSAB A-Gruppe lizenziert seit 2001" },
     ],
@@ -227,7 +227,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     tableRows: [
       { label: "Type de bateau", value: "Yacht privé – réservé à votre groupe" },
       { label: "Taille du groupe", value: "2 à 10 personnes (couple ou petit groupe)" },
-      { label: "Prix de départ", value: "Forfaits à partir de €200" },
+      { label: "Prix de départ", value: "À partir de €220 par yacht" },
       { label: "Heure de départ", value: "Coucher du soleil ou soirée — flexible" },
       { label: "Licence", value: "Agréé TÜRSAB Groupe A depuis 2001" },
     ],
@@ -294,7 +294,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     tableRows: [
       { label: "Type boot", value: "Privéjacht – uitsluitend voor uw groep" },
       { label: "Groepsgrootte", value: "2 tot 10 personen (stel of kleine groep)" },
-      { label: "Vanaf-prijs", value: "Pakketten vanaf €280" },
+      { label: "Vanaf-prijs", value: "Vanaf €220 per jacht" },
       { label: "Vertrektijd", value: "Zonsondergang of avond — flexibel" },
       { label: "Licentie", value: "TÜRSAB A-categorie gecertificeerd sinds 2001" },
     ],
@@ -361,7 +361,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
     tableRows: [
       { label: "Тип судна", value: "Частная яхта — только для вашей группы" },
       { label: "Размер группы", value: "От 2 до 10 человек (пара или небольшая группа)" },
-      { label: "Цена от", value: "Пакеты от €280" },
+      { label: "Цена от", value: "От €220 за яхту" },
       { label: "Время отправления", value: "Закат или вечер — гибко" },
       { label: "Лицензия", value: "Категория TÜRSAB A, сертифицировано с 2001 года" },
     ],
@@ -388,7 +388,7 @@ const COMPARE_LINKS_BY_LOCALE: Record<
     {
       href: "/yacht-charter-istanbul",
       title: "Özel Yat Kiralama",
-      description: "Dinner odaklı değil, esnek özel yat paketleri €280'den itibaren.",
+      description: "Dinner odaklı değil, esnek özel yat kiralama €220'den itibaren.",
     },
     {
       href: "/boat-rental-istanbul",
@@ -405,7 +405,7 @@ const COMPARE_LINKS_BY_LOCALE: Record<
     {
       href: "/yacht-charter-istanbul",
       title: "Privater Yacht-Charter",
-      description: "Komplett private Yacht-Pakete ab €280 – flexibler als ein reines Dinner-Format.",
+      description: "Komplett privater Yacht-Charter ab €220 – flexibler als ein reines Dinner-Format.",
     },
     {
       href: "/boat-rental-istanbul",
@@ -422,7 +422,7 @@ const COMPARE_LINKS_BY_LOCALE: Record<
     {
       href: "/yacht-charter-istanbul",
       title: "Location de Yacht Privé",
-      description: "Yachts entièrement privés à partir de €200, plus flexibles qu'un dîner classique.",
+      description: "Yachts entièrement privés à partir de €220, plus flexibles qu'un dîner classique.",
     },
     {
       href: "/boat-rental-istanbul",
@@ -439,7 +439,7 @@ const COMPARE_LINKS_BY_LOCALE: Record<
     {
       href: "/yacht-charter-istanbul",
       title: "Privé Jachtcharter",
-      description: "Volledig privé jachtpakketten vanaf €280 – flexibeler dan een vast dinerformat.",
+      description: "Volledig privé jachtcharter vanaf €220 – flexibeler dan een vast dinerformat.",
     },
     {
       href: "/boat-rental-istanbul",
@@ -456,7 +456,7 @@ const COMPARE_LINKS_BY_LOCALE: Record<
     {
       href: "/yacht-charter-istanbul",
       title: "Частная аренда яхты",
-      description: "Полностью приватные пакеты яхт от €280 — гибче, чем фиксированный формат ужина.",
+      description: "Полностью приватная аренда яхты от €220 — гибче, чем фиксированный формат ужина.",
     },
     {
       href: "/boat-rental-istanbul",

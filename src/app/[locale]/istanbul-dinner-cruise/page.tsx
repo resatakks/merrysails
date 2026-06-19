@@ -171,7 +171,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/yacht-charter-istanbul",
  title: "Özel Yat Kiralama",
- desc: "€280'den başlayan tam özel yat deneyimi.",
+ desc: "€220'den başlayan tam özel yat deneyimi.",
  },
  {
  href: "/istanbul-dinner-cruise",
@@ -333,7 +333,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/yacht-charter-istanbul",
  title: "Privater Yacht-Charter",
- desc: "Komplett private Yacht-Erlebnisse ab €280.",
+ desc: "Komplett private Yacht-Erlebnisse ab €220.",
  },
  {
  href: "/istanbul-dinner-cruise",
@@ -439,7 +439,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/yacht-charter-istanbul",
  title: "Location de Yacht Privé",
- desc: "Expérience yacht 100 % privée à partir de €200.",
+ desc: "Expérience yacht 100 % privée à partir de €220.",
  },
  {
  href: "/istanbul-dinner-cruise",
@@ -545,7 +545,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/yacht-charter-istanbul",
  title: "Privé Jachtcharter",
- desc: "Volledig private jachtervaring vanaf €280.",
+ desc: "Volledig private jachtervaring vanaf €220.",
  },
  {
  href: "/istanbul-dinner-cruise",
@@ -650,7 +650,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/ru/yacht-charter-istanbul",
  title: "Частная аренда яхты",
- desc: "Полностью приватные пакеты яхты от €200.",
+ desc: "Полностью приватная аренда яхты от €220.",
  },
  {
  href: "/istanbul-dinner-cruise",
@@ -759,7 +759,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  href: "/zh/yacht-charter-istanbul",
  title: "私人游艇包租",
- desc: "€280 起的完全私人游艇包租。",
+ desc: "€220 起的完全私人游艇包租。",
  },
  {
  href: "/istanbul-dinner-cruise",

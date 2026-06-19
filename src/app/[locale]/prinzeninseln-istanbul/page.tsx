@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Prinzeninseln Tour Istanbul — ab €45",
     description:
-      "Prinzeninseln-Tour ab Istanbul 2026 — geteilter Ganztagsausflug €45 (Fähre + Guide + Mittag) oder private Yacht ab €280. Büyükada, Heybeliada, autofreie Inseln.",
+      "Prinzeninseln-Tour ab Istanbul 2026 — geteilter Ganztagsausflug €45 (Fähre + Guide + Mittag) oder private Yacht ab €220. Büyükada, Heybeliada, autofreie Inseln.",
     alternates: {
       canonical: canonicalUrl,
       languages: undefined,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: "Prinzeninseln Tour Istanbul — ab €45",
       description:
-        "Zwei Wege auf die Prinzeninseln ab Istanbul: 8-Stunden-Gruppenausflug €45 oder private Yacht ab €280. Beide Formate im Vergleich.",
+        "Zwei Wege auf die Prinzeninseln ab Istanbul: 8-Stunden-Gruppenausflug €45 oder private Yacht ab €220. Beide Formate im Vergleich.",
       url: canonicalUrl,
       type: "article",
     },
@@ -78,7 +78,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Gruppenfähre oder Privatyacht — was ist besser?",
-    a: "Gruppenfähre (€45/Person) ist ideal für Alleinreisende, Paare mit Budget und Besucher, die Guide und Mittagessen erledigt haben möchten. Private Yacht (€280+ für die ganze Yacht, 2 Std. Minimum, Ganztag möglich) eignet sich besser für Gruppen ab 4 Personen, Familien oder alle, die Flexibilität wollen — Sie wählen Ihre Inseln, Stopps und Timing, Catering an Bord möglich.",
+    a: "Gruppenfähre (€45/Person) ist ideal für Alleinreisende, Paare mit Budget und Besucher, die Guide und Mittagessen erledigt haben möchten. Private Yacht (€220+ für die ganze Yacht, 2 Std. Minimum, Ganztag möglich) eignet sich besser für Gruppen ab 4 Personen, Familien oder alle, die Flexibilität wollen — Sie wählen Ihre Inseln, Stopps und Timing, Catering an Bord möglich.",
   },
   {
     q: "Wann ist die beste Reisezeit für die Prinzeninseln?",
@@ -90,7 +90,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Gibt es eine private Yacht-Charter ab Istanbul zu den Prinzeninseln?",
-    a: "Ja — MerrySails bietet private Ganztagscharter ab Kuruçeşme Marina oder Kabataş. Ein typischer Prinzeninseln-Yachttag dauert 6-8 Stunden ab €280 für bis zu 8 Gäste (Essential-Paket), mit Stopps an Büyükada, Heybeliada und einer Schwimmbucht Ihrer Wahl. Größere Yachten für Gruppen bis 150.",
+    a: "Ja — MerrySails bietet private Ganztagscharter ab Kuruçeşme Marina oder Kabataş. Ein typischer Prinzeninseln-Yachttag dauert 6-8 Stunden ab €220 für bis zu 12 Gäste (Boutique-Yacht), mit Stopps an Büyükada, Heybeliada und einer Schwimmbucht Ihrer Wahl. Größere Yachten für Gruppen bis 150.",
   },
 ];
 
@@ -99,7 +99,7 @@ const pageSchema = {
   "@type": "TouristAttraction",
   name: "Prinzeninseln Tour ab Istanbul",
   description:
-    "Zwei Wege, die Prinzeninseln ab Istanbul zu besuchen: geteilter geführter Ganztagsfährausflug €45 oder private Yacht ab €280. Büyükada, Heybeliada, Burgazada und Kınalıada — der autofreie Archipel Istanbuls.",
+    "Zwei Wege, die Prinzeninseln ab Istanbul zu besuchen: geteilter geführter Ganztagsfährausflug €45 oder private Yacht ab €220. Büyükada, Heybeliada, Burgazada und Kınalıada — der autofreie Archipel Istanbuls.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   isAccessibleForFree: false,
@@ -155,7 +155,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           <p className="text-base sm:text-lg text-[var(--body-text)] max-w-3xl">
             <strong>Kurz gesagt.</strong> Zwei Wege auf Istanbuls autofreie Prinzeninseln: ein
             geteilter Ganztags-Fährausflug für <strong>€45/Person</strong> (8 Std., Mittagessen +
-            Guide inkl.) oder ein privater Yacht-Charter ab <strong>€280</strong> für bis zu 8
+            Guide inkl.) oder ein privater Yacht-Charter ab <strong>€220</strong> für bis zu 12
             Gäste (flexibler 6-8-Stunden-Tag, Inseln und Schwimmbuchten frei wählbar). Die vier
             bewohnten Inseln — Büyükada, Heybeliada, Burgazada, Kınalıada — sind autofrei und
             werden nur per Fahrrad, Elektrofahrzeug oder zu Fuß erkundet.
@@ -165,7 +165,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               Gruppentour ab €45 <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/de/yacht-charter-istanbul" className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)] px-5 py-3 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand)]/5 transition">
-              Private Yacht ab €280 <ArrowRight className="w-4 h-4" />
+              Private Yacht ab €220 <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white hover:brightness-110 transition">
               WhatsApp +90 544 898 98 12
@@ -198,10 +198,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               <Anchor className="w-5 h-5" />
               <span className="text-xs font-bold uppercase tracking-wide">Private Yacht-Charter</span>
             </div>
-            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">Ab €280 / Yacht</h3>
+            <h3 className="text-xl font-bold text-[var(--heading)] mb-2">Ab €220 / Yacht</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>6-8 Stunden flexibel · Startzeit frei wählbar</span></li>
-              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 Gäste (Essential für 8 Gäste)</span></li>
+              <li className="flex gap-2"><Users className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>2-150 Gäste (Boutique bis 12 Gäste)</span></li>
               <li className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Ihre Route — Büyükada, Heybeliada, Schwimmbuchten</span></li>
               <li className="flex gap-2"><Trees className="w-4 h-4 mt-0.5 text-[var(--text-muted)]" /><span>Kapitän + Crew inklusive, Catering optional</span></li>
             </ul>

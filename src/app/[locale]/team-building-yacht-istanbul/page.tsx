@@ -328,7 +328,7 @@ export default async function TeamBuildingYachtLocalePage({
     offers: {
       "@type": "Offer",
       ...OFFER_MERCHANT_DEFAULTS,
-      price: "280",
+      price: "220",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },

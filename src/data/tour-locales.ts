@@ -194,7 +194,7 @@ const overrides: TourLocaleOverrides = {
         "Kız Kulesi",
       ],
       importantNotes: [
-        "Fiyatlar yat tipine göre değişir: butik (€200-280/2sa), orta grup (€380-450/2sa), event-yatı (€680+/2sa). Tam fiyat WhatsApp talebinde grup büyüklüğü ve program detayına göre verilir.",
+        "Fiyatlar tekne başınadır ve seçilen yata göre değişir: 12 kişilik butik yat €220/2sa, 15 kişilik premium yat €320/2sa, 40 kişilik grup yatı €380/2sa (Standart) veya €500/2sa (Signature), 90 kişilik etkinlik yatı €1.200'den (4 saat), 150 kişilik mega etkinlik yatı özel teklifle. 3 saatten itibaren otomatik %10 indirim. Tam fiyat WhatsApp talebinde grup büyüklüğü ve program detayına göre verilir.",
         "3 saatten itibaren toplam tutar üzerinden sabit %10 indirim otomatik uygulanır.",
         "Catering, alkol, DJ, fotoğrafçı gibi ekstralar deck fiyatına dahil değildir — istek doğrultusunda ayrı tekliftedir.",
         "Düğün, evlilik teklifi veya kurumsal etkinlik için 2-3 hafta önceden rezervasyon önerilir (sezon yaz aylarında dolar).",

@@ -407,7 +407,7 @@ export default function BoatRentalIstanbulPage() {
  <tbody>
  {[
  { fact: "Operator", detail: "MerrySails — TURSAB A-Group licensed since 2001" },
- { fact: "Fleet", detail: "Private yachts from €200/day, up to 12 guests" },
+ { fact: "Fleet", detail: "Private yachts from €220 per charter, up to 12 guests" },
  { fact: "Guests hosted", detail: "50,000+ since 2001" },
  { fact: "Booking", detail: "Direct at merrysails.com — no OTA markup" },
  { fact: "Guest rating", detail: "4.9 / 5 based on 150+ reviews" },

@@ -36,7 +36,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "İstanbul'da Boğaz turu fiyatı ne kadar?",
-        a: "Fiyatlar seçtiğiniz deneyime göre değişir. Boğaz Gün Batımı Turu şarapsız seçenekte Pazartesi, Salı ve Perşembe günleri EUR 30, diğer günler EUR 34, şarap servisli seçenekte Sal & Per EUR 35, diğer günler EUR 40'tan başlar. Boğaz Akşam Yemeği Turu, dört paylaşımlı paket arasında EUR 30 ile EUR 90 arasında değişir ve İstanbul Yat Kiralama yat başına EUR 280'den başlar. Evlilik teklifi, özel akşam yemeği, tekne kiralama ve kurumsal etkinlikler talep ettiğiniz kuruluma göre fiyatlandırılır.",
+        a: "Fiyatlar seçtiğiniz deneyime göre değişir. Boğaz Gün Batımı Turu şarapsız seçenekte Pazartesi, Salı ve Perşembe günleri EUR 30, diğer günler EUR 34, şarap servisli seçenekte Sal & Per EUR 35, diğer günler EUR 40'tan başlar. Boğaz Akşam Yemeği Turu, dört paylaşımlı paket arasında EUR 30 ile EUR 90 arasında değişir ve İstanbul Yat Kiralama yat başına EUR 220'den başlar. Evlilik teklifi, özel akşam yemeği, tekne kiralama ve kurumsal etkinlikler talep ettiğiniz kuruluma göre fiyatlandırılır.",
       },
       {
         q: "Boğaz tekne turu nasıl rezerve edilir?",
@@ -56,7 +56,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Boğaz'da özel yat kiralayabilir miyim?",
-        a: "Evet. İstanbul Yat Kiralama üç özel yat paketi sunar; düzenlemek istediğiniz etkinliğin türüne göre yemek, içecek, transfer, dekorasyon veya eğlence ekleyebilirsiniz.",
+        a: "Evet. İstanbul Yat Kiralama altı yatlık bir filoyu yat başına fiyatlarla sunar; düzenlemek istediğiniz etkinliğin türüne göre yemek, içecek, transfer, dekorasyon veya eğlence ekleyebilirsiniz.",
       },
       {
         q: "Tekneler nereden kalkıyor?",
@@ -102,7 +102,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "Wie viel kostet eine Bosporus-Kreuzfahrt in Istanbul?",
-        a: "Die Preise hängen vom gewählten Erlebnis ab. Die Bosporus-Sonnenuntergangs-Kreuzfahrt beginnt ab EUR 30 (jeden Montag, Dienstag und Donnerstag) bzw. EUR 34 (andere Tage) für die Variante ohne Wein und EUR 40 für die Variante mit Weinservice. Die Bosporus-Dinner-Kreuzfahrt liegt zwischen EUR 30 und EUR 90 in vier geteilten Paketen, und der Jachtcharter Istanbul beginnt bei EUR 200 pro Jacht. Heiratsanträge, private Dinner, Bootsverleih und Firmenevents werden je nach gewünschtem Setup individuell kalkuliert.",
+        a: "Die Preise hängen vom gewählten Erlebnis ab. Die Bosporus-Sonnenuntergangs-Kreuzfahrt beginnt ab EUR 30 (jeden Montag, Dienstag und Donnerstag) bzw. EUR 34 (andere Tage) für die Variante ohne Wein und EUR 40 für die Variante mit Weinservice. Die Bosporus-Dinner-Kreuzfahrt liegt zwischen EUR 30 und EUR 90 in vier geteilten Paketen, und der Jachtcharter Istanbul beginnt bei EUR 220 pro Jacht. Heiratsanträge, private Dinner, Bootsverleih und Firmenevents werden je nach gewünschtem Setup individuell kalkuliert.",
       },
       {
         q: "Wie buche ich eine Bosporus-Bootstour?",
@@ -168,7 +168,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "Combien coûte une croisière sur le Bosphore à Istanbul ?",
-        a: "Les prix dépendent de l'expérience choisie. La croisière coucher de soleil sur le Bosphore commence à partir de EUR 30 (chaque lundi, mardi et jeudi) ou EUR 34 (autres jours) pour l'option sans vin et EUR 40 pour l'option avec vin. La croisière dîner sur le Bosphore varie de EUR 30 à EUR 90 sur quatre formules partagées, et le charter de yacht à Istanbul commence à EUR 200 par yacht. Les demandes en mariage, dîners privés, locations de bateau et événements d'entreprise sont tarifés selon la configuration demandée.",
+        a: "Les prix dépendent de l'expérience choisie. La croisière coucher de soleil sur le Bosphore commence à partir de EUR 30 (chaque lundi, mardi et jeudi) ou EUR 34 (autres jours) pour l'option sans vin et EUR 40 pour l'option avec vin. La croisière dîner sur le Bosphore varie de EUR 30 à EUR 90 sur quatre formules partagées, et le charter de yacht à Istanbul commence à EUR 220 par yacht. Les demandes en mariage, dîners privés, locations de bateau et événements d'entreprise sont tarifés selon la configuration demandée.",
       },
       {
         q: "Comment réserver une excursion en bateau sur le Bosphore ?",
@@ -234,7 +234,7 @@ const CONTENT: Record<string, LocaleContent> = {
     faqs: [
       {
         q: "Hoeveel kost een Bosporus cruise in Istanbul?",
-        a: "Prijzen zijn afhankelijk van de gekozen ervaring. De Bosporus Zonsondergang Cruise begint vanaf EUR 30 (elke maandag, dinsdag en donderdag) of EUR 34 (andere dagen) voor de optie zonder wijn en EUR 40 voor de optie met wijnservice. De Bosporus Diner Cruise loopt van EUR 30 tot EUR 90 in vier gedeelde pakketten, en Jachtcharter Istanbul begint vanaf EUR 200 per jacht. Huwelijksaanzoeken, privédiners, boothuur en bedrijfsevenementen worden geprijsd volgens de gewenste opzet.",
+        a: "Prijzen zijn afhankelijk van de gekozen ervaring. De Bosporus Zonsondergang Cruise begint vanaf EUR 30 (elke maandag, dinsdag en donderdag) of EUR 34 (andere dagen) voor de optie zonder wijn en EUR 40 voor de optie met wijnservice. De Bosporus Diner Cruise loopt van EUR 30 tot EUR 90 in vier gedeelde pakketten, en Jachtcharter Istanbul begint vanaf EUR 220 per jacht. Huwelijksaanzoeken, privédiners, boothuur en bedrijfsevenementen worden geprijsd volgens de gewenste opzet.",
       },
       {
         q: "Hoe boek ik een Bosporus boottocht?",
@@ -254,7 +254,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Kan ik een privéjacht huren op de Bosporus?",
-        a: "Ja. Jachtcharter Istanbul biedt drie privéjachtpakketten en u kunt maaltijden, dranken, transfer, decoratie of vermaak toevoegen, afhankelijk van het type evenement dat u wilt organiseren.",
+        a: "Ja. Jachtcharter Istanbul biedt een vloot van zes jachten met prijs per jacht en u kunt maaltijden, dranken, transfer, decoratie of vermaak toevoegen, afhankelijk van het type evenement dat u wilt organiseren.",
       },
       {
         q: "Waar vertrekken de boten?",

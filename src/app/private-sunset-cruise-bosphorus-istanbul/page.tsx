@@ -23,14 +23,14 @@ const tour = requireTour("private-bosphorus-sunset-cruise", "Private Sunset Crui
 
 export const metadata: Metadata = {
   title: "Private Sunset Cruise Bosphorus Istanbul",
-  description: "Private Bosphorus sunset cruise from €280 — the whole yacht for your group at golden hour, with Premium and VIP tiers. MerrySails, TURSAB-licensed.",
+  description: "Private Bosphorus sunset cruise from €220 — the whole yacht for your group at golden hour, per-vessel pricing. MerrySails, TURSAB-licensed.",
   alternates: {
     canonical: canonicalUrl,
     languages: buildHreflang("/private-sunset-cruise-bosphorus-istanbul"),
   },
   openGraph: {
     title: "Private Sunset Cruise Bosphorus Istanbul",
-    description: "Private Bosphorus sunset cruise from €280 — the whole yacht for your group at golden hour, with Premium and VIP tiers. MerrySails, TURSAB-licensed.",
+    description: "Private Bosphorus sunset cruise from €220 — the whole yacht for your group at golden hour, per-vessel pricing. MerrySails, TURSAB-licensed.",
     url: canonicalUrl,
     type: "website",
     images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: "Private Sunset Cruise on the Bosphorus, Istanbul — MerrySails" }],
@@ -41,7 +41,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Private Sunset Cruise on the Bosphorus, Istanbul",
-  description: "Private Bosphorus sunset cruise from €280 — the whole yacht for your group at golden hour, with Premium and VIP tiers. MerrySails, TURSAB-licensed.",
+  description: "Private Bosphorus sunset cruise from €220 — the whole yacht for your group at golden hour, per-vessel pricing. MerrySails, TURSAB-licensed.",
   url: canonicalUrl,
   image: `${SITE_URL}/og-image.jpg`,
   provider: { "@id": `${SITE_URL}/#organization` },
@@ -53,7 +53,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Private Sunset Cruise on the Bosphorus, Istanbul",
-  description: "Private Bosphorus sunset cruise from €280 — the whole yacht for your group at golden hour, with Premium and VIP tiers. MerrySails, TURSAB-licensed.",
+  description: "Private Bosphorus sunset cruise from €220 — the whole yacht for your group at golden hour, per-vessel pricing. MerrySails, TURSAB-licensed.",
   image: Array.from(new Set([tour.image, ...(tour.gallery ?? [])])).slice(0, 6),
   sku: "merrysails-private-sunset-cruise-bosphorus-istanbul",
   category: "Private Sunset Cruise on the Bosphorus, Istanbul",
@@ -84,7 +84,7 @@ const breadcrumbSchema = {
 const faqItems = [
   {
     "q": "What does a private sunset cruise cost in Istanbul?",
-    "a": "Essential is €280 for the whole yacht for two hours, Premium is €380 with a larger boat and snacks, and VIP is €680 with a high-end yacht, a food plate and a roomier deck. Every tier is priced per boat, not per head."
+    "a": "The Boutique yacht is €220 for the whole yacht for two hours (up to 12 guests); the Premium yacht is €320 with a larger deck and snacks (up to 15 guests). Larger group and event yachts go up to €600 for the 90-guest vessel. Every yacht is priced per boat, not per head, with 10% off from three hours."
   },
   {
     "q": "Is the sunset cruise private to my group?",
@@ -164,12 +164,12 @@ export default function Page() {
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h1 className="mb-4 text-3xl font-bold leading-tight text-[var(--heading)] md:text-5xl">Private Sunset Cruise on the Bosphorus, Istanbul</h1>
-              <QuickAnswer locale="en" title={"Private Sunset Cruise on the Bosphorus, Istanbul"} question={"How much is a private sunset cruise on the Bosphorus in Istanbul?"} content={"A private Bosphorus sunset cruise with MerrySails starts at €280 for the whole yacht (Essential, two hours), rising to €380 Premium and €680 VIP for a larger vessel, snacks and a food plate. Your group sails alone at golden hour with a captain and crew, departing as the light softens over the strait. Photographer, violinist and wine are optional add-ons."} />
+              <QuickAnswer locale="en" title={"Private Sunset Cruise on the Bosphorus, Istanbul"} question={"How much is a private sunset cruise on the Bosphorus in Istanbul?"} content={"A private Bosphorus sunset cruise with MerrySails starts at €220 for the whole yacht (Boutique, up to 12 guests, two hours), rising to €320 on the larger Premium yacht (up to 15 guests); bigger group and event yachts are available up to €600. Your group sails alone at golden hour with a captain and crew, departing as the light softens over the strait. Photographer, violinist and wine are optional add-ons."} />
               <p className="page-intro mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">Some sunsets are worth keeping to yourselves. This is the private charter — the whole yacht is yours, the crew handles the sail, and you watch golden hour fall over the Bosphorus without sharing a deck with anyone.</p>
               <div className="mb-6 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-4">
                 <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">Private sunset from</p>
-                <p className="text-3xl font-bold text-[var(--heading)]">EUR 280</p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">Whole-yacht charter for the golden-hour window. Premium and VIP step up the vessel and add snacks and a food plate.</p>
+                <p className="text-3xl font-bold text-[var(--heading)]">EUR 220</p>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">Whole-yacht charter for the golden-hour window. Larger vessels and add-ons such as snacks and a food plate are arranged on request.</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link href="/cruises/private-bosphorus-sunset-cruise" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">

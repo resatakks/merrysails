@@ -18,7 +18,7 @@ import StickyMobileCta from "@/components/ui/StickyMobileCta";
 export const metadata: Metadata = {
   title: "Bosphorus Cruise for Couples Istanbul",
   description:
-    "Bosphorus cruise for couples in Istanbul — sunset €30 (Mon/Tue/Thu), private dinner cruise €280, proposal/anniversary yacht. Direct booking, no OTA markup.",
+    "Bosphorus cruise for couples in Istanbul — sunset €30 (Mon/Tue/Thu), private dinner cruise €220, proposal/anniversary yacht. Direct booking, no OTA markup.",
   alternates: {
     canonical: `${SITE_URL}/bosphorus-cruise-for-couples`,
     languages: buildHreflang("/bosphorus-cruise-for-couples"),
@@ -48,14 +48,14 @@ const PRODUCTS = [
     badge: null,
   },
   {
-    title: "Private dinner on a yacht (€280+)",
+    title: "Private dinner on a yacht (€220+)",
     desc: "Just the two of you (or the two of you + your closest people). The whole yacht is reserved — no other guests, custom timing, menu chosen at booking. Best for milestone evenings.",
     href: "/private-bosphorus-dinner-cruise",
     icon: Heart,
     badge: "Premium",
   },
   {
-    title: "Proposal yacht (€280+)",
+    title: "Proposal yacht (€220+)",
     desc: "If the cruise IS the proposal moment — full surprise styling, photographer, violinist on boarding, route timed to sunset. Different intent from anniversary; same yacht fleet.",
     href: "/proposal-yacht-rental-istanbul",
     icon: Music,
@@ -76,7 +76,7 @@ const faqJsonLd = {
       name: "Which Bosphorus cruise is best for couples?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Three options work well. For a light first-night experience, the shared sunset cruise (€30 Mon/Tue/Thu, €34 other days) covers 2 hours of golden hour without a dinner commitment. For a full evening, the shared dinner cruise (€30-€90 four-tier ladder) bundles dinner, entertainment, and hotel pickup. For a milestone evening or proposal, the private yacht charter (€280+) reserves the whole boat for just the two of you.",
+        text: "Three options work well. For a light first-night experience, the shared sunset cruise (€30 Mon/Tue/Thu, €34 other days) covers 2 hours of golden hour without a dinner commitment. For a full evening, the shared dinner cruise (€30-€90 four-tier ladder) bundles dinner, entertainment, and hotel pickup. For a milestone evening or proposal, the private yacht charter (€220+) reserves the whole boat for just the two of you.",
       },
     },
     {
@@ -84,7 +84,7 @@ const faqJsonLd = {
       name: "Is the shared dinner cruise too crowded for a romantic evening?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It depends on the format you want. Shared dinner cruise has other couples and small groups on the same boat — the atmosphere is festive (live Turkish night entertainment), not silent or restaurant-quiet. If you want a quieter, just-the-two-of-you setting, choose the private dinner cruise on a yacht (€280+) — same Bosphorus route, no shared seating.",
+        text: "It depends on the format you want. Shared dinner cruise has other couples and small groups on the same boat — the atmosphere is festive (live Turkish night entertainment), not silent or restaurant-quiet. If you want a quieter, just-the-two-of-you setting, choose the private dinner cruise on a yacht (€220+) — same Bosphorus route, no shared seating.",
       },
     },
     {
@@ -92,7 +92,7 @@ const faqJsonLd = {
       name: "What's the price difference for couples between shared and private?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For 2 guests: shared sunset cruise = €60-€68 total. Shared dinner cruise Silver Soft = €60 total. Private 2-hour yacht charter = €280 total (the whole yacht, regardless of group size). So the upgrade to private is roughly 4-5x for shared, but you get exclusive use of the vessel, custom timing, and no other guests onboard.",
+        text: "For 2 guests: shared sunset cruise = €60-€68 total. Shared dinner cruise Silver Soft = €60 total. Private 2-hour yacht charter = €220 total (the whole yacht, regardless of group size). So the upgrade to private is roughly 4-5x for shared, but you get exclusive use of the vessel, custom timing, and no other guests onboard.",
       },
     },
     {
@@ -161,7 +161,7 @@ export default function Page() {
               Three formats fit couples differently. The shared sunset cruise
               is the lightest — 2 hours of golden hour for €30-€40 the pair.
               The shared dinner cruise covers a full evening for €60-€180 the
-              pair. The private yacht reserves the whole boat from €280, the
+              pair. The private yacht reserves the whole boat from €220, the
               option for milestone evenings and proposals.
             </p>
           </header>
@@ -177,7 +177,7 @@ export default function Page() {
               who want dinner + entertainment + the cruise in one booking,
               the shared dinner cruise (€30-€90) bundles everything with
               hotel pickup included. For a milestone — anniversary,
-              proposal, honeymoon — the private yacht charter (€280+ for 2
+              proposal, honeymoon — the private yacht charter (€220+ for 2
               hours) reserves the whole boat for just you two.
             </p>
           </section>

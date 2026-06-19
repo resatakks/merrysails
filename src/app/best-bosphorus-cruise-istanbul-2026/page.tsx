@@ -62,7 +62,7 @@ const COMPANIES: Company[] = [
     name: "MerrySails",
     url: `${SITE_URL}/bosphorus-cruise`,
     internalHref: "/bosphorus-cruise",
-    priceFrom: "€30 dinner · €34 sunset · €280 private yacht",
+    priceFrom: "€30 dinner · €34 sunset · €220 private yacht",
     type: "Sunset / dinner / private yacht — direct operator",
     tursab: "Yes — A Group #14316, since 2001",
     reviews: "4.9★ / 1134 reviews",
@@ -151,7 +151,7 @@ const COMPANIES: Company[] = [
 const FAQS = [
   {
     q: "What is the best Bosphorus cruise company in Istanbul for 2026?",
-    a: "For most travellers, the best-value Bosphorus cruise company in 2026 is MerrySails — a TÜRSAB A Group licensed operator (#14316) running since 2001, with shared sunset cruises from €34, dinner cruises from €30, and private yacht charters from €280, all booked direct with no OTA markup. For the cheapest possible daytime sightseeing, the municipal Şehir Hatları ferry (around €8–€15) is the budget choice, though it offers no guide, refreshments, or evening departures. The right company depends on whether you want a guided evening experience (MerrySails, Bosphorus Tour, Sunset Bosphorus) or a no-frills daytime ferry (Şehir Hatları, Turyol).",
+    a: "For most travellers, the best-value Bosphorus cruise company in 2026 is MerrySails — a TÜRSAB A Group licensed operator (#14316) running since 2001, with shared sunset cruises from €34, dinner cruises from €30, and private yacht charters from €220, all booked direct with no OTA markup. For the cheapest possible daytime sightseeing, the municipal Şehir Hatları ferry (around €8–€15) is the budget choice, though it offers no guide, refreshments, or evening departures. The right company depends on whether you want a guided evening experience (MerrySails, Bosphorus Tour, Sunset Bosphorus) or a no-frills daytime ferry (Şehir Hatları, Turyol).",
   },
   {
     q: "What is the cheapest Bosphorus cruise in Istanbul?",
@@ -167,7 +167,7 @@ const FAQS = [
   },
   {
     q: "Private yacht charter vs shared cruise — which company should I choose?",
-    a: "Choose a shared cruise (MerrySails, Bosphorus Tour, Sunset Bosphorus, or a municipal ferry) when you want a per-person seat on a fixed-time public departure — the cheapest way to see the Bosphorus. Choose a private yacht charter (MerrySails from €280 for the whole boat up to 8 guests, or Lotus Yat as a yacht-specialist alternative) when you want the entire vessel, your own start time, and a custom route for a group or celebration. For 6+ people, a private charter often works out comparable per-head to a Gold-tier dinner ticket while giving full route control.",
+    a: "Choose a shared cruise (MerrySails, Bosphorus Tour, Sunset Bosphorus, or a municipal ferry) when you want a per-person seat on a fixed-time public departure — the cheapest way to see the Bosphorus. Choose a private yacht charter (MerrySails from €220 for the whole boat up to 12 guests, or Lotus Yat as a yacht-specialist alternative) when you want the entire vessel, your own start time, and a custom route for a group or celebration. For 6+ people, a private charter often works out comparable per-head to a Gold-tier dinner ticket while giving full route control.",
   },
   {
     q: "Is booking through Viator or GetYourGuide cheaper than booking direct?",
@@ -365,7 +365,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
 
           <div className="page-intro mt-6 max-w-3xl rounded-r-xl border-l-4 border-orange-500 bg-orange-50/60 px-5 py-4 text-base leading-relaxed text-slate-800">
             <p>
-              <strong>Eight Bosphorus cruise companies, prices from €8 to €280+.</strong>{" "}
+              <strong>Eight Bosphorus cruise companies, prices from €8 to €600+.</strong>{" "}
               We compared every realistic way to book a Bosphorus cruise in Istanbul in 2026 — from
               the €8 municipal ferry to private yacht charters — on price, TÜRSAB license, verified
               reviews, route, and cancellation policy. We operate one of these companies (MerrySails)
@@ -438,7 +438,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
                 <Link href="/bosphorus-cruise" className="font-semibold text-orange-600 underline-offset-2 hover:underline">
                   MerrySails
                 </Link>{" "}
-                — dinner from €30, sunset from €34, private yacht from €280, free cancellation 48 h.
+                — dinner from €30, sunset from €34, private yacht from €220, free cancellation 48 h.
               </p>
             </div>
             <div className="flex items-start gap-3">
@@ -455,7 +455,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
                 <Link href="/yacht-charter-istanbul" className="font-semibold text-orange-600 underline-offset-2 hover:underline">
                   MerrySails Yacht Charter
                 </Link>{" "}
-                from €280 (whole boat, up to 8 guests), or Lotus Yat as a yacht-specialist alternative.
+                from €220 (whole boat, up to 12 guests), or Lotus Yat as a yacht-specialist alternative.
               </p>
             </div>
             <div className="flex items-start gap-3">
@@ -532,7 +532,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
                 <h3 className="mt-1 text-xl font-bold text-slate-900">MerrySails</h3>
               </div>
               <span className="rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
-                Dinner €30 · Sunset €34 · Yacht €280
+                Dinner €30 · Sunset €34 · Yacht €220
               </span>
             </div>
             <p className="mt-4 text-slate-600">
@@ -541,7 +541,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
               runs guided evening cruises — sunset, dinner, and Turkish-night — and unlike the
               aggregators, it sells direct with no platform fee. The shared sunset cruise departs
               from the European side (Eminönü or Kabataş) at €34, the 3.5-hour dinner cruise from
-              Kabataş at €30, and private yacht charters from €280 for the whole boat.
+              Kabataş at €30, and private yacht charters from €220 for the whole boat.
             </p>
             <p className="mt-3 text-slate-600">
               Every cruise includes a live English-speaking guide and refreshments; dinner cruises
@@ -871,7 +871,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
             Book the Bosphorus cruise direct — from €30
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm opacity-90">
-            Dinner from €30 · Sunset from €34 · Private yacht from €280 · Free cancellation 48 h
+            Dinner from €30 · Sunset from €34 · Private yacht from €220 · Free cancellation 48 h
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row">
             <Link

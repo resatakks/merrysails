@@ -38,7 +38,7 @@ const commercialCruiseLinks = [
   {
     href: "/yacht-charter-istanbul",
     title: "Yacht Charter Istanbul",
-    description: "Private Bosphorus charter with the verified Essential, Premium, and VIP yacht price range.",
+    description: "Private Bosphorus charter with the verified per-vessel fleet price range from €220 per yacht.",
   },
 ] as const;
 
