@@ -262,7 +262,7 @@ export function PlannerDateCalendar({
                   });
                 }}
                 disabled={isDisabled}
-                className={`relative rounded-lg py-2 text-center text-sm transition-all ${
+                className={`relative rounded-lg py-2 text-center text-sm transition-all ${isDisabled ? "pointer-events-none " : ""}${
                   isSoldOut
                     ? "cursor-not-allowed text-gray-300 line-through"
                     : isPast
