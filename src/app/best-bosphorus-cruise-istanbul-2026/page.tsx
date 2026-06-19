@@ -365,7 +365,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
 
           <div className="page-intro mt-6 max-w-3xl rounded-r-xl border-l-4 border-orange-500 bg-orange-50/60 px-5 py-4 text-base leading-relaxed text-slate-800">
             <p>
-              <strong>Eight Bosphorus cruise companies, prices from €8 to €600+.</strong>{" "}
+              <strong>Eight Bosphorus cruise companies, prices from €8 to €500+.</strong>{" "}
               We compared every realistic way to book a Bosphorus cruise in Istanbul in 2026 — from
               the €8 municipal ferry to private yacht charters — on price, TÜRSAB license, verified
               reviews, route, and cancellation policy. We operate one of these companies (MerrySails)

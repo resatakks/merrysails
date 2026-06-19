@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Istanbul Cruise FAQ — 60+ Answers",
     description:
-      "Bosphorus cruises: prices €30–€600, departure from Kabataş, year-round schedules, multilingual guides, dietary and accessibility info.",
+      "Bosphorus cruises: prices €30–€500, departure from Kabataş, year-round schedules, multilingual guides, dietary and accessibility info.",
     url: `${SITE_URL}/istanbul-cruise-faq`,
     type: "article",
   },

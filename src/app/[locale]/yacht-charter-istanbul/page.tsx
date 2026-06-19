@@ -155,7 +155,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  title: "Privater Yachtcharter Istanbul",
  subtitle: "Bosporus-Sailing — 6 Yachten, 10 bis 150 Gäste, das ganze Schiff für Sie",
  description:
- "Bei MerrySails reicht die Flotte von der Boutique-Yacht (12 Gäste, ab €220 / 2 Std.) über die Premium-Yacht (15 Gäste, €320), die Gruppen-Yacht 40 Standard (€380) und die Gruppen-Yacht 40 Signature (€500) bis zur Event-Yacht 90 (€600) und zur Mega-Event-Yacht 150 (auf Anfrage). Jede Buchung sichert das gesamte Schiff exklusiv für Ihre Gruppe – keine Fremden an Bord. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach 10 % automatisch abgezogen. Auf Wunsch organisieren wir Hochzeitsanträge, Geburtstagsfeiern, Firmenevents und Jubiläen – inklusive Blumendekoration, Torte, DJ und professionellem Fotografen (separates Briefing). Alle Yachten legen in der Kuruçeşme Marina oder am Anleger Kabataş ab; den bevorzugten Startpunkt geben Sie bei der Buchung an. Betrieben von Merry Tourism, TURSAB-A-Gruppe lizenziert seit 2001.",
+ "Bei MerrySails reicht die Flotte von der Boutique-Yacht (12 Gäste, ab €220 / 2 Std.) über die Premium-Yacht (15 Gäste, €320), die Gruppen-Yacht 40 Standard (€380) und die Gruppen-Yacht 40 Signature (€500) bis zur Event-Yacht 90 und zur Mega-Event-Yacht 150 (beide auf Anfrage). Jede Buchung sichert das gesamte Schiff exklusiv für Ihre Gruppe – keine Fremden an Bord. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten; ab drei Stunden Sailing wird flach 10 % automatisch abgezogen. Auf Wunsch organisieren wir Hochzeitsanträge, Geburtstagsfeiern, Firmenevents und Jubiläen – inklusive Blumendekoration, Torte, DJ und professionellem Fotografen (separates Briefing). Alle Yachten legen in der Kuruçeşme Marina oder am Anleger Kabataş ab; den bevorzugten Startpunkt geben Sie bei der Buchung an. Betrieben von Merry Tourism, TURSAB-A-Gruppe lizenziert seit 2001.",
  whyChooseHeading: "Warum einen privaten Yachtcharter in Istanbul wählen?",
  reasons: [
  {
@@ -168,7 +168,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Pro-Yacht-Preise in EUR",
- desc: "Über die gesamte Flotte gelten klare Pro-Yacht-Preise. Boutique-Yacht (12 Gäste) ab €220/2 Std., Premium-Yacht (15 Gäste) €320, Gruppen-Yacht 40 Standard €380, Gruppen-Yacht 40 Signature €500, Event-Yacht 90 €600; Mega-Event-Yacht 150 auf Anfrage. Ab drei Stunden Sailing werden flache zehn Prozent automatisch abgezogen.",
+ desc: "Über die gesamte Flotte gelten klare Pro-Yacht-Preise. Boutique-Yacht (12 Gäste) ab €220/2 Std., Premium-Yacht (15 Gäste) €320, Gruppen-Yacht 40 Standard €380, Gruppen-Yacht 40 Signature €500, Event-Yacht 90 auf Anfrage; Mega-Event-Yacht 150 auf Anfrage. Ab drei Stunden Sailing werden flache zehn Prozent automatisch abgezogen.",
  },
  ],
  howItWorks: {
@@ -204,7 +204,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  {
  question: "Wie groß ist die Yachtflotte von MerrySails?",
  answer:
- "Die Flotte umfasst sechs Yachten: Boutique-Yacht 12 Gäste (ab €220), Premium-Yacht 15 Gäste (€320), Gruppen-Yacht 40 Standard (€380), Gruppen-Yacht 40 Signature (€500), Event-Yacht 90 Gäste (€600) und Mega-Event-Yacht 150 Gäste (auf Anfrage). So finden wir für jede Gruppengröße das passende Schiff.",
+ "Die Flotte umfasst sechs Yachten: Boutique-Yacht 12 Gäste (ab €220), Premium-Yacht 15 Gäste (€320), Gruppen-Yacht 40 Standard (€380), Gruppen-Yacht 40 Signature (€500), Event-Yacht 90 Gäste und Mega-Event-Yacht 150 Gäste (beide auf Anfrage). So finden wir für jede Gruppengröße das passende Schiff.",
  },
  {
  question: "Wo legt die Yacht ab? Welche Marina?",
@@ -259,7 +259,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Tarification par yacht en EUR",
- desc: "Toute la flotte est tarifée par yacht en euros. Boutique Yacht (12 invités) à partir de €220/2 h, Premium Yacht (15 invités) €320, Group Yacht 40 Standard €380, Group Yacht 40 Signature €500, Event Yacht 90 €600 ; Mega Event Yacht 150 sur devis. Dès trois heures, dix pour cent partent automatiquement à plat.",
+ desc: "Toute la flotte est tarifée par yacht en euros. Boutique Yacht (12 invités) à partir de €220/2 h, Premium Yacht (15 invités) €320, Group Yacht 40 Standard €380, Group Yacht 40 Signature €500, Event Yacht 90 et Mega Event Yacht 150 sur devis. Dès trois heures, dix pour cent partent automatiquement à plat.",
  },
  ],
  howItWorks: {
@@ -330,7 +330,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  title: "Prijs per jacht in EUR",
- desc: "De hele vloot wordt per jacht in euro's geprijsd. Boutique Jacht (12 gasten) vanaf €220/2 u, Premium Jacht (15 gasten) €320, Group Jacht 40 Standard €380, Group Jacht 40 Signature €500, Event Jacht 90 €600; Mega Event Jacht 150 op offerte. Vanaf drie uur wordt tien procent automatisch en vlak afgetrokken.",
+ desc: "De hele vloot wordt per jacht in euro's geprijsd. Boutique Jacht (12 gasten) vanaf €220/2 u, Premium Jacht (15 gasten) €320, Group Jacht 40 Standard €380, Group Jacht 40 Signature €500, Event Jacht 90 en Mega Event Jacht 150 op offerte. Vanaf drie uur wordt tien procent automatisch en vlak afgetrokken.",
  },
  ],
  howItWorks: {
