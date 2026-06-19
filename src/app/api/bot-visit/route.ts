@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
 
 export const runtime = "nodejs";
 // No caching — this is a write endpoint
@@ -22,16 +21,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "invalid" }, { status: 400 });
     }
 
-    await prisma.botVisit.create({
-      data: {
+    // Compute optimization (2026-06-19): bot visits are no longer written to
+    // Neon. Per-request writes kept the DB awake 24/7 for crawler logging
+    // (crawlers, not customers). Log to Vercel runtime logs instead — free,
+    // ephemeral, and never wakes the database.
+    console.log(
+      "[BOT-VISIT]",
+      JSON.stringify({
         provider: body.provider.slice(0, 64),
         agent: body.agent.slice(0, 128),
         path: body.path.slice(0, 512),
-        userAgent: body.userAgent ?? null,
-        ip: body.ip ?? null,
         country: body.country ?? null,
-      },
-    });
+      }),
+    );
 
     return NextResponse.json({ ok: true });
   } catch (error) {
