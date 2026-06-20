@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { format } from "date-fns";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import {
   ArrowRight,
   Clock,
@@ -31,6 +31,10 @@ import { trackBeginCheckout } from "@/lib/analytics";
 import SalePrice from "@/components/ui/SalePrice";
 import { PlannerDateCalendar } from "@/components/booking/PlannerDateCalendar";
 import { MAX_BOOKING_GUESTS } from "@/lib/constants";
+import {
+  detectBookingLocaleFromPathname,
+  getBookingPlannerStrings,
+} from "@/i18n/booking-strings";
 import { cn } from "@/lib/utils";
 
 type PlannerVariant = "hero" | "page";
@@ -61,6 +65,8 @@ export default function CoreBookingPlanner({
   initialTourSlug,
 }: CoreBookingPlannerProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const t = getBookingPlannerStrings(detectBookingLocaleFromPathname(pathname));
   const [isOpeningBooking, setIsOpeningBooking] = useState(false);
   // Clarity (14d /reservation): 25 dead clicks on "Without Wine", 26 on
   // "€220" — users tap the read-only "Selected Plan" summary card and the
@@ -218,7 +224,7 @@ export default function CoreBookingPlanner({
       <div className="border-b border-[var(--line)] bg-[linear-gradient(180deg,#ffffff_0%,#fbf8f2_100%)] px-4 py-5 md:px-6 md:py-6">
         <div className="flex flex-col gap-3">
           <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">
-            Core Booking Planner
+            {t.eyebrow}
           </p>
           <h2
             className={cn(
@@ -227,11 +233,11 @@ export default function CoreBookingPlanner({
             )}
           >
             {pageVariant
-              ? "Choose the product first, then set date and guests"
-              : "Choose the product first, then continue to booking"}
+              ? t.chooseProductFirstSetDate
+              : t.chooseProductFirstContinue}
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
-            Cleaner product selection, the same date validations, and a shorter booking path.
+            {t.plannerSubtitle}
           </p>
         </div>
       </div>
@@ -287,11 +293,11 @@ export default function CoreBookingPlanner({
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="inline-flex rounded-full bg-[var(--surface-alt)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                        {packageCount} options
+                        {t.optionsCount(packageCount)}
                       </span>
                       {isSelected && (
                         <span className="inline-flex rounded-full bg-[var(--brand-primary)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
-                          Selected
+                          {t.selected}
                         </span>
                       )}
                     </div>
@@ -299,13 +305,13 @@ export default function CoreBookingPlanner({
                       {tour.nameEn}
                     </h3>
                     <p className="mt-1 text-xs text-[var(--text-muted)] md:text-sm">
-                      {tour.duration} • {packageCount} booking choice{packageCount > 1 ? "s" : ""}
+                      {tour.duration} • {t.bookingChoices(packageCount)}
                     </p>
                   </div>
 
                   <div className="shrink-0 text-right">
                     <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                      From
+                      {t.from}
                     </div>
                     <div className="mt-1 text-xl font-bold text-[var(--brand-gold)]">
                       €{tour.priceEur}
@@ -327,7 +333,7 @@ export default function CoreBookingPlanner({
           >
             <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
               <Sparkles className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
-              Package
+              {t.packageSectionLabel}
             </label>
             <Select
               open={isPackageMenuOpen}
@@ -341,10 +347,10 @@ export default function CoreBookingPlanner({
               }
             >
               <SelectTrigger
-                aria-label={`${selectedTour.nameEn} package`}
+                aria-label={t.packageLabel(selectedTour.nameEn)}
                 className="mt-2 h-12 w-full rounded-2xl border-[var(--line)] bg-white px-4 text-left text-sm font-medium text-[var(--heading)] shadow-none"
               >
-                <SelectValue placeholder="Select package" />
+                <SelectValue placeholder={t.selectPackage} />
               </SelectTrigger>
               <SelectContent className="rounded-2xl border-[var(--line)] bg-white p-2 shadow-xl">
                 {(selectedTour.packages ?? []).map((pkg) => (
@@ -366,16 +372,16 @@ export default function CoreBookingPlanner({
                   setIsPackageMenuOpen(true);
                 }
               }}
-              aria-label={`Change package — currently ${selectedPackage?.name ?? selectedTour.nameEn}`}
+              aria-label={t.changePackage(selectedPackage?.name ?? selectedTour.nameEn)}
               className="mt-4 w-full rounded-2xl border border-white/70 bg-white px-4 py-4 text-left transition-colors hover:border-[var(--brand-primary)]/30"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    Selected Plan
+                    {t.selectedPlan}
                     {(selectedTour.packages?.length ?? 0) > 1 && (
                       <span className="text-[10px] font-medium normal-case tracking-normal text-[var(--brand-primary)]">
-                        · tap to change
+                        · {t.tapToChange}
                       </span>
                     )}
                   </div>
@@ -397,7 +403,7 @@ export default function CoreBookingPlanner({
 
               {selectedSavings > 0 && (
                 <div className="mt-3 inline-flex rounded-full border border-[var(--brand-primary)]/12 bg-[var(--brand-primary)]/6 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--brand-primary)]">
-                  Save €{selectedSavings}
+                  {t.save(selectedSavings)}
                 </div>
               )}
 
@@ -413,7 +419,7 @@ export default function CoreBookingPlanner({
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <Shield className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
-                  ID-based booking path
+                  {t.secureBookingPath}
                 </span>
               </div>
               {selectedOperationNote && (
@@ -451,14 +457,14 @@ export default function CoreBookingPlanner({
           <section className="min-w-0 rounded-[1.7rem] border border-[var(--line)] bg-white p-4 shadow-sm lg:col-span-2 xl:col-span-1 xl:p-5">
             <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
               <Users className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
-              Guests
+              {t.guests}
             </label>
             <div className="mt-2 flex h-12 items-center justify-between rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] px-3">
               <button
                 type="button"
                 onClick={() => setGuests((value) => clampGuests(value - 1))}
                 disabled={guests <= 1}
-                aria-label="Decrease guests"
+                aria-label={t.decreaseGuests}
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--body-text)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Minus className="h-4 w-4" />
@@ -466,14 +472,14 @@ export default function CoreBookingPlanner({
               <div className="text-center">
                 <div className="text-base font-bold text-[var(--heading)]">{guests}</div>
                 <div className="text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
-                  {guests === 1 ? "Guest" : "Guests"}
+                  {guests === 1 ? t.guest : t.guests}
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setGuests((value) => clampGuests(value + 1))}
                 disabled={guests >= MAX_BOOKING_GUESTS}
-                aria-label="Increase guests"
+                aria-label={t.increaseGuests}
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--body-text)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Plus className="h-4 w-4" />
@@ -494,7 +500,7 @@ export default function CoreBookingPlanner({
                     className="inline-flex items-center gap-1.5"
                     title={
                       /flexible/i.test(effectiveDepartureTime)
-                        ? "Departure time is arranged with you after booking"
+                        ? t.departureArrangedAfter
                         : undefined
                     }
                   >
@@ -514,7 +520,7 @@ export default function CoreBookingPlanner({
                   className="inline-flex items-center gap-1.5 rounded-full transition-colors hover:text-[var(--brand-primary)] disabled:cursor-default disabled:hover:text-[var(--text-muted)]"
                 >
                   <Users className="h-3.5 w-3.5 text-[var(--brand-primary)]" />
-                  Up to {MAX_BOOKING_GUESTS} guests
+                  {t.upToGuests(MAX_BOOKING_GUESTS)}
                 </button>
               </div>
             </div>
@@ -533,15 +539,15 @@ export default function CoreBookingPlanner({
                 return (
                   <div className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
                     <div className="flex items-center justify-between gap-2 font-semibold">
-                      <span>Group discount applied</span>
+                      <span>{t.groupDiscountApplied}</span>
                       <span>−€{result.savings}</span>
                     </div>
                     <div className="mt-1 flex items-center justify-between text-xs text-emerald-800">
                       <span>
                         €{subtotal} → <strong>€{result.discountedTotal}</strong>{" "}
-                        for {guests} guests
+                        {t.forGuests(guests)}
                       </span>
-                      <span className="opacity-75">auto-applied</span>
+                      <span className="opacity-75">{t.autoApplied}</span>
                     </div>
                   </div>
                 );
@@ -549,8 +555,7 @@ export default function CoreBookingPlanner({
               const needed = GROUP_DISCOUNT_MIN_GUESTS - guests;
               return (
                 <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs font-medium text-amber-900">
-                  Add {needed} more {needed === 1 ? "guest" : "guests"} to save
-                  10% — sunset &amp; dinner cruises only.
+                  {t.addMoreGuestsForDiscount(needed)}
                 </div>
               );
             })()}
@@ -570,11 +575,11 @@ export default function CoreBookingPlanner({
               {isOpeningBooking ? (
                 <>
                   <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
-                  Opening booking...
+                  {t.openingBooking}
                 </>
               ) : (
                 <>
-                  {pageVariant ? "Continue booking" : "Continue with this booking"}
+                  {t.continueBooking}
                   <ArrowRight className="h-4 w-4 shrink-0" />
                 </>
               )}

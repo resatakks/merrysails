@@ -1341,3 +1341,230 @@ export function detectBookingLocaleFromPathname(pathname: string | null | undefi
   }
   return "en";
 }
+
+// CoreBookingPlanner — the product-first planner shown in the hero + on the
+// reservation page. Display strings only; all state/handlers stay in the
+// component.
+export interface BookingPlannerStrings {
+  eyebrow: string;
+  plannerSubtitle: string;
+  chooseProductFirstSetDate: string;
+  chooseProductFirstContinue: string;
+  selected: string;
+  selectedPlan: string;
+  selectPackage: string;
+  from: string;
+  save: (n: number) => string;
+  upToGuests: (n: number) => string;
+  optionsCount: (n: number) => string;
+  guests: string;
+  guest: string;
+  decreaseGuests: string;
+  increaseGuests: string;
+  openingBooking: string;
+  continueBooking: string;
+  packageLabel: (name: string) => string;
+  changePackage: (name: string) => string;
+  bookingChoices: (n: number) => string;
+  packageSectionLabel: string;
+  tapToChange: string;
+  secureBookingPath: string;
+  departureArrangedAfter: string;
+  groupDiscountApplied: string;
+  autoApplied: string;
+  forGuests: (n: number) => string;
+  addMoreGuestsForDiscount: (needed: number) => string;
+}
+
+const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
+  en: {
+    eyebrow: "Core Booking Planner",
+    plannerSubtitle: "Cleaner product selection, the same date validations, and a shorter booking path.",
+    chooseProductFirstSetDate: "Choose the product first, then set date and guests",
+    chooseProductFirstContinue: "Choose the product first, then continue to booking",
+    selected: "Selected",
+    selectedPlan: "Selected Plan",
+    selectPackage: "Select package",
+    from: "From",
+    save: (n) => `Save €${n}`,
+    upToGuests: (n) => `Up to ${n} guests`,
+    optionsCount: (n) => `${n} options`,
+    guests: "Guests",
+    guest: "Guest",
+    decreaseGuests: "Decrease guests",
+    increaseGuests: "Increase guests",
+    openingBooking: "Opening booking…",
+    continueBooking: "Continue booking",
+    packageLabel: (name) => `${name} package`,
+    changePackage: (name) => `Change package — currently ${name}`,
+    bookingChoices: (n) => `${n} booking choice${n === 1 ? "" : "s"}`,
+    packageSectionLabel: "Package",
+    tapToChange: "tap to change",
+    secureBookingPath: "Fast secure checkout",
+    departureArrangedAfter: "Departure time is arranged with you after booking",
+    groupDiscountApplied: "Group discount applied",
+    autoApplied: "auto-applied",
+    forGuests: (n) => `for ${n} guests`,
+    addMoreGuestsForDiscount: (needed) =>
+      `Add ${needed} more guest${needed === 1 ? "" : "s"} to save 10% — sunset & dinner cruises only.`,
+  },
+  tr: {
+    eyebrow: "Rezervasyon Planlayıcı",
+    plannerSubtitle: "Daha sade ürün seçimi, aynı tarih kontrolleri ve daha kısa rezervasyon yolu.",
+    chooseProductFirstSetDate: "Önce ürünü seçin, sonra tarih ve kişi sayısını belirleyin",
+    chooseProductFirstContinue: "Önce ürünü seçin, sonra rezervasyona geçin",
+    selected: "Seçildi",
+    selectedPlan: "Seçili Paket",
+    selectPackage: "Paket seçin",
+    from: "Başlangıç",
+    save: (n) => `€${n} tasarruf`,
+    upToGuests: (n) => `${n} kişiye kadar`,
+    optionsCount: (n) => `${n} seçenek`,
+    guests: "Kişi",
+    guest: "Kişi",
+    decreaseGuests: "Kişi sayısını azalt",
+    increaseGuests: "Kişi sayısını artır",
+    openingBooking: "Rezervasyon açılıyor…",
+    continueBooking: "Rezervasyona devam et",
+    packageLabel: (name) => `${name} paketi`,
+    changePackage: (name) => `Paketi değiştir — şu an ${name}`,
+    bookingChoices: (n) => `${n} rezervasyon seçeneği`,
+    packageSectionLabel: "Paket",
+    tapToChange: "değiştirmek için dokunun",
+    secureBookingPath: "Hızlı güvenli ödeme",
+    departureArrangedAfter: "Kalkış saati rezervasyon sonrası sizinle birlikte ayarlanır",
+    groupDiscountApplied: "Grup indirimi uygulandı",
+    autoApplied: "otomatik uygulandı",
+    forGuests: (n) => `${n} kişi için`,
+    addMoreGuestsForDiscount: (needed) =>
+      `%10 indirim için ${needed} kişi daha ekleyin — yalnızca gün batımı ve akşam yemekli turlar.`,
+  },
+  de: {
+    eyebrow: "Buchungsplaner",
+    plannerSubtitle: "Übersichtlichere Produktauswahl, dieselben Datumsprüfungen und ein kürzerer Buchungsweg.",
+    chooseProductFirstSetDate: "Zuerst das Produkt wählen, dann Datum und Gäste festlegen",
+    chooseProductFirstContinue: "Zuerst das Produkt wählen, dann zur Buchung",
+    selected: "Ausgewählt",
+    selectedPlan: "Gewähltes Paket",
+    selectPackage: "Paket wählen",
+    from: "Ab",
+    save: (n) => `€${n} sparen`,
+    upToGuests: (n) => `Bis zu ${n} Gäste`,
+    optionsCount: (n) => `${n} Optionen`,
+    guests: "Gäste",
+    guest: "Gast",
+    decreaseGuests: "Gäste verringern",
+    increaseGuests: "Gäste erhöhen",
+    openingBooking: "Buchung wird geöffnet…",
+    continueBooking: "Weiter zur Buchung",
+    packageLabel: (name) => `${name} Paket`,
+    changePackage: (name) => `Paket ändern — aktuell ${name}`,
+    bookingChoices: (n) => `${n} Buchungsoption${n === 1 ? "" : "en"}`,
+    packageSectionLabel: "Paket",
+    tapToChange: "zum Ändern tippen",
+    secureBookingPath: "Schnelle sichere Buchung",
+    departureArrangedAfter: "Die Abfahrtszeit wird nach der Buchung mit Ihnen abgestimmt",
+    groupDiscountApplied: "Gruppenrabatt angewendet",
+    autoApplied: "automatisch angewendet",
+    forGuests: (n) => `für ${n} Gäste`,
+    addMoreGuestsForDiscount: (needed) =>
+      `Fügen Sie ${needed} weitere${needed === 1 ? "n" : ""} Gast${needed === 1 ? "" : "e"} hinzu, um 10% zu sparen — nur Sunset- und Dinner-Touren.`,
+  },
+  fr: {
+    eyebrow: "Planificateur de réservation",
+    plannerSubtitle: "Sélection de produit plus claire, les mêmes validations de date et un parcours de réservation plus court.",
+    chooseProductFirstSetDate: "Choisissez d'abord le produit, puis la date et les invités",
+    chooseProductFirstContinue: "Choisissez d'abord le produit, puis continuez la réservation",
+    selected: "Sélectionné",
+    selectedPlan: "Forfait sélectionné",
+    selectPackage: "Choisir un forfait",
+    from: "À partir de",
+    save: (n) => `Économisez €${n}`,
+    upToGuests: (n) => `Jusqu'à ${n} invités`,
+    optionsCount: (n) => `${n} options`,
+    guests: "Invités",
+    guest: "Invité",
+    decreaseGuests: "Diminuer les invités",
+    increaseGuests: "Augmenter les invités",
+    openingBooking: "Ouverture de la réservation…",
+    continueBooking: "Continuer la réservation",
+    packageLabel: (name) => `Forfait ${name}`,
+    changePackage: (name) => `Changer de forfait — actuellement ${name}`,
+    bookingChoices: (n) => `${n} choix de réservation`,
+    packageSectionLabel: "Formule",
+    tapToChange: "toucher pour changer",
+    secureBookingPath: "Réservation sécurisée rapide",
+    departureArrangedAfter: "L'heure de départ est convenue avec vous après la réservation",
+    groupDiscountApplied: "Remise de groupe appliquée",
+    autoApplied: "appliquée automatiquement",
+    forGuests: (n) => `pour ${n} invités`,
+    addMoreGuestsForDiscount: (needed) =>
+      `Ajoutez ${needed} invité${needed === 1 ? "" : "s"} de plus pour économiser 10% — croisières coucher de soleil et dîner uniquement.`,
+  },
+  nl: {
+    eyebrow: "Boekingsplanner",
+    plannerSubtitle: "Overzichtelijkere productkeuze, dezelfde datumcontroles en een korter boekingstraject.",
+    chooseProductFirstSetDate: "Kies eerst het product, stel daarna datum en gasten in",
+    chooseProductFirstContinue: "Kies eerst het product, ga daarna verder met boeken",
+    selected: "Geselecteerd",
+    selectedPlan: "Geselecteerd pakket",
+    selectPackage: "Pakket kiezen",
+    from: "Vanaf",
+    save: (n) => `Bespaar €${n}`,
+    upToGuests: (n) => `Tot ${n} gasten`,
+    optionsCount: (n) => `${n} opties`,
+    guests: "Gasten",
+    guest: "Gast",
+    decreaseGuests: "Gasten verlagen",
+    increaseGuests: "Gasten verhogen",
+    openingBooking: "Boeking openen…",
+    continueBooking: "Doorgaan met boeken",
+    packageLabel: (name) => `${name} pakket`,
+    changePackage: (name) => `Pakket wijzigen — momenteel ${name}`,
+    bookingChoices: (n) => `${n} boekingsoptie${n === 1 ? "" : "s"}`,
+    packageSectionLabel: "Pakket",
+    tapToChange: "tik om te wijzigen",
+    secureBookingPath: "Snel veilig afrekenen",
+    departureArrangedAfter: "De vertrektijd wordt na de boeking met u afgestemd",
+    groupDiscountApplied: "Groepskorting toegepast",
+    autoApplied: "automatisch toegepast",
+    forGuests: (n) => `voor ${n} gasten`,
+    addMoreGuestsForDiscount: (needed) =>
+      `Voeg ${needed} gast${needed === 1 ? "" : "en"} meer toe om 10% te besparen — alleen zonsondergang- en dinercruises.`,
+  },
+  ru: {
+    eyebrow: "Планировщик бронирования",
+    plannerSubtitle: "Более понятный выбор услуги, те же проверки даты и более короткий путь бронирования.",
+    chooseProductFirstSetDate: "Сначала выберите услугу, затем дату и число гостей",
+    chooseProductFirstContinue: "Сначала выберите услугу, затем перейдите к бронированию",
+    selected: "Выбрано",
+    selectedPlan: "Выбранный пакет",
+    selectPackage: "Выбрать пакет",
+    from: "от",
+    save: (n) => `Скидка €${n}`,
+    upToGuests: (n) => `До ${n} гостей`,
+    optionsCount: (n) => `${n} варианта`,
+    guests: "Гости",
+    guest: "Гость",
+    decreaseGuests: "Уменьшить число гостей",
+    increaseGuests: "Увеличить число гостей",
+    openingBooking: "Открываем бронирование…",
+    continueBooking: "Продолжить бронирование",
+    packageLabel: (name) => `Пакет ${name}`,
+    changePackage: (name) => `Изменить пакет — сейчас ${name}`,
+    bookingChoices: (n) => `${n} вариант${n % 10 === 1 && n % 100 !== 11 ? "" : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? "а" : "ов"} бронирования`,
+    packageSectionLabel: "Пакет",
+    tapToChange: "нажмите, чтобы изменить",
+    secureBookingPath: "Быстрое безопасное оформление",
+    departureArrangedAfter: "Время отправления согласуется с вами после бронирования",
+    groupDiscountApplied: "Групповая скидка применена",
+    autoApplied: "применена автоматически",
+    forGuests: (n) => `для ${n} гостей`,
+    addMoreGuestsForDiscount: (needed) =>
+      `Добавьте ещё ${needed} гост${needed % 10 === 1 && needed % 100 !== 11 ? "я" : "ей"}, чтобы получить скидку 10% — только закатные и ужинные круизы.`,
+  },
+};
+
+export function getBookingPlannerStrings(locale: BookingLocale): BookingPlannerStrings {
+  return PLANNER[locale] ?? PLANNER.en;
+}

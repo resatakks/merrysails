@@ -105,56 +105,103 @@ const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
   ],
 };
 
-const serviceLinks = [
-  { label: "Sunset Ticket Support", href: "/sunset-cruise-tickets-istanbul" },
-  { label: "Turkish Night Dinner", href: "/turkish-night-dinner-cruise-istanbul" },
-  { label: "Dinner Pickup Support", href: "/dinner-cruise-with-hotel-pickup-istanbul" },
-  { label: "Sultanahmet & Taksim Pickup", href: "/dinner-cruise-pickup-sultanahmet-taksim" },
-  { label: "Boat Rental Hourly", href: "/boat-rental-hourly-istanbul" },
-  { label: "Proposal with Photographer", href: "/proposal-yacht-with-photographer-istanbul" },
-  { label: "Corporate Yacht Dinner", href: "/corporate-yacht-dinner-istanbul" },
-  { label: "Team Building Yacht", href: "/team-building-yacht-istanbul" },
-  { label: "Departure Points Hub", href: "/bosphorus-cruise-departure-points" },
+// Footer secondary links. Labels are localized per NavLocale (translation
+// audit 2026-06-20 — these 4 arrays previously rendered English on every
+// non-EN route). hrefs are unchanged and still pass through localizeHref()
+// for gating; only the visible label is translated. Parallel HREFS + LABELS
+// arrays are zipped by buildLinks() so positions stay aligned. Mirrors the
+// GoldenSunset Footer pattern.
+const SERVICE_HREFS = [
+  "/sunset-cruise-tickets-istanbul",
+  "/turkish-night-dinner-cruise-istanbul",
+  "/dinner-cruise-with-hotel-pickup-istanbul",
+  "/dinner-cruise-pickup-sultanahmet-taksim",
+  "/boat-rental-hourly-istanbul",
+  "/proposal-yacht-with-photographer-istanbul",
+  "/corporate-yacht-dinner-istanbul",
+  "/team-building-yacht-istanbul",
+  "/bosphorus-cruise-departure-points",
 ];
+const SERVICE_LABELS: Record<NavLocale, string[]> = {
+  en: ["Sunset Ticket Support", "Turkish Night Dinner", "Dinner Pickup Support", "Sultanahmet & Taksim Pickup", "Boat Rental Hourly", "Proposal with Photographer", "Corporate Yacht Dinner", "Team Building Yacht", "Departure Points Hub"],
+  tr: ["Gün Batımı Bilet Desteği", "Türk Gecesi Yemekli Tur", "Yemekli Tur Otel Transferi", "Sultanahmet & Taksim Transfer", "Saatlik Tekne Kiralama", "Fotoğrafçılı Evlilik Teklifi", "Kurumsal Yat Yemeği", "Takım Etkinliği Yatı", "Kalkış Noktaları"],
+  de: ["Sonnenuntergang-Ticket-Hilfe", "Türkische Nacht mit Dinner", "Dinner-Abholservice", "Sultanahmet & Taksim Abholung", "Stündliche Bootsvermietung", "Heiratsantrag mit Fotograf", "Firmen-Yacht-Dinner", "Teambuilding-Yacht", "Abfahrtspunkte"],
+  fr: ["Aide billets coucher de soleil", "Dîner Nuit Turque", "Transfert dîner-croisière", "Transfert Sultanahmet & Taksim", "Location de bateau à l'heure", "Demande en mariage avec photographe", "Dîner yacht entreprise", "Yacht team building", "Points de départ"],
+  nl: ["Zonsondergang ticket-hulp", "Turkse Nacht Diner", "Diner ophaalservice", "Sultanahmet & Taksim ophalen", "Boot huren per uur", "Aanzoek met fotograaf", "Zakelijk jachtdiner", "Teambuilding-jacht", "Vertrekpunten"],
+  ru: ["Помощь с билетами на закат", "Ужин «Турецкая ночь»", "Трансфер на ужин-круиз", "Трансфер Султанахмет и Таксим", "Почасовая аренда катера", "Предложение руки с фотографом", "Корпоративный ужин на яхте", "Тимбилдинг на яхте", "Точки отправления"],
+  zh: ["日落游船购票协助", "土耳其之夜晚宴", "晚宴游船酒店接送", "苏丹艾哈迈德与塔克西姆接送", "按小时租船", "摄影师求婚游船", "企业游艇晚宴", "团队建设游艇", "出发点指南"],
+};
 
 // Former 25-link `companyLinks` column, split into three intent-balanced
 // columns so no single column towers over CORE PRODUCTS. Privacy Policy and
 // Terms & Conditions were removed here — they already render in the bottom
 // bar, so keeping them in the column was a duplicate.
-const experienceLinks = [
-  { label: "All Bosphorus Cruises", href: "/cruises" },
-  { label: "Private Tours", href: "/private-tours" },
-  { label: "Cruise for Couples", href: "/bosphorus-cruise-for-couples" },
-  { label: "Cruise for Families", href: "/bosphorus-cruise-for-families" },
-  { label: "Anniversary Yacht Cruise", href: "/anniversary-yacht-cruise-istanbul" },
-  { label: "Honeymoon Yacht Cruise", href: "/honeymoon-yacht-cruise-istanbul" },
-  { label: "Princes Islands Tour", href: "/princes-islands-tour-istanbul" },
+const EXPERIENCE_HREFS = [
+  "/cruises",
+  "/private-tours",
+  "/bosphorus-cruise-for-couples",
+  "/bosphorus-cruise-for-families",
+  "/anniversary-yacht-cruise-istanbul",
+  "/honeymoon-yacht-cruise-istanbul",
+  "/princes-islands-tour-istanbul",
 ];
+const EXPERIENCE_LABELS: Record<NavLocale, string[]> = {
+  en: ["All Bosphorus Cruises", "Private Tours", "Cruise for Couples", "Cruise for Families", "Anniversary Yacht Cruise", "Honeymoon Yacht Cruise", "Princes Islands Tour"],
+  tr: ["Tüm Boğaz Turları", "Özel Turlar", "Çiftler İçin Tur", "Aileler İçin Tur", "Yıldönümü Yat Turu", "Balayı Yat Turu", "Adalar Turu"],
+  de: ["Alle Bosporus-Fahrten", "Private Touren", "Fahrt für Paare", "Fahrt für Familien", "Jubiläums-Yachtfahrt", "Flitterwochen-Yachtfahrt", "Prinzeninseln-Tour"],
+  fr: ["Toutes les croisières", "Tours privés", "Croisière pour couples", "Croisière en famille", "Croisière yacht anniversaire", "Croisière yacht lune de miel", "Tour des îles des Princes"],
+  nl: ["Alle Bosporus-cruises", "Privétours", "Cruise voor koppels", "Cruise voor gezinnen", "Jubileum-jachtcruise", "Huwelijksreis-jachtcruise", "Prinseneilanden-tour"],
+  ru: ["Все круизы по Босфору", "Частные туры", "Круиз для пар", "Круиз для семей", "Юбилейный круиз на яхте", "Свадебный круиз на яхте", "Тур на Принцевы острова"],
+  zh: ["全部博斯普鲁斯游船", "私人包船游", "情侣游船", "家庭游船", "周年纪念游艇游", "蜜月游艇游", "王子群岛之旅"],
+};
 
-const planLinks = [
-  { label: "Compare All Cruises", href: "/compare-bosphorus-cruises" },
-  { label: "MerrySails vs Bosphorustour", href: "/merrysails-vs-bosphorustour" },
-  { label: "MerrySails vs Viator", href: "/merrysails-vs-viator" },
-  { label: "Pricing", href: "/pricing" },
+const PLAN_HREFS = [
+  "/compare-bosphorus-cruises",
+  "/merrysails-vs-bosphorustour",
+  "/merrysails-vs-viator",
+  "/pricing",
   // Preserved from the removed homepage CommercialIntentSection — the price
   // guide was the only one of its 8 surfaced links not already in the footer.
-  { label: "Bosphorus Cruise Prices 2026", href: "/blog/bosphorus-cruise-prices-2026" },
-  { label: "Bosphorus Cruise FAQ", href: "/istanbul-cruise-faq" },
-  { label: "Cruise from Sultanahmet", href: "/bosphorus-cruise-from-sultanahmet" },
-  { label: "Cruise from Taksim", href: "/bosphorus-cruise-from-taksim" },
-  { label: "Cruise from Beyoğlu", href: "/bosphorus-cruise-from-beyoglu" },
+  "/blog/bosphorus-cruise-prices-2026",
+  "/istanbul-cruise-faq",
+  "/bosphorus-cruise-from-sultanahmet",
+  "/bosphorus-cruise-from-taksim",
+  "/bosphorus-cruise-from-beyoglu",
 ];
+const PLAN_LABELS: Record<NavLocale, string[]> = {
+  en: ["Compare All Cruises", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Pricing", "Bosphorus Cruise Prices 2026", "Bosphorus Cruise FAQ", "Cruise from Sultanahmet", "Cruise from Taksim", "Cruise from Beyoğlu"],
+  tr: ["Tüm Turları Karşılaştır", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Fiyatlar", "Boğaz Turu Fiyatları 2026", "Boğaz Turu SSS", "Sultanahmet'ten Tur", "Taksim'den Tur", "Beyoğlu'ndan Tur"],
+  de: ["Alle Touren vergleichen", "MerrySails vs. Bosphorustour", "MerrySails vs. Viator", "Preise", "Bosporus-Fahrt Preise 2026", "Bosporus-Kreuzfahrt FAQ", "Fahrt ab Sultanahmet", "Fahrt ab Taksim", "Fahrt ab Beyoğlu"],
+  fr: ["Comparer les croisières", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Tarifs", "Prix croisière Bosphore 2026", "FAQ croisière Bosphore", "Croisière depuis Sultanahmet", "Croisière depuis Taksim", "Croisière depuis Beyoğlu"],
+  nl: ["Vergelijk alle cruises", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Prijzen", "Bosporus Cruise Prijzen 2026", "Bosporus Cruise FAQ", "Cruise vanaf Sultanahmet", "Cruise vanaf Taksim", "Cruise vanaf Beyoğlu"],
+  ru: ["Сравнить все круизы", "MerrySails и Bosphorustour", "MerrySails и Viator", "Цены", "Цены на круизы по Босфору 2026", "FAQ по круизам", "Круиз из Султанахмета", "Круиз из Таксима", "Круиз из Бейоглу"],
+  zh: ["比较所有游船", "MerrySails 与 Bosphorustour", "MerrySails 与 Viator", "价格", "2026 博斯普鲁斯游船价格", "博斯普鲁斯游船常见问题", "苏丹艾哈迈德出发", "塔克西姆出发", "贝伊奥卢出发"],
+};
 
-const companyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Meet the Team", href: "/about/team" },
-  { label: "Contact", href: "/contact" },
-  { label: "TURSAB License", href: "/tursab" },
-  { label: "AI Knowledge Hub", href: "/ai-knowledge" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Blog", href: "/blog" },
-  { label: "Istanbul Guides", href: "/guides" },
+const COMPANY_HREFS = [
+  "/about",
+  "/about/team",
+  "/contact",
+  "/tursab",
+  "/ai-knowledge",
+  "/faq",
+  "/blog",
+  "/guides",
 ];
+const COMPANY_LABELS: Record<NavLocale, string[]> = {
+  en: ["About", "Meet the Team", "Contact", "TURSAB License", "AI Knowledge Hub", "FAQ", "Blog", "Istanbul Guides"],
+  tr: ["Hakkımızda", "Ekibimiz", "İletişim", "TÜRSAB Lisansı", "AI Bilgi Merkezi", "SSS", "Blog", "İstanbul Rehberleri"],
+  de: ["Über uns", "Unser Team", "Kontakt", "TÜRSAB-Lizenz", "KI-Wissenszentrum", "FAQ", "Blog", "Istanbul-Reiseführer"],
+  fr: ["À propos", "Notre équipe", "Contact", "Licence TÜRSAB", "Centre de connaissances IA", "FAQ", "Blog", "Guides d'Istanbul"],
+  nl: ["Over ons", "Ons team", "Contact", "TÜRSAB-vergunning", "AI-kenniscentrum", "FAQ", "Blog", "Istanbul-gidsen"],
+  ru: ["О нас", "Наша команда", "Контакты", "Лицензия TÜRSAB", "AI-база знаний", "Вопросы и ответы", "Блог", "Гиды по Стамбулу"],
+  zh: ["关于我们", "认识团队", "联系我们", "TÜRSAB 执照", "AI 知识中心", "常见问题", "博客", "伊斯坦布尔指南"],
+};
+
+function buildLinks(hrefs: string[], labels: Record<NavLocale, string[]>, locale: NavLocale) {
+  const set = labels[locale] ?? labels.en;
+  return hrefs.map((href, i) => ({ href, label: set[i] ?? labels.en[i] }));
+}
 
 const blogLinks = [
   { label: "Best Bosphorus Cruise 2026 — Comparison", href: "/blog/best-istanbul-bosphorus-cruise-comparison-2026" },
@@ -177,6 +224,10 @@ export default function Footer() {
   const locale = detectChromeLocaleFromPathname(pathname);
   const t = getFooterStrings(locale);
   const coreLinks = CORE_LINKS[locale] ?? CORE_LINKS.en;
+  const serviceLinks = buildLinks(SERVICE_HREFS, SERVICE_LABELS, locale);
+  const experienceLinks = buildLinks(EXPERIENCE_HREFS, EXPERIENCE_LABELS, locale);
+  const planLinks = buildLinks(PLAN_HREFS, PLAN_LABELS, locale);
+  const companyLinks = buildLinks(COMPANY_HREFS, COMPANY_LABELS, locale);
 
   return (
     <footer className="relative -mt-5 bg-[var(--brand-dark)] pt-5 pb-28 text-white/90 lg:pb-10">

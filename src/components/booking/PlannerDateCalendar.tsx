@@ -16,11 +16,16 @@ import {
   startOfMonth,
   subMonths,
 } from "date-fns";
+import { usePathname } from "next/navigation";
 import { Calendar, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import {
   getSameDayBookingClosedMessage,
   isSameDayBookingClosed,
 } from "@/lib/booking-cutoffs";
+import {
+  detectBookingLocaleFromPathname,
+  getBookingCalendarStrings,
+} from "@/i18n/booking-strings";
 
 interface TourOperationClientSnapshot {
   id: string;
@@ -52,7 +57,6 @@ interface PlannerDateCalendarProps {
   ) => void;
 }
 
-const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const emptySubscribe = () => () => {};
 
 export function PlannerDateCalendar({
@@ -63,6 +67,9 @@ export function PlannerDateCalendar({
   weekdayDiscount,
   onSelect,
 }: PlannerDateCalendarProps) {
+  const t = getBookingCalendarStrings(
+    detectBookingLocaleFromPathname(usePathname())
+  );
   const selectedDate = value ? startOfDay(value) : undefined;
   const [navigationMonth, setNavigationMonth] = useState<Date | null>(
     selectedDate ?? null
@@ -124,7 +131,7 @@ export function PlannerDateCalendar({
       <section className="rounded-[1.7rem] border border-[var(--line)] bg-white p-4 shadow-sm">
         <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--heading)]">
           <Calendar className="h-4 w-4 text-[var(--brand-primary)]" />
-          Select your preferred date
+          {t.selectYourPreferredDate}
         </div>
         <div className="h-64 animate-pulse rounded-[1.5rem] bg-[var(--surface-alt)]" />
       </section>
@@ -151,7 +158,7 @@ export function PlannerDateCalendar({
     <section className="rounded-[1.7rem] border border-[var(--line)] bg-white p-4 shadow-sm">
       <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--heading)]">
         <Calendar className="h-4 w-4 text-[var(--brand-primary)]" />
-        Select your preferred date
+        {t.selectYourPreferredDate}
       </div>
 
       <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-alt)] p-4">
@@ -193,7 +200,7 @@ export function PlannerDateCalendar({
         </div>
 
         <div className="mb-1 grid grid-cols-7">
-          {dayLabels.map((dayLabel) => (
+          {t.dayLabels.map((dayLabel) => (
             <div
               key={dayLabel}
               className="py-2 text-center text-xs font-medium text-[var(--text-muted)]"
@@ -283,9 +290,9 @@ export function PlannerDateCalendar({
                   )}
                 </div>
                 {isSoldOut ? (
-                  <div className="text-[9px] font-semibold text-gray-400">Sold out</div>
+                  <div className="text-[9px] font-semibold text-gray-400">{t.soldOut}</div>
                 ) : isCutoffClosed ? (
-                  <div className="text-[9px] font-semibold text-gray-400">Closed</div>
+                  <div className="text-[9px] font-semibold text-gray-400">{t.closed}</div>
                 ) : operation?.departureTimeOverride ? (
                   <div
                     className={`text-[9px] font-bold ${
@@ -300,7 +307,7 @@ export function PlannerDateCalendar({
                       isSelected ? "text-white/85" : "text-red-500"
                     }`}
                   >
-                    Last spots!
+                    {t.lastSpots}
                   </div>
                 ) : !isPast ? (
                   (() => {
