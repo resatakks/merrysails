@@ -9,6 +9,7 @@ import {
   getExperienceSupportPageUrl,
 } from "@/lib/experience-support";
 import { currencySymbol, emailLegalFooter, emailLogoBlock, escapeHtml } from "./helpers";
+import { getReservationEmailStrings } from "./reservation-confirmation-strings";
 
 interface ReservationConfirmationData {
   reservationId: string;
@@ -41,6 +42,11 @@ interface ReservationConfirmationData {
   /** € saved via the child 50% discount. Surfaced as a "Çocuk indirimi"
    * line under the price table when > 0. */
   childDiscountSavings?: number;
+  /** Customer locale (en/tr/de/fr/nl/ru). Drives the per-locale email copy.
+   * Additive + optional — defaults to "en" so the email is never broken by a
+   * missing/unknown locale. (A DE/RU/FR/NL/TR customer used to receive an
+   * all-English email; 2026-06-20.) */
+  locale?: string;
 }
 
 function renderFactsTable(
@@ -73,6 +79,7 @@ function renderBulletList(items: string[], tone: "neutral" | "warm" = "neutral")
 
 function renderSupportSection(
   tourSlug: string,
+  t: ReturnType<typeof getReservationEmailStrings>,
   privateTransferRequested?: boolean
 ): string {
   const guide = getExperienceSupportGuide(tourSlug);
@@ -94,8 +101,8 @@ function renderSupportSection(
           <table style="width:100%;border-collapse:collapse;">
             <thead>
               <tr style="background:#eff6ff;">
-                <th style="padding:10px 12px;text-align:left;font-size:12px;color:#1d4ed8;">Location</th>
-                <th style="padding:10px 12px;text-align:left;font-size:12px;color:#1d4ed8;">Transportation time</th>
+                <th style="padding:10px 12px;text-align:left;font-size:12px;color:#1d4ed8;">${escapeHtml(t.supportLocation)}</th>
+                <th style="padding:10px 12px;text-align:left;font-size:12px;color:#1d4ed8;">${escapeHtml(t.supportTransportTime)}</th>
               </tr>
             </thead>
             <tbody>
@@ -129,7 +136,7 @@ function renderSupportSection(
         guide.directions && guide.directions.length > 0
           ? `
         <div style="margin-top:14px;">
-          <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">How to reach the meeting point</p>
+          <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">${escapeHtml(t.supportHowToReach)}</p>
           ${renderBulletList(guide.directions)}
         </div>
       `
@@ -139,7 +146,7 @@ function renderSupportSection(
         guide.included && guide.included.length > 0
           ? `
         <div style="margin-top:14px;">
-          <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">Included</p>
+          <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">${escapeHtml(t.supportIncluded)}</p>
           ${renderBulletList(guide.included)}
         </div>
       `
@@ -149,7 +156,7 @@ function renderSupportSection(
         guide.excluded && guide.excluded.length > 0
           ? `
         <div style="margin-top:14px;">
-          <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">Excluded</p>
+          <p style="color:#0f172a;font-size:13px;font-weight:700;margin:0;">${escapeHtml(t.supportExcluded)}</p>
           ${renderBulletList(guide.excluded)}
         </div>
       `
@@ -159,7 +166,7 @@ function renderSupportSection(
         privateTransferRequested
           ? `
         <div style="margin-top:16px;background:#fff7ed;border:1px solid #fdba74;border-radius:12px;padding:14px 16px;">
-          <p style="color:#9a3412;font-size:13px;font-weight:700;margin:0 0 6px;">🚗 Private transfer requested</p>
+          <p style="color:#9a3412;font-size:13px;font-weight:700;margin:0 0 6px;">🚗 ${escapeHtml(t.supportPrivateTransfer)}</p>
           <p style="color:#9a3412;font-size:13px;line-height:1.7;margin:0;">${escapeHtml(guide.privateTransferNote)}</p>
         </div>
       `
@@ -170,7 +177,7 @@ function renderSupportSection(
           ? `
         <div style="margin-top:16px;text-align:center;">
           <a href="${guideUrl}" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;">
-            View Meeting & Boarding Details
+            ${escapeHtml(t.supportViewDetails)}
           </a>
         </div>
       `
@@ -181,6 +188,7 @@ function renderSupportSection(
 }
 
 export function reservationConfirmationEmail(data: ReservationConfirmationData): string {
+  const t = getReservationEmailStrings(data.locale);
   const symbol = currencySymbol(data.currency);
   const reservationUrl = getReservationDetailUrl(data.reservationId);
   const invoiceUrl = getReservationInvoiceUrl(data.reservationId);
@@ -191,44 +199,34 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
   const isConfirmed = variant === "confirmed";
   const isPrivateYachtFlow = data.tourSlug === "yacht-charter-in-istanbul";
   const cancellationSummary = isPrivateYachtFlow
-    ? "Free cancellation up to 48 hours before departure"
-    : "Free cancellation up to 24 hours before departure";
-  const heroBadge = isConfirmed
-    ? "Reservation Confirmed"
-    : "Reservation Received";
-  const greetingBody = isConfirmed
-    ? "Great news — your reservation is now confirmed. Your selected departure is secured, and two separate PDF files are attached for quick access: your invoice and your voucher."
-    : "Thank you for choosing MerrySails. Your reservation has been received and our team will review the booking details shortly.";
+    ? t.cancellation48
+    : t.cancellation24;
+  const heroBadge = isConfirmed ? t.badgeConfirmed : t.badgeReceived;
+  const greetingBody = isConfirmed ? t.greetingConfirmed : t.greetingReceived;
   const reservationNote = isConfirmed
-    ? "Your booking is now secured"
-    : "Please save this reference";
+    ? t.noteBookingSecured
+    : t.noteSaveReference;
   const nextSteps = isConfirmed
     ? [
-        "Your date and selected option are now confirmed.",
-        isPrivateYachtFlow
-          ? "Our operations team will confirm the payment schedule in writing."
-          : "Payment will be collected on board by cash or card.",
-        isPrivateYachtFlow
-          ? "The final marina pin and boarding contact will be shared before departure."
-          : "Arrive 15 minutes before departure and keep your voucher open on your phone.",
+        t.nextConfirmed1,
+        isPrivateYachtFlow ? t.nextConfirmedPayYacht : t.nextConfirmedPay,
+        isPrivateYachtFlow ? t.nextConfirmedBoardYacht : t.nextConfirmedBoard,
       ]
     : [
-        "Our team will review your booking and confirm availability.",
-        isPrivateYachtFlow
-          ? "You will receive the charter follow-up and confirmation steps by email or WhatsApp."
-          : "You will receive a confirmation message via email or WhatsApp.",
-        "Keep this reservation ID ready for support and follow-up.",
+        t.nextReceived1,
+        isPrivateYachtFlow ? t.nextReceivedConfirmYacht : t.nextReceivedConfirm,
+        t.nextReceived3,
       ];
 
   return `
 <!DOCTYPE html>
-<html lang="en">
+<html lang="${escapeHtml(data.locale && /^[a-z]{2}$/.test(data.locale) ? data.locale : "en")}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light only">
   <meta name="supported-color-schemes" content="light only">
-  <title>Booking Confirmation - MerrySails</title>
+  <title>${escapeHtml(t.documentTitle)}</title>
   <style>
     @media only screen and (max-width:480px) {
       .ms-hero { padding: 22px 18px 24px !important; }
@@ -259,60 +257,60 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
 
     <div style="background:#ffffff;padding:0 24px 32px;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;border-radius:0 0 18px 18px;">
       <div style="padding-top:24px;margin-bottom:22px;">
-        <h2 style="color:#0f172a;margin:0 0 8px;font-size:19px;font-weight:700;">Dear ${escapeHtml(data.customerName)},</h2>
+        <h2 style="color:#0f172a;margin:0 0 8px;font-size:19px;font-weight:700;">${escapeHtml(t.dear(data.customerName))}</h2>
         <p style="color:#64748b;margin:0;font-size:14px;line-height:1.7;">
-          Reservation ID <strong>${escapeHtml(data.reservationId)}</strong> is now connected to your booking record.
+          ${escapeHtml(t.idConnectedPrefix)}<strong>${escapeHtml(data.reservationId)}</strong>${escapeHtml(t.idConnectedSuffix)}
         </p>
       </div>
 
       <div style="background:linear-gradient(135deg,#fef9e7 0%,#fef3c7 100%);border:1px solid #fde68a;border-radius:14px;padding:18px 20px;text-align:center;margin-bottom:22px;">
-        <p style="color:#92400e;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 6px;font-weight:700;">Reservation ID</p>
+        <p style="color:#92400e;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 6px;font-weight:700;">${escapeHtml(t.reservationIdLabel)}</p>
         <p style="color:#78350f;font-size:25px;font-weight:800;margin:0;letter-spacing:2px;font-family:'Courier New',monospace;">${escapeHtml(data.reservationId)}</p>
         <p style="color:#a16207;font-size:12px;margin:8px 0 0;">${reservationNote}</p>
       </div>
 
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:22px;">
         <div style="background:#0f172a;padding:13px 18px;">
-          <p style="color:#f7b52c;margin:0;font-size:14px;font-weight:700;">Booking Details</p>
+          <p style="color:#f7b52c;margin:0;font-size:14px;font-weight:700;">${escapeHtml(t.bookingDetails)}</p>
         </div>
         <table style="width:100%;border-collapse:collapse;">
           <tr>
-            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;width:38%;">Tour</td>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;width:38%;">${escapeHtml(t.tour)}</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:600;">${escapeHtml(data.tourName)}</td>
           </tr>
           <tr>
-            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">Date</td>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">${escapeHtml(t.date)}</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${escapeHtml(data.date)}</td>
           </tr>
           <tr>
-            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">Departure</td>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">${escapeHtml(t.departure)}</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:600;">${escapeHtml(data.time)}</td>
           </tr>
           <tr>
-            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">Guests</td>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">${escapeHtml(t.guests)}</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${
               data.guestBreakdown && (data.guestBreakdown.children > 0 || data.guestBreakdown.infants > 0)
                 ? (() => {
                     const parts: string[] = [];
                     if (data.guestBreakdown.adults > 0) {
-                      parts.push(`${data.guestBreakdown.adults} adult${data.guestBreakdown.adults > 1 ? "s" : ""}`);
+                      parts.push(t.adults(data.guestBreakdown.adults));
                     }
                     if (data.guestBreakdown.children > 0) {
-                      parts.push(`${data.guestBreakdown.children} child${data.guestBreakdown.children > 1 ? "ren" : ""} (3-8)`);
+                      parts.push(t.children(data.guestBreakdown.children));
                     }
                     if (data.guestBreakdown.infants > 0) {
-                      parts.push(`${data.guestBreakdown.infants} infant${data.guestBreakdown.infants > 1 ? "s" : ""} (0-3)`);
+                      parts.push(t.infants(data.guestBreakdown.infants));
                     }
-                    return parts.join(", ");
+                    return escapeHtml(parts.join(", "));
                   })()
-                : `${data.guests} ${data.guests === 1 ? "guest" : "guests"}`
+                : escapeHtml(t.guest(data.guests))
             }</td>
           </tr>
           ${
             data.childDiscountSavings && data.childDiscountSavings > 0
               ? `
           <tr>
-            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">Child discount (ages 3-8 save 50%, ages 0-3 free)</td>
+            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">${escapeHtml(t.childDiscountLabel)}</td>
             <td style="color:#16a34a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:700;">−${symbol}${data.childDiscountSavings}</td>
           </tr>
           `
@@ -322,18 +320,18 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
             data.groupDiscountSavings && data.groupDiscountSavings > 0 && data.originalTotal
               ? `
           <tr>
-            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;width:38%;">Subtotal</td>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;width:38%;">${escapeHtml(t.subtotal)}</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${symbol}${data.originalTotal}</td>
           </tr>
           <tr>
-            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">Group discount</td>
+            <td style="color:#16a34a;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;font-weight:600;">${escapeHtml(t.groupDiscount)}</td>
             <td style="color:#16a34a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:700;">−${symbol}${data.groupDiscountSavings}</td>
           </tr>
           `
               : ""
           }
           <tr>
-            <td style="color:#64748b;font-size:13px;padding:12px 18px;">Total</td>
+            <td style="color:#64748b;font-size:13px;padding:12px 18px;">${escapeHtml(t.total)}</td>
             <td style="color:#0f172a;font-size:20px;padding:12px 18px;text-align:right;font-weight:800;">${symbol}${data.totalPrice}</td>
           </tr>
         </table>
@@ -347,32 +345,32 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         (data.additionalGuests && data.additionalGuests.length > 0)
           ? `
         <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;margin-bottom:22px;">
-          <p style="color:#0f172a;font-size:14px;font-weight:700;margin:0 0 10px;">Selected Booking Option</p>
+          <p style="color:#0f172a;font-size:14px;font-weight:700;margin:0 0 10px;">${escapeHtml(t.selectedOption)}</p>
           ${
             data.items && data.items.length >= 2
-              ? `<p style="color:#334155;font-size:14px;margin:0 0 4px;"><strong>Packages:</strong></p><ul style="color:#334155;font-size:14px;margin:0 0 8px;padding-left:20px;line-height:1.7;">${data.items
+              ? `<p style="color:#334155;font-size:14px;margin:0 0 4px;"><strong>${escapeHtml(t.packagesLabel)}</strong></p><ul style="color:#334155;font-size:14px;margin:0 0 8px;padding-left:20px;line-height:1.7;">${data.items
                   .map(
                     (it) =>
-                      `<li>${escapeHtml(it.packageName)} — ${it.guests} guest${it.guests > 1 ? "s" : ""}</li>`
+                      `<li>${escapeHtml(it.packageName)} — ${escapeHtml(t.packageGuests(it.guests))}</li>`
                   )
                   .join("")}</ul>`
               : data.packageName
-                ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Package:</strong> ${escapeHtml(data.packageName)}</p>`
+                ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>${escapeHtml(t.packageLabel)}</strong> ${escapeHtml(data.packageName)}</p>`
                 : ""
           }
           ${
             data.addOns && data.addOns.length > 0
-              ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Add-ons:</strong> ${escapeHtml(data.addOns.join(", "))}</p>`
+              ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>${escapeHtml(t.addOnsLabel)}</strong> ${escapeHtml(data.addOns.join(", "))}</p>`
               : ""
           }
           ${
             data.additionalGuests && data.additionalGuests.length > 0
-              ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>Other passengers:</strong> ${escapeHtml(data.additionalGuests.join(", "))}</p>`
+              ? `<p style="color:#334155;font-size:14px;margin:0 0 8px;"><strong>${escapeHtml(t.otherPassengersLabel)}</strong> ${escapeHtml(data.additionalGuests.join(", "))}</p>`
               : ""
           }
           ${
             data.privateTransferRequested
-              ? `<p style="color:#9a3412;font-size:14px;line-height:1.7;margin:0;"><strong>Private transfer:</strong> Requested separately. Our team will contact you before departure.</p>`
+              ? `<p style="color:#9a3412;font-size:14px;line-height:1.7;margin:0;"><strong>${escapeHtml(t.privateTransferInline)}</strong> ${escapeHtml(t.privateTransferInlineBody)}</p>`
               : ""
           }
         </div>
@@ -382,28 +380,26 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
 
       ${data.notes ? `
         <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px;padding:16px 18px;margin-bottom:22px;">
-          <p style="color:#0369a1;font-size:13px;font-weight:700;margin:0 0 6px;">Your Special Requests</p>
+          <p style="color:#0369a1;font-size:13px;font-weight:700;margin:0 0 6px;">${escapeHtml(t.specialRequests)}</p>
           <p style="color:#0c4a6e;font-size:14px;line-height:1.7;margin:0;">${escapeHtml(data.notes)}</p>
         </div>
       ` : ""}
 
-      ${isConfirmed ? renderSupportSection(data.tourSlug, data.privateTransferRequested) : ""}
+      ${isConfirmed ? renderSupportSection(data.tourSlug, t, data.privateTransferRequested) : ""}
 
       <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:18px 20px;margin-bottom:22px;">
-        <p style="color:#166534;font-size:15px;font-weight:700;margin:0 0 10px;">What's next</p>
+        <p style="color:#166534;font-size:15px;font-weight:700;margin:0 0 10px;">${escapeHtml(t.whatsNext)}</p>
         ${renderBulletList(nextSteps)}
       </div>
 
       <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:18px 20px;margin-bottom:22px;">
-        <p style="color:#92400e;margin:0 0 8px;font-size:14px;font-weight:700;">Good to know</p>
+        <p style="color:#92400e;margin:0 0 8px;font-size:14px;font-weight:700;">${escapeHtml(t.goodToKnow)}</p>
         ${renderBulletList(
           [
             cancellationSummary,
-            isPrivateYachtFlow
-              ? "Payment timing is confirmed in writing for your charter."
-              : "Payment is collected on board by cash or card.",
-            "Drinks and inclusions depend on the package selected on your booked experience page.",
-            "Professional photography may be available on board depending on the experience.",
+            isPrivateYachtFlow ? t.paymentYacht : t.paymentOnboard,
+            t.drinksNote,
+            t.photographyNote,
           ],
           "warm"
         )}
@@ -411,23 +407,23 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
 
       <div style="text-align:center;margin-bottom:22px;">
         <a href="${reservationUrl}" style="display:inline-block;background:linear-gradient(135deg,#ff4b2b,#ff0844);color:#ffffff;text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:700;font-size:14px;margin:0 6px 8px;">
-          Track Reservation
+          ${escapeHtml(t.trackReservation)}
         </a>
         <a href="${invoiceUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:13px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 6px 8px;border:1px solid #cbd5e1;">
-          Open Invoice
+          ${escapeHtml(t.openInvoice)}
         </a>
         <a href="${voucherUrl}" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:13px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 6px 8px;">
-          Open Voucher
+          ${escapeHtml(t.openVoucher)}
         </a>
         ${
           supportGuideUrl
             ? `<a href="${supportGuideUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:13px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 6px 8px;border:1px solid #cbd5e1;">
-          Meeting Details
+          ${escapeHtml(t.meetingDetails)}
         </a>`
             : ""
         }
         <a href="${tourUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:13px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 6px 8px;border:1px solid #cbd5e1;">
-          Experience Page
+          ${escapeHtml(t.experiencePage)}
         </a>
       </div>
 
@@ -439,15 +435,15 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
       <!-- MerryTourism VIP transfer CTA removed 2026-05-26 (cross-brand cleanup) -->
 
       <div style="text-align:center;padding-top:18px;border-top:1px solid #e2e8f0;">
-        <p style="color:#64748b;font-size:14px;margin:0 0 14px;">Need help? We are here for you.</p>
+        <p style="color:#64748b;font-size:14px;margin:0 0 14px;">${escapeHtml(t.needHelp)}</p>
         <a href="https://wa.me/905448989812" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
-          WhatsApp
+          ${escapeHtml(t.whatsapp)}
         </a>
         <a href="tel:+905448989812" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
-          Call Us
+          ${escapeHtml(t.callUs)}
         </a>
         <a href="mailto:info@merrysails.com" style="display:inline-block;background:#6366f1;color:#ffffff;text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:600;font-size:13px;margin:0 6px 8px;">
-          Email
+          ${escapeHtml(t.email)}
         </a>
       </div>
     </div>
@@ -455,8 +451,8 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
     <div style="padding:18px 12px 0;text-align:center;">
       ${emailLegalFooter()}
       <p style="text-align:center;color:#94a3b8;font-size:10px;margin:14px 0 0;line-height:1.6;">
-        This email was sent because a booking was made on merrysails.com.<br>
-        If you did not make this reservation, please <a href="mailto:info@merrysails.com" style="color:#64748b;">contact us</a>.
+        ${escapeHtml(t.footerSent("merrysails.com"))}<br>
+        ${escapeHtml(t.footerNotYou)} <a href="mailto:info@merrysails.com" style="color:#64748b;">${escapeHtml(t.footerContactUs)}</a>.
       </p>
     </div>
   </div>

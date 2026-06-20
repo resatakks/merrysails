@@ -8,6 +8,18 @@ export interface BookingPrefill {
   guests?: number;
   time?: string;
   source?: string;
+  /** Customer locale captured when the prefill was created (en/tr/de/fr/nl/ru).
+   * Persisted inside the `payload` JSON (no schema column / migration needed)
+   * and read back at email-build time so the confirmation email is localized. */
+  languageCode?: string;
+}
+
+/** Locales the booking flow + confirmation email support. */
+const BOOKING_LOCALES = new Set(["en", "tr", "de", "fr", "nl", "ru"]);
+
+function normalizeLanguageCode(value?: string): string | undefined {
+  const candidate = value?.trim().toLowerCase();
+  return candidate && BOOKING_LOCALES.has(candidate) ? candidate : undefined;
 }
 
 type SearchValue = string | string[] | undefined;
@@ -31,6 +43,7 @@ function normalizeBookingPrefill(data: BookingPrefill): BookingPrefill {
     guests,
     time: data.time?.trim() || undefined,
     source: data.source?.trim() || undefined,
+    languageCode: normalizeLanguageCode(data.languageCode),
   };
 }
 
@@ -54,6 +67,8 @@ function parseStoredPayload(payload: Prisma.JsonValue): BookingPrefill {
     guests: guestsValue,
     time: typeof record.time === "string" ? record.time : undefined,
     source: typeof record.source === "string" ? record.source : undefined,
+    languageCode:
+      typeof record.languageCode === "string" ? record.languageCode : undefined,
   });
 }
 
@@ -67,6 +82,9 @@ export function parseBookingPrefill(
   const time = getFirstValue(searchParams?.time);
   const guestsValue = Number(getFirstValue(searchParams?.guests));
   const source = getFirstValue(searchParams?.source);
+  const languageCode =
+    getFirstValue(searchParams?.languageCode) ??
+    getFirstValue(searchParams?.locale);
 
   return normalizeBookingPrefill({
     packageName,
@@ -74,6 +92,7 @@ export function parseBookingPrefill(
     guests: guestsValue,
     time,
     source,
+    languageCode,
   });
 }
 

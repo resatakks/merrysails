@@ -427,6 +427,10 @@ export default function BookingModal({ booking, onClose }: Props) {
       honeypot: company,
       items: mixedItems,
       attribution: getStoredAttribution() ?? undefined,
+      // Customer locale (from the booking page pathname) → localized
+      // confirmation email. A non-EN customer used to get an all-English
+      // email (2026-06-20). Defaults to "en" server-side if unknown.
+      locale,
     });
 
     if (result.success && "reservationId" in result && result.reservationId) {

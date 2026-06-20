@@ -55,6 +55,13 @@ interface CreateReservationInput {
   honeypot?: string;
   attribution?: AttributionPayload;
   /**
+   * Customer locale captured from the booking page pathname (en/tr/de/fr/nl/ru).
+   * Drives the localized confirmation email. Additive + optional — defaults to
+   * "en" so a missing/unknown value never breaks the booking or the email.
+   * (A non-EN customer used to receive an all-English email; 2026-06-20.)
+   */
+  locale?: string;
+  /**
    * Optional mixed-package breakdown. When present and has ≥2 entries the
    * booking is treated as a mixed-package reservation (some guests on one
    * package, others on a different one). Sum of items[].guests must equal
@@ -109,6 +116,17 @@ function sanitizeGuestNames(values?: string[]): string[] {
 
 function normalizePhone(value: string): string {
   return value.replace(/\s+/g, " ").trim().slice(0, 32);
+}
+
+/**
+ * Locales the confirmation email is translated into. Anything else (incl.
+ * undefined) clamps to "en" so the revenue-critical email always renders.
+ */
+const EMAIL_LOCALES = new Set(["en", "tr", "de", "fr", "nl", "ru"]);
+
+function resolveEmailLocale(value?: string): string {
+  const candidate = value?.trim().toLowerCase();
+  return candidate && EMAIL_LOCALES.has(candidate) ? candidate : "en";
 }
 
 function isExactClockTime(value: string): boolean {
@@ -236,6 +254,7 @@ export async function createReservation(input: CreateReservationInput) {
     }
 
     const reservationTime = normalizeReservationTime(input.time);
+    const emailLocale = resolveEmailLocale(input.locale);
 
     if (
       isSameDayBookingClosed(
@@ -425,6 +444,7 @@ export async function createReservation(input: CreateReservationInput) {
               privateTransferRequested: Boolean(input.privateTransferRequested),
               notes: customerNote,
               variant: "received",
+              locale: emailLocale,
               originalTotal: pricing.groupDiscount.eligible
                 ? pricing.originalTotal
                 : undefined,

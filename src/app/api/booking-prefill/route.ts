@@ -12,6 +12,7 @@ export async function POST(req: NextRequest) {
       guests?: number;
       time?: string;
       source?: string;
+      languageCode?: string;
     };
 
     if (!body?.tourSlug?.trim()) {
@@ -27,6 +28,10 @@ export async function POST(req: NextRequest) {
       guests: body.guests,
       time: body.time,
       source: body.source,
+      // Persisted inside the JSON payload (no schema column) so the localized
+      // confirmation email can resolve the customer's language later. Clamped
+      // to a known locale set inside createBookingPrefillPayload; default "en".
+      languageCode: body.languageCode,
     });
 
     const prefill = await prisma.bookingPrefill.create({

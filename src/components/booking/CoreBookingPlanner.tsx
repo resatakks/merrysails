@@ -193,6 +193,10 @@ export default function CoreBookingPlanner({
           guests,
           time: effectiveDepartureTime,
           source,
+          // Customer locale (from the page pathname) so the confirmation
+          // email — built later from this prefill — speaks the customer's
+          // language instead of defaulting to English.
+          languageCode: detectBookingLocaleFromPathname(pathname),
         }),
       });
 
