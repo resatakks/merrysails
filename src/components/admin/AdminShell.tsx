@@ -7,6 +7,7 @@ import {
   Gauge,
   Inbox,
   ShipWheel,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 import { adminLogoutAction } from "@/app/actions/admin";
@@ -16,6 +17,7 @@ interface AdminShellProps {
     | "/admin"
     | "/admin/leads"
     | "/admin/reservations"
+    | "/admin/partner-brands"
     | "/admin/operations"
     | "/admin/calendar"
     | "/admin/reports"
@@ -33,6 +35,7 @@ const navItems: Array<{
   { href: "/admin", label: "Dashboard", Icon: Gauge },
   { href: "/admin/leads", label: "Leads", Icon: Inbox },
   { href: "/admin/reservations", label: "Reservations", Icon: ClipboardList },
+  { href: "/admin/partner-brands", label: "Partner Brands", Icon: Users },
   { href: "/admin/calendar", label: "Calendar", Icon: CalendarDays },
   { href: "/admin/reports", label: "Reports", Icon: BarChart3 },
   { href: "/admin/operations", label: "Operations", Icon: ShipWheel },
