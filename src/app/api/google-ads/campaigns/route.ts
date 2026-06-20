@@ -32,7 +32,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const API_VERSION = "v20";
+const API_VERSION = "v21";
 const MIN_MULTIPLIER = 0.5;
 const MAX_MULTIPLIER = 2.0;
 
@@ -353,6 +353,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({ operations: [{ create: {
         name: campaignName,
         status: "PAUSED",
+        containsEuPoliticalAdvertising: "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING",
         advertisingChannelType: "SEARCH",
         manualCpc: { enhancedCpcEnabled: false },
         campaignBudget: budgetRN,

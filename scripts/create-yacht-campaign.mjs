@@ -8,7 +8,7 @@
 import fs from "fs";
 import path from "path";
 
-const API = "v20";
+const API = "v21";
 const root = path.dirname(new URL(import.meta.url).pathname).replace(/\/scripts$/, "");
 const env = {};
 for (const line of fs.readFileSync(path.join(root, ".env.local"), "utf8").split("\n")) {
@@ -41,16 +41,22 @@ async function mutate(resource, operations) {
   if (!r.ok) throw new Error(`${resource} ${r.status}: ${t}`);
   return JSON.parse(t);
 }
+async function search(query) {
+  const r = await fetch(`https://googleads.googleapis.com/${API}/customers/${customerId}/googleAds:search`, { method: "POST", headers: H(), body: JSON.stringify({ query }) });
+  const t = await r.text();
+  if (!r.ok) throw new Error(`search ${r.status}: ${t}`);
+  return JSON.parse(t);
+}
 
 const NEGATIVES = ["transfer","taxi","taksi","airport","havalimanı","vip transfer","cheap","free","affordable","ferry","public","shared","ticket","price per person","per person","job","jobs","salary","for sale","buy yacht","yacht for sale","license","captain course","crew jobs","rental car","apartment","hotel room","fishing","parasailing","jet ski","ferry schedule"];
 
 const FINAL = ["https://merrysails.com/yacht-charter-istanbul"];
 const BASE_HEADLINES = ["Private Yacht Charter Istanbul","Rent the Whole Boat, Direct","Bosphorus Private Yacht","From €220 — 2-Hour Charter","Captain & Crew Included","No Concierge Markup","TÜRSAB Licensed Since 2001","50,000+ Guests Hosted","Book Direct, Skip the Markup","Instant WhatsApp Quote"];
-const DESCRIPTIONS = ["Charter the whole boat for 12–150 guests. Sunset, dinner or custom route. From €220, no broker fees — quote in minutes on WhatsApp.","Premium Bosphorus yacht, captain + crew included. TÜRSAB-A licensed, 50,000+ guests since 2001. Book direct, skip the concierge markup."];
+const DESCRIPTIONS = ["Charter the whole boat from €220. Captain & crew included, no broker markup.","Premium Bosphorus yacht, TÜRSAB-licensed since 2001. Book direct on WhatsApp."];
 const ph = (t) => ({ text: t });
 
 const AD_GROUPS = [
-  { name: "AG-A — Yacht Birthday — EN", h1: "Birthday Yacht on the Bosphorus", bid: 900000, kws: ["yacht birthday party istanbul","birthday boat istanbul","private yacht birthday bosphorus","birthday yacht rental istanbul"] },
+  { name: "AG-A — Yacht Birthday — EN", h1: "Bosphorus Birthday Yacht", bid: 900000, kws: ["yacht birthday party istanbul","birthday boat istanbul","private yacht birthday bosphorus","birthday yacht rental istanbul"] },
   { name: "AG-B — Proposal Yacht — EN", h1: "Propose on a Private Yacht", bid: 1200000, kws: ["marriage proposal yacht istanbul","proposal boat istanbul","propose on a yacht istanbul","engagement yacht bosphorus"] },
   { name: "AG-C — Couples Sunset — EN", h1: "Private Sunset Yacht for Two", bid: 1100000, kws: ["private sunset yacht istanbul","romantic sunset boat istanbul","couples yacht bosphorus","sunset yacht for two istanbul"] },
   { name: "AG-H — Luxury / Hotel-capture — EN", h1: "Luxury Private Yacht Istanbul", bid: 1800000, kws: ["luxury yacht charter istanbul","exclusive yacht bosphorus","vip yacht istanbul","private boat tour istanbul","whole boat hire istanbul"] },
@@ -61,6 +67,11 @@ const AD_GROUPS = [
 (async () => {
   TKN = await token();
   console.log("OAuth OK. Customer:", customerId);
+
+  // idempotent: remove any prior same-name campaign (e.g. a partial earlier run)
+  const existing = await search(`SELECT campaign.resource_name FROM campaign WHERE campaign.name = 'MS — Yacht Charter — Search — Intent' AND campaign.status != 'REMOVED'`);
+  const toRemove = (existing.results || []).map((r) => r.campaign.resourceName);
+  if (toRemove.length) { await mutate("campaigns", toRemove.map((rn) => ({ remove: rn }))); console.log("Removed prior same-name campaign(s):", toRemove.length); }
 
   // geo: Istanbul (resolve) + UK/US/DE/UAE/SA/QA/KW/RU
   let geoIds = [2826, 2840, 2276, 2784, 2682, 2634, 2414, 2643];
@@ -78,6 +89,7 @@ const AD_GROUPS = [
   const camp = await mutate("campaigns", [{ create: {
     name: "MS — Yacht Charter — Search — Intent",
     status: "PAUSED",
+    containsEuPoliticalAdvertising: "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING",
     advertisingChannelType: "SEARCH",
     manualCpc: { enhancedCpcEnabled: false },
     campaignBudget: budgetRN,
@@ -102,7 +114,7 @@ const AD_GROUPS = [
     const agR = await mutate("adGroups", [{ create: { name: ag.name, campaign: campaignRN, type: "SEARCH_STANDARD", status: "ENABLED", cpcBidMicros: String(ag.bid) } }]);
     const agRN = agR.results[0].resourceName;
     await mutate("adGroupCriteria", ag.kws.map(t => ({ create: { adGroup: agRN, status: "ENABLED", keyword: { text: t, matchType: ag.exact ? "EXACT" : "PHRASE" } } })));
-    const headlines = [ph(ag.h1), ...BASE_HEADLINES.map(ph)].slice(0, 15);
+    const headlines = [...new Set([ag.h1, ...BASE_HEADLINES])].slice(0, 15).map(ph);
     await mutate("adGroupAds", [{ create: { adGroup: agRN, status: "ENABLED", ad: { finalUrls: FINAL, responsiveSearchAd: { headlines, descriptions: DESCRIPTIONS.map(ph) } } } }]);
     console.log(`  AG ✓ ${ag.name} — ${ag.kws.length} kw, RSA`);
   }
