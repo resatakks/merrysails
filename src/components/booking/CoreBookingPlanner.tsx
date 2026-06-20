@@ -439,7 +439,11 @@ export default function CoreBookingPlanner({
             value={date}
             onSelect={(nextDate, context) => {
               setDate(nextDate);
-              setSelectedDepartureTime(context.departureTimeOverride ?? undefined);
+              setSelectedDepartureTime(
+                context.departureTimeOverride
+                  ? extractClockTime(context.departureTimeOverride) ?? context.departureTimeOverride
+                  : undefined,
+              );
               setSelectedOperationNote(context.note ?? undefined);
             }}
           />

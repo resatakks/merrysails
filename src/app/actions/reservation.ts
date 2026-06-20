@@ -122,7 +122,17 @@ function normalizeReservationTime(value: string): string {
     return "To be confirmed";
   }
 
-  return isExactClockTime(trimmed) ? trimmed : trimmed;
+  if (isExactClockTime(trimmed)) {
+    return trimmed;
+  }
+
+  // The departure can arrive as localized prose — e.g. a Turkish operation-day
+  // override "20:30 kalkış (biniş 20:00'da başlar)". The stored + emailed time
+  // must be a clean clock value, never another locale's prose (an EN customer
+  // was shown a Turkish departure, 2026-06-20). Extract the departure clock;
+  // keep the raw value only for genuine non-clock notes ("arranged after booking").
+  const clock = trimmed.match(/\b\d{1,2}:\d{2}\b/)?.[0];
+  return clock ?? trimmed;
 }
 
 function parseReservationDateInput(value: string): Date | null {
