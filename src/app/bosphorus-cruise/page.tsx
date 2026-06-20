@@ -416,7 +416,7 @@ export default function BosphorusCruisePage() {
  pageUrl: `${SITE_URL}/bosphorus-cruise`,
  priceRange: "€€-€€€€ (€30-€500 across published products; event yachts by quote)",
  description:
- "Bosphorus cruise comparison hub for Istanbul: sunset (€30 Mon/Tue/Thu, €34 other days), dinner (€30-€90), private yacht charter (€220-€600). TURSAB licensed since 2001.",
+ "Bosphorus cruise comparison hub for Istanbul: sunset (€30 Mon/Tue/Thu, €34 other days), dinner (€30-€90), private yacht charter (from €220, larger by quote). TURSAB licensed since 2001.",
  }),
  ),
  }}

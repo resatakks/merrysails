@@ -373,8 +373,8 @@ export function PlannerDateCalendar({
             <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
               {selectedDate && isSameDay(selectedDate, today)
                 ? getSameDayBookingClosedMessage(tourSlug, departureTime) ??
-                  "Same-day reservations depend on departure cutoffs."
-                : "This date uses the same validation rules as the product pages. Pick another day in the calendar above any time."}
+                  t.sameDayDependsOnCutoffs
+                : t.selectedDateValidationHint}
             </div>
           )}
         </div>

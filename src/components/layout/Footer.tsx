@@ -28,25 +28,54 @@ import {
   getFooterStrings,
   type ChromeLocale,
 } from "@/i18n/chrome-strings";
-import { LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES } from "@/i18n/localized-routes";
+import {
+  LOCALIZED_ROUTES as CORE_LOCALIZED_ROUTES,
+  RU_ENABLED_ROUTES,
+  ZH_ENABLED_ROUTES,
+} from "@/i18n/localized-routes";
 
 type NavLocale = ChromeLocale;
 
 const NAV_LOCALES: NavLocale[] = ["tr", "de", "fr", "nl", "ru"];
 
-// Footer extends the core LOCALIZED_ROUTES with `/reservation` (form route)
-// and `/princes-islands-tour-istanbul` (EN pillar — TR/DE/FR use
-// locale-native slugs prens-adalari/prinzeninseln/iles-aux-princes that don't
-// match this set). Both are footer-only concerns, not hreflang/sitemap ones.
+// Footer extends the core LOCALIZED_ROUTES with `/reservation` (form route).
+// `/princes-islands-tour-istanbul` is intentionally NOT in this set: the EN
+// pillar lives at the root, and the non-EN locales use native slugs
+// (prens-adalari / prinzeninseln / iles-aux-princes) — there is no
+// `/<locale>/princes-islands-tour-istanbul` page for any locale, so prefixing
+// it would 404. It always falls back to the EN-root href below.
 const FOOTER_LOCALIZED_ROUTES = new Set<string>([
   ...Array.from(CORE_LOCALIZED_ROUTES).filter((r) => r !== ""),
   "/reservation",
-  "/princes-islands-tour-istanbul",
 ]);
+
+// Staged locales (ru/zh) only ship a subset of LOCALIZED_ROUTES (see
+// RU_ENABLED_ROUTES / ZH_ENABLED_ROUTES). Prefixing a footer link to a route a
+// staged locale doesn't have yet lands on a notFound() 404 — this is exactly
+// how /zh/princes-islands-tour-istanbul and /zh|/ru secondary links (e.g.
+// /sunset-cruise-tickets-istanbul) broke (translation/404 audit 2026-06-20).
+// Mirror Header.localeHasRoute + LanguageSwitcher: gate by the enabled set and
+// fall back to the EN-root href (HTTP 200) for un-shipped routes.
+const STAGED_LOCALE_ROUTES: Partial<Record<NavLocale, Set<string>>> = {
+  ru: RU_ENABLED_ROUTES,
+  zh: ZH_ENABLED_ROUTES,
+};
+
+function localeHasRoute(locale: NavLocale, href: string): boolean {
+  const gate = STAGED_LOCALE_ROUTES[locale];
+  if (!gate) return true; // tr/de/fr/nl ship every FOOTER_LOCALIZED_ROUTES path
+  // /reservation ships a [locale]/reservation page for every active locale
+  // (its own META gate covers ru+zh), so it's always localizable even though
+  // it's excluded from the core enabled sets (form route, no hreflang/sitemap).
+  if (href === "/reservation") return true;
+  return gate.has(href);
+}
 
 function localizeHref(href: string, locale: NavLocale): string {
   if (locale === "en") return href;
-  if (FOOTER_LOCALIZED_ROUTES.has(href)) return `/${locale}${href}`;
+  if (FOOTER_LOCALIZED_ROUTES.has(href) && localeHasRoute(locale, href)) {
+    return `/${locale}${href}`;
+  }
   return href;
 }
 

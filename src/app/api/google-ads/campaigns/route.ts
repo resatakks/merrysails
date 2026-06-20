@@ -194,7 +194,7 @@ export async function POST(req: NextRequest) {
   const creds = readAdsCreds();
   if (!creds) return NextResponse.json({ skipped: "missing_credentials" });
 
-  let body: { action?: string; multiplier?: number; keywords?: string[] | Array<{text: string; matchType?: string}>; campaignId?: string; campaignIds?: string[]; budgetTry?: number; maxPct?: number; urls?: string[]; status?: string; positiveGeoIds?: number[]; negativeGeoIds?: number[]; resourceName?: string; oldResourceName?: string; adGroupResourceName?: string; campaignResourceName?: string; adGroupName?: string; finalUrls?: string[]; path1?: string; path2?: string; headlines?: string[]; descriptions?: string[]; languageId?: number; cpcBidMicros?: number };
+  let body: { action?: string; multiplier?: number; keywords?: string[] | Array<{text: string; matchType?: string}>; campaignId?: string; campaignIds?: string[]; budgetTry?: number; maxPct?: number; urls?: string[]; status?: string; positiveGeoIds?: number[]; negativeGeoIds?: number[]; resourceName?: string; oldResourceName?: string; adGroupResourceName?: string; campaignResourceName?: string; adGroupName?: string; finalUrls?: string[]; path1?: string; path2?: string; headlines?: string[]; descriptions?: string[]; languageId?: number; cpcBidMicros?: number; campaignName?: string; languageIds?: number[] };
   try { body = await req.json(); }
   catch { return NextResponse.json({ error: "invalid_json" }, { status: 400 }); }
 
@@ -304,6 +304,86 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "mutate_failed", details: await mutateRes.text() }, { status: 502 });
     }
     return NextResponse.json({ ok: true, campaignId, oldTry: Number(row.campaignBudget.amountMicros) / 1_000_000, newTry: budgetTry });
+  }
+
+  // --- create_campaign (PAUSED — zero spend until operator enables) ---
+  // Creates a Search-only, manual-CPC campaign with budget, source-country geo
+  // (+ Istanbul resolved via geo-suggest), and EN/DE/AR/RU languages. Status
+  // PAUSED so nothing spends until the operator reviews + enables in the UI.
+  if (body.action === "create_campaign") {
+    const safetyCap = Number(process.env.GOOGLE_ADS_SAFETY_DAILY_CAP_TRY ?? 2000);
+    const budgetTry = Math.max(50, Math.min(safetyCap, Number(body.budgetTry ?? 1000)));
+    const campaignName = (body.campaignName ?? "MS — Yacht Charter — Search — Intent").slice(0, 120);
+    const languageIds = (body.languageIds?.length ? body.languageIds : [1000, 1001, 1019, 1031]);
+    let positiveGeoIds = (body.positiveGeoIds?.length ? body.positiveGeoIds : []) as number[];
+
+    // Default geo: stable country constants (UK/US/DE/UAE/SA/QA/KW/RU) + Istanbul (resolved).
+    if (!positiveGeoIds.length) {
+      positiveGeoIds = [2826, 2840, 2276, 2784, 2682, 2634, 2414, 2643];
+      try {
+        const sgRes = await fetch(`https://googleads.googleapis.com/${API_VERSION}/geoTargetConstants:suggest`, {
+          method: "POST",
+          headers: adsHeaders(creds, token),
+          body: JSON.stringify({ locale: "en", countryCode: "TR", locationNames: { names: ["Istanbul"] } }),
+        });
+        if (sgRes.ok) {
+          const sg = await sgRes.json() as { geoTargetConstantSuggestions?: Array<{ geoTargetConstant?: { id?: string; name?: string; targetType?: string } }> };
+          const ist = sg.geoTargetConstantSuggestions?.find((s) => s.geoTargetConstant?.name === "Istanbul");
+          const istId = Number(ist?.geoTargetConstant?.id);
+          if (istId) positiveGeoIds.unshift(istId);
+        }
+      } catch { /* fall through with country-only geo */ }
+    }
+
+    // Step 1: budget
+    const budgetMicros = String(Math.round(budgetTry * 1_000_000));
+    const budRes = await fetch(`https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignBudgets:mutate`, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ operations: [{ create: { name: `${campaignName} — Budget`, amountMicros: budgetMicros, deliveryMethod: "STANDARD", explicitlyShared: false } }] }),
+    });
+    if (!budRes.ok) return NextResponse.json({ error: "create_budget_failed", details: await budRes.text() }, { status: 502 });
+    const budgetRN = (await budRes.json() as { results?: Array<{ resourceName: string }> }).results?.[0]?.resourceName;
+    if (!budgetRN) return NextResponse.json({ error: "no_budget_resource_name" }, { status: 502 });
+
+    // Step 2: campaign (PAUSED, Search-only, manual CPC)
+    const campRes = await fetch(`https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaigns:mutate`, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ operations: [{ create: {
+        name: campaignName,
+        status: "PAUSED",
+        advertisingChannelType: "SEARCH",
+        manualCpc: { enhancedCpcEnabled: false },
+        campaignBudget: budgetRN,
+        networkSettings: { targetGoogleSearch: true, targetSearchNetwork: false, targetContentNetwork: false, targetPartnerSearchNetwork: false },
+        geoTargetTypeSetting: { positiveGeoTargetType: "PRESENCE_OR_INTEREST", negativeGeoTargetType: "PRESENCE" },
+      } }] }),
+    });
+    if (!campRes.ok) return NextResponse.json({ error: "create_campaign_failed", details: await campRes.text() }, { status: 502 });
+    const campaignRN = (await campRes.json() as { results?: Array<{ resourceName: string }> }).results?.[0]?.resourceName;
+    if (!campaignRN) return NextResponse.json({ error: "no_campaign_resource_name" }, { status: 502 });
+
+    // Step 3: geo criteria
+    let geoResult = "none";
+    if (positiveGeoIds.length) {
+      const geoRes = await fetch(`https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignCriteria:mutate`, {
+        method: "POST",
+        headers: adsHeaders(creds, token),
+        body: JSON.stringify({ operations: positiveGeoIds.map((id) => ({ create: { campaign: campaignRN, location: { geoTargetConstant: `geoTargetConstants/${id}` } } })) }),
+      });
+      geoResult = geoRes.ok ? `${positiveGeoIds.length}_added` : `failed: ${await geoRes.text()}`;
+    }
+
+    // Step 4: language criteria
+    const langRes = await fetch(`https://googleads.googleapis.com/${API_VERSION}/customers/${creds.customerId}/campaignCriteria:mutate`, {
+      method: "POST",
+      headers: adsHeaders(creds, token),
+      body: JSON.stringify({ operations: languageIds.map((lid) => ({ create: { campaign: campaignRN, type: "LANGUAGE", language: { languageConstant: `languageConstants/${lid}` } } })) }),
+    });
+    const langResult = langRes.ok ? `${languageIds.length}_added` : `failed: ${await langRes.text()}`;
+
+    return NextResponse.json({ ok: true, status: "PAUSED", campaignResourceName: campaignRN, budgetTry, geo: geoResult, geoIds: positiveGeoIds, languages: langResult });
   }
 
   // --- add_negatives ---

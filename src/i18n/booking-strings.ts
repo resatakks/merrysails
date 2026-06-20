@@ -54,6 +54,8 @@ export interface BookingCalendarStrings {
   soldOut: string;
   closed: string;
   lastSpots: string;
+  sameDayDependsOnCutoffs: string;
+  selectedDateValidationHint: string;
   departureTime: string;
   departure: string;
   change: string;
@@ -291,6 +293,9 @@ const CALENDAR: Record<BookingLocale, BookingCalendarStrings> = {
     soldOut: "Sold Out",
     closed: "Closed",
     lastSpots: "Last spots!",
+    sameDayDependsOnCutoffs: "Same-day reservations depend on departure cutoffs.",
+    selectedDateValidationHint:
+      "This date uses the same validation rules as the product pages. Pick another day in the calendar above any time.",
     departureTime: "Departure Time",
     departure: "Departure",
     change: "Change",
@@ -326,6 +331,9 @@ const CALENDAR: Record<BookingLocale, BookingCalendarStrings> = {
     soldOut: "Tükendi",
     closed: "Kapalı",
     lastSpots: "Son yerler!",
+    sameDayDependsOnCutoffs: "Aynı gün rezervasyonlar kalkış kesim saatlerine bağlıdır.",
+    selectedDateValidationHint:
+      "Bu tarih, ürün sayfalarıyla aynı doğrulama kurallarını kullanır. İstediğiniz zaman yukarıdaki takvimden başka bir gün seçebilirsiniz.",
     departureTime: "Kalkış Saati",
     departure: "Kalkış",
     change: "Değiştir",
@@ -361,6 +369,9 @@ const CALENDAR: Record<BookingLocale, BookingCalendarStrings> = {
     soldOut: "Ausverkauft",
     closed: "Geschlossen",
     lastSpots: "Letzte Plätze!",
+    sameDayDependsOnCutoffs: "Same-Day-Reservierungen hängen von den Abfahrts-Annahmeschlusszeiten ab.",
+    selectedDateValidationHint:
+      "Dieses Datum verwendet dieselben Prüfregeln wie die Produktseiten. Sie können jederzeit oben im Kalender einen anderen Tag wählen.",
     departureTime: "Abfahrtszeit",
     departure: "Abfahrt",
     change: "Ändern",
@@ -396,6 +407,9 @@ const CALENDAR: Record<BookingLocale, BookingCalendarStrings> = {
     soldOut: "Complet",
     closed: "Fermé",
     lastSpots: "Dernières places !",
+    sameDayDependsOnCutoffs: "Les réservations le jour même dépendent des heures limites de départ.",
+    selectedDateValidationHint:
+      "Cette date utilise les mêmes règles de validation que les pages produits. Vous pouvez choisir un autre jour dans le calendrier ci-dessus à tout moment.",
     departureTime: "Heure de départ",
     departure: "Départ",
     change: "Modifier",
@@ -431,6 +445,9 @@ const CALENDAR: Record<BookingLocale, BookingCalendarStrings> = {
     soldOut: "Uitverkocht",
     closed: "Gesloten",
     lastSpots: "Laatste plekken!",
+    sameDayDependsOnCutoffs: "Reserveringen voor dezelfde dag zijn afhankelijk van de vertrek-deadlines.",
+    selectedDateValidationHint:
+      "Voor deze datum gelden dezelfde validatieregels als op de productpagina's. U kunt altijd een andere dag kiezen in de kalender hierboven.",
     departureTime: "Vertrektijd",
     departure: "Vertrek",
     change: "Wijzigen",
@@ -466,6 +483,9 @@ const CALENDAR: Record<BookingLocale, BookingCalendarStrings> = {
     soldOut: "Распродано",
     closed: "Закрыто",
     lastSpots: "Последние места!",
+    sameDayDependsOnCutoffs: "Бронирование в тот же день зависит от времени закрытия отправлений.",
+    selectedDateValidationHint:
+      "Для этой даты действуют те же правила проверки, что и на страницах услуг. Вы можете в любой момент выбрать другой день в календаре выше.",
     departureTime: "Время отправления",
     departure: "Отправление",
     change: "Изменить",
