@@ -64,7 +64,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Tekne turları çocuklar için uygun mu?",
-        a: "Evet, Boğaz tekne turlarımızın çoğu aile dostudur. 6 yaş altı çocuklar paylaşımlı turlarda ücretsiz seyahat eder. Özel yat kiralamalarında yaş kısıtlaması yoktur.",
+        a: "Evet, Boğaz tekne turlarımızın çoğu aile dostudur. 3 yaş altı bebekler paylaşımlı turlarda ücretsiz seyahat eder, 3-13 yaş çocuklara %50 indirim uygulanır. Özel yat kiralamalarında yaş kısıtlaması yoktur.",
       },
       {
         q: "Tura ne getirmeliyim?",
@@ -130,7 +130,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Sind die Bootstouren für Kinder geeignet?",
-        a: "Ja, die meisten unserer Bosporus-Bootstouren sind familienfreundlich. Kinder unter 6 Jahren reisen auf geteilten Kreuzfahrten kostenlos. Bei privaten Jachtcharter gibt es keine Altersbeschränkungen.",
+        a: "Ja, die meisten unserer Bosporus-Bootstouren sind familienfreundlich. Kinder unter 3 Jahren reisen auf geteilten Kreuzfahrten kostenlos, Kinder von 3–13 Jahren erhalten 50 % Ermäßigung. Bei privaten Jachtcharter gibt es keine Altersbeschränkungen.",
       },
       {
         q: "Was sollte ich auf die Kreuzfahrt mitnehmen?",
@@ -196,7 +196,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Les excursions en bateau sont-elles adaptées aux enfants ?",
-        a: "Oui, la plupart de nos excursions sur le Bosphore sont adaptées aux familles. Les enfants de moins de 6 ans voyagent gratuitement sur les croisières partagées. Pour les charters privés, il n'y a aucune restriction d'âge.",
+        a: "Oui, la plupart de nos excursions sur le Bosphore sont adaptées aux familles. Les enfants de moins de 3 ans voyagent gratuitement sur les croisières partagées, et les 3–13 ans bénéficient de 50 % de réduction. Pour les charters privés, il n'y a aucune restriction d'âge.",
       },
       {
         q: "Que dois-je apporter pour la croisière ?",
@@ -262,7 +262,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Zijn de boottochten geschikt voor kinderen?",
-        a: "Ja, de meeste van onze Bosporus boottochten zijn gezinsvriendelijk. Kinderen onder de 6 jaar reizen gratis op gedeelde cruises. Voor privéjachtcharters gelden geen leeftijdsbeperkingen.",
+        a: "Ja, de meeste van onze Bosporus boottochten zijn gezinsvriendelijk. Kinderen onder de 3 jaar reizen gratis op gedeelde cruises, en kinderen van 3–13 jaar krijgen 50% korting. Voor privéjachtcharters gelden geen leeftijdsbeperkingen.",
       },
       {
         q: "Wat moet ik meenemen op de cruise?",

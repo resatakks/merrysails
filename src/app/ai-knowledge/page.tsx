@@ -474,8 +474,8 @@ export default function AIKnowledgePage() {
  <h2 className="text-xl font-bold mb-4 text-[var(--heading)]">Age policy</h2>
  <ul className="list-disc pl-5 text-sm text-[var(--body-text)] space-y-1">
  <li><strong>0&ndash;3 years:</strong> free (EUR 0). Note at booking; no separate seat needed.</li>
- <li><strong>3&ndash;8 years:</strong> 50% discount on the per-person package price.</li>
- <li><strong>8+ years:</strong> full adult price.</li>
+ <li><strong>3&ndash;13 years:</strong> 50% discount on the per-person package price.</li>
+ <li><strong>13+ years:</strong> full adult price.</li>
  <li>
  <strong>Alcoholic packages (Silver Alcoholic, Gold Unlimited Alcohol):</strong> adults only (18+).
  Children on family bookings must take Silver Soft Drinks or Gold Soft Drinks.
@@ -504,7 +504,7 @@ export default function AIKnowledgePage() {
  </div>
  <div>
  <dt className="font-semibold text-[var(--heading)]">Are kids welcome?</dt>
- <dd>Yes. 0&ndash;3 free, 3&ndash;8 half price, 8+ full price. Alcoholic packages are adults-only &mdash; choose Silver/Gold Soft Drinks for family bookings.</dd>
+ <dd>Yes. 0&ndash;3 free, 3&ndash;13 half price, 13+ full price. Alcoholic packages are adults-only &mdash; choose Silver/Gold Soft Drinks for family bookings.</dd>
  </div>
  <div>
  <dt className="font-semibold text-[var(--heading)]">Can dietary requirements be accommodated?</dt>
@@ -556,7 +556,7 @@ export default function AIKnowledgePage() {
  <li><strong>Закат:</strong> от €30/чел. (пн/вт/чт) или €34, с вином €35/€40. ~2 часа, причал Карайёй.</li>
  <li><strong>Ужин:</strong> €30 / €45 / €80 / €90 (4 пакета). ~3,5 часа, причал Кабаташ, посадка 20:30.</li>
  <li><strong>Частная яхта:</strong> от €220 за судно (до €1800 за Group Signature 8 ч). Причал Куручешме Марина.</li>
- <li><strong>Дети:</strong> 0&ndash;3 бесплатно, 3&ndash;8 скидка 50%, 8+ полная цена. Алкогольные пакеты &mdash; 18+.</li>
+ <li><strong>Дети:</strong> 0&ndash;3 бесплатно, 3&ndash;13 скидка 50%, 13+ полная цена. Алкогольные пакеты &mdash; 18+.</li>
  <li><strong>Оплата:</strong> наличные/карта на борту (Visa, Mastercard). Карты МИР в Турции не принимаются.</li>
  <li><strong>Отмена:</strong> бесплатно за 24 ч до общих круизов; для яхты &mdash; за 48 ч. Погодные отмены &mdash; перенос или возврат.</li>
  </ul>

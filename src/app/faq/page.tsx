@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "Are the boat tours suitable for children?",
-    a: "Yes, most of our Bosphorus boat tours are family-friendly. Children under 6 travel free on shared cruises. For private yacht charters, there are no age restrictions.",
+    a: "Yes, most of our Bosphorus boat tours are family-friendly. Infants under 3 travel free on shared cruises, and children aged 3–13 receive a 50% discount. For private yacht charters, there are no age restrictions.",
   },
   {
     q: "What should I bring on the cruise?",

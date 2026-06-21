@@ -253,7 +253,7 @@ const tourFaqs: Record<string, { question: string; answer: string }[]> = {
     { question: "How long is the Istanbul lunch cruise?", answer: "The lunch cruise lasts 2 hours, departing at 12:30 from Eminönü Pier. It's the perfect midday break combining sightseeing with a delicious Turkish meal on the water." },
     { question: "What food is served on the lunch cruise?", answer: "A freshly prepared Turkish lunch is served on board, featuring traditional dishes made with local ingredients. The menu typically includes mezes, a main course, and dessert, giving you an authentic taste of Turkish cuisine." },
     { question: "How much does the Istanbul lunch cruise cost?", answer: "The Istanbul lunch cruise costs €35 per person, including the Turkish lunch, soft drinks, Bosphorus cruise, and audio guide. It's an affordable way to combine dining and sightseeing." },
-    { question: "Is the lunch cruise suitable for families?", answer: "Yes, the lunch cruise is very family-friendly with a relaxed daytime atmosphere. Children aged 0–5 ride free, and ages 6–12 receive a 50% discount. The 2-hour duration is comfortable for guests of all ages." },
+    { question: "Is the lunch cruise suitable for families?", answer: "Yes, the lunch cruise is very family-friendly with a relaxed daytime atmosphere. Infants aged 0–3 ride free, and children aged 3–13 receive a 50% discount. The 2-hour duration is comfortable for guests of all ages." },
   ],
   "bosphorus-cruise-for-cruise-passengers": [
     { question: "Will I get back to my cruise ship on time?", answer: "Absolutely. Our tour is specifically designed for cruise ship passengers with a guaranteed return well before your ship's departure. We coordinate with port schedules and build in a comfortable time buffer." },
@@ -309,6 +309,7 @@ const aiSupportLinksBySlug: Record<
     { href: "/guides/karakoy-waterfront", label: "Karakoy waterfront guide" },
     { href: "/bosphorus-cruise", label: "Bosphorus compare hub" },
     { href: "/istanbul-dinner-cruise", label: "Dinner cruise alternative" },
+    { href: "/yacht-charter-istanbul", label: "Private yacht charter" },
   ],
 };
 
@@ -925,11 +926,30 @@ export default async function TourDetailPage({
                       ? "Best Sunset Cruise Istanbul — MerrySails Bosphorus"
                       : `What is the MerrySails ${tour.nameEn}?`}
                   </h2>
-                  <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                    {slug === "bosphorus-sunset-cruise"
-                      ? "MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour sailing from €30 (Mon, Tue & Thu, without wine) or €34 (other days). Wine option: €35 (Mon, Tue & Thu) or €40. Runs daily, timed around Istanbul's sunset. Since 2001, MerrySails has operated over 17,000 sunset sailings, with an average guest rating of 4.93 across 621 verified reviews. TURSAB A-Group licensed since 2001. Direct online booking at merrysails.com."
-                      : `This page is the protected owner URL for ${tour.nameEn} intent. Use it when the guest already knows the product direction and needs the clearest package, timing, and booking-fit summary.`}
-                  </p>
+                  {slug === "bosphorus-sunset-cruise" ? (
+                    <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                      MerrySails Bosphorus Sunset Cruise is a 2-hour shared golden-hour
+                      sailing from €30 (Mon, Tue &amp; Thu, without wine) or €34 (other
+                      days). Wine option: €35 (Mon, Tue &amp; Thu) or €40. Runs daily,
+                      timed around Istanbul&apos;s sunset. Since 2001, MerrySails has
+                      operated over 17,000 sunset sailings, with an average guest rating of
+                      4.93 across 621 verified reviews. TÜRSAB A-Group licensed since 2001.
+                      Direct online booking at merrysails.com. Prefer dinner with the same
+                      skyline? See the{" "}
+                      <Link href="/istanbul-dinner-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                        Istanbul dinner cruise
+                      </Link>{" "}
+                      (from €30); for the boat to yourselves, compare{" "}
+                      <Link href="/yacht-charter-istanbul" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                        private yacht charter
+                      </Link>{" "}
+                      (from €220 per yacht).
+                    </p>
+                  ) : (
+                    <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                      {`This page is the protected owner URL for ${tour.nameEn} intent. Use it when the guest already knows the product direction and needs the clearest package, timing, and booking-fit summary.`}
+                    </p>
+                  )}
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
                   <table className="w-full border-collapse text-left text-sm">

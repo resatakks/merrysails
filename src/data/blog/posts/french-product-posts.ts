@@ -156,7 +156,7 @@ export const frenchProductPosts: BlogPost[] = [
       },
       {
         q: "Y a-t-il des réductions pour les enfants ?",
-        a: "Oui, les enfants de moins de 6 ans voyagent gratuitement sur les croisières partagées. Les 6–12 ans bénéficient de 50 % de réduction. Les menus enfants sont disponibles sur demande pour les dîners croisières. Précisez les âges à la réservation.",
+        a: "Oui, les enfants de moins de 3 ans voyagent gratuitement sur les croisières partagées. Les 3–13 ans bénéficient de 50 % de réduction. Les menus enfants sont disponibles sur demande pour les dîners croisières. Précisez les âges à la réservation.",
       },
       {
         q: "Faut-il réserver à l'avance ou peut-on acheter sur place ?",

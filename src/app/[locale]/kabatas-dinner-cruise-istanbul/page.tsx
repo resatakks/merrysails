@@ -189,7 +189,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Çocuklar için fiyat avantajı var mı?",
-        a: "Evet, 0-5 yaş ücretsizdir. 6-12 yaş için indirimli fiyat uygulanır. Kesin çocuk fiyatı için rezervasyon sırasında veya WhatsApp hattımızdan bilgi alabilirsiniz.",
+        a: "Evet, 0-3 yaş ücretsizdir. 3-13 yaş için %50 indirimli fiyat uygulanır. Kesin çocuk fiyatı için rezervasyon sırasında veya WhatsApp hattımızdan bilgi alabilirsiniz.",
       },
       {
         q: "İptal politikası nedir?",
@@ -341,7 +341,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Gibt es Rabatte für Kinder?",
-        a: "Kinder von 0 bis 5 Jahren sind kostenlos. Für Kinder von 6 bis 12 Jahren gilt ein ermäßigter Preis. Details erfragen Sie beim Buchen oder über unseren WhatsApp-Kanal.",
+        a: "Kinder von 0 bis 3 Jahren sind kostenlos. Für Kinder von 3 bis 13 Jahren gilt 50 % Ermäßigung. Details erfragen Sie beim Buchen oder über unseren WhatsApp-Kanal.",
       },
       {
         q: "Was ist die Stornierungspolitik?",
@@ -493,7 +493,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Y a-t-il des réductions pour les enfants ?",
-        a: "Les enfants de 0 à 5 ans sont gratuits. Un tarif réduit s'applique aux enfants de 6 à 12 ans. Contactez-nous via WhatsApp pour les détails.",
+        a: "Les enfants de 0 à 3 ans sont gratuits. Une réduction de 50 % s'applique aux enfants de 3 à 13 ans. Contactez-nous via WhatsApp pour les détails.",
       },
       {
         q: "Quelle est la politique d'annulation ?",
@@ -645,7 +645,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Is er korting voor kinderen?",
-        a: "Kinderen van 0 tot 5 jaar zijn gratis. Voor kinderen van 6 tot 12 jaar geldt een gereduceerde prijs. Neem contact op via WhatsApp voor de exacte tarieven.",
+        a: "Kinderen van 0 tot 3 jaar zijn gratis. Voor kinderen van 3 tot 13 jaar geldt 50% korting. Neem contact op via WhatsApp voor de exacte tarieven.",
       },
       {
         q: "Wat is het annuleringsbeleid?",
@@ -796,7 +796,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Есть ли скидка для детей?",
-        a: "Дети от 0 до 5 лет — бесплатно. Для детей от 6 до 12 лет действует льготная цена. Свяжитесь через WhatsApp для точных тарифов.",
+        a: "Дети от 0 до 3 лет — бесплатно. Для детей от 3 до 13 лет действует скидка 50%. Свяжитесь через WhatsApp для точных тарифов.",
       },
       {
         q: "Какова политика отмены?",

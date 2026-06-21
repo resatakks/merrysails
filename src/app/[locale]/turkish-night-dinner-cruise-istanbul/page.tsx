@@ -196,7 +196,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Çocuklar katılabilir mi?",
-        a: "Evet, aile dostu bir turdur. 0-5 yaş ücretsiz, 6-12 yaş indirimlidir. Türk gecesi eğlencesi çocuklar için de ilgi çekici bir deneyim sunar.",
+        a: "Evet, aile dostu bir turdur. 0-3 yaş ücretsiz, 3-13 yaş %50 indirimlidir. Türk gecesi eğlencesi çocuklar için de ilgi çekici bir deneyim sunar.",
       },
     ],
     relatedHeading: "Diğer Tur Seçenekleri",
@@ -351,7 +351,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Können Kinder teilnehmen?",
-        a: "Ja, die Tour ist familienfreundlich. Kinder 0–5 Jahre kostenlos, 6–12 Jahre ermäßigt. Die Türkische Nacht-Show ist auch für Kinder ein attraktives Erlebnis.",
+        a: "Ja, die Tour ist familienfreundlich. Kinder 0–3 Jahre kostenlos, 3–13 Jahre 50 % ermäßigt. Die Türkische Nacht-Show ist auch für Kinder ein attraktives Erlebnis.",
       },
     ],
     relatedHeading: "Weitere Optionen",
@@ -506,7 +506,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Les enfants peuvent-ils participer ?",
-        a: "Oui, la croisière est adaptée aux familles. Enfants 0–5 ans gratuits, 6–12 ans tarif réduit. Le spectacle de nuit turque est aussi captivant pour les enfants.",
+        a: "Oui, la croisière est adaptée aux familles. Enfants 0–3 ans gratuits, 3–13 ans 50 % de réduction. Le spectacle de nuit turque est aussi captivant pour les enfants.",
       },
     ],
     relatedHeading: "Autres options",
@@ -661,7 +661,7 @@ const CONTENT: Record<string, LocaleContent> = {
       },
       {
         q: "Kunnen kinderen deelnemen?",
-        a: "Ja, de cruise is gezinsvriendelijk. Kinderen 0–5 jaar gratis, 6–12 jaar gereduceerd tarief. De Turkse avondshow is ook voor kinderen aantrekkelijk.",
+        a: "Ja, de cruise is gezinsvriendelijk. Kinderen 0–3 jaar gratis, 3–13 jaar 50% korting. De Turkse avondshow is ook voor kinderen aantrekkelijk.",
       },
     ],
     relatedHeading: "Andere opties",

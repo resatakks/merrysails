@@ -497,7 +497,7 @@ export async function generateReservationVoucherPdf(
       }
       if (breakdown.children > 0) {
         parts.push(
-          `${breakdown.children} child${breakdown.children > 1 ? "ren" : ""} (3-8)`,
+          `${breakdown.children} child${breakdown.children > 1 ? "ren" : ""} (3-13)`,
         );
       }
       if (breakdown.infants > 0) {

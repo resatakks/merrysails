@@ -537,7 +537,7 @@ export const tours: Tour[] = [
       "Visitors comparing Silver vs Gold seating and drink levels",
       "Travelers who prefer dinner, entertainment, and skyline views in one booking",
       "Friends, couples, and small groups who do not need a private yacht",
-      "Families with children — kids welcome, child discount ages 4-10",
+      "Families with children — kids welcome, child discount ages 3-13",
       "Vegetarian and dietary-conscious travelers — menu substitutions available",
       "Guests celebrating birthdays, anniversaries, or special occasions",
       "Hotel guests in Sultanahmet, Taksim, or Beyoglu — hotel pickup included",

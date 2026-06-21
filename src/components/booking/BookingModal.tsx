@@ -50,7 +50,7 @@ interface BookingDetails {
   date: string;
   time: string;
   guests: number;
-  /** 3-8 yaş — 50% indirim (defaults to 0). */
+  /** 3-13 yaş — 50% indirim (defaults to 0). */
   children?: number;
   /** 0-3 yaş — ücretsiz (defaults to 0). */
   infants?: number;
@@ -412,7 +412,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       time: booking.time || "17:00",
       guests: booking.guests,
       // Child/infant breakdown (2026-05-25): pricing layer applies a 50%
-      // discount to children (3-8) and €0 to infants (0-3). Mixed-package
+      // discount to children (3-13) and €0 to infants (0-3). Mixed-package
       // bookings ignore this breakdown server-side.
       children: booking.children ?? 0,
       infants: booking.infants ?? 0,

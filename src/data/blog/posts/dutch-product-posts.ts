@@ -156,7 +156,7 @@ export const dutchProductPosts: BlogPost[] = [
       },
       {
         q: "Is er kinderkorting op een Bosporus cruise?",
-        a: "Kinderen tot 5 jaar varen gratis mee op gedeelde tours. Kinderen van 6–12 jaar betalen 50% van het standaardtarief. Voor diner cruises zijn kindermenu's beschikbaar op voorafgaand verzoek. Vraag naar de actuele kindertarieven bij boeking via merrysails.com.",
+        a: "Kinderen tot 3 jaar varen gratis mee op gedeelde tours. Kinderen van 3–13 jaar betalen 50% van het standaardtarief. Voor diner cruises zijn kindermenu's beschikbaar op voorafgaand verzoek. Vraag naar de actuele kindertarieven bij boeking via merrysails.com.",
       },
       {
         q: "Hoe ver van tevoren moet ik boeken?",

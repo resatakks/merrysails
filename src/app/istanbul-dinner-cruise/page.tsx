@@ -768,7 +768,15 @@ export default async function IstanbulDinnerCruisePage({
                 <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
                   Shared dinner cruise packages suit guests who want a fixed evening schedule with
                   dinner service, Turkish-night entertainment, and Bosphorus views — starting at €30 per person.
-                  For a fully private yacht dinner, compare the options below.
+                  Want the views without a full dinner? The{" "}
+                  <Link href="/cruises/bosphorus-sunset-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                    Bosphorus sunset cruise
+                  </Link>{" "}
+                  covers the same skyline from €30. For a fully private evening, charter a{" "}
+                  <Link href="/yacht-charter-istanbul" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                    private yacht
+                  </Link>{" "}
+                  (from €220) or compare the options below.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">

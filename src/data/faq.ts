@@ -22,7 +22,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "Çocuklar için indirim var mı?",
-    answer: "0-5 yaş arası çocuklar ücretsizdir. 6-12 yaş arası çocuklara %50 indirim uygulanır. 12 yaş üstü yetişkin fiyatı geçerlidir. Aile paketlerimiz için bize ulaşın.",
+    answer: "0-3 yaş arası bebekler ücretsizdir. 3-13 yaş arası çocuklara %50 indirim uygulanır. 13 yaş üstü yetişkin fiyatı geçerlidir. Aile paketlerimiz için bize ulaşın.",
     category: "Fiyatlandırma",
   },
   {

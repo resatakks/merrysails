@@ -71,7 +71,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  "Silver paketlerde standart oturma düzeni, tam akşam yemeği servisi ve Türk gecesi gösterisi yer alır. Gold paketlerde sahneye yakın VIP masa garantisi, genişletilmiş menü ve sınırsız alkol seçeneği mevcuttur. Tüm paketlerde yemek menüsü aynı rotada; mezelerin yanında sıcak başlangıç, ana yemek ve tatlı servisi yapılır.",
  "Akşam yemeği menüsü yaklaşık 10 çeşit soğuk meze ile başlar: yaprak sarma, humus, tarama, cacık, çoban salatası, beyaz peynir, patlıcan salatası, salatalık turşusu ve mevsime göre değişen ek mezeler. Ardından sıcak başlangıç ve ana yemek gelir — balık, tavuk veya et seçenekleri; istek üzerine vejetaryen ızgara sebze tabağı veya makarna da sunulmaktadır. Tatlı olarak fıstıklı baklava, meyve tabağı ve Türk kahvesi ikram edilir.",
  "3 perdelik Türk gecesi gösterisi boyunca sahne Türkiye'nin farklı bölgelerini yansıtan halk danslarını, Oryantal performansları ve sürpriz seyirci katılım oyunlarını kapsar. Gösteriler tekne hareket halindeyken yürütülür; böylece ışıklı Boğaz silüeti eşliğinde unutulmaz bir gece geçirirsiniz.",
- "Çocuk politikası: 3 yaş ve altı ücretsiz, 4–10 yaş arası çocuklar için indirimli fiyat uygulanır. Vejetaryen misafirler için özel tabak önceden talep edilebilir. Merkezi Avrupa yakasındaki pek çok otel için otel transfer servisi mevcuttur; kesin alım saatleri rezervasyon onayından sonra yazılı bildirilir.",
+ "Çocuk politikası: 3 yaş altı ücretsiz, 3–13 yaş arası çocuklar için %50 indirimli fiyat uygulanır. Vejetaryen misafirler için özel tabak önceden talep edilebilir. Merkezi Avrupa yakasındaki pek çok otel için otel transfer servisi mevcuttur; kesin alım saatleri rezervasyon onayından sonra yazılı bildirilir.",
  ],
  trustSignal: "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism tarafından sunulmaktadır.",
  tableRows: [
@@ -130,7 +130,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  q: "Çocuklar akşam yemekli boğaz turuna katılabilir mi?",
- a: "Evet, tüm yaş grupları kabul edilmektedir. 3 yaş ve altı çocuklar ücretsizdir. 4–10 yaş arası çocuklar için indirimli çocuk fiyatı uygulanır; rezervasyon sırasında kaç çocuk katıldığını belirtmeniz yeterlidir.",
+ a: "Evet, tüm yaş grupları kabul edilmektedir. 3 yaş altı çocuklar ücretsizdir. 3–13 yaş arası çocuklar için %50 indirimli çocuk fiyatı uygulanır; rezervasyon sırasında kaç çocuk katıldığını belirtmeniz yeterlidir.",
  },
  {
  q: "Sultanahmet'ten otel transferi dahil mi?",
@@ -154,7 +154,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  q: "Çocuk menüsü mevcut mu?",
- a: "3 yaş ve altı çocuklar için ayrı bir ücret alınmaz ve menü paylaşılabilir. 4–10 yaş arası çocuklar için indirimli fiyat uygulanır; bu yaş grubuna Tavuklu Pilav gibi daha hafif seçenekler sunulabilir. Çocuk sayısını ve yaşlarını rezervasyon sırasında belirtmeniz yeterlidir.",
+ a: "3 yaş altı çocuklar için ayrı bir ücret alınmaz ve menü paylaşılabilir. 3–13 yaş arası çocuklar için %50 indirimli fiyat uygulanır; bu yaş grubuna Tavuklu Pilav gibi daha hafif seçenekler sunulabilir. Çocuk sayısını ve yaşlarını rezervasyon sırasında belirtmeniz yeterlidir.",
  },
  {
  q: "Türk gecesi gösterisi neleri içerir?",
@@ -569,7 +569,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  "Пакеты Silver включают стандартное место за столом, полный ужин и шоу «Турецкая ночь». Пакеты Gold добавляют VIP-места ближе к сцене, расширенное меню и опцию безлимитного алкоголя. Меню одинаковое во всех пакетах — разница в категории напитков и приоритете рассадки.",
  "Меню ужина начинается с 10 видов холодных мезе: долма, хумус, тарама, джаджик, салат пастуха, белый сыр, баклажанный салат, маринованные огурцы и сезонные дополнения. Далее подаётся горячая закуска и основное блюдо: рыба, курица или мясо; по запросу доступен вегетарианский гриль из овощей или паста. На десерт — фисташковая пахлава, тарелка фруктов и турецкий кофе.",
  "Шоу «Турецкая ночь» состоит из трёх актов: народные танцы регионов Турции, восточные танцы и сегменты с участием зала. Шоу идёт во время движения яхты — так Вы одновременно наблюдаете подсвеченный силуэт Босфора и сценическую программу.",
- "Политика по детям: бесплатно для детей до 3 лет, льготный тариф для 4–10 лет. Вегетарианское блюдо доступно по предварительному запросу. Поддержка трансфера действует для большинства центральных отелей европейской стороны; точное время сбора подтверждается письменно после бронирования.",
+ "Политика по детям: бесплатно для детей до 3 лет, скидка 50% для 3–13 лет. Вегетарианское блюдо доступно по предварительному запросу. Поддержка трансфера действует для большинства центральных отелей европейской стороны; точное время сбора подтверждается письменно после бронирования.",
  ],
  trustSignal:
  "Предоставляется компанией Merry Tourism, лицензированной по группе А TÜRSAB (лицензия №14316) с 2001 года.",
@@ -629,7 +629,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  q: "Могут ли участвовать дети?",
- a: "Да, мы принимаем гостей всех возрастов. Дети до 3 лет — бесплатно. Для детей 4–10 лет действует льготный детский тариф; достаточно указать количество и возраст детей при бронировании.",
+ a: "Да, мы принимаем гостей всех возрастов. Дети до 3 лет — бесплатно. Для детей 3–13 лет действует детский тариф со скидкой 50%; достаточно указать количество и возраст детей при бронировании.",
  },
  {
  q: "Какой дресс-код?",
@@ -674,7 +674,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  "Silver 套餐含标准座位、完整晚餐和土耳其之夜表演。Gold 套餐增加靠近舞台的 VIP 座位、升级菜单和无限酒水选项。所有套餐菜单相同 — 差异在于饮品类别和座位优先级。",
  "晚餐菜单从 10 种冷开胃菜开始:酿葡萄叶 (dolma)、鹰嘴豆泥 (hummus)、鱼籽酱 (tarama)、土耳其酸奶黄瓜酱 (cacık)、牧羊人沙拉、白奶酪、茄子沙拉、腌黄瓜及时令配菜。然后是热开胃菜和主菜:鱼、鸡肉或牛肉;可应要求提供烤蔬菜或意大利面素食选项。甜点为开心果巴克拉瓦、水果拼盘和土耳其咖啡。",
  "土耳其之夜表演分三幕:土耳其各地区民族舞蹈、东方舞蹈和观众参与节目。表演在游艇航行时进行 — 您可以同时欣赏灯光照亮的博斯普鲁斯轮廓和舞台节目。",
- "儿童政策:0–3 岁免费,3–8 岁 50% 折扣,9 岁以上按成人价。素食菜单可应要求提供 — 预订时请告知。欧洲一侧大多数中央酒店均可享受接送服务支持;具体接送时间在预订确认后通过 WhatsApp 书面提供。",
+ "儿童政策:0–3 岁免费,3–13 岁 50% 折扣,13 岁以上按成人价。素食菜单可应要求提供 — 预订时请告知。欧洲一侧大多数中央酒店均可享受接送服务支持;具体接送时间在预订确认后通过 WhatsApp 书面提供。",
  ],
  trustSignal:
  "由 Merry Tourism 提供,自 2001 年起持有 TÜRSAB A 类许可证 (#14316)。中文 WhatsApp 客服可用。",
@@ -738,7 +738,7 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  },
  {
  q: "孩子可以参加吗?",
- a: "可以,我们接待所有年龄段的客人。0–3 岁婴儿免费,3–8 岁儿童 50% 折扣,9 岁以上按成人价。预订时告知儿童人数和年龄即可。",
+ a: "可以,我们接待所有年龄段的客人。0–3 岁婴儿免费,3–13 岁儿童 50% 折扣,13 岁以上按成人价。预订时告知儿童人数和年龄即可。",
  },
  {
  q: "有着装要求吗?",

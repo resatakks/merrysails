@@ -37,7 +37,7 @@ interface ReservationConfirmationData {
    * package mix instead of the single `packageName` row. */
   items?: { packageName: string; guests: number }[];
   /** Age-tier breakdown — 2026-05-25 child discount feature.
-   * adults pay full, children (3-8) pay 50%, infants (0-3) are free. */
+   * adults pay full, children (3-13) pay 50%, infants (0-3) are free. */
   guestBreakdown?: { adults: number; children: number; infants: number };
   /** € saved via the child 50% discount. Surfaced as a "Çocuk indirimi"
    * line under the price table when > 0. */

@@ -77,7 +77,7 @@ export default function BookingSidebar({
  const [bookingModal, setBookingModal] = useState(false);
  const [bookingDate, setBookingDate] = useState<Date | null>(null);
  const [bookingGuests, setBookingGuests] = useState(2);
- // Children (3-8 yaş) ve infants (0-3 yaş) breakdown — defaults to 0.
+ // Children (3-13 yaş) ve infants (0-3 yaş) breakdown — defaults to 0.
  // Pricing layer applies 50% discount to children and €0 to infants.
  const [bookingChildren, setBookingChildren] = useState(0);
  const [bookingInfants, setBookingInfants] = useState(0);

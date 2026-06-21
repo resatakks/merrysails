@@ -635,7 +635,7 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Sıkça Sorulan Sorular",
         content:
-          "Akşam yemeği turu rezervasyonu yapmadan önce misafirlerimizin en çok merak ettiği konular şunlardır. Çocuklu aileler için tur uygundur; 12 yaş altı çocuklara özel fiyat veya ücretsiz katılım seçenekleri mevcuttur — rezervasyon sırasında çocuk yaşını belirtmeniz yeterlidir. İptal politikası açısından 48 saat öncesine kadar yapılan iptaller tam iade hakkı doğurur; 24–48 saat arası %50 iade, 24 saat içinde iade yapılmaz. Hava koşulları nedeniyle MerrySails tarafından iptal edilen turlarda tam iade veya ücretsiz yeniden planlama sunulur.",
+          "Akşam yemeği turu rezervasyonu yapmadan önce misafirlerimizin en çok merak ettiği konular şunlardır. Çocuklu aileler için tur uygundur; 3 yaş altı çocuklar ücretsiz, 3–13 yaş çocuklara %50 indirim uygulanır — rezervasyon sırasında çocuk yaşını belirtmeniz yeterlidir. İptal politikası açısından 48 saat öncesine kadar yapılan iptaller tam iade hakkı doğurur; 24–48 saat arası %50 iade, 24 saat içinde iade yapılmaz. Hava koşulları nedeniyle MerrySails tarafından iptal edilen turlarda tam iade veya ücretsiz yeniden planlama sunulur.",
       },
       {
         heading: "Rezervasyon ve İpuçları",
@@ -664,7 +664,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Çocuklar için uygun mu?",
-        a: "Evet, tur ailelere uygundur. 12 yaş altı çocuklar için indirimli fiyat uygulanır; 5 yaş altı ücretsizdir. Folklor gösterisi ve müzik tüm yaş gruplarına hitap eder. Erken uyku saati olan küçük çocuklar için turın başlangıç saatini (20:30) göz önünde bulundurunuz.",
+        a: "Evet, tur ailelere uygundur. 3 yaş altı çocuklar ücretsiz; 3–13 yaş çocuklara %50 indirim uygulanır. Folklor gösterisi ve müzik tüm yaş gruplarına hitap eder. Erken uyku saati olan küçük çocuklar için turın başlangıç saatini (20:30) göz önünde bulundurunuz.",
       },
       {
         q: "En iyi masa konumu hangisi?",
@@ -2982,7 +2982,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
           "10 soğuk meze + 1 mevsim salata + 1 sıcak başlangıç + ana yemek seçimi + tatlı",
           "Sınırsız su, gazoz, ayran, çay, Türk kahvesi",
           "Sultanahmet, Taksim, Beşiktaş'tan transfer dahil",
-          "3 yaş altı çocuk ücretsiz, 4–10 yaş çocuk indirimi (rezervasyonda doğrula)"
+          "3 yaş altı çocuk ücretsiz, 3–13 yaş %50 çocuk indirimi (rezervasyonda doğrula)"
         ],
         proTip:
           "Eğer 'bütçeyi zorlamadan deneyimi göreyim' diyorsan Silver Yumuşak İçecek seç. Sahne uzaktan görünüyor ama 3,5 saat boyunca müzik ve folklor masaya zaten ulaşıyor — fark hissedilir ama belirleyici değil."
@@ -3095,7 +3095,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         q: "Çocuklar dinner cruise'a girebilir mi, indirim var mı?",
-        a: "Evet, tüm paketlerde çocuklar hoş karşılanır. 3 yaş altı çocuklar ücretsiz, 4–10 yaş çocuk indirimi mevcut (rezervasyonda doğrula). Show programı (Türk gecesi folklor + canlı müzik) aile dostudur. En çok seçilen aile paketi Silver Yumuşak İçecek'tir."
+        a: "Evet, tüm paketlerde çocuklar hoş karşılanır. 3 yaş altı çocuklar ücretsiz, 3–13 yaş %50 çocuk indirimi mevcut (rezervasyonda doğrula). Show programı (Türk gecesi folklor + canlı müzik) aile dostudur. En çok seçilen aile paketi Silver Yumuşak İçecek'tir."
       },
       {
         q: "Restoran yerine yat turu seçmek mantıklı mı?",
@@ -3489,7 +3489,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     ],
     author: "editorial",
     keyTakeaways: [
-      "3 yaş altı çocuklar tüm paketlerde ücretsiz; 4-10 yaş aralığında çocuk indirimi geçerli",
+      "3 yaş altı çocuklar tüm paketlerde ücretsiz; 3-13 yaş aralığında %50 çocuk indirimi geçerli",
       "Çocuk bedenli can yelekleri standart — rezervasyonda boy/kilo belirt, doğru beden hazırlanır",
       "Dinner cruise 3,5 saat sürer — 8 yaş üzeri çocuklar genelde rahat, daha küçük yaş için sunset (2 saat) daha uygun",
       "Çocuk menüsü tüm paketlerde mevcut: makarna, nugget, patates kızartması — rezervasyonda önceden talep et"
@@ -3510,13 +3510,13 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       {
         heading: "Çocuk Fiyatlandırması — Net Liste",
         content:
-          "Türk aileler 'çocuk ücreti ne kadar' sorusuna sık net cevap alamıyor çünkü her operatör farklı politika uygular. MerrySails'te kural net ve yazılı: 0–3 yaş ücretsiz (ek koltuk gerektirmez), 4–10 yaş %50 indirim, 11+ yaş yetişkin fiyatı. Bu kural tüm paketlerde (Silver, Gold, Sunset, Yat Kiralama) geçerlidir.",
+          "Türk aileler 'çocuk ücreti ne kadar' sorusuna sık net cevap alamıyor çünkü her operatör farklı politika uygular. MerrySails'te kural net ve yazılı: 0–3 yaş ücretsiz (ek koltuk gerektirmez), 3–13 yaş %50 indirim, 13+ yaş yetişkin fiyatı. Bu kural tüm paketlerde (Silver, Gold, Sunset, Yat Kiralama) geçerlidir.",
         table: {
           headers: ["Yaş", "Fiyat Politikası", "Silver Dinner (€30)", "Sunset (€30/€34)", "Gold Dinner (€80)"],
           rows: [
             ["0–3 yaş", "Ücretsiz", "€0", "€0", "€0"],
-            ["4–10 yaş", "%50 indirim", "€15", "€15 / €17", "€40"],
-            ["11–17 yaş", "Yetişkin", "€30", "€30 / €34", "€80"],
+            ["3–13 yaş", "%50 indirim", "€15", "€15 / €17", "€40"],
+            ["13–17 yaş", "Yetişkin", "€30", "€30 / €34", "€80"],
             ["18+ yetişkin", "Tam fiyat", "€30", "€30 / €34", "€80"]
           ]
         },
@@ -3602,8 +3602,8 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
         a: "Evet, 0–3 yaş çocuklar tüm MerrySails paketlerinde (Silver, Gold dinner cruise, sunset, yat kiralama) tamamen ücretsizdir — koltuk gerektirmez, ek menü dahil değil ama anne-babanın tabağından paylaşılabilir. Rezervasyonda çocuk var bilgisini ver ki hostes ekip masaya ek tabak/kaşık hazırlasın."
       },
       {
-        q: "4-10 yaş çocuğa ne kadar indirim var?",
-        a: "4–10 yaş çocuk indirimi %50'dir: Silver Dinner €30 → çocuk €15, Sunset €30/€34 → çocuk €15/€17, Gold Dinner €80 → çocuk €40, Gold Sınırsız €90 → çocuk €45 (alkolsüz menü ile). 11+ yaş yetişkin fiyatı uygulanır."
+        q: "3-13 yaş çocuğa ne kadar indirim var?",
+        a: "3–13 yaş çocuk indirimi %50'dir: Silver Dinner €30 → çocuk €15, Sunset €30/€34 → çocuk €15/€17, Gold Dinner €80 → çocuk €40, Gold Sınırsız €90 → çocuk €45 (alkolsüz menü ile, alkollü paketler sadece yetişkinler içindir). 13+ yaş yetişkin fiyatı uygulanır."
       },
       {
         q: "Dinner cruise küçük çocuk için çok uzun mu?",

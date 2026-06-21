@@ -14,14 +14,14 @@ import StickyMobileCta from "@/components/ui/StickyMobileCta";
  *   - Hotel pickup means no taxi-with-kids step
  *   - Pay-onboard means no parent-funded prepayment risk
  *   - Free cancellation 24h covers sick-kid scenarios
- *   - Children pricing (under-3 free, 4-10 child rate)
+ *   - Children pricing (under-3 free, 3-13 half price)
  *   - Calm formats over party formats
  */
 
 export const metadata: Metadata = {
   title: "Bosphorus Cruise for Families Istanbul",
   description:
-    "Family-friendly Bosphorus cruise Istanbul — hotel pickup, under-3 free, 4-10 child rate, free 24h cancellation. From €30/adult, TÜRSAB licensed.",
+    "Family-friendly Bosphorus cruise Istanbul — hotel pickup, under-3 free, 3-13 half price, free 24h cancellation. From €30/adult, TÜRSAB licensed.",
   alternates: {
     canonical: `${SITE_URL}/bosphorus-cruise-for-families`,
     languages: buildHreflang("/bosphorus-cruise-for-families"),
@@ -48,8 +48,8 @@ const REASONS = [
   },
   {
     icon: Baby,
-    title: "Under-3 free · 4-10 child rate",
-    desc: "Children under 3 sail free on all packages. Ages 4-10 get a child rate, confirmed at booking. The dinner cruise menu has child-friendly options (grilled chicken, rice, fruit) — no fish course pushed on under-12s.",
+    title: "Under-3 free · 3-13 half price",
+    desc: "Children under 3 sail free on all packages. Ages 3-13 get 50% off the per-person price, confirmed at booking. The dinner cruise menu has child-friendly options (grilled chicken, rice, fruit) — no fish course pushed on under-12s.",
   },
   {
     icon: Cake,
@@ -79,7 +79,7 @@ const faqJsonLd = {
       name: "What is the kid pricing on Bosphorus cruise packages?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Children under 3 sail free on all packages. Children aged 4-10 are charged at the child rate — typically 50% of the adult price for the same package. Ages 11+ pay adult rate. Exact child pricing for your package and date is confirmed during booking — send the kid ages via WhatsApp.",
+        text: "Children under 3 sail free on all packages. Children aged 3-13 are charged at the child rate — 50% of the adult price for the same package. Ages 13+ pay adult rate. Alcoholic packages are adults-only, so a child always takes the matching non-alcoholic (Silver Soft) package at 50% off. Exact child pricing for your package and date is confirmed during booking — send the kid ages via WhatsApp.",
       },
     },
     {
@@ -158,7 +158,7 @@ export default function Page() {
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--body-text)] md:text-base">
               Family-of-4 routine: hotel pickup, dinner with child-friendly
               options, Turkish night entertainment, return to the hotel by
-              midnight. Under-3 sails free, 4-10 child rate, free
+              midnight. Under-3 sails free, 3-13 half price, free
               cancellation 24h before departure. From €30 per adult.
             </p>
           </header>
@@ -170,7 +170,7 @@ export default function Page() {
             <p className="answer-capsule text-sm leading-relaxed text-[var(--body-text)] md:text-base">
               For a family of 4 (2 adults + 2 kids), the most-booked option
               is the shared dinner cruise Silver Soft package — €30 per
-              adult, child rate for ages 4-10 (under 3 free), hotel pickup
+              adult, 50% off for ages 3-13 (under 3 free), hotel pickup
               included, 3.5-hour Bosphorus route + Turkish night
               entertainment + dinner with child-friendly options. Total
               evening for the family runs roughly €100-€130 depending on
@@ -206,7 +206,7 @@ export default function Page() {
                   <tr>
                     <th className="px-3 py-2 font-semibold text-[var(--heading)]">Format</th>
                     <th className="px-3 py-2 font-semibold text-[var(--heading)]">2 adults</th>
-                    <th className="px-3 py-2 font-semibold text-[var(--heading)]">+ 1 kid (4-10)</th>
+                    <th className="px-3 py-2 font-semibold text-[var(--heading)]">+ 1 kid (3-13)</th>
                     <th className="px-3 py-2 font-semibold text-[var(--heading)]">+ 1 toddler (under 3)</th>
                   </tr>
                 </thead>
@@ -224,9 +224,9 @@ export default function Page() {
                     <td className="px-3 py-2 text-[var(--body-text)]">€75 (under-3 free)</td>
                   </tr>
                   <tr className="border-b border-[var(--line)]">
-                    <td className="px-3 py-2 font-medium text-[var(--heading)]">Dinner cruise Silver Alcoholic (€45)</td>
+                    <td className="px-3 py-2 font-medium text-[var(--heading)]">Dinner cruise Silver Alcoholic (€45, adults only)</td>
                     <td className="px-3 py-2 text-[var(--body-text)]">€90</td>
-                    <td className="px-3 py-2 text-[var(--body-text)]">€105 (child €15)</td>
+                    <td className="px-3 py-2 text-[var(--body-text)]">€105 (child on Silver Soft €15)</td>
                     <td className="px-3 py-2 text-[var(--body-text)]">€105 (under-3 free)</td>
                   </tr>
                   <tr className="border-b border-[var(--line)] last:border-0">

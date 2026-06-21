@@ -48,7 +48,7 @@ const FAQ_SECTIONS: Array<{
       },
       {
         q: "Are children's tickets cheaper?",
-        a: "Yes. Children under 6 are free on shared cruises. Children 6–12 typically receive a 30–50% discount depending on the package. Children 13+ pay the adult rate.",
+        a: "Yes. Infants under 3 are free on shared cruises. Children 3–13 receive a 50% discount on the per-person price. Ages 13+ pay the adult rate.",
       },
       {
         q: "What payment methods do you accept?",

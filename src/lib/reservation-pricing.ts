@@ -16,11 +16,12 @@ import { applyWeeklyDiscount, type WeeklyDiscountResult } from "@/lib/weekly-dis
 const MAX_GUESTS = 20;
 
 /**
- * Child / infant pricing rules (per ops 2026-05-25):
+ * Child / infant pricing rules (per ops 2026-06-21 — child band widened
+ * from 3-8 to 3-13):
  *   • 0-3 yaş (infant): completely free (€0)
- *   • 3-8 yaş (child):  50% off the per-person package price (after any
+ *   • 3-13 yaş (child): 50% off the per-person package price (after any
  *                        weekly weekday discount has already been applied)
- *   • 8+   (adult):     full price
+ *   • 13+  (adult):     full price
  *
  * Alcoholic packages (TR "Şaraplı"/EN "Alcoholic"/"With Wine"/"Wine"/
  * "Premium Spirits") are restricted to adults — children and infants
@@ -58,9 +59,9 @@ export interface ReservationPricingLineItem {
 }
 
 export interface ReservationGuestBreakdown {
-  /** 8+ — paying full price */
+  /** 13+ — paying full price */
   adults: number;
-  /** 3-8 — paying 50% of the (post-weekday-discount) per-person price */
+  /** 3-13 — paying 50% of the (post-weekday-discount) per-person price */
   children: number;
   /** 0-3 — free */
   infants: number;
@@ -108,7 +109,7 @@ export interface ReservationItemInput {
 interface ReservationPricingInput {
   tourSlug: string;
   guests: number;
-  /** 3-8 yaş — 50% indirim. Defaults to 0. */
+  /** 3-13 yaş — 50% indirim. Defaults to 0. */
   children?: number;
   /** 0-3 yaş — ücretsiz. Defaults to 0. */
   infants?: number;
@@ -145,7 +146,7 @@ function normalizeChildren(children: number | undefined, totalGuests: number): n
   if (children == null) return 0;
   if (!Number.isInteger(children) || children < 0 || children > totalGuests) {
     throw new ReservationValidationError(
-      "Children count (3-8 yaş) must be an integer between 0 and the total guest count."
+      "Children count (3-13 yaş) must be an integer between 0 and the total guest count."
     );
   }
   return children;
@@ -287,7 +288,7 @@ export function buildReservationPricingSnapshot({
   const adultsCount = Math.max(0, safeGuests - childrenCount - infantsCount);
   if (childrenAllowed && adultsCount < 1) {
     throw new ReservationValidationError(
-      "Rezervasyonda en az 1 yetişkin (8+ yaş) olmalı.",
+      "Rezervasyonda en az 1 yetişkin (13+ yaş) olmalı.",
     );
   }
 
@@ -368,7 +369,7 @@ export function buildReservationPricingSnapshot({
     if (adultsCount > 0) {
       lineItems.push({
         type: "package",
-        // 2026-06-03 — Was Turkish ("Yetişkin (8+)") which leaked into the
+        // 2026-06-03 — Was Turkish ("Yetişkin (13+)") which leaked into the
         // English invoice/voucher PDF. Standardise on English everywhere
         // since the entire customer-facing email/PDF flow is English-only.
         // Age ranges intentionally omitted from labels (they live in the

@@ -39,7 +39,7 @@ interface CreateReservationInput {
   date: string;
   time: string;
   guests: number;
-  /** 3-8 yaş, 50% indirim (defaults to 0). Ignored in mixed-package bookings. */
+  /** 3-13 yaş, 50% indirim (defaults to 0). Ignored in mixed-package bookings. */
   children?: number;
   /** 0-3 yaş, ücretsiz (defaults to 0). Ignored in mixed-package bookings. */
   infants?: number;

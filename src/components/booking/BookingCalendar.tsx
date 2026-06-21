@@ -24,7 +24,7 @@ const GUEST_LABELS: Record<BookingLocale, {
     adults: "Adults",
     adultsHint: "Age 13+",
     children: "Children",
-    childrenHint: "Ages 3–8 · 50% off",
+    childrenHint: "Ages 3–13 · 50% off",
     infants: "Infants",
     infantsHint: "Ages 0–3 · free",
     noAlcoholHint: " · not available on alcoholic packages",
@@ -33,7 +33,7 @@ const GUEST_LABELS: Record<BookingLocale, {
     adults: "Yetişkin",
     adultsHint: "13+ yaş",
     children: "Çocuk",
-    childrenHint: "3–8 yaş · %50 indirim",
+    childrenHint: "3–13 yaş · %50 indirim",
     infants: "Bebek",
     infantsHint: "0–3 yaş · ücretsiz",
     noAlcoholHint: " · alkollü paketlere eklenemez",
@@ -42,7 +42,7 @@ const GUEST_LABELS: Record<BookingLocale, {
     adults: "Erwachsene",
     adultsHint: "Ab 13 Jahren",
     children: "Kinder",
-    childrenHint: "3–8 Jahre · 50% Rabatt",
+    childrenHint: "3–13 Jahre · 50% Rabatt",
     infants: "Kleinkinder",
     infantsHint: "0–3 Jahre · kostenlos",
     noAlcoholHint: " · nicht in Paketen mit Alkohol verfügbar",
@@ -51,7 +51,7 @@ const GUEST_LABELS: Record<BookingLocale, {
     adults: "Adultes",
     adultsHint: "13 ans et plus",
     children: "Enfants",
-    childrenHint: "3–8 ans · 50% de réduction",
+    childrenHint: "3–13 ans · 50% de réduction",
     infants: "Bébés",
     infantsHint: "0–3 ans · gratuit",
     noAlcoholHint: " · non disponible sur les forfaits alcoolisés",
@@ -60,7 +60,7 @@ const GUEST_LABELS: Record<BookingLocale, {
     adults: "Volwassenen",
     adultsHint: "Vanaf 13 jaar",
     children: "Kinderen",
-    childrenHint: "3–8 jaar · 50% korting",
+    childrenHint: "3–13 jaar · 50% korting",
     infants: "Baby's",
     infantsHint: "0–3 jaar · gratis",
     noAlcoholHint: " · niet beschikbaar bij alcoholpakketten",
@@ -69,7 +69,7 @@ const GUEST_LABELS: Record<BookingLocale, {
     adults: "Взрослые",
     adultsHint: "От 13 лет",
     children: "Дети",
-    childrenHint: "3–8 лет · −50%",
+    childrenHint: "3–13 лет · −50%",
     infants: "Младенцы",
     infantsHint: "0–3 года · бесплатно",
     noAlcoholHint: " · недоступно для пакетов с алкоголем",
@@ -202,7 +202,7 @@ export default function BookingCalendar({
   const [selectedDate, setSelectedDate] = useState<Date | null>(safeInitialDate);
   const [adults, setAdults] = useState(safeInitialGuests);
   // Çocuk indirimi (per ops 2026-05-25):
-  //   children: 3-8 yaş, paket fiyatının %50'si
+  //   children: 3-13 yaş, paket fiyatının %50'si
   //   infants:  0-3 yaş, ücretsiz
   // Alkollü paket seçildiğinde her ikisi de 0'a sıfırlanır + sayaç UI disable.
   const [children, setChildren] = useState(0);
@@ -695,7 +695,7 @@ export default function BookingCalendar({
                   </div>
                 </div>
 
-                {/* Children — 3-8 yaş, %50 indirim */}
+                {/* Children — 3-13 yaş, %50 indirim */}
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-medium text-[var(--heading)]">

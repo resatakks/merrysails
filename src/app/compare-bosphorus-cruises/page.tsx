@@ -120,7 +120,7 @@ const COMPARE_FAQ = [
  },
  {
  q: "Can I bring children on a Bosphorus cruise?",
- a: "Yes. All cruises welcome children. Children under 6 are free on shared cruises. Children 6–12 typically receive 30–50% discount — contact via WhatsApp +90 544 898 98 12 for child rates.",
+ a: "Yes. All cruises welcome children. Infants under 3 are free on shared cruises. Children 3–13 receive a 50% discount on the per-person price — contact via WhatsApp +90 544 898 98 12 for child rates.",
  },
  {
  q: "Which cruise is best for a marriage proposal?",
@@ -143,7 +143,7 @@ const COMPARE_FAQ_RU = [
  },
  {
  q: "Какой круиз выбрать для семьи с детьми?",
- a: "Для семей с детьми оптимален закатный обзорный круиз — 2 часа, безопасный формат, мягкое время. Дети до 6 лет бесплатно, скидки на детей 6–12 лет 30–50%. Уточните тарифы для детей в WhatsApp перед бронированием.",
+ a: "Для семей с детьми оптимален закатный обзорный круиз — 2 часа, безопасный формат, мягкое время. Дети до 3 лет бесплатно, детям 3–13 лет скидка 50%. Уточните тарифы для детей в WhatsApp перед бронированием.",
  },
 ];
 
