@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProductHero from "@/components/conversion/ProductHero";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
@@ -558,34 +559,39 @@ export default async function YachtCharterIstanbulPage({
             <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
           </nav>
 
-          <header className="mb-3 md:mb-4">
-            {/* 2026-06-19: page-level heading restored to <h1>. The prior
-                2026-06-10 demotion to <h2> was based on a false premise — it
-                claimed TourDetailClient's <h1> "renders regardless of
-                bookingPrefill", but TourDetailClient is gated behind
-                {bookingPrefill && …} below (line ~589). On a normal/crawled
-                load bookingPrefill is undefined, so that <h1> never renders →
-                the page had h1=0 on a 590/mo pillar + TÜRSAB backlink target.
-                Gating this <h1> to !bookingPrefill keeps exactly ONE <h1> in
-                both states: normal load uses this one; prefill load uses
-                TourDetailClient's. */}
-            {!bookingPrefill && (
-              <h1 className="text-2xl md:text-3xl font-bold text-[var(--heading)] tracking-tight leading-tight">
-                Yacht Charter Istanbul
-              </h1>
-            )}
-            <p className="mt-2 text-xl md:text-2xl font-semibold text-[var(--heading)] tracking-tight leading-tight">
-              {yachtTour.nameEn} — Private Yacht Charter Istanbul
-            </p>
-            <p className="mt-1.5 text-sm md:text-base text-[var(--text-muted)] line-clamp-2 md:line-clamp-none max-w-3xl">
+          {/* Visual conversion hero (2026-06-21): yacht charter is a visual,
+              high-emotion product, but the old above-the-fold was a text wall +
+              a 150-word AI answer box with no boat photo — avg scroll was ~30%,
+              so the booking action never got seen. Lead with the yacht photo +
+              the €220 whole-boat-direct wedge + WhatsApp/Reserve CTA. ProductHero
+              owns the <h1>; the prefill flow uses TourDetailClient's <h1>, so
+              there is always exactly ONE <h1> (and the page file keeps no literal
+              <h1>). The QuickAnswer AI block + detail copy move just below — AI
+              reads the full page regardless of visual order. */}
+          {!bookingPrefill && (
+            <ProductHero
+              className="mb-4 md:mb-5"
+              image={yachtTour.image}
+              imageAlt="Private yacht charter on the Bosphorus — MerrySails"
+              eyebrow="Whole boat · sold direct · no broker markup"
+              title="Private Yacht Charter Istanbul — Whole Boat from €220"
+              benefit="Charter a private Bosphorus yacht direct from Istanbul's TÜRSAB-licensed operator — captain & crew included, no concierge or OTA markup. We reply on WhatsApp in minutes."
+              whatsappText="Hi%20MerrySails!%20I'd%20like%20a%20private%20yacht%20charter%20quote%20for%20the%20Bosphorus.%20Group%20size%20%2B%20date%20if%20known%3F"
+              whatsappSource="yacht-hero"
+              reserveHref="/reservation?tour=yacht-charter-in-istanbul"
+            />
+          )}
+
+          {/* Trust strip directly under the hero CTA — 4.9/5 + TÜRSAB #14316 +
+              50k+ guests + 3-min WhatsApp reply. */}
+          <SocialProofBadges variant="product" productKey="yacht" />
+
+          <header className="mb-4 mt-4">
+            <p className="text-sm md:text-base text-[var(--text-muted)] max-w-3xl">
               {yachtTour.description}
             </p>
             <QuickAnswer productKey="yacht-charter-istanbul" locale="en" />
           </header>
-
-          {/* Trust signals above the fold — 4.9/5 yacht rating + TÜRSAB + 50k+
-              guests + 3-min WhatsApp reply. */}
-          <SocialProofBadges variant="product" productKey="yacht" />
 
           <BookingMomentumBadge
             momentum={momentum}

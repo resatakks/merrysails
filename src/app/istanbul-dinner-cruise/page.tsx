@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProductHero from "@/components/conversion/ProductHero";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
@@ -487,6 +488,12 @@ export default async function IstanbulDinnerCruisePage({
   }
 
   const resolvedSearchParams = await searchParams;
+  const hasPrefill =
+    typeof resolvedSearchParams.prefill === "string" &&
+    resolvedSearchParams.prefill.length > 0;
+  const bookingPrefill = hasPrefill
+    ? await resolveBookingPrefill(resolvedSearchParams)
+    : null;
   const momentum = await getProductBookingMomentum("bosphorus-dinner-cruise");
 
   return (
@@ -571,9 +578,6 @@ export default async function IstanbulDinnerCruisePage({
 
       <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
         <div className="container-main">
-          {/* 2026-06-05: removed page-level sr-only <h1> — TourDetailClient
-              already renders the canonical visible <h1>. Two <h1> = Semrush fail. */}
-          <QuickAnswer productKey="istanbul-dinner-cruise" locale="en" />
           <nav
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6"
@@ -589,9 +593,42 @@ export default async function IstanbulDinnerCruisePage({
             <span className="text-[var(--heading)] truncate">{dinnerTour.nameEn}</span>
           </nav>
 
+          {/* Visual conversion hero (2026-06-21): the dinner cruise is a visual,
+              high-emotion product, but the old above-the-fold opened on a text
+              wall + a 150-word AI answer box with no photo — Clarity showed avg
+              scroll ~30%, so the booking action never got seen. Lead with the
+              dinner-cruise photo + the €30 from-price wedge + WhatsApp/Reserve
+              CTA. ProductHero owns the <h1>; TourDetailClient (which also emits
+              an <h1>) renders only under {bookingPrefill && …}, so exactly ONE
+              <h1> ships on any render and the page file keeps no literal <h1>.
+              The QuickAnswer AI block + description move just below the hero. */}
+          {!bookingPrefill && (
+            <ProductHero
+              className="mb-4 md:mb-5"
+              image={dinnerTour.image}
+              imageAlt="Bosphorus dinner cruise with Turkish-night show — MerrySails"
+              eyebrow="Shared dinner cruise · live Turkish-night show · book direct"
+              title="Istanbul Bosphorus Dinner Cruise — From €30 per Guest"
+              benefit="A shared 3.5-hour Bosphorus dinner cruise with a multi-course Turkish dinner, live show, and hotel pickup — booked direct with Istanbul's TÜRSAB-licensed operator, no OTA markup. We reply on WhatsApp in minutes."
+              whatsappText="Hi%20MerrySails!%20I'd%20like%20to%20book%20the%20Bosphorus%20dinner%20cruise.%20Which%20package%20and%20date%20work%20best%3F"
+              whatsappSource="dinner-hero"
+              reserveHref="/reservation?tour=bosphorus-dinner-cruise#core-booking-planner"
+              reserveLabel="Reserve from €30"
+            />
+          )}
+
           {/* Above-fold trust row — surfaces 4.88/5 rating + TURSAB + 50k+
               guests + 3-min WhatsApp reply at top of pillar page. */}
           <SocialProofBadges variant="product" productKey="dinner" />
+
+          {/* AI answer block + lead description, moved below the hero — AI
+              crawlers read the full page regardless of visual order. */}
+          <header className="mb-4 mt-4">
+            <p className="text-sm md:text-base text-[var(--text-muted)] max-w-3xl">
+              {dinnerTour.description}
+            </p>
+            <QuickAnswer productKey="istanbul-dinner-cruise" locale="en" />
+          </header>
 
           <BookingMomentumBadge
             momentum={momentum}
@@ -607,10 +644,17 @@ export default async function IstanbulDinnerCruisePage({
             />
           )}
 
+          {/* TourDetailClient always renders (it owns the package picker,
+              booking sidebar, gallery, and FAQ — the dinner page's entire
+              booking surface). Its heading is demoted to <h2> via suppressH1
+              because ProductHero above already provides the page's single
+              <h1>; on a prefill deep-link ProductHero is hidden, so we restore
+              TourDetailClient's <h1> to keep exactly one <h1> in that state. */}
           <TourDetailClient
             tour={dinnerTour}
             related={relatedTours}
-            bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
+            bookingPrefill={bookingPrefill ?? undefined}
+            suppressH1={!bookingPrefill}
           />
 
           <div className="my-8">

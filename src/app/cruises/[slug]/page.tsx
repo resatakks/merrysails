@@ -22,6 +22,7 @@ import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
 import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
+import ProductHero from "@/components/conversion/ProductHero";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -793,28 +794,34 @@ export default async function TourDetailPage({
               This compact summary surfaces nameEn + From €X + Reserve CTA
               ABOVE all secondary blocks so the booking intent is satisfied
               within the first viewport on mobile. */}
-          <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-[var(--brand-primary)]/15 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:p-5">
-            <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--brand-primary)]">
-                {tour.duration} · {tour.category === "private" ? "Private yacht" : "Shared cruise"}
-              </p>
-              <h2 className="mt-1 text-xl font-bold leading-tight text-[var(--heading)] sm:text-2xl">
-                {tour.nameEn}
-              </h2>
-              <p className="mt-1 text-sm text-[var(--text-muted)]">
-                <span className="font-semibold text-[var(--heading)]">From €{tour.priceEur}</span>
-                <span className="mx-2">·</span>
-                <span>★ {tour.rating}/5 ({tour.reviewCount} reviews)</span>
-              </p>
-              <LiveBookingCounter className="mt-2" />
-            </div>
-            <Link
-              href={`/reservation?tour=${tour.slug}#core-booking-planner`}
-              className="btn-cta !whitespace-nowrap !px-5 !py-3 text-sm sm:text-base"
-            >
-              Reserve from €{tour.priceEur}
-            </Link>
-          </div>
+          {/* Visual conversion hero (2026-06-21): a Bosphorus cruise is a
+              visual product, but the above-the-fold was a text-only summary
+              card (avg scroll 12-25% on these pages). Lead with the tour photo
+              + From €X + WhatsApp/Reserve CTA. Data-driven from the tour, so it
+              works for every slug. ProductHero owns the <h1>; TourDetailClient
+              renders its heading as <h2> via suppressH1 → exactly ONE <h1>. */}
+          <ProductHero
+            className="mb-3"
+            image={tour.image}
+            imageAlt={tour.nameEn}
+            eyebrow={`${tour.duration} · ${tour.category === "private" ? "Private yacht charter" : "Shared Bosphorus cruise"} · book direct`}
+            title={tour.nameEn}
+            benefit="Book direct with Istanbul's TÜRSAB-licensed operator — captain & crew, clear pricing, and a reply on WhatsApp within minutes."
+            whatsappText={encodeURIComponent(
+              `Hi MerrySails! I'd like to book the ${tour.nameEn}. Date + group size?`,
+            )}
+            whatsappSource="cruise-hero"
+            reserveHref={`/reservation?tour=${tour.slug}#core-booking-planner`}
+            whatsappLabel="WhatsApp for a quote"
+            reserveLabel={`Reserve from €${tour.priceEur}`}
+            trust={[
+              `${tour.rating}/5 · ${tour.reviewCount} reviews`,
+              `From €${tour.priceEur}`,
+              "TÜRSAB A #14316",
+              "3-min WhatsApp reply",
+            ]}
+          />
+          <LiveBookingCounter className="mb-4" />
 
           {/* Trust signal row — TURSAB licence + cumulative guests + rating +
               avg WhatsApp reply. Surfaces social proof above the fold so
@@ -856,6 +863,7 @@ export default async function TourDetailPage({
             tour={tour}
             related={related}
             bookingPrefill={await resolveBookingPrefill(resolvedSearchParams)}
+            suppressH1
           />
 
           <div className="my-8">

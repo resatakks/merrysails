@@ -46,6 +46,13 @@ interface Props {
     guests?: number;
     time?: string;
   };
+  /**
+   * When true, the tour heading renders as <h2> instead of <h1>. Used on pages
+   * (e.g. /istanbul-dinner-cruise) where a ProductHero above already provides
+   * the page's single <h1> while TourDetailClient still has to render the full
+   * booking surface. Defaults to false so every existing caller is unchanged.
+   */
+  suppressH1?: boolean;
 }
 
 type TabKey = "overview" | "itinerary" | "included" | "faq";
@@ -490,6 +497,7 @@ export default function TourDetailClient({
   related,
   locale: localeProp = "en",
   bookingPrefill,
+  suppressH1 = false,
 }: Props) {
   const locale = toDetailLocale(localeProp);
   const L = UI_LABELS[locale] ?? UI_LABELS.en;
@@ -835,7 +843,11 @@ export default function TourDetailClient({
         <div className="order-2 space-y-6 lg:order-1 lg:col-span-2">
           {/* Title & Rating */}
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h1>
+            {suppressH1 ? (
+              <h2 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h2>
+            ) : (
+              <h1 className="text-2xl md:text-3xl font-bold mb-1">{pageHeading}</h1>
+            )}
             <p className="text-[var(--text-muted)] mb-3">{tName}</p>
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <div className="flex items-center gap-1">
