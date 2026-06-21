@@ -199,7 +199,9 @@ export function PlannerDateCalendar({
           </button>
         </div>
 
-        <div className="mb-1 grid grid-cols-7">
+        {/* translate="no": day codes are functional, not prose; stops the
+            browser auto-translate "daylabels is not defined" ReferenceError. */}
+        <div className="mb-1 grid grid-cols-7" translate="no">
           {t.dayLabels.map((dayLabel) => (
             <div
               key={dayLabel}

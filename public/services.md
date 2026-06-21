@@ -33,7 +33,7 @@ Private yacht packages for 10–150 guests. Custom routes and durations.
 
 - **Duration**: from 2 h base, extendable
 - **Capacity**: 10–150 guests depending on vessel
-- **Price**: from €200 (2-h base, smaller vessel)
+- **Price**: from €220 (2 h, Boutique 12-guest, whole yacht)
 - **Includes (optional)**: meals, drinks, transfers, entertainment
 - **Departure**: approved Bosphorus marinas
 

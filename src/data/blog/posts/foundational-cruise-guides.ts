@@ -797,7 +797,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-vs-ferry-istanbul-2026",
-    title: "Bosphorus Cruise vs Ferry: €34 vs ₺40",
+    title: "Bosphorus Cruise vs Ferry 2026: Worth It?",
     metaDescription: "Bosphorus cruise (€34) or the ₺40 public ferry? A TÜRSAB-licensed captain's 2026 breakdown of route, narration, food and total cost — so you book once, right.",
     excerpt: "Both options cost different money for very different experiences. The honest comparison most travel blogs avoid because affiliates pay for cruise recommendations.",
     category: "cruise-guide",

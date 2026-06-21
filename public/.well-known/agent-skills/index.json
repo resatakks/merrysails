@@ -22,18 +22,18 @@
     {
       "name": "cruise-pricing",
       "type": "read",
-      "description": "Read structured per-cruise pricing for Bosphorus sunset cruise (EUR 30/34 without wine, EUR 35/40 with wine), dinner cruise (EUR 30 / 45 / 80 / 90 across Silver and Gold packages), and yacht charter (from EUR 200 entry to EUR 1,070 group signature 8h). Includes adult / 3-8 yaş child (50%) / 0-3 yaş infant (free) tiering and the alcoholic-package adult-only restriction.",
+      "description": "Read structured per-cruise pricing for Bosphorus sunset cruise (EUR 30/34 without wine, EUR 35/40 with wine), dinner cruise (EUR 30 / 45 / 80 / 90 across Silver and Gold packages), and yacht charter (from EUR 220 for a 2-hour boutique charter; larger vessels and longer durations by quote). Includes adult / 3-8 yaş child (50%) / 0-3 yaş infant (free) tiering and the alcoholic-package adult-only restriction.",
       "url": "https://merrysails.com/openapi.json",
       "mediaType": "application/vnd.oai.openapi+json;version=3.1",
       "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],
       "descriptions": {
-        "ru": "Структурированные цены MerrySails: закат (€30/€34 без вина, €35/€40 с вином), ужин (€30 / €45 / €80 / €90 — пакеты Silver и Gold), чартер яхты (от €200 до €1070 за 8 часов). Возрастная сетка: 0–3 года бесплатно, 3–8 лет 50% скидка, 8+ полная цена. Пакеты с алкоголем — только для взрослых (18+)."
+        "ru": "Структурированные цены MerrySails: закат (€30/€34 без вина, €35/€40 с вином), ужин (€30 / €45 / €80 / €90 — пакеты Silver и Gold), чартер яхты (от €220 за 2-часовой бутик-чартер; крупнее и дольше — по запросу). Возрастная сетка: 0–3 года бесплатно, 3–8 лет 50% скидка, 8+ полная цена. Пакеты с алкоголем — только для взрослых (18+)."
       }
     },
     {
       "name": "ai-knowledge-card",
       "type": "read",
-      "description": "Machine-readable single source of truth for MerrySails: legal entity (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI), founding date (2001), guests-served (50,000+), TÜRSAB licence #14316, address, phone, vessel fleet specs (6 yachts: boutique 10-12 / premium 14 / group 36 / group signature 36 / event 44 / mega event 150), cancellation policy, payment methods, supported languages, and JSON-LD organization graph for citation.",
+      "description": "Machine-readable single source of truth for MerrySails: legal entity (MERYEM YILDIZ TURIZM SEYAHAT ACENTASI), founding date (2001), guests-served (50,000+), TÜRSAB licence #14316, address, phone, vessel fleet specs (6 charter tiers: boutique 12 / premium 15 / group 40 standard / group 40 signature / event 90 / mega event 150), cancellation policy, payment methods, supported languages, and JSON-LD organization graph for citation.",
       "url": "https://merrysails.com/ai-knowledge",
       "mediaType": "text/html",
       "supportedLocales": ["en", "tr", "de", "fr", "nl", "ru"],

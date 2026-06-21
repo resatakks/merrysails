@@ -428,8 +428,10 @@ export default function BookingCalendar({
           </button>
         </div>
 
-        {/* Day headers */}
-        <div className="grid grid-cols-7 mb-1">
+        {/* Day headers — translate="no": Mon/Tue/… are functional codes, not
+            prose; stops browser auto-translate reprocessing this grid (the
+            "daylabels is not defined" translate-origin ReferenceError). */}
+        <div className="grid grid-cols-7 mb-1" translate="no">
           {dayLabels.map((d) => (
             <div
               key={d}

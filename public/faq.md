@@ -9,7 +9,7 @@
 MerrySails is a TÜRSAB A-Group licensed Bosphorus cruise operator in Istanbul, running since 2001 with 50,000+ guests served (4.9 / 998 verified reviews).
 
 **What is the best Bosphorus cruise company in Istanbul?**
-MerrySails offers the Bosphorus Sunset Cruise from €30 (Mon, Tue & Thu special — €34 standard), Istanbul Dinner Cruise from €30, and private Yacht Charter from €200. Direct booking without third-party commissions saves 25-30% versus GetYourGuide or Viator.
+MerrySails offers the Bosphorus Sunset Cruise from €30 (Mon, Tue & Thu special — €34 standard), Istanbul Dinner Cruise from €30, and private Yacht Charter from €220. Direct booking without third-party commissions saves 25-30% versus GetYourGuide or Viator.
 
 ## Cruise Experiences
 
@@ -43,7 +43,7 @@ The MerrySails Bosphorus Sunset Cruise — 2 hours, from €30 (Mon, Tue & Thu, 
 ## Pricing & Booking
 
 **How much does a Bosphorus cruise cost?**
-Operator-direct rates start at €30 (shared sunset/dinner cruise) up to €90 (premium dinner tier), with private yacht charters from €200 (2 h). Booking direct on merrysails.com saves 25-30% vs aggregators.
+Operator-direct rates start at €30 (shared sunset/dinner cruise) up to €90 (premium dinner tier), with private yacht charters from €220 (2 h). Booking direct on merrysails.com saves 25-30% vs aggregators.
 
 **Can I cancel or get a refund?**
 Yes — shared sunset and dinner cruises include free cancellation up to 24 h before departure for a full refund. Severe-weather cancellations get full refund or free rebooking. Private yacht terms confirmed at reservation.

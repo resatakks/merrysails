@@ -4,12 +4,12 @@ import { ShieldCheck, Building2, FileBadge, MapPin, ExternalLink, CheckCircle, S
 import { buildHreflang } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "TURSAB License 14316 — Verified Travel Agency",
+  title: "TÜRSAB Licence 14316 — Are We Legit?",
   description:
     "MerrySails holds TURSAB A Group license 14316. Consumer protection, refund rights, how to verify the licence, and the TURSAB complaint process explained.",
   alternates: { canonical: "https://merrysails.com/tursab", languages: buildHreflang("/tursab") },
   openGraph: {
-    title: "TURSAB License 14316 — Verified Travel Agency",
+    title: "TÜRSAB Licence 14316 — Are We Legit?",
     description:
       "MerrySails holds TURSAB A Group license 14316. Learn what TURSAB protection means for tourists booking Bosphorus cruises in Istanbul.",
     url: "https://merrysails.com/tursab",

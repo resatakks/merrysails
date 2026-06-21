@@ -67,6 +67,17 @@ export default function ContactForm() {
   return (
     <div className="bg-white rounded-2xl p-6 md:p-8">
       <h2 className="text-xl font-bold mb-6">Send a Message</h2>
+      {/* No-JS fallback: this form submits via a Server Action (needs JS).
+          Without it, Send does nothing and the lead is lost — point the user
+          straight to WhatsApp / phone / email instead. 2026-06-21. */}
+      <noscript>
+        <div className="mb-4 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          This form needs JavaScript. To reach us right now, WhatsApp or call{" "}
+          <a href="https://wa.me/905448989812" className="font-semibold underline">+90 544 898 98 12</a>
+          {" "}— or email{" "}
+          <a href="mailto:info@merrysails.com" className="font-semibold underline">info@merrysails.com</a>.
+        </div>
+      </noscript>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div
           aria-hidden="true"

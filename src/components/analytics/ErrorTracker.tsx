@@ -83,9 +83,41 @@ export default function ErrorTracker() {
     const isKnownSafe = (msg: string) =>
       KNOWN_SAFE_DOM_ERRORS.some((re) => re.test(msg));
 
+    // 2026-06-20 — Browser in-page auto-translate (Google/Chrome, iOS CriOS)
+    // reparses the DOM and throws errors from ITS OWN rewritten/mangled frame:
+    // lowercase identifiers that exist nowhere in our bundle ("daylabels is not
+    // defined"), and DOM-reconciliation crashes. The <head> Node.prototype shim
+    // prevents the DOM crashes; this guard keeps the translator's residual
+    // ReferenceErrors out of our /api/client-error + GA4 signal. Gated on a
+    // translated-DOM state so we NEVER hide a real same-session bug.
+    const isTranslated = () => {
+      try {
+        const el = document.documentElement;
+        return (
+          el.classList.contains("translated-ltr") ||
+          el.classList.contains("translated-rtl") ||
+          (!!el.lang && el.lang.toLowerCase().slice(0, 2) !== "en") ||
+          !!document.querySelector(".goog-te-banner-frame, font[style*='vertical-align']")
+        );
+      } catch (_) {
+        return false;
+      }
+    };
+    const isTranslateOrigin = (msg: string, src: string) =>
+      isTranslated() &&
+      (/\b[a-z]+ is not defined\b/.test(msg) ||
+        /maximum call stack size exceeded/i.test(msg) ||
+        /^undefined:/.test(src));
+
     const onError = (event: ErrorEvent) => {
       const message = String(event.message || "unknown");
       const source = `${event.filename || ""}:${event.lineno || ""}:${event.colno || ""}`;
+
+      // Translator-origin noise (see isTranslated above) — drop from reporting.
+      if (isTranslateOrigin(message, source)) {
+        event.preventDefault?.();
+        return;
+      }
 
       // Swallow known-safe DOM races so they don't break the page or
       // pollute Clarity / GA4. Still log once per session at info-level

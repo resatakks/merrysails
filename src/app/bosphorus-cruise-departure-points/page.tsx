@@ -9,7 +9,7 @@ export const revalidate = 3600;
 const canonicalUrl = `${SITE_URL}/bosphorus-cruise-departure-points`;
 
 export const metadata: Metadata = {
- title: "Where Bosphorus Cruises Depart in Istanbul",
+ title: "Bosphorus Cruise Piers: Kabataş & Eminönü",
  description:
  "Where every Bosphorus cruise boards in Istanbul: Kabataş (dinner €30), Karaköy (sunset €34), Kuruçeşme (yacht). Exact piers, tram and taxi directions.",
  alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
  languages: buildHreflang("/bosphorus-cruise-departure-points"),
  },
  openGraph: {
- title: "Where Bosphorus Cruises Depart in Istanbul",
+ title: "Bosphorus Cruise Piers: Kabataş & Eminönü",
  description:
  "Where every Bosphorus cruise boards in Istanbul: Kabataş (dinner €30), Karaköy (sunset €34), Kuruçeşme (yacht). Exact piers, tram and taxi directions.",
  url: canonicalUrl,

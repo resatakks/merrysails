@@ -11,7 +11,7 @@ import { buildLocalBusinessSchema } from "@/lib/local-business-schema";
 import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 
 export const metadata: Metadata = {
- title: "Bosphorus Cruise Istanbul — From €30",
+ title: "Bosphorus Cruise Istanbul — Licensed, €30",
  description:
  "Bosphorus cruise Istanbul for family, couples & groups — sunset €30, dinner €30, private yacht €220. 50,000+ guests, TÜRSAB-licensed. Book direct.",
  alternates: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
  languages: buildHreflang("/bosphorus-cruise"),
  },
  openGraph: {
- title: "Bosphorus Cruise Istanbul — From €30",
+ title: "Bosphorus Cruise Istanbul — Licensed, €30",
  description:
  "Compare sunset, dinner, and private yacht options in Istanbul with visible MerrySails starting prices and the right next booking page.",
  url: `${SITE_URL}/bosphorus-cruise`,

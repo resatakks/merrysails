@@ -97,7 +97,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "ortakoy-mosque",
-    title: "Ortaköy Mosque 2026: Visit Tips + Cruise View",
+    title: "Ortaköy Mosque Istanbul: Hours & Best View",
     metaDescription: "Ortaköy Mosque (Büyük Mecidiye Camii) guide — Bosphorus Bridge view, free entry, opening hours, and the cruise route that frames it best.",
     excerpt: "Ortaköy Mosque sits at the water's edge beneath the Bosphorus Bridge — creating what is arguably Istanbul's most iconic and photographed composition.",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80",

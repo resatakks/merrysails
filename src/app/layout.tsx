@@ -449,6 +449,20 @@ export default function RootLayout({
       className={dmSans.variable}
     >
       <head>
+        {/* Google-Translate / iOS in-app-translate React resilience shim.
+            Auto-translate reparents text nodes React still tracks → React's
+            removeChild/insertBefore throw "NotFoundError: The object can not
+            be found here." + "Maximum call stack size exceeded" (es-ES / iOS
+            CriOS = ~40%+20% of mobile JS errors, exactly the non-English Ads
+            tourist traffic). No-ops ONLY when parent/child don't match (the
+            exact crash condition); same-parent ops run untouched. Must run
+            before hydration, so it is the first node in <head>.
+            React issue #11538 — canonical patch. 2026-06-20. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(typeof Node!=='function'||!Node.prototype)return;var r=Node.prototype.removeChild;Node.prototype.removeChild=function(child){if(child.parentNode!==this){return child;}return r.apply(this,arguments);};var i=Node.prototype.insertBefore;Node.prototype.insertBefore=function(newNode,referenceNode){if(referenceNode&&referenceNode.parentNode!==this){return newNode.parentNode===this?newNode:this.appendChild(newNode);}return i.apply(this,arguments);};})();`,
+          }}
+        />
         {/* Bing/Copilot grounding eligibility — per Bing Webmaster Guidelines
             Feb 27 2026 rewrite ("doesn't guarantee citations but grounding
             eligibility"). Clone of goldensunsettour pattern. 2026-06-09. */}
