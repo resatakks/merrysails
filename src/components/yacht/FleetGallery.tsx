@@ -42,6 +42,7 @@ export default function FleetGallery({
               <button
                 key={src}
                 type="button"
+                translate="no"
                 onClick={() => setLightboxIndex(idx)}
                 className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden rounded-xl bg-[var(--surface-alt)]"
                 aria-label={`Open exterior image ${idx + 1}`}
@@ -69,6 +70,7 @@ export default function FleetGallery({
               <button
                 key={src}
                 type="button"
+                translate="no"
                 onClick={() => setLightboxIndex(exteriorImages.length + idx)}
                 className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden rounded-xl bg-[var(--surface-alt)]"
                 aria-label={`Open interior image ${idx + 1}`}

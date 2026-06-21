@@ -52,6 +52,29 @@ const MS_TITLE_SUFFIX_PATTERNS = [
   /-\s*MerrySails(?!\s+Istanbul\s+2026)/i,
 ];
 
+// Shared components that render the page <h1> in SSR. A public page that uses
+// one of these is H1-covered even without an inline <h1>. Keep in sync with the
+// home/blog/tour/yacht/cluster components (all verified to emit <h1>). This list
+// is the safety net for the 2026-05-04 backlink finding: cruise/yacht detail
+// pages had H1 rendered ONLY client-side, so Googlebot saw the link-target pages
+// H1-less and the backlink anchor never bound to the keyword. The rule below
+// (missing-h1) blocks any future regression that drops the SSR <h1> entirely.
+const H1_BEARING_COMPONENTS = [
+  "HeroSection",
+  "BlogIndexClient",
+  "TourDetailClient",
+  "FleetDetailContent",
+  "HotelClusterPage",
+];
+
+// Customer-facing Telegram allow-list. MerrySails contacts via WhatsApp ONLY,
+// in every locale (CLAUDE.md "Contact channel — WhatsApp ONLY"). The Telegram
+// bot + TelegramUser model are INTERNAL ops notifications, unrelated to customer
+// contact. The internal-ops plumbing lives under src/lib/telegram/ and the
+// server actions import it — those are allow-listed; a customer-facing t.me/
+// link or a "use Telegram" CTA is a real regression and must fail the build.
+const TELEGRAM_OPS_ALLOWED_RE = /\/src\/lib\/telegram\//;
+
 const errors = [];
 const warnings = [];
 
@@ -253,6 +276,74 @@ function lintFile(filePath) {
           line: src.slice(0, dt.index).split("\n").length,
           rule: "title-too-long",
           msg: `Data-file title source length ${title.length} > 47 → rendered ${title.length + 13} > 60 (RULES.md). "${title.slice(0, 50)}"`,
+        });
+      }
+    }
+  }
+
+  // Rule 5c (2026-06-22 Semrush audit): "| MerrySails" baked into a `const title`
+  // template-literal / string assignment, which is then handed to the metadata
+  // `title:` field as a shorthand var. The root layout template "%s | MerrySails"
+  // re-appends the suffix → "… | MerrySails | MerrySails" (28 localized cruise
+  // detail pages were affected). Rule 5 only catches inline `title: "..."` keys,
+  // so variable-built titles slipped past. ERROR — this is a live duplicate-title
+  // regression that the build gate must block.
+  if (isPage) {
+    const titleVarRegex =
+      /\b(?:const|let)\s+(?:title|pageTitle|metaTitle)\b[\s\S]{0,400}?[=?:]\s*(["'`])((?:[^\\]|\\.)*?)\1/g;
+    let tv;
+    while ((tv = titleVarRegex.exec(src)) !== null) {
+      const literal = tv[2];
+      // Only flag the actual suffix form (pipe/dash + MerrySails), not brand
+      // mentions mid-string. Allow the canonical long suffix variant.
+      if (/[|\-]\s*MerrySails(?!\s+Istanbul\s+2026)/i.test(literal)) {
+        errors.push({
+          file: rel(filePath),
+          line: src.slice(0, tv.index).split("\n").length,
+          rule: "title-var-suffix-duplicate",
+          msg: `Title variable contains "| MerrySails" suffix — the root layout template re-appends it → "… | MerrySails | MerrySails". Drop the manual suffix or use { absolute } (CLAUDE.md rule 5). Fragment: "${literal.slice(0, 60)}"`,
+        });
+      }
+    }
+  }
+
+  // Rule 5d (2026-06-22 Semrush audit): hreflang builders must only emit
+  // alternates for locales that actually render a page, otherwise Google /
+  // Semrush report "missing return links". ru + zh do NOT have live
+  // /<locale>/cruises/<slug> or most locale variants, so any hreflang/alternate
+  // builder that loops the FULL ACTIVE_LOCALES set (which now includes ru+zh)
+  // is a return-link landmine. ERROR if a local hreflang builder iterates
+  // ACTIVE_LOCALES and writes a `/${locale}/...` languages entry without
+  // gating ru/zh. Canonical builder src/lib/hreflang.ts is exempt — it already
+  // gates via RU_ENABLED_ROUTES / ZH_ENABLED_ROUTES.
+  const isCanonicalHreflang = /\/src\/lib\/hreflang\.ts$/.test(filePath.replace(/\\/g, "/"));
+  if (!isCanonicalHreflang) {
+    // Find a `for (const X of ACTIVE_LOCALES) { … }` loop whose BODY assigns a
+    // hreflang/languages map entry to a `/${X}/…` URL. (We scope to the loop
+    // body so generateStaticParams loops that merely build a params array — not
+    // a languages map — don't trip the rule.) If that loop body has no ru/zh
+    // gate, it emits hreflang for ru+zh pages that don't exist → missing return
+    // links. The canonical builder (src/lib/hreflang.ts) is exempt above.
+    const loopRe =
+      /for\s*\(\s*const\s+(\w+)\s+of\s+ACTIVE_LOCALES\s*\)\s*\{([\s\S]*?)\n\s{0,4}\}/g;
+    let lr;
+    while ((lr = loopRe.exec(src)) !== null) {
+      const loopVar = lr[1];
+      const body = lr[2];
+      const assignsLangMap = new RegExp(
+        `(?:languages|alternates|hreflang|langs)\\s*\\[[^\\]]*\\]\\s*=\\s*\`[^\`]*\\/\\$\\{${loopVar}\\}`,
+      ).test(body);
+      if (!assignsLangMap) continue;
+      const hasRuZhGate =
+        /RU_ENABLED|ZH_ENABLED|!==\s*["']ru["']|!==\s*["']zh["']|===\s*["']ru["']|===\s*["']zh["']|continue/.test(
+          body,
+        );
+      if (!hasRuZhGate) {
+        errors.push({
+          file: rel(filePath),
+          line: src.slice(0, lr.index).split("\n").length,
+          rule: "hreflang-ungated-ru-zh",
+          msg: `hreflang/alternates builder loops ACTIVE_LOCALES (now includes ru+zh) and emits "/\${${loopVar}}/…" without a ru/zh gate → "missing return links" for non-existent locale pages. Use a gated locale list (e.g. ["tr","de","fr","nl"]) or RU_ENABLED/ZH_ENABLED checks like src/lib/hreflang.ts.`,
         });
       }
     }
@@ -512,6 +603,101 @@ function lintFile(filePath) {
       });
     }
   }
+
+  // S17 [P0 — universal Tier-0]: public indexable page MUST have metadata.
+  // Every public page needs generateMetadata() or `export const metadata`
+  // (CLAUDE.md "generateMetadata() required on every public page"). The
+  // homepage variants (src/app/page.tsx and src/app/[locale]/page.tsx) are
+  // allowed to inherit title/description from the root layout template, so
+  // they are exempt from this hard gate.
+  const isHomepage =
+    /\/app\/page\.tsx$/.test(filePath.replace(/\\/g, "/")) ||
+    /\/app\/\[locale\]\/page\.tsx$/.test(filePath.replace(/\\/g, "/"));
+  const hasMeta =
+    /export\s+const\s+metadata\b/.test(src) ||
+    /export\s+(?:async\s+)?function\s+generateMetadata\b/.test(src);
+  if (!hasMeta && !isHomepage) {
+    errors.push({
+      file: rel(filePath), line: 1, rule: "missing-metadata",
+      msg: `Public page has no \`export const metadata\` / \`generateMetadata()\` (CLAUDE.md: generateMetadata required on every public page). Homepage variants inherit from the layout template; all others must declare their own.`,
+    });
+  }
+
+  // S18 [P0 — universal Tier-0]: public indexable page MUST ship an SSR <h1>.
+  // This is the 2026-05-04 backlink regression guard — cruise/yacht detail
+  // pages rendered the <h1> ONLY client-side, so Googlebot saw the backlink
+  // target H1-less and the anchor never bound to the keyword. A page is
+  // H1-covered if it has an inline <h1> OR renders a known H1-bearing shared
+  // component (HeroSection / TourDetailClient / FleetDetailContent /
+  // HotelClusterPage / BlogIndexClient). Comments are stripped so a commented
+  // "<h1>" reference can't satisfy the check.
+  const srcNoCommentsForH1 = src
+    .replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, "")
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/\/\/[^\n]*/g, "");
+  const hasInlineH1 = /<h1[\s>]/.test(srcNoCommentsForH1);
+  const rendersH1Component = H1_BEARING_COMPONENTS.some((c) =>
+    new RegExp(`<${c}[\\s/>]`).test(srcNoCommentsForH1)
+  );
+  if (!hasInlineH1 && !rendersH1Component) {
+    errors.push({
+      file: rel(filePath), line: 1, rule: "missing-h1",
+      msg: `Public page has NO server-rendered <h1> and renders none of the H1-bearing components (${H1_BEARING_COMPONENTS.join(", ")}). Googlebot must see an SSR <h1> (2026-05-04 backlink finding). Add a static <h1> to the page or a covered component.`,
+    });
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// S19 [P0 — universal Tier-0]: no customer-facing Telegram. MerrySails is
+// WhatsApp-only in every locale (CLAUDE.md "Contact channel — WhatsApp ONLY").
+// The internal Telegram ops bot (src/lib/telegram/, imported by server actions)
+// is allow-listed. Any customer-facing `t.me/` link or "use Telegram" CTA
+// anywhere else in src is a real regression and must fail the build. This is a
+// per-file check but lives outside lintFile's page-only scope (a Telegram CTA
+// could appear in a component, layout, or content file, not just a page).
+// ─────────────────────────────────────────────────────────────────────────
+function lintTelegram(filePath) {
+  const unix = filePath.replace(/\\/g, "/");
+  // Internal ops plumbing is allow-listed.
+  if (TELEGRAM_OPS_ALLOWED_RE.test(unix)) return;
+  const src = fs.readFileSync(filePath, "utf8");
+  const lines = src.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!/\bt\.me\/|telegram/i.test(line)) continue;
+    // Internal-ops imports/usage from @/lib/telegram are NOT a customer CTA.
+    if (
+      /@\/lib\/telegram|notifyNewReservation|notifyStatusChange|TelegramUser|telegramErr|Telegram notification|Telegram not set up/i.test(
+        line
+      )
+    ) {
+      continue;
+    }
+    // Negation / explanatory copy ("no Telegram", "not Telegram", internal ops).
+    if (
+      /no\s+telegram|never\s+telegram|not\s+(?:a\s+)?telegram|without\s+telegram|internal\s+telegram|telegram\s+ops|ops\s+notif|console\.(?:error|log)/i.test(
+        line
+      )
+    ) {
+      continue;
+    }
+    // A bare `t.me/` link is unambiguously a customer CTA → always error.
+    const isTmeLink = /t\.me\//.test(line);
+    // Otherwise only flag "telegram" when it reads like a contact channel/CTA.
+    const looksLikeCta =
+      isTmeLink ||
+      /(?:contact|message|reach|chat|write|dm|talk).{0,30}telegram|telegram.{0,30}(?:contact|message|chat|channel|cta|button|link|@)/i.test(
+        line
+      );
+    if (looksLikeCta) {
+      errors.push({
+        file: rel(filePath),
+        line: i + 1,
+        rule: "customer-facing-telegram",
+        msg: `Customer-facing Telegram reference — MerrySails is WhatsApp-only in every locale (CLAUDE.md "Contact channel — WhatsApp ONLY"). Only src/lib/telegram/* (internal ops) may reference Telegram. Line: ${line.trim().slice(0, 100)}`,
+      });
+    }
+  }
 }
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -662,6 +848,66 @@ function crossFileChecks(files) {
       }
     }
   }
+
+  // S15 (2026-06-22 Semrush audit): hardcoded /<locale>/blog/<slug> or
+  // /<locale>/guides/<slug> links pointing at a slug that is NOT registered for
+  // that locale → 404. The audit's single biggest bucket (~790 internal 404s)
+  // was locale-prefixed links to EN-only blog/guide slugs. The localized blog
+  // route only serves slugs from src/data/blog/posts/<locale>-product-posts.ts
+  // (via locale-posts.ts); there is NO /<locale>/guides/[slug] route at all.
+  // ERROR on any such hardcoded link so a future "localize this CTA" edit can't
+  // silently reintroduce the 404 wave.
+  const localePostSlugs = {}; // locale -> Set<slug>
+  const POST_FILES = {
+    tr: "src/data/blog/posts/turkish-product-posts.ts",
+    de: "src/data/blog/posts/german-product-posts.ts",
+    fr: "src/data/blog/posts/french-product-posts.ts",
+    nl: "src/data/blog/posts/dutch-product-posts.ts",
+    ru: "src/data/blog/posts/russian-product-posts.ts",
+  };
+  for (const [loc, rp] of Object.entries(POST_FILES)) {
+    const abs = path.join(rootDir, rp);
+    localePostSlugs[loc] = new Set();
+    if (fs.existsSync(abs)) {
+      const t = fs.readFileSync(abs, "utf8");
+      for (const mm of t.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+        localePostSlugs[loc].add(mm[1]);
+      }
+    }
+  }
+  // There is no /<locale>/guides/[slug] route — any /<locale>/guides/<slug>
+  // link is always a 404.
+  const LOCALE_LINK_RE = /["'`]\/(tr|de|fr|nl|ru|zh)\/(blog|guides)\/([a-z0-9-]+)["'`]/g;
+  for (const f of files) {
+    // Only inspect src under app/components/content (where links are authored).
+    const unix = f.replace(/\\/g, "/");
+    if (!/\/src\/(app|components|content)\//.test(unix)) continue;
+    const src = fs.readFileSync(f, "utf8");
+    let lm;
+    while ((lm = LOCALE_LINK_RE.exec(src)) !== null) {
+      const [, loc, section, slug] = lm;
+      const line = src.slice(0, lm.index).split("\n").length;
+      if (section === "guides") {
+        errors.push({
+          file: rel(f),
+          line,
+          rule: "locale-link-404",
+          msg: `Link "/${loc}/guides/${slug}" → 404: there is no /[locale]/guides/[slug] route. Link the EN guide ("/guides/${slug}") instead.`,
+        });
+        continue;
+      }
+      // blog
+      const reg = localePostSlugs[loc];
+      if (loc === "zh" || !reg || !reg.has(slug)) {
+        errors.push({
+          file: rel(f),
+          line,
+          rule: "locale-link-404",
+          msg: `Link "/${loc}/blog/${slug}" → 404: slug not registered in ${POST_FILES[loc] || `(no ${loc} post file)`}. Link an existing /${loc}/blog slug or the EN post "/blog/${slug}".`,
+        });
+      }
+    }
+  }
 }
 
 function main() {
@@ -698,6 +944,16 @@ function main() {
     for (const w of warnings) console.log(`  [${w.rule}] ${w.file}:${w.line} — ${w.msg}`);
   }
   console.log(`\nScanned ${files.length} files.`);
+
+  // STRICT mode (opt-in via SEO_LINT_STRICT=1, e.g. in the pre-commit path):
+  // warnings ALSO fail the run. Default (prebuild build gate) blocks on errors
+  // only, so a stray long-title warning never breaks a deploy — but a developer
+  // can opt into the stricter bar locally / in CI.
+  const strict = process.env.SEO_LINT_STRICT === "1";
+  if (strict && warnings.length > 0) {
+    console.log(`\n🔒 SEO_LINT_STRICT=1 — ${warnings.length} warning(s) treated as failures.`);
+    return 1;
+  }
   return errors.length > 0 ? 1 : 0;
 }
 

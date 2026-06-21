@@ -83,17 +83,13 @@ export default function FleetDetailContent({
     yachtTourSlug,
   )}&packageName=${encodeURIComponent(`${t.label} — ${boat.minHours}h`)}&hours=${boat.minHours}&fleet=${boat.slug}#core-booking-planner`;
 
-  // Locale-aware: /ru → Telegram (WhatsApp blocked in Russia, Feb 2026).
-  // Telegram t.me silently drops the prefill query.
+  // WhatsApp is the single customer contact channel for every locale incl. ru.
   const channel = getContactChannel(locale);
-  const whatsappHref =
-    channel.icon === "telegram"
-      ? channel.url
-      : `${channel.url}?text=${encodeURIComponent(
-          strings.whatsappPrefill
-            .replace("{label}", t.label)
-            .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`),
-        )}`;
+  const whatsappHref = `${channel.url}?text=${encodeURIComponent(
+    strings.whatsappPrefill
+      .replace("{label}", t.label)
+      .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`),
+  )}`;
 
   return (
     <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
@@ -247,12 +243,10 @@ export default function FleetDetailContent({
                   ? `${reservationBasePath}?tour=${encodeURIComponent(
                       yachtTourSlug,
                     )}&packageName=${encodeURIComponent(`${t.label} — ${h}h`)}&hours=${h}&fleet=${boat.slug}#core-booking-planner`
-                  : channel.icon === "telegram"
-                  ? channel.url
                   : `${channel.url}?text=${encodeURIComponent(
                       `Hi! I'm interested in the ${t.label} — ${h} hour charter (€${value}). Could you share availability?`,
                     )}`;
-                const isExternal = !boat.bookable && channel.icon !== "telegram";
+                const isExternal = !boat.bookable;
                 const ariaLabel = `${
                   boat.bookable ? strings.reserveCta : strings.quoteCta
                 } — ${h} ${strings.duration} (€${value})`;

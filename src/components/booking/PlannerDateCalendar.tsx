@@ -250,6 +250,7 @@ export function PlannerDateCalendar({
               <button
                 key={dayKey}
                 type="button"
+                translate="no"
                 onClick={() => {
                   if (isDisabled) return;
                   // Clarity (14d /reservation): dead clicks on "Last spots!"

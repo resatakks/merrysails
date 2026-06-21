@@ -743,6 +743,7 @@ export default function TourDetailClient({
 
         {/* "View all X photos" button overlay */}
         <button
+          translate="no"
           onClick={() => openLightbox(0)}
           className="absolute bottom-4 right-4 z-10 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg text-sm font-semibold text-[var(--heading)] shadow-md hover:bg-white transition-colors cursor-pointer"
         >
@@ -850,7 +851,13 @@ export default function TourDetailClient({
             )}
             <p className="text-[var(--text-muted)] mb-3">{tName}</p>
             <div className="flex flex-wrap items-center gap-4 text-sm">
-              <div className="flex items-center gap-1">
+              <button
+                type="button"
+                translate="no"
+                onClick={() => handleTabChange(hasFaq ? "faq" : "overview")}
+                aria-label={`${tour.rating} / 5 — ${tour.reviewCount} ${L.reviews}`}
+                className="flex items-center gap-1 rounded-md -mx-1 px-1 py-0.5 transition-colors hover:bg-[var(--surface-alt)] cursor-pointer"
+              >
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className={`w-4 h-4 ${i < Math.round(tour.rating) ? "text-[var(--brand-gold)] fill-[var(--brand-gold)]" : "text-gray-300"}`} />
@@ -858,7 +865,7 @@ export default function TourDetailClient({
                 </div>
                 <span className="font-semibold">{tour.rating}</span>
                 <span className="text-[var(--text-muted)]">({tour.reviewCount} {L.reviews})</span>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -866,16 +873,18 @@ export default function TourDetailClient({
             <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[linear-gradient(135deg,rgba(230,110,72,0.06),rgba(255,184,0,0.08))] p-5 md:p-6">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div className="space-y-3">
-                  <SalePrice
-                    price={effectivePrice}
-                    originalPrice={effectiveOriginalPrice}
-                    suffix={priceSuffix}
-                    label={selectedOptionLabel}
-                    size="xl"
-                    showBadge={Boolean(effectiveOriginalPrice)}
-                    showMeta={Boolean(effectiveOriginalPrice)}
-                    metaText={L.directBookingMeta}
-                  />
+                  <span translate="no">
+                    <SalePrice
+                      price={effectivePrice}
+                      originalPrice={effectiveOriginalPrice}
+                      suffix={priceSuffix}
+                      label={selectedOptionLabel}
+                      size="xl"
+                      showBadge={Boolean(effectiveOriginalPrice)}
+                      showMeta={Boolean(effectiveOriginalPrice)}
+                      metaText={L.directBookingMeta}
+                    />
+                  </span>
                   {selectedPackageDescription && (
                     <p className="max-w-2xl text-sm leading-relaxed text-[var(--body-text)]/80">
                       {selectedPackageDescription}
@@ -884,14 +893,18 @@ export default function TourDetailClient({
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => handleTabChange("overview")}
+                    className="w-full text-left rounded-2xl bg-white/80 px-4 py-3 shadow-sm cursor-pointer hover:bg-white transition-colors"
+                  >
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                       {L.packages}
                     </div>
-                    <div className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                    <div translate="no" className="mt-1 text-sm font-semibold text-[var(--heading)]">
                       {hasPackages ? L.publicOptions(tour.packages!.length) : L.singleFare}
                     </div>
-                  </div>
+                  </button>
                   <div className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                       {L.duration}
@@ -919,6 +932,7 @@ export default function TourDetailClient({
               {availableTabs.map((tab) => (
                 <button
                   key={tab.key}
+                  translate="no"
                   onClick={() => handleTabChange(tab.key)}
                   className={`relative flex-1 py-2.5 px-3 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
                     activeTab === tab.key
@@ -975,6 +989,7 @@ export default function TourDetailClient({
                           return (
                             <button
                               key={pkg.name}
+                              translate="no"
                               onClick={() => handlePackageSelect(pkg)}
                               className={`text-left rounded-xl border-2 p-5 transition-all ${
                                 isSelected
@@ -1033,6 +1048,7 @@ export default function TourDetailClient({
                           return (
                             <button
                               key={addon.name}
+                              translate="no"
                               onClick={() => toggleAddOn(addon)}
                               className={`flex items-center justify-between py-3 px-4 rounded-xl border-2 transition-all text-left ${
                                 isSelected

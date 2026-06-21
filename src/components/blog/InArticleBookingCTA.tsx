@@ -24,7 +24,7 @@ import {
  * Each CTA click fires `blog_cta_click` with {slug, position, cruiseType,
  * locale} so we can measure blog → product conversion lift in GA4/Clarity.
  *
- * For `ru` locale: WhatsApp is replaced by Telegram (channel resolved via
+ * Contact channel is WhatsApp for every locale incl. ru (resolved via
  * `getContactChannel`).
  */
 export type InArticleCruiseType = "sunset" | "dinner" | "yacht" | "any";

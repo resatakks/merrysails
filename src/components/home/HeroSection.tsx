@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Shield, Star } from "lucide-react";
+import { getContactChannel } from "@/lib/constants";
 import type { SiteLocale } from "@/i18n/config";
 import { LOCALIZED_ROUTES } from "@/i18n/localized-routes";
 
@@ -42,6 +43,10 @@ type HeroStrings = {
   badgeOptions: string;
   badgePricing: string;
   badgeLicensed: string;
+  /** Mobile-only fold-1 chip + buttons (≤ 360px friendly). */
+  mobileFromPrice: string;
+  mobileViewCruises: string;
+  mobileWhatsapp: string;
 };
 
 const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
@@ -63,6 +68,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "Shared and private cruise options",
     badgePricing: "Direct booking with clear pricing",
     badgeLicensed: "TURSAB-licensed since 2001",
+    mobileFromPrice: "From €30 · per person",
+    mobileViewCruises: "Browse cruises",
+    mobileWhatsapp: "WhatsApp",
   },
   tr: {
     headlineBase: "İstanbul Boğaz Turu",
@@ -82,6 +90,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "Paylaşımlı ve özel tur seçenekleri",
     badgePricing: "Net fiyatlarla direkt rezervasyon",
     badgeLicensed: "2001'den beri TÜRSAB lisanslı",
+    mobileFromPrice: "€30'dan · kişi başı",
+    mobileViewCruises: "Turları gör",
+    mobileWhatsapp: "WhatsApp",
   },
   de: {
     headlineBase: "Bosporus Kreuzfahrt Istanbul",
@@ -101,6 +112,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "Geteilte und private Kreuzfahrt-Optionen",
     badgePricing: "Direkte Buchung mit klaren Preisen",
     badgeLicensed: "TURSAB-lizenziert seit 2001",
+    mobileFromPrice: "Ab €30 · pro Person",
+    mobileViewCruises: "Kreuzfahrten ansehen",
+    mobileWhatsapp: "WhatsApp",
   },
   fr: {
     headlineBase: "Croisière Bosphore Istanbul",
@@ -120,6 +134,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "Croisières partagées et privées",
     badgePricing: "Réservation directe à prix clairs",
     badgeLicensed: "Licencié TURSAB depuis 2001",
+    mobileFromPrice: "Dès €30 · par personne",
+    mobileViewCruises: "Voir les croisières",
+    mobileWhatsapp: "WhatsApp",
   },
   nl: {
     headlineBase: "Bosporus Cruise Istanbul",
@@ -139,6 +156,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "Gedeelde en privé cruise-opties",
     badgePricing: "Directe boeking met heldere prijzen",
     badgeLicensed: "TURSAB-gelicentieerd sinds 2001",
+    mobileFromPrice: "Vanaf €30 · per persoon",
+    mobileViewCruises: "Bekijk cruises",
+    mobileWhatsapp: "WhatsApp",
   },
   ru: {
     headlineBase: "Круиз по Босфору в Стамбуле",
@@ -158,6 +178,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "Совместные и частные круизы",
     badgePricing: "Прямое бронирование с понятными ценами",
     badgeLicensed: "Лицензия TÜRSAB с 2001 года",
+    mobileFromPrice: "От €30 · с человека",
+    mobileViewCruises: "Смотреть круизы",
+    mobileWhatsapp: "WhatsApp",
   },
   zh: {
     headlineBase: "伊斯坦布尔博斯普鲁斯海峡游船",
@@ -177,6 +200,9 @@ const HERO_STRINGS: Record<HeroLocale, HeroStrings> = {
     badgeOptions: "共享与私人游船选项",
     badgePricing: "价格透明,直接预订",
     badgeLicensed: "自 2001 年起持 TÜRSAB 许可",
+    mobileFromPrice: "€30 起 · 每人",
+    mobileViewCruises: "查看游船",
+    mobileWhatsapp: "WhatsApp",
   },
 };
 
@@ -203,6 +229,9 @@ interface Props {
 export default function HeroSection({ locale = "en" }: Props) {
   const l: HeroLocale = (locale in HERO_STRINGS ? locale : "en") as HeroLocale;
   const s = HERO_STRINGS[l];
+  // Contact is WhatsApp for every locale incl. ru/zh (operator decision
+  // 2026-06-02 — no Telegram CTA anywhere).
+  const channel = getContactChannel(l);
 
   const heroProducts = [
     { href: localizeHref("/cruises/bosphorus-sunset-cruise", l), ...s.products.sunset },
@@ -230,7 +259,7 @@ export default function HeroSection({ locale = "en" }: Props) {
       />
       <div aria-hidden className="absolute inset-0 bg-black/35" />
 
-      <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-24 pb-6 sm:min-h-[100svh] sm:justify-center sm:pt-32 sm:pb-16">
+      <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-24 pb-6 sm:min-h-[82svh] sm:justify-center sm:pt-28 sm:pb-12">
         <div className="mx-auto w-full max-w-4xl">
           <div className="hero-fade-in mx-auto max-w-3xl text-center">
             <h1 className="text-[1.6rem] font-bold leading-[1.1] text-white sm:text-5xl md:text-[4.2rem] md:leading-[0.98]">
@@ -257,6 +286,40 @@ export default function HeroSection({ locale = "en" }: Props) {
             <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-relaxed text-white/84 sm:mt-4 sm:text-base md:text-lg">
               {s.subtext}
             </p>
+
+            {/* Mobile-only fold-1 conversion strip — price chip + 2 CTA row.
+                The homepage has 13.6% avg mobile scroll depth and is the #1
+                quickback page (Clarity 2026-06-20): the three product cards
+                are crammed below the fold and the Compare/Reservation CTAs
+                further down are never seen. This puts a visible "From €30"
+                price + one primary scroll action (Browse cruises → #tours)
+                and a WhatsApp fallback above the fold on 360px viewports.
+                Hidden ≥ sm so the desktop hero is untouched. WhatsApp is the
+                ONLY contact channel on every locale incl. ru/zh. */}
+            <div className="mt-4 flex flex-col items-stretch gap-2 sm:hidden">
+              <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-[var(--brand-gold)]/95 px-3 py-1.5 text-[12px] font-bold uppercase tracking-wide text-[#0b1e3a] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">
+                <Star className="h-3.5 w-3.5" aria-hidden />
+                {s.mobileFromPrice}
+              </div>
+              <div className="mt-1 grid grid-cols-2 gap-2">
+                <a
+                  href="#tours"
+                  className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full bg-[var(--brand-primary)] px-3 text-sm font-bold text-white shadow-[0_10px_28px_rgba(11,21,58,0.28)] transition-transform active:scale-95"
+                >
+                  {s.mobileViewCruises}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href={channel.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full bg-white px-3 text-sm font-bold shadow-[0_10px_28px_rgba(11,21,58,0.18)] transition-transform active:scale-95"
+                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: "#25D366", color: "#128C7E" }}
+                >
+                  {s.mobileWhatsapp}
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="hero-fade-in hero-fade-in-delay-1 mt-5 grid gap-2.5 sm:mt-6 sm:gap-3 md:grid-cols-3">
@@ -328,6 +391,23 @@ export default function HeroSection({ locale = "en" }: Props) {
               <Clock className="h-4 w-4 text-[var(--brand-gold)]" />
               <span>{s.badgeLicensed}</span>
             </Link>
+          </div>
+
+          {/* Desktop-only "see all cruises" scroll affordance. With the hero
+              shortened to sm:min-h-[82svh], desktop users didn't realise the
+              page continues below the fold to the full cruise grid. This
+              subtle centered hint + bouncing chevron jumps to #tours. Reuses
+              the same localized "browse cruises" string as the mobile strip
+              (no new key). Hidden on mobile — the mobile strip already has a
+              visible "Browse cruises" action. */}
+          <div className="hero-fade-in hero-fade-in-delay-3 mt-8 hidden justify-center sm:flex">
+            <a
+              href="#tours"
+              className="group inline-flex flex-col items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white"
+            >
+              <span>{s.mobileViewCruises}</span>
+              <ArrowRight className="h-4 w-4 rotate-90 animate-bounce text-[var(--brand-gold)]" aria-hidden />
+            </a>
           </div>
         </div>
       </div>

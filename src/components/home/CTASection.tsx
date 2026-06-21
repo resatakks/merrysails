@@ -1,20 +1,15 @@
 import Link from "next/link";
-import { Phone, ArrowRight, Send } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { getContactChannel } from "@/lib/constants";
 
 type Locale = "en" | "tr" | "de" | "fr" | "nl" | "ru";
 
 export default function CTASection({ locale = "en" }: { locale?: Locale } = {}) {
-  // Russia blocked WhatsApp in Feb 2026 — route the messenger CTA to Telegram
-  // for /ru so the button is actually reachable. Telegram brand blue replaces
-  // --brand-whatsapp; lucide's Send icon stands in for the paper-plane mark.
+  // WhatsApp is the single customer contact channel for every locale incl. ru.
   const channel = getContactChannel(locale);
-  const isTelegram = channel.icon === "telegram";
-  const chatLabel = isTelegram ? "Telegram" : "WhatsApp";
-  const chatBgClass = isTelegram
-    ? "bg-[#229ED9] hover:bg-[#1B85B8]"
-    : "bg-[var(--brand-whatsapp)] hover:brightness-110";
+  const chatLabel = "WhatsApp";
+  const chatBgClass = "bg-[var(--brand-whatsapp)] hover:brightness-110";
   return (
     <section className="relative py-20 md:py-28 bg-[var(--brand-dark)] overflow-hidden">
       {/* Decorative circles */}
@@ -40,9 +35,6 @@ export default function CTASection({ locale = "en" }: { locale?: Locale } = {}) 
           </Link>
           <TrackedContactLink
             href={channel.url}
-            // Analytics surface stays "whatsapp" (the contact-channel kind in
-            // analytics.ts is a closed union) — the channel is encoded in the
-            // label so the dashboards still see /ru clicks routing to Telegram.
             kind="whatsapp"
             label={`homepage_cta_${channel.icon}`}
             location="homepage_cta"
@@ -50,7 +42,7 @@ export default function CTASection({ locale = "en" }: { locale?: Locale } = {}) 
             rel="noopener noreferrer"
             className={`inline-flex items-center gap-2 text-white font-bold py-3.5 px-8 rounded-full transition-all ${chatBgClass}`}
           >
-            {isTelegram ? <Send className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
+            <Phone className="w-4 h-4" />
             {chatLabel}
           </TrackedContactLink>
           <TrackedContactLink

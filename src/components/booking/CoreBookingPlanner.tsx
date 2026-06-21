@@ -256,6 +256,7 @@ export default function CoreBookingPlanner({
               <button
                 key={tour.slug}
                 type="button"
+                translate="no"
                 onClick={() => {
                   // Clarity (May 27 session 4) showed users clicking the
                   // "Selected" badge of the already-selected tour expecting
@@ -333,6 +334,7 @@ export default function CoreBookingPlanner({
         <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1.18fr)] xl:grid-cols-[minmax(0,1.02fr)_minmax(0,1.28fr)_minmax(16rem,0.92fr)]">
           <section
             data-booking-package-selector
+            translate="no"
             className="min-w-0 rounded-[1.7rem] border border-[var(--line)] bg-[var(--surface-alt)] p-4 xl:p-5"
           >
             <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -371,6 +373,7 @@ export default function CoreBookingPlanner({
 
             <button
               type="button"
+              translate="no"
               onClick={() => {
                 if ((selectedTour.packages?.length ?? 0) > 1) {
                   setIsPackageMenuOpen(true);
@@ -466,6 +469,7 @@ export default function CoreBookingPlanner({
             <div className="mt-2 flex h-12 items-center justify-between rounded-2xl border border-[var(--line)] bg-[var(--surface-alt)] px-3">
               <button
                 type="button"
+                translate="no"
                 onClick={() => setGuests((value) => clampGuests(value - 1))}
                 disabled={guests <= 1}
                 aria-label={t.decreaseGuests}
@@ -481,6 +485,7 @@ export default function CoreBookingPlanner({
               </div>
               <button
                 type="button"
+                translate="no"
                 onClick={() => setGuests((value) => clampGuests(value + 1))}
                 disabled={guests >= MAX_BOOKING_GUESTS}
                 aria-label={t.increaseGuests}
@@ -519,6 +524,7 @@ export default function CoreBookingPlanner({
                     so the click does something instead of nothing. */}
                 <button
                   type="button"
+                  translate="no"
                   onClick={() => setGuests(MAX_BOOKING_GUESTS)}
                   disabled={guests >= MAX_BOOKING_GUESTS}
                   className="inline-flex items-center gap-1.5 rounded-full transition-colors hover:text-[var(--brand-primary)] disabled:cursor-default disabled:hover:text-[var(--text-muted)]"
@@ -571,6 +577,7 @@ export default function CoreBookingPlanner({
                 makes the wait unmistakable; aria-busy announces it to AT. */}
             <button
               type="button"
+              translate="no"
               onClick={handleContinue}
               disabled={isOpeningBooking}
               aria-busy={isOpeningBooking}

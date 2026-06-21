@@ -643,8 +643,8 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "best-bosphorus-sunset-cruise-istanbul-2026",
-    title: "Best Sunset Cruise Istanbul 2026",
-    metaDescription: "Top 5 Bosphorus sunset cruises 2026 compared: from €30 Tue/Thu or €34 other days. Exact boarding times, operator reviews & book-direct prices — no markup.",
+    title: "Best Sunset Cruise Istanbul 2026: 5 Compared",
+    metaDescription: "Top 5 Istanbul sunset cruises compared for 2026: from €30 Tue/Thu, exact boarding times and book-direct prices that skip the 25% markup.",
     excerpt: "An honest, operator-first comparison of Istanbul's main Bosphorus sunset cruise options — what they cost, who they fit, and how to avoid the aggregator markup.",
     category: "cruise-guide",
     date: "2026-05-06",
@@ -797,8 +797,8 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-vs-ferry-istanbul-2026",
-    title: "Bosphorus Cruise vs Ferry 2026: Worth It?",
-    metaDescription: "Bosphorus cruise (€34) or the ₺40 public ferry? A TÜRSAB-licensed captain's 2026 breakdown of route, narration, food and total cost — so you book once, right.",
+    title: "Bosphorus Cruise vs Ferry: Is It Worth It?",
+    metaDescription: "Cruise (€34) or the ₺40 public ferry? A TÜRSAB-licensed captain compares route, narration, food and real cost so you book once, right.",
     excerpt: "Both options cost different money for very different experiences. The honest comparison most travel blogs avoid because affiliates pay for cruise recommendations.",
     category: "cruise-guide",
     date: "2026-05-07",

@@ -54,10 +54,7 @@ export default function StickyMobileCta({
   }, []);
 
   const channel = getContactChannel(locale);
-  // For RU visitors (WhatsApp blocked in Russia from Feb 2026) we route to
-  // Telegram instead — getContactChannel handles that switch. Telegram t.me
-  // ignores ?text= silently but we still build it for the WhatsApp case.
-  const whatsappHref = whatsappPrefill && channel.icon !== "telegram"
+  const whatsappHref = whatsappPrefill
     ? `${channel.url}?text=${encodeURIComponent(whatsappPrefill)}`
     : channel.url;
 
@@ -86,7 +83,7 @@ export default function StickyMobileCta({
             location={whatsappLocation}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={channel.icon === "telegram" ? "Telegram" : "WhatsApp"}
+            aria-label="WhatsApp"
             className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white transition-colors hover:bg-emerald-700"
           >
             <MessageCircle className="h-5 w-5" />

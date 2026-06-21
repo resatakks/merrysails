@@ -574,6 +574,7 @@ export default function BookingCalendar({
                   {format(selectedDate, "EEEE, dd MMM yyyy")}
                 </span>
                 <button
+                  translate="no"
                   onClick={() => setSelectedDate(null)}
                   className="ml-auto text-xs text-[var(--text-muted)] hover:text-[var(--body-text)] transition-colors"
                 >
@@ -605,6 +606,7 @@ export default function BookingCalendar({
                     {timeOptions.map((time) => (
                       <button
                         key={time}
+                        translate="no"
                         onClick={() => setSelectedTime(time)}
                         className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all ${
                           normalizedSelectedTime === time
@@ -674,6 +676,7 @@ export default function BookingCalendar({
                   </div>
                   <div className="flex items-center gap-3">
                     <button
+                      translate="no"
                       onClick={() => setAdults(Math.max(1, adults - 1))}
                       disabled={adults <= 1}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
@@ -684,6 +687,7 @@ export default function BookingCalendar({
                       {adults}
                     </span>
                     <button
+                      translate="no"
                       onClick={() =>
                         setAdults(Math.min(MAX_BOOKING_GUESTS - children - infants, adults + 1))
                       }
@@ -708,6 +712,7 @@ export default function BookingCalendar({
                   </div>
                   <div className="flex items-center gap-3">
                     <button
+                      translate="no"
                       onClick={() => setChildren(Math.max(0, children - 1))}
                       disabled={children <= 0 || isAlcoholicSelection}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
@@ -719,6 +724,7 @@ export default function BookingCalendar({
                       {effectiveChildren}
                     </span>
                     <button
+                      translate="no"
                       onClick={() =>
                         setChildren(
                           Math.min(
@@ -752,6 +758,7 @@ export default function BookingCalendar({
                   </div>
                   <div className="flex items-center gap-3">
                     <button
+                      translate="no"
                       onClick={() => setInfants(Math.max(0, infants - 1))}
                       disabled={infants <= 0 || isAlcoholicSelection}
                       className="w-9 h-9 flex items-center justify-center rounded-full border-2 border-[var(--line)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[var(--line)] disabled:hover:text-inherit"
@@ -763,6 +770,7 @@ export default function BookingCalendar({
                       {effectiveInfants}
                     </span>
                     <button
+                      translate="no"
                       onClick={() =>
                         setInfants(
                           Math.min(
@@ -848,6 +856,7 @@ export default function BookingCalendar({
                   the time-pill row (Clarity showed dead-click rage on the
                   disabled state). The sameDay-closed case stays disabled. */}
               <motion.button
+                translate="no"
                 onClick={() => {
                   if (sameDayClosedForSelectedDate) return;
                   if (timeOptions.length > 1 && !normalizedSelectedTime) {

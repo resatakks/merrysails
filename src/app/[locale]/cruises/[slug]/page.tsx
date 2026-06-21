@@ -57,15 +57,19 @@ export function generateStaticParams() {
   return localeSlugs;
 }
 
+// Locales that actually render a /<locale>/cruises/<slug> page. ru + zh do NOT
+// have live locale cruise pages, so emitting hreflang for them produced
+// "missing return links" in Semrush (2026-06-22 audit). Mirror the gating in
+// src/lib/hreflang.ts — only annotate alternates that reciprocate.
+const CRUISE_HREFLANG_LOCALES: SiteLocale[] = ["tr", "de", "fr", "nl"];
+
 function buildLocaleHreflang(slug: string): Record<string, string> {
   const languages: Record<string, string> = {
     "x-default": `${SITE_URL}/cruises/${slug}`,
     en: `${SITE_URL}/cruises/${slug}`,
   };
-  for (const locale of ACTIVE_LOCALES) {
-    if (locale !== "en") {
-      languages[locale] = `${SITE_URL}/${locale}/cruises/${slug}`;
-    }
+  for (const locale of CRUISE_HREFLANG_LOCALES) {
+    languages[locale] = `${SITE_URL}/${locale}/cruises/${slug}`;
   }
   return languages;
 }
@@ -83,9 +87,13 @@ export async function generateMetadata({
   if (!tour) return { title: "Tour Not Found" };
 
   const showPricing = isPricingVisible(tour);
+  // Bare title — the root layout template ("%s | MerrySails") appends the brand
+  // suffix exactly once. Appending "| MerrySails" here too produced a double
+  // suffix ("… | MerrySails | MerrySails") on 28 localized cruise pages
+  // (Semrush audit 2026-06-22). See CLAUDE.md title rule #5.
   const title = showPricing
-    ? `${tour.nameEn} — From €${tour.priceEur} | MerrySails`
-    : `${tour.nameEn} | MerrySails`;
+    ? `${tour.nameEn} — From €${tour.priceEur}`
+    : tour.nameEn;
   const description = showPricing
     ? `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Book your ${tour.nameEn} in Istanbul today.`
     : `${tour.description} Explore the service structure, highlights, and best-fit use cases for ${tour.nameEn} in Istanbul.`;

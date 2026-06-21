@@ -19,21 +19,18 @@ export const TURSAB_LICENSE_NUMBER = "14316";
 export const TURSAB_AGENCY_NAME = "Meryem Yildiz Travel";
 export const TURSAB_LEGAL_NAME = "MERYEM YILDIZ TURIZM SEYAHAT ACENTASI";
 
-// 2026-06-02 — One contact channel for ALL locales: WhatsApp.
-// (Previously /ru routed to Telegram on the false premise that WhatsApp was
-// blocked in Russia from Feb 2026. That carve-out is removed everywhere.)
-// `getContactChannel` still returns the same shape so downstream UI keeps
-// branching on `icon`; the `"telegram"` branch never fires from this helper
-// but the union member stays for type-compat with admin-only call sites.
+// 2026-06-02 — One customer contact channel for ALL locales (incl. ru):
+// WhatsApp. There is no Telegram customer CTA anywhere; the Telegram bot is
+// internal ops-only and unrelated to these helpers.
 
 /**
- * Returns the preferred messaging channel for a given locale.
- * Always WhatsApp now — single channel across en/tr/de/fr/nl/ru.
+ * Returns the customer messaging channel for a given locale.
+ * Always WhatsApp — single channel across en/tr/de/fr/nl/ru.
  */
 export function getContactChannel(_locale: string | null | undefined): {
   url: string;
   label: string;
-  icon: "whatsapp" | "telegram";
+  icon: "whatsapp";
 } {
   return { url: WHATSAPP_URL, label: "WhatsApp", icon: "whatsapp" };
 }
@@ -45,7 +42,7 @@ export function getContactChannel(_locale: string | null | undefined): {
 export function getContactChannelWithMessage(
   locale: string | null | undefined,
   message: string,
-): { url: string; label: string; icon: "whatsapp" | "telegram" } {
+): { url: string; label: string; icon: "whatsapp" } {
   const base = getContactChannel(locale);
   return { ...base, url: `${base.url}?text=${encodeURIComponent(message)}` };
 }

@@ -1,0 +1,155 @@
+{
+  "date": "2026-06-14",
+  "site": "sc-domain:merrysails.com",
+  "totals": {
+    "clicks": 2,
+    "impressions": 38,
+    "ctr": 5.26,
+    "avgPosition": 9.8
+  },
+  "topQueries": [
+    {
+      "query": "merrysails",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr": 33.3,
+      "position": 1
+    },
+    {
+      "query": "paseo por el bosforo",
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 100,
+      "position": 7
+    },
+    {
+      "query": "arsenale bosphorus",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "basforas jalsandhi",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "best bosphorus boat tours istanbul 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "best bosphorus sunset cruise",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "best bosphorus sunset cruise istanbul 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "big island istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "boat charter istanbul",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 30
+    },
+    {
+      "query": "bosphorus cruise or ferry",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    }
+  ],
+  "topPages": [
+    {
+      "page": "/",
+      "clicks": 6,
+      "impressions": 35,
+      "ctr": 17.1,
+      "position": 4.9
+    },
+    {
+      "page": "/blog/bosphorus-cruise-vs-ferry-istanbul-2026",
+      "clicks": 1,
+      "impressions": 283,
+      "ctr": 0.4,
+      "position": 6.5
+    },
+    {
+      "page": "/blog/bosphorus-cruise-with-kids",
+      "clicks": 1,
+      "impressions": 27,
+      "ctr": 3.7,
+      "position": 4.3
+    },
+    {
+      "page": "/blog/bosphorus-dinner-cruise-what-to-expect",
+      "clicks": 1,
+      "impressions": 24,
+      "ctr": 4.2,
+      "position": 8.1
+    },
+    {
+      "page": "/blog/what-to-wear-bosphorus-cruise-by-season",
+      "clicks": 1,
+      "impressions": 25,
+      "ctr": 4,
+      "position": 8.4
+    },
+    {
+      "page": "/bosphorus-cruise-from-taksim",
+      "clicks": 1,
+      "impressions": 10,
+      "ctr": 10,
+      "position": 7.5
+    },
+    {
+      "page": "/yacht-charter-istanbul",
+      "clicks": 1,
+      "impressions": 20,
+      "ctr": 5,
+      "position": 10
+    },
+    {
+      "page": "/ai-knowledge",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "page": "/blog",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "page": "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 5.1
+    }
+  ],
+  "capturedAt": "2026-06-17T19:31:49.896Z"
+}

@@ -115,7 +115,7 @@ export default function BookingModal({ booking, onClose }: Props) {
   const pathname = usePathname();
   const locale = detectBookingLocaleFromPathname(pathname);
   const t = getBookingModalStrings(locale);
-  // Localised contact channel: `/ru` → Telegram, everything else → WhatsApp.
+  // WhatsApp is the single customer contact channel for every locale incl. ru.
   const contactChannel = getContactChannel(locale);
   const steps = [
     { num: 1, label: t.stepDetails },
@@ -500,7 +500,7 @@ export default function BookingModal({ booking, onClose }: Props) {
       .filter(Boolean)
       .join("\n");
 
-    // ru → Telegram (no prefill query supported); everything else → WhatsApp
+    // WhatsApp for every locale (single customer contact channel).
     const channel = getContactChannelWithMessage(locale, lines);
     window.open(channel.url, "_blank");
   };
@@ -911,7 +911,6 @@ export default function BookingModal({ booking, onClose }: Props) {
                     {t.addToCalendarCta}
                   </a>
                   {(() => {
-                    // ru → Telegram (prefill dropped), other locales → WhatsApp
                     const confirmChannel = getContactChannelWithMessage(
                       locale,
                       t.confirmReservationMessage(reservationId),
@@ -925,14 +924,8 @@ export default function BookingModal({ booking, onClose }: Props) {
                           handleTrackedContactNavigation(event, {
                             href: confirmChannel.url,
                             intent: "post_booking",
-                            // analytics ContactNavigationKind has no
-                            // "telegram"; bucket Telegram under whatsapp,
-                            // disambiguate via label.
                             kind: "whatsapp",
-                            label:
-                              confirmChannel.icon === "telegram"
-                                ? "reservation_confirmation_telegram"
-                                : "reservation_confirmation_whatsapp",
+                            label: "reservation_confirmation_whatsapp",
                             location: booking.tourSlug,
                           })
                         }
@@ -1120,6 +1113,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                         >
                           <button
                             type="button"
+                            translate="no"
                             onClick={() => setMixedEnabled(!mixedEnabled)}
                             className="w-full flex items-start gap-3 text-left"
                           >
@@ -1191,6 +1185,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                                   <div className="inline-flex items-center rounded-full border border-[var(--line)] bg-white">
                                     <button
                                       type="button"
+                                      translate="no"
                                       onClick={() =>
                                         setMixedSecondaryGuests((v) => Math.max(1, v - 1))
                                       }
@@ -1205,6 +1200,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                                     </span>
                                     <button
                                       type="button"
+                                      translate="no"
                                       onClick={() =>
                                         setMixedSecondaryGuests((v) =>
                                           Math.min(booking.guests - 1, v + 1)
@@ -1417,6 +1413,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                             </span>
                             <button
                               type="button"
+                              translate="no"
                               onClick={() => setShowTransferInfo((value) => !value)}
                               className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-[var(--brand-primary)]"
                               aria-label={t.transferAria}
@@ -1502,6 +1499,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                         submits = 3.5 dc/submit. */}
                     <motion.button
                       type="button"
+                      translate="no"
                       onClick={handleSubmit}
                       className="flex min-h-[52px] items-center justify-center gap-2 w-full px-4 py-3.5 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:brightness-110 transition-all disabled:cursor-wait disabled:opacity-80"
                       whileTap={{ scale: 0.98 }}
@@ -1511,6 +1509,7 @@ export default function BookingModal({ booking, onClose }: Props) {
                     </motion.button>
                     <button
                       type="button"
+                      translate="no"
                       onClick={handleWhatsApp}
                       className="flex min-h-[48px] items-center justify-center gap-2 w-full px-4 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:brightness-110 transition-all text-sm"
                     >

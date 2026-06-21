@@ -111,14 +111,9 @@ export default function BoatCard({
   const quotePrefill = strings.whatsappPrefill
     .replace("{label}", t.label)
     .replace("{capacity}", `${boat.capacity.min}-${boat.capacity.max}`);
-  // Locale-aware: /ru visitors are routed to Telegram (WhatsApp blocked in
-  // Russia, Feb 2026). Telegram t.me ignores the ?text= prefill silently — we
-  // accept that and still open a chat with the right account.
+  // WhatsApp is the single customer contact channel for every locale incl. ru.
   const channel = getContactChannel(locale);
-  const whatsappHref =
-    channel.icon === "telegram"
-      ? channel.url
-      : `${channel.url}?text=${encodeURIComponent(quotePrefill)}`;
+  const whatsappHref = `${channel.url}?text=${encodeURIComponent(quotePrefill)}`;
 
   const detailHref = `${fleetDetailBasePath}/${boat.slug}`;
 
@@ -187,6 +182,7 @@ export default function BoatCard({
           <div className="absolute inset-x-0 bottom-3 z-30 flex items-center justify-between px-3">
             <button
               type="button"
+              translate="no"
               aria-label="Previous"
               onClick={(e) => {
                 e.preventDefault();
@@ -202,6 +198,7 @@ export default function BoatCard({
             </span>
             <button
               type="button"
+              translate="no"
               aria-label="Next"
               onClick={(e) => {
                 e.preventDefault();

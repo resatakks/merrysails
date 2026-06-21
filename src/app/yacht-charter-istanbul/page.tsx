@@ -643,6 +643,25 @@ export default async function YachtCharterIstanbulPage({
             </Link>
           </div>
 
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">Explore each yacht in the fleet</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {[
+                { href: "/yacht-charter-istanbul/boutique-yacht-12", title: "Boutique Yacht · 12 Guests", desc: "Intimate private deck for couples and small groups. From €220 for 2 hours." },
+                { href: "/yacht-charter-istanbul/premium-yacht-15", title: "Premium Yacht · 15 Guests", desc: "Wider deck and lounge for mid-size groups. From €320 for 2 hours." },
+                { href: "/yacht-charter-istanbul/group-yacht-40-standard", title: "Group Yacht · 40 · Standard", desc: "Group charter at the smaller-group rate. From €380 for 2 hours." },
+                { href: "/yacht-charter-istanbul/group-yacht-40-signature", title: "Group Yacht · 40 · Signature", desc: "Group charter at the larger-group rate. From €500 for 2 hours." },
+                { href: "/yacht-charter-istanbul/event-yacht-90", title: "Event Yacht · 90 Guests", desc: "Corporate evenings, weddings, and large private parties. Priced by quote." },
+                { href: "/yacht-charter-istanbul/mega-event-yacht-150", title: "Mega Event Yacht · 150 Guests", desc: "Istanbul's largest event vessel for galas and large weddings. Priced by quote." },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white">
+                  <h3 className="block text-base font-semibold text-[var(--heading)] mb-1">{item.title}</h3>
+                  <span className="block text-sm leading-relaxed text-[var(--text-muted)]">{item.desc}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           <section className="mt-12 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-6 md:p-8">
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div>

@@ -7,7 +7,7 @@ export default function TourGrid() {
   const featured = getCoreTours();
 
   return (
-    <section className="py-16 md:py-24 bg-[var(--surface-alt)]">
+    <section id="tours" className="py-16 md:py-24 bg-[var(--surface-alt)] scroll-mt-20">
       <div className="container-main">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Bosphorus Cruise Options in Istanbul</h2>

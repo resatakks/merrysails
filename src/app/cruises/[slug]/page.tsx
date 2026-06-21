@@ -369,9 +369,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const override = metaOverrides[slug];
   const showPricing = isPricingVisible(tour);
+  // Bare title — the root layout template ("%s | MerrySails") appends the brand
+  // suffix exactly once. Manually appending "| MerrySails" here produced a
+  // double suffix for any slug without a metaOverride (Semrush audit 2026-06-22,
+  // CLAUDE.md title rule #5).
   const title = showPricing
-    ? override?.title ?? `${tour.nameEn} — From €${tour.priceEur} | MerrySails`
-    : `${tour.nameEn} | MerrySails`;
+    ? override?.title ?? `${tour.nameEn} — From €${tour.priceEur}`
+    : tour.nameEn;
   const description = showPricing
     ? override?.description ??
       `${tour.description} Duration: ${tour.duration}. Capacity: ${tour.capacity}. Book your ${tour.nameEn} in Istanbul today.`
