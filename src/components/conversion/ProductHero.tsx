@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Star, ArrowRight, MessageCircle } from "lucide-react";
+import { Star, ArrowRight, MessageCircle, Phone } from "lucide-react";
 
 /**
  * Visual conversion hero for commercial product pages (yacht / sunset / dinner).
@@ -37,12 +37,15 @@ interface Props {
   whatsappLabel?: string;
   /** Label for the reserve button. */
   reserveLabel?: string;
+  /** Label for the one-tap Call button. */
+  callLabel?: string;
   /** Optional inline trust points rendered as a chip row inside the hero. */
   trust?: TrustPoint[];
   className?: string;
 }
 
 const WA_BASE = "https://wa.me/905448989812?text=";
+const CALL_TEL = "tel:+905448989812";
 
 export default function ProductHero({
   image,
@@ -55,6 +58,7 @@ export default function ProductHero({
   reserveHref,
   whatsappLabel = "WhatsApp instant quote",
   reserveLabel = "Reserve online",
+  callLabel = "Call now",
   trust,
   className = "",
 }: Props) {
@@ -95,9 +99,16 @@ export default function ProductHero({
           >
             <MessageCircle className="h-4 w-4" /> {whatsappLabel}
           </a>
+          <a
+            href={CALL_TEL}
+            data-phone-source={whatsappSource}
+            className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3 text-sm font-bold text-[var(--brand-primary)] shadow-sm backdrop-blur-sm transition-transform hover:scale-[1.03] md:px-6 md:text-base"
+          >
+            <Phone className="h-4 w-4" /> {callLabel}
+          </a>
           <Link
             href={reserveHref}
-            className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/95 px-5 py-3 text-sm font-semibold text-[var(--brand-primary)] backdrop-blur-sm transition-colors hover:bg-white md:px-6 md:text-base"
+            className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20 md:px-6 md:text-base"
           >
             {reserveLabel} <ArrowRight className="h-4 w-4" />
           </Link>
