@@ -256,7 +256,11 @@ export default function KurucesmeMarinaYachtCharterPage() {
  Yacht Charter Istanbul
  </Link>
  ; this support page exists for guests who need clearer marina, boarding, and arrival
- confidence before they move ahead with a Bosphorus private yacht booking.
+ confidence before they move ahead with a Bosphorus private yacht booking. For the full{" "}
+ <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">
+ private yacht Istanbul price
+ </Link>{" "}
+ ladder across all six vessels (from €220 per yacht), open the owner page first.
  </p>
  <div className="mb-6 rounded-2xl border border-[var(--brand-primary)]/10 bg-white p-4">
  <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">

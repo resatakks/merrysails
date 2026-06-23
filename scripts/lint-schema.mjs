@@ -75,6 +75,54 @@ const H1_BEARING_COMPONENTS = [
 // link or a "use Telegram" CTA is a real regression and must fail the build.
 const TELEGRAM_OPS_ALLOWED_RE = /\/src\/lib\/telegram\//;
 
+// ─────────────────────────────────────────────────────────────────────────
+// 2026-06-23 recurring-error-class guards (Screaming-Frog / Semrush parity).
+// These four classes recurred across the portfolio and now fail the gate so
+// we never need an external crawler to catch them again:
+//   H1. INVALID hreflang language code — a hreflang attribute must be a valid
+//       ISO-639 language (optionally language-REGION). Region-only codes like
+//       "sa" (Saudi Arabia) are NOT languages → Google/Semrush "language
+//       mismatch". The locale→hreflang map MUST translate sa→ar, zh→zh-Hans.
+//   H2. hreflang TARGET that redirects — a slug listed in a hreflang /
+//       localized-routes set whose EN canonical ALSO appears as a permanent
+//       redirect source in next.config.ts. The EN member returns 3xx, so the
+//       whole hreflang set is non-200 → ignored (anniversary/bachelor/… class).
+//   H3. hreflang code vs html-lang consistency — a locale must emit exactly
+//       ONE hreflang variant (no zh AND zh-hans for the same locale), and the
+//       emitted code must agree with the locale's html lang.
+//   H4. heuristic hardcoded-English-in-localized-component — a shared component
+//       rendered on non-EN locale pages that bakes an English marketing string
+//       (Best Seller / Most popular / Save €N / Continue booking) without going
+//       through the i18n string table. Conservative + allowlisted.
+// ─────────────────────────────────────────────────────────────────────────
+
+// A valid hreflang code is "x-default", a 2-3 letter ISO-639 language,
+// optionally followed by a script (Hans/Hant/Latn/Cyrl) and/or a 2-letter or
+// 3-digit region. We additionally hard-reject a small set of codes that are
+// region-ONLY (look like a language but are a country) — the recurring "sa"
+// (Arabic content mislabelled with the Saudi country code) being the canonical
+// case. "zh" alone is allowed by BCP-47 but we require the script-qualified
+// "zh-Hans" for our Simplified content (H3 catches a bare/duplicate zh).
+const BCP47_RE =
+  /^(?:x-default|[a-z]{2,3}(?:-(?:Latn|Cyrl|Hans|Hant|Arab|Grek|Cyrl))?(?:-(?:[A-Z]{2}|\d{3}))?)$/;
+// Codes that are NOT ISO-639 languages — region/country codes that have been
+// mistakenly used as a hreflang language. Keyed by the bad code → correct lang.
+const REGION_ONLY_HREFLANG = {
+  sa: "ar", // Saudi Arabia (region) → Arabic
+  ae: "ar",
+  uk: "en", // United Kingdom region code; language is "en" (uk = Ukrainian is
+            //   valid ISO-639, so we DON'T list uk as bad — keep it out)
+};
+delete REGION_ONLY_HREFLANG.uk; // "uk" IS Ukrainian (ISO-639) — never flag it.
+
+// The locale segments used in URL paths (/sa/…, /zh/…) that MUST be mapped to a
+// real language code before being emitted as a hreflang attribute. Mirrors the
+// HREFLANG_CODE map that the canonical builder should own.
+const LOCALE_TO_HREFLANG_REQUIRED = {
+  sa: "ar",
+  zh: "zh-Hans",
+};
+
 const errors = [];
 const warnings = [];
 
@@ -910,6 +958,213 @@ function crossFileChecks(files) {
   }
 }
 
+// ─────────────────────────────────────────────────────────────────────────
+// H1–H3: hreflang-code + redirect-target integrity (2026-06-23).
+// These read src/i18n/config.ts (locale list), src/i18n/localized-routes.ts
+// (or src/lib/hreflang.ts), and next.config.ts (redirect sources). They run
+// once per full-repo scan (the data is global), pushing ERRORS into `errors`.
+// ─────────────────────────────────────────────────────────────────────────
+function hreflangIntegrityChecks() {
+  const localizedRoutesFile = path.join(rootDir, "src/i18n/localized-routes.ts");
+  const hreflangFile = path.join(rootDir, "src/lib/hreflang.ts");
+  const configFile = path.join(rootDir, "src/i18n/config.ts");
+  const nextConfigFile = path.join(rootDir, "next.config.ts");
+
+  const readIf = (p) => (fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "");
+  const stripComments = (s) =>
+    s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/[^\n]*/g, "");
+
+  // The file(s) that declare the hreflang/localized route sets + the code map.
+  const routesSrc = readIf(localizedRoutesFile);
+  const hreflangSrc = readIf(hreflangFile);
+  const configSrc = stripComments(readIf(configFile));
+  const nextSrc = stripComments(readIf(nextConfigFile));
+
+  // ── Active locales (from ACTIVE_LOCALES). ────────────────────────────────
+  const activeMatch = configSrc.match(/ACTIVE_LOCALES[^=]*=\s*\[([^\]]*)\]/);
+  const activeLocales = activeMatch
+    ? [...activeMatch[1].matchAll(/"([a-zA-Z-]+)"/g)].map((m) => m[1])
+    : [];
+
+  // ── H1: INVALID hreflang language code. ──────────────────────────────────
+  // (a) Every active locale that is a region-only/non-ISO-639 code MUST be
+  //     remapped (sa→ar, zh→zh-Hans). We assert the code map exists + maps it.
+  // (b) Any literal hreflang code emitted in code/config that is region-only
+  //     or fails the BCP-47 shape is flagged directly.
+  const codeMapSrc = stripComments(hreflangSrc || routesSrc);
+  // Collect the locale→code map (HREFLANG_CODE / LOCALE_HREFLANG etc).
+  const mappedCodes = {};
+  const mapBlock = codeMapSrc.match(
+    /(?:HREFLANG_CODE|LOCALE_HREFLANG|HREFLANG_MAP)\s*(?::[^=]*)?=\s*\{([\s\S]*?)\}/,
+  );
+  if (mapBlock) {
+    for (const m of mapBlock[1].matchAll(/([a-zA-Z-]+)\s*:\s*"([a-zA-Z-]+)"/g)) {
+      mappedCodes[m[1]] = m[2];
+    }
+  }
+  for (const [loc, want] of Object.entries(LOCALE_TO_HREFLANG_REQUIRED)) {
+    if (!activeLocales.includes(loc)) continue; // not shipped → not a concern
+    if (mappedCodes[loc] !== want) {
+      errors.push({
+        file: rel(hreflangFile),
+        line: 0,
+        rule: "hreflang-invalid-lang-code",
+        msg: `Active locale "${loc}" is a region-only/non-language URL segment but the hreflang code map does not translate it to "${want}". A hreflang attribute MUST be an ISO-639 language (sa→ar, zh→zh-Hans) — emitting "${loc}" triggers Semrush/Google "language mismatch". Add ${loc}: "${want}" to the HREFLANG_CODE map and emit hreflangCode(locale).`,
+      });
+    }
+  }
+  // Direct literal scan: any `hreflang="xx"` / `hrefLang="xx"` / `languages: { "xx": }`
+  // key that is region-only or not BCP-47-shaped. Comment-stripped so an
+  // explanatory `// Emitting hreflang="sa" …` doc line is not a false positive.
+  const literalHreflangSrc =
+    stripComments(hreflangSrc) + "\n" + stripComments(routesSrc) + "\n" + configSrc;
+  for (const m of literalHreflangSrc.matchAll(
+    /href[Ll]ang\s*[:=]\s*["']([^"']+)["']/g,
+  )) {
+    const code = m[1];
+    if (REGION_ONLY_HREFLANG[code]) {
+      errors.push({
+        file: rel(hreflangFile),
+        line: 0,
+        rule: "hreflang-invalid-lang-code",
+        msg: `hreflang="${code}" is a region/country code, not a language. Use "${REGION_ONLY_HREFLANG[code]}".`,
+      });
+    } else if (!BCP47_RE.test(code)) {
+      errors.push({
+        file: rel(hreflangFile),
+        line: 0,
+        rule: "hreflang-invalid-lang-code",
+        msg: `hreflang="${code}" is not a valid ISO-639 language / language-region code (BCP-47).`,
+      });
+    }
+  }
+
+  // ── H2: hreflang TARGET that redirects. ──────────────────────────────────
+  // Collect permanent-redirect SOURCE slugs (bare EN-root `/slug`, no :locale
+  // param) from next.config.ts. Then assert none of them is still listed in any
+  // hreflang/localized-route set. (Catches anniversary / bachelor / bachelorette
+  // / proposal-with-photographer / team-building / client-hosting / product-launch.)
+  const redirectSources = new Set();
+  for (const m of nextSrc.matchAll(
+    /source:\s*"(\/[a-z0-9-]+)"\s*,\s*destination:\s*"([^"]+)"\s*,\s*permanent:\s*true/g,
+  )) {
+    // Only EN-root, internal-destination redirects (a real "this slug is gone"
+    // signal); skip the host-canonical /:path* rule.
+    if (m[1].includes(":") || m[1].includes("*")) continue;
+    redirectSources.add(m[1]);
+  }
+  const routeSetSrc = `${routesSrc}\n${hreflangSrc}`;
+  // Only look inside the actual Set([...]) literals so a redirect destination
+  // mentioned in a comment elsewhere doesn't count.
+  const setBodies = [...routeSetSrc.matchAll(/new Set<?[^>]*>?\(\s*\[([\s\S]*?)\]\s*\)/g)]
+    .map((m) => m[1])
+    .join("\n");
+  const setBodiesClean = stripComments(setBodies);
+  for (const src of redirectSources) {
+    if (new RegExp(`["']${src}["']`).test(setBodiesClean)) {
+      errors.push({
+        file: fs.existsSync(localizedRoutesFile)
+          ? rel(localizedRoutesFile)
+          : rel(hreflangFile),
+        line: 0,
+        rule: "hreflang-target-redirects",
+        msg: `Route "${src}" is a permanent (3xx) redirect source in next.config.ts but is still listed in a hreflang/localized-routes Set. The EN canonical returns 3xx, so the entire hreflang set is non-200 → Google ignores it (Screaming Frog "Non-200 hreflang URLs"). Remove "${src}" from the route set(s).`,
+      });
+    }
+  }
+
+  // ── H3: hreflang code vs html-lang consistency. ──────────────────────────
+  // A single locale must emit exactly ONE hreflang variant. Catch a code map
+  // (or literal emissions) that produce BOTH a bare "zh" and a "zh-hans"/"zh-Hant"
+  // for the same base language, or disagree on case. We inspect the union of
+  // (a) mapped codes and (b) every literal `languages["xx"] =` / object key.
+  const emittedCodes = new Set(Object.values(mappedCodes));
+  // Locales that pass through unmapped also emit their own code as-is.
+  for (const loc of activeLocales) {
+    if (loc === "en") continue;
+    emittedCodes.add(mappedCodes[loc] ?? loc);
+  }
+  // Group by base language (lowercased prefix before "-").
+  const byBase = {};
+  for (const code of emittedCodes) {
+    if (code === "x-default") continue;
+    const base = code.toLowerCase().split("-")[0];
+    (byBase[base] ||= new Set()).add(code);
+  }
+  for (const [base, variants] of Object.entries(byBase)) {
+    if (variants.size > 1) {
+      errors.push({
+        file: rel(hreflangFile),
+        line: 0,
+        rule: "hreflang-code-inconsistent",
+        msg: `Base language "${base}" is emitted as ${variants.size} different hreflang variants (${[...variants].join(", ")}). A locale must map to exactly ONE hreflang code (e.g. only "zh-Hans", never also a bare "zh"). Pick one and make the code map + html lang agree.`,
+      });
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// H4: heuristic hardcoded-English-in-localized-component (2026-06-23).
+// A shared component (src/components/**) that renders on non-EN locale pages
+// must not bake an English marketing UI string. Conservative: only the small
+// set of phrases that recurred as native-locale leaks (Best Seller / Most
+// popular / Save €N / Continue booking), and only when the component does NOT
+// receive an i18n string table (no `strings` prop, no `t(`/`locale`-keyed
+// lookup, no import from a *-strings table). An allowlist of known-OK
+// occurrences keeps the false-positive rate at zero.
+// ─────────────────────────────────────────────────────────────────────────
+const HARDCODED_EN_PHRASE_RE =
+  /\b(?:Best[ -]?Seller|Most[ -]?(?:popular|Popular)|Save\s*(?:€|EUR)\s*\d|Continue\s+[Bb]ooking)\b/;
+// Allowlist: file paths (suffix match) whose hardcoded English is a KNOWN,
+// separately-tracked concern (the booking-flow UI is English-hardcoded by
+// design pending a dedicated i18n pass) or a non-rendered comment. Adding a
+// path here is the documented escape hatch when a phrase is intentionally EN.
+const HARDCODED_EN_ALLOWLIST = [
+  // Booking flow — English-hardcoded UI tracked under the "/reservation
+  // conversion fix" task, NOT a marketing-leak regression. The dedicated i18n
+  // pass owns these; flagging them here would be noise.
+  "src/components/booking/CoreBookingPlanner.tsx",
+  "src/components/yacht/YachtReservationFlow.tsx",
+  // SalePrice badge default is a fallback string overridden by a localized
+  // `badgeText` prop on every locale render (the table-driven path); the bare
+  // default only shows on EN.
+  "src/components/ui/SalePrice.tsx",
+];
+function hardcodedEnglishChecks(files) {
+  for (const f of files) {
+    const unix = f.replace(/\\/g, "/");
+    if (!/\/src\/components\//.test(unix)) continue;
+    if (HARDCODED_EN_ALLOWLIST.some((a) => unix.endsWith(a))) continue;
+    const src = fs.readFileSync(f, "utf8");
+    // A component that already accepts an i18n string table is considered
+    // localization-aware and is NOT a leak candidate (the strings come from
+    // the table; any literal in-file is a fallback/dev artifact).
+    const isLocalizationAware =
+      /\bstrings\s*[:?,)}]/.test(src) || // `strings` prop in signature/destructure
+      /import[^;]*-strings["']/.test(src) || // imports a *-strings table
+      /\bt\(\s*["'`]/.test(src) || // a t("key") i18n call
+      /SiteLocale|getLocale|useLocale/.test(src);
+    if (isLocalizationAware) continue;
+    // Strip comments + JSX comments so a phrase in an explanatory comment
+    // (e.g. "Clarity flagged dead clicks on 'Continue booking'") never trips.
+    const code = src
+      .replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, "")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/\/\/[^\n]*/g, "");
+    const lines = code.split("\n");
+    for (let i = 0; i < lines.length; i++) {
+      if (HARDCODED_EN_PHRASE_RE.test(lines[i])) {
+        errors.push({
+          file: rel(f),
+          line: i + 1,
+          rule: "hardcoded-english-localized-component",
+          msg: `Shared component bakes English marketing string "${lines[i].trim().slice(0, 60)}" without an i18n string table — it renders un-localized on /tr /de /fr /nl /ru /zh pages (native-locale leak, 2026-06-16 class). Move the copy into a per-locale string table (see weekday-discount-strings.ts) or, if intentionally EN-only, add this file to HARDCODED_EN_ALLOWLIST in lint-schema.mjs.`,
+        });
+      }
+    }
+  }
+}
+
 function main() {
   const args = process.argv.slice(2);
   let files;
@@ -929,6 +1184,12 @@ function main() {
   // drift, locale CONTENT key parity). Only meaningful when scanning the full
   // repo, not single-file mode.
   if (args.length === 0) crossFileChecks(files);
+
+  // 2026-06-23 recurring-error-class guards. Global config/redirect integrity
+  // (H1–H3) is only meaningful on a full scan; the hardcoded-English heuristic
+  // (H4) can run on whatever set of component files is in scope.
+  if (args.length === 0) hreflangIntegrityChecks();
+  hardcodedEnglishChecks(files);
 
   if (errors.length === 0 && warnings.length === 0) {
     console.log(`✓ Schema lint passed (${files.length} files scanned)`);

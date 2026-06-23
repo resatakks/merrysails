@@ -6,6 +6,21 @@ import {
   ZH_ENABLED_ROUTES,
 } from "@/i18n/localized-routes";
 
+// Route segment -> BCP-47 hreflang ATTRIBUTE code. The URL path keeps the route
+// segment (/zh/, /sa/), but the hreflang attribute must be a valid language
+// code, not a country code. "zh" content is Simplified → "zh-Hans"; "sa" (Saudi
+// Arabia, a region) → Arabic → "ar". Emitting raw hreflang="zh"/"sa" is what
+// triggers Semrush/Google "language mismatch" (detected zh-Hans/ar != declared
+// zh/sa). Any locale not listed already IS a valid ISO-639 code (tr/de/fr/nl/
+// ru/en) and passes through unchanged.
+const HREFLANG_CODE: Record<string, string> = {
+  sa: "ar",
+  zh: "zh-Hans",
+};
+function hreflangCode(locale: string): string {
+  return HREFLANG_CODE[locale] ?? locale;
+}
+
 /**
  * Builds alternates.languages for Next.js generateMetadata().
  * Returns undefined for routes not in LOCALIZED_ROUTES, so they get no hreflang.
@@ -25,7 +40,7 @@ export function buildHreflang(path: string): Record<string, string> | undefined 
     if (locale === "ru" && !RU_ENABLED_ROUTES.has(path)) continue;
     // Stage zh: only emit hreflang for paths that have a live /zh page.
     if (locale === "zh" && !ZH_ENABLED_ROUTES.has(path)) continue;
-    languages[locale] = `${SITE_URL}/${locale}${path}`;
+    languages[hreflangCode(locale)] = `${SITE_URL}/${locale}${path}`;
   }
 
   return languages;

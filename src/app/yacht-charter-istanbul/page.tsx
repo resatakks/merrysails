@@ -599,6 +599,32 @@ export default async function YachtCharterIstanbulPage({
             className="mb-6"
           />
 
+          {/* Striking-distance answer block (2026-06-23): "private yacht
+              istanbul price" sits at pos ~8.9 with 11% CTR — a self-contained
+              134-167 word price answer near the top wins the AI-citation +
+              featured-answer surface for the cost query. */}
+          <section className="mb-8 rounded-2xl border border-[var(--brand-primary)]/15 bg-white p-6 md:p-8">
+            <h2 className="mb-3 text-2xl font-bold text-[var(--heading)]">
+              Private Yacht Istanbul — Price &amp; What&apos;s Included
+            </h2>
+            <p className="answer-capsule max-w-3xl text-sm leading-relaxed text-[var(--body-text)] md:text-base">
+              A private yacht charter in Istanbul with MerrySails starts at €220
+              for a two-hour whole-boat sailing on the Bosphorus — that is the
+              price for the entire 12-guest boutique yacht, not per person. The
+              fleet then steps up to a 15-guest premium yacht from €320, and
+              40-guest group yachts from €380 (Standard) and €500 (Signature),
+              with 90- and 150-guest event yachts priced by quote. Every charter
+              price includes the licensed captain and crew, fuel, soft drinks,
+              light snacks, life jackets, and onboard audio. There is no
+              concierge or OTA markup — you book direct from the TÜRSAB A-Group
+              operator running this fleet since 2001. Sailings of three hours or
+              longer drop a flat 10% automatically. Catering, alcohol, a DJ or
+              live music, a photographer, and proposal styling sit on a separate
+              brief so the deck price stays clean. Children under 3 sail free;
+              ages 3 to 13 are half price.
+            </p>
+          </section>
+
           {bookingPrefill && (
             <TourDetailClient
               tour={yachtTour}

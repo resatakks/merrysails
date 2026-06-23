@@ -17,7 +17,7 @@ const TR: WeekdayDiscountStrings = {
   eyebrow: "Hafta içi fırsatı",
   headline: "Hafta içi seferlerde bilet başı €{fromPrice}'dan başlayan fiyat",
   intro:
-    "{product} için her Pazartesi, Salı ve Perşembe seferi indirimli fiyatla — indirim otomatik uygulanır, kod gerekmez.",
+    "Boğaz turunun her Pazartesi, Salı ve Perşembe seferi indirimli fiyatla — indirim otomatik uygulanır, kod gerekmez.",
   weekdayNames: { Mon: "Pzt", Tue: "Sal", Thu: "Per" },
   saveSuffix: "€{maxSave}'ye kadar tasarruf",
   faqQuestion: "Boğaz turlarında haftalık indirim var mı?",
@@ -29,7 +29,7 @@ const DE: WeekdayDiscountStrings = {
   eyebrow: "Wochentags-Angebot",
   headline: "Unter der Woche ab €{fromPrice} pro Ticket",
   intro:
-    "Jede Fahrt der {product} am Montag, Dienstag und Donnerstag läuft zu einem niedrigeren Preis — Rabatt automatisch, kein Code.",
+    "Jede Bosporus-Fahrt am Montag, Dienstag und Donnerstag läuft zu einem niedrigeren Preis — Rabatt automatisch, kein Code.",
   weekdayNames: { Mon: "Mo", Tue: "Di", Thu: "Do" },
   saveSuffix: "bis zu €{maxSave} sparen",
   faqQuestion: "Gibt es einen wöchentlichen Rabatt auf Bosporus-Touren?",
@@ -41,7 +41,7 @@ const FR: WeekdayDiscountStrings = {
   eyebrow: "Offre en semaine",
   headline: "En semaine, à partir de €{fromPrice} par billet",
   intro:
-    "Chaque traversée de la {product} le lundi, mardi et jeudi à tarif réduit — remise automatique, sans code.",
+    "Chaque croisière sur le Bosphore le lundi, mardi et jeudi à tarif réduit — remise automatique, sans code.",
   weekdayNames: { Mon: "Lun", Tue: "Mar", Thu: "Jeu" },
   saveSuffix: "jusqu'à €{maxSave} d'économie",
   faqQuestion: "Y a-t-il une remise hebdomadaire sur les croisières du Bosphore ?",
@@ -53,7 +53,7 @@ const NL: WeekdayDiscountStrings = {
   eyebrow: "Doordeweekse deal",
   headline: "Doordeweeks vanaf €{fromPrice} per ticket",
   intro:
-    "Elke vaart van de {product} op maandag, dinsdag en donderdag tegen een lager tarief — korting automatisch, geen code.",
+    "Elke Bosporus-cruise op maandag, dinsdag en donderdag tegen een lager tarief — korting automatisch, geen code.",
   weekdayNames: { Mon: "Ma", Tue: "Di", Thu: "Do" },
   saveSuffix: "tot €{maxSave} besparen",
   faqQuestion: "Is er een wekelijkse korting op Bosporus-cruises?",
@@ -65,7 +65,7 @@ const RU: WeekdayDiscountStrings = {
   eyebrow: "Будни — выгода",
   headline: "В будни от €{fromPrice} за билет",
   intro:
-    "Каждый рейс {product} по понедельникам, вторникам и четвергам — по сниженной цене. Скидка применяется автоматически, без кода.",
+    "Каждый рейс круиза по Босфору по понедельникам, вторникам и четвергам — по сниженной цене. Скидка применяется автоматически, без кода.",
   weekdayNames: { Mon: "Пн", Tue: "Вт", Thu: "Чт" },
   saveSuffix: "экономия до €{maxSave}",
   faqQuestion: "Есть ли скидка по будням на круизы по Босфору?",
@@ -77,7 +77,7 @@ const ZH: WeekdayDiscountStrings = {
   eyebrow: "工作日优惠",
   headline: "工作日每张票低至 €{fromPrice}",
   intro:
-    "{product} 每周一、周二和周四的航次均享更低价格 — 折扣自动应用,无需优惠码。",
+    "博斯普鲁斯游船每周一、周二和周四的航次均享更低价格 — 折扣自动应用,无需优惠码。",
   weekdayNames: { Mon: "周一", Tue: "周二", Thu: "周四" },
   saveSuffix: "最多可省 €{maxSave}",
   faqQuestion: "博斯普鲁斯游船有每周折扣吗?",

@@ -40,6 +40,19 @@ const LOCALIZED_PATHS = [
 const LOCALIZED_SET = new Set(LOCALIZED_PATHS);
 const NON_EN_LOCALES = ACTIVE_LOCALES.filter((l) => l !== "en");
 
+// Route segment -> BCP-47 hreflang ATTRIBUTE code. Mirrors HREFLANG_CODE in
+// src/lib/hreflang.ts. The URL path keeps the route segment (/zh/, /sa/), but
+// the hreflang attribute must be a valid language code: "zh" → "zh-Hans"
+// (Simplified), "sa" (a region) → "ar" (Arabic). Emitting raw hreflang="zh"/"sa"
+// is what Semrush flagged as "language mismatch".
+const HREFLANG_CODE: Record<string, string> = {
+  sa: "ar",
+  zh: "zh-Hans",
+};
+function hreflangCode(locale: string): string {
+  return HREFLANG_CODE[locale] ?? locale;
+}
+
 // Staged ru rollout: only emit /ru sitemap URLs for paths that have a live
 // /ru page. Derived from the hoisted RU_ENABLED_ROUTES (core set uses "" for
 // homepage path-suffix convention; the sitemap doesn't iterate homepage here).
@@ -82,7 +95,7 @@ function hreflangXml(path: string): string {
     // Stage ru: only emit hreflang for paths with a live /ru page.
     if (locale === "ru" && !RU_ENABLED_PATHS.has(path)) continue;
     if (locale === "zh" && !ZH_ENABLED_PATHS.has(path)) continue;
-    lines.push(`    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
+    lines.push(`    <xhtml:link rel="alternate" hreflang="${hreflangCode(locale)}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
   }
   return lines.join("\n");
 }
@@ -104,7 +117,7 @@ function hreflangLocaleXml(path: string, thisLocale: string): string {
   for (const locale of NON_EN_LOCALES) {
     if (locale === "ru" && !RU_ENABLED_PATHS.has(path)) continue;
     if (locale === "zh" && !ZH_ENABLED_PATHS.has(path)) continue;
-    lines.push(`    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
+    lines.push(`    <xhtml:link rel="alternate" hreflang="${hreflangCode(locale)}" href="${escapeXml(`${SITE_URL}/${locale}${path}`)}"/>`);
   }
   return lines.join("\n");
 }
@@ -240,7 +253,7 @@ export function GET() {
     hreflang: [
       `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(SITE_URL)}"/>`,
       `    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(SITE_URL)}"/>`,
-      ...NON_EN_LOCALES.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${escapeXml(`${SITE_URL}/${l}`)}"/>`),
+      ...NON_EN_LOCALES.map((l) => `    <xhtml:link rel="alternate" hreflang="${hreflangCode(l)}" href="${escapeXml(`${SITE_URL}/${l}`)}"/>`),
     ].join("\n"),
   }));
 

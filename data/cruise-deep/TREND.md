@@ -16,6 +16,7 @@
 | **2026-05-27** | **19.6** | 36 | **sharp jump — sandbox exit begins** |
 | 2026-05-30 | 24.6 | 34 | |
 | **2026-06-16** | **11.1** | 16,050 (30d) | **best — pillars matured/recovered** |
+| **2026-06-23** | ~10 | small | **4 yacht detail pages Discovered→INDEXED in 1 day** (Request-Indexing + in-content "Explore each yacht" links worked). Still ranking incidental long-tail, NOT big-commercial kw yet. |
 
 **Read:** MS sat pos ~55-60 through Apr–mid May, broke to ~20 around May 27, now ~11. The DMCA notice
 (May 25) did NOT durably suppress — position kept improving through and after it. Confirms the
@@ -48,5 +49,12 @@ indexed-page count (GS 503 vs MS 329) but far behind on Bing (GS 0 indexed — f
 - **GS Bing 0-index** is the one hard visibility gap (GEO/ChatGPT) — submitted 06-16, watch for index appearance.
 - Next: re-pull daily, append rows here, watch pos break <10 and CTR rise post title-rewrites.
 
+## GA4 channel mix (the conversion truth — not just rankings)
+| Date | Brand | Top channels (sessions / keyEvents, 7d) | Read |
+|---|---|---|---|
+| 2026-06-23 | MS | Direct 144/18 · Organic 82/29 · **AI Assistant 76/28** · Paid 40/11 | AI Assistant = top-3 channel AND converts. GEO is the working growth lever. Paid (yacht) converting. |
+| 2026-06-23 | GS | Direct 219/9 · **AI Assistant 44/15** · Organic 42/2 | GS organic weak (42/2); AI Assistant strong (44/15). |
+
 ## History log
 - 2026-06-16: first trend file. MS pos 56→11 (7wk), GS 26→11 (3wk). Both sandbox-exiting. CTR is the gap.
+- 2026-06-23: daily deep sweep. **WIN: 4 MS yacht detail pages went Discovered→INDEXED in 1 day** (Request-Indexing + "Explore each yacht" in-content links). GA4: **AI Assistant is a top-3 channel + converting** (MS 28 / GS 15 keyEvents/7d) — GEO confirmed the strongest lever. Conversion bottleneck: cruise/booking pages show heavy dead-clicks (MS sunset 338, GS sunset 612, dinner 211, /reservation 192 over 3d) on look-clickable-inert elements (paragraphs, price, "Save €16", review/photo counts, FAQ). Keyword: still NOT on big-commercial kw (tiny impressions); ranking incidental long-tail; striking-distance commercial = "private yacht istanbul price" pos 8.9. Ads rebalanced Yacht ₺700 / Sunset ₺300 (dinner dropped), in-Istanbul targeting opened. ProductHero gained a Call button. [deep-sweep workflow findings folded in below in the dated daily log]

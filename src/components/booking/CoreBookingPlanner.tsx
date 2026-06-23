@@ -221,7 +221,7 @@ export default function CoreBookingPlanner({
     <section
       id={pageVariant ? "core-booking-planner" : undefined}
       className={cn(
-        "overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm",
+        "overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-sm scroll-mt-28",
         heroVariant && "shadow-[0_24px_80px_rgba(7,14,40,0.22)]"
       )}
     >

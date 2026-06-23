@@ -437,6 +437,125 @@ function checkImageAlts() {
 }
 
 // ============================================================
+// 12. hreflang / localized-component recurring-error classes (2026-06-23)
+// Mirrors the four permanent guards now enforced in lint-schema.mjs so this
+// on-demand audit (SF/SEMrush-equivalent) summarizes the same classes:
+//   H1 invalid hreflang language code · H2 hreflang target redirects ·
+//   H3 hreflang code inconsistency · H4 hardcoded English in localized component.
+// ============================================================
+function checkHreflangClasses() {
+  const readIf = (p) => (fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "");
+  const stripComments = (s) =>
+    s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/[^\n]*/g, "");
+  const hreflangFile = path.join(rootDir, "src/lib/hreflang.ts");
+  const routesFile = path.join(rootDir, "src/i18n/localized-routes.ts");
+  const configFile = path.join(rootDir, "src/i18n/config.ts");
+  const nextFile = path.join(rootDir, "next.config.ts");
+
+  const hreflangSrc = readIf(hreflangFile);
+  const routesSrc = readIf(routesFile);
+  const configSrc = stripComments(readIf(configFile));
+  const nextSrc = stripComments(readIf(nextFile));
+
+  const REGION_ONLY = { sa: "ar", ae: "ar" };
+  const REQUIRED = { sa: "ar", zh: "zh-Hans" };
+  const BCP47 =
+    /^(?:x-default|[a-z]{2,3}(?:-(?:Latn|Cyrl|Hans|Hant|Arab|Grek))?(?:-(?:[A-Z]{2}|\d{3}))?)$/;
+
+  const activeM = configSrc.match(/ACTIVE_LOCALES[^=]*=\s*\[([^\]]*)\]/);
+  const active = activeM
+    ? [...activeM[1].matchAll(/"([a-zA-Z-]+)"/g)].map((m) => m[1])
+    : [];
+
+  // code map
+  const codeMapSrc = stripComments(hreflangSrc || routesSrc);
+  const mapped = {};
+  const mb = codeMapSrc.match(
+    /(?:HREFLANG_CODE|LOCALE_HREFLANG|HREFLANG_MAP)\s*(?::[^=]*)?=\s*\{([\s\S]*?)\}/,
+  );
+  if (mb) for (const m of mb[1].matchAll(/([a-zA-Z-]+)\s*:\s*"([a-zA-Z-]+)"/g)) mapped[m[1]] = m[2];
+
+  // H1: required remaps
+  for (const [loc, want] of Object.entries(REQUIRED)) {
+    if (active.includes(loc) && mapped[loc] !== want) {
+      addIssue("P1", "hreflang-invalid-lang-code", hreflangFile, 0,
+        `Active locale "${loc}" not remapped to hreflang language "${want}" — emits region/non-language code (language mismatch).`);
+    }
+  }
+  // H1: literal bad codes (comment-stripped)
+  for (const m of `${stripComments(hreflangSrc)}\n${stripComments(routesSrc)}\n${configSrc}`.matchAll(
+    /href[Ll]ang\s*[:=]\s*["']([^"']+)["']/g,
+  )) {
+    const c = m[1];
+    if (REGION_ONLY[c]) addIssue("P1", "hreflang-invalid-lang-code", hreflangFile, 0,
+      `hreflang="${c}" is a region code, use "${REGION_ONLY[c]}".`);
+    else if (!BCP47.test(c)) addIssue("P1", "hreflang-invalid-lang-code", hreflangFile, 0,
+      `hreflang="${c}" is not valid BCP-47.`);
+  }
+
+  // H2: redirected targets still in route sets
+  const redirSrc = new Set();
+  for (const m of nextSrc.matchAll(
+    /source:\s*"(\/[a-z0-9-]+)"\s*,\s*destination:\s*"([^"]+)"\s*,\s*permanent:\s*true/g,
+  )) {
+    if (!m[1].includes(":") && !m[1].includes("*")) redirSrc.add(m[1]);
+  }
+  const setBodies = stripComments(
+    [...`${routesSrc}\n${hreflangSrc}`.matchAll(/new Set<?[^>]*>?\(\s*\[([\s\S]*?)\]\s*\)/g)]
+      .map((m) => m[1])
+      .join("\n"),
+  );
+  for (const s of redirSrc) {
+    if (new RegExp(`["']${s}["']`).test(setBodies)) {
+      addIssue("P1", "hreflang-target-redirects",
+        fs.existsSync(routesFile) ? routesFile : hreflangFile, 0,
+        `Route "${s}" is a 3xx redirect source but still in a hreflang route set → non-200 hreflang set, ignored by Google.`);
+    }
+  }
+
+  // H3: code inconsistency (>1 variant per base language)
+  const emitted = new Set(Object.values(mapped));
+  for (const l of active) { if (l !== "en") emitted.add(mapped[l] ?? l); }
+  const byBase = {};
+  for (const c of emitted) {
+    if (c === "x-default") continue;
+    (byBase[c.toLowerCase().split("-")[0]] ||= new Set()).add(c);
+  }
+  for (const [base, vars] of Object.entries(byBase)) {
+    if (vars.size > 1) {
+      addIssue("P1", "hreflang-code-inconsistent", hreflangFile, 0,
+        `Base language "${base}" emitted as ${vars.size} variants (${[...vars].join(", ")}) — must be exactly one.`);
+    }
+  }
+
+  // H4: hardcoded English in localized components
+  const PHRASE =
+    /\b(?:Best[ -]?Seller|Most[ -]?(?:popular|Popular)|Save\s*(?:€|EUR)\s*\d|Continue\s+[Bb]ooking)\b/;
+  const ALLOW = [
+    "src/components/booking/CoreBookingPlanner.tsx",
+    "src/components/yacht/YachtReservationFlow.tsx",
+    "src/components/ui/SalePrice.tsx",
+  ];
+  for (const f of walkDir(path.join(srcDir, "components"), [".tsx"])) {
+    const unix = f.replace(/\\/g, "/");
+    if (ALLOW.some((a) => unix.endsWith(a))) continue;
+    const src = fs.readFileSync(f, "utf8");
+    const aware =
+      /\bstrings\s*[:?,)}]/.test(src) || /import[^;]*-strings["']/.test(src) ||
+      /\bt\(\s*["'`]/.test(src) || /SiteLocale|getLocale|useLocale/.test(src);
+    if (aware) continue;
+    const code = src
+      .replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, "")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/\/\/[^\n]*/g, "");
+    code.split("\n").forEach((l, i) => {
+      if (PHRASE.test(l)) addIssue("P2", "hardcoded-english-localized-component", f, i + 1,
+        `Shared component bakes English UI string "${l.trim().slice(0, 50)}" without an i18n table (native-locale leak).`);
+    });
+  }
+}
+
+// ============================================================
 // Main
 // ============================================================
 function main() {
@@ -458,6 +577,7 @@ function main() {
   checkMetaCoverage();
   checkImageAlts();
   checkLlmsTxtUrls(routes);
+  checkHreflangClasses();
 
   // Group by severity
   const p0 = issues.filter((i) => i.severity === "P0");

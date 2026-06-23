@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-06-23T17:15:14.678Z",
+  "siteUrl": "sc-domain:merrysails.com",
+  "results": [
+    {
+      "url": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-06-13T17:17:11Z",
+      "googleCanonical": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "userCanonical": "https://merrysails.com/cruises/bosphorus-sunset-cruise",
+      "referringUrls": [
+        "https://merrysails.com/fr/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
+        "http://merrysails.com/"
+      ],
+      "sitemap": []
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul/group-yacht-40-standard",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-06-21T23:47:06Z",
+      "googleCanonical": "https://merrysails.com/yacht-charter-istanbul/group-yacht-40-standard",
+      "userCanonical": "https://merrysails.com/yacht-charter-istanbul/group-yacht-40-standard",
+      "referringUrls": [
+        "https://merrysails.com/zh/yacht-charter-istanbul/group-yacht-40-standard"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul/mega-event-yacht-150",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-06-21T23:51:08Z",
+      "googleCanonical": "https://merrysails.com/yacht-charter-istanbul/mega-event-yacht-150",
+      "userCanonical": "https://merrysails.com/yacht-charter-istanbul/mega-event-yacht-150",
+      "referringUrls": [
+        "https://merrysails.com/zh/yacht-charter-istanbul/mega-event-yacht-150"
+      ],
+      "sitemap": [
+        "https://merrysails.com/sitemap.xml"
+      ]
+    },
+    {
+      "url": "https://merrysails.com/yacht-charter-istanbul/premium-yacht-15",
+      "inspectionStatus": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-06-21T23:45:04Z",
+      "googleCanonical": "https://merrysails.com/yacht-charter-istanbul/premium-yacht-15",
+      "userCanonical": "https://merrysails.com/yacht-charter-istanbul/premium-yacht-15",
+      "referringUrls": [
+        "https://merrysails.com/zh/yacht-charter-istanbul/premium-yacht-15"
+      ],
+      "sitemap": []
+    }
+  ]
+}

@@ -220,7 +220,12 @@ export default function PrivateBosphorusDinnerCruisePage() {
  <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-2xl">
  A private Bosphorus dinner cruise keeps the yacht, the table, and the timing on your
  side. It works for couples, proposals, birthdays, anniversaries, and small groups
- that want dinner on the water without shared seating.
+ that want dinner on the water without shared seating. If you want the boat without a
+ set dinner brief, the{" "}
+ <Link href="/yacht-charter-istanbul" className="text-rose-600 underline underline-offset-2 hover:text-rose-700">
+ private yacht Istanbul price guide
+ </Link>{" "}
+ lists every vessel from €220 per yacht.
  </p>
  <div className="flex flex-col sm:flex-row gap-3">
  <Link

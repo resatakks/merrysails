@@ -69,6 +69,24 @@ function detectFromPathname(pathname: string): { locale: SiteLocale; route: stri
 // treat the whole route as locale-aware.
 const LOCALIZED_PREFIXES = ["yacht-charter-istanbul/", "cruises/", "blog/", "guides/"];
 
+// Detail routes whose SLUGS are disjoint across locales: every locale ships its
+// own blog posts / guides under its own unique slugs, and there is no
+// `[locale]/guides/[slug]` route at all (only the locale index). Emitting a
+// same-slug detail URL in another locale 404s — e.g. /tr/blog/<tr-slug> →
+// /blog/<tr-slug> (EN root has no such slug), or /blog/<en-slug> →
+// /de/blog/<en-slug> (DE has no such slug). For these we switch to the target
+// locale's INDEX page (which always exists) instead of a dead same-slug URL.
+// (Semrush/Screaming Frog 2026-06-23: 749 of 761 broken internal links were
+// the language switcher building cross-locale same-slug blog/guide URLs.)
+const SLUG_DISJOINT_PREFIXES = ["blog/", "guides/"];
+
+function indexRouteForDisjointDetail(route: string): string | null {
+  for (const prefix of SLUG_DISJOINT_PREFIXES) {
+    if (route.startsWith(prefix)) return prefix.slice(0, -1); // "blog/foo" → "blog"
+  }
+  return null;
+}
+
 function isLocalizedRoute(route: string): boolean {
   if (LOCALIZED_ROUTES.has(route)) return true;
   return LOCALIZED_PREFIXES.some((prefix) => route.startsWith(prefix));
@@ -80,8 +98,23 @@ function buildTargetPath(targetLocale: SiteLocale, route: string): string {
   if (route === "") {
     return targetLocale === "en" ? "/" : `/${targetLocale}`;
   }
+
+  // Slug-disjoint detail routes (blog/<slug>, guides/<slug>): the same slug does
+  // not exist in any other locale, so switch to the target locale's index page
+  // (the index — "blog"/"guides" — is in LOCALIZED_ROUTES and ships everywhere,
+  // with staged locales gated below).
+  const disjointIndex = indexRouteForDisjointDetail(route);
+  if (disjointIndex) {
+    if (targetLocale === "en") return `/${disjointIndex}`;
+    if (!localeHasRoute(targetLocale, disjointIndex)) return `/${targetLocale}`;
+    return `/${targetLocale}/${disjointIndex}`;
+  }
+
   if (!isLocalizedRoute(route)) {
-    if (targetLocale === "en") return `/${route}`;
+    // Non-localized routes include locale-only pages (e.g. the TR-only
+    // /tr/kabatas-bogaz-turu) that have NO English root equivalent. Emitting
+    // /<route> for the EN target 404s, so fall back to the EN homepage.
+    if (targetLocale === "en") return "/";
     // No locale version — send to locale homepage so the user stays in their language.
     return `/${targetLocale}`;
   }
