@@ -318,21 +318,9 @@ const parentTursabLicenseeSchema = {
       url: "https://www.tursab.org.tr",
     },
   },
-  subOrganization: [
-    { "@id": `${SITE_URL}/#organization` },
-    {
-      "@type": "Organization",
-      "@id": "https://goldensunsettour.com/#organization",
-      name: "GoldenSunsetTour",
-      url: "https://goldensunsettour.com",
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.merrytourism.com/#organization",
-      name: "Merry Tourism",
-      url: "https://www.merrytourism.com",
-    },
-  ],
+  // 2026-06-24 subOrganization (GoldenSunsetTour + Merry Tourism) REMOVED — operator RED LINE:
+  // don't declare same-niche sister brands as one organization in schema (machine-readable
+  // network footprint, stronger signal than a footer link). Each brand stands alone.
 };
 
 const websiteSchema = {
