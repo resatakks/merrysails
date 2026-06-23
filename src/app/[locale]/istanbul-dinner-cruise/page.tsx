@@ -643,12 +643,12 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  otherOptionsTitle: "Другие варианты",
  otherOptions: [
  {
- href: "/ru/cruises/bosphorus-sunset-cruise",
+ href: "/cruises/bosphorus-sunset-cruise",
  title: "Круиз на закате",
  desc: "2-часовой круиз в золотой час от €30 (вт и чт).",
  },
  {
- href: "/ru/yacht-charter-istanbul",
+ href: "/yacht-charter-istanbul",
  title: "Частная аренда яхты",
  desc: "Полностью приватная аренда яхты от €220.",
  },
@@ -752,12 +752,12 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  otherOptionsTitle: "其他选择",
  otherOptions: [
  {
- href: "/zh/cruises/bosphorus-sunset-cruise",
+ href: "/cruises/bosphorus-sunset-cruise",
  title: "日落游船",
  desc: "€30 起的 2 小时黄金时刻游船 (周一/二/四)。",
  },
  {
- href: "/zh/yacht-charter-istanbul",
+ href: "/yacht-charter-istanbul",
  title: "私人游艇包租",
  desc: "€220 起的完全私人游艇包租。",
  },
@@ -1217,9 +1217,17 @@ export default async function LocaleDinnerCruisePage({
  <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">{t.otherOptionsTitle}</h2>
  <div className="grid gap-4 md:grid-cols-3">
  {t.otherOptions.map((item) => {
+ // The "English Page" link points at the EN root (no locale prefix).
+ // For every other option, prefix with the current locale — but strip any
+ // locale prefix the data already carries so we never double-prefix
+ // (e.g. /ru/ru/... or /zh/zh/...).
+ const bare = item.href.replace(
+ /^\/(en|tr|de|fr|nl|ru|zh)(?=\/)/,
+ ""
+ );
  const href = item.href.startsWith("/istanbul-dinner-cruise")
  ? item.href
- : `/${locale}${item.href}`;
+ : `/${locale}${bare}`;
  return (
  <Link
  key={item.href}

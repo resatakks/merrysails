@@ -8,6 +8,7 @@ import {
   getHighIntentBlogSlugsForCategory,
 } from "@/content/blog";
 import { cleanContentText } from "@/lib/content-text";
+import { getBalancedBacklinkSlugs } from "@/lib/related-posts-graph";
 
 export function RelatedPosts({
   slugs,
@@ -31,7 +32,19 @@ export function RelatedPosts({
         return true;
       }) || [];
 
-  let posts = [...toPosts(prioritySlugs), ...toPosts(slugs)];
+  // Balanced backlink targets: posts the global graph guarantees this page
+  // should surface so every post in the corpus receives ≥3 internal inlinks
+  // (Screaming Frog/SEMrush 2026-06-23: curated relatedPosts concentrated links
+  // on a few hubs and starved the tail). Rendered FIRST so the under-linked
+  // targets always win a slot (the guarantee is only valid if they render);
+  // the editor's curated picks fill any remaining slots as a bonus.
+  const balancedSlugs = getBalancedBacklinkSlugs(currentSlug);
+
+  let posts = [
+    ...toPosts(balancedSlugs),
+    ...toPosts(prioritySlugs),
+    ...toPosts(slugs),
+  ];
 
   // Fallback 1: curated high-intent posts for the same category
   if (posts.length < 3) {

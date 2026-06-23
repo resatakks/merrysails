@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
-import { getLocalePostBySlug, getAllLocalePostSlugs } from "@/data/blog/locale-posts";
+import { getLocalePostBySlug, getAllLocalePostSlugs, getLocaleRelatedPosts } from "@/data/blog/locale-posts";
 import { getAuthor } from "@/data/team";
 import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { TableOfContents } from "@/components/blog/table-of-contents";
@@ -13,6 +13,7 @@ import { inferCruiseTypeFromSlug } from "@/components/blog/infer-cruise-type";
 import { isActiveLocale, ACTIVE_LOCALES, type SiteLocale } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
 import { cleanContentText } from "@/lib/content-text";
+import { localeHref } from "@/lib/locale-link";
 
 const DATE_LOCALE_MAP: Record<string, string> = {
   tr: "tr-TR",
@@ -29,6 +30,7 @@ const UI_COPY: Record<string, {
   ctaBody: string;
   ctaButton: string;
   whatsapp: string;
+  relatedHeading: string;
 }> = {
   tr: {
     home: "Ana Sayfa",
@@ -38,6 +40,7 @@ const UI_COPY: Record<string, {
     ctaBody: "TÜRSAB A Grubu lisanslı, 2001'den bu yana 50.000+ misafir. Doğrudan rezervasyon, en iyi fiyat garantisi.",
     ctaButton: "Tur Seçeneklerini İncele",
     whatsapp: "WhatsApp ile İletişim",
+    relatedHeading: "Bunları da Beğenebilirsiniz",
   },
   de: {
     home: "Startseite",
@@ -47,6 +50,7 @@ const UI_COPY: Record<string, {
     ctaBody: "TÜRSAB A-Gruppe lizenziert, seit 2001 über 50.000 Gäste. Direktbuchung, bestes Preisversprechen.",
     ctaButton: "Kreuzfahrten ansehen",
     whatsapp: "WhatsApp Kontakt",
+    relatedHeading: "Das könnte Sie auch interessieren",
   },
   fr: {
     home: "Accueil",
@@ -56,6 +60,7 @@ const UI_COPY: Record<string, {
     ctaBody: "Licence TÜRSAB groupe A, plus de 50 000 clients depuis 2001. Réservation directe, meilleur tarif garanti.",
     ctaButton: "Voir les croisières",
     whatsapp: "Contact WhatsApp",
+    relatedHeading: "Vous aimerez aussi",
   },
   nl: {
     home: "Startpagina",
@@ -65,6 +70,27 @@ const UI_COPY: Record<string, {
     ctaBody: "TÜRSAB groep A vergunning, meer dan 50.000 gasten sinds 2001. Directe boeking, beste prijsgarantie.",
     ctaButton: "Bekijk cruises",
     whatsapp: "WhatsApp contact",
+    relatedHeading: "Misschien vind je dit ook leuk",
+  },
+  ru: {
+    home: "Главная",
+    blog: "Блог",
+    faqHeading: "Часто задаваемые вопросы",
+    ctaHeading: "Забронировать",
+    ctaBody: "Лицензия TÜRSAB группы A, более 50 000 гостей с 2001 года. Прямое бронирование, гарантия лучшей цены.",
+    ctaButton: "Смотреть круизы",
+    whatsapp: "Связаться по WhatsApp",
+    relatedHeading: "Вам также может понравиться",
+  },
+  zh: {
+    home: "首页",
+    blog: "博客",
+    faqHeading: "常见问题",
+    ctaHeading: "立即预订",
+    ctaBody: "TÜRSAB A 类许可,自 2001 年起接待超过 50,000 名客人。直接预订,保证最优价格。",
+    ctaButton: "查看游船",
+    whatsapp: "通过 WhatsApp 联系",
+    relatedHeading: "您可能也喜欢",
   },
 };
 
@@ -162,6 +188,10 @@ export default async function LocaleBlogPostPage({
   // boundary so the CTA lands in the upper half of long-form posts.
   const autoCtaMidIndex = Math.min(2, Math.max(0, post.sections.length - 2));
   const ctaCruiseType = inferCruiseTypeFromSlug(post.slug);
+  // Same-locale related posts so every locale blog post receives ≥3 internal
+  // links from siblings (Screaming Frog/SEMrush 2026-06-23: locale posts had no
+  // related grid → "only one internal link"). Deterministic, spreads inlinks.
+  const relatedLocalePosts = getLocaleRelatedPosts(locale, post.slug, 3);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -225,7 +255,7 @@ export default async function LocaleBlogPostPage({
               {ui.home}
             </Link>
             <span>/</span>
-            <Link href={`/${locale}/blog`} className="hover:text-[var(--brand-primary)] transition-colors">
+            <Link href={localeHref(locale as SiteLocale, "/blog")} className="hover:text-[var(--brand-primary)] transition-colors">
               {ui.blog}
             </Link>
             <span>/</span>
@@ -407,10 +437,47 @@ export default async function LocaleBlogPostPage({
             </div>
           </div>
 
+          {/* Related posts — same-locale siblings (≥3 internal links per post) */}
+          {relatedLocalePosts.length > 0 && (
+            <div className="max-w-4xl mt-12">
+              <h2 className="text-2xl font-bold mb-6 text-[var(--heading)]">
+                {ui.relatedHeading}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {relatedLocalePosts.map((rp) => (
+                  <Link
+                    key={rp.slug}
+                    href={`/${locale}/blog/${rp.slug}`}
+                    className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={rp.image}
+                        alt={cleanContentText(rp.imageAlt || rp.title)}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-[var(--brand-primary)] transition-colors">
+                        {cleanContentText(rp.title)}
+                      </h3>
+                      <span className="text-xs text-[var(--text-muted)] flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {rp.readTime}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Back link */}
           <div className="max-w-4xl mt-8">
             <Link
-              href={`/${locale}/blog`}
+              href={localeHref(locale as SiteLocale, "/blog")}
               className="inline-flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--brand-primary)] transition-colors text-sm"
             >
               <ArrowLeft className="w-4 h-4" />

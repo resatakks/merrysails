@@ -22,6 +22,106 @@ const EXCLUDED_BLOG_SLUGS = new Set<string>([
   "bosphorus-cruise-departure-points",
 ]);
 
+// ── Sitemap FOCUS exclusion (2026-06-24) ─────────────────────────────────────
+// GSC 90-day data: the deprioritized EVENT/OCCASION landing pages + their thin
+// event blog posts earn ZERO impressions and ZERO clicks. We stop ADVERTISING
+// them in sitemap.xml so Google focuses crawl/discovery on the earning pages.
+//
+// IMPORTANT — these pages STAY LIVE + INDEXABLE + INTERNALLY LINKED. They are
+// only removed from the sitemap, not noindexed, deleted, or redirected. Ads
+// still land on them; the yacht hub + footer still link them; organic discovery
+// is sufficient for a ~450-page site (sitemap focus, NOT crawl budget — Google's
+// crawl-budget threshold is 10k+ pages).
+//
+// hreflang-safe rule: every EVENT/OCCASION EN slug below is in LOCALIZED_ROUTES,
+// so the WHOLE hreflang cluster (EN root + /tr /de /fr /nl + any /ru) leaves the
+// sitemap together via deriveLocaleUrls(). On-page hreflang on the live pages
+// stays self-consistent (every alternate still 200s), and no page REMAINING in
+// the sitemap references these as an alternate.
+//
+// Each slug verified zero-impression against data/gsc/ 3m + 28d + 7d page CSVs
+// (2026-06-24). NOT excluded: /blog/istanbul-corporate-yacht-events — it EARNS
+// impressions (corporate yacht event* queries, pos 3-28) so it stays in sitemap.
+const SITEMAP_EXCLUDE_EVENT_SLUGS = [
+  "/client-hosting-yacht-istanbul",
+  "/product-launch-yacht-istanbul",
+  "/team-building-yacht-istanbul",
+  "/corporate-yacht-dinner-istanbul",
+  "/proposal-yacht-with-photographer-istanbul",
+  "/proposal-yacht-rental-istanbul",
+];
+const SITEMAP_EXCLUDE_EVENT_BLOG_SLUGS = [
+  "bachelorette-party-yacht-istanbul",
+  "wedding-anniversary-yacht-cruise",
+  "istanbul-corporate-yacht-event-booking",
+  "corporate-yacht-event-planning-istanbul",
+  "corporate-yacht-events-on-the-bosphorus",
+  "istanbul-proposal-yacht-cruise",
+  "marriage-proposal-yacht-istanbul",
+  "proposal-yacht-rental-istanbul-planning-guide",
+];
+
+// ── Tier-2 sitemap FOCUS exclusion: zero-impression BLOG CLUSTERS (2026-06-24) ─
+// GSC 90-day page-impression pull (both properties, dimensions=[page]) returns
+// only pages with >0 impressions. The EN blog slugs below NEVER appear in that
+// 90-day set in ANY form — neither the EN /blog/{slug} parent NOR any
+// /{locale}/blog/{slug} sibling earns a single impression or click. We stop
+// ADVERTISING them in sitemap.xml so Google focuses crawl/discovery on the
+// blog posts that actually earn.
+//
+// Conservative gate: a slug is here ONLY if BOTH the EN parent AND every locale
+// variant are zero-impression / zero-click over 90 days. Any blog whose EN
+// parent OR a locale sibling earned even 1 impression was KEPT (e.g. the whole
+// princes-islands / vs-ferry / what-to-wear / tipping-guide cluster stays in).
+//
+// hreflang-safe: all 34 are EN-ONLY posts (no per-language product-post sibling
+// in turkish/german/french/dutch/russian-product-posts.ts → getAllLocalePostsForLocale
+// emits no /{locale}/blog/{slug} for them), so removing the EN /blog/{slug} URL
+// removes the WHOLE hreflang cluster. The exclude builder still derives every
+// locale form defensively, so the rule holds even if a translation is added
+// later. No page REMAINING in the sitemap references these as an alternate.
+//
+// IMPORTANT — these posts STAY LIVE + INDEXABLE + INTERNALLY LINKED (blog
+// listing, related-posts, in-content links). They are ONLY removed from the
+// sitemap — NOT noindexed, deleted, or redirected. RE-ADD a slug here the moment
+// it earns an impression (revert by deleting the line).
+const SITEMAP_EXCLUDE_BLOG_CLUSTER_SLUGS = [
+  "avoid-tourist-traps-istanbul-cruises",
+  "best-bosphorus-sunset-cruise-companies-istanbul",
+  "best-istanbul-cruise-2026",
+  "best-restaurants-near-bosphorus",
+  "best-time-bosphorus-cruise",
+  "best-yacht-routes-bosphorus",
+  "book-bosphorus-cruise-istanbul",
+  "bosphorus-cruise-reviews-guide",
+  "bosphorus-dinner-cruise-booking",
+  "bosphorus-night-cruise-guide",
+  "corporate-events-yacht-istanbul",
+  "grand-bazaar-shopping-guide",
+  "how-to-avoid-seasickness-cruise",
+  "istanbul-boat-party-private",
+  "istanbul-boat-tour-price-2026",
+  "istanbul-boat-tour-prices-comparison",
+  "istanbul-boat-tour-vs-ferry",
+  "istanbul-cruise-booking-tips",
+  "istanbul-cruise-package-deals",
+  "istanbul-museums-near-bosphorus",
+  "istanbul-night-cruise-guide",
+  "istanbul-nightlife-guide",
+  "istanbul-seaside-neighborhoods",
+  "istanbul-street-food-guide",
+  "istanbul-transportation-guide-tourists",
+  "kadikoy-asian-side-istanbul",
+  "luxury-yacht-bosphorus-experience",
+  "new-years-eve-bosphorus-cruise",
+  "private-yacht-charter-istanbul-prices",
+  "private-yacht-hire-istanbul-2026",
+  "valentines-day-cruise-istanbul",
+  "yacht-catering-menu-istanbul",
+  "yacht-decoration-ideas-istanbul",
+  "yacht-rental-istanbul-prices",
+];
+
 // Routes that have live locale pages — derived from the hoisted core set in
 // src/i18n/localized-routes.ts (single source of truth shared with hreflang.ts
 // and Header/Footer). The sitemap adds 6 yacht-charter sub-paths that don't
@@ -382,6 +482,33 @@ export function GET() {
     }))
   );
 
+  // Build the absolute-URL exclusion set for the FOCUS-pruned event/occasion
+  // cluster. For each EN slug we derive the EN root URL plus every locale-prefixed
+  // form (excluding a URL that was never emitted is a harmless no-op), so the
+  // whole hreflang cluster leaves the sitemap together regardless of which source
+  // array produced it. Event blog posts are EN-only here.
+  const SITEMAP_EXCLUDE_URLS = new Set<string>();
+  for (const slug of SITEMAP_EXCLUDE_EVENT_SLUGS) {
+    SITEMAP_EXCLUDE_URLS.add(`${SITE_URL}${slug}`);
+    for (const locale of NON_EN_LOCALES) {
+      SITEMAP_EXCLUDE_URLS.add(`${SITE_URL}/${locale}${slug}`);
+    }
+  }
+  for (const slug of SITEMAP_EXCLUDE_EVENT_BLOG_SLUGS) {
+    SITEMAP_EXCLUDE_URLS.add(`${SITE_URL}/blog/${slug}`);
+  }
+  // Tier-2 zero-impression blog clusters: derive the EN parent URL plus every
+  // locale-prefixed /{locale}/blog/{slug} form so the WHOLE hreflang cluster
+  // leaves the sitemap together. These are EN-only today (no locale sibling is
+  // emitted), so the locale forms are harmless no-ops — but deriving them keeps
+  // the whole-cluster rule intact if a translation is ever added.
+  for (const slug of SITEMAP_EXCLUDE_BLOG_CLUSTER_SLUGS) {
+    SITEMAP_EXCLUDE_URLS.add(`${SITE_URL}/blog/${slug}`);
+    for (const locale of NON_EN_LOCALES) {
+      SITEMAP_EXCLUDE_URLS.add(`${SITE_URL}/${locale}/blog/${slug}`);
+    }
+  }
+
   const allPages = [
     ...staticPages,
     ...localeHomepages,
@@ -391,9 +518,13 @@ export function GET() {
     ...blogPages,
     ...guidePages,
     ...localeBlogPages,
-  ].filter(
-    (page, index, pages) => pages.findIndex((candidate) => candidate.url === page.url) === index
-  );
+  ]
+    // FOCUS exclusion: drop the zero-impression event/occasion cluster from the
+    // sitemap (pages stay live + indexable + internally linked — see top of file).
+    .filter((page) => !SITEMAP_EXCLUDE_URLS.has(page.url))
+    .filter(
+      (page, index, pages) => pages.findIndex((candidate) => candidate.url === page.url) === index
+    );
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
+import { localeHref } from "@/lib/locale-link";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 
 export const revalidate = 3600;
@@ -618,7 +619,7 @@ export default async function LocalePrivateBosphorusDinnerCruisePage({
               {t.ctaWhatsapp}
             </a>
             <Link
-              href={`/${locale}/contact`}
+              href={localeHref(locale as SiteLocale, "/contact")}
               className="inline-flex items-center justify-center rounded-xl border border-rose-600 px-6 py-3 font-semibold text-rose-600 transition-colors hover:bg-rose-50"
             >
               {t.ctaCall}
@@ -705,7 +706,7 @@ export default async function LocalePrivateBosphorusDinnerCruisePage({
               {t.ctaWhatsapp}
             </a>
             <Link
-              href={`/${locale}/contact`}
+              href={localeHref(locale as SiteLocale, "/contact")}
               className="inline-flex items-center justify-center rounded-xl border border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-rose-700"
             >
               {t.ctaCall}

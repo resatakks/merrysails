@@ -842,7 +842,12 @@ export default function BosphorusCruisePage() {
  The most expensive mistake we watch guests make is booking dinner expecting daylight scenery:
  by 21:00 the shoreline is dark and you are paying €30+ for a dinner-show you could have had
  ashore. Whichever you pick, reach the pier 30 minutes early — Kabataş tram traffic backs up
- and our lines cast off on the minute, not Istanbul time.
+ and our lines cast off on the minute, not Istanbul time. If you want the desk’s full
+                honest shortlist before you commit, we lay out every option in our{" "}
+                <Link href="/best-bosphorus-cruise-istanbul-2026" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                  ranked guide to the best Bosphorus cruises in Istanbul for 2026
+                </Link>
+                .
  </p>
  </section>
 

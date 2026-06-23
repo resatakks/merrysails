@@ -761,7 +761,15 @@ export default async function YachtCharterIstanbulPage({
                   >
                     Istanbul Bosphorus dinner cruise
                   </Link>{" "}
-                  page instead.
+                  page instead. If golden hour is the whole reason you want the deck to yourselves,
+                  start with our{" "}
+                  <Link
+                    href="/private-sunset-cruise-bosphorus-istanbul"
+                    className="font-semibold text-[var(--brand-primary)] underline-offset-4 hover:underline"
+                  >
+                    private sunset cruise on the Bosphorus
+                  </Link>{" "}
+                  instead.
                 </p>
               </div>
               <Link href="/private-bosphorus-dinner-cruise" className="btn-secondary">
