@@ -43,6 +43,13 @@ interface CoreBookingPlannerProps {
   variant?: PlannerVariant;
   source?: string;
   initialTourSlug?: string;
+  /**
+   * Lock the planner to `initialTourSlug` and hide the 3-product selector.
+   * Used on a product detail page where the customer has ALREADY chosen the
+   * product by being on its page — so the booking widget should go straight to
+   * package/date/guests/price/Book, not re-ask "choose the product first".
+   */
+  lockTour?: boolean;
 }
 
 const coreTours = getCoreTours();
@@ -63,6 +70,7 @@ export default function CoreBookingPlanner({
   variant = "page",
   source = "direct",
   initialTourSlug,
+  lockTour = false,
 }: CoreBookingPlannerProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -121,6 +129,11 @@ export default function CoreBookingPlanner({
 
   const heroVariant = variant === "hero";
   const pageVariant = !heroVariant;
+  // Locked to one product (product-detail page) — the customer already chose
+  // the cruise by being on its page, so hide the 3-product selector and head
+  // straight to package/date/guests/price/Book.
+  const lockedToTour =
+    lockTour && coreTours.some((tour) => tour.slug === initialTourSlug);
   const selectedPackageName =
     packageSelectionByTour[selectedTour.slug] ?? getDefaultPackageName(selectedTour);
   const selectedPackage =
@@ -236,17 +249,22 @@ export default function CoreBookingPlanner({
               pageVariant ? "max-w-3xl text-[1.7rem] md:text-[2.75rem]" : "text-2xl md:text-3xl"
             )}
           >
-            {pageVariant
-              ? t.chooseProductFirstSetDate
-              : t.chooseProductFirstContinue}
+            {lockedToTour
+              ? selectedTour.nameEn
+              : pageVariant
+                ? t.chooseProductFirstSetDate
+                : t.chooseProductFirstContinue}
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
-            {t.plannerSubtitle}
+            {lockedToTour
+              ? `${selectedTour.duration} · ${t.from} €${selectedTour.priceEur} · ${t.plannerSubtitle}`
+              : t.plannerSubtitle}
           </p>
         </div>
       </div>
 
       <div className="px-4 py-4 md:px-6 md:py-6">
+        {!lockedToTour && (
         <div className="grid gap-3">
           {coreTours.map((tour) => {
             const packageCount = tour.packages?.length ?? 0;
@@ -330,6 +348,7 @@ export default function CoreBookingPlanner({
             );
           })}
         </div>
+        )}
 
         <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1.18fr)] xl:grid-cols-[minmax(0,1.02fr)_minmax(0,1.28fr)_minmax(16rem,0.92fr)]">
           <section

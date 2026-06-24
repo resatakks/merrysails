@@ -8,6 +8,7 @@ import {
   tours,
 } from "@/data/tours";
 import TourDetailClient from "@/components/tours/TourDetailClient";
+import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
 import WeekdayDiscountBanner from "@/components/promo/WeekdayDiscountBanner";
 import { getWeekdayDiscountStrings } from "@/components/promo/weekday-discount-strings";
@@ -382,6 +383,15 @@ export default async function LocaleTourDetailPage({
             />
           )}
 
+          <div className="my-8">
+            <CoreBookingPlanner
+              variant="page"
+              source={`product-${tour.slug}`}
+              initialTourSlug={tour.slug}
+              lockTour
+            />
+          </div>
+
           <TourDetailClient
             tour={tour}
             related={related}
@@ -395,7 +405,7 @@ export default async function LocaleTourDetailPage({
         </div>
       </div>
       <StickyMobileCta
-        reserveHref={`/${locale}/reservation?tour=${tour.slug}#core-booking-planner`}
+        reserveHref="#core-booking-planner"
         reserveLabel={reserveLabel}
         locale={locale as SiteLocale}
         whatsappLocation={`locale_cruise_${locale}_${tour.slug}`}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductHero from "@/components/conversion/ProductHero";
+import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL } from "@/lib/constants";
@@ -578,7 +579,7 @@ export default async function YachtCharterIstanbulPage({
               benefit="Charter a private Bosphorus yacht direct from Istanbul's TÜRSAB-licensed operator — captain & crew included, no concierge or OTA markup. We reply on WhatsApp in minutes."
               whatsappText="Hi%20MerrySails!%20I'd%20like%20a%20private%20yacht%20charter%20quote%20for%20the%20Bosphorus.%20Group%20size%20%2B%20date%20if%20known%3F"
               whatsappSource="yacht-hero"
-              reserveHref="/reservation?tour=yacht-charter-in-istanbul"
+              reserveHref="#core-booking-planner"
             />
           )}
 
@@ -624,6 +625,15 @@ export default async function YachtCharterIstanbulPage({
               ages 3 to 13 are half price.
             </p>
           </section>
+
+          <div className="my-8">
+            <CoreBookingPlanner
+              variant="page"
+              source="product-yacht-charter-in-istanbul"
+              initialTourSlug="yacht-charter-in-istanbul"
+              lockTour
+            />
+          </div>
 
           {bookingPrefill && (
             <TourDetailClient

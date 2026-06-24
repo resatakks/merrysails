@@ -23,6 +23,7 @@ import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 import ProductHero from "@/components/conversion/ProductHero";
+import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
@@ -816,7 +817,7 @@ export default async function TourDetailPage({
               `Hi MerrySails! I'd like to book the ${tour.nameEn}. Date + group size?`,
             )}
             whatsappSource="cruise-hero"
-            reserveHref={`/reservation?tour=${tour.slug}#core-booking-planner`}
+            reserveHref="#core-booking-planner"
             whatsappLabel="WhatsApp for a quote"
             reserveLabel={`Reserve from €${tour.priceEur}`}
             trust={[
@@ -863,6 +864,20 @@ export default async function TourDetailPage({
           {hasQuickAnswerLocale(slug as QuickAnswerKey, "en") && (
             <QuickAnswer productKey={slug as QuickAnswerKey} locale="en" />
           )}
+
+          {/* Inline booking — keep the customer ON the product page. The hero
+              + mobile-sticky "Reserve" CTAs scroll to this widget (same page,
+              no bounce to /reservation). lockTour hides the 3-product selector
+              since the product is already chosen by being on this page →
+              straight to package/date/guests/price/Book. */}
+          <div className="my-8">
+            <CoreBookingPlanner
+              variant="page"
+              source={`product-${tour.slug}`}
+              initialTourSlug={tour.slug}
+              lockTour
+            />
+          </div>
 
           <TourDetailClient
             tour={tour}
@@ -991,7 +1006,7 @@ export default async function TourDetailPage({
           every scroll depth. Clarity (2026-05-25 → 06-01) showed mobile
           users bouncing before reaching the in-page Reserve button. */}
       <StickyMobileCta
-        reserveHref={`/reservation?tour=${tour.slug}#core-booking-planner`}
+        reserveHref="#core-booking-planner"
         reserveLabel={`Reserve from €${tour.priceEur}`}
         whatsappLocation={`cruise_detail_${tour.slug}`}
         whatsappPrefill={`Hi MerrySails! I'm interested in the ${tour.nameEn} (from €${tour.priceEur}). What dates are available?`}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductHero from "@/components/conversion/ProductHero";
+import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
@@ -612,7 +613,7 @@ export default async function IstanbulDinnerCruisePage({
               benefit="A shared 3.5-hour Bosphorus dinner cruise with a multi-course Turkish dinner, live show, and hotel pickup — booked direct with Istanbul's TÜRSAB-licensed operator, no OTA markup. We reply on WhatsApp in minutes."
               whatsappText="Hi%20MerrySails!%20I'd%20like%20to%20book%20the%20Bosphorus%20dinner%20cruise.%20Which%20package%20and%20date%20work%20best%3F"
               whatsappSource="dinner-hero"
-              reserveHref="/reservation?tour=bosphorus-dinner-cruise#core-booking-planner"
+              reserveHref="#core-booking-planner"
               reserveLabel="Reserve from €30"
             />
           )}
@@ -643,6 +644,15 @@ export default async function IstanbulDinnerCruisePage({
               strings={getWeekdayDiscountStrings("en")}
             />
           )}
+
+          <div className="my-8">
+            <CoreBookingPlanner
+              variant="page"
+              source="product-bosphorus-dinner-cruise"
+              initialTourSlug="bosphorus-dinner-cruise"
+              lockTour
+            />
+          </div>
 
           {/* TourDetailClient always renders (it owns the package picker,
               booking sidebar, gallery, and FAQ — the dinner page's entire
@@ -963,7 +973,7 @@ export default async function IstanbulDinnerCruisePage({
         </div>
       </div>
       <StickyMobileCta
-        reserveHref={`/reservation?tour=${dinnerTour.slug}#core-booking-planner`}
+        reserveHref="#core-booking-planner"
         reserveLabel={`Reserve from €${dinnerTour.priceEur}`}
         whatsappLocation="istanbul_dinner_cruise_pillar"
         whatsappPrefill={`Hi MerrySails! I'm interested in the Bosphorus Dinner Cruise (from €${dinnerTour.priceEur}). What dates work and which package fits us best?`}
