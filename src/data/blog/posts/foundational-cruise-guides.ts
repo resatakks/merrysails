@@ -797,8 +797,8 @@ export const foundationalCruiseGuides: BlogPost[] = [
   },
   {
     slug: "bosphorus-cruise-vs-ferry-istanbul-2026",
-    title: "Bosphorus Cruise vs Ferry: Is It Worth It?",
-    metaDescription: "Cruise (€34) or the ₺40 public ferry? A TÜRSAB-licensed captain compares route, narration, food and real cost so you book once, right.",
+    title: "Bosphorus Cruise vs Ferry: Price & Verdict 2026",
+    metaDescription: "From €30 cruise vs the ₺40 (€0.50) public ferry — which is worth it in 2026? A TÜRSAB-licensed captain compares route, narration, food and real cost.",
     excerpt: "Both options cost different money for very different experiences. The honest comparison most travel blogs avoid because affiliates pay for cruise recommendations.",
     category: "cruise-guide",
     date: "2026-05-07",
@@ -824,7 +824,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
     sections: [
       {
         heading: "Bosphorus Cruise vs Ferry: Which Is Right for Tourists?",
-        answerCapsule: "If you want narration, F&B, and a guaranteed scenic route, choose a tourist Bosphorus cruise. If you want the cheapest possible boat ride and don't need commentary, take the city ferry. The two products solve different problems at very different price points.",
+        answerCapsule: "Verdict: a tourist Bosphorus cruise from €30 and the public city ferry (a ₺40 Istanbulkart token, about €0.50) are not the same purchase. The ferry is commuter transport — no narration, no food, no sunset timing, no booking. A MerrySails cruise is a planned experience: an English-speaking guide narrating landmarks every 8–10 minutes, complimentary tea and Turkish snacks, a route timed for golden hour or dinner, and a refund policy if anything goes wrong. So which is worth it? If you only want the cheapest crossing and don't need commentary, take the ferry. If you want the photos, the storytelling, and a guaranteed scenic route — book the cruise; the €4 ferry saving disappears the moment you'd pay separately for a meal and a guide. Book a guided Bosphorus cruise direct from €30 at merrysails.com, or WhatsApp +90 544 898 98 12.",
         content: "The Bosphorus has carried both commuters and tourists since the 19th century, and the boats serving each group are quite different. Public city ferries (Şehir Hatları) are the same vessels Istanbul residents take to commute between Karaköy and Üsküdar — they are utility transport, not tourism. They cost ₺40-80 with an Istanbulkart, run on fixed published timetables, and offer no narration.\n\nThe deck has wooden benches, the snacks come from a small kiosk (tea ₺15, simit ₺20), and the route serves the operator's schedule, not the sunset. Tourist cruises like MerrySails operate purpose-built passenger yachts for visitors. The route is timed for golden hour or dinner, an English-speaking guide narrates landmarks every 8 to 10 minutes, complimentary tea and Turkish snacks are included, and the boat docks at a tourist-friendly pier (Karaköy or Kabataş).\n\nPricing reflects the service difference: €34-90 vs ₺40-80. Neither is 'better' — they answer different questions.",
       },
       {

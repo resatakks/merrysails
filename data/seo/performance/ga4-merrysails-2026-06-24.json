@@ -1,0 +1,1881 @@
+{
+ "merrysails": {
+  "brand": "merrysails",
+  "propertyId": "534226524",
+  "d7": {
+   "channels": [
+    {
+     "d": [
+      "Direct"
+     ],
+     "m": [
+      "133",
+      "125",
+      "9"
+     ]
+    },
+    {
+     "d": [
+      "Organic Search"
+     ],
+     "m": [
+      "88",
+      "72",
+      "29"
+     ]
+    },
+    {
+     "d": [
+      "Unassigned"
+     ],
+     "m": [
+      "74",
+      "70",
+      "17"
+     ]
+    },
+    {
+     "d": [
+      "AI Assistant"
+     ],
+     "m": [
+      "72",
+      "57",
+      "33"
+     ]
+    },
+    {
+     "d": [
+      "Paid Search"
+     ],
+     "m": [
+      "45",
+      "41",
+      "11"
+     ]
+    },
+    {
+     "d": [
+      "Cross-network"
+     ],
+     "m": [
+      "12",
+      "12",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "Referral"
+     ],
+     "m": [
+      "3",
+      "2",
+      "0"
+     ]
+    }
+   ],
+   "sourceMedium": [
+    {
+     "d": [
+      "(direct) / (none)"
+     ],
+     "m": [
+      "133",
+      "125",
+      "9"
+     ]
+    },
+    {
+     "d": [
+      "google / organic"
+     ],
+     "m": [
+      "81",
+      "66",
+      "29"
+     ]
+    },
+    {
+     "d": [
+      "(not set)"
+     ],
+     "m": [
+      "73",
+      "69",
+      "16"
+     ]
+    },
+    {
+     "d": [
+      "chatgpt.com / ai-assistant"
+     ],
+     "m": [
+      "71",
+      "56",
+      "33"
+     ]
+    },
+    {
+     "d": [
+      "google / cpc"
+     ],
+     "m": [
+      "45",
+      "41",
+      "11"
+     ]
+    },
+    {
+     "d": [
+      "(data not available)"
+     ],
+     "m": [
+      "12",
+      "12",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "yandex.com.tr / referral"
+     ],
+     "m": [
+      "5",
+      "4",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "beyzbolcu.com.tr / referral"
+     ],
+     "m": [
+      "2",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "chatgpt.com / (none)"
+     ],
+     "m": [
+      "2",
+      "2",
+      "1"
+     ]
+    },
+    {
+     "d": [
+      "gemini.google.com / ai-assistant"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "perplexity / (not set)"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "tabakhaneler.com.tr / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "yahoo / organic"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "yandex.ru / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "d": [
+      "page_view"
+     ],
+     "m": [
+      "1320",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "web_vital"
+     ],
+     "m": [
+      "1168",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "time_on_page"
+     ],
+     "m": [
+      "997",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "scroll_depth"
+     ],
+     "m": [
+      "490",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "session_start"
+     ],
+     "m": [
+      "354",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "first_visit"
+     ],
+     "m": [
+      "296",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "user_engagement"
+     ],
+     "m": [
+      "107",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "scroll"
+     ],
+     "m": [
+      "83",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "contact_us"
+     ],
+     "m": [
+      "34",
+      "34"
+     ]
+    },
+    {
+     "d": [
+      "whatsapp_click"
+     ],
+     "m": [
+      "33",
+      "33"
+     ]
+    },
+    {
+     "d": [
+      "external_link_click"
+     ],
+     "m": [
+      "25",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "faq_open"
+     ],
+     "m": [
+      "25",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "begin_checkout"
+     ],
+     "m": [
+      "21",
+      "21"
+     ]
+    },
+    {
+     "d": [
+      "click"
+     ],
+     "m": [
+      "12",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "blog_cta_click"
+     ],
+     "m": [
+      "8",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "form_start"
+     ],
+     "m": [
+      "6",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "purchase"
+     ],
+     "m": [
+      "5",
+      "5"
+     ]
+    },
+    {
+     "d": [
+      "form_submit"
+     ],
+     "m": [
+      "4",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "reservation_pdf_engagement"
+     ],
+     "m": [
+      "3",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "ai_discovery_survey"
+     ],
+     "m": [
+      "2",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "booking_abandonment"
+     ],
+     "m": [
+      "2",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "phone_click"
+     ],
+     "m": [
+      "2",
+      "2"
+     ]
+    }
+   ],
+   "landingByConv": [
+    {
+     "d": [
+      "/"
+     ],
+     "m": [
+      "39",
+      "24"
+     ]
+    },
+    {
+     "d": [
+      "/yacht-charter-istanbul"
+     ],
+     "m": [
+      "60",
+      "18"
+     ]
+    },
+    {
+     "d": [
+      "/blog/bosphorus-cruise-with-kids"
+     ],
+     "m": [
+      "5",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "/istanbul-dinner-cruise"
+     ],
+     "m": [
+      "12",
+      "6"
+     ]
+    },
+    {
+     "d": [
+      "/reservation?tour=bosphorus-dinner-cruise?tour=bosphorus-dinner-cruise"
+     ],
+     "m": [
+      "1",
+      "6"
+     ]
+    },
+    {
+     "d": [
+      "/cruises/bosphorus-sunset-cruise"
+     ],
+     "m": [
+      "26",
+      "5"
+     ]
+    },
+    {
+     "d": [
+      "/blog/bosphorus-cruise-vs-ferry-istanbul-2026"
+     ],
+     "m": [
+      "16",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/blog/istanbul-cruise-complete-guide-2026"
+     ],
+     "m": [
+      "4",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/private-bosphorus-dinner-cruise"
+     ],
+     "m": [
+      "4",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/reservation"
+     ],
+     "m": [
+      "2",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/blog/private-yacht-charter-istanbul-price"
+     ],
+     "m": [
+      "1",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      ""
+     ],
+     "m": [
+      "58",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "/blog/bosphorus-cruise-departure-times-istanbul-2026"
+     ],
+     "m": [
+      "3",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "/cruises/istanbul-princes-island-tour"
+     ],
+     "m": [
+      "3",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "/cruises/bosphorus-sunset-cruise?prefill=cmqqmbq3p000004lks5vrf4cf"
+     ],
+     "m": [
+      "1",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "/de/cruises/bosphorus-sunset-cruise"
+     ],
+     "m": [
+      "3",
+      "1"
+     ]
+    },
+    {
+     "d": [
+      "/bosphorus-cruise-for-families"
+     ],
+     "m": [
+      "2",
+      "1"
+     ]
+    },
+    {
+     "d": [
+      "/tr/private-dinner-cruise-for-couples-istanbul"
+     ],
+     "m": [
+      "1",
+      "1"
+     ]
+    },
+    {
+     "d": [
+      "/yacht-charter-istanbul?prefill=cmqqfw5ty000004juq128uo0j"
+     ],
+     "m": [
+      "1",
+      "1"
+     ]
+    },
+    {
+     "d": [
+      "(not set)"
+     ],
+     "m": [
+      "11",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "/blog/what-to-wear-bosphorus-cruise-by-season"
+     ],
+     "m": [
+      "8",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "/bosphorus-cruise"
+     ],
+     "m": [
+      "7",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "/blog/istanbul-atm-currency-exchange-2026"
+     ],
+     "m": [
+      "6",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "/blog/istanbul-currency-tips-tourists"
+     ],
+     "m": [
+      "6",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "/blog/what-to-wear-bosphorus-cruise"
+     ],
+     "m": [
+      "6",
+      "0"
+     ]
+    }
+   ],
+   "geo": [
+    {
+     "d": [
+      "Türkiye"
+     ],
+     "m": [
+      "60",
+      "34"
+     ]
+    },
+    {
+     "d": [
+      "Singapore"
+     ],
+     "m": [
+      "55",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "United States"
+     ],
+     "m": [
+      "46",
+      "14"
+     ]
+    },
+    {
+     "d": [
+      "China"
+     ],
+     "m": [
+      "29",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Germany"
+     ],
+     "m": [
+      "25",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "United Kingdom"
+     ],
+     "m": [
+      "19",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "Netherlands"
+     ],
+     "m": [
+      "12",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "Spain"
+     ],
+     "m": [
+      "8",
+      "13"
+     ]
+    },
+    {
+     "d": [
+      "France"
+     ],
+     "m": [
+      "7",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "Japan"
+     ],
+     "m": [
+      "7",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "(not set)"
+     ],
+     "m": [
+      "5",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Australia"
+     ],
+     "m": [
+      "5",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Italy"
+     ],
+     "m": [
+      "5",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Romania"
+     ],
+     "m": [
+      "5",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "Saudi Arabia"
+     ],
+     "m": [
+      "5",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "India"
+     ],
+     "m": [
+      "4",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Thailand"
+     ],
+     "m": [
+      "4",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Austria"
+     ],
+     "m": [
+      "3",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Iraq"
+     ],
+     "m": [
+      "3",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "South Africa"
+     ],
+     "m": [
+      "3",
+      "1"
+     ]
+    }
+   ],
+   "device": [
+    {
+     "d": [
+      "mobile"
+     ],
+     "m": [
+      "206",
+      "85"
+     ]
+    },
+    {
+     "d": [
+      "desktop"
+     ],
+     "m": [
+      "151",
+      "15"
+     ]
+    },
+    {
+     "d": [
+      "tablet"
+     ],
+     "m": [
+      "2",
+      "1"
+     ]
+    }
+   ]
+  },
+  "d28": {
+   "channels": [
+    {
+     "d": [
+      "Direct"
+     ],
+     "m": [
+      "476",
+      "427",
+      "113"
+     ]
+    },
+    {
+     "d": [
+      "Organic Search"
+     ],
+     "m": [
+      "270",
+      "191",
+      "59"
+     ]
+    },
+    {
+     "d": [
+      "AI Assistant"
+     ],
+     "m": [
+      "145",
+      "122",
+      "49"
+     ]
+    },
+    {
+     "d": [
+      "Unassigned"
+     ],
+     "m": [
+      "119",
+      "112",
+      "35"
+     ]
+    },
+    {
+     "d": [
+      "Paid Search"
+     ],
+     "m": [
+      "46",
+      "42",
+      "11"
+     ]
+    },
+    {
+     "d": [
+      "Referral"
+     ],
+     "m": [
+      "28",
+      "25",
+      "15"
+     ]
+    },
+    {
+     "d": [
+      "Cross-network"
+     ],
+     "m": [
+      "12",
+      "12",
+      "2"
+     ]
+    }
+   ],
+   "sourceMedium": [
+    {
+     "d": [
+      "(direct) / (none)"
+     ],
+     "m": [
+      "476",
+      "427",
+      "113"
+     ]
+    },
+    {
+     "d": [
+      "google / organic"
+     ],
+     "m": [
+      "243",
+      "169",
+      "59"
+     ]
+    },
+    {
+     "d": [
+      "chatgpt.com / ai-assistant"
+     ],
+     "m": [
+      "143",
+      "120",
+      "49"
+     ]
+    },
+    {
+     "d": [
+      "(not set)"
+     ],
+     "m": [
+      "75",
+      "71",
+      "17"
+     ]
+    },
+    {
+     "d": [
+      "google / cpc"
+     ],
+     "m": [
+      "46",
+      "42",
+      "11"
+     ]
+    },
+    {
+     "d": [
+      "chatgpt.com / (not set)"
+     ],
+     "m": [
+      "39",
+      "36",
+      "15"
+     ]
+    },
+    {
+     "d": [
+      "(data not available)"
+     ],
+     "m": [
+      "12",
+      "12",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "chatgpt.com / referral"
+     ],
+     "m": [
+      "11",
+      "11",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "bing / organic"
+     ],
+     "m": [
+      "10",
+      "7",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "yandex.com.tr / referral"
+     ],
+     "m": [
+      "7",
+      "6",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "duckduckgo / organic"
+     ],
+     "m": [
+      "4",
+      "3",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "perplexity / (not set)"
+     ],
+     "m": [
+      "4",
+      "4",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "yahoo / organic"
+     ],
+     "m": [
+      "4",
+      "4",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "weixin110.qq.com / referral"
+     ],
+     "m": [
+      "3",
+      "2",
+      "15"
+     ]
+    },
+    {
+     "d": [
+      "beyzbolcu.com.tr / referral"
+     ],
+     "m": [
+      "2",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "chatgpt.com / (none)"
+     ],
+     "m": [
+      "2",
+      "2",
+      "1"
+     ]
+    },
+    {
+     "d": [
+      "copilot.com / referral"
+     ],
+     "m": [
+      "2",
+      "2",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "gemini.google.com / ai-assistant"
+     ],
+     "m": [
+      "2",
+      "2",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "tabakhaneler.com.tr / referral"
+     ],
+     "m": [
+      "2",
+      "2",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "biztools.corp.google.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "copilot.microsoft.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "doubao.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "fr.search.yahoo.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "gemini.google.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "goldensunsettour.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "google.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "openai / (not set)"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "strata.corp.google.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "vercel.lightning.force.com / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "yandex.ru / referral"
+     ],
+     "m": [
+      "1",
+      "1",
+      "0"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "d": [
+      "page_view"
+     ],
+     "m": [
+      "3928",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "web_vital"
+     ],
+     "m": [
+      "2958",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "time_on_page"
+     ],
+     "m": [
+      "1366",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "session_start"
+     ],
+     "m": [
+      "1020",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "first_visit"
+     ],
+     "m": [
+      "837",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "scroll_depth"
+     ],
+     "m": [
+      "656",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "user_engagement"
+     ],
+     "m": [
+      "251",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "scroll"
+     ],
+     "m": [
+      "232",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "contact_us"
+     ],
+     "m": [
+      "92",
+      "92"
+     ]
+    },
+    {
+     "d": [
+      "whatsapp_click"
+     ],
+     "m": [
+      "87",
+      "87"
+     ]
+    },
+    {
+     "d": [
+      "begin_checkout"
+     ],
+     "m": [
+      "67",
+      "67"
+     ]
+    },
+    {
+     "d": [
+      "faq_open"
+     ],
+     "m": [
+      "37",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "external_link_click"
+     ],
+     "m": [
+      "28",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "click"
+     ],
+     "m": [
+      "23",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "blog_cta_click"
+     ],
+     "m": [
+      "19",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "form_start"
+     ],
+     "m": [
+      "17",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "purchase"
+     ],
+     "m": [
+      "16",
+      "16"
+     ]
+    },
+    {
+     "d": [
+      "booking_abandonment"
+     ],
+     "m": [
+      "8",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "form_submit"
+     ],
+     "m": [
+      "8",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "phone_click"
+     ],
+     "m": [
+      "6",
+      "6"
+     ]
+    },
+    {
+     "d": [
+      "reservation_pdf_engagement"
+     ],
+     "m": [
+      "5",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "ai_discovery_survey"
+     ],
+     "m": [
+      "2",
+      "0"
+     ]
+    }
+   ],
+   "landingByConv": [
+    {
+     "d": [
+      "/"
+     ],
+     "m": [
+      "156",
+      "98"
+     ]
+    },
+    {
+     "d": [
+      "/yacht-charter-istanbul"
+     ],
+     "m": [
+      "78",
+      "18"
+     ]
+    },
+    {
+     "d": [
+      "/bosphorus-cruise"
+     ],
+     "m": [
+      "32",
+      "18"
+     ]
+    },
+    {
+     "d": [
+      "/cruises/bosphorus-sunset-cruise"
+     ],
+     "m": [
+      "60",
+      "17"
+     ]
+    },
+    {
+     "d": [
+      "/reservation"
+     ],
+     "m": [
+      "10",
+      "17"
+     ]
+    },
+    {
+     "d": [
+      "/?f_link_type=f_linkinlinenote&show_loading=0&push_animated=1&flow_extra=eyJkb2NfaWQiOiJjM2RiZmIzNTk0ZjQ0MWJiLTEwYmQwZjY0MWFkYjY2YTgiLCJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowfQ%3D%3D&webview_progress_bar=1&theme=light"
+     ],
+     "m": [
+      "6",
+      "15"
+     ]
+    },
+    {
+     "d": [
+      "/istanbul-dinner-cruise"
+     ],
+     "m": [
+      "25",
+      "10"
+     ]
+    },
+    {
+     "d": [
+      "/blog/bosphorus-cruise-with-kids"
+     ],
+     "m": [
+      "23",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "/blog/bosphorus-cruise-departure-times-istanbul-2026"
+     ],
+     "m": [
+      "12",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "/meeting-points/bosphorus-sunset-cruise"
+     ],
+     "m": [
+      "5",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "/tr/cruises/bosphorus-sunset-cruise"
+     ],
+     "m": [
+      "4",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "/reservation?tour=bosphorus-dinner-cruise?tour=bosphorus-dinner-cruise"
+     ],
+     "m": [
+      "1",
+      "6"
+     ]
+    },
+    {
+     "d": [
+      "/blog/bosphorus-cruise-vs-ferry-istanbul-2026"
+     ],
+     "m": [
+      "24",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/blog/istanbul-cruise-complete-guide-2026"
+     ],
+     "m": [
+      "7",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/meeting-points/bosphorus-dinner-cruise"
+     ],
+     "m": [
+      "5",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/private-bosphorus-dinner-cruise"
+     ],
+     "m": [
+      "5",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/blog/private-yacht-charter-istanbul-price"
+     ],
+     "m": [
+      "3",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026"
+     ],
+     "m": [
+      "2",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "/reservation/MRY-2026-0043"
+     ],
+     "m": [
+      "1",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      ""
+     ],
+     "m": [
+      "58",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "/de/yacht-charter-istanbul"
+     ],
+     "m": [
+      "5",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "/blog/best-istanbul-bosphorus-cruise-comparison-2026"
+     ],
+     "m": [
+      "4",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "/cruises/bosphorus-sightseeing-cruise"
+     ],
+     "m": [
+      "3",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "/cruises/istanbul-princes-island-tour"
+     ],
+     "m": [
+      "3",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "/tr/boat-rental-hourly-istanbul"
+     ],
+     "m": [
+      "2",
+      "2"
+     ]
+    }
+   ],
+   "geo": [
+    {
+     "d": [
+      "Singapore"
+     ],
+     "m": [
+      "221",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "Türkiye"
+     ],
+     "m": [
+      "157",
+      "72"
+     ]
+    },
+    {
+     "d": [
+      "United States"
+     ],
+     "m": [
+      "110",
+      "27"
+     ]
+    },
+    {
+     "d": [
+      "China"
+     ],
+     "m": [
+      "96",
+      "19"
+     ]
+    },
+    {
+     "d": [
+      "Germany"
+     ],
+     "m": [
+      "63",
+      "10"
+     ]
+    },
+    {
+     "d": [
+      "United Kingdom"
+     ],
+     "m": [
+      "42",
+      "12"
+     ]
+    },
+    {
+     "d": [
+      "Netherlands"
+     ],
+     "m": [
+      "27",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "Spain"
+     ],
+     "m": [
+      "26",
+      "17"
+     ]
+    },
+    {
+     "d": [
+      "France"
+     ],
+     "m": [
+      "20",
+      "8"
+     ]
+    },
+    {
+     "d": [
+      "Hong Kong"
+     ],
+     "m": [
+      "20",
+      "4"
+     ]
+    },
+    {
+     "d": [
+      "India"
+     ],
+     "m": [
+      "18",
+      "17"
+     ]
+    },
+    {
+     "d": [
+      "(not set)"
+     ],
+     "m": [
+      "13",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Japan"
+     ],
+     "m": [
+      "13",
+      "3"
+     ]
+    },
+    {
+     "d": [
+      "Saudi Arabia"
+     ],
+     "m": [
+      "13",
+      "9"
+     ]
+    },
+    {
+     "d": [
+      "Switzerland"
+     ],
+     "m": [
+      "12",
+      "18"
+     ]
+    },
+    {
+     "d": [
+      "Romania"
+     ],
+     "m": [
+      "11",
+      "2"
+     ]
+    },
+    {
+     "d": [
+      "Australia"
+     ],
+     "m": [
+      "9",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Russia"
+     ],
+     "m": [
+      "8",
+      "16"
+     ]
+    },
+    {
+     "d": [
+      "Austria"
+     ],
+     "m": [
+      "7",
+      "0"
+     ]
+    },
+    {
+     "d": [
+      "Italy"
+     ],
+     "m": [
+      "7",
+      "0"
+     ]
+    }
+   ],
+   "device": [
+    {
+     "d": [
+      "mobile"
+     ],
+     "m": [
+      "535",
+      "236"
+     ]
+    },
+    {
+     "d": [
+      "desktop"
+     ],
+     "m": [
+      "486",
+      "39"
+     ]
+    },
+    {
+     "d": [
+      "tablet"
+     ],
+     "m": [
+      "6",
+      "9"
+     ]
+    }
+   ]
+  }
+ },
+ "goldensunset": {
+  "error": "all-pairs-failed",
+  "tried": [
+   "GSC_CLIENT+GSC_TOKEN: token refresh: {\"error\":\"invalid_grant\",\"error_description\":\"Bad Request\"}",
+   "GA4_CLIENT+GSC_TOKEN: token refresh: {\"error\":\"invalid_grant\",\"error_description\":\"Bad Request\"}"
+  ]
+ }
+}
