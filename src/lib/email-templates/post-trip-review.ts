@@ -16,14 +16,110 @@ import { emailHead, emailLegalFooter, escapeHtml } from "./helpers";
  * the operator over WhatsApp) + own-cruise cross-sell + one tasteful sister-brand
  * (Merry Tourism) card + WhatsApp & Call buttons.
  *
- * Channel = EMAIL ONLY. No pre-filled WhatsApp text — the customer writes their
- * own message; the operator matches them by WhatsApp number (= customerPhone).
+ * Channel = EMAIL ONLY. The discount-card WhatsApp button carries a pre-filled
+ * message so a returning guest can claim WELCOMEBACK10 in one tap; the
+ * bottom "Get in touch" contact button stays text-free (bare wa.me) so the
+ * customer writes their own message — the operator matches them by WhatsApp
+ * number (= customerPhone).
  */
 
 export const DISCOUNT_CODE = "WELCOMEBACK10";
 
-/** Boat brand locales — derived from customerCountry as the existing cron does. */
-export type ReviewLocale = "tr" | "en";
+/**
+ * Locales the post-trip review email is translated into. These mirror the
+ * project's SUPPORTED_LOCALES (src/i18n/config.ts). The cron derives a locale
+ * from customerCountry and resolves it to one of these keys — anything we do
+ * NOT translate here falls back to `en` (the guaranteed fallback). `en` MUST
+ * always be present.
+ *
+ * `sa` = Arabic (rendered right-to-left). `zh` = Simplified Chinese.
+ */
+export type ReviewLocale =
+  | "en"
+  | "tr"
+  | "de"
+  | "es"
+  | "fr"
+  | "it"
+  | "pt"
+  | "ru"
+  | "hu"
+  | "nl"
+  | "sa"
+  | "el"
+  | "zh";
+
+/**
+ * Every locale the email has a translation for. The cron uses this to decide
+ * whether a derived locale is supported (else it falls back to `en`).
+ * Kept in sync with the COPY keys below — `en` MUST always be included.
+ */
+export const REVIEW_LOCALES: readonly ReviewLocale[] = [
+  "en",
+  "tr",
+  "de",
+  "es",
+  "fr",
+  "it",
+  "pt",
+  "ru",
+  "hu",
+  "nl",
+  "sa",
+  "el",
+  "zh",
+];
+
+/** Narrowing guard: does the email have a translation for `value`? */
+export function isReviewLocale(value: string): value is ReviewLocale {
+  return (REVIEW_LOCALES as readonly string[]).includes(value);
+}
+
+/** Locales whose copy renders right-to-left (Arabic). */
+const RTL_REVIEW_LOCALES: ReadonlySet<ReviewLocale> = new Set(["sa"]);
+
+/**
+ * ───────────────────────── LINK-LOCALE RESOLUTION ─────────────────────────
+ * The email COPY is translated into all REVIEW_LOCALES, but the HREF locale
+ * must be one that actually resolves 200 on the live site — otherwise the
+ * cross-sell buttons 404/410 and we ship dead links to a returning guest.
+ *
+ * OWN SITE (merrysails.com): the [locale] layout `notFound()`s any locale not
+ * in ACTIVE_LOCALES (en,tr,de,fr,nl,ru,zh) and EN is served at the bare root.
+ * BUT the cross-sell buttons include the `/cruises` index route, which on the
+ * CURRENT production build is only present for en,tr,de,fr,nl — `/ru/cruises`
+ * and `/zh/cruises` 404 today (route built before ru/zh went active; other
+ * ru/zh routes are 200). Verified 2026-06-25 by curl against www.merrysails.com.
+ * So we gate own-site links to the locales verified-live across EVERY linked
+ * path. This is intentionally a subset of ACTIVE_LOCALES; when ru/zh `/cruises`
+ * deploys, add them here. Everything else (es,it,pt,hu,sa,el + ru,zh for now)
+ * falls back to `en` (served at root, guaranteed 200).
+ */
+const OWN_ROUTABLE_LOCALES: ReadonlySet<ReviewLocale> = new Set([
+  "en",
+  "tr",
+  "de",
+  "fr",
+  "nl",
+]);
+
+/** Own-site href locale: keep the customer locale only if it is routable, else en. */
+function ownLinkLocale(locale: ReviewLocale): ReviewLocale {
+  return OWN_ROUTABLE_LOCALES.has(locale) ? locale : "en";
+}
+
+/**
+ * SISTER SITE (Merry Tourism, merrytourism.com): MT uses next-intl
+ * `localePrefix:'always'` and serves tr/en/de/es/fr/ru/zh (it,pt,nl,hu,sa,el
+ * are 410 Gone there). MT's default `tr` is at /tr (NOT root). We mirror
+ * GoldenSunset's conservative mapping: TR guests → /tr, DE guests → /de,
+ * everyone else → /en. All three verified live below.
+ */
+function merryTourismUrlFor(locale: ReviewLocale): string {
+  if (locale === "tr") return "https://www.merrytourism.com/tr";
+  if (locale === "de") return "https://www.merrytourism.com/de";
+  return "https://www.merrytourism.com/en";
+}
 
 export interface PostTripReviewData {
   customerName: string;
@@ -53,11 +149,14 @@ interface Copy {
   discountBody: string;
   whatsappBtn: string;
   whatsappHelper: string;
+  /** Pre-filled WhatsApp message for the discount-card claim button. */
+  discountWhatsappText: string;
   crossSellHeading: string;
   crossSellBody: string;
   cruisesBtn: string;
   sunsetBtn: string;
   dinnerBtn: string;
+  privateYachtBtn: string;
   sisterHeading: string;
   sisterBody: string;
   sisterBtn: string;
@@ -86,12 +185,15 @@ const COPY: Record<ReviewLocale, Copy> = {
     whatsappBtn: "Message us on WhatsApp",
     whatsappHelper:
       "Just mention code WELCOMEBACK10 in your message — our team will apply your 10%.",
+    discountWhatsappText:
+      "Hi! I'd like to use my WELCOMEBACK10 code for 10% off my next booking.",
     crossSellHeading: "Sail with us again",
     crossSellBody:
       "Loved being on the water? Here are a couple of guest favourites — your 10% applies to both.",
     cruisesBtn: "Browse all cruises",
     sunsetBtn: "Bosphorus Sunset Cruise",
     dinnerBtn: "Bosphorus Dinner Cruise",
+    privateYachtBtn: "Browse private yacht",
     sisterHeading: "Need an airport transfer or a private tour?",
     sisterBody:
       "Our sister brand Merry Tourism handles VIP airport transfers, private car tours and group tours in Istanbul — and your WELCOMEBACK10 works there too for 10% off.",
@@ -119,18 +221,416 @@ const COPY: Record<ReviewLocale, Copy> = {
     whatsappBtn: "WhatsApp'tan bize yazın",
     whatsappHelper:
       "Mesajınızda sadece WELCOMEBACK10 kodunu belirtmeniz yeterli — ekibimiz %10 indiriminizi uygular.",
+    discountWhatsappText:
+      "Merhaba! Bir sonraki rezervasyonumda %10 indirim için WELCOMEBACK10 kodumu kullanmak istiyorum.",
     crossSellHeading: "Tekrar denize açılın",
     crossSellBody:
       "Denizde olmayı sevdiniz mi? İşte misafirlerimizin favorilerinden birkaçı — %10 indiriminiz ikisinde de geçerli.",
     cruisesBtn: "Tüm turlara göz atın",
     sunsetBtn: "Boğaz Gün Batımı Turu",
     dinnerBtn: "Boğaz Akşam Yemeği Turu",
+    privateYachtBtn: "Özel yata göz atın",
     sisterHeading: "Havalimanı transferi veya özel tur mu lazım?",
     sisterBody:
       "Kardeş markamız Merry Tourism, İstanbul'da VIP havalimanı transferleri, özel araç turları ve grup turları sunuyor — WELCOMEBACK10 kodunuz orada da %10 indirim için geçerli.",
     sisterBtn: "Merry Tourism'i ziyaret et",
     contactHeading: "İhtiyacınız olduğunda buradayız",
     callBtn: "Bizi arayın",
+  },
+  de: {
+    subject: "Wie war Ihre Bootsfahrt? Ein kleines Dankeschön wartet 🌊",
+    preheader:
+      "Erzählen Sie uns, wie es war — und sichern Sie sich 10% Rabatt auf Ihre nächste Fahrt mit dem Code WELCOMEBACK10.",
+    tagline: "Bosporus-Fahrten & Yachtcharter",
+    badge: "Willkommen zurück an Land",
+    greeting: (name) => `Hallo ${name},`,
+    tripLine: (tour) =>
+      `Wir hoffen, Sie hatten eine wundervolle Zeit bei Ihrer <strong>${tour}</strong>. Es war uns eine Freude, Sie an Bord zu haben.`,
+    reviewHeading: "Wie war Ihr Erlebnis bei uns?",
+    reviewSub:
+      "Eine kurze Bewertung hilft anderen Reisenden, uns zu finden — und bedeutet unserer kleinen Crew die Welt.",
+    googleBtn: "Auf Google bewerten",
+    trustpilotBtn: "Auf Trustpilot bewerten",
+    discountTitle: "10% Rabatt auf Ihre nächste Buchung",
+    discountBody:
+      "Als wiederkehrender Gast erhalten Sie ein kleines Dankeschön für Ihre nächste Fahrt oder Charter bei uns:",
+    whatsappBtn: "Schreiben Sie uns auf WhatsApp",
+    whatsappHelper:
+      "Nennen Sie einfach den Code WELCOMEBACK10 in Ihrer Nachricht — unser Team gewährt Ihnen die 10%.",
+    discountWhatsappText:
+      "Hallo! Ich möchte meinen Code WELCOMEBACK10 für 10% Rabatt auf meine nächste Buchung nutzen.",
+    crossSellHeading: "Stechen Sie wieder mit uns in See",
+    crossSellBody:
+      "Hat Ihnen die Zeit auf dem Wasser gefallen? Hier sind ein paar Favoriten unserer Gäste — Ihre 10% gelten für beide.",
+    cruisesBtn: "Alle Fahrten ansehen",
+    sunsetBtn: "Bosporus Sonnenuntergang",
+    dinnerBtn: "Bosporus Dinnerfahrt",
+    privateYachtBtn: "Private Yacht ansehen",
+    sisterHeading: "Brauchen Sie einen Flughafentransfer oder eine Privattour?",
+    sisterBody:
+      "Unsere Schwestermarke Merry Tourism bietet VIP-Flughafentransfers, private Autotouren und Gruppentouren in Istanbul — und Ihr WELCOMEBACK10 gilt dort ebenfalls für 10% Rabatt.",
+    sisterBtn: "Merry Tourism besuchen",
+    contactHeading: "Wir sind für Sie da, wann immer Sie uns brauchen",
+    callBtn: "Rufen Sie uns an",
+  },
+  es: {
+    subject: "¿Qué tal tu crucero? Un pequeño agradecimiento dentro 🌊",
+    preheader:
+      "Cuéntanos cómo fue — y disfruta de un 10% de descuento en tu próxima navegación con el código WELCOMEBACK10.",
+    tagline: "Cruceros por el Bósforo y alquiler de yates",
+    badge: "Bienvenido de nuevo a tierra",
+    greeting: (name) => `Hola ${name},`,
+    tripLine: (tour) =>
+      `Esperamos que hayas pasado un momento maravilloso en tu <strong>${tour}</strong>. Fue un placer tenerte a bordo.`,
+    reviewHeading: "¿Qué tal tu experiencia con nosotros?",
+    reviewSub:
+      "Una reseña rápida ayuda a otros viajeros a encontrarnos — y significa mucho para nuestra pequeña tripulación.",
+    googleBtn: "Reseñar en Google",
+    trustpilotBtn: "Reseñar en Trustpilot",
+    discountTitle: "10% de descuento en tu próxima reserva",
+    discountBody:
+      "Como cliente que regresa, aquí tienes un pequeño agradecimiento para tu próximo crucero o alquiler con nosotros:",
+    whatsappBtn: "Escríbenos por WhatsApp",
+    whatsappHelper:
+      "Solo menciona el código WELCOMEBACK10 en tu mensaje — nuestro equipo aplicará tu 10%.",
+    discountWhatsappText:
+      "¡Hola! Me gustaría usar mi código WELCOMEBACK10 para un 10% de descuento en mi próxima reserva.",
+    crossSellHeading: "Navega con nosotros otra vez",
+    crossSellBody:
+      "¿Te encantó estar en el agua? Aquí tienes un par de favoritos de nuestros clientes — tu 10% aplica a ambos.",
+    cruisesBtn: "Ver todos los cruceros",
+    sunsetBtn: "Crucero al atardecer",
+    dinnerBtn: "Crucero con cena",
+    privateYachtBtn: "Ver yate privado",
+    sisterHeading: "¿Necesitas un traslado al aeropuerto o un tour privado?",
+    sisterBody:
+      "Nuestra marca hermana Merry Tourism ofrece traslados VIP al aeropuerto, tours privados en coche y tours en grupo en Estambul — y tu WELCOMEBACK10 también sirve allí para un 10% de descuento.",
+    sisterBtn: "Visitar Merry Tourism",
+    contactHeading: "Estamos aquí siempre que nos necesites",
+    callBtn: "Llámanos",
+  },
+  fr: {
+    subject: "Comment était votre croisière ? Un petit merci à l'intérieur 🌊",
+    preheader:
+      "Dites-nous comment ça s'est passé — et profitez de 10% de réduction sur votre prochaine sortie avec le code WELCOMEBACK10.",
+    tagline: "Croisières sur le Bosphore & location de yachts",
+    badge: "Bon retour à terre",
+    greeting: (name) => `Bonjour ${name},`,
+    tripLine: (tour) =>
+      `Nous espérons que vous avez passé un moment merveilleux lors de votre <strong>${tour}</strong>. Ce fut un plaisir de vous avoir à bord.`,
+    reviewHeading: "Comment s'est passée votre expérience avec nous ?",
+    reviewSub:
+      "Un court avis aide d'autres voyageurs à nous trouver — et compte énormément pour notre petite équipe.",
+    googleBtn: "Donner un avis sur Google",
+    trustpilotBtn: "Donner un avis sur Trustpilot",
+    discountTitle: "10% de réduction sur votre prochaine réservation",
+    discountBody:
+      "En tant que client fidèle, voici un petit merci pour votre prochaine croisière ou location avec nous :",
+    whatsappBtn: "Écrivez-nous sur WhatsApp",
+    whatsappHelper:
+      "Mentionnez simplement le code WELCOMEBACK10 dans votre message — notre équipe appliquera vos 10%.",
+    discountWhatsappText:
+      "Bonjour ! Je souhaite utiliser mon code WELCOMEBACK10 pour 10% de réduction sur ma prochaine réservation.",
+    crossSellHeading: "Reprenez la mer avec nous",
+    crossSellBody:
+      "Vous avez aimé être sur l'eau ? Voici quelques favoris de nos clients — vos 10% s'appliquent aux deux.",
+    cruisesBtn: "Voir toutes les croisières",
+    sunsetBtn: "Croisière au coucher du soleil",
+    dinnerBtn: "Croisière dîner",
+    privateYachtBtn: "Voir le yacht privé",
+    sisterHeading: "Besoin d'un transfert aéroport ou d'un tour privé ?",
+    sisterBody:
+      "Notre marque sœur Merry Tourism propose des transferts aéroport VIP, des tours privés en voiture et des tours en groupe à Istanbul — et votre WELCOMEBACK10 y donne aussi droit à 10% de réduction.",
+    sisterBtn: "Visiter Merry Tourism",
+    contactHeading: "Nous sommes là dès que vous avez besoin de nous",
+    callBtn: "Appelez-nous",
+  },
+  it: {
+    subject: "Com'è andata la tua crociera? Un piccolo grazie all'interno 🌊",
+    preheader:
+      "Raccontaci com'è andata — e goditi il 10% di sconto sulla tua prossima uscita con il codice WELCOMEBACK10.",
+    tagline: "Crociere sul Bosforo e noleggio yacht",
+    badge: "Bentornato a terra",
+    greeting: (name) => `Ciao ${name},`,
+    tripLine: (tour) =>
+      `Speriamo tu abbia trascorso un momento meraviglioso durante la tua <strong>${tour}</strong>. È stato un piacere averti a bordo.`,
+    reviewHeading: "Com'è stata la tua esperienza con noi?",
+    reviewSub:
+      "Una breve recensione aiuta altri viaggiatori a trovarci — e significa moltissimo per il nostro piccolo equipaggio.",
+    googleBtn: "Recensisci su Google",
+    trustpilotBtn: "Recensisci su Trustpilot",
+    discountTitle: "10% di sconto sulla tua prossima prenotazione",
+    discountBody:
+      "Come cliente di ritorno, ecco un piccolo grazie per la tua prossima crociera o noleggio con noi:",
+    whatsappBtn: "Scrivici su WhatsApp",
+    whatsappHelper:
+      "Basta menzionare il codice WELCOMEBACK10 nel tuo messaggio — il nostro team applicherà il tuo 10%.",
+    discountWhatsappText:
+      "Ciao! Vorrei usare il mio codice WELCOMEBACK10 per il 10% di sconto sulla mia prossima prenotazione.",
+    crossSellHeading: "Torna a navigare con noi",
+    crossSellBody:
+      "Ti è piaciuto stare sull'acqua? Ecco un paio di preferiti dei nostri clienti — il tuo 10% vale per entrambi.",
+    cruisesBtn: "Sfoglia tutte le crociere",
+    sunsetBtn: "Crociera al tramonto",
+    dinnerBtn: "Crociera con cena",
+    privateYachtBtn: "Sfoglia yacht privato",
+    sisterHeading: "Ti serve un transfer aeroportuale o un tour privato?",
+    sisterBody:
+      "Il nostro marchio gemello Merry Tourism offre transfer aeroportuali VIP, tour privati in auto e tour di gruppo a Istanbul — e il tuo WELCOMEBACK10 vale anche lì per il 10% di sconto.",
+    sisterBtn: "Visita Merry Tourism",
+    contactHeading: "Siamo qui ogni volta che hai bisogno di noi",
+    callBtn: "Chiamaci",
+  },
+  pt: {
+    subject: "Como foi o seu cruzeiro? Um pequeno agradecimento por dentro 🌊",
+    preheader:
+      "Conte-nos como foi — e aproveite 10% de desconto no seu próximo passeio com o código WELCOMEBACK10.",
+    tagline: "Cruzeiros pelo Bósforo e aluguel de iates",
+    badge: "Bem-vindo de volta a terra",
+    greeting: (name) => `Olá ${name},`,
+    tripLine: (tour) =>
+      `Esperamos que você tenha tido um momento maravilhoso no seu <strong>${tour}</strong>. Foi um prazer tê-lo a bordo.`,
+    reviewHeading: "Como foi a sua experiência conosco?",
+    reviewSub:
+      "Uma avaliação rápida ajuda outros viajantes a nos encontrar — e significa muito para a nossa pequena tripulação.",
+    googleBtn: "Avaliar no Google",
+    trustpilotBtn: "Avaliar no Trustpilot",
+    discountTitle: "10% de desconto na sua próxima reserva",
+    discountBody:
+      "Como cliente que retorna, aqui está um pequeno agradecimento para o seu próximo cruzeiro ou aluguel conosco:",
+    whatsappBtn: "Fale conosco no WhatsApp",
+    whatsappHelper:
+      "Basta mencionar o código WELCOMEBACK10 na sua mensagem — nossa equipe aplicará os seus 10%.",
+    discountWhatsappText:
+      "Olá! Gostaria de usar o meu código WELCOMEBACK10 para 10% de desconto na minha próxima reserva.",
+    crossSellHeading: "Navegue conosco novamente",
+    crossSellBody:
+      "Gostou de estar na água? Aqui estão alguns favoritos dos nossos clientes — os seus 10% valem para ambos.",
+    cruisesBtn: "Ver todos os cruzeiros",
+    sunsetBtn: "Cruzeiro ao pôr do sol",
+    dinnerBtn: "Cruzeiro com jantar",
+    privateYachtBtn: "Ver iate privado",
+    sisterHeading: "Precisa de um traslado de aeroporto ou um tour privado?",
+    sisterBody:
+      "Nossa marca irmã Merry Tourism oferece traslados VIP de aeroporto, tours privados de carro e tours em grupo em Istambul — e o seu WELCOMEBACK10 também vale lá para 10% de desconto.",
+    sisterBtn: "Visitar Merry Tourism",
+    contactHeading: "Estamos aqui sempre que você precisar de nós",
+    callBtn: "Ligue para nós",
+  },
+  ru: {
+    subject: "Как прошёл ваш круиз? Внутри небольшая благодарность 🌊",
+    preheader:
+      "Расскажите, как всё прошло — и получите скидку 10% на следующую прогулку по коду WELCOMEBACK10.",
+    tagline: "Круизы по Босфору и аренда яхт",
+    badge: "С возвращением на берег",
+    greeting: (name) => `Здравствуйте, ${name},`,
+    tripLine: (tour) =>
+      `Надеемся, вы прекрасно провели время на <strong>${tour}</strong>. Нам было приятно видеть вас на борту.`,
+    reviewHeading: "Как вам понравилось с нами?",
+    reviewSub:
+      "Короткий отзыв поможет другим путешественникам найти нас — и очень много значит для нашей небольшой команды.",
+    googleBtn: "Оставить отзыв в Google",
+    trustpilotBtn: "Оставить отзыв на Trustpilot",
+    discountTitle: "Скидка 10% на следующее бронирование",
+    discountBody:
+      "Как нашему постоянному гостю, вот небольшая благодарность для вашего следующего круиза или аренды с нами:",
+    whatsappBtn: "Напишите нам в WhatsApp",
+    whatsappHelper:
+      "Просто укажите код WELCOMEBACK10 в сообщении — наша команда применит вашу скидку 10%.",
+    discountWhatsappText:
+      "Здравствуйте! Я хотел бы воспользоваться кодом WELCOMEBACK10 для скидки 10% на следующее бронирование.",
+    crossSellHeading: "Выйдите в море с нами снова",
+    crossSellBody:
+      "Понравилось быть на воде? Вот несколько фаворитов наших гостей — ваши 10% действуют на оба.",
+    cruisesBtn: "Все круизы",
+    sunsetBtn: "Круиз на закате",
+    dinnerBtn: "Круиз с ужином",
+    privateYachtBtn: "Частная яхта",
+    sisterHeading: "Нужен трансфер из аэропорта или частный тур?",
+    sisterBody:
+      "Наш дочерний бренд Merry Tourism предлагает VIP-трансферы из аэропорта, частные авто-туры и групповые туры в Стамбуле — и ваш код WELCOMEBACK10 там тоже даёт скидку 10%.",
+    sisterBtn: "Перейти на Merry Tourism",
+    contactHeading: "Мы всегда рядом, когда мы вам нужны",
+    callBtn: "Позвоните нам",
+  },
+  hu: {
+    subject: "Milyen volt a hajóutad? Egy kis köszönet vár odabent 🌊",
+    preheader:
+      "Mondd el, milyen volt — és élvezz 10% kedvezményt a következő hajóutadra a WELCOMEBACK10 kóddal.",
+    tagline: "Boszporusz-hajózás és jachtbérlés",
+    badge: "Üdv újra a szárazföldön",
+    greeting: (name) => `Szia ${name},`,
+    tripLine: (tour) =>
+      `Reméljük, csodálatos időt töltöttél a <strong>${tour}</strong> során. Öröm volt, hogy a fedélzeten üdvözölhettünk.`,
+    reviewHeading: "Milyen volt nálunk a tapasztalatod?",
+    reviewSub:
+      "Egy gyors értékelés segít más utazóknak megtalálni minket — és sokat jelent kis csapatunknak.",
+    googleBtn: "Értékelés a Google-on",
+    trustpilotBtn: "Értékelés a Trustpiloton",
+    discountTitle: "10% kedvezmény a következő foglalásodra",
+    discountBody:
+      "Visszatérő vendégként íme egy kis köszönet a következő hajóutadhoz vagy bérlésedhez nálunk:",
+    whatsappBtn: "Írj nekünk WhatsApp-on",
+    whatsappHelper:
+      "Csak említsd meg a WELCOMEBACK10 kódot az üzenetedben — csapatunk érvényesíti a 10%-odat.",
+    discountWhatsappText:
+      "Üdv! Szeretném felhasználni a WELCOMEBACK10 kódomat 10% kedvezményre a következő foglalásomnál.",
+    crossSellHeading: "Hajózz velünk újra",
+    crossSellBody:
+      "Tetszett a vízen lenni? Íme néhány vendégkedvenc — a 10%-od mindkettőre érvényes.",
+    cruisesBtn: "Összes hajóút",
+    sunsetBtn: "Naplemente hajóút",
+    dinnerBtn: "Vacsorás hajóút",
+    privateYachtBtn: "Privát jacht",
+    sisterHeading: "Reptéri transzferre vagy privát túrára van szükséged?",
+    sisterBody:
+      "Testvérmárkánk, a Merry Tourism VIP reptéri transzfereket, privát autós túrákat és csoportos túrákat kínál Isztambulban — és a WELCOMEBACK10 kódod ott is 10% kedvezményt ad.",
+    sisterBtn: "Merry Tourism megtekintése",
+    contactHeading: "Itt vagyunk, amikor csak szükséged van ránk",
+    callBtn: "Hívj minket",
+  },
+  nl: {
+    subject: "Hoe was je boottocht? Een klein bedankje binnenin 🌊",
+    preheader:
+      "Vertel ons hoe het ging — en geniet van 10% korting op je volgende vaart met de code WELCOMEBACK10.",
+    tagline: "Bosporus-cruises & jachtverhuur",
+    badge: "Welkom terug aan wal",
+    greeting: (name) => `Hallo ${name},`,
+    tripLine: (tour) =>
+      `We hopen dat je een geweldige tijd hebt gehad tijdens je <strong>${tour}</strong>. Het was een genoegen je aan boord te hebben.`,
+    reviewHeading: "Hoe was je ervaring bij ons?",
+    reviewSub:
+      "Een korte review helpt andere reizigers ons te vinden — en betekent de wereld voor onze kleine bemanning.",
+    googleBtn: "Beoordeel op Google",
+    trustpilotBtn: "Beoordeel op Trustpilot",
+    discountTitle: "10% korting op je volgende boeking",
+    discountBody:
+      "Als terugkerende gast krijg je een klein bedankje voor je volgende cruise of charter bij ons:",
+    whatsappBtn: "Stuur ons een bericht op WhatsApp",
+    whatsappHelper:
+      "Vermeld gewoon de code WELCOMEBACK10 in je bericht — ons team past je 10% toe.",
+    discountWhatsappText:
+      "Hallo! Ik wil graag mijn code WELCOMEBACK10 gebruiken voor 10% korting op mijn volgende boeking.",
+    crossSellHeading: "Vaar weer met ons mee",
+    crossSellBody:
+      "Genoten van het water? Hier zijn een paar favorieten van onze gasten — je 10% geldt voor beide.",
+    cruisesBtn: "Bekijk alle cruises",
+    sunsetBtn: "Zonsondergangcruise",
+    dinnerBtn: "Dinercruise",
+    privateYachtBtn: "Bekijk privéjacht",
+    sisterHeading: "Een luchthaventransfer of privétour nodig?",
+    sisterBody:
+      "Ons zustermerk Merry Tourism verzorgt VIP-luchthaventransfers, privé-autotours en groepstours in Istanbul — en je WELCOMEBACK10 geldt daar ook voor 10% korting.",
+    sisterBtn: "Bezoek Merry Tourism",
+    contactHeading: "We zijn er wanneer je ons nodig hebt",
+    callBtn: "Bel ons",
+  },
+  sa: {
+    subject: "كيف كانت رحلتك البحرية؟ هدية صغيرة بالداخل 🌊",
+    preheader:
+      "أخبرنا كيف كانت — واستمتع بخصم 10% على رحلتك القادمة برمز WELCOMEBACK10.",
+    tagline: "رحلات البوسفور وتأجير اليخوت",
+    badge: "أهلاً بعودتك إلى البر",
+    greeting: (name) => `مرحباً ${name}،`,
+    tripLine: (tour) =>
+      `نأمل أن تكون قد قضيت وقتاً رائعاً في <strong>${tour}</strong>. كان من دواعي سرورنا وجودك على متن المركب.`,
+    reviewHeading: "كيف كانت تجربتك معنا؟",
+    reviewSub:
+      "تقييم سريع يساعد المسافرين الآخرين على إيجادنا — ويعني الكثير لفريقنا الصغير.",
+    googleBtn: "قيّمنا على Google",
+    trustpilotBtn: "قيّمنا على Trustpilot",
+    discountTitle: "خصم 10% على حجزك القادم",
+    discountBody:
+      "بصفتك ضيفاً عائداً، إليك هدية صغيرة لرحلتك أو تأجيرك القادم معنا:",
+    whatsappBtn: "راسلنا عبر WhatsApp",
+    whatsappHelper:
+      "فقط اذكر الرمز WELCOMEBACK10 في رسالتك — وسيطبّق فريقنا خصم الـ 10%.",
+    discountWhatsappText:
+      "مرحباً! أرغب في استخدام رمز WELCOMEBACK10 للحصول على خصم 10% على حجزي القادم.",
+    crossSellHeading: "أبحر معنا من جديد",
+    crossSellBody:
+      "أحببت التواجد على الماء؟ إليك بعضاً من مفضلات ضيوفنا — خصم الـ 10% يسري على كليهما.",
+    cruisesBtn: "تصفّح كل الرحلات",
+    sunsetBtn: "رحلة غروب الشمس",
+    dinnerBtn: "رحلة العشاء",
+    privateYachtBtn: "تصفّح اليخوت الخاصة",
+    sisterHeading: "هل تحتاج إلى نقل من المطار أو جولة خاصة؟",
+    sisterBody:
+      "علامتنا الشقيقة Merry Tourism توفّر خدمات النقل VIP من المطار والجولات الخاصة بالسيارة والجولات الجماعية في إسطنبول — ورمزك WELCOMEBACK10 يمنحك هناك أيضاً خصم 10%.",
+    sisterBtn: "زيارة Merry Tourism",
+    contactHeading: "نحن هنا متى احتجت إلينا",
+    callBtn: "اتصل بنا",
+  },
+  el: {
+    subject: "Πώς ήταν η κρουαζιέρα σας; Ένα μικρό ευχαριστώ μέσα 🌊",
+    preheader:
+      "Πείτε μας πώς πήγε — και απολαύστε 10% έκπτωση στην επόμενη εκδρομή σας με τον κωδικό WELCOMEBACK10.",
+    tagline: "Κρουαζιέρες στον Βόσπορο & ενοικίαση σκαφών",
+    badge: "Καλώς ορίσατε ξανά στη στεριά",
+    greeting: (name) => `Γεια σας ${name},`,
+    tripLine: (tour) =>
+      `Ελπίζουμε να περάσατε υπέροχα στην <strong>${tour}</strong>. Ήταν χαρά μας που σας είχαμε στο πλοίο.`,
+    reviewHeading: "Πώς ήταν η εμπειρία σας μαζί μας;",
+    reviewSub:
+      "Μια γρήγορη αξιολόγηση βοηθά άλλους ταξιδιώτες να μας βρουν — και σημαίνει πολλά για το μικρό μας πλήρωμα.",
+    googleBtn: "Αξιολόγηση στο Google",
+    trustpilotBtn: "Αξιολόγηση στο Trustpilot",
+    discountTitle: "10% έκπτωση στην επόμενη κράτησή σας",
+    discountBody:
+      "Ως επισκέπτης που επιστρέφει, ορίστε ένα μικρό ευχαριστώ για την επόμενη κρουαζιέρα ή ναύλωσή σας μαζί μας:",
+    whatsappBtn: "Στείλτε μας μήνυμα στο WhatsApp",
+    whatsappHelper:
+      "Απλώς αναφέρετε τον κωδικό WELCOMEBACK10 στο μήνυμά σας — η ομάδα μας θα εφαρμόσει την έκπτωση 10%.",
+    discountWhatsappText:
+      "Γεια σας! Θα ήθελα να χρησιμοποιήσω τον κωδικό WELCOMEBACK10 για 10% έκπτωση στην επόμενη κράτησή μου.",
+    crossSellHeading: "Ταξιδέψτε ξανά μαζί μας",
+    crossSellBody:
+      "Σας άρεσε να είστε στο νερό; Ορίστε μερικά αγαπημένα των επισκεπτών μας — η έκπτωση 10% ισχύει και για τα δύο.",
+    cruisesBtn: "Δείτε όλες τις κρουαζιέρες",
+    sunsetBtn: "Κρουαζιέρα ηλιοβασιλέματος",
+    dinnerBtn: "Κρουαζιέρα με δείπνο",
+    privateYachtBtn: "Δείτε ιδιωτικό σκάφος",
+    sisterHeading: "Χρειάζεστε μεταφορά από το αεροδρόμιο ή ιδιωτική ξενάγηση;",
+    sisterBody:
+      "Η αδελφή μας μάρκα Merry Tourism προσφέρει VIP μεταφορές αεροδρομίου, ιδιωτικές ξεναγήσεις με αυτοκίνητο και ομαδικές εκδρομές στην Κωνσταντινούπολη — και ο κωδικός WELCOMEBACK10 ισχύει κι εκεί για 10% έκπτωση.",
+    sisterBtn: "Επισκεφθείτε το Merry Tourism",
+    contactHeading: "Είμαστε εδώ όποτε μας χρειαστείτε",
+    callBtn: "Καλέστε μας",
+  },
+  zh: {
+    subject: "您的游船之旅怎么样？里面有一份小心意 🌊",
+    preheader: "告诉我们体验如何——并使用优惠码 WELCOMEBACK10 享受下次出航 9 折优惠。",
+    tagline: "博斯普鲁斯海峡游船与游艇租赁",
+    badge: "欢迎回到岸上",
+    greeting: (name) => `您好 ${name}，`,
+    tripLine: (tour) =>
+      `希望您在 <strong>${tour}</strong> 中度过了美好的时光。很高兴有您同行。`,
+    reviewHeading: "您与我们的体验如何？",
+    reviewSub:
+      "一条简短的评价能帮助其他旅客找到我们——对我们这支小团队意义非凡。",
+    googleBtn: "在 Google 上评价",
+    trustpilotBtn: "在 Trustpilot 上评价",
+    discountTitle: "下次预订享 9 折优惠",
+    discountBody:
+      "作为回头客，这是我们为您下次游船或租赁准备的一份小心意：",
+    whatsappBtn: "通过 WhatsApp 联系我们",
+    whatsappHelper:
+      "只需在消息中注明优惠码 WELCOMEBACK10——我们的团队将为您享受 9 折优惠。",
+    discountWhatsappText:
+      "您好！我想使用我的 WELCOMEBACK10 优惠码，为下次预订享受 9 折优惠。",
+    crossSellHeading: "再次与我们出海",
+    crossSellBody:
+      "喜欢在水上的时光吗？这里有几款客人最爱——您的 9 折优惠两者皆可使用。",
+    cruisesBtn: "浏览所有游船",
+    sunsetBtn: "日落游船",
+    dinnerBtn: "晚餐游船",
+    privateYachtBtn: "浏览私人游艇",
+    sisterHeading: "需要机场接送或私人导览吗？",
+    sisterBody:
+      "我们的姊妹品牌 Merry Tourism 在伊斯坦布尔提供 VIP 机场接送、私人包车游览和团体游览——您的 WELCOMEBACK10 在那里同样享 9 折优惠。",
+    sisterBtn: "访问 Merry Tourism",
+    contactHeading: "随时为您服务",
+    callBtn: "致电我们",
   },
 };
 
@@ -174,17 +674,36 @@ export function postTripReviewEmail(data: PostTripReviewData): {
   //                                      which is an OWNER_REDIRECT → 301 hop);
   //                                      src/app/istanbul-dinner-cruise/page.tsx
   //                                      + src/app/[locale]/istanbul-dinner-cruise/page.tsx
+  // COPY stays in the customer locale (data.locale); only the HREF locale is
+  // resolved to a routable one. EN is served at the SITE ROOT with NO /en/
+  // prefix; every other routable locale renders under /<locale>/.
+  const linkLocale = ownLinkLocale(data.locale);
   const url = (path: string) =>
-    data.locale === "en" ? `${SITE_URL}${path}` : `${SITE_URL}/${data.locale}${path}`;
+    linkLocale === "en" ? `${SITE_URL}${path}` : `${SITE_URL}/${linkLocale}${path}`;
   const cruisesUrl = url("/cruises");
   const sunsetUrl = url("/cruises/bosphorus-sunset-cruise");
   const dinnerUrl = url("/istanbul-dinner-cruise");
-  const merryTourismUrl = "https://www.merrytourism.com";
+  // Private yacht charter — verified live for BOTH en-root and the tr prefix:
+  //   /yacht-charter-istanbul → src/app/yacht-charter-istanbul/page.tsx
+  //                            + src/app/[locale]/yacht-charter-istanbul/page.tsx
+  const privateYachtUrl = url("/yacht-charter-istanbul");
+  const merryTourismUrl = merryTourismUrlFor(data.locale);
+  // Discount-card WhatsApp button carries a pre-filled claim message. The
+  // bottom contact-row button stays the bare WHATSAPP_URL (text-free) on
+  // purpose, so leave that one untouched.
+  const discountWhatsappUrl = `${WHATSAPP_URL}?text=${encodeURIComponent(c.discountWhatsappText)}`;
+
+  // Right-to-left rendering for Arabic. Setting dir="rtl" on <html> and the
+  // <body> flips text alignment/flow for the whole message; the centred blocks
+  // (review/discount/cross-sell) stay centred, while left-aligned paragraphs
+  // (greeting, trip line, helper text) become right-aligned as they should.
+  const isRtl = RTL_REVIEW_LOCALES.has(data.locale);
+  const dirAttr = isRtl ? ' dir="rtl"' : "";
 
   const html = `<!DOCTYPE html>
-<html lang="${data.locale}">
+<html lang="${data.locale}"${dirAttr}>
 ${emailHead()}
-<body style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+<body${dirAttr} style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;">${escapeHtml(c.preheader)}</div>
   <div style="max-width:600px;margin:0 auto;padding:20px 16px;">
 
@@ -216,7 +735,7 @@ ${emailHead()}
         <p style="color:#92400e;margin:0 0 16px;font-size:13.5px;line-height:1.7;">${escapeHtml(c.discountBody)}</p>
         <div style="display:inline-block;background:#ffffff;border:2px dashed #f59e0b;border-radius:12px;padding:12px 26px;margin:0 0 18px;font-family:'Courier New',Courier,monospace;font-size:22px;font-weight:800;letter-spacing:3px;color:#b45309;">${DISCOUNT_CODE}</div>
         <div>
-          <a href="${WHATSAPP_URL}" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:700;font-size:14px;">${escapeHtml(c.whatsappBtn)}</a>
+          <a href="${discountWhatsappUrl}" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:700;font-size:14px;">${escapeHtml(c.whatsappBtn)}</a>
         </div>
         <p style="color:#92400e;margin:12px 0 0;font-size:12.5px;line-height:1.6;">${escapeHtml(c.whatsappHelper)}</p>
       </div>
@@ -228,7 +747,8 @@ ${emailHead()}
         <div style="text-align:center;">
           <a href="${sunsetUrl}" style="display:inline-block;background:#0ea5e9;color:#ffffff;text-decoration:none;padding:11px 20px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 9px;">${escapeHtml(c.sunsetBtn)}</a>
           <a href="${dinnerUrl}" style="display:inline-block;background:#0ea5e9;color:#ffffff;text-decoration:none;padding:11px 20px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 9px;">${escapeHtml(c.dinnerBtn)}</a>
-          <a href="${cruisesUrl}" style="display:inline-block;background:#ffffff;color:#0369a1;text-decoration:none;padding:11px 20px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 9px;border:1px solid #7dd3fc;">${escapeHtml(c.cruisesBtn)}</a>
+          <a href="${cruisesUrl}" style="display:inline-block;background:#0369a1;color:#ffffff;text-decoration:none;padding:11px 20px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 9px;">${escapeHtml(c.cruisesBtn)}</a>
+          <a href="${privateYachtUrl}" style="display:inline-block;background:#0369a1;color:#ffffff;text-decoration:none;padding:11px 20px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 9px;">${escapeHtml(c.privateYachtBtn)}</a>
         </div>
       </div>
 

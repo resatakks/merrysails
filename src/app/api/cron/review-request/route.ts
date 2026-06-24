@@ -2,7 +2,7 @@
  * Post-trip review + cross-sell EMAIL cron — MerrySails (boat/cruise).
  *
  * Replaces the former Twilio-WhatsApp DRY-RUN skeleton. Channel is now EMAIL
- * ONLY, sent via the repo's SMTP helper (sendEmail). ~6h after a cruise/tour
+ * ONLY, sent via the repo's SMTP helper (sendEmail). ~4h after a cruise/tour
  * ENDS, each guest gets a single designed message: satisfaction line + review
  * buttons (Google now; Trustpilot when a profile exists) + a returning-guest
  * 10% discount (WELCOMEBACK10, honored MANUALLY by the operator over WhatsApp)
@@ -10,8 +10,8 @@
  *
  * Timing (boat brand — no returnDate exists):
  *   tripEnd = combine Reservation.date (DateTime) + time (String "HH:MM").
- *   Send when now >= tripEnd + 6h.
- *   Lookback cap: only tripEnd within [now-72h, now-6h] (prevents a first-deploy
+ *   Send when now >= tripEnd + 4h.
+ *   Lookback cap: only tripEnd within [now-72h, now-4h] (prevents a first-deploy
  *   blast to all historical customers).
  *   QUIET HOURS: send moment computed in Europe/Istanbul; skip if hour < 9 or
  *   hour >= 22 (caught on a later run).
@@ -42,7 +42,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { sendEmail } from "@/lib/email";
 import { GBP_REVIEW_URL } from "@/lib/constants";
+import { getBcp47 } from "@/i18n/config";
 import {
+  isReviewLocale,
   postTripReviewEmail,
   type ReviewLocale,
 } from "@/lib/email-templates/post-trip-review";
@@ -51,14 +53,117 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
 
-const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
+/** How long after a trip ends before the review email goes out (tunable). */
+const SEND_DELAY_MS = 4 * 60 * 60 * 1000; // 4h after trip-end
 const SEVENTY_TWO_HOURS_MS = 72 * 60 * 60 * 1000;
 
 const ELIGIBLE_STATUSES = ["completed", "confirmed"];
 
-/** Boat locale derivation — same rule the previous cron used. */
+/**
+ * Boat brand: there is NO reservation.locale column, so the email language is
+ * derived from `customerCountry`. We map ISO codes AND human-readable country
+ * names (the form stores either) to a ReviewLocale. Anything not mapped — or a
+ * locale the email isn't translated into — resolves to `en` (the guaranteed
+ * fallback). As the project adds more translations, this map widens; today the
+ * email template (post-trip-review.ts) covers every SUPPORTED_LOCALE, so each
+ * mapped locale below has a real translation.
+ *
+ * Country → locale grouping (per project i18n + operator brief):
+ *   Turkey → tr; DACH → de; RU/BY/KZ → ru; France → fr; NL/BE → nl;
+ *   Gulf/Egypt (Arabic) → sa; CN/TW/HK → zh; Spain → es; Italy → it;
+ *   PT/BR → pt; Hungary → hu; Greece → el; everything else → en.
+ */
+const COUNTRY_TO_LOCALE: Record<string, ReviewLocale> = {
+  // Turkey
+  tr: "tr",
+  turkey: "tr",
+  türkiye: "tr",
+  turkiye: "tr",
+  // German-speaking (DACH)
+  de: "de",
+  germany: "de",
+  deutschland: "de",
+  at: "de",
+  austria: "de",
+  österreich: "de",
+  ch: "de",
+  switzerland: "de",
+  schweiz: "de",
+  // Russian-speaking
+  ru: "ru",
+  russia: "ru",
+  "russian federation": "ru",
+  by: "ru",
+  belarus: "ru",
+  kz: "ru",
+  kazakhstan: "ru",
+  // France
+  fr: "fr",
+  france: "fr",
+  // Dutch-speaking
+  nl: "nl",
+  netherlands: "nl",
+  "the netherlands": "nl",
+  holland: "nl",
+  be: "nl",
+  belgium: "nl",
+  // Arabic-speaking (Gulf + Egypt) → "sa" locale
+  sa: "sa",
+  "saudi arabia": "sa",
+  ae: "sa",
+  "united arab emirates": "sa",
+  uae: "sa",
+  qa: "sa",
+  qatar: "sa",
+  kw: "sa",
+  kuwait: "sa",
+  bh: "sa",
+  bahrain: "sa",
+  om: "sa",
+  oman: "sa",
+  eg: "sa",
+  egypt: "sa",
+  // Chinese
+  cn: "zh",
+  china: "zh",
+  tw: "zh",
+  taiwan: "zh",
+  hk: "zh",
+  "hong kong": "zh",
+  // Spain
+  es: "es",
+  spain: "es",
+  españa: "es",
+  espana: "es",
+  // Italy
+  it: "it",
+  italy: "it",
+  italia: "it",
+  // Portuguese-speaking
+  pt: "pt",
+  portugal: "pt",
+  br: "pt",
+  brazil: "pt",
+  brasil: "pt",
+  // Hungary
+  hu: "hu",
+  hungary: "hu",
+  magyarország: "hu",
+  // Greece
+  gr: "el",
+  greece: "el",
+  ελλάδα: "el",
+};
+
+/**
+ * Resolve the email locale from the stored customerCountry. Normalises case /
+ * surrounding whitespace, looks up the country→locale map, and ALWAYS falls
+ * back to `en` for unmapped countries (so e.g. UK/US/etc. get English).
+ */
 function deriveLocale(country?: string | null): ReviewLocale {
-  return country === "TR" || country === "Turkey" ? "tr" : "en";
+  const key = country?.trim().toLowerCase();
+  if (!key) return "en";
+  return COUNTRY_TO_LOCALE[key] ?? "en";
 }
 
 /**
@@ -92,7 +197,11 @@ function istanbulHour(at: Date): number {
 
 /** Localised trip date string for the email body. */
 function formatTripDate(date: Date, locale: ReviewLocale): string {
-  return new Intl.DateTimeFormat(locale === "tr" ? "tr-TR" : "en-GB", {
+  // Use the project's BCP-47 tag per locale (en-US, tr-TR, ar-SA, zh-CN, …) so
+  // each recipient sees the date written in their own language. en stays en-GB
+  // for the existing day-month-year ordering.
+  const intlLocale = locale === "en" ? "en-GB" : getBcp47(locale);
+  return new Intl.DateTimeFormat(intlLocale, {
     timeZone: "Europe/Istanbul",
     day: "numeric",
     month: "long",
@@ -122,8 +231,11 @@ export async function GET(req: NextRequest) {
         { status: 400 }
       );
     }
+    // Allow ?locale=<any supported review locale> for previewing translations;
+    // unknown/absent → en.
+    const localeParam = url.searchParams.get("locale")?.trim().toLowerCase();
     const locale: ReviewLocale =
-      url.searchParams.get("locale") === "tr" ? "tr" : "en";
+      localeParam && isReviewLocale(localeParam) ? localeParam : "en";
     const sample = postTripReviewEmail({
       customerName: "Alex Sample",
       tourName:
@@ -150,11 +262,11 @@ export async function GET(req: NextRequest) {
 
   const now = new Date();
   const windowStart = new Date(now.getTime() - SEVENTY_TWO_HOURS_MS); // now-72h
-  const windowEnd = new Date(now.getTime() - SIX_HOURS_MS); // now-6h
+  const windowEnd = new Date(now.getTime() - SEND_DELAY_MS); // now-4h
 
   // Candidate reservations: eligible status, has email. We still bound the date
   // column generously (date column ≈ trip day) and recompute the precise
-  // tripEnd from date+time below, so the [now-72h, now-6h] window is enforced
+  // tripEnd from date+time below, so the [now-72h, now-4h] window is enforced
   // exactly in code regardless of the stored time-of-day.
   const candidates = await prisma.reservation.findMany({
     where: {
@@ -180,12 +292,12 @@ export async function GET(req: NextRequest) {
     },
   });
 
-  // Filter to those whose precise tripEnd is inside [now-72h, now-6h].
+  // Filter to those whose precise tripEnd is inside [now-72h, now-4h].
   const inWindow = candidates.filter((r) => {
     if (!r.customerEmail) return false;
     const tripEnd = computeTripEnd(r.date, r.time);
-    const sendMoment = new Date(tripEnd.getTime() + SIX_HOURS_MS);
-    // Send when now >= tripEnd + 6h  AND  tripEnd within [now-72h, now-6h].
+    const sendMoment = new Date(tripEnd.getTime() + SEND_DELAY_MS);
+    // Send when now >= tripEnd + 4h  AND  tripEnd within [now-72h, now-4h].
     return (
       now.getTime() >= sendMoment.getTime() &&
       tripEnd.getTime() >= windowStart.getTime() &&
