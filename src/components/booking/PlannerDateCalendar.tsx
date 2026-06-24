@@ -212,7 +212,7 @@ export function PlannerDateCalendar({
           ))}
         </div>
 
-        <div className="grid grid-cols-7 gap-y-1">
+        <div id="planner-calendar-grid" className="grid grid-cols-7 gap-y-1">
           {/* 2026-06-06: pointer-events-none + aria-hidden so taps on the
               pre-first-of-month placeholders don't register as dead clicks.
               Clarity flagged 265 clicks on " " whitespace in 7d on
@@ -348,18 +348,38 @@ export function PlannerDateCalendar({
 
       {selectedDate && (
         <div id="planner-selected-date" className="mt-4 scroll-mt-24 space-y-3">
-          <div className="flex items-center gap-2 rounded-xl bg-[var(--brand-primary)]/5 px-3 py-2.5">
-            <Calendar className="h-4 w-4 text-[var(--brand-primary)]" />
+          {/* Clarity (PC /reservation, 27 dead + 10 rage on the date text):
+              users tap the read-only selected-date to change it but the only
+              control was the grid above, with no affordance. Make the whole row
+              a button that scrolls the calendar grid back into view + a visible
+              "Change" cue, so the tap responds instead of dead-ending. Pattern
+              matches the package-card + "Up to N guests" dead-click fixes. */}
+          <button
+            type="button"
+            translate="no"
+            onClick={() => {
+              if (typeof document !== "undefined") {
+                document
+                  .getElementById("planner-calendar-grid")
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+            }}
+            className="flex w-full items-center gap-2 rounded-xl bg-[var(--brand-primary)]/5 px-3 py-2.5 text-left transition-colors hover:bg-[var(--brand-primary)]/10"
+          >
+            <Calendar className="h-4 w-4 shrink-0 text-[var(--brand-primary)]" />
             <span className="text-sm font-semibold text-[var(--heading)]">
               {format(selectedDate, "EEEE, dd MMM yyyy")}
             </span>
             {selectedOperation?.departureTimeOverride && (
-              <span className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-sky-700">
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-sky-700">
                 <Clock className="h-3.5 w-3.5" />
                 {selectedOperation.departureTimeOverride}
               </span>
             )}
-          </div>
+            <span className="ml-auto shrink-0 text-xs font-semibold text-[var(--brand-primary)]">
+              {t.change}
+            </span>
+          </button>
 
           {selectedOperation?.note && (
             <div className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-800">

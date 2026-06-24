@@ -54,6 +54,8 @@ indexed-page count (GS 503 vs MS 329) but far behind on Bing (GS 0 indexed — f
 |---|---|---|---|
 | 2026-06-23 | MS | Direct 144/18 · Organic 82/29 · **AI Assistant 76/28** · Paid 40/11 | AI Assistant = top-3 channel AND converts. GEO is the working growth lever. Paid (yacht) converting. |
 | 2026-06-23 | GS | Direct 219/9 · **AI Assistant 44/15** · Organic 42/2 | GS organic weak (42/2); AI Assistant strong (44/15). |
+| 2026-06-24 (28d) | MS | Direct 476/113 · Organic 270/59 · **AI Assistant 145/49 (~34% rate = HIGHEST)** · Paid 46/11 | AI(ChatGPT ~95%) = top convert-rate + fastest-growing (d7 already 72/33). **Paid barely 46 sess/28d = ads not landing.** Mobile converts 6× desktop (236 vs 39 ke). TR+US convert most (not UK/DE). 16 purchases/28d. |
+| 2026-06-24 (28d) | GS | Direct 355/19 · Organic 235/**5** · **AI Assistant 101/16** · Paid **0** | Organic 235 sess→5 ke (2%, informational rot). High-traffic pages convert ZERO (sunset 67/0) → inline-booking should help. 404 leak 23×/28d (ru-yacht fleet) FIXED. 8 purchases/28d (3-4× worse than MS). |
 
 ## History log
 - 2026-06-16: first trend file. MS pos 56→11 (7wk), GS 26→11 (3wk). Both sandbox-exiting. CTR is the gap.
