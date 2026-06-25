@@ -148,17 +148,23 @@ const organizationSchema = {
   telephone: "+905448989812",
   email: "info@merrysails.com",
   priceRange: "€€",
+  // Entity disambiguation — Bing soft-deindex / domain-serving-suppression
+  // recovery (2026-06-25, research-backed). "merrysails" collides with the
+  // established entity "The Merry Sales Co." (merrysales.com), so we assert a
+  // distinct entity for the Knowledge Graph.
+  disambiguatingDescription:
+    "MerrySails is an Istanbul Bosphorus cruise and private yacht charter operator (TÜRSAB A Group, licensed since 2001). Not affiliated with The Merry Sales Co.",
+  // sameAs is the entity fingerprint Bing/Google use for reconciliation. It must
+  // point ONLY to MerrySails-owned identity profiles. Removed cross-brand links
+  // (kingsworldtransfer.com transfer brand, acilkaseniz.com stamp brand) and the
+  // sibling-named "Merry Tourism" maps URL — those signalled an inorganic site
+  // network (footprint), a likely trigger of the Bing portfolio-level serving
+  // suppression. The GBP review link (Place ID) stays — it's MerrySails' own.
   sameAs: [
     "https://www.wikidata.org/wiki/Q139785645",
     "https://www.instagram.com/merrysails",
     "https://www.facebook.com/merrysails",
-    "https://www.google.com/maps/place/Merry+Tourism/@41.0082,28.9784,17z",
-    // 2026-06-13: GBP review URL — anchors brand to Google Business Profile
-    // entity (Place ID ChIJo5HLfp5GCgsRKqlEhm13b3k). Improves Knowledge Graph
-    // reconciliation + lets AI engines surface "leave a review" CTA inline.
     "https://search.google.com/local/writereview?placeid=ChIJo5HLfp5GCgsRKqlEhm13b3k",
-    "https://kingsworldtransfer.com",
-    "https://acilkaseniz.com",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",

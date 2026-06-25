@@ -17,6 +17,7 @@ import { getFleetStrings } from "@/components/yacht/fleet-strings";
 import QuickAnswer from "@/components/ai/QuickAnswer";
 import {
  getCharterFleet,
+ getCharterFleetLocale,
  getCharterLowestEntryPriceEur,
  getCharterHighestTotalPriceEur,
 } from "@/data/fleet";
@@ -612,6 +613,37 @@ export default async function LocaleYachtCharterPage({
 
  const canonicalUrl = `${SITE_URL}${t.canonicalPath}`;
 
+ const exploreFleetHeadingByLocale: Record<string, string> = {
+ en: "Explore each yacht in the fleet",
+ tr: "Filodaki her yatı keşfedin",
+ de: "Jede Yacht der Flotte entdecken",
+ fr: "Découvrez chaque yacht de la flotte",
+ nl: "Ontdek elk jacht in de vloot",
+ ru: "Все яхты флота",
+ zh: "探索船队中的每艘游艇",
+ };
+ const fromLabelByLocale: Record<string, string> = {
+ en: "From",
+ tr: "Başlangıç",
+ de: "Ab",
+ fr: "Dès",
+ nl: "Vanaf",
+ ru: "От",
+ zh: "起价",
+ };
+ const quoteLabelByLocale: Record<string, string> = {
+ en: "Priced by quote",
+ tr: "Teklif üzerine fiyat",
+ de: "Preis auf Anfrage",
+ fr: "Prix sur devis",
+ nl: "Prijs op aanvraag",
+ ru: "Цена по запросу",
+ zh: "按报价定价",
+ };
+ const exploreFleetHeading = exploreFleetHeadingByLocale[locale] ?? exploreFleetHeadingByLocale.en;
+ const fromLabel = fromLabelByLocale[locale] ?? fromLabelByLocale.en;
+ const quoteLabel = quoteLabelByLocale[locale] ?? quoteLabelByLocale.en;
+
  const momentum = await getProductBookingMomentum("yacht-charter-in-istanbul");
  const productLabelByLocale: Record<string, string> = {
  en: "private yacht",
@@ -804,6 +836,32 @@ export default async function LocaleYachtCharterPage({
  yachtTourSlug={yachtTour.slug}
  fleetDetailBasePath={`/${locale}/yacht-charter-istanbul`}
  />
+
+ {/* Explore each yacht — dedicated in-content link section mirroring the EN
+     hub. Surfaces a discoverable internal link to every fleet detail page
+     (e.g. /{locale}/yacht-charter-istanbul/boutique-yacht-12) so search
+     engines find the per-yacht pages instead of treating them as orphans. */}
+ <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+ <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">{exploreFleetHeading}</h2>
+ <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+ {getCharterFleet().map((boat) => {
+ const fleetStr = getCharterFleetLocale(boat, locale as SiteLocale);
+ const entry = boat.priceByHours?.[boat.minHours] ?? null;
+ const priceLabel = entry ? `${fromLabel} €${entry} / 2h` : quoteLabel;
+ return (
+ <Link
+ key={boat.slug}
+ href={`/${locale}/yacht-charter-istanbul/${boat.slug}`}
+ className="rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-white"
+ >
+ <h3 className="font-semibold text-[var(--heading)] mb-1">{fleetStr.label}</h3>
+ <p className="text-sm text-[var(--text-muted)] mb-2">{fleetStr.tagline}</p>
+ <p className="text-sm font-semibold text-[var(--brand-primary)]">{priceLabel}</p>
+ </Link>
+ );
+ })}
+ </div>
+ </section>
 
  <div className="my-8">
  <ReviewsCarousel productKey="yacht" locale={locale as SiteLocale} />
