@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Download, ExternalLink, FileText, X } from "lucide-react";
+import { Download, ExternalLink, FileText, Loader2, X } from "lucide-react";
 
 interface ReservationDocumentCenterProps {
   reservationId: string;
@@ -24,6 +24,14 @@ export function ReservationDocumentCenter({
   reservationId,
 }: ReservationDocumentCenterProps) {
   const [activeDocument, setActiveDocument] = useState<ActiveDocument>(null);
+  // Clarity: the on-demand PDF generation takes a moment, so a plain download
+  // link produced no immediate feedback → users re-tapped (dead click). Track a
+  // transient "preparing" state per doc to show a spinner the instant they tap.
+  const [preparing, setPreparing] = useState<string | null>(null);
+  const flagPreparing = (id: string) => {
+    setPreparing(id);
+    setTimeout(() => setPreparing((cur) => (cur === id ? null : cur)), 4000);
+  };
 
   const previewHref = activeDocument
     ? `/reservation/${reservationId}/${activeDocument}/pdf`
@@ -73,10 +81,23 @@ export function ReservationDocumentCenter({
                     </button>
                     <a
                       href={`/reservation/${reservationId}/${docType}/pdf?download=1`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => flagPreparing(docType)}
+                      aria-busy={preparing === docType}
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[var(--line)] px-4 py-2.5 text-sm font-semibold text-[var(--heading)] transition-colors hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]"
                     >
-                      <Download className="h-4 w-4" />
-                      Download PDF
+                      {preparing === docType ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          Preparing PDF…
+                        </>
+                      ) : (
+                        <>
+                          <Download className="h-4 w-4" />
+                          Download PDF
+                        </>
+                      )}
                     </a>
                   </div>
                 </div>
@@ -118,10 +139,23 @@ export function ReservationDocumentCenter({
                 </a>
                 <a
                   href={downloadHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => flagPreparing("modal")}
+                  aria-busy={preparing === "modal"}
                   className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-[var(--brand-primary)] px-4 text-sm font-semibold text-white transition-all hover:brightness-110"
                 >
-                  <Download className="h-4 w-4" />
-                  Download
+                  {preparing === "modal" ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Preparing…
+                    </>
+                  ) : (
+                    <>
+                      <Download className="h-4 w-4" />
+                      Download
+                    </>
+                  )}
                 </a>
                 <button
                   type="button"
