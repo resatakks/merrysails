@@ -327,6 +327,7 @@ export function GET() {
     { url: `${SITE_URL}/blog`, changefreq: "daily", priority: "0.8", lastmod: contentLastmod, hreflang: hreflangXml("/blog") },
     { url: `${SITE_URL}/guides`, changefreq: "weekly", priority: "0.7", lastmod: contentLastmod, hreflang: hreflangXml("/guides") },
     { url: `${SITE_URL}/compare-bosphorus-cruises`, changefreq: "monthly", priority: "0.85", lastmod: contentLastmod },
+    { url: `${SITE_URL}/galataport-shore-excursion`, changefreq: "monthly", priority: "0.82", lastmod: contentLastmod },
     { url: `${SITE_URL}/best-bosphorus-sunset-cruise-2026`, changefreq: "monthly", priority: "0.82", lastmod: contentLastmod },
     // Best-cruise-companies listicle exists in EN (root) + TR only — emit a
     // symmetric en↔tr hreflang cluster inline (NOT hreflangXml, which would add

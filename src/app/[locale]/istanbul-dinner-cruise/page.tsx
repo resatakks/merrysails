@@ -53,6 +53,15 @@ type LocaleContent = {
  intro: string;
  sections: { heading: string; items: string; note?: string }[];
  };
+ /** TR-only: operator-voice answer block (direct booking vs acente/OTA). */
+ operatorNote?: { title: string; body: string[] };
+ /** TR-only: how to reach Kabataş İskelesi by domestic transit. */
+ localTransitGuide?: {
+ title: string;
+ intro: string;
+ rows: { mode: string; detail: string }[];
+ tip: string;
+ };
 };
 
 const TRANSLATIONS: Record<string, LocaleContent> = {
@@ -212,6 +221,47 @@ const TRANSLATIONS: Record<string, LocaleContent> = {
  "Temel (Silver Soft Drinks €30): Sınırsız alkolsüz içecek. Silver Alcoholic (€45): Yerel bira ve rakı dahil. Gold Soft Drinks (€80): Sınırsız alkolsüz içecek + VIP masa. Gold Unlimited Alkol (€90): Sınırsız yerel ve ithal alkol + VIP masa + DJ.",
  },
  ],
+ },
+ operatorNote: {
+ title: "Kaptan'dan not: neden acente yerine doğrudan rezervasyon?",
+ body: [
+ "Ben Kaptan Ahmet — 2001'den beri bu teknede misafir ağırlıyoruz. Aynı akşam yemekli turu Viator, GetYourGuide gibi platformlarda da görürsünüz; ama oralarda gördüğünüz fiyatın içinde acente komisyonu vardır. Bizden doğrudan rezervasyon yaptığınızda Silver Soft paket gerçek fiyatıyla €30 kalır, arada komisyon yoktur.",
+ "Doğrudan rezervasyonun bir başka avantajı: masanızı, çocuk sayınızı, vejetaryen tabağınızı ve otel alım noktanızı WhatsApp üzerinden bizzat bizimle netleştirirsiniz. Platform üzerinden gelen taleplerde bu detaylar çoğu zaman bize geç ulaşır. Bizde onay 60 dakika içinde, yazılı gelir; iptal 48 saat öncesine kadar ücretsizdir.",
+ "Bir uyarı: yaz aylarında (Mayıs–Eylül) Cuma ve Cumartesi geceleri Gold masalar erken doluyor. Sahneye yakın oturmak istiyorsanız Gold paketi en az 3–4 gün önceden tutmanızı öneririm. Hafta içi (Pazartesi–Perşembe) hem daha sakin hem de Silver Alkollü pakette indirimli oluyor.",
+ ],
+ },
+ localTransitGuide: {
+ title: "Kabataş İskelesi'ne nasıl gidilir?",
+ intro:
+ "Tekne Kabataş İskelesi'nden kalkar. İstanbul içinden geliyorsanız toplu taşıma ile kapıya kadar gelmek mümkün; aşağıda en pratik yollar var. Otelden transfer hizmetimiz Avrupa yakası merkez otelleri için zaten mevcut, ama kendiniz gelmek isterseniz:",
+ rows: [
+ {
+ mode: "Tramvay (T1)",
+ detail:
+ "T1 Kabataş-Bağcılar hattının son durağı Kabataş'tır. Sultanahmet, Eminönü, Karaköy'den biniyorsanız direkt aktarmasız gelirsiniz; durak iskelenin tam yanındadır.",
+ },
+ {
+ mode: "Füniküler (F1)",
+ detail:
+ "Taksim Meydanı'ndan F1 füniküleri ile Kabataş'a yaklaşık 2 dakikada inersiniz. Taksim çevresi otellerinde kalanlar için en hızlı seçenektir.",
+ },
+ {
+ mode: "Marmaray + yürüyüş",
+ detail:
+ "Anadolu yakasından gelenler Marmaray ile Sirkeci'ye, oradan T1 tramvayına aktarıp Kabataş'a ulaşır. Sirkeci-Kabataş tramvayla yaklaşık 12 dakikadır.",
+ },
+ {
+ mode: "Vapur",
+ detail:
+ "Kabataş'ın kendi vapur iskelesi vardır (Üsküdar–Kabataş, Kadıköy–Kabataş hatları). Vapurdan inince tekne biniş noktası birkaç adım ötededir.",
+ },
+ {
+ mode: "Özel araç / taksi",
+ detail:
+ "Taksi şoförüne \"Kabataş İskelesi\" deyin. Kendi aracınızla geliyorsanız akşam saatlerinde sahil yolu (Meclis-i Mebusan Cad.) park için sınırlıdır; toplu taşımayı öneririz.",
+ },
+ ],
+ tip: "Saat 20:30 kalkışından en az 15 dakika önce iskelede olun. Yaz akşamları T1 tramvayı yoğun olabilir, biraz erken çıkın.",
  },
  },
  de: {
@@ -1198,6 +1248,45 @@ export default async function LocaleDinnerCruisePage({
  </div>
  ))}
  </div>
+ </section>
+ )}
+
+ {t.operatorNote && (
+ <section className="mt-8 rounded-2xl border border-[var(--brand-primary)]/25 bg-[var(--surface-alt)] p-6 md:p-8">
+ <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">{t.operatorNote.title}</h2>
+ <div className="space-y-4 text-sm leading-relaxed text-[var(--text-muted)]">
+ {t.operatorNote.body.map((paragraph, idx) => (
+ <p key={idx}>{paragraph}</p>
+ ))}
+ </div>
+ <div className="mt-5">
+ <Link
+ href={`/${locale}/reservation?tour=bosphorus-dinner-cruise#core-booking-planner`}
+ className="inline-flex items-center gap-2 rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+ >
+ €30&apos;dan doğrudan rezervasyon yap
+ </Link>
+ </div>
+ </section>
+ )}
+
+ {t.localTransitGuide && (
+ <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+ <h2 className="text-2xl font-bold text-[var(--heading)] mb-3">{t.localTransitGuide.title}</h2>
+ <p className="text-sm leading-relaxed text-[var(--text-muted)] mb-6">{t.localTransitGuide.intro}</p>
+ <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
+ <table className="w-full border-collapse text-left text-sm">
+ <tbody>
+ {t.localTransitGuide.rows.map((row) => (
+ <tr key={row.mode} className="border-b border-[var(--line)] last:border-b-0 align-top">
+ <th className="w-40 bg-[var(--surface-alt)] p-3 font-semibold text-[var(--heading)] text-xs">{row.mode}</th>
+ <td className="p-3 text-[var(--text-muted)] leading-relaxed">{row.detail}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p className="mt-4 text-sm font-medium text-[var(--heading)]">{t.localTransitGuide.tip}</p>
  </section>
  )}
 
