@@ -166,9 +166,9 @@ interface Copy {
 
 const COPY: Record<ReviewLocale, Copy> = {
   en: {
-    subject: "How was your cruise? A little thank-you inside 🌊",
+    subject: "How was your trip? A little thank-you inside 🌊",
     preheader:
-      "Tell us how it went — and enjoy 10% off your next sail with code WELCOMEBACK10.",
+      "Tell us how it went — and enjoy 10% off your next booking with code WELCOMEBACK10.",
     tagline: "Bosphorus Cruises & Yacht Charter",
     badge: "Welcome back ashore",
     greeting: (name) => `Hi ${name},`,
@@ -202,9 +202,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Call us",
   },
   tr: {
-    subject: "Tekne turunuz nasıldı? İçeride küçük bir teşekkür var 🌊",
+    subject: "Geziniz nasıldı? İçeride küçük bir teşekkür var 🌊",
     preheader:
-      "Nasıl geçtiğini bize anlatın — bir sonraki turunuzda WELCOMEBACK10 ile %10 indirim sizi bekliyor.",
+      "Nasıl geçtiğini bize anlatın — bir sonraki rezervasyonunuzda WELCOMEBACK10 ile %10 indirim sizi bekliyor.",
     tagline: "Boğaz Turları & Yat Kiralama",
     badge: "Tekrar görüşmek üzere",
     greeting: (name) => `Merhaba ${name},`,
@@ -238,9 +238,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Bizi arayın",
   },
   de: {
-    subject: "Wie war Ihre Bootsfahrt? Ein kleines Dankeschön wartet 🌊",
+    subject: "Wie war Ihr Ausflug? Ein kleines Dankeschön wartet 🌊",
     preheader:
-      "Erzählen Sie uns, wie es war — und sichern Sie sich 10% Rabatt auf Ihre nächste Fahrt mit dem Code WELCOMEBACK10.",
+      "Erzählen Sie uns, wie es war — und sichern Sie sich 10% Rabatt auf Ihre nächste Buchung mit dem Code WELCOMEBACK10.",
     tagline: "Bosporus-Fahrten & Yachtcharter",
     badge: "Willkommen zurück an Land",
     greeting: (name) => `Hallo ${name},`,
@@ -274,9 +274,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Rufen Sie uns an",
   },
   es: {
-    subject: "¿Qué tal tu crucero? Un pequeño agradecimiento dentro 🌊",
+    subject: "¿Qué tal tu experiencia? Un pequeño agradecimiento dentro 🌊",
     preheader:
-      "Cuéntanos cómo fue — y disfruta de un 10% de descuento en tu próxima navegación con el código WELCOMEBACK10.",
+      "Cuéntanos cómo fue — y disfruta de un 10% de descuento en tu próxima reserva con el código WELCOMEBACK10.",
     tagline: "Cruceros por el Bósforo y alquiler de yates",
     badge: "Bienvenido de nuevo a tierra",
     greeting: (name) => `Hola ${name},`,
@@ -310,9 +310,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Llámanos",
   },
   fr: {
-    subject: "Comment était votre croisière ? Un petit merci à l'intérieur 🌊",
+    subject: "Comment était votre sortie ? Un petit merci à l'intérieur 🌊",
     preheader:
-      "Dites-nous comment ça s'est passé — et profitez de 10% de réduction sur votre prochaine sortie avec le code WELCOMEBACK10.",
+      "Dites-nous comment ça s'est passé — et profitez de 10% de réduction sur votre prochaine réservation avec le code WELCOMEBACK10.",
     tagline: "Croisières sur le Bosphore & location de yachts",
     badge: "Bon retour à terre",
     greeting: (name) => `Bonjour ${name},`,
@@ -346,9 +346,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Appelez-nous",
   },
   it: {
-    subject: "Com'è andata la tua crociera? Un piccolo grazie all'interno 🌊",
+    subject: "Com'è andata la tua esperienza? Un piccolo grazie all'interno 🌊",
     preheader:
-      "Raccontaci com'è andata — e goditi il 10% di sconto sulla tua prossima uscita con il codice WELCOMEBACK10.",
+      "Raccontaci com'è andata — e goditi il 10% di sconto sulla tua prossima prenotazione con il codice WELCOMEBACK10.",
     tagline: "Crociere sul Bosforo e noleggio yacht",
     badge: "Bentornato a terra",
     greeting: (name) => `Ciao ${name},`,
@@ -382,9 +382,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Chiamaci",
   },
   pt: {
-    subject: "Como foi o seu cruzeiro? Um pequeno agradecimento por dentro 🌊",
+    subject: "Como foi a sua experiência? Um pequeno agradecimento por dentro 🌊",
     preheader:
-      "Conte-nos como foi — e aproveite 10% de desconto no seu próximo passeio com o código WELCOMEBACK10.",
+      "Conte-nos como foi — e aproveite 10% de desconto na sua próxima reserva com o código WELCOMEBACK10.",
     tagline: "Cruzeiros pelo Bósforo e aluguel de iates",
     badge: "Bem-vindo de volta a terra",
     greeting: (name) => `Olá ${name},`,
@@ -418,9 +418,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Ligue para nós",
   },
   ru: {
-    subject: "Как прошёл ваш круиз? Внутри небольшая благодарность 🌊",
+    subject: "Как прошла ваша поездка? Внутри небольшая благодарность 🌊",
     preheader:
-      "Расскажите, как всё прошло — и получите скидку 10% на следующую прогулку по коду WELCOMEBACK10.",
+      "Расскажите, как всё прошло — и получите скидку 10% на следующее бронирование по коду WELCOMEBACK10.",
     tagline: "Круизы по Босфору и аренда яхт",
     badge: "С возвращением на берег",
     greeting: (name) => `Здравствуйте, ${name},`,
@@ -454,9 +454,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Позвоните нам",
   },
   hu: {
-    subject: "Milyen volt a hajóutad? Egy kis köszönet vár odabent 🌊",
+    subject: "Milyen volt az élményed? Egy kis köszönet vár odabent 🌊",
     preheader:
-      "Mondd el, milyen volt — és élvezz 10% kedvezményt a következő hajóutadra a WELCOMEBACK10 kóddal.",
+      "Mondd el, milyen volt — és élvezz 10% kedvezményt a következő foglalásodra a WELCOMEBACK10 kóddal.",
     tagline: "Boszporusz-hajózás és jachtbérlés",
     badge: "Üdv újra a szárazföldön",
     greeting: (name) => `Szia ${name},`,
@@ -490,9 +490,9 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Hívj minket",
   },
   nl: {
-    subject: "Hoe was je boottocht? Een klein bedankje binnenin 🌊",
+    subject: "Hoe was je uitje? Een klein bedankje binnenin 🌊",
     preheader:
-      "Vertel ons hoe het ging — en geniet van 10% korting op je volgende vaart met de code WELCOMEBACK10.",
+      "Vertel ons hoe het ging — en geniet van 10% korting op je volgende boeking met de code WELCOMEBACK10.",
     tagline: "Bosporus-cruises & jachtverhuur",
     badge: "Welkom terug aan wal",
     greeting: (name) => `Hallo ${name},`,
@@ -526,14 +526,14 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Bel ons",
   },
   sa: {
-    subject: "كيف كانت رحلتك البحرية؟ هدية صغيرة بالداخل 🌊",
+    subject: "كيف كانت تجربتك؟ هدية صغيرة بالداخل 🌊",
     preheader:
-      "أخبرنا كيف كانت — واستمتع بخصم 10% على رحلتك القادمة برمز WELCOMEBACK10.",
+      "أخبرنا كيف كانت — واستمتع بخصم 10% على حجزك القادم برمز WELCOMEBACK10.",
     tagline: "رحلات البوسفور وتأجير اليخوت",
     badge: "أهلاً بعودتك إلى البر",
     greeting: (name) => `مرحباً ${name}،`,
     tripLine: (tour) =>
-      `نأمل أن تكون قد قضيت وقتاً رائعاً في <strong>${tour}</strong>. كان من دواعي سرورنا وجودك على متن المركب.`,
+      `نأمل أن تكون قد قضيت وقتاً رائعاً في <strong>${tour}</strong>. كان من دواعي سرورنا استضافتك معنا.`,
     reviewHeading: "كيف كانت تجربتك معنا؟",
     reviewSub:
       "تقييم سريع يساعد المسافرين الآخرين على إيجادنا — ويعني الكثير لفريقنا الصغير.",
@@ -562,14 +562,14 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "اتصل بنا",
   },
   el: {
-    subject: "Πώς ήταν η κρουαζιέρα σας; Ένα μικρό ευχαριστώ μέσα 🌊",
+    subject: "Πώς ήταν η εμπειρία σας; Ένα μικρό ευχαριστώ μέσα 🌊",
     preheader:
-      "Πείτε μας πώς πήγε — και απολαύστε 10% έκπτωση στην επόμενη εκδρομή σας με τον κωδικό WELCOMEBACK10.",
+      "Πείτε μας πώς πήγε — και απολαύστε 10% έκπτωση στην επόμενη κράτησή σας με τον κωδικό WELCOMEBACK10.",
     tagline: "Κρουαζιέρες στον Βόσπορο & ενοικίαση σκαφών",
     badge: "Καλώς ορίσατε ξανά στη στεριά",
     greeting: (name) => `Γεια σας ${name},`,
     tripLine: (tour) =>
-      `Ελπίζουμε να περάσατε υπέροχα στην <strong>${tour}</strong>. Ήταν χαρά μας που σας είχαμε στο πλοίο.`,
+      `Ελπίζουμε να περάσατε υπέροχα στην <strong>${tour}</strong>. Ήταν χαρά μας που σας είχαμε μαζί μας.`,
     reviewHeading: "Πώς ήταν η εμπειρία σας μαζί μας;",
     reviewSub:
       "Μια γρήγορη αξιολόγηση βοηθά άλλους ταξιδιώτες να μας βρουν — και σημαίνει πολλά για το μικρό μας πλήρωμα.",
@@ -598,8 +598,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     callBtn: "Καλέστε μας",
   },
   zh: {
-    subject: "您的游船之旅怎么样？里面有一份小心意 🌊",
-    preheader: "告诉我们体验如何——并使用优惠码 WELCOMEBACK10 享受下次出航 9 折优惠。",
+    subject: "您的旅程怎么样？里面有一份小心意 🌊",
+    preheader: "告诉我们体验如何——并使用优惠码 WELCOMEBACK10 享受下次预订 9 折优惠。",
     tagline: "博斯普鲁斯海峡游船与游艇租赁",
     badge: "欢迎回到岸上",
     greeting: (name) => `您好 ${name}，`,

@@ -16,8 +16,11 @@
  *   QUIET HOURS: send moment computed in Europe/Istanbul; skip if hour < 9 or
  *   hour >= 22 (caught on a later run).
  *
- * Eligibility:
- *   - status in ("completed", "confirmed")  [excludes cancelled/refunded/rejected]
+ * Eligibility (DENYLIST — operator rule "all statuses except cancelled"):
+ *   - status NOT in EXCLUDED_STATUSES (cancelled/canceled/iptal/İptal/refunded/
+ *     rejected/test) — so the default "new" status IS eligible, alongside
+ *     confirmed/completed. The operator confirms bookings off-DB and rarely
+ *     flips status, so "new" is the dominant real-trip state.
  *   - customerEmail present
  *   - No existing ReviewRequest row for that reservationId (idempotent: one row /
  *     reservationId via the model's @unique reservationId).
@@ -57,7 +60,22 @@ export const dynamic = "force-dynamic";
 const SEND_DELAY_MS = 4 * 60 * 60 * 1000; // 4h after trip-end
 const SEVENTY_TWO_HOURS_MS = 72 * 60 * 60 * 1000;
 
-const ELIGIBLE_STATUSES = ["completed", "confirmed"];
+/**
+ * DENYLIST eligibility. The dominant reservation status is "new" (the operator
+ * confirms bookings off-DB and rarely flips status), so an ALLOWLIST of
+ * ("completed","confirmed") wrongly excluded most real trips. Operator rule:
+ * "all statuses except cancelled". So new/confirmed/completed are eligible;
+ * only the terminal/non-trip states below are excluded.
+ */
+const EXCLUDED_STATUSES = [
+  "cancelled",
+  "canceled",
+  "iptal",
+  "İptal",
+  "refunded",
+  "rejected",
+  "test",
+];
 
 /**
  * Boat brand: there is NO reservation.locale column, so the email language is
@@ -167,19 +185,30 @@ function deriveLocale(country?: string | null): ReviewLocale {
 }
 
 /**
- * Combine the reservation `date` (DateTime) with `time` ("HH:MM") into the
+ * Combine the reservation `date` (DateTime) with `time` (String) into the
  * trip-end instant. The stored `date` already carries the calendar day; we
- * overlay the hour/minute from `time`. Falls back to the raw date when `time`
- * is missing/malformed.
+ * overlay the hour/minute from `time`.
+ *
+ * Real `time` values are messy — they can carry extra text, e.g.
+ * "10:00 (return ~17:00)" or "17:00 (boarding from 18:30)". A naive split(':')
+ * would yield minute=NaN → Invalid Date. So we extract the FIRST HH:MM with a
+ * regex and validate the range. When no valid time is found, we fall back to a
+ * safe default of 12:00 (noon) so tripEnd is ALWAYS a valid Date.
  */
 function computeTripEnd(date: Date, time: string | null | undefined): Date {
   const end = new Date(date.getTime());
-  if (time && /^\d{1,2}:\d{2}$/.test(time.trim())) {
-    const [h, m] = time.trim().split(":").map((n) => Number.parseInt(n, 10));
-    if (Number.isFinite(h) && Number.isFinite(m)) {
-      end.setHours(h, m, 0, 0);
+  const m = (time || "").match(/(\d{1,2}):(\d{2})/);
+  if (m) {
+    const h = Number(m[1]);
+    const min = Number(m[2]);
+    if (Number.isFinite(h) && Number.isFinite(min) && h <= 23 && min <= 59) {
+      end.setHours(h, min, 0, 0);
+      return end;
     }
   }
+  // No parseable time → anchor at local noon (avoids midnight edge + keeps the
+  // tripEnd well inside the trip day for the window math). Always valid.
+  end.setHours(12, 0, 0, 0);
   return end;
 }
 
@@ -270,7 +299,7 @@ export async function GET(req: NextRequest) {
   // exactly in code regardless of the stored time-of-day.
   const candidates = await prisma.reservation.findMany({
     where: {
-      status: { in: ELIGIBLE_STATUSES },
+      status: { notIn: EXCLUDED_STATUSES },
       customerEmail: { not: "" },
       // date column is the calendar day; widen by a day on each side so a late
       // evening trip whose tripEnd lands inside the window isn't excluded by a
