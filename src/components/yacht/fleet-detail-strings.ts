@@ -36,6 +36,8 @@ export type FleetDetailStrings = {
   taxIncluded: string;
   campaignLine: string;
   whatsappPrefill: string;
+  /** 3 short trust lines shown at the booking CTA (competitor-research pattern). */
+  reassurance: string[];
 };
 
 const EN: FleetDetailStrings = {
@@ -138,6 +140,11 @@ const EN: FleetDetailStrings = {
   campaignLine: "Ready to book?",
   whatsappPrefill:
     "Hi MerrySails — I'd like to book the {label} (capacity {capacity}). Please share availability and the next steps.",
+  reassurance: [
+    "Free cancellation up to 48h",
+    "Instant confirmation",
+    "Direct operator — no broker markup",
+  ],
 };
 
 const TR: FleetDetailStrings = {
@@ -240,6 +247,11 @@ const TR: FleetDetailStrings = {
   campaignLine: "Rezervasyon için hazır mısınız?",
   whatsappPrefill:
     "Merhaba MerrySails — {label} (kapasite {capacity}) rezerve etmek istiyorum. Müsaitliği ve sonraki adımları paylaşır mısınız?",
+  reassurance: [
+    "48 saate kadar ücretsiz iptal",
+    "Anında onay",
+    "Doğrudan operatör — aracı komisyonu yok",
+  ],
 };
 
 const DE: FleetDetailStrings = {
@@ -342,6 +354,11 @@ const DE: FleetDetailStrings = {
   campaignLine: "Bereit zur Buchung?",
   whatsappPrefill:
     "Hallo MerrySails — ich möchte die {label} (Kapazität {capacity}) buchen. Bitte teilen Sie mir die Verfügbarkeit und die nächsten Schritte mit.",
+  reassurance: [
+    "Kostenlose Stornierung bis 48 Std.",
+    "Sofortige Bestätigung",
+    "Direktanbieter — keine Vermittlerprovision",
+  ],
 };
 
 const FR: FleetDetailStrings = {
@@ -444,6 +461,11 @@ const FR: FleetDetailStrings = {
   campaignLine: "Prêt à réserver ?",
   whatsappPrefill:
     "Bonjour MerrySails — je souhaite réserver le {label} (capacité {capacity}). Pouvez-vous m'indiquer les disponibilités et la suite ?",
+  reassurance: [
+    "Annulation gratuite jusqu'à 48 h",
+    "Confirmation immédiate",
+    "Opérateur direct — sans commission d'intermédiaire",
+  ],
 };
 
 const NL: FleetDetailStrings = {
@@ -546,6 +568,11 @@ const NL: FleetDetailStrings = {
   campaignLine: "Klaar om te boeken?",
   whatsappPrefill:
     "Hallo MerrySails — ik wil de {label} (capaciteit {capacity}) boeken. Kunt u de beschikbaarheid en de volgende stappen delen?",
+  reassurance: [
+    "Gratis annuleren tot 48 uur",
+    "Directe bevestiging",
+    "Directe aanbieder — geen tussenpersoonskosten",
+  ],
 };
 
 const STRINGS: Partial<Record<SiteLocale, FleetDetailStrings>> = {

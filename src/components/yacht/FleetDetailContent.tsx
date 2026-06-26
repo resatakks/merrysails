@@ -42,6 +42,7 @@ type DetailStrings = {
   taxIncluded: string;
   campaignLine: string;
   whatsappPrefill: string;
+  reassurance: string[];
 };
 
 type Props = {
@@ -213,6 +214,16 @@ export default function FleetDetailContent({
               >
                 {strings.backToFleet}
               </Link>
+            </div>
+            {/* 2026-06-26: trust strip at the detail-page CTA (competitor
+                research decision-moment pattern) — localized via fleet-detail
+                strings so DE/FR/NL/TR users see it in their language too. */}
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] font-medium text-[var(--text-muted)]">
+              {strings.reassurance.map((line) => (
+                <span key={line} className="inline-flex items-center gap-1">
+                  <span aria-hidden className="font-bold text-emerald-600">✓</span> {line}
+                </span>
+              ))}
             </div>
             <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
               {t.description}
