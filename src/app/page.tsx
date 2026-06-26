@@ -267,8 +267,16 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-3">
             Best Bosphorus Cruise Istanbul — Sunset, Dinner &amp; Private Yacht
           </h2>
-          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-8">
+          <p className="mx-auto max-w-3xl text-center text-sm text-gray-600 mb-5">
             MerrySails offers three licensed Bosphorus experiences with direct booking and transparent pricing. Choose the right product for your group size and evening brief.
+          </p>
+          {/* €220 value-leader teaser (2026-06-27): the boutique private yacht
+              at €220 is the lowest credible private-charter price on the
+              Bosphorus (comparable charters run €450-600+). Sends entry-level
+              private-charter demand to the yacht page. */}
+          <p className="mx-auto mb-8 max-w-3xl text-center text-sm font-semibold text-[var(--heading)]">
+            Private yacht from <span className="text-emerald-700">€220 per boat</span> — Istanbul&apos;s lowest credible
+            private-charter price on the Bosphorus, where comparable charters run €450–€600+.
           </p>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {coreBookingPages.map((item) => (

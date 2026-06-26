@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MessageCircle, PhoneCall, ShieldCheck } from "lucide-react";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
+import BookingReassurance from "@/components/conversion/BookingReassurance";
 import {
   PHONE,
   PHONE_DISPLAY,
@@ -369,6 +370,31 @@ export default function BosphorusCruisePricesPage() {
                 </tbody>
               </table>
             </div>
+
+            {/* €220 value-leader callout (2026-06-27): the boutique yacht at
+                €220 / 2h is the lowest credible price to charter a private boat
+                on the Bosphorus — comparable private charters elsewhere start
+                around €450-600 for the same two hours. Factual value claim, no
+                competitor named. */}
+            <div className="border-t border-emerald-200 bg-emerald-50/70 p-6 md:flex md:items-center md:justify-between md:gap-6">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                  The €220 value leader
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-emerald-900 md:text-base">
+                  At <strong>€220 for 2 hours</strong>, the boutique yacht is the lowest credible price to charter a
+                  private boat on the Bosphorus — most comparable private charters run <strong>€450–€600+</strong> for
+                  the same two hours. One flat rate covers your whole group of up to 12, captain and crew included, so
+                  for a small group it works out near €18–€20 a head for a fully private boat.
+                </p>
+              </div>
+              <Link
+                href="/yacht-charter-istanbul"
+                className="mt-4 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 md:mt-0"
+              >
+                See yacht charter <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </section>
 
           {/* Market-context table with named public sources */}
@@ -471,6 +497,9 @@ export default function BosphorusCruisePricesPage() {
                 </TrackedContactLink>
               </div>
             </div>
+            {/* Reassurance strip (2026-06-27): free-cancellation + instant-confirm
+                + fast WhatsApp reply, next to the booking contact CTAs. */}
+            <BookingReassurance className="mt-6" />
           </section>
 
           {/* In-content contextual links (RED LINE: no nav strip) */}

@@ -12,6 +12,7 @@ import RelatedTours from "@/components/ui/RelatedTours";
 import HowToGetThere from "@/components/tours/HowToGetThere";
 import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import SocialProofBadges from "@/components/ui/SocialProofBadges";
+import BookingReassurance from "@/components/conversion/BookingReassurance";
 import BookingMomentumBadge from "@/components/ui/BookingMomentumBadge";
 import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
@@ -644,6 +645,17 @@ export default async function IstanbulDinnerCruisePage({
               strings={getWeekdayDiscountStrings("en")}
             />
           )}
+
+          {/* Reassurance strip + hotel-pickup perk (2026-06-27): surface the
+              risk-removers right at the booking action — best-converting rivals
+              lead with free-cancellation + instant-confirm + fast reply here,
+              not buried below the reviews. Hotel pickup is a paid perk this
+              product includes, so it sits next to the from-price. */}
+          <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--heading)]">
+            <span aria-hidden>🏨</span>
+            Hotel pickup from central Istanbul available — from €30 per guest.
+          </p>
+          <BookingReassurance className="mb-6" />
 
           <div className="my-8">
             <CoreBookingPlanner

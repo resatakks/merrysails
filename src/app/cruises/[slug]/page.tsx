@@ -23,6 +23,7 @@ import { getProductBookingMomentum } from "@/lib/booking-momentum";
 import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 import { SITE_LAST_MODIFIED, SITE_PUBLISHED } from "@/lib/freshness";
 import ProductHero from "@/components/conversion/ProductHero";
+import BookingReassurance from "@/components/conversion/BookingReassurance";
 import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 
 const SITE_URL = "https://merrysails.com";
@@ -864,6 +865,12 @@ export default async function TourDetailPage({
           {hasQuickAnswerLocale(slug as QuickAnswerKey, "en") && (
             <QuickAnswer productKey={slug as QuickAnswerKey} locale="en" />
           )}
+
+          {/* Reassurance strip (2026-06-27): free-cancellation + instant-confirm
+              + fast WhatsApp reply, surfaced right at the booking action where
+              the best-converting rivals put it — the standalone free-cancel note
+              lower on the page was scrolled past by most mobile users. */}
+          <BookingReassurance className="mb-6" />
 
           {/* Inline booking — keep the customer ON the product page. The hero
               + mobile-sticky "Reserve" CTAs scroll to this widget (same page,
