@@ -112,23 +112,23 @@ const TR: FleetStringsCommon = {
   whatsappPrefill:
     "Merhaba MerrySails — {label} ({capacity} kişiye kadar) ilgimi çekiyor. Müsaitlik paylaşır mısınız?",
   minNote: "Minimum iki saat. Kaptan ve mürettebat sizinle yola çıkar.",
-  sectionEyebrow: "Boğaz'da Sailing",
-  sectionTitle: "Boğaz yatınızı seçin — altı güverte, tek özel sailing",
+  sectionEyebrow: "Boğaz'da özel yat",
+  sectionTitle: "Boğaz yatınızı seçin — altı güverte, tek bir özel tur",
   sectionIntro:
-    "Her rezervasyon tüm yatı tutar — kaptan, mürettebat, yumuşak içecek ve atıştırmalık tabağı güverteyle birlikte yola çıkar. Grup büyüklüğünüze ve denizdeki saatlerinize göre eşleyin; üç saat ve üzeri sailingler otomatik olarak düz %10 düşer. Yemek, alkol servisi, DJ ve etkinlik stillemesi ayrı teklif olarak ilerler; böylece güverte fiyatı temiz kalır.",
+    "Her rezervasyon yatın tamamını ayırtır — kaptan, mürettebat, alkolsüz içecekler ve bir atıştırmalık tabağı güverte fiyatına dahildir. Grubunuzun büyüklüğüne ve suda geçirmek istediğiniz saate göre seçin; üç saat ve üzeri turlarda otomatik olarak %10 indirim uygulanır. Yemek, içki servisi, DJ ve etkinlik süslemesi ayrı bir teklifle ilerler; böylece güverte fiyatı sade kalır.",
   pricingTableHeading: "Bir bakışta Boğaz yat fiyatları — EUR, yat başı",
   pricingTableIntro:
-    "Altı yat, tüm süre seçenekleri, euro cinsinden. Kaptan, mürettebat, yakıt, yumuşak içecek ve atıştırmalık güverte fiyatına dahil. Üç saatlik tasarruf otomatiktir. Etkinlik sınıfı güverteler programa göre ayrı fiyatlandırılır.",
+    "Altı yat, tüm süre seçenekleri, euro cinsinden. Kaptan, mürettebat, yakıt, alkolsüz içecek ve atıştırmalık güverte fiyatına dahildir. Üç saatlik indirim otomatik uygulanır. Etkinlik sınıfı yatlar programa göre ayrıca fiyatlandırılır.",
   fleetColumn: "Yat sınıfı",
   capacityColumn: "Maks. kişi",
   hourColumnByHour: { 2: "2 saat", 3: "3 saat", 4: "4 saat", 5: "5 saat", 6: "6 saat", 7: "7 saat", 8: "8 saat" },
   quoteLabel: "Teklif",
-  includedHeading: "Her sailingde",
+  includedHeading: "Her turda",
   includedItems: [
     "Tüm yat rezervasyonu — koltuk bazlı değil",
     "Tam lisanslı kaptan ve mürettebat",
     "Yakıt ve standart Boğaz rota ücretleri",
-    "Yumuşak içecek ve şişe su",
+    "Alkolsüz içecek ve şişe su",
     "Güverte için hafif atıştırmalık tabağı",
     "Bluetooth eşleşmeli tekne ses sistemi",
     "Can yelekleri ve standart güvenlik seti",
@@ -138,7 +138,7 @@ const TR: FleetStringsCommon = {
     "Tabak servis yemekler ve catering menüleri",
     "Şarap, bira, sert içecek, tam bar servisi",
     "DJ, canlı müzik, dans gösterisi",
-    "Evlilik teklifi stillemesi, çiçek, pasta",
+    "Evlilik teklifi süslemesi, çiçek, pasta",
     "Fotoğrafçı veya videograf",
     "Marina karşılama, otel transferi, otopark",
   ],
@@ -167,10 +167,10 @@ const DE: FleetStringsCommon = {
   whatsappPrefill:
     "Hallo MerrySails — die {label} (bis zu {capacity} Gäste) interessiert mich. Können Sie die Verfügbarkeit mitteilen?",
   minNote: "Mindestens zwei Stunden. Kapitän und Crew fahren mit.",
-  sectionEyebrow: "Sailing am Bosporus",
-  sectionTitle: "Wählen Sie Ihre Bosporus-Yacht — sechs Decks, ein privates Sailing",
+  sectionEyebrow: "Privatyacht am Bosporus",
+  sectionTitle: "Wählen Sie Ihre Bosporus-Yacht — sechs Decks, eine private Fahrt",
   sectionIntro:
-    "Jede Buchung sichert die ganze Yacht — Kapitän, Crew, Softdrinks und ein Snackbrett gehören zum Deck. Wählen Sie nach Gruppengröße und Stundenzahl; Sailings ab drei Stunden ziehen automatisch flache zehn Prozent ab. Essen, Bar-Service, DJ und Event-Styling laufen über ein separates Angebot, damit der Deckpreis sauber bleibt.",
+    "Jede Buchung sichert die ganze Yacht — Kapitän, Crew, Softdrinks und ein Snackbrett sind im Deckpreis enthalten. Wählen Sie nach Gruppengröße und gewünschter Stundenzahl; Fahrten ab drei Stunden erhalten automatisch pauschal zehn Prozent Rabatt. Essen, Getränkeservice, DJ und Event-Styling laufen über ein separates Angebot, damit der Deckpreis sauber bleibt.",
   pricingTableHeading: "Bosporus-Yachtpreise auf einen Blick — EUR, pro Yacht",
   pricingTableIntro:
     "Alle sechs Yachten, alle Stundenstufen, in Euro. Kapitän, Crew, Treibstoff, Softdrinks und Snacks sind im Deckpreis enthalten. Die Drei-Stunden-Ersparnis ist automatisch. Event-Decks werden pro Programm separat angeboten.",
@@ -178,7 +178,7 @@ const DE: FleetStringsCommon = {
   capacityColumn: "Bis zu",
   hourColumnByHour: { 2: "2 Std.", 3: "3 Std.", 4: "4 Std.", 5: "5 Std.", 6: "6 Std.", 7: "7 Std.", 8: "8 Std." },
   quoteLabel: "Auf Anfrage",
-  includedHeading: "In jedem Sailing",
+  includedHeading: "Bei jeder Fahrt",
   includedItems: [
     "Ganzes Schiff gebucht — nie pro Platz",
     "Kapitän und Crew, voll lizenziert",
@@ -222,10 +222,10 @@ const FR: FleetStringsCommon = {
   whatsappPrefill:
     "Bonjour MerrySails — le {label} (jusqu'à {capacity} invités) m'intéresse. Pourriez-vous m'indiquer les disponibilités ?",
   minNote: "Deux heures minimum. Capitaine et équipage naviguent avec vous.",
-  sectionEyebrow: "Voile sur le Bosphore",
-  sectionTitle: "Choisissez votre yacht du Bosphore — six ponts, une voile privée",
+  sectionEyebrow: "Croisière sur le Bosphore",
+  sectionTitle: "Choisissez votre yacht du Bosphore — six ponts, une croisière privée",
   sectionIntro:
-    "Chaque réservation tient le yacht entier — capitaine, équipage, boissons sans alcool et un plateau d'amuse-bouches accompagnent le pont. Calez sur la taille du groupe et le nombre d'heures voulu sur l'eau ; les voiles de trois heures ou plus retirent dix pour cent automatiquement. Restauration, service bar, DJ et stylisme événementiel passent par un devis séparé pour garder le prix du pont net.",
+    "Chaque réservation privatise le yacht entier — capitaine, équipage, boissons sans alcool et un plateau d'amuse-bouches sont compris dans le prix du pont. Choisissez selon la taille de votre groupe et le nombre d'heures souhaité sur l'eau ; les croisières de trois heures ou plus bénéficient automatiquement de dix pour cent de remise. Restauration, service de boissons, DJ et décoration d'événement font l'objet d'un devis séparé, afin que le prix du pont reste clair.",
   pricingTableHeading: "Tarifs yacht Bosphore d'un coup d'œil — EUR, par yacht",
   pricingTableIntro:
     "Les six yachts, tous les paliers d'heures, en euros. Capitaine, équipage, carburant, boissons sans alcool et collations sont compris dans le prix du pont. L'économie sur trois heures est automatique. Les ponts de classe événement sont calés sur le programme et chiffrés séparément.",
@@ -233,7 +233,7 @@ const FR: FleetStringsCommon = {
   capacityColumn: "Jusqu'à",
   hourColumnByHour: { 2: "2h", 3: "3h", 4: "4h", 5: "5h", 6: "6h", 7: "7h", 8: "8h" },
   quoteLabel: "Sur devis",
-  includedHeading: "Sur chaque voile",
+  includedHeading: "Sur chaque croisière",
   includedItems: [
     "Yacht entier réservé — jamais à la place",
     "Capitaine et équipage, pleinement agréés",
@@ -248,7 +248,7 @@ const FR: FleetStringsCommon = {
     "Dîners à l'assiette et menus catering",
     "Vin, bière, spiritueux, service bar complet",
     "DJ, musique live, numéro de danse",
-    "Stylisme demande en fiançailles, fleurs, gâteau",
+    "Décoration de demande en mariage, fleurs, gâteau",
     "Photographe ou vidéaste",
     "Accueil marina, transfert hôtel, parking",
   ],
@@ -277,10 +277,10 @@ const NL: FleetStringsCommon = {
   whatsappPrefill:
     "Hallo MerrySails — de {label} (tot {capacity} gasten) heeft mijn interesse. Kunt u de beschikbaarheid delen?",
   minNote: "Minimaal twee uur. Kapitein en bemanning varen mee.",
-  sectionEyebrow: "Zeilen op de Bosporus",
-  sectionTitle: "Kies uw Bosporus-jacht — zes dekken, één privé zeilingang",
+  sectionEyebrow: "Varen op de Bosporus",
+  sectionTitle: "Kies uw Bosporus-jacht — zes dekken, één privévaart",
   sectionIntro:
-    "Elke boeking houdt het hele jacht — kapitein, bemanning, frisdrank en een snackbord horen bij het dek. Stem af op groepsgrootte en het aantal uren dat u op het water wilt; vaarten van drie uur of langer trekken automatisch een vlakke tien procent af. Eten, barservice, DJ en eventstyling lopen via een aparte offerte, zodat de dekprijs schoon blijft.",
+    "Elke boeking reserveert het hele jacht — kapitein, bemanning, frisdrank en een snackbord zijn bij de dekprijs inbegrepen. Stem af op de grootte van uw groep en het aantal uren dat u op het water wilt; vaarten van drie uur of langer krijgen automatisch een vaste korting van tien procent. Eten, drankservice, DJ en eventstyling lopen via een aparte offerte, zodat de dekprijs zuiver blijft.",
   pricingTableHeading: "Bosporus-jachtprijzen in één oogopslag — EUR, per jacht",
   pricingTableIntro:
     "Alle zes jachten, alle uurklassen, in euro's. Kapitein, bemanning, brandstof, frisdrank en snacks zitten in de dekprijs. De drie-uur korting is automatisch. Event-dekken worden per programma apart geprijsd.",

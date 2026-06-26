@@ -145,7 +145,7 @@ const TR: FleetDetailStrings = {
   breadcrumbCharter: "Yat Kiralama İstanbul",
   pricingHeading: "Bu yat için fiyatlandırma — 2 ila 8 saat",
   pricingIntro:
-    "Yat başına euro fiyatlandırma. Kaptan, mürettebat, yakıt, yumuşak içecek ve atıştırmalık dahildir. %10 indirim 3 saatten itibaren otomatik uygulanır. Yemek, alkol, DJ ve etkinlik stillemesi ayrı teklif olarak fiyatlandırılır.",
+    "Yat başına euro fiyatlandırma. Kaptan, mürettebat, yakıt, alkolsüz içecek ve atıştırmalık dahildir. %10 indirim 3 saatten itibaren otomatik uygulanır. Yemek, alkol, DJ ve etkinlik süslemesi ayrı teklif olarak fiyatlandırılır.",
   durationColumn: "Süre",
   totalColumn: "Toplam (EUR)",
   savingsColumn: "İndirim",
@@ -157,7 +157,7 @@ const TR: FleetDetailStrings = {
     "Yatın tamamı özel kiralama (kişi başı değil)",
     "Lisanslı kaptan ve mürettebat",
     "Yakıt ve standart rota ücretleri",
-    "Yumuşak içecek ve şişe su",
+    "Alkolsüz içecek ve şişe su",
     "Tekne içi hafif atıştırmalık",
     "Bluetooth ses sistemi",
     "Can yelekleri ve güvenlik ekipmanları",
@@ -212,11 +212,11 @@ const TR: FleetDetailStrings = {
     },
     {
       q: "Güverte fiyatına neler dahil?",
-      a: "Kaptan ve mürettebat, yakıt ve standart rota ücretleri, yumuşak içecek ve şişe su, hafif atıştırmalık, Bluetooth ses sistemi ve eksiksiz güvenlik ekipmanı. Rota, müzik ve zamanlama mürettebattadır; siz grupla ilgilenirsiniz.",
+      a: "Kaptan ve mürettebat, yakıt ve standart rota ücretleri, alkolsüz içecek ve şişe su, hafif atıştırmalık, Bluetooth ses sistemi ve eksiksiz güvenlik ekipmanı. Rota, müzik ve zamanlama mürettebattadır; siz grupla ilgilenirsiniz.",
     },
     {
       q: "Kendi yiyecek ve içeceğimizi getirebilir miyiz?",
-      a: "Evet, misafirler kendi yiyeceklerini, alkollerini ve dekorasyonlarını getirebilir. Alternatif olarak catering menüleri, bar servisi, DJ, canlı müzik, evlilik teklifi stillemesi ve fotoğrafçı eklemelerimiz vardır — her biri brief'e göre ayrı fiyatlandırılır.",
+      a: "Evet, misafirler kendi yiyeceklerini, alkollerini ve dekorasyonlarını getirebilir. Alternatif olarak catering menüleri, bar servisi, DJ, canlı müzik, evlilik teklifi süslemesi ve fotoğrafçı eklemelerimiz vardır — her biri brief'e göre ayrı fiyatlandırılır.",
     },
     {
       q: "Kalkış nereden olur?",
@@ -224,7 +224,7 @@ const TR: FleetDetailStrings = {
     },
     {
       q: "Rezervasyonu nasıl onaylarım?",
-      a: "Tarih ve grup büyüklüğünü seçip rezervasyon talebini gönderin. Müsaitliği birkaç saat içinde onaylar, depozito alır ve sailing gününüzden önce buluşma detayları ile mürettebat iletişimini iletiriz.",
+      a: "Tarih ve grup büyüklüğünü seçip rezervasyon talebini gönderin. Müsaitliği birkaç saat içinde onaylar, depozito alır ve tur gününüzden önce buluşma detayları ile mürettebat iletişimini iletiriz.",
     },
   ],
   reserveCta: "Bu yatı rezerve et",
@@ -236,7 +236,7 @@ const TR: FleetDetailStrings = {
   duration: "saat",
   fromPrice: "2 saatten",
   twoHourMin: "Minimum kiralama: 2 saat.",
-  taxIncluded: "Fiyatlara vergi dahildir. Kaptan, mürettebat, yakıt, yumuşak içecek ve atıştırmalık dahildir. Yemek, alkol, DJ ve etkinlik ekstraları talep üzerine fiyatlandırılır.",
+  taxIncluded: "Fiyatlara vergi dahildir. Kaptan, mürettebat, yakıt, alkolsüz içecek ve atıştırmalık dahildir. Yemek, alkol, DJ ve etkinlik ekstraları talep üzerine fiyatlandırılır.",
   campaignLine: "Rezervasyon için hazır mısınız?",
   whatsappPrefill:
     "Merhaba MerrySails — {label} (kapasite {capacity}) rezerve etmek istiyorum. Müsaitliği ve sonraki adımları paylaşır mısınız?",
@@ -326,7 +326,7 @@ const DE: FleetDetailStrings = {
     },
     {
       q: "Wie bestätige ich die Buchung?",
-      a: "Datum und Gruppengröße wählen, dann die Buchungsanfrage senden. Wir bestätigen die Verfügbarkeit innerhalb weniger Stunden, nehmen eine Anzahlung und senden Treffpunkt und Crew-Kontakt vor Ihrem Sailing-Tag.",
+      a: "Datum und Gruppengröße wählen, dann die Buchungsanfrage senden. Wir bestätigen die Verfügbarkeit innerhalb weniger Stunden, nehmen eine Anzahlung und senden Treffpunkt und Crew-Kontakt vor dem Tag Ihrer Fahrt.",
     },
   ],
   reserveCta: "Diese Yacht reservieren",
@@ -371,14 +371,14 @@ const FR: FleetDetailStrings = {
     "Menus complets et catering",
     "Vin, bière, spiritueux, service bar",
     "DJ, musique live, numéro de danse",
-    "Stylisme demande en fiançailles, fleurs, gâteau",
+    "Stylisme demande en mariage, fleurs, gâteau",
     "Photographe ou vidéaste",
     "Accueil marina, transfert hôtel, parking",
   ],
   bestForHeading: "Pour qui ce yacht est conçu",
   bestForByTier: {
     boutique: [
-      "Demandes en fiançailles sur le Bosphore",
+      "Demandes en mariage sur le Bosphore",
       "Anniversaires de mariage et soirées en duo",
       "Petites fêtes d'anniversaire (4–12 invités)",
       "Petits cercles d'amis pour un après-midi privé",
@@ -420,7 +420,7 @@ const FR: FleetDetailStrings = {
     },
     {
       q: "Pouvons-nous apporter notre nourriture et nos boissons ?",
-      a: "Oui, les invités peuvent apporter leur propre nourriture, alcool et décoration. Vous pouvez aussi ajouter restauration, service bar, DJ, musique live, stylisme demande en fiançailles et photographe en options chiffrées séparément.",
+      a: "Oui, les invités peuvent apporter leur propre nourriture, alcool et décoration. Vous pouvez aussi ajouter restauration, service bar, DJ, musique live, stylisme demande en mariage et photographe en options chiffrées séparément.",
     },
     {
       q: "D'où part la location ?",

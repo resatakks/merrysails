@@ -171,7 +171,7 @@ const CHARTER_FLEET: CharterFleetItem[] = [
         label: "Yacht Boutique · 12 Invités",
         tagline: "Pont privé intime pour couples et petits groupes",
         description:
-          "Yacht privé boutique compact pour 12 invités maximum. Conçu pour les demandes en fiançailles, anniversaires de mariage et petits cercles d'amis qui veulent vivre le Bosphore en toute intimité. À partir de €220 pour 2 heures, avec 10 % de remise automatique dès 3 heures.",
+          "Yacht privé boutique compact pour 12 invités maximum. Conçu pour les demandes en mariage, anniversaires de mariage et petits cercles d'amis qui veulent vivre le Bosphore en toute intimité. À partir de €220 pour 2 heures, avec 10 % de remise automatique dès 3 heures.",
       },
       nl: {
         label: "Boutique Jacht · 12 Gasten",
