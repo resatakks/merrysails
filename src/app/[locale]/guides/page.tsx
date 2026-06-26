@@ -7,6 +7,7 @@ import { ACTIVE_LOCALES, isActiveLocale, type SiteLocale } from "@/i18n/config";
 import { buildHreflang } from "@/lib/hreflang";
 import { guides } from "@/data/guides";
 import { cleanContentText } from "@/lib/content-text";
+import { localeGuideHref } from "@/lib/locale-link";
 
 export const revalidate = 3600;
 
@@ -231,7 +232,7 @@ export default async function LocaleGuidesPage({
               {guides.map((guide) => (
                 <Link
                   key={guide.slug}
-                  href={`/guides/${guide.slug}`}
+                  href={localeGuideHref(locale as SiteLocale, guide.slug)}
                   className="group block bg-white rounded-2xl p-5 shadow-sm border border-[var(--line)] hover:border-[var(--brand-primary)] transition-colors"
                 >
                   <h3 className="text-base font-semibold mb-2 group-hover:text-[var(--brand-primary)] line-clamp-2">

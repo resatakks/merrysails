@@ -335,6 +335,9 @@ export function GET() {
     { url: `${SITE_URL}/best-bosphorus-cruise-istanbul-2026`, changefreq: "monthly", priority: "0.88", lastmod: contentLastmod, hreflang: bestCruiseListicleHreflang },
     { url: `${SITE_URL}/tr/best-bosphorus-cruise-istanbul-2026`, changefreq: "monthly", priority: "0.85", lastmod: contentLastmod, hreflang: bestCruiseListicleHreflang },
     { url: `${SITE_URL}/istanbul-cruise-faq`, changefreq: "monthly", priority: "0.80", lastmod: contentLastmod },
+    // Price-index link-magnet page (2026-06-26) — EN-root only, no hreflang
+    // (slug intentionally not in LOCALIZED_ROUTES; do NOT localize per strict rule).
+    { url: `${SITE_URL}/bosphorus-cruise-prices-istanbul-2026`, changefreq: "monthly", priority: "0.8", lastmod: contentLastmod },
     { url: `${SITE_URL}/about`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/about") },
     { url: `${SITE_URL}/contact`, changefreq: "monthly", priority: "0.6", lastmod: contentLastmod, hreflang: hreflangXml("/contact") },
     { url: `${SITE_URL}/faq`, changefreq: "monthly", priority: "0.5", lastmod: contentLastmod, hreflang: hreflangXml("/faq") },

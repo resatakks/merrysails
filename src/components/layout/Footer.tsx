@@ -190,6 +190,10 @@ const PLAN_HREFS = [
   "/merrysails-vs-bosphorustour",
   "/merrysails-vs-viator",
   "/pricing",
+  // EN-root price-index link-magnet page (2026-06-26). Not in
+  // FOOTER_LOCALIZED_ROUTES, so localizeHref() falls back to the EN root for
+  // every locale (the page is EN-only by the strict locale rule).
+  "/bosphorus-cruise-prices-istanbul-2026",
   // Preserved from the removed homepage CommercialIntentSection — the price
   // guide was the only one of its 8 surfaced links not already in the footer.
   "/blog/bosphorus-cruise-prices-2026",
@@ -199,13 +203,13 @@ const PLAN_HREFS = [
   "/bosphorus-cruise-from-beyoglu",
 ];
 const PLAN_LABELS: Record<NavLocale, string[]> = {
-  en: ["Compare All Cruises", "Galataport Shore Excursion", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Pricing", "Bosphorus Cruise Prices 2026", "Bosphorus Cruise FAQ", "Cruise from Sultanahmet", "Cruise from Taksim", "Cruise from Beyoğlu"],
-  tr: ["Tüm Turları Karşılaştır", "Galataport Liman Turu", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Fiyatlar", "Boğaz Turu Fiyatları 2026", "Boğaz Turu SSS", "Sultanahmet'ten Tur", "Taksim'den Tur", "Beyoğlu'ndan Tur"],
-  de: ["Alle Touren vergleichen", "Galataport Landausflug", "MerrySails vs. Bosphorustour", "MerrySails vs. Viator", "Preise", "Bosporus-Fahrt Preise 2026", "Bosporus-Kreuzfahrt FAQ", "Fahrt ab Sultanahmet", "Fahrt ab Taksim", "Fahrt ab Beyoğlu"],
-  fr: ["Comparer les croisières", "Excursion Galataport", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Tarifs", "Prix croisière Bosphore 2026", "FAQ croisière Bosphore", "Croisière depuis Sultanahmet", "Croisière depuis Taksim", "Croisière depuis Beyoğlu"],
-  nl: ["Vergelijk alle cruises", "Galataport Wal-excursie", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Prijzen", "Bosporus Cruise Prijzen 2026", "Bosporus Cruise FAQ", "Cruise vanaf Sultanahmet", "Cruise vanaf Taksim", "Cruise vanaf Beyoğlu"],
-  ru: ["Сравнить все круизы", "Экскурсия из Галатапорта", "MerrySails и Bosphorustour", "MerrySails и Viator", "Цены", "Цены на круизы по Босфору 2026", "FAQ по круизам", "Круиз из Султанахмета", "Круиз из Таксима", "Круиз из Бейоглу"],
-  zh: ["比较所有游船", "加拉塔港岸上游", "MerrySails 与 Bosphorustour", "MerrySails 与 Viator", "价格", "2026 博斯普鲁斯游船价格", "博斯普鲁斯游船常见问题", "苏丹艾哈迈德出发", "塔克西姆出发", "贝伊奥卢出发"],
+  en: ["Compare All Cruises", "Galataport Shore Excursion", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Pricing", "Bosphorus Cruise Price Index 2026", "Bosphorus Cruise Prices 2026", "Bosphorus Cruise FAQ", "Cruise from Sultanahmet", "Cruise from Taksim", "Cruise from Beyoğlu"],
+  tr: ["Tüm Turları Karşılaştır", "Galataport Liman Turu", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Fiyatlar", "Boğaz Turu Fiyat Endeksi 2026", "Boğaz Turu Fiyatları 2026", "Boğaz Turu SSS", "Sultanahmet'ten Tur", "Taksim'den Tur", "Beyoğlu'ndan Tur"],
+  de: ["Alle Touren vergleichen", "Galataport Landausflug", "MerrySails vs. Bosphorustour", "MerrySails vs. Viator", "Preise", "Bosporus-Preisindex 2026", "Bosporus-Fahrt Preise 2026", "Bosporus-Kreuzfahrt FAQ", "Fahrt ab Sultanahmet", "Fahrt ab Taksim", "Fahrt ab Beyoğlu"],
+  fr: ["Comparer les croisières", "Excursion Galataport", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Tarifs", "Indice des prix Bosphore 2026", "Prix croisière Bosphore 2026", "FAQ croisière Bosphore", "Croisière depuis Sultanahmet", "Croisière depuis Taksim", "Croisière depuis Beyoğlu"],
+  nl: ["Vergelijk alle cruises", "Galataport Wal-excursie", "MerrySails vs Bosphorustour", "MerrySails vs Viator", "Prijzen", "Bosporus Prijsindex 2026", "Bosporus Cruise Prijzen 2026", "Bosporus Cruise FAQ", "Cruise vanaf Sultanahmet", "Cruise vanaf Taksim", "Cruise vanaf Beyoğlu"],
+  ru: ["Сравнить все круизы", "Экскурсия из Галатапорта", "MerrySails и Bosphorustour", "MerrySails и Viator", "Цены", "Индекс цен на круизы 2026", "Цены на круизы по Босфору 2026", "FAQ по круизам", "Круиз из Султанахмета", "Круиз из Таксима", "Круиз из Бейоглу"],
+  zh: ["比较所有游船", "加拉塔港岸上游", "MerrySails 与 Bosphorustour", "MerrySails 与 Viator", "价格", "2026 博斯普鲁斯游船价格指数", "2026 博斯普鲁斯游船价格", "博斯普鲁斯游船常见问题", "苏丹艾哈迈德出发", "塔克西姆出发", "贝伊奥卢出发"],
 };
 
 const COMPANY_HREFS = [
