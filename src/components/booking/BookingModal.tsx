@@ -61,6 +61,10 @@ interface BookingDetails {
   availablePackages?: PackageType[];
   basePrice: number;
   priceMode?: PriceMode;
+  /** Whole-yacht charter (fleet path): forwarded to the server so it prices the
+   * hours-based per-group base from fleet.ts instead of a fixed tour package. */
+  fleetSlug?: string;
+  charterHours?: number;
   departurePoint?: string;
   tourImage?: string;
   rawDate?: Date | null;
@@ -432,6 +436,8 @@ export default function BookingModal({ booking, onClose }: Props) {
       customerEmail: email.trim(),
       customerPhone: phone.trim(),
       packageName: booking.selectedPackage?.name,
+      fleetSlug: booking.fleetSlug,
+      charterHours: booking.charterHours,
       addOns: booking.selectedAddOns.map((addon) => addon.name),
       additionalGuests: additionalGuestNames,
       privateTransferRequested,

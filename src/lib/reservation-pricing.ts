@@ -7,6 +7,7 @@ import {
   type PriceMode,
   type Tour,
 } from "@/data/tours";
+import { getCharterFleetItem, type CharterFleetSlug } from "@/data/fleet";
 import {
   applyGroupDiscount,
   type GroupDiscountResult,
@@ -114,6 +115,15 @@ interface ReservationPricingInput {
   /** 0-3 yaş — ücretsiz. Defaults to 0. */
   infants?: number;
   packageName?: string;
+  /**
+   * Whole-yacht charter (fleet path) only. When both are present the per-group
+   * base price is read authoritatively from fleet.ts priceByHours[charterHours]
+   * instead of a fixed tour package — the fleet UI submits these so an
+   * hours-based charter ("Boutique Yacht · 12 Guests — 5h") prices correctly
+   * server-side instead of failing package verification. Cruises omit them.
+   */
+  fleetSlug?: string;
+  charterHours?: number;
   addOns?: string[];
   /** ISO date string (yyyy-MM-dd) or Date object for weekday-discount resolution. */
   date?: string | Date | null;
@@ -244,6 +254,8 @@ export function buildReservationPricingSnapshot({
   children: childrenInput,
   infants: infantsInput,
   packageName,
+  fleetSlug,
+  charterHours,
   addOns = [],
   date,
   items,
@@ -263,8 +275,31 @@ export function buildReservationPricingSnapshot({
   }
 
   const safeGuests = normalizeGuests(guests);
-  const selectedPackage = pickPackage(tour, packageName);
-  const selectedPackageName = selectedPackage?.name;
+
+  // Whole-yacht charter (fleet path): the per-group base price is hours-based
+  // and lives in fleet.ts (priceByHours), not in the tour's fixed 2h packages.
+  // Resolve it authoritatively here so an hours charter prices correctly
+  // instead of throwing package verification on the "— Nh" package name.
+  const charterBoat =
+    fleetSlug && Number.isInteger(charterHours)
+      ? getCharterFleetItem(fleetSlug as CharterFleetSlug)
+      : null;
+  const charterBasePrice =
+    charterBoat?.bookable && charterHours != null
+      ? charterBoat.priceByHours?.[charterHours] ?? null
+      : null;
+  if (fleetSlug && charterBasePrice == null) {
+    throw new ReservationValidationError(
+      "The selected yacht or duration could not be verified. Please reopen the booking page and try again.",
+    );
+  }
+
+  const selectedPackage =
+    charterBasePrice != null ? undefined : pickPackage(tour, packageName);
+  const selectedPackageName =
+    charterBasePrice != null
+      ? packageName?.trim() || tour.nameEn
+      : selectedPackage?.name;
   const priceMode = tour.priceMode ?? "perPerson";
 
   // Child / infant breakdown. Only meaningful in per-person mode + single-
@@ -325,11 +360,17 @@ export function buildReservationPricingSnapshot({
   const availableAddOns = selectedPackage?.addOns ?? tour.addOns ?? [];
   const selectedAddOns = pickAddOns(availableAddOns, addOns);
 
-  const baseLabel = selectedPackage?.name ?? tour.nameEn;
+  const baseLabel =
+    charterBasePrice != null
+      ? selectedPackageName ?? tour.nameEn
+      : selectedPackage?.name ?? tour.nameEn;
   const weeklyDiscount = applyWeeklyDiscount(selectedPackage, date ?? null);
-  const baseUnitPrice = weeklyDiscount.eligible
-    ? weeklyDiscount.effectivePrice
-    : (selectedPackage?.price ?? tour.priceEur);
+  const baseUnitPrice =
+    charterBasePrice != null
+      ? charterBasePrice
+      : weeklyDiscount.eligible
+        ? weeklyDiscount.effectivePrice
+        : (selectedPackage?.price ?? tour.priceEur);
   const baseQuantity = priceMode === "perGroup" ? 1 : safeGuests;
   const baseUnitLabel = priceMode === "perGroup" ? "/group" : "/person";
 

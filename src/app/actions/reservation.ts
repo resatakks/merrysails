@@ -48,6 +48,9 @@ interface CreateReservationInput {
   customerPhone: string;
   customerCountry?: string;
   packageName?: string;
+  /** Whole-yacht charter (fleet path): priced server-side from fleet.ts. */
+  fleetSlug?: string;
+  charterHours?: number;
   addOns?: string[];
   additionalGuests?: string[];
   privateTransferRequested?: boolean;
@@ -305,6 +308,8 @@ export async function createReservation(input: CreateReservationInput) {
       children: input.children,
       infants: input.infants,
       packageName: input.packageName,
+      fleetSlug: input.fleetSlug,
+      charterHours: input.charterHours,
       addOns: input.addOns,
       date: reservationDate,
       items: mixedItems,

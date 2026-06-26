@@ -138,6 +138,8 @@ export default function YachtReservationFlow({
     selectedAddOns: [],
     basePrice: total,
     priceMode: "perGroup" as const,
+    fleetSlug: boat.slug,
+    charterHours: hours,
     departurePoint: "Bosphorus marina (confirmed after booking)",
     tourImage: boat.coverImage,
   };
