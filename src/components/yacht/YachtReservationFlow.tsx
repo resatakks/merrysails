@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Minus, Plus } from "lucide-react";
+import { ArrowRight, Check, Minus, Plus } from "lucide-react";
 import BookingModal from "@/components/booking/BookingModal";
 import { PlannerDateCalendar } from "@/components/booking/PlannerDateCalendar";
 import type { CharterFleetItem } from "@/data/fleet";
@@ -327,6 +327,22 @@ export default function YachtReservationFlow({
             Continue booking
             <ArrowRight className="h-5 w-5" />
           </button>
+          {/* 2026-06-26 (competitor research): a 3-line reassurance strip at the
+              booking CTA is TripAdvisor's proven decision-moment pattern and the
+              single highest-intent conversion lever — free cancellation kills
+              anxiety, instant confirmation beats the OTA "check availability"
+              wait, and "no broker markup" is our direct-operator edge. */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] font-medium text-[var(--text-muted)]">
+            <span className="inline-flex items-center gap-1">
+              <Check className="h-3.5 w-3.5 text-emerald-600" /> Free cancellation up to 48h
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <Check className="h-3.5 w-3.5 text-emerald-600" /> Instant confirmation
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <Check className="h-3.5 w-3.5 text-emerald-600" /> Direct operator — no broker markup
+            </span>
+          </div>
           <p className="text-center text-[11px] text-[var(--text-muted)]">
             Captain and crew, fuel, soft drinks and snacks included. Alcohol, catering, DJ, and
             event styling quoted separately on request.
