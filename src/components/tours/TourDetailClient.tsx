@@ -78,6 +78,7 @@ type UiLabels = {
   selected: string;
   selectedScope: string;
   addOnServices: string;
+  addOnServicesNote: string;
   availableOnRequest: string;
   routeDeparture: (h: string) => string;
   departureLabel: string;
@@ -131,6 +132,8 @@ const UI_LABELS: Record<DetailLocale, UiLabels> = {
     selected: "Selected",
     selectedScope: "Selected scope",
     addOnServices: "Add-On Services",
+    addOnServicesNote:
+      "The meal is priced per guest. Every other extra — birthday, decoration, confetti, laser show, belly dancer, breakfast, music, photographer, transfer and more — is arranged on request and quoted to your plan.",
     availableOnRequest: "Available on request",
     routeDeparture: (h) => `${h} Route & Departure`,
     departureLabel: "Departure",
@@ -182,6 +185,8 @@ const UI_LABELS: Record<DetailLocale, UiLabels> = {
     selected: "Seçildi",
     selectedScope: "Seçilen kapsam",
     addOnServices: "Ek Hizmetler",
+    addOnServicesNote:
+      "Yemek kişi başına ücretlendirilir. Doğum günü, dekorasyon, konfeti, lazer show, dansöz, kahvaltı, müzik, fotoğrafçı, transfer ve daha fazlası dahil diğer tüm ekstralar talebe göre ayarlanır ve planınıza göre fiyatlandırılır.",
     availableOnRequest: "Talep üzerine mevcut",
     routeDeparture: (h) => `${h} Güzergah ve Kalkış`,
     departureLabel: "Kalkış",
@@ -233,6 +238,8 @@ const UI_LABELS: Record<DetailLocale, UiLabels> = {
     selected: "Ausgewählt",
     selectedScope: "Ausgewählter Umfang",
     addOnServices: "Zusatzleistungen",
+    addOnServicesNote:
+      "Das Menü wird pro Gast berechnet. Alle weiteren Extras – Geburtstag, Dekoration, Konfetti, Lasershow, Bauchtänzerin, Frühstück, Musik, Fotograf, Transfer und mehr – werden auf Anfrage arrangiert und nach Ihrem Plan angeboten.",
     availableOnRequest: "Auf Anfrage verfügbar",
     routeDeparture: (h) => `${h} Route & Abfahrt`,
     departureLabel: "Abfahrt",
@@ -284,6 +291,8 @@ const UI_LABELS: Record<DetailLocale, UiLabels> = {
     selected: "Sélectionné",
     selectedScope: "Étendue sélectionnée",
     addOnServices: "Services supplémentaires",
+    addOnServicesNote:
+      "Le repas est facturé par personne. Tous les autres extras — anniversaire, décoration, confettis, spectacle laser, danseuse orientale, petit-déjeuner, musique, photographe, transfert et plus — sont organisés sur demande et chiffrés selon votre programme.",
     availableOnRequest: "Disponible sur demande",
     routeDeparture: (h) => `Itinéraire et départ ${h}`,
     departureLabel: "Départ",
@@ -335,6 +344,8 @@ const UI_LABELS: Record<DetailLocale, UiLabels> = {
     selected: "Geselecteerd",
     selectedScope: "Geselecteerd bereik",
     addOnServices: "Extra services",
+    addOnServicesNote:
+      "De maaltijd wordt per gast berekend. Alle andere extra's — verjaardag, decoratie, confetti, lasershow, buikdanseres, ontbijt, muziek, fotograaf, transfer en meer — worden op aanvraag geregeld en op maat geprijsd.",
     availableOnRequest: "Beschikbaar op aanvraag",
     routeDeparture: (h) => `${h} Route en vertrek`,
     departureLabel: "Vertrek",
@@ -386,6 +397,8 @@ const UI_LABELS: Record<DetailLocale, UiLabels> = {
     selected: "Выбрано",
     selectedScope: "Выбранный объём",
     addOnServices: "Дополнительные услуги",
+    addOnServicesNote:
+      "Питание оплачивается за каждого гостя. Все остальные дополнения — день рождения, оформление, конфетти, лазерное шоу, танцовщица, завтрак, музыка, фотограф, трансфер и другое — организуются по запросу и рассчитываются под ваш план.",
     availableOnRequest: "Доступно по запросу",
     routeDeparture: (h) => `Маршрут и отправление — ${h}`,
     departureLabel: "Отправление",
@@ -1041,7 +1054,8 @@ export default function TourDetailClient({
                   {/* Add-ons */}
                   {availableAddOns.length > 0 && (
                     <div className="bg-white rounded-2xl p-6 md:p-8">
-                      <h2 className="text-xl font-bold mb-4">{L.addOnServices}</h2>
+                      <h2 className="text-xl font-bold mb-1.5">{L.addOnServices}</h2>
+                      <p className="text-sm text-[var(--text-muted)] mb-4">{L.addOnServicesNote}</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {availableAddOns.map((addon) => {
                           const isSelected = selectedAddOns.some((a) => a.name === addon.name);

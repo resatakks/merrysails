@@ -112,16 +112,19 @@ export interface Tour {
 // Premium/VIP tiers any more, so the three historical arrays share one list.
 const yachtSharedAddOns: AddOn[] = [
   { name: "4-Course Meal (Fish / Chicken / Meat / Vegetarian / Vegan)", price: "EUR 50 / person" },
+  { name: "Breakfast Menu", price: "On request", requestOnly: true },
   { name: "Unlimited Drinks Package (Alcohol / Wine)", price: "On request", requestOnly: true },
-  { name: "Professional Photographer", price: "On request", requestOnly: true },
+  { name: "Birthday Celebration (Cake & Setup)", price: "On request", requestOnly: true },
+  { name: "Confetti & Balloon Decoration", price: "On request", requestOnly: true },
+  { name: "Marriage Proposal / Table Decoration", price: "On request", requestOnly: true },
+  { name: "Laser Show", price: "On request", requestOnly: true },
+  { name: "Belly Dancer", price: "On request", requestOnly: true },
   { name: "DJ", price: "On request", requestOnly: true },
   { name: "Live Violinist", price: "On request", requestOnly: true },
-  { name: "Belly Dancer", price: "On request", requestOnly: true },
   { name: "Turkish Music Group", price: "On request", requestOnly: true },
-  { name: "Birthday Cake", price: "On request", requestOnly: true },
-  { name: "Marriage Proposal / Table Decoration", price: "On request", requestOnly: true },
-  { name: "VIP Pickup & Drop-off", price: "On request", requestOnly: true },
-  { name: "Extra Hour", price: "On request", requestOnly: true },
+  { name: "Professional Photographer", price: "On request", requestOnly: true },
+  { name: "Hotel Pickup & Drop-off", price: "On request", requestOnly: true },
+  { name: "Extra Hour on the Water", price: "On request", requestOnly: true },
 ];
 
 // Historical tier aliases — all yacht packages now share one add-on list.

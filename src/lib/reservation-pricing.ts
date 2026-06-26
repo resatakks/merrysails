@@ -207,11 +207,11 @@ function parseAddOnUnitPrice(addOn: AddOn): number {
 function isPerPersonAddOn(addOn: AddOn): boolean {
   const haystack = `${addOn.name} ${addOn.price}`.toLowerCase();
 
-  return (
-    haystack.includes("/person") ||
-    haystack.includes("/guest") ||
-    haystack.includes("per person")
-  );
+  // Match "/person", "/ person", "per person", "/guest", "per guest". The brand
+  // writes "EUR 50 / person" (spaces around the slash), so the old bare
+  // `.includes("/person")` silently failed and per-person add-ons (the meal)
+  // were billed flat instead of × guests (2026-06-26 fix).
+  return /(?:\/\s*|per\s+)(?:person|guest)/.test(haystack);
 }
 
 function pickAddOns(availableAddOns: AddOn[], requestedAddOns: string[]): AddOn[] {

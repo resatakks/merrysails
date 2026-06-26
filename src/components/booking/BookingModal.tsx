@@ -226,8 +226,10 @@ export default function BookingModal({ booking, onClose }: Props) {
     const numMatch = priceStr.match(/(\d+)/);
     if (!numMatch) return sum;
     const value = parseInt(numMatch[1], 10);
-    // "/person" add-ons are multiplied by guest count
-    if (priceStr.includes("/person") || priceStr.includes("/guest")) {
+    // Per-person add-ons (e.g. "EUR 50 / person") are multiplied by guests.
+    // The brand writes the slash with spaces, so a bare "/person" check missed
+    // it and billed the meal flat — match "/ person" and "per person" too.
+    if (/(?:\/\s*|per\s+)(?:person|guest)/i.test(priceStr)) {
       return sum + value * booking.guests;
     }
     return sum + value;
