@@ -13,7 +13,7 @@ import { inferCruiseTypeFromSlug } from "@/components/blog/infer-cruise-type";
 import { isActiveLocale, ACTIVE_LOCALES, type SiteLocale } from "@/i18n/config";
 import { SITE_URL } from "@/lib/constants";
 import { cleanContentText } from "@/lib/content-text";
-import { localeHref } from "@/lib/locale-link";
+import { localeHref, localeBlogHref } from "@/lib/locale-link";
 
 const DATE_LOCALE_MAP: Record<string, string> = {
   tr: "tr-TR",
@@ -447,7 +447,7 @@ export default async function LocaleBlogPostPage({
                 {relatedLocalePosts.map((rp) => (
                   <Link
                     key={rp.slug}
-                    href={`/${locale}/blog/${rp.slug}`}
+                    href={localeBlogHref(locale as SiteLocale, rp.slug)}
                     className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">

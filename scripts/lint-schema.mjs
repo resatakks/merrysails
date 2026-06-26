@@ -956,6 +956,55 @@ function crossFileChecks(files) {
       }
     }
   }
+
+  // S15b (2026-06-26): DYNAMIC locale blog/guide links. S15 above only catches a
+  // LITERAL `/tr/blog/foo` string. The 793-internal-404 wave was actually emitted
+  // by TEMPLATE-LITERAL builders in the locale list pages —
+  //   `/${locale}/blog/${post.slug}`   (blog: locale-disjoint, 404 when the post
+  //                                      has no translation for that locale)
+  //   `/${locale}/guides/${guide.slug}` (guides: ALWAYS 404 — there is no
+  //                                      /[locale]/guides/[slug] route at all)
+  // — which S15's hardcoded-segment regex can never see. This rule fails the
+  // build on the raw template form so the fix can't silently regress. The blank
+  // is closed by the safe emitters localeBlogHref()/localeGuideHref() in
+  // src/lib/locale-link.ts (those return the EN root URL when no localized
+  // route/translation exists), so route every locale blog/guide link through
+  // them instead of hand-building the path.
+  //
+  // Allowlist: the helper definitions themselves (locale-link.ts) and the
+  // server-side sitemap, which already gates each locale URL by
+  // getAllLocalePostsForLocale(locale) so it only emits URLs that exist.
+  const DYNAMIC_LOCALE_LINK_ALLOWLIST = [
+    "src/lib/locale-link.ts",
+    "src/app/sitemap.xml/route.ts",
+  ];
+  // Match an href/path template literal of the shape `/${<localeVar>}/blog/…`
+  // or `/${<localeVar>}/guides/…`. The locale token is any identifier or member
+  // expression (locale, siteLocale, params.locale) wrapped in `${ }`.
+  const DYNAMIC_LOCALE_LINK_RE =
+    /`\/\$\{[^}]*\b(?:locale|lang)\b[^}]*\}\/(blog|guides)\/\$\{/gi;
+  for (const f of files) {
+    const unix = f.replace(/\\/g, "/");
+    if (!/\/src\/(app|components|content)\//.test(unix)) continue;
+    if (DYNAMIC_LOCALE_LINK_ALLOWLIST.some((a) => unix.endsWith(a))) continue;
+    const src = fs.readFileSync(f, "utf8");
+    let dm;
+    while ((dm = DYNAMIC_LOCALE_LINK_RE.exec(src)) !== null) {
+      const section = dm[1];
+      const line = src.slice(0, dm.index).split("\n").length;
+      const helper = section === "guides" ? "localeGuideHref" : "localeBlogHref";
+      const why =
+        section === "guides"
+          ? "there is NO /[locale]/guides/[slug] route, so this is ALWAYS a 404"
+          : "blog content is locale-disjoint, so this 404s for any locale without a translated post";
+      errors.push({
+        file: rel(f),
+        line,
+        rule: "dynamic-locale-link-404",
+        msg: `Hand-built \`/\${locale}/${section}/\${slug}\` link — ${why}. Use ${helper}(locale, slug) from "@/lib/locale-link", which falls back to the EN root URL when the localized ${section} route/translation is absent.`,
+      });
+    }
+  }
 }
 
 // ─────────────────────────────────────────────────────────────────────────

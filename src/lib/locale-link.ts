@@ -4,6 +4,7 @@ import {
   RU_ENABLED_ROUTES,
   ZH_ENABLED_ROUTES,
 } from "@/i18n/localized-routes";
+import { getLocalePostBySlug } from "@/data/blog/locale-posts";
 
 // Staged locales only ship a subset of LOCALIZED_ROUTES (see localized-routes.ts).
 // Linking them to a route they don't have yet lands on a notFound() 404 — the
@@ -47,4 +48,33 @@ export function localeHref(locale: SiteLocale, path: string): string {
     return `/${locale}${routeOnly}${suffix}`;
   }
   return `/${locale}`;
+}
+
+/**
+ * Locale-aware href for a BLOG post. Blog content is locale-disjoint: a post
+ * exists at `/<locale>/blog/<slug>` ONLY when a translated post for that locale
+ * is registered (src/data/blog/posts/<locale>-product-posts.ts → locale-posts.ts,
+ * which is also what the [locale]/blog/[slug] route + generateStaticParams use).
+ * When no translation exists we fall back to the EN post at the root `/blog/<slug>`
+ * instead of emitting a `/<locale>/blog/<slug>` link that 404s (the exact defect
+ * Screaming Frog/SEMrush flagged 2026-06-23 — ~790 internal 404s from locale-
+ * prefixed links to EN-only blog/guide slugs).
+ */
+export function localeBlogHref(locale: SiteLocale, slug: string): string {
+  if (locale !== "en" && getLocalePostBySlug(locale, slug)) {
+    return `/${locale}/blog/${slug}`;
+  }
+  return `/blog/${slug}`;
+}
+
+/**
+ * Locale-aware href for a GUIDE. There is NO `/[locale]/guides/[slug]` route —
+ * only the EN `/guides/[slug]` route + a localized `/[locale]/guides` index that
+ * links out to the EN guides. So EVERY guide deep-link must point at the EN root
+ * `/guides/<slug>`; a `/<locale>/guides/<slug>` link is always a 404. Keep this
+ * the single emitter so a future "localize this CTA" edit can't reintroduce the
+ * 404 wave.
+ */
+export function localeGuideHref(_locale: SiteLocale, slug: string): string {
+  return `/guides/${slug}`;
 }

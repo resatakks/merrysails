@@ -8,6 +8,7 @@ import { buildHreflang } from "@/lib/hreflang";
 import { blogPosts } from "@/data/blog";
 import { getAllLocalePostsForLocale } from "@/data/blog/locale-posts";
 import { cleanContentText } from "@/lib/content-text";
+import { localeBlogHref } from "@/lib/locale-link";
 
 export const revalidate = 3600;
 
@@ -241,7 +242,7 @@ export default async function LocaleBlogPage({
                 {localePosts.map((post) => (
                   <li key={post.slug}>
                     <Link
-                      href={`/${locale}/blog/${post.slug}`}
+                      href={localeBlogHref(locale as SiteLocale, post.slug)}
                       className="group block bg-white rounded-xl p-4 shadow-sm border border-[var(--line)] hover:border-[var(--brand-primary)] transition-colors h-full"
                     >
                       <h3 className="text-sm font-semibold mb-2 group-hover:text-[var(--brand-primary)] line-clamp-2">
