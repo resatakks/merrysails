@@ -15,6 +15,13 @@ export interface Package {
 export interface AddOn {
   name: string;
   price: string;
+  /**
+   * Request-only extra (operator 2026-06-26): no fixed price. Selecting it adds
+   * the item to the booking note as a "please quote" request instead of charging
+   * it. Only priced add-ons (e.g. the 4-course meal) reach the pricing layer;
+   * request-only ones are skipped in reservation-pricing + BookingModal totals.
+   */
+  requestOnly?: boolean;
 }
 
 export interface ItineraryStep {
@@ -97,76 +104,29 @@ export interface Tour {
   i18n?: Partial<Record<TourLocale, TourI18nEntry>>;
 }
 
+// 2026-06-26 (operator): yacht add-ons simplified. ONLY the 4-course meal is
+// priced (€50/person — 2 guests = €100). Every other extra is sold as a
+// "request" with no fixed price: selecting it appends the item to the booking
+// note so we send a tailored quote (DJ, photographer, decoration etc. vary by
+// date/group). Per the canonical fleet model below there are no Essential/
+// Premium/VIP tiers any more, so the three historical arrays share one list.
 const yachtSharedAddOns: AddOn[] = [
-  { name: "Cocktail Menu", price: "EUR 25 / person" },
-  { name: "Finger Food Menu", price: "EUR 30 / person" },
-  { name: "Breakfast Menu", price: "EUR 30 / person" },
-  { name: "4 Course Meal (Fish, Chicken, Meat, Vegetarian, Vegan)", price: "EUR 35 / person" },
-  { name: "Unlimited Alcoholic Drinks", price: "EUR 50 / person" },
-  { name: "Unlimited Wine", price: "EUR 25 / person" },
-  { name: "Live Guide", price: "EUR 100" },
-  { name: "VIP Pickup & Drop Off", price: "EUR 150" },
-  { name: "Laser Show", price: "EUR 50" },
-  { name: "Belly Dancer", price: "EUR 180" },
-  { name: "Photographer", price: "EUR 190" },
-  { name: "DJ", price: "EUR 250" },
-  { name: "Go Go Dancer", price: "EUR 200" },
-  { name: "Violinist", price: "EUR 180" },
-  { name: "Turkish Traditional Music Group", price: "EUR 300" },
-  { name: "Birthday Cake (Small - 4/6 people)", price: "EUR 35" },
-  { name: "Birthday Cake (Medium - 8/10 people)", price: "EUR 45" },
-  { name: "Birthday Cake (Large - 12/16 people)", price: "EUR 60" },
-  { name: "Marriage Proposal Table Decoration", price: "EUR 50" },
-  { name: "Add 1 Hour Extra", price: "EUR 125" },
+  { name: "4-Course Meal (Fish / Chicken / Meat / Vegetarian / Vegan)", price: "EUR 50 / person" },
+  { name: "Unlimited Drinks Package (Alcohol / Wine)", price: "On request", requestOnly: true },
+  { name: "Professional Photographer", price: "On request", requestOnly: true },
+  { name: "DJ", price: "On request", requestOnly: true },
+  { name: "Live Violinist", price: "On request", requestOnly: true },
+  { name: "Belly Dancer", price: "On request", requestOnly: true },
+  { name: "Turkish Music Group", price: "On request", requestOnly: true },
+  { name: "Birthday Cake", price: "On request", requestOnly: true },
+  { name: "Marriage Proposal / Table Decoration", price: "On request", requestOnly: true },
+  { name: "VIP Pickup & Drop-off", price: "On request", requestOnly: true },
+  { name: "Extra Hour", price: "On request", requestOnly: true },
 ];
 
-const yachtPremiumAddOns: AddOn[] = [
-  { name: "Cocktail Menu", price: "EUR 25 / person" },
-  { name: "Finger Food Menu", price: "EUR 30 / person" },
-  { name: "Breakfast Menu", price: "EUR 30 / person" },
-  { name: "4 Course Meal (Fish, Chicken, Meat, Vegetarian, Vegan)", price: "EUR 35 / person" },
-  { name: "Unlimited Alcoholic Drinks", price: "EUR 50 / person" },
-  { name: "Unlimited Wine", price: "EUR 25 / person" },
-  { name: "Live Guide", price: "EUR 100" },
-  { name: "VIP Pickup & Drop Off", price: "EUR 150" },
-  { name: "Laser Show", price: "EUR 50" },
-  { name: "Belly Dancer", price: "EUR 180" },
-  { name: "Photographer", price: "EUR 190" },
-  { name: "DJ", price: "EUR 250" },
-  { name: "Go Go Dancer", price: "EUR 200" },
-  { name: "Violinist", price: "EUR 180" },
-  { name: "Turkish Traditional Music Group", price: "EUR 300" },
-  { name: "Birthday Cake (Small - 4/6 people)", price: "EUR 35" },
-  { name: "Birthday Cake (Medium - 8/10 people)", price: "EUR 45" },
-  { name: "Birthday Cake (Large - 12/16 people)", price: "EUR 60" },
-  { name: "Marriage Proposal Table Decoration", price: "EUR 50" },
-  { name: "Add 1 Hour Extra", price: "EUR 150" },
-];
-
-const yachtVipAddOns: AddOn[] = [
-  { name: "Breakfast Menu", price: "EUR 65 / person" },
-  { name: "Unlimited Alcoholic Drinks", price: "EUR 65 / person" },
-  { name: "Unlimited Wine", price: "EUR 65 / person" },
-  { name: "VIP Luxury Yacht Package Finger Food Menu (Per Person)", price: "EUR 95 / person" },
-  { name: "VIP Luxury Yacht Package Fish Menu (Per Person)", price: "EUR 95 / person" },
-  { name: "VIP Luxury Yacht Package Meat Menu (Per Person)", price: "EUR 95 / person" },
-  { name: "VIP Luxury Yacht Package Chicken Menu (Per Person)", price: "EUR 95 / person" },
-  { name: "VIP Luxury Yacht Package Snack Menu (Per Person)", price: "EUR 95 / person" },
-  { name: "Live Guide", price: "EUR 100" },
-  { name: "VIP Pickup & Drop Off", price: "EUR 150" },
-  { name: "Laser Show", price: "EUR 50" },
-  { name: "Belly Dancer", price: "EUR 190" },
-  { name: "Photographer", price: "EUR 190" },
-  { name: "DJ", price: "EUR 250" },
-  { name: "Go Go Dancer", price: "EUR 200" },
-  { name: "Violinist", price: "EUR 180" },
-  { name: "Turkish Traditional Music Group", price: "EUR 300" },
-  { name: "Birthday Cake (Small - 4/6 people)", price: "EUR 35" },
-  { name: "Birthday Cake (Medium - 8/10 people)", price: "EUR 45" },
-  { name: "Birthday Cake (Large - 12/16 people)", price: "EUR 60" },
-  { name: "Marriage Proposal Table Decoration", price: "EUR 75" },
-  { name: "Add 1 Hour Extra", price: "EUR 300" },
-];
+// Historical tier aliases — all yacht packages now share one add-on list.
+const yachtPremiumAddOns: AddOn[] = yachtSharedAddOns;
+const yachtVipAddOns: AddOn[] = yachtSharedAddOns;
 
 // CANONICAL per-vessel fleet (operator-confirmed 2026-06-19). The ONLY correct
 // private-yacht pricing model: 6 boats, NO Essential/Premium/VIP tiers.

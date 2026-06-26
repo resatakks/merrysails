@@ -219,6 +219,8 @@ export default function BookingModal({ booking, onClose }: Props) {
 
   // Parse add-on prices and sum them
   const addOnsTotal = booking.selectedAddOns.reduce((sum, addon) => {
+    // Request-only extras are quoted later — never added to the live total.
+    if (addon.requestOnly) return sum;
     const priceStr = addon.price;
     // Extract the first/lower numeric value from the price string
     const numMatch = priceStr.match(/(\d+)/);
@@ -385,8 +387,16 @@ export default function BookingModal({ booking, onClose }: Props) {
     setValidationMessage("");
     formSubmittedRef.current = true;
     setModalState("loading");
+    // Request-only add-ons (no fixed price) are folded into the note so ops can
+    // send a tailored quote — the customer "asks" for them by selecting them.
+    const requestedExtras = booking.selectedAddOns
+      .filter((addon) => addon.requestOnly)
+      .map((addon) => addon.name);
     const combinedNotes = [
       message.trim(),
+      requestedExtras.length > 0
+        ? `Requested extras (please quote): ${requestedExtras.join(", ")}`
+        : "",
       privateTransferRequested ? transferSummaryNote : "",
       additionalGuestNames.length > 0
         ? `${t.additionalGuestsNotePrefix}: ${additionalGuestNames.join(", ")}`

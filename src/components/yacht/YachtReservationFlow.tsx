@@ -30,6 +30,25 @@ const PLACEHOLDER_FEATURES = [
   "Safety equipment and life jackets",
 ];
 
+// Start-time picker (operator 2026-06-26): private charters choose their own
+// departure slot — hourly 09:00→23:00 plus a final late 23:30. Shared cruises
+// are intentionally NOT given this control (their departures are fixed —
+// sunset 19:00, dinner 20:30 — and never change).
+const START_TIMES = [
+  "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
+  "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "23:30",
+];
+
+// We set the start; the customer's chosen duration completes the window
+// (e.g. 14:00 + 3h → 17:00). Wraps past midnight for long late charters.
+function addHoursToTime(hhmm: string, hours: number): string {
+  const [h, m] = hhmm.split(":").map(Number);
+  const total = (h * 60 + m + hours * 60) % (24 * 60);
+  return `${String(Math.floor(total / 60)).padStart(2, "0")}:${String(
+    total % 60,
+  ).padStart(2, "0")}`;
+}
+
 function defaultDateString(): string {
   const d = new Date();
   d.setDate(d.getDate() + 2);
@@ -76,6 +95,9 @@ export default function YachtReservationFlow({
     : availableHours[0] ?? minHours;
 
   const [hours, setHours] = useState<number>(safeInitialHours);
+  // Default 18:00 = the previous hard-coded value, so visitors who don't touch
+  // the picker keep the exact prior behaviour.
+  const [startTime, setStartTime] = useState<string>("18:00");
   const initialDateStr = initialDate || defaultDateString();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(isoToDate(initialDateStr));
   const [guests, setGuests] = useState<number>(
@@ -85,6 +107,9 @@ export default function YachtReservationFlow({
 
   const date = selectedDate ? dateToIso(selectedDate) : "";
   const total = boat.priceByHours?.[hours] ?? 0;
+  const endTime = addHoursToTime(startTime, hours);
+  const endsNextDay =
+    Number(endTime.replace(":", "")) <= Number(startTime.replace(":", ""));
   const isDiscount = hours >= boat.discountFromHours;
   const regularTotal = (boat.hourlyEur ?? 0) * hours;
   const savings = isDiscount && boat.hourlyEur ? regularTotal - total : 0;
@@ -102,7 +127,7 @@ export default function YachtReservationFlow({
     tourName,
     tourSlug,
     date,
-    time: "18:00",
+    time: startTime,
     guests,
     selectedPackage: {
       name: packageName,
@@ -210,6 +235,29 @@ export default function YachtReservationFlow({
               value={selectedDate}
               onSelect={(d) => setSelectedDate(d)}
             />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-1.5">
+              Start time
+            </label>
+            <select
+              value={startTime}
+              onChange={(e) => setStartTime(e.target.value)}
+              aria-label="Charter start time"
+              className="w-full rounded-xl border border-[var(--line)] bg-white px-3 py-3 text-sm font-semibold text-[var(--heading)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
+            >
+              {START_TIMES.map((tValue) => (
+                <option key={tValue} value={tValue}>
+                  {tValue}
+                </option>
+              ))}
+            </select>
+            <p className="mt-1.5 text-[11px] text-[var(--text-muted)]">
+              Your {hours}h charter runs {startTime} – {endTime}
+              {endsNextDay ? " (next day)" : ""}. We confirm the exact return
+              time on WhatsApp.
+            </p>
           </div>
 
           <div>

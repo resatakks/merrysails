@@ -579,7 +579,7 @@ export default async function YachtCharterIstanbulPage({
               benefit="Charter a private Bosphorus yacht direct from Istanbul's TÜRSAB-licensed operator — captain & crew included, no concierge or OTA markup. We reply on WhatsApp in minutes."
               whatsappText="Hi%20MerrySails!%20I'd%20like%20a%20private%20yacht%20charter%20quote%20for%20the%20Bosphorus.%20Group%20size%20%2B%20date%20if%20known%3F"
               whatsappSource="yacht-hero"
-              reserveHref="#core-booking-planner"
+              reserveHref="#fleet"
             />
           )}
 
@@ -599,6 +599,23 @@ export default async function YachtCharterIstanbulPage({
             productLabel="private yacht"
             className="mb-6"
           />
+
+          {/* 2026-06-26 (operator, product-first): the 6-boat fleet is the hero
+              of a yacht-charter decision, so the visual fleet is surfaced right
+              after the trust strip and the "Reserve Online" button scrolls here
+              (#fleet). Every SEO/AI surface — the price answer block, booking
+              planner, comparison tables, blog links — stays in the DOM just
+              below; crawlers read the full page regardless of visual order, so
+              there is no GEO/AI-visibility loss from the reorder. */}
+          <div id="fleet" className="scroll-mt-28 my-8">
+            <FleetShowcase
+              locale="en"
+              strings={getFleetStrings("en")}
+              reservationBasePath="/reservation"
+              yachtTourSlug={yachtTour.slug}
+              fleetDetailBasePath="/yacht-charter-istanbul"
+            />
+          </div>
 
           {/* Striking-distance answer block (2026-06-23): "private yacht
               istanbul price" sits at pos ~8.9 with 11% CTR — a self-contained
@@ -642,14 +659,6 @@ export default async function YachtCharterIstanbulPage({
               bookingPrefill={bookingPrefill}
             />
           )}
-
-          <FleetShowcase
-            locale="en"
-            strings={getFleetStrings("en")}
-            reservationBasePath="/reservation"
-            yachtTourSlug={yachtTour.slug}
-            fleetDetailBasePath="/yacht-charter-istanbul"
-          />
 
           {/* AI-citation pricing table — paired with schema.org/Table JSON-LD
               above so the same numbers exist in two retrievable surfaces. */}

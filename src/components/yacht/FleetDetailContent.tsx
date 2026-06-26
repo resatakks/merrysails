@@ -92,7 +92,7 @@ export default function FleetDetailContent({
   )}`;
 
   return (
-    <div className="pt-28 pb-20 bg-[var(--surface-alt)]">
+    <div className="pt-28 pb-20 bg-[var(--surface-alt)] overflow-x-clip">
       <div className="container-main">
         <nav
           aria-label="Breadcrumb"
@@ -251,25 +251,30 @@ export default function FleetDetailContent({
                   boat.bookable ? strings.reserveCta : strings.quoteCta
                 } — ${h} ${strings.duration} (€${value})`;
                 const rowClass =
-                  "group flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] bg-white px-4 py-3 transition-colors hover:bg-[var(--brand-primary)]/5 hover:border-[var(--brand-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]";
+                  "group flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] bg-white px-3 py-3 sm:px-4 transition-colors hover:bg-[var(--brand-primary)]/5 hover:border-[var(--brand-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]";
+                // 2026-06-26: the three price spans + the wide Reserve pill were
+                // all `whitespace-nowrap`, so a single row overran 360–390px
+                // viewports and pushed the page (and the fixed WhatsApp/Call
+                // buttons) off-screen on real iOS. Left group now wraps; the
+                // pill is shrink-0 with min-w-0 siblings so nothing overflows.
                 const rowBody = (
                   <>
-                    <div className="flex flex-1 items-center gap-4 min-w-0">
-                      <span className="font-semibold text-[var(--heading)] whitespace-nowrap">
+                    <div className="flex flex-1 flex-wrap items-center gap-x-3 gap-y-1 min-w-0">
+                      <span className="font-semibold text-[var(--heading)]">
                         {h} {strings.duration}
                       </span>
-                      <span className="font-semibold text-[var(--heading)] whitespace-nowrap">
+                      <span className="font-semibold text-[var(--heading)]">
                         €{value}
                       </span>
                       {isDiscount ? (
-                        <span className="font-semibold text-emerald-700 whitespace-nowrap text-xs sm:text-sm">
+                        <span className="font-semibold text-emerald-700 text-xs sm:text-sm">
                           −€{saving} ({boat.discountPercent}%)
                         </span>
                       ) : null}
                     </div>
                     <span
                       aria-hidden
-                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-white transition-opacity group-hover:opacity-90 ${
+                      className={`inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-white transition-opacity group-hover:opacity-90 ${
                         boat.bookable ? "bg-[var(--brand-primary)]" : "bg-emerald-600"
                       }`}
                       style={{ color: "#ffffff" }}

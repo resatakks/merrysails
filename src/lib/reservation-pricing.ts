@@ -428,6 +428,10 @@ export function buildReservationPricingSnapshot({
   const addOnPayingGuests =
     childrenCount > 0 || infantsCount > 0 ? adultsCount : safeGuests;
   for (const addOn of selectedAddOns) {
+    // Request-only extras (DJ, photographer, decoration…) carry no fixed price —
+    // they ride along in the booking note as a quote request, never as a priced
+    // line item. Skip them so parseAddOnUnitPrice never sees a price-less string.
+    if (addOn.requestOnly) continue;
     const unitPrice = parseAddOnUnitPrice(addOn);
     const quantity = isPerPersonAddOn(addOn) ? addOnPayingGuests : 1;
     lineItems.push({

@@ -1067,7 +1067,9 @@ export default function TourDetailClient({
                                 <span className="text-sm font-medium">{addon.name}</span>
                               </div>
                               <span className="text-sm font-bold text-[var(--brand-primary)]">
-                                {showPricing ? addon.price : L.availableOnRequest}
+                                {addon.requestOnly || !showPricing
+                                  ? L.availableOnRequest
+                                  : addon.price}
                               </span>
                             </button>
                           );
