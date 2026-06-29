@@ -230,8 +230,6 @@ export function getReservationCcRecipients(extra?: string | string[] | null): st
       : [
           "info@merrysails.com",
           "resatakkus10@gmail.com",
-          "info@merrytravel.com.tr",
-          "info@merrytourism.com",
         ];
   const extraRecipients = Array.isArray(extra) ? extra : extra ? [extra] : [];
 

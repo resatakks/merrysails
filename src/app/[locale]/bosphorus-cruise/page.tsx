@@ -630,11 +630,17 @@ export async function generateMetadata({
  };
 }
 
+// Clarity (RU /bosphorus-cruise, 2026-06-29): the 4 tour-option cards
+// registered as dead clicks — ru + zh were missing from every slug here, so
+// `ROUTE_MAP[opt.slug]?.[locale]` fell back to `/${locale}/bosphorus-cruise`,
+// i.e. each card linked back to the SAME page (navigate-to-self = no-op).
+// ru + zh are ACTIVE_LOCALES with full CONTENT, and the destination pages are
+// [locale]-dynamic (they already render for ru/zh), so wire them explicitly.
 const ROUTE_MAP: Record<string, Record<string, string>> = {
- sunset: { tr: "/tr/cruises/bosphorus-sunset-cruise", de: "/de/cruises/bosphorus-sunset-cruise", fr: "/fr/cruises/bosphorus-sunset-cruise", nl: "/nl/cruises/bosphorus-sunset-cruise" },
- dinner: { tr: "/tr/istanbul-dinner-cruise", de: "/de/istanbul-dinner-cruise", fr: "/fr/istanbul-dinner-cruise", nl: "/nl/istanbul-dinner-cruise" },
- yacht: { tr: "/tr/yacht-charter-istanbul", de: "/de/yacht-charter-istanbul", fr: "/fr/yacht-charter-istanbul", nl: "/nl/yacht-charter-istanbul" },
- boat: { tr: "/tr/boat-rental-istanbul", de: "/de/boat-rental-istanbul", fr: "/fr/boat-rental-istanbul", nl: "/nl/boat-rental-istanbul" },
+ sunset: { tr: "/tr/cruises/bosphorus-sunset-cruise", de: "/de/cruises/bosphorus-sunset-cruise", fr: "/fr/cruises/bosphorus-sunset-cruise", nl: "/nl/cruises/bosphorus-sunset-cruise", ru: "/ru/cruises/bosphorus-sunset-cruise", zh: "/zh/cruises/bosphorus-sunset-cruise" },
+ dinner: { tr: "/tr/istanbul-dinner-cruise", de: "/de/istanbul-dinner-cruise", fr: "/fr/istanbul-dinner-cruise", nl: "/nl/istanbul-dinner-cruise", ru: "/ru/istanbul-dinner-cruise", zh: "/zh/istanbul-dinner-cruise" },
+ yacht: { tr: "/tr/yacht-charter-istanbul", de: "/de/yacht-charter-istanbul", fr: "/fr/yacht-charter-istanbul", nl: "/nl/yacht-charter-istanbul", ru: "/ru/yacht-charter-istanbul", zh: "/zh/yacht-charter-istanbul" },
+ boat: { tr: "/tr/boat-rental-istanbul", de: "/de/boat-rental-istanbul", fr: "/fr/boat-rental-istanbul", nl: "/nl/boat-rental-istanbul", ru: "/ru/boat-rental-istanbul", zh: "/zh/boat-rental-istanbul" },
 };
 
 export default async function LocaleBosphorusCruisePage({

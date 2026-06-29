@@ -1364,7 +1364,7 @@ export default function TourDetailClient({
           initialGuests={prefilledGuests}
           initialTime={timeParam || undefined}
         />
-          <SocialProof tourSlug={tour.slug} />
+          <SocialProof tourSlug={tour.slug} locale={localeProp} />
         </div>
       </div>
 
