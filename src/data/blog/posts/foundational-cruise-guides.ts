@@ -1140,10 +1140,10 @@ export const foundationalCruiseGuides: BlogPost[] = [
         answerCapsule:
           "Request a quote via WhatsApp or the website with your date, group size, and tier preference. MerrySails confirms vessel availability and marina assignment within 24 hours, then issues a written booking summary.",
         content:
-          "Private charter bookings follow a manual confirmation flow rather than instant-book automation. That is deliberate: vessel assignment, marina logistics, catering coordination, and special-occasion planning all require a brief conversation to get right. Start by sending a request through the [yacht charter Istanbul](/yacht-charter-istanbul) page or via WhatsApp at +90 537 040 68 22. Include your date, approximate group size, tier preference, and any occasion context (proposal, anniversary, corporate).\n\nThe team responds within 24 hours with vessel options, marina assignment, and a written booking summary covering price, inclusions, and the payment schedule. Payment is typically structured as a deposit to confirm the reservation, with the balance settled before or at boarding.\n\nThe timeline from first contact to embarkation for a standard charter is usually 48 to 72 hours minimum — not because of bureaucracy, but because the vessel needs to be provisioned, the crew briefed, and the catering prepared properly. For complex occasions (multi-vessel corporate events, proposal-with-decoration setups), allow 5 to 7 days.",
+          "Private charter bookings follow a manual confirmation flow rather than instant-book automation. That is deliberate: vessel assignment, marina logistics, catering coordination, and special-occasion planning all require a brief conversation to get right. Start by sending a request through the [yacht charter Istanbul](/yacht-charter-istanbul) page or via WhatsApp at +90 544 898 98 12. Include your date, approximate group size, tier preference, and any occasion context (proposal, anniversary, corporate).\n\nThe team responds within 24 hours with vessel options, marina assignment, and a written booking summary covering price, inclusions, and the payment schedule. Payment is typically structured as a deposit to confirm the reservation, with the balance settled before or at boarding.\n\nThe timeline from first contact to embarkation for a standard charter is usually 48 to 72 hours minimum — not because of bureaucracy, but because the vessel needs to be provisioned, the crew briefed, and the catering prepared properly. For complex occasions (multi-vessel corporate events, proposal-with-decoration setups), allow 5 to 7 days.",
         callout: {
           type: "tip",
-          text: "WhatsApp is the fastest path: +90 537 040 68 22. Send your date, group size, and occasion type. Response time is typically under 2 hours during business hours.",
+          text: "WhatsApp is the fastest path: +90 544 898 98 12. Send your date, group size, and occasion type. Response time is typically under 2 hours during business hours.",
         },
         proTip:
           "Book at least 1 week in advance for weekend charter slots in May, June, and September — those fill consistently 5 to 10 days out.",
@@ -1208,7 +1208,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       "istanbul-sunset-cruise-experience",
     ],
     calloutText:
-      "Private Bosphorus yacht charter from €220 per yacht (boutique) up to €500 (group Signature), with 90- and 150-guest event yachts by quote. Every charter includes a licensed captain and crew. Route flexible. WhatsApp +90 537 040 68 22 or book at merrysails.com/yacht-charter-istanbul.",
+      "Private Bosphorus yacht charter from €220 per yacht (boutique) up to €500 (group Signature), with 90- and 150-guest event yachts by quote. Every charter includes a licensed captain and crew. Route flexible. WhatsApp +90 544 898 98 12 or book at merrysails.com/yacht-charter-istanbul.",
   },
   {
     slug: "best-bosphorus-sunset-cruise-operators-istanbul-2026",
@@ -1344,7 +1344,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       },
       {
         q: "Should I book a Bosphorus sunset cruise in advance or last-minute?",
-        a: "Book at least 48 hours in advance for any specific date, especially May through September when sunset cruises sell out on weekends. MerrySails accepts same-day bookings via WhatsApp (+90 537 040 68 22) when capacity permits, but guaranteed availability requires advance reservation. Last-minute OTA searches often return sold-out products or inflated last-minute pricing.",
+        a: "Book at least 48 hours in advance for any specific date, especially May through September when sunset cruises sell out on weekends. MerrySails accepts same-day bookings via WhatsApp (+90 544 898 98 12) when capacity permits, but guaranteed availability requires advance reservation. Last-minute OTA searches often return sold-out products or inflated last-minute pricing.",
       },
       {
         q: "What happens to the sunset cruise if it rains?",
@@ -1362,7 +1362,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       "best-bosphorus-cruise-istanbul-guide",
     ],
     calloutText:
-      "MerrySails Bosphorus sunset cruise: €34 (no wine) or €40 (with wine), 2 hours from Karaköy pier, daily year-round. TURSAB A Group licensed since 2001, 50,000+ guests hosted. Book direct at merrysails.com/cruises/bosphorus-sunset-cruise or WhatsApp +90 537 040 68 22.",
+      "MerrySails Bosphorus sunset cruise: €34 (no wine) or €40 (with wine), 2 hours from Karaköy pier, daily year-round. TURSAB A Group licensed since 2001, 50,000+ guests hosted. Book direct at merrysails.com/cruises/bosphorus-sunset-cruise or WhatsApp +90 544 898 98 12.",
   },
 
   {
@@ -1407,6 +1407,6 @@ export const foundationalCruiseGuides: BlogPost[] = [
       "best-bosphorus-sunset-cruise-istanbul-2026",
     ],
     calloutText:
-      "Want the moonlight format without a dinner programme? The shared MerrySails sunset cruise (from €30 on Mon, Tue & Thu) rolls into blue hour for a true illuminated-Bosphorus sailing; the private yacht (from €220 / 2h) lets you book a later slot in your own group. Book direct at merrysails.com or WhatsApp +90 537 040 68 22.",
+      "Want the moonlight format without a dinner programme? The shared MerrySails sunset cruise (from €30 on Mon, Tue & Thu) rolls into blue hour for a true illuminated-Bosphorus sailing; the private yacht (from €220 / 2h) lets you book a later slot in your own group. Book direct at merrysails.com or WhatsApp +90 544 898 98 12.",
   },
 ];

@@ -1374,7 +1374,7 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "Pasta, çiçek aranjmanı, balon dekoru, Bluetooth müzik sistemi ve profesyonel fotoğrafçı gibi eklentiler önceden WhatsApp üzerinden talep edilerek organize edilir; fiyatlar içeriğe göre manuel teklifle belirlenir.",
         content:
-          "MerrySails paket fiyatları yata ve süreye aittir; eklenti hizmetler ayrı organize edilir. Bu model, her kutlamayı kişiselleştirmenizi sağlar. Bazı misafirler sadece tekne kiralayıp pastayı kendisi getirir; diğerleri tüm organizasyonu bize bırakır.\n\nWhatsApp hattından (+90 537 040 68 22) rezervasyonunuzu yaparken istediğiniz eklentileri belirtmeniz yeterli. Ekibimiz içeriğe özel fiyat teklifi oluşturur ve organizasyonu koordine eder. Tekne hareket etmeden en az 2 saat önce dekorasyon ve ikram kurulumu tamamlanır.",
+          "MerrySails paket fiyatları yata ve süreye aittir; eklenti hizmetler ayrı organize edilir. Bu model, her kutlamayı kişiselleştirmenizi sağlar. Bazı misafirler sadece tekne kiralayıp pastayı kendisi getirir; diğerleri tüm organizasyonu bize bırakır.\n\nWhatsApp hattından (+90 544 898 98 12) rezervasyonunuzu yaparken istediğiniz eklentileri belirtmeniz yeterli. Ekibimiz içeriğe özel fiyat teklifi oluşturur ve organizasyonu koordine eder. Tekne hareket etmeden en az 2 saat önce dekorasyon ve ikram kurulumu tamamlanır.",
         table: {
           headers: ["Eklenti Hizmet", "Organizasyon Yöntemi", "Not"],
           rows: [
@@ -1445,7 +1445,7 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "Düşük sezonda (Ekim–Nisan) 3–5 gün yeterli olabilir. Yüksek sezonda (Haziran–Ağustos) en az 10–14 gün önceden rezervasyon yapılması ve eklenti siparişlerin ayrıca organize edilmesi gerekir.",
         content:
-          "MerrySails'te doğum günü yat kiralama için rezervasyon süreci üç aşamada ilerler:\n\n**Birinci aşama — tarih ve paket onayı:** WhatsApp (+90 537 040 68 22) veya [/tr/yacht-charter-istanbul](/tr/yacht-charter-istanbul) sayfasındaki form üzerinden tercih ettiğiniz paket, tarih, saat ve kişi sayısını iletin. Müsaitlik kontrolü genellikle 30 dakika içinde yapılır.\n\n**İkinci aşama — eklenti siparişleri:** Pasta, çiçek ve fotoğrafçı gibi eklentileri ayrıca bildirin. Ekibimiz her kalem için ön teklif oluşturur, onayladıktan sonra temin sürecini başlatır.\n\n**Üçüncü aşama — tur öncesi koordinasyon:** Tur gününden 24 saat önce kalkış noktası (Kuruçeşme Marina veya Kabataş), tam saat ve eğer sürpriz organizasyonsa senaryo detayları netleştirilir.\n\n[Özel etkinlik sayfamızdaki](/tr/private-events) talep formunu da kullanabilirsiniz; bu form kurumsal ve büyük grup organizasyonları için özellikle uygundur.",
+          "MerrySails'te doğum günü yat kiralama için rezervasyon süreci üç aşamada ilerler:\n\n**Birinci aşama — tarih ve paket onayı:** WhatsApp (+90 544 898 98 12) veya [/tr/yacht-charter-istanbul](/tr/yacht-charter-istanbul) sayfasındaki form üzerinden tercih ettiğiniz paket, tarih, saat ve kişi sayısını iletin. Müsaitlik kontrolü genellikle 30 dakika içinde yapılır.\n\n**İkinci aşama — eklenti siparişleri:** Pasta, çiçek ve fotoğrafçı gibi eklentileri ayrıca bildirin. Ekibimiz her kalem için ön teklif oluşturur, onayladıktan sonra temin sürecini başlatır.\n\n**Üçüncü aşama — tur öncesi koordinasyon:** Tur gününden 24 saat önce kalkış noktası (Kuruçeşme Marina veya Kabataş), tam saat ve eğer sürpriz organizasyonsa senaryo detayları netleştirilir.\n\n[Özel etkinlik sayfamızdaki](/tr/private-events) talep formunu da kullanabilirsiniz; bu form kurumsal ve büyük grup organizasyonları için özellikle uygundur.",
         table: {
           headers: ["Sezon", "Önerilen Rezervasyon Süresi", "Ek Not"],
           rows: [
@@ -1476,7 +1476,7 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Sıkça Sorulan Sorular — Doğum Günü Yat Kiralama İstanbul",
         content:
-          "Aşağıdaki sorular rezervasyon öncesinde en sık iletilen meraklardır. Farklı bir sorunuz varsa [özel etkinlik sayfamızda](/tr/private-events) yer alan form üzerinden veya WhatsApp (+90 537 040 68 22) üzerinden yanıt alabilirsiniz.",
+          "Aşağıdaki sorular rezervasyon öncesinde en sık iletilen meraklardır. Farklı bir sorunuz varsa [özel etkinlik sayfamızda](/tr/private-events) yer alan form üzerinden veya WhatsApp (+90 544 898 98 12) üzerinden yanıt alabilirsiniz.",
         answerCapsule:
           "Doğum günü yat kiralama hakkında en sık sorulan sorular: fiyat, eklentiler, rezervasyon süresi ve sürpriz organizasyon detayları.",
       },
@@ -1512,7 +1512,7 @@ export const turkishProductPosts: BlogPost[] = [
     proTip:
       "Doğum günü kutlamasında gün batımı rotası seçin: Haziran–Ağustos arası gün batımı 20:30–21:00 civarındadır, akşam 18:30–19:00 kalkışı bu ışığı yakalamanızı sağlar. [Gün batımı Boğaz turu sayfasına](/tr/cruises/bosphorus-sunset-cruise) göz atarak rotayı önceden görebilirsiniz.",
     calloutText:
-      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimi. Doğum günü organizasyonu için WhatsApp: +90 537 040 68 22",
+      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimi. Doğum günü organizasyonu için WhatsApp: +90 544 898 98 12",
   },
   {
     slug: "eminonu-karakoy-kabatas-bogaz-turu-2026",
@@ -1787,7 +1787,7 @@ export const turkishProductPosts: BlogPost[] = [
         callout: {
           type: "price",
           text:
-            "Hızlı Özet: Gün Batımı → Karaköy (€34/€40). Akşam Yemeği → Kabataş (€30/€45/€80/€90). Özel Yat → Kuruçeşme/Kabataş (€220'den, Premium €320, Grup €380–€500). WhatsApp: +90 537 040 68 22",
+            "Hızlı Özet: Gün Batımı → Karaköy (€34/€40). Akşam Yemeği → Kabataş (€30/€45/€80/€90). Özel Yat → Kuruçeşme/Kabataş (€220'den, Premium €320, Grup €380–€500). WhatsApp: +90 544 898 98 12",
         },
         proTip:
           "Rezervasyonunuzu tamamladıktan sonra onay e-postasındaki harita pinini telefon galerinizdeki ekran görüntüsüne alın. İnternet bağlantısı olmadan da konuma bakabilirsiniz.",
@@ -1824,7 +1824,7 @@ export const turkishProductPosts: BlogPost[] = [
     proTip:
       "Karaköy veya Kabataş'a ilk kez gidiyorsanız buluşma saatinden en az 20 dk önce bölgede olun — özellikle yüksek sezonda (Haziran–Ağustos) iskele önleri yoğundur ve doğru kapıyı bulmak birkaç dakika alabilir. [Bosphorus Cruise ana sayfasından](/tr/bosphorus-cruise) tüm kalkış bilgilerini bulabilirsiniz.",
     calloutText:
-      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle İstanbul'un en güvenilir Boğaz turu operatörlerinden biridir. Rezervasyon ve sorularınız için WhatsApp: +90 537 040 68 22",
+      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle İstanbul'un en güvenilir Boğaz turu operatörlerinden biridir. Rezervasyon ve sorularınız için WhatsApp: +90 544 898 98 12",
   },
   {
     slug: "eminonu-karakoy-kabatas-bogaz-turu-iskele-rehberi",
@@ -2146,7 +2146,7 @@ export const turkishProductPosts: BlogPost[] = [
     proTip:
       "Karaköy veya Kabataş'a ilk kez gidiyorsanız buluşma saatinden en az 20 dakika önce bölgede olun. Yüksek sezonda (Haziran–Ağustos) iskele çevresi kalabalıktır ve doğru kapıyı bulmak birkaç dakika alabilir. [Kalkış noktaları rehberimizden](/tr/bosphorus-cruise-departure-points) ayrıntılı haritaları görebilirsiniz.",
     calloutText:
-      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle Eminönü, Karaköy ve Kabataş'tan kalkan turların en güvenilir seçeneğidir. Rezervasyon ve sorularınız için WhatsApp: +90 537 040 68 22",
+      "2001'den bu yana TÜRSAB A Grubu lisanslı MerrySails (#14316), 50.000+ misafir deneyimiyle Eminönü, Karaköy ve Kabataş'tan kalkan turların en güvenilir seçeneğidir. Rezervasyon ve sorularınız için WhatsApp: +90 544 898 98 12",
   },
   {
     slug: "bogaz-turu-fiyat-rehberi-istanbul-2026",
@@ -2289,7 +2289,7 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "Bütçe öncelikli çift veya aile → Silver Soft €30. Şarap içen çift → Gün Batımı €40. Özel kutlama (doğum günü, yıldönümü) → Gold Unlimited €90. Mahrem grup deneyimi → Özel yat €220+.",
         content:
-          "Doğru paketi seçmek için dört soruyu yanıtlayın:\n\n**1. Kaç kişisiniz?** 1–2 kişi: Gün Batımı veya Silver Soft en avantajlı. 8+ kişi: Özel yat kiralama kişi başı maliyeti düşürür.\n\n**2. Yemek istiyor musunuz?** Evet → Akşam Yemeği Turu. Hayır → Gün Batımı Turu.\n\n**3. Alkol tüketiyor musunuz?** Hayır → Silver Soft veya Gold Soft. Evet ve sınırsız istiyorum → Gold Unlimited.\n\n**4. Özel bir kutlama var mı?** Evlilik teklifi, yıldönümü, doğum günü → Özel yat veya Gold Unlimited.\n\n[Tüm paketleri ve müsaitlik durumunu](/tr/bosphorus-cruise) rezervasyon sayfamızda görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 537 040 68 22 numarasına yazın; Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
+          "Doğru paketi seçmek için dört soruyu yanıtlayın:\n\n**1. Kaç kişisiniz?** 1–2 kişi: Gün Batımı veya Silver Soft en avantajlı. 8+ kişi: Özel yat kiralama kişi başı maliyeti düşürür.\n\n**2. Yemek istiyor musunuz?** Evet → Akşam Yemeği Turu. Hayır → Gün Batımı Turu.\n\n**3. Alkol tüketiyor musunuz?** Hayır → Silver Soft veya Gold Soft. Evet ve sınırsız istiyorum → Gold Unlimited.\n\n**4. Özel bir kutlama var mı?** Evlilik teklifi, yıldönümü, doğum günü → Özel yat veya Gold Unlimited.\n\n[Tüm paketleri ve müsaitlik durumunu](/tr/bosphorus-cruise) rezervasyon sayfamızda görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 544 898 98 12 numarasına yazın; Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
         callout: {
           type: "tip",
           text:
@@ -2332,7 +2332,7 @@ export const turkishProductPosts: BlogPost[] = [
     proTip:
       "Fiyat karşılaştırması yaparken tekne başına fiyat ile kişi başı fiyatı karıştırmayın. Özel yat fiyatı tüm tekne içindir; büyük gruplar için akşam yemeği turundan daha ekonomik olabilir. Detaylar ve güncel müsaitlik için [boğaz turu rezervasyon sayfamıza](/tr/bosphorus-cruise) bakın.",
     calloutText:
-      "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul'un en şeffaf fiyat politikasına sahip Boğaz turu operatörlerinden biridir. Rezervasyon ve fiyat soruları için WhatsApp: +90 537 040 68 22",
+      "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul'un en şeffaf fiyat politikasına sahip Boğaz turu operatörlerinden biridir. Rezervasyon ve fiyat soruları için WhatsApp: +90 544 898 98 12",
   },
   {
     slug: "bogaz-turu-kac-saat-surer-rehberi-2026",
@@ -2480,7 +2480,7 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "2 saatiniz varsa → Gün Batımı Turu (€34). Akşamı tamamen ayıracaksanız → Akşam Yemeği Turu (€30–90). Kendi programınızı yaratmak istiyorsanız → Özel Yat (€220+, 2–8 saat). Bütçe önceliğinizse → Şehir Hatları (₺50–200).",
         content:
-          "Doğru turu seçmenin en hızlı yolu dört soruyu yanıtlamaktır:\n\n**Ne kadar vaktiniz var?**\n- 2 saat → Gün Batımı Turu\n- 3.5 saat (akşam) → Akşam Yemeği Turu\n- 2–8 saat (esnek) → Özel Yat\n- Sınırlı bütçe, esnek saat → Şehir Hatları\n\n**Yemek istiyor musunuz?**\n- Evet → Akşam Yemeği Turu\n- Hayır → Gün Batımı Turu\n\n**Özel kutlama var mı?**\n- Evet → Özel Yat Kiralama\n- Hayır → Paylaşımlı tur\n\n**Gündüzü başka etkinliklere mi ayırdınız?**\n- Sabah–öğlen tarihi yarımada → Akşam Gün Batımı Turu\n- Boş akşam → Akşam Yemeği Turu\n\nTüm tur seçeneklerini ve güncel müsaitlik durumunu [Boğaz turu rezervasyon sayfamızda](/tr/bosphorus-cruise) görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 537 040 68 22 numarasına yazın; 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
+          "Doğru turu seçmenin en hızlı yolu dört soruyu yanıtlamaktır:\n\n**Ne kadar vaktiniz var?**\n- 2 saat → Gün Batımı Turu\n- 3.5 saat (akşam) → Akşam Yemeği Turu\n- 2–8 saat (esnek) → Özel Yat\n- Sınırlı bütçe, esnek saat → Şehir Hatları\n\n**Yemek istiyor musunuz?**\n- Evet → Akşam Yemeği Turu\n- Hayır → Gün Batımı Turu\n\n**Özel kutlama var mı?**\n- Evet → Özel Yat Kiralama\n- Hayır → Paylaşımlı tur\n\n**Gündüzü başka etkinliklere mi ayırdınız?**\n- Sabah–öğlen tarihi yarımada → Akşam Gün Batımı Turu\n- Boş akşam → Akşam Yemeği Turu\n\nTüm tur seçeneklerini ve güncel müsaitlik durumunu [Boğaz turu rezervasyon sayfamızda](/tr/bosphorus-cruise) görebilirsiniz. Karar vermekte zorlanıyorsanız WhatsApp'tan +90 544 898 98 12 numarasına yazın; 2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism ekibi ihtiyacınıza en uygun paketi önerir.",
         callout: {
           type: "tip",
           text:
@@ -2523,7 +2523,7 @@ export const turkishProductPosts: BlogPost[] = [
     proTip:
       "Süre seçiminde en önemli faktör gündüz programınızdır. Tarihi yarımadayı sabah gezerseniz, 2 saatlik gün batımı turu (€34) ideal kapanıştır. Akşamı tamamen boş bıraktıysanız 3.5 saatlik akşam yemeği turu (€30–90) daha zengin deneyim sunar.",
     calloutText:
-      "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul Boğazı'nı en iyi tanıyan operatörlerden biridir. Süre ve paket seçimi için WhatsApp: +90 537 040 68 22",
+      "2001'den bu yana TÜRSAB A Grubu lisanslı Merry Tourism (#14316), 50.000+ misafir deneyimiyle İstanbul Boğazı'nı en iyi tanıyan operatörlerden biridir. Süre ve paket seçimi için WhatsApp: +90 544 898 98 12",
   },
 
   {
@@ -2645,7 +2645,7 @@ Boğaz Köprüsü altında, Istanbul siluetine karşı bir evlilik teklifi — d
 - Keman: €180
 - Şampanya dahil edebilirsiniz — menü seçenekleri checkout'ta
 
-Gizli planlama için WhatsApp: +90 537 040 68 22 — ortağınızın haberi olmadan organizasyonu koordine ederiz.
+Gizli planlama için WhatsApp: +90 544 898 98 12 — ortağınızın haberi olmadan organizasyonu koordine ederiz.
 
 **Yıldönümü Yat Kiralama**
 
@@ -2671,7 +2671,7 @@ Taksim'e ve İstiklal Caddesi'ne en yakın iskele. Sultanahmet bölgesinden metr
 **Karaköy Bölgesi**
 Galata Köprüsü'ne yürüme mesafesinde, Beyoğlu ve Galata otelleri için ideal. Özellikle gün batımı saatlerindeki yat kiralama turlarında Karaköy bölgesi kalkış noktası tercih edilir.
 
-Hangi iskeleden kalkacağınızı bilmiyorsanız WhatsApp üzerinden otelin adını veya semtini paylaşın; en uygun yat kiralama noktasını birlikte belirleriz. +90 537 040 68 22`,
+Hangi iskeleden kalkacağınızı bilmiyorsanız WhatsApp üzerinden otelin adını veya semtini paylaşın; en uygun yat kiralama noktasını birlikte belirleriz. +90 544 898 98 12`,
       },
       {
         heading: "Yat Fiyatına Neler Dahil?",
@@ -2704,7 +2704,7 @@ Hangi iskeleden kalkacağınızı bilmiyorsanız WhatsApp üzerinden otelin adı
 - Evlilik Teklifi Dekor: €50
 - +1 Saat Ek Süre: 3 saat ve üzeri rezervasyonlarda otomatik %10 indirim (saat başına ek ücret yoktur)
 
-Her eklenti rezervasyon aşamasında checkout sayfasında seçilebilir. Özel talepler için WhatsApp: +90 537 040 68 22`,
+Her eklenti rezervasyon aşamasında checkout sayfasında seçilebilir. Özel talepler için WhatsApp: +90 544 898 98 12`,
       },
       {
         heading: "Yat Kiralama Saatleri — 2 Saat, 3 Saat, Yarım Gün, Tam Gün",
@@ -2731,7 +2731,7 @@ Her eklenti rezervasyon aşamasında checkout sayfasında seçilebilir. Özel ta
 **Tam Gün Yat Kiralama (6–8 saat)**
 - Boğaz'ın tamamını (köprüden Karadeniz ağzına) veya Adalar güzergahını kapsayabilir
 - Fotoğraf çekimi, kurumsal retreat veya özel etkinlik için idealdir
-- Fiyat teklifi için iletişime geçin: +90 537 040 68 22
+- Fiyat teklifi için iletişime geçin: +90 544 898 98 12
 
 Kalkış saati esnektir; sabah, öğleden sonra veya akşam seçilebilir. Gün batımı yat kiralama (yaklaşık 17:00–19:30 kalkışı) en popüler zaman dilimidir.`,
       },
@@ -2771,7 +2771,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         q: "Doğum günü için tekne nasıl kiralanır?",
-        a: "Doğum günü tekne kiralama için şu adımları izleyin: 1) Yat kiralama sayfamızdan yat seçin (Premium €320 önerilir), 2) Checkout'ta doğum günü pastası (€35–60) ve fotoğrafçı (€190) ekleyin, 3) Tarih, saat ve özel notları belirtin. Sürpriz organizasyon için WhatsApp: +90 537 040 68 22 — grubun haberdar olmaması için gizli koordinasyon yaparız.",
+        a: "Doğum günü tekne kiralama için şu adımları izleyin: 1) Yat kiralama sayfamızdan yat seçin (Premium €320 önerilir), 2) Checkout'ta doğum günü pastası (€35–60) ve fotoğrafçı (€190) ekleyin, 3) Tarih, saat ve özel notları belirtin. Sürpriz organizasyon için WhatsApp: +90 544 898 98 12 — grubun haberdar olmaması için gizli koordinasyon yaparız.",
       },
       {
         q: "Evlilik teklifi için yat kiralama paketleri var mı?",
@@ -2787,7 +2787,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       },
       {
         q: "Yatın kalkış yeri neresi?",
-        a: "MerrySails yat kiralama için üç ana kalkış noktası kullanır: Kuruçeşme (Boğaz orta noktası, Beşiktaş'a yakın), Kabataş (Taksim'e yakın, T1 tramvay durağı) ve Karaköy bölgesi (Galata'ya yakın). Hangi otelde kaldığınızı WhatsApp'ta paylaşın, en uygun yat kiralama iskelesini birlikte belirleriz: +90 537 040 68 22",
+        a: "MerrySails yat kiralama için üç ana kalkış noktası kullanır: Kuruçeşme (Boğaz orta noktası, Beşiktaş'a yakın), Kabataş (Taksim'e yakın, T1 tramvay durağı) ve Karaköy bölgesi (Galata'ya yakın). Hangi otelde kaldığınızı WhatsApp'ta paylaşın, en uygun yat kiralama iskelesini birlikte belirleriz: +90 544 898 98 12",
       },
     ],
     relatedTours: ["yacht-charter", "bosphorus-sunset-cruise", "dinner-cruise"],
@@ -2799,7 +2799,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
     proTip:
       "8+ kişilik grupta kişi başı hesaplaması yapın: €320 Premium yat kiralama, 8 kişiye bölününce kişi başı €40 eder — paylaşımlı sunset turla (€34–40) neredeyse aynı fiyata tamamen özel deneyim.",
     calloutText:
-      "TURSAB A Grubu lisanslı Merry Tourism (#14316), 2001'den bu yana 50.000+ misafirle İstanbul Boğazı'nda yat kiralama deneyimi sunuyor. Yat kiralama rezervasyonu ve fiyat için WhatsApp: +90 537 040 68 22",
+      "TURSAB A Grubu lisanslı Merry Tourism (#14316), 2001'den bu yana 50.000+ misafirle İstanbul Boğazı'nda yat kiralama deneyimi sunuyor. Yat kiralama rezervasyonu ve fiyat için WhatsApp: +90 544 898 98 12",
   },
   {
     slug: "adalar-turu-istanbul-buyukada-rehberi-2026",
@@ -2879,7 +2879,7 @@ Kapsamlı karşılaştırma için [Boğaz turu fiyat rehberimize](/tr/blog/bogaz
       {
         heading: "Pratik Bilgiler ve Adaya Gitmeden Önce Bilinmesi Gerekenler",
         answerCapsule: "Yürüyüş ayakkabısı, güneş kremi ve nakit getirin. Vapura 30 dakika erken gidin (hafta sonları). Ada içi ATM sınırlıdır.",
-        content: "**Ulaşım:**\n- Taksim'den: F1 fünikülerle Kabataş'a, oradan Kabataş İskelesi'ne yürüyün (5 dakika)\n- Sultanahmet'ten: T1 tramvayıyla Eminönü'ne, oradan İskeleler'e yürüyün\n- Sefer saatleri için: sehirhatlari.com.tr (Google Translate ile kullanılabilir)\n\n**Adada:**\n- Tüm adalarda motorlu taşıt yasaktır. Ulaşım fayton, bisiklet veya yürüyüşle sağlanır\n- Nakit önemlidir — küçük kafeler, fayton sürücüleri ve bisiklet kiralama genellikle kart kabul etmez\n- Güneş kremi zorunludur — yamaç yolları açık ve deniz yansıması UV'yi artırır\n- Su taşıyın — Büyükada ve Heybeliada'da şişe su satılır, küçük adalarda daha az\n- Aya Yorgi Manastırı yokuşu için rahat yürüyüş ayakkabısı şarttır\n\n**Dönüş:**\n- Büyükada'dan Eminönü'ne son vapur yaz sezonunda genellikle 20:00–22:00 arasında kalkar — ada iskelesi tahtasını kontrol edin\n- Özel yat kiralama kullanıyorsanız dönüş saati tamamen size aittir\n\n**Boğaz Turu ile Birleştirin:**\nAdalar, [Boğaz turu](/tr/bosphorus-cruise) ve [gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile aynı ya da ertesi gün birlikte planlanabilir. Sabah vapurla Büyükada, akşam şehirde Boğaz gün batımı turu — İstanbul'un en tatmin edici iki günlük programı.\n\n**TURSAB Lisanslı Rezervasyon:**\nÖzel yat kiralama ile Ada turu için doğrudan MerrySails'i arayın: merrysails.com veya WhatsApp +90 537 040 68 22. Merry Tourism, [TURSAB](/tursab) A Grubu lisanslı olarak 2001'den bu yana faaliyet göstermekte ve 50.000+ misafir ağırlamıştır."
+        content: "**Ulaşım:**\n- Taksim'den: F1 fünikülerle Kabataş'a, oradan Kabataş İskelesi'ne yürüyün (5 dakika)\n- Sultanahmet'ten: T1 tramvayıyla Eminönü'ne, oradan İskeleler'e yürüyün\n- Sefer saatleri için: sehirhatlari.com.tr (Google Translate ile kullanılabilir)\n\n**Adada:**\n- Tüm adalarda motorlu taşıt yasaktır. Ulaşım fayton, bisiklet veya yürüyüşle sağlanır\n- Nakit önemlidir — küçük kafeler, fayton sürücüleri ve bisiklet kiralama genellikle kart kabul etmez\n- Güneş kremi zorunludur — yamaç yolları açık ve deniz yansıması UV'yi artırır\n- Su taşıyın — Büyükada ve Heybeliada'da şişe su satılır, küçük adalarda daha az\n- Aya Yorgi Manastırı yokuşu için rahat yürüyüş ayakkabısı şarttır\n\n**Dönüş:**\n- Büyükada'dan Eminönü'ne son vapur yaz sezonunda genellikle 20:00–22:00 arasında kalkar — ada iskelesi tahtasını kontrol edin\n- Özel yat kiralama kullanıyorsanız dönüş saati tamamen size aittir\n\n**Boğaz Turu ile Birleştirin:**\nAdalar, [Boğaz turu](/tr/bosphorus-cruise) ve [gün batımı turu](/tr/cruises/bosphorus-sunset-cruise) ile aynı ya da ertesi gün birlikte planlanabilir. Sabah vapurla Büyükada, akşam şehirde Boğaz gün batımı turu — İstanbul'un en tatmin edici iki günlük programı.\n\n**TURSAB Lisanslı Rezervasyon:**\nÖzel yat kiralama ile Ada turu için doğrudan MerrySails'i arayın: merrysails.com veya WhatsApp +90 544 898 98 12. Merry Tourism, [TURSAB](/tursab) A Grubu lisanslı olarak 2001'den bu yana faaliyet göstermekte ve 50.000+ misafir ağırlamıştır."
       },
       {
         heading: "Sık Sorulan Sorular — Adalar Turu",
