@@ -108,7 +108,7 @@ User explicitly wants **NO Meta DM messages** — leads land in our site (bookin
 - **Sunset + Dinner** → Conversion campaigns optimised for `Purchase` event (with `AddToCart` as the 7-day backup signal during learning phase).
 - **Yacht charter** → Lead campaign optimised for `Lead` event (the WhatsApp click) — high-value, longer consideration cycle.
 
-Meta will auto-optimise toward whoever actually books / messages WhatsApp, not whoever opens Messenger. The CTA button on every ad is **Send WhatsApp Message** with a `https://wa.me/905370406822?text=...` deep link (NOT the Messenger one).
+Meta will auto-optimise toward whoever actually books / messages WhatsApp, not whoever opens Messenger. The CTA button on every ad is **Send WhatsApp Message** with a `https://wa.me/905448989812?text=...` deep link (NOT the Messenger one).
 
 ### Bidding strategy
 
@@ -207,19 +207,19 @@ Destination: `/istanbul-dinner-cruise?utm_source=meta&utm_medium=cpc&utm_campaig
 · Kaptan + ekip dahil
 · TURSAB A Group lisanslı, 2001'den beri
 
-WhatsApp'tan teklif al: wa.me/905370406822
+WhatsApp'tan teklif al: wa.me/905448989812
 ```
 
 Headline: `Private Yacht Charter Istanbul — From €280`
 Description: `2h whole-yacht · Captain & crew · Proposal · Anniversary · Corporate`
 CTA button: **Send WhatsApp Message**
-Destination: `https://wa.me/905370406822?text=Hi%2C%20I'd%20like%20a%20yacht%20charter%20quote%20{{ad.id}}` (NOT Messenger)
+Destination: `https://wa.me/905448989812?text=Hi%2C%20I'd%20like%20a%20yacht%20charter%20quote%20{{ad.id}}` (NOT Messenger)
 
 ---
 
 ## 7. WhatsApp lead handoff (no Meta DM)
 
-Every "Send WhatsApp Message" CTA button uses `wa.me/905370406822?text=...` with the ad ID baked into the message — when the user lands in WhatsApp, ops sees the ad context immediately.
+Every "Send WhatsApp Message" CTA button uses `wa.me/905448989812?text=...` with the ad ID baked into the message — when the user lands in WhatsApp, ops sees the ad context immediately.
 
 **Standard prefilled message per product:**
 

@@ -131,7 +131,7 @@ function buildHtml(t) {
         </div>
         <p style="color:#64748b;font-size:13px;margin:18px 0 0;line-height:1.7;text-align:center;">
           Reach us anytime on WhatsApp:
-          <a href="https://wa.me/905370406822" style="color:#f59e0b;font-weight:700;text-decoration:none;">+90 537 040 68 22</a>
+          <a href="https://wa.me/905448989812" style="color:#f59e0b;font-weight:700;text-decoration:none;">+90 544 898 98 12</a>
           &nbsp;·&nbsp;
           <a href="https://wa.me/905448989812" style="color:#f59e0b;font-weight:700;text-decoration:none;">+90 544 898 98 12</a>
         </p>

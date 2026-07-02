@@ -623,7 +623,7 @@ export default function BestSunsetCruise2026Page() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-semibold text-white transition hover:bg-[#1faa54]"
             >
-              WhatsApp +90 537 040 68 22
+              WhatsApp +90 544 898 98 12
             </a>
           </div>
         </section>
@@ -736,7 +736,7 @@ export default function BestSunsetCruise2026Page() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-semibold text-white transition hover:bg-[#1faa54]"
             >
-              WhatsApp +90 537 040 68 22
+              WhatsApp +90 544 898 98 12
             </a>
           </div>
         </section>

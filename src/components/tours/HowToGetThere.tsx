@@ -1,7 +1,7 @@
 import { MapPin, Navigation, Clock, MessageCircle } from "lucide-react";
 import { MEETING_POINTS } from "@/data/meeting-points";
 
-const WHATSAPP_URL = "https://wa.me/905370406822";
+const WHATSAPP_URL = "https://wa.me/905448989812";
 
 type Props = {
   /** Tour slug — must match a key in MEETING_POINTS */
