@@ -80,6 +80,7 @@ export async function getReservationDocumentPayload(reservationId: string) {
     items: parseReservationItems(reservation.items) ?? undefined,
     voucherExtraNote: meta.voucherExtraNote,
     voucherExtraNoteTitle: meta.voucherExtraNoteTitle,
+    guestSummaryOverride: meta.guestSummaryOverride,
   };
 
   return {

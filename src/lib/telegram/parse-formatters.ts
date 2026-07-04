@@ -62,26 +62,19 @@ function paymentLabel(method: string): string {
   }
 }
 
-export function formatParsePreview(
+/** Renders ONE item's full detail block — shared by the single-item preview
+ * and each entry of the multi-item preview. */
+function formatItemDetail(
   parsed: ParsedExternalJob,
-  intent: "reservation" | "external" | "update",
-  warnings: string[],
-  reused: boolean
+  intent: "reservation" | "external" | "update"
 ): string {
   const lines: string[] = [];
 
-  lines.push(
-    `${intentBadge(intent)}  ·  ${confidenceBadge(parsed.confidence)}`
-  );
-  if (reused) {
-    lines.push(
-      `<i>↪ Bu mesajı az önce parse ettim — aynı oturum.</i>`
-    );
-  }
-  lines.push("");
-
   // Identity block
   lines.push(`<b>${esc(parsed.serviceTitle)}</b>`);
+  if (parsed.packageName) {
+    lines.push(`📦 ${esc(parsed.packageName)}`);
+  }
   lines.push(
     `👤 ${esc(parsed.customerName)}${
       parsed.customerCountry ? `  ·  ${esc(parsed.customerCountry)}` : ""
@@ -146,19 +139,70 @@ export function formatParsePreview(
     }
   }
 
-  // Warnings
+  // Internal note (operator-only)
+  if (parsed.internalNote) {
+    lines.push("");
+    lines.push(`<b>📝 Internal:</b> <i>${esc(parsed.internalNote)}</i>`);
+  }
+
+  return lines.join("\n");
+}
+
+/**
+ * Renders the full preview card. `items` is always an array — 1 element for
+ * a normal booking (identical layout to before multi-item support), 2+ for
+ * a round-trip / multi-day / bundled message. `sessionIntent` is the
+ * operator-overridable intent and only applies when there's exactly one
+ * item; each item beyond that keeps its own parsed intent (mixing a
+ * reservation leg with an external leg in one message is valid).
+ */
+export function formatParsePreview(
+  items: ParsedExternalJob[],
+  sessionIntent: "reservation" | "external" | "update",
+  warnings: string[],
+  reused: boolean
+): string {
+  const lines: string[] = [];
+
+  if (items.length === 1) {
+    lines.push(
+      `${intentBadge(sessionIntent)}  ·  ${confidenceBadge(items[0].confidence)}`
+    );
+    if (reused) {
+      lines.push(`<i>↪ Bu mesajı az önce parse ettim — aynı oturum.</i>`);
+    }
+    lines.push("");
+    lines.push(formatItemDetail(items[0], sessionIntent));
+  } else {
+    lines.push(
+      `<b>🧩 ${items.length} ayrı iş tespit edildi</b> (round-trip / çok günlü / bundle)`
+    );
+    if (reused) {
+      lines.push(`<i>↪ Bu mesajı az önce parse ettim — aynı oturum.</i>`);
+    }
+    items.forEach((item, idx) => {
+      lines.push("");
+      lines.push(`━━━━━ <b>İş ${idx + 1}/${items.length}</b> ━━━━━`);
+      lines.push(
+        `${intentBadge(item.intent)}  ·  ${confidenceBadge(item.confidence)}`
+      );
+      lines.push(formatItemDetail(item, item.intent));
+    });
+    lines.push("");
+    lines.push(
+      `<b>💰 Toplam:</b> ${items
+        .map((i) => money(i.amount, i.currency))
+        .join(" + ")}`
+    );
+  }
+
+  // Warnings (message-level, applies across all items)
   if (warnings.length > 0) {
     lines.push("");
     lines.push(`<b>🔍 Güvenlik kontrolleri:</b>`);
     for (const w of warnings) {
       lines.push(`  • ${esc(w)}`);
     }
-  }
-
-  // Internal note (operator-only)
-  if (parsed.internalNote) {
-    lines.push("");
-    lines.push(`<b>📝 Internal:</b> <i>${esc(parsed.internalNote)}</i>`);
   }
 
   return lines.join("\n");
@@ -183,7 +227,8 @@ const FIELD_LABELS: Record<string, string> = {
 
 export function formatFieldEditPrompt(
   field: string,
-  currentValue: unknown
+  currentValue: unknown,
+  itemContext?: { index: number; total: number }
 ): string {
   const label = FIELD_LABELS[field] ?? field;
   const current =
@@ -191,27 +236,45 @@ export function formatFieldEditPrompt(
       ? "(boş)"
       : String(currentValue);
   return [
-    `<b>Düzenle:</b> ${esc(label)}`,
+    itemContext && itemContext.total > 1
+      ? `<b>Düzenle (İş ${itemContext.index + 1}/${itemContext.total}):</b> ${esc(label)}`
+      : `<b>Düzenle:</b> ${esc(label)}`,
     `<b>Mevcut:</b> <code>${esc(current)}</code>`,
     "",
     `Yeni değeri yaz ve gönder. Boş bırakmak için <code>-</code> yaz.`,
   ].join("\n");
 }
 
-export function formatSuccess(
-  type: "reservation" | "external",
-  recordId: string,
-  voucherUrl: string,
-  invoiceUrl: string
-): string {
-  const tag = type === "reservation" ? "🟢 Reservation" : "🟡 External Job";
-  return [
-    `<b>✅ ${tag} oluşturuldu</b>`,
-    `<code>${esc(recordId)}</code>`,
-    "",
-    `🎫 ${voucherUrl}`,
-    `📄 ${invoiceUrl}`,
-  ].join("\n");
+export interface SuccessRecord {
+  type: "reservation" | "external";
+  recordRef: string;
+  voucherUrl: string;
+  invoiceUrl: string;
+}
+
+/** Renders the success card. Handles both a single confirm (1 record) and
+ * a multi-item confirm (N records, e.g. round-trip legs / tour days). */
+export function formatSuccess(records: SuccessRecord[]): string {
+  if (records.length === 1) {
+    const r = records[0];
+    const tag = r.type === "reservation" ? "🟢 Reservation" : "🟡 External Job";
+    return [
+      `<b>✅ ${tag} oluşturuldu</b>`,
+      `<code>${esc(r.recordRef)}</code>`,
+      "",
+      `🎫 ${r.voucherUrl}`,
+      `📄 ${r.invoiceUrl}`,
+    ].join("\n");
+  }
+
+  const lines = [`<b>✅ ${records.length} kayıt oluşturuldu</b>`, ""];
+  records.forEach((r, idx) => {
+    const tag = r.type === "reservation" ? "🟢" : "🟡";
+    lines.push(`${tag} <b>${idx + 1}.</b> <code>${esc(r.recordRef)}</code>`);
+    lines.push(`   🎫 ${r.voucherUrl}`);
+    lines.push(`   📄 ${r.invoiceUrl}`);
+  });
+  return lines.join("\n");
 }
 
 export function formatParseError(error: string): string {

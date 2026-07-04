@@ -21,14 +21,14 @@ import {
   applyOverrides,
 } from "@/lib/external-parser/persistence";
 import { parseExternalMessage } from "@/lib/external-parser/parse";
-import { validateParsed } from "@/lib/external-parser/schema";
-import { finalize } from "@/lib/external-parser/finalize";
+import { finalizeItems } from "@/lib/external-parser/finalize";
 import {
   formatParsePreview,
   formatFieldEditPrompt,
   formatSuccess,
   formatParseError,
   formatSessionExpired,
+  type SuccessRecord,
 } from "./parse-formatters";
 import {
   parsePreviewKeyboard,
@@ -37,6 +37,23 @@ import {
 } from "./parse-keyboards";
 import type { ParsedExternalJob } from "@/lib/external-parser/schema";
 import type { TelegramMessage, TelegramCallbackQuery } from "./types";
+
+/** Reads parsedData JSON in either the current `{items:[...]}` shape or the
+ * legacy single-object shape (sessions created before multi-item support,
+ * only reachable within their 24h TTL right after deploy). */
+function itemsFromSession(parsedData: unknown): ParsedExternalJob[] {
+  if (
+    parsedData &&
+    typeof parsedData === "object" &&
+    Array.isArray((parsedData as Record<string, unknown>).items)
+  ) {
+    return (parsedData as { items: ParsedExternalJob[] }).items;
+  }
+  if (parsedData && typeof parsedData === "object" && "customerName" in (parsedData as object)) {
+    return [parsedData as unknown as ParsedExternalJob];
+  }
+  return [];
+}
 
 const MIN_PARSE_INPUT_LENGTH = 20;
 
@@ -88,13 +105,13 @@ function getParseInputText(message: TelegramMessage): string | null {
 async function sendPreview(
   chatId: string,
   sessionId: string,
-  parsed: ParsedExternalJob,
+  items: ParsedExternalJob[],
   intent: "reservation" | "external" | "update",
   warnings: string[],
   reused: boolean
 ): Promise<number | null> {
-  const text = formatParsePreview(parsed, intent, warnings, reused);
-  const keyboard = parsePreviewKeyboard(sessionId, parsed, intent);
+  const text = formatParsePreview(items, intent, warnings, reused);
+  const keyboard = parsePreviewKeyboard(sessionId, items, intent);
   const result = await sendMessage({
     chat_id: chatId,
     text,
@@ -119,7 +136,7 @@ async function renderPreviewFromSession(
     where: { id: sessionId },
   });
   if (!session) return;
-  const base = session.parsedData as unknown as ParsedExternalJob;
+  const base = itemsFromSession(session.parsedData);
   const overrides = (session.overrides ?? {}) as Record<string, unknown>;
   const merged = applyOverrides(base, overrides);
   const intent = session.intent as "reservation" | "external" | "update";
@@ -191,23 +208,23 @@ export async function handleParseEntry(
     return true;
   }
 
-  const { sessionId, data, warnings, reused } = outcome.result;
-  const intent = data.intent;
+  const { sessionId, items, warnings, reused } = outcome.result;
+  const intent = items[0].intent;
 
   // Delete holding, send fresh preview
   if (holdingMessageId) {
     await editMessageText(
       chatId,
       holdingMessageId,
-      formatParsePreview(data, intent, warnings, reused),
-      parsePreviewKeyboard(sessionId, data, intent)
+      formatParsePreview(items, intent, warnings, reused),
+      parsePreviewKeyboard(sessionId, items, intent)
     );
     await prisma.parseSession.update({
       where: { id: sessionId },
       data: { previewMessageId: holdingMessageId },
     });
   } else {
-    await sendPreview(chatId, sessionId, data, intent, warnings, reused);
+    await sendPreview(chatId, sessionId, items, intent, warnings, reused);
   }
 
   return true;
@@ -254,14 +271,21 @@ export async function handleParseCallback(
     return handleSwitchTarget(callback, session, parts[3] as "r" | "e");
   }
   if (action === "e") {
-    return handleStartEdit(callback, session, parts[3]);
+    // ps:e:<sid>:<idx>:<field> — start editing <field> on item <idx>
+    return handleStartEdit(callback, session, Number(parts[3]) || 0, parts[4]);
   }
   if (action === "r") {
     return handleRepeatParse(callback, session);
   }
   if (action === "s") {
-    // ps:s:<sid>:<field>:<value> — set a discrete-choice field
-    return handleDiscreteSet(callback, session, parts[3], parts.slice(4).join(":"));
+    // ps:s:<sid>:<idx>:<field>:<value> — set a discrete-choice field on item <idx>
+    return handleDiscreteSet(
+      callback,
+      session,
+      Number(parts[3]) || 0,
+      parts[4],
+      parts.slice(5).join(":")
+    );
   }
   if (action === "b") {
     // Back from sub-menu
@@ -326,16 +350,18 @@ async function handleConfirm(
   callback: TelegramCallbackQuery,
   session: { id: string; chatId: string; parsedData: unknown; overrides: unknown; intent: string; previewMessageId: number | null }
 ): Promise<boolean> {
-  const base = session.parsedData as ParsedExternalJob;
+  const base = itemsFromSession(session.parsedData);
   const overrides = (session.overrides ?? {}) as Record<string, unknown>;
   const merged = applyOverrides(base, overrides);
-  const intent = session.intent as "reservation" | "external" | "update";
+  const sessionIntent = session.intent as "reservation" | "external" | "update";
 
-  if (intent === "update") {
+  // "update" only ever applies to a single-item session — multi-item
+  // messages can't reference an existing record.
+  if (merged.length === 1 && sessionIntent === "update") {
     // LLM-driven field updates are intentionally NOT auto-applied (too risky
     // to guess which field the operator meant). Route them to the manage card
     // of the referenced record where edits are deterministic.
-    const ref = (merged.referenceId ?? "").trim();
+    const ref = (merged[0].referenceId ?? "").trim();
     await answerCallbackQuery(callback.id);
     if (session.previewMessageId) {
       const kind = ref.startsWith("EXT-") ? "e" : "r";
@@ -359,44 +385,59 @@ async function handleConfirm(
 
   await answerCallbackQuery(callback.id, "Kaydediliyor...");
 
-  const result = await finalize(merged, intent);
+  // Single-item session uses the operator-overridable session intent
+  // (switch-target button); multi-item items each keep their own parsed
+  // intent (a message can legitimately mix a reservation + external leg).
+  const itemsToFinalize =
+    merged.length === 1 && sessionIntent !== "update"
+      ? [{ ...merged[0], intent: sessionIntent }]
+      : merged;
 
-  if (!result.ok) {
+  const results = await finalizeItems(itemsToFinalize);
+  const succeeded: SuccessRecord[] = [];
+  const failed: string[] = [];
+  results.forEach((result, idx) => {
+    if (result.ok) {
+      succeeded.push({
+        type: result.type,
+        recordRef: result.type === "reservation" ? result.reservationId : result.jobId,
+        voucherUrl: result.voucherUrl,
+        invoiceUrl: result.invoiceUrl,
+      });
+    } else {
+      failed.push(
+        itemsToFinalize.length > 1
+          ? `İş ${idx + 1}: ${result.error}`
+          : result.error
+      );
+    }
+  });
+
+  if (succeeded.length === 0) {
     if (session.previewMessageId) {
       await editMessageText(
         session.chatId,
         session.previewMessageId,
-        `❌ Kayıt başarısız: ${result.error}`
+        `❌ Kayıt başarısız:\n${failed.join("\n")}`
       );
     }
     return true;
   }
 
   await recordOutcome(session.id, "confirmed", {
-    createdRecordId:
-      result.type === "reservation" ? result.reservationId : result.jobId,
-    createdRecordType: result.type,
+    createdRecords: succeeded.map((r) => ({ id: r.recordRef, type: r.type })),
   });
 
-  const recordRef =
-    result.type === "reservation" ? result.reservationId : result.jobId;
   if (session.previewMessageId) {
+    const successText =
+      failed.length > 0
+        ? `${formatSuccess(succeeded)}\n\n⚠️ Başarısız olanlar:\n${failed.join("\n")}`
+        : formatSuccess(succeeded);
     await editMessageText(
       session.chatId,
       session.previewMessageId,
-      formatSuccess(
-        result.type,
-        recordRef,
-        result.voucherUrl,
-        result.invoiceUrl
-      ),
-      parsedSuccessKeyboard(
-        result.type,
-        result.recordId,
-        result.voucherUrl,
-        result.invoiceUrl,
-        recordRef
-      )
+      successText,
+      parsedSuccessKeyboard(succeeded)
     );
   }
   return true;
@@ -448,6 +489,7 @@ async function handleStartEdit(
     parsedData: unknown;
     overrides: unknown;
   },
+  itemIdx: number,
   field: string
 ): Promise<boolean> {
   // Discrete-choice fields get a sub-keyboard instead of free text
@@ -456,27 +498,28 @@ async function handleStartEdit(
     await sendMessage({
       chat_id: session.chatId,
       text: "Ödeme yöntemini seç:",
-      reply_markup: paymentMethodKeyboard(session.id),
+      reply_markup: paymentMethodKeyboard(session.id, itemIdx),
     });
     return true;
   }
 
+  const overrideKey = `${itemIdx}.${field}`;
   await prisma.parseSession.update({
     where: { id: session.id },
-    data: { state: "editing", editingField: field },
+    data: { state: "editing", editingField: overrideKey },
   });
 
-  const base = session.parsedData as ParsedExternalJob;
+  const items = itemsFromSession(session.parsedData);
   const overrides = (session.overrides ?? {}) as Record<string, unknown>;
   const current =
-    field in overrides
-      ? overrides[field]
-      : (base as unknown as Record<string, unknown>)[field];
+    overrideKey in overrides
+      ? overrides[overrideKey]
+      : (items[itemIdx] as unknown as Record<string, unknown> | undefined)?.[field];
 
   await answerCallbackQuery(callback.id);
   await sendMessage({
     chat_id: session.chatId,
-    text: formatFieldEditPrompt(field, current),
+    text: formatFieldEditPrompt(field, current, { index: itemIdx, total: items.length }),
   });
   return true;
 }
@@ -484,11 +527,12 @@ async function handleStartEdit(
 async function handleDiscreteSet(
   callback: TelegramCallbackQuery,
   session: { id: string; chatId: string; overrides: unknown },
+  itemIdx: number,
   field: string,
   value: string
 ): Promise<boolean> {
   const overrides = (session.overrides ?? {}) as Record<string, unknown>;
-  overrides[field] = value;
+  overrides[`${itemIdx}.${field}`] = value;
   await prisma.parseSession.update({
     where: { id: session.id },
     data: { overrides: overrides as object },
@@ -528,8 +572,8 @@ async function handleRepeatParse(
   await prisma.parseSession.update({
     where: { id: session.id },
     data: {
-      parsedData: result.data as unknown as object,
-      intent: result.data.intent,
+      parsedData: { items: result.items } as unknown as object,
+      intent: result.items[0].intent,
       overrides: {},
     },
   });
@@ -553,13 +597,15 @@ export async function handleEditingReply(
   const rawValue = (message.text ?? "").trim();
   if (!rawValue) return false;
 
-  // "-" means clear / null
+  // "-" means clear / null. editingField is "<itemIdx>.<field>" — split off
+  // the field name for coercion, keep the compound key for the override.
   const cleared = rawValue === "-";
-  const field = session.editingField;
+  const overrideKey = session.editingField;
+  const field = overrideKey.slice(overrideKey.indexOf(".") + 1);
   const value = cleared ? null : coerceFieldValue(field, rawValue);
 
   const overrides = (session.overrides ?? {}) as Record<string, unknown>;
-  overrides[field] = value;
+  overrides[overrideKey] = value;
 
   await prisma.parseSession.update({
     where: { id: session.id },

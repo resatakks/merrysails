@@ -88,6 +88,9 @@ function buildHtml({ reservation, meta }) {
   const pickup = reservation.time?.trim()
     ? `${pickupLocation} · ${reservation.time}`
     : pickupLocation;
+  const guestSummary =
+    meta.guestSummaryOverride?.trim() ||
+    `${reservation.guests} guest${reservation.guests > 1 ? "s" : ""}`;
 
   // "standard" = normal sunset/dinner cruise confirmation wording.
   // anything else (default "custom-booking") = private-booking-by-phone wording.
@@ -158,7 +161,7 @@ function buildHtml({ reservation, meta }) {
           <tr>
             <td style="width:50%;padding:0 12px 14px 0;vertical-align:top;">
               <div style="color:#64748b;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:11px;">Lead Guest</div>
-              <div style="color:#0f172a;font-weight:600;margin-top:5px;font-size:14px;">${escapeHtml(reservation.customerName)} (${reservation.guests} guest${reservation.guests > 1 ? "s" : ""})</div>
+              <div style="color:#0f172a;font-weight:600;margin-top:5px;font-size:14px;">${escapeHtml(reservation.customerName)} (${escapeHtml(guestSummary)})</div>
             </td>
             <td style="width:50%;padding:0 0 14px 12px;vertical-align:top;">
               <div style="color:#64748b;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:11px;">Experience</div>

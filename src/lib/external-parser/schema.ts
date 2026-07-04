@@ -44,6 +44,15 @@ export interface ParsedExternalJob {
 
   eventType: ParsedEventType;
   serviceTitle: string;
+  /**
+   * Exact canonical package/variant name when the booking matches a known
+   * catalog entry (e.g. sunset/dinner wine option) — copied verbatim from
+   * the brand's own package list, never paraphrased or translated. Null
+   * when not applicable (transfers, custom events) OR when the message
+   * mixes multiple packages in one booking (operator fills the breakdown
+   * manually — see uncertainties for what to check).
+   */
+  packageName: string | null;
 
   customerName: string;
   customerEmail: string | null;
@@ -178,6 +187,7 @@ export function validateParsed(raw: unknown): {
       (pick(r.eventType, EVENT_TYPES, "custom") === "transfer"
         ? "Private Transfer"
         : "Private Cruise"),
+    packageName: s(r.packageName),
     customerName: customerName!,
     customerEmail: s(r.customerEmail)?.toLowerCase() ?? null,
     customerPhone: s(r.customerPhone),
@@ -237,6 +247,65 @@ export function sanityCheck(parsed: ParsedExternalJob): string[] {
   // Transfer should have pickup AND dropoff
   if (parsed.eventType === "transfer" && !parsed.dropoffPoint) {
     warnings.push("Transfer detected but no dropoff point — verify.");
+  }
+
+  return warnings;
+}
+
+/**
+ * Validates the multi-item shape `{ items: [...] }` the model now returns.
+ * A message may describe 1..N bookable units (round-trip legs, multi-day
+ * tour days, or genuinely bundled services). Reuses validateParsed per item
+ * so single-item behavior is byte-for-byte unchanged.
+ */
+export function validateParsedItems(raw: unknown): {
+  ok: boolean;
+  data?: ParsedExternalJob[];
+  errors: string[];
+} {
+  if (!raw || typeof raw !== "object") {
+    return { ok: false, errors: ["Model returned non-object response."] };
+  }
+  const itemsRaw = (raw as Record<string, unknown>).items;
+  if (!Array.isArray(itemsRaw) || itemsRaw.length === 0) {
+    return { ok: false, errors: ["No items array in model response."] };
+  }
+
+  const data: ParsedExternalJob[] = [];
+  const errors: string[] = [];
+  for (const [idx, itemRaw] of itemsRaw.slice(0, 6).entries()) {
+    const v = validateParsed(itemRaw);
+    if (!v.ok || !v.data) {
+      errors.push(`item[${idx}]: ${v.errors.join("; ")}`);
+    } else {
+      data.push(v.data);
+    }
+  }
+
+  if (data.length === 0) {
+    return { ok: false, errors };
+  }
+  return { ok: true, data, errors };
+}
+
+/**
+ * Cross-item sanity checks — things only visible once you see the whole
+ * batch (e.g. an accidental split of one booking into two identical items).
+ */
+export function sanityCheckItems(items: ParsedExternalJob[]): string[] {
+  const warnings = items.flatMap((item, idx) =>
+    sanityCheck(item).map((w) => (items.length > 1 ? `Item ${idx + 1}: ${w}` : w))
+  );
+
+  if (items.length > 1) {
+    const sameDateAndAmount = items.every(
+      (i) => i.jobDate === items[0].jobDate && i.amount === items[0].amount
+    );
+    if (sameDateAndAmount) {
+      warnings.push(
+        `${items.length} items detected but all share the same date + amount — verify this isn't one booking accidentally split in two.`
+      );
+    }
   }
 
   return warnings;
