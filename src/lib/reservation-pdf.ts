@@ -52,6 +52,12 @@ export interface ReservationPdfInput {
    * for legacy/manual data without a multi-package pricing snapshot.
    */
   items?: ReservationLineItem[];
+  /**
+   * Overrides the computed "Guests" line verbatim (e.g. "Up to 10 guests"
+   * for a capacity-priced private charter where the exact headcount isn't
+   * confirmed yet). Takes priority over pricing.guestBreakdown / guests.
+   */
+  guestSummaryOverride?: string;
 }
 
 let regularFontBase64: string | null = null;
@@ -488,6 +494,9 @@ export async function generateReservationVoucherPdf(
     // reservations that pre-date the 2026-05-25 child-discount feature.
     const breakdown = input.pricing?.guestBreakdown;
     const guestSummary = (() => {
+      if (input.guestSummaryOverride) {
+        return input.guestSummaryOverride;
+      }
       if (!breakdown) {
         return `${input.guests} guest${input.guests > 1 ? "s" : ""}`;
       }

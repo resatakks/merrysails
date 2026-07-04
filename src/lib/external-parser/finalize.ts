@@ -176,6 +176,12 @@ export async function finalizeAsReservation(
   const customerPhone = clean(parsed.customerPhone) ?? "TBC";
   const pickup = clean(parsed.pickupPoint);
   const serviceTitle = clean(parsed.serviceTitle) ?? tour.name;
+  // packageName is the canonical, catalog-exact string (e.g. "Without Wine",
+  // "Bosphorus Sunset Cruise with Wine", "Private Yacht Charter") when the
+  // model matched one — falls back to serviceTitle for anything else
+  // (transfers, custom events) so behavior is unchanged when packageName
+  // wasn't applicable.
+  const packageName = clean(parsed.packageName) ?? serviceTitle;
 
   // Merge parser-detected inclusions with the standard private-yacht ikram
   // defaults (only for non-dinner tours, and only when not already present).
@@ -195,7 +201,7 @@ export async function finalizeAsReservation(
     `${serviceTitle}.${pickup ? ` Departure: ${pickup}.` : ""}`;
 
   const notes = serializeReservationNotes({
-    packageName: serviceTitle,
+    packageName,
     addOns: inclusions,
     customerNote,
     additionalGuests: [],
@@ -301,4 +307,22 @@ export async function finalize(
   return intent === "reservation"
     ? finalizeAsReservation(parsed)
     : finalizeAsExternal(parsed);
+}
+
+/**
+ * Finalize a whole multi-item message (round-trip legs, multi-day tour days,
+ * or a bundle of distinct services). Each item keeps its OWN intent — a
+ * message can legitimately mix a cruise reservation with an external event
+ * leg. Creates one record per item; a failure on one item does not roll
+ * back the others (each is independently useful to the operator), but is
+ * reported so nothing silently disappears.
+ */
+export async function finalizeItems(
+  items: ParsedExternalJob[]
+): Promise<FinalizeResult[]> {
+  const results: FinalizeResult[] = [];
+  for (const item of items) {
+    results.push(await finalize(item, item.intent === "update" ? "external" : item.intent));
+  }
+  return results;
 }

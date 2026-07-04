@@ -159,6 +159,7 @@ export async function POST(request: NextRequest) {
     try {
       await sendEmail({
         to: email,
+        cc: ["info@merrysails.com"],
         subject: `We received your MerrySails inquiry — we will reach out shortly`,
         html: leadAutoresponderEmail({ customerName: name, product }),
       });

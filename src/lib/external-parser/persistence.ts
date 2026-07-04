@@ -37,7 +37,7 @@ export interface ParseAndPersistResult {
   sessionId: string;
   /** True when an existing pending session was returned (idempotency). */
   reused: boolean;
-  data: ParsedExternalJob;
+  items: ParsedExternalJob[];
   warnings: string[];
 }
 
@@ -68,6 +68,22 @@ function normalizeForHash(message: string): string {
 }
 
 const LLM_CACHE_LOOKBACK_MS = 24 * 60 * 60 * 1000; // 24h — skip LLM if same hash succeeded recently
+
+/**
+ * Reads `parsedData`/`parsedJson` JSON in either the current `{items:[...]}`
+ * shape or the legacy single-object shape (sessions/logs created before
+ * multi-item support, still reachable within their 24h TTL right after
+ * deploy). Always returns an array so callers have one shape to handle.
+ */
+function normalizeStoredItems(json: unknown): ParsedExternalJob[] {
+  if (json && typeof json === "object" && Array.isArray((json as Record<string, unknown>).items)) {
+    return (json as { items: ParsedExternalJob[] }).items;
+  }
+  if (json && typeof json === "object" && "customerName" in (json as object)) {
+    return [json as unknown as ParsedExternalJob];
+  }
+  return [];
+}
 
 function approxTokens(text: string): number {
   // Cheap heuristic — actual Anthropic billing reports come back via the API
@@ -126,7 +142,7 @@ export async function parseAndPersist(
       result: {
         sessionId: existing.id,
         reused: true,
-        data: existing.parsedData as unknown as ParsedExternalJob,
+        items: normalizeStoredItems(existing.parsedData),
         warnings: [],
       },
     };
@@ -148,49 +164,51 @@ export async function parseAndPersist(
   });
 
   if (cachedLog?.parsedJson) {
-    const cached = cachedLog.parsedJson as unknown as ParsedExternalJob;
-    const session = await prisma.parseSession.create({
-      data: {
-        chatId,
-        brand,
-        originalMessage: message,
-        messageHash,
-        parsedData: cached as unknown as object,
-        intent: cached.intent,
-        referenceId: cached.referenceId,
-        state: "pending",
-        expiresAt: new Date(Date.now() + SESSION_TTL_MS),
-      },
-    });
-    // Log the cache hit (zero cost) so /yenis_maliyet shows accurate stats.
-    await prisma.parseLog.create({
-      data: {
-        chatId,
-        brand,
-        messageHash,
-        messageText: message,
-        model: MODEL_NAME + " [cache]",
-        latencyMs: 0,
-        confidence: cached.confidence,
-        inputTokens: 0,
-        outputTokens: 0,
-        costUsd: 0,
-        parsedJson: cached as unknown as object,
-        warnings: ["Cache hit — LLM not called"],
-        outcome: "pending",
-      },
-    });
-    return {
-      ok: true,
-      result: {
-        sessionId: session.id,
-        reused: false,
-        data: cached,
-        warnings: [
-          "♻️ Aynı içerik son 24 saat içinde parse edilmiş — cache kullanıldı (LLM çağrılmadı).",
-        ],
-      },
-    };
+    const cachedItems = normalizeStoredItems(cachedLog.parsedJson);
+    if (cachedItems.length > 0) {
+      const session = await prisma.parseSession.create({
+        data: {
+          chatId,
+          brand,
+          originalMessage: message,
+          messageHash,
+          parsedData: { items: cachedItems } as unknown as object,
+          intent: cachedItems[0].intent,
+          referenceId: cachedItems[0].referenceId,
+          state: "pending",
+          expiresAt: new Date(Date.now() + SESSION_TTL_MS),
+        },
+      });
+      // Log the cache hit (zero cost) so /yenis_maliyet shows accurate stats.
+      await prisma.parseLog.create({
+        data: {
+          chatId,
+          brand,
+          messageHash,
+          messageText: message,
+          model: MODEL_NAME + " [cache]",
+          latencyMs: 0,
+          confidence: cachedItems[0].confidence,
+          inputTokens: 0,
+          outputTokens: 0,
+          costUsd: 0,
+          parsedJson: { items: cachedItems } as unknown as object,
+          warnings: ["Cache hit — LLM not called"],
+          outcome: "pending",
+        },
+      });
+      return {
+        ok: true,
+        result: {
+          sessionId: session.id,
+          reused: false,
+          items: cachedItems,
+          warnings: [
+            "♻️ Aynı içerik son 24 saat içinde parse edilmiş — cache kullanıldı (LLM çağrılmadı).",
+          ],
+        },
+      };
+    }
   }
 
   // ── Run parse with retry-on-5xx ──
@@ -237,9 +255,9 @@ export async function parseAndPersist(
         brand,
         originalMessage: message,
         messageHash,
-        parsedData: result.data as unknown as object,
-        intent: result.data.intent,
-        referenceId: result.data.referenceId,
+        parsedData: { items: result.items } as unknown as object,
+        intent: result.items[0].intent,
+        referenceId: result.items[0].referenceId,
         state: "pending",
         expiresAt: new Date(Date.now() + SESSION_TTL_MS),
       },
@@ -252,11 +270,11 @@ export async function parseAndPersist(
         messageText: message,
         model: MODEL_NAME,
         latencyMs: result.latencyMs,
-        confidence: result.data.confidence,
+        confidence: Math.min(...result.items.map((i) => i.confidence)),
         inputTokens,
         outputTokens,
         costUsd,
-        parsedJson: result.data as unknown as object,
+        parsedJson: { items: result.items } as unknown as object,
         warnings: result.warnings,
         outcome: "pending",
       },
@@ -268,45 +286,68 @@ export async function parseAndPersist(
     result: {
       sessionId: session.id,
       reused: false,
-      data: result.data,
+      items: result.items,
       warnings: result.warnings,
     },
   };
 }
 
 /**
- * Merge operator overrides on top of the original parse before finalizing.
- * Overrides are field-keyed JSON written when operator edits a value.
+ * Merge operator overrides on top of the original parsed items before
+ * finalizing. Overrides are keyed `"<itemIndex>.<field>"` (e.g. "0.amount",
+ * "1.jobDate") so a single flat JSON blob can carry edits for any item —
+ * single-item sessions always use index 0.
  */
 export function applyOverrides(
-  base: ParsedExternalJob,
+  items: ParsedExternalJob[],
   overrides: Record<string, unknown>
-): ParsedExternalJob {
-  return { ...base, ...overrides } as ParsedExternalJob;
+): ParsedExternalJob[] {
+  return items.map((item, idx) => {
+    const patch: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(overrides)) {
+      const dot = key.indexOf(".");
+      if (dot === -1) continue; // malformed key — ignore rather than crash
+      const keyIdx = Number(key.slice(0, dot));
+      const field = key.slice(dot + 1);
+      if (keyIdx === idx) patch[field] = value;
+    }
+    return { ...item, ...patch } as ParsedExternalJob;
+  });
 }
 
 /**
  * Mark session + log outcome after operator decision. Idempotent — calling
  * twice with same outcome is a no-op.
+ *
+ * `createdRecords` carries ALL records created this confirm (1 for a normal
+ * booking, N for a multi-item message). `createdRecordId`/`createdRecordType`
+ * (legacy single-record columns) always mirror the FIRST record so any old
+ * code path reading them still works.
  */
 export async function recordOutcome(
   sessionId: string,
   outcome: "confirmed" | "edited" | "cancelled",
-  details?: { createdRecordId?: string; createdRecordType?: "reservation" | "external" }
+  details?: {
+    createdRecords?: Array<{ id: string; type: "reservation" | "external" }>;
+  }
 ): Promise<void> {
   const session = await prisma.parseSession.findUnique({
     where: { id: sessionId },
   });
   if (!session) return;
 
+  const first = details?.createdRecords?.[0];
+
   await prisma.$transaction([
     prisma.parseSession.update({
       where: { id: sessionId },
       data: {
         state: outcome === "edited" ? "pending" : outcome,
-        createdRecordId: details?.createdRecordId ?? session.createdRecordId,
-        createdRecordType:
-          details?.createdRecordType ?? session.createdRecordType,
+        createdRecordId: first?.id ?? session.createdRecordId,
+        createdRecordType: first?.type ?? session.createdRecordType,
+        ...(details?.createdRecords
+          ? { createdRecords: details.createdRecords as unknown as object }
+          : {}),
       },
     }),
     prisma.parseLog.updateMany({

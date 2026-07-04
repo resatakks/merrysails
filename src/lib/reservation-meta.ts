@@ -34,6 +34,9 @@ interface ReservationMetaPayload {
   emailTemplate?: ReservationEmailTemplate;
   voucherExtraNote?: string;
   voucherExtraNoteTitle?: string;
+  /** Overrides the computed "Guests" line verbatim (e.g. "Up to 10 guests"
+   * for a capacity-priced private charter without a confirmed headcount). */
+  guestSummaryOverride?: string;
 }
 
 export interface ParsedReservationMeta {
@@ -50,6 +53,7 @@ export interface ParsedReservationMeta {
   emailTemplate?: ReservationEmailTemplate;
   voucherExtraNote?: string;
   voucherExtraNoteTitle?: string;
+  guestSummaryOverride?: string;
 }
 
 function roundMoney(value: number): number {
@@ -143,6 +147,7 @@ export function serializeReservationNotes(
     emailTemplate: payload.emailTemplate,
     voucherExtraNote: payload.voucherExtraNote?.trim() || undefined,
     voucherExtraNoteTitle: payload.voucherExtraNoteTitle?.trim() || undefined,
+    guestSummaryOverride: payload.guestSummaryOverride?.trim() || undefined,
   };
 
   if (
@@ -156,7 +161,8 @@ export function serializeReservationNotes(
     !cleanedPayload.paymentMethod &&
     !cleanedPayload.internalOperatorNote &&
     !cleanedPayload.emailTemplate &&
-    !cleanedPayload.voucherExtraNote
+    !cleanedPayload.voucherExtraNote &&
+    !cleanedPayload.guestSummaryOverride
   ) {
     return null;
   }
@@ -220,6 +226,7 @@ export function parseReservationNotes(
       emailTemplate: parsed.emailTemplate,
       voucherExtraNote: parsed.voucherExtraNote?.trim() || undefined,
       voucherExtraNoteTitle: parsed.voucherExtraNoteTitle?.trim() || undefined,
+      guestSummaryOverride: parsed.guestSummaryOverride?.trim() || undefined,
     };
   } catch {
     return {

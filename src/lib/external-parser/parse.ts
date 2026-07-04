@@ -1,9 +1,14 @@
 /**
- * Single entry point — parseExternalMessage(message, brand) → ParsedExternalJob.
+ * Single entry point — parseExternalMessage(message, brand) → ParsedExternalJob[].
  *
  * Uses Anthropic Claude Haiku 4.5 with JSON-mode (forced tool use) for
  * structured output. Anthropic billing sits with the operator's existing
  * Claude Code account; no new vendor.
+ *
+ * A message may describe more than one bookable unit (round-trip legs,
+ * multi-day tour days, bundled services) — the model always returns
+ * `{ items: [...] }`, 1..6 entries. Single-booking messages return a
+ * 1-element array.
  *
  * Roughly $0.0005 per call at the volume + token shape we see (1k input,
  * 400 output tokens) → ~$0.50/month for 1000 parses. No daily-quota cliff
@@ -11,7 +16,7 @@
  */
 
 import { buildParserPrompt, PARSER_RESPONSE_SCHEMA, type PromptContext } from "./prompt";
-import { validateParsed, sanityCheck, type ParsedExternalJob } from "./schema";
+import { validateParsedItems, sanityCheckItems, type ParsedExternalJob } from "./schema";
 
 // Model is env-driven so we can A/B test cheaper variants without redeploy.
 // Defaults to Haiku 4.5 (verified accuracy 4/4 on real fixtures). Set
@@ -24,7 +29,7 @@ const PARSER_TOOL_NAME = "submit_parsed_job";
 
 export interface ParseSuccess {
   ok: true;
-  data: ParsedExternalJob;
+  items: ParsedExternalJob[];
   warnings: string[];
   raw: unknown;
   latencyMs: number;
@@ -172,7 +177,7 @@ export async function parseExternalMessage(
     };
   }
 
-  const validation = validateParsed(toolUse.input);
+  const validation = validateParsedItems(toolUse.input);
   if (!validation.ok || !validation.data) {
     return {
       ok: false,
@@ -182,12 +187,18 @@ export async function parseExternalMessage(
     };
   }
 
-  const enforced = enforceCurrencyFromMessage(message, validation.data);
+  const enforcedItems: ParsedExternalJob[] = [];
+  const currencyWarnings: string[] = [];
+  for (const item of validation.data) {
+    const enforced = enforceCurrencyFromMessage(message, item);
+    enforcedItems.push(enforced.data);
+    currencyWarnings.push(...enforced.warnings);
+  }
 
   return {
     ok: true,
-    data: enforced.data,
-    warnings: [...sanityCheck(enforced.data), ...enforced.warnings],
+    items: enforcedItems,
+    warnings: [...sanityCheckItems(enforcedItems), ...currencyWarnings, ...validation.errors],
     raw: toolUse.input,
     latencyMs,
     usage,

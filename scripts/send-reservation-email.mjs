@@ -84,9 +84,26 @@ function buildHtml({ reservation, meta }) {
   const symbol = currencySymbol(reservation.currency);
   const totalDisplay = `${symbol}${Number(reservation.totalPrice).toFixed(2)}`;
   const paymentNote = paymentNoteFor(meta.paymentMethod, totalDisplay);
+  const pickupLocation = meta.meetingPointNote?.trim() || "Karaköy";
   const pickup = reservation.time?.trim()
-    ? `Karaköy · ${reservation.time}`
-    : "Karaköy";
+    ? `${pickupLocation} · ${reservation.time}`
+    : pickupLocation;
+  const guestSummary =
+    meta.guestSummaryOverride?.trim() ||
+    `${reservation.guests} guest${reservation.guests > 1 ? "s" : ""}`;
+
+  // "standard" = normal sunset/dinner cruise confirmation wording.
+  // anything else (default "custom-booking") = private-booking-by-phone wording.
+  const isStandard = (meta?.emailTemplate ?? "custom-booking") === "standard";
+  const headerSub = isStandard
+    ? "Your booking is confirmed."
+    : "Private booking arranged by phone.";
+  const introLine = isStandard
+    ? `Hi ${escapeHtml(reservation.customerName)}, your MerrySails booking is confirmed. Below is your reservation summary — please keep this email and the attached voucher handy.`
+    : `Hi ${escapeHtml(reservation.customerName)}, your private booking with MerrySails is confirmed. Below is your reservation summary — please keep this email and the attached voucher handy.`;
+  const footerLine = isStandard
+    ? "This confirmation was issued for your MerrySails reservation."
+    : "This confirmation was issued because a private booking was arranged by phone.";
 
   const meetingPointBlock = meta.meetingPointNote
     ? `<div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:14px;padding:16px 18px;margin-bottom:18px;">
@@ -118,7 +135,7 @@ function buildHtml({ reservation, meta }) {
             <td style="text-align:right;vertical-align:middle;">
               <div style="font-size:11px;color:#f7b52c;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">MerrySails</div>
               <div style="color:#ffffff;font-size:19px;font-weight:800;margin-top:3px;">Booking Confirmed</div>
-              <div style="color:#cbd5e1;font-size:11px;margin-top:4px;">Private booking arranged by phone.</div>
+              <div style="color:#cbd5e1;font-size:11px;margin-top:4px;">${headerSub}</div>
             </td>
           </tr>
         </table>
@@ -126,7 +143,7 @@ function buildHtml({ reservation, meta }) {
       <div style="height:5px;background:linear-gradient(90deg,#f7b52c,#ff8a00);"></div>
       <div style="padding:28px;">
         <p style="color:#0f172a;margin:0 0 18px;font-size:15px;line-height:1.7;">
-          Hi ${escapeHtml(reservation.customerName)}, your private booking with MerrySails is confirmed. Below is your reservation summary — please keep this email and the attached voucher handy.
+          ${introLine}
         </p>
         <div style="margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #e2e8f0;">
           <table style="width:100%;border-collapse:collapse;"><tr>
@@ -144,7 +161,7 @@ function buildHtml({ reservation, meta }) {
           <tr>
             <td style="width:50%;padding:0 12px 14px 0;vertical-align:top;">
               <div style="color:#64748b;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:11px;">Lead Guest</div>
-              <div style="color:#0f172a;font-weight:600;margin-top:5px;font-size:14px;">${escapeHtml(reservation.customerName)} (${reservation.guests} guest${reservation.guests > 1 ? "s" : ""})</div>
+              <div style="color:#0f172a;font-weight:600;margin-top:5px;font-size:14px;">${escapeHtml(reservation.customerName)} (${escapeHtml(guestSummary)})</div>
             </td>
             <td style="width:50%;padding:0 0 14px 12px;vertical-align:top;">
               <div style="color:#64748b;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:11px;">Experience</div>
@@ -193,7 +210,7 @@ function buildHtml({ reservation, meta }) {
       <div style="text-align:center;color:#94a3b8;font-size:11px;padding:18px 28px;border-top:1px solid #e2e8f0;line-height:1.7;">
         <div style="color:#64748b;font-weight:700;">MerrySails · Meryem Yıldız Travel</div>
         TURSAB A Group licensed since 2001 · merrysails.com · info@merrysails.com<br />
-        This confirmation was issued because a private booking was arranged by phone.
+        ${footerLine}
       </div>
     </div>
   </div>
@@ -222,7 +239,10 @@ async function main() {
   const meta = parseMeta(reservation.notes);
   await prisma.$disconnect();
 
-  const subject = `MerrySails — Private booking confirmation · ${reservationId}`;
+  const isStandard = (meta?.emailTemplate ?? "custom-booking") === "standard";
+  const subject = isStandard
+    ? `MerrySails — Booking confirmation · ${reservationId}`
+    : `MerrySails — Private booking confirmation · ${reservationId}`;
   const html = buildHtml({ reservation, meta });
 
   if (dryRun) {
@@ -247,18 +267,10 @@ async function main() {
   ]);
   console.log(`Voucher PDF: ${voucherBuf.length} bytes · Invoice PDF: ${invoiceBuf.length} bytes`);
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: { user: smtpUser, pass: smtpPass },
-  });
-
   const fromName = (process.env.SMTP_FROM_NAME ?? process.env.EMAIL_FROM_NAME ?? "MerrySails").trim();
   const fromEmail = (process.env.SMTP_FROM_EMAIL ?? smtpUser).trim();
 
-  console.log(`Sending to ${reservation.customerEmail} (CC: ${CC.join(", ")})…`);
-  const info = await transporter.sendMail({
+  const mailOptions = {
     from: `"${fromName}" <${fromEmail}>`,
     to: reservation.customerEmail,
     cc: CC,
@@ -268,7 +280,31 @@ async function main() {
       { filename: `${reservationId}-voucher.pdf`, content: voucherBuf, contentType: "application/pdf" },
       { filename: `${reservationId}-invoice.pdf`, content: invoiceBuf, contentType: "application/pdf" },
     ],
-  });
+  };
+
+  // Gmail SMTP: try implicit-TLS 465 first, fall back to STARTTLS 587 if refused.
+  const ports = [
+    { port: 465, secure: true },
+    { port: 587, secure: false },
+  ];
+  let info, lastErr;
+  for (const { port, secure } of ports) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port,
+        secure,
+        auth: { user: smtpUser, pass: smtpPass },
+      });
+      console.log(`Sending to ${reservation.customerEmail} via port ${port} (CC: ${CC.join(", ")})…`);
+      info = await transporter.sendMail(mailOptions);
+      break;
+    } catch (err) {
+      lastErr = err;
+      console.warn(`Port ${port} failed: ${err.code ?? err.message}. Trying next…`);
+    }
+  }
+  if (!info) throw lastErr ?? new Error("All SMTP ports failed");
 
   console.log("Sent. messageId=", info.messageId);
   console.log("Accepted:", info.accepted);

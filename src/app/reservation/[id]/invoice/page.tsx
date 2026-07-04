@@ -235,8 +235,8 @@ export default async function ReservationInvoicePage({
                           Guests
                         </p>
                         <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                          {reservation.guests} guest
-                          {reservation.guests > 1 ? "s" : ""}
+                          {reservationMeta.guestSummaryOverride ??
+                            `${reservation.guests} guest${reservation.guests > 1 ? "s" : ""}`}
                         </p>
                       </div>
                     </div>

@@ -161,9 +161,14 @@ model ParseSession {
   editingField String?
   /// When intent=update, the existing record id we're modifying.
   referenceId String?
-  /// After confirm, the created reservation id / external job id.
+  /// After confirm, the created reservation id / external job id (first
+  /// record when a multi-item message created several — see createdRecords).
   createdRecordId   String?
   createdRecordType String? // "reservation" | "external"
+  /// ALL records created this confirm — [{id,type}, ...]. 1 entry for a
+  /// normal booking, N for a multi-item message (round-trip legs, multi-day
+  /// tour days). createdRecordId/Type above always mirror entry [0].
+  createdRecords    Json?
   /// Telegram message id of the preview card so we can edit it in place.
   previewMessageId  Int?
 
