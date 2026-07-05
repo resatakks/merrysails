@@ -3,7 +3,7 @@
 **Karakter/Author byline:** Captain Ahmet (cruise/yacht) + Editorial (city guides) — NO cross-brand byline reuse with GoldenSunset
 **Conversion truth:** `reservation_submit` (DB: `Reservation` table, MRY-* IDs)
 **Rakipler:** GetYourGuide, Viator/TripAdvisor, bosphorustour.com; sister GoldenSunset (differentiation: tier + demographic)
-**Son güncelleme:** 2026-07-04
+**Son güncelleme:** 2026-07-05 (FV-1 kök-neden + kod fix)
 
 ---
 
@@ -50,7 +50,7 @@
 
 ## ⚠️ AÇIK SORUNLAR / FIX-VERIFY
 - **[R1 SUPPRESSION — AÇIK week 4]** bkz. Fırsat #2. `fix-verify-queue.md` FV-4. Sayaç: SUPPRESSION-WATCH.md güncellendi (06-09 başlangıç, veri 07-02'ye kadar 24 gün, bugün ~26. gün).
-- **[FV-1 REOPEN — P0]** /reservation dead %64.7 + "Change" butonu 155 dead click. 07-02'deki "iyileşme" sinyali noise çıktı. Element listesi fix-verify'da; kod/deploy doğrulaması gerekli.
+- **[FV-1 KOD FIX LANDED 2026-07-05 — deploy bekliyor]** /reservation dead %64.7 kök-nedeni bulundu: **deploy-gap DEĞİL** (canlı bundle = HEAD planner kodu, kanıt fix-verify'da). 2 gerçek bug fix'lendi (`PlannerDateCalendar.tsx`): (1) ay navigasyonu seçili aya kilitleniyordu — month-label/chevron dead'lerin kökü, sonraki aya geçiş imkânsızdı; (2) "Change" butonu scrollIntoView no-op'tu → görünür pulse eklendi. PayTR overlay hipotezi çürüdü (repo'da PayTR yok). Deploy sonrası verify: session-dead <15% + "Change" ~0.
 - **[FV-5 YENİ — P0]** 4 money page rich-results FAIL (Review itemReviewed) — kod fix'i bekliyor (`ReviewsCarousel.tsx`).
 - **[OAuth]** GA4 (missing token) + Google Ads (`unauthorized_client`) hâlâ bloke → D2/D8 N/A. **GSC artık merkezi token'la ÇALIŞIYOR** (revoked olan repo-lokal script credential'ıydı) — operatör GSC OAuth yenilemesi artık P2'ye düştü; GA4 yenileme hâlâ P1.
 
@@ -78,6 +78,14 @@
 ---
 
 ## 📅 GÜNLÜK LOG (append-only, son 30 gün tutulur)
+
+### 2026-07-05 (mode=fix, FV-1 P0 /reservation dead-click)
+- **Deploy-gap verdict: GAP YOK.** Kanıt: canlı bundle chunk'ında `planner-calendar-grid")?.scrollIntoView({behavior:"smooth"` (0259ab1'in birebir onClick'i) + prod HTML'de `905448989812` (4f23b43); 4f23b43..HEAD = sadece cron/parser/email backend, planner'a dokunan 0 commit. Yani "Change" fix'i canlıdaydı — dead click'leri üreten canlı kodun kendisiydi.
+- **BUG 1 (month lock):** `PlannerDateCalendar` render-time snap-back (`3511f4c` kökenli) + CoreBookingPlanner'ın yarın pre-select'i = ay navigasyonu (chevron + month-label butonu) kalıcı kilitli; `setNavigationMonth(Ağustos)` her render'da seçili aya geri eziliyordu → DOM değişimi 0 = month-label 116 dead + **Ağustos rezervasyonu görüntülenemiyordu** (gelir etkisi). Fix: snap sadece selection değişince; `currentMonth = navigationMonth ?? selectedDate ?? today`.
+- **BUG 2 ("Change" no-op):** buton handler'ı bağlıydı ama grid zaten ekrandayken scrollIntoView görünür hiçbir şey yapmıyor → 155 dead. Fix: scroll + takvim yüzeyinde 1.6s brand-ring pulse (her tıka görünür yanıt, Clarity dead saymaz).
+- **PayTR overlay hipotezi ÇÜRÜDÜ:** repo'da PayTR yok, /reservation'da iframe yok; maskeli "•••••" 48 muhtemelen fiyat içeren grid konteyneri (Balanced masking + disabled-cell pointer-events-none pass-through). Kod değişikliği gerekmedi — deploy sonrası izlenecek.
+- **Build:** `npx tsc --noEmit` ✅ + `npm run build` ✅ (1204 static gen OK). Push YOK (kural). **Deploy sonrası verify: /reservation session-dead <15% + "Change" dead ~0 + month-label dead ~0.**
+- Kapsam dışı bırakılanlar: ReviewsCarousel/schema (FV-5 ayrı chip), title/meta/h1 (FREEZE), PayTR entegrasyon mantığı.
 
 ### 2026-07-04 (mode=daily)
 - **Coverage:** tüm DAILY hücreler DONE/N/A. **BÜYÜK UNBLOCK: GSC merkezi token (`/Users/resat/mcp-gsc/token.json`) search-analytics + sitemaps + inspection üçünü de açıyor** — B1/A3/A7 CANLI. sc-domain:merrysails.com property (eski "2c/38i" baseline URL-prefix'ti, kıyaslama yapılmaz).

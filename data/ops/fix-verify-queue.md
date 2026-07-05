@@ -1,16 +1,19 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-04
+**Son güncelleme:** 2026-07-05
 
 > GSC "Sayfalar / neden dizine eklenmiyor" sınıf-raporu API'de yok (UI-only) → A1 sınıf-delta operatör UI'sinden. Rich-results + coverage tek-URL doğrulaması Inspection API ile CANLI (merkezi token).
 
 ## AÇIK (fix bekliyor / verify bekliyor)
 
-### FV-1 · [P0 · REOPEN 2026-07-04] /reservation dead-click re-spike
+### FV-1 · [P0 · KÖK-NEDEN BULUNDU + KOD FIX 2026-07-05 · deploy bekliyor] /reservation dead-click re-spike
 - **Kaynak:** Clarity 3g (07-02→07-04): **11/17 session dead-click = %64.7 + 1 rage** (07-02 ölçümü %33 idi — "iyileşme" noise çıktı).
-- **Element verisi (Clarity, dead-click sayısı):** whitespace/boşluk **1.480**, **"Change" butonu 155** (fix'in eklediği selected-date "Change" cue tıklamaya cevap vermiyor görünüyor), month-label "Julio de 2026" 98 + "July 2026" 18, "2Guests" 52, **maskeli kart alanı "•••••" 48 (PayTR iframe overlay şüphesi)**, takvim günü "31" 20.
-- **Fix durumu:** calendar fix commit'leri (0259ab1/f246b39/6c07e66) main'de AMA prod etkisi görünmüyor. YENİ HİPOTEZ: (a) deploy-gap (main deploy edilmedi) veya (b) "Change" click-handler kırık / event yutuluyor.
-- **AKSIYON:** prod'da /reservation aç → "Change" + month-label + guests satırı gerçekten tepki veriyor mu test; `vercel ls` ile son deploy zamanı vs commit zamanı karşılaştır. Kart alanı 48 dead için PayTR iframe z-index/overlay kontrolü.
-- **Verify:** ✘ REOPEN — hedef: session-dead <15%, "Change" dead-click →~0.
+- **Element verisi (Clarity, dead-click sayısı):** whitespace/boşluk **1.480**, **"Change" butonu 155**, month-label "Julio de 2026" 98 + "July 2026" 18, "2Guests" 52, maskeli alan "•••••" 48, takvim günü "31" 20.
+- **DEPLOY-GAP VERDICT (2026-07-05): GAP YOK.** Canlı bundle'da (`dpl_D6zt4oZ…`) `planner-calendar-grid")?.scrollIntoView({behavior:"smooth"` birebir mevcut = 0259ab1 canlıda; prod HTML'de `905448989812` (4f23b43, HEAD-7) mevcut; 4f23b43..HEAD arası sadece backend/cron/parser (planner'a dokunan 0 commit). Dead-click'ler canlıdaki (=HEAD) kodun kendi bug'ları.
+- **BUG 1 — ay navigasyonu kilidi (month-label 116 + chevron dead'lerin kökü):** `PlannerDateCalendar.tsx` render-time kuralı `currentMonth = selectedDate'in ayı (navigationMonth farklıysa)` + `CoreBookingPlanner` her zaman yarını pre-select ediyor → prev/next chevron VE month-label butonu her tıkta seçili aya geri çakılıyordu; DOM değişmiyor = dead click, **Ağustos'a geçmek imkânsızdı** (satır kökeni: 3511f4c). Fix: snap sadece selection DEĞİŞTİĞİNDE (render-phase adjustment pattern), `currentMonth = navigationMonth ?? selectedDate ?? today`.
+- **BUG 2 — "Change" butonu görünmez no-op (155 dead):** onClick bağlıydı ama tek işi grid'e `scrollIntoView` — grid butonun hemen ÜSTÜNDE, neredeyse her zaman ekranda → sıfır scroll, sıfır DOM değişimi = dead click (0259ab1'in fix'i kendisi dead-click üretiyordu). Fix: scroll korunur + takvim yüzeyinde 1.6s ring pulse (her tıka görünür yanıt).
+- **PayTR overlay hipotezi ÇÜRÜDÜ:** repo'da PayTR entegrasyonu YOK (grep 0 hit); /reservation'da iframe yok (tek iframe /reservation/[id] PDF modal'ı, z-[100] doğru katmanlı). Maskeli "•••••" 48 = Balanced masking'in sayı içeren planner yüzeyi (fiyatlı grid konteyneri — disabled hücreler pointer-events-none, tık konteynere düşüyor) olma ihtimali yüksek; overlay/z-index bug'ı YOK, deploy sonrası izle.
+- **Fix commit:** `PlannerDateCalendar.tsx` — tsc + build PASS, push YOK, deploy bekliyor (session-sonu kuralı).
+- **Verify:** ✘ deploy sonrası — hedef: session-dead **<15%**, "Change" dead **→~0**, month-label dead **→~0** (artık ay ilerletiyor). 48'lik maskeli alan düşmezse ayrı ele al.
 
 ### FV-2 · [P1 · KOD PENDING] /istanbul-dinner-cruise dead-click
 - **Kaynak:** Clarity. 07-01: 42.86% → 07-02: 16.67% → **07-04: %0 (3 sess, low-N)**.
