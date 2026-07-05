@@ -58,7 +58,7 @@ export const dynamic = "force-dynamic";
 
 /** How long after a trip ends before the review email goes out (tunable). */
 const SEND_DELAY_MS = 4 * 60 * 60 * 1000; // 4h after trip-end
-const SEVENTY_TWO_HOURS_MS = 72 * 60 * 60 * 1000;
+const SEVENTY_TWO_HOURS_MS = 120 * 60 * 60 * 1000; // TEMP: 120h re-sweep 2026-07-04 — revert to 72h after
 
 /**
  * DENYLIST eligibility. The dominant reservation status is "new" (the operator
