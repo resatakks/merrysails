@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
   addDays,
   addMonths,
@@ -76,6 +76,37 @@ export function PlannerDateCalendar({
   );
   const [operations, setOperations] = useState<TourOperationClientSnapshot[]>([]);
 
+  /* 2026-07-05 Clarity P0 (/reservation dead-clicks 33%→64.7%): the old
+     render-time rule "currentMonth snaps to selectedDate's month whenever
+     navigationMonth differs" silently vetoed every prev/next/month-label tap
+     the moment a date was selected — and CoreBookingPlanner pre-selects
+     tomorrow, so month browsing was PERMANENTLY locked to the selected month
+     (116 dead clicks on the month label alone; next month unreachable).
+     Keep the original intent — snap the visible month when the parent hands
+     us a NEW selection (package switch, URL date param) — but only when the
+     selection actually changes, never as a per-render override. */
+  const [lastSnappedSelection, setLastSnappedSelection] = useState<number | null>(
+    selectedDate ? selectedDate.getTime() : null
+  );
+  if (selectedDate && selectedDate.getTime() !== lastSnappedSelection) {
+    setLastSnappedSelection(selectedDate.getTime());
+    setNavigationMonth(startOfMonth(selectedDate));
+  }
+
+  /* 2026-07-05 Clarity P0: the "Change" row sits directly BELOW the calendar
+     grid, so the grid is almost always already on screen — scrollIntoView
+     alone produced zero visible response (155 dead clicks on "Change").
+     Pulse a ring around the calendar surface so every tap has visible
+     feedback pointing the eye at the actual date control. */
+  const [isCalendarPulsing, setIsCalendarPulsing] = useState(false);
+  const pulseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (pulseTimerRef.current) clearTimeout(pulseTimerRef.current);
+    },
+    []
+  );
+
   const operationsByDate = useMemo(
     () =>
       Object.fromEntries(
@@ -140,11 +171,7 @@ export function PlannerDateCalendar({
 
   const today = startOfDay(now);
   const tomorrow = addDays(today, 1);
-  const resolvedNavigationMonth = navigationMonth ?? selectedDate ?? today;
-  const currentMonth =
-    selectedDate && !isSameMonth(resolvedNavigationMonth, selectedDate)
-      ? selectedDate
-      : resolvedNavigationMonth;
+  const currentMonth = navigationMonth ?? selectedDate ?? today;
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(currentMonth);
   const days = eachDayOfInterval({ start: monthStart, end: monthEnd });
@@ -161,7 +188,13 @@ export function PlannerDateCalendar({
         {t.selectYourPreferredDate}
       </div>
 
-      <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-alt)] p-4">
+      <div
+        className={`rounded-[1.5rem] border bg-[var(--surface-alt)] p-4 transition-all duration-300 ${
+          isCalendarPulsing
+            ? "border-[var(--brand-primary)]/50 ring-2 ring-[var(--brand-primary)]/40 ring-offset-2"
+            : "border-[var(--line)]"
+        }`}
+      >
         <div className="mb-4 flex items-center justify-between">
           <button
             type="button"
@@ -363,6 +396,15 @@ export function PlannerDateCalendar({
                   .getElementById("planner-calendar-grid")
                   ?.scrollIntoView({ behavior: "smooth", block: "center" });
               }
+              /* Grid is usually already visible (it sits right above this
+                 row), so the scroll alone was a silent no-op → 155 Clarity
+                 dead clicks. Always answer the tap with a visible pulse. */
+              setIsCalendarPulsing(true);
+              if (pulseTimerRef.current) clearTimeout(pulseTimerRef.current);
+              pulseTimerRef.current = setTimeout(
+                () => setIsCalendarPulsing(false),
+                1600
+              );
             }}
             className="flex w-full items-center gap-2 rounded-xl bg-[var(--brand-primary)]/5 px-3 py-2.5 text-left transition-colors hover:bg-[var(--brand-primary)]/10"
           >
