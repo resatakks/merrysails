@@ -33,13 +33,13 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.merrysails.com" }],
         destination: "https://merrysails.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       // SEO: redirect common mistyped/old URLs to correct pages
       {
         source: "/yacht-charter",
         destination: "/yacht-charter-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       // /bosphorus-guide parked 2026-05-26 — 301 to the commercial pillar so
       // backlinks + email-template links keep their weight.  Locale variants
@@ -47,12 +47,12 @@ const nextConfig: NextConfig = {
       {
         source: "/bosphorus-guide",
         destination: "/bosphorus-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl)/bosphorus-guide",
         destination: "/:locale/bosphorus-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       // SEO: legacy fleet slugs → CURRENT descriptive slugs.
       // History: y1-y6 (2026-05-12) once pointed to the gen-2 "bosphorus-*"
@@ -69,214 +69,214 @@ const nextConfig: NextConfig = {
       {
         source: "/yacht-charter-istanbul/y1",
         destination: "/yacht-charter-istanbul/boutique-yacht-12",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/y2",
         destination: "/yacht-charter-istanbul/premium-yacht-15",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/y3",
         destination: "/yacht-charter-istanbul/group-yacht-40-standard",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/y4",
         destination: "/yacht-charter-istanbul/group-yacht-40-signature",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/y5",
         destination: "/yacht-charter-istanbul/event-yacht-90",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/y6",
         destination: "/yacht-charter-istanbul/mega-event-yacht-150",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/y1",
         destination: "/:locale/yacht-charter-istanbul/boutique-yacht-12",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/y2",
         destination: "/:locale/yacht-charter-istanbul/premium-yacht-15",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/y3",
         destination: "/:locale/yacht-charter-istanbul/group-yacht-40-standard",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/y4",
         destination: "/:locale/yacht-charter-istanbul/group-yacht-40-signature",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/y5",
         destination: "/:locale/yacht-charter-istanbul/event-yacht-90",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/y6",
         destination: "/:locale/yacht-charter-istanbul/mega-event-yacht-150",
-        permanent: true,
+        statusCode: 301,
       },
       // Renamed gen-2 / gen-2.5 yacht-detail slugs that now 404 (GSC). Each
       // 301s to the current slug by type + capacity; locale variants too.
       {
         source: "/yacht-charter-istanbul/bosphorus-sailing-yacht-10",
         destination: "/yacht-charter-istanbul/boutique-yacht-12",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/bosphorus-sailing-yacht-14",
         destination: "/yacht-charter-istanbul/premium-yacht-15",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/bosphorus-group-yacht-36",
         destination: "/yacht-charter-istanbul/group-yacht-40-standard",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/bosphorus-signature-yacht-36",
         destination: "/yacht-charter-istanbul/group-yacht-40-signature",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/bosphorus-event-yacht-44",
         destination: "/yacht-charter-istanbul/event-yacht-90",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
         destination: "/yacht-charter-istanbul/mega-event-yacht-150",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/boutique-yacht-10",
         destination: "/yacht-charter-istanbul/boutique-yacht-12",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/premium-yacht-14",
         destination: "/yacht-charter-istanbul/premium-yacht-15",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/group-yacht-36-standard",
         destination: "/yacht-charter-istanbul/group-yacht-40-standard",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/group-yacht-36-signature",
         destination: "/yacht-charter-istanbul/group-yacht-40-signature",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-charter-istanbul/event-yacht-44",
         destination: "/yacht-charter-istanbul/event-yacht-90",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/bosphorus-sailing-yacht-10",
         destination: "/:locale/yacht-charter-istanbul/boutique-yacht-12",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/bosphorus-sailing-yacht-14",
         destination: "/:locale/yacht-charter-istanbul/premium-yacht-15",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/bosphorus-group-yacht-36",
         destination: "/:locale/yacht-charter-istanbul/group-yacht-40-standard",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/bosphorus-signature-yacht-36",
         destination: "/:locale/yacht-charter-istanbul/group-yacht-40-signature",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/bosphorus-event-yacht-44",
         destination: "/:locale/yacht-charter-istanbul/event-yacht-90",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/bosphorus-mega-event-yacht-150",
         destination: "/:locale/yacht-charter-istanbul/mega-event-yacht-150",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/boutique-yacht-10",
         destination: "/:locale/yacht-charter-istanbul/boutique-yacht-12",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/premium-yacht-14",
         destination: "/:locale/yacht-charter-istanbul/premium-yacht-15",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/group-yacht-36-standard",
         destination: "/:locale/yacht-charter-istanbul/group-yacht-40-standard",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/group-yacht-36-signature",
         destination: "/:locale/yacht-charter-istanbul/group-yacht-40-signature",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/yacht-charter-istanbul/event-yacht-44",
         destination: "/:locale/yacht-charter-istanbul/event-yacht-90",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/bosphorus-dinner-cruise",
         destination: "/istanbul-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/yacht-charter-in-istanbul",
         destination: "/yacht-charter-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/bosphorus-cruises",
         destination: "/bosphorus-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/boat-tour",
         destination: "/bosphorus-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/dinner-cruise",
         destination: "/istanbul-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/sunset-cruise",
         destination: "/cruises/bosphorus-sunset-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/bosphorus-cruise-prices",
         destination: "/pricing",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/prices",
         destination: "/pricing",
-        permanent: true,
+        statusCode: 301,
       },
       // Legacy / common-typo URLs that were 404-ing — discovered via GSC
       // "Bulunamadı (404)" report on 2026-05-30.  Permanent 301 to the
@@ -285,57 +285,57 @@ const nextConfig: NextConfig = {
       {
         source: "/private-yacht-charter",
         destination: "/yacht-charter-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/private-yacht",
         destination: "/yacht-charter-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yacht-rental",
         destination: "/yacht-charter-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/bosphorus-cruise-tour",
         destination: "/bosphorus-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/istanbul-cruise",
         destination: "/bosphorus-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/turkish-night",
         destination: "/turkish-night-dinner-cruise-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/events",
         destination: "/private-events",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/private-event",
         destination: "/private-events",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/corporate-event",
         destination: "/corporate-events",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/weddings",
         destination: "/private-events",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/istanbul-boat-rental",
         destination: "/boat-rental-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       // /pricing is a single-source machine-readable route (Markdown for AI
       // agents per /llms.txt). Locale variants of it return 404; redirect
@@ -344,7 +344,7 @@ const nextConfig: NextConfig = {
       {
         source: "/:locale(tr|de|fr|nl|ru)/pricing",
         destination: "/pricing",
-        permanent: true,
+        statusCode: 301,
       },
       // EN-only single-source routes. /istanbul-cruise-faq and
       // /compare-bosphorus-cruises exist only at the root (no [locale]
@@ -354,67 +354,67 @@ const nextConfig: NextConfig = {
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/istanbul-cruise-faq",
         destination: "/istanbul-cruise-faq",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:locale(tr|de|fr|nl|ru|zh)/compare-bosphorus-cruises",
         destination: "/compare-bosphorus-cruises",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/bachelorette-yacht-party",
         destination: "/proposal-yacht-rental-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/bosphorus-sightseeing-yacht-cruise",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/private-bosphorus-lunch-yacht-cruise",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/private-bosphorus-sunset-cruise",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/private-yacht-swimming-tour",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/wedding-anniversary",
         destination: "/proposal-yacht-rental-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/yacht-birthday-party",
         destination: "/proposal-yacht-rental-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/yacht-weddings",
         destination: "/proposal-yacht-rental-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/corporate-event-bosphorus-cruise",
         destination: "/corporate-events",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/romantic-marriage-proposal",
         destination: "/proposal-yacht-rental-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/cruises/private-bosphorus-dinner-yacht-cruise",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       // Cannibalization fix (GSC 30d): /blog/bosphorus-cruise-departure-points
       // outranks the canonical /bosphorus-cruise-departure-points (pos 2.5 vs 6)
@@ -423,7 +423,7 @@ const nextConfig: NextConfig = {
       {
         source: "/blog/bosphorus-cruise-departure-points",
         destination: "/bosphorus-cruise-departure-points",
-        permanent: true,
+        statusCode: 301,
       },
       // DMCA recovery (2026-06-16): bare topic-slugs that have always 404'd
       // (never existed as routes — confirmed via git history) but match the
@@ -434,7 +434,7 @@ const nextConfig: NextConfig = {
       {
         source: "/private-bosphorus-sunset-cruise",
         destination: "/private-sunset-cruise-bosphorus-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       // Old flat public-sunset URL (pre-/cruises/ move) — GSC "Not found (404)"
       // 16-URL bucket 2026-06-16. 301 to the live public sunset page (not the
@@ -443,12 +443,12 @@ const nextConfig: NextConfig = {
       {
         source: "/bosphorus-sunset-cruise",
         destination: "/cruises/bosphorus-sunset-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/bosphorus-dinner-cruise",
         destination: "/bosphorus-evening-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       // DMCA cannibalization resolution (2026-06-16): GSC URL Inspection proved
       // the four "DMCA-tainted" pillars were NEVER deindexed — all return
@@ -462,22 +462,22 @@ const nextConfig: NextConfig = {
       {
         source: "/istanbul-yacht-charter-rental",
         destination: "/yacht-charter-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/istanbul-dinner-cruise-bosphorus",
         destination: "/istanbul-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/sunset-cruise-istanbul-tickets-booking",
         destination: "/sunset-cruise-tickets-istanbul",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/private-bosphorus-dinner-yacht-charter",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
       // Chain-flatten: the dead bare slug below previously 301'd to the clean
       // slug above; now that the clean slug 301s onward to the pillar, point the
@@ -485,7 +485,7 @@ const nextConfig: NextConfig = {
       {
         source: "/private-bosphorus-dinner-yacht-cruise",
         destination: "/private-bosphorus-dinner-cruise",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },

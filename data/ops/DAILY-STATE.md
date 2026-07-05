@@ -13,7 +13,7 @@
 | **GSC clicks (7g, 06-26→07-02)** | **130** ✅ CANLI (merkezi token, sc-domain) | 87 (prev-7g) | – (property değişti, baseline reset) | ↑ **+49% WoW** |
 | GSC impressions (7g) | **12.346** | 10.111 | – | ↑ +22% |
 | GSC avg position (07-02 günlük) | **8.0** | 8.3 (06-20) | – | ↔ stabil 7-8 bandı |
-| **Bing impressions (canlı, ~2g lag)** | **0 (06-09→07-02 HARD ZERO, seri restate)** ⚠️ | 0 | 30-35/gün (erken Haz) | ⛔ SUPPRESSION week 4 |
+| **Bing impressions (canlı, ~2g lag)** | **0 (06-09→07-03 HARD ZERO, 27. gün; 07-05 canlı teyit)** ⚠️ | 0 | 30-35/gün (erken Haz) | ⛔ SUPPRESSION week 4 — crawl temiz, 301-fix hazır |
 | Bing clicks (canlı) | 0 | 0 | 1-2/gün | ⛔ |
 | Top-3 keyword (7g örneklem) | ~5 (merrysails, bosporus sonnenuntergang DE, best-cruises-2026 listicle…) | ~3 | ~0 | ↑ |
 | Pos 4-20 striking-distance | **8 sorgu** (sunset 11.6/31imp, worth-it 4.7, boat-rental 11…) | ~7 | – | ↔ |
@@ -78,6 +78,13 @@
 ---
 
 ## 📅 GÜNLÜK LOG (append-only, son 30 gün tutulur)
+
+### 2026-07-05 (Bing recovery — deep-dive, 27. gün / week 4)
+- **Bing recovery — 2026-07-05:** Son imp>0: **2026-06-08** (4 imp; restate teyit — canlı GetRankAndTrafficStats, veri 07-03'e kadar hard-zero). Crawl+index SAĞLIKLI: InIndex **472**↑, 2xx 457→515/21g, 5xx=0, robots-block=0, GetCrawlIssues=**0**.
+- **AllOtherCodes 78→192/21g = merrytourism'dekiyle aynı 308 bookkeeping (hata değil):** www→apex + http→https platform 308 + next.config **80× `permanent:true`** (= Next.js 308 emit; canlı doğrulandı `/yacht-charter`, `/bosphorus-guide`, `/yacht-charter-istanbul/y1-6`). Yine de Bing tarafında explicit olsun diye 80 kural `statusCode:301`e çevrildi — title/meta/h1 FREEZE bozulmadı. tsc + izole build PASS. Deploy sonraki pencerede.
+- **Sitemap sweep:** 398/398 URL **%100 200**.
+- **Auto-submit (bugün):** 10 money page — Bing SubmitUrlBatch **200** (quota 90), IndexNow Bing **200** + Yandex **202**, Yandex recrawl **10×202**.
+- **Operatör Bing UI:** Site Scan başlat/yenile. ETA: 2-6 hafta penceresi = 07-07→08-04; teknik taraf temiz, sabır fazı.
 
 ### 2026-07-05 (mode=fix, FV-1 P0 /reservation dead-click)
 - **Deploy-gap verdict: GAP YOK.** Kanıt: canlı bundle chunk'ında `planner-calendar-grid")?.scrollIntoView({behavior:"smooth"` (0259ab1'in birebir onClick'i) + prod HTML'de `905448989812` (4f23b43); 4f23b43..HEAD = sadece cron/parser/email backend, planner'a dokunan 0 commit. Yani "Change" fix'i canlıdaydı — dead click'leri üreten canlı kodun kendisiydi.
