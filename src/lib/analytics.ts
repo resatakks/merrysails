@@ -155,6 +155,8 @@ const CLARITY_EVENT_TAG_KEYS = new Set([
   "fields_completed",
   "guests",
   "item_name",
+  "link_type",
+  "campaign",
   "item_variant",
   "package_name",
   "page_context",
@@ -932,6 +934,23 @@ export function trackExternalLinkClick(href: string, label?: string) {
 
 export function trackFaqOpen(question: string, location?: string) {
   trackEvent("faq_open", { faq_question: question, click_location: location });
+}
+
+/**
+ * Post-trip-review email WhatsApp/Call click — fired from the
+ * /track/review-click interstitial (src/app/track/review-click) right before
+ * it redirects to the real wa.me/tel destination. These buttons don't load a
+ * webpage themselves, so this is the only signal we get that a recipient
+ * tapped one. Uses the shared trackEvent() dataLayer-push-then-gtag-fallback
+ * pattern, same as every other tracked interaction in this file.
+ */
+export function trackReviewEmailClick(
+  linkType: "whatsapp_discount" | "whatsapp_contact" | "call"
+) {
+  trackEvent("review_email_click", {
+    link_type: linkType,
+    campaign: "post_trip_review",
+  });
 }
 
 // Cruise vertical

@@ -1,4 +1,7 @@
 # INDEX AUDIT — MerrySails (2026-07-02)
+
+> ⚠️ **STALE (GSC raporu 3 Tem'de düzeldi)** — bu audit 12 Haz–2 Tem donuk-rapor penceresinde alındı; GSC Page-Indexing (Sayfalar) raporu bu pencerede 11 Haz verisinde DONUKTU. Aggregate sınıf sayıları (404/CNI/Discovered vb.) stale-şüpheli → taze (29 Haz+) veriyle re-count. URL-bazlı Inspection-API satırları canlı veriydi, GEÇERLİ. (işaret: 2026-07-05 · dosya SİLİNMEZ)
+
 **Property:** `sc-domain:merrysails.com` · **Yöntem:** GSC Sitemaps API + URL Inspection API (10 URL) + canlı HTML JSON-LD denetimi (4 money page)
 **Token durumu:** ✅ merkezi OAuth (`/Users/resat/mcp-gsc/token.json`) ÇALIŞIYOR — kuyruktaki "token revoked" notu güncel değil, API inspect yeniden aktif.
 

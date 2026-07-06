@@ -1,9 +1,7 @@
 import {
   GBP_REVIEW_URL,
-  PHONE,
   PHONE_DISPLAY,
   SITE_URL,
-  WHATSAPP_URL,
 } from "@/lib/constants";
 import { emailHead, emailLegalFooter, escapeHtml } from "./helpers";
 
@@ -119,6 +117,29 @@ function merryTourismUrlFor(locale: ReviewLocale): string {
   if (locale === "tr") return "https://www.merrytourism.com/tr";
   if (locale === "de") return "https://www.merrytourism.com/de";
   return "https://www.merrytourism.com/en";
+}
+
+/**
+ * Appends the post-trip-review UTM set to an OWN-site or SISTER-BRAND
+ * pageview link so GA4/Clarity can attribute sessions/conversions back to
+ * this email. `contentSlug` should be a short, distinct identifier per link
+ * (e.g. "own_cruises", "sister_merrytourism") so each button is individually
+ * attributable in GA4 landing-page + UTM reports.
+ *
+ * Deliberately NOT applied to Trustpilot/Google review links — those are
+ * third-party sites our own analytics never sees, so a UTM there is dead
+ * weight (see reviewButtonsRow, unchanged).
+ *
+ * Defensive `?`/`&` handling: every URL fed into this today (own routes +
+ * merryTourismUrlFor) is a clean path with no existing query string, but this
+ * checks for one anyway so a future URL with its own `?param=` doesn't break.
+ */
+function withUtm(url: string, contentSlug: string): string {
+  const separator = url.includes("?") ? "&" : "?";
+  const utm =
+    "utm_source=email&utm_medium=post_trip_review&utm_campaign=welcomeback10" +
+    `&utm_content=${encodeURIComponent(contentSlug)}`;
+  return `${url}${separator}${utm}`;
 }
 
 export interface PostTripReviewData {
@@ -634,6 +655,17 @@ const COPY: Record<ReviewLocale, Copy> = {
   },
 };
 
+/**
+ * Single source of truth accessor for the pre-filled discount-claim WhatsApp
+ * message, per locale. Both this email builder AND the /track/review-click
+ * tracker page (src/lib/review-email-constants.ts) resolve the message
+ * through this function so the two can never drift out of sync — the tracker
+ * page imports it instead of hardcoding its own copy of the strings.
+ */
+export function getDiscountWhatsappText(locale: ReviewLocale): string {
+  return COPY[locale].discountWhatsappText;
+}
+
 function reviewButtonsRow(c: Copy, googleUrl?: string, trustpilotUrl?: string): string {
   const buttons: string[] = [];
   if (trustpilotUrl) {
@@ -680,18 +712,29 @@ export function postTripReviewEmail(data: PostTripReviewData): {
   const linkLocale = ownLinkLocale(data.locale);
   const url = (path: string) =>
     linkLocale === "en" ? `${SITE_URL}${path}` : `${SITE_URL}/${linkLocale}${path}`;
-  const cruisesUrl = url("/cruises");
-  const sunsetUrl = url("/cruises/bosphorus-sunset-cruise");
-  const dinnerUrl = url("/istanbul-dinner-cruise");
+  // UTM (Part A): own-site + sister-brand pageview links get
+  // utm_source=email&utm_medium=post_trip_review&utm_campaign=welcomeback10
+  // + a distinct utm_content slug per link, so GA4/Clarity can attribute
+  // sessions/conversions back to this email. Trustpilot/Google review links
+  // (reviewButtonsRow, above) are deliberately left untagged — third-party
+  // sites our own analytics never sees.
+  const cruisesUrl = withUtm(url("/cruises"), "own_cruises");
+  const sunsetUrl = withUtm(url("/cruises/bosphorus-sunset-cruise"), "own_sunset_cruise");
+  const dinnerUrl = withUtm(url("/istanbul-dinner-cruise"), "own_dinner_cruise");
   // Private yacht charter — verified live for BOTH en-root and the tr prefix:
   //   /yacht-charter-istanbul → src/app/yacht-charter-istanbul/page.tsx
   //                            + src/app/[locale]/yacht-charter-istanbul/page.tsx
-  const privateYachtUrl = url("/yacht-charter-istanbul");
-  const merryTourismUrl = merryTourismUrlFor(data.locale);
-  // Discount-card WhatsApp button carries a pre-filled claim message. The
-  // bottom contact-row button stays the bare WHATSAPP_URL (text-free) on
-  // purpose, so leave that one untouched.
-  const discountWhatsappUrl = `${WHATSAPP_URL}?text=${encodeURIComponent(c.discountWhatsappText)}`;
+  const privateYachtUrl = withUtm(url("/yacht-charter-istanbul"), "own_private_yacht");
+  const merryTourismUrl = withUtm(merryTourismUrlFor(data.locale), "sister_merrytourism");
+  // WhatsApp/Call buttons (Part B): these do not load a webpage themselves,
+  // so route them through the /track/review-click interstitial, which fires
+  // trackReviewEmailClick() then redirects to the real wa.me/tel destination
+  // (built server-side from hardcoded constants — see review-email-constants.ts).
+  // Discount-card WhatsApp button carries a pre-filled claim message (locale-
+  // aware via ?locale=). The bottom contact-row button stays text-free.
+  const discountWhatsappUrl = `${SITE_URL}/track/review-click?to=discount&locale=${encodeURIComponent(data.locale)}`;
+  const contactWhatsappUrl = `${SITE_URL}/track/review-click?to=contact`;
+  const callUrl = `${SITE_URL}/track/review-click?to=call`;
 
   // Right-to-left rendering for Arabic. Setting dir="rtl" on <html> and the
   // <body> flips text alignment/flow for the whole message; the centred blocks
@@ -762,8 +805,8 @@ ${emailHead()}
       <!-- Contact row -->
       <div style="border-top:1px solid #eef2f7;padding-top:20px;text-align:center;">
         <p style="color:#0f172a;margin:0 0 14px;font-size:14px;font-weight:700;">${escapeHtml(c.contactHeading)}</p>
-        <a href="${WHATSAPP_URL}" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 8px;">${escapeHtml(c.whatsappBtn)}</a>
-        <a href="tel:${PHONE}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 8px;border:1px solid #cbd5e1;">${escapeHtml(c.callBtn)} ${escapeHtml(PHONE_DISPLAY)}</a>
+        <a href="${contactWhatsappUrl}" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 8px;">${escapeHtml(c.whatsappBtn)}</a>
+        <a href="${callUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 8px;border:1px solid #cbd5e1;">${escapeHtml(c.callBtn)} ${escapeHtml(PHONE_DISPLAY)}</a>
       </div>
     </div>
 

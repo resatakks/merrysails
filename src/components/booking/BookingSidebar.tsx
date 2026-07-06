@@ -616,6 +616,7 @@ export default function BookingSidebar({
  selectedAddOns,
  availablePackages: tour.packages,
  basePrice: effectivePrice,
+ priceMode: tour.priceMode,
  departurePoint: tour.departurePoint,
  tourImage: tour.image,
  rawDate: bookingDate,
