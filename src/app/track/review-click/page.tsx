@@ -31,6 +31,7 @@ import ReviewClickRedirect from "./ReviewClickRedirect";
  */
 export const metadata: Metadata = {
   title: "Continuing…",
+  description: "Transient redirect page for post-trip-review email links. Not a content page — noindex.",
   robots: {
     index: false,
     follow: false,
@@ -83,9 +84,9 @@ export default async function ReviewClickPage({
       }}
     >
       <div style={{ textAlign: "center", padding: "24px" }}>
-        <p style={{ color: "#94a3b8", fontSize: 14, margin: "0 0 16px" }}>
+        <h1 style={{ color: "#94a3b8", fontSize: 14, fontWeight: 400, margin: "0 0 16px" }}>
           Redirecting you now…
-        </p>
+        </h1>
         {/* Visible, immediately-tappable fallback — rendered server-side in
             the initial HTML, so it works even if JS is slow/blocked/fails. */}
         <a
