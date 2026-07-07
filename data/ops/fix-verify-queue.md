@@ -1,17 +1,21 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-06
+**Son güncelleme:** 2026-07-07
 
 > GSC "Sayfalar / neden dizine eklenmiyor" sınıf-raporu API'de yok (UI-only) → A1 sınıf-delta operatör UI'sinden. Rich-results + coverage tek-URL doğrulaması Inspection API ile CANLI (merkezi token).
 
 ## AÇIK (fix bekliyor / verify bekliyor)
 
-### FV-1 · [P0 · KOD FIX DEPLOY EDİLDİ — KISMEN İYİLEŞTİ, VERIFY DEVAM EDİYOR] /reservation dead-click
-- **07-04→07-05:** %64.7 (11/17 sess) + 1 rage.
-- **07-06 (Clarity 3g, 07-04→07-06):** **%34.78** (23 sess) — **büyük düşüş, deploy sinyali AÇIK** ama hedef <15%'in hâlâ ~2.3× üstünde. Rage 0%.
-- **Site-geneli paralel iyileşme:** dead-click %18.54 (07-04) → **%13.48** (07-06, 178 sess), quickback %15.17, JS-error %0.
-- **Değerlendirme:** FV-1 fix'i (0b9a217/b8a3755, month-nav kilidi + "Change" no-op) prod'da aktif görünüyor — düşüş yönü doğru ve büyük, ama /reservation için "verify" henüz KAPANMADI (hedef <15%, mevcut %34.78). Element-bazlı kırılım bugün çekilmedi (sadece URL-agregesi); yarın "Change"/month-label spesifik sayılara bakılmalı — eğer o ikisi ~0'a düştüyse kalan %34.78 farklı bir element kümesinden geliyor demektir (yeni kök-neden araştırması gerekebilir).
-- **Not (repo durumu):** `feat/yacht-product-redesign` branch'i main'e merge edilmiş (`1135d0c`) ve Vercel production 23-24 saat önce deploy görünüyor — fix canlıda kabul edilebilir güvenle.
-- **Verify:** ⏳ AÇIK — hedef <15% henüz değil. Yarın element-detay + 1-2 gün daha trend izlenmeli, <15% sürdürülebilir olursa KAPAT.
+### FV-1 · [P0 · ÇÖZÜLMÜYOR — KÖK-NEDEN KAYDI, month-nav kısmı doğrulandı] /reservation dead-click
+- **Seri:** 58% (07-01) → 33% (07-02) → 64.7% (07-04/05) → 34.78% (07-06) → **%52.63 (07-07, 19 sess)** — dalgalı, DÜŞMÜYOR. Rage 0%.
+- **Site-geneli iyileşme sürüyor:** dead %18.54 (07-04) → %13.48 (07-06) → **%11.56 (07-07)** — site iyileşti ama /reservation ayrışıyor.
+- **07-07 ELEMENT KIRILIMI (yeni, kritik):** month-nav fix ÇALIŞTI → "July 2026" label dead **116→6** ✅. AMA baskın dead artık BAŞKA yerden:
+  - blank/whitespace " " **179** + maskeli fiyat "•••• •••• ••••" **24** = tıklanamayan kart/fiyat konteyner alanı
+  - package-kart metni: "Dinner Cruise" 9, "Without Wine" 5, "/person" 3, "Selected" 3, "31" (takvim günü) 3
+  - "Continue booking" CTA **5** dead ⚠️ (birincil CTA — disabled-state affordance şüphesi)
+  - "(function(){if(typeof Nod…" **3** — script-as-visible-text (render bug şüphesi, araştır)
+- **YENİ KÖK-NEDEN HİPOTEZİ:** package/option kartları TAM tıklanabilir değil — sadece küçük radio/buton wire'lı, kart gövdesi/metni/fiyatı dead. + maskeli fiyat konteyneri click'i yutuyor.
+- **FIX PLANI (kod, ayrı session):** (1) tüm package kartı = clickable `<label>`/button (radio kartı sar); (2) maskeli fiyat/summary alanı `pointer-events:none` (disabled hücreler zaten öyle); (3) "Continue booking" disabled iken görünür affordance + no-op'u kaldır; (4) "(function(){…})" script-as-text render bug'ını bul.
+- **Verify:** ⏳ AÇIK — month-nav portion FIXED ✅, ama /reservation genel dead hedef <15% DEĞİL (%52.63). Yeni fix (package-card) deploy edilene kadar açık.
 
 ### FV-2 · [P1 · KOD PENDING] /istanbul-dinner-cruise dead-click
 - **Kaynak:** Clarity. 07-01: 42.86% → 07-02: 16.67% → 07-04: %0 (3 sess, low-N) → **07-06: veri toplu URL listesinde bugün görünmedi (muhtemelen <3 sess, noise-eşiği altı)**.
@@ -29,10 +33,10 @@
 - **Fix durumu:** RECOVERY PROTOCOL aktif — (1) title/meta/h1 FREEZE, (2) crawl-health temiz ✅, (3) SubmitUrlBatch (07-06: 14 URL 200) + IndexNow (Bing 200/Yandex 202) daily, (4) sabır: **week 5/6, ETA penceresi 07-07→08-04 içinde kalıyor.**
 - **Verify:** ✘ — imp hâlâ 0. Week 6 (~07-22) hâlâ 0 ise: Bing Site Scan + eskalasyon notu (SUPPRESSION-WATCH'ta zaten planlı).
 
-### FV-5 · [P0 · AÇIK, DEPLOY EDİLMEDİ] 4 money page Review `itemReviewed` FAIL
-- **Kaynak:** Inspection API richResultsResult (2026-07-06, canlı re-check): /istanbul-dinner-cruise (crawl 07-03), /yacht-charter-istanbul (crawl 06-24), /cruises/bosphorus-sunset-cruise (crawl 06-26), /de/istanbul-dinner-cruise (crawl 06-26). Hata AYNEN sürüyor: `ERROR: Invalid object type for field "itemReviewed"` × 4'er adet, her sayfada.
+### FV-5 · [P0 · AÇIK, DEPLOY EDİLMEDİ — 4. GÜN] 4 money page Review `itemReviewed` FAIL
+- **Kaynak:** Inspection API richResultsResult (2026-07-07, canlı re-check): /istanbul-dinner-cruise (crawl 07-03), /yacht-charter-istanbul (crawl 06-24), /cruises/bosphorus-sunset-cruise (crawl 07-06), /de/istanbul-dinner-cruise (crawl 06-26). Hata AYNEN: `ERROR: Invalid object type for field "itemReviewed"` × 4'er adet. **/bosphorus-cruise + /tr/bosphorus-cruise PASS teyitli (Review→Product @id referans pattern).**
 - **Kök neden (değişmedi):** standalone `Review` blokları `itemReviewed: Service` (geçersiz tip) — tek paylaşılan komponent `src/components/ui/ReviewsCarousel.tsx`.
-- **Durum:** 2 gündür (07-04, 07-05, 07-06) hep aynı sonuç — kod fix HÂLÂ yazılmadı/deploy edilmedi. FV-1/Bing-301 fix'leri bu pencerede deploy edildi ama ReviewsCarousel'a dokunulmadı. **Bu artık 3. gündür açık kalan P0 — öncelik yükseltilmeli.**
+- **Durum:** **4 gün üst üste (07-04/05/06/07) aynı sonuç** — kod fix HÂLÂ yazılmadı. FV-6/booking fix'leri bu pencerede commit edildi ama ReviewsCarousel'a dokunulmadı. **En eski açık P0 — öncelik en üstte.**
 - **Fix planı (GROWTH-PLAN Hamle 1, değişmedi):** Review'ları sayfanın ana entity `@id`'sine bağla (dinner/sunset→Event, yacht→Product; `/bosphorus-cruise` PASS pattern'i, bugün de PASS teyitli). `["TouristTrip","Service"]` kuralı korunur. Schema-only = title FREEZE ihlali YOK.
 - **Bonus:** premium-yacht-15 Product `review`/`aggregateRating` WARNING — değişmedi.
 - **Verify:** ✘ — fix hâlâ yazılmadı.
@@ -45,6 +49,13 @@
 - **Doğrulama:** `npx tsc --noEmit` 0 hata (önce eksik `prisma generate` nedeniyle hata görünüyordu, build script zaten `prisma generate && next build` olduğu için ayrı çalıştırılınca temizlendi) · `npm run build` başarılı (388 sayfa, sadece pre-existing 4 meta-desc-length lint uyarısı, nodemailer/next ile ilgisiz) · nodemailer kullanım noktası (`src/lib/email.ts`) ve next.config.ts 80 redirect (hepsi `statusCode:301`, `permanent:` boolean yok — commit 97fe9e3 pattern'i korunuyor) spot-check edildi, bozulma yok.
 - **Verify:** ✅ — `npm audit --audit-level=high` → **0 vulnerabilities** (moderate/low dahil tümü, sadece 4 high değil).
 
+### FV-7 · [P1 · YENİ 2026-07-07 · A1 crawl-budget] 1.553 "Tarandı-dizine eklenmedi"
+- **Kaynak:** Gerçek GSC Page-Indexing raporu (Chrome MCP, ilk kez çekildi). Money-page Inspection API örneklemi 22/22 indexed gösteriyordu — sınıf-toplamını GİZLİYORDU (07-06 acilkaseniz dersi birebir tekrar).
+- **Sınıf-kırılımı (baseline):** crawled-not-indexed **1.553** (Başarısız) · discovered-not-indexed 82 (Başladı) · 404 **32** (Başarısız) · noindex 5 · Yönlendirmeli 14 (NR-9, hata değil) · alt-canonical 0. **Google indexed 342 → %82 not-indexed oranı.**
+- **Kök neden hipotezi:** thin/generalist crawl-budget (114-post /blog + /guides + locale varyantları + reservation query-param URL'leri + event alt-sayfa). Brand-profile Firefly riskinin nicel kanıtı.
+- **Fix planı (kod/içerik, ayrı session):** A8 dead-inventory audit öne çek → 1.553'ün URL sınıf-kırılımı çıkar → sitemap-vs-<15imp/30d diff → thin/held-back → noindex (canlı kalır) veya 410 (dead) + sitemap-prune (NR-9). Servis/commercial/indexli sayfalar KALIR. 404×32'yi ayrı kır (kırık internal link mi, kaldırılmış sayfa mı).
+- **Verify:** ✘ — baseline kuruldu, yarından itibaren sınıf-delta izlenecek (>%20 büyüme = flag). Audit sonrası indexed/not-indexed oranı ölçülecek.
+
 ## KAPANAN (son 30 gün)
-- **FV-6** (2026-07-06) — npm audit 4 HIGH + 6 moderate + 1 low → 0. Next.js 16.2.10 + nodemailer 9.0.3 (major, operatör onaylı) + qs/fast-uri/hono/ip-address/js-yaml transitive temizlik. Commit: `1a345b9`.
-- _FV-3 dalgalı, FV-1 verify-devam-ediyor._
+- **FV-6** (2026-07-06) — npm audit 4 HIGH + 6 moderate + 1 low → 0. Next.js 16.2.10 + nodemailer 9.0.3 (major, operatör onaylı) + qs/fast-uri/hono/ip-address/js-yaml transitive temizlik. Commit: `1a345b9` (git log'da teyit 2026-07-07).
+- _FV-3 dalgalı, FV-1 çözülmüyor (kök-neden package-card), FV-5 4. gün açık._

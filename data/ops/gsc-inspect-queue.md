@@ -1,32 +1,34 @@
 # GSC URL Inspect — Priority Queue (MerrySails)
-**Son güncelleme:** 2026-07-06 (Inspection API ile 9 URL yeniden doğrulandı) · **API kotası:** 2000/gün/property (bol) · **Manuel Request-Index kotası:** ~1-3/gün (kıt — israf edilmez)
+**Son güncelleme:** 2026-07-07 (Inspection API ile 29 URL doğrulandı — 0 unindexed) · **API kotası:** 2000/gün/property (bol) · **Manuel Request-Index kotası:** ~1-3/gün (kıt)
 
-> **KURAL:** Google indexing stratejisi = güçlü internal link + sıfır teknik hata + geçerli rich results. Manuel Request-Index SADECE doğrulanmış-unindexed money page (max 1-3/gün). Index-durum doğrulaması Inspection API ile otomatik yapılır.
+> **KURAL:** Google indexing stratejisi = güçlü internal link + sıfır teknik hata + geçerli rich results. Manuel Request-Index SADECE doğrulanmış-unindexed money page (max 1-3/gün). Index-durum doğrulaması Inspection API ile otomatik.
 
-> ✅ **Merkezi token (`/Users/resat/mcp-gsc/token.json`) FULL çalışıyor:** inspection + search-analytics + sitemaps üçü de.
+> ✅ **Merkezi token (`/Users/resat/mcp-gsc/token.json`) FULL çalışıyor:** inspection + search-analytics + sitemaps. (Not: `gsc-daily-snapshot.mjs` .env.local'daki bayat GSC_REFRESH_TOKEN'ı tercih ediyor → env-var precedence bug; merkezi token direkt kullanılmalı.)
 
 ## 🎯 Aktif kuyruk — SADECE doğrulanmış-unindexed
+**Bugün YOK.** 29 money/priority URL Inspection API ile doğrulandı — **hepsi indexed** (0 unindexed). Manuel Request-Index kotası bugün harcanmadı.
 
-**Bugün YOK.** Dünkü tek aday (`/blog/best-bosphorus-sunset-cruise-istanbul-2026`) doğal olarak indexlendi — aşağıya bkz. Manuel Request-Index kotası harcanmasın, bugüne kadar hiçbir manuel aksiyon gerekmiyor.
+## ⚑ A1 CRAWL-BUDGET UYARISI (2026-07-07 — gerçek Page-Indexing raporu, Chrome MCP)
+Money-page örneklemi 22/22 indexed gösterirken **gerçek "Sayfalar neden dizine eklenmiyor" raporu** şunu ortaya çıkardı:
+- **Tarandı - şu anda dizine eklenmiş değil: 1.553** (Başarısız)
+- Keşfedildi - şu anda dizine eklenmiş değil: 82 (Başladı)
+- Bulunamadı (404): 32 (Başarısız)
+- "noindex" ile hariç: 5 · Yönlendirmeli: 14 (NR-9, hata değil) · alt-canonical: 0
+- **Google indexed: 342** → %82 not-indexed oranı.
 
-## ✅ KAPANAN (indexlendi, artık izlemeye gerek yok)
+Bu, manuel Request-Index ile ÇÖZÜLMEZ (sistemik thin/crawl-budget). **Aksiyon: A8 dead-inventory audit öne çek** — 1.553'ün URL sınıf-kırılımı (locale varyantları / /guides / 114-post /blog / reservation query-param / event alt-sayfa) → noindex/410/sitemap-prune. Baseline daily-state.jsonl'e yazıldı, yarın delta izlenecek.
 
-| URL | Önceki durum | Bugünkü durum (2026-07-06) |
+## 👁️ İzleme listesi (indexed ama sorunlu — manuel kota GEREKMEZ, deploy sonrası re-inspect)
+| URL | Durum (2026-07-07) | İzleme sebebi |
 |---|---|---|
-| /blog/best-bosphorus-sunset-cruise-istanbul-2026 | Crawled — currently not indexed (06-27'den beri donuk) | **✅ Submitted and indexed**, crawl bugün **07-06 11:38** — rich PASS. Internal-link güçlendirme + auto-submit cadence işe yaramış görünüyor. |
-
-## 👁️ İzleme listesi (indexed ama sorunlu — manuel kota GEREKMEZ)
-
-| URL | Durum (2026-07-06) | İzleme sebebi |
-|---|---|---|
-| /tr/bosphorus-cruise | Indexed, rich PASS, **crawl HÂLÂ 05-13 (54 gün bayat, değişmedi)** | "boğaz turu" 6.600/mo hedef sayfası — Yandex/IndexNow push devam (bugün gitti); Google recrawl hâlâ gelmiyor → TR internal-link akışı işi güçlendirilmeli (2 gün önceki tavsiyeye rağmen crawl tarihi sabit kaldı) |
-| /istanbul-dinner-cruise | Indexed, **rich FAIL** (4× Review itemReviewed), crawl 07-03 | FV-5: kod fix HÂLÂ deploy edilmedi (`ReviewsCarousel.tsx`); schema fix sonrası re-inspect |
+| /istanbul-dinner-cruise | Indexed, **rich FAIL** (4× itemReviewed), crawl 07-03 | FV-5 — ReviewsCarousel.tsx fix sonrası re-inspect |
 | /yacht-charter-istanbul | Indexed, **rich FAIL**, crawl 06-24 | FV-5 — fix sonrası re-inspect |
-| /cruises/bosphorus-sunset-cruise | Indexed, **rich FAIL**, crawl 06-26 | FV-5 — fix sonrası re-inspect |
+| /cruises/bosphorus-sunset-cruise | Indexed, **rich FAIL**, crawl 07-06 | FV-5 — fix sonrası re-inspect |
 | /de/istanbul-dinner-cruise | Indexed, **rich FAIL**, crawl 06-26 | FV-5 — fix sonrası re-inspect |
-| /yacht-charter-istanbul/premium-yacht-15 | Indexed, rich PASS + Product review/aggregateRating WARNING (değişmedi) | Gerçek first-party review eklenince re-inspect |
+| /tr/bosphorus-cruise | Indexed, rich PASS, **crawl 05-13 (55 gün donuk)** | "boğaz turu" 6.600/mo hedefi; push yetersiz → TR internal-link kod-denetimi gerekli |
+| /bosphorus-cruise | Indexed, **rich PASS** (Product+Review+Breadcrumb), crawl 07-06 | Referans PASS pattern (FV-5 fix bunu kopyalayacak) |
 
 ## Kota notu
-- Manuel Request-Index bugün gerekli: **0 URL**. Tüm manuel kota diğer markalara ayrılabilir.
-- Index doğrulama Inspection API ile (2000/gün) — manuel inspect kotası bu işe KULLANILMAZ.
-- Detaylı bulgular: `data/ops/INDEX-AUDIT-2026-07-02.md` · DMCA submit kuralı: `data/ops/submit-denylist.md`
+- Manuel Request-Index bugün gerekli: **0 URL**. Tüm manuel kota diğer markalara.
+- Index doğrulama Inspection API ile (2000/gün) — manuel kota bu işe kullanılmaz.
+- DMCA submit kuralı: `data/ops/submit-denylist.md` (Lumen #86820254 URL listesi operatörde).
