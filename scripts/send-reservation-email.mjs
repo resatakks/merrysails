@@ -83,7 +83,8 @@ function buildHtml({ reservation, meta }) {
 
   const symbol = currencySymbol(reservation.currency);
   const totalDisplay = `${symbol}${Number(reservation.totalPrice).toFixed(2)}`;
-  const paymentNote = paymentNoteFor(meta.paymentMethod, totalDisplay);
+  const paymentNote =
+    meta.paymentNoteOverride?.trim() || paymentNoteFor(meta.paymentMethod, totalDisplay);
   const pickupLocation = meta.meetingPointNote?.trim() || "Karaköy";
   const pickup = reservation.time?.trim()
     ? `${pickupLocation} · ${reservation.time}`

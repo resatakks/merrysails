@@ -37,6 +37,10 @@ interface ReservationMetaPayload {
   /** Overrides the computed "Guests" line verbatim (e.g. "Up to 10 guests"
    * for a capacity-priced private charter without a confirmed headcount). */
   guestSummaryOverride?: string;
+  /** Overrides the auto-generated "Good to know" payment sentence verbatim
+   * (e.g. a split deposit + balance) — the 4 fixed paymentMethod values
+   * can't express a partial-deposit booking accurately. */
+  paymentNoteOverride?: string;
 }
 
 export interface ParsedReservationMeta {
@@ -54,6 +58,7 @@ export interface ParsedReservationMeta {
   voucherExtraNote?: string;
   voucherExtraNoteTitle?: string;
   guestSummaryOverride?: string;
+  paymentNoteOverride?: string;
 }
 
 function roundMoney(value: number): number {
@@ -148,6 +153,7 @@ export function serializeReservationNotes(
     voucherExtraNote: payload.voucherExtraNote?.trim() || undefined,
     voucherExtraNoteTitle: payload.voucherExtraNoteTitle?.trim() || undefined,
     guestSummaryOverride: payload.guestSummaryOverride?.trim() || undefined,
+    paymentNoteOverride: payload.paymentNoteOverride?.trim() || undefined,
   };
 
   if (
@@ -162,7 +168,8 @@ export function serializeReservationNotes(
     !cleanedPayload.internalOperatorNote &&
     !cleanedPayload.emailTemplate &&
     !cleanedPayload.voucherExtraNote &&
-    !cleanedPayload.guestSummaryOverride
+    !cleanedPayload.guestSummaryOverride &&
+    !cleanedPayload.paymentNoteOverride
   ) {
     return null;
   }
@@ -227,6 +234,7 @@ export function parseReservationNotes(
       voucherExtraNote: parsed.voucherExtraNote?.trim() || undefined,
       voucherExtraNoteTitle: parsed.voucherExtraNoteTitle?.trim() || undefined,
       guestSummaryOverride: parsed.guestSummaryOverride?.trim() || undefined,
+      paymentNoteOverride: parsed.paymentNoteOverride?.trim() || undefined,
     };
   } catch {
     return {

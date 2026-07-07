@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getTourBySlug } from "@/data/tours";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -404,6 +405,12 @@ export default function CorporateEventsPage() {
           </section>
         </div>
       </main>
+      <StickyMobileCta
+        reserveHref="/yacht-charter-istanbul#fleet"
+        reserveLabel="Quote from €220"
+        whatsappLocation="corporate_events_sticky"
+        whatsappPrefill="Hi MerrySails! I'd like a quote for a corporate yacht event on the Bosphorus. Group size + date if known?"
+      />
     </>
   );
 }

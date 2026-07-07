@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import QuickAnswer from "@/components/ai/QuickAnswer";
+import StickyMobileCta from "@/components/ui/StickyMobileCta";
 
 import { buildHreflang } from "@/lib/hreflang";
 import { OFFER_MERCHANT_DEFAULTS } from "@/lib/schema-merchant";
@@ -365,6 +366,12 @@ export default function ProposalYachtRentalIstanbulPage() {
  </div>
  </div>
  </main>
+ <StickyMobileCta
+ reserveHref="/yacht-charter-istanbul#fleet"
+ reserveLabel="Quote from €220"
+ whatsappLocation="proposal_yacht_sticky"
+ whatsappPrefill="Hi MerrySails! I'm planning a proposal yacht charter on the Bosphorus — date + group size if known?"
+ />
  </>
  );
 }
