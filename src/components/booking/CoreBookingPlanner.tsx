@@ -296,7 +296,7 @@ export default function CoreBookingPlanner({
                   }
                 }}
                 className={cn(
-                  "rounded-[1.6rem] border p-3 text-left transition-all",
+                  "cursor-pointer rounded-[1.6rem] border p-3 text-left transition-all",
                   isSelected
                     ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/[0.03] shadow-[0_16px_34px_rgba(24,41,135,0.12)]"
                     : "border-[var(--line)] bg-white hover:border-[var(--brand-primary)]/35 hover:shadow-sm"
@@ -399,7 +399,7 @@ export default function CoreBookingPlanner({
                 }
               }}
               aria-label={t.changePackage(selectedPackage?.name ?? selectedTour.nameEn)}
-              className="mt-4 w-full rounded-2xl border border-white/70 bg-white px-4 py-4 text-left transition-colors hover:border-[var(--brand-primary)]/30"
+              className="mt-4 w-full cursor-pointer rounded-2xl border border-white/70 bg-white px-4 py-4 text-left transition-colors hover:border-[var(--brand-primary)]/30"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
@@ -515,13 +515,27 @@ export default function CoreBookingPlanner({
             </div>
 
             <div className="mt-4 rounded-2xl bg-[var(--surface-alt)] px-4 py-4">
-              <SalePrice
-                price={selectedPackage?.price ?? selectedTour.priceEur}
-                originalPrice={selectedOriginalPrice}
-                suffix={getPriceSuffix(selectedTour)}
-                align="left"
-                size="md"
-              />
+              {/* Clarity (14d /reservation): 24 dead clicks on this price
+                  summary — it sits between two real buttons and reads as
+                  part of the interactive booking widget, but was a plain
+                  <div> with no handler. Wired to the same handleContinue as
+                  the CTA below so tapping the price also proceeds to book. */}
+              <button
+                type="button"
+                translate="no"
+                onClick={handleContinue}
+                disabled={isOpeningBooking}
+                aria-label={t.continueBooking}
+                className="block w-full cursor-pointer rounded-xl text-left transition-colors hover:bg-white/50 disabled:cursor-wait"
+              >
+                <SalePrice
+                  price={selectedPackage?.price ?? selectedTour.priceEur}
+                  originalPrice={selectedOriginalPrice}
+                  suffix={getPriceSuffix(selectedTour)}
+                  align="left"
+                  size="md"
+                />
+              </button>
               <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-[var(--text-muted)]">
                 {effectiveDepartureTime && (
                   <span
