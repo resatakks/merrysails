@@ -1181,7 +1181,7 @@ export default async function LocaleDinnerCruisePage({
  />
 
  <div className="my-8">
- <ReviewsCarousel productKey="dinner" locale={locale as SiteLocale} />
+ <ReviewsCarousel productKey="dinner" locale={locale as SiteLocale} mainEntityId={`${canonicalUrl}#product`} />
  </div>
 
  <LocaleHelpfulResources locale={locale as SiteLocale} omit="dinner" />

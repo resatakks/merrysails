@@ -1043,7 +1043,7 @@ export default async function YachtCharterIstanbulPage({
           </section>
 
           <div className="mb-8">
-            <ReviewsCarousel productKey="yacht" />
+            <ReviewsCarousel productKey="yacht" mainEntityId={`${canonicalUrl}#product`} />
           </div>
 
           <RelatedTours exclude="yacht" heading="Other Bosphorus experiences" />

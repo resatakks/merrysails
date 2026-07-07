@@ -600,6 +600,7 @@ export default async function TourDetailPage({
       ? {
           "@context": "https://schema.org",
           "@type": "Event",
+          "@id": `${SITE_URL}/cruises/bosphorus-sunset-cruise#event`,
           name: "Bosphorus Sunset Cruise",
           description: tour.description,
           image: tour.image,
@@ -908,6 +909,11 @@ export default async function TourDetailPage({
                     : tour.category === "private"
                       ? "yacht"
                       : "any"
+              }
+              mainEntityId={
+                slug === "bosphorus-sunset-cruise"
+                  ? `${SITE_URL}/cruises/bosphorus-sunset-cruise#event`
+                  : undefined
               }
             />
           </div>

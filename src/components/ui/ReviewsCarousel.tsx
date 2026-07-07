@@ -82,6 +82,16 @@ type Props = {
   productKey: CuratedReview["productKey"];
   locale?: SiteLocale;
   className?: string;
+  /**
+   * Full `@id` of this page's main Product/Event JSON-LD node (e.g.
+   * `${canonicalUrl}#product` or `${canonicalUrl}#event`). When provided,
+   * each Review's `itemReviewed` binds to that node via an `@id` reference
+   * instead of an inline generic `Service` object. Google's Review rich
+   * result does not accept "Service" as a valid itemReviewed type — that
+   * mismatch was failing Rich Results validation on 4 money pages (FV-5,
+   * 2026-07-07). Omit to keep the previous inline-Service fallback.
+   */
+  mainEntityId?: string;
 };
 
 const FLAG: Record<string, string> = {
@@ -102,6 +112,7 @@ export default function ReviewsCarousel({
   productKey,
   locale = "en",
   className = "",
+  mainEntityId,
 }: Props) {
   const safeLocale = (locale ?? "en") as "en" | "tr" | "de" | "fr" | "nl" | "ru";
   const reviews = getReviewsForProduct(productKey, 4, safeLocale);
@@ -110,8 +121,11 @@ export default function ReviewsCarousel({
   const dateLoc = DATE_LOCALE[safeLocale] ?? "en-GB";
 
   // Emit JSON-LD Review for each card — Google rich-snippet eligible.
-  // We use itemReviewed as a generic Service to avoid duplicating the
-  // page-level Tour/Service schema. Each guest gets their own Review node.
+  // itemReviewed binds via @id to the page's own Product/Event node
+  // (mainEntityId) so Review resolves against a supported schema.org type
+  // in the page's JSON-LD graph — Google's Review rich result does not
+  // accept a bare "Service" as itemReviewed (FV-5, 2026-07-07 fix). Falls
+  // back to the old inline Service object when no mainEntityId is passed.
   const reviewSchemas = reviews.map((r) => ({
     "@context": "https://schema.org",
     "@type": "Review",
@@ -127,17 +141,19 @@ export default function ReviewsCarousel({
       bestRating: 5,
       worstRating: 1,
     },
-    itemReviewed: {
-      "@type": "Service",
-      name:
-        productKey === "sunset"
-          ? "Bosphorus Sunset Cruise"
-          : productKey === "dinner"
-            ? "Bosphorus Dinner Cruise"
-            : productKey === "yacht"
-              ? "Private Yacht Charter Istanbul"
-              : "Bosphorus Cruise",
-    },
+    itemReviewed: mainEntityId
+      ? { "@id": mainEntityId }
+      : {
+          "@type": "Service",
+          name:
+            productKey === "sunset"
+              ? "Bosphorus Sunset Cruise"
+              : productKey === "dinner"
+                ? "Bosphorus Dinner Cruise"
+                : productKey === "yacht"
+                  ? "Private Yacht Charter Istanbul"
+                  : "Bosphorus Cruise",
+        },
   }));
 
   return (

@@ -329,6 +329,7 @@ const packageTableSchema = {
 const eventSchema = {
   "@context": "https://schema.org",
   "@type": "Event",
+  "@id": `${canonicalUrl}#event`,
   name: "Istanbul Bosphorus Dinner Cruise",
   description: dinnerTour.description,
   image: dinnerTour.image,
@@ -684,7 +685,7 @@ export default async function IstanbulDinnerCruisePage({
           </div>
 
           <div className="my-8">
-            <ReviewsCarousel productKey="dinner" />
+            <ReviewsCarousel productKey="dinner" mainEntityId={`${canonicalUrl}#event`} />
           </div>
 
           <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8">
