@@ -1,5 +1,5 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-07
+**Son güncelleme:** 2026-07-08
 
 > GSC "Sayfalar / neden dizine eklenmiyor" sınıf-raporu API'de yok (UI-only) → A1 sınıf-delta operatör UI'sinden. Rich-results + coverage tek-URL doğrulaması Inspection API ile CANLI (merkezi token).
 
@@ -27,16 +27,16 @@
 - **Değerlendirme:** 3 günlük seri düz-düşüş değil, dalgalı (0%↔40%) — düşük session hacminde noise. KAPATMA ERTELENDİ, yarın session-N ile birlikte tekrar bak.
 - **Verify:** ⏳ AÇIK — session-N açık gelmeden karar verilmesin.
 
-### FV-4 · [R1 · SUPPRESSION · AÇIK week 4→5] Bing impression cliff → 0
-- **Kaynak:** Canlı GetRankAndTrafficStats (2026-07-06) → impressions **0 HER GÜN, veri artık 07-04'e kadar** (son imp>0 hâlâ 06-08/4imp — Bing restate'i korunuyor). **28. gün bugün (week 4 tamamlandı → week 5 başlıyor).**
-- **Crawl/index sağlığı:** InIndex **476** ↑ (07-05, +6 vs 07-03), Yandex searchable **337** ↑, GetCrawlIssues **0**, crawl aktif (200-270 sayfa/gün). Deindex DEĞİL — klasik suppression, teknik taraf tamamen temiz.
-- **Fix durumu:** RECOVERY PROTOCOL aktif — (1) title/meta/h1 FREEZE, (2) crawl-health temiz ✅, (3) SubmitUrlBatch (07-06: 14 URL 200) + IndexNow (Bing 200/Yandex 202) daily, (4) sabır: **week 5/6, ETA penceresi 07-07→08-04 içinde kalıyor.**
-- **Verify:** ✘ — imp hâlâ 0. Week 6 (~07-22) hâlâ 0 ise: Bing Site Scan + eskalasyon notu (SUPPRESSION-WATCH'ta zaten planlı).
+### FV-4 · [R1 · SUPPRESSION · AÇIK week 5] Bing impression cliff → 0
+- **Kaynak:** Canlı GetRankAndTrafficStats (2026-07-08) → impressions **0 HER GÜN, veri 07-06'ya kadar** (son imp>0 hâlâ 06-08/4imp — Bing restate'i korunuyor). **30. gün (week 5).**
+- **Crawl/index sağlığı:** InIndex **478** ↑ (07-07, seri 470→472→476→477→478), Yandex searchable **336**, GetCrawlIssues **0**, 5xx 0, blocked 0, in4xx 0, crawlErrors 41 (hafif creep), crawl 229 sayfa/gün. Deindex DEĞİL — klasik suppression, teknik taraf tamamen temiz.
+- **Fix durumu:** RECOVERY PROTOCOL aktif — (1) title/meta/h1 FREEZE, (2) crawl-health temiz ✅, (3) SubmitUrlBatch (07-08: 17 URL 200, quota 90) + IndexNow (Bing 200/Yandex 202) daily, (4) sabır: **week 5, ETA penceresi 07-07→08-04 içinde.**
+- **Verify:** ✘ — imp hâlâ 0. Week 6 (~07-22) hâlâ 0 ise: Bing Site Scan + eskalasyon notu (SUPPRESSION-WATCH'ta planlı).
 
-### FV-5 · [P0 · AÇIK, DEPLOY EDİLMEDİ — 4. GÜN] 4 money page Review `itemReviewed` FAIL
-- **Kaynak:** Inspection API richResultsResult (2026-07-07, canlı re-check): /istanbul-dinner-cruise (crawl 07-03), /yacht-charter-istanbul (crawl 06-24), /cruises/bosphorus-sunset-cruise (crawl 07-06), /de/istanbul-dinner-cruise (crawl 06-26). Hata AYNEN: `ERROR: Invalid object type for field "itemReviewed"` × 4'er adet. **/bosphorus-cruise + /tr/bosphorus-cruise PASS teyitli (Review→Product @id referans pattern).**
+### FV-5 · [P0 · AÇIK, DEPLOY EDİLMEDİ — 5. GÜN · BAYAT] 4 money page Review `itemReviewed` FAIL
+- **Kaynak:** Inspection API richResultsResult (2026-07-08, canlı re-check): /istanbul-dinner-cruise (crawl 07-03), /yacht-charter-istanbul (crawl 06-24), /cruises/bosphorus-sunset-cruise (crawl 07-06), /de/istanbul-dinner-cruise (crawl 06-26). Hata AYNEN: `ERROR: Invalid object type for field "itemReviewed"` × 4'er adet. **/bosphorus-cruise PASS teyitli (Review→Product @id referans pattern).**
 - **Kök neden (değişmedi):** standalone `Review` blokları `itemReviewed: Service` (geçersiz tip) — tek paylaşılan komponent `src/components/ui/ReviewsCarousel.tsx`.
-- **Durum:** **4 gün üst üste (07-04/05/06/07) aynı sonuç** — kod fix HÂLÂ yazılmadı. FV-6/booking fix'leri bu pencerede commit edildi ama ReviewsCarousel'a dokunulmadı. **En eski açık P0 — öncelik en üstte.**
+- **Durum:** **5 gün üst üste (07-04/05/06/07/08) aynı sonuç** — kod fix HÂLÂ yazılmadı. **En eski açık P0 — BAYAT eşiğinde. Ayrı kod-session ŞART, öncelik en üstte.**
 - **Fix planı (GROWTH-PLAN Hamle 1, değişmedi):** Review'ları sayfanın ana entity `@id`'sine bağla (dinner/sunset→Event, yacht→Product; `/bosphorus-cruise` PASS pattern'i, bugün de PASS teyitli). `["TouristTrip","Service"]` kuralı korunur. Schema-only = title FREEZE ihlali YOK.
 - **Bonus:** premium-yacht-15 Product `review`/`aggregateRating` WARNING — değişmedi.
 - **Verify:** ✘ — fix hâlâ yazılmadı.
@@ -54,7 +54,13 @@
 - **Sınıf-kırılımı (baseline):** crawled-not-indexed **1.553** (Başarısız) · discovered-not-indexed 82 (Başladı) · 404 **32** (Başarısız) · noindex 5 · Yönlendirmeli 14 (NR-9, hata değil) · alt-canonical 0. **Google indexed 342 → %82 not-indexed oranı.**
 - **Kök neden hipotezi:** thin/generalist crawl-budget (114-post /blog + /guides + locale varyantları + reservation query-param URL'leri + event alt-sayfa). Brand-profile Firefly riskinin nicel kanıtı.
 - **Fix planı (kod/içerik, ayrı session):** A8 dead-inventory audit öne çek → 1.553'ün URL sınıf-kırılımı çıkar → sitemap-vs-<15imp/30d diff → thin/held-back → noindex (canlı kalır) veya 410 (dead) + sitemap-prune (NR-9). Servis/commercial/indexli sayfalar KALIR. 404×32'yi ayrı kır (kırık internal link mi, kaldırılmış sayfa mı).
-- **Verify:** ✘ — baseline kuruldu, yarından itibaren sınıf-delta izlenecek (>%20 büyüme = flag). Audit sonrası indexed/not-indexed oranı ölçülecek.
+- **Verify (07-08):** ✘ — sınıflar 07-07 ile BİREBİR AYNI (GSC raporu freshness 30.06.2026, 24h yenilenmedi) → büyüme YOK, **R5 CLEAR**. Delta izleme aynı-method (page-indexing-ui) günler arasında; GSC raporu yenilenince gerçek delta gelir. Audit (A8) sonrası indexed/not-indexed oranı ölçülecek.
+
+### FV-8 · [WATCH · YENİ 2026-07-08] /tr/bosphorus-cruise indexed → "Crawled - currently not indexed"
+- **Kaynak:** Inspection API + Chrome URL-denetimi (2026-07-08): 07-08 02:39 taze crawl, "Sayfa getirme: Başarılı", "Dizine eklenmesine izin verildi: Evet" — AMA "URL Google'da yok / Tarandı - şu anda dizine eklenmiş değil". Dün indexed'di.
+- **Değerlendirme:** Tek-sayfa dizinden düşme (toplam indexed 342 STABİL = R3 DEĞİL). Push+request-index'e rağmen (07-08'de her ikisi de yapıldı) Google soft-kalite kararıyla düşürdü — crawl-budget/thin sinyalinin "boğaz turu" 6.600/mo hedef sayfasına dokunması.
+- **Fix planı:** kod-tarafı TR internal-link denetimi (GROWTH-PLAN Hamle 4) — TR sayfalardan içerik-içi link akışı artır. Request-index/push marjinal kanıtlandı.
+- **Verify:** ⏳ AÇIK — internal-link işi sonrası re-inspect. Bu arada günlük auto-submit'te kalır.
 
 ## KAPANAN (son 30 gün)
 - **FV-6** (2026-07-06) — npm audit 4 HIGH + 6 moderate + 1 low → 0. Next.js 16.2.10 + nodemailer 9.0.3 (major, operatör onaylı) + qs/fast-uri/hono/ip-address/js-yaml transitive temizlik. Commit: `1a345b9` (git log'da teyit 2026-07-07).

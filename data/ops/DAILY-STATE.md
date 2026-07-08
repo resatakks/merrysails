@@ -1,70 +1,74 @@
 # MerrySails — DAILY OPS STATE
 **Domain:** merrysails.com · **Vertical:** Tourism (Bosphorus cruise + yacht charter) · **Priority:** HIGH · **Ads:** Google Ads ON (~2K TRY/day)
 **Karakter/Author byline:** Captain Ahmet (cruise/yacht) + Editorial (city guides) — NO cross-brand byline reuse with GoldenSunset
-**Conversion truth:** `reservation_submit` (DB: `Reservation` table, MRY-* IDs)
+**Conversion truth:** `Reservation` table (DB, MRY-* IDs); GA4 booking event = `purchase` (brand-profile "reservation_submit" adı aspirasyonel — gerçek event `purchase`)
 **Rakipler:** GetYourGuide, Viator/TripAdvisor, bosphorustour.com; sister GoldenSunset (differentiation: tier + demographic)
-**Son güncelleme:** 2026-07-07 (mode=daily — A1 gerçek Page-Indexing raporu Chrome ile çekildi → 1.553 crawled-not-indexed keşfedildi)
+**Son güncelleme:** 2026-07-08 (mode=daily — GA4 MERKEZİ SA ile AÇILDI: AI Assistant = #3 conversion channel 89s/46conv)
 
 ---
 
 ## 📍 NEREDEYIZ — bugünkü snapshot (her run üstten güncellenir)
-| Metrik | Bugün (2026-07-07) | 7g önce | 30g önce | Trend |
+| Metrik | Bugün (2026-07-08) | 7g önce | 30g önce | Trend |
 |---|---|---|---|---|
-| **GSC clicks (7g, 06-29→07-05)** | **112** ✅ CANLI (merkezi token) | 108 (prev-7g 06-22→06-28) | – | ↑ +3.7% WoW |
-| GSC impressions (7g) | **12.188** | 11.332 | – | ↑ +7.6% WoW |
-| GSC avg position (7g) | **7.7** | 8.1 | – | ↑ iyileşti (7-8 bandı) |
-| **Google indexed (A1 gerçek UI)** | **342** | – (ilk ölçüm) | – | ⚑ baseline kuruldu |
-| **Google NOT-indexed sınıfları (A1 gerçek UI — YENİ)** | **crawled-not-indexed 1.553 · discovered 82 · 404 32 · noindex 5 · redirect 14(NR-9) · alt-canonical 0** | – (ilk ölçüm) | – | ⛔ %82 not-indexed oranı → thin/crawl-budget audit |
-| **Bing impressions (canlı, ~2g lag)** | **0 (06-09→07-05 HARD ZERO, 29. gün / week 5)** ⚠️ | 0 | 30-35/gün (erken Haz) | ⛔ SUPPRESSION week 5 — crawl temiz |
-| Bing InIndex | **477 (07-05)** | 476 | – | ↑ RISING (5xx=0, robots-block=0, crawl issues=0) |
-| Yandex searchable | **336** | 337 | – | ↔ -1 (gürültü) |
-| GSC sitemap | lastDownloaded **07-06** ✅ 0 err/0 warn, 594 submitted (tek kayıt) | 07-06 | – | ✅ taze, tek canonical |
-| **Rich-results FAIL (money pages)** | **4 sayfa FAIL** (Review itemReviewed) — **4. GÜN** API teyit | 4 | – | ⛔ fix kodda HÂLÂ YOK (P0, 4 gündür açık) |
-| Clarity sessions (3g) | **173** | 178 | – | ↔ |
-| Dead-click % (site 3g) | **11.56%** ✅ | 13.48% | 13.14% (06-01) | ↓ **İYİLEŞMEYE DEVAM** |
+| **GSC clicks (7g, 06-30→07-06)** | **113** ✅ CANLI (merkezi token) | 117 (prev-7g 06-23→06-29) | – | ↔ -3.4% WoW (gürültü) |
+| GSC impressions (7g) | **12.373** | 11.590 | – | ↑ +6.8% WoW |
+| GSC avg position (7g) | **7.59** | 7.76 | – | ↑ iyileşti |
+| **Google indexed (A1 UI — 06-30 snapshot)** | **342** | 342 | – | ↔ flat (GSC raporu 30-Haz'dan beri yenilenmedi) |
+| **Google NOT-indexed sınıfları (A1 UI, method=page-indexing-ui)** | **crawled-not-indexed 1.553 · discovered 82 · 404 32 · noindex 5 · redirect 14(NR-9) · alt-canonical 0** | 1.553/82/32/5/14/0 | – | ↔ **DEĞİŞMEDİ (R5 CLEAR — büyüme yok, aynı 06-30 snapshot)** |
+| **Bing impressions (canlı API)** | **0 (06-09→07-06, gün 30 / week 5)** ⚠️ | 0 | 30-35/gün (erken Haz) | ⛔ SUPPRESSION week 5 — crawl temiz |
+| Bing InIndex | **478 (07-07)** | 476 | – | ↑ RISING (5xx=0, blocked=0, crawl issues=0) |
+| Yandex searchable | **336** | 336 | – | ↔ stabil (excluded 3) |
+| GSC sitemap | lastDownloaded **07-07** ✅ 0 err/0 warn, 594 submitted (tek kayıt) | 07-06 | – | ✅ taze, tek canonical |
+| **Rich-results FAIL (money pages)** | **4 sayfa FAIL** (Review itemReviewed) — **5. GÜN** API teyit | 4 | – | ⛔ fix kodda HÂLÂ YOK (P0, 5 gündür açık — BAYAT) |
+| Clarity sessions (3g, referrer-grouped) | **~154** | 173 | – | ↔ |
+| Dead-click % (site 3g) | **9.09%** ✅ | 11.56% | 13.14% (06-01) | ↓ **İYİLEŞMEYE DEVAM** |
 | Rage-click % (site 3g) | **0%** ✅ | 0% | ~8%/rez (07-01) | ✅ düşük |
-| Dead-click (/reservation, session-bazlı) | **%52.63 (19 sess)** ⚠️ + 0 rage | 34.78% (07-06) | 58.33% (07-01) | ⛔ **YÜKSELDİ — FV-1 çözülmüyor (kök-neden kaydı)** |
-| JS errors (Clarity) | **%0** ✅ | 0 | 0 | ✅ |
-| LCP (site avg) | N/A (bu run çekilmedi; 2.330ms proxy geçerli) | 2.330 ms | – | – |
-| GA4 conversions (7g) | N/A (OAuth missing — operatör) | – | – | – |
-| Ads spend / conv (7g) | N/A (OAuth; 🔒 operatör alanı) | – | – | – |
-| **Rezervasyon/lead (7g, DB)** | **15** (13 aktif + 2 iptal, %13.3 iptal) · ~€1.726 brüt / ~€1.426 iptalsiz | 20 (07-06) | 8 (prev-prev) | ↓ hafif yumuşadı (pencere: yüksek-değer tur geride kaldı, sunset ağırlıklı) |
-| AI referral (ChatGPT, 3g) | **28 sess** ✅ + Gemini 2 | 7 (07-06) | 28 (07-01) | ↑ **GÜÇLÜ TOPARLANMA** |
+| JS errors (Clarity, site 3g) | **0.65%** ✅ | 0% | 0 | ✅ negligible (translate-induced) |
+| Dead-click (/reservation, session) | **N/A bu run** (Clarity URL-breakdown MCP hata verdi) — dünkü %52.63 doğrulanmadı | %52.63 (07-07) | 58.33% (07-01) | ⏳ ölçülemedi — carry-forward |
+| **GA4 sessions (7g)** | **533** ✅ YENİ (merkezi SA) — Direct 172 / Organic 141 / Paid 126 / **AI Assistant 89** / diğer 5 | N/A (haftalarca oauth) | – | ✅ AÇILDI |
+| **GA4 conversions (7g, tüm key-event)** | **172** (purchase 11, begin_checkout 54, whatsapp 47, phone 6, abandon 1) | N/A | – | ✅ AÇILDI |
+| Ads spend / conv (7g) | N/A (🔒 operatör alanı) — pasif GA4 Paid: 126 sess / 52 conv | – | – | – |
+| **Rezervasyon/lead (7g, DB)** | **16** (14 aktif + 2 iptal, %12.5) · ~€2.821 brüt / ~€2.521 iptalsiz | 15 (07-07) | 8 (prev-prev) | ↑ **TOPARLANDI** (2 yüksek-değer private: €755 + €420) |
+| **AI referral (GA4 AI Assistant, 7g)** | **89 sess / 46 conv** ✅ **#3 conversion channel** | N/A | – | ✅ **GÜÇLÜ — organik + AI kanıtlı gelir** |
+| AI referral (Clarity, 3g) | chatgpt 5 + gemini 2 = 7 | 28+2 (07-07) | 28 (07-01) | ↓ dar pencere gürültüsü (7g GA4 güçlü) |
 | AI-visibility mention % | N/A (C1 lbm KALICI KALDIRILDI — 2026-07-06 operatör) | – | – | – |
 
-**Rezervasyon dağılımı (7g, DB):** 15 rez · sunset-cruise 10 (1 iptal €80), yacht-charter 4 (1 iptal €220; aktif €220-297), dinner 1 (€80). gclid=Y sadece 1. İptal oranı %13.3 (stabil-düşük). Bu pencerede yüksek-değer private-istanbul-tour YOK (önceki €1.110 kümesi 7g penceresinden çıktı) → brüt düştü ama hacim/iptal sağlıklı.
-**Trafik kaynağı (Clarity 3g):** google 89 (www 78 + null 11) + gmail-app 4, direct 53, **chatgpt 28**, **gemini 2**, bing 2, yandex 1, localhost 2. (Cihaz kırılımı bu run çekilmedi.)
-**B7 intent-mix (7g page-level GSC):** informational impr **%68.4** / click **%42.5** — commercial impr **%31.6** / click **%57.5**. Commercial sayfalar impression-başına çok daha yüksek CTR üretiyor — intent-bridge tezi sağlam.
-**B10 Google Trends (TR):** "bosphorus cruise" 39→44 (+5% MoM, peak Eki 5-11), "istanbul dinner cruise" 3→21 (relatif büyük yükseliş), "yacht charter istanbul" 2→4. "MerrySails" + "bosphorus sunset cruise" BLOCKED (Trends API kısıtı). Sezon-içi (May-Eki) — dinner-cruise talebi yükseliyor sinyali.
-**A1 KEŞİF (gerçek UI raporu, Chrome MCP):** money-page örneklemi 22/22 indexed gösterirken **gerçek Page-Indexing raporu 1.553 "Tarandı-dizine eklenmedi" + 82 "Keşfedildi-dizine eklenmedi" + 404×32** ortaya çıkardı (07-06 acilkaseniz dersi birebir tekrarlandı — örneklem sağlıklı, sınıf-toplamı DEĞİL). Google indexed 342 vs not-indexed ~1.690 = **%82 not-indexed oranı.** Bu, brand-profile'daki Firefly/generalist riskinin nicel kanıtı.
-**A7:** 0 doğrulanmış-unindexed money page (hepsi indexed) → manuel Request-Index kotası bugün 0 kullanıldı. Listicle `/blog/best-bosphorus-sunset-cruise-istanbul-2026` INDEXED (crawl 07-06, kapalı kalıyor).
-**E7-light güvenlik:** headers TAM apex'te (HSTS+preload/CSP/X-Frame/X-Content-Type/Referrer/Permissions), `.env` git'te değil, hardcoded secret/JWT-fallback YOK, `/admin` 307 guard, robots Content-Signal directive canlı. Kritik bulgu yok.
-**C1-light AI-readiness (3 sinyal apex'te CANLI):** robots.txt Content-Signal directive ✅ + `/.well-known/api-catalog` 200 ✅ + `Accept: text/markdown` → `text/markdown` 200 ✅ + llms.txt 200 ✅. (Proxy sinyal, gerçek AI-citation testi değil.)
-**Repo notu:** branch `main`; `feat/yacht-product-redesign` merge edilmiş (caad5d9). FV-6 npm-audit fix (1a345b9) + booking priceMode fix (74ae435) commit'li. Recent commit'lerde title/H1 churn YOK (E4 FREEZE korunuyor), ReviewsCarousel'a dokunulmadı (FV-5 hâlâ açık).
+**Rezervasyon dağılımı (7g, DB):** 16 rez · sunset-shared 10 (€30-102), private-sunset 1 (€420), yacht 4 (1 iptal €220; aktif €220-297), dinner-yacht 1 (**€755**). **İki yüksek-değer private booking (€755 + €420 = €1.175)** brütü dünkü €1.726'dan €2.821'e taşıdı. İptal %12.5 (stabil-düşük). gclid=Y sadece 1 (7915).
+**Trafik kaynağı (GA4 7g):** Direct 172, Organic 141, Paid 126, **AI Assistant 89 (#3 conv)**, Cross-network 2, Referral 2, Social 1. (Clarity 3g referrer: null 79, google 59, chatgpt 5, gmail 4, bing 2, gemini 2, yandex 1, self 1.)
+**GA4 event seti (booking-marka sözleşmesi — HEPSİ ATEŞLİYOR):** purchase 11 ✅ · begin_checkout 54 ✅ · whatsapp_click 47 ✅ · phone_click 6 ✅ · booking_abandonment 1 ✅. contact_submit 7g'de 0 (form gönderimi yok — bug değil). D-EVENT sözleşmesi TAM.
+**D8 reconciliation:** GA4 purchase **11** vs DB rez **16** (aynı-pencere ~15) = ~%27 GA4-altında-DB. **Beklenen yön** (GA4 consent/adblock/AI-session altında-sayımı normal %15-30) — ikisi de sağlıklı/sıfır-değil → tracking-bug DEĞİL, izle (R10 soft).
+**B2 striking-distance (pos 4-20):** **YENİ büyük: "ortakoy mosque" 147i/1c/pos10.8** (informational — sunset cruise Ortaköy'den geçer = bridge adayı) + fiyat/ferry kümesi (bosphorus ferry 34i/0c, sunset cruise 28i/0c, ferry vs cruise 22i/0c, dinner cruise price 21i/0c, "is bosphorus cruise worth it" 16i/1c/pos5.7, "bosphorus cruise istanbul" 9i/0c/pos4.2 top-3'e yakın). Neredeyse hepsi 0 click = büyük CTR açığı.
+**B7 intent-mix (7g page-level, method farkı NOT):** commercial impr %8.8 / click %23.7 — informational impr %91.2 / click %76.3. (Not: bugünkü regex fiyat-blog'larını informational sayıyor; dünkü %68.4 ile method farklı — DİREKT karşılaştırma yapma. Değişmeyen tez: commercial sayfalar impression-başına ~3× daha yüksek CTR üretiyor → intent-bridge sağlam.)
+**B10 Google Trends (TR, merkezi cache 07-08):** "bosphorus cruise" 12ay ort 62, son 4hf 65 (MoM +%7, istikrarlı büyüme, peak May 10-16); "yacht charter istanbul" son 4hf 25, güncel hafta peak (Jun 28-Jul 4, talep artışı); "dinner cruise istanbul" son 4hf 19 yükseliyor. Sezon-içi (May-Eki). Cache status=ok, helper çağrılmadı (429-önlem).
+**A1 method=page-indexing-ui (Chrome MCP):** merrysails property doğrulandı; **GSC raporu freshness = 30.06.2026** (Son güncelleme) → 07-07 ile birebir aynı (indexed 342, CNI 1.553). Delta sıfır GERÇEK — GSC aggregate raporu 24 saatte yenilenmedi, büyüme yok → R5 CLEAR. Düzeltilen sınıf yok → "Doğrulamayı Yeniden Başlat" basılmadı.
+**A7 request-index:** /tr/bosphorus-cruise **indexed→"Crawled - currently not indexed"e döndü** (07-08 02:39 taze crawl, fetch başarılı, indexing izinli = soft kalite/crawl-budget kararı, teknik blok DEĞİL). Chrome ile Request-Index DENENDİ ama **DOĞRULANAMADI** (tıklama anında GSC property'yi merrytourism'e otomatik değiştirdi — request-index modal'ı açılmadı = büyük ihtimalle kaydolmadı). "Emin değilsen BASMA" → **başarılı SAYILMADI**. URL zaten bugünkü auto-submit'te (IndexNow/Bing/Yandex 202). Gerçek çözüm = internal-link/içerik (GROWTH-PLAN Hamle 4), request-index değil.
+**E7-light güvenlik:** 6/6 money page CANLI 200 (/, dinner, yacht, sunset, /reservation, /tr/bosphorus-cruise) · headers TAM apex'te (HSTS max-age 63072000 + CSP + X-Frame SAMEORIGIN + X-Content-Type nosniff + Referrer + Permissions) · secret/JWT-fallback taraması bu run curl-tabanlı (derin grep weekly E7-full). Kritik bulgu yok.
+**C1-light AI-readiness (3+1 sinyal apex'te CANLI):** robots Content-Signal directive ✅ + `/.well-known/api-catalog` 200 ✅ + `Accept: text/markdown` → text/markdown 200 ✅ + llms.txt 200 ✅. (Proxy sinyal, gerçek AI-citation testi değil.)
+**Repo notu:** branch `main`; recent commit'lerde title/H1 churn YOK (E4 FREEZE korunuyor), ReviewsCarousel.tsx'e dokunulmadı (FV-5 hâlâ açık, 5. gün).
 
 ## 🎯 AÇIK FIRSATLAR (öncelik sırası)
-1. **[P0/P1 · A1 crawl-budget — YENİ HEADLINE] 1.553 "Tarandı-dizine eklenmedi" (%82 not-indexed).** Gerçek Page-Indexing raporu money-page örnekleminin gizlediğini ortaya çıkardı. **Thin-content/crawl-budget audit gerekli (A8 dead-inventory'yi öne çek):** 1.553'ün hangi URL sınıflarından geldiğini kır (locale varyantları, /guides, /blog 114-post, reservation query-param URL'leri, event alt-sayfaları) → crawl-budget kurallarına göre noindex/410/sitemap-prune. 404×32 → kırık/kaldırılmış URL'leri bul. Firefly/generalist riskinin somut hâli.
-2. **[P0 · B5/FV-5 · 4. GÜN AÇIK] 4 money page Review `itemReviewed` FAIL — kod fix HÂLÂ yazılmadı.** /istanbul-dinner-cruise, /yacht-charter-istanbul, /cruises/bosphorus-sunset-cruise, /de/istanbul-dinner-cruise (her birinde 4× `Invalid object type for field "itemReviewed"`). Kaynak: `src/components/ui/ReviewsCarousel.tsx` — Review'ı sayfanın ana entity `@id`'sine bağla (yacht/dinner-DE→Product, sunset/dinner→Event). Referans: /bosphorus-cruise + /tr/bosphorus-cruise ikisi de PASS. Schema-only = FREEZE-safe. **4. gün — en eski açık P0.**
-3. **[P1 · FV-1/D5 · kök-neden KAYDI] /reservation dead-click %52.63 (↑ %34.78'den) — package kartları tıklanabilir değil.** Element kırılımı: month-nav fix ÇALIŞTI ("July 2026" label dead 116→6), AMA baskın dead artık boş/maskeli fiyat alanı (blank 179 + masked "••••" 24) + package-kart metni (Dinner Cruise 9, Without Wine 5, /person 3, Selected 3) + "Continue booking" CTA (5). Fix: tüm package kartı = clickable label; maskeli fiyat konteyneri pointer-events; "Continue booking" disabled-affordance; "(function(){…})" script-as-text (3 dead) araştır.
-4. **[P1 · INTENT-BRIDGE — büyük CTR açığı] fiyat sayfaları impression kanıyor, ~0 click:** /blog/bosphorus-cruise-prices-2026 (1363i/2c/%0.1), /bosphorus-cruise-prices-istanbul-2026 (877i/0c/%0.0), /blog/bosphorus-cruise-vs-ferry-istanbul-2026 (1468i/15c/%1.0) = ~3.700 impr / ~17 click. GROWTH-PLAN Hamle 2'yi (transactional CTA + 134-167 kelime self-contained answer block + BlogToPillarCta) iki fiyat sayfasına uygula. Title FREEZE — sadece body.
-5. **[P1 · A7/TR — internal-link, push DEĞİL] /tr/bosphorus-cruise crawl 55 gün donuk (05-13).** Rich PASS + indexed ama günlük push'a rağmen Google recrawl gelmiyor (3. gün not). Push tek başına yetersiz kanıtlandı → kod-tarafı internal-link denetimi: TR sayfalardan /tr/bosphorus-cruise'a giden link sayısı/konumu. "boğaz turu" 6.600/mo hedefi ("akşam yemekli boğaz turu" pos 36.7).
-6. **[P2 · R1 SUPPRESSION] Bing week 5, gün 29, imp 0 (07-05'e kadar).** Teknik taraf TAM TEMİZ (InIndex 477↑, crawl issues 0, 5xx 0, sitemap 594/0-err, 301-fix canlı). Title FREEZE + günlük submit sürüyor. ETA penceresi 07-07→08-04 içinde; eskalasyon (week 6 ~07-22) gelmedi. Operatör: Bing Site Scan (panel-only).
-7. **[P2 · D5 watch] /princes-islands-tour-istanbul %66.67 dead (3 sess, 18 dead click) — düşük-N ama yoğun.** Sonraki run element kontrolü; tur sayfasında kırık CTA ihtimali.
+1. **[P0 · B5/FV-5 · BAYAT-5g] 4 money page Review `itemReviewed` FAIL — kod fix HÂLÂ yazılmadı.** /istanbul-dinner-cruise, /yacht-charter-istanbul, /cruises/bosphorus-sunset-cruise, /de/istanbul-dinner-cruise (her birinde 4× `Invalid object type for field "itemReviewed"`). Kaynak: `src/components/ui/ReviewsCarousel.tsx` — Review'ı sayfanın ana entity `@id`'sine bağla (dinner/sunset→Event, yacht→Product). Referans: /bosphorus-cruise PASS (bugün de teyit). Schema-only = FREEZE-safe. **5 gündür açık — en eski P0, artık BAYAT eşiğinde. Ayrı kod-session ŞART.**
+2. **[P1 · A1 crawl-budget — AÇIK-1g] 1.553 "Tarandı-dizine eklenmedi" (%82 not-indexed, index-rate ~16.8%).** Sınıf DEĞİŞMEDİ (06-30 snapshot, büyümüyor — regresyon değil ama sistemik). **A8 dead-inventory audit** (next_due 07-13, öne çekilebilir): 1.553'ün URL sınıf-kırılımı (114-post /blog + /guides + locale varyant + reservation query-param + event alt-sayfa) → noindex/410/sitemap-prune. 404×32 ayrı kır. Servis/commercial/indexli KALIR.
+3. **[P1 · INTENT-BRIDGE — büyük CTR açığı, AÇIK] fiyat sayfaları impression kanıyor, ~0 click:** /blog/bosphorus-cruise-prices-2026 (1.522i/2c), /bosphorus-cruise-prices-istanbul-2026 (892i/0c), /blog/bosphorus-cruise-vs-ferry-istanbul-2026 (1.403i/16c) = ~3.800 impr / ~18 click. **+ YENİ bridge adayı: "ortakoy mosque" 147i/pos10.8** (sunset cruise Ortaköy'den geçer). GROWTH-PLAN Hamle 2 (transactional CTA + 134-167 kelime self-contained answer block + BlogToPillarCta) uygula. Title FREEZE — sadece body.
+4. **[P1 · A7/TR — internal-link, AÇIK, KÖTÜLEŞTİ] /tr/bosphorus-cruise indexed→crawled-not-indexed'e DÖNDÜ.** Günlük push'a rağmen 07-08 taze crawl sonrası Google dizinden düşürdü (soft kalite kararı). Push+request-index yetersiz kanıtlandı (bugün de request-index doğrulanamadı) → **kod-tarafı internal-link denetimi ŞART:** TR sayfalardan /tr/bosphorus-cruise'a link sayısı/konumu (GROWTH-PLAN Hamle 4). "boğaz turu" 6.600/mo KD~1 hedefi.
+5. **[P1 · GA4 AÇILDI — YENİ, GEO validation] AI Assistant = #3 conversion channel (89 sess / 46 conv, 7g).** Merkezi SA ile GA4 açıldı; AI trafiği organik (53) + paid (52) conversion'a NEREDEYSE eşit (46). Bu, GROWTH-PLAN Hamle 2 (GEO/AI-citation içerik) yatırımının nicel gerekçesi. AI-citation pillar refresh + comparison cluster'ı önceliklendir.
+6. **[P1 · FV-1/D5 · AÇIK] /reservation dead-click package-kart tıklanamazlığı** — bu run Clarity URL-breakdown MCP hata verdiği için ölçülemedi (site-geneli %9.09 iyileşiyor). Dünkü kök-neden kaydı geçerli: tüm package kartı = clickable label; maskeli fiyat pointer-events; "Continue booking" disabled-affordance; "(function(){…})" script-as-text araştır. Ayrı kod-session.
+7. **[P2 · R1 SUPPRESSION · AÇIK-30g] Bing week 5, gün 30, imp 0 (07-06'ya kadar).** Teknik taraf TAM TEMİZ (InIndex 478↑, crawl issues 0, 5xx 0, blocked 0, sitemap 594/0-err). Title FREEZE + günlük submit sürüyor. ETA penceresi 07-07→08-04; eskalasyon eşiği (week 6 ~07-22) gelmedi. Operatör: Bing Site Scan (panel-only).
 8. **[P2 · A5] Yandex NOT_IN_SPRAV** — Yandex Business kaydı (operatör, tek açık Yandex recommendation, değişmedi).
 
 ## ⚠️ AÇIK SORUNLAR / FIX-VERIFY
-- **[A1 crawl-budget — YENİ]** 1.553 crawled-not-indexed + 82 discovered + 404×32. Baseline daily-state.jsonl'e yazıldı (yarın delta hesaplanabilir). `fix-verify-queue.md` yeni madde + Fırsat #1.
-- **[FV-5 · P0 · 4. GÜN]** 4 money page rich-results FAIL (Review itemReviewed) — kod fix bekliyor (`ReviewsCarousel.tsx`). bkz. Fırsat #2.
-- **[FV-1 · P0 · ÇÖZÜLMÜYOR]** /reservation dead %52.63 (↑ %34.78'den). Month-nav fix'i doğrulandı (July-2026 116→6) ama yeni baskın kaynak = package-kart/maskeli-fiyat alanı. Element kaydı Fırsat #3'te. Verify AÇIK kalıyor.
-- **[R1 SUPPRESSION — AÇIK week 5]** bkz. Fırsat #6. `fix-verify-queue.md` FV-4. SUPPRESSION-WATCH güncellenecek (gün 29).
-- **[FV-6 KAPANDI ✅]** npm audit 4 HIGH → 0 (commit 1a345b9 git log'da teyit). Next.js 16.2.10 + nodemailer 9.0.3.
-- **[OAuth]** GA4 (missing token) + Ads (operatör alanı) → D2/D8/D3 N/A. **GSC merkezi token ÇALIŞIYOR** (script `gsc-daily-snapshot.mjs` .env.local'daki BAYAT GSC_REFRESH_TOKEN'ı tercih ettiği için invalid_grant verdi — merkezi token direkt kullanıldığında B1/A3/A7/B5 CANLI). GA4 yenileme P1.
+- **[FV-5 · P0 · BAYAT-5g]** 4 money page rich-results FAIL (Review itemReviewed) — kod fix bekliyor (`ReviewsCarousel.tsx`). En eski açık P0. bkz. Fırsat #1.
+- **[FV-7 · P1 · AÇIK-1g]** 1.553 crawled-not-indexed + 82 discovered + 404×32. 06-30 snapshot, değişmedi (büyümüyor). A8 audit gerekli. bkz. Fırsat #2.
+- **[FV-1 · P0 · ölçülemedi]** /reservation dead-click — bu run Clarity URL-breakdown MCP hatası; site-geneli %9.09'a iyileşti. Verify carry-forward.
+- **[/tr/bosphorus-cruise · YENİ watch]** indexed→crawled-not-indexed (tek sayfa; toplam indexed 342 stabil = R3 değil). Internal-link işi (Fırsat #4).
+- **[R1 SUPPRESSION — AÇIK week 5 gün 30]** bkz. Fırsat #7. `fix-verify-queue.md` FV-4. SUPPRESSION-WATCH gün 30.
+- **[OAuth — GA4 AÇILDI ✅]** GA4 merkezi SA (`~/.agents/.gcp-service-account.json` → property 534226524) ÇALIŞIYOR — D2/D8/D11-GA4 CANLI. **Ads** hâlâ operatör alanı (pasif GA4 Paid okundu). **GSC merkezi token** ÇALIŞIYOR.
 
 ## 🔍 SANA İŞ DÜŞEN (operator action)
-- **A1 crawl-budget audit (P1 — YENİ):** 1.553 crawled-not-indexed'in URL sınıf-kırılımı + thin/held-back/410 kararı. Bu, sadece push ile çözülmez; içerik/sitemap-mimari işi.
-- **Manuel Request-Index:** bugün **0 URL** gerekli (tüm money page indexed) — kota diğer markalara.
-- **GA4 OAuth yenile:** `node scripts/ga4-merrysails-oauth.mjs auth-url` (D2/D8/D11-GA4 için tek eksik).
-- **`.env.local` GSC_REFRESH_TOKEN temizle/güncelle** (opsiyonel) — bayat; script merkezi token'a düşmüyor çünkü env-var önceliği var.
+- **FV-5 kod fix (P0, 5. gün):** `ReviewsCarousel.tsx` — Review→ana entity @id (schema-only, FREEZE-safe). Ayrı kod-session, en yüksek öncelik.
+- **A1 crawl-budget/A8 audit (P1):** 1.553 CNI'nin URL sınıf-kırılımı + thin/410/sitemap-prune. Push ile çözülmez.
+- **/tr/bosphorus-cruise internal-link (P1):** TR sayfalardan içerik-içi link akışı (dizinden düştü, push yetersiz).
+- **Manuel Request-Index:** bugün /tr/bosphorus-cruise DENENDİ ama GSC property-switch nedeniyle doğrulanamadı — sonraki interaktif koşuda tekrar dene (URL zaten auto-submit'te).
 - **Yandex Business kaydı** (NOT_IN_SPRAV) — yandex.com/business, ~10 dk.
 - **Bing:** aksiyon YOK — title FREEZE + Site Scan (panel) + sabır (week 5/6).
 - **Lumen #86820254 URL listesi** hâlâ bekliyor (submit-denylist.md operatör adımları).
@@ -72,17 +76,18 @@
 ## 🗓️ WEEKLY/MONTHLY due-tracker
 | Kontrol | Son | Next due | Durum |
 |---|---|---|---|
-| B3 rank sweep | 06-25 (rank-history) | 2026-07-08 | scheduled (yarın) |
-| B4 cannibalization | 07-06 (kısmi) | 2026-07-13 | scheduled |
-| C1 AI-visibility (lbm) | – | – | ⛔ **KALICI KALDIRILDI (2026-07-06 operatör) — lbm asla kullanılmayacak** |
-| D6 rakip turu | – | 2026-07-13 | scheduled |
-| **A8 dead-inventory** | – | **2026-07-13 (A1 keşfi ile ÖNE ÇEKİLMELİ)** | ⚑ crawl-budget audit tetiklendi |
-| A11 suppression-recovery review | 07-06 | 2026-07-13 | scheduled |
-| B9 serpstat audit | – | – | ⛔ **KALICI KALDIRILDI (2026-07-06 operatör)** |
-| D9-deep (PageSpeed) | 07-06 (quota-exceeded) | 2026-07-13 | scheduled (Pazar) |
-| D12 GTM container sağlığı | 07-06 | 2026-07-13 | scheduled |
-| D13 görsel performans | 07-06 | 2026-07-13 | scheduled |
-| E7-full güvenlik (derin) | 07-06 (FV-6 fix'lendi) | 2026-07-13 | ✅ 0 vuln |
+| B3 rank sweep | 06-25 (rank-history) | 2026-07-12 (Pazar oto-weekly) | scheduled |
+| B4 cannibalization + konsolidasyon | 07-06 (kısmi) | 2026-07-12 | scheduled |
+| C1 AI-visibility (lbm) | – | – | ⛔ **KALICI KALDIRILDI (2026-07-06 operatör)** |
+| **A8 dead-inventory** | – | **2026-07-12 (A1 keşfi ile ÖNE ÇEKİLMELİ)** | ⚑ crawl-budget audit tetiklendi |
+| A11 suppression-recovery review | 07-06 | 2026-07-12 | scheduled |
+| B9 SF/Semrush export mutabakatı | – | 2026-07-12 | scheduled (serpstat KALICI KALDIRILDI) |
+| D6 rakip turu | – | 2026-07-12 | scheduled |
+| D9-deep (PageSpeed) | 07-06 (quota-exceeded) | 2026-07-12 | scheduled |
+| D12 GTM + event-sözleşmesi | 07-06 | 2026-07-12 | scheduled (bugün D-EVENT set tam doğrulandı) |
+| D13 görsel performans | 07-06 | 2026-07-12 | scheduled |
+| D14 GBP + reviews | – | 2026-07-12 | scheduled |
+| E7-full güvenlik (derin) | 07-06 (FV-6 fix'lendi) | 2026-07-13 (Pazartesi) | ✅ 0 vuln |
 | E3 backlink audit | 05-02 (disavow) | 2026-08-01 | scheduled |
 | C3 isitagentready + C4 AI-bot erişim | – | 2026-08-01 | scheduled |
 
@@ -90,40 +95,43 @@
 
 ## 📅 GÜNLÜK LOG (append-only, son 30 gün tutulur)
 
+### 2026-07-08 (mode=daily)
+- **Coverage:** tüm DAILY hücreler DONE/N/A(sebep). **GA4 MERKEZİ SA İLE AÇILDI (haftalarca kör kalan D2/D8/D11).**
+- **GA4 (merkezi SA `indexing-api-bot@kingsworld` → property 534226524, CANLI):** 7g 533 sess — Direct 172/17conv, Organic 141/53conv, Paid 126/52conv, **AI Assistant 89/46conv (#3 conversion channel!)**, diğer 5. Key-events: purchase 11, begin_checkout 54, whatsapp_click 47, phone_click 6, booking_abandonment 1 — booking D-EVENT sözleşmesi TAM ateşliyor. **AI trafiği organik+paid conversion'a neredeyse eşit — GEO yatırımının nicel gerekçesi.**
+- **B1 (CANLI, 06-30→07-06):** 113c/12.373i/pos 7.59 → prev-7g (06-23→06-29) 117c/11.590i = -3.4% click (gürültü) / +6.8% impr / pozisyon 7.76→7.59 iyileşti.
+- **B2 striking-distance (pos 4-20):** YENİ büyük "ortakoy mosque" 147i/1c/pos10.8 (informational bridge adayı — sunset Ortaköy'den geçer). Fiyat/ferry kümesi devam: bosphorus ferry 34i/0c, sunset cruise 28i/0c, ferry vs cruise 22i/0c, dinner cruise price 21i/0c, "is bosphorus cruise worth it" 16i/1c/pos5.7, "bosphorus cruise istanbul" 9i/0c/pos4.2. Neredeyse hepsi 0c = CTR açığı.
+- **B5 rich-results (Inspection API):** 4 money page **FAIL — 5. GÜN** (aynı itemReviewed ×4/sayfa). /bosphorus-cruise PASS teyit. Kod fix hâlâ yok → FV-5 BAYAT eşiğinde.
+- **A1 (Chrome page-indexing-ui, merrysails doğrulandı):** indexed 342, CNI 1.553, discovered 82, 404 32, noindex 5, redirect 14(NR-9), alt-canonical 0 — **06-30 snapshot, 07-07 ile birebir aynı** (GSC "Son güncelleme 30.06.2026" — rapor 24h yenilenmedi). Delta sıfır GERÇEK, büyüme yok → R5 CLEAR. Düzeltilen sınıf yok → validation-restart basılmadı.
+- **A3 sitemap:** GSC lastDownloaded 07-07 (taze), 0 err/0 warn, 594 submitted, TEK canonical. Sözleşme ihlali yok. (Not: /tr/bosphorus-cruise inspection'ında "Site Haritaları: Geçici işleme hatası" — GSC-tarafı geçici, sitemap sağlıklı.)
+- **A4/A5/A6 auto-submit (helper, 17 priority URL):** IndexNow Bing 200 + Yandex 202; Bing SubmitUrlBatch 200 (submitted 17, daily_quota 90); Yandex recrawl 17/17 202 (quota_remainder 144/150, searchable 336). Denylist boş (Lumen operatörde).
+- **A7 inspect:** /tr/bosphorus-cruise indexed→"Crawled-not-indexed" (07-08 02:39 crawl, fetch OK, indexing izinli). Chrome Request-Index denendi — **doğrulanamadı** (property merrytourism'e switch etti, modal açılmadı) → başarılı SAYILMADI, sonraki interaktif koşuya devir. Diğer money page'ler indexed. Manuel kota fiilen 0 kullanıldı.
+- **A10 index-rate:** Google **342**, Bing InIndex **478** (↑476), Yandex searchable **336** (=). index-rate ~16.8% (<%50 → A8 prune P0, ama stabil/büyümüyor). **SUPPRESSION SAYACI:** Bing 0-seri 06-09→07-06 = **gün 30 / week 5** (canlı GetRankAndTrafficStats). Crawl: 5xx 0, blocked 0, in4xx 0, crawlErrors 41 (hafif creep 39→41), crawled 229/gün.
+- **R-SENTINEL:** **R1 AÇIK (Bing week 5, gün 30)** — carry-forward, engine-özel (Google click -3.4% gürültü, sağlıklı). **R5 CLEAR** (dünkü cold-start 1.553 büyümedi — 06-30 snapshot sabit). R2 CLEAR (click -3.4%, impr +6.8%, rez ↑16). R3 CLEAR (Google 342 stabil, Bing↑, Yandex =; /tr/bosphorus-cruise tek-sayfa dizinden düştü = watch, toplam düşmedi). R4 CLEAR (16 rez, 2 yüksek-değer). R6 N/A(Ads operatör). R7 CLEAR (site dead 9.09%↓, rage 0%, /reservation ölçülemedi). **R10 soft** (GA4 purchase 11 vs DB 16 ~%27 undercount — beklenen GA4 yönü, bug değil, izle).
+- **D1/D10 (Clarity ~154 sess/3g):** site dead **9.09%** ✅ (↓11.56) / rage **0%** ✅ / JS-error **0.65%** (negligible, translate-induced). URL-bazlı dead-click breakdown + /reservation: **bu run çekilemedi** (MCP grouped-query "An error occurred" ×5; sadece total-query çalıştı) — carry-forward.
+- **D4 rez (DB):** 16/7g — 14 aktif + 2 iptal (%12.5). Gross ~€2.821 / net ~€2.521. sunset-shared 10, private-sunset 1 (€420), yacht 4 (1 iptal), dinner-yacht 1 (**€755**). İki yüksek-değer private toparladı. gclid=Y 1.
+- **D8 reconciliation:** GA4 purchase 11 vs DB 16 (~%27, beklenen GA4-undercount yönü) — tracking-bug değil, izle.
+- **D11 AI-referral:** GA4 AI Assistant **89 sess/46 conv/7g** (#3 conv channel — GÜÇLÜ). Clarity 3g chatgpt 5+gemini 2 (dar pencere). AI GERÇEK ve gelir üretiyor.
+- **B7 intent-mix:** commercial impr %8.8/click %23.7 vs informational impr %91.2/click %76.3 (method dünle farklı — direkt karşılaştırma yok; tez sağlam: commercial ~3× CTR).
+- **B10 Trends (TR, merkezi cache):** bosphorus cruise +%7 MoM, yacht charter güncel-hafta peak, dinner cruise yükseliyor. Sezon-içi.
+- **C1-light:** 3+1 AI-readiness sinyali apex'te CANLI. **E7-light:** 6/6 money page 200, headers tam apex, temiz.
+- **Sezon:** cruise penceresi (May-Eki) içindeyiz; yacht charter Trends güncel-hafta peak + 2 yüksek-değer yacht/private booking = sezon-içi talep somut. Sezon-hazırlık içerik-fırsatı (Ads DEĞİL).
+
 ### 2026-07-07 (mode=daily)
 - **Coverage:** tüm DAILY hücreler DONE/N/A(sebep). **BÜYÜK A1 KEŞFİ.**
-- **A1 (gerçek Page-Indexing raporu — Chrome MCP, ilk kez çekildi):** Google indexed **342**; not-indexed sınıfları: **Tarandı-dizine eklenmedi 1.553** (Başarısız), Keşfedildi-dizine eklenmedi 82 (Başladı), Bulunamadı-404 **32** (Başarısız), noindex 5, Yönlendirmeli 14 (NR-9, hata sayılmaz), alt-canonical 0. **%82 not-indexed oranı** — money-page örneklemi (22/22 indexed) bunu tamamen gizliyordu (07-06 acilkaseniz dersi birebir). Baseline daily-state.jsonl'e yazıldı; regression_flags'e R5-coldstart + opportunities'e thin/crawl-budget audit eklendi.
-- **B1 (CANLI, 06-29→07-05):** 112 click / 12.188 impr / pos 7.7 → prev-7g (06-22→06-28) 108c/11.332i = **+3.7% click / +7.6% impr WoW**, pozisyon 8.1→7.7 iyileşti. Not: `gsc-daily-snapshot.mjs` .env.local bayat GSC_REFRESH_TOKEN'ı tercih edip invalid_grant verdi; merkezi token direkt kullanıldı (`/Users/resat/mcp-gsc/token.json` refresh OK doğrulandı).
-- **B2 striking-distance (pos 4-20):** yoğun fiyat+ferry kümesi — "bosphorus ferry" 9.7/34i, "bosphorus sunset cruise" 10.7/28i, "ferry vs cruise" 9.4/22i, "bosphorus dinner cruise price" 10.2/18i, "bosphorus cruise istanbul price 2026" 7.1/17i, "is bosphorus cruise worth it" 6.1/16i+1c, "bosphorus cruise istanbul" 4.7/7i (top-3'e yakın). Neredeyse hepsi 0 click = büyük CTR açığı (intent-bridge).
-- **B5 rich-results (Inspection API):** 4 money page **FAIL — 4. GÜN** (07-04/05/06/07 aynı `itemReviewed` hatası ×4/sayfa). /bosphorus-cruise + /tr/bosphorus-cruise PASS (referans: Review→Product @id). Kod fix hâlâ yok → FV-5 en eski açık P0.
-- **A3 sitemap:** GSC lastDownloaded 07-06 (taze ✅), 0 err/0 warn, 594 submitted, TEK canonical kayıt (/sitemap.xml). Sözleşme ihlali yok.
-- **A4/A5/A6 auto-submit (helper, 18 priority URL):** IndexNow Bing 200 + Yandex 202; Bing SubmitUrlBatch 200 (submitted 18, daily_quota 100); Yandex recrawl 18/18 202 (quota_remainder 150/150). Denylist boş (Lumen operatörde).
-- **A7 inspect:** 29 money/priority URL API ile — **0 doğrulanmış-unindexed** (hepsi indexed). Manuel Request-Index bugün 0. Listicle indexed kapalı. /tr/bosphorus-cruise crawl 05-13 (55 gün donuk) — internal-link kod-denetimi öneriliyor (push yetersiz).
-- **A10 index-rate:** Google **342**, Bing InIndex **477** (↑476), Yandex searchable **336** (↓337, gürültü). **SUPPRESSION SAYACI:** Bing 0-seri 06-09→07-05 = **gün 29 / week 5** (canlı GetRankAndTrafficStats, 60 satır hepsi 0). Crawl sağlığı: CrawlIssues 0, 5xx 0, 4xx 38/234 (~%16, hafif yüksek — izle), robots-block 0.
-- **R-SENTINEL:** **R1 AÇIK (Bing week 5, gün 29)** — carry-forward (Google click +3.7% sağlıklı, engine-özel). **R5 YENİ (cold-start): crawled-not-indexed 1.553** — ilk ölçüm, delta yok ama %82 oran → thin/crawl-budget audit. **R7-watch: /reservation dead %52.63** (↑%34.78, düşük-N 19 sess, yeni deploy spike DEĞİL — FV-1 çözülmüyor). R2 CLEAR (click/impr ↑, rez -25% ama <%40). R3 CLEAR (Bing↑, Yandex ~flat). R4 CLEAR (15 rez). R6 N/A(Ads oauth). R10 N/A(GA4 oauth).
-- **D1/D5/D10 (Clarity 173 sess/3g):** site dead **11.56%** ✅ (↓13.48) / rage **0%** ✅ / quickback 12.72% / JS-error **0%** ✅. URL-bazlı dead-click count: /reservation 21, /princes-islands-tour-istanbul 18 (yeni, 3 sess %66.67 düşük-N), /cruises/bosphorus-sunset-cruise 14, /bosphorus-cruise 12. **/reservation element kırılımı (FV-1):** blank 179 + masked-fiyat 24 + Dinner Cruise 9 + July-2026 6 (fix çalıştı, 116→6) + Continue-booking 5 + Without Wine 5 + /person 3 + script-as-text 3 → kök-neden package-kart tıklanamazlığı.
-- **D4 rez (DB):** 15/7g — 13 aktif + 2 iptal (%13.3). Gross ~€1.726 / net ~€1.426. sunset 10 (1 iptal), yacht 4 (1 iptal €220; aktif €220-297), dinner 1. gclid=Y 1. Yüksek-değer tur bu pencerede yok → brüt düşük ama hacim sağlıklı.
-- **D11 AI-referral:** chatgpt.com **28 sess/3g** (07-06'daki 7'den GÜÇLÜ toparlanma) + **gemini 2** + bing 2 + yandex 1 (organik engine). AI trafiği GERÇEK ve büyüyor.
-- **B7 intent-mix:** informational impr %68.4/click %42.5 vs commercial impr %31.6/click %57.5 — commercial impression-başına daha yüksek CTR (intent-bridge işi meyve veriyor).
-- **B10 Trends (TR):** "bosphorus cruise" 39→44 (+5%), "istanbul dinner cruise" 3→21 (yükseliş), "yacht charter istanbul" 2→4. Marka+sunset BLOCKED. Sezon-içi.
-- **C1-light:** 3 AI-readiness sinyali apex'te CANLI (Content-Signal robots + api-catalog 200 + Accept:markdown 200 + llms.txt 200). Proxy sinyal.
-- **E7-light:** headers tam apex, secret/JWT-fallback yok, .env git'te değil, /admin 307 guard. Temiz.
-- **D2/D3/D8:** N/A (GA4 oauth_missing + Ads operatör alanı/oauth). D9-light: LCP bu run çekilmedi, dünkü 2.330ms proxy.
-- **Sezon:** cruise penceresi (May-Eki) içindeyiz; dinner-cruise Trends yükselişi sezon-içi içerik-fırsatı (Ads değil).
+- **A1 (gerçek Page-Indexing raporu — Chrome MCP, ilk kez):** Google indexed **342**; not-indexed: **CNI 1.553** (Başarısız), discovered 82, 404 **32**, noindex 5, redirect 14 (NR-9). **%82 not-indexed** — money-page örneklemi (22/22) bunu gizliyordu (07-06 acilkaseniz dersi). Baseline kuruldu.
+- **B1 (CANLI, 06-29→07-05):** 112c/12.188i/pos 7.7 → prev 108c/11.332i = +3.7% click/+7.6% impr. B5 4 money FAIL (4. gün). A10 Bing InIndex 477↑, Yandex 336, suppression gün 29/week5. D4 15 rez. D11 chatgpt 28. R7 /reservation dead %52.63 (FV-1 çözülmüyor).
 
 ### 2026-07-06 (mode=weekly — coverage tam sweep)
-- **Coverage:** tüm DAILY hücreler DONE/N/A(sebep). WEEKLY ek maddeler de işlendi (B4 kısmi, C1 blocked, B9 blocked, D9-deep blocked, D12 done, D13 done, E7-full done+P0 bulgu, A11 done).
-- **B1 (CANLI, 06-27→07-03):** 120c/12.390i/pos 7.9 → prev-7g 130c/12.346i = hafif -8% click (gürültü). B2 fiyat-intent kümesi genişledi. **B5 4 money FAIL (3. gün).** A3 lastDownloaded 07-06, 0 err. A4/A5/A6 14 URL push OK. **A7 listicle INDEXED** (manuel kota 0). A10 Yandex 337, Bing 476; suppression gün 28/week4→5. **R7 iyileşme:** site dead 18.54→13.48, /reservation 64.7→34.78 (hedef değil). D11 chatgpt 7 (düşüş). D4 20 rez (%15 iptal). **E7-full: npm audit 4 HIGH → FV-6 açıldı+fix'lendi (0 vuln).**
+- **Coverage:** tüm DAILY + WEEKLY (B4 kısmi, C1/B9/D9-deep blocked, D12/D13 done, E7-full done+FV-6). **B1 120c/12.390i.** B5 4 money FAIL (3. gün). A10 suppression gün 28. R7 /reservation 34.78% (iyileşme). D4 20 rez. **E7-full: npm audit 4 HIGH → FV-6 açıldı+fix'lendi (0 vuln).**
 
 ### 2026-07-05 (Bing recovery deep-dive + FV-1 fix)
-- **Bing recovery:** son imp>0 06-08 (restate); InIndex 472↑, 5xx 0, CrawlIssues 0. next.config 80× redirect `permanent:true`→`statusCode:301` (FREEZE-safe). Sitemap 398/398 %100 200. Auto-submit 10 URL OK.
-- **FV-1 fix (deploy-gap YOK):** 2 gerçek bug — (1) `PlannerDateCalendar` ay-nav render-snap kilidi (Ağustos rez görüntülenemiyordu) + (2) "Change" scrollIntoView no-op → pulse. Build ✅, push YOK.
+- Bing InIndex 472↑, 5xx 0. next.config 80× redirect `permanent:true`→`statusCode:301` (FREEZE-safe). FV-1 fix: PlannerDateCalendar ay-nav + "Change" scrollIntoView (build ✅, push YOK).
 
 ### 2026-07-04 (mode=daily)
-- **BÜYÜK UNBLOCK:** GSC merkezi token search-analytics+sitemaps+inspection açıyor. B1 130c/12.346i (+49% WoW). B2 "is bosphorus cruise worth it" 4.7+1c. B5 4 money FAIL (FV-5 açıldı). A10 Yandex 336, Bing 470; suppression week4. **R7 REOPEN: /reservation dead 64.7%.** D11 chatgpt 25. D4 21 rez (%38 iptal).
+- GSC merkezi token UNBLOCK. B1 130c/12.346i (+49% WoW). B5 4 money FAIL (FV-5 açıldı). A10 Yandex 336, Bing 470; suppression week4. R7 /reservation dead 64.7%. D11 chatgpt 25. D4 21 rez.
 
 ### 2026-07-02 (mode=daily)
-- GSC+GA4+Ads OAuth revoke. R1 Bing week3 (imp 0 06-11→06-30). R4 CLEAR (22 rez, +175% WoW). R7 IMPROVED (/reservation rage 8.33→0, dead 58→33). A4 IndexNow OK. A5 Yandex 326. B5 0 error/4 warning.
+- GSC+GA4+Ads OAuth revoke. R1 Bing week3. R4 CLEAR (22 rez, +175% WoW). R7 IMPROVED (/reservation rage→0, dead 33%). A5 Yandex 326.
 
 ### 2026-07-01 (mode=daily, cold-start baseline)
-- R4 CLEAR (24 rez). R3 CLEAR (Yandex 326, Bing 454). R1 AÇIK (Bing imp→0 06-09→06-22). R7 FLAG (/reservation dead 58%+rage 8%). A4 3 URL push 200. D4 24/7g.
+- R4 CLEAR (24 rez). R3 CLEAR (Yandex 326, Bing 454). R1 AÇIK (Bing imp→0 06-09). R7 FLAG (/reservation dead 58%+rage 8%).
