@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { LEGACY_404_REDIRECTS } from "@/data/seo/legacy-404-redirects";
 
 function isSuspiciousServerActionProbe(request: NextRequest): boolean {
   return (
@@ -115,6 +116,26 @@ export function proxy(request: NextRequest) {
         country: request.headers.get("x-vercel-ip-country") ?? null,
       }),
     }).catch(() => {});
+  }
+
+  // ── Legacy 404 cleanup (2026-07-08) ─────────────────────────────────────
+  // SF/Semrush 2026-06-23 found 797 crawl-shadow URLs (locale-prefixed forms
+  // of EN-only blog/guide slugs, unprefixed locale-post slugs, /ru/ru/* double
+  // prefixes). Every one has an exact 1:1 live equivalent → 301 there so
+  // Bing/Google retire them from recrawl queues (crawl-health cleanup, part of
+  // the Bing suppression recovery protocol). Exact-match + fail-open: paths not
+  // in the map are never touched. Runs AFTER bot logging so crawler hits on
+  // these dead URLs stay observable in BotVisit stats.
+  const pathname = request.nextUrl.pathname;
+  const normalizedPath =
+    pathname.length > 1 && pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
+  const legacyDestination = LEGACY_404_REDIRECTS.get(normalizedPath);
+  if (legacyDestination) {
+    const url = request.nextUrl.clone();
+    url.pathname = legacyDestination;
+    return NextResponse.redirect(url, 301);
   }
 
   return NextResponse.next();

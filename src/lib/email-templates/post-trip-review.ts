@@ -183,6 +183,8 @@ interface Copy {
   sisterBtn: string;
   contactHeading: string;
   callBtn: string;
+  /** AI-discovery attribution ask (reply-based, Solis Layer-3) — rendered as a muted P.S. line. */
+  sourceQuestion: string;
 }
 
 const COPY: Record<ReviewLocale, Copy> = {
@@ -221,6 +223,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Visit Merry Tourism",
     contactHeading: "We are here whenever you need us",
     callBtn: "Call us",
+    sourceQuestion:
+      "P.S. Quick question — where did you first hear about us? Google, an AI assistant like ChatGPT, a friend, or social media? Just hit reply with one word — it helps our small crew a lot.",
   },
   tr: {
     subject: "Geziniz nasıldı? İçeride küçük bir teşekkür var 🌊",
@@ -257,6 +261,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Merry Tourism'i ziyaret et",
     contactHeading: "İhtiyacınız olduğunda buradayız",
     callBtn: "Bizi arayın",
+    sourceQuestion:
+      "Not: Küçük bir soru — bizi ilk nereden duydunuz? Google, ChatGPT gibi bir yapay zekâ asistanı, bir arkadaş mı yoksa sosyal medya mı? Tek kelimelik bir yanıt bile küçük ekibimize çok yardımcı olur.",
   },
   de: {
     subject: "Wie war Ihr Ausflug? Ein kleines Dankeschön wartet 🌊",
@@ -293,6 +299,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Merry Tourism besuchen",
     contactHeading: "Wir sind für Sie da, wann immer Sie uns brauchen",
     callBtn: "Rufen Sie uns an",
+    sourceQuestion:
+      "PS: Eine kurze Frage — wo haben Sie zuerst von uns erfahren? Google, ein KI-Assistent wie ChatGPT, eine Empfehlung oder Social Media? Antworten Sie einfach mit einem Wort — das hilft unserer kleinen Crew sehr.",
   },
   es: {
     subject: "¿Qué tal tu experiencia? Un pequeño agradecimiento dentro 🌊",
@@ -329,6 +337,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Visitar Merry Tourism",
     contactHeading: "Estamos aquí siempre que nos necesites",
     callBtn: "Llámanos",
+    sourceQuestion:
+      "P.D. Una pregunta rápida — ¿dónde oíste hablar de nosotros por primera vez? ¿Google, un asistente de IA como ChatGPT, un amigo o redes sociales? Responde con una sola palabra — ayuda mucho a nuestra pequeña tripulación.",
   },
   fr: {
     subject: "Comment était votre sortie ? Un petit merci à l'intérieur 🌊",
@@ -365,6 +375,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Visiter Merry Tourism",
     contactHeading: "Nous sommes là dès que vous avez besoin de nous",
     callBtn: "Appelez-nous",
+    sourceQuestion:
+      "P.S. Une petite question — où avez-vous entendu parler de nous en premier ? Google, un assistant IA comme ChatGPT, un ami ou les réseaux sociaux ? Répondez d'un seul mot — cela aide beaucoup notre petite équipe.",
   },
   it: {
     subject: "Com'è andata la tua esperienza? Un piccolo grazie all'interno 🌊",
@@ -401,6 +413,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Visita Merry Tourism",
     contactHeading: "Siamo qui ogni volta che hai bisogno di noi",
     callBtn: "Chiamaci",
+    sourceQuestion:
+      "P.S. Una domanda veloce — dove hai sentito parlare di noi per la prima volta? Google, un assistente IA come ChatGPT, un amico o i social? Rispondi con una sola parola — aiuta molto il nostro piccolo equipaggio.",
   },
   pt: {
     subject: "Como foi a sua experiência? Um pequeno agradecimento por dentro 🌊",
@@ -437,6 +451,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Visitar Merry Tourism",
     contactHeading: "Estamos aqui sempre que você precisar de nós",
     callBtn: "Ligue para nós",
+    sourceQuestion:
+      "P.S. Uma pergunta rápida — onde você ouviu falar de nós pela primeira vez? Google, um assistente de IA como o ChatGPT, um amigo ou redes sociais? Responda com uma palavra — ajuda muito a nossa pequena tripulação.",
   },
   ru: {
     subject: "Как прошла ваша поездка? Внутри небольшая благодарность 🌊",
@@ -473,6 +489,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Перейти на Merry Tourism",
     contactHeading: "Мы всегда рядом, когда мы вам нужны",
     callBtn: "Позвоните нам",
+    sourceQuestion:
+      "P.S. Небольшой вопрос — откуда вы впервые узнали о нас? Google, ИИ-ассистент вроде ChatGPT, совет друга или соцсети? Ответьте одним словом — это очень поможет нашей небольшой команде.",
   },
   hu: {
     subject: "Milyen volt az élményed? Egy kis köszönet vár odabent 🌊",
@@ -509,6 +527,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Merry Tourism megtekintése",
     contactHeading: "Itt vagyunk, amikor csak szükséged van ránk",
     callBtn: "Hívj minket",
+    sourceQuestion:
+      "Ui.: Egy gyors kérdés — honnan hallottál rólunk először? Google, egy MI-asszisztens (pl. ChatGPT), egy barát vagy a közösségi média? Válaszolj egyetlen szóval — sokat segít kis csapatunknak.",
   },
   nl: {
     subject: "Hoe was je uitje? Een klein bedankje binnenin 🌊",
@@ -545,6 +565,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Bezoek Merry Tourism",
     contactHeading: "We zijn er wanneer je ons nodig hebt",
     callBtn: "Bel ons",
+    sourceQuestion:
+      "P.S. Een korte vraag — waar hoorde je voor het eerst over ons? Google, een AI-assistent zoals ChatGPT, een vriend of social media? Antwoord gewoon met één woord — het helpt onze kleine bemanning enorm.",
   },
   sa: {
     subject: "كيف كانت تجربتك؟ هدية صغيرة بالداخل 🌊",
@@ -581,6 +603,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "زيارة Merry Tourism",
     contactHeading: "نحن هنا متى احتجت إلينا",
     callBtn: "اتصل بنا",
+    sourceQuestion:
+      "ملاحظة: سؤال سريع — من أين سمعت عنا أول مرة؟ Google، مساعد ذكاء اصطناعي مثل ChatGPT، صديق، أم وسائل التواصل؟ يكفي الرد بكلمة واحدة — فهذا يساعد فريقنا الصغير كثيراً.",
   },
   el: {
     subject: "Πώς ήταν η εμπειρία σας; Ένα μικρό ευχαριστώ μέσα 🌊",
@@ -617,6 +641,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "Επισκεφθείτε το Merry Tourism",
     contactHeading: "Είμαστε εδώ όποτε μας χρειαστείτε",
     callBtn: "Καλέστε μας",
+    sourceQuestion:
+      "Υ.Γ. Μια γρήγορη ερώτηση — πού μας πρωτοακούσατε; Στο Google, σε έναν βοηθό AI όπως το ChatGPT, από φίλο ή στα social media; Απαντήστε με μία λέξη — βοηθά πολύ το μικρό μας πλήρωμα.",
   },
   zh: {
     subject: "您的旅程怎么样？里面有一份小心意 🌊",
@@ -652,6 +678,8 @@ const COPY: Record<ReviewLocale, Copy> = {
     sisterBtn: "访问 Merry Tourism",
     contactHeading: "随时为您服务",
     callBtn: "致电我们",
+    sourceQuestion:
+      "附注：一个小问题——您最初是从哪里了解到我们的？Google、ChatGPT 等 AI 助手、朋友推荐还是社交媒体？回复一个词即可——这对我们的小团队帮助很大。",
   },
 };
 
@@ -807,6 +835,7 @@ ${emailHead()}
         <p style="color:#0f172a;margin:0 0 14px;font-size:14px;font-weight:700;">${escapeHtml(c.contactHeading)}</p>
         <a href="${contactWhatsappUrl}" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 8px;">${escapeHtml(c.whatsappBtn)}</a>
         <a href="${callUrl}" style="display:inline-block;background:#ffffff;color:#0f172a;text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:700;font-size:13px;margin:0 5px 8px;border:1px solid #cbd5e1;">${escapeHtml(c.callBtn)} ${escapeHtml(PHONE_DISPLAY)}</a>
+        <p style="color:#94a3b8;margin:16px 0 0;font-size:12.5px;line-height:1.7;">${escapeHtml(c.sourceQuestion)}</p>
       </div>
     </div>
 
