@@ -65,3 +65,35 @@
 ## KAPANAN (son 30 gün)
 - **FV-6** (2026-07-06) — npm audit 4 HIGH + 6 moderate + 1 low → 0. Next.js 16.2.10 + nodemailer 9.0.3 (major, operatör onaylı) + qs/fast-uri/hono/ip-address/js-yaml transitive temizlik. Commit: `1a345b9` (git log'da teyit 2026-07-07).
 - _FV-3 dalgalı, FV-1 çözülmüyor (kök-neden package-card), FV-5 4. gün açık._
+
+## SF/Semrush mutabakat 2026-07-08 (öne çekilmiş B9)
+
+**Amaç:** eski SF/Semrush audit bulgularının canlıda hâlâ var olup olmadığını tek tek doğrulamak (operatör şüphesi: "hiç fixlenmedi mi?").
+**Kaynak export:** `~/Desktop/seospider/merrysails/semrush/*_20260623.csv` (Semrush Site Audit crawl 2026-06-23 23:37) + SF ham crawl top-level CSV (`page_titles_over_561_pixels.csv`, `h1_all.csv`, `canonical_chains.csv`, 2026-06-21/22). Doğrulama: `curl -sIL` (status+redirect hop) + canlı `<title>/<meta>/<h1>` içerik karşılaştırması, tümü 2026-07-08. Title/meta/h1 metnine dokunacak HİÇBİR fix uygulanmadı/önerilmedi (Bing suppression kuralı).
+
+**Özet:** 7 aksiyon-alınabilir sınıftan **2 FIXED, 5 AÇIK** (+2 sınıf export'ta zaten 0 bulgu). Azınlık FIXED → aşağıdaki AÇIK liste öncelik sırasında.
+
+### AÇIK (öncelik sıralı)
+
+**SF-1 · internal_broken_links (export 761 satır)** — 5/5 örnek hâlâ canlı 404 (`curl -sIL` doğrulandı): `/fr/blog/accessible-bosphorus-cruise`, `/de/blog/accessible-bosphorus-cruise`, `/tr/blog/accessible-bosphorus-cruise`, `/nl/blog/accessible-bosphorus-cruise`, `/de/blog/avoid-tourist-traps-istanbul-cruises`. Muhtemel kök neden: blog post sadece EN'de var ama başka locale'e link/hreflang üretiliyor. Fix = link-üretim mantığı (kod), title değil. **YÜKSEK ÖNCELİK, SF-2 ile muhtemelen ortak kök-neden.**
+
+**SF-2 · http_4xx_client_errors (export 797 satır)** — 5/5 örnek hâlâ 404: `/blog/adalar-turu-istanbul-buyukada-rehberi-2026`, `/blog/arenda-yakhty-stambul-2026`, `/blog/bogaz-turu-fiyat-rehberi-istanbul-2026`, `/blog/bogaz-turu-kac-saat-surer-rehberi-2026`, `/blog/bosphorus-cruise-prijzen-gids-2026` — TR/RU/NL dilinde slug ama locale-prefix'siz `/blog/` altında. SF-1 ile aynı audit'te birlikte çözülmeli.
+
+**SF-3 · long_title / SF pixel-width (export 13 satır, top-level)** — 5/5 örnek hâlâ uzun canlı title: `/ru/team-building-yacht-istanbul` (100 char!), `/ru/cruises/bosphorus-sunset-cruise` (96), `/zh` (84), `/yacht-charter-istanbul/group-yacht-40-standard` (72), `/yacht-charter-istanbul/mega-event-yacht-150` (64). CLAUDE.md kural #6 ihlali (kaynak title max 47 char) canlı teyitli. **FIX TITLE METNİ DEĞİŞİKLİĞİ GEREKTİRİR → operatör onayı şart, bu işçi uygulayamaz (Bing suppression kuralı).** Öneri: tek seferde 1-2 sayfa, düşük-impression locale'den başla.
+
+**SF-4 · permanent_redirects / tek-atlama redirect (export 7 satır)** — `curl -sIL` doğrulandı: `/blog/bosphorus-cruise-departure-points` hâlâ `308` ile `/bosphorus-cruise-departure-points`'e yönleniyor (tek hop, çoklu-hop zincir DEĞİL — export'un "chain" değil "permanent redirect" olarak adlandırması doğru). 7 farklı sayfa (`/blog`, `/de/blog`, `/fr/blog`, `/nl/blog`, `/tr/blog`, `/guides/kabatas-pier`, `/guides/karakoy-waterfront`) hâlâ redirect'e giren eski URL'e link veriyor. Düşük öncelik — fix = internal link'i final URL'e güncelle (kod, title değil).
+
+**SF-5 · h1_and_title_tags_have_duplicate_content (export 7 satır, tartışmalı)** — 5/5 örnekte H1 metni Title metniyle birebir aynı (örn. `/cruises/bosphorus-cruise-for-cruise-passengers`). Muhtemelen `ProductHero`/`TourDetailClient` tasarım deseni. Semrush'ın önerisi H1 veya Title metnini değiştirmek — **BU İŞÇİ UYGULAYAMAZ (title/h1 değişikliği yasak).** Operatöre: gerçek sorun mu tasarım-kaynaklı kabul edilebilir mi karar bekliyor, düşük öncelik.
+
+### FIXED — export bayat — fixlendi ✅
+
+**SF-6 · duplicate_title_tag (export 27 satır)** — export bayat — fixlendi ✅. Crawl anında (06-23) 6 yacht-charter sayfası (`boutique-yacht-12`, `event-yacht-90`, `group-yacht-40-signature`, `group-yacht-40-standard`, `mega-event-yacht-150`, `premium-yacht-15`) × 5 locale (de/fr/nl/ru/zh) hepsi İngilizce fallback title gösteriyordu (duplicate). Canlı doğrulama (07-08, 8/8 örnek): artık kendi dilinde benzersiz title (örn. `/zh/.../group-yacht-40-signature` → "团体游艇 · 40 人 · 尊享 — €500 / 2h"). i18n içerik tamamlama export'tan SONRA gelmiş (ACTIVE_LOCALES şu an `en,tr,de,fr,nl,ru,zh` — ru/zh dahil).
+
+**SF-7 · duplicate_meta_description (export 27 satır)** — export bayat — fixlendi ✅. Aynı 6 yacht sayfası × 5 locale — canlı doğrulama 5/5 örnek artık benzersiz çevrilmiş meta description (DE/RU/FR/ZH/NL hepsi farklı metin).
+
+### Export'ta zaten 0 bulgu (doğrulama gerekmedi)
+- `canonical_chains.csv` (SF top-level, 06-21/22 crawl): 0 satır
+- `canonicals_nonındexable_canonicals.csv` (SF top-level): 0 satır
+- missing_h1 (h1_all.csv, boş H1-1 + indexable filtre, script ile hesaplandı): 0 satır — CLAUDE.md "Resolved 2026-04-27" notuyla tutarlı
+
+**VERDİKT:** azınlık FIXED (2/7) → yeni crawl'ın "temiz" sonuç göstermesi BEKLENMEMELİ, ama veri toplamak güvenli (read-only, siteye etkisi yok). Sıradaki iş SF-1/SF-2 (muhtemelen ortak kök-neden, tek session'da ikisi kapanabilir).
