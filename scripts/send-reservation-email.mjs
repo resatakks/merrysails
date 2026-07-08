@@ -16,8 +16,6 @@ const SITE_BASE = "https://merrysails.com";
 const CC = [
   "info@merrysails.com",
   "resatakkus10@gmail.com",
-  "info@merrytravel.com.tr",
-  "info@merrytourism.com",
 ];
 
 function normalizeUrl(s) {
