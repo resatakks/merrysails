@@ -33,7 +33,7 @@ const INDEXNOW_API = "https://api.indexnow.org/IndexNow";
 // All routes with locale pages
 const LOCALE_PATHS = [
   "/bosphorus-cruise",
-  "/istanbul-dinner-cruise",
+  "/bosphorus-dinner-cruise-istanbul",
   "/cruises/bosphorus-sunset-cruise",
   "/yacht-charter-istanbul",
   "/boat-rental-istanbul",
@@ -59,7 +59,6 @@ const LOCALE_PATHS = [
   "/private-dinner-cruise-for-couples-istanbul",
   "/product-launch-yacht-istanbul",
   "/proposal-yacht-with-photographer-istanbul",
-  "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
   "/reservation",
@@ -69,7 +68,7 @@ const LOCALE_PATHS = [
 const EN_PRIORITY_PATHS = [
   "/",
   "/bosphorus-cruise",
-  "/istanbul-dinner-cruise",
+  "/bosphorus-dinner-cruise-istanbul",
   "/cruises/bosphorus-sunset-cruise",
   "/yacht-charter-istanbul",
   "/boat-rental-istanbul",

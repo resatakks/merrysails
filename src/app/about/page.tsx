@@ -181,7 +181,7 @@ export default function AboutPage() {
               <ul className="space-y-2">
                 <li><Link href="/bosphorus-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Cruise Compare Hub</Link></li>
                 <li><Link href="/cruises/bosphorus-sunset-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Bosphorus Sunset Cruise</Link></li>
-                <li><Link href="/istanbul-dinner-cruise" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Istanbul Dinner Cruise</Link></li>
+                <li><Link href="/bosphorus-dinner-cruise-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Istanbul Dinner Cruise</Link></li>
                 <li><Link href="/yacht-charter-istanbul" className="text-sm text-[var(--body-text)] hover:text-[var(--brand-primary)] transition-colors flex items-center gap-1"><ArrowRight className="w-3 h-3 shrink-0" /> Yacht Charter Istanbul</Link></li>
                 <li className="pt-1"><Link href="/bosphorus-cruise" className="text-sm font-semibold text-[var(--brand-primary)] hover:underline">Compare hub →</Link></li>
               </ul>

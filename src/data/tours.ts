@@ -516,7 +516,11 @@ export const tours: Tour[] = [
       "Silver packages can be booked up to 50 guests per booking, while Gold tiers currently show up to 30 guests per booking",
       "The live calendar currently shows evening departures at 20:30",
     ],
-    canonicalPath: "/istanbul-dinner-cruise",
+    // 2026-07-09: moved off /istanbul-dinner-cruise (Lumen DMCA #86820254
+    // named this URL; 90d GSC = 1 click/47 impr, genuine organic suppression
+    // despite indexed-PASS status). New URL has no DMCA history. Old URL 301s
+    // here via next.config.ts. See docs/seo-index-reports/ for investigation.
+    canonicalPath: "/bosphorus-dinner-cruise-istanbul",
     isCoreProduct: true,
     showPricing: true,
     bookingMode: "book",

@@ -62,7 +62,7 @@ const bookingPages = [
     description: "Choose this for landmark views at the best light with a shorter shared premium route.",
   },
   {
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     eyebrow: "Shared evening",
     title: "Istanbul Dinner Cruise",
     description: "Choose this for the fixed evening route with clear dinner packages.",
@@ -83,7 +83,7 @@ const bookingPages = [
 
 const boardingSupportPages = [
   {
-    href: "/sunset-cruise-tickets-istanbul",
+    href: "/cruises/bosphorus-sunset-cruise",
     eyebrow: "Shared sunset tickets",
     title: "Sunset Ticket Support",
     description: "Use this when the sunset route is already chosen and the remaining question is the shared ticket and option fit.",

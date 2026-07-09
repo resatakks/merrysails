@@ -844,7 +844,7 @@ export default function BestBosphorusCruiseCompanies2026Page() {
             <Link href="/compare-bosphorus-cruises" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Compare MerrySails cruise types →
             </Link>
-            <Link href="/istanbul-dinner-cruise" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+            <Link href="/bosphorus-dinner-cruise-istanbul" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Istanbul dinner cruise →
             </Link>
             <Link href="/yacht-charter-istanbul" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">

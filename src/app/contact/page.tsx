@@ -82,7 +82,7 @@ export default function ContactPage() {
       description: "Use this if the booking is specifically for a shared sunset experience.",
     },
     {
-      href: "/istanbul-dinner-cruise",
+      href: "/bosphorus-dinner-cruise-istanbul",
       title: "Dinner Cruise",
       description: "Use this for shared dinner cruise packages, Turkish night, and hotel-pickup led evening intent.",
     },
@@ -95,7 +95,7 @@ export default function ContactPage() {
 
   const supportRoutes = [
     {
-      href: "/sunset-cruise-tickets-istanbul",
+      href: "/cruises/bosphorus-sunset-cruise",
       title: "Sunset Ticket Support",
       description: "Use this when the shared sunset route is already right and the real question is ticket fit, shared options, and reserve-direct clarity.",
     },

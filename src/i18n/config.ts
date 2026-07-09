@@ -86,7 +86,6 @@ export const LOCALIZED_ROUTES = new Set([
   "kabatas-dinner-cruise-istanbul",
   "kurucesme-marina-yacht-charter",
   "private-dinner-cruise-for-couples-istanbul",
-  "sunset-cruise-tickets-istanbul",
   "turkish-night-dinner-cruise-istanbul",
 ]);
 

@@ -23,7 +23,7 @@ export default function WhatsAppButton() {
   // pages so they do not overlap the first boat card on mobile.
   const hasStickyBookingUi =
     normalizedPath.startsWith("/cruises/") ||
-    normalizedPath === "/istanbul-dinner-cruise";
+    normalizedPath === "/bosphorus-dinner-cruise-istanbul";
   const mobileBottomOffset = hasStickyBookingUi
     ? "bottom-[calc(env(safe-area-inset-bottom)+5.75rem)]"
     : "bottom-[calc(env(safe-area-inset-bottom)+1rem)]";

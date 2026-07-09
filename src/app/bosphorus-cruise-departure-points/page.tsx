@@ -62,7 +62,7 @@ const flowCards = [
  eyebrow: "Shared dinner product",
  description:
  "Dinner cruise boards at Kabataş pier (European shore, foot of Dolmabahçe Palace). Tram T1 Kabataş stop, F1 funicular from Taksim, or taxi from Sultanahmet ~10 min.",
- ownerHref: "/istanbul-dinner-cruise",
+ ownerHref: "/bosphorus-dinner-cruise-istanbul",
  ownerLabel: "Open dinner owner page",
  supportHref: "/kabatas-dinner-cruise-istanbul",
  supportLabel: "See Kabataş support page",

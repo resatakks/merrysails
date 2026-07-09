@@ -640,7 +640,7 @@ export const turkishProductPosts: BlogPost[] = [
       {
         heading: "Rezervasyon ve İpuçları",
         content:
-          "En iyi akşam yemeği deneyimi için birkaç pratik öneri: Yaz sezonunda (Mayıs–Eylül) tekneler çoğunlukla dolar; bu dönemde en az 3–5 gün önceden rezervasyon yapmanızı öneririz. Kasım–Mart arası kış sezonunda son dakika rezervasyon daha kolaydır. Rezervasyon için [İstanbul Akşam Yemeği Turu](/istanbul-dinner-cruise) sayfamızı ziyaret edin ya da WhatsApp (+90 544 898 98 12) üzerinden direkt iletişime geçin. Yemeksiz gün batımı turu için [Boğaz Gün Batımı Turu](/cruises/bosphorus-sunset-cruise) seçeneğine bakın.",
+          "En iyi akşam yemeği deneyimi için birkaç pratik öneri: Yaz sezonunda (Mayıs–Eylül) tekneler çoğunlukla dolar; bu dönemde en az 3–5 gün önceden rezervasyon yapmanızı öneririz. Kasım–Mart arası kış sezonunda son dakika rezervasyon daha kolaydır. Rezervasyon için [İstanbul Akşam Yemeği Turu](/bosphorus-dinner-cruise-istanbul) sayfamızı ziyaret edin ya da WhatsApp (+90 544 898 98 12) üzerinden direkt iletişime geçin. Yemeksiz gün batımı turu için [Boğaz Gün Batımı Turu](/cruises/bosphorus-sunset-cruise) seçeneğine bakın.",
         proTip:
           "En iyi masa konumu için: Gold Soft Drinks veya Gold Unlimited paketini seçin ve rezervasyon sırasında 'sahne önü masa' talebinizi belirtin. Erken gelen misafirler (~20:15 iskelede) genellikle tercih ettikleri konumu seçebilir.",
       },

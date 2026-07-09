@@ -25,7 +25,7 @@ const cruiseTypes = [
     meta: "4 packages · EUR 30 to EUR 90",
     description:
       "Choose a shared evening cruise with dinner service, stage entertainment, hotel pickup support, and four package options across Silver and Gold tiers.",
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
   },
   {
     icon: Anchor,
@@ -218,7 +218,7 @@ export default function BosphorusGuideSection() {
                 Sunset vs Dinner Cruise
               </Link>
               <Link
-                href="/sunset-cruise-tickets-istanbul"
+                href="/cruises/bosphorus-sunset-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
                 Sunset Ticket Support
@@ -242,7 +242,7 @@ export default function BosphorusGuideSection() {
                 Departure Points Hub
               </Link>
               <Link
-                href="/istanbul-dinner-cruise"
+                href="/bosphorus-dinner-cruise-istanbul"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >
                 Istanbul Dinner Cruise

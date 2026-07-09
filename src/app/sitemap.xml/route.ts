@@ -251,8 +251,7 @@ export function GET() {
     },
     { url: `${SITE_URL}/bosphorus-cruise`, changefreq: "daily", priority: "0.98", lastmod: contentLastmod, hreflang: hreflangXml("/bosphorus-cruise") },
     { url: `${SITE_URL}/cruises`, changefreq: "weekly", priority: "0.55", lastmod: contentLastmod, hreflang: hreflangXml("/cruises") },
-    { url: `${SITE_URL}/sunset-cruise-tickets-istanbul`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod, hreflang: hreflangXml("/sunset-cruise-tickets-istanbul") },
-    { url: `${SITE_URL}/istanbul-dinner-cruise`, changefreq: "weekly", priority: "0.97", lastmod: contentLastmod, hreflang: hreflangXml("/istanbul-dinner-cruise") },
+    { url: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`, changefreq: "weekly", priority: "0.97", lastmod: contentLastmod, hreflang: hreflangXml("/bosphorus-dinner-cruise-istanbul") },
     { url: `${SITE_URL}/turkish-night-dinner-cruise-istanbul`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod, hreflang: hreflangXml("/turkish-night-dinner-cruise-istanbul") },
     { url: `${SITE_URL}/dinner-cruise-with-hotel-pickup-istanbul`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod, hreflang: hreflangXml("/dinner-cruise-with-hotel-pickup-istanbul") },
     { url: `${SITE_URL}/dinner-cruise-pickup-sultanahmet-taksim`, changefreq: "weekly", priority: "0.72", lastmod: contentLastmod, hreflang: hreflangXml("/dinner-cruise-pickup-sultanahmet-taksim") },
@@ -266,9 +265,16 @@ export function GET() {
     // sitemap because they now 301 -> their established indexed pillar (one
     // indexable URL per intent). Sitemap must never list a redirecting URL.
     // istanbul-yacht-charter-rental -> /yacht-charter-istanbul
-    // istanbul-dinner-cruise-bosphorus -> /istanbul-dinner-cruise
-    // sunset-cruise-istanbul-tickets-booking -> /sunset-cruise-tickets-istanbul
+    // istanbul-dinner-cruise-bosphorus -> /bosphorus-dinner-cruise-istanbul (chain-flattened 2026-07-09)
+    // sunset-cruise-istanbul-tickets-booking -> /cruises/bosphorus-sunset-cruise (chain-flattened 2026-07-09)
     // private-bosphorus-dinner-yacht-charter -> /private-bosphorus-dinner-cruise
+    // DMCA-named twin consolidation (2026-07-09): /sunset-cruise-tickets-istanbul
+    // removed from sitemap — 46-day-zero-impression suppressed duplicate of the
+    // healthy owner page, now 301s -> /cruises/bosphorus-sunset-cruise.
+    // DMCA-named pillar relocation (2026-07-09): /istanbul-dinner-cruise (named
+    // in Lumen notice #86820254, 46-day organic suppression despite indexed-PASS
+    // status) removed from sitemap — content/price/schema unchanged, moved to
+    // /bosphorus-dinner-cruise-istanbul (entry above), now 301s there.
     { url: `${SITE_URL}/private-dinner-cruise-for-couples-istanbul`, changefreq: "weekly", priority: "0.73", lastmod: contentLastmod, hreflang: hreflangXml("/private-dinner-cruise-for-couples-istanbul") },
     // 0-impression niche event pages (3-month GSC) — kept for Ads landing, but deprioritized organically per ROADMAP audit 2026-05-17
     { url: `${SITE_URL}/proposal-yacht-rental-istanbul`, changefreq: "monthly", priority: "0.45", lastmod: contentLastmod, hreflang: hreflangXml("/proposal-yacht-rental-istanbul") },

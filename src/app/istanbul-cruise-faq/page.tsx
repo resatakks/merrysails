@@ -376,7 +376,7 @@ export default function CruiseFAQPage() {
             <Link href="/cruises/bosphorus-sunset-cruise" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Sunset cruise from €30 →
             </Link>
-            <Link href="/istanbul-dinner-cruise" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
+            <Link href="/bosphorus-dinner-cruise-istanbul" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">
               Dinner cruise from €30 →
             </Link>
             <Link href="/yacht-charter-istanbul" className="rounded-full bg-white px-4 py-2 font-semibold text-orange-600 shadow-sm hover:bg-orange-50">

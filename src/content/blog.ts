@@ -48,7 +48,7 @@ export const commercialSupportPosts: BlogPost[] = [
         heading: "The quickest answer",
         answerCapsule:
           "Pick the sunset cruise when the light is the main event. Pick the dinner cruise when the table, service, and evening length matter more.",
-        content: `The simplest split is this: open [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) when you want a cleaner golden-hour plan, and open [Istanbul Dinner Cruise](/istanbul-dinner-cruise) when you want a longer shared evening with dinner service and a clearer package ladder.
+        content: `The simplest split is this: open [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) when you want a cleaner golden-hour plan, and open [Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul) when you want a longer shared evening with dinner service and a clearer package ladder.
 
 If your group wants the meal to stay private, skip both shared pages and go straight to [Private Bosphorus Dinner Cruise](/private-bosphorus-dinner-cruise).`,
       },
@@ -68,7 +68,7 @@ It is also the better fit when you want a premium Bosphorus experience without c
         heading: "When the dinner cruise is the better fit",
         content: `The dinner cruise wins when the whole night should revolve around the table. That usually means a longer evening, more structured service, hotel pickup support, and a clear reason to stay on board after dark.
 
-If the booking brief is "we want dinner on the Bosphorus," then [Istanbul Dinner Cruise](/istanbul-dinner-cruise) is the right page to open first. It is more complete than the sunset route and more economical than building a private dinner from scratch.`,
+If the booking brief is "we want dinner on the Bosphorus," then [Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul) is the right page to open first. It is more complete than the sunset route and more economical than building a private dinner from scratch.`,
         list: [
           "You want a proper dinner first and sightseeing second.",
           "You want a shared evening with a fixed route and package choices.",
@@ -86,7 +86,7 @@ If the dinner is the main event but privacy matters, open [Private Bosphorus Din
         heading: "What to do next",
         content: `If the decision is still open, use the service page that matches the booking mood first and the comparison article second. A quick route is usually better than a long debate.
 
-Start with [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) for golden-hour plans, [Istanbul Dinner Cruise](/istanbul-dinner-cruise) for shared dinner tickets, and [Private Bosphorus Dinner Cruise](/private-bosphorus-dinner-cruise) when the evening needs to stay private.`,
+Start with [Bosphorus Sunset Cruise](/cruises/bosphorus-sunset-cruise) for golden-hour plans, [Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul) for shared dinner tickets, and [Private Bosphorus Dinner Cruise](/private-bosphorus-dinner-cruise) when the evening needs to stay private.`,
       },
     ],
     faqs: [
@@ -414,7 +414,7 @@ export const commercialSupportRoutes: Record<string, SupportRoute> = {
       "If the question is sunset or dinner, the page below gives you the cleanest next click.",
     links: [
       { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
-      { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
+      { href: "/bosphorus-dinner-cruise-istanbul", label: "Open dinner cruise" },
       { href: "/private-bosphorus-dinner-cruise", label: "Open private dinner cruise" },
     ],
   },
@@ -459,7 +459,7 @@ const categoryServiceLinks: Record<BlogCategory, RouteLink[]> = {
   "cruise-guide": [
     { href: "/bosphorus-cruise", label: "Open Bosphorus cruise hub" },
     { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
-    { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
+    { href: "/bosphorus-dinner-cruise-istanbul", label: "Open dinner cruise" },
   ],
   "yacht-guide": [
     { href: "/yacht-charter-istanbul", label: "Open yacht charter" },
@@ -475,12 +475,12 @@ const categoryServiceLinks: Record<BlogCategory, RouteLink[]> = {
   istanbul: [
     { href: "/bosphorus-cruise", label: "Open Bosphorus cruise hub" },
     { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
-    { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
+    { href: "/bosphorus-dinner-cruise-istanbul", label: "Open dinner cruise" },
   ],
   tips: [
     { href: "/bosphorus-cruise", label: "Open Bosphorus cruise hub" },
     { href: "/cruises/bosphorus-sunset-cruise", label: "Open sunset cruise" },
-    { href: "/istanbul-dinner-cruise", label: "Open dinner cruise" },
+    { href: "/bosphorus-dinner-cruise-istanbul", label: "Open dinner cruise" },
   ],
 };
 

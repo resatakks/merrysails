@@ -89,7 +89,7 @@ const sharedRows = [
     price: "€30 – €90 / person (4 packages)",
     basis: "Per person · shared",
     duration: "3.5 hours",
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
   },
   {
     option: "Public Bosphorus Ferry",
@@ -167,7 +167,7 @@ const touristTripSchema = {
       name: "Istanbul Dinner Cruise",
       price: "30",
       priceCurrency: "EUR",
-      url: `${SITE_URL}/istanbul-dinner-cruise`,
+      url: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
     },
     {
       "@type": "Offer",
@@ -525,7 +525,7 @@ export default function BosphorusCruisePricesPage() {
                 </span>
               </Link>
               <Link
-                href="/istanbul-dinner-cruise"
+                href="/bosphorus-dinner-cruise-istanbul"
                 className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-[var(--surface-alt)]"
               >
                 <h3 className="mb-1 text-lg font-bold text-[var(--heading)]">Istanbul Dinner Cruise</h3>

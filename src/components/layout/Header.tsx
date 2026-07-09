@@ -69,6 +69,13 @@ function localeHasRoute(locale: NavLocale, href: string): boolean {
 }
 
 function localizeHref(href: string, locale: NavLocale): string {
+  // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA relocation,
+  // Lumen #86820254) to /bosphorus-dinner-cruise-istanbul. navItems below
+  // intentionally keeps the OLD href as its lookup key so tr/de/fr/nl/ru
+  // localization (below) keeps resolving to the still-live, unchanged
+  // /<locale>/istanbul-dinner-cruise pages — only the EN-locale output is
+  // swapped here.
+  if (href === "/istanbul-dinner-cruise" && locale === "en") return "/bosphorus-dinner-cruise-istanbul";
   if (locale === "en") return href;
   if (LOCALIZED_ROUTES.has(href) && localeHasRoute(locale, href)) {
     return `/${locale}${href}`;

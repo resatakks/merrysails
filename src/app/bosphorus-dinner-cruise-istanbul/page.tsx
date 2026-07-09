@@ -7,7 +7,6 @@ import TourDetailClient from "@/components/tours/TourDetailClient";
 import { getTourBySlug, getTourPath, type Tour } from "@/data/tours";
 import { SITE_URL, TURSAB_LICENSE_NUMBER } from "@/lib/constants";
 import { resolveBookingPrefill } from "@/lib/booking-prefill";
-import { buildHreflang } from "@/lib/hreflang";
 import RelatedTours from "@/components/ui/RelatedTours";
 import HowToGetThere from "@/components/tours/HowToGetThere";
 import StickyMobileCta from "@/components/ui/StickyMobileCta";
@@ -52,7 +51,15 @@ export const metadata: Metadata = {
     "Bosphorus dinner cruise Istanbul from EUR 30. Four shared packages with dinner, Turkish-night entertainment, and hotel pickup. TURSAB-licensed since 2001.",
   alternates: {
     canonical: canonicalUrl,
-    languages: buildHreflang("/istanbul-dinner-cruise"),
+    // 2026-07-09: NOT buildHreflang() — that helper requires the path to be
+    // registered in the shared LOCALIZED_ROUTES set (src/i18n/localized-routes.ts),
+    // which is also consumed by the untouched locale product pages at
+    // /tr|de|fr|nl|ru|zh/istanbul-dinner-cruise (out of scope for this
+    // relocation, left as-is). Registering the new path there would wrongly
+    // claim locale variants exist at /tr/bosphorus-dinner-cruise-istanbul etc,
+    // which they don't. Self-referencing x-default/en only, until/unless
+    // locale variants are ever migrated to the new slug too.
+    languages: { "x-default": canonicalUrl, en: canonicalUrl },
   },
   openGraph: {
     title: "Istanbul Dinner Cruise — From €30",
@@ -184,7 +191,7 @@ const breadcrumbSchema = {
 const restaurantSchema = {
   "@context": "https://schema.org",
   "@type": ["Restaurant", "FoodEstablishment"],
-  "@id": `${SITE_URL}/istanbul-dinner-cruise#restaurant`,
+  "@id": `${SITE_URL}/bosphorus-dinner-cruise-istanbul#restaurant`,
   name: "MerrySails Istanbul Bosphorus Dinner Cruise",
   url: canonicalUrl,
   image: dinnerTour.image,
@@ -206,7 +213,7 @@ const restaurantSchema = {
   servesCuisine: ["Turkish", "Mediterranean"],
   priceRange: "€€–€€€",
   acceptsReservations: true,
-  hasMenu: `${SITE_URL}/istanbul-dinner-cruise#menu`,
+  hasMenu: `${SITE_URL}/bosphorus-dinner-cruise-istanbul#menu`,
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -233,7 +240,7 @@ const restaurantSchema = {
 const menuSchema = {
   "@context": "https://schema.org",
   "@type": "Menu",
-  "@id": `${SITE_URL}/istanbul-dinner-cruise#menu`,
+  "@id": `${SITE_URL}/bosphorus-dinner-cruise-istanbul#menu`,
   name: "Bosphorus Dinner Cruise Menu",
   url: canonicalUrl,
   inLanguage: "en",
@@ -382,7 +389,7 @@ const eventSchema = {
   offers: {
     "@type": "Offer",
     ...OFFER_MERCHANT_DEFAULTS,
-    url: "https://merrysails.com/istanbul-dinner-cruise",
+    url: "https://merrysails.com/bosphorus-dinner-cruise-istanbul",
     price: dinnerTour.priceEur,
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
@@ -510,7 +517,7 @@ export default async function IstanbulDinnerCruisePage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             buildLocalBusinessSchema({
-              pageUrl: `${SITE_URL}/istanbul-dinner-cruise`,
+              pageUrl: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
               priceRange: "€€-€€€ (€30-€90 per guest)",
               description:
                 "Bosphorus dinner cruise with Turkish night show: Silver (€30-€45), Gold (€80-€90). 3.5-hour shared evening cruise with mezzes, main course, drinks, belly dance, DJ.",
@@ -548,7 +555,7 @@ export default async function IstanbulDinnerCruisePage({
               name: "Bosphorus dinner cruise — package pricing",
               description:
                 "Shared 3.5-hour dinner cruise on the Bosphorus with Turkish night show; four package tiers from Silver Soft Drinks to Gold Unlimited Alcohol.",
-              pageUrl: `${SITE_URL}/istanbul-dinner-cruise`,
+              pageUrl: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
               rows: (dinnerTour.packages ?? []).map((pkg) => ({
                 name: pkg.name,
                 fromPrice: `From €${pkg.price}`,
@@ -567,7 +574,7 @@ export default async function IstanbulDinnerCruisePage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             buildReserveActionSchema({
-              productUrl: `${SITE_URL}/istanbul-dinner-cruise`,
+              productUrl: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
               productName: "Bosphorus dinner cruise",
               fromPriceEur: 30,
             }),

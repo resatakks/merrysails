@@ -43,7 +43,7 @@ const PRODUCTS = [
   {
     title: "Shared dinner cruise (€30-€90)",
     desc: "Full evening: dinner + Turkish night entertainment + 3.5-hour Bosphorus route. Hotel pickup included. Couples often pick Silver Alcoholic (€45) — sensible mid-tier with wine.",
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     icon: Wine,
     badge: null,
   },

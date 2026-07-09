@@ -276,7 +276,7 @@ export default function Page() {
               hours.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link href="/istanbul-dinner-cruise" className="btn-cta !px-6 !py-3">
+              <Link href="/bosphorus-dinner-cruise-istanbul" className="btn-cta !px-6 !py-3">
                 See dinner cruise
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -299,7 +299,7 @@ export default function Page() {
         </div>
       </main>
       <StickyMobileCta
-        reserveHref="/istanbul-dinner-cruise"
+        reserveHref="/bosphorus-dinner-cruise-istanbul"
         reserveLabel="Reserve from €30"
         whatsappLocation="families_landing"
         whatsappPrefill="Hi MerrySails! Family Bosphorus cruise enquiry. Adults: [N], kids ages: [ages]."

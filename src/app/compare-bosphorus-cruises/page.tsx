@@ -41,7 +41,7 @@ const CRUISE_OPTIONS = [
  },
  {
  name: "Bosphorus Dinner Cruise",
- slug: "/istanbul-dinner-cruise",
+ slug: "/bosphorus-dinner-cruise-istanbul",
  type: "Shared",
  duration: "3.5 hours",
  priceFrom: 30,
@@ -515,7 +515,7 @@ export default function CompareCruisesPage() {
  Turkish menu and night show.
  </p>
  <Link
- href="/istanbul-dinner-cruise"
+ href="/bosphorus-dinner-cruise-istanbul"
  className="mt-3 inline-flex text-sm font-semibold text-orange-600 hover:underline"
  >
  See Dinner Cruise →

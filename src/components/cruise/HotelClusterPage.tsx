@@ -253,7 +253,11 @@ export default function HotelClusterPage({ district, locale = "en" }: Props) {
     district.recommendedCruise === "sunset"
       ? `${localePrefix}/cruises/bosphorus-sunset-cruise`
       : district.recommendedCruise === "dinner"
-        ? `${localePrefix}/istanbul-dinner-cruise`
+        ? // 2026-07-09: EN root moved to /bosphorus-dinner-cruise-istanbul
+          // (DMCA relocation). Locale variants unchanged at .../istanbul-dinner-cruise.
+          locale === "en"
+          ? "/bosphorus-dinner-cruise-istanbul"
+          : `${localePrefix}/istanbul-dinner-cruise`
         : `${localePrefix}/yacht-charter-istanbul`;
   const productPrice =
     district.recommendedCruise === "sunset"
@@ -468,7 +472,9 @@ export default function HotelClusterPage({ district, locale = "en" }: Props) {
               </li>
               <li>
                 <Link
-                  href={`${localePrefix}/istanbul-dinner-cruise`}
+                  // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA
+                  // relocation) — locale variants unchanged.
+                  href={locale === "en" ? "/bosphorus-dinner-cruise-istanbul" : `${localePrefix}/istanbul-dinner-cruise`}
                   className="block rounded-xl border border-[var(--line)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-[var(--surface-alt)]"
                 >
                   <span className="block font-semibold text-[var(--heading)]">

@@ -48,7 +48,7 @@ interface Props {
   };
   /**
    * When true, the tour heading renders as <h2> instead of <h1>. Used on pages
-   * (e.g. /istanbul-dinner-cruise) where a ProductHero above already provides
+   * (e.g. /bosphorus-dinner-cruise-istanbul) where a ProductHero above already provides
    * the page's single <h1> while TourDetailClient still has to render the full
    * booking surface. Defaults to false so every existing caller is unchanged.
    */

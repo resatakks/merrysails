@@ -474,7 +474,7 @@ export default function TursabPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/cruises/bosphorus-sunset-cruise", label: "Sunset Cruise" },
-              { href: "/istanbul-dinner-cruise", label: "Dinner Cruise" },
+              { href: "/bosphorus-dinner-cruise-istanbul", label: "Dinner Cruise" },
               { href: "/yacht-charter-istanbul", label: "Yacht Charter" },
               { href: "/bosphorus-cruise", label: "All Bosphorus Cruises" },
             ].map((link) => (

@@ -167,7 +167,7 @@ const comparePages = [
  description: "A narrower support page for date nights, anniversaries, and quieter couple-led private dinner intent.",
  },
  {
- href: "/istanbul-dinner-cruise",
+ href: "/bosphorus-dinner-cruise-istanbul",
  title: "Istanbul Dinner Cruise",
  description: "Shared tickets, fixed packages, and a lower entry price than a private yacht.",
  },

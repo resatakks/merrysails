@@ -41,7 +41,7 @@ const PRICING_MD = `# MerrySails Istanbul — Pricing Guide 2026
 
 ## Istanbul Dinner Cruise (Shared)
 
-**URL:** https://merrysails.com/istanbul-dinner-cruise
+**URL:** https://merrysails.com/bosphorus-dinner-cruise-istanbul
 **Duration:** 3.5 hours
 **Type:** Shared yacht with dinner & show
 **Departure:** Kabataş, European side Istanbul

@@ -54,7 +54,13 @@ function getCruiseMeta(
   locale: string,
 ): CruiseMeta {
   const localized = (path: string) =>
-    locale === "en" ? path : `/${locale}${path}`;
+    // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA relocation,
+    // Lumen #86820254) — locale variants unchanged (out of scope).
+    path === "/istanbul-dinner-cruise" && locale === "en"
+      ? "/bosphorus-dinner-cruise-istanbul"
+      : locale === "en"
+        ? path
+        : `/${locale}${path}`;
 
   switch (cruiseType) {
     case "sunset":
@@ -420,7 +426,14 @@ export default function InArticleBookingCTA({
   }
 
   // -------- BOTTOM variant: "Next Steps" 3-way panel -------------------------
-  const localized = (p: string) => (locale === "en" ? p : `/${locale}${p}`);
+  // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA relocation,
+  // Lumen #86820254) — locale variants unchanged (out of scope).
+  const localized = (p: string) =>
+    p === "/istanbul-dinner-cruise" && locale === "en"
+      ? "/bosphorus-dinner-cruise-istanbul"
+      : locale === "en"
+        ? p
+        : `/${locale}${p}`;
   const cards: { href: string; title: string; tag: InArticleCruiseType }[] = [
     {
       href: localized("/cruises/bosphorus-sunset-cruise"),

@@ -154,7 +154,9 @@ export default function LocaleHelpfulResources({
   const links: LinkItem[] = ([
     { key: "hub" as const, href: `${prefix}/bosphorus-cruise`, label: t.hub },
     { key: "sunset" as const, href: `${prefix}/cruises/bosphorus-sunset-cruise`, label: t.sunset },
-    { key: "dinner" as const, href: `${prefix}/istanbul-dinner-cruise`, label: t.dinner },
+    // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA relocation)
+    // — locale variants unchanged at .../istanbul-dinner-cruise.
+    { key: "dinner" as const, href: locale === "en" ? "/bosphorus-dinner-cruise-istanbul" : `${prefix}/istanbul-dinner-cruise`, label: t.dinner },
     { key: "yacht" as const, href: `${prefix}/yacht-charter-istanbul`, label: t.yacht },
   ] satisfies LinkItem[]).filter((l) => l.key !== omit);
 

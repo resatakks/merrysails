@@ -34,10 +34,15 @@ export const commercialIntents: CommercialIntent[] = [
     keyword: { en: "sunset cruise tickets istanbul" },
     title: { en: "Sunset-cruise buyers who already want the shared golden-hour route and need ticket-fit clarity" },
     description: {
-      en: "Guests specifically searching for sunset cruise tickets, public shared options, and reserve-direct sunset fit should use the dedicated ticket-led support page first.",
+      en: "Guests specifically searching for sunset cruise tickets, public shared options, and reserve-direct sunset fit should land on the core sunset page, which covers ticket fit directly.",
     },
-    href: "/sunset-cruise-tickets-istanbul",
-    targetType: "service-page",
+    // 2026-07-09: DMCA-named-twin consolidation — the dedicated ticket-led
+    // support page (/sunset-cruise-tickets-istanbul) 301s here now (46-day
+    // zero-impression suppressed duplicate). Same destination as the
+    // "bosphorus sunset cruise" entry above; this entry stays to capture the
+    // distinct "tickets" keyword phrasing, not a separate URL.
+    href: "/cruises/bosphorus-sunset-cruise",
+    targetType: "core-product",
     preserveIndexedUrl: true,
   },
   {
@@ -46,7 +51,7 @@ export const commercialIntents: CommercialIntent[] = [
     description: {
       en: "Guests looking for the main shared dinner cruise, package ladder, and evening flow should land on the core dinner owner page first.",
     },
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     targetType: "core-product",
     preserveIndexedUrl: true,
   },

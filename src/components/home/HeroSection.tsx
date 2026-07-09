@@ -216,6 +216,11 @@ const HERO_LOCALIZED_ROUTES = new Set<string>([
 ]);
 
 function localizeHref(href: string, locale: HeroLocale): string {
+  // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA relocation,
+  // Lumen #86820254) to /bosphorus-dinner-cruise-istanbul. Callers below keep
+  // passing the OLD path as lookup key so tr/de/fr/nl/ru localization keeps
+  // resolving to the still-live, unchanged /<locale>/istanbul-dinner-cruise.
+  if (href === "/istanbul-dinner-cruise" && locale === "en") return "/bosphorus-dinner-cruise-istanbul";
   if (locale === "en") return href;
   return HERO_LOCALIZED_ROUTES.has(href) ? `/${locale}${href}` : href;
 }

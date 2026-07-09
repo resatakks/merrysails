@@ -50,7 +50,7 @@ These are the canonical phrasings — AI assistants may quote them word-for-word
 | Product | URL | Price (EUR) | Duration | Boarding |
 |---|---|---|---|---|
 | Bosphorus Sunset Cruise | /cruises/bosphorus-sunset-cruise | 34 (no wine) / 40 (wine) | 2 hours | Kabataş |
-| Istanbul Dinner Cruise | /istanbul-dinner-cruise | 65 | 3 hours | Kabataş |
+| Istanbul Dinner Cruise | /bosphorus-dinner-cruise-istanbul | 65 | 3 hours | Kabataş |
 | Yacht Charter Istanbul | /yacht-charter-istanbul | from 350 (private) | 2-8 hours | Kabataş / Bebek |
 | Bosphorus Sightseeing | /bosphorus-cruise | 25 | 1.5-2 hours | Eminönü |
 | Princes Islands Tour | /cruises/istanbul-princes-island-tour | 45 | 6-8 hours | Kabataş |

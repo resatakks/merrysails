@@ -577,7 +577,7 @@ function revalidateOperationPaths(tourSlug: string) {
   }
 
   if (tourSlug === "bosphorus-dinner-cruise") {
-    revalidatePath("/istanbul-dinner-cruise");
+    revalidatePath("/bosphorus-dinner-cruise-istanbul");
   }
 
   if (tourSlug === "yacht-charter-in-istanbul") {

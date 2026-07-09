@@ -172,7 +172,7 @@ export default function Page() {
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">Four packages on one evening route from Kabatas. Silver seats at standard tables; Gold guarantees a front-row VIP position and an upgraded menu.</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Link href="/istanbul-dinner-cruise" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
+                <Link href="/bosphorus-dinner-cruise-istanbul" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
                   Open the dinner cruise page <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href="/reservation" className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white">
@@ -264,7 +264,7 @@ export default function Page() {
             <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">Book your seat for the evening on the Bosphorus</h2>
             <p className="mx-auto mb-6 max-w-2xl text-blue-50">Tell us your date, party size and whether you want Silver or Gold, and we confirm the Kabatas boarding window and any hotel pickup.</p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/istanbul-dinner-cruise" className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-blue-50">Open the dinner cruise page</Link>
+              <Link href="/bosphorus-dinner-cruise-istanbul" className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-blue-50">Open the dinner cruise page</Link>
               <TrackedContactLink href={WHATSAPP_URL} kind="whatsapp" label="bosphorus-evening-dinner-cruise_cta_whatsapp" location="bosphorus-evening-dinner-cruise" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl border border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[var(--brand-primary)]">Message us on WhatsApp</TrackedContactLink>
             </div>
           </div>

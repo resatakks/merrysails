@@ -175,7 +175,7 @@ const dinnerCruiseService = {
  name: "Bosphorus Dinner Cruise",
  description:
  "3.5-hour shared Bosphorus dinner cruise with Turkish dinner and live show. Packages €30–€90/person. Hotel pickup available. Rated 4.88/5 from 312+ reviews.",
- url: `${SITE_URL}/istanbul-dinner-cruise`,
+ url: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
  provider: { "@id": `${SITE_URL}/#organization` },
  areaServed: { "@type": "City", name: "Istanbul" },
  offers: [
@@ -251,7 +251,7 @@ const knowledgeData = {
  rating: "4.88/5 from 312+ reviews",
  includes: "Turkish dinner service, live Turkish night entertainment, DJ performance",
  hotelPickup: "Available from central European-side hotels",
- bookingUrl: "https://merrysails.com/istanbul-dinner-cruise",
+ bookingUrl: "https://merrysails.com/bosphorus-dinner-cruise-istanbul",
  },
  {
  name: "Yacht Charter Istanbul",

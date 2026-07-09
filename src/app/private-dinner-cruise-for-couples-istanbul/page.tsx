@@ -178,7 +178,7 @@ const comparePages = [
  "Use this when the moment is centered on a reveal, surprise timing, and proposal setup rather than a simple private dinner.",
  },
  {
- href: "/istanbul-dinner-cruise",
+ href: "/bosphorus-dinner-cruise-istanbul",
  title: "Istanbul Dinner Cruise",
  description:
  "Use the protected shared-dinner owner page when a public dinner cruise with a lower entry price is still in the mix.",

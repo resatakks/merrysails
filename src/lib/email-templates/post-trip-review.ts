@@ -729,11 +729,19 @@ export function postTripReviewEmail(data: PostTripReviewData): {
   //                                      + static src/app/[locale]/cruises/
   //                                        bosphorus-sunset-cruise/page.tsx
   //                                        (shadows [slug])
-  //   /istanbul-dinner-cruise          → canonical dinner page (NOT
+  //   /istanbul-dinner-cruise           → canonical dinner page (NOT
   //                                      /cruises/bosphorus-dinner-cruise,
   //                                      which is an OWNER_REDIRECT → 301 hop);
-  //                                      src/app/istanbul-dinner-cruise/page.tsx
-  //                                      + src/app/[locale]/istanbul-dinner-cruise/page.tsx
+  //                                      2026-07-09: EN root moved to
+  //                                      /bosphorus-dinner-cruise-istanbul
+  //                                      (src/app/bosphorus-dinner-cruise-istanbul/page.tsx,
+  //                                      DMCA relocation, Lumen #86820254) —
+  //                                      dinnerUrl below special-cases this,
+  //                                      the url() helper here has NO
+  //                                      LOCALIZED_ROUTES gate (unlike
+  //                                      Header/Footer), so tr/de must keep
+  //                                      resolving to the UNCHANGED
+  //                                      src/app/[locale]/istanbul-dinner-cruise/page.tsx
   // COPY stays in the customer locale (data.locale); only the HREF locale is
   // resolved to a routable one. EN is served at the SITE ROOT with NO /en/
   // prefix; every other routable locale renders under /<locale>/.
@@ -748,7 +756,10 @@ export function postTripReviewEmail(data: PostTripReviewData): {
   // sites our own analytics never sees.
   const cruisesUrl = withUtm(url("/cruises"), "own_cruises");
   const sunsetUrl = withUtm(url("/cruises/bosphorus-sunset-cruise"), "own_sunset_cruise");
-  const dinnerUrl = withUtm(url("/istanbul-dinner-cruise"), "own_dinner_cruise");
+  const dinnerUrl = withUtm(
+    linkLocale === "en" ? `${SITE_URL}/bosphorus-dinner-cruise-istanbul` : url("/istanbul-dinner-cruise"),
+    "own_dinner_cruise",
+  );
   // Private yacht charter — verified live for BOTH en-root and the tr prefix:
   //   /yacht-charter-istanbul → src/app/yacht-charter-istanbul/page.tsx
   //                            + src/app/[locale]/yacht-charter-istanbul/page.tsx

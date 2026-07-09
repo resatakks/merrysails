@@ -31,7 +31,7 @@ const commercialCruiseLinks = [
     description: "Shared golden-hour Bosphorus cruise with clear €34 / €40 pricing.",
   },
   {
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     title: "Bosphorus Dinner Cruise",
     description: "Shared dinner cruise with the verified four-package ladder, transfer support, and Turkish-night format.",
   },

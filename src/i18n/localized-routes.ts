@@ -43,7 +43,6 @@ export const LOCALIZED_ROUTES = new Set<string>([
   "/private-dinner-cruise-for-couples-istanbul",
   "/product-launch-yacht-istanbul",
   "/proposal-yacht-with-photographer-istanbul",
-  "/sunset-cruise-tickets-istanbul",
   "/team-building-yacht-istanbul",
   "/turkish-night-dinner-cruise-istanbul",
   "/honeymoon-yacht-cruise-istanbul",

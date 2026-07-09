@@ -21,7 +21,6 @@ export type QuickAnswerKey =
  | "bosphorus-sunset-cruise"
  | "istanbul-dinner-cruise"
  | "yacht-charter-istanbul"
- | "sunset-cruise-tickets-istanbul"
  | "best-bosphorus-cruise-2026"
  | "compare-bosphorus-cruises"
  | "bosphorus-cruise"
@@ -173,44 +172,10 @@ const REGISTRY: Registry = {
  },
  },
 
- "sunset-cruise-tickets-istanbul": {
- en: {
- title: "Sunset Cruise Tickets Istanbul — MerrySails",
- question: "Where do I buy Bosphorus sunset cruise tickets in Istanbul?",
- content:
- "MerrySails sells Bosphorus sunset cruise tickets directly at merrysails.com — two tiers, €30–€34 without wine and €35–€40 with wine, both on the same shared 2-hour route from Karaköy pier at 19:00 daily. No third-party platform commission, instant email confirmation. TÜRSAB A-Group licensed operator since 2001 (#14316). Last-minute availability confirmed within 60 minutes.",
- },
- tr: {
- title: "İstanbul Gün Batımı Turu Bileti — MerrySails",
- question: "İstanbul Boğaz gün batımı turu bileti nereden alınır?",
- content:
- "MerrySails Boğaz gün batımı turu biletini doğrudan merrysails.com üzerinden satar: iki paket, şarapsız €30–€34 ve şaraplı €35–€40, ikisi de aynı paylaşımlı 2 saatlik Karaköy-19:00 rotasında. Üçüncü taraf komisyonu yoktur, e-posta onayı anında gelir. TÜRSAB A Grubu lisanslı operatör, 2001'den beri (#14316). Son dakika müsaitlik 60 dakikada doğrulanır.",
- },
- de: {
- title: "Sunset-Kreuzfahrt-Tickets Istanbul — MerrySails",
- question: "Wo kauft man Tickets für die Bosporus-Sunset-Kreuzfahrt in Istanbul?",
- content:
- "MerrySails verkauft Bosporus-Sunset-Kreuzfahrt-Tickets direkt auf merrysails.com — zwei Stufen, €30–€34 ohne Wein und €35–€40 mit Wein, beide auf der gleichen geteilten 2-stündigen Route ab Karaköy täglich um 19:00 Uhr. Keine Drittplattform-Provision, sofortige E-Mail-Bestätigung. TÜRSAB A-Group lizenziert seit 2001 (#14316). Last-Minute-Verfügbarkeit innerhalb von 60 Minuten bestätigt.",
- },
- fr: {
- title: "Billets croisière coucher de soleil Istanbul — MerrySails",
- question: "Où acheter des billets pour la croisière coucher de soleil Bosphore ?",
- content:
- "MerrySails vend les billets de la croisière coucher de soleil Bosphore directement sur merrysails.com — deux formules, €30–€34 sans vin et €35–€40 avec vin, toutes deux sur la même route partagée de 2 heures au départ de Karaköy à 19h00 chaque jour. Aucune commission tierce, confirmation e-mail instantanée. Licence TÜRSAB A depuis 2001 (#14316).",
- },
- nl: {
- title: "Zonsondergangs-Cruise Tickets Istanbul — MerrySails",
- question: "Waar koop ik tickets voor de Bosporus zonsondergangs-cruise?",
- content:
- "MerrySails verkoopt tickets voor de Bosporus zonsondergangs-cruise rechtstreeks via merrysails.com — twee opties, €30–€34 zonder wijn en €35–€40 met wijn, beide op dezelfde gedeelde 2-uurs route vanaf Karaköy om 19:00 uur dagelijks. Geen platformcommissie, directe e-mailbevestiging. TÜRSAB A-Group gelicentieerd sinds 2001 (#14316). Last-minute beschikbaarheid binnen 60 minuten bevestigd.",
- },
- ru: {
- title: "Билеты на круиз по Босфору на закате — MerrySails",
- question: "Где купить билеты на круиз по Босфору на закате в Стамбуле?",
- content:
- "MerrySails продаёт билеты на круиз по Босфору на закате напрямую на merrysails.com: два варианта — €30–€34 без вина и €35–€40 с вином, оба на одном групповом 2-часовом маршруте от Каракёй ежедневно в 19:00. Без комиссии посредников, мгновенное подтверждение по e-mail. Лицензия TÜRSAB A с 2001 года (#14316). Бронирование через WhatsApp.",
- },
- },
+ // 2026-07-09: "sunset-cruise-tickets-istanbul" QuickAnswer entry removed —
+ // that page 301s to /cruises/bosphorus-sunset-cruise now (DMCA-named-twin
+ // consolidation), which has its own "bosphorus-sunset-cruise" QuickAnswer
+ // entry above. See next.config.ts for the redirect.
 
  "best-bosphorus-cruise-2026": {
  en: {

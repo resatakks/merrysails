@@ -85,7 +85,9 @@ const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
   en: [
     { label: "Bosphorus Cruise Istanbul", href: "/bosphorus-cruise" },
     { label: "Bosphorus Sunset Cruise", href: "/cruises/bosphorus-sunset-cruise" },
-    { label: "Bosphorus Dinner Cruise", href: "/istanbul-dinner-cruise" },
+    // 2026-07-09: EN root moved off /istanbul-dinner-cruise (DMCA relocation,
+    // Lumen #86820254). Locale entries below unchanged (out of scope).
+    { label: "Bosphorus Dinner Cruise", href: "/bosphorus-dinner-cruise-istanbul" },
     { label: "Yacht Charter Istanbul", href: "/yacht-charter-istanbul" },
     { label: "Boat Rental Istanbul", href: "/boat-rental-istanbul" },
   ],
@@ -141,7 +143,7 @@ const CORE_LINKS: Record<NavLocale, FooterCoreLink[]> = {
 // arrays are zipped by buildLinks() so positions stay aligned. Mirrors the
 // GoldenSunset Footer pattern.
 const SERVICE_HREFS = [
-  "/sunset-cruise-tickets-istanbul",
+  "/cruises/bosphorus-sunset-cruise",
   "/turkish-night-dinner-cruise-istanbul",
   "/dinner-cruise-with-hotel-pickup-istanbul",
   "/dinner-cruise-pickup-sultanahmet-taksim",

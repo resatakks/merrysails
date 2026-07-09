@@ -35,7 +35,7 @@ const VARIANTS: Record<CTAVariant, VariantConfig> = {
     ],
   },
   dinner: {
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     badge: "TURSAB Licensed Since 2001",
     heading: "Book a Bosphorus Dinner Cruise",
     anchors: [

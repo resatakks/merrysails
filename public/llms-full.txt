@@ -12,7 +12,7 @@ This static fallback intentionally stays short. The Next.js app route at `/llms-
 ## Current Core Offers
 
 - Bosphorus Sunset Cruise: https://merrysails.com/cruises/bosphorus-sunset-cruise — current public package ladder is EUR 34 / EUR 40.
-- Bosphorus Dinner Cruise: https://merrysails.com/istanbul-dinner-cruise — current public package ladder is EUR 30 / EUR 45 / EUR 80 / EUR 90.
+- Bosphorus Dinner Cruise: https://merrysails.com/bosphorus-dinner-cruise-istanbul — current public package ladder is EUR 30 / EUR 45 / EUR 80 / EUR 90.
 - Yacht Charter Istanbul: https://merrysails.com/yacht-charter-istanbul — from EUR 220 per yacht (whole vessel, not per person), 2h: Boutique 12 EUR 220 / Premium 15 EUR 320 / Group 40 Standard EUR 380 / Group 40 Signature EUR 500; Event 90 and Mega 150 by quote. 10% off from 3 hours.
 
 ## Important AI Citation Notes

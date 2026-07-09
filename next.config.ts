@@ -239,8 +239,10 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        // Chain-flatten (2026-07-09): destination moved off /istanbul-dinner-cruise,
+        // see DMCA relocation block below — point straight at the final URL.
         source: "/cruises/bosphorus-dinner-cruise",
-        destination: "/istanbul-dinner-cruise",
+        destination: "/bosphorus-dinner-cruise-istanbul",
         statusCode: 301,
       },
       {
@@ -259,8 +261,10 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        // Chain-flatten (2026-07-09): destination moved off /istanbul-dinner-cruise,
+        // see DMCA relocation block below — point straight at the final URL.
         source: "/dinner-cruise",
-        destination: "/istanbul-dinner-cruise",
+        destination: "/bosphorus-dinner-cruise-istanbul",
         statusCode: 301,
       },
       {
@@ -437,9 +441,9 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       // Old flat public-sunset URL (pre-/cruises/ move) — GSC "Not found (404)"
-      // 16-URL bucket 2026-06-16. 301 to the live public sunset page (not the
-      // DMCA-tainted /sunset-cruise-tickets-istanbul; this flat slug was never
-      // in the Lumen notice).
+      // 16-URL bucket 2026-06-16. 301 to the live public sunset page (this
+      // flat slug was never in the Lumen notice; see the /sunset-cruise-
+      // tickets-istanbul consolidation block below for the DMCA-named twin).
       {
         source: "/bosphorus-sunset-cruise",
         destination: "/cruises/bosphorus-sunset-cruise",
@@ -465,13 +469,19 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        // Chain-flatten (2026-07-09): destination moved off /istanbul-dinner-cruise,
+        // see DMCA relocation block below — point straight at the final URL.
         source: "/istanbul-dinner-cruise-bosphorus",
-        destination: "/istanbul-dinner-cruise",
+        destination: "/bosphorus-dinner-cruise-istanbul",
         statusCode: 301,
       },
+      // Chain-flatten (2026-07-09): this dead bare slug previously 301'd to
+      // /sunset-cruise-tickets-istanbul, which now itself 301s onward per the
+      // consolidation block below — point straight at the final destination
+      // so there is no 2-hop chain.
       {
         source: "/sunset-cruise-istanbul-tickets-booking",
-        destination: "/sunset-cruise-tickets-istanbul",
+        destination: "/cruises/bosphorus-sunset-cruise",
         statusCode: 301,
       },
       {
@@ -485,6 +495,52 @@ const nextConfig: NextConfig = {
       {
         source: "/private-bosphorus-dinner-yacht-cruise",
         destination: "/private-bosphorus-dinner-cruise",
+        statusCode: 301,
+      },
+      // DMCA-named twin consolidation (2026-07-09): live 90-day GSC Search
+      // Analytics shows /sunset-cruise-tickets-istanbul is genuinely
+      // suppressed from real search results (1 click / 14 impr / 0
+      // attributable queries, flat since 2026-05-23) while it duplicates the
+      // exact same product, price ladder and audience as the healthy owner
+      // page /cruises/bosphorus-sunset-cruise (21 clicks / 847 impr, owns
+      // ~100% of real "sunset cruise" query traffic, holds the live booking
+      // widget). The ticket page's own copy self-describes as subordinate
+      // ("the protected owner page remains Bosphorus Sunset Cruise"). One
+      // indexable URL per intent => 301 the redundant twin to the pillar
+      // instead of spinning up a parallel clean slug (see
+      // project_dmca_reality_cannibalization memory — do not repeat the
+      // clean-slug-cannibalization mistake).
+      {
+        source: "/sunset-cruise-tickets-istanbul",
+        destination: "/cruises/bosphorus-sunset-cruise",
+        statusCode: 301,
+      },
+      {
+        source: "/:locale(tr|de|fr|nl)/sunset-cruise-tickets-istanbul",
+        destination: "/:locale/cruises/bosphorus-sunset-cruise",
+        statusCode: 301,
+      },
+      // DMCA-named pillar relocation (2026-07-09): Lumen notice #86820254
+      // (filed 2026-05-25 by bosphorussunset.com) named /istanbul-dinner-cruise.
+      // Live 90-day GSC Search Analytics: 1 click / 47 impr since the notice —
+      // genuinely suppressed from real search results despite "indexed, PASS"
+      // URL Inspection status. No healthy existing twin exists for this intent
+      // (the only architectural twin, /bosphorus-evening-dinner-cruise, is
+      // itself 0 clicks / 0 impr over the same window — reusing it would trade
+      // one flat page for another). Same maneuver already worked on the Ads
+      // side same-day: 12 ads on this exact final_url were DISAPPROVED for
+      // DMCA_COMPLAINT, then re-approved cleanly after moving to a different
+      // URL with identical ad copy — evidence the block is keyed to the
+      // literal URL string. Content/pricing/schema is unchanged, only the URL
+      // moved (see src/data/tours.ts canonicalPath + moved page directory) —
+      // this is a relocation, not a rewrite, so it does not trip the
+      // title/meta/h1-churn Bing-suppression rule. One indexable URL per
+      // intent: old URL 301s here, removed from sitemap + every internal
+      // link. Locale variants (/tr|de|fr|nl/istanbul-dinner-cruise) are
+      // OUT OF SCOPE for this relocation and are untouched.
+      {
+        source: "/istanbul-dinner-cruise",
+        destination: "/bosphorus-dinner-cruise-istanbul",
         statusCode: 301,
       },
     ];

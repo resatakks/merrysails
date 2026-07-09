@@ -192,7 +192,7 @@ A: TURSAB (Verband türkischer Reisebüros) A-Gruppe ist die höchste Lizenzkate
 | 17 | Abfahrtspunkte erklärt | https://merrysails.com/de/bosphorus-cruise-departure-points |
 | 18 | Preisübersicht | https://merrysails.com/de/pricing |
 | 19 | Türkische Nacht Dinner | https://merrysails.com/de/turkish-night-dinner-cruise-istanbul |
-| 20 | Sonnenuntergang Tickets | https://merrysails.com/de/sunset-cruise-tickets-istanbul |
+| 20 | Sonnenuntergang Tickets | https://merrysails.com/de/cruises/bosphorus-sunset-cruise |
 | 21 | FAQ | https://merrysails.com/de/faq |
 | 22 | Über uns | https://merrysails.com/de/about |
 | 23 | Kontakt | https://merrysails.com/de/contact |

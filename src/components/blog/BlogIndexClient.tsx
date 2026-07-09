@@ -79,7 +79,7 @@ const bookingPages = [
     description: "For shared sunset demand, 2 clear options, and fast date-led booking intent.",
   },
   {
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     eyebrow: "Shared evening",
     title: "Bosphorus Dinner Cruise",
     description: "For the main evening route with fixed dinner packages and clear inclusions.",

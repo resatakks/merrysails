@@ -417,7 +417,7 @@ const siteNavigationSchema = {
   ],
   url: [
     `${SITE_URL}/cruises/bosphorus-sunset-cruise`,
-    `${SITE_URL}/istanbul-dinner-cruise`,
+    `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
     `${SITE_URL}/yacht-charter-istanbul`,
     `${SITE_URL}/bosphorus-cruise`,
     `${SITE_URL}/blog`,

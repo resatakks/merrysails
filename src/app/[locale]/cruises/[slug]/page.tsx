@@ -23,7 +23,10 @@ import StickyMobileCta from "@/components/ui/StickyMobileCta";
 import { getProductBookingMomentum } from "@/lib/booking-momentum";
 
 const OWNER_REDIRECTS: Record<string, string> = {
-  "bosphorus-dinner-cruise": "/istanbul-dinner-cruise",
+  // 2026-07-09: destination moved off /istanbul-dinner-cruise (DMCA relocation,
+  // Lumen #86820254) — chain-flattened to the new EN root, still bare (no
+  // locale prefix) matching the pre-existing behavior of this map.
+  "bosphorus-dinner-cruise": "/bosphorus-dinner-cruise-istanbul",
   "yacht-charter-in-istanbul": "/yacht-charter-istanbul",
   "romantic-marriage-proposal": "/proposal-yacht-rental-istanbul",
   "corporate-event-bosphorus-cruise": "/corporate-events",

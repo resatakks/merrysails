@@ -195,7 +195,13 @@ export default function RelatedTours({ exclude, heading, locale }: RelatedToursP
         {tours.map((tour) => (
           <Link
             key={tour.key}
-            href={`${localePrefix}/${tour.hrefSlug}`}
+            // 2026-07-09: /istanbul-dinner-cruise (EN root) moved to
+            // /bosphorus-dinner-cruise-istanbul (DMCA relocation — Lumen
+            // #86820254). Locale variants (/tr,/de,/fr,/nl,/ru,/zh) still
+            // live at .../istanbul-dinner-cruise unchanged — only override
+            // hrefSlug for the English card so this stays a single shared
+            // component without forking per-locale data.
+            href={`${localePrefix}/${l === "en" && tour.key === "dinner" ? "bosphorus-dinner-cruise-istanbul" : tour.hrefSlug}`}
             className="group flex flex-col gap-2 rounded-xl border border-[var(--line)] bg-[var(--surface-alt)] p-4 transition-colors hover:border-[var(--brand-primary)]/40 hover:bg-white"
           >
             <div className="flex items-center gap-2">

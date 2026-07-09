@@ -200,12 +200,12 @@ export const guides: Guide[] = [
     sections: [
       {
         heading: "Kabatas Pier for Bosphorus Dinner Cruise Boarding in Istanbul",
-        answerCapsule: "Kabatas Pier matters most for the shared [Istanbul Dinner Cruise](/istanbul-dinner-cruise), because MerrySails uses the Kabatas-side boarding flow rather than a generic city-center pier assumption.",
-        content: "Kabatas is one of Istanbul's most important waterfront transport hubs on the European side, connecting tram, funicular, ferry, taxi, and road traffic in one place. For MerrySails guests, it matters most because the shared [Istanbul Dinner Cruise](/istanbul-dinner-cruise) uses the Kabatas boarding flow rather than a generic city-center departure. This makes Kabatas more than a landmark: it is a practical reference point for evening cruise logistics, pickup planning, and last-mile arrival decisions.\n\nIf your question is specifically about dinner-cruise boarding, this page should work as a local-support guide. If you are still comparing products, start with the [Bosphorus Cruise compare hub](/bosphorus-cruise) first and come back once the dinner route is already the right fit.",
+        answerCapsule: "Kabatas Pier matters most for the shared [Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul), because MerrySails uses the Kabatas-side boarding flow rather than a generic city-center pier assumption.",
+        content: "Kabatas is one of Istanbul's most important waterfront transport hubs on the European side, connecting tram, funicular, ferry, taxi, and road traffic in one place. For MerrySails guests, it matters most because the shared [Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul) uses the Kabatas boarding flow rather than a generic city-center departure. This makes Kabatas more than a landmark: it is a practical reference point for evening cruise logistics, pickup planning, and last-mile arrival decisions.\n\nIf your question is specifically about dinner-cruise boarding, this page should work as a local-support guide. If you are still comparing products, start with the [Bosphorus Cruise compare hub](/bosphorus-cruise) first and come back once the dinner route is already the right fit.",
         table: {
           headers: ["Kabatas topic", "What it means for guests", "Best next click"],
           rows: [
-            ["Dinner-cruise boarding", "Kabatas is the main public reference for the shared evening route", "[Open Istanbul Dinner Cruise](/istanbul-dinner-cruise)"],
+            ["Dinner-cruise boarding", "Kabatas is the main public reference for the shared evening route", "[Open Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul)"],
             ["Pickup support", "Some central hotels feed into the Kabatas flow instead of direct self-arrival", "[Open Dinner Cruise with Hotel Pickup](/dinner-cruise-with-hotel-pickup-istanbul)"],
             ["Pier-specific dinner intent", "Some users search the boarding district before they choose the product page", "[Open Kabatas Dinner Cruise Istanbul](/kabatas-dinner-cruise-istanbul)"],
             ["Broad product comparison", "If the cruise type is still undecided, Kabatas is too narrow for the first click", "[Open Bosphorus Cruise compare hub](/bosphorus-cruise)"],
@@ -218,9 +218,9 @@ export const guides: Guide[] = [
       },
       {
         heading: "Which Bosphorus Cruise Uses Kabatas Pier?",
-        content: "The clearest owner path tied to Kabatas is the shared [Istanbul Dinner Cruise](/istanbul-dinner-cruise). The live dinner product is built around a shared evening route, package-based table structure, and hotel pickup support from selected central European-side districts before guests are routed into the Kabatas boarding flow.\n\nIf your main commercial question is specifically the Kabatas-side dinner boarding logic, use the narrower [Kabatas Dinner Cruise Istanbul](/kabatas-dinner-cruise-istanbul) support page. The sunset cruise is a different product and should not be treated as the same pier-led experience; it uses a separate meeting flow confirmed after booking.",
+        content: "The clearest owner path tied to Kabatas is the shared [Istanbul Dinner Cruise](/bosphorus-dinner-cruise-istanbul). The live dinner product is built around a shared evening route, package-based table structure, and hotel pickup support from selected central European-side districts before guests are routed into the Kabatas boarding flow.\n\nIf your main commercial question is specifically the Kabatas-side dinner boarding logic, use the narrower [Kabatas Dinner Cruise Istanbul](/kabatas-dinner-cruise-istanbul) support page. The sunset cruise is a different product and should not be treated as the same pier-led experience; it uses a separate meeting flow confirmed after booking.",
         list: [
-          "Use `/istanbul-dinner-cruise` when the real intent is the shared dinner owner page.",
+          "Use `/bosphorus-dinner-cruise-istanbul` when the real intent is the shared dinner owner page.",
           "Use `/kabatas-dinner-cruise-istanbul` when the user is clearly searching pier-led dinner intent.",
           "Use `/dinner-cruise-with-hotel-pickup-istanbul` when pickup or shuttle logic is the deciding question.",
           "Do not assume the sunset cruise shares the same boarding flow just because both products are on the Bosphorus.",

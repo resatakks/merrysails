@@ -194,7 +194,7 @@ R : Le guide à bord assure les commentaires principalement en anglais. Les page
 | 17 | Points de départ expliqués | https://merrysails.com/fr/bosphorus-cruise-departure-points |
 | 18 | Tarifs | https://merrysails.com/fr/pricing |
 | 19 | Soirée turque dînatoire | https://merrysails.com/fr/turkish-night-dinner-cruise-istanbul |
-| 20 | Billets coucher du soleil | https://merrysails.com/fr/sunset-cruise-tickets-istanbul |
+| 20 | Billets coucher du soleil | https://merrysails.com/fr/cruises/bosphorus-sunset-cruise |
 | 21 | FAQ | https://merrysails.com/fr/faq |
 | 22 | À propos | https://merrysails.com/fr/about |
 | 23 | Contact | https://merrysails.com/fr/contact |

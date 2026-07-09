@@ -76,7 +76,7 @@ const serviceSchema = {
  price: "30",
  availability: "https://schema.org/InStock",
  validFrom: "2026-01-01",
- url: `${SITE_URL}/istanbul-dinner-cruise`,
+ url: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
  },
 };
 
@@ -232,7 +232,7 @@ const pickupDecisionRows = [
 
 const comparePages = [
  {
- href: "/istanbul-dinner-cruise",
+ href: "/bosphorus-dinner-cruise-istanbul",
  title: "Istanbul Dinner Cruise",
  description:
  "Use the main owner page to compare shared dinner packages, inclusions, and the public evening format first.",
@@ -306,7 +306,7 @@ export default function DinnerCruiseWithHotelPickupIstanbulPage() {
  <p className="mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
  Use this page when the shared dinner cruise is already close to the right fit and
  hotel pickup support is the deciding question. The main owner page is still{" "}
- <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">
+ <Link href="/bosphorus-dinner-cruise-istanbul" className="text-[var(--brand-primary)] hover:underline">
  Istanbul Dinner Cruise
  </Link>
  ; this page exists to clarify whether selected central European-side pickup logic
@@ -324,7 +324,7 @@ export default function DinnerCruiseWithHotelPickupIstanbulPage() {
  </div>
  <div className="flex flex-col gap-3 sm:flex-row">
  <Link
- href="/istanbul-dinner-cruise"
+ href="/bosphorus-dinner-cruise-istanbul"
  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]"
  >
  Compare dinner packages <ArrowRight className="h-4 w-4" />
@@ -573,7 +573,7 @@ export default function DinnerCruiseWithHotelPickupIstanbulPage() {
  point is cleaner, or whether the booking should move to direct Kabatas arrival.
  </p>
  <div className="flex flex-col gap-3 sm:flex-row">
- <Link href="/istanbul-dinner-cruise" className="inline-flex items-center justify-center rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
+ <Link href="/bosphorus-dinner-cruise-istanbul" className="inline-flex items-center justify-center rounded-xl bg-[var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-primary-hover)]">
  Open dinner owner page
  </Link>
  <TrackedContactLink

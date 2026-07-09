@@ -115,7 +115,7 @@ export default function CruisesPage() {
                   copy: "Golden-hour shared yacht route. Best if the intent is views, photos, and a shorter premium cruise.",
                 },
                 {
-                  href: "/istanbul-dinner-cruise",
+                  href: "/bosphorus-dinner-cruise-istanbul",
                   title: "Dinner Cruise",
                   meta: "From EUR 30",
                   copy: "Best if the intent is dinner, Turkish-night entertainment, and a full evening on the Bosphorus.",
@@ -213,7 +213,7 @@ export default function CruisesPage() {
               if you want the generic comparison view first. From there, use the{" "}
               <Link href="/cruises/bosphorus-sunset-cruise" className="text-[var(--brand-primary)] hover:underline">sunset cruise</Link>{" "}
               for golden-hour views, the{" "}
-              <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">dinner cruise</Link>{" "}
+              <Link href="/bosphorus-dinner-cruise-istanbul" className="text-[var(--brand-primary)] hover:underline">dinner cruise</Link>{" "}
               for dinner and live entertainment, and{" "}
               <Link href="/yacht-charter-istanbul" className="text-[var(--brand-primary)] hover:underline">Yacht Charter Istanbul</Link>{" "}
               for private package-led planning.
@@ -230,7 +230,7 @@ export default function CruisesPage() {
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Bosphorus Dinner Cruise</h3>
             <p className="text-[var(--body-text)] leading-relaxed mb-4">
-              The <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">Bosphorus dinner cruise</Link> currently offers four shared evening packages: Silver Soft Drinks, Silver Alcoholic Drinks, Gold Soft Drinks, and Gold Unlimited Alcohol. The live package ladder currently runs from EUR 30 to EUR 90 per guest.
+              The <Link href="/bosphorus-dinner-cruise-istanbul" className="text-[var(--brand-primary)] hover:underline">Bosphorus dinner cruise</Link> currently offers four shared evening packages: Silver Soft Drinks, Silver Alcoholic Drinks, Gold Soft Drinks, and Gold Unlimited Alcohol. The live package ladder currently runs from EUR 30 to EUR 90 per guest.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3 text-[var(--heading)]">Yacht Charter Istanbul</h3>

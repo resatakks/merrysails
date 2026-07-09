@@ -195,7 +195,7 @@ const coreBookingPages = [
     image: "/images/fleet/y9/03.jpeg",
   },
   {
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     eyebrow: "Shared evening",
     title: "Bosphorus Dinner Cruise",
     description: "Main shared evening experience with dinner service, entertainment, and four package levels.",

@@ -75,7 +75,7 @@ const guideSchema = {
  name: "Istanbul Dinner Cruise",
  price: "30",
  priceCurrency: "EUR",
- url: `${SITE_URL}/istanbul-dinner-cruise`,
+ url: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
  },
  {
  "@type": "Offer",
@@ -186,7 +186,7 @@ const primaryPages = [
  },
  {
  icon: UtensilsCrossed,
- href: "/istanbul-dinner-cruise",
+ href: "/bosphorus-dinner-cruise-istanbul",
  title: "Bosphorus Dinner Cruise",
  meta: "EUR 30 to EUR 90 · 4 package options",
  description: "Best for a shared evening cruise with dinner service, hotel pickup support, and Silver or Gold seating tiers.",
@@ -212,7 +212,7 @@ const primaryPages = [
 
 const supportPages = [
  {
- href: "/sunset-cruise-tickets-istanbul",
+ href: "/cruises/bosphorus-sunset-cruise",
  title: "Sunset Ticket Support",
  description: "For guests who already want the shared sunset route and need clearer public ticket, option, and reserve-direct guidance.",
  keywordFit: "Sunset cruise tickets Istanbul",
@@ -479,7 +479,7 @@ export default function BosphorusCruisePage() {
  price: "€30",
  per: "per person",
  highlights: ["3-hour cruise", "Dinner + live show", "Hotel pickup available", "4 package tiers"],
- href: "/istanbul-dinner-cruise",
+ href: "/bosphorus-dinner-cruise-istanbul",
  cta: "Book Dinner Cruise",
  },
  {
@@ -549,7 +549,7 @@ export default function BosphorusCruisePage() {
  </p>
  <ul className="text-sm text-amber-800 space-y-1.5">
  <li>🌅 <strong>Sunset Cruise:</strong> from €30/person (Mon, Tue & Thu) · 2.5 hours · open bar · <Link href="/cruises/bosphorus-sunset-cruise" className="underline">Book now</Link></li>
- <li>🍽️ <strong>Dinner Cruise:</strong> from €30/person · 3 hours · live show · <Link href="/istanbul-dinner-cruise" className="underline">Book now</Link></li>
+ <li>🍽️ <strong>Dinner Cruise:</strong> from €30/person · 3 hours · live show · <Link href="/bosphorus-dinner-cruise-istanbul" className="underline">Book now</Link></li>
  <li>⛵ <strong>Private Yacht:</strong> from €220/yacht · your schedule · <Link href="/yacht-charter-istanbul" className="underline">Book now</Link></li>
  <li>🚢 <strong>Boat Rental:</strong> from €60/hr · hourly hire · <Link href="/boat-rental-istanbul" className="underline">Book now</Link></li>
  </ul>
@@ -594,7 +594,7 @@ export default function BosphorusCruisePage() {
  </th>
  <td className="p-4 leading-relaxed text-[var(--text-muted)]">
  Shared evening dinner cruise from EUR 30. Best owner:{" "}
- <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">
+ <Link href="/bosphorus-dinner-cruise-istanbul" className="text-[var(--brand-primary)] hover:underline">
  Istanbul Dinner Cruise
  </Link>
  .

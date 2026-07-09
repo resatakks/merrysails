@@ -28,7 +28,7 @@ import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 
 const SITE_URL = "https://merrysails.com";
 const OWNER_REDIRECTS: Record<string, string> = {
-  "bosphorus-dinner-cruise": "/istanbul-dinner-cruise",
+  "bosphorus-dinner-cruise": "/bosphorus-dinner-cruise-istanbul",
   "yacht-charter-in-istanbul": "/yacht-charter-istanbul",
   "romantic-marriage-proposal": "/proposal-yacht-rental-istanbul",
   "corporate-event-bosphorus-cruise": "/corporate-events",
@@ -307,10 +307,13 @@ const aiSupportLinksBySlug: Record<
   { href: string; label: string }[]
 > = {
   "bosphorus-sunset-cruise": [
-    { href: "/sunset-cruise-tickets-istanbul", label: "Sunset ticket support" },
+    // 2026-07-09: "Sunset ticket support" self-link removed — that URL
+    // (/sunset-cruise-tickets-istanbul) now 301s to this exact page (DMCA-
+    // named-twin consolidation, see next.config.ts), so it would be a
+    // same-page self-link after redirect.
     { href: "/guides/karakoy-waterfront", label: "Karakoy waterfront guide" },
     { href: "/bosphorus-cruise", label: "Bosphorus compare hub" },
-    { href: "/istanbul-dinner-cruise", label: "Dinner cruise alternative" },
+    { href: "/bosphorus-dinner-cruise-istanbul", label: "Dinner cruise alternative" },
     { href: "/yacht-charter-istanbul", label: "Private yacht charter" },
   ],
 };
@@ -968,7 +971,7 @@ export default async function TourDetailPage({
                       4.93 across 621 verified reviews. TÜRSAB A-Group licensed since 2001.
                       Direct online booking at merrysails.com. Prefer dinner with the same
                       skyline? See the{" "}
-                      <Link href="/istanbul-dinner-cruise" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                      <Link href="/bosphorus-dinner-cruise-istanbul" className="font-semibold text-[var(--brand-primary)] hover:underline">
                         Istanbul dinner cruise
                       </Link>{" "}
                       (from €30); for the boat to yourselves, compare{" "}

@@ -775,7 +775,7 @@ export default async function YachtCharterIstanbulPage({
                   than the deck itself. For shared seated dinner options with set menu and live music
                   see our{" "}
                   <Link
-                    href="/istanbul-dinner-cruise"
+                    href="/bosphorus-dinner-cruise-istanbul"
                     className="font-semibold text-[var(--brand-primary)] underline-offset-4 hover:underline"
                   >
                     Istanbul Bosphorus dinner cruise

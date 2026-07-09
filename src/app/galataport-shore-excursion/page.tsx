@@ -53,7 +53,7 @@ const OPTIONS = [
   },
   {
     name: "Bosphorus Dinner Cruise",
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     type: "Shared",
     priceFrom: "From €30",
     priceNote: "per person, 4 package tiers up to €90",

@@ -90,7 +90,7 @@ export default function SocialProofBadges({
     >
       {/* Rating — 2026-06-06: wrapped in <a href="#reviews"> after Clarity
           surfaced 84 dead clicks on this card in the last 7d on
-          /istanbul-dinner-cruise alone. Users tap the rating expecting it to
+          /bosphorus-dinner-cruise-istanbul alone. Users tap the rating expecting it to
           scroll to the reviews carousel. ReviewsCarousel renders with
           id="reviews" + scroll-mt-24 so the anchor lands cleanly under the
           sticky header. */}

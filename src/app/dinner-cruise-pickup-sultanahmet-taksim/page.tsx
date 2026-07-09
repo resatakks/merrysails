@@ -61,7 +61,7 @@ const serviceSchema = {
     price: "30",
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
-    url: `${SITE_URL}/istanbul-dinner-cruise`,
+    url: `${SITE_URL}/bosphorus-dinner-cruise-istanbul`,
   },
 };
 
@@ -157,7 +157,7 @@ const decisionRows = [
   {
     question: "I still need to compare dinner packages first",
     bestPage: "Istanbul Dinner Cruise",
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
   },
 ];
 
@@ -207,7 +207,7 @@ export default function DinnerCruisePickupSultanahmetTaksimPage() {
               </h1>
               <p className="mb-6 max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
                 Use this page when the shared{" "}
-                <Link href="/istanbul-dinner-cruise" className="text-[var(--brand-primary)] hover:underline">
+                <Link href="/bosphorus-dinner-cruise-istanbul" className="text-[var(--brand-primary)] hover:underline">
                   Istanbul Dinner Cruise
                 </Link>{" "}
                 is already the likely fit, but your real question is whether a hotel in
@@ -231,7 +231,7 @@ export default function DinnerCruisePickupSultanahmetTaksimPage() {
                   Check hotel pickup logic <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/istanbul-dinner-cruise"
+                  href="/bosphorus-dinner-cruise-istanbul"
                   className="inline-flex items-center justify-center rounded-xl border border-[var(--brand-primary)] px-6 py-3 font-semibold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-primary)] hover:text-white"
                 >
                   Compare dinner packages
@@ -369,7 +369,7 @@ export default function DinnerCruisePickupSultanahmetTaksimPage() {
                   Send hotel details
                 </TrackedContactLink>
                 <Link
-                  href="/istanbul-dinner-cruise"
+                  href="/bosphorus-dinner-cruise-istanbul"
                   className="inline-flex items-center justify-center rounded-xl border border-white/70 px-5 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[var(--brand-primary)]"
                 >
                   View dinner cruise

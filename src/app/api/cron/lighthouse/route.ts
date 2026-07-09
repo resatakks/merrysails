@@ -9,7 +9,7 @@ const SITE = "https://merrysails.com";
 const URLS_TO_CHECK = [
   "/",
   "/cruises/bosphorus-sunset-cruise",
-  "/istanbul-dinner-cruise",
+  "/bosphorus-dinner-cruise-istanbul",
   "/yacht-charter-istanbul",
 ];
 

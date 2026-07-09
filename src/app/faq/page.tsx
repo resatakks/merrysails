@@ -118,7 +118,7 @@ const routeCards = [
     description: "Best fit when the light, skyline, and shorter shared format matter most.",
   },
   {
-    href: "/istanbul-dinner-cruise",
+    href: "/bosphorus-dinner-cruise-istanbul",
     eyebrow: "Shared evening",
     title: "Istanbul Dinner Cruise",
     description: "Best fit when the plan revolves around dinner service, hotel pickup support, and a longer evening.",
@@ -130,7 +130,7 @@ const routeCards = [
     description: "Best fit when you already know the trip should stay private and package-led.",
   },
   {
-    href: "/sunset-cruise-tickets-istanbul",
+    href: "/cruises/bosphorus-sunset-cruise",
     eyebrow: "Shared sunset booking",
     title: "Sunset Ticket Support",
     description: "Best fit when the shared sunset cruise is already right and the real question is ticket fit, package choice, and reserve-direct clarity.",

@@ -340,7 +340,7 @@ export default function Page() {
                 </span>
               </Link>
               <Link
-                href="/istanbul-dinner-cruise"
+                href="/bosphorus-dinner-cruise-istanbul"
                 className="flex flex-col items-start rounded-xl border border-[var(--line)] bg-white p-4 transition-colors hover:border-[var(--brand-primary)]/40"
               >
                 <span className="text-[11px] font-bold uppercase tracking-wide text-[var(--brand-primary)]">From €30</span>
