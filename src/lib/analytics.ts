@@ -131,6 +131,25 @@ const CONVERSION_VALUES = {
   whatsapp: envNumber("NEXT_PUBLIC_CONVERSION_VALUE_WHATSAPP", 300),
 } as const;
 
+// Page-context value tiering for soft conversions (2026-07-10). A WhatsApp tap on
+// a yacht-charter page (€220-500 AOV) is worth far more than one on a blog post, so
+// we scale the flat per-kind value by where the click happens. This encodes
+// "optimize toward the pages that actually book" for Smart Bidding — it becomes
+// LIVE once the campaign moves to Maximize-Conversion-Value / tROAS; under
+// Maximize-Conversions the values are recorded but not yet used for bidding.
+// Yacht ×4 (300→1200) · cruise ×1.33 (300→400) · other ×0.5 (300→150).
+function pageValueFactor(): number {
+  if (typeof window === "undefined") return 1;
+  const p = window.location.pathname.toLowerCase();
+  if (/yacht|boat-rental|boat-hire|private-boat/.test(p)) return 4;
+  if (/dinner-cruise|sunset-cruise|bosphorus-cruise|\/cruises\//.test(p)) return 1.33;
+  return 0.5;
+}
+
+function softConversionValue(kind: keyof typeof CONVERSION_VALUES): number {
+  return Math.round(CONVERSION_VALUES[kind] * pageValueFactor());
+}
+
 // Kill switch: when true, soft conversions (phone/whatsapp/contact/abandonment)
 // stop firing as Google Ads conversions. dataLayer push + Clarity tagging
 // continue, so GA4/Clarity behavioral data is preserved — only the smart-bidding
@@ -764,7 +783,7 @@ export function trackContactSubmitSuccess(params: {
   trackEvent("generate_lead", payload);
   trackGoogleAdsConversion("contact", {
     currency: CONVERSION_VALUE_CURRENCY,
-    value: CONVERSION_VALUES.contact,
+    value: softConversionValue("contact"),
   });
 
   // Meta Pixel + CAPI — contact form submit = Lead.
@@ -774,7 +793,7 @@ export function trackContactSubmitSuccess(params: {
       content_name: params.subject,
       content_category: "contact-form",
       currency: CONVERSION_VALUE_CURRENCY,
-      value: CONVERSION_VALUES.contact,
+      value: softConversionValue("contact"),
     },
     {
       email: params.customerEmail,
@@ -817,7 +836,7 @@ export function trackBookingAbandonment(params: {
 
   trackGoogleAdsConversion("abandonment", {
     currency: CONVERSION_VALUE_CURRENCY,
-    value: CONVERSION_VALUES.abandonment,
+    value: softConversionValue("abandonment"),
   });
 
   // Meta Pixel + CAPI — booking abandonment = AddToCart (partial intent signal).
@@ -858,7 +877,7 @@ export function trackPhoneClick(params: {
   trackGoogleAdsConversion("phone", {
     contact_intent: params.intent ?? "pre_booking",
     currency: CONVERSION_VALUE_CURRENCY,
-    value: CONVERSION_VALUES.phone,
+    value: softConversionValue("phone"),
   });
 
   // Meta Pixel + CAPI — phone click = Contact.
@@ -866,7 +885,7 @@ export function trackPhoneClick(params: {
     content_name: params.label,
     content_category: "phone-click",
     currency: CONVERSION_VALUE_CURRENCY,
-    value: CONVERSION_VALUES.phone,
+    value: softConversionValue("phone"),
   });
 }
 
@@ -898,7 +917,7 @@ export function trackWhatsAppClick(params: {
   trackGoogleAdsConversion("whatsapp", {
     contact_intent: params.intent ?? "pre_booking",
     currency: CONVERSION_VALUE_CURRENCY,
-    value: CONVERSION_VALUES.whatsapp,
+    value: softConversionValue("whatsapp"),
   });
 
   // Meta Pixel + CAPI — WhatsApp click = Lead (high-intent contact).
@@ -908,7 +927,7 @@ export function trackWhatsAppClick(params: {
     content_name: params.label,
     content_category: "whatsapp-click",
     currency: CONVERSION_VALUE_CURRENCY,
-    value: CONVERSION_VALUES.whatsapp,
+    value: softConversionValue("whatsapp"),
   });
 }
 

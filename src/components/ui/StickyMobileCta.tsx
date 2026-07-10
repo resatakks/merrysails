@@ -71,6 +71,7 @@ export default function StickyMobileCta({
         <div className="flex items-center gap-2 p-2">
           <Link
             href={reserveHref}
+            translate="no"
             className="btn-cta flex-1 !justify-center !rounded-xl !py-3 !text-sm !font-bold"
             data-track="sticky_cta_reserve"
           >

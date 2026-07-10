@@ -282,6 +282,12 @@ export default function YachtCharterIstanbulArabicLandingPage() {
                 <p className="text-xs text-[var(--text-muted)]">
                   للقارب الكامل · ساعتان · لا عمولة وسيط
                 </p>
+                {/* Rating at the decision point — Arabic is the cheapest
+                    converter cohort; surface the 4.9/5 trust token beside the
+                    CTA, not only in the trust block below. */}
+                <p className="text-xs font-semibold text-[var(--heading)]">
+                  ★ 4.9 من 5 · 248 تقييم · TÜRSAB A منذ 2001
+                </p>
                 <a
                   href={whatsappHref}
                   className="btn-cta w-full"

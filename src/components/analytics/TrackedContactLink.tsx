@@ -35,6 +35,10 @@ export default function TrackedContactLink({
       // contact-click listener (GlobalContactClickTracker) skips it — prevents
       // double-counting WhatsApp/phone conversion events.
       data-contact-tracked="1"
+      // Google Translate detaches the onClick handler (and can mangle the
+      // wa.me/tel href) on auto-translated pages, which silently drops the
+      // conversion event — freeze every tracked contact anchor.
+      translate="no"
       onClick={(event) => {
         onClick?.(event);
 

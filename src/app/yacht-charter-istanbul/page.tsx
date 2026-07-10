@@ -580,6 +580,15 @@ export default async function YachtCharterIstanbulPage({
               whatsappText="Hi%20MerrySails!%20I'd%20like%20a%20private%20yacht%20charter%20quote%20for%20the%20Bosphorus.%20Group%20size%20%2B%20date%20if%20known%3F"
               whatsappSource="yacht-hero"
               reserveHref="#fleet"
+              // Above-fold trust + what's-included glance (2026-07-10): Clarity
+              // shows ~12% median scroll on this page, so the trust strip and
+              // inclusions further down are unseen by most mobile visitors —
+              // surface one condensed line inside the hero itself.
+              trust={[
+                "4.9/5 · 248 guest reviews",
+                "Captain, crew & fuel included · 2h minimum",
+                "TÜRSAB A #14316 · 50,000+ guests since 2001",
+              ]}
             />
           )}
 

@@ -90,10 +90,15 @@ export default function ProductHero({
           {benefit}
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-2.5 md:mt-5 md:gap-3">
+          {/* translate="no" — Google Translate detaches JS handlers / mangles
+              wa.me + tel: hrefs on auto-translated pages; these are the paid
+              landing's primary CTAs, so freeze them (matches the site-wide
+              dead-click hardening pattern). */}
           <a
             href={`${WA_BASE}${whatsappText}`}
             target="_blank"
             rel="noopener noreferrer"
+            translate="no"
             data-whatsapp-source={whatsappSource}
             className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[0_14px_30px_rgba(37,211,102,0.4)] transition-transform hover:scale-[1.03] md:px-6 md:text-base"
           >
@@ -101,6 +106,7 @@ export default function ProductHero({
           </a>
           <a
             href={CALL_TEL}
+            translate="no"
             data-phone-source={whatsappSource}
             className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3 text-sm font-bold text-[var(--brand-primary)] shadow-sm backdrop-blur-sm transition-transform hover:scale-[1.03] md:px-6 md:text-base"
           >
@@ -108,6 +114,7 @@ export default function ProductHero({
           </a>
           <Link
             href={reserveHref}
+            translate="no"
             className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20 md:px-6 md:text-base"
           >
             {reserveLabel} <ArrowRight className="h-4 w-4" />
