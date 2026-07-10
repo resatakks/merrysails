@@ -398,8 +398,17 @@ export default function CoreBookingPlanner({
                   setIsPackageMenuOpen(true);
                 }
               }}
+              // Dead-click guard: only present as tappable when there is a
+              // second package to switch to. Single-package tours get no
+              // cursor-pointer/hover affordance so the summary doesn't invite
+              // a tap that would do nothing.
               aria-label={t.changePackage(selectedPackage?.name ?? selectedTour.nameEn)}
-              className="mt-4 w-full cursor-pointer rounded-2xl border border-white/70 bg-white px-4 py-4 text-left transition-colors hover:border-[var(--brand-primary)]/30"
+              className={cn(
+                "mt-4 w-full rounded-2xl border border-white/70 bg-white px-4 py-4 text-left transition-colors",
+                (selectedTour.packages?.length ?? 0) > 1
+                  ? "cursor-pointer hover:border-[var(--brand-primary)]/30"
+                  : "cursor-default",
+              )}
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
