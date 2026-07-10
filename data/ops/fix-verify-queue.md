@@ -1,5 +1,7 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-08
+**Son güncelleme:** 2026-07-10
+
+> **🚀 2026-07-10 DEPLOY DALGASI (prod curl-doğrulandı):** FV-5 (`f875d43` itemReviewed→#event/#product), SF-1/SF-2 (`9259378` 797 shadow-404→301), FV-1 (`c98ca49`+`b169c81` /reservation package-card) HEPSİ CANLI. 12 commit origin önünde ama prod güncel (vercel --prod, push YOK).
 
 > GSC "Sayfalar / neden dizine eklenmiyor" sınıf-raporu API'de yok (UI-only) → A1 sınıf-delta operatör UI'sinden. Rich-results + coverage tek-URL doğrulaması Inspection API ile CANLI (merkezi token).
 
@@ -15,7 +17,7 @@
   - "(function(){if(typeof Nod…" **3** — script-as-visible-text (render bug şüphesi, araştır)
 - **YENİ KÖK-NEDEN HİPOTEZİ:** package/option kartları TAM tıklanabilir değil — sadece küçük radio/buton wire'lı, kart gövdesi/metni/fiyatı dead. + maskeli fiyat konteyneri click'i yutuyor.
 - **FIX PLANI (kod, ayrı session):** (1) tüm package kartı = clickable `<label>`/button (radio kartı sar); (2) maskeli fiyat/summary alanı `pointer-events:none` (disabled hücreler zaten öyle); (3) "Continue booking" disabled iken görünür affordance + no-op'u kaldır; (4) "(function(){…})" script-as-text render bug'ını bul.
-- **Verify:** ⏳ AÇIK — month-nav portion FIXED ✅, ama /reservation genel dead hedef <15% DEĞİL (%52.63). Yeni fix (package-card) deploy edilene kadar açık.
+- **Verify:** ⏳ FIX DEPLOY EDİLDİ (`c98ca49` "make /reservation package cards fully tappable" + `b169c81` "drop clickable affordance on single-package Selected Plan summary"). Clarity 3g (07-08→07-10) hâlâ **80 ham dead-click** AMA pencere deploy-öncesi session'ları kapsıyor → 3-5 gün sonra re-measure (hedef <%15). Kod tarafı TAMAM, ölçüm bekliyor.
 
 ### FV-2 · [P1 · KOD PENDING] /istanbul-dinner-cruise dead-click
 - **Kaynak:** Clarity. 07-01: 42.86% → 07-02: 16.67% → 07-04: %0 (3 sess, low-N) → **07-06: veri toplu URL listesinde bugün görünmedi (muhtemelen <3 sess, noise-eşiği altı)**.
@@ -33,13 +35,12 @@
 - **Fix durumu:** RECOVERY PROTOCOL aktif — (1) title/meta/h1 FREEZE, (2) crawl-health temiz ✅, (3) SubmitUrlBatch (07-08: 17 URL 200, quota 90) + IndexNow (Bing 200/Yandex 202) daily, (4) sabır: **week 5, ETA penceresi 07-07→08-04 içinde.**
 - **Verify:** ✘ — imp hâlâ 0. Week 6 (~07-22) hâlâ 0 ise: Bing Site Scan + eskalasyon notu (SUPPRESSION-WATCH'ta planlı).
 
-### FV-5 · [P0 · AÇIK, DEPLOY EDİLMEDİ — 5. GÜN · BAYAT] 4 money page Review `itemReviewed` FAIL
-- **Kaynak:** Inspection API richResultsResult (2026-07-08, canlı re-check): /istanbul-dinner-cruise (crawl 07-03), /yacht-charter-istanbul (crawl 06-24), /cruises/bosphorus-sunset-cruise (crawl 07-06), /de/istanbul-dinner-cruise (crawl 06-26). Hata AYNEN: `ERROR: Invalid object type for field "itemReviewed"` × 4'er adet. **/bosphorus-cruise PASS teyitli (Review→Product @id referans pattern).**
-- **Kök neden (değişmedi):** standalone `Review` blokları `itemReviewed: Service` (geçersiz tip) — tek paylaşılan komponent `src/components/ui/ReviewsCarousel.tsx`.
-- **Durum:** **5 gün üst üste (07-04/05/06/07/08) aynı sonuç** — kod fix HÂLÂ yazılmadı. **En eski açık P0 — BAYAT eşiğinde. Ayrı kod-session ŞART, öncelik en üstte.**
-- **Fix planı (GROWTH-PLAN Hamle 1, değişmedi):** Review'ları sayfanın ana entity `@id`'sine bağla (dinner/sunset→Event, yacht→Product; `/bosphorus-cruise` PASS pattern'i, bugün de PASS teyitli). `["TouristTrip","Service"]` kuralı korunur. Schema-only = title FREEZE ihlali YOK.
-- **Bonus:** premium-yacht-15 Product `review`/`aggregateRating` WARNING — değişmedi.
-- **Verify:** ✘ — fix hâlâ yazılmadı.
+### FV-5 · [✅ ÇÖZÜLDÜ our-side — DEPLOY + CANLI · Google re-crawl bekliyor] 4 money page Review `itemReviewed`
+- **Fix DEPLOY edildi (`f875d43` "fix(schema): bind Review itemReviewed to main entity @id"):** `ReviewsCarousel.tsx` Review→ana entity `@id`'ye bağladı. **CANLI curl doğrulaması (2026-07-10):** /istanbul-dinner-cruise `itemReviewed:{@id .../bosphorus-dinner-cruise-istanbul#event}`, /yacht-charter-istanbul `#product`, /cruises/bosphorus-sunset-cruise `#event`. `["TouristTrip","Service"]` kuralı korundu, title FREEZE ihlali YOK (schema-only).
+- **Google-tarafı durumu (Inspection API 2026-07-10):** 4 sayfa HÂLÂ FAIL AMA **son crawl deploy'dan ÖNCE** (dinner 07-03, yacht 06-24, sunset 07-06, de-dinner 06-26) — Google düzeltilmiş JSON-LD'yi henüz görmedi. **Stale-crawl false-negative, gerçek hata DEĞİL.** /bosphorus-cruise PASS (referans, fix bunu kopyaladı).
+- **Aksiyon:** chrome_queue validation_restart ("Yorum snippet'leri") + request_index /yacht (16g stale crawl). Auto-submit'te (IndexNow/Bing/Yandex 202) 4 sayfa da var.
+- **Bonus:** premium-yacht-15 Product `review`/`aggregateRating` WARNING — ayrı, değişmedi.
+- **Verify:** ✅ our-side (curl-canlı). Google PASS teyidi ETA 7-14g (re-crawl sonrası Inspection re-check). **5-günlük en eski P0 KAPANDI.**
 
 ### FV-6 · [P0 · YENİ 2026-07-06 · E7-full güvenlik] npm audit — 4 HIGH severity dependency vulnerability
 - **Kaynak:** `npm audit --audit-level=high` (2026-07-06, weekly E7-full derin tarama).
@@ -75,11 +76,11 @@
 
 ### AÇIK (öncelik sıralı)
 
-**SF-1 · internal_broken_links (export 761 satır)** — 5/5 örnek hâlâ canlı 404 (`curl -sIL` doğrulandı): `/fr/blog/accessible-bosphorus-cruise`, `/de/blog/accessible-bosphorus-cruise`, `/tr/blog/accessible-bosphorus-cruise`, `/nl/blog/accessible-bosphorus-cruise`, `/de/blog/avoid-tourist-traps-istanbul-cruises`. Muhtemel kök neden: blog post sadece EN'de var ama başka locale'e link/hreflang üretiliyor. Fix = link-üretim mantığı (kod), title değil. **YÜKSEK ÖNCELİK, SF-2 ile muhtemelen ortak kök-neden.**
-> 2026-07-08 (404-cleanup işçisi): **fix hazırlandı (working tree), deploy bekliyor** — 797 unique 404 hedefinin tamamına slug-birebir 301 map (`src/data/seo/legacy-404-redirects.ts` + `src/proxy.ts` exact-match lookup, fail-open); link-ÜRETİM kökü zaten 2026-06-23/24'te fixlenmiş (`localeBlogHref`/`localeGuideHref`/LanguageSwitcher slug-disjoint), bu iş hedef-tarafını kapattı. Lokal build+`next start` curl doğrulandı (301 doğru Location, canlı sayfalar 200).
+**SF-1 · internal_broken_links (export 761 satır)** — ✅ **FIXED — DEPLOY + CANLI (2026-07-10 curl):** `/fr/blog/accessible-bosphorus-cruise` → **301** → `/blog/accessible-bosphorus-cruise` (canlı doğrulandı). Kök neden (locale-mismatch link/hreflang) zaten 06-23/24'te fixlenmiş; hedef-tarafı 301 map bunu tamamladı.
+> 2026-07-10: `9259378` "feat(seo): 301 map for 797 shadow-404 locale URLs" DEPLOY edildi (`src/data/seo/legacy-404-redirects.ts` + `src/proxy.ts` exact-match, fail-open). Prod curl 301 doğru Location. 797 URL auto-submit edildi.
 
-**SF-2 · http_4xx_client_errors (export 797 satır)** — 5/5 örnek hâlâ 404: `/blog/adalar-turu-istanbul-buyukada-rehberi-2026`, `/blog/arenda-yakhty-stambul-2026`, `/blog/bogaz-turu-fiyat-rehberi-istanbul-2026`, `/blog/bogaz-turu-kac-saat-surer-rehberi-2026`, `/blog/bosphorus-cruise-prijzen-gids-2026` — TR/RU/NL dilinde slug ama locale-prefix'siz `/blog/` altında. SF-1 ile aynı audit'te birlikte çözülmeli.
-> 2026-07-08 (404-cleanup işçisi): **fix hazırlandı (working tree), deploy bekliyor** — SF-1 ile aynı 301 map kapsıyor: `/blog/<locale-slug>` → `/<owner-locale>/blog/<slug>` (41 URL bu desende; toplam 797). 410 gereken ÇIKMADI — her ölü URL'nin canlı slug-birebir karşılığı var (blog/locale-posts/guides setlerine karşı 2026-07-08 doğrulandı, GSC'de 797/797 sıfır-impression). Sitemap NR-9 temiz (canlı sitemap ∩ 797 = 0).
+**SF-2 · http_4xx_client_errors (export 797 satır)** — ✅ **FIXED — DEPLOY + CANLI (2026-07-10 curl):** `/blog/bogaz-turu-fiyat-rehberi-istanbul-2026` → **301** → `/tr/blog/bogaz-turu-fiyat-rehberi-istanbul-2026` (canlı doğrulandı). SF-1 ile aynı 301 map (`9259378`) kapsadı: `/blog/<locale-slug>` → `/<owner-locale>/blog/<slug>`.
+> 2026-07-10: DEPLOY + CANLI. 410 gereken ÇIKMADI (her ölü URL'nin canlı slug-birebir karşılığı var). Sitemap NR-9 temiz. **404×32 A1 sınıfını A8 audit'te yeniden ölç — 301 map çoğunu çözmüş olabilir.**
 
 **SF-3 · long_title / SF pixel-width (export 13 satır, top-level)** — 5/5 örnek hâlâ uzun canlı title: `/ru/team-building-yacht-istanbul` (100 char!), `/ru/cruises/bosphorus-sunset-cruise` (96), `/zh` (84), `/yacht-charter-istanbul/group-yacht-40-standard` (72), `/yacht-charter-istanbul/mega-event-yacht-150` (64). CLAUDE.md kural #6 ihlali (kaynak title max 47 char) canlı teyitli. **FIX TITLE METNİ DEĞİŞİKLİĞİ GEREKTİRİR → operatör onayı şart, bu işçi uygulayamaz (Bing suppression kuralı).** Öneri: tek seferde 1-2 sayfa, düşük-impression locale'den başla.
 
@@ -99,3 +100,14 @@
 - missing_h1 (h1_all.csv, boş H1-1 + indexable filtre, script ile hesaplandı): 0 satır — CLAUDE.md "Resolved 2026-04-27" notuyla tutarlı
 
 **VERDİKT:** azınlık FIXED (2/7) → yeni crawl'ın "temiz" sonuç göstermesi BEKLENMEMELİ, ama veri toplamak güvenli (read-only, siteye etkisi yok). Sıradaki iş SF-1/SF-2 (muhtemelen ortak kök-neden, tek session'da ikisi kapanabilir).
+
+## 2026-07-10
+
+### FV-9 · [YENİ · P1 · D5/R7] /yacht-charter-istanbul dead-click post-redesign
+- **Kaynak:** Clarity 3g (07-08→07-10): /yacht-charter-istanbul **53 ham dead-click** (site #2, /reservation 80'den sonra) + yacht sub-page'ler (group-yacht-40-signature 7, boutique-yacht-12 6).
+- **Bağlam:** `feat/yacht-product-redesign` merged (origin caad5d9) + `98d88f0` "repoint Reserve cards to product pages" — yacht product sayfası yeniden tasarlandı. Redesign sonrası Tier-1 money page'de dead-click birikimi = yeni-deploy UX regresyonu şüphesi (R7-soft).
+- **Fix planı (kod-session):** session-recording ile element sınıfla — non-interactive kart/görsel/fiyat/badge tıklanıyor mu; Reserve card → ürün sayfası link'i doğru mu; maskeli fiyat pointer-events. Element-bazlı düzeltme.
+- **Verify:** ⏳ AÇIK — recording incelemesi + fix.
+
+### /reservation (FV-1) durum güncellemesi
+- Fix DEPLOY edildi (`c98ca49` + `b169c81`). Clarity 3g hâlâ 80 ham dead-click (deploy-öncesi pencere) → 3-5 gün sonra re-measure. bkz FV-1.
