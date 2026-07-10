@@ -248,7 +248,7 @@ export async function POST(req: NextRequest) {
 
   // --- indexnow --- (does not require GSC OAuth)
   if (body.action === "indexnow") {
-    const indexnowKey = process.env.INDEXNOW_KEY ?? "merrysails-indexnow-key";
+    const indexnowKey = process.env.INDEXNOW_KEY ?? "9f357a05e6ccdd592f1e0c2962c1af88";
     const urls = body.urls ?? buildAllUrls();
 
     const payload = {

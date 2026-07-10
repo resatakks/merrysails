@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Shield, Star } from "lucide-react";
 import { getContactChannel } from "@/lib/constants";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import type { SiteLocale } from "@/i18n/config";
 import { LOCALIZED_ROUTES } from "@/i18n/localized-routes";
 
@@ -314,15 +315,18 @@ export default function HeroSection({ locale = "en" }: Props) {
                   {s.mobileViewCruises}
                   <ArrowRight className="h-4 w-4" />
                 </a>
-                <a
+                <TrackedContactLink
                   href={channel.url}
+                  kind="whatsapp"
+                  label="herosection_hub"
+                  location="homepage_hero_mobile"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full bg-white px-3 text-sm font-bold shadow-[0_10px_28px_rgba(11,21,58,0.18)] transition-transform active:scale-95"
                   style={{ borderWidth: 1, borderStyle: "solid", borderColor: "#25D366", color: "#128C7E" }}
                 >
                   {s.mobileWhatsapp}
-                </a>
+                </TrackedContactLink>
               </div>
             </div>
           </div>

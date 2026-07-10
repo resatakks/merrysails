@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Anchor, Ship, Sunset, Utensils } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import {
   getContactChannel,
   SITE_URL,
@@ -274,8 +275,11 @@ function ContactButton({
       : "bg-white/10 border border-white/40 text-white hover:bg-white/20";
 
   return (
-    <a
+    <TrackedContactLink
       href={channel.url}
+      kind="whatsapp"
+      label={`blog_inarticle_${slug}`}
+      location={`blog_${position}`}
       target="_blank"
       rel="noopener noreferrer"
       data-contact-tracked="1"
@@ -283,7 +287,7 @@ function ContactButton({
       className={`${base} ${styles}`}
     >
       {label}
-    </a>
+    </TrackedContactLink>
   );
 }
 

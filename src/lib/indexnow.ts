@@ -1,5 +1,5 @@
 const SITE_URL = "https://merrysails.com";
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "merrysails-indexnow-key";
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "9f357a05e6ccdd592f1e0c2962c1af88";
 const INDEXNOW_API = "https://api.indexnow.org/IndexNow";
 
 export interface IndexNowResult {

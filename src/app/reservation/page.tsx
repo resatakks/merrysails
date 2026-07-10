@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, Mail, Shield } from "lucide-react";
 import CoreBookingPlanner from "@/components/booking/CoreBookingPlanner";
 import ReservationSearch from "./ReservationSearch";
-import { getCoreTours, getTourBySlug } from "@/data/tours";
+import { getCoreTours, getTourBySlug, getTourPath } from "@/data/tours";
 import {
   getCharterFleetItem,
   type CharterFleetSlug,
@@ -142,7 +142,7 @@ export default async function ReservationPage({ searchParams }: ReservationPageP
               {coreTours.map((tour) => (
                 <Link
                   key={tour.slug}
-                  href={`/reservation?tour=${tour.slug}#core-booking-planner`}
+                  href={getTourPath(tour)}
                   className="group relative min-h-[13rem] overflow-hidden rounded-[1.7rem] border border-[var(--line)] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md xl:min-h-[14.25rem]"
                 >
                   <Image
