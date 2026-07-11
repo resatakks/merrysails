@@ -144,7 +144,12 @@ export default function ReviewsCarousel({
     itemReviewed: mainEntityId
       ? { "@id": mainEntityId }
       : {
-          "@type": "Service",
+          // FV-5 devamı (2026-07-11): fallback "Service" Google'ın Review
+          // itemReviewed kabul listesinde DEĞİL — GSC "geçersiz nesne türü"
+          // hatasının locale sayfalarındaki kaynağıydı (EN kökler mainEntityId
+          // geçtiği için temizdi). "Product" kabul listesinde → tüm mevcut ve
+          // gelecekteki mainEntityId'siz çağrılar tek noktadan geçerli olur.
+          "@type": "Product",
           name:
             productKey === "sunset"
               ? "Bosphorus Sunset Cruise"
@@ -153,6 +158,7 @@ export default function ReviewsCarousel({
                 : productKey === "yacht"
                   ? "Private Yacht Charter Istanbul"
                   : "Bosphorus Cruise",
+          brand: { "@type": "Brand", name: "MerrySails" },
         },
   }));
 
