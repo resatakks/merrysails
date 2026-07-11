@@ -1,5 +1,7 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-10
+**Son güncelleme:** 2026-07-11
+
+> **📌 2026-07-11 STATUS FLIPS (Inspection API 07-11):** **FV-5 → 2/4 VALIDATED** (/yacht + /sunset rich=PASS Google-side, lastCrawl 07-10; kalan /dinner stale-crawl 07-03 + /tr/bosphorus-cruise locale-remainder re-crawl bekliyor). **FV-8 → ✅ ÇÖZÜLDÜ** (/tr/bosphorus-cruise "Submitted and indexed"e döndü). **FV-1 → ❌ VERIFY BAŞARISIZ** (/reservation deploy sonrası hâlâ 88 dead-click/32 sess — fix hedef kaçırdı, ESKALE). FV-5 locale-remainder fix bugün `4897c8f` (deploy azhej7kg6) + r33 lint kuralı eklendi.
 
 > **🚀 2026-07-10 DEPLOY DALGASI (prod curl-doğrulandı):** FV-5 (`f875d43` itemReviewed→#event/#product), SF-1/SF-2 (`9259378` 797 shadow-404→301), FV-1 (`c98ca49`+`b169c81` /reservation package-card) HEPSİ CANLI. 12 commit origin önünde ama prod güncel (vercel --prod, push YOK).
 
@@ -17,7 +19,7 @@
   - "(function(){if(typeof Nod…" **3** — script-as-visible-text (render bug şüphesi, araştır)
 - **YENİ KÖK-NEDEN HİPOTEZİ:** package/option kartları TAM tıklanabilir değil — sadece küçük radio/buton wire'lı, kart gövdesi/metni/fiyatı dead. + maskeli fiyat konteyneri click'i yutuyor.
 - **FIX PLANI (kod, ayrı session):** (1) tüm package kartı = clickable `<label>`/button (radio kartı sar); (2) maskeli fiyat/summary alanı `pointer-events:none` (disabled hücreler zaten öyle); (3) "Continue booking" disabled iken görünür affordance + no-op'u kaldır; (4) "(function(){…})" script-as-text render bug'ını bul.
-- **Verify:** ⏳ FIX DEPLOY EDİLDİ (`c98ca49` "make /reservation package cards fully tappable" + `b169c81` "drop clickable affordance on single-package Selected Plan summary"). Clarity 3g (07-08→07-10) hâlâ **80 ham dead-click** AMA pencere deploy-öncesi session'ları kapsıyor → 3-5 gün sonra re-measure (hedef <%15). Kod tarafı TAMAM, ölçüm bekliyor.
+- **Verify (2026-07-11):** ❌ **BAŞARISIZ — ESKALE.** Deploy sonrası Clarity 3g (07-09→07-11) hâlâ **88 ham dead-click / 32 sess** (07-10'da 80'di — DÜŞMEDİ, hatta arttı). Pencere artık deploy-sonrası → fix `c98ca49`+`b169c81` gerçek dead element'i hedeflemedi. **Session-recording ile YENİDEN teşhis şart** (blank/whitespace " " 179 + maskeli fiyat "•••• ••••" + package-kart gövdesi hâlâ dead şüphesi). P1 kod-session.
 
 ### FV-2 · [P1 · KOD PENDING] /istanbul-dinner-cruise dead-click
 - **Kaynak:** Clarity. 07-01: 42.86% → 07-02: 16.67% → 07-04: %0 (3 sess, low-N) → **07-06: veri toplu URL listesinde bugün görünmedi (muhtemelen <3 sess, noise-eşiği altı)**.
@@ -33,9 +35,10 @@
 - **Kaynak:** Canlı GetRankAndTrafficStats (2026-07-08) → impressions **0 HER GÜN, veri 07-06'ya kadar** (son imp>0 hâlâ 06-08/4imp — Bing restate'i korunuyor). **30. gün (week 5).**
 - **Crawl/index sağlığı:** InIndex **478** ↑ (07-07, seri 470→472→476→477→478), Yandex searchable **336**, GetCrawlIssues **0**, 5xx 0, blocked 0, in4xx 0, crawlErrors 41 (hafif creep), crawl 229 sayfa/gün. Deindex DEĞİL — klasik suppression, teknik taraf tamamen temiz.
 - **Fix durumu:** RECOVERY PROTOCOL aktif — (1) title/meta/h1 FREEZE, (2) crawl-health temiz ✅, (3) SubmitUrlBatch (07-08: 17 URL 200, quota 90) + IndexNow (Bing 200/Yandex 202) daily, (4) sabır: **week 5, ETA penceresi 07-07→08-04 içinde.**
-- **Verify:** ✘ — imp hâlâ 0. Week 6 (~07-22) hâlâ 0 ise: Bing Site Scan + eskalasyon notu (SUPPRESSION-WATCH'ta planlı).
+- **Verify (2026-07-11):** ✘ — canlı GetRankAndTrafficStats (veri 07-08'e kadar): 06-09→07-08 tüm günler imp=0, **07-07 imp=1 tek flicker**, sustained recovery YOK → **~gün 33/week 5**. Crawl teknik TEMİZ (2xx 102, 5xx 0, blocked 0, InLinks 2.694, crawlErr 5-11). Week 6 (~07-22) hâlâ 0 ise: Bing Site Scan + eskalasyon (Pazar A11 review). SUPPRESSION-WATCH güncellendi.
 
-### FV-5 · [✅ ÇÖZÜLDÜ our-side — DEPLOY + CANLI · Google re-crawl bekliyor] 4 money page Review `itemReviewed`
+### FV-5 · [✅ 2/4 VALIDATED Google-side · kalan 2 re-crawl bekliyor] 4 money page Review `itemReviewed`
+- **2026-07-11 Inspection API DOĞRULAMA:** /yacht-charter-istanbul **rich=PASS** ✅ + /cruises/bosphorus-sunset-cruise **rich=PASS** ✅ (ikisi lastCrawl 07-10, indexed). FV-5 fix Google-side KANITLI. Money-page FAIL 4→2. Kalan: /istanbul-dinner-cruise (rich FAIL, lastCrawl 07-03 = deploy öncesi stale) + /tr/bosphorus-cruise (rich FAIL, locale-remainder — bugün `4897c8f` fallback Service→Product fix'i + r33 lint kuralı ele aldı). chrome_queue: request_index /dinner + validation_restart "Review snippets".
 - **Fix DEPLOY edildi (`f875d43` "fix(schema): bind Review itemReviewed to main entity @id"):** `ReviewsCarousel.tsx` Review→ana entity `@id`'ye bağladı. **CANLI curl doğrulaması (2026-07-10):** /istanbul-dinner-cruise `itemReviewed:{@id .../bosphorus-dinner-cruise-istanbul#event}`, /yacht-charter-istanbul `#product`, /cruises/bosphorus-sunset-cruise `#event`. `["TouristTrip","Service"]` kuralı korundu, title FREEZE ihlali YOK (schema-only).
 - **Google-tarafı durumu (Inspection API 2026-07-10):** 4 sayfa HÂLÂ FAIL AMA **son crawl deploy'dan ÖNCE** (dinner 07-03, yacht 06-24, sunset 07-06, de-dinner 06-26) — Google düzeltilmiş JSON-LD'yi henüz görmedi. **Stale-crawl false-negative, gerçek hata DEĞİL.** /bosphorus-cruise PASS (referans, fix bunu kopyaladı).
 - **Aksiyon:** chrome_queue validation_restart ("Yorum snippet'leri") + request_index /yacht (16g stale crawl). Auto-submit'te (IndexNow/Bing/Yandex 202) 4 sayfa da var.
@@ -61,7 +64,7 @@
 - **Kaynak:** Inspection API + Chrome URL-denetimi (2026-07-08): 07-08 02:39 taze crawl, "Sayfa getirme: Başarılı", "Dizine eklenmesine izin verildi: Evet" — AMA "URL Google'da yok / Tarandı - şu anda dizine eklenmiş değil". Dün indexed'di.
 - **Değerlendirme:** Tek-sayfa dizinden düşme (toplam indexed 342 STABİL = R3 DEĞİL). Push+request-index'e rağmen (07-08'de her ikisi de yapıldı) Google soft-kalite kararıyla düşürdü — crawl-budget/thin sinyalinin "boğaz turu" 6.600/mo hedef sayfasına dokunması.
 - **Fix planı:** kod-tarafı TR internal-link denetimi (GROWTH-PLAN Hamle 4) — TR sayfalardan içerik-içi link akışı artır. Request-index/push marjinal kanıtlandı.
-- **Verify:** ⏳ AÇIK — internal-link işi sonrası re-inspect. Bu arada günlük auto-submit'te kalır.
+- **Verify (2026-07-11):** ✅ **ÇÖZÜLDÜ** — Inspection API: /tr/bosphorus-cruise **"Submitted and indexed"e döndü** (lastCrawl 07-10, crawled-not-indexed'den flip). Günlük auto-submit + push işe yaradı. (rich=FAIL ayrı — FV-5 locale-remainder kapsamında.) R3 clear.
 
 ## KAPANAN (son 30 gün)
 - **FV-6** (2026-07-06) — npm audit 4 HIGH + 6 moderate + 1 low → 0. Next.js 16.2.10 + nodemailer 9.0.3 (major, operatör onaylı) + qs/fast-uri/hono/ip-address/js-yaml transitive temizlik. Commit: `1a345b9` (git log'da teyit 2026-07-07).
@@ -111,3 +114,11 @@
 
 ### /reservation (FV-1) durum güncellemesi
 - Fix DEPLOY edildi (`c98ca49` + `b169c81`). Clarity 3g hâlâ 80 ham dead-click (deploy-öncesi pencere) → 3-5 gün sonra re-measure. bkz FV-1.
+
+- [ ] **+14g CANONICAL RECHECK (research 2026-07-10, Google resmi ~2-hafta re-cluster)**: DMCA relocation 7e322d2 + 797-URL 301-map 9259378 (deploy 2026-07-08) → **2026-07-22'ye kadar bu URL'lere re-inspect/re-touch/re-escalate YASAK** (erken thrash = suppression churn sınıfı). 07-22'de: relocated slug'lar indexed mi + 301'ler cluster'landı mı kontrol.
+
+### 2026-07-11 — GSC "Yorum snippet'leri doğrulama BAŞARISIZ" maili ÇÖZÜLDÜ (FV-5 locale kalıntısı)
+- [x] Kök-neden: [locale] şablonları (cruises/[slug], sunset, yacht) ReviewsCarousel'i mainEntityId'siz çağırıyordu → fallback inline @type:Service = Google kabul etmiyor. EN kökler @id geçtiği için temizdi; TÜM non-EN varyantlar düşüyordu ("bazı düzeltmeler başarısız"ın açıklaması).
+- [x] Fix (tek nokta): fallback Service→**Product(+Brand)** (4897c8f, deploy azhej7kg6). Canlı re-audit: tr/fr/de/nl sunset+yacht **5/5 OK-inline:Product**, EN kökler OK-ref (regresyon yok). lint387+tsc+build ✓.
+- [x] **r33-itemreviewed-type** lint kuralı + fixture çifti eklendi (golden 4/4 ✓) — sınıf bir daha commit edilemez.
+- [ ] GSC'de "Yorum snippet'leri" **doğrulamayı YENİDEN başlat** (başarısız durumdan) → chrome_queue'da (07-11: validation_restart Review snippets + request_index /dinner). +14g canonical-recheck kuralı BU doğrulamaya engel değil (relocation URL'leri ayrı küme). NOT: 07-11 itibarıyla /yacht + /sunset zaten PASS'e döndü (fix Google-side tutuyor).
