@@ -189,6 +189,22 @@ export function PlannerDateCalendar({
       </div>
 
       <div
+        onClick={(event) => {
+          /* 2026-07-12 Clarity P0 (/reservation dead-clicks: " " = 3843 in 30d,
+             the single largest bucket): mis-aimed date taps land on the
+             calendar's non-interactive chrome — the p-4 surface padding, the
+             grid's gap-y-1 inter-row gaps, the weekday-label row, and
+             pointer-events-none disabled/past cells — all of which have no
+             handler and register as dead clicks on " ". The 2026-06-06 fix only
+             neutralized the LEADING blank cells. Answer any tap that is NOT on a
+             real control (day cell / prev-next / month-label buttons all match
+             closest("button")) with the same visible pulse the "Change" row
+             uses, converting dead → live without altering the booking flow. */
+          if ((event.target as HTMLElement).closest("button")) return;
+          setIsCalendarPulsing(true);
+          if (pulseTimerRef.current) clearTimeout(pulseTimerRef.current);
+          pulseTimerRef.current = setTimeout(() => setIsCalendarPulsing(false), 1600);
+        }}
         className={`rounded-[1.5rem] border bg-[var(--surface-alt)] p-4 transition-all duration-300 ${
           isCalendarPulsing
             ? "border-[var(--brand-primary)]/50 ring-2 ring-[var(--brand-primary)]/40 ring-offset-2"

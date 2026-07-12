@@ -199,7 +199,13 @@ export default function Header() {
               <LanguageSwitcher />
 
               <Link
-                href={localizeHref("/reservation", locale)}
+                // #core-booking-planner: when already on /reservation this
+                // header CTA was a self-link (Clarity: 158 dead clicks on
+                // "Reserve Online" in 30d — navigating to the current URL does
+                // nothing). Anchoring to the planner makes the tap scroll to
+                // the booking widget instead of dead-ending, and deep-links
+                // straight to the planner from every other page.
+                href={`${localizeHref("/reservation", locale)}#core-booking-planner`}
                 className="btn-cta inline-flex items-center justify-center text-xs !py-2.5 !px-3.5 sm:text-sm sm:!px-5"
               >
                   <span className="sm:hidden">{t.reserve}</span>
@@ -308,7 +314,10 @@ export default function Header() {
                         {PHONE_DISPLAY}
                       </a>
                       <Link
-                        href={localizeHref("/reservation", locale)}
+                        // Mirror of the desktop CTA: anchor to the planner so
+                        // the mobile-menu Reserve button scrolls to the booking
+                        // widget instead of self-linking to /reservation.
+                        href={`${localizeHref("/reservation", locale)}#core-booking-planner`}
                         className="btn-cta block w-full px-4 text-center !py-3 text-sm"
                       >
                         {t.reserveOnline}
