@@ -879,9 +879,25 @@ export async function createManualReservationAdminAction(
     });
 
     let emailSent = false;
+    let emailError: string | undefined;
     if (shouldSendEmail) {
-      await sendReservationCustomerEmail(reservation.reservationId);
-      emailSent = true;
+      try {
+        await sendReservationCustomerEmail(reservation.reservationId);
+        emailSent = true;
+      } catch (sendError) {
+        emailError =
+          (sendError as Error).message || "Failed to send confirmation email.";
+        console.error("Failed to send manual reservation confirmation email:", sendError);
+
+        if (process.env.TELEGRAM_BOT_TOKEN) {
+          try {
+            const { notifyEmailSendFailure } = await import("@/lib/telegram/notifications");
+            await notifyEmailSendFailure(reservation.reservationId, emailError);
+          } catch (telegramError) {
+            console.error("Failed to send email-failure Telegram alert:", telegramError);
+          }
+        }
+      }
     }
 
     if (process.env.TELEGRAM_BOT_TOKEN) {
@@ -906,7 +922,12 @@ export async function createManualReservationAdminAction(
     revalidatePath("/admin/reports");
     revalidatePath("/admin/calendar");
 
-    return { success: true, error: "", reservationId, emailSent };
+    return {
+      success: true,
+      error: emailError ? `Reservation created, but the email failed: ${emailError}` : "",
+      reservationId,
+      emailSent,
+    };
   } catch (error) {
     const err = error as Error;
     return {

@@ -108,6 +108,18 @@ export async function notifyStatusChange(reservation: SailsReservation, oldStatu
   return broadcast("notifyNew", text);
 }
 
+export async function notifyEmailSendFailure(reservationId: string, errorMessage: string) {
+  const text = [
+    "<b>⚠️ Reservation email failed</b>",
+    "",
+    `<b>Reservation:</b> ${escapeHtml(reservationId)}`,
+    `<b>Error:</b> ${escapeHtml(errorMessage.slice(0, 300))}`,
+    "",
+    "The reservation itself was created successfully — only the confirmation email failed. Resend from the admin panel.",
+  ].join("\n");
+  return broadcast("notifyNew", text);
+}
+
 export async function notifyReminder(reservation: SailsReservation) {
   const text = formatReminder(reservation);
   return broadcast("notifyReminder", text);
