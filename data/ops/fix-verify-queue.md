@@ -1,5 +1,7 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-11
+**Son güncelleme:** 2026-07-13
+
+> **🎉 2026-07-13 STATUS FLIPS:** **FV-4 → ✅ RECOVERED** (Bing suppression: canlı API 07-09 imp6/clk1 + 07-10 imp21/clk2 → kapatma eşiği 2g aşıldı, ~30g sıfır-seri kırıldı, SUPPRESSION-WATCH kapatıldı; E4 FREEZE 1-2 hafta daha temkinen korunuyor). **FV-9 → ✅ ÇÖZÜLDÜ** (/yacht-charter-istanbul dead-click 55→1/39sess). **FV-1 → 🟡 tentative-iyileşme** (/reservation 88→7/9sess, per-sess 2.75→0.78; N=9 hafta-sonu düşük → 1 koşu daha izle, kapatma ertelendi). Core-SEO scorecard oluşturuldu (%85.7, fail: index_coverage 16.9% + rich-results×2).
 
 > **📌 2026-07-11 STATUS FLIPS (Inspection API 07-11):** **FV-5 → 2/4 VALIDATED** (/yacht + /sunset rich=PASS Google-side, lastCrawl 07-10; kalan /dinner stale-crawl 07-03 + /tr/bosphorus-cruise locale-remainder re-crawl bekliyor). **FV-8 → ✅ ÇÖZÜLDÜ** (/tr/bosphorus-cruise "Submitted and indexed"e döndü). **FV-1 → ❌ VERIFY BAŞARISIZ** (/reservation deploy sonrası hâlâ 88 dead-click/32 sess — fix hedef kaçırdı, ESKALE). FV-5 locale-remainder fix bugün `4897c8f` (deploy azhej7kg6) + r33 lint kuralı eklendi.
 

@@ -1,5 +1,5 @@
 # GSC URL Inspect — Priority Queue (MerrySails)
-**Son güncelleme:** 2026-07-11 (Inspection API ile 5 URL doğrulandı) · **API kotası:** 2000/gün/property (bol) · **Manuel Request-Index kotası:** ~1-3/gün (kıt)
+**Son güncelleme:** 2026-07-13 (chrome_queue carry; 🎉 Bing suppression RECOVERY teyit — auto-submit sürüyor) · **API kotası:** 2000/gün/property (bol) · **Manuel Request-Index kotası:** ~1-3/gün (kıt)
 
 > **KURAL:** Google indexing stratejisi = güçlü internal link + sıfır teknik hata + geçerli rich results. Manuel Request-Index SADECE doğrulanmış-unindexed VEYA büyük-değişiklik-görmüş money page (max 1-3/gün). Index-durum doğrulaması Inspection API ile otomatik. Tıkları **post-sweep TEK SERİ Chrome fazı** atar (property-guard) — sweep agent'ı basmaz.
 
