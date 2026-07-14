@@ -158,7 +158,10 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-sm text-[var(--text-muted)]">
             <Link href="/" className="hover:text-[var(--brand-primary)]">Home</Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">Private Sunset Cruise on the Bosphorus, Istanbul</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >Private Sunset Cruise on the Bosphorus, Istanbul</span>
           </nav>
 
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">

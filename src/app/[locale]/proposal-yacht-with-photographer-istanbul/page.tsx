@@ -256,7 +256,9 @@ export default async function ProposalYachtPhotographerLocalePage({
             {locale === "tr" ? "Teklif Yatı" : locale === "de" ? "Heiratsantrag Yacht" : locale === "fr" ? "Yacht Demande" : "Aanzoek Jacht"}
           </Link>
           <span>/</span>
-          <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+          <span
+            aria-current="page"
+            className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
         </nav>
 
         <div className="mb-10">

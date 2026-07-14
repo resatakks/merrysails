@@ -755,7 +755,10 @@ export default async function LocaleBosphorusCruisePage({
  <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
  <Link href={`/${locale}`} className="hover:text-[var(--brand-primary)]">{c.homeLabel}</Link>
  <span>/</span>
- <span className="text-[var(--heading)]">{c.h1}</span>
+ <span
+   aria-current="page"
+   className="text-[var(--text-muted)]"
+ >{c.h1}</span>
  </nav>
 
  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)]">{c.subtitle}</p>
@@ -774,12 +777,30 @@ export default async function LocaleBosphorusCruisePage({
 
  {/* Key facts bar */}
  <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
- {c.keyFacts.map((f) => (
- <div key={f.label} className="rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-center">
+ {c.keyFacts.map((f, i) => {
+ // Clarity (DE /bosphorus-cruise, 2026-07-14): the yacht tile (index 2,
+ // "ab €220") was the single highest dead-click element on the page —
+ // bold brand-color price reads as clickable but was a static div. Wire
+ // it to the yacht page (same ROUTE_MAP the tour-option cards use below)
+ // instead of muting the style, since it's a real cross-sell target.
+ const yachtHref = i === 2 ? (ROUTE_MAP.yacht?.[locale] ?? `/${locale}/yacht-charter-istanbul`) : null;
+ const tileClassName = "rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-center";
+ const tileBody = (
+ <>
  <p className="text-xl font-bold text-[var(--brand-primary)]">{f.value}</p>
  <p className="mt-0.5 text-xs text-[var(--text-muted)]">{f.label}</p>
+ </>
+ );
+ return yachtHref ? (
+ <Link key={f.label} href={yachtHref} className={`${tileClassName} transition-colors hover:border-[var(--brand-primary)]/40`}>
+ {tileBody}
+ </Link>
+ ) : (
+ <div key={f.label} className={tileClassName}>
+ {tileBody}
  </div>
- ))}
+ );
+ })}
  </div>
  </div>
  </div>

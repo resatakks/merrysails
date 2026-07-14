@@ -728,7 +728,9 @@ export default async function LocaleSunsetCruisePage({
  <span>/</span>
  <Link href={`/${locale}/bosphorus-cruise`} className="hover:text-[var(--brand-primary)]">{t.breadcrumbCruise}</Link>
  <span>/</span>
- <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+ <span
+   aria-current="page"
+   className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
  </nav>
 
  {sunsetTour.packages?.some((p) => p.weekdayDiscount) && (

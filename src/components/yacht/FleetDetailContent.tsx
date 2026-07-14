@@ -107,7 +107,9 @@ export default function FleetDetailContent({
             {strings.breadcrumbCharter}
           </Link>
           <span>/</span>
-          <span className="text-[var(--heading)] truncate">{t.label}</span>
+          <span
+            aria-current="page"
+            className="text-[var(--text-muted)] truncate">{t.label}</span>
         </nav>
 
         <header className="grid gap-6 lg:grid-cols-[1fr_1.05fr] lg:items-stretch lg:gap-8 mb-8">

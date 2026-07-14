@@ -148,7 +148,9 @@ export default function AnniversaryYachtCruisePage() {
             <span>/</span>
             <Link href="/yacht-charter-istanbul" className="hover:text-[var(--brand-primary)]">Yacht Charter Istanbul</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">Anniversary Yacht Cruise</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">Anniversary Yacht Cruise</span>
           </nav>
 
           {/* Above-the-fold conversion card */}

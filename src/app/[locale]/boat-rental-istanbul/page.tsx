@@ -420,7 +420,10 @@ export default async function LocaleBoatRentalPage({
               {t.breadcrumbHome}
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">{t.breadcrumbCurrent}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >{t.breadcrumbCurrent}</span>
           </nav>
 
           <div className="mb-10">

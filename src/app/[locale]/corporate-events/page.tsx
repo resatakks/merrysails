@@ -543,7 +543,9 @@ export default async function LocaleCorporateEventsPage({
               {t.breadcrumbHome}
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
           </nav>
 
           <header className="mb-10">

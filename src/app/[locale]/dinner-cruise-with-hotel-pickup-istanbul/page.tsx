@@ -954,7 +954,9 @@ export default async function LocaleDinnerCruiseHotelPickupPage({
               {t.breadcrumbCruise}
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
           </nav>
 
           {/* Hero */}

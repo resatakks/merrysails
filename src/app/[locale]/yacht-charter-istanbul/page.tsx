@@ -803,7 +803,9 @@ export default async function LocaleYachtCharterPage({
  {t.breadcrumbCruise}
  </Link>
  <span>/</span>
- <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+ <span
+   aria-current="page"
+   className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
  </nav>
 
  <header className="mb-3 md:mb-4">

@@ -850,7 +850,9 @@ export default async function TurkishNightDinnerCruiseLocalePage({
             <span>/</span>
             <Link href={`/${locale}/istanbul-dinner-cruise`} className="hover:text-[var(--brand-primary)]">{t.breadcrumbDinner}</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
           </nav>
 
           {/* Hero */}

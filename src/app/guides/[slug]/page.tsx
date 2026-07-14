@@ -218,7 +218,9 @@ export default async function GuidePage({
               Guides
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate max-w-xs">
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate max-w-xs">
               {cleanTitle}
             </span>
           </nav>

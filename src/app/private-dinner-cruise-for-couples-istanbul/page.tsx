@@ -232,7 +232,10 @@ export default function PrivateDinnerCruiseForCouplesIstanbulPage() {
  Home
  </Link>
  <span>/</span>
- <span className="text-[var(--heading)]">Private Dinner Cruise for Couples Istanbul</span>
+ <span
+   aria-current="page"
+   className="text-[var(--text-muted)]"
+ >Private Dinner Cruise for Couples Istanbul</span>
  </nav>
 
  <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">

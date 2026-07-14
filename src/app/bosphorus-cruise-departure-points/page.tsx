@@ -284,7 +284,10 @@ export default function BosphorusCruiseDeparturePointsPage() {
  Home
  </Link>
  <span>/</span>
- <span className="text-[var(--heading)]">Bosphorus Cruise Departure Points Istanbul</span>
+ <span
+   aria-current="page"
+   className="text-[var(--text-muted)]"
+ >Bosphorus Cruise Departure Points Istanbul</span>
  </nav>
 
  <section className="mb-12 max-w-4xl">

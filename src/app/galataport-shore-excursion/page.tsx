@@ -162,7 +162,9 @@ export default function GalataportShoreExcursionPage() {
             <span>/</span>
             <Link href="/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">Bosphorus Cruise</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">Galataport Shore Excursion</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">Galataport Shore Excursion</span>
           </nav>
 
           <header className="mb-8">

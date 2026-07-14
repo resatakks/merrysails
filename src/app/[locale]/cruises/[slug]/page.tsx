@@ -360,7 +360,9 @@ export default async function LocaleTourDetailPage({
               Bosphorus Cruise
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{tour.nameEn}</span>
           </nav>
 
           {/* Locale-aware conversion stack — same components as EN cruises. */}

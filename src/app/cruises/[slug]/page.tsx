@@ -795,7 +795,9 @@ export default async function TourDetailPage({
             <span>/</span>
             <Link href="/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">Bosphorus Cruise</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{tour.nameEn}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{tour.nameEn}</span>
           </nav>
 
           {/* Above-the-fold conversion summary — Clarity (2026-05-25 → 06-01)

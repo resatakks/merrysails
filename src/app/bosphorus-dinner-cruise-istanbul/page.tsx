@@ -600,7 +600,9 @@ export default async function IstanbulDinnerCruisePage({
               Bosphorus Cruise
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{dinnerTour.nameEn}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{dinnerTour.nameEn}</span>
           </nav>
 
           {/* Visual conversion hero (2026-06-21): the dinner cruise is a visual,

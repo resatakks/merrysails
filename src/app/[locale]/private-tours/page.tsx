@@ -385,7 +385,10 @@ export default async function LocalePrivateToursPage({
               {c.breadcrumbHome}
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">{c.breadcrumbCurrent}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >{c.breadcrumbCurrent}</span>
           </nav>
 
           <div className="text-center mb-10">

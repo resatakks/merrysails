@@ -217,7 +217,9 @@ export default function Page() {
             <span>/</span>
             <Link href="/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">Bosphorus Cruise</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">vs Viator</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">vs Viator</span>
           </nav>
 
           <header className="mb-8">

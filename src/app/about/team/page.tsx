@@ -162,7 +162,10 @@ export default function TeamPage() {
             <span>/</span>
             <Link href="/about" className="hover:text-[var(--brand-primary)] transition-colors">About</Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">Team</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >Team</span>
           </nav>
 
           {/* Header */}

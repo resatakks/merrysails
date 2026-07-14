@@ -285,7 +285,10 @@ export default function KabatasDinnerCruiseIstanbulPage() {
  Home
  </Link>
  <span>/</span>
- <span className="text-[var(--heading)]">Kabatas Dinner Cruise Istanbul</span>
+ <span
+   aria-current="page"
+   className="text-[var(--text-muted)]"
+ >Kabatas Dinner Cruise Istanbul</span>
  </nav>
 
  <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">

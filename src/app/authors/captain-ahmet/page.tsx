@@ -166,7 +166,10 @@ export default function CaptainAhmetPage() {
             <span>/</span>
             <Link href="/about" className="hover:text-[var(--brand-primary)]">About</Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">Captain Ahmet Yıldız</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >Captain Ahmet Yıldız</span>
           </nav>
 
           <section className="rounded-[2rem] overflow-hidden bg-white border border-[var(--line)] shadow-sm">

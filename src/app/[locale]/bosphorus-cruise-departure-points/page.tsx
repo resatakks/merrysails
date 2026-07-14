@@ -285,7 +285,9 @@ export default async function BosphorusDeparturePointsLocalePage({
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-6">
             <Link href={`/${locale}`} className="hover:text-[var(--brand-primary)]">{t.breadcrumbHome}</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{t.breadcrumbCurrent}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{t.breadcrumbCurrent}</span>
           </nav>
 
           <div className="mb-10">

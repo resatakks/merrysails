@@ -211,7 +211,10 @@ export default function ProductLaunchYachtIstanbulPage() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">Product Launch Yacht Istanbul</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >Product Launch Yacht Istanbul</span>
           </nav>
 
           <section className="mb-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">

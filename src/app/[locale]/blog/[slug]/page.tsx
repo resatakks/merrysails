@@ -259,7 +259,9 @@ export default async function LocaleBlogPostPage({
               {ui.blog}
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate max-w-xs">{cleanTitle}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate max-w-xs">{cleanTitle}</span>
           </nav>
 
           {/* Header */}

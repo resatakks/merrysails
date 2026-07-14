@@ -343,7 +343,9 @@ export default function HotelClusterPage({ district, locale = "en" }: Props) {
             <span>/</span>
             <Link href={`${localePrefix}/bosphorus-cruise`} className="hover:text-[var(--brand-primary)]">{locale === "tr" ? "Boğaz Turu" : "Bosphorus Cruise"}</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{locale === "tr" ? `${district.name}'ten` : `From ${district.name}`}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">{locale === "tr" ? `${district.name}'ten` : `From ${district.name}`}</span>
           </nav>
 
           {/* Above-fold conversion card */}

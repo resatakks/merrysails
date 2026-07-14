@@ -60,7 +60,10 @@ export default async function ReservationPage({ searchParams }: ReservationPageP
             <span>/</span>
             <Link href="/yacht-charter-istanbul" className="hover:text-[var(--brand-primary)]">Yacht Charter Istanbul</Link>
             <span>/</span>
-            <span className="text-[var(--heading)]">Reserve</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)]"
+            >Reserve</span>
           </nav>
           <header className="mb-6">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--brand-primary)]">Reserve your yacht</p>

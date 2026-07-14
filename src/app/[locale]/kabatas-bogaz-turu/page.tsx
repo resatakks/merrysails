@@ -267,7 +267,9 @@ export default async function KabatasBagazTuruPage({
             <span>/</span>
             <Link href="/tr/bosphorus-cruise" className="hover:text-[var(--brand-primary)]">Boğaz Turu</Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">Kabataş Boğaz Turu</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate">Kabataş Boğaz Turu</span>
           </nav>
 
           {/* Hero */}
