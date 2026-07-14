@@ -557,7 +557,12 @@ export default async function YachtCharterIstanbulPage({
               Bosphorus Cruise
             </Link>
             <span>/</span>
-            <span className="text-[var(--heading)] truncate">{yachtTour.nameEn}</span>
+            <span
+              aria-current="page"
+              className="text-[var(--text-muted)] truncate"
+            >
+              {yachtTour.nameEn}
+            </span>
           </nav>
 
           {/* Visual conversion hero (2026-06-21): yacht charter is a visual,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { CharterFleetItem } from "@/data/fleet";
@@ -80,6 +80,15 @@ export default function BoatCard({
   const [hours, setHours] = useState<number>(boat.minHours);
 
   const visibleImages = tab === "exterior" ? boat.exteriorImages : boat.interiorImages;
+  // Timestamp of the last manual arrow/swipe interaction — the auto-advance
+  // interval below used to keep ticking on its own 2s cadence regardless of
+  // manual navigation, so a click that landed just before the next tick got
+  // silently overwritten a moment later (read by Clarity as "first click
+  // lost"). Skipping ticks for 2s after a manual interaction gives every
+  // manual nav a full cycle to actually register before auto-advance resumes.
+  const lastManualInteraction = useRef(0);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+
   // Auto-advance through the visible gallery every 2 s. Manual arrow clicks
   // still take effect immediately because all images are stacked with opacity
   // (see render below) — the click is an instant local opacity toggle, not a
@@ -87,10 +96,37 @@ export default function BoatCard({
   useEffect(() => {
     if (visibleImages.length <= 1) return undefined;
     const id = window.setInterval(() => {
+      if (Date.now() - lastManualInteraction.current < 2000) return;
       setImageIdx((i) => (i + 1) % visibleImages.length);
     }, 2000);
     return () => window.clearInterval(id);
   }, [visibleImages.length, tab]);
+
+  const goToImage = (direction: 1 | -1) => {
+    lastManualInteraction.current = Date.now();
+    setImageIdx(
+      (i) => (i + direction + visibleImages.length) % visibleImages.length,
+    );
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const start = touchStart.current;
+    touchStart.current = null;
+    if (!start || visibleImages.length <= 1) return;
+    const touch = e.changedTouches[0];
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    // Require a clearly horizontal drag so vertical page-scroll swipes are
+    // left alone and don't accidentally flip the gallery.
+    if (Math.abs(deltaX) < 32 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+    e.preventDefault();
+    goToImage(deltaX < 0 ? 1 : -1);
+  };
 
   const hourOptions = useMemo(() => {
     if (!boat.priceByHours) return [];
@@ -119,7 +155,11 @@ export default function BoatCard({
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[var(--brand-primary)]/40">
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--surface-alt)]">
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--surface-alt)]"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <Link
           href={detailHref}
           className="absolute inset-0 z-0 block"
@@ -187,7 +227,7 @@ export default function BoatCard({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                setImageIdx((i) => (i - 1 + visibleImages.length) % visibleImages.length);
+                goToImage(-1);
               }}
               className="flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-base font-semibold leading-none text-white backdrop-blur-sm transition-colors hover:bg-black/75 active:bg-black/85 md:h-9 md:w-9 md:text-sm"
             >
@@ -203,7 +243,7 @@ export default function BoatCard({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                setImageIdx((i) => (i + 1) % visibleImages.length);
+                goToImage(1);
               }}
               className="flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-base font-semibold leading-none text-white backdrop-blur-sm transition-colors hover:bg-black/75 active:bg-black/85 md:h-9 md:w-9 md:text-sm"
             >
