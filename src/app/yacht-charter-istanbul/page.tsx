@@ -886,6 +886,81 @@ export default async function YachtCharterIstanbulPage({
             </div>
           </section>
 
+          {/* Rival price comparison (2026-07-14, operator-approved): highest-spend
+              Ads group ("Rivals Start at €499") makes this claim with no on-page
+              backup. Numbers below are the same sourced comparison already
+              published in the blog guide, not new figures. */}
+          <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--brand-primary)] mb-2">
+              How MerrySails Compares
+            </p>
+            <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
+              MerrySails vs. other private yacht charters in Istanbul
+            </h2>
+            <p className="max-w-3xl text-sm leading-relaxed text-[var(--text-muted)] mb-6">
+              For a comparable 2-hour, ~12-guest private charter, three named
+              Istanbul operators publish rates from €265 to €499 — 20% to 56%
+              above our €220 direct starting price. We checked each operator's
+              own published rates rather than estimating.
+            </p>
+            <ComparisonTable
+              caption="Private yacht charter price comparison — MerrySails vs. named Istanbul operators, 2-hour ~12-guest charter, verified June 2026"
+              ariaLabel="Yacht charter competitor price comparison"
+              headers={[
+                "Operator",
+                "Format",
+                "Verified price (2h, ~12 guests)",
+                "Position vs €220 direct",
+              ]}
+              rows={[
+                [
+                  "MerrySails (direct)",
+                  "Private whole-yacht",
+                  "from €220 per vessel",
+                  "Baseline — lowest direct price",
+                ],
+                [
+                  "SU Yachts",
+                  "Private whole-yacht",
+                  "~€265–€340",
+                  "20–35% higher",
+                ],
+                [
+                  "Lotus (15–17m)",
+                  "Private whole-yacht",
+                  "~€310–€400",
+                  "30–45% higher",
+                ],
+                [
+                  "bosphorusyacht \"Zoe\"",
+                  "Private sightseeing charter",
+                  "€499",
+                  "~56% higher",
+                ],
+                [
+                  "Istanbul Tour Studio",
+                  "Guided-luxury private",
+                  "~$650 (≈€560+)",
+                  "~60–66% higher",
+                ],
+              ]}
+            />
+            <p className="mt-3 text-xs text-[var(--text-muted)]">
+              Competitor prices verified June 2026 from each operator&apos;s
+              published rates: suyat.com.tr, lotusyat.com,
+              bosphorusyacht.com/prices, and istanbultourstudio.com. Ranges
+              reflect vessel size and season — always confirm the current
+              quote before booking. Full write-up:{" "}
+              <Link
+                href="/blog/best-bosphorus-sunset-cruise-companies-istanbul"
+                className="font-semibold text-[var(--brand-primary)] hover:underline"
+              >
+                Best Bosphorus Sunset Cruise Companies 2026
+              </Link>
+              .
+            </p>
+          </section>
+
           <section className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6 md:p-8">
             <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="rounded-2xl border border-[var(--brand-primary)]/10 bg-[var(--surface-alt)] p-5">
