@@ -267,7 +267,11 @@ export default function HeroSection({ locale = "en" }: Props) {
 
       <div className="relative z-10 container-main flex min-h-[36rem] flex-col pt-24 pb-6 sm:min-h-[82svh] sm:justify-center sm:pt-28 sm:pb-12">
         <div className="mx-auto w-full max-w-4xl">
-          <div className="hero-fade-in mx-auto max-w-3xl text-center">
+          {/* No entrance animation here — this block (H1 + subtext) is the
+              LCP element. Fading it in from opacity:0 pushed Lighthouse LCP
+              back ~1s+ since the paint isn't "complete" until the animation
+              settles (perf fix 2026-07-14). */}
+          <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-[1.6rem] font-bold leading-[1.1] text-white sm:text-5xl md:text-[4.2rem] md:leading-[0.98]">
               {s.headlineBase}
               {/* Clarity (2026-05-29) showed 32 dead-clicks on this gold
