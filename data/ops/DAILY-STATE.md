@@ -3,11 +3,42 @@
 **Karakter/Author byline:** Captain Ahmet (cruise/yacht) + Editorial (city guides) — NO cross-brand byline reuse with GoldenSunset
 **Conversion truth:** `Reservation` table (DB, MRY-* IDs); GA4 booking event = `purchase` (brand-profile "reservation_submit" adı aspirasyonel — gerçek event `purchase`)
 **Rakipler:** GetYourGuide, Viator/TripAdvisor, bosphorustour.com; sister GoldenSunset (differentiation: tier + demographic)
-**Son güncelleme:** 2026-07-13 (mode=daily — 🎉 **BING SUPPRESSION RECOVERY TEYİT**: canlı API impr 07-09 **6/clk1** + 07-10 **21/clk2** → kapatma eşiği (imp>5 VE clk>0) 2 gün üst üste aşıldı, ~30 günlük sıfır-seri KIRILDI; SUPPRESSION-WATCH satırı KAPATILDI. /reservation dead-click **88→7/9sess** (FV-1 tentative iyileşme) + /yacht **55→1/39sess** (FV-9 çözüldü). E4 FREEZE temkinen 1-2 hafta korunuyor.)
+**Son güncelleme:** 2026-07-15 (mode=daily — R-block TEMİZ: GSC 7d WoW clicks **+3.0%** (137 vs 133) → 07-11'in -13.8% soft-watch'ı RESOLVED; 28g **377c/44.390i/pos7.9/strike8** (355→377 ↑). Bing suppression RECOVERED (watch kapalı). **FV-1 /reservation dead-click hâlâ %36 (4/11 sess) — ÇÖZÜLMEDİ, session-recording teşhis şart.** YENİ: /yacht.../boutique-yacht-12 %22 dead-click (2/9). Yacht CRO rival-price bloğu (07-14 commit) CANLI. E4 FREEZE korunuyor.)
 
 ---
 
-## 📍 NEREDEYIZ — bugünkü snapshot (her run üstten güncellenir)
+## 📍 NEREDEYIZ — 2026-07-15 snapshot (fresh GSC 7d/28g + Clarity 3g + auto-submit)
+> A1 yine chrome-cache-miss (a1-cache-2026-07-15 merrysails kaydı yok) → indexed carry 06-30, R5 baseline. GSC 7d/28g + query/page = merkezi token CANLI çekildi. Clarity 3g CANLI.
+
+| Metrik | Bugün (2026-07-15) | 7g/önceki | Trend |
+|---|---|---|---|
+| GSC 28g (merkezi cache) | **377c / 44.390i / pos 7.9** | 355c/42.723i (07-13) | strike:8 · ↑ toparlıyor |
+| GSC 7d (CANLI, 07-06..07-13) | **137c / 16.038i / CTR 0.85% / pos 7.39** | 133c/14.116i (prev-7d) | ✅ **WoW clicks +3.0%, impr +13.6%, pos↑** |
+| Google indexed (A1 CACHE-MISS→carry) | 342 (carry 06-30) | 342 | ↔ N/A(chrome-cache-miss) |
+| Google NOT-indexed (carry 06-30) | CNI 1.553 · disc 82 · 404 32 · noindex 5 · redirect 14(NR-9) | aynı | ↔ index-rate 16.9% <%50 (A8 P1) |
+| Bing impressions (suppression) | **RECOVERED** (07-10 imp21/clk2; watch KAPALI) | 0-seri kırıldı | 🟢 |
+| Bing InIndex / Yandex searchable | ~478 / 336 (carry) | 478 / 336 | ↔ |
+| GSC sitemap | lastDownloaded 07-10, 0 err/0 warn, 393 web+196 img | 07-10 | ✅ sözleşme-temiz |
+| Rich-results (money, carry Insp 07-11) | FAIL 2 (/dinner stale + /tr/bosphorus locale) · /yacht+/sunset PASS | 2 FAIL | ↔ recrawl bekliyor |
+| Clarity dead-click % (site, from URL split) | rage **0%** · JS-err **0%** ✅ | – | temiz |
+| **/reservation dead-click (3g)** | **%36.36 (4/11 sess) — AÇIK** ⚠️ | 7/9 (07-13) | 🔴 FV-1 ÇÖZÜLMEDİ, session-recording |
+| /yacht-charter-istanbul dead-click (3g) | **3.7% (1/27)** ✅ | 1/39 (07-13) | ✅ FV-9 holds; quickback 18.5% izle |
+| **YENİ: /yacht.../boutique-yacht-12** | **%22 dead-click (2/9)** | – | ⚠️ yeni CRO sinyali (kart-clickability) |
+| GA4 (merkezi cache ~28g) | **2.607 sess / 2.242 users / 1.453 keyEvents** · google | 2.467/2.115/1.388 (07-13) | ✅ ↑ CANLI (SA 534226524) |
+| AI referral (GA4 ~28g) | **chatgpt 307 · gemini 6 · perplexity 2** = ~315 AI sess | 304/6/2 (07-13) | ✅ güçlü, chatgpt ↑ |
+| Rezervasyon (7g, DB carry) | 18 (15 aktif €2.709 net) | 18 | ↔ (fresh DB pull yok) |
+| Revenue-relevance (top-page 7g click) | commercial ~%45-48 click · money-page-share DÜŞÜK (impr-bazlı %90 info) | %16.4 (07-13 impr-w.) | ⚠️ intent-bridge P1 |
+| Core-SEO scorecard | 12 pass / 2 fail / 22 na(weekly) = %85.7 | %85.7 | fail: index-rate + rich×2 |
+
+## 📊 GA4 + CLARITY BUGÜN (2026-07-15) — sayılı mini-özet
+1. **GA4 (merkezi cache ~28g):** 2.607 session / 2.242 users / 1.453 key-events · source=google dominant. AI-referral: **chatgpt 307** (↑304'ten), gemini 6, perplexity 2 = ~315 AI session (~%12) — organik AI kanalı güçlü, chatgpt ezici.
+2. **GSC 7d CANLI:** 137c/16.038i, WoW clicks **+3.0%** (07-11 -13.8% soft-watch RESOLVED = small-N noise'du), impr +13.6%, pos 7.56→7.39 iyileşti.
+3. **Clarity (3g money-page split):** rage **0%** ✅ · JS-err **0%** ✅ tüm sayfalarda. **/reservation %36.36 dead-click (4/11)** ⚠️ · /yacht 3.7% (1/27, FV-9 holds ama quickback 18.5%) · **/yacht.../boutique-yacht-12 %22 (2/9) yeni** · /fr/reservation %50 (1/2 low-N, aynı rez-pattern).
+4. **Yorum:** Trafik+AI+booking sağlıklı/toparlıyor; iki money-page dead-click açık: /reservation (FV-1 çözülmedi, kart/masked-price click yutuyor) + yeni yacht-detail sub-page. İkisi de aynı "kart tam clickable değil" pattern şüphesi → tek kod-session.
+
+---
+
+## 📍 NEREDEYIZ — 2026-07-13 snapshot (arşiv)
 > Not: A1 yine cache-miss (a1-cache-2026-07-13 merrysails kaydı yok) → indexed carry 06-30 snapshot, R5 delta hesaplanamaz (baseline). GSC/GA4 = merkezi cache 28g (fresh 7d cache'te yok → carry).
 | Metrik | Bugün (2026-07-13) | 7g/önceki | 30g | Trend |
 |---|---|---|---|---|
@@ -56,7 +87,18 @@
 **C1-light AI-readiness (proxy):** robots/api-catalog/llms.txt/Accept:markdown 200 (carry). Gerçek AI-citation kanıtı = GA4 AI-referral (chatgpt 282, güçlü).
 **Repo notu:** branch `main`; title/H1 churn YOK (E4 FREEZE korunuyor). Prod güncel, origin senkron (deploy-gap 0). Bugünkü tek commit = FV-5 locale-remainder schema fallback.
 
-## 🎯 AÇIK FIRSATLAR (öncelik sırası)
+## 🎯 AÇIK FIRSATLAR — 2026-07-15 (öncelik + yaşam-döngüsü)
+1. **[AÇIK-6g · P1] A8 crawl-budget audit** — 1.553 CNI, index-rate 16.9% (<%50). Weekly, 07-12 Pazar KAÇTI → hâlâ bekliyor. Sınıf-kırılımı + 0-imp ölü ağırlık 410-prune + sitemap senkron. Portföy darboğazı = index-RATE.
+2. **[AÇIK-Ng · P1] B13/B11 intent-bridge (money-first)** — vs-ferry 2.215i/10c (pos5.7) + prices-2026 1.400i/5c + tipping 1.352i/3c = yüksek-impr info sayfalar ~0.4% CTR, PARA KAZANDIRMIYOR. DENE: 134-167 kelime commercial answer-block + reservation CTA + BlogToPillarCta→pillar. Body-only (title FREEZE E4).
+3. **[AÇIK-Ng · P1] B4 kanibalizasyon (COMMERCIAL)** — (a) "bosphorus cruise prices": /blog/bosphorus-cruise-prices-2026 (1.400i) + /bosphorus-cruise-prices-istanbul-2026 (890i commercial pillar) ÇAKIŞIYOR → internal-link blog→pillar + canonical netliği; (b) TR dinner: /tr/kabatas-dinner-cruise (pos9.2, 313i) + TR dinner pillar. Title DOKUNMA (E4), sadece internal-link yönü.
+4. **[AÇIK · P1] FV-1 /reservation dead-click ÇÖZÜLMEDİ** — %36.36 (4/11 sess), rage 0. Kart/masked-price container click yutuyor. Session-recording teşhis + package kart full-clickable `<label>` + masked-price `pointer-events:none`. Kod-session (escalated).
+5. **[YENİ · P1] /yacht.../boutique-yacht-12 %22 dead-click (2/9)** — yacht-detail sub-page, muhtemelen FV-1 ile aynı kart-clickability pattern → tek kod-session'da beraber çöz.
+6. **[AÇIK · P1] B5 rich-results ×2** — /dinner (stale-crawl 07-03) + /tr/bosphorus (locale-remainder). chrome_queue: request_index /dinner + validation_restart "Review snippets". Recrawl bekliyor.
+7. **[AÇIK · P2] B2 striking** — /bosphorus-cruise pos4.6 (307i) top-3'e ÇOK yakın (commercial pillar) → internal-link güçlendir + freshness (title DEĞİL). + /bosphorus-cruise-prices-istanbul pos7.5 body-derinlik.
+8. **[AÇIK · P2] Yandex Business NOT_IN_SPRAV** — operatör ~10 dk.
+9. **[İZLE · P2] /yacht quickback 18.5% (5/27)** — yeni CRO price-block sonrası bounce; price-shock mı? 1 koşu daha izle.
+
+## 🎯 AÇIK FIRSATLAR (arşiv 2026-07-13)
 1. **[YAPILDI 🎉 · R1 RECOVERY] Bing suppression KIRILDI.** Canlı API: 07-09 imp6/clk1 + 07-10 imp21/clk2 → kapatma eşiği (imp>5 VE clk>0) 2g üst üste aşıldı, ~30 günlük sıfır-seri bitti. SUPPRESSION-WATCH satırı KAPATILDI. **E4 FREEZE temkinen 1-2 hafta daha korunuyor** (recovery henüz 2 günlük — premature title/meta churn = re-trigger riski).
 2. **[YAPILDI ✅ · FV-9] /yacht-charter-istanbul dead-click ÇÖZÜLDÜ** — 55/414 (07-11) → 1/39 (07-13). Post-redesign element-fix tuttu. Kapatıldı.
 3. **[AÇIK · P1 · D5/FV-1 — tentative iyileşme] /reservation dead-click 88→7/9sess.** Per-session 2.75→0.78 düştü (iyi sinyal) AMA N=9 hafta-sonu düşük hacim → KAPATMA ERTELE, 1 koşu daha izle. İyileşmezse session-recording ile yeniden teşhis. Kod-session.

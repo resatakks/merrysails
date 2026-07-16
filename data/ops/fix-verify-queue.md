@@ -1,5 +1,7 @@
 # Fix-Verify Queue (MerrySails)
-**Son güncelleme:** 2026-07-13
+**Son güncelleme:** 2026-07-15
+
+> **🔴 2026-07-15 FV-1 GERİ AÇILDI (net):** /reservation dead-click Clarity 3g **%36.36 (4/11 sess)** — 07-13'teki 7/9 (low-N hafta-sonu) düşük hacimdi; taze veri hâlâ YÜKSEK. Fix `c98ca49`/`b169c81` gerçek dead element'i hedeflemedi (07-11 verify de başarısızdı). **Session-recording ile teşhis + package kart full-clickable `<label>` + masked-price container `pointer-events:none` = kod-session (P1).** Rage 0%, JS-err 0%. **🆕 YENİ SİNYAL FV-10:** /yacht-charter-istanbul/boutique-yacht-12 dead-click **%22.22 (2/9)** — muhtemelen FV-1 ile AYNI "kart tam clickable değil" pattern → tek kod-session'da beraber çöz. **FV-9 /yacht holds** (3.7%, 1/27; quickback 18.5% izle — yeni CRO price-block sonrası bounce, price-shock mı). R-block TEMİZ: GSC 7d WoW clicks +3.0% (R2 soft-watch resolved), Bing RECOVERED. Yacht CRO rival-price bloğu (07-14 85b7e2e) prod CANLI.
 
 > **🎉 2026-07-13 STATUS FLIPS:** **FV-4 → ✅ RECOVERED** (Bing suppression: canlı API 07-09 imp6/clk1 + 07-10 imp21/clk2 → kapatma eşiği 2g aşıldı, ~30g sıfır-seri kırıldı, SUPPRESSION-WATCH kapatıldı; E4 FREEZE 1-2 hafta daha temkinen korunuyor). **FV-9 → ✅ ÇÖZÜLDÜ** (/yacht-charter-istanbul dead-click 55→1/39sess). **FV-1 → 🟡 tentative-iyileşme** (/reservation 88→7/9sess, per-sess 2.75→0.78; N=9 hafta-sonu düşük → 1 koşu daha izle, kapatma ertelendi). Core-SEO scorecard oluşturuldu (%85.7, fail: index_coverage 16.9% + rich-results×2).
 

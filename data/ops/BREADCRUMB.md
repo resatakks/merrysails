@@ -1,27 +1,27 @@
 # MerrySails — BREADCRUMB (fresh-session onboarding izi)
-**Güncelleme:** 2026-07-13 (mode=daily)
+**Güncelleme:** 2026-07-15 (mode=daily)
 
-## 📅 2026-07-13 VERİ
-- **GSC 28g:** 355 clicks / 42.723 impr / pos 8.0 / strike:6. A1 cache-miss → Google indexed 342 (carry 06-30), index-rate 16.9%.
-- **Engine sağlık:** Google ✅ (342 indexed) · **Bing 🎉 RECOVERY** (07-09 imp6/clk1, 07-10 imp21/clk2 — ~30g suppression kırıldı) · Yandex ✅ (336 searchable) · AI ✅ (GA4 chatgpt 304, gemini 6, perplexity 2).
-- **Rez (DB carry):** 18 (15 aktif, €2.709 net, %16.7 iptal). AI-referral güçlü.
-- **Clarity:** dead 11.63% / rage 0% / JS 0%. /reservation 7 dead-click/9sess (↓88'den), /yacht 1/39 (çözüldü).
+## 📅 2026-07-15 VERİ
+- **GSC:** 28g 377c / 44.390i / pos7.9 / strike8 (↑ 355'ten). 7d CANLI 137c/16.038i/pos7.39 — WoW clicks **+3.0%**.
+- **Index:** Google 342 (carry, index-rate 16.9% ⚠️) · Bing InIndex ~478 · Yandex 336. A1 chrome-cache-miss (carry 06-30).
+- **Engine sağlık:** Google ✅ toparlıyor · **Bing ✅ RECOVERED** (suppression watch KAPALI) · Yandex ✅ stabil · AI (chatgpt 307 GA4-referral) ✅ güçlü.
+- **Rez (7g DB carry):** 18 (15 aktif €2.709 net). GA4 28g: 2.607 sess / 1.453 keyEvents.
+- **Rich-results money:** 2 FAIL (/dinner stale + /tr/bosphorus locale); /yacht+/sunset PASS.
 
 ## 📈 GEÇMİŞ (7g/30g trend)
-- GSC 28g hafif yumuşama (359→355c) ama pozisyon iyi (7.2→8.0 band). 7g WoW click -13.8% soft-watch (small-N, impr artarken CTR düşük — long-tail dilüsyon).
-- **Bing:** 06-09'dan 30 gün impression=0 (E4 title-churn suppression, 4-10 Haz 53-sayfa sweep) → **07-09/07-10 recovery**. Algoritmik pencere (07-07→08-04) alt-sınırında iyileşti.
-- index-rate ~30 gündür %16.9 platoda (1.553 CNI). Rich-results 4→2 FAIL (yacht+sunset validated).
+- 28g clicks 355 (07-13) → 377 (07-15), impr 42.7k → 44.4k — Bing recovery + core-update toparlaması sonrası yukarı ivme. 07-11'deki -13.8% WoW korkusu small-N noise'du, +3.0%'a döndü. Yaz sezonu talebi (Trends: bosphorus cruise MoM +3, dinner cruise 3→20 sıçrama) tailwind.
 
 ## ✅ NE YAPTIK (bugün/son koşular)
-- **07-13:** SUPPRESSION-WATCH merrysails satırı KAPATILDI (recovery). Auto-submit 8 URL (Bing/Yandex/IndexNow 200/202). FV-9 /yacht dead-click çözüldü teyit. Core-SEO scorecard oluşturuldu (%85.7).
-- **07-11:** FV-5 schema fix (2/4 rich=PASS validated Google-side), /tr/bosphorus-cruise re-indexed (FV-8), r33 lint kuralı.
-- **07-10:** deploy dalgası (FV-5 f875d43, SF-1/SF-2 301 map, FV-1 reservation package-card).
+- 07-14: yacht CRO rival-price bloğu (85b7e2e) + breadcrumb-mute (02a1e47) + CWV perf (39b8699) deploy — prod'da CANLI (curl doğrulandı).
+- 07-13: Bing suppression RECOVERY teyit, SUPPRESSION-WATCH kapatıldı. FV-9 /yacht dead-click çözüldü.
+- 07-15: auto-submit 13 URL (IndexNow 200/202, Bing batch 200, Yandex 13/13 202). GSC 7d/28g CANLI çekildi, R2 soft-watch resolved.
 
 ## ⏳ BEKLEYEN (açık P0/task + sonraki iş)
-1. **A8 crawl-budget audit** (P1, weekly 07-12 kaçtı) — 1.553 CNI sınıf-kırılımı + prune. Sonraki iş.
-2. **FV-1 /reservation dead-click** izle (88→7, N=9 low → 1 koşu daha).
-3. **B13/intent-bridge** commercial %16.4 → body-only bridge (vs-ferry, prices sayfaları).
-4. **B4 konsolidasyon** 2 commercial kanibalizasyon (TR dinner+kabatas; boat-rental×2).
-5. **B5 rich-results ×2** recrawl (chrome_queue: request_index /dinner + validation_restart "Review snippets").
-6. **Bing recovery stabilizasyon izle** — E4 FREEZE 1-2 hafta daha; tekrar 0'a düşerse WATCH yeniden aç.
-7. Operatör: Yandex Business kaydı (NOT_IN_SPRAV, ~10 dk).
+1. **A8 crawl-budget audit** (weekly, 07-12 kaçtı) — 1.553 CNI kırılımı + 410-prune. Portföy darboğazı.
+2. **FV-1 /reservation dead-click %36 (4/11) — ÇÖZÜLMEDİ** → session-recording teşhis + kod fix (kart full-clickable). YENİ: boutique-yacht-12 %22 aynı pattern.
+3. **B13/B11 intent-bridge** — vs-ferry + prices-2026 blogları (body-only, title freeze).
+4. **B4 kanibalizasyon** — prices blog↔pillar + TR dinner (internal-link yönü).
+5. **B5 rich-results ×2** — chrome_queue: request_index /dinner + validation_restart "Review snippets".
+6. **Yandex Business NOT_IN_SPRAV** (operatör ~10 dk).
+- **inspect-queue:** chrome_queue = request_index /istanbul-dinner-cruise + validation_restart Review-snippets. Doğrulanmış-unindexed money page YOK.
+- **fix-verify-queue:** FV-1 (open, escalated), FV-5 (2/4 validated, 2 recrawl bekliyor), FV-2/FV-3 (dead-click kod pending).

@@ -1,5 +1,7 @@
 # GSC URL Inspect — Priority Queue (MerrySails)
-**Son güncelleme:** 2026-07-13 (chrome_queue carry; 🎉 Bing suppression RECOVERY teyit — auto-submit sürüyor) · **API kotası:** 2000/gün/property (bol) · **Manuel Request-Index kotası:** ~1-3/gün (kıt)
+**Son güncelleme:** 2026-07-15 (chrome_queue carry; Bing RECOVERED, auto-submit 13 URL sürüyor; GSC 7d WoW +3.0%) · **API kotası:** 2000/gün/property (bol) · **Manuel Request-Index kotası:** ~1-3/gün (kıt)
+
+> **2026-07-15 durum:** chrome_queue DEĞİŞMEDİ (carry): (1) request_index /istanbul-dinner-cruise (rich FAIL, stale-crawl 07-03, schema fix canlı) + (2) validation_restart "Review snippets" (FV-5 /yacht+/sunset PASS, kalan 2 recrawl bekliyor). Doğrulanmış-unindexed money page YOK. Auto-submit 13 priority URL (money pillars + striking + intent-bridge blog hedefleri) → IndexNow/Bing/Yandex 200/202. Striking-distance izle: /bosphorus-cruise pos4.6 (top-3'e çok yakın, internal-link push).
 
 > **KURAL:** Google indexing stratejisi = güçlü internal link + sıfır teknik hata + geçerli rich results. Manuel Request-Index SADECE doğrulanmış-unindexed VEYA büyük-değişiklik-görmüş money page (max 1-3/gün). Index-durum doğrulaması Inspection API ile otomatik. Tıkları **post-sweep TEK SERİ Chrome fazı** atar (property-guard) — sweep agent'ı basmaz.
 
