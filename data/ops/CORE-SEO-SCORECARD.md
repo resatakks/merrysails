@@ -1,8 +1,9 @@
 # MerrySails — CORE-SEO SCORECARD
-**Tarih:** 2026-07-13 (mode=daily) · Kaynak: CORE-SEO-CHECKLIST.json (36 item) · Mature marka = daily-item her koşu + weekly-item weekly koşuda
-**Skor (daily-14 subset):** 12 pass / 2 fail / 22 na(weekly) = **%85.7** · Money pages CANLIDA curl+grep doğrulandı
+**Tarih:** 2026-07-17 (mode=daily) · Kaynak: CORE-SEO-CHECKLIST.json (36 item) · Mature marka = daily-item her koşu + weekly-item weekly koşuda
+**Skor (daily-14 subset):** 12 pass / 2 fail / 22 na(weekly) = **%85.7** (↔ 07-13) · Money pages CANLIDA curl+grep doğrulandı
 
-> Not: RAMP marka değil (mature) → bugün daily-cadence 14 item puanlandı; weekly-cadence 22 item = na(weekly, next Pazar). FREEZE aktif (Bing E4) → title/meta/h1 FAIL olsa RAPORLA-ERTELE; bugün hepsi pass, ertelenen yok.
+> Not: RAMP marka değil (mature) → daily-cadence 14 item puanlandı; weekly-cadence 22 item = na(weekly, next Pazar 07-19). FREEZE aktif (Bing E4) → title/meta/h1 FAIL olsa RAPORLA-ERTELE; bugün hepsi pass, ertelenen yok.
+> **2026-07-17 DELTA:** index_coverage FAIL DEVAM (index-rate 16.9%→**15.6%**, FRESH A1 taze sayı — hafif düştü, method-baseline). schema/rich our-side artık CANLI **CLEAN** (r28 0-ihlal, itemReviewed @id live, tüm money 1 H1) AMA Google-side 2 recrawl bekliyor + **bugün Inspection verify token-EXPIRED** → item hâlâ "fail" (Google onayı gelmedi). Değişen puan yok.
 
 ## A. Crawl & Index
 | id | cadence | sonuç | not |
@@ -11,7 +12,7 @@
 | meta_robots | daily | ✅ pass | /dinner + /yacht curl: noindex YOK |
 | xml_sitemap | daily | ✅ pass | lastDownloaded 07-10, 0 err/0 warn, 393 web+196 image |
 | sitemap_noindex_sync | daily | ✅ pass | NR-9 korunuyor; noindex/410 sitemap'te değil |
-| index_coverage | daily | ❌ **fail** | index-rate **16.9%** (<%50) — 1.553 CNI, A8 audit P1 (ref FV-7) |
+| index_coverage | daily | ❌ **fail** | index-rate **15.6%** (<%50) — 1.720 CNI (FRESH), A8 audit P1 (ref FV-7) |
 | html_sitemap | weekly | na | – |
 | crawl_budget_softarly | weekly | na | – |
 | crawl_stats | weekly | na | Bing crawl temiz (canlı: 2xx 102, 5xx 0) |

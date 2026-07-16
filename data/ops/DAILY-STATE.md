@@ -3,11 +3,43 @@
 **Karakter/Author byline:** Captain Ahmet (cruise/yacht) + Editorial (city guides) — NO cross-brand byline reuse with GoldenSunset
 **Conversion truth:** `Reservation` table (DB, MRY-* IDs); GA4 booking event = `purchase` (brand-profile "reservation_submit" adı aspirasyonel — gerçek event `purchase`)
 **Rakipler:** GetYourGuide, Viator/TripAdvisor, bosphorustour.com; sister GoldenSunset (differentiation: tier + demographic)
-**Son güncelleme:** 2026-07-15 (mode=daily — R-block TEMİZ: GSC 7d WoW clicks **+3.0%** (137 vs 133) → 07-11'in -13.8% soft-watch'ı RESOLVED; 28g **377c/44.390i/pos7.9/strike8** (355→377 ↑). Bing suppression RECOVERED (watch kapalı). **FV-1 /reservation dead-click hâlâ %36 (4/11 sess) — ÇÖZÜLMEDİ, session-recording teşhis şart.** YENİ: /yacht.../boutique-yacht-12 %22 dead-click (2/9). Yacht CRO rival-price bloğu (07-14 commit) CANLI. E4 FREEZE korunuyor.)
+**Son güncelleme:** 2026-07-17 (mode=daily — GSC 28g **392c/45.475i/pos7.9/strike9** (377→392, +4%, devam-toparlıyor; **GSC 7d CANLI N/A = OAuth token EXPIRED**). Bing suppression **RECOVERED-SUSTAINED** (07-13 imp42, baseline-üstü). **FV-1 /reservation dead-click ÇÖZÜLÜYOR: %36→%6.9 (29 sess)** — muhtemel sebep commit fd88234 booking-fix. A1 FRESH page-indexing-ui (06-30'dan beri ilk): CNI 1720, index-rate %15.6. FRESH DB rez: 16 (10 aktif, **cancel %37.5** soft-watch). E4 FREEZE korunuyor.)
 
 ---
 
-## 📍 NEREDEYIZ — 2026-07-15 snapshot (fresh GSC 7d/28g + Clarity 3g + auto-submit)
+## 📍 NEREDEYIZ — 2026-07-17 snapshot (A1 FRESH page-indexing-ui + FRESH DB rez + Bing canlı + Clarity 3g + auto-submit)
+> **A1 BUGÜN TAZE** (page-indexing-ui, 06-30'dan beri ilk) → dünkü kayıt cache-miss'ti → **method-değişimi BASELINE** (R5 TETİKLENMEZ; CNI 1720 vs carry 1553 = gerçek taze sayı, regresyon değil). **GSC 7d/query/page/striking = N/A(gsc-token-EXPIRED)** merkezi+proje → B1 28g merkezi cache'ten (çalışıyor); B2/B11/B4-lite/A7-inspection CARRY. GA4 merkezi cache. Clarity 3g + Bing GetRankAndTrafficStats + DB rez CANLI.
+
+| Metrik | Bugün (2026-07-17) | 7g/önceki (07-15) | Trend |
+|---|---|---|---|
+| GSC 28g (merkezi cache) | **392c / 45.475i / CTR 0.9% / pos 7.9** | 377c/44.390i (07-15) | strike:9 · ✅ +15c (+4.0%) devam |
+| GSC 7d (CANLI) | **N/A(gsc-token-EXPIRED — merkezi+proje)** | 137c/16.038i (07-15) | ⚠️ operatör refresh gerek |
+| Google indexed (A1 **FRESH** page-indexing-ui) | **341** | 342 carry | ↔ ilk taze (06-30'dan beri) |
+| Google NOT-indexed (FRESH) | CNI **1720** · disc 64 · 404 36 · noindex 6 · redirect 16(NR-9) · alt-canon 0 | carry 1553/82/32/5/14/0 | BASELINE (method değişti, R5 YOK) |
+| index-rate | **15.6%** (341/2181, <%50) | 16.9% | ⚠️ A8 prune P1 (taze sayı daha büyük) |
+| Bing impressions (suppression) | **RECOVERED-SUSTAINED** — seri 6/21/18/19/**42** (07-09→07-13), baseline-ÜSTÜ | recovered | 🟢 gerçek toparlanma, watch KAPALI |
+| Bing InIndex / Yandex searchable | ~478 / 336 (carry) | aynı | ↔ |
+| GSC sitemap | 393 web + 196 img · 0 err (carry) · lastDownloaded 07-10 (**7g — stale eşiğinde**) | 07-10 | ⚠️ soft: 7g'de yenilenmezse "taranmıyor" |
+| Rich-results money (our-side CANLI denetim) | **CLEAN** — r28 **0 ihlal**, tüm money **1 H1**, itemReviewed @id live | 2 fail | ✅ Google-side 2 pending (token-blocked verify) |
+| Clarity rage / JS-err (site 3g) | **0% / 0%** ✅ | 0%/0% | ✅ temiz |
+| **/reservation dead-click (3g)** | **6.9% (29 sess)** ✅ | %36.36 (4/11) | 🟢 **FV-1 RESOLVING 36→6.9 (N sağlam)** |
+| /yacht-charter-istanbul dead-click (3g) | **6.25% (48 sess)** ✅ | 3.7% (1/27) | ✅ band-içi holds |
+| **boutique-yacht-12** | **temizlendi — N=1 noise'du (taze veride sinyal yok)** | %22 (2/9) | ✅ sinyal düştü |
+| Home / vs-ferry dead-click (3g) | 19.23% / 20% | – | ⚠️ CRO teşhis (entry-point) |
+| GA4 (merkezi cache ~28g) | **2.637 sess / 2.259 users / 1.491 keyEvents** · google | 2.607/2.242/1.453 | ✅ ↑ CANLI (SA 534226524) |
+| AI referral (GA4 ~28g) | **chatgpt 317 · gemini 8 · perplexity 2** = ~327 AI sess | 307/6/2 (07-15) | ✅ güçlü, chatgpt ↑ |
+| Rezervasyon (7g, **FRESH DB**) | **16** → 10 aktif (3 conf + 7 new) · 6 iptal · **cancel %37.5** · ~€1.160 net-aktif | 18 carry (15akt/€2709) | ⚠️ cancel-rate DOUBLED (soft-watch) |
+| Revenue-relevance (carry, B11 token-blocked) | commercial ~%47 · money-page-share DÜŞÜK | ~%47 (07-15) | ⚠️ intent-bridge P1 |
+| Core-SEO scorecard | 12 pass / 2 fail / 22 na(weekly) = %85.7 | %85.7 | fail: index-rate + rich Google-side×2 |
+
+## 📊 GA4 + CLARITY BUGÜN (2026-07-17) — sayılı mini-özet
+1. **GA4 (merkezi cache ~28g):** 2.637 session / 2.259 users / 1.491 key-events · source=google dominant. AI-referral: **chatgpt 317** (↑307'den), gemini 8 (↑6), perplexity 2 = ~327 AI session (~%12) — organik AI kanalı güçlü ve büyüyor, chatgpt ezici.
+2. **GSC 28g CANLI-cache:** 392c/45.475i/pos7.9, strike 8→9, +15c/+4.0% vs 07-15. Devam eden toparlanma (355→377→392). **GSC 7d fresh delta = N/A (OAuth token expired).**
+3. **Clarity (3g money-page split):** rage **0%** ✅ · JS-err **0%** ✅ tüm sayfalarda. **/reservation 6.9% dead-click (29 sess)** — 07-15'teki %36.36'dan (11 sess) net düşüş, FV-1 RESOLVING. /yacht 6.25% (48 sess, holds). boutique-yacht-12 sinyali temizlendi (N=1 noise'du). home 19.23% + vs-ferry 20% (CRO teşhis adayı).
+4. **Rez (FRESH DB 7g):** 16 total → 10 aktif · 6 iptal (**cancel %37.5** vs carry %16.7 = doubled) · ~€1.160 net-aktif. Baskın tur bosphorus-sunset (€34-150). 3 yacht iptali (€297/€220/€320) hepsi 07-14 CRO-block'tan ÖNCE = price-block DEĞİL. Sadece 1 gclid (Ads etkisi minimal).
+5. **Yorum:** Trafik+AI+index toparlanıyor, Bing recovery sustained, FV-1 çözülüyor — sağlam gün. İki soft-watch: rez cancel-rate doubling (baseline stale, yarın true prev-7d) + GSC token expired (delta-detay bloke). "Her şey iyi" değil: home/vs-ferry dead-click CRO fırsatı açık.
+
+## 📍 NEREDEYIZ — 2026-07-15 snapshot (arşiv)
 > A1 yine chrome-cache-miss (a1-cache-2026-07-15 merrysails kaydı yok) → indexed carry 06-30, R5 baseline. GSC 7d/28g + query/page = merkezi token CANLI çekildi. Clarity 3g CANLI.
 
 | Metrik | Bugün (2026-07-15) | 7g/önceki | Trend |
@@ -87,7 +119,21 @@
 **C1-light AI-readiness (proxy):** robots/api-catalog/llms.txt/Accept:markdown 200 (carry). Gerçek AI-citation kanıtı = GA4 AI-referral (chatgpt 282, güçlü).
 **Repo notu:** branch `main`; title/H1 churn YOK (E4 FREEZE korunuyor). Prod güncel, origin senkron (deploy-gap 0). Bugünkü tek commit = FV-5 locale-remainder schema fallback.
 
-## 🎯 AÇIK FIRSATLAR — 2026-07-15 (öncelik + yaşam-döngüsü)
+## 🎯 AÇIK FIRSATLAR — 2026-07-17 (öncelik + yaşam-döngüsü)
+1. **[AÇIK-8g · P1] A8 crawl-budget audit** — FRESH A1: CNI **1720** (carry 1553'ten büyük, gerçek taze sayı), index-rate **15.6%** (<%50). Weekly 07-12+07-13 KAÇTI → 2 hafta gecikti. Sınıf-kırılımı + 0-imp ölü ağırlık 410-prune + sitemap senkron. **Portföy darboğazı = index-RATE.**
+2. **[YENİ · P1] GSC OAuth token EXPIRED** — hem merkezi (`/Users/resat/mcp-gsc/token.json`) hem proje (`.env.local` GSC_*) `invalid_grant`. A7 inspection + B2 striking + B11 intent-mix + B4-lite delta HEPSİ bloke. 28g merkezi cache kurtardı (B1). Operatör: `node scripts/gsc-oauth-refresh.mjs` veya re-auth.
+3. **[YENİ · P1 · İZLE] Rez cancel-rate %37.5** (6/16 vs carry %16.7 = DOUBLED). Net-aktif €1.160 vs €2.709 stale-carry. AMA: 7 "new" pipeline'da + baseline stale (true prev-7d yok) → yarın FRESH prev-7d ile karşılaştır. 3 yacht iptali hepsi 07-14 CRO-block ÖNCESİ (price-block değil). Erken panik YOK, izle.
+4. **[YAPILDI 🎉 · FV-1] /reservation dead-click ÇÖZÜLÜYOR** — %36.36(11) → **%6.9(29 sess)**. Muhtemel sebep: commit fd88234 "Event Yacht 90 doomed reservation flow" fix + önceki CRO (breadcrumb-mute + package-card). Yarın holds ederse FV-1 KAPAT.
+5. **[AÇIK-Ng · P1] B13/B11 intent-bridge (money-first, carry)** — vs-ferry 2.215i + prices-2026 1.400i yüksek-impr ~0-click, PARA KAZANDIRMIYOR. 134-167 kelime commercial answer-block + reservation CTA + BlogToPillarCta→pillar. Body-only (title FREEZE E4). (fresh B11 token-blocked)
+6. **[AÇIK-Ng · P1] B4 kanibalizasyon (COMMERCIAL, carry)** — (a) blog prices-2026 + commercial prices pillar; (b) TR kabatas-dinner + TR dinner pillar. Internal-link yönü + canonical netliği. Title DOKUNMA (E4).
+7. **[AÇIK · P1] B5 rich Google-side ×2** — /dinner (stale-crawl 07-03) + /tr/bosphorus (locale). Our-side CANLI CLEAN (r28 0-ihlal, itemReviewed live). chrome_queue: request_index /dinner + validation_restart. Recrawl bekliyor (token-expired = Inspection verify bugün yapılamadı).
+8. **[YENİ · P2 · CRO] Home 19.23% + vs-ferry 20% dead-click** — entry-point'te non-interactive element tıklanıyor (hero/badge/trust). Session-recording teşhis → affordance fix veya clickable yap.
+9. **[AÇIK · P2] B2 striking (carry)** — /bosphorus-cruise pos4.6 top-3'e çok yakın → internal-link push (title DEĞİL). (fresh striking token-blocked)
+10. **[AÇIK · P2] Yandex Business NOT_IN_SPRAV** — operatör ~10 dk.
+11. **[İZLE · P2] /yacht quickback 18.5%** (07-15) — yeni CRO price-block sonrası bounce; price-shock mı? İzle.
+12. **[AÇIK-sezon · P2 · İÇERİK] Yaz trend** (Trends TR bosphorus-cruise MoM+21% rising "tours istanbul"+90% / boğaz-turu rising "şehir hatları bilet al"+200%) → sezon-içi intent-bridge + answer-block refresh (İÇERİK, Ads DEĞİL).
+
+## 🎯 AÇIK FIRSATLAR — 2026-07-15 (arşiv, öncelik + yaşam-döngüsü)
 1. **[AÇIK-6g · P1] A8 crawl-budget audit** — 1.553 CNI, index-rate 16.9% (<%50). Weekly, 07-12 Pazar KAÇTI → hâlâ bekliyor. Sınıf-kırılımı + 0-imp ölü ağırlık 410-prune + sitemap senkron. Portföy darboğazı = index-RATE.
 2. **[AÇIK-Ng · P1] B13/B11 intent-bridge (money-first)** — vs-ferry 2.215i/10c (pos5.7) + prices-2026 1.400i/5c + tipping 1.352i/3c = yüksek-impr info sayfalar ~0.4% CTR, PARA KAZANDIRMIYOR. DENE: 134-167 kelime commercial answer-block + reservation CTA + BlogToPillarCta→pillar. Body-only (title FREEZE E4).
 3. **[AÇIK-Ng · P1] B4 kanibalizasyon (COMMERCIAL)** — (a) "bosphorus cruise prices": /blog/bosphorus-cruise-prices-2026 (1.400i) + /bosphorus-cruise-prices-istanbul-2026 (890i commercial pillar) ÇAKIŞIYOR → internal-link blog→pillar + canonical netliği; (b) TR dinner: /tr/kabatas-dinner-cruise (pos9.2, 313i) + TR dinner pillar. Title DOKUNMA (E4), sadece internal-link yönü.
@@ -109,35 +155,36 @@
 8. **[AÇIK-sezon · P2 · İÇERİK] Yaz trend sıçraması** (Trends: TR cruise MoM+36% / GB +68%, yacht 4→47) → sezon-içi intent-bridge + answer-block refresh (İÇERİK, Ads DEĞİL — operatör alanı).
 9. **[AÇIK · P2 · A5] Yandex NOT_IN_SPRAV** — Yandex Business kaydı (operatör, ~10 dk, tek açık Yandex rec).
 
-## ⚠️ AÇIK SORUNLAR / FIX-VERIFY
-- **[FV-4 · ✅ RECOVERY — KAPANDI]** Bing suppression: canlı API 07-09 imp6/clk1 + 07-10 imp21/clk2 → eşik aşıldı, ~30 günlük sıfır-seri kırıldı. SUPPRESSION-WATCH kapatıldı. E4 FREEZE 1-2 hafta daha (recovery stabilizasyonu).
-- **[FV-9 · ✅ ÇÖZÜLDÜ]** /yacht-charter-istanbul dead-click 55→1/39sess. Post-redesign element-fix tuttu.
-- **[FV-1 · P1 · tentative-iyileşme]** /reservation 88→7/9sess (per-sess 2.75→0.78). N=9 küçük → 1 koşu daha izle, kapatma erteli.
-- **[FV-5 · ✅ 2/4 VALIDATED]** /yacht + /sunset rich=PASS. Kalan /dinner (stale-crawl) + /tr/bosphorus-cruise (locale-remainder) → chrome_queue recrawl bekliyor.
-- **[FV-7 · P1 · AÇIK-4g]** 1.553 CNI (carry 06-30, A1 cache-miss). A8 audit bu hafta (07-12 Pazar kaçtı). bkz Fırsat #4.
-- **[OAuth durumu]** GA4 merkezi SA ✅ (534226524), GSC merkezi token ✅. **Ads** operatör alanı (pasif).
+## ⚠️ AÇIK SORUNLAR / FIX-VERIFY (2026-07-17)
+- **[FV-1 · 🎉 RESOLVING → yarın KAPAT]** /reservation dead-click %36.36(11 sess) → **%6.9(29 sess)**. Sağlam N. Muhtemel sebep commit fd88234 booking-fix + önceki CRO. Yarın holds ederse kapat.
+- **[FV-4 · ✅ RECOVERED-SUSTAINED]** Bing suppression: seri 6/21/18/19/**42** (07-13) — flicker değil, pre-supp baseline üstünde. Watch kapalı. E4 FREEZE ~1 hafta daha (temkinli).
+- **[FV-9 · ✅ ÇÖZÜLDÜ/holds]** /yacht dead-click 6.25%/48sess band-içi. Kapalı kalır.
+- **[FV-5 · ✅ 2/4 VALIDATED · kalan 2 recrawl]** /yacht + /sunset rich=PASS. /dinner (stale) + /tr/bosphorus (locale) our-side CLEAN (r28 0-ihlal, itemReviewed live) → chrome_queue recrawl bekliyor. **Google-side verify bugün N/A (Inspection token expired).**
+- **[FV-7 · P1 · AÇIK-8g]** FRESH A1: CNI **1720** (gerçek taze, carry 1553'ten büyük), index-rate 15.6%. A8 audit 2 hafta gecikti. bkz Fırsat #1.
+- **[YENİ · P1 · TOKEN]** GSC OAuth token EXPIRED (merkezi + proje) → A7/B2/B11/B4-lite delta bloke. GA4 merkezi SA ✅ (534226524). Ads operatör alanı (pasif).
+- **[İZLE · P1]** Rez cancel-rate %37.5 (6/16, DOUBLED) — soft-watch, yarın true prev-7d.
 
 ## 🔍 SANA İŞ DÜŞEN (operator action)
-- **A8 crawl-budget/dead-inventory audit (P1, weekly — 07-12 kaçtı):** 1.553 CNI sınıf-kırılımı + thin/410/sitemap-prune. Push ile çözülmez, portföy darboğazı index-RATE.
-- **/reservation dead-click izle (P1):** 88→7/9sess iyileşti ama N küçük — 1 koşu daha, düzelmezse session-recording (kod-session).
+- **GSC OAuth token refresh (P1 · YENİ):** merkezi + proje token `invalid_grant`. `node scripts/gsc-oauth-refresh.mjs` / re-auth. A7 inspection + B2 striking + B11 intent-mix bu olmadan çalışmıyor.
+- **A8 crawl-budget/dead-inventory audit (P1, weekly — 2 hafta gecikti):** CNI 1720 sınıf-kırılımı + thin/410/sitemap-prune. Push ile çözülmez, darboğaz index-RATE.
 - **Yandex Business kaydı** (NOT_IN_SPRAV) — yandex.com/business, ~10 dk.
-- **Bing:** aksiyon YOK — 🎉 RECOVERY başladı, E4 FREEZE 1-2 hafta daha koru (premature churn = re-trigger). Site Scan (panel) opsiyonel.
+- **Bing:** aksiyon YOK — RECOVERED-SUSTAINED. E4 FREEZE ~1 hafta daha koru (premature churn = re-trigger).
 - **Lumen #86820254 URL listesi** hâlâ bekliyor (submit-denylist.md operatör adımları).
 
 ## 🗓️ WEEKLY/MONTHLY due-tracker
 | Kontrol | Son | Next due | Durum |
 |---|---|---|---|
-| B3 rank sweep | 06-25 | 2026-07-12 (Pazar oto-weekly) | scheduled |
-| B4 cannibalization + konsolidasyon | 07-10 (kabatas sinyali) | 2026-07-12 | scheduled — YENİ commercial sinyal besle |
+| B3 rank sweep | 06-25 | 2026-07-19 (Pazar oto-weekly) | scheduled |
+| B4 cannibalization + konsolidasyon | 07-10 (kabatas sinyali) | 2026-07-19 (gecikti) | scheduled — YENİ commercial sinyal besle |
 | C1 AI-visibility (lbm) | – | – | ⛔ **KALICI KALDIRILDI (2026-07-06 operatör)** |
-| **A8 dead-inventory** | – | **2026-07-12 (A1 keşfi ile ÖNE ÇEKİLMELİ)** | ⚑ crawl-budget audit tetiklendi |
-| A11 suppression-recovery review | 07-06 | 2026-07-12 | scheduled (07-07 imp=1 flicker işlenecek) |
-| B9 SF/Semrush export mutabakatı | 07-08 (SF-1/SF-2 FIXED artık) | 2026-07-12 | SF-3/4/5 title-metni = operatör onayı bekliyor |
-| D6 rakip turu | – | 2026-07-12 | scheduled |
-| D9-deep (PageSpeed) | 07-06 (quota) | 2026-07-12 | scheduled |
-| D12 GTM + event-sözleşmesi | 07-06 | 2026-07-12 | D-EVENT set tam ✓ |
-| D13 görsel performans | 07-06 | 2026-07-12 | scheduled |
-| D14 GBP + reviews | – | 2026-07-12 | scheduled |
+| **A8 dead-inventory** | – | **2026-07-19 (2 hafta gecikti — ÖNCELİK)** | ⚑ crawl-budget audit tetiklendi |
+| A11 suppression-recovery review | 07-06 | 2026-07-19 (gecikti) | scheduled (07-07 imp=1 flicker işlenecek) |
+| B9 SF/Semrush export mutabakatı | 07-08 (SF-1/SF-2 FIXED artık) | 2026-07-19 (gecikti) | SF-3/4/5 title-metni = operatör onayı bekliyor |
+| D6 rakip turu | – | 2026-07-19 (gecikti) | scheduled |
+| D9-deep (PageSpeed) | 07-06 (quota) | 2026-07-19 (gecikti) | scheduled |
+| D12 GTM + event-sözleşmesi | 07-06 | 2026-07-19 (gecikti) | D-EVENT set tam ✓ |
+| D13 görsel performans | 07-06 | 2026-07-19 (gecikti) | scheduled |
+| D14 GBP + reviews | – | 2026-07-19 (gecikti) | scheduled |
 | E7-full güvenlik (derin) | 07-06 (FV-6 fix) | 2026-07-13 | ✅ 0 vuln |
 | E3 backlink audit | 05-02 | 2026-08-01 | scheduled |
 | C3 isitagentready + C4 AI-bot | – | 2026-08-01 | scheduled |
@@ -145,6 +192,19 @@
 ---
 
 ## 📅 GÜNLÜK LOG (append-only, son 30 gün tutulur)
+
+### 2026-07-17 (mode=daily)
+- **Coverage:** tüm DAILY hücreler DONE/N/A(sebep). **KAZANIM: 🎉 FV-1 /reservation dead-click %36→%6.9 (29 sess) RESOLVING + Bing suppression RECOVERED-SUSTAINED (imp42 baseline-üstü) + GSC 28g +4% (377→392) + boutique-yacht-12 noise temizlendi.**
+- **A1 FRESH (page-indexing-ui, 06-30'dan beri ilk):** indexed 341 · CNI **1720** · disc 64 · 404 36 · noindex 6 · redirect 16(NR-9). Method-değişimi → **BASELINE** (dün cache-miss'ti, R5 TETİKLENMEZ; 1720 gerçek taze sayı, carry 1553 regresyon değil). index-rate **15.6%** (<%50, A8 P1).
+- **GSC:** 28g merkezi cache 392c/45.475i/pos7.9/strike9 (+15c/+4%). **GSC 7d/query/page/striking = N/A (OAuth token EXPIRED merkezi+proje — P1 operatör refresh).**
+- **Bing (canlı GetRankAndTrafficStats):** seri 07-09 imp6/clk1 → 07-10 imp21/clk2 → 07-11 imp18 → 07-12 imp19 → **07-13 imp42** = SUSTAINED recovery, pre-supp baseline (15-23) ÜSTÜNDE. R1 tamamen temiz.
+- **GA4 28g:** 2.637s/2.259u/1.491ke · AI chatgpt **317**↑/gemini8/perplexity2 = ~327 AI sess. Clarity: rage 0%, JS 0%, /reservation 6.9%/29, /yacht 6.25%/48, home 19.23%, vs-ferry 20%.
+- **Rez (FRESH DB 7g):** 16 → 10 aktif (3 conf + 7 new) · 6 iptal (**cancel %37.5** vs carry %16.7 DOUBLED) · ~€1.160 net-aktif. Baskın sunset-cruise. 3 yacht iptali hepsi 07-14 CRO-block ÖNCESİ (price-block değil). Soft-watch.
+- **Rich-results our-side CANLI:** CLEAN — r28 **0 ihlal**, tüm money **1 H1**, /dinner itemReviewed @id live. Google-side 2 pending (token-blocked verify).
+- **Auto-submit (15 URL):** IndexNow Bing200/Yandex202 · Bing batch200(q77) · Yandex 15/15 202(q150). Denylist boş.
+- **E7-light:** 7/7 money 200 · headers tam (HSTS+CSP+XFO+nosniff) · secret temiz (TrustCredentialsBand.tsx false-pos) · deploy-gap **0** (origin senkron) · yeni commit fd88234 canlı.
+- **Core-SEO:** 12 pass/2 fail(index-rate 15.6% + rich Google-side×2)/22 na = %85.7.
+- **Açık P1:** GSC token refresh (YENİ blocker) · A8 crawl-budget (2 hafta gecikti) · intent-bridge/B4 (carry, token-blocked) · rich Google-side×2 recrawl · rez cancel-rate izle.
 
 ### 2026-07-13 (mode=daily)
 - **Coverage:** tüm DAILY hücreler DONE/N/A(sebep). **KAZANIM: 🎉 Bing suppression RECOVERY (imp 6→21, clk 1→2, ~30g sıfır-seri kırıldı) + /yacht dead-click çözüldü (55→1) + /reservation tentative iyileşme (88→7).**
