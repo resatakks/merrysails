@@ -433,7 +433,14 @@ const CHARTER_FLEET: CharterFleetItem[] = [
       "/images/fleet/y10/07.jpeg",
       "/images/fleet/y10/08.jpeg",
     ],
-    bookable: true,
+    // Was `true`, contradicting the by-quote comment above and Mega 150's
+    // `bookable: false`. Every "Reserve" CTA (FleetDetailContent, BoatCard)
+    // gated on this flag routed customers into the full BookingModal
+    // reservation flow, but reservation-pricing.ts unconditionally rejects
+    // any fleetSlug whose priceByHours resolves to null — so every submit
+    // for this yacht failed 100% of the time with "the selected yacht or
+    // duration could not be verified" (2026-07-16 hotfix).
+    bookable: false,
     badges: ["event"],
     altDescriptor: altDescriptors.y10,
     i18n: {

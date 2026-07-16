@@ -41,17 +41,23 @@ export default async function ReservationPage({ searchParams }: ReservationPageP
     : undefined;
 
   const fleetSlug = resolvedSearchParams?.fleet;
+  // Only route into the direct reservation flow for bookable boats — a
+  // by-quote yacht (bookable:false, e.g. Event 90 / Mega 150) has no
+  // priceByHours, so buildReservationPricingSnapshot always rejects it
+  // server-side. Falls through to the generic core planner below instead
+  // of handing the customer a form that can never submit.
   const fleetBoat =
     fleetSlug && FLEET_SLUGS.has(fleetSlug)
       ? getCharterFleetItem(fleetSlug as CharterFleetSlug)
       : null;
+  const bookableFleetBoat = fleetBoat?.bookable ? fleetBoat : null;
   const fleetHoursParam = Number(resolvedSearchParams?.hours);
   const fleetHours = Number.isFinite(fleetHoursParam) && fleetHoursParam >= 2 ? fleetHoursParam : 2;
   const fleetGuestsParam = Number(resolvedSearchParams?.guests);
   const fleetGuests = Number.isFinite(fleetGuestsParam) ? fleetGuestsParam : undefined;
-  const yachtTour = fleetBoat ? getTourBySlug("yacht-charter-in-istanbul") : null;
+  const yachtTour = bookableFleetBoat ? getTourBySlug("yacht-charter-in-istanbul") : null;
 
-  if (fleetBoat && yachtTour) {
+  if (bookableFleetBoat && yachtTour) {
     return (
       <main className="min-h-screen overflow-x-hidden bg-[var(--surface-alt)] pt-28 pb-32">
         <div className="mx-auto max-w-[68rem] px-4">
@@ -81,7 +87,7 @@ export default async function ReservationPage({ searchParams }: ReservationPageP
           </header>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.62fr)_minmax(19rem,0.78fr)]">
             <YachtReservationFlow
-              boat={fleetBoat}
+              boat={bookableFleetBoat}
               initialHours={fleetHours}
               initialDate={resolvedSearchParams?.date}
               initialGuests={fleetGuests}
