@@ -136,8 +136,8 @@ const writtenFor = [
     title: "Best Bosphorus Cruise Istanbul 2026 — Guide",
   },
   {
-    href: "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
-    title: "Best Bosphorus Sunset Cruise Istanbul 2026",
+    href: "/blog/best-bosphorus-sunset-cruise-companies-istanbul",
+    title: "Best Bosphorus Sunset Cruise Companies 2026",
   },
   {
     href: "/blog/bosphorus-cruise-vs-ferry-istanbul-2026",

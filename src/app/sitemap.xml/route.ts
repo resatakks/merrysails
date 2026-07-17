@@ -21,6 +21,11 @@ const EXCLUDED_TOUR_SLUGS = REDIRECTED_TOUR_SLUGS;
 // the sitemap so audit tools don't flag "redirect in sitemap".
 const EXCLUDED_BLOG_SLUGS = new Set<string>([
   "bosphorus-cruise-departure-points",
+  // Cannibalization merge 2026-07-17 — 301'd into the canonical listicle/price
+  // page (next.config.ts). A redirecting URL must never appear in the sitemap.
+  "best-bosphorus-sunset-cruise-istanbul-2026",
+  "best-bosphorus-sunset-cruise-operators-istanbul-2026",
+  "private-yacht-charter-istanbul-prices",
 ]);
 
 // ── Sitemap FOCUS exclusion (2026-06-24) ─────────────────────────────────────

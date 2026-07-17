@@ -239,7 +239,7 @@ export const privateYachtAndOccasionGuides: BlogPost[] = [
       { q: "What is the best time of year to propose on the Bosphorus?", a: "Any time is magical, but April–June and September–October offer the most pleasant weather and dramatic sunsets. Winter proposals are intimate and moody with earlier sunsets." }
     ],
     relatedTours: ["romantic-marriage-proposal", "bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-for-couples", "yacht-decoration-ideas-istanbul", "choosing-yacht-size-bosphorus-charter-istanbul-2026", "private-yacht-charter-istanbul-prices", "istanbul-proposal-yacht-cruise", "valentines-day-cruise-istanbul"],
+    relatedPosts: ["bosphorus-cruise-for-couples", "yacht-decoration-ideas-istanbul", "choosing-yacht-size-bosphorus-charter-istanbul-2026", "private-yacht-charter-istanbul-price", "istanbul-proposal-yacht-cruise", "valentines-day-cruise-istanbul"],
   },
 {
     slug: "yacht-birthday-party-ideas",

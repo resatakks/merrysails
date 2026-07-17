@@ -37,7 +37,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Is it safe to take a Bosphorus cruise?", a: "Yes. All vessels are regulated by Turkish maritime authorities and carry required safety equipment. The Bosphorus is a sheltered strait with calm waters. Licensed companies like MerrySails follow strict safety protocols." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul", "romantic-marriage-proposal"],
-    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "bosphorus-cruise-vs-ferry-istanbul-2026", "istanbul-dinner-cruise-etiquette-2026"]
+    relatedPosts: ["best-bosphorus-sunset-cruise-companies-istanbul", "bosphorus-cruise-vs-ferry-istanbul-2026", "istanbul-dinner-cruise-etiquette-2026"]
   },
 {
     slug: "istanbul-sunset-cruise-experience",
@@ -305,7 +305,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "Should I bring an umbrella?", a: "A compact travel umbrella or rain jacket is wise in autumn and winter. Avoid large umbrellas on deck — they catch wind." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "bosphorus-sightseeing-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-companies-istanbul", "istanbul-cruise-booking-tips", "bosphorus-cruise-safety-tips"],
   },
 {
     slug: "bosphorus-cruise-departure-points",
@@ -478,7 +478,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       { q: "What is the best time of day for Bosphorus photography?", a: "Golden hour (1 hour before sunset) produces the most spectacular light — warm, directional, and flattering for palace and mosque facades. The 2-hour sunset cruise (€34) is perfectly timed for this window. Blue hour (15–30 minutes after sunset) creates a stunning cobalt sky with emerging city lights." }
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-sightseeing-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise", "istanbul-sunset-photography-cruise"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-companies-istanbul", "istanbul-sunset-cruise-experience", "best-time-bosphorus-cruise", "istanbul-sunset-photography-cruise"],
   },
 {
     slug: "bosphorus-night-cruise-guide",
@@ -598,7 +598,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
     imageAlt: "Istanbul Bosphorus panorama at sunset from cruise boat deck",
     author: "captain-ahmet",
     keywords: ["bosphorus cruise price", "bosphorus cruise cost", "istanbul cruise price 2026", "how much does bosphorus cruise cost", "bosphorus sunset cruise price", "istanbul dinner cruise price", "private bosphorus cruise price", "bosphorus cruise per person", "yacht charter istanbul price", "bosphorus cruise ticket price"],
-    relatedPosts: ["best-bosphorus-sunset-cruise-istanbul-2026", "private-yacht-charter-istanbul-2026-buyers-guide", "bosphorus-cruise-vs-ferry-istanbul-2026"],
+    relatedPosts: ["best-bosphorus-sunset-cruise-companies-istanbul", "private-yacht-charter-istanbul-2026-buyers-guide", "bosphorus-cruise-vs-ferry-istanbul-2026"],
     keyTakeaways: [
       "Shared sunset cruises start at €34 per person, shared dinner cruises range from €30 to €90 across four packages, and private yacht charters begin at €220 for the entire vessel.",
       "For groups of four or more, a private yacht often beats a shared dinner cruise on per-person value while delivering complete privacy.",
@@ -791,7 +791,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-cruise-with-kids", "bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-guide", "best-bosphorus-sunset-cruise-operators-istanbul-2026"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "bosphorus-cruise-with-kids", "bosphorus-cruise-prices-2026", "istanbul-sunset-cruise-guide", "best-bosphorus-sunset-cruise-companies-istanbul"],
     proTip: "If the published sunset cruise is sold out for your date, check the same-day [yacht charter](/yacht-charter-istanbul) starting from €220 — for couples, splitting a private 2-hour charter often costs less than two aggregator-resold tickets and gives you the deck to yourselves.",
     calloutText: "MerrySails Bosphorus sunset cruise: €34 (no wine) or €40 (with wine), 2 hours from Karaköy pier, daily year-round. TURSAB licensed since 2001, 50,000+ guests, free 24h cancellation. Book at merrysails.com or WhatsApp +90 544 898 98 12.",
   },
@@ -885,7 +885,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       {
         heading: "Booking the Right Tourist Cruise (and Skipping the Markup)",
         answerCapsule: "Book direct at merrysails.com for the lowest published price — €34 sunset, €30 dinner, €220 yacht charter. Aggregators like GetYourGuide resell the same cruise at a 15-25% markup.",
-        content: "If the cruise is the right product for your trip, the booking question is who you book with, not which boat. We covered the aggregator markup math in the [best Bosphorus sunset cruise guide](/blog/best-bosphorus-sunset-cruise-istanbul-2026), and the same logic applies to dinner cruises and yacht charters. MerrySails operates the boat directly under [TURSAB license](https://www.tursab.org.tr/en) #14316 since 2001.\n\nDirect booking gives you the published price (€34 sunset, €30-90 dinner ladder, yacht charter from €220 per vessel), free 24-hour cancellation, English-speaking customer service, and a refund policy if anything goes wrong. WhatsApp at +90 544 898 98 12 is fastest for last-minute or group inquiries; the website handles standard reservations in 4 steps. The aggregators make sense if you are comparing 10 operators with no prior research — they are a search interface with checkout. For known operators, the markup is pure friction.",
+        content: "If the cruise is the right product for your trip, the booking question is who you book with, not which boat. We covered the aggregator markup math in the [best Bosphorus sunset cruise guide](/blog/best-bosphorus-sunset-cruise-companies-istanbul), and the same logic applies to dinner cruises and yacht charters. MerrySails operates the boat directly under [TURSAB license](https://www.tursab.org.tr/en) #14316 since 2001.\n\nDirect booking gives you the published price (€34 sunset, €30-90 dinner ladder, yacht charter from €220 per vessel), free 24-hour cancellation, English-speaking customer service, and a refund policy if anything goes wrong. WhatsApp at +90 544 898 98 12 is fastest for last-minute or group inquiries; the website handles standard reservations in 4 steps. The aggregators make sense if you are comparing 10 operators with no prior research — they are a search interface with checkout. For known operators, the markup is pure friction.",
       },
     ],
     faqs: [
@@ -911,7 +911,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       },
     ],
     relatedTours: ["bosphorus-sunset-cruise", "bosphorus-dinner-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "best-bosphorus-sunset-cruise-istanbul-2026", "bosphorus-cruise-prices-2026"],
+    relatedPosts: ["best-bosphorus-cruise-istanbul-guide", "best-bosphorus-sunset-cruise-companies-istanbul", "bosphorus-cruise-prices-2026"],
     proTip: "For first-time Istanbul visitors with 3-4 days, do both — take the cross-Bosphorus ferry (₺40) one afternoon as a daily-life experience, and a [MerrySails sunset cruise](/cruises/bosphorus-sunset-cruise) (€34) another evening for the structured tourist experience. They complement, they do not replace each other.",
     calloutText: "Ferry: ₺40-200 per ride, no narration, public transport. Tourist cruise: €30-90 per person, full experience. MerrySails direct booking is the lowest cruise price; book at merrysails.com or WhatsApp +90 544 898 98 12.",
   },
@@ -1357,7 +1357,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       "yacht-charter-in-istanbul",
     ],
     relatedPosts: [
-      "best-bosphorus-sunset-cruise-istanbul-2026",
+      "best-bosphorus-sunset-cruise-companies-istanbul",
       "bosphorus-cruise-vs-ferry-istanbul-2026",
       "best-bosphorus-cruise-istanbul-guide",
     ],
@@ -1404,7 +1404,7 @@ export const foundationalCruiseGuides: BlogPost[] = [
       "istanbul-night-cruise",
       "bosphorus-night-cruise-guide",
       "bosphorus-sunset-cruise-istanbul",
-      "best-bosphorus-sunset-cruise-istanbul-2026",
+      "best-bosphorus-sunset-cruise-companies-istanbul",
     ],
     calloutText:
       "Want the moonlight format without a dinner programme? The shared MerrySails sunset cruise (from €30 on Mon, Tue & Thu) rolls into blue hour for a true illuminated-Bosphorus sailing; the private yacht (from €220 / 2h) lets you book a later slot in your own group. Book direct at merrysails.com or WhatsApp +90 544 898 98 12.",

@@ -429,6 +429,26 @@ const nextConfig: NextConfig = {
         destination: "/bosphorus-cruise-departure-points",
         statusCode: 301,
       },
+      // Cannibalization merge (2026-07-17): three near-duplicate listicles were
+      // competing for the same "best Bosphorus sunset cruise companies/operators"
+      // intent + one singular/plural private-yacht price duplicate. 301 each loser
+      // into the single canonical so equity consolidates (winner stays live).
+      // NR-9: losers removed from sitemap (EXCLUDED_BLOG_SLUGS + cluster set).
+      {
+        source: "/blog/best-bosphorus-sunset-cruise-istanbul-2026",
+        destination: "/blog/best-bosphorus-sunset-cruise-companies-istanbul",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/best-bosphorus-sunset-cruise-operators-istanbul-2026",
+        destination: "/blog/best-bosphorus-sunset-cruise-companies-istanbul",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/private-yacht-charter-istanbul-prices",
+        destination: "/blog/private-yacht-charter-istanbul-price",
+        statusCode: 301,
+      },
       // DMCA recovery (2026-06-16): bare topic-slugs that have always 404'd
       // (never existed as routes — confirmed via git history) but match the
       // intent of a new clean-slug page shipped in 3f47213. 301 them to the

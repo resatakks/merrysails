@@ -2426,7 +2426,7 @@ Yes. Shared sunset and dinner cruises are suitable for children. The dinner crui
       }
     ],
     relatedTours: ["bosphorus-dinner-cruise", "bosphorus-sunset-cruise", "yacht-charter-in-istanbul"],
-    relatedPosts: ["bosphorus-cruise-prices-2026", "book-bosphorus-cruise-safely", "book-bosphorus-cruise-direct-save-2026", "best-bosphorus-sunset-cruise-operators-istanbul-2026", "bosphorus-cruise-reviews-guide"]
+    relatedPosts: ["bosphorus-cruise-prices-2026", "book-bosphorus-cruise-safely", "book-bosphorus-cruise-direct-save-2026", "best-bosphorus-sunset-cruise-companies-istanbul", "bosphorus-cruise-reviews-guide"]
   },
   {
     slug: "istanbul-cruise-buyer-guide-2026",
