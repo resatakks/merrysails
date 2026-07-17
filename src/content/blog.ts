@@ -1,4 +1,5 @@
 import { blogPosts as baseBlogPosts, type BlogPost } from "@/data/blog";
+import { isPruned410BlogSlug } from "@/data/seo/pruned-410";
 
 const updatedAt = "2026-04-23";
 
@@ -16,7 +17,7 @@ type SupportRoute = {
 
 type BlogCategory = BlogPost["category"];
 
-export const commercialSupportPosts: BlogPost[] = [
+const commercialSupportPostsRaw: BlogPost[] = [
   {
     slug: "bosphorus-sunset-cruise-vs-dinner-cruise",
     title: "Sunset Cruise vs Dinner Cruise Istanbul",
@@ -405,6 +406,14 @@ For more vessel-heavy requests, include whether you want the event to feel like 
     ],
   },
 ];
+
+// Drop any 410-pruned slug (crawl-budget prune 2026-07-17) so these commercial
+// support posts leave every listing / related-posts / routing-panel / sitemap /
+// ItemList surface — no internal link points at a URL proxy.ts now 410s.
+// Reversible via data/pruned-2026-07-17-410.json.
+export const commercialSupportPosts: BlogPost[] = commercialSupportPostsRaw.filter(
+  (post) => !isPruned410BlogSlug(post.slug),
+);
 
 export const commercialSupportRoutes: Record<string, SupportRoute> = {
   "bosphorus-sunset-cruise-vs-dinner-cruise": {

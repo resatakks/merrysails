@@ -3,6 +3,7 @@ export type { BlogPost, BlogSection, BlogSubsection } from "./types";
 
 import { blogCollections } from "./collections";
 import type { BlogPost } from "./types";
+import { isPruned410BlogSlug } from "@/data/seo/pruned-410";
 import { commercialConversionGuides } from "./posts/commercial-conversion-guides";
 import { commercialCruiseGuides } from "./posts/commercial-cruise-guides";
 import { foundationalCruiseGuides } from "./posts/foundational-cruise-guides";
@@ -18,7 +19,12 @@ export { istanbulCityGuides } from "./posts/istanbul-city-guides";
 export { planningAndSupportGuides } from "./posts/planning-and-support-guides";
 export { privateYachtAndOccasionGuides } from "./posts/private-yacht-and-occasion-guides";
 
-export const blogPosts: BlogPost[] = [
+// 410-pruned slugs (crawl-budget prune 2026-07-17, data/pruned-2026-07-17-410.json)
+// are filtered out here so the whole app (listings, related-posts, home, sitemap,
+// JSON-LD ItemList, generateStaticParams) stops surfacing them — no internal link
+// points at a URL that proxy.ts now returns 410 for. Reversible: drop a slug from
+// the manifest and the post reappears everywhere.
+const allBlogPosts: BlogPost[] = [
   ...foundationalCruiseGuides,
   ...privateYachtAndOccasionGuides,
   ...istanbulCityGuides,
@@ -26,6 +32,10 @@ export const blogPosts: BlogPost[] = [
   ...commercialCruiseGuides,
   ...commercialConversionGuides,
 ];
+
+export const blogPosts: BlogPost[] = allBlogPosts.filter(
+  (post) => !isPruned410BlogSlug(post.slug),
+);
 
 /* Duplicates removed: istanbul-honeymoon-cruise-guide, bosphorus-cruise-reviews-guide,
    istanbul-cruise-package-deals, how-to-avoid-seasickness-cruise, istanbul-currency-tips-tourists

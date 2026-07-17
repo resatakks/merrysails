@@ -11,6 +11,7 @@ import {
   RU_ENABLED_ROUTES,
   ZH_ENABLED_ROUTES,
 } from "@/i18n/localized-routes";
+import { PRUNED_410_BLOG_SLUGS } from "@/data/seo/pruned-410";
 
 const SITE_URL = "https://merrysails.com";
 // Deprecated/redirecting tour slugs — single source of truth in tours.ts.
@@ -446,6 +447,11 @@ export function GET() {
   const blogPages: SitemapPage[] = allBlogPosts
     .filter((post) => {
       if (EXCLUDED_BLOG_SLUGS.has(post.slug)) return false;
+      // NR-9: 410-pruned posts (crawl-budget prune 2026-07-17) must never appear
+      // in the sitemap. They are already dropped from blogPosts/commercialSupportPosts
+      // at the source; this guard is defense-in-depth so a Gone URL can never
+      // re-enter the sitemap even if that upstream filter is ever changed.
+      if (PRUNED_410_BLOG_SLUGS.has(post.slug)) return false;
       // Drop noIndex posts from sitemap so Google doesn't try to crawl them again.
       if ((post as { noIndex?: boolean }).noIndex) return false;
       if (seenBlogSlugs.has(post.slug)) return false;

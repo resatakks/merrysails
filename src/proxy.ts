@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { LEGACY_404_REDIRECTS } from "@/data/seo/legacy-404-redirects";
+import { PRUNED_410_PATHS } from "@/data/seo/pruned-410";
 
 function isSuspiciousServerActionProbe(request: NextRequest): boolean {
   return (
@@ -131,6 +132,21 @@ export function proxy(request: NextRequest) {
     pathname.length > 1 && pathname.endsWith("/")
       ? pathname.slice(0, -1)
       : pathname;
+
+  // ── Crawl-budget 410 prune (2026-07-17) ─────────────────────────────────────
+  // Dead-weight EN /blog/<slug> posts (0-impression, thin/derivative,
+  // non-commercial) return an explicit HTTP 410 Gone so Bing/Google drop them
+  // from recrawl queues instead of re-spending crawl budget on soft-404 shells.
+  // Exact-match + fail-open (paths not in the set are untouched). Runs BEFORE the
+  // legacy 301 map so a Gone URL always wins over a redirect. Reversible via the
+  // dated manifest data/pruned-2026-07-17-410.json → src/data/seo/pruned-410.ts.
+  if (PRUNED_410_PATHS.has(normalizedPath)) {
+    return new NextResponse(null, {
+      status: 410,
+      headers: { "x-prune-reason": "crawl-budget-410-2026-07-17" },
+    });
+  }
+
   const legacyDestination = LEGACY_404_REDIRECTS.get(normalizedPath);
   if (legacyDestination) {
     const url = request.nextUrl.clone();
