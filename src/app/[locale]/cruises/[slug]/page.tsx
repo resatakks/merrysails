@@ -228,7 +228,7 @@ export default async function LocaleTourDetailPage({
     description: tour.description,
     touristType: "Leisure",
     url: canonicalUrl,
-    image: tour.image,
+    image: `${SITE_URL}${tour.image}`,
     duration: (() => {
       const h = tour.duration.match(/(\d+)\.?(\d*)\s*hour/i);
       if (!h) return undefined;

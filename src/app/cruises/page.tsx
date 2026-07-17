@@ -24,7 +24,7 @@ const itemListSchema = {
     position: i + 1,
     url: `${SITE_URL}${getTourPath(tour)}`,
     name: tour.nameEn,
-    image: tour.image,
+    image: `${SITE_URL}${tour.image}`,
   })),
 };
 

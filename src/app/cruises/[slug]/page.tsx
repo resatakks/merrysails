@@ -463,7 +463,7 @@ export default async function TourDetailPage({
     dateModified: SITE_LAST_MODIFIED,
     touristType: "Leisure",
     url: `${SITE_URL}${getTourPath(tour)}`,
-    image: tour.image,
+    image: `${SITE_URL}${tour.image}`,
     duration: (() => {
       const h = tour.duration.match(/(\d+)\.?(\d*)\s*hour/i);
       if (!h) return undefined;
@@ -606,7 +606,7 @@ export default async function TourDetailPage({
           "@id": `${SITE_URL}/cruises/bosphorus-sunset-cruise#event`,
           name: "Bosphorus Sunset Cruise",
           description: tour.description,
-          image: tour.image,
+          image: `${SITE_URL}${tour.image}`,
           startDate: "2026-01-01T19:00:00+03:00",
           endDate: "2026-12-31T21:00:00+03:00",
           eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
