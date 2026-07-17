@@ -1099,10 +1099,24 @@ export default function TourDetailClient({
                       <Anchor className="w-5 h-5 text-[var(--brand-primary)] shrink-0" />
                       <span>{tRoute}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+                    {/* Clarity (7d, /cruises/bosphorus-sunset-cruise): 15 dead
+                        clicks on the "Karaköy ferry pier…" meeting-point text —
+                        guests tap the departure point wanting directions, but it
+                        was a plain <div>. Wire it to Google Maps (new tab, same
+                        pattern as the reservation-detail meeting point) so the
+                        tap resolves the pre-booking "where do I meet?" intent. */}
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${tDeparturePoint} Istanbul`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors hover:text-[var(--brand-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]/40 rounded-md"
+                    >
                       <MapPin className="w-4 h-4 shrink-0" />
-                      {L.departureLabel}: {tDeparturePoint} &mdash; {tDepartureTime}
-                    </div>
+                      <span>
+                        {L.departureLabel}: {tDeparturePoint} &mdash; {tDepartureTime}
+                        <span className="ml-1.5 font-medium text-[var(--brand-primary)] underline">Open in Maps</span>
+                      </span>
+                    </a>
                   </div>
 
                   {/* Highlights */}
