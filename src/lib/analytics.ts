@@ -859,11 +859,38 @@ export function trackBookingAbandonment(params: {
   );
 }
 
+// Same-click dedup for contact conversions. One tap can be observed by TWO
+// listeners: the document-level capture listener in GlobalContactClickTracker
+// AND the anchor's own onClick (handleTrackedContactNavigation) on the many raw
+// anchors that don't carry data-contact-tracked="1" (floating call/WhatsApp
+// button, header, booking sidebar/calendar/modal). Without this guard, every
+// such tap fired whatsapp_click / phone_click + its Google Ads soft conversion
+// TWICE — ~2x-inflating the exact signal the active paid campaign optimizes
+// toward. Collapse duplicates within a short window keyed on contact method
+// (the double-fire is the same click, microseconds apart; a genuine second
+// contact intent is seconds apart, and Clarity already session-dedupes these).
+const CONTACT_CLICK_DEDUP_MS = 800;
+function isDuplicateContactClick(method: ContactNavigationKind): boolean {
+  if (typeof window === "undefined") return false;
+  const w = window as unknown as { __sailsContactClickDedup?: Record<string, number> };
+  const store = (w.__sailsContactClickDedup ??= {});
+  const now = Date.now();
+  const last = store[method];
+  if (last !== undefined && now - last < CONTACT_CLICK_DEDUP_MS) {
+    return true;
+  }
+  store[method] = now;
+  return false;
+}
+
 export function trackPhoneClick(params: {
   intent?: ContactIntent;
   label: string;
   location: string;
 }) {
+  if (isDuplicateContactClick("phone")) {
+    return;
+  }
   const payload = {
     click_label: params.label,
     click_location: params.location,
@@ -894,6 +921,9 @@ export function trackWhatsAppClick(params: {
   label: string;
   location: string;
 }) {
+  if (isDuplicateContactClick("whatsapp")) {
+    return;
+  }
   const payload = {
     click_label: params.label,
     click_location: params.location,
