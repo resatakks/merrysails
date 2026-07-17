@@ -559,7 +559,7 @@ export default async function YachtCharterIstanbulPage({
             <span>/</span>
             <span
               aria-current="page"
-              className="text-[var(--text-muted)] truncate"
+              className="text-[var(--text-muted)] truncate cursor-default select-none"
             >
               {yachtTour.nameEn}
             </span>
@@ -582,9 +582,19 @@ export default async function YachtCharterIstanbulPage({
               eyebrow="Whole boat · sold direct · no broker markup"
               title="Private Yacht Charter Istanbul — Whole Boat from €220"
               benefit="Charter a private Bosphorus yacht direct from Istanbul's TÜRSAB-licensed operator — captain & crew included, no concierge or OTA markup. We reply on WhatsApp in minutes."
+              // Condensed rival-price chip above the fold (2026-07-17): paid avg
+              // scroll is ~12.7%, so surface the direct-vs-rival wedge in the
+              // hero. Figures reuse the on-page "How MerrySails Compares" block
+              // (three named operators, €265–€499, same 2h ~12-guest charter) —
+              // no new numbers invented.
+              priceChip="€220 direct · Rivals €265–€499 (same 2h charter)"
               whatsappText="Hi%20MerrySails!%20I'd%20like%20a%20private%20yacht%20charter%20quote%20for%20the%20Bosphorus.%20Group%20size%20%2B%20date%20if%20known%3F"
               whatsappSource="yacht-hero"
               reserveHref="#fleet"
+              // Honest scroll label (2026-07-17): this button smooth-scrolls to
+              // the on-page #fleet grid, it does not start a booking — label it
+              // for what it does. WhatsApp stays the prominent contact CTA.
+              reserveLabel="See yachts & prices"
               // Above-fold trust + what's-included glance (2026-07-10): Clarity
               // shows ~12% median scroll on this page, so the trust strip and
               // inclusions further down are unseen by most mobile visitors —
@@ -1140,7 +1150,7 @@ export default async function YachtCharterIstanbulPage({
       </div>
       <StickyMobileCta
         reserveHref="/yacht-charter-istanbul#fleet"
-        reserveLabel={`Quote from €${fleetLowestEur}`}
+        reserveLabel="See yachts"
         whatsappLocation="yacht_charter_pillar"
         whatsappPrefill={`Hi MerrySails! I'd like a private yacht charter quote for the Bosphorus. Group size + date if known?`}
       />

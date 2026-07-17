@@ -68,15 +68,12 @@ export default function StickyMobileCta({
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto max-w-[640px] border-t border-[var(--line)] bg-white shadow-[0_-8px_24px_rgba(11,21,58,0.10)]">
+        {/* WhatsApp is the primary, dominant, labeled action (2026-07-17 CRO):
+            lowering cost-per-lead means making the low-friction contact the
+            obvious tap. The reserve button only scrolls to the on-page fleet,
+            so it is demoted to a secondary width and must carry an honest
+            scroll label (never a "book"/"quote" promise it doesn't keep). */}
         <div className="flex items-center gap-2 p-2">
-          <Link
-            href={reserveHref}
-            translate="no"
-            className="btn-cta flex-1 !justify-center !rounded-xl !py-3 !text-sm !font-bold"
-            data-track="sticky_cta_reserve"
-          >
-            {reserveLabel}
-          </Link>
           <TrackedContactLink
             href={whatsappHref}
             kind="whatsapp"
@@ -85,10 +82,18 @@ export default function StickyMobileCta({
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white transition-colors hover:bg-emerald-700"
+            className="inline-flex flex-[1.4] items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-700"
           >
-            <MessageCircle className="h-5 w-5" />
+            <MessageCircle className="h-5 w-5" /> WhatsApp
           </TrackedContactLink>
+          <Link
+            href={reserveHref}
+            translate="no"
+            className="btn-cta flex-1 !justify-center !rounded-xl !py-3 !text-sm !font-bold"
+            data-track="sticky_cta_reserve"
+          >
+            {reserveLabel}
+          </Link>
         </div>
       </div>
     </div>

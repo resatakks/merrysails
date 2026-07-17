@@ -26,7 +26,7 @@
 // dated manifest + union it into the sets below (keep the old one for audit).
 // ─────────────────────────────────────────────────────────────────────────────
 
-import prunedManifest from "../../../data/pruned-2026-07-17-410.json";
+import prunedManifest from "./pruned-2026-07-17-410.json";
 
 /** Exact request paths (EN /blog/<slug>) that must return HTTP 410 Gone. */
 export const PRUNED_410_PATHS: ReadonlySet<string> = new Set<string>(

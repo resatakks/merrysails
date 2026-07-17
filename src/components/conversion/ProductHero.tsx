@@ -27,6 +27,9 @@ interface Props {
   title: string;
   /** One-line benefit paragraph under the title. */
   benefit: string;
+  /** Optional condensed one-line price chip rendered directly under the benefit
+   *  line (e.g. a direct-vs-rival comparison). Above-the-fold by design. */
+  priceChip?: string;
   /** URL-encoded WhatsApp prefill text (without the wa.me prefix). */
   whatsappText: string;
   /** Short page key for analytics (data-whatsapp-source). */
@@ -53,6 +56,7 @@ export default function ProductHero({
   eyebrow,
   title,
   benefit,
+  priceChip,
   whatsappText,
   whatsappSource,
   reserveHref,
@@ -89,6 +93,11 @@ export default function ProductHero({
         <p className="mt-2.5 max-w-xl text-sm leading-relaxed text-white/85 md:text-base">
           {benefit}
         </p>
+        {priceChip && (
+          <p className="mt-2 inline-flex max-w-full items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-semibold text-white ring-1 ring-white/25 backdrop-blur-sm md:text-[13px]">
+            {priceChip}
+          </p>
+        )}
         <div className="mt-4 flex flex-wrap items-center gap-2.5 md:mt-5 md:gap-3">
           {/* translate="no" — Google Translate detaches JS handlers / mangles
               wa.me + tel: hrefs on auto-translated pages; these are the paid
