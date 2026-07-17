@@ -786,12 +786,32 @@ export default async function LocaleSunsetCruisePage({
  <div className="overflow-hidden rounded-2xl border border-[var(--line)]">
  <table className="w-full border-collapse text-left text-sm">
  <tbody>
- {t.tableRows.map(([label, value]) => (
+ {t.tableRows.map(([label, value]) => {
+ // CRO: the "Without wine" / "With wine" rows in this spec table read as
+ // selectable package options, but were plain text (dead click). Turn the
+ // price rows into a real WhatsApp lead-capture control (reuses the
+ // localized whatsappPrefill built above); spec rows stay plain text.
+ const isPriceRow = value.includes("€");
+ return (
  <tr key={label} className="border-b border-[var(--line)] last:border-b-0">
  <th className="w-44 bg-[var(--surface-alt)] p-3 font-semibold text-[var(--heading)] text-xs">{label}</th>
- <td className="p-3 text-[var(--text-muted)]">{value}</td>
+ <td className="p-3 text-[var(--text-muted)]">
+ {isPriceRow ? (
+ <a
+ href={`${WHATSAPP_URL}?text=${encodeURIComponent(whatsappPrefill)}`}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="font-semibold text-[var(--brand-primary)] underline-offset-2 hover:underline"
+ >
+ {value}
+ </a>
+ ) : (
+ value
+ )}
+ </td>
  </tr>
- ))}
+ );
+ })}
  </tbody>
  </table>
  </div>
