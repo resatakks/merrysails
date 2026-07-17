@@ -390,6 +390,37 @@ export default function BosphorusCruiseDeparturePointsPage() {
  </ul>
  </section>
 
+ <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+ <h2 className="mb-2 text-2xl font-bold text-[var(--heading)]">Getting to your cruise by where you are staying</h2>
+ <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">
+ Staying in a specific Istanbul district? These neighbourhood guides map the fastest tram, funicular, and taxi route from your hotel area to the correct boarding pier, so you reach the boat with time to spare.
+ </p>
+ <div className="grid gap-4 md:grid-cols-3">
+ <Link href="/bosphorus-cruise-from-sultanahmet" className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-[var(--surface-alt)]">
+ <h3 className="mb-1 text-lg font-bold text-[var(--heading)]">From Sultanahmet</h3>
+ <p className="text-sm leading-relaxed text-[var(--text-muted)]">Old City hotels near Hagia Sophia — tram T1 and taxi times to each pier.</p>
+ <span className="mt-3 inline-flex items-center gap-2 font-semibold text-[var(--brand-primary)]">Plan from Sultanahmet <ArrowRight className="h-4 w-4" /></span>
+ </Link>
+ <Link href="/bosphorus-cruise-from-taksim" className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-[var(--surface-alt)]">
+ <h3 className="mb-1 text-lg font-bold text-[var(--heading)]">From Taksim</h3>
+ <p className="text-sm leading-relaxed text-[var(--text-muted)]">Taksim / İstiklal hotels — funicular and short taxi hops to Kabataş and Karaköy.</p>
+ <span className="mt-3 inline-flex items-center gap-2 font-semibold text-[var(--brand-primary)]">Plan from Taksim <ArrowRight className="h-4 w-4" /></span>
+ </Link>
+ <Link href="/bosphorus-cruise-from-beyoglu" className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-[var(--brand-primary)]/30 hover:bg-[var(--surface-alt)]">
+ <h3 className="mb-1 text-lg font-bold text-[var(--heading)]">From Beyoğlu</h3>
+ <p className="text-sm leading-relaxed text-[var(--text-muted)]">Galata / Karaköy hotels — walking and tram directions to the closest waterfront.</p>
+ <span className="mt-3 inline-flex items-center gap-2 font-semibold text-[var(--brand-primary)]">Plan from Beyoğlu <ArrowRight className="h-4 w-4" /></span>
+ </Link>
+ </div>
+ <p className="mt-6 text-sm leading-relaxed text-[var(--text-muted)]">
+ Comparing golden-hour options before you pick a pier? See our{" "}
+ <Link href="/best-bosphorus-sunset-cruise-2026" className="font-semibold text-[var(--brand-primary)] hover:underline">
+ best Bosphorus sunset cruise 2026 comparison
+ </Link>{" "}
+ to choose the right operator first.
+ </p>
+ </section>
+
  <section className="mb-12 rounded-2xl border border-gray-200 bg-white p-6">
  <h2 className="mb-4 text-2xl font-bold text-[var(--heading)]">Departure-point FAQs</h2>
  <div className="space-y-4">

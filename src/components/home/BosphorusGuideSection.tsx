@@ -212,6 +212,12 @@ export default function BosphorusGuideSection() {
                 Bosphorus Cruise Compare Hub
               </Link>
               <Link
+                href="/best-bosphorus-sunset-cruise-2026"
+                className="text-sm text-[var(--brand-primary)] hover:underline"
+              >
+                Best Bosphorus Sunset Cruise 2026
+              </Link>
+              <Link
                 href="/blog/bosphorus-sunset-cruise-vs-dinner-cruise"
                 className="text-sm text-[var(--brand-primary)] hover:underline"
               >

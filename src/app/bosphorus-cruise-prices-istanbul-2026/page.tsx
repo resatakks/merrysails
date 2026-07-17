@@ -561,7 +561,7 @@ export default function BosphorusCruisePricesPage() {
                 </details>
               ))}
             </div>
-            <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center text-sm text-[var(--text-muted)]">
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center text-sm text-[var(--text-muted)]">
               <span>More resources:</span>
               <Link href="/pricing" className="font-semibold text-[var(--brand-primary)] hover:underline">
                 Full pricing →
@@ -571,10 +571,29 @@ export default function BosphorusCruisePricesPage() {
                 Compare all cruises →
               </Link>
               <span className="hidden sm:inline">·</span>
+              <Link href="/best-bosphorus-sunset-cruise-2026" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Best sunset cruise 2026 →
+              </Link>
+              <span className="hidden sm:inline">·</span>
               <Link href="/istanbul-cruise-faq" className="font-semibold text-[var(--brand-primary)] hover:underline">
                 Full cruise FAQ →
               </Link>
             </div>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
+              Planning your route to the pier? Get tram and taxi directions from{" "}
+              <Link href="/bosphorus-cruise-from-sultanahmet" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Sultanahmet
+              </Link>
+              ,{" "}
+              <Link href="/bosphorus-cruise-from-taksim" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Taksim
+              </Link>
+              , or{" "}
+              <Link href="/bosphorus-cruise-from-beyoglu" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                Beyoğlu
+              </Link>
+              .
+            </p>
           </section>
         </div>
       </main>
