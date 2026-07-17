@@ -1,6 +1,7 @@
 import { Star, Quote } from "lucide-react";
 import { getReviewsForProduct, getReviewText, type CuratedReview } from "@/data/curated-reviews";
 import type { SiteLocale } from "@/i18n/config";
+import { SITE_URL } from "@/lib/constants";
 
 /**
  * Recent reviews carousel — surfaces 3-4 curated guest reviews on
@@ -124,8 +125,10 @@ export default function ReviewsCarousel({
   // itemReviewed binds via @id to the page's own Product/Event node
   // (mainEntityId) so Review resolves against a supported schema.org type
   // in the page's JSON-LD graph — Google's Review rich result does not
-  // accept a bare "Service" as itemReviewed (FV-5, 2026-07-07 fix). Falls
-  // back to the old inline Service object when no mainEntityId is passed.
+  // accept a bare "Service" as itemReviewed (FV-5, 2026-07-07 fix). When no
+  // mainEntityId is passed, falls back to the global Organization node
+  // (@id .../#organization) — an accepted itemReviewed type that carries no
+  // Product-snippet offers requirement (see fallback comment below).
   const reviewSchemas = reviews.map((r) => ({
     "@context": "https://schema.org",
     "@type": "Review",
@@ -143,23 +146,19 @@ export default function ReviewsCarousel({
     },
     itemReviewed: mainEntityId
       ? { "@id": mainEntityId }
-      : {
-          // FV-5 devamı (2026-07-11): fallback "Service" Google'ın Review
-          // itemReviewed kabul listesinde DEĞİL — GSC "geçersiz nesne türü"
-          // hatasının locale sayfalarındaki kaynağıydı (EN kökler mainEntityId
-          // geçtiği için temizdi). "Product" kabul listesinde → tüm mevcut ve
-          // gelecekteki mainEntityId'siz çağrılar tek noktadan geçerli olur.
-          "@type": "Product",
-          name:
-            productKey === "sunset"
-              ? "Bosphorus Sunset Cruise"
-              : productKey === "dinner"
-                ? "Bosphorus Dinner Cruise"
-                : productKey === "yacht"
-                  ? "Private Yacht Charter Istanbul"
-                  : "Bosphorus Cruise",
-          brand: { "@type": "Brand", name: "MerrySails" },
-        },
+      : // FV-5 devamı (2026-07-14): fallback artık her sayfada bulunan global
+        // Organization düğümüne (@id .../#organization = ["TravelAgency",
+        // "LocalBusiness"], root layout'ta emit edilir) @id ile bağlanıyor.
+        // Neden: 2026-07-11'de fallback inline "Service"→"Product" yapılmıştı
+        // (Service, Review.itemReviewed kabul listesinde değildi). Ancak o
+        // inline Product hiçbir offers/review/aggregateRating taşımıyordu →
+        // GSC "Ürün snippet'leri" raporunda "en az biri gerekli" HATASI
+        // (2026-07-17 maili). Organization/LocalBusiness de Review.itemReviewed
+        // kabul listesinde AMA Product-snippet offers zorunluluğu YOK; global
+        // düğüm zaten sayfa grafiğinde olduğu için @id çözülür (EN köklerin
+        // #product/#event @id deseniyle birebir aynı — kanıtlı PASS). Uydurma
+        // rating/offers YOK, title/meta/h1'e dokunulmuyor (Bing-freeze güvenli).
+        { "@id": `${SITE_URL}/#organization` },
   }));
 
   return (
