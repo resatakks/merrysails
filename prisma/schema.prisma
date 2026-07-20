@@ -101,6 +101,10 @@ model ExternalJob {
   durationHours      Float?
   guests             Int     @default(1)
   pickupPoint        String?
+  /// Overrides the computed "Guests" line verbatim on the voucher (e.g. "-"
+  /// when no headcount was given for a custom/bundled booking). Mirrors
+  /// Reservation's guestSummaryOverride meta field.
+  guestSummaryOverride String?
 
   // What's included on board — bulleted list rendered on voucher.
   // e.g. ["Catering & food service", "Table decorations", "Music speaker"]

@@ -72,6 +72,7 @@ export async function getExternalJobDocumentPayload(jobId: string) {
     meetingPointOverride: job.pickupPoint ?? "To be confirmed",
     voucherExtraNote,
     voucherExtraNoteTitle: job.voucherExtraTitle ?? "On Board & Inclusions",
+    guestSummaryOverride: job.guestSummaryOverride ?? undefined,
   };
 
   return { job, documentInput };
