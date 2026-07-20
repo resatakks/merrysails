@@ -92,6 +92,32 @@ function isDinnerTour(slug: string): boolean {
   return /dinner/i.test(slug);
 }
 
+/**
+ * Default meeting point when the operator's message doesn't mention one.
+ * Operator-locked 2026-07-20: "yatlar da buluşma noktası mimar sinan heykeli
+ * karaköy pier default aksi söylenmedikçe, sunsetlerde karaköy pier balıkcı
+ * kemal near tarzı" — yacht/private-charter bookings default to the Mimar
+ * Sinan statue wording, the shared sunset cruise defaults to the Balıkçı
+ * Kemal wording. Every yacht booking this session landed on this same real
+ * pickup anyway, so default instead of asking — only still ask if the
+ * message names a genuinely different location. Shared dinner cruise
+ * (Kabataş, not Karaköy) and anything unmatched fall back to the tour's own
+ * long-form departurePoint text (null here = no override).
+ */
+function defaultMeetingPointFor(slug: string): string | null {
+  if (slug === "bosphorus-sunset-cruise") {
+    return "Karaköy Pier (near Balıkçı Kemal)";
+  }
+  if (
+    slug === "yacht-charter-in-istanbul" ||
+    slug === "private-bosphorus-sunset-cruise" ||
+    slug === "private-bosphorus-dinner-yacht-cruise"
+  ) {
+    return "Karaköy Pier (Mimar Sinan statue)";
+  }
+  return null;
+}
+
 function dateOrNow(iso: string | null): Date {
   if (iso) {
     const d = new Date(`${iso}T12:00:00.000Z`);
@@ -206,7 +232,7 @@ export async function finalizeAsReservation(
     customerNote,
     additionalGuests: [],
     privateTransferRequested: false,
-    meetingPointNote: pickup ?? undefined,
+    meetingPointNote: pickup ?? defaultMeetingPointFor(tour.slug) ?? undefined,
     paymentMethod: parsed.paymentMethod,
     emailTemplate: "custom-booking",
     internalOperatorNote: clean(parsed.internalNote) ?? undefined,
