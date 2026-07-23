@@ -213,6 +213,12 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
   const variant = data.variant ?? "received";
   const isConfirmed = variant === "confirmed";
   const isPrivateYachtFlow = data.tourSlug === "yacht-charter-in-istanbul";
+  // Tea/soft-drinks/snack hospitality is identical on the yacht and the
+  // shared sunset cruise (verified against the catalog copy in
+  // data/tours.ts) — only the dinner cruise and other products differ, so
+  // they keep the generic drinksNote fallback.
+  const hasCommonHospitality =
+    isPrivateYachtFlow || data.tourSlug === "bosphorus-sunset-cruise";
   const cancellationSummary = isPrivateYachtFlow
     ? t.cancellation48
     : t.cancellation24;
@@ -445,7 +451,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           [
             cancellationSummary,
             data.paymentNote ?? (isPrivateYachtFlow ? t.paymentYacht : t.paymentOnboard),
-            t.drinksNote,
+            hasCommonHospitality ? t.hospitalityIncludedNote : t.drinksNote,
             t.photographyNote,
             ...(isPrivateYachtFlow ? [t.byoNoteYacht] : []),
           ],

@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/lib/constants";
 import { isAlcoholicPackageName } from "@/lib/reservation-pricing";
+import { getMeetingPointMapUrl } from "@/lib/meeting-points";
 
 export interface ExperienceSupportFact {
   label: string;
@@ -60,7 +61,7 @@ const experienceSupportGuides: Record<string, ExperienceSupportGuide> = {
       "Or use the Marmaray and exit at Karaköy — Balıkçı Kemal is right at the pier.",
       "Keep your voucher and reservation ID ready while approaching the Karaköy ferry pier meeting point.",
     ],
-    mapUrl: "https://maps.app.goo.gl/Z3eKXCyH5WM4Xzsi8",
+    mapUrl: getMeetingPointMapUrl("Karaköy Pier"),
     mapLabel: "Open the Karaköy ferry pier meeting point map",
     included: [
       "2 glasses of wine per guest (With-Wine option only)",
