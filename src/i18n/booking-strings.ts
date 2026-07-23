@@ -1398,8 +1398,8 @@ export interface BookingPlannerStrings {
 
 const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
   en: {
-    eyebrow: "Core Booking Planner",
-    plannerSubtitle: "Cleaner product selection, the same date validations, and a shorter booking path.",
+    eyebrow: "Booking Planner",
+    plannerSubtitle: "Pick your package, date, and group size below.",
     chooseProductFirstSetDate: "Choose the product first, then set date and guests",
     chooseProductFirstContinue: "Choose the product first, then continue to booking",
     selected: "Selected",
@@ -1430,7 +1430,7 @@ const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
   },
   tr: {
     eyebrow: "Rezervasyon Planlayıcı",
-    plannerSubtitle: "Daha sade ürün seçimi, aynı tarih kontrolleri ve daha kısa rezervasyon yolu.",
+    plannerSubtitle: "Aşağıdan paket, tarih ve kişi sayısını seçin.",
     chooseProductFirstSetDate: "Önce ürünü seçin, sonra tarih ve kişi sayısını belirleyin",
     chooseProductFirstContinue: "Önce ürünü seçin, sonra rezervasyona geçin",
     selected: "Seçildi",
@@ -1461,7 +1461,7 @@ const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
   },
   de: {
     eyebrow: "Buchungsplaner",
-    plannerSubtitle: "Übersichtlichere Produktauswahl, dieselben Datumsprüfungen und ein kürzerer Buchungsweg.",
+    plannerSubtitle: "Wählen Sie unten Paket, Datum und Gästezahl.",
     chooseProductFirstSetDate: "Zuerst das Produkt wählen, dann Datum und Gäste festlegen",
     chooseProductFirstContinue: "Zuerst das Produkt wählen, dann zur Buchung",
     selected: "Ausgewählt",
@@ -1492,7 +1492,7 @@ const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
   },
   fr: {
     eyebrow: "Planificateur de réservation",
-    plannerSubtitle: "Sélection de produit plus claire, les mêmes validations de date et un parcours de réservation plus court.",
+    plannerSubtitle: "Choisissez ci-dessous votre forfait, la date et le nombre de personnes.",
     chooseProductFirstSetDate: "Choisissez d'abord le produit, puis la date et les invités",
     chooseProductFirstContinue: "Choisissez d'abord le produit, puis continuez la réservation",
     selected: "Sélectionné",
@@ -1523,7 +1523,7 @@ const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
   },
   nl: {
     eyebrow: "Boekingsplanner",
-    plannerSubtitle: "Overzichtelijkere productkeuze, dezelfde datumcontroles en een korter boekingstraject.",
+    plannerSubtitle: "Kies hieronder uw pakket, datum en aantal gasten.",
     chooseProductFirstSetDate: "Kies eerst het product, stel daarna datum en gasten in",
     chooseProductFirstContinue: "Kies eerst het product, ga daarna verder met boeken",
     selected: "Geselecteerd",
@@ -1554,7 +1554,7 @@ const PLANNER: Record<BookingLocale, BookingPlannerStrings> = {
   },
   ru: {
     eyebrow: "Планировщик бронирования",
-    plannerSubtitle: "Более понятный выбор услуги, те же проверки даты и более короткий путь бронирования.",
+    plannerSubtitle: "Выберите пакет, дату и количество гостей ниже.",
     chooseProductFirstSetDate: "Сначала выберите услугу, затем дату и число гостей",
     chooseProductFirstContinue: "Сначала выберите услугу, затем перейдите к бронированию",
     selected: "Выбрано",
