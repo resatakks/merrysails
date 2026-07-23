@@ -44,6 +44,7 @@ export interface ReservationEmailStrings {
   tour: string;
   date: string;
   departure: string;
+  meetingPoint: string;
   guests: string;
   subtotal: string;
   groupDiscount: string;
@@ -125,6 +126,7 @@ const en: ReservationEmailStrings = {
   tour: "Tour",
   date: "Date",
   departure: "Departure",
+  meetingPoint: "Meeting Point",
   guests: "Guests",
   subtotal: "Subtotal",
   groupDiscount: "Group discount",
@@ -206,6 +208,7 @@ const tr: ReservationEmailStrings = {
   tour: "Tur",
   date: "Tarih",
   departure: "Kalkış",
+  meetingPoint: "Buluşma Noktası",
   guests: "Misafirler",
   subtotal: "Ara toplam",
   groupDiscount: "Grup indirimi",
@@ -288,6 +291,7 @@ const de: ReservationEmailStrings = {
   tour: "Tour",
   date: "Datum",
   departure: "Abfahrt",
+  meetingPoint: "Treffpunkt",
   guests: "Gäste",
   subtotal: "Zwischensumme",
   groupDiscount: "Gruppenrabatt",
@@ -373,6 +377,7 @@ const fr: ReservationEmailStrings = {
   tour: "Excursion",
   date: "Date",
   departure: "Départ",
+  meetingPoint: "Point de rendez-vous",
   guests: "Invités",
   subtotal: "Sous-total",
   groupDiscount: "Remise de groupe",
@@ -459,6 +464,7 @@ const nl: ReservationEmailStrings = {
   tour: "Tour",
   date: "Datum",
   departure: "Vertrek",
+  meetingPoint: "Ontmoetingspunt",
   guests: "Gasten",
   subtotal: "Subtotaal",
   groupDiscount: "Groepskorting",
@@ -543,6 +549,7 @@ const ru: ReservationEmailStrings = {
   tour: "Тур",
   date: "Дата",
   departure: "Отправление",
+  meetingPoint: "Место встречи",
   guests: "Гости",
   subtotal: "Промежуточный итог",
   groupDiscount: "Групповая скидка",

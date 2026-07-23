@@ -1,8 +1,9 @@
 /**
  * Reusable booking-email senders for both Reservation and ExternalJob, used
  * by the Telegram parse flow's "✉️ Mail Gönder" button (and re-usable
- * anywhere server-side). Uses the custom-booking template + the shared PDF
- * attachment engine so the email matches what the operator just reviewed.
+ * anywhere server-side). Uses the same rich confirmation template as
+ * site-originated bookings + the shared PDF attachment engine, so a
+ * manually-arranged booking's email looks identical to an automated one.
  */
 import { format } from "date-fns";
 import { prisma } from "@/lib/db";
@@ -11,7 +12,7 @@ import {
   getReservationCcRecipients,
   sendEmail,
 } from "@/lib/email";
-import { reservationCustomBookingEmail } from "@/lib/email-templates/reservation-custom-booking";
+import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
 import { buildReservationPdfAttachments } from "@/lib/reservation-pdf";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { getExternalJobDocumentPayload } from "@/lib/external-job-documents";
@@ -72,18 +73,25 @@ export async function sendReservationBookingEmail(
   const formattedDate = format(new Date(reservation.date), "EEEE, MMMM d, yyyy");
   const cc = getReservationCcRecipients(getNotificationInbox());
 
-  const html = reservationCustomBookingEmail({
+  const html = reservationConfirmationEmail({
     reservationId: reservation.reservationId,
     customerName: reservation.customerName,
     tourName: reservation.tourName,
+    tourSlug: reservation.tourSlug,
     date: formattedDate,
-    pickup: meta.meetingPointNote ?? reservation.time,
+    time: reservation.time?.trim() || "To be confirmed",
+    guests: reservation.guests,
     totalPrice,
     currency: reservation.currency,
-    paymentNote: paymentNote(meta.paymentMethod, totalDisplay),
-    customerPhone: reservation.customerPhone,
+    packageName: meta.packageName,
+    addOns: meta.addOns,
+    additionalGuests: meta.additionalGuests,
+    privateTransferRequested: meta.privateTransferRequested,
+    notes: meta.customerNote,
+    variant: "confirmed",
+    guestSummaryOverride: meta.guestSummaryOverride,
     meetingPointNote: meta.meetingPointNote,
-    guestCount: reservation.guests,
+    paymentNote: meta.paymentNoteOverride ?? paymentNote(meta.paymentMethod, totalDisplay),
   });
 
   const attachments = await buildReservationPdfAttachments({
@@ -109,6 +117,7 @@ export async function sendReservationBookingEmail(
     meetingPointOverride: meta.meetingPointNote ?? undefined,
     voucherExtraNote: meta.voucherExtraNote,
     voucherExtraNoteTitle: meta.voucherExtraNoteTitle,
+    guestSummaryOverride: meta.guestSummaryOverride,
   });
 
   await sendEmail({
@@ -138,18 +147,20 @@ export async function sendExternalBookingEmail(
   const formattedDate = format(new Date(job.jobDate), "EEEE, MMMM d, yyyy");
   const cc = getReservationCcRecipients(getNotificationInbox());
 
-  const html = reservationCustomBookingEmail({
+  const html = reservationConfirmationEmail({
     reservationId: job.jobId,
     customerName: job.customerName,
     tourName: job.serviceTitle,
+    tourSlug: documentInput.tourSlug,
     date: formattedDate,
-    pickup: job.pickupPoint ?? documentInput.time,
+    time: documentInput.time?.trim() || "To be confirmed",
+    guests: job.guests,
     totalPrice,
     currency: job.currency,
-    paymentNote: job.paymentNotes ?? paymentNote(job.paymentMethod, totalDisplay),
-    customerPhone: job.customerPhone ?? "",
+    variant: "confirmed",
+    guestSummaryOverride: job.guestSummaryOverride ?? undefined,
     meetingPointNote: job.pickupPoint ?? undefined,
-    guestCount: job.guests,
+    paymentNote: job.paymentNotes ?? paymentNote(job.paymentMethod, totalDisplay),
   });
 
   const attachments = await buildReservationPdfAttachments(documentInput);

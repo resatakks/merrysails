@@ -15,6 +15,7 @@ import {
 import type { ReservationPricingSnapshot } from "@/lib/reservation-pricing";
 import type { ReservationLineItem } from "@/lib/reservation-items";
 import { formatItemsSummary } from "@/lib/reservation-items";
+import { getMeetingPointMapUrl } from "@/lib/meeting-points";
 
 export interface ReservationPdfInput {
   reservationId: string;
@@ -165,6 +166,53 @@ function writeLabelValue(
   doc.setFont("Roboto", "normal");
   doc.setFontSize(11);
   return writeWrappedText(doc, value, x, y + 5, width, 5.1);
+}
+
+/**
+ * Same as writeLabelValue, but when the value matches a known meeting point
+ * it renders as a real tappable PDF link (jsPDF textWithLink — a spec-level
+ * /Annots /Link /URI annotation, honored by iOS Quick Look and Android's
+ * default PDF viewer) straight to the operator's Google Maps pin, plus a
+ * small "tap to open" hint so it visually reads as a link, not just text.
+ */
+function writeLabelValueLinked(
+  doc: jsPDF,
+  label: string,
+  value: string,
+  x: number,
+  y: number,
+  width: number
+): number {
+  doc.setTextColor(107, 114, 128);
+  doc.setFont("Roboto", "bold");
+  doc.setFontSize(9);
+  doc.text(label.toUpperCase(), x, y);
+
+  const mapUrl = getMeetingPointMapUrl(value);
+  doc.setFont("Roboto", "normal");
+  doc.setFontSize(11);
+
+  if (!mapUrl) {
+    doc.setTextColor(17, 24, 39);
+    return writeWrappedText(doc, value, x, y + 5, width, 5.1);
+  }
+
+  doc.setTextColor(29, 78, 216);
+  const lines = doc.splitTextToSize(value, width) as string[];
+  let lineY = y + 5;
+  lines.forEach((current) => {
+    doc.textWithLink(current, x, lineY, { url: mapUrl });
+    const textWidth = doc.getTextWidth(current);
+    doc.setDrawColor(29, 78, 216);
+    doc.setLineWidth(0.25);
+    doc.line(x, lineY + 0.8, x + textWidth, lineY + 0.8);
+    lineY += 5.1;
+  });
+
+  doc.setTextColor(148, 163, 184);
+  doc.setFontSize(7.5);
+  doc.text("Tap to open in Google Maps", x, lineY);
+  return lineY;
 }
 
 function drawBrandIcon(doc: jsPDF, x: number, y: number, size: number) {
@@ -408,7 +456,7 @@ export async function generateReservationInvoicePdf(
   if (!input.isCustomBooking) {
     rightY = writeLabelValue(doc, "Departure", safe(input.time), 108, rightY, 82) + 5;
   }
-  rightY = writeLabelValue(
+  rightY = writeLabelValueLinked(
     doc,
     input.isCustomBooking ? "Pickup" : "Departure Point",
     safe(input.meetingPointOverride ?? tour?.departurePoint),
@@ -525,7 +573,7 @@ export async function generateReservationVoucherPdf(
   if (!input.isCustomBooking) {
     rightY = writeLabelValue(doc, "Departure", safe(input.time), 108, rightY, 82) + 5;
   }
-  rightY = writeLabelValue(
+  rightY = writeLabelValueLinked(
     doc,
     input.isCustomBooking ? "Pickup" : "Meeting Point",
     safe(input.meetingPointOverride ?? tour?.departurePoint),

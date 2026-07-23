@@ -21,7 +21,6 @@ import { getPriceMode, getTourBySlug } from "@/data/tours";
 import { generateReservationId } from "@/lib/reservation-id";
 import { getNotificationInbox, getReservationCcRecipients, sendEmail } from "@/lib/email";
 import { reservationConfirmationEmail } from "@/lib/email-templates/reservation-confirmation";
-import { reservationCustomBookingEmail } from "@/lib/email-templates/reservation-custom-booking";
 import {
   parseReservationNotes,
   serializeReservationNotes,
@@ -305,18 +304,6 @@ function paymentMethodToNote(
   }
 }
 
-function formatPickupForEmail(
-  pickup: string | undefined,
-  time: string | undefined
-): string {
-  const trimmedPickup = pickup?.trim();
-  const trimmedTime = time?.trim();
-  if (trimmedPickup && trimmedTime) return `${trimmedPickup} · ${trimmedTime}`;
-  if (trimmedPickup) return trimmedPickup;
-  if (trimmedTime) return trimmedTime;
-  return "To be confirmed";
-}
-
 async function sendReservationCustomerEmail(reservationId: string) {
   const reservation = await prisma.reservation.findUnique({
     where: { reservationId },
@@ -333,60 +320,8 @@ async function sendReservationCustomerEmail(reservationId: string) {
   const formattedDate = format(new Date(reservation.date), "EEEE, MMMM d, yyyy");
   const notificationInbox = getNotificationInbox();
   const reservationCcRecipients = getReservationCcRecipients(notificationInbox);
-
-  // Branch to the custom-booking template when the operator flagged the
-  // reservation as phone-arranged. Avoids the package/breakdown copy from
-  // reservation-confirmation that doesn't apply.
-  if (meta.emailTemplate === "custom-booking") {
-    const currencySymbol = reservation.currency === "USD" ? "$" : "€";
-    const totalDisplay = `${currencySymbol}${totalPrice.toFixed(2)}`;
-
-    const html = reservationCustomBookingEmail({
-      reservationId: reservation.reservationId,
-      customerName: reservation.customerName,
-      tourName: reservation.tourName,
-      date: formattedDate,
-      pickup: formatPickupForEmail(undefined, reservation.time),
-      totalPrice,
-      currency: reservation.currency,
-      paymentNote:
-        paymentMethodToNote(meta.paymentMethod, totalDisplay) ??
-        "Payment is collected directly on the day of the experience.",
-      customerPhone: reservation.customerPhone,
-      meetingPointNote: meta.meetingPointNote,
-      guestCount: reservation.guests,
-    });
-
-    const attachments = await buildReservationPdfAttachments({
-      reservationId: reservation.reservationId,
-      customerName: reservation.customerName,
-      customerEmail: reservation.customerEmail,
-      customerPhone: reservation.customerPhone,
-      tourSlug: reservation.tourSlug,
-      tourName: reservation.tourName,
-      serviceDate: new Date(reservation.date),
-      time: reservation.time,
-      guests: reservation.guests,
-      totalPrice,
-      currency: reservation.currency,
-      packageName: meta.packageName,
-      addOns: meta.addOns,
-      additionalGuests: meta.additionalGuests,
-      privateTransferRequested: meta.privateTransferRequested,
-      notes: meta.customerNote,
-      pricing: meta.pricing,
-      status: isConfirmed ? "Confirmed" : "Received",
-    });
-
-    await sendEmail({
-      to: reservation.customerEmail,
-      cc: reservationCcRecipients,
-      subject: `MerrySails — Private booking confirmation · ${reservation.reservationId}`,
-      html,
-      attachments,
-    });
-    return;
-  }
+  const currencySymbol = reservation.currency === "USD" ? "$" : "€";
+  const totalDisplay = `${currencySymbol}${totalPrice.toFixed(2)}`;
 
   const emailPayload = {
     reservationId: reservation.reservationId,
@@ -394,7 +329,7 @@ async function sendReservationCustomerEmail(reservationId: string) {
     tourName: reservation.tourName,
     tourSlug: reservation.tourSlug,
     date: formattedDate,
-    time: reservation.time,
+    time: reservation.time?.trim() || "To be confirmed",
     guests: reservation.guests,
     totalPrice,
     currency: reservation.currency,
@@ -409,6 +344,9 @@ async function sendReservationCustomerEmail(reservationId: string) {
       meta.pricing?.childDiscountSavings && meta.pricing.childDiscountSavings > 0
         ? meta.pricing.childDiscountSavings
         : undefined,
+    guestSummaryOverride: meta.guestSummaryOverride,
+    meetingPointNote: meta.meetingPointNote,
+    paymentNote: meta.paymentNoteOverride ?? paymentMethodToNote(meta.paymentMethod, totalDisplay),
   };
 
   const attachments = await buildReservationPdfAttachments({
@@ -430,6 +368,11 @@ async function sendReservationCustomerEmail(reservationId: string) {
     notes: meta.customerNote,
     pricing: meta.pricing,
     status: isConfirmed ? "Confirmed" : "Received",
+    isCustomBooking: meta.emailTemplate === "custom-booking" || !reservation.time,
+    meetingPointOverride: meta.meetingPointNote ?? undefined,
+    voucherExtraNote: meta.voucherExtraNote,
+    voucherExtraNoteTitle: meta.voucherExtraNoteTitle,
+    guestSummaryOverride: meta.guestSummaryOverride,
   });
 
   await sendEmail({

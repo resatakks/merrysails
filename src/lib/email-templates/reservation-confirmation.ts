@@ -10,6 +10,7 @@ import {
 } from "@/lib/experience-support";
 import { currencySymbol, emailLegalFooter, emailLogoBlock, escapeHtml } from "./helpers";
 import { getReservationEmailStrings } from "./reservation-confirmation-strings";
+import { getMeetingPointMapUrl } from "@/lib/meeting-points";
 
 interface ReservationConfirmationData {
   reservationId: string;
@@ -47,6 +48,19 @@ interface ReservationConfirmationData {
    * missing/unknown locale. (A DE/RU/FR/NL/TR customer used to receive an
    * all-English email; 2026-06-20.) */
   locale?: string;
+  /** Overrides the computed "Guests" table row verbatim (e.g. "Up to 10
+   * guests" for a capacity-priced private charter). Takes precedence over
+   * guestBreakdown/guests when set. */
+  guestSummaryOverride?: string;
+  /** Free-text pickup/meeting-point note — set on phone/WhatsApp-arranged
+   * bookings where there's no fixed tour departurePoint. Rendered as a
+   * dedicated box, with a tappable Google Maps link when the text matches
+   * a known location (see lib/meeting-points.ts). */
+  meetingPointNote?: string;
+  /** Fully-formatted payment sentence (e.g. "Payment: $110.00 cash on
+   * board."). Replaces the generic pay-on-board bullet in Good to Know —
+   * set on manual bookings where the amount/method is known upfront. */
+  paymentNote?: string;
 }
 
 function renderFactsTable(
@@ -289,7 +303,9 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           <tr>
             <td style="color:#64748b;font-size:13px;padding:12px 18px;border-bottom:1px solid #f1f5f9;">${escapeHtml(t.guests)}</td>
             <td style="color:#0f172a;font-size:14px;padding:12px 18px;border-bottom:1px solid #f1f5f9;text-align:right;">${
-              data.guestBreakdown && (data.guestBreakdown.children > 0 || data.guestBreakdown.infants > 0)
+              data.guestSummaryOverride
+                ? escapeHtml(data.guestSummaryOverride)
+                : data.guestBreakdown && (data.guestBreakdown.children > 0 || data.guestBreakdown.infants > 0)
                 ? (() => {
                     const parts: string[] = [];
                     if (data.guestBreakdown.adults > 0) {
@@ -336,6 +352,25 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
           </tr>
         </table>
       </div>
+
+      ${
+        data.meetingPointNote?.trim()
+          ? (() => {
+              const mapUrl = getMeetingPointMapUrl(data.meetingPointNote);
+              const noteHtml = escapeHtml(data.meetingPointNote!.trim());
+              return `
+        <div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:14px;padding:16px 18px;margin-bottom:22px;">
+          <p style="font-size:13px;color:#1e3a8a;font-weight:700;margin:0 0 8px;">📍 ${escapeHtml(t.meetingPoint)}</p>
+          <p style="margin:0;font-size:14px;line-height:1.7;">${
+            mapUrl
+              ? `<a href="${mapUrl}" style="color:#1d4ed8;font-weight:700;text-decoration:underline;">${noteHtml}</a>`
+              : `<span style="color:#1e3a8a;">${noteHtml}</span>`
+          }</p>
+        </div>
+      `;
+            })()
+          : ""
+      }
 
       ${
         (data.items && data.items.length >= 2) ||
@@ -397,7 +432,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         ${renderBulletList(
           [
             cancellationSummary,
-            isPrivateYachtFlow ? t.paymentYacht : t.paymentOnboard,
+            data.paymentNote ?? (isPrivateYachtFlow ? t.paymentYacht : t.paymentOnboard),
             t.drinksNote,
             t.photographyNote,
           ],
