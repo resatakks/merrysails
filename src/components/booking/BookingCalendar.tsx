@@ -213,6 +213,27 @@ export default function BookingCalendar({
   // button when no time slot is picked. We flash the time-pill row + scroll
   // it into view so the gating reason is obvious instead of silent.
   const [timeNudge, setTimeNudge] = useState(false);
+
+  // Carry a freshly-arrived prefill date into the already-mounted calendar.
+  // On cruise/dinner pages TourDetailClient renders unconditionally, so this
+  // calendar is mounted with selectedDate=null BEFORE the "Continue booking"
+  // soft-nav delivers the chosen date via initialDate. The useState
+  // initializers above ran once (with null) and silently dropped it, which is
+  // the operator-reported "pick a date, then have to pick it again in the
+  // sidebar". Depend on the date VALUE (ms), not the Date object reference
+  // (a new object every render), so this syncs only when a genuinely new date
+  // arrives and never clobbers a date the guest just picked in this calendar.
+  const initialDateMs =
+    initialDate && !Number.isNaN(initialDate.getTime())
+      ? startOfDay(initialDate).getTime()
+      : null;
+  useEffect(() => {
+    if (initialDateMs == null) return;
+    const next = new Date(initialDateMs);
+    setSelectedDate(next);
+    setCurrentMonth(next);
+  }, [initialDateMs]);
+
   const isPerGroup = priceMode === "perGroup";
   const operationsByDate = Object.fromEntries(
     operations.map((operation) => [operation.date, operation])
