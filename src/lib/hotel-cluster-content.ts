@@ -148,7 +148,7 @@ export const HOTEL_CLUSTER_DISTRICTS_TR: Record<string, HotelClusterDistrict> = 
     faqs: [
       {
         q: "Karaköy otelleri gün batımı turu iskelesine ne kadar yakın?",
-        a: "Çok yakın. Karaköy otelleri (10 Karaköy, Soho House, Sumahan on the Water) gün batımı turunun bindiği Karaköy iskelesinden 5 dakika yürüyüş. Biniş noktası Galata Köprüsü'nün hemen kuzeyinde, Mimar Sinan heykelinin yanında.",
+        a: "Çok yakın. Karaköy otelleri (10 Karaköy, Soho House, Sumahan on the Water) gün batımı turunun bindiği Karaköy iskelesinden 5 dakika yürüyüş. Biniş noktası Galata Köprüsü'nün hemen kuzeyinde, Balıkçı Kemal restoranının yanında.",
       },
       {
         q: "Beyoğlu'ndan akşam yemekli turda otel pickup var mı?",
@@ -426,7 +426,7 @@ export const HOTEL_CLUSTER_DISTRICTS_FR: Record<string, HotelClusterDistrict> = 
     faqs: [
       {
         q: "À quelle distance les hôtels Karaköy de l'embarcadère coucher de soleil ?",
-        a: "Très proches. Les hôtels Karaköy (10 Karaköy, Soho House, Sumahan on the Water) sont à 5 min à pied de l'embarcadère Karaköy d'où part la croisière coucher de soleil. Le point de rendez-vous est juste au nord du pont de Galata, près de la statue de Mimar Sinan.",
+        a: "Très proches. Les hôtels Karaköy (10 Karaköy, Soho House, Sumahan on the Water) sont à 5 min à pied de l'embarcadère Karaköy d'où part la croisière coucher de soleil. Le point de rendez-vous est juste au nord du pont de Galata, près du restaurant Balıkçı Kemal.",
       },
       {
         q: "Prise en charge à l'hôtel depuis Beyoğlu sur la croisière-dîner ?",
@@ -565,7 +565,7 @@ export const HOTEL_CLUSTER_DISTRICTS_NL: Record<string, HotelClusterDistrict> = 
     faqs: [
       {
         q: "Hoe dichtbij liggen Karaköy-hotels de zonsondergangssteiger?",
-        a: "Heel dichtbij. Karaköy-hotels (10 Karaköy, Soho House, Sumahan on the Water) liggen 5 min lopen van de Karaköy-steiger waar de zonsondergangscruise vertrekt. Het ontmoetingspunt is net ten noorden van de Galata-brug, bij het Mimar Sinan-monument.",
+        a: "Heel dichtbij. Karaköy-hotels (10 Karaköy, Soho House, Sumahan on the Water) liggen 5 min lopen van de Karaköy-steiger waar de zonsondergangscruise vertrekt. Het ontmoetingspunt is net ten noorden van de Galata-brug, bij restaurant Balıkçı Kemal.",
       },
       {
         q: "Hotelophaling vanuit Beyoğlu bij de dinercruise?",
@@ -843,7 +843,7 @@ export const HOTEL_CLUSTER_DISTRICTS: Record<string, HotelClusterDistrict> = {
     faqs: [
       {
         q: "How close are Karaköy hotels to the sunset cruise pier?",
-        a: "Very close. Karaköy hotels (10 Karaköy, Soho House, Sumahan on the Water) are 5 minutes on foot from the Karaköy ferry pier where the sunset cruise boards. The boarding point sits just north of the Galata Bridge, by the Mimar Sinan statue.",
+        a: "Very close. Karaköy hotels (10 Karaköy, Soho House, Sumahan on the Water) are 5 minutes on foot from the Karaköy ferry pier where the sunset cruise boards. The boarding point sits just north of the Galata Bridge, right by Balıkçı Kemal restaurant.",
       },
       {
         q: "Is the Bosphorus dinner cruise pickup available from Beyoğlu?",

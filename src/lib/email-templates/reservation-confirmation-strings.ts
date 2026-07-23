@@ -87,6 +87,7 @@ export interface ReservationEmailStrings {
   paymentOnboard: string;
   drinksNote: string;
   photographyNote: string;
+  byoNoteYacht: string;
   /** CTA buttons */
   trackReservation: string;
   openInvoice: string;
@@ -174,6 +175,8 @@ const en: ReservationEmailStrings = {
     "Drinks and inclusions depend on the package selected on your booked experience page.",
   photographyNote:
     "Professional photography may be available on board depending on the experience.",
+  byoNoteYacht:
+    "Soft drinks, water, and a light snack tray are already on board — feel free to bring extra snacks or drinks from a market if you'd like.",
   trackReservation: "Track Reservation",
   openInvoice: "Open Invoice",
   openVoucher: "Open Voucher",
@@ -258,6 +261,8 @@ const tr: ReservationEmailStrings = {
     "İçecekler ve dahil olanlar, rezerve ettiğiniz deneyim sayfasında seçilen pakete bağlıdır.",
   photographyNote:
     "Deneyime bağlı olarak teknede profesyonel fotoğraf çekimi mevcut olabilir.",
+  byoNoteYacht:
+    "Teknede zaten alkolsüz içecek, su ve hafif atıştırmalık var — isterseniz marketten ekstra atıştırmalık veya içecek de getirebilirsiniz.",
   trackReservation: "Rezervasyonu Takip Et",
   openInvoice: "Faturayı Aç",
   openVoucher: "Voucher'ı Aç",
@@ -346,6 +351,8 @@ const de: ReservationEmailStrings = {
     "Getränke und Leistungen hängen vom auf Ihrer gebuchten Erlebnisseite gewählten Paket ab.",
   photographyNote:
     "Je nach Erlebnis kann an Bord professionelle Fotografie verfügbar sein.",
+  byoNoteYacht:
+    "Softdrinks, Wasser und ein leichtes Snack-Tablett sind bereits an Bord — Sie können gerne zusätzliche Snacks oder Getränke vom Markt mitbringen, wenn Sie möchten.",
   trackReservation: "Reservierung verfolgen",
   openInvoice: "Rechnung öffnen",
   openVoucher: "Voucher öffnen",
@@ -435,6 +442,8 @@ const fr: ReservationEmailStrings = {
     "Les boissons et les prestations incluses dépendent du forfait sélectionné sur la page de l'expérience réservée.",
   photographyNote:
     "Une photographie professionnelle peut être disponible à bord selon l'expérience.",
+  byoNoteYacht:
+    "Des boissons non alcoolisées, de l'eau et un plateau de collations légères sont déjà à bord — n'hésitez pas à apporter des collations ou boissons supplémentaires du marché si vous le souhaitez.",
   trackReservation: "Suivre la réservation",
   openInvoice: "Ouvrir la facture",
   openVoucher: "Ouvrir le bon",
@@ -522,6 +531,8 @@ const nl: ReservationEmailStrings = {
     "Drankjes en inbegrepen items hangen af van het pakket dat is geselecteerd op uw geboekte ervaringspagina.",
   photographyNote:
     "Professionele fotografie kan aan boord beschikbaar zijn, afhankelijk van de ervaring.",
+  byoNoteYacht:
+    "Frisdrank, water en een lichte snacktray zijn al aan boord — breng gerust extra snacks of drankjes van de markt mee als u dat wilt.",
   trackReservation: "Reservering volgen",
   openInvoice: "Factuur openen",
   openVoucher: "Voucher openen",
@@ -609,6 +620,8 @@ const ru: ReservationEmailStrings = {
     "Напитки и включённые услуги зависят от пакета, выбранного на странице забронированного тура.",
   photographyNote:
     "В зависимости от тура на борту может быть доступна профессиональная фотосъёмка.",
+  byoNoteYacht:
+    "Безалкогольные напитки, вода и лёгкие закуски уже на борту — вы можете взять с собой дополнительные закуски или напитки с рынка, если хотите.",
   trackReservation: "Отследить бронирование",
   openInvoice: "Открыть счёт",
   openVoucher: "Открыть ваучер",

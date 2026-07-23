@@ -1540,7 +1540,7 @@ export const turkishProductPosts: BlogPost[] = [
     author: "captain-ahmet",
     keyTakeaways: [
       "Eminönü ve Karaköy'den kalkan büyük vapurlar Şehir Hatları hizmetidir — turistik rehberli tur değil, toplu taşıma aracıdır",
-      "MerrySails Gün Batımı Turu Karaköy iskele yanından (Mimar Sinan Heykeli önü, Marmaray çıkışı) kalkar; kişi başı €34 (şarapsız) veya €40 (şarapla)",
+      "MerrySails Gün Batımı Turu Karaköy iskele yanından (Balıkçı Kemal önü, Marmaray çıkışı) kalkar; kişi başı €34 (şarapsız) veya €40 (şarapla)",
       "Akşam Yemeği Boğaz Turu Kabataş İskelesi'nden 20:30'da hareket eder; kişi başı €30'dan başlar",
       "TÜRSAB A Grubu lisanslı operatörü seçin — lisans numarasını [tursab.org.tr](https://www.tursab.org.tr/en) üzerinden doğrulayabilirsiniz",
     ],
@@ -1568,7 +1568,7 @@ export const turkishProductPosts: BlogPost[] = [
               "Yok (kafeterya satışı)",
             ],
             [
-              "Karaköy iskele (Mimar Sinan Heykeli önü)",
+              "Karaköy iskele (Balıkçı Kemal önü)",
               "MerrySails Gün Batımı Turu",
               "€34–40 / kişi",
               "İngilizce rehber",
@@ -1614,16 +1614,16 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Karaköy Bölgesi — MerrySails Gün Batımı Turu Buluşma Noktası",
         answerCapsule:
-          "MerrySails Bosphorus Sunset Cruise, Karaköy iskele yanı, Mimar Sinan Heykeli önünden hareket eder. Rezervasyon onayında harita pini paylaşılır. Fiyat: kişi başı €34 (şarapsız) veya €40 (şarapla).",
+          "MerrySails Bosphorus Sunset Cruise, Karaköy iskele yanı, Balıkçı Kemal önünden hareket eder. Rezervasyon onayında harita pini paylaşılır. Fiyat: kişi başı €34 (şarapsız) veya €40 (şarapla).",
         content:
-          "Karaköy, Galata Kulesi'nin hemen altında, Boğaz kıyısında konumlanan tarihi bir semt ve rıhtım bölgesidir. MerrySails Gün Batımı Turu'nun buluşma noktası Karaköy iskele yanındaki Mimar Sinan Heykeli'nin önündedir (Marmaray çıkışı, Balıkçı Kemal yakını) — büyük Şehir Hatları iskelelerinden birkaç dakika yürüme mesafesinde, ancak ayrı bir noktada.\n\nBu seçim rastlantısal değildir: küçük grup formatında (yaklaşık 12–20 kişi) lüks yat kalkışı için Karaköy'ün Boğaz girişine yakınlığı ve nispeten az trafikli kıyı şeridi avantaj sağlar. Büyük kalabalık bir vapur değil, özel yat formatında bir deneyimdir.\n\nTur yaklaşık 2 saat sürer, İngilizce rehber eşliğinde Boğaz köprüleri, Çırağan Sarayı, Rumeli Hisarı ve Ortaköy Camii önünden geçer. Güverte üstünden çekilen fotoğraflar, şehirden 500 metre açıkta olmanın verdiği perspektifle Boğaz'ı bambaşka bir gözle görmenizi sağlar.",
+          "Karaköy, Galata Kulesi'nin hemen altında, Boğaz kıyısında konumlanan tarihi bir semt ve rıhtım bölgesidir. MerrySails Gün Batımı Turu'nun buluşma noktası Karaköy iskele yanındaki Balıkçı Kemal önündedir (Marmaray çıkışı) — büyük Şehir Hatları iskelelerinden birkaç dakika yürüme mesafesinde, ancak ayrı bir noktada.\n\nBu seçim rastlantısal değildir: küçük grup formatında (yaklaşık 12–20 kişi) lüks yat kalkışı için Karaköy'ün Boğaz girişine yakınlığı ve nispeten az trafikli kıyı şeridi avantaj sağlar. Büyük kalabalık bir vapur değil, özel yat formatında bir deneyimdir.\n\nTur yaklaşık 2 saat sürer, İngilizce rehber eşliğinde Boğaz köprüleri, Çırağan Sarayı, Rumeli Hisarı ve Ortaköy Camii önünden geçer. Güverte üstünden çekilen fotoğraflar, şehirden 500 metre açıkta olmanın verdiği perspektifle Boğaz'ı bambaşka bir gözle görmenizi sağlar.",
         callout: {
           type: "price",
           text:
             "MerrySails Gün Batımı Turu: €34/kişi (şarapsız) | €40/kişi (şarapla dahil). Kalkış: Karaköy bölgesi, günbatımından 15 dk önce. Rezervasyon: [/tr/cruises/bosphorus-sunset-cruise](/tr/cruises/bosphorus-sunset-cruise)",
         },
         proTip:
-          "Karaköy'den Mimar Sinan Heykeli yönüne doğru yürüdüğünüzde Boğaz kıyısına paralel dar sokaklardan geçersiniz. Rezervasyon onayınızdaki harita pinini telefona önceden indirin — 4G bağlantısına güvenmek yerine offline haritada işaretleyin.",
+          "Karaköy'den Balıkçı Kemal yönüne doğru yürüdüğünüzde Boğaz kıyısına paralel dar sokaklardan geçersiniz. Rezervasyon onayınızdaki harita pinini telefona önceden indirin — 4G bağlantısına güvenmek yerine offline haritada işaretleyin.",
       },
       {
         heading: "Kabataş İskelesi — Akşam Yemekli Boğaz Turu",
@@ -1800,11 +1800,11 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Kabataş İskelesi'nden gün batımı turu var mı?",
-        a: "MerrySails Gün Batımı Turu Karaköy iskele yanından (Mimar Sinan Heykeli önü, Marmaray çıkışı) kalkar, Kabataş'tan değil. Kabataş'tan 20:30 kalkışlı Akşam Yemeği Turu hareket eder. İki iskele arasındaki mesafe yürüyüşle yaklaşık 15 dakikadır. Rezervasyon onayınızda doğru harita pini paylaşılır.",
+        a: "MerrySails Gün Batımı Turu Karaköy iskele yanından (Balıkçı Kemal önü, Marmaray çıkışı) kalkar, Kabataş'tan değil. Kabataş'tan 20:30 kalkışlı Akşam Yemeği Turu hareket eder. İki iskele arasındaki mesafe yürüyüşle yaklaşık 15 dakikadır. Rezervasyon onayınızda doğru harita pini paylaşılır.",
       },
       {
         q: "Karaköy'den kalkış için Sultanahmet'ten nasıl giderim?",
-        a: "T1 tramvayıyla Sultanahmet'ten Karaköy durağına inin — yaklaşık 3 durak, 5 dakika. Karaköy durağından çıktığınızda Galata Köprüsü'nün hemen altında olursunuz. Mimar Sinan Heykeli yönüne 5 dk yürüyüşle buluşma noktasına ulaşırsınız. Rezervasyon onayınızdaki harita pinini önceden telefona alın.",
+        a: "T1 tramvayıyla Sultanahmet'ten Karaköy durağına inin — yaklaşık 3 durak, 5 dakika. Karaköy durağından çıktığınızda Galata Köprüsü'nün hemen altında olursunuz. Balıkçı Kemal yönüne 5 dk yürüyüşle buluşma noktasına ulaşırsınız. Rezervasyon onayınızdaki harita pinini önceden telefona alın.",
       },
       {
         q: "Akşam yemeği turu için otel transferi mümkün mü?",
@@ -1853,7 +1853,7 @@ export const turkishProductPosts: BlogPost[] = [
     author: "editorial",
     keyTakeaways: [
       "Eminönü ve Karaköy'den kalkan büyük vapurlar Şehir Hatları taşımacılığıdır — turistik rehberli tur değil, düzenli kamu seferi",
-      "MerrySails Gün Batımı Turu Karaköy iskele yanından (Mimar Sinan Heykeli önü, Marmaray çıkışı) kalkar; kişi başı €34 (şarapsız) veya €40 (şarapla), ~2 saat",
+      "MerrySails Gün Batımı Turu Karaköy iskele yanından (Balıkçı Kemal önü, Marmaray çıkışı) kalkar; kişi başı €34 (şarapsız) veya €40 (şarapla), ~2 saat",
       "Akşam Yemeği Boğaz Turu Kabataş İskelesi'nden 20:30'da hareket eder; Silver €30–45, Gold €80–90, ~3,5 saat",
       "TÜRSAB A Grubu lisanslı operatör seçin — lisans numarası tursab.org.tr üzerinden 30 saniyede doğrulanabilir",
     ],
@@ -1882,7 +1882,7 @@ export const turkishProductPosts: BlogPost[] = [
               "Yok",
             ],
             [
-              "Karaköy iskele (Mimar Sinan Heykeli önü)",
+              "Karaköy iskele (Balıkçı Kemal önü)",
               "MerrySails Gün Batımı Turu",
               "€34–40 / kişi",
               "~2 saat",
@@ -1924,9 +1924,9 @@ export const turkishProductPosts: BlogPost[] = [
         heading:
           "Karaköy Boğaz Turu Nereden Başlar?",
         answerCapsule:
-          "MerrySails Gün Batımı Turu Karaköy iskele yanındaki Mimar Sinan Heykeli önünden kalkar (Marmaray çıkışı, Balıkçı Kemal yakını). Büyük Şehir Hatları iskelesinden birkaç dakika yürüme mesafesinde, ayrı bir noktadadır. Rezervasyon onayında harita pini paylaşılır.",
+          "MerrySails Gün Batımı Turu Karaköy iskele yanındaki Balıkçı Kemal önünden kalkar (Marmaray çıkışı). Büyük Şehir Hatları iskelesinden birkaç dakika yürüme mesafesinde, ayrı bir noktadadır. Rezervasyon onayında harita pini paylaşılır.",
         content:
-          "Karaköy, Galata Kulesi'nin eteğinde, Boğaz girişine yakın tarihi bir rıhtım semtidir. MerrySails [Gün Batımı Turu](/tr/cruises/bosphorus-sunset-cruise)'nun buluşma noktası bu semtte, Karaköy iskele yanında, Mimar Sinan Heykeli önündedir.\n\nBüyük kalabalık Şehir Hatları iskelesinin birkaç dakika güneyinde, daha sakin bir kıyı şeridinde yer alır. Küçük grup formatında (12–20 kişi) çalışan bu tur, Boğaz boyunca İstanbul silüetini — Dolmabahçe Sarayı, Çırağan Sarayı, Ortaköy Camii, iki köprü ve Rumeli Hisarı — İngilizce rehber anlatımıyla sunar.\n\nT1 tramvayıyla Sultanahmet veya Sirkeci'den Karaköy durağında inin; Galata Köprüsü'nün hemen altında çıkmış olursunuz. Mimar Sinan Heykeli yönünde 5 dk yürüyerek buluşma noktasına ulaşabilirsiniz.",
+          "Karaköy, Galata Kulesi'nin eteğinde, Boğaz girişine yakın tarihi bir rıhtım semtidir. MerrySails [Gün Batımı Turu](/tr/cruises/bosphorus-sunset-cruise)'nun buluşma noktası bu semtte, Karaköy iskele yanında, Balıkçı Kemal önündedir.\n\nBüyük kalabalık Şehir Hatları iskelesinin birkaç dakika güneyinde, daha sakin bir kıyı şeridinde yer alır. Küçük grup formatında (12–20 kişi) çalışan bu tur, Boğaz boyunca İstanbul silüetini — Dolmabahçe Sarayı, Çırağan Sarayı, Ortaköy Camii, iki köprü ve Rumeli Hisarı — İngilizce rehber anlatımıyla sunar.\n\nT1 tramvayıyla Sultanahmet veya Sirkeci'den Karaköy durağında inin; Galata Köprüsü'nün hemen altında çıkmış olursunuz. Balıkçı Kemal yönünde 5 dk yürüyerek buluşma noktasına ulaşabilirsiniz.",
         callout: {
           type: "price",
           text:
@@ -2118,7 +2118,7 @@ export const turkishProductPosts: BlogPost[] = [
       },
       {
         q: "Karaköy'den boğaz turuna binilir mi?",
-        a: "Evet. MerrySails Gün Batımı Turu Karaköy iskele yanından (Mimar Sinan Heykeli önü, Marmaray çıkışı) kalkar. Büyük Şehir Hatları iskelesinden birkaç dakika yürüme mesafesinde ama ayrı bir kalkış noktasıdır. Rezervasyon onayınızda Google Maps pini paylaşılır. Kişi başı fiyat: €34 (şarapsız) veya €40 (şarapla).",
+        a: "Evet. MerrySails Gün Batımı Turu Karaköy iskele yanından (Balıkçı Kemal önü, Marmaray çıkışı) kalkar. Büyük Şehir Hatları iskelesinden birkaç dakika yürüme mesafesinde ama ayrı bir kalkış noktasıdır. Rezervasyon onayınızda Google Maps pini paylaşılır. Kişi başı fiyat: €34 (şarapsız) veya €40 (şarapla).",
       },
       {
         q: "Kabataş iskelesi nerede?",
@@ -2424,7 +2424,7 @@ export const turkishProductPosts: BlogPost[] = [
         answerCapsule:
           "MerrySails Gün Batımı Turu yaklaşık 2 saat sürer. Karaköy bölgesinden kalkar, Boğaziçi Köprüsü altından geçer, Rumeli ve Anadolu Hisarı önünden döner. Kişi başı €34 (şarapsız) veya €40 (şarapla).",
         content:
-          "[Gün batımı boğaz turu](/tr/cruises/bosphorus-sunset-cruise), günün en güzel ışıklarında Boğaz'ı keşfetmek isteyenler için tasarlanmış, tam anlamıyla verimli 2 saatlik bir deneyimdir. Kalkış Karaköy iskele yanından (Mimar Sinan Heykeli önü, Marmaray çıkışı) yapılır; dönüşe kadar rotada şu noktalar bulunur:\n\n- **Boğaziçi Köprüsü:** Avrupa ile Asya'yı birleştiren simge köprünün altından geçiş\n- **Rumeli Hisarı:** Sultan II. Mehmed'in 1452'de inşa ettirdiği kale önünde fotoğraf molası\n- **Anadolu Hisarı:** Boğaz'ın en dar noktasında karşılıklı iki tarihi kale\n- **Bebek ve Arnavutköy yalıları:** Sahil boyunca tarihi Osmanlı ahşap köşkleri\n\nTur yaklaşık 2 saat sürer; gün batımı saatine 30–45 dakika kala Boğaz'ın ortasına ulaşılır. Bu planlama, gün batımı anını en iyi ışık koşullarında köprü altından yakalatır.\n\n**Fiyat:** €34 / kişi (şarap dahil değil) veya €40 / kişi (bir şişe Türk şarabı dahil). TÜRSAB A Grubu lisanslı Merry Tourism, 2001'den bu yana bu rotayı güvenle işletmektedir.",
+          "[Gün batımı boğaz turu](/tr/cruises/bosphorus-sunset-cruise), günün en güzel ışıklarında Boğaz'ı keşfetmek isteyenler için tasarlanmış, tam anlamıyla verimli 2 saatlik bir deneyimdir. Kalkış Karaköy iskele yanından (Balıkçı Kemal önü, Marmaray çıkışı) yapılır; dönüşe kadar rotada şu noktalar bulunur:\n\n- **Boğaziçi Köprüsü:** Avrupa ile Asya'yı birleştiren simge köprünün altından geçiş\n- **Rumeli Hisarı:** Sultan II. Mehmed'in 1452'de inşa ettirdiği kale önünde fotoğraf molası\n- **Anadolu Hisarı:** Boğaz'ın en dar noktasında karşılıklı iki tarihi kale\n- **Bebek ve Arnavutköy yalıları:** Sahil boyunca tarihi Osmanlı ahşap köşkleri\n\nTur yaklaşık 2 saat sürer; gün batımı saatine 30–45 dakika kala Boğaz'ın ortasına ulaşılır. Bu planlama, gün batımı anını en iyi ışık koşullarında köprü altından yakalatır.\n\n**Fiyat:** €34 / kişi (şarap dahil değil) veya €40 / kişi (bir şişe Türk şarabı dahil). TÜRSAB A Grubu lisanslı Merry Tourism, 2001'den bu yana bu rotayı güvenle işletmektedir.",
         proTip:
           "Gün batımı saati yaz aylarında (Mayıs–Ağustos) 20:00–20:30'a uzar; tur saati de buna göre ötelenir (19:00 kalkış). Kış aylarında (Kasım–Şubat) 16:30–17:00 kalkışı beklenir. Güncel sefer saatini rezervasyon onay e-postanızdan öğrenin.",
       },

@@ -447,6 +447,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
             data.paymentNote ?? (isPrivateYachtFlow ? t.paymentYacht : t.paymentOnboard),
             t.drinksNote,
             t.photographyNote,
+            ...(isPrivateYachtFlow ? [t.byoNoteYacht] : []),
           ],
           "warm"
         )}

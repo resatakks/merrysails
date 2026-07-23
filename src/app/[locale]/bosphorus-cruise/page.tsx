@@ -158,7 +158,7 @@ const CONTENT: Record<string, LocaleContent> = {
  sunsetLabel: "Gün Batımı Turu (2 saat, Karaköy kalkışı)",
  dinnerLabel: "Akşam Yemekli Tur (3,5 saat, Kabataş kalkışı)",
  sunsetSteps: [
- { time: "18:30", landmark: "Karaköy İskelesi'nde biniş", desc: "Mimar Sinan heykelinin yanı, Marmaray çıkışına 200 m. Bağışlanan İngilizce rehber misafirleri karşılar; ikram tepsisi (kuruyemiş, mevsim meyveleri, su, ev limonatası) servise başlar. Şaraplı pakette iki kadeh yerel şarap sunulur." },
+ { time: "18:30", landmark: "Karaköy İskelesi'nde biniş", desc: "Balıkçı Kemal restoranının hemen önü, Marmaray çıkışına 200 m. Bağışlanan İngilizce rehber misafirleri karşılar; ikram tepsisi (kuruyemiş, mevsim meyveleri, su, ev limonatası) servise başlar. Şaraplı pakette iki kadeh yerel şarap sunulur." },
  { time: "19:00", landmark: "Karaköy çıkışı + Galata Kulesi", desc: "Tekne iskeleden ayrılır, Karaköy rıhtımı boyunca kuzeye yönelir. Sağda Galata Kulesi, solda Kız Kulesi'nin Anadolu yakasındaki silueti net görünür. Rehber Boğaz'ın 31 km uzunluğu ve iki kıta arasındaki konumunu anlatır." },
  { time: "19:15", landmark: "Dolmabahçe Sarayı geçişi", desc: "1856 yılında Sultan Abdülmecid için yaptırılan imparatorluk rezidansı. 285 oda, 46 salon, dünyanın en büyük baccarat avizesi (4,5 ton). Cepheye 80 m mesafeden yaklaşırız; fotoğraf için ideal mesafe budur." },
  { time: "19:30", landmark: "Ortaköy Camii + Boğaziçi Köprüsü", desc: "1853 Baroque cephe, birinci Boğaziçi Köprüsü (1973, 1.560 m açıklık) altından geçeriz. Köprü altı geçişi turun en fotoğraflanan anıdır — güverte üst katına geçmek için 5 dakikalık duraklama vardır." },
