@@ -32,9 +32,14 @@ const MAX_GUESTS = 20;
  */
 export const CHILD_DISCOUNT_RATE = 0.5;
 
-function isAlcoholicPackage(pkg: Package | undefined): boolean {
-  if (!pkg) return false;
-  const haystack = `${pkg.name} ${pkg.description ?? ""}`.toLowerCase();
+/**
+ * String-based variant of isAlcoholicPackage, for callers that only have a
+ * booked packageName (e.g. a reservation's meta) and not a resolved catalog
+ * Package object — see experience-support.ts, which uses this to stop a
+ * "Without Wine" confirmation email from claiming wine is included.
+ */
+export function isAlcoholicPackageName(name: string, description?: string): boolean {
+  const haystack = `${name} ${description ?? ""}`.toLowerCase();
   return (
     haystack.includes("alcoholic") ||
     haystack.includes("alcohol") ||
@@ -48,6 +53,11 @@ function isAlcoholicPackage(pkg: Package | undefined): boolean {
     haystack.includes("unlimited alcohol") ||
     haystack.includes("premium spirits")
   );
+}
+
+function isAlcoholicPackage(pkg: Package | undefined): boolean {
+  if (!pkg) return false;
+  return isAlcoholicPackageName(pkg.name, pkg.description);
 }
 
 export interface ReservationPricingLineItem {

@@ -113,7 +113,7 @@ function defaultMeetingPointFor(slug: string): string | null {
     slug === "private-bosphorus-sunset-cruise" ||
     slug === "private-bosphorus-dinner-yacht-cruise"
   ) {
-    return "Karaköy Pier (Mimar Sinan statue)";
+    return "Karaköy Pier";
   }
   return null;
 }

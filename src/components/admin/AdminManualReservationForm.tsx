@@ -76,9 +76,9 @@ const TEMPLATES: ReservationTemplate[] = [
     time: "19:00 (boarding from 18:30)",
     timeLocked: false,
     pickup:
-      "Karaköy ferry pier next to the Mimar Sinan statue (by Marmaray, near Balıkçı Kemal)",
+      "Karaköy ferry pier next to Balıkçı Kemal (by the Marmaray exit)",
     meetingPointNote:
-      "Meeting point: Karaköy ferry pier next to the Mimar Sinan statue (by the Marmaray exit, near Balıkçı Kemal). Boarding opens at 18:30, departure 19:00. Please arrive at least 15 minutes before boarding.",
+      "Meeting point: Karaköy ferry pier next to Balıkçı Kemal (by the Marmaray exit). Boarding opens at 18:30, departure 19:00. Please arrive at least 15 minutes before boarding.",
     currency: "EUR",
     paymentMethod: "cash_on_board",
     emailTemplate: "standard",
@@ -112,7 +112,7 @@ const TEMPLATES: ReservationTemplate[] = [
     timeLocked: false,
     pickup: "Karaköy",
     meetingPointNote:
-      "Exact meeting point in Karaköy will be confirmed by our team one day before. Tentative area: near the Mimar Sinan statue / Balıkçı Kemal corner — easy to find, right by the waterfront.",
+      "Exact meeting point in Karaköy will be confirmed by our team one day before. Tentative area: near the Balıkçı Kemal corner — easy to find, right by the waterfront.",
     priceTotal: 200,
     currency: "EUR",
     paymentMethod: "cash_on_board",
@@ -129,7 +129,7 @@ const TEMPLATES: ReservationTemplate[] = [
     timeLocked: false,
     pickup: "Karaköy",
     meetingPointNote:
-      "Exact meeting point in Karaköy will be confirmed by our team one day before. Tentative area: near the Mimar Sinan statue / Balıkçı Kemal corner.",
+      "Exact meeting point in Karaköy will be confirmed by our team one day before. Tentative area: near the Balıkçı Kemal corner.",
     priceTotal: 280,
     currency: "EUR",
     paymentMethod: "cash_on_board",
@@ -738,7 +738,7 @@ export function AdminManualReservationForm({
           rows={3}
           value={meetingPointNote}
           onChange={(event) => setMeetingPointNote(event.target.value)}
-          placeholder="Karaköy ferry pier next to Mimar Sinan statue, near Balıkçı Kemal corner..."
+          placeholder="Karaköy ferry pier next to Balıkçı Kemal..."
           className={textareaClass}
         />
       </label>

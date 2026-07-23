@@ -74,8 +74,10 @@ export interface ReservationEmailStrings {
   nextReceived3: string;
   nextConfirmed1: string;
   nextConfirmedPayYacht: string;
+  nextConfirmedPayYachtKnown: string;
   nextConfirmedPay: string;
   nextConfirmedBoardYacht: string;
+  nextConfirmedBoardYachtKnown: string;
   nextConfirmedBoard: string;
   /** Good to know */
   goodToKnow: string;
@@ -156,9 +158,11 @@ const en: ReservationEmailStrings = {
   nextConfirmed1: "Your date and selected option are now confirmed.",
   nextConfirmedPayYacht:
     "Our operations team will confirm the payment schedule in writing.",
+  nextConfirmedPayYachtKnown: "Your payment terms are confirmed above.",
   nextConfirmedPay: "Payment will be collected on board by cash or card.",
   nextConfirmedBoardYacht:
     "The final marina pin and boarding contact will be shared before departure.",
+  nextConfirmedBoardYachtKnown: "Your boarding point is confirmed above — see you on board!",
   nextConfirmedBoard:
     "Arrive 15 minutes before departure and keep your voucher open on your phone.",
   goodToKnow: "Good to know",
@@ -238,9 +242,11 @@ const tr: ReservationEmailStrings = {
   nextConfirmed1: "Tarihiniz ve seçtiğiniz seçenek artık onaylandı.",
   nextConfirmedPayYacht:
     "Operasyon ekibimiz ödeme planını yazılı olarak teyit edecek.",
+  nextConfirmedPayYachtKnown: "Ödeme koşullarınız yukarıda onaylandı.",
   nextConfirmedPay: "Ödeme teknede nakit veya kart ile alınacaktır.",
   nextConfirmedBoardYacht:
     "Kesin marina konumu ve biniş iletişimi kalkıştan önce paylaşılacaktır.",
+  nextConfirmedBoardYachtKnown: "Biniş noktanız yukarıda onaylandı — teknede görüşürüz!",
   nextConfirmedBoard:
     "Kalkıştan 15 dakika önce gelin ve voucher'ınızı telefonunuzda açık tutun.",
   goodToKnow: "Bilmeniz gerekenler",
@@ -323,9 +329,11 @@ const de: ReservationEmailStrings = {
   nextConfirmed1: "Ihr Datum und Ihre gewählte Option sind jetzt bestätigt.",
   nextConfirmedPayYacht:
     "Unser Operations-Team bestätigt den Zahlungsplan schriftlich.",
+  nextConfirmedPayYachtKnown: "Ihre Zahlungsbedingungen sind oben bestätigt.",
   nextConfirmedPay: "Die Zahlung erfolgt an Bord in bar oder per Karte.",
   nextConfirmedBoardYacht:
     "Der genaue Marina-Standort und der Boarding-Kontakt werden vor der Abfahrt mitgeteilt.",
+  nextConfirmedBoardYachtKnown: "Ihr Treffpunkt ist oben bestätigt — bis bald an Bord!",
   nextConfirmedBoard:
     "Kommen Sie 15 Minuten vor der Abfahrt und halten Sie Ihren Voucher auf dem Handy bereit.",
   goodToKnow: "Gut zu wissen",
@@ -410,9 +418,11 @@ const fr: ReservationEmailStrings = {
   nextConfirmed1: "Votre date et votre option sélectionnée sont maintenant confirmées.",
   nextConfirmedPayYacht:
     "Notre équipe des opérations confirmera l'échéancier de paiement par écrit.",
+  nextConfirmedPayYachtKnown: "Vos conditions de paiement sont confirmées ci-dessus.",
   nextConfirmedPay: "Le paiement sera collecté à bord en espèces ou par carte.",
   nextConfirmedBoardYacht:
     "L'emplacement final de la marina et le contact d'embarquement seront partagés avant le départ.",
+  nextConfirmedBoardYachtKnown: "Votre point de rendez-vous est confirmé ci-dessus — à bientôt à bord !",
   nextConfirmedBoard:
     "Arrivez 15 minutes avant le départ et gardez votre bon ouvert sur votre téléphone.",
   goodToKnow: "Bon à savoir",
@@ -496,9 +506,11 @@ const nl: ReservationEmailStrings = {
   nextConfirmed1: "Uw datum en geselecteerde optie zijn nu bevestigd.",
   nextConfirmedPayYacht:
     "Ons operationele team bevestigt het betalingsschema schriftelijk.",
+  nextConfirmedPayYachtKnown: "Uw betalingsvoorwaarden zijn hierboven bevestigd.",
   nextConfirmedPay: "Betaling wordt aan boord contant of met kaart geïnd.",
   nextConfirmedBoardYacht:
     "De definitieve marinalocatie en boardingcontact worden vóór vertrek gedeeld.",
+  nextConfirmedBoardYachtKnown: "Uw ontmoetingspunt is hierboven bevestigd — tot op de boot!",
   nextConfirmedBoard:
     "Kom 15 minuten vóór vertrek en houd uw voucher open op uw telefoon.",
   goodToKnow: "Goed om te weten",
@@ -581,9 +593,11 @@ const ru: ReservationEmailStrings = {
   nextConfirmed1: "Ваша дата и выбранный вариант теперь подтверждены.",
   nextConfirmedPayYacht:
     "Наша операционная команда подтвердит график оплаты в письменном виде.",
+  nextConfirmedPayYachtKnown: "Условия оплаты подтверждены выше.",
   nextConfirmedPay: "Оплата производится на борту наличными или картой.",
   nextConfirmedBoardYacht:
     "Точное местоположение марины и контакт для посадки будут переданы перед отправлением.",
+  nextConfirmedBoardYachtKnown: "Место посадки подтверждено выше — до встречи на борту!",
   nextConfirmedBoard:
     "Приходите за 15 минут до отправления и держите ваучер открытым на телефоне.",
   goodToKnow: "Полезно знать",

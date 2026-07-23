@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import {
   Calendar,
   Clock,
+  ExternalLink,
   FileText,
   MapPin,
   Receipt,
@@ -14,6 +15,7 @@ import { getReservation } from "@/app/actions/reservation";
 import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPreview";
 import { getTourBySlug } from "@/data/tours";
 import { parseReservationNotes } from "@/lib/reservation-meta";
+import { getMeetingPointMapUrl } from "@/lib/meeting-points";
 import { parseReservationItems } from "@/lib/reservation-items";
 
 export const metadata: Metadata = {
@@ -96,6 +98,7 @@ export default async function ReservationInvoicePage({
     : isCustomBooking
       ? `${pickupFromNotes ?? "Karaköy"} — pickup time flexible`
       : (pickupFromNotes ?? tour?.departurePoint ?? "Final meeting instructions are shared after confirmation.");
+  const meetingPointMapUrl = getMeetingPointMapUrl(meetingPointLabel);
 
   const mixedItems = parseReservationItems(reservation.items);
 
@@ -303,9 +306,21 @@ export default async function ReservationInvoicePage({
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
                         {isCustomBooking ? "Pickup" : "Departure point"}
                       </p>
-                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {meetingPointLabel}
-                      </p>
+                      {meetingPointMapUrl ? (
+                        <a
+                          href={meetingPointMapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] underline decoration-1 underline-offset-2"
+                        >
+                          {meetingPointLabel}
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                          {meetingPointLabel}
+                        </p>
+                      )}
                     </div>
                   </div>
 

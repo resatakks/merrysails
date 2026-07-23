@@ -197,22 +197,25 @@ function writeLabelValueLinked(
     return writeWrappedText(doc, value, x, y + 5, width, 5.1);
   }
 
+  doc.setFont("Roboto", "bold");
+  doc.setFontSize(12.5);
   doc.setTextColor(29, 78, 216);
   const lines = doc.splitTextToSize(value, width) as string[];
-  let lineY = y + 5;
+  let lineY = y + 5.5;
   lines.forEach((current) => {
     doc.textWithLink(current, x, lineY, { url: mapUrl });
     const textWidth = doc.getTextWidth(current);
     doc.setDrawColor(29, 78, 216);
-    doc.setLineWidth(0.25);
-    doc.line(x, lineY + 0.8, x + textWidth, lineY + 0.8);
-    lineY += 5.1;
+    doc.setLineWidth(0.3);
+    doc.line(x, lineY + 1, x + textWidth, lineY + 1);
+    lineY += 5.8;
   });
 
-  doc.setTextColor(148, 163, 184);
-  doc.setFontSize(7.5);
-  doc.text("Tap to open in Google Maps", x, lineY);
-  return lineY;
+  doc.setFont("Roboto", "normal");
+  doc.setTextColor(100, 116, 139);
+  doc.setFontSize(8.5);
+  doc.text("📍 Tap to open in Google Maps", x, lineY + 0.5);
+  return lineY + 0.5;
 }
 
 function drawBrandIcon(doc: jsPDF, x: number, y: number, size: number) {

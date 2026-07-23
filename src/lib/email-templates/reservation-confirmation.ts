@@ -94,9 +94,10 @@ function renderBulletList(items: string[], tone: "neutral" | "warm" = "neutral")
 function renderSupportSection(
   tourSlug: string,
   t: ReturnType<typeof getReservationEmailStrings>,
-  privateTransferRequested?: boolean
+  privateTransferRequested?: boolean,
+  packageName?: string
 ): string {
-  const guide = getExperienceSupportGuide(tourSlug);
+  const guide = getExperienceSupportGuide(tourSlug, packageName);
   const guideUrl = getExperienceSupportPageUrl(tourSlug);
 
   if (!guide) {
@@ -220,11 +221,22 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
   const reservationNote = isConfirmed
     ? t.noteBookingSecured
     : t.noteSaveReference;
+  // When payment terms / the meeting point are already known at send time
+  // (a manual booking, or any booking with these fields set), the generic
+  // "will be confirmed / shared before departure" yacht bullets contradict
+  // what was just shown above them — swap in a bullet that doesn't re-open
+  // something already settled.
+  const paymentAlreadyKnown = Boolean(data.paymentNote?.trim());
+  const meetingPointAlreadyKnown = Boolean(data.meetingPointNote?.trim());
   const nextSteps = isConfirmed
     ? [
         t.nextConfirmed1,
-        isPrivateYachtFlow ? t.nextConfirmedPayYacht : t.nextConfirmedPay,
-        isPrivateYachtFlow ? t.nextConfirmedBoardYacht : t.nextConfirmedBoard,
+        isPrivateYachtFlow
+          ? (paymentAlreadyKnown ? t.nextConfirmedPayYachtKnown : t.nextConfirmedPayYacht)
+          : t.nextConfirmedPay,
+        isPrivateYachtFlow
+          ? (meetingPointAlreadyKnown ? t.nextConfirmedBoardYachtKnown : t.nextConfirmedBoardYacht)
+          : t.nextConfirmedBoard,
       ]
     : [
         t.nextReceived1,
@@ -420,7 +432,7 @@ export function reservationConfirmationEmail(data: ReservationConfirmationData):
         </div>
       ` : ""}
 
-      ${isConfirmed ? renderSupportSection(data.tourSlug, t, data.privateTransferRequested) : ""}
+      ${isConfirmed ? renderSupportSection(data.tourSlug, t, data.privateTransferRequested, data.packageName) : ""}
 
       <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:18px 20px;margin-bottom:22px;">
         <p style="color:#166534;font-size:15px;font-weight:700;margin:0 0 10px;">${escapeHtml(t.whatsNext)}</p>

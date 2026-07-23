@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/lib/constants";
+import { isAlcoholicPackageName } from "@/lib/reservation-pricing";
 
 export interface ExperienceSupportFact {
   label: string;
@@ -43,26 +44,26 @@ const experienceSupportGuides: Record<string, ExperienceSupportGuide> = {
       "Meeting point directions, included items, exclusions, and arrival tips for the MerrySails Bosphorus Sunset Cruise.",
     heroTitle: "Bosphorus Sunset Cruise meeting point and boarding guide",
     heroBody:
-      "Use this page for the exact Karaköy ferry pier meeting point (next to the Mimar Sinan statue, by Marmaray and Balıkçı Kemal), public transport directions, included items, and quick arrival notes before your sunset cruise.",
+      "Use this page for the exact Karaköy ferry pier meeting point (next to Balıkçı Kemal, by the Marmaray exit), public transport directions, included items, and quick arrival notes before your sunset cruise.",
     supportLabel: "Sunset Cruise Guide",
     summary:
-      "The easiest route is the T1 tram to Karaköy stop, then a 1-minute walk to the Mimar Sinan statue at the ferry pier (next to the Marmaray exit and Balıkçı Kemal).",
+      "The easiest route is the T1 tram to Karaköy stop, then a 1-minute walk to the ferry pier next to Balıkçı Kemal (near the Marmaray exit).",
     facts: [
-      { label: "Meeting flow", value: "Karaköy ferry pier next to the Mimar Sinan statue (by Marmaray, near Balıkçı Kemal)" },
-      { label: "Public route", value: "T1 tram to Karaköy or Marmaray to Karaköy, then walk to the Mimar Sinan statue at the ferry pier" },
+      { label: "Meeting flow", value: "Karaköy ferry pier next to Balıkçı Kemal (by Marmaray)" },
+      { label: "Public route", value: "T1 tram to Karaköy or Marmaray to Karaköy, then walk to the ferry pier next to Balıkçı Kemal" },
       { label: "Departure plan", value: "Sunset departure, usually around 19:00 depending on the date" },
       { label: "Format", value: "2-hour shared luxury yacht cruise" },
     ],
     directions: [
-      "Take the T1 tram and get off at Karaköy; the Mimar Sinan statue is at the ferry pier.",
-      "Walk to the Mimar Sinan statue at Karaköy ferry pier; the boarding berth is 1 minute from the statue.",
-      "Or use the Marmaray and exit at Karaköy — the Mimar Sinan statue is right at the pier.",
-      "Keep your voucher and reservation ID ready while approaching the Mimar Sinan statue meeting point.",
+      "Take the T1 tram and get off at Karaköy; the ferry pier is right next to Balıkçı Kemal.",
+      "Walk to Karaköy ferry pier, next to Balıkçı Kemal; the boarding berth is 1 minute away.",
+      "Or use the Marmaray and exit at Karaköy — Balıkçı Kemal is right at the pier.",
+      "Keep your voucher and reservation ID ready while approaching the Karaköy ferry pier meeting point.",
     ],
     mapUrl: "https://maps.app.goo.gl/Z3eKXCyH5WM4Xzsi8",
     mapLabel: "Open the Karaköy ferry pier meeting point map",
     included: [
-      "2 glasses of wine per guest",
+      "2 glasses of wine per guest (With-Wine option only)",
       "Live English-speaking guide on board",
       "Luxury yacht Bosphorus sunset sailing",
       "Hot drinks (tea, Turkish coffee) and cold drinks (iced tea, lemonade, juice, water)",
@@ -123,8 +124,34 @@ const experienceSupportGuides: Record<string, ExperienceSupportGuide> = {
   },
 };
 
-export function getExperienceSupportGuide(tourSlug: string): ExperienceSupportGuide | null {
-  return experienceSupportGuides[tourSlug] ?? null;
+/**
+ * @param packageName When known (a specific reservation's booked package),
+ * any "included" line mentioning wine is dropped unless that package is
+ * itself alcoholic (e.g. "With Wine"). This is what stops a "Without Wine"
+ * confirmation email from claiming wine is included. Omit packageName for
+ * generic, not-booking-specific contexts (e.g. the public /meeting-points
+ * page), where the included line keeps its "(With-Wine option only)"
+ * qualifier so it's never a false claim either way.
+ */
+export function getExperienceSupportGuide(
+  tourSlug: string,
+  packageName?: string
+): ExperienceSupportGuide | null {
+  const guide = experienceSupportGuides[tourSlug] ?? null;
+  if (!guide || !guide.included || !packageName) {
+    return guide;
+  }
+
+  if (isAlcoholicPackageName(packageName)) {
+    return guide;
+  }
+
+  const included = guide.included.filter((line) => !line.toLowerCase().includes("wine"));
+  if (included.length === guide.included.length) {
+    return guide;
+  }
+
+  return { ...guide, included };
 }
 
 export function getExperienceSupportPageUrl(tourSlug: string): string | null {

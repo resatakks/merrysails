@@ -18,6 +18,7 @@ import { ReservationPdfPreview } from "@/components/reservation/ReservationPdfPr
 import { getTourBySlug, getTourPath } from "@/data/tours";
 import { parseReservationNotes } from "@/lib/reservation-meta";
 import { parseReservationItems } from "@/lib/reservation-items";
+import { getMeetingPointMapUrl } from "@/lib/meeting-points";
 import {
   getReservationStatusLabel,
   getReservationStatusTone,
@@ -92,6 +93,7 @@ export default async function ReservationVoucherPage({
   );
   const voucherPdfHref = `/reservation/${reservation.reservationId}/voucher/pdf`;
   const voucherPdfDownloadHref = `${voucherPdfHref}?download=1`;
+  const meetingPointMapUrl = getMeetingPointMapUrl(meetingPointLabel);
 
   return (
     <main className="min-h-screen bg-[var(--surface-alt)] px-4 py-10 print:bg-white print:px-0 print:py-0">
@@ -272,9 +274,21 @@ export default async function ReservationVoucherPage({
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
                         {isCustomBooking ? "Pickup" : "Departure point"}
                       </p>
-                      <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
-                        {meetingPointLabel}
-                      </p>
+                      {meetingPointMapUrl ? (
+                        <a
+                          href={meetingPointMapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-primary)] underline decoration-1 underline-offset-2"
+                        >
+                          {meetingPointLabel}
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-sm font-semibold text-[var(--heading)]">
+                          {meetingPointLabel}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
